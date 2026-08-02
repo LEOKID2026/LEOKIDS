@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Brick Breaker",
+    "prototype_move_paddle_break_bricks": "Prototype · move paddle · break bricks",
+    "drag_move_below_don_t_miss_the_ball": "Drag/move below · don't miss the ball",
+    "bx_s_ballx_ball_r": "bx &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "by &&\r\n          s.ballY - BALL_R",
+    "all_bricks_cleared": "All bricks cleared! 🎉",
+    "tap_to_play_again": "Tap to play again",
+    "ball_dropped": "Ball dropped!"
+  }
+}

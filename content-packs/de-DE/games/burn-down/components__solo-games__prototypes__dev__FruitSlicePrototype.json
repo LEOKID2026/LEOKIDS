@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "fruit_slice": "Fruit Slice",
+    "prototype_swipe_slice_no_full_scoring": "Prototype · swipe / slice · no full scoring",
+    "slice_fruit_avoid_mouse_or_finger": "Slice fruit · avoid 💣 · mouse or finger",
+    "f_y_120_f_y": "f.y > -120 && f.y"
+  }
+}

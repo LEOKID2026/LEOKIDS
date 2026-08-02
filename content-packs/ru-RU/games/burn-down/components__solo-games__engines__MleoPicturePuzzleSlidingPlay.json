@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "empty_space": "Пустое место",
+    "this_is_how_the_picture_should_look": "Вот так должна выглядеть картинка!",
+    "target_picture": "Целевая картинка 🐶"
+  }
+}

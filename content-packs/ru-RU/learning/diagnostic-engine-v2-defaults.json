@@ -1,0 +1,44 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Соберите больше данных перед планом",
+    "shortPractice": "3–7 заданий по той же теме чуть меньшей сложности",
+    "avoid": "Не прыгайте too high in level or mix several topics together.",
+    "improvementSignals": [
+      "Меньше повторяющихся ошибок",
+      "Самостоятельное исправление после ошибки"
+    ],
+    "failureSignals": [
+      "Нет change after two structured cycles"
+    ],
+    "hypothesisChange": "Ошибка на предложенной проверке или успех только с сильной подсказкой"
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Не прыгайте too high in level, mix several topics, or rely on general feedback without an example.",
+    "improvementSignals": [
+      "Соотнеси маркеры успеха таксономии",
+      "Перенести успех на похожее задание"
+    ],
+    "hypothesisChange": "Когда рекомендованная проверка не удаётся или появляется сильное контрдоказательство"
+  },
+  "probeFallback": {
+    "objective": "Отделите пробел основы от темы-специфичной проблемы",
+    "specification": "Параллельное задание на тот же принцип с пониженной сложностью",
+    "stoppingRule": "Два consistent sequences or stable improvement",
+    "escalationRule": "Нет improvement after two cycles"
+  },
+  "probeWithTaxonomy": {
+    "objective": "Отличить базовую трудность от трудности по конкретной теме",
+    "stoppingRule": "Достичь порога повторения строки или отклонить гипотезу",
+    "hypothesisChange": "Когда рекомендованная проверка не удаётся или появляется сильное контрдоказательство"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Давление скорости против пробела в знаниях",
+    "carelessPattern": "Невнимательность против непонимания",
+    "instructionFriction": "Трение инструкции/подсказки против понятийного пробела",
+    "distinguishingEvidence": [
+      "Сравни timed vs untimed performance",
+      "Сравни sparse vs rich hinting",
+      "Проверить повторяемость по семейству узоров"
+    ]
+  }
+}

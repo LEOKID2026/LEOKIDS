@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "grades_1_2": "1–2 классы",
+    "grades_3_4": "3–4 классы",
+    "grades_5_6": "5–6 классы",
+    "nice_the_lowercase_letter_is_on_the_car": "Отлично! Строчная буква на машине.",
+    "great_job_the_uppercase_letter_is_in_place": "Отличная работа! Заглавная буква на месте.",
+    "correct_the_first_letter_is_on_the_car": "Верно! The first letter is on the car.",
+    "fill_in_the_missing_letter_on_the_car": "Вставь пропущенную букву на машинке",
+    "awesome_you_filled_in_the_missing_letter": "Круто! Ты заполнил пропущенную букву.",
+    "excellent_you_built_the_word_on_the_cars": "Отлично! Ты собрал слово на машинках.",
+    "great_you_completed_the_missing_letters": "Отлично! Ты дополнил пропущенные буквы.",
+    "both_cars_are_ready_all_aboard": "Оба вагона готовы — все на борт!",
+    "load_the_word_that_matches_the_picture": "Загрузи the word that matches the picture",
+    "the_right_word_is_on_the_car": "The right word is on the car!",
+    "word_order_looks_good_the_train_is_leaving": "Слово order looks good - the train is leaving!",
+    "the_missing_word_is_in_place": "The missing word is in place!",
+    "that_word_fits_the_situation": "Это слово подходит к ситуации!",
+    "arrange_a_sentence_that_describes_the_picture": "Составь предложение, которое описывает картинку",
+    "the_sentence_matches_the_picture_all_aboard": "The sentence matches the picture - all aboard!"
+  }
+}

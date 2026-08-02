@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "what_we_see": "Что мы видим?",
+    "what_it_means": "Что it means?",
+    "what_to_do_together": "Что to do together?",
+    "in_the_recent_period": "В недавнем периоде:",
+    "what_we_saw": "Что мы увидели:",
+    "foundation_and_dependencies": "Основа и зависимости:",
+    "where_they_sometimes_get_stuck": "Где they sometimes get stuck:",
+    "retention_at_home": "Закрепление дома:",
+    "now": "Сейчас:",
+    "avoid": "Избегай:",
+    "caution": "Осторожно:",
+    "what_stands_out_in_each_topic": "Что выделяется в каждой теме"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "Сервис настроен некорректно.",
+    "guest_mode_is_currently_disabled": "Гостевой режим сейчас отключён.",
+    "the_guest_system_is_not_ready": "Гостевая система ещё не готова.",
+    "could_not_start_guest_mode": "Не удалось запустить гостевой режим."
+  }
+}

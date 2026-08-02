@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "live_lesson": "Live-Unterricht",
+    "guided_practice": "Angeleitete Übung",
+    "homework": "Hausaufgabe",
+    "class_discussion": "Class discussion",
+    "standard": "Standard",
+    "advanced": "Fortgeschritten",
+    "angles": "Winkel",
+    "shapes": "Formen",
+    "perimeter": "Umfang",
+    "volume": "Volumen",
+    "general_practice": "General practice",
+    "asia_jerusalem": "Asia/Jerusalem"
+  }
+}

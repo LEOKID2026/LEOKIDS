@@ -1,0 +1,11 @@
+{
+  "gameId": "smart-blocks",
+  "title": "Smart Blocks",
+  "blurb": "Place shapes, clear rows and columns, and reach the score target!",
+  "help": {
+    "howToPlay": "Drag shapes onto the board, rotate them if needed, and place them to fill rows and columns.",
+    "scoring": "Clearing a row or column adds points. The goal is to reach the score target before the board fills up.",
+    "rewards": "Winning based on difficulty level grants coins, and a score bonus adds even more.",
+    "tip": "Try to clear several rows at once - it gives a lot of points."
+  }
+}

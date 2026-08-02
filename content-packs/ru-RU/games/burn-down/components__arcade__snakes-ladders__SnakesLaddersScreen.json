@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Змеи и лестницы",
+    "back": "Назад",
+    "coin_balance": "Баланс монет",
+    "how_to_play": "Как играть",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "В свой ход брось кости и продвинься на это число.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "Змеи спускают вниз, лестницы поднимают вверх — классическая доска.",
+    "reach_exactly_100_to_win": "Набери ровно 100, чтобы победить.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Бросок дальше 100 не двигает тебя (ты остаёшься на месте)."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "unable_to_distinguish_error_mechanism_from_available_fields": "Unable to distinguish error mechanism from available fields.",
+    "very_fast_incorrect_response_may_reflect_guessing_or_pacing_strategy": "Very fast incorrect response may reflect guessing or pacing strategy.",
+    "numeric_text_answer_mismatch_may_be_calculation_slip_or_conceptual_confu": "Numeric/text answer mismatch-may be calculation slip or conceptual confusion."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "level": "Уровень",
+    "whole_class": "Весь класс",
+    "selected_students": "Выбранные ученики",
+    "discussion_with_response_students_submit_an_answer": "Обсуждение с ответом (ученики отправляют ответ)",
+    "explanation_only_no_response_required": "Только пояснение — ответ не требуется"
+  }
+}

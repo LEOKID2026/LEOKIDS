@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "Пока нет данных",
+    "data_unavailable_right_now": "Данные сейчас недоступны",
+    "loading": "Загрузка…",
+    "cumulative": "Накопительно",
+    "for_the_current_month": "За текущий месяц",
+    "cumulative_from_all_sessions": "Накопительно за все сессии",
+    "from_completed_sessions": "Из завершённых сессий",
+    "from_all_sessions_with_duration": "Из всех сессий с длительностью",
+    "credited_learning_time_questions_books_and_parent_activities": "Зачтённое учебное время — вопросы, книги и задания от родителя"
+  }
+}

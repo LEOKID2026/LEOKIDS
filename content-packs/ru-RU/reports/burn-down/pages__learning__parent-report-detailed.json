@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again": "Требуется вход родителя — используйте вход родителя и попробуйте снова.",
+    "the_detailed_report_cannot_be_loaded_right_now": "Подробный отчёт сейчас не загружается.",
+    "report_display_mode": "Режим отображения отчёта",
+    "loading_detailed_report": "Загрузка подробного отчёта…",
+    "detailed_report_for_the_period_leo_kids": "Подробный отчёт за период — Leo Kids",
+    "what_we_did_during_this_period": "Что мы делали за этот период",
+    "whats_important_to_know": "Что важно знать",
+    "messages_from_the_teacher": "Сообщения от учителя"
+  }
+}

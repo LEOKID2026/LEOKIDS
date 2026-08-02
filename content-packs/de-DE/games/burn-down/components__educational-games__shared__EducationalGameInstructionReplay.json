@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "replay_instruction": "Replay instruction",
+    "onreplay_text_aria_label_gamepackcopy_components_educational_games_share": "onReplay(text)}\n      aria-label=gamePackCopy(\"components__educational-games__shared__EducationalGameInstructionReplay\", \"replay_instruction\")\n      title=gamePackCopy(\"components__educational-games__shared__EducationalGameInstructionReplay\", \"replay_instruction\")\n    >\n      🔊"
+  }
+}

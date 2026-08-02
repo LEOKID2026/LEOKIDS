@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "this_subject_is_locked_by_the_parents": "Этот предмет заблокирован родителями.",
+    "you_don_t_have_permission_to_select_this_grade": "У тебя нет разрешения выбрать этот класс."
+  }
+}

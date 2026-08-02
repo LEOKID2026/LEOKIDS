@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "human_body": "Тело человека",
+    "animals": "Животные",
+    "plants": "Растения",
+    "materials": "Материалы",
+    "experiments": "Опыты",
+    "earth_space": "Земля и космос",
+    "environment": "Окружающая среда"
+  }
+}

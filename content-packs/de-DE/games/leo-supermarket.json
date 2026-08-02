@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Leo's Grocery Store",
+  "blurb": "A game about money, shopping, and giving change",
+  "help": {
+    "howToPlay": "A customer asks for products - pick them from the shelf, work out the change, and choose matching coins. Tap \"Give Change\" when you're ready.",
+    "scoring": "Correct product +10, correct change +25, satisfied customer +30, change right on the first try +10, fast service +5. A mistake or running out of time −5.",
+    "rewards": "Coins are awarded based on how many customers you served, accuracy, streaks, and difficulty level - even if you didn't serve all 20 customers.",
+    "tip": "Check the purchase total and how much the customer paid - work out for yourself how much change to give back."
+  },
+  "accessibility": {
+    "title": "Leo's Grocery Store"
+  }
+}

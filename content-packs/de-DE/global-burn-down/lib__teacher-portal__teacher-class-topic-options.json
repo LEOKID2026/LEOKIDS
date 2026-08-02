@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "human_body": "Menschlicher Körper",
+    "animals": "Tiere",
+    "plants": "Pflanzen",
+    "materials": "Materialien",
+    "experiments": "Experimente",
+    "earth_space": "Erde & space",
+    "environment": "Umwelt"
+  }
+}

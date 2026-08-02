@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "square": "Квадрат",
+    "rectangle": "Прямоугольник",
+    "parallel": "Параллельны",
+    "translation": "Перевод",
+    "reflection": "Отражение",
+    "rotation": "Поворот",
+    "no_movement": "Без движения"
+  }
+}

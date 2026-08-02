@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "tic_tac_toe": "Tic-Tac-Toe",
+    "boards_from_3_3_to_7_7_with_score_tracking": "Boards from 3×3 to 7×7 with score tracking.",
+    "rock_paper_scissors": "Rock · Paper · Scissors",
+    "quick_rounds_best_of_all": "Quick rounds — best of all.",
+    "tap_battle": "Tap Battle",
+    "each_side_taps_as_fast_as_they_can_who_wins": "Each side taps as fast as they can — who wins?",
+    "memory_match": "Memory Match",
+    "flip_cards_find_pairs_and_try_to_win": "Flip cards, find pairs, and try to win.",
+    "always_on_games_with_leo": "Always-on games with Leo",
+    "play_on_the_same_device_even_offline": "Play on the same device — even offline."
+  }
+}

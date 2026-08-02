@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "PIN в открытом виде нельзя будет получить после этого ответа. Храните безопасно."
+  }
+}

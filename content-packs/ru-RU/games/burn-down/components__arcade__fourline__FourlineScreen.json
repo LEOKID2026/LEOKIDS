@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "four_in_a_row": "Четыре в ряд",
+    "back": "Назад",
+    "coin_balance": "Баланс монет",
+    "how_to_play": "Как играть",
+    "close": "Закрыть",
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "Каждый игрок выбирает столбец; диск падает вниз.",
+    "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal": "Цель: выстроить четыре фишки подряд — по горизонтали, вертикали или диагонали.",
+    "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back": "Синие ходят первыми; после каждого хода очередь переходит к Золотым и обратно.",
+    "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw": "Если доска заполняется без четырёх в ряд — это ничья.",
+    "waiting_for_a_second_player": "Ждём второго игрока…",
+    "four_in_a_row_2": "Четыре в ряд."
+  }
+}

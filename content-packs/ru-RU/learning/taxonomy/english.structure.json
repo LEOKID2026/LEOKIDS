@@ -1,0 +1,61 @@
+{
+  "subjectId": "english",
+  "rows": [
+    {
+      "id": "E-01",
+      "subjectId": "english",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-02",
+      "subjectId": "english",
+      "minWrong": 4,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-03",
+      "subjectId": "english",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-04",
+      "subjectId": "english",
+      "minWrong": 4,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-05",
+      "subjectId": "english",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-06",
+      "subjectId": "english",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-07",
+      "subjectId": "english",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "E-08",
+      "subjectId": "english",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    }
+  ]
+}

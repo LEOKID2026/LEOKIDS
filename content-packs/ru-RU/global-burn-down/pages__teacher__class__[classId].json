@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "class_report": "Отчёт по классу",
+    "invalid_class_id": "Неверный ID класса.",
+    "you_do_not_have_permission_to_view_this_class_report": "У Вас нет разрешения смотреть отчёт этого класса.",
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты"
+  }
+}

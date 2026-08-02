@@ -1,0 +1,23 @@
+{
+  "privacyTitle": "Datenschutzerklärung",
+  "termsTitle": "Nutzungsbedingungen",
+  "securityTitle": "Sicherheit",
+  "placeholderNotice": "Der rechtliche Text für die globale Website wird noch juristisch geprüft. Diese Seite ist ein Platzhalter und keine verbindliche Richtlinie.",
+  "cookieBannerTitle": "Cookies & lokaler Speicher",
+  "cookieBannerBody": "Diese Website verwendet Cookies und lokalen Speicher ausschließlich für wesentliche Funktionen (Anmeldung, Einstellungen und Kontinuität). Werbung und optionale Analysen sind derzeit deaktiviert und können später mit deiner Einwilligung aktiviert werden.",
+  "cookieAccept": "Akzeptieren",
+  "cookieReject": "Optionale ablehnen",
+  "cookieManage": "Cookie-Einstellungen",
+  "cookieManageAria": "Cookie- und Werbeeinstellungen öffnen",
+  "cookiePrefsTitle": "Cookie-Einstellungen verwalten",
+  "cookiePrefsBody": "Wesentliche Cookies sind für Anmeldung, Einstellungen und Kernfunktionen der Website erforderlich. Die folgenden Optionen betreffen optionale Werbung und Messung — derzeit inaktiv.",
+  "cookieAdsLabel": "Werbung (derzeit inaktiv)",
+  "cookieAdsHelp": "Optionale zukünftige Werbung — kann später vorbehaltlich der Google-Freigabe und Konfiguration aktiviert werden.",
+  "cookieAnalyticsLabel": "Messung & Analyse (derzeit inaktiv)",
+  "cookieAnalyticsHelp": "Optionale anonyme Messung — kann später je nach Konfiguration aktiviert werden.",
+  "cookieSavePrefs": "Einstellungen speichern",
+  "cookieClose": "Schließen",
+  "privacyLink": "Datenschutzerklärung",
+  "legalHubLink": "Rechtliche Dokumente",
+  "dataDeletionLink": "Datenlöschung"
+}

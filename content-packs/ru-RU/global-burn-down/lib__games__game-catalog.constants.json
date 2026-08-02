@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "this_game_is_not_available_right_now": "Эта игра сейчас недоступна",
+    "locked_by_parents": "Закрыто родителями"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "manage_child_and_parent_access": "Управление доступом ребёнка и родителя",
+    "view_reports_and_child_details": "Просмотр отчётов и данных учеников"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "Noch keine Daten",
+    "data_unavailable_right_now": "Daten momentan nicht verfügbar",
+    "loading": "Wird geladen…",
+    "cumulative": "Kumulativ",
+    "for_the_current_month": "Für den aktuellen Monat",
+    "cumulative_from_all_sessions": "Kumulativ aus allen Sitzungen",
+    "from_completed_sessions": "Aus abgeschlossenen Sitzungen",
+    "from_all_sessions_with_duration": "Aus allen Sitzungen mit Dauer",
+    "credited_learning_time_questions_books_and_parent_activities": "Angerechnete Lernzeit — Aufgaben, Bücher und Aktivitäten mit den Eltern"
+  }
+}

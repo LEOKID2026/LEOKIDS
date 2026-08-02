@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "В выбранном периоде не собрано вопросов — нет данных для этой строки.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "Слишком мало вопросов за период — выводы по этой строке очень частичные.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "Собрано много вопросов — можно больше опираться на то, что видно по этой теме.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "По этой теме достаточно вопросов — только осторожные изменения поднавыков.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "Вопросов достаточно — можно больше опираться на то, что видно по этой теме.",
+    "moderate_data_cautious_changes_only_are_recommended": "Умеренные данные — рекомендуются только осторожные изменения.",
+    "row_inputs_before_signal_computation": "Вводы строки до вычисления сигнала.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "Объём доступной информации влияет на осторожность следующей рекомендации.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "Это проявляется на нескольких занятиях — картина отражает тренд, а не одну сессию.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "Рекомендация основана на сочетании точности, числа вопросов, ошибок и того, насколько недавней была практика в выбранном периоде."
+  }
+}

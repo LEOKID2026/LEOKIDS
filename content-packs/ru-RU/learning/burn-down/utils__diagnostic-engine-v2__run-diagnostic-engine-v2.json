@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "mistakeeventv1_report_row": "MistakeEventV1+report_row",
+    "summarized_per_row_filters_see_evidencetrace_on_each_unit": "Summarized per-row filters; see evidenceTrace on each unit"
+  }
+}

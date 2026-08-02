@@ -9,6 +9,8 @@ import { SCIENCE_PT_PT_OVERLAY } from "../../data/science-questions-pt-PT-overla
 import { SCIENCE_IT_IT_OVERLAY } from "../../data/science-questions-it-IT-overlay.js";
 import { SCIENCE_FR_FR_OVERLAY } from "../../data/science-questions-fr-FR-overlay.js";
 import { SCIENCE_NL_NL_OVERLAY } from "../../data/science-questions-nl-NL-overlay.js";
+import { SCIENCE_DE_DE_OVERLAY } from "../../data/science-questions-de-DE-overlay.js";
+import { SCIENCE_RU_RU_OVERLAY } from "../../data/science-questions-ru-RU-overlay.js";
 import { translateScienceFields, translateScienceText } from "./science-translate.js";
 import { resolveContentLocale } from "../../lib/content/locale.js";
 
@@ -20,6 +22,8 @@ function overlayMapForLocale(locale) {
   if (id === "it-IT") return SCIENCE_IT_IT_OVERLAY;
   if (id === "fr-FR") return SCIENCE_FR_FR_OVERLAY;
   if (id === "nl-NL") return SCIENCE_NL_NL_OVERLAY;
+  if (id === "de-DE") return SCIENCE_DE_DE_OVERLAY;
+  if (id === "ru-RU") return SCIENCE_RU_RU_OVERLAY;
   return SCIENCE_EN_OVERLAY;
 }
 

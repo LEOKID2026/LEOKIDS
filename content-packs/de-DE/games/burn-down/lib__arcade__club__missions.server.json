@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "first_player": "First player",
+    "play_one_arcade_game": "Play one arcade game",
+    "win_10_times": "Win 10 times",
+    "play_50_arcade_games": "Play 50 arcade games"
+  }
+}

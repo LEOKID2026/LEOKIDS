@@ -24,6 +24,8 @@ import { WORD_MEANINGS_PT_PT } from "./word-meanings/pt-PT.js";
 import { WORD_MEANINGS_IT_IT } from "./word-meanings/it-IT.js";
 import { WORD_MEANINGS_FR_FR } from "./word-meanings/fr-FR.js";
 import { WORD_MEANINGS_NL_NL } from "./word-meanings/nl-NL.js";
+import { WORD_MEANINGS_DE_DE } from "./word-meanings/de-DE.js";
+import { WORD_MEANINGS_RU_RU } from "./word-meanings/ru-RU.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -44,6 +46,8 @@ const MEANING_PACKS = {
   "it-IT": WORD_MEANINGS_IT_IT,
   "fr-FR": WORD_MEANINGS_FR_FR,
   "nl-NL": WORD_MEANINGS_NL_NL,
+  "de-DE": WORD_MEANINGS_DE_DE,
+  "ru-RU": WORD_MEANINGS_RU_RU,
 };
 
 /**
@@ -120,6 +124,24 @@ function isDutchNetherlandsInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isGermanGermanyInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "de-de";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isRussianRussiaInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "ru-ru";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isLocalizedMeaningLocale(locale) {
   return (
     isSpanishInstructionLocale(locale) ||
@@ -127,7 +149,9 @@ function isLocalizedMeaningLocale(locale) {
     isPortuguesePortugalInstructionLocale(locale) ||
     isItalianInstructionLocale(locale) ||
     isFrenchFranceInstructionLocale(locale) ||
-    isDutchNetherlandsInstructionLocale(locale)
+    isDutchNetherlandsInstructionLocale(locale) ||
+    isGermanGermanyInstructionLocale(locale) ||
+    isRussianRussiaInstructionLocale(locale)
   );
 }
 
@@ -148,6 +172,8 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "it-it") chainLocale = "it-IT";
   else if (tag === "fr-fr") chainLocale = "fr-FR";
   else if (tag === "nl-nl") chainLocale = "nl-NL";
+  else if (tag === "de-de") chainLocale = "de-DE";
+  else if (tag === "ru-ru") chainLocale = "ru-RU";
   const chain = getLocaleFallbackChain(chainLocale);
   /** @type {Record<string, Record<string, string>>} */
   let merged = {};

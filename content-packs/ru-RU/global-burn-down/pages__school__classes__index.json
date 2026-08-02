@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты",
+    "no_classes_in_this_grade": "В этом годе обучения нет классов."
+  }
+}

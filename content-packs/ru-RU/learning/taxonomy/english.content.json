@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "Словарь",
+      "topic": "Контекст",
+      "subskill": "collocation",
+      "pattern": "Неверный дословный перевод",
+      "counterEvidence": "Верно после двух примеров",
+      "countsWhen": "Ясные предложения",
+      "doesNotCountWhen": "Только отвлекающий «ложный друг»",
+      "probe": "Параллельные предложения",
+      "intervention": "Карточки предложений",
+      "escalation": "Сложность по всем темам",
+      "observableMarkers": [
+        "Тот же root across different sentences"
+      ],
+      "roots": [
+        "false friend"
+      ],
+      "competitors": [
+        "Грамматика"
+      ],
+      "doNotConclude": [
+        "Нет Английский язык"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "Грамматика",
+      "topic": "Времена",
+      "subskill": "Время marker",
+      "pattern": "past/present",
+      "counterEvidence": "Верно с таблицей маркеров",
+      "countsWhen": "Маркер выделен",
+      "doesNotCountWhen": "Смешанное время без предварительного обучения",
+      "probe": "Одинаковые предложения, другой маркер",
+      "intervention": "Таблица маркеров",
+      "escalation": "Без улучшения",
+      "observableMarkers": [
+        "Ошибка, когда явно указаны «вчера/сейчас»"
+      ],
+      "roots": [
+        "Карта времён"
+      ],
+      "competitors": [
+        "Словарь"
+      ],
+      "doNotConclude": [
+        "Нет grammar"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "Чтение",
+      "topic": "Макет",
+      "subskill": "Слежение по строке",
+      "pattern": "Ошибка в двухколоночной раскладке",
+      "counterEvidence": "Верно в одном широком столбце",
+      "countsWhen": "Читаемый шрифт",
+      "doesNotCountWhen": "Мелкий шрифт без опоры",
+      "probe": "Крупный шрифт против мелкого",
+      "intervention": "Номер строки / слежение пальцем",
+      "escalation": "Отчёт о зрении",
+      "observableMarkers": [
+        "Ошибка только в двухколоночной раскладке"
+      ],
+      "roots": [
+        "Слежение по строке"
+      ],
+      "competitors": [
+        "Словарь"
+      ],
+      "doNotConclude": [
+        "Нет reading"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "Грамматика",
+      "topic": "Согласование",
+      "subskill": "Местоимение–подлежащее",
+      "pattern": "he/she/it",
+      "counterEvidence": "Верно когда очень медленно",
+      "countsWhen": "Явно указанный предмет",
+      "doesNotCountWhen": "Только быстрый набор",
+      "probe": "Цепочка с подлежащим",
+      "intervention": "Таблица подлежащее–местоимение",
+      "escalation": "Всегда не удаётся",
+      "observableMarkers": [
+        "Ошибка",
+        "Предмет выделен"
+      ],
+      "roots": [
+        "Синтаксическое согласование"
+      ],
+      "competitors": [
+        "Скорость"
+      ],
+      "doNotConclude": [
+        "Нет knowledge"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "Словарь",
+      "topic": "Usage",
+      "subskill": "preposition",
+      "pattern": "Тот же wrong preposition",
+      "counterEvidence": "Верно на закрытого списка",
+      "countsWhen": "Taught prepositions",
+      "doesNotCountWhen": "Глаголы ещё не изучались",
+      "probe": "Тот же verb, two prepositions",
+      "intervention": "Минимальные пары",
+      "escalation": "Без улучшения",
+      "observableMarkers": [
+        "Ошибка с разными глаголами"
+      ],
+      "roots": [
+        "Специфический словарь"
+      ],
+      "competitors": [
+        "General grammar"
+      ],
+      "doNotConclude": [
+        "Нет language"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "Чтение",
+      "topic": "Понимание",
+      "subskill": "inference",
+      "pattern": "Факт вместо вывода",
+      "counterEvidence": "Верно на явном факте",
+      "countsWhen": "Тип вопроса отмечен",
+      "doesNotCountWhen": "До того как учат вывод",
+      "probe": "Факт и вывод",
+      "intervention": "Слова-сигналы для вывода",
+      "escalation": "Ошибка и на фактах",
+      "observableMarkers": [
+        "Ошибка только при выводе"
+      ],
+      "roots": [
+        "Стратегия"
+      ],
+      "competitors": [
+        "Словарь"
+      ],
+      "doNotConclude": [
+        "Нет thinking"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "Письмо",
+      "topic": "Правописание",
+      "subskill": "Тихие закономерности",
+      "pattern": "Повторённый errors",
+      "counterEvidence": "Верно с медленной диктовкой",
+      "countsWhen": "Taught words",
+      "doesNotCountWhen": "До правила",
+      "probe": "Контролируемый почерк",
+      "intervention": "Мини-правило правописания",
+      "escalation": "Профессиональный отчёт",
+      "observableMarkers": [
+        "Тот же pattern"
+      ],
+      "roots": [
+        "Фонология"
+      ],
+      "competitors": [
+        "Typing"
+      ],
+      "doNotConclude": [
+        "Беспорядок"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "Аудирование",
+      "topic": "Фонемный",
+      "subskill": "minimal pairs",
+      "pattern": "Путает пару звуков",
+      "counterEvidence": "Верно с медленным двойным прослушиванием",
+      "countsWhen": "Очистить запись",
+      "doesNotCountWhen": "Известный шум",
+      "probe": "Тот же pair in different words",
+      "intervention": "Практика в парах",
+      "escalation": "Отчёт по слуху",
+      "observableMarkers": [
+        "Ошибка на той же паре"
+      ],
+      "roots": [
+        "Фонемика"
+      ],
+      "competitors": [
+        "Шум"
+      ],
+      "doNotConclude": [
+        "Нарушение слуха"
+      ]
+    }
+  }
+}

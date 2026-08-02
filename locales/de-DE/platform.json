@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Mathematik",
+    "geometry": "Geometrie",
+    "english": "Englisch",
+    "science": "Naturwissenschaften"
+  },
+  "activityModes": {
+    "live_lesson": "Live-Unterricht",
+    "guided_practice": "Angeleitete Übung",
+    "quiz": "Quiz",
+    "homework": "Hausaufgabe",
+    "discussion": "Diskussion",
+    "practice": "Übung",
+    "review": "Wiederholung"
+  },
+  "activityStatuses": {
+    "draft": "Entwurf",
+    "active": "Aktiv",
+    "paused": "Pausiert",
+    "closed": "Beendet",
+    "archived": "Archiviert"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Nicht begonnen",
+    "in_progress": "In Bearbeitung",
+    "submitted": "Abgegeben",
+    "completed": "Abgeschlossen",
+    "timed_out": "Zeit abgelaufen"
+  },
+  "roles": {
+    "teacher": "Lehrkraft",
+    "school_admin": "Schuladmin",
+    "admin": "Systemadmin"
+  },
+  "auditActions": {
+    "school_subject_granted": "Fachberechtigung erteilt",
+    "school_subject_revoked": "Fachzuweisung entzogen",
+    "school_student_enrolled": "Schüler eingeschrieben",
+    "school_student_unenrolled": "Schüler ausgeschrieben",
+    "school_class_viewed": "Klassenbericht angesehen",
+    "school_student_report_viewed": "Schülerbericht angesehen",
+    "school_student_class_transferred": "Schüler versetzt",
+    "school_class_teacher_reassigned": "Klassenlehrkraft neu zugewiesen",
+    "school_class_archived": "Klasse archiviert",
+    "assign_teacher": "Lehrkraft zugewiesen",
+    "assign_manager": "Verwalter ernannt",
+    "class_transfer": "Schüler versetzt",
+    "grant": "Berechtigung erteilt",
+    "revoke": "Berechtigung entzogen",
+    "archive": "Archiviert",
+    "viewed_student_report": "Schülerbericht angesehen",
+    "viewed_class_report": "Klassenbericht angesehen",
+    "grant_created": "Zugriffsrecht erstellt",
+    "grant_revoked": "Zugriffsrecht entzogen",
+    "magic_link_issued": "Anmeldelink ausgestellt",
+    "pin_rotated": "PIN geändert",
+    "username_rotated": "Benutzername geändert",
+    "teacher_quota_updated": "Kontingente aktualisiert",
+    "teacher_features_updated": "Funktionsberechtigungen aktualisiert",
+    "teacher_status_updated": "Kontostatus aktualisiert"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Systemaktion",
+    "activity": "Aktivität",
+    "classActivity": "Klassenaktivität",
+    "activitySuffix": "Aktivität"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "the_customer_waited_too_long": "Клиент ждал слишком долго",
+    "aria_first_pizza": "Первая пицца",
+    "aria_second_pizza": "Вторая пицца",
+    "aria_work_pizza": "Рабочая пицца",
+    "pizza_in_progress": "Пицца в процессе",
+    "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "К тебе заходят клиенты в пиццерию — приготовь им именно ту пиццу, которую они заказали!",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n                New game",
+    "leo_apos_s_pizzeria": "Пиццерия Leo",
+    "serve_pizza": "Подай пиццу 🍕",
+    "open_shift": "Открой shift 🍕",
+    "clear_pizza": "Очистить пиццу",
+    "new_game": "Новая игра",
+    "back": "Назад"
+  }
+}

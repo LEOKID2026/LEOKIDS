@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "oops_something_went_wrong": "Упс! Что-то пошло не так",
+    "we_couldn_t_load_the_game_you_can_try_again": "Не удалось загрузить игру. Можно попробовать снова.",
+    "back_to_games_list": "Назад к списку игр",
+    "offline_games_area": "Не в сети Игры Площадь",
+    "try_again": "Попробуй снова."
+  }
+}

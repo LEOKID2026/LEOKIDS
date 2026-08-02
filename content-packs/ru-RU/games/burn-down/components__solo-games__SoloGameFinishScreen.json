@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "back_to_games": "Назад к играм",
+    "play_again": "Играй Again",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "void,\r\n *   busy?: boolean,\r\n *   subtitleHe?: string,\r\n *   statsLines?: Array",
+    "diamond_balance": "Баланс алмазов:",
+    "coin_balance": "Баланс монет:",
+    "score": "Счёт:",
+    "level": "Уровень:"
+  }
+}

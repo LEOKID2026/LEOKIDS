@@ -1,0 +1,11 @@
+{
+  "gameId": "memory",
+  "title": "Leo's Memory Game",
+  "blurb": "Flip cards and find pairs before the clock runs out!",
+  "help": {
+    "howToPlay": "Tap a card to flip it, and find its matching pair. Every pair you find stays open.",
+    "scoring": "You start with a high score - the longer you take, the lower it drops. Finding all the pairs before time runs out = a win.",
+    "rewards": "Winning based on difficulty level grants coins and diamonds. The higher the score, the bigger the reward.",
+    "tip": "Try to remember where you saw each picture - even if you didn't find its pair right away."
+  }
+}

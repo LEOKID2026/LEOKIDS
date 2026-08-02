@@ -1,0 +1,256 @@
+{
+  "subjectId": "math",
+  "rows": {
+    "M-01": {
+      "id": "M-01",
+      "domain": "Число",
+      "topic": "Structure",
+      "subskill": "Разложение 10+1",
+      "pattern": "Ошибки при переводе между представлениями",
+      "counterEvidence": "Успех с показанным представлением без долгого объяснения",
+      "countsWhen": "Эквивалентные задания; без подсказки с полным решением",
+      "doesNotCountWhen": "Дана полная подсказка; только одно задание",
+      "probe": "Два представления одного числа",
+      "intervention": "Манипулятивы, затем постепенный переход к символам",
+      "escalation": "Не справляется с каждым представлением",
+      "observableMarkers": [
+        "Тот же error across two representations",
+        "Колебание перед ответом"
+      ],
+      "roots": [
+        "Пробел представления"
+      ],
+      "competitors": [
+        "Понимание прочитанного"
+      ],
+      "doNotConclude": [
+        "Не an arithmetic issue"
+      ]
+    },
+    "M-02": {
+      "id": "M-02",
+      "domain": "Действия",
+      "topic": "Сложение",
+      "subskill": "Перенос",
+      "pattern": "Ошибка в столбце десятков",
+      "counterEvidence": "Верно когда нет переноса",
+      "countsWhen": "Письменные цифры",
+      "doesNotCountWhen": "Только extreme-sized numbers without a carrying basis",
+      "probe": "Сложение с переносом / без переноса",
+      "intervention": "Перенос с записанным промежуточным шагом",
+      "escalation": "Зависит от промежуточного шага без прогресса",
+      "observableMarkers": [
+        "Тот же error type across different magnitudes"
+      ],
+      "roots": [
+        "Алгоритм переноса"
+      ],
+      "competitors": [
+        "Невнимательность"
+      ],
+      "doNotConclude": [
+        "Недостаток чувства числа"
+      ]
+    },
+    "M-03": {
+      "id": "M-03",
+      "domain": "Действия",
+      "topic": "Умножение",
+      "subskill": "Факт умножения",
+      "pattern": "Тот же pairs wrong repeatedly",
+      "counterEvidence": "Другие пары верны в той же сессии",
+      "countsWhen": "Регулярная практика; не только тест на скорость",
+      "doesNotCountWhen": "Только тест на скорость",
+      "probe": "Удвоить время на тот же набор",
+      "intervention": "Целевая практика в парах",
+      "escalation": "Не справляется с каждой парой даже медленно",
+      "observableMarkers": [
+        "Пересекающийся список неверных пар"
+      ],
+      "roots": [
+        "Пробел в фактах"
+      ],
+      "competitors": [
+        "Время pressure"
+      ],
+      "doNotConclude": [
+        "Совсем не может умножать"
+      ]
+    },
+    "M-04": {
+      "id": "M-04",
+      "domain": "Дроби",
+      "topic": "Representation",
+      "subskill": "Часть–целое",
+      "pattern": "Сравнение только по числителю",
+      "counterEvidence": "Верно когда знаменатели случайно совпадают",
+      "countsWhen": "Доступна схема/полоска дробей",
+      "doesNotCountWhen": "Только словесно, без представления, которое ещё не изучалось",
+      "probe": "С диаграммой / без",
+      "intervention": "Конкретная работа «часть–целое»",
+      "escalation": "Нет improvement in any representation",
+      "observableMarkers": [
+        "Ошибка даже при полной схеме"
+      ],
+      "roots": [
+        "Пробел в понимании дробей"
+      ],
+      "competitors": [
+        "Невнимательность"
+      ],
+      "doNotConclude": [
+        "Совсем не может с дробями"
+      ]
+    },
+    "M-05": {
+      "id": "M-05",
+      "domain": "Дроби",
+      "topic": "Сложение",
+      "subskill": "Расширение знаменателя",
+      "pattern": "Ошибка на том же шаге",
+      "counterEvidence": "Верно с совпадающими знаменателями",
+      "countsWhen": "Небольшие знаменатели в изученном диапазоне",
+      "doesNotCountWhen": "Большие знаменатели до того, как базовое умножение усвоено",
+      "probe": "Множители раскрытия 2, 3, 4",
+      "intervention": "Письменные шаги с параллельным разобранным примером",
+      "escalation": "Не справляется с базовым умножением",
+      "observableMarkers": [
+        "Ошибка в повторном умножении/раскрытии"
+      ],
+      "roots": [
+        "Алгоритм раскрытия"
+      ],
+      "competitors": [
+        "Слабое умножение"
+      ],
+      "doNotConclude": [
+        "Совсем не может с дробями"
+      ]
+    },
+    "M-06": {
+      "id": "M-06",
+      "domain": "Десятичные числа",
+      "topic": "Разряды чисел",
+      "subskill": "Rounding/comparison",
+      "pattern": "Неверно rounding direction",
+      "counterEvidence": "Верно с таблицей разрядов",
+      "countsWhen": "Некруглые числа",
+      "doesNotCountWhen": "В задании только круглые числа",
+      "probe": "С таблицей разрядов / без",
+      "intervention": "Цветовое кодирование разрядов",
+      "escalation": "Не справляется даже с таблицей",
+      "observableMarkers": [
+        "Повторяющаяся ошибка по одному правилу"
+      ],
+      "roots": [
+        "Пробел в разрядном значении"
+      ],
+      "competitors": [
+        "Понимание прочитанного"
+      ],
+      "doNotConclude": [
+        "Совсем не может с десятичными"
+      ]
+    },
+    "M-07": {
+      "id": "M-07",
+      "domain": "Текстовые задачи",
+      "topic": "Формулировка",
+      "subskill": "Единицы",
+      "pattern": "Верное число, неверная единица измерения",
+      "counterEvidence": "Верно когда запрашивается только число",
+      "countsWhen": "Единица явно в тексте",
+      "doesNotCountWhen": "В оригинале у вопроса нет единицы",
+      "probe": "С полем единицы / без",
+      "intervention": "Число plus a unit line",
+      "escalation": "Трудности даже без единицы",
+      "observableMarkers": [
+        "Повторяет неподходящую единицу"
+      ],
+      "roots": [
+        "Чтение вопроса"
+      ],
+      "competitors": [
+        "Вычисление"
+      ],
+      "doNotConclude": [
+        "Нет comprehension at all"
+      ]
+    },
+    "M-08": {
+      "id": "M-08",
+      "domain": "Текстовые задачи",
+      "topic": "Моделирование",
+      "subskill": "Многошаговое",
+      "pattern": "Не справляется только при объединении шагов",
+      "counterEvidence": "Успех с напечатанными шагами",
+      "countsWhen": "Нумерованные шаги",
+      "doesNotCountWhen": "Версия без шагов, когда ещё не изучалось",
+      "probe": "С a step template",
+      "intervention": "Steps plus a working-backward check",
+      "escalation": "Не справляется даже с одношаговыми задачами",
+      "observableMarkers": [
+        "Ошибка на том же финальном шаге"
+      ],
+      "roots": [
+        "Нагрузка на рабочую память"
+      ],
+      "competitors": [
+        "Пробел в вычислениях"
+      ],
+      "doNotConclude": [
+        "Совсем не может с текстовыми задачами"
+      ]
+    },
+    "M-09": {
+      "id": "M-09",
+      "domain": "Действия",
+      "topic": "Вычитание",
+      "subskill": "Составление десяти",
+      "pattern": "Обратное направление / складывает вместо вычитания",
+      "counterEvidence": "Верно на числовой прямой",
+      "countsWhen": "Числовая прямая/track available",
+      "doesNotCountWhen": "Длинная текстовая задача без представления, когда это ещё не изучалось",
+      "probe": "Числовая прямая plus symbolic",
+      "intervention": "Числовая прямая plus a distance model",
+      "escalation": "Нет improvement in either representation",
+      "observableMarkers": [
+        "Повторённый direction error"
+      ],
+      "roots": [
+        "Subtraction concept"
+      ],
+      "competitors": [
+        "Понимание прочитанного"
+      ],
+      "doNotConclude": [
+        "Общая арифметическая задача"
+      ]
+    },
+    "M-10": {
+      "id": "M-10",
+      "domain": "Multiplication/Division",
+      "topic": "Отношение",
+      "subskill": "Обратные действия",
+      "pattern": "Выбирает факт умножения, который не соответствует делению",
+      "counterEvidence": "Верно когда показано предложение умножения",
+      "countsWhen": "Маленький numbers",
+      "doesNotCountWhen": "Большие числа до освоения умножения",
+      "probe": "С предложением умножения / без",
+      "intervention": "Связь умножения и деления",
+      "escalation": "Стабильно не справляется",
+      "observableMarkers": [
+        "Ошибка, когда не показано умножение в виде предложения"
+      ],
+      "roots": [
+        "Обратная зависимость"
+      ],
+      "competitors": [
+        "Невнимательность"
+      ],
+      "doNotConclude": [
+        "Совсем не может делить"
+      ]
+    }
+  }
+}

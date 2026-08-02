@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "empty_slot": "Empty slot",
+    "top_tray": "Top tray 🧩",
+    "tray": "Tray 🧩",
+    "bottom_tray": "Bottom tray 🧩",
+    "close_picture": "Close picture",
+    "handledragstart_e_id_portraitmobile_hidelabel_singlerow": "handleDragStart(e, id)}\n\n              portraitMobile\n\n              hideLabel\n\n              singleRow\n\n            />",
+    "handledragstart_e_id_portraitmobile_hidelabel": "handleDragStart(e, id)}\n\n              portraitMobile\n\n              hideLabel\n\n            />",
+    "handledragstart_e_id": "handleDragStart(e, id)}\n\n            />",
+    "pick_a_piece": "Pick a piece"
+  }
+}

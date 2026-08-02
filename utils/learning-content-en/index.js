@@ -9,6 +9,8 @@ import { applyPtPtDisplayLayer } from "../learning-content-pt-PT/index.js";
 import { applyItItDisplayLayer } from "../learning-content-it-IT/index.js";
 import { applyFrFrDisplayLayer } from "../learning-content-fr-FR/index.js";
 import { applyNlNlDisplayLayer } from "../learning-content-nl-NL/index.js";
+import { applyDeDeDisplayLayer } from "../learning-content-de-DE/index.js";
+import { applyRuRuDisplayLayer } from "../learning-content-ru-RU/index.js";
 
 /**
  * Apply the Global English display layer (HE→EN maps / overlays).
@@ -40,7 +42,7 @@ function applyEnglishDisplayLayer(question, subject, opts = {}) {
  * - Shared logic/ids/params/diagnostics are untouched (mapQuestionTextFields only remaps text).
  * - Unregistered content locales (including he*) use the English display layer
  *   (never leave raw Hebrew stems for student display).
- * - Native math/geometry stem rebuilders for es-419 / pt-BR / pt-PT / it-IT / fr-FR / nl-NL;
+ * - Native math/geometry stem rebuilders for es-419 / pt-BR / pt-PT / it-IT / fr-FR / nl-NL / de-DE / ru-RU;
  *   science uses locale overlay; English subject keeps learning stems in EN.
  *
  * @param {Record<string, unknown>} question
@@ -89,6 +91,14 @@ export function localizeLearningQuestion(question, opts = {}) {
 
   if (contentLocale === "nl-NL" && (subject === "math" || subject === "geometry")) {
     return applyNlNlDisplayLayer(question, subject);
+  }
+
+  if (contentLocale === "de-DE" && (subject === "math" || subject === "geometry")) {
+    return applyDeDeDisplayLayer(question, subject);
+  }
+
+  if (contentLocale === "ru-RU" && (subject === "math" || subject === "geometry")) {
+    return applyRuRuDisplayLayer(question, subject);
   }
 
   return applyEnglishDisplayLayer(question, subject, {

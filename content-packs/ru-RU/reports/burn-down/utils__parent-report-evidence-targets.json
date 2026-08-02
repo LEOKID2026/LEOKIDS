@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "fewer_mid_task_stops_when_the_instructions_are_clear": "Меньше остановок посреди задания, когда инструкции понятны.",
+    "the_same_difficulty_level_with_similar_results_across_two_consecutive_se": "Тот же уровень сложности со сходными результатами в двух подряд сессиях."
+  }
+}

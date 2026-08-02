@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "active": "Активно",
+    "closed": "Закрыто",
+    "archived": "В архиве",
+    "digital_answer_sheet": "Цифровой лист ответов",
+    "manual_grading": "Ручная оценка",
+    "not_submitted": "Не сдано",
+    "submitted": "Отправлено",
+    "pending_review": "Ожидает проверки",
+    "partially_checked": "Частично проверено",
+    "checked": "Проверено",
+    "published": "Опубликовано",
+    "multiple_choice": "Выбор ответа",
+    "true_false": "Верно / Неверно",
+    "number": "Число",
+    "short_answer": "Коротк. answer",
+    "free_text": "Свободный текст"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "patterns_require_evidence_in_multiple_subjects_thin_single_subject_data_": "Patterns require evidence in multiple subjects; thin single-subject data cannot trigger."
+  }
+}

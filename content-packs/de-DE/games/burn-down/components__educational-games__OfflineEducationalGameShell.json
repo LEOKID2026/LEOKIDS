@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "Local game — no saving and no rewards",
+    "game_not_found": "Game not found",
+    "back_to_list": "Back to list",
+    "offline": "Offline",
+    "list": "List"
+  }
+}

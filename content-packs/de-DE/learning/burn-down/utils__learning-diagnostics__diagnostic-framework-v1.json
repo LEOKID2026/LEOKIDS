@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "number_r_accuracy": "Number(r.accuracy)",
+    "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o": "Multiple weak topic rows exist-subject-level concern may be considered only when breadth criteria are met."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "Локальная игра — без сохранения и наград",
+    "game_not_found": "Игра не найдена",
+    "back_to_list": "Назад к списку",
+    "offline": "Не в сети",
+    "list": "Список"
+  }
+}

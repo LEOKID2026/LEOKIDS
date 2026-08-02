@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "the_cat_is_red": "The cat is red",
+    "the_apple_is": "The apple is ___",
+    "she_likes_red": "She likes red"
+  }
+}

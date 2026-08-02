@@ -1,0 +1,116 @@
+{
+  "reportSubjects": ["math", "geometry", "english", "science"],
+  "subjects": {
+    "math": "Математика",
+    "geometry": "Геометрия",
+    "english": "Английский язык",
+    "science": "Естественные науки"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Длительная неактивность",
+    "no_sessions_in_range": "Нет сессий практики за этот период",
+    "low_overall_accuracy": "Сложности с общей результативностью",
+    "many_recent_mistakes": "Много недавних ошибок",
+    "never_active_in_range": "Нет активности за этот период",
+    "insufficient_answers": "Недостаточно данных для анализа"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Рекомендуется повторить основы предмета",
+    "encourage_session_start": "Рекомендуется побудить начать практику",
+    "targetedReview": "Рекомендуется закрепить {subject} на уроке",
+    "focusPractice": "Рекомендуется сосредоточить практику на предмете «{subject}»",
+    "generic": "Продолжайте отслеживать прогресс"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Нет активности за этот период",
+    "low_accuracy": "Сложности с результативностью",
+    "many_recent_mistakes": "Много недавних ошибок",
+    "recent_mistakes": "Повторяющиеся ошибки"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Требует немедленного внимания",
+    "needs_reinforcement": "Требует закрепления",
+    "monitor": "Стоит наблюдать",
+    "on_track": "В норме"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "Классу нужно немедленное внимание",
+    "class_needs_reinforcement": "Классу нужно закрепление",
+    "class_monitor": "Классу нужны наблюдение и целенаправленная практика",
+    "class_on_track": "Класс в норме"
+  },
+  "classHealth": {
+    "no_data": "Недостаточно данных",
+    "critical_class": "Классу нужно немедленное внимание",
+    "needs_reinforcement": "Классу нужно закрепление",
+    "monitor": "Классу нужны наблюдение и целенаправленная практика",
+    "strong": "Класс в норме"
+  },
+  "groupTier": {
+    "struggling": "Группа поддержки",
+    "on_track": "Группа в норме",
+    "advanced": "Продвинутая группа"
+  },
+  "guardianAccessState": {
+    "active": "Активен",
+    "expired": "Истёк",
+    "revoked": "Отозван"
+  },
+  "actionTypes": {
+    "class_reteach": "Повторное объяснение всему классу",
+    "small_group": "Работа в малой группе",
+    "individual_practice": "Целенаправленная индивидуальная практика",
+    "collect_more_data": "Дождаться дополнительных данных"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Классная активность",
+    "worksheet_pdf": "Лист заданий",
+    "focused_practice": "Целенаправленная практика"
+  },
+  "riskLevel": {
+    "high": "Требует немедленного внимания",
+    "moderate": "Стоит наблюдать",
+    "low": "В норме"
+  },
+  "focus": {
+    "studentCalmMessage": "Сейчас нет срочных тем — продолжайте как обычно.",
+    "hubStudentCalmMessage": "Нет тем для усиленного внимания — продолжайте наблюдение.",
+    "hubClassWeakTopicsCalmMessage": "Значимых слабых тем не обнаружено — продолжайте наблюдение.",
+    "studentFallbackBanner": "Сложности по этому предмету — нужна диагностическая практика, чтобы определить точную тему",
+    "classFallbackBanner": "У класса есть сложности по этому предмету — рекомендуется диагностическое закрепление на уровне класса"
+  },
+  "fallback": {
+    "unknownSubject": "Неизвестно",
+    "defaultTopic": "Тема",
+    "defaultStudentName": "Ученик",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} — сложности на уровне предмета",
+    "studentSubjectHeadlineNoSubject": "Сложности на уровне предмета",
+    "studentSubjectEvidence": "{percent}% правильных из {totalAnswers} ответов",
+    "studentSubjectAction": "Рекомендуется начать короткую диагностическую практику, чтобы определить точную тему",
+    "classSubjectHeadline": "{subject} — сложности класса на уровне предмета",
+    "classSubjectHeadlineNoSubject": "Сложности класса на уровне предмета",
+    "classSubjectAction": "Рекомендуется начать короткую диагностическую активность или целенаправленное повторение со всем классом",
+    "classSuffix": "Класс {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} — {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Нет активных классов",
+    "noClassesHint": "Создайте новый класс ниже, затем добавьте детей через «Управление классом» на карточке класса.",
+    "createClassLabel": "Название класса",
+    "createClassButton": "Создать класс",
+    "createClassPlaceholder": "например, 3 класс — LEO"
+  },
+  "activities": {
+    "personalSectionTitle": "Личные активности",
+    "individualBadge": "Личная"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Все дети ({count})",
+      "directStudents": "Частные дети ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

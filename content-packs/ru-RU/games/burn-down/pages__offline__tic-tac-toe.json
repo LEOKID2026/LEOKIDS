@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Назад",
+    "local_badge": "Локально",
+    "title": "Крестики-нолики",
+    "board_meta": "Доска {size}×{size} • {mode}",
+    "vs_bot": "против бота",
+    "two_players": "2 игрока",
+    "player_x": "Игрок X",
+    "player_o": "Игрок O",
+    "tie": "Tie",
+    "vs_bot_label": "против бота",
+    "reset_board": "Сбросить доску",
+    "reset_score": "Сбросить Счёт",
+    "player_won": "{player} победил!",
+    "tie_game": "Tie!",
+    "turn": "Turn:"
+  }
+}

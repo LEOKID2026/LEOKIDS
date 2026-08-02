@@ -46,11 +46,11 @@ test("stripLocaleFromPath: Hebrew /he is never a locale segment", () => {
 });
 
 test("stripLocaleFromPath: registered disabled locale still strips prefix", () => {
-  assert.deepEqual(stripLocaleFromPath("/de/about"), {
-    locale: "de",
+  assert.deepEqual(stripLocaleFromPath("/pl/about"), {
+    locale: "pl",
     pathname: "/about",
     hadPrefix: true,
-    pathSegment: "de",
+    pathSegment: "pl",
   });
   assert.deepEqual(stripLocaleFromPath("/about"), {
     locale: null,
@@ -69,6 +69,24 @@ test("stripLocaleFromPath: enabled France path prefix resolves to fr-FR", () => 
   });
 });
 
+test("stripLocaleFromPath: enabled Germany path prefix resolves to de-DE", () => {
+  assert.deepEqual(stripLocaleFromPath("/de/about"), {
+    locale: "de-DE",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "de",
+  });
+});
+
+test("stripLocaleFromPath: enabled Russia path prefix resolves to ru-RU", () => {
+  assert.deepEqual(stripLocaleFromPath("/ru/about"), {
+    locale: "ru-RU",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "ru",
+  });
+});
+
 test("withLocalePath: default en stays unprefixed", () => {
   assert.equal(withLocalePath("en", "/parent/dashboard"), "/parent/dashboard");
   assert.equal(withLocalePath("en-US", "/"), "/");
@@ -84,10 +102,12 @@ test("withLocalePath: pseudo locales receive prefix", () => {
 
 test("withLocalePath: Hebrew is not prefixed; registered locales are", () => {
   assert.equal(withLocalePath("he", "/about"), "/about");
-  // Bare `fr` is not an enabled registry id → en (unprefixed). Public path uses fr-FR.
+  // Bare `fr` / `de` are not enabled registry ids → en (unprefixed). Public paths use regional ids.
   assert.equal(withLocalePath("fr", "/about"), "/about");
   assert.equal(withLocalePath("fr-FR", "/about"), "/fr/about");
-  assert.equal(withLocalePath("de", "/about"), "/de/about");
+  assert.equal(withLocalePath("de", "/about"), "/about");
+  assert.equal(withLocalePath("de-DE", "/about"), "/de/about");
+  assert.equal(withLocalePath("pl", "/about"), "/pl/about");
 });
 
 test("shouldRedirectPrefixedDefaultLocale: /en prefix should redirect to unprefixed", () => {
@@ -164,6 +184,8 @@ test("isLocaleRoutable: enabled locales routable; disabled registry ids fall bac
   assert.equal(isLocaleRoutable("en-XA"), true);
   assert.equal(isLocaleRoutable("ar-XB"), true);
   assert.equal(isLocaleRoutable("fr-FR"), true);
-  assert.equal(isLocaleRoutable("de"), true);
+  assert.equal(isLocaleRoutable("de-DE"), true);
+  assert.equal(isLocaleRoutable("ru-RU"), true);
+  assert.equal(isLocaleRoutable("pl"), true);
   assert.equal(isLocaleRoutable("zz-unknown"), true);
 });

@@ -1,0 +1,126 @@
+{
+  "bar": {
+    "badge": "Demo mode",
+    "gradeLabel": "Klasse",
+    "playExpired": "Time for new starts has ended",
+    "playTime": "Play time",
+    "minutesUnit": "Min",
+    "changeGrade": "Change grade",
+    "exitDemo": "Exit demo"
+  },
+  "enter": {
+    "pageTitle": "Demo mode — LEO KIDS",
+    "pageDescription": "Try the kids world without signing up",
+    "heading": "Elternteil demo mode",
+    "intro": "Pick a grade and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
+    "activeSessionNote": "You have an active demo — changing grade will not reset the timer.",
+    "chooseGradeLegend": "Klasse wählen",
+    "enterButton": "Kinderwelt betreten",
+    "enteringButton": "Wird betreten…"
+  },
+  "homeButton": {
+    "labelDesktop": "Try the kids world",
+    "labelMobile": "Demo",
+    "ariaLabel": "Try the kids world — demo mode",
+    "dismissAriaLabel": "Dismiss demo button"
+  },
+  "gate": {
+    "loading": "Loading demo mode…",
+    "loadError": "Could not load demo mode. Try refreshing the page."
+  },
+  "timeExpiredModal": {
+    "title": "Demo time is up",
+    "body": "{minutes} minutes have passed since the demo started. You can keep browsing the kids world, but you cannot start a new game or activity.",
+    "inProgressNote": "Games or activities already in progress will continue until finished.",
+    "dismiss": "Verstanden",
+    "restart": "Start a new demo"
+  },
+  "onlineGameUnavailable": {
+    "title": "Online games are not available in demo mode",
+    "body": "In demo mode you can browse the arcade and see the games, but online multiplayer is not active.",
+    "backToArcade": "Zurück zur Spielhalle"
+  },
+  "display": {
+    "studentName": "Demo mode",
+    "greeting": "Welcome to demo mode",
+    "arcadePlayerName": "Demo player",
+    "myRoomMessage": "My room — demo preview",
+    "learningMinutesScope": "From session summaries (demo)",
+    "allSubjectsScope": "Alle Fächer",
+    "encouragement": "Keep practicing — this is a demo!",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Practice math",
+    "mathDescription": "Answer 5 math questions",
+    "soloTitle": "Solo game",
+    "soloDescription": "Play one solo game",
+    "tier5": "5 minutes",
+    "tier15": "15 minutes",
+    "tier30": "30 minutes"
+  },
+  "subjects": {
+    "math": "Mathematik",
+    "geometry": "Geometrie",
+    "english": "Englisch",
+    "science": "Naturwissenschaften"
+  },
+  "cards": {
+    "purchaseBlocked": "Purchases are not available in demo mode.",
+    "sellBlocked": "Selling cards is not available in demo mode.",
+    "loadFailed": "Could not load cards."
+  },
+  "arcade": {
+    "actionBlocked": "This action is not available in demo mode.",
+    "quickPlayBlocked": "Quick play is not available in demo mode."
+  },
+  "activity": {
+    "classroomUnavailable": "Classroom activities are not available in demo mode."
+  },
+  "worksheet": {
+    "pageTitle": "Arbeitsblatt — demo mode",
+    "intro": "You can browse Arbeitsblätter from the list on the home page. Digital submission is not available in demo mode.",
+    "backHome": "← Back to home",
+    "submitBlocked": "Submission is not available in demo mode."
+  },
+  "myRoom": {
+    "title": "My Room",
+    "saveBlocked": "Saving is not available in demo mode."
+  },
+  "friends": {
+    "demoUnavailable": "Friends and Leo number — demo preview. Adding friends and invites are not available."
+  },
+  "grades": {
+    "g1": "1. Klasse",
+    "g2": "2. Klasse",
+    "g3": "3. Klasse",
+    "g4": "4. Klasse",
+    "g5": "5. Klasse",
+    "g6": "6. Klasse"
+  },
+  "parentPortal": {
+    "barBadge": "Elternteil demo mode",
+    "barSubtitle": "View only · 3 sample children",
+    "barExit": "Exit demo",
+    "dashboardSubtitle": "Demo mode — Elternteil portal",
+    "homeParentLabelLine1": "Elternteil",
+    "homeParentLabelLine2": "demo",
+    "homeParentAriaLabel": "Elternteil demo — view-only portal",
+    "homeParentDismissAriaLabel": "Dismiss Elternteil demo button",
+    "enterPageTitle": "Elternteil demo — LEO KIDS",
+    "enterPageDescription": "Explore the Elternteil portal with sample children, reports, and recommendations — view only",
+    "enterHeading": "Elternteil portal demo",
+    "enterBack": "Zurück",
+    "enterIntro": "Explore the Elternteil portal with 3 sample children, reports, activities, and recommendations — view only, no sign-up.",
+    "enterActiveSessionNote": "You have an active Elternteil demo — you can continue where you left off.",
+    "enterReadOnlyNote": "Changes cannot be saved in this mode.",
+    "enterButton": "Enter Elternteil portal",
+    "enteringButton": "Wird betreten…",
+    "enterBackHome": "Zurück zur Startseite",
+    "readOnlyDefault": "Demo mode is view only. Changes cannot be saved.",
+    "readOnlyShare": "Demo mode — sharing outside the demo is not available.",
+    "readOnlyWorksheets": "Demo mode — you can browse Arbeitsblätter, but not create new ones.",
+    "apiReadOnlyError": "Demo mode is view only."
+  }
+}

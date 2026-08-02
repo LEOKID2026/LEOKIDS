@@ -1,0 +1,204 @@
+{
+  "rarity": {
+    "regular": "Обычный",
+    "special": "Особый",
+    "rare": "Редкая",
+    "gold": "Золото"
+  },
+  "cardType": {
+    "achievement": "Карточка достижения",
+    "shop": "Карточка магазина",
+    "event": "Карточка события"
+  },
+  "cardSource": {
+    "earned_achievement": "Учебное достижение",
+    "shop_purchase": "Покупка в магазине",
+    "surprise_box_reward": "Коробка с сюрпризом",
+    "duplicate_conversion": "Конвертация дубликата",
+    "card_sellback": "Продажа дубликата",
+    "admin_grant": "Подарок от команды"
+  },
+  "shop": {
+    "alreadyOwned": "Вы have it!",
+    "sellDuplicate": "Продать дубликат",
+    "catalogOwned": "Собрано",
+    "coinsLabel": "{amount} монет",
+    "notEnoughCoins": "Не хватает монет, чтобы купить это.",
+    "purchaseFailed": "Покупка не удалась — попробуй снова.",
+    "purchaseSuccess": "Вы bought {name}!",
+    "purchaseNetworkError": "Ошибка сети при покупке.",
+    "sellConfirmTitle": "Продать дубликат {name} за {amount}?",
+    "sellConfirmBody": "Одна копия останется в твоей коллекции.",
+    "sellFailed": "Не удалось продать дубликат — попробуй снова.",
+    "sellSuccess": "Продан дубликат за {amount}!",
+    "sellNetworkError": "Ошибка сети при продаже.",
+    "noDuplicate": "Вы don't have a duplicate to sell.",
+    "loadFailed": "Не удалось загрузить магазин прямо сейчас."
+  },
+  "series": {
+    "professions": "Профессии",
+    "space-tech": "Космос и технологии",
+    "fantasy": "Фэнтези",
+    "sport-fun": "Спорт и веселье",
+    "style": "Style",
+    "general": "Общие достижения",
+    "math": "Достижения по математике",
+    "language": "Достижения по языку",
+    "subjects": "Достижения по предмету",
+    "events": "События"
+  },
+  "fallback": {
+    "rewardCard": "Карточка награды",
+    "collectName": "Собери {name}!",
+    "earnCard": "Заработай эту карточку: {name}",
+    "eventLimited": "{name} — ограниченная карточку события!",
+    "genericGame": "Игра",
+    "keepLearning": "Keep learning to unlock this card",
+    "completeRequirement": "Выполни требование: {label}",
+    "availableInShop": "Доступно в магазине",
+    "availableInSurpriseBox": "Доступно в коробке сюрпризов",
+    "notAvailableNow": "Не available right now",
+    "progressOf": "{current} из {target}"
+  },
+  "topics": {
+    "addition": "Сложение",
+    "subtraction": "Вычитание",
+    "multiplication": "Умножение",
+    "division": "Деление",
+    "vocabulary": "Словарь"
+  },
+  "gradeBands": {
+    "g12": "1–2 классы",
+    "g34": "3–4 классы",
+    "g56": "5–6 классы"
+  },
+  "requirements": {
+    "total_questions": "Ответь на {minQuestions} вопросов всего",
+    "weekly_questions": "Ответь на {minQuestions} вопросов за последнюю неделю",
+    "subject_questions": "Ответь на {minQuestions} вопросов по предмету {subject}",
+    "subject_questions_fallback_subject": "Ответь на {minQuestions} вопросов по предмету",
+    "subject_accuracy": "Reach {minAccuracy}% accuracy in {subject}{topicPart} (at least {minQuestions} questions)",
+    "subject_accuracy_topic_part": " по теме {topic}",
+    "learning_streak_days": "Изучи for {minStreakDays} days in a row",
+    "active_days_streak": "Будь активен {minStreakDays} дней подряд",
+    "parent_activity_complete": "Заверши {minCompletedActivities} parent activities",
+    "monthly_learning_minutes": "Учись {minLearningMinutesMonthly} минут в этом месяце",
+    "event_window": "Карточка особого события — доступна в окне события",
+    "daily_mission_complete": "Выполни миссию: {missionKey}",
+    "daily_mission_generic": "Заверши a daily mission",
+    "grade_band_only": "Доступно для {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "Не удалось загрузить коробку сюрпризов.",
+    "networkError": "Ошибка сети при загрузке коробки сюрпризов.",
+    "ready": "Коробка сюрпризов готова!",
+    "readyMultiple": "{count} коробок готовы к открытию!",
+    "openError": "Сейчас не удалось открыть коробку. Попробуй ещё раз чуть позже.",
+    "noMoreBoxes": "Нет more boxes to open right now.",
+    "noBoxReady": "Сейчас нет готовой коробки — попробуй позже.",
+    "duplicateHint": "У тебя появился лишний экземпляр — дубликаты можно продать в магазине.",
+    "newCard": "Новая карточка в твоей коллекции!",
+    "ariaLabel": "Коробка с сюрпризом",
+    "title": "Коробка с сюрпризом",
+    "loading": "Загрузка...",
+    "nextBoxIn": "Следующ. box ready in",
+    "keepLearning": "Keep learning — a new box is coming soon!",
+    "openBox": "Открыть коробку",
+    "myCollection": "Моя коллекция"
+  },
+  "preview": {
+    "close": "Закрыть",
+    "download": "Скачать изображение",
+    "prev": "Предыдущая карточка",
+    "next": "Следующ. card",
+    "locked": "Закрыто"
+  },
+  "lockedStamp": {
+    "label": "Закрыто"
+  },
+  "shopView": {
+    "loading": "Загрузка card shop...",
+    "loadErrorTitle": "Не удалось загрузить магазин карточек.",
+    "tryAgain": "Попробовать снова",
+    "empty": "Нет cards available to buy right now.",
+    "coinBalance": "Баланс монет: {amount}",
+    "buyPrice": "Цена покупки: {amount}",
+    "sellValue": "Цена продажи: {amount}",
+    "needMoreCoins": "Вы need {amount} more",
+    "notEnoughCoinsShort": "Недостаточно монет",
+    "noDuplicateToSell": "Нет duplicate copy to sell.",
+    "sellFailed": "Не удалось продать дубликат — попробуй снова.",
+    "sellSuccess": "Ты продал(а) дубликат {name} и получил(а) {amount}!",
+    "sellNetworkError": "Ошибка сети при продаже.",
+    "buy": "Купить",
+    "sellDuplicateAction": "Продать дубликат",
+    "selling": "продаже...",
+    "buying": "Покупка...",
+    "buyFor": "Купить за {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "Закрыть",
+    "openingTitle": "Открываем коробку...",
+    "doneTitle": "Отлично! Ты получил награды!",
+    "idleTitle": "Коробка с сюрпризом",
+    "rolling": "Крутим твои награды...",
+    "coinsReward": "+{amount} монет",
+    "diamondsReward": "+{amount} алмазов",
+    "openAnother": "Открой another box",
+    "viewCards": "Смотреть мои карточки"
+  },
+  "previewModal": {
+    "close": "Закрыть",
+    "download": "Скачать мою карточку",
+    "downloading": "Скачивание...",
+    "downloadError": "Не удалось скачать карточку. Попробуй ещё раз.",
+    "prev": "Предыдущая карточка",
+    "next": "Следующ. card",
+    "cardImageAlt": "Изображение карточки",
+    "rarityLabel": "Редкость: {label}",
+    "seriesLabel": "Серия: {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "Мир детей",
+    "title": "Мои карточки",
+    "subtitle": "Коллекция, магазин, все карты и серии",
+    "featureDisabled": "Коллекция карточек пока недоступна.",
+    "loading": "Загрузка cards...",
+    "loadError": "Не удалось загрузить карточки.",
+    "tryAgain": "Попробовать снова",
+    "tabsAriaLabel": "Вкладки карточек",
+    "collectionEmpty": "В коллекции пока нет карточек — открой коробку сюрпризов в Мире детей или купи в магазине!",
+    "catalogEmpty": "Нет cards to show.",
+    "seriesEmpty": "Нет card series yet.",
+    "tabs": {
+      "collection": {
+        "label": "Моя коллекция",
+        "shortLabel": "Коллекция"
+      },
+      "shop": {
+        "label": "Магазин карточек",
+        "shortLabel": "Магазин"
+      },
+      "catalog": {
+        "label": "Все карточки",
+        "shortLabel": "Все"
+      },
+      "series": {
+        "label": "Серия",
+        "shortLabel": "Серия"
+      }
+    }
+  },
+  "server": {
+    "economyUnavailable": "Экономика монет сейчас недоступна",
+    "duplicateConversionRemoved": "Дубликат преобразования удалён — дубликат можно продать в магазине.",
+    "missingSeries": "Серия отсутствует — для карточек магазина/достижений нужна серия со slug",
+    "multipartRequired": "Загрузка должна использовать multipart/form-data",
+    "variantProcessFailed": "Не удалось обработать версию карточки",
+    "boxNeedsPrize": "В коробке нужен хотя бы один приз — карточки и/или монеты.",
+    "boxSettingsInvalidJson": "Настройки коробки должны быть JSON-объектом.",
+    "notPurchasable": "Эту карточку нельзя купить",
+    "alreadyOwnedCollection": "Уже в твоей коллекции",
+    "insufficientCoinsDetailed": "У тебя недостаточно монет для этой карточки"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "b_x_a_y": "b.x && a.y",
+    "hold_to_fly": "Hold to fly"
+  }
+}

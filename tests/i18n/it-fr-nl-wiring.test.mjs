@@ -170,9 +170,9 @@ function countJsonFiles(dir) {
   return n;
 }
 
-test("selector includes Italy France Netherlands; count 37", () => {
+test("selector includes Italy France Netherlands; count 39", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 37);
+  assert.equal(locales.length, 39);
   for (const c of LOCALES) {
     const hit = locales.find((l) => l.id === c.id);
     assert.ok(hit, c.id);
@@ -181,7 +181,8 @@ test("selector includes Italy France Netherlands; count 37", () => {
     assert.equal(hit.pathPrefix, c.prefix);
   }
   assert.ok(!locales.some((l) => l.id === "it" || l.id === "fr" || l.id === "nl"));
-  assert.ok(!locales.some((l) => l.id === "de-DE" || l.id === "ru-RU"));
+  assert.ok(locales.some((l) => l.id === "de-DE"));
+  assert.ok(locales.some((l) => l.id === "ru-RU"));
 });
 
 for (const c of LOCALES) {
@@ -413,16 +414,16 @@ test("product resolveContentLocale keeps existing locales and registry-enabled i
   for (const loc of getSelectableLocales()) {
     assert.equal(resolveProductContentLocale({ contentLocale: loc.id }), loc.id, loc.id);
   }
-  // Future de-DE / ru-RU: bare stubs disabled today → en. Once a regional id is
-  // enabled in the registry (same as it-IT/fr-FR/nl-NL), the product wrapper
-  // keeps it without es-/pt-/en- prefix allowlists.
-  assert.equal(resolveProductContentLocale({ contentLocale: "de-DE" }), "en");
-  assert.equal(resolveProductContentLocale({ contentLocale: "ru-RU" }), "en");
-  assert.equal(LOCALE_REGISTRY.de?.enabled, false);
-  assert.equal(LOCALE_REGISTRY.ru?.enabled, false);
+  // de-DE and ru-RU are live; bare `ru` is not a registry alias.
+  assert.equal(resolveProductContentLocale({ contentLocale: "de-DE" }), "de-DE");
+  assert.equal(resolveProductContentLocale({ contentLocale: "ru-RU" }), "ru-RU");
+  assert.ok(!LOCALE_REGISTRY.de);
+  assert.ok(!LOCALE_REGISTRY.ru);
   assert.equal(Boolean(LOCALE_REGISTRY["it-IT"]?.enabled), true);
   assert.equal(Boolean(LOCALE_REGISTRY["fr-FR"]?.enabled), true);
   assert.equal(Boolean(LOCALE_REGISTRY["nl-NL"]?.enabled), true);
+  assert.equal(Boolean(LOCALE_REGISTRY["de-DE"]?.enabled), true);
+  assert.equal(Boolean(LOCALE_REGISTRY["ru-RU"]?.enabled), true);
 });
 
 test("fr-FR meanings = 745 and match WORD_LISTS authority", () => {

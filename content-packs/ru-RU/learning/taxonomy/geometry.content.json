@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "Фигуры",
+      "topic": "Четырёхугольники",
+      "subskill": "Rectangle/parallelogram properties",
+      "pattern": "Путает свойства",
+      "counterEvidence": "Верно на только чистых фигурах",
+      "countsWhen": "Углы отмечены",
+      "doesNotCountWhen": "Только названия без диаграммы",
+      "probe": "С angle/side marking",
+      "intervention": "Карточки определений",
+      "escalation": "Ошибка на каждой фигуре",
+      "observableMarkers": [
+        "Ошибка, когда угол не 90°"
+      ],
+      "roots": [
+        "Пересекающиеся определения"
+      ],
+      "competitors": [
+        "Вспоминание имён"
+      ],
+      "doNotConclude": [
+        "Нет geometry"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "Углы",
+      "topic": "Измерение",
+      "subskill": "Чтение a protractor",
+      "pattern": "Ошибка в диапазоне углов",
+      "counterEvidence": "Верно с измерением с подсказками",
+      "countsWhen": "Транспортир и инструкции действительны",
+      "doesNotCountWhen": "Угол слишком мал в вводящем в заблуждение интерфейсе",
+      "probe": "С подсказкой vs самостоятельно",
+      "intervention": "Практика масштаба",
+      "escalation": "Отчёт о зрении",
+      "observableMarkers": [
+        "Повторяющаяся ошибка в том же диапазоне"
+      ],
+      "roots": [
+        "Чтение a scale"
+      ],
+      "competitors": [
+        "Скорость"
+      ],
+      "doNotConclude": [
+        "Проблема со зрением"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "Площадь",
+      "topic": "Параллелограмм",
+      "subskill": "Высота",
+      "pattern": "Использование сторон как высоты",
+      "counterEvidence": "Всегда верно для прямоугольника",
+      "countsWhen": "Высоту можно добавить",
+      "doesNotCountWhen": "Только большие числа без модели",
+      "probe": "С линией высоты / без",
+      "intervention": "Выделить высоту",
+      "escalation": "Ошибка на прямоугольнике",
+      "observableMarkers": [
+        "Ошибка, когда не проведена высота"
+      ],
+      "roots": [
+        "Выбор высоты"
+      ],
+      "competitors": [
+        "Неверно multiplication"
+      ],
+      "doNotConclude": [
+        "Нет formulas"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "Преобразование",
+      "topic": "Поворот",
+      "subskill": "Direction/angle",
+      "pattern": "Обратный поворот",
+      "counterEvidence": "Верно на сетке",
+      "countsWhen": "Сетка и ось",
+      "doesNotCountWhen": "Нет grid before teaching",
+      "probe": "С осью / без",
+      "intervention": "Сетка + вершины",
+      "escalation": "Без улучшения",
+      "observableMarkers": [
+        "Повторённый direction error"
+      ],
+      "roots": [
+        "Пространственная ориентация"
+      ],
+      "competitors": [
+        "Невнимательность"
+      ],
+      "doNotConclude": [
+        "Нет spatial thinking"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "Объём",
+      "topic": "Прямоугольный параллелепипед",
+      "subskill": "3D-модель",
+      "pattern": "Забывает про глубину",
+      "counterEvidence": "Верно на простом кубе",
+      "countsWhen": "Развёртка доступна",
+      "doesNotCountWhen": "Нет diagram when not taught",
+      "probe": "С развёрткой / без",
+      "intervention": "Бумажная развёртка",
+      "escalation": "Ошибка на кубе",
+      "observableMarkers": [
+        "2D-ответ",
+        "Верно с развёрткой"
+      ],
+      "roots": [
+        "3D-модель"
+      ],
+      "competitors": [
+        "Умножение"
+      ],
+      "doNotConclude": [
+        "Нет volume"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "Измерение",
+      "topic": "Периметр",
+      "subskill": "Перевод единиц",
+      "pattern": "Повторённый unit error",
+      "counterEvidence": "Верно с ключом",
+      "countsWhen": "Ключ доступен",
+      "doesNotCountWhen": "Преобразование ещё не проходили",
+      "probe": "Две единицы для одной длины",
+      "intervention": "Ключ перевода",
+      "escalation": "Ошибка на одной линии",
+      "observableMarkers": [
+        "Тот же unit error"
+      ],
+      "roots": [
+        "Единицы"
+      ],
+      "competitors": [
+        "Вычисление"
+      ],
+      "doNotConclude": [
+        "Нет measurement"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "Симметрия",
+      "topic": "Фигура",
+      "subskill": "Ось",
+      "pattern": "Повторённый wrong axis",
+      "counterEvidence": "Верно когда ось показана",
+      "countsWhen": "Доступные очки",
+      "doesNotCountWhen": "Несимметричная фигура",
+      "probe": "С осью / без",
+      "intervention": "Сгиб бумаги",
+      "escalation": "Без улучшения",
+      "observableMarkers": [
+        "Ошибка с отмеченными точками"
+      ],
+      "roots": [
+        "Visual"
+      ],
+      "competitors": [
+        "Невнимательность"
+      ],
+      "doNotConclude": [
+        "Нет symmetry"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "Треугольник",
+      "topic": "Площадь",
+      "subskill": "base×height÷2",
+      "pattern": "Забывает ÷2 или неверную высоту",
+      "counterEvidence": "Верно только на простых случаях",
+      "countsWhen": "Ясная внутренняя высота",
+      "doesNotCountWhen": "Тупой угол без шага обучения",
+      "probe": "Высота снаружи выделена",
+      "intervention": "Определи высоту → формула",
+      "escalation": "Ошибка на прямоугольном треугольнике",
+      "observableMarkers": [
+        "Повторённый error",
+        "Верно на прямоугольном треугольнике с внутренней высотой"
+      ],
+      "roots": [
+        "Формула"
+      ],
+      "competitors": [
+        "Структура треугольника"
+      ],
+      "doNotConclude": [
+        "Нет triangles"
+      ]
+    }
+  }
+}

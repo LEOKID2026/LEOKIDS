@@ -1,0 +1,116 @@
+{
+  "reportSubjects": ["math", "geometry", "english", "science"],
+  "subjects": {
+    "math": "Mathematik",
+    "geometry": "Geometrie",
+    "english": "Englisch",
+    "science": "Naturwissenschaften"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Längere Inaktivität",
+    "no_sessions_in_range": "Keine Übungssitzungen in diesem Zeitraum",
+    "low_overall_accuracy": "Schwierigkeiten bei der Gesamtleistung",
+    "many_recent_mistakes": "Hohe Anzahl aktueller Fehler",
+    "never_active_in_range": "Keine Aktivität in diesem Zeitraum",
+    "insufficient_answers": "Nicht genug Daten für eine Analyse"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Wiederholung der Fachgrundlagen empfohlen",
+    "encourage_session_start": "Empfehlung, zum Beginn einer Übung zu ermutigen",
+    "targetedReview": "Empfehlung, {subject} im Unterricht zu vertiefen",
+    "focusPractice": "Empfehlung, die Übung auf {subject} zu fokussieren",
+    "generic": "Fortschritt weiter beobachten"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inaktiv in diesem Zeitraum",
+    "low_accuracy": "Schwierigkeiten bei der Leistung",
+    "many_recent_mistakes": "Hohe Anzahl aktueller Fehler",
+    "recent_mistakes": "Wiederkehrende Fehler"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Braucht sofortige Aufmerksamkeit",
+    "needs_reinforcement": "Braucht Verstärkung",
+    "monitor": "Sollte beobachtet werden",
+    "on_track": "Auf gutem Weg"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "Klasse braucht sofortige Aufmerksamkeit",
+    "class_needs_reinforcement": "Klasse braucht Verstärkung",
+    "class_monitor": "Klasse braucht Beobachtung und gezielte Übung",
+    "class_on_track": "Klasse ist auf gutem Weg"
+  },
+  "classHealth": {
+    "no_data": "Nicht genug Daten",
+    "critical_class": "Klasse braucht sofortige Aufmerksamkeit",
+    "needs_reinforcement": "Klasse braucht Verstärkung",
+    "monitor": "Klasse braucht Beobachtung und gezielte Übung",
+    "strong": "Klasse ist auf gutem Weg"
+  },
+  "groupTier": {
+    "struggling": "Fördergruppe",
+    "on_track": "Gruppe auf gutem Weg",
+    "advanced": "Fortgeschrittene Gruppe"
+  },
+  "guardianAccessState": {
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "revoked": "Entzogen"
+  },
+  "actionTypes": {
+    "class_reteach": "Erneute Erklärung für die ganze Klasse",
+    "small_group": "Arbeit in Kleingruppen",
+    "individual_practice": "Gezielte Einzelübung",
+    "collect_more_data": "Auf weitere Daten warten"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Unterrichtsaktivität",
+    "worksheet_pdf": "Arbeitsblatt",
+    "focused_practice": "Gezielte Übung"
+  },
+  "riskLevel": {
+    "high": "Braucht sofortige Aufmerksamkeit",
+    "moderate": "Sollte beobachtet werden",
+    "low": "Auf gutem Weg"
+  },
+  "focus": {
+    "studentCalmMessage": "Momentan keine dringenden Themen - wie gewohnt weitermachen.",
+    "hubStudentCalmMessage": "Keine Schwerpunktthemen - weiter beobachten.",
+    "hubClassWeakTopicsCalmMessage": "Keine wesentlichen Schwachstellen erkannt - weiter beobachten.",
+    "studentFallbackBanner": "Schwierigkeiten in diesem Fach - diagnostische Übung nötig, um das genaue Thema zu bestimmen",
+    "classFallbackBanner": "Die Klasse zeigt Schwierigkeiten in diesem Fach - diagnostische Klassenverstärkung empfohlen"
+  },
+  "fallback": {
+    "unknownSubject": "Unbekannt",
+    "defaultTopic": "Thema",
+    "defaultStudentName": "Schüler",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} - Schwierigkeit auf Fachebene",
+    "studentSubjectHeadlineNoSubject": "Schwierigkeit auf Fachebene",
+    "studentSubjectEvidence": "{percent}% richtig von {totalAnswers} Antworten",
+    "studentSubjectAction": "Empfehlung, eine kurze diagnostische Übung zu starten, um das genaue Thema zu bestimmen",
+    "classSubjectHeadline": "{subject} - fachliche Schwierigkeit auf Klassenebene",
+    "classSubjectHeadlineNoSubject": "Fachliche Schwierigkeit auf Klassenebene",
+    "classSubjectAction": "Empfehlung, eine kurze diagnostische Aktivität oder gezielte Wiederholung für die ganze Klasse zu starten",
+    "classSuffix": "Klasse {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} - {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Keine aktiven Klassen",
+    "noClassesHint": "Erstelle unten eine neue Klasse und füge dann Kinder über „Klasse verwalten“ auf der Klassenkarte hinzu.",
+    "createClassLabel": "Klassenname",
+    "createClassButton": "Klasse erstellen",
+    "createClassPlaceholder": "z. B. Klasse 3 - LEO"
+  },
+  "activities": {
+    "personalSectionTitle": "Persönliche Aktivitäten",
+    "individualBadge": "Persönlich"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Alle Kinder ({count})",
+      "directStudents": "Private Kinder ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "worksheet": "Arbeitsblatt",
+    "name": "Name: ________________",
+    "date": "Date: ________________",
+    "options": "Options:",
+    "answer": "Answer:",
+    "question": "Aufgabe",
+    "answer_2": "Antwort",
+    "answer_key": "Lösungen"
+  }
+}

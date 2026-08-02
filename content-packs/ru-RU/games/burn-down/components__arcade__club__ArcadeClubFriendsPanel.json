@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "Номер Leo (8 цифр) или отображаемое имя",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "Это номер, который ты даёшь другу — он может ввести его ниже, чтобы отправить запрос в друзья.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "Введите номер Leo или отображаемое имя — будет отправлен запрос в друзья на подтверждение.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "Не удалось показать твой номер Leo — попробуй обновить страницу.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "Друзья — управляются через админку. Для гостей пока закрыто.",
+    "setquery_e_target_value": "setQuery(e.target.value)}\r\n          />",
+    "remove_this_friend_from_your_list": "Убрать этого друга из списка?",
+    "setting_up_your_leo_number": "Настраиваем твой номер Leo…",
+    "requests_friends": "Запросы и друзья",
+    "friend_requests": "Запросы в друзья",
+    "no_friends_yet": "Нет friends yet",
+    "my_leo_number": "Мой номер Leo",
+    "remove_friend": "Удалить из друзей",
+    "add_friend": "Добавить друга",
+    "my_friends": "Мои друзья",
+    "friends": "Друзья",
+    "approve": "Одобрить",
+    "decline": "Спад",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "invite": "Пригласить"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "Эта активность сейчас недоступна",
+    "activity_not_found": "Активность не найдена",
+    "this_activity_has_not_started_yet": "Эта активность ещё не началась",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Ответы сейчас нельзя отправить для этой активности",
+    "this_activity_is_closed": "Эта активность закрыта",
+    "time_is_up_for_this_activity": "Время для этой активности истекло",
+    "could_not_open_this_activity_right_now": "Не удалось открыть эту активность прямо сейчас",
+    "not_found": "Не найдено",
+    "please_sign_in": "Пожалуйста, войдите",
+    "you_do_not_have_permission_to_open_this_activity": "У тебя нет разрешения открыть эту активность",
+    "this_activity_is_not_assigned_to_you": "Эта активность вам не назначена",
+    "could_not_identify_the_account": "Не удалось определить аккаунт",
+    "could_not_complete_that_action_right_now": "Не удалось выполнить это действие прямо сейчас",
+    "you_already_submitted_this_activity": "Ты уже отправил эту активность",
+    "you_already_answered_this_question": "Ты уже ответил на этот вопрос",
+    "waiting_for_the_teacher": "Ждём учителя…",
+    "no_answer_submission_needed": "Нет answer submission needed",
+    "the_system_is_updating_try_again_later": "Система обновляется — попробуй позже",
+    "something_went_wrong_please_try_again": "Что-то пошло не так — попробуйте ещё раз",
+    "server_error_please_try_again": "Ошибка сервера — попробуйте ещё раз",
+    "action_not_supported": "Действие не поддерживается",
+    "could_not_load_the_question_right_now": "Не удалось загрузить вопрос прямо сейчас",
+    "could_not_submit_an_answer_right_now": "Не удалось отправить ответ прямо сейчас"
+  }
+}

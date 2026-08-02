@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "first_player": "Первый игрок",
+    "play_one_arcade_game": "Играй one arcade game",
+    "win_10_times": "Выиграй 10 раз",
+    "play_50_arcade_games": "Играй 50 arcade games"
+  }
+}

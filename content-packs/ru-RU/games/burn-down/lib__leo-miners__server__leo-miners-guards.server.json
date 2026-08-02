@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Неверный ключ идемпотентности",
+    "invalid_action_type": "Недопустимый тип действия",
+    "missing_stage_data_for_mining": "Нет данных этапа для добычи",
+    "too_many_breaks_in_one_request": "Слишком many breaks in one request",
+    "invalid_claim_type": "Неверный тип утверждения",
+    "offline_time_exceeds_the_allowed_limit": "Офлайн-время превышает допустимый лимит",
+    "offline_time_does_not_match_server_data": "Офлайн-время не совпадает с данными сервера",
+    "too_many_breaks_try_again_in_a_moment": "Слишком много перерывов — попробуй через мгновение",
+    "guests_cannot_collect_rewards_please_link_an_account": "Гости не могут получать награды — привяжите аккаунт",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners: ещё не включён — примените миграцию и конфигурацию",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners: отключён в настройках Admin",
+    "leo_miners_economy_is_disabled": "Leo Miners: экономика отключена",
+    "leo_miners_point_accrual_is_disabled": "Leo Miners: начисление очков отключено",
+    "offline_collection_is_disabled": "Офлайн-коллекция отключена",
+    "leo_miners_gifts_are_disabled": "Leo Miners: подарки отключены",
+    "leo_miners_claims_are_disabled": "Leo Miners: заявки отключены",
+    "diamond_chest_is_disabled": "Алмазный сундук отключён",
+    "guests_cannot_collect_diamonds": "Гости не могут собирать алмазы"
+  }
+}

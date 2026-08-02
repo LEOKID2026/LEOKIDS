@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "student_report": "Отчёт ученика",
+    "invalid_student_id": "Неверный ID ученика.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "У Вас нет разрешения смотреть отчёт этого ученика.",
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты"
+  }
+}

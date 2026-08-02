@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Игры",
+  "arcade": "Аркада",
+  "solo": "Одиночные игры",
+  "educational": "Обучающие игры",
+  "play": "Играть",
+  "pause": "Пауза",
+  "resume": "Продолжить",
+  "settings": "Настройки игры",
+  "soundOn": "Звук включён",
+  "soundOff": "Звук выключен",
+  "youWin": "Ты победил!",
+  "youLose": "Хорошая попытка!",
+  "draw": "Ничья",
+  "inviteFriend": "Пригласить друга",
+  "waitingForOpponent": "Ожидание соперника…",
+  "matchFound": "Соперник найден!",
+  "connectionLost": "Связь потеряна. Пробуем снова…",
+  "back": "Назад",
+  "gamesBadge": "Игры",
+  "hubSubtitle": "Выбери формат — игры Leo, офлайн и многое другое.",
+  "hubRegularTitle": "Игры Leo",
+  "hubRegularBlurb": "Игры Leo — память, головоломки, меткость и другое.",
+  "hubOfflineTitle": "Всегда с Leo",
+  "hubOfflineBlurb": "Играй даже без интернета",
+  "hubEducationalTitle": "Обучающие игры Leo",
+  "hubEducationalBlurb": "Развитие, мышление и общие знания",
+  "hubOnlineTitle": "Игры с друзьями",
+  "hubOnlineBlurb": "Многопользовательские комнаты с друзьями и другими игроками.",
+  "devPrototypeMeta": "Разработка · внутренняя проверка",
+  "soloHubBadge": "Игры Leo",
+  "soloHubTitle": "Игры Leo — мир детей",
+  "soloHubSubtitle": "Играй, зарабатывай очки и собирай монеты и камни для своего мира!",
+  "soloMeta": "Одиночная · монеты · камни",
+  "playNow": "Играть сейчас",
+  "educationalBadge": "Обучающие",
+  "educationalHubTitle": "Обучающие игры",
+  "educationalHubSubtitle": "Игры, которые развивают навыки и дарят удовольствие.",
+  "noGamesAvailable": "Сейчас нет доступных игр.",
+  "educationalMeta": "Обучающая игра · Монеты",
+  "arcadeBack": "Аркада",
+  "arcadeBadge": "Игровой клуб",
+  "arcadeHubTitle": "Игровой клуб Leo",
+  "arcadeHubSubtitle": "Играй с друзьями — создай комнату или присоединись.",
+  "entryCostLabel": "Стоимость входа",
+  "selectEntryCost": "Выбери сумму входа",
+  "roomTypeQuick": "Быстрый матч",
+  "roomTypePublic": "Публичная",
+  "playersLabel": "Игроки",
+  "apiSuccess": "Готово",
+  "apiAlreadyQueued": "Уже в очереди (повторно не списано)",
+  "apiInsufficientFunds": "Недостаточно монет для этого действия",
+  "apiFailed": "Действие не удалось",
+  "quickAlreadyInRoom": "Уже в комнате — нажми «Войти в игру»",
+  "quickJoined": "Присоединился к игроку, ожидающему в комнате",
+  "quickCreated": "Комната быстрого матча создана — ожидание другого игрока",
+  "quickReady": "Готов",
+  "social": {
+    "greatGame": "Отличная игра!",
+    "wellPlayed": "Хорошо сыграно!",
+    "rematch": "Ещё раз?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Четыре в ряд",
+      "blurb": "Четыре в ряд · двое игроков",
+      "players": "Игроки: 2"
+    },
+    "ludo": {
+      "title": "Лудо",
+      "blurb": "Лудо · семейная настольная игра",
+      "players": "Игроки: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Змеи и лестницы",
+      "blurb": "Поле 1–100 · лестницы и змеи",
+      "players": "Игроки: 2–4"
+    },
+    "checkers": {
+      "title": "Шашки",
+      "blurb": "Классические шашки · обязательные взятия",
+      "players": "Игроки: 2"
+    },
+    "chess": {
+      "title": "Шахматы",
+      "blurb": "Классические шахматы · шах и мат",
+      "players": "Игроки: 2"
+    },
+    "dominoes": {
+      "title": "Домино",
+      "blurb": "Домино с блокировкой · играй до конца",
+      "players": "Игроки: 2"
+    },
+    "bingo": {
+      "title": "Бинго",
+      "blurb": "Бинго · побеждает полная линия",
+      "players": "Игроки: до 8"
+    }
+  }
+}

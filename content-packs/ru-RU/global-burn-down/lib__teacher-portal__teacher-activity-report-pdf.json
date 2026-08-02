@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "activity_report_teacher": "Отчёт об активности — учитель",
+    "questions": "Вопросы",
+    "student_summary": "Сводка по ученику",
+    "question_analysis": "Анализ вопроса",
+    "skill_analysis": "Анализ навыка"
+  }
+}

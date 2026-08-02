@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-detective",
+  "title": "Словесный детектив Лео",
+  "blurb": "Перетаскивай доказательства на доску и решай дела по чтению и словарю",
+  "help": {
+    "howToPlay": "Перетащи evidence cards onto the investigation board and tap \"Solve Case\". When the answer is correct - the case is closed!",
+    "scoring": "Верный ответ +30, бонус за время, серия из 3 +15, серия из 5 +30. Тайм-аут −5. Ошибка не заканчивает игру — она просто считается.",
+    "rewards": "Монеты начисляются по числу решённых из 20 дел, точности, сериям и уровню сложности.",
+    "tip": "Прочитай the case task carefully - on hard level there's a short passage on the board."
+  },
+  "accessibility": {
+    "title": "Словесный детектив Лео"
+  }
+}

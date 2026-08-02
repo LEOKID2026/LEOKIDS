@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "Rectangle area planning assumes distinguishing area vs perimeter in context.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "Строка суммы углов треугольника поздней полосы продолжает тот же принцип — подтвердите последовательность до применения.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "Нет автоматической цепочки предварительных требований для этого шаблона — авторы учебного плана задают её явно."
+  }
+}

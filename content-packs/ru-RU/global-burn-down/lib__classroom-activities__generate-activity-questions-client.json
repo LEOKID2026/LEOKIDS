@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "human_body": "Человеческое тело",
+    "animals": "Животные",
+    "plants": "Растения",
+    "materials": "Материалы",
+    "experiments": "Опыты",
+    "earth_and_space": "Земля и космос",
+    "environment": "Окружающая среда",
+    "standard": "Стандарт",
+    "medium": "Средний",
+    "advanced": "Продвинутый",
+    "basic_shapes": "Основные фигуры",
+    "perimeter": "Периметр",
+    "volume": "Объём",
+    "angles": "Углы",
+    "parallel_and_perpendicular": "Параллельность и перпендикулярность",
+    "triangles": "Треугольники",
+    "quadrilaterals": "Четырёхугольники",
+    "transformations": "Преобразования",
+    "rotation": "Поворот",
+    "symmetry": "Симметрия",
+    "diagonals": "Диагонали",
+    "heights": "Высоты",
+    "tiling": "Замощение",
+    "circles": "Круги и окружности",
+    "solid_shapes": "Объёмные фигуры",
+    "pythagorean_theorem": "Теорема Пифагора"
+  }
+}

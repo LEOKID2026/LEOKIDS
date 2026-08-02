@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Target Tap",
+  "blurb": "Tap the targets before they disappear!",
+  "help": {
+    "howToPlay": "Tap the targets that appear on the screen before they disappear. You have three lives.",
+    "scoring": "Regular targets, stars, and diamonds are worth different points. Missing costs a life. Consecutive hits give a combo bonus.",
+    "rewards": "Reaching the hit target or a high final score grants coins and diamonds.",
+    "tip": "Don't rush at everything - sometimes a target with a diamond is worth more."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Register",
+    "pick_coins": "Выбери coins",
+    "removechangeat_lastindex": "removeChangeAt(lastIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Помоги кассиру Leo — выбери товар, посчитай сдачу и верни правильную сумму",
+    "x_id_id_if_p_return_null_return": "x.id === id);\n                      if (!p) return null;\n                      return (",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n            New game",
+    "pick_the_product_the_customer_asked_for": "Выбери продукт, который попросил клиент",
+    "leo_apos_s_market": "Маркет Leo",
+    "change_you_gave": "Сдача, которую ты дал:",
+    "purchase_total": "Итого покупки:",
+    "customer_paid": "Клиент заплатил:",
+    "give_change": "Сдай сдачу ✓",
+    "clear_change": "Очистить сдачу",
+    "start_game": "Начать игру",
+    "back": "Назад"
+  }
+}

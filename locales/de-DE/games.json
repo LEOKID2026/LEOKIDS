@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Spiele",
+  "arcade": "Spielhalle",
+  "solo": "Solo-Spiele",
+  "educational": "Lernspiele",
+  "play": "Spielen",
+  "pause": "Pause",
+  "resume": "Fortsetzen",
+  "settings": "Spieleinstellungen",
+  "soundOn": "Ton an",
+  "soundOff": "Ton aus",
+  "youWin": "Du hast gewonnen!",
+  "youLose": "Gut versucht!",
+  "draw": "Unentschieden",
+  "inviteFriend": "Freund einladen",
+  "waitingForOpponent": "Warte auf Gegner…",
+  "matchFound": "Gegner gefunden!",
+  "connectionLost": "Verbindung verloren. Erneuter Versuch…",
+  "back": "Zurück",
+  "gamesBadge": "Spiele",
+  "hubSubtitle": "Wähle das Erlebnis, das passt — Leos Spiele, Offline-Spiele und mehr.",
+  "hubRegularTitle": "Leos Spiele",
+  "hubRegularBlurb": "Leos Spiele — Memory, Puzzles, Zielübungen und mehr.",
+  "hubOfflineTitle": "Immer mit Leo",
+  "hubOfflineBlurb": "Spiele auch ohne Internet",
+  "hubEducationalTitle": "Leos Lernspiele",
+  "hubEducationalBlurb": "Förderung, Denkfähigkeiten und Allgemeinwissen",
+  "hubOnlineTitle": "Spiele mit Freunden",
+  "hubOnlineBlurb": "Mehrspieler-Spielräume mit Freunden und anderen Spielern.",
+  "devPrototypeMeta": "Entwicklung · interner Test",
+  "soloHubBadge": "Leos Spiele",
+  "soloHubTitle": "Leos Spiele — Kinderwelt",
+  "soloHubSubtitle": "Spiele, sammle Punkte und hole dir Münzen und Edelsteine für deine Welt!",
+  "soloMeta": "Solo · Münzen · Edelsteine",
+  "playNow": "Jetzt spielen",
+  "educationalBadge": "Lernspiel",
+  "educationalHubTitle": "Lernspiele",
+  "educationalHubSubtitle": "Lernspiele, die Fähigkeiten fördern und dabei Spaß machen.",
+  "noGamesAvailable": "Momentan sind keine Spiele verfügbar.",
+  "educationalMeta": "Lernspiel · Münzen",
+  "arcadeBack": "Spielhalle",
+  "arcadeBadge": "Spielhalle-Club",
+  "arcadeHubTitle": "Leos Spieleclub",
+  "arcadeHubSubtitle": "Spiele mit Freunden — erstelle einen Raum oder tritt einem bei.",
+  "entryCostLabel": "Eintrittskosten",
+  "selectEntryCost": "Eintrittsbetrag wählen",
+  "roomTypeQuick": "Schnellspiel",
+  "roomTypePublic": "Öffentlich",
+  "playersLabel": "Spieler",
+  "apiSuccess": "Fertig",
+  "apiAlreadyQueued": "Bereits in der Warteschlange (keine erneute Abbuchung)",
+  "apiInsufficientFunds": "Nicht genug Münzen für diese Aktion",
+  "apiFailed": "Aktion fehlgeschlagen",
+  "quickAlreadyInRoom": "Bereits in einem Raum — tippe auf „Spiel beitreten“",
+  "quickJoined": "Einem wartenden Spieler im Raum beigetreten",
+  "quickCreated": "Schnellspiel-Raum erstellt — warte auf einen weiteren Spieler",
+  "quickReady": "Bereit",
+  "social": {
+    "greatGame": "Tolles Spiel!",
+    "wellPlayed": "Gut gespielt!",
+    "rematch": "Revanche?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Vier gewinnt",
+      "blurb": "Vier gewinnt · zwei Spieler",
+      "players": "Spieler: 2"
+    },
+    "ludo": {
+      "title": "Mensch ärgere dich nicht",
+      "blurb": "Familienbrettspiel",
+      "players": "Spieler: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Schlangen & Leitern",
+      "blurb": "Spielfeld 1–100 · Leitern und Schlangen",
+      "players": "Spieler: 2–4"
+    },
+    "checkers": {
+      "title": "Dame",
+      "blurb": "Klassisches Damespiel · Schlagpflicht",
+      "players": "Spieler: 2"
+    },
+    "chess": {
+      "title": "Schach",
+      "blurb": "Klassisches Schach · Schach und Schachmatt",
+      "players": "Spieler: 2"
+    },
+    "dominoes": {
+      "title": "Domino",
+      "blurb": "Blockierendes Domino · spielen bis kein Stein mehr übrig ist",
+      "players": "Spieler: 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · volle Reihe gewinnt",
+      "players": "Spieler: bis zu 8"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "four_in_a_row": "Четыре в ряд",
+    "snakes_and_ladders": "Змеи и лестницы",
+    "checkers": "Шашки",
+    "dominoes": "Домино",
+    "chess": "Шахматы",
+    "bingo": "Бинго",
+    "ludo": "Лудо"
+  }
+}

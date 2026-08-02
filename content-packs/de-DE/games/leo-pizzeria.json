@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Leo's Pizzeria",
+  "blurb": "Build, identify, equivalent, compare, and combine fractions",
+  "help": {
+    "howToPlay": "Build fractions on pizza, identify from a picture, complete to a whole, compare, or match equivalents — by task. Tap \"Serve Pizza\" when ready.",
+    "scoring": "Correct answer +30, streak bonuses. After 3 failed attempts the solution is shown.",
+    "rewards": "Coins are awarded based on how many customers you served, accuracy, streaks, and difficulty level - even if you didn't serve all 20 customers.",
+    "tip": "Pay attention to numerator and denominator — pizza slices are always equal parts."
+  },
+  "accessibility": {
+    "title": "Leo's Pizzeria"
+  }
+}

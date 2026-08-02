@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "grade_1": "1. Klasse",
+    "grade_2": "2. Klasse",
+    "grade_3": "3. Klasse",
+    "grade_4": "4. Klasse",
+    "grade_5": "5. Klasse",
+    "grade_6": "6. Klasse"
+  }
+}

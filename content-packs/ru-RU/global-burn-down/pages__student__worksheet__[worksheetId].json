@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "mark_this_worksheet_as_finished": "Отметить этот лист заданий как завершённый?",
+    "submit_your_answers": "Отправить ответы?",
+    "submission_received_and_waiting_for_teacher_approval": "Работа получена и ждёт одобрения учителя."
+  }
+}

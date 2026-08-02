@@ -152,9 +152,9 @@ test("wave2 canonical redirects and reserved routes", () => {
   assert.equal(stripLocaleFromPath("/wls/parents").locale, "en-WLS");
 });
 
-test("selector adds Canada Singapore South Africa Wales; count 37", () => {
+test("selector adds Canada Singapore South Africa Wales; count 38", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 37);
+  assert.equal(locales.length, 39);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of WAVE2) {
     assert.equal(byId[c.id].label, c.label);

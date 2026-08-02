@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "seats": "Места",
+    "live_game_stats": "Живая статистика игры",
+    "game_results_summary": "Сводка результатов игры"
+  }
+}

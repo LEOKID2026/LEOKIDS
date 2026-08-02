@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "large_triangle": "Большой треугольник",
+    "medium_triangle": "Средний треугольник",
+    "small_triangle": "Маленький triangle",
+    "square": "Квадрат",
+    "parallelogram": "Параллелограмм",
+    "triangle_2": "Треугольник 2",
+    "tangram": "Танграм",
+    "prototype_drag_pieces_double_tap_to_rotate": "Прототип · перетащи детали · двойной тап для поворота",
+    "rotatepiece_selected_classname_min_h_44px_rounded_xl_border_2_border_sky": "rotatePiece(selected)}\n            className=\"min-h-[44px] rounded-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 text-sm font-bold text-sky-100\"\n          >\n            ↻ Rotate selected piece",
+    "no_perfect_fit_check_just_drag_feel_and_layout": "Без проверки идеальной посадки — просто перетаскивание и раскладка",
+    "fill_the_target_shape_double_tap_rotate_45": "Заполни целевую фигуру · двойное нажатие = поворот на 45°",
+    "reset": "Сбросить",
+    "goal": "Цель"
+  }
+}

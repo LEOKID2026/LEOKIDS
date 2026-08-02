@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "short_report_table": "Коротк. report table",
+    "smart_summary_short_report": "Умная сводка — короткий отчёт",
+    "smart_summary_detailed_report": "Умная сводка — подробный отчёт",
+    "parentaiinsight_executivesummary": "ParentAiInsight + executiveSummary",
+    "strengths": "Сильные стороны",
+    "focus_weaknesses": "Фокус / слабые места",
+    "topic_recommendations": "Рекомендации по темам",
+    "what_to_do_at_home": "Что to do at home",
+    "executive_summary": "Краткое резюме",
+    "charts_labels": "Диаграммы / подписи",
+    "playwright_print_of_pages_above": "Playwright print of pages above",
+    "copilot_truth_packet": "Пакет истины Copilot",
+    "copilot_answer_composer": "Составитель ответа Copilot"
+  }
+}

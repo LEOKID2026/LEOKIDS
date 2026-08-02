@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Математика",
+    "geometry": "Геометрия",
+    "english": "Английский язык",
+    "science": "Естественные науки"
+  },
+  "activityModes": {
+    "live_lesson": "Урок вживую",
+    "guided_practice": "Практика с сопровождением",
+    "quiz": "Викторина",
+    "homework": "Домашнее задание",
+    "discussion": "Обсуждение",
+    "practice": "Практика",
+    "review": "Повторение"
+  },
+  "activityStatuses": {
+    "draft": "Черновик",
+    "active": "Активно",
+    "paused": "На паузе",
+    "closed": "Закрыто",
+    "archived": "В архиве"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Не начато",
+    "in_progress": "В процессе",
+    "submitted": "Отправлено",
+    "completed": "Завершено",
+    "timed_out": "Время истекло"
+  },
+  "roles": {
+    "teacher": "Учитель",
+    "school_admin": "Администратор школы",
+    "admin": "Системный администратор"
+  },
+  "auditActions": {
+    "school_subject_granted": "Разрешение на предмет выдано",
+    "school_subject_revoked": "Назначение предмета отозвано",
+    "school_student_enrolled": "Ученик зачислен",
+    "school_student_unenrolled": "Ученик отчислен",
+    "school_class_viewed": "Отчёт класса просмотрен",
+    "school_student_report_viewed": "Отчёт ученика просмотрен",
+    "school_student_class_transferred": "Ученик переведён",
+    "school_class_teacher_reassigned": "Учитель класса переназначен",
+    "school_class_archived": "Класс отправлен в архив",
+    "assign_teacher": "Учитель назначен",
+    "assign_manager": "Руководитель назначен",
+    "class_transfer": "Ученик переведён",
+    "grant": "Разрешение выдано",
+    "revoke": "Разрешение снято",
+    "archive": "Отправлено в архив",
+    "viewed_student_report": "Отчёт ученика просмотрен",
+    "viewed_class_report": "Отчёт класса просмотрен",
+    "grant_created": "Доступ создан",
+    "grant_revoked": "Доступ отозван",
+    "magic_link_issued": "Ссылка для входа выдана",
+    "pin_rotated": "PIN обновлён",
+    "username_rotated": "Имя пользователя обновлено",
+    "teacher_quota_updated": "Квоты обновлены",
+    "teacher_features_updated": "Разрешения функций обновлены",
+    "teacher_status_updated": "Статус учётной записи обновлён"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Системное действие",
+    "activity": "Активность",
+    "classActivity": "Активность класса",
+    "activitySuffix": "активность"
+  }
+}

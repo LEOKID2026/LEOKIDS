@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Обучение",
+    "practice": "Практика",
+    "challenge": "Испытание",
+    "extended_practice": "Расширенная практика",
+    "graded": "С оценкой",
+    "regular": "Обычный",
+    "mistakes": "Ошибки",
+    "review_mistakes": "Разобрать ошибки"
+  }
+}

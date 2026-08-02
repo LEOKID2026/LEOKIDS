@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "looks_strong": "Выглядит сильно",
+    "worth_watching": "Стоит наблюдать",
+    "worth_strengthening": "Область для усиления",
+    "worth_guiding": "Стоит направлять",
+    "needs_strengthening": "Нужно усиление",
+    "few_questions": "Мало вопросов",
+    "above_grade_level": "Выше уровня класса",
+    "earlier_foundations": "Более ранние основы",
+    "strong_topics": "Strong topics",
+    "topics_worth_watching": "Темы worth watching",
+    "topics_worth_strengthening": "Темы worth strengthening",
+    "topics_worth_guiding_in_practice": "Темы, которые стоит вести в практике",
+    "topics_with_few_questions": "Темы с небольшим числом вопросов",
+    "practice_above_grade_level": "Практикуй above grade level",
+    "earlier_foundation_practice": "Более ранняя практика основ"
+  }
+}

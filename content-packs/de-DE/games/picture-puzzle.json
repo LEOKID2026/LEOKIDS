@@ -1,0 +1,11 @@
+{
+  "gameId": "picture-puzzle",
+  "title": "Picture Puzzle",
+  "blurb": "Complete the pieces of Leo's picture!",
+  "help": {
+    "howToPlay": "Drag the picture pieces to the right place on the board. Complete all the pieces before time runs out.",
+    "scoring": "The faster you finish and the fewer moves you use, the higher the score. If time runs out before you finish - there's no win.",
+    "rewards": "Completing the puzzle based on difficulty level grants coins, and a score bonus adds even more.",
+    "tip": "Start with the corners and edges - it's easier to see where each piece belongs."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "correct_answer_is_the_only_full_sentence_among_options": "Correct answer is the only full sentence among options",
+    "correct_option_is_much_longer_than_all_distractors": "Correct option is much longer than all distractors"
+  }
+}

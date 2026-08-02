@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "Текущий код будет отозван и сгенерирован новый. Сохраните новый код — он будет показан только один раз.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "Текущее имя пользователя будет отозвано. Новое имя пользователя будет показано только один раз."
+  }
+}

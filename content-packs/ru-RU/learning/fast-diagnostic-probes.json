@@ -1,0 +1,236 @@
+{
+  "probesByErrorTag": {
+    "adds_denominators_directly": {
+      "skill": "Нахождение общего знаменателя перед сложением дробей",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Проверьте, не в нахождении общего знаменателя ли сложность до самого сложения — короткими вопросами только на один общий знаменатель."
+    },
+    "wrong_lcm": {
+      "skill": "Понимание наименьшего общего знаменателя",
+      "suggestedQuestionType": "fraction_lcm_pair_compare",
+      "reason": "Дайте пары малых знаменателей и попросите найти НОК до объединения."
+    },
+    "ignores_denominator": {
+      "skill": "Связь числителя и знаменателя в действиях с дробями",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Усильте связь числителя и знаменателя, прежде чем объединять две дроби."
+    },
+    "concept_gap": {
+      "skill": "Понимание дроби как отношения",
+      "suggestedQuestionType": "fraction_meaning_visual",
+      "reason": "Покажите наглядное представление дроби как отношения перед алгоритмом сложения."
+    },
+    "operation_confusion": {
+      "skill": "Различение сложения и умножения дробей",
+      "suggestedQuestionType": "fraction_operation_gate",
+      "reason": "Явно выбери одну операцию (сложение/вычитание/умножение) с коротким пояснением."
+    },
+    "tense_confusion": {
+      "skill": "Согласование времени со словом времени или подлежащим",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Выбери минимальные пары (например past/present) с тем же корнем и ясным словом времени."
+    },
+    "grammar_pattern_error": {
+      "skill": "Согласование формы глагола с подлежащим",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели короткие предложения с подлежащими в единственном/множественном числе и подходящими формами глагола."
+    },
+    "vocabulary_gap": {
+      "skill": "Словарь в коротком предложении",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Дополни слово в коротком предложении с ясным контекстом (не отдельный список слов)."
+    },
+    "concept_confusion": {
+      "skill": "Различение близких научных понятий",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Представьте два смежных понятия и выберите одно верное определение из сокращённого текста."
+    },
+    "fact_recall_gap": {
+      "skill": "Вспоминание факта из урока",
+      "suggestedQuestionType": "science_fact_one_line_recall",
+      "reason": "Короткий вопрос с одним точным ответом из изученного материала."
+    },
+    "cause_effect_gap": {
+      "skill": "Связь причина–следствие",
+      "suggestedQuestionType": "science_cause_effect_pair",
+      "reason": "Выбери, что относится к причине, а что к следствию в простой ситуации."
+    },
+    "classification_error": {
+      "skill": "Классификация по одному признаку",
+      "suggestedQuestionType": "science_single_criterion_sort",
+      "reason": "Представьте небольшой набор и попросите классифицировать по одному ясному признаку."
+    },
+    "place_value_error": {
+      "skill": "Размести value of a digit",
+      "suggestedQuestionType": "place_value_digit_value",
+      "reason": "Выдели разряд одной цифры в числе в коротком упражнении."
+    },
+    "multiplication_fact_gap": {
+      "skill": "Факты таблицы умножения",
+      "suggestedQuestionType": "multiplication_fact_check",
+      "reason": "Короткий прямой вопрос на умножение из таблицы умножения."
+    },
+    "geometry_calculation_slip": {
+      "skill": "Выбор формулы или первого шага в геометрии",
+      "suggestedQuestionType": "geometry_formula_choice",
+      "reason": "Выбери подходящую формулу или первый шаг до числового вычисления."
+    },
+    "prerequisite_gap": {
+      "skill": "Предварительное понятие",
+      "suggestedQuestionType": "geometry_concept_minimal_contrast",
+      "reason": "Усильте базовое понятие, прежде чем продолжать."
+    },
+    "spelling_pattern_error": {
+      "skill": "Spelling in short context",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Дополни слово в предложении с ясным контекстом."
+    },
+    "present_simple_3rd_singular_error": {
+      "skill": "Форма глагола в третьем лице в Present Simple",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели короткие предложения с he/she/it и выбери подходящую форму глагола."
+    },
+    "past_tense_form_error": {
+      "skill": "Simple past form",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Выбери минимальные пары past/present с тем же корнем."
+    },
+    "progressive_aspect_error": {
+      "skill": "Present continuous (am/is/are + V-ing)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Проверь выбор между Continuous и Simple."
+    },
+    "question_word_order_error": {
+      "skill": "Слово order in a question",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Выдели короткие вопросительные предложения с do/does/is/are в нужном месте."
+    },
+    "modal_verb_error": {
+      "skill": "Вспомогательные глаголы (can/must/should)",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Выбери между двумя вспомогательными глаголами в коротком предложении с тем же основным глаголом."
+    },
+    "quantifier_choice_error": {
+      "skill": "Квантификаторы (some/many/much)",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Различить исчисляемое и неисчисляемое в коротком предложении."
+    },
+    "comparative_form_error": {
+      "skill": "Форма сравнения",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Выбери -er/-est или more/most в коротком предложении."
+    },
+    "future_form_error": {
+      "skill": "Future (will / going to)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Выбери между will и going to в ясном контексте."
+    },
+    "perfect_aspect_error": {
+      "skill": "Perfect tenses (have/had + V3)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Сравни форму Perfect с Simple в том же контексте."
+    },
+    "conditional_clause_error": {
+      "skill": "Условное предложение",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Выдели if/when с подходящей формой глагола в одном лице."
+    },
+    "sentence_structure_error": {
+      "skill": "Структура предложения",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели короткие предложения с согласованным порядком слов и формой глагола."
+    },
+    "advanced_grammar_error": {
+      "skill": "Продвинутая грамматика",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели одно предложение с ясным грамматическим шаблоном для проверки."
+    }
+  },
+  "probesByDiagnosticSkillId": {
+    "math_frac_same_den": {
+      "skill": "Сложение/вычитание дробей с одинаковым знаменателем",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Подтверди устойчивость числителя, когда знаменатель уже общий."
+    },
+    "math_frac_common_denominator": {
+      "skill": "Нахождение общего знаменателя перед сложением",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Сначала проверь шаг общего знаменателя, не переходя сразу к ответу."
+    },
+    "en_grammar_be_present": {
+      "skill": "Формы be с подлежащим",
+      "suggestedQuestionType": "english_be_agreement_gate",
+      "reason": "Выдели предложения с I/he/they и выбери подходящую форму be."
+    },
+    "en_grammar_present_simple": {
+      "skill": "Simple present — согласование подлежащего и глагола",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели короткие предложения с he/she/it и выбери подходящую форму глагола."
+    },
+    "en_grammar_past_simple": {
+      "skill": "Simple past",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Выбери минимальные пары past/present с тем же корнем."
+    },
+    "en_grammar_progressive": {
+      "skill": "Present continuous",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Проверь выбор между Continuous и Simple."
+    },
+    "en_grammar_question_frames": {
+      "skill": "Рамки вопросов",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Выдели короткие вопросительные предложения с do/does/is/are в нужном месте."
+    },
+    "en_grammar_modals": {
+      "skill": "Вспомогательные глаголы",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Выбери между двумя вспомогательными глаголами в коротком предложении."
+    },
+    "en_grammar_quantifiers": {
+      "skill": "Квантификаторы",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Различить some/many/much в коротком предложении."
+    },
+    "en_grammar_comparatives": {
+      "skill": "Сравнение",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Выбери форму сравнения в коротком предложении."
+    },
+    "en_grammar_future_forms": {
+      "skill": "Будущее",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Выбери между will и going to в ясном контексте."
+    },
+    "en_grammar_complex_tenses": {
+      "skill": "Perfect tenses",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Сравни Perfect и Simple в том же контексте."
+    },
+    "en_grammar_conditionals": {
+      "skill": "Условные предложения",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Выдели if/when с подходящей формой глагола."
+    },
+    "en_grammar_phase29_standard": {
+      "skill": "Согласование формы глагола с подлежащим",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели короткие предложения с подлежащими в единственном/множественном числе и подходящими формами глагола."
+    },
+    "en_grammar_phase29_advanced": {
+      "skill": "Продвинутая грамматика — промежуточный шаг",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Выдели одно предложение с ясным грамматическим шаблоном для проверки."
+    },
+    "sci_body_fact_recall": {
+      "skill": "Recalling a body/systems fact",
+      "suggestedQuestionType": "science_fact_single_choice",
+      "reason": "Один точный фактический вопрос из материала об органе или системе."
+    },
+    "sci_respiration_concept": {
+      "skill": "Роль дыхательной системы в газообмене",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Различить транспорт крови и обмен кислорода/CO₂ с воздухом."
+    }
+  }
+}

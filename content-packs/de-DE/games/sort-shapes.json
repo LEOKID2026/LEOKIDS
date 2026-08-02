@@ -1,0 +1,11 @@
+{
+  "gameId": "sort-shapes",
+  "title": "Sort Shapes",
+  "blurb": "Sort shapes and colors into the correct boxes!",
+  "help": {
+    "howToPlay": "Drag each shape to the matching box by shape or color. Finish all the sorting before time runs out.",
+    "scoring": "Every correct sort adds points. A mistake deducts from the score. If time runs out before you finish - the game ends.",
+    "rewards": "Finishing successfully based on difficulty level grants coins, and a score bonus adds even more.",
+    "tip": "First decide which box each shape belongs to - then drag with confidence."
+  }
+}

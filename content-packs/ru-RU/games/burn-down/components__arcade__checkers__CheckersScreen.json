@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "checkers": "Шашки",
+    "black_left_seat_in_the_list_goes_first_turns_alternate": "Чёрные (левое место в списке) ходят первыми; ходы чередуются.",
+    "move_diagonally_forward_kings_move_on_all_diagonals": "Двигай diagonally forward; kings move on all diagonals.",
+    "captures_are_mandatory_when_available": "Взятия обязательны, когда доступны.",
+    "multi_jumps_with_the_same_piece_continue_until_no_more_captures": "Многократные прыжки той же фигурой продолжаются, пока есть взятия."
+  }
+}

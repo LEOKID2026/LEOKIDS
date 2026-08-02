@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Lernen",
+    "practice": "Übung",
+    "challenge": "Herausforderung",
+    "extended_practice": "Extended practice",
+    "graded": "Graded",
+    "regular": "Standard",
+    "mistakes": "Mistakes",
+    "review_mistakes": "Review mistakes"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Убрать этого ученика из класса?",
+    "remove_this_student_from_your_teacher_list": "Убрать этого ученика из Вашего списка учителя?",
+    "manage_class": "Управление классом",
+    "full_name_of_new_student": "Полное имя нового ученика",
+    "students": "Ученики",
+    "classes": "Классы",
+    "class_report": "Отчёт по классу",
+    "activities": "Занятия",
+    "filter_student_list": "Фильтр списка учеников",
+    "search_by_name": "Поиск по имени…"
+  }
+}

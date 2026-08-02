@@ -1,0 +1,61 @@
+{
+  "subjectId": "science",
+  "rows": [
+    {
+      "id": "S-01",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-02",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-03",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-04",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-05",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-06",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-07",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    },
+    {
+      "id": "S-08",
+      "subjectId": "science",
+      "minWrong": 3,
+      "minDistinctPatternFamilies": 0,
+      "minDistinctDays": 0
+    }
+  ]
+}

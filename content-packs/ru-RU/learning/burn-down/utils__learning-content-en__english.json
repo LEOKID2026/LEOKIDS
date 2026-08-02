@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "С I мы используем am.",
+    "with_he_she_it_we_use_is": "С he/she/it мы используем is.",
+    "with_you_we_they_we_use_are": "С you/we/they мы используем are.",
+    "got_it": "Понятно",
+    "try_again": "Попробовать снова",
+    "back_to_menu": "Назад в меню",
+    "choose_another_topic": "Выбери другую тему"
+  }
+}

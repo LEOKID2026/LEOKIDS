@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "choose_all_the_odd_numbers_on_the_path": "Выбери все нечётные числа на пути",
+    "prompt_odd": "Выбери все нечётные числа.",
+    "prompt_even": "Выбери все чётные числа.",
+    "prompt_multiples": "Выбери все кратные {multiple}.",
+    "prompt_skip_forward": "Начни с {start}. Прибавляй {step} на каждом шаге. Выбери числа по порядку.",
+    "prompt_skip_backward": "Начни с {start}. Вычитай {step} на каждом шаге. Выбери числа по порядку.",
+    "prompt_arithmetic_ascending": "Начни с {start} и прибавляй {step} на каждом шаге. Выбери числа по порядку.",
+    "prompt_arithmetic_descending": "Начни с {start} и вычитай {step} на каждом шаге. Выбери числа по порядку.",
+    "prompt_arithmetic_missing": "Дополни последовательность. Выбери пропущенные числа по порядку.",
+    "prompt_geometric_sequence": "Начни с {start} и умножай на {ratio} на каждом шаге. Выбери числа по порядку.",
+    "solution_prefix": "Правильный путь:"
+  }
+}

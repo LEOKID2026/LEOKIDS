@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "total_students": "Всего учеников",
+    "opened_pdf": "Открытый PDF",
+    "completed_pdf": "Завершено (PDF)",
+    "submitted_answers": "Отправленные ответы",
+    "pending_review": "Ожидает проверки",
+    "published": "Опубликовано",
+    "class_average": "Среднее по классу"
+  }
+}

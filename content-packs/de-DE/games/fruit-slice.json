@@ -1,0 +1,11 @@
+{
+  "gameId": "fruit-slice",
+  "title": "Fruit Slice",
+  "blurb": "Slice fruit, avoid bombs, and reach the score target!",
+  "help": {
+    "howToPlay": "Drag your finger across the screen to slice flying fruit. Avoid bombs - you have three mistakes allowed.",
+    "scoring": "Every fruit sliced adds points. Slicing several fruits at once gives a combo bonus. Hitting a bomb or missing a fruit costs a mistake.",
+    "rewards": "Reaching the score target based on difficulty level grants coins and diamonds.",
+    "tip": "Slice only fruit - if you see a bomb, it's best to skip it."
+  }
+}

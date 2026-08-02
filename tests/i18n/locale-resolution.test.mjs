@@ -45,17 +45,17 @@ test("resolveInterfaceLocale priority: URL beats profile, cookie, Accept-Languag
 });
 
 test("resolveInterfaceLocale: disabled locale prefix resolves via registry fallback to en", () => {
-  // /fr is live (fr-FR); use a still-disabled prefix stub.
+  // /de is live (de-DE); use a still-disabled prefix stub.
   assert.equal(
     resolveInterfaceLocale({
-      asPath: "/de/about",
+      asPath: "/pl/about",
       profileInterfaceLocale: "en-XA",
     }),
     "en"
   );
   assert.equal(
     resolveInterfaceLocale({
-      asPath: "/de/about",
+      asPath: "/pl/about",
       cookieHeader: cookieAr,
     }),
     "en"

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "the_shop_is_not_available_in_guest_mode": "Магазин недоступен в гостевом режиме.",
+    "cards_are_not_available_in_guest_mode": "Карточки недоступны в гостевом режиме."
+  }
+}

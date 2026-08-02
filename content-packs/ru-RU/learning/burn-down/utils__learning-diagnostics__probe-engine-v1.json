@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Узкое окно практики — нужно больше наблюдений для устойчивой интерпретации.",
+    "stable_accuracy_over_at_least_two_sessions": "Стабильная точность как минимум на двух занятиях",
+    "continued_random_incorrect_pattern_without_convergence": "Продолжающийся случайный или неверный паттерн без сходимости",
+    "re_evaluate_mastery_and_misconceptions": "Переоцените освоение и заблуждения",
+    "consistent_correct_responses_on_parallel_items": "Устойчиво верные ответы на параллельных заданиях",
+    "repeated_same_distractor_selection": "Повторённый same distractor selection",
+    "escalate_practice_specificity": "Повысить конкретность практики",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Сильные стороны предварительного навыка неясны относительно продвинутого.",
+    "prerequisite_skill_shows_independent_accuracy": "Предварительный навык показывает самостоятельную точность",
+    "prerequisite_remains_unstable": "Предварительный навык остаётся нестабильным",
+    "foundation_review_vs_isolated_advanced_gap": "Повторение основы vs изолированный продвинутый пробел",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Сильное наблюдаемое освоение при достаточном объёме — необязательный проверочный вызов для подтверждения переноса.",
+    "maintains_accuracy_on_harder_parallel_items": "Сохраняет точность на более сложных параллельных заданиях",
+    "breakdown_on_increased_complexity": "Срыв при повышенной сложности",
+    "adjust_level_or_add_scaffolded_practice": "Скорректируйте уровень или добавьте практику с опорой",
+    "default_maintenance_probe_confirm_stability": "Стандартная проверка поддержания — подтвердить устойчивость.",
+    "meet_or_exceed_recent_accuracy_band": "Достичь или превзойти недавний диапазон точности",
+    "accuracy_drops_materially": "Точность заметно падает",
+    "adjust_practice_plan": "Скорректировать план практики"
+  }
+}

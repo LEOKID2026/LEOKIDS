@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "Перейти к продвинутому — только та же тема",
+    "move_up_a_grade_same_topic_only": "Перейти на класс выше — только та же тема",
+    "solidify_at_the_same_level": "Закрепить на том же уровне",
+    "solidify_at_regular_level": "Закрепить на обычном уровне",
+    "strengthen_at_the_same_level": "Усилить на том же уровне",
+    "return_to_regular_practice": "Вернуться к обычной практике",
+    "lower_difficulty_same_topic_only": "Ниже сложность — только та же тема",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "Достаточно вопросов решено на обычном уровне со стабильной точностью. Попробовать продвинутый уровень по той же теме разумно.",
+    "trying_advanced_on_the_same_topic_is_recommended": "Рекомендуется попробовать продвинутый уровень по той же теме.",
+    "you_can_try_advanced_on_the_same_topic": "Можно попробовать продвинутый уровень по той же теме.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "Наращивайте более устойчивую практику на обычном уровне, прежде чем переходить к продвинутому.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "Продолжай на обычном уровне и укрепи точность и уверенность перед продвинутым.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "Мы ещё немного останемся на обычном уровне, окрепнем, затем попробуем продвинуться.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "Продвинутое задание сейчас оказалось сложным. Рекомендуется вернуться к обычной практике по той же теме.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "Продвинутое задание сейчас оказалось сложным. Вернись к обычной практике, укрепи точность и уверенность, затем попробуй снова.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "Мы ненадолго вернёмся к обычной практике, окрепнем, затем попробуем снова.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "Усильте ту же тему регулярной практикой в комфортном темпе.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "Продолжай обычную практику в комфортном темпе, с несколькими короткими вопросами для закрепления.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "Сначала укрепимся обычной практикой, затем пойдём дальше.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "Попробуй a lower level or grade, then advance gradually.",
+    "limited_information": "Ограниченная информация"
+  }
+}

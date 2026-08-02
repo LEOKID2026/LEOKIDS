@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Разбивание кирпичей",
+    "prototype_move_paddle_break_bricks": "Прототип · двигай ракетку · разбивай кирпичи",
+    "drag_move_below_don_t_miss_the_ball": "Перетаскивай/двигай вниз · не пропусти мяч",
+    "bx_s_ballx_ball_r": "bx &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "by &&\r\n          s.ballY - BALL_R",
+    "all_bricks_cleared": "Все кирпичи сбиты! 🎉",
+    "tap_to_play_again": "Нажми, чтобы играть снова",
+    "ball_dropped": "Мяч упал!"
+  }
+}

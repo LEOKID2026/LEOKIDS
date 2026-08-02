@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "internal_conservative_strand_mapping_liosh_audit_layer": "Internal conservative strand mapping (LIOSH audit layer)",
+    "repo_maintained_interpretation_requires_pedagogy_sign_off_before_any_rel": "Интерпретация, поддерживаемая репозиторием — требуется педагогическое одобрение до любого релизного шлюза.",
+    "general_framework_reference_only_does_not_map_individual_question_stems_": "Только общая справка по рамке; не сопоставляет отдельные формулировки вопросов с результатами.",
+    "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match": "Official portal - use for policy context; not a line-by-line syllabus match.",
+    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "Общий политический контекст; в младших классах часто акцент на знакомстве/слушании — уточняйте формальную грамотность vs знакомство по школе.",
+    "internal_strand_plane_shapes_recognition_audit": "Internal strand: plane shapes recognition (audit)",
+    "repo_interpretation_of_typical_early_shape_recognition_requires_pedagogy": "Repo interpretation of typical early shape recognition - requires pedagogy validation.",
+    "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer": "Направления соответствуют нормализованным ключам math.* из curriculum-topic-normalizer.js",
+    "separated_geometry_strands_do_not_collapse_to_one_topic": "Разделённые линии геометрии — не сводите к одной теме.",
+    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "1–2 классы: грамматика не считается ядром; разделение знакомства и обогащения.",
+    "inventory_retained_curriculum_placement_deferred_confidence_low": "Inventory retained; curriculum placement deferred - confidence low.",
+    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israel elementary (grades 1–6) - conservative structured mapping + advisory source anchors"
+  }
+}

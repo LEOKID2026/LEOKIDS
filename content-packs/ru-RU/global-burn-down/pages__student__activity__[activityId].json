@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "incorrect": "Неверно",
+    "answer_submitted": "Ответ отправлен",
+    "submit_answer": "Отправить ответ",
+    "type_your_answer": "Введи ответ",
+    "enlarged_diagram": "Увеличенная схема",
+    "close_diagram": "Закрыть схему"
+  }
+}

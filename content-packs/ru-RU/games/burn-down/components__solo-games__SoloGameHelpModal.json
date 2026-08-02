@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "close": "Закрыть",
+    "how_to_play_heading": "Как играть?",
+    "how_to_play_title": "Как играть в {title}?",
+    "scoring_heading": "Как начисляются баллы?",
+    "rewards_heading": "Награды и алмазы",
+    "tip_heading": "Быстрый совет",
+    "got_it_lets_play": "Понял, давай играть"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "Недостаточно context to plan (missing subject).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "Нужно больше учебной активности, прежде чем предлагать следующий фокус.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "Системе обучения нужно чуть больше данных практики, прежде чем предлагать следующий шаг.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Собери ещё несколько заданий на практику; выводы откладываются.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "Практика английского может продолжаться, но маршрутизацию навыков должен подтвердить учитель.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "Разметка английского в банке контента неполная; планировщик не будет автоматически направлять тонкие навыки.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "Ждём проверенных метаданных вопроса, прежде чем предлагать продвинутый путь.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "Метаданные навыка для следующего шага не подтверждены; автоматическое продвижение приостановлено.",
+    "short_probe_to_verify_understanding_versus_guessing": "Коротк. probe to verify understanding versus guessing.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Непоследовательные или похожие на угадывание сигналы — используйте небольшой диагностический набор.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Дополнительная практика по текущему навыку на поддерживающей сложности.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Целевая практика по тому же навыку; сложность сохранена или немного снижена.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Краткое повторение базового навыка, который поддерживает текущую тему.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Усильте предварительный навык, прежде чем сильнее давить на основной.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Готовы к немного более сложной практике по той же линии навыка.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "Сигналы поддерживают осторожное повышение сложности с мониторингом.",
+    "continue_solid_practice_at_the_current_level": "Продолжай уверенную практику на текущем уровне.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Сохраняйте текущую сложность, закрепляя освоение.",
+    "review_style_practice_on_the_current_skill": "Практика в стиле повторения по текущему навыку.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "Движок предлагает повторение; планировщик согласуется с практикой того же навыка.",
+    "steady_practice_on_the_current_focus": "Стабильная практика на текущем фокусе.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Безопасный путь по умолчанию: продолжить практику без повышения сложности."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "horizontal_pair": "Horizontal pair",
+    "vertical_pair": "Vertical pair",
+    "horizontal_line_of_3": "Horizontal line of 3",
+    "vertical_line_of_3": "Vertical line of 3",
+    "horizontal_line_of_4": "Horizontal line of 4",
+    "vertical_line_of_4": "Vertical line of 4"
+  }
+}

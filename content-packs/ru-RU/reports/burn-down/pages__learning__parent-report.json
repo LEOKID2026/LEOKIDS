@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "Область для усиления",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "Требуется вход родителя — используйте вход родителя и попробуйте снова.",
+    "network_error_while_loading_the_report": "Ошибка сети при loading отчёта.",
+    "please_choose_valid_dates": "Пожалуйста, choose valid dates",
+    "custom": "Свой набор",
+    "preparing_the_performance_report": "Готовим отчёт о результатах...",
+    "charts": "Диаграммы",
+    "breakdown": "Срыв",
+    "practice_with_questions": "Практика с вопросами",
+    "book_reading": "Чтение книг",
+    "other_active_learning": "Другое активное обучение",
+    "time_minutes": "Время (minutes)",
+    "questions": "Вопросы",
+    "accuracy": "Точность %"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "account_actions": "Действия с аккаунтом",
+    "irreversible_actions": "Необратимые действия"
+  }
+}

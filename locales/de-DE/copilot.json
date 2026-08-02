@@ -1,0 +1,133 @@
+{
+  "boundary": {
+    "generalOffTopic": "Ich kann nur mit dem Bericht, den Übungen und dem Fortschritt Ihres Kindes auf der Website helfen. Fragen Sie zum Beispiel, was diese Woche geübt werden sollte, was Sie zu Hause ausprobieren können oder welches Thema als kurze Aktivität geöffnet werden soll.",
+    "diagnosticBoundary": "Ich kann nur das verwenden, was in den Übungsdaten auf der Website erscheint. Der Bericht kann Fächer und Themen zur Stärkung hervorheben, ist aber keine persönliche Diagnose. Wir können uns auf das konzentrieren, was der Bericht tatsächlich zeigt: ein starkes Thema, ein Thema zur Stärkung oder einen kleinen Schritt für zu Hause.",
+    "healthBoundary": "Ich kann nur die auf der Website angezeigten Übungsdaten verwenden. Der Bericht soll keine persönlichen Schlüsse über Ihr Kind ziehen — er hilft Ihnen zu erkennen, welches Lernthema gestärkt werden sollte. Wir können aus diesen Daten einen kleinen nächsten Lernschritt auswählen.",
+    "privacyBoundary": "Ich kann nur mit dem Bericht für das mit diesem Elternkonto verknüpfte Kind helfen. Ich kann keine Daten anderer Kinder, Passwörter, Benutzerlisten oder interne Systeminformationen anzeigen.",
+    "peerComparison": "Der Bericht basiert ausschließlich auf den Übungen dieses Kindes und vergleicht es nicht mit anderen Kindern der Klasse. Sie können sich auf das konzentrieren, was im Bericht erscheint, und nach einem bestimmten Thema fragen.",
+    "ambiguous": "Ich konnte nicht erkennen, welchen Teil des Berichts Sie meinten. Versuchen Sie eine einfachere Frage — zum Beispiel: Was ist diese Woche am wichtigsten zu üben, was kann ich zu Hause ausprobieren, oder welches Thema soll ich als kurze Aktivität öffnen?",
+    "noDataForRequest": "Dieser Bericht enthält noch nicht genügend Informationen, um das genau zu beantworten. Machen Sie eine kurze Übungssitzung auf der Website und schauen Sie danach noch einmal für eine klarere Richtung nach.",
+    "noDataSpecificForRequest": "Der Bericht enthält Übungsdaten für den Zeitraum, aber nicht genug, um diesen bestimmten Punkt genau zu beantworten. Machen Sie eine kurze Übungssitzung auf der Website und schauen Sie danach noch einmal für eine klarere Richtung zu diesem Thema nach."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "Bitte melden Sie sich erneut als Elternteil an.",
+      "no_report_was_found_for_the_child_you_selected": "Für das ausgewählte Kind wurde kein Bericht gefunden."
+    },
+    "lib_parent-copilot_copilot-turn-payload": {
+      "server": {
+        "invalid_custom_range_rangefrom_rangeto_must_be_yyyy_mm_dd_and_fr": "Ungültiger benutzerdefinierter Zeitraum: rangeFrom/rangeTo müssen im Format JJJJ-MM-TT sein, und von <= bis",
+        "could_not_verify_student_ownership_for_copilot_rebuild": "Die Zugehörigkeit des Schülers konnte für den Copilot-Neuaufbau nicht überprüft werden"
+      }
+    },
+    "pages_api_parent_copilot-turn": {
+      "could_not_verify_student_ownership": "Die Zugehörigkeit des Schülers konnte nicht überprüft werden",
+      "student_not_found_for_this_parent": "Für dieses Elternkonto wurde kein Schüler gefunden"
+    },
+    "utils_parent-copilot_answer-composer": {
+      "still_too_early_to_decide": "Noch zu früh, um das zu entscheiden",
+      "this_is_an_initial_image_only": "Das ist erst eine erste Momentaufnahme —",
+      "there_is_only_an_initial_sign_of_weakness": "Es gibt bisher nur ein erstes Anzeichen einer Schwäche —"
+    },
+    "utils_parent-copilot_continuity-pattern-composer": {
+      "report_summary": "Berichtszusammenfassung"
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "Beobachten Sie das über mehrere weitere Übungstage.",
+      "general_summary_of_the_practice": "Übersicht der Übung"
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Möchten Sie heute zu Hause gemeinsam einen kleinen Schritt zu diesem Thema machen?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Möchten Sie gemeinsam einen kurzen Plan für die kommende Woche zu diesem Thema erstellen?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Möchten Sie gemeinsam markieren, was Sie in der kommenden Woche vermeiden sollten?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Möchten Sie gemeinsam prüfen, wann Sie weitergehen und wann Sie beim gleichen Thema bleiben sollten?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Möchten Sie eine kurze Formulierung, um es Ihrem Kind ohne Druck zu erklären?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Möchten Sie eine Formulierung für eine gezielte Frage an die Lehrkraft, basierend auf dem, was im Bericht steht?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Möchten Sie aufschlüsseln, was aus den Berichtsdaten noch unklar ist?"
+    },
+    "utils_parent-copilot_index": {
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "Momentan gibt es wenige Übungsdaten, daher reicht die Information für eine klare Richtung noch nicht aus.",
+      "this_mode_is_for_parent_only": "Dieser Modus ist nur für Eltern.",
+      "the_relationship_cannot_be_identified_from_the_report": "Der Bericht zeigt nicht genug, um diesen Zusammenhang zu erkennen.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "Für das im Bericht ausgewählte Thema wurden keine passenden Einträge gefunden."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "right_now_it": "Momentan",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Beobachten Sie das 3–4 Tage lang so weiter und prüfen Sie dann im Bericht, ob sich die Genauigkeit verbessert oder das Muster zurückkehrt.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "Das heißt nicht, dass es keine Erfolge gibt — nur dass es noch zu früh ist, aus den Daten dieses Zeitraums eine stabile Stärke abzuleiten.",
+      "during_this_period_there_is_no_practice_data_on_this_subject_in_": "In diesem Zeitraum gibt es im aktuellen Bericht keine Übungsdaten zu diesem Fach.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Sie können ein anderes Thema aus dem Bericht wählen oder zu diesem Thema mehr üben und erneut fragen.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "Das Fach erscheint in der Liste, aber im gewählten Zeitraum wurden keine Aufgaben dafür gezählt.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "In diesem Zeitraum gibt es noch nicht genug Übungsdaten, um eine Anhebung oder Absenkung der Stufe zu empfehlen.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Sammeln Sie mehr Übungsdaten zu diesem Fach, bevor Sie über eine Änderung der Stufe entscheiden.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "In diesem Zeitraum ist bei ausreichender Übung keine auffällige Schwachstelle erkennbar.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "Laut Bericht gibt es noch nicht genug Belege für eine Arbeit über dem angegebenen Klassenniveau.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Sammeln Sie mehr Übungsdaten, bevor Sie den Schluss ziehen, dass die Leistung über dem Klassenniveau liegt.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "Aus dem aktuellen Bericht lässt sich noch keine Richtung für die Leistung in diesem Fach bestimmen."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "Ein next_step-Block darf nicht enthalten sein.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "Fügen Sie keinen next_step-Block ein — praktische Empfehlungen gehören ausschließlich in den meaning-Block (FACTS_JSON erlaubt Empfehlungen nur, wenn recommendation"
+    },
+    "utils_parent-copilot_parent-coaching-packs": {
+      "period_overview": "Zeitraumübersicht"
+    },
+    "utils_parent-copilot_parent-facing-answer-postpr": {
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "Der Bericht basiert auf den im ausgewählten Zeitraum auf der Website durchgeführten Übungen."
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "Diese Antwort bleibt bei dem, was im Bericht für den ausgewählten Zeitraum erscheint, und geht nicht über diese Daten hinaus.",
+      "the_three_most_important_things_right_now_are": "Die drei wichtigsten Dinge im Moment sind:",
+      "report_summary": "Berichtszusammenfassung",
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "Wenn im Bericht eine klare Teilfähigkeit erscheint, konzentrieren Sie sich darauf — öffnen Sie nicht mehrere Fächer gleichzeitig."
+    },
+    "utils_parent-copilot_render-adapter": {
+      "program_for_the_week": "Plan für die Woche",
+      "what_to_avoid_now": "Was jetzt zu vermeiden ist",
+      "formulation_for_a_child": "Formulierung für Ihr Kind"
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "In diesem Fach gibt es im Bericht noch nicht genug Übung — wählen Sie ein Fach, zu dem bereits Übungsdaten vorliegen.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "In diesem Fach gibt es noch kein Thema mit genug Übung, um es zu besprechen — Sie können ein anderes Fach ausprobieren.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "Hier gibt es mehr als ein Thema — zu welchem Thema soll ich antworten?"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "Wenn Fächer im gewählten Zeitraum erscheinen, fragen Sie erneut, und Sie erhalten eine geordnete Liste.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "Die Liste basiert auf den Fächern, die im Bericht für den gewählten Zeitraum in der Anzeigereihenfolge gezeigt werden.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Das sind die Zusammenfassungszeilen für den Zeitraum, so wie sie im Bericht erscheinen. Für Details nach Fach öffnen Sie den Fächerbildschirm.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "Die Rangfolge nutzt Durchschnittswerte über Fächer mit Übungsdaten, nicht die Formulierung eines einzelnen Fachs.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Wenn Übungsdaten zu mindestens einem Thema mit Aufgaben erscheinen, fragen Sie erneut für ein klareres Bild.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "Sie können erneut mit zwei Fachnamen fragen, oder eine Frage zur Rangfolge nach Schwierigkeit im Vergleich zu relativ starken Ergebnissen basierend auf den Berichtsdaten stellen.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "Wenn Aufgaben und Genauigkeit für beide Fächer erscheinen, fragen Sie erneut für einen direkten Vergleich anhand der Durchschnittswerte im Bericht.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "Um die Richtungen zu unterscheiden, betrachten Sie auch die Anzahl der Aufgaben je Fach und die Formulierung des Themas selbst.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "Der Vergleich nutzt Durchschnittswerte über Themen mit Übungsdaten im Bericht, nicht die Formulierung eines einzelnen Themas.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "Wenn Fächer mit Fachzeilen erscheinen, fragen Sie erneut, um eine Übungsbewertung zu erhalten.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "Die Bewertung basiert auf der tatsächlichen Anzahl von Aufgaben im Zeitraumbericht, nicht auf einem Gefühl der Überforderung.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Wenn aktive Fächer erscheinen, lässt sich genau erkennen, wo die Daten am dünnsten sind.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "Das ist ein Zeichen dafür, dass im Zeitraumbericht zu wenig Daten vorliegen — seien Sie vorsichtig mit Schlussfolgerungen.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "Diese Antwort nutzt nur die Zusammenfassungszeilen im Bericht und erfindet keinen dort nicht gezeigten Trend über die Zeit.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Wenn vollständige Übungsdaten nach Fach im Bericht erscheinen, lässt sich ein Bereich erkennen, der Aufmerksamkeit braucht.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Üben und Prüfen Sie weiter — der Bericht zeigt derzeit kein deutliches Anzeichen von Verwirrung.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "Das ergibt sich aus Anzeichen, dass die Formulierung noch unklar ist, oder dass im Bericht selbst zu wenig Daten vorliegen.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "Es werden mehr Aufgaben und eine längere Übungsstrecke benötigt, um die Stabilität zuverlässig zu prüfen.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "Wenn Daten zu zwei oder mehr Fächern erscheinen, fragen Sie erneut für eine Bewertung anhand der im Bericht gezeigten Durchschnittswerte.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "Das ist eine Beschreibung auf Fachebene aus dem Bericht. Für genaue Details nach Thema öffnen Sie das Fach im Bericht.",
+      "you_can_formulate_again_with_two_subject_names": "Sie können erneut mit zwei Fachnamen fragen, oder eine Frage zur Rangfolge nach Schwierigkeit im Vergleich zu relativ starken Ergebnissen basierend auf den Berichtsdaten stellen.",
+      "in_order_to_differentiate_between_the_directions": "Um die Richtungen zu unterscheiden, betrachten Sie auch die Anzahl der Aufgaben je Fach und die Themenformulierung im Bericht."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Ausgezeichnet — beginnen Sie mit einem kleinen Schritt, der dem entspricht, was im Bericht erscheint, ohne über diese Formulierung hinauszugehen.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Verstanden — wir bleiben bei der gleichen Formulierung aus dem Bericht und gehen zum nächsten kleinen Schritt, wenn er passt.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "Hier gibt es keine lange Erklärung — sagen Sie mir mit einem anderen Wort, was noch unklar ist.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "Wir setzen an derselben Stelle des Berichts fort — beim gleichen Bild bleibend, ohne ein neues Fach über das bereits Gezeigte hinaus hinzuzufügen."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Setzen Sie kurze, gleichmäßige Übungen fort, um den Fortschritt in allen Bereichen zu festigen.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Hier ist eine Formulierung, die Sie Ihrem Kind in sanften Worten mitteilen können.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "Es gibt noch keine lange Übungsstrecke in allen Fächern, aber es gibt zahlenmäßige Übungssummen für den Zeitraum.",
+      "no_long_detail_shown_here_yet": "Hier wird noch keine ausführliche Aufschlüsselung gezeigt.",
+      "period_overview": "Zeitraumübersicht",
+      "still_lacks_cumulative_practice_for_a_stable_image": "Es fehlt noch an kumulativer Übung für ein stabiles Bild."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "volume_supports_stronger_reliability": "Объём данных поддерживает более высокую надёжность.",
+    "review_pacing_signals_separately_from_knowledge_gaps": "Повтори pacing signals separately from knowledge gaps.",
+    "row_level_accuracy_is_relatively_consistent": "Точность на уровне строки относительно стабильна."
+  }
+}

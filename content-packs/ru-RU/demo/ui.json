@@ -1,0 +1,126 @@
+{
+  "bar": {
+    "badge": "Демо-режим",
+    "gradeLabel": "Класс",
+    "playExpired": "Время for new starts has ended",
+    "playTime": "Играй time",
+    "minutesUnit": "мин",
+    "changeGrade": "Сменить класс",
+    "exitDemo": "Выйти из демо"
+  },
+  "enter": {
+    "pageTitle": "Демо-режим — LEO KIDS",
+    "pageDescription": "Попробуй мир детей без регистрации",
+    "heading": "Демо-режим родителя",
+    "intro": "Выбери класс и исследуй мир детей. {minutes} минут игры и обучения — без регистрации.",
+    "activeSessionNote": "У Вас активное демо — смена класса не сбросит таймер.",
+    "chooseGradeLegend": "Выбери класс",
+    "enterButton": "Войти в мир детей",
+    "enteringButton": "Вход…"
+  },
+  "homeButton": {
+    "labelDesktop": "Попробуй мир детей",
+    "labelMobile": "Демо",
+    "ariaLabel": "Попробуй мир детей — демо-режим",
+    "dismissAriaLabel": "Кнопка закрытия демо"
+  },
+  "gate": {
+    "loading": "Загрузка demo mode…",
+    "loadError": "Не удалось загрузить демо-режим. Попробуйте обновить страницу."
+  },
+  "timeExpiredModal": {
+    "title": "Время демо закончилось",
+    "body": "С начала демо прошло {minutes} минут. Можно продолжать смотреть мир детей, но нельзя начать новую игру или активность.",
+    "inProgressNote": "Игры или занятия, уже начатые, продолжатся до завершения.",
+    "dismiss": "Понятно",
+    "restart": "Начни a new demo"
+  },
+  "onlineGameUnavailable": {
+    "title": "Онлайн-игры недоступны в демо-режиме",
+    "body": "В демо-режиме можно смотреть аркаду и игры, но онлайн-мультиплеер не активен.",
+    "backToArcade": "Назад в аркаду"
+  },
+  "display": {
+    "studentName": "Демо-режим",
+    "greeting": "Добро пожаловать в демо-режим",
+    "arcadePlayerName": "Демо-игрок",
+    "myRoomMessage": "Моя комната — демо-просмотр",
+    "learningMinutesScope": "Из сводок занятий (демо)",
+    "allSubjectsScope": "Все предметы",
+    "encouragement": "Keep practicing — this is a demo!",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Практикуй math",
+    "mathDescription": "Ответь на 5 вопросов по математике",
+    "soloTitle": "Одиночная игра",
+    "soloDescription": "Играй one solo game",
+    "tier5": "5 минут",
+    "tier15": "15 минут",
+    "tier30": "30 минут"
+  },
+  "subjects": {
+    "math": "Математика",
+    "geometry": "Геометрия",
+    "english": "Английский язык",
+    "science": "Естественные науки"
+  },
+  "cards": {
+    "purchaseBlocked": "Покупки недоступны в демо-режиме.",
+    "sellBlocked": "продаже cards is not available in demo mode.",
+    "loadFailed": "Не удалось загрузить карточки."
+  },
+  "arcade": {
+    "actionBlocked": "Это действие недоступно в демо-режиме.",
+    "quickPlayBlocked": "Быстрая игра недоступна в демо-режиме."
+  },
+  "activity": {
+    "classroomUnavailable": "Классные активности недоступны в демо-режиме."
+  },
+  "worksheet": {
+    "pageTitle": "лист заданий — demo mode",
+    "intro": "Вы можете просматривать листы заданий из списка на главной. Цифровая отправка в демо-режиме недоступна.",
+    "backHome": "← Назад домой",
+    "submitBlocked": "Отправка недоступна в демо-режиме."
+  },
+  "myRoom": {
+    "title": "Моя комната",
+    "saveBlocked": "Сохранение недоступно в демо-режиме."
+  },
+  "friends": {
+    "demoUnavailable": "Друзья и номер Leo — демо-предпросмотр. Добавление друзей и приглашения недоступны."
+  },
+  "grades": {
+    "g1": "1 класс",
+    "g2": "2 класс",
+    "g3": "3 класс",
+    "g4": "4 класс",
+    "g5": "5 класс",
+    "g6": "6 класс"
+  },
+  "parentPortal": {
+    "barBadge": "Демо-режим родителя",
+    "barSubtitle": "Только просмотр · 3 примерных ребёнка",
+    "barExit": "Выйти из демо",
+    "dashboardSubtitle": "Демо-режим — портал родителя",
+    "homeParentLabelLine1": "Родитель",
+    "homeParentLabelLine2": "demo",
+    "homeParentAriaLabel": "Демо родителя — портал только для просмотра",
+    "homeParentDismissAriaLabel": "Кнопка закрытия демо родителя",
+    "enterPageTitle": "Демо родителя — LEO KIDS",
+    "enterPageDescription": "Изучите портал родителей с примерами детей, отчётами и рекомендациями — только просмотр",
+    "enterHeading": "Демо портала родителя",
+    "enterBack": "Назад",
+    "enterIntro": "Изучите портал родителей с 3 примерами детей, отчётами, занятиями и рекомендациями — только просмотр, без регистрации.",
+    "enterActiveSessionNote": "Вы have an active parent demo — you can continue where you left off.",
+    "enterReadOnlyNote": "Изменения нельзя сохранить в этом режиме.",
+    "enterButton": "Войти в портал родителей",
+    "enteringButton": "Вход…",
+    "enterBackHome": "На главную",
+    "readOnlyDefault": "Демо-режим только для просмотра. Изменения нельзя сохранить.",
+    "readOnlyShare": "Демо-режим — обмен вне демо недоступен.",
+    "readOnlyWorksheets": "Демо-режим — можно просматривать листы заданий, но не создавать новые.",
+    "apiReadOnlyError": "Демо-режим только для просмотра."
+  }
+}

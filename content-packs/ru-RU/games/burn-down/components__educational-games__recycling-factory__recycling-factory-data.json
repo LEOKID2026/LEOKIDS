@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "Пластик",
+    "newspaper": "Газета",
+    "cardboard": "Картон",
+    "plastic_bottle": "Пластиковая бутылка",
+    "plastic_bag": "Пластиковый пакет",
+    "soda_can": "Банка газировки",
+    "banana_peel": "Банановая кожура",
+    "medium": "Средний",
+    "recycled_paper_can_become_new_paper_again": "Переработанная бумага может снова стать новой бумагой.",
+    "plastic_bottles_can_be_made_into_new_products": "Из пластиковых бутылок можно сделать новые изделия.",
+    "glass_can_be_recycled_many_times": "Стекло можно перерабатывать много раз.",
+    "metal_cans_are_great_for_recycling": "Металлические банки отлично подходят для переработки.",
+    "sorting_correctly_helps_protect_the_environment": "Правильная сортировка помогает защищать окружающую среду."
+  }
+}

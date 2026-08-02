@@ -1,0 +1,9 @@
+{
+  "gameId": "tap-battle",
+  "title": "Tap Battle",
+  "blurb": "Each side taps as fast as they can — who wins?",
+  "players": "2 players",
+  "help": {
+    "howToPlay": "Play together on the same device."
+  }
+}

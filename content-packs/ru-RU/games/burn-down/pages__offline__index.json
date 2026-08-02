@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "tic_tac_toe": "Крестики-нолики",
+    "boards_from_3_3_to_7_7_with_score_tracking": "Доски от 3×3 до 7×7 с подсчётом очков.",
+    "rock_paper_scissors": "Камень · Ножницы · Бумага",
+    "quick_rounds_best_of_all": "Быстрые раунды — лучший из всех.",
+    "tap_battle": "Битва нажатий",
+    "each_side_taps_as_fast_as_they_can_who_wins": "Каждая сторона нажимает как можно быстрее — кто победит?",
+    "memory_match": "Найди пару",
+    "flip_cards_find_pairs_and_try_to_win": "Переворачивай карточки, находи пары и старайся победить.",
+    "always_on_games_with_leo": "Всегда доступные игры с Лео",
+    "play_on_the_same_device_even_offline": "Играй на том же устройстве — даже офлайн."
+  }
+}

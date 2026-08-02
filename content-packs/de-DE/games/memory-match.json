@@ -1,0 +1,9 @@
+{
+  "gameId": "memory-match",
+  "title": "Memory Match",
+  "blurb": "Flip cards, find pairs, and try to win.",
+  "players": "1–2 players",
+  "help": {
+    "howToPlay": "Play together on the same device."
+  }
+}

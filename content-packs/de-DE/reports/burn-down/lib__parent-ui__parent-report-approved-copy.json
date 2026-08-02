@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "not_available": "Not available",
+    "there_are_only_a_few_questions_on_this_topic_so_it_is_still_early_to_dra": "There are only a few questions on this topic, so it is still early to draw a strong conclusion.",
+    "keep_practicing_a_few_more_short_questions_and_watch_for_whether_the_sam": "Keep practicing a few more short questions and watch for whether the same mistake repeats.",
+    "most_answers_are_correct_and_this_topic_looks_relatively_stable": "Most answers are correct, and this topic looks relatively stable.",
+    "keep_up_the_success_with_a_short_practice_every_now_and_then": "Keep up the success with a short practice every now and then.",
+    "the_same_type_of_mistake_keeps_showing_up": "The same type of mistake keeps showing up.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_how_they_reached_the_": "Pause after a mistake and ask the child to explain how they reached the answer.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_step_by_step_how_they": "Pause after a mistake and ask the child to explain, step by step, how they reached the answer.",
+    "practice_the_specific_pairs_that_keep_coming_up_wrong_out_loud_and_as_a_": "Practice the specific pairs that keep coming up wrong, out loud and as a quick game.",
+    "pause_before_solving_and_ask_should_the_result_be_bigger_or_smaller_than": "Pause before solving and ask: should the result be bigger or smaller than the starting number?",
+    "read_a_short_passage_together_and_pause_to_ask_where_in_the_text_did_you": "Read a short passage together and pause to ask: where in the text did you find the answer?",
+    "practice_a_few_short_questions_and_ask_the_child_to_explain_the_method": "Practice a few short questions and ask the child to explain the method."
+  }
+}

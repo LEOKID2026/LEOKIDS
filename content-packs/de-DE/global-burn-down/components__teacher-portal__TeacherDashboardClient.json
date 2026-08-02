@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Remove this Schülerin oder Schüler from the class?",
+    "remove_this_student_from_your_teacher_list": "Remove this Schülerin oder Schüler from your Lehrkraft list?",
+    "manage_class": "Manage class",
+    "full_name_of_new_student": "Full name of new Schülerin oder Schüler",
+    "students": "Schülerinnen und Schüler",
+    "classes": "Klassen",
+    "class_report": "Klassenbericht",
+    "activities": "Aktivitäten",
+    "filter_student_list": "Filter Schülerin oder Schüler list",
+    "search_by_name": "Search by name…"
+  }
+}

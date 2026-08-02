@@ -1,0 +1,915 @@
+{
+  "components__classroom-activities__ActivityDisplayLevelSelector": {
+    "level": "Уровень"
+  },
+  "components__home__HomeValueCards": {
+    "product_values": "Ценности продукта"
+  },
+  "components__legal__UnifiedLegalPolicyPage": {
+    "legal_document_links": "Ссылки на правовые документы"
+  },
+  "components__math-scratchpad__MathScratchpadPanel": {
+    "scratch_pad": "Черновик"
+  },
+  "components__math-scratchpad__MathScratchpadWorkspace": {
+    "fraction_denominator": "fraction denominator",
+    "fraction_exercise": "fraction exercise",
+    "fraction_numerator": "fraction numerator"
+  },
+  "components__ParentReportInsight": {
+    "this_summary_was_generated_automatically_from_the_report_data_and_is_mea": "Это резюме сформировано автоматически из данных отчёта и предназначено только как учебная помощь."
+  },
+  "components__promo__PromoMobileCompareVideo": {
+    "mobile_compare_version": "Мобильная версия сравнения",
+    "mobile_test_video": "Мобильное тестовое видео"
+  },
+  "components__promo__PromoVideoModal": {
+    "close": "Закрыть"
+  },
+  "components__prototypes__dev__learning__english-word-builder__english-word-builder-data": {
+    "the_cat_is_red": "The cat is red",
+    "the_apple_is": "The apple is ___",
+    "she_likes_red": "She likes red"
+  },
+  "components__prototypes__dev__leo-dog__LeoDogReferenceGallery": {
+    "sprites_png": "Новые спрайты (прозрачный PNG)"
+  },
+  "components__reporting__ReportDateRangeControl": {
+    "custom_dates": "Свои даты"
+  },
+  "components__reporting__ReportHubModal": {
+    "loading_report": "Загрузка отчёта…",
+    "no_children_in_this_group": "В этой группе нет детей."
+  },
+  "components__reporting__ReportModalFrame": {
+    "close_window": "Закрыть окно"
+  },
+  "components__school-portal__SchoolDrillDown": {
+    "grade_status": "Статус класса",
+    "class_status": "Статус класса"
+  },
+  "components__school-portal__SchoolOperatorsManager": {
+    "no_secretaries_linked": "Нет secretaries linked"
+  },
+  "components__school-portal__SchoolPortalShell": {
+    "school_navigation": "Школа navigation"
+  },
+  "components__school-portal__SchoolReportModal": {
+    "loading_report": "Загрузка отчёта…"
+  },
+  "components__school-portal__SchoolReportModalBody": {
+    "no_data_yet": "Пока нет данных"
+  },
+  "components__school-portal__SchoolStaffEmailInviteForm": {
+    "name_example_com": "name@example.com",
+    "invite_by_user_id_advanced": "Пригласить по ID пользователя (расширенно)"
+  },
+  "components__school-portal__SchoolStudentAccessPanel": {
+    "account_actions": "Действия с аккаунтом",
+    "irreversible_actions": "Необратимые действия"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "В этом классе нет детей."
+  },
+  "components__seo__GuideSeoArticlePage": {
+    "all_practice_areas": "Все области практики"
+  },
+  "components__seo__PracticeSeoRelatedGuides": {
+    "related_guides": "Связанные руководства"
+  },
+  "components__seo__public-seo-wide-defaults": {
+    "ready_to_start": "Готовы начать?",
+    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "Откройте родительский аккаунт, добавьте ребёнка и пусть он практикуется в удобном для Вас темпе.",
+    "want_to_create_more_sheets_and_unlock_every_topic": "Хотите создавать больше листов и открыть все темы?",
+    "in_the_full_parent_portal_you_can_create_unlimited_worksheets_choose_add": "В полном портале родителя можно создавать неограниченные листы заданий, выбирать дополнительные темы и сочетать листы с цифровой практикой и отслеживанием прогресса."
+  },
+  "components__seo__PublicSeoEntrySection": {
+    "practice_areas": "Области практики",
+    "parent_guides": "Руководства для родителей"
+  },
+  "components__seo__PublicSeoPageActions": {
+    "page_navigation": "Навигация по страницам"
+  },
+  "components__seo__PublicSeoParentCta": {
+    "parent_login_sign_up": "Вход / регистрация для родителей",
+    "explore_the_parent_portal": "Изучите портал родителей"
+  },
+  "components__seo__PublicSeoWideCardGrid": {
+    "practice_areas": "Области практики"
+  },
+  "components__seo__PublicSeoWideRelatedGuides": {
+    "related_guides": "Связанные руководства"
+  },
+  "components__student__StudentAssignedActivityQuestionStage": {
+    "enlarge_diagram": "Увеличить схему"
+  },
+  "components__teacher-portal__GuardianAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "Текущий код будет отозван и сгенерирован новый. Сохраните новый код — он будет показан только один раз.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "Текущее имя пользователя будет отозвано. Новое имя пользователя будет показано только один раз."
+  },
+  "components__teacher-portal__StudentLoginAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "Текущий код будет отозван и сгенерирован новый. Сохраните новый код — он будет показан только один раз.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "Текущее имя пользователя будет отозвано. Новое имя пользователя будет показано только один раз."
+  },
+  "components__teacher-portal__SubjectSummaryCards": {
+    "sessions": "Сессии",
+    "answers": "Ответы",
+    "success": "Успех"
+  },
+  "components__teacher-portal__TeacherActivityStudentAnswersModal": {
+    "close": "Закрыть"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты",
+    "class_report": "Отчёт по классу",
+    "loading_class_report": "Загрузка class report…"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "Убрать этого ученика из класса?",
+    "remove_this_student_from_your_teacher_list": "Убрать этого ученика из Вашего списка учителя?",
+    "manage_class": "Управление классом",
+    "full_name_of_new_student": "Полное имя нового ученика",
+    "students": "Ученики",
+    "classes": "Классы",
+    "class_report": "Отчёт по классу",
+    "activities": "Занятия",
+    "filter_student_list": "Фильтр списка учеников",
+    "search_by_name": "Поиск по имени…"
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "level": "Уровень",
+    "whole_class": "Весь класс",
+    "selected_students": "Выбранные ученики",
+    "discussion_with_response_students_submit_an_answer": "Обсуждение с ответом (ученики отправляют ответ)",
+    "explanation_only_no_response_required": "Только пояснение — ответ не требуется"
+  },
+  "components__teacher-portal__TeacherParentMessagePanel": {
+    "write_a_short_message_to_the_parent": "Напишите короткое сообщение родителю..."
+  },
+  "components__teacher-portal__TeacherStudentIndividualActivitiesPanel": {
+    "level": "Уровень"
+  },
+  "components__ui__StudentLoadingPanel": {
+    "loading": "Загрузка…"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "total_students": "Всего учеников",
+    "opened_pdf": "Открытый PDF",
+    "completed_pdf": "Завершено (PDF)",
+    "submitted_answers": "Отправленные ответы",
+    "pending_review": "Ожидает проверки",
+    "published": "Опубликовано",
+    "class_average": "Среднее по классу"
+  },
+  "components__worksheets__WorksheetAnswerKeyList": {
+    "answer": "Ответ"
+  },
+  "lib__classroom-activities__generate-activity-questions-client": {
+    "human_body": "Человеческое тело",
+    "animals": "Животные",
+    "plants": "Растения",
+    "materials": "Материалы",
+    "experiments": "Опыты",
+    "earth_and_space": "Земля и космос",
+    "environment": "Окружающая среда",
+    "standard": "Стандарт",
+    "medium": "Средний",
+    "advanced": "Продвинутый",
+    "basic_shapes": "Основные фигуры",
+    "perimeter": "Периметр",
+    "volume": "Объём",
+    "angles": "Углы",
+    "parallel_and_perpendicular": "Параллельность и перпендикулярность",
+    "triangles": "Треугольники",
+    "quadrilaterals": "Четырёхугольники",
+    "transformations": "Преобразования",
+    "rotation": "Поворот",
+    "symmetry": "Симметрия",
+    "diagonals": "Диагонали",
+    "heights": "Высоты",
+    "tiling": "Замощение",
+    "circles": "Круги и окружности",
+    "solid_shapes": "Объёмные фигуры",
+    "pythagorean_theorem": "Теорема Пифагора"
+  },
+  "lib__classroom-activities__student-activity-choice-layout.client": {
+    "string_c_trim_length": "String(c ?? \"\").trim().length"
+  },
+  "lib__classroom-activities__student-activity-display-labels.client": {
+    "untitled_topic": "Тема без названия"
+  },
+  "lib__classroom-activities__student-activity-error-labels.client": {
+    "this_activity_is_not_available_right_now": "Эта активность сейчас недоступна",
+    "activity_not_found": "Активность не найдена",
+    "this_activity_has_not_started_yet": "Эта активность ещё не началась",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Ответы сейчас нельзя отправить для этой активности",
+    "this_activity_is_closed": "Эта активность закрыта",
+    "time_is_up_for_this_activity": "Время для этой активности истекло",
+    "could_not_open_this_activity_right_now": "Не удалось открыть эту активность прямо сейчас",
+    "not_found": "Не найдено",
+    "please_sign_in": "Пожалуйста, войдите",
+    "you_do_not_have_permission_to_open_this_activity": "У тебя нет разрешения открыть эту активность",
+    "this_activity_is_not_assigned_to_you": "Эта активность вам не назначена",
+    "could_not_identify_the_account": "Не удалось определить аккаунт",
+    "could_not_complete_that_action_right_now": "Не удалось выполнить это действие прямо сейчас",
+    "you_already_submitted_this_activity": "Ты уже отправил эту активность",
+    "you_already_answered_this_question": "Ты уже ответил на этот вопрос",
+    "waiting_for_the_teacher": "Ждём учителя…",
+    "no_answer_submission_needed": "Нет answer submission needed",
+    "the_system_is_updating_try_again_later": "Система обновляется — попробуй позже",
+    "something_went_wrong_please_try_again": "Что-то пошло не так — попробуйте ещё раз",
+    "server_error_please_try_again": "Ошибка сервера — попробуйте ещё раз",
+    "action_not_supported": "Действие не поддерживается",
+    "could_not_load_the_question_right_now": "Не удалось загрузить вопрос прямо сейчас",
+    "could_not_submit_an_answer_right_now": "Не удалось отправить ответ прямо сейчас"
+  },
+  "lib__game-audio__game-audio-manifest": {
+    "game_start": "Начало игры",
+    "session_end": "Конец сессии",
+    "correct_answer": "Верный ответ",
+    "wrong_answer": "Неверно answer",
+    "victory": "Victory",
+    "defeat": "Поражение",
+    "coin_collect": "Сбор монет",
+    "hit_bomb": "Попадание / бомба",
+    "time_up": "Время up",
+    "card_flip": "Переворот карточки",
+    "correct_match": "Верное соответствие",
+    "mismatch": "Несоответствие",
+    "balloon_pop": "Лопанье шариков",
+    "small_success": "Маленький success",
+    "run_victory": "Победа забега",
+    "success_streak": "Серия успехов",
+    "achievement_badge": "Значок достижения",
+    "level_up": "Новый уровень",
+    "countdown": "Обратный отсчёт",
+    "line_clear": "Линия очищена",
+    "correct_placement": "Верное размещение",
+    "wrong_placement": "Неверно placement",
+    "item_pickup": "Подбор предмета",
+    "warning": "Предупреждение",
+    "fruit_slice": "Фруктовый ломтик",
+    "train_departs": "Поезд отправляется",
+    "place_mark": "Размести mark",
+    "reveal_choice": "Показать выбор",
+    "mine_click": "Клик в шахте",
+    "mine_merge": "Объединение в шахте",
+    "rock_break": "Разрушение камня",
+    "mine_gift": "Подарок шахты",
+    "learning_music": "Музыка обучения",
+    "educational_instruction_voice": "Голос учебной инструкции",
+    "educational_feedback_voice": "Голос учебной обратной связи",
+    "hebrew_question_voice": "Hebrew question voice",
+    "english_phonics_voice": "Голос фонетики английского",
+    "diamond_collect": "Сбор алмазов",
+    "star_collect": "Star collect",
+    "key_collect": "Сбор ключей",
+    "maze_exit": "Выход из лабиринта",
+    "target_hit": "Цель поражена",
+    "cash_register": "Касса",
+    "recycling_conveyor": "Конвейер переработки",
+    "place_evidence": "Размести evidence",
+    "arcade_music": "Музыка аркады",
+    "puzzle_music": "Музыка пазла",
+    "shop_music": "Музыка магазина",
+    "mine_music": "Музыка шахты",
+    "button_click": "Клик по кнопке",
+    "window_open": "Окно открыто",
+    "low_time": "Мало времени",
+    "help_voice": "Голос помощи"
+  },
+  "lib__games__game-catalog.constants": {
+    "this_game_is_not_available_right_now": "Эта игра сейчас недоступна",
+    "locked_by_parents": "Закрыто родителями"
+  },
+  "lib__global__product-context.server": {
+    "this_student_does_not_belong_to_leo_kids_global": "Этот ученик не относится к LEO KIDS Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "Ученик не найден для этого родителя в LEO KIDS Global.",
+    "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "Product isolation schema is not ready. Apply sql/global-product-isolation before enabling writes."
+  },
+  "lib__global__product-membership.server": {
+    "this_leo_kids_global_membership_is_suspended": "Это членство LEO KIDS Global приостановлено."
+  },
+  "lib__guest__guest-economy-guard.server": {
+    "the_shop_is_not_available_in_guest_mode": "Магазин недоступен в гостевом режиме.",
+    "cards_are_not_available_in_guest_mode": "Карточки недоступны в гостевом режиме."
+  },
+  "lib__guest__guest-start-errors.server": {
+    "the_service_is_not_configured_correctly": "Сервис настроен некорректно.",
+    "guest_mode_is_currently_disabled": "Гостевой режим сейчас отключён.",
+    "the_guest_system_is_not_ready": "Гостевая система ещё не готова.",
+    "could_not_start_guest_mode": "Не удалось запустить гостевой режим."
+  },
+  "lib__guest__guest-start-rate-limit.server": {
+    "too_many_attempts_please_try_again_in_a_few_minutes": "Слишком много попыток — пожалуйста, попробуй через несколько минут."
+  },
+  "lib__guest__guest-student.server": {
+    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "Этот номер уже связан с родителем — войдите с именем пользователя и PIN."
+  },
+  "lib__guest__guest-topic-access.server": {
+    "this_topic_is_locked_in_guest_mode": "Эта тема заблокирована в гостевом режиме."
+  },
+  "lib__guest__guest-transfer.server": {
+    "coins_diamonds_and_cards_were_saved_to_the_child": "Монеты, алмазы и карточки сохранены у ребёнка.",
+    "diamond_transfer_failed": "Не удалось перевести алмазы.",
+    "arcade_club_data_transfer_failed": "Не удалось передать данные клубной аркады."
+  },
+  "lib__learning__display-level": {
+    "regular": "Обычный",
+    "advanced": "Продвинутый"
+  },
+  "lib__learning__question-metadata-validator": {},
+  "lib__learning__report-visible-practice-sync": {
+    "learning": "Обучение",
+    "practice": "Практика",
+    "challenge": "Испытание",
+    "extended_practice": "Расширенная практика",
+    "graded": "С оценкой",
+    "regular": "Обычный",
+    "mistakes": "Ошибки",
+    "review_mistakes": "Разобрать ошибки"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "this_subject_is_locked_by_the_parents": "Этот предмет заблокирован родителями.",
+    "you_don_t_have_permission_to_select_this_grade": "У тебя нет разрешения выбрать этот класс."
+  },
+  "lib__parent-server__delete-parent-owned-student.server": {
+    "deleting_the_child_failed_please_try_again_or_contact_support": "Не удалось удалить профиль ребёнка — попробуйте ещё раз или обратитесь в поддержку."
+  },
+  "lib__parent-server__report-data-aggregate.server": {
+    "not_available_for_guest_accounts": "Не available for guest accounts"
+  },
+  "lib__school-portal__operator-grant-labels": {
+    "manage_child_and_parent_access": "Управление доступом ребёнка и родителя",
+    "view_reports_and_child_details": "Просмотр отчётов и данных учеников"
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "Родители класса",
+    "homeroom_child_parents": "Родители учеников класса"
+  },
+  "lib__school-portal__school-report-view-model": {
+    "no_data_in_this_period": "Нет данных за этот период",
+    "topics_to_strengthen": "Темы для закрепления",
+    "practice": "Практика",
+    "no_data": "Нет данных",
+    "submitted_active": "Отправлено / активно",
+    "no_data_in_period": "Нет data in period",
+    "class_activities": "Занятия класса",
+    "no_activities": "Нет activities",
+    "students_in_class": "Ученики в классе",
+    "no_children": "Нет children",
+    "students_who_need_attention": "Ученики, которым нужно внимание",
+    "student_distribution": "Распределение учеников",
+    "no_class_activities_to_show_for_this_period": "Нет классных активностей для показа за этот период.",
+    "no_children_are_registered_in_this_class": "В этом классе не зарегистрированы дети.",
+    "not_enough_data_for_a_distribution_breakdown": "Недостаточно data for a distribution breakdown.",
+    "no_children_have_been_flagged_for_attention": "Нет children have been flagged for attention.",
+    "learning_status": "Статус обучения",
+    "needs_intervention": "Требуется вмешательство",
+    "practice_day": "Практикуй day",
+    "mistake": "Ошибка",
+    "keep_monitoring_progress": "Продолжайте отслеживать прогресс",
+    "breakdown_by_subject": "Разбивка по предметам",
+    "no_data_yet": "Пока нет данных",
+    "recent_activities": "Недавняя активность",
+    "no_activity": "Нет activity",
+    "follow_up_recommendations": "Рекомендации для дальнейших шагов",
+    "no_data_by_subject": "Нет data by subject.",
+    "no_learning_activity_recently": "Нет learning activity recently.",
+    "no_further_recommendations_at_this_time": "Сейчас нет дополнительных рекомендаций.",
+    "general_class_report_all_subjects": "Общий отчёт класса · все предметы",
+    "no_subjects_to_display": "Нет subjects to display."
+  },
+  "lib__school-server__school-browse-status.server": {
+    "not_enough_data": "Недостаточно данных"
+  },
+  "lib__school-server__school-students.server": {
+    "not_enough_data": "Недостаточно данных"
+  },
+  "lib__security__admin-token": {
+    "missing_admin_token_header": "Missing admin token header",
+    "admin_token_does_not_match_server_configuration": "Токен администратора не совпадает с конфигурацией сервера"
+  },
+  "lib__site__public-page-seo": {
+    "leo_kids_learning_games_and_progress_tracking_for_kids": "Leo Kids — обучение, игры и отслеживание прогресса для детей",
+    "contact_leo_kids": "Контакты · Leo Kids",
+    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "Свяжитесь с Leo Kids — вопросы, поддержка, сообщения об ошибках или идеи по улучшению сайта.",
+    "about_leo_kids": "О проекте · Leo Kids",
+    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "О Leo Kids — практика по предметам, отчёты для родителей, игры, монеты и карточки для детей.",
+    "learn_and_play_with_leo_leo_kids": "Учись и играй с Лео · Leo Kids",
+    "parent_portal_leo_kids": "Портал родителя · Leo Kids",
+    "teacher_portal_leo_kids": "Портал учителя · Leo Kids",
+    "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "Инструменты отслеживания, личные активности и отчёты — для частных репетиторов в Leo Kids.",
+    "parent_login_leo_kids": "Вход родителя · Leo Kids",
+    "sign_in_to_the_leo_kids_parent_portal": "Войдите в портал родителя Leo Kids.",
+    "teacher_login_leo_kids": "Вход учителя · Leo Kids",
+    "sign_in_to_the_leo_kids_teacher_portal": "Войдите в портал учителя Leo Kids.",
+    "practice_by_subject_leo_kids": "Практикуй by subject · Leo Kids",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Цифровые занятия для учеников начальной школы по математике, геометрии, английскому и естественным наукам.",
+    "math_practice_by_grade_and_topic_leo_kids": "Практика математики по классу и теме · Leo Kids",
+    "reading_comprehension_practice_leo_kids": "Практика понимания текста · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "Практика английского по классу и теме · Leo Kids",
+    "english_practice_vocabulary_phonics_grammar_sentences_and_reading": "Практика английского — словарь, фонетика, грамматика, предложения и чтение.",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Геометрия по классам и темам · Leo Kids",
+    "geometry_practice_shapes_angles_perimeter_area_volume_and_more": "Практика по геометрии — фигуры, углы, периметр, площадь, объём и другое.",
+    "science_practice_by_topic_leo_kids": "Практика естественных наук по темам · Leo Kids",
+    "science_practice_body_animals_plants_materials_earth_and_weather": "Практика естественных наук — тело, животные, растения, материалы, земля и погода.",
+    "learning_games_for_kids_leo_kids": "Учебные игры для детей · Leo Kids",
+    "learning_games_that_reinforce_practice_with_challenges_and_rewards": "Учебные игры, которые усиливают практику через задания и награды.",
+    "digital_practice_without_printing_leo_kids": "Цифровые занятия без печати · Leo Kids",
+    "practice_online_by_subject_and_topic_no_printing_required": "Практикуйтесь онлайн по предметам и темам — печать не нужна.",
+    "parent_progress_reports_leo_kids": "Отчёты о прогрессе для родителей · Leo Kids",
+    "see_what_your_child_practiced_topics_to_strengthen_and_clear_next_steps": "Смотрите, что практиковал ваш ребёнок, какие темы усилить и ясные следующие шаги.",
+    "printable_worksheets_for_kids_leo_kids": "Printable лист заданийs for kids · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Готовые листы заданий, генератор листов заданий и ответы для начальной практики.",
+    "help_center_leo_kids": "Справочный центр · Leo Kids",
+    "guides_for_parents_leo_kids": "Руководства для родителей · Leo Kids",
+    "math_practice_at_home_leo_kids_guides": "Практика математики дома · руководства Leo Kids",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "Как выбрать тему по математике, реагировать на ошибки и выстроить стабильную домашнюю практику.",
+    "reading_practice_at_home_leo_kids_guides": "Практика чтения дома · руководства Leo Kids",
+    "how_to_practice_reading_accuracy_pace_and_understanding_with_short_texts": "Как тренировать точность, темп и понимание при чтении коротких текстов дома.",
+    "reading_comprehension_at_home_leo_kids_guides": "Чтение comprehension at home · Leo Kids guides",
+    "how_to_help_your_child_find_details_explain_answers_and_draw_conclusions": "Как помочь ребёнку находить детали, объяснять ответы и делать выводы из текста.",
+    "english_vocabulary_practice_leo_kids_guides": "Практика словаря английского · руководства Leo Kids",
+    "how_to_practice_new_words_in_context_and_review_them_through_the_week": "Как практиковать новые слова в контексте и повторять их в течение недели.",
+    "learning_games_at_home_leo_kids_guides": "Учебные игры дома · руководства Leo Kids",
+    "how_to_combine_learning_games_with_focused_practice_by_subject_and_topic": "Как сочетать обучающие игры с целенаправленной практикой по предметам и темам.",
+    "math_games_for_kids_leo_kids_guides": "Математические игры для детей · руководства Leo Kids",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "Как использовать математические игры для операций, чисел и решения задач.",
+    "parent_progress_tracking_leo_kids_guides": "Отслеживание прогресса для родителей · руководства Leo Kids",
+    "how_to_read_progress_reports_and_spot_patterns_over_time": "Как читать отчёты о прогрессе и замечать паттерны со временем.",
+    "choosing_a_topic_to_strengthen_leo_kids_guides": "Выбор темы для усиления · руководства Leo Kids",
+    "how_to_pick_the_next_topic_based_on_reports_answers_and_repeating_diffic": "Как выбрать следующую тему по отчётам, ответам и повторяющимся трудностям.",
+    "home_practice_routine_leo_kids_guides": "Домашняя практика · руководства Leo Kids",
+    "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "Как выстроить домашнюю практику с одной чёткой целью на занятие.",
+    "practice_without_printing_leo_kids_guides": "Практикуй without printing · Leo Kids guides",
+    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "Как использовать цифровые занятия и игры и когда помогают листы заданий.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — практика для учеников начальной школы."
+  },
+  "lib__student-ui__student-ad-slot.client": {
+    "reserved_for_ad": "Зарезервировано под рекламу"
+  },
+  "lib__teacher-portal__teacher-activity-report-export-labels": {
+    "live_lesson": "Урок вживую",
+    "guided_practice": "Практика с сопровождением",
+    "homework": "Домашнее задание",
+    "class_discussion": "Классное обсуждение",
+    "standard": "Стандарт",
+    "advanced": "Продвинутый",
+    "angles": "Углы",
+    "shapes": "Фигуры",
+    "perimeter": "Периметр",
+    "volume": "Объём",
+    "general_practice": "Общая практика",
+    "asia_jerusalem": "Asia/Jerusalem"
+  },
+  "lib__teacher-portal__teacher-activity-report-export": {
+    "activity_report": "Отчёт об активности",
+    "correct_out_of_all_answers": "Верно из всех ответов"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf-he": {
+    "notosanshebrew_regular_ttf": "NotoSansHebrew-Regular.ttf"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf": {
+    "activity_report_teacher": "Отчёт об активности — учитель",
+    "questions": "Вопросы",
+    "student_summary": "Сводка по ученику",
+    "question_analysis": "Анализ вопроса",
+    "skill_analysis": "Анализ навыка"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1 класс",
+    "grade_2": "2 класс",
+    "grade_3": "3 класс",
+    "grade_4": "4 класс",
+    "grade_5": "5 класс",
+    "grade_6": "6 класс"
+  },
+  "lib__teacher-portal__teacher-class-topic-options": {
+    "human_body": "Тело человека",
+    "animals": "Животные",
+    "plants": "Растения",
+    "materials": "Материалы",
+    "experiments": "Опыты",
+    "earth_space": "Земля и космос",
+    "environment": "Окружающая среда"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "Класс 3 — LEO"
+  },
+  "lib__teacher-server__teacher-activities.server": {
+    "this_subject_is_not_supported_for_class_activities": "Этот предмет не поддерживается для классных активностей",
+    "please_select_at_least_one_student": "Пожалуйста, select at least one student"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1 класс",
+    "grade_2": "2 класс",
+    "grade_3": "3 класс",
+    "grade_4": "4 класс",
+    "grade_5": "5 класс",
+    "grade_6": "6 класс"
+  },
+  "lib__teacher-server__teacher-request.server": {
+    "unexpected_server_error": "Неожиданная ошибка сервера"
+  },
+  "lib__teacher-server__teacher-student-login-access.server": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "PIN в открытом виде нельзя будет получить после этого ответа. Храните безопасно."
+  },
+  "lib__worksheet-activities__worksheet-labels.client": {
+    "active": "Активно",
+    "closed": "Закрыто",
+    "archived": "В архиве",
+    "digital_answer_sheet": "Цифровой лист ответов",
+    "manual_grading": "Ручная оценка",
+    "not_submitted": "Не сдано",
+    "submitted": "Отправлено",
+    "pending_review": "Ожидает проверки",
+    "partially_checked": "Частично проверено",
+    "checked": "Проверено",
+    "published": "Опубликовано",
+    "multiple_choice": "Выбор ответа",
+    "true_false": "Верно / Неверно",
+    "number": "Число",
+    "short_answer": "Коротк. answer",
+    "free_text": "Свободный текст"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "she_already_finished_the_project": "She ___ already finished the project.",
+    "if_it_rains_tomorrow_we_indoors": "If it rains tomorrow, we ___ indoors.",
+    "they_a_science_fair_last_week": "They ___ a science fair last week.",
+    "please_carefully_before_you_answer": "Please ___ carefully before you answer.",
+    "although_the_problem_was_complex_the_team_a_clear_plan": "Although the problem was complex, the team ___ a clear plan.",
+    "by_the_time_we_arrived_the_presentation_already_begun": "By the time we arrived, the presentation ___ already begun.",
+    "students_should_evidence_before_they_form_an_opinion": "Students should ___ evidence before they form an opinion.",
+    "if_we_recycle_more_our_community_cleaner": "If we recycle more, our community ___ cleaner.",
+    "she_asked_whether_we_ready_to_present": "She asked whether we ___ ready to present.",
+    "technology_can_help_us_learn_we_use_it_wisely": "Technology can help us learn, ___ we use it wisely.",
+    "the_report_explains_the_experiment_worked": "The report explains ___ the experiment worked.",
+    "we_must_listen_carefully_we_understand_the_instructions": "We must listen carefully ___ we understand the instructions.",
+    "after_reviewing_the_data_they_their_conclusion": "After reviewing the data, they ___ their conclusion.",
+    "honest_feedback_helps_writers_stronger_drafts": "Honest feedback helps writers ___ stronger drafts.",
+    "communities_grow_stronger_when_people_each_other": "Communities grow stronger when people ___ each other.",
+    "she_prefers_asking_clear_questions_guessing_the_answer": "She prefers asking clear questions ___ guessing the answer.",
+    "before_publishing_the_article_check_fact_carefully": "Before publishing the article, check ___ fact carefully.",
+    "learning_from_mistakes_is_important_part_of_progress": "Learning from mistakes is ___ important part of progress.",
+    "exploring_different_cultures_teaches_respect_curiosity": "Exploring different cultures teaches respect ___ curiosity."
+  },
+  "lib__worksheets__worksheet-english-translation-pool.server": {
+    "choose_the_correct_english_sentence": "Выбери правильное английское предложение."
+  },
+  "lib__worksheets__worksheet-geometry-diagram-svg": {
+    "arial_helvetica_sans_serif": "Arial, Helvetica, sans-serif"
+  },
+  "lib__worksheets__worksheet-geometry-thin-pool.server": {
+    "square": "Квадрат",
+    "rectangle": "Прямоугольник"
+  },
+  "lib__worksheets__worksheet-math-practice-format": {
+    "horizontal_addition_and_subtraction": "Горизонтальное сложение и вычитание",
+    "vertical_addition_and_subtraction": "Вертикальное сложение и вычитание",
+    "basic_multiplication": "Базовое умножение",
+    "long_multiplication": "Умножение в столбик",
+    "basic_division": "Базовое деление",
+    "long_division": "Деление уголком",
+    "fractions": "Дроби",
+    "decimals": "Десятичные числа",
+    "percentages": "Проценты",
+    "ratio_and_scale": "Отношение и масштаб",
+    "word_problems": "Текстовые задачи",
+    "mixed_practice": "Смешанная практика"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1 класс",
+    "grade_2": "2 класс",
+    "grade_3": "3 класс",
+    "grade_4": "4 класс",
+    "grade_5": "5 класс",
+    "grade_6": "6 класс",
+    "regular": "Обычный",
+    "advanced": "Продвинутый",
+    "addition": "Сложение",
+    "subtraction": "Вычитание",
+    "multiplication": "Умножение",
+    "division": "Деление",
+    "division_with_remainder": "Деление с остатком",
+    "fractions": "Дроби",
+    "decimals": "Десятичные числа",
+    "percentages": "Проценты",
+    "sequences": "Последовательности",
+    "number_sense": "Чувство числа",
+    "comparison": "Сравнение",
+    "order_of_operations": "Порядок действий",
+    "divisibility_rules": "Признаки делимости",
+    "word_problems": "Текстовые задачи",
+    "rounding": "Округление",
+    "equations": "Уравнения",
+    "factors_and_multiples": "Множители и кратные",
+    "estimation": "Оценка и прикидка",
+    "mixed_practice": "Смешанная практика",
+    "basic_shapes": "Основные фигуры",
+    "perimeter": "Периметр",
+    "volume": "Объём",
+    "angles": "Углы",
+    "parallel_and_perpendicular": "Параллельность и перпендикулярность",
+    "triangles": "Треугольники",
+    "quadrilaterals": "Четырёхугольники",
+    "transformations": "Преобразования",
+    "rotation": "Поворот",
+    "symmetry": "Симметрия",
+    "diagonals": "Диагонали",
+    "heights": "Высоты",
+    "tiling": "Замощение",
+    "circles": "Круги и окружности",
+    "solids": "Тела",
+    "pythagoras": "Теорема Пифагора",
+    "phonics": "Фоника",
+    "vocabulary": "Словарь",
+    "grammar": "Грамматика",
+    "grammar_basics": "Основы грамматики",
+    "translation": "Перевод",
+    "sentence_building": "Составление предложений",
+    "writing": "Письмо",
+    "reading_comprehension": "Понимание прочитанного",
+    "matching": "Сопоставление",
+    "inference": "Вывод",
+    "sentence_understanding": "Понимание предложений",
+    "simple_sentences": "Простые предложения"
+  },
+  "lib__worksheets__worksheet-payload-build.server": {
+    "worksheet": "Лист заданий",
+    "name": "Name: ________________",
+    "date": "Дата: ________________",
+    "options": "Варианты:",
+    "answer": "Ответ:",
+    "question": "Вопрос",
+    "answer_2": "Ответ",
+    "answer_key": "Ответы"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "printable_worksheets": "Листы заданий для печати",
+    "ready_worksheet": "Ready лист заданий",
+    "create_new": "Создай new",
+    "system_recommendation": "Рекомендация системы",
+    "preview": "Предварительный просмотр",
+    "answer_key": "Ответы",
+    "separate_answer_key_generated_only_on_explicit_request": "Отдельный лист ответов — только по явному запросу",
+    "ink_saver": "Экономия чернил",
+    "no_answers_on_the_worksheet": "Нет ответов на листе заданий",
+    "this_question_requires_audio_and_cannot_be_printed": "Этот вопрос требует аудио и не может быть напечатан",
+    "this_question_requires_an_image_and_cannot_be_printed": "Этот вопрос требует изображения и не может быть напечатан",
+    "question": "Вопрос",
+    "practice_type": "Тип практики",
+    "number_of_questions": "Число вопросов",
+    "include_answer_key": "Включить ответы",
+    "multiple_choice": "Выбор ответа",
+    "if_available_multiple_choice_options_will_be_shown": "Если доступно, будут показаны варианты с выбором ответа",
+    "no_multiple_choice_questions_are_available_for_this_topic": "Для этой темы нет вопросов с выбором ответа",
+    "create_worksheet": "Создать лист заданий",
+    "view_and_print": "Просмотр и печать",
+    "loading": "Загрузка…",
+    "something_went_wrong_please_try_again": "Что-то пошло не так. Попробуйте ещё раз.",
+    "no_children_are_linked_to_this_account": "К этому аккаунту не привязаны дети.",
+    "select_a_child": "Выберите ребёнка",
+    "no_recommendations_yet": "Пока нет рекомендаций",
+    "recommendations_based_on_practice": "Рекомендации на основе практики",
+    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "Рекомендации основаны на темах, которые ваш ребёнок недавно практиковал — не на отчёте родителя.",
+    "ready_made_worksheets": "Ready-made лист заданийs",
+    "no_worksheets_found": "Нет лист заданийs found",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Попробуйте изменить фильтры — или выберите все предметы, классы и уровни.",
+    "create_a_new_worksheet": "Создать новый лист заданий",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Выбери предмет, класс, тему и уровень — затем создай лист заданий, готовый к печати.",
+    "choose_topics_for_mixed_practice": "Выбери темы для смешанной практики",
+    "check_the_topics_to_include_in_the_mixed_practice_all_topics_are_checked": "Отметь темы для смешанной практики. По умолчанию отмечены все темы.",
+    "select_all_topics": "Выбрать все темы",
+    "please_select_at_least_one_topic_for_practice": "Пожалуйста, выберите хотя бы одну тему для практики.",
+    "worksheet": "Лист заданий",
+    "no_worksheet_to_preview_go_back_to_create_one": "Нет листа заданий для предварительного просмотра. Вернитесь, чтобы создать его.",
+    "creating_worksheet": "Создание листа заданий…",
+    "refresh_questions": "Обновить вопросы",
+    "generating_new_questions": "Создание новых вопросов…",
+    "the_answer_key_was_updated_to_match_the_current_questions_try_opening_th": "Ключ ответов обновлён под текущие вопросы. Попробуйте открыть ключ ответов снова.",
+    "create_worksheet_from_recommendation": "Создай worksheet from recommendation",
+    "try_the_worksheet_generator": "Попробуйте генератор листов заданий",
+    "more_topics_are_available_in_the_full_parent_system": "Больше тем доступно в полной родительской системе",
+    "ready_made_worksheets_by_grade": "Ready-made лист заданийs by grade",
+    "preview_data_is_not_available_go_back_to_the_worksheets_page_and_choose_": "Данные предварительного просмотра недоступны. Вернитесь на страницу листов заданий и выберите лист снова.",
+    "back_to_worksheets": "Назад к листам заданий"
+  },
+  "pages__api__cron__monthly-persistence-award": {
+    "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron": "Monthly persistence cron is disabled. Set ENABLE_MONTHLY_PERSISTENCE_CRON=true"
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Пожалуйста, select a grade",
+    "you_can_add_up_to_3_children_on_this_parent_account": "Вы можете добавить до 3 детей в этом родительском аккаунте"
+  },
+  "pages__api__parent__delete-student": {
+    "child_id_is_missing": "Отсутствует ID ребёнка",
+    "server_error_please_try_again": "Ошибка сервера — попробуйте ещё раз"
+  },
+  "pages__api__parent__guest__link": {
+    "unable_to_link_this_guest_number_check_the_number_and_try_again": "Не удалось связать этот гостевой номер. Проверьте номер и попробуйте снова.",
+    "too_many_attempts_please_try_again_later": "Слишком много попыток. Пожалуйста, попробуйте позже."
+  },
+  "pages__api__teacher__classes__index": {
+    "unexpected_server_error": "Неожиданная ошибка сервера"
+  },
+  "pages__api__teacher__classes__[classId]": {
+    "unexpected_server_error": "Неожиданная ошибка сервера"
+  },
+  "pages__api__teacher__me": {
+    "unexpected_server_error": "Неожиданная ошибка сервера"
+  },
+  "pages__api__teacher__onboard": {
+    "unexpected_server_error": "Неожиданная ошибка сервера"
+  },
+  "pages__api__teacher__students": {
+    "unexpected_server_error": "Неожиданная ошибка сервера"
+  },
+  "pages__school__activities__[activityId]__monitor": {
+    "activity_monitor": "Монитор активности"
+  },
+  "pages__school__classes__index": {
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты",
+    "no_classes_in_this_grade": "В этом годе обучения нет классов."
+  },
+  "pages__school__messages": {
+    "loading": "Загрузка…",
+    "regular": "Обычный",
+    "important": "Важное",
+    "urgent": "Срочное",
+    "requires_confirmation": "Требуется подтверждение"
+  },
+  "pages__school__pending": {
+    "registration_status": "Статус регистрации"
+  },
+  "pages__school__students__index": {
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты",
+    "no_children_in_this_grade": "В этом годе обучения нет детей.",
+    "no_children_found_in_this_class": "В этом классе дети не найдены."
+  },
+  "pages__student__activity__[activityId]": {
+    "incorrect": "Неверно",
+    "answer_submitted": "Ответ отправлен",
+    "submit_answer": "Отправить ответ",
+    "type_your_answer": "Введи ответ",
+    "enlarged_diagram": "Увеличенная схема",
+    "close_diagram": "Закрыть схему"
+  },
+  "pages__student__worksheet__[worksheetId]": {
+    "mark_this_worksheet_as_finished": "Отметить этот лист заданий как завершённый?",
+    "submit_your_answers": "Отправить ответы?",
+    "submission_received_and_waiting_for_teacher_approval": "Работа получена и ждёт одобрения учителя."
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "Отчёт по классу",
+    "invalid_class_id": "Неверный ID класса.",
+    "you_do_not_have_permission_to_view_this_class_report": "У Вас нет разрешения смотреть отчёт этого класса.",
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты"
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "Занятия класса"
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "level": "Уровень"
+  },
+  "pages__teacher__class__[classId]__discussion__new": {
+    "new_discussion_activity": "Новая дискуссионная активность"
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "worksheets": "Листы заданий"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Оценить ученика"
+  },
+  "pages__teacher__dashboard": {
+    "my_dashboard": "Моя панель"
+  },
+  "pages__teacher__pending": {
+    "request_status": "Статус запроса"
+  },
+  "pages__teacher__students__activities__new": {
+    "activity_for_selected_private_students": "Активность для выбранных частных учеников",
+    "level": "Уровень"
+  },
+  "pages__teacher__student__[studentId]": {
+    "student_report": "Отчёт ученика",
+    "invalid_student_id": "Неверный ID ученика.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "У Вас нет разрешения смотреть отчёт этого ученика.",
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты"
+  },
+  "pages__teacher__worksheets__index": {
+    "worksheets": "Листы заданий"
+  },
+  "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Оценить ученика"
+  },
+  "pages__teacher__worksheets__[worksheetId]__report": {
+    "worksheet_report": "лист заданий report"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Обучение для учеников начальной школы"
+  },
+  "utils__ai-hybrid-diagnostic__hybrid-review-record": {
+    "no_conflict_between_v2_and_the_hybrid_top_hypothesis": "Нет конфликта между V2 и верхней гипотезой Hybrid."
+  },
+  "utils__contracts__parent-product-contract-v1": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Пока недостаточно данных, чтобы задать картину на уровне предмета.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Начните короткую регулярную практику, чтобы собрать базовые измерения.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Объём данных пока мал — нет оснований для чёткого направления.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Выберите одну тему и практикуйте 10–15 минут каждую сессию.",
+    "do_not_change_difficulty_based_on_sparse_data": "Не меняйте difficulty based on sparse data.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Насколько доверять этому: пока не высоко на этом этапе.",
+    "existing_data_is_still_partial": "Имеющиеся данные всё ещё неполные.",
+    "continue_basic_data_collection": "Продолжи basic data collection.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Пока недостаточно данных, чтобы определить ясное направление.",
+    "short_focused_practice_on_one_topic": "Короткая целенаправленная практика по одной теме.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Не делайте strong conclusions from a small number of questions.",
+    "how_much_to_trust_this_not_high_yet": "Насколько доверять этому: пока не высоко.",
+    "data_is_missing_or_partial": "Данные отсутствуют или неполные."
+  },
+  "utils__detailed-report-parent-letter": {
+    "sparse_data": "Разреженные данные"
+  },
+  "utils__english-question-generator": {
+    "got_it": "Понятно"
+  },
+  "utils__expert-review-pack-artifact-snapshot": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Не populated in artifact snapshot mode. Run `npm run qa:learning-simulator:expert-review-pack` for synthetic maps / aggregates.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Межпредметные паттерны — гипотезы; для каждого предмета нужны подтверждающие проверки.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Internal educational diagnostic support only - not clinical / not parent-facing."
+  },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "Слушай вопрос и отвечай по тому, что слышишь."
+  },
+  "utils__math-topic-parent-display": {
+    "learning": "Обучение",
+    "practice": "Практика",
+    "challenge": "Испытание",
+    "marathon": "Марафон",
+    "graded": "С оценкой",
+    "normal": "Обычный",
+    "mistakes": "Ошибки",
+    "review_mistakes": "Разобрать ошибки"
+  },
+  "utils__parent-ai-topic-classifier__external-question-route": {
+    "the_report_for_the_selected_period": "Отчёт за выбранный период"
+  },
+  "utils__parent-data-presence": {
+    "social_studies_geography": "Обществознание и география"
+  },
+  "utils__probe-pending-finalize": {
+    "choose_the_correct_formula_or_first_step_before_numerical_calculation": "Выбери правильную формулу или первый шаг до числового вычисления.",
+    "identify_one_clear_shape_property_or_state_before_calculating": "Определи одно ясное свойство или состояние фигуры до вычисления.",
+    "reinforce_a_foundational_concept_before_continuing": "Усильте базовое понятие, прежде чем продолжать."
+  },
+  "utils__question-metadata-qa__english-metadata-enrichment-suggestions": {
+    "no_automated_prerequisite_chain_for_english_pools_in_this_fast_track_pas": "Нет автоматической цепочки предварительных требований для пулов English в этом fast-track проходе."
+  },
+  "utils__question-metadata-qa__geometry-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "All suggestions keep needsHumanReview=true until bank edits are approved."
+  },
+  "utils__question-metadata-qa__geometry-metadata-enrichment-suggestions": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "Rectangle area planning assumes distinguishing area vs perimeter in context.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "Строка суммы углов треугольника поздней полосы продолжает тот же принцип — подтвердите последовательность до применения.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "Нет автоматической цепочки предварительных требований для этого шаблона — авторы учебного плана задают её явно."
+  },
+  "utils__question-metadata-qa__math-generator-metadata-map": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Не заменяет числовой correctAnswer, answers[] или текст вопроса после генерации — только обогащает поля метаданных.",
+    "blanket_patternfamily_math_kind_when_absent": "Blanket patternFamily `math_${kind}` when absent",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Probe + fraction rows already carry diagnosticSkillId / expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Standard op/kind rows use deterministic math_${kind} skill id",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Краевые виды с минимальными параметрами — по-прежнему безопасный шаблон id math_*"
+  },
+  "utils__question-metadata-qa__question-bank-discovery": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Template rows for conceptual MCQ - scanned as static metadata carriers",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Procedural math items - metadata assigned at generation time",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Procedural geometry - use geometry-conceptual-bank + generator params",
+    "english_generator_pool_merge": "Генератор английского + объединение пула"
+  },
+  "utils__question-metadata-qa__question-metadata-enrichment-suggestions": {
+    "no_probepower_cognitive_tier_inferred_from_difficulty": "Нет probePower - cognitive tier inferred from difficulty."
+  },
+  "utils__question-metadata-qa__question-metadata-taxonomy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Skill ≥85% coverage, subskill ≥50%, avg completeness ≥0.65, high-risk share <8%.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Skill coverage usable but substantial gaps in cognitive/errors/prereqs.",
+    "large_missing_skill_or_inconsistent_tagging": "Большой отсутствующий навык или непоследовательная разметка.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "Skill id largely absent - diagnosis routing unreliable."
+  },
+  "utils__question-metadata-qa__science-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "All suggestions keep needsHumanReview=true until bank edits are approved."
+  },
+  "utils__question-quality": {
+    "correct_answer_is_the_only_full_sentence_among_options": "Верный ответ — единственное полное предложение среди вариантов",
+    "correct_option_is_much_longer_than_all_distractors": "Верный вариант намного длиннее всех отвлекающих"
+  },
+  "utils__student-question-display": {
+    "short_equation_puzzle": "Коротк. equation puzzle:",
+    "complete_the_missing_part_of_the_equation": "Заполни пропущенную часть равенства:",
+    "find_the_unknown": "Найди неизвестное:",
+    "find_x": "Найди x:"
+  },
+  "utils__student-question-stem-sanitizer": {
+    "hebrew_level_prefix": "Hebrew level prefix",
+    "english_level_token_as_metadata": "Токен уровня английского как метаданные"
+  }
+}

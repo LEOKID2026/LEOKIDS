@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "child_id_is_missing": "Отсутствует ID ребёнка",
+    "server_error_please_try_again": "Ошибка сервера — попробуйте ещё раз"
+  }
+}

@@ -155,6 +155,38 @@ const PACK_TITLE_NL_NL = Object.freeze({
   sight: "Veelvoorkomende woorden",
 });
 
+/** German (Germany) pack titles (chrome only). */
+const PACK_TITLE_DE_DE = Object.freeze({
+  colors: "Farben",
+  animals: "Tiere",
+  family: "Familie",
+  food: "Lebensmittel",
+  school: "Schule",
+  body: "Körper",
+  home: "Haus",
+  nature: "Natur",
+  transport: "Verkehrsmittel",
+  numbers: "Zahlen",
+  cvc: "CVC-Wörter",
+  sight: "Häufige Wörter",
+});
+
+/** Russian (Russia) pack titles (chrome only). */
+const PACK_TITLE_RU_RU = Object.freeze({
+  colors: "Цвета",
+  animals: "Животные",
+  family: "Семья",
+  food: "Еда",
+  school: "Школа",
+  body: "Тело",
+  home: "Дом",
+  nature: "Природа",
+  transport: "Транспорт",
+  numbers: "Числа",
+  cvc: "Слова CVC",
+  sight: "Часто употребляемые слова",
+});
+
 /** EN colorInstruction → it-IT (colors pack only). */
 const COLOR_INSTRUCTION_IT_IT = Object.freeze({
   "Color in red": "Colora di rosso",
@@ -189,6 +221,30 @@ const COLOR_INSTRUCTION_NL_NL = Object.freeze({
   "Color in purple": "Kleur paars",
   "Color in pink": "Kleur roze",
   "Color in black": "Kleur zwart",
+});
+
+/** EN colorInstruction → de-DE (colors pack only). */
+const COLOR_INSTRUCTION_DE_DE = Object.freeze({
+  "Color in red": "Male rot aus",
+  "Color in blue": "Male blau aus",
+  "Color in green": "Male grün aus",
+  "Color in yellow": "Male gelb aus",
+  "Color in orange": "Male orange aus",
+  "Color in purple": "Male lila aus",
+  "Color in pink": "Male rosa aus",
+  "Color in black": "Male schwarz aus",
+});
+
+/** EN colorInstruction → ru-RU (colors pack only). */
+const COLOR_INSTRUCTION_RU_RU = Object.freeze({
+  "Color in red": "Раскрась красным",
+  "Color in blue": "Раскрась синим",
+  "Color in green": "Раскрась зелёным",
+  "Color in yellow": "Раскрась жёлтым",
+  "Color in orange": "Раскрась оранжевым",
+  "Color in purple": "Раскрась фиолетовым",
+  "Color in pink": "Раскрась розовым",
+  "Color in black": "Раскрась чёрным",
 });
 
 /**
@@ -258,6 +314,28 @@ function isNlNl(locale) {
 }
 
 /**
+ * @param {string} locale
+ */
+function isDeDe(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "de-de";
+}
+
+/**
+ * @param {string} locale
+ */
+function isRuRu(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "ru-ru";
+}
+
+/**
  * @param {string|null|undefined} [contentLocale]
  */
 export function resolveWritingWordPacks(contentLocale) {
@@ -268,32 +346,42 @@ export function resolveWritingWordPacks(contentLocale) {
   const useIt = isItIt(locale);
   const useFr = isFrFr(locale);
   const useNl = isNlNl(locale);
-  const titles = useIt
-    ? PACK_TITLE_IT_IT
-    : useFr
-      ? PACK_TITLE_FR_FR
-      : useNl
-        ? PACK_TITLE_NL_NL
-        : usePtPt
-          ? PACK_TITLE_PT_PT
-          : usePtBr
-            ? PACK_TITLE_PT_BR
-            : useEs
-              ? PACK_TITLE_ES_419
-              : PACK_TITLE_EN;
-  const colorMap = useIt
-    ? COLOR_INSTRUCTION_IT_IT
-    : useFr
-      ? COLOR_INSTRUCTION_FR_FR
-      : useNl
-        ? COLOR_INSTRUCTION_NL_NL
-        : usePtPt
-          ? COLOR_INSTRUCTION_PT_PT
-          : usePtBr
-            ? COLOR_INSTRUCTION_PT_BR
-            : useEs
-              ? COLOR_INSTRUCTION_ES_419
-              : null;
+  const useDe = isDeDe(locale);
+  const useRu = isRuRu(locale);
+  const titles = useRu
+    ? PACK_TITLE_RU_RU
+    : useDe
+      ? PACK_TITLE_DE_DE
+      : useIt
+        ? PACK_TITLE_IT_IT
+        : useFr
+          ? PACK_TITLE_FR_FR
+          : useNl
+            ? PACK_TITLE_NL_NL
+            : usePtPt
+              ? PACK_TITLE_PT_PT
+              : usePtBr
+                ? PACK_TITLE_PT_BR
+                : useEs
+                  ? PACK_TITLE_ES_419
+                  : PACK_TITLE_EN;
+  const colorMap = useRu
+    ? COLOR_INSTRUCTION_RU_RU
+    : useDe
+      ? COLOR_INSTRUCTION_DE_DE
+      : useIt
+        ? COLOR_INSTRUCTION_IT_IT
+        : useFr
+          ? COLOR_INSTRUCTION_FR_FR
+          : useNl
+            ? COLOR_INSTRUCTION_NL_NL
+            : usePtPt
+              ? COLOR_INSTRUCTION_PT_PT
+              : usePtBr
+                ? COLOR_INSTRUCTION_PT_BR
+                : useEs
+                  ? COLOR_INSTRUCTION_ES_419
+                  : null;
 
   /** @type {typeof ENGLISH_WORD_PACKS} */
   const out = {};

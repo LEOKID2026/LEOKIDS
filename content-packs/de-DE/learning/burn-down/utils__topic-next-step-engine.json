@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "Move to advanced — same topic only",
+    "move_up_a_grade_same_topic_only": "Move up a grade — same topic only",
+    "solidify_at_the_same_level": "Solidify at the same level",
+    "solidify_at_regular_level": "Solidify at regular level",
+    "strengthen_at_the_same_level": "Strengthen at the same level",
+    "return_to_regular_practice": "Return to regular practice",
+    "lower_difficulty_same_topic_only": "Lower difficulty — same topic only",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "Enough questions were solved at regular level with stable accuracy. Trying advanced on the same topic is reasonable.",
+    "trying_advanced_on_the_same_topic_is_recommended": "Trying advanced on the same topic is recommended.",
+    "you_can_try_advanced_on_the_same_topic": "You can try advanced on the same topic.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "Build more steady practice at regular level before moving to advanced.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "Continue at regular level and strengthen accuracy and confidence before advanced.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "We will stay a bit longer at regular level, get stronger, then try to advance.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "The advanced challenge was high right now. Returning to regular practice on the same topic is recommended.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "The advanced challenge was high right now. Return to regular practice, strengthen accuracy and confidence, then try again later.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "We will return to regular practice for a bit, get stronger, then try again.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "Strengthen the same topic with regular practice at a comfortable pace.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "Continue regular practice at a comfortable pace, with a few short questions for reinforcement.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "We will strengthen with regular practice first, then move on.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "Try a lower level or grade, then advance gradually.",
+    "limited_information": "Limited information"
+  }
+}

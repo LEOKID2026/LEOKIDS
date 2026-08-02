@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "Назад",
+    "coin_balance": "Баланс монет",
+    "how_to_play": "Как играть",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "В свой ход бросаются кости (OV2 также автоматически открывает анимацию броска), затем выбери, какую фигуру двигать.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "Только 6 выводит фигурку со двора на дорожку.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "6, взятие или вход домой с пути — по правилам движка — даёт дополнительный ход.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "Фишка, которая доходит домой, заканчивает; четыре фишки дома — победа.",
+    "waiting_for_players": "Ожидание игроков…"
+  }
+}

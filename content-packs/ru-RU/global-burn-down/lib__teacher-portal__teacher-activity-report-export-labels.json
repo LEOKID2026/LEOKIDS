@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "live_lesson": "Урок вживую",
+    "guided_practice": "Практика с сопровождением",
+    "homework": "Домашнее задание",
+    "class_discussion": "Классное обсуждение",
+    "standard": "Стандарт",
+    "advanced": "Продвинутый",
+    "angles": "Углы",
+    "shapes": "Фигуры",
+    "perimeter": "Периметр",
+    "volume": "Объём",
+    "general_practice": "Общая практика",
+    "asia_jerusalem": "Asia/Jerusalem"
+  }
+}

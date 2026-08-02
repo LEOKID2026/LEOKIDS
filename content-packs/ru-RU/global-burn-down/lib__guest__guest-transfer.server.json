@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "coins_diamonds_and_cards_were_saved_to_the_child": "Монеты, алмазы и карточки сохранены у ребёнка.",
+    "diamond_transfer_failed": "Не удалось перевести алмазы.",
+    "arcade_club_data_transfer_failed": "Не удалось передать данные клубной аркады."
+  }
+}

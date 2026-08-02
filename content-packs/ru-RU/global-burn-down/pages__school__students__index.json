@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "please_select_valid_dates": "Пожалуйста, выберите корректные даты",
+    "no_children_in_this_grade": "В этом годе обучения нет детей.",
+    "no_children_found_in_this_class": "В этом классе дети не найдены."
+  }
+}

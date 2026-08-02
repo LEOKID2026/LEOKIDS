@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Пока недостаточно данных, чтобы задать картину на уровне предмета.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Начните короткую регулярную практику, чтобы собрать базовые измерения.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Объём данных пока мал — нет оснований для чёткого направления.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Выберите одну тему и практикуйте 10–15 минут каждую сессию.",
+    "do_not_change_difficulty_based_on_sparse_data": "Не меняйте difficulty based on sparse data.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Насколько доверять этому: пока не высоко на этом этапе.",
+    "existing_data_is_still_partial": "Имеющиеся данные всё ещё неполные.",
+    "continue_basic_data_collection": "Продолжи basic data collection.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Пока недостаточно данных, чтобы определить ясное направление.",
+    "short_focused_practice_on_one_topic": "Короткая целенаправленная практика по одной теме.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Не делайте strong conclusions from a small number of questions.",
+    "how_much_to_trust_this_not_high_yet": "Насколько доверять этому: пока не высоко.",
+    "data_is_missing_or_partial": "Данные отсутствуют или неполные."
+  }
+}

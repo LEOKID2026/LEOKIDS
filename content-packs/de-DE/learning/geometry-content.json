@@ -1,0 +1,77 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Parallel",
+      "Perpendicular"
+    ],
+    "triangles": [
+      "Equilateral",
+      "Isosceles",
+      "Scalene"
+    ],
+    "quadrilaterals": [
+      "Square",
+      "Rectangle",
+      "Parallelogram",
+      "Trapezoid"
+    ],
+    "transformations": [
+      "Übersetzung",
+      "Reflection",
+      "Drehung",
+      "No movement"
+    ],
+    "concept_transform": [
+      "Übersetzung",
+      "Reflection",
+      "Drehung",
+      "No movement"
+    ],
+    "shapes_basic_square": [
+      "Square",
+      "Rectangle"
+    ],
+    "shapes_basic_rectangle": [
+      "Square",
+      "Rectangle"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "No equal sides"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "No right angles"
+    ]
+  },
+  "solidNames": [
+    "Cube",
+    "Rectangular prism",
+    "Cylinder",
+    "Pyramid",
+    "Cone",
+    "Sphere"
+  ],
+  "shapeWords": {
+    "": "Perpendicular",
+    " ": "Scalene"
+  },
+  "solidAliases": {
+    "cube": "Cube",
+    "rectangular prism": "Rectangular prism",
+    "cylinder": "Cylinder",
+    "pyramid": "Pyramid",
+    "cone": "Cone",
+    "sphere": "Sphere"
+  }
+}

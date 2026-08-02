@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "Игры на одном устройстве",
+    "leo_solo_games": "Leo Одиночные игры",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "Догонялки, пазлы, лабиринты и другое — соединение не нужно.",
+    "educational_games": "Учебные игры",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Переработка, магазин, лаборатория, пиццерия, поезд слов и другое — всё локально.",
+    "leo_games_offline": "Leo Игры — офлайн",
+    "educational_games_offline": "Учебные игры — офлайн",
+    "local_games_no_saving_and_no_rewards": "Локальные игры — без сохранения и без наград",
+    "offline_games": "Не в сети Игры",
+    "back": "Назад"
+  }
+}

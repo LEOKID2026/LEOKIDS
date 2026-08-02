@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "horizontal_addition_and_subtraction": "Горизонтальное сложение и вычитание",
+    "vertical_addition_and_subtraction": "Вертикальное сложение и вычитание",
+    "basic_multiplication": "Базовое умножение",
+    "long_multiplication": "Умножение в столбик",
+    "basic_division": "Базовое деление",
+    "long_division": "Деление уголком",
+    "fractions": "Дроби",
+    "decimals": "Десятичные числа",
+    "percentages": "Проценты",
+    "ratio_and_scale": "Отношение и масштаб",
+    "word_problems": "Текстовые задачи",
+    "mixed_practice": "Смешанная практика"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "copy": {
+    "sort_trash_into_the_right_bins_and_help_protect_the_environment": "Сортируй мусор в правильные баки и помогай защищать окружающую среду",
+    "pay_attention_to_the_item_type_paper_plastic_glass_metal_or_general_wast": "Обрати внимание на тип предмета — бумага, пластик, стекло, металл или общие отходы.",
+    "check_the_purchase_total_and_how_much_the_customer_paid_work_out_for_you": "Проверь сумму покупки и сколько заплатил клиент — сам посчитай, какую сдачу нужно отдать.",
+    "coins_are_awarded_based_on_how_many_experiments_you_succeeded_at_difficu": "Монеты начисляются по числу успешных экспериментов, уровню сложности, точности, сериям и завершению 20 экспериментов — только если у тебя был хотя бы один успех.",
+    "equal_division_remainders_and_quick_math": "Равное деление, остатки и быстрый счёт",
+    "coins_are_awarded_based_on_how_many_questions_you_answered_correctly_acc": "Монеты начисляются по числу верно отвеченных вопросов, точности, сериям и уровню сложности — даже если игра закончилась из-за ошибок.",
+    "multiplication_equal_groups_and_trays": "Умножение, равные группы и подносы",
+    "coins_are_awarded_based_on_how_many_orders_you_prepared_correctly_accura": "Монеты начисляются по числу правильно приготовленных заказов, точности, сериям и уровню сложности.",
+    "think_about_how_many_trays_how_many_per_tray_not_just_the_final_result": "Думай, сколько подносов × сколько на каждом — не только про итоговый результат.",
+    "sequences_odd_even_and_multiples": "Последовательности, чётные-нечётные и кратные",
+    "coins_are_awarded_based_on_how_many_of_the_20_tasks_you_completed_accura": "Монеты начисляются по числу выполненных из 20 заданий, точности, сериям и завершению пути.",
+    "pay_attention_to_whether_order_matters_for_skip_counting_and_sequences_y": "Обрати внимание, важен ли порядок — для счёта с шагом и последовательностей нужно выбирать по порядку.",
+    "learning_fractions_through_making_pizzas": "Изучение дробей через приготовление пиццы",
+    "check_how_many_slices_each_topping_covers_half_quarter_and_eighth_refer_": "Проверь, сколько долек покрывает каждый топпинг — половина, четверть и восьмая относятся к числу долек, а не к позиции.",
+    "letters_words_and_sentences_in_english_riding_on_the_train_cars": "Буквы, слова и предложения на английском — едут в вагонах поезда",
+    "coins_are_awarded_based_on_how_many_of_the_20_tasks_you_completed_accura_2": "Монеты начисляются по числу выполненных из 20 заданий, точности, сериям и уровню сложности.",
+    "on_easy_just_letters_medium_short_words_hard_short_sentences": "На лёгком — только буквы. На среднем — короткие слова. На сложном — короткие предложения.",
+    "drag_evidence_onto_the_board_and_solve_reading_and_vocabulary_cases": "Перетаскивай доказательства на доску и решай дела по чтению и словарю",
+    "coins_are_awarded_based_on_how_many_of_the_20_cases_you_solved_accuracy_": "Монеты начисляются по числу решённых из 20 дел, точности, сериям и уровню сложности.",
+    "enrichment_games_critical_thinking_and_general_knowledge": "Обогащающие игры, критическое мышление и общие знания"
+  }
+}

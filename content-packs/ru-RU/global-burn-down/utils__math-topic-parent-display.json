@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Обучение",
+    "practice": "Практика",
+    "challenge": "Испытание",
+    "marathon": "Марафон",
+    "graded": "С оценкой",
+    "normal": "Обычный",
+    "mistakes": "Ошибки",
+    "review_mistakes": "Разобрать ошибки"
+  }
+}

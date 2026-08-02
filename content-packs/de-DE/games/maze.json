@@ -1,0 +1,11 @@
+{
+  "gameId": "maze",
+  "title": "Leo's Maze",
+  "blurb": "Find the exit of the maze before time runs out!",
+  "help": {
+    "howToPlay": "Move Leo through the maze, collect keys and stars, and find the exit before time runs out.",
+    "scoring": "Keys, stars, and diamonds add points. Finishing the maze gives a big bonus. If time runs out - the game ends.",
+    "rewards": "Successfully finishing the maze based on difficulty level grants coins, and a score bonus adds even more.",
+    "tip": "Collect the keys first - sometimes they unlock a shorter path."
+  }
+}

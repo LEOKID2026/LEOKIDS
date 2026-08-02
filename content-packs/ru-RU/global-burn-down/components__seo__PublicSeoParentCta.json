@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_login_sign_up": "Вход / регистрация для родителей",
+    "explore_the_parent_portal": "Изучите портал родителей"
+  }
+}

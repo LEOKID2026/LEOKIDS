@@ -1,0 +1,9 @@
+{
+  "gameId": "rock-paper-scissors",
+  "title": "Rock · Paper · Scissors",
+  "blurb": "Quick rounds — best of all.",
+  "players": "2 players or vs robot",
+  "help": {
+    "howToPlay": "Play together on the same device."
+  }
+}

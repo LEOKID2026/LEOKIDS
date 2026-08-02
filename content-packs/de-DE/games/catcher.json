@@ -1,0 +1,11 @@
+{
+  "gameId": "catcher",
+  "title": "Catch with Leo",
+  "blurb": "Catch coins and stay away from bombs!",
+  "help": {
+    "howToPlay": "Move Leo left and right to catch coins and diamonds falling from the sky.",
+    "scoring": "Every coin or diamond caught adds points. Hitting a bomb ends the game.",
+    "rewards": "The more points you earn, the more coins and diamonds you'll get for your kid world.",
+    "tip": "Keep your eyes on what's falling and move ahead of time before the item reaches the bottom."
+  }
+}

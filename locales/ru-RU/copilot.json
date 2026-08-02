@@ -1,0 +1,133 @@
+{
+  "boundary": {
+    "generalOffTopic": "Я могу помочь только с отчётом Вашего ребёнка, практикой и прогрессом на сайте. Попробуйте спросить, что потренировать на этой неделе, что сделать дома или какую тему открыть как короткое занятие.",
+    "diagnosticBoundary": "Я опираюсь только на данные практики, которые видны на сайте. Отчёт может выделить предметы и темы для закрепления, но это не личный диагноз. Мы можем сосредоточиться на том, что действительно видно в отчёте: сильная тема, тема для закрепления или небольшой шаг для дома.",
+    "healthBoundary": "Я опираюсь только на данные практики, показанные на сайте. Отчёт не предназначен для личных выводов о Вашем ребёнке — он помогает увидеть, какую учебную тему стоит закрепить. Из этих данных мы можем выбрать небольшой следующий учебный шаг.",
+    "privacyBoundary": "Я могу помочь только с отчётом ребёнка, связанного с этим родительским аккаунтом. Я не могу показывать данные других детей, пароли, списки пользователей или внутреннюю информацию системы.",
+    "peerComparison": "Отчёт основан только на практике этого ребёнка и не сравнивает его с другими детьми в классе. Вы можете опираться на то, что видно в отчёте, и спросить про конкретную тему.",
+    "ambiguous": "Не удалось понять, о какой части отчёта Вы спрашиваете. Задайте более простой вопрос — например: что важнее всего потренировать на этой неделе, что попробовать дома или какую тему открыть как короткое занятие.",
+    "noDataForRequest": "В этом отчёте пока недостаточно информации для точного ответа. Пройдите короткую практику на сайте, а затем проверьте снова — направление станет яснее.",
+    "noDataSpecificForRequest": "В отчёте есть данные практики за период, но их недостаточно для точного ответа именно по этому пункту. Пройдите короткую практику на сайте, а затем проверьте снова — по этой теме направление станет яснее."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "Пожалуйста, войдите снова как родитель.",
+      "no_report_was_found_for_the_child_you_selected": "Для выбранного ребёнка отчёт не найден."
+    },
+    "lib_parent-copilot_copilot-turn-payload": {
+      "server": {
+        "invalid_custom_range_rangefrom_rangeto_must_be_yyyy_mm_dd_and_fr": "Неверный произвольный период: rangeFrom/rangeTo должны быть в формате ГГГГ-ММ-ДД, и from <= to",
+        "could_not_verify_student_ownership_for_copilot_rebuild": "Не удалось подтвердить принадлежность ученика для пересборки Copilot"
+      }
+    },
+    "pages_api_parent_copilot-turn": {
+      "could_not_verify_student_ownership": "Не удалось подтвердить принадлежность ученика",
+      "student_not_found_for_this_parent": "Ученик не найден для этого родителя"
+    },
+    "utils_parent-copilot_answer-composer": {
+      "still_too_early_to_decide": "Пока рано делать вывод",
+      "this_is_an_initial_image_only": "Это пока лишь ранняя картина —",
+      "there_is_only_an_initial_sign_of_weakness": "Есть лишь ранний признак слабости —"
+    },
+    "utils_parent-copilot_continuity-pattern-composer": {
+      "report_summary": "Краткое содержание отчёта"
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "Продолжайте наблюдать ещё несколько дней практики.",
+      "general_summary_of_the_practice": "Обзор практики"
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Хотите сегодня дома вместе сделать небольшой шаг по той же теме?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Хотите вместе составить короткий план на эту неделю по этой теме?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Хотите вместе отметить, чего лучше избегать на этой неделе?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Хотите вместе проверить, когда переходить дальше, а когда оставаться на той же теме?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Хотите короткую формулировку, чтобы объяснить это ребёнку без давления?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Хотите формулировку для точного вопроса учителю на основе того, что видно в отчёте?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Хотите разобрать, что ещё неясно по данным отчёта?"
+    },
+    "utils_parent-copilot_index": {
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "Сейчас мало данных практики, поэтому пока недостаточно информации для ясного направления.",
+      "this_mode_is_for_parent_only": "Этот режим только для родителей.",
+      "the_relationship_cannot_be_identified_from_the_report": "В отчёте недостаточно данных, чтобы определить эту связь.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "По выбранной в отчёте теме подходящих элементов не найдено."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "right_now_it": "Сейчас",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Через 3–4 дня проверьте так же, а затем посмотрите в отчёте: растёт ли точность или паттерн возвращается.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "Это не значит, что успехов нет — только что по данным за этот период ещё рано отмечать устойчивую силу.",
+      "during_this_period_there_is_no_practice_data_on_this_subject_in_": "За этот период в текущем отчёте нет данных практики по этому предмету.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Вы можете выбрать другую тему из отчёта или больше потренировать эту тему и спросить снова.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "Предмет есть в списке, но за выбранный диапазон дат по нему не учтено ни одного вопроса.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "За этот период всё ещё недостаточно данных практики, чтобы рекомендовать повышать или понижать уровень.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Наберите больше практики по этому предмету, прежде чем решать о смене уровня.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "За этот период не выделилась слабая тема с достаточным объёмом практики.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "По отчёту пока недостаточно оснований для работы выше указанного класса.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Наберите больше практики, прежде чем делать вывод, что результаты выше уровня класса.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "По текущему отчёту пока нельзя определить направление по результатам в этом предмете."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "Не включайте блок next_step.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "Не включайте блок next_step — оставляйте практические рекомендации только внутри блока meaning (FACTS_JSON допускает рекомендации только когда recommendation"
+    },
+    "utils_parent-copilot_parent-coaching-packs": {
+      "period_overview": "Обзор периода"
+    },
+    "utils_parent-copilot_parent-facing-answer-postpr": {
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "Отчёт основан на практике, выполненной на сайте за выбранный период."
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "Этот ответ опирается только на то, что видно в отчёте за выбранный период, и не выходит за эти данные.",
+      "the_three_most_important_things_right_now_are": "Три самых важных момента сейчас:",
+      "report_summary": "Краткое содержание отчёта",
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "Если в отчёте виден ясный поднавык, сосредоточьтесь на нём — не открывайте сразу несколько предметов."
+    },
+    "utils_parent-copilot_render-adapter": {
+      "program_for_the_week": "План на неделю",
+      "what_to_avoid_now": "Чего сейчас избегать",
+      "formulation_for_a_child": "Формулировка для Вашего ребёнка"
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "По этому предмету в отчёте всё ещё недостаточно практики — выберите предмет, по которому практика уже есть.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "По этому предмету пока нет темы с достаточным объёмом практики для обсуждения — можете попробовать другой предмет.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "Здесь больше одной темы — по какой теме ответить?"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "Когда в диапазоне дат появятся предметы, спросите снова — можно будет получить упорядоченный список.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "Список основан на предметах, показанных в отчёте за выбранный период, в порядке отображения.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Это итоговые формулировки за период, как они приведены в отчёте. Подробности по предметам смотрите на экране предметов.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "Рейтинг строится по средним показателям по предметам с практикой, а не по формулировке одного предмета.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Когда появятся данные практики хотя бы по одной теме с вопросами, спросите снова — картина станет яснее.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "Вы можете спросить снова, назвав два предмета, или задать один вопрос о ранжировании по сложности и относительно сильным результатам на основе данных отчёта.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "Когда по обоим предметам появятся вопросы и точность, спросите снова — можно будет сравнить напрямую по средним из отчёта.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "Чтобы различить направления, также смотрите число вопросов по каждому предмету и саму формулировку темы.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "Сравнение строится по средним показателям по темам с практикой в отчёте, а не по формулировке одной темы.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "Когда появятся предметы со строками по предметам, спросите снова — можно будет получить оценку практики.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "Оценка основана на фактическом числе вопросов в отчёте за период, а не на ощущении перегрузки.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Когда появятся активные предметы, можно будет точно увидеть, где данных меньше всего.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "Это значит, что в отчёте за период слишком мало данных — будьте осторожны с выводами.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "Этот ответ опирается только на итоговые строки отчёта и не придумывает тренд во времени, которого там нет.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Когда в отчёте появятся полные данные практики по предметам, можно будет заметить область, требующую внимания.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Продолжайте практиковаться и проверять — в отчёте сейчас нет явного признака путаницы.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "Это следует из признаков, что формулировка ещё неясна, или что в самом отчёте слишком мало данных.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "Чтобы надёжно проверить устойчивость, нужно больше вопросов и более длинный отрезок практики.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "Когда появятся данные по двум или более предметам, спросите снова — можно будет получить оценку по средним из отчёта.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "Это описание на уровне предмета из отчёта. Точные детали по темам смотрите, открыв предмет в отчёте.",
+      "you_can_formulate_again_with_two_subject_names": "Вы можете спросить снова, назвав два предмета, или задать один вопрос о ранжировании по сложности и относительно сильным результатам на основе данных отчёта.",
+      "in_order_to_differentiate_between_the_directions": "Чтобы различить направления, также смотрите число вопросов по каждому предмету и формулировку темы в отчёте."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Отлично — начните с небольшого шага, который соответствует тому, что видно в отчёте, не выходя за эту формулировку.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Понятно — остаёмся при той же формулировке из отчёта и переходим к следующему небольшому шагу, когда это уместно.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "Здесь нет длинного пояснения — скажите другими словами, что ещё неясно.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "Продолжаем с той же точки отчёта — остаёмся при той же картине, не добавляя новый предмет сверх уже показанного."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Продолжайте короткую ровную практику, чтобы закрепить прогресс по направлениям.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Вот формулировка, которую можно мягко передать ребёнку.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "Пока нет длинного отрезка практики по всем предметам, но есть числовые итоги практики за период.",
+      "no_long_detail_shown_here_yet": "Подробная разбивка здесь пока не показана.",
+      "period_overview": "Обзор периода",
+      "still_lacks_cumulative_practice_for_a_stable_image": "Пока недостаточно накопленной практики для устойчивой картины."
+    }
+  }
+}

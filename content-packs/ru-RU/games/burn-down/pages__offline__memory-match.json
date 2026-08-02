@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "Назад",
+    "local_badge": "Локально",
+    "title": "Найди пару",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "Один игрок",
+    "two_players": "2 игрока",
+    "time": "Время",
+    "moves": "Ходы",
+    "turn": "Turn",
+    "pairs": "Пары",
+    "player_n": "Игрок {n}",
+    "two_players_label": "2 игрока",
+    "shuffle": "Перемешать",
+    "player_1": "Игрок 1",
+    "player_2": "Игрок 2",
+    "all_pairs_found": "Все пары найдены!"
+  }
+}
