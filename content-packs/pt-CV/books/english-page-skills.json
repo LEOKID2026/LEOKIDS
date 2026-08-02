@@ -1,0 +1,19 @@
+{
+  "grades": {
+    "g3": {
+      "vocab_sports": {
+        "title": "Desportos em inglês"
+      }
+    },
+    "g4": {
+      "vocab_sports": {
+        "title": "Desportos – agora em campo"
+      }
+    },
+    "g5": {
+      "vocab_sports": {
+        "title": "Desportos – marcou um gol"
+      }
+    }
+  }
+}

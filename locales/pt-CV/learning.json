@@ -1,0 +1,32 @@
+{
+  "math": {
+    "howToLearnBlurb": "O objetivo é praticar matemática de uma forma divertida, de acordo com o ano, o tema e a dificuldade.",
+    "howToLearnSteps": {
+      "step1": "Escolhe o ano, a dificuldade e a operação (adição, subtração, multiplicação, divisão, frações, percentagens e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronómetro e vidas, velocidade ou maratona."
+    },
+    "operations": {
+      "percentages": "Percentagens"
+    },
+    "reference": {
+      "operations": {
+        "percentages": {
+          "title": "% Percentagens"
+        }
+      }
+    }
+  },
+  "geometry": {
+    "howToLearnBlurb": "O objetivo é praticar geometria de uma forma divertida, de acordo com o ano, o tema e a dificuldade.",
+    "howToLearnSteps": {
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronómetro e vidas, velocidade ou maratona."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "O objetivo é praticar ciências de uma forma divertida, de acordo com o ano, o tema e a dificuldade.",
+    "howToLearnSteps": {
+      "step1": "Escolhe o ano, o nível e o tópico (por exemplo, corpo humano, plantas, animais e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronómetro e vidas, velocidade ou maratona."
+    }
+  }
+}

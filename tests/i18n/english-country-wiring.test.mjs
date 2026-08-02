@@ -130,7 +130,7 @@ test("English country canonical redirects preserve deep paths and query", () => 
 
 test("selector includes Australia New Zealand Ireland England among 43 locales", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 69);
+  assert.equal(locales.length, 75);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of COUNTRIES) {
     assert.equal(byId[c.id].label, c.label);

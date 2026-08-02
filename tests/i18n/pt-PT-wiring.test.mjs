@@ -96,7 +96,7 @@ test("pt-PT canonical redirects from /pt-PT and /PT", () => {
 
 test("selector includes Portugal; count 69", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 69);
+  assert.equal(locales.length, 75);
   const pt = locales.find((l) => l.id === "pt-PT");
   assert.ok(pt);
   assert.equal(pt.label, "Portugal");

@@ -1,0 +1,11 @@
+{
+  "portal": {
+    "classesSubtitle": "Elija el grado (1er a 6to grado), la clase (grupo de alumnos) y la materia: informes y gestión por grado",
+    "choosePhysicalClass": "Elegir clase (grupo)",
+    "colClass": "Clase (grupo)",
+    "classLabel": "Clase (grupo)",
+    "createStudentClass": "Clase (grupo de alumnos en la escuela)",
+    "createStudentClassHint": "Elija una clase (grupo) que ya exista para un docente en la escuela (ej. \"A\", \"B\").",
+    "studentsSubtitle": "Explorar por grado y clase (grupo): informes del niño sin ingresar identificadores"
+  }
+}

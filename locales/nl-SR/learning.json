@@ -1,0 +1,40 @@
+{
+  "chooseGrade": "Kies een leerjaar",
+  "master": {
+    "gradeRequired": "Kies een leerjaar voordat je gaat oefenen. Vraag een ouder om je leerjaar bij te werken.",
+    "notEnoughQuestions": "Niet genoeg vragen voor het onderwerp, het leerjaar of het niveau dat je hebt gekozen. Probeer een instelling te wijzigen.",
+    "gradeFallback": "Leerjaar",
+    "grades": {
+      "g1": "1e leerjaar",
+      "g2": "2e leerjaar",
+      "g3": "3e leerjaar",
+      "g4": "4e leerjaar",
+      "g5": "5e leerjaar",
+      "g6": "6e leerjaar"
+    },
+    "currentGrade": "Huidig leerjaar",
+    "playerName": "Spelersnaam",
+    "practiceModeLabel": "Oefenmodus"
+  },
+  "math": {
+    "howToLearnSteps": {
+      "step1": "Kies het leerjaar, de moeilijkheidsgraad en de bewerking (optellen, aftrekken, vermenigvuldigen, delen, breuken, percentages en meer)."
+    }
+  },
+  "geometry": {
+    "errors": {
+      "invalidGrade": "Ongeldig leerjaar. Kies een ander leerjaar.",
+      "noTopics": "Er zijn geen onderwerpen beschikbaar voor dit leerjaar. Kies een ander leerjaar.",
+      "noQuestions": "Er zijn geen vragen beschikbaar voor het geselecteerde onderwerp en het gekozen leerjaar."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "Het doel is om natuur en techniek op een leuke manier te oefenen, afgestemd op leerjaar, onderwerp en moeilijkheidsgraad."
+  },
+  "english": {
+    "steps": {
+      "wordIsEnglish": "We zien dat \"{word}\" in het Engels is.",
+      "spellingRecallEnglish": "Haal de Engelse vorm op uit je geheugen."
+    }
+  }
+}

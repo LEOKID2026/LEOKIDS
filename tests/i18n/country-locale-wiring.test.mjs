@@ -61,9 +61,11 @@ const SELECTOR_IDS = [
   "en-CM",
   "en-GB",
   "en-GH",
+  "en-GM",
   "en-IE",
   "en-IN",
   "en-KE",
+  "en-LR",
   "en-MU",
   "en-NG",
   "en-NIR",
@@ -72,6 +74,7 @@ const SELECTOR_IDS = [
   "en-RW",
   "en-SCT",
   "en-SG",
+  "en-SL",
   "en-WLS",
   "en-ZA",
   "es-AR",
@@ -83,6 +86,7 @@ const SELECTOR_IDS = [
   "es-DO",
   "es-EC",
   "es-ES",
+  "es-GQ",
   "es-GT",
   "es-HN",
   "es-MX",
@@ -112,8 +116,10 @@ const SELECTOR_IDS = [
   "it-IT",
   "nl-BE",
   "nl-NL",
+  "nl-SR",
   "pt-AO",
   "pt-BR",
+  "pt-CV",
   "pt-MZ",
   "pt-PT",
   "ru-BY",
@@ -134,6 +140,7 @@ const SELECTOR_LABELS = [
   "Benin",
   "Bolivia",
   "Brasil",
+  "Cabo Verde-pt",
   "Cameroon-en",
   "Cameroon-fr",
   "Canada-en",
@@ -148,6 +155,7 @@ const SELECTOR_LABELS = [
   "Ecuador",
   "El Salvador",
   "England",
+  "Equatorial Guinea-es",
   "España",
   "France",
   "Gabon",
@@ -162,6 +170,7 @@ const SELECTOR_LABELS = [
   "Kazakhstan-ru",
   "Kenya",
   "Kyrgyzstan-ru",
+  "Liberia",
   "Mauritius-en",
   "Mozambique",
   "México",
@@ -181,11 +190,14 @@ const SELECTOR_LABELS = [
   "Rwanda-en",
   "Scotland",
   "Senegal",
+  "Sierra Leone-en",
   "Singapore",
   "South Africa",
+  "Suriname-nl",
   "Switzerland-de",
   "Switzerland-fr",
   "Switzerland-it",
+  "The Gambia",
   "Togo",
   "USA-es",
   "Uruguay",
@@ -264,6 +276,12 @@ const SELECTOR_ORDER = [
   "fr-TG",
   "fr-GA",
   "fr-CG",
+  "nl-SR",
+  "pt-CV",
+  "es-GQ",
+  "en-SL",
+  "en-LR",
+  "en-GM",
 ];
 
 test("country locales registered with es-419 → en fallback", () => {
@@ -305,7 +323,7 @@ test("Brasil pt-BR registered with /br and fallback to en", () => {
 
 test("selector shows English + country names only (no Español / codes)", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 69);
+  assert.equal(locales.length, 75);
   assert.deepEqual(
     locales.map((l) => l.id),
     SELECTOR_ORDER

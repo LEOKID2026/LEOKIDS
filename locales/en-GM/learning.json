@@ -1,0 +1,62 @@
+{
+  "hubBlurb": "Choose a subject and start practising.",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "noBadgesYet": "No badges yet. Keep practising!",
+    "gradeRequired": "Please choose a grade before practising. Ask a parent to update your grade.",
+    "enterPlayerNameForMistake": "Enter a player name to practise the selected mistake",
+    "noMistakesToPractice": "No mistakes to practise",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practise by grade (start low and advance to your chosen grade), or pick a focus area.",
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry.",
+    "notEnoughQuestions": "Not enough questions for the topic/grade/difficulty you chose. Try changing a setting.",
+    "gradedPracticeBlurb": "Practise by grade — starts low and advances to your chosen grade",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "practiceModes": {
+      "graded": "Practise by grade"
+    },
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practise by grade.",
+    "gradedPracticeLabel": "Practise by grade (start low → your chosen grade)",
+    "referenceCategories": {
+      "operations": "Maths operations"
+    },
+    "defaultPlayerName": "Pupil"
+  },
+  "math": {
+    "levelUpScience": "You levelled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practise maths in a fun way, matched to grade, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "howToLearnSteps": {
+      "step1": "Choose a grade, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    },
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths.",
+    "pickRowOrColumn": "Pick a row or column to practise:"
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practise geometry in a fun way, matched to grade, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a grade, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practise science in a fun way, matched to grade, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a grade, difficulty, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

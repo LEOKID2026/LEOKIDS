@@ -1,0 +1,21 @@
+{
+  "gradeField": "Leerjaar",
+  "readyEmptyText": "Probeer de filters te wijzigen — of kies alle vakken, leerjaren en niveaus.",
+  "createHint": "Kies een vak, een leerjaar, een onderwerp en een niveau en maak vervolgens een blad dat klaar is om af te drukken.",
+  "publicDemoHint": "Een korte demo met 8 oefeningen – kies vak, leerjaar en onderwerp.",
+  "publicReadyTitle": "Kant-en-klare werkbladen per leerjaar",
+  "gradeFilterAll": "Alle leerjaren",
+  "gradeG1": "1e leerjaar",
+  "gradeG2": "2e leerjaar",
+  "gradeG3": "3e leerjaar",
+  "gradeG4": "4e leerjaar",
+  "gradeG5": "5e leerjaar",
+  "gradeG6": "6e leerjaar",
+  "selectGrade": "Leerjaar",
+  "printFailedAlert": "Afdrukken mislukt:",
+  "writingCreateTitle": "Maak een schrijfoefenblad",
+  "writingLockedTitle": "Beschikbaar in het volledige systeem",
+  "writingSearchPlaceholder": "Zoek op naam of nummer…",
+  "coloringSearchPlaceholder": "Zoek op kaartnaam…",
+  "writingLockedText": "Dit schrijfoefenblad is beschikbaar voor ouders in LEO KIDS. Meld u aan om toegang te krijgen tot de volledige schrijfcatalogus."
+}

@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "do_not_provide_formal_factors_multiples_recommendations_for_grades_1_2": "Do not provide formal factors/multiples recommendations for Grade 1–2.",
+    "do_not_provide_powers_exponents_recommendations_for_grades_1_2": "Do not provide powers/exponents recommendations for Grade 1–2.",
+    "do_not_provide_division_with_remainder_recommendations_for_grades_1_2": "Do not provide division-with-remainder recommendations for Grade 1–2.",
+    "do_not_provide_ratio_recommendations_for_grades_1_2": "Do not provide ratio recommendations for Grade 1–2.",
+    "do_not_provide_order_of_operations_recommendations_for_grades_1_2": "Do not provide order-of-operations recommendations for Grade 1–2.",
+    "keep_scale_magnitude_recommendations_null_for_grades_1_2_until_early_num": "Keep scale/magnitude recommendations null for Grade 1–2 until early-number copy is approved.",
+    "keep_prime_composite_recommendations_null_for_grades_1_2": "Keep prime/composite recommendations null for Grade 1–2.",
+    "keep_zero_one_properties_recommendations_null_for_grades_1_2": "Keep zero/one properties recommendations null for Grade 1–2.",
+    "keep_formal_volume_recommendations_null_for_grades_1_2": "Keep formal volume recommendations null for Grade 1–2.",
+    "keep_formal_perimeter_recommendations_null_for_grades_1_2": "Keep formal perimeter recommendations null for Grade 1–2.",
+    "keep_formal_parallel_perpendicular_recommendations_null_for_grades_1_2": "Keep formal parallel/perpendicular recommendations null for Grade 1–2.",
+    "keep_diagonal_recommendations_null_for_grades_1_2": "Keep diagonal recommendations null for Grade 1–2.",
+    "keep_formal_height_recommendations_null_for_grades_1_2": "Keep formal height recommendations null for Grade 1–2.",
+    "keep_formal_area_recommendations_null_for_grades_1_2": "Keep formal area recommendations null for Grade 1–2.",
+    "keep_formula_based_area_recommendations_null_for_grades_1_2": "Keep formula-based area recommendations null for Grade 1–2.",
+    "keep_pythagoras_recommendations_null_for_grades_1_2": "Keep Pythagoras recommendations null for Grade 1–2.",
+    "keep_pythagoras_recommendations_null_for_grades_3_4": "Keep Pythagoras recommendations null for Grade 3–4.",
+    "keep_formal_register_speaking_recommendations_null_for_grades_1_2": "Keep formal register/speaking recommendations null for Grade 1–2.",
+    "keep_formal_english_grammar_recommendations_null_for_grades_1_2": "Keep formal English grammar recommendations null for Grade 1–2.",
+    "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2": "Keep sentence-structure grammar recommendations null for Grade 1–2.",
+    "this_week_focus_on_grade_3_4_english_sentence_structure_basic_word_order": "This week, focus on Grade 3–4 English sentence structure: basic word order, subject/action, and meaning completion.",
+    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "Keep vocabulary-in-context recommendations null for Grade 1–2.",
+    "keep_geography_scale_distance_recommendations_null_for_grades_1_2": "Keep geography scale/distance recommendations null for Grade 1–2.",
+    "keep_mixed_map_scale_recommendations_null_for_grades_1_2": "Keep mixed map-scale recommendations null for Grade 1–2.",
+    "keep_geography_orientation_recommendations_null_for_grades_1_2": "Keep geography orientation recommendations null for Grade 1–2.",
+    "keep_climate_region_map_recommendations_null_for_grades_1_2": "Keep climate/region map recommendations null for Grade 1–2.",
+    "keep_values_social_explanation_recommendations_null_for_grades_1_2": "Keep values/social explanation recommendations null for Grade 1–2."
+  }
+}

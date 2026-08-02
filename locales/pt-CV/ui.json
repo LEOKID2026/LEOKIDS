@@ -1,0 +1,16 @@
+{
+  "public": {
+    "homepage": {
+      "teachers": {
+        "bullet0": "Gerir alunos"
+      }
+    },
+    "about": {
+      "intro1": "O site foi concebido para alunos do ensino básico em Cabo Verde, com prática por matéria, ano, tópico e nível de dificuldade na experiência em português. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os temas em que precisa de mais confiança.",
+      "learnEnjoyBody": "Além da prática académica, o site inclui jogos educativos, brincadeiras envolventes, moedas e cartões concebidos para adicionar diversão, motivação e prazer à aprendizagem. O objetivo é que as crianças não sintam que estão apenas “fazendo o dever de casa”, mas a entrar num mundo infantil colorido onde podem aprender, brincar e progredir com bons sentimentos."
+    }
+  },
+  "home": {
+    "subhead": "Pratique matemática, geometria, inglês e ciências — feito para alunos do ensino básico na experiência em português em Cabo Verde."
+  }
+}

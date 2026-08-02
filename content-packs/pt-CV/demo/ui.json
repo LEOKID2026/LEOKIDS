@@ -1,0 +1,10 @@
+{
+  "bar": {
+    "changeGrade": "Alterar ano"
+  },
+  "enter": {
+    "enterButton": "Entra no mundo infantil",
+    "enteringButton": "A entrar…",
+    "activeSessionNote": "Tens uma demonstração ativa – alterar o ano não zera o cronómetro."
+  }
+}

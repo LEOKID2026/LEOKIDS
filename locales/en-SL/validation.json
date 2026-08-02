@@ -1,0 +1,6 @@
+{
+  "invalidGrade": "That class is not valid.",
+  "api": {
+    "physical_class_not_found": "No matching class group found — confirm teacher and subject class groups are set up"
+  }
+}

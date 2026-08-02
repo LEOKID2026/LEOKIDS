@@ -1,0 +1,27 @@
+{
+  "master": {
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practice by grade (start low and advance to your chosen grade), or pick a focus area.",
+    "notEnoughQuestions": "Not enough questions for the topic/grade/difficulty you chose. Try changing a setting.",
+    "gradedPracticeBlurb": "Practice by grade — starts low and advances to your chosen grade",
+    "practiceModes": {
+      "graded": "Practice by grade"
+    },
+    "smartPracticeBlurb": "Like math and geometry, choose a special training mode, link to recent mistakes, or practice by grade.",
+    "gradedPracticeLabel": "Practice by grade (start low → your chosen grade)"
+  },
+  "math": {
+    "howToLearnSteps": {
+      "step1": "Choose a grade, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    }
+  },
+  "geometry": {
+    "howToLearnSteps": {
+      "step1": "Choose a grade, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    }
+  },
+  "science": {
+    "howToLearnSteps": {
+      "step1": "Choose a grade, difficulty, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

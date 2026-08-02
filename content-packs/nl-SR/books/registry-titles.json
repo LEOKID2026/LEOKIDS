@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Engels — 1e leerjaar"
+    },
+    "english.g2": {
+      "bookTitle": "Engels — 2e leerjaar"
+    },
+    "english.g3": {
+      "bookTitle": "Engels — 3e leerjaar"
+    },
+    "english.g4": {
+      "bookTitle": "Engels — 4e leerjaar"
+    },
+    "english.g5": {
+      "bookTitle": "Engels — 5e leerjaar"
+    },
+    "english.g6": {
+      "bookTitle": "Engels — 6e leerjaar"
+    },
+    "geometry.g1": {
+      "bookTitle": "Meetkunde — 1e leerjaar"
+    },
+    "geometry.g2": {
+      "bookTitle": "Meetkunde — 2e leerjaar"
+    },
+    "geometry.g3": {
+      "bookTitle": "Meetkunde — 3e leerjaar"
+    },
+    "geometry.g4": {
+      "bookTitle": "Meetkunde — 4e leerjaar"
+    },
+    "geometry.g5": {
+      "bookTitle": "Meetkunde — 5e leerjaar"
+    },
+    "geometry.g6": {
+      "bookTitle": "Meetkunde — 6e leerjaar"
+    },
+    "math.g1": {
+      "bookTitle": "Rekenen — 1e leerjaar"
+    },
+    "math.g2": {
+      "bookTitle": "Rekenen — 2e leerjaar"
+    },
+    "math.g3": {
+      "bookTitle": "Rekenen — 3e leerjaar"
+    },
+    "math.g4": {
+      "bookTitle": "Rekenen — 4e leerjaar"
+    },
+    "math.g5": {
+      "bookTitle": "Rekenen — 5e leerjaar"
+    },
+    "math.g6": {
+      "bookTitle": "Rekenen — 6e leerjaar"
+    },
+    "science.g1": {
+      "bookTitle": "Natuur en techniek — 1e leerjaar"
+    },
+    "science.g2": {
+      "bookTitle": "Natuur en techniek — 2e leerjaar"
+    },
+    "science.g3": {
+      "bookTitle": "Natuur en techniek — 3e leerjaar"
+    },
+    "science.g4": {
+      "bookTitle": "Natuur en techniek — 4e leerjaar"
+    },
+    "science.g5": {
+      "bookTitle": "Natuur en techniek — 5e leerjaar"
+    },
+    "science.g6": {
+      "bookTitle": "Natuur en techniek — 6e leerjaar"
+    }
+  }
+}

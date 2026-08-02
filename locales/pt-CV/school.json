@@ -1,0 +1,42 @@
+{
+  "portal": {
+    "classReportTitle": "Relatório da turma",
+    "navClasses": "Turmas",
+    "statClasses": "Turmas ativas",
+    "quickTeachers": "Gerir professores",
+    "quickClasses": "Gerir turmas",
+    "quickClassesDesc": "Turmas por professor, ano e disciplina",
+    "quickStudents": "Gerir crianças",
+    "quickActivities": "Atividades da turma",
+    "emptyActivities": "Nenhuma atividade da turma para mostrar no momento.",
+    "alertActiveActivities": "Existem atividades da turma ativas no momento.",
+    "colClasses": "Turmas",
+    "classesTitle": "Turmas na escola",
+    "classesSubtitle": "Escolha o ano, a turma física e a disciplina — relatórios e gestão por ano",
+    "chooseSubject": "Disciplinas da turma",
+    "backClasses": "← Voltar às turmas",
+    "studentsInClass": "Crianças na turma",
+    "classLabel": "Turma",
+    "colClass": "Turma",
+    "colMembers": "Crianças na turma",
+    "viewClassReport": "Relatório da turma",
+    "physicalClassReportTitle": "Relatório geral da turma",
+    "physicalClassReportButton": "Relatório geral da turma",
+    "teacherClassesTitle": "Turmas do professor",
+    "operatorAccessAdminSection": "Gerir o acesso dos filhos e dos encarregados de educação",
+    "operatorManageAccess": "Gerir acesso",
+    "viewClass": "Turma",
+    "classMgmtSection": "Gerir turmas",
+    "classMgmtName": "Nome da turma",
+    "classMgmtCreate": "Criar turma",
+    "classMgmtExisting": "Turma existente",
+    "classMgmtListTitle": "Turmas na escola",
+    "classMgmtCreateSuccess": "Turma criada com sucesso",
+    "assignSection": "Gerir atribuição da criança",
+    "assignTransfer": "Transferência para a turma"
+  },
+  "communication": {
+    "tabStudentAssignment": "Gerir atribuição da criança",
+    "detailsFieldClass": "Turma"
+  }
+}

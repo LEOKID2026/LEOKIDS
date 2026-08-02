@@ -1,0 +1,20 @@
+{
+  "bar": {
+    "gradeLabel": "Leerjaar",
+    "playTime": "Speeltijd",
+    "changeGrade": "Leerjaar wijzigen"
+  },
+  "enter": {
+    "intro": "Kies een leerjaar en verken de kinderwereld. {minutes} minuten spelen en leren — geen aanmelding.",
+    "activeSessionNote": "Je hebt een actieve demo. Als je het leerjaar wijzigt, wordt de timer niet gereset.",
+    "chooseGradeLegend": "Kies een leerjaar"
+  },
+  "grades": {
+    "g1": "1e leerjaar",
+    "g2": "2e leerjaar",
+    "g3": "3e leerjaar",
+    "g4": "4e leerjaar",
+    "g5": "5e leerjaar",
+    "g6": "6e leerjaar"
+  }
+}

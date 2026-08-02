@@ -1,0 +1,26 @@
+{
+  "grades": {
+    "g1": "Class 1",
+    "g2": "Class 2",
+    "g3": "Class 3",
+    "g4": "Class 4",
+    "g5": "Class 5",
+    "g6": "Class 6"
+  },
+  "subjects": {
+    "math": "Maths"
+  },
+  "shell": {
+    "backMath": "Back to Maths",
+    "practiceGeometry": "We'll practise this Geometry topic next",
+    "practiceScience": "We'll practise this Science topic next",
+    "practiceEnglish": "We'll practise this English topic next",
+    "practiceMath": "We'll practise this Maths topic next",
+    "practiceNow": "Let's practise now"
+  },
+  "sections": {
+    "map": {
+      "Let's practice!": "Let's practise"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "classGuidanceSeverityTier": {
+    "critical_class": "A turma precisa de atenção imediata",
+    "class_needs_reinforcement": "Turma precisa de reforço",
+    "class_monitor": "Turma precisa de acompanhamento e prática focada",
+    "class_on_track": "A turma está no caminho certo"
+  },
+  "classHealth": {
+    "critical_class": "A turma precisa de atenção imediata",
+    "needs_reinforcement": "Turma precisa de reforço",
+    "monitor": "Turma precisa de acompanhamento e prática focada",
+    "strong": "A turma está no caminho certo"
+  },
+  "fallback": {
+    "classSubjectHeadline": "{subject} - dificuldade da matéria ao nível da turma",
+    "classSubjectHeadlineNoSubject": "Dificuldade da matéria ao nível da turma",
+    "classSuffix": "Turma {label}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Nenhuma turma ativa",
+    "noClassesHint": "Crie uma nova turma abaixo e adicione crianças em “Gerir turma” no cartão da turma.",
+    "createClassLabel": "Nome da turma",
+    "createClassButton": "Criar turma",
+    "createClassPlaceholder": "por exemplo Turma 3 - LEÃO"
+  }
+}

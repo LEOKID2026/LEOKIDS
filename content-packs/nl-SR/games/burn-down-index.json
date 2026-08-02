@@ -1,0 +1,15 @@
+{
+  "components__educational-games__leo-lab__leo-lab-data": {
+    "grades_1_2": "1e–2e leerjaar"
+  },
+  "components__educational-games__leo-word-detective__leo-word-detective-data": {
+    "grades_1_2": "1e–2e leerjaar",
+    "grades_3_4": "3e–4e leerjaar",
+    "grades_5_6": "5e–6e leerjaar"
+  },
+  "components__educational-games__leo-word-train__leo-word-train-data": {
+    "grades_1_2": "1e–2e leerjaar",
+    "grades_3_4": "3e–4e leerjaar",
+    "grades_5_6": "5e–6e leerjaar"
+  }
+}

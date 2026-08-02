@@ -1,0 +1,251 @@
+{
+  "home": {
+    "subhead": "Oefen rekenen, meetkunde, Engels en natuur en techniek — gemaakt voor leerlingen van het Nederlandstalige basisonderwijs (GLO) in Suriname."
+  },
+  "public": {
+    "about": {
+      "intro1": "De site is ontworpen voor leerlingen van het Nederlandstalige basisonderwijs (GLO) in Suriname die kunnen oefenen op vak, leerjaar en moeilijkheidsgraad. Ieder kind kan beginnen waar het zinvol is, geleidelijk verder gaan en de onderwerpen versterken waar het meer zelfvertrouwen nodig heeft.",
+      "siteFeatures": {
+        "0": {
+          "phase": "Oefenen per vak"
+        },
+        "1": {
+          "phase": "Leerjaren en moeilijkheidsniveaus"
+        },
+        "2": {
+          "phase": "Rapporten voor ouders"
+        },
+        "3": {
+          "phase": "Spellen en sociaal spelen"
+        }
+      },
+      "missionTitle": "Onze missie",
+      "learnEnjoyTitle": "Leren en genieten",
+      "whyTitle": "Waarom is dit belangrijk?",
+      "funGames": {
+        "2": {
+          "title": "Motivatie om te leren"
+        }
+      },
+      "whyCards": {
+        "0": {
+          "title": "Leren in uw eigen tempo"
+        },
+        "1": {
+          "title": "Een duidelijk beeld voor ouders"
+        },
+        "2": {
+          "title": "Een vriendelijke ervaring voor kinderen"
+        }
+      }
+    },
+    "homepage": {
+      "flowDiagramAria": "Systeemoverzicht",
+      "hero": {
+        "badge": "Leren · Spelen · Vooruitgang",
+        "titleLine1": "een wereld die kinderen leuk vinden.",
+        "videoTitle": "Bekijk het vanuit het oogpunt van een ouder",
+        "videoDescription": "Maak kennis met de voortgangsregistratie, rapporten en persoonlijke activiteiten.",
+        "howItWorksTitle": "Hoe het werkt",
+        "flowStep0": "Het kind oefent",
+        "flowStep1": "Het systeem brengt prestaties in kaart",
+        "flowStep2": "De ouder krijgt een duidelijk beeld",
+        "flowStep3": "Kies de volgende stap",
+        "parentVideoAria": "Oudervideo"
+      },
+      "valueCards": {
+        "1": {
+          "title": "Ervaring voor kinderen"
+        }
+      },
+      "parentVideo": {
+        "title": "Bekijk het vanuit het oogpunt van een ouder",
+        "description": "Bekijk een korte video over voortgangsregistratie, rapporten en ouderactiviteiten."
+      },
+      "learningSystem": {
+        "label": "Het systeem achter het leren",
+        "flowStep0": "Het kind oefent",
+        "flowStep1": "Het systeem brengt prestaties in kaart",
+        "flowStep2": "De ouder krijgt een duidelijk beeld",
+        "flowStep3": "Kies de volgende stap",
+        "capabilities": {
+          "subject-map": {
+            "title": "Kaart per vak en onderwerp"
+          },
+          "skills": {
+            "title": "Vaardigheden en deelvaardigheden"
+          },
+          "parent-report": {
+            "title": "Duidelijk ouderrapport"
+          }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "1": {
+            "title": "Weet waar u zich op moet richten"
+          }
+        }
+      },
+      "kids": {
+        "label": "Voor kinderen",
+        "benefits": {
+          "1": {
+            "title": "Uw eigen tempo"
+          },
+          "2": {
+            "title": "Spellen en leren samen"
+          },
+          "3": {
+            "title": "Munten, kaarten en verrassingen"
+          }
+        }
+      },
+      "howItWorks": {
+        "step0": "Ouder opent een account"
+      },
+      "finalCta": {
+        "parentCta": "Open een ouderaccount"
+      },
+      "teachers": {
+        "label": "Voor privéleerkrachten",
+        "bullet2": "Volg afronding en voortgang"
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Kies een leerjaar",
+    "gradeRequired": "Selecteer alstublieft een leerjaar.",
+    "filterSuitable": "Geschikt voor leerjaar",
+    "gradeSuitable": "Geschikt voor leerjaar",
+    "allowGradePicker": "Kind toestaan om een leerjaar te kiezen op leerpagina’s",
+    "noChildrenYet": "Nog geen leerlingen toegevoegd",
+    "changeAccessCodeTitle": "Toegangscode wijzigen",
+    "deleteChild": "Leerling verwijderen",
+    "guestLeoLink": "Gast-Leo-nummer (om te koppelen)",
+    "pinStatusSet": "Ingesteld",
+    "pinStatusUnset": "Niet ingesteld",
+    "newPinReset": "Nieuwe pincode (reset / wijzigen)",
+    "resetPin": "Pincode resetten / wijzigen",
+    "setUsernamePin": "Gebruikersnaam en pincode instellen",
+    "deleteConfirmPlaceholder": "Typ de naam om te bevestigen",
+    "pinMustBeFourDigits": "Pincode moet vier cijfers zijn.",
+    "guestLeoEightDigits": "Voer een Leo-nummer van 8 cijfers in.",
+    "newPinFourDigits": "Voer een nieuwe pincode van 4 cijfers in.",
+    "usernameCopied": "Gebruikersnaam gekopieerd naar klembord.",
+    "gamePermissionsLoading": "Spelmachtigingen laden…",
+    "subjectPermissionsLoading": "Vakmachtigingen laden…",
+    "errors": {
+      "childNotFound": "Leerling niet gevonden."
+    },
+    "portalTitle": "Ouderportaal",
+    "deleteChildTitle": "Leerling definitief verwijderen",
+    "setUsernamePinHint": "Stel een gebruikersnaam en pincode in waarmee het kind kan inloggen. Als er een oudere aanmelding bestaat, wordt deze vervangen.",
+    "usernameNotSet": "Gebruikersnaam: nog niet ingesteld",
+    "curriculumSubjectTabsAria": "Vakselectie",
+    "promoVideoLabel": "Oudervideo",
+    "promoVideoAria": "Oudervideo"
+  },
+  "installApp": {
+    "parents": "Installeer de app voor ouders",
+    "teachers": "Installeer de app voor leerkrachten",
+    "prompt": {
+      "iosStep2": "Kies \"Toevoegen aan startscherm\"",
+      "installNow": "Nu downloaden en installeren"
+    },
+    "instructionsTitle": "Installatie-instructies"
+  },
+  "pwa": {
+    "portalInstallParent": "Installeer de app voor ouders",
+    "portalInstallTeacher": "Installeer de app voor leerkrachten",
+    "titleParent": "Installeer de app voor ouders",
+    "titleTeacher": "Installeer de app voor leerkrachten",
+    "iosHelpTitle": "Installeren op iPhone of iPad",
+    "backHome": "Terug naar de startpagina"
+  },
+  "audio": {
+    "resetDefaults": "Standaardwaarden opnieuw instellen"
+  },
+  "nav": {
+    "parentPortal": "Ouderportaal",
+    "teacherPortal": "Leerkrachtenportaal"
+  },
+  "layout": {
+    "backHome": "Terug naar de startpagina",
+    "closeMenu": "Menu sluiten"
+  },
+  "empty": {
+    "default": "Nog niets om weer te geven."
+  },
+  "copyPopup": {
+    "errorTitle": "Kopiëren mislukt"
+  },
+  "games": {
+    "locked": {
+      "backToGames": "Terug naar de spellen",
+      "unavailable": "Dit spel is momenteel niet beschikbaar"
+    }
+  },
+  "guest": {
+    "features": {
+      "roomJoinByCode": "Deelnemen met code",
+      "invitesReceive": "Speluitnodiging ontvangen",
+      "missions": "Speelhalmissies"
+    },
+    "errors": {
+      "playerNotFound": "Speler niet gevonden."
+    }
+  },
+  "gallery": {
+    "empty": "Geen foto's of video's om weer te geven."
+  },
+  "student": {
+    "loadingHome": "Startpagina laden…",
+    "redirectingLogin": "Doorverwijzen naar aanmelden…",
+    "whatToday": "Wat gaan we vandaag doen?",
+    "messageParent": "Bericht aan ouder",
+    "guestLock": "Niet beschikbaar in de gastmodus",
+    "guestGameLockHint": "Vraag een ouder om te ontgrendelen",
+    "parentLocked": "Vergrendeld door ouders",
+    "statsQuickView": "In één oogopslag",
+    "minutesThisMonth": "Leerminuten deze maand",
+    "minutesLifetimeSub": "Uit sessieoverzichten",
+    "monthMinutes": "Minuten deze maand:",
+    "noDataYet": "Nog geen gegevens",
+    "noAccuracyData": "Nog geen gegevens",
+    "loadingActivities": "Activiteiten laden…",
+    "surpriseNextIn": "Volgende doos klaar over {time}",
+    "surpriseReadyOpen": "Verrassingsdoos klaar om te openen",
+    "nextBoxIn": "Volgende doos over",
+    "youHaveOneBox": "Je hebt 1 doos",
+    "youHaveBoxes": "Je hebt {count} dozen",
+    "shareWithFriends": "Delen met vrienden",
+    "themeGroupLabel": "Kies schermthema",
+    "themeLight": "Licht thema",
+    "avatarModalTitle": "Spelersprofiel",
+    "avatarPlayerNameLabel": "Spelersnaam",
+    "arcadeBackToArcade": "Terug naar de speelhal",
+    "arcadePageTitle": "{game} — Speelhal",
+    "arcadeGames": {
+      "fourInARow": "Vier op een rij"
+    }
+  },
+  "help": {
+    "searchPlaceholder": "Zoek op onderwerp of trefwoord…",
+    "videoClose": "Video sluiten"
+  },
+  "copilot": {
+    "panel": {
+      "title": "Vragen over het rapport",
+      "aiDisclosureLink": "Informatie over het gebruik van AI",
+      "processing": "Rapport verwerken…",
+      "placeholder": "Vraag over het rapport…",
+      "quickUtterances": {
+        "qa_action_today": "Wat moeten we vandaag thuis doen?",
+        "qa_action_week": "Wat moeten we deze week doen?",
+        "qa_advance_or_hold": "Doorgaan of wachten?",
+        "qa_ask_teacher": "Vraag voor de leerkracht"
+      }
+    }
+  }
+}

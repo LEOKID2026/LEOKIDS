@@ -133,7 +133,7 @@ function meaningDiff() {
 
 test("selector includes Russia; count 69", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 69);
+  assert.equal(locales.length, 75);
   const hit = locales.find((l) => l.id === LOCALE);
   assert.ok(hit);
   assert.equal(hit.label, "Russia");

@@ -1,0 +1,12 @@
+{
+  "master": {
+    "grades": {
+      "g1": "1er grado",
+      "g2": "2do grado",
+      "g3": "3er grado",
+      "g4": "4to grado",
+      "g5": "5to grado",
+      "g6": "6to grado"
+    }
+  }
+}

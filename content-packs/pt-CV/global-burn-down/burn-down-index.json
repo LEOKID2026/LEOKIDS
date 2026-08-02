@@ -1,0 +1,27 @@
+{
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Prática digital em português para alunos do ensino básico em Cabo Verde, em matemática, geometria, inglês e ciências.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — prática em português para o ensino básico em Cabo Verde."
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Aprendizagem em português para o ensino básico em Cabo Verde"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "manage_class": "Gerir turma"
+  },
+  "pages__teacher__class__[classId]": {
+    "invalid_class_id": "ID de turma inválido."
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "Turma 3 - LEÃO"
+  },
+  "lib__school-portal__operator-grant-labels": {
+    "manage_child_and_parent_access": "Gerir o acesso dos filhos e dos encarregados de educação"
+  },
+  "lib__worksheets__worksheet-math-practice-format": {
+    "percentages": "Percentagens"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "percentages": "Percentagens"
+  }
+}

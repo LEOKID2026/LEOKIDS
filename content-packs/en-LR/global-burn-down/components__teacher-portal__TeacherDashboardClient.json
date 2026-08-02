@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Remove this student from the class group?",
+    "manage_class": "Manage class group",
+    "classes": "Class groups",
+    "class_report": "Class group report"
+  }
+}

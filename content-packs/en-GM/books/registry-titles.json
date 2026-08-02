@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "math.g1": {
+      "bookTitle": "Maths — Grade 1"
+    },
+    "math.g2": {
+      "bookTitle": "Maths — Grade 2"
+    },
+    "math.g3": {
+      "bookTitle": "Maths — Grade 3"
+    },
+    "math.g4": {
+      "bookTitle": "Maths — Grade 4"
+    },
+    "math.g5": {
+      "bookTitle": "Maths — Grade 5"
+    },
+    "math.g6": {
+      "bookTitle": "Maths — Grade 6"
+    }
+  }
+}

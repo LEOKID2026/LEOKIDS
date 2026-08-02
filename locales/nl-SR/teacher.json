@@ -1,0 +1,76 @@
+{
+  "riskSignals": {
+    "no_sessions_in_range": "Geen oefensessies in deze periode",
+    "low_overall_accuracy": "Moeite met algemene prestaties",
+    "many_recent_mistakes": "Veel recente fouten",
+    "never_active_in_range": "Geen activiteit in deze periode",
+    "insufficient_answers": "Onvoldoende gegevens om te analyseren"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Aanbevolen: basisstof herhalen",
+    "encourage_session_start": "Aanbevolen: oefenen aanmoedigen",
+    "targetedReview": "Aanbevolen: {subject} in de klasgroep versterken",
+    "focusPractice": "Aanbevolen: gericht oefenen op {subject}",
+    "generic": "Voortgang blijven volgen"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inactief in deze periode",
+    "low_accuracy": "Moeite met prestaties",
+    "many_recent_mistakes": "Veel recente fouten"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Heeft directe aandacht nodig",
+    "needs_reinforcement": "Heeft versterking nodig",
+    "on_track": "Op schema"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "De klasgroep heeft directe aandacht nodig",
+    "class_needs_reinforcement": "De klasgroep heeft versterking nodig",
+    "class_monitor": "De klasgroep heeft toezicht en gerichte oefening nodig",
+    "class_on_track": "De klasgroep is op schema"
+  },
+  "classHealth": {
+    "no_data": "Onvoldoende gegevens",
+    "critical_class": "De klasgroep heeft directe aandacht nodig",
+    "needs_reinforcement": "De klasgroep heeft versterking nodig",
+    "monitor": "De klasgroep heeft toezicht en gerichte oefening nodig",
+    "strong": "De klasgroep is op schema"
+  },
+  "groupTier": {
+    "on_track": "Groep op schema"
+  },
+  "actionTypes": {
+    "individual_practice": "Gerichte individuele oefening",
+    "collect_more_data": "Wachten op meer gegevens"
+  },
+  "assignmentTypes": {
+    "focused_practice": "Gerichte oefening"
+  },
+  "riskLevel": {
+    "high": "Heeft directe aandacht nodig",
+    "low": "Op schema"
+  },
+  "focus": {
+    "hubStudentCalmMessage": "Geen urgente onderwerpen — blijf volgen.",
+    "studentFallbackBanner": "Moeite met dit onderwerp — diagnostische oefening nodig om het exacte onderwerp te identificeren",
+    "classFallbackBanner": "De klasgroep heeft moeite met dit onderwerp; diagnostische versterking wordt aanbevolen"
+  },
+  "fallback": {
+    "classSubjectHeadline": "{subject} — moeilijkheidsgraad op niveau van de klasgroep",
+    "classSubjectHeadlineNoSubject": "Moeilijkheidsgraad op niveau van de klasgroep",
+    "classSuffix": "Klasgroep {label}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Geen actieve klasgroepen",
+    "noClassesHint": "Maak hieronder een nieuwe klasgroep aan en voeg vervolgens leerlingen toe via ‘Klasgroep beheren’ op de kaart.",
+    "createClassLabel": "Naam van de klasgroep",
+    "createClassButton": "Klasgroep aanmaken",
+    "createClassPlaceholder": "bijv. 3e leerjaar — LEO"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Alle leerlingen ({count})",
+      "directStudents": "Privé-leerlingen ({count})"
+    }
+  }
+}

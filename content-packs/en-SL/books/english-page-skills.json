@@ -1,0 +1,24 @@
+{
+  "grades": {
+    "g2": {
+      "sentence_base": {
+        "title": "Short sentences — Class 2"
+      }
+    },
+    "g3": {
+      "grammar_question_frames": {
+        "title": "Questions — Class 3 reinforce"
+      }
+    },
+    "g5": {
+      "grammar_quantifiers": {
+        "title": "much/many — Class 5 reinforce"
+      }
+    },
+    "g6": {
+      "grammar_comparatives": {
+        "description": "the best / the most interesting — Class 6 reinforce"
+      }
+    }
+  }
+}

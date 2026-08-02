@@ -1,0 +1,15 @@
+{
+  "components__educational-games__leo-lab__leo-lab-data": {
+    "grades_1_2": "1er–2do grado"
+  },
+  "components__educational-games__leo-word-detective__leo-word-detective-data": {
+    "grades_1_2": "1er–2do grado",
+    "grades_3_4": "3er–4to grado",
+    "grades_5_6": "5to–6to grado"
+  },
+  "components__educational-games__leo-word-train__leo-word-train-data": {
+    "grades_1_2": "1er–2do grado",
+    "grades_3_4": "3er–4to grado",
+    "grades_5_6": "5to–6to grado"
+  }
+}
