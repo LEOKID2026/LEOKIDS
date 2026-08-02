@@ -1,0 +1,59 @@
+{
+  "cardType": {
+    "achievement": "Erfolgskarte"
+  },
+  "cardSource": {
+    "earned_achievement": "Lernerfolg",
+    "duplicate_conversion": "Doppelte umgewandelt",
+    "card_sellback": "Doppelte verkauft"
+  },
+  "shop": {
+    "sellDuplicate": "Doppelte verkaufen",
+    "purchaseFailed": "Kauf fehlgeschlagen — bitte nochmal versuchen.",
+    "sellConfirmTitle": "Eine Doppelte von {name} für {amount} verkaufen?",
+    "sellConfirmBody": "Du behältst ein Exemplar in deiner Sammlung.",
+    "sellFailed": "Doppelte konnte nicht verkauft werden — bitte nochmal versuchen.",
+    "sellSuccess": "Doppelte für {amount} verkauft!",
+    "noDuplicate": "Du hast keine Doppelte zum Verkaufen."
+  },
+  "series": {
+    "general": "Allgemeine Erfolge",
+    "math": "Mathematik-Erfolge",
+    "language": "Spracherfolge",
+    "subjects": "Fächer-Erfolge"
+  },
+  "fallback": {
+    "keepLearning": "Übe weiter, um diese Karte freizuschalten"
+  },
+  "gradeBands": {
+    "g12": "Schulstufen 1–2",
+    "g34": "Schulstufen 3–4",
+    "g56": "Schulstufen 5–6"
+  },
+  "requirements": {
+    "subject_accuracy": "Erreiche {minAccuracy}% Genauigkeit in {subject}{topicPart} (mindestens {minQuestions} Aufgaben)",
+    "subject_accuracy_topic_part": " zu {topic}"
+  },
+  "surpriseBox": {
+    "openError": "Die Box konnte gerade nicht geöffnet werden. Bitte gleich nochmal versuchen.",
+    "noBoxReady": "Gerade keine Box bereit — später nochmal versuchen.",
+    "duplicateHint": "Du hast ein Extra-Exemplar — Doppelte kannst du im Shop verkaufen.",
+    "keepLearning": "Weiter üben — bald kommt eine neue Box!"
+  },
+  "shopView": {
+    "noDuplicateToSell": "Keine Doppelte zum Verkaufen.",
+    "sellFailed": "Doppelte konnte nicht verkauft werden — bitte nochmal versuchen.",
+    "sellSuccess": "Du hast eine Doppelte von {name} verkauft und {amount} erhalten!",
+    "sellDuplicateAction": "Doppelte verkaufen"
+  },
+  "surpriseBoxModal": {
+    "doneTitle": "Toll! Du hast Belohnungen!"
+  },
+  "previewModal": {
+    "downloadError": "Karte konnte nicht heruntergeladen werden. Bitte nochmal versuchen."
+  },
+  "server": {
+    "duplicateConversionRemoved": "Umwandlung von Doppelten wurde entfernt — du kannst eine Doppelte im Shop verkaufen.",
+    "missingSeries": "Serie fehlt — für Shop-/Erfolgskarten ist eine Serie mit Slug erforderlich"
+  }
+}

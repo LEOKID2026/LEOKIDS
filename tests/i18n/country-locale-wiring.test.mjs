@@ -52,12 +52,14 @@ const COUNTRIES = [
 ];
 
 const SELECTOR_IDS = [
+  "de-AT",
   "de-DE",
   "en",
   "en-AU",
   "en-CA",
   "en-GB",
   "en-IE",
+  "en-NG",
   "en-NIR",
   "en-NZ",
   "en-PH",
@@ -85,23 +87,28 @@ const SELECTOR_IDS = [
   "es-SV",
   "es-UY",
   "es-VE",
+  "fr-CI",
   "fr-FR",
   "it-IT",
   "nl-NL",
+  "pt-AO",
   "pt-BR",
   "pt-PT",
   "ru-RU",
 ];
 
 const SELECTOR_LABELS = [
+  "Angola",
   "Argentina",
   "Australia",
+  "Austria",
   "Bolivia",
   "Brasil",
   "Canada",
   "Chile",
   "Colombia",
   "Costa Rica",
+  "Côte d’Ivoire",
   "Cuba",
   "Ecuador",
   "El Salvador",
@@ -117,6 +124,7 @@ const SELECTOR_LABELS = [
   "Netherlands",
   "New Zealand",
   "Nicaragua",
+  "Nigeria",
   "Northern Ireland",
   "Panamá",
   "Paraguay",
@@ -158,10 +166,13 @@ const SELECTOR_ORDER = [
   "es-ES",
   "pt-BR",
   "pt-PT",
+  "pt-AO",
   "it-IT",
   "fr-FR",
+  "fr-CI",
   "nl-NL",
   "de-DE",
+  "de-AT",
   "ru-RU",
   "en-AU",
   "en-NZ",
@@ -170,6 +181,7 @@ const SELECTOR_ORDER = [
   "en-CA",
   "en-SG",
   "en-ZA",
+  "en-NG",
   "en-WLS",
   "en-SCT",
   "en-NIR",
@@ -215,7 +227,7 @@ test("Brasil pt-BR registered with /br and fallback to en", () => {
 
 test("selector shows English + country names only (no Español / codes)", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 39);
+  assert.equal(locales.length, 43);
   assert.deepEqual(
     locales.map((l) => l.id),
     SELECTOR_ORDER

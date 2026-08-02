@@ -1,0 +1,21 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a primary class, physical class and subject - reports and management by primary class",
+    "chooseGrade": "Choose a primary class",
+    "backGrades": "← Back to primary classes",
+    "colGrade": "Primary class",
+    "studentsSubtitle": "Browse by primary class and physical class — view child reports without entering IDs",
+    "createStudentGrade": "Primary class",
+    "classMgmtGrade": "Primary class",
+    "assignCurrentGrade": "Current primary class",
+    "assignTargetGrade": "Target primary class"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this primary class",
+    "audienceGradeTeachers": "Teachers of this primary class",
+    "detailsFieldGrade": "Primary class"
+  },
+  "reportSummary": {
+    "studentLine": "Answers: {totalAnswers} · Accuracy: {accuracy} · Primary class: {gradeLevel}"
+  }
+}

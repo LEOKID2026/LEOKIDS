@@ -1,0 +1,57 @@
+{
+  "components__school-portal__SchoolDrillDown": {
+    "grade_status": "Schulstufenstatus"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "you_don_t_have_permission_to_select_this_grade": "Sie haben keine Berechtigung, diese Schulstufe zu wählen."
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Digitale Übungen für Kinder der Schulstufen 1–6 in Mathematik, Geometrie, Englisch und Naturwissenschaften.",
+    "math_practice_by_grade_and_topic_leo_kids": "Mathematik-Übung nach Schulstufe und Thema · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "Englisch-Übung nach Schulstufe und Thema · Leo Kids",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Geometrie-Übung nach Schulstufe und Thema · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Fertige Arbeitsblätter, ein Arbeitsblatt-Generator und Lösungen für die Schulstufen 1–6.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — Übungen für Kinder der Schulstufen 1–6."
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1. Schulstufe",
+    "grade_2": "2. Schulstufe",
+    "grade_3": "3. Schulstufe",
+    "grade_4": "4. Schulstufe",
+    "grade_5": "5. Schulstufe",
+    "grade_6": "6. Schulstufe"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1. Schulstufe",
+    "grade_2": "2. Schulstufe",
+    "grade_3": "3. Schulstufe",
+    "grade_4": "4. Schulstufe",
+    "grade_5": "5. Schulstufe",
+    "grade_6": "6. Schulstufe"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1. Schulstufe",
+    "grade_2": "2. Schulstufe",
+    "grade_3": "3. Schulstufe",
+    "grade_4": "4. Schulstufe",
+    "grade_5": "5. Schulstufe",
+    "grade_6": "6. Schulstufe"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Versuchen Sie, die Filter zu ändern — oder wählen Sie alle Fächer, Schulstufen und Stufen.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Wählen Sie Fach, Schulstufe, Thema und Stufe — und erstellen Sie dann ein druckfertiges Arbeitsblatt.",
+    "ready_made_worksheets_by_grade": "Fertige Arbeitsblätter nach Schulstufe"
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Bitte wählen Sie eine Schulstufe"
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "Keine Klassen in dieser Schulstufe."
+  },
+  "pages__school__students__index": {
+    "no_children_in_this_grade": "Keine Kinder in dieser Schulstufe."
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Lernen für Schülerinnen und Schüler der Schulstufen 1–6"
+  }
+}

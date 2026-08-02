@@ -137,7 +137,7 @@
         "skillId": "english:vocabulary:wordlist:colors",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Colors in Englisch",
+        "title": "Farben auf Englisch",
         "description": "red, blue, green, yellow — identify and match; no spelling yet",
         "doNotTranslateFields": [
           "description"
@@ -148,7 +148,7 @@
         "skillId": "english:vocabulary:wordlist:numbers",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Numbers 0–10 in Englisch",
+        "title": "Zahlen 0–10 auf Englisch",
         "description": "zero–ten; identify the English number",
         "doNotTranslateFields": [
           "description"
@@ -159,7 +159,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Family words in Englisch",
+        "title": "Familienwörter auf Englisch",
         "description": "mom, dad, sister, brother — basic words",
         "doNotTranslateFields": [
           "description"
@@ -170,7 +170,7 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Animals in Englisch",
+        "title": "Tiere auf Englisch",
         "description": "cat, dog, bird, fish — common animal names",
         "doNotTranslateFields": [
           "description"
@@ -181,7 +181,7 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Feelings in Englisch",
+        "title": "Gefühle auf Englisch",
         "description": "happy, sad — early feeling words",
         "doNotTranslateFields": [
           "description"
@@ -192,7 +192,7 @@
         "skillId": "english:vocabulary:wordlist:actions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Actions in Englisch",
+        "title": "Handlungen auf Englisch",
         "description": "run, jump, read, eat — simple verbs",
         "doNotTranslateFields": [
           "description"
@@ -203,7 +203,7 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "School words in Englisch",
+        "title": "Schulwörter auf Englisch",
         "description": "book, pen, desk, teacher — classroom items",
         "doNotTranslateFields": [
           "description"
@@ -447,7 +447,7 @@
         "skillId": "english:vocabulary:wordlist:food",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Food in Englisch",
+        "title": "Essen auf Englisch",
         "description": "apple, bread, milk, water — words + writing",
         "doNotTranslateFields": [
           "description"
@@ -469,7 +469,7 @@
         "skillId": "english:pool:grammar:be_basic",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "am / is / are — reinforce",
+        "title": "am / is / are — Vertiefung",
         "description": "I am / You are / He is / She is — without formal grammar labels",
         "doNotTranslateFields": [
           "description"
@@ -636,7 +636,7 @@
         "skillId": "english:vocabulary:wordlist:body",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "The menschlicher Körper in Englisch",
+        "title": "Der menschliche Körper auf Englisch",
         "description": "head, hand, leg, eye - My head hurts",
         "doNotTranslateFields": [
           "description"
@@ -647,7 +647,7 @@
         "skillId": "english:vocabulary:wordlist:sports",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Sports in Englisch",
+        "title": "Sport auf Englisch",
         "description": "football, swim, run - I play football",
         "doNotTranslateFields": [
           "description"
@@ -658,7 +658,7 @@
         "skillId": "english:vocabulary:wordlist:weather",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Weather in Englisch",
+        "title": "Wetter auf Englisch",
         "description": "sunny, rainy, cloudy - It is sunny",
         "doNotTranslateFields": [
           "description"
@@ -691,7 +691,7 @@
         "skillId": "english:pool:grammar:question_frames",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "Questions — 3. Klasse reinforce",
+        "title": "Fragen — 3. Klasse",
         "description": "Do you…? / What is…? — review with present simple",
         "doNotTranslateFields": [
           "description"
@@ -781,7 +781,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Family — Eltern, work",
+        "title": "Family — parents, work",
         "description": "My parents work hard",
         "doNotTranslateFields": [
           "description"
@@ -803,7 +803,7 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "School — Schülerinnen und Schüler, read",
+        "title": "Schule — Wörter lesen",
         "description": "The students read books",
         "doNotTranslateFields": [
           "description"
@@ -869,7 +869,7 @@
         "skillId": "english:pool:grammar:present_simple",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "Present simple — reinforce",
+        "title": "Present simple — Vertiefung",
         "description": "Habit, fact — He walks every day; not continuous",
         "doNotTranslateFields": [
           "description"
@@ -1058,7 +1058,7 @@
         "skillId": "english:vocabulary:wordlist:health",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Health in Englisch",
+        "title": "Gesundheit auf Englisch",
         "description": "rest, water, doctor, exercise - I need to rest",
         "doNotTranslateFields": [
           "description"
@@ -1069,7 +1069,7 @@
         "skillId": "english:vocabulary:wordlist:technology",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Technology in Englisch",
+        "title": "Technik auf Englisch",
         "description": "computer, email, internet - She uses a computer",
         "doNotTranslateFields": [
           "description"
@@ -1124,7 +1124,7 @@
         "skillId": "english:pool:grammar:quantifiers",
         "learningPageId": "",
         "pageType": "practice_bridge",
-        "title": "much/many — 5. Klasse reinforce",
+        "title": "much/many — 5. Klasse",
         "description": "many people / much time — in past and future contexts",
         "doNotTranslateFields": [
           "description"
@@ -1225,7 +1225,7 @@
         "skillId": "english:vocabulary:wordlist:environment",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Environment — Klima, protect",
+        "title": "Environment — climate, protect",
         "description": "Climate change affects… — environment topics",
         "doNotTranslateFields": [
           "description"
@@ -1269,7 +1269,7 @@
         "skillId": "english:vocabulary:wordlist:culture",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "Culture in Englisch",
+        "title": "Kultur auf Englisch",
         "description": "culture, tradition, music, identity",
         "doNotTranslateFields": [
           "description"
@@ -1291,7 +1291,7 @@
         "skillId": "english:vocabulary:wordlist:history",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "History in Englisch",
+        "title": "Geschichte auf Englisch",
         "description": "ancient, century, learn about history",
         "doNotTranslateFields": [
           "description"

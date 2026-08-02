@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Englisch — 1. Schulstufe"
+    },
+    "english.g2": {
+      "bookTitle": "Englisch — 2. Schulstufe"
+    },
+    "english.g3": {
+      "bookTitle": "Englisch — 3. Schulstufe"
+    },
+    "english.g4": {
+      "bookTitle": "Englisch — 4. Schulstufe"
+    },
+    "english.g5": {
+      "bookTitle": "Englisch — 5. Schulstufe"
+    },
+    "english.g6": {
+      "bookTitle": "Englisch — 6. Schulstufe"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometrie — 1. Schulstufe"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometrie — 2. Schulstufe"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometrie — 3. Schulstufe"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometrie — 4. Schulstufe"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometrie — 5. Schulstufe"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometrie — 6. Schulstufe"
+    },
+    "math.g1": {
+      "bookTitle": "Math — 1. Schulstufe"
+    },
+    "math.g2": {
+      "bookTitle": "Math — 2. Schulstufe"
+    },
+    "math.g3": {
+      "bookTitle": "Math — 3. Schulstufe"
+    },
+    "math.g4": {
+      "bookTitle": "Math — 4. Schulstufe"
+    },
+    "math.g5": {
+      "bookTitle": "Math — 5. Schulstufe"
+    },
+    "math.g6": {
+      "bookTitle": "Math — 6. Schulstufe"
+    },
+    "science.g1": {
+      "bookTitle": "Naturwissenschaften — 1. Schulstufe"
+    },
+    "science.g2": {
+      "bookTitle": "Naturwissenschaften — 2. Schulstufe"
+    },
+    "science.g3": {
+      "bookTitle": "Naturwissenschaften — 3. Schulstufe"
+    },
+    "science.g4": {
+      "bookTitle": "Naturwissenschaften — 4. Schulstufe"
+    },
+    "science.g5": {
+      "bookTitle": "Naturwissenschaften — 5. Schulstufe"
+    },
+    "science.g6": {
+      "bookTitle": "Naturwissenschaften — 6. Schulstufe"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "portal": {
+    "classesSubtitle": "Schulstufe, physische Klasse und Fach wählen - Berichte und Verwaltung nach Schulstufe",
+    "chooseGrade": "Schulstufe wählen",
+    "backGrades": "← Zurück zu den Schulstufen",
+    "colGrade": "Schulstufe",
+    "studentsSubtitle": "Nach Schulstufe durchsuchen - Kindberichte ohne Eingabe von IDs",
+    "createStudentGrade": "Schulstufe",
+    "classMgmtGrade": "Schulstufe",
+    "assignCurrentGrade": "Aktuelle Schulstufe",
+    "assignTargetGrade": "Zielschulstufe"
+  },
+  "communication": {
+    "audienceGradeParents": "Eltern der Schulstufe",
+    "audienceGradeTeachers": "Lehrkräfte der Schulstufe",
+    "detailsFieldGrade": "Schulstufe"
+  },
+  "reportSummary": {
+    "studentLine": "Antworten: {totalAnswers} · Genauigkeit: {accuracy} · Schulstufe: {gradeLevel}"
+  }
+}

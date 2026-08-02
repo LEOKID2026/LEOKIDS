@@ -1,0 +1,30 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "CP1",
+    "grade_2": "CP2",
+    "grade_3": "CE1",
+    "grade_4": "CE2",
+    "grade_5": "CM1",
+    "grade_6": "CM2"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "CP1",
+    "grade_2": "CP2",
+    "grade_3": "CE1",
+    "grade_4": "CE2",
+    "grade_5": "CM1",
+    "grade_6": "CM2"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "CP1",
+    "grade_2": "CP2",
+    "grade_3": "CE1",
+    "grade_4": "CE2",
+    "grade_5": "CM1",
+    "grade_6": "CM2"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Pratique numérique pour les élèves du primaire en Côte d’Ivoire : mathématiques, géométrie, anglais et sciences.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — pratique pour les élèves du primaire en Côte d’Ivoire."
+  }
+}

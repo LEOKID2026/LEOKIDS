@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "gradeLabel": "Schulstufe",
+    "playExpired": "Die Zeit zum Starten neuer Spiele ist abgelaufen",
+    "changeGrade": "Schulstufe ändern"
+  },
+  "enter": {
+    "intro": "Wähle eine Schulstufe und entdecke die Kinderwelt. {minutes} Minuten Spielen und Lernen — ohne Anmeldung.",
+    "activeSessionNote": "Du hast eine aktive Demo — das Ändern der Schulstufe setzt den Timer nicht zurück.",
+    "chooseGradeLegend": "Schulstufe wählen"
+  },
+  "onlineGameUnavailable": {
+    "body": "Im Demo-Modus kannst du die Spielhalle ansehen, aber Online-Mehrspieler ist nicht aktiv."
+  },
+  "grades": {
+    "g1": "1. Schulstufe",
+    "g2": "2. Schulstufe",
+    "g3": "3. Schulstufe",
+    "g4": "4. Schulstufe",
+    "g5": "5. Schulstufe",
+    "g6": "6. Schulstufe"
+  },
+  "parentPortal": {
+    "enterPageDescription": "Elternportal mit Beispielkindern, Berichten und Empfehlungen erkunden — nur Ansicht"
+  }
+}

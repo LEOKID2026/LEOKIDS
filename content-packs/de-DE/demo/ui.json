@@ -1,64 +1,64 @@
 {
   "bar": {
-    "badge": "Demo mode",
+    "badge": "Demo-Modus",
     "gradeLabel": "Klasse",
-    "playExpired": "Time for new starts has ended",
-    "playTime": "Play time",
+    "playExpired": "Die Zeit für neue Starts ist abgelaufen",
+    "playTime": "Spielzeit",
     "minutesUnit": "Min",
-    "changeGrade": "Change grade",
-    "exitDemo": "Exit demo"
+    "changeGrade": "Klasse ändern",
+    "exitDemo": "Demo verlassen"
   },
   "enter": {
-    "pageTitle": "Demo mode — LEO KIDS",
-    "pageDescription": "Try the kids world without signing up",
-    "heading": "Elternteil demo mode",
-    "intro": "Pick a grade and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
-    "activeSessionNote": "You have an active demo — changing grade will not reset the timer.",
+    "pageTitle": "Demo-Modus — LEO KIDS",
+    "pageDescription": "Die Kinderwelt ohne Registrierung ausprobieren",
+    "heading": "Demo-Modus",
+    "intro": "Wähle eine Klasse und entdecke die Kinderwelt. {minutes} Minuten Spielen und Lernen — ohne Anmeldung.",
+    "activeSessionNote": "Du hast eine aktive Demo — das Ändern der Klasse setzt den Timer nicht zurück.",
     "chooseGradeLegend": "Klasse wählen",
     "enterButton": "Kinderwelt betreten",
     "enteringButton": "Wird betreten…"
   },
   "homeButton": {
-    "labelDesktop": "Try the kids world",
+    "labelDesktop": "Kinderwelt ausprobieren",
     "labelMobile": "Demo",
-    "ariaLabel": "Try the kids world — demo mode",
-    "dismissAriaLabel": "Dismiss demo button"
+    "ariaLabel": "Kinderwelt ausprobieren — Demo-Modus",
+    "dismissAriaLabel": "Demo-Button ausblenden"
   },
   "gate": {
-    "loading": "Loading demo mode…",
-    "loadError": "Could not load demo mode. Try refreshing the page."
+    "loading": "Demo-Modus wird geladen…",
+    "loadError": "Demo-Modus konnte nicht geladen werden. Bitte lade die Seite neu."
   },
   "timeExpiredModal": {
-    "title": "Demo time is up",
-    "body": "{minutes} minutes have passed since the demo started. You can keep browsing the kids world, but you cannot start a new game or activity.",
-    "inProgressNote": "Games or activities already in progress will continue until finished.",
+    "title": "Demo-Zeit ist abgelaufen",
+    "body": "{minutes} Minuten sind seit dem Start der Demo vergangen. Du kannst die Kinderwelt weiter ansehen, aber kein neues Spiel und keine neue Aktivität starten.",
+    "inProgressNote": "Spiele oder Aktivitäten, die schon laufen, gehen bis zum Ende weiter.",
     "dismiss": "Verstanden",
-    "restart": "Start a new demo"
+    "restart": "Neue Demo starten"
   },
   "onlineGameUnavailable": {
-    "title": "Online games are not available in demo mode",
-    "body": "In demo mode you can browse the arcade and see the games, but online multiplayer is not active.",
+    "title": "Online-Spiele sind im Demo-Modus nicht verfügbar",
+    "body": "Im Demo-Modus kannst du die Spielhalle ansehen und die Spiele betrachten, aber Online-Mehrspieler ist nicht aktiv.",
     "backToArcade": "Zurück zur Spielhalle"
   },
   "display": {
-    "studentName": "Demo mode",
-    "greeting": "Welcome to demo mode",
-    "arcadePlayerName": "Demo player",
-    "myRoomMessage": "My room — demo preview",
-    "learningMinutesScope": "From session summaries (demo)",
+    "studentName": "Demo-Modus",
+    "greeting": "Willkommen im Demo-Modus",
+    "arcadePlayerName": "Demo-Spieler",
+    "myRoomMessage": "Mein Zimmer — Demo-Vorschau",
+    "learningMinutesScope": "Aus Sitzungsübersichten (Demo)",
     "allSubjectsScope": "Alle Fächer",
-    "encouragement": "Keep practicing — this is a demo!",
+    "encouragement": "Weiter üben — das ist eine Demo!",
     "lifetimeMinutesDisplay": "120",
     "monthlyMinutesDisplay": "8"
   },
   "missions": {
-    "mathTitle": "Practice math",
-    "mathDescription": "Answer 5 math questions",
-    "soloTitle": "Solo game",
-    "soloDescription": "Play one solo game",
-    "tier5": "5 minutes",
-    "tier15": "15 minutes",
-    "tier30": "30 minutes"
+    "mathTitle": "Mathematik üben",
+    "mathDescription": "Beantworte 5 Mathematik-Aufgaben",
+    "soloTitle": "Solo-Spiel",
+    "soloDescription": "Spiele ein Solo-Spiel",
+    "tier5": "5 Minuten",
+    "tier15": "15 Minuten",
+    "tier30": "30 Minuten"
   },
   "subjects": {
     "math": "Mathematik",
@@ -67,29 +67,29 @@
     "science": "Naturwissenschaften"
   },
   "cards": {
-    "purchaseBlocked": "Purchases are not available in demo mode.",
-    "sellBlocked": "Selling cards is not available in demo mode.",
-    "loadFailed": "Could not load cards."
+    "purchaseBlocked": "Käufe sind im Demo-Modus nicht verfügbar.",
+    "sellBlocked": "Karten verkaufen ist im Demo-Modus nicht verfügbar.",
+    "loadFailed": "Karten konnten nicht geladen werden."
   },
   "arcade": {
-    "actionBlocked": "This action is not available in demo mode.",
-    "quickPlayBlocked": "Quick play is not available in demo mode."
+    "actionBlocked": "Diese Aktion ist im Demo-Modus nicht verfügbar.",
+    "quickPlayBlocked": "Schnellspiel ist im Demo-Modus nicht verfügbar."
   },
   "activity": {
-    "classroomUnavailable": "Classroom activities are not available in demo mode."
+    "classroomUnavailable": "Klassenaktivitäten sind im Demo-Modus nicht verfügbar."
   },
   "worksheet": {
-    "pageTitle": "Arbeitsblatt — demo mode",
-    "intro": "You can browse Arbeitsblätter from the list on the home page. Digital submission is not available in demo mode.",
-    "backHome": "← Back to home",
-    "submitBlocked": "Submission is not available in demo mode."
+    "pageTitle": "Arbeitsblatt — Demo-Modus",
+    "intro": "Du kannst Arbeitsblätter aus der Liste auf der Startseite ansehen. Digitale Abgabe ist im Demo-Modus nicht verfügbar.",
+    "backHome": "← Zurück zur Startseite",
+    "submitBlocked": "Abgabe ist im Demo-Modus nicht verfügbar."
   },
   "myRoom": {
-    "title": "My Room",
-    "saveBlocked": "Saving is not available in demo mode."
+    "title": "Mein Zimmer",
+    "saveBlocked": "Speichern ist im Demo-Modus nicht verfügbar."
   },
   "friends": {
-    "demoUnavailable": "Friends and Leo number — demo preview. Adding friends and invites are not available."
+    "demoUnavailable": "Freunde und Leo-Nummer — Demo-Vorschau. Freunde hinzufügen und Einladungen sind nicht verfügbar."
   },
   "grades": {
     "g1": "1. Klasse",
@@ -100,27 +100,27 @@
     "g6": "6. Klasse"
   },
   "parentPortal": {
-    "barBadge": "Elternteil demo mode",
-    "barSubtitle": "View only · 3 sample children",
-    "barExit": "Exit demo",
-    "dashboardSubtitle": "Demo mode — Elternteil portal",
+    "barBadge": "Eltern-Demo",
+    "barSubtitle": "Nur Ansicht · 3 Beispielkinder",
+    "barExit": "Demo verlassen",
+    "dashboardSubtitle": "Demo-Modus — Elternportal",
     "homeParentLabelLine1": "Elternteil",
-    "homeParentLabelLine2": "demo",
-    "homeParentAriaLabel": "Elternteil demo — view-only portal",
-    "homeParentDismissAriaLabel": "Dismiss Elternteil demo button",
-    "enterPageTitle": "Elternteil demo — LEO KIDS",
-    "enterPageDescription": "Explore the Elternteil portal with sample children, reports, and recommendations — view only",
-    "enterHeading": "Elternteil portal demo",
+    "homeParentLabelLine2": "Demo",
+    "homeParentAriaLabel": "Eltern-Demo — Portal nur zur Ansicht",
+    "homeParentDismissAriaLabel": "Eltern-Demo-Button ausblenden",
+    "enterPageTitle": "Eltern-Demo — LEO KIDS",
+    "enterPageDescription": "Erkunden Sie das Elternportal mit Beispielkindern, Berichten und Empfehlungen — nur Ansicht",
+    "enterHeading": "Demo des Elternportals",
     "enterBack": "Zurück",
-    "enterIntro": "Explore the Elternteil portal with 3 sample children, reports, activities, and recommendations — view only, no sign-up.",
-    "enterActiveSessionNote": "You have an active Elternteil demo — you can continue where you left off.",
-    "enterReadOnlyNote": "Changes cannot be saved in this mode.",
-    "enterButton": "Enter Elternteil portal",
+    "enterIntro": "Erkunden Sie das Elternportal mit 3 Beispielkindern, Berichten, Aktivitäten und Empfehlungen — nur Ansicht, ohne Anmeldung.",
+    "enterActiveSessionNote": "Sie haben eine aktive Eltern-Demo — Sie können dort weitermachen, wo Sie aufgehört haben.",
+    "enterReadOnlyNote": "In diesem Modus können Änderungen nicht gespeichert werden.",
+    "enterButton": "Elternportal betreten",
     "enteringButton": "Wird betreten…",
     "enterBackHome": "Zurück zur Startseite",
-    "readOnlyDefault": "Demo mode is view only. Changes cannot be saved.",
-    "readOnlyShare": "Demo mode — sharing outside the demo is not available.",
-    "readOnlyWorksheets": "Demo mode — you can browse Arbeitsblätter, but not create new ones.",
-    "apiReadOnlyError": "Demo mode is view only."
+    "readOnlyDefault": "Der Demo-Modus ist nur zur Ansicht. Änderungen können nicht gespeichert werden.",
+    "readOnlyShare": "Demo-Modus — Teilen außerhalb der Demo ist nicht verfügbar.",
+    "readOnlyWorksheets": "Demo-Modus — Sie können Arbeitsblätter ansehen, aber keine neuen erstellen.",
+    "apiReadOnlyError": "Der Demo-Modus ist nur zur Ansicht."
   }
 }

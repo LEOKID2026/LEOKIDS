@@ -1,0 +1,20 @@
+{
+  "cards": {
+    "event_summer_vacation": {
+      "title": "Leo Summer Holidays",
+      "description": "Leo Summer Holidays — limited event card!",
+      "accessibility": {
+        "title": "Leo Summer Holidays",
+        "description": "Leo Summer Holidays — limited event card!"
+      }
+    },
+    "event_winter_vacation": {
+      "title": "Leo Winter Holidays",
+      "description": "Leo Winter Holidays — limited event card!",
+      "accessibility": {
+        "title": "Leo Winter Holidays",
+        "description": "Leo Winter Holidays — limited event card!"
+      }
+    }
+  }
+}

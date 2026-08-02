@@ -11,6 +11,7 @@ import { applyFrFrDisplayLayer } from "../learning-content-fr-FR/index.js";
 import { applyNlNlDisplayLayer } from "../learning-content-nl-NL/index.js";
 import { applyDeDeDisplayLayer } from "../learning-content-de-DE/index.js";
 import { applyRuRuDisplayLayer } from "../learning-content-ru-RU/index.js";
+import { getContentFallbackChain } from "../../lib/content/locale.js";
 
 /**
  * Apply the Global English display layer (HE→EN maps / overlays).
@@ -69,36 +70,18 @@ export function localizeLearningQuestion(question, opts = {}) {
     });
   }
 
-  if (contentLocale === "es-419" && (subject === "math" || subject === "geometry")) {
-    return applyEs419DisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "pt-BR" && (subject === "math" || subject === "geometry")) {
-    return applyPtBrDisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "pt-PT" && (subject === "math" || subject === "geometry")) {
-    return applyPtPtDisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "it-IT" && (subject === "math" || subject === "geometry")) {
-    return applyItItDisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "fr-FR" && (subject === "math" || subject === "geometry")) {
-    return applyFrFrDisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "nl-NL" && (subject === "math" || subject === "geometry")) {
-    return applyNlNlDisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "de-DE" && (subject === "math" || subject === "geometry")) {
-    return applyDeDeDisplayLayer(question, subject);
-  }
-
-  if (contentLocale === "ru-RU" && (subject === "math" || subject === "geometry")) {
-    return applyRuRuDisplayLayer(question, subject);
+  if (subject === "math" || subject === "geometry") {
+    const chain = getContentFallbackChain(contentLocale);
+    for (const loc of chain) {
+      if (loc === "es-419") return applyEs419DisplayLayer(question, subject);
+      if (loc === "pt-PT") return applyPtPtDisplayLayer(question, subject);
+      if (loc === "pt-BR") return applyPtBrDisplayLayer(question, subject);
+      if (loc === "it-IT") return applyItItDisplayLayer(question, subject);
+      if (loc === "fr-FR") return applyFrFrDisplayLayer(question, subject);
+      if (loc === "nl-NL") return applyNlNlDisplayLayer(question, subject);
+      if (loc === "de-DE") return applyDeDeDisplayLayer(question, subject);
+      if (loc === "ru-RU") return applyRuRuDisplayLayer(question, subject);
+    }
   }
 
   return applyEnglishDisplayLayer(question, subject, {

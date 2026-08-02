@@ -1,0 +1,42 @@
+{
+  "chooseGrade": "Schulstufe wählen",
+  "master": {
+    "gradeRequired": "Bitte wähle eine Schulstufe, bevor du übst. Bitte ein Elternteil, deine Schulstufe zu aktualisieren.",
+    "notEnoughQuestions": "Nicht genug Aufgaben für das gewählte Thema/Schulstufe/Stufe. Versuche, eine Einstellung zu ändern.",
+    "gradeFallback": "Schulstufe",
+    "grades": {
+      "g1": "1. Schulstufe",
+      "g2": "2. Schulstufe",
+      "g3": "3. Schulstufe",
+      "g4": "4. Schulstufe",
+      "g5": "5. Schulstufe",
+      "g6": "6. Schulstufe"
+    },
+    "gradeTitle": "{grade}. Schulstufe",
+    "mistakePracticeBlurb": "Wähle einen letzten Fehler, um eine gezielte Übung im gleichen Thema, gleicher Schulstufe und Schwierigkeit zu öffnen.",
+    "currentGrade": "Aktuelle Schulstufe"
+  },
+  "math": {
+    "howToLearnBlurb": "Ziel ist es, Mathematik auf spielerische Weise zu üben, passend zu Schulstufe, Thema und Schwierigkeit.",
+    "howToLearnSteps": {
+      "step1": "Wähle Schulstufe, Schwierigkeit und Rechenart (Addition, Subtraktion, Multiplikation, Division, Brüche, Prozentrechnung und mehr)."
+    }
+  },
+  "geometry": {
+    "howToLearnBlurb": "Ziel ist es, Geometrie auf spielerische Weise zu üben, passend zu Schulstufe, Thema und Schwierigkeit.",
+    "howToLearnSteps": {
+      "step1": "Wähle Schulstufe, Schwierigkeit und Thema (Flächeninhalt, Umfang, Volumen, Winkel, Satz des Pythagoras und mehr)."
+    },
+    "errors": {
+      "invalidGrade": "Ungültige Schulstufe. Bitte wähle eine andere Schulstufe.",
+      "noTopics": "Für diese Schulstufe sind keine Themen verfügbar. Bitte wähle eine andere Schulstufe.",
+      "noQuestions": "Für das gewählte Thema und die Schulstufe sind keine Aufgaben verfügbar."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "Ziel ist es, Naturwissenschaften auf spielerische Weise zu üben, passend zu Schulstufe, Thema und Schwierigkeit.",
+    "howToLearnSteps": {
+      "step1": "Wähle Schulstufe, Stufe und Thema (z. B. menschlicher Körper, Pflanzen, Tiere und mehr)."
+    }
+  }
+}

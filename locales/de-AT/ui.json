@@ -1,0 +1,19 @@
+{
+  "public": {
+    "about": {
+      "intro1": "Die Website ist für Kinder der Schulstufen 1–6 mit Übungen nach Fach, Schulstufe, Thema und Schwierigkeitsgrad gestaltet. Jedes Kind kann dort beginnen, wo es sinnvoll ist, sich schrittweise weiterentwickeln und Themen stärken, bei denen es mehr Selbstvertrauen braucht.",
+      "siteFeatures": {
+        "1": {
+          "phase": "Schulstufen und Schwierigkeitsstufen"
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Schulstufe auswählen",
+    "gradeRequired": "Bitte wählen Sie eine Schulstufe aus.",
+    "filterSuitable": "Für die Schulstufe geeignet",
+    "gradeSuitable": "Für die Schulstufe geeignet",
+    "allowGradePicker": "Dem Kind erlauben, auf Lernseiten die Schulstufe zu wählen"
+  }
+}

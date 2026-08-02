@@ -1,0 +1,12 @@
+{
+  "answers": {
+    "utils_parent-copilot_intent-answer-composers": {
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "According to the report, there is still not enough evidence for work above the listed primary class.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Gather more practice before concluding that performance is above primary class."
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "When subjects appear in the date range, ask again and you can get an organised list.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Keep practising and checking — the report does not currently show a clear sign of confusion."
+    }
+  }
+}

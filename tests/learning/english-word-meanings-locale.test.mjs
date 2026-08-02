@@ -97,7 +97,7 @@ test("unknown locale falls back to English word", () => {
   assert.equal(
     resolveEnglishWordMeaning("cat", {
       listKey: "animals",
-      instructionLocale: "fr-FR",
+      instructionLocale: "xx-ZZ",
     }),
     "cat"
   );

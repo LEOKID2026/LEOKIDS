@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "six_grades": "sechs Schulstufen",
+    "per_grade_regular_advanced": "pro Schulstufe: regulär, fortgeschritten",
+    "topics_by_grade": "Themen nach Schulstufe"
+  }
+}

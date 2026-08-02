@@ -10,7 +10,7 @@
   "retry": "Nochmal versuchen",
   "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuche es noch einmal.",
   "notFound": "Seite nicht gefunden",
-  "accessDenied": "Du hast keinen Zugriff auf diese Seite.",
+  "accessDenied": "Sie haben keinen Zugriff auf diese Seite.",
   "writeDisabled": "Das Speichern ist vorübergehend deaktiviert, solange die globale Website im Vorschaumodus läuft.",
   "mockModeBanner": "Vorschaumodus — Übungsdaten werden nicht in der Produktivumgebung gespeichert.",
   "brandName": "Leo Kids",

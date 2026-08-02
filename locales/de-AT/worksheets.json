@@ -1,0 +1,15 @@
+{
+  "gradeField": "Schulstufe",
+  "readyEmptyText": "Versuchen Sie, die Filter zu ändern — oder wählen Sie alle Fächer, Schulstufen und Stufen.",
+  "createHint": "Wählen Sie Fach, Schulstufe, Thema und Stufe — und erstellen Sie dann ein druckfertiges Arbeitsblatt.",
+  "publicDemoHint": "Eine kurze Demo mit 8 Aufgaben — wählen Sie Fach, Schulstufe und Thema.",
+  "publicReadyTitle": "Fertige Arbeitsblätter nach Schulstufe",
+  "gradeFilterAll": "Alle Schulstufen",
+  "gradeG1": "1. Schulstufe",
+  "gradeG2": "2. Schulstufe",
+  "gradeG3": "3. Schulstufe",
+  "gradeG4": "4. Schulstufe",
+  "gradeG5": "5. Schulstufe",
+  "gradeG6": "6. Schulstufe",
+  "selectGrade": "Schulstufe"
+}

@@ -1,0 +1,10 @@
+{
+  "grades": {
+    "g1": "1. Schulstufe",
+    "g2": "2. Schulstufe",
+    "g3": "3. Schulstufe",
+    "g4": "4. Schulstufe",
+    "g5": "5. Schulstufe",
+    "g6": "6. Schulstufe"
+  }
+}

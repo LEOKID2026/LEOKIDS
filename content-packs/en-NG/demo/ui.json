@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "gradeLabel": "Primary class",
+    "changeGrade": "Change primary class"
+  },
+  "enter": {
+    "intro": "Pick a primary class and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
+    "activeSessionNote": "You have an active demo — changing primary class will not reset the timer.",
+    "chooseGradeLegend": "Choose a primary class"
+  },
+  "missions": {
+    "mathTitle": "Practice maths",
+    "mathDescription": "Answer 5 maths questions"
+  },
+  "subjects": {
+    "math": "Maths"
+  },
+  "grades": {
+    "g1": "Primary 1",
+    "g2": "Primary 2",
+    "g3": "Primary 3",
+    "g4": "Primary 4",
+    "g5": "Primary 5",
+    "g6": "Primary 6"
+  }
+}

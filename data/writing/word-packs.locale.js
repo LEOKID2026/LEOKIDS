@@ -5,7 +5,7 @@
  */
 
 import { ENGLISH_WORD_PACKS } from "./word-packs.en.js";
-import { resolveContentLocale } from "../../lib/content/locale.js";
+import { getContentFallbackChain, resolveContentLocale } from "../../lib/content/locale.js";
 
 /** Stable pack ids → English display titles (instruction/chrome — not learning targets). */
 const PACK_TITLE_EN = Object.freeze({
@@ -340,14 +340,15 @@ function isRuRu(locale) {
  */
 export function resolveWritingWordPacks(contentLocale) {
   const locale = resolveContentLocale({ contentLocale });
-  const useEs = isEs419(locale);
-  const usePtPt = isPtPt(locale);
-  const usePtBr = isPtBr(locale);
-  const useIt = isItIt(locale);
-  const useFr = isFrFr(locale);
-  const useNl = isNlNl(locale);
-  const useDe = isDeDe(locale);
-  const useRu = isRuRu(locale);
+  const chain = getContentFallbackChain(locale);
+  const useEs = isEs419(locale) || chain.some((loc) => isEs419(loc));
+  const usePtPt = chain.includes("pt-PT") || isPtPt(locale);
+  const usePtBr = !usePtPt && (chain.includes("pt-BR") || isPtBr(locale));
+  const useIt = chain.includes("it-IT") || isItIt(locale);
+  const useFr = chain.includes("fr-FR") || isFrFr(locale);
+  const useNl = chain.includes("nl-NL") || isNlNl(locale);
+  const useDe = chain.includes("de-DE") || isDeDe(locale);
+  const useRu = chain.includes("ru-RU") || isRuRu(locale);
   const titles = useRu
     ? PACK_TITLE_RU_RU
     : useDe

@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglês - 1.ª classe"
+    },
+    "english.g2": {
+      "bookTitle": "Inglês - 2.ª classe"
+    },
+    "english.g3": {
+      "bookTitle": "Inglês - 3.ª classe"
+    },
+    "english.g4": {
+      "bookTitle": "Inglês - 4.ª classe"
+    },
+    "english.g5": {
+      "bookTitle": "Inglês - 5.ª classe"
+    },
+    "english.g6": {
+      "bookTitle": "Inglês - 6.ª classe"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometria - 1.ª classe"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometria - 2.ª classe"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometria - 3.ª classe"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometria - 4.ª classe"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometria - 5.ª classe"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometria - 6.ª classe"
+    },
+    "math.g1": {
+      "bookTitle": "Matemática - 1.ª classe"
+    },
+    "math.g2": {
+      "bookTitle": "Matemática - 2.ª classe"
+    },
+    "math.g3": {
+      "bookTitle": "Matemática - 3.ª classe"
+    },
+    "math.g4": {
+      "bookTitle": "Matemática - 4.ª classe"
+    },
+    "math.g5": {
+      "bookTitle": "Matemática - 5.ª classe"
+    },
+    "math.g6": {
+      "bookTitle": "Matemática - 6.ª classe"
+    },
+    "science.g1": {
+      "bookTitle": "Ciências - 1.ª classe"
+    },
+    "science.g2": {
+      "bookTitle": "Ciências - 2.ª classe"
+    },
+    "science.g3": {
+      "bookTitle": "Ciências - 3.ª classe"
+    },
+    "science.g4": {
+      "bookTitle": "Ciências - 4.ª classe"
+    },
+    "science.g5": {
+      "bookTitle": "Ciências - 5.ª classe"
+    },
+    "science.g6": {
+      "bookTitle": "Ciências - 6.ª classe"
+    }
+  }
+}

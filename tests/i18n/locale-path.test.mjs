@@ -87,6 +87,33 @@ test("stripLocaleFromPath: enabled Russia path prefix resolves to ru-RU", () => 
   });
 });
 
+test("stripLocaleFromPath: wave-4 country prefixes resolve", () => {
+  assert.deepEqual(stripLocaleFromPath("/ao/about"), {
+    locale: "pt-AO",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "ao",
+  });
+  assert.deepEqual(stripLocaleFromPath("/ng/about"), {
+    locale: "en-NG",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "ng",
+  });
+  assert.deepEqual(stripLocaleFromPath("/ci/about"), {
+    locale: "fr-CI",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "ci",
+  });
+  assert.deepEqual(stripLocaleFromPath("/at/about"), {
+    locale: "de-AT",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "at",
+  });
+});
+
 test("withLocalePath: default en stays unprefixed", () => {
   assert.equal(withLocalePath("en", "/parent/dashboard"), "/parent/dashboard");
   assert.equal(withLocalePath("en-US", "/"), "/");

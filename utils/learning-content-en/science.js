@@ -12,18 +12,26 @@ import { SCIENCE_NL_NL_OVERLAY } from "../../data/science-questions-nl-NL-overla
 import { SCIENCE_DE_DE_OVERLAY } from "../../data/science-questions-de-DE-overlay.js";
 import { SCIENCE_RU_RU_OVERLAY } from "../../data/science-questions-ru-RU-overlay.js";
 import { translateScienceFields, translateScienceText } from "./science-translate.js";
-import { resolveContentLocale } from "../../lib/content/locale.js";
+import { getContentFallbackChain, resolveContentLocale } from "../../lib/content/locale.js";
+
+const SCIENCE_OVERLAY_BY_LOCALE = {
+  "es-419": SCIENCE_ES_419_OVERLAY,
+  "pt-PT": SCIENCE_PT_PT_OVERLAY,
+  "pt-BR": SCIENCE_PT_BR_OVERLAY,
+  "it-IT": SCIENCE_IT_IT_OVERLAY,
+  "fr-FR": SCIENCE_FR_FR_OVERLAY,
+  "nl-NL": SCIENCE_NL_NL_OVERLAY,
+  "de-DE": SCIENCE_DE_DE_OVERLAY,
+  "ru-RU": SCIENCE_RU_RU_OVERLAY,
+  en: SCIENCE_EN_OVERLAY,
+};
 
 function overlayMapForLocale(locale) {
   const id = resolveContentLocale({ contentLocale: locale });
-  if (id === "es-419") return SCIENCE_ES_419_OVERLAY;
-  if (id === "pt-PT") return SCIENCE_PT_PT_OVERLAY;
-  if (id === "pt-BR") return SCIENCE_PT_BR_OVERLAY;
-  if (id === "it-IT") return SCIENCE_IT_IT_OVERLAY;
-  if (id === "fr-FR") return SCIENCE_FR_FR_OVERLAY;
-  if (id === "nl-NL") return SCIENCE_NL_NL_OVERLAY;
-  if (id === "de-DE") return SCIENCE_DE_DE_OVERLAY;
-  if (id === "ru-RU") return SCIENCE_RU_RU_OVERLAY;
+  const chain = getContentFallbackChain(id);
+  for (const loc of chain) {
+    if (SCIENCE_OVERLAY_BY_LOCALE[loc]) return SCIENCE_OVERLAY_BY_LOCALE[loc];
+  }
   return SCIENCE_EN_OVERLAY;
 }
 
