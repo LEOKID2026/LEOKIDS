@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "no_children_in_this_grade": "В этом классе нет детей.",
+    "no_children_found_in_this_class": "В этой учебной группе дети не найдены."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "auditActions": {
+    "school_class_viewed": "Отчёт учебной группы просмотрен",
+    "school_class_teacher_reassigned": "Учитель учебной группы переназначен",
+    "school_class_archived": "Учебная группа отправлена в архив"
+  }
+}

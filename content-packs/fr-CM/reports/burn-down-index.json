@@ -1,0 +1,39 @@
+{
+  "utils__parent-report-language__grade-aware-recommendation-templates": {
+    "do_not_provide_formal_factors_multiples_recommendations_for_grades_1_2": "Ne fournissez pas de recommandations formelles sur les facteurs et les multiples pour SIL–CP.",
+    "do_not_provide_powers_exponents_recommendations_for_grades_1_2": "Ne fournissez pas de recommandations sur les puissances/exposants pour SIL–CP.",
+    "do_not_provide_division_with_remainder_recommendations_for_grades_1_2": "Ne fournissez pas de recommandations de division avec reste pour SIL–CP.",
+    "do_not_provide_ratio_recommendations_for_grades_1_2": "Ne fournissez pas de recommandations de rapport pour SIL–CP.",
+    "do_not_provide_order_of_operations_recommendations_for_grades_1_2": "Ne fournissez pas de recommandations sur l’ordre des opérations pour SIL–CP.",
+    "keep_scale_magnitude_recommendations_null_for_grades_1_2_until_early_num": "Gardez les recommandations d'échelle/ordre de grandeur nulles pour SIL–CP jusqu'à ce que la contenu sur les nombres au début du primaire soit approuvée.",
+    "keep_prime_composite_recommendations_null_for_grades_1_2": "Gardez les recommandations sur les nombres premiers/composés nulles pour SIL–CP.",
+    "keep_zero_one_properties_recommendations_null_for_grades_1_2": "Gardez les recommandations de propriétés du zéro et de l’un nulles pour SIL–CP.",
+    "keep_formal_volume_recommendations_null_for_grades_1_2": "Gardez les recommandations formelles de volume nulles pour SIL–CP.",
+    "keep_formal_perimeter_recommendations_null_for_grades_1_2": "Gardez les recommandations formelles de périmètre nulles pour SIL–CP.",
+    "keep_formal_parallel_perpendicular_recommendations_null_for_grades_1_2": "Gardez les recommandations formelles sur les droites parallèles/perpendiculaires nulles pour SIL–CP.",
+    "keep_diagonal_recommendations_null_for_grades_1_2": "Gardez les recommandations sur les diagonales nulles pour SIL–CP.",
+    "keep_formal_height_recommendations_null_for_grades_1_2": "Gardez les recommandations formelles de hauteur nulles pour SIL–CP.",
+    "keep_formal_area_recommendations_null_for_grades_1_2": "Gardez les recommandations formelles d’aire nulles pour SIL–CP.",
+    "keep_formula_based_area_recommendations_null_for_grades_1_2": "Gardez les recommandations d’aire basées sur une formule nulles pour SIL–CP.",
+    "keep_pythagoras_recommendations_null_for_grades_1_2": "Gardez les recommandations de Pythagore nulles pour SIL–CP.",
+    "keep_pythagoras_recommendations_null_for_grades_3_4": "Gardez les recommandations de Pythagore nulles pour CE1–CE2.",
+    "keep_formal_register_speaking_recommendations_null_for_grades_1_2": "Gardez le registre formel/les recommandations orales nulles pour SIL–CP.",
+    "keep_formal_english_grammar_recommendations_null_for_grades_1_2": "Gardez les recommandations formelles de grammaire anglaise nulles pour SIL–CP.",
+    "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2": "Gardez les recommandations grammaticales sur la structure des phrases nulles pour SIL–CP.",
+    "this_week_focus_on_grade_3_4_english_sentence_structure_basic_word_order": "Cette semaine, concentrez-vous sur la structure des phrases en anglais en CE1–CE2 : ordre de base des mots, sujet/action et achèvement du sens.",
+    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "Gardez les recommandations de vocabulaire en contexte nulles pour SIL–CP.",
+    "grade_5_6_multi_step_unit_conversion_with_reasonableness_checks": "Conversion d’unités en plusieurs étapes en CM1–CM2 avec contrôles de caractère raisonnable.",
+    "grade_5_6_graph_comparison_and_axis_based_reasoning": "Comparaison de graphiques en CM1–CM2 et raisonnement basé sur les axes.",
+    "grade_5_6_experiment_graph_analysis_and_variable_result_link": "Analyse de graphiques d’expériences en CM1–CM2 et lien variable-résultat.",
+    "grade_3_4_evidence_source_grounding_for_animal_science_claims": "Preuves/sources de CE1–CE2 pour les allégations en matière de science animale.",
+    "grade_5_6_claim_evidence_distinction_in_science_texts": "Distinction entre affirmation et preuve en CM1–CM2 dans les textes scientifiques.",
+    "grade_5_6_data_backed_conclusions_vs_speculation": "Conclusions fondées sur des données en CM1–CM2 par rapport à la spéculation.",
+    "keep_geography_scale_distance_recommendations_null_for_grades_1_2": "Gardez les recommandations d’échelle géographique/distance nulles pour SIL–CP.",
+    "keep_mixed_map_scale_recommendations_null_for_grades_1_2": "Gardez les recommandations mixtes à l’échelle de la carte nulles pour SIL–CP.",
+    "keep_geography_orientation_recommendations_null_for_grades_1_2": "Gardez les recommandations d’orientation géographique nulles pour SIL–CP.",
+    "keep_climate_region_map_recommendations_null_for_grades_1_2": "Gardez les recommandations de la carte climatique/régionale nulles pour SIL–CP."
+  },
+  "components__parent-report-detailed-surface": {
+    "grade": "Niveau"
+  }
+}

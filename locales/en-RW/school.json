@@ -1,0 +1,28 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a primary year, class group and subject — reports and management by primary year",
+    "chooseGrade": "Choose a primary year",
+    "backGrades": "← Back to primary years",
+    "colGrade": "Primary year",
+    "studentsSubtitle": "Browse by primary year and class group — view child reports without entering IDs",
+    "createStudentGrade": "Primary year",
+    "classMgmtGrade": "Primary year",
+    "assignCurrentGrade": "Current primary year",
+    "assignTargetGrade": "Target primary year",
+    "choosePhysicalClass": "Choose class group",
+    "colClass": "Class group",
+    "classLabel": "Class group",
+    "physicalClassReportTitle": "General class group report",
+    "physicalClassReportButton": "General class group report",
+    "physicalClassLoading": "Loading general class group report…",
+    "createStudentClass": "Class group (class name at school)"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this primary year",
+    "audienceGradeTeachers": "Teachers of this primary year",
+    "detailsFieldGrade": "Primary year"
+  },
+  "reportSummary": {
+    "studentLine": "Answers: {totalAnswers} · Accuracy: {accuracy} · Primary year: {gradeLevel}"
+  }
+}

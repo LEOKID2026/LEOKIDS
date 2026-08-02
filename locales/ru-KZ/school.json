@@ -1,0 +1,42 @@
+{
+  "portal": {
+    "classesTitle": "Учебные группы в школе",
+    "classesSubtitle": "Выберите класс (год обучения, 1–6 классы), учебную группу и предмет — отчёты и управление по учебным группам",
+    "choosePhysicalClass": "Выберите учебную группу",
+    "chooseSubject": "Предметы учебной группы",
+    "chooseStudents": "Ученики учебной группы",
+    "backClasses": "← Назад к учебным группам",
+    "studentsInClass": "Ученики в учебной группе",
+    "classLabel": "Учебная группа",
+    "colClass": "Учебная группа",
+    "colMembers": "Ученики в учебной группе",
+    "viewClassReport": "Отчёт по учебной группе",
+    "physicalClassReportTitle": "Общий отчёт по учебной группе",
+    "physicalClassReportButton": "Общий отчёт по учебной группе",
+    "physicalClassLoading": "Загрузка общего отчёта по учебной группе…",
+    "studentsSubtitle": "Просмотр по классу (году обучения) и учебной группе — отчёты по ученикам без ввода идентификаторов",
+    "createStudentClass": "Учебная группа (название в школе)",
+    "createStudentClassHint": "Выберите учебную группу, которая уже существует у учителя в школе (например, «А», «1А»).",
+    "teacherClassesTitle": "Учебные группы учителя",
+    "teacherEmptyClasses": "К этому учителю не привязано ни одной учебной группы.",
+    "classMgmtSection": "Управление учебными группами",
+    "classMgmtAdd": "Добавить учебную группу",
+    "classMgmtName": "Название учебной группы",
+    "classMgmtCreate": "Создать учебную группу",
+    "classMgmtExisting": "Существующая учебная группа",
+    "classMgmtListTitle": "Учебные группы в школе",
+    "classMgmtCreateSuccess": "Учебная группа успешно создана",
+    "classMgmtEmpty": "Учебные группы не зарегистрированы — ниже Вы можете создать новую учебную группу.",
+    "assignCurrentClass": "Текущая учебная группа",
+    "assignTransfer": "Перевести в учебную группу",
+    "assignChooseClass": "Выберите учебную группу",
+    "assignNoClass": "Не распределён в учебную группу",
+    "viewClass": "Учебная группа"
+  },
+  "communication": {
+    "audienceGradeParents": "Родители класса (года обучения)",
+    "audienceClassParents": "Родители учебной группы",
+    "audienceGradeTeachers": "Учителя класса (года обучения)",
+    "audienceClassTeachers": "Педагогический состав учебной группы"
+  }
+}

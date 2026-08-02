@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "English — Primary 1"
+    },
+    "english.g2": {
+      "bookTitle": "English — Primary 2"
+    },
+    "english.g3": {
+      "bookTitle": "English — Primary 3"
+    },
+    "english.g4": {
+      "bookTitle": "English — Primary 4"
+    },
+    "english.g5": {
+      "bookTitle": "English — Primary 5"
+    },
+    "english.g6": {
+      "bookTitle": "English — Primary 6"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometry — Primary 1"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometry — Primary 2"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometry — Primary 3"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometry — Primary 4"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometry — Primary 5"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometry — Primary 6"
+    },
+    "math.g1": {
+      "bookTitle": "Maths — Primary 1"
+    },
+    "math.g2": {
+      "bookTitle": "Maths — Primary 2"
+    },
+    "math.g3": {
+      "bookTitle": "Maths — Primary 3"
+    },
+    "math.g4": {
+      "bookTitle": "Maths — Primary 4"
+    },
+    "math.g5": {
+      "bookTitle": "Maths — Primary 5"
+    },
+    "math.g6": {
+      "bookTitle": "Maths — Primary 6"
+    },
+    "science.g1": {
+      "bookTitle": "Science — Primary 1"
+    },
+    "science.g2": {
+      "bookTitle": "Science — Primary 2"
+    },
+    "science.g3": {
+      "bookTitle": "Science — Primary 3"
+    },
+    "science.g4": {
+      "bookTitle": "Science — Primary 4"
+    },
+    "science.g5": {
+      "bookTitle": "Science — Primary 5"
+    },
+    "science.g6": {
+      "bookTitle": "Science — Primary 6"
+    }
+  }
+}

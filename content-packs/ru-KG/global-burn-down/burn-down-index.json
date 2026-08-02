@@ -1,0 +1,16 @@
+{
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Цифровые занятия для учеников 1–6 классов в школах с русским языком обучения в Кыргызстане: математика, геометрия, английский и естественные науки.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — практика для учеников 1–6 классов в школах с русским языком обучения в Кыргызстане."
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "В этом классе нет учебных групп."
+  },
+  "pages__school__students__index": {
+    "no_children_in_this_grade": "В этом классе нет детей.",
+    "no_children_found_in_this_class": "В этой учебной группе дети не найдены."
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "manage_class": "Управление учебной группой"
+  }
+}

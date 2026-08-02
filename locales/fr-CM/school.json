@@ -1,0 +1,23 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez le niveau scolaire (SIL–CM2), le groupe-classe et la matière — rapports et gestion par niveau scolaire",
+    "chooseGrade": "Choisissez un niveau",
+    "choosePhysicalClass": "Choisissez le groupe-classe",
+    "backGrades": "← Retour aux niveaux",
+    "colGrade": "Niveau",
+    "createStudentGrade": "Niveau",
+    "createStudentClass": "Classe (groupe-classe à l’école)",
+    "classMgmtGrade": "Niveau",
+    "assignCurrentGrade": "Niveau actuel",
+    "assignTargetGrade": "Niveau cible",
+    "studentsSubtitle": "Parcourez par niveau scolaire et par groupe-classe — rapports sur les enfants sans saisir d’identifiant",
+    "colClass": "Groupe-classe",
+    "classLabel": "Groupe-classe",
+    "physicalClassReportTitle": "Rapport général du groupe-classe",
+    "physicalClassReportButton": "Rapport général du groupe-classe",
+    "physicalClassLoading": "Chargement du rapport général du groupe-classe…"
+  },
+  "communication": {
+    "detailsFieldGrade": "Niveau"
+  }
+}

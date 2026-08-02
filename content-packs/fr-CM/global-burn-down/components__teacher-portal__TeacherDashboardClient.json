@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Supprimer cet élève du groupe-classe ?",
+    "manage_class": "Gérer le groupe-classe",
+    "classes": "Groupes-classes",
+    "class_report": "Rapport du groupe-classe"
+  }
+}

@@ -12,6 +12,10 @@ import { applyNlNlDisplayLayer } from "../learning-content-nl-NL/index.js";
 import { applyDeDeDisplayLayer } from "../learning-content-de-DE/index.js";
 import { applyDeChDisplayLayer } from "../learning-content-de-CH/index.js";
 import { applyRuRuDisplayLayer } from "../learning-content-ru-RU/index.js";
+import { applyRuKzDisplayLayer } from "../learning-content-ru-KZ/index.js";
+import { applyRuUzDisplayLayer } from "../learning-content-ru-UZ/index.js";
+import { applyRuKgDisplayLayer } from "../learning-content-ru-KG/index.js";
+import { applyRuByDisplayLayer } from "../learning-content-ru-BY/index.js";
 import { getContentFallbackChain } from "../../lib/content/locale.js";
 
 /**
@@ -82,6 +86,11 @@ export function localizeLearningQuestion(question, opts = {}) {
       if (loc === "nl-NL") return applyNlNlDisplayLayer(question, subject);
       if (loc === "de-CH") return applyDeChDisplayLayer(question, subject);
       if (loc === "de-DE") return applyDeDeDisplayLayer(question, subject);
+      // Country Russian layers must win before ru-RU money fallback.
+      if (loc === "ru-KZ") return applyRuKzDisplayLayer(question, subject);
+      if (loc === "ru-UZ") return applyRuUzDisplayLayer(question, subject);
+      if (loc === "ru-KG") return applyRuKgDisplayLayer(question, subject);
+      if (loc === "ru-BY") return applyRuByDisplayLayer(question, subject);
       if (loc === "ru-RU") return applyRuRuDisplayLayer(question, subject);
     }
   }

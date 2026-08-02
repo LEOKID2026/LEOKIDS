@@ -129,9 +129,9 @@ function meaningDiff() {
   };
 }
 
-test("selector includes Germany; count 55", () => {
+test("selector includes Germany; count 62", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 55);
+  assert.equal(locales.length, 62);
   const hit = locales.find((l) => l.id === LOCALE);
   assert.ok(hit);
   assert.equal(hit.label, "Germany");

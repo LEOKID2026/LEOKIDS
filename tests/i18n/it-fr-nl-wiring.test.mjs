@@ -170,9 +170,9 @@ function countJsonFiles(dir) {
   return n;
 }
 
-test("selector includes Italy France Netherlands; count 55", () => {
+test("selector includes Italy France Netherlands; count 62", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 55);
+  assert.equal(locales.length, 62);
   for (const c of LOCALES) {
     const hit = locales.find((l) => l.id === c.id);
     assert.ok(hit, c.id);

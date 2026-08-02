@@ -1,0 +1,21 @@
+{
+  "home": {
+    "subhead": "Pratiquez les mathématiques, la géométrie, l’anglais et les sciences – conçus pour les élèves de l’enseignement primaire francophone."
+  },
+  "layout": {
+    "backHome": "Retour à l’accueil"
+  },
+  "pwa": {
+    "backHome": "Retour à l’accueil"
+  },
+  "parent": {
+    "selectGrade": "Choisir un niveau",
+    "gradeRequired": "Veuillez sélectionner un niveau.",
+    "allowGradePicker": "Autoriser l’enfant à choisir le niveau sur les pages d’apprentissage"
+  },
+  "public": {
+    "about": {
+      "intro1": "Le site est conçu pour les élèves de l’enseignement primaire francophone au Cameroun (SIL–CP, CE1–CE2 et CM1–CM2), avec une pratique par matière, niveau, thème et difficulté. Chaque enfant peut commencer là où cela a du sens, progresser progressivement et renforcer les sujets où il a besoin de plus de confiance."
+    }
+  }
+}
