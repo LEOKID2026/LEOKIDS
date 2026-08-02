@@ -1,0 +1,9 @@
+{
+  "gameId": "rock-paper-scissors",
+  "title": "Pierre · Papier · Ciseaux",
+  "blurb": "Tours rapides – le meilleur de tous.",
+  "players": "2 joueurs ou contre robot",
+  "help": {
+    "howToPlay": "Jouez ensemble sur le même appareil."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "Plastic",
+    "newspaper": "Krant",
+    "cardboard": "Karton",
+    "plastic_bottle": "Kunststof fles",
+    "plastic_bag": "Plastic zak",
+    "soda_can": "Soda kan",
+    "banana_peel": "Bananenschil",
+    "medium": "Gemiddeld",
+    "recycled_paper_can_become_new_paper_again": "Gerecycled papier kan weer nieuw papier worden.",
+    "plastic_bottles_can_be_made_into_new_products": "Van plastic flessen kunnen nieuwe producten worden gemaakt.",
+    "glass_can_be_recycled_many_times": "Glas kan vele malen worden gerecycled.",
+    "metal_cans_are_great_for_recycling": "Metalen blikjes zijn geweldig voor recycling.",
+    "sorting_correctly_helps_protect_the_environment": "Correct sorteren draagt ​​bij aan de bescherming van het milieu."
+  }
+}

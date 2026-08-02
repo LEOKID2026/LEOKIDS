@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Niet ingevuld in de artefact-snapshot-modus. Voer `npm run qa:learning-simulator:expert-review-pack` uit voor synthetische kaarten/aggregaten.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Patronen tussen subjecten zijn hypothesen en vereisen bevestigende onderzoeken per onderwerp.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Alleen interne educatieve diagnostische ondersteuning - niet klinisch/niet oudergericht."
+  }
+}

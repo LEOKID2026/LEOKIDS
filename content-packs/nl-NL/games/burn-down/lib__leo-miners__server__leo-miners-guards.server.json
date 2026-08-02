@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Ongeldige idempotentiesleutel",
+    "invalid_action_type": "Ongeldig actietype",
+    "missing_stage_data_for_mining": "Ontbrekende fasegegevens voor mijnbouw",
+    "too_many_breaks_in_one_request": "Te veel pauzes in één verzoek",
+    "invalid_claim_type": "Ongeldig claimtype",
+    "offline_time_exceeds_the_allowed_limit": "De offlinetijd overschrijdt de toegestane limiet",
+    "offline_time_does_not_match_server_data": "De offlinetijd komt niet overeen met de servergegevens",
+    "too_many_breaks_try_again_in_a_moment": "Te veel pauzes. Probeer het zo nog eens opnieuw",
+    "guests_cannot_collect_rewards_please_link_an_account": "Gasten kunnen geen beloningen verzamelen. Koppel een account",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners is nog niet ingeschakeld - pas migratie en configuratie toe",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners is uitgeschakeld in de beheerdersinstellingen",
+    "leo_miners_economy_is_disabled": "De economie van Leo Miners is uitgeschakeld",
+    "leo_miners_point_accrual_is_disabled": "Het verzamelen van Leo Miners-punten is uitgeschakeld",
+    "offline_collection_is_disabled": "Offline verzamelen is uitgeschakeld",
+    "leo_miners_gifts_are_disabled": "De geschenken van Leo Miners zijn uitgeschakeld",
+    "leo_miners_claims_are_disabled": "Leo Miners-claims zijn uitgeschakeld",
+    "diamond_chest_is_disabled": "Diamantkist is uitgeschakeld",
+    "guests_cannot_collect_diamonds": "Gasten kunnen geen diamanten verzamelen"
+  }
+}

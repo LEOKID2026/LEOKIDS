@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "Area to reinforce",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "Parent sign-in is required - use the parent sign-in and try again.",
+    "network_error_while_loading_the_report": "Network error while loading the report.",
+    "please_choose_valid_dates": "Please choose valid dates",
+    "custom": "Custom",
+    "preparing_the_performance_report": "Preparing the performance report...",
+    "charts": "Charts",
+    "breakdown": "Breakdown",
+    "practice_with_questions": "Practice with questions",
+    "book_reading": "Book reading",
+    "other_active_learning": "Other active learning",
+    "time_minutes": "Time (minutes)",
+    "questions": "Questions",
+    "accuracy": "Accuracy %"
+  }
+}

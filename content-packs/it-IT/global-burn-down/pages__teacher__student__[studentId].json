@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "student_report": "Report del alunno",
+    "invalid_student_id": "Identificacion de alunno no valida.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "You do not have permission to view this student's report.",
+    "please_select_valid_dates": "Por favor seleccione fechas validas"
+  }
+}

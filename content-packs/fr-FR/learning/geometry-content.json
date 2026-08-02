@@ -1,0 +1,77 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Parallèle",
+      "Perpendiculaire"
+    ],
+    "triangles": [
+      "Équilatéral",
+      "Isocèle",
+      "Scalène"
+    ],
+    "quadrilaterals": [
+      "Carré",
+      "Rectangle",
+      "Parallélogramme",
+      "Trapèze"
+    ],
+    "transformations": [
+      "Traduction",
+      "Réflexion",
+      "Rotation",
+      "Aucun mouvement"
+    ],
+    "concept_transform": [
+      "Traduction",
+      "Réflexion",
+      "Rotation",
+      "Aucun mouvement"
+    ],
+    "shapes_basic_square": [
+      "Carré",
+      "Rectangle"
+    ],
+    "shapes_basic_rectangle": [
+      "Carré",
+      "Rectangle"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "Pas de côtés égaux"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "Pas d'angle droit"
+    ]
+  },
+  "solidNames": [
+    "Cube",
+    "Prisme rectangulaire",
+    "Cylindre",
+    "Pyramide",
+    "Cône",
+    "Sphère"
+  ],
+  "shapeWords": {
+    "": "Perpendiculaire",
+    " ": "Scalène"
+  },
+  "solidAliases": {
+    "cube": "Cube",
+    "rectangular prism": "Prisme rectangulaire",
+    "cylinder": "Cylindre",
+    "pyramid": "Pyramide",
+    "cone": "Cône",
+    "sphere": "Sphère"
+  }
+}

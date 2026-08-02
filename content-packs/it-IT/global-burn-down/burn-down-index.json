@@ -1,0 +1,915 @@
+{
+  "components__classroom-activities__ActivityDisplayLevelSelector": {
+    "level": "Livello"
+  },
+  "components__home__HomeValueCards": {
+    "product_values": "Valores del producto"
+  },
+  "components__legal__UnifiedLegalPolicyPage": {
+    "legal_document_links": "Collegamenti a documenti legali"
+  },
+  "components__math-scratchpad__MathScratchpadPanel": {
+    "scratch_pad": "Bloc de notas"
+  },
+  "components__math-scratchpad__MathScratchpadWorkspace": {
+    "fraction_denominator": "denominador de frazione",
+    "fraction_exercise": "ejercicio de frazione",
+    "fraction_numerator": "numerador de frazioni"
+  },
+  "components__ParentReportInsight": {
+    "this_summary_was_generated_automatically_from_the_report_data_and_is_mea": "Questo resumen se genero automaticamente a partir de los datos del report y esta destinado a usarse unicamente como aiuta para el apprendimento."
+  },
+  "components__promo__PromoMobileCompareVideo": {
+    "mobile_compare_version": "Version de comparacion movil",
+    "mobile_test_video": "Video de prova movil"
+  },
+  "components__promo__PromoVideoModal": {
+    "close": "Chiudere"
+  },
+  "components__prototypes__dev__learning__english-word-builder__english-word-builder-data": {
+    "the_cat_is_red": "el gatto es rojo",
+    "the_apple_is": "La manzana es ___",
+    "she_likes_red": "a ella le gusta el rojo"
+  },
+  "components__prototypes__dev__leo-dog__LeoDogReferenceGallery": {
+    "sprites_png": "Nuevos sprites (PNG transparente)"
+  },
+  "components__reporting__ReportDateRangeControl": {
+    "custom_dates": "Fechas personalizadas"
+  },
+  "components__reporting__ReportHubModal": {
+    "loading_report": "Caricamento rapporto...",
+    "no_children_in_this_group": "No hay ninos en questo grupo."
+  },
+  "components__reporting__ReportModalFrame": {
+    "close_window": "Chiudere ventana"
+  },
+  "components__school-portal__SchoolDrillDown": {
+    "grade_status": "Estado de classe",
+    "class_status": "Estado de classe"
+  },
+  "components__school-portal__SchoolOperatorsManager": {
+    "no_secretaries_linked": "No hay secretarias vinculadas"
+  },
+  "components__school-portal__SchoolPortalShell": {
+    "school_navigation": "School navigation"
+  },
+  "components__school-portal__SchoolReportModal": {
+    "loading_report": "Caricamento rapporto..."
+  },
+  "components__school-portal__SchoolReportModalBody": {
+    "no_data_yet": "Aun no hay datos"
+  },
+  "components__school-portal__SchoolStaffEmailInviteForm": {
+    "name_example_com": "name@example.com",
+    "invite_by_user_id_advanced": "Invitar por ID de usuario (avanzado)"
+  },
+  "components__school-portal__SchoolStudentAccessPanel": {
+    "account_actions": "Acciones de cuenta",
+    "irreversible_actions": "Acciones irreversibles"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "No hay ninos en questa classe."
+  },
+  "components__seo__GuideSeoArticlePage": {
+    "all_practice_areas": "Todas las areas de esercitazione."
+  },
+  "components__seo__PracticeSeoRelatedGuides": {
+    "related_guides": "Guias relacionadas"
+  },
+  "components__seo__public-seo-wide-defaults": {
+    "ready_to_start": "Listo para empezar?",
+    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "Abra una cuenta per i genitori, agregue a su figlio y déjelo esercitarsi al ritmo que migliore le convenga.",
+    "want_to_create_more_sheets_and_unlock_every_topic": "Want to create more sheets and unlock every topic?",
+    "in_the_full_parent_portal_you_can_create_unlimited_worksheets_choose_add": "Nel portale completo per i genitori puoi creare schede didattiche illimitate, scegliere argomenti aggiuntivi e combinare schede con esercitazione digitale e monitoraggio del progresso."
+  },
+  "components__seo__PublicSeoEntrySection": {
+    "practice_areas": "Areas de esercitazione",
+    "parent_guides": "guias per i genitori"
+  },
+  "components__seo__PublicSeoPageActions": {
+    "page_navigation": "Page navigation"
+  },
+  "components__seo__PublicSeoParentCta": {
+    "parent_login_sign_up": "Accesso/registrazione genitore",
+    "explore_the_parent_portal": "Explora el portal per i genitori"
+  },
+  "components__seo__PublicSeoWideCardGrid": {
+    "practice_areas": "Areas de esercitazione"
+  },
+  "components__seo__PublicSeoWideRelatedGuides": {
+    "related_guides": "Guias relacionadas"
+  },
+  "components__student__StudentAssignedActivityQuestionStage": {
+    "enlarge_diagram": "Ingrandisci il diagramma"
+  },
+  "components__teacher-portal__GuardianAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "El codigo actual sera revocado y se generara uno nuovo. Guarde el nuovo codigo; se mostrara solo una vez.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "El nombre de usuario actual sera revocado. El nuovo nombre de usuario se mostrara solo una vez."
+  },
+  "components__teacher-portal__StudentLoginAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "El codigo actual sera revocado y se generara uno nuovo. Guarde el nuovo codigo; se mostrara solo una vez.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "El nombre de usuario actual sera revocado. El nuovo nombre de usuario se mostrara solo una vez."
+  },
+  "components__teacher-portal__SubjectSummaryCards": {
+    "sessions": "Sesiones",
+    "answers": "Risposte",
+    "success": "Éxito"
+  },
+  "components__teacher-portal__TeacherActivityStudentAnswersModal": {
+    "close": "Chiudere"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "please_select_valid_dates": "Por favor seleccione fechas validas",
+    "class_report": "Rapporto di classe",
+    "loading_class_report": "Loading class report…"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "Quitar a questo alunno de la classe?",
+    "remove_this_student_from_your_teacher_list": "Eliminar a questo alunno de tu lista de profesores?",
+    "manage_class": "Administrar classe",
+    "full_name_of_new_student": "Nombre completo del nuovo alunno",
+    "students": "Alunni",
+    "classes": "Classi",
+    "class_report": "Rapporto di classe",
+    "activities": "Attività",
+    "filter_student_list": "Filtrar lista de alunni",
+    "search_by_name": "Buscar por nombre…"
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "level": "Livello",
+    "whole_class": "toda la classe",
+    "selected_students": "Alunni seleccionados",
+    "discussion_with_response_students_submit_an_answer": "Discusion con risposta (los alunni envian una risposta)",
+    "explanation_only_no_response_required": "Solo spiegazione: no se requiere risposta"
+  },
+  "components__teacher-portal__TeacherParentMessagePanel": {
+    "write_a_short_message_to_the_parent": "Write a short message to the parent..."
+  },
+  "components__teacher-portal__TeacherStudentIndividualActivitiesPanel": {
+    "level": "Livello"
+  },
+  "components__ui__StudentLoadingPanel": {
+    "loading": "Caricamento…"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "total_students": "Alunni totales",
+    "opened_pdf": "PDF abierto",
+    "completed_pdf": "Completado (PDF)",
+    "submitted_answers": "Risposte enviadas",
+    "pending_review": "Pendiente de revision",
+    "published": "Publicado",
+    "class_average": "promedio de classe"
+  },
+  "components__worksheets__WorksheetAnswerKeyList": {
+    "answer": "Risposta"
+  },
+  "lib__classroom-activities__generate-activity-questions-client": {
+    "human_body": "Corpo umano",
+    "animals": "Animali",
+    "plants": "Piante",
+    "materials": "Materiali",
+    "experiments": "Esperimenti",
+    "earth_and_space": "Terra y spazio",
+    "environment": "Ambiente",
+    "standard": "Estandar",
+    "medium": "Medio",
+    "advanced": "Avanzato",
+    "basic_shapes": "Figuras basicas",
+    "perimeter": "Perimetro",
+    "volume": "Volumen",
+    "angles": "Angolos",
+    "parallel_and_perpendicular": "Parallelo e perpendicolare",
+    "triangles": "Triangoli",
+    "quadrilaterals": "Quadrilateri",
+    "transformations": "Trasformazioni",
+    "rotation": "Rotazione",
+    "symmetry": "Simetria",
+    "diagonals": "Diagonali",
+    "heights": "Altezze",
+    "tiling": "Piastrellatura",
+    "circles": "Circulos",
+    "solid_shapes": "Figuras solidas",
+    "pythagorean_theorem": "Teorema di Pitagora"
+  },
+  "lib__classroom-activities__student-activity-choice-layout.client": {
+    "string_c_trim_length": "String(c ?? \"\").trim().length"
+  },
+  "lib__classroom-activities__student-activity-display-labels.client": {
+    "untitled_topic": "Argomento sin titulo"
+  },
+  "lib__classroom-activities__student-activity-error-labels.client": {
+    "this_activity_is_not_available_right_now": "Questa actividad no esta disponible en questo momento.",
+    "activity_not_found": "Actividad no encontrada",
+    "this_activity_has_not_started_yet": "Questa actividad aun no ha comenzado.",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "No se possono inviare risposte para questa actividad en questo momento",
+    "this_activity_is_closed": "Questa actividad esta cerrada.",
+    "time_is_up_for_this_activity": "Se acabo il tempo para questa actividad.",
+    "could_not_open_this_activity_right_now": "No se pudo abrir questa actividad en questo momento",
+    "not_found": "Non trovato",
+    "please_sign_in": "Per favore accedi",
+    "you_do_not_have_permission_to_open_this_activity": "You do not have permission to open this activity",
+    "this_activity_is_not_assigned_to_you": "Questa actividad no esta asignada a ti",
+    "could_not_identify_the_account": "No se pudo identificar la cuenta",
+    "could_not_complete_that_action_right_now": "No se pudo completar quella accion en questo momento.",
+    "you_already_submitted_this_activity": "Ya enviaste questa actividad",
+    "you_already_answered_this_question": "Ya respondiste questa domanda",
+    "waiting_for_the_teacher": "Esperando al insegnante...",
+    "no_answer_submission_needed": "No es necesario inviare una risposta",
+    "the_system_is_updating_try_again_later": "El sistema se esta actualizando. Vuelve a intentarlo mas tarde.",
+    "something_went_wrong_please_try_again": "Qualcosa è andato storto: riprova",
+    "server_error_please_try_again": "Errore del server: riprova",
+    "action_not_supported": "Azione non supportata",
+    "could_not_load_the_question_right_now": "No se pudo cargar la domanda en questo momento.",
+    "could_not_submit_an_answer_right_now": "No se pudo inviare una risposta en questo momento"
+  },
+  "lib__game-audio__game-audio-manifest": {
+    "game_start": "inicio del gioco",
+    "session_end": "Session end",
+    "correct_answer": "risposta corretta",
+    "wrong_answer": "risposta errata",
+    "victory": "Victoria",
+    "defeat": "Fracaso",
+    "coin_collect": "Recoger monete",
+    "hit_bomb": "Golpe/bomba",
+    "time_up": "Se acabo il tempo",
+    "card_flip": "Voltear la carta",
+    "correct_match": "Coincidencia corretta",
+    "mismatch": "No coincide",
+    "balloon_pop": "estallido del globo",
+    "small_success": "Piccolo éxito",
+    "run_victory": "Victoria en la carrera",
+    "success_streak": "Racha de éxito",
+    "achievement_badge": "Insignia de logro",
+    "level_up": "Subir de nivel",
+    "countdown": "Cuenta regresiva",
+    "line_clear": "Linea completada",
+    "correct_placement": "Colocacion corretta",
+    "wrong_placement": "Colocacion errata",
+    "item_pickup": "Recogida de articulos",
+    "warning": "Advertencia",
+    "fruit_slice": "rodaja de fruta",
+    "train_departs": "El tren sale",
+    "place_mark": "Marca de lugar",
+    "reveal_choice": "Revelar eleccion",
+    "mine_click": "Clic de mineros",
+    "mine_merge": "Fusion de mineros",
+    "rock_break": "rotura de roccia",
+    "mine_gift": "Regalo de mineros",
+    "learning_music": "Musica de apprendimento",
+    "educational_instruction_voice": "Voz de instruccion educativa",
+    "educational_feedback_voice": "Voz de retroalimentacion educativa",
+    "hebrew_question_voice": "voz de domanda hebrea",
+    "english_phonics_voice": "Voz de fonética en inglese",
+    "diamond_collect": "Recoleccion de diamanti",
+    "star_collect": "Recoger stelle",
+    "key_collect": "Recogida de llaves",
+    "maze_exit": "salida del laberinto",
+    "target_hit": "Impacto en el objetivo",
+    "cash_register": "Caja registradora",
+    "recycling_conveyor": "Transportador de riciclaggio",
+    "place_evidence": "Colocar evidencia",
+    "arcade_music": "musica arcade",
+    "puzzle_music": "Musica de rompecabezas",
+    "shop_music": "Shop music",
+    "mine_music": "Musica de mineros",
+    "button_click": "Haga clic en el boton",
+    "window_open": "ventana abierta",
+    "low_time": "poco tiempo",
+    "help_voice": "Voz de aiuta"
+  },
+  "lib__games__game-catalog.constants": {
+    "this_game_is_not_available_right_now": "Questo gioco no esta disponible en questo momento.",
+    "locked_by_parents": "Bloccato dai genitori"
+  },
+  "lib__global__product-context.server": {
+    "this_student_does_not_belong_to_leo_kids_global": "Questo alunno no pertenece a LEO KIDS Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "Alunno no encontrado para questo genitore en LEO KIDS Global.",
+    "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "El esquema de aislamiento del producto no esta listo. Aplique sql/global-product-isolation prima de habilitar las escrituras."
+  },
+  "lib__global__product-membership.server": {
+    "this_leo_kids_global_membership_is_suspended": "Questa membresia LEO KIDS Global esta suspendida."
+  },
+  "lib__guest__guest-economy-guard.server": {
+    "the_shop_is_not_available_in_guest_mode": "The shop is not available in guest mode.",
+    "cards_are_not_available_in_guest_mode": "Las carte no estan disponibles en modo invitado."
+  },
+  "lib__guest__guest-start-errors.server": {
+    "the_service_is_not_configured_correctly": "Il servizio non è configurato correttamente.",
+    "guest_mode_is_currently_disabled": "La modalità ospite è attualmente disabilitata.",
+    "the_guest_system_is_not_ready": "Il sistema ospite non è pronto.",
+    "could_not_start_guest_mode": "Impossibile avviare la modalità ospite."
+  },
+  "lib__guest__guest-start-rate-limit.server": {
+    "too_many_attempts_please_try_again_in_a_few_minutes": "Troppi tentativi — riprova tra qualche minuto."
+  },
+  "lib__guest__guest-student.server": {
+    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "This number is already linked to a parent - sign in with a username and PIN."
+  },
+  "lib__guest__guest-topic-access.server": {
+    "this_topic_is_locked_in_guest_mode": "Questo argomento esta bloqueado en modo invitado."
+  },
+  "lib__guest__guest-transfer.server": {
+    "coins_diamonds_and_cards_were_saved_to_the_child": "Coins, diamonds, and cards were saved to the child.",
+    "diamond_transfer_failed": "La transferencia de diamanti fallo.",
+    "arcade_club_data_transfer_failed": "Error en la transferencia de datos del club Arcade."
+  },
+  "lib__learning__display-level": {
+    "regular": "Comun",
+    "advanced": "Avanzato"
+  },
+  "lib__learning__question-metadata-validator": {},
+  "lib__learning__report-visible-practice-sync": {
+    "learning": "Apprendimento",
+    "practice": "Esercitazione",
+    "challenge": "Sfida",
+    "extended_practice": "Esercitazione extendida",
+    "graded": "Calificado",
+    "regular": "Comun",
+    "mistakes": "Errores",
+    "review_mistakes": "Errores de revision"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "this_subject_is_locked_by_the_parents": "Questo argomento esta bloqueado por los genitori.",
+    "you_don_t_have_permission_to_select_this_grade": "You don't have permission to select this grade."
+  },
+  "lib__parent-server__delete-parent-owned-student.server": {
+    "deleting_the_child_failed_please_try_again_or_contact_support": "Eliminazione del bambino non riuscita — riprova o contatta l'assistenza."
+  },
+  "lib__parent-server__report-data-aggregate.server": {
+    "not_available_for_guest_accounts": "No disponible para cuentas de invitados"
+  },
+  "lib__school-portal__operator-grant-labels": {
+    "manage_child_and_parent_access": "Administrar el acceso de genitori e figli",
+    "view_reports_and_child_details": "Visualizza report e dettagli sui bambini"
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "Genitori de la classe principale",
+    "homeroom_child_parents": "Genitori de ninos de aula"
+  },
+  "lib__school-portal__school-report-view-model": {
+    "no_data_in_this_period": "Sin datos en questo periodo",
+    "topics_to_strengthen": "Temi da rafforzare",
+    "practice": "Esercitazione",
+    "no_data": "Sin datos",
+    "submitted_active": "Enviado / activo",
+    "no_data_in_period": "Sin datos en el periodo",
+    "class_activities": "Attività di classe",
+    "no_activities": "No activities",
+    "students_in_class": "Alunni en classe",
+    "no_children": "Sin ninos",
+    "students_who_need_attention": "Alunni que servono atencion.",
+    "student_distribution": "Distribucion de alunni",
+    "no_class_activities_to_show_for_this_period": "No class activities to show for this period.",
+    "no_children_are_registered_in_this_class": "No hay ninos registrados en questa classe.",
+    "not_enough_data_for_a_distribution_breakdown": "No hay datos suficientes para un desglose de la distribucion.",
+    "no_children_have_been_flagged_for_attention": "No children have been flagged for attention.",
+    "learning_status": "Estado de apprendimento",
+    "needs_intervention": "Serve intervencion",
+    "practice_day": "Dia de esercitazione",
+    "mistake": "Error",
+    "keep_monitoring_progress": "Continua a monitorare i progressi",
+    "breakdown_by_subject": "Ripartizione per argomento",
+    "no_data_yet": "Aun no hay datos",
+    "recent_activities": "Attività recenti",
+    "no_activity": "Sin actividad",
+    "follow_up_recommendations": "Recomendaciones de seguimiento",
+    "no_data_by_subject": "Sin datos por argomento.",
+    "no_learning_activity_recently": "No hay actividad de apprendimento recientemente.",
+    "no_further_recommendations_at_this_time": "No hae altro recomendaciones en questo momento.",
+    "general_class_report_all_subjects": "Report general de classe · todas las materias",
+    "no_subjects_to_display": "No hay argomenti para mostrar."
+  },
+  "lib__school-server__school-browse-status.server": {
+    "not_enough_data": "Dati insufficienti"
+  },
+  "lib__school-server__school-students.server": {
+    "not_enough_data": "Dati insufficienti"
+  },
+  "lib__security__admin-token": {
+    "missing_admin_token_header": "Falta el encabezado del token de administrador",
+    "admin_token_does_not_match_server_configuration": "El token de administrador no coincide con la configuracion del servidor"
+  },
+  "lib__site__public-page-seo": {
+    "leo_kids_learning_games_and_progress_tracking_for_kids": "Leo Kids: apprendimento, giochi y seguimiento del progresso para ninos",
+    "contact_leo_kids": "Contatta · Leo Kids",
+    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "Comuniquese con Leo Kids: domande, asistencia, informes de errores o ideas para mejorar el sitio.",
+    "about_leo_kids": "Informazioni su · Leo Kids",
+    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "Acerca de Leo Kids: esercitazione de materias, informes de genitori, giochi, monete y carte para ninos.",
+    "learn_and_play_with_leo_leo_kids": "Aprende y juega con Leo · Leo Kids",
+    "parent_portal_leo_kids": "Portal per i genitori · Leo Kids",
+    "teacher_portal_leo_kids": "Portal del insegnante · Leo Kids",
+    "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "Tracking tools, personal activities, and reports — built for private tutors in Leo Kids.",
+    "parent_login_leo_kids": "Genitore login · Leo Kids",
+    "sign_in_to_the_leo_kids_parent_portal": "Sign in to the Leo Kids parent portal.",
+    "teacher_login_leo_kids": "Insegnante login · Leo Kids",
+    "sign_in_to_the_leo_kids_teacher_portal": "Sign in to the Leo Kids teacher portal.",
+    "practice_by_subject_leo_kids": "Esercitazione por materia · Leo Kids",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Esercitazione digital para alunni de primaria en matematica, geometria, inglese y scienze.",
+    "math_practice_by_grade_and_topic_leo_kids": "Esercitazione de matematica por classe y argomento · Leo Kids",
+    "reading_comprehension_practice_leo_kids": "Esercitazione de comprension lectora · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "Esercitazione de inglese por classe y argomento · Leo Kids",
+    "english_practice_vocabulary_phonics_grammar_sentences_and_reading": "Esercitazione de inglese: vocabulario, fonética, gramatica, oraciones y lectura.",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Esercitazione de geometria por classe y argomento · Leo Kids",
+    "geometry_practice_shapes_angles_perimeter_area_volume_and_more": "Esercitazione de geometria: formas, angulos, perimetro, area, volumen e altro.",
+    "science_practice_by_topic_leo_kids": "Esercitazione de scienze por argomento · Leo Kids",
+    "science_practice_body_animals_plants_materials_earth_and_weather": "Esercitazione cientifica: corpo, animali, piante, materiali, terra y clima.",
+    "learning_games_for_kids_leo_kids": "Giochi de apprendimento para ninos · Leo Kids",
+    "learning_games_that_reinforce_practice_with_challenges_and_rewards": "Giochi de apprendimento que refuerzan la esercitazione con desafios y recompensas.",
+    "digital_practice_without_printing_leo_kids": "Esercitazione digital sin stampare · Leo Kids",
+    "practice_online_by_subject_and_topic_no_printing_required": "Practique en linea por materia y argomento, no es necesario stampare.",
+    "parent_progress_reports_leo_kids": "Informes de progresso de genitori · Leo Kids",
+    "see_what_your_child_practiced_topics_to_strengthen_and_clear_next_steps": "Vea lo que practico su figlio, los argomenti que deve fortalecer y aclare los proximos pasos.",
+    "printable_worksheets_for_kids_leo_kids": "Fichas imprimibles para ninos · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Hojas de lavoro listas, un generador de schede didattiche y claves de risposte para la esercitazione elemental.",
+    "help_center_leo_kids": "Centro de aiuta · Leo Kids",
+    "guides_for_parents_leo_kids": "Guias per i genitori · Leo Kids",
+    "math_practice_at_home_leo_kids_guides": "Esercitazione de matematica en casa · Guias Leo Kids",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "Come scegliere un argomento de matematica, responder a los errores y desarrollar una esercitazione constante en casa.",
+    "reading_practice_at_home_leo_kids_guides": "Esercitazione de lectura en casa · Guias Leo Kids",
+    "how_to_practice_reading_accuracy_pace_and_understanding_with_short_texts": "Come esercitarsi la precision, el ritmo y la comprension de la lectura con textos breves en casa.",
+    "reading_comprehension_at_home_leo_kids_guides": "Comprension lectora en casa · Guias Leo Kids",
+    "how_to_help_your_child_find_details_explain_answers_and_draw_conclusions": "Come aiutare a su figlio a encontrar detalles, explicar risposte y sacar conclusiones del texto.",
+    "english_vocabulary_practice_leo_kids_guides": "Esercitazione de vocabulario en inglese · Guias Leo Kids",
+    "how_to_practice_new_words_in_context_and_review_them_through_the_week": "Come esercitarsi palabras nuevas en contexto y repasarlas a lo largo de la semana.",
+    "learning_games_at_home_leo_kids_guides": "Giochi de apprendimento en casa · Guias Leo Kids",
+    "how_to_combine_learning_games_with_focused_practice_by_subject_and_topic": "Come combinar giochi de apprendimento con esercitazione enfocada por materia y argomento.",
+    "math_games_for_kids_leo_kids_guides": "Giochi de matematica para ninos · Guias Leo Kids",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "Come utilizar giochi de matematica para esercitarsi operaciones, numeros y resolucion de problemas.",
+    "parent_progress_tracking_leo_kids_guides": "Seguimiento del progresso de los genitori · Guias Leo Kids",
+    "how_to_read_progress_reports_and_spot_patterns_over_time": "Come leer informes de progresso y detectar patrones a lo largo dil tempo.",
+    "choosing_a_topic_to_strengthen_leo_kids_guides": "Scegliere un argomento a fortalecer · Guias de Ninos Leo",
+    "how_to_pick_the_next_topic_based_on_reports_answers_and_repeating_diffic": "Come scegliere el argomento successivo en funzione de los informes, las risposte y la dificultad repetitiva.",
+    "home_practice_routine_leo_kids_guides": "Rutina de esercitazione en casa · Guias Leo Kids",
+    "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "How to build a home practice routine with one clear goal per session.",
+    "practice_without_printing_leo_kids_guides": "Practica sin stampare · Guias Leo Kids",
+    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "Come utilizar la esercitazione y los giochi digitales, y quando aiutano las schede didattiche.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids: esercitazione para alunni de primaria."
+  },
+  "lib__student-ui__student-ad-slot.client": {
+    "reserved_for_ad": "Reservado para anuncio"
+  },
+  "lib__teacher-portal__teacher-activity-report-export-labels": {
+    "live_lesson": "Lezione dal vivo",
+    "guided_practice": "Pratica guidata",
+    "homework": "Compiti a casa",
+    "class_discussion": "Discusion en classe",
+    "standard": "Estandar",
+    "advanced": "Avanzato",
+    "angles": "Angolos",
+    "shapes": "Figuras",
+    "perimeter": "Perimetro",
+    "volume": "Volumen",
+    "general_practice": "Esercitazione general",
+    "asia_jerusalem": "Asia/Jerusalem"
+  },
+  "lib__teacher-portal__teacher-activity-report-export": {
+    "activity_report": "Report de actividad",
+    "correct_out_of_all_answers": "Corretto de todas las risposte"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf-he": {
+    "notosanshebrew_regular_ttf": "NotoSansHebrew-Regular.ttf"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf": {
+    "activity_report_teacher": "Activity report — teacher",
+    "questions": "Domande",
+    "student_summary": "Riprendin del alunno",
+    "question_analysis": "Analisis de domande",
+    "skill_analysis": "Analisis de habilidades"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1ª primaria",
+    "grade_2": "2ª primaria",
+    "grade_3": "3ª primaria",
+    "grade_4": "4ª primaria",
+    "grade_5": "5ª primaria",
+    "grade_6": "1ª secondaria"
+  },
+  "lib__teacher-portal__teacher-class-topic-options": {
+    "human_body": "Corpo umano",
+    "animals": "Animali",
+    "plants": "Piante",
+    "materials": "Materiali",
+    "experiments": "Esperimenti",
+    "earth_space": "Terra y spazio",
+    "environment": "Ambiente"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "Classe 3 - LEO"
+  },
+  "lib__teacher-server__teacher-activities.server": {
+    "this_subject_is_not_supported_for_class_activities": "This subject is not supported for class activities",
+    "please_select_at_least_one_student": "Por favor seleccione al menos un alunno"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1ª primaria",
+    "grade_2": "2ª primaria",
+    "grade_3": "3ª primaria",
+    "grade_4": "4ª primaria",
+    "grade_5": "5ª primaria",
+    "grade_6": "1ª secondaria"
+  },
+  "lib__teacher-server__teacher-request.server": {
+    "unexpected_server_error": "Error inesperado del servidor"
+  },
+  "lib__teacher-server__teacher-student-login-access.server": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "El PIN en texto plano no se podra recuperar dopo de questa risposta. Almacenar de forma segura."
+  },
+  "lib__worksheet-activities__worksheet-labels.client": {
+    "active": "Attivo",
+    "closed": "Chiuso",
+    "archived": "Archiviato",
+    "digital_answer_sheet": "Digital answer sheet",
+    "manual_grading": "calificacion manual",
+    "not_submitted": "No enviado",
+    "submitted": "Inviato",
+    "pending_review": "Pendiente de revision",
+    "partially_checked": "Parcialmente comprobado",
+    "checked": "Comprobado",
+    "published": "Publicado",
+    "multiple_choice": "Scelta multipla",
+    "true_false": "Vero / Falso",
+    "number": "Numero",
+    "short_answer": "risposta corta",
+    "free_text": "texto libre"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "she_already_finished_the_project": "Ella ___ ya termino el proyecto.",
+    "if_it_rains_tomorrow_we_indoors": "Si manana llueve, ___ adentro.",
+    "they_a_science_fair_last_week": "Ellos ___ una feria de scienze la semana pasada.",
+    "please_carefully_before_you_answer": "Por favor ___ cuidadosamente prima de responder.",
+    "although_the_problem_was_complex_the_team_a_clear_plan": "Anche se el problema era complejo, el equipo ___ tenia un plan claro.",
+    "by_the_time_we_arrived_the_presentation_already_begun": "Quando llegamos, la presentacion ___ ya habia comenzado.",
+    "students_should_evidence_before_they_form_an_opinion": "Los alunni devono ___ evidencia prima de formarse una opinion.",
+    "if_we_recycle_more_our_community_cleaner": "Si reciclamos mas, nostra comunidad ___ mas limpia.",
+    "she_asked_whether_we_ready_to_present": "Ella pregunto si estabamos ___ listos para presentar.",
+    "technology_can_help_us_learn_we_use_it_wisely": "La tecnologia può ayudarnos a aprender, ___ la usamos sabiamente.",
+    "the_report_explains_the_experiment_worked": "El report explica ___ el esperimento funciono.",
+    "we_must_listen_carefully_we_understand_the_instructions": "We must listen carefully ___ we understand the instructions.",
+    "after_reviewing_the_data_they_their_conclusion": "Dopo de revisar los datos, ___ su conclusione.",
+    "honest_feedback_helps_writers_stronger_drafts": "La retroalimentacion honesta aiuta a los escritores a ___ borradores mas solidos.",
+    "communities_grow_stronger_when_people_each_other": "Las comunidades se fortalecen quando las personas ___ entre si.",
+    "she_prefers_asking_clear_questions_guessing_the_answer": "Prefiere hacer domande claras ___ adivinar la risposta.",
+    "before_publishing_the_article_check_fact_carefully": "Prima de publicar el articulo, verifique cuidadosamente ___ el hecho.",
+    "learning_from_mistakes_is_important_part_of_progress": "Aprender de los errores es ___ parte importante del progresso.",
+    "exploring_different_cultures_teaches_respect_curiosity": "Explorar diferentes culturas ensena respeto ___ curiosidad."
+  },
+  "lib__worksheets__worksheet-english-translation-pool.server": {
+    "choose_the_correct_english_sentence": "Choose the correct Inglese sentence."
+  },
+  "lib__worksheets__worksheet-geometry-diagram-svg": {
+    "arial_helvetica_sans_serif": "Arial, helvética, sans-serif"
+  },
+  "lib__worksheets__worksheet-geometry-thin-pool.server": {
+    "square": "Piazza",
+    "rectangle": "Rettangolo"
+  },
+  "lib__worksheets__worksheet-math-practice-format": {
+    "horizontal_addition_and_subtraction": "Suma y resta horizontales",
+    "vertical_addition_and_subtraction": "Suma y resta verticales",
+    "basic_multiplication": "Moltiplicazione di base",
+    "long_multiplication": "Moltiplicazione lunga",
+    "basic_division": "Divisione di base",
+    "long_division": "Divisione lunga",
+    "fractions": "Frazioni",
+    "decimals": "Decimales",
+    "percentages": "Porcentajes",
+    "ratio_and_scale": "Relacion y escala",
+    "word_problems": "Problemas verbales",
+    "mixed_practice": "Esercitazione mixta"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1ª primaria",
+    "grade_2": "2ª primaria",
+    "grade_3": "3ª primaria",
+    "grade_4": "4ª primaria",
+    "grade_5": "5ª primaria",
+    "grade_6": "1ª secondaria",
+    "regular": "Comun",
+    "advanced": "Avanzato",
+    "addition": "Suma",
+    "subtraction": "Resta",
+    "multiplication": "Multiplicacion",
+    "division": "Division",
+    "division_with_remainder": "Divisione con resto",
+    "fractions": "Frazioni",
+    "decimals": "Decimales",
+    "percentages": "Porcentajes",
+    "sequences": "Secuencias",
+    "number_sense": "Senso numérico",
+    "comparison": "Confronto",
+    "order_of_operations": "Ordine delle operazioni",
+    "divisibility_rules": "Regole di divisibilità",
+    "word_problems": "Problemas verbales",
+    "rounding": "Redondeo",
+    "equations": "Ecuaciones",
+    "factors_and_multiples": "Fattori e multipli",
+    "estimation": "Stima",
+    "mixed_practice": "Esercitazione mixta",
+    "basic_shapes": "Figuras basicas",
+    "perimeter": "Perimetro",
+    "volume": "Volumen",
+    "angles": "Angolos",
+    "parallel_and_perpendicular": "Parallelo e perpendicolare",
+    "triangles": "Triangoli",
+    "quadrilaterals": "Quadrilateri",
+    "transformations": "Trasformazioni",
+    "rotation": "Rotazione",
+    "symmetry": "Simetria",
+    "diagonals": "Diagonali",
+    "heights": "Altezze",
+    "tiling": "Piastrellatura",
+    "circles": "Circulos",
+    "solids": "Solidos",
+    "pythagoras": "Pitagora",
+    "phonics": "Fonética",
+    "vocabulary": "Vocabulario",
+    "grammar": "Gramatica",
+    "grammar_basics": "Conceptos basicos de gramatica",
+    "translation": "Traduzione",
+    "sentence_building": "Construccion de oraciones",
+    "writing": "Escritura",
+    "reading_comprehension": "Comprension lectora",
+    "matching": "Pareo",
+    "inference": "Inferencia",
+    "sentence_understanding": "Comprension de oraciones",
+    "simple_sentences": "Oraciones simples"
+  },
+  "lib__worksheets__worksheet-payload-build.server": {
+    "worksheet": "Scheda didattica",
+    "name": "Nombre: ________________",
+    "date": "Fecha: ________________",
+    "options": "Opciones:",
+    "answer": "Risposta:",
+    "question": "Domanda",
+    "answer_2": "Risposta",
+    "answer_key": "Clave de risposte"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "printable_worksheets": "schede didattiche stampabili",
+    "ready_worksheet": "Scheda didattica pronta",
+    "create_new": "Creare nuovo",
+    "system_recommendation": "Recomendacion del sistema",
+    "preview": "Vista previa",
+    "answer_key": "Clave de risposte",
+    "separate_answer_key_generated_only_on_explicit_request": "Clave de risposte separada: generada solo a pedido explicito",
+    "ink_saver": "Risparmio di inchiostro",
+    "no_answers_on_the_worksheet": "No hay risposte en la scheda didattica.",
+    "this_question_requires_audio_and_cannot_be_printed": "Questa domanda richiede l'audio e non può essere stampata",
+    "this_question_requires_an_image_and_cannot_be_printed": "Questa domanda richiede un'immagine e non può essere stampata",
+    "question": "Domanda",
+    "practice_type": "Tipo di pratica",
+    "number_of_questions": "Numero di domande",
+    "include_answer_key": "Includere la soluzioni",
+    "multiple_choice": "Scelta multipla",
+    "if_available_multiple_choice_options_will_be_shown": "Si estan disponibles, se mostraran opciones de opcion multiple.",
+    "no_multiple_choice_questions_are_available_for_this_topic": "No hay domande de opcion multiple disponibles para questo argomento.",
+    "create_worksheet": "Crea scheda didattica",
+    "view_and_print": "Ver e stampare",
+    "loading": "Caricamento…",
+    "something_went_wrong_please_try_again": "Qualcosa è andato storto. Riprova.",
+    "no_children_are_linked_to_this_account": "No hay ninos vinculados a questa cuenta.",
+    "select_a_child": "Seleziona un bambino",
+    "no_recommendations_yet": "Nessun consiglio ancora",
+    "recommendations_based_on_practice": "Recomendaciones basadas en la esercitazione.",
+    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "Las recomendaciones se basan en argomenti que su figlio practico recientemente, no en el report de los genitori.",
+    "ready_made_worksheets": "Hojas de lavoro listas para usare",
+    "no_worksheets_found": "No se encontraron schede didattiche",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Intente cambiar los filtros o seleccione todas las materias, classi y niveles.",
+    "create_a_new_worksheet": "Crea un nuovo scheda didattica",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Scegli materia, classe, argomento e livello — poi crea una scheda didattica pronta da stampare.",
+    "choose_topics_for_mixed_practice": "Scegli argomenti para esercitazione mixta.",
+    "check_the_topics_to_include_in_the_mixed_practice_all_topics_are_checked": "Consulta los argomenti a includere en la esercitazione mixta. Todos los argomenti estan marcados de forma predeterminada.",
+    "select_all_topics": "Seleziona tutti gli argomenti",
+    "please_select_at_least_one_topic_for_practice": "Seleccione al menos un argomento para esercitarsi.",
+    "worksheet": "Scheda didattica",
+    "no_worksheet_to_preview_go_back_to_create_one": "No hay scheda didattica para obtener una vista previa. Vuelve para creare uno.",
+    "creating_worksheet": "Creazione del scheda didattica…",
+    "refresh_questions": "Aggiorna le domande",
+    "generating_new_questions": "Generazione di nuove domande...",
+    "the_answer_key_was_updated_to_match_the_current_questions_try_opening_th": "La soluzioni se actualizo para que coincida con las domande actuales. Intente abrir la soluzioni nuevamente.",
+    "create_worksheet_from_recommendation": "Creare scheda didattica a partir de recomendacion",
+    "try_the_worksheet_generator": "Prova il generatore di schede didattiche",
+    "more_topics_are_available_in_the_full_parent_system": "Hae altro argomenti disponibles en el sistema completo per i genitori.",
+    "ready_made_worksheets_by_grade": "Hojas de lavoro listas para usare por classe",
+    "preview_data_is_not_available_go_back_to_the_worksheets_page_and_choose_": "I dati di anteprima non sono disponibili. Torna alla pagina delle schede didattiche e scegli di nuovo una scheda.",
+    "back_to_worksheets": "Torniamo ai schede didattiche"
+  },
+  "pages__api__cron__monthly-persistence-award": {
+    "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron": "El cron de persistencia mensual esta deshabilitado. Establecer ENABLE_MONTHLY_PERSISTENCE_CRON = vero"
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Por favor seleccione una classe",
+    "you_can_add_up_to_3_children_on_this_parent_account": "Può agregar hasta 3 ninos en questa cuenta per i genitori"
+  },
+  "pages__api__parent__delete-student": {
+    "child_id_is_missing": "Child ID is missing",
+    "server_error_please_try_again": "Errore del server: riprova"
+  },
+  "pages__api__parent__guest__link": {
+    "unable_to_link_this_guest_number_check_the_number_and_try_again": "No se può vincular questo numero de invitado. Comprueba el numero y vuelve a intentarlo.",
+    "too_many_attempts_please_try_again_later": "Troppi tentativi. Riprova più tardi."
+  },
+  "pages__api__teacher__classes__index": {
+    "unexpected_server_error": "Error inesperado del servidor"
+  },
+  "pages__api__teacher__classes__[classId]": {
+    "unexpected_server_error": "Error inesperado del servidor"
+  },
+  "pages__api__teacher__me": {
+    "unexpected_server_error": "Error inesperado del servidor"
+  },
+  "pages__api__teacher__onboard": {
+    "unexpected_server_error": "Error inesperado del servidor"
+  },
+  "pages__api__teacher__students": {
+    "unexpected_server_error": "Error inesperado del servidor"
+  },
+  "pages__school__activities__[activityId]__monitor": {
+    "activity_monitor": "monitor de actividad"
+  },
+  "pages__school__classes__index": {
+    "please_select_valid_dates": "Por favor seleccione fechas validas",
+    "no_classes_in_this_grade": "No hay classi en questo classe."
+  },
+  "pages__school__messages": {
+    "loading": "Caricamento…",
+    "regular": "Comun",
+    "important": "Importante",
+    "urgent": "Urgente",
+    "requires_confirmation": "Requiere confirmacion"
+  },
+  "pages__school__pending": {
+    "registration_status": "Estado de registro"
+  },
+  "pages__school__students__index": {
+    "please_select_valid_dates": "Por favor seleccione fechas validas",
+    "no_children_in_this_grade": "No hay ninos en questo classe.",
+    "no_children_found_in_this_class": "No se encontraron ninos en questa classe."
+  },
+  "pages__student__activity__[activityId]": {
+    "incorrect": "Errato",
+    "answer_submitted": "Risposta enviada",
+    "submit_answer": "Inviare risposta",
+    "type_your_answer": "Scrivi tu risposta",
+    "enlarged_diagram": "Diagramma ingrandito",
+    "close_diagram": "Chiudi il diagramma"
+  },
+  "pages__student__worksheet__[worksheetId]": {
+    "mark_this_worksheet_as_finished": "Marcar questa scheda didattica como terminada?",
+    "submit_your_answers": "Inviare sus risposte?",
+    "submission_received_and_waiting_for_teacher_approval": "Envio recibido y esperando la aprobacion del insegnante."
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "Rapporto di classe",
+    "invalid_class_id": "ID de classe no valido.",
+    "you_do_not_have_permission_to_view_this_class_report": "You do not have permission to view this class report.",
+    "please_select_valid_dates": "Por favor seleccione fechas validas"
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "Attività di classe"
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "level": "Livello"
+  },
+  "pages__teacher__class__[classId]__discussion__new": {
+    "new_discussion_activity": "Nuova actividad de discusion"
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "worksheets": "Schede didattiche"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "alunno de classe"
+  },
+  "pages__teacher__dashboard": {
+    "my_dashboard": "mi tablero"
+  },
+  "pages__teacher__pending": {
+    "request_status": "Request status"
+  },
+  "pages__teacher__students__activities__new": {
+    "activity_for_selected_private_students": "Actividad para alunni privados seleccionados",
+    "level": "Livello"
+  },
+  "pages__teacher__student__[studentId]": {
+    "student_report": "Report del alunno",
+    "invalid_student_id": "Identificacion de alunno no valida.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "You do not have permission to view this student's report.",
+    "please_select_valid_dates": "Por favor seleccione fechas validas"
+  },
+  "pages__teacher__worksheets__index": {
+    "worksheets": "Schede didattiche"
+  },
+  "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "alunno de classe"
+  },
+  "pages__teacher__worksheets__[worksheetId]__report": {
+    "worksheet_report": "Report de scheda didattica"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Apprendimento para alunni de primaria"
+  },
+  "utils__ai-hybrid-diagnostic__hybrid-review-record": {
+    "no_conflict_between_v2_and_the_hybrid_top_hypothesis": "No hay conflicto entre V2 y la ipotesi superior hibrida."
+  },
+  "utils__contracts__parent-product-contract-v1": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Todavia no hay datos suficientes para establecer una immagine a nivel de argomento.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Inicie una esercitazione breve y constante para construir una linea base de medicion.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "El volumen de datos actual es bajo, por lo que no hay base para una direccion clara.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Pick one topic and practice 10–15 minutes each session.",
+    "do_not_change_difficulty_based_on_sparse_data": "No cambie la dificultad basandose en datos escasos.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Cuanto confiar en esto: todavia no es alto en questa etapa.",
+    "existing_data_is_still_partial": "Los datos existentes aun son parciales.",
+    "continue_basic_data_collection": "Continuare con la recopilacion de datos basicos.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Aun no hay datos suficientes para definir una direccion clara.",
+    "short_focused_practice_on_one_topic": "Esercitazione breve y centrada en un argomento.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "No saque conclusiones solidas de un piccolo numero de domande.",
+    "how_much_to_trust_this_not_high_yet": "Cuanto confiar en esto: aun no es alto.",
+    "data_is_missing_or_partial": "Faltan datos o son parciales."
+  },
+  "utils__detailed-report-parent-letter": {
+    "sparse_data": "Datos escasos"
+  },
+  "utils__english-question-generator": {
+    "got_it": "Fatto"
+  },
+  "utils__expert-review-pack-artifact-snapshot": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "No se completa en el modo de instantanea de artefacto. Ejecute `npm run qa:learning-simulator:expert-review-pack` para mapas/agregados sintéticos.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Los patrones entre sujetos son ipotesi y requieren pruebas de confirmacion por sujeto.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Solo apoyo de diagnostico educativo interno, no clinico ni orientado a los genitori."
+  },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "Escuche la domanda y responda secondo lo que escuche."
+  },
+  "utils__math-topic-parent-display": {
+    "learning": "Apprendimento",
+    "practice": "Esercitazione",
+    "challenge": "Sfida",
+    "marathon": "Maratona",
+    "graded": "Calificado",
+    "normal": "Normale",
+    "mistakes": "Errores",
+    "review_mistakes": "Errores de revision"
+  },
+  "utils__parent-ai-topic-classifier__external-question-route": {
+    "the_report_for_the_selected_period": "El report del periodo seleccionado."
+  },
+  "utils__parent-data-presence": {
+    "social_studies_geography": "Estudios Sociales y Geografia"
+  },
+  "utils__probe-pending-finalize": {
+    "choose_the_correct_formula_or_first_step_before_numerical_calculation": "Choose the correct formula or first step before numerical calculation.",
+    "identify_one_clear_shape_property_or_state_before_calculating": "Identifique una propiedad o estado de forma clara prima de realizar el calculo.",
+    "reinforce_a_foundational_concept_before_continuing": "Refuerce un concepto fundamental prima de continuare."
+  },
+  "utils__question-metadata-qa__english-metadata-enrichment-suggestions": {
+    "no_automated_prerequisite_chain_for_english_pools_in_this_fast_track_pas": "No hay una cadena de requisitos previos automatizada para los grupos ingleses en questo pase rapido."
+  },
+  "utils__question-metadata-qa__geometry-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Todas las sugerencias se mantienen needHumanReview=true hasta que se aprueben las modificaciones del banco."
+  },
+  "utils__question-metadata-qa__geometry-metadata-enrichment-suggestions": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "La planificacion del area rectangular supone distinguir entre area y perimetro en contexto.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "La fila de suma de angulos del triangolo de banda tardia extiende el mismo principio: confirme la secuencia prima de aplicarla.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "No hay una cadena de requisitos previos automatizada para questa plantilla: los autores del plan de estudios se asignan explicitamente."
+  },
+  "utils__question-metadata-qa__math-generator-metadata-map": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "No reemplaza la risposta numérica corretta, las risposte [] ni el texto de la domanda dopo de la generacion; solo enriquece los campos de metadatos.",
+    "blanket_patternfamily_math_kind_when_absent": "Patron de mantaFamilia `math_${kind}` quando esta ausente",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Las filas de sonda + frazione ya llevan diagnosticSkillId/esperadoErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Las filas estandar de operacion/tipo usano math_${kind} determinista de habilidad",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Tipos de bordes con parametros minimos: patron de identificacion aun seguro math_*"
+  },
+  "utils__question-metadata-qa__question-bank-discovery": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Filas de plantilla para MCQ conceptual: escaneadas como soportes de metadatos estaticos",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Elementos matematicos de procedimiento: metadatos asignados en el momento de la generacion",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Geometria de procedimiento: utilice parametros de banco conceptual de geometria + generador",
+    "english_generator_pool_merge": "Generador inglese + fusion de grupo"
+  },
+  "utils__question-metadata-qa__question-metadata-enrichment-suggestions": {
+    "no_probepower_cognitive_tier_inferred_from_difficulty": "Sin sondaPoder: nivel cognitivo inferido de la dificultad."
+  },
+  "utils__question-metadata-qa__question-metadata-taxonomy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Habilidad ≥85 % de cobertura, subhabilidad ≥50 %, completitud promedio ≥0,65, participacion de alto riesgo <8 %.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Cobertura de habilidades utilizable pero brechas sustanciales en cognitivos/errores/requisitos previos.",
+    "large_missing_skill_or_inconsistent_tagging": "Gran habilidad faltante o etiquetado inconsistente.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "La identificacion de habilidades esta practicamente ausente: el enrutamiento de diagnostico no es confiable."
+  },
+  "utils__question-metadata-qa__science-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Todas las sugerencias se mantienen needHumanReview=true hasta que se aprueben las modificaciones del banco."
+  },
+  "utils__question-quality": {
+    "correct_answer_is_the_only_full_sentence_among_options": "La risposta corretta es la unica oracion completa entre las opciones.",
+    "correct_option_is_much_longer_than_all_distractors": "La opcion corretta es mucho mas larga que todos los distractores."
+  },
+  "utils__student-question-display": {
+    "short_equation_puzzle": "Rompecabezas de ecuaciones cortas:",
+    "complete_the_missing_part_of_the_equation": "Completa la parte que falta de la ecuacion:",
+    "find_the_unknown": "Encuentra lo desconocido:",
+    "find_x": "Encuentra x:"
+  },
+  "utils__student-question-stem-sanitizer": {
+    "hebrew_level_prefix": "Prefijo de nivel hebreo",
+    "english_level_token_as_metadata": "Token de nivel de inglese como metadatos"
+  }
+}

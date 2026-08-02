@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "choose_all_the_odd_numbers_on_the_path": "Choisis tous les nombres impairs sur le chemin",
+    "prompt_odd": "Choisis tous les nombres impairs.",
+    "prompt_even": "Choisis tous les nombres pairs.",
+    "prompt_multiples": "Choisis tous les multiples de {multiple}.",
+    "prompt_skip_forward": "Commence à {start}. Ajoutez {step} à chaque étape. Choisis les numéros dans l'ordre.",
+    "prompt_skip_backward": "Commence à {start}. Soustrayez {step} à chaque étape. Choisis les numéros dans l'ordre.",
+    "prompt_arithmetic_ascending": "Commence à {start} et ajoutez {step} à chaque étape. Choisis les numéros dans l'ordre.",
+    "prompt_arithmetic_descending": "Commence à {start} et soustrayez {step} à chaque étape. Choisis les numéros dans l'ordre.",
+    "prompt_arithmetic_missing": "Complétez la séquence. Choisis les numéros manquants dans l'ordre.",
+    "prompt_geometric_sequence": "Commence à {start} et multipliez par {ratio} à chaque étape. Choisis les numéros dans l'ordre.",
+    "solution_prefix": "Chemin correct :"
+  }
+}

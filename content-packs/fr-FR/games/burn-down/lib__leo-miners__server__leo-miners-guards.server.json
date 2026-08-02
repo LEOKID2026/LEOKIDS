@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Clé d'idempotence invalide",
+    "invalid_action_type": "Type d'action invalide",
+    "missing_stage_data_for_mining": "Données d'étape manquantes pour l'exploitation minière",
+    "too_many_breaks_in_one_request": "Trop de pauses dans une seule demande",
+    "invalid_claim_type": "Type de réclamation invalide",
+    "offline_time_exceeds_the_allowed_limit": "Le temps hors ligne dépasse la limite autorisée",
+    "offline_time_does_not_match_server_data": "L'heure hors ligne ne correspond pas aux données du serveur",
+    "too_many_breaks_try_again_in_a_moment": "Trop de pauses – réessayez dans un instant",
+    "guests_cannot_collect_rewards_please_link_an_account": "Les invités ne peuvent pas collecter de récompenses - veuillez associer un compte",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners n'est pas encore activé - appliquez la migration et la configuration",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners est désactivé dans les paramètres d'administration",
+    "leo_miners_economy_is_disabled": "L’économie de Leo Miners est désactivée",
+    "leo_miners_point_accrual_is_disabled": "L'accumulation de points Leo Miners est désactivée",
+    "offline_collection_is_disabled": "La collecte hors ligne est désactivée",
+    "leo_miners_gifts_are_disabled": "Les cadeaux Leo Miners sont désactivés",
+    "leo_miners_claims_are_disabled": "Les réclamations de Leo Miners sont désactivées",
+    "diamond_chest_is_disabled": "Le coffre de diamant est désactivé",
+    "guests_cannot_collect_diamonds": "Les invités ne peuvent pas collecter de diamants"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-train",
+  "title": "Leo's Woordtrein",
+  "blurb": "Letters, woorden en zinnen in het Engels - rijdend op de treinwagons",
+  "help": {
+    "howToPlay": "Kies een kaart, laad deze in een lege auto en tik op 'Stuur de trein'. Als het antwoord juist is, vertrekt de trein!",
+    "scoring": "Correct antwoord +30, tijdbonus, streak van 3 +15, streak van 5 +30. Time-out −5. Een fout beëindigt het spel niet; het telt alleen maar.",
+    "rewards": "Munten worden toegekend op basis van het aantal van de 20 taken dat je hebt voltooid, de nauwkeurigheid, de streaks en de moeilijkheidsgraad.",
+    "tip": "Op eenvoudig - alleen letters. Middellange - korte woorden. Moeilijk - korte zinnen."
+  },
+  "accessibility": {
+    "title": "Leo's Woordtrein"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "gameId": "dominoes",
+  "title": "Dominos",
+  "blurb": "Jouez avec des amis dans l'arcade",
+  "help": {
+    "howToPlay": "Suivez les instructions à l'écran pour ce jeu.",
+    "tip": "À tour de rôle, amusez-tu."
+  }
+}

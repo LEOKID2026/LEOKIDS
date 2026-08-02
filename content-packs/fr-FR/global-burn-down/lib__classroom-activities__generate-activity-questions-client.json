@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "human_body": "Corps humain",
+    "animals": "Animaux",
+    "plants": "Plantes",
+    "materials": "Matériaux",
+    "experiments": "Expériences",
+    "earth_and_space": "Terre et espace",
+    "environment": "Environnement",
+    "standard": "Standard",
+    "medium": "Moyen",
+    "advanced": "Avancé",
+    "basic_shapes": "Formes de base",
+    "perimeter": "Périmètre",
+    "volume": "Volume",
+    "angles": "Angles",
+    "parallel_and_perpendicular": "Parallèle et perpendiculaire",
+    "triangles": "Triangles",
+    "quadrilaterals": "Quadrilatères",
+    "transformations": "Transformations",
+    "rotation": "Rotation",
+    "symmetry": "Symétrie",
+    "diagonals": "Diagonales",
+    "heights": "Hauteurs",
+    "tiling": "Carrelage",
+    "circles": "Cercles",
+    "solid_shapes": "Formes solides",
+    "pythagorean_theorem": "Théorème de Pythagore"
+  }
+}

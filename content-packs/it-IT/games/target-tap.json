@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Toque objetivo",
+  "blurb": "Toca los objetivos prima de que desaparezcan!",
+  "help": {
+    "howToPlay": "Tap the targets that appear on the screen before they disappear. You have three lives.",
+    "scoring": "Los objetivos normales, las stelle y los diamanti valen puntos diferentes. Desaparecer cuesta una vida. Los golpes consecutivos otorgan una bonificacion combinada.",
+    "rewards": "Alcanzar el objetivo alcanzado o una puntuacion final alta otorga monete y diamanti.",
+    "tip": "No se apresure a hacer todo: a veces un objetivo con un diamante vale mas."
+  }
+}

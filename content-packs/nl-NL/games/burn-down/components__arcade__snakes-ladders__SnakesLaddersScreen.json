@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Snakes en Ladders",
+    "back": "Terug",
+    "coin_balance": "Muntensaldo",
+    "how_to_play": "Hoe naar play",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "Als je aan de beurt bent, gooi je de dobbelstenen en ga je met dat getal vooruit.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "Slangen sturen je naar beneden, ladders sturen je naar boven: klassiek board.",
+    "reach_exactly_100_to_win": "Reach exactly 100 naar win.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Een worp voorbij de 100 brengt je niet in beweging (je blijft staan)."
+  }
+}

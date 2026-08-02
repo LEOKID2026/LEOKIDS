@@ -1,0 +1,11 @@
+{
+  "gameId": "puzzle",
+  "title": "El rompecabezas de Leo",
+  "blurb": "Merge tiles and rack up points before time runs out!",
+  "help": {
+    "howToPlay": "Mueve fichas en el tablero para fusionar numeros coincidentes. Cuanto mayores sean los numeros, mayor sera la puntuacion.",
+    "scoring": "Every merge adds points. The goal is to reach the score target before time runs out.",
+    "rewards": "Ganar secondo el nivel de dificultad otorga monete y una bonificacion de puntuacion agrega aun mas.",
+    "tip": "Intenta mantener una esquina libre para tener spazio para muovere las fichas."
+  }
+}

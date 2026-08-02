@@ -1,0 +1,126 @@
+{
+  "bar": {
+    "badge": "Mode démo",
+    "gradeLabel": "Classe",
+    "playExpired": "Le temps des nouveaux départs est terminé",
+    "playTime": "Temps de jeu",
+    "minutesUnit": "min",
+    "changeGrade": "Changer de note",
+    "exitDemo": "Quitter la démo"
+  },
+  "enter": {
+    "pageTitle": "Mode démo — LEO KIDS",
+    "pageDescription": "Essayez le monde des enfants sans vous inscrire",
+    "heading": "Mode démo parent",
+    "intro": "Choisissez une classe et explorez le monde des enfants. {minutes} minutes de jeu et d'apprentissage — aucune inscription.",
+    "activeSessionNote": "Vous avez une démo active : changer de note ne réinitialisera pas le chronomètre.",
+    "chooseGradeLegend": "Choisissez une classe",
+    "enterButton": "Entrez dans le monde des enfants",
+    "enteringButton": "Entrée…"
+  },
+  "homeButton": {
+    "labelDesktop": "Essayez le monde des enfants",
+    "labelMobile": "Démo",
+    "ariaLabel": "Essayez le monde des enfants – mode démo",
+    "dismissAriaLabel": "Bouton Ignorer la démo"
+  },
+  "gate": {
+    "loading": "Chargement du mode démo…",
+    "loadError": "Impossible de charger le mode démo. Essayez d'actualiser la page."
+  },
+  "timeExpiredModal": {
+    "title": "Le temps de démonstration est écoulé",
+    "body": "{minutes} minutes se sont écoulées depuis le début de la démo. Vous pouvez continuer à parcourir le monde des enfants, mais vous ne pouvez pas démarrer un nouveau jeu ou une nouvelle activité.",
+    "inProgressNote": "Les jeux ou activités déjà en cours se poursuivront jusqu'à la fin.",
+    "dismiss": "J'ai compris",
+    "restart": "Démarrer une nouvelle démo"
+  },
+  "onlineGameUnavailable": {
+    "title": "Les jeux en ligne ne sont pas disponibles en mode démo",
+    "body": "En mode démo, vous pouvez parcourir l'arcade et voir les jeux, mais le multijoueur en ligne n'est pas actif.",
+    "backToArcade": "Retour à l'arcade"
+  },
+  "display": {
+    "studentName": "Mode démo",
+    "greeting": "Bienvenue en mode démo",
+    "arcadePlayerName": "Lecteur démo",
+    "myRoomMessage": "Ma chambre — aperçu de la démo",
+    "learningMinutesScope": "À partir des résumés de session (démo)",
+    "allSubjectsScope": "Tous les sujets",
+    "encouragement": "Continuez à vous entraîner : ceci est une démo !",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Pratiquer les mathématiques",
+    "mathDescription": "Répondez à 5 questions de mathématiques",
+    "soloTitle": "Jeu solo",
+    "soloDescription": "Jouez à une partie en solo",
+    "tier5": "5 minutes",
+    "tier15": "15 minutes",
+    "tier30": "30 minutes"
+  },
+  "subjects": {
+    "math": "Mathématiques",
+    "geometry": "Géométrie",
+    "english": "Anglais",
+    "science": "Sciences"
+  },
+  "cards": {
+    "purchaseBlocked": "Les achats ne sont pas disponibles en mode démo.",
+    "sellBlocked": "La vente de cartes n'est pas disponible en mode démo.",
+    "loadFailed": "Impossible de charger les cartes."
+  },
+  "arcade": {
+    "actionBlocked": "Cette action n'est pas disponible en mode démo.",
+    "quickPlayBlocked": "La lecture rapide n'est pas disponible en mode démo."
+  },
+  "activity": {
+    "classroomUnavailable": "Les activités en classe ne sont pas disponibles en mode démo."
+  },
+  "worksheet": {
+    "pageTitle": "fiche d’exercices – mode démo",
+    "intro": "Vous pouvez parcourir les fiches d’exercices dans la liste de la page d'accueil. La soumission numérique n'est pas disponible en mode démo.",
+    "backHome": "← Retour à l'accueil",
+    "submitBlocked": "La soumission n'est pas disponible en mode démo."
+  },
+  "myRoom": {
+    "title": "Ma chambre",
+    "saveBlocked": "L'enregistrement n'est pas disponible en mode démo."
+  },
+  "friends": {
+    "demoUnavailable": "Amis et numéro Lion – aperçu de la démo. L'ajout d'amis et d'invitations n'est pas disponible."
+  },
+  "grades": {
+    "g1": "CP",
+    "g2": "CE1",
+    "g3": "CE2",
+    "g4": "CM1",
+    "g5": "CM2",
+    "g6": "6e"
+  },
+  "parentPortal": {
+    "barBadge": "Mode démo parent",
+    "barSubtitle": "Afficher seulement · 3 exemples d'enfants",
+    "barExit": "Quitter la démo",
+    "dashboardSubtitle": "Mode démo — portail parent",
+    "homeParentLabelLine1": "Parent",
+    "homeParentLabelLine2": "démo",
+    "homeParentAriaLabel": "Démo parent – portail en lecture seule",
+    "homeParentDismissAriaLabel": "Ignorer le bouton de démonstration parent",
+    "enterPageTitle": "Démo parents — LEO KIDS",
+    "enterPageDescription": "Explorez le portail parent avec des exemples d'enfants, de rapports et de recommandations – affichage uniquement",
+    "enterHeading": "Démo du portail parents",
+    "enterBack": "Retour",
+    "enterIntro": "Explorez le portail parent avec 3 exemples d'enfants, de rapports, d'activités et de recommandations – visualisation uniquement, pas d'inscription.",
+    "enterActiveSessionNote": "Vous disposez d'une démo parentale active : vous pouvez continuer là où vous vous étiez arrêté.",
+    "enterReadOnlyNote": "Les modifications ne peuvent pas être enregistrées dans ce mode.",
+    "enterButton": "Accédez au portail parent",
+    "enteringButton": "Entrée…",
+    "enterBackHome": "Retour à la maison",
+    "readOnlyDefault": "Le mode démo est en visualisation uniquement. Les modifications ne peuvent pas être enregistrées.",
+    "readOnlyShare": "Mode démo : le partage en dehors de la démo n'est pas disponible.",
+    "readOnlyWorksheets": "Mode démo : vous pouvez parcourir les fiches d’exercices, mais pas en créer de nouvelles.",
+    "apiReadOnlyError": "Le mode démo est en visualisation uniquement."
+  }
+}

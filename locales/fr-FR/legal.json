@@ -1,0 +1,23 @@
+{
+  "privacyTitle": "Politique de confidentialité",
+  "termsTitle": "Conditions d'utilisation",
+  "securityTitle": "Sécurité",
+  "placeholderNotice": "Le texte juridique du site mondial est en attente d’examen par le conseil. Cette page est un espace réservé et non une politique contraignante.",
+  "cookieBannerTitle": "Cookies et stockage local",
+  "cookieBannerBody": "Ce site utilise des cookies et un stockage local uniquement pour les fonctionnalités essentielles (connexion, préférences et continuité). Les publicités et les analyses facultatives sont désactivées pour le moment et peuvent être activées ultérieurement avec votre consentement.",
+  "cookieAccept": "Accepter",
+  "cookieReject": "Rejeter facultatif",
+  "cookieManage": "Préférences en matière de cookies",
+  "cookieManageAria": "Ouvrir les préférences en matière de cookies et de publicité",
+  "cookiePrefsTitle": "Gérer les préférences en matière de cookies",
+  "cookiePrefsBody": "Les cookies essentiels sont requis pour la connexion, les préférences et les fonctionnalités principales du site. Les options ci-dessous couvrent les annonces et les mesures facultatives – actuellement inactives.",
+  "cookieAdsLabel": "Annonces (actuellement inactives)",
+  "cookieAdsHelp": "Annonces futures facultatives : elles pourront être activées ultérieurement sous réserve de l'approbation et de la configuration de Google.",
+  "cookieAnalyticsLabel": "Mesure et analyse (actuellement inactif)",
+  "cookieAnalyticsHelp": "Mesure anonyme facultative — peut être activée ultérieurement sous réserve de configuration.",
+  "cookieSavePrefs": "Enregistrer les préférences",
+  "cookieClose": "Fermer",
+  "privacyLink": "Politique de confidentialité",
+  "legalHubLink": "Documents juridiques",
+  "dataDeletionLink": "Suppression des données"
+}

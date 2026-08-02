@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Casse-briques",
+    "prototype_move_paddle_break_bricks": "Prototype · déplacer la pagaie · casser des briques",
+    "drag_move_below_don_t_miss_the_ball": "Faites glisser/déplacez-tu ci-dessous · ne manquez pas la balle",
+    "bx_s_ballx_ball_r": "boîte &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "par &&\r\n          s.ballY - BALL_R",
+    "all_bricks_cleared": "Toutes les briques effacées ! 🎉",
+    "tap_to_play_again": "Appuyez pour rejouer",
+    "ball_dropped": "Balle tombée !"
+  }
+}

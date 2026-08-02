@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "activity_report_teacher": "Activity report — leerkracht",
+    "questions": "Vragen",
+    "student_summary": "Leerling summary",
+    "question_analysis": "Vraaganalyse",
+    "skill_analysis": "Vaardigheidsanalyse"
+  }
+}

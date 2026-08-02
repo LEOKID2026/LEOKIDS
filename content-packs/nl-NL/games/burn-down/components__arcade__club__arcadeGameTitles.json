@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "four_in_a_row": "Four in een Row",
+    "snakes_and_ladders": "Snakes en Ladders",
+    "checkers": "Dammen",
+    "dominoes": "Domino's",
+    "chess": "Schaken",
+    "bingo": "Bingo",
+    "ludo": "Ludo"
+  }
+}

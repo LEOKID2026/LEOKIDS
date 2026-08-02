@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Vervangt niet het numerieke correcte antwoord, antwoorden [] of vraagtekst na generatie - verrijkt alleen metagegevensvelden.",
+    "blanket_patternfamily_math_kind_when_absent": "DekenpatroonFamilie `math_${kind}` bij afwezigheid",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Probe- en breukrijen bevatten al diagnosticSkillId/expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Standaard op/kind-rijen gebruiken de deterministische math_${kind} vaardigheids-ID",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Randsoorten met minimale parameters - nog steeds veilig ID-patroon math_*"
+  }
+}

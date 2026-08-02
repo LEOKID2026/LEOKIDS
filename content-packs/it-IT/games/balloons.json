@@ -1,0 +1,11 @@
+{
+  "gameId": "balloons",
+  "title": "Balloon Pop",
+  "blurb": "Pop balloons before time runs out!",
+  "help": {
+    "howToPlay": "Tap balloons to pop them. You have three lives and one minute. Watch out for bombs!",
+    "scoring": "Regular, gold, and diamond balloons add points. Clock balloons add time, and heart balloons restore a life. A bomb takes away a life.",
+    "rewards": "Alcanzar el objetivo pop o una puntuacion final alta otorga monete y diamanti.",
+    "tip": "Watch for special balloons - they can help you before time runs out."
+  }
+}

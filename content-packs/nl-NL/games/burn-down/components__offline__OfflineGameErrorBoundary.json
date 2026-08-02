@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "oops_something_went_wrong": "Oeps! Er is iets misgegaan",
+    "we_couldn_t_load_the_game_you_can_try_again": "We konden het spel niet laden. Je kunt het opnieuw proberen.",
+    "back_to_games_list": "Terug naar Games List",
+    "offline_games_area": "Offline Games Oppervlakte",
+    "try_again": "Try Opnieuw"
+  }
+}

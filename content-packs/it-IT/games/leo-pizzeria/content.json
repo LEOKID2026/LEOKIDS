@@ -1,0 +1,52 @@
+{
+  "toppings": [
+    {
+      "id": "cheese",
+      "emoji": "🧀",
+      "name": "Queso"
+    },
+    {
+      "id": "tomato",
+      "emoji": "🍅",
+      "name": "Tomate"
+    },
+    {
+      "id": "olive",
+      "emoji": "🫒",
+      "name": "Aceitunas"
+    },
+    {
+      "id": "mushroom",
+      "emoji": "🍄",
+      "name": "Hongos"
+    },
+    {
+      "id": "pepper",
+      "emoji": "🫑",
+      "name": "Pimienta"
+    },
+    {
+      "id": "basil",
+      "emoji": "🌿",
+      "name": "Albahaca"
+    }
+  ],
+  "difficulties": {
+    "easy": {
+      "label": "Facile",
+      "hint": "Entera, mitad y cuarto en una pizza de 4 porciones"
+    },
+    "medium": {
+      "label": "Medio",
+      "hint": "Mitad, cuarto y tres cuartos en 8 rebanadas"
+    },
+    "hard": {
+      "label": "Difficile",
+      "hint": "Octavas, combinaciones y completar el todo."
+    }
+  },
+  "successMessages": [
+    "Buen lavoro! La pizza esta lista para el cliente.",
+    "Impresionante! Lo hiciste exactamente como te lo ordenaron."
+  ]
+}

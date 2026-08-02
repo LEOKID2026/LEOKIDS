@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "loading": "Chargement…",
+    "regular": "Commune",
+    "important": "Important",
+    "urgent": "Urgent",
+    "requires_confirmation": "Nécessite une confirmation"
+  }
+}

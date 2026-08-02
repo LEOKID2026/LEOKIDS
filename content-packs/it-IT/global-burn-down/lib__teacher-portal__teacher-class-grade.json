@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "grade_1": "1ª primaria",
+    "grade_2": "2ª primaria",
+    "grade_3": "3ª primaria",
+    "grade_4": "4ª primaria",
+    "grade_5": "5ª primaria",
+    "grade_6": "1ª secondaria"
+  }
+}

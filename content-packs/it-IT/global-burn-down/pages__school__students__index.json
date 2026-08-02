@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "please_select_valid_dates": "Por favor seleccione fechas validas",
+    "no_children_in_this_grade": "No hay ninos en questo classe.",
+    "no_children_found_in_this_class": "No se encontraron ninos en questa classe."
+  }
+}

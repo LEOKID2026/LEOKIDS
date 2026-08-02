@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "Ga naar geavanceerd: alleen hetzelfde onderwerp",
+    "move_up_a_grade_same_topic_only": "Een groep hoger gaan: alleen hetzelfde onderwerp",
+    "solidify_at_the_same_level": "Solidify bij de zelfde level",
+    "solidify_at_regular_level": "Solidify bij regular level",
+    "strengthen_at_the_same_level": "Strengthen bij de zelfde level",
+    "return_to_regular_practice": "Return naar regular practice",
+    "lower_difficulty_same_topic_only": "Lagere moeilijkheidsgraad — alleen hetzelfde onderwerp",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "Er werden voldoende vragen op regulier niveau opgelost met een stabiele nauwkeurigheid. Geavanceerd proberen over hetzelfde onderwerp is redelijk.",
+    "trying_advanced_on_the_same_topic_is_recommended": "Het wordt aanbevolen om geavanceerd te proberen over hetzelfde onderwerp.",
+    "you_can_try_advanced_on_the_same_topic": "Je kunt geavanceerd proberen over hetzelfde onderwerp.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "Bouw een stabielere oefening op op normaal niveau voordat u overgaat naar gevorderden.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "Ga door op het reguliere niveau en versterk de nauwkeurigheid en het vertrouwen voordat u verder gaat.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "We blijven wat langer op het reguliere niveau, worden sterker en proberen dan verder te komen.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "De uitdaging voor gevorderden was op dit moment groot. Het wordt aanbevolen om terug te keren naar de reguliere praktijk over hetzelfde onderwerp.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "De uitdaging voor gevorderden was op dit moment groot. Keer terug naar de normale praktijk, versterk de nauwkeurigheid en het zelfvertrouwen en probeer het later opnieuw.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "We keren een tijdje terug naar de reguliere training, worden sterker en proberen het dan opnieuw.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "Versterk hetzelfde onderwerp door regelmatig in een comfortabel tempo te oefenen.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "Ga door met de reguliere oefening in een comfortabel tempo, met een paar korte vragen ter versterking.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "We zullen eerst versterken door regelmatig te oefenen en dan verder gaan.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "Probeer een lager niveau of niveau en ga dan geleidelijk verder.",
+    "limited_information": "Beperkte informatie"
+  }
+}

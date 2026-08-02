@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "block_tower": "Tour de bloc",
+    "prototype_tap_to_place_precision_taller_tower": "Prototype · appuyer pour placer · précision = tour plus haute",
+    "place_block": "Placer un bloc",
+    "tap_when_the_block_is_over_the_tower_small_overlap_narrower_block": "Appuyez lorsque le bloc est au-dessus de la tour · petit chevauchement = bloc plus étroit",
+    "setflash_280_gameover_return": "setFlash(\"\"), 280);\n  }, [jeu terminé]);\n\n  retour (",
+    "tap_to_play_again": "Appuyez pour rejouer",
+    "game_over": "Jeu terminé",
+    "reset": "Réinitialiser"
+  }
+}

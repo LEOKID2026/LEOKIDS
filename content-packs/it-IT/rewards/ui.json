@@ -1,0 +1,204 @@
+{
+  "rarity": {
+    "regular": "Comun",
+    "special": "Especial",
+    "rare": "Rara",
+    "gold": "Oro"
+  },
+  "cardType": {
+    "achievement": "Carta de logro",
+    "shop": "Shop card",
+    "event": "Carta de evento"
+  },
+  "cardSource": {
+    "earned_achievement": "Logro de apprendimento",
+    "shop_purchase": "Shop purchase",
+    "surprise_box_reward": "Caja sorpresa",
+    "duplicate_conversion": "Conversion de duplicado",
+    "card_sellback": "Venta de duplicado",
+    "admin_grant": "Regalo del equipo"
+  },
+  "shop": {
+    "alreadyOwned": "You have it!",
+    "sellDuplicate": "Vender duplicado",
+    "catalogOwned": "Coleccionada",
+    "coinsLabel": "{amount} monete",
+    "notEnoughCoins": "Not enough coins to buy this.",
+    "purchaseFailed": "Purchase failed — riprova.",
+    "purchaseSuccess": "Compraste {name}!",
+    "purchaseNetworkError": "Error de red al comprar.",
+    "sellConfirmTitle": "Vender un duplicado de {name} por {amount}?",
+    "sellConfirmBody": "Conservaras una copia en tu collezione.",
+    "sellFailed": "Couldn't sell the duplicate — riprova.",
+    "sellSuccess": "Vendiste un duplicado por {amount}!",
+    "sellNetworkError": "Error de red al vender.",
+    "noDuplicate": "You don't have a duplicate to sell.",
+    "loadFailed": "Couldn't load the shop right now."
+  },
+  "series": {
+    "professions": "Profesiones",
+    "space-tech": "Spazio y tecnologia",
+    "fantasy": "Fantasia",
+    "sport-fun": "Deportes y diversion",
+    "style": "Estilo",
+    "general": "Logros generales",
+    "math": "Logros de matematica",
+    "language": "Logros de idioma",
+    "subjects": "Logros por materia",
+    "events": "Eventos"
+  },
+  "fallback": {
+    "rewardCard": "Carta de recompensa",
+    "collectName": "Colecciona {name}!",
+    "earnCard": "Gana questa carta: {name}",
+    "eventLimited": "{name} — carta de evento limitada!",
+    "genericGame": "Gioco",
+    "keepLearning": "Keep learning to unlock this card",
+    "completeRequirement": "Completa el requisito: {label}",
+    "availableInShop": "Available in the shop",
+    "availableInSurpriseBox": "Disponible en una caja sorpresa",
+    "notAvailableNow": "No disponible ora",
+    "progressOf": "{current} de {target}"
+  },
+  "topics": {
+    "addition": "Suma",
+    "subtraction": "Resta",
+    "multiplication": "Multiplicacion",
+    "division": "Division",
+    "vocabulary": "Vocabulario"
+  },
+  "gradeBands": {
+    "g12": "Classi 1–2",
+    "g34": "Classi 3–4",
+    "g56": "Classi 5–6"
+  },
+  "requirements": {
+    "total_questions": "Responde {minQuestions} domande en total",
+    "weekly_questions": "Responde {minQuestions} domande en la ultima semana",
+    "subject_questions": "Responde {minQuestions} domande en {subject}",
+    "subject_questions_fallback_subject": "Responde {minQuestions} domande en una materia",
+    "subject_accuracy": "Alcanza {minAccuracy}% de aciertos en {subject}{topicPart} (al menos {minQuestions} domande)",
+    "subject_accuracy_topic_part": " en {topic}",
+    "learning_streak_days": "Aprende durante {minStreakDays} dias seguidos",
+    "active_days_streak": "Mantente activo durante {minStreakDays} dias seguidos",
+    "parent_activity_complete": "Complete {minCompletedActivities} parent activities",
+    "monthly_learning_minutes": "Aprende {minLearningMinutesMonthly} minutos questo mes",
+    "event_window": "Carta de evento especial — disponible durante el periodo del evento",
+    "daily_mission_complete": "Completa la missione: {missionKey}",
+    "daily_mission_generic": "Completa una missione diaria",
+    "grade_band_only": "Disponible para {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "We couldn't load the surprise box.",
+    "networkError": "Error de red al cargar la caja sorpresa.",
+    "ready": "Caja sorpresa lista!",
+    "readyMultiple": "{count} cajas listas para abrir!",
+    "openError": "We couldn't open the box right now. Riprova in a moment.",
+    "noMoreBoxes": "No hae altro cajas para abrir ora.",
+    "noBoxReady": "No box ready right now — riprova later.",
+    "duplicateHint": "You got an extra copy — you can sell duplicates in the shop.",
+    "newCard": "Nuova carta en tu collezione!",
+    "ariaLabel": "Caja sorpresa",
+    "title": "Caja sorpresa",
+    "loading": "Caricamento…",
+    "nextBoxIn": "Proxima caja lista en",
+    "keepLearning": "Sigue aprendiendo — pronto habra una caja nuova!",
+    "openBox": "Abrir caja",
+    "myCollection": "Mi collezione"
+  },
+  "preview": {
+    "close": "Chiudere",
+    "download": "Download image",
+    "prev": "Previous card",
+    "next": "Next card",
+    "locked": "Bloqueada"
+  },
+  "lockedStamp": {
+    "label": "Bloqueada"
+  },
+  "shopView": {
+    "loading": "Loading card shop...",
+    "loadErrorTitle": "We couldn't load the card shop.",
+    "tryAgain": "Provare de nuovo",
+    "empty": "No hay cartas disponibles para comprar ora.",
+    "coinBalance": "Saldo de monete: {amount}",
+    "buyPrice": "Precio de compra: {amount}",
+    "sellValue": "Valor de venta: {amount}",
+    "needMoreCoins": "Te faltan {amount}",
+    "notEnoughCoinsShort": "Monete insuficientes",
+    "noDuplicateToSell": "No hay un duplicado para vender.",
+    "sellFailed": "Couldn't sell the duplicate — riprova.",
+    "sellSuccess": "Vendiste un duplicado de {name} y obtuviste {amount}!",
+    "sellNetworkError": "Error de red al vender.",
+    "buy": "Comprar",
+    "sellDuplicateAction": "Vender duplicado",
+    "selling": "Vendiendo…",
+    "buying": "Comprando…",
+    "buyFor": "Comprar por {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "Chiudere",
+    "openingTitle": "Abriendo caja…",
+    "doneTitle": "Nice! You got rewards!",
+    "idleTitle": "Caja sorpresa",
+    "rolling": "Preparando tus recompensas…",
+    "coinsReward": "+{amount} monete",
+    "diamondsReward": "+{amount} diamanti",
+    "openAnother": "Abrir otra caja",
+    "viewCards": "Ver mis cartas"
+  },
+  "previewModal": {
+    "close": "Chiudere",
+    "download": "Download my card",
+    "downloading": "Descargando…",
+    "downloadError": "We couldn't download the card. Riprova.",
+    "prev": "Previous card",
+    "next": "Next card",
+    "cardImageAlt": "Immagine de la carta",
+    "rarityLabel": "Rareza: {label}",
+    "seriesLabel": "Serie: {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "Mundo Kids",
+    "title": "Mis cartas",
+    "subtitle": "Collection, shop, all cards, and series",
+    "featureDisabled": "La collezione de cartas aun no esta disponible.",
+    "loading": "Loading cards...",
+    "loadError": "We couldn't load the cards.",
+    "tryAgain": "Provare de nuovo",
+    "tabsAriaLabel": "Pestanas de cartas",
+    "collectionEmpty": "No cards in your collection yet — open a surprise box in Kids World or buy from the shop!",
+    "catalogEmpty": "No hay cartas para mostrar.",
+    "seriesEmpty": "Aun no hay series de cartas.",
+    "tabs": {
+      "collection": {
+        "label": "Mi collezione",
+        "shortLabel": "Collezione"
+      },
+      "shop": {
+        "label": "Card shop",
+        "shortLabel": "Shop"
+      },
+      "catalog": {
+        "label": "Todas las cartas",
+        "shortLabel": "Tutto"
+      },
+      "series": {
+        "label": "Series",
+        "shortLabel": "Series"
+      }
+    }
+  },
+  "server": {
+    "economyUnavailable": "La economia de monete no esta disponible ora",
+    "duplicateConversionRemoved": "È stata rimossa la conversione dei duplicati — puoi vender un duplicato nel negozio.",
+    "missingSeries": "Series is missing — a series with a slug is required for shop/achievement cards",
+    "multipartRequired": "La carga deve usare multipart/form-data",
+    "variantProcessFailed": "Fallo el procesamiento de la version de la carta",
+    "boxNeedsPrize": "La caja serve al menos un premio: cartas y/o monete.",
+    "boxSettingsInvalidJson": "La configuracion de la caja deve ser un objeto JSON.",
+    "notPurchasable": "Questa carta no se può comprar",
+    "alreadyOwnedCollection": "Ya esta en tu collezione",
+    "insufficientCoinsDetailed": "You don't have enough coins for this card"
+  }
+}

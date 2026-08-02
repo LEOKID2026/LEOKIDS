@@ -6,6 +6,9 @@ import { localizeScienceQuestionEn, localizeScienceQuestionForLocale } from "./s
 import { applyEs419DisplayLayer } from "../learning-content-es419/index.js";
 import { applyPtBrDisplayLayer } from "../learning-content-pt-BR/index.js";
 import { applyPtPtDisplayLayer } from "../learning-content-pt-PT/index.js";
+import { applyItItDisplayLayer } from "../learning-content-it-IT/index.js";
+import { applyFrFrDisplayLayer } from "../learning-content-fr-FR/index.js";
+import { applyNlNlDisplayLayer } from "../learning-content-nl-NL/index.js";
 
 /**
  * Apply the Global English display layer (HE→EN maps / overlays).
@@ -37,8 +40,8 @@ function applyEnglishDisplayLayer(question, subject, opts = {}) {
  * - Shared logic/ids/params/diagnostics are untouched (mapQuestionTextFields only remaps text).
  * - Unregistered content locales (including he*) use the English display layer
  *   (never leave raw Hebrew stems for student display).
- * - `es-419` / `pt-BR` / `pt-PT` use native math/geometry stem rebuilders; science uses locale overlay;
- *   English subject keeps learning stems in EN and may localize instruction chrome.
+ * - Native math/geometry stem rebuilders for es-419 / pt-BR / pt-PT / it-IT / fr-FR / nl-NL;
+ *   science uses locale overlay; English subject keeps learning stems in EN.
  *
  * @param {Record<string, unknown>} question
  * @param {{
@@ -74,6 +77,18 @@ export function localizeLearningQuestion(question, opts = {}) {
 
   if (contentLocale === "pt-PT" && (subject === "math" || subject === "geometry")) {
     return applyPtPtDisplayLayer(question, subject);
+  }
+
+  if (contentLocale === "it-IT" && (subject === "math" || subject === "geometry")) {
+    return applyItItDisplayLayer(question, subject);
+  }
+
+  if (contentLocale === "fr-FR" && (subject === "math" || subject === "geometry")) {
+    return applyFrFrDisplayLayer(question, subject);
+  }
+
+  if (contentLocale === "nl-NL" && (subject === "math" || subject === "geometry")) {
+    return applyNlNlDisplayLayer(question, subject);
   }
 
   return applyEnglishDisplayLayer(question, subject, {

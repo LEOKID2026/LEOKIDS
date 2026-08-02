@@ -1,0 +1,23 @@
+{
+  "privacyTitle": "Privacybeleid",
+  "termsTitle": "Terms van gebruiken",
+  "securityTitle": "Beveiliging",
+  "placeholderNotice": "De juridische tekst voor de wereldwijde site is in afwachting van beoordeling door een raadsman. Deze pagina is een tijdelijke aanduiding en geen bindend beleid.",
+  "cookieBannerTitle": "Cookies en lokale opslag",
+  "cookieBannerBody": "Deze site maakt alleen gebruik van cookies en lokale opslag voor essentiële functies (aanmelding, voorkeuren en continuïteit). Advertenties en optionele analyses zijn voorlopig uitgeschakeld en kunnen later met uw toestemming worden ingeschakeld.",
+  "cookieAccept": "Accepteren",
+  "cookieReject": "Optioneel afwijzen",
+  "cookieManage": "Cookie-voorkeuren",
+  "cookieManageAria": "Open cookie- en advertentievoorkeuren",
+  "cookiePrefsTitle": "Beheer cookievoorkeuren",
+  "cookiePrefsBody": "Essentiële cookies zijn vereist voor inloggen, voorkeuren en kernfuncties van de site. De onderstaande opties hebben betrekking op optionele advertenties en metingen (momenteel inactief).",
+  "cookieAdsLabel": "Advertenties (momenteel inactief)",
+  "cookieAdsHelp": "Optionele toekomstige advertenties: kunnen later worden ingeschakeld, onder voorbehoud van goedkeuring en configuratie door Google.",
+  "cookieAnalyticsLabel": "Meting en analyse (momenteel inactief)",
+  "cookieAnalyticsHelp": "Optionele anonieme meting: kan later worden ingeschakeld, afhankelijk van de configuratie.",
+  "cookieSavePrefs": "Opslaan preferences",
+  "cookieClose": "Sluiten",
+  "privacyLink": "Privacybeleid",
+  "legalHubLink": "Juridische documenten",
+  "dataDeletionLink": "Gegevens verwijderen"
+}

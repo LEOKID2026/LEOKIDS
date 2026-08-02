@@ -1,0 +1,11 @@
+{
+  "gameId": "catcher",
+  "title": "Attraper avec Léo",
+  "blurb": "Attrapez des pièces et restez à l'écart des bombes !",
+  "help": {
+    "howToPlay": "Déplacez Leo vers la gauche et la droite pour attraper des pièces et des diamants qui tombent du ciel.",
+    "scoring": "Chaque pièce ou diamant capturé ajoute des points. Frapper une bombe met fin au jeu.",
+    "rewards": "Plus tu gagnez de points, plus tu obtiendrez de pièces et de diamants pour ton monde d'enfants.",
+    "tip": "Gardez un œil sur ce qui tombe et avancez avant que l'objet n'atteigne le fond."
+  }
+}

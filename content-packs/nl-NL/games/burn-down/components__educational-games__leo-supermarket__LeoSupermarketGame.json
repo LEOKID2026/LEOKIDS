@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Register",
+    "pick_coins": "Kies munten",
+    "removechangeat_lastindex": "removeChangeAt(lastIndex)} /> )) )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Help Leo de kassier: kies het product, bereken het wisselgeld en geef het juiste geld terug",
+    "x_id_id_if_p_return_null_return": "x.id === id); if (!p) return null; return (",
+    "setphase_intro_new_game": "setPhase(\"intro\")}> New game",
+    "pick_the_product_the_customer_asked_for": "Kies het product waar de klant om heeft gevraagd",
+    "leo_apos_s_market": "Leo's markt",
+    "change_you_gave": "Veranderen je gave:",
+    "purchase_total": "Totaal aankoop:",
+    "customer_paid": "Klant betaald:",
+    "give_change": "Give veranderen ✓",
+    "clear_change": "Clear veranderen",
+    "start_game": "Spel starten",
+    "back": "Terug"
+  }
+}

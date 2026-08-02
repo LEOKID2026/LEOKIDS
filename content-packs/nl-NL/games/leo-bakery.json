@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-bakery",
+  "title": "Leo's Bakkerij",
+  "blurb": "Vermenigvuldiging, gelijke groepen en ontbrekende factoren",
+  "help": {
+    "howToPlay": "Bouw trays, zoek de totale of ontbrekende factor, of herschik hetzelfde totaal - en tik vervolgens op 'Bestelling controleren'.",
+    "scoring": "Correct antwoord +30, tijdbonus tot +20, reeks van 5 correct +25. Na 3 mislukte pogingen wordt de volledige oplossing getoond.",
+    "rewards": "Munten worden toegekend op basis van het aantal bestellingen dat je correct hebt voorbereid, de nauwkeurigheid, de streaks en de moeilijkheidsgraad.",
+    "tip": "Denk na over hoeveel laden × hoeveel per lade, en niet alleen door het tellen van pictogrammen."
+  },
+  "accessibility": {
+    "title": "Leo's Bakkerij"
+  }
+}

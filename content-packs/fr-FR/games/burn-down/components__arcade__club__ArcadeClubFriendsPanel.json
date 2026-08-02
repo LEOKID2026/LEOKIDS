@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "Numéro Lion (8 chiffres) ou nom d'affichage",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "Il s'agit du numéro que tu donnez à un ami. Il peut le saisir ci-dessous pour te envoyer une demande d'amitié.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "Entrez un numéro Leo ou un nom d'affichage - une demande d'ami sera envoyée pour qu'ils l'approuvent.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "Impossible d'afficher ton numéro Leo. Essaie d'actualiser la page.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "Amis – contrôlés via l’administrateur. Pas encore ouvert aux invités.",
+    "setquery_e_target_value": "setQuery(e.target.value)}\r\n          />",
+    "remove_this_friend_from_your_list": "Supprimer cet ami de ton liste ?",
+    "setting_up_your_leo_number": "Configurer ton numéro Leo…",
+    "requests_friends": "Demandes et amis",
+    "friend_requests": "Demandes d'amis",
+    "no_friends_yet": "Pas encore d'amis",
+    "my_leo_number": "Mon numéro Lion",
+    "remove_friend": "Supprimer un ami",
+    "add_friend": "Ajouter un ami",
+    "my_friends": "Mes amis",
+    "friends": "Amis",
+    "approve": "Approuver",
+    "decline": "Déclin",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "invite": "Inviter"
+  }
+}

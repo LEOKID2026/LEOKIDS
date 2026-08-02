@@ -1,0 +1,11 @@
+{
+  "gameId": "fruit-slice",
+  "title": "Tranche De Fruits",
+  "blurb": "Coupez des fruits, évitez les bombes et atteignez l'objectif de score !",
+  "help": {
+    "howToPlay": "Faites glisser ton doigt sur l'écran pour trancher des fruits volants. Évitez les bombes - tu avez trois erreurs autorisées.",
+    "scoring": "Chaque fruit coupé ajoute des points. Trancher plusieurs fruits à la fois donne un bonus de combo. Frapper une bombe ou manquer un fruit coûte une erreur.",
+    "rewards": "Atteindre l'objectif de score en fonction du niveau de difficulté rapporte des pièces et des diamants.",
+    "tip": "Coupez uniquement des fruits. Si tu voyez une bombe, il est préférable de la sauter."
+  }
+}

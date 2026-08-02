@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Retour",
+    "local_badge": "Locale",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "Tableau {size}×{size} • {mode}",
+    "vs_bot": "contre les robots",
+    "two_players": "2 joueurs",
+    "player_x": "Joueur X",
+    "player_o": "Joueur O",
+    "tie": "Cravate",
+    "vs_bot_label": "contre les robots",
+    "reset_board": "Réinitialiser la carte",
+    "reset_score": "Réinitialiser le score",
+    "player_won": "{player} gagné !",
+    "tie_game": "Cravate!",
+    "turn": "Tourner:"
+  }
+}

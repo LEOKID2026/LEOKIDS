@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "Questa actividad no esta disponible en questo momento.",
+    "activity_not_found": "Actividad no encontrada",
+    "this_activity_has_not_started_yet": "Questa actividad aun no ha comenzado.",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "No se possono inviare risposte para questa actividad en questo momento",
+    "this_activity_is_closed": "Questa actividad esta cerrada.",
+    "time_is_up_for_this_activity": "Se acabo il tempo para questa actividad.",
+    "could_not_open_this_activity_right_now": "No se pudo abrir questa actividad en questo momento",
+    "not_found": "Non trovato",
+    "please_sign_in": "Per favore accedi",
+    "you_do_not_have_permission_to_open_this_activity": "You do not have permission to open this activity",
+    "this_activity_is_not_assigned_to_you": "Questa actividad no esta asignada a ti",
+    "could_not_identify_the_account": "No se pudo identificar la cuenta",
+    "could_not_complete_that_action_right_now": "No se pudo completar quella accion en questo momento.",
+    "you_already_submitted_this_activity": "Ya enviaste questa actividad",
+    "you_already_answered_this_question": "Ya respondiste questa domanda",
+    "waiting_for_the_teacher": "Esperando al insegnante...",
+    "no_answer_submission_needed": "No es necesario inviare una risposta",
+    "the_system_is_updating_try_again_later": "El sistema se esta actualizando. Vuelve a intentarlo mas tarde.",
+    "something_went_wrong_please_try_again": "Qualcosa è andato storto: riprova",
+    "server_error_please_try_again": "Errore del server: riprova",
+    "action_not_supported": "Azione non supportata",
+    "could_not_load_the_question_right_now": "No se pudo cargar la domanda en questo momento.",
+    "could_not_submit_an_answer_right_now": "No se pudo inviare una risposta en questo momento"
+  }
+}

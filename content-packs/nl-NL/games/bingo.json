@@ -1,0 +1,9 @@
+{
+  "gameId": "bingo",
+  "title": "Bingo",
+  "blurb": "Speel met vrienden in de speelhal",
+  "help": {
+    "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+    "tip": "Wissel af en heb plezier."
+  }
+}

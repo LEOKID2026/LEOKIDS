@@ -1,0 +1,9 @@
+{
+  "gameId": "tap-battle",
+  "title": "Appuyez sur Bataille",
+  "blurb": "Chaque camp tape aussi vite qu'il le peut : qui gagne ?",
+  "players": "2 joueurs",
+  "help": {
+    "howToPlay": "Jouez ensemble sur le même appareil."
+  }
+}

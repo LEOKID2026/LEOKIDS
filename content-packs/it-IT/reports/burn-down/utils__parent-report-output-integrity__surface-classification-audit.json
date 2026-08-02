@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "short_report_table": "Short report table",
+    "smart_summary_short_report": "Smart summary - short report",
+    "smart_summary_detailed_report": "Smart summary - detailed report",
+    "parentaiinsight_executivesummary": "ParentAiInsight + executiveSummary",
+    "strengths": "Strengths",
+    "focus_weaknesses": "Focus / weaknesses",
+    "topic_recommendations": "Topic recommendations",
+    "what_to_do_at_home": "What to do at home",
+    "executive_summary": "Executive summary",
+    "charts_labels": "Charts / labels",
+    "playwright_print_of_pages_above": "Playwright print of pages above",
+    "copilot_truth_packet": "Copilot truth packet",
+    "copilot_answer_composer": "Copilot answer composer"
+  }
+}

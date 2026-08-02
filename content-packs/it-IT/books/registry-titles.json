@@ -1,0 +1,391 @@
+{
+  "batches": {
+    "english.g1": {
+      "phonics-a": {
+        "title": "Letras mayusculas A–Z e altro"
+      },
+      "phonics-b": {
+        "title": "Sonidos de las letras e altro"
+      },
+      "phonics-c": {
+        "title": "Palabras del aula e altro"
+      },
+      "phonics-d": {
+        "title": "Immagine y palabra e altro"
+      }
+    },
+    "english.g2": {
+      "phonics-review": {
+        "title": "Repaso: letras y nombres e altro"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "a": {
+        "title": "Conociendo el quadrato e altro"
+      },
+      "b": {
+        "title": "Traslacion y reflexion — introduccion"
+      }
+    },
+    "geometry.g2": {
+      "a": {
+        "title": "Solidos tridimensionales — nombres e introduccion"
+      },
+      "b": {
+        "title": "Area de un quadrato"
+      },
+      "c": {
+        "title": "Traslacion y reflexion — mas esercitazione"
+      }
+    },
+    "geometry.g3": {
+      "a": {
+        "title": "Tipos de triangoli e altro"
+      },
+      "b": {
+        "title": "Rectas paralelas y perpendiculares"
+      },
+      "c": {
+        "title": "Area de un quadrato e altro"
+      },
+      "d": {
+        "title": "Angolos en un triangolo"
+      },
+      "e": {
+        "title": "Rotacion en el plano e altro"
+      }
+    },
+    "geometry.g4": {
+      "a": {
+        "title": "Propiedades de un quadrato e altro"
+      },
+      "b": {
+        "title": "Quadrilateros e altro"
+      },
+      "c": {
+        "title": "Perimetro de un quadrato e altro"
+      },
+      "d": {
+        "title": "Diagonal de un quadrato e altro"
+      },
+      "e": {
+        "title": "Solidos e altro"
+      }
+    },
+    "geometry.g5": {
+      "a": {
+        "title": "Rectas paralelas y perpendiculares e altro"
+      },
+      "b": {
+        "title": "Perimetro de un quadrato e altro"
+      },
+      "c": {
+        "title": "Altezza of a Triangle and more"
+      },
+      "d": {
+        "title": "Area de un quadrato e altro"
+      },
+      "e": {
+        "title": "Diagonal de un quadrato e altro"
+      },
+      "f": {
+        "title": "Solidos tridimensionales e altro"
+      },
+      "g": {
+        "title": "Embaldosar un plano"
+      }
+    },
+    "geometry.g6": {
+      "a": {
+        "title": "Perimetro de un quadrato e altro"
+      },
+      "b": {
+        "title": "Circonferenza de un cerchio e altro"
+      },
+      "c": {
+        "title": "Teorema de Pitagoras e altro"
+      },
+      "d": {
+        "title": "Solidos e altro"
+      },
+      "e": {
+        "title": "Volumen de un prisma e altro"
+      },
+      "f": {
+        "title": "Volumen de una piramide e altro"
+      },
+      "g": {
+        "title": "Volumen de un cilindro e altro"
+      }
+    },
+    "math.g1": {
+      "a": {
+        "title": "Counting Forward on the Number Line and more"
+      },
+      "b": {
+        "title": "Decenas y unidades e altro"
+      },
+      "c": {
+        "title": "Sumar dos numeros e altro"
+      },
+      "d": {
+        "title": "Problemas verbales e altro"
+      }
+    },
+    "math.g2": {
+      "a": {
+        "title": "Centenas, decenas y unidades e altro"
+      },
+      "b": {
+        "title": "Sumar dos numeros e altro"
+      },
+      "c": {
+        "title": "Quando se divide un numero entre 2, 5 y 10? e altro"
+      },
+      "d": {
+        "title": "Problemas verbales e altro"
+      }
+    },
+    "math.g3": {
+      "a": {
+        "title": "Centenas, decenas y unidades e altro"
+      },
+      "b": {
+        "title": "Sumar dos numeros e altro"
+      },
+      "c": {
+        "title": "Frazioni — qué son y come las comparamos?"
+      },
+      "d": {
+        "title": "Ecuacion de suma e altro"
+      },
+      "e": {
+        "title": "Problemas verbales e altro"
+      }
+    },
+    "math.g4": {
+      "a": {
+        "title": "Valor posicional e altro"
+      },
+      "b": {
+        "title": "Sumar con 0 e altro"
+      },
+      "c": {
+        "title": "Sumar dos numeros e altro"
+      },
+      "d": {
+        "title": "Division e altro"
+      },
+      "e": {
+        "title": "Sumar decimales e altro"
+      },
+      "f": {
+        "title": "Potencias e altro"
+      },
+      "g": {
+        "title": "Problemas verbales e altro"
+      }
+    },
+    "math.g5": {
+      "a": {
+        "title": "Valor posicional e altro"
+      },
+      "b": {
+        "title": "Sumar dos numeros e altro"
+      },
+      "c": {
+        "title": "Division e altro"
+      },
+      "d": {
+        "title": "Simplificar frazioni e altro"
+      },
+      "e": {
+        "title": "Sumar decimales e altro"
+      },
+      "f": {
+        "title": "Factores de un numero e altro"
+      },
+      "g": {
+        "title": "Percentuale de una cantidad e altro"
+      },
+      "h": {
+        "title": "Problemas verbales e altro"
+      }
+    },
+    "math.g6": {
+      "a": {
+        "title": "Valor posicional e altro"
+      },
+      "b": {
+        "title": "Sumar dos numeros e altro"
+      },
+      "c": {
+        "title": "Factores de un numero e altro"
+      },
+      "d": {
+        "title": "Ecuacion de suma e altro"
+      },
+      "e": {
+        "title": "Sumar numeros decimales e altro"
+      },
+      "f": {
+        "title": "A Fraction as Division e altro"
+      },
+      "g": {
+        "title": "Razones e altro"
+      },
+      "h": {
+        "title": "Percentuale de una cantidad e altro"
+      },
+      "i": {
+        "title": "Problemas verbales e altro"
+      }
+    },
+    "science.g1": {
+      "a": {
+        "title": "El corpo umano e altro"
+      },
+      "b": {
+        "title": "Materiali e altro"
+      }
+    },
+    "science.g2": {
+      "a": {
+        "title": "El corpo umano e altro"
+      },
+      "b": {
+        "title": "Materiali e altro"
+      },
+      "c": {
+        "title": "Osservazione e investigacion"
+      }
+    },
+    "science.g3": {
+      "a": {
+        "title": "El corpo umano e altro"
+      },
+      "b": {
+        "title": "Materiali e altro"
+      },
+      "c": {
+        "title": "Un esperimento cientifico corto"
+      }
+    },
+    "science.g4": {
+      "a": {
+        "title": "El corpo umano e altro"
+      },
+      "b": {
+        "title": "Materiali e altro"
+      },
+      "c": {
+        "title": "Planificar un esperimento"
+      }
+    },
+    "science.g5": {
+      "b": {
+        "title": "Materiali e altro"
+      },
+      "a": {
+        "title": "El corpo umano e altro"
+      },
+      "c": {
+        "title": "Investigacion completa — documentacion"
+      }
+    },
+    "science.g6": {
+      "b": {
+        "title": "Materiali e altro"
+      },
+      "a": {
+        "title": "El corpo umano e altro"
+      },
+      "c": {
+        "title": "Proyecto de scienze"
+      }
+    },
+    "placeholder": {
+      "comingSoon": {
+        "title": "Prossimamente"
+      }
+    }
+  },
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Inglese — 1ª primaria"
+    },
+    "english.g2": {
+      "bookTitle": "Inglese — 2ª primaria"
+    },
+    "english.g3": {
+      "bookTitle": "Inglese — 3ª primaria"
+    },
+    "english.g4": {
+      "bookTitle": "Inglese — 4ª primaria"
+    },
+    "english.g5": {
+      "bookTitle": "Inglese — 5ª primaria"
+    },
+    "english.g6": {
+      "bookTitle": "Inglese — 1ª secondaria"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometria — 1ª primaria"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometria — 2ª primaria"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometria — 3ª primaria"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometria — 4ª primaria"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometria — 5ª primaria"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometria — 1ª secondaria"
+    },
+    "math.g1": {
+      "bookTitle": "Matematica — 1ª primaria"
+    },
+    "math.g2": {
+      "bookTitle": "Matematica — 2ª primaria"
+    },
+    "math.g3": {
+      "bookTitle": "Matematica — 3ª primaria"
+    },
+    "math.g4": {
+      "bookTitle": "Matematica — 4ª primaria"
+    },
+    "math.g5": {
+      "bookTitle": "Matematica — 5ª primaria"
+    },
+    "math.g6": {
+      "bookTitle": "Matematica — 1ª secondaria"
+    },
+    "science.g1": {
+      "bookTitle": "Scienze — 1ª primaria"
+    },
+    "science.g2": {
+      "bookTitle": "Scienze — 2ª primaria"
+    },
+    "science.g3": {
+      "bookTitle": "Scienze — 3ª primaria"
+    },
+    "science.g4": {
+      "bookTitle": "Scienze — 4ª primaria"
+    },
+    "science.g5": {
+      "bookTitle": "Scienze — 5ª primaria"
+    },
+    "science.g6": {
+      "bookTitle": "Scienze — 1ª secondaria"
+    }
+  }
+}

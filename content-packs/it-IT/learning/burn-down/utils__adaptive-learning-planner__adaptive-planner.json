@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "Contesto insufficiente per pianificare (soggetto mancante).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "È necessaria più attività di apprendimento prima di suggerire un focus successivo.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "Il sistema di apprendimento necessita di ulteriori dati pratici prima di suggerire il passaggio successivo.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Raccogli qualche altro oggetto pratico; le conclusioni sono rinviate.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "La pratica dell'inglese può continuare, ma il percorso delle competenze deve essere confermato da un insegnante.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "La codifica in inglese è incompleta nella banca dei contenuti; il pianificatore non indirizzerà automaticamente le competenze a grana fine.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "Attendere la verifica dei metadati delle domande prima di suggerire un percorso avanzato.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "I metadati delle competenze per il passaggio successivo non sono confermati; mantenere l'avanzamento automatico.",
+    "short_probe_to_verify_understanding_versus_guessing": "Breve indagine per verificare la comprensione rispetto all'ipotesi.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Segnali incoerenti o complessi: utilizzare un set diagnostico ridotto.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Pratica extra sull'abilità attuale a una difficoltà di supporto.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Pratica mirata sulla stessa abilità; difficoltà mantenuta o leggermente abbassata.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Breve ripasso di un'abilità di base che supporta l'argomento attuale.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Rafforzare un'abilità prerequisita prima di spingere maggiormente l'abilità principale.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Pronto per una pratica leggermente più impegnativa sulla stessa linea di abilità.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "I segnali supportano un cauto aumento della difficoltà con il monitoraggio.",
+    "continue_solid_practice_at_the_current_level": "Continuare una pratica solida al livello attuale.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Mantieni la difficoltà attuale consolidando la maestria.",
+    "review_style_practice_on_the_current_skill": "Pratica in stile revisione sull'abilità attuale.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "Il motore suggerisce la revisione; il pianificatore si allinea con la pratica della stessa abilità.",
+    "steady_practice_on_the_current_focus": "Pratica costante sul focus attuale.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Percorso sicuro predefinito: continua la pratica senza aumentare la difficoltà."
+  }
+}

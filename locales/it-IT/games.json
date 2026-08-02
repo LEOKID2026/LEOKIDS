@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Giochi",
+  "arcade": "Arcade",
+  "solo": "Giochi in solitaria",
+  "educational": "Giochi educativi",
+  "play": "Gioca",
+  "pause": "Pausa",
+  "resume": "Riprendere",
+  "settings": "Impostazioni di gioco",
+  "soundOn": "Suono attivo",
+  "soundOff": "Suono disattivato",
+  "youWin": "Hai vinto!",
+  "youLose": "Bel tentativo!",
+  "draw": "È un pareggio",
+  "inviteFriend": "Invita un amico",
+  "waitingForOpponent": "In attesa dell'avversario...",
+  "matchFound": "Corrispondenza trovata!",
+  "connectionLost": "Connessione persa. Riprovando...",
+  "back": "Indietro",
+  "gamesBadge": "Giochi",
+  "hubSubtitle": "Scegli l'esperienza più adatta: giochi Leo, gioco offline e altro ancora.",
+  "hubRegularTitle": "I giochi di Leone",
+  "hubRegularBlurb": "I giochi di Leo: partite di memoria, puzzle, tiro al bersaglio e altro ancora.",
+  "hubOfflineTitle": "Sempre con Leone",
+  "hubOfflineBlurb": "Gioca anche senza internet",
+  "hubEducationalTitle": "I giochi didattici di Leo",
+  "hubEducationalBlurb": "Arricchimento, capacità di pensiero e conoscenze generali",
+  "hubOnlineTitle": "Giochi con gli amici",
+  "hubOnlineBlurb": "Sale giochi multiplayer con amici e altri giocatori.",
+  "devPrototypeMeta": "Sviluppo · test interni",
+  "soloHubBadge": "I giochi di Leone",
+  "soloHubTitle": "I giochi di Leo: il mondo dei bambini",
+  "soloHubSubtitle": "Gioca, guadagna punti e raccogli monete e gemme per il tuo mondo!",
+  "soloMeta": "Solo · monete · gemme",
+  "playNow": "Gioca ora",
+  "educationalBadge": "Educativo",
+  "educationalHubTitle": "Giochi educativi",
+  "educationalHubSubtitle": "Giochi didattici che sviluppano abilità divertendosi.",
+  "noGamesAvailable": "Nessun gioco disponibile al momento.",
+  "educationalMeta": "Gioco educativo · Monete",
+  "arcadeBack": "Arcade",
+  "arcadeBadge": "Circolo arcade",
+  "arcadeHubTitle": "Il club di gioco di Leo",
+  "arcadeHubSubtitle": "Gioca con gli amici: crea una stanza o unisciti a una.",
+  "entryCostLabel": "Costo di ingresso",
+  "selectEntryCost": "Scegli l'importo dell'iscrizione",
+  "roomTypeQuick": "Partita veloce",
+  "roomTypePublic": "Pubblico",
+  "playersLabel": "Giocatori",
+  "apiSuccess": "Fatto",
+  "apiAlreadyQueued": "Già in coda (non addebitato nuovamente)",
+  "apiInsufficientFunds": "Monete insufficienti per questa azione",
+  "apiFailed": "Azione fallita",
+  "quickAlreadyInRoom": "Sei già in una stanza: tocca Entra nel gioco",
+  "quickJoined": "Mi sono unito a un giocatore in attesa nella stanza",
+  "quickCreated": "Creata una stanza per la partita veloce: in attesa di un altro giocatore",
+  "quickReady": "Pronto",
+  "social": {
+    "greatGame": "Ottimo gioco!",
+    "wellPlayed": "Ben fatto!",
+    "rematch": "Rivincita?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Collega quattro",
+      "blurb": "Collega quattro · due giocatori",
+      "players": "Giocatori: 2"
+    },
+    "ludo": {
+      "title": "Ludo",
+      "blurb": "Ludo · gioco da tavolo per famiglie",
+      "players": "Giocatori: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Serpenti e scale",
+      "blurb": "Tabellone 1–100 · scale e serpenti",
+      "players": "Giocatori: 2–4"
+    },
+    "checkers": {
+      "title": "Dama",
+      "blurb": "Dama classica · cattura richiesta",
+      "players": "Giocatori: 2"
+    },
+    "chess": {
+      "title": "Scacchi",
+      "blurb": "Scacchi classici · scacco e scacco matto",
+      "players": "Giocatori: 2"
+    },
+    "dominoes": {
+      "title": "Domino",
+      "blurb": "Blocco del domino · Gioca fino all'uscita",
+      "players": "Giocatori: 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · vincite della linea completa",
+      "players": "Giocatori: fino a 8"
+    }
+  }
+}

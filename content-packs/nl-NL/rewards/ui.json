@@ -1,0 +1,204 @@
+{
+  "rarity": {
+    "regular": "Gewoon",
+    "special": "Speciaal",
+    "rare": "Zeldzaam",
+    "gold": "Goud"
+  },
+  "cardType": {
+    "achievement": "Prestatie kaart",
+    "shop": "Winkelkaart",
+    "event": "Evenement kaart"
+  },
+  "cardSource": {
+    "earned_achievement": "Leerprestatie",
+    "shop_purchase": "Winkelaankoop",
+    "surprise_box_reward": "Verrassingsdoos",
+    "duplicate_conversion": "Dubbele conversie",
+    "card_sellback": "Dubbele verkoop",
+    "admin_grant": "Gift van de team"
+  },
+  "shop": {
+    "alreadyOwned": "Je hebben it!",
+    "sellDuplicate": "Dubbele verkopen",
+    "catalogOwned": "Verzameld",
+    "coinsLabel": "{amount} munten",
+    "notEnoughCoins": "Niet genoeg munten om dit te kopen.",
+    "purchaseFailed": "Aankoop mislukt — probeer opnieuw.",
+    "purchaseSuccess": "Je bought {name}!",
+    "purchaseNetworkError": "Netwerkfout tijdens aankoop.",
+    "sellConfirmTitle": "Een duplicaat van {name} verkopen voor {amount}?",
+    "sellConfirmBody": "U houdt één exemplaar in uw verzameling.",
+    "sellFailed": "Kan het duplicaat niet verkopen. Probeer het opnieuw.",
+    "sellSuccess": "Sold een duplicate voor {amount}!",
+    "sellNetworkError": "Netwerkfout tijdens verkoop.",
+    "noDuplicate": "Je hebt geen duplicaat om te verkopen.",
+    "loadFailed": "Kan de winkel nu niet laden."
+  },
+  "series": {
+    "professions": "Beroepen",
+    "space-tech": "Ruimte & Technologie",
+    "fantasy": "Fantasie",
+    "sport-fun": "Sport en plezier",
+    "style": "Stijl",
+    "general": "Algemene prestaties",
+    "math": "Rekenen achievements",
+    "language": "Taalprestaties",
+    "subjects": "Onderwerp prestaties",
+    "events": "Evenementen"
+  },
+  "fallback": {
+    "rewardCard": "Beloningskaart",
+    "collectName": "Verzamel {name}!",
+    "earnCard": "Earn dit card: {name}",
+    "eventLimited": "{name} — beperkte evenementenkaart!",
+    "genericGame": "Spel",
+    "keepLearning": "Blijf leren om deze kaart te ontgrendelen",
+    "completeRequirement": "Complete de requirement: {label}",
+    "availableInShop": "Available in de shop",
+    "availableInSurpriseBox": "Available in een surprise box",
+    "notAvailableNow": "Niet available right now",
+    "progressOf": "{current} van {target}"
+  },
+  "topics": {
+    "addition": "Optellen",
+    "subtraction": "Aftrekken",
+    "multiplication": "Vermenigvuldigen",
+    "division": "Delen",
+    "vocabulary": "Woordenschat"
+  },
+  "gradeBands": {
+    "g12": "Groep 3–4",
+    "g34": "Groep 5–6",
+    "g56": "Groep 7–8"
+  },
+  "requirements": {
+    "total_questions": "Antwoord {minQuestions} questions in total",
+    "weekly_questions": "Beantwoord {minQuestions} vragen in de afgelopen week",
+    "subject_questions": "Antwoord {minQuestions} questions in {subject}",
+    "subject_questions_fallback_subject": "Antwoord {minQuestions} questions in een subject",
+    "subject_accuracy": "Bereik een nauwkeurigheid van {minAccuracy}% in {subject}{topicPart} (minstens {minQuestions} vragen)",
+    "subject_accuracy_topic_part": "op {topic}",
+    "learning_streak_days": "Leer {minStreakDays} dagen achter elkaar",
+    "active_days_streak": "Wees {minStreakDays} dagen achter elkaar actief",
+    "parent_activity_complete": "Complete {minCompletedActivities} ouder activities",
+    "monthly_learning_minutes": "Leer deze maand {minLearningMinutesMonthly} minuten",
+    "event_window": "Speciale evenementenkaart — beschikbaar tijdens de evenementenperiode",
+    "daily_mission_complete": "Complete de mission: {missionKey}",
+    "daily_mission_generic": "Complete een daily mission",
+    "grade_band_only": "Available voor {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "We konden de verrassingsdoos niet laden.",
+    "networkError": "Netwerkfout bij het laden van de verrassingsbox.",
+    "ready": "Verrassingsbox klaar!",
+    "readyMultiple": "{count} boxes ready naar open!",
+    "openError": "We konden de doos nu niet openen. Probeer het zo nog eens.",
+    "noMoreBoxes": "Er zijn momenteel geen dozen meer om te openen.",
+    "noBoxReady": "Er is momenteel geen doos gereed. Probeer het later opnieuw.",
+    "duplicateHint": "Je hebt een extra exemplaar; je kunt duplicaten verkopen in de winkel.",
+    "newCard": "New card in uw collection!",
+    "ariaLabel": "Verrassingsdoos",
+    "title": "Verrassingsdoos",
+    "loading": "Laden…",
+    "nextBoxIn": "Volgende box ready in",
+    "keepLearning": "Blijf leren: er komt binnenkort een nieuwe box!",
+    "openBox": "Doos openen",
+    "myCollection": "Mijn verzameling"
+  },
+  "preview": {
+    "close": "Sluiten",
+    "download": "Afbeelding downloaden",
+    "prev": "Vorige kaart",
+    "next": "Volgende card",
+    "locked": "Vergrendeld"
+  },
+  "lockedStamp": {
+    "label": "Vergrendeld"
+  },
+  "shopView": {
+    "loading": "Laden… card shop...",
+    "loadErrorTitle": "We konden de kaartwinkel niet laden.",
+    "tryAgain": "Probeer opnieuw",
+    "empty": "Er zijn momenteel geen kaarten beschikbaar om te kopen.",
+    "coinBalance": "Muntsaldo: {amount}",
+    "buyPrice": "Koopprijs: {amount}",
+    "sellValue": "Verkoopwaarde: {amount}",
+    "needMoreCoins": "Je nodig hebben {amount} meer",
+    "notEnoughCoinsShort": "Niet enough coins",
+    "noDuplicateToSell": "Geen duplicate copy naar sell.",
+    "sellFailed": "Kan het duplicaat niet verkopen. Probeer het opnieuw.",
+    "sellSuccess": "Je verkocht een duplicaat van {name} en kreeg {amount}!",
+    "sellNetworkError": "Netwerkfout tijdens verkoop.",
+    "buy": "Kopen",
+    "sellDuplicateAction": "Dubbele verkopen",
+    "selling": "Verkopen...",
+    "buying": "Kopen...",
+    "buyFor": "Buy voor {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "Sluiten",
+    "openingTitle": "Doos openen...",
+    "doneTitle": "Nice! Je got rewards!",
+    "idleTitle": "Verrassingsdoos",
+    "rolling": "Rolling uw rewards...",
+    "coinsReward": "+{amount} munten",
+    "diamondsReward": "+{amount} diamanten",
+    "openAnother": "Open een andere doos",
+    "viewCards": "Bekijk mijn kaarten"
+  },
+  "previewModal": {
+    "close": "Sluiten",
+    "download": "Mijn kaart downloaden",
+    "downloading": "Downloaden...",
+    "downloadError": "We konden de kaart niet downloaden. Probeer het opnieuw.",
+    "prev": "Vorige kaart",
+    "next": "Volgende card",
+    "cardImageAlt": "Kaart afbeelding",
+    "rarityLabel": "Zeldzaamheid: {label}",
+    "seriesLabel": "Serie: {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "Kinderwereld",
+    "title": "Mijn kaarten",
+    "subtitle": "Collectie, winkel, alle kaarten en series",
+    "featureDisabled": "De kaartencollectie is nog niet beschikbaar.",
+    "loading": "Laden… cards...",
+    "loadError": "We couldn't load de cards.",
+    "tryAgain": "Probeer opnieuw",
+    "tabsAriaLabel": "Kaart tabbladen",
+    "collectionEmpty": "Nog geen kaarten in je collectie — open een verrassingsdoos in Kids World of koop ze in de winkel!",
+    "catalogEmpty": "Geen cards naar show.",
+    "seriesEmpty": "Geen card series yet.",
+    "tabs": {
+      "collection": {
+        "label": "Mijn verzameling",
+        "shortLabel": "Verzameling"
+      },
+      "shop": {
+        "label": "Kaartenwinkel",
+        "shortLabel": "Winkel"
+      },
+      "catalog": {
+        "label": "Alle kaarten",
+        "shortLabel": "Alles"
+      },
+      "series": {
+        "label": "Series",
+        "shortLabel": "Series"
+      }
+    }
+  },
+  "server": {
+    "economyUnavailable": "De munteconomie is momenteel niet beschikbaar",
+    "duplicateConversionRemoved": "Dubbele conversie is verwijderd. U kunt een duplicaat in de winkel verkopen.",
+    "missingSeries": "Serie ontbreekt: voor winkel-/prestatiekaarten is een serie met een naaktslak vereist",
+    "multipartRequired": "Upload moet multipart/form-data gebruiken",
+    "variantProcessFailed": "Verwerking van kaartversie mislukt",
+    "boxNeedsPrize": "De doos heeft minstens één prijs nodig: kaarten en/of munten.",
+    "boxSettingsInvalidJson": "Box-instellingen moeten een JSON-object zijn.",
+    "notPurchasable": "Dit card can't zijn purchased",
+    "alreadyOwnedCollection": "Already in uw collection",
+    "insufficientCoinsDetailed": "Je hebt niet genoeg munten voor deze kaart"
+  }
+}

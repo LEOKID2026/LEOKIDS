@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "loading": "Laden……",
+    "regular": "Gewoon",
+    "important": "Belangrijk",
+    "urgent": "Dringend",
+    "requires_confirmation": "Vereist bevestiging"
+  }
+}

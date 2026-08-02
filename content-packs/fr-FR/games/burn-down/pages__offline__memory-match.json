@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "Retour",
+    "local_badge": "Locale",
+    "title": "Correspondance de mémoire",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "Un joueur",
+    "two_players": "2 joueurs",
+    "time": "Temps",
+    "moves": "Se déplace",
+    "turn": "Tourner",
+    "pairs": "Paires",
+    "player_n": "Joueur {n}",
+    "two_players_label": "2 joueurs",
+    "shuffle": "Mélanger",
+    "player_1": "Joueur 1",
+    "player_2": "Joueur 2",
+    "all_pairs_found": "Toutes les paires trouvées !"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "start_game": "Spel starten",
+    "loading": "Laden……",
+    "choose_difficulty": "Kies difficulty"
+  }
+}

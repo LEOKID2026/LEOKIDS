@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Clave de idempotencia no valida",
+    "invalid_action_type": "Tipo di azione non valido",
+    "missing_stage_data_for_mining": "Faltan datos de etapa para la mineria",
+    "too_many_breaks_in_one_request": "Too many breaks in one request",
+    "invalid_claim_type": "Tipo de reclamo no valido",
+    "offline_time_exceeds_the_allowed_limit": "El tiempo sin conexion supera el limite permitido",
+    "offline_time_does_not_match_server_data": "El tiempo sin conexion no coincide con los datos del servidor",
+    "too_many_breaks_try_again_in_a_moment": "Troppe pause — riprova tra un momento",
+    "guests_cannot_collect_rewards_please_link_an_account": "Los invitados no possono cobrar recompensas; vincule una cuenta",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners aun no esta habilitado: aplique migracion y configuracion",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners esta deshabilitado en la configuracion de administrador",
+    "leo_miners_economy_is_disabled": "La economia de Leo Miners esta deshabilitada",
+    "leo_miners_point_accrual_is_disabled": "La acumulacion de puntos Leo Miners esta deshabilitada",
+    "offline_collection_is_disabled": "La recopilacion sin conexion esta deshabilitada",
+    "leo_miners_gifts_are_disabled": "Los regalos de Leo Miners estan deshabilitados",
+    "leo_miners_claims_are_disabled": "Los reclamos de Leo Miners estan deshabilitados",
+    "diamond_chest_is_disabled": "El cofre de diamanti esta deshabilitado",
+    "guests_cannot_collect_diamonds": "Los invitados no possono recoger diamanti."
+  }
+}

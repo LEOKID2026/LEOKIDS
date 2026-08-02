@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "square": "Vierkant",
+    "rectangle": "Recthoek",
+    "parallel": "Parallel",
+    "translation": "Vertaling",
+    "reflection": "Reflectie",
+    "rotation": "Rotatie",
+    "no_movement": "Geen movement"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "patterns_require_evidence_in_multiple_subjects_thin_single_subject_data_": "Les modèles nécessitent des preuves dans plusieurs sujets ; les données minces sur un seul sujet ne peuvent pas se déclencher."
+  }
+}

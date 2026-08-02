@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "L'usine de recyclage de Léo",
+  "blurb": "Triez les déchets dans les bonnes poubelles et contribuez à protéger l’environnement",
+  "help": {
+    "howToPlay": "Faites glisser ou appuyez sur un élément depuis le tapis roulant, puis choisissez le bon bac. Triez suffisamment d’éléments avant d’atteindre le nombre maximum d’erreurs.",
+    "scoring": "Tri correct +10, tri rapide +5, séquence de 5 corrects +20, séquence de 10 +50. Une erreur ou un élément manqué −5 (le score ne descend jamais en dessous de 0).",
+    "rewards": "Les pièces sont attribuées en fonction du nombre d'objets que tu avez triés correctement, de la précision, des séquences et de l'atteinte de l'objectif - même si tu n'avez pas terminé toute la partie.",
+    "tip": "Faites attention au type d'article : papier, plastique, verre, métal ou déchets généraux."
+  },
+  "accessibility": {
+    "title": "L'usine de recyclage de Léo"
+  }
+}

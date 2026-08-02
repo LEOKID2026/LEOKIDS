@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "the_board_and_tray_will_display_more_comfortably": "Het bord en de lade zullen comfortabeler worden weergegeven.",
+    "ghostpreview_row_dr_r_ghostpreview_col_dc_c_const_ghostclass_ghosthere_g": "ghostPreview.row + dr === r && ghostPreview.col + dc === c, ); const ghostClass = ghostHere? ghostPreview.valid? \"ring-2 ring-smaragd-300/80\" : \"ring-2 ring-roos-400/80\" : \"\"; opbrengst (",
+    "startdrag_idx_shape_e": "startDrag(idx, shape, e)} /> ))}",
+    "s_id_const_picked_while_picked_length": "s.id); const gekozen = []; terwijl (gekozen lengte",
+    "visual_prototype_no_scoring": "Visual prototype · geen scoring",
+    "smart_blocks": "Slimme blokken",
+    "clear_board": "Duidelijk bord",
+    "board_size": "Bordgrootte:",
+    "swap_shapes": "Wissel vormen uit",
+    "back": "Terug",
+    "tray": "Dienblad"
+  }
+}

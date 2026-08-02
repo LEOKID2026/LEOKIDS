@@ -1,11 +1,14 @@
 /**
- * Apply English, es-419, pt-BR, or pt-PT Science display overlays by content locale.
+ * Apply locale Science display overlays by content locale.
  */
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
 import { SCIENCE_EN_OVERLAY } from "../../data/science-questions-en-overlay.js";
 import { SCIENCE_ES_419_OVERLAY } from "../../data/science-questions-es-419-overlay.js";
 import { SCIENCE_PT_BR_OVERLAY } from "../../data/science-questions-pt-BR-overlay.js";
 import { SCIENCE_PT_PT_OVERLAY } from "../../data/science-questions-pt-PT-overlay.js";
+import { SCIENCE_IT_IT_OVERLAY } from "../../data/science-questions-it-IT-overlay.js";
+import { SCIENCE_FR_FR_OVERLAY } from "../../data/science-questions-fr-FR-overlay.js";
+import { SCIENCE_NL_NL_OVERLAY } from "../../data/science-questions-nl-NL-overlay.js";
 import { translateScienceFields, translateScienceText } from "./science-translate.js";
 import { resolveContentLocale } from "../../lib/content/locale.js";
 
@@ -14,6 +17,9 @@ function overlayMapForLocale(locale) {
   if (id === "es-419") return SCIENCE_ES_419_OVERLAY;
   if (id === "pt-PT") return SCIENCE_PT_PT_OVERLAY;
   if (id === "pt-BR") return SCIENCE_PT_BR_OVERLAY;
+  if (id === "it-IT") return SCIENCE_IT_IT_OVERLAY;
+  if (id === "fr-FR") return SCIENCE_FR_FR_OVERLAY;
+  if (id === "nl-NL") return SCIENCE_NL_NL_OVERLAY;
   return SCIENCE_EN_OVERLAY;
 }
 

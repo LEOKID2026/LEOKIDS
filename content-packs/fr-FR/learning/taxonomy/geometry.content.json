@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "Formes",
+      "topic": "Quadrilatères",
+      "subskill": "Propriétés du rectangle/parallélogramme",
+      "pattern": "Propriétés déroutantes",
+      "counterEvidence": "Corriger uniquement sur les formes propres",
+      "countsWhen": "Angles marqués",
+      "doesNotCountWhen": "Noms uniquement sans diagramme",
+      "probe": "Avec marquage d'angle/côté",
+      "intervention": "Cartes de définition",
+      "escalation": "Échec sur chaque forme",
+      "observableMarkers": [
+        "Erreur lorsque l'angle n'est pas de 90°"
+      ],
+      "roots": [
+        "Définitions qui se chevauchent"
+      ],
+      "competitors": [
+        "Rappel de nom"
+      ],
+      "doNotConclude": [
+        "Pas de géométrie"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "Angles",
+      "topic": "Mesures",
+      "subskill": "Lire un rapporteur",
+      "pattern": "Erreur dans la plage d'angle",
+      "counterEvidence": "Corriger avec une mesure guidée",
+      "countsWhen": "Le rapporteur et les instructions sont valides",
+      "doesNotCountWhen": "Angle trop petit dans une interface utilisateur trompeuse",
+      "probe": "Guidé ou indépendant",
+      "intervention": "Pratique à l'échelle",
+      "escalation": "Rapport de vision",
+      "observableMarkers": [
+        "Erreur répétée dans la même plage"
+      ],
+      "roots": [
+        "Lire une échelle"
+      ],
+      "competitors": [
+        "Vitesse"
+      ],
+      "doNotConclude": [
+        "Problème de vision"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "Aire",
+      "topic": "Parallélogramme",
+      "subskill": "Hauteur",
+      "pattern": "Utiliser les côtés comme hauteur",
+      "counterEvidence": "Toujours correct sur un rectangle",
+      "countsWhen": "La hauteur peut être ajoutée",
+      "doesNotCountWhen": "Grands nombres uniquement sans modèle",
+      "probe": "Avec/sans ligne de hauteur",
+      "intervention": "Hauteur de surbrillance",
+      "escalation": "Échec sur un rectangle",
+      "observableMarkers": [
+        "Erreur lorsqu'aucune ligne de hauteur n'est tracée"
+      ],
+      "roots": [
+        "Choisir la hauteur"
+      ],
+      "competitors": [
+        "Mauvaise multiplication"
+      ],
+      "doNotConclude": [
+        "Pas de formules"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "Transformation",
+      "topic": "Rotation",
+      "subskill": "Direction/angle",
+      "pattern": "Rotation inversée",
+      "counterEvidence": "Corriger sur une grille",
+      "countsWhen": "Grille et axe",
+      "doesNotCountWhen": "Pas de grille avant l'enseignement",
+      "probe": "Avec/sans axe",
+      "intervention": "Grille + sommets",
+      "escalation": "Aucune amélioration",
+      "observableMarkers": [
+        "Erreur de direction répétée"
+      ],
+      "roots": [
+        "Orientation spatiale"
+      ],
+      "competitors": [
+        "Négligence"
+      ],
+      "doNotConclude": [
+        "Pas de pensée spatiale"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "Volume",
+      "topic": "Prisme rectangulaire",
+      "subskill": "modèle 3D",
+      "pattern": "Oublie la profondeur",
+      "counterEvidence": "Corriger sur un cube simple",
+      "countsWhen": "Filet disponible",
+      "doesNotCountWhen": "Pas de diagramme lorsqu'il n'est pas enseigné",
+      "probe": "Avec/sans filet",
+      "intervention": "Filet de papier",
+      "escalation": "Échec sur un cube",
+      "observableMarkers": [
+        "Réponse 2D",
+        "Corriger avec un filet"
+      ],
+      "roots": [
+        "modèle 3D"
+      ],
+      "competitors": [
+        "Multiplication"
+      ],
+      "doNotConclude": [
+        "Pas de volume"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "Mesures",
+      "topic": "Périmètre",
+      "subskill": "Conversion d'unité",
+      "pattern": "Erreur d'unité répétée",
+      "counterEvidence": "Corriger avec une clé",
+      "countsWhen": "Clé disponible",
+      "doesNotCountWhen": "Conversion pas encore enseignée",
+      "probe": "Deux unités pour la même longueur",
+      "intervention": "Clé de conversion",
+      "escalation": "Panne sur une seule ligne",
+      "observableMarkers": [
+        "Erreur de même unité"
+      ],
+      "roots": [
+        "Unités"
+      ],
+      "competitors": [
+        "Calcul"
+      ],
+      "doNotConclude": [
+        "Aucune mesure"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "Symétrie",
+      "topic": "Forme",
+      "subskill": "Axe",
+      "pattern": "Mauvais axe répété",
+      "counterEvidence": "Corriger lorsque l'axe est affiché",
+      "countsWhen": "Points disponibles",
+      "doesNotCountWhen": "Forme non symétrique",
+      "probe": "Avec/sans axe",
+      "intervention": "Pliage du papier",
+      "escalation": "Aucune amélioration",
+      "observableMarkers": [
+        "Erreur avec les points marqués"
+      ],
+      "roots": [
+        "Visuel"
+      ],
+      "competitors": [
+        "Négligence"
+      ],
+      "doNotConclude": [
+        "Pas de symétrie"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "Triangle",
+      "topic": "Aire",
+      "subskill": "base×hauteur÷2",
+      "pattern": "Oublie ÷2 ou mauvaise hauteur",
+      "counterEvidence": "Corriger uniquement sur des cas simples",
+      "countsWhen": "Hauteur intérieure libre",
+      "doesNotCountWhen": "Obtus sans étape pédagogique",
+      "probe": "Hauteur extérieure mise en avant",
+      "intervention": "Identifier la hauteur → formule",
+      "escalation": "Échec sur un triangle rectangle",
+      "observableMarkers": [
+        "Erreur répétée",
+        "Corriger sur un triangle rectangle de hauteur intérieure"
+      ],
+      "roots": [
+        "Formule"
+      ],
+      "competitors": [
+        "Structure triangulaire"
+      ],
+      "doNotConclude": [
+        "Pas de triangle"
+      ]
+    }
+  }
+}

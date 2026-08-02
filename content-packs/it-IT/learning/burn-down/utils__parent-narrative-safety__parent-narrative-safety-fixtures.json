@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Narrativa parental hebrea segura con tono de osservazione y volumen adecuado.",
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Pocas pruebas, pero una cobertura cautelosa explicita, no deberian bloquear.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Evidencia escasa con gran certeza y afirmacion de dominio: bloque.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "El motor enumera barreras que no concluyen, pero el texto utiliza certeza absoluta.",
+    "disability_clinical_framing_block": "Discapacidad/encuadre clinico - bloque.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "El motor solo permette mantenimiento; Salto de nivel de fuerzas narrativas.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "La confianza del motor es baja, pero el texto principale es totalmente seguro.",
+    "permanent_failure_never_succeed_framing_block": "Fracaso permanente / encuadre sin éxito - bloque.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "Segnale de conjetura alta, pero la narrativa afirma tener un dominio total.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "Solo se sospecha una brecha de requisitos previos; La narrativa indica una brecha a nivel de prova.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "El token de taxonomia interna se filtro en la copia principale: bloque.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "Linea de restriccion estadistica realista de datos finos: pase (informacion: precaucion fina y segura).",
+    "explicit_collect_more_examples_framing_pass_info": "Encuadre explicito de recopilacion de mas ejemplos: pase (informacion).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "Datos escasos pero afirman determinabilidad/debilidad significativa: advertencia.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "Reconoce la falta de datos y luego afirma que el problema es claro: advertencia.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "Fila delgada pero narrativa vaga sin un marco explicito de datos limitados: advertencia.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "A pesar de los pocos datos, claridad absoluta sobre la lucha: exceso de confianza + delgado → bloqueo."
+  }
+}

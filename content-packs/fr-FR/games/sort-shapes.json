@@ -1,0 +1,11 @@
+{
+  "gameId": "sort-shapes",
+  "title": "Trier les formes",
+  "blurb": "Triez les formes et les couleurs dans les bonnes cases !",
+  "help": {
+    "howToPlay": "Faites glisser chaque forme vers la case correspondante par forme ou couleur. Termine tout le tri avant la fin du temps imparti.",
+    "scoring": "Chaque tri correct ajoute des points. Une erreur est déduite du score. Si le temps s'écoule avant que tu ayez terminé, le jeu se termine.",
+    "rewards": "Terminer avec succès en fonction du niveau de difficulté accorde des pièces, et un bonus de score en ajoute encore plus.",
+    "tip": "Décidez d’abord à quelle case appartient chaque forme, puis faites-la glisser en toute confiance."
+  }
+}

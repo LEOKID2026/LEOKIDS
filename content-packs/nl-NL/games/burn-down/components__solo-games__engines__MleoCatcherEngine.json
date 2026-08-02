@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "player": "Speler",
+    "game_over": "Spel voorbij",
+    "right": "Juist ▶"
+  }
+}

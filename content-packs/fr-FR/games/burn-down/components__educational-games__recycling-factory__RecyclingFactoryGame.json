@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "L'article a dépassé le convoyeur - essayez d'être plus rapide !",
+    "correct_great_job": "Correct! Excellent travail ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "Mathématiques.max(meilleur, suivant));\n        if (suivant === 5) addScore(SCORE.streak5);\n        if (suivant === 10) addScore(SCORE.streak10);\n        if (suivant === 5 || suivant === 10) onStreak();\n        revenez ensuite;\n      });\n\n      addScore(bonus);\n\n      const showFact = Mathématiques.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"en mouvement\");\n      const dualAllowed =allowDualItemsAt(sortedCountRef.current, difficultéRef.current);\n      const maxOnBelt = dualAllowed && Mathématiques.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id]),\n    [diffConfig.bins],\n  );\n\n  const binsGridClass =\n    activeBins.longueur",
+    "onitemclick_bi_uid": "onItemClick(bi.uid)}\n                          />\n                        ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Triez les articles dans les bonnes poubelles et aidez l'environnement",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Triez chaque article dans la bonne poubelle - aidez la planète !",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)}\n        />\n      ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "Faites glisser vers une corbeille ou appuyez sur un élément → corbeille",
+    "leo_apos_s_recycling_factory": "L'usine de recyclage de Léo",
+    "correct_items": "Corriger les éléments",
+    "best_streak": "Meilleure séquence",
+    "start_game": "Commencer le jeu",
+    "mistakes": "Erreurs",
+    "accuracy": "Précision",
+    "new_game": "Nouveau jeu",
+    "mission": "Mission",
+    "score": "Score",
+    "level": "Niveau",
+    "back": "Retour"
+  }
+}

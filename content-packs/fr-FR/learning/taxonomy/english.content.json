@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "Vocabulaire",
+      "topic": "Contexte",
+      "subskill": "collocation",
+      "pattern": "Traduction littérale incorrecte",
+      "counterEvidence": "Correct après deux exemples",
+      "countsWhen": "Des phrases claires",
+      "doesNotCountWhen": "Distracteur de faux-amis uniquement",
+      "probe": "Phrases parallèles",
+      "intervention": "Cartes de phrases",
+      "escalation": "Difficulté sur tous les sujets",
+      "observableMarkers": [
+        "Même racine dans différentes phrases"
+      ],
+      "roots": [
+        "faux ami"
+      ],
+      "competitors": [
+        "Grammaire"
+      ],
+      "doNotConclude": [
+        "Pas d'anglais"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "Grammaire",
+      "topic": "Temps",
+      "subskill": "Marqueur de temps",
+      "pattern": "past/present",
+      "counterEvidence": "Corriger avec un tableau de marqueurs",
+      "countsWhen": "Marqueur mis en surbrillance",
+      "doesNotCountWhen": "Temps mixte sans enseignement préalable",
+      "probe": "Phrases identiques, marqueur différent",
+      "intervention": "Tableau des marqueurs",
+      "escalation": "Aucune amélioration",
+      "observableMarkers": [
+        "Erreur quand hier/maintenant est explicite"
+      ],
+      "roots": [
+        "Carte tendue"
+      ],
+      "competitors": [
+        "Vocabulaire"
+      ],
+      "doNotConclude": [
+        "Pas de grammaire"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "Lecture",
+      "topic": "Mise en page",
+      "subskill": "Suivi de ligne",
+      "pattern": "Erreur dans la mise en page à deux colonnes",
+      "counterEvidence": "Corriger dans une large colonne",
+      "countsWhen": "Police lisible",
+      "doesNotCountWhen": "Petite police sans échafaudage",
+      "probe": "Grande police vs petite",
+      "intervention": "Numéro de ligne / suivi des doigts",
+      "escalation": "Rapport de vision",
+      "observableMarkers": [
+        "Erreur uniquement dans la mise en page à deux colonnes"
+      ],
+      "roots": [
+        "Suivi de ligne"
+      ],
+      "competitors": [
+        "Vocabulaire"
+      ],
+      "doNotConclude": [
+        "Pas de lecture"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "Grammaire",
+      "topic": "Accord",
+      "subskill": "Pronom–sujet",
+      "pattern": "he/she/it",
+      "counterEvidence": "Corriger quand très lent",
+      "countsWhen": "Sujet explicite",
+      "doesNotCountWhen": "Saisie rapide uniquement",
+      "probe": "Chaîne avec sujet",
+      "intervention": "Tableau sujet-pronom",
+      "escalation": "Échoue toujours",
+      "observableMarkers": [
+        "Erreur",
+        "Sujet mis en surbrillance"
+      ],
+      "roots": [
+        "Accord syntaxique"
+      ],
+      "competitors": [
+        "Vitesse"
+      ],
+      "doNotConclude": [
+        "Aucune connaissance"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "Vocabulaire",
+      "topic": "Usage",
+      "subskill": "préposition",
+      "pattern": "Même fausse préposition",
+      "counterEvidence": "Corriger sur une liste fermée",
+      "countsWhen": "Prépositions enseignées",
+      "doesNotCountWhen": "Verbes pas encore enseignés",
+      "probe": "Même verbe, deux prépositions",
+      "intervention": "Paires minimales",
+      "escalation": "Aucune amélioration",
+      "observableMarkers": [
+        "Erreur avec différents verbes"
+      ],
+      "roots": [
+        "Vocabulaire spécifique"
+      ],
+      "competitors": [
+        "Grammaire générale"
+      ],
+      "doNotConclude": [
+        "Pas de langue"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "Lecture",
+      "topic": "Compréhension",
+      "subskill": "inférence",
+      "pattern": "Un fait plutôt qu’une inférence",
+      "counterEvidence": "Corriger sur un fait explicite",
+      "countsWhen": "Type de question marqué",
+      "doesNotCountWhen": "Avant que l'inférence ne soit enseignée",
+      "probe": "Fait vs inférence",
+      "intervention": "Mots indicateurs d’inférence",
+      "escalation": "Échec sur les faits aussi",
+      "observableMarkers": [
+        "Erreur uniquement sur l'inférence"
+      ],
+      "roots": [
+        "Stratégie"
+      ],
+      "competitors": [
+        "Vocabulaire"
+      ],
+      "doNotConclude": [
+        "Aucune réflexion"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "Écriture",
+      "topic": "Orthographe",
+      "subskill": "Modèles silencieux",
+      "pattern": "Erreurs répétées",
+      "counterEvidence": "Corriger avec une dictée lente",
+      "countsWhen": "Mots enseignés",
+      "doesNotCountWhen": "Avant la règle",
+      "probe": "Écriture contrôlée",
+      "intervention": "Mini règle d'orthographe",
+      "escalation": "Rapport professionnel",
+      "observableMarkers": [
+        "Même modèle"
+      ],
+      "roots": [
+        "Phonologie"
+      ],
+      "competitors": [
+        "Dactylographie"
+      ],
+      "doNotConclude": [
+        "Trouble"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "Écoute",
+      "topic": "Phonémique",
+      "subskill": "paires minimales",
+      "pattern": "Confondre une paire de sons",
+      "counterEvidence": "Corriger avec une double écoute lente",
+      "countsWhen": "Effacer l'enregistrement",
+      "doesNotCountWhen": "Bruit connu",
+      "probe": "Même paire dans des mots différents",
+      "intervention": "Pratique en binôme",
+      "escalation": "Rapport d'audience",
+      "observableMarkers": [
+        "Erreur sur la même paire"
+      ],
+      "roots": [
+        "Phonémique"
+      ],
+      "competitors": [
+        "Bruit"
+      ],
+      "doNotConclude": [
+        "Trouble de l'audition"
+      ]
+    }
+  }
+}

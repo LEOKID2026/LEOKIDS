@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "De service is niet correct geconfigureerd.",
+    "guest_mode_is_currently_disabled": "De gastmodus is momenteel uitgeschakeld.",
+    "the_guest_system_is_not_ready": "Het gastsysteem is niet gereed.",
+    "could_not_start_guest_mode": "Kan de gastmodus niet starten."
+  }
+}

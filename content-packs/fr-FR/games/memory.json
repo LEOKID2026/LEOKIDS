@@ -1,0 +1,11 @@
+{
+  "gameId": "memory",
+  "title": "Le jeu de mémoire de Léo",
+  "blurb": "Retournez les cartes et trouvez des paires avant la fin du temps imparti !",
+  "help": {
+    "howToPlay": "Appuyez sur une carte pour la retourner et trouvez sa paire correspondante. Chaque paire que tu trouvez reste ouverte.",
+    "scoring": "Tu commencez avec un score élevé : plus tu prenez du temps, plus il diminue. Trouver toutes les paires avant la fin du temps imparti = une victoire.",
+    "rewards": "Gagner en fonction du niveau de difficulté rapporte des pièces et des diamants. Plus le score est élevé, plus la récompense est importante.",
+    "tip": "Essaie de tu rappeler où tu avez vu chaque image, même si tu n'avez pas trouvé sa paire tout de suite."
+  }
+}

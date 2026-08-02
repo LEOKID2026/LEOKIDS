@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Leren",
+    "practice": "Oefenen",
+    "challenge": "Uitdaging",
+    "marathon": "Marathon",
+    "graded": "Beoordeeld",
+    "normal": "Normaal",
+    "mistakes": "Fouten",
+    "review_mistakes": "Bekijk fouten"
+  }
+}

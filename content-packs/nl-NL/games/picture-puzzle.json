@@ -1,0 +1,11 @@
+{
+  "gameId": "picture-puzzle",
+  "title": "Fotopuzzel",
+  "blurb": "Maak de stukjes van Leo's foto compleet!",
+  "help": {
+    "howToPlay": "Sleep de afbeeldingsstukken naar de juiste plaats op het bord. Voltooi alle stukken voordat de tijd om is.",
+    "scoring": "Hoe sneller je klaar bent en hoe minder zetten je gebruikt, hoe hoger de score. Als de tijd om is voordat je klaar bent, is er geen overwinning.",
+    "rewards": "Het voltooien van de puzzel op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+    "tip": "Begin met de hoeken en randen; het is gemakkelijker om te zien waar elk stuk thuishoort."
+  }
+}

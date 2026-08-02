@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "grades_1_2": "Groep 3–4",
+    "grades_3_4": "Groep 5–6",
+    "grades_5_6": "Groep 7–8",
+    "nice_the_lowercase_letter_is_on_the_car": "Leuk! De kleine letter staat op de auto.",
+    "great_job_the_uppercase_letter_is_in_place": "Geweldig werk! De hoofdletter staat op zijn plaats.",
+    "correct_the_first_letter_is_on_the_car": "Juist! De eerste letter staat op de auto.",
+    "fill_in_the_missing_letter_on_the_car": "Vul de ontbrekende letter op de auto in",
+    "awesome_you_filled_in_the_missing_letter": "Geweldig! Je hebt de ontbrekende letter ingevuld.",
+    "excellent_you_built_the_word_on_the_cars": "Uitstekend! Je hebt het woord op de auto's gebouwd.",
+    "great_you_completed_the_missing_letters": "Geweldig! Je hebt de ontbrekende letters ingevuld.",
+    "both_cars_are_ready_all_aboard": "Beide auto's zijn klaar - allemaal aan boord!",
+    "load_the_word_that_matches_the_picture": "Laad het woord dat bij de afbeelding past",
+    "the_right_word_is_on_the_car": "Het juiste woord staat op de auto!",
+    "word_order_looks_good_the_train_is_leaving": "De woordvolgorde ziet er goed uit - de trein vertrekt!",
+    "the_missing_word_is_in_place": "De missing word is in place!",
+    "that_word_fits_the_situation": "Dat woord past bij de situatie!",
+    "arrange_a_sentence_that_describes_the_picture": "Maak een zin die de afbeelding beschrijft",
+    "the_sentence_matches_the_picture_all_aboard": "De zin komt overeen met de afbeelding: allemaal aan boord!"
+  }
+}

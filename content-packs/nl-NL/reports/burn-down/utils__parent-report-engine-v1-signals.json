@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "do_not_emit_subskillcandidate_when_taxonomymatch_is_false_or_matchstreng": "Zend geen subskillCandidate uit wanneer taxonomyMatch false is of matchStrength zwak is.",
+    "when_engineconfidencetier_is_t0_5_questions_enginedecision_stays_insuffi": "Wanneer engineConfidenceTier T0 is (<5 vragen), blijft engineDecision onvoldoende_data.",
+    "when_speedonlyrisk_and_mode_is_speed_marathon_and_accuracyband_is_not_cl": "Als speedOnlyRisk en modus snelheid/marathon zijn en accuraatheidsband niet clear_gap is, leid dan geen kennis_gap af."
+  }
+}

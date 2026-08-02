@@ -1,0 +1,11 @@
+{
+  "gameId": "memory",
+  "title": "El gioco de memoria de Leo",
+  "blurb": "Flip cards and find pairs before the clock runs out!",
+  "help": {
+    "howToPlay": "Toca una carta para darle la vuelta y encuentra el par correspondiente. Ogni par que encuentres permanece abierto.",
+    "scoring": "You start with a high score - the longer you take, the lower it drops. Finding all the pairs before time runs out = a win.",
+    "rewards": "Ganar secondo el nivel de dificultad otorga monete y diamanti. Cuanto mayor sea la puntuacion, mayor sera la recompensa.",
+    "tip": "Intente recordar dove vio ogni immagine, incluso si no encontro el par de ellas de inmediato."
+  }
+}

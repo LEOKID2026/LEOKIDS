@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "escape": "Escapar",
+    "previous_picture": "Previous picture",
+    "next_picture": "Next picture",
+    "the_board_and_tray_will_display_more_comfortably": "El tablero y la bandeja se mostraran mas comodamente.",
+    "img_id_selectedimageid_src_puzzle_images_0_src_const_iseasy_difficulty_e": "img.id === selectedImageId)?.src || PUZZLE_IMAGES[0].src;\n  const isEasy = difficulty === \"easy\";\n\n  const safeAnteprimaIndex =\n    previewIndex == null\n      ? null\n      : Matematica.min(Matematica.max(previewIndex, 0), PUZZLE_IMAGES.length - 1);\n  const previewImage = safeAnteprimaIndex == null ? null : PUZZLE_IMAGES[safeAnteprimaIndex];\n  const canAnteprimaPrev = safeAnteprimaIndex != null && safeAnteprimaIndex > 0;\n  const canAnteprimaNext =\n    safeAnteprimaIndex != null && safeAnteprimaIndex",
+    "event_stoppropagation_dir_ltr": "event.stopPropagation()}\n                dir=\"ltr\"\n              >",
+    "tap_a_picture_to_select_it": "Toca una immagine para seleccionarla",
+    "choose_a_puzzle_picture": "Scegli una immagine de rompecabezas",
+    "select_picture": "Selezionare immagine",
+    "close": "Chiudere"
+  }
+}

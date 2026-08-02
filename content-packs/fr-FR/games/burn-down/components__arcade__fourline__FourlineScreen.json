@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "four_in_a_row": "Quatre à la suite",
+    "back": "Retour",
+    "coin_balance": "Solde des pièces",
+    "how_to_play": "Comment jouer",
+    "close": "Fermer",
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "Chaque joueur choisit une colonne ; le disque tombe vers le bas.",
+    "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal": "Objectif : connecter quatre disques d'affilée – horizontalement, verticalement ou en diagonale.",
+    "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back": "Le bleu commence en premier ; après chaque coup, le tour passe à Gold et vice-versa.",
+    "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw": "Si le tableau se remplit sans qu'il y ait quatre joueurs d'affilée, c'est un match nul.",
+    "waiting_for_a_second_player": "En attendant un deuxième joueur…",
+    "four_in_a_row_2": "Quatre d'affilée."
+  }
+}

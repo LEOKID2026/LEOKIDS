@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "the_customer_waited_too_long": "De klant heeft te lang gewacht",
+    "aria_first_pizza": "Eerste pizza",
+    "aria_second_pizza": "Tweede pizza",
+    "aria_work_pizza": "Werkpizza",
+    "pizza_in_progress": "Pizza bezig",
+    "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "Klanten lopen de pizzeria binnen en maken precies de pizza die ze besteld hebben!",
+    "setphase_intro_new_game": "setPhase(\"intro\")}> New game",
+    "leo_apos_s_pizzeria": "Leo's pizzeria",
+    "serve_pizza": "Serveer pizza 🍕",
+    "open_shift": "Open dienst 🍕",
+    "clear_pizza": "Duidelijke pizza",
+    "new_game": "Nieuw spel",
+    "back": "Terug"
+  }
+}

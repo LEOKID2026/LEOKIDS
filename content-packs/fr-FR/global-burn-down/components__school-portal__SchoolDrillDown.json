@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "grade_status": "Statut de note",
+    "class_status": "Statut de classe"
+  }
+}

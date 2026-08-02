@@ -1,0 +1,9 @@
+{
+  "gameId": "tap-battle",
+  "title": "Tik op Gevecht",
+  "blurb": "Elke kant tikt zo snel als ze kunnen – wie wint?",
+  "players": "2 spelers",
+  "help": {
+    "howToPlay": "Speel samen op hetzelfde apparaat."
+  }
+}

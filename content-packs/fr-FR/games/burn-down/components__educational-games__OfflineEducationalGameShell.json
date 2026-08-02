@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "Jeu local – pas de sauvegarde ni de récompense",
+    "game_not_found": "Jeu introuvable",
+    "back_to_list": "Retour à la liste",
+    "offline": "Hors ligne",
+    "list": "Liste"
+  }
+}

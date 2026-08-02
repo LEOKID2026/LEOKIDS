@@ -1,0 +1,256 @@
+{
+  "subjectId": "math",
+  "rows": {
+    "M-01": {
+      "id": "M-01",
+      "domain": "Nummer",
+      "topic": "Structuur",
+      "subskill": "10+1 ontleding",
+      "pattern": "Errors converting tussen representations",
+      "counterEvidence": "Slaagt met een weergave zonder lange uitleg",
+      "countsWhen": "Gelijkwaardige taken; geen hint die de volledige oplossing laat zien",
+      "doesNotCountWhen": "Volledige hint gegeven; slechts één taak",
+      "probe": "Twee representaties van hetzelfde getal",
+      "intervention": "Manipulatieven, en dan een geleidelijke overstap naar symbolen",
+      "escalation": "Fails op elke representation",
+      "observableMarkers": [
+        "Dezelfde fout in twee representaties",
+        "Hesitation voor answering"
+      ],
+      "roots": [
+        "Representatiekloof"
+      ],
+      "competitors": [
+        "Begrijpend lezen"
+      ],
+      "doNotConclude": [
+        "Niet een arithmetic issue"
+      ]
+    },
+    "M-02": {
+      "id": "M-02",
+      "domain": "Operaties",
+      "topic": "Optellen",
+      "subskill": "Dragen",
+      "pattern": "Error in de tens column",
+      "counterEvidence": "Correct wanneer there is geen carrying",
+      "countsWhen": "Geschreven cijfers",
+      "doesNotCountWhen": "Alleen getallen van extreme omvang zonder draagvlak",
+      "probe": "Optellen met/zonder carrying",
+      "intervention": "Uitvoering waarbij de tussenstap is uitgeschreven",
+      "escalation": "Hangt af van de tussenstap zonder vooruitgang",
+      "observableMarkers": [
+        "Hetzelfde fouttype bij verschillende magnitudes"
+      ],
+      "roots": [
+        "Dragend algoritme"
+      ],
+      "competitors": [
+        "Onzorgvuldigheid"
+      ],
+      "doNotConclude": [
+        "Lack van number sense"
+      ]
+    },
+    "M-03": {
+      "id": "M-03",
+      "domain": "Operaties",
+      "topic": "Vermenigvuldigen",
+      "subskill": "Vermenigvuldigen fact",
+      "pattern": "Zelfde pairs wrong repeatedly",
+      "counterEvidence": "Andere paren corrigeren in dezelfde sessie",
+      "countsWhen": "Regelmatige beoefening; niet alleen een snelheidstest",
+      "doesNotCountWhen": "Speed test alleen",
+      "probe": "Verdubbel de tijd voor dezelfde set",
+      "intervention": "Gerichte paaroefeningen",
+      "escalation": "Mislukt op elk paar, zelfs als het langzaam is",
+      "observableMarkers": [
+        "Overlapping list van wrong pairs"
+      ],
+      "roots": [
+        "Feitelijke kloof"
+      ],
+      "competitors": [
+        "Tijdsdruk"
+      ],
+      "doNotConclude": [
+        "Cannot multiply bij alle"
+      ]
+    },
+    "M-04": {
+      "id": "M-04",
+      "domain": "Breuken",
+      "topic": "Vertegenwoordiging",
+      "subskill": "Part-whole",
+      "pattern": "Comparing door numerator alleen",
+      "counterEvidence": "Corrigeer wanneer de noemers overeenkomen",
+      "countsWhen": "Diagram/breuk strip available",
+      "doesNotCountWhen": "Alleen mondeling, zonder een nog niet aangeleerde representatie",
+      "probe": "Met/zonder een diagram",
+      "intervention": "Beton deel-geheel werk",
+      "escalation": "Geen improvement in enige representation",
+      "observableMarkers": [
+        "Fout, zelfs als het diagram compleet is"
+      ],
+      "roots": [
+        "Breuk concept kloof"
+      ],
+      "competitors": [
+        "Onzorgvuldigheid"
+      ],
+      "doNotConclude": [
+        "Cannot doe breuks bij alle"
+      ]
+    },
+    "M-05": {
+      "id": "M-05",
+      "domain": "Breuken",
+      "topic": "Optellen",
+      "subskill": "Noemer uitbreiding",
+      "pattern": "Error bij de zelfde step",
+      "counterEvidence": "Correct met matching denominators",
+      "countsWhen": "Kleine noemers binnen het aangeleerde bereik",
+      "doesNotCountWhen": "Grote noemers vóór basisvermenigvuldiging zijn solide",
+      "probe": "Uitbreidingsfactoren 2, 3, 4",
+      "intervention": "Schriftelijke stappen met een parallel uitgewerkt voorbeeld",
+      "escalation": "Fails bij basic vermenigvuldigen",
+      "observableMarkers": [
+        "Error in repeated vermenigvuldigen/expansion"
+      ],
+      "roots": [
+        "Uitbreidingsalgoritme"
+      ],
+      "competitors": [
+        "Weak vermenigvuldigen"
+      ],
+      "doNotConclude": [
+        "Cannot doe breuks bij alle"
+      ]
+    },
+    "M-06": {
+      "id": "M-06",
+      "domain": "Decimale getallen",
+      "topic": "Plaatswaarde",
+      "subskill": "Rounding/comparison",
+      "pattern": "Verkeerde afrondingsrichting",
+      "counterEvidence": "Corrigeer met een plaatswaardediagram",
+      "countsWhen": "Niet-ronde getallen",
+      "doesNotCountWhen": "Alleen ronde getallen in de taak",
+      "probe": "Met/zonder plaatswaardediagram",
+      "intervention": "Plaatswaarden met kleurcodering",
+      "escalation": "Mislukt zelfs met de grafiek",
+      "observableMarkers": [
+        "Herhaalde fout op dezelfde regel"
+      ],
+      "roots": [
+        "Plaats-waarde kloof"
+      ],
+      "competitors": [
+        "Begrijpend lezen"
+      ],
+      "doNotConclude": [
+        "Cannot doe decimaal getals bij alle"
+      ]
+    },
+    "M-07": {
+      "id": "M-07",
+      "domain": "Verhaalsommen",
+      "topic": "Frasering",
+      "subskill": "Eenheden",
+      "pattern": "Juist nummer, verkeerde eenheid",
+      "counterEvidence": "Correct als er alleen om een ​​nummer wordt gevraagd",
+      "countsWhen": "Unit explicit in de text",
+      "doesNotCountWhen": "Vraag heeft geen eenheid in het origineel",
+      "probe": "Met/zonder een unit field",
+      "intervention": "Number plus een unit line",
+      "escalation": "Struggles even zonder een unit",
+      "observableMarkers": [
+        "Repeats een inappropriate unit"
+      ],
+      "roots": [
+        "Reading de question"
+      ],
+      "competitors": [
+        "Berekening"
+      ],
+      "doNotConclude": [
+        "Geen comprehension bij alle"
+      ]
+    },
+    "M-08": {
+      "id": "M-08",
+      "domain": "Verhaalsommen",
+      "topic": "Modellering",
+      "subskill": "Multi-step",
+      "pattern": "Mislukt alleen bij het combineren van stappen",
+      "counterEvidence": "Succeeds met printed steps",
+      "countsWhen": "Genummerde stappen",
+      "doesNotCountWhen": "Versie zonder stappen wanneer nog niet aangeleerd",
+      "probe": "Met een step template",
+      "intervention": "Stappen plus een terugwerkende controle",
+      "escalation": "Mislukt zelfs bij problemen die in één stap voorkomen",
+      "observableMarkers": [
+        "Fout bij dezelfde laatste stap"
+      ],
+      "roots": [
+        "Werkgeheugenbelasting"
+      ],
+      "competitors": [
+        "Berekeningskloof"
+      ],
+      "doNotConclude": [
+        "Cannot doe verhaalsommen bij alle"
+      ]
+    },
+    "M-09": {
+      "id": "M-09",
+      "domain": "Operaties",
+      "topic": "Aftrekken",
+      "subskill": "Tien maken",
+      "pattern": "Omgekeerde richting / optellen in plaats van aftrekken",
+      "counterEvidence": "Correct op een getallenlijn",
+      "countsWhen": "Getallenlijn/track available",
+      "doesNotCountWhen": "Lang verbaal probleem zonder representatie als het nog niet is aangeleerd",
+      "probe": "Getallenlijn plus symbolic",
+      "intervention": "Getallenlijn plus een afstandsmodel",
+      "escalation": "Geen improvement in either representation",
+      "observableMarkers": [
+        "Herhaalde richtingsfout"
+      ],
+      "roots": [
+        "Aftrekken concept"
+      ],
+      "competitors": [
+        "Begrijpend lezen"
+      ],
+      "doNotConclude": [
+        "Algemeen rekenkundig probleem"
+      ]
+    },
+    "M-10": {
+      "id": "M-10",
+      "domain": "Multiplication/Division",
+      "topic": "Verhouding",
+      "subskill": "Omgekeerde bewerkingen",
+      "pattern": "Kiest een vermenigvuldigingsfeit dat niet overeenkomt met de deling",
+      "counterEvidence": "Corrigeer wanneer de vermenigvuldigingszin wordt weergegeven",
+      "countsWhen": "Kleine aantallen",
+      "doesNotCountWhen": "Grote getallen voordat vermenigvuldiging onder de knie is",
+      "probe": "Met/zonder de vermenigvuldigingszin",
+      "intervention": "Linking vermenigvuldigen en delen",
+      "escalation": "Mislukt consequent",
+      "observableMarkers": [
+        "Fout wanneer er geen vermenigvuldigingszin wordt weergegeven"
+      ],
+      "roots": [
+        "Omgekeerde relatie"
+      ],
+      "competitors": [
+        "Onzorgvuldigheid"
+      ],
+      "doNotConclude": [
+        "Cannot divide bij alle"
+      ]
+    }
+  }
+}

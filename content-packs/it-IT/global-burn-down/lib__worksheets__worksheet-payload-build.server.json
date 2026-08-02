@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "worksheet": "Scheda didattica",
+    "name": "Nombre: ________________",
+    "date": "Fecha: ________________",
+    "options": "Opciones:",
+    "answer": "Risposta:",
+    "question": "Domanda",
+    "answer_2": "Risposta",
+    "answer_key": "Clave de risposte"
+  }
+}

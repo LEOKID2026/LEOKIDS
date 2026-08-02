@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Leo's supermarkt",
+  "blurb": "Een spel over geld, winkelen en wisselgeld geven",
+  "help": {
+    "howToPlay": "Een klant vraagt ​​om producten - pak ze uit de plank, bereken het wisselgeld en kies bijpassende munten. Tik op 'Geef wisselgeld' als je klaar bent.",
+    "scoring": "Juiste product +10, juiste wisselgeld +25, tevreden klant +30, meteen bij de eerste poging wisselen +10, snelle service +5. Een fout of bijna geen tijd −5.",
+    "rewards": "Munten worden toegekend op basis van het aantal klanten dat je hebt bediend, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als je niet alle 20 klanten hebt bediend.",
+    "tip": "Controleer het aankoopbedrag en hoeveel de klant heeft betaald. Bereken zelf hoeveel wisselgeld u terug moet geven."
+  },
+  "accessibility": {
+    "title": "Leo's supermarkt"
+  }
+}

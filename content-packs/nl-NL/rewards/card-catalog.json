@@ -1,0 +1,1366 @@
+{
+  "version": 1,
+  "cardCount": 136,
+  "cards": {
+    "achievement_20_questions": {
+      "cardKey": "achievement_20_questions",
+      "title": "20 vragen",
+      "description": "Earn dit card: 20 Questions",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "20 vragen",
+        "description": "Earn dit card: 20 Questions"
+      }
+    },
+    "achievement_3_day_streak": {
+      "cardKey": "achievement_3_day_streak",
+      "title": "3 Dag Streak",
+      "description": "Verdien deze kaart: 3 Day Streak",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "3 Dag Streak",
+        "description": "Verdien deze kaart: 3 Day Streak"
+      }
+    },
+    "achievement_7_day_streak": {
+      "cardKey": "achievement_7_day_streak",
+      "title": "7 Dag Streak",
+      "description": "Verdien deze kaart: 7 Day Streak",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "7 Dag Streak",
+        "description": "Verdien deze kaart: 7 Day Streak"
+      }
+    },
+    "achievement_addition_champion": {
+      "cardKey": "achievement_addition_champion",
+      "title": "Optellen de Champion",
+      "description": "Verdien deze kaart: Toevoeging van de Kampioen",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Optellen de Champion",
+        "description": "Verdien deze kaart: Toevoeging van de Kampioen"
+      }
+    },
+    "achievement_big_progress": {
+      "cardKey": "achievement_big_progress",
+      "title": "Grote vooruitgang",
+      "description": "Verdien deze kaart: Grote vooruitgang",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Grote vooruitgang",
+        "description": "Verdien deze kaart: Grote vooruitgang"
+      }
+    },
+    "achievement_diligent_student": {
+      "cardKey": "achievement_diligent_student",
+      "title": "Diligent Leerling",
+      "description": "Verdien deze kaart: Diligent Leerling",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Diligent Leerling",
+        "description": "Verdien deze kaart: Diligent Leerling"
+      }
+    },
+    "achievement_division_champion": {
+      "cardKey": "achievement_division_champion",
+      "title": "Delen de Champion",
+      "description": "Verdien deze kaart: Divisie de kampioen",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Delen de Champion",
+        "description": "Verdien deze kaart: Divisie de kampioen"
+      }
+    },
+    "achievement_english_star": {
+      "cardKey": "achievement_english_star",
+      "title": "Engels Star",
+      "description": "Verdien deze kaart: Engelse ster",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Engels Star",
+        "description": "Verdien deze kaart: Engelse ster"
+      }
+    },
+    "achievement_great_listener": {
+      "cardKey": "achievement_great_listener",
+      "title": "Geweldige luisteraar",
+      "description": "Verdien deze kaart: Geweldige luisteraar",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Geweldige luisteraar",
+        "description": "Verdien deze kaart: Geweldige luisteraar"
+      }
+    },
+    "achievement_hebrew_star": {
+      "cardKey": "achievement_hebrew_star",
+      "title": "Hebreeuws Star",
+      "description": "Verdien deze kaart: Hebreeuwse ster",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Hebreeuws Star",
+        "description": "Verdien deze kaart: Hebreeuwse ster"
+      }
+    },
+    "achievement_moledet_explorer": {
+      "cardKey": "achievement_moledet_explorer",
+      "title": "Binnenlandse ontdekkingsreiziger",
+      "description": "Verdien deze kaart: Homeland Explorer",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Binnenlandse ontdekkingsreiziger",
+        "description": "Verdien deze kaart: Homeland Explorer"
+      }
+    },
+    "achievement_multiplication_champion": {
+      "cardKey": "achievement_multiplication_champion",
+      "title": "Vermenigvuldigen de Champion",
+      "description": "Verdien deze kaart: Vermenigvuldig de kampioen",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Vermenigvuldigen de Champion",
+        "description": "Verdien deze kaart: Vermenigvuldig de kampioen"
+      }
+    },
+    "achievement_never_give_up": {
+      "cardKey": "achievement_never_give_up",
+      "title": "Nooit Give Up",
+      "description": "Verdien deze kaart: Geef nooit op",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Nooit Give Up",
+        "description": "Verdien deze kaart: Geef nooit op"
+      }
+    },
+    "achievement_new_record": {
+      "cardKey": "achievement_new_record",
+      "title": "Nieuw record",
+      "description": "Verdien deze kaart: Nieuw record",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Nieuw record",
+        "description": "Verdien deze kaart: Nieuw record"
+      }
+    },
+    "achievement_number_explorer": {
+      "cardKey": "achievement_number_explorer",
+      "title": "Nummerverkenner",
+      "description": "Verdien deze kaart: Nummerverkenner",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Nummerverkenner",
+        "description": "Verdien deze kaart: Nummerverkenner"
+      }
+    },
+    "achievement_personal_activity": {
+      "cardKey": "achievement_personal_activity",
+      "title": "Persoonlijke activiteit",
+      "description": "Verdien deze kaart: Persoonlijke activiteit",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Persoonlijke activiteit",
+        "description": "Verdien deze kaart: Persoonlijke activiteit"
+      }
+    },
+    "achievement_science_explorer": {
+      "cardKey": "achievement_science_explorer",
+      "title": "Natuur en techniek Explorer",
+      "description": "Verdien deze kaart: Natuur en techniek Explorer",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Natuur en techniek Explorer",
+        "description": "Verdien deze kaart: Natuur en techniek Explorer"
+      }
+    },
+    "achievement_shapes_master": {
+      "cardKey": "achievement_shapes_master",
+      "title": "Vormen Meester",
+      "description": "Verdien deze kaart: Shapes Master",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Vormen Meester",
+        "description": "Verdien deze kaart: Shapes Master"
+      }
+    },
+    "achievement_strong_start": {
+      "cardKey": "achievement_strong_start",
+      "title": "Sterk begin",
+      "description": "Verdien deze kaart: Sterke start",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Sterk begin",
+        "description": "Verdien deze kaart: Sterke start"
+      }
+    },
+    "achievement_subtraction_champion": {
+      "cardKey": "achievement_subtraction_champion",
+      "title": "Aftrekken de Champion",
+      "description": "Verdien deze kaart: Trek de kampioen af",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Aftrekken de Champion",
+        "description": "Verdien deze kaart: Trek de kampioen af"
+      }
+    },
+    "achievement_task_complete": {
+      "cardKey": "achievement_task_complete",
+      "title": "Taak voltooid",
+      "description": "Verdien deze kaart: Taak voltooid",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Taak voltooid",
+        "description": "Verdien deze kaart: Taak voltooid"
+      }
+    },
+    "achievement_understanding_master": {
+      "cardKey": "achievement_understanding_master",
+      "title": "Meester begrijpen",
+      "description": "Verdien deze kaart: Meester begrijpen",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Meester begrijpen",
+        "description": "Verdien deze kaart: Meester begrijpen"
+      }
+    },
+    "achievement_week_star": {
+      "cardKey": "achievement_week_star",
+      "title": "Week ster",
+      "description": "Verdien deze kaart: Weekster",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Week ster",
+        "description": "Verdien deze kaart: Weekster"
+      }
+    },
+    "achievement_word_discoverer": {
+      "cardKey": "achievement_word_discoverer",
+      "title": "Woordontdekker",
+      "description": "Verdien deze kaart: Woordontdekker",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Woordontdekker",
+        "description": "Verdien deze kaart: Woordontdekker"
+      }
+    },
+    "achievement_young_reader": {
+      "cardKey": "achievement_young_reader",
+      "title": "Jonge lezer",
+      "description": "Verdien deze kaart: Jonge lezer",
+      "category": "prestatie",
+      "accessibility": {
+        "title": "Jonge lezer",
+        "description": "Verdien deze kaart: Jonge lezer"
+      }
+    },
+    "event_autumn": {
+      "cardKey": "event_autumn",
+      "title": "Leeuw Herfst",
+      "description": "Leo Autumn — beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leeuw Herfst",
+        "description": "Leo Autumn — beperkte evenementenkaart!"
+      }
+    },
+    "event_back_to_learning": {
+      "cardKey": "event_back_to_learning",
+      "title": "Leo Terug naar Learning",
+      "description": "Leo Terug to Learning - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Terug naar Learning",
+        "description": "Leo Terug to Learning - beperkte evenementenkaart!"
+      }
+    },
+    "event_birthday": {
+      "cardKey": "event_birthday",
+      "title": "Leeuw verjaardag",
+      "description": "Leeuw Verjaardag - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leeuw verjaardag",
+        "description": "Leeuw Verjaardag - beperkte evenementenkaart!"
+      }
+    },
+    "event_end_of_year": {
+      "cardKey": "event_end_of_year",
+      "title": "Leo End van Year",
+      "description": "Leo Eindejaarskaart - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo End van Year",
+        "description": "Leo Eindejaarskaart - beperkte evenementenkaart!"
+      }
+    },
+    "event_family_day": {
+      "cardKey": "event_family_day",
+      "title": "Leo Family Dag",
+      "description": "Leo Family Day - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Family Dag",
+        "description": "Leo Family Day - beperkte evenementenkaart!"
+      }
+    },
+    "event_hanukkah": {
+      "cardKey": "event_hanukkah",
+      "title": "Leo Chanoeka",
+      "description": "Leo Chanoeka - kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Chanoeka",
+        "description": "Leo Chanoeka - kaart met beperkte evenementen!"
+      }
+    },
+    "event_independence_day": {
+      "cardKey": "event_independence_day",
+      "title": "Leo Independence Dag",
+      "description": "Leo Independence Day - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Independence Dag",
+        "description": "Leo Independence Day - beperkte evenementenkaart!"
+      }
+    },
+    "event_passover": {
+      "cardKey": "event_passover",
+      "title": "Leo Pascha",
+      "description": "Leo Pesach - kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Pascha",
+        "description": "Leo Pesach - kaart met beperkte evenementen!"
+      }
+    },
+    "event_purim": {
+      "cardKey": "event_purim",
+      "title": "Leo Poerim",
+      "description": "Leo Purim – kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Poerim",
+        "description": "Leo Purim – kaart met beperkte evenementen!"
+      }
+    },
+    "event_rosh_hashana": {
+      "cardKey": "event_rosh_hashana",
+      "title": "Leo Rosj Hasjana",
+      "description": "Leo Rosh Hashana – kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Rosj Hasjana",
+        "description": "Leo Rosh Hashana – kaart met beperkte evenementen!"
+      }
+    },
+    "event_shavuot": {
+      "cardKey": "event_shavuot",
+      "title": "Leo Sjavoeot",
+      "description": "Leo Shavuot – kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Sjavoeot",
+        "description": "Leo Shavuot – kaart met beperkte evenementen!"
+      }
+    },
+    "event_spring": {
+      "cardKey": "event_spring",
+      "title": "Leeuw Lente",
+      "description": "Leo Spring - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leeuw Lente",
+        "description": "Leo Spring - beperkte evenementenkaart!"
+      }
+    },
+    "event_sukkot": {
+      "cardKey": "event_sukkot",
+      "title": "Leo Soekot",
+      "description": "Leo Soekot – kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Soekot",
+        "description": "Leo Soekot – kaart met beperkte evenementen!"
+      }
+    },
+    "event_summer": {
+      "cardKey": "event_summer",
+      "title": "Leeuw Zomer",
+      "description": "Leo Summer — beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leeuw Zomer",
+        "description": "Leo Summer — beperkte evenementenkaart!"
+      }
+    },
+    "event_summer_vacation": {
+      "cardKey": "event_summer_vacation",
+      "title": "Leo zomervakantie",
+      "description": "Leo zomervakantie - beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo zomervakantie",
+        "description": "Leo zomervakantie - beperkte evenementenkaart!"
+      }
+    },
+    "event_tu_bishvat": {
+      "cardKey": "event_tu_bishvat",
+      "title": "Leo Tu Bisjvat",
+      "description": "Leo Tu Bishvat - kaart met beperkte evenementen!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Tu Bisjvat",
+        "description": "Leo Tu Bishvat - kaart met beperkte evenementen!"
+      }
+    },
+    "event_winter": {
+      "cardKey": "event_winter",
+      "title": "Leeuw Winter",
+      "description": "Leo Winter — beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leeuw Winter",
+        "description": "Leo Winter — beperkte evenementenkaart!"
+      }
+    },
+    "event_winter_vacation": {
+      "cardKey": "event_winter_vacation",
+      "title": "Leo Wintervakantie",
+      "description": "Leo Wintervakantie — beperkte evenementenkaart!",
+      "category": "evenement",
+      "accessibility": {
+        "title": "Leo Wintervakantie",
+        "description": "Leo Wintervakantie — beperkte evenementenkaart!"
+      }
+    },
+    "leo_archaeologist": {
+      "cardKey": "leo_archaeologist",
+      "title": "Leo Archeoloog",
+      "description": "Verzamel Leo Archeoloog!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Archeoloog",
+        "description": "Verzamel Leo Archeoloog!"
+      }
+    },
+    "leo_army_dog": {
+      "cardKey": "leo_army_dog",
+      "title": "Leo Legerhond",
+      "description": "Verzamel Leo legerhond!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Legerhond",
+        "description": "Verzamel Leo legerhond!"
+      }
+    },
+    "leo_art_class": {
+      "cardKey": "leo_art_class",
+      "title": "Leo Art Klas",
+      "description": "Collect Leo Art Klas!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Art Klas",
+        "description": "Collect Leo Art Klas!"
+      }
+    },
+    "leo_artist": {
+      "cardKey": "leo_artist",
+      "title": "Leo de Artist",
+      "description": "Collect Leo de Artist!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Artist",
+        "description": "Collect Leo de Artist!"
+      }
+    },
+    "leo_astronaut": {
+      "cardKey": "leo_astronaut",
+      "title": "Leo de Astronaut",
+      "description": "Collect Leo de Astronaut!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Astronaut",
+        "description": "Collect Leo de Astronaut!"
+      }
+    },
+    "leo_at_beach": {
+      "cardKey": "leo_at_beach",
+      "title": "Leo bij de Beach",
+      "description": "Collect Leo bij de Beach!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo bij de Beach",
+        "description": "Collect Leo bij de Beach!"
+      }
+    },
+    "leo_at_library": {
+      "cardKey": "leo_at_library",
+      "title": "Leo bij de Library",
+      "description": "Collect Leo bij de Library!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo bij de Library",
+        "description": "Collect Leo bij de Library!"
+      }
+    },
+    "leo_at_pool": {
+      "cardKey": "leo_at_pool",
+      "title": "Leo bij de Pool",
+      "description": "Collect Leo bij de Pool!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo bij de Pool",
+        "description": "Collect Leo bij de Pool!"
+      }
+    },
+    "leo_at_recess": {
+      "cardKey": "leo_at_recess",
+      "title": "Leo bij de Recess",
+      "description": "Collect Leo bij de Recess!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo bij de Recess",
+        "description": "Collect Leo bij de Recess!"
+      }
+    },
+    "leo_at_zoo": {
+      "cardKey": "leo_at_zoo",
+      "title": "Leo bij de Zoo",
+      "description": "Collect Leo bij de Zoo!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo bij de Zoo",
+        "description": "Collect Leo bij de Zoo!"
+      }
+    },
+    "leo_basketball": {
+      "cardKey": "leo_basketball",
+      "title": "Leo de Basketball Player",
+      "description": "Verzamel Leo de basketbalspeler!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Basketball Player",
+        "description": "Verzamel Leo de basketbalspeler!"
+      }
+    },
+    "leo_camping": {
+      "cardKey": "leo_camping",
+      "title": "Leeuw Camping",
+      "description": "Verzamel Leo Camping!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Camping",
+        "description": "Verzamel Leo Camping!"
+      }
+    },
+    "leo_candy_store": {
+      "cardKey": "leo_candy_store",
+      "title": "Snoepwinkel Leo",
+      "description": "Verzamel Leo Snoepwinkel!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Snoepwinkel Leo",
+        "description": "Verzamel Leo Snoepwinkel!"
+      }
+    },
+    "leo_card_common_assets": {
+      "cardKey": "leo_card_common_assets",
+      "title": "Gemeenschappelijke activa van Leo Card",
+      "description": "Verzamel Leo Card gemeenschappelijke activa!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Gemeenschappelijke activa van Leo Card",
+        "description": "Verzamel Leo Card gemeenschappelijke activa!"
+      }
+    },
+    "leo_carpenter": {
+      "cardKey": "leo_carpenter",
+      "title": "Leeuw Timmerman",
+      "description": "Verzamel Leo Timmerman!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Timmerman",
+        "description": "Verzamel Leo Timmerman!"
+      }
+    },
+    "leo_celebration": {
+      "cardKey": "leo_celebration",
+      "title": "Leo de Celebrator",
+      "description": "Collect Leo de Celebrator!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Celebrator",
+        "description": "Collect Leo de Celebrator!"
+      }
+    },
+    "leo_champion": {
+      "cardKey": "leo_champion",
+      "title": "Leo de Champion",
+      "description": "Collect Leo de Champion!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Champion",
+        "description": "Collect Leo de Champion!"
+      }
+    },
+    "leo_chef": {
+      "cardKey": "leo_chef",
+      "title": "Leo de Chef",
+      "description": "Collect Leo de Chef!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Chef",
+        "description": "Collect Leo de Chef!"
+      }
+    },
+    "leo_cherry_blossom": {
+      "cardKey": "leo_cherry_blossom",
+      "title": "Leeuw Kersenbloesem",
+      "description": "Verzamel Leo Kersenbloesem!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Kersenbloesem",
+        "description": "Verzamel Leo Kersenbloesem!"
+      }
+    },
+    "leo_chess_club": {
+      "cardKey": "leo_chess_club",
+      "title": "Leo Schaakclub",
+      "description": "Verzamel Leo Schaakclub!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Schaakclub",
+        "description": "Verzamel Leo Schaakclub!"
+      }
+    },
+    "leo_classic": {
+      "cardKey": "leo_classic",
+      "title": "Leo de Classic Leo",
+      "description": "Verzamel Leo de Klassieke Leeuw!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Classic Leo",
+        "description": "Verzamel Leo de Klassieke Leeuw!"
+      }
+    },
+    "leo_clothes_shopping": {
+      "cardKey": "leo_clothes_shopping",
+      "title": "Leo kleding winkelen",
+      "description": "Verzamel Leo Clothes Shopping!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo kleding winkelen",
+        "description": "Verzamel Leo Clothes Shopping!"
+      }
+    },
+    "leo_clothing_store": {
+      "cardKey": "leo_clothing_store",
+      "title": "Leo-kledingwinkel",
+      "description": "Verzamel Leo Kledingwinkel!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo-kledingwinkel",
+        "description": "Verzamel Leo Kledingwinkel!"
+      }
+    },
+    "leo_computer_class": {
+      "cardKey": "leo_computer_class",
+      "title": "Leo Computer Klas",
+      "description": "Collect Leo Computer Klas!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Computer Klas",
+        "description": "Collect Leo Computer Klas!"
+      }
+    },
+    "leo_cool": {
+      "cardKey": "leo_cool",
+      "title": "Leo de Cool Één",
+      "description": "Verzamel Leo de Coole!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Cool Één",
+        "description": "Verzamel Leo de Coole!"
+      }
+    },
+    "leo_cyclist": {
+      "cardKey": "leo_cyclist",
+      "title": "Leeuw Fietser",
+      "description": "Verzamel Leo Fietser!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Fietser",
+        "description": "Verzamel Leo Fietser!"
+      }
+    },
+    "leo_dancer": {
+      "cardKey": "leo_dancer",
+      "title": "Leo de Dancer",
+      "description": "Collect Leo de Dancer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Dancer",
+        "description": "Collect Leo de Dancer!"
+      }
+    },
+    "leo_detective": {
+      "cardKey": "leo_detective",
+      "title": "Leo de Detective",
+      "description": "Collect Leo de Detective!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Detective",
+        "description": "Collect Leo de Detective!"
+      }
+    },
+    "leo_doctor": {
+      "cardKey": "leo_doctor",
+      "title": "Leo de Doctor",
+      "description": "Collect Leo de Doctor!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Doctor",
+        "description": "Collect Leo de Doctor!"
+      }
+    },
+    "leo_electrician": {
+      "cardKey": "leo_electrician",
+      "title": "Leo Elektricien",
+      "description": "Verzamel Leo Elektricien!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Elektricien",
+        "description": "Verzamel Leo Elektricien!"
+      }
+    },
+    "leo_engineer": {
+      "cardKey": "leo_engineer",
+      "title": "Leo de Engineer",
+      "description": "Collect Leo de Engineer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Engineer",
+        "description": "Collect Leo de Engineer!"
+      }
+    },
+    "leo_factory_manager": {
+      "cardKey": "leo_factory_manager",
+      "title": "Leo Fabrieksmanager",
+      "description": "Verzamel Leo Fabrieksmanager!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Fabrieksmanager",
+        "description": "Verzamel Leo Fabrieksmanager!"
+      }
+    },
+    "leo_factory_tour": {
+      "cardKey": "leo_factory_tour",
+      "title": "Leo-fabrieksrondleiding",
+      "description": "Verzamel Leo-fabrieksrondleiding!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo-fabrieksrondleiding",
+        "description": "Verzamel Leo-fabrieksrondleiding!"
+      }
+    },
+    "leo_ferris_wheel": {
+      "cardKey": "leo_ferris_wheel",
+      "title": "Leo reuzenrad",
+      "description": "Verzamel het Leo-reuzenrad!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo reuzenrad",
+        "description": "Verzamel het Leo-reuzenrad!"
+      }
+    },
+    "leo_firefighter_helper": {
+      "cardKey": "leo_firefighter_helper",
+      "title": "Leo Brandweerhelper",
+      "description": "Verzamel Leo Brandweerhelper!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Brandweerhelper",
+        "description": "Verzamel Leo Brandweerhelper!"
+      }
+    },
+    "leo_football": {
+      "cardKey": "leo_football",
+      "title": "Leo de Football Player",
+      "description": "Verzamel Leo de voetballer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Football Player",
+        "description": "Verzamel Leo de voetballer!"
+      }
+    },
+    "leo_forest_guardian": {
+      "cardKey": "leo_forest_guardian",
+      "title": "Leo Forest Verzorger",
+      "description": "Collect Leo Forest Verzorger!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Forest Verzorger",
+        "description": "Collect Leo Forest Verzorger!"
+      }
+    },
+    "leo_funny": {
+      "cardKey": "leo_funny",
+      "title": "Leo de Funny Één",
+      "description": "Verzamel Leo de Grappige!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Funny Één",
+        "description": "Verzamel Leo de Grappige!"
+      }
+    },
+    "leo_galaxy_captain": {
+      "cardKey": "leo_galaxy_captain",
+      "title": "Leo Galaxy-kapitein",
+      "description": "Verzamel Leo Galaxy Kapitein!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Galaxy-kapitein",
+        "description": "Verzamel Leo Galaxy Kapitein!"
+      }
+    },
+    "leo_gamer": {
+      "cardKey": "leo_gamer",
+      "title": "Leo de Gamer",
+      "description": "Collect Leo de Gamer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Gamer",
+        "description": "Collect Leo de Gamer!"
+      }
+    },
+    "leo_gardener": {
+      "cardKey": "leo_gardener",
+      "title": "Leeuw Tuinman",
+      "description": "Verzamel Leo Tuinman!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Tuinman",
+        "description": "Verzamel Leo Tuinman!"
+      }
+    },
+    "leo_gets_star": {
+      "cardKey": "leo_gets_star",
+      "title": "Leo krijgt ster",
+      "description": "Verzamel Leo krijgt ster!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo krijgt ster",
+        "description": "Verzamel Leo krijgt ster!"
+      }
+    },
+    "leo_glasses": {
+      "cardKey": "leo_glasses",
+      "title": "Leo met Glasses",
+      "description": "Collect Leo met Glasses!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo met Glasses",
+        "description": "Collect Leo met Glasses!"
+      }
+    },
+    "leo_hot_air_balloon": {
+      "cardKey": "leo_hot_air_balloon",
+      "title": "Leo Hot Lucht Balloon",
+      "description": "Verzamel Leo heteluchtballon!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Hot Lucht Balloon",
+        "description": "Verzamel Leo heteluchtballon!"
+      }
+    },
+    "leo_jump_rope": {
+      "cardKey": "leo_jump_rope",
+      "title": "Leeuw-springtouw",
+      "description": "Verzamel Leo-springtouw!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw-springtouw",
+        "description": "Verzamel Leo-springtouw!"
+      }
+    },
+    "leo_king": {
+      "cardKey": "leo_king",
+      "title": "Leo de King",
+      "description": "Collect Leo de King!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de King",
+        "description": "Collect Leo de King!"
+      }
+    },
+    "leo_knight": {
+      "cardKey": "leo_knight",
+      "title": "Leo de Knight",
+      "description": "Collect Leo de Knight!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Knight",
+        "description": "Collect Leo de Knight!"
+      }
+    },
+    "leo_magician": {
+      "cardKey": "leo_magician",
+      "title": "Leo Magiër",
+      "description": "Verzamel Leo Magiër!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Magiër",
+        "description": "Verzamel Leo Magiër!"
+      }
+    },
+    "leo_marathon_runner": {
+      "cardKey": "leo_marathon_runner",
+      "title": "Leo Marathon de Runner",
+      "description": "Verzamel Leo Marathon de Runner!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Marathon de Runner",
+        "description": "Verzamel Leo Marathon de Runner!"
+      }
+    },
+    "leo_miner": {
+      "cardKey": "leo_miner",
+      "title": "Leo Mijnwerker",
+      "description": "Verzamel Leo Mijnwerker!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Mijnwerker",
+        "description": "Verzamel Leo Mijnwerker!"
+      }
+    },
+    "leo_month_star": {
+      "cardKey": "leo_month_star",
+      "title": "Leo Maand Ster",
+      "description": "Verzamel Leo Maand Ster!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Maand Ster",
+        "description": "Verzamel Leo Maand Ster!"
+      }
+    },
+    "leo_moon_walker": {
+      "cardKey": "leo_moon_walker",
+      "title": "Leo Maan Walker",
+      "description": "Collect Leo Maan Walker!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Maan Walker",
+        "description": "Collect Leo Maan Walker!"
+      }
+    },
+    "leo_mountain_climber": {
+      "cardKey": "leo_mountain_climber",
+      "title": "Leeuw bergbeklimmer",
+      "description": "Verzamel Leo Bergbeklimmer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw bergbeklimmer",
+        "description": "Verzamel Leo Bergbeklimmer!"
+      }
+    },
+    "leo_musician": {
+      "cardKey": "leo_musician",
+      "title": "Leo de Musician",
+      "description": "Collect Leo de Musician!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Musician",
+        "description": "Collect Leo de Musician!"
+      }
+    },
+    "leo_nature_explorer": {
+      "cardKey": "leo_nature_explorer",
+      "title": "Leeuw Natuuronderzoeker",
+      "description": "Verzamel Leo Nature Explorer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Natuuronderzoeker",
+        "description": "Verzamel Leo Nature Explorer!"
+      }
+    },
+    "leo_ninja": {
+      "cardKey": "leo_ninja",
+      "title": "Leo de Ninja",
+      "description": "Collect Leo de Ninja!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Ninja",
+        "description": "Collect Leo de Ninja!"
+      }
+    },
+    "leo_office_worker": {
+      "cardKey": "leo_office_worker",
+      "title": "Leo kantoormedewerker",
+      "description": "Verzamel Leo Kantoormedewerker!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo kantoormedewerker",
+        "description": "Verzamel Leo Kantoormedewerker!"
+      }
+    },
+    "leo_on_train": {
+      "cardKey": "leo_on_train",
+      "title": "Leo op Train",
+      "description": "Collect Leo op Train!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo op Train",
+        "description": "Collect Leo op Train!"
+      }
+    },
+    "leo_pe_class": {
+      "cardKey": "leo_pe_class",
+      "title": "Leo PE Klas",
+      "description": "Collect Leo PE Klas!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo PE Klas",
+        "description": "Collect Leo PE Klas!"
+      }
+    },
+    "leo_piano_player": {
+      "cardKey": "leo_piano_player",
+      "title": "Leo pianospeler",
+      "description": "Verzamel Leo-pianospeler!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo pianospeler",
+        "description": "Verzamel Leo-pianospeler!"
+      }
+    },
+    "leo_picnic": {
+      "cardKey": "leo_picnic",
+      "title": "Leeuw picknick",
+      "description": "Verzamel Leo Picknick!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw picknick",
+        "description": "Verzamel Leo Picknick!"
+      }
+    },
+    "leo_pilot": {
+      "cardKey": "leo_pilot",
+      "title": "Leo de Pilot",
+      "description": "Collect Leo de Pilot!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Pilot",
+        "description": "Collect Leo de Pilot!"
+      }
+    },
+    "leo_pirate": {
+      "cardKey": "leo_pirate",
+      "title": "Leo de Pirate",
+      "description": "Collect Leo de Pirate!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Pirate",
+        "description": "Collect Leo de Pirate!"
+      }
+    },
+    "leo_playful": {
+      "cardKey": "leo_playful",
+      "title": "Leo de Playful Één",
+      "description": "Verzamel Leo de Speelse!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Playful Één",
+        "description": "Verzamel Leo de Speelse!"
+      }
+    },
+    "leo_police_dog": {
+      "cardKey": "leo_police_dog",
+      "title": "Leeuw politiehond",
+      "description": "Verzamel Leo politiehond!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw politiehond",
+        "description": "Verzamel Leo politiehond!"
+      }
+    },
+    "leo_rain_walk": {
+      "cardKey": "leo_rain_walk",
+      "title": "Leo Regenwandeling",
+      "description": "Verzamel Leo Rain Walk!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Regenwandeling",
+        "description": "Verzamel Leo Rain Walk!"
+      }
+    },
+    "leo_robot_engineer": {
+      "cardKey": "leo_robot_engineer",
+      "title": "Leo Robot de Engineer",
+      "description": "Verzamel Leo Robot de Ingenieur!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Robot de Engineer",
+        "description": "Verzamel Leo Robot de Ingenieur!"
+      }
+    },
+    "leo_robotic": {
+      "cardKey": "leo_robotic",
+      "title": "Leeuw Robotachtig",
+      "description": "Verzamel Leo Robotic!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Robotachtig",
+        "description": "Verzamel Leo Robotic!"
+      }
+    },
+    "leo_runner": {
+      "cardKey": "leo_runner",
+      "title": "Leo de Runner",
+      "description": "Collect Leo de Runner!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Runner",
+        "description": "Collect Leo de Runner!"
+      }
+    },
+    "leo_safari": {
+      "cardKey": "leo_safari",
+      "title": "Leeuw Safari",
+      "description": "Verzamel Leo Safari!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Safari",
+        "description": "Verzamel Leo Safari!"
+      }
+    },
+    "leo_science_class": {
+      "cardKey": "leo_science_class",
+      "title": "Leo Natuur en techniek Klas",
+      "description": "Collect Leo Natuur en techniek Klas!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Natuur en techniek Klas",
+        "description": "Collect Leo Natuur en techniek Klas!"
+      }
+    },
+    "leo_scientist": {
+      "cardKey": "leo_scientist",
+      "title": "Leo de Scientist",
+      "description": "Collect Leo de Scientist!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Scientist",
+        "description": "Collect Leo de Scientist!"
+      }
+    },
+    "leo_shoe_shopping": {
+      "cardKey": "leo_shoe_shopping",
+      "title": "Leo Schoenenwinkelen",
+      "description": "Verzamel Leo Shoe Shopping!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Schoenenwinkelen",
+        "description": "Verzamel Leo Shoe Shopping!"
+      }
+    },
+    "leo_skateboarder": {
+      "cardKey": "leo_skateboarder",
+      "title": "Leeuw Skateboarder",
+      "description": "Verzamel Leo Skateboarder!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Skateboarder",
+        "description": "Verzamel Leo Skateboarder!"
+      }
+    },
+    "leo_skier": {
+      "cardKey": "leo_skier",
+      "title": "Leo skiër",
+      "description": "Verzamel Leo Skiër!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo skiër",
+        "description": "Verzamel Leo Skiër!"
+      }
+    },
+    "leo_smart": {
+      "cardKey": "leo_smart",
+      "title": "Leo de Smart Één",
+      "description": "Verzamel Leo de Slimme!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Smart Één",
+        "description": "Verzamel Leo de Slimme!"
+      }
+    },
+    "leo_sorcerer": {
+      "cardKey": "leo_sorcerer",
+      "title": "Leo de Sorcerer",
+      "description": "Collect Leo de Sorcerer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Sorcerer",
+        "description": "Collect Leo de Sorcerer!"
+      }
+    },
+    "leo_space_commander": {
+      "cardKey": "leo_space_commander",
+      "title": "Leo ruimtecommandant",
+      "description": "Verzamel Leo Space Commander!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo ruimtecommandant",
+        "description": "Verzamel Leo Space Commander!"
+      }
+    },
+    "leo_space_pilot": {
+      "cardKey": "leo_space_pilot",
+      "title": "Leo Space de Pilot",
+      "description": "Verzamel Leo Space de Piloot!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Space de Pilot",
+        "description": "Verzamel Leo Space de Piloot!"
+      }
+    },
+    "leo_sports_store": {
+      "cardKey": "leo_sports_store",
+      "title": "Leo Sportwinkel",
+      "description": "Verzamel Leo Sports Store!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Sportwinkel",
+        "description": "Verzamel Leo Sports Store!"
+      }
+    },
+    "leo_star_explorer": {
+      "cardKey": "leo_star_explorer",
+      "title": "Leo Star-verkenner",
+      "description": "Verzamel Leo Star Explorer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Star-verkenner",
+        "description": "Verzamel Leo Star Explorer!"
+      }
+    },
+    "leo_suit": {
+      "cardKey": "leo_suit",
+      "title": "Leo in een Suit",
+      "description": "Collect Leo in een Suit!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo in een Suit",
+        "description": "Collect Leo in een Suit!"
+      }
+    },
+    "leo_super_inventor": {
+      "cardKey": "leo_super_inventor",
+      "title": "Leo superuitvinder",
+      "description": "Verzamel Leo Super Uitvinder!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo superuitvinder",
+        "description": "Verzamel Leo Super Uitvinder!"
+      }
+    },
+    "leo_superhero": {
+      "cardKey": "leo_superhero",
+      "title": "Leeuw superheld",
+      "description": "Verzamel Leo Superheld!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw superheld",
+        "description": "Verzamel Leo Superheld!"
+      }
+    },
+    "leo_surfer": {
+      "cardKey": "leo_surfer",
+      "title": "Leo de Surfer",
+      "description": "Collect Leo de Surfer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Surfer",
+        "description": "Collect Leo de Surfer!"
+      }
+    },
+    "leo_swimmer": {
+      "cardKey": "leo_swimmer",
+      "title": "Leo de Swimmer",
+      "description": "Collect Leo de Swimmer!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Swimmer",
+        "description": "Collect Leo de Swimmer!"
+      }
+    },
+    "leo_teacher": {
+      "cardKey": "leo_teacher",
+      "title": "Leo Leerkracht",
+      "description": "Collect Leo Leerkracht!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Leerkracht",
+        "description": "Collect Leo Leerkracht!"
+      }
+    },
+    "leo_technodog": {
+      "cardKey": "leo_technodog",
+      "title": "Leo Technohond",
+      "description": "Verzamel Leo Techno Dog!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Technohond",
+        "description": "Verzamel Leo Techno Dog!"
+      }
+    },
+    "leo_treasure_hunter": {
+      "cardKey": "leo_treasure_hunter",
+      "title": "Leeuw Schatzoeker",
+      "description": "Verzamel Leo Treasure Hunter!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Schatzoeker",
+        "description": "Verzamel Leo Treasure Hunter!"
+      }
+    },
+    "leo_veterinarian": {
+      "cardKey": "leo_veterinarian",
+      "title": "Leeuw Dierenarts",
+      "description": "Verzamel Leo Dierenarts!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leeuw Dierenarts",
+        "description": "Verzamel Leo Dierenarts!"
+      }
+    },
+    "leo_walk_to_school": {
+      "cardKey": "leo_walk_to_school",
+      "title": "Leo Walk naar School",
+      "description": "Collect Leo Walk naar School!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Walk naar School",
+        "description": "Collect Leo Walk naar School!"
+      }
+    },
+    "leo_wizard": {
+      "cardKey": "leo_wizard",
+      "title": "Leo de Wizard",
+      "description": "Collect Leo de Wizard!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo de Wizard",
+        "description": "Collect Leo de Wizard!"
+      }
+    },
+    "leo_world_explorer": {
+      "cardKey": "leo_world_explorer",
+      "title": "Leo Wereldverkenner",
+      "description": "Verzamel Leo Wereldverkenner!",
+      "category": "winkel",
+      "accessibility": {
+        "title": "Leo Wereldverkenner",
+        "description": "Verzamel Leo Wereldverkenner!"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "tap_to_return_to_tray": "Appuyez pour revenir au plateau",
+    "balance_scale": "Balance Balance",
+    "prototype_drag_items_balance_the_scale": "Prototype · faire glisser les éléments · équilibrer la balance",
+    "object_fromentries_items_map_i_i_id_i_const_leftweight_left_reduce_s_p_s": "Object.fromEntries(ITEMS.map((i) => [i.id, i])), []);\n\n  const leftWeight = left.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const rightWeight = right.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const diff = rightWeight - leftWeight ;\n  const inclinaison = Mathématiques.max(-18, Mathématiques.min(18, diff * 4));\n  const isBalanced = left.length > 0 && right.length > 0 && Mathématiques.abs(diff)",
+    "setshowweights_e_target_checked_classname_h_4_w_4_show_weights_debug": "setShowWeights(e.target.checked)}\n            Nom de classe = \"h-4 w-4\"\n          />\n          Afficher les poids (débogage)",
+    "tap_an_item_on_the_scale_to_return_it_or_drag_from_the_tray": "Appuyez sur un élément sur la balance pour le renvoyer · ou faites-le glisser depuis le plateau",
+    "setdragover_null": "setDragOver(null)}\n              >",
+    "item_tray_drag_to_a_side": "Barre d'éléments – faire glisser sur un côté",
+    "all_items_are_on_the_scale": "Tous les éléments sont sur la balance",
+    "balanced": "Équilibré! ⚖️🎉",
+    "reset": "Réinitialiser"
+  }
+}

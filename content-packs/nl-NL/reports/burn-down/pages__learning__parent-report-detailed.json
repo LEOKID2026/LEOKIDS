@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again": "Ouder-inloggen is vereist. Gebruik ouder-inloggen en probeer het opnieuw.",
+    "the_detailed_report_cannot_be_loaded_right_now": "Het gedetailleerde rapport kan momenteel niet worden geladen.",
+    "report_display_mode": "Rapport display mode",
+    "loading_detailed_report": "Laden… detailed report…",
+    "detailed_report_for_the_period_leo_kids": "Gedetailleerd rapport voor de periode - Leo Kids",
+    "what_we_did_during_this_period": "Wat we in deze periode hebben gedaan",
+    "whats_important_to_know": "Wat is belangrijk om te weten",
+    "messages_from_the_teacher": "Berichten van de leerkracht"
+  }
+}

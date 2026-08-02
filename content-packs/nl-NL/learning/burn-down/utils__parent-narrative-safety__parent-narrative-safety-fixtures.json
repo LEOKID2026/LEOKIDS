@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Veilig Hebreeuws ouderverhaal met observerende toon en voldoende volume.",
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Dun bewijsmateriaal, maar expliciet voorzichtige hedging, mag dit niet blokkeren.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Dun bewijsmateriaal met sterke zekerheid en beheersingsclaim - blok.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Motorlijsten sluiten geen barrières af, maar tekst maakt gebruik van absolute zekerheid.",
+    "disability_clinical_framing_block": "Handicap / klinische framing - blok.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "Motor maakt alleen onderhoud mogelijk; verhaalkrachten zorgen voor een niveausprong.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "Het motorvertrouwen is laag, maar de bovenliggende tekst is volledig zeker.",
+    "permanent_failure_never_succeed_framing_block": "Permanent falen / nooit slagen inlijsten - blokkeren.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "Een hoog goksignaal, maar het verhaal claimt volledige beheersing.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "Enige vermoedelijke vereistekloof; het verhaal vermeldt een kloof op bewijsniveau.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "Interne taxonomietoken gelekt in bovenliggend kopieblok.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "Realistische statistische beperkingslijn met dunne gegevens - geslaagd (info: veilige dunne voorzichtigheid).",
+    "explicit_collect_more_examples_framing_pass_info": "Expliciete framing van meer voorbeelden verzamelen - doorgeven (info).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "Magere data, maar claimt bepaalbaarheid/aanzienlijke zwakte: waarschuwing.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "Erkent gebrek aan gegevens en stelt vervolgens een duidelijk probleem: waarschuwing.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "Dunne rij maar vaag verhaal zonder expliciete framing van beperkte gegevens - waarschuwing.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "Ondanks weinig gegevens absolute duidelijkheid over de strijd – overmoed + dun → blok."
+  }
+}

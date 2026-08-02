@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "Pasar a avanzado: solo el mismo argomento",
+    "move_up_a_grade_same_topic_only": "Subir de classe: solo el mismo argomento",
+    "solidify_at_the_same_level": "Solidificarse al mismo nivel.",
+    "solidify_at_regular_level": "Solidificar a nivel regular",
+    "strengthen_at_the_same_level": "Fortalecer al mismo nivel.",
+    "return_to_regular_practice": "Return to regular practice",
+    "lower_difficulty_same_topic_only": "Dificultad mas baja: solo el mismo argomento",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "Se resolvieron suficientes domande a nivel regular con precision estable. Provare avanzar sobre el mismo argomento es razonable.",
+    "trying_advanced_on_the_same_topic_is_recommended": "Se recomienda provare avanzar sobre el mismo argomento.",
+    "you_can_try_advanced_on_the_same_topic": "You can try advanced on the same topic.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "Desarrolla una esercitazione mas constante en el nivel regular prima de pasar al nivel avanzado.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "Continue en el nivel regular y fortalezca la precision y la confianza prima de avanzar.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "Nos quedaremos un poco mas en el nivel normal, nos haremos mas fuertes y luego intentaremos avanzar.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "The advanced challenge was high right now. Returning to regular practice on the same topic is recommended.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "El desafio avanzado era alto en questo momento. Vuelva a la esercitazione habitual, fortalezca la precision y la confianza y vuelva a intentarlo mas tarde.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "Volveremos a la esercitazione habitual por un tiempo, nos haremos mas fuertes y luego intentaremos de nuovo.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "Fortalezca el mismo argomento con esercitazione regular a un ritmo comodo.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "Continue la esercitazione regular a un ritmo comodo, con algunas domande breves como refuerzo.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "Primero fortaleceremos con la esercitazione regular y luego seguiremos adelante.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "Pruebe un nivel o classe inferior y luego avance gradualmente.",
+    "limited_information": "Informacion limitada"
+  }
+}

@@ -1,0 +1,861 @@
+{
+  "hubTitle": "Uitdagingsgame-hub",
+  "hubBlurb": "Kies een onderwerp en begin met oefenen.",
+  "chooseGrade": "Kies een groep",
+  "chooseTopic": "Kies topic",
+  "startPractice": "Begin met oefenen",
+  "correct": "Juist!",
+  "incorrect": "Nog niet helemaal — probeer opnieuw.",
+  "nextQuestion": "Volgende vraag",
+  "finish": "Afronden",
+  "resultsTitle": "Geweldig werk!",
+  "accuracy": "Nauwkeurigheid: {percent}%",
+  "questionsAnswered": "{count, plural, one {# vraag} other {# vragen}}",
+  "subjects": {
+    "math": "Rekenen",
+    "geometry": "Meetkunde",
+    "english": "Engels",
+    "science": "Natuur en techniek"
+  },
+  "blurbs": {
+    "math": "Optellen, aftrekken, vermenigvuldigen, delen en meer.",
+    "geometry": "Vormen, hoeken, omtrek, oppervlakte, volume en meer.",
+    "english": "Woordenschat, grammatica, vertaling en zinnen.",
+    "science": "Lichaam, dieren, planten, ruimte, materie, weer en krachten."
+  },
+  "openBook": "Leerboek openen",
+  "practiceAgain": "Oefenen opnieuw",
+  "backToHub": "Terug naar het oefencentrum",
+  "hubBadge": "Oefenen · review · improve",
+  "hubSubtitle": "Consistentie loont: hoe meer je speelt, hoe meer munten je verdient.",
+  "myProgress": "Mijn vooruitgang",
+  "chooseSubject": "Kies subject",
+  "hubLoading": "Laden……",
+  "master": {
+    "back": "Terug",
+    "curriculum": "📋 Leerplan",
+    "player": "Speler",
+    "defaultPlayerName": "Leerling",
+    "topic": "Onderwerp",
+    "close": "Sluiten",
+    "loading": "Laden……",
+    "coins": "Munten:",
+    "coinsTitle": "Spelmunten",
+    "submit": "Versturen",
+    "answer": "Antwoord",
+    "answerPlaceholder": "Antwoord",
+    "enterAnswer": "Voer antwoord in",
+    "check": "Controleren",
+    "keyboard": "Toetsenbord",
+    "start": "▶️ Begin",
+    "stop": "⏹️Hou op",
+    "play": "Spelen",
+    "explain": "Uitleggen",
+    "explainBook": "Boek uitleg",
+    "explainFull": "📘 Volledige uitleg",
+    "remember": "🧠 Onthoud",
+    "rememberTitle": "Wat naar remember?",
+    "whyMistake": "Waarom deed I get it wrong?",
+    "previousExercise": "Oplossing voor eerdere oefeningen",
+    "howToSolve": "Hoe lossen we dit op?",
+    "leaderboard": "🏆 Leiderbord",
+    "helpBoard": "📚 Hulpboard",
+    "howToLearn": "❓ Hoe naar learn here?",
+    "focusedPractice": "Gerichte praktijk",
+    "enterNameToStart": "Enter jouw name naar start",
+    "opening": "Opening",
+    "challenges": "Uitdagingen",
+    "accuracy": "Nauwkeurigheid",
+    "bestScore": "Beste score",
+    "bestStreak": "Beste reeks",
+    "noQuestion": "Er zijn geen vragen beschikbaar voor deze instelling.",
+    "playerProfile": "👤 Spelersprofiel",
+    "chooseAvatar": "Kies avatar:",
+    "pickImage": "📷 Kies image",
+    "deleteImage": "🗑️ Verwijderen image",
+    "imageSelected": "Afbeelding geselecteerd ✓",
+    "playerName": "Speler naam",
+    "peakScore": "Piekscore",
+    "peakStreak": "Piekreeks",
+    "stars": "Sterren",
+    "level": "Niveau",
+    "xpPoints": "XP-punten",
+    "dailyStreak": "🔥Dagelijkse streak",
+    "days": "dagen",
+    "monthlyProgress": "Maandelijkse voortgang",
+    "minutesShort": "min",
+    "overallAccuracy": "Algemene nauwkeurigheid",
+    "correctOfTotal": "{correct} correct uit {total} vragen",
+    "topicProgress": "Progress door topic",
+    "badges": {
+      "streak_10": "🔥 Hete streak",
+      "streak_25": "⚡ Bliksemsnel",
+      "streak_50": "🌟 Kampioen",
+      "streak_100_math": "👑 Rekenen-koning",
+      "streak_100_science": "👑 Natuur-en-techniekkoning",
+      "score_1000": "💎 1.000 punten",
+      "score_5000": "🎯 5.000 punten",
+      "correct_100": "⭐ 100 juiste antwoorden",
+      "correct_500": "🌟 500 juiste antwoorden",
+      "op_king": "🧮 Koning van {op}",
+      "op_genius": "🏆 Genius van {op}",
+      "topic_expert": "🔬 {topic} deskundige",
+      "topic_genius": "🏆 {topic} geniaal",
+      "topic_expert_legacy": "🔬 {topic} deskundige",
+      "topic_genius_legacy": "🏆 {topic} geniaal"
+    },
+    "noBadgesYet": "Nog geen badges. Blijf oefenen!",
+    "newBadge": "Nieuw kenteken!",
+    "levelUp": "Niveau omhoog!",
+    "levelUpNow": "Je bent nu niveau {level}!",
+    "avatar": "Avatar",
+    "hudLives": "Levens",
+    "hudTimer": "Timer",
+    "avatarAlt": "Avatar",
+    "childNameAria": "Naam kind: {name}",
+    "childNameUnavailable": "Naam van kind niet beschikbaar",
+    "imageTooLarge": "Afbeelding is te groot. Kies een afbeelding van maximaal 5 MB.",
+    "imageTypeOnly": "Kies alleen een afbeeldingsbestand.",
+    "imageSaveFailed": "Opslaan van de afbeelding is mislukt.",
+    "gradeRequired": "Kies een groep voordat je gaat oefenen. Vraag een ouder om je groep bij te werken.",
+    "enterValidNumber": "Voer een geldig getal in",
+    "enterPlayerNameForMistake": "Voer een spelersnaam in om de geselecteerde fout te oefenen",
+    "selectAtLeastOneOp": "Selecteer ten minste één bewerking",
+    "noMistakesToPractice": "Geen mistakes naar practice",
+    "noResultsYet": "Geen saved results yet.",
+    "rank": "Rang",
+    "score": "Score",
+    "streak": "Streep",
+    "localHighScores": "Lokale hoge scores",
+    "practiceSettings": "🎛️ Oefenen settings",
+    "practiceSettingsBlurb": "Houd controle over uw training: bekijk recente fouten, beoordeel de oefening (begin laag en ga door naar het door u gekozen niveau) of kies een aandachtsgebied.",
+    "practiceModeLabel": "Oefenen mode",
+    "currentMode": "Huidige modus",
+    "focus": "Focus",
+    "focusedPracticeMode": "Gerichte oefenmodus",
+    "resetDefaults": "Standaardwaarden opnieuw instellen",
+    "mistakeReview": "🎯 Foutbeoordeling",
+    "mistakeReviewEmpty": "Nog geen fouten opgeslagen. Oefen, maak fouten en tik hier om precies te bekijken wat je nodig hebt.",
+    "correctAnswer": "Juiste antwoord: {answer}",
+    "yourAnswer": "Jouw antwoord: {answer}",
+    "practiceThisQuestion": "Oefen deze vraag",
+    "clearMistakes": "🧹 Duidelijke fouten",
+    "referenceBoard": "Referentiebord",
+    "referenceBoardBlurb": "Kies een categorie om snel de belangrijkste punten te bekijken, zoals de helpborden voor rekenen en meetkunde.",
+    "noTermsYet": "Geen terms naar show yet.",
+    "verticalDisplay": "Toon verticaal",
+    "horizontalDisplay": "Horizontaal weergeven",
+    "topics": "Onderwerpen",
+    "mixedPractice": "Gemengd oefenen",
+    "editMixOperations": "Mixbewerkingen bewerken",
+    "subjects": "Onderwerpen",
+    "notEnoughQuestions": "Niet genoeg vragen voor het onderwerp, de groep of het niveau dat je hebt gekozen. Probeer een instelling te wijzigen.",
+    "step": "Stap {num}",
+    "explanation": "Uitleg",
+    "noStepDetail": "Geen stapsgewijze details voor deze vraag. Gebruik het formulebord.",
+    "multiplicationTableHint": "Tik op een getal in de tabel en vervolgens op een rij- of kolomnummer",
+    "divisionTableHint": "Tik op een product en vervolgens op een rij-/kolomnummer om de verdeling te zien",
+    "leaderboardLoadError": "Fout bij laden van scorebord:",
+    "gradeFallback": "Groep",
+    "gradedPracticeBlurb": "Gegradueerde oefening - begint laag en gaat door naar het door jou gekozen niveau",
+    "backToRegularPractice": "Terug naar regular practice",
+    "localInsights": "Oefenen insights (local)",
+    "titles": {
+      "math": "🧮 Rekenen",
+      "geometry": "📐 Meetkunde",
+      "english": "🇬🇧 Engels",
+      "science": "🔬 Natuur en techniek"
+    },
+    "modes": {
+      "learning": {
+        "name": "Leren",
+        "description": "Geen game over – oefen in je eigen tempo"
+      },
+      "challenge": {
+        "name": "Uitdaging",
+        "description": "Timer + levens, race voor een hoge score"
+      },
+      "speed": {
+        "name": "Snelheid",
+        "description": "Fast answers = meer points! ⚡"
+      },
+      "marathon": {
+        "name": "Marathon",
+        "description": "Hoeveel vragen kun jij oplossen? 🏃"
+      },
+      "practice": {
+        "name": "Oefenen",
+        "description": "Kies een onderwerp of een gerichte trainingsmodus"
+      }
+    },
+    "levels": {
+      "easy": "Makkelijk",
+      "medium": "Gemiddeld",
+      "hard": "Moeilijk"
+    },
+    "grades": {
+      "g1": "Groep 3",
+      "g2": "Groep 4",
+      "g3": "Groep 5",
+      "g4": "Groep 6",
+      "g5": "Groep 7",
+      "g6": "Groep 8"
+    },
+    "displayLevels": {
+      "regular": "Gewoon",
+      "advanced": "Geavanceerd"
+    },
+    "feedback": {
+      "correct": "Geweldig! 🎉",
+      "wrong": "Nog niet helemaal — probeer opnieuw 😔",
+      "gameOver": "Spel voorbij! 💔",
+      "wrongWithAnswer": "Niet helemaal 😔 Het juiste antwoord: {answer} ✅",
+      "timeUp": "De tijd is om! ⏰",
+      "timeUpGameOver": "De tijd is om! Spel voorbij! ⏰",
+      "excellent": "Uitstekend! ✅"
+    },
+    "practiceModes": {
+      "normal": "Reguliere praktijk",
+      "mistakes": "Fout beoordeling",
+      "graded": "Gegradueerde praktijk"
+    },
+    "streakEncouragement": {
+      "keepGoing": "🔥 Ga zo door!",
+      "nice": "⭐ Leuk!",
+      "great": "🌟 Geweldig!",
+      "champion": "👑 Kampioen!"
+    },
+    "streakFeedback": {
+      "correct": "Correct!",
+      "amazing": "Amazing! Streak van {streak}!",
+      "excellent": "Excellent! Streak van {streak}!",
+      "wellDone": "Well done! Streak van {streak}!",
+      "nice": "Nice! Streak van {streak}!"
+    },
+    "previous": "Vorig",
+    "next": "Volgende",
+    "stepOf": "Step {current} van {total}",
+    "mistakesFixed": "🎉 Alle fouten opgelost — geweldig gedaan!",
+    "levelLabel": "Niveau {level}",
+    "progressByOperation": "Progress door operation",
+    "strengthen": "Versterken:",
+    "strongRelative": "Sterk familielid:",
+    "browserOnlyMistakes": "Minimaal 2 pogingen; alleen in browser opgeslagen.",
+    "practiceYourMistakes": "Oefenen jouw {count} mistakes",
+    "recentMistakes": "Recente fouten:",
+    "focusedPracticeTitle": "Gerichte praktijk",
+    "showHorizontal": "↔️ Horizontaal",
+    "showVertical": "↕️ Verticaal",
+    "draftPage": "Conceptpagina",
+    "stepByStep": "📖 Step door step",
+    "howToSolveExerciseRtl": "Hoe lossen we deze oefening op?",
+    "newQuestion": "Nieuwe vraag",
+    "rowN": "Rij {num}",
+    "columnN": "Kolom {num}",
+    "divisionLabel": "÷ Delen",
+    "multiplicationLabel": "× Vermenigvuldigen",
+    "reset": "Resetten",
+    "remainderWarning": "⚠️ Fout:",
+    "notInteger": "is niet een whole number!",
+    "remainderOf": "rest {remainder}",
+    "tableTapNumberHint": "Tik op een getal in de tabel en vervolgens op een rij- of kolomnummer",
+    "divisionTableTapHint": "Tik op een product en vervolgens op een rij-/kolomnummer om de verdeling te zien",
+    "leaderboardLoadErrorPrefix": "Fout bij laden van resultatenbord:",
+    "noResultsAtLevel": "Geen results yet bij",
+    "pickOperations": "🎲 Bewerkingen kiezen",
+    "pickOperationsTitle": "Kies bewerkingen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "all": "Alles",
+    "levelUpNowText": "Je bent nu niveau {level}!",
+    "gradeTitle": "{grade}",
+    "editMixTopics": "Mixonderwerpen bewerken",
+    "answerPlaceholderLong": "Typ hier je antwoord...",
+    "checkAnswerBtn": "✅ Antwoord controleren",
+    "noResultsForLevel": "Nog geen resultaten voor dit niveau",
+    "pickMixTopics": "🎲 Kies onderwerpen voor de mix",
+    "pickMixTopicsBlurb": "Kies welke onderwerpen je in de gemengde oefening wilt opnemen",
+    "deselectAll": "Alles deselecteren",
+    "selectOneTopicMin": "Selecteer minimaal één onderwerp",
+    "mistakePracticeTitle": "🎯 Recente fouten oefenen",
+    "mistakePracticeBlurb": "Kies een recente fout om gericht te oefenen met hetzelfde onderwerp, niveau en moeilijkheidsgraad.",
+    "noActiveMistakes": "Nog geen actieve fouten. Speel een sessie, verzamel gegevens en kom dan hier terug.",
+    "currentGrade": "Huidige groep",
+    "practiceNow": "Nu oefenen",
+    "clearMistakesBtn": "🧹 Duidelijke fouten",
+    "wordBoardTitle": "📚 Interactief woordbord",
+    "wordBoardBlurb": "Kies een categorie om belangrijke Engelse woorden te bekijken.",
+    "noWordsInCategory": "Geen words naar show in dit category.",
+    "smartPracticeSettings": "🎛️ Slimme oefeninstellingen",
+    "smartPracticeBlurb": "Kies net als rekenen en meetkunde een speciale trainingsmodus, link naar recente fouten of beoordeelde oefeningen.",
+    "focusMode": "Focusmodus",
+    "defaultMode": "Standaard",
+    "repeatRecentMistakes": "Herhaal recente fouten",
+    "gradedPracticeLabel": "Beoordeeld oefenen (begin laag → jouw gekozen niveau)",
+    "translationQuestions": "Vragen over vertaling/verhaal",
+    "translationInVocab": "Neem vertaalvragen op in woordenschat-/grammaticaspellen",
+    "translationOnly": "Alleen vertalings-/verhaalvragen weergeven",
+    "currentStateSummary": "Samenvatting van de huidige status",
+    "mistakeFocus": "Foutfocus:",
+    "translationMode": "Vertaalvragen:",
+    "translationMixed": "Gemengd",
+    "translationOff": "Uit",
+    "translationOnlyShort": "Translation alleen",
+    "enlargeDiagram": "Vergroot diagram",
+    "enlarge": "Vergroten",
+    "enlargedDiagram": "Vergroot diagram",
+    "diagram": "Diagram",
+    "closeDiagram": "Sluiten diagram",
+    "explainTitle": "Uitleg",
+    "noStepDetailGeometry": "Er is geen stapdetail voor deze vraag. Gebruik het formulebord.",
+    "correctAnswerColon": "Juiste antwoord: {answer}.",
+    "topicFallback": "Onderwerp",
+    "shapeFallback": "Vorm",
+    "dailyStreakChampion": "👑 Kampioen!",
+    "dailyStreakExcellent": "🌟 Uitstekend!",
+    "dailyStreakGood": "🔥 Geweldige reeks!",
+    "dailyStreakNice": "⭐ Leuk!",
+    "dailyStreakKeepGoing": "🔥 Ga zo door!",
+    "recentMistakesMode": "Recente fouten",
+    "mistakeRow": "{question} = {wrong} ❌ (correct: {correct})",
+    "monthMinutesProgress": "{current} / {goal} min",
+    "closeRtl": "Sluiten",
+    "referenceCategories": {
+      "operations": "Rekenbewerkingen",
+      "formulas": "Formules",
+      "terms": "Voorwaarden",
+      "shapes": "Vormen"
+    }
+  },
+  "math": {
+    "levelUpScience": "Je bent een niveau omhoog gegaan in rekenen!",
+    "howToLearnTitle": "📘 Hoe leer je hier rekenen?",
+    "howToLearnBlurb": "Het doel is om rekenen op een leuke manier te oefenen, afgestemd op leerjaar, onderwerp en moeilijkheidsgraad.",
+    "leaderboardTitle": "🏆 Ranglijst – Rekenen",
+    "referenceBoardTitle": "📚 Rekenen-hulpboard",
+    "multiplicationTable": "📊 Tafels van vermenigvuldiging",
+    "randomPractice": "Willekeurige oefening",
+    "pickRowOrColumn": "Kies een rij of kolom om te oefenen:",
+    "operations": {
+      "addition": "Optellen",
+      "subtraction": "Aftrekken",
+      "multiplication": "Vermenigvuldigen",
+      "division": "Delen",
+      "division_with_remainder": "Delen met rest",
+      "fractions": "Breuken",
+      "percentages": "Percentages",
+      "sequences": "Rijen",
+      "decimals": "Decimale getallen",
+      "rounding": "Afronden",
+      "divisibility": "Deelbaarheidsregels",
+      "prime_composite": "Prime en composite numbers",
+      "powers": "Bevoegdheden",
+      "ratio": "Verhouding",
+      "equations": "Vergelijkingen",
+      "order_of_operations": "Volgorde van bewerkingen",
+      "zero_one_properties": "Properties van 0 en 1",
+      "estimation": "Schatting",
+      "scale": "Schaal",
+      "compare": "Vergelijken",
+      "number_sense": "Getalbegrip",
+      "factors_multiples": "Factors en multiples",
+      "word_problems": "Verhaalsommen",
+      "multiplication_table": "Tafels van vermenigvuldiging",
+      "place_value": "Plaatswaarde",
+      "comparison": "Vergelijking",
+      "patterns": "Patterns en sequences",
+      "multiplication_advanced": "Advanced vermenigvuldigen",
+      "mixed": "Gemengd"
+    },
+    "steps": {
+      "understandQuestion": "Stap 1: Begrijp de vraag",
+      "howToApproach": "Stap 2: Hoe pakken we het aan?",
+      "solveByRules": "We lossen het op met behulp van de regels voor dit onderwerp.",
+      "lookAtExercise": "Laten we naar de oefening kijken.",
+      "theAnswer": "Stap 3: Het antwoord",
+      "answerIs": "Het antwoord is: {answer}",
+      "checkAnswer": "We controleren het antwoord."
+    },
+    "howToLearnSteps": {
+      "step1": "Kies de groep, de moeilijkheidsgraad en de bewerking (optellen, aftrekken, vermenigvuldigen, delen, breuken, percentages en meer).",
+      "step2": "Kies een spelmodus: leren, uitdagen met timer en levens, snelheid of marathon.",
+      "step3": "Lees elke vraag aandachtig; sommige zijn woordproblemen waarbij je het verhaal moet begrijpen.",
+      "step4": "Hoge scores, antwoordreeksen, sterren en badges helpen je om als speler een hoger niveau te bereiken."
+    },
+    "referenceBoardBlurb": "Kies een categorie om de belangrijkste bewerkingen, formules en termen in de rekenen te bekijken.",
+    "reference": {
+      "operations": {
+        "addition": {
+          "title": "➕ Optellen",
+          "desc": "Adding numbers: een + b = c",
+          "example": "Voorbeeld: 5 + 3 = 8"
+        },
+        "subtraction": {
+          "title": "➖ Aftrekken",
+          "desc": "Subtracting numbers: een - b = c",
+          "example": "Voorbeeld: 8 - 3 = 5"
+        },
+        "multiplication": {
+          "title": "✖️ Vermenigvuldigen",
+          "desc": "Multiplying numbers: een × b = c",
+          "example": "Voorbeeld: 4 × 3 = 12"
+        },
+        "division": {
+          "title": "➗ Delen",
+          "desc": "Dividing numbers: een ÷ b = c",
+          "example": "Voorbeeld: 12 ÷ 3 = 4"
+        },
+        "fractions": {
+          "title": "🔢 Breuken",
+          "desc": "Een getal dat een deel van een geheel vertegenwoordigt: 1/2, 3/4",
+          "example": "Example: 1/2 = 0,5"
+        },
+        "percentages": {
+          "title": "% percentages",
+          "desc": "Part out van 100: % = part/whole × 100",
+          "example": "Example: 50% = 0,5"
+        }
+      },
+      "formulas": {
+        "square_area": {
+          "title": "📐 Vierkant area",
+          "desc": "zijkant × zijkant",
+          "formula": "een = een²"
+        },
+        "rectangle_area": {
+          "title": "📐 Recthoek area",
+          "desc": "lengte x breedte",
+          "formula": "een = een × b"
+        },
+        "triangle_area": {
+          "title": "📐 Trihoek area",
+          "desc": "(basis × hoogte) ÷ 2",
+          "formula": "een = (b × h) ÷ 2"
+        },
+        "circle_perimeter": {
+          "title": "⭕ Omtrek",
+          "desc": "2 × π × straal",
+          "formula": "C = 2πr"
+        },
+        "circle_area": {
+          "title": "⭕ Cirkel area",
+          "desc": "π × straal²",
+          "formula": "een = πr²"
+        }
+      },
+      "terms": {
+        "sum": {
+          "title": "➕ Som",
+          "desc": "De result van adding numbers"
+        },
+        "difference": {
+          "title": "➖ Verschil",
+          "desc": "De result van subtracting numbers"
+        },
+        "product": {
+          "title": "✖️Product",
+          "desc": "De result van multiplying numbers"
+        },
+        "quotient": {
+          "title": "➗ Quotiënt",
+          "desc": "De result van dividing numbers"
+        },
+        "even": {
+          "title": "🔢 Even getal",
+          "desc": "een number divisible door 2 met geen remainder (2, 4, 6, 8…)"
+        },
+        "odd": {
+          "title": "🔢 Oneven getal",
+          "desc": "Een getal dat niet deelbaar is door 2 en geen rest heeft (1, 3, 5, 7...)"
+        },
+        "prime": {
+          "title": "🔢 Priemgetal",
+          "desc": "Een getal dat alleen deelbaar is door 1 en zichzelf (2, 3, 5, 7, 11...)"
+        },
+        "integer": {
+          "title": "🔢 Geheel getal",
+          "desc": "een whole number zonder breuks (0, 1, 2, 3, -1, -2…)"
+        },
+        "fraction": {
+          "title": "🔢 Fractie",
+          "desc": "een number representing part van een whole (1/2, 3/4, 2/3…)"
+        },
+        "percent": {
+          "title": "% procent",
+          "desc": "Part out van 100 (50% = half, 25% = quarter)"
+        }
+      }
+    }
+  },
+  "geometry": {
+    "leaderboardTitle": "🏆 Ranglijst – Meetkunde",
+    "howToLearnTitle": "📘 Hoe naar learn meetkunde here?",
+    "howToLearnBlurb": "Het doel is om meetkunde op een leuke manier te oefenen, afgestemd op leerjaar, onderwerp en moeilijkheidsgraad.",
+    "howToLearnSteps": {
+      "step1": "Kies niveau, moeilijkheidsgraad en onderwerp (oppervlakte, omtrek, volume, hoeken, Pythagoras en meer).",
+      "step2": "Kies een spelmodus: leren, uitdagen met timer en levens, snelheid of marathon.",
+      "step3": "Lees elke vraag aandachtig; sommige zijn woordproblemen over tuinen, hekken en dozen.",
+      "step4": "Hoge scores, antwoordreeksen, sterren en badges helpen je om als speler een hoger niveau te bereiken."
+    },
+    "referenceBoardTitle": "📐 Board met vormen en formules",
+    "referenceBoardBlurb": "Kies een categorie om vormen, formules en belangrijke geometrietermen te bekijken.",
+    "reference": {
+      "shapes": {
+        "square": {
+          "title": "🔷 Vierkant",
+          "desc": "4 equal sides, 4 rechte hoeks"
+        },
+        "rectangle": {
+          "title": "⬜ Recthoek",
+          "desc": "2 paar gelijke zijden, 4 rechte hoeken"
+        },
+        "triangle": {
+          "title": "🔺 Trihoek",
+          "desc": "3 sides, 3 hoeks"
+        },
+        "circle": {
+          "title": "⭕ Cirkel",
+          "desc": "Ronde vorm; alle punten liggen op dezelfde afstand van het centrum"
+        },
+        "box": {
+          "title": "📦 Doos (rechthoekig prisma)",
+          "desc": "3D shape met 6 rectangular faces"
+        },
+        "cube": {
+          "title": "🔲 Kubus",
+          "desc": "Een doos waarvan alle randen gelijk zijn"
+        }
+      },
+      "formulas": {
+        "square_area": {
+          "title": "📐 Vierkant area",
+          "desc": "zijkant × zijkant",
+          "formula": "een = een²"
+        },
+        "rectangle_area": {
+          "title": "📐 Recthoek area",
+          "desc": "lengte x breedte",
+          "formula": "een = een × b"
+        },
+        "triangle_area": {
+          "title": "📐 Trihoek area",
+          "desc": "(basis × hoogte) ÷ 2",
+          "formula": "een = (b × h) ÷ 2"
+        },
+        "square_perimeter": {
+          "title": "📏 Vierkant omtrek",
+          "desc": "4× zijkant",
+          "formula": "P = 4een"
+        },
+        "rectangle_perimeter": {
+          "title": "📏 Recthoek omtrek",
+          "desc": "2 × (lengte + breedte)",
+          "formula": "P = 2(een + b)"
+        },
+        "box_volume": {
+          "title": "📦 Rechthoekig prismavolume",
+          "desc": "lengte x breedte x hoogte",
+          "formula": "V = een × b × c"
+        },
+        "cube_volume": {
+          "title": "📦 Kubusvolume",
+          "desc": "zijkant × zijkant × zijkant",
+          "formula": "V = een³"
+        },
+        "circle_perimeter": {
+          "title": "⭕ Omtrek",
+          "desc": "2 × π × straal",
+          "formula": "C = 2πr"
+        },
+        "circle_area": {
+          "title": "⭕ Cirkel area",
+          "desc": "π × straal²",
+          "formula": "een = πr²"
+        }
+      },
+      "terms": {
+        "area": {
+          "title": "📐 Oppervlakte",
+          "desc": "De ruimte die een vorm op een plat oppervlak bedekt"
+        },
+        "perimeter": {
+          "title": "📏 Omtrek",
+          "desc": "De lengte van de lijn rond een vorm"
+        },
+        "volume": {
+          "title": "📦 Volume",
+          "desc": "De space een 3D object takes up"
+        },
+        "angle": {
+          "title": "📐 Hoek",
+          "desc": "De ruimte tussen twee stralen vanuit hetzelfde punt"
+        },
+        "right_angle": {
+          "title": "📐 Right hoek",
+          "desc": "90 graden"
+        },
+        "acute_angle": {
+          "title": "📐 Acute hoek",
+          "desc": "Minder dan 90 graden"
+        },
+        "obtuse_angle": {
+          "title": "📐 Obtuse hoek",
+          "desc": "Meer than 90 degrees"
+        },
+        "parallel": {
+          "title": "📐 Parallelle lijnen",
+          "desc": "Lines dat nooit meet"
+        },
+        "perpendicular": {
+          "title": "📐 Loodrechte lijnen",
+          "desc": "Lijnen die elkaar in een rechte hoek ontmoeten"
+        },
+        "diagonal": {
+          "title": "📐 Diagonaal",
+          "desc": "Een lijn die twee niet-aangrenzende hoeken met elkaar verbindt"
+        },
+        "symmetry": {
+          "title": "📐 Symmetrie",
+          "desc": "Wanneer een vorm er aan beide kanten hetzelfde uitziet"
+        }
+      }
+    },
+    "topics": {
+      "shapes_basic": "Basisvormen",
+      "shapes": "Vormen",
+      "area": "Oppervlakte",
+      "perimeter": "Omtrek",
+      "volume": "Inhoud",
+      "angles": "Hoeken",
+      "parallel_perpendicular": "Parallel en perpendicular",
+      "triangles": "Driehoeken",
+      "quadrilaterals": "Vierhoeken",
+      "transformations": "Transformaties",
+      "rotation": "Rotatie",
+      "symmetry": "Spiegeling",
+      "diagonal": "Diagonaal",
+      "heights": "Hoogten",
+      "tiling": "Tegels",
+      "circles": "Cirkel",
+      "solids": "3D vaste stofs",
+      "pythagoras": "Pythagoras",
+      "coordinates": "Coördinaten",
+      "mixed": "Gemengd"
+    },
+    "errors": {
+      "invalidGrade": "Ongeldige groep. Kies een andere groep.",
+      "noTopics": "Er zijn geen onderwerpen beschikbaar voor dit leerjaar. Kies een andere groep.",
+      "noQuestions": "Er zijn geen vragen beschikbaar voor het geselecteerde onderwerp en de gekozen groep.",
+      "generateError": "Fout bij genereren van vraag. Probeer het opnieuw of kies een ander onderwerp."
+    }
+  },
+  "english": {
+    "leaderboardTitle": "🏆 Ranglijst – Engels",
+    "howToLearnTitle": "📘 Hoe naar learn Engels here?",
+    "practiceFocus": {
+      "balanced": "📚 Alle onderwerpen",
+      "vocab_core": "🔤 Kernwoordenschat",
+      "grammar_forms": "✏️ Grammar en forms",
+      "writing_lab": "📝 Writing en sentences",
+      "translation_boost": "📖 Translation en reading"
+    },
+    "reference": {
+      "colors": {
+        "label": "Kleuren"
+      },
+      "animals": {
+        "label": "Dieren"
+      },
+      "actions": {
+        "label": "Veel voorkomende werkwoorden"
+      },
+      "emotions": {
+        "label": "Emoties"
+      },
+      "school": {
+        "label": "Het schoolleven"
+      },
+      "technology": {
+        "label": "Technologie"
+      }
+    },
+    "topics": {
+      "phonics": "Klanken",
+      "vocabulary": "Woordenschat",
+      "grammar": "Grammatica",
+      "translation": "Vertaling",
+      "sentences": "Zinnen",
+      "writing": "Schrijven",
+      "mixed": "Gemengd"
+    },
+    "steps": {
+      "wordIsEnglish": "We see dat \"{word}\" is in Engels.",
+      "findLocalizedMeaning": "Zoek de betekenis van het woord.",
+      "correctMeaning": "De juiste betekenis is: {answer}.",
+      "checkMeaning": "Controleer of de betekenis klopt.",
+      "wordIsCue": "We see de word \"{word}\".",
+      "findEnglishMeaning": "Zoek de Engelse betekenis van het woord.",
+      "grammarRules": "Bekijk de Engelse grammaticaregels.",
+      "grammarAmIsAre": "I = am, Je/We/Zij = zijn, He/She/It = is.",
+      "readEnglishSentence": "Lees de Engelse zin: \"{sentence}\".",
+      "translatePiece": "Probeer elk woord of deel ervan te vertalen.",
+      "buildSentence": "Zet de woorden samen in een zin.",
+      "correctTranslation": "Correcte vertaling: {answer}.",
+      "readSentence": "Lees de zin: \"{sentence}\".",
+      "buildEnglishSentence": "Zet de woorden samen in een Engelse zin.",
+      "readTemplate": "Lees de zin: \"{template}\".",
+      "whatIsMissing": "Zoek uit wat er ontbreekt: welk woord of welke grammaticavorm.",
+      "grammarCheck": "Controleer wat bij de grammaticaregels past: ik/jij/wij/zij = zijn, hij/zij/het = is.",
+      "spellingReadWord": "Lees het woord: \"{word}\".",
+      "spellingRecallEnglish": "Recall zijn Engels form.",
+      "spellingLetterByLetter": "Schrijf letter voor letter en let op de spelling.",
+      "writeSentence": "Lees de zin: \"{sentence}\".",
+      "breakIntoParts": "Breek de zin in delen en bedenk hoe je elke zin in het Engels kunt uitspreken.",
+      "checkWordOrder": "Controleer de woordvolgorde en een hoofdletter aan het begin.",
+      "correctSentence": "Juiste zin: {answer}."
+    },
+    "mistakes": {
+      "checkMeaningLearning": "Het juiste antwoord is \"{answer}\". Controleer nogmaals: komt je betekenis overeen met het woord?",
+      "checkMeaning": "Controleer nogmaals: komt je betekenis overeen met het woord?",
+      "iAmNotIs": "Onthoud: bij I gebruik je altijd am, niet is. I am = I am.",
+      "amOnlyWithI": "Onthoud: ben is alleen bij ik. Hij/zij/het = is, jij/wij/zij = zijn.",
+      "checkGrammarLearning": "Het juiste antwoord is \"{answer}\". Controleer nogmaals de grammaticaregels: ik ben, jij/wij/zij zijn, hij/zij/het is.",
+      "checkGrammar": "Controleer nogmaals de grammaticaregels: ik ben, jij/wij/zij zijn, hij/zij/het is.",
+      "checkTranslationLearning": "Correcte vertaling: {answer}. Controleer nog eens: heb je elk woord correct vertaald?",
+      "checkTranslation": "Controleer nog eens: heb je elk woord correct vertaald?",
+      "checkWordFitLearning": "Het juiste antwoord is \"{answer}\". Controleer nog eens: past jouw woord in de zin?",
+      "checkWordFit": "Controleer nog eens: past jouw woord in de zin?",
+      "checkSpellingLearning": "Het juiste antwoord is \"{answer}\". Misschien heb je het verkeerd gespeld: controleer het letter voor letter.",
+      "checkSpelling": "Misschien heb je het verkeerd gespeld: controleer het letter voor letter.",
+      "checkMeaningContext": "Controleer nogmaals: komt je betekenis overeen met het woord? Denk na over het woord op basis van de context."
+    },
+    "audio": {
+      "maxReplays": "Je hebt het maximale aantal luisterbeurten voor deze vraag bereikt.",
+      "playing": "Spelen…",
+      "playFailed": "Kan momenteel niet spelen. Probeer het opnieuw of ga verder met de tekst.",
+      "listenTitle": "Luister naar de vraag ({current}/{max})",
+      "listen": "Luisteren",
+      "srLabel": "Audio · klanken"
+    }
+  },
+  "science": {
+    "leaderboardTitle": "🏆 Ranglijst – Natuur en techniek",
+    "howToLearnTitle": "📘 Hoe leer je hier natuur en techniek?",
+    "howToLearnBlurb": "Het doel is om natuur en techniek op een leuke manier te oefenen, afgestemd op groep, onderwerp en moeilijkheidsgraad.",
+    "levelUp": "Je bent een niveau omhoog gegaan in natuur en techniek!",
+    "levelUpNow": "Je bent nu niveau {level}",
+    "scientistLevel": "Wetenschappelijk niveau",
+    "referenceBoardTitle": "📚 Conceptboard natuur en techniek",
+    "practiceFocus": {
+      "balanced": "📚 Alle onderwerpen",
+      "life_science": "🧬 Leven en natuur",
+      "earth_space": "🌍 Aarde en ruimte",
+      "materials_energy": "🧪 Materialen en experimenten"
+    },
+    "reference": {
+      "life_science": {
+        "label": "Leven en natuur",
+        "terms": {
+          "respiratory": {
+            "term": "Respiratory systeem",
+            "desc": "Brengt zuurstof in het lichaam en verwijdert koolstofdioxide."
+          },
+          "photosynthesis": {
+            "term": "Fotosynthese",
+            "desc": "Proces waarbij planten voedsel maken met behulp van licht."
+          },
+          "foodWeb": {
+            "term": "Voedsel web",
+            "desc": "Netwerk van voedselketens die laten zien hoe energie in de natuur beweegt."
+          },
+          "adaptations": {
+            "term": "Aanpassingen",
+            "desc": "Lichaams- of gedragsveranderingen die helpen overleven."
+          }
+        }
+      },
+      "earth_space": {
+        "label": "Aarde en ruimte",
+        "terms": {
+          "atmosphere": {
+            "term": "Sfeer",
+            "desc": "Layer van gases around Aarde."
+          },
+          "waterCycle": {
+            "term": "Watercyclus",
+            "desc": "Pad van water tussen zee, wolken en land."
+          },
+          "crust": {
+            "term": "De aardkorst",
+            "desc": "Buitenste rotsachtige laag met tektonische platen."
+          },
+          "planet": {
+            "term": "Planeet",
+            "desc": "Lichaam dat rond een ster draait, b.v. Aarde of Mars."
+          }
+        }
+      },
+      "materials_energy": {
+        "label": "Materials en energie",
+        "terms": {
+          "states": {
+            "term": "States van matter",
+            "desc": "Vast, vloeibaar en gas: verschillende vormen van hetzelfde materiaal."
+          },
+          "mixtureCompound": {
+            "term": "Mengsel versus verbinding",
+            "desc": "Mengsel — gemengd zonder chemische binding; verbinding - sterke band."
+          },
+          "renewable": {
+            "term": "Renewable energie",
+            "desc": "Bronnen als zon en wind die niet opraken."
+          },
+          "physicalChange": {
+            "term": "Physical veranderen",
+            "desc": "Verandering van vorm of staat zonder een nieuwe substantie te maken."
+          }
+        }
+      }
+    },
+    "topics": {
+      "body": "Human lichaam",
+      "animals": "Dieren",
+      "plants": "Planten",
+      "materials": "Materialen",
+      "earth_space": "Aarde en ruimte",
+      "environment": "Environment en ecology",
+      "experiments": "Experiments en processes",
+      "mixed": "Gemengde onderwerpen"
+    },
+    "hints": {
+      "body": "Kijk nog eens: wat is de rol van het systeem of orgaan? Hoe helpt het het lichaam?",
+      "animals": "Vraag jezelf af: waar woont het dier? Wat eet het? Wat zijn de kenmerken ervan?",
+      "plants": "Denk aan plantendelen en -rollen: wortel, stengel, bladeren, bloemen.",
+      "materials": "Denk aan de toestand van materie en materiaaleigenschappen (vast/vloeistof/gas, oplosbaarheid, etc.).",
+      "earth_space": "Onthoud: de aarde heeft stabiele bewegingen (rotatie en baan rond de zon).",
+      "environment": "Bepaal of de actie het milieu helpt of schaadt (vervuiling, afval, recycling).",
+      "experiments": "Denk als een wetenschapper: wat gebeurt er in het experiment? Oorzaak en gevolg?",
+      "genericRetry": "Denk nog eens na over het gebruik van de vraagformulering en de vraag 'Wat moet je onthouden?' lijst hierboven — gok niet te snel.",
+      "genericCheck": "Controleer de gegevens en uitleg die je hebt geleerd opnieuw."
+    },
+    "steps": {
+      "understand": "1. Begrijp eerst de vraag: over welk onderwerp gaat het?",
+      "onlyMatch": "{num}. Van alle opties komt alleen \"{answer}\" overeen met de uitleg.",
+      "summary": "{num}. Samenvatting: {explanation}"
+    },
+    "insights": {
+      "needsStrengthening": "Te versterken gebied: {topic} (nauwkeurigheid ~{percent}%)",
+      "relativeStrength": "Relatieve sterkte in {topic}.",
+      "improving": "Mooie verbetering in {topic}.",
+      "accuracyRising": "De nauwkeurigheidstrend in de recente reeks stijgt.",
+      "accuracyFalling": "De nauwkeurigheidstrend in de recente reeks daalt - bekijk het materiaal."
+    },
+    "howToLearnSteps": {
+      "step1": "Kies het leerjaar, het niveau en het onderwerp (bijvoorbeeld het menselijk lichaam, planten, dieren en meer).",
+      "step2": "Kies een spelmodus: leren, uitdagen met timer en levens, snelheid of marathon.",
+      "step3": "Beantwoord meerkeuzevragen, waar/onwaar-vragen en vragen in experimentele stijl.",
+      "step4": "Bouw antwoordreeksen op en verdien sterren en XP-punten."
+    },
+    "safety": "Volg altijd de veiligheidsregels in het laboratorium. Vraag het aan een volwassene voordat u thuis gaat experimenteren."
+  }
+}

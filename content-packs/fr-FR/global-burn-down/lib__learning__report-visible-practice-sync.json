@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Apprentissage",
+    "practice": "Pratique",
+    "challenge": "Défi",
+    "extended_practice": "Pratique étendue",
+    "graded": "Noté",
+    "regular": "Commune",
+    "mistakes": "Erreurs",
+    "review_mistakes": "Vérifier les erreurs"
+  }
+}

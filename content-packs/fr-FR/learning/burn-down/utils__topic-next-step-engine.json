@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "Passer au niveau avancé – même sujet uniquement",
+    "move_up_a_grade_same_topic_only": "Remonter d'une classe — même sujet uniquement",
+    "solidify_at_the_same_level": "Solidifier au même niveau",
+    "solidify_at_regular_level": "Solidifier à un niveau régulier",
+    "strengthen_at_the_same_level": "Renforcer au même niveau",
+    "return_to_regular_practice": "Retour à la pratique régulière",
+    "lower_difficulty_same_topic_only": "Difficulté inférieure – même sujet uniquement",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "Assez de questions ont été résolues à un niveau régulier avec une précision stable. Essayer avancé sur le même sujet est raisonnable.",
+    "trying_advanced_on_the_same_topic_is_recommended": "Il est recommandé d'essayer avancé sur le même sujet.",
+    "you_can_try_advanced_on_the_same_topic": "Tu peux essayer avancé sur le même sujet.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "Développez une pratique plus régulière au niveau régulier avant de passer au niveau avancé.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "Continue à un niveau régulier et renforcez la précision et la confiance avant de progresser.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "Nous allons rester encore un peu au niveau régulier, devenir plus forts, puis essayer d'avancer.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "Le défi avancé était de taille en ce moment. Un retour à une pratique régulière sur le même sujet est recommandé.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "Le défi avancé était de taille en ce moment. Reprenez la pratique régulière, renforcez la précision et la confiance, puis réessayez plus tard.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "Nous reprendrons un peu l’entraînement régulier, deviendrons plus forts, puis réessayerons.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "Renforcez le même sujet avec une pratique régulière à un rythme confortable.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "Continue la pratique régulière à un rythme confortable, avec quelques courtes questions de renforcement.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "Nous allons d’abord nous renforcer avec une pratique régulière, puis passer à autre chose.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "Essaie un niveau ou une classe inférieure, puis avancez progressivement.",
+    "limited_information": "Informations limitées"
+  }
+}

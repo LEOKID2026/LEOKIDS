@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "typeof_id_string_id_length_0_id_length": "typeof id === \"string\" && id.lunghezza > 0 && id.lunghezza",
+    "r_dueat": "r.dueAt"
+  }
+}

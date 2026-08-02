@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "not_available": "Pas disponible",
+    "there_are_only_a_few_questions_on_this_topic_so_it_is_still_early_to_dra": "Il n’y a que quelques questions sur ce sujet, il est donc encore tôt pour tirer une conclusion solide.",
+    "keep_practicing_a_few_more_short_questions_and_watch_for_whether_the_sam": "Continuez à poser quelques questions courtes supplémentaires et vérifiez si la même erreur se répète.",
+    "most_answers_are_correct_and_this_topic_looks_relatively_stable": "La plupart des réponses sont correctes et ce sujet semble relativement stable.",
+    "keep_up_the_success_with_a_short_practice_every_now_and_then": "Maintenez votre succès avec une courte pratique de temps en temps.",
+    "the_same_type_of_mistake_keeps_showing_up": "Le même type d’erreur continue de se produire.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_how_they_reached_the_": "Faites une pause après une erreur et demandez à l'enfant d'expliquer comment il est parvenu à la réponse.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_step_by_step_how_they": "Faites une pause après une erreur et demandez à l’enfant d’expliquer, étape par étape, comment il est parvenu à la réponse.",
+    "practice_the_specific_pairs_that_keep_coming_up_wrong_out_loud_and_as_a_": "Entraînez-vous aux paires spécifiques qui ne cessent de se tromper, à voix haute et dans le cadre d'un jeu rapide.",
+    "pause_before_solving_and_ask_should_the_result_be_bigger_or_smaller_than": "Faites une pause avant de résoudre et demandez : le résultat doit-il être plus grand ou plus petit que le nombre de départ ?",
+    "read_a_short_passage_together_and_pause_to_ask_where_in_the_text_did_you": "Lisez ensemble un court passage et faites une pause pour demander : où dans le texte avez-vous trouvé la réponse ?",
+    "practice_a_few_short_questions_and_ask_the_child_to_explain_the_method": "Pratiquez quelques questions courtes et demandez à l'enfant d'expliquer la méthode."
+  }
+}

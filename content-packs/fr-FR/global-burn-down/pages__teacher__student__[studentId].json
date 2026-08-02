@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "student_report": "Rapport d'élève",
+    "invalid_student_id": "Carte d'élève invalide.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "Vous n'êtes pas autorisé à consulter le rapport de cet élève.",
+    "please_select_valid_dates": "Veuillez sélectionner des dates valides"
+  }
+}

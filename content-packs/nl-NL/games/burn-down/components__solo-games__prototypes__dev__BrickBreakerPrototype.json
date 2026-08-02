@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Steenbreker",
+    "prototype_move_paddle_break_bricks": "Prototype · beweeg de peddel · breek stenen",
+    "drag_move_below_don_t_miss_the_ball": "Sleep/beweeg naar beneden · mis de bal niet",
+    "bx_s_ballx_ball_r": "bx && s.ballX - BALL_R",
+    "by_s_bally_ball_r": "door && s.ballY - BALL_R",
+    "all_bricks_cleared": "Alle bricks cleared! 🎉",
+    "tap_to_play_again": "Tap naar play opnieuw",
+    "ball_dropped": "Bal gevallen!"
+  }
+}

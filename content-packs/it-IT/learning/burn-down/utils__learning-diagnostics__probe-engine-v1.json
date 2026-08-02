@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Ventana de esercitazione delgada: se servono mas observaciones prima de una interpretacion estable.",
+    "stable_accuracy_over_at_least_two_sessions": "Precision estable durante al menos dos sesiones",
+    "continued_random_incorrect_pattern_without_convergence": "Patron continuo aleatorio/errato sin convergencia",
+    "re_evaluate_mastery_and_misconceptions": "Reevaluar el dominio y los conceptos erroneos",
+    "consistent_correct_responses_on_parallel_items": "Risposte correctas consistentes en items paralelos.",
+    "repeated_same_distractor_selection": "Seleccion repetida del mismo distractor",
+    "escalate_practice_specificity": "Incrementar la especificidad de la esercitazione",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Los puntos fuertes de los requisitos previos no estan claros en relacion con las habilidades avanzadas.",
+    "prerequisite_skill_shows_independent_accuracy": "La habilidad previa muestra precision independiente",
+    "prerequisite_remains_unstable": "El requisito previo sigue siendo inestable",
+    "foundation_review_vs_isolated_advanced_gap": "Revision de la base versus brecha avanzada aislada",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Fuerte dominio observado con sonda de provocacion opcional de volumen adecuado para confirmar la transferencia.",
+    "maintains_accuracy_on_harder_parallel_items": "Mantiene la precision en elementos paralelos mas dificiles",
+    "breakdown_on_increased_complexity": "Desglose por mayor complejidad",
+    "adjust_level_or_add_scaffolded_practice": "Ajustar el nivel o agregar esercitazione con andamios",
+    "default_maintenance_probe_confirm_stability": "Sonda de mantenimiento predeterminada: confirma la estabilidad.",
+    "meet_or_exceed_recent_accuracy_band": "Cumple o supera la banda de precision reciente",
+    "accuracy_drops_materially": "La precision cae materialmente",
+    "adjust_practice_plan": "Ajustar el plan de esercitazione"
+  }
+}

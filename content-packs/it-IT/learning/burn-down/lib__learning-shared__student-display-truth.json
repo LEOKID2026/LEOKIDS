@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "Aun no hay datos",
+    "data_unavailable_right_now": "Los datos no estan disponibles en questo momento",
+    "loading": "Caricamento…",
+    "cumulative": "Acumulado",
+    "for_the_current_month": "Del mes actual",
+    "cumulative_from_all_sessions": "Acumulado de todas las sesiones",
+    "from_completed_sessions": "De sesiones completadas",
+    "from_all_sessions_with_duration": "De todas las sesiones con duracion",
+    "credited_learning_time_questions_books_and_parent_activities": "Credited learning time — questions, books, and parent activities"
+  }
+}

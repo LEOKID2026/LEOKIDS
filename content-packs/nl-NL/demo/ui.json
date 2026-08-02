@@ -1,0 +1,126 @@
+{
+  "bar": {
+    "badge": "Demomodus",
+    "gradeLabel": "Groep",
+    "playExpired": "De tijd voor een nieuw begin is voorbij",
+    "playTime": "Spelen time",
+    "minutesUnit": "min",
+    "changeGrade": "Veranderen groep",
+    "exitDemo": "Demo afsluiten"
+  },
+  "enter": {
+    "pageTitle": "Demomodus — LEO KIDS",
+    "pageDescription": "Probeer de kinderwereld zonder je aan te melden",
+    "heading": "Ouder demo mode",
+    "intro": "Kies een groep en verken de kinderwereld. {minutes} minuten spelen en leren — geen aanmelding.",
+    "activeSessionNote": "Je hebt een actieve demo. Als je de groep wijzigt, wordt de timer niet gereset.",
+    "chooseGradeLegend": "Kies een groep",
+    "enterButton": "Ga naar de kinderwereld",
+    "enteringButton": "Binnenkomen…"
+  },
+  "homeButton": {
+    "labelDesktop": "Probeer de kinderwereld",
+    "labelMobile": "Demo",
+    "ariaLabel": "Probeer de kinderwereld – demomodus",
+    "dismissAriaLabel": "Demoknop sluiten"
+  },
+  "gate": {
+    "loading": "Laden… demo mode…",
+    "loadError": "Kan demomodus niet laden. Probeer de pagina te vernieuwen."
+  },
+  "timeExpiredModal": {
+    "title": "De demotijd is voorbij",
+    "body": "Er zijn {minutes} minuten verstreken sinds de demo begon. Je kunt door de kinderwereld blijven bladeren, maar je kunt geen nieuw spel of nieuwe activiteit starten.",
+    "inProgressNote": "Spellen of activiteiten die al bezig zijn, gaan door totdat ze klaar zijn.",
+    "dismiss": "Ik heb het",
+    "restart": "Start een new demo"
+  },
+  "onlineGameUnavailable": {
+    "title": "Online games zijn niet beschikbaar in de demomodus",
+    "body": "In de demomodus kun je door de speelhal bladeren en de games bekijken, maar de online multiplayer is niet actief.",
+    "backToArcade": "Terug naar arcade"
+  },
+  "display": {
+    "studentName": "Demomodus",
+    "greeting": "Welcome naar demo mode",
+    "arcadePlayerName": "Demo-speler",
+    "myRoomMessage": "Mijn kamer — demovoorbeeld",
+    "learningMinutesScope": "Van session summaries (demo)",
+    "allSubjectsScope": "Alle vakken",
+    "encouragement": "Houden practicing — dit is een demo!",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Oefenen rekenen",
+    "mathDescription": "Antwoord 5 rekenen questions",
+    "soloTitle": "Solo-spel",
+    "soloDescription": "Spelen één solo game",
+    "tier5": "5 minuten",
+    "tier15": "15 minuten",
+    "tier30": "30 minuten"
+  },
+  "subjects": {
+    "math": "Rekenen",
+    "geometry": "Meetkunde",
+    "english": "Engels",
+    "science": "Natuur en techniek"
+  },
+  "cards": {
+    "purchaseBlocked": "Aankopen zijn niet beschikbaar in de demomodus.",
+    "sellBlocked": "Kaarten verkopen is niet beschikbaar in de demomodus.",
+    "loadFailed": "Could niet load cards."
+  },
+  "arcade": {
+    "actionBlocked": "Deze actie is niet beschikbaar in de demomodus.",
+    "quickPlayBlocked": "Snel spelen is niet beschikbaar in de demomodus."
+  },
+  "activity": {
+    "classroomUnavailable": "Klaslokaalactiviteiten zijn niet beschikbaar in de demomodus."
+  },
+  "worksheet": {
+    "pageTitle": "Werkblad — demo mode",
+    "intro": "U kunt door werkbladen bladeren vanuit de lijst op de startpagina. Digitale indiening is niet beschikbaar in de demomodus.",
+    "backHome": "← Terug naar home",
+    "submitBlocked": "Inzending is niet beschikbaar in de demomodus."
+  },
+  "myRoom": {
+    "title": "Mijn kamer",
+    "saveBlocked": "Opslaan is niet mogelijk in de demomodus."
+  },
+  "friends": {
+    "demoUnavailable": "Vrienden en Leo-nummer - demovoorbeeld. Het toevoegen van vrienden en uitnodigingen is niet mogelijk."
+  },
+  "grades": {
+    "g1": "Groep 3",
+    "g2": "Groep 4",
+    "g3": "Groep 5",
+    "g4": "Groep 6",
+    "g5": "Groep 7",
+    "g6": "Groep 8"
+  },
+  "parentPortal": {
+    "barBadge": "Ouder demo mode",
+    "barSubtitle": "View alleen · 3 sample children",
+    "barExit": "Demo afsluiten",
+    "dashboardSubtitle": "Demo mode — ouder portal",
+    "homeParentLabelLine1": "Ouder",
+    "homeParentLabelLine2": "demonstratie",
+    "homeParentAriaLabel": "Bovenliggende demo — alleen-lezen portal",
+    "homeParentDismissAriaLabel": "Dismiss ouder demo button",
+    "enterPageTitle": "Ouder demo — LEO KIDS",
+    "enterPageDescription": "Verken het ouderportaal met voorbeelden van kinderen, rapporten en aanbevelingen – alleen bekijken",
+    "enterHeading": "Ouder portal demo",
+    "enterBack": "Terug",
+    "enterIntro": "Verken het ouderportaal met drie voorbeeldkinderen, rapporten, activiteiten en aanbevelingen – alleen bekijken, geen aanmelding.",
+    "enterActiveSessionNote": "U heeft een actieve ouderdemo; u kunt doorgaan waar u was gebleven.",
+    "enterReadOnlyNote": "In deze modus kunnen wijzigingen niet worden opgeslagen.",
+    "enterButton": "Enter ouder portal",
+    "enteringButton": "Binnenkomen…",
+    "enterBackHome": "Terug naar home",
+    "readOnlyDefault": "De demomodus is alleen voor weergave. Wijzigingen kunnen niet worden opgeslagen.",
+    "readOnlyShare": "Demomodus — delen buiten de demo is niet beschikbaar.",
+    "readOnlyWorksheets": "Demomodus: u kunt door werkbladen bladeren, maar geen nieuwe maken.",
+    "apiReadOnlyError": "Demo mode is view alleen."
+  }
+}

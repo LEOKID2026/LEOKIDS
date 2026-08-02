@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Vaardigheid ≥85% dekking, subvaardigheid ≥50%, gemiddelde volledigheid ≥0,65, hoog risicoaandeel <8%.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Vaardigheidsdekking bruikbaar, maar aanzienlijke hiaten in cognitieve/fouten/vereisten.",
+    "large_missing_skill_or_inconsistent_tagging": "Grote ontbrekende vaardigheid of inconsistente tagging.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "Vaardigheids-ID grotendeels afwezig - diagnoseroutering onbetrouwbaar."
+  }
+}

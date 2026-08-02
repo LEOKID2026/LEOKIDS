@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "Pas assez de contexte pour planifier (sujet manquant).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "Davantage d'activités d'apprentissage sont nécessaires avant de suggérer un prochain objectif.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "Le système d'apprentissage a besoin d'un peu plus de données pratiques avant de suggérer l'étape suivante.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Récupérez quelques éléments de pratique supplémentaires ; les conclusions sont différées.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "La pratique de l'anglais peut continuer, mais le routage des compétences doit être confirmé par un professeur.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "Le balisage en anglais est incomplet dans la banque de contenu ; Le planificateur n’acheminera pas automatiquement les compétences précises.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "En attente des métadonnées de question vérifiées avant de suggérer un chemin avancé.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "Les métadonnées des compétences pour l'étape suivante ne sont pas confirmées ; maintenir l'avancement automatique.",
+    "short_probe_to_verify_understanding_versus_guessing": "Sonde courte pour vérifier la compréhension plutôt que la supposition.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Signaux incohérents ou difficiles à deviner : utilisez un petit kit de diagnostic.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Entraînement supplémentaire sur la compétence actuelle avec une difficulté de soutien.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Pratique ciblée sur la même compétence ; difficulté maintenue ou légèrement abaissée.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Bref examen d'une compétence de base qui prend en charge le sujet actuel.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Renforcez une compétence préalable avant de pousser plus fort la compétence principale.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Prêt pour une pratique légèrement plus difficile sur la même ligne de compétences.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "Les signaux soutiennent une augmentation prudente des difficultés avec la surveillance.",
+    "continue_solid_practice_at_the_current_level": "Continuer une pratique solide au niveau actuel.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Maintenir la difficulté actuelle tout en consolidant la maîtrise.",
+    "review_style_practice_on_the_current_skill": "Pratique de style révision sur la compétence actuelle.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "Le moteur suggère un examen ; Le planificateur s'aligne sur la pratique des mêmes compétences.",
+    "steady_practice_on_the_current_focus": "Pratique constante sur l’orientation actuelle.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Chemin de sécurité par défaut : continuez la pratique sans avancer de difficulté."
+  }
+}

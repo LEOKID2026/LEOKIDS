@@ -1,0 +1,236 @@
+{
+  "probesByErrorTag": {
+    "adds_denominators_directly": {
+      "skill": "Een gemeenschappelijke noemer vinden voordat je breuken optelt",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Controleer of de moeilijkheid ligt in het vinden van een gemeenschappelijke noemer vóór de optelling zelf, met korte vragen over slechts één gemeenschappelijke noemer."
+    },
+    "wrong_lcm": {
+      "skill": "De kleinste gemene deler begrijpen",
+      "suggestedQuestionType": "fraction_lcm_pair_compare",
+      "reason": "Voer paren van kleine noemers uit en vraag om de kleinste gemene deler te identificeren voordat u ze combineert."
+    },
+    "ignores_denominator": {
+      "skill": "Koppeling van tellerΓÇônoemer bij breukbewerkingen",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Versterk de link tussen teller en noemer voordat je twee breuken combineert."
+    },
+    "concept_gap": {
+      "skill": "Een breuk begrijpen als een verhouding",
+      "suggestedQuestionType": "fraction_meaning_visual",
+      "reason": "Toon een visuele weergave van de breuk als verhouding vóór het optelalgoritme."
+    },
+    "operation_confusion": {
+      "skill": "Onderscheidend optellen en vermenigvuldigen van breuken",
+      "suggestedQuestionType": "fraction_operation_gate",
+      "reason": "Kies expliciet één bewerking (optellen/aftrekken/vermenigvuldigen) met een korte leidende zin."
+    },
+    "tense_confusion": {
+      "skill": "Match de tijd met een tijdswoord of onderwerp",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Kies minimale paren (bijvoorbeeld verleden/heden) met dezelfde wortel en een duidelijk tijdwoord."
+    },
+    "grammar_pattern_error": {
+      "skill": "Overeenkomende werkwoordsvorm met het onderwerp",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer korte zinnen met enkelvoud/meervoud onderwerpen en bijpassende werkwoordsvormen."
+    },
+    "vocabulary_gap": {
+      "skill": "Vocabulary in een short sentence",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Maak een woord af in een korte zin met duidelijke context (geen op zichzelf staande woordenlijst)."
+    },
+    "concept_confusion": {
+      "skill": "Onderscheiden van nauw verwante wetenschappelijke concepten",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Presenteer twee aangrenzende concepten en kies één correcte definitie uit de verkorte tekst."
+    },
+    "fact_recall_gap": {
+      "skill": "Een feit uit de les herinneren",
+      "suggestedQuestionType": "science_fact_one_line_recall",
+      "reason": "Een korte vraag met één strak antwoord uit de geleerde stof."
+    },
+    "cause_effect_gap": {
+      "skill": "Oorzaak-gevolg-relatie",
+      "suggestedQuestionType": "science_cause_effect_pair",
+      "reason": "Kies in een eenvoudige situatie wat uit de oorzaak komt en wat uit het gevolg."
+    },
+    "classification_error": {
+      "skill": "Classifying door een single criterion",
+      "suggestedQuestionType": "science_single_criterion_sort",
+      "reason": "Presenteer een kleine set en vraag om deze te classificeren op basis van één duidelijk attribuut."
+    },
+    "place_value_error": {
+      "skill": "Place value van een digit",
+      "suggestedQuestionType": "place_value_digit_value",
+      "reason": "Isoleer in een korte oefening de plaatswaarde van één cijfer in een getal."
+    },
+    "multiplication_fact_gap": {
+      "skill": "Vermenigvuldigen table facts",
+      "suggestedQuestionType": "multiplication_fact_check",
+      "reason": "Een korte directe vermenigvuldigingsvraag uit de tafel van vermenigvuldiging."
+    },
+    "geometry_calculation_slip": {
+      "skill": "Een formule of eerste stap in de geometrie kiezen",
+      "suggestedQuestionType": "geometry_formula_choice",
+      "reason": "Kies een geschikte formule of eerste stap vóór numerieke berekening."
+    },
+    "prerequisite_gap": {
+      "skill": "Vereist concept",
+      "suggestedQuestionType": "geometry_concept_minimal_contrast",
+      "reason": "Versterk een fundamenteel concept voordat u verdergaat."
+    },
+    "spelling_pattern_error": {
+      "skill": "Spelling in korte context",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Maak een woord in een zin af met een duidelijke context."
+    },
+    "present_simple_3rd_singular_error": {
+      "skill": "Werkwoordsvorm van de derde persoon in de eenvoudige tegenwoordige tijd",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer korte zinnen met hij/zij/het en kies de bijpassende werkwoordsvorm."
+    },
+    "past_tense_form_error": {
+      "skill": "Eenvoudige vorm uit het verleden",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Kies minimale verleden/heden-paren met dezelfde wortel."
+    },
+    "progressive_aspect_error": {
+      "skill": "Present continuous (am/is/zijn + V-ing)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Controleer de keuze tussen een continue actie en een eenvoudige tijd."
+    },
+    "question_word_order_error": {
+      "skill": "Word order in een question",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Isoleer korte vraagzinnen met do/doe/is/zijn op de juiste plaats."
+    },
+    "modal_verb_error": {
+      "skill": "Helpende werkwoorden (kunnen/moeten/moeten)",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Kies tussen twee hulpwerkwoorden in een korte zin met hetzelfde hoofdwerkwoord."
+    },
+    "quantifier_choice_error": {
+      "skill": "Quantifiers (sommige/veel/much)",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Maak in een korte zin onderscheid tussen telbare en ontelbare hoeveelheden."
+    },
+    "comparative_form_error": {
+      "skill": "Vergelijkingsformulier",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Kies -er/-est of more/most in een korte zin."
+    },
+    "future_form_error": {
+      "skill": "Future (zal / going naar)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Kies tussen willen en gaan in een duidelijke context."
+    },
+    "perfect_aspect_error": {
+      "skill": "Perfect tenses (hebben/had + V3)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Vergelijk een perfecte vorm met een eenvoudige tijd in dezelfde context."
+    },
+    "conditional_clause_error": {
+      "skill": "Voorwaardelijke zin",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Isoleer if/when met een overeenkomende werkwoordsvorm in één persoon."
+    },
+    "sentence_structure_error": {
+      "skill": "Zinsstructuur",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer korte zinnen met een consistente woordvolgorde en werkwoordsvorm."
+    },
+    "advanced_grammar_error": {
+      "skill": "Geavanceerde grammatica",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer één zin met een duidelijk grammaticapatroon om te controleren."
+    }
+  },
+  "probesByDiagnosticSkillId": {
+    "math_frac_same_den": {
+      "skill": "Breuken met dezelfde noemer optellen/aftrekken",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Bevestig de stabiliteit in de teller als de noemer al gedeeld is."
+    },
+    "math_frac_common_denominator": {
+      "skill": "Een gemeenschappelijke noemer vinden voordat je optelt",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Controleer eerst de stap met de gemene deler, zonder direct naar het uiteindelijke antwoord te gaan."
+    },
+    "en_grammar_be_present": {
+      "skill": "Zijn forms met de subject",
+      "suggestedQuestionType": "english_be_agreement_gate",
+      "reason": "Isoleer zinnen met I/he/zij en kies de bijbehorende be-vorm."
+    },
+    "en_grammar_present_simple": {
+      "skill": "Eenvoudig heden - onderwerpΓÇôwerkwoordovereenkomst",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer korte zinnen met hij/zij/het en kies de bijpassende werkwoordsvorm."
+    },
+    "en_grammar_past_simple": {
+      "skill": "Simpel verleden",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Kies minimale verleden/heden-paren met dezelfde wortel."
+    },
+    "en_grammar_progressive": {
+      "skill": "Aanwezig continu",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Controleer de keuze tussen een continue actie en een eenvoudige tijd."
+    },
+    "en_grammar_question_frames": {
+      "skill": "Vraagkaders",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Isoleer korte vraagzinnen met do/doe/is/zijn op de juiste plaats."
+    },
+    "en_grammar_modals": {
+      "skill": "Helpende werkwoorden",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Kies tussen twee hulpwerkwoorden in een korte zin."
+    },
+    "en_grammar_quantifiers": {
+      "skill": "Kwantificatoren",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Onderscheid wat/veel/veel in een korte zin."
+    },
+    "en_grammar_comparatives": {
+      "skill": "Vergelijking",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Kies een vergelijkingsformulier in een korte zin."
+    },
+    "en_grammar_future_forms": {
+      "skill": "Toekomst",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Kies tussen willen en gaan in een duidelijke context."
+    },
+    "en_grammar_complex_tenses": {
+      "skill": "Perfecte tijden",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Controleer perfect versus een eenvoudige tijd in dezelfde context."
+    },
+    "en_grammar_conditionals": {
+      "skill": "Voorwaardelijke voorwaarden",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Isoleer if/when met een passende werkwoordsvorm."
+    },
+    "en_grammar_phase29_standard": {
+      "skill": "Overeenkomende werkwoordsvorm met het onderwerp",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer korte zinnen met enkelvoud/meervoud onderwerpen en bijpassende werkwoordsvormen."
+    },
+    "en_grammar_phase29_advanced": {
+      "skill": "Geavanceerde grammatica - tussenstap",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isoleer één zin met een duidelijk grammaticapatroon om te controleren."
+    },
+    "sci_body_fact_recall": {
+      "skill": "Recalling een lichaam/systems fact",
+      "suggestedQuestionType": "science_fact_single_choice",
+      "reason": "Eén strakke feitenvraag uit het materiaal over het orgaan of systeem."
+    },
+    "sci_respiration_concept": {
+      "skill": "Rol van het ademhalingssysteem bij gasuitwisseling",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Maak onderscheid tussen bloedtransport en zuurstof/CO2-uitwisseling met de lucht."
+    }
+  }
+}

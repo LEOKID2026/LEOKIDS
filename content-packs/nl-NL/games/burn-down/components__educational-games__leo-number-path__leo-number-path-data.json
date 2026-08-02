@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "choose_all_the_odd_numbers_on_the_path": "Kies alle oneven nummers op het pad",
+    "prompt_odd": "Kies alle oneven getallen.",
+    "prompt_even": "Kies alle even getallen.",
+    "prompt_multiples": "Kies alle multiples van {multiple}.",
+    "prompt_skip_forward": "Begin bij {start}. Voeg {step} elke stap toe. Kies de nummers in volgorde.",
+    "prompt_skip_backward": "Begin bij {start}. Trek elke stap {step} af. Kies de nummers in volgorde.",
+    "prompt_arithmetic_ascending": "Begin bij {start} en voeg bij elke stap {step} toe. Kies de nummers in volgorde.",
+    "prompt_arithmetic_descending": "Begin bij {start} en trek {step} van elke stap af. Kies de nummers in volgorde.",
+    "prompt_arithmetic_missing": "Voltooi de reeks. Kies de ontbrekende cijfers in volgorde.",
+    "prompt_geometric_sequence": "Begin bij {start} en vermenigvuldig elke stap met {ratio}. Kies de nummers in volgorde.",
+    "solution_prefix": "Juiste pad:"
+  }
+}

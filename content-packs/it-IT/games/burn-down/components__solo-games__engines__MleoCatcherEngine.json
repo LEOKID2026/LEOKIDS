@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "player": "Giocatore",
+    "game_over": "Gioco terminado",
+    "right": "Derecha ▶"
+  }
+}

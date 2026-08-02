@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Apprendimento",
+    "practice": "Esercitazione",
+    "challenge": "Sfida",
+    "marathon": "Maratona",
+    "graded": "Calificado",
+    "normal": "Normale",
+    "mistakes": "Errores",
+    "review_mistakes": "Errores de revision"
+  }
+}

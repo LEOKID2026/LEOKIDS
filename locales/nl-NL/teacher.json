@@ -1,0 +1,121 @@
+{
+  "reportSubjects": [
+    "rekenen",
+    "meetkunde",
+    "Engels",
+    "natuur en techniek"
+  ],
+  "subjects": {
+    "math": "Rekenen",
+    "geometry": "Meetkunde",
+    "english": "Engels",
+    "science": "Natuur en techniek"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Langdurige inactiviteit",
+    "no_sessions_in_range": "Geen oefensessies in dit period",
+    "low_overall_accuracy": "Difficulty met overall performance",
+    "many_recent_mistakes": "High number van recente fouten",
+    "never_active_in_range": "Geen activity in dit period",
+    "insufficient_answers": "Niet enough data naar analyze"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Recommended naar review subject fundamentals",
+    "encourage_session_start": "Recommended naar encourage starting practice",
+    "targetedReview": "Recommended naar reinforce {subject} in class",
+    "focusPractice": "Recommended naar focus practice op {subject}",
+    "generic": "Houden monitoring progress"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inactive in dit period",
+    "low_accuracy": "Difficulty met performance",
+    "many_recent_mistakes": "High number van recente fouten",
+    "recent_mistakes": "Terugkerende fouten"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Heeft nodig immediate attention",
+    "needs_reinforcement": "Heeft nodig reinforcement",
+    "monitor": "Het monitoren waard",
+    "on_track": "Op track"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "Klas heeft nodig immediate attention",
+    "class_needs_reinforcement": "Klas heeft nodig reinforcement",
+    "class_monitor": "De les heeft toezicht en gerichte oefening nodig",
+    "class_on_track": "Klas is op track"
+  },
+  "classHealth": {
+    "no_data": "Niet enough data",
+    "critical_class": "Klas heeft nodig immediate attention",
+    "needs_reinforcement": "Klas heeft nodig reinforcement",
+    "monitor": "De les heeft toezicht en gerichte oefening nodig",
+    "strong": "Klas is op track"
+  },
+  "groupTier": {
+    "struggling": "Steungroep",
+    "on_track": "Op-track group",
+    "advanced": "Gevorderde groep"
+  },
+  "guardianAccessState": {
+    "active": "Actief",
+    "expired": "Verlopen",
+    "revoked": "Ingetrokken"
+  },
+  "actionTypes": {
+    "class_reteach": "Herhaling van de hele klas",
+    "small_group": "Klein groepswerk",
+    "individual_practice": "Gerichte individuele praktijk",
+    "collect_more_data": "Wait voor meer data"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Activiteit in de klas",
+    "worksheet_pdf": "Werkblad",
+    "focused_practice": "Gerichte praktijk"
+  },
+  "riskLevel": {
+    "high": "Heeft nodig immediate attention",
+    "moderate": "Het monitoren waard",
+    "low": "Op track"
+  },
+  "focus": {
+    "studentCalmMessage": "Er zijn momenteel geen urgente onderwerpen. Ga door zoals gewoonlijk.",
+    "hubStudentCalmMessage": "Geen focused topics - houden monitoring.",
+    "hubClassWeakTopicsCalmMessage": "Er zijn geen significante zwakke onderwerpen gedetecteerd - blijf in de gaten houden.",
+    "studentFallbackBanner": "Moeilijkheid bij dit onderwerp - diagnostische praktijk nodig om het exacte onderwerp te identificeren",
+    "classFallbackBanner": "De klas heeft moeite met dit onderwerp; diagnostische klassenversterking wordt aanbevolen"
+  },
+  "fallback": {
+    "unknownSubject": "Onbekend",
+    "defaultTopic": "Onderwerp",
+    "defaultStudentName": "Leerling",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} - moeilijkheidsgraad op onderwerpniveau",
+    "studentSubjectHeadlineNoSubject": "Moeilijkheidsgraad op onderwerpniveau",
+    "studentSubjectEvidence": "{percent}% juist van {totalAnswers} antwoorden",
+    "studentSubjectAction": "Aanbevolen om een ​​korte diagnostische praktijk te starten om het exacte onderwerp te identificeren",
+    "classSubjectHeadline": "{subject} - moeilijkheidsgraad op klasniveau",
+    "classSubjectHeadlineNoSubject": "Klas-level subject difficulty",
+    "classSubjectAction": "Aanbevolen om een ​​korte diagnostische activiteit of een gerichte klassikale beoordeling te starten",
+    "classSuffix": "Klas {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} - {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Geen active classes",
+    "noClassesHint": "Maak hieronder een nieuwe klas aan en voeg vervolgens kinderen toe via ‘Klas beheren’ op de klaskaart.",
+    "createClassLabel": "Klas name",
+    "createClassButton": "Klasse creëren",
+    "createClassPlaceholder": "e.g. Klas 3 - LEO"
+  },
+  "activities": {
+    "personalSectionTitle": "Persoonlijke activiteiten",
+    "individualBadge": "Persoonlijk"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Alle children ({count})",
+      "directStudents": "Privé-kinderen ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

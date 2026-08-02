@@ -1,0 +1,52 @@
+{
+  "toppings": [
+    {
+      "id": "cheese",
+      "emoji": "🧀",
+      "name": "Kaas"
+    },
+    {
+      "id": "tomato",
+      "emoji": "🍅",
+      "name": "Tomaat"
+    },
+    {
+      "id": "olive",
+      "emoji": "🫒",
+      "name": "Olijven"
+    },
+    {
+      "id": "mushroom",
+      "emoji": "🍄",
+      "name": "Paddestoelen"
+    },
+    {
+      "id": "pepper",
+      "emoji": "🫑",
+      "name": "Peper"
+    },
+    {
+      "id": "basil",
+      "emoji": "🌿",
+      "name": "Basilicum"
+    }
+  ],
+  "difficulties": {
+    "easy": {
+      "label": "Makkelijk",
+      "hint": "Hele, halve en kwart op een 4-delige pizza"
+    },
+    "medium": {
+      "label": "Gemiddeld",
+      "hint": "Half, kwart en driekwart op 8 plakjes"
+    },
+    "hard": {
+      "label": "Moeilijk",
+      "hint": "Achtsten, combinaties en het geheel compleet maken"
+    }
+  },
+  "successMessages": [
+    "Geweldig werk! De pizza staat klaar voor de klant.",
+    "Geweldig! Je hebt het precies gemaakt zoals besteld."
+  ]
+}

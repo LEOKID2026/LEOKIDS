@@ -1,0 +1,8 @@
+{
+  "fraction_zero": "nul",
+  "fraction_whole": "één whole",
+  "fraction_parts": "{numerator} van {denominator} equal parts",
+  "compare_greater": "First breuk is greater",
+  "compare_less": "Second breuk is greater",
+  "compare_equal": "De breuks zijn equal"
+}

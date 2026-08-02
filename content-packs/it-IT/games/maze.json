@@ -1,0 +1,11 @@
+{
+  "gameId": "maze",
+  "title": "El laberinto de Leo",
+  "blurb": "Find the exit of the maze before time runs out!",
+  "help": {
+    "howToPlay": "Move Leo through the maze, collect keys and stars, and find the exit before time runs out.",
+    "scoring": "Las llaves, las stelle y los diamanti suman puntos. Terminar el laberinto da una gran ventaja. Si se acaba il tempo, el gioco termina.",
+    "rewards": "Terminar con éxito el laberinto secondo el nivel de dificultad otorga monete, y una bonificacion de puntuacion agrega aun mas.",
+    "tip": "Recoge las llaves primero; a veces abren un camino mas corto."
+  }
+}

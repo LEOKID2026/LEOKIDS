@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "hebrew_level_prefix": "Préfixe de niveau hébreu",
+    "english_level_token_as_metadata": "Jeton de niveau anglais sous forme de métadonnées"
+  }
+}

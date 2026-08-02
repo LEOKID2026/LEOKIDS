@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-lab",
+  "title": "Leo's Experimentlab",
+  "blurb": "Een spel over experimenten, materialen en oorzaak en gevolg",
+  "help": {
+    "howToPlay": "Lees de experimenttaak, kies items uit de plank (sleep of tik), plaats ze op de labtafel en tik op \"Experiment controleren\".",
+    "scoring": "Een succesvol experiment +30, succes bij de eerste poging +10, reeks van 3 correct +15, reeks van 5 +30. Voor fouten worden geen punten afgetrokken.",
+    "rewards": "Munten worden toegekend op basis van het aantal experimenten waarin je bent geslaagd, de moeilijkheidsgraad, nauwkeurigheid, streaks en het voltooien van 20 experimenten - alleen als je er minstens één keer in bent geslaagd.",
+    "tip": "Denk na over wat er nodig is om de taak te voltooien - vertrouw niet op de hints op de itemkaarten."
+  },
+  "accessibility": {
+    "title": "Leo's Experimentlab"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "Er zijn geen vragen verzameld in de geselecteerde periode - er is geen databasis voor deze rij.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "Te weinig vragen in de periode - de conclusies voor deze rij zijn zeer gedeeltelijk.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "Er zijn veel vragen verzameld - u kunt meer vertrouwen op wat u voor dit onderwerp ziet.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "Er zijn genoeg vragen voor dit onderwerp - alleen voorzichtige wijzigingen in de subvaardigheden.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "Er zijn genoeg vragen - u kunt meer vertrouwen op wat u voor dit onderwerp ziet.",
+    "moderate_data_cautious_changes_only_are_recommended": "Matige gegevens: alleen voorzichtige wijzigingen worden aanbevolen.",
+    "row_inputs_before_signal_computation": "Rij-ingangen vóór signaalberekening.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "Hoeveel informatie beschikbaar is, beïnvloedt hoe voorzichtig de volgende aanbeveling is.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "Dit komt naar voren in verschillende oefensessies; het beeld weerspiegelt een trend, niet slechts een enkele sessie.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "De aanbeveling is gebaseerd op een combinatie van nauwkeurigheid, aantal vragen, fouten en hoe recent de praktijk was in de geselecteerde periode."
+  }
+}

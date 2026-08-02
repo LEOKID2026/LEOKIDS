@@ -1,0 +1,776 @@
+{
+  "audio": {
+    "settings": "Audio-instellingen",
+    "close": "Sluiten",
+    "allAudio": "Alle audio",
+    "effects": "Effecten",
+    "music": "Muziek",
+    "speech": "Toespraak / vertelling",
+    "effectsVolume": "Effectvolume",
+    "musicVolume": "Muziekvolume",
+    "speechVolume": "Spraakvolume",
+    "autoPlayInstructions": "Instructies voor automatisch afspelen",
+    "autoPlayQuestions": "Vragen automatisch afspelen",
+    "resetDefaults": "Reset naar defaults"
+  },
+  "languageSwitcher": {
+    "label": "Taal"
+  },
+  "localeSettings": {
+    "heading": "Taalvoorkeuren",
+    "description": "Interfacetaal bestuurt menu's en navigatie. Rapporttaal beheert ouderrapporten en Copilot-antwoorden.",
+    "interfaceLanguage": "Interfacetaal",
+    "interfaceHint": "Geldt voor menu's, knoppen en sitenavigatie.",
+    "reportLanguage": "Rapport language",
+    "reportHint": "Geldt voor voortgangsrapportages en Oudercopilot. Als u de interfacetaal wijzigt, verandert dit niet nadat u de rapporttaal expliciet hebt ingesteld."
+  },
+  "nav": {
+    "home": "Home",
+    "kids": "Voor kids",
+    "kidsWorld": "Kinderwereld",
+    "parents": "Voor ouders",
+    "parentPortal": "Ouder portal",
+    "teachers": "Voor leerkrachten",
+    "teacherPortal": "Leerkracht portal",
+    "about": "Over",
+    "contact": "Contact",
+    "practice": "Oefenen",
+    "guides": "Gidsen",
+    "learning": "Leren",
+    "games": "Spellen",
+    "gallery": "Galerij",
+    "helpCenter": "Helpcentrum",
+    "loginParent": "Inloggen als ouder",
+    "loginStudent": "Inloggen als leerling"
+  },
+  "home": {
+    "headline": "Leo Kids",
+    "subhead": "Oefen rekenen, meetkunde, Engels en natuur en techniek — gemaakt voor leerlingen van de basisschool.",
+    "ctaParents": "Ik ben ouder",
+    "ctaKids": "Ik ben een leerling",
+    "ctaTeachers": "Ik ben leerkracht"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "security": "Beveiliging",
+    "contact": "Contact",
+    "tagline": "Spellen en leren voor kinderen"
+  },
+  "layout": {
+    "menu": "Menu",
+    "openMenu": "Menu openen",
+    "closeMenu": "Sluiten menu",
+    "backHome": "Terug naar home",
+    "logoAlt": "LEO KIDS-logo"
+  },
+  "empty": {
+    "default": "Nothing naar show yet.",
+    "noStudents": "Nog geen leerlingen. Voeg een kind toe om aan de slag te gaan.",
+    "noProgress": "Er zijn nog geen praktijkgegevens voor deze periode."
+  },
+  "toast": {
+    "saved": "Opgeslagen",
+    "copied": "Gekopieerd",
+    "error": "Kan die actie niet voltooien"
+  },
+  "copyPopup": {
+    "successTitle": "Gekopieerd",
+    "errorTitle": "Could niet copy"
+  },
+  "installApp": {
+    "button": "Installeer app",
+    "chooseTitle": "Wat wilt u installeren?",
+    "kids": "Installeer de kinderapp",
+    "parents": "Install ouders app",
+    "teachers": "Install leerkrachten app",
+    "instructionsTitle": "Installeer instructies",
+    "iosInstructionsTitle": "iOS-installatie-instructies",
+    "close": "Sluiten",
+    "iosStep1": "Tik op de knop Delen 📤 onderaan Safari",
+    "iosStep2": "Scroll naar beneden en kies 'Toevoegen aan startscherm'",
+    "iosStep3": "Tik op 'Toevoegen' in de rechterbovenhoek",
+    "iosStep4": "De app verschijnt op uw startscherm",
+    "androidStep1": "In Chrome/Edge: klik op het installatiepictogram in de adresbalk",
+    "androidStep2": "In Firefox: open het menu (☰) en kies \"Installeren\"",
+    "androidStep3": "Op mobiel: tik op \"Toevoegen aan startscherm\" in het browsermenu",
+    "androidStep4": "De app verschijnt op uw startscherm",
+    "prompt": {
+      "title": "Installeer LEO KIDS",
+      "bodyIos": "Voeg de app toe aan uw startscherm voor een betere ervaring",
+      "bodyDefault": "Installeer de app voor snellere, eenvoudigere toegang",
+      "installNow": "Download en install now",
+      "showIosInstructions": "Toon installatie-instructies",
+      "installApp": "Installeer app",
+      "instructionsHeading": "Installatie-instructies:",
+      "iosStep1": "Tik op de knop Delen 📤 onderaan Safari",
+      "iosStep2": "Kies \"Add naar Home Screen\"",
+      "iosStep3": "Tik op \"Toevoegen\"",
+      "close": "✕ Sluiten"
+    }
+  },
+  "games": {
+    "hub": {
+      "enter": "Binnenkomen"
+    },
+    "locked": {
+      "backToGames": "Terug naar games",
+      "unavailable": "Deze game is momenteel niet beschikbaar"
+    }
+  },
+  "learning": {
+    "virtualKeyboardAria": "Cijfertoetsenbord",
+    "virtualKeyboardCheck": "Controleren"
+  },
+  "guest": {
+    "features": {
+      "roomPublicCreate": "Creëer openbare ruimte",
+      "roomPrivateCreate": "Creëer een privékamer",
+      "roomJoinByCode": "Join met code",
+      "quickGame": "Snel spel",
+      "invitesSend": "Speluitnodiging verzenden",
+      "invitesReceive": "Ontvang een game-uitnodiging",
+      "friends": "Vriend toevoegen",
+      "safeMessages": "Vooraf ingestelde berichten",
+      "shop": "Koop cosmetica",
+      "events": "Dagelijks evenement",
+      "tournaments": "Toernooien",
+      "missions": "Arcade-missies",
+      "personalRoom": "Persoonlijke kamer"
+    },
+    "errors": {
+      "playerNotFound": "Player niet found.",
+      "featureLocked": "Deze actie is momenteel niet beschikbaar voor gasten.",
+      "serviceNotConfigured": "De service is niet correct geconfigureerd.",
+      "modeDisabled": "De gastmodus is momenteel uitgeschakeld.",
+      "systemNotReady": "Het gastsysteem is niet gereed.",
+      "startFailed": "Kan de gastmodus niet starten."
+    },
+    "resume": {
+      "alreadyLinked": "Dit gastnummer is al gekoppeld aan een ouder. Log in met je gebruikersnaam en code, of vraag je ouder om inloggegevens.",
+      "invalid": "We kunnen de gastmodus op dit apparaat niet herstellen. Als je als nieuwe gast begint, wordt er een nieuw Leo-nummer aangemaakt en wordt eerdere voortgang niet overgedragen.",
+      "newAfterFailedConfirm": "We konden uw vorige gastsessie niet herstellen. Als u als nieuwe gast begint, wordt er een nieuw Leo-nummer aangemaakt en wordt eerdere voortgang niet overgedragen. Doorgaan?"
+    }
+  },
+  "common": {
+    "close": "Sluiten"
+  },
+  "public": {
+    "contact": {
+      "title": "Neem contact met ons op",
+      "intro": "Heeft u een vraag, idee, opmerking of bug te melden? Wij horen graag van u. Neem contact op over leren, het account van uw kind, ouderrapporten, spelletjes, kaarten of uw ervaringen met het gebruik van de site.",
+      "formAriaLabel": "Contactformulier",
+      "faqHeading": "Veelgestelde vragen",
+      "legalHeading": "Juridische documenten",
+      "legalNavAria": "Legal documents en contact",
+      "form": {
+        "nameLabel": "Naam",
+        "emailLabel": "E-mail",
+        "subjectLabel": "Onderwerp",
+        "messageLabel": "Bericht",
+        "submit": "Versturen",
+        "submitting": "Verzenden…",
+        "hint": "Voer hier geen wachtwoorden, inlogcodes of andere gevoelige informatie in.",
+        "success": "Uw bericht is verzonden. Bedankt dat u contact heeft opgenomen!",
+        "deliveryPending": "Het formulier is gevalideerd, maar de e-mailbezorging vanaf de site wordt nog steeds geconfigureerd op de server. Neem voor nu rechtstreeks contact met ons op via de onderstaande e-mailknop.",
+        "errors": {
+          "name": "Vul alstublieft uw naam in.",
+          "email": "Voer uw e-mailadres in.",
+          "emailInvalid": "Dat e-mailadres lijkt niet geldig.",
+          "message": "Schrijf alstublieft een bericht.",
+          "network": "Netwerkfout. Probeer het over enkele ogenblikken opnieuw.",
+          "rateLimit": "Te veel berichten in korte tijd. Probeer het later opnieuw.",
+          "generic": "We konden uw bericht momenteel niet verzenden. Probeer het later opnieuw."
+        }
+      },
+      "social": {
+        "email": "Leo's e-mail",
+        "emailAria": "Send email naar {email}",
+        "instagram": "Leo's Instagram",
+        "instagramAria": "Open Instagram-pagina in een nieuw venster",
+        "youtube": "Leo's YouTube",
+        "youtubeAria": "Open Leo Kids YouTube in een nieuw venster",
+        "facebook": "Leo's Facebook",
+        "facebookAria": "Open Leo Kids Facebook in een nieuw venster"
+      },
+      "faq": {
+        "whoFor": {
+          "q": "Wie is de site voor?",
+          "a": "De site is bedoeld voor kinderen die willen oefenen en vooruitgang willen boeken, en voor ouders en leerkrachten die een duidelijker beeld willen van de voortgang, sterke punten en onderwerpen die de moeite waard zijn om te benadrukken."
+        },
+        "subjects": {
+          "q": "Welke vakken kun je oefenen?",
+          "a": "Op de site kunt u oefenen met rekenen, meetkunde, Engels en natuur en techniek, op basis van wat open en beschikbaar is voor uw kind."
+        },
+        "parentsSee": {
+          "q": "Wat kan ouders see?",
+          "a": "Ouders kunnen rapporten bekijken waarin de prestaties, herhaalde fouten, sterke punten en onderwerpen worden weergegeven om te blijven oefenen."
+        },
+        "reinforcement": {
+          "q": "Is de locatie geschikt voor kinderen die versterking nodig hebben?",
+          "a": "Ja. Het doel is om geleidelijk en duidelijk te oefenen, zodat elk kind in zijn eigen tempo kan bewegen en onderwerpen kan benadrukken waar hij of zij moeite mee heeft."
+        },
+        "games": {
+          "q": "Zijn er spellen op de site?",
+          "a": "Ja. Naast de academische praktijk zijn er educatieve spellen, Leo-spellen, speel-met-vrienden-opties en munten en kaarten in de kinderwereld."
+        },
+        "reportBug": {
+          "q": "Hoe kan ik een bug melden of een idee sturen?",
+          "a": "Neem contact met ons op via de e-mailknop op deze pagina. We verwelkomen feedback, ideeën en rapporten die helpen de site te verbeteren."
+        }
+      }
+    },
+    "homepage": {
+      "brandLine": "LEO KIDS — hulpmiddelen voor ouders, een leuke ervaring voor kinderen en leren dat stap voor stap verloopt",
+      "flowDiagramAria": "Systeem flow",
+      "primaryActionsAria": "Inloggen en registreren",
+      "hero": {
+        "badge": "Learn · Spelen · Progress",
+        "titleLine0": "Tools voor ouders.",
+        "titleLine1": "een world kids love.",
+        "titleLine2": "Dat leren gaat stap voor stap.",
+        "subtitle": "LEO KIDS verbindt oefeningen en spelletjes voor kinderen met een systeem dat de voortgang in kaart brengt en ouders een duidelijk beeld geeft.",
+        "reinforcement": "Onderwerpen · Onderwerpen · Vaardigheden · Subvaardigheden",
+        "videoTitle": "See it van een ouder's view",
+        "videoDescription": "Maak kennis met de tracking, rapporten en persoonlijke activiteiten.",
+        "parentCta": "Inloggen of registreren als ouder",
+        "kidsCta": "Inloggen als leerling",
+        "worksheetsCta": "Afdrukbare werkbladen",
+        "infoLine": "LEO KIDS — hulpmiddelen voor ouders, een leuke ervaring voor kinderen en leren dat stap voor stap verloopt",
+        "howItWorksTitle": "Hoe it works",
+        "flowStep0": "Kinderpraktijken",
+        "flowStep1": "Systeem maps performance",
+        "flowStep2": "Ouder gets een clear view",
+        "flowStep3": "Kies de next step",
+        "parentVideoAria": "Ouder video"
+      },
+      "valueCards": {
+        "0": {
+          "title": "Tools voor ouders",
+          "text": "Kijk wat uw kind heeft geoefend, waar het zich verbetert en wat het moet versterken."
+        },
+        "1": {
+          "title": "Experience voor kids",
+          "text": "Oefen, spelletjes, munten en vooruitgang in een vriendelijke, kleurrijke reis."
+        },
+        "2": {
+          "title": "Voortgang in kaart brengen",
+          "text": "Bijhouden op onderwerp, onderwerp, vaardigheid en subvaardigheid."
+        }
+      },
+      "parentIntro": {
+        "label": "Voor ouders",
+        "title": "Zie uw kind duidelijk – niet alleen een score",
+        "text": "Krijg een duidelijk beeld van de sterke en zwakke punten en stuur vervolgens een gerichte activiteit die aansluit bij wat ze op dit moment nodig hebben."
+      },
+      "parentVideo": {
+        "title": "See it van een ouder's view",
+        "description": "Bekijk een korte video over tracking, rapporten en ouderactiviteiten."
+      },
+      "learningSystem": {
+        "label": "De systeem behind learning",
+        "title": "Wij brengen in kaart hoe uw kind zich ontwikkelt – niet alleen goed of fout",
+        "textPart0": "Elke oefensessie levert één beeld op:",
+        "textPart1": "op onderwerp, onderwerp, subonderwerp, vaardigheid en subvaardigheid.",
+        "textPart2": "Dat helpt bij het opsporen van overwinningen, herhalende fouten en wat u kunt versterken – met een duidelijk rapport en gerichte volgende stappen.",
+        "dimensionTags": "Onderwerp · Onderwerp · Vaardigheid · Subvaardigheid",
+        "flowStep0": "Kinderpraktijken",
+        "flowStep1": "Systeem maps performance",
+        "flowStep2": "Ouder gets een clear view",
+        "flowStep3": "Kies de next step",
+        "capabilities": {
+          "subject-map": {
+            "title": "Map door subject en topic",
+            "text": "Bekijk de voortgang op het gebied van rekenen, meetkunde, Engels en natuur en techniek, tot aan de geoefende onderwerpen."
+          },
+          "skills": {
+            "title": "Skills en sub-skills",
+            "text": "Het systeem kijkt welke vaardigheden nodig waren – niet alleen of een antwoord juist was."
+          },
+          "spot-difficulty": {
+            "title": "Spotgerichte moeilijkheidsgraad",
+            "text": "Herhaalde fouten kunnen wijzen op een specifieke vaardigheid die de moeite waard is om te versterken."
+          },
+          "over-time": {
+            "title": "Volg de tijd",
+            "text": "Het beeld is gebaseerd op de praktijk – geen enkele partituur."
+          },
+          "parent-report": {
+            "title": "Clear ouder report",
+            "text": "Duidelijke taal: wat uw kind weet, waar het zich beweegt en waar het zich op moet concentreren."
+          },
+          "focused-work": {
+            "title": "Gerichte opvolging",
+            "text": "Ouders kunnen een persoonlijke activiteit sturen die gericht is op een onderwerp of vaardigheid."
+          }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "0": {
+            "title": "Begrijp wat er gebeurt",
+            "text": "Een bredere kijk dan één graad – opgebouwd uit echte activiteit."
+          },
+          "1": {
+            "title": "Know waar naar focus",
+            "text": "Rapporten helpen bij het kiezen van het volgende onderwerp dat moet worden benadrukt."
+          },
+          "2": {
+            "title": "Stuur persoonlijke activiteiten",
+            "text": "Wijs gerichte oefeningen toe en volg de resultaten daarna."
+          },
+          "3": {
+            "title": "Bekijk de voortgang in de loop van de tijd",
+            "text": "Oefeningen, spelletjes en activiteiten worden samengevoegd tot een actueel beeld."
+          }
+        },
+        "highlight": "In plaats van te raden waar het moeilijk is, krijgt u georganiseerd inzicht in waar u aan moet werken.",
+        "cta": "Ga naar het ouderportaal"
+      },
+      "kids": {
+        "label": "Voor kids",
+        "title": "Leer zoals kinderen dat graag willen",
+        "text": "Beantwoord vragen, beweeg in je eigen tempo, speel, verzamel beloningen en kom terug voor meer.",
+        "videoTitle": "Maak kennis met Leo's kinderwereld",
+        "videoDescription": "Bekijk een korte video over oefenen, spelletjes, verrassingen en vooruitgang in de kinderwereld.",
+        "benefits": {
+          "0": {
+            "title": "Oefening die voelt als spelen",
+            "text": "Kleurrijke vragen en uitdagingen die de praktijk lichter maken."
+          },
+          "1": {
+            "title": "Uw own pace",
+            "text": "Leo begeleidt je zodat je zonder druk kunt blijven proberen."
+          },
+          "2": {
+            "title": "Games en learning together",
+            "text": "Combineer vakoefeningen met leuke pauzes op één plek."
+          },
+          "3": {
+            "title": "Coins, cards, en surprises",
+            "text": "Vooruitgang gaat gepaard met beloningen die aanmoedigen om terug te komen."
+          }
+        },
+        "cta": "Ga naar de kinderwereld",
+        "kidsVideoAria": "Kinderwereld filmpje"
+      },
+      "howItWorks": {
+        "title": "Ga aan de slag in een paar eenvoudige stappen",
+        "step0": "Ouder opens een account",
+        "step1": "Voeg uw kind toe en ontvang persoonlijke inloggegevens",
+        "step2": "Het kind begint te leren, oefenen en spelen",
+        "step3": "Het systeem brengt de voortgang in kaart; ouders krijgen rapporten en kunnen gerichte activiteiten sturen"
+      },
+      "finalCta": {
+        "title": "Wilt u een duidelijker beeld van hoe het met uw kind gaat?",
+        "text": "Open een account, voeg uw kind toe en bouw een georganiseerd leerbeeld op van oefeningen, activiteiten en spelletjes.",
+        "parentCta": "Open ouder account",
+        "kidsCta": "Inloggen als leerling"
+      },
+      "teachers": {
+        "label": "Voor private tutors",
+        "title": "Georganiseerd oefenen en volgen tussen de lessen",
+        "text": "Stuur gerichte activiteiten, kijk hoe leerlingen presteren en ga thuis verder met de les.",
+        "bullet0": "Leerlingen beheren",
+        "bullet1": "Stuur persoonlijke activiteiten",
+        "bullet2": "Track completion en progress",
+        "cta": "Inloggen of registreren als leerkracht"
+      }
+    },
+    "about": {
+      "imageAlt": "Leo – slimme leeromgeving voor kinderen",
+      "title": "Over Leo: leer, oefen en boek vooruitgang",
+      "intro0": "Welkom bij Leo: een slimme leeromgeving die is gebouwd om kinderen te helpen oefenen, begrijpen en vooruitgang boeken in een tempo dat bij hen past.",
+      "intro1": "De site is ontworpen voor leerlingen van de basisschool die kunnen oefenen op vak, groep en moeilijkheidsgraad. Ieder kind kan beginnen waar het zinvol is, geleidelijk verder gaan en de onderwerpen versterken waar het meer zelfvertrouwen nodig heeft.",
+      "intro2": "Ons doel is om het leren duidelijker, vriendelijker en nauwkeuriger te maken: minder gissen, minder frustratie en een beter begrip van wat uw kind al weet en wat nog moet worden versterkt.",
+      "missionTitle": "Onze mission",
+      "missionBody": "We helpen kinderen vertrouwen op te bouwen in het leren, fundamentele en geavanceerde vaardigheden te versterken en ouders een duidelijker beeld te geven van de voortgang van hun kind.",
+      "missionMuted": "Het systeem combineert oefenen, speelsheid, ouderrapporten en voortgangsoverzichten om een ​​leerproces te creëren dat persoonlijk, georganiseerd en bemoedigend aanvoelt.",
+      "learnEnjoyTitle": "Learn en enjoy",
+      "learnEnjoyBody": "Naast de academische praktijk bevat de site educatieve spellen, boeiend spel, munten en kaarten die zijn ontworpen om plezier, motivatie en plezier aan het leren toe te voegen. Het doel is dat kinderen niet het gevoel krijgen dat ze alleen maar ‘huiswerk aan het maken zijn’, maar dat ze een kleurrijke kinderwereld betreden waar ze met een goed gevoel kunnen leren, spelen en vooruitgang kunnen boeken.",
+      "learnEnjoyMuted": "Er zijn solospellen, educatieve spellen en mogelijkheden om met vrienden te spelen, afhankelijk van wat er open en beschikbaar is op de site.",
+      "whyTitle": "Waarom doet it matter?",
+      "featuresTitle": "Wat vind je op de site?",
+      "kidsWorldCta": "Kinderwereld",
+      "parentLoginCta": "Inloggen als ouder",
+      "funGames": {
+        "0": {
+          "title": "Boeiende spellen",
+          "text": "Spellen die interesse en plezier toevoegen en kinderen aanmoedigen om te blijven oefenen."
+        },
+        "1": {
+          "title": "Sociale ervaringen",
+          "text": "Speel met vrienden en sociale ervaringen waar beschikbaar – op een positieve, vriendelijke manier."
+        },
+        "2": {
+          "title": "Motivation naar learn",
+          "text": "Een mix van oefenen, munten, kaarten, spelletjes en uitdagingen die kinderen aanmoedigen om door te gaan."
+        }
+      },
+      "whyCards": {
+        "0": {
+          "title": "Learning bij uw own pace",
+          "text": "Ieder kind beweegt op basis van zijn mogelijkheden, waarbij de oefening wordt afgestemd op zijn niveau en de onderwerpen die hij of zij moet benadrukken."
+        },
+        "1": {
+          "title": "een clear picture voor ouders",
+          "text": "Rapporten helpen u te begrijpen waar uw kind slaagt, waar hij moeite mee heeft en wat hij vervolgens moet oefenen."
+        },
+        "2": {
+          "title": "een friendly experience voor kids",
+          "text": "De site combineert oefenen, spelletjes, munten, kaarten en een uitnodigend ontwerp om doorzettingsvermogen en positief leren aan te moedigen."
+        }
+      },
+      "siteFeatures": {
+        "0": {
+          "phase": "Oefenen door subject",
+          "text": "Rekenen, meetkunde, Engels en natuur en techniek."
+        },
+        "1": {
+          "phase": "Groepen en moeilijkheidsniveaus",
+          "text": "Oefening afgestemd op leeftijdscategorie, onderwerp en niveau voor geleidelijke, duidelijke vooruitgang."
+        },
+        "2": {
+          "phase": "Reports voor ouders",
+          "text": "Een duidelijk overzicht van de prestaties, fouten, sterke punten en verbeterpunten."
+        },
+        "3": {
+          "phase": "Games en social play",
+          "text": "Solospellen, educatieve spellen, spelen met vrienden, munten en kaarten."
+        }
+      }
+    },
+    "legalShell": {
+      "lastUpdated": "Laatst bijgewerkt: {date}",
+      "questions": "Vragen:",
+      "additionalDocuments": "Aanvullende documenten",
+      "legalNavAria": "Links naar juridische documenten"
+    }
+  },
+  "gallery": {
+    "back": "Terug",
+    "title": "Leo's galerij",
+    "subtitle": "Foto's en video's van Leo, de hond die kinderen over het hele terrein begeleidt.",
+    "intro": "Leer Leo van dichtbij kennen via momenten, foto's en video's die warmte en leven toevoegen aan de kinderwereld op de site.",
+    "empty": "Geen photos of videos naar show.",
+    "imageAlt": "Leeuw — afbeelding {num}",
+    "close": "Sluiten",
+    "previous": "Vorig",
+    "next": "Volgende"
+  },
+  "pwa": {
+    "installBody": "Tik hieronder op 'Installeren' om de app aan uw startscherm toe te voegen.",
+    "iosHelpTitle": "Install op iPhone of iPad",
+    "backHome": "Terug naar home",
+    "close": "Sluiten",
+    "gotIt": "Ik heb het",
+    "iosIntro": "Op Apple-apparaten installeert u de app via Safari:",
+    "iosStep1": "Open deze pagina in Safari.",
+    "iosStep2": "Tik op de knop Delen in de browserwerkbalk.",
+    "iosStep3": "Blader door het menu en kies \"Toevoegen aan startscherm\".",
+    "iosStep4": "Zorg ervoor dat \"Openen als webapp\" is ingeschakeld, indien weergegeven.",
+    "iosStep5": "Tik op \"Toevoegen\". Het app-pictogram verschijnt op uw startscherm.",
+    "iosHelpFooter": "Ziet u 'Toevoegen aan startscherm' niet? Scrol naar de onderkant van het menu, tik op 'Acties bewerken' en voeg het toe aan de lijst.",
+    "alreadyInstalled": "De app is al op dit apparaat geïnstalleerd.",
+    "portalInstallStudent": "Installeer de kinderapp",
+    "portalInstallParent": "Install ouders app",
+    "portalInstallTeacher": "Install leerkrachten app",
+    "nativeOnlyBrowser": "PWA-installatie is beschikbaar in de browser, niet in de geïnstalleerde native app.",
+    "installBtnStudent": "Installeer LEO KIDS",
+    "installBtnParent": "Installeer P LEO KIDS",
+    "installBtnTeacher": "Installeer T LEO KIDS",
+    "installedStudent": "LEO KIDS is geïnstalleerd. Open het LEO KIDS-pictogram vanaf je startscherm.",
+    "installedParent": "P LEO KIDS is geïnstalleerd. Open het P LEO KIDS-pictogram vanaf uw startscherm.",
+    "installedTeacher": "T LEO KIDS is geïnstalleerd. Open het T LEO KIDS-pictogram vanaf uw startscherm.",
+    "promptAcceptedStudent": "Chrome heeft de installatie geaccepteerd. Als het LEO KIDS-pictogram niet binnen een minuut op uw startscherm verschijnt, vernieuw dan de pagina en probeer het opnieuw. Als er nog steeds geen pictogram is, verwijder dan eerdere installaties van deze site uit de app-instellingen.",
+    "promptAcceptedParent": "Chrome heeft de installatie geaccepteerd. Als het P LEO KIDS-pictogram niet binnen een minuut op uw startscherm verschijnt, vernieuw dan de pagina en probeer het opnieuw. Als er nog steeds geen pictogram is, verwijder dan eerdere installaties van deze site uit de app-instellingen.",
+    "promptAcceptedTeacher": "Chrome heeft de installatie geaccepteerd. Als het T LEO KIDS-pictogram niet binnen een minuut op uw startscherm verschijnt, vernieuw dan de pagina en probeer het opnieuw.",
+    "unavailableConsumed": "De installatieprompt werd al gebruikt. Vernieuw de pagina om het opnieuw te proberen, als Chrome dit nog steeds toestaat.",
+    "unavailableError": "De installatieprompt is mislukt. Vernieuw de pagina en probeer het opnieuw.",
+    "unavailableNoPromptStudent": "Chrome biedt momenteel geen installatieprompt voor LEO KIDS. Zorg ervoor dat de app nog niet is geïnstalleerd en probeer vervolgens te vernieuwen.",
+    "unavailableNoPromptParent": "Chrome biedt momenteel geen installatieprompt voor P LEO KIDS. Zorg ervoor dat LEO KIDS is geïnstalleerd en probeer te vernieuwen; de twee apps moeten gescheiden zijn.",
+    "unavailableNoPromptTeacher": "Chrome biedt momenteel geen installatieprompt voor T LEO KIDS. Zorg ervoor dat de app nog niet is geïnstalleerd en probeer vervolgens te vernieuwen.",
+    "pageTitleStudent": "LEO KIDS - Installeren",
+    "pageTitleParent": "P LEO KIDS - Installeren",
+    "pageTitleTeacher": "T LEO KIDS - Installeren",
+    "titleStudent": "Installeer de kinderapp",
+    "titleParent": "Install ouders app",
+    "titleTeacher": "Install leerkrachten app"
+  },
+  "parent": {
+    "portalTitle": "Ouder portal",
+    "checkingSession": "Oudersessie controleren…",
+    "share": "Delen",
+    "studentWorld": "Kinderwereld",
+    "studentWorldAriaLabel": "Ga naar de kinderwereld",
+    "worksheets": "Afdrukbare werkbladen",
+    "curriculum": "Leerplan",
+    "addChild": "Kind toevoegen",
+    "addChildTitle": "Kind toevoegen",
+    "childrenCount": "Kinderen op dit account: {current} / {limit}",
+    "childLimitReached": "U heeft de limiet van {limit} kinderen per account bereikt",
+    "childNamePlaceholder": "Naam van het kind",
+    "selectGrade": "Kies een groep",
+    "guestLeoOptional": "Gast Leo-nummer (optioneel)",
+    "guestLeoPlaceholder": "Leo-nummer — 8 cijfers",
+    "childLoginDetails": "Inloggegevens kind",
+    "childUsername": "Gebruikersnaam van kind",
+    "childPin": "Kinderpincode",
+    "pinPlaceholder": "4 cijfers",
+    "usernameExample": "bijv. noam123",
+    "details": "Details",
+    "detailsTitle": "Details — {name}",
+    "childDefault": "Kind",
+    "parentReport": "Ouderrapport",
+    "activity": "Activiteit",
+    "noChildrenYet": "Geen children added yet",
+    "promoVideoLabel": "Ouder video",
+    "promoTitle": "Maak kennis met LEO KIDS",
+    "promoDescription": "Bekijk een korte video over hulpmiddelen voor ouders en hoe kinderen leren op LEO KIDS.",
+    "promoVideoAria": "Ouders video",
+    "curriculumModalTitle": "Curriculumplannen",
+    "curriculumSubjectTabsAria": "Subject selecteerion",
+    "assignActivityLevelLabel": "Niveau",
+    "childReportTitle": "Kindrapport",
+    "changeAccessCodeTitle": "Veranderen access code",
+    "save": "Opslaan",
+    "deleteChild": "Verwijderen child",
+    "active": "Actief",
+    "coinBalance": "Muntsaldo: {balance}",
+    "guestLeoLink": "Guest Leo number (naar link)",
+    "linkGuest": "Link gast",
+    "saveCredentialsImportant": "Bewaar deze gegevens. De pincode wordt niet opnieuw weergegeven.",
+    "username": "Gebruikersnaam",
+    "newPin": "Nieuwe pincode",
+    "copyUsername": "Kopieer gebruikersnaam",
+    "pinStatusSet": "Set",
+    "pinStatusUnset": "Niet set",
+    "newPinReset": "New PIN (reset / veranderen)",
+    "resetPin": "Reset PIN / veranderen PIN",
+    "childLoginActive": "Kinderaanmelding is actief",
+    "usernameNotSet": "Username: niet set yet",
+    "setUsernamePinHint": "Stel een gebruikersnaam en pincode in waarmee het kind kan inloggen. Als er een oudere login bestaat, wordt deze vervangen.",
+    "setUsernamePin": "Set username en PIN",
+    "deleteChildTitle": "Verwijderen child permanently",
+    "deleteChildWarning": "Hiermee worden het kind, de inloggegevens, sessies, antwoorden, rapporten, munten en alle gerelateerde gegevens permanent verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "deleteChildConfirm": "Typ de naam van het kind precies:",
+    "deleteConfirmPlaceholder": "Type name naar confirm",
+    "deletePermanently": "Verwijderen permanently",
+    "activitySentSuccess": "Activiteit succesvol verzonden!",
+    "gradeRequired": "Selecteer alstublieft een groep.",
+    "pinMustBeFourDigits": "PIN moet zijn four digits.",
+    "usernameRequired": "Gebruikersnaam is vereist.",
+    "invalidUsername": "Ongeldige gebruikersnaam.",
+    "childLimitMessage": "Per ouderaccount kunt u maximaal {limit} kinderen toevoegen.",
+    "guestLinkFailedAfterCreate": "Er is een kind aangemaakt, maar het koppelen van het gastnummer is mislukt.",
+    "guestLinkCoinsSaved": "Munten en kaarten werden bewaard voor het kind.",
+    "credentialsFailedAfterCreate": "Er is een kind aangemaakt, maar het instellen van de aanmelding is mislukt. U kunt dit instellen in de gegevens van het kind.",
+    "guestLeoEightDigits": "Enter een 8-digit Leo number.",
+    "guestLinkFailed": "Link naar gastnummer mislukt.",
+    "guestLinkNetworkError": "Netwerkfout tijdens het koppelen van gasten.",
+    "credentialsBothRequired": "Voer zowel de gebruikersnaam als de pincode in.",
+    "credentialsSaveFailed": "Kan inloggegevens niet opslaan.",
+    "missingCardUsername": "Ontbrekende gebruikersnaam voor deze kaart.",
+    "newPinFourDigits": "Enter een new 4-digit PIN.",
+    "pinChangeFailed": "Kon de pincode niet wijzigen.",
+    "deleteFailed": "Verwijderen mislukt",
+    "deleteNetworkError": "Netwerkfout. Probeer het opnieuw.",
+    "childDeleted": "Kind definitief verwijderd.",
+    "usernameCopied": "Username copied naar clipboard.",
+    "usernameCopyFailed": "Kon niet automatisch kopiëren. Kopieer handmatig.",
+    "gamePermissionsTitle": "Spelrechten",
+    "gamePermissionsHint": "Als u een categorie uitschakelt, worden alle games erin vergrendeld. Het kind ziet de categorie met een slotbericht.",
+    "gamePermissionsLoading": "Laden… game permissions…",
+    "gameCategoryOnline": "Onlinespellen",
+    "gameCategoryOffline": "Offlinespellen",
+    "gameCategorySolo": "Solo-spellen",
+    "subjectPermissionsTitle": "Onderwerpen leren",
+    "subjectPermissionsHint": "Het vergrendelen van een onderwerp blokkeert het nieuwe leren daarin. De leergeschiedenis uit het verleden wordt bewaard.",
+    "subjectPermissionsLoading": "Laden… subject permissions…",
+    "filterAll": "Alles",
+    "filterEnabled": "Openen",
+    "filterDisabled": "Vergrendeld",
+    "filterSuitable": "Suitable voor groep",
+    "gradeSuitable": "Suitable voor groep",
+    "enableAllSubjects": "Open alle",
+    "allowGradePicker": "Kind toestaan om een groep te kiezen op leerpagina’s",
+    "createChildSuccess": "Kind succesvol toegevoegd.",
+    "updateChildSuccess": "Kindgegevens opgeslagen.",
+    "errors": {
+      "guestNotEligible": "Niet beschikbaar voor gastaccounts.",
+      "notParent": "Dit account is niet geautoriseerd voor oudertoegang.",
+      "childNotFound": "Child niet found.",
+      "reportsDisabled": "Ouderrapporten zijn momenteel niet beschikbaar.",
+      "invalidDateRange": "Het datumbereik is niet geldig.",
+      "signInAgain": "Log opnieuw in.",
+      "signInAgainParent": "Log opnieuw in als ouder.",
+      "signInAgainTeacher": "Log opnieuw in als leerkracht.",
+      "reportForbidden": "U heeft geen toegang tot het rapport van dit kind.",
+      "reportLoadFailed": "Kan het bovenliggende rapport niet laden.",
+      "actionForbidden": "U heeft geen toestemming voor deze actie.",
+      "loadChildrenFailed": "Kan de lijst met kinderen niet laden.",
+      "createChildFailed": "Kan het kind niet toevoegen.",
+      "updateChildFailed": "Kan de gegevens van het kind niet bijwerken.",
+      "panelLoadFailed": "Kan de gegevens niet laden.",
+      "panelSaveFailed": "Kan de wijzigingen niet opslaan.",
+      "genericFailed": "Kan deze actie niet voltooien. Probeer het opnieuw.",
+      "rawMessage": "{message}"
+    }
+  },
+  "student": {
+    "loadingHome": "Laden… home…",
+    "redirectingLogin": "Redirecting naar sign-in…",
+    "loading": "Laden……",
+    "hello": "Hallo {name}",
+    "childDefault": "Leerling",
+    "whatToday": "Wat shall we doe today?",
+    "openProfile": "Open mijn profiel",
+    "loggingOut": "Afmelden…",
+    "share": "Delen",
+    "messageParent": "Message ouder",
+    "guestLock": "Niet available in guest mode",
+    "guestTopicLock": "Dit onderwerp is vergrendeld in de gastmodus",
+    "guestGameLockLabel": "Vergrendeld",
+    "guestGameLockHint": "Ask een ouder naar unlock",
+    "parentLocked": "Locked door ouders",
+    "panelStats": "Mijn statistieken",
+    "panelProgress": "Mijn vooruitgang",
+    "panelMissions": "Mijn missies",
+    "panelClassroom": "Persoonlijke activiteiten",
+    "panelWorksheets": "Werkbladen",
+    "panelSubjects": "Mijn onderwerpen",
+    "panelBadges": "Badges en prestaties",
+    "panelRecommendations": "Aanbevelingen",
+    "gateLearning": "Uitdagingsspellen",
+    "gateGames": "Spellen",
+    "gateClub": "Onlineclubje",
+    "dockCollection": "Verzameling",
+    "dockFriends": "Vrienden",
+    "dockProfile": "Profiel",
+    "dockMissions": "Missies",
+    "statsIntro": "Je voortgang voor alle onderwerpen: niveau, sterren, nauwkeurigheid en leerminuten.",
+    "statsQuickView": "Bij een glance",
+    "level": "Niveau",
+    "stars": "Sterren",
+    "accuracy": "Nauwkeurigheid",
+    "coins": "Munten",
+    "bestScore": "Beste score",
+    "bestStreak": "Beste reeks",
+    "questionsAnswered": "Vragen beantwoord",
+    "correctAnswers": "Juiste antwoorden",
+    "minutesThisMonth": "Learning minutes dit month",
+    "minutesGoal": "Doel: {goal} min · {note}",
+    "minutesLifetime": "Levenslange minuten",
+    "minutesLifetimeSub": "Van session summaries",
+    "monthlyJourney": "Maandelijkse reis",
+    "monthMinutes": "Minutes dit month:",
+    "noDataYet": "Geen data yet",
+    "noAccuracyData": "Geen data yet",
+    "subjectsIntro": "Voortgang per onderwerp: nauwkeurigheid, vragen, niveau en sterren. Tik op ‘Ga naar onderwerp’ om te beginnen met oefenen.",
+    "questionsCorrect": "Vragen / juist",
+    "levelStars": "Niveau · sterren",
+    "learningMinutes": "Minuten leren",
+    "goToSubject": "Ga naar het vak",
+    "noBadgesYet": "Nog geen badges: begin met leren en verdien prestaties in elk onderwerp.",
+    "noPersonalActivities": "Er zijn momenteel geen persoonlijke activiteiten. Wanneer een leerkracht of ouder een taak verzendt, wordt deze hier weergegeven.",
+    "noWorksheets": "Er zijn momenteel geen geopende werkbladen. Wanneer werkbladen zijn toegewezen, verschijnen ze hier.",
+    "loadingActivities": "Laden… activities…",
+    "progressLoadFailed": "Kan voortgangsgegevens niet laden.",
+    "dataProcessFailed": "Fout bij het verwerken van gegevens.",
+    "analyticsLoadFailed": "Geavanceerde gegevensupdate mislukt.",
+    "logoutNetworkError": "Netwerkfout tijdens het afmelden.",
+    "surpriseReady": "Verrassingsdoos klaar",
+    "surpriseNextIn": "Volgende box ready in {time}",
+    "surpriseBox": "Verrassingsdoos",
+    "surpriseReadyOpen": "Surprise box ready naar open",
+    "surpriseNextCountdown": "Verrassingsdoos — volgende doos klaar over {time}",
+    "nextBoxIn": "Volgende box in",
+    "youHaveOneBox": "Je hebben 1 box",
+    "youHaveBoxes": "Je hebben {count} boxes",
+    "copyLeoNumberAria": "Kopieer Leo-nummer",
+    "shareWithFriends": "Share met friends",
+    "themeGroupLabel": "Kies screen theme",
+    "themeLight": "Licht theme",
+    "themeLightShort": "Licht",
+    "themeClassic": "Klassiek thema",
+    "themeClassicShort": "Klassiek",
+    "prototypeTitle": "Kinderwereld — Prototype",
+    "prototypeDescription": "Prototype voor het openingsscherm van Leo Kids World",
+    "prototypeBadge": "🧪 Prototype",
+    "errors": {
+      "sessionExpired": "Uw sessie is verlopen. Meld u opnieuw aan.",
+      "serverError": "Serverfout tijdens het laden van leergegevens.",
+      "loadFailed": "Kan leergegevens niet van de server laden."
+    },
+    "promoTitle": "Ontdek de LEO-kinderwereld",
+    "promoDescription": "Bekijk onderweg een korte video over oefenen, spelletjes, kaarten en verrassingen.",
+    "promoVideoAria": "Kinderfilmpje",
+    "avatarModalTitle": "Speler profiel",
+    "avatarPlayerNameLabel": "Speler naam",
+    "avatarPlayerDefault": "Speler",
+    "avatarChoosePrompt": "Kies een avatar:",
+    "avatarChoosePhoto": "Kies een foto",
+    "avatarRemovePhoto": "Foto verwijderen",
+    "avatarPhotoSelected": "Foto geselecteerd ✓",
+    "avatarSaveFailed": "Opslaan mislukt",
+    "avatarImageTooLarge": "Afbeelding is te groot. Kies een afbeelding van maximaal 5 MB",
+    "avatarImageTypeInvalid": "Kies alleen een afbeeldingsbestand",
+    "avatarImageSaveFailed": "Opslaan van de afbeelding is mislukt",
+    "accessGateSignInPrompt": "Log in als leerling om verder te gaan",
+    "accessGateSignInCta": "Inloggen als leerling",
+    "adSlotAria": "Advertentie",
+    "parentInviteTitle": "Beste ouder 👋",
+    "parentInviteScanPromptLine1": "Om een ​​rekening voor uw kind te openen,",
+    "parentInviteScanPromptLine2": "scan deze code met uw telefoon:",
+    "parentInviteOrGoTo": "Of ga naar:",
+    "parentInviteCopyLink": "Kopieer link",
+    "parentInviteQrAria": "QR-code voor de ouderpagina",
+    "arcadeMissingRoom": "Ontbrekende kamer-ID.",
+    "arcadeBackToArcade": "Terug naar de arcade",
+    "arcadePageTitle": "{game} — Arcade",
+    "arcadeGames": {
+      "bingo": "Bingo",
+      "checkers": "Dammen",
+      "chess": "Schaken",
+      "dominoes": "Domino's",
+      "fourInARow": "Four in een Row",
+      "ludo": "Ludo",
+      "snakesAndLadders": "Slangen en ladders"
+    }
+  },
+  "help": {
+    "searchLabel": "Zoekgidsen",
+    "searchPlaceholder": "Search door topic of keyword...",
+    "noResults": "Er zijn geen resultaten gevonden voor deze zoekopdracht.",
+    "videoPreview": "Bekijk de instructievideo",
+    "videoClose": "Sluiten video",
+    "videoCloseButton": "Sluiten",
+    "videoModalDesktop": "Instructievideo (desktop)",
+    "videoModalMobile": "Instructievideo (mobiel)",
+    "videoDuration": "Geschatte lengte: {minutes} min",
+    "transcript": "Afschrift",
+    "captionsEnglish": "Engels"
+  },
+  "copilot": {
+    "panel": {
+      "title": "Ask over de report",
+      "aiDisclosureLink": "Information over AI gebruiken",
+      "disclaimer": "Deze informatie is gebaseerd op praktijkgegevens op de site en is geen diagnose of professioneel advies.",
+      "intro": "Hier kunt u vrijuit vragen naar de rapportage, bijvoorbeeld: wat is op dit moment het belangrijkst, waar moet u zich deze week op concentreren, wat gaat er goed of hoe kunt u het aan uw kind uitleggen.",
+      "processing": "Processing de report…",
+      "youPrefix": "Je:",
+      "questionLabel": "Vraag",
+      "placeholder": "Question over de report…",
+      "send": "Versturen",
+      "errorGeneric": "Kan de vraag momenteel niet beantwoorden. Probeer het over enkele ogenblikken opnieuw.",
+      "quickUtterances": {
+        "qa_action_today": "Wat moet we doe bij home today?",
+        "qa_action_week": "Wat moet we doe dit week?",
+        "qa_avoid_now": "Wat moeten we nu vermijden?",
+        "qa_advance_or_hold": "Move forward of wait?",
+        "qa_explain_to_child": "Hoe moeten we dit aan het kind uitleggen?",
+        "qa_ask_teacher": "Question voor de leerkracht"
+      }
+    }
+  }
+}

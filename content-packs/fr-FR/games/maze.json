@@ -1,0 +1,11 @@
+{
+  "gameId": "maze",
+  "title": "Le labyrinthe de Léo",
+  "blurb": "Trouvez la sortie du labyrinthe avant la fin du temps imparti !",
+  "help": {
+    "howToPlay": "Déplacez Leo à travers le labyrinthe, récupérez les clés et les étoiles et trouvez la sortie avant la fin du temps imparti.",
+    "scoring": "Les clés, les étoiles et les diamants ajoutent des points. Terminer le labyrinthe donne un gros bonus. Si le temps est écoulé, le jeu se termine.",
+    "rewards": "Réussir le labyrinthe en fonction du niveau de difficulté rapporte des pièces, et un bonus de score en ajoute encore plus.",
+    "tip": "Récupérez d'abord les clés - parfois elles débloquent un chemin plus court."
+  }
+}

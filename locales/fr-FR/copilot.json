@@ -1,0 +1,133 @@
+{
+  "boundary": {
+    "generalOffTopic": "Je ne peux que vous aider avec le rapport, la pratique et les progrès de votre enfant sur le site. Essayez de demander quoi pratiquer cette semaine, quoi essayer à la maison ou quel sujet ouvrir dans le cadre d'une courte activité.",
+    "diagnosticBoundary": "Je ne peux utiliser que ce qui apparaît dans les données de pratique sur le site. Le rapport peut mettre en avant des sujets et des thématiques à renforcer, mais il ne constitue pas un diagnostic personnel. Nous pouvons nous concentrer sur ce que le rapport montre : un sujet fort, un sujet à renforcer ou un petit pas vers la maison.",
+    "healthBoundary": "Je ne peux utiliser que les données de pratique affichées sur le site. Le rapport n’a pas pour but de tirer des conclusions personnelles sur votre enfant ; il vous aide à déterminer quel sujet d’apprentissage renforcer. Nous pouvons choisir une petite prochaine étape d’apprentissage à partir de ces données.",
+    "privacyBoundary": "Je ne peux aider qu'avec le rapport de l'enfant lié à ce compte parent. Je ne peux pas afficher les données, mots de passe, listes d'utilisateurs ou informations internes du système d'autres enfants.",
+    "peerComparison": "Le rapport se base uniquement sur la pratique de cet enfant et ne le compare pas aux autres enfants de la classe. Vous pouvez vous concentrer sur ce qui apparaît dans le rapport et poser des questions sur un sujet spécifique.",
+    "ambiguous": "Je ne pouvais pas dire à quelle partie du rapport vous parliez. Essayez une question plus simple, par exemple : qu'est-ce qui compte le plus à pratiquer cette semaine, que faut-il essayer à la maison ou quel sujet ouvrir dans le cadre d'une courte activité.",
+    "noDataForRequest": "Ce rapport ne contient pas encore suffisamment d’informations pour répondre à cette question avec précision. Faites une courte séance d’entraînement sur le site, puis vérifiez à nouveau pour une direction plus claire.",
+    "noDataSpecificForRequest": "Le rapport contient des données pratiques pour la période, mais pas suffisamment pour répondre avec précision à ce point spécifique. Faites une courte séance de pratique sur le site, puis vérifiez à nouveau pour obtenir des instructions plus claires sur ce sujet."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "Veuillez vous reconnecter en tant que parent.",
+      "no_report_was_found_for_the_child_you_selected": "Aucun rapport n'a été trouvé pour l'enfant que vous avez sélectionné."
+    },
+    "lib_parent-copilot_copilot-turn-payload": {
+      "server": {
+        "invalid_custom_range_rangefrom_rangeto_must_be_yyyy_mm_dd_and_fr": "Plage personnalisée non valide : rangeFrom/rangeTo doit être YYYY-MM-DD et de <= à",
+        "could_not_verify_student_ownership_for_copilot_rebuild": "Impossible de vérifier la propriété des élèves pour la reconstruction de Copilot"
+      }
+    },
+    "pages_api_parent_copilot-turn": {
+      "could_not_verify_student_ownership": "Impossible de vérifier la propriété de l'élève",
+      "student_not_found_for_this_parent": "Élève introuvable pour ce parent"
+    },
+    "utils_parent-copilot_answer-composer": {
+      "still_too_early_to_decide": "Encore trop tôt pour décider",
+      "this_is_an_initial_image_only": "Ceci n’est qu’un premier aperçu —",
+      "there_is_only_an_initial_sign_of_weakness": "Il n’y a qu’un premier signe de faiblesse…"
+    },
+    "utils_parent-copilot_continuity-pattern-composer": {
+      "report_summary": "Résumé du rapport"
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "Continuez à surveiller pendant encore plusieurs jours de pratique.",
+      "general_summary_of_the_practice": "Aperçu de la pratique"
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Envie de faire un petit pas ensemble à la maison aujourd'hui sur le même sujet ?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Envie d'un petit plan ensemble pour cette semaine sur ce sujet ?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Envie de marquer ensemble ce qu'il faut éviter cette semaine ?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Envie de vérifier ensemble quand progresser et quand rester sur le même sujet ?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Vous voulez un moyen court d’expliquer cela à votre enfant sans pression ?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Vous souhaitez formuler une question ciblée pour l’enseignant, basée sur ce qui apparaît dans le rapport ?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Vous souhaitez analyser ce qui n'est pas encore clair dans les données du rapport ?"
+    },
+    "utils_parent-copilot_index": {
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "Il existe actuellement peu de données sur la pratique, donc il n’y a pas encore suffisamment d’informations pour une orientation claire.",
+      "this_mode_is_for_parent_only": "Ce mode est réservé aux parents.",
+      "the_relationship_cannot_be_identified_from_the_report": "Le rapport n’en montre pas suffisamment pour identifier cette relation.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "Aucun élément correspondant n'a été trouvé pour le sujet sélectionné dans le rapport."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "right_now_it": "Tout de suite,",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Faites un suivi après 3 à 4 jours comme celui-ci, puis vérifiez dans le rapport si la précision s'améliore ou si le modèle revient.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "Cela ne signifie pas qu’il n’y a pas de succès, mais simplement qu’il est encore trop tôt pour évaluer une force stable à partir des données dans cette fourchette.",
+      "during_this_period_there_is_no_practice_data_on_this_subject_in_": "Durant cette période, il n'y a pas de données pratiques à ce sujet dans le rapport actuel.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Vous pouvez choisir un autre sujet dans le rapport, ou pratiquer davantage ce sujet et poser à nouveau la question.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "Le sujet apparaît dans la liste, mais aucune question n'a été comptabilisée pour lui dans la plage de dates.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "Au cours de cette période, il n’existe toujours pas suffisamment de données pratiques pour recommander d’augmenter ou d’abaisser le niveau.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Rassemblez davantage de pratique sur ce sujet avant de décider d’un changement de niveau.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "Aucun sujet faible ne s'est démarqué avec suffisamment de pratique dans cette gamme.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "Selon le rapport, il n’existe toujours pas suffisamment de preuves d’un travail au-dessus du niveau indiqué.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Rassemblez davantage de pratique avant de conclure que la performance est supérieure au niveau scolaire.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "Il n’est pas encore possible de déterminer l’orientation du rapport actuel sur le rendement dans ce domaine."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "Vous ne devez pas inclure de bloc next_step.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "N'incluez pas de bloc next_step — conservez les recommandations pratiques uniquement dans le bloc de signification (FACTS_JSON autorise les recommandations uniquement lorsque la recommandation"
+    },
+    "utils_parent-copilot_parent-coaching-packs": {
+      "period_overview": "Aperçu de la période"
+    },
+    "utils_parent-copilot_parent-facing-answer-postpr": {
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "Le rapport est basé sur la pratique réalisée sur le site au cours de la période sélectionnée."
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "Cette réponse s'en tient à ce qui apparaît dans le rapport pour la période sélectionnée et ne va pas au-delà de ces données.",
+      "the_three_most_important_things_right_now_are": "Les trois choses les plus importantes à l’heure actuelle sont :",
+      "report_summary": "Résumé du rapport",
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "Si une sous-compétence claire apparaît dans le rapport, concentrez-vous dessus – n'ouvrez pas plusieurs sujets à la fois."
+    },
+    "utils_parent-copilot_render-adapter": {
+      "program_for_the_week": "Planifier la semaine",
+      "what_to_avoid_now": "Ce qu'il faut éviter maintenant",
+      "formulation_for_a_child": "Texte pour votre enfant"
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "Dans ce sujet, il n'y a pas encore assez de pratique dans le rapport — choisissez un sujet qui a déjà de la pratique.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "Dans cette matière, il n’existe pas encore de sujet suffisamment pratique pour en discuter — vous pouvez essayer une autre matière.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "Il y a plusieurs sujets ici : sur quel sujet dois-je répondre ?"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "Lorsque les sujets apparaissent dans la plage de dates, demandez à nouveau et vous pourrez obtenir une liste organisée.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "La liste est basée sur les sujets présentés dans le rapport pour la période sélectionnée, dans l'ordre d'affichage.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Il s'agit des lignes récapitulatives de la période telles qu'elles apparaissent dans le rapport. Pour plus de détails par sujet, ouvrez l’écran des sujets.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "Le classement utilise des moyennes sur toutes les matières avec pratique, et non la formulation d'un seul sujet.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Lorsque des données pratiques apparaissent pour au moins un sujet comportant des questions, vous pouvez demander à nouveau une image plus claire.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "Vous pouvez demander à nouveau avec deux noms de sujets, ou poser une question sur le classement par difficulté par rapport aux résultats relativement bons basés sur les données du rapport.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "Lorsque des questions et une précision apparaissent pour les deux sujets, demandez à nouveau une comparaison directe avec les moyennes du rapport.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "Pour distinguer les directions, examinez également le nombre de questions dans chaque sujet et la formulation du sujet lui-même.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "La comparaison utilise des moyennes sur les sujets qui ont de la pratique dans le rapport, et non la formulation d'un seul sujet.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "Lorsque les sujets apparaissent avec des lignes d'objet, demandez à nouveau pour obtenir une note pratique.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "La note est basée sur le nombre réel de questions contenues dans le rapport périodique et non sur un sentiment de dépassement.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Lorsque des sujets actifs apparaissent, vous pouvez voir exactement où les données sont les plus fines.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "Cela signifie qu’il y a trop peu de données dans le rapport périodique – soyez prudent lorsque vous tirez des conclusions.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "Cette réponse utilise uniquement les lignes récapitulatives du rapport et n'invente pas de tendance dans le temps qui n'y est pas affichée.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Lorsque les données complètes sur la pratique par sujet apparaissent dans le rapport, vous pouvez repérer un domaine qui nécessite votre attention.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Continuez à vous entraîner et à vérifier : le rapport ne montre actuellement aucun signe clair de confusion.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "Cela vient de signes indiquant que la formulation est encore floue ou qu'il y a trop peu de données dans le rapport lui-même.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "Plus de questions et une période de pratique plus longue sont nécessaires pour tester de manière fiable la stabilité.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "Lorsque des données apparaissent pour deux sujets ou plus, demandez à nouveau une note à partir des moyennes indiquées dans le rapport.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "Il s’agit d’une description au niveau du sujet du rapport. Pour obtenir des détails précis par sujet, ouvrez le sujet dans le rapport.",
+      "you_can_formulate_again_with_two_subject_names": "Vous pouvez demander à nouveau avec deux noms de sujets, ou poser une question sur le classement par difficulté par rapport aux résultats relativement bons basés sur les données du rapport.",
+      "in_order_to_differentiate_between_the_directions": "Pour distinguer les directions, examinez également le nombre de questions dans chaque sujet et la formulation du sujet dans le rapport."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Génial : commencez par une petite étape qui correspond à ce qui apparaît dans le rapport, sans aller au-delà de cette formulation.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Compris : nous restons avec la même formulation du rapport et passons à la petite étape suivante lorsque cela nous convient.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "Il n’y a pas d’explication longue ici – dites-moi en un autre mot ce qui n’est pas encore clair.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "Poursuivre sur le même point du reportage – rester avec la même image, sans ajouter de nouveau sujet au-delà de ce qui a déjà été montré."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Maintenez une pratique courte et régulière pour verrouiller les progrès dans tous les domaines.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Voici des mots que vous pouvez partager avec un enfant dans un langage doux.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "Il n'y a pas encore une longue période de pratique dans toutes les matières, mais il existe des totaux numériques de pratique pour la période.",
+      "no_long_detail_shown_here_yet": "Aucune répartition détaillée n’est encore présentée ici.",
+      "period_overview": "Aperçu de la période",
+      "still_lacks_cumulative_practice_for_a_stable_image": "Il n’y a pas encore assez de pratique cumulée pour obtenir un tableau stable."
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "boundary": {
+    "generalOffTopic": "Ik kan alleen helpen met het rapport, de oefening en de voortgang van uw kind op de site. Probeer te vragen wat u deze week moet oefenen, wat u thuis kunt proberen, of welk onderwerp u als korte activiteit moet openen.",
+    "diagnosticBoundary": "Ik kan alleen gebruiken wat in de praktijkgegevens op de site staat. Het rapport kan onderwerpen en onderwerpen belichten die versterkt kunnen worden, maar het is geen persoonlijke diagnose. We kunnen ons richten op wat het rapport wel laat zien: een sterk onderwerp, een onderwerp om te versterken, of een kleine stap naar huis.",
+    "healthBoundary": "Ik kan alleen gebruik maken van de praktijkgegevens die op de site staan ​​weergegeven. Het rapport is niet bedoeld om persoonlijke conclusies over uw kind te trekken; het helpt u te bepalen welk leeronderwerp u moet versterken. Uit die gegevens kunnen we een kleine volgende leerstap kiezen.",
+    "privacyBoundary": "Ik kan alleen helpen met de rapportage voor het kind dat aan dit ouderaccount is gekoppeld. Ik kan de gegevens, wachtwoorden, gebruikerslijsten of interne systeeminformatie van andere kinderen niet tonen.",
+    "peerComparison": "Het rapport is uitsluitend gebaseerd op de praktijk van dit kind en vergelijkt het niet met andere kinderen in de klas. U kunt zich concentreren op wat er in het rapport verschijnt en vragen stellen over een specifiek onderwerp.",
+    "ambiguous": "Ik wist niet welk deel van het rapport u bedoelde. Probeer een eenvoudigere vraag, bijvoorbeeld: wat is het belangrijkst om deze week te oefenen, wat u thuis kunt proberen, of welk onderwerp u als korte activiteit moet openen.",
+    "noDataForRequest": "Dit rapport bevat nog niet voldoende informatie om daar een accuraat antwoord op te geven. Voer een korte oefensessie op de site uit en controleer vervolgens opnieuw of er een duidelijkere richting is.",
+    "noDataSpecificForRequest": "Het rapport bevat praktijkgegevens voor de periode, maar niet voldoende om dit specifieke punt nauwkeurig te beantwoorden. Houd een korte oefensessie op de site en kijk vervolgens opnieuw voor een duidelijkere richting over dit onderwerp."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "Log opnieuw in als ouder.",
+      "no_report_was_found_for_the_child_you_selected": "Er is geen rapport gevonden voor het door u geselecteerde kind."
+    },
+    "lib_parent-copilot_copilot-turn-payload": {
+      "server": {
+        "invalid_custom_range_rangefrom_rangeto_must_be_yyyy_mm_dd_and_fr": "Ongeldig aangepast bereik: rangeFrom/rangeTo moet JJJJ-MM-DD zijn en van <= tot",
+        "could_not_verify_student_ownership_for_copilot_rebuild": "Kan het eigendom van de leerling voor het opnieuw opbouwen van Copilot niet verifiëren"
+      }
+    },
+    "pages_api_parent_copilot-turn": {
+      "could_not_verify_student_ownership": "Kan het eigendom van de leerling niet verifiëren",
+      "student_not_found_for_this_parent": "Leerling niet gevonden voor deze ouder"
+    },
+    "utils_parent-copilot_answer-composer": {
+      "still_too_early_to_decide": "Still ook early naar decide",
+      "this_is_an_initial_image_only": "Dit is alleen een early snapshot —",
+      "there_is_only_an_initial_sign_of_weakness": "Er is slechts een vroeg teken van zwakte –"
+    },
+    "utils_parent-copilot_continuity-pattern-composer": {
+      "report_summary": "Rapport summary"
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "Blijf kijken voor nog een paar dagen oefenen.",
+      "general_summary_of_the_practice": "Oefenen overview"
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Vandaag samen thuis een kleine stap zetten over hetzelfde onderwerp?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Samen een kort plan maken voor deze week over dit onderwerp?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Samen markeren wat je deze week moet vermijden?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Wilt u samen bekijken wanneer u hogerop kunt komen en wanneer u bij hetzelfde onderwerp moet blijven?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Wil je dit op een korte manier zonder druk aan je kind uitleggen?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Wilt u een formulering voor een gerichte vraag voor de docent, op basis van wat er in het rapport staat?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Wilt u uit de rapportgegevens halen wat nog onduidelijk is?"
+    },
+    "utils_parent-copilot_index": {
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "Er zijn momenteel weinig praktijkgegevens, dus er is nog niet genoeg informatie voor een duidelijke richting.",
+      "this_mode_is_for_parent_only": "Deze modus is alleen voor ouders.",
+      "the_relationship_cannot_be_identified_from_the_report": "Uit het rapport blijkt niet genoeg om dat verband vast te stellen.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "Er zijn geen overeenkomende items gevonden voor het in het rapport geselecteerde onderwerp."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "right_now_it": "Op dit moment,",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Volg dit na 3-4 dagen op en controleer vervolgens in het rapport of de nauwkeurigheid verbetert of dat het patroon terugkeert.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "Dit betekent niet dat er geen successen zijn – alleen dat het nog te vroeg is om op basis van de gegevens in dit bereik een stabiele sterkte te kunnen vaststellen.",
+      "during_this_period_there_is_no_practice_data_on_this_subject_in_": "Gedurende deze periode zijn er in het huidige rapport geen praktijkgegevens over dit onderwerp opgenomen.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Je kunt een ander onderwerp uit het rapport kiezen, of dit onderwerp verder oefenen en het opnieuw vragen.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "Het onderwerp verschijnt in de lijst, maar er zijn geen vragen voor meegeteld in het datumbereik.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "In deze periode zijn er nog steeds onvoldoende praktijkgegevens om een ​​verhoging of verlaging van het niveau aan te bevelen.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Zorg dat u meer oefent over dit onderwerp voordat u besluit tot een niveauverandering.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "Geen enkele zwakke onderwerpregel viel op als er voldoende werd geoefend op dit gebied.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "Volgens het rapport is er nog steeds niet genoeg bewijs voor werk boven de genoemde rang.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Verzamel meer oefening voordat u concludeert dat de prestaties boven het niveau liggen.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "Het is nog niet mogelijk om vanuit het huidige rapport richting te geven aan de prestaties op dit onderwerp."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "U mag geen next_step-blok opnemen.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "Neem geen next_step-blok op: houd praktische aanbevelingen alleen binnen het betekenisblok (FACTS_JSON staat aanbevelingen alleen toe als de aanbeveling"
+    },
+    "utils_parent-copilot_parent-coaching-packs": {
+      "period_overview": "Periodeoverzicht"
+    },
+    "utils_parent-copilot_parent-facing-answer-postpr": {
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "Het rapport is gebaseerd op de praktijk die in de geselecteerde periode op de locatie is uitgevoerd."
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "Dit antwoord blijft bij wat er in het rapport voor de geselecteerde periode staat en gaat niet verder dan die gegevens.",
+      "the_three_most_important_things_right_now_are": "De drie belangrijkste zaken op dit moment zijn:",
+      "report_summary": "Rapport summary",
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "Als er een duidelijke subvaardigheid in het rapport voorkomt, concentreer u daar dan op; open niet meerdere onderwerpen tegelijk."
+    },
+    "utils_parent-copilot_render-adapter": {
+      "program_for_the_week": "Plan voor de week",
+      "what_to_avoid_now": "Wat naar avoid now",
+      "formulation_for_a_child": "Wording voor uw kind"
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "Er staat nog steeds niet genoeg oefening in dit onderwerp in het rapport. Kies een onderwerp waarin al geoefend is.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "In dit onderwerp is er nog geen onderwerp waarover voldoende geoefend is om te bespreken; je kunt een ander onderwerp proberen.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "Er is hier meer dan één onderwerp. Over welk onderwerp moet ik antwoorden?"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "Wanneer onderwerpen in het datumbereik verschijnen, vraagt ​​u het opnieuw en krijgt u een georganiseerde lijst.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "De lijst is gebaseerd op de onderwerpen die in het rapport voor de geselecteerde periode worden weergegeven, in weergavevolgorde.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Dit zijn de periodeoverzichtsregels zoals ze in het rapport verschijnen. Voor details per onderwerp opent u het onderwerpscherm.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "De ranglijst maakt gebruik van gemiddelden over onderwerpen met praktijk, niet van de bewoordingen van een enkel onderwerp.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Wanneer er van minimaal één onderwerp met vragen praktijkgegevens verschijnen, kunt u nogmaals om een ​​duidelijker beeld vragen.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "U kunt opnieuw een vraag stellen met twee onderwerpnamen, of één vraag stellen over de rangschikking op moeilijkheidsgraad versus relatief sterke resultaten op basis van de rapportgegevens.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "Wanneer er voor beide onderwerpen vragen en nauwkeurigheid verschijnen, vraag dan opnieuw om een ​​directe vergelijking met de gemiddelden in het rapport.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "Om de richtingen uit elkaar te houden, kijkt u ook naar het aantal vragen in elk onderwerp en de formulering van het onderwerp zelf.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "Bij de vergelijking wordt gebruik gemaakt van gemiddelden over onderwerpen die in het rapport in de praktijk voorkomen, en niet van de bewoordingen van één enkel onderwerp.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "Wanneer onderwerpen verschijnen met onderwerpregels, vraag dan opnieuw om een ​​oefenbeoordeling.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "De beoordeling is gebaseerd op het werkelijke aantal vragen in het perioderapport en niet op een gevoel van overweldiging.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Wanneer actieve onderwerpen verschijnen, kunt u precies zien waar de gegevens het dunst zijn.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "Dit betekent dat er te weinig gegevens in het perioderapport staan. Wees voorzichtig met het trekken van conclusies.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "Dit antwoord gebruikt alleen de samenvattingsregels in het rapport en verzint geen trend in de tijd die daar niet wordt weergegeven.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Wanneer er volledige praktijkgegevens per onderwerp in het rapport verschijnen, kunt u een gebied ontdekken dat aandacht behoeft.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Blijf oefenen en controleren; het rapport vertoont momenteel geen duidelijk teken van verwarring.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "Dit komt door signalen dat de formulering nog steeds onduidelijk is, of dat er te weinig gegevens in het rapport zelf staan.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "Er zijn meer vragen en een langere oefenperiode nodig om de stabiliteit betrouwbaar te testen.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "Als er gegevens verschijnen voor twee of meer onderwerpen, vraag dan opnieuw om een ​​beoordeling op basis van de gemiddelden in het rapport.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "Dit is een beschrijving op onderwerpniveau uit het rapport. Voor exacte details per onderwerp opent u het onderwerp in het rapport.",
+      "you_can_formulate_again_with_two_subject_names": "U kunt opnieuw een vraag stellen met twee onderwerpnamen, of één vraag stellen over de rangschikking op moeilijkheidsgraad versus relatief sterke resultaten op basis van de rapportgegevens.",
+      "in_order_to_differentiate_between_the_directions": "Om de richtingen uit elkaar te houden, kijkt u ook naar het aantal vragen in elk onderwerp en de onderwerpformulering in het rapport."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Geweldig – begin met een kleine stap die overeenkomt met wat er in het rapport staat, zonder verder te gaan dan die bewoording.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Oké, we blijven bij dezelfde formulering uit het rapport en gaan over naar de volgende kleine stap wanneer dat past.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "Er is hier geen lange uitleg – vertel me in een ander woord wat nog steeds onduidelijk is.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "We gaan verder vanaf hetzelfde punt in het rapport en blijven bij dezelfde afbeelding, zonder een nieuw onderwerp toe te voegen dat verder gaat dan wat al werd getoond."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Blijf kort en gestaag oefenen om de voortgang op verschillende gebieden vast te leggen.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Hier vindt u een bewoording die u in vriendelijke taal met uw kind kunt delen.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "Er is nog geen lange periode van oefenen voor alle vakken, maar er zijn numerieke oefentotalen voor de periode.",
+      "no_long_detail_shown_here_yet": "Er wordt hier nog geen gedetailleerde uitsplitsing weergegeven.",
+      "period_overview": "Periodeoverzicht",
+      "still_lacks_cumulative_practice_for_a_stable_image": "Er is nog steeds niet genoeg cumulatieve oefening voor een stabiel beeld."
+    }
+  }
+}

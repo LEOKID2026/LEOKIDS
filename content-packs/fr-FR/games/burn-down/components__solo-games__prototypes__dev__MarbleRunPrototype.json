@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "marble_run": "Course de billes",
+    "prototype_pick_a_piece_place_run": "Prototype · choisir une pièce · placer · courir",
+    "reset": "Réinitialiser",
+    "run": "Courez ⚪"
+  }
+}

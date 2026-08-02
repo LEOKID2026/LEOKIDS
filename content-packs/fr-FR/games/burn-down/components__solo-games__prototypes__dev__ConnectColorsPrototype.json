@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "connect_colors": "Connecter les couleurs",
+    "prototype_connect_pairs_without_crossing": "Prototype · connecter des paires sans croisement",
+    "p_id_colorid_const_isendpoint_endpointmap_cellkey_const_eppair_pairs_fin": "p.id === colorId);\r\n            const isEndpoint = endpointMap[cellKey];\r\n            const epPair = PAIRES.find(\r\n              (p) => keyOf(...p.a) === cellKey || keyOf(...p.b) === cellKey,\r\n            );\r\n            const aperçuConflict =\r\n              dragPreview === cellKey &&\r\n              couleur active &&\r\n              !tryExtend(activeColor, cellKey, chemins);\r\n\r\n            retour (",
+    "rect_width_rely_rect_height_return_null_const_c_math_floor_relx_rect_wid": "largeur rectangulaire || relY > rect.height) renvoie null ;\r\n    const c = Mathématiques.floor((relX / rect.width) * GRID);\r\n    const r = Mathématiques.floor((relY / rect.height) * GRID);\r\n    si (r",
+    "clear": "Clair"
+  }
+}

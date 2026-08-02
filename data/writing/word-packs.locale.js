@@ -107,6 +107,90 @@ const COLOR_INSTRUCTION_PT_PT = Object.freeze({
   "Color in black": "Pinta de preto",
 });
 
+/** Italian (Italy) pack titles (chrome only). */
+const PACK_TITLE_IT_IT = Object.freeze({
+  colors: "Colori",
+  animals: "Animali",
+  family: "Famiglia",
+  food: "Alimenti",
+  school: "Scuola",
+  body: "Corpo",
+  home: "Casa",
+  nature: "Natura",
+  transport: "Trasporti",
+  numbers: "Numeri",
+  cvc: "Parole CVC",
+  sight: "Parole frequenti",
+});
+
+/** French (France) pack titles (chrome only). */
+const PACK_TITLE_FR_FR = Object.freeze({
+  colors: "Couleurs",
+  animals: "Animaux",
+  family: "Famille",
+  food: "Aliments",
+  school: "École",
+  body: "Corps",
+  home: "Maison",
+  nature: "Nature",
+  transport: "Transports",
+  numbers: "Nombres",
+  cvc: "Mots CVC",
+  sight: "Mots fréquents",
+});
+
+/** Dutch (Netherlands) pack titles (chrome only). */
+const PACK_TITLE_NL_NL = Object.freeze({
+  colors: "Kleuren",
+  animals: "Dieren",
+  family: "Familie",
+  food: "Eten",
+  school: "School",
+  body: "Lichaam",
+  home: "Huis",
+  nature: "Natuur",
+  transport: "Vervoer",
+  numbers: "Getallen",
+  cvc: "CVC-woorden",
+  sight: "Veelvoorkomende woorden",
+});
+
+/** EN colorInstruction → it-IT (colors pack only). */
+const COLOR_INSTRUCTION_IT_IT = Object.freeze({
+  "Color in red": "Colora di rosso",
+  "Color in blue": "Colora di blu",
+  "Color in green": "Colora di verde",
+  "Color in yellow": "Colora di giallo",
+  "Color in orange": "Colora di arancione",
+  "Color in purple": "Colora di viola",
+  "Color in pink": "Colora di rosa",
+  "Color in black": "Colora di nero",
+});
+
+/** EN colorInstruction → fr-FR (colors pack only). */
+const COLOR_INSTRUCTION_FR_FR = Object.freeze({
+  "Color in red": "Colorie en rouge",
+  "Color in blue": "Colorie en bleu",
+  "Color in green": "Colorie en vert",
+  "Color in yellow": "Colorie en jaune",
+  "Color in orange": "Colorie en orange",
+  "Color in purple": "Colorie en violet",
+  "Color in pink": "Colorie en rose",
+  "Color in black": "Colorie en noir",
+});
+
+/** EN colorInstruction → nl-NL (colors pack only). */
+const COLOR_INSTRUCTION_NL_NL = Object.freeze({
+  "Color in red": "Kleur rood",
+  "Color in blue": "Kleur blauw",
+  "Color in green": "Kleur groen",
+  "Color in yellow": "Kleur geel",
+  "Color in orange": "Kleur oranje",
+  "Color in purple": "Kleur paars",
+  "Color in pink": "Kleur roze",
+  "Color in black": "Kleur zwart",
+});
+
 /**
  * @param {string} locale
  */
@@ -141,6 +225,39 @@ function isPtPt(locale) {
 }
 
 /**
+ * @param {string} locale
+ */
+function isItIt(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "it-it";
+}
+
+/**
+ * @param {string} locale
+ */
+function isFrFr(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "fr-fr";
+}
+
+/**
+ * @param {string} locale
+ */
+function isNlNl(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "nl-nl";
+}
+
+/**
  * @param {string|null|undefined} [contentLocale]
  */
 export function resolveWritingWordPacks(contentLocale) {
@@ -148,20 +265,35 @@ export function resolveWritingWordPacks(contentLocale) {
   const useEs = isEs419(locale);
   const usePtPt = isPtPt(locale);
   const usePtBr = isPtBr(locale);
-  const titles = usePtPt
-    ? PACK_TITLE_PT_PT
-    : usePtBr
-      ? PACK_TITLE_PT_BR
-      : useEs
-        ? PACK_TITLE_ES_419
-        : PACK_TITLE_EN;
-  const colorMap = usePtPt
-    ? COLOR_INSTRUCTION_PT_PT
-    : usePtBr
-      ? COLOR_INSTRUCTION_PT_BR
-      : useEs
-        ? COLOR_INSTRUCTION_ES_419
-        : null;
+  const useIt = isItIt(locale);
+  const useFr = isFrFr(locale);
+  const useNl = isNlNl(locale);
+  const titles = useIt
+    ? PACK_TITLE_IT_IT
+    : useFr
+      ? PACK_TITLE_FR_FR
+      : useNl
+        ? PACK_TITLE_NL_NL
+        : usePtPt
+          ? PACK_TITLE_PT_PT
+          : usePtBr
+            ? PACK_TITLE_PT_BR
+            : useEs
+              ? PACK_TITLE_ES_419
+              : PACK_TITLE_EN;
+  const colorMap = useIt
+    ? COLOR_INSTRUCTION_IT_IT
+    : useFr
+      ? COLOR_INSTRUCTION_FR_FR
+      : useNl
+        ? COLOR_INSTRUCTION_NL_NL
+        : usePtPt
+          ? COLOR_INSTRUCTION_PT_PT
+          : usePtBr
+            ? COLOR_INSTRUCTION_PT_BR
+            : useEs
+              ? COLOR_INSTRUCTION_ES_419
+              : null;
 
   /** @type {typeof ENGLISH_WORD_PACKS} */
   const out = {};

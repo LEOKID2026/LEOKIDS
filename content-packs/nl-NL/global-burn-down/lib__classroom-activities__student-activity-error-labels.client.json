@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "Deze activiteit is momenteel niet beschikbaar",
+    "activity_not_found": "Activity niet found",
+    "this_activity_has_not_started_yet": "Deze activiteit is nog niet begonnen",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Er kunnen momenteel geen antwoorden voor deze activiteit worden ingediend",
+    "this_activity_is_closed": "Dit activity is closed",
+    "time_is_up_for_this_activity": "Time is up voor dit activity",
+    "could_not_open_this_activity_right_now": "Kan deze activiteit momenteel niet openen",
+    "not_found": "Niet found",
+    "please_sign_in": "Log alstublieft in",
+    "you_do_not_have_permission_to_open_this_activity": "U heeft geen toestemming om deze activiteit te openen",
+    "this_activity_is_not_assigned_to_you": "Deze activiteit is niet aan jou toegewezen",
+    "could_not_identify_the_account": "Kan het account niet identificeren",
+    "could_not_complete_that_action_right_now": "Kan deze actie momenteel niet voltooien",
+    "you_already_submitted_this_activity": "Je hebt deze activiteit al ingediend",
+    "you_already_answered_this_question": "Je hebt deze vraag al beantwoord",
+    "waiting_for_the_teacher": "Waiting voor de leerkracht…",
+    "no_answer_submission_needed": "Geen answer submission needed",
+    "the_system_is_updating_try_again_later": "Het systeem wordt bijgewerkt. Probeer het later opnieuw",
+    "something_went_wrong_please_try_again": "Er is iets misgegaan. Probeer het opnieuw",
+    "server_error_please_try_again": "Serverfout. Probeer het opnieuw",
+    "action_not_supported": "Action niet supported",
+    "could_not_load_the_question_right_now": "Kan de vraag nu niet laden",
+    "could_not_submit_an_answer_right_now": "Kan momenteel geen antwoord indienen"
+  }
+}

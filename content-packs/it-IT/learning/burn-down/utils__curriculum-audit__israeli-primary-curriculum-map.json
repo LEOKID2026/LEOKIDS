@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "internal_conservative_strand_mapping_liosh_audit_layer": "Mappatura conservativa interna degli elementi (livello di audit LIOSH)",
+    "repo_maintained_interpretation_requires_pedagogy_sign_off_before_any_rel": "Interpretazione mantenuta dal repository: richiede l'approvazione pedagogica prima di qualsiasi rilascio.",
+    "general_framework_reference_only_does_not_map_individual_question_stems_": "Solo riferimento quadro generale; non associa le singole domande ai risultati.",
+    "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match": "Portale ufficiale: utilizzo per il contesto politico; non una corrispondenza del programma riga per riga.",
+    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "Contesto politico generale; i primi voti spesso enfatizzano l'esposizione/ascolto: verificare l'alfabetizzazione formale rispetto all'esposizione per scuola.",
+    "internal_strand_plane_shapes_recognition_audit": "Filo interno: riconoscimento delle forme piane (audit)",
+    "repo_interpretation_of_typical_early_shape_recognition_requires_pedagogy": "Interpretazione repo del tipico riconoscimento precoce della forma: richiede la convalida pedagogica.",
+    "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer": "I fili si allineano con le chiavi math.* normalizzate da curriculum-topic-normalizer.js",
+    "separated_geometry_strands_do_not_collapse_to_one_topic": "Fili geometrici separati: non comprimerli in un unico argomento.",
+    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "Gradi 1–2: grammatica non considerata fondamentale; separazione esposizione/arricchimento.",
+    "inventory_retained_curriculum_placement_deferred_confidence_low": "Inventario trattenuto; collocamento nel curriculum rinviato - livello di confidenza basso.",
+    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israele elementare (classi 1–6) - mappatura strutturata conservativa + ancore di fonti consultive"
+  }
+}

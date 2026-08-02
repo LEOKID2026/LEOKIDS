@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "looks_strong": "Ça a l'air fort",
+    "worth_watching": "A voir",
+    "worth_strengthening": "Point à renforcer",
+    "worth_guiding": "Ça vaut le coup d'être guidé",
+    "needs_strengthening": "Doit être renforcé",
+    "few_questions": "Quelques questions",
+    "above_grade_level": "Au-dessus du niveau scolaire",
+    "earlier_foundations": "Fondations antérieures",
+    "strong_topics": "Des sujets forts",
+    "topics_worth_watching": "Sujets à surveiller",
+    "topics_worth_strengthening": "Sujets à renforcer",
+    "topics_worth_guiding_in_practice": "Sujets qui méritent d'être guidés dans la pratique",
+    "topics_with_few_questions": "Sujets avec peu de questions",
+    "practice_above_grade_level": "Pratiquez au-dessus du niveau scolaire",
+    "earlier_foundation_practice": "Pratique antérieure des fondations"
+  }
+}

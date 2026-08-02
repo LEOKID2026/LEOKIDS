@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "try_again": "Probeer opnieuw",
+    "setflipped_delay_const_totalcards_cards_length_const_ismobileviewport_ty": "setFlipped([]), vertraging); }); } } } const totalCards = kaarten.lengte; const isMobileViewport = typevan venster!== \"ongedefinieerd\" && window.matchMedia(\"(max-width: 1023px)\").matches; const isMobiel = boardSize.w > 0? bordgrootte.w",
+    "void_onpregameuichange_active_boolean_void_deckbuilder_paircount_number_": "leegte, * onPreGameUiChange?: (actief: boolean) => ongeldig, * deckBuilder?: (pairCount: nummer) => Beloofd",
+    "go_back_to_the_card_shop_and_make_sure_cards_are_available": "Ga terug naar de kaartwinkel en zorg ervoor dat er kaarten beschikbaar zijn",
+    "initgamewithdifficulty_difficulty": "initGameWithDifficulty(difficulty)} />",
+    "not_enough_shop_cards_for_memory": "Niet genoeg winkelkaarten voor geheugen",
+    "loading_cards_from_the_shop": "Kaarten uit de winkel laden…"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "square": "Piazza",
+    "rectangle": "Rettangolo",
+    "parallel": "Paralelo",
+    "translation": "Traduzione",
+    "reflection": "Riflessione",
+    "rotation": "Rotazione",
+    "no_movement": "Nessun movimento"
+  }
+}

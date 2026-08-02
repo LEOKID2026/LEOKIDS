@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "Con I usamos am.",
+    "with_he_she_it_we_use_is": "Con él/ella/ello usamos is.",
+    "with_you_we_they_we_use_are": "Con you/we/they usamos are.",
+    "got_it": "Fatto",
+    "try_again": "Provare de nuovo",
+    "back_to_menu": "Back to menu",
+    "choose_another_topic": "Scegli otro argomento"
+  }
+}

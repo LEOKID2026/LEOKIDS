@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Deze leerling uit de klas verwijderen?",
+    "remove_this_student_from_your_teacher_list": "Deze leerling verwijderen uit je lerarenlijst?",
+    "manage_class": "Beheer klasse",
+    "full_name_of_new_student": "Full name van new leerling",
+    "students": "Leerlingen",
+    "classes": "Klassen",
+    "class_report": "Klas report",
+    "activities": "Activiteiten",
+    "filter_student_list": "Filter leerling list",
+    "search_by_name": "Search door name…"
+  }
+}

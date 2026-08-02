@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "tic_tac_toe": "Tic-Tac-Toe",
+    "boards_from_3_3_to_7_7_with_score_tracking": "Borden van 3×3 tot 7×7 met scoreregistratie.",
+    "rock_paper_scissors": "Steen · Papier · Schaar",
+    "quick_rounds_best_of_all": "Quick rounds — best van alle.",
+    "tap_battle": "Tik op Gevecht",
+    "each_side_taps_as_fast_as_they_can_who_wins": "Elke kant tikt zo snel als ze kunnen – wie wint?",
+    "memory_match": "Geheugenmatch",
+    "flip_cards_find_pairs_and_try_to_win": "Draai kaarten om, vind paren en probeer te winnen."
+  }
+}

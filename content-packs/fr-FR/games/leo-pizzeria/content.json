@@ -1,0 +1,52 @@
+{
+  "toppings": [
+    {
+      "id": "cheese",
+      "emoji": "🧀",
+      "name": "Fromage"
+    },
+    {
+      "id": "tomato",
+      "emoji": "🍅",
+      "name": "Tomate"
+    },
+    {
+      "id": "olive",
+      "emoji": "🫒",
+      "name": "Olives"
+    },
+    {
+      "id": "mushroom",
+      "emoji": "🍄",
+      "name": "Champignons"
+    },
+    {
+      "id": "pepper",
+      "emoji": "🫑",
+      "name": "Poivre"
+    },
+    {
+      "id": "basil",
+      "emoji": "🌿",
+      "name": "Basilic"
+    }
+  ],
+  "difficulties": {
+    "easy": {
+      "label": "Facile",
+      "hint": "Entier, moitié et quart sur une pizza à 4 tranches"
+    },
+    "medium": {
+      "label": "Moyen",
+      "hint": "Moitié, quart et trois quarts sur 8 tranches"
+    },
+    "hard": {
+      "label": "Dur",
+      "hint": "Croches, combinaisons et complétion du tout"
+    }
+  },
+  "successMessages": [
+    "Super travail ! La pizza est prête pour le client.",
+    "Génial! Tu l'avez fait exactement comme commandé."
+  ]
+}

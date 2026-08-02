@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "Vormen",
+      "topic": "Vierhoeken",
+      "subskill": "Recthoek/parallelogram properties",
+      "pattern": "Verwarrende eigenschappen",
+      "counterEvidence": "Correct op clean shapes alleen",
+      "countsWhen": "Hoeken gemarkeerd",
+      "doesNotCountWhen": "Names alleen zonder een diagram",
+      "probe": "Met hoek/side marking",
+      "intervention": "Definitiekaarten",
+      "escalation": "Failure op elke shape",
+      "observableMarkers": [
+        "Error wanneer hoek is niet 90°"
+      ],
+      "roots": [
+        "Overlappende definities"
+      ],
+      "competitors": [
+        "Naam herinneren"
+      ],
+      "doNotConclude": [
+        "Geen meetkunde"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "Hoeken",
+      "topic": "Meting",
+      "subskill": "Reading een protractor",
+      "pattern": "Error in hoek range",
+      "counterEvidence": "Correct met guided measurement",
+      "countsWhen": "Gradenboog en instructies zijn geldig",
+      "doesNotCountWhen": "Hoek ook small in een misleading UI",
+      "probe": "Begeleid versus onafhankelijk",
+      "intervention": "Schaal oefenen",
+      "escalation": "Visie rapport",
+      "observableMarkers": [
+        "Herhaalde fout in hetzelfde bereik"
+      ],
+      "roots": [
+        "Reading een scale"
+      ],
+      "competitors": [
+        "Snelheid"
+      ],
+      "doNotConclude": [
+        "Visieprobleem"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "Oppervlakte",
+      "topic": "Parallellogram",
+      "subskill": "Hoogte",
+      "pattern": "Zijkanten gebruiken als hoogte",
+      "counterEvidence": "Altijd correct op een rechthoek",
+      "countsWhen": "Height kan zijn added",
+      "doesNotCountWhen": "Alleen grote aantallen zonder model",
+      "probe": "Met/zonder height line",
+      "intervention": "Markeer hoogte",
+      "escalation": "Failure op een rechthoek",
+      "observableMarkers": [
+        "Fout wanneer er geen hoogtelijn wordt getekend"
+      ],
+      "roots": [
+        "Hoogte kiezen"
+      ],
+      "competitors": [
+        "Wrong vermenigvuldigen"
+      ],
+      "doNotConclude": [
+        "Geen formulas"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "Transformatie",
+      "topic": "Rotatie",
+      "subskill": "Direction/angle",
+      "pattern": "Omgekeerde rotatie",
+      "counterEvidence": "Correct op een grid",
+      "countsWhen": "Grid en axis",
+      "doesNotCountWhen": "Geen grid voor teaching",
+      "probe": "Met/zonder axis",
+      "intervention": "Raster + hoekpunten",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Herhaalde richtingsfout"
+      ],
+      "roots": [
+        "Ruimtelijke oriëntatie"
+      ],
+      "competitors": [
+        "Onzorgvuldigheid"
+      ],
+      "doNotConclude": [
+        "Geen spatial thinking"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "Inhoud",
+      "topic": "Rechthoekig prisma",
+      "subskill": "3D-model",
+      "pattern": "Vergeet diepte",
+      "counterEvidence": "Correct op een simple cube",
+      "countsWhen": "Netto beschikbaar",
+      "doesNotCountWhen": "Geen diagram wanneer niet taught",
+      "probe": "Met/zonder net",
+      "intervention": "Papieren netto",
+      "escalation": "Failure op een cube",
+      "observableMarkers": [
+        "2D antwoord",
+        "Correct met een net"
+      ],
+      "roots": [
+        "3D-model"
+      ],
+      "competitors": [
+        "Vermenigvuldigen"
+      ],
+      "doNotConclude": [
+        "Geen volume"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "Meting",
+      "topic": "Omtrek",
+      "subskill": "Conversie van eenheden",
+      "pattern": "Herhaalde eenheidsfout",
+      "counterEvidence": "Correct met een key",
+      "countsWhen": "Sleutel aanwezig",
+      "doesNotCountWhen": "Conversion niet yet taught",
+      "probe": "Twee eenheden voor dezelfde lengte",
+      "intervention": "Conversiesleutel",
+      "escalation": "Failure op een single line",
+      "observableMarkers": [
+        "Zelfde unit error"
+      ],
+      "roots": [
+        "Eenheden"
+      ],
+      "competitors": [
+        "Berekening"
+      ],
+      "doNotConclude": [
+        "Geen measurement"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "Spiegeling",
+      "topic": "Vorm",
+      "subskill": "As",
+      "pattern": "Herhaalde verkeerde as",
+      "counterEvidence": "Corrigeer wanneer de as wordt weergegeven",
+      "countsWhen": "Punten beschikbaar",
+      "doesNotCountWhen": "Niet-symmetrische vorm",
+      "probe": "Met/zonder axis",
+      "intervention": "Papieren vouw",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Error met marked points"
+      ],
+      "roots": [
+        "Visueel"
+      ],
+      "competitors": [
+        "Onzorgvuldigheid"
+      ],
+      "doNotConclude": [
+        "Geen symmetry"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "Trihoek",
+      "topic": "Oppervlakte",
+      "subskill": "basis×hoogte×2",
+      "pattern": "Forgets ÷2 of wrong height",
+      "counterEvidence": "Correct alleen op simple cases",
+      "countsWhen": "Vrije binnenhoogte",
+      "doesNotCountWhen": "Obtuse zonder een teaching step",
+      "probe": "Buitenhoogte gemarkeerd",
+      "intervention": "Identificeer hoogte → formule",
+      "escalation": "Failure op right driehoek",
+      "observableMarkers": [
+        "Herhaalde fout",
+        "Correct op de rechthoekige driehoek met binnenhoogte"
+      ],
+      "roots": [
+        "Formule"
+      ],
+      "competitors": [
+        "Trihoek structure"
+      ],
+      "doNotConclude": [
+        "Geen driehoeks"
+      ]
+    }
+  }
+}

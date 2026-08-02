@@ -1,0 +1,11 @@
+{
+  "gameId": "balloons",
+  "title": "Ballon Pop",
+  "blurb": "Laat ballonnen knallen voordat de tijd om is!",
+  "help": {
+    "howToPlay": "Tik op ballonnen om ze te laten knappen. Je hebt drie levens en één minuut. Pas op voor bommen!",
+    "scoring": "Normale, gouden en diamanten ballonnen voegen punten toe. Klokballonnen voegen tijd toe, en hartballonnen herstellen een leven. Een bom neemt een leven weg.",
+    "rewards": "Het bereiken van het popdoel of een hoge eindscore levert munten en diamanten op.",
+    "tip": "Kijk uit voor speciale ballonnen; deze kunnen je helpen voordat de tijd om is."
+  }
+}

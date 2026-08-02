@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "Met I we gebruiken am.",
+    "with_he_she_it_we_use_is": "Met he/she/it we gebruiken is.",
+    "with_you_we_they_we_use_are": "Bij jou/wij/zij gebruiken wij zijn.",
+    "got_it": "Ik heb het",
+    "try_again": "Probeer opnieuw",
+    "back_to_menu": "Terug naar menu",
+    "choose_another_topic": "Kies another topic"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Leo's pizzeria",
+  "blurb": "Bouw, identificeer, gelijkwaardig, vergelijk en combineer breuken",
+  "help": {
+    "howToPlay": "Bouw breuken op pizza, identificeer ze aan de hand van een afbeelding, maak ze compleet tot een geheel, vergelijk of match equivalenten - per taak. Tik op 'Pizza serveren' als je klaar bent.",
+    "scoring": "Correct antwoord +30, streakbonussen. Na 3 mislukte pogingen wordt de oplossing getoond.",
+    "rewards": "Munten worden toegekend op basis van het aantal klanten dat je hebt bediend, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als je niet alle 20 klanten hebt bediend.",
+    "tip": "Let op de teller en de noemer: pizzapunten zijn altijd gelijke delen."
+  },
+  "accessibility": {
+    "title": "Leo's pizzeria"
+  }
+}

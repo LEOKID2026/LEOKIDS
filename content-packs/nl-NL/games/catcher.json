@@ -1,0 +1,11 @@
+{
+  "gameId": "catcher",
+  "title": "Catch met Leo",
+  "blurb": "Vang munten en blijf uit de buurt van bommen!",
+  "help": {
+    "howToPlay": "Beweeg Leo naar links en rechts om munten en diamanten te vangen die uit de lucht vallen.",
+    "scoring": "Elke gevangen munt of diamant levert punten op. Het raken van een bom beëindigt het spel.",
+    "rewards": "Hoe meer punten je verdient, hoe meer munten en diamanten je krijgt voor je kinderwereld.",
+    "tip": "Houd in de gaten wat er valt en wees op tijd voordat het voorwerp de bodem bereikt."
+  }
+}

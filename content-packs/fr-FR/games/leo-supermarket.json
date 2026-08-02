@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Épicerie Léo",
+  "blurb": "Un jeu sur l'argent, le shopping et la monnaie",
+  "help": {
+    "howToPlay": "Un client demande des produits : choisissez-les dans l'étagère, calculez la monnaie et choisissez les pièces correspondantes. Appuyez sur « Donner la monnaie » lorsque tu êtes prêt.",
+    "scoring": "Produit correct +10, changement correct +25, client satisfait +30, changement dès le premier essai +10, service rapide +5. Une erreur ou un manque de temps −5.",
+    "rewards": "Les pièces sont attribuées en fonction du nombre de clients que tu avez servis, de la précision, des séquences et du niveau de difficulté, même si tu n'avez pas servi les 20 clients.",
+    "tip": "Vérifie le montant total de l'achat et le montant payé par le client. Déterminez tu-même le montant de la monnaie à restituer."
+  },
+  "accessibility": {
+    "title": "Épicerie Léo"
+  }
+}

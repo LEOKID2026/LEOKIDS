@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "Aucune question n'a été collectée au cours de la période sélectionnée - il n'existe aucune base de données pour cette ligne.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "Trop peu de questions sur cette période – les conclusions sur cette ligne sont très partielles.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "De nombreuses questions ont été collectées – vous pouvez vous fier davantage à ce que vous voyez pour ce sujet.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "Il y a suffisamment de questions pour ce sujet – modifications prudentes des sous-compétences uniquement.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "Il y a suffisamment de questions – vous pouvez vous fier davantage à ce que vous voyez sur ce sujet.",
+    "moderate_data_cautious_changes_only_are_recommended": "Données modérées : seuls des changements prudents sont recommandés.",
+    "row_inputs_before_signal_computation": "Entrées de ligne avant le calcul du signal.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "La quantité d’informations disponibles affecte le degré de prudence de la prochaine recommandation.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "Cela apparaît sur plusieurs séances d’entraînement : l’image reflète une tendance, pas seulement une seule séance.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "La recommandation est basée sur une combinaison d’exactitude, de nombre de questions, d’erreurs et de réactivité de la pratique au cours de la période sélectionnée."
+  }
+}

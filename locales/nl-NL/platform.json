@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Rekenen",
+    "geometry": "Meetkunde",
+    "english": "Engels",
+    "science": "Natuur en techniek"
+  },
+  "activityModes": {
+    "live_lesson": "Live les",
+    "guided_practice": "Begeleide praktijk",
+    "quiz": "Quiz",
+    "homework": "Huiswerk",
+    "discussion": "Discussie",
+    "practice": "Oefenen",
+    "review": "Beoordeling"
+  },
+  "activityStatuses": {
+    "draft": "Voorlopige versie",
+    "active": "Actief",
+    "paused": "Gepauzeerd",
+    "closed": "Gesloten",
+    "archived": "Gearchiveerd"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Niet started",
+    "in_progress": "In uitvoering",
+    "submitted": "Ingediend",
+    "completed": "Voltooid",
+    "timed_out": "Time-out"
+  },
+  "roles": {
+    "teacher": "Leerkracht",
+    "school_admin": "Schoolbeheerder",
+    "admin": "Systeem admin"
+  },
+  "auditActions": {
+    "school_subject_granted": "Toestemming van onderwerp verleend",
+    "school_subject_revoked": "Onderwerptoewijzing ingetrokken",
+    "school_student_enrolled": "Leerling enrolled",
+    "school_student_unenrolled": "Leerling unenrolled",
+    "school_class_viewed": "Klas report viewed",
+    "school_student_report_viewed": "Leerling report viewed",
+    "school_student_class_transferred": "Leerling transferred",
+    "school_class_teacher_reassigned": "Klas leerkracht reassigned",
+    "school_class_archived": "Klas archived",
+    "assign_teacher": "Leerkracht assigned",
+    "assign_manager": "Beheerder benoemd",
+    "class_transfer": "Leerling transferred",
+    "grant": "Toestemming verleend",
+    "revoke": "Toestemming verwijderd",
+    "archive": "Gearchiveerd",
+    "viewed_student_report": "Leerling report viewed",
+    "viewed_class_report": "Klas report viewed",
+    "grant_created": "Toegangsvergunning aangemaakt",
+    "grant_revoked": "Toegangsverlening ingetrokken",
+    "magic_link_issued": "Inloglink uitgegeven",
+    "pin_rotated": "Pincode gedraaid",
+    "username_rotated": "Gebruikersnaam gedraaid",
+    "teacher_quota_updated": "Quota bijgewerkt",
+    "teacher_features_updated": "Functiemachtigingen bijgewerkt",
+    "teacher_status_updated": "Accountstatus bijgewerkt"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Systeem action",
+    "activity": "Activiteit",
+    "classActivity": "Klas activity",
+    "activitySuffix": "activiteit"
+  }
+}

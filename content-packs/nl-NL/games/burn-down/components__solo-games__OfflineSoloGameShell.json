@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "Lokaal spel — geen besparing en geen beloningen",
+    "game_not_found": "Game niet found",
+    "back_to_list": "Terug naar List",
+    "offline": "Offline",
+    "list": "Lijst"
+  }
+}

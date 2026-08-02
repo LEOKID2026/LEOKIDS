@@ -1,0 +1,9 @@
+{
+  "gameId": "snakes-and-ladders",
+  "title": "Serpientes y escaleras",
+  "blurb": "Juega con amigos en la sala de giochi.",
+  "help": {
+    "howToPlay": "Sigue las instrucciones que aparecen en pantalla para questo gioco.",
+    "tip": "Take turns and have fun."
+  }
+}

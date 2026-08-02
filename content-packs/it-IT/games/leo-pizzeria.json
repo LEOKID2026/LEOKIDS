@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Pizzeria de Leo",
+  "blurb": "Construir, identificar, equivaler, comparar y combinar frazioni",
+  "help": {
+    "howToPlay": "Arma frazioni en la pizza, identificalas en una immagine, completa hasta un entero, compara o empareja equivalentes, secondo la tarea. Toca \"Servir pizza\" quando estés listo.",
+    "scoring": "Correct answer +30, streak bonuses. After 3 failed attempts the solution is shown.",
+    "rewards": "Las monete se otorgan secondo cuantos clientes atendiste, la precision, las rachas y el nivel de dificultad, anche se no hayas atendido a los 20 clientes.",
+    "tip": "Fijate en el numerador y el denominador: las porciones de pizza sempre son parti iguales."
+  },
+  "accessibility": {
+    "title": "Pizzeria de Leo"
+  }
+}

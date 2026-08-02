@@ -1,0 +1,9 @@
+{
+  "gameId": "rock-paper-scissors",
+  "title": "Steen · Papier · Schaar",
+  "blurb": "Quick rounds — best van alle.",
+  "players": "2 players of vs robot",
+  "help": {
+    "howToPlay": "Speel samen op hetzelfde apparaat."
+  }
+}

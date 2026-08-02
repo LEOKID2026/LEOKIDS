@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "Zone à renforcer",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "La connexion parent est requise : utilisez la connexion parent et réessayez.",
+    "network_error_while_loading_the_report": "Erreur réseau lors du chargement du rapport.",
+    "please_choose_valid_dates": "Veuillez choisir des dates valides",
+    "custom": "Coutume",
+    "preparing_the_performance_report": "Préparation du rapport de performance...",
+    "charts": "Graphiques",
+    "breakdown": "Panne",
+    "practice_with_questions": "S’entraîner avec des questions",
+    "book_reading": "Lecture du livre",
+    "other_active_learning": "Autre apprentissage actif",
+    "time_minutes": "Temps (minutes)",
+    "questions": "Questions",
+    "accuracy": "Précision %"
+  }
+}

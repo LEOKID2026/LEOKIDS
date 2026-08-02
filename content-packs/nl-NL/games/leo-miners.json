@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-miners",
+  "title": "Leo de Miner",
+  "blurb": "Voeg mijnhonden samen, breek rotsen en verdien punten om in te wisselen!",
+  "help": {
+    "howToPlay": "Voeg mijnhonden toe aan het bord, sleep honden van hetzelfde niveau om ze samen te voegen en breek rotsen om munten en punten te verdienen.",
+    "scoring": "Elke gebroken steen levert munten op. Punten worden verzameld op basis van het stadium van de rots - met een dagelijkse limiet.",
+    "rewards": "Punten kunnen worden ingewisseld voor Leo-munten en diamanten (zodra de server gereed is).",
+    "tip": "Upgrade DPS om stenen sneller te breken, en GOUD om meer munten uit elke steen te verdienen."
+  }
+}

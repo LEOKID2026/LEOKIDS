@@ -1,0 +1,11 @@
+{
+  "gameId": "smart-blocks",
+  "title": "Blocs intelligents",
+  "blurb": "Placez des formes, effacez les lignes et les colonnes et atteignez l'objectif de score !",
+  "help": {
+    "howToPlay": "Faites glisser les formes sur le tableau, faites-les pivoter si nécessaire et placez-les pour remplir les lignes et les colonnes.",
+    "scoring": "Effacer une ligne ou une colonne ajoute des points. Le but est d'atteindre l'objectif de score avant que le tableau ne se remplisse.",
+    "rewards": "Gagner en fonction du niveau de difficulté rapporte des pièces, et un bonus de score en ajoute encore plus.",
+    "tip": "Essaie d'effacer plusieurs lignes à la fois - cela donne beaucoup de points."
+  }
+}

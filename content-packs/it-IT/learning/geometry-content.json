@@ -1,0 +1,77 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Paralelo",
+      "Perpendicular"
+    ],
+    "triangles": [
+      "Equilatero",
+      "Isosceles",
+      "Escaleno"
+    ],
+    "quadrilaterals": [
+      "Piazza",
+      "Rettangolo",
+      "Parallelogramma",
+      "Trapezio"
+    ],
+    "transformations": [
+      "Traduzione",
+      "Riflessione",
+      "Rotazione",
+      "Nessun movimento"
+    ],
+    "concept_transform": [
+      "Traduzione",
+      "Riflessione",
+      "Rotazione",
+      "Nessun movimento"
+    ],
+    "shapes_basic_square": [
+      "Piazza",
+      "Rettangolo"
+    ],
+    "shapes_basic_rectangle": [
+      "Piazza",
+      "Rettangolo"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "No hay lados iguales"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "Sin angulos rectos"
+    ]
+  },
+  "solidNames": [
+    "Cubo",
+    "Prisma rettangolare",
+    "Cilindro",
+    "Piramide",
+    "Cono",
+    "Sfera"
+  ],
+  "shapeWords": {
+    "": "Perpendiculares",
+    " ": "Escaleno"
+  },
+  "solidAliases": {
+    "cube": "Cubo",
+    "rectangular prism": "Prisma rettangolare",
+    "cylinder": "Cilindro",
+    "pyramid": "Piramide",
+    "cone": "Cono",
+    "sphere": "Sfera"
+  }
+}

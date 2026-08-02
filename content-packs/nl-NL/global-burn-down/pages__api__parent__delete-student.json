@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "child_id_is_missing": "Kind-ID ontbreekt",
+    "server_error_please_try_again": "Serverfout. Probeer het opnieuw"
+  }
+}

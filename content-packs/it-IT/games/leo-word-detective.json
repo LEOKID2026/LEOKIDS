@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-detective",
+  "title": "El detective de palabras de Leo",
+  "blurb": "Arrastra evidencia a la pizarra y risolvi casos de lectura y vocabulario.",
+  "help": {
+    "howToPlay": "Arrastre las carte de evidencia al tablero de investigacion y toque \"Risolvere caso\". Quando la risposta es corretta, el caso esta cerrado!",
+    "scoring": "Risposta corretta +30, bonificacion de tiempo, racha de 3 +15, racha de 5 +30. Tiempo de espera −5. Un error no termina el gioco, simplemente cuenta.",
+    "rewards": "Las monete se otorgan secondo cuantos de los 20 casos resolviste, precision, rachas y nivel de dificultad.",
+    "tip": "Lea atentamente la tarea del caso: en el nivel dificil hay un breve pasaje en el tablero."
+  },
+  "accessibility": {
+    "title": "El detective de palabras de Leo"
+  }
+}

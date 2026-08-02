@@ -79,9 +79,10 @@ test("unknown content locale falls back to English display layer for science", (
     correctIndex: SCIENCE_QUESTIONS[0]?.correctIndex ?? 0,
     params: SCIENCE_QUESTIONS[0]?.params || { diagnosticSkillId: "science.test" },
   };
+  // Unregistered / disabled tags collapse to en (fr-FR is a live product locale).
   const viaUnknown = localizeLearningQuestion(raw, {
     subject: "science",
-    contentLocale: "fr-FR",
+    contentLocale: "xx-YY",
   });
   const viaEn = localizeLearningQuestion(raw, {
     subject: "science",

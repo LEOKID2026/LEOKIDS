@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "tap_to_return_to_tray": "Tap naar return naar tray",
+    "balance_scale": "Evenwichtsschaal",
+    "prototype_drag_items_balance_the_scale": "Prototype · items slepen · de schaal in evenwicht brengen",
+    "object_fromentries_items_map_i_i_id_i_const_leftweight_left_reduce_s_p_s": "Object.fromEntries(ITEMS.map((i) => [i.id, i])), []); const leftWeight = left.reduce((s, p) => s + (itemMap[p.itemId]?.weight?? 0), 0); const rightWeight = right.reduce((s, p) => s + (itemMap[p.itemId]?.weight?? 0), 0); const diff = rechtsGewicht - linksGewicht; const tilt = Rekenen.max(-18, Rekenen.min(18, diff * 4)); const isBalanced = left.length > 0 && right.length > 0 && Rekenen.abs(diff)",
+    "setshowweights_e_target_checked_classname_h_4_w_4_show_weights_debug": "setShowWeights(e.target.checked)} className = \"h-4 w-4\" /> Gewichten weergeven (foutopsporing)",
+    "tap_an_item_on_the_scale_to_return_it_or_drag_from_the_tray": "Tik op een item op de weegschaal om het terug te plaatsen · of sleep het uit de lade",
+    "setdragover_null": "setDragOver(null)} >",
+    "item_tray_drag_to_a_side": "Item tray — drag naar een side",
+    "all_items_are_on_the_scale": "Alle items staan ​​op de schaal",
+    "balanced": "Evenwichtig! ⚖️🎉",
+    "reset": "Resetten"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Filas de plantilla para MCQ conceptual: escaneadas como soportes de metadatos estaticos",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Elementos matematicos de procedimiento: metadatos asignados en el momento de la generacion",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Geometria de procedimiento: utilice parametros de banco conceptual de geometria + generador",
+    "english_generator_pool_merge": "Generador inglese + fusion de grupo"
+  }
+}

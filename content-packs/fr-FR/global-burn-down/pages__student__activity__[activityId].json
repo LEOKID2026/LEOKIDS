@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "incorrect": "Incorrect",
+    "answer_submitted": "Réponse soumise",
+    "submit_answer": "Soumettre la réponse",
+    "type_your_answer": "Tapez votre réponse",
+    "enlarged_diagram": "Schéma agrandi",
+    "close_diagram": "Fermer le schéma"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Leo's Grocery Store",
+  "blurb": "Un gioco sobre dinero, compras y cambiamento.",
+  "help": {
+    "howToPlay": "A customer asks for products - pick them from the shelf, work out the change, and choose matching coins. Tap \"Give Change\" when you're ready.",
+    "scoring": "Producto corretto +10, cambiamento corretto +25, cliente satisfecho +30, cambiamento acertado al primer intento +10, servicio rapido +5. Un error o falta de tiempo −5.",
+    "rewards": "Las monete se otorgan secondo la cantidad de clientes atendidos, la precision, las rachas y el nivel de dificultad, incluso si no atendiste a los 20 clientes.",
+    "tip": "Verifique el total de la compra y cuanto pago el cliente; determine usted mismo cuanto cambiamento deve devolver."
+  },
+  "accessibility": {
+    "title": "Leo's Grocery Store"
+  }
+}

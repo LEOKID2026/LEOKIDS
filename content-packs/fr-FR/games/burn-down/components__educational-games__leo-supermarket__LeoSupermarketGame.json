@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Registre",
+    "pick_coins": "Choisis des pièces",
+    "removechangeat_lastindex": "supprimerChangeAt(dernierIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Aidez Léo le caissier : choisissez le produit, déterminez la monnaie et rendez l'argent approprié",
+    "x_id_id_if_p_return_null_return": "x.id === identifiant);\n                      si (!p) renvoie null ;\n                      retour (",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n            Nouveau jeu",
+    "pick_the_product_the_customer_asked_for": "Choisis le produit demandé par le client",
+    "leo_apos_s_market": "Le marché de Léo",
+    "change_you_gave": "Monnaie que tu avez donnée :",
+    "purchase_total": "Total d'achat :",
+    "customer_paid": "Client payé :",
+    "give_change": "Donner la monnaie ✓",
+    "clear_change": "Changement clair",
+    "start_game": "Commencer le jeu",
+    "back": "Retour"
+  }
+}

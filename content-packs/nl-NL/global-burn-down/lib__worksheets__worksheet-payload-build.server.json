@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "worksheet": "Werkblad",
+    "name": "Naam: ________________",
+    "date": "Datum: ________________",
+    "options": "Opties:",
+    "answer": "Answer:",
+    "question": "Vraag",
+    "answer_2": "Antwoord",
+    "answer_key": "Antwoorden"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Spellen",
+  "arcade": "Arcade",
+  "solo": "Solo-spellen",
+  "educational": "Educatieve spellen",
+  "play": "Spelen",
+  "pause": "Pauze",
+  "resume": "Cv",
+  "settings": "Spelinstellingen",
+  "soundOn": "Sound op",
+  "soundOff": "Geluid uit",
+  "youWin": "Je win!",
+  "youLose": "Leuk geprobeerd!",
+  "draw": "It's een draw",
+  "inviteFriend": "Invite een friend",
+  "waitingForOpponent": "Waiting voor opponent…",
+  "matchFound": "Match gevonden!",
+  "connectionLost": "Connection lost. Trying opnieuw…",
+  "back": "Terug",
+  "gamesBadge": "Spellen",
+  "hubSubtitle": "Kies de ervaring die bij je past: Leo-games, offline spelen en meer.",
+  "hubRegularTitle": "Leo's spellen",
+  "hubRegularBlurb": "Leo's spellen - geheugenmatch, puzzels, schietoefeningen en meer.",
+  "hubOfflineTitle": "Altijd met Leo",
+  "hubOfflineBlurb": "Spelen even zonder internet",
+  "hubEducationalTitle": "Leo's leerspellen",
+  "hubEducationalBlurb": "Verrijking, denkvermogen en algemene kennis",
+  "hubOnlineTitle": "Games met friends",
+  "hubOnlineBlurb": "Multiplayer-gamerooms met vrienden en andere spelers.",
+  "devPrototypeMeta": "Ontwikkeling · interne testen",
+  "soloHubBadge": "Leo's spellen",
+  "soloHubTitle": "Leo's spellen — Kinderwereld",
+  "soloHubSubtitle": "Speel, verdien punten en verzamel munten en edelstenen voor jouw wereld!",
+  "soloMeta": "Solo · munten · edelstenen",
+  "playNow": "Spelen now",
+  "educationalBadge": "Educatief",
+  "educationalHubTitle": "Educatieve spellen",
+  "educationalHubSubtitle": "Leerspellen die vaardigheden opbouwen terwijl je plezier hebt.",
+  "noGamesAvailable": "Geen games available right now.",
+  "educationalMeta": "Educatief spel · Munten",
+  "arcadeBack": "Arcade",
+  "arcadeBadge": "Arcadeclub",
+  "arcadeHubTitle": "Leo's spelclub",
+  "arcadeHubSubtitle": "Speel met vrienden: maak een kamer of sluit je aan bij een kamer.",
+  "entryCostLabel": "Toegangskosten",
+  "selectEntryCost": "Kies entry amount",
+  "roomTypeQuick": "Snelle wedstrijd",
+  "roomTypePublic": "Openbaar",
+  "playersLabel": "Spelers",
+  "apiSuccess": "Klaar",
+  "apiAlreadyQueued": "Staat al in de wachtrij (wordt niet opnieuw in rekening gebracht)",
+  "apiInsufficientFunds": "Niet genoeg munten voor deze actie",
+  "apiFailed": "Actie mislukt",
+  "quickAlreadyInRoom": "Je bevindt je al in een kamer: tik op Enter game",
+  "quickJoined": "Sluit je aan bij een speler die in de kamer wacht",
+  "quickCreated": "Snelle matchroom gecreëerd — wachtend op een andere speler",
+  "quickReady": "Klaar",
+  "social": {
+    "greatGame": "Geweldig spel!",
+    "wellPlayed": "Goed gespeeld!",
+    "rematch": "Opnieuw matchen?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Verbind vier",
+      "blurb": "Verbind vier · twee spelers",
+      "players": "Spelers: 2"
+    },
+    "ludo": {
+      "title": "Ludo",
+      "blurb": "Ludo · familiebordspel",
+      "players": "Spelers: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Slangen en ladders",
+      "blurb": "Board 1–100 · ladders en snakes",
+      "players": "Spelers: 2–4"
+    },
+    "checkers": {
+      "title": "Dammen",
+      "blurb": "Klassiek dammen · opnames vereist",
+      "players": "Spelers: 2"
+    },
+    "chess": {
+      "title": "Schaken",
+      "blurb": "Klassiek schaken · schaak en schaakmat",
+      "players": "Spelers: 2"
+    },
+    "dominoes": {
+      "title": "Domino's",
+      "blurb": "Domino's blokkeren · speel totdat het uit is",
+      "players": "Spelers: 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · volledige lijnoverwinningen",
+      "players": "Players: up naar 8"
+    }
+  }
+}

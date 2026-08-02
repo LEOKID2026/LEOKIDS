@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "practice_recommendation": "Oefenen recommendation",
+    "recommended_practice_level": "Aanbevolen oefenniveau",
+    "recommended_number_of_questions": "Recommended number van questions",
+    "keep_practicing_based_on_your_progress": "Blijf oefenen op basis van je voortgang"
+  }
+}

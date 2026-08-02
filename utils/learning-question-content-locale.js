@@ -2,35 +2,9 @@
  * @deprecated Use lib/content/locale.js — kept for backward compatibility.
  */
 import { resolveContentLocale as resolveCore } from "../lib/content/locale.js";
+import { LOCALE_REGISTRY } from "../lib/i18n/locale-registry.js";
 
 export const DEFAULT_CONTENT_LOCALE = "en";
-
-/** Product locales accepted by Global content resolution. */
-const PRODUCT_CONTENT_LOCALES = new Set([
-  "en",
-  "es-419",
-  "es-MX",
-  "es-CO",
-  "es-AR",
-  "es-PE",
-  "es-CL",
-  "es-EC",
-  "es-GT",
-  "es-DO",
-  "es-VE",
-  "es-BO",
-  "es-HN",
-  "es-SV",
-  "es-NI",
-  "es-PY",
-  "es-CR",
-  "es-PA",
-  "es-UY",
-  "es-CU",
-  "es-PR",
-  "es-ES",
-  "pt-BR",
-]);
 
 /** Detect Hebrew-script code points without embedding Unicode escapes in source. */
 export function containsHebrew(text) {
@@ -43,6 +17,12 @@ export function containsHebrew(text) {
   return false;
 }
 
+/**
+ * Product content locale for learning display layers.
+ * Authority is the locale registry (via resolveCore): any enabled product locale
+ * keeps its id — including it-IT / fr-FR / nl-NL today and de-DE / ru-RU once enabled.
+ * Disabled / unknown locales already collapse to `en` in resolveCore.
+ */
 export function resolveContentLocale(opts) {
   const resolved = resolveCore({
     contentLocale: opts?.contentLocale,
@@ -51,14 +31,9 @@ export function resolveContentLocale(opts) {
     market: opts?.market,
     curriculum: opts?.curriculum,
   });
-  const id = String(resolved || "");
-  if (PRODUCT_CONTENT_LOCALES.has(id)) return id;
-  // Country / regional Spanish still product content via registry chain.
-  if (id.toLowerCase().startsWith("es-")) return id;
-  if (id.toLowerCase().startsWith("pt-")) return id;
-  // English country layers (AU/NZ/IE/GB/CA/SG/ZA/WLS, …) keep their locale id.
-  if (id.toLowerCase().startsWith("en-")) return id;
-  return "en";
+  const id = String(resolved || DEFAULT_CONTENT_LOCALE);
+  if (LOCALE_REGISTRY[id]?.enabled) return id;
+  return DEFAULT_CONTENT_LOCALE;
 }
 
 const QUESTION_TEXT_KEYS = [

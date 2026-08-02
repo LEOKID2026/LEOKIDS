@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "empty_slot": "Lege sleuf",
+    "top_tray": "Bovenblad 🧩",
+    "tray": "Dienblad 🧩",
+    "bottom_tray": "Onderbakje 🧩",
+    "close_picture": "Sluiten picture",
+    "handledragstart_e_id_portraitmobile_hidelabel_singlerow": "handleDragStart(e, id)} portraitMobile hideLabel singleRow />",
+    "handledragstart_e_id_portraitmobile_hidelabel": "handleDragStart(e, id)} portraitMobile hideLabel />",
+    "handledragstart_e_id": "handleDragStart(e, id)} />",
+    "pick_a_piece": "Pick een piece"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Récit parental en hébreu sûr avec un ton d'observation et un volume adéquat.",
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Des preuves minces mais une couverture prudente explicite ne devraient pas bloquer.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Des preuves minces avec une forte certitude et une revendication de maîtrise - bloquer.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Les listes de moteurs ne concluent pas les barrières, mais le texte utilise une certitude absolue.",
+    "disability_clinical_framing_block": "Handicap/cadrage clinique – blocage.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "Le moteur permet uniquement la maintenance ; les forces narratives sautent de niveau.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "La confiance du moteur est faible mais le texte parent est tout à fait certain.",
+    "permanent_failure_never_succeed_framing_block": "Échec permanent / cadrage sans succès - blocage.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "Signal de devinette élevé mais le récit revendique une maîtrise totale.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "Seule lacune préalable suspectée ; le récit indique un écart au niveau de la preuve.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "Le jeton de taxonomie interne a été divulgué dans le bloc de copie parent.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "Ligne de retenue statistique réaliste à données fines - réussite (info : prudence en matière de sécurité).",
+    "explicit_collect_more_examples_framing_pass_info": "Cadrage explicite de collecte de plus d'exemples - pass (info).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "Données minces mais déterminabilité revendiquée/faiblesse importante - avertissement.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "Reconnaît le manque de données puis affirme un problème clair – un avertissement.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "Ligne mince mais récit vague sans cadrage explicite de données limitées - avertissement.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "Malgré peu de données, clarté absolue sur la lutte - excès de confiance + mince → blocage."
+  }
+}

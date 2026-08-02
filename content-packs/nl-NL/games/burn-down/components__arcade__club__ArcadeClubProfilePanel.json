@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "display_name": "Weergavenaam",
+    "setdisplayname_e_target_value_placeholder_gamepackcopy_components_arcade": "setDisplayName(e.doel.waarde)} placeholder=gamePackCopy(\"components__arcade__club__ArcadeClubProfilePanel\", \"display_name\") />",
+    "display_name_for_games_only_doesn_t_change_your_official_name_or_leo_num": "Weergavenaam alleen voor games: uw officiële naam of Leo-nummer verandert niet.",
+    "change_photo_on_the_home_page": "Wijzig de foto op de startpagina",
+    "recent_history": "Recente geschiedenis",
+    "no_games_yet": "Geen games yet",
+    "player_card": "Spelerskaart",
+    "game_name": "Spelnaam:",
+    "save_name": "Opslaan name"
+  }
+}

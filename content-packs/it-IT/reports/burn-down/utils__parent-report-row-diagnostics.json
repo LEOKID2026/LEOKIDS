@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "No questions were collected in the selected period - there is no data basis for this row.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "Too few questions in the period - conclusions for this row are very partial.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "Many questions were collected - you can rely more on what you see for this topic.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "There are enough questions for this topic - cautious changes to sub-skills only.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "There are enough questions - you can rely more on what you see for this topic.",
+    "moderate_data_cautious_changes_only_are_recommended": "Moderate data - cautious changes only are recommended.",
+    "row_inputs_before_signal_computation": "Row inputs before signal computation.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "How much information is available affects how cautious the next recommendation is.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "This shows up across several practice sessions - the picture reflects a trend, not just a single session.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "The recommendation is based on a combination of accuracy, question count, mistakes, and how recent practice was in the selected period."
+  }
+}

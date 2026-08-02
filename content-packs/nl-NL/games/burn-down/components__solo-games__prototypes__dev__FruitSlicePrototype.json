@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "fruit_slice": "Fruitschijfje",
+    "prototype_swipe_slice_no_full_scoring": "Prototype · swipe / slice · geen volledige score",
+    "slice_fruit_avoid_mouse_or_finger": "Snijd fruit · vermijd 💣 · muis of vinger",
+    "f_y_120_f_y": "v.j. > -120 && v.j"
+  }
+}

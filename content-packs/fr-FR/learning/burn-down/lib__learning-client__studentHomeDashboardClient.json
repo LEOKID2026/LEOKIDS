@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "suggested_next_step": "Prochaine étape suggérée",
+    "pick_up_where_you_left_off": "Reprenez là où tu tu étiez arrêté",
+    "no_activity_recorded_yet_choose_a_subject_to_get_started": "Aucune activité enregistrée pour le moment : choisissez un sujet pour commencer.",
+    "go_to_learning_hub": "Accéder au centre d'apprentissage",
+    "great_to_see_you_every_practice_session_brings_you_closer_to_your_goal": "Ravi de tu voir ! Chaque séance d’entraînement tu rapproche de ton objectif.",
+    "the_monthly_goal_is_usually_marked_after_you_reach_the_minutes_goal_keep": "L’objectif mensuel est généralement marqué une fois que tu avez atteint l’objectif de minutes – continuez à apprendre !"
+  }
+}

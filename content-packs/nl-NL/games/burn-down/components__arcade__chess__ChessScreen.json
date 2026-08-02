@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "white_first_seat_in_the_list_goes_first": "Wit (eerste plaats in de lijst) gaat als eerste.",
+    "select_a_piece_then_a_destination_square_per_chess_rules": "Selecteer een stuk en vervolgens een bestemmingsveld volgens de schaakregels.",
+    "pawns_reaching_the_last_rank_auto_promote_to_queen": "Pionnen die de laatste rang bereiken, promoveren automatisch naar koningin.",
+    "checkmate_ends_the_game_a_draw_refunds_entry_to_both_players": "Schaakmat beëindigt het spel; bij een gelijkspel wordt de toegang voor beide spelers terugbetaald."
+  }
+}

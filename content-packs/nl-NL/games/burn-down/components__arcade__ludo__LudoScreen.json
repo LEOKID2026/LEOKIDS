@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "Terug",
+    "coin_balance": "Muntensaldo",
+    "how_to_play": "Hoe naar play",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "Tijdens jouw beurt worden de dobbelstenen gegooid (OV2 opent ook automatisch een worpanimatie) en kies vervolgens welk stuk je wilt verplaatsen.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "Alleen een 6 krijgt een stuk uit het erf op het pad.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "Een 6, een verovering of het betreden van huis vanaf het pad (volgens de motorregels) geeft een extra beurt.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "Een stuk dat thuis eindigt; vier stuks thuisoverwinningen.",
+    "waiting_for_players": "Waiting voor players…"
+  }
+}

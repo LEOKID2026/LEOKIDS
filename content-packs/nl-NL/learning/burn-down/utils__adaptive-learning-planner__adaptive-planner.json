@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "Niet genoeg context om te plannen (ontbrekend onderwerp).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "Er is meer leeractiviteit nodig voordat een volgende focus wordt voorgesteld.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "Het leersysteem heeft wat meer oefengegevens nodig voordat de volgende stap wordt voorgesteld.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Verzamel nog een paar oefenitems; conclusies worden uitgesteld.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "Het oefenen van de Engelse taal kan doorgaan, maar de vaardigheidsroutering moet worden bevestigd door een leerkracht.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "Engelse tagging is onvolledig in de inhoudsbank; planner zal fijnmazige vaardigheden niet automatisch routeren.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "Wachten op geverifieerde metagegevens van vragen voordat een geavanceerd pad wordt voorgesteld.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "Metagegevens van vaardigheden voor de volgende stap zijn niet bevestigd; automatische voortgang vasthouden.",
+    "short_probe_to_verify_understanding_versus_guessing": "Korte sonde om begrip versus gissen te verifiëren.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Inconsistente signalen of signalen die veel te raden bevatten: gebruik een kleine diagnostische set.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Extra oefening op de huidige vaardigheid op een ondersteunende moeilijkheidsgraad.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Gericht oefenen op dezelfde vaardigheid; moeilijkheidsgraad om iets vastgehouden of verlaagd te worden.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Korte bespreking van een basisvaardigheid die het huidige onderwerp ondersteunt.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Versterk een vereiste vaardigheid voordat u de hoofdvaardigheid nog verder uitbreidt.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Klaar voor een iets uitdagendere oefening op dezelfde vaardigheidslijn.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "Signalen ondersteunen een voorzichtige toename van de moeilijkheidsgraad bij monitoring.",
+    "continue_solid_practice_at_the_current_level": "Ga door met oefenen op het huidige niveau.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Behoud de huidige moeilijkheidsgraad en consolideer tegelijkertijd het meesterschap.",
+    "review_style_practice_on_the_current_skill": "Oefening in herhalingsstijl met de huidige vaardigheid.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "Engine suggereert beoordeling; planner sluit aan bij de praktijk van dezelfde vaardigheden.",
+    "steady_practice_on_the_current_focus": "Gestage praktijk op de huidige focus.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Standaard veilig pad: ga door met oefenen zonder dat de moeilijkheidsgraad toeneemt."
+  }
+}

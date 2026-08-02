@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "close": "Fermer",
+    "how_to_play_heading": "Comment jouer ?",
+    "how_to_play_title": "Comment jouer à {title} ?",
+    "scoring_heading": "Comment marquez-tu?",
+    "rewards_heading": "Récompenses et diamants",
+    "tip_heading": "Astuce rapide",
+    "got_it_lets_play": "Compris, jouons"
+  }
+}

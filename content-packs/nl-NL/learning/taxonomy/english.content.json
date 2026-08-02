@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "Woordenschat",
+      "topic": "Context",
+      "subskill": "collocatie",
+      "pattern": "Verkeerde letterlijke vertaling",
+      "counterEvidence": "Correct na two examples",
+      "countsWhen": "Duidelijke zinnen",
+      "doesNotCountWhen": "False-friend distractor alleen",
+      "probe": "Parallelle zinnen",
+      "intervention": "Zinkaarten",
+      "escalation": "Difficulty across elke topic",
+      "observableMarkers": [
+        "Dezelfde wortel in verschillende zinnen"
+      ],
+      "roots": [
+        "valse vriend"
+      ],
+      "competitors": [
+        "Grammatica"
+      ],
+      "doNotConclude": [
+        "Geen Engels"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "Grammatica",
+      "topic": "Tijden",
+      "subskill": "Tijdmarkering",
+      "pattern": "past/present",
+      "counterEvidence": "Correct met een markers chart",
+      "countsWhen": "Markering gemarkeerd",
+      "doesNotCountWhen": "Gemengde tijd zonder voorafgaande les",
+      "probe": "Identical sentences, verschillend marker",
+      "intervention": "Markeringen grafiek",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Fout wanneer gisteren/nu expliciet is"
+      ],
+      "roots": [
+        "Gespannen kaart"
+      ],
+      "competitors": [
+        "Woordenschat"
+      ],
+      "doNotConclude": [
+        "Geen grammar"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "Lezen",
+      "topic": "Indeling",
+      "subskill": "Lijn volgen",
+      "pattern": "Fout in de indeling met twee kolommen",
+      "counterEvidence": "Correct in één wide column",
+      "countsWhen": "Leesbaar lettertype",
+      "doesNotCountWhen": "Tiny font zonder een scaffold",
+      "probe": "Groot lettertype versus klein",
+      "intervention": "Lijnnummer / vingertracking",
+      "escalation": "Visie rapport",
+      "observableMarkers": [
+        "Alleen fout in lay-out met twee kolommen"
+      ],
+      "roots": [
+        "Lijn volgen"
+      ],
+      "competitors": [
+        "Woordenschat"
+      ],
+      "doNotConclude": [
+        "Geen reading"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "Grammatica",
+      "topic": "Overeenkomst",
+      "subskill": "Voornaamwoord–onderwerp",
+      "pattern": "he/she/it",
+      "counterEvidence": "Correct wanneer heel slow",
+      "countsWhen": "Expliciet onderwerp",
+      "doesNotCountWhen": "Fast typing alleen",
+      "probe": "Chain met subject",
+      "intervention": "Onderwerp-voornaamwoordschema",
+      "escalation": "Altijd fails",
+      "observableMarkers": [
+        "Fout",
+        "Onderwerp gemarkeerd"
+      ],
+      "roots": [
+        "Syntactische overeenkomst"
+      ],
+      "competitors": [
+        "Snelheid"
+      ],
+      "doNotConclude": [
+        "Geen knowledge"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "Woordenschat",
+      "topic": "Gebruik",
+      "subskill": "voorzetsel",
+      "pattern": "Zelfde wrong preposition",
+      "counterEvidence": "Correct op een closed list",
+      "countsWhen": "Voorzetsels geleerd",
+      "doesNotCountWhen": "Verbs niet yet taught",
+      "probe": "Zelfde verb, two prepositions",
+      "intervention": "Minimale paren",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Error met verschillend verbs"
+      ],
+      "roots": [
+        "Specifieke woordenschat"
+      ],
+      "competitors": [
+        "Algemene grammatica"
+      ],
+      "doNotConclude": [
+        "Geen language"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "Lezen",
+      "topic": "Begrip",
+      "subskill": "gevolgtrekking",
+      "pattern": "Fact instead van inference",
+      "counterEvidence": "Correct op een explicit fact",
+      "countsWhen": "Vraagtype gemarkeerd",
+      "doesNotCountWhen": "Voor inference is taught",
+      "probe": "Feit versus gevolgtrekking",
+      "intervention": "Inferentiesignaalwoorden",
+      "escalation": "Failure op facts ook",
+      "observableMarkers": [
+        "Error alleen op inference"
+      ],
+      "roots": [
+        "Strategie"
+      ],
+      "competitors": [
+        "Woordenschat"
+      ],
+      "doNotConclude": [
+        "Geen thinking"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "Schrijven",
+      "topic": "Spelling",
+      "subskill": "Stille patronen",
+      "pattern": "Herhaalde fouten",
+      "counterEvidence": "Correct met slow dictation",
+      "countsWhen": "Woorden geleerd",
+      "doesNotCountWhen": "Voor de rule",
+      "probe": "Gecontroleerd handschrift",
+      "intervention": "Mini-spellingsregel",
+      "escalation": "Professioneel rapport",
+      "observableMarkers": [
+        "Zelfde pattern"
+      ],
+      "roots": [
+        "Fonologie"
+      ],
+      "competitors": [
+        "Typen"
+      ],
+      "doNotConclude": [
+        "Stoornis"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "Luisteren",
+      "topic": "Fonemisch",
+      "subskill": "minimale paren",
+      "pattern": "Confusing een sound pair",
+      "counterEvidence": "Correct met langzaam dubbel luisteren",
+      "countsWhen": "Duidelijke opname",
+      "doesNotCountWhen": "Bekend geluid",
+      "probe": "Zelfde pair in verschillend words",
+      "intervention": "Paar oefenen",
+      "escalation": "Hoorverslag",
+      "observableMarkers": [
+        "Error op de zelfde pair"
+      ],
+      "roots": [
+        "Fonemie"
+      ],
+      "competitors": [
+        "Lawaai"
+      ],
+      "doNotConclude": [
+        "Gehoorstoornis"
+      ]
+    }
+  }
+}

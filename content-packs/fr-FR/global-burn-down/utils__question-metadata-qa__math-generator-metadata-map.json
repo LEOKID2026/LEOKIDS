@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Ne remplace pas les réponses numériques correctAnswer, les réponses [] ou le texte de la question après la génération - enrichit uniquement les champs de métadonnées.",
+    "blanket_patternfamily_math_kind_when_absent": "Modèle de couvertureFamille `math_${kind}` en cas d'absence",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Les lignes de sonde + fraction contiennent déjà des diagnosticskillid/expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Les lignes op/kind standard utilisent l'identifiant de compétence déterministe math_${kind}",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Types de bords avec des paramètres minimaux - modèle d'identification toujours sûr math_*"
+  }
+}

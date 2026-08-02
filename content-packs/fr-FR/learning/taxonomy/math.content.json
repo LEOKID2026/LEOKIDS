@@ -1,0 +1,256 @@
+{
+  "subjectId": "math",
+  "rows": {
+    "M-01": {
+      "id": "M-01",
+      "domain": "Nombre",
+      "topic": "Structure",
+      "subskill": "Décomposition 10+1",
+      "pattern": "Erreurs de conversion entre les représentations",
+      "counterEvidence": "Réussit avec une représentation montrée sans longue explication",
+      "countsWhen": "Tâches équivalentes ; aucun indice montrant la solution complète",
+      "doesNotCountWhen": "Indice complet donné ; une seule tâche uniquement",
+      "probe": "Deux représentations du même nombre",
+      "intervention": "Des manipulateurs, puis un passage progressif aux symboles",
+      "escalation": "Échec à chaque représentation",
+      "observableMarkers": [
+        "Même erreur sur deux représentations",
+        "Hésitation avant de répondre"
+      ],
+      "roots": [
+        "Écart de représentation"
+      ],
+      "competitors": [
+        "Compréhension de lecture"
+      ],
+      "doNotConclude": [
+        "Ce n'est pas un problème d'arithmétique"
+      ]
+    },
+    "M-02": {
+      "id": "M-02",
+      "domain": "Opérations",
+      "topic": "Addition",
+      "subskill": "Porter",
+      "pattern": "Erreur dans la colonne des dizaines",
+      "counterEvidence": "Corriger lorsqu'il n'y a pas de portage",
+      "countsWhen": "Chiffres écrits",
+      "doesNotCountWhen": "Uniquement des chiffres de taille extrême sans base comptable",
+      "probe": "Ajout avec/sans transport",
+      "intervention": "Réalisation avec l'étape intermédiaire écrite",
+      "escalation": "Dépend de l'étape intermédiaire sans progrès",
+      "observableMarkers": [
+        "Même type d’erreur pour différentes ampleurs"
+      ],
+      "roots": [
+        "Algorithme de transport"
+      ],
+      "competitors": [
+        "Négligence"
+      ],
+      "doNotConclude": [
+        "Manque de sens des nombres"
+      ]
+    },
+    "M-03": {
+      "id": "M-03",
+      "domain": "Opérations",
+      "topic": "Multiplication",
+      "subskill": "Fait de multiplication",
+      "pattern": "Les mêmes paires se trompent à plusieurs reprises",
+      "counterEvidence": "Autres paires corrigées dans la même séance",
+      "countsWhen": "Pratique régulière ; pas seulement un test de vitesse",
+      "doesNotCountWhen": "Test de vitesse uniquement",
+      "probe": "Doublez le temps pour le même set",
+      "intervention": "Pratique ciblée en binôme",
+      "escalation": "Échoue sur chaque paire, même lorsqu'il est lent",
+      "observableMarkers": [
+        "Liste superposée de mauvaises paires"
+      ],
+      "roots": [
+        "Lacune dans les faits"
+      ],
+      "competitors": [
+        "Pression temporelle"
+      ],
+      "doNotConclude": [
+        "Impossible de se multiplier du tout"
+      ]
+    },
+    "M-04": {
+      "id": "M-04",
+      "domain": "Fractions",
+      "topic": "Représentation",
+      "subskill": "Part-whole",
+      "pattern": "Comparaison par numérateur uniquement",
+      "counterEvidence": "Corriger lorsque les dénominateurs correspondent",
+      "countsWhen": "Diagramme/bande de fractions disponible",
+      "doesNotCountWhen": "Verbal uniquement, sans représentation non encore enseignée",
+      "probe": "Avec/sans schéma",
+      "intervention": "Ouvrage partie-ensemble en béton",
+      "escalation": "Aucune amélioration dans aucune représentation",
+      "observableMarkers": [
+        "Erreur même lorsque le diagramme est complet"
+      ],
+      "roots": [
+        "Écart de concept de fraction"
+      ],
+      "competitors": [
+        "Négligence"
+      ],
+      "doNotConclude": [
+        "Je ne peux pas du tout faire de fractions"
+      ]
+    },
+    "M-05": {
+      "id": "M-05",
+      "domain": "Fractions",
+      "topic": "Addition",
+      "subskill": "Expansion du dénominateur",
+      "pattern": "Erreur à la même étape",
+      "counterEvidence": "Corriger avec des dénominateurs correspondants",
+      "countsWhen": "Petits dénominateurs dans la plage enseignée",
+      "doesNotCountWhen": "Les grands dénominateurs avant la multiplication de base sont solides",
+      "probe": "Facteurs d'expansion 2, 3, 4",
+      "intervention": "Étapes écrites avec un exemple travaillé en parallèle",
+      "escalation": "Échec à la multiplication de base",
+      "observableMarkers": [
+        "Erreur lors d'une multiplication/expansion répétée"
+      ],
+      "roots": [
+        "Algorithme d'expansion"
+      ],
+      "competitors": [
+        "Faible multiplication"
+      ],
+      "doNotConclude": [
+        "Je ne peux pas du tout faire de fractions"
+      ]
+    },
+    "M-06": {
+      "id": "M-06",
+      "domain": "Nombres décimaux",
+      "topic": "Valeur de position",
+      "subskill": "Rounding/comparison",
+      "pattern": "Mauvais sens d'arrondi",
+      "counterEvidence": "Corriger avec un tableau de valeurs de position",
+      "countsWhen": "Nombres non ronds",
+      "doesNotCountWhen": "Uniquement des nombres ronds dans la tâche",
+      "probe": "Avec/sans graphique de valeur de position",
+      "intervention": "Valeurs de position codées par couleur",
+      "escalation": "Échoue même avec le graphique",
+      "observableMarkers": [
+        "Erreur répétée sur la même règle"
+      ],
+      "roots": [
+        "Écart de valeur de position"
+      ],
+      "competitors": [
+        "Compréhension de lecture"
+      ],
+      "doNotConclude": [
+        "Je ne peux pas du tout faire de décimales"
+      ]
+    },
+    "M-07": {
+      "id": "M-07",
+      "domain": "Problèmes",
+      "topic": "Phrasé",
+      "subskill": "Unités",
+      "pattern": "Bon numéro, mauvaise unité",
+      "counterEvidence": "Corriger lorsque seul un numéro est demandé",
+      "countsWhen": "Unité explicite dans le texte",
+      "doesNotCountWhen": "La question n'a pas d'unité dans l'original",
+      "probe": "Avec/sans champ d'unité",
+      "intervention": "Nombre plus une ligne d'unité",
+      "escalation": "Des luttes même sans unité",
+      "observableMarkers": [
+        "Répète une unité inappropriée"
+      ],
+      "roots": [
+        "Lire la question"
+      ],
+      "competitors": [
+        "Calcul"
+      ],
+      "doNotConclude": [
+        "Aucune compréhension du tout"
+      ]
+    },
+    "M-08": {
+      "id": "M-08",
+      "domain": "Problèmes",
+      "topic": "Modélisation",
+      "subskill": "Multi-step",
+      "pattern": "Échec uniquement lors de la combinaison d'étapes",
+      "counterEvidence": "Réussit avec les étapes imprimées",
+      "countsWhen": "Étapes numérotées",
+      "doesNotCountWhen": "Version sans étapes lorsqu'elle n'est pas encore enseignée",
+      "probe": "Avec un modèle d'étape",
+      "intervention": "Étapes et vérification en amont",
+      "escalation": "Échoue même sur des problèmes en une seule étape",
+      "observableMarkers": [
+        "Erreur à la même étape finale"
+      ],
+      "roots": [
+        "Charge de la mémoire de travail"
+      ],
+      "competitors": [
+        "Écart de calcul"
+      ],
+      "doNotConclude": [
+        "Je ne peux pas du tout résoudre des problèmes de mots"
+      ]
+    },
+    "M-09": {
+      "id": "M-09",
+      "domain": "Opérations",
+      "topic": "Soustraction",
+      "subskill": "Faire dix",
+      "pattern": "Direction inversée / ajoute au lieu de soustraire",
+      "counterEvidence": "Corriger sur une droite numérique",
+      "countsWhen": "Ligne numérique/piste disponible",
+      "doesNotCountWhen": "Problème verbal long sans représentation alors qu'il n'est pas encore enseigné",
+      "probe": "Droite numérique plus symbolique",
+      "intervention": "Droite numérique plus un modèle de distance",
+      "escalation": "Aucune amélioration dans les deux représentations",
+      "observableMarkers": [
+        "Erreur de direction répétée"
+      ],
+      "roots": [
+        "Notion de soustraction"
+      ],
+      "competitors": [
+        "Compréhension de lecture"
+      ],
+      "doNotConclude": [
+        "Problème d'arithmétique générale"
+      ]
+    },
+    "M-10": {
+      "id": "M-10",
+      "domain": "Multiplication/Division",
+      "topic": "Rapport",
+      "subskill": "Opérations inverses",
+      "pattern": "Choisit un fait de multiplication qui ne correspond pas à la division",
+      "counterEvidence": "Corriger lorsque la phrase de multiplication est affichée",
+      "countsWhen": "Petits nombres",
+      "doesNotCountWhen": "Les grands nombres avant que la multiplication soit maîtrisée",
+      "probe": "Avec/sans la phrase de multiplication",
+      "intervention": "Relier multiplication et division",
+      "escalation": "Échec systématiquement",
+      "observableMarkers": [
+        "Erreur lorsqu'aucune phrase de multiplication n'est affichée"
+      ],
+      "roots": [
+        "Relation inverse"
+      ],
+      "competitors": [
+        "Négligence"
+      ],
+      "doNotConclude": [
+        "Impossible de diviser du tout"
+      ]
+    }
+  }
+}

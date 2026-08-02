@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "the_data_points_to_a_skill_that_is_still_not_fully_stable": "Les données indiquent une compétence qui n’est pas encore totalement stable.",
+    "some_of_the_mistakes_look_related_to_speed_not_necessarily_a_full_knowle": "Certaines erreurs semblent liées à la vitesse – pas nécessairement à un manque total de connaissances.",
+    "the_difficulty_may_be_related_to_understanding_the_instructions_not_just": "La difficulté peut être liée à la compréhension des instructions, et pas seulement à la connaissance du sujet.",
+    "the_material_looks_partly_familiar_but_there_are_execution_mistakes_that": "Le matériau semble en partie familier, mais il y a des erreurs d’exécution qui se répètent lorsque l’on travaille rapidement.",
+    "the_child_does_better_with_support_and_it_still_helps_to_build_up_indepe": "L'enfant réussit mieux avec du soutien, et cela l'aide toujours à développer une capacité de résolution indépendante des problèmes.",
+    "there_are_still_only_a_few_answers_a_little_more_practice_would_help_bef": "Il n’y a encore que quelques réponses – un peu plus de pratique serait utile avant de tirer une conclusion claire.",
+    "there_is_an_early_direction_but_a_bit_more_practice_would_help_before_dr": "Il existe une première direction, mais un peu plus de pratique serait utile avant de tirer une conclusion claire.",
+    "there_is_already_some_practice_in_this_topic_but_a_consistent_enough_pat": "Il existe déjà une certaine pratique sur ce sujet, mais aucun modèle suffisamment cohérent n'est encore apparu.",
+    "there_are_a_few_possible_directions_worth_checking_again_after_a_bit_mor": "Il existe quelques directions possibles – qui méritent d’être vérifiées à nouveau après un peu plus de pratique.",
+    "solve_a_few_questions_without_a_timer_pause_before_submitting_and_check_": "Résolvez quelques questions sans minuteur, faites une pause avant de soumettre et vérifiez si la réponse correspond à la question.",
+    "do_a_few_more_questions_on_this_topic_then_check_the_report_again": "Posez quelques questions supplémentaires sur ce sujet, puis vérifiez à nouveau le rapport.",
+    "some_mistakes_repeat_in_the_same_type_of_activity": "Certaines erreurs se répètent dans le même type d'activité.",
+    "some_mistakes_happened_while_working_quickly": "Certaines erreurs se sont produites en travaillant rapidement.",
+    "some_mistakes_appear_related_to_understanding_the_instructions": "Certaines erreurs apparaissent liées à la compréhension des instructions.",
+    "success_mostly_happens_with_guidance_or_hints": "Le succès se produit principalement grâce à des conseils ou des indices.",
+    "small_execution_mistakes_that_repeat_when_working_quickly": "Petites erreurs d'exécution qui se répètent lorsque l'on travaille rapidement.",
+    "confusion_about_the_order_of_steps_in_solving": "Confusion sur l’ordre des étapes de résolution.",
+    "the_signs_mostly_point_to_a_difficulty_within_this_topic_itself": "Les signes indiquent pour la plupart une difficulté au sein même de ce sujet.",
+    "social_studies_geography": "Études sociales et géographie",
+    "some_of_the_mistakes_look_related_to_speed_or_time_pressure": "Certaines erreurs semblent liées à la vitesse ou à la pression du temps.",
+    "the_difficulty_may_be_related_to_reading_the_instructions_or_understandi": "La difficulté peut être liée à la lecture des instructions ou à la compréhension de la question.",
+    "the_child_seems_to_know_part_of_the_material_but_there_are_execution_mis": "L'enfant semble connaître une partie du matériel, mais il y a des erreurs d'exécution qui se répètent en se précipitant ou en sautant une étape.",
+    "the_data_points_to_good_command_of_the_topic_right_now": "Les données indiquent une bonne maîtrise du sujet à l’heure actuelle.",
+    "no_clear_pattern_has_been_established_for_this_topic_yet": "Aucun modèle clair n’a encore été établi pour ce sujet.",
+    "there_are_signs_pointing_in_a_few_different_directions_so_the_report_rec": "Il y a des signes qui pointent dans plusieurs directions différentes, c’est pourquoi le rapport recommande d’avancer avec prudence.",
+    "the_child_does_better_with_support_or_hints_and_it_still_helps_to_build_": "L'enfant réussit mieux avec du soutien ou des conseils, et cela l'aide toujours à développer une résolution indépendante des problèmes.",
+    "there_are_too_few_questions_on_this_topic_to_draw_a_clear_conclusion_fro": "Il y a trop peu de questions sur ce sujet pour en tirer une conclusion claire."
+  }
+}

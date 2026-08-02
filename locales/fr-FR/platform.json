@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Mathématiques",
+    "geometry": "Géométrie",
+    "english": "Anglais",
+    "science": "Sciences"
+  },
+  "activityModes": {
+    "live_lesson": "Cours en direct",
+    "guided_practice": "Pratique guidée",
+    "quiz": "Questionnaire",
+    "homework": "Devoirs",
+    "discussion": "Discussion",
+    "practice": "Pratique",
+    "review": "Revoir"
+  },
+  "activityStatuses": {
+    "draft": "Brouillon",
+    "active": "Actif",
+    "paused": "En pause",
+    "closed": "Fermé",
+    "archived": "Archivé"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Pas commencé",
+    "in_progress": "En cours",
+    "submitted": "Soumis",
+    "completed": "Complété",
+    "timed_out": "Délai expiré"
+  },
+  "roles": {
+    "teacher": "Enseignant",
+    "school_admin": "Administrateur de l'école",
+    "admin": "Administrateur système"
+  },
+  "auditActions": {
+    "school_subject_granted": "Autorisation du sujet accordée",
+    "school_subject_revoked": "Affectation de sujet révoquée",
+    "school_student_enrolled": "Élève inscrit",
+    "school_student_unenrolled": "Élève désinscrit",
+    "school_class_viewed": "Rapport de classe consulté",
+    "school_student_report_viewed": "Rapport de l'élève consulté",
+    "school_student_class_transferred": "Élève transféré",
+    "school_class_teacher_reassigned": "Professeur de classe réaffecté",
+    "school_class_archived": "Cours archivé",
+    "assign_teacher": "Enseignant assigné",
+    "assign_manager": "Gérant nommé",
+    "class_transfer": "Élève transféré",
+    "grant": "Autorisation accordée",
+    "revoke": "Autorisation supprimée",
+    "archive": "Archivé",
+    "viewed_student_report": "Rapport de l'élève consulté",
+    "viewed_class_report": "Rapport de classe consulté",
+    "grant_created": "Accord d'accès créé",
+    "grant_revoked": "Accord d'accès révoqué",
+    "magic_link_issued": "Lien de connexion émis",
+    "pin_rotated": "Code PIN pivoté",
+    "username_rotated": "Nom d'utilisateur pivoté",
+    "teacher_quota_updated": "Quotas mis à jour",
+    "teacher_features_updated": "Autorisations des fonctionnalités mises à jour",
+    "teacher_status_updated": "Statut du compte mis à jour"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Action du système",
+    "activity": "Activité",
+    "classActivity": "Activité de classe",
+    "activitySuffix": "activité"
+  }
+}

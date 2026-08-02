@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "rhythm_game": "Jeu de rythme",
+    "prototype_tap_when_the_mark_hits_the_line": "Prototype · appuyez lorsque la marque atteint la ligne",
+    "n_lane_lane_n_hit_map_n": "n.voie === voie && !n.hit)\r\n                  .map((n) => (",
+    "now_n_spawnat": "maintenant - n.spawnAt"
+  }
+}

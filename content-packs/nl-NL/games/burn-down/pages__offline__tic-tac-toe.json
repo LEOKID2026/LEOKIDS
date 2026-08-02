@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Terug",
+    "local_badge": "Lokaal",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "Bord {size}×{size} • {mode}",
+    "vs_bot": "versus Bot",
+    "two_players": "2 spelers",
+    "player_x": "Speler X",
+    "player_o": "Speler O",
+    "tie": "Stropdas",
+    "vs_bot_label": "versus Bot",
+    "reset_board": "Bord opnieuw instellen",
+    "reset_score": "Score opnieuw instellen",
+    "player_won": "{player} gewonnen!",
+    "tie_game": "Stropdas!",
+    "turn": "Draai:"
+  }
+}

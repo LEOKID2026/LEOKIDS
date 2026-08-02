@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-train",
+  "title": "El tren de palabras de Leo",
+  "blurb": "Letras, palabras y oraciones en inglese - viajar en los vagones del tren",
+  "help": {
+    "howToPlay": "Scegli una carta, cargala en un vagon vacio y toca \"Inviare el tren\". Quando la risposta es corretta, el tren sale!",
+    "scoring": "Risposta corretta +30, bonificacion de tiempo, racha de 3 +15, racha de 5 +30. Tiempo de espera −5. Un error no termina el gioco, simplemente cuenta.",
+    "rewards": "Las monete se otorgan secondo la cantidad de tareas que hayas completado de las 20, la precision, las rachas y el nivel de dificultad.",
+    "tip": "En facil, solo letras. Medio - palabras cortas. Dificiles: frases cortas."
+  },
+  "accessibility": {
+    "title": "El tren de palabras de Leo"
+  }
+}

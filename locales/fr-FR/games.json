@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Jeux",
+  "arcade": "Arcade",
+  "solo": "Jeux solos",
+  "educational": "Jeux éducatifs",
+  "play": "Jouer",
+  "pause": "Pause",
+  "resume": "CV",
+  "settings": "Paramètres du jeu",
+  "soundOn": "Son activé",
+  "soundOff": "Son coupé",
+  "youWin": "Tu gagnez !",
+  "youLose": "Bien essayé !",
+  "draw": "C'est un match nul",
+  "inviteFriend": "Inviter un ami",
+  "waitingForOpponent": "En attendant l'adversaire…",
+  "matchFound": "Correspondance trouvée !",
+  "connectionLost": "Connexion perdue. Je réessaye…",
+  "back": "Retour",
+  "gamesBadge": "Jeux",
+  "hubSubtitle": "Choisis l'expérience qui tu convient : jeux Leo, jeu hors ligne et bien plus encore.",
+  "hubRegularTitle": "Les jeux de Léo",
+  "hubRegularBlurb": "Les jeux de Leo : match de mémoire, énigmes, entraînement au tir et bien plus encore.",
+  "hubOfflineTitle": "Toujours avec Léo",
+  "hubOfflineBlurb": "Jouez même sans Internet",
+  "hubEducationalTitle": "Les jeux d'apprentissage de Léo",
+  "hubEducationalBlurb": "Enrichissement, capacités de réflexion et connaissances générales",
+  "hubOnlineTitle": "Jeux entre amis",
+  "hubOnlineBlurb": "Salles de jeux multijoueurs avec des amis et d’autres joueurs.",
+  "devPrototypeMeta": "Développement · tests internes",
+  "soloHubBadge": "Les jeux de Léo",
+  "soloHubTitle": "Les jeux de Léo — Le monde des enfants",
+  "soloHubSubtitle": "Jouez, gagnez des points et collectez des pièces et des pierres précieuses pour ton monde !",
+  "soloMeta": "Solo · pièces de monnaie · gemmes",
+  "playNow": "Jouez maintenant",
+  "educationalBadge": "Pédagogique",
+  "educationalHubTitle": "Jeux éducatifs",
+  "educationalHubSubtitle": "Apprendre des jeux qui développent des compétences tout en s'amusant.",
+  "noGamesAvailable": "Aucun jeu disponible pour le moment.",
+  "educationalMeta": "Jeu éducatif · Pièces de monnaie",
+  "arcadeBack": "Arcade",
+  "arcadeBadge": "Club d'arcade",
+  "arcadeHubTitle": "Le club de jeu de Léo",
+  "arcadeHubSubtitle": "Jouez avec des amis : créez une salle ou rejoignez-en une.",
+  "entryCostLabel": "Coût d'entrée",
+  "selectEntryCost": "Choisis le montant de l'entrée",
+  "roomTypeQuick": "Match rapide",
+  "roomTypePublic": "Publique",
+  "playersLabel": "Joueurs",
+  "apiSuccess": "Fait",
+  "apiAlreadyQueued": "Déjà en file d'attente (non facturé à nouveau)",
+  "apiInsufficientFunds": "Pas assez de pièces pour cette action",
+  "apiFailed": "L'action a échoué",
+  "quickAlreadyInRoom": "Déjà dans une pièce : appuyez sur Entrer dans le jeu",
+  "quickJoined": "J'ai rejoint un joueur qui attendait dans la salle",
+  "quickCreated": "Salle de match rapide créée – en attente d'un autre joueur",
+  "quickReady": "Prêt",
+  "social": {
+    "greatGame": "Super jeu !",
+    "wellPlayed": "Bien joué !",
+    "rematch": "Rematch ?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Connectez quatre",
+      "blurb": "Connectez quatre · deux joueurs",
+      "players": "Joueurs : 2"
+    },
+    "ludo": {
+      "title": "Ludo",
+      "blurb": "Ludo · jeu de société familial",
+      "players": "Joueurs : 2 à 4"
+    },
+    "snakes-and-ladders": {
+      "title": "Serpents et échelles",
+      "blurb": "Planche 1 à 100 · échelles et serpents",
+      "players": "Joueurs : 2 à 4"
+    },
+    "checkers": {
+      "title": "Dames",
+      "blurb": "Dames classiques · captures requises",
+      "players": "Joueurs : 2"
+    },
+    "chess": {
+      "title": "Échecs",
+      "blurb": "Échecs classiques · échec et échec et mat",
+      "players": "Joueurs : 2"
+    },
+    "dominoes": {
+      "title": "Dominos",
+      "blurb": "Bloquer les dominos · jouer jusqu'à la fin",
+      "players": "Joueurs : 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · victoires en ligne complète",
+      "players": "Joueurs : jusqu'à 8"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Fenêtre de pratique mince : il faut plus d'observations avant une interprétation stable.",
+    "stable_accuracy_over_at_least_two_sessions": "Précision stable sur au moins deux sessions",
+    "continued_random_incorrect_pattern_without_convergence": "Modèle aléatoire/incorrect continu sans convergence",
+    "re_evaluate_mastery_and_misconceptions": "Réévaluer la maîtrise et les idées fausses",
+    "consistent_correct_responses_on_parallel_items": "Réponses correctes cohérentes sur des éléments parallèles",
+    "repeated_same_distractor_selection": "Sélection répétée du même attracteur",
+    "escalate_practice_specificity": "Escalader la spécificité de la pratique",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Les points forts des prérequis ne sont pas clairs par rapport aux compétences avancées.",
+    "prerequisite_skill_shows_independent_accuracy": "La compétence préalable montre une précision indépendante",
+    "prerequisite_remains_unstable": "La condition préalable reste instable",
+    "foundation_review_vs_isolated_advanced_gap": "Examen des fondations vs écart avancé isolé",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Forte maîtrise observée avec une sonde de provocation à volume adéquat en option pour confirmer le transfert.",
+    "maintains_accuracy_on_harder_parallel_items": "Maintient la précision sur les éléments parallèles plus difficiles",
+    "breakdown_on_increased_complexity": "Répartition sur une complexité accrue",
+    "adjust_level_or_add_scaffolded_practice": "Ajustez le niveau ou ajoutez une pratique sur échafaudage",
+    "default_maintenance_probe_confirm_stability": "Stabilité de confirmation de la sonde de maintenance par défaut.",
+    "meet_or_exceed_recent_accuracy_band": "Atteindre ou dépasser la bande de précision récente",
+    "accuracy_drops_materially": "La précision diminue considérablement",
+    "adjust_practice_plan": "Ajuster le plan de pratique"
+  }
+}

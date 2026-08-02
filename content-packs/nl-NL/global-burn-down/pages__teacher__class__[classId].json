@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "class_report": "Klas report",
+    "invalid_class_id": "Ongeldige lesgroep-ID.",
+    "you_do_not_have_permission_to_view_this_class_report": "Je hebt geen toestemming om dit lesrapport te bekijken.",
+    "please_select_valid_dates": "Alstublieft selecteer valid dates"
+  }
+}

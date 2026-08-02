@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Een dun oefenvenster heeft meer observaties nodig voordat er een stabiele interpretatie mogelijk is.",
+    "stable_accuracy_over_at_least_two_sessions": "Stabiele nauwkeurigheid gedurende minimaal twee sessies",
+    "continued_random_incorrect_pattern_without_convergence": "Voortgezet willekeurig/incorrect patroon zonder convergentie",
+    "re_evaluate_mastery_and_misconceptions": "Re-evaluate mastery en misconceptions",
+    "consistent_correct_responses_on_parallel_items": "Consistent correcte antwoorden op parallelle items",
+    "repeated_same_distractor_selection": "Repeated zelfde distractor selecteerion",
+    "escalate_practice_specificity": "Escaleer de praktijkspecificiteit",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Vereiste sterke punten onduidelijk in verhouding tot geavanceerde vaardigheden.",
+    "prerequisite_skill_shows_independent_accuracy": "Vereiste vaardigheid toont onafhankelijke nauwkeurigheid",
+    "prerequisite_remains_unstable": "Voorwaarde blijft instabiel",
+    "foundation_review_vs_isolated_advanced_gap": "Funderingsbeoordeling versus jeïsoleerde geavanceerde kloof",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Sterk waargenomen meesterschap met adequate volume-optionele provocatiesonde om overdracht te bevestigen.",
+    "maintains_accuracy_on_harder_parallel_items": "Behoudt de nauwkeurigheid op hardere parallelle items",
+    "breakdown_on_increased_complexity": "Breakdown op increased complexity",
+    "adjust_level_or_add_scaffolded_practice": "Pas het niveau aan of voeg een steigeroefening toe",
+    "default_maintenance_probe_confirm_stability": "Standaard onderhoudssonde: stabiliteit bevestigen.",
+    "meet_or_exceed_recent_accuracy_band": "Voldoet aan of overtreft de recente nauwkeurigheidsband",
+    "accuracy_drops_materially": "De nauwkeurigheid neemt aanzienlijk af",
+    "adjust_practice_plan": "Oefenplan aanpassen"
+  }
+}

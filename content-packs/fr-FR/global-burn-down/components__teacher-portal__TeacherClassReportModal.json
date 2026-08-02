@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "please_select_valid_dates": "Veuillez sélectionner des dates valides",
+    "class_report": "Rapport de classe",
+    "loading_class_report": "Chargement du rapport de classe…"
+  }
+}

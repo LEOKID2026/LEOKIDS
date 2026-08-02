@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-bakery",
+  "title": "La boulangerie de Léo",
+  "blurb": "Multiplication, groupes égaux et facteur manquant",
+  "help": {
+    "howToPlay": "Créez des plateaux, recherchez le facteur total ou manquant, ou réorganisez le même total, puis appuyez sur « Vérifier la commande ».",
+    "scoring": "Bonne réponse +30, bonus de temps jusqu'à +20, séquence de 5 bonnes +25. Après 3 tentatives infructueuses, la solution complète s'affiche.",
+    "rewards": "Les pièces sont attribuées en fonction du nombre de commandes que tu avez préparées correctement, de la précision, des séquences et du niveau de difficulté.",
+    "tip": "Pensez au nombre de plateaux × combien par plateau – et pas seulement en comptant les icônes."
+  },
+  "accessibility": {
+    "title": "La boulangerie de Léo"
+  }
+}

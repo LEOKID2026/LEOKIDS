@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_report": "Ouderrapport",
+    "the_report_cannot_be_built_from_local_browser_data_data_stored_on_this_d": "Het rapport kan niet worden opgebouwd op basis van lokale browsergegevens (gegevens opgeslagen op dit apparaat)."
+  }
+}

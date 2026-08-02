@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "dominoes": "Dominos",
+    "double_6_set_two_players_seven_tiles_each": "Ensemble Double-6 – deux joueurs, sept tuiles chacun.",
+    "opener_is_the_highest_double_or_highest_pip_total": "L'ouvreur est le double le plus élevé (ou le total de pips le plus élevé).",
+    "play_a_tile_matching_an_open_end_of_the_chain": "Jouez une tuile correspondant à une extrémité ouverte de la chaîne.",
+    "no_legal_move_pass_two_passes_in_a_row_end_in_a_block_lowest_pip_total_w": "Aucun mouvement légal – passez ; deux passes consécutives se terminent par un bloc (le total de pips le plus bas gagne).",
+    "empty_your_hand_to_win": "Videz ton main pour gagner.",
+    "pick_a_tile_or_an_end_if_shown": "Choisis une tuile (ou une extrémité si elle est affichée)"
+  }
+}

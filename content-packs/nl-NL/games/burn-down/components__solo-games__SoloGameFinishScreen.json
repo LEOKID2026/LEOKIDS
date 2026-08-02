@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "back_to_games": "Terug naar Games",
+    "play_again": "Spelen Opnieuw",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "leegte, * druk?: booleaans, * ondertitelHe?: string, * statsLines?: Array",
+    "diamond_balance": "Diamantbalans:",
+    "coin_balance": "Muntensaldo:",
+    "score": "Score:",
+    "level": "Niveau:"
+  }
+}

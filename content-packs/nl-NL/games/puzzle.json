@@ -1,0 +1,11 @@
+{
+  "gameId": "puzzle",
+  "title": "Leo's puzzel",
+  "blurb": "Voeg tegels samen en verzamel punten voordat de tijd om is!",
+  "help": {
+    "howToPlay": "Verplaats tegels op het bord om overeenkomende nummers samen te voegen. Hoe groter de getallen, hoe hoger de score.",
+    "scoring": "Elke samenvoeging levert punten op. Het doel is om het scoredoel te bereiken voordat de tijd om is.",
+    "rewards": "Winnen op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+    "tip": "Probeer een hoek vrij te houden zodat je ruimte hebt om tegels te verplaatsen."
+  }
+}

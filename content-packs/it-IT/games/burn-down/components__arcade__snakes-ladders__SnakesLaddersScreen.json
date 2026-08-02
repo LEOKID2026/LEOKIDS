@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Serpientes y escaleras",
+    "back": "Atras",
+    "coin_balance": "Saldo de monete",
+    "how_to_play": "Come jugar",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "Nel tuo turno, tira los dados y avanza quel numero.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "Las serpientes te fanno bajar, las escaleras te fanno subir: tablero clasico.",
+    "reach_exactly_100_to_win": "Llega exactamente a 100 para ganar.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Una tirada superior a 100 no te mueve (te quedas quieto)."
+  }
+}

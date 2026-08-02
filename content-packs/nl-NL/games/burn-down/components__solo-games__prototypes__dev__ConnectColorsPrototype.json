@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "connect_colors": "Verbind kleuren",
+    "prototype_connect_pairs_without_crossing": "Prototype · verbind paren zonder elkaar te kruisen",
+    "p_id_colorid_const_isendpoint_endpointmap_cellkey_const_eppair_pairs_fin": "p.id === kleurId); const isEndpoint = endpointMap[cellKey]; const epPair = PAAREN.find( (p) => sleutelOf(...p.a) === celsleutel || keyOf(...p.b) === celsleutel, ); const voorbeeldConflict = dragPreview === celsleutel && actiefKleur &&!tryExtend(activeColor, cellKey, paden); opbrengst (",
+    "rect_width_rely_rect_height_return_null_const_c_math_floor_relx_rect_wid": "rechte breedte || relY > rect.height) retourneert null; const c = Rekenen.floor((relX / rect.width) * GRID); const r = Rekenen.floor((relY / rect.height) * GRID); als (r",
+    "clear": "Duidelijk"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Serpents et échelles",
+    "back": "Retour",
+    "coin_balance": "Solde des pièces",
+    "how_to_play": "Comment jouer",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "À ton tour, lancez les dés et avancez de ce nombre.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "Les serpents tu font descendre, les échelles tu font monter – un tableau classique.",
+    "reach_exactly_100_to_win": "Atteignez exactement 100 pour gagner.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Un lancer au-delà de 100 ne tu fait pas bouger (tu restez sur place)."
+  }
+}

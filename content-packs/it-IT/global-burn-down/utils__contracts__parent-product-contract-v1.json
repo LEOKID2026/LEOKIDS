@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Todavia no hay datos suficientes para establecer una immagine a nivel de argomento.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Inicie una esercitazione breve y constante para construir una linea base de medicion.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "El volumen de datos actual es bajo, por lo que no hay base para una direccion clara.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Pick one topic and practice 10–15 minutes each session.",
+    "do_not_change_difficulty_based_on_sparse_data": "No cambie la dificultad basandose en datos escasos.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Cuanto confiar en esto: todavia no es alto en questa etapa.",
+    "existing_data_is_still_partial": "Los datos existentes aun son parciales.",
+    "continue_basic_data_collection": "Continuare con la recopilacion de datos basicos.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Aun no hay datos suficientes para definir una direccion clara.",
+    "short_focused_practice_on_one_topic": "Esercitazione breve y centrada en un argomento.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "No saque conclusiones solidas de un piccolo numero de domande.",
+    "how_much_to_trust_this_not_high_yet": "Cuanto confiar en esto: aun no es alto.",
+    "data_is_missing_or_partial": "Faltan datos o son parciales."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gameId": "smart-blocks",
+  "title": "Slimme blokken",
+  "blurb": "Plaats vormen, maak rijen en kolommen leeg en bereik het scoredoel!",
+  "help": {
+    "howToPlay": "Sleep vormen naar het bord, draai ze indien nodig en plaats ze om rijen en kolommen te vullen.",
+    "scoring": "Het wissen van een rij of kolom levert punten op. Het doel is om het scoredoel te bereiken voordat het bord vol is.",
+    "rewards": "Winnen op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+    "tip": "Probeer meerdere rijen tegelijk leeg te maken - het levert veel punten op."
+  }
+}

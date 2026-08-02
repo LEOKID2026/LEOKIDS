@@ -1,0 +1,9 @@
+{
+  "gameId": "memory-match",
+  "title": "Geheugenmatch",
+  "blurb": "Draai kaarten om, vind paren en probeer te winnen.",
+  "players": "1–2 spelers",
+  "help": {
+    "howToPlay": "Speel samen op hetzelfde apparaat."
+  }
+}

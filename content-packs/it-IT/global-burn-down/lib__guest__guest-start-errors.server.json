@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "Il servizio non è configurato correttamente.",
+    "guest_mode_is_currently_disabled": "La modalità ospite è attualmente disabilitata.",
+    "the_guest_system_is_not_ready": "Il sistema ospite non è pronto.",
+    "could_not_start_guest_mode": "Impossibile avviare la modalità ospite."
+  }
+}

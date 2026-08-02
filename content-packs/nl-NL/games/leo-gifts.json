@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-gifts",
+  "title": "Leo's snoepwinkel",
+  "blurb": "Gelijk delen, groepen en resten",
+  "help": {
+    "howToPlay": "Verdeel over de kinderen of in zakjes. Zoek hoeveel er per groep zijn en hoeveel er nog over zijn, en tik vervolgens op 'Controleren Delen'.",
+    "scoring": "Correct antwoord +30, tijdbonus tot +20, reeks van 5 correct +25. Na 3 mislukte pogingen wordt de oplossing getoond.",
+    "rewards": "Munten worden toegekend op basis van het aantal vragen dat je correct hebt beantwoord, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als het spel is beëindigd vanwege fouten.",
+    "tip": "Kijk of de taak vraagt ​​per kind of volle zakken."
+  },
+  "accessibility": {
+    "title": "Leo's snoepwinkel"
+  }
+}

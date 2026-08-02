@@ -1,0 +1,9 @@
+{
+  "gameId": "memory-match",
+  "title": "Correspondance de mémoire",
+  "blurb": "Retournez les cartes, trouvez des paires et essayez de gagner.",
+  "players": "1 à 2 joueurs",
+  "help": {
+    "howToPlay": "Jouez ensemble sur le même appareil."
+  }
+}

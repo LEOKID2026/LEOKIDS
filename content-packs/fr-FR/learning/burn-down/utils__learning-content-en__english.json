@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "Avec je, nous utilisons suis.",
+    "with_he_she_it_we_use_is": "Avec il/elle nous utilisons est.",
+    "with_you_we_they_we_use_are": "Avec tu/nous/ils nous utilisons sont.",
+    "got_it": "J'ai compris",
+    "try_again": "Réessaie",
+    "back_to_menu": "Retour au menu",
+    "choose_another_topic": "Choisis un autre sujet"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "live_lesson": "Live les",
+    "guided_practice": "Begeleide praktijk",
+    "homework": "Huiswerk",
+    "class_discussion": "Klas discussion",
+    "standard": "Standaard",
+    "advanced": "Geavanceerd",
+    "angles": "Hoeken",
+    "shapes": "Vormen",
+    "perimeter": "Omtrek",
+    "volume": "Inhoud",
+    "general_practice": "Algemene praktijk",
+    "asia_jerusalem": "Asia/Jerusalem"
+  }
+}

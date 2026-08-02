@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-jump",
+  "title": "Leeuw springt",
+  "blurb": "Spring over obstakels en verzamel munten!",
+  "help": {
+    "howToPlay": "Tik om te springen. Ontwijk obstakels en verzamel onderweg munten, diamanten en magneten.",
+    "scoring": "Munten en diamanten voegen punten toe. Opeenvolgende sprongen over obstakels geven een combobonus. Het raken van een obstakel beëindigt het spel.",
+    "rewards": "Hoe verder je rent en hoe meer punten je verdient, hoe meer munten en diamanten je krijgt.",
+    "tip": "Spring niet elke keer - soms is het beter om even te wachten en op het juiste moment te springen."
+  }
+}

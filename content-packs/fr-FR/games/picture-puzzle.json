@@ -1,0 +1,11 @@
+{
+  "gameId": "picture-puzzle",
+  "title": "Puzzle d'images",
+  "blurb": "Complétez les morceaux de l'image de Léo !",
+  "help": {
+    "howToPlay": "Faites glisser les morceaux d’image au bon endroit sur le tableau. Complétez toutes les pièces avant la fin du temps imparti.",
+    "scoring": "Plus tu terminez vite et moins tu utilisez de mouvements, plus le score est élevé. Si le temps s'écoule avant que tu ayez terminé, tu ne gagnerez pas.",
+    "rewards": "Terminer le puzzle en fonction du niveau de difficulté rapporte des pièces, et un bonus de score en ajoute encore plus.",
+    "tip": "Commence par les coins et les bords : il est plus facile de voir à quelle place chaque pièce appartient."
+  }
+}

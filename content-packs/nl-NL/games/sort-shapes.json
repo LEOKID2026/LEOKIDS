@@ -1,0 +1,11 @@
+{
+  "gameId": "sort-shapes",
+  "title": "Vormen sorteren",
+  "blurb": "Sorteer vormen en kleuren in de juiste vakjes!",
+  "help": {
+    "howToPlay": "Sleep elke vorm op vorm of kleur naar het overeenkomende vak. Voltooi al het sorteren voordat de tijd om is.",
+    "scoring": "Elke correcte sortering levert punten op. Een fout wordt van de score afgetrokken. Als de tijd om is voordat je klaar bent, eindigt het spel.",
+    "rewards": "Succesvol eindigen op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+    "tip": "Bepaal eerst tot welk vak elke vorm behoort en sleep vervolgens met vertrouwen."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Verzamel meer bewijs voordat u een plan maakt",
+    "shortPractice": "3–7 items over hetzelfde onderwerp met een iets lagere moeilijkheidsgraad",
+    "avoid": "Spring niet te hoog in niveau en mix niet meerdere onderwerpen door elkaar.",
+    "improvementSignals": [
+      "Minder herhalende fouten",
+      "Independent correction na een mistake"
+    ],
+    "failureSignals": [
+      "Geen verandering na twee gestructureerde cycli"
+    ],
+    "hypothesisChange": "Mislukking bij de voorgestelde controle, of succes alleen met zware hints"
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Spring niet te hoog in niveau, mix geen verschillende onderwerpen door elkaar en vertrouw niet op algemene feedback zonder voorbeeld.",
+    "improvementSignals": [
+      "Match de succesmarkeringen van de taxonomie",
+      "Transfer success naar een similar task"
+    ],
+    "hypothesisChange": "Wanneer het aanbevolen onderzoek mislukt of er sterk tegenbewijs verschijnt"
+  },
+  "probeFallback": {
+    "objective": "Scheid een fundamentele leemte van een onderwerpspecifiek probleem",
+    "specification": "Een parallelle taak volgens hetzelfde principe met verminderde complexiteit",
+    "stoppingRule": "Twee consistente sequenties of stabiele verbetering",
+    "escalationRule": "Geen improvement na two cycles"
+  },
+  "probeWithTaxonomy": {
+    "objective": "Maak onderscheid tussen een basisprobleem en een onderwerpspecifiek probleem",
+    "stoppingRule": "Voldoe aan de drempel voor rijherhaling of wijs de hypothese af",
+    "hypothesisChange": "Wanneer het aanbevolen onderzoek mislukt of er sterk tegenbewijs verschijnt"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Snelheidsdruk versus kenniskloof",
+    "carelessPattern": "Onzorgvuldigheid versus onbegrip",
+    "instructionFriction": "Instructie/hint wrijving versus conceptuele kloof",
+    "distinguishingEvidence": [
+      "Vergelijk getimede en niet-getimede prestaties",
+      "Vergelijk schaarse versus rijke hints",
+      "Controleren recurrence door pattern family"
+    ]
+  }
+}

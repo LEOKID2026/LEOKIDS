@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "Het artikel is langs de lopende band gegaan - probeer sneller te zijn!",
+    "correct_great_job": "Juist! Geweldig gedaan ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "Rekenen.max(beste, volgende)); if (volgende === 5) addScore(SCORE.streak5); if (volgende === 10) addScore(SCORE.streak10); if (volgende === 5 || volgende === 10) onStreak(); volgende terugkeren; }); score toevoegen(bonus); const showFact = Rekenen.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"bewegen\"); const dualAllowed = allowDualItemsAt(sortedCountRef.current, moeilijkheidsgraadRef.current); const maxOnBelt = dualAllowed && Rekenen.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id]), [diffConfig.bins], ); const binsGridClass = activeBins.lengte",
+    "onitemclick_bi_uid": "onItemKlik(bi.uid)} /> ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Sorteer de spullen in de juiste bakken en help zo het milieu",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Sorteer elk item in de juiste bak - help de planeet!",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)} /> ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "Sleep naar een prullenbak of tik op een item → prullenbak",
+    "leo_apos_s_recycling_factory": "Leo's recyclingfabriek",
+    "correct_items": "Juiste artikelen",
+    "best_streak": "Beste reeks",
+    "start_game": "Spel starten",
+    "mistakes": "Fouten",
+    "accuracy": "Nauwkeurigheid",
+    "new_game": "Nieuw spel",
+    "mission": "Missie",
+    "score": "Score",
+    "level": "Niveau",
+    "back": "Terug"
+  }
+}

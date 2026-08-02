@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "start_game": "iniciar gioco",
+    "loading": "Caricamento…",
+    "choose_a_difficulty": "Scegli una dificultad"
+  }
+}

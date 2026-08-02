@@ -1,0 +1,11 @@
+{
+  "gameId": "maze",
+  "title": "Leo's doolhof",
+  "blurb": "Vind de uitgang van het doolhof voordat de tijd om is!",
+  "help": {
+    "howToPlay": "Verplaats Leo door het doolhof, verzamel sleutels en sterren en vind de uitgang voordat de tijd om is.",
+    "scoring": "Sleutels, sterren en diamanten voegen punten toe. Het voltooien van het doolhof geeft een grote bonus. Als de tijd om is, eindigt het spel.",
+    "rewards": "Als je het doolhof met succes voltooit op basis van de moeilijkheidsgraad, krijg je munten, en een scorebonus voegt nog meer toe.",
+    "tip": "Verzamel eerst de sleutels - soms ontgrendelen ze een korter pad."
+  }
+}

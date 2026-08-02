@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "Plastique",
+    "newspaper": "Journal",
+    "cardboard": "Carton",
+    "plastic_bottle": "Bouteille en plastique",
+    "plastic_bag": "Sac en plastique",
+    "soda_can": "Canette de soda",
+    "banana_peel": "Peau de banane",
+    "medium": "Moyen",
+    "recycled_paper_can_become_new_paper_again": "Le papier recyclé peut redevenir du papier neuf.",
+    "plastic_bottles_can_be_made_into_new_products": "Les bouteilles en plastique peuvent être transformées en nouveaux produits.",
+    "glass_can_be_recycled_many_times": "Le verre peut être recyclé plusieurs fois.",
+    "metal_cans_are_great_for_recycling": "Les canettes métalliques sont idéales pour le recyclage.",
+    "sorting_correctly_helps_protect_the_environment": "Trier correctement contribue à protéger l’environnement."
+  }
+}

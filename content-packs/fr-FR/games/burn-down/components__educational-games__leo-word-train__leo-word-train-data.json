@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "grades_1_2": "CP–CE1",
+    "grades_3_4": "CE2–CM1",
+    "grades_5_6": "CM2–6e",
+    "nice_the_lowercase_letter_is_on_the_car": "Bon! La lettre minuscule est sur la voiture.",
+    "great_job_the_uppercase_letter_is_in_place": "Super travail ! La lettre majuscule est en place.",
+    "correct_the_first_letter_is_on_the_car": "Correct! La première lettre est sur la voiture.",
+    "fill_in_the_missing_letter_on_the_car": "Remplissez la lettre manquante sur la voiture",
+    "awesome_you_filled_in_the_missing_letter": "Génial! Tu avez rempli la lettre manquante.",
+    "excellent_you_built_the_word_on_the_cars": "Excellent! Tu avez construit le mot sur les voitures.",
+    "great_you_completed_the_missing_letters": "Super! Tu avez complété les lettres manquantes.",
+    "both_cars_are_ready_all_aboard": "Les deux voitures sont prêtes – tous à bord !",
+    "load_the_word_that_matches_the_picture": "Chargez le mot qui correspond à l'image",
+    "the_right_word_is_on_the_car": "Le bon mot est sur la voiture !",
+    "word_order_looks_good_the_train_is_leaving": "L'ordre des mots semble bon : le train part !",
+    "the_missing_word_is_in_place": "Le mot manquant est en place !",
+    "that_word_fits_the_situation": "Ce mot correspond à la situation !",
+    "arrange_a_sentence_that_describes_the_picture": "Disposez une phrase qui décrit l’image",
+    "the_sentence_matches_the_picture_all_aboard": "La phrase correspond à l'image : tous à bord !"
+  }
+}

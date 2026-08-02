@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "student_report": "Leerling report",
+    "invalid_student_id": "Invalid leerling ID.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "Je hebt geen toestemming om het rapport van deze leerling te bekijken.",
+    "please_select_valid_dates": "Alstublieft selecteer valid dates"
+  }
+}

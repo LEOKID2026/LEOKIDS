@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Matematica",
+    "geometry": "Geometria",
+    "english": "Inglese",
+    "science": "Scienze"
+  },
+  "activityModes": {
+    "live_lesson": "Lezione dal vivo",
+    "guided_practice": "Pratica guidata",
+    "quiz": "Quiz",
+    "homework": "Compiti a casa",
+    "discussion": "Discussione",
+    "practice": "Esercitazione",
+    "review": "Revisione"
+  },
+  "activityStatuses": {
+    "draft": "Bozza",
+    "active": "Attivo",
+    "paused": "In pausa",
+    "closed": "Chiuso",
+    "archived": "Archiviato"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Non iniziato",
+    "in_progress": "In corso",
+    "submitted": "Inviato",
+    "completed": "Completato",
+    "timed_out": "Timeout"
+  },
+  "roles": {
+    "teacher": "Insegnante",
+    "school_admin": "Amministrazione della scuola",
+    "admin": "Amministratore di sistema"
+  },
+  "auditActions": {
+    "school_subject_granted": "Autorizzazione soggetto concessa",
+    "school_subject_revoked": "Assegnazione dell'oggetto revocata",
+    "school_student_enrolled": "alunno iscritto",
+    "school_student_unenrolled": "alunno annullato",
+    "school_class_viewed": "Report della classe visualizzato",
+    "school_student_report_viewed": "Report dell'alunno visualizzato",
+    "school_student_class_transferred": "alunno trasferito",
+    "school_class_teacher_reassigned": "Insegnante di classe riassegnato",
+    "school_class_archived": "Classe archiviata",
+    "assign_teacher": "Insegnante assegnato",
+    "assign_manager": "Nominato direttore",
+    "class_transfer": "alunno trasferito",
+    "grant": "Autorizzazione concessa",
+    "revoke": "Autorizzazione rimossa",
+    "archive": "Archiviato",
+    "viewed_student_report": "Report dell'alunno visualizzato",
+    "viewed_class_report": "Report della classe visualizzato",
+    "grant_created": "Concessione di accesso creata",
+    "grant_revoked": "Concessione di accesso revocata",
+    "magic_link_issued": "Link di accesso rilasciato",
+    "pin_rotated": "PIN ruotato",
+    "username_rotated": "Nome utente ruotato",
+    "teacher_quota_updated": "Quote aggiornate",
+    "teacher_features_updated": "Autorizzazioni funzionalità aggiornate",
+    "teacher_status_updated": "Stato dell'account aggiornato"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Azione di sistema",
+    "activity": "Attività",
+    "classActivity": "Attività di classe",
+    "activitySuffix": "attività"
+  }
+}

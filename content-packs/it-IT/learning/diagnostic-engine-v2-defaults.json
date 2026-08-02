@@ -1,0 +1,44 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Reunir mas evidencia prima de un plan",
+    "shortPractice": "3 a 7 elementos sobre el mismo argomento con una dificultad ligeramente menor",
+    "avoid": "No saltes demasiado de nivel ni mezcles varios argomenti.",
+    "improvementSignals": [
+      "Menos errores repetidos",
+      "Correccion independiente dopo de un error."
+    ],
+    "failureSignals": [
+      "Sin cambiamenti dopo de dos cicli estructurados"
+    ],
+    "hypothesisChange": "Fallo en la verificacion propuesta o éxito solo con fuertes insinuaciones."
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Do not jump too high in level, mix several topics, or rely on general feedback without an example.",
+    "improvementSignals": [
+      "Emparejar marcadores de éxito de taxonomia",
+      "Transferir el éxito a una tarea similar."
+    ],
+    "hypothesisChange": "Quando la investigacion recomendada falla o aparecen fuertes pruebas en contra"
+  },
+  "probeFallback": {
+    "objective": "Separar una brecha fundamental de un argomento especifico",
+    "specification": "Una tarea paralela sobre el mismo principio con complejidad reducida.",
+    "stoppingRule": "Dos secuencias consistentes o mejora estable.",
+    "escalationRule": "No hay miglioreia dopo de dos cicli."
+  },
+  "probeWithTaxonomy": {
+    "objective": "Distinguir una dificultad basica de una especifica de un argomento",
+    "stoppingRule": "Cumplir con el umbral de recurrencia de la fila o rechazar la ipotesi",
+    "hypothesisChange": "Quando la investigacion recomendada falla o aparecen fuertes pruebas en contra"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Presion de velocidad versus brecha de conocimiento",
+    "carelessPattern": "Descuido vs malentendido",
+    "instructionFriction": "Friccion de instruccion/pista versus brecha conceptual",
+    "distinguishingEvidence": [
+      "Comparar el rendimiento cronometrado y no cronometrado",
+      "Comparar sugerencias escasas y ricas",
+      "Comprobar recurrencia por familia de patrones"
+    ]
+  }
+}

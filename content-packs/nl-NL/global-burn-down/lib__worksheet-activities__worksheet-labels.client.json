@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "active": "Actief",
+    "closed": "Gesloten",
+    "archived": "Gearchiveerd",
+    "digital_answer_sheet": "Digitaal antwoordblad",
+    "manual_grading": "Handmatige beoordeling",
+    "not_submitted": "Niet submitted",
+    "submitted": "Ingediend",
+    "pending_review": "In afwachting van beoordeling",
+    "partially_checked": "Gedeeltelijk gecontroleerd",
+    "checked": "Gecontroleerd",
+    "published": "Gepubliceerd",
+    "multiple_choice": "Meerkeuze",
+    "true_false": "Waar / niet waar",
+    "number": "Nummer",
+    "short_answer": "Kort antwoord",
+    "free_text": "Vrije tekst"
+  }
+}

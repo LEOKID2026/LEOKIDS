@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "volume_supports_stronger_reliability": "Volume ondersteunt een sterkere betrouwbaarheid.",
+    "review_pacing_signals_separately_from_knowledge_gaps": "Beoordeel de stimulatiesignalen afzonderlijk van kennislacunes.",
+    "row_level_accuracy_is_relatively_consistent": "De nauwkeurigheid op rijniveau is relatief consistent."
+  }
+}

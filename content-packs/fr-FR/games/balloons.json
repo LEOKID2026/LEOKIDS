@@ -1,0 +1,11 @@
+{
+  "gameId": "balloons",
+  "title": "Ballon Pop",
+  "blurb": "Éclatez des ballons avant la fin du temps imparti !",
+  "help": {
+    "howToPlay": "Appuyez sur les ballons pour les faire éclater. Tu avez trois vies et une minute. Attention aux bombes !",
+    "scoring": "Les ballons réguliers, dorés et diamantés ajoutent des points. Les ballons horloges ajoutent du temps et les ballons cœurs redonnent une vie. Une bombe emporte une vie.",
+    "rewards": "Atteindre l'objectif de pop ou un score final élevé rapporte des pièces et des diamants.",
+    "tip": "Surveillez les ballons spéciaux : ils peuvent tu aider avant la fin du temps imparti."
+  }
+}

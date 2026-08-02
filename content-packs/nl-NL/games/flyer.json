@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Leo in een Plane",
+  "blurb": "Houd vast om te vliegen, verzamel munten en vermijd obstakels!",
+  "help": {
+    "howToPlay": "Houd de knop of het scherm ingedrukt om te vliegen en laat los om te dalen. Verzamel munten en vermijd obstakels.",
+    "scoring": "Munten en diamanten voegen punten toe. Het raken van een obstakel beëindigt het spel.",
+    "rewards": "Hoe verder je vliegt en hoe meer punten je verdient, hoe meer munten en diamanten je krijgt.",
+    "tip": "Vlieg niet te hoog - soms is het beter om onder een obstakel door te gaan."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "Terug",
+    "local_badge": "Lokaal",
+    "title": "Geheugenmatch",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "Enkele speler",
+    "two_players": "2 spelers",
+    "time": "Tijd",
+    "moves": "Beweegt",
+    "turn": "Draai",
+    "pairs": "Paren",
+    "player_n": "Speler {n}",
+    "two_players_label": "2 spelers",
+    "shuffle": "Schudden",
+    "player_1": "Speler 1",
+    "player_2": "Speler 2",
+    "all_pairs_found": "Alle pairs found!"
+  }
+}

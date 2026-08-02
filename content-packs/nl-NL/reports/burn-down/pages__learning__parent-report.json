@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "Oppervlakte naar reinforce",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "Ouder-aanmelding is vereist. Gebruik de ouder-aanmelding en probeer het opnieuw.",
+    "network_error_while_loading_the_report": "Netwerkfout tijdens het laden van het rapport.",
+    "please_choose_valid_dates": "Alstublieft kies valid dates",
+    "custom": "Aangepast",
+    "preparing_the_performance_report": "Preparing de performance report...",
+    "charts": "Grafieken",
+    "breakdown": "Uitsplitsing",
+    "practice_with_questions": "Oefenen met vragen",
+    "book_reading": "Boek lezen",
+    "other_active_learning": "Andere active learning",
+    "time_minutes": "Tijd (minuten)",
+    "questions": "Vragen",
+    "accuracy": "Nauwkeurigheid %"
+  }
+}

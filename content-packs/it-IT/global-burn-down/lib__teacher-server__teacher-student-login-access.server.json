@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "El PIN en texto plano no se podra recuperar dopo de questa risposta. Almacenar de forma segura."
+  }
+}

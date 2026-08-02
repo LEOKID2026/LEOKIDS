@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "Figuras",
+      "topic": "Quadrilateri",
+      "subskill": "Propiedades de rettangolo/parallelogramma",
+      "pattern": "Propiedades confusas",
+      "counterEvidence": "Corregir solo en formas limpias",
+      "countsWhen": "Angolos marcados",
+      "doesNotCountWhen": "Solo nombres sin diagrama.",
+      "probe": "Con marca de angulo/lateral",
+      "intervention": "Carte de definicion",
+      "escalation": "Fracaso en todas las formas",
+      "observableMarkers": [
+        "Error quando el angulo no es de 90°"
+      ],
+      "roots": [
+        "Definiciones superpuestas"
+      ],
+      "competitors": [
+        "Recuerdo de nombre"
+      ],
+      "doNotConclude": [
+        "Sin geometria"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "Angolos",
+      "topic": "Medicion",
+      "subskill": "leyendo un transportador",
+      "pattern": "Error en el rango de angulo",
+      "counterEvidence": "Corregir con medicion guiada",
+      "countsWhen": "El transportador y las instrucciones son validos.",
+      "doesNotCountWhen": "Angolo demasiado piccolo en una interfaz de usuario enganosa",
+      "probe": "Guiado vs independiente",
+      "intervention": "Esercitazione de escala",
+      "escalation": "Report de vista",
+      "observableMarkers": [
+        "Error repetido en el mismo rango"
+      ],
+      "roots": [
+        "leer una escala"
+      ],
+      "competitors": [
+        "Velocità"
+      ],
+      "doNotConclude": [
+        "Problema de vista"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "Area",
+      "topic": "Parallelogramma",
+      "subskill": "Altezza",
+      "pattern": "Using sides as height",
+      "counterEvidence": "Sempre corretto en un rettangolo",
+      "countsWhen": "Altezza can be added",
+      "doesNotCountWhen": "Grandi numeros solo sin modelo",
+      "probe": "With/without height line",
+      "intervention": "Highlight height",
+      "escalation": "Fallo en un rettangolo",
+      "observableMarkers": [
+        "Error when no height line is drawn"
+      ],
+      "roots": [
+        "Choosing height"
+      ],
+      "competitors": [
+        "multiplicacion errata"
+      ],
+      "doNotConclude": [
+        "Sin formulas"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "Transformacion",
+      "topic": "Rotazione",
+      "subskill": "Direction/angle",
+      "pattern": "Rotacion invertida",
+      "counterEvidence": "Corregir en una cuadricula",
+      "countsWhen": "Cuadricula y eje",
+      "doesNotCountWhen": "Sin cuadricula prima de ensenar",
+      "probe": "Con/sin eje",
+      "intervention": "Cuadricula + vértices",
+      "escalation": "Ninguna mejora",
+      "observableMarkers": [
+        "Error de direccion repetido"
+      ],
+      "roots": [
+        "Orientacion espacial"
+      ],
+      "competitors": [
+        "Descuido"
+      ],
+      "doNotConclude": [
+        "Sin pensamiento espacial"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "Volumen",
+      "topic": "Prisma rettangolare",
+      "subskill": "modelo 3D",
+      "pattern": "olvida la profundidad",
+      "counterEvidence": "Corregir en un cubo simple",
+      "countsWhen": "Neto disponible",
+      "doesNotCountWhen": "No hay diagrama quando no se ensena",
+      "probe": "Con/sin red",
+      "intervention": "Red de carta",
+      "escalation": "Fallo en un cubo",
+      "observableMarkers": [
+        "risposta 2D",
+        "Corregir con una red"
+      ],
+      "roots": [
+        "modelo 3D"
+      ],
+      "competitors": [
+        "Multiplicacion"
+      ],
+      "doNotConclude": [
+        "Sin volumen"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "Medicion",
+      "topic": "Perimetro",
+      "subskill": "Conversion de unidades",
+      "pattern": "Error de unidad repetido",
+      "counterEvidence": "Corregir con una llave",
+      "countsWhen": "Clave disponible",
+      "doesNotCountWhen": "La conversion aun no se ensena",
+      "probe": "Dos unidades para la misma longitud",
+      "intervention": "Clave de conversion",
+      "escalation": "Fallo en una sola linea",
+      "observableMarkers": [
+        "Error en la misma unidad"
+      ],
+      "roots": [
+        "Unidades"
+      ],
+      "competitors": [
+        "Calculo"
+      ],
+      "doNotConclude": [
+        "Sin medicion"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "Simetria",
+      "topic": "Forma",
+      "subskill": "Eje",
+      "pattern": "Eje errato repetido",
+      "counterEvidence": "Corretto quando se muestra el eje.",
+      "countsWhen": "Puntos disponibles",
+      "doesNotCountWhen": "Forma no simétrica",
+      "probe": "Con/sin eje",
+      "intervention": "Plegado de carta",
+      "escalation": "Ninguna mejora",
+      "observableMarkers": [
+        "Error con puntos marcados"
+      ],
+      "roots": [
+        "Visual"
+      ],
+      "competitors": [
+        "Descuido"
+      ],
+      "doNotConclude": [
+        "Sin simetria"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "Triangolo",
+      "topic": "Area",
+      "subskill": "base×height÷2",
+      "pattern": "Forgets ÷2 or wrong height",
+      "counterEvidence": "Corregir solo en casos simples.",
+      "countsWhen": "Clear interior height",
+      "doesNotCountWhen": "Obtuso sin paso de ensenanza",
+      "probe": "Exterior height highlighted",
+      "intervention": "Identify height → formula",
+      "escalation": "Fallo en el triangolo rettangolo.",
+      "observableMarkers": [
+        "Error repetido",
+        "Correct on right triangle with interior height"
+      ],
+      "roots": [
+        "Formula"
+      ],
+      "competitors": [
+        "Estructura triangular"
+      ],
+      "doNotConclude": [
+        "Sin triangoli"
+      ]
+    }
+  }
+}

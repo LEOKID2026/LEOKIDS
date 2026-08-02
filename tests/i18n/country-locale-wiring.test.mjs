@@ -84,6 +84,9 @@ const SELECTOR_IDS = [
   "es-SV",
   "es-UY",
   "es-VE",
+  "fr-FR",
+  "it-IT",
+  "nl-NL",
   "pt-BR",
   "pt-PT",
 ];
@@ -102,10 +105,13 @@ const SELECTOR_LABELS = [
   "El Salvador",
   "England",
   "España",
+  "France",
   "Guatemala",
   "Honduras",
   "Ireland",
+  "Italy",
   "México",
+  "Netherlands",
   "New Zealand",
   "Nicaragua",
   "Northern Ireland",
@@ -148,6 +154,9 @@ const SELECTOR_ORDER = [
   "es-ES",
   "pt-BR",
   "pt-PT",
+  "it-IT",
+  "fr-FR",
+  "nl-NL",
   "en-AU",
   "en-NZ",
   "en-IE",
@@ -200,7 +209,7 @@ test("Brasil pt-BR registered with /br and fallback to en", () => {
 
 test("selector shows English + country names only (no Español / codes)", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 34);
+  assert.equal(locales.length, 37);
   assert.deepEqual(
     locales.map((l) => l.id),
     SELECTOR_ORDER

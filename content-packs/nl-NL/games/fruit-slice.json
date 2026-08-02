@@ -1,0 +1,11 @@
+{
+  "gameId": "fruit-slice",
+  "title": "Fruitschijfje",
+  "blurb": "Snijd fruit, vermijd bommen en bereik het scoredoel!",
+  "help": {
+    "howToPlay": "Sleep je vinger over het scherm om vliegend fruit in plakjes te snijden. Vermijd bommen - je hebt drie fouten toegestaan.",
+    "scoring": "Elk gesneden fruit levert punten op. Het in één keer in plakjes snijden van meerdere vruchten levert een combobonus op. Een bom raken of een vrucht missen kost een vergissing.",
+    "rewards": "Het bereiken van het scoredoel op basis van moeilijkheidsgraad levert munten en diamanten op.",
+    "tip": "Snijd alleen fruit. Als je een bom ziet, kun je deze het beste overslaan."
+  }
+}

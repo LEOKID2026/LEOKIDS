@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "short_equation_puzzle": "Petit puzzle d'équation :",
+    "complete_the_missing_part_of_the_equation": "Complétez la partie manquante de l'équation :",
+    "find_the_unknown": "Trouvez l'inconnu :",
+    "find_x": "Trouver x :"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "incorrect": "Fout",
+    "answer_submitted": "Antwoord submitted",
+    "submit_answer": "Antwoord indienen",
+    "type_your_answer": "Type uw answer",
+    "enlarged_diagram": "Vergroot diagram",
+    "close_diagram": "Sluiten diagram"
+  }
+}

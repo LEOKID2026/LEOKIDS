@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Sjabloonrijen voor conceptuele MCQ - gescand als statische metadatadragers",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Procedurele wiskundige items - metadata toegewezen tijdens het genereren",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Procedurele geometrie - gebruik geometrie-conceptuele bank + generatorparameters",
+    "english_generator_pool_merge": "Engels generator + pool merge"
+  }
+}

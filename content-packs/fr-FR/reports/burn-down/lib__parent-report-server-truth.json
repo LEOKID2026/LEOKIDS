@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_report": "Rapport pour les parents",
+    "the_report_cannot_be_built_from_local_browser_data_data_stored_on_this_d": "Le rapport ne peut pas être créé à partir des données du navigateur local (données stockées sur cet appareil)."
+  }
+}

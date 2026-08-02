@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Il n’existe pas encore suffisamment de données pour dresser un portrait au niveau du sujet.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Commencez une pratique courte et cohérente pour construire une référence de mesure.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Le volume actuel des données est faible, il n’existe donc aucune base pour une orientation claire.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Choisissez un sujet et entraînez-vous 10 à 15 minutes à chaque séance.",
+    "do_not_change_difficulty_based_on_sparse_data": "Ne modifiez pas la difficulté en fonction de données clairsemées.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Dans quelle mesure faire confiance à cela : pas encore élevé à ce stade.",
+    "existing_data_is_still_partial": "Les données existantes sont encore partielles.",
+    "continue_basic_data_collection": "Poursuivre la collecte de données de base.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Il n’existe pas encore suffisamment de données pour définir une direction claire.",
+    "short_focused_practice_on_one_topic": "Pratique courte et ciblée sur un sujet.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Ne tirez pas de conclusions définitives à partir d’un petit nombre de questions.",
+    "how_much_to_trust_this_not_high_yet": "Dans quelle mesure faire confiance à cela : pas encore élevé.",
+    "data_is_missing_or_partial": "Les données sont manquantes ou partielles."
+  }
+}

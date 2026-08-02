@@ -155,9 +155,9 @@ test("wave3 canonical redirects and reserved routes", () => {
   assert.equal(stripLocaleFromPath("/ph/parents").locale, "en-PH");
 });
 
-test("selector adds Scotland Northern Ireland Philippines; count 34", () => {
+test("selector adds Scotland Northern Ireland Philippines; count 37", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 34);
+  assert.equal(locales.length, 37);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of WAVE3) {
     assert.equal(byId[c.id].label, c.label);

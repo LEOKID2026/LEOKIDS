@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "unknown_subject_for_normalization": "Sujet inconnu pour normalisation.",
+    "mapped_from_math_generator_operation_topic_key": "Mappé à partir de l'opération du générateur mathématique/de la clé de sujet.",
+    "mapped_from_geometry_topic_generator_kind": "Cartographié à partir d'un sujet de géométrie/type de générateur.",
+    "expand_geometry_strand_map_for_this_topic_kind": "Développez la carte des brins de géométrie pour ce sujet/genre.",
+    "mapped_from_hebrew_topics_key": "Cartographié à partir de la clé hébraïque TOPICS.",
+    "unknown_hebrew_topic_bucket": "Ensemble de sujets en hébreu inconnu.",
+    "vocabulary_games_map_to_lexis_translation_strand": "Les jeux de vocabulaire correspondent au volet lexique/traduction.",
+    "writing_typing_modes_align_with_sentence_writing_strand": "Les modes d'écriture/dactylographie s'alignent sur le volet d'écriture de phrases.",
+    "mixed_practice_audit_often_skips_or_treats_as_composite": "Pratique mixte : l'audit est souvent ignoré ou traité comme un audit composite.",
+    "translation_pools_emphasize_vocabulary_phrases": "Les pools de traduction mettent l'accent sur le vocabulaire/les phrases.",
+    "expected_grammar_translation_sentence": "Grammaire attendue | Traduction | phrase.",
+    "mapped_from_science_bank_topic_field": "Cartographié à partir du champ thématique de la banque scientifique.",
+    "extend_science_domain_map": "Étendre la carte du domaine scientifique."
+  }
+}

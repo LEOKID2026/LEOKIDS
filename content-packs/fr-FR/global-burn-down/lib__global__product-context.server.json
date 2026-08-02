@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "this_student_does_not_belong_to_leo_kids_global": "Cet élève n'appartient pas à LEO KIDS Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "Élève introuvable pour ce parent sur LEO KIDS Global.",
+    "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "Le schéma d'isolation du produit n'est pas prêt. Appliquez sql/global-product-isolation avant d'activer les écritures."
+  }
+}

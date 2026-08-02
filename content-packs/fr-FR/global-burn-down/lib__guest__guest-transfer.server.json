@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "coins_diamonds_and_cards_were_saved_to_the_child": "Des pièces de monnaie, des diamants et des cartes ont été conservés pour l'enfant.",
+    "diamond_transfer_failed": "Le transfert de diamant a échoué.",
+    "arcade_club_data_transfer_failed": "Le transfert des données du club d'arcade a échoué."
+  }
+}

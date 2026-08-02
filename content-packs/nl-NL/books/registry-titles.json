@@ -1,0 +1,391 @@
+{
+  "batches": {
+    "english.g1": {
+      "phonics-a": {
+        "title": "Hoofdletters A–Z en meer"
+      },
+      "phonics-b": {
+        "title": "Letterklanken en meer"
+      },
+      "phonics-c": {
+        "title": "Klassikale woorden en meer"
+      },
+      "phonics-d": {
+        "title": "Plaatje en woord en meer"
+      }
+    },
+    "english.g2": {
+      "phonics-review": {
+        "title": "Herhaling: letters en namen en meer"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "a": {
+        "title": "Kennismaken met het vierkant en meer"
+      },
+      "b": {
+        "title": "Translatie en spiegeling — introductie"
+      }
+    },
+    "geometry.g2": {
+      "a": {
+        "title": "Driedimensionale lichamen — namen en introductie"
+      },
+      "b": {
+        "title": "Oppervlakte van een vierkant"
+      },
+      "c": {
+        "title": "Translatie en spiegeling — meer oefenen"
+      }
+    },
+    "geometry.g3": {
+      "a": {
+        "title": "Soorten driehoeken en meer"
+      },
+      "b": {
+        "title": "Evenwijdige en loodrechte lijnen"
+      },
+      "c": {
+        "title": "Oppervlakte van een vierkant en meer"
+      },
+      "d": {
+        "title": "Hoeken in een driehoek"
+      },
+      "e": {
+        "title": "Rotatie in het vlak en meer"
+      }
+    },
+    "geometry.g4": {
+      "a": {
+        "title": "Eigenschappen van een vierkant en meer"
+      },
+      "b": {
+        "title": "Vierhoeken en meer"
+      },
+      "c": {
+        "title": "Omtrek van een vierkant en meer"
+      },
+      "d": {
+        "title": "Diagonaal van een vierkant en meer"
+      },
+      "e": {
+        "title": "Lichamen en meer"
+      }
+    },
+    "geometry.g5": {
+      "a": {
+        "title": "Evenwijdige en loodrechte lijnen en meer"
+      },
+      "b": {
+        "title": "Omtrek van een vierkant en meer"
+      },
+      "c": {
+        "title": "Hoogte van een driehoek en meer"
+      },
+      "d": {
+        "title": "Oppervlakte van een vierkant en meer"
+      },
+      "e": {
+        "title": "Diagonaal van een vierkant en meer"
+      },
+      "f": {
+        "title": "Driedimensionale lichamen en meer"
+      },
+      "g": {
+        "title": "Betegelen van een vlak"
+      }
+    },
+    "geometry.g6": {
+      "a": {
+        "title": "Omtrek van een vierkant en meer"
+      },
+      "b": {
+        "title": "Omtrek van een cirkel en meer"
+      },
+      "c": {
+        "title": "Stelling van Pythagoras en meer"
+      },
+      "d": {
+        "title": "Lichamen en meer"
+      },
+      "e": {
+        "title": "Inhoud van een prisma en meer"
+      },
+      "f": {
+        "title": "Inhoud van een piramide en meer"
+      },
+      "g": {
+        "title": "Inhoud van een cilinder en meer"
+      }
+    },
+    "math.g1": {
+      "a": {
+        "title": "Vooruit tellen op de getallenlijn en meer"
+      },
+      "b": {
+        "title": "Tientallen en eenheden en meer"
+      },
+      "c": {
+        "title": "Twee getallen optellen en meer"
+      },
+      "d": {
+        "title": "Verhaalsommen en meer"
+      }
+    },
+    "math.g2": {
+      "a": {
+        "title": "Honderdtallen, tientallen en eenheden en meer"
+      },
+      "b": {
+        "title": "Twee getallen optellen en meer"
+      },
+      "c": {
+        "title": "Wanneer is een getal deelbaar door 2, 5 en 10? en meer"
+      },
+      "d": {
+        "title": "Verhaalsommen en meer"
+      }
+    },
+    "math.g3": {
+      "a": {
+        "title": "Honderdtallen, tientallen en eenheden en meer"
+      },
+      "b": {
+        "title": "Twee getallen optellen en meer"
+      },
+      "c": {
+        "title": "Breuken — wat zijn ze en hoe vergelijken we ze?"
+      },
+      "d": {
+        "title": "Optelvergelijking en meer"
+      },
+      "e": {
+        "title": "Verhaalsom en meer"
+      }
+    },
+    "math.g4": {
+      "a": {
+        "title": "Plaatswaarde en meer"
+      },
+      "b": {
+        "title": "Optellen met 0 en meer"
+      },
+      "c": {
+        "title": "Twee getallen optellen en meer"
+      },
+      "d": {
+        "title": "Delen en meer"
+      },
+      "e": {
+        "title": "Decimalen optellen en meer"
+      },
+      "f": {
+        "title": "Machten en meer"
+      },
+      "g": {
+        "title": "Verhaalsommen en meer"
+      }
+    },
+    "math.g5": {
+      "a": {
+        "title": "Plaatswaarde en meer"
+      },
+      "b": {
+        "title": "Twee getallen optellen en meer"
+      },
+      "c": {
+        "title": "Delen en meer"
+      },
+      "d": {
+        "title": "Breuken vereenvoudigen en meer"
+      },
+      "e": {
+        "title": "Decimalen optellen en meer"
+      },
+      "f": {
+        "title": "Delers van een getal en meer"
+      },
+      "g": {
+        "title": "Percentage van een hoeveelheid en meer"
+      },
+      "h": {
+        "title": "Verhaalsommen en meer"
+      }
+    },
+    "math.g6": {
+      "a": {
+        "title": "Plaatswaarde en meer"
+      },
+      "b": {
+        "title": "Twee getallen optellen en meer"
+      },
+      "c": {
+        "title": "Delers van een getal en meer"
+      },
+      "d": {
+        "title": "Optelvergelijking en meer"
+      },
+      "e": {
+        "title": "Decimale getallen optellen en meer"
+      },
+      "f": {
+        "title": "Een breuk als delen en meer"
+      },
+      "g": {
+        "title": "Verhoudingen en meer"
+      },
+      "h": {
+        "title": "Percentage van een hoeveelheid en meer"
+      },
+      "i": {
+        "title": "Verhaalsommen en meer"
+      }
+    },
+    "science.g1": {
+      "a": {
+        "title": "Het menselijk lichaam en meer"
+      },
+      "b": {
+        "title": "Materialen en meer"
+      }
+    },
+    "science.g2": {
+      "a": {
+        "title": "Het menselijk lichaam en meer"
+      },
+      "b": {
+        "title": "Materialen en meer"
+      },
+      "c": {
+        "title": "Waarnemen en onderzoeken"
+      }
+    },
+    "science.g3": {
+      "a": {
+        "title": "Het menselijk lichaam en meer"
+      },
+      "b": {
+        "title": "Materialen en meer"
+      },
+      "c": {
+        "title": "Een kort wetenschappelijk experiment"
+      }
+    },
+    "science.g4": {
+      "a": {
+        "title": "Het menselijk lichaam en meer"
+      },
+      "b": {
+        "title": "Materialen en meer"
+      },
+      "c": {
+        "title": "Een experiment plannen"
+      }
+    },
+    "science.g5": {
+      "b": {
+        "title": "Materialen en meer"
+      },
+      "a": {
+        "title": "Het menselijk lichaam en meer"
+      },
+      "c": {
+        "title": "Volledig onderzoek — documentatie"
+      }
+    },
+    "science.g6": {
+      "b": {
+        "title": "Materialen en meer"
+      },
+      "a": {
+        "title": "Het menselijk lichaam en meer"
+      },
+      "c": {
+        "title": "Natuur-en-techniekproject"
+      }
+    },
+    "placeholder": {
+      "comingSoon": {
+        "title": "Binnenkort"
+      }
+    }
+  },
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Engels — Groep 3"
+    },
+    "english.g2": {
+      "bookTitle": "Engels — Groep 4"
+    },
+    "english.g3": {
+      "bookTitle": "Engels — Groep 5"
+    },
+    "english.g4": {
+      "bookTitle": "Engels — Groep 6"
+    },
+    "english.g5": {
+      "bookTitle": "Engels — Groep 7"
+    },
+    "english.g6": {
+      "bookTitle": "Engels — Groep 8"
+    },
+    "geometry.g1": {
+      "bookTitle": "Meetkunde — Groep 3"
+    },
+    "geometry.g2": {
+      "bookTitle": "Meetkunde — Groep 4"
+    },
+    "geometry.g3": {
+      "bookTitle": "Meetkunde — Groep 5"
+    },
+    "geometry.g4": {
+      "bookTitle": "Meetkunde — Groep 6"
+    },
+    "geometry.g5": {
+      "bookTitle": "Meetkunde — Groep 7"
+    },
+    "geometry.g6": {
+      "bookTitle": "Meetkunde — Groep 8"
+    },
+    "math.g1": {
+      "bookTitle": "Rekenen — Groep 3"
+    },
+    "math.g2": {
+      "bookTitle": "Rekenen — Groep 4"
+    },
+    "math.g3": {
+      "bookTitle": "Rekenen — Groep 5"
+    },
+    "math.g4": {
+      "bookTitle": "Rekenen — Groep 6"
+    },
+    "math.g5": {
+      "bookTitle": "Rekenen — Groep 7"
+    },
+    "math.g6": {
+      "bookTitle": "Rekenen — Groep 8"
+    },
+    "science.g1": {
+      "bookTitle": "Natuur en techniek — Groep 3"
+    },
+    "science.g2": {
+      "bookTitle": "Natuur en techniek — Groep 4"
+    },
+    "science.g3": {
+      "bookTitle": "Natuur en techniek — Groep 5"
+    },
+    "science.g4": {
+      "bookTitle": "Natuur en techniek — Groep 6"
+    },
+    "science.g5": {
+      "bookTitle": "Natuur en techniek — Groep 7"
+    },
+    "science.g6": {
+      "bookTitle": "Natuur en techniek — Groep 8"
+    }
+  }
+}

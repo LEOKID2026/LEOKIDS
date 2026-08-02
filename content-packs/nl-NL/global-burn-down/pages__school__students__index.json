@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "please_select_valid_dates": "Alstublieft selecteer valid dates",
+    "no_children_in_this_grade": "Geen children in dit groep.",
+    "no_children_found_in_this_class": "Geen children found in dit class."
+  }
+}

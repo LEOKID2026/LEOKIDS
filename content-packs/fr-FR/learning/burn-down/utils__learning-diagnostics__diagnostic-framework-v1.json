@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "number_r_accuracy": "Numéro (r.précision)",
+    "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o": "Il existe plusieurs lignes de sujets faibles. Les préoccupations au niveau du sujet ne peuvent être prises en compte que lorsque les critères d'étendue sont remplis."
+  }
+}

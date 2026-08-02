@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Leo en un avion",
+  "blurb": "Mantén presionado para volar, recoger monete y evitar obstaculos!",
+  "help": {
+    "howToPlay": "Mantén presionado el boton o la pantalla para volar y suéltalo para descender. Recoge monete y evita obstaculos.",
+    "scoring": "Las monete y los diamanti suman puntos. Golpear un obstaculo finaliza el gioco.",
+    "rewards": "Cuanto mas lejos vueles e altro puntos ganes, mas monete y diamanti obtendras.",
+    "tip": "No vueles demasiado alto; a veces es migliore pasar por debajo de un obstaculo."
+  }
+}

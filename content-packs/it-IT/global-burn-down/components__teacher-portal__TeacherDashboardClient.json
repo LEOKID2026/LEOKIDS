@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "Quitar a questo alunno de la classe?",
+    "remove_this_student_from_your_teacher_list": "Eliminar a questo alunno de tu lista de profesores?",
+    "manage_class": "Administrar classe",
+    "full_name_of_new_student": "Nombre completo del nuovo alunno",
+    "students": "Alunni",
+    "classes": "Classi",
+    "class_report": "Rapporto di classe",
+    "activities": "Attività",
+    "filter_student_list": "Filtrar lista de alunni",
+    "search_by_name": "Buscar por nombre…"
+  }
+}

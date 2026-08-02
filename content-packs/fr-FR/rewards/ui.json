@@ -1,0 +1,204 @@
+{
+  "rarity": {
+    "regular": "Commune",
+    "special": "Spéciale",
+    "rare": "Rare",
+    "gold": "Or"
+  },
+  "cardType": {
+    "achievement": "Carte de réussite",
+    "shop": "Carte de magasin",
+    "event": "Carte d'événement"
+  },
+  "cardSource": {
+    "earned_achievement": "Acquis d'apprentissage",
+    "shop_purchase": "Achat en boutique",
+    "surprise_box_reward": "Boîte surprise",
+    "duplicate_conversion": "Conversion en double",
+    "card_sellback": "Vente en double",
+    "admin_grant": "Cadeau de l'équipe"
+  },
+  "shop": {
+    "alreadyOwned": "Vous l'avez !",
+    "sellDuplicate": "Vendre le doublon",
+    "catalogOwned": "Collecté",
+    "coinsLabel": "{amount} pièces",
+    "notEnoughCoins": "Pas assez de pièces pour acheter ça.",
+    "purchaseFailed": "L'achat a échoué : réessayez.",
+    "purchaseSuccess": "Vous avez acheté {name} !",
+    "purchaseNetworkError": "Erreur réseau lors de l'achat.",
+    "sellConfirmTitle": "Vendre un double de {name} pour {amount} ?",
+    "sellConfirmBody": "Vous en conserverez un exemplaire dans votre collection.",
+    "sellFailed": "Impossible de vendre le double : réessayez.",
+    "sellSuccess": "Vendu un double pour {amount} !",
+    "sellNetworkError": "Erreur réseau lors de la vente.",
+    "noDuplicate": "Vous n'avez pas de double à vendre.",
+    "loadFailed": "Impossible de charger la boutique pour le moment."
+  },
+  "series": {
+    "professions": "Métiers",
+    "space-tech": "Espace et technologie",
+    "fantasy": "Fantaisie",
+    "sport-fun": "Sports et divertissement",
+    "style": "Style",
+    "general": "Réalisations générales",
+    "math": "Réalisations en mathématiques",
+    "language": "Acquis linguistiques",
+    "subjects": "Réalisations du sujet",
+    "events": "Événements"
+  },
+  "fallback": {
+    "rewardCard": "Carte de récompense",
+    "collectName": "Collectez {name} !",
+    "earnCard": "Gagnez cette carte : {name}",
+    "eventLimited": "{name} — carte d'événement limitée !",
+    "genericGame": "Jeu",
+    "keepLearning": "Continuez à apprendre pour débloquer cette carte",
+    "completeRequirement": "Remplissez l'exigence : {label}",
+    "availableInShop": "Disponible en boutique",
+    "availableInSurpriseBox": "Disponible dans une boîte surprise",
+    "notAvailableNow": "Non disponible pour le moment",
+    "progressOf": "{current} sur {target}"
+  },
+  "topics": {
+    "addition": "Addition",
+    "subtraction": "Soustraction",
+    "multiplication": "Multiplication",
+    "division": "Division",
+    "vocabulary": "Vocabulaire"
+  },
+  "gradeBands": {
+    "g12": "CP–CE1",
+    "g34": "CE2–CM1",
+    "g56": "CM2–6e"
+  },
+  "requirements": {
+    "total_questions": "Répondez à {minQuestions} questions au total",
+    "weekly_questions": "Répondez à {minQuestions} questions la semaine dernière",
+    "subject_questions": "Répondez à {minQuestions} questions en {subject}",
+    "subject_questions_fallback_subject": "Répondez à {minQuestions} questions dans un sujet",
+    "subject_accuracy": "Atteignez une précision de {minAccuracy} % dans {subject}{topicPart} (au moins {minQuestions} questions)",
+    "subject_accuracy_topic_part": "le {topic}",
+    "learning_streak_days": "Apprenez {minStreakDays} jours consécutifs",
+    "active_days_streak": "Soyez actif {minStreakDays} jours consécutifs",
+    "parent_activity_complete": "Terminer {minCompletedActivities} activités parentales",
+    "monthly_learning_minutes": "Apprenez {minLearningMinutesMonthly} minutes ce mois-ci",
+    "event_window": "Carte d'événement spécial — disponible pendant la fenêtre de l'événement",
+    "daily_mission_complete": "Terminez la mission : {missionKey}",
+    "daily_mission_generic": "Terminez une mission quotidienne",
+    "grade_band_only": "Disponible pour {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "Nous n'avons pas pu charger la boîte surprise.",
+    "networkError": "Erreur réseau lors du chargement de la boîte surprise.",
+    "ready": "La boîte surprise est prête !",
+    "readyMultiple": "{count} cartons prêts à ouvrir !",
+    "openError": "Nous ne pouvions pas ouvrir la boîte pour le moment. Réessayez dans un instant.",
+    "noMoreBoxes": "Plus de cartons à ouvrir pour le moment.",
+    "noBoxReady": "Aucune boîte n'est prête pour le moment ; réessayez plus tard.",
+    "duplicateHint": "Vous avez une copie supplémentaire – vous pouvez vendre des doublons dans la boutique.",
+    "newCard": "Nouvelle carte dans votre collection !",
+    "ariaLabel": "Boîte surprise",
+    "title": "Boîte surprise",
+    "loading": "Chargement…",
+    "nextBoxIn": "Prochaine boîte prête dans",
+    "keepLearning": "Continuez à apprendre : une nouvelle boîte arrive bientôt !",
+    "openBox": "Ouvrir la boîte",
+    "myCollection": "Ma collection"
+  },
+  "preview": {
+    "close": "Fermer",
+    "download": "Télécharger l'image",
+    "prev": "Carte précédente",
+    "next": "Carte suivante",
+    "locked": "Verrouillée"
+  },
+  "lockedStamp": {
+    "label": "Verrouillée"
+  },
+  "shopView": {
+    "loading": "Chargement de la boutique de cartes...",
+    "loadErrorTitle": "Nous n'avons pas pu charger la boutique de cartes.",
+    "tryAgain": "Réessaie",
+    "empty": "Aucune carte disponible à l'achat pour le moment.",
+    "coinBalance": "Solde des pièces : {amount}",
+    "buyPrice": "Prix ​​d'achat : {amount}",
+    "sellValue": "Valeur de vente : {amount}",
+    "needMoreCoins": "Il vous faut {amount} de plus",
+    "notEnoughCoinsShort": "Pas assez de pièces",
+    "noDuplicateToSell": "Aucun double à vendre.",
+    "sellFailed": "Impossible de vendre le double : réessayez.",
+    "sellSuccess": "Vous avez vendu un double de {name} et avez obtenu {amount} !",
+    "sellNetworkError": "Erreur réseau lors de la vente.",
+    "buy": "Acheter",
+    "sellDuplicateAction": "Vendre le doublon",
+    "selling": "Vente...",
+    "buying": "Achat...",
+    "buyFor": "Achetez pour {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "Fermer",
+    "openingTitle": "Boîte d'ouverture...",
+    "doneTitle": "Bon! Vous avez des récompenses !",
+    "idleTitle": "Boîte surprise",
+    "rolling": "Faites rouler vos récompenses...",
+    "coinsReward": "+{amount} pièces",
+    "diamondsReward": "+{amount} diamants",
+    "openAnother": "Ouvrir une autre boîte",
+    "viewCards": "Voir mes cartes"
+  },
+  "previewModal": {
+    "close": "Fermer",
+    "download": "Télécharger ma carte",
+    "downloading": "Téléchargement...",
+    "downloadError": "Nous n'avons pas pu télécharger la carte. Essayer à nouveau.",
+    "prev": "Carte précédente",
+    "next": "Carte suivante",
+    "cardImageAlt": "Image de la carte",
+    "rarityLabel": "Rareté : {label}",
+    "seriesLabel": "Série : {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "Monde des enfants",
+    "title": "Mes cartes",
+    "subtitle": "Collection, boutique, toutes les cartes et séries",
+    "featureDisabled": "La collection de cartes n'est pas encore disponible.",
+    "loading": "Chargement des cartes...",
+    "loadError": "Nous n'avons pas pu charger les cartes.",
+    "tryAgain": "Réessaie",
+    "tabsAriaLabel": "Onglets de cartes",
+    "collectionEmpty": "Aucune carte dans votre collection pour l'instant : ouvrez une boîte surprise dans Kids World ou achetez dans la boutique !",
+    "catalogEmpty": "Aucune carte à montrer.",
+    "seriesEmpty": "Aucune série de cartes pour l'instant.",
+    "tabs": {
+      "collection": {
+        "label": "Ma collection",
+        "shortLabel": "Collection"
+      },
+      "shop": {
+        "label": "Boutique de cartes",
+        "shortLabel": "Boutique"
+      },
+      "catalog": {
+        "label": "Toutes les cartes",
+        "shortLabel": "Tous"
+      },
+      "series": {
+        "label": "Séries",
+        "shortLabel": "Séries"
+      }
+    }
+  },
+  "server": {
+    "economyUnavailable": "L'économie de pièces n'est pas disponible pour le moment",
+    "duplicateConversionRemoved": "La conversion en double a été supprimée — vous pouvez vendre un double dans la boutique.",
+    "missingSeries": "La série est manquante — une série avec un slug est requise pour les cartes de boutique/succès",
+    "multipartRequired": "Le téléchargement doit utiliser multipart/form-data",
+    "variantProcessFailed": "Le traitement de la version de la carte a échoué",
+    "boxNeedsPrize": "La boîte nécessite au moins un prix : des cartes et/ou des pièces.",
+    "boxSettingsInvalidJson": "Les paramètres de la boîte doivent être un objet JSON.",
+    "notPurchasable": "Cette carte ne peut pas être achetée",
+    "alreadyOwnedCollection": "Déjà dans votre collection",
+    "insufficientCoinsDetailed": "Vous n'avez pas assez de pièces pour cette carte"
+  }
+}

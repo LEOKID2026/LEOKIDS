@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "escape": "Ontsnappen",
+    "previous_picture": "Vorige foto",
+    "next_picture": "Volgende picture",
+    "the_board_and_tray_will_display_more_comfortably": "Het bord en de lade zullen comfortabeler worden weergegeven.",
+    "img_id_selectedimageid_src_puzzle_images_0_src_const_iseasy_difficulty_e": "img.id === geselecteerdeImageId)?.src || PUZZLE_IMAGES[0].src; const isGemakkelijk = moeilijkheid === \"gemakkelijk\"; const safePreviewIndex = previewIndex == nul? nul : Rekenen.min(Rekenen.max(previewIndex, 0), PUZZLE_IMAGES.length - 1); const previewImage = safePreviewIndex == null? null: PUZZLE_IMAGES[safePreviewIndex]; const canPreviewPrev = safePreviewIndex!= null && safePreviewIndex > 0; const canPreviewNext = safePreviewIndex!= null && safePreviewIndex",
+    "event_stoppropagation_dir_ltr": "event.stopPropagation()} dir=\"ltr\" >",
+    "tap_a_picture_to_select_it": "Tap een picture naar selecteer it",
+    "choose_a_puzzle_picture": "Kies een puzzle picture",
+    "select_picture": "Selecteer picture",
+    "close": "Sluiten"
+  }
+}

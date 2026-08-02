@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "grade_status": "Groep status",
+    "class_status": "Klas status"
+  }
+}

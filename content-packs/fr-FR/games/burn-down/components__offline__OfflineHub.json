@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "Jeux sur le même appareil",
+    "leo_solo_games": "Jeux Solo Lion",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "Tag, puzzles, labyrinthes et bien plus encore – aucune connexion nécessaire.",
+    "educational_games": "Jeux éducatifs",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Recyclage, épicerie, laboratoire, pizzeria, train de mots et plus encore - tous locaux.",
+    "leo_games_offline": "Jeux Leo - Hors ligne",
+    "educational_games_offline": "Jeux éducatifs - Hors ligne",
+    "local_games_no_saving_and_no_rewards": "Jeux locaux - pas d'économies ni de récompenses",
+    "offline_games": "Jeux hors ligne",
+    "back": "Retour"
+  }
+}

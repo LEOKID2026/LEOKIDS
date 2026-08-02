@@ -1,0 +1,121 @@
+{
+  "reportSubjects": [
+    "matematica",
+    "geometria",
+    "inglese",
+    "scienza"
+  ],
+  "subjects": {
+    "math": "Matematica",
+    "geometry": "Geometria",
+    "english": "Inglese",
+    "science": "Scienze"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Inattività prolungata",
+    "no_sessions_in_range": "Nessuna sessione di pratica in questo periodo",
+    "low_overall_accuracy": "Difficoltà con le prestazioni generali",
+    "many_recent_mistakes": "Elevato numero di errori recenti",
+    "never_active_in_range": "Nessuna attività in questo periodo",
+    "insufficient_answers": "Dati insufficienti da analizzare"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Consigliato per rivedere i fondamenti dell'argomento",
+    "encourage_session_start": "Consigliato per incoraggiare la pratica iniziale",
+    "targetedReview": "Consigliato per rinforzare {subject} in classe",
+    "focusPractice": "Consigliato per concentrare la pratica su {subject}",
+    "generic": "Continua a monitorare i progressi"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Inattivo in questo periodo",
+    "low_accuracy": "Difficoltà con le prestazioni",
+    "many_recent_mistakes": "Elevato numero di errori recenti",
+    "recent_mistakes": "Errori ricorrenti"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Ha bisogno di attenzione immediata",
+    "needs_reinforcement": "Ha bisogno di rinforzi",
+    "monitor": "Vale la pena monitorare",
+    "on_track": "In pista"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "La classe ha bisogno di attenzione immediata",
+    "class_needs_reinforcement": "La classe ha bisogno di rinforzi",
+    "class_monitor": "La classe necessita di monitoraggio e pratica mirata",
+    "class_on_track": "La lezione è sulla buona strada"
+  },
+  "classHealth": {
+    "no_data": "Dati insufficienti",
+    "critical_class": "La classe ha bisogno di attenzione immediata",
+    "needs_reinforcement": "La classe ha bisogno di rinforzi",
+    "monitor": "La classe necessita di monitoraggio e pratica mirata",
+    "strong": "La lezione è sulla buona strada"
+  },
+  "groupTier": {
+    "struggling": "Gruppo di sostegno",
+    "on_track": "Gruppo in pista",
+    "advanced": "Gruppo avanzato"
+  },
+  "guardianAccessState": {
+    "active": "Attivo",
+    "expired": "Scaduto",
+    "revoked": "Revocato"
+  },
+  "actionTypes": {
+    "class_reteach": "Ripetizione dell'intera classe",
+    "small_group": "Lavoro in piccoli gruppi",
+    "individual_practice": "Pratica individuale mirata",
+    "collect_more_data": "Attendi ulteriori dati"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Attività in classe",
+    "focused_practice": "Pratica mirata",
+    "worksheet_pdf": "Scheda didattica"
+  },
+  "riskLevel": {
+    "high": "Ha bisogno di attenzione immediata",
+    "moderate": "Vale la pena monitorare",
+    "low": "In pista"
+  },
+  "focus": {
+    "studentCalmMessage": "Nessun argomento urgente in questo momento: continua come al solito.",
+    "hubStudentCalmMessage": "Nessun argomento mirato: continua a monitorare.",
+    "hubClassWeakTopicsCalmMessage": "Nessun argomento debole significativo rilevato: continua a monitorare.",
+    "studentFallbackBanner": "Difficoltà in questo argomento: è necessaria la pratica diagnostica per identificare l'argomento esatto",
+    "classFallbackBanner": "La classe mostra difficoltà in questo argomento: si consiglia il rinforzo della classe diagnostica"
+  },
+  "fallback": {
+    "unknownSubject": "Sconosciuto",
+    "defaultTopic": "Argomento",
+    "defaultStudentName": "Alunno",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} - difficoltà a livello di materia",
+    "studentSubjectHeadlineNoSubject": "Difficoltà a livello di soggetto",
+    "studentSubjectEvidence": "{percent}% corretto su {totalAnswers} risposte",
+    "studentSubjectAction": "Consigliato per avviare una breve pratica diagnostica per identificare l'argomento esatto",
+    "classSubjectHeadline": "{subject} - difficoltà della materia a livello di classe",
+    "classSubjectHeadlineNoSubject": "Difficoltà della materia a livello di classe",
+    "classSubjectAction": "Consigliato per iniziare una breve attività diagnostica o una revisione mirata dell'intera classe",
+    "classSuffix": "Classe {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} - {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Nessuna lezione attiva",
+    "noClassesHint": "Crea una nuova classe di seguito, quindi aggiungi bambini tramite \"Gestisci classe\" sulla scheda della classe.",
+    "createClassLabel": "Nome della classe",
+    "createClassButton": "Crea classe",
+    "createClassPlaceholder": "per esempio. Classe 3 - LEONE"
+  },
+  "activities": {
+    "personalSectionTitle": "Attività personali",
+    "individualBadge": "Personale"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Tutti i bambini ({count})",
+      "directStudents": "Bambini privati ​​({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

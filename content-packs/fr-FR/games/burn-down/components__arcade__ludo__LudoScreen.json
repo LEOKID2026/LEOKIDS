@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "Retour",
+    "coin_balance": "Solde des pièces",
+    "how_to_play": "Comment jouer",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "À ton tour, les dés sont lancés (OV2 ouvre également automatiquement une animation de lancer), puis choisissez la pièce à déplacer.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "Seul un 6 fait sortir une pièce de la cour sur le chemin.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "Un 6, une capture ou une entrée à la maison depuis le chemin – selon les règles du moteur – accorde un tour supplémentaire.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "Une pièce qui arrive à la maison se termine ; quatre pièces à domicile gagnent.",
+    "waiting_for_players": "En attendant les joueurs…"
+  }
+}

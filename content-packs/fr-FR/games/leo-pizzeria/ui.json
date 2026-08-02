@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "La Pizzeria de Léo",
+  "blurb": "Apprendre les fractions en préparant des pizzas",
+  "help": {
+    "howToPlay": "Lis la commande, ajoutez des garnitures aux tranches de pizza (appuyez ou faites glisser) et appuyez sur « Servir la pizza ».",
+    "scoring": "Pizza correcte +30, séquence de 3 correctes +15, séquence de 5 +30. Aucun point n'est déduit pour les erreurs.",
+    "rewards": "Les pièces sont attribuées en fonction du nombre de clients que tu avez servis, de la précision, des séquences et du niveau de difficulté, même si tu n'avez pas servi les 20 clients.",
+    "tip": "Vérifie combien de tranches chaque garniture couvre : la moitié, le quart et le huitième font référence au nombre de tranches et non à une position."
+  },
+  "accessibility": {
+    "title": "La Pizzeria de Léo"
+  }
+}

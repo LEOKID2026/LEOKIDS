@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "Leo's recyclingfabriek",
+  "blurb": "Sorteer afval in de juiste bakken en help het milieu te beschermen",
+  "help": {
+    "howToPlay": "Sleep of tik een item van de lopende band en kies vervolgens de juiste bak. Sorteer voldoende items voordat je het maximale aantal fouten bereikt.",
+    "scoring": "Correcte sortering +10, snelle sortering +5, reeks van 5 correcte +20, reeks van 10 +50. Een fout of gemist item −5 (score daalt nooit onder 0).",
+    "rewards": "Munten worden toegekend op basis van het aantal items dat je correct hebt gesorteerd, de nauwkeurigheid, de streaks en het bereiken van het doel, zelfs als je niet het hele spel hebt uitgespeeld.",
+    "tip": "Let op het soort artikel: papier, plastic, glas, metaal of algemeen afval."
+  },
+  "accessibility": {
+    "title": "Leo's recyclingfabriek"
+  }
+}

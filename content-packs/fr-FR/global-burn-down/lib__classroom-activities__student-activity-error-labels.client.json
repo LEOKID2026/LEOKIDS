@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "Cette activité n'est pas disponible pour le moment",
+    "activity_not_found": "Activité introuvable",
+    "this_activity_has_not_started_yet": "Cette activité n'a pas encore commencé",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Les réponses ne peuvent pas être soumises pour cette activité pour le moment",
+    "this_activity_is_closed": "Cette activité est fermée",
+    "time_is_up_for_this_activity": "Le temps est écoulé pour cette activité",
+    "could_not_open_this_activity_right_now": "Impossible d'ouvrir cette activité pour le moment",
+    "not_found": "Pas trouvé",
+    "please_sign_in": "Veuillez vous connecter",
+    "you_do_not_have_permission_to_open_this_activity": "Vous n'êtes pas autorisé à ouvrir cette activité",
+    "this_activity_is_not_assigned_to_you": "Cette activité ne vous est pas attribuée",
+    "could_not_identify_the_account": "Impossible d'identifier le compte",
+    "could_not_complete_that_action_right_now": "Impossible de terminer cette action pour le moment",
+    "you_already_submitted_this_activity": "Vous avez déjà soumis cette activité",
+    "you_already_answered_this_question": "Vous avez déjà répondu à cette question",
+    "waiting_for_the_teacher": "En attendant le professeur…",
+    "no_answer_submission_needed": "Aucune soumission de réponse nécessaire",
+    "the_system_is_updating_try_again_later": "Le système est en cours de mise à jour – réessayez plus tard",
+    "something_went_wrong_please_try_again": "Quelque chose s'est mal passé – veuillez réessayer",
+    "server_error_please_try_again": "Erreur de serveur — veuillez réessayer",
+    "action_not_supported": "Action non prise en charge",
+    "could_not_load_the_question_right_now": "Impossible de charger la question pour le moment",
+    "could_not_submit_an_answer_right_now": "Impossible de soumettre une réponse pour le moment"
+  }
+}

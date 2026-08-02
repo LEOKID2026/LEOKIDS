@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Lignes de modèle pour le QCM conceptuel - numérisées en tant que supports de métadonnées statiques",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Éléments mathématiques procéduraux - métadonnées attribuées au moment de la génération",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Géométrie procédurale - utiliser la banque conceptuelle de géométrie + les paramètres du générateur",
+    "english_generator_pool_merge": "Générateur anglais + fusion de pool"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "total_students": "Total leerlingen",
+    "opened_pdf": "PDF geopend",
+    "completed_pdf": "Voltooid (PDF)",
+    "submitted_answers": "Ingezonden antwoorden",
+    "pending_review": "In afwachting van beoordeling",
+    "published": "Gepubliceerd",
+    "class_average": "Klas average"
+  }
+}

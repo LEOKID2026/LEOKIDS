@@ -21,6 +21,9 @@ import { WORD_MEANINGS_ES_UY } from "./word-meanings/es-UY.js";
 import { WORD_MEANINGS_ES_ES } from "./word-meanings/es-ES.js";
 import { WORD_MEANINGS_PT_BR } from "./word-meanings/pt-BR.js";
 import { WORD_MEANINGS_PT_PT } from "./word-meanings/pt-PT.js";
+import { WORD_MEANINGS_IT_IT } from "./word-meanings/it-IT.js";
+import { WORD_MEANINGS_FR_FR } from "./word-meanings/fr-FR.js";
+import { WORD_MEANINGS_NL_NL } from "./word-meanings/nl-NL.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -38,6 +41,9 @@ const MEANING_PACKS = {
   "es-ES": WORD_MEANINGS_ES_ES,
   "pt-BR": WORD_MEANINGS_PT_BR,
   "pt-PT": WORD_MEANINGS_PT_PT,
+  "it-IT": WORD_MEANINGS_IT_IT,
+  "fr-FR": WORD_MEANINGS_FR_FR,
+  "nl-NL": WORD_MEANINGS_NL_NL,
 };
 
 /**
@@ -87,11 +93,41 @@ function isPortuguesePortugalInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isItalianInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "it-it";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchFranceInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "fr-fr";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isDutchNetherlandsInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "nl-nl";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isLocalizedMeaningLocale(locale) {
   return (
     isSpanishInstructionLocale(locale) ||
     isPortugueseBrazilInstructionLocale(locale) ||
-    isPortuguesePortugalInstructionLocale(locale)
+    isPortuguesePortugalInstructionLocale(locale) ||
+    isItalianInstructionLocale(locale) ||
+    isFrenchFranceInstructionLocale(locale) ||
+    isDutchNetherlandsInstructionLocale(locale)
   );
 }
 
@@ -109,6 +145,9 @@ function getMergedMeaningPack(instructionLocale) {
   if (tag === "es" || tag === "es419") chainLocale = "es-419";
   else if (tag === "pt-br") chainLocale = "pt-BR";
   else if (tag === "pt-pt") chainLocale = "pt-PT";
+  else if (tag === "it-it") chainLocale = "it-IT";
+  else if (tag === "fr-fr") chainLocale = "fr-FR";
+  else if (tag === "nl-nl") chainLocale = "nl-NL";
   const chain = getLocaleFallbackChain(chainLocale);
   /** @type {Record<string, Record<string, string>>} */
   let merged = {};

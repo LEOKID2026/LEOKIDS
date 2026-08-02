@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "large_triangle": "Large driehoek",
+    "medium_triangle": "Medium driehoek",
+    "small_triangle": "Small driehoek",
+    "square": "Vierkant",
+    "parallelogram": "Parallellogram",
+    "triangle_2": "Trihoek 2",
+    "tangram": "Tangram",
+    "prototype_drag_pieces_double_tap_to_rotate": "Prototype · sleep stukken · dubbeltik om te draaien",
+    "rotatepiece_selected_classname_min_h_44px_rounded_xl_border_2_border_sky": "roteerstuk(geselecteerd)} className=\"min-h-[44px] afgerond-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 tekst-sm lettertype-vetgedrukte tekst-sky-100\" > ↻ Geselecteerd stuk roteren",
+    "no_perfect_fit_check_just_drag_feel_and_layout": "Geen perfect-fit controle - sleep gewoon het gevoel en de lay-out",
+    "fill_the_target_shape_double_tap_rotate_45": "Vul de doelvorm · dubbeltik = 45° draaien",
+    "reset": "Resetten",
+    "goal": "Doel"
+  }
+}

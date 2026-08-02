@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "close": "Sluiten",
+    "how_to_play_heading": "Hoe naar play?",
+    "how_to_play_title": "Hoe naar play {title}?",
+    "scoring_heading": "Hoe doe je score?",
+    "rewards_heading": "Beloningen en diamanten",
+    "tip_heading": "Snelle tip",
+    "got_it_lets_play": "Oké, laten we spelen"
+  }
+}

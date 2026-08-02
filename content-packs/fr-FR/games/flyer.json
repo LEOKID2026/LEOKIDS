@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Lion dans un avion",
+  "blurb": "Tenez bon pour voler, collecter des pièces et éviter les obstacles !",
+  "help": {
+    "howToPlay": "Maintenez le bouton ou l'écran pour voler et relâchez pour descendre. Collectez des pièces et évitez les obstacles.",
+    "scoring": "Les pièces et les diamants ajoutent des points. Frapper un obstacle met fin au jeu.",
+    "rewards": "Plus tu volez loin et plus tu gagnez de points, plus tu obtiendrez de pièces et de diamants.",
+    "tip": "Ne volez pas trop haut : il est parfois préférable de passer sous un obstacle."
+  }
+}

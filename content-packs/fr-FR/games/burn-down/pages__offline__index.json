@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "tic_tac_toe": "Tic-Tac-Toe",
+    "boards_from_3_3_to_7_7_with_score_tracking": "Planches de 3×3 à 7×7 avec suivi des scores.",
+    "rock_paper_scissors": "Pierre · Papier · Ciseaux",
+    "quick_rounds_best_of_all": "Tours rapides – le meilleur de tous.",
+    "tap_battle": "Appuyez sur Bataille",
+    "each_side_taps_as_fast_as_they_can_who_wins": "Chaque camp tape aussi vite qu'il le peut : qui gagne ?",
+    "memory_match": "Correspondance de mémoire",
+    "flip_cards_find_pairs_and_try_to_win": "Retournez les cartes, trouvez des paires et essayez de gagner.",
+    "always_on_games_with_leo": "Des jeux permanents avec Leo",
+    "play_on_the_same_device_even_offline": "Jouez sur le même appareil, même hors ligne."
+  }
+}

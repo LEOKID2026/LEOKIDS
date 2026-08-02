@@ -1,0 +1,77 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Parallel",
+      "Loodrecht"
+    ],
+    "triangles": [
+      "Gelijkzijdig",
+      "Gelijkbenig",
+      "Schaal"
+    ],
+    "quadrilaterals": [
+      "Vierkant",
+      "Recthoek",
+      "Parallellogram",
+      "Trapezium"
+    ],
+    "transformations": [
+      "Vertaling",
+      "Reflectie",
+      "Rotatie",
+      "Geen movement"
+    ],
+    "concept_transform": [
+      "Vertaling",
+      "Reflectie",
+      "Rotatie",
+      "Geen movement"
+    ],
+    "shapes_basic_square": [
+      "Vierkant",
+      "Recthoek"
+    ],
+    "shapes_basic_rectangle": [
+      "Vierkant",
+      "Recthoek"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "Geen equal sides"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "Geen rechte hoeks"
+    ]
+  },
+  "solidNames": [
+    "Kubus",
+    "Rechthoekig prisma",
+    "Cilinder",
+    "Piramide",
+    "Kegel",
+    "Gebied"
+  ],
+  "shapeWords": {
+    "": "Loodrecht",
+    " ": "Schaal"
+  },
+  "solidAliases": {
+    "cube": "Kubus",
+    "rectangular prism": "Rechthoekig prisma",
+    "cylinder": "Cilinder",
+    "pyramid": "Piramide",
+    "cone": "Kegel",
+    "sphere": "Gebied"
+  }
+}

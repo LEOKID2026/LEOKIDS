@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "looks_strong": "Kijks strong",
+    "worth_watching": "Het bekijken waard",
+    "worth_strengthening": "Te versterken gebied",
+    "worth_guiding": "De moeite waard om te begeleiden",
+    "needs_strengthening": "Heeft nodig strengthening",
+    "few_questions": "Weinig vragen",
+    "above_grade_level": "Above groep level",
+    "earlier_foundations": "Eerdere fundamenten",
+    "strong_topics": "Sterke onderwerpen",
+    "topics_worth_watching": "Onderwerpen die de moeite waard zijn om te bekijken",
+    "topics_worth_strengthening": "Onderwerpen die de moeite waard zijn om te versterken",
+    "topics_worth_guiding_in_practice": "Onderwerpen die de moeite waard zijn om in de praktijk te begeleiden",
+    "topics_with_few_questions": "Topics met few questions",
+    "practice_above_grade_level": "Oefenen above groep level",
+    "earlier_foundation_practice": "Eerdere funderingspraktijk"
+  }
+}

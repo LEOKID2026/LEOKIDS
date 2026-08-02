@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "Fabrica de Riciclaggio de Leo",
+  "blurb": "Clasifique la basura en los contenedores adecuados y ayude a proteggere el medio ambiente",
+  "help": {
+    "howToPlay": "Drag or tap an item from the conveyor belt, then choose the correct bin. Sort enough items before you reach the maximum number of mistakes.",
+    "scoring": "Clasificacion corretta +10, clasificacion rapida +5, racha de 5 correctas +20, racha de 10 +50. Un error o un elemento omitido −5 (la puntuacion mai cae por debajo de 0).",
+    "rewards": "Las monete se otorgan secondo la cantidad de elementos que ordenaste correctamente, la precision, las rachas y el alcance de la meta, incluso si no terminaste todo el gioco.",
+    "tip": "Preste atencion al tipo de articulo: carta, plastica, vetro, metallo o scarti en general."
+  },
+  "accessibility": {
+    "title": "Fabrica de Riciclaggio de Leo"
+  }
+}

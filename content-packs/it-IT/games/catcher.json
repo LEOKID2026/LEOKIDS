@@ -1,0 +1,11 @@
+{
+  "gameId": "catcher",
+  "title": "Atrapa con Leo",
+  "blurb": "Atrapa monete y mantente alejado de las bombas!",
+  "help": {
+    "howToPlay": "Mueve a Leo hacia la izquierda y hacia la derecha para atrapar monete y diamanti que caen del cielo.",
+    "scoring": "Ogni moneta o diamante capturado suma puntos. Golpear una bomba termina el gioco.",
+    "rewards": "Cuantos mas puntos ganes, mas monete y diamanti obtendras para tu mundo infantil.",
+    "tip": "Mantén tus occhi en lo que esta cayendo y avanza prima de que el objeto llegue al fondo."
+  }
+}

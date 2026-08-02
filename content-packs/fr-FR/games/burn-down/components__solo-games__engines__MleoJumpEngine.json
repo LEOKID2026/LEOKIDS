@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "date_now": "Date.maintenant()",
+    "b_x_a_y": "b.x && a.y",
+    "jump": "Sautez 🦘"
+  }
+}

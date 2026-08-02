@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "large_triangle": "Grand triangle",
+    "medium_triangle": "Triangle moyen",
+    "small_triangle": "Petit triangle",
+    "square": "Carré",
+    "parallelogram": "Parallélogramme",
+    "triangle_2": "Triangle 2",
+    "tangram": "Tangram",
+    "prototype_drag_pieces_double_tap_to_rotate": "Prototype · faites glisser les pièces · appuyez deux fois pour faire pivoter",
+    "rotatepiece_selected_classname_min_h_44px_rounded_xl_border_2_border_sky": "rotationPièce (sélectionné)}\n            className=\"min-h-[44px] arrondi-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 text-sm font-bold text-sky-100\"\n          >\n            ↻ Faire pivoter la pièce sélectionnée",
+    "no_perfect_fit_check_just_drag_feel_and_layout": "Pas de contrôle d'ajustement parfait : faites simplement glisser la sensation et la mise en page",
+    "fill_the_target_shape_double_tap_rotate_45": "Remplissez la forme cible · appuyez deux fois = faites pivoter de 45°",
+    "reset": "Réinitialiser",
+    "goal": "But"
+  }
+}

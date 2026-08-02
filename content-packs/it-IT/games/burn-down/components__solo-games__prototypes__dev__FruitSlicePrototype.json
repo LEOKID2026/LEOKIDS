@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "fruit_slice": "Rebanada de fruta",
+    "prototype_swipe_slice_no_full_scoring": "Prototipo · deslizar / cortar · sin puntuacion completa",
+    "slice_fruit_avoid_mouse_or_finger": "Rebanar fruta · evitar 💣 · raton o dedo",
+    "f_y_120_f_y": "f.y > -120 && f.y"
+  }
+}

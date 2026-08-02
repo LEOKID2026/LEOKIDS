@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Leren",
+    "practice": "Oefenen",
+    "challenge": "Uitdaging",
+    "extended_practice": "Uitgebreide praktijk",
+    "graded": "Beoordeeld",
+    "regular": "Gewoon",
+    "mistakes": "Fouten",
+    "review_mistakes": "Bekijk fouten"
+  }
+}

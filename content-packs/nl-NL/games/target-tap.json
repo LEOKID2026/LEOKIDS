@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Doel tik",
+  "blurb": "Tik op de doelen voordat ze verdwijnen!",
+  "help": {
+    "howToPlay": "Tik op de doelen die op het scherm verschijnen voordat ze verdwijnen. Je hebt drie levens.",
+    "scoring": "Normale doelen, sterren en diamanten zijn verschillende punten waard. Vermist kost een leven. Opeenvolgende treffers geven een combobonus.",
+    "rewards": "Het bereiken van het trefferdoel of een hoge eindscore levert munten en diamanten op.",
+    "tip": "Ga niet overhaast te werk - soms is een doelwit met een diamant meer waard."
+  }
+}

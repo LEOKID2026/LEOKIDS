@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "back_to_games": "Retour aux jeux",
+    "play_again": "Rejouer",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "vide,\r\n * occupé ? : booléen,\r\n * sous-titreIl ? : chaîne,\r\n * statsLines ? : Tableau",
+    "diamond_balance": "Bilan diamant :",
+    "coin_balance": "Solde des pièces :",
+    "score": "Score:",
+    "level": "Niveau:"
+  }
+}

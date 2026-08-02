@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Non renseigné en mode instantané d'artefact. Exécutez `npm run qa:learning-simulator:expert-review-pack` pour les cartes/agrégats synthétiques.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Les modèles inter-sujets sont des hypothèses et nécessitent des sondes de confirmation par sujet.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Support de diagnostic éducatif interne uniquement - non clinique / non destiné aux parents."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "Zelfde-Device Games",
+    "leo_solo_games": "Leo Solo-spellen",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "Tag, puzzels, doolhoven en meer - geen verbinding nodig.",
+    "educational_games": "Educatieve spellen",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Recycling, supermarkt, laboratorium, pizzeria, woordtrein en meer - allemaal lokaal.",
+    "leo_games_offline": "Leo-spellen - Offline",
+    "educational_games_offline": "Educatieve spellen - offline",
+    "local_games_no_saving_and_no_rewards": "Lokale spellen - geen sparen en geen beloningen",
+    "offline_games": "Offlinespellen",
+    "back": "Terug"
+  }
+}

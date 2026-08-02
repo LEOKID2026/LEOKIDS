@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "the_board_and_tray_will_display_more_comfortably": "El tablero y la bandeja se mostraran mas comodamente.",
+    "ghostpreview_row_dr_r_ghostpreview_col_dc_c_const_ghostclass_ghosthere_g": "ghostAnteprima.row + dr === r && ghostAnteprima.col + dc === c,\r\n                      );\r\n                    const ghostClass = ghostHere\r\n                      ? ghostAnteprima.valid\r\n                        ? \"ring-2 ring-emerald-300/80\"\r\n                        : \"ring-2 ring-rose-400/80\"\r\n                      : \"\";\r\n                    return (",
+    "startdrag_idx_shape_e": "startDrag(idx, shape, e)}\r\n                />\r\n              ))}",
+    "s_id_const_picked_while_picked_length": "s.id);\r\n    const picked = [];\r\n    while (picked.length",
+    "visual_prototype_no_scoring": "Prototipo visual · sin puntuacion",
+    "smart_blocks": "Bloques inteligentes",
+    "clear_board": "Borrar tablero",
+    "board_size": "Tamano del tablero:",
+    "swap_shapes": "Intercambiar formas",
+    "back": "Atras",
+    "tray": "Bandeja"
+  }
+}

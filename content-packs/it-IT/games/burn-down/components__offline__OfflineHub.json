@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "Giochi en el mismo dispositivo",
+    "leo_solo_games": "Giochi en solitario de Leo",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "Etiquetas, rompecabezas, laberintos e altro: no se serve conexion.",
+    "educational_games": "Giochi Educativos",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Recycling, grocery store, lab, pizzeria, word train and more - all local.",
+    "leo_games_offline": "Giochi de Leo - Sin conexion",
+    "educational_games_offline": "Giochi educativos: sin conexion",
+    "local_games_no_saving_and_no_rewards": "Giochi locales: sin ahorros ni recompensas",
+    "offline_games": "Giochi sin conexion",
+    "back": "Atras"
+  }
+}

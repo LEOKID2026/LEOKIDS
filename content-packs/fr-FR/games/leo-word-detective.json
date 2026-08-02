@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-detective",
+  "title": "Le détective de la parole de Leo",
+  "blurb": "Faites glisser les preuves sur le tableau et résolvez des cas de lecture et de vocabulaire",
+  "help": {
+    "howToPlay": "Faites glisser les cartes de preuves sur le tableau d'enquête et appuyez sur « Résoudre l'affaire ». Lorsque la réponse est correcte, l’affaire est close !",
+    "scoring": "Bonne réponse +30, bonus de temps, séquence de 3 +15, séquence de 5 +30. Délai d'expiration -5. Une erreur ne met pas fin au jeu, elle compte.",
+    "rewards": "Les pièces sont attribuées en fonction du nombre de cas résolus sur 20, de la précision, des séquences et du niveau de difficulté.",
+    "tip": "Lis attentivement la tâche du cas - au niveau difficile, il y a un court passage au tableau."
+  },
+  "accessibility": {
+    "title": "Le détective de la parole de Leo"
+  }
+}

@@ -46,17 +46,26 @@ test("stripLocaleFromPath: Hebrew /he is never a locale segment", () => {
 });
 
 test("stripLocaleFromPath: registered disabled locale still strips prefix", () => {
-  assert.deepEqual(stripLocaleFromPath("/fr/about"), {
-    locale: "fr",
+  assert.deepEqual(stripLocaleFromPath("/de/about"), {
+    locale: "de",
     pathname: "/about",
     hadPrefix: true,
-    pathSegment: "fr",
+    pathSegment: "de",
   });
   assert.deepEqual(stripLocaleFromPath("/about"), {
     locale: null,
     pathname: "/about",
     hadPrefix: false,
     pathSegment: null,
+  });
+});
+
+test("stripLocaleFromPath: enabled France path prefix resolves to fr-FR", () => {
+  assert.deepEqual(stripLocaleFromPath("/fr/about"), {
+    locale: "fr-FR",
+    pathname: "/about",
+    hadPrefix: true,
+    pathSegment: "fr",
   });
 });
 
@@ -75,7 +84,10 @@ test("withLocalePath: pseudo locales receive prefix", () => {
 
 test("withLocalePath: Hebrew is not prefixed; registered locales are", () => {
   assert.equal(withLocalePath("he", "/about"), "/about");
-  assert.equal(withLocalePath("fr", "/about"), "/fr/about");
+  // Bare `fr` is not an enabled registry id → en (unprefixed). Public path uses fr-FR.
+  assert.equal(withLocalePath("fr", "/about"), "/about");
+  assert.equal(withLocalePath("fr-FR", "/about"), "/fr/about");
+  assert.equal(withLocalePath("de", "/about"), "/de/about");
 });
 
 test("shouldRedirectPrefixedDefaultLocale: /en prefix should redirect to unprefixed", () => {
@@ -151,6 +163,7 @@ test("isLocaleRoutable: enabled locales routable; disabled registry ids fall bac
   assert.equal(isLocaleRoutable("en"), true);
   assert.equal(isLocaleRoutable("en-XA"), true);
   assert.equal(isLocaleRoutable("ar-XB"), true);
-  assert.equal(isLocaleRoutable("fr"), true);
+  assert.equal(isLocaleRoutable("fr-FR"), true);
+  assert.equal(isLocaleRoutable("de"), true);
   assert.equal(isLocaleRoutable("zz-unknown"), true);
 });

@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-number-path",
+  "title": "Leo's nummerpad",
+  "blurb": "Reeksen, oneven-even en veelvouden",
+  "help": {
+    "howToPlay": "Kies getallen uit het pad per regel (even, oneven, veelvouden, overslaan of reeksen) en tik vervolgens op 'Controleer pad'. Bestelling is belangrijk voor overslaan en reeksen.",
+    "scoring": "Correct bij de eerste poging +30, tweede +20, derde +10. Na 3 fouten wordt het juiste pad getoond.",
+    "rewards": "Munten worden toegekend op basis van het aantal van de 20 taken dat je hebt voltooid, de nauwkeurigheid, de streaks en het voltooien van het pad.",
+    "tip": "Let erop of de volgorde ertoe doet - voor het overslaan van tellingen en reeksen moet u de volgorde kiezen."
+  },
+  "accessibility": {
+    "title": "Leo's nummerpad"
+  }
+}

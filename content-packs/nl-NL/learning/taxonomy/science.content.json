@@ -1,0 +1,205 @@
+{
+  "subjectId": "science",
+  "rows": {
+    "S-01": {
+      "id": "S-01",
+      "domain": "Concept",
+      "topic": "Classificatie",
+      "subskill": "Eigendom versus proces",
+      "pattern": "Categorie verwarring",
+      "counterEvidence": "Correct na een examples table",
+      "countsWhen": "Begeleide tafel",
+      "doesNotCountWhen": "Homophone distractors alleen",
+      "probe": "Eigenschap scheiden van proces (gerichte praktijk)",
+      "intervention": "Eigenschappen/procestabel",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Error op two similar concepts"
+      ],
+      "roots": [
+        "Begrip verwarring"
+      ],
+      "competitors": [
+        "Lezen"
+      ],
+      "doNotConclude": [
+        "Geen natuur en techniek"
+      ]
+    },
+    "S-02": {
+      "id": "S-02",
+      "domain": "Methode",
+      "topic": "Experiment",
+      "subskill": "Geïsoleerde variabele",
+      "pattern": "Alles veranderen",
+      "counterEvidence": "Correct met een variables table",
+      "countsWhen": "Tafel beschikbaar",
+      "doesNotCountWhen": "Long text zonder een table",
+      "probe": "Zelfde experiment met een table",
+      "intervention": "Één variable",
+      "escalation": "Herhaalde mislukking",
+      "observableMarkers": [
+        "Error op single-veranderen scenarios"
+      ],
+      "roots": [
+        "Experimenteer met begrip"
+      ],
+      "competitors": [
+        "Geheugen"
+      ],
+      "doNotConclude": [
+        "Geen thinking"
+      ]
+    },
+    "S-03": {
+      "id": "S-03",
+      "domain": "Lichaam",
+      "topic": "Systemen",
+      "subskill": "Location/flow",
+      "pattern": "Verkeerde bestelling/locatie",
+      "counterEvidence": "Correct met numbering",
+      "countsWhen": "Genummerd diagram",
+      "doesNotCountWhen": "Latijnse namen worden nog niet onderwezen",
+      "probe": "Verticaal versus horizontaal",
+      "intervention": "Locatiekaarten",
+      "escalation": "Medisch rapport",
+      "observableMarkers": [
+        "Error op een simple lichaam map"
+      ],
+      "roots": [
+        "Grove ruimtelijke kaart"
+      ],
+      "competitors": [
+        "Taal"
+      ],
+      "doNotConclude": [
+        "Medisch probleem"
+      ]
+    },
+    "S-04": {
+      "id": "S-04",
+      "domain": "Materie",
+      "topic": "States van matter",
+      "subskill": "Massabehoud",
+      "pattern": "Disappears zonder conservation",
+      "counterEvidence": "Correct na een diagram",
+      "countsWhen": "Diagram beschikbaar",
+      "doesNotCountWhen": "Word zonder taught states",
+      "probe": "Met/zonder diagram",
+      "intervention": "Statendiagram",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Fout wanneer er een toestandsdiagram aanwezig is"
+      ],
+      "roots": [
+        "Massabehoud"
+      ],
+      "competitors": [
+        "Taal"
+      ],
+      "doNotConclude": [
+        "Geen physics"
+      ]
+    },
+    "S-05": {
+      "id": "S-05",
+      "domain": "Energie",
+      "topic": "Eenheden",
+      "subskill": "Conversie van eenheden",
+      "pattern": "Eenheidsverwarring",
+      "counterEvidence": "Correct met een key",
+      "countsWhen": "Sleutel aanwezig",
+      "doesNotCountWhen": "Voor de unit is taught",
+      "probe": "Twee eenheden voor hetzelfde bedrag",
+      "intervention": "Eenheidssleutel",
+      "escalation": "Altijd fails",
+      "observableMarkers": [
+        "Error op de zelfde unit"
+      ],
+      "roots": [
+        "Eenheden"
+      ],
+      "competitors": [
+        "Berekening"
+      ],
+      "doNotConclude": [
+        "Geen understanding"
+      ]
+    },
+    "S-06": {
+      "id": "S-06",
+      "domain": "Meting",
+      "topic": "Grafiek",
+      "subskill": "Reading een axis",
+      "pattern": "Wrong value van een graph",
+      "counterEvidence": "Corrigeer wanneer de as gemarkeerd is",
+      "countsWhen": "Geschaalde assen",
+      "doesNotCountWhen": "Ongeschaalde grafiek",
+      "probe": "Met/zonder point highlight",
+      "intervention": "Oefenen een point op een axis",
+      "escalation": "Visie rapport",
+      "observableMarkers": [
+        "Error op two graphs"
+      ],
+      "roots": [
+        "Grafiek lezen"
+      ],
+      "competitors": [
+        "Berekening"
+      ],
+      "doNotConclude": [
+        "Geen natuur en techniek"
+      ]
+    },
+    "S-07": {
+      "id": "S-07",
+      "domain": "Ecologie",
+      "topic": "Relaties",
+      "subskill": "Voedsel web",
+      "pattern": "Herhaaldelijk verkeerd niveau",
+      "counterEvidence": "Correct op een closed list",
+      "countsWhen": "Diagram of list",
+      "doesNotCountWhen": "Text alleen zonder teaching",
+      "probe": "Gedeeltelijk web",
+      "intervention": "Kaarten",
+      "escalation": "Geen improvement",
+      "observableMarkers": [
+        "Error wanneer een diagram is present"
+      ],
+      "roots": [
+        "Systeem structure"
+      ],
+      "competitors": [
+        "Naam herinneren"
+      ],
+      "doNotConclude": [
+        "Geen systems"
+      ]
+    },
+    "S-08": {
+      "id": "S-08",
+      "domain": "Natuur en techniek safety",
+      "topic": "Redenering",
+      "subskill": "Source voor een claim",
+      "pattern": "Niet-ondersteunde claim",
+      "counterEvidence": "Correct wanneer een source is requested",
+      "countsWhen": "Bronnen gemarkeerd",
+      "doesNotCountWhen": "Advertentie-afleider",
+      "probe": "Met/zonder source",
+      "intervention": "Ask hoe we know",
+      "escalation": "Social studies leerkracht",
+      "observableMarkers": [
+        "Wordt herhaald als er een expliciete bron aanwezig is"
+      ],
+      "roots": [
+        "Kritisch denken"
+      ],
+      "competitors": [
+        "Lezen"
+      ],
+      "doNotConclude": [
+        "Persoonlijke waarden"
+      ]
+    }
+  }
+}

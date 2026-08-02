@@ -1,0 +1,915 @@
+{
+  "components__classroom-activities__ActivityDisplayLevelSelector": {
+    "level": "Niveau"
+  },
+  "components__home__HomeValueCards": {
+    "product_values": "Productwaarden"
+  },
+  "components__legal__UnifiedLegalPolicyPage": {
+    "legal_document_links": "Links naar juridische documenten"
+  },
+  "components__math-scratchpad__MathScratchpadPanel": {
+    "scratch_pad": "Kraskussen"
+  },
+  "components__math-scratchpad__MathScratchpadWorkspace": {
+    "fraction_denominator": "breuk denominator",
+    "fraction_exercise": "breuk exercise",
+    "fraction_numerator": "breuk numerator"
+  },
+  "components__ParentReportInsight": {
+    "this_summary_was_generated_automatically_from_the_report_data_and_is_mea": "Deze samenvatting is automatisch gegenereerd op basis van de rapportgegevens en is uitsluitend bedoeld als leerhulpmiddel."
+  },
+  "components__promo__PromoMobileCompareVideo": {
+    "mobile_compare_version": "Mobiele vergelijkingsversie",
+    "mobile_test_video": "Mobiele testvideo"
+  },
+  "components__promo__PromoVideoModal": {
+    "close": "Sluiten"
+  },
+  "components__prototypes__dev__learning__english-word-builder__english-word-builder-data": {
+    "the_cat_is_red": "De cat is red",
+    "the_apple_is": "De apple is ___",
+    "she_likes_red": "Ze houdt van rood"
+  },
+  "components__prototypes__dev__leo-dog__LeoDogReferenceGallery": {
+    "sprites_png": "New sprites (transouder PNG)"
+  },
+  "components__reporting__ReportDateRangeControl": {
+    "custom_dates": "Aangepaste data"
+  },
+  "components__reporting__ReportHubModal": {
+    "loading_report": "Laden… report…",
+    "no_children_in_this_group": "Geen children in dit group."
+  },
+  "components__reporting__ReportModalFrame": {
+    "close_window": "Sluiten window"
+  },
+  "components__school-portal__SchoolDrillDown": {
+    "grade_status": "Groep status",
+    "class_status": "Klas status"
+  },
+  "components__school-portal__SchoolOperatorsManager": {
+    "no_secretaries_linked": "Geen secretaries linked"
+  },
+  "components__school-portal__SchoolPortalShell": {
+    "school_navigation": "Schoolnavigatie"
+  },
+  "components__school-portal__SchoolReportModal": {
+    "loading_report": "Laden… report…"
+  },
+  "components__school-portal__SchoolReportModalBody": {
+    "no_data_yet": "Geen data yet"
+  },
+  "components__school-portal__SchoolStaffEmailInviteForm": {
+    "name_example_com": "naam@voorbeeld.com",
+    "invite_by_user_id_advanced": "Invite door user ID (advanced)"
+  },
+  "components__school-portal__SchoolStudentAccessPanel": {
+    "account_actions": "Accountacties",
+    "irreversible_actions": "Onomkeerbare acties"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "Geen children in dit class."
+  },
+  "components__seo__GuideSeoArticlePage": {
+    "all_practice_areas": "Alle practice areas"
+  },
+  "components__seo__PracticeSeoRelatedGuides": {
+    "related_guides": "Gerelateerde handleidingen"
+  },
+  "components__seo__public-seo-wide-defaults": {
+    "ready_to_start": "Ready naar start?",
+    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "Open een ouderaccount, voeg uw kind toe en laat hem of haar oefenen in een tempo dat voor u werkt.",
+    "want_to_create_more_sheets_and_unlock_every_topic": "Wilt u meer werkbladen maken en elk onderwerp ontgrendelen?",
+    "in_the_full_parent_portal_you_can_create_unlimited_worksheets_choose_add": "In het volledige ouderportaal kun je onbeperkt werkbladen maken, aanvullende onderwerpen kiezen en werkbladen combineren met digitale oefen- en voortgangsregistratie."
+  },
+  "components__seo__PublicSeoEntrySection": {
+    "practice_areas": "Oefenen areas",
+    "parent_guides": "Ouder guides"
+  },
+  "components__seo__PublicSeoPageActions": {
+    "page_navigation": "Paginanavigatie"
+  },
+  "components__seo__PublicSeoParentCta": {
+    "parent_login_sign_up": "Inloggen of registreren als ouder",
+    "explore_the_parent_portal": "Explore de ouder portal"
+  },
+  "components__seo__PublicSeoWideCardGrid": {
+    "practice_areas": "Oefenen areas"
+  },
+  "components__seo__PublicSeoWideRelatedGuides": {
+    "related_guides": "Gerelateerde handleidingen"
+  },
+  "components__student__StudentAssignedActivityQuestionStage": {
+    "enlarge_diagram": "Vergroot diagram"
+  },
+  "components__teacher-portal__GuardianAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "De huidige code wordt ingetrokken en er wordt een nieuwe gegenereerd. Sla de nieuwe code op; deze wordt slechts één keer weergegeven.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "De huidige gebruikersnaam wordt ingetrokken. De nieuwe gebruikersnaam wordt slechts één keer getoond."
+  },
+  "components__teacher-portal__StudentLoginAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "De huidige code wordt ingetrokken en er wordt een nieuwe gegenereerd. Sla de nieuwe code op; deze wordt slechts één keer weergegeven.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "De huidige gebruikersnaam wordt ingetrokken. De nieuwe gebruikersnaam wordt slechts één keer getoond."
+  },
+  "components__teacher-portal__SubjectSummaryCards": {
+    "sessions": "Sessies",
+    "answers": "Answers",
+    "success": "Gelukt"
+  },
+  "components__teacher-portal__TeacherActivityStudentAnswersModal": {
+    "close": "Sluiten"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "please_select_valid_dates": "Alstublieft selecteer valid dates",
+    "class_report": "Klas report",
+    "loading_class_report": "Laden… class report…"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "Deze leerling uit de klas verwijderen?",
+    "remove_this_student_from_your_teacher_list": "Deze leerling verwijderen uit je lerarenlijst?",
+    "manage_class": "Beheer klasse",
+    "full_name_of_new_student": "Full name van new leerling",
+    "students": "Leerlingen",
+    "classes": "Klassen",
+    "class_report": "Klas report",
+    "activities": "Activiteiten",
+    "filter_student_list": "Filter leerling list",
+    "search_by_name": "Search door name…"
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "level": "Niveau",
+    "whole_class": "Hele klas",
+    "selected_students": "Geselecteerde leerlingen",
+    "discussion_with_response_students_submit_an_answer": "Discussie met reactie (leerlingen dienen een antwoord in)",
+    "explanation_only_no_response_required": "Explanation alleen — geen response required"
+  },
+  "components__teacher-portal__TeacherParentMessagePanel": {
+    "write_a_short_message_to_the_parent": "Schrijf een kort bericht naar de ouder..."
+  },
+  "components__teacher-portal__TeacherStudentIndividualActivitiesPanel": {
+    "level": "Niveau"
+  },
+  "components__ui__StudentLoadingPanel": {
+    "loading": "Laden……"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "total_students": "Total leerlingen",
+    "opened_pdf": "PDF geopend",
+    "completed_pdf": "Voltooid (PDF)",
+    "submitted_answers": "Ingezonden antwoorden",
+    "pending_review": "In afwachting van beoordeling",
+    "published": "Gepubliceerd",
+    "class_average": "Klas average"
+  },
+  "components__worksheets__WorksheetAnswerKeyList": {
+    "answer": "Answer"
+  },
+  "lib__classroom-activities__generate-activity-questions-client": {
+    "human_body": "Human Lichaam",
+    "animals": "Dieren",
+    "plants": "Planten",
+    "materials": "Materialen",
+    "experiments": "Experimenten",
+    "earth_and_space": "Aarde en Space",
+    "environment": "Omgeving",
+    "standard": "Standaard",
+    "medium": "Gemiddeld",
+    "advanced": "Geavanceerd",
+    "basic_shapes": "Basisvormen",
+    "perimeter": "Omtrek",
+    "volume": "Inhoud",
+    "angles": "Hoeken",
+    "parallel_and_perpendicular": "Parallel en perpendicular",
+    "triangles": "Driehoeken",
+    "quadrilaterals": "Vierhoeken",
+    "transformations": "Transformaties",
+    "rotation": "Rotatie",
+    "symmetry": "Spiegeling",
+    "diagonals": "Diagonalen",
+    "heights": "Hoogten",
+    "tiling": "Tegels",
+    "circles": "Cirkels",
+    "solid_shapes": "Stevige vormen",
+    "pythagorean_theorem": "Stelling van Pythagoras"
+  },
+  "lib__classroom-activities__student-activity-choice-layout.client": {
+    "string_c_trim_length": "String(c?? \"\").trim().lengte"
+  },
+  "lib__classroom-activities__student-activity-display-labels.client": {
+    "untitled_topic": "Naamloos onderwerp"
+  },
+  "lib__classroom-activities__student-activity-error-labels.client": {
+    "this_activity_is_not_available_right_now": "Deze activiteit is momenteel niet beschikbaar",
+    "activity_not_found": "Activity niet found",
+    "this_activity_has_not_started_yet": "Deze activiteit is nog niet begonnen",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Er kunnen momenteel geen antwoorden voor deze activiteit worden ingediend",
+    "this_activity_is_closed": "Dit activity is closed",
+    "time_is_up_for_this_activity": "Time is up voor dit activity",
+    "could_not_open_this_activity_right_now": "Kan deze activiteit momenteel niet openen",
+    "not_found": "Niet found",
+    "please_sign_in": "Log alstublieft in",
+    "you_do_not_have_permission_to_open_this_activity": "U heeft geen toestemming om deze activiteit te openen",
+    "this_activity_is_not_assigned_to_you": "Deze activiteit is niet aan jou toegewezen",
+    "could_not_identify_the_account": "Kan het account niet identificeren",
+    "could_not_complete_that_action_right_now": "Kan deze actie momenteel niet voltooien",
+    "you_already_submitted_this_activity": "Je hebt deze activiteit al ingediend",
+    "you_already_answered_this_question": "Je hebt deze vraag al beantwoord",
+    "waiting_for_the_teacher": "Waiting voor de leerkracht…",
+    "no_answer_submission_needed": "Geen answer submission needed",
+    "the_system_is_updating_try_again_later": "Het systeem wordt bijgewerkt. Probeer het later opnieuw",
+    "something_went_wrong_please_try_again": "Er is iets misgegaan. Probeer het opnieuw",
+    "server_error_please_try_again": "Serverfout. Probeer het opnieuw",
+    "action_not_supported": "Action niet supported",
+    "could_not_load_the_question_right_now": "Kan de vraag nu niet laden",
+    "could_not_submit_an_answer_right_now": "Kan momenteel geen antwoord indienen"
+  },
+  "lib__game-audio__game-audio-manifest": {
+    "game_start": "Het spel begint",
+    "session_end": "Einde sessie",
+    "correct_answer": "Juist antwoord",
+    "wrong_answer": "Verkeerd antwoord",
+    "victory": "Overwinning",
+    "defeat": "Verlies",
+    "coin_collect": "Munten verzamelen",
+    "hit_bomb": "Hit/bom",
+    "time_up": "Tijd om",
+    "card_flip": "Kaart omdraaien",
+    "correct_match": "Correcte wedstrijd",
+    "mismatch": "Mismatch",
+    "balloon_pop": "Ballon pop",
+    "small_success": "Klein succes",
+    "run_victory": "Voer de overwinning uit",
+    "success_streak": "Succesreeks",
+    "achievement_badge": "Prestatie-badge",
+    "level_up": "Niveau omhoog",
+    "countdown": "Aftellen",
+    "line_clear": "Lijn duidelijk",
+    "correct_placement": "Correcte plaatsing",
+    "wrong_placement": "Verkeerde plaatsing",
+    "item_pickup": "Artikel ophalen",
+    "warning": "Waarschuwing",
+    "fruit_slice": "Fruitschijfje",
+    "train_departs": "Trein vertrekt",
+    "place_mark": "Plaats markering",
+    "reveal_choice": "Keuze onthullen",
+    "mine_click": "Mine klik",
+    "mine_merge": "De mijne samenvoegen",
+    "rock_break": "Rots breken",
+    "mine_gift": "Mijn geschenk",
+    "learning_music": "Muziek leren",
+    "educational_instruction_voice": "Educatieve instructiestem",
+    "educational_feedback_voice": "Educatieve feedbackstem",
+    "hebrew_question_voice": "Hebreeuws question voice",
+    "english_phonics_voice": "Engels phonics voice",
+    "diamond_collect": "Diamant verzamelen",
+    "star_collect": "Sterren verzamelen",
+    "key_collect": "Sleutel verzamelen",
+    "maze_exit": "Doolhof uitgang",
+    "target_hit": "Doel geraakt",
+    "cash_register": "Kassa",
+    "recycling_conveyor": "Recycling transportband",
+    "place_evidence": "Plaats bewijsmateriaal",
+    "arcade_music": "Arcademuziek",
+    "puzzle_music": "Puzzel muziek",
+    "shop_music": "Muziek kopen",
+    "mine_music": "Mijn muziek",
+    "button_click": "Button klik",
+    "window_open": "Raam open",
+    "low_time": "Weinig tijd",
+    "help_voice": "Helpen voice"
+  },
+  "lib__games__game-catalog.constants": {
+    "this_game_is_not_available_right_now": "Dit spel is momenteel niet beschikbaar",
+    "locked_by_parents": "Locked door ouders"
+  },
+  "lib__global__product-context.server": {
+    "this_student_does_not_belong_to_leo_kids_global": "Deze leerling behoort niet tot LEO KIDS Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "Leerling niet gevonden voor deze ouder op LEO KIDS Global.",
+    "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "Productisolatieschema is niet gereed. Pas sql/global-product-isolation toe voordat u schrijfbewerkingen inschakelt."
+  },
+  "lib__global__product-membership.server": {
+    "this_leo_kids_global_membership_is_suspended": "Dit LEO KIDS Global-lidmaatschap is opgeschort."
+  },
+  "lib__guest__guest-economy-guard.server": {
+    "the_shop_is_not_available_in_guest_mode": "De winkel is niet beschikbaar in de gastmodus.",
+    "cards_are_not_available_in_guest_mode": "Kaarten zijn niet beschikbaar in de gastmodus."
+  },
+  "lib__guest__guest-start-errors.server": {
+    "the_service_is_not_configured_correctly": "De service is niet correct geconfigureerd.",
+    "guest_mode_is_currently_disabled": "De gastmodus is momenteel uitgeschakeld.",
+    "the_guest_system_is_not_ready": "Het gastsysteem is niet gereed.",
+    "could_not_start_guest_mode": "Kan de gastmodus niet starten."
+  },
+  "lib__guest__guest-start-rate-limit.server": {
+    "too_many_attempts_please_try_again_in_a_few_minutes": "Te veel pogingen. Probeer het over een paar minuten opnieuw."
+  },
+  "lib__guest__guest-student.server": {
+    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "Dit nummer is al gekoppeld aan een ouder. Log in met een gebruikersnaam en pincode."
+  },
+  "lib__guest__guest-topic-access.server": {
+    "this_topic_is_locked_in_guest_mode": "Dit onderwerp is vergrendeld in de gastmodus."
+  },
+  "lib__guest__guest-transfer.server": {
+    "coins_diamonds_and_cards_were_saved_to_the_child": "Munten, diamanten en kaarten werden aan het kind bewaard.",
+    "diamond_transfer_failed": "Diamantoverdracht mislukt.",
+    "arcade_club_data_transfer_failed": "Gegevensoverdracht van de Arcadeclub is mislukt."
+  },
+  "lib__learning__display-level": {
+    "regular": "Gewoon",
+    "advanced": "Geavanceerd"
+  },
+  "lib__learning__question-metadata-validator": {},
+  "lib__learning__report-visible-practice-sync": {
+    "learning": "Leren",
+    "practice": "Oefenen",
+    "challenge": "Uitdaging",
+    "extended_practice": "Uitgebreide praktijk",
+    "graded": "Beoordeeld",
+    "regular": "Gewoon",
+    "mistakes": "Fouten",
+    "review_mistakes": "Bekijk fouten"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "this_subject_is_locked_by_the_parents": "Dit onderwerp is afgesloten door de ouders.",
+    "you_don_t_have_permission_to_select_this_grade": "Je hebt geen toestemming om deze groep te selecteren."
+  },
+  "lib__parent-server__delete-parent-owned-student.server": {
+    "deleting_the_child_failed_please_try_again_or_contact_support": "Het verwijderen van het kind is mislukt. Probeer het opnieuw of neem contact op met de ondersteuning."
+  },
+  "lib__parent-server__report-data-aggregate.server": {
+    "not_available_for_guest_accounts": "Niet beschikbaar voor gastaccounts"
+  },
+  "lib__school-portal__operator-grant-labels": {
+    "manage_child_and_parent_access": "Beheer de toegang van kinderen en ouders",
+    "view_reports_and_child_details": "Bekijk rapporten en kindgegevens"
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "Homeroom class ouders",
+    "homeroom_child_parents": "Homeroom child ouders"
+  },
+  "lib__school-portal__school-report-view-model": {
+    "no_data_in_this_period": "Geen data in dit period",
+    "topics_to_strengthen": "Topics naar strengthen",
+    "practice": "Oefenen",
+    "no_data": "Geen data",
+    "submitted_active": "Verzonden/actief",
+    "no_data_in_period": "Geen data in period",
+    "class_activities": "Klas activities",
+    "no_activities": "Geen activities",
+    "students_in_class": "Leerlingen in class",
+    "no_children": "Geen children",
+    "students_who_need_attention": "Leerlingen wie nodig hebben attention",
+    "student_distribution": "Leerling distribution",
+    "no_class_activities_to_show_for_this_period": "Er zijn geen lesactiviteiten om te tonen voor deze periode.",
+    "no_children_are_registered_in_this_class": "In deze klas zijn geen kinderen ingeschreven.",
+    "not_enough_data_for_a_distribution_breakdown": "Onvoldoende gegevens voor een verdelingsanalyse.",
+    "no_children_have_been_flagged_for_attention": "Er zijn geen kinderen gemarkeerd voor aandacht.",
+    "learning_status": "Leerstatus",
+    "needs_intervention": "Heeft nodig intervention",
+    "practice_day": "Oefenen dag",
+    "mistake": "Fout",
+    "keep_monitoring_progress": "Houden monitoring progress",
+    "breakdown_by_subject": "Breakdown door subject",
+    "no_data_yet": "Geen data yet",
+    "recent_activities": "Recente activiteiten",
+    "no_activity": "Geen activity",
+    "follow_up_recommendations": "Vervolgaanbevelingen",
+    "no_data_by_subject": "Geen data door subject.",
+    "no_learning_activity_recently": "Geen learning activity recently.",
+    "no_further_recommendations_at_this_time": "Geen further recommendations bij dit time.",
+    "general_class_report_all_subjects": "Algemeen lesverslag · alle vakken",
+    "no_subjects_to_display": "Geen subjects naar display."
+  },
+  "lib__school-server__school-browse-status.server": {
+    "not_enough_data": "Niet enough data"
+  },
+  "lib__school-server__school-students.server": {
+    "not_enough_data": "Niet enough data"
+  },
+  "lib__security__admin-token": {
+    "missing_admin_token_header": "Ontbrekende beheerdertokenheader",
+    "admin_token_does_not_match_server_configuration": "Beheerdertoken komt niet overeen met de serverconfiguratie"
+  },
+  "lib__site__public-page-seo": {
+    "leo_kids_learning_games_and_progress_tracking_for_kids": "Leo Kids - Leren, games en voortgangsregistratie voor kinderen",
+    "contact_leo_kids": "Neem contact op met Leo Kids",
+    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "Neem contact op met Leo Kids - vragen, ondersteuning, bugrapporten of ideeën om de site te verbeteren.",
+    "about_leo_kids": "Over · Leo Kids",
+    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "Over Leo Kids - praktijkoefeningen, ouderrapporten, spelletjes, munten en kaarten voor kinderen.",
+    "learn_and_play_with_leo_leo_kids": "Leer en speel met Leo · Leo Kids",
+    "parent_portal_leo_kids": "Ouder portal · Leo Kids",
+    "teacher_portal_leo_kids": "Leerkracht portal · Leo Kids",
+    "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "Trackingtools, persoonlijke activiteiten en rapporten – gebouwd voor privéleerkrachten in Leo Kids.",
+    "parent_login_leo_kids": "Inloggen als ouder · Leo Kids",
+    "sign_in_to_the_leo_kids_parent_portal": "Log in op het Leo Kids ouderportaal.",
+    "teacher_login_leo_kids": "Leerkracht login · Leo Kids",
+    "sign_in_to_the_leo_kids_teacher_portal": "Log in op het Leo Kids docentenportaal.",
+    "practice_by_subject_leo_kids": "Oefenen door subject · Leo Kids",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Digitale oefening voor leerlingen van de basisschool in rekenen, meetkunde, Engels en natuurwetenschappen.",
+    "math_practice_by_grade_and_topic_leo_kids": "Rekenoefeningen per leerjaar en onderwerp · Leo Kids",
+    "reading_comprehension_practice_leo_kids": "Begrijpend lezen oefenen · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "Engelse oefening per leerjaar en onderwerp · Leo Kids",
+    "english_practice_vocabulary_phonics_grammar_sentences_and_reading": "Engelse oefening - woordenschat, fonetiek, grammatica, zinnen en lezen.",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Meetkunde oefenen per leerjaar en onderwerp · Leo Kids",
+    "geometry_practice_shapes_angles_perimeter_area_volume_and_more": "Geometrieoefeningen - vormen, hoeken, omtrek, oppervlakte, volume en meer.",
+    "science_practice_by_topic_leo_kids": "Wetenschapspraktijk per onderwerp · Leo Kids",
+    "science_practice_body_animals_plants_materials_earth_and_weather": "Wetenschapspraktijk - lichaam, dieren, planten, materialen, aarde en weer.",
+    "learning_games_for_kids_leo_kids": "Leerspellen voor kinderen · Leo Kids",
+    "learning_games_that_reinforce_practice_with_challenges_and_rewards": "Leerspellen die de praktijk versterken met uitdagingen en beloningen.",
+    "digital_practice_without_printing_leo_kids": "Digitaal oefenen zonder printen · Leo Kids",
+    "practice_online_by_subject_and_topic_no_printing_required": "Oefen online op onderwerp en onderwerp – printen is niet nodig.",
+    "parent_progress_reports_leo_kids": "Voortgangsrapporten voor ouders · Leo Kids",
+    "see_what_your_child_practiced_topics_to_strengthen_and_clear_next_steps": "Bekijk wat uw kind heeft geoefend, welke onderwerpen u kunt versterken en maak de volgende stappen duidelijk.",
+    "printable_worksheets_for_kids_leo_kids": "Afdrukbare werkbladen voor kinderen · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Kant-en-klare werkbladen, een werkbladgenerator en antwoordsleutels voor de elementaire praktijk.",
+    "help_center_leo_kids": "Helpcentrum · Leo Kids",
+    "guides_for_parents_leo_kids": "Gidsen voor ouders · Leo Kids",
+    "math_practice_at_home_leo_kids_guides": "Rekenoefeningen thuis · Leo Kids-gidsen",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "Hoe je een wiskundeonderwerp kiest, op fouten reageert en een stabiele thuisoefening opbouwt.",
+    "reading_practice_at_home_leo_kids_guides": "Thuis leesoefeningen · Leo Kids-gidsen",
+    "how_to_practice_reading_accuracy_pace_and_understanding_with_short_texts": "Hoe u thuis de nauwkeurigheid, het tempo en het begrip van lezen kunt oefenen met korte teksten.",
+    "reading_comprehension_at_home_leo_kids_guides": "Begrijpend lezen thuis · Leo Kids-gidsen",
+    "how_to_help_your_child_find_details_explain_answers_and_draw_conclusions": "Hoe u uw kind kunt helpen details te vinden, antwoorden uit te leggen en conclusies uit de tekst te trekken.",
+    "english_vocabulary_practice_leo_kids_guides": "Engelse woordenschat oefenen · Leo Kids-gidsen",
+    "how_to_practice_new_words_in_context_and_review_them_through_the_week": "Hoe u nieuwe woorden in hun context kunt oefenen en deze gedurende de week kunt herhalen.",
+    "learning_games_at_home_leo_kids_guides": "Thuis spelletjes leren · Leo Kids-handleidingen",
+    "how_to_combine_learning_games_with_focused_practice_by_subject_and_topic": "Hoe leerspellen te combineren met gerichte oefening per onderwerp en onderwerp.",
+    "math_games_for_kids_leo_kids_guides": "Rekenspelletjes voor kinderen · Leo Kids-gidsen",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "Hoe je wiskundespellen kunt gebruiken voor bewerkingen, getallen en probleemoplossende oefeningen.",
+    "parent_progress_tracking_leo_kids_guides": "Bijhouden van de voortgang van ouders · Leo Kids-handleidingen",
+    "how_to_read_progress_reports_and_spot_patterns_over_time": "Hoe u voortgangsrapporten kunt lezen en patronen in de loop van de tijd kunt ontdekken.",
+    "choosing_a_topic_to_strengthen_leo_kids_guides": "Een onderwerp kiezen om te versterken · Leo Kids-gidsen",
+    "how_to_pick_the_next_topic_based_on_reports_answers_and_repeating_diffic": "Hoe u het volgende onderwerp kiest op basis van rapporten, antwoorden en herhaalde moeilijkheidsgraad.",
+    "home_practice_routine_leo_kids_guides": "Oefenroutine voor thuis · Leo Kids-handleidingen",
+    "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "Hoe je een thuisoefenroutine kunt opbouwen met één duidelijk doel per sessie.",
+    "practice_without_printing_leo_kids_guides": "Oefenen zonder te printen · Leo Kids handleidingen",
+    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "Hoe je digitale oefeningen en spelletjes kunt gebruiken, en wanneer werkbladen helpen.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids - praktijk voor leerlingen van de basisschool."
+  },
+  "lib__student-ui__student-ad-slot.client": {
+    "reserved_for_ad": "Reserved voor ad"
+  },
+  "lib__teacher-portal__teacher-activity-report-export-labels": {
+    "live_lesson": "Live les",
+    "guided_practice": "Begeleide praktijk",
+    "homework": "Huiswerk",
+    "class_discussion": "Klas discussion",
+    "standard": "Standaard",
+    "advanced": "Geavanceerd",
+    "angles": "Hoeken",
+    "shapes": "Vormen",
+    "perimeter": "Omtrek",
+    "volume": "Inhoud",
+    "general_practice": "Algemene praktijk",
+    "asia_jerusalem": "Asia/Jerusalem"
+  },
+  "lib__teacher-portal__teacher-activity-report-export": {
+    "activity_report": "Activiteitenrapport",
+    "correct_out_of_all_answers": "Correct out van alle answers"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf-he": {
+    "notosanshebrew_regular_ttf": "NotoSansHebrew-Regular.ttf"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf": {
+    "activity_report_teacher": "Activity report — leerkracht",
+    "questions": "Vragen",
+    "student_summary": "Leerling summary",
+    "question_analysis": "Vraaganalyse",
+    "skill_analysis": "Vaardigheidsanalyse"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "Groep 3",
+    "grade_2": "Groep 4",
+    "grade_3": "Groep 5",
+    "grade_4": "Groep 6",
+    "grade_5": "Groep 7",
+    "grade_6": "Groep 8"
+  },
+  "lib__teacher-portal__teacher-class-topic-options": {
+    "human_body": "Human lichaam",
+    "animals": "Dieren",
+    "plants": "Planten",
+    "materials": "Materialen",
+    "experiments": "Experimenten",
+    "earth_space": "Aarde & space",
+    "environment": "Omgeving"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "Klas 3 - LEO"
+  },
+  "lib__teacher-server__teacher-activities.server": {
+    "this_subject_is_not_supported_for_class_activities": "Dit onderwerp wordt niet ondersteund voor klassikale activiteiten",
+    "please_select_at_least_one_student": "Selecteer minimaal één leerling"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "Groep 3",
+    "grade_2": "Groep 4",
+    "grade_3": "Groep 5",
+    "grade_4": "Groep 6",
+    "grade_5": "Groep 7",
+    "grade_6": "Groep 8"
+  },
+  "lib__teacher-server__teacher-request.server": {
+    "unexpected_server_error": "Onverwachte serverfout"
+  },
+  "lib__teacher-server__teacher-student-login-access.server": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "Na dit antwoord kan de pincode in platte tekst niet meer worden opgehaald. Veilig opbergen."
+  },
+  "lib__worksheet-activities__worksheet-labels.client": {
+    "active": "Actief",
+    "closed": "Gesloten",
+    "archived": "Gearchiveerd",
+    "digital_answer_sheet": "Digitaal antwoordblad",
+    "manual_grading": "Handmatige beoordeling",
+    "not_submitted": "Niet submitted",
+    "submitted": "Ingediend",
+    "pending_review": "In afwachting van beoordeling",
+    "partially_checked": "Gedeeltelijk gecontroleerd",
+    "checked": "Gecontroleerd",
+    "published": "Gepubliceerd",
+    "multiple_choice": "Meerkeuze",
+    "true_false": "Waar / niet waar",
+    "number": "Nummer",
+    "short_answer": "Kort antwoord",
+    "free_text": "Vrije tekst"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "she_already_finished_the_project": "Ze ___ heeft het project al afgerond.",
+    "if_it_rains_tomorrow_we_indoors": "Als het morgen regent, ___ binnenshuis.",
+    "they_a_science_fair_last_week": "Ze ___ een wetenschapsbeurs vorige week.",
+    "please_carefully_before_you_answer": "___ zorgvuldig voordat u antwoordt.",
+    "although_the_problem_was_complex_the_team_a_clear_plan": "Hoewel het probleem complex was, kwam het team ___ met een duidelijk plan.",
+    "by_the_time_we_arrived_the_presentation_already_begun": "Tegen de tijd dat we aankwamen, was de presentatie ___ al begonnen.",
+    "students_should_evidence_before_they_form_an_opinion": "Leerlingen moeten bewijsmateriaal verzamelen voordat ze een mening vormen.",
+    "if_we_recycle_more_our_community_cleaner": "Als we meer recyclen, wordt onze gemeenschap ___ schoner.",
+    "she_asked_whether_we_ready_to_present": "Ze vroeg of we ___ klaar waren om te presenteren.",
+    "technology_can_help_us_learn_we_use_it_wisely": "Technologie kan ons helpen leren, ___ we gebruiken het verstandig.",
+    "the_report_explains_the_experiment_worked": "In het rapport wordt uitgelegd ___ dat het experiment werkte.",
+    "we_must_listen_carefully_we_understand_the_instructions": "We moeten goed luisteren ___ we begrijpen de instructies.",
+    "after_reviewing_the_data_they_their_conclusion": "Nadat ze de gegevens hebben bekeken, ___ hun conclusie.",
+    "honest_feedback_helps_writers_stronger_drafts": "Eerlijke feedback helpt schrijvers ___ sterkere concepten te schrijven.",
+    "communities_grow_stronger_when_people_each_other": "Gemeenschappen worden sterker als mensen elkaar ___.",
+    "she_prefers_asking_clear_questions_guessing_the_answer": "Ze geeft er de voorkeur aan duidelijke vragen te stellen en het antwoord te raden.",
+    "before_publishing_the_article_check_fact_carefully": "Controleer de feiten zorgvuldig voordat u het artikel publiceert.",
+    "learning_from_mistakes_is_important_part_of_progress": "Leren van fouten is ___ een belangrijk onderdeel van vooruitgang.",
+    "exploring_different_cultures_teaches_respect_curiosity": "Het verkennen van verschillende culturen leert respect ___ nieuwsgierigheid."
+  },
+  "lib__worksheets__worksheet-english-translation-pool.server": {
+    "choose_the_correct_english_sentence": "Kies de juiste Engelse zin."
+  },
+  "lib__worksheets__worksheet-geometry-diagram-svg": {
+    "arial_helvetica_sans_serif": "Arial, Helvetica, schreefloos"
+  },
+  "lib__worksheets__worksheet-geometry-thin-pool.server": {
+    "square": "Vierkant",
+    "rectangle": "Recthoek"
+  },
+  "lib__worksheets__worksheet-math-practice-format": {
+    "horizontal_addition_and_subtraction": "Horizontal optellen en aftrekken",
+    "vertical_addition_and_subtraction": "Vertical optellen en aftrekken",
+    "basic_multiplication": "Basic vermenigvuldigen",
+    "long_multiplication": "Long vermenigvuldigen",
+    "basic_division": "Basic delen",
+    "long_division": "Long delen",
+    "fractions": "Breuken",
+    "decimals": "Decimale getallen",
+    "percentages": "Percentages",
+    "ratio_and_scale": "Ratio en scale",
+    "word_problems": "Verhaalsommen",
+    "mixed_practice": "Gemengd oefenen"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "Groep 3",
+    "grade_2": "Groep 4",
+    "grade_3": "Groep 5",
+    "grade_4": "Groep 6",
+    "grade_5": "Groep 7",
+    "grade_6": "Groep 8",
+    "regular": "Gewoon",
+    "advanced": "Geavanceerd",
+    "addition": "Optellen",
+    "subtraction": "Aftrekken",
+    "multiplication": "Vermenigvuldigen",
+    "division": "Delen",
+    "division_with_remainder": "Delen met remainder",
+    "fractions": "Breuken",
+    "decimals": "Decimale getallen",
+    "percentages": "Percentages",
+    "sequences": "Rijen",
+    "number_sense": "Getalbegrip",
+    "comparison": "Vergelijking",
+    "order_of_operations": "Order van operations",
+    "divisibility_rules": "Deelbaarheidsregels",
+    "word_problems": "Verhaalsommen",
+    "rounding": "Afronden",
+    "equations": "Vergelijkingen",
+    "factors_and_multiples": "Factors en multiples",
+    "estimation": "Schatting",
+    "mixed_practice": "Gemengd oefenen",
+    "basic_shapes": "Basisvormen",
+    "perimeter": "Omtrek",
+    "volume": "Inhoud",
+    "angles": "Hoeken",
+    "parallel_and_perpendicular": "Parallel en perpendicular",
+    "triangles": "Driehoeken",
+    "quadrilaterals": "Vierhoeken",
+    "transformations": "Transformaties",
+    "rotation": "Rotatie",
+    "symmetry": "Spiegeling",
+    "diagonals": "Diagonalen",
+    "heights": "Hoogten",
+    "tiling": "Tegels",
+    "circles": "Cirkels",
+    "solids": "Vaste stoffen",
+    "pythagoras": "Pythagoras",
+    "phonics": "Klanken",
+    "vocabulary": "Woordenschat",
+    "grammar": "Grammatica",
+    "grammar_basics": "Grammatica basis",
+    "translation": "Vertaling",
+    "sentence_building": "Zinsopbouw",
+    "writing": "Schrijven",
+    "reading_comprehension": "Begrijpend lezen",
+    "matching": "Passend",
+    "inference": "Gevolgtrekking",
+    "sentence_understanding": "Zin begrijpen",
+    "simple_sentences": "Simpele zinnen"
+  },
+  "lib__worksheets__worksheet-payload-build.server": {
+    "worksheet": "Werkblad",
+    "name": "Naam: ________________",
+    "date": "Datum: ________________",
+    "options": "Opties:",
+    "answer": "Answer:",
+    "question": "Vraag",
+    "answer_2": "Antwoord",
+    "answer_key": "Antwoorden"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "printable_worksheets": "Afdrukbare werkbladen",
+    "ready_worksheet": "Ready werkblad",
+    "create_new": "Maak nieuw",
+    "system_recommendation": "Systeem recommendation",
+    "preview": "Voorbeeld",
+    "answer_key": "Antwoorden",
+    "separate_answer_key_generated_only_on_explicit_request": "Afzonderlijke antwoorden - alleen gegenereerd op expliciet verzoek",
+    "ink_saver": "Inktbesparing",
+    "no_answers_on_the_worksheet": "Geen answers op de werkblad",
+    "this_question_requires_audio_and_cannot_be_printed": "Deze vraag vereist audio en kan niet worden afgedrukt",
+    "this_question_requires_an_image_and_cannot_be_printed": "Deze vraag vereist een afbeelding en kan niet worden afgedrukt",
+    "question": "Vraag",
+    "practice_type": "Oefentype",
+    "number_of_questions": "Aantal vragen",
+    "include_answer_key": "Antwoorden opnemen",
+    "multiple_choice": "Meerkeuze",
+    "if_available_multiple_choice_options_will_be_shown": "Indien beschikbaar worden meerkeuzemogelijkheden getoond",
+    "no_multiple_choice_questions_are_available_for_this_topic": "Er zijn geen meerkeuzevragen beschikbaar voor dit onderwerp",
+    "create_worksheet": "Werkblad maken",
+    "view_and_print": "View en print",
+    "loading": "Laden……",
+    "something_went_wrong_please_try_again": "Er is iets misgegaan. Probeer het opnieuw.",
+    "no_children_are_linked_to_this_account": "Er zijn geen kinderen aan dit account gekoppeld.",
+    "select_a_child": "Selecteer een kind",
+    "no_recommendations_yet": "Nog geen aanbevelingen",
+    "recommendations_based_on_practice": "Recommendations based op practice",
+    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "Aanbevelingen zijn gebaseerd op onderwerpen die uw kind onlangs heeft geoefend, niet op het ouderrapport.",
+    "ready_made_worksheets": "Ready-made werkbladen",
+    "no_worksheets_found": "Geen werkbladen found",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Probeer de filters te wijzigen - of selecteer alle vakken, groepen en niveaus.",
+    "create_a_new_worksheet": "Maak een nieuw werkblad",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Kies een vak, groep, onderwerp en niveau en maak vervolgens een werkblad dat klaar is om af te drukken.",
+    "choose_topics_for_mixed_practice": "Kies onderwerpen voor gemengde praktijk",
+    "check_the_topics_to_include_in_the_mixed_practice_all_topics_are_checked": "Vink de onderwerpen aan die u in de gemengde praktijk wilt opnemen. Standaard zijn alle onderwerpen aangevinkt.",
+    "select_all_topics": "Selecteer alle onderwerpen",
+    "please_select_at_least_one_topic_for_practice": "Selecteer ten minste één onderwerp om te oefenen.",
+    "worksheet": "Werkblad",
+    "no_worksheet_to_preview_go_back_to_create_one": "Geen werkblad om een ​​voorbeeld van te bekijken. Ga terug om er een te maken.",
+    "creating_worksheet": "Werkblad maken…",
+    "refresh_questions": "Vragen vernieuwen",
+    "generating_new_questions": "Nieuwe vragen genereren…",
+    "the_answer_key_was_updated_to_match_the_current_questions_try_opening_th": "De antwoorden is bijgewerkt zodat deze overeenkomt met de huidige vragen. Probeer de antwoorden opnieuw te openen.",
+    "create_worksheet_from_recommendation": "Werkblad maken van recommendation",
+    "try_the_worksheet_generator": "Probeer de werkbladgenerator",
+    "more_topics_are_available_in_the_full_parent_system": "Er zijn meer onderwerpen beschikbaar in het volledige oudersysteem",
+    "ready_made_worksheets_by_grade": "Ready-made werkbladen door groep",
+    "preview_data_is_not_available_go_back_to_the_worksheets_page_and_choose_": "Er zijn geen voorbeeldgegevens beschikbaar. Ga terug naar de werkbladenpagina en kies opnieuw een werkblad.",
+    "back_to_worksheets": "Terug naar werkbladen"
+  },
+  "pages__api__cron__monthly-persistence-award": {
+    "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron": "Cron voor maandelijkse persistentie is uitgeschakeld. Stel ENABLE_MONTHLY_PERSISTENCE_CRON=true in"
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Selecteer alstublieft een groep.",
+    "you_can_add_up_to_3_children_on_this_parent_account": "Op dit ouderaccount kunt u maximaal 3 kinderen toevoegen"
+  },
+  "pages__api__parent__delete-student": {
+    "child_id_is_missing": "Kind-ID ontbreekt",
+    "server_error_please_try_again": "Serverfout. Probeer het opnieuw"
+  },
+  "pages__api__parent__guest__link": {
+    "unable_to_link_this_guest_number_check_the_number_and_try_again": "Kan dit gastnummer niet koppelen. Controleer het nummer en probeer het opnieuw.",
+    "too_many_attempts_please_try_again_later": "Te veel pogingen. Probeer het later opnieuw."
+  },
+  "pages__api__teacher__classes__index": {
+    "unexpected_server_error": "Onverwachte serverfout"
+  },
+  "pages__api__teacher__classes__[classId]": {
+    "unexpected_server_error": "Onverwachte serverfout"
+  },
+  "pages__api__teacher__me": {
+    "unexpected_server_error": "Onverwachte serverfout"
+  },
+  "pages__api__teacher__onboard": {
+    "unexpected_server_error": "Onverwachte serverfout"
+  },
+  "pages__api__teacher__students": {
+    "unexpected_server_error": "Onverwachte serverfout"
+  },
+  "pages__school__activities__[activityId]__monitor": {
+    "activity_monitor": "Activiteitenmonitor"
+  },
+  "pages__school__classes__index": {
+    "please_select_valid_dates": "Alstublieft selecteer valid dates",
+    "no_classes_in_this_grade": "Geen classes in dit groep."
+  },
+  "pages__school__messages": {
+    "loading": "Laden……",
+    "regular": "Gewoon",
+    "important": "Belangrijk",
+    "urgent": "Dringend",
+    "requires_confirmation": "Vereist bevestiging"
+  },
+  "pages__school__pending": {
+    "registration_status": "Registratiestatus"
+  },
+  "pages__school__students__index": {
+    "please_select_valid_dates": "Alstublieft selecteer valid dates",
+    "no_children_in_this_grade": "Geen children in dit groep.",
+    "no_children_found_in_this_class": "Geen children found in dit class."
+  },
+  "pages__student__activity__[activityId]": {
+    "incorrect": "Fout",
+    "answer_submitted": "Antwoord submitted",
+    "submit_answer": "Antwoord indienen",
+    "type_your_answer": "Type uw answer",
+    "enlarged_diagram": "Vergroot diagram",
+    "close_diagram": "Sluiten diagram"
+  },
+  "pages__student__worksheet__[worksheetId]": {
+    "mark_this_worksheet_as_finished": "Mark dit werkblad as finished?",
+    "submit_your_answers": "Submit uw answers?",
+    "submission_received_and_waiting_for_teacher_approval": "Inzending ontvangen en wacht op goedkeuring van de docent."
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "Klas report",
+    "invalid_class_id": "Ongeldige lesgroep-ID.",
+    "you_do_not_have_permission_to_view_this_class_report": "Je hebt geen toestemming om dit lesrapport te bekijken.",
+    "please_select_valid_dates": "Alstublieft selecteer valid dates"
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "Klas activities"
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "level": "Niveau"
+  },
+  "pages__teacher__class__[classId]__discussion__new": {
+    "new_discussion_activity": "Nieuwe discussieactiviteit"
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "worksheets": "Werkbladen"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Groep leerling"
+  },
+  "pages__teacher__dashboard": {
+    "my_dashboard": "Mijn dashboard"
+  },
+  "pages__teacher__pending": {
+    "request_status": "Status opvragen"
+  },
+  "pages__teacher__students__activities__new": {
+    "activity_for_selected_private_students": "Activiteit voor geselecteerde privéleerlingen",
+    "level": "Niveau"
+  },
+  "pages__teacher__student__[studentId]": {
+    "student_report": "Leerling report",
+    "invalid_student_id": "Invalid leerling ID.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "Je hebt geen toestemming om het rapport van deze leerling te bekijken.",
+    "please_select_valid_dates": "Alstublieft selecteer valid dates"
+  },
+  "pages__teacher__worksheets__index": {
+    "worksheets": "Werkbladen"
+  },
+  "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Groep leerling"
+  },
+  "pages__teacher__worksheets__[worksheetId]__report": {
+    "worksheet_report": "Werkblad report"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Leren voor basisschoolleerlingen"
+  },
+  "utils__ai-hybrid-diagnostic__hybrid-review-record": {
+    "no_conflict_between_v2_and_the_hybrid_top_hypothesis": "Geen conflict tussen V2 en de Hybride tophypothese."
+  },
+  "utils__contracts__parent-product-contract-v1": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Er zijn nog niet voldoende gegevens om een ​​beeld op onderwerpniveau vast te stellen.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Begin met een korte, consistente oefening om een ​​meetbasislijn op te bouwen.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Het huidige datavolume is laag, dus er is geen basis voor een duidelijke richting.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Kies één onderwerp en oefen elke sessie 10-15 minuten.",
+    "do_not_change_difficulty_based_on_sparse_data": "Verander de moeilijkheidsgraad niet op basis van schaarse gegevens.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Hoeveel vertrouwen hierop: nog niet hoog in dit stadium.",
+    "existing_data_is_still_partial": "De bestaande gegevens zijn nog steeds gedeeltelijk.",
+    "continue_basic_data_collection": "Ga verder basic data collection.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Er zijn nog niet voldoende gegevens om een ​​duidelijke richting te bepalen.",
+    "short_focused_practice_on_one_topic": "Korte, gerichte oefening over één onderwerp.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Trek geen sterke conclusies uit een klein aantal vragen.",
+    "how_much_to_trust_this_not_high_yet": "Hoeveel kun je hierop vertrouwen: nog niet hoog.",
+    "data_is_missing_or_partial": "Data is missing of partial."
+  },
+  "utils__detailed-report-parent-letter": {
+    "sparse_data": "Schaarse gegevens"
+  },
+  "utils__english-question-generator": {
+    "got_it": "Ik heb het"
+  },
+  "utils__expert-review-pack-artifact-snapshot": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Niet ingevuld in de artefact-snapshot-modus. Voer `npm run qa:learning-simulator:expert-review-pack` uit voor synthetische kaarten/aggregaten.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Patronen tussen subjecten zijn hypothesen en vereisen bevestigende onderzoeken per onderwerp.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Alleen interne educatieve diagnostische ondersteuning - niet klinisch/niet oudergericht."
+  },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "Luister naar de vraag en antwoord op basis van wat je hoort."
+  },
+  "utils__math-topic-parent-display": {
+    "learning": "Leren",
+    "practice": "Oefenen",
+    "challenge": "Uitdaging",
+    "marathon": "Marathon",
+    "graded": "Beoordeeld",
+    "normal": "Normaal",
+    "mistakes": "Fouten",
+    "review_mistakes": "Bekijk fouten"
+  },
+  "utils__parent-ai-topic-classifier__external-question-route": {
+    "the_report_for_the_selected_period": "Het rapport voor de geselecteerde periode"
+  },
+  "utils__parent-data-presence": {
+    "social_studies_geography": "Social Studies & Aardrijkskunde"
+  },
+  "utils__probe-pending-finalize": {
+    "choose_the_correct_formula_or_first_step_before_numerical_calculation": "Kies de juiste formule of eerste stap vóór numerieke berekening.",
+    "identify_one_clear_shape_property_or_state_before_calculating": "Identificeer één duidelijke vormeigenschap of -toestand voordat u gaat berekenen.",
+    "reinforce_a_foundational_concept_before_continuing": "Versterk een fundamenteel concept voordat u verdergaat."
+  },
+  "utils__question-metadata-qa__english-metadata-enrichment-suggestions": {
+    "no_automated_prerequisite_chain_for_english_pools_in_this_fast_track_pas": "Geen geautomatiseerde vereistenketen voor Engelse pools in deze fast-track pass."
+  },
+  "utils__question-metadata-qa__geometry-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Bij alle suggesties blijft NeedsHumanReview=true behouden totdat de bankbewerkingen zijn goedgekeurd."
+  },
+  "utils__question-metadata-qa__geometry-metadata-enrichment-suggestions": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "Bij de planning van rechthoekige gebieden wordt ervan uitgegaan dat in de context onderscheid wordt gemaakt tussen gebied en omtrek.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "De late-band driehoek-hoeksomrij breidt hetzelfde principe uit: bevestig de volgorde voordat u deze afdwingt.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "Geen geautomatiseerde vereistenketen voor deze sjabloon; auteurs van het curriculum worden expliciet in kaart gebracht."
+  },
+  "utils__question-metadata-qa__math-generator-metadata-map": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Vervangt niet het numerieke correcte antwoord, antwoorden [] of vraagtekst na generatie - verrijkt alleen metagegevensvelden.",
+    "blanket_patternfamily_math_kind_when_absent": "DekenpatroonFamilie `math_${kind}` bij afwezigheid",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Probe- en breukrijen bevatten al diagnosticSkillId/expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Standaard op/kind-rijen gebruiken de deterministische math_${kind} vaardigheids-ID",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Randsoorten met minimale parameters - nog steeds veilig ID-patroon math_*"
+  },
+  "utils__question-metadata-qa__question-bank-discovery": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Sjabloonrijen voor conceptuele MCQ - gescand als statische metadatadragers",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Procedurele wiskundige items - metadata toegewezen tijdens het genereren",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Procedurele geometrie - gebruik geometrie-conceptuele bank + generatorparameters",
+    "english_generator_pool_merge": "Engels generator + pool merge"
+  },
+  "utils__question-metadata-qa__question-metadata-enrichment-suggestions": {
+    "no_probepower_cognitive_tier_inferred_from_difficulty": "Geen probePower - cognitieve laag afgeleid van moeilijkheidsgraad."
+  },
+  "utils__question-metadata-qa__question-metadata-taxonomy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Vaardigheid ≥85% dekking, subvaardigheid ≥50%, gemiddelde volledigheid ≥0,65, hoog risicoaandeel <8%.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Vaardigheidsdekking bruikbaar, maar aanzienlijke hiaten in cognitieve/fouten/vereisten.",
+    "large_missing_skill_or_inconsistent_tagging": "Grote ontbrekende vaardigheid of inconsistente tagging.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "Vaardigheids-ID grotendeels afwezig - diagnoseroutering onbetrouwbaar."
+  },
+  "utils__question-metadata-qa__science-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Bij alle suggesties blijft NeedsHumanReview=true behouden totdat de bankbewerkingen zijn goedgekeurd."
+  },
+  "utils__question-quality": {
+    "correct_answer_is_the_only_full_sentence_among_options": "Het juiste antwoord is de enige volledige zin onder de opties",
+    "correct_option_is_much_longer_than_all_distractors": "De juiste optie is veel langer dan alle afleiders"
+  },
+  "utils__student-question-display": {
+    "short_equation_puzzle": "Korte vergelijkingspuzzel:",
+    "complete_the_missing_part_of_the_equation": "Vul het ontbrekende deel van de vergelijking aan:",
+    "find_the_unknown": "Zoek het onbekende:",
+    "find_x": "Vind x:"
+  },
+  "utils__student-question-stem-sanitizer": {
+    "hebrew_level_prefix": "Hebreeuws level prefix",
+    "english_level_token_as_metadata": "Engels level token as metadata"
+  }
+}

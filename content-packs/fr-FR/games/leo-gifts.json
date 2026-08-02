@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-gifts",
+  "title": "La boutique de bonbons de Léo",
+  "blurb": "Partage égal, groupes et restes",
+  "help": {
+    "howToPlay": "Divisez-les entre les enfants ou dans des sacs – recherchez combien par groupe et combien il en reste, puis appuyez sur « Vérifier la division ».",
+    "scoring": "Bonne réponse +30, bonus de temps jusqu'à +20, séquence de 5 bonnes +25. Après 3 tentatives infructueuses, la solution s'affiche.",
+    "rewards": "Les pièces sont attribuées en fonction du nombre de questions auxquelles tu avez répondu correctement, de la précision, des séquences et du niveau de difficulté - même si le jeu s'est terminé à cause d'erreurs.",
+    "tip": "Regarde si la tâche demande par enfant ou par sacs pleins."
+  },
+  "accessibility": {
+    "title": "La boutique de bonbons de Léo"
+  }
+}

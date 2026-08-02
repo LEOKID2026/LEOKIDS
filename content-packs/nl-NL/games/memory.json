@@ -1,0 +1,11 @@
+{
+  "gameId": "memory",
+  "title": "Leo's geheugenspel",
+  "blurb": "Draai kaarten om en vind paren voordat de klok om is!",
+  "help": {
+    "howToPlay": "Tik op een kaart om hem om te draaien en zoek het bijpassende paar. Elk paar dat je vindt, blijft open.",
+    "scoring": "Je begint met een hoge score - hoe langer je erover doet, hoe lager deze daalt. Alle paren vinden voordat de tijd om is = winnen.",
+    "rewards": "Winnen op basis van moeilijkheidsgraad levert munten en diamanten op. Hoe hoger de score, hoe groter de beloning.",
+    "tip": "Probeer te onthouden waar je elke foto hebt gezien, zelfs als je het paar niet meteen hebt gevonden."
+  }
+}

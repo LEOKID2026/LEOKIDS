@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-11T12:00:00.000Z",
+  "constants": {
+    "minMistakesPerPatternFamily": 5,
+    "minMistakesForStrongRecommendation": 10,
+    "maxWeaknesses": 3,
+    "maxStrengthRows": 3,
+    "maxMaintain": 2,
+    "maxImproving": 2,
+    "maxStableExcellence": 3,
+    "stableExcellenceMinAccuracy": 92,
+    "stableExcellenceMinQuestions": 22
+  },
+  "subjects": {
+    "math": {
+      "subject": "mathématiques",
+      "subjectLabel": "Mathématiques",
+      "mistakeEventCount": 12,
+      "wrongCount": 12,
+      "hasAnySignal": true,
+      "summaryHe": "L'image de la matière en mathématiques : l'enfant réussit la composition au fil du temps. Il est également possible de renforcer la comparaison des quantités ou des nombres.",
+      "stableExcellence": [
+        {
+          "id": "math:addition:learning",
+          "labelHe": "Addition",
+          "questions": 42,
+          "accuracy": 93,
+          "confidence": "haut",
+          "needsPractice": false,
+          "excellent": true,
+          "tierHe": "Ton enfant se débrouille bien sur ce sujet au fil du temps"
+        }
+      ],
+      "topStrengths": [],
+      "topWeaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Difficulté à comparer des quantités ou des nombres",
+          "mistakeCount": 7,
+          "confidence": "modéré",
+          "tierHe": "Difficulté ciblée"
+        }
+      ],
+      "parentTopicToneByKey": {},
+      "parentStrengthWithCautionLinesByKey": {},
+      "parentActionHe": "Trois fois par semaine, 15 à 20 minutes par séance : choisissez une tâche mathématique sur le thème de la comparaison de quantités ou de nombres - lisez la formulation ensemble, formulez à haute voix ce qui est donné et ce qui est demandé, effectuez une première étape sur un brouillon et ensuite seulement rédigez une réponse finale et vérifiez par rapport à la solution.",
+      "nextWeekGoalHe": "Objectif de renforcement : augmenter le pourcentage de réussite dans la comparaison des quantités ou des nombres (au moins une tentative réussie de plus que la semaine dernière). Objectif de rétention : poursuivre une routine de pratique détendue sur la composition pour maintenir le niveau de précision.",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "De combien de sacs le prix de l'ordinateur est-il plus élevé ?",
+          "questionLabel": null,
+          "correctAnswer": 120,
+          "userAnswer": 102,
+          "confidence": "modéré"
+        },
+        {
+          "type": "success",
+          "titleHe": "Ce que ton enfant fait bien dans la pratique",
+          "bodyHe": "Dans le sujet de la dissertation, la réussite est bonne dans la période sélectionnée : environ 93 % de réponses correctes sur 42 questions.",
+          "confidence": "haut"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Difficulté à comparer des quantités ou des nombres",
+          "mistakeCount": 7,
+          "confidence": "modéré",
+          "tierHe": "Difficulté ciblée"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:math:w:0",
+          "textHe": "Il faudrait s'entraîner un peu plus sur le sujet : lors de la comparaison de quantités ou de nombres - 7 erreurs similaires ont été enregistrées dans la période sélectionnée. Nous nous en tenons à une pratique ciblée et non à \"essayer de tout régler d'un coup\".",
+          "strength": "modéré"
+        }
+      ],
+      "studentRecommendationsMaintain": [
+        {
+          "id": "stu-maint:math:addition:learning",
+          "textHe": "Continue à t’entraîner confortablement sur le thème de la connexion - le niveau y est maintenu (précision d'environ 93 %).",
+          "strength": "fort"
+        }
+      ],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:math:w:0",
+          "textHe": "Une répétition du même type d'erreur commence - en matière de comparaison de quantités ou de nombres. Pour la semaine à venir, un regard calme et une pratique courte et ciblée suffisent.",
+          "strength": "modéré"
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "id": "par-maint:math:addition:learning",
+          "textHe": "Il est recommandé d'encourager la persévérance dans la connexion - tu constatez des succès répétés ; Conserver une habitude positive est tout aussi important que corriger les erreurs.",
+          "strength": "fort"
+        }
+      ],
+      "evidenceMistake": {
+        "exerciseText": "De combien de sacs le prix de l'ordinateur est-il plus élevé ?",
+        "questionLabel": null,
+        "correctAnswer": 120,
+        "userAnswer": 102,
+        "confidence": "modéré"
+      },
+      "evidenceSuccess": {
+        "titleHe": "Ce que ton enfant fait bien dans la pratique",
+        "bodyHe": "Dans le sujet de la dissertation, la réussite est bonne dans la période sélectionnée : environ 93 % de réponses correctes sur 42 questions.",
+        "confidence": "haut"
+      },
+      "insufficientData": [
+        {
+          "mistakeCount": 2,
+          "note": "Moins de 5 erreurs dans un même schéma - il est encore trop tôt pour déterminer une difficulté récurrente"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "geometry": {
+      "subject": "géométrie",
+      "subjectLabel": "Géométrie",
+      "mistakeEventCount": 9,
+      "wrongCount": 9,
+      "hasAnySignal": true,
+      "summaryHe": "Le tableau d’ensemble en géométrie : il est également possible de renforcer la confusion récurrente entre périmètre et surface.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Confusion répétée entre périmètre et zone",
+          "mistakeCount": 6,
+          "confidence": "modéré",
+          "tierHe": "Difficulté ciblée"
+        }
+      ],
+      "parentActionHe": "Trois fois par semaine, 15 à 20 minutes par séance : choisissez une tâche de géométrie sur la confusion récurrente entre périmètre et surface — lisez le problème ensemble, dites à haute voix ce qui est donné et ce qui est demandé, faites un premier pas sur du papier brouillon, puis rédigez la réponse finale et vérifiez-la.",
+      "nextWeekGoalHe": "Objectif de la pratique : augmenter la réussite sur les confusions récurrentes entre périmètre et zone (au moins une tentative réussie de plus que la semaine dernière).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "Quel est le périmètre d'un rectangle de 5x3 cm ?",
+          "questionLabel": null,
+          "correctAnswer": "16 cm",
+          "userAnswer": "15 cm",
+          "confidence": "modéré"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Confusion répétée entre périmètre et zone",
+          "mistakeCount": 6,
+          "confidence": "modéré",
+          "tierHe": "Difficulté ciblée"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:geometry:w:0",
+          "textHe": "Il faudrait s'entraîner un peu plus sur le sujet : confusions répétées entre périmètre et domaine - 6 erreurs similaires ont été enregistrées dans la période sélectionnée. Nous nous en tenons à une pratique ciblée et non à \"essayer de tout régler d'un coup\".",
+          "strength": "modéré"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:geometry:w:0",
+          "textHe": "Une répétition du même type d’erreur commence – sur le thème de la confusion répétée entre champ d’application et domaine. Pour la semaine à venir, un regard calme et une pratique courte et ciblée suffisent.",
+          "strength": "modéré"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "Quel est le périmètre d'un rectangle de 5x3 cm ?",
+        "questionLabel": null,
+        "correctAnswer": "16 cm",
+        "userAnswer": "15 cm",
+        "confidence": "modéré"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "english": {
+      "subject": "Anglais",
+      "subjectLabel": "Anglais",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "science": {
+      "subject": "science",
+      "subjectLabel": "Sciences",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "block_tower": "Blok Toren",
+    "prototype_tap_to_place_precision_taller_tower": "Prototype · tik om te plaatsen · precisie = hogere toren",
+    "place_block": "Blok plaatsen",
+    "tap_when_the_block_is_over_the_tower_small_overlap_narrower_block": "Tik als het blok over de toren heen is · kleine overlap = smaller blok",
+    "setflash_280_gameover_return": "setFlash(\"\"), 280); }, [gameOver]); return (",
+    "tap_to_play_again": "Tap naar play opnieuw",
+    "game_over": "Spel voorbij",
+    "reset": "Resetten"
+  }
+}

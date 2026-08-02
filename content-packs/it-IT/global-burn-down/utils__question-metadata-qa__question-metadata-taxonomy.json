@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Habilidad ≥85 % de cobertura, subhabilidad ≥50 %, completitud promedio ≥0,65, participacion de alto riesgo <8 %.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Cobertura de habilidades utilizable pero brechas sustanciales en cognitivos/errores/requisitos previos.",
+    "large_missing_skill_or_inconsistent_tagging": "Gran habilidad faltante o etiquetado inconsistente.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "La identificacion de habilidades esta practicamente ausente: el enrutamiento de diagnostico no es confiable."
+  }
+}

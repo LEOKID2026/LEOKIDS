@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "Plastica",
+    "newspaper": "Periodico",
+    "cardboard": "Cartulina",
+    "plastic_bottle": "botella de plastica",
+    "plastic_bag": "bolsa de plastica",
+    "soda_can": "lata de refresco",
+    "banana_peel": "cascara de platano",
+    "medium": "Medio",
+    "recycled_paper_can_become_new_paper_again": "Recycled paper can become new paper again.",
+    "plastic_bottles_can_be_made_into_new_products": "Las botellas de plastica se possono convertir en nuevos productos.",
+    "glass_can_be_recycled_many_times": "El vetro se può riciclare muchas veces.",
+    "metal_cans_are_great_for_recycling": "Las latas de metallo son excelentes para riciclare.",
+    "sorting_correctly_helps_protect_the_environment": "Clasificar correctamente aiuta a proteggere el medio ambiente."
+  }
+}

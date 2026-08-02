@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-11T12:00:00.000Z",
+  "constants": {
+    "minMistakesPerPatternFamily": 5,
+    "minMistakesForStrongRecommendation": 10,
+    "maxWeaknesses": 3,
+    "maxStrengthRows": 3,
+    "maxMaintain": 2,
+    "maxImproving": 2,
+    "maxStableExcellence": 3,
+    "stableExcellenceMinAccuracy": 92,
+    "stableExcellenceMinQuestions": 22
+  },
+  "subjects": {
+    "math": {
+      "subject": "rekenen",
+      "subjectLabel": "Rekenen",
+      "mistakeEventCount": 12,
+      "wrongCount": 12,
+      "hasAnySignal": true,
+      "summaryHe": "Het beeld van het vak in de rekenen: het kind slaagt er in de loop van de tijd in om te componeren. Ook bij het vergelijken van hoeveelheden of aantallen is er ruimte voor versterking.",
+      "stableExcellence": [
+        {
+          "id": "math:addition:learning",
+          "labelHe": "Optellen",
+          "questions": 42,
+          "accuracy": 93,
+          "confidence": "hoog",
+          "needsPractice": false,
+          "excellent": true,
+          "tierHe": "Uw kind doet het in de loop van de tijd goed op dit onderwerp"
+        }
+      ],
+      "topStrengths": [],
+      "topWeaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Difficulty comparing quantities of numbers",
+          "mistakeCount": 7,
+          "confidence": "gematigd",
+          "tierHe": "Geconcentreerde moeilijkheid"
+        }
+      ],
+      "parentTopicToneByKey": {},
+      "parentStrengthWithCautionLinesByKey": {},
+      "parentActionHe": "Drie keer per week, elke sessie 15-20 minuten: kies één wiskundetaak over het vergelijken van hoeveelheden of getallen - lees samen de formulering, formuleer hardop wat er wordt gegeven en wat er wordt gevraagd, voer een eerste stap uit op een schetsblad en schrijf dan pas een definitief antwoord en controleer de oplossing.",
+      "nextWeekGoalHe": "Doel voor versterking: verhoog het succespercentage bij het vergelijken van hoeveelheden of aantallen (minstens één succesvolle poging meer dan vorige week). Doel voor retentie: ga door met een ontspannen oefenroutine op het gebied van compositie om het nauwkeurigheidsniveau te behouden.",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "Hoeveel tassen is de prijs van de computer hoger?",
+          "questionLabel": null,
+          "correctAnswer": 120,
+          "userAnswer": 102,
+          "confidence": "gematigd"
+        },
+        {
+          "type": "success",
+          "titleHe": "Wat uw kind in de praktijk goed doet",
+          "bodyHe": "In het onderwerp essay is er goed succes in de geselecteerde periode: ongeveer 93% correct van de 42 vragen.",
+          "confidence": "hoog"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Difficulty comparing quantities of numbers",
+          "mistakeCount": 7,
+          "confidence": "gematigd",
+          "tierHe": "Geconcentreerde moeilijkheid"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:math:w:0",
+          "textHe": "Je zou wat meer op dit onderwerp moeten oefenen: bij het vergelijken van hoeveelheden of cijfers werden in de geselecteerde periode 7 soortgelijke fouten geregistreerd. Wij blijven bij geconcentreerd oefenen en niet bij “alles in één keer proberen op te lossen”.",
+          "strength": "gematigd"
+        }
+      ],
+      "studentRecommendationsMaintain": [
+        {
+          "id": "stu-maint:math:addition:learning",
+          "textHe": "Blijf comfortabel oefenen op het onderwerp verbinding - het niveau daar blijft behouden (nauwkeurigheid ongeveer 93%).",
+          "strength": "sterk"
+        }
+      ],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:math:w:0",
+          "textHe": "Er begint een herhaling van hetzelfde type fout - op het gebied van het vergelijken van hoeveelheden of getallen. Voor de komende week zijn een rustige blik en een korte, gerichte oefening voldoende.",
+          "strength": "gematigd"
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "id": "par-maint:math:addition:learning",
+          "textHe": "Het wordt aanbevolen om volharding in verbinding aan te moedigen – je ziet herhaaldelijk succes; Het behouden van een positieve gewoonte is net zo belangrijk als het corrigeren van fouten.",
+          "strength": "sterk"
+        }
+      ],
+      "evidenceMistake": {
+        "exerciseText": "Hoeveel tassen is de prijs van de computer hoger?",
+        "questionLabel": null,
+        "correctAnswer": 120,
+        "userAnswer": 102,
+        "confidence": "gematigd"
+      },
+      "evidenceSuccess": {
+        "titleHe": "Wat uw kind in de praktijk goed doet",
+        "bodyHe": "In het onderwerp essay is er goed succes in de geselecteerde periode: ongeveer 93% correct van de 42 vragen.",
+        "confidence": "hoog"
+      },
+      "insufficientData": [
+        {
+          "mistakeCount": 2,
+          "note": "Minder dan 5 fouten in hetzelfde patroon - het is nog te vroeg om een ​​terugkerend probleem vast te stellen"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "geometry": {
+      "subject": "meetkunde",
+      "subjectLabel": "Meetkunde",
+      "mistakeEventCount": 9,
+      "wrongCount": 9,
+      "hasAnySignal": true,
+      "summaryHe": "Het totaalbeeld in de meetkunde: er is ook ruimte om de terugkerende verwarring tussen omtrek en oppervlakte te versterken.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Herhaalde verwarring tussen omtrek en oppervlakte",
+          "mistakeCount": 6,
+          "confidence": "gematigd",
+          "tierHe": "Geconcentreerde moeilijkheid"
+        }
+      ],
+      "parentActionHe": "Drie keer per week, elke sessie van 15-20 minuten: kies één geometrietaak over terugkerende verwarring tussen omtrek en oppervlakte – lees samen het probleem, zeg hardop wat er wordt gegeven en wat er wordt gevraagd, zet een eerste stap op kladpapier, schrijf dan het definitieve antwoord en controleer het.",
+      "nextWeekGoalHe": "Oefendoel: succes vergroten bij terugkerende verwarring tussen omtrek en gebied (minstens één succesvolle poging meer dan vorige week).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "Wat is de omtrek van een 5x3 cm rechthoek?",
+          "questionLabel": null,
+          "correctAnswer": "16 cm",
+          "userAnswer": "15 cm",
+          "confidence": "gematigd"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Herhaalde verwarring tussen omtrek en oppervlakte",
+          "mistakeCount": 6,
+          "confidence": "gematigd",
+          "tierHe": "Geconcentreerde moeilijkheid"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:geometry:w:0",
+          "textHe": "Je zou wat meer op dit onderwerp moeten oefenen: herhaalde verwarring tussen reikwijdte en gebied - in de geselecteerde periode werden 6 soortgelijke fouten geregistreerd. Wij blijven bij geconcentreerd oefenen en niet bij “alles in één keer proberen op te lossen”.",
+          "strength": "gematigd"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:geometry:w:0",
+          "textHe": "Een herhaling van hetzelfde type fout begint - over het onderwerp van herhaalde verwarring tussen reikwijdte en gebied. Voor de komende week zijn een rustige blik en een korte, gerichte oefening voldoende.",
+          "strength": "gematigd"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "Wat is de omtrek van een 5x3 cm rechthoek?",
+        "questionLabel": null,
+        "correctAnswer": "16 cm",
+        "userAnswer": "15 cm",
+        "confidence": "gematigd"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "english": {
+      "subject": "Engels",
+      "subjectLabel": "Engels",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "science": {
+      "subject": "natuur en techniek",
+      "subjectLabel": "Natuur en techniek",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "human_body": "Human Lichaam",
+    "animals": "Dieren",
+    "plants": "Planten",
+    "materials": "Materialen",
+    "experiments": "Experimenten",
+    "earth_and_space": "Aarde en Space",
+    "environment": "Omgeving",
+    "standard": "Standaard",
+    "medium": "Gemiddeld",
+    "advanced": "Geavanceerd",
+    "basic_shapes": "Basisvormen",
+    "perimeter": "Omtrek",
+    "volume": "Inhoud",
+    "angles": "Hoeken",
+    "parallel_and_perpendicular": "Parallel en perpendicular",
+    "triangles": "Driehoeken",
+    "quadrilaterals": "Vierhoeken",
+    "transformations": "Transformaties",
+    "rotation": "Rotatie",
+    "symmetry": "Spiegeling",
+    "diagonals": "Diagonalen",
+    "heights": "Hoogten",
+    "tiling": "Tegels",
+    "circles": "Cirkels",
+    "solid_shapes": "Stevige vormen",
+    "pythagorean_theorem": "Stelling van Pythagoras"
+  }
+}

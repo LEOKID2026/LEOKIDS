@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "traffic_jam": "Embouteillage",
+    "prototype_drag_cars_along_their_axis_free_the_red_one": "Prototype · faire glisser les voitures le long de leur axe · libérer la rouge",
+    "size_return_false_if_nr": "TAILLE) renvoie false ;\r\n    si (n°",
+    "size_return_false_if_nc": "TAILLE) renvoie false ;\r\n    si (nc",
+    "you_did_it_red_car_is_out": "Tu l'avez fait ! La voiture rouge est de sortie 🎉",
+    "reset": "Réinitialiser"
+  }
+}

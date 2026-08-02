@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "La Pizzeria de Léo",
+  "blurb": "Construire, identifier, équivaloir, comparer et combiner des fractions",
+  "help": {
+    "howToPlay": "Construisez des fractions sur une pizza, identifiez à partir d'une image, complétez en un tout, comparez ou associez des équivalents - par tâche. Appuyez sur « Servir la pizza » lorsque tu êtes prêt.",
+    "scoring": "Bonne réponse +30, bonus de séquence. Après 3 tentatives infructueuses, la solution s'affiche.",
+    "rewards": "Les pièces sont attribuées en fonction du nombre de clients que tu avez servis, de la précision, des séquences et du niveau de difficulté, même si tu n'avez pas servi les 20 clients.",
+    "tip": "Faites attention au numérateur et au dénominateur : les tranches de pizza sont toujours des parts égales."
+  },
+  "accessibility": {
+    "title": "La Pizzeria de Léo"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "gameId": "tic-tac-toe",
+  "title": "Tic-Tac-Toe",
+  "blurb": "Borden van 3×3 tot 7×7 met scoreregistratie.",
+  "players": "2 spelers",
+  "help": {
+    "howToPlay": "Speel samen op hetzelfde apparaat."
+  }
+}

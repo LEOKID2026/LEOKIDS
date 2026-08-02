@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-jump",
+  "title": "Lion saute",
+  "blurb": "Sautez par-dessus les obstacles et collectez des pièces !",
+  "help": {
+    "howToPlay": "Appuyez pour sauter. Surmontez les obstacles et collectez des pièces, des diamants et des aimants en cours de route.",
+    "scoring": "Les pièces et les diamants ajoutent des points. Les sauts consécutifs par-dessus les obstacles donnent un bonus de combo. Frapper un obstacle met fin au jeu.",
+    "rewards": "Plus tu courez loin et plus tu gagnez de points, plus tu obtiendrez de pièces et de diamants.",
+    "tip": "Ne sautez pas à chaque fois - il vaut parfois mieux attendre un moment et sauter au bon moment."
+  }
+}

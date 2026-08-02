@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Atras",
+    "local_badge": "Local",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "Tablero {size}×{size} • {mode}",
+    "vs_bot": "contra robot",
+    "two_players": "2 jugadores",
+    "player_x": "Jugador X",
+    "player_o": "Jugador O",
+    "tie": "Atar",
+    "vs_bot_label": "contra robot",
+    "reset_board": "Reiniciar tablero",
+    "reset_score": "Restablecer puntuacion",
+    "player_won": "{player} gano!",
+    "tie_game": "Atar!",
+    "turn": "Doblar:"
+  }
+}

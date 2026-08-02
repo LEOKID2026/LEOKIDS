@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Leo's pizzeria",
+  "blurb": "Breuken leren door pizza's te maken",
+  "help": {
+    "howToPlay": "Lees de bestelling, voeg toppings toe aan de pizzapunten (tikken of slepen) en tik op 'Pizza serveren'.",
+    "scoring": "Correcte pizza +30, reeks van 3 correcte +15, reeks van 5 +30. Voor fouten worden geen punten afgetrokken.",
+    "rewards": "Munten worden toegekend op basis van het aantal klanten dat je hebt bediend, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als je niet alle 20 klanten hebt bediend.",
+    "tip": "Controleer hoeveel plakjes elke topping bedekt: de helft, kwart en achtste verwijzen naar het aantal plakjes, niet naar een positie."
+  },
+  "accessibility": {
+    "title": "Leo's pizzeria"
+  }
+}

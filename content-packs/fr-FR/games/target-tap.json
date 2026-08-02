@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Cible Tap",
+  "blurb": "Appuyez sur les cibles avant qu'elles ne disparaissent !",
+  "help": {
+    "howToPlay": "Appuyez sur les cibles qui apparaissent à l'écran avant qu'elles ne disparaissent. Tu avez trois vies.",
+    "scoring": "Les cibles ordinaires, les étoiles et les diamants valent des points différents. Manquer coûte une vie. Les coups consécutifs donnent un bonus de combo.",
+    "rewards": "Atteindre la cible touchée ou un score final élevé rapporte des pièces et des diamants.",
+    "tip": "Ne tu précipitez pas sur tout : parfois, une cible avec un diamant vaut plus."
+  }
+}

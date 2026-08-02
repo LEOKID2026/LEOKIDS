@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "Leo-nummer (8 cijfers) of weergavenaam",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "Dit is het nummer dat je aan een vriend geeft; hij of zij kan het hieronder typen om je een vriendschapsverzoek te sturen.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "Voer een Leo-nummer of weergavenaam in. Er wordt een vriendschapsverzoek verzonden ter goedkeuring.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "Kan uw Leo-nummer niet weergeven. Probeer de pagina te vernieuwen.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "Vrienden — beheerd via Admin. Nog niet geopend voor gasten.",
+    "setquery_e_target_value": "setQuery(e.target.value)} />",
+    "remove_this_friend_from_your_list": "Deze vriend uit je lijst verwijderen?",
+    "setting_up_your_leo_number": "Setting up jouw Leo number…",
+    "requests_friends": "Verzoeken en vrienden",
+    "friend_requests": "Vriendschapsverzoeken",
+    "no_friends_yet": "Geen friends yet",
+    "my_leo_number": "Mijn Leo-nummer",
+    "remove_friend": "Vriend verwijderen",
+    "add_friend": "Vriend toevoegen",
+    "my_friends": "Mijn vrienden",
+    "friends": "Vrienden",
+    "approve": "Goedkeuren",
+    "decline": "Afwijzen",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "invite": "Uitnodiging"
+  }
+}

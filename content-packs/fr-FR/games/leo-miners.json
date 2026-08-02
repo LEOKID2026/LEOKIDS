@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-miners",
+  "title": "Léon le mineur",
+  "blurb": "Fusionnez les chiens miniers, cassez des pierres et gagnez des points à échanger !",
+  "help": {
+    "howToPlay": "Ajoutez des chiens miniers au tableau, faites glisser des chiens du même niveau pour les fusionner et brisez des pierres pour gagner des pièces et des points.",
+    "scoring": "Chaque rocher brisé rapporte des pièces. Les points s'accumulent en fonction du niveau du rocher - avec une limite quotidienne.",
+    "rewards": "Les points peuvent être échangés contre des pièces Leo et des diamants (une fois que le serveur est prêt).",
+    "tip": "Améliorez le DPS pour briser les rochers plus rapidement et l'OR pour gagner plus de pièces avec chaque rocher."
+  }
+}

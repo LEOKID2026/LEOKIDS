@@ -1,0 +1,1380 @@
+{
+  "grades": {
+    "g1": {
+      "letters_upper": {
+        "skillId": "english:phonics:g1:letters_upper",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Hoofdletters A–Z",
+        "description": "Identify and name capital letters A–Z in groups",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_lower": {
+        "skillId": "english:phonics:g1:letters_lower",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Kleine letters a–z",
+        "description": "Identify and name lowercase letters a–z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_match": {
+        "skillId": "english:phonics:g1:letters_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Zorg ervoor dat hoofdletters en kleine letters overeenkomen",
+        "description": "Match A↔a … Z↔z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letter_names": {
+        "skillId": "english:phonics:g1:letter_names",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Letter namen",
+        "description": "Letter name versus letter sound",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_sounds": {
+        "skillId": "english:phonics:g1:phonics_sounds",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Lettergeluiden",
+        "description": "Consonant sounds + short vowels a, e, i",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_first_sound": {
+        "skillId": "english:phonics:g1:phonics_first_sound",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "De eerste klank in een Engels word",
+        "description": "First sound in words like cat, dog, sun",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "classroom_words": {
+        "skillId": "english:phonics:g1:classroom_words",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Woorden uit de klas",
+        "description": "book, pen, desk, chair, door, leerkracht, hello, bye",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_words_simple": {
+        "skillId": "english:phonics:g1:first_words_simple",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Eerste simpele woorden",
+        "description": "cat, dog, sun, red, blue, mom, dad",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_words_cvc": {
+        "skillId": "english:phonics:g1:first_words_cvc",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Drieletterwoorden (CVC)",
+        "description": "Limited CVC set: cat, hat, sit, sun, pen, bed",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "picture_word_match": {
+        "skillId": "english:phonics:g1:picture_word_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Picture en word",
+        "description": "Match a picture to a word from words already learned",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_classroom": {
+        "skillId": "english:phonics:g1:listening_classroom",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Instructies voor in de klas",
+        "description": "Stand up, Sit down, Open your book, Close your book",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_commands": {
+        "skillId": "english:phonics:g1:listening_commands",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Meer short instructions",
+        "description": "Point to the door, Show me your pen",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Colors in Engels",
+        "description": "red, blue, green, yellow — identify and match; no spelling yet",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Numbers 0–10 in Engels",
+        "description": "zero–ten; identify the English number",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Family words in Engels",
+        "description": "mom, dad, sister, brother — basic words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Dieren in Engels",
+        "description": "cat, dog, bird, fish — common animal names",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Feelings in Engels",
+        "description": "happy, sad — early feeling words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Actions in Engels",
+        "description": "run, jump, read, eat — simple verbs",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "School words in Engels",
+        "description": "book, pen, desk, leerkracht — classroom items",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_be": {
+        "skillId": "english:pool:grammar:be_basic",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "I am / Je zijn — getting started",
+        "description": "Fixed patterns I am / You are + basic pronouns; no full am/is/are chart yet",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_base": {
+        "skillId": "english:pool:sentence:base",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Korte zinnen – basis",
+        "description": "2–3 word sentences using words already learned",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_classroom": {
+        "skillId": "english:pool:translation:classroom",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Zinnen in de klas",
+        "description": "Hello, Thank you, Please — short word/phrase practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g2": {
+      "letters_review": {
+        "skillId": "english:phonics:g2:letters_review",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Review: letters en names",
+        "description": "Review A–Z capitals, lowercase, and names",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_order": {
+        "skillId": "english:phonics:g2:letters_order",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Alfabetische volgorde",
+        "description": "Order A→Z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_sounds_review": {
+        "skillId": "english:phonics:g2:phonics_sounds_review",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Recensie: geluiden",
+        "description": "Review consonants + vowels; b/p, d/t",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_blending": {
+        "skillId": "english:phonics:g2:phonics_blending",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Meng geluiden",
+        "description": "blend CVC: cat, hat, sit, run, big, red, hot, sun",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sound_letter_match": {
+        "skillId": "english:phonics:g2:sound_letter_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Geluid ↔ letter",
+        "description": "Sound ↔ letter; hear letter → sound",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_word_reading": {
+        "skillId": "english:phonics:g2:first_word_reading",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Eerste woord lezen",
+        "description": "CVC + sight: the, I, a, is",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "word_families_cvc": {
+        "skillId": "english:phonics:g2:word_families_cvc",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Woord gezinnen",
+        "description": "-at, -an, -it, -og families",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "classroom_vocab_g2": {
+        "skillId": "english:phonics:g2:classroom_vocab_g2",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Woordenschat in de klas",
+        "description": "classroom, playground, friend, read, write, listen",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_comprehension": {
+        "skillId": "english:phonics:g2:listening_comprehension",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Begrijpend luisteren",
+        "description": "4 mini dialogues; Who/What",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "picture_audio_word_match": {
+        "skillId": "english:phonics:g2:picture_audio_word_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Picture, sound, en word",
+        "description": "triple match audio↔picture↔word",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "early_sentences_exposure": {
+        "skillId": "english:phonics:g2:early_sentences_exposure",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "Korte zinnen",
+        "description": "I see a cat. It is red. exposure only",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Colors — gebruiken in een Engelse sentence",
+        "description": "Review + words in a short sentence; early writing",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Numbers — up naar 20",
+        "description": "eleven–twenty; use in a sentence",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Family — words in een Engelse sentence",
+        "description": "This is my mom — short pattern",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Dieren — names en sentences",
+        "description": "I see a cat — short pattern",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Feelings — in een Engelse sentence",
+        "description": "I am happy / I am sad",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Actions — verb in een Engelse sentence",
+        "description": "I run / I jump",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "School — objects in een Engelse sentence",
+        "description": "I have a book / My pen is blue",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Voedsel in Engels",
+        "description": "apple, bread, milk, water — words + writing",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_house": {
+        "skillId": "english:vocabulary:wordlist:house",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Home — rooms en objects",
+        "description": "bed, room, door, table — home words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_be": {
+        "skillId": "english:pool:grammar:be_basic",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "am / is / zijn — reinforce",
+        "description": "I am / You are / He is / She is — without formal grammar labels",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_plural_questions": {
+        "skillId": "english:pool:grammar:question_frames",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Plurals en simple questions",
+        "description": "cat/cats; What is this? — short questions",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_base": {
+        "skillId": "english:pool:sentence:base",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Short sentences — Groep 4",
+        "description": "3–4 words; basic punctuation",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Dagelijkse routine - zinnen",
+        "description": "I wake up / I go to school — daily routine",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_classroom": {
+        "skillId": "english:pool:translation:classroom",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Zinnen in het klaslokaal - zinnen",
+        "description": "Short two-way phrase practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_routines": {
+        "skillId": "english:pool:translation:routines",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Dagelijkse routine – oefenen",
+        "description": "Routine sentences of 3–4 words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g3": {
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Acties – eenvoudig presenteren",
+        "description": "Present-simple verbs; recent action words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Animals — in een volledige Engelse sentence",
+        "description": "The dog runs fast — sentence with a verb",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Kleuren - beschrijvend",
+        "description": "The sky is blue — description with is",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Gevoelens – Ze voelt…",
+        "description": "She feels happy / sad",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Familie – gezinsacties",
+        "description": "My brother reads every day",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Voedsel — I eat…",
+        "description": "I eat an apple / I drink milk",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_house": {
+        "skillId": "english:vocabulary:wordlist:house",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Home — objects en place",
+        "description": "The book is on the table — prep for in/on/under",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Numbers — There zijn…",
+        "description": "There are ten books — number + noun",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "School – Wij leren…",
+        "description": "We learn English at school",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_body": {
+        "skillId": "english:vocabulary:wordlist:body",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "De menselijk lichaam in Engels",
+        "description": "head, hand, leg, eye - My head hurts",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sports in Engels",
+        "description": "football, swim, run - I play football",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_weather": {
+        "skillId": "english:vocabulary:wordlist:weather",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Weather in Engels",
+        "description": "sunny, rainy, cloudy - It is sunny",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_present_simple": {
+        "skillId": "english:pool:grammar:present_simple",
+        "learningPageId": "",
+        "pageType": "step_by_step_procedure",
+        "title": "Presenteer eenvoudig: positief, negatief en vraag",
+        "description": "I play / I do not play / Do you play? — clear simple explanation",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_articles_prepositions": {
+        "skillId": "Basic adjectives, a/an/the, and place prepositions in/on/under",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "a / an / the en in / on / under",
+        "description": "Basic articles + place; The cat is under the bed",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_question_frames": {
+        "skillId": "english:pool:grammar:question_frames",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Questions — Groep 5 reinforce",
+        "description": "Do you…? / What is…? — review with present simple",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Dagelijkse routine - volledige zinnen",
+        "description": "I brush my teeth every morning",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_descriptive": {
+        "skillId": "english:pool:sentence:descriptive",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Beschrijvende zinnen",
+        "description": "The big dog runs fast — adjective + noun + verb",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_routines": {
+        "skillId": "english:pool:translation:routines",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Routine – langere oefening",
+        "description": "Routine sentences of 4–5 words",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_hobbies": {
+        "skillId": "english:pool:translation:hobbies",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Hobby's - oefenen",
+        "description": "I like to draw / She plays the piano",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g4": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Dieren — action right now",
+        "description": "The birds are flying — link to continuous",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_body": {
+        "skillId": "english:vocabulary:wordlist:body",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Lichaam — everyday actions",
+        "description": "He washes his hands - Present Simple",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Feelings — Zij feel…",
+        "description": "They feel excited today",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Family — ouders, work",
+        "description": "My parents work hard",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Voedsel — healthy voedsel",
+        "description": "We eat healthy food",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "School — leerlingen, read",
+        "description": "The leerlingen read books",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sports — now op de field",
+        "description": "She is swimming now",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_weather": {
+        "skillId": "english:vocabulary:wordlist:weather",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Weer – vandaag",
+        "description": "It is raining today",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Gemeenschap - park, stad, bibliotheek",
+        "description": "The park is in our town",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Milieu – bomen, bescherm",
+        "description": "We protect the trees",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Travel — bus, reizen",
+        "description": "We travel by bus",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_present_simple": {
+        "skillId": "english:pool:grammar:present_simple",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Presenteer eenvoudig: versterk",
+        "description": "Habit, fact — He walks every day; not continuous",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_simple_continuous": {
+        "skillId": "english:pool:grammar:progressive",
+        "learningPageId": "",
+        "pageType": "contrast_page",
+        "title": "Presenteer eenvoudig versus continu",
+        "description": "I read every day / I am reading now - now vs usually",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_quantifiers": {
+        "skillId": "english:pool:grammar:quantifiers",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "sommige/enige, veel/veel, mijn, langzaam",
+        "description": "Quantity, belonging, adverbs — I have some apples; She runs quickly",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_descriptive": {
+        "skillId": "english:pool:sentence:descriptive",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Beschrijving - bijvoeglijk naamwoord + bijwoord",
+        "description": "The tall girl runs quickly",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Routine — elke dag",
+        "description": "Every day I help at home",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_narrative": {
+        "skillId": "english:pool:sentence:narrative",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Kort verhaal — Eerst… Dan…",
+        "description": "First we pack. Then we go. — simple sequence",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_hobbies": {
+        "skillId": "english:pool:translation:hobbies",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Hobbies — practice met continuous",
+        "description": "He is playing guitar — two-way practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_community": {
+        "skillId": "english:pool:translation:community",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Gemeenschap – praktijk",
+        "description": "The library is near the school",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g5": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Dieren — past simple",
+        "description": "The elephant walked slowly — past-tense verb",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Gemeenschap — bezocht, museum",
+        "description": "We visited the museum — community places in the past",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Gevoelens – ik voelde me trots",
+        "description": "She felt proud — feelings in the past",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Milieu – geplante bomen",
+        "description": "They planted trees last year",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Family — grandouders",
+        "description": "My grandparents live far away",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Voedsel — cooked healthy voedsel",
+        "description": "We cooked healthy soup",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "School-klasproject",
+        "description": "Our class won the project",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Sports — scored a goal",
+        "description": "He scored a goal yesterday",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Travel — zal travel",
+        "description": "We will travel by train — link to future",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_health": {
+        "skillId": "english:vocabulary:wordlist:health",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Health in Engels",
+        "description": "rest, water, doctor, exercise - I need to rest",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_technology": {
+        "skillId": "english:vocabulary:wordlist:technology",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Technology in Engels",
+        "description": "computer, email, internet - She uses a computer",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_past_simple": {
+        "skillId": "english:pool:grammar:past_simple",
+        "learningPageId": "",
+        "pageType": "step_by_step_procedure",
+        "title": "Verleden eenvoudig",
+        "description": "played/went/saw — positive and question; common regular and irregular verbs",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_future_forms": {
+        "skillId": "english:pool:grammar:future_forms",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Future - zal / going naar",
+        "description": "I will call you / We are going to visit",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_modals": {
+        "skillId": "english:pool:grammar:modals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Modals - kan, moet, hebben naar",
+        "description": "You must… / I can… / We have to…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_comparatives": {
+        "skillId": "english:pool:grammar:comparatives",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Comparatives - bigger, meer interesting",
+        "description": "bigger than / more interesting than",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_quantifiers": {
+        "skillId": "english:pool:grammar:quantifiers",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "much/veel — Groep 7 reinforce",
+        "description": "many people / much time — in past and future contexts",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_narrative": {
+        "skillId": "english:pool:sentence:narrative",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Verhaal — Toen kwamen we aan",
+        "description": "First… Then… After that… — past sequence",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_advanced": {
+        "skillId": "english:pool:sentence:advanced",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Langere zinnen",
+        "description": "6–8 words; Last week we learned…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_community": {
+        "skillId": "english:pool:translation:community",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Gemeenschap – langere praktijk",
+        "description": "The hospital is next to the park",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_technology": {
+        "skillId": "english:pool:translation:technology",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Technologie – praktijk",
+        "description": "I will send an email tomorrow",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_global": {
+        "skillId": "english:pool:translation:global",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Wereld – praktijk",
+        "description": "People around the world speak many languages",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g6": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Dieren — past continuous",
+        "description": "The whales were swimming — ongoing past action",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Gemeenschap – festival, vieren",
+        "description": "Our community celebrated — community events",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Feelings — zou kunnen feel",
+        "description": "He might feel nervous — feelings with a modal",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Milieu – klimaat, bescherm",
+        "description": "Climate change affects… — environment topics",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_health": {
+        "skillId": "english:vocabulary:wordlist:health",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Health — moet rest",
+        "description": "You should drink water — health tips",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_technology": {
+        "skillId": "english:vocabulary:wordlist:technology",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Technologie – als/kon",
+        "description": "If the internet stops… — technology with a condition",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Travel — introductie present perfect",
+        "description": "We have visited three countries — introduction only",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_culture": {
+        "skillId": "english:vocabulary:wordlist:culture",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Culture in Engels",
+        "description": "culture, tradition, music, identity",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_global_issues": {
+        "skillId": "english:vocabulary:wordlist:global_issues",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Mondiale problemen",
+        "description": "global issues, peace, cooperation",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_history": {
+        "skillId": "english:vocabulary:wordlist:history",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "Geschiedenis in Engels",
+        "description": "ancient, century, learn about history",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_complex_tenses": {
+        "skillId": "english:pool:grammar:complex_tenses",
+        "learningPageId": "",
+        "pageType": "contrast_page",
+        "title": "Past Continuous + Past Simple + Present Perfect Introductie",
+        "description": "I was reading when…; I have visited - intro only",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_conditionals": {
+        "skillId": "english:pool:grammar:conditionals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "Conditionals — types 0 en 1",
+        "description": "If it rains, we will stay / If you heat ice, it melts",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_modals": {
+        "skillId": "english:pool:grammar:modals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "moet / zou kunnen / could",
+        "description": "You should… / It might… / We could… — not only can/must",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_comparatives": {
+        "skillId": "english:pool:grammar:comparatives",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Superlatives - de meeste interesting",
+        "description": "the best / the most interesting — Groep 8 reinforce",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_advanced": {
+        "skillId": "english:pool:sentence:advanced",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "Complexe zinnen — Terwijl… was…",
+        "description": "8–10 words; While I was studying…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_technology": {
+        "skillId": "english:pool:translation:technology",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "Technologie – geavanceerde praktijk",
+        "description": "Scientists might discover… — two-way practice",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_global": {
+        "skillId": "english:pool:translation:global",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "World — oefenen met een condition",
+        "description": "If we protect the oceans… — longer sentences",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    }
+  }
+}

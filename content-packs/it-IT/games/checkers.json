@@ -1,0 +1,9 @@
+{
+  "gameId": "checkers",
+  "title": "Dama",
+  "blurb": "Juega con amigos en la sala de giochi.",
+  "help": {
+    "howToPlay": "Sigue las instrucciones que aparecen en pantalla para questo gioco.",
+    "tip": "Take turns and have fun."
+  }
+}

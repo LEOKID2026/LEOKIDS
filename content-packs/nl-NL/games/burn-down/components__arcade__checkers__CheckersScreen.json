@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "checkers": "Dammen",
+    "black_left_seat_in_the_list_goes_first_turns_alternate": "Zwart (linkerplaats in de lijst) gaat als eerste; beurten wisselen elkaar af.",
+    "move_diagonally_forward_kings_move_on_all_diagonals": "Beweeg diagonaal naar voren; koningen bewegen op alle diagonalen.",
+    "captures_are_mandatory_when_available": "Opnames zijn verplicht indien beschikbaar.",
+    "multi_jumps_with_the_same_piece_continue_until_no_more_captures": "Multi-sprongen met hetzelfde stuk gaan door totdat er geen vangsten meer zijn."
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "balloons": {
+    "gameId": "balloons",
+    "title": "Ballon Pop",
+    "blurb": "Laat ballonnen knallen voordat de tijd om is!",
+    "help": {
+      "howToPlay": "Tik op ballonnen om ze te laten knappen. Je hebt drie levens en één minuut. Pas op voor bommen!",
+      "scoring": "Normale, gouden en diamanten ballonnen voegen punten toe. Klokballonnen voegen tijd toe, en hartballonnen herstellen een leven. Een bom neemt een leven weg.",
+      "rewards": "Het bereiken van het popdoel of een hoge eindscore levert munten en diamanten op.",
+      "tip": "Kijk uit voor speciale ballonnen; deze kunnen je helpen voordat de tijd om is."
+    }
+  },
+  "bingo": {
+    "gameId": "bingo",
+    "title": "Bingo",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "catcher": {
+    "gameId": "catcher",
+    "title": "Catch met Leo",
+    "blurb": "Vang munten en blijf uit de buurt van bommen!",
+    "help": {
+      "howToPlay": "Beweeg Leo naar links en rechts om munten en diamanten te vangen die uit de lucht vallen.",
+      "scoring": "Elke gevangen munt of diamant levert punten op. Het raken van een bom beëindigt het spel.",
+      "rewards": "Hoe meer punten je verdient, hoe meer munten en diamanten je krijgt voor je kinderwereld.",
+      "tip": "Houd in de gaten wat er valt en wees op tijd voordat het voorwerp de bodem bereikt."
+    }
+  },
+  "checkers": {
+    "gameId": "checkers",
+    "title": "Dammen",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "chess": {
+    "gameId": "chess",
+    "title": "Schaken",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "dominoes": {
+    "gameId": "dominoes",
+    "title": "Domino's",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "flyer": {
+    "gameId": "flyer",
+    "title": "Leo in een Plane",
+    "blurb": "Houd vast om te vliegen, verzamel munten en vermijd obstakels!",
+    "help": {
+      "howToPlay": "Houd de knop of het scherm ingedrukt om te vliegen en laat los om te dalen. Verzamel munten en vermijd obstakels.",
+      "scoring": "Munten en diamanten voegen punten toe. Het raken van een obstakel beëindigt het spel.",
+      "rewards": "Hoe verder je vliegt en hoe meer punten je verdient, hoe meer munten en diamanten je krijgt.",
+      "tip": "Vlieg niet te hoog - soms is het beter om onder een obstakel door te gaan."
+    }
+  },
+  "fourline": {
+    "gameId": "fourline",
+    "title": "Four in een Row",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "fruit-slice": {
+    "gameId": "fruit-slice",
+    "title": "Fruitschijfje",
+    "blurb": "Snijd fruit, vermijd bommen en bereik het scoredoel!",
+    "help": {
+      "howToPlay": "Sleep je vinger over het scherm om vliegend fruit in plakjes te snijden. Vermijd bommen - je hebt drie fouten toegestaan.",
+      "scoring": "Elk gesneden fruit levert punten op. Het in één keer in plakjes snijden van meerdere vruchten levert een combobonus op. Een bom raken of een vrucht missen kost een vergissing.",
+      "rewards": "Het bereiken van het scoredoel op basis van moeilijkheidsgraad levert munten en diamanten op.",
+      "tip": "Snijd alleen fruit. Als je een bom ziet, kun je deze het beste overslaan."
+    }
+  },
+  "leo-bakery": {
+    "gameId": "leo-bakery",
+    "title": "Leo's Bakkerij",
+    "blurb": "Vermenigvuldiging, gelijke groepen en trays",
+    "help": {
+      "howToPlay": "Bouw dienbladen met een gelijke hoeveelheid bakproducten - stel het aantal dienbladen en de hoeveelheid per dienblad in en tik vervolgens op \"Bestelling controleren\".",
+      "scoring": "Correct antwoord +30, tijdbonus tot +20, reeks van 5 correct +25. Voor fouten worden geen punten afgetrokken.",
+      "rewards": "Munten worden toegekend op basis van het aantal bestellingen dat je correct hebt voorbereid, de nauwkeurigheid, de streaks en de moeilijkheidsgraad.",
+      "tip": "Denk na over hoeveel trays × hoeveel per tray – en niet alleen over het eindresultaat."
+    },
+    "accessibility": {
+      "title": "Leo's Bakkerij"
+    }
+  },
+  "leo-gifts": {
+    "gameId": "leo-gifts",
+    "title": "Leo's snoepwinkel",
+    "blurb": "Gelijke deling, resten en snelle rekenen",
+    "help": {
+      "howToPlay": "Verdeel cadeautjes onder de kinderen. Kies hoeveel elk kind krijgt en hoeveel er over zijn voor Leo, en tik vervolgens op 'Controleer verdeling'.",
+      "scoring": "Correct antwoord +30, tijdbonus tot +20, reeks van 5 correct +25. Voor fouten worden geen punten afgetrokken.",
+      "rewards": "Munten worden toegekend op basis van het aantal vragen dat je correct hebt beantwoord, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als het spel is beëindigd vanwege fouten.",
+      "tip": "Controleer of je alles hebt verdeeld en of Leo er niet te veel heeft. Je kunt elk kind meer geven."
+    },
+    "accessibility": {
+      "title": "Leo's snoepwinkel"
+    }
+  },
+  "leo-jump": {
+    "gameId": "leo-jump",
+    "title": "Leeuw springt",
+    "blurb": "Spring over obstakels en verzamel munten!",
+    "help": {
+      "howToPlay": "Tik om te springen. Ontwijk obstakels en verzamel onderweg munten, diamanten en magneten.",
+      "scoring": "Munten en diamanten voegen punten toe. Opeenvolgende sprongen over obstakels geven een combobonus. Het raken van een obstakel beëindigt het spel.",
+      "rewards": "Hoe verder je rent en hoe meer punten je verdient, hoe meer munten en diamanten je krijgt.",
+      "tip": "Spring niet elke keer - soms is het beter om even te wachten en op het juiste moment te springen."
+    }
+  },
+  "leo-lab": {
+    "gameId": "leo-lab",
+    "title": "Leo's Experimentlab",
+    "blurb": "Een spel over experimenten, materialen en oorzaak en gevolg",
+    "help": {
+      "howToPlay": "Lees de experimenttaak, kies items uit de plank (sleep of tik), plaats ze op de labtafel en tik op \"Experiment controleren\".",
+      "scoring": "Een succesvol experiment +30, succes bij de eerste poging +10, reeks van 3 correct +15, reeks van 5 +30. Voor fouten worden geen punten afgetrokken.",
+      "rewards": "Munten worden toegekend op basis van het aantal experimenten waarin je bent geslaagd, de moeilijkheidsgraad, nauwkeurigheid, streaks en het voltooien van 20 experimenten - alleen als je er minstens één keer in bent geslaagd.",
+      "tip": "Denk na over wat er nodig is om de taak te voltooien - vertrouw niet op de hints op de itemkaarten."
+    },
+    "accessibility": {
+      "title": "Leo's Experimentlab"
+    }
+  },
+  "leo-miners": {
+    "gameId": "leo-miners",
+    "title": "Leo de Miner",
+    "blurb": "Voeg mijnhonden samen, breek rotsen en verdien punten om in te wisselen!",
+    "help": {
+      "howToPlay": "Voeg mijnhonden toe aan het bord, sleep honden van hetzelfde niveau om ze samen te voegen en breek rotsen om munten en punten te verdienen.",
+      "scoring": "Elke gebroken steen levert munten op. Punten worden verzameld op basis van het stadium van de rots - met een dagelijkse limiet.",
+      "rewards": "Punten kunnen worden ingewisseld voor Leo-munten en diamanten (zodra de server gereed is).",
+      "tip": "Upgrade DPS om stenen sneller te breken, en GOUD om meer munten uit elke steen te verdienen."
+    }
+  },
+  "leo-number-path": {
+    "gameId": "leo-number-path",
+    "title": "Leo's nummerpad",
+    "blurb": "Reeksen, oneven-even en veelvouden",
+    "help": {
+      "howToPlay": "Kies getallen uit het pad op basis van de taak (even getallen, veelvouden, overslaan of een reeks) en tik vervolgens op 'Controleer pad'.",
+      "scoring": "Correct bij de eerste poging +30, tweede poging +20, derde poging +10. Na 3 fouten ga je door naar de volgende taak.",
+      "rewards": "Munten worden toegekend op basis van het aantal van de 20 taken dat je hebt voltooid, de nauwkeurigheid, de streaks en het voltooien van het pad.",
+      "tip": "Let erop of de volgorde ertoe doet - voor het overslaan van tellingen en reeksen moet u de volgorde kiezen."
+    },
+    "accessibility": {
+      "title": "Leo's nummerpad"
+    }
+  },
+  "leo-pizzeria": {
+    "gameId": "leo-pizzeria",
+    "title": "Leo's pizzeria",
+    "blurb": "Breuken leren door pizza's te maken",
+    "help": {
+      "howToPlay": "Lees de bestelling, voeg toppings toe aan de pizzapunten (tikken of slepen) en tik op 'Pizza serveren'.",
+      "scoring": "Correcte pizza +30, reeks van 3 correcte +15, reeks van 5 +30. Voor fouten worden geen punten afgetrokken.",
+      "rewards": "Munten worden toegekend op basis van het aantal klanten dat je hebt bediend, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als je niet alle 20 klanten hebt bediend.",
+      "tip": "Controleer hoeveel plakjes elke topping bedekt: de helft, kwart en achtste verwijzen naar het aantal plakjes, niet naar een positie."
+    },
+    "accessibility": {
+      "title": "Leo's pizzeria"
+    }
+  },
+  "leo-supermarket": {
+    "gameId": "leo-supermarket",
+    "title": "Leo's supermarkt",
+    "blurb": "Een spel over geld, winkelen en wisselgeld geven",
+    "help": {
+      "howToPlay": "Een klant vraagt ​​om producten - pak ze uit de plank, bereken het wisselgeld en kies bijpassende munten. Tik op 'Geef wisselgeld' als je klaar bent.",
+      "scoring": "Juiste product +10, juiste wisselgeld +25, tevreden klant +30, meteen bij de eerste poging wisselen +10, snelle service +5. Een fout of bijna geen tijd −5.",
+      "rewards": "Munten worden toegekend op basis van het aantal klanten dat je hebt bediend, de nauwkeurigheid, de streaks en de moeilijkheidsgraad, zelfs als je niet alle 20 klanten hebt bediend.",
+      "tip": "Controleer het aankoopbedrag en hoeveel de klant heeft betaald. Bereken zelf hoeveel wisselgeld u terug moet geven."
+    },
+    "accessibility": {
+      "title": "Leo's supermarkt"
+    }
+  },
+  "leo-word-detective": {
+    "gameId": "leo-word-detective",
+    "title": "Leo's Woorddetective",
+    "blurb": "Sleep bewijsmateriaal naar het bord en los lees- en woordenschatvragen op",
+    "help": {
+      "howToPlay": "Sleep bewijskaarten naar het onderzoeksbord en tik op 'Zaak oplossen'. Als het antwoord juist is, is de zaak gesloten!",
+      "scoring": "Correct antwoord +30, tijdbonus, streak van 3 +15, streak van 5 +30. Time-out −5. Een fout beëindigt het spel niet; het telt alleen maar.",
+      "rewards": "Munten worden toegekend op basis van het aantal van de 20 cases dat je hebt opgelost, nauwkeurigheid, streaks en moeilijkheidsgraad.",
+      "tip": "Lees de casustaak zorgvuldig door. Op moeilijk niveau staat een korte passage op het bord."
+    },
+    "accessibility": {
+      "title": "Leo's Woorddetective"
+    }
+  },
+  "leo-word-train": {
+    "gameId": "leo-word-train",
+    "title": "Leo's Woordtrein",
+    "blurb": "Letters, woorden en zinnen in het Engels - rijdend op de treinwagons",
+    "help": {
+      "howToPlay": "Kies een kaart, laad deze in een lege auto en tik op 'Stuur de trein'. Als het antwoord juist is, vertrekt de trein!",
+      "scoring": "Correct antwoord +30, tijdbonus, streak van 3 +15, streak van 5 +30. Time-out −5. Een fout beëindigt het spel niet; het telt alleen maar.",
+      "rewards": "Munten worden toegekend op basis van het aantal van de 20 taken dat je hebt voltooid, de nauwkeurigheid, de streaks en de moeilijkheidsgraad.",
+      "tip": "Op eenvoudig - alleen letters. Middellange - korte woorden. Moeilijk - korte zinnen."
+    },
+    "accessibility": {
+      "title": "Leo's Woordtrein"
+    }
+  },
+  "ludo": {
+    "gameId": "ludo",
+    "title": "Ludo",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "maze": {
+    "gameId": "maze",
+    "title": "Leo's doolhof",
+    "blurb": "Vind de uitgang van het doolhof voordat de tijd om is!",
+    "help": {
+      "howToPlay": "Verplaats Leo door het doolhof, verzamel sleutels en sterren en vind de uitgang voordat de tijd om is.",
+      "scoring": "Sleutels, sterren en diamanten voegen punten toe. Het voltooien van het doolhof geeft een grote bonus. Als de tijd om is, eindigt het spel.",
+      "rewards": "Als je het doolhof met succes voltooit op basis van de moeilijkheidsgraad, krijg je munten, en een scorebonus voegt nog meer toe.",
+      "tip": "Verzamel eerst de sleutels - soms ontgrendelen ze een korter pad."
+    }
+  },
+  "memory-match": {
+    "gameId": "memory-match",
+    "title": "Geheugenmatch",
+    "blurb": "Draai kaarten om, vind paren en probeer te winnen.",
+    "players": "1–2 spelers",
+    "help": {
+      "howToPlay": "Speel samen op hetzelfde apparaat."
+    }
+  },
+  "memory": {
+    "gameId": "memory",
+    "title": "Leo's geheugenspel",
+    "blurb": "Draai kaarten om en vind paren voordat de klok om is!",
+    "help": {
+      "howToPlay": "Tik op een kaart om hem om te draaien en zoek het bijpassende paar. Elk paar dat je vindt, blijft open.",
+      "scoring": "Je begint met een hoge score - hoe langer je erover doet, hoe lager deze daalt. Alle paren vinden voordat de tijd om is = winnen.",
+      "rewards": "Winnen op basis van moeilijkheidsgraad levert munten en diamanten op. Hoe hoger de score, hoe groter de beloning.",
+      "tip": "Probeer te onthouden waar je elke foto hebt gezien, zelfs als je het paar niet meteen hebt gevonden."
+    }
+  },
+  "picture-puzzle": {
+    "gameId": "picture-puzzle",
+    "title": "Fotopuzzel",
+    "blurb": "Maak de stukjes van Leo's foto compleet!",
+    "help": {
+      "howToPlay": "Sleep de afbeeldingsstukken naar de juiste plaats op het bord. Voltooi alle stukken voordat de tijd om is.",
+      "scoring": "Hoe sneller je klaar bent en hoe minder zetten je gebruikt, hoe hoger de score. Als de tijd om is voordat je klaar bent, is er geen overwinning.",
+      "rewards": "Het voltooien van de puzzel op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+      "tip": "Begin met de hoeken en randen; het is gemakkelijker om te zien waar elk stuk thuishoort."
+    }
+  },
+  "puzzle": {
+    "gameId": "puzzle",
+    "title": "Leo's puzzel",
+    "blurb": "Voeg tegels samen en verzamel punten voordat de tijd om is!",
+    "help": {
+      "howToPlay": "Verplaats tegels op het bord om overeenkomende nummers samen te voegen. Hoe groter de getallen, hoe hoger de score.",
+      "scoring": "Elke samenvoeging levert punten op. Het doel is om het scoredoel te bereiken voordat de tijd om is.",
+      "rewards": "Winnen op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+      "tip": "Probeer een hoek vrij te houden zodat je ruimte hebt om tegels te verplaatsen."
+    }
+  },
+  "recycling-factory": {
+    "gameId": "recycling-factory",
+    "title": "Leo's recyclingfabriek",
+    "blurb": "Sorteer afval in de juiste bakken en help het milieu te beschermen",
+    "help": {
+      "howToPlay": "Sleep of tik een item van de lopende band en kies vervolgens de juiste bak. Sorteer voldoende items voordat je het maximale aantal fouten bereikt.",
+      "scoring": "Correcte sortering +10, snelle sortering +5, reeks van 5 correcte +20, reeks van 10 +50. Een fout of gemist item −5 (score daalt nooit onder 0).",
+      "rewards": "Munten worden toegekend op basis van het aantal items dat je correct hebt gesorteerd, de nauwkeurigheid, de streaks en het bereiken van het doel, zelfs als je niet het hele spel hebt uitgespeeld.",
+      "tip": "Let op het soort artikel: papier, plastic, glas, metaal of algemeen afval."
+    },
+    "accessibility": {
+      "title": "Leo's recyclingfabriek"
+    }
+  },
+  "rock-paper-scissors": {
+    "gameId": "rock-paper-scissors",
+    "title": "Steen · Papier · Schaar",
+    "blurb": "Quick rounds — best van alle.",
+    "players": "2 players of vs robot",
+    "help": {
+      "howToPlay": "Speel samen op hetzelfde apparaat."
+    }
+  },
+  "smart-blocks": {
+    "gameId": "smart-blocks",
+    "title": "Slimme blokken",
+    "blurb": "Plaats vormen, maak rijen en kolommen leeg en bereik het scoredoel!",
+    "help": {
+      "howToPlay": "Sleep vormen naar het bord, draai ze indien nodig en plaats ze om rijen en kolommen te vullen.",
+      "scoring": "Het wissen van een rij of kolom levert punten op. Het doel is om het scoredoel te bereiken voordat het bord vol is.",
+      "rewards": "Winnen op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+      "tip": "Probeer meerdere rijen tegelijk leeg te maken - het levert veel punten op."
+    }
+  },
+  "snakes-and-ladders": {
+    "gameId": "snakes-and-ladders",
+    "title": "Snakes en Ladders",
+    "blurb": "Speel met vrienden in de speelhal",
+    "help": {
+      "howToPlay": "Volg de instructies op het scherm voor dit spel.",
+      "tip": "Wissel af en heb plezier."
+    }
+  },
+  "sort-shapes": {
+    "gameId": "sort-shapes",
+    "title": "Vormen sorteren",
+    "blurb": "Sorteer vormen en kleuren in de juiste vakjes!",
+    "help": {
+      "howToPlay": "Sleep elke vorm op vorm of kleur naar het overeenkomende vak. Voltooi al het sorteren voordat de tijd om is.",
+      "scoring": "Elke correcte sortering levert punten op. Een fout wordt van de score afgetrokken. Als de tijd om is voordat je klaar bent, eindigt het spel.",
+      "rewards": "Succesvol eindigen op basis van moeilijkheidsgraad levert munten op, en een scorebonus voegt nog meer toe.",
+      "tip": "Bepaal eerst tot welk vak elke vorm behoort en sleep vervolgens met vertrouwen."
+    }
+  },
+  "tap-battle": {
+    "gameId": "tap-battle",
+    "title": "Tik op Gevecht",
+    "blurb": "Elke kant tikt zo snel als ze kunnen – wie wint?",
+    "players": "2 spelers",
+    "help": {
+      "howToPlay": "Speel samen op hetzelfde apparaat."
+    }
+  },
+  "target-tap": {
+    "gameId": "target-tap",
+    "title": "Doel tik",
+    "blurb": "Tik op de doelen voordat ze verdwijnen!",
+    "help": {
+      "howToPlay": "Tik op de doelen die op het scherm verschijnen voordat ze verdwijnen. Je hebt drie levens.",
+      "scoring": "Normale doelen, sterren en diamanten zijn verschillende punten waard. Vermist kost een leven. Opeenvolgende treffers geven een combobonus.",
+      "rewards": "Het bereiken van het trefferdoel of een hoge eindscore levert munten en diamanten op.",
+      "tip": "Ga niet overhaast te werk - soms is een doelwit met een diamant meer waard."
+    }
+  },
+  "tic-tac-toe": {
+    "gameId": "tic-tac-toe",
+    "title": "Tic-Tac-Toe",
+    "blurb": "Borden van 3×3 tot 7×7 met scoreregistratie.",
+    "players": "2 spelers",
+    "help": {
+      "howToPlay": "Speel samen op hetzelfde apparaat."
+    }
+  }
+}

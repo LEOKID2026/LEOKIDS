@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "Geen data yet",
+    "data_unavailable_right_now": "Gegevens zijn momenteel niet beschikbaar",
+    "loading": "Laden……",
+    "cumulative": "Cumulatief",
+    "for_the_current_month": "Voor de current month",
+    "cumulative_from_all_sessions": "Cumulative van alle sessions",
+    "from_completed_sessions": "Van completed sessions",
+    "from_all_sessions_with_duration": "Van alle sessies met duur",
+    "credited_learning_time_questions_books_and_parent_activities": "Gecrediteerde leertijd - vragen, boeken en ouderactiviteiten"
+  }
+}

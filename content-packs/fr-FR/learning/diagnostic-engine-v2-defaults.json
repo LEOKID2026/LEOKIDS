@@ -1,0 +1,44 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Rassembler plus de preuves avant d'élaborer un plan",
+    "shortPractice": "3 à 7 éléments sur le même sujet avec une difficulté légèrement inférieure",
+    "avoid": "Ne sautez pas trop haut dans le niveau et ne mélangez pas plusieurs sujets ensemble.",
+    "improvementSignals": [
+      "Moins d'erreurs répétitives",
+      "Correction indépendante après une erreur"
+    ],
+    "failureSignals": [
+      "Aucun changement après deux cycles structurés"
+    ],
+    "hypothesisChange": "Échec du contrôle proposé, ou succès uniquement avec de lourdes allusions"
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Ne sautez pas trop haut dans le niveau, ne mélangez pas plusieurs sujets ou ne tu fiez pas à des retours généraux sans exemple.",
+    "improvementSignals": [
+      "Faire correspondre les marqueurs de réussite de la taxonomie",
+      "Transférer le succès à une tâche similaire"
+    ],
+    "hypothesisChange": "Lorsque la sonde recommandée échoue ou que des contre-preuves solides apparaissent"
+  },
+  "probeFallback": {
+    "objective": "Séparer une lacune fondamentale d'un problème spécifique à un sujet",
+    "specification": "Une tâche parallèle sur le même principe avec une complexité réduite",
+    "stoppingRule": "Deux séquences cohérentes ou amélioration stable",
+    "escalationRule": "Aucune amélioration après deux cycles"
+  },
+  "probeWithTaxonomy": {
+    "objective": "Distinguer une difficulté fondamentale d’une difficulté spécifique à un sujet",
+    "stoppingRule": "Respecter le seuil de récurrence des lignes ou rejeter l'hypothèse",
+    "hypothesisChange": "Lorsque la sonde recommandée échoue ou que des contre-preuves solides apparaissent"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Pression de vitesse et manque de connaissances",
+    "carelessPattern": "Insouciance ou incompréhension",
+    "instructionFriction": "Friction entre instructions/indices et écart conceptuel",
+    "distinguishingEvidence": [
+      "Comparez les performances chronométrées et non chronométrées",
+      "Comparez les indications clairsemées et riches",
+      "Vérifier la récurrence par famille de modèles"
+    ]
+  }
+}
