@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "helpCenter": "Help centre"
+  },
+  "home": {
+    "subhead": "Practice maths, geometry, English, and science — built for school students in Classes 1–6."
+  },
+  "public": {
+    "contact": {
+      "faq": {
+        "subjects": {
+          "a": "The site includes practice in maths, geometry, English, and science — based on what is open and available for your child."
+        },
+        "parentsSee": {
+          "a": "Parents can view reports showing performance, repeating mistakes, strengths, and topics to keep practising."
+        }
+      }
+    },
+    "homepage": {
+      "howItWorks": {
+        "step2": "Child starts learning, practising, and playing"
+      },
+      "valueCards": {
+        "1": {
+          "text": "Practice, games, coins, and progress in a friendly, colourful journey."
+        }
+      },
+      "learningSystem": {
+        "capabilities": {
+          "subject-map": {
+            "text": "See progress across maths, geometry, English, and science down to the topics practised."
+          }
+        }
+      },
+      "parentBenefits": {
+        "highlight": "Instead of guessing where it's hard — get organised insight about what to work on."
+      },
+      "kids": {
+        "benefits": {
+          "0": {
+            "text": "Colourful questions and challenges that make practice feel lighter."
+          }
+        }
+      },
+      "finalCta": {
+        "text": "Open an account, add your child, and build an organised learning picture from practice, activities, and games."
+      },
+      "teachers": {
+        "title": "Organised practice and tracking between lessons"
+      }
+    },
+    "about": {
+      "intro1": "The site is designed for school students in Classes 1 to 6 (primary and upper-primary levels) with practice by subject, class, topic, and difficulty level. Every child can start where it makes sense, move forward gradually, and reinforce the topics where they need more confidence.",
+      "missionMuted": "The system combines practice, playfulness, parent reports, and progress summaries to create a learning process that feels personal, organised, and encouraging.",
+      "learnEnjoyBody": "Beyond academic practice, the site includes educational games, engaging play, coins, and cards designed to add fun, motivation, and enjoyment to learning. The goal is for kids not to feel they are only \"doing homework,\" but entering a colourful kids world where they can learn, play, and progress with a good feeling.",
+      "siteFeatures": {
+        "0": {
+          "text": "Maths, geometry, English, and science."
+        },
+        "1": {
+          "phase": "Classes and difficulty levels"
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Select a class",
+    "gradeRequired": "Please select a class.",
+    "filterSuitable": "Suitable for class",
+    "gradeSuitable": "Suitable for class",
+    "allowGradePicker": "Allow child to pick class on learning pages"
+  },
+  "student": {
+    "subjectsIntro": "Progress by subject — accuracy, questions, level, and stars. Tap \"Go to subject\" to start practising."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "home": {
+    "subhead": "Pratiquez les mathématiques, la géométrie, l’anglais et les sciences – conçus pour les élèves de l’enseignement élémentaire."
+  },
+  "layout": {
+    "backHome": "Retour à l’accueil"
+  },
+  "pwa": {
+    "backHome": "Retour à l’accueil"
+  },
+  "parent": {
+    "selectGrade": "Choisir un niveau",
+    "gradeRequired": "Veuillez sélectionner un niveau.",
+    "allowGradePicker": "Autoriser l’enfant à choisir le niveau sur les pages d’apprentissage"
+  }
+}

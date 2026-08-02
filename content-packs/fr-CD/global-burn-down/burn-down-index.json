@@ -1,0 +1,30 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1re primaire",
+    "grade_2": "2e primaire",
+    "grade_3": "3e primaire",
+    "grade_4": "4e primaire",
+    "grade_5": "5e primaire",
+    "grade_6": "6e primaire"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1re primaire",
+    "grade_2": "2e primaire",
+    "grade_3": "3e primaire",
+    "grade_4": "4e primaire",
+    "grade_5": "5e primaire",
+    "grade_6": "6e primaire"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1re primaire",
+    "grade_2": "2e primaire",
+    "grade_3": "3e primaire",
+    "grade_4": "4e primaire",
+    "grade_5": "5e primaire",
+    "grade_6": "6e primaire"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Pratique numérique pour les élèves du primaire en République démocratique du Congo : mathématiques, géométrie, anglais et sciences.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — pratique pour les élèves du primaire en République démocratique du Congo."
+  }
+}

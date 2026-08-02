@@ -178,6 +178,24 @@ function isFrenchSwitzerlandInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isFrenchSenegalInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "fr-sn";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchCongoInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "fr-cd";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isDutchNetherlandsInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "nl-nl";
@@ -246,6 +264,8 @@ function isLocalizedMeaningLocale(locale) {
     isFrenchCanadaInstructionLocale(locale) ||
     isFrenchBelgiumInstructionLocale(locale) ||
     isFrenchSwitzerlandInstructionLocale(locale) ||
+    isFrenchSenegalInstructionLocale(locale) ||
+    isFrenchCongoInstructionLocale(locale) ||
     isDutchNetherlandsInstructionLocale(locale) ||
     isDutchBelgiumInstructionLocale(locale) ||
     isGermanGermanyInstructionLocale(locale) ||
@@ -276,6 +296,8 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "fr-fr") chainLocale = "fr-FR";
   else if (tag === "fr-be") chainLocale = "fr-BE";
   else if (tag === "fr-ch") chainLocale = "fr-CH";
+  else if (tag === "fr-sn") chainLocale = "fr-SN";
+  else if (tag === "fr-cd") chainLocale = "fr-CD";
   else if (tag === "fr-ci") chainLocale = "fr-CI";
   else if (tag === "fr-ca") chainLocale = "fr-CA";
   else if (tag === "nl-be") chainLocale = "nl-BE";

@@ -1,0 +1,62 @@
+{
+  "lib__learning__subject-permissions__subject-access.server": {
+    "you_don_t_have_permission_to_select_this_grade": "You don't have permission to select this basic level."
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Digital practice for primary school learners in maths, geometry, English, and science.",
+    "math_practice_by_grade_and_topic_leo_kids": "Maths practice by basic level and topic · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "English practice by basic level and topic · Leo Kids",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Geometry practice by basic level and topic · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Ready worksheets, a worksheet generator, and answer keys for primary school practice.",
+    "help_center_leo_kids": "Help centre · Leo Kids",
+    "math_practice_at_home_leo_kids_guides": "Maths practice at home · Leo Kids guides",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "How to choose a maths topic, respond to mistakes, and build steady home practice.",
+    "math_games_for_kids_leo_kids_guides": "Maths games for kids · Leo Kids guides",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "How to use maths games for operations, numbers, and problem-solving practice.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — practice for primary school learners."
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "Basic 1",
+    "grade_2": "Basic 2",
+    "grade_3": "Basic 3",
+    "grade_4": "Basic 4",
+    "grade_5": "Basic 5",
+    "grade_6": "Basic 6"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "Basic 1",
+    "grade_2": "Basic 2",
+    "grade_3": "Basic 3",
+    "grade_4": "Basic 4",
+    "grade_5": "Basic 5",
+    "grade_6": "Basic 6"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "Basic 1",
+    "grade_2": "Basic 2",
+    "grade_3": "Basic 3",
+    "grade_4": "Basic 4",
+    "grade_5": "Basic 5",
+    "grade_6": "Basic 6"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Try changing the filters - or select all subjects, basic levels, and difficulties.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Choose a subject, basic level, topic, and difficulty - then create a worksheet ready to print.",
+    "ready_made_worksheets_by_grade": "Ready-made worksheets by basic level"
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Please select a basic level"
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "No classes in this basic level."
+  },
+  "pages__school__students__index": {
+    "no_children_in_this_grade": "No children in this basic level."
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Learning for primary school learners"
+  },
+  "utils__question-metadata-qa__question-bank-discovery": {
+    "procedural_math_items_metadata_assigned_at_generation_time": "Procedural maths items - metadata assigned at generation time"
+  }
+}

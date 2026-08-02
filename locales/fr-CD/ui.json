@@ -1,0 +1,24 @@
+{
+  "layout": {
+    "backHome": "Retour à l’accueil"
+  },
+  "pwa": {
+    "backHome": "Retour à l’accueil"
+  },
+  "public": {
+    "about": {
+      "intro1": "Le site est conçu pour les élèves du primaire avec une pratique par matière, année, sujet et niveau de difficulté. Chaque enfant peut commencer là où cela a du sens, avancer progressivement et renforcer les sujets pour lesquels il a besoin de plus de confiance.",
+      "siteFeatures": {
+        "1": {
+          "phase": "Années et niveaux de difficulté",
+          "text": "Entraînez-vous en fonction de l’année, du sujet et du niveau de difficulté pour des progrès progressifs et clairs."
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Choisir une année",
+    "gradeRequired": "Veuillez sélectionner une année.",
+    "allowGradePicker": "Autoriser l’enfant à choisir l’année sur les pages d’apprentissage"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "remediateSameLevel": "Keep practising at the same level.",
+  "maintainAndStrengthen": "Keep practising and gently raise the challenge.",
+  "actions": {
+    "remediateSameLevel": "Keep practising at the same level.",
+    "maintainAndStrengthen": "Keep practising and gently raise the challenge."
+  },
+  "v2": {
+    "executive": {
+      "majorTrendsManyUnitsLine2": "When relatively many topics are reviewed at once, strong stability doesn't always show up right away in the same way across all of them - that's normal; it helps to keep practising to stabilise what looks recurring."
+    }
+  }
+}

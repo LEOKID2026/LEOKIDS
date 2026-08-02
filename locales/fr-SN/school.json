@@ -1,0 +1,18 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez le niveau scolaire (CI–CM2), le groupe-classe et la matière — rapports et gestion par niveau scolaire",
+    "chooseGrade": "Choisissez un niveau",
+    "choosePhysicalClass": "Choisissez le groupe-classe",
+    "backGrades": "← Retour aux niveaux",
+    "colGrade": "Niveau",
+    "createStudentGrade": "Niveau",
+    "createStudentClass": "Classe (groupe-classe à l’école)",
+    "classMgmtGrade": "Niveau",
+    "assignCurrentGrade": "Niveau actuel",
+    "assignTargetGrade": "Niveau cible",
+    "studentsSubtitle": "Parcourez par niveau scolaire et par classe — rapports sur les enfants sans saisir d’identifiant"
+  },
+  "communication": {
+    "detailsFieldGrade": "Niveau"
+  }
+}

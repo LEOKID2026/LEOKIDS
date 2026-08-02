@@ -709,8 +709,37 @@ test("it-CH child/adult address: no tu/Lei mix in same string; no German/French 
 });
 
 test("isolation: it-CH pruning did not modify it-IT; de-CH untouched; Italy grades intact", () => {
-  // Wave 6 may intentionally leave it-IT dirty from the authority fix. Isolation here proves
-  // the it-CH agent only owns it-CH paths and did not rewrite Italy grade terminology.
+  // Hygiene must pass on a clean tree: tracked it-CH files + runtime grade split prove isolation.
+  // Dirty porcelain is optional — when present, it-IT must stay out of an it-CH-only task.
+  const trackedItCh = execFileSync(
+    "git",
+    [
+      "ls-files",
+      "--",
+      "locales/it-CH",
+      "content-packs/it-CH",
+      "data/help-center/it-CH",
+      "tests/i18n/it-CH-content-layer.test.mjs",
+    ],
+    { cwd: ROOT, encoding: "utf8" }
+  )
+    .trim()
+    .split(/\r?\n/)
+    .filter(Boolean);
+  assert.ok(trackedItCh.length > 0, "it-CH files must be tracked in git");
+  assert.ok(
+    trackedItCh.some((p) => p.startsWith("locales/it-CH/")),
+    "tracked locales/it-CH expected"
+  );
+  assert.ok(
+    trackedItCh.some((p) => p.startsWith("content-packs/it-CH/")),
+    "tracked content-packs/it-CH expected"
+  );
+  assert.ok(
+    trackedItCh.includes("tests/i18n/it-CH-content-layer.test.mjs"),
+    "tracked it-CH content-layer test expected"
+  );
+
   const deChStatus = execFileSync(
     "git",
     [
@@ -727,6 +756,10 @@ test("isolation: it-CH pruning did not modify it-IT; de-CH untouched; Italy grad
 
   const itCommon = JSON.parse(fs.readFileSync(path.join(ROOT, "locales", BASE, "common.json"), "utf8"));
   assert.equal(itCommon.grade1, "1ª primaria");
+  assert.equal(itCommon.grade2, "2ª primaria");
+  assert.equal(itCommon.grade3, "3ª primaria");
+  assert.equal(itCommon.grade4, "4ª primaria");
+  assert.equal(itCommon.grade5, "5ª primaria");
   assert.equal(itCommon.grade6, "1ª secondaria");
   assert.equal(itCommon.accessDenied, "Non ha accesso a questa pagina.");
 
@@ -734,23 +767,40 @@ test("isolation: it-CH pruning did not modify it-IT; de-CH untouched; Italy grad
     fs.readFileSync(path.join(ROOT, "locales", LOCALE, "common.json"), "utf8")
   );
   assert.equal(chCommon.grade1, "1ª elementare");
+  assert.equal(chCommon.grade2, "2ª elementare");
+  assert.equal(chCommon.grade3, "3ª elementare");
+  assert.equal(chCommon.grade4, "4ª elementare");
+  assert.equal(chCommon.grade5, "5ª elementare");
   assert.equal(chCommon.grade6, "1ª media");
   assert.equal(chCommon.accessDenied, undefined);
 
-  // Porcelain under it-CH / it-CH tests only — no writes into it-IT from this suite.
-  const chOnly = execFileSync(
-    "git",
-    [
-      "status",
-      "--porcelain",
-      "--",
-      "locales/it-CH",
-      "content-packs/it-CH",
-      "data/help-center/it-CH",
-      "tests/i18n/it-CH-content-layer.test.mjs",
-    ],
-    { cwd: ROOT, encoding: "utf8" }
-  ).trim();
-  assert.match(chOnly, /it-CH/, "it-CH worktree should contain it-CH paths");
-  assert.doesNotMatch(chOnly, /locales\/it-IT|content-packs\/it-IT|data\/help-center\/it-IT/);
+  const porcelain = execFileSync("git", ["status", "--porcelain"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  }).trim();
+
+  if (porcelain) {
+    const lines = porcelain.split(/\r?\n/).filter(Boolean);
+    const itItHits = lines.filter((line) =>
+      /(?:^|[\s])(?:locales|content-packs|data\/help-center)\/it-IT\b/.test(line)
+    );
+    assert.deepEqual(
+      itItHits,
+      [],
+      `it-CH isolation must not leave unexpected it-IT porcelain:\n${itItHits.join("\n")}`
+    );
+
+    const chRelevant = lines.filter((line) =>
+      /(?:locales|content-packs|data\/help-center)\/it-CH\b|tests\/i18n\/it-CH-content-layer\.test\.mjs/.test(
+        line
+      )
+    );
+    for (const line of chRelevant) {
+      assert.doesNotMatch(
+        line,
+        /locales\/it-IT|content-packs\/it-IT|data\/help-center\/it-IT/,
+        `it-CH porcelain must not touch it-IT: ${line}`
+      );
+    }
+  }
 });

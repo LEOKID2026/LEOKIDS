@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Anglais — 1re primaire"
+    },
+    "english.g2": {
+      "bookTitle": "Anglais — 2e primaire"
+    },
+    "english.g3": {
+      "bookTitle": "Anglais — 3e primaire"
+    },
+    "english.g4": {
+      "bookTitle": "Anglais — 4e primaire"
+    },
+    "english.g5": {
+      "bookTitle": "Anglais — 5e primaire"
+    },
+    "english.g6": {
+      "bookTitle": "Anglais — 6e primaire"
+    },
+    "geometry.g1": {
+      "bookTitle": "Géométrie — 1re primaire"
+    },
+    "geometry.g2": {
+      "bookTitle": "Géométrie — 2e primaire"
+    },
+    "geometry.g3": {
+      "bookTitle": "Géométrie — 3e primaire"
+    },
+    "geometry.g4": {
+      "bookTitle": "Géométrie — 4e primaire"
+    },
+    "geometry.g5": {
+      "bookTitle": "Géométrie — 5e primaire"
+    },
+    "geometry.g6": {
+      "bookTitle": "Géométrie — 6e primaire"
+    },
+    "math.g1": {
+      "bookTitle": "Mathématiques — 1re primaire"
+    },
+    "math.g2": {
+      "bookTitle": "Mathématiques — 2e primaire"
+    },
+    "math.g3": {
+      "bookTitle": "Mathématiques — 3e primaire"
+    },
+    "math.g4": {
+      "bookTitle": "Mathématiques — 4e primaire"
+    },
+    "math.g5": {
+      "bookTitle": "Mathématiques — 5e primaire"
+    },
+    "math.g6": {
+      "bookTitle": "Mathématiques — 6e primaire"
+    },
+    "science.g1": {
+      "bookTitle": "Sciences — 1re primaire"
+    },
+    "science.g2": {
+      "bookTitle": "Sciences — 2e primaire"
+    },
+    "science.g3": {
+      "bookTitle": "Sciences — 3e primaire"
+    },
+    "science.g4": {
+      "bookTitle": "Sciences — 4e primaire"
+    },
+    "science.g5": {
+      "bookTitle": "Sciences — 5e primaire"
+    },
+    "science.g6": {
+      "bookTitle": "Sciences — 6e primaire"
+    }
+  }
+}

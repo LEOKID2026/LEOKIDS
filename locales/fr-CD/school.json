@@ -1,0 +1,16 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez l’année scolaire (1re–6e année primaire), le groupe-classe et la matière — rapports et gestion par année scolaire",
+    "chooseGrade": "Choisissez une année",
+    "choosePhysicalClass": "Choisissez le groupe-classe",
+    "backGrades": "← Retour aux années",
+    "colGrade": "Année",
+    "createStudentGrade": "Année",
+    "classMgmtGrade": "Année",
+    "assignCurrentGrade": "Année actuelle",
+    "assignTargetGrade": "Année cible"
+  },
+  "communication": {
+    "detailsFieldGrade": "Année"
+  }
+}

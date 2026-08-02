@@ -1,0 +1,10 @@
+{
+  "series": {
+    "math": "Maths achievements"
+  },
+  "gradeBands": {
+    "g12": "Basic 1–2",
+    "g34": "Basic 3–4",
+    "g56": "Basic 5–6"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Anglais — CI"
+    },
+    "english.g2": {
+      "bookTitle": "Anglais — CP"
+    },
+    "english.g3": {
+      "bookTitle": "Anglais — CE1"
+    },
+    "english.g4": {
+      "bookTitle": "Anglais — CE2"
+    },
+    "english.g5": {
+      "bookTitle": "Anglais — CM1"
+    },
+    "english.g6": {
+      "bookTitle": "Anglais — CM2"
+    },
+    "geometry.g1": {
+      "bookTitle": "Géométrie — CI"
+    },
+    "geometry.g2": {
+      "bookTitle": "Géométrie — CP"
+    },
+    "geometry.g3": {
+      "bookTitle": "Géométrie — CE1"
+    },
+    "geometry.g4": {
+      "bookTitle": "Géométrie — CE2"
+    },
+    "geometry.g5": {
+      "bookTitle": "Géométrie — CM1"
+    },
+    "geometry.g6": {
+      "bookTitle": "Géométrie — CM2"
+    },
+    "math.g1": {
+      "bookTitle": "Mathématiques — CI"
+    },
+    "math.g2": {
+      "bookTitle": "Mathématiques — CP"
+    },
+    "math.g3": {
+      "bookTitle": "Mathématiques — CE1"
+    },
+    "math.g4": {
+      "bookTitle": "Mathématiques — CE2"
+    },
+    "math.g5": {
+      "bookTitle": "Mathématiques — CM1"
+    },
+    "math.g6": {
+      "bookTitle": "Mathématiques — CM2"
+    },
+    "science.g1": {
+      "bookTitle": "Sciences — CI"
+    },
+    "science.g2": {
+      "bookTitle": "Sciences — CP"
+    },
+    "science.g3": {
+      "bookTitle": "Sciences — CE1"
+    },
+    "science.g4": {
+      "bookTitle": "Sciences — CE2"
+    },
+    "science.g5": {
+      "bookTitle": "Sciences — CM1"
+    },
+    "science.g6": {
+      "bookTitle": "Sciences — CM2"
+    }
+  }
+}

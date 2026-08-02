@@ -1,0 +1,26 @@
+{
+  "bar": {
+    "gradeLabel": "Basic level",
+    "changeGrade": "Change basic level"
+  },
+  "enter": {
+    "intro": "Pick a basic level and explore the kids world. {minutes} minutes of play and learning — no sign-up.",
+    "activeSessionNote": "You have an active demo — changing basic level will not reset the timer.",
+    "chooseGradeLegend": "Choose a basic level"
+  },
+  "missions": {
+    "mathTitle": "Practice maths",
+    "mathDescription": "Answer 5 maths questions"
+  },
+  "subjects": {
+    "math": "Maths"
+  },
+  "grades": {
+    "g1": "Basic 1",
+    "g2": "Basic 2",
+    "g3": "Basic 3",
+    "g4": "Basic 4",
+    "g5": "Basic 5",
+    "g6": "Basic 6"
+  }
+}

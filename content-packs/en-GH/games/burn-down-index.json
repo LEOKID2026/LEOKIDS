@@ -1,0 +1,28 @@
+{
+  "components__educational-games__leo-lab__leo-lab-data": {
+    "grades_1_2": "Basic 1–2"
+  },
+  "components__educational-games__leo-lab__leo-lab-experiments-clean": {
+    "color_experiment": "Colour Experiment"
+  },
+  "components__educational-games__leo-word-detective__leo-word-detective-data": {
+    "grades_1_2": "Basic 1–2",
+    "grades_3_4": "Basic 3–4",
+    "grades_5_6": "Basic 5–6"
+  },
+  "components__educational-games__leo-word-train__leo-word-train-data": {
+    "grades_1_2": "Basic 1–2",
+    "grades_3_4": "Basic 3–4",
+    "grades_5_6": "Basic 5–6"
+  },
+  "components__solo-games__prototypes__dev__ConnectColorsPrototype": {
+    "connect_colors": "Connect Colours"
+  },
+  "lib__educational-games__educational-game-registry": {
+    "equal_division_remainders_and_quick_math": "Equal division, remainders, and quick maths"
+  },
+  "lib__solo-games__solo-game-registry": {
+    "sort_shapes_and_colors_into_the_correct_boxes": "Sort shapes and colours into the correct boxes!",
+    "drag_each_shape_to_the_matching_box_by_shape_or_color_finish_all_the_sor": "Drag each shape to the matching box by shape or colour. Finish all the sorting before time runs out."
+  }
+}

@@ -53,7 +53,7 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 51);
+  assert.equal(locales.length, 55);
   assert.deepEqual(
     locales.map((l) => l.id),
     [
@@ -108,6 +108,10 @@ test("selectable locales for switcher are English + country names", () => {
       "fr-BE",
       "fr-CH",
       "it-CH",
+      "en-IN",
+      "en-GH",
+      "fr-SN",
+      "fr-CD",
     ]
   );
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
@@ -181,6 +185,14 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["fr-CH"].pathPrefix, "ch-fr");
   assert.equal(byId["it-CH"].nativeName, "Switzerland-it");
   assert.equal(byId["it-CH"].pathPrefix, "ch-it");
+  assert.equal(byId["en-IN"].nativeName, "India-en");
+  assert.equal(byId["en-IN"].pathPrefix, "in-en");
+  assert.equal(byId["en-GH"].nativeName, "Ghana");
+  assert.equal(byId["en-GH"].pathPrefix, "gh");
+  assert.equal(byId["fr-SN"].nativeName, "Senegal");
+  assert.equal(byId["fr-SN"].pathPrefix, "sn");
+  assert.equal(byId["fr-CD"].nativeName, "DR Congo");
+  assert.equal(byId["fr-CD"].pathPrefix, "cd");
 });
 
 test("same-page language switch preserves path, query, and hash", () => {
@@ -228,9 +240,9 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.doesNotMatch(switcher, /Hebrew|עברית|flag/i);
 });
 
-test("LanguageSwitcher list can reach all selectable locales including wave-6 countries", () => {
+test("LanguageSwitcher list can reach all selectable locales including wave-7 countries", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 51);
+  assert.equal(locales.length, 55);
   assert.equal(locales[0].id, "en");
   assert.ok(locales.some((l) => l.id === "pt-BR" && l.nativeName === "Brasil"));
   assert.ok(locales.some((l) => l.id === "pt-PT" && l.nativeName === "Portugal"));
@@ -252,6 +264,10 @@ test("LanguageSwitcher list can reach all selectable locales including wave-6 co
   assert.ok(locales.some((l) => l.id === "fr-BE" && l.nativeName === "Belgium-fr" && l.pathPrefix === "be-fr"));
   assert.ok(locales.some((l) => l.id === "fr-CH" && l.nativeName === "Switzerland-fr" && l.pathPrefix === "ch-fr"));
   assert.ok(locales.some((l) => l.id === "it-CH" && l.nativeName === "Switzerland-it" && l.pathPrefix === "ch-it"));
-  assert.equal(locales[locales.length - 1].id, "it-CH");
-  assert.equal(locales[locales.length - 1].nativeName, "Switzerland-it");
+  assert.ok(locales.some((l) => l.id === "en-IN" && l.nativeName === "India-en" && l.pathPrefix === "in-en"));
+  assert.ok(locales.some((l) => l.id === "en-GH" && l.nativeName === "Ghana" && l.pathPrefix === "gh"));
+  assert.ok(locales.some((l) => l.id === "fr-SN" && l.nativeName === "Senegal" && l.pathPrefix === "sn"));
+  assert.ok(locales.some((l) => l.id === "fr-CD" && l.nativeName === "DR Congo" && l.pathPrefix === "cd"));
+  assert.equal(locales[locales.length - 1].id, "fr-CD");
+  assert.equal(locales[locales.length - 1].nativeName, "DR Congo");
 });

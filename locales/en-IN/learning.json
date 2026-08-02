@@ -1,0 +1,79 @@
+{
+  "hubBlurb": "Choose a subject and start practising.",
+  "chooseGrade": "Choose a class",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "noBadgesYet": "No badges yet. Keep practising!",
+    "gradeRequired": "Please choose a class before practising. Ask a parent to update your class.",
+    "enterPlayerNameForMistake": "Enter a player name to practise the selected mistake",
+    "noMistakesToPractice": "No mistakes to practise",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practise by class (start low and advance to your chosen class), or pick a focus area.",
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry.",
+    "notEnoughQuestions": "Not enough questions for the topic/class/difficulty you chose. Try changing a setting.",
+    "gradeFallback": "Class",
+    "gradedPracticeBlurb": "Practise by class — starts low and advances to your chosen class",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "grades": {
+      "g1": "Class 1",
+      "g2": "Class 2",
+      "g3": "Class 3",
+      "g4": "Class 4",
+      "g5": "Class 5",
+      "g6": "Class 6"
+    },
+    "practiceModes": {
+      "graded": "Practise by class"
+    },
+    "gradeTitle": "Class {grade}",
+    "mistakePracticeBlurb": "Pick a recent mistake to open focused practice in the same topic, class, and difficulty.",
+    "currentGrade": "Current class",
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practise by class.",
+    "gradedPracticeLabel": "Practise by class (start low → your chosen class)",
+    "referenceCategories": {
+      "operations": "Maths operations"
+    }
+  },
+  "math": {
+    "levelUpScience": "You levelled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practise maths in a fun way, matched to class, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "howToLearnSteps": {
+      "step1": "Choose a class, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    },
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths.",
+    "pickRowOrColumn": "Pick a row or column to practise:"
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practise geometry in a fun way, matched to class, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a class, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    },
+    "errors": {
+      "invalidGrade": "Invalid class. Please choose another class.",
+      "noTopics": "No topics available for this class. Please choose another class.",
+      "noQuestions": "No questions available for the selected topic and class."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practise science in a fun way, matched to class, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a class, difficulty, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

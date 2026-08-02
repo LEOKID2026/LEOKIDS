@@ -1,0 +1,10 @@
+{
+  "gradeLabel": "Basic {grade}",
+  "subjectMath": "Maths",
+  "grade1": "Basic 1",
+  "grade2": "Basic 2",
+  "grade3": "Basic 3",
+  "grade4": "Basic 4",
+  "grade5": "Basic 5",
+  "grade6": "Basic 6"
+}

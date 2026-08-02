@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "english.g1": {
+      "bookTitle": "English — Basic 1"
+    },
+    "english.g2": {
+      "bookTitle": "English — Basic 2"
+    },
+    "english.g3": {
+      "bookTitle": "English — Basic 3"
+    },
+    "english.g4": {
+      "bookTitle": "English — Basic 4"
+    },
+    "english.g5": {
+      "bookTitle": "English — Basic 5"
+    },
+    "english.g6": {
+      "bookTitle": "English — Basic 6"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometry — Basic 1"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometry — Basic 2"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometry — Basic 3"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometry — Basic 4"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometry — Basic 5"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometry — Basic 6"
+    },
+    "math.g1": {
+      "bookTitle": "Maths — Basic 1"
+    },
+    "math.g2": {
+      "bookTitle": "Maths — Basic 2"
+    },
+    "math.g3": {
+      "bookTitle": "Maths — Basic 3"
+    },
+    "math.g4": {
+      "bookTitle": "Maths — Basic 4"
+    },
+    "math.g5": {
+      "bookTitle": "Maths — Basic 5"
+    },
+    "math.g6": {
+      "bookTitle": "Maths — Basic 6"
+    },
+    "science.g1": {
+      "bookTitle": "Science — Basic 1"
+    },
+    "science.g2": {
+      "bookTitle": "Science — Basic 2"
+    },
+    "science.g3": {
+      "bookTitle": "Science — Basic 3"
+    },
+    "science.g4": {
+      "bookTitle": "Science — Basic 4"
+    },
+    "science.g5": {
+      "bookTitle": "Science — Basic 5"
+    },
+    "science.g6": {
+      "bookTitle": "Science — Basic 6"
+    }
+  }
+}

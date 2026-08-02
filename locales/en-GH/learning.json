@@ -1,0 +1,80 @@
+{
+  "hubBlurb": "Choose a subject and start practising.",
+  "chooseGrade": "Choose a basic level",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "defaultPlayerName": "Learner",
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "noBadgesYet": "No badges yet. Keep practising!",
+    "gradeRequired": "Please choose a basic level before practising. Ask a parent to update your basic level.",
+    "enterPlayerNameForMistake": "Enter a player name to practise the selected mistake",
+    "noMistakesToPractice": "No mistakes to practise",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practise by basic level (start low and advance to your chosen basic level), or pick a focus area.",
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry.",
+    "notEnoughQuestions": "Not enough questions for the topic/basic level/difficulty you chose. Try changing a setting.",
+    "gradeFallback": "Basic level",
+    "gradedPracticeBlurb": "Practise by basic level — starts low and advances to your chosen basic level",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "grades": {
+      "g1": "Basic 1",
+      "g2": "Basic 2",
+      "g3": "Basic 3",
+      "g4": "Basic 4",
+      "g5": "Basic 5",
+      "g6": "Basic 6"
+    },
+    "practiceModes": {
+      "graded": "Practise by basic level"
+    },
+    "gradeTitle": "Basic {grade}",
+    "mistakePracticeBlurb": "Pick a recent mistake to open focused practice in the same topic, basic level, and difficulty.",
+    "currentGrade": "Current basic level",
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practise by basic level.",
+    "gradedPracticeLabel": "Practise by basic level (start low → your chosen basic level)",
+    "referenceCategories": {
+      "operations": "Maths operations"
+    }
+  },
+  "math": {
+    "levelUpScience": "You levelled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practise maths in a fun way, matched to basic level, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "howToLearnSteps": {
+      "step1": "Choose a basic level, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    },
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths.",
+    "pickRowOrColumn": "Pick a row or column to practise:"
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practise geometry in a fun way, matched to basic level, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a basic level, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    },
+    "errors": {
+      "invalidGrade": "Invalid basic level. Please choose another basic level.",
+      "noTopics": "No topics available for this basic level. Please choose another basic level.",
+      "noQuestions": "No questions available for the selected topic and basic level."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practise science in a fun way, matched to basic level, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a basic level, difficulty, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

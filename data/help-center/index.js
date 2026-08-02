@@ -141,6 +141,23 @@ import {
   ALL_ARTICLES_IT_CH,
   BY_SECTION_IT_CH,
 } from "./it-CH/index.js";
+import {
+  ALL_ARTICLES_EN_IN,
+  BY_SECTION_EN_IN,
+} from "./en-IN/index.js";
+import {
+  ALL_ARTICLES_EN_GH,
+  BY_SECTION_EN_GH,
+  SECTIONS_EN_GH,
+} from "./en-GH/index.js";
+import {
+  ALL_ARTICLES_FR_SN,
+  BY_SECTION_FR_SN,
+} from "./fr-SN/index.js";
+import {
+  ALL_ARTICLES_FR_CD,
+  BY_SECTION_FR_CD,
+} from "./fr-CD/index.js";
 
 export {
   ALL_ARTICLES_ES_419,
@@ -162,10 +179,15 @@ export {
   ALL_ARTICLES_FR_CA,
   ALL_ARTICLES_FR_BE,
   ALL_ARTICLES_FR_CH,
+  ALL_ARTICLES_FR_SN,
+  ALL_ARTICLES_FR_CD,
   ALL_ARTICLES_PT_MZ,
   SECTIONS_PT_MZ,
   ALL_ARTICLES_EN_KE,
   SECTIONS_EN_KE,
+  ALL_ARTICLES_EN_IN,
+  ALL_ARTICLES_EN_GH,
+  SECTIONS_EN_GH,
   ALL_ARTICLES_DE_CH,
   SECTIONS_DE_CH,
   ALL_ARTICLES_NL_NL,
@@ -264,6 +286,8 @@ export function resolveHelpLocale(locale) {
   if (id === "en-za") return "en-ZA";
   if (id === "en-ng") return "en-NG";
   if (id === "en-ke") return "en-KE";
+  if (id === "en-in") return "en-IN";
+  if (id === "en-gh") return "en-GH";
   // English Canada / Philippines have no Help overlay — inherit English base.
   if (id === "en-ca" || id === "en-ph") return "en";
   // Portugal owns public path /pt; bare `pt` is not an alias of Brazil.
@@ -277,6 +301,8 @@ export function resolveHelpLocale(locale) {
   if (id === "it-it" || id === "it") return "it-IT";
   if (id === "fr-be") return "fr-BE";
   if (id === "fr-ch") return "fr-CH";
+  if (id === "fr-sn") return "fr-SN";
+  if (id === "fr-cd") return "fr-CD";
   if (id === "fr-ci") return "fr-CI";
   if (id === "fr-ca") return "fr-CA";
   if (id === "fr-fr" || id === "fr") return "fr-FR";
@@ -306,6 +332,8 @@ export function getHelpSections(locale) {
   if (helpLocale === "en-ZA") return SECTIONS_EN_ZA;
   if (helpLocale === "en-NG") return SECTIONS;
   if (helpLocale === "en-KE") return SECTIONS_EN_KE;
+  if (helpLocale === "en-IN") return SECTIONS;
+  if (helpLocale === "en-GH") return SECTIONS_EN_GH;
   if (helpLocale === "pt-AO") return SECTIONS_PT_AO;
   if (helpLocale === "pt-MZ") return SECTIONS_PT_MZ;
   if (helpLocale === "pt-PT") return SECTIONS_PT_PT;
@@ -314,6 +342,8 @@ export function getHelpSections(locale) {
   if (helpLocale === "it-IT") return SECTIONS_IT_IT;
   if (helpLocale === "fr-BE") return SECTIONS_FR_FR;
   if (helpLocale === "fr-CH") return SECTIONS_FR_FR;
+  if (helpLocale === "fr-SN") return SECTIONS_FR_FR;
+  if (helpLocale === "fr-CD") return SECTIONS_FR_FR;
   if (helpLocale === "fr-CI") return SECTIONS_FR_FR;
   if (helpLocale === "fr-CA") return SECTIONS_FR_FR;
   if (helpLocale === "fr-FR") return SECTIONS_FR_FR;
@@ -367,6 +397,12 @@ export function listArticles(section, locale) {
   if (helpLocale === "en-KE") {
     return BY_SECTION_EN_KE[section] || [];
   }
+  if (helpLocale === "en-IN") {
+    return BY_SECTION_EN_IN[section] || [];
+  }
+  if (helpLocale === "en-GH") {
+    return BY_SECTION_EN_GH[section] || [];
+  }
   if (helpLocale === "pt-AO") {
     return BY_SECTION_PT_AO[section] || [];
   }
@@ -390,6 +426,12 @@ export function listArticles(section, locale) {
   }
   if (helpLocale === "fr-CH") {
     return BY_SECTION_FR_CH[section] || [];
+  }
+  if (helpLocale === "fr-SN") {
+    return BY_SECTION_FR_SN[section] || [];
+  }
+  if (helpLocale === "fr-CD") {
+    return BY_SECTION_FR_CD[section] || [];
   }
   if (helpLocale === "fr-CI") {
     return BY_SECTION_FR_CI[section] || [];
@@ -498,6 +540,8 @@ export function assertAllArticlesValid() {
     { locale: "en-ZA", articles: ALL_ARTICLES_EN_ZA },
     { locale: "en-NG", articles: ALL_ARTICLES_EN_NG },
     { locale: "en-KE", articles: ALL_ARTICLES_EN_KE },
+    { locale: "en-IN", articles: ALL_ARTICLES_EN_IN },
+    { locale: "en-GH", articles: ALL_ARTICLES_EN_GH },
     { locale: "en-SCT", articles: ALL_ARTICLES_EN_SCT },
     { locale: "en-NIR", articles: ALL_ARTICLES_EN_NIR },
     { locale: "pt-AO", articles: ALL_ARTICLES_PT_AO },
@@ -506,6 +550,8 @@ export function assertAllArticlesValid() {
     { locale: "fr-CA", articles: ALL_ARTICLES_FR_CA },
     { locale: "fr-BE", articles: ALL_ARTICLES_FR_BE },
     { locale: "fr-CH", articles: ALL_ARTICLES_FR_CH },
+    { locale: "fr-SN", articles: ALL_ARTICLES_FR_SN },
+    { locale: "fr-CD", articles: ALL_ARTICLES_FR_CD },
     { locale: "nl-BE", articles: ALL_ARTICLES_NL_BE },
     { locale: "it-CH", articles: ALL_ARTICLES_IT_CH },
     { locale: "de-AT", articles: ALL_ARTICLES_DE_AT },

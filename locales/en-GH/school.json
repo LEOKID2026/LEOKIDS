@@ -1,0 +1,28 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a basic level, class group and subject — reports and management by basic level",
+    "chooseGrade": "Choose a basic level",
+    "choosePhysicalClass": "Choose class group",
+    "backGrades": "← Back to basic levels",
+    "colGrade": "Basic level",
+    "colClass": "Class group",
+    "classLabel": "Class group",
+    "physicalClassReportTitle": "General class group report",
+    "physicalClassReportButton": "General class group report",
+    "physicalClassLoading": "Loading general class group report…",
+    "studentsSubtitle": "Browse by basic level and class group — view child reports without entering IDs",
+    "createStudentGrade": "Basic level",
+    "createStudentClass": "Class group (class name at school)",
+    "classMgmtGrade": "Basic level",
+    "assignCurrentGrade": "Current basic level",
+    "assignTargetGrade": "Target basic level"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this basic level",
+    "audienceGradeTeachers": "Teachers of this basic level",
+    "detailsFieldGrade": "Basic level"
+  },
+  "reportSummary": {
+    "studentLine": "Answers: {totalAnswers} · Accuracy: {accuracy} · Basic level: {gradeLevel}"
+  }
+}
