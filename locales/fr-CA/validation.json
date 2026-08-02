@@ -1,0 +1,9 @@
+{
+  "invalidEmail": "Entrez une adresse courriel valide.",
+  "invalidGrade": "Cette année n’est pas valide.",
+  "api": {
+    "staff_user_not_found": "Aucun utilisateur enregistré trouvé avec ce courriel. Inscrivez-vous/connectez-vous d’abord sur le portail des enseignants, puis créez un lien vers l’école.",
+    "confirm_email_mismatch": "L’adresse courriel ne correspond pas",
+    "parent_not_found": "Aucun parent trouvé avec ce courriel"
+  }
+}

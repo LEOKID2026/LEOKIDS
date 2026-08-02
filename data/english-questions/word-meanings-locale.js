@@ -106,6 +106,15 @@ function isPortugueseAngolaInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isPortugueseMozambiqueInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "pt-mz";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isItalianInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "it-it";
@@ -127,6 +136,15 @@ function isFrenchFranceInstructionLocale(locale) {
 function isFrenchCoteIvoireInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "fr-ci";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isFrenchCanadaInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "fr-ca";
 }
 
 /**
@@ -160,6 +178,15 @@ function isGermanAustriaInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isGermanSwitzerlandInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "de-ch";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isRussianRussiaInstructionLocale(locale) {
   const tag = normalizeLocaleTag(locale);
   return tag === "ru-ru";
@@ -175,12 +202,15 @@ function isLocalizedMeaningLocale(locale) {
     isPortugueseBrazilInstructionLocale(locale) ||
     isPortuguesePortugalInstructionLocale(locale) ||
     isPortugueseAngolaInstructionLocale(locale) ||
+    isPortugueseMozambiqueInstructionLocale(locale) ||
     isItalianInstructionLocale(locale) ||
     isFrenchFranceInstructionLocale(locale) ||
     isFrenchCoteIvoireInstructionLocale(locale) ||
+    isFrenchCanadaInstructionLocale(locale) ||
     isDutchNetherlandsInstructionLocale(locale) ||
     isGermanGermanyInstructionLocale(locale) ||
     isGermanAustriaInstructionLocale(locale) ||
+    isGermanSwitzerlandInstructionLocale(locale) ||
     isRussianRussiaInstructionLocale(locale)
   );
 }
@@ -200,12 +230,15 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "pt-br") chainLocale = "pt-BR";
   else if (tag === "pt-pt") chainLocale = "pt-PT";
   else if (tag === "pt-ao") chainLocale = "pt-AO";
+  else if (tag === "pt-mz") chainLocale = "pt-MZ";
   else if (tag === "it-it") chainLocale = "it-IT";
   else if (tag === "fr-fr") chainLocale = "fr-FR";
   else if (tag === "fr-ci") chainLocale = "fr-CI";
+  else if (tag === "fr-ca") chainLocale = "fr-CA";
   else if (tag === "nl-nl") chainLocale = "nl-NL";
   else if (tag === "de-de") chainLocale = "de-DE";
   else if (tag === "de-at") chainLocale = "de-AT";
+  else if (tag === "de-ch") chainLocale = "de-CH";
   else if (tag === "ru-ru") chainLocale = "ru-RU";
   const chain = getLocaleFallbackChain(chainLocale);
   /** @type {Record<string, Record<string, string>>} */

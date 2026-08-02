@@ -1,0 +1,23 @@
+{
+  "inkSaveHint": "Am besten für Schwarz-Weiss-Druck mit weniger Tinte",
+  "includeAnswers": "Lösungen einschliessen",
+  "mixedTopicsHint": "Wählen Sie die Themen, die in der gemischten Übung enthalten sein sollen. Standardmässig sind alle Themen ausgewählt.",
+  "writingLetterCaseField": "Gross-/Kleinschreibung",
+  "coloringCreateHintSub": "Drucken Sie direkt aus dem Vorschaufenster, oder schliessen Sie es und wählen Sie eine andere Karte.",
+  "coloringModalClose": "Schliessen",
+  "coloringUploadHint": "Ihr Foto wird sicher an einen externen Verarbeitungsdienst gesendet, ausschliesslich um das Malblatt zu erstellen. Es wird nicht auf LEO-KIDS-Servern gespeichert.",
+  "coloringUploadPrivacyBody": "Ihr Foto wird sicher an einen externen Verarbeitungsdienst gesendet, ausschliesslich um das Malblatt zu erstellen. Es wird nicht auf LEO-KIDS-Servern gespeichert.",
+  "coloringUploadBrushWhite": "Löschen (weiss)",
+  "coloringUploadBrushSize": "Pinselgrösse",
+  "coloringUploadTitleField": "Titel (optional — standardmässig leer)",
+  "coloringUploadPayloadTooLarge": "Das Foto ist zu gross zur Verarbeitung. Versuchen Sie ein anderes Foto oder einen kleineren Ausschnitt.",
+  "writingLetterCaseUpper": "Grossbuchstaben",
+  "writingLetterCasePairs": "Gross-/Kleinbuchstaben-Paare",
+  "writingRefPresetUpperLabel": "Alle Grossbuchstaben",
+  "writingRefPresetUpperTitle": "Alle Grossbuchstaben",
+  "writingLetterSize": "Buchstabengrösse",
+  "writingFontSizeLg": "Gross",
+  "writingFontSizeXl": "Extra gross",
+  "writingErrorInvalidLetterCase": "Die gewählte Gross-/Kleinschreibung ist nicht gültig",
+  "writingErrorBodyTooLarge": "Die Anfrage ist zu gross"
+}

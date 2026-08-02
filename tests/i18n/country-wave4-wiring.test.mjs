@@ -69,9 +69,9 @@ const COUNTRIES = [
   },
 ];
 
-test("selector count is 43 and includes wave-4 countries once each", () => {
+test("selector count is 47 and includes wave-4 countries once each", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 43);
+  assert.equal(locales.length, 47);
   for (const c of COUNTRIES) {
     const hits = locales.filter((l) => l.id === c.id);
     assert.equal(hits.length, 1, c.id);

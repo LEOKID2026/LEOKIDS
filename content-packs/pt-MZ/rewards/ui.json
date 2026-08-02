@@ -1,0 +1,31 @@
+{
+  "gradeBands": {
+    "g12": "1.ª–2.ª classe",
+    "g34": "3.ª–4.ª classe",
+    "g56": "5.ª–6.ª classe"
+  },
+  "series": {
+    "sport-fun": "Desportos e Diversão"
+  },
+  "fallback": {
+    "keepLearning": "Continuar a aprender para desbloquear este cartão"
+  },
+  "surpriseBox": {
+    "keepLearning": "Continuar a aprender – uma nova caixa estará disponível em breve!",
+    "myCollection": "A minha coleção"
+  },
+  "previewModal": {
+    "download": "Descarregue o meu cartão",
+    "downloading": "A descarregar..."
+  },
+  "cardsPage": {
+    "tabs": {
+      "collection": {
+        "label": "A minha coleção"
+      }
+    }
+  },
+  "surpriseBoxModal": {
+    "doneTitle": "Boa! Recebeste recompensas!"
+  }
+}

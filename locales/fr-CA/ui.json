@@ -1,0 +1,34 @@
+{
+  "installApp": {
+    "androidStep3": "Sur un cellulaire : appuyez sur « Ajouter à l’écran d’accueil » dans le menu du navigateur."
+  },
+  "public": {
+    "contact": {
+      "form": {
+        "emailLabel": "Courriel",
+        "deliveryPending": "Le formulaire a été validé, mais l’envoi des courriels depuis le site est toujours en cours de configuration sur le serveur. Pour l’instant, contactez-nous directement en utilisant le bouton courriel ci-dessous.",
+        "errors": {
+          "email": "Veuillez entrer votre adresse courriel.",
+          "emailInvalid": "Cette adresse courriel ne semble pas valide."
+        }
+      },
+      "social": {
+        "email": "Le courriel de Léo",
+        "emailAria": "Envoyer un courriel à {email}"
+      },
+      "faq": {
+        "reportBug": {
+          "a": "Contactez-nous en utilisant le bouton courriel sur cette page. Nous apprécions les commentaires, les idées et les rapports qui contribuent à améliorer le site."
+        }
+      }
+    }
+  },
+  "parent": {
+    "selectGrade": "Choisir une année",
+    "gradeRequired": "Veuillez sélectionner une année.",
+    "allowGradePicker": "Autoriser l’enfant à choisir l’année sur les pages d’apprentissage"
+  },
+  "help": {
+    "videoModalMobile": "Vidéo tutoriel (cellulaire)"
+  }
+}

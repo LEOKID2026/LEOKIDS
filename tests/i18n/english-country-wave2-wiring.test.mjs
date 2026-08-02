@@ -53,7 +53,7 @@ const WAVE2 = [
   {
     id: "en-CA",
     prefix: "ca",
-    label: "Canada",
+    label: "Canada-en",
     fallback: ["en-CA", "en"],
     grade1: "Grade 1",
     chooseGrade: "Choose a grade",
@@ -152,16 +152,18 @@ test("wave2 canonical redirects and reserved routes", () => {
   assert.equal(stripLocaleFromPath("/wls/parents").locale, "en-WLS");
 });
 
-test("selector adds Canada Singapore South Africa Wales; count 43", () => {
+test("selector adds Canada Singapore South Africa Wales; count 47", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 43);
+  assert.equal(locales.length, 47);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of WAVE2) {
     assert.equal(byId[c.id].label, c.label);
     assert.equal(byId[c.id].nativeName, c.label);
     assert.notEqual(byId[c.id].label, c.id);
   }
-  assert.ok(!locales.some((l) => /United Kingdom|Canada-en|Canada-fr|Welsh|Wales-cy/i.test(l.label)));
+  assert.ok(!locales.some((l) => /United Kingdom|Welsh|Wales-cy/i.test(l.label)));
+  assert.ok(locales.some((l) => l.id === "en-CA" && l.label === "Canada-en"));
+  assert.ok(locales.some((l) => l.id === "fr-CA" && l.label === "Canada-fr"));
   assert.ok(locales.some((l) => l.id === "en-WLS"));
 });
 

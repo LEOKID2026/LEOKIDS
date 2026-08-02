@@ -1,0 +1,41 @@
+{
+  "lib__site__public-page-seo": {
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "fichas de trabalho prontas, um gerador de fichas de trabalho e soluções para prática no Ensino Primário.",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Prática digital para alunos do Ensino Primário em matemática, geometria, inglês e ciências.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — prática para alunos do Ensino Primário."
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1.ª classe",
+    "grade_2": "2.ª classe",
+    "grade_3": "3.ª classe",
+    "grade_4": "4.ª classe",
+    "grade_5": "5.ª classe",
+    "grade_6": "6.ª classe"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1.ª classe",
+    "grade_2": "2.ª classe",
+    "grade_3": "3.ª classe",
+    "grade_4": "4.ª classe",
+    "grade_5": "5.ª classe",
+    "grade_6": "6.ª classe"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1.ª classe",
+    "grade_2": "2.ª classe",
+    "grade_3": "3.ª classe",
+    "grade_4": "4.ª classe",
+    "grade_5": "5.ª classe",
+    "grade_6": "6.ª classe"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Escolha uma matéria, a classe, tópico e nível e crie uma ficha de trabalho pronta para imprimir.",
+    "ready_made_worksheets_by_grade": "fichas de trabalho prontas por classe"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "you_don_t_have_permission_to_select_this_grade": "Não tem permissão para selecionar esta classe."
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Aprendizagem para alunos do Ensino Primário"
+  }
+}

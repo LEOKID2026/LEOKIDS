@@ -1,0 +1,15 @@
+{
+  "createHint": "Selecione a disciplina, a classe, o tópico e o nível – depois crie uma ficha de trabalho pronta para imprimir.",
+  "publicReadyTitle": "Fichas de trabalho prontas por classe",
+  "gradeField": "Classe",
+  "gradeFilterAll": "Todas as classes",
+  "gradeG1": "1.ª classe",
+  "gradeG2": "2.ª classe",
+  "gradeG3": "3.ª classe",
+  "gradeG4": "4.ª classe",
+  "gradeG5": "5.ª classe",
+  "gradeG6": "6.ª classe",
+  "selectGrade": "Classe",
+  "readyEmptyText": "Experimente alterar os filtros — ou escolha todas as disciplinas, classes e níveis.",
+  "publicDemoHint": "Uma breve demonstração com 8 exercícios – escolha disciplina, classe e tópico."
+}

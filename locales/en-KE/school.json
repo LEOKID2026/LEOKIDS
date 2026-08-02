@@ -1,0 +1,9 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a grade, physical class and subject — reports and management by grade"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this grade",
+    "audienceGradeTeachers": "Teachers of this grade"
+  }
+}

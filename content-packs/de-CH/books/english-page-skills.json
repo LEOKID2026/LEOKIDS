@@ -1,0 +1,35 @@
+{
+  "grades": {
+    "g2": {
+      "vocab_school": {
+        "title": "Schule — Gegenstände im Satz"
+      },
+      "grammar_be": {
+        "title": "am / is / are — üben"
+      },
+      "sentence_base": {
+        "title": "Kurze Sätze — 2. Klasse"
+      }
+    },
+    "g3": {
+      "vocab_school": {
+        "title": "Schule — We learn…"
+      }
+    },
+    "g4": {
+      "grammar_present_simple": {
+        "title": "Present simple — üben"
+      }
+    },
+    "g5": {
+      "vocab_school": {
+        "title": "Schule — Klassenprojekt"
+      }
+    },
+    "g6": {
+      "grammar_comparatives": {
+        "description": "the best / the most interesting — 6. Klasse"
+      }
+    }
+  }
+}

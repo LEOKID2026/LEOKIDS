@@ -1,0 +1,35 @@
+{
+  "master": {
+    "close": "Schliessen",
+    "badges": {
+      "streak_10": "🔥 Heisse Serie"
+    },
+    "imageTooLarge": "Das Bild ist zu gross. Bitte wähle ein Bild bis zu 5 MB.",
+    "enlargeDiagram": "Diagramm vergrössern",
+    "enlarge": "Vergrössern",
+    "enlargedDiagram": "Vergrössertes Diagramm",
+    "closeDiagram": "Diagramm schliessen",
+    "closeRtl": "Schliessen"
+  },
+  "math": {
+    "operations": {
+      "scale": "Massstab"
+    }
+  },
+  "english": {
+    "steps": {
+      "checkWordOrder": "Prüfe die Wortstellung und den Grossbuchstaben am Anfang."
+    }
+  },
+  "science": {
+    "reference": {
+      "earth_space": {
+        "terms": {
+          "crust": {
+            "desc": "Äussere Gesteinsschicht mit tektonischen Platten."
+          }
+        }
+      }
+    }
+  }
+}

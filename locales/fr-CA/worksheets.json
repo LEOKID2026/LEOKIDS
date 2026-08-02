@@ -1,0 +1,14 @@
+{
+  "createHint": "Choisissez la matière, l’année, le thème et le niveau, puis créez une fiche prête à imprimer.",
+  "readyEmptyText": "Essayez de modifier les filtres ou choisissez toutes les matières, toutes les années et tous les niveaux.",
+  "publicDemoHint": "Une courte démo avec 8 exercices : choisissez la matière, l’année et le thème.",
+  "gradeField": "Année",
+  "gradeFilterAll": "Toutes les années",
+  "gradeG1": "1re année",
+  "gradeG2": "2e année",
+  "gradeG3": "3e année",
+  "gradeG4": "4e année",
+  "gradeG5": "5e année",
+  "gradeG6": "6e année",
+  "selectGrade": "Année"
+}

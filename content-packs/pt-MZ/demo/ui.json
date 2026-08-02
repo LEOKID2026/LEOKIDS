@@ -1,0 +1,25 @@
+{
+  "bar": {
+    "gradeLabel": "Classe",
+    "changeGrade": "Alterar classe"
+  },
+  "enter": {
+    "intro": "Seleciona uma classe e explora o mundo infantil. {minutes} minutos de jogo e aprendizagem — sem inscrição.",
+    "chooseGradeLegend": "seleciona uma classe",
+    "activeSessionNote": "Tens uma demonstração ativa – alterar a classe não zera o cronómetro.",
+    "enterButton": "Entra no mundo infantil",
+    "enteringButton": "A entrar…"
+  },
+  "grades": {
+    "g1": "1.ª classe",
+    "g2": "2.ª classe",
+    "g3": "3.ª classe",
+    "g4": "4.ª classe",
+    "g5": "5.ª classe",
+    "g6": "6.ª classe"
+  },
+  "parentPortal": {
+    "homeParentAriaLabel": "Demonstração do encarregado de educação – portal somente pré-visualização",
+    "enteringButton": "A entrar…"
+  }
+}

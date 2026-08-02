@@ -1,0 +1,8 @@
+{
+  "shell": {
+    "close": "Schliessen",
+    "tocClose": "✕ Schliessen",
+    "tocCloseAria": "Schliessen",
+    "backClose": "Schliessen"
+  }
+}

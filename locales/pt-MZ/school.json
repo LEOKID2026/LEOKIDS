@@ -1,0 +1,23 @@
+{
+  "portal": {
+    "classesSubtitle": "Escolha a classe, a turma física e a disciplina — relatórios e gestão por classe",
+    "chooseGrade": "Selecionar a classe",
+    "backGrades": "← Voltar às classes",
+    "colGrade": "Classe",
+    "studentsSubtitle": "Explorar por classe e turma — relatórios da criança sem inserir identificadores",
+    "createStudentGrade": "Classe",
+    "classMgmtGrade": "Classe",
+    "assignCurrentGrade": "Classe atual",
+    "assignTargetGrade": "Classe de destino",
+    "detailsSectionTransport": "Transporte e classes"
+  },
+  "communication": {
+    "audienceGradeParents": "Encarregados desta classe",
+    "audienceGradeTeachers": "Professores desta classe",
+    "detailsFieldGrade": "Classe",
+    "detailsSectionTransport": "Transporte e classes"
+  },
+  "reportSummary": {
+    "studentLine": "Respostas: {totalAnswers} · Precisão: {accuracy} · Classe: {gradeLevel}"
+  }
+}

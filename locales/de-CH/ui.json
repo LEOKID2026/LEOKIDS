@@ -1,0 +1,74 @@
+{
+  "audio": {
+    "close": "Schliessen"
+  },
+  "home": {
+    "subhead": "Übe Mathematik, Geometrie, Englisch und Naturwissenschaften — gemacht für Primarschulkinder."
+  },
+  "layout": {
+    "closeMenu": "Menü schliessen"
+  },
+  "installApp": {
+    "close": "Schliessen",
+    "prompt": {
+      "close": "✕ Schliessen"
+    }
+  },
+  "common": {
+    "close": "Schliessen"
+  },
+  "public": {
+    "homepage": {
+      "brandLine": "LEO KIDS — Werkzeuge für Eltern, ein spassiges Erlebnis für Kinder und Lernen, das Schritt für Schritt vorangeht",
+      "hero": {
+        "infoLine": "LEO KIDS — Werkzeuge für Eltern, ein spassiges Erlebnis für Kinder und Lernen, das Schritt für Schritt vorangeht"
+      },
+      "learningSystem": {
+        "textPart0": "Jede Übungssitzung fliesst in ein Gesamtbild ein:",
+        "capabilities": {
+          "parent-report": {
+            "text": "Einfache Sprache: was Ihr Kind weiss, wohin es sich bewegt, und worauf der Fokus liegen sollte."
+          }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "2": {
+            "text": "Gezielte Übung zuweisen und die Ergebnisse anschliessend verfolgen."
+          }
+        }
+      },
+      "kids": {
+        "benefits": {
+          "2": {
+            "text": "Fachübung mit spassigen Pausen an einem Ort mischen."
+          }
+        }
+      }
+    },
+    "about": {
+      "intro1": "Die Website ist für Primarschulkinder mit Übungen nach Fach, Klasse, Thema und Schwierigkeitsgrad gestaltet. Jedes Kind kann dort beginnen, wo es sinnvoll ist, sich schrittweise weiterentwickeln und Themen stärken, bei denen es mehr Selbstvertrauen braucht.",
+      "intro2": "Unser Ziel ist es, das Lernen klarer, freundlicher und genauer zu machen: weniger Raten, weniger Frustration und ein besseres Verständnis dafür, was Ihr Kind schon weiss und was noch gestärkt werden muss.",
+      "learnEnjoyTitle": "Lernen und Spass haben",
+      "learnEnjoyBody": "Über die fachliche Übung hinaus bietet die Website Lernspiele, unterhaltsames Spielen, Münzen und Karten, die dem Lernen Spass, Motivation und Freude hinzufügen sollen. Ziel ist, dass Kinder nicht das Gefühl haben, nur „Hausaufgaben zu machen“, sondern eine bunte Kinderwelt zu betreten, in der sie mit einem guten Gefühl lernen, spielen und Fortschritte machen können.",
+      "funGames": {
+        "0": {
+          "text": "Spiele, die Interesse und Spass hinzufügen und Kinder zum Weiterüben ermutigen."
+        }
+      }
+    }
+  },
+  "gallery": {
+    "close": "Schliessen"
+  },
+  "pwa": {
+    "close": "Schliessen"
+  },
+  "student": {
+    "avatarImageTooLarge": "Das Bild ist zu gross. Bitte wähle ein Bild bis zu 5 MB"
+  },
+  "help": {
+    "videoClose": "Video schliessen",
+    "videoCloseButton": "Schliessen"
+  }
+}

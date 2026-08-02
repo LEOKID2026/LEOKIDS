@@ -1,0 +1,47 @@
+{
+  "hubBlurb": "Choose a subject and start practising.",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "defaultPlayerName": "Learner",
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "noBadgesYet": "No badges yet. Keep practising!",
+    "gradeRequired": "Please choose a grade before practising. Ask a parent to update your grade.",
+    "enterPlayerNameForMistake": "Enter a player name to practise the selected mistake",
+    "noMistakesToPractice": "No mistakes to practise",
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry.",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or graded practice.",
+    "referenceCategories": {
+      "operations": "Maths operations"
+    }
+  },
+  "math": {
+    "levelUpScience": "You levelled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practise maths in a fun way, matched to grade, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths.",
+    "pickRowOrColumn": "Pick a row or column to practise:"
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practise geometry in a fun way, matched to grade, topic, and difficulty.",
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practise science in a fun way, matched to grade, topic, and difficulty.",
+    "levelUp": "You levelled up in science!"
+  }
+}

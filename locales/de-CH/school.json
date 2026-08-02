@@ -1,0 +1,11 @@
+{
+  "portal": {
+    "emptyTeachers": "Ausser der Schulverwaltung sind keine Lehrkräfte verknüpft.",
+    "reportClose": "Schliessen"
+  },
+  "communication": {
+    "btnCloseMessageDetail": "Schliessen",
+    "legacyAccessHint": "Dieses Konto wurde ausserhalb des Schulsystems erstellt und kann hier nicht verwaltet werden.",
+    "btnCloseDetails": "Schliessen"
+  }
+}

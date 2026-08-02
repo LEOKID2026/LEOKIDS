@@ -1,0 +1,31 @@
+{
+  "public": {
+    "homepage": {
+      "parentBenefits": {
+        "items": {
+          "0": {
+            "text": "Uma visão mais ampla do que uma classe — construída a partir de atividades reais."
+          }
+        }
+      }
+    },
+    "about": {
+      "intro1": "O site foi projetado para alunos do Ensino Primário com prática por matéria, classe, tópico e nível de dificuldade. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os temas em que precisa de mais confiança."
+    }
+  },
+  "parent": {
+    "selectGrade": "Selecionar a classe",
+    "gradeRequired": "Selecione uma classe.",
+    "allowGradePicker": "Permitir que a criança escolha a classe nas páginas de aprendizagem",
+    "filterSuitable": "Adequadas à classe",
+    "gradeSuitable": "Adequadas à classe"
+  },
+  "home": {
+    "subhead": "Pratique matemática, geometria, inglês e ciências — feito para alunos do Ensino Primário."
+  },
+  "installApp": {
+    "prompt": {
+      "installNow": "Descarregue e instale agora"
+    }
+  }
+}

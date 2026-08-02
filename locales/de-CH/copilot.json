@@ -1,0 +1,17 @@
+{
+  "boundary": {
+    "peerComparison": "Der Bericht basiert ausschliesslich auf den Übungen dieses Kindes und vergleicht es nicht mit anderen Kindern der Klasse. Sie können sich auf das konzentrieren, was im Bericht erscheint, und nach einem bestimmten Thema fragen."
+  },
+  "answers": {
+    "utils_parent-copilot_intent-answer-composers": {
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "Das heisst nicht, dass es keine Erfolge gibt — nur dass es noch zu früh ist, aus den Daten dieses Zeitraums eine stabile Stärke abzuleiten."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "Fügen Sie keinen next_step-Block ein — praktische Empfehlungen gehören ausschliesslich in den meaning-Block (FACTS_JSON erlaubt Empfehlungen nur, wenn recommendation"
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Setzen Sie kurze, gleichmässige Übungen fort, um den Fortschritt in allen Bereichen zu festigen.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "Es gibt noch keine lange Übungsstrecke in allen Fächern, aber es gibt zahlenmässige Übungssummen für den Zeitraum."
+    }
+  }
+}

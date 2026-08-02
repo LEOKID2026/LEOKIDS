@@ -1,0 +1,54 @@
+{
+  "chooseGrade": "Selecionar a classe",
+  "master": {
+    "gradeRequired": "Por favor, seleciona uma classe antes de praticar. Pede a um dos encarregados de educação para atualizar a tua classe.",
+    "gradeFallback": "Classe",
+    "grades": {
+      "g1": "1.ª classe",
+      "g2": "2.ª classe",
+      "g3": "3.ª classe",
+      "g4": "4.ª classe",
+      "g5": "5.ª classe",
+      "g6": "6.ª classe"
+    },
+    "gradeTitle": "{grade}.ª classe",
+    "mistakePracticeBlurb": "Escolhe um erro recente para abrir a prática focada no mesmo tópico, classe e dificuldade.",
+    "currentGrade": "Classe atual",
+    "notEnoughQuestions": "Não há perguntas suficientes para o tópico/classe/nível que escolheste. Tente alterar uma configuração."
+  },
+  "math": {
+    "howToLearnBlurb": "O objetivo é praticar matemática de uma forma divertida, de acordo com a classe, o tema e a dificuldade.",
+    "howToLearnSteps": {
+      "step1": "Seleciona a classe, a dificuldade e a operação (adição, subtração, multiplicação, divisão, frações, percentagens e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronómetro e vidas, velocidade ou maratona."
+    },
+    "operations": {
+      "percentages": "Percentagens"
+    },
+    "reference": {
+      "operations": {
+        "percentages": {
+          "title": "% Percentagens"
+        }
+      }
+    }
+  },
+  "geometry": {
+    "howToLearnBlurb": "O objetivo é praticar geometria de uma forma divertida, de acordo com a classe, o tema e a dificuldade.",
+    "howToLearnSteps": {
+      "step1": "Seleciona a classe, a dificuldade e o tópico (área, perímetro, volume, ângulos, Pitágoras e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronómetro e vidas, velocidade ou maratona."
+    },
+    "errors": {
+      "invalidGrade": "Classe inválida. Por favor, escolhe outra classe.",
+      "noTopics": "Não há tópicos disponíveis para esta classe. Por favor, escolhe outra classe."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "O objetivo é praticar ciências de uma forma divertida, de acordo com a classe, o tema e a dificuldade.",
+    "howToLearnSteps": {
+      "step1": "Seleciona a classe, o nível e o tópico (por exemplo, corpo humano, plantas, animais e muito mais).",
+      "step2": "Escolhe um modo de jogo: aprendizagem, desafio com cronómetro e vidas, velocidade ou maratona."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "portal": {
+    "classesSubtitle": "Choisissez l’année scolaire (1re–6e année), la classe physique et la matière — rapports et gestion par année scolaire",
+    "chooseGrade": "Choisissez une année",
+    "backGrades": "← Retour aux années",
+    "colGrade": "Année",
+    "createStudentGrade": "Année",
+    "classMgmtGrade": "Année",
+    "assignCurrentGrade": "Année actuelle",
+    "assignTargetGrade": "Année cible",
+    "inviteTeacherHelp": "Saisissez l’adresse courriel du compte de l’enseignant existant. S’il n’y a pas de compte, inscrivez-vous/connectez-vous d’abord sur le portail des enseignants, puis créez un lien vers l’école.",
+    "inviteOperatorHelp": "Saisissez l’adresse courriel du compte de l’opérateur existant. S’il n’y a pas de compte, créez un compte et connectez-vous d’abord, puis créez un lien vers l’école.",
+    "staffInviteEmailSection": "Inviter par courriel (utilisateur existant)"
+  },
+  "communication": {
+    "detailsFieldParentEmail": "courriel des parents",
+    "detailsFieldGrade": "Année"
+  }
+}

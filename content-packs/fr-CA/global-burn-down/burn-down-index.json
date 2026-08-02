@@ -1,0 +1,30 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "1re année",
+    "grade_2": "2e année",
+    "grade_3": "3e année",
+    "grade_4": "4e année",
+    "grade_5": "5e année",
+    "grade_6": "6e année"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "1re année",
+    "grade_2": "2e année",
+    "grade_3": "3e année",
+    "grade_4": "4e année",
+    "grade_5": "5e année",
+    "grade_6": "6e année"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "1re année",
+    "grade_2": "2e année",
+    "grade_3": "3e année",
+    "grade_4": "4e année",
+    "grade_5": "5e année",
+    "grade_6": "6e année"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Pratique numérique pour les élèves du primaire au Canada : mathématiques, géométrie, anglais et sciences.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — pratique pour les élèves du primaire au Canada."
+  }
+}

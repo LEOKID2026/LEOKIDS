@@ -1,0 +1,19 @@
+{
+  "series": {
+    "sport-fun": "Sport & Spass"
+  },
+  "requirements": {
+    "parent_activity_complete": "Schliesse {minCompletedActivities} Elternaktivitäten ab",
+    "daily_mission_complete": "Schliesse die Mission ab: {missionKey}",
+    "daily_mission_generic": "Schliesse eine Tagesmission ab"
+  },
+  "preview": {
+    "close": "Schliessen"
+  },
+  "surpriseBoxModal": {
+    "close": "Schliessen"
+  },
+  "previewModal": {
+    "close": "Schliessen"
+  }
+}

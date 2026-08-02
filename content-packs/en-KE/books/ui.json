@@ -1,0 +1,9 @@
+{
+  "subjects": {
+    "math": "Maths"
+  },
+  "shell": {
+    "backMath": "Back to Maths",
+    "practiceMath": "We'll practise this Maths topic next"
+  }
+}

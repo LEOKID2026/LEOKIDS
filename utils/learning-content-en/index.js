@@ -10,6 +10,7 @@ import { applyItItDisplayLayer } from "../learning-content-it-IT/index.js";
 import { applyFrFrDisplayLayer } from "../learning-content-fr-FR/index.js";
 import { applyNlNlDisplayLayer } from "../learning-content-nl-NL/index.js";
 import { applyDeDeDisplayLayer } from "../learning-content-de-DE/index.js";
+import { applyDeChDisplayLayer } from "../learning-content-de-CH/index.js";
 import { applyRuRuDisplayLayer } from "../learning-content-ru-RU/index.js";
 import { getContentFallbackChain } from "../../lib/content/locale.js";
 
@@ -79,6 +80,7 @@ export function localizeLearningQuestion(question, opts = {}) {
       if (loc === "it-IT") return applyItItDisplayLayer(question, subject);
       if (loc === "fr-FR") return applyFrFrDisplayLayer(question, subject);
       if (loc === "nl-NL") return applyNlNlDisplayLayer(question, subject);
+      if (loc === "de-CH") return applyDeChDisplayLayer(question, subject);
       if (loc === "de-DE") return applyDeDeDisplayLayer(question, subject);
       if (loc === "ru-RU") return applyRuRuDisplayLayer(question, subject);
     }

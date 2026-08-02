@@ -1,0 +1,12 @@
+{
+  "display": {
+    "encouragement": "Keep practising — this is a demo!"
+  },
+  "missions": {
+    "mathTitle": "Practice maths",
+    "mathDescription": "Answer 5 maths questions"
+  },
+  "subjects": {
+    "math": "Maths"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Digitale Übungen für Primarschulkinder der Klassen 1–6 in Mathematik, Geometrie, Englisch und Naturwissenschaften.",
+    "math_practice_by_grade_and_topic_leo_kids": "Mathematik-Übung nach Klasse und Thema · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "Englisch-Übung nach Klasse und Thema · Leo Kids",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Geometrie-Übung nach Klasse und Thema · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Fertige Arbeitsblätter, ein Arbeitsblatt-Generator und Lösungen für die Primarstufe (Klassen 1–6).",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — Übungen für Primarschulkinder."
+  },
+  "lib__worksheets__worksheet-ui": {
+    "include_answer_key": "Lösungen einschliessen",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Versuchen Sie, die Filter zu ändern — oder wählen Sie alle Fächer, Klassen und Stufen.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Wählen Sie Fach, Klasse, Thema und Stufe — und erstellen Sie dann ein druckfertiges Arbeitsblatt.",
+    "ready_made_worksheets_by_grade": "Fertige Arbeitsblätter nach Klasse"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Lernen für Schülerinnen und Schüler der Primarstufe (Klassen 1–6)"
+  },
+  "components__promo__PromoVideoModal": {
+    "close": "Schliessen"
+  },
+  "components__student__StudentAssignedActivityQuestionStage": {
+    "enlarge_diagram": "Diagramm vergrössern"
+  },
+  "components__teacher-portal__TeacherActivityStudentAnswersModal": {
+    "close": "Schliessen"
+  },
+  "pages__student__activity__[activityId]": {
+    "enlarged_diagram": "Vergrössertes Diagramm",
+    "close_diagram": "Diagramm schliessen"
+  }
+}

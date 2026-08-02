@@ -1,0 +1,8 @@
+{
+  "subjects": {
+    "math": "Maths"
+  },
+  "fallback": {
+    "defaultStudentName": "Learner"
+  }
+}

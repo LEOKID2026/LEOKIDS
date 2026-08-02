@@ -1,0 +1,14 @@
+{
+  "components__arcade__fourline__FourlineScreen": {
+    "close": "Schliessen"
+  },
+  "components__leo-miners__LeoMinersGame": {
+    "close": "Schliessen"
+  },
+  "components__solo-games__engines__MleoPicturePuzzleEngine": {
+    "close": "Schliessen"
+  },
+  "components__solo-games__SoloGameHelpModal": {
+    "close": "Schliessen"
+  }
+}

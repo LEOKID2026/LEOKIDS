@@ -1,0 +1,23 @@
+{
+  "parentInsights": {
+    "noUrgentTopic": "Im ausgewählten Zeitraum gibt es Übung, aber das System hat noch kein einzelnes Thema erkannt, das besondere Verstärkung braucht. Es hilft, mit kurzen, regelmässigen Übungen fortzufahren und zu prüfen, ob die Stabilität anhält.",
+    "homeFallback": "Zu Hause: Es wird empfohlen, kurze, regelmässige Übungen zu machen und im nächsten Bericht zu prüfen, ob sich ein klareres Muster gebildet hat."
+  },
+  "short": {
+    "strengths": {
+      "consistentPractice": "Regelmässige Übung in diesem Zeitraum — eine grossartige Gewohnheit."
+    }
+  },
+  "topics": {
+    "math": {
+      "scale": "Massstab",
+      "scale_map": "Massstab auf Karten"
+    }
+  },
+  "v2": {
+    "executive": {
+      "majorTrendsNoUnitsLine2": "Kurze, regelmässige Übung ergibt ein verlässlicheres Bild.",
+      "homePlanEmpty": "Es gibt momentan keine einzelne klare Massnahme für zu Hause - kurze, gezielte Übung diese Woche würde helfen, die Richtung zu klären."
+    }
+  }
+}

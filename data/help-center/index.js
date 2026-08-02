@@ -105,6 +105,25 @@ import {
   BY_SECTION_DE_AT,
   SECTIONS_DE_AT,
 } from "./de-AT/index.js";
+import {
+  ALL_ARTICLES_FR_CA,
+  BY_SECTION_FR_CA,
+} from "./fr-CA/index.js";
+import {
+  ALL_ARTICLES_PT_MZ,
+  BY_SECTION_PT_MZ,
+  SECTIONS_PT_MZ,
+} from "./pt-MZ/index.js";
+import {
+  ALL_ARTICLES_EN_KE,
+  BY_SECTION_EN_KE,
+  SECTIONS_EN_KE,
+} from "./en-KE/index.js";
+import {
+  ALL_ARTICLES_DE_CH,
+  BY_SECTION_DE_CH,
+  SECTIONS_DE_CH,
+} from "./de-CH/index.js";
 
 export {
   ALL_ARTICLES_ES_419,
@@ -122,6 +141,13 @@ export {
   ALL_ARTICLES_FR_FR,
   SECTIONS_FR_FR,
   ALL_ARTICLES_FR_CI,
+  ALL_ARTICLES_FR_CA,
+  ALL_ARTICLES_PT_MZ,
+  SECTIONS_PT_MZ,
+  ALL_ARTICLES_EN_KE,
+  SECTIONS_EN_KE,
+  ALL_ARTICLES_DE_CH,
+  SECTIONS_DE_CH,
   ALL_ARTICLES_NL_NL,
   SECTIONS_NL_NL,
   ALL_ARTICLES_DE_DE,
@@ -215,19 +241,23 @@ export function resolveHelpLocale(locale) {
   if (id === "en-sg") return "en-SG";
   if (id === "en-za") return "en-ZA";
   if (id === "en-ng") return "en-NG";
-  // Canada / Philippines have no Help overlay — inherit English base.
+  if (id === "en-ke") return "en-KE";
+  // English Canada / Philippines have no Help overlay — inherit English base.
   if (id === "en-ca" || id === "en-ph") return "en";
   // Portugal owns public path /pt; bare `pt` is not an alias of Brazil.
   if (id === "pt-pt" || id === "pt") return "pt-PT";
   if (id === "pt-ao") return "pt-AO";
+  if (id === "pt-mz") return "pt-MZ";
   if (id === "pt-br") return "pt-BR";
   // Italy / France / Netherlands / Germany / Russia own /it /fr /nl /de /ru;
   // bare tags are not aliases of other locales.
   if (id === "it-it" || id === "it") return "it-IT";
   if (id === "fr-ci") return "fr-CI";
+  if (id === "fr-ca") return "fr-CA";
   if (id === "fr-fr" || id === "fr") return "fr-FR";
   if (id === "nl-nl" || id === "nl") return "nl-NL";
   if (id === "de-at") return "de-AT";
+  if (id === "de-ch") return "de-CH";
   if (id === "de-de" || id === "de") return "de-DE";
   if (id === "ru-ru" || id === "ru") return "ru-RU";
   if (id === "es-es") return "es-ES";
@@ -249,14 +279,18 @@ export function getHelpSections(locale) {
   if (helpLocale === "en-SG") return SECTIONS;
   if (helpLocale === "en-ZA") return SECTIONS_EN_ZA;
   if (helpLocale === "en-NG") return SECTIONS;
+  if (helpLocale === "en-KE") return SECTIONS_EN_KE;
   if (helpLocale === "pt-AO") return SECTIONS_PT_AO;
+  if (helpLocale === "pt-MZ") return SECTIONS_PT_MZ;
   if (helpLocale === "pt-PT") return SECTIONS_PT_PT;
   if (helpLocale === "pt-BR") return SECTIONS_PT_BR;
   if (helpLocale === "it-IT") return SECTIONS_IT_IT;
   if (helpLocale === "fr-CI") return SECTIONS_FR_FR;
+  if (helpLocale === "fr-CA") return SECTIONS_FR_FR;
   if (helpLocale === "fr-FR") return SECTIONS_FR_FR;
   if (helpLocale === "nl-NL") return SECTIONS_NL_NL;
   if (helpLocale === "de-AT") return SECTIONS_DE_AT;
+  if (helpLocale === "de-CH") return SECTIONS_DE_CH;
   if (helpLocale === "de-DE") return SECTIONS_DE_DE;
   if (helpLocale === "ru-RU") return SECTIONS_RU_RU;
   if (helpLocale === "es-ES") return SECTIONS_ES_ES;
@@ -300,8 +334,14 @@ export function listArticles(section, locale) {
   if (helpLocale === "en-NG") {
     return BY_SECTION_EN_NG[section] || [];
   }
+  if (helpLocale === "en-KE") {
+    return BY_SECTION_EN_KE[section] || [];
+  }
   if (helpLocale === "pt-AO") {
     return BY_SECTION_PT_AO[section] || [];
+  }
+  if (helpLocale === "pt-MZ") {
+    return BY_SECTION_PT_MZ[section] || [];
   }
   if (helpLocale === "pt-PT") {
     return BY_SECTION_PT_PT[section] || [];
@@ -315,6 +355,9 @@ export function listArticles(section, locale) {
   if (helpLocale === "fr-CI") {
     return BY_SECTION_FR_CI[section] || [];
   }
+  if (helpLocale === "fr-CA") {
+    return BY_SECTION_FR_CA[section] || [];
+  }
   if (helpLocale === "fr-FR") {
     return BY_SECTION_FR_FR[section] || [];
   }
@@ -323,6 +366,9 @@ export function listArticles(section, locale) {
   }
   if (helpLocale === "de-AT") {
     return BY_SECTION_DE_AT[section] || [];
+  }
+  if (helpLocale === "de-CH") {
+    return BY_SECTION_DE_CH[section] || [];
   }
   if (helpLocale === "de-DE") {
     return BY_SECTION_DE_DE[section] || [];
@@ -409,11 +455,15 @@ export function assertAllArticlesValid() {
     { locale: "en-SG", articles: ALL_ARTICLES_EN_SG },
     { locale: "en-ZA", articles: ALL_ARTICLES_EN_ZA },
     { locale: "en-NG", articles: ALL_ARTICLES_EN_NG },
+    { locale: "en-KE", articles: ALL_ARTICLES_EN_KE },
     { locale: "en-SCT", articles: ALL_ARTICLES_EN_SCT },
     { locale: "en-NIR", articles: ALL_ARTICLES_EN_NIR },
     { locale: "pt-AO", articles: ALL_ARTICLES_PT_AO },
+    { locale: "pt-MZ", articles: ALL_ARTICLES_PT_MZ },
     { locale: "fr-CI", articles: ALL_ARTICLES_FR_CI },
+    { locale: "fr-CA", articles: ALL_ARTICLES_FR_CA },
     { locale: "de-AT", articles: ALL_ARTICLES_DE_AT },
+    { locale: "de-CH", articles: ALL_ARTICLES_DE_CH },
   ];
   for (const pack of packs) {
     for (const article of pack.articles) {

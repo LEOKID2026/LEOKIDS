@@ -53,7 +53,7 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 43);
+  assert.equal(locales.length, 47);
   assert.deepEqual(
     locales.map((l) => l.id),
     [
@@ -81,12 +81,15 @@ test("selectable locales for switcher are English + country names", () => {
       "pt-BR",
       "pt-PT",
       "pt-AO",
+      "pt-MZ",
       "it-IT",
       "fr-FR",
       "fr-CI",
+      "fr-CA",
       "nl-NL",
       "de-DE",
       "de-AT",
+      "de-CH",
       "ru-RU",
       "en-AU",
       "en-NZ",
@@ -96,6 +99,7 @@ test("selectable locales for switcher are English + country names", () => {
       "en-SG",
       "en-ZA",
       "en-NG",
+      "en-KE",
       "en-WLS",
       "en-SCT",
       "en-NIR",
@@ -143,7 +147,16 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["en-IE"].nativeName, "Ireland");
   assert.equal(byId["en-GB"].nativeName, "England");
   assert.equal(byId["en-GB"].pathPrefix, "eng");
-  assert.equal(byId["en-CA"].nativeName, "Canada");
+  assert.equal(byId["en-CA"].nativeName, "Canada-en");
+  assert.equal(byId["en-CA"].pathPrefix, "ca");
+  assert.equal(byId["fr-CA"].nativeName, "Canada-fr");
+  assert.equal(byId["fr-CA"].pathPrefix, "ca-fr");
+  assert.equal(byId["pt-MZ"].nativeName, "Mozambique");
+  assert.equal(byId["pt-MZ"].pathPrefix, "mz");
+  assert.equal(byId["en-KE"].nativeName, "Kenya");
+  assert.equal(byId["en-KE"].pathPrefix, "ke");
+  assert.equal(byId["de-CH"].nativeName, "Switzerland-de");
+  assert.equal(byId["de-CH"].pathPrefix, "ch-de");
   assert.equal(byId["en-SG"].nativeName, "Singapore");
   assert.equal(byId["en-ZA"].nativeName, "South Africa");
   assert.equal(byId["en-NG"].nativeName, "Nigeria");
@@ -203,19 +216,24 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.doesNotMatch(switcher, /Hebrew|עברית|flag/i);
 });
 
-test("LanguageSwitcher list can reach all selectable locales including wave-4 countries", () => {
+test("LanguageSwitcher list can reach all selectable locales including wave-5 countries", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 43);
+  assert.equal(locales.length, 47);
   assert.equal(locales[0].id, "en");
   assert.ok(locales.some((l) => l.id === "pt-BR" && l.nativeName === "Brasil"));
   assert.ok(locales.some((l) => l.id === "pt-PT" && l.nativeName === "Portugal"));
   assert.ok(locales.some((l) => l.id === "pt-AO" && l.nativeName === "Angola" && l.pathPrefix === "ao"));
+  assert.ok(locales.some((l) => l.id === "pt-MZ" && l.nativeName === "Mozambique" && l.pathPrefix === "mz"));
   assert.ok(locales.some((l) => l.id === "it-IT" && l.nativeName === "Italy"));
   assert.ok(locales.some((l) => l.id === "fr-FR" && l.nativeName === "France"));
   assert.ok(locales.some((l) => l.id === "fr-CI" && l.nativeName === "Côte d’Ivoire" && l.pathPrefix === "ci"));
+  assert.ok(locales.some((l) => l.id === "fr-CA" && l.nativeName === "Canada-fr" && l.pathPrefix === "ca-fr"));
+  assert.ok(locales.some((l) => l.id === "en-CA" && l.nativeName === "Canada-en" && l.pathPrefix === "ca"));
   assert.ok(locales.some((l) => l.id === "nl-NL" && l.nativeName === "Netherlands"));
   assert.ok(locales.some((l) => l.id === "de-DE" && l.nativeName === "Germany" && l.pathPrefix === "de"));
   assert.ok(locales.some((l) => l.id === "de-AT" && l.nativeName === "Austria" && l.pathPrefix === "at"));
+  assert.ok(locales.some((l) => l.id === "de-CH" && l.nativeName === "Switzerland-de" && l.pathPrefix === "ch-de"));
+  assert.ok(locales.some((l) => l.id === "en-KE" && l.nativeName === "Kenya" && l.pathPrefix === "ke"));
   assert.ok(locales.some((l) => l.id === "ru-RU" && l.nativeName === "Russia" && l.pathPrefix === "ru"));
   assert.ok(locales.some((l) => l.id === "en-NG" && l.nativeName === "Nigeria" && l.pathPrefix === "ng"));
   assert.equal(locales[locales.length - 1].id, "en-PH");
