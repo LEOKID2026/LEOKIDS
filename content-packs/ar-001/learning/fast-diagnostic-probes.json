@@ -1,0 +1,236 @@
+{
+  "probesByErrorTag": {
+    "adds_denominators_directly": {
+      "skill": "إيجاد قاسم مشترك قبل إضافة الكسور",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "تحقق مما إذا كانت الصعوبة تكمن في إيجاد قاسم مشترك قبل عملية الجمع نفسها، مع أسئلة قصيرة حول قاسم مشترك واحد فقط."
+    },
+    "wrong_lcm": {
+      "skill": "فهم القاسم المشترك الأصغر",
+      "suggestedQuestionType": "fraction_lcm_pair_compare",
+      "reason": "قم بتشغيل أزواج من القواسم الصغيرة واطلب تحديد القاسم المشترك الأصغر قبل الجمع."
+    },
+    "ignores_denominator": {
+      "skill": "ربط البسط والمقام في عمليات الكسر",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "عزز الرابط بين البسط والمقام قبل الجمع بين الكسرين."
+    },
+    "concept_gap": {
+      "skill": "فهم الكسر كنسبة",
+      "suggestedQuestionType": "fraction_meaning_visual",
+      "reason": "إظهار تمثيل مرئي للكسر كنسبة قبل خوارزمية الجمع."
+    },
+    "operation_confusion": {
+      "skill": "تمييز الجمع عن ضرب الكسور",
+      "suggestedQuestionType": "fraction_operation_gate",
+      "reason": "اختر بوضوح عملية واحدة (إضافة/طرح/ضرب) مع جملة إرشادية قصيرة."
+    },
+    "tense_confusion": {
+      "skill": "مطابقة الزمن لكلمة زمنية أو موضوع",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "اختر الحد الأدنى من الأزواج (على سبيل المثال الماضي/المضارع) التي لها نفس الجذر وكلمة زمنية واضحة."
+    },
+    "grammar_pattern_error": {
+      "skill": "مطابقة شكل الفعل للموضوع",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "عزل الجمل القصيرة بموضوعات المفرد/الجمع وأشكال الفعل المطابقة."
+    },
+    "vocabulary_gap": {
+      "skill": "المفردات في جملة قصيرة",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "أكمل الكلمة في جملة قصيرة ذات سياق واضح (وليس قائمة كلمات مستقلة)."
+    },
+    "concept_confusion": {
+      "skill": "- التمييز بين المفاهيم العلمية ذات الصلة الوثيقة",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "اعرض مفهومين متجاورين واختر تعريفًا واحدًا صحيحًا من النص المختصر."
+    },
+    "fact_recall_gap": {
+      "skill": "- استرجاع حقيقة من الدرس",
+      "suggestedQuestionType": "science_fact_one_line_recall",
+      "reason": "سؤال قصير مع إجابة واحدة محددة من المادة المستفادة."
+    },
+    "cause_effect_gap": {
+      "skill": "علاقة السبب والنتيجة",
+      "suggestedQuestionType": "science_cause_effect_pair",
+      "reason": "اختر ما يأتي من السبب وماذا من النتيجة في موقف بسيط."
+    },
+    "classification_error": {
+      "skill": "التصنيف بمعيار واحد",
+      "suggestedQuestionType": "science_single_criterion_sort",
+      "reason": "اعرض مجموعة صغيرة واطلب التصنيف حسب سمة واحدة واضحة."
+    },
+    "place_value_error": {
+      "skill": "القيمة المكانية للرقم",
+      "suggestedQuestionType": "place_value_digit_value",
+      "reason": "اعزل القيمة المكانية لرقم واحد في رقم في تمرين قصير."
+    },
+    "multiplication_fact_gap": {
+      "skill": "حقائق جدول الضرب",
+      "suggestedQuestionType": "multiplication_fact_check",
+      "reason": "سؤال ضرب مباشر قصير من جدول الضرب."
+    },
+    "geometry_calculation_slip": {
+      "skill": "اختيار صيغة أو الخطوة الأولى في الهندسة",
+      "suggestedQuestionType": "geometry_formula_choice",
+      "reason": "اختر صيغة مناسبة أو الخطوة الأولى قبل الحساب الرقمي."
+    },
+    "prerequisite_gap": {
+      "skill": "مفهوم الشرط المسبق",
+      "suggestedQuestionType": "geometry_concept_minimal_contrast",
+      "reason": "تعزيز المفهوم التأسيسي قبل المتابعة."
+    },
+    "spelling_pattern_error": {
+      "skill": "الإملاء في سياق قصير",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "أكمل كلمة في جملة ذات سياق واضح."
+    },
+    "present_simple_3rd_singular_error": {
+      "skill": "صيغة الفعل بضمير الغائب في المضارع البسيط",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "اعزل الجمل القصيرة معه واختر صيغة الفعل المتطابقة."
+    },
+    "past_tense_form_error": {
+      "skill": "صيغة الماضي البسيط",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "اختر الحد الأدنى من أزواج الماضي/الحالي التي لها نفس الجذر."
+    },
+    "progressive_aspect_error": {
+      "skill": "المضارع المستمر (am/is/are + V-ing)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "تحقق من الاختيار بين العمل المستمر والزمن البسيط."
+    },
+    "question_word_order_error": {
+      "skill": "ترتيب الكلمات في السؤال",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "اعزل جمل الأسئلة القصيرة باستخدام do/does/is/are في المكان المناسب."
+    },
+    "modal_verb_error": {
+      "skill": "الأفعال المساعدة (can/must/should)",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "اختر بين فعلين مساعدين في جملة قصيرة بنفس الفعل الرئيسي."
+    },
+    "quantifier_choice_error": {
+      "skill": "محددات الكمية (بعض/كثير/كثير)",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "التمييز بين الكمية المعدودة والكمية غير المعدودة في جملة قصيرة."
+    },
+    "comparative_form_error": {
+      "skill": "نموذج المقارنة",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "اختر -er/-est أو more/most في جملة قصيرة."
+    },
+    "future_form_error": {
+      "skill": "المستقبل (سوف / الذهاب إلى)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "اختر بين الإرادة والذهاب إلى في سياق واضح."
+    },
+    "perfect_aspect_error": {
+      "skill": "الأزمنة المثالية (لديك/كان + V3)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "تحقق من النموذج المثالي مقابل الزمن البسيط في نفس السياق."
+    },
+    "conditional_clause_error": {
+      "skill": "الجملة الشرطية",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "عزل إذا/متى مع صيغة الفعل المتطابقة في شخص واحد."
+    },
+    "sentence_structure_error": {
+      "skill": "بنية الجملة",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "عزل الجمل القصيرة بترتيب كلمات وشكل فعل متسقين."
+    },
+    "advanced_grammar_error": {
+      "skill": "النحو المتقدم",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "اعزل جملة واحدة بنمط نحوي واضح للتحقق منها."
+    }
+  },
+  "probesByDiagnosticSkillId": {
+    "math_frac_same_den": {
+      "skill": "جمع/طرح الكسور التي لها نفس المقام",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "تأكد من ثبات البسط عندما يكون المقام مشتركًا بالفعل."
+    },
+    "math_frac_common_denominator": {
+      "skill": "العثور على قاسم مشترك قبل الإضافة",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "تحقق أولاً من خطوة القاسم المشترك دون الانتقال مباشرة إلى الإجابة النهائية."
+    },
+    "en_grammar_be_present": {
+      "skill": "تكون أشكال مع الموضوع",
+      "suggestedQuestionType": "english_be_agreement_gate",
+      "reason": "اعزل الجمل باستخدام أنا/هو/هم واختر النموذج المطابق."
+    },
+    "en_grammar_present_simple": {
+      "skill": "المضارع البسيط - اتفاق الموضوع",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "اعزل الجمل القصيرة معه واختر صيغة الفعل المتطابقة."
+    },
+    "en_grammar_past_simple": {
+      "skill": "الماضي البسيط",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "اختر الحد الأدنى من أزواج الماضي/الحالي التي لها نفس الجذر."
+    },
+    "en_grammar_progressive": {
+      "skill": "المضارع المستمر",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "تحقق من الاختيار بين العمل المستمر والزمن البسيط."
+    },
+    "en_grammar_question_frames": {
+      "skill": "إطارات الأسئلة",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "اعزل جمل الأسئلة القصيرة باستخدام do/does/is/are في المكان المناسب."
+    },
+    "en_grammar_modals": {
+      "skill": "الأفعال المساعدة",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "اختر بين فعلين مساعدين في جملة قصيرة."
+    },
+    "en_grammar_quantifiers": {
+      "skill": "محددات الكمية",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "التمييز بين بعض/كثير/كثير في جملة قصيرة."
+    },
+    "en_grammar_comparatives": {
+      "skill": "مقارنة",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "اختر نموذج المقارنة في جملة قصيرة."
+    },
+    "en_grammar_future_forms": {
+      "skill": "مستقبل",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "اختر بين الإرادة والذهاب إلى في سياق واضح."
+    },
+    "en_grammar_complex_tenses": {
+      "skill": "الأزمنة المثالية",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "تحقق من زمن الكمال مقابل زمن بسيط في نفس السياق."
+    },
+    "en_grammar_conditionals": {
+      "skill": "الشروط",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "اعزل إذا/متى باستخدام صيغة الفعل المتطابقة."
+    },
+    "en_grammar_phase29_standard": {
+      "skill": "مطابقة شكل الفعل للموضوع",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "عزل الجمل القصيرة بموضوعات المفرد/الجمع وأشكال الفعل المطابقة."
+    },
+    "en_grammar_phase29_advanced": {
+      "skill": "القواعد المتقدمة - الخطوة المتوسطة",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "اعزل جملة واحدة بنمط نحوي واضح للتحقق منها."
+    },
+    "sci_body_fact_recall": {
+      "skill": "استرجاع حقيقة الجسم/الأنظمة",
+      "suggestedQuestionType": "science_fact_single_choice",
+      "reason": "سؤال واقعي واحد من المادة حول العضو أو الجهاز."
+    },
+    "sci_respiration_concept": {
+      "skill": "دور الجهاز التنفسي في تبادل الغازات",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "يُميّز بين نقل الدم وبين تبادل الأكسجين وثاني أكسيد الكربون مع الهواء."
+    }
+  }
+}

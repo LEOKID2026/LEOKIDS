@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "loading": "تحميل…",
+    "regular": "عادية",
+    "important": "مهم",
+    "urgent": "عاجل",
+    "requires_confirmation": "يتطلب تأكيدا"
+  }
+}

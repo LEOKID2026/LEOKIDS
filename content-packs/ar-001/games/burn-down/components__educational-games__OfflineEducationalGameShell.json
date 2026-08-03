@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "لعبة محلية – لا يوجد توفير ولا مكافآت",
+    "game_not_found": "لم يتم العثور على اللعبة",
+    "back_to_list": "العودة إلى القائمة",
+    "offline": "غير متصل",
+    "list": "قائمة"
+  }
+}

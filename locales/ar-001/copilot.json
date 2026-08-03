@@ -1,0 +1,133 @@
+{
+  "boundary": {
+    "generalOffTopic": "يمكنني فقط المساعدة في تقرير طفلك وممارسته وتقدمه على الموقع. حاول أن تسأل عما يجب أن تمارسه هذا الأسبوع، أو ما الذي يجب تجربته في المنزل، أو ما هو الموضوع الذي ستفتحه كنشاط قصير.",
+    "diagnosticBoundary": "يمكنني فقط استخدام ما يظهر في بيانات التدريب العملي على الموقع. يمكن أن يسلط التقرير الضوء على الموضوعات والمواضيع التي يجب تعزيزها، لكنه ليس تشخيصًا شخصيًا. يمكننا التركيز على ما يظهره التقرير: موضوع قوي، أو موضوع يجب تعزيزه، أو خطوة صغيرة للمنزل.",
+    "healthBoundary": "يمكنني فقط استخدام بيانات الممارسة المعروضة على الموقع. ليس المقصود من التقرير استخلاص استنتاجات شخصية حول طفلك - فهو يساعدك على معرفة موضوع التعلم الذي يجب تعزيزه. يمكننا اختيار خطوة التعلم التالية الصغيرة من تلك البيانات.",
+    "privacyBoundary": "يمكنني فقط المساعدة في التقرير الخاص بالطفل المرتبط بحساب الوالدين هذا. لا أستطيع إظهار بيانات الأطفال الآخرين أو كلمات المرور أو قوائم المستخدمين أو معلومات النظام الداخلي.",
+    "peerComparison": "ويستند التقرير فقط على ممارسة هذا الطفل ولا يقارنه بالأطفال الآخرين في الفصل. يمكنك التركيز على ما يظهر في التقرير والسؤال عن موضوع معين.",
+    "ambiguous": "لم أستطع معرفة أي جزء من التقرير تقصد. جرّب طرح سؤال أبسط — على سبيل المثال: ما هو الأكثر أهمية للتدرب عليه هذا الأسبوع، أو ما الذي يجب تجربته في المنزل، أو أي موضوع يجب فتحه كنشاط قصير.",
+    "noDataForRequest": "لا يحتوي هذا التقرير على معلومات كافية للإجابة على ذلك بدقة حتى الآن. قم بإجراء جلسة تدريب قصيرة على الموقع، ثم تحقق مرة أخرى للحصول على اتجاه أكثر وضوحًا.",
+    "noDataSpecificForRequest": "يحتوي التقرير على بيانات تدريبية للفترة، ولكنها ليست كافية للإجابة على هذه النقطة المحددة بدقة. قم بإجراء جلسة تدريب قصيرة على الموقع، ثم تحقق مرة أخرى للحصول على اتجاه أكثر وضوحًا حول هذا الموضوع."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "الرجاء تسجيل الدخول مرة أخرى كوالد.",
+      "no_report_was_found_for_the_child_you_selected": "لم يتم العثور على تقرير للطفل الذي حددته."
+    },
+    "lib_parent-copilot_copilot-turn-payload": {
+      "server": {
+        "invalid_custom_range_rangefrom_rangeto_must_be_yyyy_mm_dd_and_fr": "نطاق مخصص غير صالح: يجب أن يكون rangeFrom/rangeTo YYYY-MM-DD ومن <= إلى",
+        "could_not_verify_student_ownership_for_copilot_rebuild": "تعذر التحقق من ملكية الطالب لإعادة بناء Copilot"
+      }
+    },
+    "pages_api_parent_copilot-turn": {
+      "could_not_verify_student_ownership": "تعذر التحقق من ملكية الطالب",
+      "student_not_found_for_this_parent": "لم يتم العثور على الطالب لهذا الوالد"
+    },
+    "utils_parent-copilot_answer-composer": {
+      "still_too_early_to_decide": "لا يزال من السابق لأوانه اتخاذ القرار",
+      "this_is_an_initial_image_only": "هذه مجرد لقطة مبكرة -",
+      "there_is_only_an_initial_sign_of_weakness": "ليس هناك سوى علامة مبكرة للضعف -"
+    },
+    "utils_parent-copilot_continuity-pattern-composer": {
+      "report_summary": "ملخص التقرير"
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "استمر في المشاهدة لعدة أيام أخرى من التدريب.",
+      "general_summary_of_the_practice": "نظرة عامة على الممارسة"
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "هل تريد اتخاذ خطوة صغيرة معًا في المنزل اليوم حول نفس الموضوع؟",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "هل تريد خطة قصيرة معًا لهذا الأسبوع حول هذا الموضوع؟",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "هل تريد تحديد ما يجب تجنبه هذا الأسبوع؟",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "هل تريد التحقق معًا من متى يجب الارتقاء إلى مستوى أعلى ومتى يجب البقاء في نفس الموضوع؟",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "هل تريد طريقة مختصرة لشرح ذلك لطفلك دون ضغوط؟",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "هل تريد صياغة سؤال مركز للمعلم، بناءً على ما يظهر في التقرير؟",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "هل تريد فك ما لا يزال غير واضح من بيانات التقرير؟"
+    },
+    "utils_parent-copilot_index": {
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "هناك القليل من البيانات العملية في الوقت الحالي، لذلك لا توجد معلومات كافية حتى الآن لتحديد اتجاه واضح.",
+      "this_mode_is_for_parent_only": "هذا الوضع مخصص للآباء فقط.",
+      "the_relationship_cannot_be_identified_from_the_report": "ولا يظهر التقرير ما يكفي لتحديد تلك العلاقة.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "لم يتم العثور على عناصر مطابقة للموضوع المحدد في التقرير."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "right_now_it": "الآن،",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "تابع بعد 3-4 أيام على هذا النحو، ثم تحقق من التقرير لمعرفة ما إذا كانت الدقة تتحسن أو يعود النمط.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "هذا لا يعني عدم وجود نجاحات، ولكن لا يزال من السابق لأوانه تحديد قوة مستقرة من البيانات في هذا النطاق.",
+      "during_this_period_there_is_no_practice_data_on_this_subject_in_": "خلال هذه الفترة لا توجد بيانات الممارسة حول هذا الموضوع في التقرير الحالي.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "يمكنك اختيار موضوع آخر من التقرير، أو التدرب على هذا الموضوع أكثر والسؤال مرة أخرى.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "يظهر الموضوع في القائمة، ولكن لم يتم احتساب أي أسئلة له في النطاق الزمني.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "في هذه الفترة لا توجد حتى الآن بيانات ممارسة كافية للتوصية برفع المستوى أو خفضه.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "اجمع المزيد من التدريبات حول هذا الموضوع قبل اتخاذ قرار بشأن تغيير المستوى.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "لم يبرز أي سطر موضوع ضعيف مع ممارسة كافية في هذا النطاق.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "ووفقا للتقرير، لا يوجد حتى الآن ما يكفي من الأدلة للعمل فوق الدرجة المذكورة.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "اجمع المزيد من التدريب قبل أن تستنتج أن الأداء أعلى من مستوى الصف الدراسي.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "وليس من الممكن حتى الآن تحديد الاتجاه من التقرير الحالي بشأن الأداء في هذا الموضوع."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "يجب ألا تقوم بتضمين كتلة next_step.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "لا تقم بتضمين كتلة next_step — احتفظ بالتوصيات العملية داخل كتلة المعنى فقط (FACTS_JSON يسمح بالتوصيات فقط عندما تكون التوصية"
+    },
+    "utils_parent-copilot_parent-coaching-packs": {
+      "period_overview": "نظرة عامة على الفترة"
+    },
+    "utils_parent-copilot_parent-facing-answer-postpr": {
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "يعتمد التقرير على الممارسة المكتملة في الموقع في الفترة المحددة."
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "تلتزم هذه الإجابة بما يظهر في التقرير للفترة المحددة ولا تتجاوز تلك البيانات.",
+      "the_three_most_important_things_right_now_are": "أهم ثلاثة أشياء في الوقت الحالي هي:",
+      "report_summary": "ملخص التقرير",
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "إذا ظهرت مهارة فرعية واضحة في التقرير، ركز عليها – لا تفتح عدة مواضيع في وقت واحد."
+    },
+    "utils_parent-copilot_render-adapter": {
+      "program_for_the_week": "خطة للأسبوع",
+      "what_to_avoid_now": "ما يجب تجنبه الآن",
+      "formulation_for_a_child": "عبارات لطفلك"
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "في هذا الموضوع لا توجد ممارسة كافية في التقرير - اختر موضوعًا لديه ممارسة بالفعل.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "في هذا الموضوع، لا يوجد حتى الآن موضوع يتضمن تدريبًا كافيًا لمناقشته - يمكنك تجربة موضوع آخر.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "هناك أكثر من موضوع هنا – أي موضوع يجب أن أجيب عنه؟"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "عندما تظهر المواضيع في النطاق الزمني، اسأل مرة أخرى ويمكنك الحصول على قائمة منظمة.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "تعتمد القائمة على الموضوعات الموضحة في التقرير للفترة المحددة، حسب ترتيب العرض.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "هذه هي بنود ملخص الفترة كما تظهر في التقرير. للحصول على التفاصيل حسب الموضوع، افتح شاشة المواضيع.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "يستخدم التصنيف المتوسطات عبر المواضيع مع الممارسة، وليس صياغة موضوع واحد.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "عندما تظهر بيانات التدريب العملي لموضوع واحد على الأقل يتضمن أسئلة، يمكنك أن تطلب مرة أخرى للحصول على صورة أوضح.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "يمكنك طرح السؤال مرة أخرى باستخدام اسمين للموضوع، أو طرح سؤال واحد حول التصنيف حسب الصعوبة مقابل النتائج القوية نسبيًا بناءً على بيانات التقرير.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "عندما تظهر الأسئلة والدقة لكلا الموضوعين، اطلب مرة أخرى إجراء مقارنة مباشرة من المتوسطات الموجودة في التقرير.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "لتمييز الاتجاهات، انظر أيضًا إلى عدد الأسئلة في كل موضوع وصياغة الموضوع نفسه.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "تستخدم المقارنة المتوسطات عبر المواضيع التي لها ممارسة في التقرير، وليس صياغة موضوع واحد.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "عندما تظهر المواضيع مع سطر الموضوع، اطلب مرة أخرى للحصول على تقييم الممارسة.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "يعتمد التقييم على العدد الفعلي للأسئلة في تقرير الفترة، وليس على الشعور بالإرهاق.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "عندما تظهر الأهداف النشطة، يمكنك أن ترى بالضبط أين تكون البيانات أقل سمكًا.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "وهذا يعني أن هناك القليل جدًا من البيانات في تقرير الفترة - كن حذرًا عند استخلاص النتائج.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "تستخدم هذه الإجابة سطور التلخيص فقط في التقرير ولا تخترع اتجاهًا بمرور الوقت لا يظهر هناك.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "عندما تظهر بيانات التدريب الكاملة حسب الموضوع في التقرير، يمكنك تحديد المنطقة التي تحتاج إلى الاهتمام.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "استمر في التدريب والتحقق - لا يُظهر التقرير حاليًا علامة واضحة على حدوث ارتباك.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "يأتي ذلك من علامات تشير إلى أن الصياغة لا تزال غير واضحة، أو أن هناك القليل جدًا من البيانات في التقرير نفسه.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "هناك حاجة إلى المزيد من الأسئلة وممارسة أطول لاختبار الاستقرار بشكل موثوق.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "عندما تظهر بيانات لموضوعين أو أكثر، اطلب مرة أخرى التقييم من المتوسطات الموضحة في التقرير.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "هذا وصف على مستوى الموضوع من التقرير. للحصول على تفاصيل دقيقة حسب الموضوع، افتح الموضوع في التقرير.",
+      "you_can_formulate_again_with_two_subject_names": "يمكنك طرح السؤال مرة أخرى باستخدام اسمين للموضوع، أو طرح سؤال واحد حول التصنيف حسب الصعوبة مقابل النتائج القوية نسبيًا بناءً على بيانات التقرير.",
+      "in_order_to_differentiate_between_the_directions": "لتمييز الاتجاهات، انظر أيضًا إلى عدد الأسئلة في كل موضوع وصياغة الموضوع في التقرير."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "رائع – ابدأ بخطوة صغيرة تتطابق مع ما يظهر في التقرير، دون تجاوز تلك الصياغة.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "حسنًا، سنبقى على نفس الصياغة الواردة في التقرير وننتقل إلى الخطوة الصغيرة التالية عندما يكون ذلك مناسبًا.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "لا يوجد شرح طويل هنا - أخبرني بكلمة أخرى ما الذي لا يزال غير واضح.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "الاستمرار من نفس النقطة في التقرير – البقاء على نفس الصورة، دون إضافة موضوع جديد يتجاوز ما تم عرضه بالفعل."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "استمر في التدريب القصير والثابت لتحقيق التقدم عبر المجالات.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "إليك صياغة يمكنك مشاركتها مع طفل بلغة لطيفة.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "ليس هناك حتى الآن فترة طويلة من الممارسة في جميع المواد، ولكن هناك إجماليات الممارسة العددية لهذه الفترة.",
+      "no_long_detail_shown_here_yet": "لم يتم عرض أي تفاصيل تفصيلية هنا حتى الآن.",
+      "period_overview": "نظرة عامة على الفترة",
+      "still_lacks_cumulative_practice_for_a_stable_image": "لا يوجد حتى الآن ما يكفي من الممارسة التراكمية للحصول على صورة مستقرة."
+    }
+  }
+}

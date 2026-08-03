@@ -1,0 +1,77 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "موازي",
+      "عمودي"
+    ],
+    "triangles": [
+      "متساوي الأضلاع",
+      "متساوي الساقين",
+      "مختلف الأضلاع"
+    ],
+    "quadrilaterals": [
+      "مربع",
+      "المستطيل",
+      "متوازي الأضلاع",
+      "شبه منحرف"
+    ],
+    "transformations": [
+      "ترجمة",
+      "انعكاس",
+      "تناوب",
+      "لا حركة"
+    ],
+    "concept_transform": [
+      "ترجمة",
+      "انعكاس",
+      "تناوب",
+      "لا حركة"
+    ],
+    "shapes_basic_square": [
+      "مربع",
+      "المستطيل"
+    ],
+    "shapes_basic_rectangle": [
+      "مربع",
+      "المستطيل"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "لا توجد جوانب متساوية"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "لا زوايا قائمة"
+    ]
+  },
+  "solidNames": [
+    "مكعب",
+    "المنشور المستطيل",
+    "اسطوانة",
+    "هرم",
+    "مخروط",
+    "جسم كروي"
+  ],
+  "shapeWords": {
+    "": "عمودي",
+    " ": "مختلف الأضلاع"
+  },
+  "solidAliases": {
+    "cube": "مكعب",
+    "rectangular prism": "المنشور المستطيل",
+    "cylinder": "اسطوانة",
+    "pyramid": "هرم",
+    "cone": "مخروط",
+    "sphere": "جسم كروي"
+  }
+}

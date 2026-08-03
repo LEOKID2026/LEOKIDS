@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "human_body": "جسم الإنسان",
+    "animals": "الحيوانات",
+    "plants": "النباتات",
+    "materials": "المواد",
+    "experiments": "التجارب",
+    "earth_and_space": "الأرض والفضاء",
+    "environment": "بيئة",
+    "standard": "معيار",
+    "medium": "واسطة",
+    "advanced": "متقدم",
+    "basic_shapes": "الأشكال الأساسية",
+    "perimeter": "المحيط",
+    "volume": "الحجم",
+    "angles": "الزوايا",
+    "parallel_and_perpendicular": "متوازي وعمودي",
+    "triangles": "المثلثات",
+    "quadrilaterals": "رباعيات",
+    "transformations": "التحولات",
+    "rotation": "تناوب",
+    "symmetry": "التناظر",
+    "diagonals": "الأقطار",
+    "heights": "مرتفعات",
+    "tiling": "تبليط",
+    "circles": "الدوائر",
+    "solid_shapes": "الأشكال الصلبة",
+    "pythagorean_theorem": "نظرية فيثاغورس"
+  }
+}

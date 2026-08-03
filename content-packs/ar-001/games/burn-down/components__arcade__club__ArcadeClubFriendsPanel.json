@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "رقم الأسد (8 أرقام) أو اسم العرض",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "هذا هو الرقم الذي تعطيه لصديقك — يمكنه كتابته أدناه لإرسال طلب صداقة إليك.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "أدخل رقم Leo أو اسم العرض - سيتم إرسال طلب صداقة إليهم للموافقة عليه.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "تعذر إظهار رقم الأسد الخاص بك — حاول تحديث الصفحة.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "الأصدقاء – يتم التحكم بهم عبر المشرف. ليست مفتوحة للضيوف بعد.",
+    "setquery_e_target_value": "setQuery(e.target.value)}\r\n          />",
+    "remove_this_friend_from_your_list": "هل تريد إزالة هذا الصديق من قائمتك؟",
+    "setting_up_your_leo_number": "إعداد رقم الأسد الخاص بك...",
+    "requests_friends": "الطلبات والأصدقاء",
+    "friend_requests": "طلبات الصداقة",
+    "no_friends_yet": "لا أصدقاء بعد",
+    "my_leo_number": "رقم ليو الخاص بي",
+    "remove_friend": "إزالة صديق",
+    "add_friend": "إضافة صديق",
+    "my_friends": "أصدقائي",
+    "friends": "أصدقاء",
+    "approve": "يعتمد",
+    "decline": "انخفاض",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "invite": "يدعو"
+  }
+}

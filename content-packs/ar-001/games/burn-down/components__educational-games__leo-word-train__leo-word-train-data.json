@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "grades_1_2": "الصف 1–2",
+    "grades_3_4": "الصف 3–4",
+    "grades_5_6": "الصف 5–6",
+    "nice_the_lowercase_letter_is_on_the_car": "لطيف - جيد! الحرف الصغير موجود على السيارة.",
+    "great_job_the_uppercase_letter_is_in_place": "عمل عظيم! الحرف الكبير في مكانه.",
+    "correct_the_first_letter_is_on_the_car": "صحيح! الحرف الأول موجود على السيارة.",
+    "fill_in_the_missing_letter_on_the_car": "املأ الحرف المفقود على السيارة",
+    "awesome_you_filled_in_the_missing_letter": "مذهل! لقد ملأت الرسالة المفقودة.",
+    "excellent_you_built_the_word_on_the_cars": "ممتاز! لقد بنيت الكلمة على السيارات.",
+    "great_you_completed_the_missing_letters": "عظيم! لقد أكملت الحروف المفقودة.",
+    "both_cars_are_ready_all_aboard": "كلتا السيارتين جاهزتان - الكل على متنها!",
+    "load_the_word_that_matches_the_picture": "قم بتحميل الكلمة المطابقة للصورة",
+    "the_right_word_is_on_the_car": "الكلمة الصحيحة على السيارة!",
+    "word_order_looks_good_the_train_is_leaving": "يبدو ترتيب الكلمات جيدًا - القطار يغادر!",
+    "the_missing_word_is_in_place": "الكلمة المفقودة في مكانها!",
+    "that_word_fits_the_situation": "هذه الكلمة تناسب الموقف!",
+    "arrange_a_sentence_that_describes_the_picture": "رتب جملة تصف الصورة",
+    "the_sentence_matches_the_picture_all_aboard": "الجملة تطابق الصورة - الكل على متن الطائرة!"
+  }
+}

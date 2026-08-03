@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "المفردات",
+      "topic": "سياق",
+      "subskill": "ارتصاف",
+      "pattern": "ترجمة حرفية غير صحيحة",
+      "counterEvidence": "الصحيح بعد مثالين",
+      "countsWhen": "جمل واضحة",
+      "doesNotCountWhen": "إلهاء الصديق الكاذب فقط",
+      "probe": "الجمل الموازية",
+      "intervention": "بطاقات الجمل",
+      "escalation": "صعوبة في كل موضوع",
+      "observableMarkers": [
+        "نفس الجذر عبر جمل مختلفة"
+      ],
+      "roots": [
+        "صديق كاذب"
+      ],
+      "competitors": [
+        "القواعد"
+      ],
+      "doNotConclude": [
+        "لا الإنجليزية"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "القواعد",
+      "topic": "الأزمنة",
+      "subskill": "علامة الوقت",
+      "pattern": "past/present",
+      "counterEvidence": "تصحيح مع مخطط علامات",
+      "countsWhen": "تم تسليط الضوء على العلامة",
+      "doesNotCountWhen": "زمن مختلط بدون تعليم مسبق",
+      "probe": "جمل متطابقة، علامة مختلفة",
+      "intervention": "مخطط العلامات",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ عندما يكون الأمس/الآن صريحًا"
+      ],
+      "roots": [
+        "خريطة متوترة"
+      ],
+      "competitors": [
+        "المفردات"
+      ],
+      "doNotConclude": [
+        "لا القواعد"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "القراءة",
+      "topic": "تَخطِيط",
+      "subskill": "تتبع الخط",
+      "pattern": "خطأ في تخطيط عمودين",
+      "counterEvidence": "تصحيح في عمود واحد واسع",
+      "countsWhen": "خط قابل للقراءة",
+      "doesNotCountWhen": "خط صغير بدون سقالة",
+      "probe": "الخط الكبير مقابل الخط الصغير",
+      "intervention": "رقم الخط / تتبع الإصبع",
+      "escalation": "تقرير الرؤية",
+      "observableMarkers": [
+        "خطأ فقط في تخطيط عمودين"
+      ],
+      "roots": [
+        "تتبع الخط"
+      ],
+      "competitors": [
+        "المفردات"
+      ],
+      "doNotConclude": [
+        "لا قراءة"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "القواعد",
+      "topic": "اتفاق",
+      "subskill": "الضمير-الموضوع",
+      "pattern": "he/she/it",
+      "counterEvidence": "الصحيح عندما يكون بطيئًا جدًا",
+      "countsWhen": "موضوع صريح",
+      "doesNotCountWhen": "الكتابة السريعة فقط",
+      "probe": "سلسلة مع الموضوع",
+      "intervention": "مخطط الموضوع والضمير",
+      "escalation": "يفشل دائما",
+      "observableMarkers": [
+        "خطأ",
+        "تم تسليط الضوء على الموضوع"
+      ],
+      "roots": [
+        "اتفاق نحوي"
+      ],
+      "competitors": [
+        "سرعة"
+      ],
+      "doNotConclude": [
+        "لا معرفة"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "المفردات",
+      "topic": "الاستخدام",
+      "subskill": "حرف الجر",
+      "pattern": "نفس حرف الجر الخاطئ",
+      "counterEvidence": "تصحيح على قائمة مغلقة",
+      "countsWhen": "حروف الجر المدروسة",
+      "doesNotCountWhen": "الأفعال لم تدرس بعد",
+      "probe": "نفس الفعل، حروف الجر",
+      "intervention": "الحد الأدنى من الأزواج",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ مع أفعال مختلفة"
+      ],
+      "roots": [
+        "مفردات محددة"
+      ],
+      "competitors": [
+        "القواعد العامة"
+      ],
+      "doNotConclude": [
+        "لا لغة"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "القراءة",
+      "topic": "فهم",
+      "subskill": "الاستدلال",
+      "pattern": "الحقيقة بدلا من الاستدلال",
+      "counterEvidence": "الصحيح على حقيقة واضحة",
+      "countsWhen": "تم وضع علامة على نوع السؤال",
+      "doesNotCountWhen": "قبل أن يتم تدريس الاستدلال",
+      "probe": "الحقيقة مقابل الاستدلال",
+      "intervention": "استنتاج كلمات الإشارة",
+      "escalation": "الفشل في الحقائق أيضا",
+      "observableMarkers": [
+        "الخطأ في الاستدلال فقط"
+      ],
+      "roots": [
+        "استراتيجية"
+      ],
+      "competitors": [
+        "المفردات"
+      ],
+      "doNotConclude": [
+        "لا تفكير"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "الكتابة",
+      "topic": "تهجئة",
+      "subskill": "الأنماط الصامتة",
+      "pattern": "الأخطاء المتكررة",
+      "counterEvidence": "تصحيح مع الإملاء البطيء",
+      "countsWhen": "الكلمات المدروسة",
+      "doesNotCountWhen": "قبل القاعدة",
+      "probe": "التحكم في الكتابة اليدوية",
+      "intervention": "القواعد الإملائية البسيطة",
+      "escalation": "تقرير احترافي",
+      "observableMarkers": [
+        "نفس النمط"
+      ],
+      "roots": [
+        "علم الأصوات"
+      ],
+      "competitors": [
+        "الكتابة"
+      ],
+      "doNotConclude": [
+        "اضطراب"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "الاستماع",
+      "topic": "فونيمي",
+      "subskill": "الحد الأدنى من الأزواج",
+      "pattern": "الخلط بين زوج الصوت",
+      "counterEvidence": "تصحيح مع الاستماع المزدوج البطيء",
+      "countsWhen": "تسجيل واضح",
+      "doesNotCountWhen": "الضوضاء المعروفة",
+      "probe": "نفس الزوج بكلمات مختلفة",
+      "intervention": "ممارسة الزوج",
+      "escalation": "تقرير السمع",
+      "observableMarkers": [
+        "خطأ في نفس الزوج"
+      ],
+      "roots": [
+        "الصوتيات"
+      ],
+      "competitors": [
+        "ضوضاء"
+      ],
+      "doNotConclude": [
+        "اضطراب السمع"
+      ]
+    }
+  }
+}

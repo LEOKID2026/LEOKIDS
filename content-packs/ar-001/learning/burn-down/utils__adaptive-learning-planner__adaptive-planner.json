@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "لا يوجد سياق كافٍ للتخطيط (الموضوع مفقود).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "هناك حاجة إلى مزيد من النشاط التعليمي قبل اقتراح التركيز التالي.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "يحتاج نظام التعلم إلى مزيد من البيانات التدريبية قبل اقتراح الخطوة التالية.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "اجمع المزيد من عناصر التدريب؛ يتم تأجيل الاستنتاجات.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "يمكن أن تستمر ممارسة اللغة الإنجليزية، ولكن يجب تأكيد توجيه المهارات من قبل المعلم.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "وضع العلامات باللغة الإنجليزية غير مكتمل في بنك المحتوى؛ لن يقوم المخطط بتوجيه المهارات الدقيقة تلقائيًا.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "انتظار البيانات الوصفية للأسئلة التي تم التحقق منها قبل اقتراح مسار متقدم.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "لم يتم تأكيد البيانات الوصفية للمهارة للخطوة التالية؛ عقد التقدم التلقائي.",
+    "short_probe_to_verify_understanding_versus_guessing": "مسبار قصير للتحقق من الفهم مقابل التخمين.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "إشارات غير متناسقة أو ثقيلة التخمين - استخدم مجموعة تشخيصية صغيرة.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "تمرين إضافي على المهارة الحالية بصعوبة داعمة.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "الممارسة المستهدفة على نفس المهارة؛ تم الاحتفاظ بالصعوبة أو خفضها قليلاً.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "مراجعة مختصرة لمهارة أساسية تدعم الموضوع الحالي.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "قم بتعزيز إحدى المهارات الأساسية قبل الدفع بالمهارة الرئيسية بقوة أكبر.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "جاهز لممارسة أكثر تحديًا قليلاً على نفس خط المهارة.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "إشارات تدعم الحذر تزداد صعوبة مع المراقبة.",
+    "continue_solid_practice_at_the_current_level": "مواصلة الممارسة القوية على المستوى الحالي.",
+    "maintain_current_difficulty_while_consolidating_mastery": "حافظ على الصعوبة الحالية مع تعزيز الإتقان.",
+    "review_style_practice_on_the_current_skill": "ممارسة أسلوب المراجعة على المهارة الحالية.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "يقترح المحرك المراجعة؛ يتماشى المخطط مع ممارسة نفس المهارة.",
+    "steady_practice_on_the_current_focus": "ممارسة ثابتة على التركيز الحالي.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "المسار الآمن الافتراضي: مواصلة التدريب دون تقدم الصعوبة."
+  }
+}

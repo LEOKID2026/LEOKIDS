@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "activity_report_teacher": "تقرير النشاط – المعلم",
+    "questions": "أسئلة",
+    "student_summary": "ملخص الطالب",
+    "question_analysis": "تحليل السؤال",
+    "skill_analysis": "تحليل المهارات"
+  }
+}

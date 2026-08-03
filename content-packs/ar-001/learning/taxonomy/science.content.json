@@ -1,0 +1,205 @@
+{
+  "subjectId": "science",
+  "rows": {
+    "S-01": {
+      "id": "S-01",
+      "domain": "مفهوم",
+      "topic": "تصنيف",
+      "subskill": "الملكية مقابل العملية",
+      "pattern": "ارتباك الفئة",
+      "counterEvidence": "تصحيح بعد جدول الأمثلة",
+      "countsWhen": "الجدول الموجه",
+      "doesNotCountWhen": "مشتتات الهوموفون فقط",
+      "probe": "خاصية منفصلة عن العملية (الممارسة المركزة)",
+      "intervention": "جدول الخاصية/العملية",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ في مفهومين مماثلين"
+      ],
+      "roots": [
+        "ارتباك المفهوم"
+      ],
+      "competitors": [
+        "القراءة"
+      ],
+      "doNotConclude": [
+        "لا يوجد علم"
+      ]
+    },
+    "S-02": {
+      "id": "S-02",
+      "domain": "طريقة",
+      "topic": "تجربة",
+      "subskill": "متغير معزول",
+      "pattern": "تغيير كل شيء",
+      "counterEvidence": "تصحيح مع جدول المتغيرات",
+      "countsWhen": "الجدول متاح",
+      "doesNotCountWhen": "نص طويل بدون جدول",
+      "probe": "نفس التجربة مع الجدول",
+      "intervention": "متغير واحد",
+      "escalation": "الفشل المتكرر",
+      "observableMarkers": [
+        "خطأ في سيناريوهات التغيير المفرد"
+      ],
+      "roots": [
+        "فهم التجربة"
+      ],
+      "competitors": [
+        "ذاكرة"
+      ],
+      "doNotConclude": [
+        "لا تفكير"
+      ]
+    },
+    "S-03": {
+      "id": "S-03",
+      "domain": "جسم",
+      "topic": "الأنظمة",
+      "subskill": "Location/flow",
+      "pattern": "طلب/موقع خاطئ",
+      "counterEvidence": "تصحيح مع الترقيم",
+      "countsWhen": "مخطط مرقم",
+      "doesNotCountWhen": "الأسماء اللاتينية لم تدرس بعد",
+      "probe": "عمودي مقابل أفقي",
+      "intervention": "بطاقات الموقع",
+      "escalation": "تقرير طبي",
+      "observableMarkers": [
+        "خطأ في خريطة الجسم البسيطة"
+      ],
+      "roots": [
+        "خريطة مكانية خشنة"
+      ],
+      "competitors": [
+        "لغة"
+      ],
+      "doNotConclude": [
+        "قضية طبية"
+      ]
+    },
+    "S-04": {
+      "id": "S-04",
+      "domain": "موضوع",
+      "topic": "حالات المادة",
+      "subskill": "الحفظ الشامل",
+      "pattern": "يختفي دون الحفظ",
+      "counterEvidence": "الصحيح بعد الرسم التخطيطي",
+      "countsWhen": "الرسم البياني متاح",
+      "doesNotCountWhen": "كلمة بدون حالات تدرس",
+      "probe": "مع/بدون مخطط",
+      "intervention": "مخطط الولايات",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ عند وجود مخطط الحالات"
+      ],
+      "roots": [
+        "الحفظ الشامل"
+      ],
+      "competitors": [
+        "لغة"
+      ],
+      "doNotConclude": [
+        "لا الفيزياء"
+      ]
+    },
+    "S-05": {
+      "id": "S-05",
+      "domain": "طاقة",
+      "topic": "الوحدات",
+      "subskill": "تحويل الوحدة",
+      "pattern": "ارتباك الوحدة",
+      "counterEvidence": "تصحيح مع مفتاح",
+      "countsWhen": "المفتاح متاح",
+      "doesNotCountWhen": "قبل تدريس الوحدة",
+      "probe": "وحدتين لنفس المبلغ",
+      "intervention": "مفتاح الوحدة",
+      "escalation": "يفشل دائما",
+      "observableMarkers": [
+        "خطأ في نفس الوحدة"
+      ],
+      "roots": [
+        "الوحدات"
+      ],
+      "competitors": [
+        "حساب"
+      ],
+      "doNotConclude": [
+        "لا فهم"
+      ]
+    },
+    "S-06": {
+      "id": "S-06",
+      "domain": "قياس",
+      "topic": "رسم بياني",
+      "subskill": "قراءة المحور",
+      "pattern": "قيمة خاطئة من الرسم البياني",
+      "counterEvidence": "قم بالتصحيح عند تمييز المحور",
+      "countsWhen": "محاور متدرجة",
+      "doesNotCountWhen": "رسم بياني بدون مقياس",
+      "probe": "مع/بدون تسليط الضوء على نقطة",
+      "intervention": "تدرب على نقطة على المحور",
+      "escalation": "تقرير الرؤية",
+      "observableMarkers": [
+        "خطأ في اثنين من الرسوم البيانية"
+      ],
+      "roots": [
+        "قراءة الرسم البياني"
+      ],
+      "competitors": [
+        "حساب"
+      ],
+      "doNotConclude": [
+        "لا يوجد علم"
+      ]
+    },
+    "S-07": {
+      "id": "S-07",
+      "domain": "علم البيئة",
+      "topic": "العلاقات",
+      "subskill": "الشبكة الغذائية",
+      "pattern": "تكرار مستوى خاطئ",
+      "counterEvidence": "تصحيح على قائمة مغلقة",
+      "countsWhen": "الرسم البياني أو القائمة",
+      "doesNotCountWhen": "النص فقط دون التدريس",
+      "probe": "الويب الجزئي",
+      "intervention": "بطاقات",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ عند وجود رسم تخطيطي"
+      ],
+      "roots": [
+        "هيكل النظام"
+      ],
+      "competitors": [
+        "تذكر الاسم"
+      ],
+      "doNotConclude": [
+        "لا توجد أنظمة"
+      ]
+    },
+    "S-08": {
+      "id": "S-08",
+      "domain": "سلامة العلوم",
+      "topic": "المنطق",
+      "subskill": "مصدر للمطالبة",
+      "pattern": "مطالبة غير مدعومة",
+      "counterEvidence": "تصحيح عند طلب المصدر",
+      "countsWhen": "تم وضع علامة على المصادر",
+      "doesNotCountWhen": "تشتيت الإعلانات",
+      "probe": "مع/بدون مصدر",
+      "intervention": "اسأل كيف نعرف",
+      "escalation": "مدرس دراسات اجتماعية",
+      "observableMarkers": [
+        "يتكرر عند وجود مصدر واضح"
+      ],
+      "roots": [
+        "التفكير النقدي"
+      ],
+      "competitors": [
+        "القراءة"
+      ],
+      "doNotConclude": [
+        "القيم الشخصية"
+      ]
+    }
+  }
+}

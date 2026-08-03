@@ -1,0 +1,9 @@
+{
+  "gameId": "tic-tac-toe",
+  "title": "Tic-Tac-Toe",
+  "blurb": "لوحات من 3 × 3 إلى 7 × 7 مع تتبع النتيجة.",
+  "players": "2 لاعبين",
+  "help": {
+    "howToPlay": "العبوا معًا على نفس الجهاز."
+  }
+}

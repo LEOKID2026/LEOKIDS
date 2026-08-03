@@ -1,39 +1,28 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client.js";
 import {
+  bindSchoolUiLocale,
   SCHOOL_NAV_CLASSES,
   SCHOOL_NAV_DASHBOARD,
   SCHOOL_NAV_MY_TEACHER,
   SCHOOL_NAV_OPERATOR_DASHBOARD,
+  SCHOOL_NAV_OPERATIONS_MENU,
+  SCHOOL_NAV_MANAGEMENT_MENU,
   SCHOOL_NAV_STUDENTS,
   SCHOOL_NAV_TEACHERS,
   SCHOOL_NAV_OPERATORS,
   SCHOOL_PLATFORM_LABEL,
+  SCHOOL_SIGN_OUT,
+  SCHOOL_SIGN_OUT_BUSY,
 } from "../../lib/school-portal/school-ui.js";
 import { SC_NAV_MESSAGES } from "../../lib/school-portal/school-communication.js";
 
 export const SCHOOL_PAGE_CONTAINER =
   "max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 md:py-10";
-
-const NAV_ITEMS_MANAGER = [
-  { href: "/school/dashboard", label: SCHOOL_NAV_DASHBOARD },
-  { href: "/school/teachers", label: SCHOOL_NAV_TEACHERS },
-  { href: "/school/operators", label: SCHOOL_NAV_OPERATORS },
-  { href: "/school/classes", label: SCHOOL_NAV_CLASSES },
-  { href: "/school/students", label: SCHOOL_NAV_STUDENTS },
-  { href: "/school/messages", label: SC_NAV_MESSAGES },
-];
-
-function buildOperatorNavItems(operatorGrants = {}) {
-  const items = [{ href: "/school/operator/dashboard", label: SCHOOL_NAV_OPERATOR_DASHBOARD }];
-  if (operatorGrants.studentAccessAdmin || operatorGrants.studentDataViewer) {
-    items.push({ href: "/school/students", label: SCHOOL_NAV_STUDENTS });
-  }
-  return items;
-}
 
 function navLinkClass(active) {
   return active
@@ -52,12 +41,31 @@ export default function SchoolPortalShell({
   children,
 }) {
   const router = useRouter();
+  const { locale, direction, isRtl } = useI18n();
+  bindSchoolUiLocale(locale);
+
   const [busy, setBusy] = useState(false);
+
   const navItems = useMemo(() => {
-    if (portalRole === "school_manager") return NAV_ITEMS_MANAGER;
-    if (portalRole === "school_operator") return buildOperatorNavItems(operatorGrants || {});
+    if (portalRole === "school_manager") {
+      return [
+        { href: "/school/dashboard", label: SCHOOL_NAV_DASHBOARD },
+        { href: "/school/teachers", label: SCHOOL_NAV_TEACHERS },
+        { href: "/school/operators", label: SCHOOL_NAV_OPERATORS },
+        { href: "/school/classes", label: SCHOOL_NAV_CLASSES },
+        { href: "/school/students", label: SCHOOL_NAV_STUDENTS },
+        { href: "/school/messages", label: SC_NAV_MESSAGES },
+      ];
+    }
+    if (portalRole === "school_operator") {
+      const items = [{ href: "/school/operator/dashboard", label: SCHOOL_NAV_OPERATOR_DASHBOARD }];
+      if (operatorGrants?.studentAccessAdmin || operatorGrants?.studentDataViewer) {
+        items.push({ href: "/school/students", label: SCHOOL_NAV_STUDENTS });
+      }
+      return items;
+    }
     return [];
-  }, [portalRole, operatorGrants]);
+  }, [portalRole, operatorGrants, locale]);
 
   const logout = async () => {
     setBusy(true);
@@ -79,28 +87,27 @@ export default function SchoolPortalShell({
   };
 
   const path = router.pathname;
-  const navLabel = portalRole === "school_operator" ? "Operations menu" : "Management menu";
+  const navLabel =
+    portalRole === "school_operator" ? SCHOOL_NAV_OPERATIONS_MENU : SCHOOL_NAV_MANAGEMENT_MENU;
 
-  /**
-   * Keep document direction/lang aligned with US English school portal UI.
-   * Scoped here so global Layout is unchanged.
-   */
+  const htmlLang = locale === "ar-001" ? "ar" : locale.startsWith("en") ? "en" : locale;
+
   useEffect(() => {
     const html = document.documentElement;
     const prevDir = html.getAttribute("dir");
     const prevLang = html.getAttribute("lang");
-    html.setAttribute("dir", "ltr");
-    html.setAttribute("lang", "en");
+    html.setAttribute("dir", direction);
+    html.setAttribute("lang", htmlLang);
     return () => {
       if (prevDir) html.setAttribute("dir", prevDir);
       else html.removeAttribute("dir");
       if (prevLang) html.setAttribute("lang", prevLang);
       else html.removeAttribute("lang");
     };
-  }, []);
+  }, [direction, htmlLang]);
 
   return (
-    <div className={`${SCHOOL_PAGE_CONTAINER} text-white`} dir="ltr" lang="en">
+    <div className={`${SCHOOL_PAGE_CONTAINER} text-white`} dir={direction} lang={htmlLang}>
       <header className="mb-6 lg:mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-white/15 pb-4">
         <div className="min-w-0 flex-1 text-start">
           <p className="text-xs text-white/50 mb-1">{SCHOOL_PLATFORM_LABEL}</p>
@@ -110,7 +117,9 @@ export default function SchoolPortalShell({
           {title ? <h1 className="text-xl md:text-2xl font-bold text-start">{title}</h1> : null}
           {subtitle ? <p className="text-sm text-white/55 mt-1 text-start max-w-2xl">{subtitle}</p> : null}
         </div>
-        <div className="flex flex-wrap items-center gap-2 shrink-0 w-full sm:w-auto justify-end">
+        <div
+          className={`flex flex-wrap items-center gap-2 shrink-0 w-full sm:w-auto ${isRtl ? "justify-start sm:justify-end" : "justify-end"}`}
+        >
           {showTeacherDashboardLink ? (
             <Link
               href="/teacher/dashboard"
@@ -125,7 +134,7 @@ export default function SchoolPortalShell({
             disabled={busy}
             className="rounded-lg border border-white/25 bg-white/10 hover:bg-white/15 px-3 py-1.5 font-semibold text-white disabled:opacity-60 min-h-[2rem] text-sm"
           >
-            {busy ? "Signing out…" : "Sign out"}
+            {busy ? SCHOOL_SIGN_OUT_BUSY : SCHOOL_SIGN_OUT}
           </button>
         </div>
       </header>

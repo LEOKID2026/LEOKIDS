@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "oops_something_went_wrong": "أُووبس! حدث خطأ ما",
+    "we_couldn_t_load_the_game_you_can_try_again": "لم نتمكن من تحميل اللعبة. يمكنك المحاولة مرة أخرى.",
+    "back_to_games_list": "العودة إلى قائمة الألعاب",
+    "offline_games_area": "منطقة الألعاب دون اتصال",
+    "try_again": "حاول ثانية"
+  }
+}

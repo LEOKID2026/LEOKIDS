@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "unsupported_room_type_allowed_public_private_or_quick": "نوع الغرفة غير مدعوم (المسموح به: عام أو خاص أو سريع)"
+  }
+}

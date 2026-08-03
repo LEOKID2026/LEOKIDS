@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "empty_slot": "فتحة فارغة",
+    "top_tray": "صينية علوية 🧩",
+    "tray": "صينية 🧩",
+    "bottom_tray": "صينية سفلية 🧩",
+    "close_picture": "إغلاق الصورة",
+    "handledragstart_e_id_portraitmobile_hidelabel_singlerow": "HandleDragStart(e,id)}\n\n              com.portraitMobile\n\n              this.hideLabel\n\n              com.singleRow\n\n            />",
+    "handledragstart_e_id_portraitmobile_hidelabel": "HandleDragStart(e,id)}\n\n              com.portraitMobile\n\n              this.hideLabel\n\n            />",
+    "handledragstart_e_id": "HandleDragStart(e,id)}\n\n            />",
+    "pick_a_piece": "اختر قطعة"
+  }
+}

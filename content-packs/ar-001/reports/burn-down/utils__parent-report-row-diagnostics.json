@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "لم يتم جمع أي أسئلة في الفترة المحددة - لا يوجد أساس بيانات لهذا الصف.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "عدد قليل جدًا من الأسئلة في هذه الفترة - الاستنتاجات لهذا الصف جزئية جدًا.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "تم جمع العديد من الأسئلة - يمكنك الاعتماد أكثر على ما تراه في هذا الموضوع.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "هناك ما يكفي من الأسئلة لهذا الموضوع - تغييرات حذرة على المهارات الفرعية فقط.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "هناك أسئلة كافية - يمكنك الاعتماد أكثر على ما تراه في هذا الموضوع.",
+    "moderate_data_cautious_changes_only_are_recommended": "بيانات معتدلة - يوصى بإجراء تغييرات حذرة فقط.",
+    "row_inputs_before_signal_computation": "مدخلات الصف قبل حساب الإشارة.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "تؤثر كمية المعلومات المتاحة على مدى حذر التوصية التالية.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "يظهر هذا عبر عدة جلسات تدريب - الصورة تعكس الاتجاه، وليس مجرد جلسة واحدة.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "تعتمد التوصية على مزيج من الدقة وعدد الأسئلة والأخطاء ومدى حداثة الممارسة في الفترة المحددة."
+  }
+}

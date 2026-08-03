@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "لقد تجاوز العنصر الناقل - حاول أن تكون أسرع!",
+    "correct_great_job": "صحيح! عمل عظيم ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "الرياضيات.max(الأفضل، التالي));\n        if (next === 5) addScore(SCORE.streak5);\n        if (next === 10) addScore(SCORE.streak10);\n        إذا (التالي === 5 || التالي === 10) onStreak();\n        العودة بعد ذلك؛\n      });\n\n      addScore(bonus);\n\n      const showFact = الرياضيات.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"يتحرك\");\n      const DualAllowed =allowDualItemsAt(sortedCountRef.current,صعوبةRef.current);\n      const maxOnBelt = DualAllowed && الرياضيات.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id])،\n    [diffConfig.bins]،\n  );\n\n  const binsGridClass =\n    activeBins.length",
+    "onitemclick_bi_uid": "onItemClick(bi.uid)}\n                          />\n                        ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "قم بفرز العناصر في الصناديق المناسبة وساعد البيئة",
+    "sort_each_item_into_the_right_bin_help_the_planet": "قم بفرز كل عنصر في سلة المهملات الصحيحة - ساعد الكوكب!",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)}\n        />\n      ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "اسحب إلى سلة المهملات أو اضغط على عنصر → سلة المهملات",
+    "leo_apos_s_recycling_factory": "مصنع ليو لإعادة التدوير",
+    "correct_items": "العناصر الصحيحة",
+    "best_streak": "أفضل خط",
+    "start_game": "ابدأ اللعبة",
+    "mistakes": "أخطاء",
+    "accuracy": "دقة",
+    "new_game": "لعبة جديدة",
+    "mission": "مهمة",
+    "score": "نتيجة",
+    "level": "مستوى",
+    "back": "رجوع"
+  }
+}

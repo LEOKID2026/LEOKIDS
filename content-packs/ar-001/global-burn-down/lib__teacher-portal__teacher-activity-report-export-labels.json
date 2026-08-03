@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "live_lesson": "درس مباشر",
+    "guided_practice": "الممارسة الموجهة",
+    "homework": "العمل في المنزل",
+    "class_discussion": "مناقشة الصف",
+    "standard": "معيار",
+    "advanced": "متقدم",
+    "angles": "الزوايا",
+    "shapes": "الأشكال",
+    "perimeter": "المحيط",
+    "volume": "الحجم",
+    "general_practice": "الممارسة العامة",
+    "asia_jerusalem": "Asia/Jerusalem"
+  }
+}

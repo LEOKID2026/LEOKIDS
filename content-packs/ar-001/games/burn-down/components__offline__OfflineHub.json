@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "ألعاب نفس الجهاز",
+    "leo_solo_games": "العاب ليو سولو",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "العلامات والألغاز والمتاهات والمزيد - لا حاجة للاتصال.",
+    "educational_games": "العاب تعليمية",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "إعادة التدوير، ومتجر بقالة، ومختبر، ومطعم بيتزا، وقطار الكلمات والمزيد - كلها محلية.",
+    "leo_games_offline": "ألعاب ليو - غير متصل",
+    "educational_games_offline": "الألعاب التعليمية - غير متصل",
+    "local_games_no_saving_and_no_rewards": "الألعاب المحلية - لا يوجد توفير ولا مكافآت",
+    "offline_games": "ألعاب غير متصل",
+    "back": "رجوع"
+  }
+}

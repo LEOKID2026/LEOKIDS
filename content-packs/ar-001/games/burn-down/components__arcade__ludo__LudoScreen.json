@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "رجوع",
+    "coin_balance": "رصيد العملة",
+    "how_to_play": "كيف تلعب",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "عند دورك، يتم رمي النرد (يفتح OV2 أيضًا رسمًا متحركًا للرمي تلقائيًا)، ثم اختر القطعة التي تريد نقلها.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "فقط 6 يحصل على قطعة من الفناء على المسار.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "يمنح الرقم 6 أو الالتقاط أو الدخول إلى المنزل من المسار - وفقًا لقواعد المحرك - دورًا إضافيًا.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "قطعة تصل إلى تشطيبات المنزل؛ أربع قطع يفوز على أرضه.",
+    "waiting_for_players": "في انتظار اللاعبين..."
+  }
+}

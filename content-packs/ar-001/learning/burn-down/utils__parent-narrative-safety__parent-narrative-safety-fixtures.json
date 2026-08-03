@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "الأدلة الضعيفة ولكن التحوط الحذر الصريح - لا ينبغي أن تمنع.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "دليل رقيق ذو يقين قوي وادعاء الإتقان - كتلة.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "قوائم المحرك لا تنهي الحواجز ولكن النص يستخدم اليقين المطلق.",
+    "disability_clinical_framing_block": "الإعاقة / التأطير السريري - الكتلة.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "المحرك يسمح بالصيانة فقط؛ قفزة مستوى قوى السرد.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "ثقة المحرك منخفضة ولكن النص الأصلي مؤكد تمامًا.",
+    "permanent_failure_never_succeed_framing_block": "الفشل الدائم / عدم النجاح أبدًا في التأطير - الكتلة.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "إشارة تخمين عالية ولكن السرد يدعي الإتقان الكامل.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "فجوة المتطلبات الأساسية المشتبه بها فقط؛ ينص السرد على فجوة مستوى الإثبات.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "تسرب رمز التصنيف الداخلي إلى النسخة الأصلية - الكتلة.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "خط تقييد إحصائي واقعي للبيانات الرقيقة - تمرير (معلومات: تحذير رفيع آمن).",
+    "explicit_collect_more_examples_framing_pass_info": "صريحة جمع المزيد من الأمثلة تأطير - تمرير (معلومات).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "بيانات رقيقة ولكنها تطالب بالقدرة على التحديد/ضعف كبير - تحذير.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "يقر بنقص البيانات ثم يؤكد وجود مشكلة واضحة - تحذير.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "صف رفيع ولكن سرد غامض بدون تأطير واضح ومحدود للبيانات - تحذير.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "على الرغم من البيانات القليلة، الوضوح المطلق حول الصراع - الثقة المفرطة + رقيقة → كتلة."
+  }
+}

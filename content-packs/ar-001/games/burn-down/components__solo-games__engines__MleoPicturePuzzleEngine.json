@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "escape": "يهرب",
+    "previous_picture": "الصورة السابقة",
+    "next_picture": "الصورة التالية",
+    "the_board_and_tray_will_display_more_comfortably": "سيتم عرض اللوحة والصينية بشكل أكثر راحة.",
+    "img_id_selectedimageid_src_puzzle_images_0_src_const_iseasy_difficulty_e": "img.id === SelectImageId)?.src || PUZZLE_IMAGES[0].src;\n  const isEasy = الصعوبة === \"سهل\";\n\n  constsafePreviewIndex =\n    PreviewIndex == null\n      ؟ null\n      : الرياضيات.min(الرياضيات.max(previewIndex, 0), PUZZLE_IMAGES.length - 1);\n  const PreviewImage = SafePreviewIndex == null ? فارغة : PUZZLE_IMAGES[safePreviewIndex];\n  const canPreviewPrev =safePreviewIndex != null &&safePreviewIndex > 0;\n  const canPreviewNext =\n    safePreviewIndex != null &&safePreviewIndex",
+    "event_stoppropagation_dir_ltr": "حدث.stopPropagation()}\n                دير = \"لتر\"\n              >",
+    "tap_a_picture_to_select_it": "اضغط على الصورة لتحديدها",
+    "choose_a_puzzle_picture": "اختر صورة اللغز",
+    "select_picture": "حدد الصورة",
+    "close": "إغلاق"
+  }
+}

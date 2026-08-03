@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "server_error": "خطأ في الخادم",
+    "server_error_try_refreshing_the_page": "خطأ في الخادم — حاول تحديث الصفحة."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "what_we_see": "ماذا نرى؟",
+    "what_it_means": "ماذا يعني؟",
+    "what_to_do_together": "ماذا نفعل معا؟",
+    "in_the_recent_period": "في الفترة الأخيرة:",
+    "what_we_saw": "ما رأيناه:",
+    "foundation_and_dependencies": "الأسس والتبعيات:",
+    "where_they_sometimes_get_stuck": "حيث يتعثرون في بعض الأحيان:",
+    "retention_at_home": "الاحتجاز في المنزل:",
+    "now": "الآن:",
+    "avoid": "يتجنب:",
+    "caution": "حذر:",
+    "what_stands_out_in_each_topic": "ما يبرز في كل موضوع"
+  }
+}

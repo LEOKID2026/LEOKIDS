@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "رجوع",
+    "local_badge": "محلي",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "مجلس {size}×{size} • {mode}",
+    "vs_bot": "مقابل بوت",
+    "two_players": "2 لاعبين",
+    "player_x": "اللاعب العاشر",
+    "player_o": "اللاعب O",
+    "tie": "رَابِطَة",
+    "vs_bot_label": "مقابل بوت",
+    "reset_board": "إعادة ضبط اللوحة",
+    "reset_score": "إعادة تعيين النتيجة",
+    "player_won": "{player} فاز!",
+    "tie_game": "رَابِطَة!",
+    "turn": "دور:"
+  }
+}

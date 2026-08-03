@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "class_report": "تقرير الطبقة",
+    "invalid_class_id": "معرف الفئة غير صالح.",
+    "you_do_not_have_permission_to_view_this_class_report": "ليس لديك الإذن لعرض تقرير الفصل الدراسي هذا.",
+    "please_select_valid_dates": "الرجاء تحديد تواريخ صالحة"
+  }
+}

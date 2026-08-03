@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "الانتقال إلى المستوى المتقدم — نفس الموضوع فقط",
+    "move_up_a_grade_same_topic_only": "رفع درجة - نفس الموضوع فقط",
+    "solidify_at_the_same_level": "تصلب على نفس المستوى",
+    "solidify_at_regular_level": "تصلب على المستوى العادي",
+    "strengthen_at_the_same_level": "تعزيز على نفس المستوى",
+    "return_to_regular_practice": "العودة إلى الممارسة المنتظمة",
+    "lower_difficulty_same_topic_only": "صعوبة أقل - نفس الموضوع فقط",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "تم حل ما يكفي من الأسئلة على المستوى العادي وبدقة ثابتة. إن المحاولة المتقدمة في نفس الموضوع أمر معقول.",
+    "trying_advanced_on_the_same_topic_is_recommended": "يوصى بالمحاولة المتقدمة في نفس الموضوع.",
+    "you_can_try_advanced_on_the_same_topic": "يمكنك تجربة متقدمة في نفس الموضوع.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "قم ببناء ممارسة أكثر ثباتًا على المستوى العادي قبل الانتقال إلى المستوى المتقدم.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "استمر على المستوى العادي وعزز الدقة والثقة قبل التقدم.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "سنبقى لفترة أطول قليلاً على المستوى العادي، ونصبح أقوى، ثم نحاول التقدم.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "كان التحدي المتقدم مرتفعًا الآن. يوصى بالعودة إلى الممارسة المنتظمة حول نفس الموضوع.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "كان التحدي المتقدم مرتفعًا الآن. عد إلى الممارسة المنتظمة، وعزز الدقة والثقة، ثم حاول مرة أخرى لاحقًا.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "سنعود إلى التدريب المنتظم لبعض الوقت، ونصبح أقوى، ثم نحاول مرة أخرى.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "تعزيز نفس الموضوع من خلال الممارسة المنتظمة بوتيرة مريحة.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "واصل التدريب المنتظم بوتيرة مريحة، مع بعض الأسئلة القصيرة للتعزيز.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "سنعزز من خلال الممارسة المنتظمة أولاً، ثم نمضي قدمًا.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "جرب مستوى أو درجة أقل، ثم تقدم تدريجيًا.",
+    "limited_information": "معلومات محدودة"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "not_available": "غير متوفر",
+    "there_are_only_a_few_questions_on_this_topic_so_it_is_still_early_to_dra": "لا يوجد سوى عدد قليل من الأسئلة حول هذا الموضوع، لذلك لا يزال من المبكر التوصل إلى نتيجة قوية.",
+    "keep_practicing_a_few_more_short_questions_and_watch_for_whether_the_sam": "استمر في التدرب على بعض الأسئلة القصيرة وراقب ما إذا كان الخطأ نفسه يتكرر.",
+    "most_answers_are_correct_and_this_topic_looks_relatively_stable": "معظم الإجابات صحيحة، وهذا الموضوع يبدو مستقرًا نسبيًا.",
+    "keep_up_the_success_with_a_short_practice_every_now_and_then": "استمر في النجاح من خلال ممارسة قصيرة بين الحين والآخر.",
+    "the_same_type_of_mistake_keeps_showing_up": "نفس النوع من الخطأ يستمر في الظهور.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_how_they_reached_the_": "توقف مؤقتًا بعد الخطأ واطلب من الطفل أن يشرح كيف وصل إلى الإجابة.",
+    "pause_after_a_mistake_and_ask_the_child_to_explain_step_by_step_how_they": "توقف بعد الخطأ واطلب من الطفل أن يشرح خطوة بخطوة كيف وصل إلى الإجابة.",
+    "practice_the_specific_pairs_that_keep_coming_up_wrong_out_loud_and_as_a_": "تدرب على الأزواج المحددة التي تظهر بشكل خاطئ بصوت عالٍ وكلعبة سريعة.",
+    "pause_before_solving_and_ask_should_the_result_be_bigger_or_smaller_than": "توقف قبل الحل واسأل: هل يجب أن تكون النتيجة أكبر أم أصغر من رقم البداية؟",
+    "read_a_short_passage_together_and_pause_to_ask_where_in_the_text_did_you": "اقرأ مقطعًا قصيرًا معًا وتوقف مؤقتًا لتسأل: أين وجدت الإجابة في النص؟",
+    "practice_a_few_short_questions_and_ask_the_child_to_explain_the_method": "تدرب على بعض الأسئلة القصيرة واطلب من الطفل أن يشرح الطريقة."
+  }
+}

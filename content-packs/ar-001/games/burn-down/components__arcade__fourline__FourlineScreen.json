@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "four_in_a_row": "أربعة على التوالي",
+    "back": "رجوع",
+    "coin_balance": "رصيد العملة",
+    "how_to_play": "كيف تلعب",
+    "close": "إغلاق",
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "يختار كل لاعب عمودًا؛ يسقط القرص إلى الأسفل.",
+    "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal": "الهدف: توصيل أربعة أقراص على التوالي - أفقيًا أو رأسيًا أو قطريًا.",
+    "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back": "الأزرق يذهب أولا. بعد كل حركة، ينتقل الدور إلى الذهب ثم يعود.",
+    "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw": "إذا امتلأت اللوحة بدون أربعة في صف واحد، فهذا يعني التعادل.",
+    "waiting_for_a_second_player": "في انتظار اللاعب الثاني..",
+    "four_in_a_row_2": "أربعة على التوالي."
+  }
+}

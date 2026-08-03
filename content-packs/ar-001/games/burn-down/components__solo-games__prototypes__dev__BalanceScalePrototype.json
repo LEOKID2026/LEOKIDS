@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "tap_to_return_to_tray": "انقر للعودة إلى الدرج",
+    "balance_scale": "مقياس التوازن",
+    "prototype_drag_items_balance_the_scale": "النموذج الأولي · سحب العناصر · موازنة الميزان",
+    "object_fromentries_items_map_i_i_id_i_const_leftweight_left_reduce_s_p_s": "Object.fromEntries(ITEMS.map((i) => [i.id, i])), []);\n\n  const leftWeight = left.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const rightWeight = right.reduce((s, p) => s + (itemMap[p.itemId]?.weight ?? 0), 0);\n  const diff = rightWeight - leftWeight؛\n  const Tilt = الرياضيات.max(-18, الرياضيات.min(18, diff * 4));\n  const isBalanced = left.length > 0 && right.length > 0 && الرياضيات.abs(diff)",
+    "setshowweights_e_target_checked_classname_h_4_w_4_show_weights_debug": "setShowWeights(e.target.checked)}\n            اسم الفئة = \"ح-4 ث-4\"\n          />\n          إظهار الأوزان (التصحيح)",
+    "tap_an_item_on_the_scale_to_return_it_or_drag_from_the_tray": "اضغط على عنصر على المقياس لإعادته · أو اسحب من الدرج",
+    "setdragover_null": "setDragOver(null)}\n              >",
+    "item_tray_drag_to_a_side": "علبة العنصر — اسحب إلى الجانب",
+    "all_items_are_on_the_scale": "جميع العناصر على نطاق واسع",
+    "balanced": "متوازن! ⚖️🎉",
+    "reset": "إعادة ضبط"
+  }
+}

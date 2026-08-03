@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "volume_supports_stronger_reliability": "يدعم الحجم موثوقية أقوى.",
+    "review_pacing_signals_separately_from_knowledge_gaps": "قم بمراجعة إشارات السرعة بشكل منفصل عن الفجوات المعرفية.",
+    "row_level_accuracy_is_relatively_consistent": "الدقة على مستوى الصف متسقة نسبيًا."
+  }
+}

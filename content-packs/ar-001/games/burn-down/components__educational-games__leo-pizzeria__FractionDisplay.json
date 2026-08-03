@@ -1,0 +1,8 @@
+{
+  "fraction_zero": "صفر",
+  "fraction_whole": "واحد كامل",
+  "fraction_parts": "{numerator} من {denominator} أجزاء متساوية",
+  "compare_greater": "الكسر الأول أكبر",
+  "compare_less": "الكسر الثاني أكبر",
+  "compare_equal": "الكسور متساوية"
+}

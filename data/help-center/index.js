@@ -48,6 +48,11 @@ import {
   SECTIONS_RU_RU,
 } from "./ru-RU/index.js";
 import {
+  ALL_ARTICLES_AR_001,
+  BY_SECTION_AR_001,
+  SECTIONS_AR_001,
+} from "./ar-001/index.js";
+import {
   ALL_ARTICLES_EN_AU,
   BY_SECTION_EN_AU,
   SECTIONS_EN_AU,
@@ -447,6 +452,7 @@ export function resolveHelpLocale(locale) {
   if (id === "ru-kg") return "ru-KG";
   if (id === "ru-by") return "ru-BY";
   if (id === "ru-ru" || id === "ru") return "ru-RU";
+  if (id === "ar-001") return "ar-001";
   if (id === "es-us") return "es-US";
   if (id === "es-gq") return "es-GQ";
   if (id === "es-es") return "es-ES";
@@ -508,6 +514,7 @@ export function getHelpSections(locale) {
   if (helpLocale === "ru-KG") return SECTIONS_RU_RU;
   if (helpLocale === "ru-BY") return SECTIONS_RU_RU;
   if (helpLocale === "ru-RU") return SECTIONS_RU_RU;
+  if (helpLocale === "ar-001") return SECTIONS_AR_001;
   if (helpLocale === "es-US") return SECTIONS_ES_419;
   if (helpLocale === "es-GQ") return SECTIONS_ES_419;
   if (helpLocale === "es-ES") return SECTIONS_ES_ES;
@@ -671,6 +678,9 @@ export function listArticles(section, locale) {
   if (helpLocale === "ru-RU") {
     return BY_SECTION_RU_RU[section] || [];
   }
+  if (helpLocale === "ar-001") {
+    return BY_SECTION_AR_001[section] || [];
+  }
   if (helpLocale === "es-US") {
     return BY_SECTION_ES_US[section] || [];
   }
@@ -749,6 +759,7 @@ export function assertAllArticlesValid() {
     { locale: "nl-NL", articles: ALL_ARTICLES_NL_NL },
     { locale: "de-DE", articles: ALL_ARTICLES_DE_DE },
     { locale: "ru-RU", articles: ALL_ARTICLES_RU_RU },
+    { locale: "ar-001", articles: ALL_ARTICLES_AR_001 },
     { locale: "en-AU", articles: ALL_ARTICLES_EN_AU },
     { locale: "en-NZ", articles: ALL_ARTICLES_EN_NZ },
     { locale: "en-IE", articles: ALL_ARTICLES_EN_IE },

@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "first_player": "اللاعب الأول",
+    "play_one_arcade_game": "العب لعبة آركيد واحدة",
+    "win_10_times": "الفوز 10 مرات",
+    "play_50_arcade_games": "العب 50 لعبة أركيد"
+  }
+}

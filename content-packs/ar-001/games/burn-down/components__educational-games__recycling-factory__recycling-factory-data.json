@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "بلاستيك",
+    "newspaper": "صحيفة",
+    "cardboard": "كرتون",
+    "plastic_bottle": "زجاجة بلاستيكية",
+    "plastic_bag": "كيس من البلاستيك",
+    "soda_can": "علبة الصودا",
+    "banana_peel": "قشر الموز",
+    "medium": "واسطة",
+    "recycled_paper_can_become_new_paper_again": "يمكن للورق المعاد تدويره أن يصبح ورقًا جديدًا مرة أخرى.",
+    "plastic_bottles_can_be_made_into_new_products": "يمكن تحويل الزجاجات البلاستيكية إلى منتجات جديدة.",
+    "glass_can_be_recycled_many_times": "يمكن إعادة تدوير الزجاج عدة مرات.",
+    "metal_cans_are_great_for_recycling": "العلب المعدنية رائعة لإعادة التدوير.",
+    "sorting_correctly_helps_protect_the_environment": "الفرز بشكل صحيح يساعد على حماية البيئة."
+  }
+}

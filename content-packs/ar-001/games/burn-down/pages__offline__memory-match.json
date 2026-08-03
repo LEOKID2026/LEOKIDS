@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "رجوع",
+    "local_badge": "محلي",
+    "title": "مباراة الذاكرة",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "لاعب واحد",
+    "two_players": "2 لاعبين",
+    "time": "وقت",
+    "moves": "التحركات",
+    "turn": "دور",
+    "pairs": "أزواج",
+    "player_n": "اللاعب {n}",
+    "two_players_label": "2 لاعبين",
+    "shuffle": "خلط",
+    "player_1": "اللاعب 1",
+    "player_2": "اللاعب 2",
+    "all_pairs_found": "تم العثور على جميع الأزواج!"
+  }
+}

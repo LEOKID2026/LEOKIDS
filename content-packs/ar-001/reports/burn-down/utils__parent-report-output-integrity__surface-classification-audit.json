@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "short_report_table": "جدول تقرير قصير",
+    "smart_summary_short_report": "ملخص ذكي - تقرير قصير",
+    "smart_summary_detailed_report": "ملخص ذكي - تقرير مفصل",
+    "parentaiinsight_executivesummary": "ParentAiInsight + ملخص تنفيذي",
+    "strengths": "نقاط القوة",
+    "focus_weaknesses": "التركيز / نقاط الضعف",
+    "topic_recommendations": "توصيات الموضوع",
+    "what_to_do_at_home": "ماذا تفعل في المنزل",
+    "executive_summary": "ملخص تنفيذي",
+    "charts_labels": "الرسوم البيانية / التسميات",
+    "playwright_print_of_pages_above": "طباعة الكاتب المسرحي للصفحات أعلاه",
+    "copilot_truth_packet": "حزمة الحقيقة مساعد الطيار",
+    "copilot_answer_composer": "مساعد الطيار الجواب الملحن"
+  }
+}

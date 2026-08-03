@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "جميع الاقتراحات تحافظ على needHumanReview=true حتى تتم الموافقة على التعديلات البنكية."
+  }
+}

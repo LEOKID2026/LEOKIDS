@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "لم يتم تكوين الخدمة بشكل صحيح.",
+    "guest_mode_is_currently_disabled": "وضع الضيف معطل حاليًا.",
+    "the_guest_system_is_not_ready": "نظام الضيف غير جاهز.",
+    "could_not_start_guest_mode": "تعذر بدء وضع الضيف."
+  }
+}

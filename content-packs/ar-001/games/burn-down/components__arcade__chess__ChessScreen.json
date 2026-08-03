@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "white_first_seat_in_the_list_goes_first": "الأبيض (المقعد الأول في القائمة) يذهب أولاً.",
+    "select_a_piece_then_a_destination_square_per_chess_rules": "حدد قطعة، ثم مربع الوجهة وفقًا لقواعد الشطرنج.",
+    "pawns_reaching_the_last_rank_auto_promote_to_queen": "البيادق التي تصل إلى المرتبة الأخيرة يتم ترقيتها تلقائيًا إلى الملكة.",
+    "checkmate_ends_the_game_a_draw_refunds_entry_to_both_players": "كش ملك ينهي اللعبة. التعادل يعيد الدخول لكلا اللاعبين."
+  }
+}

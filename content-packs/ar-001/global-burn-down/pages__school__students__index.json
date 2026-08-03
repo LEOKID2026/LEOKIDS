@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "please_select_valid_dates": "الرجاء تحديد تواريخ صالحة",
+    "no_children_in_this_grade": "لا يوجد أطفال في هذا الصف.",
+    "no_children_found_in_this_class": "لم يتم العثور على أطفال في هذا الصف."
+  }
+}

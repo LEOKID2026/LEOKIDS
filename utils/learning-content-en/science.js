@@ -11,6 +11,7 @@ import { SCIENCE_FR_FR_OVERLAY } from "../../data/science-questions-fr-FR-overla
 import { SCIENCE_NL_NL_OVERLAY } from "../../data/science-questions-nl-NL-overlay.js";
 import { SCIENCE_DE_DE_OVERLAY } from "../../data/science-questions-de-DE-overlay.js";
 import { SCIENCE_RU_RU_OVERLAY } from "../../data/science-questions-ru-RU-overlay.js";
+import { SCIENCE_AR_001_OVERLAY } from "../../data/science-questions-ar-001-overlay.js";
 import { translateScienceFields, translateScienceText } from "./science-translate.js";
 import { getContentFallbackChain, resolveContentLocale } from "../../lib/content/locale.js";
 
@@ -23,6 +24,7 @@ const SCIENCE_OVERLAY_BY_LOCALE = {
   "nl-NL": SCIENCE_NL_NL_OVERLAY,
   "de-DE": SCIENCE_DE_DE_OVERLAY,
   "ru-RU": SCIENCE_RU_RU_OVERLAY,
+  "ar-001": SCIENCE_AR_001_OVERLAY,
   en: SCIENCE_EN_OVERLAY,
 };
 

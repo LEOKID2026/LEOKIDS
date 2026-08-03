@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "صفوف القوالب الخاصة بـ MCQ المفاهيمي - تم فحصها كحاملات بيانات تعريف ثابتة",
+    "procedural_math_items_metadata_assigned_at_generation_time": "عناصر الرياضيات الإجرائية - البيانات الوصفية المخصصة في وقت الإنشاء",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "الهندسة الإجرائية - استخدم بنك المفاهيم الهندسية + معلمات المولد",
+    "english_generator_pool_merge": "مولد اللغة الإنجليزية + دمج التجمع"
+  }
+}

@@ -26,6 +26,7 @@ import { WORD_MEANINGS_FR_FR } from "./word-meanings/fr-FR.js";
 import { WORD_MEANINGS_NL_NL } from "./word-meanings/nl-NL.js";
 import { WORD_MEANINGS_DE_DE } from "./word-meanings/de-DE.js";
 import { WORD_MEANINGS_RU_RU } from "./word-meanings/ru-RU.js";
+import { WORD_MEANINGS_AR_001 } from "./word-meanings/ar-001.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -48,6 +49,7 @@ const MEANING_PACKS = {
   "nl-NL": WORD_MEANINGS_NL_NL,
   "de-DE": WORD_MEANINGS_DE_DE,
   "ru-RU": WORD_MEANINGS_RU_RU,
+  "ar-001": WORD_MEANINGS_AR_001,
 };
 
 /**
@@ -317,6 +319,15 @@ function isRussianRussiaInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isArabicMasterInstructionLocale(locale) {
+  const tag = normalizeLocaleTag(locale);
+  return tag === "ar-001" || tag === "ar001";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isRussianKazakhstanInstructionLocale(locale) {
   return normalizeLocaleTag(locale) === "ru-kz";
 }
@@ -382,7 +393,8 @@ function isLocalizedMeaningLocale(locale) {
     isRussianKazakhstanInstructionLocale(locale) ||
     isRussianUzbekistanInstructionLocale(locale) ||
     isRussianKyrgyzstanInstructionLocale(locale) ||
-    isRussianBelarusInstructionLocale(locale)
+    isRussianBelarusInstructionLocale(locale) ||
+    isArabicMasterInstructionLocale(locale)
   );
 }
 
@@ -429,6 +441,7 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "ru-kg") chainLocale = "ru-KG";
   else if (tag === "ru-by") chainLocale = "ru-BY";
   else if (tag === "ru-ru") chainLocale = "ru-RU";
+  else if (tag === "ar-001" || tag === "ar001") chainLocale = "ar-001";
   else if (tag === "es-us") chainLocale = "es-US";
   else if (tag === "es-gq") chainLocale = "es-GQ";
   const chain = getLocaleFallbackChain(chainLocale);

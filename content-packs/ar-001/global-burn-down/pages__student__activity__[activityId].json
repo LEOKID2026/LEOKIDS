@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "incorrect": "غير صحيح",
+    "answer_submitted": "تم إرسال الإجابة",
+    "submit_answer": "إرسال الإجابة",
+    "type_your_answer": "اكتب إجابتك",
+    "enlarged_diagram": "رسم تخطيطي موسع",
+    "close_diagram": "إغلاق الرسم البياني"
+  }
+}

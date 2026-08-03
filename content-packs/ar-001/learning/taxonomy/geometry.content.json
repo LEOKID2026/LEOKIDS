@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "الأشكال",
+      "topic": "رباعيات",
+      "subskill": "خصائص المستطيل/متوازي الأضلاع",
+      "pattern": "خصائص مربكة",
+      "counterEvidence": "تصحيح على الأشكال النظيفة فقط",
+      "countsWhen": "تم وضع علامة على الزوايا",
+      "doesNotCountWhen": "الأسماء فقط بدون رسم تخطيطي",
+      "probe": "مع علامة زاوية/جانبية",
+      "intervention": "بطاقات تعريفية",
+      "escalation": "فشل في كل شكل",
+      "observableMarkers": [
+        "خطأ عندما لا تكون الزاوية 90 درجة"
+      ],
+      "roots": [
+        "تعريفات متداخلة"
+      ],
+      "competitors": [
+        "تذكر الاسم"
+      ],
+      "doNotConclude": [
+        "لا الهندسة"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "الزوايا",
+      "topic": "قياس",
+      "subskill": "قراءة منقلة",
+      "pattern": "خطأ في نطاق الزاوية",
+      "counterEvidence": "تصحيح مع القياس الموجه",
+      "countsWhen": "المنقلة والتعليمات صالحة",
+      "doesNotCountWhen": "الزاوية صغيرة جدًا في واجهة مستخدم مضللة",
+      "probe": "الموجهة مقابل المستقلة",
+      "intervention": "ممارسة النطاق",
+      "escalation": "تقرير الرؤية",
+      "observableMarkers": [
+        "خطأ متكرر في نفس النطاق"
+      ],
+      "roots": [
+        "قراءة مقياس"
+      ],
+      "competitors": [
+        "سرعة"
+      ],
+      "doNotConclude": [
+        "مشكلة في الرؤية"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "المساحة",
+      "topic": "متوازي الأضلاع",
+      "subskill": "ارتفاع",
+      "pattern": "استخدام الجوانب كارتفاع",
+      "counterEvidence": "الصحيح دائمًا على المستطيل",
+      "countsWhen": "يمكن إضافة الارتفاع",
+      "doesNotCountWhen": "أعداد كبيرة فقط بدون نموذج",
+      "probe": "مع/بدون خط الارتفاع",
+      "intervention": "تسليط الضوء على الارتفاع",
+      "escalation": "فشل على المستطيل",
+      "observableMarkers": [
+        "خطأ عندما لا يتم رسم خط الارتفاع"
+      ],
+      "roots": [
+        "اختيار الارتفاع"
+      ],
+      "competitors": [
+        "الضرب الخاطئ"
+      ],
+      "doNotConclude": [
+        "لا الصيغ"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "تحويل",
+      "topic": "تناوب",
+      "subskill": "Direction/angle",
+      "pattern": "دوران معكوس",
+      "counterEvidence": "الصحيح على الشبكة",
+      "countsWhen": "الشبكة والمحور",
+      "doesNotCountWhen": "لا الشبكة قبل التدريس",
+      "probe": "مع/بدون محور",
+      "intervention": "الشبكة + القمم",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ الاتجاه المتكرر"
+      ],
+      "roots": [
+        "التوجه المكاني"
+      ],
+      "competitors": [
+        "الإهمال"
+      ],
+      "doNotConclude": [
+        "لا يوجد تفكير مكاني"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "الحجم",
+      "topic": "المنشور المستطيل",
+      "subskill": "نموذج ثلاثي الأبعاد",
+      "pattern": "ينسى العمق",
+      "counterEvidence": "الصحيح على مكعب بسيط",
+      "countsWhen": "صافي متاح",
+      "doesNotCountWhen": "لا يوجد رسم تخطيطي عندما لا يتم تدريسه",
+      "probe": "مع/بدون نت",
+      "intervention": "صافي الورق",
+      "escalation": "فشل على مكعب",
+      "observableMarkers": [
+        "إجابة ثنائية الأبعاد",
+        "تصحيح مع صافي"
+      ],
+      "roots": [
+        "نموذج ثلاثي الأبعاد"
+      ],
+      "competitors": [
+        "الضرب"
+      ],
+      "doNotConclude": [
+        "لا يوجد حجم"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "قياس",
+      "topic": "المحيط",
+      "subskill": "تحويل الوحدة",
+      "pattern": "خطأ متكرر في الوحدة",
+      "counterEvidence": "تصحيح مع مفتاح",
+      "countsWhen": "المفتاح متاح",
+      "doesNotCountWhen": "التحويل لم يدرس بعد",
+      "probe": "وحدتين لنفس الطول",
+      "intervention": "مفتاح التحويل",
+      "escalation": "فشل في سطر واحد",
+      "observableMarkers": [
+        "نفس خطأ الوحدة"
+      ],
+      "roots": [
+        "الوحدات"
+      ],
+      "competitors": [
+        "حساب"
+      ],
+      "doNotConclude": [
+        "لا قياس"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "التناظر",
+      "topic": "شكل",
+      "subskill": "محور",
+      "pattern": "تكرار المحور الخاطئ",
+      "counterEvidence": "تصحيح عندما يتم عرض المحور",
+      "countsWhen": "النقاط المتاحة",
+      "doesNotCountWhen": "شكل غير متماثل",
+      "probe": "مع/بدون محور",
+      "intervention": "أضعاف الورق",
+      "escalation": "لا يوجد تحسن",
+      "observableMarkers": [
+        "خطأ في النقاط المميزة"
+      ],
+      "roots": [
+        "مرئي"
+      ],
+      "competitors": [
+        "الإهمال"
+      ],
+      "doNotConclude": [
+        "لا التماثل"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "مثلث",
+      "topic": "المساحة",
+      "subskill": "القاعدة × الارتفاع÷2",
+      "pattern": "ينسى ÷2 أو ارتفاع خاطئ",
+      "counterEvidence": "تصحيح فقط في الحالات البسيطة",
+      "countsWhen": "ارتفاع داخلي واضح",
+      "doesNotCountWhen": "منفرجة دون خطوة التدريس",
+      "probe": "تم تسليط الضوء على الارتفاع الخارجي",
+      "intervention": "تحديد الارتفاع → الصيغة",
+      "escalation": "فشل في المثلث الأيمن",
+      "observableMarkers": [
+        "خطأ متكرر",
+        "تصحيح على المثلث القائم مع الارتفاع الداخلي"
+      ],
+      "roots": [
+        "صيغة"
+      ],
+      "competitors": [
+        "هيكل المثلث"
+      ],
+      "doNotConclude": [
+        "لا مثلثات"
+      ]
+    }
+  }
+}

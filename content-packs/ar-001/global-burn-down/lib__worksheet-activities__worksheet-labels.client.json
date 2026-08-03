@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "active": "نشيط",
+    "closed": "مغلق",
+    "archived": "مؤرشف",
+    "digital_answer_sheet": "ورقة الإجابة الرقمية",
+    "manual_grading": "التصنيف اليدوي",
+    "not_submitted": "لم يتم تقديمه",
+    "submitted": "مُقَدَّم",
+    "pending_review": "في انتظار المراجعة",
+    "partially_checked": "تم فحصه جزئيًا",
+    "checked": "تم الفحص",
+    "published": "تم النشر",
+    "multiple_choice": "الاختيار من متعدد",
+    "true_false": "صحيح / خطأ",
+    "number": "رقم",
+    "short_answer": "إجابة قصيرة",
+    "free_text": "نص مجاني"
+  }
+}

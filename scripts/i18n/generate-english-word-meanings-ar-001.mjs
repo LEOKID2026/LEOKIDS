@@ -1,0 +1,189 @@
+/**
+ * Emit data/english-questions/word-meanings/ar-001.js from WORD_LISTS keys
+ * + Arabic MSA child glossary (MT + curated overrides).
+ *
+ * Run: node scripts/i18n/generate-english-word-meanings-ar-001.mjs
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { WORD_LISTS } from "../../data/english-questions/word-lists.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "../..");
+const OUT = path.join(ROOT, "data/english-questions/word-meanings/ar-001.js");
+const CACHE_PATH = path.join(__dirname, "_mt-cache-ar-001-meanings.json");
+
+/** Curated MSA meanings by English word ID (context-checked). */
+const OVERRIDES = {
+  bus: "حافلة",
+  "bus stop": "موقف الحافلة",
+  juice: "عصير",
+  eraser: "ممحاة",
+  classroom: "الصف",
+  car: "سيارة",
+  ticket: "تذكرة",
+  port: "ميناء",
+  grade: "الصف",
+  hundred: "مئة",
+  fifty: "خمسون",
+  navy: "كحلي",
+  maroon: "كستنائي",
+  computer: "حاسوب",
+  refrigerator: "ثلاجة",
+  fridge: "ثلاجة",
+  stove: "موقد",
+  field: "ملعب",
+  laptop: "حاسوب محمول",
+  headphones: "سماعات",
+  phone: "هاتف",
+  cellphone: "هاتف",
+  mobile: "هاتف",
+  truck: "شاحنة",
+  train: "قطار",
+  airplane: "طائرة",
+  bicycle: "دراجة",
+  cookie: "بسكويت",
+  candy: "حلوى",
+  soccer: "كرة القدم",
+  football: "كرة القدم الأمريكية",
+  elevator: "مصعد",
+  apartment: "شقة",
+  trash: "قمامة",
+  garbage: "قمامة",
+  vacation: "إجازة",
+  movie: "فيلم",
+  cell: "خلية",
+  living_room: "غرفة المعيشة",
+  post_office: "مكتب البريد",
+  fire_station: "محطة الإطفاء",
+  bus_stop: "موقف الحافلة",
+  train_station: "محطة القطار",
+  social_media: "وسائل التواصل",
+  clean_water: "ماء نظيف",
+  save_energy: "توفير الطاقة",
+  fresh_air: "هواء نقي",
+  recycle_bin: "سلة إعادة التدوير",
+  planet_earth: "كوكب الأرض",
+  air_pollution: "تلوث الهواء",
+  water_pollution: "تلوث الماء",
+  global_warming: "الاحتباس الحراري",
+  solar_energy: "طاقة شمسية",
+  water_energy: "طاقة المياه",
+  clean_energy: "طاقة نظيفة",
+  robot: "روبوت",
+  wifi: "واي فاي",
+  explorer: "مستكشف",
+};
+
+const HAS_ARABIC = /[\u0600-\u06FF]/;
+
+function loadCache() {
+  if (!fs.existsSync(CACHE_PATH)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function saveCache(cache) {
+  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 0), "utf8");
+}
+
+async function mt(text) {
+  const phrase = String(text || "").replace(/_/g, " ").trim();
+  const url =
+    "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q=" +
+    encodeURIComponent(phrase);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`MT HTTP ${res.status}`);
+  const json = await res.json();
+  return (json[0] || []).map((x) => x[0]).join("").trim();
+}
+
+async function meaningFor(wordId, cache) {
+  if (Object.prototype.hasOwnProperty.call(OVERRIDES, wordId)) return OVERRIDES[wordId];
+  const cached = cache[wordId];
+  if (cached && HAS_ARABIC.test(String(cached))) return cached;
+  try {
+    const translated = await mt(wordId);
+    cache[wordId] = HAS_ARABIC.test(translated) ? translated : wordId;
+  } catch {
+    cache[wordId] = wordId;
+  }
+  return cache[wordId];
+}
+
+async function main() {
+  const cache = loadCache();
+  /** @type {Record<string, Record<string, string>>} */
+  const out = {};
+  const ids = [];
+  for (const [listKey, words] of Object.entries(WORD_LISTS || {})) {
+    out[listKey] = {};
+    for (const wordId of Object.keys(words || {})) {
+      ids.push([listKey, wordId]);
+    }
+  }
+
+  console.log("Word IDs:", ids.length);
+  const CONCURRENCY = 8;
+  for (let i = 0; i < ids.length; i += CONCURRENCY) {
+    const chunk = ids.slice(i, i + CONCURRENCY);
+    await Promise.all(
+      chunk.map(async ([listKey, wordId]) => {
+        out[listKey][wordId] = await meaningFor(wordId, cache);
+      }),
+    );
+    if (i % 80 === 0 || i + CONCURRENCY >= ids.length) {
+      saveCache(cache);
+      console.log(`Progress ${Math.min(i + CONCURRENCY, ids.length)}/${ids.length}`);
+    }
+    await new Promise((r) => setTimeout(r, 40));
+  }
+  saveCache(cache);
+
+  for (const [listKey, words] of Object.entries(out)) {
+    for (const wordId of Object.keys(words)) {
+      if (!HAS_ARABIC.test(String(words[wordId] || ""))) {
+        words[wordId] = await meaningFor(wordId, cache);
+        if (!HAS_ARABIC.test(String(words[wordId] || ""))) {
+          words[wordId] = await mt(wordId);
+          cache[wordId] = words[wordId];
+        }
+      }
+    }
+  }
+  saveCache(cache);
+
+  const body = JSON.stringify(out, null, 2)
+    .replace(/"([^"]+)":/g, "$1:")
+    .replace(/"/g, '"');
+
+  // Emit as JS module with quoted keys (safer than unquoted)
+  const lines = [
+    "/**",
+    " * Arabic master (ar-001) meanings for English learning words.",
+    " * Keys match WORD_LISTS English word IDs; values are child-friendly glosses.",
+    " * Generated by scripts/i18n/generate-english-word-meanings-ar-001.mjs",
+    " */",
+    "",
+    "export const WORD_MEANINGS_AR_001 = {",
+  ];
+  for (const listKey of Object.keys(out)) {
+    lines.push(`  ${JSON.stringify(listKey)}: {`);
+    for (const [wordId, meaning] of Object.entries(out[listKey])) {
+      lines.push(`    ${JSON.stringify(wordId)}: ${JSON.stringify(meaning)},`);
+    }
+    lines.push("  },");
+  }
+  lines.push("};", "");
+  fs.writeFileSync(OUT, lines.join("\n"), "utf8");
+  console.log("Wrote", OUT);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "looks_strong": "تبدو قوية",
+    "worth_watching": "يستحق المشاهدة",
+    "worth_strengthening": "مجال للتقوية",
+    "worth_guiding": "يستحق التوجيه",
+    "needs_strengthening": "يحتاج إلى تعزيز",
+    "few_questions": "أسئلة قليلة",
+    "above_grade_level": "فوق مستوى الصف",
+    "earlier_foundations": "أسس سابقة",
+    "strong_topics": "مواضيع قوية",
+    "topics_worth_watching": "مواضيع تستحق المشاهدة",
+    "topics_worth_strengthening": "مواضيع تستحق التعزيز",
+    "topics_worth_guiding_in_practice": "مواضيع تستحق التوجيه في الممارسة العملية",
+    "topics_with_few_questions": "المواضيع مع بعض الأسئلة",
+    "practice_above_grade_level": "ممارسة فوق مستوى الصف",
+    "earlier_foundation_practice": "الممارسة التأسيسية السابقة"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "هذا النشاط غير متوفر الآن",
+    "activity_not_found": "لم يتم العثور على النشاط",
+    "this_activity_has_not_started_yet": "هذا النشاط لم يبدأ بعد",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "لا يمكن إرسال الإجابات لهذا النشاط الآن",
+    "this_activity_is_closed": "هذا النشاط مغلق",
+    "time_is_up_for_this_activity": "لقد انتهى الوقت لهذا النشاط",
+    "could_not_open_this_activity_right_now": "تعذر فتح هذا النشاط الآن",
+    "not_found": "لم يتم العثور عليه",
+    "please_sign_in": "الرجاء تسجيل الدخول",
+    "you_do_not_have_permission_to_open_this_activity": "ليس لديك الإذن بفتح هذا النشاط",
+    "this_activity_is_not_assigned_to_you": "لم يتم تخصيص هذا النشاط لك",
+    "could_not_identify_the_account": "لا يمكن التعرف على الحساب",
+    "could_not_complete_that_action_right_now": "تعذر إكمال هذا الإجراء الآن",
+    "you_already_submitted_this_activity": "لقد قمت بالفعل بإرسال هذا النشاط",
+    "you_already_answered_this_question": "لقد أجبت بالفعل على هذا السؤال",
+    "waiting_for_the_teacher": "في انتظار المعلم...",
+    "no_answer_submission_needed": "لا حاجة لتقديم الإجابة",
+    "the_system_is_updating_try_again_later": "جارٍ تحديث النظام - حاول مرة أخرى لاحقًا",
+    "something_went_wrong_please_try_again": "حدث خطأ ما - يرجى المحاولة مرة أخرى",
+    "server_error_please_try_again": "خطأ في الخادم — يرجى المحاولة مرة أخرى",
+    "action_not_supported": "الإجراء غير مدعوم",
+    "could_not_load_the_question_right_now": "تعذر تحميل السؤال الآن",
+    "could_not_submit_an_answer_right_now": "لا يمكن تقديم إجابة الآن"
+  }
+}

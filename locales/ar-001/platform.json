@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "الرياضيات",
+    "geometry": "الهندسة",
+    "english": "الإنجليزية",
+    "science": "العلوم"
+  },
+  "activityModes": {
+    "live_lesson": "درس مباشر",
+    "guided_practice": "الممارسة الموجهة",
+    "quiz": "لغز",
+    "homework": "العمل في المنزل",
+    "discussion": "مناقشة",
+    "practice": "تمرين",
+    "review": "مراجعة"
+  },
+  "activityStatuses": {
+    "draft": "مسودة",
+    "active": "نشيط",
+    "paused": "متوقف مؤقتًا",
+    "closed": "مغلق",
+    "archived": "مؤرشف"
+  },
+  "studentActivityStatuses": {
+    "not_started": "لم يبدأ",
+    "in_progress": "في تَقَدم",
+    "submitted": "مُقَدَّم",
+    "completed": "مكتمل",
+    "timed_out": "انتهت المهلة"
+  },
+  "roles": {
+    "teacher": "المعلّم",
+    "school_admin": "مدير المدرسة",
+    "admin": "مسؤول النظام"
+  },
+  "auditActions": {
+    "school_subject_granted": "تم منح إذن الموضوع",
+    "school_subject_revoked": "تم إلغاء تعيين الموضوع",
+    "school_student_enrolled": "تم تسجيل الطالب",
+    "school_student_unenrolled": "تم إلغاء تسجيل الطالب",
+    "school_class_viewed": "تم عرض تقرير الفصل",
+    "school_student_report_viewed": "تم الاطلاع على تقرير الطالب",
+    "school_student_class_transferred": "الطالب منقول",
+    "school_class_teacher_reassigned": "تم إعادة تعيين معلم الفصل",
+    "school_class_archived": "تمت أرشفة الفصل",
+    "assign_teacher": "تم تعيين المعلم",
+    "assign_manager": "تم تعيين مدير",
+    "class_transfer": "الطالب منقول",
+    "grant": "تم منح الإذن",
+    "revoke": "تمت إزالة الإذن",
+    "archive": "مؤرشف",
+    "viewed_student_report": "تم الاطلاع على تقرير الطالب",
+    "viewed_class_report": "تم عرض تقرير الفصل",
+    "grant_created": "تم إنشاء منحة الوصول",
+    "grant_revoked": "تم إلغاء منح الوصول",
+    "magic_link_issued": "تم إصدار رابط الدخول",
+    "pin_rotated": "تم تدوير رقم التعريف الشخصي",
+    "username_rotated": "تم تدوير اسم المستخدم",
+    "teacher_quota_updated": "تم تحديث الحصص",
+    "teacher_features_updated": "تم تحديث أذونات الميزة",
+    "teacher_status_updated": "تم تحديث حالة الحساب"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "عمل النظام",
+    "activity": "نشاط",
+    "classActivity": "النشاط الصفي",
+    "activitySuffix": "نشاط"
+  }
+}

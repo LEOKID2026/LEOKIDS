@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "square": "مربع",
+    "rectangle": "المستطيل",
+    "parallel": "موازي",
+    "translation": "ترجمة",
+    "reflection": "انعكاس",
+    "rotation": "تناوب",
+    "no_movement": "لا حركة"
+  }
+}

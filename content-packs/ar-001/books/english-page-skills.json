@@ -1,0 +1,1380 @@
+{
+  "grades": {
+    "g1": {
+      "letters_upper": {
+        "skillId": "english:phonics:g1:letters_upper",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الحروف الكبيرة من A إلى Z",
+        "description": "تحديد وتسمية الحروف الكبيرة من A إلى Z في مجموعات",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_lower": {
+        "skillId": "english:phonics:g1:letters_lower",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الحروف الصغيرة من a إلى z",
+        "description": "تحديد وتسمية الحروف الصغيرة من a إلى z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_match": {
+        "skillId": "english:phonics:g1:letters_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "تطابق الحروف الكبيرة والصغيرة",
+        "description": "مطابقة A↔a … Z↔z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letter_names": {
+        "skillId": "english:phonics:g1:letter_names",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "أسماء الحروف",
+        "description": "اسم الحرف مقابل صوت الحرف",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_sounds": {
+        "skillId": "english:phonics:g1:phonics_sounds",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "أصوات الحروف",
+        "description": "الأصوات الساكنة + حروف العلة القصيرة a، e، i",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_first_sound": {
+        "skillId": "english:phonics:g1:phonics_first_sound",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الصوت الأول في الكلمة",
+        "description": "الصوت الأول في كلمات مثل قطة، كلب، شمس",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "classroom_words": {
+        "skillId": "english:phonics:g1:classroom_words",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الكلمات الصفية",
+        "description": "كتاب، قلم، مكتب، كرسي، باب، معلم، مرحبا، وداعا",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_words_simple": {
+        "skillId": "english:phonics:g1:first_words_simple",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الكلمات البسيطة الأولى",
+        "description": "قطة، كلب، شمس، أحمر، أزرق، أمي، أبي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_words_cvc": {
+        "skillId": "english:phonics:g1:first_words_cvc",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "كلمات من ثلاثة أحرف (CVC)",
+        "description": "مجموعة CVC محدودة: قطة، قبعة، جلوس، شمس، قلم، سرير",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "picture_word_match": {
+        "skillId": "english:phonics:g1:picture_word_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "صورة وكلمة",
+        "description": "قم بمطابقة صورة بكلمة من الكلمات التي تعلمتها بالفعل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_classroom": {
+        "skillId": "english:phonics:g1:listening_classroom",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "تعليمات الفصول الدراسية",
+        "description": "قف، اجلس، افتح كتابك، أغلق كتابك",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_commands": {
+        "skillId": "english:phonics:g1:listening_commands",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "مزيد من التعليمات القصيرة",
+        "description": "أشر إلى الباب، أرني قلمك",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الألوان باللغة الإنجليزية",
+        "description": "الأحمر والأزرق والأخضر والأصفر - التحديد والمطابقة؛ لا تهجئة حتى الآن",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الأرقام من 0 إلى 10 باللغة الإنجليزية",
+        "description": "صفر-عشرة؛ تحديد الرقم الانجليزي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "كلمات العائلة باللغة الانجليزية",
+        "description": "أمي، أبي، أخت، أخي - الكلمات الأساسية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الحيوانات باللغة الانجليزية",
+        "description": "القط، الكلب، الطيور، الأسماك - أسماء الحيوانات الشائعة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "مشاعر باللغة الانجليزية",
+        "description": "سعيدة، حزينة - كلمات الشعور المبكر",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الإجراءات باللغة الإنجليزية",
+        "description": "الجري، القفز، القراءة، الأكل - أفعال بسيطة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الكلمات المدرسية باللغة الإنجليزية",
+        "description": "كتاب، قلم، مكتب، معلم - عناصر الفصل الدراسي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_be": {
+        "skillId": "english:pool:grammar:be_basic",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "أنا / أنت - البدء",
+        "description": "الأنماط الثابتة أنا / أنت + الضمائر الأساسية؛ لا يوجد مخطط كامل لـ am/is/are حتى الآن",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_base": {
+        "skillId": "english:pool:sentence:base",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "الجمل القصيرة - الأساسيات",
+        "description": "جمل مكونة من 2-3 كلمات باستخدام كلمات تم تعلمها بالفعل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_classroom": {
+        "skillId": "english:pool:translation:classroom",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "عبارات الفصول الدراسية",
+        "description": "مرحبًا، شكرًا لك، من فضلك - تدريب على الكلمات/العبارات القصيرة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g2": {
+      "letters_review": {
+        "skillId": "english:phonics:g2:letters_review",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "مراجعة: الحروف والأسماء",
+        "description": "قم بمراجعة الأحرف الكبيرة والأحرف الصغيرة والأسماء من A إلى Z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "letters_order": {
+        "skillId": "english:phonics:g2:letters_order",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "ترتيب الأبجدية",
+        "description": "اطلب أ → Z",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_sounds_review": {
+        "skillId": "english:phonics:g2:phonics_sounds_review",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "مراجعة: الأصوات",
+        "description": "مراجعة الحروف الساكنة + حروف العلة. ب / ع، د / ر",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "phonics_blending": {
+        "skillId": "english:phonics:g2:phonics_blending",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "مزيج الأصوات",
+        "description": "مزيج CVC: قطة، قبعة، الجلوس، الجري، كبير، أحمر، حار، شمس",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sound_letter_match": {
+        "skillId": "english:phonics:g2:sound_letter_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "صوت ↔ حرف",
+        "description": "صوت ↔ حرف؛ سماع الرسالة → الصوت",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "first_word_reading": {
+        "skillId": "english:phonics:g2:first_word_reading",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "قراءة الكلمة الأولى",
+        "description": "CVC + البصر: أنا، أ، هو",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "word_families_cvc": {
+        "skillId": "english:phonics:g2:word_families_cvc",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "عائلات الكلمات",
+        "description": "-at، -an، -it، -og العائلات",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "classroom_vocab_g2": {
+        "skillId": "english:phonics:g2:classroom_vocab_g2",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "المفردات الصفية",
+        "description": "الفصل الدراسي، الملعب، الصديق، القراءة، الكتابة، الاستماع",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "listening_comprehension": {
+        "skillId": "english:phonics:g2:listening_comprehension",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الفهم السمعي",
+        "description": "4 حوارات مصغرة؛ من/ماذا",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "picture_audio_word_match": {
+        "skillId": "english:phonics:g2:picture_audio_word_match",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "الصورة والصوت والكلمة",
+        "description": "مطابقة ثلاثية للصوت ↔ الصورة ↔ الكلمة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "early_sentences_exposure": {
+        "skillId": "english:phonics:g2:early_sentences_exposure",
+        "learningPageId": "",
+        "pageType": "phonics_foundation",
+        "title": "جمل قصيرة",
+        "description": "أرى قطة. إنه أحمر. التعرض فقط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الألوان - استخدم في جملة",
+        "description": "مراجعة + كلمات في جملة قصيرة؛ الكتابة المبكرة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الأرقام - ما يصل إلى 20",
+        "description": "أحد عشر-عشرون؛ استخدامها في الجملة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "العائلة - كلمات في جملة",
+        "description": "هذه أمي – نمط قصير",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الحيوانات - الأسماء والجمل",
+        "description": "أرى قطة — نمط قصير",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "مشاعر - في جملة",
+        "description": "أنا سعيد / أنا حزين",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الأفعال – فعل في جملة",
+        "description": "أركض / أقفز",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المدرسة - الأشياء في الجملة",
+        "description": "لدي كتاب / قلمي أزرق",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الطعام باللغة الإنجليزية",
+        "description": "تفاحة، خبز، حليب، ماء - كلمات + كتابة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_house": {
+        "skillId": "english:vocabulary:wordlist:house",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المنزل - الغرف والأشياء",
+        "description": "سرير، غرفة، باب، طاولة - كلمات منزلية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_be": {
+        "skillId": "english:pool:grammar:be_basic",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "صباحا / هو / هي - تعزيز",
+        "description": "أنا / أنت / هو / هي - بدون تسميات نحوية رسمية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_plural_questions": {
+        "skillId": "english:pool:grammar:question_frames",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "صيغ الجمع والأسئلة البسيطة",
+        "description": "قطة/قطط؛ ما هذا؟ - أسئلة قصيرة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_base": {
+        "skillId": "english:pool:sentence:base",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "جمل قصيرة – الصف الثاني",
+        "description": "3-4 كلمات؛ علامات الترقيم الأساسية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "الروتين اليومي - الجمل",
+        "description": "أستيقظ / أذهب إلى المدرسة - روتين يومي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_classroom": {
+        "skillId": "english:pool:translation:classroom",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "عبارات الفصول الدراسية - الجمل",
+        "description": "ممارسة عبارة قصيرة في اتجاهين",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_routines": {
+        "skillId": "english:pool:translation:routines",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "الروتين اليومي - الممارسة",
+        "description": "جمل روتينية من 3-4 كلمات",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g3": {
+      "vocab_actions": {
+        "skillId": "english:vocabulary:wordlist:actions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الإجراءات - المضارع البسيط",
+        "description": "الأفعال المضارع البسيط؛ كلمات العمل الأخيرة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الحيوانات – في جملة كاملة",
+        "description": "الكلب يجري بسرعة - جملة مع فعل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_colors": {
+        "skillId": "english:vocabulary:wordlist:colors",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الألوان - وصف",
+        "description": "السماء زرقاء - الوصف بـ هو",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "مشاعر - تشعر...",
+        "description": "إنها تشعر بالسعادة/الحزن",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الأسرة – الإجراءات العائلية",
+        "description": "أخي يقرأ كل يوم",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الطعام – أنا آكل…",
+        "description": "أنا آكل تفاحة / أشرب الحليب",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_house": {
+        "skillId": "english:vocabulary:wordlist:house",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المنزل - الأشياء والمكان",
+        "description": "الكتاب على الطاولة - التحضير للداخل/التشغيل/الأسفل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_numbers": {
+        "skillId": "english:vocabulary:wordlist:numbers",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "أرقام – يوجد…",
+        "description": "هناك عشرة كتب - العدد + الاسم",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المدرسة - نتعلم...",
+        "description": "نحن نتعلم اللغة الإنجليزية في المدرسة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_body": {
+        "skillId": "english:vocabulary:wordlist:body",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "جسم الإنسان باللغة الإنجليزية",
+        "description": "الرأس واليد والساق والعين - رأسي يؤلمني",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الرياضة باللغة الإنجليزية",
+        "description": "كرة القدم، السباحة، الركض - ألعب كرة القدم",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_weather": {
+        "skillId": "english:vocabulary:wordlist:weather",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الطقس باللغة الإنجليزية",
+        "description": "مشمس، ممطر، غائم - إنه مشمس",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_present_simple": {
+        "skillId": "english:pool:grammar:present_simple",
+        "learningPageId": "",
+        "pageType": "step_by_step_procedure",
+        "title": "المضارع البسيط – الإيجابي والسلبي والسؤال",
+        "description": "ألعب / لا ألعب / هل تلعب؟ - شرح بسيط واضح",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_articles_prepositions": {
+        "skillId": "Basic adjectives, a/an/the, and place prepositions in/on/under",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "أ / أن / و في / على / تحت",
+        "description": "المقالات الأساسية + المكان؛ القطة تحت السرير",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_question_frames": {
+        "skillId": "english:pool:grammar:question_frames",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "الأسئلة - تعزيز الصف 3",
+        "description": "هل أنت…؟ / ما هو...؟ - المراجعة باستخدام المضارع البسيط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "الروتين اليومي - جمل كاملة",
+        "description": "أنا أغسل أسناني كل صباح",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_descriptive": {
+        "skillId": "english:pool:sentence:descriptive",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "الجمل الوصفية",
+        "description": "الكلب الكبير يركض بسرعة - صفة + اسم + فعل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_routines": {
+        "skillId": "english:pool:translation:routines",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "روتين - ممارسة أطول",
+        "description": "جمل روتينية من 4-5 كلمات",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_hobbies": {
+        "skillId": "english:pool:translation:hobbies",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "الهوايات - الممارسة",
+        "description": "أحب الرسم / وهي تعزف على البيانو",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g4": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الحيوانات - العمل الآن",
+        "description": "الطيور تطير – رابط مستمر",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_body": {
+        "skillId": "english:vocabulary:wordlist:body",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الجسم — الإجراءات اليومية",
+        "description": "يغسل يديه - المضارع البسيط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المشاعر - يشعرون...",
+        "description": "يشعرون بالإثارة اليوم",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الأسرة - الآباء، العمل",
+        "description": "والدي يعمل بجد",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الغذاء – الغذاء الصحي",
+        "description": "نحن نأكل طعاما صحيا",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المدرسة - الطلاب، اقرأوا",
+        "description": "يقرأ الطلاب الكتب",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الرياضة - الآن على أرض الملعب",
+        "description": "إنها تسبح الآن",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_weather": {
+        "skillId": "english:vocabulary:wordlist:weather",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الطقس – اليوم",
+        "description": "إنها تمطر اليوم",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المجتمع - الحديقة، المدينة، المكتبة",
+        "description": "الحديقة في مدينتنا",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "البيئة — الأشجار، الحماية",
+        "description": "نحن نحمي الأشجار",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "السفر - الحافلة، السفر",
+        "description": "نسافر بالحافلة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_present_simple": {
+        "skillId": "english:pool:grammar:present_simple",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "المضارع البسيط – التعزيز",
+        "description": "العادة، الحقيقة - إنه يمشي كل يوم؛ ليست مستمرة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_simple_continuous": {
+        "skillId": "english:pool:grammar:progressive",
+        "learningPageId": "",
+        "pageType": "contrast_page",
+        "title": "المضارع البسيط مقابل المستمر",
+        "description": "أنا أقرأ كل يوم / أنا أقرأ الآن - الآن مقابل العادة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_quantifiers": {
+        "skillId": "english:pool:grammar:quantifiers",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "بعض/أي، كثير/كثير، ببطء",
+        "description": "الكمية، الانتماء، الظروف - لدي بعض التفاح؛ إنها تجري بسرعة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_descriptive": {
+        "skillId": "english:pool:sentence:descriptive",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "الوصف - صفة + ظرف",
+        "description": "الفتاة الطويلة تجري بسرعة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_routine": {
+        "skillId": "english:pool:sentence:routine",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "روتين - كل يوم",
+        "description": "كل يوم أساعد في المنزل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_narrative": {
+        "skillId": "english:pool:sentence:narrative",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "قصة قصيرة - أولاً...ثم...",
+        "description": "أولا نحن نحزم. ثم نذهب. - تسلسل بسيط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_hobbies": {
+        "skillId": "english:pool:translation:hobbies",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "الهوايات - الممارسة المستمرة",
+        "description": "إنه يعزف على الجيتار - تدريب في اتجاهين",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_community": {
+        "skillId": "english:pool:translation:community",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "المجتمع – الممارسة",
+        "description": "المكتبة قريبة من المدرسة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g5": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الحيوانات - الماضي البسيط",
+        "description": "مشى الفيل ببطء – فعل ماضي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المجتمع — زار، متحف",
+        "description": "قمنا بزيارة المتحف - الأماكن المجتمعية في الماضي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "مشاعر - شعرت بالفخر",
+        "description": "شعرت بالفخر – مشاعر في الماضي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "البيئة – الأشجار المزروعة",
+        "description": "لقد زرعوا الأشجار العام الماضي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_family": {
+        "skillId": "english:vocabulary:wordlist:family",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "العائلة - الأجداد",
+        "description": "أجدادي يعيشون بعيدا",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_food": {
+        "skillId": "english:vocabulary:wordlist:food",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الطعام - الطعام الصحي المطبوخ",
+        "description": "قمنا بطهي حساء صحي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_school": {
+        "skillId": "english:vocabulary:wordlist:school",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "المدرسة - مشروع الفصل",
+        "description": "فاز صفنا بالمشروع",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_sports": {
+        "skillId": "english:vocabulary:wordlist:sports",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الرياضة - سجل هدفا",
+        "description": "لقد سجل هدفا أمس",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "السفر - سوف يسافر",
+        "description": "سوف نسافر بالقطار – سنصل إلى المستقبل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_health": {
+        "skillId": "english:vocabulary:wordlist:health",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الصحة باللغة الإنجليزية",
+        "description": "الراحة، الماء، الطبيب، التمرين - أحتاج إلى الراحة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_technology": {
+        "skillId": "english:vocabulary:wordlist:technology",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "التكنولوجيا باللغة الإنجليزية",
+        "description": "الكمبيوتر، البريد الإلكتروني، الإنترنت - تستخدم الكمبيوتر",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_past_simple": {
+        "skillId": "english:pool:grammar:past_simple",
+        "learningPageId": "",
+        "pageType": "step_by_step_procedure",
+        "title": "الماضي البسيط",
+        "description": "لعب/ذهب/رأى - إيجابي وسؤال؛ الأفعال المنتظمة وغير المنتظمة الشائعة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_future_forms": {
+        "skillId": "english:pool:grammar:future_forms",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "المستقبل - سوف / الذهاب الى",
+        "description": "سأتصل بك / سنقوم بالزيارة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_modals": {
+        "skillId": "english:pool:grammar:modals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "الوسائط - يمكن، يجب، يجب أن",
+        "description": "يجب عليك... / أستطيع... / علينا أن...",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_comparatives": {
+        "skillId": "english:pool:grammar:comparatives",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "المقارنات - أكبر وأكثر إثارة للاهتمام",
+        "description": "أكبر من / أكثر إثارة للاهتمام من",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_quantifiers": {
+        "skillId": "english:pool:grammar:quantifiers",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "كثيرًا/كثيرًا - تعزيز الصف الخامس",
+        "description": "العديد من الأشخاص / الكثير من الوقت - في سياقات الماضي والمستقبل",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_narrative": {
+        "skillId": "english:pool:sentence:narrative",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "القصة - ثم وصلنا",
+        "description": "أولاً... ثم... بعد ذلك... — التسلسل الماضي",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_advanced": {
+        "skillId": "english:pool:sentence:advanced",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "جمل أطول",
+        "description": "6-8 كلمات؛ تعلمنا الاسبوع الماضي…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_community": {
+        "skillId": "english:pool:translation:community",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "المجتمع - ممارسة أطول",
+        "description": "المستشفى بجوار الحديقة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_technology": {
+        "skillId": "english:pool:translation:technology",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "التكنولوجيا - الممارسة",
+        "description": "سأرسل بريدا إلكترونيا غدا",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_global": {
+        "skillId": "english:pool:translation:global",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "العالم - الممارسة",
+        "description": "يتحدث الناس في جميع أنحاء العالم العديد من اللغات",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    },
+    "g6": {
+      "vocab_animals": {
+        "skillId": "english:vocabulary:wordlist:animals",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الحيوانات - الماضي المستمر",
+        "description": "كانت الحيتان تسبح – حركة ماضية مستمرة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_community": {
+        "skillId": "english:vocabulary:wordlist:community",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "مجتمع - مهرجان، احتفل",
+        "description": "احتفل مجتمعنا - الأحداث المجتمعية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_emotions": {
+        "skillId": "english:vocabulary:wordlist:emotions",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "مشاعر - قد تشعر",
+        "description": "قد يشعر بالتوتر - مشاعر مشروطة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_environment": {
+        "skillId": "english:vocabulary:wordlist:environment",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "البيئة — المناخ، الحماية",
+        "description": "يؤثر تغير المناخ على... - موضوعات البيئة",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_health": {
+        "skillId": "english:vocabulary:wordlist:health",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الصحة - يجب أن ترتاح",
+        "description": "يجب عليك شرب الماء – نصائح صحية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_technology": {
+        "skillId": "english:vocabulary:wordlist:technology",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "التكنولوجيا - إذا / يمكن",
+        "description": "إذا توقف الإنترنت… — التكنولوجيا بشرط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_travel": {
+        "skillId": "english:vocabulary:wordlist:travel",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "السفر – تقديم مقدمة مثالية",
+        "description": "لقد قمنا بزيارة ثلاث دول – مقدمة فقط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_culture": {
+        "skillId": "english:vocabulary:wordlist:culture",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "الثقافة باللغة الإنجليزية",
+        "description": "الثقافة والتقاليد والموسيقى والهوية",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_global_issues": {
+        "skillId": "english:vocabulary:wordlist:global_issues",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "القضايا العالمية",
+        "description": "القضايا العالمية والسلام والتعاون",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "vocab_history": {
+        "skillId": "english:vocabulary:wordlist:history",
+        "learningPageId": "",
+        "pageType": "vocabulary_theme",
+        "title": "التاريخ باللغة الإنجليزية",
+        "description": "القديمة، القرن، تعرف على التاريخ",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_complex_tenses": {
+        "skillId": "english:pool:grammar:complex_tenses",
+        "learningPageId": "",
+        "pageType": "contrast_page",
+        "title": "الماضي المستمر + الماضي البسيط + المضارع التام",
+        "description": "كنت أقرأ عندما…; لقد زرت - مقدمة فقط",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_conditionals": {
+        "skillId": "english:pool:grammar:conditionals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "الشروط - النوعان 0 و1",
+        "description": "إذا هطل المطر سنبقى / إذا سخنت الجليد يذوب",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_modals": {
+        "skillId": "english:pool:grammar:modals",
+        "learningPageId": "",
+        "pageType": "concept_foundation",
+        "title": "ينبغي / قد / يمكن",
+        "description": "يجب عليك... / ربما... / نستطيع... - ليس فقط يمكن/يجب",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "grammar_comparatives": {
+        "skillId": "english:pool:grammar:comparatives",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "صيغ التفضيل - الأكثر إثارة للاهتمام",
+        "description": "الأفضل / الأكثر إثارة للاهتمام - تعزيز الصف السادس",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "sentence_advanced": {
+        "skillId": "english:pool:sentence:advanced",
+        "learningPageId": "",
+        "pageType": "visual_intuition",
+        "title": "الجمل المعقدة - بينما... كان...",
+        "description": "8-10 كلمات؛ بينما كنت أدرس…",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_technology": {
+        "skillId": "english:pool:translation:technology",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "التكنولوجيا - الممارسة المتقدمة",
+        "description": "قد يكتشف العلماء... - ممارسة في اتجاهين",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      },
+      "translation_global": {
+        "skillId": "english:pool:translation:global",
+        "learningPageId": "",
+        "pageType": "practice_bridge",
+        "title": "العالم - ممارسة مع شرط",
+        "description": "إذا قمنا بحماية المحيطات... - جمل أطول",
+        "doNotTranslateFields": [
+          "description"
+        ],
+        "learningLanguage": "en"
+      }
+    }
+  }
+}

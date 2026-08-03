@@ -16,13 +16,15 @@ import { readRepoFile, repoRoot } from "./_certified-surfaces.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 describe("locale registry direction", () => {
-  test("en and en-XA are LTR; ar-XB is RTL", () => {
+  test("en and en-XA are LTR; ar-XB and ar-001 are RTL", () => {
     assert.equal(resolveDirection("en"), "ltr");
     assert.equal(resolveDirection("en-US"), "ltr");
     assert.equal(resolveDirection("en-XA"), "ltr");
     assert.equal(resolveDirection("ar-XB"), "rtl");
+    assert.equal(resolveDirection("ar-001"), "rtl");
     assert.equal(isRtlLocale("en"), false);
     assert.equal(isRtlLocale("ar-XB"), true);
+    assert.equal(isRtlLocale("ar-001"), true);
   });
 
   test("pseudo locale helpers identify QA locales", () => {

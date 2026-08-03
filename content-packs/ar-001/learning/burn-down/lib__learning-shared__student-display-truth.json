@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "لا توجد بيانات بعد",
+    "data_unavailable_right_now": "البيانات غير متاحة حاليًا",
+    "loading": "تحميل…",
+    "cumulative": "تراكمي",
+    "for_the_current_month": "للشهر الحالي",
+    "cumulative_from_all_sessions": "تراكمي من جميع الجلسات",
+    "from_completed_sessions": "من الجلسات المكتملة",
+    "from_all_sessions_with_duration": "من جميع الجلسات ذات المدة",
+    "credited_learning_time_questions_books_and_parent_activities": "وقت التعلّم المعتمد — أسئلة وكتب وأنشطة أولياء الأمور"
+  }
+}

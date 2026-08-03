@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "with_i_we_use_am": "مع أنا نستخدم am.",
+    "with_he_she_it_we_use_is": "مع هو/هي/هي نستخدمها.",
+    "with_you_we_they_we_use_are": "معك / نحن / هم نستخدمها.",
+    "got_it": "فهمتها",
+    "try_again": "حاول مرة أخرى",
+    "back_to_menu": "العودة إلى القائمة",
+    "choose_another_topic": "اختر موضوعا آخر"
+  }
+}

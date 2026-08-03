@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "block_tower": "برج بلوك",
+    "prototype_tap_to_place_precision_taller_tower": "النموذج الأولي · اضغط للمكان · الدقة = برج أطول",
+    "place_block": "مكان الكتلة",
+    "tap_when_the_block_is_over_the_tower_small_overlap_narrower_block": "اضغط عندما تكون الكتلة فوق البرج · تداخل صغير = كتلة أضيق",
+    "setflash_280_gameover_return": "setFlash(\"\"), 280);\n  }، [انتهت اللعبة])؛\n\n  يعود (",
+    "tap_to_play_again": "انقر للعب مرة أخرى",
+    "game_over": "انتهت اللعبة",
+    "reset": "إعادة ضبط"
+  }
+}

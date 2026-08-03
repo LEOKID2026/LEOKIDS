@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "يسجل",
+    "pick_coins": "اختر العملات المعدنية",
+    "removechangeat_lastindex": "RemoveChangeAt(lastIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "ساعد ليو أمين الصندوق - اختر المنتج واكتشف التغيير وأعد الأموال المناسبة",
+    "x_id_id_if_p_return_null_return": "x.id === id);\n                      إذا (!p) يعود فارغًا؛\n                      يعود (",
+    "setphase_intro_new_game": "setPhase(\"مقدمة\")}>\n            لعبة جديدة",
+    "pick_the_product_the_customer_asked_for": "اختيار المنتج الذي طلبه العميل",
+    "leo_apos_s_market": "سوق ليو",
+    "change_you_gave": "التغيير الذي قدمته:",
+    "purchase_total": "إجمالي الشراء:",
+    "customer_paid": "العميل المدفوع:",
+    "give_change": "إعطاء التغيير ✓",
+    "clear_change": "تغيير واضح",
+    "start_game": "ابدأ اللعبة",
+    "back": "رجوع"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "غير مأهولة في وضع لقطة قطعة أثرية. قم بتشغيل npm run qa:learning-simulator:expert-review-pack للخرائط/التجميعات الاصطناعية.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "أنماط المواضيع المشتركة هي فرضيات وتتطلب تحقيقات تأكيدية لكل موضوع.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "الدعم التشخيصي التعليمي الداخلي فقط - وليس سريريًا / وليس موجهًا إلى أولياء الأمور."
+  }
+}

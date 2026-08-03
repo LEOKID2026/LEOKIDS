@@ -16,6 +16,7 @@ import { applyRuKzDisplayLayer } from "../learning-content-ru-KZ/index.js";
 import { applyRuUzDisplayLayer } from "../learning-content-ru-UZ/index.js";
 import { applyRuKgDisplayLayer } from "../learning-content-ru-KG/index.js";
 import { applyRuByDisplayLayer } from "../learning-content-ru-BY/index.js";
+import { applyAr001DisplayLayer } from "../learning-content-ar-001/index.js";
 import { getContentFallbackChain } from "../../lib/content/locale.js";
 
 /**
@@ -92,6 +93,7 @@ export function localizeLearningQuestion(question, opts = {}) {
       if (loc === "ru-KG") return applyRuKgDisplayLayer(question, subject);
       if (loc === "ru-BY") return applyRuByDisplayLayer(question, subject);
       if (loc === "ru-RU") return applyRuRuDisplayLayer(question, subject);
+      if (loc === "ar-001") return applyAr001DisplayLayer(question, subject);
     }
   }
 

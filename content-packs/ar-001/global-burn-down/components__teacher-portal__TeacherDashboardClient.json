@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "هل تريد إزالة هذا الطالب من الفصل؟",
+    "remove_this_student_from_your_teacher_list": "هل تريد إزالة هذا الطالب من قائمة المعلمين لديك؟",
+    "manage_class": "إدارة الصف",
+    "full_name_of_new_student": "الاسم الكامل للطالب الجديد",
+    "students": "الطلاب",
+    "classes": "فصول",
+    "class_report": "تقرير الطبقة",
+    "activities": "أنشطة",
+    "filter_student_list": "تصفية قائمة الطلاب",
+    "search_by_name": "البحث بالاسم…"
+  }
+}

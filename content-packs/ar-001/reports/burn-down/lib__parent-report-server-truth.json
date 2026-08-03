@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_report": "تقرير ولي الأمر",
+    "the_report_cannot_be_built_from_local_browser_data_data_stored_on_this_d": "لا يمكن إنشاء التقرير من بيانات المتصفح المحلي (البيانات المخزنة على هذا الجهاز)."
+  }
+}

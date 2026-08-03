@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "try_again": "حاول مرة أخرى",
+    "setflipped_delay_const_totalcards_cards_length_const_ismobileviewport_ty": "setFlipped([])، تأخير)؛\n        });\n      }\n    }\n  }\n\n  const TotalCards = Cards.length;\n  const isMobileViewport =\n    نوع النافذة !== \"غير محدد\" && window.matchMedia(\"(max-width: 1023px)\").matches;\n  const isMobile = boardSize.w > 0؟ حجم اللوحة.w",
+    "void_onpregameuichange_active_boolean_void_deckbuilder_paircount_number_": "باطل,\n * onPreGameUiChange ؟: (نشط: منطقي) => باطل،\n * DeckBuilder ؟: (pairCount: number) => Promise",
+    "go_back_to_the_card_shop_and_make_sure_cards_are_available": "ارجع إلى متجر البطاقات وتأكد من توفر البطاقات",
+    "initgamewithdifficulty_difficulty": "initGameWithDifficulty(الصعوبة)}\n                />",
+    "not_enough_shop_cards_for_memory": "لا توجد بطاقات متجر كافية للذاكرة",
+    "loading_cards_from_the_shop": "جارٍ تحميل البطاقات من المتجر…"
+  }
+}

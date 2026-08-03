@@ -1,0 +1,861 @@
+{
+  "hubTitle": "مركز العاب التحدي",
+  "hubBlurb": "اختر موضوعًا وابدأ في التدريب عليه.",
+  "chooseGrade": "اختر الصف",
+  "chooseTopic": "اختر الموضوع",
+  "startPractice": "ابدأ التدريب",
+  "correct": "صحيح!",
+  "incorrect": "ليس تمامًا – حاول مرة أخرى.",
+  "nextQuestion": "السؤال التالي",
+  "finish": "إنهاء",
+  "resultsTitle": "عمل عظيم!",
+  "accuracy": "الدقة: {percent}%",
+  "questionsAnswered": "{عد، جمع، واحد {# سؤال} آخر {# سؤال}}",
+  "subjects": {
+    "math": "الرياضيات",
+    "geometry": "الهندسة",
+    "english": "الإنجليزية",
+    "science": "العلوم"
+  },
+  "blurbs": {
+    "math": "الجمع والطرح والضرب والقسمة، وأكثر من ذلك.",
+    "geometry": "الأشكال والزوايا والمحيط والمساحة والحجم والمزيد.",
+    "english": "المفردات والنحو والترجمة والجمل.",
+    "science": "الجسم والحيوانات والنباتات والفضاء والمادة والطقس والقوى."
+  },
+  "openBook": "فتح كتاب التعلم",
+  "practiceAgain": "تدرب مرة أخرى",
+  "backToHub": "العودة إلى مركز التعلم",
+  "hubBadge": "الممارسة · المراجعة · التحسين",
+  "hubSubtitle": "الاتساق يؤتي ثماره - كلما لعبت أكثر، زادت العملات المعدنية التي تربحها.",
+  "myProgress": "تقدمي",
+  "chooseSubject": "اختر الموضوع",
+  "hubLoading": "تحميل…",
+  "master": {
+    "back": "رجوع",
+    "curriculum": "📋 المنهج",
+    "player": "لاعب",
+    "defaultPlayerName": "الطالب",
+    "topic": "عنوان",
+    "close": "إغلاق",
+    "loading": "تحميل…",
+    "coins": "عملات معدنية:",
+    "coinsTitle": "عملات اللعبة",
+    "submit": "يُقدِّم",
+    "answer": "الإجابة",
+    "answerPlaceholder": "الإجابة",
+    "enterAnswer": "أدخل الإجابة",
+    "check": "تحقّق",
+    "keyboard": "لوحة المفاتيح",
+    "start": "◀️ ابدأ",
+    "stop": "⏹️ توقف",
+    "play": "العب",
+    "explain": "يشرح",
+    "explainBook": "شرح الكتاب",
+    "explainFull": "📘 شرح كامل",
+    "remember": "🧠 تذكر",
+    "rememberTitle": "ماذا تتذكر؟",
+    "whyMistake": "لماذا أخطأت؟",
+    "previousExercise": "حل التمرين السابق",
+    "howToSolve": "كيف نحل هذا؟",
+    "leaderboard": "🏆 المتصدرين",
+    "helpBoard": "📚 لوحة المساعدة",
+    "howToLearn": "❓كيف تتعلم هنا؟",
+    "focusedPractice": "الممارسة المركزة",
+    "enterNameToStart": "أدخل اسمك للبدء",
+    "opening": "افتتاح",
+    "challenges": "التحديات",
+    "accuracy": "دقة",
+    "bestScore": "أفضل نتيجة",
+    "bestStreak": "أفضل خط",
+    "noQuestion": "لا يوجد سؤال متاح لهذا الإعداد.",
+    "playerProfile": "👤 ملف تعريف اللاعب",
+    "chooseAvatar": "اختر الصورة الرمزية:",
+    "pickImage": "📷 اختر الصورة",
+    "deleteImage": "🗑️ حذف الصورة",
+    "imageSelected": "الصورة المحددة ✓",
+    "playerName": "اسم اللاعب",
+    "peakScore": "درجة الذروة",
+    "peakStreak": "خط الذروة",
+    "stars": "النجوم",
+    "level": "مستوى",
+    "xpPoints": "نقاط XP",
+    "dailyStreak": "🔥 خط يومي",
+    "days": "أيام",
+    "monthlyProgress": "التقدم الشهري",
+    "minutesShort": "دقيقة",
+    "overallAccuracy": "الدقة الشاملة",
+    "correctOfTotal": "{correct} صحيح من {total} الأسئلة",
+    "topicProgress": "التقدم حسب الموضوع",
+    "badges": {
+      "streak_10": "🔥خط ساخن",
+      "streak_25": "⚡بسرعة البرق",
+      "streak_50": "🌟 بطل",
+      "streak_100_math": "👑 ملك الرياضيات",
+      "streak_100_science": "👑 ملك العلوم",
+      "score_1000": "💎 1000 نقطة",
+      "score_5000": "🎯 5000 نقطة",
+      "correct_100": "⭐ 100 إجابة صحيحة",
+      "correct_500": "🌟 500 إجابة صحيحة",
+      "op_king": "🧮 ملك {op}",
+      "op_genius": "🏆 عبقرية {op}",
+      "topic_expert": "🔬 {topic} خبير",
+      "topic_genius": "🏆 {topic} عبقري",
+      "topic_expert_legacy": "🔬 {topic} خبير",
+      "topic_genius_legacy": "🏆 {topic} عبقري"
+    },
+    "noBadgesYet": "لا توجد شارات بعد. استمر في التدرب!",
+    "newBadge": "شارة جديدة!",
+    "levelUp": "المستوى الأعلى!",
+    "levelUpNow": "أنت الآن في المستوى {level}!",
+    "avatar": "الصورة الرمزية",
+    "hudLives": "حياة",
+    "hudTimer": "الموقت",
+    "avatarAlt": "الصورة الرمزية",
+    "childNameAria": "اسم الطفل: {name}",
+    "childNameUnavailable": "اسم الطفل غير متوفر",
+    "imageTooLarge": "الصورة كبيرة جدًا. الرجاء اختيار صورة يصل حجمها إلى 5 ميغابايت.",
+    "imageTypeOnly": "الرجاء اختيار ملف الصورة فقط.",
+    "imageSaveFailed": "فشل حفظ الصورة.",
+    "gradeRequired": "يرجى اختيار الصف قبل التدريب. اطلب من أحد الوالدين تحديث درجتك.",
+    "enterValidNumber": "الرجاء إدخال رقم صالح",
+    "enterPlayerNameForMistake": "أدخل اسم اللاعب للتدرب على الخطأ المحدد",
+    "selectAtLeastOneOp": "الرجاء تحديد عملية واحدة على الأقل",
+    "noMistakesToPractice": "لا توجد أخطاء في الممارسة",
+    "noResultsYet": "لا توجد نتائج محفوظة بعد.",
+    "rank": "رتبة",
+    "score": "نتيجة",
+    "streak": "أثَر",
+    "localHighScores": "درجات عالية المحلية",
+    "practiceSettings": "🎛️ إعدادات الممارسة",
+    "practiceSettingsBlurb": "تحكم في تدريبك: قم بمراجعة الأخطاء الأخيرة، أو الممارسة المتدرجة (ابدأ بمستوى منخفض وتقدم إلى المستوى الذي اخترته)، أو اختر مجال التركيز.",
+    "practiceModeLabel": "وضع الممارسة",
+    "currentMode": "الوضع الحالي",
+    "focus": "ركز",
+    "focusedPracticeMode": "وضع الممارسة المركزة",
+    "resetDefaults": "إعادة تعيين الإعدادات الافتراضية",
+    "mistakeReview": "🎯 مراجعة الأخطاء",
+    "mistakeReviewEmpty": "لم يتم حفظ أي أخطاء حتى الآن. تدرب، وارتكب الأخطاء، ثم انقر هنا لمراجعة ما تحتاجه بالضبط.",
+    "correctAnswer": "الإجابة الصحيحة: {answer}",
+    "yourAnswer": "إجابتك: {answer}",
+    "practiceThisQuestion": "تدرب على هذا السؤال",
+    "clearMistakes": "🧹 أخطاء واضحة",
+    "referenceBoard": "لوحة مرجعية",
+    "referenceBoardBlurb": "اختر فئة لمراجعة النقاط الرئيسية بسرعة، مثل لوحات المساعدة في الرياضيات والهندسة.",
+    "noTermsYet": "لا توجد شروط لإظهارها بعد.",
+    "verticalDisplay": "عرض عمودي",
+    "horizontalDisplay": "عرض أفقي",
+    "topics": "المواضيع",
+    "mixedPractice": "تمرين مختلط",
+    "editMixOperations": "تحرير عمليات المزيج",
+    "subjects": "المواضيع",
+    "notEnoughQuestions": "لا توجد أسئلة كافية للموضوع/الصف/المستوى الذي اخترته. حاول تغيير الإعداد.",
+    "step": "الخطوة {num}",
+    "explanation": "توضيح",
+    "noStepDetail": "لا توجد تفاصيل خطوة بخطوة لهذا السؤال. استخدم لوحة الصيغ.",
+    "multiplicationTableHint": "اضغط على رقم في الجدول، ثم رقم الصف أو العمود",
+    "divisionTableHint": "اضغط على المنتج، ثم رقم الصف/العمود لرؤية القسمة",
+    "leaderboardLoadError": "حدث خطأ أثناء تحميل لوحة الصدارة:",
+    "gradeFallback": "الصف",
+    "gradedPracticeBlurb": "الممارسة المتدرجة - تبدأ بمستوى منخفض وتتقدم إلى المستوى الذي اخترته",
+    "backToRegularPractice": "العودة إلى الممارسة المنتظمة",
+    "localInsights": "رؤى الممارسة (محلي)",
+    "titles": {
+      "math": "🧮 الرياضيات",
+      "geometry": "📐 الهندسة",
+      "english": "🇬🇧 الإنجليزية",
+      "science": "🔬 العلم"
+    },
+    "modes": {
+      "learning": {
+        "name": "تعلُّم",
+        "description": "لم تنته اللعبة - تدرب بالسرعة التي تناسبك"
+      },
+      "challenge": {
+        "name": "تحدي",
+        "description": "الموقت + حياة، سباق لدرجة عالية"
+      },
+      "speed": {
+        "name": "سرعة",
+        "description": "إجابات سريعة = المزيد من النقاط! ⚡"
+      },
+      "marathon": {
+        "name": "ماراثون",
+        "description": "كم عدد الأسئلة التي يمكنك حلها؟ 🏃"
+      },
+      "practice": {
+        "name": "تمرين",
+        "description": "اختر موضوعًا أو وضع تدريب مركَّز"
+      }
+    },
+    "levels": {
+      "easy": "سهل",
+      "medium": "واسطة",
+      "hard": "صعب"
+    },
+    "grades": {
+      "g1": "الصف 1",
+      "g2": "الصف 2",
+      "g3": "الصف 3",
+      "g4": "الصف 4",
+      "g5": "الصف 5",
+      "g6": "الصف 6"
+    },
+    "displayLevels": {
+      "regular": "عادية",
+      "advanced": "متقدم"
+    },
+    "feedback": {
+      "correct": "عظيم! 🎉",
+      "wrong": "ليس تمامًا – حاول مرة أخرى",
+      "gameOver": "انتهت اللعبة! 💔",
+      "wrongWithAnswer": "ليس تماماً 😉 الإجابة الصحيحة : {answer} ✅",
+      "timeUp": "انتهى الوقت! ⏰",
+      "timeUpGameOver": "انتهى الوقت! انتهت اللعبة! ⏰",
+      "excellent": "ممتاز! ✅"
+    },
+    "practiceModes": {
+      "normal": "ممارسة منتظمة",
+      "mistakes": "مراجعة الخطأ",
+      "graded": "ممارسة متدرجة"
+    },
+    "streakEncouragement": {
+      "keepGoing": "🔥 استمر في ذلك!",
+      "nice": "⭐ لطيف!",
+      "great": "🌟 عظيم!",
+      "champion": "👑 بطل!"
+    },
+    "streakFeedback": {
+      "correct": "صحيح!",
+      "amazing": "مدهش! خط {streak}!",
+      "excellent": "ممتاز! خط {streak}!",
+      "wellDone": "أحسنت! خط {streak}!",
+      "nice": "لطيف - جيد! خط {streak}!"
+    },
+    "previous": "سابق",
+    "next": "التالي",
+    "stepOf": "الخطوة {current} من {total}",
+    "mistakesFixed": "🎉 تم إصلاح جميع الأخطاء — عمل رائع!",
+    "levelLabel": "المستوى {level}",
+    "progressByOperation": "التقدم حسب العملية",
+    "strengthen": "تعزيز:",
+    "strongRelative": "قريب قوي:",
+    "browserOnlyMistakes": "محاولتان على الأقل؛ المحفوظة في المتصفح فقط",
+    "practiceYourMistakes": "تدرب على أخطائك {count}",
+    "recentMistakes": "الأخطاء الأخيرة:",
+    "focusedPracticeTitle": "الممارسة المركزة",
+    "showHorizontal": "↔️ أفقي",
+    "showVertical": "↕️ عمودي",
+    "draftPage": "صفحة المسودة",
+    "stepByStep": "📖 خطوة بخطوة",
+    "howToSolveExerciseRtl": "كيف نحل هذا التمرين؟",
+    "newQuestion": "سؤال جديد",
+    "rowN": "صف {num}",
+    "columnN": "العمود {num}",
+    "divisionLabel": "÷ شعبة",
+    "multiplicationLabel": "× الضرب",
+    "reset": "إعادة ضبط",
+    "remainderWarning": "⚠️ خطأ:",
+    "notInteger": "ليس عددا صحيحا!",
+    "remainderOf": "الباقي {remainder}",
+    "tableTapNumberHint": "اضغط على رقم في الجدول، ثم رقم الصف أو العمود",
+    "divisionTableTapHint": "اضغط على المنتج، ثم رقم الصف/العمود لرؤية القسمة",
+    "leaderboardLoadErrorPrefix": "حدث خطأ أثناء تحميل لوحة النتائج:",
+    "noResultsAtLevel": "لا توجد نتائج حتى الآن في",
+    "pickOperations": "🎲 اختيار العمليات",
+    "pickOperationsTitle": "اختيار العمليات",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "all": "الجميع",
+    "levelUpNowText": "أنت الآن في المستوى {level}!",
+    "gradeTitle": "الصف {grade}",
+    "editMixTopics": "تحرير مزيج المواضيع",
+    "answerPlaceholderLong": "اكتب إجابتك هنا...",
+    "checkAnswerBtn": "✅ التحقق من الإجابة",
+    "noResultsForLevel": "لا توجد نتائج حتى الآن للمستوى",
+    "pickMixTopics": "🎲 اختر موضوعات للمزيج",
+    "pickMixTopicsBlurb": "اختر الموضوعات التي تريد تضمينها في الممارسة المختلطة",
+    "deselectAll": "قم بإلغاء تحديد الكل",
+    "selectOneTopicMin": "الرجاء تحديد موضوع واحد على الأقل",
+    "mistakePracticeTitle": "🎯التدرب على الأخطاء الأخيرة",
+    "mistakePracticeBlurb": "اختر خطأً حديثًا لبدء ممارسة مركزة في نفس الموضوع والصف والصعوبة.",
+    "noActiveMistakes": "لا توجد أخطاء نشطة حتى الآن. قم بتشغيل جلسة، وجمع البيانات، ثم العودة إلى هنا.",
+    "currentGrade": "الصف الحالي",
+    "practiceNow": "تدرب الآن",
+    "clearMistakesBtn": "🧹 أخطاء واضحة",
+    "wordBoardTitle": "📚 لوحة الكلمات التفاعلية",
+    "wordBoardBlurb": "اختر فئة لمراجعة الكلمات الإنجليزية الهامة.",
+    "noWordsInCategory": "لا توجد كلمات لإظهارها في هذه الفئة.",
+    "smartPracticeSettings": "🎛️ إعدادات الممارسة الذكية",
+    "smartPracticeBlurb": "مثل الرياضيات والهندسة، اختر وضعًا تدريبيًا خاصًا، أو اربطه بالأخطاء الأخيرة، أو ممارسة متدرجة.",
+    "focusMode": "وضع التركيز",
+    "defaultMode": "تقصير",
+    "repeatRecentMistakes": "كرر الأخطاء الأخيرة",
+    "gradedPracticeLabel": "ممارسة متدرجة (ابدأ بالمستوى المنخفض ← المستوى الذي اخترته)",
+    "translationQuestions": "أسئلة الترجمة/القصة",
+    "translationInVocab": "قم بتضمين أسئلة الترجمة في ألعاب المفردات/القواعد",
+    "translationOnly": "عرض أسئلة الترجمة/القصة فقط",
+    "currentStateSummary": "ملخص الحالة الحالية",
+    "mistakeFocus": "التركيز على الخطأ:",
+    "translationMode": "أسئلة الترجمة:",
+    "translationMixed": "مختلط",
+    "translationOff": "عن",
+    "translationOnlyShort": "الترجمة فقط",
+    "enlargeDiagram": "تكبير الرسم البياني",
+    "enlarge": "تكبير",
+    "enlargedDiagram": "رسم تخطيطي موسع",
+    "diagram": "رسم بياني",
+    "closeDiagram": "إغلاق الرسم البياني",
+    "explainTitle": "توضيح",
+    "noStepDetailGeometry": "لا توجد تفاصيل خطوة لهذا السؤال. استخدم لوحة الصيغ.",
+    "correctAnswerColon": "الإجابة الصحيحة: {answer}.",
+    "topicFallback": "عنوان",
+    "shapeFallback": "شكل",
+    "dailyStreakChampion": "👑 بطل!",
+    "dailyStreakExcellent": "🌟 ممتاز!",
+    "dailyStreakGood": "🔥 خط عظيم!",
+    "dailyStreakNice": "⭐ لطيف!",
+    "dailyStreakKeepGoing": "🔥 استمر في ذلك!",
+    "recentMistakesMode": "الأخطاء الأخيرة",
+    "mistakeRow": "{question} = {wrong} ❌ (الصحيح: {correct})",
+    "monthMinutesProgress": "{current} / {goal} دقيقة",
+    "closeRtl": "إغلاق",
+    "referenceCategories": {
+      "operations": "العمليات الحسابية",
+      "formulas": "الصيغ",
+      "terms": "شروط",
+      "shapes": "الأشكال"
+    }
+  },
+  "math": {
+    "levelUpScience": "لقد وصلت إلى مستوى أعلى في الرياضيات!",
+    "howToLearnTitle": "📘 كيف تتعلم الرياضيات هنا؟",
+    "howToLearnBlurb": "الهدف هو ممارسة الرياضيات بطريقة ممتعة، تتناسب مع الصف والموضوع والصعوبة.",
+    "leaderboardTitle": "🏆 المتصدرين - الرياضيات",
+    "referenceBoardTitle": "📚 لوحة مساعدة الرياضيات",
+    "multiplicationTable": "📊 جدول الضرب",
+    "randomPractice": "ممارسة عشوائية",
+    "pickRowOrColumn": "اختر صفًا أو عمودًا للتدرب على:",
+    "operations": {
+      "addition": "الجمع",
+      "subtraction": "الطرح",
+      "multiplication": "الضرب",
+      "division": "القسمة",
+      "division_with_remainder": "القسمة على الباقي",
+      "fractions": "الكسور",
+      "percentages": "النسب المئوية",
+      "sequences": "المتتاليات",
+      "decimals": "الأعداد العشرية",
+      "rounding": "التقريب",
+      "divisibility": "قواعد قابلية القسمة",
+      "prime_composite": "الأعداد الأولية والمركبة",
+      "powers": "القوى",
+      "ratio": "نسبة",
+      "equations": "المعادلات",
+      "order_of_operations": "ترتيب العمليات",
+      "zero_one_properties": "خصائص 0 و 1",
+      "estimation": "تقدير",
+      "scale": "حجم",
+      "compare": "يقارن",
+      "number_sense": "الحس العددي",
+      "factors_multiples": "العوامل والمضاعفات",
+      "word_problems": "مسائل كلامية",
+      "multiplication_table": "جدول الضرب",
+      "place_value": "القيمة المنزلية",
+      "comparison": "مقارنة",
+      "patterns": "الأنماط والتسلسلات",
+      "multiplication_advanced": "الضرب المتقدم",
+      "mixed": "مختلط"
+    },
+    "steps": {
+      "understandQuestion": "الخطوة 1: فهم السؤال",
+      "howToApproach": "الخطوة الثانية: كيف نتعامل معها؟",
+      "solveByRules": "سنحل باستخدام القواعد الخاصة بهذا الموضوع.",
+      "lookAtExercise": "دعونا نلقي نظرة على التمرين.",
+      "theAnswer": "الخطوة 3: الجواب",
+      "answerIs": "الجواب هو: {answer}",
+      "checkAnswer": "سوف نتحقق من الجواب."
+    },
+    "howToLearnSteps": {
+      "step1": "اختر الدرجة والصعوبة والعملية (الجمع والطرح والضرب والقسمة والكسور والنسب المئوية والمزيد).",
+      "step2": "اختر وضع اللعبة: التعلم أو التحدي بالمؤقت والحياة أو السرعة أو الماراثون.",
+      "step3": "اقرأ كل سؤال بعناية - بعضها عبارة عن مسائل كلامية تحتاج إلى فهم القصة.",
+      "step4": "تساعدك النتائج العالية وخطوط الإجابات والنجوم والشارات على رفع مستواك كلاعب."
+    },
+    "referenceBoardBlurb": "اختر فئة لمراجعة العمليات الأساسية والصيغ والمصطلحات في الرياضيات.",
+    "reference": {
+      "operations": {
+        "addition": {
+          "title": "➕ الإضافة",
+          "desc": "جمع الأرقام: أ + ب = ج",
+          "example": "مثال: 5 + 3 = 8"
+        },
+        "subtraction": {
+          "title": "➖ الطرح",
+          "desc": "طرح الأعداد: أ - ب = ج",
+          "example": "مثال: 8 - 3 = 5"
+        },
+        "multiplication": {
+          "title": "✖️ الضرب",
+          "desc": "ضرب الأعداد: أ × ب = ج",
+          "example": "مثال: 4 × 3 = 12"
+        },
+        "division": {
+          "title": "➗ القسمة",
+          "desc": "قسمة الأعداد: أ ÷ ب = ج",
+          "example": "مثال: 12 ÷ 3 = 4"
+        },
+        "fractions": {
+          "title": "🔢 الكسور",
+          "desc": "الرقم الذي يمثل جزءًا من الكل: 1/2، 3/4",
+          "example": "مثال: 1/2 = 0.5"
+        },
+        "percentages": {
+          "title": "النسبة المئوية",
+          "desc": "الجزء من 100: % = الجزء/الكل × 100",
+          "example": "مثال: 50% = 0.5"
+        }
+      },
+      "formulas": {
+        "square_area": {
+          "title": "📐مساحة المربعة",
+          "desc": "الجانب × الجانب",
+          "formula": "أ = أ²"
+        },
+        "rectangle_area": {
+          "title": "📐 منطقة المستطيل",
+          "desc": "الطول × العرض",
+          "formula": "أ = أ × ب"
+        },
+        "triangle_area": {
+          "title": "📐 منطقة المثلث",
+          "desc": "(القاعدة × الارتفاع) ÷ 2",
+          "formula": "أ = (ب × ح) ÷ 2"
+        },
+        "circle_perimeter": {
+          "title": "⭕ محيط",
+          "desc": "2 × π × نصف القطر",
+          "formula": "ج = 2ط"
+        },
+        "circle_area": {
+          "title": "⭕منطقة الدائرة",
+          "desc": "π × نصف القطر²",
+          "formula": "أ = ط²"
+        }
+      },
+      "terms": {
+        "sum": {
+          "title": "➕ المبلغ",
+          "desc": "نتيجة إضافة الأرقام"
+        },
+        "difference": {
+          "title": "➖ الفرق",
+          "desc": "نتيجة طرح الأرقام"
+        },
+        "product": {
+          "title": "✖️ المنتج",
+          "desc": "نتيجة ضرب الأعداد"
+        },
+        "quotient": {
+          "title": "➗ الحاصل",
+          "desc": "نتيجة قسمة الأعداد"
+        },
+        "even": {
+          "title": "🔢 العدد الزوجي",
+          "desc": "عدد يقبل القسمة على 2 بدون باقي (2، 4، 6، 8...)"
+        },
+        "odd": {
+          "title": "🔢 رقم فردي",
+          "desc": "عدد لا يقبل القسمة على 2 ولا يوجد له باقي (1، 3، 5، 7...)"
+        },
+        "prime": {
+          "title": "🔢الرقم الأولي",
+          "desc": "عدد يقبل القسمة على 1 وعلى نفسه (2، 3، 5، 7، 11...)"
+        },
+        "integer": {
+          "title": "🔢 عدد صحيح",
+          "desc": "عدد صحيح بدون كسور (0، 1، 2، 3، -1، -2...)"
+        },
+        "fraction": {
+          "title": "🔢 الكسر",
+          "desc": "رقم يمثل جزءًا من الكل (1/2، 3/4، 2/3...)"
+        },
+        "percent": {
+          "title": "% بالمئة",
+          "desc": "الجزء من 100 (50% = النصف، 25% = الربع)"
+        }
+      }
+    }
+  },
+  "geometry": {
+    "leaderboardTitle": "🏆 المتصدرين – الهندسة",
+    "howToLearnTitle": "📘 كيف تتعلم الهندسة هنا؟",
+    "howToLearnBlurb": "الهدف هو ممارسة الهندسة بطريقة ممتعة، تتناسب مع الصف والموضوع والصعوبة.",
+    "howToLearnSteps": {
+      "step1": "اختر الدرجة والصعوبة والموضوع (المساحة والمحيط والحجم والزوايا وفيثاغورس والمزيد).",
+      "step2": "اختر وضع اللعبة: التعلم أو التحدي بالمؤقت والحياة أو السرعة أو الماراثون.",
+      "step3": "اقرأ كل سؤال بعناية، بعضها عبارة عن مسائل كلامية تتعلق بالحدائق والأسوار والصناديق.",
+      "step4": "تساعدك النتائج العالية وخطوط الإجابات والنجوم والشارات على رفع مستواك كلاعب."
+    },
+    "referenceBoardTitle": "📐 لوحة الأشكال والصيغ",
+    "referenceBoardBlurb": "اختر فئة لمراجعة الأشكال والصيغ والمصطلحات الهندسية الأساسية.",
+    "reference": {
+      "shapes": {
+        "square": {
+          "title": "🔷 ساحة",
+          "desc": "4 جوانب متساوية، 4 زوايا قائمة"
+        },
+        "rectangle": {
+          "title": "⬜ مستطيل",
+          "desc": "زوجان من الجوانب المتساوية، 4 زوايا قائمة"
+        },
+        "triangle": {
+          "title": "🔺مثلث",
+          "desc": "3 جوانب، 3 زوايا"
+        },
+        "circle": {
+          "title": "⭕ الدائرة",
+          "desc": "شكل دائري جميع النقاط هي نفس المسافة من المركز"
+        },
+        "box": {
+          "title": "📦 صندوق (منشور مستطيل)",
+          "desc": "شكل ثلاثي الأبعاد مع 6 وجوه مستطيلة"
+        },
+        "cube": {
+          "title": "🔲 مكعب",
+          "desc": "مربع حيث جميع الحواف متساوية"
+        }
+      },
+      "formulas": {
+        "square_area": {
+          "title": "📐مساحة المربعة",
+          "desc": "الجانب × الجانب",
+          "formula": "أ = أ²"
+        },
+        "rectangle_area": {
+          "title": "📐 منطقة المستطيل",
+          "desc": "الطول × العرض",
+          "formula": "أ = أ × ب"
+        },
+        "triangle_area": {
+          "title": "📐 منطقة المثلث",
+          "desc": "(القاعدة × الارتفاع) ÷ 2",
+          "formula": "أ = (ب × ح) ÷ 2"
+        },
+        "square_perimeter": {
+          "title": "📏 محيط المربع",
+          "desc": "4 × جانب",
+          "formula": "ف = 4 أ"
+        },
+        "rectangle_perimeter": {
+          "title": "📏 محيط المستطيل",
+          "desc": "2 × (الطول + العرض)",
+          "formula": "ف = 2(أ + ب)"
+        },
+        "box_volume": {
+          "title": "📦 حجم المنشور المستطيل",
+          "desc": "الطول × العرض × الارتفاع",
+          "formula": "الخامس = أ × ب × ج"
+        },
+        "cube_volume": {
+          "title": "📦 حجم المكعب",
+          "desc": "جانب × جانب × جانب",
+          "formula": "الخامس = أ³"
+        },
+        "circle_perimeter": {
+          "title": "⭕ محيط",
+          "desc": "2 × π × نصف القطر",
+          "formula": "ج = 2ط"
+        },
+        "circle_area": {
+          "title": "⭕منطقة الدائرة",
+          "desc": "π × نصف القطر²",
+          "formula": "أ = ط²"
+        }
+      },
+      "terms": {
+        "area": {
+          "title": "📐 المنطقة",
+          "desc": "المساحة التي يغطيها الشكل على سطح مستو"
+        },
+        "perimeter": {
+          "title": "📏 محيط",
+          "desc": "طول الخط المحيط بالشكل"
+        },
+        "volume": {
+          "title": "📦 المجلد",
+          "desc": "المساحة التي يشغلها الكائن ثلاثي الأبعاد"
+        },
+        "angle": {
+          "title": "📐 زاوية",
+          "desc": "المسافة بين شعاعين من نفس النقطة"
+        },
+        "right_angle": {
+          "title": "📐 الزاوية اليمنى",
+          "desc": "90 درجة"
+        },
+        "acute_angle": {
+          "title": "📐زاوية حادة",
+          "desc": "أقل من 90 درجة"
+        },
+        "obtuse_angle": {
+          "title": "📐 زاوية منفرجة",
+          "desc": "أكثر من 90 درجة"
+        },
+        "parallel": {
+          "title": "📐 الخطوط المتوازية",
+          "desc": "خطوط لا تلتقي أبداً"
+        },
+        "perpendicular": {
+          "title": "📐 الخطوط المتعامدة",
+          "desc": "الخطوط التي تلتقي في زاوية قائمة"
+        },
+        "diagonal": {
+          "title": "📐 قطري",
+          "desc": "خط يصل بين زاويتين غير متجاورتين"
+        },
+        "symmetry": {
+          "title": "📐 التناظر",
+          "desc": "عندما يبدو الشكل نفسه على كلا الجانبين"
+        }
+      }
+    },
+    "topics": {
+      "shapes_basic": "الأشكال الأساسية",
+      "shapes": "الأشكال",
+      "area": "المساحة",
+      "perimeter": "المحيط",
+      "volume": "الحجم",
+      "angles": "الزوايا",
+      "parallel_perpendicular": "متوازي وعمودي",
+      "triangles": "المثلثات",
+      "quadrilaterals": "رباعيات",
+      "transformations": "التحولات",
+      "rotation": "تناوب",
+      "symmetry": "التناظر",
+      "diagonal": "قطري",
+      "heights": "مرتفعات",
+      "tiling": "تبليط",
+      "circles": "دائرة",
+      "solids": "المواد الصلبة ثلاثية الأبعاد",
+      "pythagoras": "فيثاغورس",
+      "coordinates": "الإحداثيات",
+      "mixed": "مختلط"
+    },
+    "errors": {
+      "invalidGrade": "صف غير صالح. اختر صفًا آخر.",
+      "noTopics": "لا توجد مواضيع متاحة لهذا الصف. الرجاء اختيار درجة أخرى.",
+      "noQuestions": "لا توجد أسئلة متاحة للموضوع والصف المحدد.",
+      "generateError": "حدث خطأ أثناء إنشاء السؤال. يرجى المحاولة مرة أخرى أو اختيار موضوع آخر."
+    }
+  },
+  "english": {
+    "leaderboardTitle": "🏆 المتصدرين – اللغة الإنجليزية",
+    "howToLearnTitle": "📘 كيف تتعلم اللغة الإنجليزية هنا؟",
+    "practiceFocus": {
+      "balanced": "📚 جميع المواضيع",
+      "vocab_core": "🔤 المفردات الأساسية",
+      "grammar_forms": "✏️ القواعد والأشكال",
+      "writing_lab": "📝 الكتابة والجمل",
+      "translation_boost": "📖 الترجمة والقراءة"
+    },
+    "reference": {
+      "colors": {
+        "label": "الألوان"
+      },
+      "animals": {
+        "label": "الحيوانات"
+      },
+      "actions": {
+        "label": "الأفعال الشائعة"
+      },
+      "emotions": {
+        "label": "العواطف"
+      },
+      "school": {
+        "label": "الحياة المدرسية"
+      },
+      "technology": {
+        "label": "تكنولوجيا"
+      }
+    },
+    "topics": {
+      "phonics": "الصوتيات",
+      "vocabulary": "المفردات",
+      "grammar": "القواعد",
+      "translation": "ترجمة",
+      "sentences": "الجمل",
+      "writing": "الكتابة",
+      "mixed": "مختلط"
+    },
+    "steps": {
+      "wordIsEnglish": "نرى أن \"{word}\" باللغة الإنجليزية.",
+      "findLocalizedMeaning": "العثور على معنى الكلمة.",
+      "correctMeaning": "المعنى الصحيح هو : {answer}.",
+      "checkMeaning": "تأكد من أن المعنى منطقي.",
+      "wordIsCue": "نرى كلمة \"{word}\".",
+      "findEnglishMeaning": "ابحث عن المعنى الإنجليزي للكلمة.",
+      "grammarRules": "مراجعة قواعد قواعد اللغة الإنجليزية.",
+      "grammarAmIsAre": "أنا = أنا، أنت/نحن/هم = هو، هي/هي = هو.",
+      "readEnglishSentence": "اقرأ الجملة الإنجليزية: \"{sentence}\".",
+      "translatePiece": "حاول ترجمة كل كلمة أو جزء.",
+      "buildSentence": "ضع الكلمات معًا في جملة.",
+      "correctTranslation": "الترجمة الصحيحة: {answer}.",
+      "readSentence": "اقرأ الجملة: \"{sentence}\".",
+      "buildEnglishSentence": "ضع الكلمات معًا في جملة إنجليزية.",
+      "readTemplate": "اقرأ الجملة: \"{template}\".",
+      "whatIsMissing": "اكتشف ما هو مفقود - أي كلمة أو نموذج نحوي.",
+      "grammarCheck": "تحقق مما يناسب القواعد النحوية: أنا/أنت/نحن/هم = هم، هو/هي/إنها = هو.",
+      "spellingReadWord": "اقرأ الكلمة: \"{word}\".",
+      "spellingRecallEnglish": "أذكر شكله الإنجليزي.",
+      "spellingLetterByLetter": "اكتب حرفًا بحرف وشاهد الإملاء.",
+      "writeSentence": "اقرأ الجملة: \"{sentence}\".",
+      "breakIntoParts": "قم بتقسيم الجملة إلى أجزاء وفكر في كيفية نطق كل منها باللغة الإنجليزية.",
+      "checkWordOrder": "تحقق من ترتيب الكلمات والحرف الكبير في البداية.",
+      "correctSentence": "الجملة الصحيحة: {answer}."
+    },
+    "mistakes": {
+      "checkMeaningLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق مرة أخرى: هل المعنى الخاص بك يتطابق مع الكلمة؟",
+      "checkMeaning": "تحقق مرة أخرى: هل المعنى الخاص بك يتطابق مع الكلمة؟",
+      "iAmNotIs": "تذكر: أنا دائمًا أستخدم am وليس is. انا = انا .",
+      "amOnlyWithI": "تذكر: أنا فقط معي. هو/هي/هي = أنت/نحن/هم = موجودون.",
+      "checkGrammarLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق من القواعد النحوية مرة أخرى: أنا، أنت/نحن/هم، هو/هي/هي.",
+      "checkGrammar": "تحقق من القواعد النحوية مرة أخرى: أنا، أنت/نحن/هم، هو/هي/هي.",
+      "checkTranslationLearning": "الترجمة الصحيحة: {answer}. تحقق مرة أخرى: هل قمت بترجمة كل كلمة بشكل صحيح؟",
+      "checkTranslation": "تحقق مرة أخرى: هل قمت بترجمة كل كلمة بشكل صحيح؟",
+      "checkWordFitLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق مرة أخرى: هل كلمتك تناسب الجملة؟",
+      "checkWordFit": "تحقق مرة أخرى: هل كلمتك تناسب الجملة؟",
+      "checkSpellingLearning": "الإجابة الصحيحة هي \"{answer}\". ربما تكون قد أخطأت في كتابتها - تحقق من الحرف بحرف.",
+      "checkSpelling": "ربما تكون قد أخطأت في كتابتها - تحقق من الحرف بحرف.",
+      "checkMeaningContext": "تحقق مرة أخرى: هل المعنى الخاص بك يتطابق مع الكلمة؟ فكر في الكلمة بناءً على السياق."
+    },
+    "audio": {
+      "maxReplays": "لقد وصلت إلى الحد الأقصى لعدد مرات الاستماع لهذا السؤال.",
+      "playing": "جارٍ اللعب…",
+      "playFailed": "لا يمكن اللعب الآن. حاول مرة أخرى أو تابع النص.",
+      "listenTitle": "استمع للسؤال ({current}/{max})",
+      "listen": "يستمع",
+      "srLabel": "الصوت · الصوتيات"
+    }
+  },
+  "science": {
+    "leaderboardTitle": "🏆 المتصدرين - العلوم",
+    "howToLearnTitle": "📘كيف تتعلم العلم هنا؟",
+    "howToLearnBlurb": "الهدف هو ممارسة العلوم بطريقة ممتعة، تتناسب مع الصف والموضوع والصعوبة.",
+    "levelUp": "لقد ارتقيت في العلم!",
+    "levelUpNow": "أنت الآن في المستوى {level}",
+    "scientistLevel": "مستوى العلماء",
+    "referenceBoardTitle": "📚 لوحة مفهوم العلوم",
+    "practiceFocus": {
+      "balanced": "📚 جميع المواضيع",
+      "life_science": "🧬 علوم الحياة",
+      "earth_space": "🌍 الأرض والفضاء",
+      "materials_energy": "🧪 المواد والتجارب"
+    },
+    "reference": {
+      "life_science": {
+        "label": "علوم الحياة",
+        "terms": {
+          "respiratory": {
+            "term": "الجهاز التنفسي",
+            "desc": "يدخل الأكسجين إلى الجسم ويزيل ثاني أكسيد الكربون."
+          },
+          "photosynthesis": {
+            "term": "التمثيل الضوئي",
+            "desc": "عملية تصنع فيها النباتات الغذاء باستخدام الضوء."
+          },
+          "foodWeb": {
+            "term": "الشبكة الغذائية",
+            "desc": "شبكة من السلاسل الغذائية توضح كيفية تحرك الطاقة في الطبيعة."
+          },
+          "adaptations": {
+            "term": "التكيفات",
+            "desc": "تغيرات في الجسم أو السلوك تساعد على البقاء."
+          }
+        }
+      },
+      "earth_space": {
+        "label": "الأرض والفضاء",
+        "terms": {
+          "atmosphere": {
+            "term": "أَجواء",
+            "desc": "طبقة الغازات حول الأرض."
+          },
+          "waterCycle": {
+            "term": "دورة المياه",
+            "desc": "مسار الماء بين البحر والسحاب واليابسة."
+          },
+          "crust": {
+            "term": "القشرة الارضية",
+            "desc": "الطبقة الصخرية الخارجية ذات الصفائح التكتونية."
+          },
+          "planet": {
+            "term": "كوكب",
+            "desc": "جسم يدور حول نجم، على سبيل المثال. الأرض أو المريخ."
+          }
+        }
+      },
+      "materials_energy": {
+        "label": "المواد والطاقة",
+        "terms": {
+          "states": {
+            "term": "حالات المادة",
+            "desc": "الصلبة والسائلة والغازية – أشكال مختلفة لنفس المادة."
+          },
+          "mixtureCompound": {
+            "term": "خليط مقابل مركب",
+            "desc": "خليط - ممزوج بدون روابط كيميائية؛ مركب - رابطة قوية."
+          },
+          "renewable": {
+            "term": "الطاقة المتجددة",
+            "desc": "مصادر كالشمس والرياح لا تنضب."
+          },
+          "physicalChange": {
+            "term": "التغيير الجسدي",
+            "desc": "تغير في الشكل أو الحالة دون تكوين مادة جديدة."
+          }
+        }
+      }
+    },
+    "topics": {
+      "body": "جسم الإنسان",
+      "animals": "الحيوانات",
+      "plants": "النباتات",
+      "materials": "المواد",
+      "earth_space": "الأرض والفضاء",
+      "environment": "البيئة والإيكولوجيا",
+      "experiments": "التجارب والعمليات",
+      "mixed": "مواضيع مختلطة"
+    },
+    "hints": {
+      "body": "تحقق مرة أخرى: ما هو دور النظام أو الجهاز؟ وكيف يساعد الجسم؟",
+      "animals": "اسأل نفسك: أين يعيش الحيوان؟ ماذا يأكل؟ ما هي مميزاته؟",
+      "plants": "تذكر أجزاء النبات وأدواره: الجذر، الجذع، الأوراق، الزهور.",
+      "materials": "فكر في حالة المادة وخصائصها (الصلبة/السائلة/الغازية، والذوبان، وما إلى ذلك).",
+      "earth_space": "تذكر: الأرض لها حركات ثابتة (دوران ومدار حول الشمس).",
+      "environment": "قرر ما إذا كان الإجراء يساعد أو يضر بالبيئة (التلوث، النفايات، إعادة التدوير).",
+      "experiments": "فكر كعالم: ماذا يحدث في التجربة؟ السبب والنتيجة؟",
+      "genericRetry": "فكر مرة أخرى في استخدام صيغة السؤال و\"ماذا تتذكر؟\" القائمة أعلاه - لا تخمن بسرعة كبيرة.",
+      "genericCheck": "تحقق من البيانات والشرح الذي تعلمته مرة أخرى."
+    },
+    "steps": {
+      "understand": "1. افهم السؤال أولاً – ما الموضوع الذي يدور حوله؟",
+      "onlyMatch": "{num}. من بين جميع الخيارات، فقط \"{answer}\" هو الذي يطابق الشرح.",
+      "summary": "{num}. ملخص: {explanation}"
+    },
+    "insights": {
+      "needsStrengthening": "المنطقة المراد تعزيزها: {topic} (الدقة ~{percent}%)",
+      "relativeStrength": "القوة النسبية في {topic}.",
+      "improving": "تحسن جميل في {topic}.",
+      "accuracyRising": "اتجاه الدقة في الخط الأخير آخذ في الارتفاع.",
+      "accuracyFalling": "اتجاه الدقة في السلسلة الأخيرة آخذ في الانخفاض - راجع المادة."
+    },
+    "howToLearnSteps": {
+      "step1": "اختر الصف والمستوى والموضوع (مثل جسم الإنسان والنباتات والحيوانات والمزيد).",
+      "step2": "اختر وضع اللعبة: التعلم أو التحدي بالمؤقت والحياة أو السرعة أو الماراثون.",
+      "step3": "أجب عن أسئلة الاختيار من متعدد، والصواب والخطأ، وأسئلة التجربة.",
+      "step4": "قم ببناء خطوط الإجابات واكسب النجوم ونقاط XP."
+    },
+    "safety": "اتبع دائمًا قواعد السلامة في المختبر. اسأل شخصًا بالغًا قبل إجراء التجارب في المنزل."
+  }
+}

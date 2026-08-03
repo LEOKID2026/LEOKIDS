@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again": "تسجيل دخول ولي الأمر مطلوب - يرجى استخدام تسجيل دخول ولي الأمر والمحاولة مرة أخرى.",
+    "the_detailed_report_cannot_be_loaded_right_now": "لا يمكن تحميل التقرير التفصيلي الآن.",
+    "report_display_mode": "وضع عرض التقرير",
+    "loading_detailed_report": "جارٍ تحميل التقرير التفصيلي…",
+    "detailed_report_for_the_period_leo_kids": "تقرير مفصل عن الفترة - أطفال ليو",
+    "what_we_did_during_this_period": "ماذا فعلنا خلال هذه الفترة",
+    "whats_important_to_know": "ما هو المهم أن نعرف",
+    "messages_from_the_teacher": "رسائل من المعلم"
+  }
+}

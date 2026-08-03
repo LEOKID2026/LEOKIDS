@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "invalid_room_type_must_be_public_or_private": "نوع الغرفة غير صالح (يجب أن يكون عامًا أو خاصًا)"
+  }
+}

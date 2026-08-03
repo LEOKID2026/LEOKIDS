@@ -1,0 +1,238 @@
+{
+  "framework": {
+    "version": "1.1.0",
+    "name": "إطار التشخيص المهني V1",
+    "supportedSubjectIds": [
+      "الرياضيات",
+      "هندسة",
+      "إنجليزي",
+      "علوم"
+    ],
+    "evidenceLevelEnum": [
+      "لا أحد",
+      "رفيع",
+      "محدود",
+      "واسطة",
+      "قوي"
+    ],
+    "confidenceEnum": [
+      "very_low",
+      "قليل",
+      "واسطة",
+      "عالي"
+    ],
+    "recommendationTypeEnum": [
+      "continue_current_level",
+      "advance_cautiously",
+      "targeted_practice",
+      "review_foundation",
+      "collect_more_data",
+      "slow_down_and_check",
+      "teacher_review_recommended",
+      "professional_review_consideration"
+    ],
+    "bannedConclusionPhrases": [
+      "عسر القراءة",
+      "عسر الحساب",
+      "أدهد",
+      "صعوبات التعلم",
+      "╫°╫ò╫⌐╫Ö ╫ £╫₧╫Ö╫ô╫ö ╫°╫ £╫Ö╫á╫Ö",
+      "╫É╫æ╫ù╫ò╫ƒ ╫¿╫ñ╫ò╫É╫Ö",
+      "╫É╫æ╫ù╫ò╫ƒ ╫º╫ £╫Ö╫á╫Ö"
+    ]
+  },
+  "skillPackStructure": {
+    "math": {
+      "arithmetic_operations": {
+        "subskills": [
+          "إضافة",
+          "الطرح",
+          "الضرب",
+          "قسم",
+          "order_of_operations"
+        ]
+      },
+      "fractions": {
+        "subskills": [
+          "numerator_denominator_understanding",
+          "compare_fractions",
+          "unlike_denominators",
+          "equivalent_fractions",
+          "add_fractions",
+          "subtract_fractions",
+          "simplify_fractions",
+          "mixed_numbers",
+          "fraction_word_problems"
+        ]
+      },
+      "word_problems": {
+        "subskills": [
+          "identify_operation_from_text",
+          "translate_text_to_equation",
+          "multi_step_reasoning",
+          "irrelevant_information",
+          "reading_the_question"
+        ]
+      },
+      "number_sense": {
+        "subskills": [
+          "place_value",
+          "التقريب",
+          "تقدير",
+          "number_line_reasoning"
+        ]
+      }
+    },
+    "english": {
+      "vocabulary": {
+        "subskills": [
+          "word_meaning",
+          "التجميعات",
+          "context_clues",
+          "synonyms_antonyms"
+        ]
+      },
+      "grammar": {
+        "subskills": [
+          "tense_agreement",
+          "sentence_structure",
+          "articles_prepositions",
+          "word_order"
+        ]
+      },
+      "reading_comprehension": {
+        "subskills": [
+          "main_idea",
+          "تفاصيل",
+          "الاستدلال",
+          "تسلسل"
+        ]
+      },
+      "sentence_understanding": {
+        "subskills": [
+          "sentence_meaning",
+          "الموصلات",
+          "negation_scope"
+        ]
+      },
+      "translation": {
+        "subskills": [
+          "alignment_meaning",
+          "false_friends",
+          "instruction_transfer"
+        ]
+      }
+    },
+    "science": {
+      "cause_and_effect": {
+        "subskills": [
+          "identify_cause",
+          "identify_effect",
+          "chain_reasoning"
+        ]
+      },
+      "experiments": {
+        "subskills": [
+          "المتغيرات",
+          "فرضية",
+          "خطوات",
+          "interpret_results"
+        ]
+      },
+      "observation": {
+        "subskills": [
+          "describe_patterns",
+          "collect_evidence",
+          "measurement_basics"
+        ]
+      },
+      "classification": {
+        "subskills": [
+          "sorting_rules",
+          "التصنيف",
+          "compare_groups"
+        ]
+      },
+      "systems_understanding": {
+        "subskills": [
+          "parts_roles",
+          "دورات",
+          "التفاعلات"
+        ]
+      },
+      "scientific_reasoning": {
+        "subskills": [
+          "نماذج",
+          "التنبؤات",
+          "evidence_vs_opinion"
+        ]
+      }
+    },
+    "geometry": {
+      "shapes": {
+        "subskills": [
+          "identify_shapes",
+          "ملكيات",
+          "compare_shapes"
+        ]
+      },
+      "angles": {
+        "subskills": [
+          "measure_angles",
+          "angle_types",
+          "angle_relationships"
+        ]
+      },
+      "area": {
+        "subskills": [
+          "area_formulas",
+          "composite_figures",
+          "وحدات"
+        ]
+      },
+      "perimeter": {
+        "subskills": [
+          "perimeter_reasoning",
+          "وحدات",
+          "composite_bounds"
+        ]
+      },
+      "symmetry": {
+        "subskills": [
+          "line_symmetry",
+          "تأملات"
+        ]
+      },
+      "spatial_reasoning": {
+        "subskills": [
+          "شبكات",
+          "وجهات النظر",
+          "التحولات"
+        ]
+      }
+    }
+  },
+  "skillLabels": {
+    "math.arithmetic_operations": "الحساب / العمليات",
+    "math.fractions": "الكسور",
+    "math.word_problems": "مسائل كلامية",
+    "math.number_sense": "القيمة المكانية/المعنى العددي",
+    "english.vocabulary": "المفردات",
+    "english.grammar": "القواعد",
+    "english.reading_comprehension": "فهم المقروء",
+    "english.sentence_understanding": "فهم الجملة",
+    "english.translation": "الترجمة / جسر ثنائي اللغة",
+    "science.cause_and_effect": "السبب والنتيجة",
+    "science.experiments": "التجارب",
+    "science.observation": "ملاحظة",
+    "science.classification": "تصنيف",
+    "science.systems_understanding": "فهم الأنظمة",
+    "science.scientific_reasoning": "الاستدلال العلمي",
+    "geometry.shapes": "الأشكال",
+    "geometry.angles": "الزوايا",
+    "geometry.area": "المساحة",
+    "geometry.perimeter": "المحيط",
+    "geometry.symmetry": "التناظر",
+    "geometry.spatial_reasoning": "الاستدلال المكاني"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "tic_tac_toe": "Tic-Tac-Toe",
+    "boards_from_3_3_to_7_7_with_score_tracking": "لوحات من 3 × 3 إلى 7 × 7 مع تتبع النتيجة.",
+    "rock_paper_scissors": "حجر · ورق · مقص",
+    "quick_rounds_best_of_all": "جولات سريعة – الأفضل على الإطلاق.",
+    "tap_battle": "اضغط على المعركة",
+    "each_side_taps_as_fast_as_they_can_who_wins": "ينقر كل جانب بأسرع ما يمكن - من سيفوز؟",
+    "memory_match": "مباراة الذاكرة",
+    "flip_cards_find_pairs_and_try_to_win": "اقلب البطاقات، وابحث عن الأزواج، وحاول الفوز."
+  }
+}

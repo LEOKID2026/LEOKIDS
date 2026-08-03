@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-11T12:00:00.000Z",
+  "constants": {
+    "minMistakesPerPatternFamily": 5,
+    "minMistakesForStrongRecommendation": 10,
+    "maxWeaknesses": 3,
+    "maxStrengthRows": 3,
+    "maxMaintain": 2,
+    "maxImproving": 2,
+    "maxStableExcellence": 3,
+    "stableExcellenceMinAccuracy": 92,
+    "stableExcellenceMinQuestions": 22
+  },
+  "subjects": {
+    "math": {
+      "subject": "الرياضيات",
+      "subjectLabel": "الرياضيات",
+      "mistakeEventCount": 12,
+      "wrongCount": 12,
+      "hasAnySignal": true,
+      "summaryHe": "صورة المادة في الرياضيات: الطفل ينجح في التركيب مع مرور الوقت. هناك أيضًا مجال للتعزيز في مقارنة الكميات أو الأرقام.",
+      "stableExcellence": [
+        {
+          "id": "math:addition:learning",
+          "labelHe": "الجمع",
+          "questions": 42,
+          "accuracy": 93,
+          "confidence": "عالي",
+          "needsPractice": false,
+          "excellent": true,
+          "tierHe": "يقوم طفلك بعمل جيد في هذا الموضوع مع مرور الوقت"
+        }
+      ],
+      "topStrengths": [],
+      "topWeaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "- صعوبة مقارنة الكميات أو الأرقام",
+          "mistakeCount": 7,
+          "confidence": "معتدل",
+          "tierHe": "صعوبة مركزة"
+        }
+      ],
+      "parentTopicToneByKey": {},
+      "parentStrengthWithCautionLinesByKey": {},
+      "parentActionHe": "ثلاث مرات في الأسبوع، مدة كل جلسة 15-20 دقيقة: اختر مهمة رياضية واحدة حول موضوع مقارنة الكميات أو الأرقام - اقرأ الصيغة معًا، وقم بصياغة ما يتم تقديمه وما هو مطلوب بصوت عالٍ، وقم بالخطوة الأولى على مسودة الورقة وبعد ذلك فقط اكتب إجابة نهائية وتحقق من الحل.",
+      "nextWeekGoalHe": "هدف التعزيز: زيادة نسبة النجاح في مقارنة الكميات أو الأرقام (محاولة ناجحة واحدة على الأقل أكثر من الأسبوع الماضي). هدف الاحتفاظ: مواصلة روتين التدريب المريح على التكوين للحفاظ على مستوى الدقة.",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "كم عدد الحقائب هو سعر الكمبيوتر الأعلى؟",
+          "questionLabel": null,
+          "correctAnswer": 120,
+          "userAnswer": 102,
+          "confidence": "معتدل"
+        },
+        {
+          "type": "success",
+          "titleHe": "ما يفعله طفلك بشكل جيد في الممارسة العملية",
+          "bodyHe": "في موضوع المقال هناك نجاح جيد في الفترة المختارة: حوالي 93% صحيح من أصل 42 سؤال.",
+          "confidence": "عالي"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "- صعوبة مقارنة الكميات أو الأرقام",
+          "mistakeCount": 7,
+          "confidence": "معتدل",
+          "tierHe": "صعوبة مركزة"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:math:w:0",
+          "textHe": "يجب أن تتدرب أكثر قليلاً على هذا الموضوع: عند مقارنة الكميات أو الأرقام - تم تسجيل 7 أخطاء مماثلة في الفترة المحددة. نبقى مع الممارسة المركزة وليس مع \"محاولة إصلاح كل شيء مرة واحدة\".",
+          "strength": "معتدل"
+        }
+      ],
+      "studentRecommendationsMaintain": [
+        {
+          "id": "stu-maint:math:addition:learning",
+          "textHe": "استمر في التدرب بشكل مريح على موضوع الاتصال - يتم الحفاظ على المستوى هناك (الدقة حوالي 93%).",
+          "strength": "قوي"
+        }
+      ],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:math:w:0",
+          "textHe": "يبدأ تكرار نفس النوع من الخطأ - في موضوع مقارنة الكميات أو الأرقام. في الأسبوع المقبل، نظرة هادئة وممارسة قصيرة ومركزة كافية.",
+          "strength": "معتدل"
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "id": "par-maint:math:addition:learning",
+          "textHe": "يوصى بتشجيع المثابرة في الاتصال - ترى النجاح المتكرر؛ إن الحفاظ على عادة إيجابية لا يقل أهمية عن تصحيح الأخطاء.",
+          "strength": "قوي"
+        }
+      ],
+      "evidenceMistake": {
+        "exerciseText": "كم عدد الحقائب هو سعر الكمبيوتر الأعلى؟",
+        "questionLabel": null,
+        "correctAnswer": 120,
+        "userAnswer": 102,
+        "confidence": "معتدل"
+      },
+      "evidenceSuccess": {
+        "titleHe": "ما يفعله طفلك بشكل جيد في الممارسة العملية",
+        "bodyHe": "في موضوع المقال هناك نجاح جيد في الفترة المختارة: حوالي 93% صحيح من أصل 42 سؤال.",
+        "confidence": "عالي"
+      },
+      "insufficientData": [
+        {
+          "mistakeCount": 2,
+          "note": "أقل من 5 أخطاء في نفس النمط - ما زال الوقت مبكرًا لتحديد الصعوبة المتكررة"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "geometry": {
+      "subject": "هندسة",
+      "subjectLabel": "الهندسة",
+      "mistakeEventCount": 9,
+      "wrongCount": 9,
+      "hasAnySignal": true,
+      "summaryHe": "الصورة العامة في الهندسة: هناك أيضًا مجال لتعزيز الخلط المتكرر بين المحيط والمساحة.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "الخلط المتكرر بين المحيط والمساحة",
+          "mistakeCount": 6,
+          "confidence": "معتدل",
+          "tierHe": "صعوبة مركزة"
+        }
+      ],
+      "parentActionHe": "ثلاث مرات في الأسبوع، مدة كل جلسة 15-20 دقيقة: اختر مهمة هندسية واحدة بشأن الخلط المتكرر بين المحيط والمساحة - اقرأ المشكلة معًا، وقل بصوت عالٍ ما هو مطلوب وما هو مطلوب، واتخاذ الخطوة الأولى على قصاصات الورق، ثم اكتب الإجابة النهائية وتحقق منها.",
+      "nextWeekGoalHe": "هدف التدريب: زيادة النجاح في الارتباك المتكرر بين المحيط والمنطقة (محاولة ناجحة واحدة على الأقل أكثر من الأسبوع الماضي).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "ما هو محيط المستطيل 5x3 سم؟",
+          "questionLabel": null,
+          "correctAnswer": "16 سم",
+          "userAnswer": "15 سم",
+          "confidence": "معتدل"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "الخلط المتكرر بين المحيط والمساحة",
+          "mistakeCount": 6,
+          "confidence": "معتدل",
+          "tierHe": "صعوبة مركزة"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:geometry:w:0",
+          "textHe": "يجب أن تتدرب أكثر قليلاً على هذا الموضوع: الخلط المتكرر بين النطاق والمنطقة - تم تسجيل 6 أخطاء مماثلة في الفترة المحددة. نبقى مع الممارسة المركزة وليس مع \"محاولة إصلاح كل شيء مرة واحدة\".",
+          "strength": "معتدل"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:geometry:w:0",
+          "textHe": "يبدأ تكرار نفس النوع من الخطأ - في موضوع الخلط المتكرر بين النطاق والمنطقة. في الأسبوع المقبل، نظرة هادئة وممارسة قصيرة ومركزة كافية.",
+          "strength": "معتدل"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "ما هو محيط المستطيل 5x3 سم؟",
+        "questionLabel": null,
+        "correctAnswer": "16 سم",
+        "userAnswer": "15 سم",
+        "confidence": "معتدل"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "english": {
+      "subject": "إنجليزي",
+      "subjectLabel": "الإنجليزية",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "science": {
+      "subject": "علوم",
+      "subjectLabel": "العلوم",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    }
+  }
+}

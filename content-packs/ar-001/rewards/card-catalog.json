@@ -1,0 +1,1346 @@
+{
+  "version": 1,
+  "cardCount": 134,
+  "cards": {
+    "achievement_20_questions": {
+      "cardKey": "achievement_20_questions",
+      "title": "20 سؤال",
+      "description": "احصل على هذه البطاقة: 20 سؤالاً",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "20 سؤال",
+        "description": "احصل على هذه البطاقة: 20 سؤالاً"
+      }
+    },
+    "achievement_3_day_streak": {
+      "cardKey": "achievement_3_day_streak",
+      "title": "خط 3 أيام",
+      "description": "احصل على هذه البطاقة: 3 أيام متتالية",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "خط 3 أيام",
+        "description": "احصل على هذه البطاقة: 3 أيام متتالية"
+      }
+    },
+    "achievement_7_day_streak": {
+      "cardKey": "achievement_7_day_streak",
+      "title": "خط 7 أيام",
+      "description": "احصل على هذه البطاقة: 7 أيام متتالية",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "خط 7 أيام",
+        "description": "احصل على هذه البطاقة: 7 أيام متتالية"
+      }
+    },
+    "achievement_addition_champion": {
+      "cardKey": "achievement_addition_champion",
+      "title": "إضافة البطل",
+      "description": "احصل على هذه البطاقة: أضف البطل",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "إضافة البطل",
+        "description": "احصل على هذه البطاقة: أضف البطل"
+      }
+    },
+    "achievement_big_progress": {
+      "cardKey": "achievement_big_progress",
+      "title": "تقدم كبير",
+      "description": "احصل على هذه البطاقة: تقدم كبير",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "تقدم كبير",
+        "description": "احصل على هذه البطاقة: تقدم كبير"
+      }
+    },
+    "achievement_diligent_student": {
+      "cardKey": "achievement_diligent_student",
+      "title": "الطالب المجتهد",
+      "description": "احصل على هذه البطاقة: الطالب المجتهد",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "الطالب المجتهد",
+        "description": "احصل على هذه البطاقة: الطالب المجتهد"
+      }
+    },
+    "achievement_division_champion": {
+      "cardKey": "achievement_division_champion",
+      "title": "تقسيم البطل",
+      "description": "احصل على هذه البطاقة: تقسيم البطل",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "تقسيم البطل",
+        "description": "احصل على هذه البطاقة: تقسيم البطل"
+      }
+    },
+    "achievement_english_star": {
+      "cardKey": "achievement_english_star",
+      "title": "النجمة الانجليزية",
+      "description": "احصل على هذه البطاقة: الإنجليزية Star",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "النجمة الانجليزية",
+        "description": "احصل على هذه البطاقة: الإنجليزية Star"
+      }
+    },
+    "achievement_great_listener": {
+      "cardKey": "achievement_great_listener",
+      "title": "مستمع عظيم",
+      "description": "احصل على هذه البطاقة: المستمع العظيم",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "مستمع عظيم",
+        "description": "احصل على هذه البطاقة: المستمع العظيم"
+      }
+    },
+    "achievement_multiplication_champion": {
+      "cardKey": "achievement_multiplication_champion",
+      "title": "الضرب البطل",
+      "description": "احصل على هذه البطاقة: ضرب البطل",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "الضرب البطل",
+        "description": "احصل على هذه البطاقة: ضرب البطل"
+      }
+    },
+    "achievement_never_give_up": {
+      "cardKey": "achievement_never_give_up",
+      "title": "لا تيأس أبدا",
+      "description": "احصل على هذه البطاقة: لا تستسلم أبدًا",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "لا تيأس أبدا",
+        "description": "احصل على هذه البطاقة: لا تستسلم أبدًا"
+      }
+    },
+    "achievement_new_record": {
+      "cardKey": "achievement_new_record",
+      "title": "سجل جديد",
+      "description": "احصل على هذه البطاقة: سجل جديد",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "سجل جديد",
+        "description": "احصل على هذه البطاقة: سجل جديد"
+      }
+    },
+    "achievement_number_explorer": {
+      "cardKey": "achievement_number_explorer",
+      "title": "مستكشف الأرقام",
+      "description": "احصل على هذه البطاقة: Number Explorer",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "مستكشف الأرقام",
+        "description": "احصل على هذه البطاقة: Number Explorer"
+      }
+    },
+    "achievement_personal_activity": {
+      "cardKey": "achievement_personal_activity",
+      "title": "النشاط الشخصي",
+      "description": "احصل على هذه البطاقة: النشاط الشخصي",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "النشاط الشخصي",
+        "description": "احصل على هذه البطاقة: النشاط الشخصي"
+      }
+    },
+    "achievement_science_explorer": {
+      "cardKey": "achievement_science_explorer",
+      "title": "مستكشف العلوم",
+      "description": "احصل على هذه البطاقة: العلوم Explorer",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "مستكشف العلوم",
+        "description": "احصل على هذه البطاقة: العلوم Explorer"
+      }
+    },
+    "achievement_shapes_master": {
+      "cardKey": "achievement_shapes_master",
+      "title": "سيد الأشكال",
+      "description": "احصل على هذه البطاقة: Shapes Master",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "سيد الأشكال",
+        "description": "احصل على هذه البطاقة: Shapes Master"
+      }
+    },
+    "achievement_strong_start": {
+      "cardKey": "achievement_strong_start",
+      "title": "بداية قوية",
+      "description": "احصل على هذه البطاقة: بداية قوية",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "بداية قوية",
+        "description": "احصل على هذه البطاقة: بداية قوية"
+      }
+    },
+    "achievement_subtraction_champion": {
+      "cardKey": "achievement_subtraction_champion",
+      "title": "طرح البطل",
+      "description": "احصل على هذه البطاقة: اطرح البطل",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "طرح البطل",
+        "description": "احصل على هذه البطاقة: اطرح البطل"
+      }
+    },
+    "achievement_task_complete": {
+      "cardKey": "achievement_task_complete",
+      "title": "اكتملت المهمة",
+      "description": "احصل على هذه البطاقة: اكتملت المهمة",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "اكتملت المهمة",
+        "description": "احصل على هذه البطاقة: اكتملت المهمة"
+      }
+    },
+    "achievement_understanding_master": {
+      "cardKey": "achievement_understanding_master",
+      "title": "فهم ماستر",
+      "description": "احصل على هذه البطاقة: سيد الفهم",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "فهم ماستر",
+        "description": "احصل على هذه البطاقة: سيد الفهم"
+      }
+    },
+    "achievement_week_star": {
+      "cardKey": "achievement_week_star",
+      "title": "نجمة الاسبوع",
+      "description": "احصل على هذه البطاقة: Week Star",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "نجمة الاسبوع",
+        "description": "احصل على هذه البطاقة: Week Star"
+      }
+    },
+    "achievement_word_discoverer": {
+      "cardKey": "achievement_word_discoverer",
+      "title": "مكتشف الكلمات",
+      "description": "احصل على هذه البطاقة: Word Discoverer",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "مكتشف الكلمات",
+        "description": "احصل على هذه البطاقة: Word Discoverer"
+      }
+    },
+    "achievement_young_reader": {
+      "cardKey": "achievement_young_reader",
+      "title": "القارئ الشاب",
+      "description": "احصل على هذه البطاقة: القارئ الشاب",
+      "category": "إنجاز",
+      "accessibility": {
+        "title": "القارئ الشاب",
+        "description": "احصل على هذه البطاقة: القارئ الشاب"
+      }
+    },
+    "event_autumn": {
+      "cardKey": "event_autumn",
+      "title": "ليو الخريف",
+      "description": "ليو الخريف - بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو الخريف",
+        "description": "ليو الخريف - بطاقة حدث محدودة!"
+      }
+    },
+    "event_back_to_learning": {
+      "cardKey": "event_back_to_learning",
+      "title": "عودة ليو إلى التعلم",
+      "description": "عودة الأسد إلى التعلم — بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "عودة ليو إلى التعلم",
+        "description": "عودة الأسد إلى التعلم — بطاقة حدث محدودة!"
+      }
+    },
+    "event_birthday": {
+      "cardKey": "event_birthday",
+      "title": "عيد ميلاد ليو",
+      "description": "عيد ميلاد ليو - بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "عيد ميلاد ليو",
+        "description": "عيد ميلاد ليو - بطاقة حدث محدودة!"
+      }
+    },
+    "event_end_of_year": {
+      "cardKey": "event_end_of_year",
+      "title": "برج الأسد نهاية العام",
+      "description": "نهاية العام للأسد - بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "برج الأسد نهاية العام",
+        "description": "نهاية العام للأسد - بطاقة حدث محدودة!"
+      }
+    },
+    "event_family_day": {
+      "cardKey": "event_family_day",
+      "title": "يوم عائلة ليو",
+      "description": "يوم عائلة الأسد - بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "يوم عائلة ليو",
+        "description": "يوم عائلة الأسد - بطاقة حدث محدودة!"
+      }
+    },
+    "event_hanukkah": {
+      "cardKey": "event_hanukkah",
+      "title": "ليو هانوكا",
+      "description": "ليو حانوكا – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو هانوكا",
+        "description": "ليو حانوكا – بطاقة حدث محدودة!"
+      }
+    },
+    "event_independence_day": {
+      "cardKey": "event_independence_day",
+      "title": "يوم الاستقلال ليو",
+      "description": "يوم استقلال برج الأسد – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "يوم الاستقلال ليو",
+        "description": "يوم استقلال برج الأسد – بطاقة حدث محدودة!"
+      }
+    },
+    "event_passover": {
+      "cardKey": "event_passover",
+      "title": "عيد الفصح ليو",
+      "description": "عيد الفصح ليو – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "عيد الفصح ليو",
+        "description": "عيد الفصح ليو – بطاقة حدث محدودة!"
+      }
+    },
+    "event_purim": {
+      "cardKey": "event_purim",
+      "title": "ليو بوريم",
+      "description": "ليو بوريم – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو بوريم",
+        "description": "ليو بوريم – بطاقة حدث محدودة!"
+      }
+    },
+    "event_rosh_hashana": {
+      "cardKey": "event_rosh_hashana",
+      "title": "ليو روش هاشانا",
+      "description": "ليو روش هاشانا – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو روش هاشانا",
+        "description": "ليو روش هاشانا – بطاقة حدث محدودة!"
+      }
+    },
+    "event_shavuot": {
+      "cardKey": "event_shavuot",
+      "title": "ليو شافوت",
+      "description": "ليو شافوت – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو شافوت",
+        "description": "ليو شافوت – بطاقة حدث محدودة!"
+      }
+    },
+    "event_spring": {
+      "cardKey": "event_spring",
+      "title": "ربيع ليو",
+      "description": "ليو سبرينج – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ربيع ليو",
+        "description": "ليو سبرينج – بطاقة حدث محدودة!"
+      }
+    },
+    "event_sukkot": {
+      "cardKey": "event_sukkot",
+      "title": "ليو سوكوت",
+      "description": "ليو سوكوت – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو سوكوت",
+        "description": "ليو سوكوت – بطاقة حدث محدودة!"
+      }
+    },
+    "event_summer": {
+      "cardKey": "event_summer",
+      "title": "ليو سمر",
+      "description": "ليو سمر – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو سمر",
+        "description": "ليو سمر – بطاقة حدث محدودة!"
+      }
+    },
+    "event_summer_vacation": {
+      "cardKey": "event_summer_vacation",
+      "title": "إجازة الصيف ليو",
+      "description": "عطلة ليو الصيفية - بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "إجازة الصيف ليو",
+        "description": "عطلة ليو الصيفية - بطاقة حدث محدودة!"
+      }
+    },
+    "event_tu_bishvat": {
+      "cardKey": "event_tu_bishvat",
+      "title": "ليو تو بيشفات",
+      "description": "ليو تو بيشفات – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو تو بيشفات",
+        "description": "ليو تو بيشفات – بطاقة حدث محدودة!"
+      }
+    },
+    "event_winter": {
+      "cardKey": "event_winter",
+      "title": "ليو وينتر",
+      "description": "ليو وينتر – بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "ليو وينتر",
+        "description": "ليو وينتر – بطاقة حدث محدودة!"
+      }
+    },
+    "event_winter_vacation": {
+      "cardKey": "event_winter_vacation",
+      "title": "عطلة الشتاء ليو",
+      "description": "عطلة الشتاء ليو - بطاقة حدث محدودة!",
+      "category": "حدث",
+      "accessibility": {
+        "title": "عطلة الشتاء ليو",
+        "description": "عطلة الشتاء ليو - بطاقة حدث محدودة!"
+      }
+    },
+    "leo_archaeologist": {
+      "cardKey": "leo_archaeologist",
+      "title": "عالم الآثار ليو",
+      "description": "جمع عالم الآثار ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "عالم الآثار ليو",
+        "description": "جمع عالم الآثار ليو!"
+      }
+    },
+    "leo_army_dog": {
+      "cardKey": "leo_army_dog",
+      "title": "كلب الجيش ليو",
+      "description": "اجمع كلب الجيش ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "كلب الجيش ليو",
+        "description": "اجمع كلب الجيش ليو!"
+      }
+    },
+    "leo_art_class": {
+      "cardKey": "leo_art_class",
+      "title": "فئة الفن ليو",
+      "description": "جمع فئة الفن ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "فئة الفن ليو",
+        "description": "جمع فئة الفن ليو!"
+      }
+    },
+    "leo_artist": {
+      "cardKey": "leo_artist",
+      "title": "ليو الفنان",
+      "description": "اجمع ليو الفنان!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الفنان",
+        "description": "اجمع ليو الفنان!"
+      }
+    },
+    "leo_astronaut": {
+      "cardKey": "leo_astronaut",
+      "title": "ليو رائد الفضاء",
+      "description": "اجمع ليو رائد الفضاء!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو رائد الفضاء",
+        "description": "اجمع ليو رائد الفضاء!"
+      }
+    },
+    "leo_at_beach": {
+      "cardKey": "leo_at_beach",
+      "title": "ليو على الشاطئ",
+      "description": "اجمع ليو على الشاطئ!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو على الشاطئ",
+        "description": "اجمع ليو على الشاطئ!"
+      }
+    },
+    "leo_at_library": {
+      "cardKey": "leo_at_library",
+      "title": "ليو في المكتبة",
+      "description": "اجمع ليو في المكتبة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو في المكتبة",
+        "description": "اجمع ليو في المكتبة!"
+      }
+    },
+    "leo_at_pool": {
+      "cardKey": "leo_at_pool",
+      "title": "ليو في المسبح",
+      "description": "اجمع ليو في حمام السباحة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو في المسبح",
+        "description": "اجمع ليو في حمام السباحة!"
+      }
+    },
+    "leo_at_recess": {
+      "cardKey": "leo_at_recess",
+      "title": "ليو في العطلة",
+      "description": "اجمع ليو في العطلة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو في العطلة",
+        "description": "اجمع ليو في العطلة!"
+      }
+    },
+    "leo_at_zoo": {
+      "cardKey": "leo_at_zoo",
+      "title": "ليو في حديقة الحيوان",
+      "description": "جمع ليو في حديقة الحيوان!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو في حديقة الحيوان",
+        "description": "جمع ليو في حديقة الحيوان!"
+      }
+    },
+    "leo_basketball": {
+      "cardKey": "leo_basketball",
+      "title": "ليو لاعب كرة السلة",
+      "description": "اجمع ليو لاعب كرة السلة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو لاعب كرة السلة",
+        "description": "اجمع ليو لاعب كرة السلة!"
+      }
+    },
+    "leo_camping": {
+      "cardKey": "leo_camping",
+      "title": "التخييم ليو",
+      "description": "جمع ليو التخييم!",
+      "category": "محل",
+      "accessibility": {
+        "title": "التخييم ليو",
+        "description": "جمع ليو التخييم!"
+      }
+    },
+    "leo_candy_store": {
+      "cardKey": "leo_candy_store",
+      "title": "متجر ليو للحلوى",
+      "description": "اجمع متجر حلوى ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "متجر ليو للحلوى",
+        "description": "اجمع متجر حلوى ليو!"
+      }
+    },
+    "leo_card_common_assets": {
+      "cardKey": "leo_card_common_assets",
+      "title": "الأصول المشتركة لبطاقة ليو",
+      "description": "جمع الأصول المشتركة لبطاقة ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "الأصول المشتركة لبطاقة ليو",
+        "description": "جمع الأصول المشتركة لبطاقة ليو!"
+      }
+    },
+    "leo_carpenter": {
+      "cardKey": "leo_carpenter",
+      "title": "ليو كاربنتر",
+      "description": "اجمع ليو كاربنتر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو كاربنتر",
+        "description": "اجمع ليو كاربنتر!"
+      }
+    },
+    "leo_celebration": {
+      "cardKey": "leo_celebration",
+      "title": "ليو المحتفل",
+      "description": "اجمع ليو المحتفل!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المحتفل",
+        "description": "اجمع ليو المحتفل!"
+      }
+    },
+    "leo_champion": {
+      "cardKey": "leo_champion",
+      "title": "ليو البطل",
+      "description": "جمع ليو البطل!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو البطل",
+        "description": "جمع ليو البطل!"
+      }
+    },
+    "leo_chef": {
+      "cardKey": "leo_chef",
+      "title": "ليو الشيف",
+      "description": "اجمع ليو الشيف!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الشيف",
+        "description": "اجمع ليو الشيف!"
+      }
+    },
+    "leo_cherry_blossom": {
+      "cardKey": "leo_cherry_blossom",
+      "title": "ليو إزهار الكرز",
+      "description": "جمع ليو زهر الكرز!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو إزهار الكرز",
+        "description": "جمع ليو زهر الكرز!"
+      }
+    },
+    "leo_chess_club": {
+      "cardKey": "leo_chess_club",
+      "title": "نادي ليو للشطرنج",
+      "description": "اجمع نادي ليو للشطرنج!",
+      "category": "محل",
+      "accessibility": {
+        "title": "نادي ليو للشطرنج",
+        "description": "اجمع نادي ليو للشطرنج!"
+      }
+    },
+    "leo_classic": {
+      "cardKey": "leo_classic",
+      "title": "ليو الأسد الكلاسيكي",
+      "description": "اجمع ليو الأسد الكلاسيكي!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الأسد الكلاسيكي",
+        "description": "اجمع ليو الأسد الكلاسيكي!"
+      }
+    },
+    "leo_clothes_shopping": {
+      "cardKey": "leo_clothes_shopping",
+      "title": "تسوق ملابس ليو",
+      "description": "اجمع تسوق ملابس ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "تسوق ملابس ليو",
+        "description": "اجمع تسوق ملابس ليو!"
+      }
+    },
+    "leo_clothing_store": {
+      "cardKey": "leo_clothing_store",
+      "title": "محل ليو للملابس",
+      "description": "جمع متجر الملابس ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "محل ليو للملابس",
+        "description": "جمع متجر الملابس ليو!"
+      }
+    },
+    "leo_computer_class": {
+      "cardKey": "leo_computer_class",
+      "title": "فئة الكمبيوتر ليو",
+      "description": "جمع فئة الكمبيوتر ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "فئة الكمبيوتر ليو",
+        "description": "جمع فئة الكمبيوتر ليو!"
+      }
+    },
+    "leo_cool": {
+      "cardKey": "leo_cool",
+      "title": "ليو البارد",
+      "description": "اجمع ليو الرائع!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو البارد",
+        "description": "اجمع ليو الرائع!"
+      }
+    },
+    "leo_cyclist": {
+      "cardKey": "leo_cyclist",
+      "title": "الدراج ليو",
+      "description": "جمع ليو الدراج!",
+      "category": "محل",
+      "accessibility": {
+        "title": "الدراج ليو",
+        "description": "جمع ليو الدراج!"
+      }
+    },
+    "leo_dancer": {
+      "cardKey": "leo_dancer",
+      "title": "ليو الراقص",
+      "description": "اجمع ليو الراقص!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الراقص",
+        "description": "اجمع ليو الراقص!"
+      }
+    },
+    "leo_detective": {
+      "cardKey": "leo_detective",
+      "title": "ليو المحقق",
+      "description": "اجمع ليو المحقق!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المحقق",
+        "description": "اجمع ليو المحقق!"
+      }
+    },
+    "leo_doctor": {
+      "cardKey": "leo_doctor",
+      "title": "ليو الطبيب",
+      "description": "اجمع ليو الطبيب!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الطبيب",
+        "description": "اجمع ليو الطبيب!"
+      }
+    },
+    "leo_electrician": {
+      "cardKey": "leo_electrician",
+      "title": "ليو كهربائي",
+      "description": "جمع ليو كهربائي!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو كهربائي",
+        "description": "جمع ليو كهربائي!"
+      }
+    },
+    "leo_engineer": {
+      "cardKey": "leo_engineer",
+      "title": "ليو المهندس",
+      "description": "جمع ليو المهندس!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المهندس",
+        "description": "جمع ليو المهندس!"
+      }
+    },
+    "leo_factory_manager": {
+      "cardKey": "leo_factory_manager",
+      "title": "مدير مصنع ليو",
+      "description": "اجمع مدير مصنع ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "مدير مصنع ليو",
+        "description": "اجمع مدير مصنع ليو!"
+      }
+    },
+    "leo_factory_tour": {
+      "cardKey": "leo_factory_tour",
+      "title": "جولة في مصنع ليو",
+      "description": "اجمع جولة في مصنع ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "جولة في مصنع ليو",
+        "description": "اجمع جولة في مصنع ليو!"
+      }
+    },
+    "leo_ferris_wheel": {
+      "cardKey": "leo_ferris_wheel",
+      "title": "عجلة ليو فيريس",
+      "description": "اجمع عجلة ليو فيريس!",
+      "category": "محل",
+      "accessibility": {
+        "title": "عجلة ليو فيريس",
+        "description": "اجمع عجلة ليو فيريس!"
+      }
+    },
+    "leo_firefighter_helper": {
+      "cardKey": "leo_firefighter_helper",
+      "title": "ليو رجل الاطفاء مساعد",
+      "description": "جمع مساعد رجال الاطفاء ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو رجل الاطفاء مساعد",
+        "description": "جمع مساعد رجال الاطفاء ليو!"
+      }
+    },
+    "leo_football": {
+      "cardKey": "leo_football",
+      "title": "ليو لاعب كرة القدم",
+      "description": "اجمع ليو لاعب كرة القدم!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو لاعب كرة القدم",
+        "description": "اجمع ليو لاعب كرة القدم!"
+      }
+    },
+    "leo_forest_guardian": {
+      "cardKey": "leo_forest_guardian",
+      "title": "حارس غابة ليو",
+      "description": "اجمع ليو فورست جارديان!",
+      "category": "محل",
+      "accessibility": {
+        "title": "حارس غابة ليو",
+        "description": "اجمع ليو فورست جارديان!"
+      }
+    },
+    "leo_funny": {
+      "cardKey": "leo_funny",
+      "title": "ليو المضحك",
+      "description": "اجمع ليو المضحك!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المضحك",
+        "description": "اجمع ليو المضحك!"
+      }
+    },
+    "leo_galaxy_captain": {
+      "cardKey": "leo_galaxy_captain",
+      "title": "كابتن ليو جالاكسي",
+      "description": "اجمع ليو جالاكسي كابتن!",
+      "category": "محل",
+      "accessibility": {
+        "title": "كابتن ليو جالاكسي",
+        "description": "اجمع ليو جالاكسي كابتن!"
+      }
+    },
+    "leo_gamer": {
+      "cardKey": "leo_gamer",
+      "title": "ليو اللاعب",
+      "description": "اجمع ليو اللاعب!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو اللاعب",
+        "description": "اجمع ليو اللاعب!"
+      }
+    },
+    "leo_gardener": {
+      "cardKey": "leo_gardener",
+      "title": "ليو البستاني",
+      "description": "جمع ليو البستاني!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو البستاني",
+        "description": "جمع ليو البستاني!"
+      }
+    },
+    "leo_gets_star": {
+      "cardKey": "leo_gets_star",
+      "title": "ليو يحصل على نجمة",
+      "description": "جمع ليو يحصل على نجمة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو يحصل على نجمة",
+        "description": "جمع ليو يحصل على نجمة!"
+      }
+    },
+    "leo_glasses": {
+      "cardKey": "leo_glasses",
+      "title": "ليو مع النظارات",
+      "description": "اجمع ليو بالنظارات!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو مع النظارات",
+        "description": "اجمع ليو بالنظارات!"
+      }
+    },
+    "leo_hot_air_balloon": {
+      "cardKey": "leo_hot_air_balloon",
+      "title": "ليو منطاد الهواء الساخن",
+      "description": "جمع ليو منطاد الهواء الساخن!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو منطاد الهواء الساخن",
+        "description": "جمع ليو منطاد الهواء الساخن!"
+      }
+    },
+    "leo_jump_rope": {
+      "cardKey": "leo_jump_rope",
+      "title": "حبل القفز ليو",
+      "description": "جمع ليو القفز على الحبل!",
+      "category": "محل",
+      "accessibility": {
+        "title": "حبل القفز ليو",
+        "description": "جمع ليو القفز على الحبل!"
+      }
+    },
+    "leo_king": {
+      "cardKey": "leo_king",
+      "title": "ليو الملك",
+      "description": "جمع ليو الملك!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الملك",
+        "description": "جمع ليو الملك!"
+      }
+    },
+    "leo_knight": {
+      "cardKey": "leo_knight",
+      "title": "ليو الفارس",
+      "description": "جمع ليو الفارس!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الفارس",
+        "description": "جمع ليو الفارس!"
+      }
+    },
+    "leo_magician": {
+      "cardKey": "leo_magician",
+      "title": "الساحر ليو",
+      "description": "جمع ليو الساحر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "الساحر ليو",
+        "description": "جمع ليو الساحر!"
+      }
+    },
+    "leo_marathon_runner": {
+      "cardKey": "leo_marathon_runner",
+      "title": "ليو ماراثون العداء",
+      "description": "اجمع ليو ماراثون العداء!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو ماراثون العداء",
+        "description": "اجمع ليو ماراثون العداء!"
+      }
+    },
+    "leo_miner": {
+      "cardKey": "leo_miner",
+      "title": "ليو مينر",
+      "description": "جمع ليو مينر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو مينر",
+        "description": "جمع ليو مينر!"
+      }
+    },
+    "leo_month_star": {
+      "cardKey": "leo_month_star",
+      "title": "نجمة شهر الأسد",
+      "description": "اجمع نجمة شهر الأسد!",
+      "category": "محل",
+      "accessibility": {
+        "title": "نجمة شهر الأسد",
+        "description": "اجمع نجمة شهر الأسد!"
+      }
+    },
+    "leo_moon_walker": {
+      "cardKey": "leo_moon_walker",
+      "title": "ليو مون ووكر",
+      "description": "اجمع ليو مون ووكر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو مون ووكر",
+        "description": "اجمع ليو مون ووكر!"
+      }
+    },
+    "leo_mountain_climber": {
+      "cardKey": "leo_mountain_climber",
+      "title": "متسلق جبل ليو",
+      "description": "اجمع متسلق جبل ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "متسلق جبل ليو",
+        "description": "اجمع متسلق جبل ليو!"
+      }
+    },
+    "leo_musician": {
+      "cardKey": "leo_musician",
+      "title": "ليو الموسيقار",
+      "description": "اجمع ليو الموسيقار!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الموسيقار",
+        "description": "اجمع ليو الموسيقار!"
+      }
+    },
+    "leo_nature_explorer": {
+      "cardKey": "leo_nature_explorer",
+      "title": "مستكشف الطبيعة ليو",
+      "description": "اجمع مستكشف الطبيعة ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "مستكشف الطبيعة ليو",
+        "description": "اجمع مستكشف الطبيعة ليو!"
+      }
+    },
+    "leo_ninja": {
+      "cardKey": "leo_ninja",
+      "title": "ليو النينجا",
+      "description": "اجمع ليو النينجا!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو النينجا",
+        "description": "اجمع ليو النينجا!"
+      }
+    },
+    "leo_office_worker": {
+      "cardKey": "leo_office_worker",
+      "title": "عامل مكتب ليو",
+      "description": "جمع عامل مكتب ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "عامل مكتب ليو",
+        "description": "جمع عامل مكتب ليو!"
+      }
+    },
+    "leo_on_train": {
+      "cardKey": "leo_on_train",
+      "title": "ليو في القطار",
+      "description": "اجمع ليو في القطار!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو في القطار",
+        "description": "اجمع ليو في القطار!"
+      }
+    },
+    "leo_pe_class": {
+      "cardKey": "leo_pe_class",
+      "title": "فئة ليو بي",
+      "description": "جمع فئة ليو PE!",
+      "category": "محل",
+      "accessibility": {
+        "title": "فئة ليو بي",
+        "description": "جمع فئة ليو PE!"
+      }
+    },
+    "leo_piano_player": {
+      "cardKey": "leo_piano_player",
+      "title": "عازف البيانو ليو",
+      "description": "اجمع عازف البيانو ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "عازف البيانو ليو",
+        "description": "اجمع عازف البيانو ليو!"
+      }
+    },
+    "leo_picnic": {
+      "cardKey": "leo_picnic",
+      "title": "نزهة ليو",
+      "description": "جمع ليو نزهة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "نزهة ليو",
+        "description": "جمع ليو نزهة!"
+      }
+    },
+    "leo_pilot": {
+      "cardKey": "leo_pilot",
+      "title": "ليو الطيار",
+      "description": "اجمع ليو الطيار!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الطيار",
+        "description": "اجمع ليو الطيار!"
+      }
+    },
+    "leo_pirate": {
+      "cardKey": "leo_pirate",
+      "title": "ليو القراصنة",
+      "description": "جمع ليو القراصنة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو القراصنة",
+        "description": "جمع ليو القراصنة!"
+      }
+    },
+    "leo_playful": {
+      "cardKey": "leo_playful",
+      "title": "ليو المرعب",
+      "description": "اجمع ليو المرح!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المرعب",
+        "description": "اجمع ليو المرح!"
+      }
+    },
+    "leo_police_dog": {
+      "cardKey": "leo_police_dog",
+      "title": "كلب الشرطة ليو",
+      "description": "اجمع كلب الشرطة ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "كلب الشرطة ليو",
+        "description": "اجمع كلب الشرطة ليو!"
+      }
+    },
+    "leo_rain_walk": {
+      "cardKey": "leo_rain_walk",
+      "title": "مسيرة ليو المطر",
+      "description": "جمع ليو المطر المشي!",
+      "category": "محل",
+      "accessibility": {
+        "title": "مسيرة ليو المطر",
+        "description": "جمع ليو المطر المشي!"
+      }
+    },
+    "leo_robot_engineer": {
+      "cardKey": "leo_robot_engineer",
+      "title": "ليو روبوت المهندس",
+      "description": "اجمع ليو روبوت المهندس!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو روبوت المهندس",
+        "description": "اجمع ليو روبوت المهندس!"
+      }
+    },
+    "leo_robotic": {
+      "cardKey": "leo_robotic",
+      "title": "ليو روبوتيك",
+      "description": "اجمع ليو الروبوتية!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو روبوتيك",
+        "description": "اجمع ليو الروبوتية!"
+      }
+    },
+    "leo_runner": {
+      "cardKey": "leo_runner",
+      "title": "ليو العداء",
+      "description": "اجمع ليو العداء!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو العداء",
+        "description": "اجمع ليو العداء!"
+      }
+    },
+    "leo_safari": {
+      "cardKey": "leo_safari",
+      "title": "ليو سفاري",
+      "description": "اجمع ليو سفاري!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو سفاري",
+        "description": "اجمع ليو سفاري!"
+      }
+    },
+    "leo_science_class": {
+      "cardKey": "leo_science_class",
+      "title": "فئة العلوم ليو",
+      "description": "جمع فئة العلوم ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "فئة العلوم ليو",
+        "description": "جمع فئة العلوم ليو!"
+      }
+    },
+    "leo_scientist": {
+      "cardKey": "leo_scientist",
+      "title": "ليو العالم",
+      "description": "جمع ليو العالم!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو العالم",
+        "description": "جمع ليو العالم!"
+      }
+    },
+    "leo_shoe_shopping": {
+      "cardKey": "leo_shoe_shopping",
+      "title": "تسوق أحذية ليو",
+      "description": "اجمع تسوق أحذية ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "تسوق أحذية ليو",
+        "description": "اجمع تسوق أحذية ليو!"
+      }
+    },
+    "leo_skateboarder": {
+      "cardKey": "leo_skateboarder",
+      "title": "ليو المتزلج",
+      "description": "اجمع لوح التزلج ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المتزلج",
+        "description": "اجمع لوح التزلج ليو!"
+      }
+    },
+    "leo_skier": {
+      "cardKey": "leo_skier",
+      "title": "ليو المتزلج",
+      "description": "جمع ليو المتزلج!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو المتزلج",
+        "description": "جمع ليو المتزلج!"
+      }
+    },
+    "leo_smart": {
+      "cardKey": "leo_smart",
+      "title": "ليو الذكي",
+      "description": "اجمع ليو الذكي!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الذكي",
+        "description": "اجمع ليو الذكي!"
+      }
+    },
+    "leo_sorcerer": {
+      "cardKey": "leo_sorcerer",
+      "title": "ليو الساحر",
+      "description": "جمع ليو الساحر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الساحر",
+        "description": "جمع ليو الساحر!"
+      }
+    },
+    "leo_space_commander": {
+      "cardKey": "leo_space_commander",
+      "title": "قائد الفضاء ليو",
+      "description": "اجمع قائد الفضاء ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "قائد الفضاء ليو",
+        "description": "اجمع قائد الفضاء ليو!"
+      }
+    },
+    "leo_space_pilot": {
+      "cardKey": "leo_space_pilot",
+      "title": "ليو الفضاء الطيار",
+      "description": "اجمع ليو سبيس الطيار!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الفضاء الطيار",
+        "description": "اجمع ليو سبيس الطيار!"
+      }
+    },
+    "leo_sports_store": {
+      "cardKey": "leo_sports_store",
+      "title": "متجر ليو للرياضة",
+      "description": "اجمع متجر ليو الرياضي!",
+      "category": "محل",
+      "accessibility": {
+        "title": "متجر ليو للرياضة",
+        "description": "اجمع متجر ليو الرياضي!"
+      }
+    },
+    "leo_star_explorer": {
+      "cardKey": "leo_star_explorer",
+      "title": "ليو ستار إكسبلورر",
+      "description": "اجمع ليو ستار اكسبلورر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو ستار إكسبلورر",
+        "description": "اجمع ليو ستار اكسبلورر!"
+      }
+    },
+    "leo_suit": {
+      "cardKey": "leo_suit",
+      "title": "ليو في البدلة",
+      "description": "اجمع ليو في البدلة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو في البدلة",
+        "description": "اجمع ليو في البدلة!"
+      }
+    },
+    "leo_super_inventor": {
+      "cardKey": "leo_super_inventor",
+      "title": "ليو سوبر المخترع",
+      "description": "جمع ليو سوبر المخترع!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو سوبر المخترع",
+        "description": "جمع ليو سوبر المخترع!"
+      }
+    },
+    "leo_superhero": {
+      "cardKey": "leo_superhero",
+      "title": "ليو خارقة",
+      "description": "جمع ليو خارقة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو خارقة",
+        "description": "جمع ليو خارقة!"
+      }
+    },
+    "leo_surfer": {
+      "cardKey": "leo_surfer",
+      "title": "ليو سيرفر",
+      "description": "جمع ليو سيرفر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو سيرفر",
+        "description": "جمع ليو سيرفر!"
+      }
+    },
+    "leo_swimmer": {
+      "cardKey": "leo_swimmer",
+      "title": "ليو السباح",
+      "description": "اجمع ليو السباح!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو السباح",
+        "description": "اجمع ليو السباح!"
+      }
+    },
+    "leo_teacher": {
+      "cardKey": "leo_teacher",
+      "title": "معلم ليو",
+      "description": "جمع ليو المعلم!",
+      "category": "محل",
+      "accessibility": {
+        "title": "معلم ليو",
+        "description": "جمع ليو المعلم!"
+      }
+    },
+    "leo_technodog": {
+      "cardKey": "leo_technodog",
+      "title": "ليو تكنو الكلب",
+      "description": "اجمع كلب ليو تكنو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو تكنو الكلب",
+        "description": "اجمع كلب ليو تكنو!"
+      }
+    },
+    "leo_treasure_hunter": {
+      "cardKey": "leo_treasure_hunter",
+      "title": "صائد الكنز ليو",
+      "description": "جمع ليو الكنز هنتر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "صائد الكنز ليو",
+        "description": "جمع ليو الكنز هنتر!"
+      }
+    },
+    "leo_veterinarian": {
+      "cardKey": "leo_veterinarian",
+      "title": "ليو طبيب بيطري",
+      "description": "جمع ليو البيطري!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو طبيب بيطري",
+        "description": "جمع ليو البيطري!"
+      }
+    },
+    "leo_walk_to_school": {
+      "cardKey": "leo_walk_to_school",
+      "title": "ليو سيرا على الأقدام إلى المدرسة",
+      "description": "جمع ليو المشي إلى المدرسة!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو سيرا على الأقدام إلى المدرسة",
+        "description": "جمع ليو المشي إلى المدرسة!"
+      }
+    },
+    "leo_wizard": {
+      "cardKey": "leo_wizard",
+      "title": "ليو الساحر",
+      "description": "اجمع ليو الساحر!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو الساحر",
+        "description": "اجمع ليو الساحر!"
+      }
+    },
+    "leo_world_explorer": {
+      "cardKey": "leo_world_explorer",
+      "title": "ليو العالم اكسبلورر",
+      "description": "اجمع مستكشف العالم ليو!",
+      "category": "محل",
+      "accessibility": {
+        "title": "ليو العالم اكسبلورر",
+        "description": "اجمع مستكشف العالم ليو!"
+      }
+    }
+  }
+}

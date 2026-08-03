@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "hebrew_level_prefix": "بادئة المستوى العبري",
+    "english_level_token_as_metadata": "رمز مستوى اللغة الإنجليزية كبيانات وصفية"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "back_to_games": "العودة إلى الألعاب",
+    "play_again": "العب مرة أخرى",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "باطل,\r\n * مشغول؟: منطقي،\r\n * العنوان الفرعي: سلسلة،\r\n * احصائيات الخطوط؟: صفيف",
+    "diamond_balance": "ميزان الماس:",
+    "coin_balance": "رصيد العملة:",
+    "score": "نتيجة:",
+    "level": "مستوى:"
+  }
+}

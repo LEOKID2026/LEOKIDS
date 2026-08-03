@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "human_body": "جسم الإنسان",
+    "animals": "الحيوانات",
+    "plants": "النباتات",
+    "materials": "المواد",
+    "experiments": "التجارب",
+    "earth_space": "الأرض والفضاء",
+    "environment": "بيئة"
+  }
+}

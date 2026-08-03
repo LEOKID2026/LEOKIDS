@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "grade_status": "حالة الصف",
+    "class_status": "حالة الفصل"
+  }
+}

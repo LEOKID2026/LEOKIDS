@@ -1,0 +1,204 @@
+{
+  "rarity": {
+    "regular": "عادية",
+    "special": "خاصة",
+    "rare": "نادرة",
+    "gold": "ذهبية"
+  },
+  "cardType": {
+    "achievement": "بطاقة الإنجاز",
+    "shop": "بطاقة المتجر",
+    "event": "بطاقة الحدث"
+  },
+  "cardSource": {
+    "earned_achievement": "تحقيق التعلم",
+    "shop_purchase": "شراء متجر",
+    "surprise_box_reward": "صندوق المفاجآت",
+    "duplicate_conversion": "تحويل مكرر",
+    "card_sellback": "بيع مكرر",
+    "admin_grant": "هدية من الفريق"
+  },
+  "shop": {
+    "alreadyOwned": "لقد حصلت عليه!",
+    "sellDuplicate": "بيع المكرّر",
+    "catalogOwned": "تم جمعها",
+    "coinsLabel": "{amount} عملات معدنية",
+    "notEnoughCoins": "لا يوجد ما يكفي من العملات المعدنية لشراء هذا.",
+    "purchaseFailed": "فشل الشراء — حاول مرة أخرى.",
+    "purchaseSuccess": "اشتريت {name}!",
+    "purchaseNetworkError": "خطأ في الشبكة أثناء الشراء.",
+    "sellConfirmTitle": "بيع نسخة مكررة من {name} مقابل {amount}؟",
+    "sellConfirmBody": "ستحتفظ بنسخة واحدة في مجموعتك.",
+    "sellFailed": "تعذر بيع النسخة المكررة - حاول مرة أخرى.",
+    "sellSuccess": "تم بيع نسخة مكررة مقابل {amount}!",
+    "sellNetworkError": "خطأ في الشبكة أثناء البيع.",
+    "noDuplicate": "ليس لديك نسخة مكررة للبيع.",
+    "loadFailed": "تعذر تحميل المتجر الآن."
+  },
+  "series": {
+    "professions": "المهن",
+    "space-tech": "الفضاء والتكنولوجيا",
+    "fantasy": "خيالي",
+    "sport-fun": "الرياضة والمرح",
+    "style": "أسلوب",
+    "general": "الإنجازات العامة",
+    "math": "إنجازات الرياضيات",
+    "language": "إنجازات اللغة",
+    "subjects": "إنجازات الموضوع",
+    "events": "الأحداث"
+  },
+  "fallback": {
+    "rewardCard": "بطاقة المكافأة",
+    "collectName": "جمع {name}!",
+    "earnCard": "احصل على هذه البطاقة: {name}",
+    "eventLimited": "{name} — بطاقة حدث محدودة!",
+    "genericGame": "لعبة",
+    "keepLearning": "استمر في التعلم لفتح هذه البطاقة",
+    "completeRequirement": "أكمل المطلوب: {label}",
+    "availableInShop": "متوفر في المتجر",
+    "availableInSurpriseBox": "متوفر في صندوق مفاجأة",
+    "notAvailableNow": "غير متوفر حاليا",
+    "progressOf": "{current} من {target}"
+  },
+  "topics": {
+    "addition": "الجمع",
+    "subtraction": "الطرح",
+    "multiplication": "الضرب",
+    "division": "القسمة",
+    "vocabulary": "المفردات"
+  },
+  "gradeBands": {
+    "g12": "الصف 1–2",
+    "g34": "الصف 3–4",
+    "g56": "الصف 5–6"
+  },
+  "requirements": {
+    "total_questions": "الإجابة على {minQuestions} الأسئلة في المجموع",
+    "weekly_questions": "أجب عن {minQuestions} أسئلة الأسبوع الماضي",
+    "subject_questions": "أجب عن {minQuestions} الأسئلة في {subject}",
+    "subject_questions_fallback_subject": "الإجابة على {minQuestions} الأسئلة في الموضوع",
+    "subject_accuracy": "الوصول إلى دقة {minAccuracy}% في {subject}{topicPart} (على الأقل {minQuestions} أسئلة)",
+    "subject_accuracy_topic_part": "على {topic}",
+    "learning_streak_days": "تعلم لمدة {minStreakDays} يومًا على التوالي",
+    "active_days_streak": "كن نشطًا لمدة {minStreakDays} يومًا على التوالي",
+    "parent_activity_complete": "أكمل {minCompletedActivities} أنشطة الوالدين",
+    "monthly_learning_minutes": "تعلم {minLearningMinutesMonthly} دقيقة هذا الشهر",
+    "event_window": "بطاقة الحدث الخاص — متاحة خلال نافذة الحدث",
+    "daily_mission_complete": "أكمل المهمة: {missionKey}",
+    "daily_mission_generic": "أكمل مهمة يومية",
+    "grade_band_only": "متاح ل {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "لم نتمكن من تحميل صندوق المفاجأة.",
+    "networkError": "حدث خطأ في الشبكة أثناء تحميل صندوق المفاجآت.",
+    "ready": "صندوق المفاجآت جاهز!",
+    "readyMultiple": "{count} صناديق جاهزة للفتح!",
+    "openError": "لم نتمكن من فتح الصندوق الآن. حاول مرة أخرى بعد قليل.",
+    "noMoreBoxes": "لا مزيد من الصناديق لفتحها الآن.",
+    "noBoxReady": "لا يوجد صندوق جاهز الآن - حاول مرة أخرى لاحقًا.",
+    "duplicateHint": "لقد حصلت على نسخة إضافية – يمكنك بيع النسخ المكررة في المتجر.",
+    "newCard": "بطاقة جديدة في مجموعتك!",
+    "ariaLabel": "صندوق المفاجآت",
+    "title": "صندوق المفاجآت",
+    "loading": "جاري التحميل…",
+    "nextBoxIn": "المربع التالي جاهز",
+    "keepLearning": "استمر في التعلم - صندوق جديد سيأتي قريبًا!",
+    "openBox": "افتح الصندوق",
+    "myCollection": "مجموعتي"
+  },
+  "preview": {
+    "close": "إغلاق",
+    "download": "تحميل الصورة",
+    "prev": "البطاقة السابقة",
+    "next": "البطاقة التالية",
+    "locked": "مقفلة"
+  },
+  "lockedStamp": {
+    "label": "مقفلة"
+  },
+  "shopView": {
+    "loading": "جارٍ تحميل متجر البطاقات...",
+    "loadErrorTitle": "لم نتمكن من تحميل متجر البطاقات.",
+    "tryAgain": "حاول مرة أخرى",
+    "empty": "لا توجد بطاقات متاحة للشراء الآن.",
+    "coinBalance": "رصيد العملة: {amount}",
+    "buyPrice": "سعر الشراء: {amount}",
+    "sellValue": "قيمة البيع: {amount}",
+    "needMoreCoins": "أنت بحاجة إلى {amount} أكثر",
+    "notEnoughCoinsShort": "لا توجد عملات كافية",
+    "noDuplicateToSell": "لا توجد نسخة مكررة للبيع.",
+    "sellFailed": "تعذر بيع النسخة المكررة - حاول مرة أخرى.",
+    "sellSuccess": "لقد بعت نسخة مكررة من {name} وحصلت على {amount}!",
+    "sellNetworkError": "خطأ في الشبكة أثناء البيع.",
+    "buy": "شراء",
+    "sellDuplicateAction": "بيع المكرّر",
+    "selling": "بيع...",
+    "buying": "شراء...",
+    "buyFor": "شراء ل {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "إغلاق",
+    "openingTitle": "فتح الصندوق...",
+    "doneTitle": "لطيف - جيد! لقد حصلت على مكافآت!",
+    "idleTitle": "صندوق المفاجآت",
+    "rolling": "تدحرج مكافآتك...",
+    "coinsReward": "+{amount} عملات معدنية",
+    "diamondsReward": "+{amount} الماس",
+    "openAnother": "افتح صندوقًا آخر",
+    "viewCards": "عرض بطاقاتي"
+  },
+  "previewModal": {
+    "close": "إغلاق",
+    "download": "تحميل بطاقتي",
+    "downloading": "جارٍ التنزيل...",
+    "downloadError": "لم نتمكن من تنزيل البطاقة. حاول ثانية.",
+    "prev": "البطاقة السابقة",
+    "next": "البطاقة التالية",
+    "cardImageAlt": "صورة البطاقة",
+    "rarityLabel": "الندرة: {label}",
+    "seriesLabel": "السلسلة: {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "عالم الاطفال",
+    "title": "بطاقاتي",
+    "subtitle": "التجميع والتسوق وجميع البطاقات والمسلسلات",
+    "featureDisabled": "مجموعة البطاقات غير متاحة بعد.",
+    "loading": "جارٍ تحميل البطاقات...",
+    "loadError": "لم نتمكن من تحميل البطاقات.",
+    "tryAgain": "حاول مرة أخرى",
+    "tabsAriaLabel": "علامات تبويب البطاقة",
+    "collectionEmpty": "لا توجد بطاقات في مجموعتك حتى الآن - افتح صندوق المفاجآت في Kids World أو اشترِ من المتجر!",
+    "catalogEmpty": "لا توجد بطاقات لإظهارها.",
+    "seriesEmpty": "لا توجد سلسلة بطاقات حتى الآن.",
+    "tabs": {
+      "collection": {
+        "label": "مجموعتي",
+        "shortLabel": "مجموعة"
+      },
+      "shop": {
+        "label": "متجر البطاقات",
+        "shortLabel": "محل"
+      },
+      "catalog": {
+        "label": "جميع البطاقات",
+        "shortLabel": "الجميع"
+      },
+      "series": {
+        "label": "سلسلة",
+        "shortLabel": "سلسلة"
+      }
+    }
+  },
+  "server": {
+    "economyUnavailable": "اقتصاد العملة غير متوفر في الوقت الحالي",
+    "duplicateConversionRemoved": "تمت إزالة التحويل المكرر — يمكنك بيع نسخة مكررة في المتجر.",
+    "missingSeries": "السلسلة مفقودة - مطلوب سلسلة ذات سبيكة ثابتة لبطاقات المتجر/الإنجاز",
+    "multipartRequired": "يجب أن يستخدم التحميل بيانات متعددة الأجزاء/النموذج",
+    "variantProcessFailed": "فشلت معالجة إصدار البطاقة",
+    "boxNeedsPrize": "يحتاج الصندوق إلى جائزة واحدة على الأقل — بطاقات و/أو عملات معدنية.",
+    "boxSettingsInvalidJson": "يجب أن تكون إعدادات المربع كائن JSON.",
+    "notPurchasable": "لا يمكن شراء هذه البطاقة",
+    "alreadyOwnedCollection": "بالفعل في مجموعتك",
+    "insufficientCoinsDetailed": "ليس لديك عملات معدنية كافية لهذه البطاقة"
+  }
+}

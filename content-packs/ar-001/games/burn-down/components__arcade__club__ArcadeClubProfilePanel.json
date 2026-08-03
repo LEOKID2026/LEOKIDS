@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "display_name": "اسم العرض",
+    "setdisplayname_e_target_value_placeholder_gamepackcopy_components_arcade": "setDisplayName(e.target.value)}\r\n            placeholder=gamePackCopy(\"components__arcade__club__ArcadeClubProfilePanel\"، \"display_name\")\r\n          />",
+    "display_name_for_games_only_doesn_t_change_your_official_name_or_leo_num": "الاسم المعروض للألعاب فقط — لا يغير اسمك الرسمي أو رقم برج الأسد.",
+    "change_photo_on_the_home_page": "تغيير الصورة على الصفحة الرئيسية",
+    "recent_history": "التاريخ الحديث",
+    "no_games_yet": "لا توجد مباريات حتى الآن",
+    "player_card": "بطاقة اللاعب",
+    "game_name": "اسم اللعبة:",
+    "save_name": "حفظ الاسم"
+  }
+}

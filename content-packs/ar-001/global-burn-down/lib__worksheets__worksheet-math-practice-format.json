@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "horizontal_addition_and_subtraction": "الجمع والطرح الأفقي",
+    "vertical_addition_and_subtraction": "الجمع والطرح العمودي",
+    "basic_multiplication": "الضرب الأساسي",
+    "long_multiplication": "الضرب الطويل",
+    "basic_division": "التقسيم الأساسي",
+    "long_division": "القسمة الطويلة",
+    "fractions": "الكسور",
+    "decimals": "الأعداد العشرية",
+    "percentages": "النسب المئوية",
+    "ratio_and_scale": "النسبة والحجم",
+    "word_problems": "مسائل كلامية",
+    "mixed_practice": "تمرين مختلط"
+  }
+}

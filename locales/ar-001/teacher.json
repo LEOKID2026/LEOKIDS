@@ -1,0 +1,121 @@
+{
+  "reportSubjects": [
+    "الرياضيات",
+    "هندسة",
+    "إنجليزي",
+    "علوم"
+  ],
+  "subjects": {
+    "math": "الرياضيات",
+    "geometry": "الهندسة",
+    "english": "الإنجليزية",
+    "science": "العلوم"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "الخمول لفترة طويلة",
+    "no_sessions_in_range": "لا توجد جلسات تدريب في هذه الفترة",
+    "low_overall_accuracy": "صعوبة في الأداء العام",
+    "many_recent_mistakes": "ارتفاع عدد الأخطاء الأخيرة",
+    "never_active_in_range": "لا يوجد نشاط في هذه الفترة",
+    "insufficient_answers": "لا توجد بيانات كافية للتحليل"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "يوصى بمراجعة أساسيات الموضوع",
+    "encourage_session_start": "أوصت لتشجيع بدء الممارسة",
+    "targetedReview": "يوصى بتعزيز {subject} في الفصل",
+    "focusPractice": "يوصى بتركيز التدريب على {subject}",
+    "generic": "استمر في مراقبة التقدم"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "غير نشط في هذه الفترة",
+    "low_accuracy": "صعوبة في الأداء",
+    "many_recent_mistakes": "ارتفاع عدد الأخطاء الأخيرة",
+    "recent_mistakes": "الأخطاء المتكررة"
+  },
+  "guidanceSeverityTier": {
+    "critical": "يحتاج إلى اهتمام فوري",
+    "needs_reinforcement": "يحتاج إلى تعزيز",
+    "monitor": "يستحق المراقبة",
+    "on_track": "على المسار الصحيح"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "الطبقة تحتاج إلى اهتمام فوري",
+    "class_needs_reinforcement": "الطبقة تحتاج إلى تعزيز",
+    "class_monitor": "يحتاج الفصل إلى مراقبة وممارسة مركزة",
+    "class_on_track": "الطبقة تسير على الطريق الصحيح"
+  },
+  "classHealth": {
+    "no_data": "لا توجد بيانات كافية",
+    "critical_class": "الطبقة تحتاج إلى اهتمام فوري",
+    "needs_reinforcement": "الطبقة تحتاج إلى تعزيز",
+    "monitor": "يحتاج الفصل إلى مراقبة وممارسة مركزة",
+    "strong": "الطبقة تسير على الطريق الصحيح"
+  },
+  "groupTier": {
+    "struggling": "مجموعة الدعم",
+    "on_track": "مجموعة على المسار الصحيح",
+    "advanced": "المجموعة المتقدمة"
+  },
+  "guardianAccessState": {
+    "active": "نشيط",
+    "expired": "منتهي الصلاحية",
+    "revoked": "تم إبطاله"
+  },
+  "actionTypes": {
+    "class_reteach": "إعادة تدريس الفصل بأكمله",
+    "small_group": "العمل الجماعي الصغير",
+    "individual_practice": "الممارسة الفردية المركزة",
+    "collect_more_data": "انتظر المزيد من البيانات"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "النشاط الصفي",
+    "worksheet_pdf": "ورقة عمل",
+    "focused_practice": "الممارسة المركزة"
+  },
+  "riskLevel": {
+    "high": "يحتاج إلى اهتمام فوري",
+    "moderate": "يستحق المراقبة",
+    "low": "على المسار الصحيح"
+  },
+  "focus": {
+    "studentCalmMessage": "لا توجد مواضيع عاجلة في الوقت الحالي - استمر كالمعتاد.",
+    "hubStudentCalmMessage": "لا توجد مواضيع مركزة - استمر في المراقبة.",
+    "hubClassWeakTopicsCalmMessage": "لم يتم اكتشاف موضوعات ضعيفة مهمة - استمر في المراقبة.",
+    "studentFallbackBanner": "الصعوبة في هذا الموضوع - الممارسة التشخيصية اللازمة لتحديد الموضوع الدقيق",
+    "classFallbackBanner": "يظهر الفصل صعوبة في هذا الموضوع - يوصى بتعزيز الفصل التشخيصي"
+  },
+  "fallback": {
+    "unknownSubject": "مجهول",
+    "defaultTopic": "عنوان",
+    "defaultStudentName": "الطالب",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} - صعوبة على مستوى الموضوع",
+    "studentSubjectHeadlineNoSubject": "صعوبة على مستوى الموضوع",
+    "studentSubjectEvidence": "{percent}% صحيح من {totalAnswers} الإجابات",
+    "studentSubjectAction": "يوصى ببدء ممارسة تشخيصية قصيرة لتحديد الموضوع الدقيق",
+    "classSubjectHeadline": "{subject} - صعوبة الموضوع على مستوى الفصل",
+    "classSubjectHeadlineNoSubject": "صعوبة الموضوع على مستوى الفصل",
+    "classSubjectAction": "يوصى ببدء نشاط تشخيصي قصير أو مراجعة مركزة للفصل بأكمله",
+    "classSuffix": "فئة {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} - {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "لا توجد فصول نشطة",
+    "noClassesHint": "أنشئ فصلًا جديدًا أدناه، ثم أضف الأطفال عبر \"إدارة الفصل\" في بطاقة الفصل.",
+    "createClassLabel": "اسم الفئة",
+    "createClassButton": "إنشاء فئة",
+    "createClassPlaceholder": "على سبيل المثال الفئة 3 - ليو"
+  },
+  "activities": {
+    "personalSectionTitle": "الأنشطة الشخصية",
+    "individualBadge": "شخصي"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "جميع الاطفال ({count})",
+      "directStudents": "أطفال خاصون ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

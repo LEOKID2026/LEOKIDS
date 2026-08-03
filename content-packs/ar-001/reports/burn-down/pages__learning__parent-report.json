@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "area_to_reinforce": "منطقة لتعزيز",
+    "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again": "تسجيل دخول الوالدين مطلوب - استخدم تسجيل دخول الوالدين وحاول مرة أخرى.",
+    "network_error_while_loading_the_report": "حدث خطأ في الشبكة أثناء تحميل التقرير.",
+    "please_choose_valid_dates": "الرجاء اختيار تواريخ صالحة",
+    "custom": "مخصص",
+    "preparing_the_performance_report": "إعداد تقرير الأداء...",
+    "charts": "الرسوم البيانية",
+    "breakdown": "انفصال",
+    "practice_with_questions": "تمرّن على الأسئلة",
+    "book_reading": "قراءة الكتاب",
+    "other_active_learning": "التعلم النشط الآخر",
+    "time_minutes": "الوقت (بالدقائق)",
+    "questions": "أسئلة",
+    "accuracy": "دقة ٪"
+  }
+}

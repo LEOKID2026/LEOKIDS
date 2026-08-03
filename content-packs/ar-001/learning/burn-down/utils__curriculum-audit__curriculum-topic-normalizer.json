@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "unknown_subject_for_normalization": "موضوع غير معروف للتطبيع.",
+    "mapped_from_math_generator_operation_topic_key": "تم تعيينه من مفتاح تشغيل/موضوع مولد الرياضيات.",
+    "mapped_from_geometry_topic_generator_kind": "تم تعيينها من موضوع الهندسة / نوع المولد.",
+    "expand_geometry_strand_map_for_this_topic_kind": "قم بتوسيع الخريطة الهندسية لهذا الموضوع/النوع.",
+    "vocabulary_games_map_to_lexis_translation_strand": "خريطة ألعاب المفردات إلى حبلا المعجم/الترجمة.",
+    "writing_typing_modes_align_with_sentence_writing_strand": "تتماشى أوضاع الكتابة/الكتابة مع حبلا كتابة الجملة.",
+    "mixed_practice_audit_often_skips_or_treats_as_composite": "ممارسة مختلطة - غالبًا ما يتم تخطي التدقيق أو التعامل معه على أنه مركب.",
+    "translation_pools_emphasize_vocabulary_phrases": "تؤكد مجمعات الترجمة على المفردات / العبارات.",
+    "expected_grammar_translation_sentence": "النحو المتوقع | ترجمة | جملة.",
+    "mapped_from_science_bank_topic_field": "تم تعيينها من مجال موضوع بنك العلوم.",
+    "extend_science_domain_map": "توسيع خريطة المجال العلمي."
+  }
+}

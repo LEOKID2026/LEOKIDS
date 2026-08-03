@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "مفتاح العجز غير صالح",
+    "invalid_action_type": "نوع الإجراء غير صالح",
+    "missing_stage_data_for_mining": "بيانات المرحلة المفقودة للتعدين",
+    "too_many_breaks_in_one_request": "فواصل كثيرة جدًا في طلب واحد",
+    "invalid_claim_type": "نوع المطالبة غير صالح",
+    "offline_time_exceeds_the_allowed_limit": "يتجاوز وقت عدم الاتصال الحد المسموح به",
+    "offline_time_does_not_match_server_data": "الوقت غير المتصل لا يتطابق مع بيانات الخادم",
+    "too_many_breaks_try_again_in_a_moment": "هناك فترات راحة كثيرة جدًا - حاول مرة أخرى بعد قليل",
+    "guests_cannot_collect_rewards_please_link_an_account": "لا يمكن للضيوف جمع المكافآت - يرجى ربط الحساب",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "لم يتم تمكين Leo Miners بعد - قم بتطبيق الترحيل والتكوين",
+    "leo_miners_is_disabled_in_admin_settings": "تم تعطيل Leo Miners في إعدادات المسؤول",
+    "leo_miners_economy_is_disabled": "تم تعطيل اقتصاد عمال المناجم في Leo",
+    "leo_miners_point_accrual_is_disabled": "تم تعطيل تراكم نقاط Leo Miners",
+    "offline_collection_is_disabled": "تم تعطيل المجموعة دون اتصال",
+    "leo_miners_gifts_are_disabled": "تم تعطيل هدايا عمال المناجم من ليو",
+    "leo_miners_claims_are_disabled": "تم تعطيل مطالبات Leo Miners",
+    "diamond_chest_is_disabled": "تم تعطيل الصندوق الماسي",
+    "guests_cannot_collect_diamonds": "لا يمكن للضيوف جمع الماس"
+  }
+}

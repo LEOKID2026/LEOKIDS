@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "close": "إغلاق",
+    "how_to_play_heading": "كيف تلعب؟",
+    "how_to_play_title": "كيف تلعب {title}؟",
+    "scoring_heading": "كيف تسجل؟",
+    "rewards_heading": "المكافآت والماس",
+    "tip_heading": "نصيحة سريعة",
+    "got_it_lets_play": "فهمت، هيا نلعب"
+  }
+}

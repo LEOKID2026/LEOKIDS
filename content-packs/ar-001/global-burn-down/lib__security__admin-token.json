@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_admin_token_header": "رأس الرمز المميز للمشرف مفقود",
+    "admin_token_does_not_match_server_configuration": "رمز المشرف لا يتطابق مع تكوين الخادم"
+  }
+}

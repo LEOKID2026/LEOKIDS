@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "نافذة التدريب الرقيقة تحتاج إلى مزيد من الملاحظات قبل التفسير المستقر.",
+    "stable_accuracy_over_at_least_two_sessions": "دقة مستقرة خلال جلستين على الأقل",
+    "continued_random_incorrect_pattern_without_convergence": "استمرار النمط العشوائي/غير الصحيح دون تقارب",
+    "re_evaluate_mastery_and_misconceptions": "إعادة تقييم الإتقان والمفاهيم الخاطئة",
+    "consistent_correct_responses_on_parallel_items": "الإجابات الصحيحة المتسقة على العناصر المتوازية",
+    "repeated_same_distractor_selection": "تكرار نفس اختيار التشتيت",
+    "escalate_practice_specificity": "تصعيد خصوصية الممارسة",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "نقاط القوة الأساسية غير واضحة بالنسبة للمهارة المتقدمة.",
+    "prerequisite_skill_shows_independent_accuracy": "تُظهر المهارة الأساسية دقة مستقلة",
+    "prerequisite_remains_unstable": "الشرط الأساسي لا يزال غير مستقر",
+    "foundation_review_vs_isolated_advanced_gap": "مراجعة الأساس مقابل الفجوة المتقدمة المعزولة",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "إتقان قوي ملحوظ مع مسبار التحدي الاختياري المناسب للحجم لتأكيد النقل.",
+    "maintains_accuracy_on_harder_parallel_items": "يحافظ على الدقة في العناصر المتوازية الأصعب",
+    "breakdown_on_increased_complexity": "انهيار على زيادة التعقيد",
+    "adjust_level_or_add_scaffolded_practice": "اضبط المستوى أو أضف تمرينًا مدعومًا بالسقالات",
+    "default_maintenance_probe_confirm_stability": "مسبار الصيانة الافتراضي-تأكيد الاستقرار.",
+    "meet_or_exceed_recent_accuracy_band": "تلبية أو تجاوز نطاق الدقة الأخير",
+    "accuracy_drops_materially": "تنخفض الدقة ماديًا",
+    "adjust_practice_plan": "ضبط خطة الممارسة"
+  }
+}

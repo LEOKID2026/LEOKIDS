@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "checkers": "لعبة الداما",
+    "black_left_seat_in_the_list_goes_first_turns_alternate": "الأسود (المقعد الأيسر في القائمة) يأتي أولاً؛ يتحول البديل.",
+    "move_diagonally_forward_kings_move_on_all_diagonals": "التحرك قطريا إلى الأمام. يتحرك الملوك على جميع الأقطار.",
+    "captures_are_mandatory_when_available": "اللقطات إلزامية عندما تكون متاحة.",
+    "multi_jumps_with_the_same_piece_continue_until_no_more_captures": "تستمر القفزات المتعددة بنفس القطعة حتى لا يتم التقاط المزيد."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "تعلُّم",
+    "practice": "تمرين",
+    "challenge": "تحدي",
+    "marathon": "ماراثون",
+    "graded": "متدرج",
+    "normal": "طبيعي",
+    "mistakes": "أخطاء",
+    "review_mistakes": "مراجعة الأخطاء"
+  }
+}

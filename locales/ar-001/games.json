@@ -1,0 +1,100 @@
+{
+  "hubTitle": "ألعاب",
+  "arcade": "أركيد",
+  "solo": "العاب منفردة",
+  "educational": "العاب تعليمية",
+  "play": "العب",
+  "pause": "يوقف",
+  "resume": "سيرة ذاتية",
+  "settings": "إعدادات اللعبة",
+  "soundOn": "تشغيل الصوت",
+  "soundOff": "الصوت معطل",
+  "youWin": "فزت!",
+  "youLose": "محاولة لطيفة!",
+  "draw": "إنه تعادل",
+  "inviteFriend": "قم بدعوة صديق",
+  "waitingForOpponent": "في انتظار المنافس...",
+  "matchFound": "تم العثور على المباراة!",
+  "connectionLost": "تم فقدان الاتصال. حاول مرة أخرى…",
+  "back": "رجوع",
+  "gamesBadge": "ألعاب",
+  "hubSubtitle": "اختر التجربة التي تناسبك - ألعاب Leo واللعب دون اتصال بالإنترنت والمزيد.",
+  "hubRegularTitle": "العاب ليو",
+  "hubRegularBlurb": "ألعاب ليو - مطابقة الذاكرة، والألغاز، والتدريب على الهدف، والمزيد.",
+  "hubOfflineTitle": "دائما مع ليو",
+  "hubOfflineBlurb": "العب حتى بدون الإنترنت",
+  "hubEducationalTitle": "العاب ليو التعليمية",
+  "hubEducationalBlurb": "الإثراء ومهارات التفكير والمعرفة العامة",
+  "hubOnlineTitle": "ألعاب مع الأصدقاء",
+  "hubOnlineBlurb": "غرف ألعاب متعددة اللاعبين مع الأصدقاء واللاعبين الآخرين.",
+  "devPrototypeMeta": "التطوير · الاختبارات الداخلية",
+  "soloHubBadge": "العاب ليو",
+  "soloHubTitle": "العاب ليو — عالم الاطفال",
+  "soloHubSubtitle": "العب واكسب النقاط واجمع العملات المعدنية والأحجار الكريمة لعالمك!",
+  "soloMeta": "منفرد · عملات معدنية · أحجار كريمة",
+  "playNow": "العب الآن",
+  "educationalBadge": "التعليمية",
+  "educationalHubTitle": "العاب تعليمية",
+  "educationalHubSubtitle": "ألعاب التعلم التي تبني المهارات أثناء الاستمتاع.",
+  "noGamesAvailable": "لا توجد ألعاب متاحة الآن.",
+  "educationalMeta": "لعبة تعليمية · عملات معدنية",
+  "arcadeBack": "أركيد",
+  "arcadeBadge": "نادي الممرات",
+  "arcadeHubTitle": "نادي ألعاب ليو",
+  "arcadeHubSubtitle": "العب مع الأصدقاء - أنشئ غرفة أو انضم إلى واحدة.",
+  "entryCostLabel": "تكلفة الدخول",
+  "selectEntryCost": "اختر مبلغ الإدخال",
+  "roomTypeQuick": "مباراة سريعة",
+  "roomTypePublic": "عام",
+  "playersLabel": "اللاعبين",
+  "apiSuccess": "منتهي",
+  "apiAlreadyQueued": "في قائمة الانتظار بالفعل (لم يتم تحصيل الرسوم مرة أخرى)",
+  "apiInsufficientFunds": "لا توجد عملات كافية لهذا الإجراء",
+  "apiFailed": "فشل الإجراء",
+  "quickAlreadyInRoom": "موجود بالفعل في الغرفة — اضغط على إدخال اللعبة",
+  "quickJoined": "انضم إلى لاعب ينتظر في الغرفة",
+  "quickCreated": "تم إنشاء غرفة مطابقة سريعة — في انتظار لاعب آخر",
+  "quickReady": "مستعد",
+  "social": {
+    "greatGame": "لعبة عظيمة!",
+    "wellPlayed": "لعبت بشكل جيد!",
+    "rematch": "مباراة العودة؟"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "ربط أربعة",
+      "blurb": "ربط أربعة · اثنين من اللاعبين",
+      "players": "اللاعبين: 2"
+    },
+    "ludo": {
+      "title": "لودو",
+      "blurb": "لودو · لعبة لوحية عائلية",
+      "players": "اللاعبون: 2-4"
+    },
+    "snakes-and-ladders": {
+      "title": "الثعابين والسلالم",
+      "blurb": "اللوحة 1-100 · السلالم والثعابين",
+      "players": "اللاعبون: 2-4"
+    },
+    "checkers": {
+      "title": "لعبة الداما",
+      "blurb": "لعبة الداما الكلاسيكية · الالتقاط مطلوب",
+      "players": "اللاعبين: 2"
+    },
+    "chess": {
+      "title": "الشطرنج",
+      "blurb": "الشطرنج الكلاسيكي · فحص وكش ملك",
+      "players": "اللاعبين: 2"
+    },
+    "dominoes": {
+      "title": "الدومينو",
+      "blurb": "حجب الدومينو · اللعب حتى الخروج",
+      "players": "اللاعبين: 2"
+    },
+    "bingo": {
+      "title": "البنغو",
+      "blurb": "البنغو · الخط الكامل يفوز",
+      "players": "اللاعبين: ما يصل إلى 8"
+    }
+  }
+}

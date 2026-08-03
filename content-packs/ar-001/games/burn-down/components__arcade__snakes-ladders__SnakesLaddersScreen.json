@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "الثعابين والسلالم",
+    "back": "رجوع",
+    "coin_balance": "رصيد العملة",
+    "how_to_play": "كيف تلعب",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "عند دورك، قم برمي النرد وتحرك للأمام بهذا الرقم.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "ترسلك الثعابين إلى الأسفل، وترسلك السلالم إلى الأعلى - لوحة كلاسيكية.",
+    "reach_exactly_100_to_win": "الوصول إلى 100 بالضبط للفوز.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "إن تجاوز 100 لا يحركك (ابق في مكانك)."
+  }
+}

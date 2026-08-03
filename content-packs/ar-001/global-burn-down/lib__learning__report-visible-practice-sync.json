@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "تعلُّم",
+    "practice": "تمرين",
+    "challenge": "تحدي",
+    "extended_practice": "ممارسة موسعة",
+    "graded": "متدرج",
+    "regular": "عادية",
+    "mistakes": "أخطاء",
+    "review_mistakes": "مراجعة الأخطاء"
+  }
+}

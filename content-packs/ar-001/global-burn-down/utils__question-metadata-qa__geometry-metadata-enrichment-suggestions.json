@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "يفترض تخطيط منطقة المستطيل التمييز بين المنطقة والمحيط في السياق.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "يمتد صف مجموع زوايا المثلث ذو النطاق المتأخر على نفس المبدأ - تأكيد التسلسل قبل التنفيذ.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "لا توجد سلسلة متطلبات مسبقة تلقائية لهذا القالب - يقوم مؤلفو المنهج الدراسي بشكل واضح."
+  }
+}

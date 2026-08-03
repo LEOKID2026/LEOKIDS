@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_x_engine_review_token_header": "رأس الرمز المميز لمراجعة محرك x مفقود",
+    "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry": "قم بتشغيل npm run qa:learning-simulator:professional-engine (PASS)، ثم أعد المحاولة."
+  }
+}
