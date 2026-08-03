@@ -1,7 +1,7 @@
 /**
  * English (EFL, ) — subsection/skill catalog for audit alignment.
  * Primary owner reference: repo PDF ` /english Curriculum2020.pdf`.
- * Strand keys align with `ISRAELI_PRIMARY_CURRICULUM_MAP` english strands (prefix match).
+ * Strand keys align with global english topic prefixes (placement returns null in Global).
  */
 
 /** @typedef {'high' || 'medium' || 'low'} CatalogConfidence */
@@ -116,7 +116,7 @@ export const ENGLISH_OFFICIAL_SUBSECTION_CATALOG = {
  "literacy",
  ["english.vocabulary_translation", "english.sentence_writing_patterns", "english.grammar"],
  "medium",
- " -israeli-primary-curriculum-map strand - ."
+ "global curriculum strand"
  ),
  ],
  },

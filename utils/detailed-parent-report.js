@@ -125,7 +125,6 @@ function splitMoledetGeographyReportForDisplay(_report) {
     moledetStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 },
     geographyStats: { questions: 0, correct: 0, accuracy: 0, minutes: 0 }};
 }
-const VISUAL_STRAND_LABEL_HE = {  geography: "Geography" };
 import { normalizeParentVisibleMetrics } from "./learning-pattern-decision/normalize-parent-practice-metrics.js";
 import { buildParentReportEngineDecisionContract } from "./learning-pattern-decision/build-parent-report-engine-decision-contract.js";
 import {
@@ -1551,23 +1550,9 @@ function buildExecutiveSummary(subjects, summary, subjectCoverage, dataIntegrity
     ...phase14Cross};
 }
 
-function buildVisualMoledetGeographyCoverageRows(baseReport) {
-  const split = splitMoledetGeographyReportForDisplay(baseReport);
-  return [
-    {
-      subject: "moledet-visual",
-      subjectLabel: VISUAL_STRAND_LABEL_HE.moledet,
-      questionCount: split.moledetStats.questions,
-      correctCount: split.moledetStats.correct,
-      accuracy: split.moledetStats.accuracy,
-      timeMinutes: split.moledetStats.minutes},
-    {
-      subject: "geography-visual",
-      subjectLabel: VISUAL_STRAND_LABEL_HE.geography,
-      questionCount: split.geographyStats.questions,
-      correctCount: split.geographyStats.correct,
-      accuracy: split.geographyStats.accuracy,
-      timeMinutes: split.geographyStats.minutes}];
+/** Moledet / Homeland visual strands removed from Global parent reports. */
+function buildVisualMoledetGeographyCoverageRows(_baseReport) {
+  return [];
 }
 
 function buildSubjectCoverage(baseReport) {
@@ -2351,28 +2336,13 @@ const CROSS_SUBJECT_WEAK_RANK_MIN_Q = 10;
 /** Minimum accuracy gap (percentage points) vs the next subject to call out one weakest area */
 const CROSS_SUBJECT_WEAK_MIN_GAP = 3;
 
-function collectPerSubjectAggregateRowsFromSummary(summary, baseReport = null) {
+function collectPerSubjectAggregateRowsFromSummary(summary, _baseReport = null) {
   const s = summary && typeof summary === "object" ? summary : {};
-  const rows = [
+  return [
     { q: Number(s.mathQuestions) || 0, acc: Number(s.mathAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.math },
     { q: Number(s.geometryQuestions) || 0, acc: Number(s.geometryAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.geometry },
     { q: Number(s.englishQuestions) || 0, acc: Number(s.englishAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.english },
-    { q: Number(s.scienceQuestions) || 0, acc: Number(s.scienceAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.science },
-    { q: Number(s.historyQuestions) || 0, acc: Number(s.historyAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.history },
-    { q: Number(s.hebrewQuestions) || 0, acc: Number(s.hebrewAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.hebrew }];
-  if (baseReport) {
-    const mg = buildVisualMoledetGeographyCoverageRows(baseReport);
-    rows.push(
-      { q: mg[0].questionCount, acc: mg[0].accuracy, labelHe: mg[0].subjectLabel },
-      { q: mg[1].questionCount, acc: mg[1].accuracy, labelHe: mg[1].subjectLabel },
-    );
-  } else {
-    rows.push({
-      q: Number(s.moledetGeographyQuestions) || 0,
-      acc: Number(s.moledetGeographyAccuracy) || 0,
-      labelHe: "Subject"});
-  }
-  return rows;
+    { q: Number(s.scienceQuestions) || 0, acc: Number(s.scienceAccuracy) || 0, labelHe: SUBJECT_LABEL_HE.science }];
 }
 
 function pickClearWeakestSubjectFromSummaryAggregates(summary, baseReport = null) {

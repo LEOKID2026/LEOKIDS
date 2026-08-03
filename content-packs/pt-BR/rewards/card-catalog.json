@@ -92,26 +92,6 @@
         "description": "Ganhe este cartão: Grande Ouvinte"
       }
     },
-    "achievement_hebrew_star": {
-      "cardKey": "achievement_hebrew_star",
-      "title": "Estrela Hebraica",
-      "description": "Ganhe este cartão: Estrela Hebraica",
-      "category": "conquista",
-      "accessibility": {
-        "title": "Estrela Hebraica",
-        "description": "Ganhe este cartão: Estrela Hebraica"
-      }
-    },
-    "achievement_moledet_explorer": {
-      "cardKey": "achievement_moledet_explorer",
-      "title": "Explorador da pátria",
-      "description": "Ganhe este cartão: Homeland Explorer",
-      "category": "conquista",
-      "accessibility": {
-        "title": "Explorador da pátria",
-        "description": "Ganhe este cartão: Homeland Explorer"
-      }
-    },
     "achievement_multiplication_champion": {
       "cardKey": "achievement_multiplication_champion",
       "title": "Multiplicação do Campeão",

@@ -192,52 +192,14 @@ export function getHistorySubtopicName(_subtopicKey) {
   return "";
 }
 
-const HEBREW_TOPIC_NAMES = {
-  reading: reportPackCopy("utils__math-report-generator", "reading"),
-  comprehension: reportPackCopy("utils__math-report-generator", "reading_comprehension"),
-  reading_comprehension: reportPackCopy("utils__math-report-generator", "reading_comprehension"),
-  writing: reportPackCopy("utils__math-report-generator", "writing_and_expression"),
-  grammar: reportPackCopy("utils__math-report-generator", "grammar_and_language"),
-  vocabulary: reportPackCopy("utils__math-report-generator", "language_richness"),
-  speaking: reportPackCopy("utils__math-report-generator", "speaking_and_discussion"),
-  mixed: "Mixed",
-  main_idea: reportPackCopy("utils__math-report-generator", "main_idea"),
-  sequence: reportPackCopy("utils__math-report-generator", "sequence"),
-  inference: reportPackCopy("utils__math-report-generator", "inference"),
-  fact_vs_opinion: reportPackCopy("utils__math-report-generator", "fact_vs_opinion"),
-  vowels_reading: reportPackCopy("utils__math-report-generator", "reading_with_vowels"),
-  plurals: reportPackCopy("utils__math-report-generator", "singular_and_plural"),
-  verb_forms: reportPackCopy("utils__math-report-generator", "verb_forms"),
-  sentence_structure: reportPackCopy("utils__math-report-generator", "sentence_structure")
-};
-
-export function getHebrewTopicName(topic) {
-  const key = normalizeReportTopicBucketKey(topic);
-  if (!key) return "";
-  return HEBREW_TOPIC_NAMES[key] || "";
+/** Hebrew subject is not part of the Global product — no parent-facing topic labels. */
+export function getHebrewTopicName(_topic) {
+  return "";
 }
 
-const MOLEDET_GEOGRAPHY_TOPIC_NAMES = {
-  homeland: reportPackCopy("utils__math-report-generator", "homeland_studies"),
-  community: reportPackCopy("utils__math-report-generator", "community"),
-  citizenship: reportPackCopy("utils__math-report-generator", "citizenship"),
-  geography: reportPackCopy("utils__math-report-generator", "geography"),
-  basic_geography: reportPackCopy("utils__math-report-generator", "geography_basics"),
-  values: reportPackCopy("utils__math-report-generator", "values"),
-  maps: "Maps",
-  map_reading: reportPackCopy("utils__math-report-generator", "map_reading"),
-  directions: reportPackCopy("utils__math-report-generator", "directions"),
-  places: reportPackCopy("utils__math-report-generator", "places"),
-  maps_basic: reportPackCopy("utils__math-report-generator", "basic_maps"),
-  regions: reportPackCopy("utils__math-report-generator", "regions"),
-  history: reportPackCopy("utils__math-report-generator", "history"),
-  mixed: "Mixed"
-};
-
-export function getMoledetGeographyTopicName(topic) {
-  const key = normalizeReportTopicBucketKey(topic);
-  if (!key) return "";
-  return MOLEDET_GEOGRAPHY_TOPIC_NAMES[key] || "";
+/** Moledet / Homeland Studies is not part of the Global product — no parent-facing topic labels. */
+export function getMoledetGeographyTopicName(_topic) {
+  return "";
 }
 
 /** Grade label by internal key g1…g6 (parent report / recommendations) */
@@ -979,12 +941,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         scienceQuestions: 0,
         scienceCorrect: 0,
         scienceAccuracy: 0,
-        hebrewQuestions: 0,
-        hebrewCorrect: 0,
-        hebrewAccuracy: 0,
-        moledetGeographyQuestions: 0,
-        moledetGeographyCorrect: 0,
-        moledetGeographyAccuracy: 0,
         stars: 0,
         playerLevel: 1,
         xp: 0,
@@ -994,8 +950,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
       geometryTopics: {},
       englishTopics: {},
       scienceTopics: {},
-      hebrewTopics: {},
-      moledetGeographyTopics: {},
       allItems: {},
       dailyActivity: [],
       analysis: {
@@ -1005,8 +959,6 @@ export function generateParentReport(playerName, period = 'week', customStartDat
         geometryMistakesByTopic: {},
         englishMistakesByTopic: {},
         scienceMistakesByTopic: {},
-        hebrewMistakesByTopic: {},
-        moledetGeographyMistakesByTopic: {},
         recommendations: []
       },
       challenges: {

@@ -17,19 +17,8 @@
     "keep_formula_based_area_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de áreas basadas en fórmulas para 1.º y 2.º de Primaria.",
     "keep_pythagoras_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones de Pitágoras para 1.º y 2.º de Primaria.",
     "keep_pythagoras_recommendations_null_for_grades_3_4": "Mantén nulas las recomendaciones de Pitágoras para 3.º y 4.º de Primaria.",
-    "keep_mixed_hebrew_vocabulary_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones de vocabulario hebreo mixto para 1.º y 2.º de Primaria.",
-    "keep_formal_hebrew_grammar_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones formales de gramática hebrea para 1.º y 2.º de Primaria.",
-    "keep_advanced_hebrew_grammar_syntax_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones avanzadas de gramática y sintaxis hebreas para 1.º y 2.º de Primaria.",
-    "keep_higher_level_hebrew_writing_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de escritura en hebreo de nivel superior para 1.º y 2.º de Primaria.",
-    "keep_formal_register_speaking_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones formales de registro/oratoria para 1.º y 2.º de Primaria.",
     "keep_formal_english_grammar_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones formales de gramática inglesa para 1.º y 2.º de Primaria.",
     "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones gramaticales de estructura de oraciones para 1.º y 2.º de Primaria.",
-    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones de vocabulario en contexto para 1.º y 2.º de Primaria.",
-    "keep_geography_scale_distance_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de escala geográfica/distancia para 1.º y 2.º de Primaria.",
-    "keep_mixed_map_scale_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones a escala de mapa mixta para 1.º y 2.º de Primaria.",
-    "keep_geography_orientation_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de orientación geográfica para 1.º y 2.º de Primaria.",
-    "keep_climate_region_map_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de mapas climáticos/regionales para 1.º y 2.º de Primaria.",
-    "keep_homeland_cause_effect_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de causa/efecto del país de origen para 1.º y 2.º de Primaria.",
-    "keep_values_social_explanation_recommendations_null_for_grades_1_2": "Mantener nulas las recomendaciones de valores/explicaciones sociales para 1.º y 2.º de Primaria."
+    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "Mantén nulas las recomendaciones de vocabulario en contexto para 1.º y 2.º de Primaria."
   }
 }

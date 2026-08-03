@@ -16,10 +16,6 @@
   "utils__adaptive-learning-planner__adaptive-planner": {
     "default_safe_path_continue_practice_without_advancing_difficulty": "Camino seguro predeterminado: continuá la práctica sin avanzar en la dificultad."
   },
-  "utils__curriculum-audit__israeli-primary-curriculum-map": {
-    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "Contexto político general; Los primeros grados a menudo enfatizan la exposición/escuchá; verifique la alfabetización formal versus la exposición por escuela.",
-    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "1.er y 2.º grado: la gramática no se asume como básica; separación de exposición/enriquecimiento."
-  },
   "utils__geometry-conceptual-bank": {
     "you_want_a_fence_around_a_rectangular_field_only_the_outer_boundary_what": "Querés una cerca alrededor de un campo rectangular (solo el límite exterior). ¿Qué sueles calcular para saber cuánta cerca comprar?",
     "in_a_triangle_two_angles_are_known_50_and_60_what_can_you_conclude_about": "En un triángulo se conocen dos ángulos: 50° y 60°. ¿Qué podés concluir sobre el tercer ángulo antes de calcular el número?",

@@ -17,19 +17,8 @@
     "keep_formula_based_area_recommendations_null_for_grades_1_2": "Keep formula-based area recommendations null for First–Second Class.",
     "keep_pythagoras_recommendations_null_for_grades_1_2": "Keep Pythagoras recommendations null for First–Second Class.",
     "keep_pythagoras_recommendations_null_for_grades_3_4": "Keep Pythagoras recommendations null for Third–Fourth Class.",
-    "keep_mixed_hebrew_vocabulary_recommendations_null_for_grades_1_2": "Keep mixed Hebrew vocabulary recommendations null for First–Second Class.",
-    "keep_formal_hebrew_grammar_recommendations_null_for_grades_1_2": "Keep formal Hebrew grammar recommendations null for First–Second Class.",
-    "keep_advanced_hebrew_grammar_syntax_recommendations_null_for_grades_1_2": "Keep advanced Hebrew grammar/syntax recommendations null for First–Second Class.",
-    "keep_higher_level_hebrew_writing_recommendations_null_for_grades_1_2": "Keep higher-level Hebrew writing recommendations null for First–Second Class.",
-    "keep_formal_register_speaking_recommendations_null_for_grades_1_2": "Keep formal register/speaking recommendations null for First–Second Class.",
     "keep_formal_english_grammar_recommendations_null_for_grades_1_2": "Keep formal English grammar recommendations null for First–Second Class.",
     "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2": "Keep sentence-structure grammar recommendations null for First–Second Class.",
-    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "Keep vocabulary-in-context recommendations null for First–Second Class.",
-    "keep_geography_scale_distance_recommendations_null_for_grades_1_2": "Keep geography scale/distance recommendations null for First–Second Class.",
-    "keep_mixed_map_scale_recommendations_null_for_grades_1_2": "Keep mixed map-scale recommendations null for First–Second Class.",
-    "keep_geography_orientation_recommendations_null_for_grades_1_2": "Keep geography orientation recommendations null for First–Second Class.",
-    "keep_climate_region_map_recommendations_null_for_grades_1_2": "Keep climate/region map recommendations null for First–Second Class.",
-    "keep_homeland_cause_effect_recommendations_null_for_grades_1_2": "Keep homeland cause/effect recommendations null for First–Second Class.",
-    "keep_values_social_explanation_recommendations_null_for_grades_1_2": "Keep values/social explanation recommendations null for First–Second Class."
+    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "Keep vocabulary-in-context recommendations null for First–Second Class."
   }
 }

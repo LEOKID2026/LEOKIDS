@@ -26,7 +26,7 @@ export default function WritingTraceSvg({
   className = "",
   character,
   scriptStyle = "print",
-  language = "he",
+  language = "en",
   traceRenderMode = "full_trace",
   mode = "screen",
 }) {

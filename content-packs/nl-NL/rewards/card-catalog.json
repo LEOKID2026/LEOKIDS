@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 136,
+  "cardCount": 134,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -90,26 +90,6 @@
       "accessibility": {
         "title": "Geweldige luisteraar",
         "description": "Verdien deze kaart: Geweldige luisteraar"
-      }
-    },
-    "achievement_hebrew_star": {
-      "cardKey": "achievement_hebrew_star",
-      "title": "Hebreeuws Star",
-      "description": "Verdien deze kaart: Hebreeuwse ster",
-      "category": "prestatie",
-      "accessibility": {
-        "title": "Hebreeuws Star",
-        "description": "Verdien deze kaart: Hebreeuwse ster"
-      }
-    },
-    "achievement_moledet_explorer": {
-      "cardKey": "achievement_moledet_explorer",
-      "title": "Binnenlandse ontdekkingsreiziger",
-      "description": "Verdien deze kaart: Homeland Explorer",
-      "category": "prestatie",
-      "accessibility": {
-        "title": "Binnenlandse ontdekkingsreiziger",
-        "description": "Verdien deze kaart: Homeland Explorer"
       }
     },
     "achievement_multiplication_champion": {

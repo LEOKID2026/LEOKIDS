@@ -7,7 +7,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { normalizeInventoryTopic } from "../../utils/curriculum-audit/curriculum-topic-normalizer.js";
-import { findTopicPlacement } from "../../utils/curriculum-audit/israeli-primary-curriculum-map.js";
+import { findTopicPlacement } from "../../utils/curriculum-audit/official-primary-curriculum-spine.js";
 import {
   OFFICIAL_PRIMARY_CURRICULUM_SPINE,
   findOfficialTopicPlacement,

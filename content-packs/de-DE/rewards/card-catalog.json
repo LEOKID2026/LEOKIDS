@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 136,
+  "cardCount": 134,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -90,26 +90,6 @@
       "accessibility": {
         "title": "Great Listener",
         "description": "Earn this card: Great Listener"
-      }
-    },
-    "achievement_hebrew_star": {
-      "cardKey": "achievement_hebrew_star",
-      "title": "Hebrew Star",
-      "description": "Earn this card: Hebrew Star",
-      "category": "achievement",
-      "accessibility": {
-        "title": "Hebrew Star",
-        "description": "Earn this card: Hebrew Star"
-      }
-    },
-    "achievement_moledet_explorer": {
-      "cardKey": "achievement_moledet_explorer",
-      "title": "Homeland Explorer",
-      "description": "Earn this card: Homeland Explorer",
-      "category": "achievement",
-      "accessibility": {
-        "title": "Homeland Explorer",
-        "description": "Earn this card: Homeland Explorer"
       }
     },
     "achievement_multiplication_champion": {

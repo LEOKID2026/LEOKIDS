@@ -97,7 +97,7 @@ export function analyzeCurriculumDepth(rec, norm, ctx = {}) {
   const ADV_ANGLE_HINT =
     /\bobtuse\b|\bsupplementary\b|\bcomplementary\b|\binscribed\b|\bcircumscribed\b|\balternate\s+interior\b/i;
   if (subject === "geometry") {
-    /* Align with israeli-primary-curriculum-map geometryGrade: volume allowed from g2; diagonals from g3. */
+    /* Align with global geometry grade bands: volume allowed from g2; diagonals from g3. */
     if ((rawTopic.includes("volume") || nk.includes("volume")) && gmin <= 1) {
       depthFlags.push(FLAG.GEOMETRY_VOLUME_EARLY);
       suggestTooAdvanced = true;

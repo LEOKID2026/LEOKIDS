@@ -1,6 +1,5 @@
 {
   "copy": {
-    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Безопасный родительский текст с наблюдательным тоном и достаточным объёмом.",
     "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Thin evidence but explicit cautious hedging - should not block.",
     "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Мало данных при сильной уверенности и утверждении об освоении — блокировать.",
     "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Движок перечисляет барьеры «не делать выводов», а текст использует абсолютную уверенность.",

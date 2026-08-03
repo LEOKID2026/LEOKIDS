@@ -86,12 +86,6 @@ export function parentReportV2SnapshotFromDetailedPayload(detailedPayload) {
     scienceQuestions: 0,
     scienceCorrect: 0,
     scienceAccuracy: 0,
-    hebrewQuestions: 0,
-    hebrewCorrect: 0,
-    hebrewAccuracy: 0,
-    moledetGeographyQuestions: 0,
-    moledetGeographyCorrect: 0,
-    moledetGeographyAccuracy: 0,
     diagnosticOverviewHe: {
       strongestAreaLineHe: "",
       mainFocusAreaLineHe: "",
@@ -154,8 +148,7 @@ export function parentReportV2SnapshotFromDetailedPayload(detailedPayload) {
     geometryTopics: {},
     englishTopics: {},
     scienceTopics: {},
-    hebrewTopics: {},
-    moledetGeographyTopics: {}
+    historyTopics: {}
   };
 }
 

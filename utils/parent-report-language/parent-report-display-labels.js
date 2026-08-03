@@ -10,9 +10,7 @@ export const PARENT_REPORT_SUBJECT_LABELS_EN = {
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  science: "Science",
-  history: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "history"),
-  geography: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "geography")
+  science: "Science"
 };
 
 /** @deprecated Alias — Global uses English labels; keep HE export name for import stability. */

@@ -47,18 +47,6 @@ const HOME_ACTION_BY_TAXONOMY_ID = Object.freeze({
     "Show two similar words, read them slowly, and point out what's different between them.",
   "E-06":
     "Read a short sentence, pause, and ask \"what does the sentence say?\"",
-  "H-04":
-    "Read a short sentence out loud, pause, and ask the child to explain what they read.",
-  "H-02":
-    "Read the sentence and ask what role the word plays in it, without rushing to an answer.",
-  "H-06":
-    "Read the sentence and ask what role the word plays in it, without rushing to an answer.",
-  "H-01":
-    "Choose one word from the question, ask the child to explain it in their own words, then use it in a sentence.",
-  "H-03":
-    "Write the word, read it out loud, and mark the part where the mistake was.",
-  "H-07":
-    "Write the word, read it out loud, and mark the part where the mistake was.",
   "S-01":
     "Review 3 short facts, then ask one question without looking.",
   "S-02":
@@ -73,37 +61,12 @@ const HOME_ACTION_BY_TAXONOMY_ID = Object.freeze({
     "Put the steps of the process in order, then explain each step in a short sentence.",
   "S-07":
     "Choose one concept, ask the child to explain it in their own words, then give a real-life example.",
-  "MG-01":
-    "Practice reading a map scale using a ruler or scale line, and ask the child to explain what a distance on the map represents.",
-  "MG-02":
-    "Practice map directions using a north arrow, and ask the child to explain which direction to go.",
-  "MG-03":
-    "Practice short scenarios that require distinguishing between a right, an obligation, or a rule, and ask the child to explain what in the text supports the answer.",
-  "MG-04":
-    "Practice ordering events by time, and ask the child to explain which event happened first and what the evidence is.",
-  "MG-05":
-    "Practice comparing areas on a map using the legend, colors and symbols, and ask the child to show which map data was used.",
-  "MG-06":
-    "Practice cause-and-effect questions, and ask the child to separate a fact stated in the text from an opinion.",
-  "MG-07":
-    "Practice matching community institutions to their roles, and ask the child to explain who uses the institution and what service it provides.",
-  "MG-08":
-    "Practice reading a map legend and symbols, and ask the child to identify the relevant data before answering.",
 });
 
 /** Parent-facing subskill labels — taxonomy ids unchanged; editorial copy only. */
 const PARENT_SUBSKILL_LABEL_HE = Object.freeze({
-  "M-02": "carrying in addition",
-  "H-04": "finding information in a text",
-  "S-03": "understanding the connection between body parts",
-  "MG-01": "reading a map scale",
-  "MG-02": "directions and north on a map",
-  "MG-03": "rights, obligations and rules",
-  "MG-04": "ordering events on a timeline",
-  "MG-05": "reading a climate map",
-  "MG-06": "cause and effect",
-  "MG-07": "institutions in the community",
-  "MG-08": "map legend and symbols",
+  "M-02": "carrying in addition",
+  "S-03": "understanding the connection between body parts",
 });
 
 const TOPIC_ONLY_HOME = Object.freeze({
@@ -148,11 +111,6 @@ function parentSubskillLabelHe(taxonomyId, safe, topicLabel = "") {
   const name = clean(row?.subskillHe);
   if (!name) return null;
 
-  if (id === "H-04") {
-    const topic = clean(topicLabel);
-    if (/reading comprehension/i.test(topic)) return "reading comprehension";
-    return "finding information in a text";
-  }
 
   return /^[a-zA-Z][a-zA-Z0-9_/\-\s]*$/.test(name) ? null : name;
 }

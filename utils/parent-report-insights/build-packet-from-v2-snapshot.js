@@ -279,9 +279,8 @@ function gradePracticeBreakdownFromV2Maps(report) {
     ["math", "mathOperations"],
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
-    ["hebrewTopics"],
     ["science", "scienceTopics"],
-    ["moledetGeographyTopics"]
+    ["history", "historyTopics"]
   ];
   for (const [subjectKey, field] of subjectFieldPairs) {
     const map = report?.[field];

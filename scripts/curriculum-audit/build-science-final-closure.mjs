@@ -17,7 +17,7 @@ const modUrl = (rel) => pathToFileURL(join(ROOT, rel)).href;
 const { SCIENCE_GRADES, SCIENCE_GRADE_ORDER } = await import(modUrl("data/science-curriculum.js"));
 const { SCIENCE_QUESTIONS } = await import(modUrl("data/science-questions.js"));
 const { SCIENCE_TOPIC_TO_REP_NORM } = await import(modUrl("utils/science-grade-topic-policy.js"));
-const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/israeli-primary-curriculum-map.js"));
+const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/official-primary-curriculum-spine.js"));
 const {
   buildScienceRuntimeVsOfficialSummary,
   summarizeScienceRegistry,
@@ -283,7 +283,7 @@ async function main() {
       inventoryPath: inv.path,
       primaryOwnerDoc: "תוכנית משרד החינוך/science Curriculum2016.docx",
       notes: [
-        "Closure uses conservative israeli-primary-curriculum-map Science strands — not an automated DOCX parse.",
+        "Closure uses conservative official-primary-curriculum-spine (empty global) Science strands — not an automated DOCX parse.",
         "Stem variety is computed from SCIENCE_QUESTIONS rows eligible per grade/topic — advisory only.",
       ],
     },

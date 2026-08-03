@@ -4,6 +4,7 @@ import StudentLoadingPanel from "../../ui/StudentLoadingPanel.jsx";
 import {
   formatCoinAmountHe,
 } from "../../../lib/rewards/rewards-ui.js";
+import { resolveGlobalRewardCardDisplay } from "../../../lib/rewards/reward-card-global-display.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 
 const SHOP_PATH = "/api/student/rewards/cards/shop";
@@ -83,11 +84,17 @@ export default function StudentCardsShopView({
         );
         return;
       }
-      setMessageHe(
-        copy("shop", "purchaseSuccess", {
-          name: json.card?.name_he || json.card?.nameHe || copy("fallback", "rewardCard"),
-        }),
-      );
+      {
+        const purchasedName = resolveGlobalRewardCardDisplay({
+          cardKey: json.card?.card_key || json.card?.cardKey,
+          nameHe: json.card?.nameHe,
+        }).name;
+        setMessageHe(
+          copy("shop", "purchaseSuccess", {
+            name: purchasedName || copy("fallback", "rewardCard"),
+          }),
+        );
+      }
       if (json.balanceAfter != null && onCoinBalanceChange) {
         onCoinBalanceChange(Math.floor(Number(json.balanceAfter)));
       }
@@ -130,12 +137,18 @@ export default function StudentCardsShopView({
         );
         return;
       }
-      setMessageHe(
-        copy("shopView", "sellSuccess", {
-          name: json.card?.name_he || json.card?.nameHe || card.nameHe,
-          amount: formatCoinAmountHe(json.sellbackCoins || 0),
-        }),
-      );
+      {
+        const soldName = resolveGlobalRewardCardDisplay({
+          cardKey: json.card?.card_key || json.card?.cardKey || card.card_key || card.cardKey,
+          nameHe: json.card?.nameHe || card.nameHe,
+        }).name;
+        setMessageHe(
+          copy("shopView", "sellSuccess", {
+            name: soldName || copy("fallback", "rewardCard"),
+            amount: formatCoinAmountHe(json.sellbackCoins || 0),
+          }),
+        );
+      }
       if (json.balanceAfter != null && onCoinBalanceChange) {
         onCoinBalanceChange(Math.floor(Number(json.balanceAfter)));
       }

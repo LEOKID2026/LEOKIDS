@@ -22,7 +22,7 @@ const modUrl = (rel) => pathToFileURL(join(ROOT, rel)).href;
 const { GRADES } = await import(modUrl("utils/math-constants.js"));
 const { getLevelConfig } = await import(modUrl("utils/math-storage.js"));
 const { generateQuestion } = await import(modUrl("utils/math-question-generator.js"));
-const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/israeli-primary-curriculum-map.js"));
+const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/official-primary-curriculum-spine.js"));
 const { MATH_OFFICIAL_SUBSECTION_CATALOG, mathGradeProgrammePdfUrl } = await import(
   modUrl("utils/curriculum-audit/math-official-subsection-catalog.js")
 );
@@ -304,7 +304,7 @@ async function main() {
         "Set MATH_OWNER_CLOSURE_SIGNOFF=1 only after Ministry PDF subsection titles are cross-checked against this catalog.",
       notes: [
         "mixed operation is not expanded here — it aggregates enabled ops in the Math UI.",
-        "Curriculum placement uses conservative israeli-primary-curriculum-map (advisory).",
+        "Curriculum placement uses conservative official-primary-curriculum-spine (empty global) (advisory).",
       ],
     },
     summary: {

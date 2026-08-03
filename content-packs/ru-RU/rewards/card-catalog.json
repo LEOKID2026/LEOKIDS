@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 136,
+  "cardCount": 134,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -90,26 +90,6 @@
       "accessibility": {
         "title": "Отличный слушатель",
         "description": "Заработай эту карточку: Отличный слушатель"
-      }
-    },
-    "achievement_hebrew_star": {
-      "cardKey": "achievement_hebrew_star",
-      "title": "Звезда иврита",
-      "description": "Заработай эту карточку: Звезда иврита",
-      "category": "достижение",
-      "accessibility": {
-        "title": "Звезда иврита",
-        "description": "Заработай эту карточку: Звезда иврита"
-      }
-    },
-    "achievement_moledet_explorer": {
-      "cardKey": "achievement_moledet_explorer",
-      "title": "Исследователь родного края",
-      "description": "Заработай эту карточку: Исследователь родного края",
-      "category": "достижение",
-      "accessibility": {
-        "title": "Исследователь родного края",
-        "description": "Заработай эту карточку: Исследователь родного края"
       }
     },
     "achievement_multiplication_champion": {

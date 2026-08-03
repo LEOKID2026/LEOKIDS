@@ -15,6 +15,22 @@ import {
   UNSAFE_THIN_DATA_MIXED_CONCLUSION_RES,
   UNSUPPORTED_ADVANCE_RES} from "./parent-narrative-safety-contract.js";
 
+/**
+ * Global default locale is English. Explicit locales (including "he") are preserved.
+ * @param {unknown} explicit
+ * @param {Record<string, unknown>} reportContext
+ */
+function resolveParentNarrativeLocale(explicit, reportContext) {
+  const fromInput = explicit == null ? "" : String(explicit).trim();
+  if (fromInput) return fromInput;
+  const fromCtx =
+    reportContext && typeof reportContext === "object"
+      ? String(reportContext.locale || reportContext.lang || "").trim()
+      : "";
+  if (fromCtx) return fromCtx;
+  return "en";
+}
+
 /** @param {string} s */
 function normalizeHe(s) {
   return String(s || "")
@@ -104,7 +120,7 @@ function conclusionWithheld(eo) {
  * @param {string} input.narrativeText
  * @param {import("./parent-narrative-safety-contract.js").ParentNarrativeEngineOutput|null} [input.engineOutput]
  * @param {import("./parent-narrative-safety-contract.js").ParentNarrativeReportContext} [input.reportContext]
- * @param {"he"|string} [input.locale]
+ * @param {"he"|"en"|string} [input.locale]
  */
 export function validateParentNarrativeSafety(input) {
   const narrativeText = normalizeHe(input?.narrativeText ?? "");
@@ -134,7 +150,7 @@ export function validateParentNarrativeSafety(input) {
   /** @type {string[]} */
   const cautionaryThinDataFindings = [];
 
-  const locale = String(input?.locale || "he");
+  const locale = resolveParentNarrativeLocale(input?.locale, reportContext);
 
   /**
    * @param {string} code
@@ -305,9 +321,8 @@ export function validateParentNarrativeSafety(input) {
   }
 
   void reportContext;
-  void locale;
 
-  return finalizeOutcome(issues, blockedReasons, warnings, {
+  const outcome = finalizeOutcome(issues, blockedReasons, warnings, {
     mustNotSayHits,
     unsupportedClaims,
     overconfidenceFindings,
@@ -316,6 +331,7 @@ export function validateParentNarrativeSafety(input) {
     recommendationFindings,
     infoFindings,
     cautionaryThinDataFindings});
+  return { ...outcome, locale };
 }
 
 /** @param {Array<{ severity: string, blocking?: boolean }>} issues */

@@ -11,9 +11,6 @@ import {
   getTopicName,
   getEnglishTopicName,
   getScienceTopicName,
-  getHistoryTopicName,
-  getHebrewTopicName,
-  getMoledetGeographyTopicName,
   mathReportBaseOperationKey,
   formatParentReportGradeLabel,
   canonicalParentReportGradeKey} from "./math-report-generator.js";
@@ -911,10 +908,7 @@ function buildDailyActivityFromSessions(startMs, endMs) {
         mathKeys: new Set(),
         geometryKeys: new Set(),
         englishKeys: new Set(),
-        scienceKeys: new Set(),
-        historyKeys: new Set(),
-        hebrewKeys: new Set(),
-        moledetKeys: new Set()};
+        scienceKeys: new Set()};
     }
     return byDate[dateStr];
   };
@@ -942,9 +936,6 @@ function buildDailyActivityFromSessions(startMs, endMs) {
         if (def.id === "geometry") row.geometryKeys.add(itemKey);
         if (def.id === "english") row.englishKeys.add(itemKey);
         if (def.id === "science") row.scienceKeys.add(itemKey);
-        if (def.id === "history") row.historyKeys.add(itemKey);
-        
-        
       });
     });
   });
@@ -957,10 +948,7 @@ function buildDailyActivityFromSessions(startMs, endMs) {
       mathTopics: r.mathKeys.size,
       geometryTopics: r.geometryKeys.size,
       englishTopics: r.englishKeys.size,
-      scienceTopics: r.scienceKeys.size,
-      historyTopics: r.historyKeys.size,
-      hebrewTopics: r.hebrewKeys.size,
-      moledetGeographyTopics: r.moledetKeys.size}));
+      scienceTopics: r.scienceKeys.size}));
 }
 
 const V2_SUBJECT_ORDER = [
@@ -1998,16 +1986,13 @@ export function generateParentReportV2(
   const geometryTopics = {};
   const englishTopics = {};
   const scienceTopics = {};
-  const historyTopics = {};
-  const hebrewTopics = {};
-  const moledetGeographyTopics = {};
+  const historyTopics = Object.freeze({});
 
   const maps = {
     math: mathOperations,
     geometry: geometryTopics,
     english: englishTopics,
-    science: scienceTopics,
-    history: historyTopics};
+    science: scienceTopics};
 
   let mathTotalQuestions = 0;
   let mathTotalCorrect = 0;
@@ -2019,10 +2004,6 @@ export function generateParentReportV2(
   let scienceTotalCorrect = 0;
   let historyTotalQuestions = 0;
   let historyTotalCorrect = 0;
-  let hebrewTotalQuestions = 0;
-  let hebrewTotalCorrect = 0;
-  let moledetGeographyTotalQuestions = 0;
-  let moledetGeographyTotalCorrect = 0;
 
 
   SUBJECTS.forEach((def) => {
@@ -2070,17 +2051,13 @@ export function generateParentReportV2(
     geometryTotalQuestions +
     englishTotalQuestions +
     scienceTotalQuestions +
-    historyTotalQuestions +
-    hebrewTotalQuestions +
-    moledetGeographyTotalQuestions;
+    historyTotalQuestions;
   const totalCorrect =
     mathTotalCorrect +
     geometryTotalCorrect +
     englishTotalCorrect +
     scienceTotalCorrect +
-    historyTotalCorrect +
-    hebrewTotalCorrect +
-    moledetGeographyTotalCorrect;
+    historyTotalCorrect;
   const overallAccuracy =
     totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
 
@@ -2088,34 +2065,27 @@ export function generateParentReportV2(
   const geometryProgress = loadProgress("mleo_geometry_master_progress");
   const englishProgress = loadProgress("mleo_english_master_progress");
   const scienceProgress = loadProgress("mleo_science_master_progress");
-  const historyProgress = loadProgress("mleo_history_master_progress");
-  const hebrewProgress = loadProgress("mleo_hebrew_master_progress");
-  const moledetGeographyProgress = loadProgress("mleo_moledet_geography_master_progress");
+  const historyProgress = {};
+
 
   const stars =
     (mathProgress.stars || 0) +
     (geometryProgress.stars || 0) +
     (englishProgress.stars || 0) +
     (scienceProgress.stars || 0) +
-    (historyProgress.stars || 0) +
-    (hebrewProgress.stars || 0) +
-    (moledetGeographyProgress.stars || 0);
+    (historyProgress.stars || 0);
   const xp =
     (mathProgress.xp || 0) +
     (geometryProgress.xp || 0) +
     (englishProgress.xp || 0) +
     (scienceProgress.xp || 0) +
-    (historyProgress.xp || 0) +
-    (hebrewProgress.xp || 0) +
-    (moledetGeographyProgress.xp || 0);
+    (historyProgress.xp || 0);
   const playerLevel = Math.max(
     mathProgress.playerLevel || 1,
     geometryProgress.playerLevel || 1,
     englishProgress.playerLevel || 1,
     scienceProgress.playerLevel || 1,
-    historyProgress.playerLevel || 1,
-    hebrewProgress.playerLevel || 1,
-    moledetGeographyProgress.playerLevel || 1
+    historyProgress.playerLevel || 1
   );
 
   const mathAchievements = mathProgress.badges || [];
@@ -2123,24 +2093,18 @@ export function generateParentReportV2(
   const englishAchievements = englishProgress.badges || [];
   const scienceAchievements = scienceProgress.badges || [];
   const historyAchievements = historyProgress.badges || [];
-  const hebrewAchievements = hebrewProgress.badges || [];
-  const moledetGeographyAchievements = moledetGeographyProgress.badges || [];
   const achievements = [
     ...mathAchievements,
     ...geometryAchievements,
     ...englishAchievements,
     ...scienceAchievements,
-    ...historyAchievements,
-    ...hebrewAchievements,
-    ...moledetGeographyAchievements];
+    ...historyAchievements,];
 
   const mathMistakesRaw = safeGetJsonArray("mleo_mistakes");
   const geometryMistakesRaw = safeGetJsonArray("mleo_geometry_mistakes");
   const englishMistakesRaw = safeGetJsonArray("mleo_english_mistakes");
   const scienceMistakesRaw = safeGetJsonArray("mleo_science_mistakes");
-  const historyMistakesRaw = safeGetJsonArray("mleo_history_mistakes");
-  const hebrewMistakesRaw = safeGetJsonArray("mleo_hebrew_mistakes");
-  const moledetGeographyMistakesRaw = safeGetJsonArray("mleo_moledet_geography_mistakes");
+  const historyMistakesRaw = [];
 
   const mathMistakesByOperation = buildMathMistakesScopedCounts(mathMistakesRaw, startMs, endMs);
   const geometryMistakesByTopic = filterMistakes(
@@ -2177,18 +2141,6 @@ export function generateParentReportV2(
     historyTopics,
     mistakeCountsBySubtopic: historyMistakesBySubtopic});
   maps.historySubtopics = historySubtopics;
-  const hebrewMistakesByTopic = filterMistakes(
-    hebrewMistakesRaw,
-    startMs,
-    endMs,
-    (m) => m.topic || m.operation
-  );
-  const moledetGeographyMistakesByTopic = filterMistakes(
-    moledetGeographyMistakesRaw,
-    startMs,
-    endMs,
-    (m) => m.topic || m.operation
-  );
 
   const rawMistakesBySubject = {
     math: mistakesInDateRange(mathMistakesRaw, startMs, endMs),
@@ -2218,22 +2170,12 @@ export function generateParentReportV2(
     historyMistakesBySubtopic,
     generateRecommendations
   );
-  const hebrewRecommendations = generateRecommendations(
-    hebrewTopics,
-    hebrewMistakesByTopic
-  );
-  const moledetGeographyRecommendations = generateRecommendations(
-    moledetGeographyTopics,
-    moledetGeographyMistakesByTopic
-  );
   const recommendations = [
     ...mathRecommendations,
     ...geometryRecommendations,
     ...englishRecommendations,
     ...scienceRecommendations,
-    ...historyRecommendations,
-    ...hebrewRecommendations,
-    ...moledetGeographyRecommendations];
+    ...historyRecommendations];
 
   let totalTimeMinutes = 0;
   [
@@ -2241,9 +2183,7 @@ export function generateParentReportV2(
     geometryTopics,
     englishTopics,
     scienceTopics,
-    historyTopics,
-    hebrewTopics,
-    moledetGeographyTopics].forEach((m) => {
+    historyTopics].forEach((m) => {
     Object.values(m).forEach((row) => {
       totalTimeMinutes += row.timeMinutes || 0;
     });
@@ -2267,18 +2207,7 @@ export function generateParentReportV2(
     ...Object.entries(scienceTopics)
       .filter(([_, d]) => d.needsPractice)
       .map(([_, d]) => `Science: ${d.displayName || getScienceTopicName(d.bucketKey)}`),
-    ...Object.entries(historyTopics)
-      .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `History: ${d.displayName || getHistoryTopicName(d.bucketKey)}`),
-    ...Object.entries(hebrewTopics)
-      .filter(([_, d]) => d.needsPractice)
-      .map(([_, d]) => `Hebrew: ${d.displayName || getHebrewTopicName(d.bucketKey)}`),
-    ...Object.entries(moledetGeographyTopics)
-      .filter(([_, d]) => d.needsPractice)
-      .map(
-        ([_, d]) =>
-          `Homeland & geography: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
-      )];
+  ];
 
   const excellent = [
     ...Object.entries(mathOperations)
@@ -2296,18 +2225,7 @@ export function generateParentReportV2(
     ...Object.entries(scienceTopics)
       .filter(([_, d]) => d.excellent && d.questions >= 10)
       .map(([_, d]) => `Science: ${d.displayName || getScienceTopicName(d.bucketKey)}`),
-    ...Object.entries(historyTopics)
-      .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `History: ${d.displayName || getHistoryTopicName(d.bucketKey)}`),
-    ...Object.entries(hebrewTopics)
-      .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(([_, d]) => `Hebrew: ${d.displayName || getHebrewTopicName(d.bucketKey)}`),
-    ...Object.entries(moledetGeographyTopics)
-      .filter(([_, d]) => d.excellent && d.questions >= 10)
-      .map(
-        ([_, d]) =>
-          `Homeland & geography: ${d.displayName || getMoledetGeographyTopicName(d.bucketKey)}`
-      )];
+  ];
 
   const dailyChallenge = safeGetJsonObject("mleo_daily_challenge");
   const weeklyChallenge = safeGetJsonObject("mleo_weekly_challenge");
@@ -2327,14 +2245,6 @@ export function generateParentReportV2(
     ),
     ...Object.fromEntries(
       Object.entries(historyTopics).map(([k, v]) => [`history_${k}`, v])
-    ),
-    ...Object.fromEntries(
-      Object.entries(hebrewTopics).map(([k, v]) => [`hebrew_${k}`, v])
-    ),
-    ...Object.fromEntries(
-      Object.entries(moledetGeographyTopics).map(([k, v]) => [
-        `moledet-geography_${k}`,
-        v])
     )};
 
   const mathAccuracy =
@@ -2356,16 +2266,6 @@ export function generateParentReportV2(
   const historyAccuracy =
     historyTotalQuestions > 0
       ? Math.round((historyTotalCorrect / historyTotalQuestions) * 100)
-      : 0;
-  const hebrewAccuracy =
-    hebrewTotalQuestions > 0
-      ? Math.round((hebrewTotalCorrect / hebrewTotalQuestions) * 100)
-      : 0;
-  const moledetGeographyAccuracy =
-    moledetGeographyTotalQuestions > 0
-      ? Math.round(
-          (moledetGeographyTotalCorrect / moledetGeographyTotalQuestions) * 100
-        )
       : 0;
 
   const mistakesBySubjectMaps = {
@@ -2411,19 +2311,15 @@ export function generateParentReportV2(
 
   enrichDiagnosticEngineV2WithProfessionalFrameworkV1(diagnosticEngineV2, maps, {
     mathQuestions: mathTotalQuestions,
-    hebrewQuestions: hebrewTotalQuestions,
     englishQuestions: englishTotalQuestions,
     scienceQuestions: scienceTotalQuestions,
     historyQuestions: historyTotalQuestions,
     geometryQuestions: geometryTotalQuestions,
-    moledetGeographyQuestions: moledetGeographyTotalQuestions,
     mathAccuracy,
-    hebrewAccuracy,
     englishAccuracy,
     scienceAccuracy,
     historyAccuracy,
     geometryAccuracy,
-    moledetGeographyAccuracy,
     totalQuestions});
 
   enrichDiagnosticEngineV2WithProfessionalEngineV1(
@@ -2431,17 +2327,13 @@ export function generateParentReportV2(
     maps,
     {
       mathQuestions: mathTotalQuestions,
-      hebrewQuestions: hebrewTotalQuestions,
       englishQuestions: englishTotalQuestions,
       scienceQuestions: scienceTotalQuestions,
       geometryQuestions: geometryTotalQuestions,
-      moledetGeographyQuestions: moledetGeographyTotalQuestions,
       mathAccuracy,
-      hebrewAccuracy,
       englishAccuracy,
       scienceAccuracy,
       geometryAccuracy,
-      moledetGeographyAccuracy,
       totalQuestions},
     {
       rawMistakesBySubject,
@@ -2550,9 +2442,7 @@ export function generateParentReportV2(
       englishTopics,
       scienceTopics,
       historyTopics,
-      historySubtopics,
-      hebrewTopics,
-      moledetGeographyTopics},
+      historySubtopics},
     rawMistakesBySubject
   );
   const hasV2Units = Array.isArray(diagnosticEngineV2?.units) && diagnosticEngineV2.units.length > 0;
@@ -2645,9 +2535,7 @@ export function generateParentReportV2(
     englishTopics: maps.englishTopics,
     scienceTopics: maps.scienceTopics,
     historyTopics: maps.historyTopics,
-    historySubtopics: maps.historySubtopics,
-    hebrewTopics: maps.hebrewTopics,
-    moledetGeographyTopics: maps.moledetGeographyTopics})) {
+    historySubtopics: maps.historySubtopics})) {
     if (!isCoreParentReportRow(row, registeredGradeKey)) continue;
     const acc = Number(row.accuracy) || 0;
     const q = Number(row.questions) || 0;
@@ -2659,8 +2547,6 @@ export function generateParentReportV2(
       totalQuestions,
       englishQuestions: englishTotalQuestions,
       englishAccuracy,
-      hebrewQuestions: hebrewTotalQuestions,
-      hebrewAccuracy,
       scienceQuestions: scienceTotalQuestions,
       scienceAccuracy,
       historyQuestions: historyTotalQuestions,
@@ -2668,9 +2554,7 @@ export function generateParentReportV2(
       mathQuestions: mathTotalQuestions,
       mathAccuracy,
       geometryQuestions: geometryTotalQuestions,
-      geometryAccuracy,
-      moledetGeographyQuestions: moledetGeographyTotalQuestions,
-      moledetGeographyAccuracy},
+      geometryAccuracy},
     null,
     weakSubjectIds,
   );
@@ -2681,9 +2565,7 @@ export function generateParentReportV2(
     geometryTopics,
     englishTopics,
     scienceTopics,
-    historyTopics,
-    hebrewTopics,
-    moledetGeographyTopics});
+    historyTopics});
 
   return {
     playerName,
@@ -2719,12 +2601,6 @@ export function generateParentReportV2(
       historyQuestions: historyTotalQuestions,
       historyCorrect: historyTotalCorrect,
       historyAccuracy,
-      hebrewQuestions: hebrewTotalQuestions,
-      hebrewCorrect: hebrewTotalCorrect,
-      hebrewAccuracy,
-      moledetGeographyQuestions: moledetGeographyTotalQuestions,
-      moledetGeographyCorrect: moledetGeographyTotalCorrect,
-      moledetGeographyAccuracy,
       stars,
       playerLevel,
       xp,
@@ -2740,8 +2616,6 @@ export function generateParentReportV2(
     scienceTopics,
     historyTopics,
     historySubtopics,
-    hebrewTopics,
-    moledetGeographyTopics,
     allItems,
     dailyActivity,
     analysis: {
@@ -2753,8 +2627,6 @@ export function generateParentReportV2(
       scienceMistakesByTopic,
       historyMistakesByTopic,
       historyMistakesBySubtopic,
-      hebrewMistakesByTopic,
-      moledetGeographyMistakesByTopic,
       recommendations},
     challenges: {
       daily: {

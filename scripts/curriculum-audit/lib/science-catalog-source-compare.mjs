@@ -9,7 +9,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 const registryMod = await import(pathToFileURL(join(ROOT, "utils/curriculum-audit/official-curriculum-source-registry.js")).href);
 const catalogMod = await import(pathToFileURL(join(ROOT, "utils/curriculum-audit/science-official-subsection-catalog.js")).href);
 const normMod = await import(pathToFileURL(join(ROOT, "utils/curriculum-audit/curriculum-topic-normalizer.js")).href);
-const mapMod = await import(pathToFileURL(join(ROOT, "utils/curriculum-audit/israeli-primary-curriculum-map.js")).href);
+const mapMod = await import(pathToFileURL(join(ROOT, "utils/curriculum-audit/official-primary-curriculum-spine.js")).href);
 
 const { OFFICIAL_CURRICULUM_SOURCE_REGISTRY } = registryMod;
 const { SCIENCE_OFFICIAL_SUBSECTION_CATALOG } = catalogMod;

@@ -49,7 +49,6 @@ const critical = [
   "utils/parent-copilot/pattern-answer-composers.js",
   "utils/parent-copilot/report-row-resolver.js",
   "utils/learning-pattern-decision/parent-pattern-label.js",
-  "utils/curriculum-audit/israeli-primary-curriculum-map.js",
   "utils/math-storage.js",
   "utils/student-question-stem-sanitizer.js",
   "utils/student-question-display.js",

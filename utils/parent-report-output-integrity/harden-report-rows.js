@@ -16,9 +16,7 @@ const SUBJECT_TOPIC_MAP_KEYS = [
   ["geometry", "geometryTopics"],
   ["english", "englishTopics"],
   ["science", "scienceTopics"],
-  ["history", "historyTopics"],
-  [ "hebrewTopics"],
-  [ "moledetGeographyTopics"]];
+  ["history", "historyTopics"]];
 
 /**
  * @param {string} subjectId

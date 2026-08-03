@@ -1,6 +1,5 @@
 {
   "copy": {
-    "homeland_geography": "Homeland & geography",
     "addition": "Addition",
     "subtraction": "Subtraction",
     "multiplication": "Multiplication",
@@ -64,7 +63,6 @@
     "speaking_and_discussion": "Speaking and discussion",
     "main_idea": "Main idea",
     "sequence": "Sequence",
-    "homeland": "Homeland",
     "community": "Community",
     "citizenship": "Citizenship",
     "geography": "Geography",

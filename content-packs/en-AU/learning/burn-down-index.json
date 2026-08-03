@@ -7,14 +7,6 @@
   "pages__learning__english-master": {
     "choose_grade_difficulty_and_topic_vocabulary_grammar_translation_writing": "Choose a year, difficulty, and topic (vocabulary, grammar, translation, writing, and more)."
   },
-  "utils__curriculum-audit__israeli-primary-curriculum-map": {
-    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "General policy context; early years often emphasize exposure/listening - verify formal literacy vs exposure per school.",
-    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "Years 1–2: grammar not assumed core; exposure/enrichment separation.",
-    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israel primary (years 1–6) - conservative structured mapping + advisory source anchors"
-  },
-  "utils__curriculum-audit__official-primary-curriculum-spine": {
-    "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu": "Israeli primary years 1–6 - source-anchored planning spine (not syllabus certification)"
-  },
   "utils__topic-next-step-engine": {
     "move_up_a_grade_same_topic_only": "Move up a year — same topic only",
     "try_a_lower_level_or_grade_then_advance_gradually": "Try a lower level or year, then advance gradually."

@@ -129,7 +129,6 @@
   "lib__parent-server__attach-unified-learning-time.server": {
     "asia_jerusalem": "Asia/Jerusalem"
   },
-  "lib__parent-ui__learning-time-exclusive-breakdown-display": {},
   "pages__api__learning-simulator__generate-expert-review-pack": {
     "missing_x_engine_review_token_header": "Ontbrekende x-engine-review-token-header",
     "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry": "Voer npm run qa:learning-simulator:professional-engine (PASS) uit en probeer het opnieuw."
@@ -176,8 +175,6 @@
     "mapped_from_math_generator_operation_topic_key": "In kaart gebracht vanuit de bewerking van de wiskundige generator/onderwerpsleutel.",
     "mapped_from_geometry_topic_generator_kind": "In kaart gebracht vanuit het geometrieonderwerp / soort generator.",
     "expand_geometry_strand_map_for_this_topic_kind": "Vouw de geometriestrengkaart uit voor dit onderwerp/soort.",
-    "mapped_from_hebrew_topics_key": "In kaart gebracht vanuit de Hebreeuwse TOPICS-sleutel.",
-    "unknown_hebrew_topic_bucket": "Unknown Hebreeuws topic bucket.",
     "vocabulary_games_map_to_lexis_translation_strand": "Woordenschatspellen wijzen naar lexis / vertaalstreng.",
     "writing_typing_modes_align_with_sentence_writing_strand": "De schrijf-/typemodi sluiten aan bij het schrijven van zinnen.",
     "mixed_practice_audit_often_skips_or_treats_as_composite": "Gemengde praktijk - audit wordt vaak overgeslagen of als samengesteld behandeld.",
@@ -185,23 +182,6 @@
     "expected_grammar_translation_sentence": "Verwachte grammatica | vertaling | zin.",
     "mapped_from_science_bank_topic_field": "In kaart gebracht vanuit het onderwerpveld van de wetenschapsbank.",
     "extend_science_domain_map": "Extend natuur en techniek domain map."
-  },
-  "utils__curriculum-audit__israeli-primary-curriculum-map": {
-    "internal_conservative_strand_mapping_liosh_audit_layer": "Interne conservatieve strengkartering (LIOSH-auditlaag)",
-    "repo_maintained_interpretation_requires_pedagogy_sign_off_before_any_rel": "Repo-onderhouden interpretatie - vereist pedagogische aftekening vóór elke vrijgavepoort.",
-    "general_framework_reference_only_does_not_map_individual_question_stems_": "Alleen algemene raamwerkreferentie; brengt individuele vragen niet in verband met uitkomsten.",
-    "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match": "Officieel portaal - gebruik voor beleidscontext; geen syllabus-match per regel.",
-    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "Algemene beleidscontext; In de eerste klassen wordt vaak de nadruk gelegd op blootstelling/luisteren – controleer formele geletterdheid versus blootstelling per school.",
-    "internal_strand_plane_shapes_recognition_audit": "Interne streng: herkenning van vlakke vormen (audit)",
-    "repo_interpretation_of_typical_early_shape_recognition_requires_pedagogy": "Repo-interpretatie van typische vroege vormherkenning - vereist pedagogische validatie.",
-    "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer": "De strengen komen overeen met de genormaliseerde math.*-sleutels van curriculum-topic-normalizer.js",
-    "separated_geometry_strands_do_not_collapse_to_one_topic": "Gescheiden geometriestrengen - val niet samen tot één onderwerp.",
-    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "Graad 1–2: grammatica wordt niet als kern beschouwd; scheiding van blootstelling/verrijking.",
-    "inventory_retained_curriculum_placement_deferred_confidence_low": "Voorraad behouden; plaatsing in het curriculum uitgesteld - vertrouwen laag.",
-    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israël elementair (graad 1–6) - conservatief gestructureerde kaarten + adviserende bronankers"
-  },
-  "utils__curriculum-audit__official-primary-curriculum-spine": {
-    "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu": "Israëlische basisklas 1–6 - bronverankerde planningsruggengraat (geen syllabuscertificering)"
   },
   "utils__diagnostic-engine-v2__run-diagnostic-engine-v2": {
     "mistakeeventv1_report_row": "FoutEventV1+rapport_rij",
@@ -388,7 +368,6 @@
     "hundreds": "Honderden"
   },
   "utils__parent-narrative-safety__parent-narrative-safety-fixtures": {
-    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Veilig Hebreeuws ouderverhaal met observerende toon en voldoende volume.",
     "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Dun bewijsmateriaal, maar expliciet voorzichtige hedging, mag dit niet blokkeren.",
     "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Dun bewijsmateriaal met sterke zekerheid en beheersingsclaim - blok.",
     "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Motorlijsten sluiten geen barrières af, maar tekst maakt gebruik van absolute zekerheid.",

@@ -101,22 +101,6 @@
     "verb_forms": "Verbformen",
     "sentence_structure": "Satzstruktur"
   },
-  "homelandGeographyTopics": {
-    "homeland": "Heimatkunde",
-    "community": "Gemeinschaft",
-    "citizenship": "Staatsbürgerschaft",
-    "geography": "Geografie",
-    "basic_geography": "Geografie-Grundlagen",
-    "values": "Werte",
-    "maps": "Karten",
-    "map_reading": "Kartenlesen",
-    "directions": "Richtungen",
-    "places": "Orte",
-    "maps_basic": "Einfache Karten",
-    "regions": "Regionen",
-    "history": "Geschichte",
-    "mixed": "Gemischte Themen"
-  },
   "snippets": {
     "word": "wortbasiert",
     "problems": "Aufgaben",
@@ -169,7 +153,6 @@
     "context": "Kontext",
     "logical": "logische Folge",
     "sequence": "Folge",
-    "homeland": "Heimatkunde",
     "geography": "Geografie"
   },
   "generics": {

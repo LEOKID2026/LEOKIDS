@@ -42,9 +42,8 @@ export function assertTableLabelsStayClean(baseReport) {
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
     ["science", "scienceTopics"],
-    ["hebrewTopics"],
-    ["moledetGeographyTopics"]];
-  for (const [ mk] of maps) {
+    ["history", "historyTopics"]];
+  for (const [, mk] of maps) {
     const tm = baseReport?.[mk];
     if (!tm) continue;
     for (const [trk, row] of Object.entries(tm)) {

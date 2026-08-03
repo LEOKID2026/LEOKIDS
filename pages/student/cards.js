@@ -11,6 +11,7 @@ import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-loca
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
 import { formatCoinAmountHe, formatCoinAmountNumberHe } from "../../lib/rewards/rewards-ui.js";
+import { resolveGlobalRewardCardDisplay } from "../../lib/rewards/reward-card-global-display.js";
 import { useRewardUiCopy } from "../../lib/rewards/reward-locale-context.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
 import { isDemoMode, buildDemoDisplayStudent, readDemoSession } from "../../lib/demo/demo-mode.client.js";
@@ -476,11 +477,17 @@ export default function StudentCardsPage() {
         return;
       }
       setMessageIsError(false);
-      setMessageHe(
-        copy("shop", "purchaseSuccess", {
-          name: json.card?.name_he || json.card?.nameHe || copy("fallback", "rewardCard"),
-        }),
-      );
+      {
+        const purchasedName = resolveGlobalRewardCardDisplay({
+          cardKey: json.card?.card_key || json.card?.cardKey,
+          nameHe: json.card?.nameHe,
+        }).name;
+        setMessageHe(
+          copy("shop", "purchaseSuccess", {
+            name: purchasedName || copy("fallback", "rewardCard"),
+          }),
+        );
+      }
       if (json.balanceAfter != null) {
         setStudent((prev) => (prev ? { ...prev, coin_balance: json.balanceAfter } : prev));
       }
@@ -531,12 +538,18 @@ export default function StudentCardsPage() {
         return;
       }
       setMessageIsError(false);
-      setMessageHe(
-        copy("shopView", "sellSuccess", {
-          name: json.card?.name_he || json.card?.nameHe || card.nameHe,
-          amount: formatCoinAmountHe(json.sellbackCoins || 0),
-        }),
-      );
+      {
+        const soldName = resolveGlobalRewardCardDisplay({
+          cardKey: json.card?.card_key || json.card?.cardKey || card.card_key || card.cardKey,
+          nameHe: json.card?.nameHe || card.nameHe,
+        }).name;
+        setMessageHe(
+          copy("shopView", "sellSuccess", {
+            name: soldName || copy("fallback", "rewardCard"),
+            amount: formatCoinAmountHe(json.sellbackCoins || 0),
+          }),
+        );
+      }
       if (json.balanceAfter != null) {
         setStudent((prev) => (prev ? { ...prev, coin_balance: json.balanceAfter } : prev));
       }

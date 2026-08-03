@@ -101,22 +101,6 @@
     "verb_forms": "Формы глаголов",
     "sentence_structure": "Структура предложения"
   },
-  "homelandGeographyTopics": {
-    "homeland": "Изучение родины",
-    "community": "Сообщество",
-    "citizenship": "Гражданственность",
-    "geography": "География",
-    "basic_geography": "Основы географии",
-    "values": "Ценности",
-    "maps": "Карты",
-    "map_reading": "Чтение карты",
-    "directions": "Направления",
-    "places": "Места",
-    "maps_basic": "Базовые карты",
-    "regions": "Регионы",
-    "history": "История",
-    "mixed": "Смешанные темы"
-  },
   "snippets": {
     "word": "по словам",
     "problems": "задачи",
@@ -169,7 +153,6 @@
     "context": "контекст",
     "logical": "логическая последовательность",
     "sequence": "последовательность",
-    "homeland": "изучение родины",
     "geography": "география"
   },
   "generics": {

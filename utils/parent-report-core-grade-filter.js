@@ -155,8 +155,6 @@ const REPORT_TOPIC_MAP_KEYS = [
   "englishTopics",
   "scienceTopics",
   "historyTopics",
-  "hebrewTopics",
-  "moledetGeographyTopics",
 ];
 
 /**

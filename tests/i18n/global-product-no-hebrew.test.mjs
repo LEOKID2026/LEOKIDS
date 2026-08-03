@@ -1,12 +1,11 @@
 /**
- * Global product guard: no Hebrew in runtime/data/content outside allowlisted paths.
- * Admin / dev / prototypes may retain Hebrew.
+ * Global product guard: no Hebrew / Israeli residue in user-facing production surfaces.
+ * Admin / Dev / prototypes / comment-only Hebrew remain exempt.
  */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { LOCALE_REGISTRY } from "../../lib/i18n/locale-registry.js";
 import { WORD_LISTS } from "../../data/english-questions/word-lists.js";
@@ -14,79 +13,77 @@ import { WORD_MEANINGS_ES_419 } from "../../data/english-questions/word-meanings
 import { resolveEnglishWordMeaning } from "../../data/english-questions/word-meanings-locale.js";
 import { generateQuestion, ENGLISH_LEVELS } from "../../utils/english-question-generator.js";
 import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "../..");
-const HE = /[\u0590-\u05FF]/;
-
-/** Path segments / prefixes allowed to contain Hebrew (excluded product areas). */
-const ALLOW_PATH_RE = new RegExp(
-  String.raw`(^|[/\\])(admin|dev|prototypes|prototype|dev-student-simulator)([/\\]|$)|[/\\]admin-[^/\\]+|admin-ui\.he\.|admin-analytics|admin-video|admin-portal|admin-server|teacher-ui\.he\.|teacher-activity-report-pdf-he|(^|/)lib/auth/[^/]+\.he\.js$`,
-  "i"
-);
-
-const SCAN_ROOTS = [
-  "data",
-  "utils",
-  "lib",
-  "pages",
-  "components",
-  "content-packs",
-  "locales",
-  "hooks",
-];
-
-function isAllowed(rel) {
-  const n = rel.replace(/\\/g, "/");
-  if (ALLOW_PATH_RE.test(n)) return true;
-  // Curriculum oracle / israeli audit / language-review drafts — not student UI; still product debt.
-  // Do NOT allowlist them — they must be cleaned or moved. For now report as failures if HE found.
-  return false;
-}
-
-function walkFiles(dir, out = []) {
-  if (!fs.existsSync(dir)) return out;
-  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (
-      ["node_modules", ".next", "exports", "docs", "curriculum-oracle", "language-review"].includes(
-        ent.name
-      )
-    ) {
-      // Skip oracle/language-review dumps from this guard (tracked separately as non-runtime).
-      if (ent.name === "curriculum-oracle" || ent.name === "language-review") continue;
-      if (ent.isDirectory()) continue;
-    }
-    const p = path.join(dir, ent.name);
-    const rel = path.relative(ROOT, p).replace(/\\/g, "/");
-    if (ent.isDirectory()) {
-      if (["node_modules", ".next", "exports", "docs"].includes(ent.name)) continue;
-      walkFiles(p, out);
-      continue;
-    }
-    if (!/\.(js|mjs|cjs|jsx|ts|tsx|json)$/i.test(ent.name)) continue;
-    out.push(rel);
-  }
-  return out;
-}
+import {
+  HE,
+  ROOT,
+  SCAN_ROOTS,
+  collectProductionGuardFindings,
+  isAllowedPath,
+  scanTextForGlobalHebrewGuards,
+  stripCommentsForScan,
+  textHasHebrewUnicode,
+} from "./_global-hebrew-guard-lib.mjs";
 
 describe("Global product — no active Hebrew", () => {
-  test("no Hebrew Unicode in product runtime/data/content (allowlist admin/dev/proto)", () => {
-    const offenders = [];
-    for (const root of SCAN_ROOTS) {
-      for (const rel of walkFiles(path.join(ROOT, root))) {
-        if (isAllowed(rel)) continue;
-        // Parent-copilot HE utterance banks & report HE normalizers: still present as named *-he.js
-        // Require them clean OR allowlist only matcher files that don't ship student stems.
-        const text = fs.readFileSync(path.join(ROOT, rel), "utf8");
-        if (!HE.test(text)) continue;
-        // Allow pure bidirectional / layout utilities that mention Hebrew in comments only? No — zero HE chars.
-        offenders.push(rel);
-      }
-    }
+  test("synthetic Hebrew SVG/string is detected by Unicode guard", () => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg"><text>שלום</text></svg>`;
+    const hit = scanTextForGlobalHebrewGuards(svg, { rel: "synthetic.svg" });
+    assert.equal(hit.hebrew, true);
+    const clean = scanTextForGlobalHebrewGuards(`<svg><text>Hello</text></svg>`, {
+      rel: "synthetic.svg",
+    });
+    assert.equal(clean.hebrew, false);
+  });
+
+  test("synthetic Israeli residue key is detected; generic History/Hebrew alone is not", () => {
+    const dirty = scanTextForGlobalHebrewGuards(
+      JSON.stringify({ title: "Hasmonaean timeline", slug: "israeli-primary-curriculum-map" }),
+      { rel: "synthetic.json" }
+    );
+    assert.ok(dirty.residue.length >= 1);
+    const generic = scanTextForGlobalHebrewGuards(
+      JSON.stringify({ subject: "History", note: "Hebrew as a language discussion" }),
+      { rel: "synthetic.json" }
+    );
+    assert.deepEqual(generic.residue, []);
+  });
+
+  test("Admin/Dev path exemption works", () => {
+    assert.equal(isAllowedPath("pages/admin/tools.js"), true);
+    assert.equal(isAllowedPath("pages/dev/sandbox.jsx"), true);
+    assert.equal(isAllowedPath("components/admin/Panel.jsx"), true);
+    assert.equal(isAllowedPath("components/prototypes/X.jsx"), true);
+    assert.equal(isAllowedPath("lib/admin-portal/labels.js"), true);
+    assert.equal(isAllowedPath("lib/auth/auth-registration-request.server.he.js"), true);
+    assert.equal(isAllowedPath("public/rewards/cards/placeholders/gold/default.svg"), false);
+    assert.equal(isAllowedPath("locales/en/common.json"), false);
+  });
+
+  test("comment-only Hebrew is exempt from rendered scan", () => {
+    const swComment = `// Cache רק קבצים סטטיים אמיתיים`;
+    const hit = scanTextForGlobalHebrewGuards(swComment, { rel: "public/sw.js" });
+    assert.equal(hit.hebrew, false);
+    assert.equal(textHasHebrewUnicode(stripCommentsForScan(swComment, "public/sw.js")), false);
+  });
+
+  test("no Hebrew Unicode in product runtime/data/content/public (allowlist admin/dev/proto/comments)", () => {
+    const { hebrew } = collectProductionGuardFindings();
     assert.deepEqual(
-      offenders.slice(0, 40),
+      hebrew.slice(0, 40),
       [],
-      `Hebrew found in ${offenders.length} product files. First: ${offenders.slice(0, 15).join(", ")}`
+      `Hebrew found in ${hebrew.length} product files. First: ${hebrew.slice(0, 15).join(", ")}`
+    );
+  });
+
+  test("no translated Israeli residue in scanned production surfaces", () => {
+    const { residue } = collectProductionGuardFindings();
+    assert.deepEqual(
+      residue.slice(0, 25).map((r) => r.rel),
+      [],
+      `Israeli residue in ${residue.length} files. First: ${residue
+        .slice(0, 10)
+        .map((r) => `${r.rel}[${r.patterns.join("|")}]`)
+        .join(", ")}`
     );
   });
 
@@ -121,11 +118,9 @@ describe("Global product — no active Hebrew", () => {
 
   test("WORD_LISTS has no Hebrew; meanings coverage complete", () => {
     let entries = 0;
-    const ids = new Set();
     for (const [listKey, list] of Object.entries(WORD_LISTS)) {
       for (const [id, gloss] of Object.entries(list)) {
         entries += 1;
-        ids.add(id);
         assert.equal(HE.test(String(gloss)), false);
         assert.equal(HE.test(id), false);
         const es = WORD_MEANINGS_ES_419[listKey]?.[id];
@@ -133,7 +128,6 @@ describe("Global product — no active Hebrew", () => {
         assert.equal(HE.test(es), false);
       }
     }
-    // orphans
     for (const [listKey, list] of Object.entries(WORD_MEANINGS_ES_419)) {
       for (const id of Object.keys(list)) {
         assert.ok(WORD_LISTS[listKey]?.[id] != null, `orphan ${listKey}.${id}`);
@@ -151,8 +145,6 @@ describe("Global product — no active Hebrew", () => {
 
   test("Global diagnostic framework has only four subjects", () => {
     const fw = resolveRegisteredContentPack("en", "learning", "diagnostic-framework-v1.json");
-    const subjects = fw?.subjects || fw?.subjectOrder || Object.keys(fw?.bySubject || fw?.skills || {});
-    // Flexible: look for subject list field
     const listed = Array.isArray(fw?.subjects)
       ? fw.subjects
       : Array.isArray(fw?.subjectOrder)
@@ -182,5 +174,32 @@ describe("Global product — no active Hebrew", () => {
       }
     }
     walk(dir);
+  });
+
+  test("scan roots include public/**", () => {
+    assert.ok(SCAN_ROOTS.includes("public"));
+    assert.ok(SCAN_ROOTS.includes("locales"));
+    assert.ok(SCAN_ROOTS.includes("content-packs"));
+    assert.ok(SCAN_ROOTS.includes("data/help-center"));
+  });
+
+  test("reward card placeholder SVGs have zero Hebrew", () => {
+    const dir = path.join(ROOT, "public/rewards/cards/placeholders");
+    for (const tier of ["regular", "gold", "rare", "special"]) {
+      const abs = path.join(dir, tier, "default.svg");
+      const svg = fs.readFileSync(abs, "utf8");
+      assert.equal(HE.test(svg), false, abs);
+    }
+  });
+
+  test("en reward catalog does not expose Hebrew Star or Homeland Explorer", () => {
+    const catalogPath = path.join(ROOT, "content-packs/en/rewards/card-catalog.json");
+    const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+    const cards = catalog.cards || {};
+    assert.equal(Object.prototype.hasOwnProperty.call(cards, "achievement_hebrew_star"), false);
+    assert.equal(Object.prototype.hasOwnProperty.call(cards, "achievement_moledet_explorer"), false);
+    const blob = JSON.stringify(cards);
+    assert.equal(/Hebrew Star/.test(blob), false);
+    assert.equal(/Homeland Explorer/.test(blob), false);
   });
 });

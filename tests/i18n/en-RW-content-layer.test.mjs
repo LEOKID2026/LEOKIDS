@@ -572,20 +572,13 @@ test("en-RW has no local overrides under Israeli curriculum authority slugs", ()
     false
   );
 
-  // Base en still owns the authority path; en-RW inherits (no local leaf).
+  // English base no longer registers the Israeli curriculum audit map.
   const enLearningIndex = JSON.parse(
     fs.readFileSync(path.join(ROOT, "content-packs", "en", "learning/burn-down-index.json"), "utf8")
   );
-  assert.ok(enLearningIndex["utils__curriculum-audit__israeli-primary-curriculum-map"]);
-  assert.match(
-    enLearningIndex["utils__curriculum-audit__israeli-primary-curriculum-map"]
-      .strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer,
-    /math\.\*/
-  );
-  assert.match(
-    enLearningIndex["utils__curriculum-audit__israeli-primary-curriculum-map"]
-      .grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation,
-    /Grades 1–2/
+  assert.equal(
+    enLearningIndex["utils__curriculum-audit__israeli-primary-curriculum-map"],
+    undefined
   );
 
   // English-medium public framing remains intact after residue cleanup.

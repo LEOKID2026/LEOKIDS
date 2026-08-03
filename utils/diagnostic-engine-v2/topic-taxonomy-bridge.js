@@ -68,18 +68,6 @@ const ENGLISH_TOPIC_TO_IDS = {
 };
 
 /** @type {Record<string, string[]>} */
-const HEBREW_TOPIC_TO_IDS = {
-  vocabulary: ["H-01"],
-  grammar: ["H-02", "H-06"],
-  writing: ["H-03", "H-07"],
-  reading: ["H-04"],
-  comprehension: ["H-04"],
-  homophones: ["H-05"],
-  speaking: ["H-08"],
-  mixed: ["H-01"]
-};
-
-/** @type {Record<string, string[]>} */
 const SCIENCE_TOPIC_TO_IDS = {
   body: ["S-03"],
   animals: ["S-01", "S-08"],
@@ -91,27 +79,6 @@ const SCIENCE_TOPIC_TO_IDS = {
   mixed: ["S-01"]
 };
 
-/** @type {Record<string, string[]>} */
-const HISTORY_TOPIC_TO_IDS = {
-  what_is_history: ["H-01", "H-08"],
-  classical_greece: ["H-04", "H-06", "H-07"],
-  hellenism_jews: ["H-03", "H-05"],
-  hasmonaeans: ["H-02", "H-03", "H-05", "H-06"],
-  rome_jews: ["H-02", "H-03", "H-05", "H-06", "H-09"],
-  mixed: ["H-01"]
-};
-
-/** @type {Record<string, string[]>} */
-const MOLEDET_TOPIC_TO_IDS = {
-  maps: ["MG-01", "MG-02", "MG-08"],
-  geography: ["MG-01", "MG-02", "MG-05"],
-  citizenship: ["MG-03"],
-  homeland: ["MG-04", "MG-06"],
-  community: ["MG-07"],
-  values: ["MG-06"],
-  mixed: ["MG-01"]
-};
-
 /**
  * Product bucket aliases → canonical keys that exist in taxonomy maps above.
  * No invented taxonomy — only redirects to keys already mapped.
@@ -120,7 +87,6 @@ const MOLEDET_TOPIC_TO_IDS = {
 const TOPIC_BUCKET_ALIASES = {
   shapes: "shapes_basic",
   sentence: "sentences",
-  map: "maps",
   human_body: "body"
 };
 
@@ -182,10 +148,7 @@ export function taxonomyIdsForReportBucketLegacy(subjectId, bucketKeyRaw) {
   if (subjectId === "science") {
     return SCIENCE_TOPIC_TO_IDS[bucketKey] ? [...SCIENCE_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  if (subjectId === "history") {
-    return HISTORY_TOPIC_TO_IDS[bucketKey] ? [...HISTORY_TOPIC_TO_IDS[bucketKey]] : [];
-  }
-  
+
   return [];
 }
 
@@ -214,13 +177,10 @@ export function taxonomyIdsForReportBucket(subjectId, bucketKeyRaw) {
   if (sid === "english") {
     return ENGLISH_TOPIC_TO_IDS[bucketKey] ? [...ENGLISH_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  
+
   if (sid === "science") {
     return SCIENCE_TOPIC_TO_IDS[bucketKey] ? [...SCIENCE_TOPIC_TO_IDS[bucketKey]] : [];
   }
-  if (sid === "history") {
-    return HISTORY_TOPIC_TO_IDS[bucketKey] ? [...HISTORY_TOPIC_TO_IDS[bucketKey]] : [];
-  }
-  
+
   return [];
 }

@@ -14,7 +14,7 @@ const INV_PATH = join(OUT_DIR, "question-inventory.json");
 
 async function loadMap() {
   return import(
-    pathToFileURL(join(ROOT, "utils/curriculum-audit/israeli-primary-curriculum-map.js")).href
+    pathToFileURL(join(ROOT, "utils/curriculum-audit/official-primary-curriculum-spine.js")).href
   );
 }
 

@@ -58,8 +58,7 @@ test("hebrew_writing pack keys are not wired into grade-aware template bank", ()
   assert.equal(heWriting, null);
 });
 
-test("history template strings exist in en pack but SCT/NIR resolved parent report omits them", () => {
-  // Template bank can resolve history when called directly (IL artifact).
+test("Israeli history recommendations are unsupported in en authority; SCT/NIR demo reports omit them", () => {
   const historyDirect = resolveGradeAwareParentRecommendationHe({
     subjectId: "history",
     gradeKey: "g6",
@@ -67,21 +66,25 @@ test("history template strings exist in en pack but SCT/NIR resolved parent repo
     bucketKey: "hasmonaeans",
     slot: "action",
   });
-  assert.ok(historyDirect && /Hasmonaean/i.test(historyDirect));
+  assert.equal(historyDirect, null);
 
-  // Grade-aware templates bake reportPackCopy("en") — country overlays are not the runtime authority.
   const enCourse = reportPackCopy(
     "utils__parent-report-language__grade-aware-recommendation-templates",
     "grade_6_hasmonaean_timeline_sequencing"
   );
-  assert.match(enCourse, /Hasmonaean|Grade 6/i);
+  assert.ok(
+    enCourse == null ||
+      enCourse === "" ||
+      enCourse === "grade_6_hasmonaean_timeline_sequencing" ||
+      !/Hasmonaean/i.test(String(enCourse))
+  );
   const sctCourse = reportPackCopyForLocale(
     "en-SCT",
     "utils__parent-report-language__grade-aware-recommendation-templates",
     "grade_6_hasmonaean_timeline_sequencing"
   );
-  // Locale pack may differ, but parent report composition never surfaces history for global product.
-  assert.ok(typeof sctCourse === "string");
+  // Country overlays may still carry copied residue until the country cleanup pass.
+  assert.ok(sctCourse == null || typeof sctCourse === "string");
 
   const built = buildDemoParentReportPayload(
     "demo-parent-child-noam-g2",

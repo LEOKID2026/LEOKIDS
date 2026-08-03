@@ -135,8 +135,7 @@ export function buildDuplicateCanonicalTopicKeysFromBaseReport(baseReport) {
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
     ["science", "scienceTopics"],
-    ["hebrewTopics"],
-    ["moledetGeographyTopics"]];
+    ["history", "historyTopics"]];
   for (const [sid, mk] of maps) {
     const tm = baseReport?.[mk];
     if (!tm) continue;

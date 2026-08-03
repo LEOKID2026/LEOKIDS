@@ -15,7 +15,7 @@ const OUT_DIR = join(ROOT, "reports", "curriculum-audit");
 
 async function loadCurriculumMapModule() {
   const href = pathToFileURL(
-    join(ROOT, "utils/curriculum-audit/israeli-primary-curriculum-map.js")
+    join(ROOT, "utils/curriculum-audit/official-primary-curriculum-spine.js")
   ).href;
   return import(href);
 }

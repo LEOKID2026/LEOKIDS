@@ -92,26 +92,6 @@
         "description": "Gana esta carta: Gran oyente"
       }
     },
-    "achievement_hebrew_star": {
-      "cardKey": "achievement_hebrew_star",
-      "title": "Estrella del hebreo",
-      "description": "Gana esta carta: Estrella del hebreo",
-      "category": "logro",
-      "accessibility": {
-        "title": "Estrella del hebreo",
-        "description": "Gana esta carta: Estrella del hebreo"
-      }
-    },
-    "achievement_moledet_explorer": {
-      "cardKey": "achievement_moledet_explorer",
-      "title": "Explorador de la patria",
-      "description": "Gana esta carta: Explorador de la patria",
-      "category": "logro",
-      "accessibility": {
-        "title": "Explorador de la patria",
-        "description": "Gana esta carta: Explorador de la patria"
-      }
-    },
     "achievement_multiplication_champion": {
       "cardKey": "achievement_multiplication_champion",
       "title": "Campeón de la multiplicación",

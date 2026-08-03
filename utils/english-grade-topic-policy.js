@@ -3,7 +3,6 @@
  */
 
 import { ENGLISH_GRADES } from "../data/english-curriculum.js";
-import { findTopicPlacement } from "./curriculum-audit/israeli-primary-curriculum-map.js";
 
 /** Representative normalized keys for UI topic tabs (prefix-match via curriculum map). */
 export const ENGLISH_TOPIC_TO_REP_NORM = {
@@ -66,25 +65,15 @@ export function assertAllEnglishGradesTopicPolicy() {
   return { ok: violations.length === 0, violations };
 }
 
-/**
- * Conservative map: each visible topic must resolve to a strand that is not notExpectedYet for that grade.
- */
+/** Global product has no Israeli curriculum map — placement asserts are notional no-ops. */
 export function assertEnglishTopicsCurriculumPlaced(gradeKey) {
-  const g = Number(String(gradeKey).replace("g", ""));
   const topics = ENGLISH_GRADES[gradeKey]?.topics || [];
   /** @type {string[]} */
   const violations = [];
   for (const t of topics) {
     if (t === "mixed") continue;
-    const nk = ENGLISH_TOPIC_TO_REP_NORM[t];
-    if (!nk) {
+    if (!ENGLISH_TOPIC_TO_REP_NORM[t]) {
       violations.push(`${gradeKey}: unknown topic key "${t}"`);
-      continue;
-    }
-    const hit = findTopicPlacement("english", g, nk);
-    if (!hit) violations.push(`${gradeKey}: topic "${t}" (${nk}) has no curriculum placement`);
-    else if (hit.bucket === "notExpectedYet") {
-      violations.push(`${gradeKey}: topic "${t}" (${nk}) is notExpectedYet in conservative map`);
     }
   }
   return { ok: violations.length === 0, violations };

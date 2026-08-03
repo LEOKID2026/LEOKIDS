@@ -1,11 +1,10 @@
 /**
- * Global subject evidence tiers for parent reports (all six subjects).
+ * Global subject evidence tiers for parent reports (active global subjects).
  * - none: 0 questions — no diagnostic conclusions
  * - thin: 1..VALID_MIN-1 — cautious wording only
  * - valid: VALID_MIN+ — may appear in insights/recommendations
  */
 
-import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   PARENT_EVIDENCE_VOLUME,
   SUBJECT_VALID_MIN_QUESTIONS} from "./parent-evidence-matrix.js";
@@ -13,29 +12,19 @@ import { effectivePracticeAnswerCount } from "../../lib/learning/report-practice
 
 export { SUBJECT_VALID_MIN_QUESTIONS };
 
-/** Card-visible labels (+ aliases used in parentFacing insights). */
+/** Card-visible labels (+ aliases used in parentFacing insights). Active global subjects only. */
 export const SUBJECT_VISIBLE_LABELS_HE = Object.freeze({
   math: ["Math", "Arithmetic"],
   geometry: ["Geometry"],
   english: ["English"],
-  science: ["Science"],
-  history: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "history")],
-  
-  
-  
-  geography: [reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography")]});
+  science: ["Science"]});
 
-/** Primary label per subject id (matches subject cards). */
+/** Primary label per subject id (matches subject cards). Active global subjects only. */
 export const SUBJECT_LABEL_BY_ID = Object.freeze({
   math: "Math",
   geometry: "Geometry",
   english: "English",
-  science: "Science",
-  history: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "history"),
-  
-  
-  
-  geography: reportPackCopy("utils__parent-report-language__subject-evidence-policy", "geography")});
+  science: "Science"});
 
 export const SUBJECT_EVIDENCE_TIER = Object.freeze({
   none: "none",

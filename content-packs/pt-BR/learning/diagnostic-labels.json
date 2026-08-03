@@ -101,22 +101,6 @@
     "verb_forms": "Formas verbais",
     "sentence_structure": "Estrutura da frase"
   },
-  "homelandGeographyTopics": {
-    "homeland": "Estudos da pátria",
-    "community": "Comunidade",
-    "citizenship": "Cidadania",
-    "geography": "Geografia",
-    "basic_geography": "Noções básicas de geografia",
-    "values": "Valores",
-    "maps": "Mapas",
-    "map_reading": "Leitura de mapa",
-    "directions": "Instruções",
-    "places": "Lugares",
-    "maps_basic": "Mapas básicos",
-    "regions": "Regiões",
-    "history": "História",
-    "mixed": "Tópicos mistos"
-  },
   "snippets": {
     "word": "word-based",
     "problems": "problemas",
@@ -169,7 +153,6 @@
     "context": "contexto",
     "logical": "sequência lógica",
     "sequence": "sequência",
-    "homeland": "estudos da pátria",
     "geography": "geografia"
   },
   "generics": {

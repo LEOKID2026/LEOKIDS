@@ -16,7 +16,7 @@ const modUrl = (rel) => pathToFileURL(join(ROOT, rel)).href;
 
 const { ENGLISH_GRADES, ENGLISH_GRADE_ORDER } = await import(modUrl("data/english-curriculum.js"));
 const { ENGLISH_TOPIC_TO_REP_NORM } = await import(modUrl("utils/english-grade-topic-policy.js"));
-const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/israeli-primary-curriculum-map.js"));
+const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/official-primary-curriculum-spine.js"));
 const {
   buildEnglishRuntimeVsOfficialSummary,
   summarizeEnglishRegistry,
@@ -267,7 +267,7 @@ async function main() {
       inventoryPath: inv.path,
       primaryOwnerPdf: "תוכנית משרד החינוך/english Curriculum2020.pdf",
       notes: [
-        "Closure uses conservative israeli-primary-curriculum-map English strands — not a full PDF transcription.",
+        "Closure uses conservative official-primary-curriculum-spine (empty global) English strands — not a full PDF transcription.",
         "Pool stem variety aggregates all stems eligible per grade after grade-gating — advisory only.",
       ],
     },

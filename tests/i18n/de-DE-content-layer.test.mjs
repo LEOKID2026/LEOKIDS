@@ -66,10 +66,18 @@ test("de-DE learning-book path parity with en", () => {
 });
 
 test("de-DE content-packs file count parity with en domains", () => {
+  // Israeli/Hebrew-only pack leaves may be removed from country layers while remaining
+  // on en for explicit-he / exempt teacher-PDF paths — exclude them from parity counts.
+  const israeliOnlyLeaf =
+    /israeli-primary-curriculum-map|official-primary-curriculum-spine|teacher-activity-report-pdf-he/i;
   const domains = ["learning", "reports", "games", "books", "rewards", "global-burn-down", "demo"];
   for (const d of domains) {
-    const en = walkJson(path.join(ROOT, "content-packs/en", d)).length;
-    const de = walkJson(path.join(ROOT, "content-packs/de-DE", d)).length;
+    const en = walkJson(path.join(ROOT, "content-packs/en", d)).filter(
+      (f) => !israeliOnlyLeaf.test(f)
+    ).length;
+    const de = walkJson(path.join(ROOT, "content-packs/de-DE", d)).filter(
+      (f) => !israeliOnlyLeaf.test(f)
+    ).length;
     assert.equal(de, en, d);
   }
 });

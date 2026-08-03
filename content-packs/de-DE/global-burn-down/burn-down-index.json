@@ -259,7 +259,6 @@
     "learning_music": "Learning music",
     "educational_instruction_voice": "Educational instruction voice",
     "educational_feedback_voice": "Educational feedback voice",
-    "hebrew_question_voice": "Hebrew question voice",
     "english_phonics_voice": "Englisch phonics voice",
     "diamond_collect": "Diamond collect",
     "star_collect": "Star collect",
@@ -318,7 +317,6 @@
     "regular": "Standard",
     "advanced": "Fortgeschritten"
   },
-  "lib__learning__question-metadata-validator": {},
   "lib__learning__report-visible-practice-sync": {
     "learning": "Lernen",
     "practice": "Übung",
@@ -466,9 +464,6 @@
   "lib__teacher-portal__teacher-activity-report-export": {
     "activity_report": "Activity report",
     "correct_out_of_all_answers": "Correct out of all answers"
-  },
-  "lib__teacher-portal__teacher-activity-report-pdf-he": {
-    "notosanshebrew_regular_ttf": "NotoSansHebrew-Regular.ttf"
   },
   "lib__teacher-portal__teacher-activity-report-pdf": {
     "activity_report_teacher": "Activity report — Lehrkraft",
@@ -909,7 +904,6 @@
     "find_x": "Find x:"
   },
   "utils__student-question-stem-sanitizer": {
-    "hebrew_level_prefix": "Hebrew level prefix",
     "english_level_token_as_metadata": "Englisch level token as metadata"
   }
 }

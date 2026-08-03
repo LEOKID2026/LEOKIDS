@@ -142,19 +142,15 @@ function subjectsMentionedInUtterance(utterance, payload) {
     const idx = u.indexOf(lab);
     if (idx >= 0) hits.push({ sid, idx, len: lab.length });
   }
-  /** Informal wording parents use (e.g. "reading" ≈ Hebrew / literacy). Longer needles first. */
+  /** Informal wording parents use. Longer needles first. */
   const informalNeedles = [
     ["reading words"],
     ["Reading sentences"],
     ["Reading comprehension"],
     ["math", "Math"],
-    [],
     ["english", "English"],
     ["science", "Science"],
     ["geometry", "Geometry"],
-    ["Homeland & Geography"],
-    ["Homeland Studies"],
-    ["math", "Math"],
     ["Reading"]
   ];
   for (const [sid, needle] of informalNeedles) {

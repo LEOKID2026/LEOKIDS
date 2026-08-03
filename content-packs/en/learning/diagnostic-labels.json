@@ -96,26 +96,9 @@
     "sequence": "Sequence",
     "inference": "Inference",
     "fact_vs_opinion": "Fact vs. opinion",
-    "vowels_reading": "Vowel reading",
     "plurals": "Plurals",
     "verb_forms": "Verb forms",
     "sentence_structure": "Sentence structure"
-  },
-  "homelandGeographyTopics": {
-    "homeland": "Homeland studies",
-    "community": "Community",
-    "citizenship": "Citizenship",
-    "geography": "Geography",
-    "basic_geography": "Geography basics",
-    "values": "Values",
-    "maps": "Maps",
-    "map_reading": "Map reading",
-    "directions": "Directions",
-    "places": "Places",
-    "maps_basic": "Basic maps",
-    "regions": "Regions",
-    "history": "History",
-    "mixed": "Mixed topics"
   },
   "snippets": {
     "word": "word-based",
@@ -169,7 +152,6 @@
     "context": "context",
     "logical": "logical sequence",
     "sequence": "sequence",
-    "homeland": "homeland studies",
     "geography": "geography"
   },
   "generics": {

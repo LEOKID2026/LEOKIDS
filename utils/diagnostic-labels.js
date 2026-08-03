@@ -12,8 +12,6 @@ const OPERATION_NAMES_EN = diagnosticLabelsEn.operations;
 const GEOMETRY_TOPIC_NAMES_EN = diagnosticLabelsEn.geometryTopics;
 const ENGLISH_TOPIC_NAMES_EN = diagnosticLabelsEn.englishTopics;
 const SCIENCE_TOPIC_NAMES_EN = diagnosticLabelsEn.scienceTopics;
-const LANGUAGE_ARTS_TOPIC_NAMES_EN = diagnosticLabelsEn.languageArtsTopics;
-const HOMELAND_GEOGRAPHY_TOPIC_NAMES_EN = diagnosticLabelsEn.homelandGeographyTopics;
 const EN_SNIPPET_EN = diagnosticLabelsEn.snippets;
 
 export const GENERIC_WEAKNESS_EN = diagnosticLabelsEn.generics.weakness;
@@ -69,8 +67,6 @@ export function topicBucketLabel(subjectId, bucketKey) {
   else if (subjectId === "geometry") result = GEOMETRY_TOPIC_NAMES_EN[key];
   else if (subjectId === "english") result = ENGLISH_TOPIC_NAMES_EN[key];
   else if (subjectId === "science") result = SCIENCE_TOPIC_NAMES_EN[key];
-  else if (subjectId === "history") result = null;
-  else 
   if (result != null) {
     if (TOPIC_NAME_PLACEHOLDER_LABELS.has(String(result).trim().toLowerCase())) return null;
     return result;
@@ -119,15 +115,6 @@ export function weaknessLabelEn(subjectId, sampleEv) {
     if (h.includes("spelling")) return "Difficulty with spelling";
     if (h.includes("writing")) return "Difficulty with writing and phrasing in English";
     if (h.includes("reading")) return "Difficulty with reading comprehension";
-  }
-
-  if (subjectId === "history") {
-    const h = `${pf} ${k} ${st} ${ct}`.toLowerCase();
-    if (h.includes("source")) return "Difficulty telling apart primary and secondary sources";
-    if (h.includes("timeline") || h.includes("sequence")) return "Difficulty with the order of events on a timeline";
-    if (h.includes("cause") || h.includes("effect")) return "Difficulty with cause-and-effect relationships";
-    if (h.includes("compare") || h.includes("comparison")) return "Difficulty comparing periods or institutions";
-    if (h.includes("figure") || h.includes("role")) return "Difficulty telling apart historical figures and their roles";
   }
 
   const fromPf = englishLabelFromSlug(pf);

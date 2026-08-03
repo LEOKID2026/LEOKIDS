@@ -11,12 +11,12 @@ import {
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
-test("reward catalog validator passes for 136 cards", () => {
+test("reward catalog validator passes for 134 cards", () => {
   const out = execFileSync("node", ["scripts/i18n/validate-reward-content-packs.mjs"], {
     cwd: root,
     encoding: "utf8",
   });
-  assert.match(out, /136 cards/);
+  assert.match(out, /134 cards/);
 });
 
 describe("reward pseudo locales", () => {
@@ -43,6 +43,6 @@ describe("reward pseudo locales", () => {
   }
 });
 
-test("loadRewardCardCatalog returns 136 entries", () => {
-  assert.equal(Object.keys(loadRewardCardCatalog("en")).length, 136);
+test("loadRewardCardCatalog returns 134 entries", () => {
+  assert.equal(Object.keys(loadRewardCardCatalog("en")).length, 134);
 });

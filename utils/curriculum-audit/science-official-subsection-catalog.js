@@ -1,7 +1,7 @@
 /**
  * Science & technology () — subsection catalog for audit alignment.
  * Owner reference: ` /science Curriculum2016.docx` (not parsed automatically).
- * Strand keys align with `ISRAELI_PRIMARY_CURRICULUM_MAP.science` (prefix match via findTopicPlacement).
+ * Strand keys align with global science topic prefixes (placement returns null in Global).
  */
 
 /** @typedef {'high' || 'medium' || 'low'} CatalogConfidence */

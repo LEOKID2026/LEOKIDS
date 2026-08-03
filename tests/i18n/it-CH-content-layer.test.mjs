@@ -592,7 +592,8 @@ test("it-CH grade-aware report pack: full Italian + elementare/media bands", () 
   );
   const copy = deepMerge(base, pack).copy || deepMerge(base, pack);
   const blob = Object.values(copy).join("\n");
-  assert.equal(Object.keys(pack.copy || pack).length, 121);
+  // Aligned with cleaned it-IT / en authority (Israeli history/Hebrew/Homeland keys removed).
+  assert.equal(Object.keys(pack.copy || pack).length, 31);
   assert.match(blob, /1ª–2ª elementare/);
   assert.match(blob, /3ª–4ª elementare/);
   assert.match(blob, /5ª elementare–1ª media/);
@@ -781,8 +782,13 @@ test("isolation: it-CH pruning did not modify it-IT; de-CH untouched; Italy grad
 
   if (porcelain) {
     const lines = porcelain.split(/\r?\n/).filter(Boolean);
-    const itItHits = lines.filter((line) =>
-      /(?:^|[\s])(?:locales|content-packs|data\/help-center)\/it-IT\b/.test(line)
+    // Allow parallel Romance Israeli-residue cleanup on it-IT authority packs.
+    const israeliResidueCleanupRe =
+      /israeli-primary-curriculum-map|official-primary-curriculum-spine|grade-aware-recommendation-templates|parent-report-display-labels|diagnostic-labels|curriculum-topic-normalizer|parent-narrative-safety|card-catalog|math-report-generator|normalize-parent-facing-labels|context-labeling-matrix|subject-evidence-policy|burn-down-index\.json/;
+    const itItHits = lines.filter(
+      (line) =>
+        /(?:^|[\s])(?:locales|content-packs|data\/help-center)\/it-IT\b/.test(line) &&
+        !israeliResidueCleanupRe.test(line)
     );
     assert.deepEqual(
       itItHits,

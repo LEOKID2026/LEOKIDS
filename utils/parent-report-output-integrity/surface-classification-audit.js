@@ -144,8 +144,7 @@ export function auditParentFacingSurfaces(detailedReport, baseReport) {
     ["geometry", "geometryTopics"],
     ["english", "englishTopics"],
     ["science", "scienceTopics"],
-    ["hebrewTopics"],
-    ["moledetGeographyTopics"]];
+    ["history", "historyTopics"]];
   let shortTableMissing = 0;
   let shortTableTotal = 0;
   for (const [sid, mk] of maps) {

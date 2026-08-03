@@ -156,7 +156,8 @@ test("reports sparse deep merge: Spain overrides + es-419 siblings", () => {
   const merged = loadMergedReportBurnDownIndex("es-ES");
   const base = getCatalogPackExact("es-419", "reports/burn-down-index.json");
   const overlay = getCatalogPackExact("es-ES", "reports/burn-down-index.json");
-  assert.equal(countLeaves(overlay), 125);
+  // Spain reports overlay shrank after Israeli-residue leaf removal; keep merge/sibling contract.
+  assert.equal(countLeaves(overlay), 35);
   assert.equal(countLeaves(merged), countLeaves(base));
   assert.equal(reportPackCopyForLocale("es-ES", "components__parent-report-detailed-surface", "grade"), "Curso");
   assert.equal(

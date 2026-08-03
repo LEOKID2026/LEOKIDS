@@ -92,26 +92,6 @@
         "description": "Gagnez cette carte : Grand auditeur"
       }
     },
-    "achievement_hebrew_star": {
-      "cardKey": "achievement_hebrew_star",
-      "title": "Étoile hébraïque",
-      "description": "Gagnez cette carte : Étoile Hébraïque",
-      "category": "réalisation",
-      "accessibility": {
-        "title": "Étoile hébraïque",
-        "description": "Gagnez cette carte : Étoile Hébraïque"
-      }
-    },
-    "achievement_moledet_explorer": {
-      "cardKey": "achievement_moledet_explorer",
-      "title": "Explorateur de la patrie",
-      "description": "Gagnez cette carte : Explorateur de patrie",
-      "category": "réalisation",
-      "accessibility": {
-        "title": "Explorateur de la patrie",
-        "description": "Gagnez cette carte : Explorateur de patrie"
-      }
-    },
     "achievement_multiplication_champion": {
       "cardKey": "achievement_multiplication_champion",
       "title": "Multiplication du champion",

@@ -1,5 +1,5 @@
 /**
- * Validate reward content packs (136 cards + UI strings + catalog parity).
+ * Validate reward content packs (134 cards + UI strings + catalog parity).
  * Run: node scripts/i18n/validate-reward-content-packs.mjs
  */
 import fs from "node:fs";
@@ -22,8 +22,8 @@ const errors = [];
 const catalogKeys = Object.keys(cardCatalog.cards || {});
 const legacyKeys = Object.keys(REWARD_CARD_GLOBAL_EN_CATALOG);
 
-if (catalogKeys.length !== 136) {
-  errors.push(`expected 136 cards in card-catalog.json, got ${catalogKeys.length}`);
+if (catalogKeys.length !== 134) {
+  errors.push(`expected 134 cards in card-catalog.json, got ${catalogKeys.length}`);
 }
 
 const parity = validateRewardCatalogAgainstKeys(legacyKeys);
@@ -55,7 +55,7 @@ for (const ruleType of Object.keys(CARD_RULE_TYPE_META)) {
 
 for (const locale of ["en", "en-XA", "ar-XB"]) {
   const loaded = loadRewardCardCatalog(locale);
-  if (Object.keys(loaded).length !== 136) {
+  if (Object.keys(loaded).length !== 134) {
     errors.push(`${locale}: loadRewardCardCatalog count ${Object.keys(loaded).length}`);
   }
   const sample = resolveRewardCardEntry("achievement_20_questions", locale);

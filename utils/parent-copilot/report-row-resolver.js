@@ -14,8 +14,7 @@ export const SUBJECT_HE_ALIASES = Object.freeze({
   math: ["Math", "Math"],
   geometry: ["Geometry", "Geometry"],
   english: ["English"],
-  science: ["Science", "science"],
-  history: ["History"]});
+  science: ["Science", "science"]});
 
 /** Common parent/taxonomy topic phrases beyond exact displayName (report rows still win first). */
 /** @type {Record<string, string[]>} */
@@ -26,28 +25,7 @@ export const TOPIC_HE_ALIASES = Object.freeze({
   "word-problems": ["Word problems", "Verbal problems", "Word exercises"],
   "reading-comprehension": ["Reading comprehension", "understanding", "Reading"],
   grammar: ["Grammar", "English grammar"],
-  vocabulary: ["Vocabulary", "curator"],
-  what_is_history: ["what is history", "primary source", "secondary source", "timeline"],
-  classical_greece: ["Classical Greece", "Athens", "Sparta", "democracy", "Compare Athens Sparta"],
-  hellenism_jews: ["Hellenism", "Alexander the Great", "Alexander", "Hellenism and the Jews"],
-  hasmonaeans: ["The Hasmoneans", "Hasmoneans", "Antiochus", "Rebellion of the Maccabees", "the maces", "inauguration"],
-  rome_jews: ["Rome and the Jews", "Rome", "Herod", "The Great Rebellion", "The destruction of the temple", "destruction", "will build", "Bar Kochba", "Babylon"],
-  hist_sub_intro_sources_timeline: ["primary source", "secondary source", "timeline", "what is history"],
-  hist_sub_athens_democracy: ["Athens", "democracy", "Democratic Athens"],
-  hist_sub_sparta: ["Sparta"],
-  hist_sub_athens_sparta_compare: ["Compare Athens Sparta", "Comparison between Athens and Sparta"],
-  hist_sub_greek_culture_legacy: ["Greek culture", "Greek heritage", "Olympics"],
-  hist_sub_alexander_hellenism: ["Alexander the Great", "Hellenism"],
-  hist_sub_hellenism_meets_judaism: ["The encounter between Hellenism and Judaism", "Hellenism and the Jews"],
-  hist_sub_antiochus_maccabees: ["Antiochus decrees", "Rebellion of the Maccabees", "the maces"],
-  hist_sub_hasmonaean_kingdom: ["Hasmonean kingdom"],
-  hist_sub_rise_of_rome: ["The rise of Rome", "Rome"],
-  hist_sub_roman_culture_law: ["Roman culture", "Roman law", "Roman law"],
-  hist_sub_hasmonaean_loss_roman_conquest: ["Roman occupation", "Pompey", "loss of independence"],
-  hist_sub_herod_building: ["Herod", "construction plants", "The rhodium"],
-  hist_sub_judea_province: ["Judah as a province", "province"],
-  hist_sub_great_revolt_destruction: ["The Great Rebellion", "The destruction of the temple", "Masada"],
-  hist_sub_yavne_bar_kokhba_babylon: ["will build", "Bar Kochba", "Center of Babylon", "Babylon"]});
+  vocabulary: ["Vocabulary", "curator"]});
 
 const TOPIC_INQUIRY_PREFIX_RE =
   /^(?:explain\s+(?:to\s+me\s+)?|tell\s+me\s+(?:about\s+)?|what(?:'s|\s+is)\s+(?:the\s+)?(?:problem|issue)\s+(?:with\s+|in\s+)?|what(?:'s|\s+is)\s+(?:happening|going\s+on)\s+(?:with\s+|in\s+)?|what\s+about\s+|how\s+(?:is\s+)?(?:he|she|they|my\s+child)\s+(?:doing\s+)?(?:in\s+|at\s+|with\s+)?|what\s+(?:should\s+(?:i|we)\s+)?(?:do|practice)\s+(?:in\s+|for\s+|with\s+|about\s+)?|what\s+to\s+(?:strengthen|reinforce)\s+(?:in\s+|for\s+)?|(?:i\s+)?want\s+to\s+(?:know|understand)\s+(?:about\s+)?)/i;

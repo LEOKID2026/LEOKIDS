@@ -8,13 +8,34 @@
 
 import { burnDownCopy } from "../../lib/learning/burn-down-copy.js";
 import {
-  ISRAELI_PRIMARY_CURRICULUM_MAP,
-  CURRICULUM_SOURCE_REF_PRESETS,
-  gradeNumToKey,
-  matchTopicDef} from "./israeli-primary-curriculum-map.js";
-import {
   MATH_ELEMENTARY_GRADE_PDF_BASE,
   SOURCE_REGISTRY_CHECKED_AT} from "./official-curriculum-source-registry.js";
+
+/** Empty global authority — Israeli curriculum strands are not shipped. */
+const PRIMARY_CURRICULUM_MAP = {};
+const CURRICULUM_SOURCE_REF_PRESETS = {
+  internal_conservative: [],
+  rama_general: [],
+  moe_portal: [],
+  english_exposure_framework: [],
+  geometry_shapes_intro: [],
+};
+const GRADE_KEYS = ["grade_1", "grade_2", "grade_3", "grade_4", "grade_5", "grade_6"];
+
+function gradeNumToKey(gradeNum) {
+  if (gradeNum < 1 || gradeNum > 6) return null;
+  return GRADE_KEYS[gradeNum - 1];
+}
+
+function matchTopicDef(defs, normalizedKey) {
+  if (!normalizedKey || !Array.isArray(defs)) return null;
+  for (const def of defs) {
+    if (!def?.key) continue;
+    if (normalizedKey === def.key) return def;
+    if (normalizedKey.startsWith(`${def.key}.`)) return def;
+  }
+  return null;
+}
 
 /** @typedef {'intro' | 'basic' | 'developing' | 'advanced'} GradeDepth */
 /** @typedef {'high' | 'medium' | 'low'} SpineConfidence */
@@ -47,7 +68,7 @@ function normalizeExpectedLevel(expectedLevelRaw) {
 }
 
 /**
- * @param {import("./israeli-primary-curriculum-map.js").CurriculumTopicDef} def
+ * @param {{ key?: string, labelHe?: string, expectedLevel?: string, confidence?: string, notes?: string }} def
  * @param {string} strand
  * @param {GradeDepth} gradeDepth
  * @param {'core'|'allowed'|'exposure_only'|'enrichment'|'not_expected_yet'} bucket
@@ -174,7 +195,7 @@ function pickStrand(subjectKey, topicKey) {
 
 /**
  * Transform legacy grade entry into official spine shape.
- * @param {import("./israeli-primary-curriculum-map.js").GradeCurriculumEntry} legacy
+ * @param {object} legacy
  * @param {string} subjectKey
  * @param {number} gradeNum
  */
@@ -333,12 +354,12 @@ function buildOfficialGradeSlot(legacy, subjectKey, gradeNum) {
 function buildOfficialSpineObject() {
   /** @type {Record<string, Record<string, object>>} */
   const out = {};
-  const subjects = Object.keys(ISRAELI_PRIMARY_CURRICULUM_MAP).filter(
+  const subjects = Object.keys(PRIMARY_CURRICULUM_MAP).filter(
     (k) => !k.includes("repo") && k !== "repoHints"
   );
 
   for (const subjectKey of subjects) {
-    const sub = ISRAELI_PRIMARY_CURRICULUM_MAP[subjectKey];
+    const sub = PRIMARY_CURRICULUM_MAP[subjectKey];
     out[subjectKey] = {};
     for (let g = 1; g <= 6; g++) {
       const gk = gradeNumToKey(g);
@@ -356,14 +377,34 @@ export const OFFICIAL_PRIMARY_CURRICULUM_SPINE = buildOfficialSpineObject();
 export const OFFICIAL_SPINE_META = {
   phase: "4B-1-math-source",
   generatedFrom:
-    "utils/curriculum-audit/israeli-primary-curriculum-map.js + official-curriculum-source-registry (math grades 1–6 PDFs + POP strands; RAMA supporting)",
+    "official-curriculum-source-registry (empty global spine — Israeli map removed)",
   scope: burnDownCopy("utils__curriculum-audit__official-primary-curriculum-spine", "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu"),
   geometryVsMathNote:
     "Geometry appears as its own subject in the product; mathematically it is a strand - comparison reports cross-reference both.",
-  moladetaGradeBandNote:
-    "Moladeta / society / citizenship items outside grades 2–4 are flagged unless an additional geography source is cited.",
   disclaimer:
-    "This spine does not replace Ministry PDF programmes item-by-item. Low-confidence rows require human approval before content changes."};
+    "Global spine is intentionally empty. Curriculum placement returns null."};
+
+/** Always-null placement helper for callers that previously used the Israeli map stub. */
+export function findTopicPlacement() {
+  return null;
+}
+
+export const CURRICULUM_MAP_META = {
+  version: 3,
+  phase: 3,
+  scope: "stubbed — Israeli curriculum text removed from Global product",
+  defaultConfidence: "low",
+  disclaimer:
+    "This map is intentionally empty in Global. Curriculum placement returns null.",
+};
+
+export function getGradeEntry() {
+  return null;
+}
+
+export function collectCatalogKeysForSubject() {
+  return new Set();
+}
 
 /**
  * Find topic in official spine buckets for a grade.

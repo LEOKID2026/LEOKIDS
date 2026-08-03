@@ -92,7 +92,10 @@ async function provisionTeacherRows(serviceRole, teacherId, displayName, preferr
   const { error: profileErr } = await serviceRole.from("teacher_profiles").insert({
     id: teacherId,
     display_name: displayName,
-    preferred_language: preferredLanguage,
+    preferred_language:
+      typeof preferredLanguage === "string" && preferredLanguage.trim()
+        ? preferredLanguage.trim()
+        : "en",
   });
 
   if (profileErr) {

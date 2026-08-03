@@ -23,7 +23,7 @@ const modUrl = (rel) => pathToFileURL(join(ROOT, rel)).href;
 const { GRADES } = await import(modUrl("utils/geometry-constants.js"));
 const { getLevelForGrade } = await import(modUrl("utils/geometry-storage.js"));
 const { generateQuestion } = await import(modUrl("utils/geometry-question-generator.js"));
-const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/israeli-primary-curriculum-map.js"));
+const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/official-primary-curriculum-spine.js"));
 const { GEOMETRY_OFFICIAL_SUBSECTION_CATALOG, geometryGradeProgrammePdfUrl } = await import(
   modUrl("utils/curriculum-audit/geometry-official-subsection-catalog.js")
 );
@@ -274,7 +274,7 @@ async function main() {
         "Set GEOMETRY_OWNER_CLOSURE_SIGNOFF=1 only after Ministry kita PDF geometry strand is cross-checked against this catalog.",
       notes: [
         "mixed topic is not expanded here — it aggregates enabled topics in the Geometry UI.",
-        "Curriculum placement uses conservative israeli-primary-curriculum-map (advisory).",
+        "Curriculum placement uses conservative official-primary-curriculum-spine (empty global) (advisory).",
       ],
     },
     summary: {

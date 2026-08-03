@@ -176,73 +176,9 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
     approvalSource: "owner_geometry_batch_approved",
   },
   {
-    lookupKey: "finding:taxonomy:H-01",
-    explanationHe:
-      "The system identified difficulty choosing a synonym that fits the context. The idea is not just to find a similar word, but to make sure it fits the meaning of the sentence.",
-    exampleHe: "happy / cheerful",
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-02",
-    explanationHe:
-      "The system identified difficulty matching words in a sentence by gender and number. The idea is to make sure the noun, adjective, or pronoun match masculine or feminine, and singular or plural.",
-    exampleHe: "a little girl / little children",
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-03",
-    explanationHe:
-      "The system identified difficulty identifying a word family or a spelling pattern that repeats across related words. The idea is to notice the letters and structure that repeat within the same word family.",
-    exampleHe: "write / letter / writing",
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-04",
-    explanationHe:
-      "The system identified difficulty locating information within a text. The idea is to find a specific detail using keywords, headings, or clues that appear in the question and the text.",
-    exampleHe: "when did it happen? / who did it?",
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-05",
-    explanationHe:
-      "The system identified difficulty distinguishing between words that sound similar or identical, but are spelled differently or have a different meaning. The idea is to choose the correct word based on the context of the sentence.",
-    exampleHe: "if / with",
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-06",
-    explanationHe:
-      "The system identified difficulty arranging words in a question sentence. The idea is to build a clear question, with the question word, subject, and verb in the right place.",
-    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "when_did_the_child_arrive"),
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-07",
-    explanationHe:
-      "The system identified difficulty connecting sentences into a clear sequence. The idea is to use connecting words to explain a relationship of addition, contrast, cause, or result.",
-    exampleHe: "but / therefore / in addition",
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:H-08",
-    explanationHe:
-      "The system identified difficulty matching the level of language to the situation. The idea is to choose wording that fits the purpose: everyday conversation, an academic answer, or a formal request.",
-    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "could_i_get_some_help_bring_me_that"),
-    status: "approved",
-    approvalSource: "owner_hebrew_subject_batch_approved",
-  },
-  {
     lookupKey: "finding:taxonomy:E-01",
     explanationHe:
-      "The system identified difficulty using natural word combinations in English. The idea is that some words are usually said together in English, and it's not always possible to translate word-for-word from Hebrew.",
+      "The system identified difficulty using natural word combinations in English. The idea is that some words are usually said together in English, and a word-for-word translation from another language often does not work.",
     exampleHe: "make a decision",
     status: "approved",
     approvalSource: "owner_english_subject_batch_approved",
@@ -274,7 +210,7 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
   {
     lookupKey: "finding:taxonomy:E-05",
     explanationHe:
-      "The system identified difficulty using prepositions in English. These are short words that show a relationship of place, time, or direction, and they're sometimes not translated directly from Hebrew.",
+      "The system identified difficulty using prepositions in English. These are short words that show a relationship of place, time, or direction, and they are not always translated the same way as in another language.",
     exampleHe: "in / on / at",
     status: "approved",
     approvalSource: "owner_english_subject_batch_approved",
@@ -366,70 +302,6 @@ const PARENT_DIAGNOSTIC_EXPLANATION_CATALOG = [
     exampleHe: "based on the text / based on the observation",
     status: "approved",
     approvalSource: "owner_science_subject_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-01",
-    explanationHe:
-      "The system identified difficulty understanding a map scale. The idea is to understand how a small distance on the map represents a larger distance in reality.",
-    exampleHe: "1 cm on the map = 1 km in reality",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-02",
-    explanationHe:
-      "The system identified difficulty identifying north on a map. The idea is to use the north arrow or the direction markers, even when the map is rotated or not shown the way it's usually seen.",
-    exampleHe: "north arrow on a map",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-03",
-    explanationHe:
-      "The system identified difficulty distinguishing between a right and a duty. A right is something owed to a person or citizen, and a duty is something they are expected to do or uphold.",
-    exampleHe: "right to education / duty to follow the rules",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-04",
-    explanationHe:
-      "The system identified difficulty arranging events in chronological order. The idea is to understand what happened first, what happened next, and how the events are connected to each other.",
-    exampleHe: "before / after",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-05",
-    explanationHe:
-      "The system identified difficulty reading a climate map. The idea is to use colors, symbols, and the legend to understand what type of climate appears in each area.",
-    exampleHe: "desert / Mediterranean",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-06",
-    explanationHe:
-      "The system identified difficulty understanding a cause-and-effect relationship. The idea is to identify why something happened, and what happened as a result.",
-    exampleHe: "migration because of work",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-07",
-    explanationHe:
-      "The system identified difficulty understanding the role of public institutions. The idea is to know what each institution does and what its responsibility is in society.",
-    exampleHe: reportPackCopy("utils__parent-report-language__parent-diagnostic-explanations-he", "parliament_legislation_court_adjudication"),
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
-  },
-  {
-    lookupKey: "finding:taxonomy:MG-08",
-    explanationHe:
-      "The system identified difficulty understanding map symbols. The idea is to use the map legend to understand what marks a road, river, settlement, border, or important place.",
-    exampleHe: "map legend",
-    status: "approved",
-    approvalSource: "owner_moledet_geography_batch_approved",
   },
 ];
 
@@ -553,7 +425,7 @@ export function buildParentDiagnosticExplanationV1FromV2Unit(unit) {
   return resolveApprovedParentDiagnosticExplanationV1({ lookupKey });
 }
 
-/** Test / audit hook: full approved catalog (all subject batches including Moledet/Geography in this module). */
+/** Test / audit hook: full approved catalog (active global subject batches in this module). */
 export function parentDiagnosticExplanationCatalogForTests() {
   return PARENT_DIAGNOSTIC_EXPLANATION_CATALOG.map((e) => ({ ...e }));
 }

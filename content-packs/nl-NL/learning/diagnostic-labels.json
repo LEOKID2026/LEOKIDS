@@ -101,22 +101,6 @@
     "verb_forms": "Werkwoordvormen",
     "sentence_structure": "Zinsstructuur"
   },
-  "homelandGeographyTopics": {
-    "homeland": "Homelandstudies",
-    "community": "Gemeenschap",
-    "citizenship": "Burgerschap",
-    "geography": "Aardrijkskunde",
-    "basic_geography": "Aardrijkskunde basics",
-    "values": "Waarden",
-    "maps": "Kaarten",
-    "map_reading": "Kaartlezen",
-    "directions": "Routebeschrijving",
-    "places": "Plaatsen",
-    "maps_basic": "Basiskaarten",
-    "regions": "Regio's",
-    "history": "Geschiedenis",
-    "mixed": "Gemengde onderwerpen"
-  },
   "snippets": {
     "word": "word-based",
     "problems": "problemen",
@@ -169,7 +153,6 @@
     "context": "context",
     "logical": "logische volgorde",
     "sequence": "reeks",
-    "homeland": "vaderlandse studies",
     "geography": "geografie"
   },
   "generics": {

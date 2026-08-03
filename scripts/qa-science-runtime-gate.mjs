@@ -16,7 +16,7 @@ const modUrl = (rel) => pathToFileURL(join(ROOT, rel)).href;
 const { SCIENCE_QUESTIONS } = await import(modUrl("data/science-questions.js"));
 const { SCIENCE_GRADES } = await import(modUrl("data/science-curriculum.js"));
 const { normalizeInventoryTopic } = await import(modUrl("utils/curriculum-audit/curriculum-topic-normalizer.js"));
-const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/israeli-primary-curriculum-map.js"));
+const { findTopicPlacement } = await import(modUrl("utils/curriculum-audit/official-primary-curriculum-spine.js"));
 
 const G12_STEM_ADVISORY_LEN = 320;
 

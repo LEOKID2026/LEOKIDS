@@ -259,7 +259,6 @@
     "learning_music": "Музыка обучения",
     "educational_instruction_voice": "Голос учебной инструкции",
     "educational_feedback_voice": "Голос учебной обратной связи",
-    "hebrew_question_voice": "Hebrew question voice",
     "english_phonics_voice": "Голос фонетики английского",
     "diamond_collect": "Сбор алмазов",
     "star_collect": "Star collect",
@@ -318,7 +317,6 @@
     "regular": "Обычный",
     "advanced": "Продвинутый"
   },
-  "lib__learning__question-metadata-validator": {},
   "lib__learning__report-visible-practice-sync": {
     "learning": "Обучение",
     "practice": "Практика",
@@ -466,9 +464,6 @@
   "lib__teacher-portal__teacher-activity-report-export": {
     "activity_report": "Отчёт об активности",
     "correct_out_of_all_answers": "Верно из всех ответов"
-  },
-  "lib__teacher-portal__teacher-activity-report-pdf-he": {
-    "notosanshebrew_regular_ttf": "NotoSansHebrew-Regular.ttf"
   },
   "lib__teacher-portal__teacher-activity-report-pdf": {
     "activity_report_teacher": "Отчёт об активности — учитель",
@@ -909,7 +904,6 @@
     "find_x": "Найди x:"
   },
   "utils__student-question-stem-sanitizer": {
-    "hebrew_level_prefix": "Hebrew level prefix",
     "english_level_token_as_metadata": "Токен уровня английского как метаданные"
   }
 }

@@ -129,7 +129,6 @@
   "lib__parent-server__attach-unified-learning-time.server": {
     "asia_jerusalem": "Asia/Jerusalem"
   },
-  "lib__parent-ui__learning-time-exclusive-breakdown-display": {},
   "pages__api__learning-simulator__generate-expert-review-pack": {
     "missing_x_engine_review_token_header": "En-tête x-engine-review-token manquant",
     "run_npm_run_qa_learning_simulator_professional_engine_pass_then_retry": "Exécutez npm run qa:learning-simulator:professional-engine (PASS), puis réessayez."
@@ -176,8 +175,6 @@
     "mapped_from_math_generator_operation_topic_key": "Mappé à partir de l'opération du générateur mathématique/de la clé de sujet.",
     "mapped_from_geometry_topic_generator_kind": "Cartographié à partir d'un sujet de géométrie/type de générateur.",
     "expand_geometry_strand_map_for_this_topic_kind": "Développez la carte des brins de géométrie pour ce sujet/genre.",
-    "mapped_from_hebrew_topics_key": "Cartographié à partir de la clé hébraïque TOPICS.",
-    "unknown_hebrew_topic_bucket": "Ensemble de sujets en hébreu inconnu.",
     "vocabulary_games_map_to_lexis_translation_strand": "Les jeux de vocabulaire correspondent au volet lexique/traduction.",
     "writing_typing_modes_align_with_sentence_writing_strand": "Les modes d'écriture/dactylographie s'alignent sur le volet d'écriture de phrases.",
     "mixed_practice_audit_often_skips_or_treats_as_composite": "Pratique mixte : l'audit est souvent ignoré ou traité comme un audit composite.",
@@ -185,23 +182,6 @@
     "expected_grammar_translation_sentence": "Grammaire attendue | Traduction | phrase.",
     "mapped_from_science_bank_topic_field": "Cartographié à partir du champ thématique de la banque scientifique.",
     "extend_science_domain_map": "Étendre la carte du domaine scientifique."
-  },
-  "utils__curriculum-audit__israeli-primary-curriculum-map": {
-    "internal_conservative_strand_mapping_liosh_audit_layer": "Cartographie conservatrice interne des brins (couche d'audit LIOSH)",
-    "repo_maintained_interpretation_requires_pedagogy_sign_off_before_any_rel": "Interprétation maintenue par le dépôt - nécessite l'approbation pédagogique avant toute porte de sortie.",
-    "general_framework_reference_only_does_not_map_individual_question_stems_": "Référence du cadre général uniquement ; ne mappe pas les questions individuelles aux résultats.",
-    "official_portal_use_for_policy_context_not_a_line_by_line_syllabus_match": "Portail officiel - à utiliser dans le contexte politique ; pas une correspondance de programme ligne par ligne.",
-    "general_policy_context_early_grades_often_emphasize_exposure_listening_v": "Contexte politique général ; les premières années d'études mettent souvent l'accent sur l'exposition/l'écoute - vérifiez l'alphabétisation formelle par rapport à l'exposition par école.",
-    "internal_strand_plane_shapes_recognition_audit": "Volet interne : reconnaissance de formes planes (audit)",
-    "repo_interpretation_of_typical_early_shape_recognition_requires_pedagogy": "Interprétation repo de la reconnaissance de forme précoce typique - nécessite une validation pédagogique.",
-    "strands_align_with_normalized_math_keys_from_curriculum_topic_normalizer": "Les volets s'alignent sur les mathématiques normalisées.* clés de curriculum-topic-normalizer.js",
-    "separated_geometry_strands_do_not_collapse_to_one_topic": "Volets de géométrie séparés - ne tu réduisez pas à un seul sujet.",
-    "grades_1_2_grammar_not_assumed_core_exposure_enrichment_separation": "Classes 1-2 : grammaire non essentielle ; séparation exposition/enrichissement.",
-    "inventory_retained_curriculum_placement_deferred_confidence_low": "Inventaire conservé ; placement dans le programme d'études différé - confiance faible.",
-    "israel_elementary_grades_1_6_conservative_structured_mapping_advisory_so": "Israël élémentaire (niveaux 1 à 6) - cartographie structurée conservatrice + ancres de sources consultatives"
-  },
-  "utils__curriculum-audit__official-primary-curriculum-spine": {
-    "israeli_elementary_grades_1_6_source_anchored_planning_spine_not_syllabu": "Niveaux élémentaires israéliens 1 à 6 - colonne de planification ancrée à la source (pas de certification du programme)"
   },
   "utils__diagnostic-engine-v2__run-diagnostic-engine-v2": {
     "mistakeeventv1_report_row": "ErreurEventV1+report_row",
@@ -388,7 +368,6 @@
     "hundreds": "Des centaines"
   },
   "utils__parent-narrative-safety__parent-narrative-safety-fixtures": {
-    "safe_hebrew_parent_narrative_with_observational_tone_and_adequate_volume": "Récit parental en hébreu sûr avec un ton d'observation et un volume adéquat.",
     "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Des preuves minces mais une couverture prudente explicite ne devraient pas bloquer.",
     "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Des preuves minces avec une forte certitude et une revendication de maîtrise - bloquer.",
     "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Les listes de moteurs ne concluent pas les barrières, mais le texte utilise une certitude absolue.",

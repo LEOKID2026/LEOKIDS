@@ -86,32 +86,6 @@ const SCIENCE_TOPIC_NAMES_HE = Object.freeze({
   experiments: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "experiments_and_processes"),
   mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_topics")});
 
-const HEBREW_TOPIC_NAMES_HE = Object.freeze({
-  reading: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "reading"),
-  comprehension: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "reading_comprehension"),
-  reading_comprehension: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "reading_comprehension"),
-  writing: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "writing_and_expression"),
-  grammar: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "grammar_and_language"),
-  vocabulary: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "vocabulary"),
-  speaking: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "speaking_and_discussion"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice"),
-  main_idea: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "main_idea"),
-  sequence: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "sequence"),
-  inference: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "inference")});
-
-const MOLEDET_GEOGRAPHY_TOPIC_NAMES_HE = Object.freeze({
-  homeland: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "homeland"),
-  community: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "community"),
-  citizenship: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "citizenship"),
-  geography: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "geography"),
-  basic_geography: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "geography_basics"),
-  values: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "values"),
-  maps: "Maps",
-  map_reading: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "map_reading"),
-  directions: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "directions"),
-  places: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "places"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
-
 const RAW_KEY_RE = /^[a-z][a-z0-9_]*$/i;
 
 function stripMathKindSuffix(key) {

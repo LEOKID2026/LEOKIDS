@@ -3,7 +3,6 @@
  */
 
 import * as scienceCurriculumModule from "../data/science-curriculum.js";
-import { findTopicPlacement } from "./curriculum-audit/israeli-primary-curriculum-map.js";
 
 /** tsx interop: named exports from data/ may appear on default only when loaded via QA scripts. */
 const SCIENCE_GRADES =
@@ -70,21 +69,14 @@ export function assertAllScienceGradesTopicPolicy() {
   return { ok: violations.length === 0, violations };
 }
 
+/** Global product has no Israeli curriculum map — placement asserts are notional no-ops. */
 export function assertScienceTopicsCurriculumPlaced(gradeKey) {
-  const g = Number(String(gradeKey).replace("g", ""));
   const topics = SCIENCE_GRADES[gradeKey]?.topics || [];
   /** @type {string[]} */
   const violations = [];
   for (const t of topics) {
-    const nk = SCIENCE_TOPIC_TO_REP_NORM[t];
-    if (!nk) {
+    if (!SCIENCE_TOPIC_TO_REP_NORM[t]) {
       violations.push(`${gradeKey}: unknown topic key "${t}"`);
-      continue;
-    }
-    const hit = findTopicPlacement("science", g, nk);
-    if (!hit) violations.push(`${gradeKey}: topic "${t}" (${nk}) has no curriculum placement`);
-    else if (hit.bucket === "notExpectedYet") {
-      violations.push(`${gradeKey}: topic "${t}" (${nk}) is notExpectedYet in conservative map`);
     }
   }
   return { ok: violations.length === 0, violations };
