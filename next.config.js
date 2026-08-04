@@ -129,15 +129,16 @@ const nextConfig = {
     ),
   },
   reactStrictMode: false, // זמנית - כדי למנוע רענון אינסופי בפיתוח
-  // Windows: lower parallel SSG concurrency to avoid intermittent PageNotFoundError
-  // during prerender ("Cannot find module for page") when workers race on .next artifacts.
-  ...(isWindows
-    ? {
-        experimental: {
-          staticGenerationMaxConcurrency: 1,
-        },
-      }
-    : {}),
+  // Explicit: never emit browser source maps in production (reduces compile RSS).
+  productionBrowserSourceMaps: false,
+  // Memory: Vercel Hobby/Pro build machines are 8GB. pack-catalog + locale JSON
+  // static imports make webpack compile peak high — enable Next memory opts on
+  // all platforms (Linux/Vercel included). Keep Windows SSG concurrency=1.
+  experimental: {
+    webpackMemoryOptimizations: true,
+    webpackBuildWorker: true,
+    ...(isWindows ? { staticGenerationMaxConcurrency: 1 } : {}),
+  },
   webpack: (config, { dev, isServer }) => {
     if (!isServer) {
       config.resolve.alias = {
