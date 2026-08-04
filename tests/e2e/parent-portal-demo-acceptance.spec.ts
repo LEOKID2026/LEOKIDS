@@ -1,6 +1,6 @@
 import { test, expect, type Page } from "@playwright/test";
 
-const PARENT_DEMO_SESSION_KEY = "leokids_parent_demo_session";
+const PARENT_DEMO_SESSION_KEY = "leokids_global_parent_demo_session";
 const DEMO_CHILD_ID = "demo-parent-child-noam-g2";
 
 function trackParentDemoNetwork(page: Page) {

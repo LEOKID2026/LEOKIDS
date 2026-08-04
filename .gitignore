@@ -33,7 +33,9 @@ tmp/
 docs/audits/
 docs/qa/
 /reports/mass-simulation/
-AUDIT*/
+# Root-only temporary AUDIT* output dirs — do NOT use AUDIT*/ (hides scripts/audit/ on Windows).
+/AUDIT*/
+/AUDIT-*/
 *.log
 *.tmp
 
@@ -114,3 +116,22 @@ next-env.d.ts
 .vercel
 
 .next/
+
+# --- Arabic Master (ar-001) temporary audit / diagnostic outputs ---
+# Precise patterns only — do not broaden to product content or permanent artifacts.
+/.tmp-*
+/tmp-ar-001-*
+/tmp-ar001-*
+/_w4_audit.json
+/artifacts/i18n/memory-diag-*
+/artifacts/i18n/memory-ready-diagnose*
+/artifacts/i18n/tmp-memory-ready-diagnose.mjs
+/artifacts/i18n/_closure-stage-*
+/artifacts/i18n/_outside-commit-inventory-readonly.*
+/artifacts/i18n/ar-001-brand-warnings-raw.json
+/artifacts/i18n/_cleanup-temp-report-readonly.json
+/artifacts/language-switcher-hud/
+/scripts/i18n/_mt-cache-ar-001*.json
+/scripts/i18n/_cleanup-temp-ar001-readonly.mjs
+/scripts/tmp-*
+/android/build/reports/problems/
