@@ -48,8 +48,32 @@ export function patternDiagnosticsHasGlobalSignal(report) {
 }
 
 /** Unified parent-facing copy when the window has practice but not enough for a clear picture. */
-export const PARENT_THIN_DATA_EXPLAINER_HE =
-  "There is some practice in the selected period, but not yet enough to draw a clear insight. It helps to continue for a few more days and check again.";
+export function getParentThinDataExplainerHe() {
+  return globalBurnDownCopy(
+    "utils__parent-data-presence",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra",
+  );
+}
+
+/** @deprecated Prefer getParentThinDataExplainerHe() — call-time locale resolution. */
+export const PARENT_THIN_DATA_EXPLAINER_HE = {
+  toString() {
+    return getParentThinDataExplainerHe();
+  },
+  valueOf() {
+    return getParentThinDataExplainerHe();
+  },
+  [Symbol.toPrimitive]() {
+    return getParentThinDataExplainerHe();
+  },
+};
+
+function noPracticeExplainerHe() {
+  return globalBurnDownCopy(
+    "utils__parent-data-presence",
+    "there_is_no_practice_yet_in_the_selected_period",
+  );
+}
 
 /**
  * @param {Record<string, unknown>} report
@@ -60,7 +84,7 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
   if (totalQ <= 0) {
     return {
       state: ParentDataPresence.noData,
-      recommendationsExplainerHe: "There is no practice yet in the selected period.",
+      recommendationsExplainerHe: noPracticeExplainerHe(),
       lowConfidenceExplainerHe: null};
   }
 
@@ -89,8 +113,8 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
     if (gated >= Math.ceil(units.length * 0.65)) {
       return {
         state: ParentDataPresence.hasEvidenceLowConfidence,
-        recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-        lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE};
+        recommendationsExplainerHe: getParentThinDataExplainerHe(),
+        lowConfidenceExplainerHe: getParentThinDataExplainerHe()};
     }
   }
 
@@ -99,25 +123,25 @@ export function deriveParentDataPresenceForDiagnosticsView(report, diagnosticsVi
     if (practicedSubjects >= 2 && mode === "new" && rowCount === 0 && totalQ > 0) {
       return {
         state: ParentDataPresence.hasEvidenceLowConfidence,
-        recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-        lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE};
+        recommendationsExplainerHe: getParentThinDataExplainerHe(),
+        lowConfidenceExplainerHe: getParentThinDataExplainerHe()};
     }
     return {
       state: ParentDataPresence.hasVolumeNoPattern,
-      recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
+      recommendationsExplainerHe: getParentThinDataExplainerHe(),
       lowConfidenceExplainerHe: null};
   }
 
   if (mode === "new" && rowCount === 0 && totalQ > 0) {
     return {
       state: ParentDataPresence.hasEvidenceLowConfidence,
-      recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
-      lowConfidenceExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE};
+      recommendationsExplainerHe: getParentThinDataExplainerHe(),
+      lowConfidenceExplainerHe: getParentThinDataExplainerHe()};
   }
 
   return {
     state: ParentDataPresence.hasVolumeNoPattern,
-    recommendationsExplainerHe: PARENT_THIN_DATA_EXPLAINER_HE,
+    recommendationsExplainerHe: getParentThinDataExplainerHe(),
     lowConfidenceExplainerHe: null};
 }
 

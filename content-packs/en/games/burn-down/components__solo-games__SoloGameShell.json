@@ -2,6 +2,7 @@
   "copy": {
     "game_not_found": "Game not found",
     "games": "Games",
-    "home": "Home"
+    "home": "Home",
+    "page_title_suffix": "Leo's Games"
   }
 }

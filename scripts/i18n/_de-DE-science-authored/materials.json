@@ -1,0 +1,569 @@
+{
+  "materials_1": {
+    "stem": "In welchem Aggregatzustand ist Eis?",
+    "options": ["Fest", "Flüssig", "Gasförmig", "Gemisch"],
+    "explanation": "Eis ist Wasser im festen Zustand. Wenn Eis erwärmt wird, wird es zu flüssigem Wasser.",
+    "theoryLines": [
+      "Wasser kann fest (Eis), flüssig (Wasser) oder gasförmig (Wasserdampf) sein.",
+      "Eine Temperaturänderung kann den Aggregatzustand verändern."
+    ]
+  },
+  "materials_2": {
+    "stem": "Welche Aussage über Metalle ist wahr?",
+    "options": [
+      "Sie isolieren Strom besser als Kunststoff und Holz",
+      "Sie leiten Wärme und Strom meist gut",
+      "Sie sind lichtdurchlässig wie dünnes Glas",
+      "Sie zerbrechen leicht und lassen sich nicht biegen oder flachdrücken"
+    ],
+    "explanation": "Metalle leiten oft Wärme und Strom gut. Deshalb nutzt man sie für Kabel und Kochgeschirr.",
+    "theoryLines": [
+      "Viele Metalle sind glänzend und lassen sich zu Blechen hämmern oder zu Drähten ziehen.",
+      "Nicht jedes Metall ist gleich stark, aber viele sind robust und langlebig."
+    ]
+  },
+  "materials_3": {
+    "stem": "Welche Aussage über Kunststoff ist wahr?",
+    "options": [
+      "Kunststoff wird in Fabriken hergestellt und kommt in der Natur nicht fertig vor",
+      "Kunststoff findet man in der Natur so wie Gestein",
+      "Kunststoff ist eine Art Holz",
+      "Kunststoff wird nur aus Sand hergestellt"
+    ],
+    "explanation": "Kunststoff wird hergestellt, oft aus Erdöl. Er ist kein natürlicher Stoff wie Holz oder Stein.",
+    "theoryLines": [
+      "Natürliche Stoffe stammen von Lebewesen oder von unbelebten Materialien der Erde.",
+      "Synthetische Stoffe entstehen durch industrielle Verfahren."
+    ]
+  },
+  "materials_4": {
+    "stem": "Eine Lösung aus Salz und Wasser ist ein Beispiel für welche Art von Gemisch?",
+    "options": [
+      "Ein heterogenes Gemisch",
+      "Ein homogenes Gemisch",
+      "Eine reine chemische Verbindung",
+      "Ein meist leicht entzündliches Gas"
+    ],
+    "explanation": "Wenn sich Salz in Wasser löst, sieht das Gemisch überall gleich aus. Das ist ein homogenes Gemisch.",
+    "theoryLines": [
+      "Ein homogenes Gemisch sieht einheitlich aus, ohne klare Grenzen zwischen den Teilen.",
+      "Eine Lösung ist ein Gemisch, in dem sich ein Stoff in einem anderen löst."
+    ]
+  },
+  "materials_5": {
+    "stem": "Was ist eine physikalische Veränderung?",
+    "options": [
+      "Eine Veränderung, die einen völlig neuen Stoff erzeugt",
+      "Eine Veränderung, bei der Materie Form oder Zustand wechselt, aber derselbe Stoff bleibt",
+      "Eine Veränderung, die nur bei sehr starkem Erhitzen möglich ist",
+      "Eine Veränderung, die nur bei Metallen vorkommt"
+    ],
+    "explanation": "Bei einer physikalischen Veränderung können Form oder Zustand wechseln, die chemische Identität bleibt aber gleich.",
+    "theoryLines": [
+      "Eis zu Wasser schmelzen ist eine physikalische Veränderung — es bleibt Wasser.",
+      "Papier verbrennen ist eine chemische Veränderung, weil neue Stoffe entstehen."
+    ]
+  },
+  "materials_6": {
+    "stem": "In welchem Aggregatzustand ist Wasser aus dem Hahn?",
+    "options": [
+      "Fest",
+      "Flüssig",
+      "Gasförmig",
+      "Trockenes Pulver, das nicht fließt"
+    ],
+    "explanation": "Leitungswasser ist flüssig. Du kannst es gießen, trinken und damit waschen.",
+    "theoryLines": [
+      "Wasser kann fest (Eis), flüssig (Wasser) oder gasförmig (Wasserdampf) sein.",
+      "Erwärmen oder Abkühlen kann den Zustand von Wasser verändern."
+    ]
+  },
+  "materials_7": {
+    "stem": "Welcher Stoff ist hart und stark?",
+    "options": ["Trockener Schwamm", "Weiches Wachs", "Stein", "Weicher Gummi"],
+    "explanation": "Stein ist hart und stark. Menschen nutzen ihn zum Bauen und für schwere Arbeiten.",
+    "theoryLines": [
+      "Verschiedene Stoffe haben verschiedene Eigenschaften, zum Beispiel Härte oder Weichheit.",
+      "Stein ist ein natürlicher Stoff von der Erde."
+    ]
+  },
+  "materials_8": {
+    "stem": "Welcher Stoff ist weich?",
+    "options": ["Stein", "Metall", "Baumwolle", "Dünnes Glas"],
+    "explanation": "Baumwolle ist weich, deshalb macht man daraus oft bequeme Kleidung.",
+    "theoryLines": [
+      "Weiche Stoffe fühlen sich angenehm an.",
+      "Baumwolle kommt von der Baumwollpflanze."
+    ]
+  },
+  "materials_9": {
+    "stem": "Welche Aussage beschreibt einen festen Stoff richtig?",
+    "options": [
+      "Ein Feststoff behält seine eigene Form und fließt nicht.",
+      "Ein Feststoff fließt frei wie Wasser.",
+      "Ein Feststoff besteht immer aus Wasser.",
+      "Ein Feststoff besteht immer aus Metall."
+    ],
+    "explanation": "Ein fester Stoff hat eine feste Form. Anders als Flüssigkeiten fließt oder gießt er nicht — er behält seine Form von allein.",
+    "theoryLines": [
+      "Feststoffe sind einer der wichtigsten Aggregatzustände.",
+      "Feststoffe können hart oder weich sein, behalten aber immer ihre Form."
+    ]
+  },
+  "materials_10": {
+    "stem": "Was geschieht, wenn Wasser auf eine sehr hohe Temperatur erhitzt wird?",
+    "options": [
+      "Es wird fest wie Eis.",
+      "Es wird zu Wasserdampf, also zu einem Gas.",
+      "Es bleibt flüssig, egal wie heiß es wird.",
+      "Es wird immer zu einem harten Feststoff."
+    ],
+    "explanation": "Wenn Wasser den Siedepunkt erreicht, wechselt es den Zustand und wird zu Wasserdampf — einem Gas. Das nennt man Verdampfen oder Sieden.",
+    "theoryLines": [
+      "Wasser kann als Feststoff (Eis), Flüssigkeit (Wasser) oder Gas (Wasserdampf) vorkommen.",
+      "Erhitzen gibt den Wassermolekülen genug Energie, um als Gas in die Luft zu entweichen."
+    ]
+  },
+  "materials_11": {
+    "stem": "Was ist ein Leiter?",
+    "options": [
+      "Ein Stoff, der keinen Strom leitet",
+      "Ein Stoff, der Wärme oder Strom leitet",
+      "Ein Stoff, der immer sehr hart ist",
+      "Ein Stoff, der meist durchsichtig ist"
+    ],
+    "explanation": "Ein Leiter lässt Wärme oder Strom leicht durch. Metalle sind gute Leiter.",
+    "theoryLines": [
+      "Metalle wie Kupfer und Eisen sind gute Leiter.",
+      "Isolatoren wie Holz oder Kunststoff leiten Strom schlecht."
+    ]
+  },
+  "materials_12": {
+    "stem": "Was ist ein Isolator?",
+    "options": [
+      "Ein Stoff, der Strom gut leitet",
+      "Ein Stoff, der Wärme oder Strom schlecht leitet",
+      "Ein Stoff, der immer sehr hart ist",
+      "Ein Stoff, der meist durchsichtig ist"
+    ],
+    "explanation": "Ein Isolator leitet Wärme oder Strom schlecht. Das hilft, Wärme zu halten oder Stromschläge zu verhindern.",
+    "theoryLines": [
+      "Holz, Kunststoff und Glas sind übliche Isolatoren.",
+      "Isolatoren sind wichtig für die Sicherheit."
+    ]
+  },
+  "materials_13": {
+    "stem": "Was ist eine chemische Veränderung?",
+    "options": [
+      "Nur eine Formänderung",
+      "Eine Veränderung, die einen neuen Stoff mit anderen Eigenschaften erzeugt",
+      "Ein Farbwechsel, ohne dass ein neuer Stoff entsteht",
+      "Größer- oder Kleinerwerden ohne chemische Reaktion"
+    ],
+    "explanation": "Bei einer chemischen Veränderung entsteht ein neuer Stoff. Beim Verbrennen von Papier entstehen Asche und Gase — neue Stoffe.",
+    "theoryLines": [
+      "Verbrennen ist ein Beispiel für eine chemische Veränderung.",
+      "Nach einer chemischen Veränderung bekommst du den ursprünglichen Stoff meist nicht leicht zurück."
+    ]
+  },
+  "materials_14": {
+    "stem": "Was ist der Unterschied zwischen einem Gemisch und einer Verbindung?",
+    "options": [
+      "In einem Gemisch entstehen immer neue chemische Bindungen zwischen allen Teilen",
+      "Ein Gemisch lässt sich trennen; eine Verbindung ist ein neuer Stoff, der entsteht, wenn Atome chemisch zusammenkommen",
+      "Eine Verbindung ist immer ein einheitliches Gemisch, das du ohne chemische Reaktion trennen kannst",
+      "Ein Gemisch bleibt auch nach starkem Erhitzen immer ein reiner Feststoff"
+    ],
+    "explanation": "Ein Gemisch vermengt Stoffe, die du oft trennen kannst, zum Beispiel Sand und Wasser. Eine Verbindung ist ein neuer Stoff, zum Beispiel Wasser (H₂O).",
+    "theoryLines": [
+      "In einer Verbindung sind Atome chemisch verbunden.",
+      "In einem Gemisch bleiben die ursprünglichen Stoffe getrennte Substanzen."
+    ]
+  },
+  "materials_15": {
+    "stem": "Welche Aggregatzustände kann Wasser haben?",
+    "options": [
+      "Immer fest bei Zimmertemperatur",
+      "Immer flüssig ohne Ausnahme",
+      "In der Natur in jeder Jahreszeit nur gasförmig",
+      "Fest, flüssig oder gasförmig — je nach Temperatur"
+    ],
+    "explanation": "Wasser kann Eis (fest), flüssiges Wasser oder Wasserdampf (gasförmig) sein.",
+    "theoryLines": [
+      "Die Temperatur verändert den Aggregatzustand.",
+      "Bei normalen Zimmertemperaturen ist Wasser meist flüssig."
+    ]
+  },
+  "materials_16": {
+    "stem": "Was geschieht mit Eis, wenn es warm wird?",
+    "options": [
+      "Es bleibt Eis, wenn du es nie über den Gefrierpunkt erwärmst",
+      "Es wird zu flüssigem Wasser",
+      "Es wird direkt zu Dampf, ohne flüssige Phase",
+      "Es wird zu einem härteren Feststoff"
+    ],
+    "explanation": "Wenn Eis warm wird, schmilzt es zu flüssigem Wasser. Das ist ein Wechsel von fest zu flüssig.",
+    "theoryLines": [
+      "Diese Veränderung heißt Schmelzen.",
+      "Sie geschieht, wenn die Temperatur über 0 °C steigt."
+    ]
+  },
+  "materials_17": {
+    "stem": "In welchen Aggregatzuständen kann Wasser vorkommen?",
+    "options": [
+      "Fest, flüssig und gasförmig",
+      "Ein Ort mit vielen Menschen",
+      "Ein Ort mit Wasser",
+      "Ein Außenbereich"
+    ],
+    "explanation": "Wasser kann Eis (fest), flüssiges Wasser oder Wasserdampf (gasförmig) sein.",
+    "theoryLines": [
+      "Die Temperatur verändert den Aggregatzustand.",
+      "Viele Stoffe können ihren Zustand so wechseln."
+    ]
+  },
+  "materials_18": {
+    "stem": "Welcher Stoff ist hart?",
+    "options": ["Ein Becher Wasser", "Luft", "Eisen", "Schmelzendes Eis"],
+    "explanation": "Eisen ist ein hartes Metall. Menschen nutzen es zum Bauen und für Werkzeuge.",
+    "theoryLines": [
+      "Viele Metalle sind hart und stark.",
+      "Sie leiten auch Wärme und Strom."
+    ]
+  },
+  "materials_19": {
+    "stem": "Was ist ein durchsichtiger Stoff?",
+    "options": [
+      "Ein Stoff, der Licht aufnimmt und dunkel wirkt",
+      "Ein Stoff, der Licht durchlässt, sodass du hindurchsehen kannst",
+      "Ein Stoff, der Licht spiegelt, ohne durchsichtig zu sein",
+      "Ein harter Stoff, durch den kein Licht geht"
+    ],
+    "explanation": "Durchsichtige Stoffe lassen Licht durch, sodass du hindurchsiehst — wie klares Glas oder sauberes Wasser.",
+    "theoryLines": [
+      "Durchsichtigkeit bedeutet, dass du durch den Stoff sehen kannst.",
+      "Das ist nützlich für Fenster und Brillen."
+    ]
+  },
+  "materials_20": {
+    "stem": "Was ist ein organischer Stoff?",
+    "options": [
+      "Fabrik-Kunststoff, der nur aus Öl kommt",
+      "Ein Stoff, der von Lebewesen stammt (Pflanzen oder Tiere)",
+      "Metall aus Gestein ohne Reste von Lebewesen",
+      "Reiner Kalkstein ohne organische Verbindungen"
+    ],
+    "explanation": "Organische Stoffe stammen von Lebewesen — Beispiele sind Holz, Baumwolle und Wolle.",
+    "theoryLines": [
+      "Organische Stoffe zerfallen oft leichter.",
+      "Manche sind umweltfreundlicher."
+    ]
+  },
+  "materials_21": {
+    "stem": "Was ist ein anorganischer Stoff?",
+    "options": [
+      "Ein Stoff, der meist von Lebewesen stammt",
+      "Ein Stoff aus unbelebten Quellen wie Gestein, Metallen und Mineralen",
+      "Ein synthetisches Polymer ohne mineralischen Kern",
+      "Verarbeitetes Holz, das noch Pflanzenzellen enthält"
+    ],
+    "explanation": "Anorganische Stoffe stammen aus unbelebten Quellen — Beispiele sind Gestein, Metalle, Glas und Ton.",
+    "theoryLines": [
+      "Sie können natürlich sein oder von Menschen hergestellt werden.",
+      "Sie zerfallen oft nicht so leicht wie organische Stoffe."
+    ]
+  },
+  "materials_22": {
+    "stem": "Was ist ein magnetischer Stoff?",
+    "options": [
+      "Trockenes Holz, das ein Magnet nicht anzieht",
+      "Ein Stoff, den ein Magnet anzieht (zum Beispiel Eisen)",
+      "Aluminium, das ein Haushaltsmagnet meist nicht anzieht",
+      "Dickes Glas, das ein Magnet nicht anzieht"
+    ],
+    "explanation": "Magnetische Stoffe werden von einem Magneten angezogen. Eisen, Nickel und Cobalt sind Beispiele. Nicht alle Metalle sind magnetisch.",
+    "theoryLines": [
+      "Magnete ziehen magnetische Stoffe an.",
+      "Das hängt von den inneren Eigenschaften des Stoffs ab."
+    ]
+  },
+  "materials_23": {
+    "stem": "Was ist ein elastischer Stoff?",
+    "options": [
+      "Ein Stoff, der sich biegt und bricht, ohne in die Form zurückzukehren",
+      "Ein Stoff, der sich dehnt und dann in die ursprüngliche Form zurückkehrt",
+      "Ein Stoff, der nach dem Drücken für immer klebrig bleibt",
+      "Ein Stoff, der in der Kälte reißt und sich nie wieder verändert"
+    ],
+    "explanation": "Ein elastischer Stoff kann sich dehnen oder biegen und kehrt dann in die ursprüngliche Form zurück — wie Gummi oder eine Feder.",
+    "theoryLines": [
+      "Elastizität ist eine nützliche Stoffeigenschaft.",
+      "Viele Produkte funktionieren dank elastischer Stoffe."
+    ]
+  },
+  "materials_24": {
+    "stem": "Was ist der Unterschied zwischen einem wiederverwendbaren und einem Einwegstoff?",
+    "options": [
+      "Beide werden nur nach Gewicht definiert, nicht danach, wie oft du sie nutzen kannst",
+      "Wiederverwendbare Stoffe kannst du erneut nutzen; Einwegstoffe sind für einmalige Nutzung gedacht",
+      "Einwegstoffe sind immer stärker und besser für lange Nutzung als wiederverwendbare",
+      "Wiederverwendbare Stoffe müssen immer künstlich sein und werden schneller gefährlich"
+    ],
+    "explanation": "Wiederverwendbare Dinge kannst du immer wieder nutzen, zum Beispiel eine Glasflasche. Einwegdinge sind für einmalige Nutzung gedacht, zum Beispiel eine Plastiktüte zum Einmalgebrauch.",
+    "theoryLines": [
+      "Wiederverwendbare Stoffe zu nutzen hilft, die Umwelt zu schützen.",
+      "Es verringert Abfall."
+    ]
+  },
+  "materials_25": {
+    "stem": "Was bedeutet es, wenn ein Stoff biologisch abbaubar ist?",
+    "options": [
+      "Der Stoff kommt natürlich im Boden vor, genau wie Kunststoff.",
+      "Der Stoff zerfällt mit der Zeit auf natürliche Weise in der Umwelt.",
+      "Der Stoff stammt von einem Berg und ist extrem hart.",
+      "Der Stoff löst sich in Wasser, kann aber in der Natur nicht zerfallen."
+    ],
+    "explanation": "Ein biologisch abbaubarer Stoff kann durch natürliche Vorgänge mit der Zeit zerfallen, zum Beispiel Speisereste, Papier oder Holz. Kunststoff ist nicht biologisch abbaubar und bleibt Jahrhunderte in der Umwelt.",
+    "theoryLines": [
+      "Biologisch abbaubare Stoffe wie Lebensmittel, Papier und Holz zersetzen sich natürlich.",
+      "Nicht abbaubare Stoffe wie Kunststoff bleiben sehr lange in der Umwelt."
+    ]
+  },
+  "materials_26": {
+    "stem": "Was ist ein synthetischer Stoff?",
+    "options": [
+      "Ein Stoff aus Stein oder Holz ohne chemische Veränderung",
+      "Ein Stoff, den Menschen in einer Fabrik herstellen und der in der Natur nicht fertig vorkommt",
+      "Ein Baumstamm, genau so geschnitten, wie er gewachsen ist",
+      "Reiner Basalt ohne Verarbeitung"
+    ],
+    "explanation": "Synthetische Stoffe stellen Menschen durch industrielle Verfahren her — Kunststoff und Kunstfasern sind Beispiele.",
+    "theoryLines": [
+      "Synthetische Stoffe können stark und langlebig sein.",
+      "Manche zerfallen nicht leicht."
+    ]
+  },
+  "materials_27": {
+    "stem": "Was ist der Unterschied zwischen einem harten und einem weichen Stoff?",
+    "options": [
+      "Härte hängt nur von der Farbe ab, nicht vom Widerstand gegen Kratzer",
+      "Einen harten Stoff kannst du schwer eindrücken oder schneiden; einen weichen Stoff kannst du leicht eindrücken und verformen",
+      "Ein weicher Stoff lässt sich immer leichter zertrümmern als Metall und kehrt nie in die Form zurück",
+      "Ein harter Stoff wird immer getroffen, ohne Energie aufzunehmen"
+    ],
+    "explanation": "Harte Stoffe widerstehen Druck, Schneiden und Zerbrechen (wie Stein). Weiche Stoffe lassen sich leicht eindrücken und umformen (wie Baumwolle).",
+    "theoryLines": [
+      "Jeder Stoff hat andere Eigenschaften.",
+      "Härte ist eine dieser Eigenschaften."
+    ]
+  },
+  "materials_28": {
+    "stem": "Was gilt dafür, wie Stoffe Licht durchlassen?",
+    "options": [
+      "Kein Stoff lässt jemals Licht durch.",
+      "Manche Stoffe lassen Licht durch (wie Glas), andere blockieren es (wie Holz).",
+      "Alle Stoffe lassen immer alles Licht vollständig durch.",
+      "Ob Licht durch einen Stoff geht, hängt nur von seiner Farbe ab."
+    ],
+    "explanation": "Stoffe, die Licht durchlassen, heißen durchsichtig (wie Glas). Stoffe, die Licht ganz blockieren, heißen undurchsichtig (wie Holz). Manche lassen nur wenig Licht durch — die heißen durchscheinend.",
+    "theoryLines": [
+      "Durchsichtige Stoffe lassen Licht vollständig durch.",
+      "Undurchsichtige Stoffe blockieren alles Licht, durchscheinende lassen nur etwas Licht durch."
+    ]
+  },
+  "materials_12__v2": {
+    "stem": "Worin unterscheiden sich Metall und Glas beim Leiten von Strom?",
+    "options": [
+      "Metall leitet Strom, Glas nicht.",
+      "Metall und Glas leiten Strom gleich gut.",
+      "Metall ist immer durchsichtig wie Glas, Glas ist aber immer undurchsichtig.",
+      "Glas leitet Strom besser als jedes Metall."
+    ],
+    "explanation": "Metall ist ein Leiter — Strom fließt leicht hindurch. Glas ist ein Isolator und lässt Strom nicht durch. Deshalb bestehen Stromkabel aus Metall und sind zum Schutz mit Kunststoff oder Gummi umhüllt.",
+    "theoryLines": [
+      "Leiter lassen Elektronen frei durch den Stoff fließen und tragen so einen elektrischen Strom.",
+      "Isolatoren blockieren den Stromfluss und schützen Menschen in der Nähe von Leitungen."
+    ]
+  },
+  "materials_16__v2": {
+    "stem": "Welcher Stoff ist durchsichtig?",
+    "options": ["Undurchsichtiger Stein", "Schweres Metall", "Glas", "Massives Holz"],
+    "explanation": "Glas ist durchsichtig. Du kannst hindurchsehen.",
+    "theoryLines": [
+      "Durchsichtige Stoffe lassen dich hindurchsehen.",
+      "Das ist nützlich für Fenster."
+    ]
+  },
+  "materials_17__v2": {
+    "stem": "Welcher Stoff ist glänzend?",
+    "options": ["Holz", "Metall", "Baumwolle", "Erde"],
+    "explanation": "Viele Metalle sind glänzend, weil sie Licht spiegeln.",
+    "theoryLines": [
+      "Metalle können glänzend aussehen.",
+      "Glanz ist eine Eigenschaft, die Menschen an Metallen wahrnehmen."
+    ]
+  },
+  "materials_18__v2": {
+    "stem": "Was geschieht mit Wasser, wenn es sehr kalt wird?",
+    "options": [
+      "Es bleibt flüssig",
+      "Es wird zu Eis",
+      "Es wird zu einem Gas",
+      "Es verschwindet"
+    ],
+    "explanation": "Wenn Wasser kalt genug wird, gefriert es zu Eis — einem Feststoff.",
+    "theoryLines": [
+      "Diese Veränderung heißt Gefrieren.",
+      "Sie geschieht, wenn die Temperatur unter 0 °C sinkt."
+    ]
+  },
+  "materials_19__v2": {
+    "stem": "Welcher der folgenden Stoffe stammt von Bäumen?",
+    "options": ["Metall.", "Kunststoff.", "Holz.", "Glas."],
+    "explanation": "Holz ist ein natürlicher Stoff von Bäumen. Metall kommt aus Erzen im Boden, Kunststoff wird aus Öl hergestellt, Glas aus Sand.",
+    "theoryLines": [
+      "Holz ist ein natürlicher Stoff, der seit Tausenden von Jahren genutzt wird.",
+      "Bäume werden gefällt und verarbeitet, um Bauholz und Gegenstände herzustellen."
+    ]
+  },
+  "materials_21__v2": {
+    "stem": "Was sind die Aggregatzustände?",
+    "options": [
+      "Nur ein Name für den festen Zustand, ohne Flüssigkeiten oder Gase",
+      "Fest, flüssig und gasförmig — verschiedene Formen, die Materie annehmen kann",
+      "Eine Beschreibung von Flüssigkeiten ohne Feststoff oder Gas",
+      "Bei jeder Temperatur nur der gasförmige Zustand"
+    ],
+    "explanation": "Aggregatzustände sind die Formen, die Materie annehmen kann: fest (feste Form), flüssig (fließt) oder gasförmig (breitet sich aus).",
+    "theoryLines": [
+      "Wasser kann in allen drei Zuständen vorkommen.",
+      "Die Temperatur kann den Aggregatzustand verändern."
+    ]
+  },
+  "materials_22__v2": {
+    "stem": "Was ist Schmelzen?",
+    "options": [
+      "Erhitzen ohne Zustandsänderung",
+      "Ein Wechsel von fest zu flüssig",
+      "Abkühlen, das Eis statt Wasser erzeugt",
+      "Gefrieren einer Flüssigkeit zu einem Feststoff"
+    ],
+    "explanation": "Schmelzen ist der Wechsel von fest zu flüssig — zum Beispiel Eis, das beim Erwärmen zu Wasser wird.",
+    "theoryLines": [
+      "Schmelzen geschieht, wenn die Temperatur steigt.",
+      "Jeder Stoff hat seinen eigenen Schmelzpunkt."
+    ]
+  },
+  "materials_23__v2": {
+    "stem": "Was ist Gefrieren?",
+    "options": [
+      "Abkühlen ohne Wechsel zu einem Feststoff",
+      "Ein Wechsel von flüssig zu fest",
+      "Erhitzen, das Eis zu Wasser schmilzt",
+      "Schmelzen eines Gases zu einer Flüssigkeit"
+    ],
+    "explanation": "Gefrieren ist der Wechsel von flüssig zu fest — zum Beispiel Wasser, das beim Abkühlen zu Eis wird.",
+    "theoryLines": [
+      "Gefrieren geschieht, wenn die Temperatur sinkt.",
+      "Jeder Stoff hat seinen eigenen Gefrierpunkt."
+    ]
+  },
+  "materials_24__v2": {
+    "stem": "Was ist Verdunstung?",
+    "options": [
+      "Erhitzen, ohne dass Flüssigkeit zu Luft wird",
+      "Ein Wechsel von flüssig zu gasförmig",
+      "Abkühlen, das Wasserdampf zu Flüssigkeit sammelt",
+      "Nur das Schmelzen eines Feststoffs zu einer Flüssigkeit"
+    ],
+    "explanation": "Verdunstung ist der Wechsel von flüssig zu gasförmig — zum Beispiel Wasser, das beim Erwärmen zu Wasserdampf wird.",
+    "theoryLines": [
+      "Verdunstung nimmt zu, wenn die Temperatur steigt.",
+      "Du siehst es, wenn Wasser siedet."
+    ]
+  },
+  "materials_25__v2": {
+    "stem": "Was ist Kondensation?",
+    "options": [
+      "Abkühlen, ohne dass Flüssigkeitstropfen entstehen",
+      "Ein Wechsel von gasförmig zu flüssig",
+      "Erhitzen, das Wasserdampf vollständig wegtreibt",
+      "Nur das Schmelzen von Eis zu Wasser"
+    ],
+    "explanation": "Kondensation ist der Wechsel von gasförmig zu flüssig — zum Beispiel Wasserdampf, der beim Abkühlen zu Wassertropfen wird.",
+    "theoryLines": [
+      "Kondensation geschieht, wenn die Temperatur sinkt.",
+      "Du siehst es an kühlen Fenstern, wenn Dampf zu Tropfen wird."
+    ]
+  },
+  "materials_26__v2": {
+    "stem": "Welche Beschreibung passt zu einem Strom- oder Wärmeleiter?",
+    "options": [
+      "Ein Stoff, der Wärme blockiert und am Weiterwandern hindert.",
+      "Ein Stoff, der Wärme oder Strom leicht durchlässt.",
+      "Holz — es ist der beste Stromleiter.",
+      "Kunststoff — er leitet Strom besser als jedes Metall."
+    ],
+    "explanation": "Leiter lassen Wärme oder Strom leicht durch. Viele Metalle sind gute Leiter; Holz und Kunststoff meist nicht.",
+    "theoryLines": [
+      "Metalle wie Kupfer und Eisen sind übliche Leiter.",
+      "Isolatoren verlangsamen oder blockieren den Fluss von Wärme oder Strom."
+    ]
+  },
+  "materials_27__v2": {
+    "stem": "Was ist ein Isolierstoff?",
+    "options": [
+      "Feuchtes Holz, das Strom trotzdem gut leitet",
+      "Ein Stoff, der Wärme oder Strom schlecht leitet",
+      "Ein reines Metall mit freien Elektronen",
+      "Dünnes Glas als starker Stromleiter"
+    ],
+    "explanation": "Ein Isolator leitet Wärme oder Strom schlecht. Holz, Kunststoff und Gummi sind Beispiele.",
+    "theoryLines": [
+      "Isolatoren helfen, Wärme drinnen oder draußen zu halten.",
+      "Sie sind wichtig für die Sicherheit."
+    ]
+  },
+  "materials_28__v2": {
+    "stem": "Was ist ein magnetischer Stoff?",
+    "options": [
+      "Gereinigtes Eisen, das nie auf einen Magneten reagiert",
+      "Ein Stoff, den ein Magnet anzieht",
+      "Kupfer, das wie Eisen auf einen Magneten reagiert",
+      "Reines Gold, das stark an einem Dauermagneten haftet"
+    ],
+    "explanation": "Einen magnetischen Stoff zieht ein Magnet an. Eisen, Nickel und Cobalt sind Beispiele.",
+    "theoryLines": [
+      "Magnete ziehen magnetische Stoffe an.",
+      "Nicht alle Metalle sind magnetisch."
+    ]
+  },
+  "materials_29": {
+    "stem": "Was ist ein durchsichtiger Stoff?",
+    "options": [
+      "Undurchsichtiges Glas, durch das du nicht sehen kannst",
+      "Ein Stoff, der Licht durchlässt, sodass du hindurchsehen kannst",
+      "Getönter Kunststoff, der kein Licht durchlässt",
+      "Schmutziges Wasser, das die Sicht ganz blockiert"
+    ],
+    "explanation": "Ein durchsichtiger Stoff lässt Licht durch, sodass du hindurchsiehst — wie klares Glas oder sauberes Wasser.",
+    "theoryLines": [
+      "Durchsichtigkeit bedeutet, dass du durch den Stoff sehen kannst.",
+      "Das ist nützlich für Fenster und Brillen."
+    ]
+  },
+  "materials_30": {
+    "stem": "Was ist ein organischer Stoff?",
+    "options": [
+      "Ein synthetisches Polymer ohne Bezug zu Pflanzen",
+      "Ein Stoff, der von Lebewesen stammt (Pflanzen oder Tiere)",
+      "Ein Mineralsalz ohne direkten Bezug zu Überresten von Lebewesen",
+      "Reiner Sandstein ohne lebende Reste"
+    ],
+    "explanation": "Organische Stoffe stammen von Lebewesen — Holz, Baumwolle und Wolle sind Beispiele.",
+    "theoryLines": [
+      "Organische Stoffe zerfallen oft leichter.",
+      "Manche sind besser für die Umwelt."
+    ]
+  }
+}

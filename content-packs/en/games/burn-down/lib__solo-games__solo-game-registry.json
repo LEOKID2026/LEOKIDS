@@ -59,6 +59,9 @@
     "leo_the_miner": "Leo the Miner",
     "merge_mining_dogs_break_rocks_and_earn_points_to_redeem": "Merge mining dogs, break rocks, and earn points to redeem!",
     "points_can_be_redeemed_for_leo_coins_and_diamonds_once_the_server_is_rea": "Points can be redeemed for Leo coins and diamonds (once the server is ready).",
-    "upgrade_dps_to_break_rocks_faster_and_gold_to_earn_more_coins_from_each_": "Upgrade DPS to break rocks faster, and GOLD to earn more coins from each rock."
+    "upgrade_dps_to_break_rocks_faster_and_gold_to_earn_more_coins_from_each_": "Upgrade DPS to break rocks faster, and GOLD to earn more coins from each rock.",
+    "difficulty_easy": "Easy",
+    "difficulty_medium": "Medium",
+    "difficulty_hard": "Hard"
   }
 }

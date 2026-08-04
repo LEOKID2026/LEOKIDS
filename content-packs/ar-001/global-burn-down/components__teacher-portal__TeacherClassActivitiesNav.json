@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "aria_label": "تنقّل الفصل",
+    "class_report": "تقرير الفصل",
+    "activities": "الأنشطة",
+    "worksheets": "أوراق عمل",
+    "discussion": "نقاش"
+  }
+}

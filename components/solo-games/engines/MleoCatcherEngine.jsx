@@ -11,6 +11,8 @@ const DEFAULT_PLAYER_NAME = gamePackCopy("components__solo-games__engines__MleoC
 /**
  * @param {{ autoStart?: boolean, onSessionEnd?: (metrics: object) => void }} props
  */
+import { gameHudScoreColon, gameHudLabel } from "../../../lib/games/game-hud-copy.js";
+
 export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
   const sfx = useSoloEngineAudio();
   const sfxRef = useRef(sfx);
@@ -409,7 +411,7 @@ export default function MleoCatcherEngine({ autoStart = false, onSessionEnd }) {
     ctx.fillStyle = "rgba(255,255,255,0.92)";
     ctx.textAlign = "left";
     ctx.textBaseline = "alphabetic";
-    ctx.fillText(`Score: ${currentScoreRef.current}`, hudPadX, hudY);
+    ctx.fillText(`${gameHudScoreColon()} ${currentScoreRef.current}`, hudPadX, hudY);
     hudY += hudLine;
     ctx.fillText(`Level: ${diff.level}`, hudPadX, hudY);
     if (highScoreRef.current > 0) {

@@ -1,3 +1,6 @@
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+
 /**
  * Consolidated thin-data / data-quality messaging for parent reports.
  * @param {{
@@ -21,19 +24,20 @@ export default function ParentReportDataHealthNote({
     !!dataQualityNoteHe ||
     !!mixedGradePracticeNoteHe;
 
+  const { direction, locale } = useI18n();
   if (!hasContent) return null;
 
   return (
     <div
       className={`mb-3 md:mb-5 avoid-break rounded-lg border border-sky-400/25 bg-sky-950/15 p-3 md:p-4 text-sm text-white/90 space-y-2 ${className}`}
       data-testid="parent-report-data-health-note"
-      dir="ltr"
-      lang="en"
+      dir={direction === "rtl" ? "rtl" : "ltr"}
+      lang={locale === "ar-001" ? "ar" : undefined}
     >
-      <p className="font-bold text-sky-100/95 m-0 text-sm md:text-base">Report data status</p>
+      <p className="font-bold text-sky-100/95 m-0 text-sm md:text-base">{reportPackCopy("pages__learning__parent-report", "report_data_status")}</p>
       {thinEvidenceSubjectsHe.length > 0 ? (
         <p className="m-0 leading-relaxed text-white/50 text-xs md:text-sm">
-          Limited data in subjects: {thinEvidenceSubjectsHe.join(" · ")}
+          {reportPackCopy("pages__learning__parent-report", "limited_data_in_subjects", { list: thinEvidenceSubjectsHe.join(" · ") })}
         </p>
       ) : null}
       {dataQualityNoteHe ? (

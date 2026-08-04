@@ -1,0 +1,6 @@
+{
+  "key": "portal.physicalClassLabel",
+  "en": "Class group",
+  "ar": "طبقة",
+  "expectDetect": ["class-group-wrong"]
+}

@@ -9,6 +9,7 @@
   "tabCreateHint": "Custom settings",
   "tabRecommendationsHint": "From practice",
   "print": "Print",
+  "downloadPdf": "Download PDF",
   "preview": "Preview",
   "answerKey": "Answer key",
   "answerKeySeparate": "Separate answer key — created only when you request it",
@@ -335,5 +336,8 @@
   "writingErrorBodyTooLarge": "The request is too large",
   "writingErrorInvalidWritingCategory": "The writing category is not valid",
   "writingErrorPublicDemoContentNotAllowed": "This content is not available in the demo",
-  "writingErrorNoPrintablePages": "Could not create a printable page from the current selection"
+  "writingErrorNoPrintablePages": "Could not create a printable page from the current selection",
+
+  "answerLineLabel": "Answer:",
+  "optionsHeading": "Options:"
 }

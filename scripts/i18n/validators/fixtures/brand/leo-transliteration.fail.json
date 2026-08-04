@@ -1,0 +1,5 @@
+{
+  "en": "Play with Leo in the maze",
+  "ar": "العب مع ليو في المتاهة",
+  "expectDetect": ["leo-transliteration", "missing-latin-leo"]
+}

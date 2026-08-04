@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "show_landscape": "عرض أفقي",
+    "show_portrait": "عرض عمودي",
+    "landscape": "↔️ أفقي",
+    "portrait": "↕️ عمودي"
+  }
+}

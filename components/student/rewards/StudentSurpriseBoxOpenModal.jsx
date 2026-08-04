@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { formatCoinAmountHe } from "../../../lib/rewards/rewards-ui.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import RewardCardImage from "./RewardCardImage.jsx";
+import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
 
 const OPEN_PATH = "/api/student/rewards/surprise-box/open";
 const OPEN_TIMEOUT_MS = 30_000;
@@ -19,7 +21,9 @@ function SurpriseBoxCardPrizeRow({ card, T, copy }) {
       <div className="flex items-center gap-2 min-w-0">
         <div className="flex-1 min-w-0 text-start">
           <p className={`text-sm font-bold leading-snug ${T.subjectTitle}`}>{card.nameHe}</p>
-          <p className={`text-xs mt-0.5 ${T.tileSub}`}>Rarity: {card.rarityHe}</p>
+          <p className={`text-xs mt-0.5 ${T.tileSub}`}>
+            {copy("previewModal", "rarityLabel", { label: card.rarityHe })}
+          </p>
           {card.wasDuplicate ? (
             <p className="text-xs mt-1 text-amber-700 dark:text-amber-300 line-clamp-2">
               {card.conversionProgressHe || copy("surpriseBox", "duplicateHint")}
@@ -48,6 +52,7 @@ function SurpriseBoxCardPrizeRow({ card, T, copy }) {
 export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened }) {
   const { homeModalShell, tokens: T, isBright } = useStudentTheme();
   const copy = useRewardUiCopy();
+  const { direction, locale } = useI18n();
   const titleId = useId();
   const closeRef = useRef(null);
   const onOpenedRef = useRef(onOpened);
@@ -88,6 +93,17 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
     setResult(null);
 
     (async () => {
+      if (isDemoMode()) {
+        if (cancelled) return;
+        flushSync(() => {
+          setResult({ ok: true, cards: [], coinsReward: 25, pendingBoxCountAfter: 0 });
+          setRemainingPending(0);
+          setPhase("done");
+        });
+        notifyOpened({ ok: true, demo: true, pendingBoxCountAfter: 0, coinsReward: 25 });
+        isReopenAttemptRef.current = false;
+        return;
+      }
       const timeoutId = setTimeout(() => controller.abort(), OPEN_TIMEOUT_MS);
       try {
         const res = await fetch(OPEN_PATH, {
@@ -177,8 +193,9 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        dir="ltr"
-        lang="en"
+        data-testid="student-surprise-box-modal"
+        dir={direction === "rtl" ? "rtl" : "ltr"}
+        lang={locale || undefined}
         onClick={(e) => e.stopPropagation()}
       >
         <header
@@ -208,7 +225,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
           </span>
         </header>
 
-        <div className="px-3 py-2.5 space-y-2 text-start">
+        <div className="px-3 py-2.5 space-y-2 text-start" data-testid="student-surprise-box-modal-body" data-surprise-phase={phase}>
           {phase === "opening" ? (
             <div className="flex flex-col items-center py-4 gap-2">
               <div className={T.loadingSpinner} aria-hidden />
@@ -231,16 +248,18 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
                 <div className="flex flex-wrap gap-2">
                   {coinAmounts.length > 0 ? (
                     <div className={`flex-1 min-w-[7rem] rounded-lg border px-2.5 py-2 ${T.statCard}`}>
-                      <p className={`text-[10px] leading-tight ${T.statLabel}`}>Coins</p>
+                      <p className={`text-[10px] leading-tight ${T.statLabel}`}>
+                        {copy("surpriseBoxModal", "coinsLabel")}
+                      </p>
                       {coinAmounts.length === 1 ? (
                         <p className={`text-base font-bold leading-tight ${T.statValue}`}>
-                          {formatCoinAmountHe(coinAmounts[0])}
+                          {formatCoinAmountHe(coinAmounts[0], locale)}
                         </p>
                       ) : (
                         <ul className="space-y-0.5">
                           {coinAmounts.map((amount, i) => (
                             <li key={i} className={`text-xs font-bold leading-tight ${T.statValue}`}>
-                              {i + 1}: {formatCoinAmountHe(amount)}
+                              {i + 1}: {formatCoinAmountHe(amount, locale)}
                             </li>
                           ))}
                         </ul>
@@ -249,7 +268,9 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
                   ) : null}
                   {diamondsReward > 0 ? (
                     <div className={`flex-1 min-w-[7rem] rounded-lg border px-2.5 py-2 ${T.statCard}`}>
-                      <p className={`text-[10px] leading-tight ${T.statLabel}`}>Diamonds</p>
+                      <p className={`text-[10px] leading-tight ${T.statLabel}`}>
+                        {copy("surpriseBoxModal", "diamondsLabel")}
+                      </p>
                       <p className={`text-base font-bold leading-tight ${T.statValue}`}>+{diamondsReward} 💎</p>
                     </div>
                   ) : null}
@@ -271,7 +292,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
                   disabled={remainingPending <= 0}
                   className={`${T.ctaSurpriseOpen} w-full min-h-[2.5rem] !py-2 !text-sm disabled:opacity-50 disabled:pointer-events-none`}
                 >
-                  Open another box
+                  {copy("surpriseBoxModal", "openAnother")}
                 </button>
                 <div className="flex flex-row gap-1.5 w-full min-w-0">
                   <button
@@ -279,13 +300,13 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
                     onClick={onClose}
                     className={`${T.ctaGames} flex-1 min-w-0 min-h-[2rem] !px-2 !py-1 !text-xs`}
                   >
-                    Kids World
+                    {copy("cardsPage", "kidsWorldBack")}
                   </button>
                   <Link
                     href="/student/cards"
                     className={`${T.ctaPrimary} flex-1 min-w-0 min-h-[2rem] !px-2 !py-1 !text-xs text-center`}
                   >
-                    My collection
+                    {copy("surpriseBox", "myCollection")}
                   </Link>
                 </div>
               </div>

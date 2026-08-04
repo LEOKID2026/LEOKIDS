@@ -10,11 +10,12 @@ export function ParentCopilotQuickActions({ items, compact = false }) {
     ? "px-2 py-1 rounded-md text-[10px] leading-tight font-bold border transition-colors"
     : "px-2.5 py-1.5 rounded-lg text-xs font-bold border transition-colors";
   return (
-    <div className={`${wrap} pt-0`}>
+    <div className={`${wrap} pt-0`} data-testid="parent-copilot-recommendations">
       {items.map((it) => (
         <button
           key={it.id}
           type="button"
+          data-testid={`parent-copilot-recommendation-${it.id}`}
           disabled={!it.enabled}
           onClick={() => {
             if (it.enabled) it.onPress();

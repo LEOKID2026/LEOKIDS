@@ -14,7 +14,9 @@ import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-porta
 import SchoolStaffEmailInviteForm from "../../../components/school-portal/SchoolStaffEmailInviteForm";
 import SchoolStaffCreateForm from "../../../components/school-portal/SchoolStaffCreateForm";
 import SchoolStaffAccessActions from "../../../components/school-portal/SchoolStaffAccessActions";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolUiLocale,
   SCHOOL_ALL_SUBJECTS,
   SCHOOL_EMPTY_TEACHERS,
   SCHOOL_INACTIVE,
@@ -34,6 +36,8 @@ import {
 
 export default function SchoolTeachersPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const { state, accessToken, me, schoolId } = useSchoolPortalLoad();
 
   useEffect(() => {

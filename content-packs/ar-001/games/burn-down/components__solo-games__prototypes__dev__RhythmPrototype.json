@@ -2,7 +2,7 @@
   "copy": {
     "rhythm_game": "لعبة الإيقاع",
     "prototype_tap_when_the_mark_hits_the_line": "النموذج الأولي · اضغط عندما تصل العلامة إلى الخط",
-    "n_lane_lane_n_hit_map_n": "n.lane === خط && !n.hit)\r\n                  .خريطة((ن) => (",
-    "now_n_spawnat": "الآن - n.spawnAt"
+    "n_lane_lane_n_hit_map_n": "n.lane === lane && !n.hit)\r\n                  .map((n) => (",
+    "now_n_spawnat": "now - n.spawnAt"
   }
 }

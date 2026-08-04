@@ -1,6 +1,6 @@
 {
   "copy": {
-    "b_x_a_y": "ب.x && a.y",
-    "hold_to_fly": "عقد للطيران"
+    "b_x_a_y": "b.x && a.y",
+    "hold_to_fly": "امسك للطيران"
   }
 }

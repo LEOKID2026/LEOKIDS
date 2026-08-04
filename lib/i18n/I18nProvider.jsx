@@ -4,6 +4,7 @@ import { createTranslator } from "./create-translator.js";
 import {
   DEFAULT_LOCALE,
   FALLBACK_LOCALE,
+  getLocalePickerLocales,
   getSelectableLocales,
   isRtlLocale,
   resolveLocaleDefinition,
@@ -32,6 +33,11 @@ import {
   formatRelativeTime,
   formatTime,
 } from "./message-format.js";
+import { bindGlobalBurnDownLocale } from "./global-burn-down-copy.js";
+import { bindPlatformDisplayLocale } from "../platform-ui/display-labels.js";
+import { bindReportPackLocale } from "../reports/report-pack-copy.js";
+import { bindGamePackLocale } from "../games/game-pack-copy.js";
+import { bindLearningBurnDownLocale } from "../learning/burn-down-copy.js";
 
 const I18nContext = createContext(null);
 
@@ -58,6 +64,10 @@ export function I18nProvider({
   const router = useRouter();
 
   const interfaceLocale = resolveLocaleDefinition(locale).id;
+  bindGlobalBurnDownLocale(interfaceLocale);
+  bindPlatformDisplayLocale(interfaceLocale);
+  bindGamePackLocale(interfaceLocale);
+  bindLearningBurnDownLocale(interfaceLocale);
   const def = resolveLocaleDefinition(interfaceLocale);
   const direction = def.direction;
   const isRtl = isRtlLocale(interfaceLocale);
@@ -73,6 +83,7 @@ export function I18nProvider({
     reportLocale,
     interfaceLocale,
   });
+  bindReportPackLocale(resolvedReportLocale);
 
   const translator = useMemo(() => createTranslator(interfaceLocale), [interfaceLocale]);
 
@@ -136,13 +147,21 @@ export function I18nProvider({
 
   // Soft next/link and router.push often use bare paths. Restore the active
   // non-default locale prefix after client navigations so es-419 is not lost.
+  // Guard on the browser pathname: middleware rewrites make router `url` look
+  // unprefixed even when the address bar already has the locale — replacing
+  // again would infinite-loop (routeChangeComplete → replace → …).
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
     if (interfaceLocale === DEFAULT_LOCALE) return undefined;
 
     const onComplete = (url) => {
+      const browserPathname = window.location.pathname || "";
+      if (stripLocaleFromPath(browserPathname).hadPrefix) return;
       const next = ensureLocalePrefixedUrl(interfaceLocale, url);
       if (!next) return;
+      if (next === browserPathname || next === `${browserPathname}${window.location.search}${window.location.hash}`) {
+        return;
+      }
       void router.replace(next, undefined, { locale: false, scroll: false });
     };
 
@@ -178,6 +197,7 @@ export function I18nProvider({
       localizeHref: localizeHrefFn,
       setLocale,
       selectableLocales: getSelectableLocales(),
+      localePickerLocales: getLocalePickerLocales(interfaceLocale),
     }),
     [
       interfaceLocale,
@@ -226,6 +246,7 @@ export function useI18n() {
       localizeHref: (href) => localizeHref(DEFAULT_LOCALE, href),
       setLocale: async () => {},
       selectableLocales: getSelectableLocales(),
+      localePickerLocales: getLocalePickerLocales(DEFAULT_LOCALE),
     };
   }
   return ctx;

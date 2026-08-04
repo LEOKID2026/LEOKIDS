@@ -1,9 +1,11 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { filterStudentsByRosterKey } from "../../lib/teacher-portal/teacher-dashboard-roster.js";
 import { effectivePhysicalClassStudentCount } from "../../lib/teacher-portal/teacher-physical-class.js";
 import {
+  bindTeacherUiLocale,
   DASHBOARD_CREATE_CLASS_BUTTON,
   DASHBOARD_CREATE_CLASS_LABEL,
   DASHBOARD_CREATE_CLASS_PLACEHOLDER,
@@ -20,23 +22,19 @@ import {
   teacherStatusBadgeClass,
 } from "../../lib/teacher-ui/teacher-portal-theme.client.js";
 
-const FILTER_OPTIONS = [
-  { key: "all", label: "All" },
-  { key: "struggling", label: "Needs intervention / reinforcement" },
-  { key: "low_activity", label: "Low activity" },
-  { key: "watch", label: "Watch" },
-  { key: "strong", label: "Strong" },
-];
+const SLUG = "components__teacher-portal__TeacherDashboardClient";
+const c = (key) => globalBurnDownCopy(SLUG, key);
 
-const SORT_OPTIONS = [
-  { key: "name", label: "Name" },
-  { key: "activity", label: "Last activity" },
-  { key: "status", label: "Learning status" },
-];
+function stripHebrewDisplay(text, fallback) {
+  const s = String(text || "").trim();
+  if (!s) return fallback || "";
+  if (/[\u0590-\u05FF]/.test(s)) return fallback || "";
+  return s;
+}
 
 function formatCompactStudentStats(student, { activityLoading = false } = {}) {
   if (student.activityPending || activityLoading) {
-    return "Loading activity data…";
+    return c("loading_activity_data");
   }
   const sessions = Number(student.totalSessions) || 0;
   const answers = Number(student.totalAnswers) || 0;
@@ -44,20 +42,26 @@ function formatCompactStudentStats(student, { activityLoading = false } = {}) {
     student.accuracy != null && Number.isFinite(Number(student.accuracy))
       ? `${Math.round(Number(student.accuracy))}%`
       : "-";
-  return `Sessions: ${sessions} · Answers: ${answers} · Success: ${acc}`;
+  return c("student_stats_line")
+    .replace("{sessions}", String(sessions))
+    .replace("{answers}", String(answers))
+    .replace("{acc}", acc);
 }
 
 function StudentDashboardCard({ student, activityLoading = false, T, bright = false }) {
   const pending = Boolean(student.activityPending || activityLoading);
-  const badgeLabel = pending ? "Loading…" : student.statusBadge || "-";
+  const displayName = stripHebrewDisplay(student.studentFullName, c("student_fallback"));
+  const badgeLabel = pending
+    ? c("loading_badge")
+    : stripHebrewDisplay(student.statusBadge, "-") || "-";
 
   return (
     <li className={T.studentCard}>
       <p
         className="font-semibold text-sm leading-tight truncate"
-        title={student.studentFullName}
+        title={displayName}
       >
-        {student.studentFullName}
+        {displayName}
       </p>
       <span
         className={`self-start text-[10px] sm:text-xs font-medium px-2 py-0.5 rounded-full border leading-none ${teacherStatusBadgeClass(
@@ -71,7 +75,7 @@ function StudentDashboardCard({ student, activityLoading = false, T, bright = fa
         {formatCompactStudentStats(student, { activityLoading })}
       </p>
       <Link href={`/teacher/student/${student.studentId}`} className={T.studentReportLink}>
-        View report
+        {c("view_report")}
       </Link>
     </li>
   );
@@ -86,7 +90,7 @@ function Modal({ title, onClose, children, T }) {
           <div className="flex items-center justify-between gap-2 mb-4">
             <h3 className="text-lg font-semibold">{title}</h3>
             <button type="button" onClick={onClose} className={T.modalClose}>
-              Close
+              {c("close_modal")}
             </button>
           </div>
           {children}
@@ -99,7 +103,7 @@ function Modal({ title, onClose, children, T }) {
 function classLimitErrorMessage(body) {
   const code = body?.error?.code;
   if (code === "class_student_limit_reached") {
-    return "This class has reached the 40-student limit. You cannot add more students.";
+    return c("could_not_add_class_limit");
   }
   return null;
 }
@@ -166,7 +170,7 @@ function ClassManagePanel({
     });
     setBusy(false);
     if (res.status !== 200) {
-      setError("Could not update the class name.");
+      setError(c("could_not_update_class_name"));
       return;
     }
     onRefresh();
@@ -187,7 +191,7 @@ function ClassManagePanel({
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 201) {
-      setError(classLimitErrorMessage(body) || "Could not add student.");
+      setError(classLimitErrorMessage(body) || c("could_not_add_student"));
       return;
     }
     setNewStudentName("");
@@ -212,7 +216,7 @@ function ClassManagePanel({
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 201) {
-      setError(classLimitErrorMessage(body) || "Could not add the student to the class.");
+      setError(classLimitErrorMessage(body) || c("could_not_add_to_class"));
       return;
     }
     await loadMembers();
@@ -226,7 +230,7 @@ function ClassManagePanel({
   const atClassCap = perClassCap != null && members.length >= perClassCap;
 
   const onRemoveFromClass = async (member) => {
-    if (!window.confirm(globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "remove_this_student_from_the_class"))) return;
+    if (!window.confirm(c("remove_this_student_from_the_class"))) return;
     setBusy(true);
     setError("");
     const idsByClass = member.membershipIdsByClass || {};
@@ -245,7 +249,7 @@ function ClassManagePanel({
     }
     setBusy(false);
     if (failed) {
-      setError("Could not remove from class.");
+      setError(c("could_not_remove_from_class"));
       return;
     }
     await loadMembers();
@@ -261,7 +265,7 @@ function ClassManagePanel({
     });
     setBusy(false);
     if (res.status !== 200) {
-      setError("Could not update the student's name.");
+      setError(c("could_not_update_student_name"));
       return;
     }
     setEditStudentId(null);
@@ -270,7 +274,7 @@ function ClassManagePanel({
   };
 
   const onArchiveStudent = async (studentId) => {
-    if (!window.confirm(globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "remove_this_student_from_your_teacher_list"))) return;
+    if (!window.confirm(c("remove_this_student_from_your_teacher_list"))) return;
     setBusy(true);
     const res = await teacherAuthFetch(accessToken, `/api/teacher/students/${studentId}/archive`, {
       method: "POST",
@@ -278,18 +282,22 @@ function ClassManagePanel({
     });
     setBusy(false);
     if (res.status !== 200) {
-      setError("Could not remove the student.");
+      setError(c("could_not_remove_student"));
       return;
     }
     await loadMembers();
     onRefresh();
   };
 
+  const studentsInClassLabel = perClassCap != null
+    ? c("students_in_class_count").replace("{count}", members.length).replace("{cap}", perClassCap)
+    : c("students_in_class_count_open").replace("{count}", members.length);
+
   return (
-    <Modal title={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "manage_class")} onClose={onClose} T={T}>
+    <Modal title={c("manage_class")} onClose={onClose} T={T}>
       <div className="space-y-4">
         <div>
-          <label className={T.label}>Class name</label>
+          <label className={T.label}>{c("class_name_label")}</label>
           <div className="flex flex-wrap gap-2">
             <input
               className={T.input}
@@ -302,17 +310,17 @@ function ClassManagePanel({
               onClick={onRenameClass}
               className={T.primaryBtn}
             >
-              Save
+              {c("save")}
             </button>
           </div>
         </div>
 
         <section>
-          <h4 className="text-sm font-semibold mb-2">Add student</h4>
+          <h4 className="text-sm font-semibold mb-2">{c("add_student_heading")}</h4>
           <div className="flex flex-wrap gap-2">
             <input
               className={T.input}
-              placeholder={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "full_name_of_new_student")}
+              placeholder={c("full_name_of_new_student")}
               value={newStudentName}
               onChange={(e) => setNewStudentName(e.target.value)}
             />
@@ -322,12 +330,12 @@ function ClassManagePanel({
               onClick={onCreateAndAdd}
               className={T.emeraldBtn}
             >
-              Add
+              {c("add_student")}
             </button>
           </div>
           {addableStudents.length > 0 ? (
             <div className="mt-2 space-y-1">
-              <p className={`text-xs ${T.faint}`}>Linked students not in this class:</p>
+              <p className={`text-xs ${T.faint}`}>{c("linked_not_in_class")}</p>
               {addableStudents.slice(0, 5).map((s) => (
                 <div key={s.studentId} className="flex items-center justify-between gap-2 text-sm">
                   <span className="truncate">{s.studentFullName}</span>
@@ -337,7 +345,7 @@ function ClassManagePanel({
                     onClick={() => onAddExisting(s.studentId)}
                     className={`${T.ghostLink} disabled:opacity-50`}
                   >
-                    Add to class
+                    {c("add_to_class")}
                   </button>
                 </div>
               ))}
@@ -346,13 +354,10 @@ function ClassManagePanel({
         </section>
 
         <section>
-          <h4 className="text-sm font-semibold mb-2">
-            Students in class ({members.length}
-            {perClassCap != null ? ` / ${perClassCap}` : ""})
-          </h4>
-          {atClassCap ? <p className={T.warningText}>This class has reached the {perClassCap}-student limit.</p> : null}
+          <h4 className="text-sm font-semibold mb-2">{studentsInClassLabel}</h4>
+          {atClassCap ? <p className={T.warningText}>{c("class_at_cap").replace("{cap}", perClassCap)}</p> : null}
           {members.length === 0 ? (
-            <p className={T.muted}>No students in this class.</p>
+            <p className={T.muted}>{c("no_students_in_class")}</p>
           ) : (
             <ul className="space-y-2 max-h-64 overflow-y-auto">
               {members.map((m) => (
@@ -370,20 +375,20 @@ function ClassManagePanel({
                         onClick={() => onSaveStudentName(m.studentId)}
                         className={T.successLink}
                       >
-                        Save
+                        {c("save")}
                       </button>
                       <button
                         type="button"
                         onClick={() => setEditStudentId(null)}
                         className={T.mutedLink}
                       >
-                        Cancel
+                        {c("cancel")}
                       </button>
                     </EditRow>
                   ) : (
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-medium truncate">
-                        {m.studentFullName || m.studentFullNameMasked || "Student"}
+                        {m.studentFullName || m.studentFullNameMasked || c("student_fallback")}
                       </span>
                       <div className="flex flex-wrap gap-2 shrink-0">
                         <button
@@ -394,21 +399,21 @@ function ClassManagePanel({
                             setEditName(m.studentFullName || m.studentFullNameMasked || "");
                           }}
                         >
-                          Rename
+                          {c("rename")}
                         </button>
                         <button
                           type="button"
                           className={T.mutedLink}
                           onClick={() => onRemoveFromClass(m)}
                         >
-                          Remove from class
+                          {c("remove_from_class")}
                         </button>
                         <button
                           type="button"
                           className={T.dangerLink}
                           onClick={() => onArchiveStudent(m.studentId)}
                         >
-                          Remove from list
+                          {c("remove_from_list")}
                         </button>
                       </div>
                     </div>
@@ -466,7 +471,7 @@ function ClassesEmptyState({ accessToken, onCreated, T }) {
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 201) {
-      setError(body?.error?.message || "Could not create class.");
+      setError(body?.error?.message || c("could_not_create_class"));
       return;
     }
     onCreated?.();
@@ -474,7 +479,7 @@ function ClassesEmptyState({ accessToken, onCreated, T }) {
 
   return (
     <section className={T.emptySection} data-testid="teacher-classes-empty-state">
-      <h2 className="text-lg font-semibold mb-2">Classes</h2>
+      <h2 className="text-lg font-semibold mb-2">{c("classes_heading")}</h2>
       <p className={`text-sm mb-1 ${T.muted}`}>{DASHBOARD_NO_CLASSES_TITLE}</p>
       <p className={`text-sm mb-4 ${T.faint}`}>{DASHBOARD_NO_CLASSES_HINT}</p>
       <label className="block text-sm mb-3">
@@ -492,7 +497,7 @@ function ClassesEmptyState({ accessToken, onCreated, T }) {
         onClick={() => void onCreateClass()}
         className={T.primaryBtn}
       >
-        {busy ? "Creating…" : DASHBOARD_CREATE_CLASS_BUTTON}
+        {busy ? c("creating") : DASHBOARD_CREATE_CLASS_BUTTON}
       </button>
       {error ? (
         <p className={`${T.error} mt-3`} role="alert">
@@ -512,6 +517,9 @@ export default function TeacherDashboardClient({
   bright = false,
 }) {
   const T = getTeacherPortalTheme(bright);
+  const { locale } = useI18n();
+  bindTeacherUiLocale(locale);
+
   const [search, setSearch] = useState("");
   const [rosterFilterKey, setRosterFilterKey] = useState(
     () => dashboard?.defaultRosterFilterKey || "all"
@@ -519,6 +527,22 @@ export default function TeacherDashboardClient({
   const [filterKey, setFilterKey] = useState("all");
   const [sortKey, setSortKey] = useState("name");
   const [manageClass, setManageClass] = useState(null);
+
+  const FILTER_OPTIONS = useMemo(() => [
+    { key: "all", label: c("filter_all") },
+    { key: "struggling", label: c("filter_intervention") },
+    { key: "low_activity", label: c("filter_low_activity") },
+    { key: "watch", label: c("filter_watch") },
+    { key: "strong", label: c("filter_strong") },
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  ], [locale]);
+
+  const SORT_OPTIONS = useMemo(() => [
+    { key: "name", label: c("sort_name") },
+    { key: "activity", label: c("sort_activity") },
+    { key: "status", label: c("sort_status") },
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  ], [locale]);
 
   const rosterFilters = dashboard?.rosterFilters || [];
 
@@ -537,7 +561,7 @@ export default function TeacherDashboardClient({
     }
     list.sort((a, b) => {
       if (sortKey === "name") {
-        return String(a.studentFullName || "").localeCompare(String(b.studentFullName || ""), "he");
+        return String(a.studentFullName || "").localeCompare(String(b.studentFullName || ""), locale === "ar-001" ? "ar" : "en");
       }
       if (sortKey === "activity") {
         const pendingA = a.activityPending ? 1 : 0;
@@ -551,61 +575,63 @@ export default function TeacherDashboardClient({
       return 0;
     });
     return list;
-  }, [dashboard?.students, rosterFilterKey, rosterFilters, search, filterKey, sortKey]);
+  }, [dashboard?.students, rosterFilterKey, rosterFilters, search, filterKey, sortKey, locale]);
 
   const activeRosterOption = useMemo(
     () => rosterFilters.find((o) => o.key === rosterFilterKey) || null,
     [rosterFilters, rosterFilterKey]
   );
 
-  const displayName = dashboard?.teacher?.displayName;
+  const displayName = stripHebrewDisplay(dashboard?.teacher?.displayName, "");
+
+  const hiLabel = displayName
+    ? c("hi_teacher_name").replace("{name}", displayName)
+    : c("hi_teacher_fallback");
 
   return (
     <div className="space-y-6 overflow-x-hidden">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className={`text-xl font-semibold ${T.heading}`}>
-            {displayName ? `Hi, ${displayName}` : "Hi, teacher"}
-          </p>
-          <p className={`text-sm mt-1 ${T.subheading}`}>Dashboard — classes and students</p>
+          <p className={`text-xl font-semibold ${T.heading}`}>{hiLabel}</p>
+          <p className={`text-sm mt-1 ${T.subheading}`}>{c("dashboard_subtitle")}</p>
         </div>
         <button type="button" onClick={onLogout} className={T.logoutBtn}>
-          Sign out
+          {c("sign_out")}
         </button>
       </div>
 
       <section className={T.section}>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <SummaryStat
-            label={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "students")}
+            label={c("students")}
             value={dashboard?.summary?.studentCount ?? 0}
             testId="teacher-dashboard-summary-students"
             T={T}
           />
-          <SummaryStat label={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "classes")} value={dashboard?.summary?.classCount ?? 0} T={T} />
+          <SummaryStat label={c("classes")} value={dashboard?.summary?.classCount ?? 0} T={T} />
           <div className="col-span-2 flex flex-col justify-center gap-2">
-            <p className={`text-xs mb-1 ${T.faint}`}>Latest topic/activity</p>
+            <p className={`text-xs mb-1 ${T.faint}`}>{c("latest_topic_activity")}</p>
             <p
               className={`text-sm font-medium leading-snug ${T.heading}`}
               data-testid="teacher-dashboard-latest-subject"
             >
               {activityLoading
-                ? "Loading activity data…"
-                : dashboard?.summary?.latestSubjectLabel || "Not enough data yet"}
+                ? c("loading_activity_data")
+                : dashboard?.summary?.latestSubjectLabel || c("not_enough_data")}
             </p>
             <Link
               href="/teacher/worksheets"
               className={T.linkViolet}
               data-testid="teacher-dashboard-worksheets-link"
             >
-              Worksheets →
+              {c("worksheets_link")}
             </Link>
             <Link
               href="/teacher/students/activities/new"
               className={T.linkEmerald}
               data-testid="teacher-dashboard-private-students-activity-link"
             >
-              Send activity to private students →
+              {c("send_activity_link")}
             </Link>
           </div>
         </div>
@@ -613,37 +639,46 @@ export default function TeacherDashboardClient({
 
       {(dashboard?.teacherAttentionSignals?.topAttentionStudents || []).length > 0 ? (
         <section className={T.attentionSection} data-testid="teacher-dashboard-attention-signals">
-          <h2 className={`text-lg font-semibold mb-3 ${T.heading}`}>Students who need attention</h2>
+          <h2 className={`text-lg font-semibold mb-3 ${T.heading}`}>{c("students_need_attention")}</h2>
           <ul className="grid gap-2 sm:grid-cols-3">
             {dashboard.teacherAttentionSignals.topAttentionStudents.map((s) => (
               <li key={s.studentId} className={T.attentionCard}>
                 <span className="font-semibold truncate">
-                  {formatTeacherAttentionStudentLineHe(
-                    s.studentFullNameMasked,
-                    s.classDisplayLabel
+                  {stripHebrewDisplay(
+                    formatTeacherAttentionStudentLineHe(
+                      s.studentFullNameMasked,
+                      s.classDisplayLabel
+                    ),
+                    c("student_fallback")
                   )}
                 </span>
                 <span className={T.attentionSeverity}>
                   {s.guidanceSeverityTier === "critical"
-                    ? "Needs immediate attention"
+                    ? c("needs_immediate_attention")
                     : s.guidanceSeverityTier === "needs_reinforcement"
-                      ? "Needs reinforcement"
+                      ? c("needs_reinforcement")
                       : s.riskLevel === "high"
-                        ? "Needs immediate attention"
-                        : "Worth monitoring"}
+                        ? c("needs_immediate_attention")
+                        : c("worth_monitoring")}
                 </span>
-                {s.topWeakTopicLabelHe ? (
+                {s.topWeakTopicLabelHe && !/[\u0590-\u05FF]/.test(String(s.topWeakTopicLabelHe)) ? (
                   <span className={T.attentionTopic}>{s.topWeakTopicLabelHe}</span>
+                ) : s.topWeakTopicKey ? (
+                  <span className={T.attentionTopic}>{String(s.topWeakTopicKey).replace(/_/g, " ")}</span>
                 ) : null}
                 <span className={T.attentionMeta}>
-                  {s.accuracyPct != null ? `${Math.round(s.accuracyPct)}% success` : ""}
-                  {s.totalAnswers ? ` · ${s.totalAnswers} answers` : ""}
+                  {s.accuracyPct != null
+                    ? c("attention_success_pct").replace("{pct}", String(Math.round(s.accuracyPct)))
+                    : ""}
+                  {s.totalAnswers
+                    ? c("attention_answers_count").replace("{count}", String(s.totalAnswers))
+                    : ""}
                 </span>
                 <Link
                   href={`/teacher/student/${encodeURIComponent(s.studentId)}`}
                   className={T.attentionLink}
                 >
-                  View report
+                  {c("view_report")}
                 </Link>
               </li>
             ))}
@@ -653,32 +688,32 @@ export default function TeacherDashboardClient({
 
       {(dashboard?.classes || []).length > 0 ? (
         <section className={T.classSection} data-testid="teacher-class-cards-section">
-          <h2 className={`text-lg font-semibold mb-3 ${T.heading}`}>My classes</h2>
+          <h2 className={`text-lg font-semibold mb-3 ${T.heading}`}>{c("my_classes")}</h2>
           <ul className="grid gap-3 sm:grid-cols-2">
-            {(dashboard.classes || []).map((c) => {
-              const rosterKey = c.physicalGroupKey || c.classId;
-              const subjectClasses = (c.subjectClassIds || []).filter((s) => s?.classId);
+            {(dashboard.classes || []).map((cls) => {
+              const rosterKey = cls.physicalGroupKey || cls.classId;
+              const subjectClasses = (cls.subjectClassIds || []).filter((s) => s?.classId);
               const classRouteId =
-                subjectClasses[0]?.classId || c.primaryClassId || c.classId;
+                subjectClasses[0]?.classId || cls.primaryClassId || cls.classId;
               const classBase = classRouteId
                 ? `/teacher/class/${encodeURIComponent(classRouteId)}`
                 : "";
-              const studentCount = effectivePhysicalClassStudentCount(c);
-              const subjectLinkLabel = (s) =>
-                s.subjectLabel || subjectLabel(s.subjectFocus) || "Class";
+              const studentCount = effectivePhysicalClassStudentCount(cls);
+                const subjectLinkLabel = (s) =>
+                  subjectLabel(s.subjectFocus) || s.subjectLabel || c("class_fallback");
               const reportLinks =
                 subjectClasses.length > 1
                   ? subjectClasses.map((s) => ({
                       classId: s.classId,
                       href: `/teacher/class/${encodeURIComponent(s.classId)}`,
-                      label: `Report ${subjectLinkLabel(s)}`,
+                      label: c("report_subject").replace("{subject}", subjectLinkLabel(s)),
                     }))
                   : classBase
                     ? [
                         {
                           classId: classRouteId,
                           href: classBase,
-                          label: globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "class_report"),
+                          label: c("class_report"),
                         },
                       ]
                     : [];
@@ -687,14 +722,14 @@ export default function TeacherDashboardClient({
                   ? subjectClasses.map((s) => ({
                       classId: s.classId,
                       href: `/teacher/class/${encodeURIComponent(s.classId)}/activities/new`,
-                      label: `Activity ${subjectLinkLabel(s)}`,
+                      label: c("activity_subject").replace("{subject}", subjectLinkLabel(s)),
                     }))
                   : classBase
                     ? [
                         {
                           classId: classRouteId,
                           href: `${classBase}/activities`,
-                          label: globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "activities"),
+                          label: c("activities"),
                         },
                       ]
                     : [];
@@ -707,11 +742,29 @@ export default function TeacherDashboardClient({
                   data-testid={`teacher-physical-class-card-${rosterKey}`}
                 >
                   <div>
-                    <p className="font-semibold break-words">{c.name}</p>
-                    <p className={T.classMeta}>Students: {studentCount}</p>
-                    {c.subjectsLabel ? (
-                      <p className={T.classSubjects}>Subjects: {c.subjectsLabel}</p>
-                    ) : null}
+                    <p className="font-semibold break-words">{cls.name}</p>
+                    <p className={T.classMeta}>{c("students_count").replace("{count}", studentCount)}</p>
+                    {(() => {
+                      const fromSubjectClasses = subjectClasses
+                        .map((s) => subjectLabel(s.subjectFocus))
+                        .filter(Boolean);
+                      const ids = Array.isArray(cls.subjects)
+                        ? cls.subjects
+                        : Array.isArray(cls.subjectIds)
+                          ? cls.subjectIds
+                          : [];
+                      const localized =
+                        fromSubjectClasses.length > 0
+                          ? fromSubjectClasses.join(", ")
+                          : ids.length > 0
+                            ? ids.map((id) => subjectLabel(id)).filter(Boolean).join(", ")
+                            : stripHebrewDisplay(cls.subjectsLabel, "");
+                      return localized ? (
+                        <p className={T.classSubjects}>
+                          {c("subjects_label").replace("{label}", localized)}
+                        </p>
+                      ) : null;
+                    })()}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <button
@@ -720,7 +773,7 @@ export default function TeacherDashboardClient({
                       className={T.secondaryBtn}
                       data-testid={`teacher-roster-filter-class-${rosterKey}`}
                     >
-                      Show class students
+                      {c("show_class_students")}
                     </button>
                     {reportLinks.map((link) => (
                       <Link
@@ -744,11 +797,11 @@ export default function TeacherDashboardClient({
                     ))}
                     <button
                       type="button"
-                      onClick={() => setManageClass(c)}
+                      onClick={() => setManageClass(cls)}
                       className={T.secondaryBtn}
                       data-testid={`teacher-class-manage-${rosterKey}`}
                     >
-                      Manage class
+                      {c("manage_class_btn")}
                     </button>
                   </div>
                 </li>
@@ -761,10 +814,10 @@ export default function TeacherDashboardClient({
       )}
 
       <section data-testid="teacher-student-roster-section">
-        <h2 className={`text-lg font-semibold mb-1 ${T.heading}`}>Students</h2>
+        <h2 className={`text-lg font-semibold mb-1 ${T.heading}`}>{c("students_heading")}</h2>
         {activeRosterOption && rosterFilterLabel(activeRosterOption) ? (
           <p className={`text-sm mb-3 ${T.muted}`} data-testid="teacher-roster-active-label">
-            Showing: {rosterFilterLabel(activeRosterOption)}
+            {c("showing_label").replace("{label}", rosterFilterLabel(activeRosterOption))}
           </p>
         ) : null}
 
@@ -772,7 +825,7 @@ export default function TeacherDashboardClient({
           <div
             className="flex flex-wrap gap-2 mb-4"
             role="tablist"
-            aria-label={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "filter_student_list")}
+            aria-label={c("filter_student_list")}
             data-testid="teacher-roster-filter-tabs"
           >
             {rosterFilters.map((opt) => {
@@ -801,7 +854,7 @@ export default function TeacherDashboardClient({
         <div className="space-y-3 mb-4">
           <input
             type="search"
-            placeholder={globalBurnDownCopy("components__teacher-portal__TeacherDashboardClient", "search_by_name")}
+            placeholder={c("search_by_name")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className={T.searchInput}
@@ -819,7 +872,7 @@ export default function TeacherDashboardClient({
             ))}
           </div>
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className={T.faint}>Sort:</span>
+            <span className={T.faint}>{c("sort_label")}</span>
             {SORT_OPTIONS.map((s) => (
               <button
                 key={s.key}
@@ -835,7 +888,7 @@ export default function TeacherDashboardClient({
 
         {filteredStudents.length === 0 ? (
           <p className={T.emptyHint} data-testid="teacher-roster-empty">
-            No students to show for this filter.
+            {c("no_students_filter")}
           </p>
         ) : (
           <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
@@ -877,4 +930,3 @@ function SummaryStat({ label, value, testId, T }) {
     </div>
   );
 }
-

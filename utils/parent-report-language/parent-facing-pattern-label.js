@@ -7,17 +7,23 @@ import { mathReportBaseOperationKey } from "../math-report-generator.js";
 import { rewriteEngineTaxonomySnippetForParentHe } from "../diagnostic-labels.js";
 import { normalizeParentFacing } from "./parent-facing-normalize.js";
 import { sanitizeParentPatternLabel } from "../learning-pattern-decision/parent-pattern-label.js";
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
+
+const PATTERN_SLUG = "utils__parent-report-language__parent-facing-pattern-label";
 
 /** Engine-internal M-10 pattern key — must not appear parent-facing. */
 export const M10_ENGINE_PATTERN_HE = "unsuitable multiplication choice for division";
 
 export const M10_PARENT_PATTERN_LABELS = {
-  divisionBuckets:
-    "Based on the questions practiced in the selected period, it's worth continuing to practice division and reinforcing the connection to multiplication.",
-  multiplication:
-    "Based on the questions practiced in the selected period, it's worth continuing to practice the inverse relationship between multiplication and division.",
-  thinFallback:
-    "Based on the questions practiced in the selected period, it's worth continuing to practice division and reinforcing the connection to multiplication.",
+  get divisionBuckets() {
+    return reportPackCopy(PATTERN_SLUG, "m10_division_buckets");
+  },
+  get multiplication() {
+    return reportPackCopy(PATTERN_SLUG, "m10_multiplication");
+  },
+  get thinFallback() {
+    return reportPackCopy(PATTERN_SLUG, "m10_thin_fallback");
+  },
 };
 
 /**

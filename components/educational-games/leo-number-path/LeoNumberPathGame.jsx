@@ -33,6 +33,8 @@ function scoreForAttempt(attemptNum) {
   return SCORE.third;
 }
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+
 export default function LeoNumberPathGame({
   autoStart = false,
   initialDifficulty = "easy",
@@ -453,7 +455,7 @@ export default function LeoNumberPathGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🎉 You finished the path!</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-number-path__LeoNumberPathGame", "end_score", { score })}</p>
             <p className={frame.endStat}>
               ✅ Successes: {successCount}/{tasks.length || TASKS_PER_SESSION}
             </p>

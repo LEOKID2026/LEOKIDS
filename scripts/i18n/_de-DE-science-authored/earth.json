@@ -1,0 +1,879 @@
+{
+  "earth_1": {
+    "stem": "Was verursacht Tag und Nacht auf der Erde?",
+    "options": [
+      "Die Sonne bewegt sich einmal alle 24 Stunden um die Erde.",
+      "Die Erde dreht sich um die eigene Achse, sodass verschiedene Teile zu unterschiedlichen Zeiten zur Sonne zeigen.",
+      "Der Mond blockiert nachts das Sonnenlicht, das die Erde erreicht.",
+      "Die Erde kommt jeden Tag der Sonne näher und entfernt sich wieder."
+    ],
+    "explanation": "Tag und Nacht entstehen, weil sich die Erde um ihre Achse dreht. Die Seite zur Sonne hat Tag; die abgewandte Seite hat Nacht.",
+    "theoryLines": [
+      "Die Erde braucht für eine volle Umdrehung etwa 24 Stunden.",
+      "Beim Drehen wandert jeder Teil vom Sonnenlicht in den Schatten und wieder zurück."
+    ]
+  },
+  "earth_2": {
+    "stem": "Welche Aussage über die Erde ist wahr?",
+    "options": [
+      "Die Erde wird von der Sonne umkreist, nicht vom Mond.",
+      "Die Erde umkreist die Sonne einmal im Jahr.",
+      "Die Erde steht im Weltraum völlig still.",
+      "Ein voller Tag-Nacht-Zyklus auf der Erde dauert 48 Stunden."
+    ],
+    "explanation": "Die Erde wandert einmal im Jahr um die Sonne. Diese jährliche Bahn zusammen mit der Neigung der Erde ergibt die Jahreszeiten. Außerdem dreht sich die Erde alle 24 Stunden um ihre Achse und ergibt so Tag und Nacht.",
+    "theoryLines": [
+      "Die Erde umkreist die Sonne auf einer Bahn, die Revolution genannt wird und etwa 365 Tage dauert.",
+      "Die Erde dreht sich auch um die eigene Achse und verursacht so Tag und Nacht."
+    ]
+  },
+  "earth_3": {
+    "stem": "Welche Aussage über den Mond ist wahr?",
+    "options": [
+      "Der Mond spiegelt Licht von der Sonne — er erzeugt kein eigenes Licht.",
+      "Der Mond ist ein Planet, der die Sonne direkt umkreist.",
+      "Der Mond erzeugt jede Nacht sein eigenes helles Licht.",
+      "Der Mond leuchtet jederzeit aus jeder Richtung gleich hell."
+    ],
+    "explanation": "Der Mond ist kein Stern und kein Planet — er ist ein natürlicher Satellit, der die Erde umkreist. Er erzeugt kein eigenes Licht. Das Mondlicht, das wir sehen, ist Sonnenlicht, das von der Mondoberfläche zurückgeworfen wird.",
+    "theoryLines": [
+      "Sterne wie die Sonne erzeugen ihr eigenes Licht durch Kernreaktionen.",
+      "Der Mond ist ein Gesteinskörper, der nur Sonnenlicht spiegelt — deshalb kann er nachts hell wirken."
+    ]
+  },
+  "earth_4": {
+    "stem": "Welche Aussage über die Schichten der Erde ist wahr?",
+    "options": [
+      "Die Erde ist nur eine dünne Kruste über leerem Raum",
+      "Die Erde besteht aus Kruste, Mantel und Kern",
+      "Die Erde ist eine einzige gleichmäßige Schicht",
+      "Wir haben keine Informationen über das Innere der Erde"
+    ],
+    "explanation": "Die Erde hat eine dünne äußere Kruste, einen dicken Mantel und einen sehr heißen Kern.",
+    "theoryLines": [
+      "Vieles, was wir über das Erdinnere wissen, stammt von Erdbeben und geologischen Untersuchungen.",
+      "Der innere Kern ist dicht und extrem heiß."
+    ]
+  },
+  "earth_5": {
+    "stem": "Was kannst du tagsüber meist am Himmel sehen?",
+    "options": [
+      "Nur den Mond, der zum Nachthimmel gehört.",
+      "Die Sonne und manchmal auch den Mond.",
+      "Sterne leuchten tagsüber genauso hell wie nachts.",
+      "Nur Planeten und Wassertröpfchen hoch in der Atmosphäre."
+    ],
+    "explanation": "Die Sonne erhellt den Taghimmel. Manchmal ist auch der Mond tagsüber sichtbar, besonders wenn ein Teil seiner beleuchteten Seite zur Erde zeigt. Sterne sind immer am Himmel, aber zu schwach, um sie bei Sonnenschein zu sehen.",
+    "theoryLines": [
+      "Die Sonne ist unser nächster Stern und liefert Licht und Wärme, die Leben möglich machen.",
+      "Der Mond umkreist die Erde und ist manchmal auch am Tag zu sehen."
+    ]
+  },
+  "earth_6": {
+    "stem": "Was kannst du nachts am Himmel sehen?",
+    "options": [
+      "Die Sonne — sie scheint tags und nachts am Himmel.",
+      "Den Mond und Sterne.",
+      "Den Mond, aber niemals Sterne.",
+      "Nur Sterne — der Mond ist nachts nie zu sehen."
+    ],
+    "explanation": "Nachts zeigt die Seite der Erde, auf der du stehst, von der Sonne weg. Ohne das helle Sonnenlicht siehst du Mond und Sterne. Der Mond spiegelt Sonnenlicht, und Sterne sind ferne Sonnen, die eigenes Licht erzeugen.",
+    "theoryLines": [
+      "Der Mond ist nachts sichtbar, weil er Sonnenlicht zur Erde spiegelt.",
+      "Sterne sind immer am Himmel, aber klar sieht man sie nur bei Dunkelheit."
+    ]
+  },
+  "earth_7": {
+    "stem": "Wie verändert sich das Wetter?",
+    "options": [
+      "Es bleibt das ganze Jahr gleich",
+      "Es ändert sich: heiß, kalt, regnerisch oder sonnig",
+      "Es bleibt am selben Tag überall heiß",
+      "Es bleibt kalt, ohne warme Tage"
+    ],
+    "explanation": "Das Wetter ändert sich von Tag zu Tag — heiß oder kalt, Regen, Sonne, Wind und mehr.",
+    "theoryLines": [
+      "Das Wetter kann sich von einem Tag zum nächsten ändern.",
+      "Die Jahreszeiten sind Sommer, Winter, Herbst und Frühling."
+    ]
+  },
+  "earth_8": {
+    "stem": "Wann scheint die Sonne?",
+    "options": [
+      "Die Sonne scheint immer — wir sehen sie tagsüber, wenn Wolken sie nicht verdecken",
+      "Die Sonne scheint nur nachts",
+      "Die Sonne wird jeden Tag ein- und ausgeschaltet",
+      "Die Sonne hat nichts mit Tag und Nacht zu tun"
+    ],
+    "explanation": "Die Sonne scheint die ganze Zeit. Wolken können sie verdecken, sodass das Tageslicht matter wirkt.",
+    "theoryLines": [
+      "Die Sonne scheint weiter, auch wenn Wolken den Himmel bedecken.",
+      "Wolken können uns die Sicht auf die Sonne nehmen."
+    ]
+  },
+  "earth_9": {
+    "stem": "Was verursacht die Jahreszeiten?",
+    "options": [
+      "Nur die Entfernung der Erde zur Sonne.",
+      "Die Neigung der Erde und ihre Bahn um die Sonne.",
+      "Tägliche Temperaturschwankungen im Wetter.",
+      "Die Windgeschwindigkeit um die Erde."
+    ],
+    "explanation": "Die Erde ist auf ihrer Achse geneigt und wandert im Lauf eines Jahres um die Sonne. Neigt sich eine Halbkugel zur Sonne, bekommt sie mehr direktes Sonnenlicht über mehr Stunden — das ergibt Sommer. Neigt sie sich weg, gibt es weniger direktes Licht — das ergibt Winter.",
+    "theoryLines": [
+      "Wenn die Nordhalbkugel zur Sonne geneigt ist, hat sie Sommer, während die Südhalbkugel Winter hat.",
+      "Die Entfernung der Erde zur Sonne ändert sich im Jahr nur wenig und ist nicht die Hauptursache der Jahreszeiten."
+    ]
+  },
+  "earth_10": {
+    "stem": "Was ist der Wasserkreislauf?",
+    "options": [
+      "Regen fällt ins Meer, ohne dass Verdunstung ins Luft zurückkehrt",
+      "Die wiederholte Bewegung von Wasser zwischen Meer, Land und Luft",
+      "Verdunstung vom Meer, ohne dass Niederschlag zurückkehrt",
+      "Wolken, die für immer auf einer Höhe bleiben"
+    ],
+    "explanation": "Im Wasserkreislauf verdunstet Wasser, bildet Wolken, fällt als Regen oder Schnee und kehrt zu Meeren und Land zurück.",
+    "theoryLines": [
+      "Die Sonne erwärmt Wasser und treibt die Verdunstung an.",
+      "Wasser bewegt sich immer wieder durch diesen Kreislauf."
+    ]
+  },
+  "earth_11": {
+    "stem": "Was beschreibt das Wetter?",
+    "options": [
+      "Nur die Meerestemperatur weit vom Land entfernt",
+      "Die täglichen Zustände der Luft um uns, zum Beispiel heiß, kalt, regnerisch oder sonnig",
+      "Nur die Gesteine tief unter der Erdoberfläche",
+      "Nur die Positionen der Planeten im Sonnensystem"
+    ],
+    "explanation": "Wetter ist der tägliche Zustand der Luft draußen — wie heiß oder kalt es ist, ob es regnet oder sonnig ist und wie windig es sich anfühlt.",
+    "theoryLines": [
+      "Das Wetter kann sich vom Morgen zum Abend und von Tag zu Tag ändern.",
+      "Klima beschreibt das übliche Wettermuster an einem Ort über viele Jahre."
+    ]
+  },
+  "earth_12": {
+    "stem": "Was verursacht eine Sonnenfinsternis?",
+    "options": [
+      "Der Mond tritt zwischen Sonne und Erde und blockiert einen Teil oder die ganze Sonne",
+      "Die Erde tritt zwischen Sonne und Mond — das ist eine Mondfinsternis",
+      "Das Licht eines Vollmonds blockiert die Sonne von der Erde",
+      "Dicke Wolken bedecken die Sonne viele Stunden lang"
+    ],
+    "explanation": "Eine Sonnenfinsternis entsteht, wenn der Mond zwischen Sonne und Erde steht und Sonnenlicht blockiert. Sie geschieht nahe dem Neumond.",
+    "theoryLines": [
+      "Eine Sonnenfinsternis ist ein seltenes Ereignis.",
+      "Sie geschieht nur, wenn Sonne, Mond und Erde in einer Linie stehen."
+    ]
+  },
+  "earth_13": {
+    "stem": "Warum scheint der Mond jede Nacht seine Form zu ändern?",
+    "options": [
+      "Der Mond erzeugt eigenes Licht, das in der Helligkeit wechselt.",
+      "Während der Mond die Erde umkreist, sehen wir unterschiedliche Anteile seiner sonnenbeschienenen Seite.",
+      "Der Mond wächst und schrumpft tatsächlich im Laufe des Monats.",
+      "Der Erdschatten blockiert nachts immer einen Teil der Mondoberfläche."
+    ],
+    "explanation": "Der Mond erzeugt kein eigenes Licht. Während er die Erde umkreist, beleuchtet die Sonne unterschiedliche Teile seiner Oberfläche, die wir von der Erde sehen — so entstehen die Mondphasen.",
+    "theoryLines": [
+      "Der Mond braucht für eine Erdumkreisung etwa 28 Tage.",
+      "Das Mondlicht ist gespiegeltes Sonnenlicht — er leuchtet nicht von allein."
+    ]
+  },
+  "earth_14": {
+    "stem": "Was gibt es im Universum?",
+    "options": [
+      "Die Erde als einzigen Körper im Universum",
+      "Sterne, Planeten, Monde und viele Galaxien",
+      "Nur das Sonnensystem ohne andere Galaxien",
+      "Nur Monde, die die Erde umkreisen"
+    ],
+    "explanation": "Das Universum enthält Sterne, Planeten (wie die Erde), Monde und viele Galaxien. Es ist riesig.",
+    "theoryLines": [
+      "Das Universum ist größer, als man sich im Alltag vorstellen kann.",
+      "Die Erde ist nur ein winziger Teil davon."
+    ]
+  },
+  "earth_15": {
+    "stem": "Wie viele Monde hat die Erde?",
+    "options": ["Null", "Einen", "Zwei", "Drei"],
+    "explanation": "Die Erde hat einen Mond. Er umkreist die Erde und wird oft einfach der Mond genannt.",
+    "theoryLines": [
+      "Der Mond ist der natürliche Satellit der Erde.",
+      "Wir sehen ihn, weil er Sonnenlicht spiegelt."
+    ]
+  },
+  "earth_16": {
+    "stem": "Was ist die Sonne?",
+    "options": [
+      "Ein Stern, der der Erde Licht und Wärme gibt.",
+      "Ein Planet, der die Erde umkreist.",
+      "Ein Mond, der um die Erde wandert.",
+      "Ein sehr großer Planet, der meist aus Eis besteht."
+    ],
+    "explanation": "Die Sonne ist ein Stern — der der Erde am nächsten. Sie liefert Licht und Wärme, die Leben auf der Erde möglich machen. Alle Planeten in unserem Sonnensystem umkreisen die Sonne.",
+    "theoryLines": [
+      "Die Sonne ist ein Stern im Zentrum unseres Sonnensystems.",
+      "Alle Planeten, einschließlich der Erde, umkreisen die Sonne."
+    ]
+  },
+  "earth_17": {
+    "stem": "Was sind die vier Jahreszeiten?",
+    "options": [
+      "Es gibt nur eine Jahreszeit — heißes Wetter das ganze Jahr.",
+      "Frühling, Sommer, Herbst und Winter — jede mit anderem Wetter.",
+      "Überall auf der Erde gibt es nur kalte und regnerische Jahreszeiten.",
+      "Das Wetter ändert sich nie wirklich, also gibt es keine echten Jahreszeiten."
+    ],
+    "explanation": "Die Erde hat vier Jahreszeiten — Frühling, Sommer, Herbst und Winter — verursacht durch die Neigung der Erde auf ihrer Bahn um die Sonne. Verschiedene Teile der Erde bekommen zu unterschiedlichen Zeiten mehr oder weniger Sonnenlicht.",
+    "theoryLines": [
+      "Die Achsenneigung der Erde sorgt dafür, dass verschiedene Teile im Jahr mehr oder weniger Sonnenlicht bekommen.",
+      "Jahreszeiten entstehen aus der Erdbahn zusammen mit der Neigung."
+    ]
+  },
+  "earth_18": {
+    "stem": "Was ist ein Planet?",
+    "options": [
+      "Ein Körper, der wie die Sonne eigenes Licht und Wärme erzeugt.",
+      "Ein großer Körper, der einen Stern umkreist, zum Beispiel die Erde um die Sonne.",
+      "Ein Objekt, das einen anderen Planeten umkreist.",
+      "Jedes kleine Objekt, das im Weltraum zwischen Planeten wandert."
+    ],
+    "explanation": "Ein Planet ist ein großer, etwa kugelförmiger Körper, der einen Stern umkreist. In unserem Sonnensystem umkreisen acht Planeten die Sonne. Planeten erzeugen kein eigenes Licht — wir sehen sie, weil sie Sonnenlicht spiegeln. Erde, Mars und Jupiter sind Planeten.",
+    "theoryLines": [
+      "Unser Sonnensystem hat acht Planeten: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun.",
+      "Planeten werden durch die Anziehungskraft der Sonne auf ihrer Bahn gehalten."
+    ]
+  },
+  "earth_19": {
+    "stem": "Welche Aussage beschreibt einen Planeten am besten?",
+    "options": [
+      "Ein Planet ist jedes kleine Objekt, das andere Planeten umkreist.",
+      "Ein großer Körper im Weltraum, der einen Stern umkreist und kein eigenes Licht erzeugt.",
+      "Ein Planet ist eine Art Mond, der die Sonne direkt umkreist.",
+      "Ein kleines leuchtendes Objekt, das schnell über den Nachthimmel zieht."
+    ],
+    "explanation": "Ein Planet ist ein großer Körper, der einen Stern umkreist. Anders als Sterne erzeugen Planeten kein eigenes Licht.",
+    "theoryLines": [
+      "Die Erde ist ein Planet, der die Sonne umkreist.",
+      "Monde umkreisen Planeten, nicht Sterne direkt."
+    ]
+  },
+  "earth_20": {
+    "stem": "Was ist ein Asteroid?",
+    "options": [
+      "Ein massiver Körper, der eigenes Licht erzeugt",
+      "Ein großer Felsbrocken im Weltraum, der die Sonne umkreist",
+      "Ein schwerer Körper, der wie die Erde als Planet einen Stern umkreist",
+      "Ein Satellit, der nur die Erde umkreist"
+    ],
+    "explanation": "Ein Asteroid ist ein Gesteinskörper im Weltraum, der die Sonne umkreist. Viele befinden sich zwischen den Planeten.",
+    "theoryLines": [
+      "Asteroiden sind Überreste aus der Frühzeit des Sonnensystems.",
+      "Manche sind winzig, manche sind groß."
+    ]
+  },
+  "earth_21": {
+    "stem": "Worin unterscheidet sich ein Planet von einem Stern?",
+    "options": [
+      "Ein Planet hat ein eigenes inneres Feuer, das ihn am Nachthimmel leuchten lässt.",
+      "Ein Planet umkreist einen Stern und erzeugt kein eigenes Licht.",
+      "Ein Planet ist immer viel größer als jeder Stern.",
+      "Ein Planet ist in Größe und Form genau wie die Erde."
+    ],
+    "explanation": "Ein Planet umkreist einen Stern und erzeugt kein eigenes Licht — er spiegelt Sonnenlicht. Ein Stern wie unsere Sonne erzeugt eigenes Licht und Wärme.",
+    "theoryLines": [
+      "Planeten wandern auf nahezu kreisförmigen Bahnen um einen Stern.",
+      "Unsere Sonne ist der Stern im Zentrum unseres Sonnensystems."
+    ]
+  },
+  "earth_22": {
+    "stem": "Was ist eine Galaxie?",
+    "options": [
+      "Ein einzelner Stern im Sonnensystem",
+      "Eine riesige Gruppe aus Sternen, Planeten und Gasen",
+      "Ein Mond, der die Erde umkreist",
+      "Ein einzelner Komet mit nur kurzem Schweif"
+    ],
+    "explanation": "Eine Galaxie ist eine riesige Ansammlung aus Millionen oder Milliarden Sternen, Planeten, Gas und Staub, gehalten durch die Schwerkraft.",
+    "theoryLines": [
+      "Im Universum gibt es viele Galaxien.",
+      "Unsere Galaxie heißt Milchstraße."
+    ]
+  },
+  "earth_23": {
+    "stem": "Was ist ein schwarzes Loch?",
+    "options": [
+      "Ein dunkler leerer Ort im Weltraum",
+      "Ein Gebiet im Weltraum mit so starker Schwerkraft, dass selbst Licht nicht entkommen kann",
+      "Ein toter Stern ohne jede Schwerkraft",
+      "Ein massiver Mond, der Licht durch seinen Schatten blockiert"
+    ],
+    "explanation": "Ein schwarzes Loch hat so starke Schwerkraft, dass selbst Licht nicht entkommen kann. Eines kann entstehen, wenn ein sehr massiver Stern zusammenbricht.",
+    "theoryLines": [
+      "Schwarze Löcher sind für Wissenschaftler noch rätselhaft.",
+      "Forscherinnen und Forscher untersuchen sie weiter."
+    ]
+  },
+  "earth_24": {
+    "stem": "Was ist ein Zwergplanet?",
+    "options": [
+      "Ein schwerer Körper, der wie die Sonne Licht erzeugt",
+      "Ein Körper, der einen Stern umkreist und in der Größe zwischen Planet und Asteroid liegt",
+      "Meist ein natürlicher Mond eines Planeten",
+      "Ein Körper mit eisigem Schweif nahe der Sonne"
+    ],
+    "explanation": "Ein Zwergplanet umkreist einen Stern. Er ist kleiner als ein normaler Planet, aber größer als ein typischer Asteroid. Pluto ist ein Beispiel.",
+    "theoryLines": [
+      "Das Sonnensystem hat mehrere Zwergplaneten.",
+      "Das ist eine relativ neue Einordnung."
+    ]
+  },
+  "earth_25": {
+    "stem": "Was ist ein Gasriese?",
+    "options": [
+      "Ein kleiner Gesteinsplanet wie die Erde, mit festem Boden zum Gehen.",
+      "Ein sehr großer Planet, der meist aus Gas besteht und keine feste Oberfläche hat.",
+      "Jeder Körper im Weltraum, der den Mond umkreist.",
+      "Ein Planet, der innen ganz aus festem Gestein besteht."
+    ],
+    "explanation": "Gasriesen sind sehr große Planeten, die meist aus Gasen bestehen. Jupiter und Saturn sind Beispiele für Gasriesen in unserem Sonnensystem.",
+    "theoryLines": [
+      "Gasriesen wie Jupiter und Saturn sind die größten Planeten in unserem Sonnensystem.",
+      "Starke Schwerkraft hält die dicken Gasschichten in einem Gasriesen zusammen."
+    ]
+  },
+  "earth_26": {
+    "stem": "Was sind die Sterne am Nachthimmel?",
+    "options": [
+      "Winzige Punkte ohne Energiequelle",
+      "Riesige, sehr ferne Sterne, die eigenes Licht erzeugen und von der Erde aus wie Punkte wirken",
+      "Monde, die Licht wie die Sonne spiegeln",
+      "Planeten, die nachts genau wie Sterne leuchten"
+    ],
+    "explanation": "Sterne am Nachthimmel sind riesige leuchtende Gaskugeln. Sie wirken winzig, weil sie extrem weit entfernt sind.",
+    "theoryLines": [
+      "Sie gehören zu unserer Galaxie.",
+      "Es gibt Millionen von Sternen."
+    ]
+  },
+  "earth_27": {
+    "stem": "Was ist ein Stern?",
+    "options": [
+      "Ein großer Gesteinskörper, der einen Planeten umkreist.",
+      "Eine riesige Kugel aus heißem leuchtendem Gas, die eigenes Licht und Wärme erzeugt.",
+      "Ein Gesteinsbrocken, der wie der Mond die Erde umkreist.",
+      "Ein kaltes, dunkles Objekt, das Licht von der Sonne spiegelt."
+    ],
+    "explanation": "Ein Stern ist eine massive Kugel aus heißem Gas, gehalten durch die Schwerkraft. Im Inneren setzen Kernreaktionen enorme Mengen Energie als Licht und Wärme frei. Die Sonne ist der der Erde nächste Stern.",
+    "theoryLines": [
+      "Sterne wirken wie winzige Lichtpunkte, weil sie extrem weit von der Erde entfernt sind.",
+      "Allein in unserer Galaxie gibt es Milliarden Sterne, und das Universum enthält Milliarden Galaxien."
+    ]
+  },
+  "earth_space_20": {
+    "stem": "Was sind die Jahreszeiten?",
+    "options": [
+      "Sommer, Winter, Herbst und Frühling",
+      "Nur zwei Jahreszeiten im Jahr",
+      "Der Tag-Nacht-Zyklus über das Jahr",
+      "Nur Stimmungsschwankungen ohne Bezug zu Temperatur oder Regen"
+    ],
+    "explanation": "Es gibt vier Jahreszeiten: Sommer (warm), Winter (kalt), Herbst und Frühling.",
+    "theoryLines": [
+      "Jahreszeiten wechseln wegen der Neigung der Erde.",
+      "Jede Jahreszeit hat typisches Wetter."
+    ]
+  },
+  "earth_16__v2": {
+    "stem": "Wann scheint die Sonne am Himmel?",
+    "options": [
+      "Die Sonne scheint nachts, wenn der Mond nicht sichtbar ist.",
+      "Die Sonne scheint tagsüber.",
+      "Die Sonne scheint nur am Abend.",
+      "Die Sonne scheint nur am frühen Morgen."
+    ],
+    "explanation": "Wir sehen die Sonne tagsüber, weil der Teil der Erde, auf dem wir stehen, zur Sonne zeigt. Dreht sich unsere Seite weg, wird es Nacht.",
+    "theoryLines": [
+      "Die Sonne scheint jeden Tag im Osten aufzugehen und im Westen unterzugehen.",
+      "Wir erleben Tag, wenn unsere Seite der Erde zur Sonne zeigt."
+    ]
+  },
+  "earth_17__v2": {
+    "stem": "Wann kannst du den Mond meist am Himmel sehen?",
+    "options": [
+      "Nur tagsüber, wenn auch die Sonne scheint.",
+      "Meist nachts, wenn der Himmel dunkel ist.",
+      "Nur sehr früh am Morgen vor Sonnenaufgang.",
+      "Nur bei starken Gewittern."
+    ],
+    "explanation": "Der Mond ist nachts am besten sichtbar, wenn der Himmel dunkel ist. Er spiegelt Sonnenlicht und leuchtet so am Nachthimmel.",
+    "theoryLines": [
+      "Der Mond spiegelt Sonnenlicht — deshalb können wir ihn sehen.",
+      "Manchmal sieht man den Mond auch tagsüber, aber nachts fällt er am leichtesten auf."
+    ]
+  },
+  "earth_18__v2": {
+    "stem": "Was ist in Wolken?",
+    "options": [
+      "Völlig trockene Luft ohne Wasser",
+      "Winzige Wassertröpfchen",
+      "Staub ohne flüssiges Wasser",
+      "Starker Wind ohne Feuchtigkeit"
+    ],
+    "explanation": "Wolken bestehen aus winzigen Wassertröpfchen oder Eiskristallen. Werden sie schwer, kann Regen fallen.",
+    "theoryLines": [
+      "Wolken entstehen, wenn Wasserdampf kondensiert.",
+      "Werden Tropfen schwer, kann Regen oder Schnee fallen."
+    ]
+  },
+  "earth_19__v2": {
+    "stem": "Worin unterscheidet sich ein Planet von einem Stern wie der Sonne?",
+    "options": [
+      "Ein Planet ist jedes helle Glitzern, das man nur nachts sieht.",
+      "Ein Planet umkreist einen Stern und erzeugt kein eigenes Licht.",
+      "Ein Mond ist genau dasselbe wie ein Planet.",
+      "Ein Planet erzeugt eigenes Licht genau wie die Sonne."
+    ],
+    "explanation": "Sterne erzeugen eigenes Licht und Wärme. Planeten umkreisen Sterne und leuchten vor allem, weil sie Licht spiegeln.",
+    "theoryLines": [
+      "Die Sonne ist ein Stern.",
+      "Die Erde ist ein Planet, der die Sonne umkreist."
+    ]
+  },
+  "earth_20__v2": {
+    "stem": "Was beschreibt einen Planeten in unserem Sonnensystem am besten?",
+    "options": [
+      "Ein Planet erzeugt eigenes Licht, genau wie die Sonne.",
+      "Ein großer Körper, der die Sonne umkreist und kein eigenes Licht erzeugt.",
+      "Ein Mond, der die Erde umkreist.",
+      "Ein winziges Objekt, kleiner als ein Komet."
+    ],
+    "explanation": "Planeten sind große Körper, die die Sonne umkreisen. Sie erzeugen kein eigenes Licht wie Sterne — sie spiegeln Sonnenlicht. Erde, Mars und Jupiter sind Beispiele für Planeten in unserem Sonnensystem.",
+    "theoryLines": [
+      "Es gibt acht Planeten in unserem Sonnensystem, von kleinen Gesteinswelten bis zu großen Gasplaneten.",
+      "Ein Planet muss groß genug sein, damit seine Schwerkraft ihn in eine etwa runde Form zieht."
+    ]
+  },
+  "earth_21__v2": {
+    "stem": "Was ist der Mond?",
+    "options": [
+      "Der Mond ist ein großer Planet, der andere große Planeten umkreist.",
+      "Der Mond ist ein Gesteinskörper, der die Erde umkreist.",
+      "Der Mond ist ein kleines Objekt, das die Sonne allein direkt umkreist.",
+      "Der Mond ist eine Wolke aus Wasserdampf um die Erde."
+    ],
+    "explanation": "Der Mond ist der einzige natürliche Satellit der Erde. Er ist ein Gesteinskörper, der die Erde etwa alle 28 Tage umkreist und Sonnenlicht spiegelt.",
+    "theoryLines": [
+      "Der Mond ist der natürliche Satellit der Erde.",
+      "Der Mond spiegelt Sonnenlicht — deshalb sehen wir ihn nachts."
+    ]
+  },
+  "earth_22__v2": {
+    "stem": "Was ist ein Asteroid?",
+    "options": [
+      "Ein glitzernder Körper, der eigenes Licht erzeugt",
+      "Ein Felsbrocken im Weltraum, der die Sonne umkreist",
+      "Ein schwerer Körper wie die Erde auf einer Bahn",
+      "Ein Satellit, der den Mond umkreist"
+    ],
+    "explanation": "Ein Asteroid ist ein Gesteinskörper im Weltraum, der die Sonne umkreist. Viele befinden sich zwischen den Planeten.",
+    "theoryLines": [
+      "Asteroiden sind Überreste aus der Frühzeit des Sonnensystems.",
+      "Manche sind winzig, manche sind groß."
+    ]
+  },
+  "earth_24__v2": {
+    "stem": "Was ist der Wasserkreislauf?",
+    "options": [
+      "Niederschlag ohne Verdunstung oder Rückfluss zum Meer",
+      "Der Vorgang, bei dem Wasser zwischen Meer, Land und Atmosphäre wandert",
+      "Schnee, der an einem Ort stecken bleibt, ohne zu schmelzen oder zu verdunsten",
+      "Feste Wolken ohne Niederschlag zum Boden"
+    ],
+    "explanation": "Im Wasserkreislauf bewegt sich Wasser zwischen Meer, Land und Luft durch Verdunstung, Kondensation und Niederschlag.",
+    "theoryLines": [
+      "Es ist ein fortlaufender Vorgang.",
+      "Wasser verdunstet, bildet Wolken und fällt als Regen oder Schnee."
+    ]
+  },
+  "earth_25__v2": {
+    "stem": "Was sind Wolken?",
+    "options": [
+      "Trockene Luft ohne sichtbare Tröpfchen",
+      "Winzige Wassertröpfchen oder Eiskristalle in der Atmosphäre",
+      "Nur Staub ohne Feuchtigkeit",
+      "Schneller Wind ohne gesammelte Tröpfchen"
+    ],
+    "explanation": "Wolken sind winzige Wassertröpfchen oder Eiskristalle in der Luft. Werden sie schwer, kann Regen oder Schnee fallen.",
+    "theoryLines": [
+      "Wolken entstehen, wenn Wasserdampf kondensiert.",
+      "Es gibt viele Arten von Wolken."
+    ]
+  },
+  "earth_26__v2": {
+    "stem": "Was bewirkt Regen für die Erde?",
+    "options": [
+      "Regen macht den Boden härter und verhindert, dass Wasser zu Pflanzenwurzeln kommt.",
+      "Regen bringt frisches Wasser in den Boden, das Pflanzen und Tiere zum Überleben brauchen.",
+      "Regen erzeugt nur Pfützen an der Oberfläche und hat keinen anderen Zweck.",
+      "Regen ist Wasser, das aus dem Boden nach oben in die Wolken steigt."
+    ],
+    "explanation": "Regen ist ein wichtiger Teil des Wasserkreislaufs. Er bringt frisches Wasser aufs Land, füllt Flüsse, Seen und den Boden, damit Pflanzen, Tiere und Menschen es nutzen können.",
+    "theoryLines": [
+      "Regen ist ein Schlüsselstadium im Wasserkreislauf.",
+      "Regenwasser wird vom Boden aufgenommen und von Pflanzen und Tieren genutzt."
+    ]
+  },
+  "earth_27__v2": {
+    "stem": "Was ist Schnee?",
+    "options": [
+      "Dickes Eis auf Gras, ohne Fall vom Himmel",
+      "Eiskristalle, die bei großer Kälte aus Wolken fallen",
+      "Warmer Regen ohne jedes Eis",
+      "Schwere Hagelkörner, die immer am Boden liegen"
+    ],
+    "explanation": "Schnee besteht aus Eiskristallen, die bei sehr kaltem Wetter aus Wolken fallen. Jede Schneeflocke hat ihr eigenes Muster.",
+    "theoryLines": [
+      "Schnee fällt, wenn die Temperaturen unter dem Gefrierpunkt liegen.",
+      "Schnee ist wichtig für Klima und Wasserversorgung."
+    ]
+  },
+  "earth_28": {
+    "stem": "Wie bewegt sich Wärme?",
+    "options": [
+      "Wärme bleibt an einem Ort und bewegt sich nie von allein.",
+      "Wärme wandert von wärmeren zu kühleren Bereichen.",
+      "Wärme kann sich nur durch Wasser und nichts anderes bewegen.",
+      "Regen lässt Wärme nach oben in den Himmel steigen."
+    ],
+    "explanation": "Wärme fließt immer von einem wärmeren zu einem kühleren Bereich. Diese Energiebewegung heißt Wärmeübertragung.",
+    "theoryLines": [
+      "Wärmeübertragung geschieht auf drei Arten: Leitung, Konvektion und Strahlung.",
+      "An einem sonnigen Tag steigt warme Luft auf, weil Wärme vom warmen Boden in die kühlere Luft darüber wandert."
+    ]
+  },
+  "earth_space_phase717_g2_1": {
+    "stem": "Warum ist der Tag heller als die Nacht?",
+    "options": [
+      "Die Sonne steht am Himmel und spendet tagsüber Licht und Wärme.",
+      "Der Mond spiegelt tagsüber immer mehr Sonnenlicht als die Sonne.",
+      "Sterne leuchten nachts genauso hell wie die Sonne am Tag.",
+      "Tag und Nacht sind immer gleich hell."
+    ],
+    "explanation": "Tagsüber zeigt die Seite der Erde, auf der du stehst, zur Sonne. Die Sonne ist eine starke Quelle für Licht und Wärme. Nachts zeigt deine Seite von der Sonne weg, deshalb ist es dunkler und kühler.",
+    "theoryLines": [
+      "Die Sonne ist die wichtigste Licht- und Energiequelle der Erde.",
+      "Die Erdrotation verursacht alle 24 Stunden den Wechsel zwischen Tag und Nacht."
+    ]
+  },
+  "earth_space_phase717_g2_2": {
+    "stem": "Welche Aussage über Erde und Sonne ist wahr?",
+    "options": [
+      "Die Erde wandert einmal im Jahr um die Sonne.",
+      "Die Erde bewegt sich im Weltraum nur tagsüber.",
+      "Sonne und Mond kreisen umeinander.",
+      "Erde und Sonne stehen im Weltraum völlig still."
+    ],
+    "explanation": "Die Erde bewegt sich auf einer Bahn um die Sonne, die Orbit genannt wird. Eine volle Bahn dauert etwa 365 Tage — ein Jahr. Die Erde dreht sich auch um die eigene Achse und erzeugt so Tag und Nacht im 24-Stunden-Zyklus.",
+    "theoryLines": [
+      "Die jährliche Reise der Erde um die Sonne heißt Revolution.",
+      "Die tägliche Drehung um die eigene Achse heißt Rotation."
+    ]
+  },
+  "earth_space_phase717_g2_3": {
+    "stem": "Was ist der Hauptunterschied zwischen einem Stern und einem Planeten wie der Erde?",
+    "options": [
+      "Ein Planet ist ein Körper, der einen Stern umkreist",
+      "Es gibt keinen Unterschied zwischen ihnen",
+      "Ein Planet ist immer größer als die Sonne",
+      "Sterne gibt es nur auf dem Mond"
+    ],
+    "explanation": "Ein Stern wie die Sonne ist eine heiße leuchtende Kugel, die eigenes Licht abgibt. Ein Planet ist kühler und umkreist einen Stern.",
+    "theoryLines": [
+      "Im Sonnensystem ist die Erde ein Planet.",
+      "Die Sonne ist der Stern im Zentrum des Sonnensystems."
+    ]
+  },
+  "earth_29": {
+    "stem": "Nahe dem Äquator verteilt sich Sonnenlicht auf weniger Bodenfläche als nahe den Polen zur gleichen Ortszeit. Warum ist das Klima am Äquator im Mittel wärmer?",
+    "options": [
+      "Ein steilerer Sonnenwinkel bündelt mehr Energie pro Fläche als flache Strahlen nahe den Polen",
+      "Die Sonne ist dem Äquator körperlich immer näher als jedem anderen Punkt auf der Erde",
+      "Die Pole bekommen überhaupt kein Sonnenlicht",
+      "Der Äquator ist nur wegen des Meersalzes warm"
+    ],
+    "explanation": "Strahlungsgeometrie und die Energiebilanz über das Jahr entscheiden, wie viel Energie jede Flächeneinheit erreicht — eine Grundlage für Klimagürtel.",
+    "theoryLines": [
+      "Der Sonnenwinkel hängt mit geografischer Breite und Jahreszeit zusammen.",
+      "Klima ist ein langfristiger Mittelwert; Wetter ist kurzfristig."
+    ]
+  },
+  "earth_30": {
+    "stem": "An einem sonnigen Tag erwärmt sich ein Strand; nachts bleibt das Meer relativ warm. Welche Beschreibung passt zu einer typischen Seewind-Situation am Tag?",
+    "options": [
+      "Wärmere Luft über dem Land steigt auf, und kühlere Luft vom Meer strömt landeinwärts",
+      "Wind weht mittags immer von den Bergen zum Meer",
+      "Das Meer ist mittags an jedem Ort immer kälter als das Land",
+      "Unterschiede beim Erwärmen haben keinen Bezug zur Luftbewegung"
+    ],
+    "explanation": "Land und Wasser erwärmen sich unterschiedlich, erzeugen lokale Druckunterschiede und einen täglichen Land-See-Wind-Zyklus.",
+    "theoryLines": [
+      "Verschiedene Stoffe haben unterschiedliche spezifische Wärme.",
+      "Wind ist Luft, die von höherem zu niedrigerem Druck strömt."
+    ]
+  },
+  "earth_31": {
+    "stem": "Warum ist der Mond nicht immer am Nachthimmel sichtbar?",
+    "options": [
+      "Nur der zur Erde zeigende, von der Sonne beleuchtete Teil des Mondes ist sichtbar, und die Position des Mondes ändert sich im Lauf des Monats.",
+      "Der Mond ist an jedem klaren Abend immer voll sichtbar.",
+      "Der Mond verschwindet einen Teil jedes Monats aus dem Sonnensystem.",
+      "Der Mond leuchtet immer aus jeder Richtung mit voller Helligkeit."
+    ],
+    "explanation": "Der Mond wandert etwa einmal im Monat um die Erde. Mit seiner Position zur Sonne ändert sich, wie viel der beleuchteten Mondseite von der Erde sichtbar ist — das sind die Mondphasen. Beim Neumond steht der Mond zwischen Erde und Sonne, und seine beleuchtete Seite zeigt von uns weg, sodass er nachts unsichtbar ist.",
+    "theoryLines": [
+      "Der Mond erzeugt kein eigenes Licht — er spiegelt Sonnenlicht zur Erde.",
+      "Der Mondzyklus von Neumond zu Vollmond und zurück dauert etwa 29,5 Tage."
+    ]
+  },
+  "earth_32": {
+    "stem": "Wie helfen Treibhausgase wie CO₂, die Erde zu erwärmen — verglichen mit einer Welt mit wenig Atmosphäre?",
+    "options": [
+      "Sichtbares Licht kann eintreten, dann wird mehr ausgehende Wärme gehalten und zur Oberfläche zurückgeschickt",
+      "CO₂ erzeugt brandneues Sonnenlicht in der Atmosphäre",
+      "Sie blockieren das gesamte Sonnenlicht vollständig",
+      "Sie kühlen die Erde direkt, indem sie Eis in der Luft erzeugen"
+    ],
+    "explanation": "Eine aktive Atmosphäre ist kein einfaches Glashaus, aber die Kernidee ist dieselbe: Bleibt mehr ausgehende Energie im System, erwärmt sich die mittlere Strahlungsbilanz.",
+    "theoryLines": [
+      "Energie von der Sonne wird aufgenommen und später wieder in den Weltraum abgegeben.",
+      "Die Zusammensetzung der Atmosphäre beeinflusst die Strahlungsbilanz."
+    ]
+  },
+  "earth_33": {
+    "stem": "Was erklärt am besten, warum die Erde jedes Jahr vier verschiedene Jahreszeiten erlebt?",
+    "options": [
+      "Die geneigte Achse der Erde lässt verschiedene Regionen mehr oder weniger Sonnenlicht bekommen, während sie die Sonne umkreist",
+      "Jahreszeiten entstehen durch Veränderungen tief im Erdkern, die unterschiedliche Wärmemengen freisetzen",
+      "Reibung zwischen Erde und Mond verlangsamt die Erde im Winter und beschleunigt sie im Sommer",
+      "Alle Orte auf der Erde bekommen das ganze Jahr dieselbe Menge Sonnenlicht"
+    ],
+    "explanation": "Die Erdachse ist etwa 23,5 Grad geneigt. Während die Erde die Sonne umkreist, bekommen verschiedene Regionen unterschiedlich viel Sonnenlicht — das verursacht die vier Jahreszeiten.",
+    "theoryLines": [
+      "Die Neigung der Erde, nicht ihre Entfernung zur Sonne, ist die Hauptursache der Jahreszeiten.",
+      "Lebewesen passen Verhalten und Biologie an jahreszeitliche Änderungen von Licht und Temperatur an."
+    ]
+  },
+  "earth_34": {
+    "stem": "Warum drehen sich große Sturmsysteme auf der Nordhalbkugel in der Regel in einer gleichbleibenden Richtung (auf Schulniveau)?",
+    "options": [
+      "Die Erdrotation erzeugt eine Coriolis-Ablenkung, die großräumige Windbahnen biegt",
+      "Die Sonne schiebt Stürme jeden Tag in eine feste Richtung",
+      "Stärkere Schwerkraft an den Polen kehrt die Drehung sofort um",
+      "Wind fließt immer gerade von Ost nach West ohne Kurve"
+    ],
+    "explanation": "Die Erdrotation lenkt große, langanhaltende Bewegungen ab. Das erklärt kein Wasserglas auf dem Tisch, formt aber in einfachen Modellen globale Sturmmuster.",
+    "theoryLines": [
+      "Maßstab und Zeit spielen eine Rolle, wenn man Richtungswirkungen erkennt.",
+      "Einfache Modelle helfen und haben zugleich Grenzen."
+    ]
+  },
+  "earth_35": {
+    "stem": "Warum hilft der Schutz von Quell-Einzugsgebieten (Bäche und Versickerungsflächen) der Wasserqualität weiter flussabwärts?",
+    "options": [
+      "Sie verlangsamen und filtern starken Abfluss, verringern Erosion und ermöglichen mehr Versickerung",
+      "Quellgebiete haben nie Verschmutzung, also gibt es keinen Bezug flussabwärts",
+      "In Bächen gibt es keine Erosion",
+      "Wasser fließt tendenziell nicht bergab"
+    ],
+    "explanation": "Landschaftspflege verändert Wassergeschwindigkeit und Sedimentfracht. Quellenschutz verringert Probleme für Gemeinden weiter flussabwärts.",
+    "theoryLines": [
+      "Der Wasserkreislauf verbindet Quellgebiete mit Tiefländern.",
+      "Erosion zu verhindern schützt Wasser- und Bodenqualität."
+    ]
+  },
+  "earth_36": {
+    "stem": "Warum kann Vulkanasche Flüge weit von einem Ausbruch entfernen und manchmal kurzfristig auch die Klimatemperatur beeinflussen?",
+    "options": [
+      "Teilchen und Gase können große Höhen erreichen und Luftqualität sowie Strahlungsmuster verändern",
+      "Vulkanasche bleibt immer nur über dem Krater und bewegt sich nie mit dem Wind",
+      "Ein Ausbruch verändert die Entfernung Erde–Sonne",
+      "Flugzeuge ernähren sich von Asche, deshalb hören sie auf zu fliegen"
+    ],
+    "explanation": "Eine starke Aschewolke kann Tausende Kilometer wandern. Sie kann Sicht und Triebwerke beeinträchtigen und kurz die Strahlungsbilanz verändern.",
+    "theoryLines": [
+      "Die Atmosphäre ist ein verbundenes globales System.",
+      "Vulkanereignisse können je nach Stärke örtlich oder weitreichend sein."
+    ]
+  },
+  "earth_37": {
+    "stem": "Welcher Teil der Erdatmosphäre schützt Lebewesen vor schädlichen UV-Strahlen?",
+    "options": [
+      "Die Ozonschicht, die den größten Teil der schädlichen ultravioletten Strahlung der Sonne aufnimmt.",
+      "Die Wolkenschicht, die alles Sonnenlicht vollständig von der Erde wegspiegelt.",
+      "Die Mondoberfläche, die UV-Strahlen blockiert, bevor sie die Erde erreichen.",
+      "Der Meeresboden, der UV-Strahlung aufnimmt, bevor sie Land erreicht."
+    ],
+    "explanation": "Die Ozonschicht ist ein Bereich der oberen Erdatmosphäre, der den größten Teil der ultravioletten (UV-)Strahlung der Sonne aufnimmt und blockiert und so Lebewesen schützt.",
+    "theoryLines": [
+      "Die Ozonschicht liegt in der Stratosphäre, hoch in der Atmosphäre.",
+      "Schäden an der Ozonschicht lassen mehr schädliche UV-Strahlen zur Erdoberfläche durch."
+    ]
+  },
+  "earth_38": {
+    "stem": "Was ist die Hauptursache der täglichen Gezeiten am Meer nahe einer Küste?",
+    "options": [
+      "Die Anziehungskraft von Mond und Sonne sowie die Position der Erde zu ihnen",
+      "Nur fegende Winde, ohne Mondwirkung",
+      "Nur Wärmeausdehnung aus Wüsten, ohne Mond- oder Sonnenwirkung",
+      "Nur die Wasserfarbe"
+    ],
+    "explanation": "Gezeiten hängen vor allem mit der Schwerkraft von Mond und Sonne zusammen. Wind wirkt örtlich, erklärt aber allein nicht den üblichen zweimal täglichen Gezeitenzyklus.",
+    "theoryLines": [
+      "Schwerkraft wirkt auf große Massen, und Wasser reagiert, indem es sich verschiebt.",
+      "Meeresereignisse können mehrere Hilfsfaktoren kombinieren."
+    ]
+  },
+  "earth_39": {
+    "stem": "Was haben alle Planeten in unserem Sonnensystem gemeinsam?",
+    "options": [
+      "Sie alle umkreisen die Sonne.",
+      "Sie alle erzeugen eigenes Licht.",
+      "Sie alle haben dieselbe Anzahl Monde.",
+      "Sie bestehen alle ganz aus Gas."
+    ],
+    "explanation": "Jeder Planet in unserem Sonnensystem umkreist die Sonne, gehalten durch ihre Schwerkraft. Manche Planeten sind felsig und klein wie Erde und Mars, andere sind riesige Gaskugeln wie Jupiter und Saturn. Aber alle acht Planeten teilen denselben Stern — die Sonne.",
+    "theoryLines": [
+      "Die acht Planeten in unserem Sonnensystem sind Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun.",
+      "Jeder Planet wandert auf seiner eigenen Bahn um die Sonne mit anderer Geschwindigkeit und Entfernung."
+    ]
+  },
+  "earth_40": {
+    "stem": "Wie kann schrumpfende Eisdecke und ihr Ersatz durch dunkleres Meerwasser im Prinzip die regionale Erwärmung beschleunigen?",
+    "options": [
+      "Geringere Albedo bedeutet, dass weniger Sonnenlicht gespiegelt und mehr aufgenommen wird",
+      "Eis ist immer dunkler als Wasser, deshalb erwärmt sich Eis stärker",
+      "Die Oberflächenfarbe hat keinen Bezug zur Energieaufnahme",
+      "Wasser nimmt nie Sonnenlicht auf"
+    ],
+    "explanation": "Albedo — wie stark eine Oberfläche spiegelt — beeinflusst, wie viel Energie aufgenommen wird. Der Wechsel von Eis zu Wasser verändert die örtliche Energiebilanz und kann Rückkopplungen fördern.",
+    "theoryLines": [
+      "Klimarückkopplungen helfen, schnelle örtliche Veränderungen zu erklären.",
+      "Ozeane und Eis stützen Klimamuster."
+    ]
+  },
+  "earth_41": {
+    "stem": "Welcher natürliche Vorgang trägt die Erdoberfläche über Tausende von Jahren am stärksten und stetigsten ab und formt sie um?",
+    "options": [
+      "Wasser — durch Flüsse, Regen und Meereswellen, die Gestein allmählich abtragen und wegtransportieren.",
+      "Blitze, die immer wieder dieselben Stellen auf freiliegenden Hügelkuppen treffen.",
+      "Tiere, die Höhlen durch alle Arten von Boden und Gestein graben.",
+      "Erdbeben, die Gestein bei plötzlichen, kurzen Ereignissen heftig erschüttern und zerbrechen."
+    ],
+    "explanation": "Wasser gehört zu den stärksten Erosionskräften auf der Erde. Flüsse graben Täler, Regen spült Boden weg, Meereswellen tragen Klippen ab. Diese Vorgänge laufen sehr langsam — es kann Tausende oder Millionen Jahre dauern, eine Landschaft umzuformen. Erdbeben und Blitze können die Oberfläche auch verändern, aber sie wirken plötzlich statt durch das lange, stetige Abtragen namens Erosion.",
+    "theoryLines": [
+      "Erosion ist der Vorgang, bei dem Gestein, Boden und Sediment über lange Zeit abgetragen und an neue Orte gebracht werden.",
+      "Wind, Eis, Schwerkraft und fließendes Wasser verursachen Erosion; Wasser gehört zu den stärksten und weitesten dieser Kräfte."
+    ]
+  },
+  "earth_42": {
+    "stem": "Wie hängt der Pazifische Feuerring (ein Gürtel aus Vulkanen und Erdbeben) mit Häufungen von Beben und Ausbrüchen zusammen?",
+    "options": [
+      "Plattengrenzen erzeugen tektonische Bewegung und Magmawege",
+      "Es ist nur eine Linie für Fischstandorte und hat nichts mit Platten zu tun",
+      "Getrennte Platten können sich nie an einer gemeinsamen Grenze treffen",
+      "Der Feuerring ist nur ein kulturelles Zentrum"
+    ],
+    "explanation": "Karten von Plattengrenzen helfen zu erklären, wo geologische Energie freigesetzt wird. Das ist ein zentrales Denkwerkzeug der Erdwissenschaft.",
+    "theoryLines": [
+      "Der Aufbau der Erde umfasst Grenzen zwischen tektonischen Platten.",
+      "Vulkane und Erdbeben teilen oft dieselben tektonischen Bedingungen."
+    ]
+  },
+  "earth_43": {
+    "stem": "Welche Meeresbedingung unterstützt Entstehung und Verstärkung eines starken tropischen Sturms (auf Schulniveau)?",
+    "options": [
+      "Warmes oberes Meerwasser, das der Luft Energie und Feuchtigkeit liefert",
+      "Nur sehr kaltes Meerwasser",
+      "Eine völlig trockene Wintersaison ohne Wasserdampf",
+      "Sehr hoher Luftdruck allein ohne Drehung"
+    ],
+    "explanation": "Latente Wärme aus einem warmen Ozean ist „Treibstoff“ für solche Systeme, deshalb hängt die Meeresoberflächentemperatur mit dem regionalen Risiko zusammen.",
+    "theoryLines": [
+      "Ozean und Atmosphäre tauschen Energie und Feuchtigkeit aus.",
+      "Sturmentwicklung geschieht in Stufen."
+    ]
+  },
+  "earth_44": {
+    "stem": "Warum ist der „Gesteinskreislauf“ keine feste Vierschritt-Schleife, die immer in derselben schnellen Reihenfolge abläuft?",
+    "options": [
+      "Unterschiedliche Wege aus Hitze, Druck, Schmelzen und Transport erzeugen verschiedene Routen",
+      "Gestein bleibt für immer fossilisiert ohne Veränderung",
+      "Es gibt nur einen Schritt: Kristallisation",
+      "Der Kreislauf geschieht auf der Erde einmal und stoppt dann"
+    ],
+    "explanation": "Der Gesteinskreislauf ist ein Denkmodell, das Vorgänge verbindet. Die echte geologische Geschichte kann komplex sein und von einer Gesteinsart zur anderen springen.",
+    "theoryLines": [
+      "Modelle vereinfachen die Wirklichkeit; sie ersetzen sie nicht.",
+      "Gesteine speichern Geschichten vergangener Vorgänge."
+    ]
+  },
+  "earth_45": {
+    "stem": "Warum unterscheidet sich das Klima nahe dem Äquator meist vom Klima nahe den Polen — aus Gründen über Sonnenlicht hinaus?",
+    "options": [
+      "Ozeane, Winde, Wolken und Oberflächenreflexion formen ebenfalls Klimagürtel",
+      "Die Sonne verschwindet nahe den Polen nur nachts",
+      "Der Mond blockiert die Sonne nahe dem Äquator",
+      "Wolken allein schalten das ganze Licht weltweit aus"
+    ],
+    "explanation": "Klima ist mehrfaktoriell: Ozeane, Albedo und Luftströmungen zählen. Die geografische Breite ist ein Ausgangspunkt, nicht die ganze Geschichte.",
+    "theoryLines": [
+      "Klima entsteht, weil Energie und Wasser über die Erde wandern.",
+      "Klimakarten fassen langfristige Mittelwerte zusammen."
+    ]
+  },
+  "earth_46": {
+    "stem": "Warum kann das Bohren in einen örtlichen Grundwasserleiter in einem trockenen Jahr die Dürrebelastung an Orten weit vom Brunnen vertiefen?",
+    "options": [
+      "Grundwasser folgt einem verbundenen hydrologischen System, das ein Gebiet teilt",
+      "Grundwasser bewegt sich nie zwischen Punkten",
+      "Bohren fügt unbegrenzt Wasser hinzu, ohne Wirkung auf Nachbarn",
+      "Trockenheit misst man nur mit einem Brunnen-Thermometer"
+    ],
+    "explanation": "Unterirdisches Wasser ist oft eine gemeinsame Ressource. Starke Nutzung kann die Versorgung für Menschen, Landwirtschaft und Bäche verringern.",
+    "theoryLines": [
+      "Der Wasserkreislauf umfasst Versickerung und unterirdischen Fluss.",
+      "Wassermanagement bedeutet, gemeinsame Grundwasserleiter zu verstehen."
+    ]
+  },
+  "earth_47": {
+    "stem": "Warum ändert sich die Schattenlänge mitten in einer Region an einem klaren Tag?",
+    "options": [
+      "Der Einfallswinkel der Sonnenstrahlen ändert sich, während sich die Erde dreht",
+      "Die Sonne umkreist die Erde in fester Höhe darüber",
+      "Schatten hängen nur von Wolken ab, nie von der Tageszeit",
+      "Die Erde ist flach, deshalb ändert sich der Winkel nie"
+    ],
+    "explanation": "Die tägliche Rotation ändert die Position der Sonne am Himmel, deshalb ändert sich die Schattenlänge mit Stunde, Jahreszeit und geografischer Breite.",
+    "theoryLines": [
+      "Tag und Nacht entstehen durch die Erdrotation.",
+      "Ein einfaches Licht-und-Schatten-Modell kann die Idee im Unterricht zeigen."
+    ]
+  },
+  "earth_48": {
+    "stem": "Warum kann das Wetter über zwei Tage kühl sein, während ein Jahres-Trend trotzdem zur Erwärmung geht?",
+    "options": [
+      "Wetter ist kurzfristige Veränderung; Klima ist das längerfristige Muster",
+      "Es gibt keinen Unterschied zwischen einem Tag und einem Jahrzehnt",
+      "Wenn ein Tag kalt ist, muss das Jahr kälter als der Durchschnitt sein",
+      "Temperaturmessung beeinflusst das Verständnis nie"
+    ],
+    "explanation": "Klare Wissenschaftssprache verhindert, von einem kühlen Tag auf eine Klimabehauptung zu springen. Diese Unterscheidung ist in Klimadiskussionen wichtig.",
+    "theoryLines": [
+      "Natürliche Schwankungen gibt es innerhalb längerer Trends.",
+      "Statistik wird erst über genügend Zeit klar."
+    ]
+  }
+}

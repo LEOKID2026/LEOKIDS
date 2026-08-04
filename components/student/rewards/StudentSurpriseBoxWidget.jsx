@@ -5,6 +5,7 @@ import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../../lib/rewards/reward-feature-flags.client.js";
 import { formatCountdownHe } from "../../../lib/rewards/rewards-ui.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
+import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
 
 const STATUS_PATH = "/api/student/rewards/surprise-box/status";
 
@@ -24,13 +25,28 @@ export default function StudentSurpriseBoxWidget({
 }) {
   const { tokens: T, isBright } = useStudentTheme();
   const copy = useRewardUiCopy();
-  const [phase, setPhase] = useState("idle");
-  const [ready, setReady] = useState(false);
-  const [pendingBoxCount, setPendingBoxCount] = useState(0);
+  const demo = isDemoMode();
+  const [phase, setPhase] = useState(demo ? "ok" : "idle");
+  const [ready, setReady] = useState(() => {
+    if (!demo) return false;
+    if (statusOverride?.pendingBoxCount != null) {
+      return Math.max(0, Number(statusOverride.pendingBoxCount) || 0) > 0;
+    }
+    if (typeof statusOverride?.ready === "boolean") return statusOverride.ready;
+    return true;
+  });
+  const [pendingBoxCount, setPendingBoxCount] = useState(() => {
+    if (!demo) return 0;
+    if (statusOverride?.pendingBoxCount != null) {
+      return Math.max(0, Number(statusOverride.pendingBoxCount) || 0);
+    }
+    return 1;
+  });
   const [secondsRemaining, setSecondsRemaining] = useState(null);
   const [errorHe, setErrorHe] = useState("");
 
   const loadStatus = useCallback(async () => {
+    if (demo) return;
     setPhase("loading");
     setErrorHe("");
     try {
@@ -55,26 +71,37 @@ export default function StudentSurpriseBoxWidget({
       setErrorHe(copy("surpriseBox", "networkError"));
       setPhase("error");
     }
-  }, []);
+  }, [copy, demo]);
 
   useEffect(() => {
-    if (!isCardRewardsEnabledClient()) return undefined;
+    if (!isCardRewardsEnabledClient() && !demo) return undefined;
+    if (demo) return undefined;
     void loadStatus();
-  }, [loadStatus, refreshToken]);
+  }, [loadStatus, refreshToken, demo]);
 
   useEffect(() => {
-    if (!statusOverride) return;
+    if (!statusOverride) {
+      if (demo) {
+        setReady(true);
+        setPendingBoxCount((prev) => (prev > 0 ? prev : 1));
+        setPhase("ok");
+      }
+      return;
+    }
     if (statusOverride.pendingBoxCount != null) {
       const count = Math.max(0, Number(statusOverride.pendingBoxCount) || 0);
       setPendingBoxCount(count);
       setReady(count > 0);
       if (count <= 0) setSecondsRemaining(null);
+      setPhase("ok");
     } else if (typeof statusOverride.ready === "boolean") {
       setReady(statusOverride.ready);
+      setPhase("ok");
     }
-  }, [statusOverride]);
+  }, [statusOverride, demo]);
 
   useEffect(() => {
+    if (demo) return undefined;
     if (!ready && secondsRemaining != null && secondsRemaining > 0) {
       const timer = setInterval(() => {
         setSecondsRemaining((prev) => {
@@ -88,11 +115,11 @@ export default function StudentSurpriseBoxWidget({
       return () => clearInterval(timer);
     }
     return undefined;
-  }, [ready, secondsRemaining, loadStatus]);
+  }, [ready, secondsRemaining, loadStatus, demo]);
 
-  if (!isCardRewardsEnabledClient()) return null;
+  if (!isCardRewardsEnabledClient() && !demo) return null;
 
-  const canOpen = phase === "ok" && ready && !openingLocked;
+  const canOpen = (demo || phase === "ok") && ready && !openingLocked;
 
   const compactBtn =
     "flex-1 md:flex-none !min-h-[2.75rem] !px-3 !py-2 !text-sm text-center whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none";
@@ -103,6 +130,7 @@ export default function StudentSurpriseBoxWidget({
     <section
       className={`mt-4 md:mt-5 w-full text-start overflow-x-hidden ${T.statCard}`}
       aria-label={copy("surpriseBox", "ariaLabel")}
+      data-testid="student-surprise-box-widget"
     >
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-3">
         <div className="min-w-0 flex-1">
@@ -143,8 +171,12 @@ export default function StudentSurpriseBoxWidget({
         <div className="flex flex-row gap-2 shrink-0 w-full md:w-auto min-w-0">
           <button
             type="button"
+            data-testid="student-surprise-box-open"
             disabled={!canOpen}
-            onClick={() => onOpen?.()}
+            onClick={() => {
+              if (!canOpen) return;
+              onOpen?.();
+            }}
             className={`${T.ctaSurpriseOpen} ${compactBtn}`}
           >
             {copy("surpriseBox", "openBox")}

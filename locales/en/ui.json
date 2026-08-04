@@ -32,6 +32,7 @@
     "parentPortal": "Parent portal",
     "teachers": "For teachers",
     "teacherPortal": "Teacher portal",
+    "schoolPortal": "School portal",
     "about": "About",
     "contact": "Contact",
     "practice": "Practice",
@@ -324,7 +325,39 @@
         "bullet1": "Send personal activities",
         "bullet2": "Track completion and progress",
         "cta": "Teacher login / sign up"
-      }
+      },
+      "seoEntry": {
+        "title": "Practice areas and parent guides",
+        "body": "Want to explore Leo Kids practice areas? Browse practice pages and guides, read a short overview, then sign in or register in the parent area.",
+        "practiceAreasCta": "Practice areas",
+        "parentGuidesCta": "Parent guides",
+        "quickLinks": {
+          "math": "Math",
+          "geometry": "Geometry",
+          "english": "English",
+          "science": "Science",
+          "digitalPractice": "Digital practice",
+          "parentReports": "Parent reports",
+          "homePracticeRoutine": "Home practice routine"
+        }
+      },
+      "valueCardsAria": "Product values"
+    },
+    "seoNav": {
+      "pageNavigationAria": "Page navigation",
+      "backToPractice": "Back to practice areas",
+      "backToGuides": "Back to guides",
+      "home": "Home",
+      "relatedGuides": "Related guides",
+      "moreGuides": "More guides",
+      "fromGuideToPracticeTitle": "From guide to practice",
+      "fromGuideToPracticeBody": "After you choose an approach, go to the matching practice area and pick a grade and topic. You can return to the guide at any step to adjust what comes next.",
+      "fromGuidesToPracticeTitle": "From guides to practice",
+      "fromGuidesToPracticeBody": "Practice pages bring together subjects, topics, and available activities so you can choose your next step by goal.",
+      "chooseGuideByGoal": "Choose a guide by goal",
+      "allPracticeAreas": "All practice areas",
+      "morePracticeAreas": "More practice areas",
+      "faqTitle": "Frequently asked questions"
     },
     "about": {
       "imageAlt": "Leo — smart learning environment for kids",
@@ -659,6 +692,13 @@
     }
   },
   "help": {
+    "skipToContent": "Skip to content",
+    "metaDescription": "Leo Kids help center — guides for parents, students, and reports.",
+    "tableOfContents": "Table of contents",
+    "relatedLinks": "Related links",
+    "openGuide": "Open guide",
+    "hubBadge": "Help · Guides · FAQ",
+    "hubSubtitle": "Guides for parents and students — how to use the site, read reports, and practice by subject.",
     "searchLabel": "Search guides",
     "searchPlaceholder": "Search by topic or keyword...",
     "noResults": "No results found for this search.",
@@ -670,6 +710,10 @@
     "videoDuration": "Estimated length: {minutes} min",
     "transcript": "Transcript",
     "captionsEnglish": "English"
+  },
+  "teacherShell": {
+    "backToDashboard": "← Back to dashboard",
+    "schoolLabel": "School: {name}"
   },
   "copilot": {
     "panel": {

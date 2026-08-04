@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 import RewardCardImage from "../../student/rewards/RewardCardImage.jsx";
 import { buildMemoryDeckFromShop } from "../../../lib/solo-games/memory-shop-cards.client.js";
+import { isDemoMode, readDemoSession } from "../../../lib/demo/demo-mode.client.js";
 import { useSoloGameShellUi } from "../../../hooks/solo-games/useSoloGameShellUi.js";
 import { useSoloGameMobileFullscreen } from "../../../hooks/solo-games/useSoloGameMobileFullscreen.js";
 import { useSoloEngineAudio } from "../../../hooks/solo-games/useSoloGameAudio.js";
@@ -16,6 +17,129 @@ const SHOP_CARD_BACK = "/rewards/cards/common/card_back.webp";
 const MISMATCH_HOLD_MS = 1200;
 /** Portrait shop card: width : height = 2 : 3 */
 const CARD_ASPECT = 3 / 2;
+const DEMO_SHOP_API = "/api/demo/cards/shop";
+const PLACEHOLDER = "/rewards/cards/placeholders/regular/default.svg";
+
+function shuffle(items) {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function buildCandyFallbackDeck(pairCount) {
+  const need = Math.max(1, Math.floor(Number(pairCount) || 1));
+  // Stable pair keys + always-available placeholder art (no candy PNG dependency).
+  const names = [
+    "heart",
+    "star",
+    "square",
+    "drop",
+    "circle",
+    "diamond",
+    "rainbow",
+    "moon",
+    "sun",
+    "flower",
+    "leaf",
+    "gem",
+  ];
+  const fallback = [];
+  for (let i = 0; i < need; i += 1) {
+    const name = names[i % names.length];
+    fallback.push({
+      pairKey: `demo-pair-${name}-${i}`,
+      src: PLACEHOLDER,
+      preBaked: true,
+      nameHe: name,
+    });
+  }
+  const deckItems = [];
+  for (const item of fallback) deckItems.push(item, { ...item });
+  return {
+    ok: true,
+    deck: shuffle(deckItems).map((item, index) => ({
+      id: index,
+      pairKey: item.pairKey,
+      src: item.src,
+      preBaked: item.preBaked,
+      nameHe: item.nameHe,
+    })),
+  };
+}
+
+/** Demo-mode memory deck — uses /api/demo/cards/shop (no student auth cookie). */
+async function buildMemoryDeckFromDemoShop(pairCount) {
+  const need = Math.max(1, Math.floor(Number(pairCount) || 1));
+  const grade = readDemoSession()?.gradeLevel || "g3";
+  try {
+    const res = await fetch(`${DEMO_SHOP_API}?gradeLevel=${encodeURIComponent(grade)}`, {
+      cache: "no-store",
+      headers: { Accept: "application/json" },
+    });
+    const payload = await res.json().catch(() => ({}));
+    if (!res.ok || payload?.ok !== true || !Array.isArray(payload.shop)) {
+      return buildCandyFallbackDeck(need);
+    }
+    const uniq = new Map();
+    for (const card of payload.shop) {
+      const type = String(card?.cardType || card?.card_type || "").trim();
+      if (type && type !== "shop") continue;
+      const src = String(
+        card.imageDisplayUrl ||
+          card.imageUrl ||
+          card.imageThumbUrl ||
+          card.image_url ||
+          "",
+      ).trim();
+      if (!src || src === PLACEHOLDER || /\/placeholders\//i.test(src)) continue;
+      const pairKey = String(card.cardKey || card.card_key || card.id || "").trim();
+      if (!pairKey || uniq.has(pairKey)) continue;
+      uniq.set(pairKey, {
+        pairKey,
+        src,
+        preBaked: card.imageVariantsReady === true,
+        nameHe: String(card.nameHe || card.name_he || "").trim(),
+      });
+    }
+    const shopPool = [...uniq.values()];
+    if (shopPool.length < need) {
+      return buildCandyFallbackDeck(need);
+    }
+    const finalPairs = shuffle(shopPool).slice(0, need);
+    const deckItems = [];
+    for (const item of finalPairs) deckItems.push(item, { ...item });
+    return {
+      ok: true,
+      deck: shuffle(deckItems).map((item, index) => ({
+        id: index,
+        pairKey: item.pairKey,
+        src: item.src,
+        preBaked: item.preBaked,
+        nameHe: item.nameHe,
+      })),
+    };
+  } catch {
+    return buildCandyFallbackDeck(need);
+  }
+}
+
+async function resolveMemoryDeckBuilder(pairCount) {
+  try {
+    if (isDemoMode()) {
+      const demo = await buildMemoryDeckFromDemoShop(pairCount);
+      if (demo.ok) return demo;
+    } else {
+      const shop = await buildMemoryDeckFromShop(pairCount);
+      if (shop?.ok) return shop;
+    }
+  } catch {
+    /* fall through to candy */
+  }
+  return buildCandyFallbackDeck(pairCount);
+}
 
 /**
  * @param {{ totalCards: number, difficulty: string, boardW: number, boardH: number, isMobile: boolean }} opts
@@ -94,7 +218,7 @@ export default function MleoMemoryEngine({
   initialDifficulty = "medium",
   onSessionEnd,
   onPreGameUiChange,
-  deckBuilder = buildMemoryDeckFromShop,
+  deckBuilder = resolveMemoryDeckBuilder,
 }) {
   const sfx = useSoloEngineAudio();
 
@@ -152,9 +276,24 @@ export default function MleoMemoryEngine({
   }, [initialDifficulty]);
 
   const difficultySettings = {
-    easy: { pairs: 6, score: 1000, time: 120, label: "Easy" },
-    medium: { pairs: 8, score: 3000, time: 240, label: "Medium" },
-    hard: { pairs: 12, score: 6000, time: 360, label: "Hard" },
+    easy: {
+      pairs: 6,
+      score: 1000,
+      time: 120,
+      label: gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "difficulty_easy"),
+    },
+    medium: {
+      pairs: 8,
+      score: 3000,
+      time: 240,
+      label: gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "difficulty_medium"),
+    },
+    hard: {
+      pairs: 12,
+      score: 6000,
+      time: 360,
+      label: gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "difficulty_hard"),
+    },
   };
 
   const fireSessionEnd = (finalScore, won, timeLeft) => {
@@ -217,6 +356,7 @@ export default function MleoMemoryEngine({
     setKeyboardNavActive(false);
     setCards([]);
     setGameRunning(false);
+    setShowIntro(false);
 
     const result = await deckBuilder(pairs);
     if (initSeqRef.current !== seq) return;
@@ -408,14 +548,18 @@ export default function MleoMemoryEngine({
                   style={{ width: `${(time / difficultySettings[difficulty].time) * 100}%` }}
                 />
               </div>
-              <div className="rounded-lg bg-black/60 px-2 py-1 text-sm font-bold">⏳ {time} sec</div>
+              <div className="rounded-lg bg-black/60 px-2 py-1 text-sm font-bold">
+                ⏳ {time} {gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "sec")}
+              </div>
               <div className="rounded-lg bg-black/60 px-2 py-1 text-sm font-bold">⭐ {score}</div>
             </div>
           ) : null}
 
           <div
             ref={boardRef}
-            className="relative flex min-h-0 w-full flex-1 items-center justify-center overflow-hidden px-2 pb-2 max-lg:px-0 max-lg:pb-1"
+            className="relative flex min-h-[220px] w-full flex-1 items-center justify-center overflow-hidden px-2 pb-2 max-lg:px-0 max-lg:pb-1"
+            data-testid="memory-gameplay"
+            data-memory-ready={gameRunning && !deckLoading && !deckError && cards.length > 0 ? "1" : "0"}
           >
             {showFullscreenButton ? (
               <div className="pointer-events-auto absolute right-2 top-2 z-[70]">
@@ -427,14 +571,19 @@ export default function MleoMemoryEngine({
             ) : null}
 
             {deckLoading ? (
-              <p className={SG.preGameLoading}>Loading cards from the shop…</p>
+              <p className={SG.preGameLoading}>
+                {gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "loading_cards_from_the_shop")}
+              </p>
             ) : deckError ? (
               <div className="flex max-w-sm flex-col items-center gap-4 px-4 text-center">
                 <p className={SG.preGameErrorTitle}>
-                  Not enough shop cards for Memory
+                  {gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "not_enough_shop_cards_for_memory")}
                 </p>
                 <p className={SG.preGameErrorSub}>
-                  Go back to the card shop and make sure cards are available
+                  {gamePackCopy(
+                    "components__solo-games__engines__MleoMemoryEngine",
+                    "go_back_to_the_card_shop_and_make_sure_cards_are_available"
+                  )}
                 </p>
                 <SoloGameNavButtons
                   primaryLabel={gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "try_again")}
@@ -469,7 +618,12 @@ export default function MleoMemoryEngine({
                         isFocused ? "ring-4 ring-sky-400" : isMatched ? "border-emerald-400/80" : "border-yellow-400/30"
                       } ${isFlipped ? "border-yellow-300/70 bg-transparent" : "border-amber-500/40 bg-slate-900"}`}
                       style={{ width: `${cardWidth}px`, height: `${cardHeight}px` }}
-                      aria-label={isFlipped ? card.nameHe || "Face-up card" : "Face-down card"}
+                      aria-label={
+                        isFlipped
+                          ? card.nameHe ||
+                            gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "face_up_card")
+                          : gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "face_down_card")
+                      }
                     >
                       {isFlipped ? (
                         <RewardCardImage
@@ -478,7 +632,10 @@ export default function MleoMemoryEngine({
                           size="tile"
                           fit="cover"
                           loading="eager"
-                          alt={card.nameHe || "Card"}
+                          alt={
+                            card.nameHe ||
+                            gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "card")
+                          }
                           wrapperClassName="absolute inset-0 h-full w-full"
                           className="h-full w-full"
                         />
@@ -500,10 +657,30 @@ export default function MleoMemoryEngine({
       )}
 
       {gameOver && !showIntro ? (
-        <SoloGameEndInterstitialOverlay
-          didWin={didWin}
-          onDone={completeEndInterstitial}
-        />
+        <>
+          <div
+            className="pointer-events-none absolute inset-x-0 top-16 z-[90] flex justify-center px-3"
+            data-testid="memory-complete"
+            aria-hidden
+          />
+          <SoloGameEndInterstitialOverlay
+            didWin={didWin}
+            onDone={completeEndInterstitial}
+          />
+          <div className="pointer-events-auto absolute inset-x-0 bottom-6 z-[110] flex justify-center px-4">
+            <button
+              type="button"
+              data-testid="memory-retry"
+              className="min-h-[44px] rounded-xl border-2 border-emerald-300/70 bg-emerald-500/90 px-8 py-2 text-sm font-extrabold text-white shadow"
+              onClick={() => {
+                pendingSessionEndRef.current = null;
+                initGameWithDifficulty(difficulty);
+              }}
+            >
+              {gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "try_again")}
+            </button>
+          </div>
+        </>
       ) : null}
 
       <SoloGamePortraitRecommendationModal

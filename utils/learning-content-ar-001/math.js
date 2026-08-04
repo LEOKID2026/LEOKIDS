@@ -6,20 +6,46 @@
 import { BLANK } from "../math-constants.js";
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
 
-const WEEKDAYS_PT = [
-  "domingo",
-  "segunda-feira",
-  "terça-feira",
-  "quarta-feira",
-  "quinta-feira",
-  "sexta-feira",
-  "sábado"];
+const WEEKDAYS_AR = [
+  "الأحد",
+  "الاثنين",
+  "الثلاثاء",
+  "الأربعاء",
+  "الخميس",
+  "الجمعة",
+  "السبت",
+];
 
 /** Residual HE→EN maps cleared — generators emit English. Keep empty for API stability. */
 const OBJECTS_PT = {};
-const YES_NO = {};
-const PRIME_COMPOSITE = {};
-const PARITY = {};
+const YES_NO = {
+  Yes: "نعم",
+  No: "لا",
+  yes: "نعم",
+  no: "لا",
+  "always yes": "نعم دائماً",
+  "Always yes": "نعم دائماً",
+  Nx: "لا",
+  No1: "لا",
+};
+const PRIME_COMPOSITE = {
+  prime: "أولي",
+  composite: "مركب",
+  Prime: "أولي",
+  Composite: "مركب",
+  "No prime": "ليس أولياً",
+  "No composite": "ليس مركباً",
+};
+const PARITY = {
+  even: "زوجي",
+  odd: "فردي",
+  Even: "زوجي",
+  Odd: "فردي",
+  even1: "زوجي",
+  evex: "زوجي",
+  odd1: "فردي",
+  oddx: "فردي",
+};
 const MATH_PHRASES = [];
 
 function applyMathPhrases(text) {
@@ -109,13 +135,13 @@ export function rebuildMathStemAr001(question) {
     if (kind === "wp_simple_add_g2") {
       return `كان هناك ${p.a} أطفال في الفصل وانضم ${p.b} أكثر. كم عدد الأطفال هناك الآن؟`;
     }
-    return `لدى الأسد ${p.a} كرات ويحصل على ${p.b} أكثر. كم عدد الكرات التي يمتلكها ليو إجمالاً؟`;
+    return `لدى Leo ${p.a} كرات ويحصل على ${p.b} أكثر. كم عدد الكرات التي يمتلكها Leo إجمالاً؟`;
   }
   if (kind === "wp_simple_sub" || kind === "wp_simple_sub_g2") {
     if (kind === "wp_simple_sub_g2") {
       return `يوجد ${p.total} تفاح في السلة. ${p.give} تم تناولها. كم عدد التفاح المتبقي؟`;
     }
-    return `لدى ليو ${p.total} ملصقات. يعطي ${p.give} لصديق. كم عدد الملصقات التي تركها ليو؟`;
+    return `لدى Leo ${p.total} ملصقات. يعطي ${p.give} لصديق. كم عدد الملصقات التي تركها Leo؟`;
   }
   if (kind === "wp_pocket_money" || kind === "wp_pocket_money_g2") {
     return `إيما لديها ${p.money} دولار. تشتري وجبة خفيفة مقابل ${p.toy} دولار. كم بقي من المال؟`;
@@ -151,18 +177,18 @@ export function rebuildMathStemAr001(question) {
     return `مكتبة بها ${p.start} كتب. ${p.gain} تمت إضافة كتب جديدة وتم سحب ${p.loss}. كم عدد الكتب الموجودة في المكتبة الآن؟`;
   }
   if (kind === "wp_time_days") {
-    const start = WEEKDAYS_PT[p.startDayIdx] || "segunda-feira";
-    const end = WEEKDAYS_PT[p.endDayIdx] || "sexta-feira";
+    const start = WEEKDAYS_AR[p.startDayIdx] || "الاثنين";
+    const end = WEEKDAYS_AR[p.endDayIdx] || "الجمعة";
     return `إذا كان اليوم ${start}، فكم يومًا حتى ${end}؟`;
   }
   if (kind === "wp_time_date") {
     return `إذا كان اليوم هو ${p.today}الشهر، فما التاريخ الذي سيكون بعد ${p.daysLater} يوم؟`;
   }
   if (kind === "wp_coins") {
-    return `لدى الأسد ${p.coins1} عملات معدنية بقيمة دولار واحد و${p.coins2} عملات معدنية بقيمة دولارين. كم من المال لديه في كل شيء؟`;
+    return `لدى Leo ${p.coins1} عملات معدنية بقيمة دولار واحد و${p.coins2} عملات معدنية بقيمة دولارين. كم من المال لديه في كل شيء؟`;
   }
   if (kind === "wp_coins_spent") {
-    return `لدى ليو ${p.total} دولار من العملات المعدنية. يشتري الحلوى بمبلغ ${p.spent} دولار. كم بقي من المال؟`;
+    return `لدى Leo ${p.total} دولار من العملات المعدنية. يشتري الحلوى بمبلغ ${p.spent} دولار. كم بقي من المال؟`;
   }
   if (kind === "wp_division_simple") {
     return `يوجد ${p.total} تفاح مقسم إلى مجموعات تحتوي كل منها على ${p.perGroup} تفاحة. كم عدد المجموعات هناك؟`;
@@ -189,13 +215,25 @@ export function rebuildMathStemAr001(question) {
     if (kind === "wp_average_g6") {
       return `حصل مشروع جماعي على الدرجات ${p.s1} و${p.s2} و${p.s3} على ثلاث مراحل. ما هو متوسط ​​النتيجة (مقربة إلى رقم صحيح)؟`;
     }
-    return `سجل ليو ${p.s1} و${p.s2} و${p.s3} في ثلاثة اختبارات. ما هو متوسطه (مقربًا إلى عدد صحيح)؟`;
+    return `سجل Leo ${p.s1} و${p.s2} و${p.s3} في ثلاثة اختبارات. ما هو متوسطه (مقربًا إلى عدد صحيح)؟`;
   }
   if (kind === "wp_multi_step" || kind === "wp_multi_step_g6") {
-    return `الأسد لديه ${p.money} دولار. يشتري ${p.a} قلم رصاص و${p.b} قلم رصاص، وسعر كل قطعة ${p.price} دولار. كم من المال بقي بعد التسوق؟`;
+    return `لدى Leo ${p.money} دولار. يشتري ${p.a} أقلام و${p.b} أقلام رصاص، وسعر كل قطعة ${p.price} دولار. كم من المال بقي بعد التسوق؟`;
   }
   if (kind === "operation_choice_word_problem_probe") {
     return `هناك ${p.groups} مجموعات بها ${p.each} عنصر في كل مجموعة. ما هي العملية التي تجد الإجمالي؟`;
+  }
+  if (kind === "zero_mul" || kind === "mul_by_zero" || kind === "zero_mul_word") {
+    const n = p.a ?? p.n ?? p.factor;
+    if (kind === "zero_mul_word" && n != null) return `${n} ضرب صفر يساوي ${BLANK}`;
+    if (n != null) return `ما ناتج ${n} × 0؟`;
+    return "ما ناتج الضرب في صفر؟";
+  }
+  if (kind === "power_calc" || kind === "powers" || kind === "power") {
+    const base = p.base ?? p.a;
+    const exp = p.exp ?? p.b ?? p.exponent;
+    if (base != null && exp != null) return `القوى: احسب ${base}^${exp} = ${BLANK}`;
+    return `القوى: احسب القوة = ${BLANK}`;
   }
 
   if (kind.startsWith("wp_") || inferSelectedOp(question) === "word_problems") {
@@ -221,7 +259,7 @@ export function applyMathLevelPresentationAr001(question, ctx) {
   const kind = String(params?.kind || "");
   if (kind.startsWith("wp_") || selectedOp === "word_problems") return q0;
 
-  if (kind === "ns_comlement100") {
+  if (kind === "ns_complement100" || kind === "ns_comlement100") {
     const b = params?.b;
     const c = params?.c != null ? Number(params.c) : 100;
     if (b != null && Number.isFinite(c)) {
@@ -235,7 +273,7 @@ export function applyMathLevelPresentationAr001(question, ctx) {
     }
   }
 
-  if (kind === "ns_comlement10") {
+  if (kind === "ns_complement10" || kind === "ns_comlement10") {
     const b = params?.b;
     const c = params?.c != null ? Number(params.c) : 10;
     if (b != null && Number.isFinite(c)) {
@@ -578,11 +616,15 @@ function resolveMathDisplayStem(question) {
   const a = p.a ?? question?.a;
   const b = p.b ?? question?.b;
   if (a != null && b != null && OP_SYMBOL_PT[opRaw]) {
-    return { stem: `Quantoé ${a} ${OP_SYMBOL_PT[opRaw]} ${b}?`, source: "generic" };
+    return { stem: `كم يساوي ${a} ${OP_SYMBOL_PT[opRaw]} ${b}؟`, source: "generic" };
   }
   for (const candidate of [p.exerciseText, question?.exerciseText, question?.question]) {
     if (typeof candidate === "string" && candidate.trim() && !containsHebrew(candidate)) {
-      return { stem: String(candidate).trim(), source: "passthrough" };
+      const text = String(candidate).trim();
+      // Prefer Arabic; keep pure numeric / symbol exercises; refuse English prose passthrough.
+      if (/[\u0600-\u06FF]/.test(text) || !/[A-Za-z]{3,}/.test(text)) {
+        return { stem: text, source: "passthrough" };
+      }
     }
   }
   return { stem: null, source: "none" };
@@ -603,7 +645,7 @@ export function localizeMathQuestionAr001(question) {
   if (typeof base.questionLabel === "string" && containsHebrew(base.questionLabel)) base.questionLabel = "";
 
   const { stem, source } = resolveMathDisplayStem({ ...question, ...base, params: question.params });
-  const resolvedStem = stem || "Solve.";
+  const resolvedStem = stem || "أجب عن السؤال.";
 
   const out = mapQuestionTextFields({ ...base }, (field, value, q) => {
     if (field === "question" || field === "sportText" || field === "questionLabel") {
@@ -613,11 +655,20 @@ export function localizeMathQuestionAr001(question) {
     // Answers/options: closed token maps only (no full-sentence HE→EN).
     if (isShortAnswerField(field)) {
       const text = String(value ?? "");
-      if (!containsHebrew(text)) return text;
+      if (!containsHebrew(text)) {
+        const rem = text.match(/^(\d+)\s+remainder\s+(\d+)$/i);
+        if (rem) return `${rem[1]} والباقي ${rem[2]}`;
+        if (PRIME_COMPOSITE[text.trim()]) return PRIME_COMPOSITE[text.trim()];
+        if (PARITY[text.trim()]) return PARITY[text.trim()];
+        if (YES_NO[text.trim()]) return YES_NO[text.trim()];
+        return text;
+      }
       if (YES_NO[text.trim()]) return YES_NO[text.trim()];
       if (PRIME_COMPOSITE[text.trim()]) return PRIME_COMPOSITE[text.trim()];
       if (PARITY[text.trim()]) return PARITY[text.trim()];
       if (OBJECTS_PT[text.trim()]) return OBJECTS_PT[text.trim()];
+      const remHe = text.match(/(\d+)\s+remainder\s+(\d+)/i);
+      if (remHe) return `${remHe[1]} والباقي ${remHe[2]}`;
       const digitsOnly = text.replace(/(?!)/gu, "").trim();
       return digitsOnly || text;
     }
@@ -633,7 +684,9 @@ export function localizeMathQuestionAr001(question) {
 
   if (typeof out.correctAnswer === "string") {
     const ca = out.correctAnswer.trim();
-    if (YES_NO[ca]) out.correctAnswer = YES_NO[ca];
+    const rem = ca.match(/^(\d+)\s+remainder\s+(\d+)$/i);
+    if (rem) out.correctAnswer = `${rem[1]} والباقي ${rem[2]}`;
+    else if (YES_NO[ca]) out.correctAnswer = YES_NO[ca];
     else if (PRIME_COMPOSITE[ca]) out.correctAnswer = PRIME_COMPOSITE[ca];
     else if (PARITY[ca]) out.correctAnswer = PARITY[ca];
     else if (containsHebrew(ca)) {

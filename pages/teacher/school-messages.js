@@ -6,7 +6,10 @@ import SchoolInboxMessageCard from "../../components/school-portal/SchoolInboxMe
 import SchoolInboxMessageDetailContent from "../../components/school-portal/SchoolInboxMessageDetailContent";
 import SchoolMessageDetailModal from "../../components/school-portal/SchoolMessageDetailModal";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolCommunicationLocale,
+  SC_LOADING,
   SC_MESSAGE_FROM_SCHOOL_ADMIN,
   SC_TEACHER_INBOX_EMPTY,
   SC_TEACHER_INBOX_TITLE,
@@ -25,6 +28,9 @@ async function teacherFetch(path, accessToken, init = {}) {
 
 export default function TeacherSchoolMessagesPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  // Bind before first paint so SC_LOADING / title are locale-ready (children evaluate before shell).
+  bindSchoolCommunicationLocale(locale);
   const [accessToken, setAccessToken] = useState(null);
   const [schoolMembership, setSchoolMembership] = useState(null);
   const [unreadCount, setUnreadCount] = useState(0);
@@ -110,8 +116,12 @@ export default function TeacherSchoolMessagesPage() {
         schoolMessageUnreadCount={unreadCount}
       >
         {loading ? (
-          <p className="text-white/50 text-sm">Loading…</p>
-        ) : messages.length ? (
+          <p className="text-white/50 text-sm" data-testid="teacher-school-messages-loading">
+            {SC_LOADING}
+          </p>
+        ) : (
+          <div data-testid="teacher-school-messages-ready">
+            {messages.length ? (
           <ul className="space-y-3">
             {messages.map((m) => {
               const messageId = getSchoolMessageId(m);
@@ -128,6 +138,8 @@ export default function TeacherSchoolMessagesPage() {
           </ul>
         ) : (
           <p className="text-white/50 text-sm">{SC_TEACHER_INBOX_EMPTY}</p>
+        )}
+          </div>
         )}
 
         <SchoolMessageDetailModal open={Boolean(selected && selectedId)} onClose={() => setSelected(null)}>

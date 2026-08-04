@@ -5,13 +5,41 @@ import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
  * short, parent-friendly English display text.
  */
 
-/** @type {Record<string, string>} */
-export const PARENT_REPORT_SUBJECT_LABELS_EN = {
-  math: "Math",
-  geometry: "Geometry",
-  english: "English",
-  science: "Science"
-};
+/** @type {Record<string, string>} — resolved at call time via reportPackCopy */
+const SUBJECT_PACK_KEYS = Object.freeze({
+  math: "math",
+  geometry: "geometry",
+  english: "english",
+  science: "science",
+});
+
+function resolveSubjectPackLabel(key) {
+  return reportPackCopy("utils__parent-report-language__parent-report-display-labels", `subject_${key}`);
+}
+
+/** @deprecated Prefer formatParentReportSubjectHe — kept for import stability. */
+export const PARENT_REPORT_SUBJECT_LABELS_EN = new Proxy(
+  {},
+  {
+    get(_t, prop) {
+      if (typeof prop !== "string") return undefined;
+      const k = prop.toLowerCase();
+      if (SUBJECT_PACK_KEYS[k]) return resolveSubjectPackLabel(k);
+      return undefined;
+    },
+    ownKeys() {
+      return Object.keys(SUBJECT_PACK_KEYS);
+    },
+    getOwnPropertyDescriptor(_t, prop) {
+      if (typeof prop !== "string" || !SUBJECT_PACK_KEYS[prop.toLowerCase()]) return undefined;
+      return {
+        configurable: true,
+        enumerable: true,
+        value: resolveSubjectPackLabel(prop.toLowerCase()),
+      };
+    },
+  },
+);
 
 /** @deprecated Alias — Global uses English labels; keep HE export name for import stability. */
 export const PARENT_REPORT_SUBJECT_LABELS_HE = PARENT_REPORT_SUBJECT_LABELS_EN;
@@ -117,7 +145,11 @@ function activityLabelWithSubjectGradeFallback(baseLabel, row, subjectId) {
     row?.contentGradeKey ?? row?.gradeKey ?? row?.contentGradeLevel ?? row?.grade
   );
   if (subjectLabel && gradeLabel && gradeLabel !== reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available")) {
-    return `${baseLabel} - ${subjectLabel} grade ${gradeLabel}`;
+    return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "activity_subject_grade", {
+      base: baseLabel,
+      subject: subjectLabel,
+      grade: gradeLabel,
+    });
   }
   if (subjectLabel) return `${baseLabel} - ${subjectLabel}`;
   return baseLabel;
@@ -244,6 +276,113 @@ export const PARENT_REPORT_EVIDENCE_LABELS_EN = {
   nodata: reportPackCopy("utils__parent-report-language__parent-report-display-labels", "no_data")
 };
 
+const DISPLAY_SLUG = "utils__parent-report-language__parent-report-display-labels";
+
+/** @param {string} packKey */
+function displayCopy(packKey) {
+  return reportPackCopy(DISPLAY_SLUG, packKey);
+}
+
+/**
+ * Runtime pack lookup — never bake English at module load.
+ * @param {string|null|undefined} value
+ * @param {Record<string, string>} keyToPackKey
+ * @param {string} fallbackPackKey
+ */
+function mapFromPack(value, keyToPackKey, fallbackPackKey) {
+  const key = normalizeKey(value);
+  if (!key) return displayCopy(fallbackPackKey);
+  if (keyToPackKey[key]) return displayCopy(keyToPackKey[key]);
+  if (key.includes(":")) {
+    return key
+      .split(":")
+      .map((part) => mapFromPack(part, keyToPackKey, fallbackPackKey))
+      .join(" · ");
+  }
+  if (/^\d{4}-\d{2}-\d{2}$/.test(key)) return key;
+  const direct = displayCopy(key);
+  if (direct && direct !== key) return direct;
+  return displayCopy(fallbackPackKey);
+}
+
+const LEVEL_PACK_KEYS = Object.freeze({
+  regular: "regular",
+  advanced: "advanced",
+  easy: "regular",
+  medium: "regular",
+  mixed: "regular",
+  hard: "advanced",
+  low: "low",
+  high: "high",
+  moderate: "moderate",
+  strong: "strong",
+  weak: "weak",
+});
+
+const MODE_PACK_KEYS = Object.freeze({
+  learning: "learning",
+  practice: "practice",
+  challenge: "challenge",
+  speed: "speed",
+  marathon: "extended_practice",
+  review: "review",
+  drill: "focused_practice",
+  graded: "graded",
+  normal: "regular",
+  mistakes: "mistakes",
+  practice_mistakes: "mistake_review",
+  quiz: "quiz",
+  homework: "homework",
+  guided_practice: "practice",
+  guided: "practice",
+  live_lesson: "live_lesson",
+  discussion: "discussion",
+  worksheet: "worksheet",
+  learning_book: "learning_book",
+  diagnostic: "practice",
+  independent: "independent_practice",
+  self_practice: "independent_practice",
+  parent_assigned_activity: "personal_activity",
+  classroom_assigned_activity: "class_activity",
+  unknown: "unknown",
+});
+
+const STATUS_PACK_KEYS = Object.freeze({
+  completed: "completed",
+  active: "active",
+  inactive: "inactive",
+  submitted: "submitted",
+  in_progress: "in_progress",
+  not_started: "not_started",
+  sufficient: "sufficient",
+  insufficient: "insufficient",
+  unavailable: "not_available",
+  partial: "partial",
+  empty: "no_data",
+  unknown: "unknown",
+  not_tracked: "not_measured",
+  requires_events: "needs_more_data",
+  available: "available",
+  true: "yes",
+  false: "no",
+});
+
+const SOURCE_PACK_KEYS = Object.freeze({
+  self_practice: "independent_practice",
+  parent_assigned_activity: "personal_activity_from_parent",
+  learning_book: "learning_book",
+  worksheet: "worksheet",
+  classroom_assigned_activity: "class_activity",
+  report: "report",
+  activity: "activity",
+  unknown: "unknown",
+  unavailable: "not_available",
+  partial: "partial",
+  available: "available",
+  not_tracked: "not_measured",
+  requires_events: "needs_more_data",
+});
+
 function normalizeKey(value) {
   return String(value ?? "")
     .trim()
@@ -268,31 +407,33 @@ function mapFromTable(value, table, fallback = "-") {
 /** @param {string|null|undefined} subjectId */
 export function formatParentReportSubjectHe(subjectId) {
   const key = normalizeKey(subjectId);
-  if (!key || key === "unknown") return "Unknown";
-  if (PARENT_REPORT_SUBJECT_LABELS_EN[key]) return PARENT_REPORT_SUBJECT_LABELS_EN[key];
-  return "Unknown";
+  if (!key || key === "unknown") {
+    return displayCopy("unknown");
+  }
+  if (SUBJECT_PACK_KEYS[key]) return resolveSubjectPackLabel(key);
+  return displayCopy("unknown");
 }
 
 /** @param {string|null|undefined} topic */
 export function formatParentReportTopicHe(topic) {
   const raw = String(topic || "").trim();
-  if (!raw) return "Topic";
-  return mapFromTable(raw, PARENT_REPORT_MODE_LABELS_EN, raw.replace(/_/g, " "));
+  if (!raw) return displayCopy("topic");
+  return mapFromPack(raw, MODE_PACK_KEYS, "topic");
 }
 
 /** @param {string|null|undefined} mode */
 export function formatParentReportModeHe(mode) {
-  return mapFromTable(mode, PARENT_REPORT_MODE_LABELS_EN, reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"));
+  return mapFromPack(mode, MODE_PACK_KEYS, "not_available");
 }
 
 /** @param {string|null|undefined} source */
 export function formatParentReportSourceHe(source) {
-  return mapFromTable(source, PARENT_REPORT_SOURCE_LABELS_EN, "Unknown");
+  return mapFromPack(source, SOURCE_PACK_KEYS, "unknown");
 }
 
 /** @param {string|null|undefined} status */
 export function formatParentReportStatusHe(status) {
-  return mapFromTable(status, PARENT_REPORT_STATUS_LABELS_EN, "-");
+  return mapFromPack(status, STATUS_PACK_KEYS, "not_available");
 }
 
 /**
@@ -300,22 +441,39 @@ export function formatParentReportStatusHe(status) {
  * @param {string|null|undefined} [subjectId]
  */
 export function formatParentReportLevelHe(level, subjectId) {
-  if (level == null || level === "") return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available");
-  return mapFromTable(level, PARENT_REPORT_LEVEL_LABELS_EN, reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"));
+  if (level == null || level === "") return displayCopy("not_available");
+  return mapFromPack(level, LEVEL_PACK_KEYS, "not_available");
 }
 
 /** @param {string|null|undefined} grade */
 export function formatParentReportGradeHe(grade) {
   const raw = String(grade ?? "").trim();
-  if (!raw) return reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available");
+  if (!raw) return displayCopy("not_available");
   const n = Number(raw.replace(/[^\d.]/g, ""));
   if (Number.isFinite(n) && n > 0) return String(Math.round(n));
-  return mapFromTable(grade, PARENT_REPORT_LEVEL_LABELS_EN, reportPackCopy("utils__parent-report-language__parent-report-display-labels", "not_available"));
+  return mapFromPack(grade, LEVEL_PACK_KEYS, "not_available");
 }
 
 /** @param {string|null|undefined} evidence */
 export function formatParentReportEvidenceHe(evidence) {
-  return mapFromTable(evidence, PARENT_REPORT_EVIDENCE_LABELS_EN, "-");
+  return mapFromPack(
+    evidence,
+    {
+      low: "limited",
+      medium: "moderate",
+      strong: "strong",
+      high: "high",
+      moderate: "moderate",
+      contradictory: "inconsistent",
+      insufficient: "insufficient",
+      sufficient: "sufficient",
+      unknown: "unknown",
+      partial: "partial",
+      no_data: "no_data",
+      nodata: "no_data",
+    },
+    "not_available",
+  );
 }
 
 /** @param {string|null|undefined} label */

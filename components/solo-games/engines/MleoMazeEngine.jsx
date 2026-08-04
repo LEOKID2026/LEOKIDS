@@ -78,6 +78,8 @@ function nextHintCell(maze, player, target) {
 /**
  * @param {{ autoStart?: boolean, initialDifficulty?: string, onSessionEnd?: (metrics: object) => void }} props
  */
+import { gameHudScoreColon, gameHudLabel } from "../../../lib/games/game-hud-copy.js";
+
 export default function MleoMazeEngine({
   autoStart = false,
   initialDifficulty = "medium",
@@ -525,9 +527,14 @@ export default function MleoMazeEngine({
       {showIntro ? (
         <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-4 px-4 text-center">
           <img src={IMG_LEO} alt="" className="h-20 w-20 object-contain drop-shadow-lg" />
-          <h2 className="text-xl font-extrabold text-yellow-300">Leo's Maze Race</h2>
+          <h2 className="text-xl font-extrabold text-yellow-300">
+            {gamePackCopy("components__solo-games__engines__MleoMazeEngine", "leo_s_maze_race")}
+          </h2>
           <p className="max-w-sm text-sm font-semibold text-lime-100">
-            Solve as many mazes as you can before time runs out!
+            {gamePackCopy(
+              "components__solo-games__engines__MleoMazeEngine",
+              "solve_as_many_mazes_as_you_can_before_time_runs_out",
+            )}
           </p>
           <ul className="max-w-sm space-y-1 text-sm text-gray-300">
             <li>🔑 Find a key → 🚪 Reach the gate</li>
@@ -539,7 +546,7 @@ export default function MleoMazeEngine({
             onClick={startGame}
             className="min-h-[48px] rounded-xl bg-yellow-400 px-8 py-3 text-base font-bold text-black"
           >
-            Start Game
+            {gamePackCopy("components__solo-games__engines__MleoMazeEngine", "start_game")}
           </button>
         </div>
       ) : (
@@ -555,7 +562,7 @@ export default function MleoMazeEngine({
 
           <div className="pointer-events-none absolute left-1/2 top-1.5 z-[80] w-[98vw] max-w-lg -translate-x-1/2 rounded-xl border border-yellow-400/30 bg-black/70 px-2 py-2 text-center text-xs font-bold leading-relaxed sm:text-sm md:top-0">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
-              <span className="text-amber-300">Score: {score}</span>
+              <span className="text-amber-300">{gameHudScoreColon()} {score}</span>
               <span>⏱ {timeLeft} sec</span>
               <span className="text-emerald-300">Mazes: {mazesCompleted}</span>
             </div>

@@ -511,10 +511,22 @@ export function transferReadinessLineHe(rowOrRec) {
   const tr = String(src.transferReadiness || "").trim();
   if (!tr || tr === "unknown") return "";
   const map = {
-    not_ready: "It's better to reinforce the current topic first before raising difficulty.",
-    limited: "A little can be tried, but only within the same topic, not across several topics at once.",
-    emerging: "A small step within the same topic can be started.",
-    ready: "A small advanced step can be tried, carefully.",
+    not_ready: reportPackCopy(
+      "utils__parent-report-ui-explain",
+      "its_better_to_reinforce_the_current_topic_first_before_raising_difficulty"
+    ),
+    limited: reportPackCopy(
+      "utils__parent-report-ui-explain",
+      "a_little_can_be_tried_but_only_within_the_same_topic_not_across_several"
+    ),
+    emerging: reportPackCopy(
+      "utils__parent-report-ui-explain",
+      "a_small_step_within_the_same_topic_can_be_started"
+    ),
+    ready: reportPackCopy(
+      "utils__parent-report-ui-explain",
+      "a_small_advanced_step_can_be_tried_carefully"
+    ),
   };
   return truncateHe(map[tr] || "", 130);
 }

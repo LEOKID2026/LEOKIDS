@@ -5,6 +5,7 @@ import { attachProfessionalMathMetadata } from './math-question-metadata.js';
 import { sanitizeQuestionForStudentDisplay } from './student-question-stem-sanitizer.js';
 import { localizeLearningQuestion } from './learning-content-en/index.js';
 import { applyMathLevelPresentationEn } from './learning-content-en/math.js';
+import { getActiveLearningBurnDownLocale } from '../lib/learning/burn-down-copy.js';
 import {
   COMPARISON_SIGN_DISPLAY_ORDER,
   computeComparisonSign,
@@ -847,7 +848,12 @@ export function generateQuestion(levelConfig, operation, gradeKey, mixedOps = nu
           gradeKey
         )
       ),
-      { subject: "math", contentLocale: probeOpts?.contentLocale ?? "en", interfaceLocale: probeOpts?.interfaceLocale, instructionLocale: probeOpts?.instructionLocale }
+      {
+        subject: "math",
+        contentLocale: probeOpts?.contentLocale ?? (getActiveLearningBurnDownLocale() || "en"),
+        interfaceLocale: probeOpts?.interfaceLocale,
+        instructionLocale: probeOpts?.instructionLocale,
+      }
     );
 
   const densSmallProbe = [2, 4, 5, 10];

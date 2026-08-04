@@ -1,16 +1,19 @@
-import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
 import { getHomeBtnClasses, getHomeTextClasses } from "../home/home-theme";
 import HomeCtaLink from "../home/HomeCtaLink";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
-const QUICK_LINKS = [
-  { label: "Math", href: "/practice/math" },
-  { label: "Geometry", href: "/practice/geometry" },
-  { label: "English", href: "/practice/english" },
-  { label: "Science", href: "/practice/science" },
-  { label: "Digital practice", href: "/practice/no-print" },
-  { label: "Parent reports", href: "/practice/parent-reports" },
-  { label: "Home practice routine", href: "/guides/home-practice-routine" },
+const QUICK_LINK_KEYS = [
+  { labelKey: "ui.public.homepage.seoEntry.quickLinks.math", href: "/practice/math" },
+  { labelKey: "ui.public.homepage.seoEntry.quickLinks.geometry", href: "/practice/geometry" },
+  { labelKey: "ui.public.homepage.seoEntry.quickLinks.english", href: "/practice/english" },
+  { labelKey: "ui.public.homepage.seoEntry.quickLinks.science", href: "/practice/science" },
+  { labelKey: "ui.public.homepage.seoEntry.quickLinks.digitalPractice", href: "/practice/no-print" },
+  { labelKey: "ui.public.homepage.seoEntry.quickLinks.parentReports", href: "/practice/parent-reports" },
+  {
+    labelKey: "ui.public.homepage.seoEntry.quickLinks.homePracticeRoutine",
+    href: "/guides/home-practice-routine",
+  },
 ];
 
 /**
@@ -18,6 +21,7 @@ const QUICK_LINKS = [
  * @param {{ isBright: boolean }} props
  */
 export default function PublicSeoEntrySection({ isBright }) {
+  const t = useT();
   const cls = getHomeTextClasses(isBright);
 
   return (
@@ -25,23 +29,22 @@ export default function PublicSeoEntrySection({ isBright }) {
       className={`space-y-5 text-center md:space-y-6 ${cls.panel}`}
       data-testid="public-seo-entry-section"
     >
-      <h2 className={cls.sectionTitle}>Practice areas and parent guides</h2>
+      <h2 className={cls.sectionTitle}>{t("ui.public.homepage.seoEntry.title")}</h2>
       <p className={`mx-auto max-w-2xl text-sm leading-relaxed md:text-base ${cls.body}`}>
-        Want to explore Leo Kids practice areas? Browse practice pages and guides, read a short
-        overview, then sign in or register in the parent area.
+        {t("ui.public.homepage.seoEntry.body")}
       </p>
 
       <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
         <HomeCtaLink
           href="/practice"
-          label={globalBurnDownCopy("components__seo__PublicSeoEntrySection", "practice_areas")}
+          label={t("ui.public.homepage.seoEntry.practiceAreasCta")}
           className={getHomeBtnClasses("parents", isBright, "primary")}
           size="md"
           testId="public-seo-entry-practice"
         />
         <HomeCtaLink
           href="/guides"
-          label={globalBurnDownCopy("components__seo__PublicSeoEntrySection", "parent_guides")}
+          label={t("ui.public.homepage.seoEntry.parentGuidesCta")}
           className={getHomeBtnClasses("parents", isBright, "secondary")}
           size="md"
           testId="public-seo-entry-guides"
@@ -49,7 +52,7 @@ export default function PublicSeoEntrySection({ isBright }) {
       </div>
 
       <ul className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm">
-        {QUICK_LINKS.map((link) => (
+        {QUICK_LINK_KEYS.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
@@ -59,7 +62,7 @@ export default function PublicSeoEntrySection({ isBright }) {
                   : "text-sky-300 underline underline-offset-2 hover:text-sky-100"
               }
             >
-              {link.label}
+              {t(link.labelKey)}
             </Link>
           </li>
         ))}

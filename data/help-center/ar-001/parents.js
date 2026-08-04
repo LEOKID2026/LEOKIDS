@@ -3,23 +3,23 @@ export const PARENT_ARTICLES = [
   {
     "slug": "welcome-and-overview",
     "section": "parents",
-    "title": "مرحبا بكم في دليل الوالدين",
-    "summary": "ما هو موقع Leo Kids، وما يمكن للوالدين فعله على الموقع، وكيفية البدء.",
+    "title": "مرحبًا بكم في دليل أولياء الأمور",
+    "summary": "ما هو موقع Leo Kids، وما يمكن لأولياء الأمور فعله على الموقع، وكيفية البدء.",
     "keywords": [
-      "آباء",
+      "أولياء الأمور",
       "يبدأ",
       "ملخص"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "what-is-leo",
-        "title": "ما هو ليو كيدز؟"
+        "title": "ما هو Leo Kids؟"
       },
       {
         "id": "parent-role",
-        "title": "دور الوالدين"
+        "title": "دور ولي الأمر"
       }
     ],
     "blocks": [
@@ -27,7 +27,7 @@ export const PARENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "what-is-leo",
-        "text": "ما هو ليو كيدز؟"
+        "text": "ما هو Leo Kids؟"
       },
       {
         "kind": "paragraph",
@@ -51,13 +51,13 @@ export const PARENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "parent-role",
-        "text": "دور الوالدين"
+        "text": "دور ولي الأمر"
       },
       {
         "kind": "list",
         "ordered": false,
         "items": [
-          "قم بإنشاء حساب أحد الوالدين وقم بتسجيل الدخول",
+          "أنشئ حساب ولي أمر وسجّل الدخول",
           "إضافة أطفال وإدارة تفاصيل تسجيل الدخول",
           "عرض التقارير وتوصيات الممارسة"
         ]
@@ -67,11 +67,11 @@ export const PARENT_ARTICLES = [
         "items": [
           {
             "href": "/help/parents/create-parent-account",
-            "label": "إنشاء حساب الوالدين"
+            "label": "إنشاء حساب ولي أمر"
           },
           {
             "href": "/help/parents/parent-dashboard-tour",
-            "label": "جولة في لوحة معلومات الوالدين"
+            "label": "جولة في لوحة ولي الأمر"
           }
         ]
       }
@@ -80,14 +80,14 @@ export const PARENT_ARTICLES = [
   {
     "slug": "create-parent-account",
     "section": "parents",
-    "title": "إنشاء حساب الوالدين",
-    "summary": "كيفية التسجيل والدخول إلى البوابة الأم.",
+    "title": "إنشاء حساب ولي أمر",
+    "summary": "كيفية التسجيل والدخول إلى بوابة ولي الأمر.",
     "keywords": [
       "اشتراك",
       "تسجيل الدخول",
-      "آباء"
+      "أولياء الأمور"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -109,8 +109,8 @@ export const PARENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parents/create-parent-account/desktop/login.png",
-        "alt": "شاشة تسجيل دخول الوالدين",
-        "caption": "شاشة تسجيل دخول الوالدين",
+        "alt": "شاشة تسجيل دخول ولي الأمر",
+        "caption": "شاشة تسجيل دخول ولي الأمر",
         "sources": {
           "mobile": "/help-center/screenshots/parents/create-parent-account/mobile/login.png",
           "tablet": "/help-center/screenshots/parents/create-parent-account/tablet/login.png"
@@ -130,7 +130,7 @@ export const PARENT_ARTICLES = [
         "items": [
           {
             "href": "/parent/login",
-            "label": "انتقل إلى تسجيل دخول الوالدين"
+            "label": "انتقل إلى تسجيل دخول ولي الأمر"
           }
         ]
       }
@@ -139,14 +139,14 @@ export const PARENT_ARTICLES = [
   {
     "slug": "parent-dashboard-tour",
     "section": "parents",
-    "title": "جولة في لوحة معلومات الوالدين",
+    "title": "جولة في لوحة ولي الأمر",
     "summary": "قائمة الأطفال، إضافة طفل جديد، وحدود الحساب.",
     "keywords": [
       "لوحة القيادة",
       "أطفال",
-      "آباء"
+      "أولياء الأمور"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -172,8 +172,8 @@ export const PARENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parents/parent-dashboard-tour/desktop/dashboard.png",
-        "alt": "صفحة الوالدين مع قائمة الأطفال",
-        "caption": "صفحة الوالدين مع قائمة الأطفال",
+        "alt": "صفحة ولي الأمر مع قائمة الأطفال",
+        "caption": "صفحة ولي الأمر مع قائمة الأطفال",
         "sources": {
           "mobile": "/help-center/screenshots/parents/parent-dashboard-tour/mobile/dashboard.png",
           "tablet": "/help-center/screenshots/parents/parent-dashboard-tour/tablet/dashboard.png"
@@ -191,7 +191,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "افتراضيًا، يمكن أن يتضمن كل حساب أصل ما يصل إلى ثلاثة أطفال."
+        "text": "افتراضيًا، يمكن أن يتضمن كل حساب ولي أمر ما يصل إلى ثلاثة أطفال."
       },
       {
         "kind": "callout",
@@ -208,9 +208,9 @@ export const PARENT_ARTICLES = [
     "keywords": [
       "طفل",
       "درجة",
-      "يضيف"
+      "إضافة"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -257,19 +257,19 @@ export const PARENT_ARTICLES = [
   {
     "slug": "student-pin-and-credentials",
     "section": "parents",
-    "title": "رقم التعريف الشخصي وتفاصيل تسجيل الدخول لطفلك",
-    "summary": "ما هو رقم التعريف الشخصي (PIN) ومتى يظهر مرة واحدة وكيفية إعادة تعيينه.",
+    "title": "رمز PIN وتفاصيل تسجيل الدخول لطفلك",
+    "summary": "ما هو رمز PIN (PIN) ومتى يظهر مرة واحدة وكيفية إعادة تعيينه.",
     "keywords": [
-      "دبوس",
+      "PIN",
       "كلمة المرور",
       "طفل"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "what-is-pin",
-        "title": "ما هو رقم التعريف الشخصي؟"
+        "title": "ما هو رمز PIN؟"
       },
       {
         "id": "reset",
@@ -281,7 +281,7 @@ export const PARENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "what-is-pin",
-        "text": "ما هو رقم التعريف الشخصي؟"
+        "text": "ما هو رمز PIN؟"
       },
       {
         "kind": "paragraph",
@@ -324,20 +324,20 @@ export const PARENT_ARTICLES = [
     "title": "تحرير أو حذف طفل",
     "summary": "تغيير الاسم أو الدرجة، وحذفها مع التأكيد.",
     "keywords": [
-      "يحرر",
-      "يمسح",
+      "تعديل",
+      "حذف",
       "طفل"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "edit",
-        "title": "يحرر"
+        "title": "تعديل"
       },
       {
         "id": "delete",
-        "title": "يمسح"
+        "title": "حذف"
       }
     ],
     "blocks": [
@@ -345,7 +345,7 @@ export const PARENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "edit",
-        "text": "يحرر"
+        "text": "تعديل"
       },
       {
         "kind": "paragraph",
@@ -369,7 +369,7 @@ export const PARENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "delete",
-        "text": "يمسح"
+        "text": "حذف"
       },
       {
         "kind": "paragraph",
@@ -389,10 +389,10 @@ export const PARENT_ARTICLES = [
     "summary": "مقدمة قصيرة لتقرير أولياء الأمور وروابط لأدلة مفصلة.",
     "keywords": [
       "تقرير",
-      "آباء",
+      "أولياء الأمور",
       "قراءة"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -450,7 +450,7 @@ export const PARENT_ARTICLES = [
       "أسئلة",
       "تقرير"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -508,13 +508,13 @@ export const PARENT_ARTICLES = [
     "slug": "monthly-rewards",
     "section": "parents",
     "title": "مكافأة المثابرة الشهرية",
-    "summary": "رحلة المثابرة حسب الموضوع والمكافآت للوالدين.",
+    "summary": "رحلة المثابرة حسب المادة والمكافآت لأولياء الأمور.",
     "keywords": [
       "جائزة",
       "المثابرة",
       "شهريا"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -531,7 +531,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "يبني طفلك المثابرة من خلال الممارسة الشهرية. في صفحة المكافآت، يمكنك رؤية التقدم حسب الموضوع."
+        "text": "يبني طفلك المثابرة من خلال الممارسة الشهرية. في صفحة المكافآت، يمكنك رؤية التقدم حسب المادة."
       },
       {
         "kind": "screenshot",
@@ -565,15 +565,15 @@ export const PARENT_ARTICLES = [
     "summary": "أضف Leo Kids إلى الشاشة الرئيسية لهاتفك أو جهازك اللوحي.",
     "keywords": [
       "PWA",
-      "ثَبَّتَ",
-      "برنامج"
+      "تثبيت",
+      "تطبيق"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "install",
-        "title": "ثَبَّتَ"
+        "title": "تثبيت"
       }
     ],
     "blocks": [
@@ -581,7 +581,7 @@ export const PARENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "install",
-        "text": "ثَبَّتَ"
+        "text": "تثبيت"
       },
       {
         "kind": "paragraph",
@@ -617,7 +617,7 @@ export const PARENT_ARTICLES = [
       "متحرك",
       "غير متصل"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -638,7 +638,7 @@ export const PARENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "الموقع يعمل على الشاشات الصغيرة. يعمل تسجيل دخول الطالب وأولياء الأمور من الهاتف أيضًا."
+        "text": "الموقع يعمل على الشاشات الصغيرة. يعمل تسجيل دخول التلميذ وأولياء الأمور من الهاتف أيضًا."
       },
       {
         "kind": "heading",
@@ -653,8 +653,8 @@ export const PARENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parents/mobile-and-offline/desktop/offline-hub.png",
-        "alt": "صفحة العاب اون لاين",
-        "caption": "صفحة العاب اون لاين",
+        "alt": "صفحة الألعاب غير المتصلة",
+        "caption": "صفحة الألعاب غير المتصلة",
         "sources": {
           "mobile": "/help-center/screenshots/parents/mobile-and-offline/mobile/offline-hub.png",
           "tablet": "/help-center/screenshots/parents/mobile-and-offline/tablet/offline-hub.png"
@@ -683,9 +683,9 @@ export const PARENT_ARTICLES = [
     "keywords": [
       "مشكلة",
       "تسجيل الدخول",
-      "دبوس"
+      "PIN"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -704,7 +704,7 @@ export const PARENT_ARTICLES = [
         "kind": "list",
         "ordered": false,
         "items": [
-          "رقم تعريف شخصي خاطئ - اطلب من والديك رمزًا جديدًا",
+          "رقم تعريف شخصي خاطئ - اطلب من ولي الأمر رمزًا جديدًا",
           "لم يتم التعرف على اسم المستخدم - تحقق من الإملاء",
           "لن يتم تحميل الصفحة - حاول تحديث أو مسح ذاكرة التخزين المؤقت للمتصفح"
         ]
@@ -738,7 +738,7 @@ export const PARENT_ARTICLES = [
       "خصوصية",
       "بيانات"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {

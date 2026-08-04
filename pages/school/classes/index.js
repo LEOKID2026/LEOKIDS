@@ -25,7 +25,7 @@ import {
   sortSubjectClasses,
   getSchoolGradeOptions,
 } from "../../../lib/school-portal/school-drilldown";
-import { useT } from "../../../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import { useSchoolDataFetch } from "../../../lib/school-portal/use-school-data-fetch";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
 import { fetchSchoolReportCached } from "../../../lib/school-portal/fetch-school-report";
@@ -33,6 +33,7 @@ import { useReportDateRange } from "../../../hooks/useReportDateRange";
 import { appendReportRangeToSearchParams } from "../../../lib/reporting/report-date-range.js";
 import {
   apiErrorMessageHe,
+  bindSchoolUiLocale,
   SCHOOL_BACK_CLASSES,
   SCHOOL_BACK_GRADES,
   SCHOOL_CHOOSE_GRADE,
@@ -62,6 +63,8 @@ const REPORT_STACK_TEACHER_DETAIL_NESTED = 350;
 export default function SchoolClassesPage() {
   const router = useRouter();
   const t = useT();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const schoolGradeOptions = useMemo(() => getSchoolGradeOptions(t), [t]);
   const { state, accessToken, me, schoolId } = useSchoolPortalLoad();
   const [gradeLevel, setGradeLevel] = useState("");

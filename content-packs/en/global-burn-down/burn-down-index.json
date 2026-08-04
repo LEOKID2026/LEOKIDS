@@ -9,7 +9,8 @@
     "legal_document_links": "Legal document links"
   },
   "components__math-scratchpad__MathScratchpadPanel": {
-    "scratch_pad": "Scratch pad"
+    "scratch_pad": "Scratch pad",
+    "close": "Close"
   },
   "components__math-scratchpad__MathScratchpadWorkspace": {
     "fraction_denominator": "fraction denominator",
@@ -46,13 +47,31 @@
   },
   "components__school-portal__SchoolDrillDown": {
     "grade_status": "Grade status",
-    "class_status": "Class status"
+    "class_status": "Class status",
+    "loading": "Loading…",
+    "try_again": "Try again",
+    "col_subject": "Subject",
+    "col_class": "Class",
+    "col_teacher": "Teacher",
+    "col_type": "Type",
+    "active_classes": "{count} active classes",
+    "children_count": "{count} children",
+    "activities_count": "Activities: {count}",
+    "view_answers": "View answers",
+    "suspended_label": "Suspended"
   },
   "components__school-portal__SchoolOperatorsManager": {
     "no_secretaries_linked": "No secretaries linked"
   },
   "components__school-portal__SchoolPortalShell": {
     "school_navigation": "School navigation"
+  },
+  "components__school-portal__SchoolPortalUi": {
+    "col_subject": "Subject",
+    "col_class": "Class",
+    "col_teacher": "Teacher",
+    "col_type": "Type",
+    "view_answers": "View answers"
   },
   "components__school-portal__SchoolReportModal": {
     "loading_report": "Loading report…"
@@ -100,8 +119,41 @@
   "components__seo__PublicSeoWideRelatedGuides": {
     "related_guides": "Related guides"
   },
+  "components__student__StudentActivityQuestionSurface": {
+    "show_landscape": "Show landscape",
+    "show_portrait": "Show portrait",
+    "landscape": "↔️ Landscape",
+    "portrait": "↕️ Portrait"
+  },
+  "components__student__StudentActivitySubmitConfirmModal": {
+    "title": "Finish and submit this activity?",
+    "answered_of": "You answered {answered} of {questionCount} questions",
+    "unanswered_warn": "There are {count} unanswered questions. After submitting you cannot go back and change answers.",
+    "submit_note": "After submitting you cannot go back and change answers.",
+    "cancel": "Cancel",
+    "submitting": "Submitting…",
+    "confirm": "Yes, finish and submit"
+  },
   "components__student__StudentAssignedActivityQuestionStage": {
+    "enlarge": "⛶ Enlarge",
     "enlarge_diagram": "Enlarge diagram"
+  },
+  "components__student__StudentAssignedActivityShell": {
+    "back_to_home": "← Back to home"
+  },
+  "components__student__StudentClassroomActivitiesPanel": {
+    "view_result": "View result",
+    "continue": "Continue",
+    "start": "Start",
+    "questions_meta": "questions",
+    "class_activities": "Class activities",
+    "parent_activities": "Parent activities",
+    "intro": "Activities assigned by your teacher or parent appear here.",
+    "personal_activities_section": "Personal activities",
+    "show_landscape": "Show landscape",
+    "show_portrait": "Show portrait",
+    "landscape": "↔️ Landscape",
+    "portrait": "↕️ Portrait"
   },
   "components__teacher-portal__GuardianAccessPanel": {
     "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "The current code will be revoked and a new one generated. Save the new code — it will be shown only once.",
@@ -119,6 +171,13 @@
   "components__teacher-portal__TeacherActivityStudentAnswersModal": {
     "close": "Close"
   },
+  "components__teacher-portal__TeacherClassActivitiesNav": {
+    "aria_label": "Class navigation",
+    "class_report": "Class report",
+    "activities": "Activities",
+    "worksheets": "Worksheets",
+    "discussion": "Discussion"
+  },
   "components__teacher-portal__TeacherClassReportModal": {
     "please_select_valid_dates": "Please select valid dates",
     "class_report": "Class report",
@@ -134,7 +193,71 @@
     "class_report": "Class report",
     "activities": "Activities",
     "filter_student_list": "Filter student list",
-    "search_by_name": "Search by name…"
+    "search_by_name": "Search by name…",
+    "hi_teacher_name": "Hi, {name}",
+    "hi_teacher_fallback": "Hi, teacher",
+    "dashboard_subtitle": "Dashboard — classes and students",
+    "sign_out": "Sign out",
+    "latest_topic_activity": "Latest topic/activity",
+    "loading_activity_data": "Loading activity data…",
+    "not_enough_data": "Not enough data yet",
+    "worksheets_link": "Worksheets →",
+    "send_activity_link": "Send activity to private students →",
+    "students_need_attention": "Students who need attention",
+    "my_classes": "My classes",
+    "students_count": "Students: {count}",
+    "subjects_label": "Subjects: {label}",
+    "show_class_students": "Show class students",
+    "manage_class_btn": "Manage class",
+    "students_heading": "Students",
+    "showing_label": "Showing: {label}",
+    "sort_label": "Sort:",
+    "no_students_filter": "No students to show for this filter.",
+    "view_report": "View report",
+    "loading_badge": "Loading…",
+    "close_modal": "Close",
+    "classes_heading": "Classes",
+    "creating": "Creating…",
+    "class_name_label": "Class name",
+    "save": "Save",
+    "add_student_heading": "Add student",
+    "add_student": "Add",
+    "linked_not_in_class": "Linked students not in this class:",
+    "add_to_class": "Add to class",
+    "students_in_class_count": "Students in class ({count} / {cap})",
+    "students_in_class_count_open": "Students in class ({count})",
+    "class_at_cap": "This class has reached the {cap}-student limit.",
+    "no_students_in_class": "No students in this class.",
+    "cancel": "Cancel",
+    "rename": "Rename",
+    "remove_from_class": "Remove from class",
+    "remove_from_list": "Remove from list",
+    "needs_immediate_attention": "Needs immediate attention",
+    "needs_reinforcement": "Needs reinforcement",
+    "worth_monitoring": "Worth monitoring",
+    "filter_all": "All",
+    "filter_intervention": "Needs intervention / reinforcement",
+    "filter_low_activity": "Low activity",
+    "filter_watch": "Watch",
+    "filter_strong": "Strong",
+    "sort_name": "Name",
+    "sort_activity": "Last activity",
+    "sort_status": "Learning status",
+    "report_subject": "Report {subject}",
+    "activity_subject": "Activity {subject}",
+    "class_fallback": "Class",
+    "student_fallback": "Student",
+    "could_not_update_class_name": "Could not update the class name.",
+    "could_not_add_student": "Could not add student.",
+    "could_not_add_to_class": "Could not add the student to the class.",
+    "could_not_remove_from_class": "Could not remove from class.",
+    "could_not_update_student_name": "Could not update the student's name.",
+    "could_not_remove_student": "Could not remove the student.",
+    "could_not_create_class": "Could not create class.",
+    "could_not_add_class_limit": "This class has reached the 40-student limit. You cannot add more students.",
+    "student_stats_line": "Sessions: {sessions} · Answers: {answers} · Success: {acc}",
+    "attention_success_pct": "{pct}% success",
+    "attention_answers_count": " · {count} answers"
   },
   "components__teacher-portal__TeacherDiscussionQuestionPicker": {
     "level": "Level",
@@ -145,6 +268,13 @@
   },
   "components__teacher-portal__TeacherParentMessagePanel": {
     "write_a_short_message_to_the_parent": "Write a short message to the parent..."
+  },
+  "components__teacher-portal__TeacherReportPageStates": {
+    "load_report_error": "Something went wrong loading the report. Refresh the page and try again.",
+    "loading_report_hint": "Loading the report — this may take a few seconds.",
+    "try_again": "Try again",
+    "back_to_dashboard": "Back to dashboard",
+    "forbidden_report": "You do not have permission to view this report."
   },
   "components__teacher-portal__TeacherStudentIndividualActivitiesPanel": {
     "level": "Level"
@@ -222,6 +352,16 @@
     "action_not_supported": "Action not supported",
     "could_not_load_the_question_right_now": "Could not load the question right now",
     "could_not_submit_an_answer_right_now": "Could not submit an answer right now"
+  },
+  "lib__classroom-activities__student-activity-result-labels.client": {
+    "summary_got_of": "You got {correct} of {total} questions correct",
+    "summary_got": "You got {correct} questions correct",
+    "summary_finished": "You finished the activity",
+    "score_chip_of": "{correct}/{total} questions",
+    "score_chip": "{correct} questions"
+  },
+  "lib__classroom-activities__student-activity-scope-labels.client": {
+    "personal_activity": "Personal activity"
   },
   "lib__game-audio__game-audio-manifest": {
     "game_start": "Game start",
@@ -399,6 +539,8 @@
     "learn_and_play_with_leo_leo_kids": "Learn and play with Leo · Leo Kids",
     "parent_portal_leo_kids": "Parent portal · Leo Kids",
     "teacher_portal_leo_kids": "Teacher portal · Leo Kids",
+    "school_portal_leo_kids": "School portal · Leo Kids",
+    "school_portal_manage_classes_teachers_students_messaging_progress": "Manage classes, teachers, and students — with school messaging and progress visibility in Leo Kids.",
     "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "Tracking tools, personal activities, and reports — built for private tutors in Leo Kids.",
     "parent_login_leo_kids": "Parent login · Leo Kids",
     "sign_in_to_the_leo_kids_parent_portal": "Sign in to the Leo Kids parent portal.",
@@ -444,7 +586,14 @@
     "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "How to build a home practice routine with one clear goal per session.",
     "practice_without_printing_leo_kids_guides": "Practice without printing · Leo Kids guides",
     "how_to_use_digital_practice_and_games_and_when_worksheets_help": "How to use digital practice and games, and when worksheets help.",
-    "leo_kids_practice_for_elementary_learners": "Leo Kids — practice for elementary learners."
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — practice for elementary learners.",
+    "kids_page_practice_math_geometry_english_science_games_coins_cards": "Kids page — practice math, geometry, English and science, with games, coins and cards.",
+    "gallery_page_photos_and_videos_of_leo_the_site_mascot": "Gallery — photos and videos of Leo, the site mascot.",
+    "parents_page_progress_reports_reinforcement_insights_personal_activities": "Parents page — progress reports, reinforcement insights and personal activities.",
+    "math_practice_for_elementary_learners_operations_fractions_and_more": "Math practice for elementary learners — operations, fractions and more.",
+    "reading_comprehension_short_texts_english_practice_for_elementary": "Reading comprehension — short texts and English practice for elementary learners.",
+    "help_center_guides_for_parents_and_students_site_reports_practice": "Help center — guides for parents and students about the site, reports and practice.",
+    "guides_hub_practical_guides_home_practice_progress_tracking": "Guides hub — practical guides for home practice and progress tracking."
   },
   "lib__student-ui__student-ad-slot.client": {
     "reserved_for_ad": "Reserved for ad"
@@ -497,6 +646,16 @@
   "lib__teacher-portal__teacher-smoke-artifacts": {
     "class_3_leo": "Class 3 - LEO"
   },
+  "lib__teacher-portal__use-teacher-portal-session": {
+    "verifying_connection": "Verifying connection…",
+    "loading_dashboard": "Loading dashboard…",
+    "load_data_error": "Something went wrong loading the data. Refresh the page and try again.",
+    "load_report_error": "Something went wrong loading the report. Refresh and try again.",
+    "load_report_error_long": "Something went wrong loading the report. Refresh the page and try again.",
+    "loading_report_hint": "Loading the report — this may take a few seconds.",
+    "session_expired": "Your session expired. Please sign in again.",
+    "load_timeout": "Loading took too long. Refresh and try again."
+  },
   "lib__teacher-server__teacher-activities.server": {
     "this_subject_is_not_supported_for_class_activities": "This subject is not supported for class activities",
     "please_select_at_least_one_student": "Please select at least one student"
@@ -531,7 +690,9 @@
     "true_false": "True / False",
     "number": "Number",
     "short_answer": "Short answer",
-    "free_text": "Free text"
+    "free_text": "Free text",
+    "draft": "Draft",
+    "pdf_only": "PDF only"
   },
   "lib__worksheets__worksheet-english-sentences-pool.server": {
     "she_already_finished_the_project": "She ___ already finished the project.",
@@ -576,7 +737,12 @@
     "percentages": "Percentages",
     "ratio_and_scale": "Ratio and scale",
     "word_problems": "Word problems",
-    "mixed_practice": "Mixed practice"
+    "mixed_practice": "Mixed practice",
+    "horizontal_addition": "Horizontal addition",
+    "vertical_addition": "Vertical addition",
+    "horizontal_subtraction": "Horizontal subtraction",
+    "vertical_subtraction": "Vertical subtraction",
+    "unit_fractions_halves_quarters": "Unit fractions — halves and quarters"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "Grade 1",
@@ -633,7 +799,16 @@
     "matching": "Matching",
     "inference": "Inference",
     "sentence_understanding": "Sentence understanding",
-    "simple_sentences": "Simple sentences"
+    "simple_sentences": "Simple sentences",
+    "ratio": "Ratio",
+    "scale": "Scale",
+    "area": "Area",
+    "subject_math": "Math",
+    "subject_geometry": "Geometry",
+    "subject_english": "English",
+    "subject_science": "Science",
+    "worksheet_title_prefix": "Worksheet — {subject} · {topic}",
+    "grade_n": "Grade {n}"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "Worksheet",
@@ -725,6 +900,10 @@
   "pages__api__teacher__students": {
     "unexpected_server_error": "Unexpected server error"
   },
+  "pages__parent__school-inbox": {
+    "back_to_report": "← Back to report",
+    "loading": "Loading…"
+  },
   "pages__school__activities__[activityId]__monitor": {
     "activity_monitor": "Activity monitor"
   },
@@ -753,7 +932,39 @@
     "submit_answer": "Submit answer",
     "type_your_answer": "Type your answer",
     "enlarged_diagram": "Enlarged diagram",
-    "close_diagram": "Close diagram"
+    "close_diagram": "Close diagram",
+    "waiting_for_the_teacher": "Waiting for the teacher…",
+    "correct": "Correct!",
+    "network_error": "Network error",
+    "could_not_start": "Could not start the activity",
+    "could_not_save": "Could not save the answer",
+    "teacher_paused": "The teacher paused the lesson — please wait",
+    "done_title_activity": "You finished the activity!",
+    "done_title_discussion": "You finished the discussion",
+    "done_title_explanation": "You read the explanation",
+    "done_body_explanation": "You read the teacher's explanation. Thank you!",
+    "done_body_discussion_multi": "You finished {count} discussion questions. Thank you!",
+    "done_body_discussion": "Thanks for your response. Your teacher will see the answer in class.",
+    "back_home": "Back home",
+    "question_progress": "Question {current} of {total}",
+    "answer_saved": "Answer saved",
+    "close_draft": "Close draft",
+    "scratch_pad": "Scratch pad",
+    "previous_question": "Previous question",
+    "next_question": "Next question",
+    "finish_and_submit": "Finish and submit",
+    "explanation_banner": "No need to submit an answer — read the content",
+    "read_continue": "I read it — continue",
+    "finished_reading": "I finished reading",
+    "summary_got_of": "You got {correct} of {total} questions correct",
+    "summary_got": "You got {correct} questions correct",
+    "summary_finished": "You finished the activity",
+    "score_chip_of": "{correct}/{total} questions",
+    "score_chip": "{correct} questions",
+    "show_landscape": "Show landscape",
+    "show_portrait": "Show portrait",
+    "landscape": "↔️ Landscape",
+    "portrait": "↕️ Portrait"
   },
   "pages__student__worksheet__[worksheetId]": {
     "mark_this_worksheet_as_finished": "Mark this worksheet as finished?",
@@ -767,29 +978,131 @@
     "please_select_valid_dates": "Please select valid dates"
   },
   "pages__teacher__class__[classId]__activities__index": {
-    "class_activities": "Class activities"
+    "class_activities": "Class activities",
+    "back_to_dashboard": "← Back to dashboard",
+    "subtitle": "Create, launch, and track class activities.",
+    "new_activity": "New activity",
+    "loading": "Loading activities…",
+    "error_loading": "Error loading",
+    "network_error": "Network error",
+    "try_again": "Try again",
+    "forbidden": "You do not have permission to view this class's activities.",
+    "empty": "No activities yet. Create a new activity.",
+    "col_title": "Title",
+    "col_status": "Status",
+    "col_type": "Type",
+    "col_progress": "Progress",
+    "col_actions": "Actions",
+    "edit_launch": "Edit / launch",
+    "view": "View"
   },
   "pages__teacher__class__[classId]__activities__new": {
-    "level": "Level"
+    "level": "Level",
+    "new_activity": "New activity",
+    "back_to_activities": "← Back to activities",
+    "title": "Title",
+    "subject": "Subject",
+    "topic": "Topic",
+    "no_science_topics": "No topics available for this grade in Science.",
+    "no_subject_topics": "No topics available for this subject and grade level.",
+    "subtopic_optional": "Subtopic (optional)",
+    "grade_for_questions": "Grade (for question generation)",
+    "activity_mode": "Activity mode",
+    "number_of_questions": "Number of questions",
+    "time_limit_optional": "Time limit (seconds, optional)",
+    "due_date_optional": "Due date (homework, optional)",
+    "generating": "Generating…",
+    "preview_questions": "Preview questions",
+    "save_draft": "Save as draft",
+    "preview_heading": "Preview ({n} questions)",
+    "not_sent_hint": "(not sent to student)",
+    "err_no_permission": "You do not have permission to create activities for this class. Contact your school admin.",
+    "err_load_class": "Could not load class",
+    "err_invalid_grade": "This class grade level is invalid. Contact your school admin.",
+    "network_error": "Network error",
+    "err_preview": "Could not create question preview",
+    "err_enter_title": "Please enter a title",
+    "err_preview_first": "Please preview the questions before saving",
+    "err_quiz_time": "Quiz mode requires a time limit (seconds)",
+    "err_save": "Save failed"
   },
   "pages__teacher__class__[classId]__discussion__new": {
     "new_discussion_activity": "New discussion activity"
   },
   "pages__teacher__class__[classId]__worksheets__index": {
-    "worksheets": "Worksheets"
+    "worksheets": "Worksheets",
+    "back_to_dashboard": "← Back to dashboard",
+    "subtitle": "Create, launch, and track PDF worksheets.",
+    "create_new": "Create new worksheet",
+    "loading": "Loading…",
+    "error_loading": "Error loading",
+    "network_error": "Network error",
+    "empty": "No worksheets yet.",
+    "forbidden": "You do not have permission to view this class's worksheets.",
+    "due": "Due: {date}",
+    "manage": "Manage",
+    "report": "Report"
   },
   "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
     "grade_student": "Grade student"
   },
   "pages__teacher__dashboard": {
-    "my_dashboard": "My dashboard"
+    "my_dashboard": "My dashboard",
+    "verifying_connection": "Verifying connection…",
+    "loading_dashboard": "Loading dashboard…",
+    "load_data_error": "Something went wrong loading the data. Refresh the page and try again.",
+    "load_report_error": "Something went wrong loading the report. Refresh and try again.",
+    "load_report_error_long": "Something went wrong loading the report. Refresh the page and try again.",
+    "loading_report_hint": "Loading the report — this may take a few seconds.",
+    "session_expired": "Your session expired. Please sign in again.",
+    "load_timeout": "Loading took too long. Refresh and try again.",
+    "system_warming_up": "The system is still warming up. Try again in a few minutes.",
+    "try_again": "Try again",
+    "back_to_dashboard": "Back to dashboard"
   },
   "pages__teacher__pending": {
     "request_status": "Request status"
   },
   "pages__teacher__students__activities__new": {
     "activity_for_selected_private_students": "Activity for selected private students",
-    "level": "Level"
+    "level": "Level",
+    "select_private_students": "Select private students",
+    "selected_count": "Selected: {n}",
+    "loading_students": "Loading students…",
+    "no_linked_private_students": "No linked private students.",
+    "select_all": "Select all",
+    "select_all_grade": "Select all ({grade})",
+    "clear": "Clear",
+    "class_label": "Class {grade}",
+    "multi_grade_warning": "⚠ You have students from different grades. You can only send one activity to students in the same grade.",
+    "activity_locked_to": "Activity locked to {grade}.",
+    "select_first_to_lock": "Select a first student to lock the grade.",
+    "activity_settings": "Activity settings",
+    "title": "Title",
+    "subject": "Subject",
+    "grade_for_content": "Grade (for content)",
+    "derived_from_selected": "— derived from selected students",
+    "topic": "Topic",
+    "no_science_topics": "No topics available for this grade in Science.",
+    "activity_type": "Activity type",
+    "number_of_questions": "Number of questions",
+    "time_limit_optional": "Time limit (seconds, optional)",
+    "required_for_quiz": "Required for quiz",
+    "blank_no_limit": "Blank = no limit",
+    "due_date_optional": "Due date (optional)",
+    "generating_questions": "Generating questions…",
+    "show_preview": "Show preview",
+    "create_and_send": "Create and send ({n} students)",
+    "discussion_question": "Discussion question:",
+    "questions_count": "{n} questions:",
+    "could_not_generate": "Could not generate questions",
+    "err_select_student": "Please select at least one student",
+    "err_enter_title": "Please enter a title",
+    "err_generate_first": "Please generate questions first",
+    "err_quiz_time": "A quiz requires a time limit",
+    "creation_failed": "Creation failed",
+    "network_error": "Network error",
+    "err_mix_grades": "You cannot mix students from different grades. This activity is locked to {locked}. This student is in {student}."
   },
   "pages__teacher__student__[studentId]": {
     "student_report": "Student report",
@@ -798,7 +1111,18 @@
     "please_select_valid_dates": "Please select valid dates"
   },
   "pages__teacher__worksheets__index": {
-    "worksheets": "Worksheets"
+    "worksheets": "Worksheets",
+    "back_to_dashboard": "← Back to dashboard",
+    "subtitle": "All your worksheets — whole class or selected students.",
+    "create_new": "Create new worksheet",
+    "loading": "Loading…",
+    "error_loading": "Error loading",
+    "network_error": "Network error",
+    "empty": "No worksheets yet.",
+    "selected_students": "selected students",
+    "class_scope": "class",
+    "manage": "Manage",
+    "report": "Report"
   },
   "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
     "grade_student": "Grade student"
@@ -811,6 +1135,9 @@
   },
   "utils__ai-hybrid-diagnostic__hybrid-review-record": {
     "no_conflict_between_v2_and_the_hybrid_top_hypothesis": "No conflict between V2 and the Hybrid top hypothesis."
+  },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "Listen to the question and answer based on what you hear."
   },
   "utils__contracts__parent-product-contract-v1": {
     "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "There is not yet enough data to set a subject-level picture.",
@@ -827,6 +1154,9 @@
     "how_much_to_trust_this_not_high_yet": "How much to trust this: not high yet.",
     "data_is_missing_or_partial": "Data is missing or partial."
   },
+  "utils__detailed-report-parent-letter-he": {
+    "sparse_data": "Sparse data"
+  },
   "utils__detailed-report-parent-letter": {
     "sparse_data": "Sparse data"
   },
@@ -837,9 +1167,6 @@
     "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Not populated in artifact snapshot mode. Run `npm run qa:learning-simulator:expert-review-pack` for synthetic maps / aggregates.",
     "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Cross-subject patterns are hypotheses and require confirming probes per subject.",
     "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Internal educational diagnostic support only - not clinical / not parent-facing."
-  },
-  "utils__audio-narration-binding": {
-    "listen_to_the_question_and_answer_based_on_what_you_hear": "Listen to the question and answer based on what you hear."
   },
   "utils__math-topic-parent-display": {
     "learning": "Learning",
@@ -855,7 +1182,12 @@
     "the_report_for_the_selected_period": "The report for the selected period"
   },
   "utils__parent-data-presence": {
-    "social_studies_geography": "Social Studies & Geography"
+    "social_studies_geography": "Social Studies & Geography",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra": "There is some practice in the selected period, but not yet enough to draw a clear insight. It helps to continue for a few more days and check again.",
+    "there_is_no_practice_yet_in_the_selected_period": "There is no practice yet in the selected period.",
+    "there_is_limited_data_in_the_selected_period": "There is limited data in the selected period.",
+    "there_is_enough_data_in_the_selected_period_for_a_clear_picture": "There is enough data in the selected period for a clear picture.",
+    "practice_volume_not_yet_enough_in_the_selected_period": "Practice volume in the selected period is not yet enough for a clear picture."
   },
   "utils__probe-pending-finalize": {
     "choose_the_correct_formula_or_first_step_before_numerical_calculation": "Choose the correct formula or first step before numerical calculation.",

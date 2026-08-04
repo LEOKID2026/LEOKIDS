@@ -1,5 +1,11 @@
 {
   "copy": {
-    "not_available": "Not available"
+    "not_available": "Not available",
+    "topic_colon_detail": "{topic}: {detail}",
+    "in_topic_home_tip": "In {topic}: {tip}",
+    "summary_stable_with_focus": "This report shows relatively stable practice, but there are a few topics worth paying attention to. {strength} looks more stable, while {focus} shows recurring mistakes.",
+    "summary_focus_only": "This report has a few topics worth paying attention to: {focus}.",
+    "summary_stable_only": "This report shows relatively stable practice, mainly in {strength}.",
+    "topic_stable_line": "{topic}: practice looks stable - {q} questions, {acc}% accuracy."
   }
 }

@@ -1,6 +1,6 @@
 {
-  "hubTitle": "مركز العاب التحدي",
-  "hubBlurb": "اختر موضوعًا وابدأ في التدريب عليه.",
+  "hubTitle": "مركز ألعاب التحدي",
+  "hubBlurb": "اختر مادة وابدأ في التدريب عليها.",
   "chooseGrade": "اختر الصف",
   "chooseTopic": "اختر الموضوع",
   "startPractice": "ابدأ التدريب",
@@ -10,7 +10,7 @@
   "finish": "إنهاء",
   "resultsTitle": "عمل عظيم!",
   "accuracy": "الدقة: {percent}%",
-  "questionsAnswered": "{عد، جمع، واحد {# سؤال} آخر {# سؤال}}",
+  "questionsAnswered": "{count, plural, one {# سؤال} other {# أسئلة}}",
   "subjects": {
     "math": "الرياضيات",
     "geometry": "الهندسة",
@@ -29,19 +29,19 @@
   "hubBadge": "الممارسة · المراجعة · التحسين",
   "hubSubtitle": "الاتساق يؤتي ثماره - كلما لعبت أكثر، زادت العملات المعدنية التي تربحها.",
   "myProgress": "تقدمي",
-  "chooseSubject": "اختر الموضوع",
+  "chooseSubject": "اختر المادة",
   "hubLoading": "تحميل…",
   "master": {
     "back": "رجوع",
     "curriculum": "📋 المنهج",
     "player": "لاعب",
-    "defaultPlayerName": "الطالب",
-    "topic": "عنوان",
+    "defaultPlayerName": "التلميذ",
+    "topic": "موضوع",
     "close": "إغلاق",
     "loading": "تحميل…",
     "coins": "عملات معدنية:",
     "coinsTitle": "عملات اللعبة",
-    "submit": "يُقدِّم",
+    "submit": "إرسال",
     "answer": "الإجابة",
     "answerPlaceholder": "الإجابة",
     "enterAnswer": "أدخل الإجابة",
@@ -50,7 +50,7 @@
     "start": "◀️ ابدأ",
     "stop": "⏹️ توقف",
     "play": "العب",
-    "explain": "يشرح",
+    "explain": "شرح",
     "explainBook": "شرح الكتاب",
     "explainFull": "📘 شرح كامل",
     "remember": "🧠 تذكر",
@@ -117,7 +117,7 @@
     "imageTooLarge": "الصورة كبيرة جدًا. الرجاء اختيار صورة يصل حجمها إلى 5 ميغابايت.",
     "imageTypeOnly": "الرجاء اختيار ملف الصورة فقط.",
     "imageSaveFailed": "فشل حفظ الصورة.",
-    "gradeRequired": "يرجى اختيار الصف قبل التدريب. اطلب من أحد الوالدين تحديث درجتك.",
+    "gradeRequired": "يرجى اختيار الصف قبل التدريب. اطلب من ولي الأمر تحديث درجتك.",
     "enterValidNumber": "الرجاء إدخال رقم صالح",
     "enterPlayerNameForMistake": "أدخل اسم اللاعب للتدرب على الخطأ المحدد",
     "selectAtLeastOneOp": "الرجاء تحديد عملية واحدة على الأقل",
@@ -125,10 +125,10 @@
     "noResultsYet": "لا توجد نتائج محفوظة بعد.",
     "rank": "رتبة",
     "score": "نتيجة",
-    "streak": "أثَر",
+    "streak": "خط",
     "localHighScores": "درجات عالية المحلية",
     "practiceSettings": "🎛️ إعدادات الممارسة",
-    "practiceSettingsBlurb": "تحكم في تدريبك: قم بمراجعة الأخطاء الأخيرة، أو الممارسة المتدرجة (ابدأ بمستوى منخفض وتقدم إلى المستوى الذي اخترته)، أو اختر مجال التركيز.",
+    "practiceSettingsBlurb": "تحكم في تدريبك: راجع الأخطاء الأخيرة، أو الممارسة المتدرجة (ابدأ بمستوى منخفض وتقدم إلى المستوى الذي اخترته)، أو اختر مجال التركيز.",
     "practiceModeLabel": "وضع الممارسة",
     "currentMode": "الوضع الحالي",
     "focus": "ركز",
@@ -139,7 +139,7 @@
     "correctAnswer": "الإجابة الصحيحة: {answer}",
     "yourAnswer": "إجابتك: {answer}",
     "practiceThisQuestion": "تدرب على هذا السؤال",
-    "clearMistakes": "🧹 أخطاء واضحة",
+    "clearMistakes": "🧹 مسح الأخطاء",
     "referenceBoard": "لوحة مرجعية",
     "referenceBoardBlurb": "اختر فئة لمراجعة النقاط الرئيسية بسرعة، مثل لوحات المساعدة في الرياضيات والهندسة.",
     "noTermsYet": "لا توجد شروط لإظهارها بعد.",
@@ -148,7 +148,7 @@
     "topics": "المواضيع",
     "mixedPractice": "تمرين مختلط",
     "editMixOperations": "تحرير عمليات المزيج",
-    "subjects": "المواضيع",
+    "subjects": "المواد",
     "notEnoughQuestions": "لا توجد أسئلة كافية للموضوع/الصف/المستوى الذي اخترته. حاول تغيير الإعداد.",
     "step": "الخطوة {num}",
     "explanation": "توضيح",
@@ -164,7 +164,7 @@
       "math": "🧮 الرياضيات",
       "geometry": "📐 الهندسة",
       "english": "🇬🇧 الإنجليزية",
-      "science": "🔬 العلم"
+      "science": "🔬 العلوم"
     },
     "modes": {
       "learning": {
@@ -190,7 +190,7 @@
     },
     "levels": {
       "easy": "سهل",
-      "medium": "واسطة",
+      "medium": "متوسط",
       "hard": "صعب"
     },
     "grades": {
@@ -209,7 +209,7 @@
       "correct": "عظيم! 🎉",
       "wrong": "ليس تمامًا – حاول مرة أخرى",
       "gameOver": "انتهت اللعبة! 💔",
-      "wrongWithAnswer": "ليس تماماً 😉 الإجابة الصحيحة : {answer} ✅",
+      "wrongWithAnswer": "ليس تماماً 😔 الإجابة الصحيحة : {answer} ✅",
       "timeUp": "انتهى الوقت! ⏰",
       "timeUpGameOver": "انتهى الوقت! انتهت اللعبة! ⏰",
       "excellent": "ممتاز! ✅"
@@ -275,21 +275,21 @@
     "noResultsForLevel": "لا توجد نتائج حتى الآن للمستوى",
     "pickMixTopics": "🎲 اختر موضوعات للمزيج",
     "pickMixTopicsBlurb": "اختر الموضوعات التي تريد تضمينها في الممارسة المختلطة",
-    "deselectAll": "قم بإلغاء تحديد الكل",
+    "deselectAll": "ألغِ تحديد الكل",
     "selectOneTopicMin": "الرجاء تحديد موضوع واحد على الأقل",
     "mistakePracticeTitle": "🎯التدرب على الأخطاء الأخيرة",
     "mistakePracticeBlurb": "اختر خطأً حديثًا لبدء ممارسة مركزة في نفس الموضوع والصف والصعوبة.",
     "noActiveMistakes": "لا توجد أخطاء نشطة حتى الآن. قم بتشغيل جلسة، وجمع البيانات، ثم العودة إلى هنا.",
     "currentGrade": "الصف الحالي",
     "practiceNow": "تدرب الآن",
-    "clearMistakesBtn": "🧹 أخطاء واضحة",
+    "clearMistakesBtn": "🧹 مسح الأخطاء",
     "wordBoardTitle": "📚 لوحة الكلمات التفاعلية",
     "wordBoardBlurb": "اختر فئة لمراجعة الكلمات الإنجليزية الهامة.",
     "noWordsInCategory": "لا توجد كلمات لإظهارها في هذه الفئة.",
     "smartPracticeSettings": "🎛️ إعدادات الممارسة الذكية",
     "smartPracticeBlurb": "مثل الرياضيات والهندسة، اختر وضعًا تدريبيًا خاصًا، أو اربطه بالأخطاء الأخيرة، أو ممارسة متدرجة.",
     "focusMode": "وضع التركيز",
-    "defaultMode": "تقصير",
+    "defaultMode": "افتراضي",
     "repeatRecentMistakes": "كرر الأخطاء الأخيرة",
     "gradedPracticeLabel": "ممارسة متدرجة (ابدأ بالمستوى المنخفض ← المستوى الذي اخترته)",
     "translationQuestions": "أسئلة الترجمة/القصة",
@@ -309,7 +309,7 @@
     "explainTitle": "توضيح",
     "noStepDetailGeometry": "لا توجد تفاصيل خطوة لهذا السؤال. استخدم لوحة الصيغ.",
     "correctAnswerColon": "الإجابة الصحيحة: {answer}.",
-    "topicFallback": "عنوان",
+    "topicFallback": "موضوع",
     "shapeFallback": "شكل",
     "dailyStreakChampion": "👑 بطل!",
     "dailyStreakExcellent": "🌟 ممتاز!",
@@ -386,23 +386,23 @@
     "reference": {
       "operations": {
         "addition": {
-          "title": "➕ الإضافة",
-          "desc": "جمع الأرقام: أ + ب = ج",
+          "title": "➕ الجمع",
+          "desc": "جمع الأرقام: أ + b = ج",
           "example": "مثال: 5 + 3 = 8"
         },
         "subtraction": {
           "title": "➖ الطرح",
-          "desc": "طرح الأعداد: أ - ب = ج",
+          "desc": "طرح الأعداد: أ - b = ج",
           "example": "مثال: 8 - 3 = 5"
         },
         "multiplication": {
           "title": "✖️ الضرب",
-          "desc": "ضرب الأعداد: أ × ب = ج",
+          "desc": "ضرب الأعداد: أ × b = ج",
           "example": "مثال: 4 × 3 = 12"
         },
         "division": {
           "title": "➗ القسمة",
-          "desc": "قسمة الأعداد: أ ÷ ب = ج",
+          "desc": "قسمة الأعداد: أ ÷ b = ج",
           "example": "مثال: 12 ÷ 3 = 4"
         },
         "fractions": {
@@ -418,19 +418,19 @@
       },
       "formulas": {
         "square_area": {
-          "title": "📐مساحة المربعة",
-          "desc": "الجانب × الجانب",
-          "formula": "أ = أ²"
+          "title": "📐 مساحة المربع",
+          "desc": "الضلع × الضلع",
+          "formula": "A = a²"
         },
         "rectangle_area": {
-          "title": "📐 منطقة المستطيل",
+          "title": "📐 مساحة المستطيل",
           "desc": "الطول × العرض",
-          "formula": "أ = أ × ب"
+          "formula": "A = a × b"
         },
         "triangle_area": {
-          "title": "📐 منطقة المثلث",
+          "title": "📐 مساحة المثلث",
           "desc": "(القاعدة × الارتفاع) ÷ 2",
-          "formula": "أ = (ب × ح) ÷ 2"
+          "formula": "A = (ب × ح) ÷ 2"
         },
         "circle_perimeter": {
           "title": "⭕ محيط",
@@ -438,14 +438,14 @@
           "formula": "ج = 2ط"
         },
         "circle_area": {
-          "title": "⭕منطقة الدائرة",
+          "title": "⭕مساحة الدائرة",
           "desc": "π × نصف القطر²",
-          "formula": "أ = ط²"
+          "formula": "A = ط²"
         }
       },
       "terms": {
         "sum": {
-          "title": "➕ المبلغ",
+          "title": "➕ المجموع",
           "desc": "نتيجة إضافة الأرقام"
         },
         "difference": {
@@ -462,11 +462,11 @@
         },
         "even": {
           "title": "🔢 العدد الزوجي",
-          "desc": "عدد يقبل القسمة على 2 بدون باقي (2، 4، 6، 8...)"
+          "desc": "عدد يقبل القسمة على 2 بدون باقٍ (2، 4، 6، 8...)"
         },
         "odd": {
           "title": "🔢 رقم فردي",
-          "desc": "عدد لا يقبل القسمة على 2 ولا يوجد له باقي (1، 3، 5، 7...)"
+          "desc": "عدد لا يقبل القسمة على 2 ولا يوجد له باقٍ (1، 3، 5، 7...)"
         },
         "prime": {
           "title": "🔢الرقم الأولي",
@@ -502,7 +502,7 @@
     "reference": {
       "shapes": {
         "square": {
-          "title": "🔷 ساحة",
+          "title": "🔷 مربع",
           "desc": "4 جوانب متساوية، 4 زوايا قائمة"
         },
         "rectangle": {
@@ -528,19 +528,19 @@
       },
       "formulas": {
         "square_area": {
-          "title": "📐مساحة المربعة",
-          "desc": "الجانب × الجانب",
-          "formula": "أ = أ²"
+          "title": "📐 مساحة المربع",
+          "desc": "الضلع × الضلع",
+          "formula": "A = a²"
         },
         "rectangle_area": {
-          "title": "📐 منطقة المستطيل",
+          "title": "📐 مساحة المستطيل",
           "desc": "الطول × العرض",
-          "formula": "أ = أ × ب"
+          "formula": "A = a × b"
         },
         "triangle_area": {
-          "title": "📐 منطقة المثلث",
+          "title": "📐 مساحة المثلث",
           "desc": "(القاعدة × الارتفاع) ÷ 2",
-          "formula": "أ = (ب × ح) ÷ 2"
+          "formula": "A = (ب × ح) ÷ 2"
         },
         "square_perimeter": {
           "title": "📏 محيط المربع",
@@ -550,12 +550,12 @@
         "rectangle_perimeter": {
           "title": "📏 محيط المستطيل",
           "desc": "2 × (الطول + العرض)",
-          "formula": "ف = 2(أ + ب)"
+          "formula": "ف = 2(أ + b)"
         },
         "box_volume": {
           "title": "📦 حجم المنشور المستطيل",
           "desc": "الطول × العرض × الارتفاع",
-          "formula": "الخامس = أ × ب × ج"
+          "formula": "الخامس = أ × b × ج"
         },
         "cube_volume": {
           "title": "📦 حجم المكعب",
@@ -568,14 +568,14 @@
           "formula": "ج = 2ط"
         },
         "circle_area": {
-          "title": "⭕منطقة الدائرة",
+          "title": "⭕مساحة الدائرة",
           "desc": "π × نصف القطر²",
-          "formula": "أ = ط²"
+          "formula": "A = ط²"
         }
       },
       "terms": {
         "area": {
-          "title": "📐 المنطقة",
+          "title": "📐 المساحة",
           "desc": "المساحة التي يغطيها الشكل على سطح مستو"
         },
         "perimeter": {
@@ -583,15 +583,15 @@
           "desc": "طول الخط المحيط بالشكل"
         },
         "volume": {
-          "title": "📦 المجلد",
-          "desc": "المساحة التي يشغلها الكائن ثلاثي الأبعاد"
+          "title": "📦 الحجم",
+          "desc": "المساحة التي يشغلها الجسم ثلاثي الأبعاد"
         },
         "angle": {
           "title": "📐 زاوية",
-          "desc": "المسافة بين شعاعين من نفس النقطة"
+          "desc": "الفتحة بين شعاعين من نفس النقطة"
         },
         "right_angle": {
-          "title": "📐 الزاوية اليمنى",
+          "title": "📐 الزاوية القائمة",
           "desc": "90 درجة"
         },
         "acute_angle": {
@@ -631,13 +631,13 @@
       "triangles": "المثلثات",
       "quadrilaterals": "رباعيات",
       "transformations": "التحولات",
-      "rotation": "تناوب",
+      "rotation": "دوران",
       "symmetry": "التناظر",
       "diagonal": "قطري",
-      "heights": "مرتفعات",
+      "heights": "الارتفاعات",
       "tiling": "تبليط",
-      "circles": "دائرة",
-      "solids": "المواد الصلبة ثلاثية الأبعاد",
+      "circles": "الدوائر",
+      "solids": "الأجسام ثلاثية الأبعاد",
       "pythagoras": "فيثاغورس",
       "coordinates": "الإحداثيات",
       "mixed": "مختلط"
@@ -696,7 +696,7 @@
       "wordIsCue": "نرى كلمة \"{word}\".",
       "findEnglishMeaning": "ابحث عن المعنى الإنجليزي للكلمة.",
       "grammarRules": "مراجعة قواعد قواعد اللغة الإنجليزية.",
-      "grammarAmIsAre": "أنا = أنا، أنت/نحن/هم = هو، هي/هي = هو.",
+      "grammarAmIsAre": "أنا = am، أنت/نحن/هم = are، هو/هي/إنها = is.",
       "readEnglishSentence": "اقرأ الجملة الإنجليزية: \"{sentence}\".",
       "translatePiece": "حاول ترجمة كل كلمة أو جزء.",
       "buildSentence": "ضع الكلمات معًا في جملة.",
@@ -705,7 +705,7 @@
       "buildEnglishSentence": "ضع الكلمات معًا في جملة إنجليزية.",
       "readTemplate": "اقرأ الجملة: \"{template}\".",
       "whatIsMissing": "اكتشف ما هو مفقود - أي كلمة أو نموذج نحوي.",
-      "grammarCheck": "تحقق مما يناسب القواعد النحوية: أنا/أنت/نحن/هم = هم، هو/هي/إنها = هو.",
+      "grammarCheck": "تحقق مما يناسب القواعد النحوية: I/You/We/They = are، He/She/It = is.",
       "spellingReadWord": "اقرأ الكلمة: \"{word}\".",
       "spellingRecallEnglish": "أذكر شكله الإنجليزي.",
       "spellingLetterByLetter": "اكتب حرفًا بحرف وشاهد الإملاء.",
@@ -717,10 +717,10 @@
     "mistakes": {
       "checkMeaningLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق مرة أخرى: هل المعنى الخاص بك يتطابق مع الكلمة؟",
       "checkMeaning": "تحقق مرة أخرى: هل المعنى الخاص بك يتطابق مع الكلمة؟",
-      "iAmNotIs": "تذكر: أنا دائمًا أستخدم am وليس is. انا = انا .",
-      "amOnlyWithI": "تذكر: أنا فقط معي. هو/هي/هي = أنت/نحن/هم = موجودون.",
-      "checkGrammarLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق من القواعد النحوية مرة أخرى: أنا، أنت/نحن/هم، هو/هي/هي.",
-      "checkGrammar": "تحقق من القواعد النحوية مرة أخرى: أنا، أنت/نحن/هم، هو/هي/هي.",
+      "iAmNotIs": "تذكر: I دائمًا تأتي مع am وليس is.",
+      "amOnlyWithI": "تذكر: am مع I فقط. He/She/It = is، You/We/They = are.",
+      "checkGrammarLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق من القواعد النحوية مرة أخرى: I am، You/We/They are، He/She/It is.",
+      "checkGrammar": "تحقق من القواعد النحوية مرة أخرى: I am، You/We/They are، He/She/It is.",
       "checkTranslationLearning": "الترجمة الصحيحة: {answer}. تحقق مرة أخرى: هل قمت بترجمة كل كلمة بشكل صحيح؟",
       "checkTranslation": "تحقق مرة أخرى: هل قمت بترجمة كل كلمة بشكل صحيح؟",
       "checkWordFitLearning": "الإجابة الصحيحة هي \"{answer}\". تحقق مرة أخرى: هل كلمتك تناسب الجملة؟",
@@ -740,9 +740,9 @@
   },
   "science": {
     "leaderboardTitle": "🏆 المتصدرين - العلوم",
-    "howToLearnTitle": "📘كيف تتعلم العلم هنا؟",
+    "howToLearnTitle": "📘 كيف تتعلم العلوم هنا؟",
     "howToLearnBlurb": "الهدف هو ممارسة العلوم بطريقة ممتعة، تتناسب مع الصف والموضوع والصعوبة.",
-    "levelUp": "لقد ارتقيت في العلم!",
+    "levelUp": "لقد ارتقيت في العلوم!",
     "levelUpNow": "أنت الآن في المستوى {level}",
     "scientistLevel": "مستوى العلماء",
     "referenceBoardTitle": "📚 لوحة مفهوم العلوم",
@@ -778,7 +778,7 @@
         "label": "الأرض والفضاء",
         "terms": {
           "atmosphere": {
-            "term": "أَجواء",
+            "term": "الغلاف الجوي",
             "desc": "طبقة الغازات حول الأرض."
           },
           "waterCycle": {
@@ -786,7 +786,7 @@
             "desc": "مسار الماء بين البحر والسحاب واليابسة."
           },
           "crust": {
-            "term": "القشرة الارضية",
+            "term": "القشرة الأرضية",
             "desc": "الطبقة الصخرية الخارجية ذات الصفائح التكتونية."
           },
           "planet": {
@@ -811,7 +811,7 @@
             "desc": "مصادر كالشمس والرياح لا تنضب."
           },
           "physicalChange": {
-            "term": "التغيير الجسدي",
+            "term": "التغيير الفيزيائي",
             "desc": "تغير في الشكل أو الحالة دون تكوين مادة جديدة."
           }
         }

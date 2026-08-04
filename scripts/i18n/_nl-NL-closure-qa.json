@@ -1,0 +1,61 @@
+{
+  "namespaces": {
+    "files": 15,
+    "parseOk": 15
+  },
+  "contentPacks": {
+    "files": 396,
+    "parseOk": 396
+  },
+  "helpArticles": {
+    "mdFiles": 0
+  },
+  "learningBooks": {
+    "nl": 450,
+    "en": 450,
+    "pathParity": true
+  },
+  "science": {
+    "enIds": 1017,
+    "nlIds": 1017,
+    "idParity": true,
+    "optionCountParity": true,
+    "instructionalEnLeakRecords": 0,
+    "samples": []
+  },
+  "wordMeanings": {
+    "entries": 721,
+    "bank": "bank (geld)",
+    "sofaHit": {
+      "path": "house",
+      "value": "zitbank"
+    },
+    "bankHit": {
+      "path": "community",
+      "value": "bank (geld)"
+    }
+  },
+  "booksEnInstrLeakFiles": 0,
+  "terminology": {
+    "wiskundeFiles": 0,
+    "gradeDisplayFiles": 0,
+    "scienceAuthorityLocaleMentions": 5
+  },
+  "jeUmix": {
+    "hits": 0,
+    "mixSamples": []
+  },
+  "mathGeo": {
+    "mathExports": [
+      "applyMathLevelPresentationNlNl",
+      "localizeMathQuestionNlNl",
+      "rebuildMathStemNlNl"
+    ],
+    "geoExports": [
+      "geometryFallbackStemNlNl",
+      "localizeGeometryQuestionNlNl",
+      "rebuildGeometryStemNlNl"
+    ],
+    "hasWiskunde": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "leaf": {
+    "copy": {
+      "reports": "التقارير",
+      "school": "المدرسة"
+    }
+  },
+  "index": {
+    "reports": "التقارير",
+    "school": "المدرسة",
+    "stale_old_key": "قيمة قديمة"
+  },
+  "expectStaleIndexKeys": ["stale_old_key"],
+  "expectMismatches": []
+}

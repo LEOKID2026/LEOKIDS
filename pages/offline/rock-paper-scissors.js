@@ -10,10 +10,13 @@ import OfflineGameHoldShell from "../../components/offline/OfflineGameHoldShell.
 import { useGameAudio } from "../../hooks/useGameAudio";
 import { assertDemoPlayAllowed } from "../../lib/demo/demo-play-guard.client.js";
 
+const PACK = "pages__offline__rock-paper-scissors";
+const copy = (key, vars) => gamePackCopy(PACK, key, vars);
+
 const CHOICES = [
-  { id: "rock", label: "Rock", emoji: "🪨" },
-  { id: "paper", label: "Paper", emoji: "📄" },
-  { id: "scissors", label: "Scissors", emoji: "✂️" },
+  { id: "rock", emoji: "🪨" },
+  { id: "paper", emoji: "📄" },
+  { id: "scissors", emoji: "✂️" },
 ];
 
 const beats = {
@@ -43,9 +46,7 @@ export default function RockPaperScissors() {
   const [pendingChoice, setPendingChoice] = useState(null);
   const [activeHuman, setActiveHuman] = useState("p1");
   const [history, setHistory] = useState([]);
-  const [statusMessage, setStatusMessage] = useState(
-    "Player 1: choose a move"
-  );
+  const [statusMessage, setStatusMessage] = useState(null);
   const [lastResult, setLastResult] = useState(null);
   const [showP1Choice, setShowP1Choice] = useState(false);
   const [p1ChoiceDisplay, setP1ChoiceDisplay] = useState(null);
@@ -56,11 +57,11 @@ export default function RockPaperScissors() {
 
   const matchWinner =
     score.p1 >= firstTo
-      ? "Player 1"
+      ? copy("player_1_label")
       : score.p2 >= firstTo
       ? vsBot
-        ? "Leo Bot"
-        : gamePackCopy("pages__offline__rock-paper-scissors", "player_2")
+        ? copy("leo_bot_label")
+        : copy("player_2")
       : null;
 
   const isMidRound = showResults || showP1Choice;
@@ -109,7 +110,7 @@ export default function RockPaperScissors() {
             setRound((prevRound) => prevRound + 1);
             setPendingChoice(null);
             setActiveHuman("p1");
-            setStatusMessage("Player 1: choose a move");
+            setStatusMessage(copy("player_1_choose"));
             setShowResults(false);
             setFinalResult(null);
             setShowP1Choice(false);
@@ -174,7 +175,7 @@ export default function RockPaperScissors() {
     // Show P1 choice for 1 second
     setP1ChoiceDisplay(choice);
     setShowP1Choice(true);
-    setStatusMessage("Your choice:");
+    setStatusMessage(copy("your_choice"));
     
     setTimeout(() => {
       setShowP1Choice(false);
@@ -199,14 +200,14 @@ export default function RockPaperScissors() {
       // Show P1 choice for 1 second, then hide and pass to P2
       setP1ChoiceDisplay(choice);
       setShowP1Choice(true);
-      setStatusMessage("Player 1 chose:");
+      setStatusMessage(copy("player_1_chose"));
       
       setTimeout(() => {
         setShowP1Choice(false);
         setP1ChoiceDisplay(null);
         setPendingChoice(choice);
         setActiveHuman("p2");
-        setStatusMessage("Player 2: your turn (no peeking!)");
+        setStatusMessage(copy("player_2_turn"));
       }, 1000);
     } else {
       // P2 chose - show results with 3 second countdown
@@ -222,7 +223,7 @@ export default function RockPaperScissors() {
     setHistory([]);
     setPendingChoice(null);
     setActiveHuman("p1");
-    setStatusMessage("Player 1: choose a move");
+    setStatusMessage(copy("player_1_choose"));
     setLastResult(null);
     setShowP1Choice(false);
     setP1ChoiceDisplay(null);
@@ -246,6 +247,8 @@ export default function RockPaperScissors() {
   };
 
   if (!mounted) return <OfflineGameHoldShell />;
+
+  const effectiveStatusMessage = statusMessage ?? copy("player_1_choose");
 
   return (
     <MaybeGameAccessGuard gameKey="rock-paper-scissors">
@@ -279,13 +282,13 @@ export default function RockPaperScissors() {
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
               >
-                Back
+                {copy("back")}
               </button>
               {!isMidRound ? <GameAudioSettingsButton /> : null}
             </div>
             <div className="absolute end-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
-                Local
+                {copy("local_badge")}
               </span>
             </div>
           </div>
@@ -303,10 +306,10 @@ export default function RockPaperScissors() {
         >
           <div className="text-center mb-1">
             <h1 className="text-2xl font-extrabold text-white mb-0.5">
-              🪨📄✂️ Rock · Paper · Scissors
+              {copy("title")}
             </h1>
             <p className="text-white/70 text-xs">
-              Round {round} • First to {firstTo}
+              {copy("round_subtitle", { round, firstTo })}
             </p>
           </div>
 
@@ -315,16 +318,16 @@ export default function RockPaperScissors() {
             className="grid grid-cols-3 gap-1 mb-1 w-full max-w-md"
           >
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Player 1</div>
+              <div className="text-[10px] text-white/60">{copy("player_1_label")}</div>
               <div className="text-sm font-bold text-emerald-400">{score.p1}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Round</div>
+              <div className="text-[10px] text-white/60">{copy("round_label")}</div>
               <div className="text-sm font-bold text-amber-400">{round}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
               <div className="text-[10px] text-white/60">
-                {vsBot ? "Bot" : gamePackCopy("pages__offline__rock-paper-scissors", "player_2")}
+                {vsBot ? copy("leo_bot_label") : copy("player_2")}
               </div>
               <div className="text-sm font-bold text-purple-400">{score.p2}</div>
             </div>
@@ -341,7 +344,7 @@ export default function RockPaperScissors() {
             >
               {[3, 5, 7].map((target) => (
                 <option key={target} value={target}>
-                  First to {target}
+                  {copy("first_to_option", { target })}
                 </option>
               ))}
             </select>
@@ -355,19 +358,19 @@ export default function RockPaperScissors() {
                 }}
                 className="w-5 h-5"
               />
-              vs Bot
+              {copy("vs_bot")}
             </label>
             <button
               onClick={() => resetMatch()}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              Reset
+              {copy("reset")}
             </button>
           </div>
 
           {matchWinner && (
             <div className="mb-1 px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-200 text-sm font-semibold">
-              {matchWinner} won the match!
+              {copy("match_winner", { winner: matchWinner })}
             </div>
           )}
 
@@ -383,12 +386,12 @@ export default function RockPaperScissors() {
               {resultsTimer === 0 && (
                 <div className="text-lg font-semibold">
                   {finalResult.winner === "tie"
-                    ? "Tie!"
+                    ? copy("tie_result")
                     : finalResult.winner === "p1"
-                    ? "Player 1 won!"
+                    ? copy("p1_won_result")
                     : vsBot
-                    ? "The bot won!"
-                    : "Player 2 won!"}
+                    ? copy("bot_won_result")
+                    : copy("p2_won_result")}
                 </div>
               )}
             </div>
@@ -399,12 +402,12 @@ export default function RockPaperScissors() {
               {CHOICES.find((c) => c.id === lastResult.p1)?.emoji} vs{" "}
               {CHOICES.find((c) => c.id === lastResult.p2)?.emoji} -{" "}
               {lastResult.winner === "tie"
-                ? "Tie"
+                ? copy("tie_short")
                 : lastResult.winner === "p1"
-                ? "Player 1 won"
+                ? copy("p1_won_short")
                 : vsBot
-                ? "The bot won"
-                : "Player 2 won"}
+                ? copy("bot_won_short")
+                : copy("p2_won_short")}
             </div>
           )}
 
@@ -416,32 +419,32 @@ export default function RockPaperScissors() {
             {showP1Choice && p1ChoiceDisplay ? (
               <div className="w-full max-w-md flex flex-col items-center justify-center">
                 <div className="text-sm text-white/80 mb-3 text-center font-semibold">
-                  {statusMessage}
+                  {effectiveStatusMessage}
                 </div>
                 <div className="rounded-2xl border-2 border-emerald-400/50 bg-emerald-500/20 px-8 py-8 flex flex-row items-center justify-center gap-6">
                   <span className="text-7xl">
                     {CHOICES.find((c) => c.id === p1ChoiceDisplay)?.emoji}
                   </span>
                   <span className="text-3xl font-bold text-white/90">
-                    {CHOICES.find((c) => c.id === p1ChoiceDisplay)?.label}
+                    {copy(p1ChoiceDisplay)}
                   </span>
                 </div>
               </div>
             ) : showResults ? (
               <div className="w-full max-w-md flex flex-col items-center justify-center">
                 <div className="text-sm text-white/80 mb-3 text-center font-semibold">
-                  Results in {resultsTimer}...
+                  {copy("results_in", { timer: resultsTimer })}
                 </div>
                 <div className="grid grid-cols-2 gap-4 w-full">
                   <div className="rounded-2xl border-2 border-blue-400/50 bg-blue-500/20 px-6 py-6 flex flex-col items-center justify-center gap-3">
-                    <span className="text-2xl text-white/60">Player 1</span>
+                    <span className="text-2xl text-white/60">{copy("player_1_label")}</span>
                     <span className="text-6xl">
                       {finalResult && CHOICES.find((c) => c.id === finalResult.p1)?.emoji}
                     </span>
                   </div>
                   <div className="rounded-2xl border-2 border-purple-400/50 bg-purple-500/20 px-6 py-6 flex flex-col items-center justify-center gap-3">
                     <span className="text-2xl text-white/60">
-                      {vsBot ? "Bot" : gamePackCopy("pages__offline__rock-paper-scissors", "player_2")}
+                      {vsBot ? copy("leo_bot_label") : copy("player_2")}
                     </span>
                     <span className="text-6xl">
                       {finalResult && CHOICES.find((c) => c.id === finalResult.p2)?.emoji}
@@ -452,7 +455,7 @@ export default function RockPaperScissors() {
             ) : (
               <div className="w-full max-w-md flex flex-col items-center justify-center">
                 <div className="text-sm text-white/80 mb-3 text-center font-semibold">
-                  {statusMessage}
+                  {effectiveStatusMessage}
                 </div>
                 <div className="flex flex-col gap-4 w-full">
                   {CHOICES.map((choice) => (
@@ -464,7 +467,7 @@ export default function RockPaperScissors() {
                     >
                       <span className="text-7xl">{choice.emoji}</span>
                       <span className="text-3xl font-bold text-white/90">
-                        {choice.label}
+                        {copy(choice.id)}
                       </span>
                     </button>
                   ))}
@@ -475,7 +478,7 @@ export default function RockPaperScissors() {
 
           {history.length > 0 && (
             <div className="w-full max-w-md text-xs text-white/60 space-y-1">
-              <div className="text-center font-semibold mb-1">Recent</div>
+              <div className="text-center font-semibold mb-1">{copy("recent")}</div>
               {history.slice(0, 3).map((entry, idx) => (
                 <div
                   key={idx}
@@ -488,10 +491,10 @@ export default function RockPaperScissors() {
                   </span>
                   <span>
                     {entry.winner === "tie"
-                      ? "Tie"
+                      ? copy("tie_short")
                       : entry.winner === "p1"
-                      ? "P1"
-                      : "P2"}
+                      ? copy("p1_won_short")
+                      : copy("p2_won_short")}
                   </span>
                 </div>
               ))}

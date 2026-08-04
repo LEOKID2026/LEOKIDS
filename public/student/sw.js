@@ -76,11 +76,11 @@ const OFFLINE_DATA_SET = new Set(FULL_DATA_URLS);
 const OFFLINE_ASSET_SET = new Set(FULL_ASSET_URLS);
 
 const OFFLINE_HTML_FALLBACK = `<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>No connection — Leo Kids</title>
+<title>لا يوجد اتصال — Leo Kids</title>
 <style>
 body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;background:#050816;color:#fff;font-family:system-ui,sans-serif;padding:1.5rem}
 .card{max-width:22rem;text-align:center}
@@ -89,9 +89,9 @@ body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:
 </head>
 <body>
 <div class="card">
-<h1>No internet connection</h1>
-<p>You can still play offline games below</p>
-<a href="/student/offline" class="btn">🎮 Offline games</a>
+<h1>لا يوجد اتصال بالإنترنت</h1>
+<p>يمكنك متابعة الألعاب دون اتصال من الرابط أدناه</p>
+<a href="/ar-001/student/offline" class="btn">ألعاب دون اتصال</a>
 </div>
 </body>
 </html>`;

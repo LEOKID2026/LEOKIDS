@@ -1,4 +1,4 @@
-import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
+import { globalBurnDownCopy, getActiveBurnDownLocale } from "../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,12 +6,23 @@ import Layout from "../../../../../components/Layout";
 import TeacherPortalShell from "../../../../../components/teacher-portal/TeacherPortalShell";
 import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
-import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
+import { resolveTeacherPortalAuth } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   worksheetModeLabelHe,
   worksheetStatusLabelHe,
 } from "../../../../../lib/worksheet-activities/worksheet-labels.client.js";
+
+const WS = "pages__teacher__class__[classId]__worksheets__index";
+function wsCopy(key, vars) {
+  let t = globalBurnDownCopy(WS, key);
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      t = t.split("{" + k + "}").join(String(v));
+    }
+  }
+  return t;
+}
 
 export async function getServerSideProps(context) {
   const classId = String(context.params?.classId || "").trim();
@@ -29,8 +40,10 @@ export default function TeacherClassWorksheetsPage({ classId }) {
     setError("");
     try {
       const supabase = getLearningSupabaseBrowserClient();
-      const session = await resolveTeacherAccessToken(supabase);
+      const session = await resolveTeacherPortalAuth(supabase);
       if (!session.ok) {
+        setPhase("error");
+        setError(wsCopy("network_error"));
         router.replace("/teacher/login");
         return;
       }
@@ -44,14 +57,14 @@ export default function TeacherClassWorksheetsPage({ classId }) {
         return;
       }
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "Error loading");
+        setError(body?.error?.message || body?.error?.code || wsCopy("error_loading"));
         setPhase("error");
         return;
       }
       setWorksheets(body?.data?.worksheets || []);
       setPhase("ready");
     } catch {
-      setError("Network error");
+      setError(wsCopy("network_error"));
       setPhase("error");
     }
   }, [classId, router]);
@@ -60,64 +73,79 @@ export default function TeacherClassWorksheetsPage({ classId }) {
     if (classId) load();
   }, [classId, load]);
 
+  const localeTag = getActiveBurnDownLocale() || "en";
+
   return (
     <Layout>
       <TeacherPortalShell
-        title={globalBurnDownCopy("pages__teacher__class__[classId]__worksheets__index", "worksheets")}
+        title={wsCopy("worksheets")}
         backHref="/teacher/dashboard"
-        backLabel="← Back to dashboard"
+        backLabel={wsCopy("back_to_dashboard")}
       >
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
 
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <p className="text-white/70 text-sm">Create, launch, and track PDF worksheets.</p>
+          <p className="text-white/70 text-sm">{wsCopy("subtitle")}</p>
           <Link
             href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/new`}
             className="inline-flex items-center px-4 py-2 rounded-xl bg-violet-500/90 text-black font-semibold text-sm hover:bg-violet-400"
           >
-            Create new worksheet
+            {wsCopy("create_new")}
           </Link>
         </div>
 
-        {phase === "loading" ? <p className="text-white/60">Loading…</p> : null}
+        {phase === "loading" ? (
+          <p className="text-white/60" data-testid="teacher-worksheets-loading">
+            {wsCopy("loading")}
+          </p>
+        ) : null}
         {phase === "error" ? <p className="text-red-300">{error}</p> : null}
-
-        {phase === "ready" && worksheets.length === 0 ? (
-          <p className="text-white/60">No worksheets yet.</p>
+        {phase === "forbidden" ? (
+          <p className="text-red-200">{wsCopy("forbidden")}</p>
         ) : null}
 
-        {phase === "ready" && worksheets.length > 0 ? (
-          <div className="grid gap-3">
-            {worksheets.map((w) => (
-              <div
-                key={w.worksheetId}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-start"
-              >
-                <div>
-                  <h3 className="font-bold text-white">{w.title}</h3>
-                  <p className="text-sm text-white/65 mt-1">
-                    {worksheetModeLabelHe(w.worksheetMode)} · {worksheetStatusLabelHe(w.status)}
-                    {w.physicalDueAt
-                      ? ` · Due: ${new Date(w.physicalDueAt).toLocaleString("en-US")}`
-                      : ""}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2 justify-end">
-                  <Link
-                    href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(w.worksheetId)}`}
-                    className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+        {phase === "ready" ? (
+          <div data-testid="teacher-worksheets-ready">
+            {worksheets.length === 0 ? (
+              <p className="text-white/60" data-testid="teacher-worksheets-empty">
+                {wsCopy("empty")}
+              </p>
+            ) : (
+              <div className="grid gap-3" data-testid="teacher-worksheets-list">
+                {worksheets.map((w) => (
+                  <div
+                    key={w.worksheetId}
+                    className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-start"
                   >
-                    Manage
-                  </Link>
-                  <Link
-                    href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(w.worksheetId)}/report`}
-                    className="text-sm px-3 py-1.5 rounded-lg bg-violet-500/20 text-violet-100 border border-violet-400/30"
-                  >
-                    Report
-                  </Link>
-                </div>
+                    <div>
+                      <h3 className="font-bold text-white">{w.title}</h3>
+                      <p className="text-sm text-white/65 mt-1">
+                        {worksheetModeLabelHe(w.worksheetMode)} · {worksheetStatusLabelHe(w.status)}
+                        {w.physicalDueAt
+                          ? ` · ${wsCopy("due", {
+                              date: new Date(w.physicalDueAt).toLocaleString(localeTag),
+                            })}`
+                          : ""}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 justify-end">
+                      <Link
+                        href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(w.worksheetId)}`}
+                        className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+                      >
+                        {wsCopy("manage")}
+                      </Link>
+                      <Link
+                        href={`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(w.worksheetId)}/report`}
+                        className="text-sm px-3 py-1.5 rounded-lg bg-violet-500/20 text-violet-100 border border-violet-400/30"
+                      >
+                        {wsCopy("report")}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         ) : null}
       </TeacherPortalShell>

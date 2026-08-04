@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../../../../components/Layout";
 import TeacherPortalShell from "../../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../../lib/learning-supabase/client";
-import { resolveTeacherAccessToken } from "../../../../lib/teacher-portal/use-teacher-portal-session";
+import { resolveTeacherPortalAuth } from "../../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch, subjectLabel, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../lib/classroom-activities/generate-activity-questions-client.js";
@@ -13,13 +13,41 @@ import {
   defaultTopicForAssignedActivity,
   topicOptionsForAssignedActivity,
 } from "../../../../lib/classroom-activities/assigned-activity-topic-options.js";
-import { formatGradeLevelHe } from "../../../../lib/learning-student-defaults.js";
 import AssignedActivityQuestionDisplay from "../../../../components/classroom-activities/AssignedActivityQuestionDisplay.jsx";
 import ActivityDisplayLevelSelector from "../../../../components/classroom-activities/ActivityDisplayLevelSelector.jsx";
 import { writeActivityDifficultyFromDisplayLevel } from "../../../../lib/learning/activity-display-level.js";
 import AssignedActivityBidiText from "../../../../components/classroom-activities/AssignedActivityBidiText.jsx";
 
 const MODES = ["guided_practice", "quiz", "homework", "discussion"];
+const ACT = "pages__teacher__students__activities__new";
+const GRADE_PACK = "lib__teacher-portal__teacher-class-grade";
+const GRADE_KEYS = ["g1", "g2", "g3", "g4", "g5", "g6"];
+const GRADE_COPY_KEYS = {
+  g1: "grade_1",
+  g2: "grade_2",
+  g3: "grade_3",
+  g4: "grade_4",
+  g5: "grade_5",
+  g6: "grade_6",
+};
+
+function actCopy(key, vars) {
+  let t = globalBurnDownCopy(ACT, key);
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      t = t.split("{" + k + "}").join(String(v));
+    }
+  }
+  return t;
+}
+
+/** Runtime locale-aware grade label (avoid module-init burn-down cache). */
+function gradeLabel(gradeLevel) {
+  const key = String(gradeLevel || "").trim().toLowerCase();
+  const copyKey = GRADE_COPY_KEYS[key];
+  if (copyKey) return globalBurnDownCopy(GRADE_PACK, copyKey);
+  return key;
+}
 
 export async function getServerSideProps() {
   return { props: {} };
@@ -28,6 +56,7 @@ export async function getServerSideProps() {
 export default function TeacherPrivateStudentsNewActivityPage() {
   const router = useRouter();
   const [accessToken, setAccessToken] = useState("");
+  const [formReady, setFormReady] = useState(false);
   const [students, setStudents] = useState([]);
   const [studentsLoaded, setStudentsLoaded] = useState(false);
   const [selectedIds, setSelectedIds] = useState(() => new Set());
@@ -67,12 +96,18 @@ export default function TeacherPrivateStudentsNewActivityPage() {
 
   useEffect(() => {
     const supabase = getLearningSupabaseBrowserClient();
-    resolveTeacherAccessToken(supabase).then((session) => {
-      if (!session.ok) { router.replace("/teacher/login"); return; }
-      setAccessToken(session.token);
+    resolveTeacherPortalAuth(supabase).then((session) => {
+      if (!session.ok) {
+        router.replace("/teacher/login");
+        return;
+      }
+      setAccessToken(session.token || "");
+      setFormReady(true);
       teacherAuthFetch(session.token, "/api/teacher/students")
         .then((r) => r.json())
-        .then((json) => { if (json?.data?.students) setStudents(json.data.students); })
+        .then((json) => {
+          if (json?.data?.students) setStudents(json.data.students);
+        })
         .catch(() => {})
         .finally(() => setStudentsLoaded(true));
     });
@@ -99,8 +134,10 @@ export default function TeacherPrivateStudentsNewActivityPage() {
           student.gradeLevel !== currentLocked
         ) {
           setError(
-            `You cannot mix students from different grades. This activity is locked to ${currentLocked}. ` +
-            `This student is in ${student.gradeLevel}.`
+            actCopy("err_mix_grades", {
+              locked: gradeLabel(currentLocked),
+              student: gradeLabel(student.gradeLevel),
+            })
           );
           return prev;
         }
@@ -144,17 +181,17 @@ export default function TeacherPrivateStudentsNewActivityPage() {
       });
       setPreview(qs || []);
     } catch (e) {
-      setError(e?.message || "Could not generate questions");
+      setError(e?.message || actCopy("could_not_generate"));
     } finally {
       setBusy(false);
     }
   }, [subject, gradeKey, topic, displayLevel, mode, questionCount]);
 
   const createActivity = useCallback(async () => {
-    if (selectedIds.size === 0) { setError("Please select at least one student"); return; }
-    if (!title.trim()) { setError("Please enter a title"); return; }
-    if (!preview.length) { setError("Please generate questions first"); return; }
-    if (mode === "quiz" && !timeLimitSeconds) { setError("A quiz requires a time limit"); return; }
+    if (selectedIds.size === 0) { setError(actCopy("err_select_student")); return; }
+    if (!title.trim()) { setError(actCopy("err_enter_title")); return; }
+    if (!preview.length) { setError(actCopy("err_generate_first")); return; }
+    if (mode === "quiz" && !timeLimitSeconds) { setError(actCopy("err_quiz_time")); return; }
 
     setBusy(true);
     setError("");
@@ -179,7 +216,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Creation failed");
+        setError(json?.error?.message || json?.error?.code || actCopy("creation_failed"));
         return;
       }
 
@@ -200,7 +237,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
         router.push(`/teacher/student/${encodeURIComponent(firstId)}`);
       }
     } catch {
-      setError("Network error");
+      setError(actCopy("network_error"));
     } finally {
       setBusy(false);
     }
@@ -237,26 +274,26 @@ export default function TeacherPrivateStudentsNewActivityPage() {
         {/* Student selection */}
         <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-5">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h2 className="text-base font-semibold">Select private students</h2>
+            <h2 className="text-base font-semibold">{actCopy("select_private_students")}</h2>
             <span className="text-sm text-white/60">
-              Selected: {selectedIds.size}
-              {lockedGrade ? ` (${formatGradeLevelHe(lockedGrade)})` : ""}
+              {actCopy("selected_count", { n: selectedIds.size })}
+              {lockedGrade ? ` (${gradeLabel(lockedGrade)})` : ""}
             </span>
           </div>
 
           {multipleGradesExist ? (
             <p className="text-amber-200/80 text-xs mb-3 rounded border border-amber-400/20 bg-amber-500/10 px-3 py-1.5">
-              ⚠ You have students from different grades. You can only send one activity to students in the same grade.
+              {actCopy("multi_grade_warning")}
               {lockedGrade
-                ? ` Activity locked to ${formatGradeLevelHe(lockedGrade)}.`
-                : " Select a first student to lock the grade."}
+                ? ` ${actCopy("activity_locked_to", { grade: gradeLabel(lockedGrade) })}`
+                : actCopy("select_first_to_lock")}
             </p>
           ) : null}
 
           {!studentsLoaded ? (
-            <p className="text-white/50 text-sm">Loading students…</p>
+            <p className="text-white/50 text-sm">{actCopy("loading_students")}</p>
           ) : students.length === 0 ? (
-            <p className="text-white/50 text-sm">No linked private students.</p>
+            <p className="text-white/50 text-sm">{actCopy("no_linked_private_students")}</p>
           ) : (
             <>
               <div className="flex flex-wrap gap-2 mb-2 text-xs">
@@ -265,14 +302,14 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                   className="underline text-white/60 hover:text-white"
                   onClick={selectAllSameGrade}
                 >
-                  {lockedGrade ? `Select all (${formatGradeLevelHe(lockedGrade)})` : "Select all"}
+                  {lockedGrade ? actCopy("select_all_grade", { grade: gradeLabel(lockedGrade) }) : actCopy("select_all")}
                 </button>
                 <button
                   type="button"
                   className="underline text-white/60 hover:text-white"
                   onClick={clearSelected}
                 >
-                  Clear
+                  {actCopy("clear")}
                 </button>
               </div>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 max-h-56 overflow-y-auto">
@@ -304,7 +341,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                               gradeMismatch ? "text-red-400/80" : "text-white/40"
                             }`}
                           >
-                            Class {s.gradeLevel}
+                            {actCopy("class_label", { grade: s.gradeLevel })}
                           </span>
                         ) : null}
                       </label>
@@ -316,12 +353,15 @@ export default function TeacherPrivateStudentsNewActivityPage() {
           )}
         </section>
 
-        {/* Activity configuration */}
-        <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-5">
-          <h2 className="text-base font-semibold mb-3">Activity settings</h2>
+        {/* Activity configuration — ready when auth resolved and fields are interactive */}
+        <section
+          className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-5"
+          {...(formReady ? { "data-testid": "teacher-activity-form-ready" } : {})}
+        >
+          <h2 className="text-base font-semibold mb-3">{actCopy("activity_settings")}</h2>
           <div className="grid gap-4 md:grid-cols-2">
             <label className="block text-sm">
-              <span className="text-white/70">Title</span>
+              <span className="text-white/70">{actCopy("title")}</span>
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={title}
@@ -331,7 +371,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">Subject</span>
+              <span className="text-white/70">{actCopy("subject")}</span>
               <select
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={subject}
@@ -350,9 +390,9 @@ export default function TeacherPrivateStudentsNewActivityPage() {
 
             <label className="block text-sm">
               <span className="text-white/70">
-                Grade (for content)
+                {actCopy("grade_for_content")}
                 {lockedGrade ? (
-                  <span className="text-emerald-300/80 text-xs me-1">- derived from selected students</span>
+                  <span className="text-emerald-300/80 text-xs me-1">{actCopy("derived_from_selected")}</span>
                 ) : null}
               </span>
               <select
@@ -366,17 +406,17 @@ export default function TeacherPrivateStudentsNewActivityPage() {
                   setPreview([]);
                 }}
               >
-                {["g1","g2","g3","g4","g5","g6"].map((g) => (
-                  <option key={g} value={g}>{formatGradeLevelHe(g)}</option>
+                {GRADE_KEYS.map((g) => (
+                  <option key={g} value={g}>{gradeLabel(g)}</option>
                 ))}
               </select>
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">Topic</span>
+              <span className="text-white/70">{actCopy("topic")}</span>
               {subject === "science" && topicOpts.length === 0 ? (
                 <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                  No topics available for this grade in Science.
+                  {actCopy("no_science_topics")}
                 </p>
               ) : topicOpts.length > 0 ? (
                 <select
@@ -398,7 +438,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">Activity type</span>
+              <span className="text-white/70">{actCopy("activity_type")}</span>
               <select
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={mode}
@@ -424,7 +464,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
 
             {mode !== "discussion" ? (
               <label className="block text-sm">
-                <span className="text-white/70">Number of questions</span>
+                <span className="text-white/70">{actCopy("number_of_questions")}</span>
                 <input
                   type="number"
                   min={1}
@@ -437,19 +477,19 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             ) : null}
 
             <label className="block text-sm">
-              <span className="text-white/70">Time limit (seconds, optional)</span>
+              <span className="text-white/70">{actCopy("time_limit_optional")}</span>
               <input
                 type="number"
                 min={1}
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
                 value={timeLimitSeconds}
                 onChange={(e) => setTimeLimitSeconds(e.target.value)}
-                placeholder={mode === "quiz" ? "Required for quiz" : "Blank = no limit"}
+                placeholder={mode === "quiz" ? actCopy("required_for_quiz") : actCopy("blank_no_limit")}
               />
             </label>
 
             <label className="block text-sm">
-              <span className="text-white/70">Due date (optional)</span>
+              <span className="text-white/70">{actCopy("due_date_optional")}</span>
               <input
                 type="datetime-local"
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
@@ -468,7 +508,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
             onClick={runPreview}
             className="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-sm"
           >
-            {busy ? "Generating questions…" : "Show preview"}
+            {busy ? actCopy("generating_questions") : actCopy("show_preview")}
           </button>
           {preview.length > 0 ? (
             <button
@@ -477,7 +517,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
               onClick={createActivity}
               className="px-4 py-2 rounded-xl bg-emerald-600/90 text-white font-semibold text-sm disabled:opacity-50"
             >
-              Create and send ({selectedIds.size} students)
+              {actCopy("create_and_send", { n: selectedIds.size })}
             </button>
           ) : null}
         </div>
@@ -485,7 +525,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
         {preview.length > 0 ? (
           <div className="space-y-3">
             <p className="text-sm text-white/60">
-              {mode === "discussion" ? "Discussion question:" : `${preview.length} questions:`}
+              {mode === "discussion" ? actCopy("discussion_question") : actCopy("questions_count", { n: preview.length })}
             </p>
             <ul className="space-y-2">
               {preview.slice(0, mode === "discussion" ? 1 : undefined).map((q, i) => {

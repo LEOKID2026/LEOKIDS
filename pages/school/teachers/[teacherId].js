@@ -4,7 +4,9 @@ import Layout from "../../../components/Layout";
 import SchoolPortalShell from "../../../components/school-portal/SchoolPortalShell";
 import SchoolTeacherDetailContent from "../../../components/school-portal/SchoolTeacherDetailContent";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolUiLocale,
   SCHOOL_LOADING,
   SCHOOL_LOADING_DATA,
   SCHOOL_SUBJECTS_TITLE,
@@ -13,6 +15,8 @@ import {
 
 export default function SchoolTeacherDetailPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const { isReady } = router;
 
   const teacherIdResolved = useMemo(() => {

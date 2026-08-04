@@ -1,0 +1,5826 @@
+[
+  {
+    "en": "This is my mom.",
+    "c": 4
+  },
+  {
+    "en": "Which lowercase letter is this?",
+    "c": 3
+  },
+  {
+    "en": "Which uppercase letter is this?",
+    "c": 3
+  },
+  {
+    "en": "This book is more interesting than that one.",
+    "c": 3
+  },
+  {
+    "en": "Last week we learned about the environment.",
+    "c": 3
+  },
+  {
+    "en": "They planted trees last year.",
+    "c": 3
+  },
+  {
+    "en": "We will travel by train.",
+    "c": 3
+  },
+  {
+    "en": "This is the most interesting book I have read.",
+    "c": 3
+  },
+  {
+    "en": "If it rains, we will stay at home.",
+    "c": 3
+  },
+  {
+    "en": "How many more points does Noah have?",
+    "c": 3
+  },
+  {
+    "en": "How much more does Danny have?",
+    "c": 3
+  },
+  {
+    "en": "What word do we get from the letters b, e, d?",
+    "c": 2
+  },
+  {
+    "en": "On the next pages, we'll meet more words and review what we've learned.",
+    "c": 2
+  },
+  {
+    "en": "Today we practice translating routine sentences.",
+    "c": 2
+  },
+  {
+    "en": "This is my dad.",
+    "c": 2
+  },
+  {
+    "en": "Now you will practice sentences about the community.",
+    "c": 2
+  },
+  {
+    "en": "They feel excited.",
+    "c": 2
+  },
+  {
+    "en": "You place a drawing of a car on a table and slide it forward — the car moves to a new place but does not flip over.",
+    "c": 2
+  },
+  {
+    "en": "Did left and right swap places? No — this is not a mirror image.",
+    "c": 2
+  },
+  {
+    "en": "The shape only moved from one place to another without changing direction.",
+    "c": 2
+  },
+  {
+    "en": "The name of this solid:",
+    "c": 2
+  },
+  {
+    "en": "What is the name of this solid?",
+    "c": 2
+  },
+  {
+    "en": "You slide a small book across a table to the left — the book moves to a new place but does not flip over.",
+    "c": 2
+  },
+  {
+    "en": "A triangle with sides 3, 3, and 5 — what type of triangle is it?",
+    "c": 2
+  },
+  {
+    "en": "In a triangle with angles 40°, 65°, and 75° — which angle is the largest?",
+    "c": 2
+  },
+  {
+    "en": "A quadrilateral with angles 90° and sides 3 and 7 — rectangle or square?",
+    "c": 2
+  },
+  {
+    "en": "A square with 4 corners — what is the sum of all its angles?",
+    "c": 2
+  },
+  {
+    "en": "A square with side 4 — how many sides does it have, and what is the length of each one?",
+    "c": 2
+  },
+  {
+    "en": "A rectangle that is not a square — how many lines of symmetry does it have?",
+    "c": 2
+  },
+  {
+    "en": "Which solid — cube or rectangular prism — has rectangular faces that are not squares?",
+    "c": 2
+  },
+  {
+    "en": "Tiling with equilateral triangles — what is the angle of each tile?",
+    "c": 2
+  },
+  {
+    "en": "Right triangle: legs 5 cm and 12 cm — what is the length of the hypotenuse?",
+    "c": 2
+  },
+  {
+    "en": "Which solid — cone or cylinder — has one apex and a circular base?",
+    "c": 2
+  },
+  {
+    "en": "In this chapter:",
+    "c": 2
+  },
+  {
+    "en": "Which symbol is correct — <, >, or =?",
+    "c": 2
+  },
+  {
+    "en": "There is a blank — you need to find the missing number.",
+    "c": 2
+  },
+  {
+    "en": "An odd number — you arrange in pairs, and one is left without a partner.",
+    "c": 2
+  },
+  {
+    "en": "And what comes after?",
+    "c": 2
+  },
+  {
+    "en": "Which number is 3 steps to the right of 2?",
+    "c": 2
+  },
+  {
+    "en": "Noa paid 15 shekels for a book that cost 8 shekels.",
+    "c": 2
+  },
+  {
+    "en": "1. What do we know? — which day is today",
+    "c": 2
+  },
+  {
+    "en": "We'll break each number into tens and ones to make it easier.",
+    "c": 2
+  },
+  {
+    "en": "Always start with the ones!",
+    "c": 2
+  },
+  {
+    "en": "How do you find it?",
+    "c": 2
+  },
+  {
+    "en": "| Page | Section 5 (try it) | Section 6 (mistake) |",
+    "c": 2
+  },
+  {
+    "en": "Amir paid 40 shekels for a game that cost 28 shekels.",
+    "c": 2
+  },
+  {
+    "en": "In 2 days — which day will it be?",
+    "c": 2
+  },
+  {
+    "en": "Add the ones — if you get 10 or more, carry 1 to the tens",
+    "c": 2
+  },
+  {
+    "en": "The open side of the symbol points to the bigger number.",
+    "c": 2
+  },
+  {
+    "en": "Which is bigger — 3/4 or 2/4?",
+    "c": 2
+  },
+  {
+    "en": "| **title_english** | Pairs That Make 10 — Review |",
+    "c": 2
+  },
+  {
+    "en": "You have 6. You want to reach 10.",
+    "c": 2
+  },
+  {
+    "en": "| **title_english** | Pairs That Make 100 |",
+    "c": 2
+  },
+  {
+    "en": "Compare: 7,234 ? 7,243 — which symbol?",
+    "c": 2
+  },
+  {
+    "en": "What is the neighbor before and after the number 3,999?",
+    "c": 2
+  },
+  {
+    "en": "Even with big numbers — the rule is the same.",
+    "c": 2
+  },
+  {
+    "en": "Write it as repeated multiplication — and what's the value?",
+    "c": 2
+  },
+  {
+    "en": "Look at the digit to the right of the place you're rounding to",
+    "c": 2
+  },
+  {
+    "en": "First check which digit decides!",
+    "c": 2
+  },
+  {
+    "en": "Today we'll solve a word problem — when the question asks how many more one person has than another.",
+    "c": 2
+  },
+  {
+    "en": "They split into groups of 9.",
+    "c": 2
+  },
+  {
+    "en": "Multiples help you find common multiples and solve problems about cycles, groups, and time.",
+    "c": 2
+  },
+  {
+    "en": "Price $240, discount 25% — what is the price after the discount?",
+    "c": 2
+  },
+  {
+    "en": "There were $600, they spent $180, then another $95.",
+    "c": 2
+  },
+  {
+    "en": "During the day — the sun shines and warms us.",
+    "c": 2
+  },
+  {
+    "en": "What should we do when we play near the tree?",
+    "c": 2
+  },
+  {
+    "en": "So we know what caused the change",
+    "c": 2
+  },
+  {
+    "en": "And a bottle that looks empty — what is inside?",
+    "c": 2
+  },
+  {
+    "en": "What will happen to its leaves?",
+    "c": 2
+  },
+  {
+    "en": "Algae are eaten by a small fish, and the small fish is eaten by a kingfisher.",
+    "c": 2
+  },
+  {
+    "en": "Research question — what are we testing?",
+    "c": 2
+  },
+  {
+    "en": "Think — a door is the thing we walk through to enter a room.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — more simple words: cat, dog, sun.",
+    "c": 1
+  },
+  {
+    "en": "When we blend their sounds together, we get the word cat.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — we'll connect a picture to a word.",
+    "c": 1
+  },
+  {
+    "en": "Which word means dog?",
+    "c": 1
+  },
+  {
+    "en": "Which word means mom?",
+    "c": 1
+  },
+  {
+    "en": "Which English word means mom?",
+    "c": 1
+  },
+  {
+    "en": "On the next page — short words with three letters.",
+    "c": 1
+  },
+  {
+    "en": "They help us say who we are.",
+    "c": 1
+  },
+  {
+    "en": "You are — starts a sentence about the person we're talking to.",
+    "c": 1
+  },
+  {
+    "en": "Let's meet two lowercase letters: d and t.",
+    "c": 1
+  },
+  {
+    "en": "Today we recognize the shape, and we don't mix up the letters.",
+    "c": 1
+  },
+  {
+    "en": "p has a line that goes down below the line, and a small circle on the right side of the line.",
+    "c": 1
+  },
+  {
+    "en": "This is the letter b.",
+    "c": 1
+  },
+  {
+    "en": "On the next page, we'll match uppercase and lowercase letters — A with a.",
+    "c": 1
+  },
+  {
+    "en": "On the next page, we'll hear the letter names — not just see them.",
+    "c": 1
+  },
+  {
+    "en": "An uppercase letter is a special shape of a letter. In English, uppercase letters are used at the start of sentences and for names. Here, we will first get to know their shape.",
+    "c": 1
+  },
+  {
+    "en": "This is the first step toward reading in English.",
+    "c": 1
+  },
+  {
+    "en": "We will meet them slowly, in small groups.",
+    "c": 1
+  },
+  {
+    "en": "Let's start with the first three letters:",
+    "c": 1
+  },
+  {
+    "en": "On each page, we will recognize the letter's shape and hear its name.",
+    "c": 1
+  },
+  {
+    "en": "Let's meet two uppercase letters: B and M.",
+    "c": 1
+  },
+  {
+    "en": "K has a straight line and two slanted lines that meet in the middle.",
+    "c": 1
+  },
+  {
+    "en": "This is the letter K.",
+    "c": 1
+  },
+  {
+    "en": "S has a curvy shape, like a line that curves both ways.",
+    "c": 1
+  },
+  {
+    "en": "This is the letter S.",
+    "c": 1
+  },
+  {
+    "en": "On the next pages, we'll learn lowercase letters and hear their names.",
+    "c": 1
+  },
+  {
+    "en": "Let's meet the first three letters:",
+    "c": 1
+  },
+  {
+    "en": "That's its sound in the word, and it's different from the letter's name.",
+    "c": 1
+  },
+  {
+    "en": "This is the letter F.",
+    "c": 1
+  },
+  {
+    "en": "This is the letter J.",
+    "c": 1
+  },
+  {
+    "en": "On the next page, we'll learn letter sounds — the sound each one makes.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — more short instructions.",
+    "c": 1
+  },
+  {
+    "en": "Which picture matches \"Point to the door\"?",
+    "c": 1
+  },
+  {
+    "en": "This word means: look.",
+    "c": 1
+  },
+  {
+    "en": "We hear a word — and find the sound that starts it.",
+    "c": 1
+  },
+  {
+    "en": "On the next pages, we'll learn classroom words — with pictures and listening.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll listen to sounds that letters make in words.",
+    "c": 1
+  },
+  {
+    "en": "On the next page, we'll listen for the first sound in a word.",
+    "c": 1
+  },
+  {
+    "en": "Today we will connect a picture to a word in English.",
+    "c": 1
+  },
+  {
+    "en": "Which word matches the picture of a dog?",
+    "c": 1
+  },
+  {
+    "en": "Which word — a picture of a hat?",
+    "c": 1
+  },
+  {
+    "en": "Which word matches the picture of a hat?",
+    "c": 1
+  },
+  {
+    "en": "On the next page — short instructions in English.",
+    "c": 1
+  },
+  {
+    "en": "We walk into the classroom and say:",
+    "c": 1
+  },
+  {
+    "en": "There's an animal that has wings and flies in the sky.",
+    "c": 1
+  },
+  {
+    "en": "An animal that flies in the sky — what is the word in English?",
+    "c": 1
+  },
+  {
+    "en": "Think about the color — blue.",
+    "c": 1
+  },
+  {
+    "en": "What is the English word for this color?",
+    "c": 1
+  },
+  {
+    "en": "Today we have new words about the classroom and friends — in English.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — listening comprehension.",
+    "c": 1
+  },
+  {
+    "en": "Today we hear and read short sentences — 3–5 words.",
+    "c": 1
+  },
+  {
+    "en": "Which picture matches \"It is red\"?",
+    "c": 1
+  },
+  {
+    "en": "Today we read short words and words that appear a lot in English.",
+    "c": 1
+  },
+  {
+    "en": "At this stage, we practice each word separately.",
+    "c": 1
+  },
+  {
+    "en": "On the next page, we'll learn word families like at and an.",
+    "c": 1
+  },
+  {
+    "en": "We already learned I am — now let's add more pronouns.",
+    "c": 1
+  },
+  {
+    "en": "Let's review the order of the letters in groups.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — a review of sounds.",
+    "c": 1
+  },
+  {
+    "en": "Today we review letters in English — uppercase, lowercase, and names.",
+    "c": 1
+  },
+  {
+    "en": "We'll continue from the basics we already know.",
+    "c": 1
+  },
+  {
+    "en": "Let's review pairs of uppercase and lowercase letters.",
+    "c": 1
+  },
+  {
+    "en": "Let's meet two letters: G and R.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — the order of the alphabet.",
+    "c": 1
+  },
+  {
+    "en": "Today we hear a short sentence — and choose the right picture.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — picture, sound, and word together.",
+    "c": 1
+  },
+  {
+    "en": "On the next page, we'll strengthen the connection between sound and letter.",
+    "c": 1
+  },
+  {
+    "en": "Today we review sounds in English.",
+    "c": 1
+  },
+  {
+    "en": "We'll listen to sounds at the start of words, and tell apart words that sound similar.",
+    "c": 1
+  },
+  {
+    "en": "Which sound — den — d or t?",
+    "c": 1
+  },
+  {
+    "en": "On the next page — blending sounds into a word.",
+    "c": 1
+  },
+  {
+    "en": "Today we connect three things: hearing a word, seeing a picture, and seeing the word written.",
+    "c": 1
+  },
+  {
+    "en": "We hear \"pen\" — which picture? Which word?",
+    "c": 1
+  },
+  {
+    "en": "This is how we connect the word to the picture.",
+    "c": 1
+  },
+  {
+    "en": "On the next page — short sentences, just for exposure.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Short Sentences — Grade 2 |",
+    "c": 1
+  },
+  {
+    "en": "We already know I am — let's add another word.",
+    "c": 1
+  },
+  {
+    "en": "Which letter matches the first sound in the word cat?",
+    "c": 1
+  },
+  {
+    "en": "In the word cat, this sound is written with the letter C.",
+    "c": 1
+  },
+  {
+    "en": "Which sound — H?",
+    "c": 1
+  },
+  {
+    "en": "On the next page — reading your first words.",
+    "c": 1
+  },
+  {
+    "en": "Today we practice translating classroom phrases — even in a short sentence.",
+    "c": 1
+  },
+  {
+    "en": "We already know Hello — let's add Thank you.",
+    "c": 1
+  },
+  {
+    "en": "We already know run and jump — let's connect them with I.",
+    "c": 1
+  },
+  {
+    "en": "We already know cat and dog — let's add a short sentence.",
+    "c": 1
+  },
+  {
+    "en": "Today we review colors — and use them in a short sentence.",
+    "c": 1
+  },
+  {
+    "en": "We already learned red and blue — now let's combine them.",
+    "c": 1
+  },
+  {
+    "en": "Today we will connect emotions to the sentence I am.",
+    "c": 1
+  },
+  {
+    "en": "We already learned happy — let's add sad in a sentence.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** This is my mom — short pattern",
+    "c": 1
+  },
+  {
+    "en": "We already know mom and dad — let's build a sentence.",
+    "c": 1
+  },
+  {
+    "en": "How do we say \"this is my dad\"?",
+    "c": 1
+  },
+  {
+    "en": "This is my dad",
+    "c": 1
+  },
+  {
+    "en": "This is my book",
+    "c": 1
+  },
+  {
+    "en": "The question: how do we say \"this is my book\" in English?",
+    "c": 1
+  },
+  {
+    "en": "We say: This is my book.",
+    "c": 1
+  },
+  {
+    "en": "The answer is: This is my book.",
+    "c": 1
+  },
+  {
+    "en": "In practice, you'll find This is my mom and This is my dad.",
+    "c": 1
+  },
+  {
+    "en": "We already know book and pen — let's connect them.",
+    "c": 1
+  },
+  {
+    "en": "Now you build sentences about the classroom.",
+    "c": 1
+  },
+  {
+    "en": "For example: cat, hat, and bat end with the same sound.",
+    "c": 1
+  },
+  {
+    "en": "Also man, can, and fan end with the same sound.",
+    "c": 1
+  },
+  {
+    "en": "Which word sounds like cat at the end, but isn't cat?",
+    "c": 1
+  },
+  {
+    "en": "Which word sounds like man at the end, but isn't man?",
+    "c": 1
+  },
+  {
+    "en": "The question: which word sounds like man at the end, but isn't man?",
+    "c": 1
+  },
+  {
+    "en": "On the next page — new classroom vocabulary.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Questions — Grade 3 Practice |",
+    "c": 1
+  },
+  {
+    "en": "Well done! A Do you question — Do at the start, followed by you + the basic verb, without s.",
+    "c": 1
+  },
+  {
+    "en": "A child brushing their teeth.",
+    "c": 1
+  },
+  {
+    "en": "Well done! breakfast is one word in English, usually without the before it.",
+    "c": 1
+  },
+  {
+    "en": "Today we practice translating hobbies.",
+    "c": 1
+  },
+  {
+    "en": "We already know run and play — let's use them in full sentences.",
+    "c": 1
+  },
+  {
+    "en": "A child holding their head.",
+    "c": 1
+  },
+  {
+    "en": "A child fell and is holding their leg.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: a child fell and is holding their leg.",
+    "c": 1
+  },
+  {
+    "en": "Well done! My + body part + hurts — hurts with s because leg is he/she/it.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn about family members and their actions.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn objects at home and their location.",
+    "c": 1
+  },
+  {
+    "en": "Well done! After We, we use the basic verb without s — draw, not draws.",
+    "c": 1
+  },
+  {
+    "en": "A child jumping into the pool.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: a child jumping into the pool.",
+    "c": 1
+  },
+  {
+    "en": "They play football every Saturday.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They play football every Saturday.\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They play football every Saturday.",
+    "c": 1
+  },
+  {
+    "en": "They are playing football now.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They are playing football now.\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They are playing football now.",
+    "c": 1
+  },
+  {
+    "en": "Now you will describe everyday actions with the body.",
+    "c": 1
+  },
+  {
+    "en": "# Emotions — They feel…",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Emotions — They feel… |",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** They feel excited today",
+    "c": 1
+  },
+  {
+    "en": "They feel excited — they are excited.",
+    "c": 1
+  },
+  {
+    "en": "They feel happy.",
+    "c": 1
+  },
+  {
+    "en": "They feel excited",
+    "c": 1
+  },
+  {
+    "en": "Answer: They feel excited",
+    "c": 1
+  },
+  {
+    "en": "They feel sad.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They feel sad.\"",
+    "c": 1
+  },
+  {
+    "en": "\"Sad\" describes how they feel.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They feel sad.",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: They feel excited.",
+    "c": 1
+  },
+  {
+    "en": "They are playing basketball now.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They are playing basketball now.\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They are playing basketball now.",
+    "c": 1
+  },
+  {
+    "en": "bus — a large vehicle that carries many people",
+    "c": 1
+  },
+  {
+    "en": "This book is more interesting than that one",
+    "c": 1
+  },
+  {
+    "en": "Answer: This book is more interesting than that one",
+    "c": 1
+  },
+  {
+    "en": "This film is more exciting than that one.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"This film is more exciting than that one.\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: This film is more exciting than that one.",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: This book is more interesting than that one.",
+    "c": 1
+  },
+  {
+    "en": "will helps us talk about something that will happen in the future, like a decision or a promise:",
+    "c": 1
+  },
+  {
+    "en": "They are going to fly abroad.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They are going to fly abroad (a plan).\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They are going to fly abroad.",
+    "c": 1
+  },
+  {
+    "en": "we have to + verb (without an extra \"to\").",
+    "c": 1
+  },
+  {
+    "en": "An action that finished in the past uses Past Simple: play becomes played.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | much/many — Grade 5 Review |",
+    "c": 1
+  },
+  {
+    "en": "much + a singular noun that can't be counted:",
+    "c": 1
+  },
+  {
+    "en": "A lesson about the environment.",
+    "c": 1
+  },
+  {
+    "en": "Last week we learned about the environment",
+    "c": 1
+  },
+  {
+    "en": "Answer: Last week we learned about the environment",
+    "c": 1
+  },
+  {
+    "en": "Last year our class made a project about the environment.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"Last year our class made a project about the environment.\"",
+    "c": 1
+  },
+  {
+    "en": "\"Last year\" tells us this is the past, so we use a past-tense verb.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: Last year our class made a project about the environment.",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: Last week we learned about the environment.",
+    "c": 1
+  },
+  {
+    "en": "After that we had dinner.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"After that we had dinner.\"",
+    "c": 1
+  },
+  {
+    "en": "After that connects one step to the next in a past-tense story.",
+    "c": 1
+  },
+  {
+    "en": "\"Have\" becomes \"had\" in the past, because it's an irregular verb.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: After that we had dinner.",
+    "c": 1
+  },
+  {
+    "en": "Today we will practice extended sentences about the community.",
+    "c": 1
+  },
+  {
+    "en": "Today we will practice sentences about the world.",
+    "c": 1
+  },
+  {
+    "en": "\"Children\" is plural — we use learn without s.",
+    "c": 1
+  },
+  {
+    "en": "Now you will practice sentences about the world.",
+    "c": 1
+  },
+  {
+    "en": "They will use the internet in class.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They will use the internet in class.\"",
+    "c": 1
+  },
+  {
+    "en": "\"They will use\" tells us who and what.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They will use the internet in class.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn about animals with Past Simple — an action that already finished.",
+    "c": 1
+  },
+  {
+    "en": "They went to the library last week.",
+    "c": 1
+  },
+  {
+    "en": "They felt tired after the game.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They felt tired after the game.\"",
+    "c": 1
+  },
+  {
+    "en": "\"Feel\" becomes \"felt\" in the past, because it's an irregular verb.",
+    "c": 1
+  },
+  {
+    "en": "\"Tired\" describes how they felt; \"after the game\" tells us when.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They felt tired after the game.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** They planted trees last year",
+    "c": 1
+  },
+  {
+    "en": "They planted trees last year",
+    "c": 1
+  },
+  {
+    "en": "Answer: They planted trees last year",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: They planted trees last year.",
+    "c": 1
+  },
+  {
+    "en": "A letter arrives from far away — from the grandparents.",
+    "c": 1
+  },
+  {
+    "en": "\"Grandparents\" is plural — we use send without s.",
+    "c": 1
+  },
+  {
+    "en": "\"Me\" means to me; \"letters\" is what they send.",
+    "c": 1
+  },
+  {
+    "en": "\"A science project\" tells us what they presented.",
+    "c": 1
+  },
+  {
+    "en": "They played football last week.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** We will travel by train — connects to the future tense",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn about travel with the future — will.",
+    "c": 1
+  },
+  {
+    "en": "They will visit Paris next month.",
+    "c": 1
+  },
+  {
+    "en": "We will travel by train",
+    "c": 1
+  },
+  {
+    "en": "Answer: We will travel by train",
+    "c": 1
+  },
+  {
+    "en": "We will fly abroad in summer.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"We will fly abroad in summer.\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: We will fly abroad in summer.",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: We will travel by train.",
+    "c": 1
+  },
+  {
+    "en": "Choosing a book from the library.",
+    "c": 1
+  },
+  {
+    "en": "This is the most interesting book I have read",
+    "c": 1
+  },
+  {
+    "en": "Answer: This is the most interesting book I have read",
+    "c": 1
+  },
+  {
+    "en": "This is the funniest film I have watched.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"This is the funniest film I have watched.\"",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: This is the funniest film I have watched.",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: This is the most interesting book I have read.",
+    "c": 1
+  },
+  {
+    "en": "Past Continuous — we use was or were with a verb + ing, for an action that was in progress:",
+    "c": 1
+  },
+  {
+    "en": "They were sitting in the garden when it started to rain.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They were sitting in the garden when it started to rain.\"",
+    "c": 1
+  },
+  {
+    "en": "An event that happened in the middle — Past Simple: started.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They were sitting in the garden when it started to rain.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** If it rains, we will stay / If you heat ice, it melts",
+    "c": 1
+  },
+  {
+    "en": "If it rains, we will stay at home",
+    "c": 1
+  },
+  {
+    "en": "Answer: If it rains, we will stay at home",
+    "c": 1
+  },
+  {
+    "en": "In the practice, you'll find: If it rains, we will stay at home.",
+    "c": 1
+  },
+  {
+    "en": "While they were playing outside, it started to rain.",
+    "c": 1
+  },
+  {
+    "en": "An evening at home — everyone busy with their own thing.",
+    "c": 1
+  },
+  {
+    "en": "Today we will practice translation about the world — Type 1 conditionals and longer sentences.",
+    "c": 1
+  },
+  {
+    "en": "Today we will review animal vocabulary with Past Continuous — an action that was happening in the past.",
+    "c": 1
+  },
+  {
+    "en": "\"When we arrived\" uses Past Simple, for an action that happened at one moment.",
+    "c": 1
+  },
+  {
+    "en": "She might feel excited about the trip.",
+    "c": 1
+  },
+  {
+    "en": "They might feel proud after a win.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They might feel proud after a win.\"",
+    "c": 1
+  },
+  {
+    "en": "might + feel means maybe they will feel this way — it's a possibility, not something certain.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They might feel proud after a win.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn words about the environment and climate change.",
+    "c": 1
+  },
+  {
+    "en": "A classroom discussion about the Earth.",
+    "c": 1
+  },
+  {
+    "en": "\"Due to\" means because of.",
+    "c": 1
+  },
+  {
+    "en": "Now you will talk about the environment and climate.",
+    "c": 1
+  },
+  {
+    "en": "global issues — problems that affect the whole world; work together — cooperate:",
+    "c": 1
+  },
+  {
+    "en": "\"Organizations\" is plural — we use help without s.",
+    "c": 1
+  },
+  {
+    "en": "A school without Wi-Fi.",
+    "c": 1
+  },
+  {
+    "en": "have visited — describes something up to now, without saying exactly when:",
+    "c": 1
+  },
+  {
+    "en": "They have already visited five countries this year.",
+    "c": 1
+  },
+  {
+    "en": "Exercise: \"They have already visited five countries this year.\"",
+    "c": 1
+  },
+  {
+    "en": "\"Already\" means before now; \"this year\" means up to now.",
+    "c": 1
+  },
+  {
+    "en": "So the full sentence is: They have already visited five countries this year.",
+    "c": 1
+  },
+  {
+    "en": "That is a rectangle (not a square, because the length and width are different).",
+    "c": 1
+  },
+  {
+    "en": "A shape has a different length and width, 4 right corners, and equal opposite sides. What is it called?",
+    "c": 1
+  },
+  {
+    "en": "The long side (the width of the board) is different from the short side (the height of the board), and all 4 corners are right angles.",
+    "c": 1
+  },
+  {
+    "en": "Chalkboard in the classroom: the long side is different from the short side, and all 4 corners are right angles.",
+    "c": 1
+  },
+  {
+    "en": "Does it have 4 right corners? Yes — like a rectangle.",
+    "c": 1
+  },
+  {
+    "en": "Is the long side different from the short side? Yes — it has a different length and width.",
+    "c": 1
+  },
+  {
+    "en": "A square has 4 sides — they are all the same length.",
+    "c": 1
+  },
+  {
+    "en": "Is this a square? — check:",
+    "c": 1
+  },
+  {
+    "en": "There is a shape with 4 equal sides and 4 right angles. What is it called?",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Translation (moving without flipping); reflection (mirror image); no rotation in grade 1",
+    "c": 1
+  },
+  {
+    "en": "Translation — we move the shape from one place to another.",
+    "c": 1
+  },
+  {
+    "en": "Reflection — we make a mirror image of it, like in a mirror.",
+    "c": 1
+  },
+  {
+    "en": "We move a shape without flipping it over.",
+    "c": 1
+  },
+  {
+    "en": "Example: slide a book across the table to the right — the book stays the same book, just in a different place.",
+    "c": 1
+  },
+  {
+    "en": "We get a shape that looks like it does in a mirror — left and right swap places.",
+    "c": 1
+  },
+  {
+    "en": "Example: a butterfly drawing — if you fold the paper down the middle, the other side looks like a mirror image.",
+    "c": 1
+  },
+  {
+    "en": "You slide a triangle sticker across the page to the right without flipping it over. What kind of move is this?",
+    "c": 1
+  },
+  {
+    "en": "The shape moved to a new place — but it did not flip over.",
+    "c": 1
+  },
+  {
+    "en": "This is not a mirror image — it is a translation.",
+    "c": 1
+  },
+  {
+    "en": "Did the car flip over? No — it stays the same car, just as it was.",
+    "c": 1
+  },
+  {
+    "en": "Did the shape move to a new place, or does it look like a mirror image?",
+    "c": 1
+  },
+  {
+    "en": "- G1 pages for `shapes_basic_square` / `shapes_basic_rectangle` are not repeated — those skills end at Grade 1 in the spine.",
+    "c": 1
+  },
+  {
+    "en": "We will learn their names:",
+    "c": 1
+  },
+  {
+    "en": "A three-dimensional solid is a shape that is not flat on the page — you can hold it in your hand.",
+    "c": 1
+  },
+  {
+    "en": "Here we focus on the name and description — not on calculating volume.",
+    "c": 1
+  },
+  {
+    "en": "Pick a name for this solid:",
+    "c": 1
+  },
+  {
+    "en": "In practice you will read a description of a solid — look for how many faces it has and what shape each face is!",
+    "c": 1
+  },
+  {
+    "en": "Unit grid: small squares that are 1×1 in size.",
+    "c": 1
+  },
+  {
+    "en": "First way — covering: fill the big square with small squares and count how many fit inside.",
+    "c": 1
+  },
+  {
+    "en": "Did the shape only move to a new place, or did it flip like in a mirror?",
+    "c": 1
+  },
+  {
+    "en": "Example: move a pencil on a notebook to the left — the pencil stays a pencil, it does not flip over.",
+    "c": 1
+  },
+  {
+    "en": "Example: a sticker on a window — you see it in a mirror from outside.",
+    "c": 1
+  },
+  {
+    "en": "Does the direction of the letters or the arrow stay the same?",
+    "c": 1
+  },
+  {
+    "en": "If they flip over — it is a reflection.",
+    "c": 1
+  },
+  {
+    "en": "- Move the page — the arrow still points the same way → translation",
+    "c": 1
+  },
+  {
+    "en": "We stick a heart sticker on glass and see it from outside in a mirror. What kind of move is this?",
+    "c": 1
+  },
+  {
+    "en": "This is not a translation — it is a reflection.",
+    "c": 1
+  },
+  {
+    "en": "Did the book flip over? No — it stays the same book facing the same way.",
+    "c": 1
+  },
+  {
+    "en": "Did the shape only move to a new place, or does it look like a mirror image?",
+    "c": 1
+  },
+  {
+    "en": "Parallel — two lines going the same direction that never meet.",
+    "c": 1
+  },
+  {
+    "en": "Perpendicular — two lines that meet at a right angle — 90°.",
+    "c": 1
+  },
+  {
+    "en": "- They do not meet",
+    "c": 1
+  },
+  {
+    "en": "Same direction, they do not meet.",
+    "c": 1
+  },
+  {
+    "en": "Two walls in the corner of a room — they meet at a right angle. Parallel or perpendicular?",
+    "c": 1
+  },
+  {
+    "en": "Two walls in the corner of a room — they meet at a right angle.",
+    "c": 1
+  },
+  {
+    "en": "Check — do the lines meet? Yes, the walls meet at the corner.",
+    "c": 1
+  },
+  {
+    "en": "They meet at a right angle (90°) → perpendicular.",
+    "c": 1
+  },
+  {
+    "en": "Do they meet? → perpendicular.",
+    "c": 1
+  },
+  {
+    "en": "Do they not meet? → parallel!",
+    "c": 1
+  },
+  {
+    "en": "Here we focus on the name and identification — not on calculations.",
+    "c": 1
+  },
+  {
+    "en": "A floor tile — 4 equal sides and 4 right angles. What is it called?",
+    "c": 1
+  },
+  {
+    "en": "In practice you will read a description — choose:",
+    "c": 1
+  },
+  {
+    "en": "We turn a shape around a point — the shape stays the same size, only the direction changes.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find questions about rotation — check if it is a quarter (90°) or another part of the path!",
+    "c": 1
+  },
+  {
+    "en": "How many vertices and how many edges does a cube have?",
+    "c": 1
+  },
+  {
+    "en": "You have a dice in front of you.",
+    "c": 1
+  },
+  {
+    "en": "How many edges does it have?",
+    "c": 1
+  },
+  {
+    "en": "A dice — how many edges does it have?",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find questions about a cube — check if they ask about faces, vertices, or edges!",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Area of a Square — Grade 3 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Today in geometry we will strengthen the area of a square — with a grid and bigger numbers.",
+    "c": 1
+  },
+  {
+    "en": "In practice count square units or multiply side by side!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find a square — add all the sides around it!",
+    "c": 1
+  },
+  {
+    "en": "Today in geometry we will learn to sort triangles by the length of their sides.",
+    "c": 1
+  },
+  {
+    "en": "Two sides are the same length, and the third is different.",
+    "c": 1
+  },
+  {
+    "en": "To identify the type — check how many sides are equal, not the size of the angles.",
+    "c": 1
+  },
+  {
+    "en": "A triangle has three sides of length 5, 5, and 5. What type is it?",
+    "c": 1
+  },
+  {
+    "en": "In practice you will see a triangle and check how many sides are equal — that tells you if it is equilateral, isosceles, or scalene.",
+    "c": 1
+  },
+  {
+    "en": "which angle is bigger and which is smaller.",
+    "c": 1
+  },
+  {
+    "en": "50° < 60° < 70° — the bigger the number, the wider the angle.",
+    "c": 1
+  },
+  {
+    "en": "A triangle has angles 50°, 60°, and 70°. Which angle is the largest?",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find degrees — check which angle is large, small, or in the middle!",
+    "c": 1
+  },
+  {
+    "en": "We will start with small sides: 3, 4, and 5 cm.",
+    "c": 1
+  },
+  {
+    "en": "We will see that in a 3 by 4 rectangle — the diagonal from corner to corner is 5.",
+    "c": 1
+  },
+  {
+    "en": "Here we learn this relationship — without requiring the square root formula.",
+    "c": 1
+  },
+  {
+    "en": "Diagonal = a straight line from one corner to the opposite corner — and it is longer than a side of the square.",
+    "c": 1
+  },
+  {
+    "en": "The diagonal is longer than any side — but shorter than the sum of two sides.",
+    "c": 1
+  },
+  {
+    "en": "The diagonal is a slanted line from corner to corner — it crosses the square diagonally, so it is longer than the side.",
+    "c": 1
+  },
+  {
+    "en": "Parallel = they do not meet, same direction.",
+    "c": 1
+  },
+  {
+    "en": "Perpendicular = they meet at 90°.",
+    "c": 1
+  },
+  {
+    "en": "They meet at a corner — not parallel.",
+    "c": 1
+  },
+  {
+    "en": "Top side and bottom side — opposite, they do not meet, same direction:",
+    "c": 1
+  },
+  {
+    "en": "We will understand: square ⊂ rectangle — a square is a special rectangle.",
+    "c": 1
+  },
+  {
+    "en": "The sides are not equal (3 ≠ 7) — so it is not a square.",
+    "c": 1
+  },
+  {
+    "en": "In practice check: 90°?",
+    "c": 1
+  },
+  {
+    "en": "Content approved — runtime wired. No SQL, commit, push, or deploy without owner request.",
+    "c": 1
+  },
+  {
+    "en": "We will learn that a square has 4 right angles — each one is 90°.",
+    "c": 1
+  },
+  {
+    "en": "How many right angles does a square have, and what is the size of each one?",
+    "c": 1
+  },
+  {
+    "en": "We will learn that a rectangle has 2 pairs of equal sides — not necessarily all four sides equal.",
+    "c": 1
+  },
+  {
+    "en": "Both sides in each pair are equal — but the long sides can be different from the short sides.",
+    "c": 1
+  },
+  {
+    "en": "In a rectangle one side is 6 and an adjacent side is 4. What is the length of the other sides?",
+    "c": 1
+  },
+  {
+    "en": "We will learn that a square has 4 sides — and they are all the same length.",
+    "c": 1
+  },
+  {
+    "en": "If you measure one side — all the other sides have the same number.",
+    "c": 1
+  },
+  {
+    "en": "That is what makes a square different from a regular rectangle — in a rectangle not all sides are necessarily equal.",
+    "c": 1
+  },
+  {
+    "en": "A square has a side of length 7. What is the length of the other sides?",
+    "c": 1
+  },
+  {
+    "en": "If one is 7 — the other three are also 7.",
+    "c": 1
+  },
+  {
+    "en": "The given side is 4, so the other three sides are also 4.",
+    "c": 1
+  },
+  {
+    "en": "We will see that a rectangular prism has 6 faces — and each face is a rectangle (or a square).",
+    "c": 1
+  },
+  {
+    "en": "Here we identify the faces — before calculating volume.",
+    "c": 1
+  },
+  {
+    "en": "How many faces does a rectangular prism have, and what shape is each face?",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Area of a Square — Grade 4 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Perimeter of a Square — Grade 4 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Why 4? A square has 4 equal sides — each one is the length of the side.",
+    "c": 1
+  },
+  {
+    "en": "We will understand what a line of symmetry is — and see that a square has 4 lines of symmetry.",
+    "c": 1
+  },
+  {
+    "en": "A line that divides a shape into two equal parts — like a mirror.",
+    "c": 1
+  },
+  {
+    "en": "If you fold the paper on the line — the two halves match exactly.",
+    "c": 1
+  },
+  {
+    "en": "- Two pass through the midpoints of the sides (horizontal and vertical)",
+    "c": 1
+  },
+  {
+    "en": "- Two pass through the corners (diagonals)",
+    "c": 1
+  },
+  {
+    "en": "- Horizontal fold through the middle — top half = bottom half",
+    "c": 1
+  },
+  {
+    "en": "Check folding through the middle of a side — it works.",
+    "c": 1
+  },
+  {
+    "en": "Check folding corner to corner — that works too. There are 4 of these.",
+    "c": 1
+  },
+  {
+    "en": "Check folding through the midpoints of the sides — horizontal and vertical. Two folds work.",
+    "c": 1
+  },
+  {
+    "en": "Check folding on a diagonal — in a rectangle that is not a square the sides are not equal, so the diagonal fold does not make two matching halves.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Angles in a Triangle — Grade 4 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "First add the two known angles, then subtract from 180°.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Perimeter of a Triangle — Grade 4 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Perimeter = adding all three sides — even when they are different.",
+    "c": 1
+  },
+  {
+    "en": "In practice add three sides — check that none is missing!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** diagonal in a parallelogram — concepts; not the √(a²+b²) formula for every parallelogram",
+    "c": 1
+  },
+  {
+    "en": "A diagonal — a segment that connects two opposite vertices.",
+    "c": 1
+  },
+  {
+    "en": "You can't find the diagonal length from just two adjacent sides — you need more information:",
+    "c": 1
+  },
+  {
+    "en": "In a parallelogram, one diagonal creates two triangles — the same area in each (half of the quadrilateral).",
+    "c": 1
+  },
+  {
+    "en": "If you only know 5 cm and 12 cm as adjacent sides — that's not enough to calculate the diagonal.",
+    "c": 1
+  },
+  {
+    "en": "Without a right angle — you can't use the rectangle formula.",
+    "c": 1
+  },
+  {
+    "en": "Diagonal of a parallelogram — first understand what it does.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll recognize when there's enough information — and when not to use the rectangle formula!",
+    "c": 1
+  },
+  {
+    "en": "The diagonal is the hypotenuse in a right triangle — with length and width as the legs.",
+    "c": 1
+  },
+  {
+    "en": "(Connected to the idea of the Pythagorean theorem — we'll go deeper later)",
+    "c": 1
+  },
+  {
+    "en": "A diagonal — a segment that connects two vertices that are not on the same side.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to find the height of a triangle when we know the area and base.",
+    "c": 1
+  },
+  {
+    "en": "The height — the perpendicular distance from the vertex to the base.",
+    "c": 1
+  },
+  {
+    "en": "From the formula:",
+    "c": 1
+  },
+  {
+    "en": "The height — the perpendicular distance to the base (not the slanted side!).",
+    "c": 1
+  },
+  {
+    "en": "- height — the perpendicular segment from the base to the parallel side (5 cm)",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn about parallel and perpendicular lines — with the notation: AB ∥ CD.",
+    "c": 1
+  },
+  {
+    "en": "In a trapezoid, the bases AB and CD are parallel.",
+    "c": 1
+  },
+  {
+    "en": "Parallel lines — they never meet (in the same plane).",
+    "c": 1
+  },
+  {
+    "en": "In trapezoid ABCD: AB and CD — the bases — are parallel.",
+    "c": 1
+  },
+  {
+    "en": "AB and BC are adjacent sides in a rectangle — they meet at a 90° angle.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Classifying Quadrilaterals — Grade 5 |",
+    "c": 1
+  },
+  {
+    "en": "Here — inclusion relationships: which shape \"fits inside\" which?",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn the volume of a rectangular prism — through layers and dimensions.",
+    "c": 1
+  },
+  {
+    "en": "Which solid has all faces as equal squares?",
+    "c": 1
+  },
+  {
+    "en": "In a rectangular prism — the faces are rectangles, and usually length ≠ width ≠ height, so the faces are not squares.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find cubes and rectangular prisms — check the shape of the faces!",
+    "c": 1
+  },
+  {
+    "en": "Today we'll understand why the perimeter of a square = 4 × side — and calculate with 9 cm.",
+    "c": 1
+  },
+  {
+    "en": "Reasoning: walk once around the square — you pass 4 sides, each 9 cm long.",
+    "c": 1
+  },
+  {
+    "en": "Perimeter = the path around the shape.",
+    "c": 1
+  },
+  {
+    "en": "Perimeter = 4 × side — because 4 equal sides go around the square.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn about tiling a plane — covering the surface with tiles with no gaps and no overlaps.",
+    "c": 1
+  },
+  {
+    "en": "Around every point where tiles meet — the sum of the angles = 360°.",
+    "c": 1
+  },
+  {
+    "en": "Tiling with squares — what is the base angle of each tile?",
+    "c": 1
+  },
+  {
+    "en": "Today we'll explore why the sum of angles in a triangle is 180° — and use that to find a missing angle.",
+    "c": 1
+  },
+  {
+    "en": "Idea: if you \"cut out\" all three angles and place them together — they form a straight line (180°).",
+    "c": 1
+  },
+  {
+    "en": "Why? The three angles together \"fill\" the opening of a straight line — so the sum is always 180°.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find a missing angle — add, subtract from 180°, and check that the sum is 180°!",
+    "c": 1
+  },
+  {
+    "en": "The height — the perpendicular distance to the base (we learned this in the heights chapter).",
+    "c": 1
+  },
+  {
+    "en": "- height — the perpendicular segment from the base to the vertex (6 cm)",
+    "c": 1
+  },
+  {
+    "en": "Connection to rectangle area: the triangle's area is half the area of a rectangle with the same base and height.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn the perimeter of a triangle — the path around all three sides.",
+    "c": 1
+  },
+  {
+    "en": "Perimeter = the length of the entire path around the triangle.",
+    "c": 1
+  },
+  {
+    "en": "The radius — the distance from the center of the circle to any point on the circle.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Area of a Parallelogram — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Today we will go deeper into area of a parallelogram — and compare it to a rectangle.",
+    "c": 1
+  },
+  {
+    "en": "A parallelogram is \"slanted\" — but area = base × height — just like a rectangle with the same base and height!",
+    "c": 1
+  },
+  {
+    "en": "- Slanted parallelogram with the same base 10 and height 6 → also 60!",
+    "c": 1
+  },
+  {
+    "en": "\"Cutting\" triangles from the sides — does not change the area.",
+    "c": 1
+  },
+  {
+    "en": "Area of a parallelogram = area of an imaginary rectangle with the same base and height.",
+    "c": 1
+  },
+  {
+    "en": "First calculate the area of the base — then \"stretch\" it by the height.",
+    "c": 1
+  },
+  {
+    "en": "c — the hypotenuse (the longest side, opposite the right angle).",
+    "c": 1
+  },
+  {
+    "en": "Right triangle — legs 3 cm and 4 cm. What is the length of the hypotenuse?",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find the hypotenuse — square each leg and then add!",
+    "c": 1
+  },
+  {
+    "en": "Right triangle — hypotenuse 13 cm, leg 12 cm. What is the length of the other leg?",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Volume of a Rectangular Prism — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "(Different from \"prism\": here it's a box — all faces are rectangles, without separating a \"base area\" step.)",
+    "c": 1
+  },
+  {
+    "en": "Besides cube and rectangular prism — we'll meet cylinder, pyramid, cone, and sphere.",
+    "c": 1
+  },
+  {
+    "en": "Sphere — all points the same distance from the center.",
+    "c": 1
+  },
+  {
+    "en": "Which solid has two circular bases?",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find cylinder, pyramid, cone, and sphere — check the shape of the base!",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Area of a Square — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Perimeter of a Square — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Today we will strengthen perimeter of a square — and clearly tell it apart from area.",
+    "c": 1
+  },
+  {
+    "en": "Perimeter — the length around the border — 4 × side — unit: cm, m.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll be asked:",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Area of a Trapezoid — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Here we work with larger measurements and break it into clear steps.",
+    "c": 1
+  },
+  {
+    "en": "3. ÷ 2 — half of the \"imaginary\" rectangle that wraps the trapezoid",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find trapezoids with bases and height — add, multiply, and divide by 2!",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Angles in a Triangle — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Today we will find a missing angle in a triangle step by step — with an equation and x for the unknown angle.",
+    "c": 1
+  },
+  {
+    "en": "Here we find a missing angle with an equation and a check.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find x +… = 180° — add the known angles, solve for x, and check!",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Perimeter of a Triangle — Grade 6 `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Adding in the Teens — Numbers from 11 to 19 |",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Adding whole tens only. **In Grade 1 we use tens 10, 20, and 30.** Sum up to 30. No ones, no vertical addition.",
+    "c": 1
+  },
+  {
+    "en": "Here we'll use tens 10, 20, and 30 — with no single ones.",
+    "c": 1
+  },
+  {
+    "en": "On this page we only use 10, 20, and 30.",
+    "c": 1
+  },
+  {
+    "en": "Rule: add whole tens only. In this example the answer does not go past 30.",
+    "c": 1
+  },
+  {
+    "en": "Four and three more — together that's seven.",
+    "c": 1
+  },
+  {
+    "en": "We'll say which is bigger, which is smaller, or if they are equal.",
+    "c": 1
+  },
+  {
+    "en": "When we compare numbers — we look at the number line.",
+    "c": 1
+  },
+  {
+    "en": "In the examples we'll see how to write them correctly.",
+    "c": 1
+  },
+  {
+    "en": "Tip: Imagine a hungry alligator — the open side of the symbol always points to the bigger number!",
+    "c": 1
+  },
+  {
+    "en": "Compare 22 and 17. Which symbol is correct? 22 __ 17",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions: which is bigger?",
+    "c": 1
+  },
+  {
+    "en": "The question is: \"How much do you need to add to get to 7?\"",
+    "c": 1
+  },
+  {
+    "en": "We have 6. We want to get to 10.",
+    "c": 1
+  },
+  {
+    "en": "The missing number is 4 — because 6 + 4 = 10.",
+    "c": 1
+  },
+  {
+    "en": "We have 2. We want to get to 8.",
+    "c": 1
+  },
+  {
+    "en": "The missing number is 6 — because 2 + 6 = 8.",
+    "c": 1
+  },
+  {
+    "en": "The question is: \"How many were taken?\" — how many steps from 8 down to 3?",
+    "c": 1
+  },
+  {
+    "en": "The question is: \"How many were there at the start?\" — put back what was taken.",
+    "c": 1
+  },
+  {
+    "en": "6 left, and 2 taken. If you put the 2 back, you get 8.",
+    "c": 1
+  },
+  {
+    "en": "The missing number is 3 — because 10 − 3 = 7.",
+    "c": 1
+  },
+  {
+    "en": "how many were taken, or how many there were at the start.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Multiplication as **repeated addition** / **equal groups** only. **In Grade 1 we use small multiplication: groups up to 5, and answers up to 20** (for example 5×4, 4×3). No full times table, no division.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn multiplication — and here we learn it in a simple way:",
+    "c": 1
+  },
+  {
+    "en": "Now you know that multiplication is repeated addition and equal groups.",
+    "c": 1
+  },
+  {
+    "en": "# Pairs That Make 10",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Pairs That Make 10 |",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Pairs that add up to 10 only (0–10). No pairs of 100, no algebra.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn about pairs that make 10 — two numbers that together give 10.",
+    "c": 1
+  },
+  {
+    "en": "When you know these pairs, adding and subtracting get easier!",
+    "c": 1
+  },
+  {
+    "en": "There are special pairs that always add up to 10:",
+    "c": 1
+  },
+  {
+    "en": "How many more do I need to have 10? 4 — because 6 + 4 = 10.",
+    "c": 1
+  },
+  {
+    "en": "The partner of 8 is 2 — because 8 + 2 = 10",
+    "c": 1
+  },
+  {
+    "en": "The partner of 4 is 6 — because 4 + 6 = 10.",
+    "c": 1
+  },
+  {
+    "en": "Now you know pairs that make 10.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions: how many more to make 10? Use the ten-frame!",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Counting Backward on the Number Line |",
+    "c": 1
+  },
+  {
+    "en": "For example: 8, 7, 6, 5 — each number is one less than the one before it.",
+    "c": 1
+  },
+  {
+    "en": "Important: In this chapter, when you reach 0 — you stop and don't go below 0.",
+    "c": 1
+  },
+  {
+    "en": "If you write the whole sequence from the start: 7, 6, 5, 4.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions where you need to fill in a missing number in a decreasing sequence.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Counting Forward on the Number Line |",
+    "c": 1
+  },
+  {
+    "en": "When we count forward, we say one number after another, and each time the number gets 1 bigger.",
+    "c": 1
+  },
+  {
+    "en": "For example: 3, 4, 5, 6 — each number is one more than the one before it.",
+    "c": 1
+  },
+  {
+    "en": "If you write the whole sequence from the start: 5, 6, 7, 8.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions where you need to continue a number sequence.",
+    "c": 1
+  },
+  {
+    "en": "There are 4 pairs, and one star is left without a partner.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Numbers 1–20 (up to 30 in harder cases). One neighbor before and one neighbor after only.",
+    "c": 1
+  },
+  {
+    "en": "Every number has a number that comes before it and a number that comes after it — like neighbors who live right next door.",
+    "c": 1
+  },
+  {
+    "en": "Neighbor before = the number that comes right before (one step left on the number line).",
+    "c": 1
+  },
+  {
+    "en": "Neighbor after = the number that comes right after (one step right on the number line).",
+    "c": 1
+  },
+  {
+    "en": "7 stars, 8 stars, 9 stars — 8 is in the middle, 7 before it, 9 after it.",
+    "c": 1
+  },
+  {
+    "en": "The neighbors of 8 are 7 and 9.",
+    "c": 1
+  },
+  {
+    "en": "The neighbors of 12 are 11 and 13.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | The Number Line |",
+    "c": 1
+  },
+  {
+    "en": "It's a tool that helps us see all the numbers in order — from small to big.",
+    "c": 1
+  },
+  {
+    "en": "The numbers go from left to right: 0 on the left side, then 1, 2, 3...",
+    "c": 1
+  },
+  {
+    "en": "Important rule: The farther right a number is — the bigger it is.",
+    "c": 1
+  },
+  {
+    "en": "- A small arrow pointing right with the label \"bigger\"",
+    "c": 1
+  },
+  {
+    "en": "Which number is 2 steps to the right of 4?",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions about where numbers are and about jumps.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn that every two-digit number is made of tens and ones.",
+    "c": 1
+  },
+  {
+    "en": "Single cubes = cubes that didn't join a group of 10.",
+    "c": 1
+  },
+  {
+    "en": "**Grade 1 Math Learning Book:** All **19** skill pages now exist as drafts in this folder.",
+    "c": 1
+  },
+  {
+    "en": "The following were decided for continued **draft** use (not final owner-approved product copy):",
+    "c": 1
+  },
+  {
+    "en": "1. **Create the Grade 1 decisions/signoff document** — consolidate all owner draft decisions (Batches A–D), open questions, and sign-off checklist for `draft` → `review`.",
+    "c": 1
+  },
+  {
+    "en": "Mark 4 objects as ones that were taken.",
+    "c": 1
+  },
+  {
+    "en": "Mark what was taken or hop to the left on the number line!",
+    "c": 1
+  },
+  {
+    "en": "Each coin has a value — the value tells how many shekels the coin is worth.",
+    "c": 1
+  },
+  {
+    "en": "1. What do we know? — which coins there are and what each is worth",
+    "c": 1
+  },
+  {
+    "en": "Noa has 2 coins of 5 shekels and 3 coins of 1 shekel. How much money does she have altogether?",
+    "c": 1
+  },
+  {
+    "en": "Read what you know, what you're asked, and add the values!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Word problems about spending / what's left / change — subtraction only. Amounts up to 30. No buying multiple items, no multiplication, no division.",
+    "c": 1
+  },
+  {
+    "en": "When you buy something — you take away from the money you had.",
+    "c": 1
+  },
+  {
+    "en": "Sometimes we call this change too.",
+    "c": 1
+  },
+  {
+    "en": "In these problems there are three parts:",
+    "c": 1
+  },
+  {
+    "en": "1. What do we know? — how much there was, how much was spent (or how much it cost)",
+    "c": 1
+  },
+  {
+    "en": "Yaël had 15 shekels. She bought a pen for 6 shekels. How much money does she have left?",
+    "c": 1
+  },
+  {
+    "en": "Check how much there was, how much was paid or spent, then subtract.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Questions about days of the week — yesterday/today/tomorrow, and in one or two days. No clock, no months or years, no multi-step questions.",
+    "c": 1
+  },
+  {
+    "en": "You know the order of the days — then you can answer: what day is tomorrow? Or which day will it be in two days?",
+    "c": 1
+  },
+  {
+    "en": "2. What are we asked? — which day is tomorrow, yesterday, or in how many days",
+    "c": 1
+  },
+  {
+    "en": "Today is Tuesday:",
+    "c": 1
+  },
+  {
+    "en": "Today is Monday. Which day will it be in 2 days?",
+    "c": 1
+  },
+  {
+    "en": "Which day in 2 days — count 2 steps forward.",
+    "c": 1
+  },
+  {
+    "en": "Today is Thursday. Tomorrow — which day?",
+    "c": 1
+  },
+  {
+    "en": "Today is Thursday.",
+    "c": 1
+  },
+  {
+    "en": "Tomorrow — which day?",
+    "c": 1
+  },
+  {
+    "en": "Which day is tomorrow — count one step forward.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Counting days forward/backward in the week — how many days between days, how many days before/after. Range of one week. No clock, no months or years, no multi-step questions.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn to answer: how many days pass from one day to another — or how many days before / after a certain day.",
+    "c": 1
+  },
+  {
+    "en": "1. What do we know? — which day we start from",
+    "c": 1
+  },
+  {
+    "en": "2. What are we asked? — how many days (or which day, if they ask \"when\")",
+    "c": 1
+  },
+  {
+    "en": "2 days before Friday — which day?",
+    "c": 1
+  },
+  {
+    "en": "If today is Sunday, how many days will pass until Wednesday?",
+    "c": 1
+  },
+  {
+    "en": "Today is Friday. 2 days ago — which day was it?",
+    "c": 1
+  },
+  {
+    "en": "Today is Friday.",
+    "c": 1
+  },
+  {
+    "en": "2 days ago — which day was it?",
+    "c": 1
+  },
+  {
+    "en": "Which day was it 2 days ago — count 2 steps backward.",
+    "c": 1
+  },
+  {
+    "en": "Important: on this page we add in a row. Vertical addition is learned on a separate page.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn vertical addition — write numbers one under the other and add column by column.",
+    "c": 1
+  },
+  {
+    "en": "This makes it easy to add even when you carry from ones to tens.",
+    "c": 1
+  },
+  {
+    "en": "2. If ones add up to 10 or more, write the ones digit and carry 1 to the tens column.",
+    "c": 1
+  },
+  {
+    "en": "Write 47 and 28 — ones under ones, tens under tens.",
+    "c": 1
+  },
+  {
+    "en": "We'll say which is greater, which is smaller, or if they are equal.",
+    "c": 1
+  },
+  {
+    "en": "When comparing numbers with several digits — check hundreds first, then tens, then ones.",
+    "c": 1
+  },
+  {
+    "en": "Quick tip: when writing, the open side of > or < points toward the bigger number.",
+    "c": 1
+  },
+  {
+    "en": "Compare 735 and 708. Which symbol is correct? 735 __ 708",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions: which is greater?",
+    "c": 1
+  },
+  {
+    "en": "Always start with the hundreds!",
+    "c": 1
+  },
+  {
+    "en": "Division = split the whole amount into equal groups (or give each person the same share).",
+    "c": 1
+  },
+  {
+    "en": "Now you know that division = fair sharing, and it's connected to multiplication.",
+    "c": 1
+  },
+  {
+    "en": "# When Does a Number Divide by 2, 5, and 10?",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | When Does a Number Divide by 2, 5, and 10?",
+    "c": 1
+  },
+  {
+    "en": "This helps you know if you can divide with no remainder — into equal groups.",
+    "c": 1
+  },
+  {
+    "en": "Important: here we only learn 2, 5, and 10 — not 3, 6, or 9.",
+    "c": 1
+  },
+  {
+    "en": "Now you know that half = one part out of two equal parts.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Finding the Whole When You Know the Half |",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn to find the whole when we know the half.",
+    "c": 1
+  },
+  {
+    "en": "If half of the whole is a certain number — the whole is twice that number.",
+    "c": 1
+  },
+  {
+    "en": "If the half is 6, the whole is 12 — because 6 + 6 = 12.",
+    "c": 1
+  },
+  {
+    "en": "Important: this works only when the half is really a half — an equal part of two.",
+    "c": 1
+  },
+  {
+    "en": "The other half is also 6.",
+    "c": 1
+  },
+  {
+    "en": "The other half is also 5.",
+    "c": 1
+  },
+  {
+    "en": "Pizza cut into 4 equal slices — each slice = a quarter of the pizza.",
+    "c": 1
+  },
+  {
+    "en": "Now you know that a quarter = one part out of four equal parts.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Finding the Whole When You Know the Quarter |",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn to find the whole when we know the quarter.",
+    "c": 1
+  },
+  {
+    "en": "A quarter = one part out of four equal parts — when we know one quarter, the whole is four equal quarters.",
+    "c": 1
+  },
+  {
+    "en": "If a quarter of the whole is a certain number — the whole = 4 times that number.",
+    "c": 1
+  },
+  {
+    "en": "A quarter of the whole is 4 → the whole is 16 — because 4 + 4 + 4 + 4 = 16.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find: the quarter is … — what is the whole? Add 4 times or 4 × the quarter!",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn multiplication — here it's both equal groups and the times table.",
+    "c": 1
+  },
+  {
+    "en": "Multiplication helps you count fast when there are several same-size groups.",
+    "c": 1
+  },
+  {
+    "en": "(On the next division page — we'll see that division is related to multiplication.)",
+    "c": 1
+  },
+  {
+    "en": "Now you know that multiplication = equal groups, and also a row in the times table.",
+    "c": 1
+  },
+  {
+    "en": "# Pairs That Make 10 — Addition Helper",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Pairs That Make 10 — Addition Helper |",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Pairs that add up to 10. Easier mental addition. No vertical carrying algorithm.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to review pairs that make 10 — two numbers that together give 10.",
+    "c": 1
+  },
+  {
+    "en": "How does this help with addition?",
+    "c": 1
+  },
+  {
+    "en": "The partner of 7 is 3 — because 7 + 3 = 10.",
+    "c": 1
+  },
+  {
+    "en": "The partner of 6 is 4 — because 6 + 4 = 10.",
+    "c": 1
+  },
+  {
+    "en": "Now you remember pairs that make 10 — and you know how to use them in mental addition.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** One neighbor before and one neighbor after. Numbers up to 1,000. Crossing tens and hundreds — at a gentle pace.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn to find neighbors even when we cross ten — for example, from 199 to 200.",
+    "c": 1
+  },
+  {
+    "en": "The neighbors of 199 are 198 and 200",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn that big numbers are built from hundreds, tens, and ones.",
+    "c": 1
+  },
+  {
+    "en": "Here we'll work a lot with numbers like 124, 236, and 405, and also numbers up to 1,000.",
+    "c": 1
+  },
+  {
+    "en": "What do you see?",
+    "c": 1
+  },
+  {
+    "en": "Always start from the left digit!",
+    "c": 1
+  },
+  {
+    "en": "- No SQL, commit, push, or deploy in this workstream.",
+    "c": 1
+  },
+  {
+    "en": "Important: on this page we subtract in a row. Vertical subtraction is learned on a separate page.",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn vertical subtraction — write numbers one under the other and subtract column by column.",
+    "c": 1
+  },
+  {
+    "en": "Sometimes you need to trade one ten for 10 ones — and that's okay!",
+    "c": 1
+  },
+  {
+    "en": "2. When there aren't enough ones, trade one ten for 10 ones (for example 52 → 4 tens and 12 ones)",
+    "c": 1
+  },
+  {
+    "en": "(In class this is sometimes called borrowing — but here we'll say: trade one ten for 10 ones.)",
+    "c": 1
+  },
+  {
+    "en": "When there are several coins of the same value, you can figure out how much money there is altogether — with addition or equal groups.",
+    "c": 1
+  },
+  {
+    "en": "1. What do we know? — how many coins, and the value of each",
+    "c": 1
+  },
+  {
+    "en": "When you pay more than the price, you get change back — you need to subtract.",
+    "c": 1
+  },
+  {
+    "en": "In these problems you usually have:",
+    "c": 1
+  },
+  {
+    "en": "Noa paid 50 shekels for a book that cost 35 shekels. How much change did she get?",
+    "c": 1
+  },
+  {
+    "en": "(We already learned division — fair sharing — here we use it in a story.)",
+    "c": 1
+  },
+  {
+    "en": "When there are several groups of the same size, you can find how many there are altogether — with multiplication.",
+    "c": 1
+  },
+  {
+    "en": "(We already learned multiplication and equal groups on the times table page — here we'll use it in a story.)",
+    "c": 1
+  },
+  {
+    "en": "Equal groups = how many groups, and the same amount in each group.",
+    "c": 1
+  },
+  {
+    "en": "1. What do we know? — how many groups, and how many in each group",
+    "c": 1
+  },
+  {
+    "en": "2. What are we asked? — which day it will be (after hops)",
+    "c": 1
+  },
+  {
+    "en": "Important: days of the week only — no clock, no dates in the month.",
+    "c": 1
+  },
+  {
+    "en": "Today is Monday.",
+    "c": 1
+  },
+  {
+    "en": "In 3 days — which day?",
+    "c": 1
+  },
+  {
+    "en": "Today is Monday. In 3 days — which day will it be?",
+    "c": 1
+  },
+  {
+    "en": "Which day in 3 days.",
+    "c": 1
+  },
+  {
+    "en": "Step 2 — What are we asked? Which day in 2 days.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Counting days between days of the week. Do not count the start day as the first step. No clock, months, or dates.",
+    "c": 1
+  },
+  {
+    "en": "Count hops — without counting the start day as the first step.",
+    "c": 1
+  },
+  {
+    "en": "→ Count hops after the start day, up to the target day.",
+    "c": 1
+  },
+  {
+    "en": "1. What do we know? — which day we start on and which day we reach",
+    "c": 1
+  },
+  {
+    "en": "In this chapter we will learn to add three numbers — one after another or in friendly groups.",
+    "c": 1
+  },
+  {
+    "en": "We break them into hundreds, tens, and ones — and remember to regroup when the ones or tens add up to 10 or more.",
+    "c": 1
+  },
+  {
+    "en": "Add the tens (including the carry) — if you get 10 or more, carry 1 to the hundreds",
+    "c": 1
+  },
+  {
+    "en": "Today we will compare numbers up to 1,000 and pick the right symbol: > (greater than), < (less than), = (equal).",
+    "c": 1
+  },
+  {
+    "en": "Compare: 723 ? 732 — which symbol?",
+    "c": 1
+  },
+  {
+    "en": "Tens: 2 < 3 — that decides it!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Addition with **decimal point** — one digit after the point. No two decimal digits.",
+    "c": 1
+  },
+  {
+    "en": "Important: line up the decimal points — whole part under whole part, tenths under tenths.",
+    "c": 1
+  },
+  {
+    "en": "Rule: add as if there's no point, then put the point in the same place.",
+    "c": 1
+  },
+  {
+    "en": "Again: line up the decimal points — whole under whole, tenths under tenths.",
+    "c": 1
+  },
+  {
+    "en": "Today we will strengthen division — equal sharing — with bigger numbers than we learned in Grade 2.",
+    "c": 1
+  },
+  {
+    "en": "Remainder? On this page only when it comes out even — remainder is on the division with remainder page.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find division that comes out even — always check with multiplication!",
+    "c": 1
+  },
+  {
+    "en": "Here we check divisibility by the ones digit — without doing long division.",
+    "c": 1
+  },
+  {
+    "en": "We don't practice 3, 6, 9 here — we'll learn those later.",
+    "c": 1
+  },
+  {
+    "en": "Is 76 divisible by 2, 5, and 10? (yes/no for each)",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn division with a remainder — when it doesn't divide evenly, something is left over.",
+    "c": 1
+  },
+  {
+    "en": "There is a quotient (how many in each group) and a remainder (what's left).",
+    "c": 1
+  },
+  {
+    "en": "Check: 5 × 4 + 3 = 23 — the remainder is always smaller than the divisor (3 < 5).",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find division that doesn't come out even — look for the quotient and remainder!",
+    "c": 1
+  },
+  {
+    "en": "We need to find what's missing so the equation is true.",
+    "c": 1
+  },
+  {
+    "en": "We need to find the bigger number (the one we subtract from).",
+    "c": 1
+  },
+  {
+    "en": "Ask: from some number we subtracted 18 and got 42 — what was the number?",
+    "c": 1
+  },
+  {
+    "en": "Rule: when the blank is before the minus sign — add the other two numbers.",
+    "c": 1
+  },
+  {
+    "en": "From some number we subtracted 34 and got 48 — what was the number?",
+    "c": 1
+  },
+  {
+    "en": "# Fractions — What Are They and How Do We Compare?",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Fractions — What Are They and How Do We Compare? |",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** What a fraction is. Numerator and denominator. Halves, thirds, quarters. Basic comparison between fractions with the same denominator.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn fractions — numbers that show a part of a whole.",
+    "c": 1
+  },
+  {
+    "en": "When we split something into equal parts, each part like that is a fraction.",
+    "c": 1
+  },
+  {
+    "en": "When the denominators are the same — the bigger numerator is the bigger fraction:",
+    "c": 1
+  },
+  {
+    "en": "¾ > ¼ — because 3 parts is more than 1 part (from the same cake split into 4).",
+    "c": 1
+  },
+  {
+    "en": "⅔ > ⅓ — because 2 parts is more than 1 part (from thirds).",
+    "c": 1
+  },
+  {
+    "en": "For each fraction check: what is the denominator?",
+    "c": 1
+  },
+  {
+    "en": "Today we will strengthen the times tables — multiplying numbers 1 through 10.",
+    "c": 1
+  },
+  {
+    "en": "Link to Grade 3: strong tables help with multiplying by tens and with word problems.",
+    "c": 1
+  },
+  {
+    "en": "It's like multiplying by tens — but with two zeros at the end.",
+    "c": 1
+  },
+  {
+    "en": "Rule: multiply the digit (without the zeros), then put two zeros at the end.",
+    "c": 1
+  },
+  {
+    "en": "Add a 0 (because 30 = 3 tens): 120",
+    "c": 1
+  },
+  {
+    "en": "Rule: multiply the digit (without the 0), then put a 0 at the end.",
+    "c": 1
+  },
+  {
+    "en": "Add a 0 (because 60 = 6 tens): 480",
+    "c": 1
+  },
+  {
+    "en": "# Pairs That Make 10 — Review",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Pairs of numbers that add up to 10. Short review before complement100. No complex ten-frame.",
+    "c": 1
+  },
+  {
+    "en": "Today we will review pairs that make 10 — a foundation for fast addition and making 100.",
+    "c": 1
+  },
+  {
+    "en": "Know that 7 + 3 = 10?",
+    "c": 1
+  },
+  {
+    "en": "A pair for 10: two numbers that add up to 10.",
+    "c": 1
+  },
+  {
+    "en": "Using it in addition: \"make 10 first\" — then keep going.",
+    "c": 1
+  },
+  {
+    "en": "The pair: 8 and 2 make 10.",
+    "c": 1
+  },
+  {
+    "en": "# Pairs That Make 100",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Making 100. Pairs that add up to 100. No complement to 1,000.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn pairs that make 100 — two numbers that together give 100.",
+    "c": 1
+  },
+  {
+    "en": "When you know the pairs, it's easy to find what's missing to reach 100.",
+    "c": 1
+  },
+  {
+    "en": "A pair for 100: two numbers that add up to 100.",
+    "c": 1
+  },
+  {
+    "en": "63 + ? = 100 → the pair: 63 and 37 (because 63 + 37 = 100)",
+    "c": 1
+  },
+  {
+    "en": "The pair: 45 and 55 make 100.",
+    "c": 1
+  },
+  {
+    "en": "Today we will spot even and odd numbers — even when the number is big (up to 1,000).",
+    "c": 1
+  },
+  {
+    "en": "Ask: can we split into 2 equal groups with nothing left over?",
+    "c": 1
+  },
+  {
+    "en": "An even number — you can split it into 2 equal groups (with no remainder).",
+    "c": 1
+  },
+  {
+    "en": "Quick shortcut: look only at the ones digit (the rightmost digit):",
+    "c": 1
+  },
+  {
+    "en": "It doesn't matter how many hundreds or tens — only the ones digit decides.",
+    "c": 1
+  },
+  {
+    "en": "When divided by 2, 1 will be left over → 905 is odd.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** The number **before** and **after** on the number line. Up to 1,000. No big jumps.",
+    "c": 1
+  },
+  {
+    "en": "999 → after = 1,000 (we cross into a new hundred!)",
+    "c": 1
+  },
+  {
+    "en": "What is the neighbor before 415? What is the neighbor after 415?",
+    "c": 1
+  },
+  {
+    "en": "What are the neighbors before and after the number 499?",
+    "c": 1
+  },
+  {
+    "en": "And what comes after? ±1 every time!",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn to read numbers up to 1,000 and figure out what each digit means by its place.",
+    "c": 1
+  },
+  {
+    "en": "In the number 527 — what is the value of the hundreds digit?",
+    "c": 1
+  },
+  {
+    "en": "In the number 836 — what is the value of the hundreds digit?",
+    "c": 1
+  },
+  {
+    "en": "The hundreds digit is 8 — it sits in the first place from the left.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn order of operations — when there is addition and multiplication in the same problem, multiply first!",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn order of operations when there is subtraction and multiplication — multiply first, then subtract.",
+    "c": 1
+  },
+  {
+    "en": "Without parentheses it would be: 8 + 2 × 3 = 8 + 6 = 14 — different!",
+    "c": 1
+  },
+  {
+    "en": "Parentheses = \"do this first.\"",
+    "c": 1
+  },
+  {
+    "en": "Calculate inside the parentheses before the rest!",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn number sequences — a list of numbers that go up (or down) by one steady rule.",
+    "c": 1
+  },
+  {
+    "en": "First we find the step, then we continue the sequence — even with numbers up to 1,000.",
+    "c": 1
+  },
+  {
+    "en": "A fixed step: each time we add (or subtract) the same number.",
+    "c": 1
+  },
+  {
+    "en": "When there aren't enough ones (or tens) — we borrow from the place to the left.",
+    "c": 1
+  },
+  {
+    "en": "0 in the tens — borrow from 5 in the hundreds → 4 left in hundreds, 10 in tens.",
+    "c": 1
+  },
+  {
+    "en": "tens: 9 − 8 = 1 (9 because we had \"10\" after borrowing from 0)",
+    "c": 1
+  },
+  {
+    "en": "tens: after borrowing one ten remains, and it's not enough. Borrow from hundreds → 11 − 8 = 3",
+    "c": 1
+  },
+  {
+    "en": "ones: 4 < 6 — borrow. 0 in the tens — borrow from 7 in the hundreds → 6 left in hundreds, 10 in tens.",
+    "c": 1
+  },
+  {
+    "en": "tens: 9 − 5 = 4 (9 because the tens got 10 and gave 1 to the ones)",
+    "c": 1
+  },
+  {
+    "en": "Today we will solve a word problem — when the question asks how many more one person has than another.",
+    "c": 1
+  },
+  {
+    "en": "What are we asked? How many more for the one who has more",
+    "c": 1
+  },
+  {
+    "en": "How many more cards does Noa have than Yuval?",
+    "c": 1
+  },
+  {
+    "en": "Dana has 68 stickers and Roni has 45 stickers. How many more stickers does Dana have?",
+    "c": 1
+  },
+  {
+    "en": "How many more stickers does Gal have than Ella?",
+    "c": 1
+  },
+  {
+    "en": "Gal has 75 and Ella has 48 — how many more does Gal have?",
+    "c": 1
+  },
+  {
+    "en": "Today we will solve: how many are left over? — when we split things into equal groups and not everything fits.",
+    "c": 1
+  },
+  {
+    "en": "The answer is the remainder — what's left outside the full groups.",
+    "c": 1
+  },
+  {
+    "en": "What's left over? 47 − 42 = 5 — 5 children without a full group.",
+    "c": 1
+  },
+  {
+    "en": "5 = the remainder — that's the answer to \"how many are left over?\", not 7 (the number of groups).",
+    "c": 1
+  },
+  {
+    "en": "There are 43 stickers. You put 5 on each page. How many stickers will be left without a full page?",
+    "c": 1
+  },
+  {
+    "en": "They split into groups of 5.",
+    "c": 1
+  },
+  {
+    "en": "How many children will be left without a full group?",
+    "c": 1
+  },
+  {
+    "en": "38 − 35 = 3 — 3 children left without a full group.",
+    "c": 1
+  },
+  {
+    "en": "Now you know how to solve questions about what's left over.",
+    "c": 1
+  },
+  {
+    "en": "Here we work only with minutes — no hours.",
+    "c": 1
+  },
+  {
+    "en": "That's a sign to add — we add the minutes from the first part and the second.",
+    "c": 1
+  },
+  {
+    "en": "Helpful words: together, in total, total length — they all mean +, not −.",
+    "c": 1
+  },
+  {
+    "en": "In this section we'll learn to add three numbers — one after another or in friendly groups.",
+    "c": 1
+  },
+  {
+    "en": "We'll break them into thousands, hundreds, tens, and ones — and remember to carry when a column goes past 10.",
+    "c": 1
+  },
+  {
+    "en": "Add ones — if you get 10 or more, carry 1 to the tens",
+    "c": 1
+  },
+  {
+    "en": "Add tens (including carry) — if you get 10 or more, carry 1 to the hundreds",
+    "c": 1
+  },
+  {
+    "en": "Add hundreds (including carry) — if you get 10 or more, carry 1 to the thousands",
+    "c": 1
+  },
+  {
+    "en": "Today we'll compare big numbers up to 10,000 and pick the right symbol: > (greater than), < (less than), = (equal).",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Addition with **two digits** after the decimal point (hundredths and tenths). Line up decimal points. Regrouping in tenths and hundredths. No three decimal digits.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to add decimal numbers with two digits after the point — for example 3.45 + 2.30.",
+    "c": 1
+  },
+  {
+    "en": "Important: line up the decimal points — hundredths under hundredths, tenths under tenths, whole numbers under whole numbers.",
+    "c": 1
+  },
+  {
+    "en": "Rule: add column by column — like whole-number addition, just with the point in the same place.",
+    "c": 1
+  },
+  {
+    "en": "Now you know how to add decimal numbers with two digits after the point.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Subtraction with **two digits** after the decimal point. Line up decimal points. **Borrowing** from tenths to hundredths. No three decimal digits.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to subtract decimal numbers with two digits after the point — for example 5.80 − 2.35.",
+    "c": 1
+  },
+  {
+    "en": "Again: line up the decimal points — and sometimes you need to borrow from tenths to hundredths.",
+    "c": 1
+  },
+  {
+    "en": "Now you know how to subtract decimal numbers with two digits after the point.",
+    "c": 1
+  },
+  {
+    "en": "Line up the points, and remember to borrow when you need to!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Division with no remainder. Numbers up to ~1,000. Link to multiplication and the times table. Remainder → `div_with_remainder`. Long division → `div_long`.",
+    "c": 1
+  },
+  {
+    "en": "Check: divisor × quotient = dividend. Remainder — only on the division-with-remainder page.",
+    "c": 1
+  },
+  {
+    "en": "8 × 90 = 720 (because 8 × 9 = 72, and 72 × 10 = 720).",
+    "c": 1
+  },
+  {
+    "en": "Here we expand to six divisors — including 3, 6, 9 (by the sum of the digits).",
+    "c": 1
+  },
+  {
+    "en": "÷2 / ÷5 / ÷10: by the ones digit — like we learned before.",
+    "c": 1
+  },
+  {
+    "en": "Is 234 divisible by 2, 3, 5, 6, 9, and 10? (yes/no for each)",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find does it divide evenly? — use the rules!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Long division algorithm — dividend up to 3 digits, one-digit divisor. No remainder on this page. Two-digit divisor → Grade 5.",
+    "c": 1
+  },
+  {
+    "en": "Does 6 go into 15 (the first two digits)?",
+    "c": 1
+  },
+  {
+    "en": "Does 7 go into 19 (the first two digits)? 7 × 2 = 14. Write 2 in the answer.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn division with a remainder — when the division doesn't come out evenly.",
+    "c": 1
+  },
+  {
+    "en": "You get a quotient and a remainder — and check with multiplication.",
+    "c": 1
+  },
+  {
+    "en": "We need to find what's missing in __ so the equation is true.",
+    "c": 1
+  },
+  {
+    "en": "Rule: missing number = total (after =) minus the number you already have.",
+    "c": 1
+  },
+  {
+    "en": "Missing number = total minus the number you already have.",
+    "c": 1
+  },
+  {
+    "en": "Find what's missing — subtract the known number from the total!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Subtraction equation with **__** before the minus — numbers up to **1,000**. No variable x.",
+    "c": 1
+  },
+  {
+    "en": "We need to find the bigger number — the one we subtract from.",
+    "c": 1
+  },
+  {
+    "en": "Ask: from some number we subtracted 45 and got 120 — what's the number?",
+    "c": 1
+  },
+  {
+    "en": "Rule: missing number before the minus = result + the number being subtracted.",
+    "c": 1
+  },
+  {
+    "en": "Missing number before the minus — add the result and the number being subtracted.",
+    "c": 1
+  },
+  {
+    "en": "When __ is before the minus — add result + subtrahend!",
+    "c": 1
+  },
+  {
+    "en": "Why? 487 is close to 500, 512 is close to 500 — and the sum is about 1,000.",
+    "c": 1
+  },
+  {
+    "en": "Estimating helps you check if an exact answer makes sense.",
+    "c": 1
+  },
+  {
+    "en": "Why? 987 is only 13 less than 1,000 — easier to think \"about a thousand.\"",
+    "c": 1
+  },
+  {
+    "en": "Rule: find a round number close by — 10, 100, 1,000 — that fits the size.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Finding all factors of a number up to ~100. Multiplication pairs. 1 and the number itself are always factors. Multiples → `fm_multiple`. GCF → `fm_gcd`.",
+    "c": 1
+  },
+  {
+    "en": "A factor = a number that divides evenly with no remainder.",
+    "c": 1
+  },
+  {
+    "en": "All the numbers from the pairs: 1, 2, 3, 4, 6, 9, 12, 18, 36.",
+    "c": 1
+  },
+  {
+    "en": "It's the biggest factor they share.",
+    "c": 1
+  },
+  {
+    "en": "Tip: GCF helps simplify fractions and split into equal groups.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll strengthen the times table and learn strategies for fast multiplication.",
+    "c": 1
+  },
+  {
+    "en": "Multiplication = adding equal groups again and again — and also a tool for bigger calculations.",
+    "c": 1
+  },
+  {
+    "en": "Tip: a strong times table helps with vertical multiplication and word problems.",
+    "c": 1
+  },
+  {
+    "en": "Now you're practicing the times table and strategies.",
+    "c": 1
+  },
+  {
+    "en": "Write the numbers one above the other, multiply from right to left, and remember to carry.",
+    "c": 1
+  },
+  {
+    "en": "# Pairs That Make 10 — Strategy for Big Additions",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Number pairs that add to 10. Final review in Grade 4. No complement to 100 on this page.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll do a quick review of pairs that make 10 — and how to use them in big additions.",
+    "c": 1
+  },
+  {
+    "en": "8 + 2 = 10 — a pair to know by heart, without a ten-frame.",
+    "c": 1
+  },
+  {
+    "en": "A pair that makes 10: two numbers that add to 10.",
+    "c": 1
+  },
+  {
+    "en": "You have 8. You want 10.",
+    "c": 1
+  },
+  {
+    "en": "Now you know pairs that make 10 and a strategy for big additions.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find how much to make 10? And additions using make-10!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Making 100. Pairs that add to 100. No complement to 1,000.",
+    "c": 1
+  },
+  {
+    "en": "Make 100: how much do you need to add so the sum is 100?",
+    "c": 1
+  },
+  {
+    "en": "37 + ? = 100 → you need 63 (because 37 + 63 = 100)",
+    "c": 1
+  },
+  {
+    "en": "Easy way: 37 + 63 = 100 — remember that pair!",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find make-100 pairs and additions that use them!",
+    "c": 1
+  },
+  {
+    "en": "You don't need to figure out the whole number: just look at the ones digit.",
+    "c": 1
+  },
+  {
+    "en": "Why does this work? Every ten, hundred, and thousand is even — only the ones can \"leave one left over.\"",
+    "c": 1
+  },
+  {
+    "en": "You don't need to figure out all of 3,512 — just the last digit.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** The number before and after on the number line. Up to 10,000. No large jumps.",
+    "c": 1
+  },
+  {
+    "en": "And what comes after? Just ±1!",
+    "c": 1
+  },
+  {
+    "en": "Today we're going to learn to read big numbers up to 10,000 and figure out what each digit means by its place.",
+    "c": 1
+  },
+  {
+    "en": "When we write a big number, we sometimes put a comma after the thousands: 3,482.",
+    "c": 1
+  },
+  {
+    "en": "In the number 5,218 — what is the value of the thousands digit?",
+    "c": 1
+  },
+  {
+    "en": "You have the number once — it stays the same.",
+    "c": 1
+  },
+  {
+    "en": "Now you know that multiplying by 1 doesn't change the answer.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn what a power means — short writing for repeated multiplication of the same number.",
+    "c": 1
+  },
+  {
+    "en": "10 = the base — the number that repeats",
+    "c": 1
+  },
+  {
+    "en": "What does 2⁴ mean? (Base? Exponent? Write it as repeated multiplication.)",
+    "c": 1
+  },
+  {
+    "en": "How do you check? Look for factors from 2 and up.",
+    "c": 1
+  },
+  {
+    "en": "Rounding helps you estimate answers and do quick mental math.",
+    "c": 1
+  },
+  {
+    "en": "Fixed jump: each step you add (or subtract) the same number.",
+    "c": 1
+  },
+  {
+    "en": "When there aren't enough in the ones, tens, hundreds, or thousands — borrow from the place to the left.",
+    "c": 1
+  },
+  {
+    "en": "Tens: after borrowing one ten remains, and it's not enough. Borrow from hundreds → 11 − 8 = 3",
+    "c": 1
+  },
+  {
+    "en": "What do you know? Two amounts — for example 156 and 89",
+    "c": 1
+  },
+  {
+    "en": "What are you asked? How many more the one with more has",
+    "c": 1
+  },
+  {
+    "en": "Ron has 342 stickers and Maya has 218 stickers. How many more stickers does Ron have?",
+    "c": 1
+  },
+  {
+    "en": "In this section we strengthened solving how many more?",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll also find bigger comparison questions.",
+    "c": 1
+  },
+  {
+    "en": "What's left? 53 − 48 = 5 — 5 books without a full shelf.",
+    "c": 1
+  },
+  {
+    "en": "What's left? 61 − 54 = 7 — 7 students without a full group.",
+    "c": 1
+  },
+  {
+    "en": "In this section we strengthened solving what's left over?",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll also find bigger division-with-remainder word problems.",
+    "c": 1
+  },
+  {
+    "en": "In this section:",
+    "c": 1
+  },
+  {
+    "en": "Step A — identify: does the question ask for total or difference?",
+    "c": 1
+  },
+  {
+    "en": "In these problems the numbers can be bigger (up to about 120 minutes), but the rule is the same:",
+    "c": 1
+  },
+  {
+    "en": "If it says \"how many more\" — that's subtraction, not this page.",
+    "c": 1
+  },
+  {
+    "en": "Class party: show 55 minutes, then a video 25 minutes. What's the total time for the show and video?",
+    "c": 1
+  },
+  {
+    "en": "In this section we strengthened adding watching times in minutes.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll also find bigger questions about adding times. Add the minutes!",
+    "c": 1
+  },
+  {
+    "en": "If you have 456 things and add 0 — you still have 456.",
+    "c": 1
+  },
+  {
+    "en": "Now you know that adding 0 doesn't change the answer.",
+    "c": 1
+  },
+  {
+    "en": "Now you know that multiplying by 0 always gives 0.",
+    "c": 1
+  },
+  {
+    "en": "If you have 789 things and take away 0 — you still have 789.",
+    "c": 1
+  },
+  {
+    "en": "This is different from 789 − 789 (which is 0).",
+    "c": 1
+  },
+  {
+    "en": "Now you know that subtracting 0 doesn't change the answer.",
+    "c": 1
+  },
+  {
+    "en": "Work from the ones — carry when you need to",
+    "c": 1
+  },
+  {
+    "en": "We'll break them into ten-thousands, thousands, hundreds, tens, and ones — and remember to carry when a sum goes past 10.",
+    "c": 1
+  },
+  {
+    "en": "Add the tens (including the carry) — carry to the hundreds",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to compare large numbers up to 100,000 — to know which is bigger, which is smaller, or if they are equal.",
+    "c": 1
+  },
+  {
+    "en": "We'll use the symbols > (greater than), < (less than), = (equal to).",
+    "c": 1
+  },
+  {
+    "en": "First check the ten-thousands digit — the number with the bigger digit is larger (read from left to right)",
+    "c": 1
+  },
+  {
+    "en": "Compare 41,500 and 41,580 — which symbol is correct?",
+    "c": 1
+  },
+  {
+    "en": "Compare: 83,750 ? 83,705 — which symbol (> , < , =) fits?",
+    "c": 1
+  },
+  {
+    "en": "Start with the ten-thousands!",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to add decimal numbers with two digits after the decimal point.",
+    "c": 1
+  },
+  {
+    "en": "Line up the decimal points — hundredths under hundredths, tenths under tenths.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to subtract decimal numbers with two digits after the decimal point.",
+    "c": 1
+  },
+  {
+    "en": "Division helps you split a quantity into equal groups.",
+    "c": 1
+  },
+  {
+    "en": "60 ÷ 15 = 4 → 400 (because 6,000 = 60 hundreds)",
+    "c": 1
+  },
+  {
+    "en": "84 ÷ 12 = 7 → 700 (because 8,400 = 84 hundreds).",
+    "c": 1
+  },
+  {
+    "en": "Long algorithm: start from the highest digits, estimate how many times 35 fits, bring down and continue.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn division with a remainder — when the division doesn't come out exactly.",
+    "c": 1
+  },
+  {
+    "en": "You get a quotient and a remainder, and you check with the remainder check.",
+    "c": 1
+  },
+  {
+    "en": "The remainder is always less than the divisor (7 < 8).",
+    "c": 1
+  },
+  {
+    "en": "We need to find the missing number.",
+    "c": 1
+  },
+  {
+    "en": "Ask: from some number you subtract 1,875 and get 4,200 — what is the number?",
+    "c": 1
+  },
+  {
+    "en": "Estimation helps you check if an answer makes sense.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Estimating quantity without exact counting",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to estimate a quantity — without counting exactly.",
+    "c": 1
+  },
+  {
+    "en": "A factor = a number that divides the number exactly with no remainder.",
+    "c": 1
+  },
+  {
+    "en": "In this chapter we strengthened finding factors of a number.",
+    "c": 1
+  },
+  {
+    "en": "It's the largest factor they share.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to find multiples of a number — numbers that the number divides evenly.",
+    "c": 1
+  },
+  {
+    "en": "In our practice, when we ask for the first multiples, we usually start with the positive ones: 7, 14, 21, 28, 35…",
+    "c": 1
+  },
+  {
+    "en": "You only work with the numerators — the denominator stays the same.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to expand a fraction — multiply the numerator and denominator by the same number.",
+    "c": 1
+  },
+  {
+    "en": "Expanding helps you get a common denominator before adding.",
+    "c": 1
+  },
+  {
+    "en": "Expanding = multiply the numerator and denominator by the same number",
+    "c": 1
+  },
+  {
+    "en": "20 ÷ 4 = 5 — that's the number you multiply by",
+    "c": 1
+  },
+  {
+    "en": "Simplifying helps you compare and add fractions.",
+    "c": 1
+  },
+  {
+    "en": "Simplifying = divide the numerator and denominator by the same number (GCF).",
+    "c": 1
+  },
+  {
+    "en": "This helps when you work with fractions in calculations.",
+    "c": 1
+  },
+  {
+    "en": "Multiply the whole by the denominator and add the numerator!",
+    "c": 1
+  },
+  {
+    "en": "Multiplication helps with quick math and solving problems.",
+    "c": 1
+  },
+  {
+    "en": "# Pairs That Make 100 — Link to Estimation",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Pairs that make 100; foundation for mental math",
+    "c": 1
+  },
+  {
+    "en": "Today we'll see how pairs that make 100 also help with estimation — when you don't need an exact answer, just one that's close.",
+    "c": 1
+  },
+  {
+    "en": "Pairs that make 100 = a base for thinking \"how much is missing to reach 100\" — also in estimation.",
+    "c": 1
+  },
+  {
+    "en": "52 + 48 = 100 exactly — 52 and 48 are a pair that make 100.",
+    "c": 1
+  },
+  {
+    "en": "Now you know pairs that make 100 and how they connect to estimation.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** The number before and after; large numbers",
+    "c": 1
+  },
+  {
+    "en": "Place value: only the ones digit changes by ±1 — but every digit can \"roll\" forward or backward.",
+    "c": 1
+  },
+  {
+    "en": "- before: 71,999 (we went down a whole thousand — but it's only −1)",
+    "c": 1
+  },
+  {
+    "en": "And what comes after 82,000?",
+    "c": 1
+  },
+  {
+    "en": "Before = 82,000 − 1 = 81,999 (crossing a thousand — all the zeros turn into 9s)",
+    "c": 1
+  },
+  {
+    "en": "And what comes after? ±1 — even with zeros!",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to read large numbers up to 100,000 and figure out what each digit means by its place.",
+    "c": 1
+  },
+  {
+    "en": "In the number 48,726 — what is the value of the thousands digit?",
+    "c": 1
+  },
+  {
+    "en": "In the number 75,294 — what is the value of the hundreds digit?",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find questions about the value of a digit by its place.",
+    "c": 1
+  },
+  {
+    "en": "The price after the discount: $180",
+    "c": 1
+  },
+  {
+    "en": "Rounding helps you estimate answers in math and do quick mental math.",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to spot sequences with a constant step — even when the numbers are very large, up to 100,000.",
+    "c": 1
+  },
+  {
+    "en": "The step might be +500, +1,000, +2,000 and more — it's important to find what size repeats.",
+    "c": 1
+  },
+  {
+    "en": "In a sequence with a constant step — each number is bigger (or smaller) than the one before by the same amount.",
+    "c": 1
+  },
+  {
+    "en": "How do you find the step? Subtract two numbers next to each other — not just the first and last.",
+    "c": 1
+  },
+  {
+    "en": "We'll break apart by place value and borrow when we need to.",
+    "c": 1
+  },
+  {
+    "en": "Subtract the ones — if there aren't enough, borrow 1 from the tens",
+    "c": 1
+  },
+  {
+    "en": "Subtract the tens — borrow from the hundreds",
+    "c": 1
+  },
+  {
+    "en": "What do you know? Two amounts — for example 420 liters and 275 liters",
+    "c": 1
+  },
+  {
+    "en": "What are you asked? What is the difference — who has more?",
+    "c": 1
+  },
+  {
+    "en": "Danny has $3,200 and Mia has $2,850. How much more does Danny have?",
+    "c": 1
+  },
+  {
+    "en": "127 apples, 15 in each box. How many apples are left after filling the boxes?",
+    "c": 1
+  },
+  {
+    "en": "There were $450, they spent $120, then another $80. How much is left?",
+    "c": 1
+  },
+  {
+    "en": "First find the discount, then subtract from the price.",
+    "c": 1
+  },
+  {
+    "en": "What is the price after the discount?",
+    "c": 1
+  },
+  {
+    "en": "An item $300, discount 20% — what is the price after the discount?",
+    "c": 1
+  },
+  {
+    "en": "The price after the discount: $240",
+    "c": 1
+  },
+  {
+    "en": "When the question says \"total\" or \"altogether\" — you add, you don't subtract!",
+    "c": 1
+  },
+  {
+    "en": "1. Add the minutes — if you get 60 or more, change to an hour (60 min = 1:00).",
+    "c": 1
+  },
+  {
+    "en": "2. Add the hours — including any hour from the minutes.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will add three numbers — pick a convenient pair to add first!",
+    "c": 1
+  },
+  {
+    "en": "Compare from left to right — starting with the largest digit.",
+    "c": 1
+  },
+  {
+    "en": "Comparing correctly helps you choose a strategy when calculating.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will compare large numbers — work from the left!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will add decimals — always line them up!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will divide decimals — change to whole numbers first!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will divide by 10 and 100 — watch the direction of the decimal point!",
+    "c": 1
+  },
+  {
+    "en": "1.5 × 2.4 — multiply as whole numbers, then count digits after the decimal point.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will multiply decimals — count digits after the decimal point!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will multiply by 10 and 100 — the direction of the decimal point matters!",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn about repeating decimals — digits that repeat forever.",
+    "c": 1
+  },
+  {
+    "en": "When division does not end — sometimes you get a repeating pattern.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find fractions that do not end — look for the repeating pattern!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will subtract decimals — check with addition!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** division with no remainder. Multi-step breaking apart and checking (1,440÷12). Not the same strategy as G5.",
+    "c": 1
+  },
+  {
+    "en": "We ask: how many times does the divisor fit into the dividend? And we check each step.",
+    "c": 1
+  },
+  {
+    "en": "We will build a complete check equation.",
+    "c": 1
+  },
+  {
+    "en": "850 ÷ 7 (for comparison — with remainder): 7 × 121 = 847; 850 − 847 = 3 → 121 with remainder 3.",
+    "c": 1
+  },
+  {
+    "en": "Calculate: 968 ÷ 9 — what is the quotient and what is the remainder?",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find division with a remainder — build a check equation and make sure the remainder is smaller than the divisor!",
+    "c": 1
+  },
+  {
+    "en": "Rule: when __ comes after the minus sign — subtract the result from the minuend.",
+    "c": 1
+  },
+  {
+    "en": "Today we will strengthen factors — numbers that multiply to give a given result.",
+    "c": 1
+  },
+  {
+    "en": "Factors help with simplifying fractions and finding the GCF.",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn the greatest common factor (GCF) — the largest factor that two numbers share.",
+    "c": 1
+  },
+  {
+    "en": "The fraction-as-division connection is the foundation for multiplying and dividing fractions.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will divide fractions — flip and multiply!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will multiply fractions — simplify at the end!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will multiply two-digit numbers — use breaking apart!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** pairs that make 100; foundation for quick mental math",
+    "c": 1
+  },
+  {
+    "en": "Today we will strengthen pairs that make 100 — and see how they connect to decimals and percents.",
+    "c": 1
+  },
+  {
+    "en": "When two parts together make 100% (or 1 whole) — it is the same idea as 63 + 37 = 100.",
+    "c": 1
+  },
+  {
+    "en": "The idea: two parts that complete a whole — whether 100, 1.00, or 100%.",
+    "c": 1
+  },
+  {
+    "en": "Now you know pairs that make 100 and how they connect to percents and decimals.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** the number before and after, up to 200,000",
+    "c": 1
+  },
+  {
+    "en": "±1 — even when the ten thousands change, like with 48,650.",
+    "c": 1
+  },
+  {
+    "en": "199,999 → 200,000: the neighbor after 199,999 is 200,000 — you cross a hundred thousand, but it is still +1.",
+    "c": 1
+  },
+  {
+    "en": "92,000 − 1 = 91,999 — all the digits \"roll over,\" but the jump is still 1.",
+    "c": 1
+  },
+  {
+    "en": "48,649 → 48,650 → 48,651 — 50 in the middle, ±1 in the ones place only.",
+    "c": 1
+  },
+  {
+    "en": "When you read a big number — start from the left (the largest digit).",
+    "c": 1
+  },
+  {
+    "en": "# Ratios — What Do They Mean?",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Ratios — What Do They Mean? |",
+    "c": 1
+  },
+  {
+    "en": "3:2 = for every 3 units on one side, 2 on the other side.",
+    "c": 1
+  },
+  {
+    "en": "Look at the digit to the right of the place you are rounding to.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will round to tens, hundreds, and thousands — identify the deciding digit correctly!",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn to discover the rule of a sequence — and then fill in missing terms or continue forward.",
+    "c": 1
+  },
+  {
+    "en": "We work with numbers up to 200,000, including sequences that go up and down.",
+    "c": 1
+  },
+  {
+    "en": "Step 2 — use the rule: add (or subtract) the same step to find a missing term or the next one.",
+    "c": 1
+  },
+  {
+    "en": "When a digit is too small — borrow from the column to the left.",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find subtractions with borrowing — mark where you borrow!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find \"how many more?\" — subtract the smaller from the larger!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find distance/speed/time — figure out what you are looking for!",
+    "c": 1
+  },
+  {
+    "en": "In practice you will find \"what's left?\" — look for the remainder, not the number of groups!",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** adding hours and minutes — schedules, activity length, total for the day.",
+    "c": 1
+  },
+  {
+    "en": "2. Hours separately — add the hour that came from the minutes.",
+    "c": 1
+  },
+  {
+    "en": "Minutes: 10 + 50 = 60 → 1:00 (a full hour from the minutes).",
+    "c": 1
+  },
+  {
+    "en": "In practice you will add hours — add the minutes, then convert 60 minutes to 1 hour!",
+    "c": 1
+  },
+  {
+    "en": "A living thing grows, responds to its surroundings, and needs the right conditions to live.",
+    "c": 1
+  },
+  {
+    "en": "A non-living thing does not grow and does not breathe.",
+    "c": 1
+  },
+  {
+    "en": "The dog runs, drinks water, and eats — it is alive.",
+    "c": 1
+  },
+  {
+    "en": "The tree grows and needs water and light — it is also alive (a plant).",
+    "c": 1
+  },
+  {
+    "en": "The rock does not move and does not grow — it is non-living.",
+    "c": 1
+  },
+  {
+    "en": "A rock does not grow and does not breathe.",
+    "c": 1
+  },
+  {
+    "en": "What does it need to stay alive?",
+    "c": 1
+  },
+  {
+    "en": "What does it need?",
+    "c": 1
+  },
+  {
+    "en": "In practice, look for questions about what animals need.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** The five senses; movement; the heart in the chest — no detailed body systems",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about the human body — how we feel the world and move around.",
+    "c": 1
+  },
+  {
+    "en": "We have senses that help us see, hear, smell, taste, and touch.",
+    "c": 1
+  },
+  {
+    "en": "Our body has five ways to know the world — the five senses:",
+    "c": 1
+  },
+  {
+    "en": "Tongue — we taste sweet, salty, and more",
+    "c": 1
+  },
+  {
+    "en": "Legs help us walk, hands help us hold things and write.",
+    "c": 1
+  },
+  {
+    "en": "In our chest we have a heart.",
+    "c": 1
+  },
+  {
+    "en": "The heart is a muscle that works all the time and pumps blood through the whole body.",
+    "c": 1
+  },
+  {
+    "en": "Danny sees, hears, and moves — that is how the senses and the body work together.",
+    "c": 1
+  },
+  {
+    "en": "Which body part do we use to see birds in the sky?",
+    "c": 1
+  },
+  {
+    "en": "The body part for sight is the eyes.",
+    "c": 1
+  },
+  {
+    "en": "Imagine someone brings a fragrant flower into the classroom.",
+    "c": 1
+  },
+  {
+    "en": "Which sense would you use to know it has a smell?",
+    "c": 1
+  },
+  {
+    "en": "Which sense do we use to smell a flower?",
+    "c": 1
+  },
+  {
+    "en": "When we smell a flower — our nose picks up tiny scent particles that come from it.",
+    "c": 1
+  },
+  {
+    "en": "The nose sends a message to the brain, and the brain tells us if the smell is pleasant or sharp.",
+    "c": 1
+  },
+  {
+    "en": "The nose — it is the body part that helps us smell flowers and other things.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about eyes, ears, and the heart.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about our Earth — what we see in the sky and how the weather changes.",
+    "c": 1
+  },
+  {
+    "en": "In the sky there is the sun, clouds, and wind.",
+    "c": 1
+  },
+  {
+    "en": "At night — it is darker, and we see the moon and stars.",
+    "c": 1
+  },
+  {
+    "en": "Today is it sunny, rainy, or windy?",
+    "c": 1
+  },
+  {
+    "en": "The children went to the yard — warm and bright.",
+    "c": 1
+  },
+  {
+    "en": "In the afternoon clouds came and it rained.",
+    "c": 1
+  },
+  {
+    "en": "After the rain — it felt cooler.",
+    "c": 1
+  },
+  {
+    "en": "That is how the weather changes during the day.",
+    "c": 1
+  },
+  {
+    "en": "During the day there is light — the sun shines.",
+    "c": 1
+  },
+  {
+    "en": "How did you feel when you went out without an umbrella?",
+    "c": 1
+  },
+  {
+    "en": "What did you see in the sky?",
+    "c": 1
+  },
+  {
+    "en": "How did you feel on a rainy day when you went out without an umbrella?",
+    "c": 1
+  },
+  {
+    "en": "Water falls from the clouds to the ground.",
+    "c": 1
+  },
+  {
+    "en": "Without an umbrella — you feel cold and wet, because the rain touches your body.",
+    "c": 1
+  },
+  {
+    "en": "Rain falls when water drops in the clouds become heavy enough and fall to the ground.",
+    "c": 1
+  },
+  {
+    "en": "On a rainy day — it is cold and wet outside, and there are dark clouds in the sky.",
+    "c": 1
+  },
+  {
+    "en": "In practice, look for questions about the sun, rain, and what happens in the sky.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about the environment — the place where we, plants, and animals live.",
+    "c": 1
+  },
+  {
+    "en": "When we throw trash on the floor or in nature — we make the environment dirty.",
+    "c": 1
+  },
+  {
+    "en": "Things that help protect the environment:",
+    "c": 1
+  },
+  {
+    "en": "When the environment is clean — it is easier for us, plants, and animals to live.",
+    "c": 1
+  },
+  {
+    "en": "In the classroom they ate a snack.",
+    "c": 1
+  },
+  {
+    "en": "In the yard no bags were left on the grass.",
+    "c": 1
+  },
+  {
+    "en": "The garden stayed clean — the plants and insects were not hurt by trash.",
+    "c": 1
+  },
+  {
+    "en": "Where should you throw a snack wrapper?",
+    "c": 1
+  },
+  {
+    "en": "Trash belongs in the garbage bin — because when we throw trash outside, the environment gets dirty.",
+    "c": 1
+  },
+  {
+    "en": "In the garbage bin, trash is collected and does not harm plants, insects, and the soil.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about materials — the things objects are made from.",
+    "c": 1
+  },
+  {
+    "en": "We will learn to describe them by how they feel when we touch them.",
+    "c": 1
+  },
+  {
+    "en": "Every material has properties — ways to describe how it feels:",
+    "c": 1
+  },
+  {
+    "en": "You can check properties by touch and by looking — without doing dangerous experiments.",
+    "c": 1
+  },
+  {
+    "en": "Water from the tap is a liquid — it flows in a cup.",
+    "c": 1
+  },
+  {
+    "en": "Which material is soft?",
+    "c": 1
+  },
+  {
+    "en": "Think about a pillow you put on the sofa.",
+    "c": 1
+  },
+  {
+    "en": "When you press on a pillow — it sinks in and changes shape, because it is soft.",
+    "c": 1
+  },
+  {
+    "en": "That is different from a rock, which is hard and does not change when you press on it.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about plants — what they look like and what they need to grow.",
+    "c": 1
+  },
+  {
+    "en": "- Water — the plant takes it in through the roots",
+    "c": 1
+  },
+  {
+    "en": "Without one of these, the plant may wilt or stop growing.",
+    "c": 1
+  },
+  {
+    "en": "The sun from the window gives light.",
+    "c": 1
+  },
+  {
+    "en": "What does a plant need to grow?",
+    "c": 1
+  },
+  {
+    "en": "Think about what you see in a garden — sun, water, soil.",
+    "c": 1
+  },
+  {
+    "en": "What will happen if we do not pour water for a whole week?",
+    "c": 1
+  },
+  {
+    "en": "What will happen to the pot if we do not pour water for a whole week?",
+    "c": 1
+  },
+  {
+    "en": "A plant takes in water through its roots.",
+    "c": 1
+  },
+  {
+    "en": "The water moves to the stem and leaves and helps the plant grow and stay alive.",
+    "c": 1
+  },
+  {
+    "en": "Without water for a whole week — the roots will dry out, the leaves will wilt and turn yellow.",
+    "c": 1
+  },
+  {
+    "en": "The plant will become very weak, because water is essential for it.",
+    "c": 1
+  },
+  {
+    "en": "Without water — the plant will wilt and may die.",
+    "c": 1
+  },
+  {
+    "en": "Now you know plant parts and what plants need to grow in science.",
+    "c": 1
+  },
+  {
+    "en": "In practice, look for questions about roots, leaves, and what a plant needs.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about the life cycle — how animals grow and change from generation to generation.",
+    "c": 1
+  },
+  {
+    "en": "A life cycle — the stages an animal goes through from start to adult:",
+    "c": 1
+  },
+  {
+    "en": "Egg, then caterpillar, then chrysalis, and finally an adult butterfly.",
+    "c": 1
+  },
+  {
+    "en": "Offspring are similar to their parents — a puppy looks like a dog, not like a cat.",
+    "c": 1
+  },
+  {
+    "en": "Before that it was a caterpillar, and before that an egg on a leaf.",
+    "c": 1
+  },
+  {
+    "en": "From the egg comes a small tadpole that breathes in water, and later it grows and becomes an adult frog that also breathes air.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about health and good habits — how to keep our body strong and happy.",
+    "c": 1
+  },
+  {
+    "en": "Hygiene — washing hands before eating, brushing teeth in the morning and evening",
+    "c": 1
+  },
+  {
+    "en": "Varied food and drink — fruits, vegetables, and water give the body energy",
+    "c": 1
+  },
+  {
+    "en": "When we keep these habits — we feel better.",
+    "c": 1
+  },
+  {
+    "en": "That way her body got rest, food, and cleanliness.",
+    "c": 1
+  },
+  {
+    "en": "When is it important to wash your hands?",
+    "c": 1
+  },
+  {
+    "en": "Before eating — so germs do not get into your mouth.",
+    "c": 1
+  },
+  {
+    "en": "Before eating (and also after using the bathroom)",
+    "c": 1
+  },
+  {
+    "en": "A child played in the garden and ate cookies without washing hands.",
+    "c": 1
+  },
+  {
+    "en": "The next day they did not feel well.",
+    "c": 1
+  },
+  {
+    "en": "What could they have done differently?",
+    "c": 1
+  },
+  {
+    "en": "A child who ate without washing hands — what could they have done differently?",
+    "c": 1
+  },
+  {
+    "en": "When you eat with dirty hands — germs get into your body and can make you sick.",
+    "c": 1
+  },
+  {
+    "en": "Washing hands with soap before eating removes germs and keeps you healthy.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about the seasons of the year — and about the sun in the sky as a source of light and heat.",
+    "c": 1
+  },
+  {
+    "en": "The sun — a star in the sky that gives light and heat.",
+    "c": 1
+  },
+  {
+    "en": "At night — we do not see the sun in the sky; the moon and stars appear with weaker light.",
+    "c": 1
+  },
+  {
+    "en": "Seasons change — but the sun is always the main source of light during the day.",
+    "c": 1
+  },
+  {
+    "en": "In both seasons — during the day we see the sun in the sky.",
+    "c": 1
+  },
+  {
+    "en": "What gives light and heat during the day?",
+    "c": 1
+  },
+  {
+    "en": "During the day — it is bright and warm.",
+    "c": 1
+  },
+  {
+    "en": "The light comes from the sun.",
+    "c": 1
+  },
+  {
+    "en": "At night the sun is not visible from our side of Earth.",
+    "c": 1
+  },
+  {
+    "en": "We see the moon and the stars.",
+    "c": 1
+  },
+  {
+    "en": "The moon does not make its own light — it reflects some of the sun's light back to us.",
+    "c": 1
+  },
+  {
+    "en": "Stars are very distant stars that shine on their own, but their light is weak from far away.",
+    "c": 1
+  },
+  {
+    "en": "The answer: at night we see the moon and the stars. The moon reflects sunlight, and stars shine on their own.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about summer, winter, and the source of light.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how to protect nature — less waste, more care for plants and animals.",
+    "c": 1
+  },
+  {
+    "en": "Do not pick wildflowers without permission",
+    "c": 1
+  },
+  {
+    "en": "Protecting nature — in the garden, at school, and in the park.",
+    "c": 1
+  },
+  {
+    "en": "The children do not pick wildflowers — only in the allowed garden.",
+    "c": 1
+  },
+  {
+    "en": "They use bins for paper and plastic, and do not disturb insects and birds.",
+    "c": 1
+  },
+  {
+    "en": "That is how we protect nature — not just cleanliness, but care for life around us.",
+    "c": 1
+  },
+  {
+    "en": "Why should we not pick wildflowers without permission?",
+    "c": 1
+  },
+  {
+    "en": "Wildflowers in nature — food and shelter for insects and birds.",
+    "c": 1
+  },
+  {
+    "en": "Birds build a nest to raise their chicks.",
+    "c": 1
+  },
+  {
+    "en": "If we make loud noise or get too close — it can disturb the birds and the chicks.",
+    "c": 1
+  },
+  {
+    "en": "Protecting nature also means not disturbing animals when they are raising their young.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about waste and protecting the environment.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how to investigate like scientists — with observation, comparison, and one variable.",
+    "c": 1
+  },
+  {
+    "en": "Observation — we look and describe (what is happening?)",
+    "c": 1
+  },
+  {
+    "en": "Only the light changes — everything else is the same.",
+    "c": 1
+  },
+  {
+    "en": "Write down what you see — without guessing.",
+    "c": 1
+  },
+  {
+    "en": "If you change both water and light — you do not know what made the difference.",
+    "c": 1
+  },
+  {
+    "en": "What will be the variable in this test?",
+    "c": 1
+  },
+  {
+    "en": "What will be the variable in a test of a plant by a window versus a plant in a dark corner?",
+    "c": 1
+  },
+  {
+    "en": "In a fair test you change only one thing — that is the variable.",
+    "c": 1
+  },
+  {
+    "en": "The location (by a window with light versus a dark corner) is the only thing that changes.",
+    "c": 1
+  },
+  {
+    "en": "The answer: the variable is the amount of light (the plant's location).",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about states of matter — solid, liquid, and gas — in things we see every day.",
+    "c": 1
+  },
+  {
+    "en": "Gas — air we breathe; we cannot see it but it is there",
+    "c": 1
+  },
+  {
+    "en": "When it is warm — ice melts and becomes water (a liquid).",
+    "c": 1
+  },
+  {
+    "en": "This is a change you can see at home or in class — without a dangerous experiment.",
+    "c": 1
+  },
+  {
+    "en": "In the air — gas that we breathe.",
+    "c": 1
+  },
+  {
+    "en": "A cup of juice on the table — which state of matter?",
+    "c": 1
+  },
+  {
+    "en": "A cup of juice — which state of matter?",
+    "c": 1
+  },
+  {
+    "en": "Juice flows and takes the shape of the cup — that is a liquid.",
+    "c": 1
+  },
+  {
+    "en": "A bottle that looks empty is full of air we cannot see — that is a gas.",
+    "c": 1
+  },
+  {
+    "en": "A bottle that looks empty is full of air, which is a gas.",
+    "c": 1
+  },
+  {
+    "en": "**Content scope:** Seed → plant; without water — does not grow",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how a plant grows from a seed — and what happens when water is missing.",
+    "c": 1
+  },
+  {
+    "en": "Without water — the seed does not sprout or the plant wilts.",
+    "c": 1
+  },
+  {
+    "en": "If you forget to pour water — the plant does not grow well.",
+    "c": 1
+  },
+  {
+    "en": "What happens to a seed without water?",
+    "c": 1
+  },
+  {
+    "en": "Without water — the seed does not sprout, and therefore does not grow.",
+    "c": 1
+  },
+  {
+    "en": "It does not sprout and does not grow.",
+    "c": 1
+  },
+  {
+    "en": "You move it to a dark room for a week.",
+    "c": 1
+  },
+  {
+    "en": "A plant moved to a dark room — what will happen to its leaves?",
+    "c": 1
+  },
+  {
+    "en": "Without light — the plant cannot make food, the leaves start to turn yellow and fall off.",
+    "c": 1
+  },
+  {
+    "en": "The answer: the leaves will turn yellow and the plant will weaken.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how animals are adapted to the environment where they live.",
+    "c": 1
+  },
+  {
+    "en": "We call this adaptation to the environment.",
+    "c": 1
+  },
+  {
+    "en": "A habitat is the place where an animal finds food, water, and shelter.",
+    "c": 1
+  },
+  {
+    "en": "Every animal has adaptations — features that help it survive:",
+    "c": 1
+  },
+  {
+    "en": "Chameleon — body color that helps it blend into the environment (camouflage)",
+    "c": 1
+  },
+  {
+    "en": "A tiger in a forest or thicket blends among the trees — color and markings help with camouflage.",
+    "c": 1
+  },
+  {
+    "en": "Each animal has its own environment, and each has different adaptations.",
+    "c": 1
+  },
+  {
+    "en": "Why does a fish have fins?",
+    "c": 1
+  },
+  {
+    "en": "Fins help it swim and move in water.",
+    "c": 1
+  },
+  {
+    "en": "Which environment suits it?",
+    "c": 1
+  },
+  {
+    "en": "Dense feathers create a layer of air that insulates its body from the cold.",
+    "c": 1
+  },
+  {
+    "en": "Fat under the skin provides extra warmth and keeps body heat in.",
+    "c": 1
+  },
+  {
+    "en": "The suitable environment — ice and cold water; the main adaptation — dense feathers and fat for warmth.",
+    "c": 1
+  },
+  {
+    "en": "Every feature of the penguin's body is adapted to the extreme cold environment.",
+    "c": 1
+  },
+  {
+    "en": "The skeleton is the structure of bones that supports the body and protects important organs.",
+    "c": 1
+  },
+  {
+    "en": "You can think of the skeleton like a frame that supports the body, and muscles as parts that help us move.",
+    "c": 1
+  },
+  {
+    "en": "The food passes through the mouth, esophagus, stomach, and intestines.",
+    "c": 1
+  },
+  {
+    "en": "At the same time the muscles in her hands help her hold a cup — skeleton and muscles work together.",
+    "c": 1
+  },
+  {
+    "en": "What is the role of the skeleton in the body?",
+    "c": 1
+  },
+  {
+    "en": "Support and protection for the body",
+    "c": 1
+  },
+  {
+    "en": "Bend your elbow — the muscles in your arm contract.",
+    "c": 1
+  },
+  {
+    "en": "The bone in your arm stays straight — the skeleton holds the shape.",
+    "c": 1
+  },
+  {
+    "en": "Which two parts are working here — skeleton or muscles?",
+    "c": 1
+  },
+  {
+    "en": "The muscle in the arm contracts and pulls the bone upward.",
+    "c": 1
+  },
+  {
+    "en": "The bones (skeleton) provide the frame and support for movement.",
+    "c": 1
+  },
+  {
+    "en": "The skeleton gives support and structure. Muscles create movement. Together they allow every physical action.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about the roles of body systems.",
+    "c": 1
+  },
+  {
+    "en": "Weather — what happens in the sky today or this week:",
+    "c": 1
+  },
+  {
+    "en": "Climate — the average weather over a long time (months and years) in an area.",
+    "c": 1
+  },
+  {
+    "en": "The water cycle — water moves between the sea, sky, and land:",
+    "c": 1
+  },
+  {
+    "en": "In the first stage, the sun heats water in the sea and some of it turns into vapor.",
+    "c": 1
+  },
+  {
+    "en": "In the second stage, the vapor rises, cools, and condenses into tiny drops in clouds.",
+    "c": 1
+  },
+  {
+    "en": "In the third stage, rain falls and the water returns to the sea and land.",
+    "c": 1
+  },
+  {
+    "en": "In the fourth stage, plants, animals, and people use water — and the cycle continues.",
+    "c": 1
+  },
+  {
+    "en": "Water from the sea evaporates, forms clouds, falls as rain, flows in streams, and returns to the sea.",
+    "c": 1
+  },
+  {
+    "en": "In Israel summers are usually hot and dry, and winters bring rain — a pattern like this over years is climate.",
+    "c": 1
+  },
+  {
+    "en": "Rain falling today is weather.",
+    "c": 1
+  },
+  {
+    "en": "A hot summer that returns here every year is part of the climate.",
+    "c": 1
+  },
+  {
+    "en": "Where does water go after rain falls?",
+    "c": 1
+  },
+  {
+    "en": "Rain is absorbed into the ground or flows in streams.",
+    "c": 1
+  },
+  {
+    "en": "In the end most water returns to the sea.",
+    "c": 1
+  },
+  {
+    "en": "What will happen to the puddle on a sunny day?",
+    "c": 1
+  },
+  {
+    "en": "Where does the water go?",
+    "c": 1
+  },
+  {
+    "en": "Which stage of the water cycle does it enter?",
+    "c": 1
+  },
+  {
+    "en": "The water evaporates — goes from liquid to vapor that rises into the air.",
+    "c": 1
+  },
+  {
+    "en": "The vapor cools and condenses into tiny drops in clouds — and so the water cycle continues.",
+    "c": 1
+  },
+  {
+    "en": "The puddle water evaporates and rises into the air — that is the evaporation stage in the water cycle.",
+    "c": 1
+  },
+  {
+    "en": "Evaporation — liquid water turns into vapor; then clouds form and rain falls.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about rain, clouds, and the sea.",
+    "c": 1
+  },
+  {
+    "en": "In every place in nature there are living things that depend on each other.",
+    "c": 1
+  },
+  {
+    "en": "Which link in the chain?",
+    "c": 1
+  },
+  {
+    "en": "In a chain where grass is eaten by a beetle, and the beetle is eaten by a bird, food flows like this:",
+    "c": 1
+  },
+  {
+    "en": "Grass makes food with light — the beetle eats the grass — the bird feeds on the beetle.",
+    "c": 1
+  },
+  {
+    "en": "Grass gives food to the beetle; the beetle gives food to the bird.",
+    "c": 1
+  },
+  {
+    "en": "In this simple food chain — plant first, then herbivore, then predator.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how to plan a short experiment — with a hypothesis, observation, and one variable.",
+    "c": 1
+  },
+  {
+    "en": "A scientific experiment tests a question about the world.",
+    "c": 1
+  },
+  {
+    "en": "Variable — the only thing you change (for example amount of water).",
+    "c": 1
+  },
+  {
+    "en": "According to the data — do the data support the hypothesis?",
+    "c": 1
+  },
+  {
+    "en": "If you change several things — you do not know what made the difference.",
+    "c": 1
+  },
+  {
+    "en": "Which plant is taller — by a window or in a corner?",
+    "c": 1
+  },
+  {
+    "en": "In this experiment the only variable is light location (by a window or in a dark corner).",
+    "c": 1
+  },
+  {
+    "en": "Only then can we know for sure that light location is the cause of the height change.",
+    "c": 1
+  },
+  {
+    "en": "A fair experiment is one with only one variable, and all other conditions identical.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about forces — push and pull — and how they move objects.",
+    "c": 1
+  },
+  {
+    "en": "A force is a push or pull that makes an object move or stop.",
+    "c": 1
+  },
+  {
+    "en": "Friction is a force that resists motion when two surfaces touch.",
+    "c": 1
+  },
+  {
+    "en": "A magnet can pull certain materials, like iron, without touching them.",
+    "c": 1
+  },
+  {
+    "en": "Same push — different result because of the surface.",
+    "c": 1
+  },
+  {
+    "en": "What happens when you stop pushing — why does the book stop?",
+    "c": 1
+  },
+  {
+    "en": "Pushing a book on a table — you move the book away from you, that is a push force.",
+    "c": 1
+  },
+  {
+    "en": "When you stop pushing, friction between the book and the table slows it down and stops it.",
+    "c": 1
+  },
+  {
+    "en": "If no force keeps pushing, friction makes the book slow down and stop.",
+    "c": 1
+  },
+  {
+    "en": "The force is a push; the book stops because of friction between the book and the table surface.",
+    "c": 1
+  },
+  {
+    "en": "Today we will summarize what we learned in science about plants — the last lesson summary on this topic.",
+    "c": 1
+  },
+  {
+    "en": "- Root — absorbs water and holds the plant in the ground",
+    "c": 1
+  },
+  {
+    "en": "Inside the leaves, with the help of sunlight, the plant makes food for itself.",
+    "c": 1
+  },
+  {
+    "en": "We call this making food: it is not food like humans eat, but the idea is similar.",
+    "c": 1
+  },
+  {
+    "en": "Without enough light — the leaves start to pale and the plant weakens.",
+    "c": 1
+  },
+  {
+    "en": "Input — light, water, and air; output — food for the plant.",
+    "c": 1
+  },
+  {
+    "en": "Amount of water — even with light, without water the plant cannot make food properly.",
+    "c": 1
+  },
+  {
+    "en": "In the light the plant makes food for itself.",
+    "c": 1
+  },
+  {
+    "en": "Makes food with the help of light",
+    "c": 1
+  },
+  {
+    "en": "Imagine a plant that grows for two weeks in a room with no window — no sunlight at all.",
+    "c": 1
+  },
+  {
+    "en": "What will happen to food production in the plant?",
+    "c": 1
+  },
+  {
+    "en": "Which growing condition is missing?",
+    "c": 1
+  },
+  {
+    "en": "A plant without sunlight cannot make food inside its leaves.",
+    "c": 1
+  },
+  {
+    "en": "Without food production — the plant weakens, the leaves lose their green color and turn pale.",
+    "c": 1
+  },
+  {
+    "en": "Light is a necessary condition for making food; without it the plant cannot function.",
+    "c": 1
+  },
+  {
+    "en": "The leaves will turn pale, the plant will weaken — the missing growing condition is sunlight.",
+    "c": 1
+  },
+  {
+    "en": "Light, water, and suitable soil are important growing conditions; without light there is no food production in leaves.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about plant needs and the role of the leaf.",
+    "c": 1
+  },
+  {
+    "en": "Predator — an animal that eats another animal.",
+    "c": 1
+  },
+  {
+    "en": "Two types of plants also compete for water in the same valley.",
+    "c": 1
+  },
+  {
+    "en": "Who is the predator and who is the prey?",
+    "c": 1
+  },
+  {
+    "en": "The question: a kingfisher and a small fish in a river — who is predator and who is prey? And there is also competition — for what?",
+    "c": 1
+  },
+  {
+    "en": "A predator is an animal that feeds on other animals.",
+    "c": 1
+  },
+  {
+    "en": "The kingfisher feeds on small fish — so it is the predator, and the small fish is the prey.",
+    "c": 1
+  },
+  {
+    "en": "In a river, different kingfishers and other water birds compete for the same small fish as a food source.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about the respiratory system and the digestive system — how the body gets oxygen and breaks down food.",
+    "c": 1
+  },
+  {
+    "en": "Breathing — when we breathe, air enters the lungs.",
+    "c": 1
+  },
+  {
+    "en": "The lungs pass oxygen to the blood; the blood brings oxygen to the whole body.",
+    "c": 1
+  },
+  {
+    "en": "The blood returns carbon dioxide to the lungs, and we breathe it out.",
+    "c": 1
+  },
+  {
+    "en": "The mouth chews and moistens food, the esophagus carries it to the stomach, the stomach mixes it, and in the intestines nutrients are absorbed into the body.",
+    "c": 1
+  },
+  {
+    "en": "Oxygen and nutrients from food help the body get energy for activity.",
+    "c": 1
+  },
+  {
+    "en": "The body needs more oxygen for the muscles.",
+    "c": 1
+  },
+  {
+    "en": "After a meal — digestion works in the stomach and intestines.",
+    "c": 1
+  },
+  {
+    "en": "The body breaks down bread and vegetables into materials the blood carries.",
+    "c": 1
+  },
+  {
+    "en": "Which gas enters the lungs when we breathe?",
+    "c": 1
+  },
+  {
+    "en": "The lungs absorb oxygen into the blood.",
+    "c": 1
+  },
+  {
+    "en": "Chew bread for a moment — notice your teeth and tongue.",
+    "c": 1
+  },
+  {
+    "en": "Where does it go after swallowing?",
+    "c": 1
+  },
+  {
+    "en": "The question: what happens to food in the mouth — and where does it go after swallowing?",
+    "c": 1
+  },
+  {
+    "en": "Teeth chew food and break it into small pieces.",
+    "c": 1
+  },
+  {
+    "en": "After swallowing, food passes through the pharynx and esophagus to the stomach — where breakdown continues.",
+    "c": 1
+  },
+  {
+    "en": "From the stomach it goes to the intestines, where nutrients are absorbed into the blood.",
+    "c": 1
+  },
+  {
+    "en": "In the mouth — chewing and saliva. After swallowing — pharynx, esophagus, stomach, and intestines.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about lungs, oxygen, and the path of food.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about rocks and soil — and how weather and seasons affect them.",
+    "c": 1
+  },
+  {
+    "en": "Rain and sun change soil and rock throughout the year:",
+    "c": 1
+  },
+  {
+    "en": "Earth is tilted — so different areas get different patterns of light and heat during the year (conceptual background).",
+    "c": 1
+  },
+  {
+    "en": "In the mountains — exposed rocks; rain and wind encourage small cracks over time.",
+    "c": 1
+  },
+  {
+    "en": "Same place — rock, soil, and water — change with the weather.",
+    "c": 1
+  },
+  {
+    "en": "Plants need water and materials from the top layer.",
+    "c": 1
+  },
+  {
+    "en": "Which material is rock?",
+    "c": 1
+  },
+  {
+    "en": "Which is similar to soil?",
+    "c": 1
+  },
+  {
+    "en": "The question: think about a beach — sand, rocks, water. Which material is rock? Which is similar to soil?",
+    "c": 1
+  },
+  {
+    "en": "Rock is hard material formed in nature — a whole piece that does not break apart easily.",
+    "c": 1
+  },
+  {
+    "en": "Sand forms when rocks break down over many years because of rain, wind, and waves — into small grains.",
+    "c": 1
+  },
+  {
+    "en": "It is made of particles, and water passes through it — just like soil.",
+    "c": 1
+  },
+  {
+    "en": "The rock on the beach — hard, whole piece, rock. Sand — small grains from rock; similar to soil.",
+    "c": 1
+  },
+  {
+    "en": "Now you know about rock, soil, and their connection to weather in science.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about natural resources — what nature gives us — and how to protect them.",
+    "c": 1
+  },
+  {
+    "en": "A natural resource — something that comes from nature and people use:",
+    "c": 1
+  },
+  {
+    "en": "- Forests — for wood, clean air, and habitats for animals",
+    "c": 1
+  },
+  {
+    "en": "Water — a natural resource for drinking and for plants.",
+    "c": 1
+  },
+  {
+    "en": "Because clean water is needed for life",
+    "c": 1
+  },
+  {
+    "en": "Which natural resource does that protect?",
+    "c": 1
+  },
+  {
+    "en": "The question: where at home can you save water? And which natural resource does that protect?",
+    "c": 1
+  },
+  {
+    "en": "Water is a natural resource — it comes from nature and we depend on it for drinking, cooking, and cleaning.",
+    "c": 1
+  },
+  {
+    "en": "Method — what we do, what is the variable, what stays the same",
+    "c": 1
+  },
+  {
+    "en": "Imagine planning before you start — like a map before a walk.",
+    "c": 1
+  },
+  {
+    "en": "According to the numbers — do the data support the prediction?",
+    "c": 1
+  },
+  {
+    "en": "Which sponge absorbs more water — large or small?",
+    "c": 1
+  },
+  {
+    "en": "What conclusion would you want to write after the table?",
+    "c": 1
+  },
+  {
+    "en": "The question: plan a safe experiment — which sponge absorbs more water: large or small?",
+    "c": 1
+  },
+  {
+    "en": "In this experiment, the variable is sponge size — that is what changes between trials.",
+    "c": 1
+  },
+  {
+    "en": "A large sponge holds more space — so it will absorb more water.",
+    "c": 1
+  },
+  {
+    "en": "If the large sponge absorbed more — the data support the hypothesis.",
+    "c": 1
+  },
+  {
+    "en": "Physical change — the material stays the same material, only the shape changes.",
+    "c": 1
+  },
+  {
+    "en": "- Conductor — a material that allows electricity to pass through (metal like iron, copper)",
+    "c": 1
+  },
+  {
+    "en": "- Insulator — a material that makes it hard for electricity to pass (plastic, rubber)",
+    "c": 1
+  },
+  {
+    "en": "Electricity can pass through it.",
+    "c": 1
+  },
+  {
+    "en": "Electricity almost does not pass through it.",
+    "c": 1
+  },
+  {
+    "en": "Can electricity pass through easily?",
+    "c": 1
+  },
+  {
+    "en": "Ice that turned into water — physical or chemical change?",
+    "c": 1
+  },
+  {
+    "en": "Before and after — still water.",
+    "c": 1
+  },
+  {
+    "en": "Which conducts electricity?",
+    "c": 1
+  },
+  {
+    "en": "Which is an insulator?",
+    "c": 1
+  },
+  {
+    "en": "The question: a rubber balloon, a metal spoon, a wool string — which conducts electricity? Which is an insulator?",
+    "c": 1
+  },
+  {
+    "en": "A conductor is a material that allows electricity to flow through it easily — usually metals.",
+    "c": 1
+  },
+  {
+    "en": "An insulator is a material that makes it very hard for electricity to pass — like rubber, plastic, wool, wood.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about animal reproduction — and traits that pass from generation to generation.",
+    "c": 1
+  },
+  {
+    "en": "Offspring are similar to their parents — eyes, color, shape.",
+    "c": 1
+  },
+  {
+    "en": "Reproduction and inherited traits help the species continue.",
+    "c": 1
+  },
+  {
+    "en": "What is similar between a puppy and its parents?",
+    "c": 1
+  },
+  {
+    "en": "Think about a butterfly and caterpillar — different stages in the life cycle.",
+    "c": 1
+  },
+  {
+    "en": "The question: in a butterfly and caterpillar — what changes in the life stages? And what stays the same species?",
+    "c": 1
+  },
+  {
+    "en": "Butterflies go through a life cycle in four stages:",
+    "c": 1
+  },
+  {
+    "en": "Egg, then caterpillar, then chrysalis, and finally adult — butterfly.",
+    "c": 1
+  },
+  {
+    "en": "Inside the chrysalis a structural change happens; the adult butterfly carries inherited traits like wing color from its parents.",
+    "c": 1
+  },
+  {
+    "en": "Changes — shape, size, and behavior at each stage. Stays — species and inherited traits like wing color.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how skeleton, muscles, and senses work together — and how the brain receives messages from the body.",
+    "c": 1
+  },
+  {
+    "en": "We already learned that skeleton and muscles help with movement.",
+    "c": 1
+  },
+  {
+    "en": "Today we add the nerve network — how senses, brain, and muscles work together.",
+    "c": 1
+  },
+  {
+    "en": "Muscles in the arm contract and pull the bones, creating movement.",
+    "c": 1
+  },
+  {
+    "en": "Bend your knee — muscles in the thigh work; the thigh bone stays stable.",
+    "c": 1
+  },
+  {
+    "en": "Which part gives the shape?",
+    "c": 1
+  },
+  {
+    "en": "Which part moves?",
+    "c": 1
+  },
+  {
+    "en": "The question: when you bend your knee — which part gives the shape? And which part moves?",
+    "c": 1
+  },
+  {
+    "en": "The skeleton is the rigid structure of the body — bones give the body shape and support and allow standing.",
+    "c": 1
+  },
+  {
+    "en": "Muscles wrap around bones and are connected to them by tendons.",
+    "c": 1
+  },
+  {
+    "en": "When a muscle contracts — it pulls the bone and causes movement.",
+    "c": 1
+  },
+  {
+    "en": "The thigh muscle — contracts and moves the lower leg bone.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about Earth's layers, resources beneath the surface — and phenomena like earthquakes and volcanic eruptions.",
+    "c": 1
+  },
+  {
+    "en": "We live on the crust — the outer thin layer of Earth.",
+    "c": 1
+  },
+  {
+    "en": "Below the crust are warmer areas and rocks that move very slowly over time.",
+    "c": 1
+  },
+  {
+    "en": "A volcano — a place where hot material from inside Earth can reach the surface.",
+    "c": 1
+  },
+  {
+    "en": "Resources like groundwater and rocks are also found within the crust.",
+    "c": 1
+  },
+  {
+    "en": "Groundwater resources — important for farming; need to be protected and not pumped too much.",
+    "c": 1
+  },
+  {
+    "en": "Which layer do we live on — crust or core?",
+    "c": 1
+  },
+  {
+    "en": "We are on the surface.",
+    "c": 1
+  },
+  {
+    "en": "Think about water from a well — a resource below the crust.",
+    "c": 1
+  },
+  {
+    "en": "Which natural phenomenon have you heard about in the news?",
+    "c": 1
+  },
+  {
+    "en": "The question: water from a well — where does it come from? And which natural phenomenon is related to movement inside Earth?",
+    "c": 1
+  },
+  {
+    "en": "Groundwater is found within the crust — in rock and sand layers that hold water in spaces between them.",
+    "c": 1
+  },
+  {
+    "en": "A well is dug to reach those layers and pump water for use.",
+    "c": 1
+  },
+  {
+    "en": "An earthquake happens when rocks or plates in Earth's crust move suddenly and release energy — and the shaking reaches the surface.",
+    "c": 1
+  },
+  {
+    "en": "Water from a well — comes from the crust (groundwater). Phenomenon — earthquake (movement inside Earth).",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about natural resources — what is renewable and what is not — and about pollution and ways to help.",
+    "c": 1
+  },
+  {
+    "en": "- Soil — plastic waste that does not break down",
+    "c": 1
+  },
+  {
+    "en": "A solar panel — renewable energy from the sun.",
+    "c": 1
+  },
+  {
+    "en": "A car burning fuel uses a non-renewable resource, and releases materials that pollute the air.",
+    "c": 1
+  },
+  {
+    "en": "Which renewable resource do you use?",
+    "c": 1
+  },
+  {
+    "en": "The question: at home — which renewable resource do you use? And where do you see pollution — in air, water, or soil?",
+    "c": 1
+  },
+  {
+    "en": "A renewable resource is one that nature recreates in a reasonable time.",
+    "c": 1
+  },
+  {
+    "en": "Sun — an energy source that returns every day; solar panels convert it to electricity.",
+    "c": 1
+  },
+  {
+    "en": "Does a plant that gets the right amount of water grow more than a plant that gets almost no water after a week?",
+    "c": 1
+  },
+  {
+    "en": "If the line rises more for the plant that got proper water — the prediction matches the data.",
+    "c": 1
+  },
+  {
+    "en": "Without recording — you forget numbers.",
+    "c": 1
+  },
+  {
+    "en": "Which sponge absorbs more water?",
+    "c": 1
+  },
+  {
+    "en": "What will you write in the journal?",
+    "c": 1
+  },
+  {
+    "en": "What will the graph look like (axes, points)?",
+    "c": 1
+  },
+  {
+    "en": "The question: plan an investigation — which sponge absorbs more water? What do you write in the journal and how do you build a graph?",
+    "c": 1
+  },
+  {
+    "en": "In the journal you record every data point:",
+    "c": 1
+  },
+  {
+    "en": "Each measurement becomes a point on the graph; you can see which sponge absorbed more.",
+    "c": 1
+  },
+  {
+    "en": "Journal — date and amount of water in each measurement. Graph — horizontal axis for trials, vertical axis for water amount in milliliters, and points.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn about mixtures — and how light creates shadow, reflection, and transparency.",
+    "c": 1
+  },
+  {
+    "en": "A mixture — two or more materials together, without a new reaction.",
+    "c": 1
+  },
+  {
+    "en": "Water and salt make salt water (a solution) — you can still separate them in a suitable way, for example evaporating water with teacher supervision.",
+    "c": 1
+  },
+  {
+    "en": "What happens to light that hits a mirror?",
+    "c": 1
+  },
+  {
+    "en": "Which direction does the light return?",
+    "c": 1
+  },
+  {
+    "en": "What is the difference between a mirror and clear glass — in which does light pass and in which does it return?",
+    "c": 1
+  },
+  {
+    "en": "The question: what is the difference between a mirror and clear glass — in which does light pass and in which does it return?",
+    "c": 1
+  },
+  {
+    "en": "When it hits a surface — it can behave in three ways:",
+    "c": 1
+  },
+  {
+    "en": "Clear glass — allows light to pass through with almost no disturbance.",
+    "c": 1
+  },
+  {
+    "en": "Mirror — returns light (we see ourselves); glass — passes light (we see what is behind).",
+    "c": 1
+  },
+  {
+    "en": "The web changes — not necessarily for the better",
+    "c": 1
+  },
+  {
+    "en": "Three links — plant, animal that eats plants, predator.",
+    "c": 1
+  },
+  {
+    "en": "The question: draw a food web with three links — and where do you see biodiversity in a park?",
+    "c": 1
+  },
+  {
+    "en": "Each link depends on the one before it — if the grasshopper disappears, the bird will suffer from lack of food.",
+    "c": 1
+  },
+  {
+    "en": "The more species there are — the stronger and more resilient the web is to changes.",
+    "c": 1
+  },
+  {
+    "en": "Today in science we will learn how different systems in the body are coordinated — and how nutrition, sleep, and activity affect health.",
+    "c": 1
+  },
+  {
+    "en": "- Blood and heart — carry oxygen and materials to the whole body",
+    "c": 1
+  },
+  {
+    "en": "After a meal — digestion breaks down food; blood carries it; the brain feels full.",
+    "c": 1
+  },
+  {
+    "en": "Why is sleep important for the body?",
+    "c": 1
+  },
+  {
+    "en": "Which systems worked so food could reach your body's cells?",
+    "c": 1
+  },
+  {
+    "en": "The question: after dinner — which systems worked so food could reach your body's cells?",
+    "c": 1
+  },
+  {
+    "en": "The digestive system — breaks down food in the stomach and intestines into absorbable materials.",
+    "c": 1
+  },
+  {
+    "en": "The blood system — the heart pumps and circulates blood; blood carries nutrients to every cell.",
+    "c": 1
+  },
+  {
+    "en": "The respiratory system — brings oxygen that cells need to produce energy from food.",
+    "c": 1
+  },
+  {
+    "en": "The nervous system — coordinates and tells the brain when the body is full and when it needs energy.",
+    "c": 1
+  },
+  {
+    "en": "Systems that work after a meal: digestion, blood, breathing, and nerves — all connected.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about the link between nutrition, sleep, and activity.",
+    "c": 1
+  },
+  {
+    "en": "What is the main source of light and heat for Earth?",
+    "c": 1
+  },
+  {
+    "en": "During the day — warm and bright.",
+    "c": 1
+  },
+  {
+    "en": "Light comes from the sun.",
+    "c": 1
+  },
+  {
+    "en": "What do you know about the sun and Earth from your lessons?",
+    "c": 1
+  },
+  {
+    "en": "The question: how does climate affect life — and what is the sun's role in all of this?",
+    "c": 1
+  },
+  {
+    "en": "Rain — water for plants and animals; long drought — fewer crops; heat — increases evaporation and affects water.",
+    "c": 1
+  },
+  {
+    "en": "It heats the land, causes water to evaporate, and affects the water cycle and climate.",
+    "c": 1
+  },
+  {
+    "en": "Earth's tilt and its movement around the sun affect how much light and heat reach different areas in the seasons.",
+    "c": 1
+  },
+  {
+    "en": "Climate — rain and drought affect life. The sun — important energy source for the water cycle and climate.",
+    "c": 1
+  },
+  {
+    "en": "When you practice, look for questions about the link between sun, climate, and life.",
+    "c": 1
+  },
+  {
+    "en": "Sustainable choices — a way of living that protects nature for future generations:",
+    "c": 1
+  },
+  {
+    "en": "Which action will you start this week?",
+    "c": 1
+  },
+  {
+    "en": "The question: what are three daily choices you can change — and which footprint do they reduce?",
+    "c": 1
+  },
+  {
+    "en": "Carbon footprint measures our overall impact on the environment — energy, water, and waste.",
+    "c": 1
+  },
+  {
+    "en": "Recycling a plastic bottle — less waste and less new production that requires energy.",
+    "c": 1
+  },
+  {
+    "en": "Comparison — two or more situations, for example with light and without light",
+    "c": 1
+  },
+  {
+    "en": "Variable — what we change; constant — what stays the same",
+    "c": 1
+  },
+  {
+    "en": "Conclusion — what did we learn from the data?",
+    "c": 1
+  },
+  {
+    "en": "Which material insulates heat better — cloth or paper?",
+    "c": 1
+  },
+  {
+    "en": "What will you present in class?",
+    "c": 1
+  },
+  {
+    "en": "The question: plan a project — which material insulates heat better: cloth or paper? What do you present in class?",
+    "c": 1
+  },
+  {
+    "en": "A heat insulator is a material that slows the passage of heat.",
+    "c": 1
+  },
+  {
+    "en": "Two cups with warm water only, with teacher supervision — one wrapped in cloth, one in paper.",
+    "c": 1
+  },
+  {
+    "en": "Measure temperature every two minutes, without touching hot water with your hands.",
+    "c": 1
+  },
+  {
+    "en": "One for the cloth-wrapped cup, one for the paper-wrapped cup.",
+    "c": 1
+  },
+  {
+    "en": "Cloth may insulate heat better if it traps more air. In the presentation show the research question, graph, and conclusion.",
+    "c": 1
+  },
+  {
+    "en": "- Reversible change — you can go back, for example ice that becomes water and returns to ice",
+    "c": 1
+  },
+  {
+    "en": "Ice that became water and returned in the freezer — reversible or irreversible?",
+    "c": 1
+  },
+  {
+    "en": "Which is a reversible change?",
+    "c": 1
+  },
+  {
+    "en": "Which is irreversible?",
+    "c": 1
+  },
+  {
+    "en": "And why is burning not a home experiment for children?",
+    "c": 1
+  },
+  {
+    "en": "The question: folding paper versus burning paper — which change is reversible, and which is not? And which safety rule is important?",
+    "c": 1
+  },
+  {
+    "en": "Burning paper — ash, heat, and smoke are formed; the paper no longer exists — irreversible change.",
+    "c": 1
+  },
+  {
+    "en": "Fire is dangerous, so students do not do fire experiments at home or alone. If there is a demonstration in class, only a responsible teacher does it; if there is danger, move away and call an adult immediately.",
+    "c": 1
+  }
+]

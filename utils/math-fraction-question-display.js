@@ -40,7 +40,7 @@ export function isMathFractionsQuestionStem(question) {
   )
     .trim()
     .toLowerCase();
-  return op === "fractions" || op.includes("fraction") || op.includes("");
+  return op === "fractions" || op.includes("fraction");
 }
 
 /**

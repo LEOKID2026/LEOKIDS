@@ -1,5 +1,11 @@
 {
   "copy": {
-    "not_available": "غير متوفر"
+    "not_available": "غير متوفر",
+    "topic_colon_detail": "{topic}: {detail}",
+    "in_topic_home_tip": "في {topic}: {tip}",
+    "summary_stable_with_focus": "يُظهر هذا التقرير تمرينًا مستقرًا نسبيًا، لكن هناك مواضيع قليلة تستحق الانتباه. يبدو {strength} أكثر استقرارًا، بينما يُظهر {focus} أخطاء متكررة.",
+    "summary_focus_only": "يحتوي هذا التقرير على مواضيع قليلة تستحق الانتباه: {focus}.",
+    "summary_stable_only": "يُظهر هذا التقرير تمرينًا مستقرًا نسبيًا، خاصة في {strength}.",
+    "topic_stable_line": "{topic}: يبدو التمرين مستقرًا — {q} أسئلة، بدقة {acc}٪."
   }
 }

@@ -25,7 +25,7 @@ import {
   SCHOOL_CARD_INNER,
 } from "../../../components/school-portal/SchoolPortalUi";
 import { schoolGradeLabelHe, getSchoolGradeOptions } from "../../../lib/school-portal/school-drilldown";
-import { useT } from "../../../lib/i18n/I18nProvider.jsx";
+import { useI18n, useT } from "../../../lib/i18n/I18nProvider.jsx";
 import { useSchoolDataFetch } from "../../../lib/school-portal/use-school-data-fetch";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
 import {
@@ -44,6 +44,7 @@ import { useReportDateRange } from "../../../hooks/useReportDateRange";
 import { appendReportRangeToSearchParams } from "../../../lib/reporting/report-date-range.js";
 import {
   apiErrorMessageHe,
+  bindSchoolUiLocale,
   schoolAuthFetch,
   SCHOOL_BACK_CLASSES,
   SCHOOL_BACK_GRADES,
@@ -65,6 +66,8 @@ import {
   SCHOOL_OPERATOR_VIEW_REPORT,
   SCHOOL_STUDENTS_SUBTITLE,
   SCHOOL_STUDENTS_TITLE,
+  SCHOOL_HIDE_ADVANCED_ENROLLMENT,
+  SCHOOL_ENROLLING,
   SCHOOL_VIEW_STUDENT_REPORT,
   studentLearningStatusBadgeClass,
 } from "../../../lib/school-portal/school-ui.js";
@@ -80,6 +83,8 @@ function gradeCountMap(summary) {
 export default function SchoolStudentsPage() {
   const router = useRouter();
   const t = useT();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const schoolGradeOptions = useMemo(() => getSchoolGradeOptions(t), [t]);
   const { state, accessToken, authMethod, me, schoolId } = useSchoolPortalLoad();
   const [gradeLevel, setGradeLevel] = useState("");
@@ -482,7 +487,7 @@ export default function SchoolStudentsPage() {
                   onClick={() => setShowEnroll((v) => !v)}
                   className="text-sm text-amber-300 hover:underline"
                 >
-                  {showEnroll ? "Hide advanced enrollment" : SCHOOL_ENROLL_SECTION}
+                  {showEnroll ? SCHOOL_HIDE_ADVANCED_ENROLLMENT : SCHOOL_ENROLL_SECTION}
                 </button>
                 {showEnroll ? (
                   <form onSubmit={enroll} className="space-y-3 max-w-xl mt-3">
@@ -496,7 +501,7 @@ export default function SchoolStudentsPage() {
                       />
                     </label>
                     <SchoolPrimaryButton disabled={busy} type="submit">
-                      {busy ? "Enrolling…" : SCHOOL_ENROLL_STUDENT}
+                      {busy ? SCHOOL_ENROLLING : SCHOOL_ENROLL_STUDENT}
                     </SchoolPrimaryButton>
                   </form>
                 ) : null}

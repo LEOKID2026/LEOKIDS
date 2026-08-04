@@ -1,12 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../Layout";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
-import {
-  CONTACT_EMAIL,
-  LEGAL_CROSS_LINKS,
-  POLICY_LAST_UPDATED,
-} from "../../data/legal/sitePolicies.js";
+import { useT, useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { useLegalPolicyBundle } from "../../hooks/useLegalPolicyBundle.js";
 
 /**
  * Renders a legal/policy page from SITE_POLICIES content.
@@ -14,6 +10,8 @@ import {
  */
 export default function SitePolicyPage({ policy }) {
   const t = useT();
+  const { direction, locale, isRtl } = useI18n();
+  const legal = useLegalPolicyBundle();
   const { pageTitle, metaDescription, intro, sections, route } = policy;
 
   return (
@@ -22,10 +20,14 @@ export default function SitePolicyPage({ policy }) {
         <title>{`${pageTitle} · LEO KIDS`}</title>
         <meta name="description" content={metaDescription} />
       </Head>
-      <article dir="ltr" lang="en" className="max-w-3xl mx-auto px-4 py-10 sm:py-12 text-left">
+      <article
+        dir={direction}
+        lang={locale}
+        className={`max-w-3xl mx-auto px-4 py-10 sm:py-12 ${isRtl ? "text-right" : "text-left"}`}
+      >
         <header className="mb-8 space-y-3">
           <p className="text-xs text-white/50">
-            {t("ui.public.legalShell.lastUpdated", { date: POLICY_LAST_UPDATED })}
+            {t("legal.lastUpdated")}: {legal.policyLastUpdatedDisplay}
           </p>
           <h1 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-amber-300 via-amber-200 to-rose-300 bg-clip-text text-transparent">
             {pageTitle}
@@ -37,15 +39,20 @@ export default function SitePolicyPage({ policy }) {
 
         <footer className="mt-10 pt-6 border-t border-white/10 space-y-4 text-sm text-white/65">
           <p>
-            {t("ui.public.legalShell.questions")}{" "}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-amber-300 hover:text-amber-200 underline">
-              {CONTACT_EMAIL}
+            {t("legal.questionsLabel")}:{" "}
+            <a
+              href={`mailto:${legal.contactEmail}`}
+              className="text-amber-300 hover:text-amber-200 underline"
+              dir="ltr"
+              lang="en"
+            >
+              {legal.contactEmail}
             </a>
           </p>
-          <nav aria-label={t("ui.public.legalShell.legalNavAria")}>
-            <p className="mb-2 font-semibold text-white/80">{t("ui.public.legalShell.additionalDocuments")}</p>
+          <nav aria-label={t("legal.additionalDocuments")}>
+            <p className="mb-2 font-semibold text-white/80">{t("legal.additionalDocuments")}</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-1">
-              {LEGAL_CROSS_LINKS.filter((l) => l.href !== route).map((link) => (
+              {legal.legalCrossLinks.filter((l) => l.href !== route).map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-amber-300/90 hover:text-amber-200 underline">
                     {link.label}

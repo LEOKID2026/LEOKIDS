@@ -1,5 +1,5 @@
 
-import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
+import { burnDownCopy, getActiveLearningBurnDownLocale } from "../lib/learning/burn-down-copy.js";
 import { GRADES, PI, getShapesForTopic, TOPICS } from "./geometry-constants.js";
 import {
   isPrismVolumeTriangleAllowed,
@@ -553,7 +553,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
             }
           )
         ),
-        { subject: "geometry", contentLocale: "en" }
+        { subject: "geometry", contentLocale: getActiveLearningBurnDownLocale() || "en" }
       );
     }
   }
@@ -2638,7 +2638,7 @@ export function generateQuestion(level, topic, gradeKey, mixedOps = null, probeO
         )
       )
     ),
-    { subject: "geometry", contentLocale: "en" }
+    { subject: "geometry", contentLocale: getActiveLearningBurnDownLocale() || "en" }
   );
 }
 

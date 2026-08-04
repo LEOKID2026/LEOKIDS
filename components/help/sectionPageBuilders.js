@@ -7,16 +7,20 @@ import { useSharedShellUi } from "../../hooks/useSharedShellUi.js";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 function helpCenterLabel(locale, t) {
-  const fromUi = t?.("nav.helpCenter");
-  if (fromUi && fromUi !== "nav.helpCenter") return fromUi;
+  const fromUi = t?.("ui.nav.helpCenter");
+  if (fromUi && fromUi !== "ui.nav.helpCenter") return fromUi;
   const id = String(locale || "");
+  if (id === "ar-001" || id.startsWith("ar")) return t?.("ui.nav.helpCenter") || "مركز المساعدة";
   if (id === "es-419" || id.startsWith("es-")) return "Centro de ayuda";
   if (id === "pt-BR" || id.startsWith("pt-")) return "Central de ajuda";
   return "Help center";
 }
 
-function updatedLabel(locale, date) {
+function updatedLabel(locale, date, t) {
   const id = String(locale || "");
+  if (id === "ar-001" || id.startsWith("ar")) {
+    return `${t?.("legal.lastUpdated") || "آخر تحديث"}: ${date}`;
+  }
   if (id === "es-419" || id.startsWith("es-")) return `Actualizado: ${date}`;
   if (id === "pt-BR" || id.startsWith("pt-")) return `Atualizado: ${date}`;
   return `Updated: ${date}`;
@@ -46,12 +50,13 @@ export function buildSectionHubPage(sectionKey) {
 
 function ArticleUpdatedAt({ date, locale }) {
   const { SP } = useSharedShellUi();
-  return <p className={SP.updatedAt}>{updatedLabel(locale, date)}</p>;
+  const { t } = useI18n();
+  return <p className={SP.updatedAt}>{updatedLabel(locale, date, t)}</p>;
 }
 
 export function buildArticlePage(sectionKey) {
   return function HelpArticlePage({ article: articleProp }) {
-    const { contentLocale, t } = useI18n();
+    const { contentLocale, locale, direction, t } = useI18n();
     const sections = getHelpSections(contentLocale);
     const section = sections[sectionKey];
     const article =
@@ -69,7 +74,7 @@ export function buildArticlePage(sectionKey) {
         ]}
         tocSlot={<HelpTOC toc={article.toc} />}
       >
-        <article lang={contentLocale === "es-419" ? "es" : "en"}>
+        <article lang={contentLocale || locale} dir={direction}>
           <HelpArticleBody blocks={article.blocks} audience={article.audience} />
           <ArticleUpdatedAt date={article.updatedAt} locale={contentLocale} />
         </article>

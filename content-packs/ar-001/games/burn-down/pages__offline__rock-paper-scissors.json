@@ -1,5 +1,33 @@
 {
   "copy": {
-    "player_2": "اللاعب 2"
+    "player_2": "اللاعب 2",
+    "back": "رجوع",
+    "local_badge": "محلي",
+    "title": "🪨📄✂️ حجر · ورق · مقص",
+    "round_subtitle": "الجولة {round} • الأول إلى {firstTo}",
+    "player_1_label": "لاعب 1",
+    "round_label": "جولة",
+    "first_to_option": "الأول إلى {target}",
+    "vs_bot": "ضد البوت",
+    "reset": "إعادة",
+    "match_winner": "{winner} فاز بالمباراة!",
+    "results_in": "النتائج خلال {timer}...",
+    "tie_result": "تعادل!",
+    "p1_won_result": "لاعب 1 فاز!",
+    "bot_won_result": "البوت فاز!",
+    "p2_won_result": "لاعب 2 فاز!",
+    "player_1_choose": "لاعب 1: اختر حركة",
+    "leo_bot_label": "بوت Leo",
+    "your_choice": "اختيارك:",
+    "player_1_chose": "اختار لاعب 1:",
+    "player_2_turn": "لاعب 2: دورك (لا تتلصص!)",
+    "recent": "الأخيرة",
+    "tie_short": "تعادل",
+    "p1_won_short": "لاعب 1 فاز",
+    "bot_won_short": "البوت فاز",
+    "p2_won_short": "لاعب 2 فاز",
+    "rock": "حجر",
+    "paper": "ورق",
+    "scissors": "مقص"
   }
 }

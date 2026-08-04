@@ -1,10 +1,11 @@
-import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import Link from "next/link";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * @param {{ guides: { href: string, label: string }[], isBright: boolean }} props
  */
 export default function PracticeSeoRelatedGuides({ guides, isBright }) {
+  const t = useT();
   if (!guides?.length) return null;
 
   const shell = isBright
@@ -19,9 +20,9 @@ export default function PracticeSeoRelatedGuides({ guides, isBright }) {
     <aside
       className={`space-y-2 ${shell}`}
       data-testid="practice-related-guides"
-      aria-label={globalBurnDownCopy("components__seo__PracticeSeoRelatedGuides", "related_guides")}
+      aria-label={t("ui.public.seoNav.relatedGuides")}
     >
-      <h2 className={`text-base font-bold md:text-lg ${title}`}>Related guides</h2>
+      <h2 className={`text-base font-bold md:text-lg ${title}`}>{t("ui.public.seoNav.relatedGuides")}</h2>
       <ul className="space-y-1.5 text-sm md:text-base">
         {guides.map((g) => (
           <li key={g.href}>

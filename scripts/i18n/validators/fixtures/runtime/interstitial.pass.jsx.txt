@@ -1,0 +1,14 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
+
+export default function SoloGameEndInterstitialOverlay({ didWin, onDone }) {
+  const { direction, locale } = useI18n();
+  const slug = "components__solo-games__SoloGameEndInterstitialOverlay";
+  return (
+    <div dir={direction} lang={locale} aria-label={didWin ? gamePackCopy(slug, "win_aria") : gamePackCopy(slug, "lose_aria")}>
+      <h2>{didWin ? gamePackCopy(slug, "win_title") : gamePackCopy(slug, "lose_title")}</h2>
+      <p>{gamePackCopy(slug, "calculating")}</p>
+      <button type="button">{gamePackCopy(slug, "skip")}</button>
+    </div>
+  );
+}

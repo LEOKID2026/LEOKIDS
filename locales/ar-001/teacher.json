@@ -20,8 +20,8 @@
     "insufficient_answers": "لا توجد بيانات كافية للتحليل"
   },
   "supportSuggestions": {
-    "review_fundamentals": "يوصى بمراجعة أساسيات الموضوع",
-    "encourage_session_start": "أوصت لتشجيع بدء الممارسة",
+    "review_fundamentals": "يوصى بمراجعة أساسيات المادة",
+    "encourage_session_start": "يُوصى بتشجيع بدء الممارسة",
     "targetedReview": "يوصى بتعزيز {subject} في الفصل",
     "focusPractice": "يوصى بتركيز التدريب على {subject}",
     "generic": "استمر في مراقبة التقدم"
@@ -39,17 +39,17 @@
     "on_track": "على المسار الصحيح"
   },
   "classGuidanceSeverityTier": {
-    "critical_class": "الطبقة تحتاج إلى اهتمام فوري",
-    "class_needs_reinforcement": "الطبقة تحتاج إلى تعزيز",
+    "critical_class": "يحتاج الفصل إلى اهتمام فوري",
+    "class_needs_reinforcement": "يحتاج الفصل إلى تعزيز",
     "class_monitor": "يحتاج الفصل إلى مراقبة وممارسة مركزة",
-    "class_on_track": "الطبقة تسير على الطريق الصحيح"
+    "class_on_track": "الفصل يسير على الطريق الصحيح"
   },
   "classHealth": {
     "no_data": "لا توجد بيانات كافية",
-    "critical_class": "الطبقة تحتاج إلى اهتمام فوري",
-    "needs_reinforcement": "الطبقة تحتاج إلى تعزيز",
+    "critical_class": "يحتاج الفصل إلى اهتمام فوري",
+    "needs_reinforcement": "يحتاج الفصل إلى تعزيز",
     "monitor": "يحتاج الفصل إلى مراقبة وممارسة مركزة",
-    "strong": "الطبقة تسير على الطريق الصحيح"
+    "strong": "الفصل يسير على الطريق الصحيح"
   },
   "groupTier": {
     "struggling": "مجموعة الدعم",
@@ -81,31 +81,31 @@
     "studentCalmMessage": "لا توجد مواضيع عاجلة في الوقت الحالي - استمر كالمعتاد.",
     "hubStudentCalmMessage": "لا توجد مواضيع مركزة - استمر في المراقبة.",
     "hubClassWeakTopicsCalmMessage": "لم يتم اكتشاف موضوعات ضعيفة مهمة - استمر في المراقبة.",
-    "studentFallbackBanner": "الصعوبة في هذا الموضوع - الممارسة التشخيصية اللازمة لتحديد الموضوع الدقيق",
-    "classFallbackBanner": "يظهر الفصل صعوبة في هذا الموضوع - يوصى بتعزيز الفصل التشخيصي"
+    "studentFallbackBanner": "الصعوبة في هذه المادة - الممارسة التحليلية اللازمة لتحديد الموضوع الدقيق",
+    "classFallbackBanner": "يظهر الفصل صعوبة في هذه المادة - يوصى بتعزيز تحليلي للفصل"
   },
   "fallback": {
     "unknownSubject": "مجهول",
-    "defaultTopic": "عنوان",
-    "defaultStudentName": "الطالب",
+    "defaultTopic": "موضوع",
+    "defaultStudentName": "التلميذ",
     "notAvailable": "-",
-    "studentSubjectHeadline": "{subject} - صعوبة على مستوى الموضوع",
-    "studentSubjectHeadlineNoSubject": "صعوبة على مستوى الموضوع",
-    "studentSubjectEvidence": "{percent}% صحيح من {totalAnswers} الإجابات",
-    "studentSubjectAction": "يوصى ببدء ممارسة تشخيصية قصيرة لتحديد الموضوع الدقيق",
-    "classSubjectHeadline": "{subject} - صعوبة الموضوع على مستوى الفصل",
-    "classSubjectHeadlineNoSubject": "صعوبة الموضوع على مستوى الفصل",
-    "classSubjectAction": "يوصى ببدء نشاط تشخيصي قصير أو مراجعة مركزة للفصل بأكمله",
-    "classSuffix": "فئة {label}",
+    "studentSubjectHeadline": "{subject} - صعوبة على مستوى المادة",
+    "studentSubjectHeadlineNoSubject": "صعوبة على مستوى المادة",
+    "studentSubjectEvidence": "{percent}% صحيح من أصل {totalAnswers} إجابة",
+    "studentSubjectAction": "يوصى ببدء ممارسة تقييمية قصيرة لتحديد الموضوع الدقيق",
+    "classSubjectHeadline": "{subject} - صعوبة المادة على مستوى الفصل",
+    "classSubjectHeadlineNoSubject": "صعوبة المادة على مستوى الفصل",
+    "classSubjectAction": "يوصى ببدء نشاط تقييمي قصير أو مراجعة مركزة للفصل بأكمله",
+    "classSuffix": "الفصل {label}",
     "attentionStudentLine": "{name} · {suffix}",
     "topicRecommendationLine": "{subject} - {topic}"
   },
   "dashboard": {
     "noClassesTitle": "لا توجد فصول نشطة",
     "noClassesHint": "أنشئ فصلًا جديدًا أدناه، ثم أضف الأطفال عبر \"إدارة الفصل\" في بطاقة الفصل.",
-    "createClassLabel": "اسم الفئة",
-    "createClassButton": "إنشاء فئة",
-    "createClassPlaceholder": "على سبيل المثال الفئة 3 - ليو"
+    "createClassLabel": "اسم الفصل",
+    "createClassButton": "إنشاء فصل",
+    "createClassPlaceholder": "مثلًا: الفصل 3 - Leo"
   },
   "activities": {
     "personalSectionTitle": "الأنشطة الشخصية",
@@ -113,7 +113,7 @@
   },
   "roster": {
     "filter": {
-      "allStudents": "جميع الاطفال ({count})",
+      "allStudents": "جميع الأطفال ({count})",
       "directStudents": "أطفال خاصون ({count})",
       "class": "{className} ({count})"
     }

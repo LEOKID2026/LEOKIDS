@@ -2,6 +2,7 @@ import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useSoloGameShellUi } from "../../hooks/solo-games/useSoloGameShellUi.js";
 import { SOLO_DIFFICULTY_OPTIONS } from "../../lib/solo-games/solo-game-registry.js";
 import { useSoloOrientationHint } from "../../hooks/solo-games/useSoloOrientationHint.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import SoloGameNavButtons from "./SoloGameNavButtons.jsx";
 import SoloGameHelpButton from "./SoloGameHelpButton.jsx";
 import GameAudioSettingsButton from "../game-audio/GameAudioSettingsButton.jsx";
@@ -28,11 +29,13 @@ export default function SoloGameEntryScreen({
 }) {
   const { SG, GH } = useSoloGameShellUi();
   const orientationHintMessage = useSoloOrientationHint(game.orientationHint);
+  const { direction, locale } = useI18n();
 
   return (
     <div
       className="relative flex h-full min-h-0 flex-col items-center justify-center overflow-hidden overflow-x-hidden px-4 py-2 sm:py-3 text-center"
-      dir="ltr"
+      dir={direction === "rtl" ? "rtl" : "ltr"}
+      lang={locale || undefined}
     >
       <GameAudioSettingsButton className="absolute start-4 top-4 z-20 sm:start-6 sm:top-6" />
       {onOpenHelp ? (

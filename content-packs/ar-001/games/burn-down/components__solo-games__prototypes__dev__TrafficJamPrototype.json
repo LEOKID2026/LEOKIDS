@@ -2,8 +2,8 @@
   "copy": {
     "traffic_jam": "ازدحام المرور",
     "prototype_drag_cars_along_their_axis_free_the_red_one": "النموذج الأولي · اسحب السيارات على طول محورها · حرر السيارة الحمراء",
-    "size_return_false_if_nr": "الحجم) إرجاع خطأ؛\r\n    إذا (رقم",
-    "size_return_false_if_nc": "الحجم) إرجاع خطأ؛\r\n    إذا (ن.ك",
+    "size_return_false_if_nr": "SIZE) return false;\r\n    if (nr",
+    "size_return_false_if_nc": "SIZE) return false;\r\n    if (nc",
     "you_did_it_red_car_is_out": "لقد فعلتها! السيارة الحمراء خرجت 🎉",
     "reset": "إعادة ضبط"
   }

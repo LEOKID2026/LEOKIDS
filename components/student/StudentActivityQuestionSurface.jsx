@@ -10,6 +10,7 @@ import {
 } from "../../lib/classroom-activities/student-activity-question-ui.client.js";
 import { isTextualAssignedActivitySubject } from "../../lib/classroom-activities/student-activity-textual-subjects.client.js";
 import { useStudentActivityUi } from "../../hooks/useStudentActivityUi.js";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { hasStackedFractionToken } from "../../utils/math-fraction-expression-parse.js";
 import {
   isMathFractionsQuestionStem,
@@ -161,10 +162,16 @@ export default function StudentActivityQuestionSurface({
           type="button"
           onClick={() => setIsVerticalDisplay((prev) => !prev)}
           className={L.mathToggle}
-          title={isVerticalDisplay ? "Show landscape" : "Show portrait"}
+          title={
+            isVerticalDisplay
+              ? globalBurnDownCopy("components__student__StudentActivityQuestionSurface", "show_landscape")
+              : globalBurnDownCopy("components__student__StudentActivityQuestionSurface", "show_portrait")
+          }
           data-testid="activity-math-layout-toggle"
         >
-          {isVerticalDisplay ? "↔️ Landscape" : "↕️ Portrait"}
+          {isVerticalDisplay
+            ? globalBurnDownCopy("components__student__StudentActivityQuestionSurface", "landscape")
+            : globalBurnDownCopy("components__student__StudentActivityQuestionSurface", "portrait")}
         </button>
       ) : null}
 

@@ -10,8 +10,9 @@ import {
   SCHOOL_PORTAL_MODAL_SCROLL_CLASS,
 } from "../../components/school-portal/SchoolPortalUi";
 import { useSchoolPortalLoad } from "../../lib/school-portal/use-school-portal-session";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolCommunicationLocale,
   SC_BTN_COMPOSE,
   SC_COL_AUDIENCE,
   SC_COL_DATE,
@@ -55,6 +56,8 @@ import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/scho
 export default function SchoolMessagesPage() {
   const router = useRouter();
   const t = useT();
+  const { locale } = useI18n();
+  bindSchoolCommunicationLocale(locale);
   const AUDIENCE_OPTIONS = useMemo(() => getSchoolAudienceOptions(t), [t]);
   const { state, accessToken, me } = useSchoolPortalLoad();
   const [messages, setMessages] = useState([]);

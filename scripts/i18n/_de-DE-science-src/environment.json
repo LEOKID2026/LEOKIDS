@@ -1,0 +1,16 @@
+{
+  "environment_25": {
+    "stem": "Why are forests important for the environment?",
+    "options": [
+      "Forests produce oxygen, provide homes for animals, and help keep air and water clean.",
+      "Forests are useful only as a source of building materials.",
+      "Forests are important only for the animals living in them, not for people.",
+      "Forests grow back immediately after they are cut down, so there is no concern."
+    ],
+    "explanation": "Forests produce oxygen, absorb carbon dioxide, and provide habitats for countless plants and animals. They also help regulate water cycles and protect the soil.",
+    "theoryLines": [
+      "Forests are sometimes called the 'lungs of the Earth' because they produce so much oxygen.",
+      "Deforestation can harm both wildlife and the global climate."
+    ]
+  }
+}

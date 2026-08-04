@@ -3,9 +3,9 @@
     "square": "مربع",
     "rectangle": "المستطيل",
     "parallel": "موازي",
-    "translation": "ترجمة",
+    "translation": "انتقال",
     "reflection": "انعكاس",
-    "rotation": "تناوب",
+    "rotation": "دوران",
     "no_movement": "لا حركة"
   }
 }

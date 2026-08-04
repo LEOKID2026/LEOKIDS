@@ -1,0 +1,660 @@
+{
+  "body_1": {
+    "stem": "Where is the heart located in the human body?",
+    "options": [
+      "in the chest, on the right side of the body",
+      "in the chest, slightly left of center",
+      "in the upper abdomen, near the liver",
+      "at neck level, behind the windpipe"
+    ],
+    "explanation": "The heart is in the chest, slightly left of the midline, and pumps blood through the body.",
+    "theoryLines": [
+      "The heart is a muscle that works without stopping.",
+      "It pumps blood that carries oxygen and nutrients to all parts of the body."
+    ]
+  },
+  "body_2": {
+    "stem": "Which organ do we use to see?",
+    "options": [
+      "Ears",
+      "Eyes",
+      "Nose",
+      "Tongue"
+    ],
+    "explanation": "Eyes take in light so the brain can form a picture of what is around us.",
+    "theoryLines": [
+      "The five main senses are sight, hearing, smell, taste, and touch.",
+      "The eyes send signals to the brain through the optic nerve."
+    ]
+  },
+  "body_3": {
+    "stem": "What is the main job of the respiratory system?",
+    "options": [
+      "To move blood that already has oxygen to body tissues",
+      "To exchange oxygen and carbon dioxide with the air",
+      "To break food into small materials in the intestines",
+      "To support the body, protect organs, and help with movement"
+    ],
+    "explanation": "The respiratory system brings in oxygen cells need and helps the body get rid of carbon dioxide.",
+    "theoryLines": [
+      "The respiratory system includes the nose, windpipe, and lungs.",
+      "Gas exchange between air and blood happens inside the lungs."
+    ]
+  },
+  "body_4": {
+    "stem": "How do muscles and the skeleton help the body move?",
+    "options": [
+      "Muscles pull on bones to create movement",
+      "Bones move on their own without muscles",
+      "The body moves without using muscles or bones",
+      "Movement comes only from breathing"
+    ],
+    "explanation": "Bones give the body a frame, and muscles pull on those bones so you can move.",
+    "theoryLines": [
+      "Without a skeleton, the body would be soft and unstable.",
+      "Without muscles, bones could not move by themselves."
+    ]
+  },
+  "body_5": {
+    "stem": "Which sentence best describes the job of the circulatory system?",
+    "options": [
+      "It digests food and breaks it into simple materials.",
+      "It carries nerve signals between the brain and muscles.",
+      "It moves blood that carries oxygen and nutrients and removes waste.",
+      "It protects the body mainly through the skin, not through blood flow."
+    ],
+    "explanation": "The heart, blood vessels, and blood work together to deliver useful materials and carry waste away.",
+    "theoryLines": [
+      "Blood flows through arteries, veins, and tiny capillaries.",
+      "The heart acts like a pump that keeps blood moving through the body."
+    ]
+  },
+  "body_6": {
+    "stem": "What is the main job of the nervous system?",
+    "options": [
+      "To coordinate and send information between body parts",
+      "Only to store energy, with no link to information",
+      "Only to keep body systems completely separate",
+      "Only to keep the body warm"
+    ],
+    "explanation": "The nervous system gathers sense information, processes it in the brain, and sends instructions to muscles and organs.",
+    "theoryLines": [
+      "The nervous system includes the brain, spinal cord, and many nerves.",
+      "Nerves carry fast electrical signals through the body."
+    ]
+  },
+  "body_7": {
+    "stem": "Which organ we use to?",
+    "options": [
+      "Eyes.",
+      "Ears.",
+      "Nose.",
+      "Tongue."
+    ],
+    "explanation": "Ears organ. through them enters to brain.",
+    "theoryLines": [
+      "Part ( ), part ( bones ) ( ).",
+      "Of skin."
+    ]
+  },
+  "body_8": {
+    "stem": "What is the job of the mouth?",
+    "options": [
+      "To fully digest food the way the stomach does",
+      "To eat, drink, and speak",
+      "To send fully absorbed food straight into the blood",
+      "To exchange oxygen in the blood with air on every breath"
+    ],
+    "explanation": "The mouth is used for eating, drinking, and speaking. Teeth chew food, and the tongue helps with taste.",
+    "theoryLines": [
+      "The mouth is the start of the digestive system.",
+      "The tongue helps you taste food and form words."
+    ]
+  },
+  "body_9": {
+    "stem": "What is the job of the hands?",
+    "options": [
+      "To give oxygen to hand muscles only through skin on the palms",
+      "To hold, touch, and do precise actions",
+      "To move the same joints that mainly control the legs",
+      "To carry filtered blood from the kidneys to the brain"
+    ],
+    "explanation": "Hands help you hold objects, feel textures, and do careful tasks with your fingers.",
+    "theoryLines": [
+      "Hands help with work, play, and self-care.",
+      "Fingertips are especially sensitive to touch."
+    ]
+  },
+  "body_10": {
+    "stem": "What is the job of the legs?",
+    "options": [
+      "To take in smells and send them to the brain like the nose",
+      "To walk, run, and jump",
+      "To exchange gases between blood and air like the lungs",
+      "To mainly move the arms through the shoulder joints"
+    ],
+    "explanation": "Legs support movement such as walking, running, and jumping.",
+    "theoryLines": [
+      "Legs are strong enough to carry body weight.",
+      "Two legs help people stand and walk upright."
+    ]
+  },
+  "body_11": {
+    "stem": "How many main senses do people have?",
+    "options": [
+      "Five: sight, hearing, smell, taste, and touch",
+      "Three: only sight, hearing, and taste",
+      "Two: usually only sight and hearing",
+      "Seven senses, the same for every animal"
+    ],
+    "explanation": "People have five main senses that help them understand the world.",
+    "theoryLines": [
+      "Each sense works with a different body organ.",
+      "Senses help keep us safe and help us learn."
+    ]
+  },
+  "body_12": {
+    "stem": "What is the first digestive organ in the body?",
+    "options": [
+      "Stomach",
+      "Mouth",
+      "Small intestine",
+      "Esophagus"
+    ],
+    "explanation": "Digestion starts in the mouth, where food is chewed and mixed with saliva.",
+    "theoryLines": [
+      "The digestive system starts at the mouth and ends at the anus.",
+      "Saliva helps break down food and makes swallowing easier."
+    ]
+  },
+  "body_13": {
+    "stem": "What is the job of the lungs?",
+    "options": [
+      "To break food into small materials absorbed in the intestine",
+      "To breathe—bring in oxygen and remove carbon dioxide",
+      "To pump blood through the body like a central pump",
+      "To filter waste and balance water and salts in the blood"
+    ],
+    "explanation": "The lungs take oxygen from air into the blood and release carbon dioxide out of the body.",
+    "theoryLines": [
+      "People have two lungs—one on the right and one on the left.",
+      "The rib cage helps protect the lungs."
+    ]
+  },
+  "body_14": {
+    "stem": "What is the main role of bones in the human body?",
+    "options": [
+      "Bones break down and absorb food during digestion.",
+      "Bones support the body's shape and protect important organs like the brain and heart.",
+      "Bones pump blood throughout the body.",
+      "Bones produce the oxygen we breathe."
+    ],
+    "explanation": "Bones make up the skeleton, which gives the body its shape and support, and protects vital organs. Bones also work with muscles to allow movement.",
+    "theoryLines": [
+      "The human body has 206 bones.",
+      "Bones protect vital organs such as the brain, heart, and lungs."
+    ]
+  },
+  "body_15": {
+    "stem": "What is the job of the digestive system?",
+    "options": [
+      "To exchange gases between blood and air in the lungs",
+      "To break food into small materials the body can use",
+      "To carry oxygen and nutrients in blood vessels to all tissues",
+      "To take in sense information and send fast signals"
+    ],
+    "explanation": "The digestive system breaks food into nutrients the body can absorb for energy and growth.",
+    "theoryLines": [
+      "The digestive system includes the mouth, esophagus, stomach, and intestines.",
+      "The stomach uses acids and enzymes to break food down."
+    ]
+  },
+  "body_16": {
+    "stem": "What is the main role of muscles in the human body?",
+    "options": [
+      "Muscles digest food and absorb nutrients from it.",
+      "Muscles create the force needed for movement by contracting and relaxing.",
+      "Muscles produce red blood cells for the circulatory system.",
+      "Muscles carry light signals from the eyes to the brain."
+    ],
+    "explanation": "Muscles are attached to bones. When a muscle contracts, it pulls on the bone and creates movement. Muscles work in pairs — when one contracts, the other relaxes.",
+    "theoryLines": [
+      "There are three types of muscles: skeletal, smooth, and cardiac.",
+      "Muscles work in pairs — when one contracts, the other relaxes."
+    ]
+  },
+  "body_17": {
+    "stem": "What is the role of the brain?",
+    "options": [
+      "It digests food in the stomach.",
+      "It is the body's control center — it receives signals from the body and sends instructions to control movement, thought, and feeling.",
+      "It pumps blood to all parts of the body.",
+      "It carries oxygen into the bloodstream."
+    ],
+    "explanation": "The brain is the control center of the nervous system. It receives information from the senses, processes it, and sends signals to muscles and organs. It also controls thinking, memory, and emotions.",
+    "theoryLines": [
+      "The brain is protected by the skull and is connected to the body through the spinal cord.",
+      "Nerves carry messages between the brain and every part of the body."
+    ]
+  },
+  "body_18": {
+    "stem": "What is the job of the kidneys in the human body?",
+    "options": [
+      "To break down food and make bile",
+      "To filter waste from the blood and remove it in urine",
+      "To pump blood like the heart",
+      "To exchange oxygen with carbon dioxide"
+    ],
+    "explanation": "The kidneys filter blood, remove waste and extra water, and make urine that leaves the body.",
+    "theoryLines": [
+      "People have two kidneys.",
+      "Kidneys help keep the body's fluid balance."
+    ]
+  },
+  "body_19": {
+    "stem": "What is the largest organ in the human body?",
+    "options": [
+      "Skin",
+      "Heart",
+      "Brain",
+      "Liver"
+    ],
+    "explanation": "Skin is the body's largest organ. It covers the body and helps protect it.",
+    "theoryLines": [
+      "Skin helps block germs and injury.",
+      "Skin also helps keep body temperature steady."
+    ]
+  },
+  "body_20": {
+    "stem": "What is the job of the immune system?",
+    "options": [
+      "To break fats and sugars into building materials in the intestines",
+      "To fight bacteria and viruses and protect the body from disease",
+      "To carry oxygen-rich blood without noticing germs",
+      "To react only to insect bites without making immune memory"
+    ],
+    "explanation": "The immune system finds and attacks germs that invade the body.",
+    "theoryLines": [
+      "White blood cells are part of the immune system.",
+      "When you are sick, the immune system works harder."
+    ]
+  },
+  "body_21": {
+    "stem": "How does the digestive system work?",
+    "options": [
+      "Digestion happens only in the mouth, with no stomach or intestines",
+      "Food moves through the mouth, stomach, and intestines for breakdown and absorption into blood",
+      "Breakdown happens only in the stomach, with no intestines after that",
+      "Absorption happens in the intestines with no mouth or stomach stage"
+    ],
+    "explanation": "Food is chewed, broken down in the stomach, and absorbed in the intestines. Waste leaves the body.",
+    "theoryLines": [
+      "The digestive system is long and has many parts.",
+      "Each part has an important job."
+    ]
+  },
+  "body_22": {
+    "stem": "What is the job of hormones?",
+    "options": [
+      "To move food from place to place by squeezing smooth muscle",
+      "To carry messages between organs and help control growth, energy, and mood",
+      "To push fluids out of the body through the lungs",
+      "To make antibodies directly on the surface of the windpipe"
+    ],
+    "explanation": "Hormones are chemical messengers from glands. They help control growth, metabolism, mood, and more.",
+    "theoryLines": [
+      "Glands make hormones.",
+      "Hormones often act slowly but can have lasting effects."
+    ]
+  },
+  "body_23": {
+    "stem": "What is the job of the nose?",
+    "options": [
+      "To do most gas exchange the way lungs do",
+      "To smell and take in air for breathing",
+      "To exchange oxygen in the blood on every exhale",
+      "To move blood from the heart to the brain"
+    ],
+    "explanation": "The nose is used for smelling and breathing. Air enters the body through it.",
+    "theoryLines": [
+      "The nose is part of the respiratory system.",
+      "Tiny hairs in the nose help filter the air."
+    ]
+  },
+  "body_24": {
+    "stem": "How does your mouth help you eat food?",
+    "options": [
+      "Your nose smells the food and breaks it apart.",
+      "Your teeth chew food into small pieces, and your tongue helps move it.",
+      "Water in your mouth dissolves all food completely.",
+      "You swallow food whole without needing to chew it."
+    ],
+    "explanation": "Your teeth chew food into smaller pieces, making it easier to swallow and digest. Your tongue helps move the food around your mouth.",
+    "theoryLines": [
+      "Teeth break food into smaller pieces during chewing.",
+      "The tongue helps guide food toward the throat for swallowing."
+    ]
+  },
+  "body_25": {
+    "stem": "How many eyes do most people have?",
+    "options": [
+      "Two",
+      "One",
+      "Three",
+      "Four"
+    ],
+    "explanation": "Most people have two eyes, which help with distance and depth perception.",
+    "theoryLines": [
+      "Two eyes help you see in three dimensions.",
+      "The eyes work together."
+    ]
+  },
+  "body_26": {
+    "stem": "What is inside the body?",
+    "options": [
+      "A skeleton of bones with no soft organs",
+      "Internal organs such as the heart, lungs, stomach, and more",
+      "Only a heart, with no lungs or other organs",
+      "Only lungs, with no heart or kidneys"
+    ],
+    "explanation": "Inside the body are many organs—heart, lungs, stomach, intestines, liver, kidneys, and more—each with an important job.",
+    "theoryLines": [
+      "The body is made of organs that work together.",
+      "Each organ has a special role."
+    ]
+  },
+  "body_27": {
+    "stem": "What is the role of the skeleton?",
+    "options": [
+      "It pumps blood to every part of the body.",
+      "It supports the body's shape, protects organs like the brain, and works with muscles to allow movement.",
+      "Bones replace muscles and handle all movement on their own.",
+      "It carries nutrients through the bloodstream."
+    ],
+    "explanation": "The skeleton gives the body its shape and supports it. Hard bones protect soft organs — for example, the skull protects the brain and the rib cage protects the heart and lungs. Muscles attach to bones and pull on them to create movement.",
+    "theoryLines": [
+      "The human skeleton is made of over 200 bones.",
+      "Joints are the places where two bones meet, allowing the body to bend and move."
+    ]
+  },
+  "body_29": {
+    "stem": "What is the role of the stomach?",
+    "options": [
+      "It brings oxygen into the body.",
+      "It breaks down food using acids and muscles, then moves it along to the intestines.",
+      "It pumps blood through the circulatory system.",
+      "It sends signals from the body to the brain."
+    ],
+    "explanation": "The stomach breaks down food using digestive acids and strong muscle squeezes. After that, it moves the food onward to the intestines for the next steps of digestion.",
+    "theoryLines": [
+      "The stomach can stretch to hold food after a meal and shrinks when it is empty.",
+      "Stomach acid helps break food down and can also kill many harmful germs."
+    ]
+  },
+  "body_30": {
+    "stem": "What is the role of the intestines?",
+    "options": [
+      "They filter harmful gases from the air we breathe.",
+      "They absorb nutrients from digested food into the blood.",
+      "They pump blood to every part of the body.",
+      "They break down food in the same way the stomach does."
+    ],
+    "explanation": "After the stomach breaks down food, it moves into the small intestine, where nutrients are absorbed into the blood. The large intestine then absorbs water and passes the remaining waste out of the body.",
+    "theoryLines": [
+      "The small intestine is very long — in an adult it can be about 6 meters.",
+      "The walls of the small intestine are covered in tiny finger-like projections that help absorb nutrients quickly."
+    ]
+  },
+  "body_31": {
+    "stem": "What is the role of the liver?",
+    "options": [
+      "It chews and swallows food.",
+      "It filters the blood, removes waste, and helps the body process and store energy.",
+      "It pumps blood around the entire body.",
+      "It brings air in and pushes air out of the lungs."
+    ],
+    "explanation": "The liver is one of the largest organs in the body. It cleans the blood by removing harmful substances, breaks down old red blood cells, and helps process the nutrients absorbed from food so the body can use them for energy.",
+    "theoryLines": [
+      "The liver is located in the upper right part of the abdomen, just below the rib cage.",
+      "The liver performs hundreds of different jobs to keep the body healthy."
+    ]
+  },
+  "body_32": {
+    "stem": "What is the job of the lymphatic system?",
+    "options": [
+      "To break down fat in the intestines with enzymes",
+      "To help fight infections and drain fluid from tissues",
+      "Only to move blood at the heart's pace",
+      "To exchange air in the lungs on every inhale"
+    ],
+    "explanation": "The lymphatic system includes lymph nodes, vessels, and lymph fluid. It helps fight germs and drain extra fluid.",
+    "theoryLines": [
+      "Lymph nodes are found in many places in the body.",
+      "They help stop infections from spreading."
+    ]
+  },
+  "body_33": {
+    "stem": "What is the job of the thyroid gland?",
+    "options": [
+      "To filter toxins and make bile for digesting fats",
+      "To make hormones that control metabolism, growth, and energy use",
+      "To push oxygen-rich blood from arteries into the lung arteries",
+      "To release insulin that mainly controls sugar in muscle cells"
+    ],
+    "explanation": "The thyroid makes hormones that help control how fast the body uses energy and how it grows.",
+    "theoryLines": [
+      "The thyroid gland is in the neck.",
+      "It is important for growth and development."
+    ]
+  },
+  "body_34": {
+    "stem": "What does the small intestine do in the digestive system?",
+    "options": [
+      "It pumps blood to all parts of the body.",
+      "It absorbs nutrients from digested food and passes them into the blood.",
+      "It moves air in and out of the lungs during breathing.",
+      "It holds bones together and protects the body's organs."
+    ],
+    "explanation": "The small intestine absorbs nutrients from digested food and transfers them into the bloodstream, where they travel to all parts of the body.",
+    "theoryLines": [
+      "The small intestine is located after the stomach in the digestive system.",
+      "Most nutrient absorption happens inside the small intestine."
+    ]
+  },
+  "body_35": {
+    "stem": "What is the job of the adrenal gland?",
+    "options": [
+      "To make the main insulin that controls sugar after a meal",
+      "To make hormones such as adrenaline for stress and emergencies",
+      "To do the first breakdown of proteins in the stomach",
+      "To be the main organ that controls red blood cell production with no kidney role"
+    ],
+    "explanation": "The adrenal glands make hormones such as adrenaline that help the body respond to stress and emergencies.",
+    "theoryLines": [
+      "The adrenal glands sit above the kidneys.",
+      "Adrenaline helps the body release energy quickly."
+    ]
+  },
+  "body_37": {
+    "stem": "What is the job of the skin?",
+    "options": [
+      "Only appearance, with no protective role",
+      "To protect the body, help control temperature, and sense touch",
+      "Main breathing only through pores",
+      "To stabilize the skeleton with no nerves underneath"
+    ],
+    "explanation": "Skin is the largest organ. It protects the body, helps control temperature, senses touch, and releases sweat.",
+    "theoryLines": [
+      "Skin covers the whole body.",
+      "It is an important barrier against germs."
+    ]
+  },
+  "body_25__v2": {
+    "stem": "What is the job of the eye?",
+    "options": [
+      "To see",
+      "To hear",
+      "To smell",
+      "To taste"
+    ],
+    "explanation": "The eye lets us see the world around us.",
+    "theoryLines": [
+      "The eye is the organ of sight.",
+      "Two eyes help us see better."
+    ]
+  },
+  "body_31__v2": {
+    "stem": "How many fingers are on each hand?",
+    "options": [
+      "Five",
+      "Four",
+      "Six",
+      "Three"
+    ],
+    "explanation": "Each hand usually has five fingers: thumb, index, middle, ring, and pinky.",
+    "theoryLines": [
+      "Fingers help us hold objects.",
+      "The thumb helps with a strong grip."
+    ]
+  },
+  "body_32__v2": {
+    "stem": "What do we have on our head?",
+    "options": [
+      "Teeth",
+      "Hair",
+      "Nails",
+      "Bones"
+    ],
+    "explanation": "Hair on the head helps protect and warm the head.",
+    "theoryLines": [
+      "Hair can be many colors.",
+      "Hair keeps growing."
+    ]
+  },
+  "body_33__v2": {
+    "stem": "What is the job of the teeth?",
+    "options": [
+      "To see with the eyes",
+      "To hear with the ears",
+      "To chew and cut food",
+      "To run on a field"
+    ],
+    "explanation": "Teeth help cut and chew food so it is easier to swallow.",
+    "theoryLines": [
+      "People have cutting teeth, canines, and grinding teeth.",
+      "Children have baby teeth that are later replaced."
+    ]
+  },
+  "body_34__v2": {
+    "stem": "Where is the brain located?",
+    "options": [
+      "In the belly",
+      "In the head",
+      "In the legs",
+      "In the hands"
+    ],
+    "explanation": "The brain is in the head, protected by the skull.",
+    "theoryLines": [
+      "The brain is one of the most important organs.",
+      "It controls body actions."
+    ]
+  },
+  "body_35__v2": {
+    "stem": "How many arms and legs do most people have?",
+    "options": [
+      "Two arms and two legs",
+      "One arm and one leg",
+      "Usually four arms",
+      "Usually three legs"
+    ],
+    "explanation": "Most people have two arms and two legs that help them move and work.",
+    "theoryLines": [
+      "Arms help us hold and work.",
+      "Legs help us walk and run."
+    ]
+  },
+  "body_37__v2": {
+    "stem": "What happens when we breathe?",
+    "options": [
+      "Air enters the lungs and never leaves",
+      "Air goes in and air goes out",
+      "Air only leaves the body and never enters",
+      "No gas exchange happens"
+    ],
+    "explanation": "When we breathe, air enters through the nose and mouth, and air also leaves the body.",
+    "theoryLines": [
+      "Breathing is essential for life.",
+      "Without breathing, we cannot live."
+    ]
+  },
+  "body_38__v2": {
+    "stem": "What is the job of the heart?",
+    "options": [
+      "To think in the head",
+      "To pump blood through the body",
+      "To see with the eyes",
+      "To hear with the ears"
+    ],
+    "explanation": "The heart pumps blood through the body. Blood carries oxygen and nutrients to body parts.",
+    "theoryLines": [
+      "The heart beats all the time.",
+      "That beat is the pulse you can feel."
+    ]
+  },
+  "body_39": {
+    "stem": "What is the job of the tongue?",
+    "options": [
+      "To see with the eyes",
+      "To taste and help with speaking",
+      "To hear with the ears",
+      "To run on a field"
+    ],
+    "explanation": "The tongue helps you taste food and speak. It also helps with swallowing.",
+    "theoryLines": [
+      "The tongue can move in many directions.",
+      "Tiny bumps on the tongue help with taste."
+    ]
+  },
+  "body_40": {
+    "stem": "What happens to children's bodies as they grow?",
+    "options": [
+      "The body grows gradually",
+      "The body does not change until age 18",
+      "The body gets smaller over time",
+      "Only the head grows, not the rest"
+    ],
+    "explanation": "Children's bodies grow over time as body cells multiply.",
+    "theoryLines": [
+      "Growth is a natural process.",
+      "Healthy eating helps kids grow well."
+    ]
+  },
+  "body_41": {
+    "stem": "What is the job of the nervous system?",
+    "options": [
+      "To break proteins into amino acids in the narrow intestine",
+      "To coordinate and send information between body parts and the surroundings",
+      "To carry red blood cells from the lower body to the head",
+      "To absorb oxygen directly through the skin with no lungs involved"
+    ],
+    "explanation": "The nervous system takes in sense information, processes it in the brain, and sends instructions to muscles and organs.",
+    "theoryLines": [
+      "The nervous system includes the brain, spinal cord, and many nerves.",
+      "Nerves carry fast electrical signals."
+    ]
+  },
+  "body_43": {
+    "stem": "What is the job of the spleen?",
+    "options": [
+      "To begin digesting food in the mouth and esophagus",
+      "To help with immunity and store blood cells",
+      "To move oxygen from air into the blood",
+      "To take in light and color from the surroundings"
+    ],
+    "explanation": "The spleen helps the immune system, filters blood, and stores red blood cells and platelets.",
+    "theoryLines": [
+      "The spleen is near the stomach.",
+      "It is part of the immune system."
+    ]
+  }
+}

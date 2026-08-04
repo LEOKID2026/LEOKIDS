@@ -1,0 +1,2234 @@
+[
+  {
+    "en": "- All Hebrew titles: **`[DRAFT — not owner-approved]`**",
+    "c": 5
+  },
+  {
+    "en": "| Runtime registry / routes | ❌ Not in scope — content-only task |",
+    "c": 4
+  },
+  {
+    "en": "- Section 7: draft invitation text only — **no practice routing**.",
+    "c": 4
+  },
+  {
+    "en": "- Child-facing copy uses **חשבון**, not **מתמטיקה**.",
+    "c": 4
+  },
+  {
+    "en": "- Section 7: draft invitation only — **no practice routing**.",
+    "c": 3
+  },
+  {
+    "en": "- All pages: `age_band: grades_1_2`, `approval_status: draft`, `grade: g1`.",
+    "c": 2
+  },
+  {
+    "en": "- All pages: `age_band: grades_5_6`, `approval_status: draft`, `grade: g5`.",
+    "c": 2
+  },
+  {
+    "en": "- All pages: `age_band: grades_5_6`, `approval_status: draft`, `grade: g6`.",
+    "c": 2
+  },
+  {
+    "en": "- Child-facing copy uses **גאומטריה**, not **הנדסה**.",
+    "c": 2
+  },
+  {
+    "en": "| Runtime registry / routes | ❌ Not in scope |",
+    "c": 2
+  },
+  {
+    "en": "All Batch C pages:",
+    "c": 2
+  },
+  {
+    "en": "All Batch D pages:",
+    "c": 2
+  },
+  {
+    "en": "**Status:** All batches authored — **22 / 22** draft pages complete (Batches A + B + C + D). Full review polish pass applied (June 2026). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "| Crocodile metaphor (`cmp.md`) | **Keep for Grade 1 draft:** `תנין רעב` — child-friendly, draft content only (not final owner-approved product copy) |",
+    "c": 1
+  },
+  {
+    "en": "- `wp_coins`: ₪ whole shekels only; single-step totals; equal groups / multiplication OK (e.g. 4 × 5); up to ~100; no agorot, no multi-step money",
+    "c": 1
+  },
+  {
+    "en": "**Practice CTA:** All **22** pages mapped via `resolve-math-g2-practice-target.js` + `forceKind` branches in `utils/math-question-generator.js`.",
+    "c": 1
+  },
+  {
+    "en": "| `wp_coins.md` | Fixed worked-example arithmetic: **12₪ → 13₪** (`5 + 5 + 1 + 1 + 1 = 13`); visual example **5 + 5 + 2 = 12** unchanged |",
+    "c": 1
+  },
+  {
+    "en": "- `mul`: repeated addition / equal groups only; **קבוצות עד 5, תוצאה עד 20**; `4 × 3 = 12` accepted; no full times table, no division",
+    "c": 1
+  },
+  {
+    "en": "The question: plan an investigation — which sponge absorbs more water? What do you write in the journal and how do you build a graph?",
+    "c": 1
+  },
+  {
+    "en": "| `wp_time_days.md` | Clarified day-counting common mistake — do not count start day as first jump; do not stop before target day |",
+    "c": 1
+  },
+  {
+    "en": "- Grade 5 fraction/percent skills (`frac_add_sub`, `frac_reduce`, etc.) are **not** in G6 spine scope — assumed covered in G5 book.",
+    "c": 1
+  },
+  {
+    "en": "> **Grade 2 UI is implemented for dev preview only.** Do not deploy or treat draft content as owner-approved until sign-off.",
+    "c": 1
+  },
+  {
+    "en": "- `divisibility`: **2, 5, 10 only**; “מתחלק ב־2/5/10”; last-digit rules; e.g. 40; **no** 3/6/9; shallow “בלי שארית” only",
+    "c": 1
+  },
+  {
+    "en": "3. After Grade 1 signoff, consider a **Hebrew style guide addendum**, then begin Grade 2 or implementation planning.",
+    "c": 1
+  },
+  {
+    "en": "- `wp_time_days`: count jumps between weekdays; **do not count start day as first jump**; no clock or calendar dates",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_LEARNING_BOOK_IMPLEMENTATION_NOTES.md` | No-fallback and approval lifecycle reference |",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **26 / 26** draft pages complete (Batches A + B + C + D). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "The question: plan a project — which material insulates heat better: cloth or paper? What do you present in class?",
+    "c": 1
+  },
+  {
+    "en": "| `frac_half` / `frac_quarter` | Section 7: **שני חלקים שווים** / **ארבעה חלקים שווים** (not “שתיים/ארבע שווה”) |",
+    "c": 1
+  },
+  {
+    "en": "4. **Final title approval** — all 19 pages remain `[DRAFT — not owner-approved]` until explicit owner sign-off.",
+    "c": 1
+  },
+  {
+    "en": "- `frac_quarter_reverse`: know quarter → find whole; 4 equal parts; 4 × or repeated add; e.g. רבע = 4 → שלם 16",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1/drafts/`, `g2/drafts/`, `g3/drafts/` | Style reference only — **not modified** |",
+    "c": 1
+  },
+  {
+    "en": "| Batch A Hebrew titles | **Accepted for continued draft use** — all remain `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| Batch B Hebrew titles | **Accepted for continued draft use** — all remain `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| Batch C Hebrew titles | **Accepted for continued draft use** — all remain `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md` | Per-skill content guidance and exclusions |",
+    "c": 1
+  },
+  {
+    "en": "- `wp_time_date`: **weekdays only**; forward/back day jumps; no clock, month, calendar, or year arithmetic",
+    "c": 1
+  },
+  {
+    "en": "| Even/odd | Pairing as main method; last-digit rule demoted to **טיפ**; clearer wording for 11 example |",
+    "c": 1
+  },
+  {
+    "en": "**Focus:** Basic addition, subtraction, missing-number sentences, early multiplication (no word problems)",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Three-Dimensional Solids — Names and Introduction `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **17 / 17** draft pages complete (Batches A–G). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **19 / 19** draft pages complete (Batches A–G). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "**Carry-forward polish:** `add_two.md` worked example — `ספרו את הכל` → **`ספרו עוד 3 אחרי 5: 6, 7, 8`**",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **37 / 37** draft pages complete (Batches A–G). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **40 / 40** draft pages complete (Batches A–H). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **44 / 44** draft pages complete (Batches A–I). Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Quadrilaterals — Properties and Classification `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1/drafts/`, `math/g2/drafts/` | Style reference only — **not modified** |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Materials — Changes and Electricity (Concepts) `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "- `wp_time_date`: days of the week; today/tomorrow/yesterday; \"in 2 days\"; no clock, no months/years",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | The Human Body — Coordination Between Systems `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Pythagorean Theorem — Finding the Hypotenuse `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "- `add_tens_only`: **10, 20, 30 only**; max sum 30; wording **`בכיתה א' נשתמש בעשרות 10, 20 ו־30`**",
+    "c": 1
+  },
+  {
+    "en": "- `eq_add_simple`: missing number as puzzle; `__` / `מספר חסר`; links to `מסגרת עשר` where helpful",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md` | Skill IDs, page types, grade scope |",
+    "c": 1
+  },
+  {
+    "en": "- Setup `הסבר בספר` hidden for umbrella ops: `number_sense`, `word_problems`, `fractions`, `mixed`",
+    "c": 1
+  },
+  {
+    "en": "A three-dimensional solid is a shape that is not flat on the page — you can hold it in your hand.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Translation and Reflection — More Practice `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Properties of a Rectangle — Pairs of Sides `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1/drafts/` … `g4/drafts/` | Style reference only — **not modified** |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Parallel and Perpendicular — in Polygons `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `mul` example 4 × 3 = 12 | **Accepted for draft use** — within Grade 1 scope (product ≤ 20) |",
+    "c": 1
+  },
+  {
+    "en": "| `frac_half_reverse` | Section 1: removed **להפוך**; Section 6: clearer “add only 1” mistake |",
+    "c": 1
+  },
+  {
+    "en": "Today we will check when a number divides evenly by 2, 5, or 10 — by looking at the ones digit.",
+    "c": 1
+  },
+  {
+    "en": "We will identify a square, rectangle, parallelogram, and trapezoid — from a short description.",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md` | Page types and wide-span rules |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Animals — Adaptation to the Environment `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "- `sub_two`: taking away / moving backward; not below 0; no borrowing or vertical subtraction",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Animals — Reproduction and Adaptations `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Now you can tell parallel lines (train tracks) apart from perpendicular lines (room corner)!",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "c": 1
+  },
+  {
+    "en": "| `data/curriculum-spine/v1/skills.json` | All 26 Grade 3 Math `skill_id` entries in scope |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "c": 1
+  },
+  {
+    "en": "| `data/curriculum-spine/v1/skills.json` | All 37 Grade 4 Math `skill_id` entries in scope |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_GRADE_4_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "c": 1
+  },
+  {
+    "en": "| `data/curriculum-spine/v1/skills.json` | All 40 Grade 5 Math `skill_id` entries in scope |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_GRADE_5_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "c": 1
+  },
+  {
+    "en": "| `data/curriculum-spine/v1/skills.json` | All 44 Grade 6 Math `skill_id` entries in scope |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "c": 1
+  },
+  {
+    "en": "| Missing-number language | **Draft use:** `מספר חסר`, `מקום ריק` — not variables/algebra |",
+    "c": 1
+  },
+  {
+    "en": "Two walls in the corner of a room — they meet at a right angle. Parallel or perpendicular?",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **14 / 14** draft pages complete. Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Volume of a Prism — Triangular Base `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "**Focus:** Place value, even/odd, complements of 10, addition in teens, adding whole tens",
+    "c": 1
+  },
+  {
+    "en": "| Word-problem reading frame | `מה יודעים?` / `מה מבקשים?` / `מה עושים?` on all 4 pages |",
+    "c": 1
+  },
+  {
+    "en": "**Child-facing UI:** `ספר חשבון — כיתה ב׳` · no `[DRAFT]` markers · no internal metadata.",
+    "c": 1
+  },
+  {
+    "en": "- G2 registry, loader, routes, resolvers, and Math Master wiring implemented (June 2026).",
+    "c": 1
+  },
+  {
+    "en": "- Grade 1 reader UX remains the locked reference (`MATH_LEARNING_BOOK_UI_STYLE_LOCK.md`).",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Full Investigation — Documentation `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "A mirror — smooth shiny surface; light bounces off at an equal angle to the angle it hit.",
+    "c": 1
+  },
+  {
+    "en": "Three examples: turn off lights, save water, recycle. Each reduces part of the footprint.",
+    "c": 1
+  },
+  {
+    "en": "**Status:** **Owner-approved content** — **3 / 3** pages. Runtime insertion not started.",
+    "c": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **3 / 3** draft pages complete. Owner review pending.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Volume of a Pyramid — Square Base `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Today in geometry we will strengthen the difference between translation and reflection.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Parallel and Perpendicular Lines `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "We will identify hundred thousands, ten thousands, thousands, hundreds, tens, and ones.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Earth — Rocks, Soil, and Seasons `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "The question: plan a safe experiment — which sponge absorbs more water: large or small?",
+    "c": 1
+  },
+  {
+    "en": "Here we focus on getting to know rotation — not on calculating the center of rotation.",
+    "c": 1
+  },
+  {
+    "en": "| Batch D Hebrew titles | **Draft only** — all remain `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "3. **Visual assets** — text descriptions only; confirm illustrated assets for Phase 1.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Earth — Resources and Phenomena `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Properties of a Square — Sides `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `divisibility` | **2, 5, 10 only** in G2; child-facing last-digit rules; no 3/6/9 |",
+    "c": 1
+  },
+  {
+    "en": "- In-learning `📖 הסבר` hidden when kind/operation cannot resolve to a single G2 page",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1–g4/drafts/` | Style reference only — **not modified** |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | The Human Body — Basic Systems `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Materials — Mixtures and Light `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Volume of a Rectangular Prism `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| Fractions (Batch C) | **Visual only** — half and quarter; no fraction arithmetic |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Observation and Investigation `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Materials — Forces and Motion `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `data/curriculum-spine/v1/skills.json` | All 22 Grade 2 Math `skill_id` entries |",
+    "c": 1
+  },
+  {
+    "en": "Mandatory Hebrew/content fixes from full review pack review, before implementation:",
+    "c": 1
+  },
+  {
+    "en": "| Draft content source (scripts only) | ✅ `scripts/lib/math-g5-draft-content.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/geometry-g1-draft-manifest.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1/drafts/` | Style reference only — **not modified** |",
+    "c": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/geometry-g2-draft-manifest.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Solids — Faces in the Plane `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "After a meal — digestion breaks down food; blood carries it; the brain feels full.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Getting to Know the Square `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| Ten-frame term | **Draft use:** `מסגרת עשר` (standardized; not \"מסגרת של 10\") |",
+    "c": 1
+  },
+  {
+    "en": "- `ns_even_odd`: numbers 1–20; **pairing first**; last-digit rule as **טיפ** only",
+    "c": 1
+  },
+  {
+    "en": "- **22** draft `.md` pages (Batches A + B + C + D); all `approval_status: draft`.",
+    "c": 1
+  },
+  {
+    "en": "Step 1 — find the rule: calculate the difference between two consecutive numbers.",
+    "c": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/science-g1-draft-manifest.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "Saving water at home — tap, shower, fixing leaks. The resource protected — water.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find parallelograms and trapezoids — how many parallel pairs?",
+    "c": 1
+  },
+  {
+    "en": "| Book page resolver (G2) | ✅ `lib/learning-book/resolve-math-g2-book-page.js` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Plants — What Plants Need `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Plants — Growth and Cycle `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Earth — Weather and Water `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Earth — Climate and Space `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "**Status unchanged:** **22 / 22** pages drafted · all `approval_status: draft`.",
+    "c": 1
+  },
+  {
+    "en": "| Math Master | General 📖 tile (g2 only), `הסבר בספר`, in-learning `📖 הסבר` |",
+    "c": 1
+  },
+  {
+    "en": "Now you know about weather and the difference between day and night in science.",
+    "c": 1
+  },
+  {
+    "en": "**Note:** Grade 2 is the first grade with `experiments` (spine `minGrade = 2`).",
+    "c": 1
+  },
+  {
+    "en": "Mirror — returns light (reflection). Clear glass — passes light (transparency).",
+    "c": 1
+  },
+  {
+    "en": "- Child-facing book content uses **גאומטריה**, not **הנדסה** (owner-approved).",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Diagonal of a Rectangle `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "**Status:** Draft content only. No code. No UI. No SQL. No commit/push/deploy.",
+    "c": 1
+  },
+  {
+    "en": "| `wp_coins_spent` | Wording: `יותר מהמחיר`; Section 6: `לחסר` (not `לחסור`) |",
+    "c": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/math-g4-draft-manifest.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/math-g5-draft-manifest.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/math-g6-draft-manifest.mjs` |",
+    "c": 1
+  },
+  {
+    "en": "Today in geometry we will learn about parallel lines and perpendicular lines.",
+    "c": 1
+  },
+  {
+    "en": "| `frac_quarter_reverse` | רבע = 5 → whole? | 5 + 5 = 10 (half not quarter) |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Rotation in the Plane `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Symmetry in the Plane `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| Coin addition | Repeated addition only — no multiplication on `wp_coins` |",
+    "c": 1
+  },
+  {
+    "en": "| Calendar scope | Weekday names only — no clock, no month/year arithmetic |",
+    "c": 1
+  },
+  {
+    "en": "- All pages: `age_band: grades_1_2`, `approval_status: draft`, `grade: g2`.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Angles in a Triangle `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Diagonal of a Square `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "Today we will apply parallel and perpendicular to the sides of a rectangle.",
+    "c": 1
+  },
+  {
+    "en": "- All pages: `age_band: grades_3_4`, `approval_status: draft`, `grade: g4`.",
+    "c": 1
+  },
+  {
+    "en": "In a rectangle — top and bottom: parallel or perpendicular? Top and right?",
+    "c": 1
+  },
+  {
+    "en": "| Batch C polish pass | **Accepted for continued draft use** (June 2026) |",
+    "c": 1
+  },
+  {
+    "en": "- All **19** learning pages are **draft only** (`approval_status: draft`).",
+    "c": 1
+  },
+  {
+    "en": "Today we'll learn to find a percent of a quantity — for example 25% of 80.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Subtracting Decimals — Two Digits After the Point |",
+    "c": 1
+  },
+  {
+    "en": "Find the difference between two numbers in a row: 25,000 − 20,000 = 5,000",
+    "c": 1
+  },
+  {
+    "en": "| `utils/geometry-constants.js` | G1 topic descriptions (context only) |",
+    "c": 1
+  },
+  {
+    "en": "- `geometry:kind:no_question` is spine meta only — **no** learning page.",
+    "c": 1
+  },
+  {
+    "en": "- Hold a mirror next to the arrow — the arrow looks flipped → reflection",
+    "c": 1
+  },
+  {
+    "en": "A house roof — trapezoid shape: parallel bases, non-parallel side edges.",
+    "c": 1
+  },
+  {
+    "en": "| Shared section 7 heading | **Approved for draft use:** `בואו נתרגל!` |",
+    "c": 1
+  },
+  {
+    "en": "| Even/odd method | **Pairing first**; last-digit rule as **טיפ** only |",
+    "c": 1
+  },
+  {
+    "en": "| `wp_time_date` / `wp_time_days` | **Weekdays only** for G2 (Batch D) |",
+    "c": 1
+  },
+  {
+    "en": "| Topic → book page | `lib/learning-book/resolve-math-g2-book-page.js` |",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn to subtract decimal numbers — for example 5.7 − 2.2.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Earth and Weather `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Area of a Square `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "| `wp_time_date` | Wed + 2 days → ? | stopped at Thu (1 jump) not Fri |",
+    "c": 1
+  },
+  {
+    "en": "Rule: divisor × quotient = dividend — always check with multiplication.",
+    "c": 1
+  },
+  {
+    "en": "2. **Owner review** of Batch D polish pass and full Grade 1 draft set.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Our Environment `[DRAFT — not owner-approved]` |",
+    "c": 1
+  },
+  {
+    "en": "- Internal IDs remain `geometry:g1:{pageId}` and `subject: geometry`.",
+    "c": 1
+  },
+  {
+    "en": "| `add_tens_only` scope | **Grade 1 cap: 30** — use 10, 20, 30 only |",
+    "c": 1
+  },
+  {
+    "en": "After Sunday: (1) Monday → (2) Tuesday → (3) Wednesday → (4) Thursday",
+    "c": 1
+  },
+  {
+    "en": "±1 even when crossing a thousand — for example 1,999 → 2,000 → 2,001.",
+    "c": 1
+  },
+  {
+    "en": "In a rectangle — top side and right side. Parallel or perpendicular?",
+    "c": 1
+  },
+  {
+    "en": "| `divisibility` | 35 — divide by 2, 5, 10? | 35 confused with ÷10 |",
+    "c": 1
+  },
+  {
+    "en": "**Not done:** SQL · commit · push · deploy · owner content approval.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Adding Decimals — Two Digits After the Point |",
+    "c": 1
+  },
+  {
+    "en": "We will identify parallel sides (opposite sides) and 90° (corners).",
+    "c": 1
+  },
+  {
+    "en": "Not just \"180° minus addition\" — but: x + angle 1 + angle 2 = 180°.",
+    "c": 1
+  },
+  {
+    "en": "Find today's day, and count forward or backward on the row of days!",
+    "c": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1/drafts/` | **Style reference only** |",
+    "c": 1
+  },
+  {
+    "en": "| Registry + page order | `lib/learning-book/math-g2-registry.js` |",
+    "c": 1
+  },
+  {
+    "en": "| `plants.md` | צמחים — תנאי גידול (סיכום) — **final plant page** |",
+    "c": 1
+  },
+  {
+    "en": "- ✅ Approved Hebrew drafts remain source for a future runtime task",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn to multiply by hundreds — for example 5 × 200.",
+    "c": 1
+  },
+  {
+    "en": "- Internal IDs remain `science:g1:{topic}` and `subject: science`.",
+    "c": 1
+  },
+  {
+    "en": "What reduces carbon footprint — walking or driving alone in a car?",
+    "c": 1
+  },
+  {
+    "en": "1. **Batch D Hebrew titles** — owner review before implementation",
+    "c": 1
+  },
+  {
+    "en": "| Practice CTA resolver (G3) | ❌ Not created — no fake mappings |",
+    "c": 1
+  },
+  {
+    "en": "| Practice CTA resolver (G4) | ❌ Not created — no fake mappings |",
+    "c": 1
+  },
+  {
+    "en": "| Practice CTA resolver (G5) | ❌ Not created — no fake mappings |",
+    "c": 1
+  },
+  {
+    "en": "| Practice CTA resolver (G6) | ❌ Not created — no fake mappings |",
+    "c": 1
+  },
+  {
+    "en": "Identify two quantities — look for the difference, not the total!",
+    "c": 1
+  },
+  {
+    "en": "During activity — muscles work, breathing speeds up, pulse rises.",
+    "c": 1
+  },
+  {
+    "en": "- Hold a mirror next to it — you see a reflection (mirror image)",
+    "c": 1
+  },
+  {
+    "en": "We will see an example from life: train tracks — parallel lines.",
+    "c": 1
+  },
+  {
+    "en": "1. **\"שכן לפני / שכן אחרי\"** — confirm classroom language match.",
+    "c": 1
+  },
+  {
+    "en": "3. What do we do? — count forward or backward on the row of days",
+    "c": 1
+  },
+  {
+    "en": "2. **Practice CTA mappings** — G2 resolver still not implemented",
+    "c": 1
+  },
+  {
+    "en": "After = 3,999 + 1 = 4,000 (crossing a thousand — still just +1).",
+    "c": 1
+  },
+  {
+    "en": "| Scope wording | Negative-number note scoped to Grade 1 page |",
+    "c": 1
+  },
+  {
+    "en": "3. **Full book sign-off** — all 22 pages pending owner approval",
+    "c": 1
+  },
+  {
+    "en": "Equal sharing here — bigger numbers, same multiplication check.",
+    "c": 1
+  },
+  {
+    "en": "| `utils/math-constants.js` | Grade 4 operations context only |",
+    "c": 1
+  },
+  {
+    "en": "| `utils/math-constants.js` | Grade 5 operations context only |",
+    "c": 1
+  },
+  {
+    "en": "| `utils/math-constants.js` | Grade 6 operations context only |",
+    "c": 1
+  },
+  {
+    "en": "Today we will solve a question: how many more? (the difference)",
+    "c": 1
+  },
+  {
+    "en": "Parallel — two lines going the same direction that never meet.",
+    "c": 1
+  },
+  {
+    "en": "Diagonal = a slanted line — crosses the square. Longer than 6.",
+    "c": 1
+  },
+  {
+    "en": "In practice you'll find AB and CD — parallel or perpendicular?",
+    "c": 1
+  },
+  {
+    "en": "- All Hebrew titles remain **`[DRAFT — not owner-approved]`**.",
+    "c": 1
+  },
+  {
+    "en": "- All pages: `age_band: grades_3_4`, `approval_status: draft`.",
+    "c": 1
+  },
+  {
+    "en": "Every material has properties — ways to describe how it feels:",
+    "c": 1
+  },
+  {
+    "en": "| Practice CTA resolver | ❌ Not created — post-runtime task |",
+    "c": 1
+  },
+  {
+    "en": "- Child-facing book content uses **גאומטריה**, not **הנדסה**.",
+    "c": 1
+  },
+  {
+    "en": "In practice: opposite → parallel; corner → 90° perpendicular!",
+    "c": 1
+  },
+  {
+    "en": "Now you know how to check even and odd in bigger numbers too.",
+    "c": 1
+  },
+  {
+    "en": "| Page loader | ✅ `lib/learning-book/load-math-g2-pages.js` |",
+    "c": 1
+  },
+  {
+    "en": "Today we will learn to multiply by tens — for example 4 × 30.",
+    "c": 1
+  },
+  {
+    "en": "- Internal IDs: `geometry:g2:{pageId}`, `subject: geometry`.",
+    "c": 1
+  },
+  {
+    "en": "- `geometry:kind:no_question` — meta only; no learning page.",
+    "c": 1
+  },
+  {
+    "en": "The difference: 9,000 − 8,800 = 200 — a relatively small gap",
+    "c": 1
+  },
+  {
+    "en": "\"How many more\" = difference → subtract bigger minus smaller",
+    "c": 1
+  },
+  {
+    "en": "In a rectangle — top and bottom: parallel or perpendicular?",
+    "c": 1
+  },
+  {
+    "en": "Now you can identify parallel sides and 90° in a rectangle!",
+    "c": 1
+  },
+  {
+    "en": "Trapezoid — separate: only one pair parallel (not 2 pairs).",
+    "c": 1
+  },
+  {
+    "en": "You can also think: 4 × 6 = 24 — a row in the times table.",
+    "c": 1
+  },
+  {
+    "en": "- ❌ No SQL, commit, push, or deploy for production release",
+    "c": 1
+  },
+  {
+    "en": "A child pushes a toy cart on grass and then on a sidewalk.",
+    "c": 1
+  },
+  {
+    "en": "All three sides are different lengths — no pair is equal.",
+    "c": 1
+  },
+  {
+    "en": "- Book title: **ספר גאומטריה — כיתה ד׳** (not **הנדסה**).",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Three-Dimensional Solids — Review |",
+    "c": 1
+  },
+  {
+    "en": "- ✅ Hebrew drafts remain source for a future runtime task",
+    "c": 1
+  },
+  {
+    "en": "In trapezoid ABCD: AB and CD — the bases — are parallel.",
+    "c": 1
+  },
+  {
+    "en": "| Section 7 heading | **\"בואו נתרגל!\"** on all 5 pages |",
+    "c": 1
+  },
+  {
+    "en": "- ✅ Dev routes `/learning/book/math/g2` available for QA",
+    "c": 1
+  },
+  {
+    "en": "hundreds: after borrowing, 5 hundreds remain → 5 − 3 = 2",
+    "c": 1
+  },
+  {
+    "en": "Hundreds: after borrowing, 5 hundreds remain → 5 − 3 = 2",
+    "c": 1
+  },
+  {
+    "en": "What is the difference between comparison and variable?",
+    "c": 1
+  },
+  {
+    "en": "- No page is set to `review`, `approved`, or `active`.",
+    "c": 1
+  },
+  {
+    "en": "Round, add — and check if an exact answer makes sense!",
+    "c": 1
+  },
+  {
+    "en": "Now you know the names of quadrilaterals in geometry.",
+    "c": 1
+  },
+  {
+    "en": "Sides BC and AD — are not necessarily parallel to AB.",
+    "c": 1
+  },
+  {
+    "en": "Each coin has a value — how many shekels it is worth.",
+    "c": 1
+  },
+  {
+    "en": "You can add two first, then the third — step by step.",
+    "c": 1
+  },
+  {
+    "en": "To regenerate draft pages from generator (if edited):",
+    "c": 1
+  },
+  {
+    "en": "- A small angle — a narrow opening (for example 50°)",
+    "c": 1
+  },
+  {
+    "en": "- A larger angle — a wider opening (for example 70°)",
+    "c": 1
+  },
+  {
+    "en": "Top ∥ bottom — parallel; top ⊥ right — perpendicular",
+    "c": 1
+  },
+  {
+    "en": "You can calculate in steps: first 5 + 6, then add 7.",
+    "c": 1
+  },
+  {
+    "en": "Base 6 cm, triangle height 4 cm, prism height 10 cm:",
+    "c": 1
+  },
+  {
+    "en": "- **No Hebrew product copy in the app** was changed.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Word Problems — Equal Groups |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Ratio Between Two Quantities |",
+    "c": 1
+  },
+  {
+    "en": "Then Mom calls him — he hears the voice in his ears.",
+    "c": 1
+  },
+  {
+    "en": "Each choice reduces part of your personal footprint.",
+    "c": 1
+  },
+  {
+    "en": "# Three-Dimensional Solids — Names and Introduction",
+    "c": 1
+  },
+  {
+    "en": "Trapezoid — one pair of parallel sides (the bases).",
+    "c": 1
+  },
+  {
+    "en": "Notation: AB ∥ CD — line AB is parallel to line CD.",
+    "c": 1
+  },
+  {
+    "en": "**Focus:** Number-line and number-sense foundations",
+    "c": 1
+  },
+  {
+    "en": "You can also think: 68 − 20 = 48, then 48 − 4 = 44.",
+    "c": 1
+  },
+  {
+    "en": "# Subtracting Decimals — Two Digits After the Point",
+    "c": 1
+  },
+  {
+    "en": "Top side and right side — meet at a corner at 90°:",
+    "c": 1
+  },
+  {
+    "en": "### Batch B — resolved for draft use (polish pass)",
+    "c": 1
+  },
+  {
+    "en": "### Batch C — resolved for draft use (polish pass)",
+    "c": 1
+  },
+  {
+    "en": "3. What do we do? — count steps on the row of days",
+    "c": 1
+  },
+  {
+    "en": "Step 3 — Ones: if tens are also equal, check ones.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Times Table — Equal Groups |",
+    "c": 1
+  },
+  {
+    "en": "- All Grade 2 draft pages now exist — **22 / 22**.",
+    "c": 1
+  },
+  {
+    "en": "When you write a large number, use commas: 48,726.",
+    "c": 1
+  },
+  {
+    "en": "\"How many more?\" = the difference — not the total!",
+    "c": 1
+  },
+  {
+    "en": "The digestive system breaks food into small parts.",
+    "c": 1
+  },
+  {
+    "en": "Every saving helps protect natural water supplies.",
+    "c": 1
+  },
+  {
+    "en": "Each face = a flat surface — usually a rectangle.",
+    "c": 1
+  },
+  {
+    "en": "In a trapezoid, the bases AB and CD are parallel.",
+    "c": 1
+  },
+  {
+    "en": "÷3: sum of digits 2+3+4 = 9 — divides by 3 → yes.",
+    "c": 1
+  },
+  {
+    "en": "Or go straight to 100 (for example 68 + 32 = 100)",
+    "c": 1
+  },
+  {
+    "en": "- Section 7: text-only — **no practice routing**.",
+    "c": 1
+  },
+  {
+    "en": "Each stage is part of the butterfly's life cycle.",
+    "c": 1
+  },
+  {
+    "en": "What is the difference between predator and prey?",
+    "c": 1
+  },
+  {
+    "en": "Where do plants mainly grow — in rock or in soil?",
+    "c": 1
+  },
+  {
+    "en": "| `add_tens_only` | Cap at 30; 10, 20, 30 only |",
+    "c": 1
+  },
+  {
+    "en": "Example: two rails of a train track — parallel.",
+    "c": 1
+  },
+  {
+    "en": "Every star has a partner — nobody is left alone",
+    "c": 1
+  },
+  {
+    "en": "# The Human Body — Coordination Between Systems",
+    "c": 1
+  },
+  {
+    "en": "Here — we check properties, not just the name.",
+    "c": 1
+  },
+  {
+    "en": "What do we know? → 2 coins of 5, one coin of 2",
+    "c": 1
+  },
+  {
+    "en": "Step 3 — check with multiplication: 5 × 4 = 20",
+    "c": 1
+  },
+  {
+    "en": "# Adding Decimals — Two Digits After the Point",
+    "c": 1
+  },
+  {
+    "en": "After a few days — a small root, a green leaf.",
+    "c": 1
+  },
+  {
+    "en": "Now you know the names of solids in geometry.",
+    "c": 1
+  },
+  {
+    "en": "- **No runtime registry files** were created.",
+    "c": 1
+  },
+  {
+    "en": "From Sunday to Thursday — how many days pass?",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | From Map to Real Life |",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | From Real Life to Map |",
+    "c": 1
+  },
+  {
+    "en": "All three of these are important for a plant.",
+    "c": 1
+  },
+  {
+    "en": "| Runtime routes / registry | ❌ Not created |",
+    "c": 1
+  },
+  {
+    "en": "Push — moves the object away (pushing a door)",
+    "c": 1
+  },
+  {
+    "en": "- Top side ⊥ right side — perpendicular, 90°",
+    "c": 1
+  },
+  {
+    "en": "Parallel = they do not meet, same direction.",
+    "c": 1
+  },
+  {
+    "en": "# Properties of a Rectangle — Pairs of Sides",
+    "c": 1
+  },
+  {
+    "en": "When you add — you put two amounts together.",
+    "c": 1
+  },
+  {
+    "en": "Base = 5, exponent = 3 — three factors of 5.",
+    "c": 1
+  },
+  {
+    "en": "\"How many more?\" = difference → subtraction.",
+    "c": 1
+  },
+  {
+    "en": "Pillow — soft. When you press — it sinks in.",
+    "c": 1
+  },
+  {
+    "en": "Is wind energy — renewable or non-renewable?",
+    "c": 1
+  },
+  {
+    "en": "After eating, several systems work together:",
+    "c": 1
+  },
+  {
+    "en": "Each step to the right = one number bigger.",
+    "c": 1
+  },
+  {
+    "en": "The ice (solid) turned into water (liquid).",
+    "c": 1
+  },
+  {
+    "en": "We will learn to read degrees and compare:",
+    "c": 1
+  },
+  {
+    "en": "# Parallel and Perpendicular — in Polygons",
+    "c": 1
+  },
+  {
+    "en": "After: 499 + 1 = 500 — crossing a hundred!",
+    "c": 1
+  },
+  {
+    "en": "What do we see in the sky on a bright day?",
+    "c": 1
+  },
+  {
+    "en": "On grass — harder to push (more friction).",
+    "c": 1
+  },
+  {
+    "en": "Push moves away. Friction slows and stops.",
+    "c": 1
+  },
+  {
+    "en": "- Child-facing: **גאומטריה** (not הנדסה).",
+    "c": 1
+  },
+  {
+    "en": "What do we do? Subtract: bigger − smaller",
+    "c": 1
+  },
+  {
+    "en": "÷9: sum of digits 9 — divides by 9 → yes.",
+    "c": 1
+  },
+  {
+    "en": "Hold a mirror in front of you in the sun.",
+    "c": 1
+  },
+  {
+    "en": "From Sunday to Thursday — how many days?",
+    "c": 1
+  },
+  {
+    "en": "Is 126 divisible by 2? By 3? By 6? By 9?",
+    "c": 1
+  },
+  {
+    "en": "Inherited traits (for example fur color)",
+    "c": 1
+  },
+  {
+    "en": "Perpendicular lines — 90° between them.",
+    "c": 1
+  },
+  {
+    "en": "1. b1 + b2 — add the two parallel bases",
+    "c": 1
+  },
+  {
+    "en": "For example: 351 = 175 + 175 + 1 → odd.",
+    "c": 1
+  },
+  {
+    "en": "All angles are 90° — fits a rectangle.",
+    "c": 1
+  },
+  {
+    "en": "| **title_english** | Tiling a Plane |",
+    "c": 1
+  },
+  {
+    "en": "Add the two bases (the parallel sides)",
+    "c": 1
+  },
+  {
+    "en": "| **Total** | **19** | **all draft** |",
+    "c": 1
+  },
+  {
+    "en": "Every star has a partner → 24 is even.",
+    "c": 1
+  },
+  {
+    "en": "What's inside the parentheses — first!",
+    "c": 1
+  },
+  {
+    "en": "Conclusion — did the prediction match?",
+    "c": 1
+  },
+  {
+    "en": "If yes — it is usually a translation.",
+    "c": 1
+  },
+  {
+    "en": "They meet at a corner — not parallel.",
+    "c": 1
+  },
+  {
+    "en": "# Volume of a Prism — Triangular Base",
+    "c": 1
+  },
+  {
+    "en": "How many did we take out of how many?",
+    "c": 1
+  },
+  {
+    "en": "All three sides are the same length.",
+    "c": 1
+  },
+  {
+    "en": "- A medium angle — (for example 60°)",
+    "c": 1
+  },
+  {
+    "en": "All 4 sides are equal to each other.",
+    "c": 1
+  },
+  {
+    "en": "You can start at another number too:",
+    "c": 1
+  },
+  {
+    "en": "What do we do? → addition: 5 + 5 + 2",
+    "c": 1
+  },
+  {
+    "en": "For example: 248 = 124 + 124 → even.",
+    "c": 1
+  },
+  {
+    "en": "Why? 0 means \"nothing to take away.\"",
+    "c": 1
+  },
+  {
+    "en": "\"More\" = difference — not the total!",
+    "c": 1
+  },
+  {
+    "en": "# Full Investigation — Documentation",
+    "c": 1
+  },
+  {
+    "en": "We measure an angle in degrees (°):",
+    "c": 1
+  },
+  {
+    "en": "- Top side ∥ bottom side — parallel",
+    "c": 1
+  },
+  {
+    "en": "- Left side ∥ right side — parallel",
+    "c": 1
+  },
+  {
+    "en": "- 6 on top ∥ 6 on bottom — parallel",
+    "c": 1
+  },
+  {
+    "en": "- 4 on left ∥ 4 on right — parallel",
+    "c": 1
+  },
+  {
+    "en": "Only one parallel pair → trapezoid.",
+    "c": 1
+  },
+  {
+    "en": "# Three-Dimensional Solids — Review",
+    "c": 1
+  },
+  {
+    "en": "The bases — the two parallel sides.",
+    "c": 1
+  },
+  {
+    "en": "# Volume of a Pyramid — Square Base",
+    "c": 1
+  },
+  {
+    "en": "Is 120 divisible by 2? By 5? By 10?",
+    "c": 1
+  },
+  {
+    "en": "- Top + right — 90°, perpendicular",
+    "c": 1
+  },
+  {
+    "en": "Every quadrilateral has 4 corners.",
+    "c": 1
+  },
+  {
+    "en": "Top face = bottom face — one pair.",
+    "c": 1
+  },
+  {
+    "en": "The blank (__) = a missing number.",
+    "c": 1
+  },
+  {
+    "en": "- **No UI or buttons** were added.",
+    "c": 1
+  },
+  {
+    "en": "3. What do we do? — add the values",
+    "c": 1
+  },
+  {
+    "en": "\"More\" = difference — not a total!",
+    "c": 1
+  },
+  {
+    "en": "÷6: divides by both 2 and 3 → yes.",
+    "c": 1
+  },
+  {
+    "en": "When there aren't enough — borrow!",
+    "c": 1
+  },
+  {
+    "en": "During the year there are seasons:",
+    "c": 1
+  },
+  {
+    "en": "Every day — height in centimeters.",
+    "c": 1
+  },
+  {
+    "en": "**Total pages: 22 — all drafted**",
+    "c": 1
+  },
+  {
+    "en": "What do we add to 56 to reach 83?",
+    "c": 1
+  },
+  {
+    "en": "When there isn't enough — borrow!",
+    "c": 1
+  },
+  {
+    "en": "Make sure the denominators match!",
+    "c": 1
+  },
+  {
+    "en": "After a while — water in the cup.",
+    "c": 1
+  },
+  {
+    "en": "Only the state of matter changed.",
+    "c": 1
+  },
+  {
+    "en": "# Properties of a Square — Sides",
+    "c": 1
+  },
+  {
+    "en": "Our triangle: 5 + 6 + 7 = 18 cm.",
+    "c": 1
+  },
+  {
+    "en": "Base 10 cm, height 6 cm → 60 cm²",
+    "c": 1
+  },
+  {
+    "en": "For example (base 10, height 4):",
+    "c": 1
+  },
+  {
+    "en": "Yesterday = the day before today",
+    "c": 1
+  },
+  {
+    "en": "You can use it in big additions.",
+    "c": 1
+  },
+  {
+    "en": "\"More\" = difference — not a sum!",
+    "c": 1
+  },
+  {
+    "en": "After the rain — it felt cooler.",
+    "c": 1
+  },
+  {
+    "en": "# The Human Body — Basic Systems",
+    "c": 1
+  },
+  {
+    "en": "All 4 corners are right angles.",
+    "c": 1
+  },
+  {
+    "en": "After running — fast breathing.",
+    "c": 1
+  },
+  {
+    "en": "Other conditions stay the same:",
+    "c": 1
+  },
+  {
+    "en": "The hand needs to move quickly.",
+    "c": 1
+  },
+  {
+    "en": "The body — a system of systems:",
+    "c": 1
+  },
+  {
+    "en": "Base 4 cm × 6 cm, height 9 cm:",
+    "c": 1
+  },
+  {
+    "en": "# Word Problems — Equal Groups",
+    "c": 1
+  },
+  {
+    "en": "÷2: ones digit 4 (even) → yes.",
+    "c": 1
+  },
+  {
+    "en": "Why? 0 means \"nothing to add.\"",
+    "c": 1
+  },
+  {
+    "en": "# Ratio Between Two Quantities",
+    "c": 1
+  },
+  {
+    "en": "Is the force a push or a pull?",
+    "c": 1
+  },
+  {
+    "en": "The species remains butterfly.",
+    "c": 1
+  },
+  {
+    "en": "Do they not meet? → parallel!",
+    "c": 1
+  },
+  {
+    "en": "All sides equal too → square.",
+    "c": 1
+  },
+  {
+    "en": "Each row has 6 small squares.",
+    "c": 1
+  },
+  {
+    "en": "# Solids — Faces in the Plane",
+    "c": 1
+  },
+  {
+    "en": "One parallel pair → trapezoid",
+    "c": 1
+  },
+  {
+    "en": "÷2: ones digit 6 — even → yes",
+    "c": 1
+  },
+  {
+    "en": "Ones digit 6 (even) → ÷2 yes.",
+    "c": 1
+  },
+  {
+    "en": "- The angle of rotation: 90°",
+    "c": 1
+  },
+  {
+    "en": "All sides 5 → also a square.",
+    "c": 1
+  },
+  {
+    "en": "After 3 steps you land on 7.",
+    "c": 1
+  },
+  {
+    "en": "And 3 coins of 1 → 1 + 1 + 1",
+    "c": 1
+  },
+  {
+    "en": "# Times Table — Equal Groups",
+    "c": 1
+  },
+  {
+    "en": "3. What do we do? — multiply",
+    "c": 1
+  },
+  {
+    "en": "What do we know? Two amounts",
+    "c": 1
+  },
+  {
+    "en": "For example: 350 + 120 + 80.",
+    "c": 1
+  },
+  {
+    "en": "Before = 45,600 − 1 = 45,599",
+    "c": 1
+  },
+  {
+    "en": "Before — 48,650 − 1 = 48,649",
+    "c": 1
+  },
+  {
+    "en": "Every material is different.",
+    "c": 1
+  },
+  {
+    "en": "Top ⊥ right — perpendicular",
+    "c": 1
+  },
+  {
+    "en": "Each mark shows one number.",
+    "c": 1
+  },
+  {
+    "en": "Before you calculate, read:",
+    "c": 1
+  },
+  {
+    "en": "For example: 125 + 40 + 35.",
+    "c": 1
+  },
+  {
+    "en": "Then subtract: 30 − 12 = 18",
+    "c": 1
+  },
+  {
+    "en": "Then subtract: 40 − 24 = 16",
+    "c": 1
+  },
+  {
+    "en": "Before = 3,999 − 1 = 3,998.",
+    "c": 1
+  },
+  {
+    "en": "After = 45,600 + 1 = 45,601",
+    "c": 1
+  },
+  {
+    "en": "After = 82,000 + 1 = 82,001",
+    "c": 1
+  },
+  {
+    "en": "After — 48,650 + 1 = 48,651",
+    "c": 1
+  },
+  {
+    "en": "Is the pillow hard or soft?",
+    "c": 1
+  },
+  {
+    "en": "# Plants — What Plants Need",
+    "c": 1
+  },
+  {
+    "en": "The top layer is the crust.",
+    "c": 1
+  },
+  {
+    "en": "Parallel or perpendicular?",
+    "c": 1
+  },
+  {
+    "en": "Bases → parallel: AB ∥ CD.",
+    "c": 1
+  },
+  {
+    "en": "Make equal groups and add!",
+    "c": 1
+  },
+  {
+    "en": "## All Draft Pages Summary",
+    "c": 1
+  },
+  {
+    "en": "3. What do we do? — divide",
+    "c": 1
+  },
+  {
+    "en": "Each child gets 6 cookies.",
+    "c": 1
+  },
+  {
+    "en": "Each child gets 4 stickers",
+    "c": 1
+  },
+  {
+    "en": "Then multiply: 10 × 3 = 30",
+    "c": 1
+  },
+  {
+    "en": "Before = 2,450 − 1 = 2,449",
+    "c": 1
+  },
+  {
+    "en": "→ The lines are parallel.",
+    "c": 1
+  },
+  {
+    "en": "- Need more stars until 7",
+    "c": 1
+  },
+  {
+    "en": "You can also say \"times\".",
+    "c": 1
+  },
+  {
+    "en": "Then multiply: 9 × 4 = 36",
+    "c": 1
+  },
+  {
+    "en": "After = 2,450 + 1 = 2,451",
+    "c": 1
+  },
+  {
+    "en": "Is a pillow hard or soft?",
+    "c": 1
+  },
+  {
+    "en": "Parallel ≠ perpendicular",
+    "c": 1
+  },
+  {
+    "en": "How many parallel pairs?",
+    "c": 1
+  },
+  {
+    "en": "Base 10 cm, area 30 cm²:",
+    "c": 1
+  },
+  {
+    "en": "Only one pair — PQ ∥ SR.",
+    "c": 1
+  },
+  {
+    "en": "Base layer — 4 × 3 = 12.",
+    "c": 1
+  },
+  {
+    "en": "Base 10 cm, height 6 cm:",
+    "c": 1
+  },
+  {
+    "en": "# Rotation in the Plane",
+    "c": 1
+  },
+  {
+    "en": "The largest angle = 75°",
+    "c": 1
+  },
+  {
+    "en": "Top ∥ bottom — parallel",
+    "c": 1
+  },
+  {
+    "en": "- Top-right corner: 90°",
+    "c": 1
+  },
+  {
+    "en": "# Symmetry in the Plane",
+    "c": 1
+  },
+  {
+    "en": "Base 8 cm, area 40 cm²:",
+    "c": 1
+  },
+  {
+    "en": "Base 8 cm, height 5 cm:",
+    "c": 1
+  },
+  {
+    "en": "Base = 2, exponent = 4.",
+    "c": 1
+  },
+  {
+    "en": "Round: 37 ≈ 40; 63 ≈ 60",
+    "c": 1
+  },
+  {
+    "en": "The denominator stays 9",
+    "c": 1
+  },
+  {
+    "en": "# From Map to Real Life",
+    "c": 1
+  },
+  {
+    "en": "# From Real Life to Map",
+    "c": 1
+  },
+  {
+    "en": "The plant grows slowly.",
+    "c": 1
+  },
+  {
+    "en": "All systems — together.",
+    "c": 1
+  },
+  {
+    "en": "The key property here:",
+    "c": 1
+  },
+  {
+    "en": "- Top face — rectangle",
+    "c": 1
+  },
+  {
+    "en": "For example: 4 + 3 = 7",
+    "c": 1
+  },
+  {
+    "en": "For example: 8 − 3 = 5",
+    "c": 1
+  },
+  {
+    "en": "Each coin has a value.",
+    "c": 1
+  },
+  {
+    "en": "Before → 248 − 1 = 247",
+    "c": 1
+  },
+  {
+    "en": "Before = 415 − 1 = 414",
+    "c": 1
+  },
+  {
+    "en": "We write 3:2 (3 to 2).",
+    "c": 1
+  },
+  {
+    "en": "After — flowing water.",
+    "c": 1
+  },
+  {
+    "en": "You can return to ice.",
+    "c": 1
+  },
+  {
+    "en": "The type of triangle:",
+    "c": 1
+  },
+  {
+    "en": "The third angle: 60°.",
+    "c": 1
+  },
+  {
+    "en": "The third angle = 40°",
+    "c": 1
+  },
+  {
+    "en": "Count parallel pairs:",
+    "c": 1
+  },
+  {
+    "en": "After → 248 + 1 = 249",
+    "c": 1
+  },
+  {
+    "en": "Before you calculate:",
+    "c": 1
+  },
+  {
+    "en": "Then: 230 + 100 = 330",
+    "c": 1
+  },
+  {
+    "en": "We take 1 of them → ½",
+    "c": 1
+  },
+  {
+    "en": "We take 1 of them → ⅓",
+    "c": 1
+  },
+  {
+    "en": "We take 1 of them → ¼",
+    "c": 1
+  },
+  {
+    "en": "We colored 3 of them.",
+    "c": 1
+  },
+  {
+    "en": "You want to reach 10.",
+    "c": 1
+  },
+  {
+    "en": "After = 415 + 1 = 416",
+    "c": 1
+  },
+  {
+    "en": "Before: 499 − 1 = 498",
+    "c": 1
+  },
+  {
+    "en": "Then add: 9 + 15 = 24",
+    "c": 1
+  },
+  {
+    "en": "The difference (more)",
+    "c": 1
+  },
+  {
+    "en": "Is 7,905 even or odd?",
+    "c": 1
+  },
+  {
+    "en": "That is transparency.",
+    "c": 1
+  },
+  {
+    "en": "AB is parallel to CD",
+    "c": 1
+  },
+  {
+    "en": "Then add: 6 + 8 = 14",
+    "c": 1
+  },
+  {
+    "en": "The weather changes:",
+    "c": 1
+  },
+  {
+    "en": "- Each child gets 6",
+    "c": 1
+  },
+  {
+    "en": "Is 905 even or odd?",
+    "c": 1
+  },
+  {
+    "en": "We do: 52 − 37 = 15",
+    "c": 1
+  },
+  {
+    "en": "÷2 and ÷3 → ÷6 yes.",
+    "c": 1
+  },
+  {
+    "en": "Round both factors!",
+    "c": 1
+  },
+  {
+    "en": "The distance: 60 km",
+    "c": 1
+  },
+  {
+    "en": "Is a hamster alive?",
+    "c": 1
+  },
+  {
+    "en": "A mirror is smooth.",
+    "c": 1
+  },
+  {
+    "en": "That is reflection.",
+    "c": 1
+  },
+  {
+    "en": "All Batch B pages:",
+    "c": 1
+  },
+  {
+    "en": "- Each group has 4",
+    "c": 1
+  },
+  {
+    "en": "Is 24 even or odd?",
+    "c": 1
+  },
+  {
+    "en": "Before — hard ice.",
+    "c": 1
+  },
+  {
+    "en": "That is a square.",
+    "c": 1
+  },
+  {
+    "en": "The diagonal = 10",
+    "c": 1
+  },
+  {
+    "en": "Is 8 even or odd?",
+    "c": 1
+  },
+  {
+    "en": "# The Number Line",
+    "c": 1
+  },
+  {
+    "en": "Round: 623 ≈ 600.",
+    "c": 1
+  },
+  {
+    "en": "Round: 382 ≈ 400.",
+    "c": 1
+  },
+  {
+    "en": "Difference (more)",
+    "c": 1
+  },
+  {
+    "en": "The largest = 15.",
+    "c": 1
+  },
+  {
+    "en": "We live on Earth.",
+    "c": 1
+  },
+  {
+    "en": "# Our Environment",
+    "c": 1
+  },
+  {
+    "en": "You want to test:",
+    "c": 1
+  },
+  {
+    "en": "The solar system:",
+    "c": 1
+  },
+  {
+    "en": "# Tiling a Plane",
+    "c": 1
+  },
+  {
+    "en": "Round, then add!",
+    "c": 1
+  },
+  {
+    "en": "After two weeks:",
+    "c": 1
+  },
+  {
+    "en": "All sides are 7",
+    "c": 1
+  },
+  {
+    "en": "We know: 52, 37",
+    "c": 1
+  },
+  {
+    "en": "Round: 27 ≈ 30.",
+    "c": 1
+  },
+  {
+    "en": "Round: 33 ≈ 30.",
+    "c": 1
+  },
+  {
+    "en": "What we can do:",
+    "c": 1
+  },
+  {
+    "en": "- Each side: 6",
+    "c": 1
+  },
+  {
+    "en": "Top and right?",
+    "c": 1
+  },
+  {
+    "en": "How to use it:",
+    "c": 1
+  },
+  {
+    "en": "| Page | Fix |",
+    "c": 1
+  },
+  {
+    "en": "What do we do?",
+    "c": 1
+  },
+  {
+    "en": "All the pairs:",
+    "c": 1
+  },
+  {
+    "en": "Round to tens:",
+    "c": 1
+  },
+  {
+    "en": "sides 3, 4, 5",
+    "c": 1
+  },
+  {
+    "en": "Longer than 6",
+    "c": 1
+  },
+  {
+    "en": "- Top side: 5",
+    "c": 1
+  },
+  {
+    "en": "- Before: 247",
+    "c": 1
+  },
+  {
+    "en": "- After: 249",
+    "c": 1
+  },
+  {
+    "en": "We're asked:",
+    "c": 1
+  },
+  {
+    "en": "Is 21 prime?",
+    "c": 1
+  },
+  {
+    "en": "Is it alive?",
+    "c": 1
+  },
+  {
+    "en": "The message:",
+    "c": 1
+  },
+  {
+    "en": "→ Parallel.",
+    "c": 1
+  },
+  {
+    "en": "Base layer:",
+    "c": 1
+  },
+  {
+    "en": "How to add:",
+    "c": 1
+  },
+  {
+    "en": "More pairs:",
+    "c": 1
+  },
+  {
+    "en": "What stays?",
+    "c": 1
+  },
+  {
+    "en": "Two lines:",
+    "c": 1
+  },
+  {
+    "en": "Rotation:",
+    "c": 1
+  },
+  {
+    "en": "Parallel",
+    "c": 1
+  },
+  {
+    "en": "↑ today",
+    "c": 1
+  }
+]

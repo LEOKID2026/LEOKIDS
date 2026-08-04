@@ -1,5 +1,32 @@
 {
   "copy": {
-    "level": "Level"
+    "level": "Level",
+    "new_activity": "New activity",
+    "back_to_activities": "← Back to activities",
+    "title": "Title",
+    "subject": "Subject",
+    "topic": "Topic",
+    "no_science_topics": "No topics available for this grade in Science.",
+    "no_subject_topics": "No topics available for this subject and grade level.",
+    "subtopic_optional": "Subtopic (optional)",
+    "grade_for_questions": "Grade (for question generation)",
+    "activity_mode": "Activity mode",
+    "number_of_questions": "Number of questions",
+    "time_limit_optional": "Time limit (seconds, optional)",
+    "due_date_optional": "Due date (homework, optional)",
+    "generating": "Generating…",
+    "preview_questions": "Preview questions",
+    "save_draft": "Save as draft",
+    "preview_heading": "Preview ({n} questions)",
+    "not_sent_hint": "(not sent to student)",
+    "err_no_permission": "You do not have permission to create activities for this class. Contact your school admin.",
+    "err_load_class": "Could not load class",
+    "err_invalid_grade": "This class grade level is invalid. Contact your school admin.",
+    "network_error": "Network error",
+    "err_preview": "Could not create question preview",
+    "err_enter_title": "Please enter a title",
+    "err_preview_first": "Please preview the questions before saving",
+    "err_quiz_time": "Quiz mode requires a time limit (seconds)",
+    "err_save": "Save failed"
   }
 }

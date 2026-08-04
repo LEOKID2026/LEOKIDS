@@ -13,12 +13,17 @@
     "science": "Science",
     "english": "English"
   },
+  "tile": {
+    "titleTemplate": "{subject} Book"
+  },
   "shell": {
     "close": "Close",
     "tocTitle": "Table of contents",
+    "tocOpen": "Table of contents",
     "tocClose": "✕ Close",
     "tocAria": "Table of contents",
     "tocCloseAria": "Close",
+    "textbookLabel": "Textbook",
     "indexSubtitle": "{grade} · Pick a topic and read page by page",
     "backClose": "Close",
     "backGeometry": "Back to Geometry",

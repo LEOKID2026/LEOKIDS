@@ -7,19 +7,47 @@
 - Modern Standard Arabic — formal but child-friendly
 - Country-neutral — no Egypt/Levant/Gulf dialect markers
 - No Israeli Hebrew loan translations
+- No machine-translation calques; edit for natural Arabic
+
+## Brand
+
+The brand is always **Leo Kids** (Latin). Never translate or transliterate to أطفال ليو / ليو كيدز / أدلة ليو للأطفال.
 
 ## Terminology locks
 
 | English | ar-001 |
 |---------|--------|
-| Grade (school level) | الصف |
-| Class group | مجموعة صفّية |
-| Parent | ولي الأمر |
+| Grade / year level | الصف |
+| Class group | الفصل |
+| Subject | مادة |
+| Topic | موضوع |
+| Student | تلميذ / تلميذة |
+| Students | تلاميذ |
+| Parent/guardian | ولي الأمر |
+| Parents/guardians | أولياء الأمور |
+| Teacher | معلّم / معلّمة |
+| School | مدرسة |
+| Activity | نشاط |
 | Worksheet | ورقة عمل |
-| Answer key | مفتاح الإجابات |
+| Report | تقرير |
+| Finding | ملاحظة |
+| Strength / Strengths | نقطة قوة / نقاط قوة |
+| PIN | رمز PIN |
 | Math | الرياضيات |
 | Geometry | الهندسة |
 | English (subject) | الإنجليزية |
+
+### Forbidden swaps
+
+- Subject ≠ موضوع / عنوان
+- Topic ≠ عنوان
+- Class group ≠ الصف
+- Parent ≠ الوالد / الوالدين / الآباء / كوالد (UI must use ولي الأمر / أولياء الأمور; kid UI: اطلب من ولي الأمر — not والديك)
+- Powers (math) ≠ السلطات → القوى
+- Division (math) ≠ التقسيم → القسمة
+- Square/triangle/circle area ≠ منطقة → مساحة
+- Rotation (geometry) ≠ تناوب → دوران
+- Heights (geometry) ≠ مرتفعات → الارتفاعات
 
 ## Mixed direction
 
@@ -30,12 +58,8 @@
 
 ## Forbidden in chrome
 
-English UI strings, Hebrew, country-specific Arabic dialects, Israeli curriculum terms.
+English UI strings, Hebrew, country-specific Arabic dialects, Israeli curriculum terms, Arabic-Indic digits (`٠١٢٣٤٥٦٧٨٩`).
 
 ## Numbers
 
-Always Western digits `0–9`. No Eastern Arabic numerals in user-facing copy.
-
-## Brand
-
-`Leo Kids` stays Latin. Tagline: **التعلّم كاللعب**.
+Always Western digits `0–9`.

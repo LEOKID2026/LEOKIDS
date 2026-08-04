@@ -1,0 +1,152 @@
+{
+  "body_2": {
+    "stem": "Welk orgaan gebruiken we om te zien?",
+    "options": ["Oren", "Ogen", "Neus", "Tong"],
+    "explanation": "Ogen nemen licht op, zodat de hersenen een beeld kunnen vormen van wat er om ons heen is.",
+    "theoryLines": [
+      "De vijf belangrijkste zintuigen zijn zien, horen, ruiken, proeven en aanraken.",
+      "De ogen sturen signalen via de oogzenuw naar de hersenen."
+    ]
+  },
+  "materials_8": {
+    "stem": "Welk materiaal is zacht?",
+    "options": ["Steen", "Metaal", "Katoen", "Dun glas"],
+    "explanation": "Katoen is zacht en wordt daarom vaak gebruikt om comfortabele kleding van te maken.",
+    "theoryLines": ["Zachte materialen voelen zacht aan.", "Katoen komt van de katoenplant."]
+  },
+  "plants_8": {
+    "stem": "Wat gebeurt er met een plant als hij geen water heeft?",
+    "options": [
+      "Als er veel licht is, blijft hij lang groeien",
+      "Hij verwelkt en wordt zwak",
+      "De bladeren blijven lang rechtopstaand en groen zonder water",
+      "Het stopt met ademen totdat het water terugkeert"
+    ],
+    "explanation": "Water is essentieel. Zonder dit verwelkt een plant, drogen de bladeren uit en kan de plant afsterven.",
+    "theoryLines": [
+      "Water helpt een plant levend en sterk te blijven.",
+      "Wortels halen water uit de grond."
+    ]
+  },
+  "sci_pb1_g4_body_easy_01": {
+    "stem": "Welke zin beschrijft het spijsverteringsstelsel op een eenvoudig niveau het best?",
+    "options": [
+      "Het breekt voedsel in kleinere delen en neemt stoffen op in het lichaam",
+      "Het maakt meestal zuurstof rechtstreeks uit voedsel",
+      "Het wisselt alleen van taak met de longen om rood bloed te maken",
+      "Het werkt alleen tijdens snelle beenbeweging"
+    ],
+    "explanation": "Spijsvertering breekt voedsel af en helpt het lichaam voedingsstoffen op te nemen.",
+    "theoryLines": [
+      "Voedsel gaat door een spijsverteringsweg.",
+      "Opname verplaatst nuttige stoffen naar het bloed."
+    ]
+  },
+  "sci_p0_g1_plants_medium_02": {
+    "stem": "Wat doen plantenwortels meestal?",
+    "options": [
+      "Water en voedingsstoffen opnemen en de plant stevig houden",
+      "Flapperen als vleugels zodat de plant kan vliegen",
+      "Harde muziek maken voor bijen",
+      "Zonlicht in ijs veranderen"
+    ],
+    "explanation": "Wortels groeien in de grond. Zij nemen water en voedingsstoffen op en houden de plant stevig, zodat die niet omvalt.",
+    "theoryLines": [
+      "Verschillende plantdelen hebben verschillende taken.",
+      "Stevige wortels ondersteunen hoge planten."
+    ]
+  },
+  "sci_p0_g2_animals_hard_05": {
+    "stem": "Waarbij helpen vinnen een vis?",
+    "options": [
+      "Zwemmen, sturen en evenwicht houden in water",
+      "Op het land lopen zoals een paard",
+      "Stuifmeel maken voor bloemen",
+      "Bloed pompen zonder hart"
+    ],
+    "explanation": "Verschillende vinnen hebben taken zoals vooruit bewegen, draaien en rechtop blijven. Samen helpen zij de vis goed onder water te bewegen.",
+    "theoryLines": [
+      "Lichaamsbouw past bij de omgeving.",
+      "Waterdieren hebben manieren nodig om door water te bewegen."
+    ]
+  },
+  "sci_p0_g3_animals_easy_05": {
+    "stem": "Welke bedekking hebben vogels die helpt bij vliegen en warmte?",
+    "options": ["Veren", "Alleen natte vissenschubben", "Dikke boomschors", "Plastic schelpen"],
+    "explanation": "Veren zijn een belangrijk kenmerk van vogels. Zij helpen bij vliegen, sturen en warm blijven.",
+    "theoryLines": [
+      "Vogels zijn de enige levende dieren met veren.",
+      "Verschillende veren hebben verschillende taken."
+    ]
+  },
+  "sci_p1_g4_animals_easy_06": {
+    "stem": "Waarvoor is een vogel met een dikke, sterke snavel het meest waarschijnlijk aangepast?",
+    "options": [
+      "Harde zaden of noten kraken",
+      "Oceaanplankton filteren met kieuwen",
+      "Spinnenzijde spinnen voor webben",
+      "Water alleen via wortels opnemen"
+    ],
+    "explanation": "De vorm van de snavel past bij het eten. Dikke snavels kunnen hard voedsel aan; andere vormen passen bij nectar, vlees of zoeken in modder.",
+    "theoryLines": [
+      "Bouw en functie horen bij elkaar.",
+      "Soorten vergelijken laat aanpassingspatronen zien."
+    ]
+  },
+  "sci_p1_g5_body_medium_03": {
+    "stem": "Wat is één belangrijke taak van de lever?",
+    "options": [
+      "Helpen voedingsstoffen te verwerken en veel schadelijke stoffen uit het bloed te zuiveren.",
+      "Bij elke ademteug lucht in de longen pompen.",
+      "Urine bewaren die door de huid wordt gemaakt.",
+      "De noodzaak van een spijsverteringsstelsel vervangen."
+    ],
+    "explanation": "De lever is een drukke chemische fabriek. Zij verwerkt voedingsstoffen en helpt gifstoffen en afvalstoffen in het bloed te beheren.",
+    "theoryLines": [
+      "Orgaansystemen delen overlappingende taken.",
+      "Een gezonde levensstijl ondersteunt de werking van de lever."
+    ]
+  },
+  "sci_vol_g1_body_medium_02": {
+    "stem": "Waarom is water drinken belangrijk voor je lichaam?",
+    "options": [
+      "Het helpt je lichaam te werken en je goed te voelen",
+      "Het vervangt de noodzaak om te ademen",
+      "Het zet spieren om in steen",
+      "Het zorgt dat je nooit meer rust"
+    ],
+    "explanation": "Water helpt je lichaam voldoende vocht te houden, zodat cellen en organen hun werk kunnen doen.",
+    "theoryLines": [
+      "Mensen hebben elke dag water nodig.",
+      "Dorst is een signaal dat je lichaam vocht nodig heeft."
+    ]
+  },
+  "sci_vol_g3_animals_hard_02": {
+    "stem": "Waarom zijn vinnen belangrijk voor vissen?",
+    "options": [
+      "Zij helpen vissen zwemmen, sturen en evenwicht houden",
+      "Zij veranderen water in droog land",
+      "Zij laten vissen ademen door veren",
+      "Zij zorgen dat vissen nooit meer bewegen"
+    ],
+    "explanation": "Vinnen zijn lichaamsdelen die vissen helpen bewegen door water en stabiel te blijven.",
+    "theoryLines": [
+      "Verschillende vinnen hebben verschillende taken bij het zwemmen.",
+      "Vislichamen zijn aangepast aan het leven in water."
+    ]
+  },
+  "sci_g3_body_023": {
+    "stem": "Wat is één taak van de lever?",
+    "options": [
+      "Helpen stoffen in het bloed te verwerken",
+      "Lucht in de oren pompen",
+      "Ongebruikt zonlicht bewaren",
+      "Het skelet vervangen"
+    ],
+    "explanation": "De lever heeft veel taken, waaronder het verwerken van voedingsstoffen en het zuiveren van bepaalde stoffen uit het bloed.",
+    "theoryLines": [
+      "De lever is een groot orgaan in de buik.",
+      "Lichaamsorganen werken samen om je gezond te houden."
+    ]
+  }
+}

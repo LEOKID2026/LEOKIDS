@@ -10,15 +10,17 @@ import {
 } from "../../lib/school-portal/school-ui.js";
 import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi.jsx";
 
-export function SchoolLoadingBlock({ message = "Loading…" }) {
+export function SchoolLoadingBlock({ message } = {}) {
+  const msg = message ?? globalBurnDownCopy("components__school-portal__SchoolDrillDown", "loading");
   return (
     <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start`} role="status" aria-live="polite">
-      <p className="text-white/60 text-sm">{message}</p>
+      <p className="text-white/60 text-sm">{msg}</p>
     </div>
   );
 }
 
-export function SchoolErrorBlock({ message, onRetry, retryLabel = "Try again" }) {
+export function SchoolErrorBlock({ message, onRetry, retryLabel }) {
+  const label = retryLabel ?? globalBurnDownCopy("components__school-portal__SchoolDrillDown", "try_again");
   return (
     <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start`} role="alert">
       <p className="text-red-300 text-sm">{message}</p>
@@ -28,7 +30,7 @@ export function SchoolErrorBlock({ message, onRetry, retryLabel = "Try again" })
           onClick={onRetry}
           className="mt-3 rounded-lg border border-white/25 bg-white/10 hover:bg-white/15 px-3 py-1.5 text-sm font-semibold cursor-pointer"
         >
-          {retryLabel}
+          {label}
         </button>
       ) : null}
     </div>
@@ -163,11 +165,13 @@ export function SchoolBackButton({ onClick, label = SCHOOL_BACK }) {
  */
 export function SchoolSubjectClassCard({ cls, onReport, reportLabel }) {
   const subject = schoolSubjectLabelHe(cls.subjectFocus);
+  const childrenTpl = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "children_count");
+  const activitiesTpl = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "activities_count");
   return (
     <SchoolManagementCard
       title={subject}
-      subtitle={`${cls.teacherName || "-"} · ${cls.memberCount ?? 0} children`}
-      meta={cls.activityCount != null ? `Activities: ${cls.activityCount}` : null}
+      subtitle={`${cls.teacherName || "-"} · ${childrenTpl.replace("{count}", cls.memberCount ?? 0)}`}
+      meta={cls.activityCount != null ? activitiesTpl.replace("{count}", cls.activityCount) : null}
       action={
         <button
           type="button"
@@ -205,6 +209,11 @@ export function SchoolActivityCard({ activity }) {
   const statusKey = String(activity.status || "").toLowerCase();
   const badgeClass = statusStyles[statusKey] || statusStyles.draft;
 
+  const colSubject = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "col_subject");
+  const colClass = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "col_class");
+  const colTeacher = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "col_teacher");
+  const colType = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "col_type");
+
   return (
     <li className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start min-w-0`}>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -212,19 +221,19 @@ export function SchoolActivityCard({ activity }) {
           <p className="font-semibold text-white break-words">{title}</p>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Subject</dt>
+              <dt className="text-white/45">{colSubject}</dt>
               <dd className="text-white/85">{subject}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Class</dt>
+              <dt className="text-white/45">{colClass}</dt>
               <dd className="text-white/85 break-words">{className}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Teacher</dt>
+              <dt className="text-white/45">{colTeacher}</dt>
               <dd className="text-white/85">{teacher}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Type</dt>
+              <dt className="text-white/45">{colType}</dt>
               <dd className="text-white/85">{mode}</dd>
             </div>
           </dl>
@@ -258,6 +267,10 @@ export function SchoolTeacherCard({
       ? uniqueSubjects.map((s) => schoolSubjectLabelHe(s)).join(" · ")
       : "-";
 
+  const suspendedLabel = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "suspended_label");
+  const activeClassesTpl = globalBurnDownCopy("components__school-portal__SchoolDrillDown", "active_classes");
+  const activeClassesText = activeClassesTpl.replace("{count}", teacher.activeClassCount ?? 0);
+
   return (
     <div className={`${SCHOOL_CARD} ${SCHOOL_CARD_INNER} text-start min-w-0`}>
       <div className="flex items-start justify-between gap-3">
@@ -268,11 +281,11 @@ export function SchoolTeacherCard({
           {staffCode ? (
             <p className="text-xs text-white/50 mt-1 font-mono" dir="ltr">
               {staffCode}
-              {staffAccessStatus === "suspended" ? " · Suspended" : ""}
+              {staffAccessStatus === "suspended" ? ` · ${suspendedLabel}` : ""}
             </p>
           ) : null}
           <p className="text-sm text-white/70 mt-2 break-words">{subjectText}</p>
-          <p className="text-xs text-white/45 mt-2">{teacher.activeClassCount ?? 0} active classes</p>
+          <p className="text-xs text-white/45 mt-2">{activeClassesText}</p>
         </div>
         <Link
           href={manageHref}

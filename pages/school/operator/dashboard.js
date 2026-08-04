@@ -6,7 +6,9 @@ import SchoolOperatorGrantPanel from "../../../components/school-portal/SchoolOp
 import SchoolPortalShell from "../../../components/school-portal/SchoolPortalShell";
 import { getOperatorGrants, operatorHasAnyGrant } from "../../../lib/school-portal/operator-grants";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolUiLocale,
   SCHOOL_LOADING,
   SCHOOL_OPERATOR_ACCESS_ADMIN_DESC,
   SCHOOL_OPERATOR_ACCESS_ADMIN_SECTION,
@@ -40,6 +42,8 @@ function WorkspaceCard({ title, description, href, ctaLabel, testId }) {
 
 export default function SchoolOperatorDashboardPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const { state, authMethod, me } = useSchoolPortalLoad();
   const grants = getOperatorGrants(me);
   const hasAnyGrant = operatorHasAnyGrant(me);

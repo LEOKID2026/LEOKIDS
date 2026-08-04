@@ -10,6 +10,13 @@ import { mix, M, pureMathLtrDisplay } from '../lib/learning-book/learning-math-l
 import React from 'react';
 import { buildComparisonConclusionRuns } from '../lib/learning-book/learning-math-line-templates.js';
 import { learningStepDiv as toSpan } from './learning-math-line-render.js';
+import { burnDownCopy } from '../lib/learning/burn-down-copy.js';
+
+const MATH_EXPL_SLUG = "utils__math-explanations";
+
+function meCopy(key) {
+  return burnDownCopy(MATH_EXPL_SLUG, key);
+}
 
 export function getHint(question, operation, gradeKey) {
   if (!question || !question.params) return "";
@@ -20,77 +27,95 @@ export function getHint(question, operation, gradeKey) {
   switch (operation) {
     case "addition":
       if (p.kind === "add_three") {
-        return `Add two numbers, then add the third: ${M("(a + b) + c")}.`;
+        return meCopy("hint_addition_add_three").replace("{expr}", M("(a + b) + c"));
       }
       if (p.kind === "add_complement10" || p.kind === "add_complement_round10") {
-        return "Find how much is needed to reach ten / a round number – you do not need the full long addition.";
+        return meCopy("hint_addition_complement");
       }
       if (p.kind === "add_missing_first" || p.kind === "add_missing_second") {
-        return `If you have __ + b = c, the missing number is ${M("c - b")}. If you have a + __ = c, the missing number is ${M("c - a")}.`;
+        return meCopy("hint_addition_missing")
+          .replace("{missing_first}", M("c - b"))
+          .replace("{missing_second}", M("c - a"));
       }
-      return "Use the \"column\" method or hops on a number line: addition = putting amounts together.";
+      return meCopy("hint_addition_default");
     case "subtraction":
       if (p.kind === "sub_missing_first" || p.kind === "sub_missing_second") {
-        return `If you have __ - b = c, the missing number is ${M("c + b")}. If you have a - __ = c, the missing number is ${M("a - c")}.`;
+        return meCopy("hint_subtraction_missing")
+          .replace("{missing_first}", M("c + b"))
+          .replace("{missing_second}", M("a - c"));
       }
-      return "Check which number is larger. Subtraction = how much is needed from the smaller to the larger, or how much you take away from the larger.";
+      return meCopy("hint_subtraction_default");
     case "multiplication":
-      return `Think of multiplication as repeated addition: ${M("a × b")} means adding ${M("a")} to itself ${M("b")} times.`;
+      return meCopy("hint_multiplication")
+        .replace("{product}", M("a × b"))
+        .replace("{a}", M("a"))
+        .replace("{b}", M("b"));
     case "division":
-      return "Division = how many times the smaller number fits into the larger, or how many are in each group when sharing equally.";
+      return meCopy("hint_division");
     case "fractions":
       if (p.kind === "frac_same_den") {
-        return "When denominators are the same – keep the denominator and work only with the numerators.";
+        return meCopy("hint_fractions_same_den");
       }
-      return "When denominators differ – find a common denominator, rewrite the fractions, then add or subtract.";
+      return meCopy("hint_fractions_default");
     case "percentages":
-      return `Percents are parts of ${M("100")}. ${M("10%")} is one tenth, ${M("25%")} is one fourth, ${M("50%")} is one half. Try rewriting as a simple part.`;
+      return meCopy("hint_percentages")
+        .replace("{hundred}", M("100"))
+        .replace("{ten}", M("10%"))
+        .replace("{twenty_five}", M("25%"))
+        .replace("{fifty}", M("50%"));
     case "sequences":
-      return "Check what happens between each pair of neighboring numbers – what is added or subtracted each step.";
+      return meCopy("hint_sequences");
     case "decimals":
-      return "Line up the decimal points and compute as if they were whole numbers, then put the decimal point back in the right place.";
+      return meCopy("hint_decimals");
     case "rounding":
-      return `Find the place you are rounding to (tens/hundreds) and look at the next digit: ${M("0–4")} round down, ${M("5–9")} round up.`;
+      return meCopy("hint_rounding")
+        .replace("{low}", M("0–4"))
+        .replace("{high}", M("5–9"));
     case "equations":
-      return "For equations with a missing number, use the inverse operation: addition uses subtraction, multiplication uses division, and so on.";
+      return meCopy("hint_equations");
     case "compare":
-      return "Picture the numbers on a number line: farther right means larger. For decimals, compare the whole-number parts first.";
+      return meCopy("hint_compare");
     case "number_sense":
       if (p.kind?.startsWith("ns_place")) {
-        return `Break the number into tens/hundreds/ones: for example ${M("57")} is ${M("5")} tens and ${M("7")} ones.`;
+        return meCopy("hint_number_sense_place")
+          .replace("{example}", M("57"))
+          .replace("{tens}", M("5"))
+          .replace("{ones}", M("7"));
       }
       if (p.kind === "ns_neighbors") {
-        return `One before – subtract ${M("1")}. One after – add ${M("1")}.`;
+        return meCopy("hint_number_sense_neighbors").replaceAll("{one}", M("1"));
       }
       if (p.kind === "ns_complement10" || p.kind === "ns_complement100") {
-        return "Find how much is needed to complete ten/one hundred – that is the difference between the two numbers.";
+        return meCopy("hint_number_sense_complement");
       }
       if (p.kind === "ns_even_odd") {
-        return `Look at the ones digit: ${M("0,2,4,6,8")} – even. ${M("1,3,5,7,9")} – odd.`;
+        return meCopy("hint_number_sense_even_odd")
+          .replace("{even}", M("0,2,4,6,8"))
+          .replace("{odd}", M("1,3,5,7,9"));
       }
-      return "Think about number sense – tens, ones, neighbors, even/odd.";
+      return meCopy("hint_number_sense_default");
     case "factors_multiples":
-      return "A factor divides a number with no remainder. A multiple is what you get when you multiply the number by a whole number.";
+      return meCopy("hint_factors_multiples");
     case "word_problems":
-      return "Read slowly, mark the numbers, and turn the story into a simple exercise (add, subtract, multiply, or divide).";
+      return meCopy("hint_word_problems");
     case "ratio":
-      return "Find what to multiply both parts of the ratio by to match the numbers in the question.";
+      return meCopy("hint_ratio");
     case "scale":
-      return `A scale of 1:X means every cm on the map = X cm in real life. Multiply or divide accordingly.`;
+      return meCopy("hint_scale");
     case "divisibility":
-      return "Try dividing the number by the divisor and check whether you get a whole number (no remainder).";
+      return meCopy("hint_divisibility");
     case "powers":
-      return "A power = repeated multiplication of the base by itself. For example: 3² = 3 × 3 = 9, 2³ = 2 × 2 × 2 = 8.";
+      return meCopy("hint_powers");
     case "order_of_operations":
-      return "Remember order of operations: parentheses first, multiply/divide before add/subtract.";
+      return meCopy("hint_order_of_operations");
     case "estimation":
-      return "Round each number to the nearest tens/hundreds, then compute an estimate.";
+      return meCopy("hint_estimation");
     case "zero_one_properties":
-      return "A number × 0 = 0. A number × 1 = the same number. A number + 0 = the same number.";
+      return meCopy("hint_zero_one_properties");
     case "division_with_remainder":
-      return "Find how many times the divisor fits in – and what is left. Check: divisor × quotient + remainder = dividend.";
+      return meCopy("hint_division_with_remainder");
     default:
-      return "Try solving the question using the matching topic.";
+      return meCopy("hint_default");
   }
 }
 
@@ -1022,7 +1047,7 @@ export function getSolutionSteps(question, operation, gradeKey) {
 }
 
 // "Why was I wrong?" – short common-mistake explanation
-// Age-appropriate explanation – simpler wording for lower grades
+// Age-appropriate explanation – simpler wording for lower grades (locale via meCopy)
 function getAgeAppropriateExplanation(operation, gradeKey, question, correctAnswer) {
   if (shouldUseComparisonSignErrorExplanation(question, operation)) {
     return buildComparisonSignWrongAnswerLine(question);
@@ -1032,21 +1057,53 @@ function getAgeAppropriateExplanation(operation, gradeKey, question, correctAnsw
     ? question?.correctAnswer
     : correctAnswer;
 
+  const fill = (key, vars) => {
+    let out = meCopy(key);
+    for (const [k, v] of Object.entries(vars)) {
+      out = out.split(`{${k}}`).join(String(v));
+    }
+    return out;
+  };
+  const L = (expr) => `\u2066${expr}\u2069`;
+
   if (gradeKey === "g1" || gradeKey === "g2") {
     const a = question.a || question.params?.a;
     const b = question.b || question.params?.b;
 
     switch (operation) {
       case "addition":
-        return mix`💡 Try thinking of it this way: you have ${M(String(a))} circles, and you add ${M(String(b))} more circles. How many circles do you have now? Try counting: ${M(`${a}... ${a + 1}... ${a + 2}...`)} up to ${M(String(correctAnswer))}!`;
+        return fill("age_g12_addition", {
+          a: L(String(a)),
+          b: L(String(b)),
+          count_up: L(`${a}... ${a + 1}... ${a + 2}...`),
+          answer: L(String(correctAnswer)),
+        });
       case "subtraction":
-        return mix`💡 Try thinking of it this way: you have ${M(String(a))} circles, and you take away ${M(String(b))} circles. How many circles are left? Try counting backward: ${M(`${a}... ${a - 1}... ${a - 2}...`)} up to ${M(String(correctAnswer))}!`;
+        return fill("age_g12_subtraction", {
+          a: L(String(a)),
+          b: L(String(b)),
+          count_down: L(`${a}... ${a - 1}... ${a - 2}...`),
+          answer: L(String(correctAnswer)),
+        });
       case "multiplication":
-        return mix`💡 Multiplication is like repeated addition! ${M(`${a} × ${b}`)} is like ${M(`${a} + ${a} + ${a}`)}... (${M(String(b))} times). Try counting: ${M(`${a}, ${a * 2}, ${a * 3}...`)} up to ${M(String(correctAnswer))}!`;
+        return fill("age_g12_multiplication", {
+          expr: L(`${a} × ${b}`),
+          repeated: L(`${a} + ${a} + ${a}`),
+          b: L(String(b)),
+          count_mult: L(`${a}, ${a * 2}, ${a * 3}...`),
+          answer: L(String(correctAnswer)),
+        });
       case "division":
-        return mix`💡 Division is like sharing into groups! ${M(`${a} ÷ ${b}`)} is like taking ${M(String(a))} circles and sharing them into ${M(String(b))} equal groups. How many circles in each group? ${M(String(correctAnswer))}!`;
+        return fill("age_g12_division", {
+          expr: L(`${a} ÷ ${b}`),
+          a: L(String(a)),
+          b: L(String(b)),
+          answer: L(String(correctAnswer)),
+        });
       default:
-        return mix`💡 Try thinking about the exercise in a simple way. The correct answer is ${M(String(displayCorrectAnswer))}.`;
+        return fill("age_g12_default", {
+          answer: L(String(displayCorrectAnswer)),
+        });
     }
   }
 
@@ -1059,18 +1116,34 @@ function getAgeAppropriateExplanation(operation, gradeKey, question, correctAnsw
         if (a && b) {
           const tens = Math.floor(b / 10) * 10;
           const ones = b % 10;
-          return mix`💡 Try thinking about addition: ${M(`${a} + ${b} = ${correctAnswer}`)}. If it is hard, try breaking it apart: ${M(`${a} + ${b} = ${a} + ${tens} + ${ones} = ${a + tens} + ${ones} = ${correctAnswer}`)}`;
+          return fill("age_g34_addition_break", {
+            sum_eq: L(`${a} + ${b} = ${correctAnswer}`),
+            break_eq: L(
+              `${a} + ${b} = ${a} + ${tens} + ${ones} = ${a + tens} + ${ones} = ${correctAnswer}`
+            ),
+          });
         }
-        return mix`💡 Try thinking about the exercise step by step. The correct answer is ${M(String(displayCorrectAnswer))}.`;
+        return fill("age_g34_step_default", {
+          answer: L(String(displayCorrectAnswer)),
+        });
       case "subtraction":
         if (a && b) {
           const tens = Math.floor(b / 10) * 10;
           const ones = b % 10;
-          return mix`💡 Try thinking about subtraction: ${M(`${a} - ${b} = ${displayCorrectAnswer}`)}. If it is hard, try breaking it apart: ${M(`${a} - ${b} = ${a} - ${tens} - ${ones} = ${a - tens} - ${ones} = ${displayCorrectAnswer}`)}`;
+          return fill("age_g34_subtraction_break", {
+            diff_eq: L(`${a} - ${b} = ${displayCorrectAnswer}`),
+            break_eq: L(
+              `${a} - ${b} = ${a} - ${tens} - ${ones} = ${a - tens} - ${ones} = ${displayCorrectAnswer}`
+            ),
+          });
         }
-        return mix`💡 Try thinking about the exercise step by step. The correct answer is ${M(String(displayCorrectAnswer))}.`;
+        return fill("age_g34_step_default", {
+          answer: L(String(displayCorrectAnswer)),
+        });
       default:
-        return mix`💡 Try thinking about the exercise step by step. The correct answer is ${M(String(displayCorrectAnswer))}.`;
+        return fill("age_g34_step_default", {
+          answer: L(String(displayCorrectAnswer)),
+        });
     }
   }
 
@@ -1110,38 +1183,43 @@ export function getErrorExplanation(question, operation, wrongAnswer, gradeKey, 
   switch (operation) {
     case "addition":
       if (!Number.isNaN(userAnsNum) && userAnsNum < correctNum) {
-        return "It looks like you did not add all the parts, or you missed a number along the way.";
+        return meCopy("error_addition_too_low");
       }
       if (!Number.isNaN(userAnsNum) && userAnsNum > correctNum) {
-        return "It looks like you added something twice or made a mistake in a middle sum.";
+        return meCopy("error_addition_too_high");
       }
-      return "It helps to check the addition step by step - you can break into tens and ones and add part by part.";
+      return meCopy("error_addition_default");
     case "subtraction":
-      return "In subtraction it is easy to mix up the order of the numbers. Check that you reduced the larger number, not the other way around.";
+      return meCopy("error_subtraction");
     case "multiplication":
-      return "In multiplication people sometimes mix multiply and add. Make sure you repeated the correct number the correct number of times.";
+      return meCopy("error_multiplication");
     case "division":
-      return "In division, check that the result times the divisor returns the original number.";
+      return meCopy("error_division");
     case "fractions":
-      return "With fractions people often forget a common denominator or change the denominator instead of only the numerator.";
-    case "percentages":
-      return mix`With percents a common mistake is confusing a part of 100 with ordinary add/subtract. Try writing the fraction first (for example ${M("25% = 1/4")}).`;
+      return meCopy("error_fractions");
+    case "percentages": {
+      const [before, after = ""] = meCopy("error_percentages").split("{example}");
+      return mix`${before}${M("25% = 1/4")}${after}`;
+    }
     case "sequences":
-      return "In sequences many people miss the constant difference. Check again what happens between two neighboring terms.";
+      return meCopy("error_sequences");
     case "decimals":
-      return "With decimals mistakes happen when you do not line up the points or forget how many digits are after the decimal.";
-    case "rounding":
-      return mix`When rounding it is easy to mix up the next digit. Check whether it is ${M("0–4")} (round down) or ${M("5–9")} (round up).`;
+      return meCopy("error_decimals");
+    case "rounding": {
+      const [beforeLow, rest = ""] = meCopy("error_rounding").split("{low}");
+      const [mid, afterHigh = ""] = rest.split("{high}");
+      return mix`${beforeLow}${M("0–4")}${mid}${M("5–9")}${afterHigh}`;
+    }
     case "equations":
-      return "In missing-number equations many people guess. Use the inverse operation and bring both sides back to the same number.";
+      return meCopy("error_equations");
     case "compare":
-      return "When comparing numbers the common mistake is mixing up which is larger, especially with decimals. Try comparing the whole-number parts first.";
+      return meCopy("error_compare");
     case "number_sense":
-      return "Check the place-value breakdown (tens/hundreds/ones) again, or whether the number is even/odd. These are easy to mix up when rushing.";
+      return meCopy("error_number_sense");
     case "factors_multiples":
-      return "With factors and multiples it is easy to mix up \"what divides the number\" and \"what you get when multiplying\". Try listing all factors or multiples on the side.";
+      return meCopy("error_factors_multiples");
     case "word_problems":
-      return "In word problems the common mistake is choosing the wrong operation (add instead of subtract, etc.). Try writing a simple exercise that matches the story.";
+      return meCopy("error_word_problems");
     default:
       return "";
   }

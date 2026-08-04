@@ -6,6 +6,10 @@
     "diamond_balance": "Diamond balance:",
     "coin_balance": "Coin balance:",
     "score": "Score:",
-    "level": "Level:"
+    "level": "Level:",
+    "win_title": "Great job! 🎉",
+    "lose_title": "Nice effort!",
+    "coins_awarded": "+{n} coins",
+    "diamonds_awarded": "+{n} diamonds"
   }
 }

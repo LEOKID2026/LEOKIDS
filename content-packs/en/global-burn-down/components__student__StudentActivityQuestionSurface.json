@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "show_landscape": "Show landscape",
+    "show_portrait": "Show portrait",
+    "landscape": "↔️ Landscape",
+    "portrait": "↕️ Portrait"
+  }
+}

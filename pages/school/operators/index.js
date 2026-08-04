@@ -4,7 +4,9 @@ import Layout from "../../../components/Layout";
 import SchoolPortalShell from "../../../components/school-portal/SchoolPortalShell";
 import SchoolOperatorsManager from "../../../components/school-portal/SchoolOperatorsManager";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolUiLocale,
   SCHOOL_LOADING,
   SCHOOL_OPERATORS_TITLE,
   SCHOOL_OPERATOR_NO_TEACHING,
@@ -12,6 +14,8 @@ import {
 
 export default function SchoolOperatorsPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const { state, accessToken, me, schoolId } = useSchoolPortalLoad();
 
   useEffect(() => {

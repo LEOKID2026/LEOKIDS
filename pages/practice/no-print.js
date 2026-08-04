@@ -1,7 +1,8 @@
 import PracticeSeoLandingPage from "../../components/seo/PracticeSeoLandingPage";
-import { getPracticePageContent } from "../../data/seo/practice-pages";
+import { usePracticePageContent } from "../../hooks/usePracticePageContent.js";
 
 export default function PracticePage() {
-  const content = getPracticePageContent("no-print");
+  const content = usePracticePageContent("no-print");
+  if (!content) return null;
   return <PracticeSeoLandingPage content={content} />;
 }

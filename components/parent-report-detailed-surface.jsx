@@ -42,7 +42,7 @@ import {
 } from "../utils/parent-report-language/index.js";
 import { narrativeSectionTextHe } from "../utils/contracts/narrative-contract-v1.js";
 import {
-  PARENT_BULLETS_EMPTY_WITH_VOLUME_HE,
+  getParentThinDataExplainerHe,
   stripKnownParentReportLeakageHe,
 } from "../utils/parent-data-presence.js";
 const PR1_RETENTION_LABEL_HE = {
@@ -52,12 +52,17 @@ const PR1_RETENTION_LABEL_HE = {
   unknown: "unclear",
 };
 
-const PR1_TRANSFER_LABEL_HE = {
-  not_ready: "It's better to reinforce the current topic first.",
-  limited: reportPackCopy("components__parent-report-detailed-surface", "you_can_try_a_little_only_within_the_same_topic"),
-  emerging: reportPackCopy("components__parent-report-detailed-surface", "you_can_start_with_a_small_step_but_not_jump_a_level"),
-  ready: reportPackCopy("components__parent-report-detailed-surface", "you_can_try_a_small_advanced_step"),
-};
+function pr1TransferLabelHe(key) {
+  const map = {
+    not_ready: "its_better_to_reinforce_the_current_topic_first",
+    limited: "you_can_try_a_little_only_within_the_same_topic",
+    emerging: "you_can_start_with_a_small_step_but_not_jump_a_level",
+    ready: "you_can_try_a_small_advanced_step",
+  };
+  const packKey = map[key];
+  if (!packKey) return "";
+  return reportPackCopy("components__parent-report-detailed-surface", packKey);
+}
 
 const PHASE1_WHAT_NOT_TO_DO_DISPLAY = Object.freeze({
   "Rising in level too quickly; mixing topics; general feedback without a counter-example":
@@ -99,8 +104,12 @@ function phase1WhatNotToDoDisplayHe(raw) {
 
 function formatTopicQuestionCountHe(count) {
   const n = Math.max(0, Math.round(Number(count) || 0));
-  if (n === 1) return "1 question";
-  return `${n} questions`;
+  if (n === 1) {
+    return reportPackCopy("components__parent-report-detailed-surface", "questions_count_one");
+  }
+  return reportPackCopy("components__parent-report-detailed-surface", "questions_count_other", {
+    n,
+  });
 }
 
 /** PR1 — parent-visible text only; does not change the payload. */
@@ -118,7 +127,10 @@ function pr1CrossSubjectTransferDisplayHe(raw) {
     .trim()
     .toLowerCase()
     .replace(/-/g, "_");
-  return PR1_TRANSFER_LABEL_HE[k] || reportPackCopy("components__parent-report-detailed-surface", "still_needs_more_practice_to_determine");
+  return (
+    pr1TransferLabelHe(k) ||
+    reportPackCopy("components__parent-report-detailed-surface", "still_needs_more_practice_to_determine")
+  );
 }
 
 /**
@@ -157,7 +169,9 @@ export function Bullets({ items, className = "", volumeQuestionsTotal = 0 }) {
   if (!safeItems.length)
     return (
       <p className={`pr-detailed-muted text-sm ${className}`.trim()}>
-        {Number(volumeQuestionsTotal) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
+        {Number(volumeQuestionsTotal) > 0
+          ? getParentThinDataExplainerHe()
+          : reportPackCopy("pages__learning__parent-report-detailed", "no_data_to_display")}
       </p>
     );
   return (
@@ -605,19 +619,35 @@ export function SubjectPhase3Insights({ sp, compact }) {
   const letter = useMemo(() => buildSubjectParentLetterDetailedPhase1(sp), [sp]);
   const rows = [];
   const dr = String(sp?.dominantLearningRiskLabelHe || "").trim();
-  if (dr) rows.push({ k: "What to pay attention to", v: pr1ParentVisibleTextHe(dr) });
+  if (dr) {
+    rows.push({
+      k: reportPackCopy("components__parent-report-detailed-surface", "what_to_pay_attention_to"),
+      v: pr1ParentVisibleTextHe(dr),
+    });
+  }
   const ds = String(sp?.dominantSuccessPatternLabelHe || "").trim();
-  if (ds) rows.push({ k: "What's working well", v: pr1ParentVisibleTextHe(ds) });
+  if (ds) {
+    rows.push({
+      k: reportPackCopy("components__parent-report-detailed-surface", "whats_working_well"),
+      v: pr1ParentVisibleTextHe(ds),
+    });
+  }
   const wntRaw = String(sp?.whatNotToDoHe || "").trim();
   const wnt = phase1WhatNotToDoDisplayHe(wntRaw);
   if (wnt && (!letter?.closing || !String(letter.closing).includes(wnt.slice(0, 24)))) {
-    rows.push({ k: "What to avoid right now", v: truncateHe(pr1ParentVisibleTextHe(wnt), 200) });
+    rows.push({
+      k: reportPackCopy("components__parent-report-detailed-surface", "what_to_avoid_right_now"),
+      v: truncateHe(pr1ParentVisibleTextHe(wnt), 200),
+    });
   }
   const trLine = String(transferReadinessLineHe(sp) || "").trim();
   const trMapped = pr1CrossSubjectTransferDisplayHe(String(sp?.subjectTransferReadiness || "").trim());
   const trCombined = pr1ParentVisibleTextHe(trLine || (trMapped !== reportPackCopy("components__parent-report-detailed-surface", "still_needs_more_practice_to_determine") ? trMapped : ""));
   if (trCombined) {
-    rows.push({ k: "Ready to advance?", v: truncateHe(trCombined, 160) });
+    rows.push({
+      k: reportPackCopy("components__parent-report-detailed-surface", "ready_to_advance"),
+      v: truncateHe(trCombined, 160),
+    });
   }
 
   if (!rows.length) return null;
@@ -646,20 +676,35 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
   if (!b) return null;
 
   const rows = [
-    { label: "Total learning time", value: `${formatExclusiveLearningMinutesHe(b.totalMinutes)} min` },
+    {
+      label: reportPackCopy("components__parent-report-detailed-surface", "total_learning_time"),
+      value: reportPackCopy("components__parent-report-detailed-surface", "minutes_short", {
+        m: formatExclusiveLearningMinutesHe(b.totalMinutes),
+      }),
+    },
     {
       label: reportPackCopy("components__parent-report-detailed-surface", "practice_with_questions"),
-      value: `${formatExclusiveLearningMinutesHe(b.questionPracticeMinutes)} min`,
+      value: reportPackCopy("components__parent-report-detailed-surface", "minutes_short", {
+        m: formatExclusiveLearningMinutesHe(b.questionPracticeMinutes),
+      }),
     },
-    { label: "Questions answered", value: String(b.analyzedQuestionCount) },
+    {
+      label: reportPackCopy("components__parent-report-detailed-surface", "questions_answered"),
+      value: String(b.analyzedQuestionCount),
+    },
     {
       label: reportPackCopy("components__parent-report-detailed-surface", "book_reading"),
-      value: `${formatExclusiveLearningMinutesHe(b.bookReadingMinutes)} min`,
+      value: reportPackCopy("components__parent-report-detailed-surface", "minutes_short", {
+        m: formatExclusiveLearningMinutesHe(b.bookReadingMinutes),
+      }),
     },
     {
       label: reportPackCopy("components__parent-report-detailed-surface", "other_active_learning"),
-      value: `${formatExclusiveLearningMinutesHe(b.otherActiveLearningMinutes)} min`,
-    }];
+      value: reportPackCopy("components__parent-report-detailed-surface", "minutes_short", {
+        m: formatExclusiveLearningMinutesHe(b.otherActiveLearningMinutes),
+      }),
+    },
+  ];
 
   return (
     <details className="pr-detailed-learning-time-breakdown no-pdf no-print mb-5 md:mb-6 min-w-0 rounded-lg border border-white/10 bg-black/10">
@@ -667,7 +712,7 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
         id="pr-detailed-learning-time-breakdown-heading"
         className="pr-detailed-section-title cursor-pointer select-none list-none text-base md:text-lg font-extrabold tracking-tight text-white m-0 px-3 py-3 md:px-4 md:py-3.5 border-b border-white/10 [&::-webkit-details-marker]:hidden"
       >
-        Learning time breakdown
+        {reportPackCopy("components__parent-report-detailed-surface", "learning_time_breakdown")}
       </summary>
       <div className="px-3 py-3 md:px-4 md:py-4 space-y-4">
         <div className="overflow-x-auto">
@@ -684,14 +729,22 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
         </div>
         {b.bySubject.length > 0 ? (
           <div>
-            <p className="pr-detailed-topic-rec-head m-0 mb-2">Breakdown by subject</p>
+            <p className="pr-detailed-topic-rec-head m-0 mb-2">
+              {reportPackCopy("components__parent-report-detailed-surface", "breakdown_by_subject")}
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm text-start">
                 <thead>
                   <tr className="border-b border-white/15 bg-white/5">
-                    <th className="p-2 font-semibold">Subject</th>
-                    <th className="p-2 font-semibold">{reportPackCopy("components__parent-report-detailed-surface", "practice_with_questions")}</th>
-                    <th className="p-2 font-semibold">{reportPackCopy("components__parent-report-detailed-surface", "book_reading")}</th>
+                    <th className="p-2 font-semibold">
+                      {reportPackCopy("components__parent-report-detailed-surface", "subject")}
+                    </th>
+                    <th className="p-2 font-semibold">
+                      {reportPackCopy("components__parent-report-detailed-surface", "practice_with_questions")}
+                    </th>
+                    <th className="p-2 font-semibold">
+                      {reportPackCopy("components__parent-report-detailed-surface", "book_reading")}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -699,10 +752,14 @@ export function LearningTimeBreakdownDetails({ breakdown }) {
                     <tr key={row.subjectKey} className="border-b border-white/10">
                       <td className="p-2">{row.subjectLabel}</td>
                       <td className="p-2">
-                        {formatExclusiveLearningMinutesHe(row.questionPracticeMinutes)} min
+                        {reportPackCopy("components__parent-report-detailed-surface", "minutes_short", {
+                          m: formatExclusiveLearningMinutesHe(row.questionPracticeMinutes),
+                        })}
                       </td>
                       <td className="p-2">
-                        {formatExclusiveLearningMinutesHe(row.bookReadingMinutes)} min
+                        {reportPackCopy("components__parent-report-detailed-surface", "minutes_short", {
+                          m: formatExclusiveLearningMinutesHe(row.bookReadingMinutes),
+                        })}
                       </td>
                     </tr>
                   ))}
@@ -737,15 +794,33 @@ export function ParentAssignedActivitiesSection({ rows }) {
         <table className="w-full text-sm text-start">
           <thead>
             <tr className="border-b border-white/15 bg-white/5">
-              <th className="p-2 font-semibold">Activity</th>
-              <th className="p-2 font-semibold">Subject</th>
-              <th className="p-2 font-semibold">Topic</th>
-              <th className="p-2 font-semibold">Grade</th>
-              <th className="p-2 font-semibold">Date</th>
-              <th className="p-2 font-semibold">Questions</th>
-              <th className="p-2 font-semibold">Accuracy</th>
-              <th className="p-2 font-semibold">Time (min)</th>
-              <th className="p-2 font-semibold">Status</th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "activity")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "subject")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "topic")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "grade")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "date")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "questions")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "accuracy")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "time_min")}
+              </th>
+              <th className="p-2 font-semibold">
+                {reportPackCopy("components__parent-report-detailed-surface", "status")}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -754,11 +829,20 @@ export function ParentAssignedActivitiesSection({ rows }) {
                 key={row.activityId || `${row.subjectId}-${row.topicKey}-${idx}`}
                 className="border-b border-white/10"
               >
-                <td className="p-2">{row.activityLabelHe || "Personal activity from parent"}</td>
+                <td className="p-2">
+                  {row.activityLabelHe ||
+                    reportPackCopy(
+                      "utils__parent-report-language__parent-report-display-labels",
+                      "personal_activity_from_parent"
+                    )}
+                </td>
                 <td className="p-2">{row.subjectLabel || "-"}</td>
                 <td className="p-2">{row.topicLabelHe || "-"}</td>
                 <td className="p-2">{row.gradeLabelHe || "-"}</td>
-                <td className="p-2">{row.lastActivityAtHe || "Not available"}</td>
+                <td className="p-2">
+                  {row.lastActivityAtHe ||
+                    reportPackCopy("components__parent-report-detailed-surface", "not_available")}
+                </td>
                 <td className="p-2">{row.questionCount ?? 0}</td>
                 <td className="p-2">{row.accuracy ?? 0}%</td>
                 <td className="p-2">{row.timeMinutes ?? 0}</td>
@@ -780,14 +864,30 @@ function OutOfGradePracticeTable({ rows }) {
       <table className="w-full text-sm text-start">
         <thead>
           <tr className="border-b border-white/15 bg-white/5">
-            <th className="p-2 font-semibold">Subject</th>
-            <th className="p-2 font-semibold">Topic</th>
-            <th className="p-2 font-semibold">Grade</th>
-            <th className="p-2 font-semibold">Questions</th>
-            <th className="p-2 font-semibold">Accuracy</th>
-            <th className="p-2 font-semibold">Time (min)</th>
-            <th className="p-2 font-semibold">Last date</th>
-            <th className="p-2 font-semibold">Source</th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "subject")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "topic")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "grade")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "questions")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "accuracy")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "time_min")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "last_date")}
+            </th>
+            <th className="p-2 font-semibold">
+              {reportPackCopy("components__parent-report-detailed-surface", "source")}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -802,7 +902,10 @@ function OutOfGradePracticeTable({ rows }) {
               <td className="p-2">{row.questions ?? 0}</td>
               <td className="p-2">{row.accuracy ?? 0}%</td>
               <td className="p-2">{row.timeMinutes ?? 0}</td>
-              <td className="p-2">{row.lastActivityAtHe || "Not available"}</td>
+              <td className="p-2">
+                {row.lastActivityAtHe ||
+                  reportPackCopy("components__parent-report-detailed-surface", "not_available")}
+              </td>
               <td className="p-2">{row.sourceLabelHe || "Practice"}</td>
             </tr>
           ))}
@@ -833,7 +936,12 @@ export function OutOfGradePracticeSection({ transparency }) {
         id="pr-detailed-out-of-grade-heading"
         className="pr-detailed-section-title cursor-pointer select-none list-none text-base md:text-lg font-extrabold tracking-tight text-white m-0 px-3 py-3 md:px-4 md:py-3.5 border-b border-white/10 [&::-webkit-details-marker]:hidden"
       >
-        {block.titleHe || "Practice outside the registered grade"} ({total})
+        {block.titleHe ||
+          reportPackCopy(
+            "utils__parent-report-out-of-grade-transparency",
+            "practice_outside_registered_grade"
+          )}{" "}
+        ({total})
       </summary>
       <div className="px-3 py-3 md:px-4 md:py-4 space-y-4">
         {advanced.length > 0 ? (
@@ -907,7 +1015,8 @@ export function SubjectTopicTierGroups({ sp, hideTopicRowKeysForTiers, tierAllow
                   </p>
                 ) : null}
                 <p className="pr-detailed-body-text text-sm m-0 mt-1.5 text-white/[0.88]">
-                  {row.overviewStatusHe} · {formatTopicQuestionCountHe(row.questions)} · {row.accuracy}% accuracy
+                  {row.overviewStatusHe} · {formatTopicQuestionCountHe(row.questions)} · {row.accuracy}%{" "}
+                  {reportPackCopy("components__parent-report-detailed-surface", "accuracy")}
                 </p>
               </div>
             ))}
@@ -926,7 +1035,7 @@ export function SubjectPrimaryActionBlock({ actionHe }) {
   return (
     <div className="parent-surface-only rounded-lg border border-amber-400/28 bg-amber-950/14 px-3 py-2.5">
       <p className="pr-detailed-mini-heading font-bold text-amber-100/95 mb-1 text-sm">
-        What to do in this subject
+        {reportPackCopy("components__parent-report-detailed-surface", "what_to_do_in_this_subject")}
       </p>
       <p className="pr-detailed-body-text text-sm leading-relaxed m-0 text-white/[0.91]">{text}</p>
     </div>

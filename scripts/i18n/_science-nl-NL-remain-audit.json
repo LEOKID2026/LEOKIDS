@@ -1,0 +1,166 @@
+{
+  "badFieldCount": 18,
+  "uniqueEnCount": 17,
+  "top": [
+    [
+      "Pollination helps plants reproduce.",
+      2
+    ],
+    [
+      "Water keeps plant cells firm and supports photosynthesis. Without it, leaves droop and life processes slow or stop.",
+      1
+    ],
+    [
+      "Pollination supports seed and fruit production.",
+      1
+    ],
+    [
+      "Flowers contain reproductive parts. After pollination and fertilization, seeds (often inside fruits) can form.",
+      1
+    ],
+    [
+      "Excretory organs manage wastes.",
+      1
+    ],
+    [
+      "Desert specialists manage heat and limited water. Camels are classic examples of such adaptations.",
+      1
+    ],
+    [
+      "Attract bees for pollination",
+      1
+    ],
+    [
+      "Cells use oxygen in processes that release energy from nutrients so the body can work and stay alive.",
+      1
+    ],
+    [
+      "Most reptiles are ectothermic, so they rely on sunlight and warm surroundings to manage body temperature.",
+      1
+    ],
+    [
+      "Many overlapping feeding relationships in an ecosystem",
+      1
+    ],
+    [
+      "Pollination is important for many fruits and seeds.",
+      1
+    ],
+    [
+      "Pollination is needed for many plants to make seeds.",
+      1
+    ],
+    [
+      "Your body completely runs out of oxygen and shuts down all processes",
+      1
+    ],
+    [
+      "Rest is part of a healthy lifestyle.",
+      1
+    ],
+    [
+      "Water supports many body processes and helps you stay healthy.",
+      1
+    ],
+    [
+      "Lifestyle choices affect health.",
+      1
+    ],
+    [
+      "Exercise is part of a healthy lifestyle.",
+      1
+    ]
+  ],
+  "samples": [
+    {
+      "id": "sci_p0_g1_animals_medium_05",
+      "f": "theory[0]",
+      "nl": "Pollination helpt planten reproduce."
+    },
+    {
+      "id": "sci_p0_g2_plants_hard_06",
+      "f": "explanation",
+      "nl": "Water keeps plant cellen firm en supports fotosynthese. Zonder it, bladeren droop en life processes slow van stop."
+    },
+    {
+      "id": "sci_p0_g3_animals_easy_04",
+      "f": "theory[1]",
+      "nl": "Pollination supports zaad en fruit production."
+    },
+    {
+      "id": "sci_p0_g3_plants_easy_04",
+      "f": "explanation",
+      "nl": "Flowers contain reproductive parts. Na pollination en fertilization, zaads (vaak inside fruits) kan form."
+    },
+    {
+      "id": "sci_p1_g4_body_hard_05",
+      "f": "theory[0]",
+      "nl": "Excretory organen manage wastes."
+    },
+    {
+      "id": "sci_p1_g4_animals_hard_02",
+      "f": "explanation",
+      "nl": "Desert specialists manage warmte en limited water. Camels zijn classic voorbeelden van such adaptations."
+    },
+    {
+      "id": "sci_p1_g5_animals_medium_03",
+      "f": "options[1]",
+      "nl": "Attract bees voor pollination"
+    },
+    {
+      "id": "sci_p1_g6_body_hard_03",
+      "f": "explanation",
+      "nl": "Cellen use zuurstof in processes dat release energie van nutrients dus de body kan work en stay alive."
+    },
+    {
+      "id": "sci_p1_g6_animals_easy_04",
+      "f": "theory[0]",
+      "nl": "Pollination helpt planten reproduce."
+    },
+    {
+      "id": "sci_p1_g6_animals_easy_06",
+      "f": "explanation",
+      "nl": "Meeste reptiles zijn ectothermic, dus zij rely on zonlicht en warm surroundings to manage body temperatuur."
+    },
+    {
+      "id": "sci_p1_g6_animals_medium_01",
+      "f": "options[0]",
+      "nl": "Veel overlapping feeding relationships in an ecosystem"
+    },
+    {
+      "id": "sci_vol_g1_animals_medium_01",
+      "f": "theory[0]",
+      "nl": "Pollination is important voor veel fruits en zaads."
+    },
+    {
+      "id": "sci_vol_g4_animals_hard_02",
+      "f": "theory[0]",
+      "nl": "Pollination is needed voor many planten om te make seeds."
+    },
+    {
+      "id": "sci_vol_g5_body_hard_02",
+      "f": "options[1]",
+      "nl": "Je body completely runs out van zuurstof en shuts down alle processes"
+    },
+    {
+      "id": "sci_vol_g6_body_medium_02",
+      "f": "theory[1]",
+      "nl": "Rest is part van a gezond lifestyle."
+    },
+    {
+      "id": "sci_g3_body_011",
+      "f": "explanation",
+      "nl": "Water supports veel body processes en helpt je stay gezond."
+    },
+    {
+      "id": "sci_g3_body_012",
+      "f": "theory[0]",
+      "nl": "Lifestyle choices affect health."
+    },
+    {
+      "id": "sci_g3_body_037",
+      "f": "theory[0]",
+      "nl": "Exercise is part van a gezond lifestyle."
+    }
+  ]
+}

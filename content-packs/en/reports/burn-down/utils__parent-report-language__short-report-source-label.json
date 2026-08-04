@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "insights_based_on_questions_practiced": "Insights based on the questions practiced in the selected period.",
+    "legacy_version_caution": "Some of this information comes from an earlier version of the report - it's worth treating it with caution.",
+    "not_enough_data_for_clear_insight": "There still isn't enough data for a clear insight - it's worth continuing to practice and checking again."
+  }
+}

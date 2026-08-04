@@ -3,8 +3,8 @@
     "brick_breaker": "كسارة الطوب",
     "prototype_move_paddle_break_bricks": "النموذج الأولي · تحريك المجداف · كسر الطوب",
     "drag_move_below_don_t_miss_the_ball": "اسحب/تحرك للأسفل · لا تفوت الكرة",
-    "bx_s_ballx_ball_r": "بي اكس &&\r\n          s.ballX - BALL_R",
-    "by_s_bally_ball_r": "بواسطة &&\r\n          s.ballY - BALL_R",
+    "bx_s_ballx_ball_r": "bx &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "by &&\r\n          s.ballY - BALL_R",
     "all_bricks_cleared": "تم مسح جميع الطوب! 🎉",
     "tap_to_play_again": "انقر للعب مرة أخرى",
     "ball_dropped": "سقطت الكرة!"

@@ -1,5 +1,11 @@
 {
   "copy": {
-    "unavailable": "Unavailable"
+    "unavailable": "Unavailable",
+    "topic": "Topic",
+    "above_registered_grade": "Above registered grade",
+    "below_registered_grade": "Below registered grade",
+    "at_registered_grade_level": "At registered grade level",
+    "outside_the_registered_grade_band": "Outside the registered grade band",
+    "topic_grade_title": "{topic} - Grade {grade}"
   }
 }

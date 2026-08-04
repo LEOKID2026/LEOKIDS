@@ -1,0 +1,326 @@
+{
+  "booksHits": 12,
+  "books": [
+    {
+      "rel": "geometry/g1/drafts/README.md",
+      "line": "- Internal IDs remain `Geometrie:g1:{pageId}` and `subject: Geometrie`."
+    },
+    {
+      "rel": "geometry/g6/drafts/README.md",
+      "line": "- Section 5 and Section 6 use the **same geometry problem** (same numbers, units, story)."
+    },
+    {
+      "rel": "math/g1/drafts/README.md",
+      "line": "**Focus:** Number-line and number-sense foundations"
+    },
+    {
+      "rel": "math/g1/drafts/README.md",
+      "line": "- **No Hebrew product copy in the app** was changed."
+    },
+    {
+      "rel": "math/g1/drafts/README.md",
+      "line": "2. **Owner review** of Batch D polish pass and full 1. Klasse draft set."
+    },
+    {
+      "rel": "math/g2/drafts/README.md",
+      "line": "- G2 registry, loader, routes, resolvers, and Math Master wiring implemented (June 2026)."
+    },
+    {
+      "rel": "math/g2/drafts/README.md",
+      "line": "- 1. Klasse lieser UX remains the locked reference (`MATH_lernenING_BOOK_UI_STYLE_LOCK.md`)."
+    },
+    {
+      "rel": "science/g1/drafts/README.md",
+      "line": "- Internal IDs remain `Naturwissenschaften:g1:{topic}` and `subject: Naturwissenschaften`."
+    },
+    {
+      "rel": "science/g3/drafts/materials.md",
+      "line": "Push — moves the object away (pushing a door)"
+    },
+    {
+      "rel": "science/g3/drafts/materials.md",
+      "line": "A child pushes a toy cart on grass and then on a sidewalk."
+    },
+    {
+      "rel": "science/g3/drafts/materials.md",
+      "line": "Is the force a push or a pull?"
+    },
+    {
+      "rel": "science/g3/drafts/materials.md",
+      "line": "Push moves away. Friction slows and stops."
+    }
+  ],
+  "scienceHits": 0,
+  "science": [],
+  "localesHits": 5,
+  "locales": [
+    {
+      "ns": "learning.json",
+      "key": "english.steps.grammarAmIsAre",
+      "s": "I = am, You/We/They = are, He/She/It = is."
+    },
+    {
+      "ns": "learning.json",
+      "key": "english.steps.grammarCheck",
+      "s": "Prüfe, was zu den Grammatikregeln passt: I/You/We/They = are, He/She/It = is."
+    },
+    {
+      "ns": "learning.json",
+      "key": "english.mistakes.amOnlyWithI",
+      "s": "Merke dir: am steht nur bei I. He/She/It = is, You/We/They = are."
+    },
+    {
+      "ns": "learning.json",
+      "key": "english.mistakes.checkGrammarLearning",
+      "s": "Die richtige Antwort ist „{answer}“. Prüfe die Grammatikregeln noch einmal: I am, You/We/They are, He/She/It is."
+    },
+    {
+      "ns": "learning.json",
+      "key": "english.mistakes.checkGrammar",
+      "s": "Prüfe die Grammatikregeln noch einmal: I am, You/We/They are, He/She/It is."
+    }
+  ],
+  "packsHits": 100,
+  "packs": [
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "If we protect the oceans… — longer sentences"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "World — practice with a condition"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "the best / the most interesting — 6. Klasse reinforce"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Superlatives - the most interesting"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "You should… / It might… / We could… — not only can/must"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "should / might / could"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Conditionals — types 0 and 1"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "If the internet stops… — technology with a condition"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Technology — if / could"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "You should drink water — health tips"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Health — should rest"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "He might feel nervous — feelings with a modal"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The whales were swimming — ongoing past action"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "People around the world speak many languages"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The hospital is next to the park"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "First… Then… After that… — past sequence"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "many people / much time — in past and future contexts"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "played/went/saw — positive and question; common regular and irregular verbs"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Our class won the project"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "They planted trees last year"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "She felt proud — feelings in the past"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "We visited the museum — community places in the past"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The elephant walked slowly — past-tense verb"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The library is near the school"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Hobbies — practice with continuous"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The tall girl runs quickly"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "We protect the trees"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The park is in our town"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Sports — now on the field"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The students read books"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "They feel excited today"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Feelings — They feel…"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The birds are flying — link to continuous"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "I like to draw / She plays the piano"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The big dog runs fast — adjective + noun + verb"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Do you…? / What is…? — review with present simple"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Basic articles + place; The cat is under the bed"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "a / an / the and in / on / under"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Basic adjectives, a/an/the, and place prepositions in/on/under"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Present simple — positive, negative, and question"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The menschlicher Körper in Englisch"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The book is on the table — prep for in/on/under"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Home — objects and place"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The sky is blue — description with is"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The dog runs fast — sentence with a verb"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "cat/cats; What is this? — short questions"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Plurals and simple questions"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "I am / You are / He is / She is — without formal grammar labels"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Home — rooms and objects"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Animals — names and sentences"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Picture, sound, and word"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "CVC + sight: the, I, a, is"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Review A–Z capitals, lowercase, and names"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Review: letters and names"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "I am / You are — getting started"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "zero–ten; identify the English number"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "red, blue, green, yellow — identify and match; no spelling yet"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Point to the door, Show me your pen"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "Picture and word"
+    },
+    {
+      "rel": "books/english-page-skills.json",
+      "s": "The first sound in a word"
+    }
+  ]
+}

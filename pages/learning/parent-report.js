@@ -1,5 +1,6 @@
-import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
+import { reportPackCopy, getActiveReportPackLocale } from "../../lib/reports/report-pack-copy.js";
 import { ReportLocaleSurface } from "../../lib/reports/report-locale-context.jsx";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Layout from "../../components/Layout";
 import { ParentReportExitNav, ParentReportThemeIcons } from "../../components/parent/ParentReportExitNav.jsx";
@@ -61,6 +62,7 @@ import {
   formatParentReportSubjectHe} from "../../utils/parent-report-language/parent-report-display-labels.js";
 import {
   deriveParentDataPresenceForDiagnosticsView,
+  getParentThinDataExplainerHe,
   PARENT_THIN_DATA_EXPLAINER_HE} from "../../utils/parent-data-presence.js";
 import { topicUiFromLearningPatternDecision } from "../../utils/learning-pattern-decision/parent-report-ui-helpers.js";
 import { normalizeParentVisibleMetrics } from "../../utils/learning-pattern-decision/normalize-parent-practice-metrics.js";
@@ -377,7 +379,9 @@ function diagnosticCardConfidenceLabelHe(raw) {
   const x = String(raw || "").trim().toLowerCase();
   if (x === "moderate") return confidenceBadgeLabelHe("medium");
   if (x === "medium" || x === "high" || x === "low") return confidenceBadgeLabelHe(x);
-  if (x === "contradictory") return "Mixed results - we'll keep watching";
+  if (x === "contradictory") {
+    return reportPackCopy("pages__learning__parent-report", "mixed_results_keep_watching");
+  }
   return diagnosticParentVisibleTextHe(raw || "");
 }
 
@@ -415,7 +419,7 @@ function buildSubjectOverviewRows(report) {
   return [
     subjectRow(
       "math",
-      "Math",
+      formatParentReportSubjectHe("math"),
       sumTopicMapMinutes(report.mathOperations),
       s.mathQuestions,
       s.mathCorrect,
@@ -424,7 +428,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "geometry",
-      "Geometry",
+      formatParentReportSubjectHe("geometry"),
       sumTopicMapMinutes(report.geometryTopics),
       s.geometryQuestions,
       s.geometryCorrect,
@@ -433,7 +437,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "english",
-      "English",
+      formatParentReportSubjectHe("english"),
       sumTopicMapMinutes(report.englishTopics),
       s.englishQuestions,
       s.englishCorrect,
@@ -442,7 +446,7 @@ function buildSubjectOverviewRows(report) {
     ),
     subjectRow(
       "science",
-      "Science",
+      formatParentReportSubjectHe("science"),
       sumTopicMapMinutes(report.scienceTopics),
       s.scienceQuestions,
       s.scienceCorrect,
@@ -577,8 +581,12 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   const weaknesses = (sub.stableWeaknesses || []).slice(0, 2).map((w, i) => ({
     id: w.id || `${subjectId}:w:${i}`,
     labelHe:
-      stripTechnicalParensHe(String(w.label || "").replace(/Mistake pattern\s*\([^)]+\)/i, "Mistake pattern")) ||
-      "Recurring mistake pattern",
+      stripTechnicalParensHe(
+        String(w.label || "").replace(
+          /Mistake pattern\s*\([^)]+\)/i,
+          reportPackCopy("pages__learning__parent-report", "mistake_pattern"),
+        ),
+      ) || reportPackCopy("pages__learning__parent-report", "recurring_mistake_pattern"),
     mistakeCount: Number(w.mistakeCount) || 0,
     confidence: w.confidence === "high" ? "high" : "moderate"}));
   const legacyStrengths = sub.stableStrengths || [];
@@ -586,7 +594,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     id: s.id,
     labelHe: stripTechnicalParensHe(
       String(s.label || "").replace(/^[^:]+:\s*/, "").trim()
-    ) || "In this topic",
+    ) || reportPackCopy("pages__learning__parent-report", "in_this_topic"),
     questions: Number(s.questions) || 0,
     accuracy: Number(s.accuracy) || 0,
     confidence: s.confidence === "high" ? "high" : "moderate",
@@ -628,13 +636,15 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     confidence: w.confidence,
     tierHe:
       (w.mistakeCount || 0) >= 10
-        ? "Right now practice suggests this could use reinforcement"
+        ? reportPackCopy("pages__learning__parent-report", "tier_needs_reinforcement")
         : (w.mistakeCount || 0) >= 5
-          ? "Looks like this could use more practice"
+          ? reportPackCopy("pages__learning__parent-report", "tier_needs_more_practice")
           : reportPackCopy("pages__learning__parent-report", "area_to_reinforce")}));
   const topStrengths = excellent.map((e) => ({
     ...e,
-    tierHe: e.questions >= 20 ? "A topic the child is succeeding in right now" : "A strong topic right now"}));
+    tierHe: e.questions >= 20
+      ? reportPackCopy("pages__learning__parent-report", "tier_succeeding_now")
+      : reportPackCopy("pages__learning__parent-report", "tier_strong_now")}));
   const evidenceExamples = [];
   if (evidenceMistake) evidenceExamples.push({ type: "mistake", ...evidenceMistake });
   const parentActionHe = parentRecommendationsImprove[0]?.textHe || null;
@@ -761,10 +771,10 @@ function buildParentReportDiagnosticsView(report) {
 
 /** Topic card definitions — single source for the subject list + global label collection */
 const TOPIC_BAR_SUBJECT_CARDS = [
-  { title: "Math - accuracy by topic", mapKey: "mathOperations", prefix: "math_", border: "border-blue-400/25" },
-  { title: "Geometry - accuracy by topic", mapKey: "geometryTopics", prefix: "geometry_", border: "border-emerald-400/25" },
-  { title: "English - accuracy by topic", mapKey: "englishTopics", prefix: "english_", border: "border-purple-400/25" },
-  { title: "Science - accuracy by topic", mapKey: "scienceTopics", prefix: "science_", border: "border-green-400/25" }];
+  { titleKey: "math_accuracy_by_topic", mapKey: "mathOperations", prefix: "math_", border: "border-blue-400/25" },
+  { titleKey: "geometry_accuracy_by_topic", mapKey: "geometryTopics", prefix: "geometry_", border: "border-emerald-400/25" },
+  { titleKey: "english_accuracy_by_topic", mapKey: "englishTopics", prefix: "english_", border: "border-purple-400/25" },
+  { titleKey: "science_accuracy_by_topic", mapKey: "scienceTopics", prefix: "science_", border: "border-green-400/25" }];
 
 /**
  * Master geometry - the "summary across six subjects" chart is the source; the bar track (pixel width) is identical across all topic charts.
@@ -956,8 +966,8 @@ function subjectPracticeSecondaryLineHe(questions, correct, accuracy, timeMinute
   const metrics = normalizeParentVisibleMetrics({ questions, correct, accuracy });
   const q = metrics.questions;
   const tm = Number(timeMinutes) || 0;
-  if (q > 0) return `${metrics.correct} correct • ${metrics.accuracy}% accuracy`;
-  if (tm > 0) return `${tm} min of practice`;
+  if (q > 0) return reportPackCopy("pages__learning__parent-report", "correct_dot_accuracy", { correct: metrics.correct, accuracy: metrics.accuracy });
+  if (tm > 0) return reportPackCopy("pages__learning__parent-report", "min_of_practice", { tm: String(tm) });
   return null;
 }
 
@@ -974,7 +984,7 @@ function sanitizeDiagnosticsFootnoteDetailHe(raw) {
   const s = String(raw || "").trim();
   if (!s) return "";
   if (/suppressAggressiveStep/i.test(s)) {
-    return "The amount of information helps decide how carefully to move to the next step.";
+    return reportPackCopy("pages__learning__parent-report", "footnote_info_volume_next_step");
   }
   return s;
 }
@@ -982,6 +992,8 @@ function sanitizeDiagnosticsFootnoteDetailHe(raw) {
 export default function ParentReport() {
   useIOSViewportFix();
   const router = useRouter();
+  const { locale, reportLocale: i18nReportLocale } = useI18n();
+  const activeReportLocale = i18nReportLocale || locale || getActiveReportPackLocale() || "en";
 
   const remoteReportSource = useMemo(
     () => parseParentReportRemoteSource(router),
@@ -1249,7 +1261,7 @@ export default function ParentReport() {
       }
       if (!configOk) {
         if (!cancelled) {
-          setParentReportError("System configuration error.");
+          setParentReportError(reportPackCopy("pages__learning__parent-report", "system_configuration_error"));
           setReport(null);
           setLoading(false);
         }
@@ -1261,7 +1273,7 @@ export default function ParentReport() {
         if (!cancelled) {
           setParentReportError(
             isTeacherSource
-              ? "Teacher sign-in is required - sign in again and try again."
+              ? reportPackCopy("pages__learning__parent-report", "teacher_sign_in_required")
               : reportPackCopy("pages__learning__parent-report", "parent_sign_in_is_required_use_the_parent_sign_in_and_try_again")
           );
           setReport(null);
@@ -1272,14 +1284,17 @@ export default function ParentReport() {
       }
 
       try {
-        const qs = new URLSearchParams({ from, to });
+        const qs = new URLSearchParams({ from, to, reportLocale: activeReportLocale });
         const remoteKind = isTeacherSource ? "teacher" : hasParentDemoSession() ? "demo" : "parent";
         const url = parentReportRemoteDataUrl(remoteKind, parentStudentId, qs);
         const res = await fetch(url, {
           credentials: "include",
           cache: "no-store",
           signal: abortController.signal,
-          headers: { Authorization: `Bearer ${token}` }});
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "x-leo-locale": activeReportLocale,
+          }});
         const body = await res.json().catch(() => ({}));
         if (!res.ok || body?.ok === false) {
           if (!cancelled) {
@@ -1302,7 +1317,7 @@ export default function ParentReport() {
         const out = runParentReportGenerationFromApiBody(body, uiPeriodResolved);
         if (!out.ok || !out.base) {
           if (!cancelled) {
-            setParentReportError("The report could not be built from the data received from the server.");
+            setParentReportError(reportPackCopy("pages__learning__parent-report", "report_could_not_be_built"));
             setReport(null);
             setLoading(false);
           }
@@ -1338,7 +1353,7 @@ export default function ParentReport() {
           const aborted = isParentReportFetchAbortError(loadErr);
           setParentReportError(
             aborted
-              ? "Loading the report took too long - try a shorter range or refresh."
+              ? reportPackCopy("pages__learning__parent-report", "report_load_timeout")
               : reportPackCopy("pages__learning__parent-report", "network_error_while_loading_the_report")
           );
           setReport(null);
@@ -1530,6 +1545,7 @@ export default function ParentReport() {
               ? "relative h-[100svh] max-h-[100svh] overflow-hidden"
               : "relative flex-1 min-h-0 h-full max-h-full overflow-hidden"
           }
+          data-testid="parent-report-loading"
         >
           <ParentReportThemeIcons className="absolute top-4 left-1/2 -translate-x-1/2 z-10" />
           <PortalLoadingPanel
@@ -1641,7 +1657,7 @@ export default function ParentReport() {
         {/* Same page shell / top spacing as populated report - no vertical centering. */}
         <div
           className={getParentReportNoScrollPageShellClass(isBright, reportShellOpts)}
-          dir="ltr"
+          dir={undefined}
           style={getParentReportNoScrollPageContentStyle(isBright, reportShellOpts)}
           data-testid="parent-report-empty-period"
         >
@@ -1650,7 +1666,7 @@ export default function ParentReport() {
 
             <div className="text-center mb-1 md:mb-2">
               <h1 className="parent-report-print-page-section-heading text-2xl md:text-3xl font-extrabold mb-2">
-                📊 Parent Report
+                {reportPackCopy("pages__learning__parent-report", "parent_report_title")}
               </h1>
               <p className="text-white/70 text-sm md:text-base">{emptyPlayerName}</p>
 
@@ -2095,8 +2111,9 @@ export default function ParentReport() {
       </Head>
       <div
         className={getParentReportPageShellClass(isBright, reportShellOpts)}
-        dir="ltr"
+        dir={undefined}
         style={getParentReportPageContentStyle(isBright, reportShellOpts)}
+        data-testid="parent-report-ready"
       >
         <ReportLocaleSurface
           id="parent-report-pdf"
@@ -2108,7 +2125,7 @@ export default function ParentReport() {
           {/* */}
           <div className="text-center mb-1 md:mb-2">
             <h1 className="parent-report-print-page-section-heading text-2xl md:text-3xl font-extrabold mb-2">
-              📊 Parent Report
+              {reportPackCopy("pages__learning__parent-report", "parent_report_title")}
             </h1>
             <p className="text-white/70 text-sm md:text-base">{report.playerName}</p>
             
@@ -2129,7 +2146,7 @@ export default function ParentReport() {
                     : "inline-flex px-4 py-2 rounded-lg text-sm font-bold bg-violet-500/35 border border-violet-300/45 hover:bg-violet-500/50 text-white transition-all"
                 }
               >
-                Detailed Report for the Period
+                {reportPackCopy("pages__learning__parent-report", "detailed_report_for_the_period")}
               </Link>
             </div>
 
@@ -2144,13 +2161,17 @@ export default function ParentReport() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-3 md:mb-6 avoid-break">
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                Total time
+                {reportPackCopy("pages__learning__parent-report", "total_time")}
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-blue-400">
-                {displayReport.summary.totalTimeMinutes} min
+                {reportPackCopy("pages__learning__parent-report", "min_unit", {
+                  n: displayReport.summary.totalTimeMinutes,
+                })}
               </div>
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60">
-                ({displayReport.summary.totalTimeHours} hours)
+                {reportPackCopy("pages__learning__parent-report", "hours_paren", {
+                  n: displayReport.summary.totalTimeHours,
+                })}
               </div>
             </div>
             
@@ -2160,13 +2181,13 @@ export default function ParentReport() {
                 {displayReport.summary.totalQuestions}
               </div>
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60">
-                {displayReport.summary.totalCorrect} correct
+                {reportPackCopy("pages__learning__parent-report", "correct_count", { n: displayReport.summary.totalCorrect })}
               </div>
             </div>
             
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                Overall accuracy
+                {reportPackCopy("pages__learning__parent-report", "overall_accuracy")}
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-yellow-400">
                 {displayReport.summary.overallAccuracy}%
@@ -2175,10 +2196,12 @@ export default function ParentReport() {
             
             <div className="parent-report-print-summary-card bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 text-center">
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60 mb-1">
-                Level
+                {reportPackCopy("pages__learning__parent-report", "level")}
               </div>
               <div className="parent-report-print-summary-stat text-lg md:text-2xl font-bold text-purple-400">
-                Level {displayReport.summary.playerLevel}
+                {reportPackCopy("pages__learning__parent-report", "level_n", {
+                  n: displayReport.summary.playerLevel,
+                })}
               </div>
               <div className="parent-report-print-summary-label text-[10px] md:text-xs text-white/60">
                 ⭐ {displayReport.summary.stars} • 🏆 {displayReport.summary.achievements}
@@ -2202,7 +2225,7 @@ export default function ParentReport() {
 
           {report.summary?.diagnosticOverviewHe ? (
             <div className="mb-3 md:mb-5 avoid-break rounded-lg border border-amber-400/25 bg-amber-950/15 p-3 md:p-4 text-sm text-white/90 space-y-2">
-              <p className="font-bold text-amber-100/95 m-0 text-sm md:text-base">What stands out most right now</p>
+              <p className="font-bold text-amber-100/95 m-0 text-sm md:text-base">{reportPackCopy("pages__learning__parent-report", "stands_out_heading")}</p>
               {regularReportDisplay?.prominentFindingLinesHe?.length ? (
                 <ul className="m-0 ps-4 list-disc text-xs md:text-sm text-white/88 space-y-1.5">
                   {regularReportDisplay.prominentFindingLinesHe.map((line, i) => (
@@ -2220,15 +2243,15 @@ export default function ParentReport() {
                   ) : null}
                   {!shortContractTop && report.summary.diagnosticOverviewHe.mainFocusAreaLineHe ? (
                     <p className="m-0 leading-relaxed">
-                      <span className="text-white/55">Worth noting: </span>
+                      <span className="text-white/55">{reportPackCopy("pages__learning__parent-report", "worth_noting")} </span>
                       {report.summary.diagnosticOverviewHe.mainFocusAreaLineHe}
                     </p>
                   ) : !shortContractTop ? (
                     <p className="m-0 text-white/55 text-xs">
                       {Number(displayReport.summary?.totalQuestions) > 0 &&
                       diagnosticsView?.presence?.state === "hasVolumeNoPattern"
-                        ? "There's practice data for the selected period, but there still isn't enough clear basis from the practice to see which topic to focus on - it's worth continuing to practice and checking again afterward."
-                        : "There's no area worth focusing on right now for the selected period."}
+                        ? reportPackCopy("pages__learning__parent-report", "has_volume_no_pattern")
+                        : reportPackCopy("pages__learning__parent-report", "no_focus_area")}
                     </p>
                   ) : null}
                 </>
@@ -2240,7 +2263,7 @@ export default function ParentReport() {
 
           {regularReportDisplay?.topicStrengthLinesHe?.length ? (
             <div className="mb-3 md:mb-5 avoid-break rounded-lg border border-emerald-400/25 bg-emerald-950/15 p-3 md:p-4 text-sm text-white/90 space-y-1">
-              <p className="font-bold text-emerald-100/95 m-0 text-sm md:text-base">Strengths that stood out in practice</p>
+              <p className="font-bold text-emerald-100/95 m-0 text-sm md:text-base">{reportPackCopy("pages__learning__parent-report", "strengths_that_stood_out")}</p>
               <ul className="m-0 ps-4 list-disc text-xs md:text-sm text-white/85 space-y-1">
                 {regularReportDisplay.topicStrengthLinesHe.map((line, i) => (
                   <li key={`rms-${i}`} className="leading-relaxed">
@@ -2270,7 +2293,7 @@ export default function ParentReport() {
                     {ui.emoji} {row.name}
                   </div>
                   <div className={`parent-report-print-summary-stat text-base md:text-lg font-bold ${ui.statClass}`}>
-                    {row.questions > 0 ? `${row.questions} questions` : `${row.minutes} min`}
+                    {row.questions > 0 ? reportPackCopy("pages__learning__parent-report", "questions_count", { q: String(row.questions) }) : reportPackCopy("pages__learning__parent-report", "minutes_short", { m: String(row.minutes) })}
                   </div>
                   {secondary ? (
                     <div className="parent-report-print-muted-text text-xs text-white/80">{secondary}</div>
@@ -2288,7 +2311,7 @@ export default function ParentReport() {
           {/* Math operations table */}
           {regularReportTopicMapHasRows(displayReport, "mathOperations", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="parent-report-math-progress-title text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🧮 Math progress</h2>
+              <h2 className="parent-report-math-progress-title text-base md:text-xl font-bold mb-2 md:mb-3 text-center">{reportPackCopy("pages__learning__parent-report", "math_progress")}</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only parent-report-table-wrap-print hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -2306,16 +2329,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Operation</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "operation")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "level")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "grade")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "source")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "last_date")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "time")}</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "questions")}</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "correct")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "status")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2338,7 +2361,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "Not available"}
+                            {data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2380,29 +2403,29 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-blue-400">{regularReportTopicLabel("math", data, op, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "level")}:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "grade")}:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "source")}:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Last date:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "last_date")}:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "time")}:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "questions")}:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "correct")}:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
@@ -2411,9 +2434,9 @@ export default function ParentReport() {
                         {topicShowsExcellent(data) ? (
                           <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
+                          <span className="text-red-400 text-xs">⚠️ {reportPackCopy("pages__learning__parent-report", "needs_more_practice")}</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 Good</span>
+                          <span className="text-yellow-400 text-xs">👍 {reportPackCopy("pages__learning__parent-report", "status_good")}</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2426,7 +2449,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "geometryTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📐 Geometry progress</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📐 {reportPackCopy("pages__learning__parent-report", "geometry_progress")}</h2>
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
                   <colgroup>
@@ -2443,16 +2466,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "topic")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "level")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "grade")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "source")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "last_date")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "time")}</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "questions")}</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "correct")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "status")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2475,7 +2498,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "Not available"}
+                            {data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2517,29 +2540,29 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-emerald-400">{regularReportTopicLabel("geometry", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "level")}:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "grade")}:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "source")}:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Last date:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "last_date")}:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "time")}:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "questions")}:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "correct")}:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
@@ -2548,9 +2571,9 @@ export default function ParentReport() {
                         {topicShowsExcellent(data) ? (
                           <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
+                          <span className="text-red-400 text-xs">⚠️ {reportPackCopy("pages__learning__parent-report", "needs_more_practice")}</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 Good</span>
+                          <span className="text-yellow-400 text-xs">👍 {reportPackCopy("pages__learning__parent-report", "status_good")}</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2563,7 +2586,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "englishTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📘 English progress</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">📘 {reportPackCopy("pages__learning__parent-report", "english_progress")}</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -2581,16 +2604,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "topic")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "level")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "grade")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "source")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "last_date")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "time")}</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "questions")}</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "correct")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "status")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2613,7 +2636,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "Not available"}
+                            {data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2655,29 +2678,29 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-purple-400">{regularReportTopicLabel("english", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "level")}:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "grade")}:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "source")}:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Last date:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "last_date")}:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "time")}:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "questions")}:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "correct")}:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
@@ -2686,9 +2709,9 @@ export default function ParentReport() {
                         {topicShowsExcellent(data) ? (
                           <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
+                          <span className="text-red-400 text-xs">⚠️ {reportPackCopy("pages__learning__parent-report", "needs_more_practice")}</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 Good</span>
+                          <span className="text-yellow-400 text-xs">👍 {reportPackCopy("pages__learning__parent-report", "status_good")}</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2701,7 +2724,7 @@ export default function ParentReport() {
           {/* */}
           {regularReportTopicMapHasRows(displayReport, "scienceTopics", regularReportDisplay) && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🔬 Science progress</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-3 text-center">🔬 {reportPackCopy("pages__learning__parent-report", "science_progress")}</h2>
               {/* Desktop Table */}
               <div className="parent-report-desktop-only hidden md:block mt-2">
                 <table className="w-full table-fixed text-sm parent-report-subject-table">
@@ -2719,16 +2742,16 @@ export default function ParentReport() {
                   </colgroup>
                   <thead>
                     <tr className="border-b border-white/20">
-                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">Topic</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Level</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Grade</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Source</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Last date</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Time</th>
+                      <th className="text-start py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "topic")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "level")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "grade")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "source")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "last_date")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "time")}</th>
                       <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "questions")}</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Correct</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Accuracy</th>
-                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">Status</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "correct")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}</th>
+                      <th className="text-center py-1.5 px-0.5 whitespace-nowrap">{reportPackCopy("pages__learning__parent-report", "status")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -2751,7 +2774,7 @@ export default function ParentReport() {
                             {formatActivitySource(data)}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap tabular-nums">
-                            {data.lastSessionAt ?? "Not available"}
+                            {data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}
                           </td>
                           <td className="py-1.5 px-0.5 text-center text-white/80 text-[11px] md:text-sm whitespace-nowrap">
                             {formatRegularReportTopicTimeCellHe(data)}
@@ -2793,29 +2816,29 @@ export default function ParentReport() {
                       <div className="font-semibold text-sm mb-2 text-green-400">{regularReportTopicLabel("science", data, topic, regularReportDisplay)}</div>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div>
-                          <span className="text-white/60">Level:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "level")}:</span> <span className="text-white/90">{formatParentReportLevelHe(data.levelKey || data.level)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Grade:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "grade")}:</span> <span className="text-white/90">{regularReportGradeCell(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Source:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "source")}:</span> <span className="text-white/90">{formatActivitySource(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Last date:</span>{" "}
-                          <span className="text-white/90">{data.lastSessionAt ?? "Not available"}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "last_date")}:</span>{" "}
+                          <span className="text-white/90">{data.lastSessionAt ?? reportPackCopy("pages__learning__parent-report", "not_available")}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Time:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "time")}:</span> <span className="text-white/90">{formatRegularReportTopicTimeCellHe(data)}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Questions:</span> <span className="text-white/90">{data.questions}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "questions")}:</span> <span className="text-white/90">{data.questions}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Correct:</span> <span className="text-emerald-400">{data.correct}</span>
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "correct")}:</span> <span className="text-emerald-400">{data.correct}</span>
                         </div>
                         <div>
-                          <span className="text-white/60">Accuracy:</span> <span className={`font-bold ${
+                          <span className="text-white/60">{reportPackCopy("pages__learning__parent-report", "accuracy_col")}:</span> <span className={`font-bold ${
                             topicAccuracyTextClass(data)
                           }`}>{data.accuracy}%</span>
                         </div>
@@ -2824,9 +2847,9 @@ export default function ParentReport() {
                         {topicShowsExcellent(data) ? (
                           <span className="text-emerald-400 text-xs">✅ Excellent</span>
                         ) : topicShowsNeedsPractice(data) ? (
-                          <span className="text-red-400 text-xs">⚠️ Needs more practice</span>
+                          <span className="text-red-400 text-xs">⚠️ {reportPackCopy("pages__learning__parent-report", "needs_more_practice")}</span>
                         ) : (
-                          <span className="text-yellow-400 text-xs">👍 Good</span>
+                          <span className="text-yellow-400 text-xs">👍 {reportPackCopy("pages__learning__parent-report", "status_good")}</span>
                         )}
                         <ParentReportRowDiagnosticsFootnote data={data} />
                       </div>
@@ -2845,7 +2868,7 @@ export default function ParentReport() {
                 diagnosticsView.legacyRecommendations.length > 0)) && (
               <div className="parent-report-recommendations-print parent-report-diagnostics-print bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6 avoid-break">
                 <h2 className="parent-report-print-page-section-heading text-base md:text-xl font-bold mb-2 md:mb-3 text-center">
-                  💡 Recommendations
+                  💡 {reportPackCopy("pages__learning__parent-report", "recommendations")}
                 </h2>
                 <p className="text-[11px] md:text-xs text-white/60 text-center mb-2">
                   {diagnosticSourceLabelHe}
@@ -2896,8 +2919,11 @@ export default function ParentReport() {
                   <p className="parent-report-print-muted-text text-center text-sm md:text-base text-white/75 px-2 py-3">
                     {diagnosticsView.presence?.recommendationsExplainerHe ||
                       (Number(displayReport.summary?.totalQuestions) > 0
-                        ? PARENT_THIN_DATA_EXPLAINER_HE
-                        : "There still isn't enough data for a clear picture from the practice sessions")}
+                        ? getParentThinDataExplainerHe()
+                        : reportPackCopy(
+                            "pages__learning__parent-report",
+                            "not_enough_data_for_clear_picture",
+                          ))}
                   </p>
                 )}
 
@@ -2914,12 +2940,12 @@ export default function ParentReport() {
                         tierHe:
                           x.tierHe ||
                           (x.excellent && (x.questions || 0) >= 20
-                            ? "A topic the child is succeeding in right now"
-                            : "A strong topic right now")}));
+                            ? reportPackCopy("pages__learning__parent-report", "tier_succeeding_now")
+                            : reportPackCopy("pages__learning__parent-report", "tier_strong_now"))}));
                       const topStr = s.topStrengths?.length ? s.topStrengths : legacyStrength;
                       const wkLegacy = (s.weaknesses || []).map((w) => ({
                         ...w,
-                        tierHe: w.tierHe || "Right now practice suggests this could use reinforcement"}));
+                        tierHe: w.tierHe || reportPackCopy("pages__learning__parent-report", "tier_needs_reinforcement")}));
                       const topWk = s.topWeaknesses?.length ? s.topWeaknesses : wkLegacy;
                       const mn = s.maintain || [];
                       const im = s.improving || [];
@@ -2980,7 +3006,7 @@ export default function ParentReport() {
                             {Array.isArray(s.diagnosticCards) && s.diagnosticCards.length > 0 ? (
                               <div className="text-[10px] md:text-[11px] text-white/80 space-y-1.5 border border-white/10 rounded-md bg-white/5 px-2 py-1.5">
                                 <div className="font-semibold text-white/90 text-[11px] md:text-xs">
-                                  Based on what was practiced:
+                                  {reportPackCopy("pages__learning__parent-report", "based_on_what_was_practiced")}
                                 </div>
                                 {s.diagnosticCards.map((card, cardIdx) => {
                                   const recHe = String(card.recommendationHe || "").trim();
@@ -3005,7 +3031,7 @@ export default function ParentReport() {
                                         : null}
                                       {recHe ? (
                                         <div className="text-white/78 text-[9px] md:text-[10px] leading-snug break-words">
-                                          <span className="text-white/45">What to do: </span>
+                                          <span className="text-white/45">{reportPackCopy("pages__learning__parent-report", "what_to_do")} </span>
                                           {diagnosticParentVisibleTextHe(recHe)}
                                         </div>
                                       ) : null}
@@ -3021,13 +3047,13 @@ export default function ParentReport() {
                                 ) : null}
                                 {s.subjectDoNowHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">Now: </span>
+                                    <span className="text-white/45 font-bold">{reportPackCopy("pages__learning__parent-report", "now_label")} </span>
                                     {diagnosticParentVisibleTextHe(s.subjectDoNowHe)}
                                   </p>
                                 ) : null}
                                 {s.subjectAvoidNowHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">Avoid: </span>
+                                    <span className="text-white/45 font-bold">{reportPackCopy("pages__learning__parent-report", "avoid_label")} </span>
                                     {diagnosticParentVisibleTextHe(s.subjectAvoidNowHe)}
                                   </p>
                                 ) : null}
@@ -3037,13 +3063,13 @@ export default function ParentReport() {
                               <div className="text-[10px] md:text-[11px] text-emerald-100/85 border border-emerald-400/20 bg-emerald-950/10 rounded px-2 py-1.5 space-y-1 leading-snug">
                                 {s.dominantMistakePatternLabelHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">What repeats as a mistake: </span>
+                                    <span className="text-white/45 font-bold">{reportPackCopy("pages__learning__parent-report", "what_repeats_as_mistake")} </span>
                                     {diagnosticParentVisibleTextHe(s.dominantMistakePatternLabelHe)}
                                   </p>
                                 ) : null}
                                 {s.subjectMemoryNarrativeHe ? (
                                   <p className="m-0">
-                                    <span className="text-white/45 font-bold">What the child already remembers well: </span>
+                                    <span className="text-white/45 font-bold">{reportPackCopy("pages__learning__parent-report", "what_child_already_remembers")} </span>
                                     {diagnosticParentVisibleTextHe(s.subjectMemoryNarrativeHe)}
                                   </p>
                                 ) : null}
@@ -3051,7 +3077,7 @@ export default function ParentReport() {
                             )}
                             {sx.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-violet-200/85 pt-1">
-                                What the child does well over time
+                                {reportPackCopy("pages__learning__parent-report", "tier_does_well_over_time")}
                               </div>
                             )}
                             {sx.map((x, sxIdx) => (
@@ -3063,10 +3089,10 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🏆</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {x.tierHe || "What the child does well over time"}
+                                      {x.tierHe || reportPackCopy("pages__learning__parent-report", "tier_does_well_over_time")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {x.accuracy}% accuracy ({x.questions} questions)
+                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3074,7 +3100,7 @@ export default function ParentReport() {
                             ))}
                             {topStr.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-emerald-200/80 pt-1">
-                                Where the best results were seen
+                                {reportPackCopy("pages__learning__parent-report", "where_best_results_seen")}
                               </div>
                             )}
                             {topStr.map((x, tsIdx) => (
@@ -3086,10 +3112,10 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🌟</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {x.tierHe || "Good results in this topic"}
+                                      {x.tierHe || reportPackCopy("pages__learning__parent-report", "good_results_in_this_topic")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {x.accuracy}% accuracy ({x.questions} questions)
+                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3097,7 +3123,7 @@ export default function ParentReport() {
                             ))}
                             {mn.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-sky-200/80 pt-1">
-                                Recommended to maintain
+                                {reportPackCopy("pages__learning__parent-report", "recommended_to_maintain")}
                               </div>
                             )}
                             {mn.map((x, mnIdx) => (
@@ -3109,10 +3135,10 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🔷</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {maintainTierHeDisplay(x.tierHe) || "Consistency"}
+                                      {maintainTierHeDisplay(x.tierHe) || reportPackCopy("pages__learning__parent-report", "tier_consistency")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {x.accuracy}% accuracy ({x.questions} questions)
+                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3120,7 +3146,7 @@ export default function ParentReport() {
                             ))}
                             {im.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-amber-200/80 pt-1">
-                                Where it's worth reinforcing
+                                {reportPackCopy("pages__learning__parent-report", "where_worth_reinforcing")}
                               </div>
                             )}
                             {im.map((x, imIdx) => (
@@ -3132,13 +3158,13 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">📈</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      {x.tierHe || "A topic still strengthening"}
+                                      {x.tierHe || reportPackCopy("pages__learning__parent-report", "tier_still_strengthening")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(
                                         improvingDiagnosticsDisplayLabelHe(x.labelHe)
                                       )}{" "}
-                                      - {x.accuracy}% accuracy ({x.questions} questions)
+                                      - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3146,7 +3172,7 @@ export default function ParentReport() {
                             ))}
                             {topWk.length > 0 && (
                               <div className="parent-report-print-section-label text-[11px] font-semibold text-white/55 tracking-wide">
-                                What's worth paying attention to this week
+                                {reportPackCopy("pages__learning__parent-report", "worth_paying_attention_week")}
                               </div>
                             )}
                             {topWk.map((w, wkIdx) => (
@@ -3163,7 +3189,7 @@ export default function ParentReport() {
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(w.labelHe)}
                                       {typeof w.mistakeCount === "number"
-                                        ? ` (${w.mistakeCount} similar mistakes)`
+                                        ? ` (${reportPackCopy("pages__learning__parent-report", "similar_mistakes_count", { n: w.mistakeCount })})`
                                         : ""}
                                     </div>
                                     <ParentDiagnosticExplanationBlock
@@ -3183,7 +3209,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">👪</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      What can be done at home
+                                      {reportPackCopy("pages__learning__parent-report", "what_can_be_done_at_home")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(parentHomeActionHe)}
@@ -3198,7 +3224,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🗓️</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      Goals for the coming week
+                                      {reportPackCopy("pages__learning__parent-report", "goals_for_coming_week")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(nextWeekGoalHe)}
@@ -3216,7 +3242,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">🎯</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      Recommendation for the child
+                                      {reportPackCopy("pages__learning__parent-report", "recommendation_for_child")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(r.textHe)}
@@ -3234,7 +3260,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">✨</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      Recommendation for the child - keeping what's working
+                                      {reportPackCopy("pages__learning__parent-report", "recommendation_for_child_maintain")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(r.textHe)}
@@ -3252,7 +3278,7 @@ export default function ParentReport() {
                                   <span className="text-lg shrink-0">💬</span>
                                   <div className="flex-1 min-w-0">
                                     <div className="parent-report-print-subheading font-semibold text-xs md:text-sm text-white/90 mb-0.5">
-                                      Recommendation for the parent - encouragement and support
+                                      {reportPackCopy("pages__learning__parent-report", "recommendation_for_parent_encourage")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(r.textHe)}
@@ -3268,7 +3294,7 @@ export default function ParentReport() {
                                   className="parent-report-rec-item parent-report-example-card parent-report-example-mistake p-2 md:p-3 rounded-lg border bg-white/5 border-white/15"
                                 >
                                   <div className="parent-report-example-heading font-semibold text-xs text-white/70 mb-1">
-                                    Example of a mistake (from practice)
+                                    {reportPackCopy("pages__learning__parent-report", "example_mistake_from_practice")}
                                   </div>
                                   {ev.exerciseText ? (
                                     <div className="parent-report-example-prose text-xs text-white/80 break-words mb-1">
@@ -3284,7 +3310,7 @@ export default function ParentReport() {
                                       {hasMeaningfulExampleAnswer(ev.correctAnswer) ? (
                                         <div>
                                           <span className="parent-report-example-answer-label font-semibold text-sky-300">
-                                            Correct answer
+                                            {reportPackCopy("pages__learning__parent-report", "correct_answer")}
                                           </span>
                                           <span className="parent-report-example-answer-sep text-white/45 mx-1">
                                             :
@@ -3300,7 +3326,7 @@ export default function ParentReport() {
                                       {hasMeaningfulExampleAnswer(ev.userAnswer) ? (
                                         <div>
                                           <span className="parent-report-example-answer-label font-semibold text-amber-300">
-                                            Child's answer
+                                            {reportPackCopy("pages__learning__parent-report", "childs_answer")}
                                           </span>
                                           <span className="parent-report-example-answer-sep text-white/45 mx-1">
                                             :
@@ -3347,11 +3373,10 @@ export default function ParentReport() {
             {suppressChartsForThinEvidenceWindow ? (
               <div className="parent-report-chart-card bg-amber-950/25 border border-amber-400/35 rounded-xl p-4 md:p-6 avoid-break text-center space-y-2">
                 <h2 className="parent-report-print-chart-title text-base md:text-lg font-bold text-amber-100/95">
-                  Few questions in the selected period
+                  {reportPackCopy("pages__learning__parent-report", "few_questions_selected_period")}
                 </h2>
                 <p className="text-xs md:text-sm text-white/80 leading-relaxed m-0">
-                  The number of questions in the selected period is too low to show meaningful charts or tables here.
-                  It's recommended to rely on the summary and explanations above, and keep practicing to build a clearer picture.
+                  {reportPackCopy("pages__learning__parent-report", "few_questions_charts_body")}
                 </p>
               </div>
             ) : (
@@ -3374,10 +3399,13 @@ export default function ParentReport() {
                 <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                   <div className="text-center mb-1 md:mb-2">
                     <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                      Learning time breakdown
+                      {reportPackCopy("pages__learning__parent-report", "learning_time_breakdown")}
                     </h2>
                     <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                      Practice with questions, book reading, and other active learning
+                      {reportPackCopy(
+                        "pages__learning__parent-report",
+                        "practice_questions_book_reading_other_active",
+                      )}
                     </p>
                   </div>
                   <div className="w-full" style={{ minHeight: isMobile ? 160 : 180, direction: "ltr" }}>
@@ -3393,14 +3421,14 @@ export default function ParentReport() {
                           tick={{ fill: "#ffffff85", fontSize: isMobile ? 10 : 11 }}
                           tickMargin={6}
                           tickFormatter={(value) =>
-                            `${formatExclusiveLearningMinutesHe(value)} min`
+                            reportPackCopy("pages__learning__parent-report", "minutes_short", { m: String(formatExclusiveLearningMinutesHe(value)) })
                           }
                         />
                         <YAxis type="category" dataKey="name" hide width={0} />
                         <Tooltip
                           contentStyle={activeTooltipStyle}
                           formatter={(value, name) => [
-                            `${formatExclusiveLearningMinutesHe(value)} min`,
+                            reportPackCopy("pages__learning__parent-report", "minutes_short", { m: String(formatExclusiveLearningMinutesHe(value)) }),
                             name]}
                         />
                         <Legend
@@ -3418,7 +3446,7 @@ export default function ParentReport() {
                             else if (value === reportPackCopy("pages__learning__parent-report", "other_active_learning")) mins = oMin;
                             return (
                               <span className="parent-report-print-legend-label text-white/80">
-                                {value} ({formatExclusiveLearningMinutesHe(mins)} min)
+                                {value} ({reportPackCopy("pages__learning__parent-report", "minutes_short", { m: String(formatExclusiveLearningMinutesHe(mins)) })})
                               </span>
                             );
                           }}
@@ -3453,12 +3481,15 @@ export default function ParentReport() {
             {dailyActivityVisual.length > 0 && (
               <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                 <div className="text-center mb-1 md:mb-2">
-                  <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                    Daily activity
-                  </h2>
-                  <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                    Practice time and questions by day for the selected period
-                  </p>
+                    <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
+                      {reportPackCopy("pages__learning__parent-report", "daily_activity")}
+                    </h2>
+                    <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
+                      {reportPackCopy(
+                        "pages__learning__parent-report",
+                        "practice_time_and_questions_by_day",
+                      )}
+                    </p>
                 </div>
                 <div className="w-full" style={{ minHeight: isMobile ? 240 : 300 }}>
                   <ResponsiveContainer width="100%" height={isMobile ? 240 : 300}>
@@ -3487,13 +3518,13 @@ export default function ParentReport() {
                       <Tooltip
                         contentStyle={activeTooltipStyle}
                         labelFormatter={(value) =>
-                          new Date(value).toLocaleDateString("en-US", {
+                          new Date(value).toLocaleDateString(activeReportLocale === "ar-001" ? "ar" : "en-US", {
                             weekday: "short",
                             day: "numeric",
                             month: "short"})
                         }
                         formatter={(value, name) => {
-                          if (name === reportPackCopy("pages__learning__parent-report", "time_minutes")) return [`${value} min`, name];
+                          if (name === reportPackCopy("pages__learning__parent-report", "time_minutes")) return [reportPackCopy("pages__learning__parent-report", "minutes_short", { m: String(value) }), name];
                           if (name === reportPackCopy("pages__learning__parent-report", "questions")) return [value, name];
                           return [value, name];
                         }}
@@ -3539,10 +3570,13 @@ export default function ParentReport() {
               <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                 <div className="text-center mb-1 md:mb-2">
                   <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                    Activity by subject (daily)
+                    {reportPackCopy("pages__learning__parent-report", "activity_by_subject_daily")}
                   </h2>
                   <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                    Number of different topics practiced each day
+                    {reportPackCopy(
+                      "pages__learning__parent-report",
+                      "number_of_different_topics_practiced_each_day",
+                    )}
                   </p>
                 </div>
                 <div className="w-full" style={{ minHeight: isMobile ? 260 : 320 }}>
@@ -3573,7 +3607,7 @@ export default function ParentReport() {
                       <Tooltip
                         contentStyle={activeTooltipStyle}
                         labelFormatter={(value) =>
-                          new Date(value).toLocaleDateString("en-US", {
+                          new Date(value).toLocaleDateString(activeReportLocale === "ar-001" ? "ar" : "en-US", {
                             weekday: "short",
                             day: "numeric",
                             month: "short"})
@@ -3599,7 +3633,7 @@ export default function ParentReport() {
                         dataKey="mathTopics"
                         stroke={SUBJECT_CHART_COLORS.math}
                         strokeWidth={1.8}
-                        name="Math"
+                        name={formatParentReportSubjectHe("math")}
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -3608,7 +3642,7 @@ export default function ParentReport() {
                         dataKey="geometryTopics"
                         stroke={SUBJECT_CHART_COLORS.geometry}
                         strokeWidth={1.8}
-                        name="Geometry"
+                        name={formatParentReportSubjectHe("geometry")}
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -3617,7 +3651,7 @@ export default function ParentReport() {
                         dataKey="englishTopics"
                         stroke={SUBJECT_CHART_COLORS.english}
                         strokeWidth={1.8}
-                        name="English"
+                        name={formatParentReportSubjectHe("english")}
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -3626,7 +3660,7 @@ export default function ParentReport() {
                         dataKey="scienceTopics"
                         stroke={SUBJECT_CHART_COLORS.science}
                         strokeWidth={1.8}
-                        name="Science"
+                        name={formatParentReportSubjectHe("science")}
                         dot={{ r: 2 }}
                         activeDot={{ r: 4 }}
                       />
@@ -3656,10 +3690,13 @@ export default function ParentReport() {
                   <div className="parent-report-chart-card bg-black/30 border border-white/10 rounded-xl p-3 md:p-5 avoid-break shadow-sm shadow-black/20">
                     <div className="text-center mb-2 md:mb-3">
                       <h2 className="parent-report-print-chart-title text-base md:text-xl font-bold tracking-tight">
-                        Summary across six subjects
+                        {reportPackCopy("pages__learning__parent-report", "summary_across_six_subjects")}
                       </h2>
                       <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/55 mt-0.5">
-                        Practice time (minutes) - full details will also show questions and accuracy
+                        {reportPackCopy(
+                          "pages__learning__parent-report",
+                          "practice_time_minutes_full_details",
+                        )}
                       </p>
                     </div>
                     <div
@@ -3743,12 +3780,12 @@ export default function ParentReport() {
                                   const minutes = Number(p.minutes) || 0;
                                   if (q <= 0) {
                                     if (minutes > 0) {
-                                      return ["No questions answered in this period", ""];
+                                      return [reportPackCopy("pages__learning__parent-report", "no_questions_answered_period"), ""];
                                     }
-                                    return ["Not practiced in this subject for the selected period", ""];
+                                    return [reportPackCopy("pages__learning__parent-report", "not_practiced_subject_period"), ""];
                                   }
                                   return [
-                                    `${p.minutes} min practice · ${q} questions · ${p.accuracy}% accuracy`,
+                                    reportPackCopy("pages__learning__parent-report", "minutes_practice_questions_accuracy", { minutes: String(p.minutes), q: String(q), accuracy: String(p.accuracy) }),
                                     ""];
                                 }}
                               />
@@ -3803,10 +3840,13 @@ export default function ParentReport() {
                   >
                     <div className="text-center mb-2 md:mb-3">
                       <h2 className="parent-report-print-chart-title text-sm md:text-lg font-bold tracking-tight">
-                        {cfg.title}
+                        {reportPackCopy("pages__learning__parent-report", cfg.titleKey)}
                       </h2>
                       <p className="parent-report-print-chart-subtitle text-[11px] md:text-xs text-white/50 mt-0.5">
-                        Label track and chart track shared across all subjects
+                        {reportPackCopy(
+                          "pages__learning__parent-report",
+                          "label_track_and_chart_track_shared",
+                        )}
                       </p>
                     </div>
                     <div
@@ -3885,7 +3925,7 @@ export default function ParentReport() {
                                 if (!p) return ["", ""];
                                 const q = Number(p.questions) || 0;
                                 if (q <= 0) {
-                                  return ["Not practiced in this topic for the selected period", ""];
+                                  return [reportPackCopy("pages__learning__parent-report", "not_practiced_topic_period"), ""];
                                 }
                                 const timeLabel = formatRegularReportTopicTimeCellHe({
                                   questions: q,
@@ -3922,15 +3962,21 @@ export default function ParentReport() {
 
           {/* */}
           <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6">
-            <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">🎯 Challenges</h2>
+            <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">
+              🎯 {reportPackCopy("pages__learning__parent-report", "challenges")}
+            </h2>
             <div className="grid grid-cols-2 gap-2 md:gap-4">
               <div className="bg-blue-500/20 border border-blue-400/50 rounded-lg p-2 md:p-3">
-                <div className="text-xs md:text-sm text-white/60 mb-1">Daily challenge</div>
+                <div className="text-xs md:text-sm text-white/60 mb-1">
+                  {reportPackCopy("pages__learning__parent-report", "daily_challenge")}
+                </div>
                 <div className="text-base md:text-lg font-bold">
                   {report.challenges.daily.correct} / {report.challenges.daily.questions}
                 </div>
                 <div className="text-[10px] md:text-xs text-white/60">
-                  Best score: {report.challenges.daily.bestScore}
+                  {reportPackCopy("pages__learning__parent-report", "best_score", {
+                    score: String(report.challenges.daily.bestScore),
+                  })}
                 </div>
               </div>
               <div className={`border rounded-lg p-2 md:p-3 ${
@@ -3938,12 +3984,16 @@ export default function ParentReport() {
                   ? "bg-yellow-500/20 border-yellow-400/50"
                   : "bg-purple-500/20 border-purple-400/50"
               }`}>
-                <div className="text-xs md:text-sm text-white/60 mb-1">Weekly challenge</div>
+                <div className="text-xs md:text-sm text-white/60 mb-1">
+                  {reportPackCopy("pages__learning__parent-report", "weekly_challenge")}
+                </div>
                 <div className="text-base md:text-lg font-bold">
                   {report.challenges.weekly.current} / {report.challenges.weekly.target}
                 </div>
                 {report.challenges.weekly.completed && (
-                  <div className="text-[10px] md:text-xs text-yellow-400">🎉 Completed!</div>
+                  <div className="text-[10px] md:text-xs text-yellow-400">
+                    🎉 {reportPackCopy("pages__learning__parent-report", "completed")}
+                  </div>
                 )}
               </div>
             </div>
@@ -3952,7 +4002,9 @@ export default function ParentReport() {
           {/* */}
           {report.achievements.length > 0 && (
             <div className="bg-black/30 border border-white/10 rounded-lg p-2 md:p-4 mb-3 md:mb-6">
-              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">🏆 Achievements</h2>
+              <h2 className="text-base md:text-xl font-bold mb-2 md:mb-4 text-center">
+                🏆 {reportPackCopy("pages__learning__parent-report", "achievements")}
+              </h2>
               <div className="flex flex-wrap gap-2 justify-center">
                 {report.achievements.map((achievement) => (
                   <div
@@ -3992,13 +4044,13 @@ export default function ParentReport() {
               }}
               className="px-4 md:px-6 py-2 md:py-3 rounded-lg bg-red-500/80 hover:bg-red-500 font-bold text-sm md:text-base"
             >
-              🖨️ Print / 📄 Export to PDF
+              {reportPackCopy("pages__learning__parent-report", "print_export_to_pdf")}
             </button>
             <button
               onClick={() => router.push("/learning")}
               className="px-4 md:px-6 py-2 md:py-3 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 font-bold text-sm md:text-base"
             >
-              ← Back to learning
+              {reportPackCopy("pages__learning__parent-report", "back_to_learning")}
             </button>
           </div>
         </ReportLocaleSurface>

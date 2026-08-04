@@ -10,18 +10,21 @@ import PublicSeoEntrySection from "../seo/PublicSeoEntrySection";
 import StudentParentInviteModal from "../student/StudentParentInviteModal";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { getPrivateTeacherLayoutProps } from "../../lib/teacher-ui/teacher-portal-theme.client.js";
+import { useMarketingLandingContent } from "../../hooks/useMarketingLandingContent.js";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 const AUDIENCE_PORTAL = {
   kids: "student",
   parents: "parent",
   teachers: "teacher",
+  schools: null,
 };
 
 const AUDIENCE_CANONICAL_PATH = {
   kids: "/kids",
   parents: "/parents",
   teachers: "/teachers",
+  schools: "/schools",
 };
 
 export const ACCENT = {
@@ -114,6 +117,26 @@ export const ACCENT = {
     installBtnClassic:
       "bg-gradient-to-r from-orange-600/35 via-amber-600/30 to-yellow-600/35 border border-amber-400/55 text-amber-100 shadow-lg shadow-amber-950/25 hover:from-orange-600/45 hover:to-yellow-600/45",
   },
+  schools: {
+    classicCardGradient: "from-emerald-500/60 to-teal-700/70",
+    brightCardGradient: "from-emerald-400/80 to-teal-500/80",
+    heroBadgeClassic: "bg-white/10 text-emerald-300",
+    heroBadgeBright: "border border-emerald-300 bg-emerald-100 text-emerald-900",
+    heroTitleBright: "text-emerald-700",
+    heroTitleClassic: "from-emerald-300 via-teal-200 to-cyan-300",
+    primaryBtnBright:
+      "bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-white shadow-lg shadow-emerald-300/40 hover:brightness-105",
+    primaryBtnClassic:
+      "bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-white shadow-lg shadow-emerald-900/30 hover:brightness-110",
+    secondaryBtnBright:
+      "border-2 border-emerald-400 bg-white text-emerald-800 hover:bg-emerald-50",
+    secondaryBtnClassic:
+      "border border-white/25 bg-white/10 text-white hover:bg-white/15",
+    installBtnBright:
+      "bg-gradient-to-r from-emerald-100 via-teal-100 to-cyan-100 border-2 border-emerald-400 text-emerald-900 shadow-md shadow-emerald-200/50 hover:from-emerald-200 hover:via-teal-200 hover:to-cyan-200",
+    installBtnClassic:
+      "bg-gradient-to-r from-emerald-600/35 via-teal-600/30 to-cyan-700/35 border border-emerald-400/55 text-emerald-100 shadow-lg shadow-emerald-950/25 hover:from-emerald-600/45 hover:to-cyan-700/45",
+  },
 };
 
 function scrollToSection(id) {
@@ -132,7 +155,7 @@ function getKidsStepBadge(accent, isBright, index) {
 }
 
 function getMarketingLayoutProps(audience, theme) {
-  if (audience === "teachers") {
+  if (audience === "teachers" || audience === "schools") {
     return getPrivateTeacherLayoutProps(theme);
   }
   const base = { studentTheme: theme, studentShell: "home" };
@@ -152,7 +175,11 @@ function CtaButton({ cta, accent, isBright, size = "lg", onParentInvite }) {
   const secondaryClass = isBright ? accent.secondaryBtnBright : accent.secondaryBtnClassic;
   const isSecondary = cta.variant === "secondary";
 
-  if (cta.action === "parentInvite" && onParentInvite) {
+  const actionKey = String(cta.action || "")
+    .replace(/[^a-zA-Z]/g, "")
+    .toLowerCase();
+
+  if (actionKey === "parentinvite" && onParentInvite) {
     return (
       <button
         type="button"
@@ -179,6 +206,10 @@ function CtaButton({ cta, accent, isBright, size = "lg", onParentInvite }) {
     );
   }
 
+  if (!cta.href) {
+    return null;
+  }
+
   if (cta.variant === "secondary") {
     return (
       <Link href={cta.href} className={`inline-flex items-center justify-center ${sizeClass} ${secondaryClass} transition`}>
@@ -195,10 +226,16 @@ function CtaButton({ cta, accent, isBright, size = "lg", onParentInvite }) {
 }
 
 /**
- * Shared marketing landing page shell (RTL Hebrew).
- * @param {{ audience: 'kids' || 'parents' || 'teachers', content: import('../../data/marketing/landing-pages').MarketingPageContent, showPublicSeoEntrySection?: boolean }} props
+ * Shared marketing landing page shell.
+ * @param {{ audience: 'kids' || 'parents' || 'teachers' || 'schools', content: import('../../data/marketing/landing-pages').MarketingPageContent, showPublicSeoEntrySection?: boolean }} props
  */
-export default function MarketingLandingPage({ audience, content, showPublicSeoEntrySection = false }) {
+export default function MarketingLandingPage({
+  audience,
+  content: contentProp,
+  showPublicSeoEntrySection = false,
+}) {
+  const localizedContent = useMarketingLandingContent(audience);
+  const content = localizedContent || contentProp;
   const { theme, isBright } = useStudentTheme();
   const { direction, locale, t } = useI18n();
   const accent = ACCENT[audience];
@@ -207,6 +244,11 @@ export default function MarketingLandingPage({ audience, content, showPublicSeoE
   const [parentInviteOpen, setParentInviteOpen] = useState(false);
   const openParentInvite = () => setParentInviteOpen(true);
   const ctaParentInvite = isKidsPage ? openParentInvite : undefined;
+
+  if (!content || !accent) {
+    return null;
+  }
+
   const defaultCardGradient = isBright ? accent.brightCardGradient : accent.classicCardGradient;
 
   const sectionTitleClass = isBright
@@ -238,7 +280,12 @@ export default function MarketingLandingPage({ audience, content, showPublicSeoE
         canonicalPath={AUDIENCE_CANONICAL_PATH[audience] || "/"}
       />
       <Layout {...layoutProps}>
-        <div dir={direction} lang={locale} className="mx-auto w-full max-w-5xl px-4 py-8 md:py-12 space-y-12 md:space-y-16">
+        <div
+          dir={direction}
+          lang={locale}
+          className="mx-auto w-full max-w-5xl px-4 py-8 md:py-12 space-y-12 md:space-y-16"
+          data-testid={`marketing-${audience}-ready`}
+        >
           {/* Hero */}
           <header className="space-y-5 text-center">
             <p
@@ -277,7 +324,7 @@ export default function MarketingLandingPage({ audience, content, showPublicSeoE
                   onParentInvite={ctaParentInvite}
                 />
               ) : null}
-              {content.installLabel ? (
+              {content.installLabel && portal ? (
                 <PortalPwaInstallButton
                   portal={portal}
                   isBright={isBright}

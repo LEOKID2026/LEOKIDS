@@ -1,0 +1,312 @@
+{
+  "_meta": {
+    "created": "2026-08-04",
+    "scope": "ar-001 brand closure",
+    "product_decision": {
+      "Leo": "Leo",
+      "Leo Kids": "Leo Kids",
+      "rule": "Never translate or transliterate Leo when describing: brand, character, Leo Number, official product name, official game name, official card name, official Leo-based event name."
+    },
+    "total_warnings_reviewed": 554,
+    "total_validator_warnings_reviewed": 530,
+    "group_A_false_positive_entries": 30,
+    "group_B_violations_corrected": 532,
+    "final_brand_validator_result": {
+      "critical": 0,
+      "errors": 0,
+      "warnings": 0
+    },
+    "broad_allowlist_rules": 0
+  },
+  "group_A_approved_exact_keys": [
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\copilot.json",
+      "key": "answers.utils_parent-copilot_followup-engine.is_it_possible_to_take_a_small_step_together_today_at_home_aroun",
+      "arabic_value": "هل تريد اتخاذ خطوة صغيرة معًا في المنزل اليوم حول نفس الموضوع؟",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\school.json",
+      "key": "communication.lastLoginToday",
+      "arabic_value": "اليوم",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\ui.json",
+      "key": "guest.features.events",
+      "arabic_value": "الحدث اليومي",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\ui.json",
+      "key": "student.whatToday",
+      "arabic_value": "ماذا سنفعل اليوم؟",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\ui.json",
+      "key": "copilot.panel.quickUtterances.qa_action_today",
+      "arabic_value": "ماذا يجب أن نفعل في المنزل اليوم؟",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\worksheets.json",
+      "key": "coloringUploadQuotaRemaining",
+      "arabic_value": "لديك {{remaining}} من {{limit}} إبداعات متبقية اليوم.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\worksheets.json",
+      "key": "coloringUploadQuotaUser",
+      "arabic_value": "لقد وصلت إلى الحد اليومي وهو 10 أوراق تلوين. يمكنك إنشاء المزيد غدًا.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "locales\\ar-001\\worksheets.json",
+      "key": "coloringUploadQuotaGlobal",
+      "arabic_value": "حصة الإنشاء اليومية للموقع ممتلئة. يرجى المحاولة مرة أخرى غدا.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g2.sentence_routine.title",
+      "arabic_value": "الروتين اليومي - الجمل",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g2.translation_routines.title",
+      "arabic_value": "الروتين اليومي - الممارسة",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g3.sentence_routine.title",
+      "arabic_value": "الروتين اليومي - جمل كاملة",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g4.vocab_body.title",
+      "arabic_value": "الجسم — الإجراءات اليومية",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g4.vocab_emotions.description",
+      "arabic_value": "يشعرون بالإثارة اليوم",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g4.vocab_weather.title",
+      "arabic_value": "الطقس – اليوم",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\english-page-skills.json",
+      "key": "grades.g4.vocab_weather.description",
+      "arabic_value": "إنها تمطر اليوم",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\page-title-leaves\\science.g1\\materials.json",
+      "key": "title",
+      "arabic_value": "المواد — الخصائص اليومية",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\books\\registry-titles.json",
+      "key": "pages.science.g1.materials.title",
+      "arabic_value": "المواد — الخصائص اليومية",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\games\\burn-down\\components__leo-miners__LeoMinersGame.json",
+      "key": "copy.game_balance_gifts_and_daily_limits_may_change_for_fairness_and_upkeep",
+      "arabic_value": "قد يتغير رصيد اللعبة والهدايا والحدود اليومية لتحقيق العدالة والصيانة.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\games\\burn-down-index.json",
+      "key": "components__leo-miners__LeoMinersGame.game_balance_gifts_and_daily_limits_may_change_for_fairness_and_upkeep",
+      "arabic_value": "قد يتغير رصيد اللعبة والهدايا والحدود اليومية لتحقيق العدالة والصيانة.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\public-seo\\legal\\unified.json",
+      "key": "policyLastUpdatedDisplay",
+      "arabic_value": "5 يوليو 2026",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down\\pages__learning__parent-report.json",
+      "key": "copy.daily_activity",
+      "arabic_value": "النشاط اليومي",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down\\pages__learning__parent-report.json",
+      "key": "copy.daily_challenge",
+      "arabic_value": "التحدي اليومي",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down\\pages__learning__parent-report.json",
+      "key": "copy.practice_time_and_questions_by_day",
+      "arabic_value": "وقت التمرين والأسئلة حسب اليوم",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down\\utils__parent-report-language__parent-report-owner-topic-copy-templates.json",
+      "key": "copy.difficulty_donow_pattern",
+      "arabic_value": "اليوم، حلا معاً 5 أسئلة في {topicName}. بعد كل سؤال، اطلبا من الطفل أن يشرح الطريقة، وانتبها بشكل خاص إلى النمط: {detect",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down\\utils__parent-report-language__parent-report-owner-topic-copy-templates.json",
+      "key": "copy.difficulty_donow_default",
+      "arabic_value": "اليوم، حلا معاً 5 أسئلة في {topicName}. بعد كل سؤال، اطلبا من الطفل أن يشرح الطريقة، وليس فقط أن يختار إجابة.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down-index.json",
+      "key": "pages__learning__parent-report.daily_activity",
+      "arabic_value": "النشاط اليومي",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down-index.json",
+      "key": "pages__learning__parent-report.daily_challenge",
+      "arabic_value": "التحدي اليومي",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down-index.json",
+      "key": "pages__learning__parent-report.practice_time_and_questions_by_day",
+      "arabic_value": "وقت التمرين والأسئلة حسب اليوم",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down-index.json",
+      "key": "utils__parent-report-language__parent-report-owner-topic-copy-templates.difficulty_donow_pattern",
+      "arabic_value": "اليوم، حلا معاً 5 أسئلة في {topicName}. بعد كل سؤال، اطلبا من الطفل أن يشرح الطريقة، وانتبها بشكل خاص إلى النمط: {detect",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    },
+    {
+      "group": "A",
+      "classification": "approved_false_positive",
+      "file": "content-packs\\ar-001\\reports\\burn-down-index.json",
+      "key": "utils__parent-report-language__parent-report-owner-topic-copy-templates.difficulty_donow_default",
+      "arabic_value": "اليوم، حلا معاً 5 أسئلة في {topicName}. بعد كل سؤال، اطلبا من الطفل أن يشرح الطريقة، وليس فقط أن يختار إجابة.",
+      "reason_approved": "Value contains Arabic word with ليو as incidental substring (اليوم=today / يوليو=July / اليومي=daily). These are unrelated Arabic roots — not the Leo brand transliteration.",
+      "action": "none"
+    }
+  ],
+  "group_B_summary": {
+    "group": "B",
+    "classification": "real_brand_violation_corrected",
+    "total_violations_corrected": 532,
+    "breakdown": [
+      {
+        "source": "standalone ليو → Leo",
+        "count": 526,
+        "files": 32
+      },
+      {
+        "source": "الأسد as Leo character name",
+        "count": 6,
+        "files": 3
+      }
+    ],
+    "fix_rule": "Leo remains Latin script. ليو → Leo. الأسد when used as Leo character name → Leo or بـ Leo with preposition.",
+    "action": "fixed"
+  }
+}

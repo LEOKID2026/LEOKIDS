@@ -1,7 +1,7 @@
 {
   "copy": {
     "please_select_valid_dates": "الرجاء تحديد تواريخ صالحة",
-    "class_report": "تقرير الطبقة",
-    "loading_class_report": "جارٍ تحميل تقرير الصف…"
+    "class_report": "تقرير الفصل",
+    "loading_class_report": "جارٍ تحميل تقرير الفصل…"
   }
 }

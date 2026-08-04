@@ -2,7 +2,7 @@
   "copy": {
     "back": "رجوع",
     "local_badge": "محلي",
-    "title": "Tic-Tac-Toe",
+    "title": "إكس أو",
     "board_meta": "مجلس {size}×{size} • {mode}",
     "vs_bot": "مقابل بوت",
     "two_players": "2 لاعبين",

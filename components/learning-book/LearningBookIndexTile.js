@@ -4,6 +4,7 @@ import {
 } from "../../lib/learning-book/learning-book-catalog-meta";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
 import { BookGradeThemeProvider } from "./BookGradeThemeContext";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Compact book index tile (Math Master / Geometry Master pre-game HUD).
@@ -16,10 +17,11 @@ export default function LearningBookIndexTile({
   /** Mobile-only absolute bottom offset (pre-game HUD; aligned above action buttons). */
   mobileBottomClass = "bottom-[9.25rem]",
 }) {
+  const { contentLocale } = useI18n();
   const href = getLearningBookIndexHref(subject, grade);
   if (!href) return null;
 
-  const { line1, line2 } = getLearningBookTileTitle(subject, grade);
+  const { line1, line2 } = getLearningBookTileTitle(subject, grade, contentLocale || "en");
   const theme = getBookGradeTheme(grade);
 
   return (

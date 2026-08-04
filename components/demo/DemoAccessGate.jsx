@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, startTransition } from "react";
 import { useRouter } from "next/router";
 import Layout from "../Layout";
 import { StudentSessionProvider } from "../student/StudentSessionContext";
@@ -45,7 +45,7 @@ function DemoAccessGateInner({ children }) {
   const gradeLevel = session?.gradeLevel || readDemoSession()?.gradeLevel || "g3";
 
   const loadCatalog = useCallback(async () => {
-    setCatalogState("loading");
+    startTransition(() => setCatalogState("loading"));
     try {
       const res = await fetch(
         `/api/demo/catalog?gradeLevel=${encodeURIComponent(gradeLevel)}`,
@@ -53,21 +53,38 @@ function DemoAccessGateInner({ children }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setCatalogState("error");
-        setCatalogData(null);
+        startTransition(() => {
+          setCatalogState("error");
+          setCatalogData(null);
+        });
         return;
       }
-      setCatalogData(json);
-      setCatalogState("ready");
+      startTransition(() => {
+        setCatalogData(json);
+        setCatalogState("ready");
+      });
     } catch {
-      setCatalogState("error");
-      setCatalogData(null);
+      startTransition(() => {
+        setCatalogState("error");
+        setCatalogData(null);
+      });
     }
   }, [gradeLevel]);
 
   useEffect(() => {
     void loadCatalog();
   }, [loadCatalog]);
+
+  // Learning/demo must not hang forever on a slow/failing catalog fetch.
+  useEffect(() => {
+    if (catalogState !== "loading") return undefined;
+    const timer = setTimeout(() => {
+      startTransition(() => {
+        setCatalogState((prev) => (prev === "loading" ? "ready" : prev));
+      });
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [catalogState]);
 
   useEffect(() => {
     const onGrade = () => void loadCatalog();
@@ -119,13 +136,8 @@ function DemoAccessGateInner({ children }) {
   }
 
   if (catalogState === "error") {
-    return (
-      <DemoGateShell pathname={pathname}>
-        <div className="px-4 py-8 text-center text-sm text-red-600">
-          {demoPackCopyForLocale(locale, "gate", "loadError")}
-        </div>
-      </DemoGateShell>
-    );
+    // Soft-fail: continue with default subject access so learning Start is not blocked.
+    // Game-access routes still need catalog; leave gameAccessValue null below.
   }
 
   const wrapSubject = (node) => (

@@ -1,6 +1,7 @@
 import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useSoloGameShellUi } from "../../hooks/solo-games/useSoloGameShellUi.js";
 import SoloGameNavButtons from "./SoloGameNavButtons.jsx";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * @param {{
@@ -39,26 +40,28 @@ export default function SoloGameFinishScreen({
   gamesHubLabel = gamePackCopy("components__solo-games__SoloGameFinishScreen", "back_to_games"),
 }) {
   const { SG } = useSoloGameShellUi();
+  const { direction, locale } = useI18n();
 
   return (
     <div
       className="flex h-full min-h-0 flex-col items-center justify-center overflow-hidden overflow-x-hidden px-2 py-2 landscape:py-1 sm:px-4 sm:py-3"
-      dir="ltr"
+      dir={direction === "rtl" ? "rtl" : "ltr"}
+      lang={locale || undefined}
     >
       <div className="mx-auto w-full max-w-md landscape:max-w-lg">
         <div className={SG.finishCard}>
           <h2 className={SG.finishTitle}>
-            {didWin ? "Great job! 🎉" : "Nice try — great effort!"}
+            {didWin ? gamePackCopy("components__solo-games__SoloGameFinishScreen", "win_title") : gamePackCopy("components__solo-games__SoloGameFinishScreen", "lose_title")}
           </h2>
           {subtitleHe ? <p className={SG.finishMuted}>{subtitleHe}</p> : null}
 
           <div className={SG.finishBody}>
             <p>
-              <span className={SG.finishLabel}>Score: </span>
+              <span className={SG.finishLabel}>{gamePackCopy("components__solo-games__SoloGameFinishScreen", "score")} </span>
               <span className={SG.finishValue}>{score}</span>
             </p>
             <p>
-              <span className={SG.finishLabel}>Level: </span>
+              <span className={SG.finishLabel}>{gamePackCopy("components__solo-games__SoloGameFinishScreen", "level")} </span>
               <span className={SG.finishValue}>{displayLevelHe}</span>
             </p>
             {statsLines.map((row) => (
@@ -69,11 +72,11 @@ export default function SoloGameFinishScreen({
             ))}
             <p className={SG.finishCoins}>
               <img src="/images/coin.png" alt="" className="h-6 w-6 sm:h-8 sm:w-8 landscape:h-5 landscape:w-5" />
-              +{coinsAwarded} coins
+              {gamePackCopy("components__solo-games__SoloGameFinishScreen", "coins_awarded", { n: coinsAwarded })}
             </p>
             {diamondsAwarded > 0 ? (
               <p className={SG.finishCoins}>
-                <span aria-hidden>💎</span> +{diamondsAwarded} diamonds
+                <span aria-hidden>💎</span> {gamePackCopy("components__solo-games__SoloGameFinishScreen", "diamonds_awarded", { n: diamondsAwarded })}
               </p>
             ) : null}
             {breakdownHe ? <p className={SG.finishMuted}>{breakdownHe}</p> : null}
@@ -82,12 +85,14 @@ export default function SoloGameFinishScreen({
             ) : null}
             {balanceAfter != null ? (
               <p className={SG.finishMuted}>
-                Coin balance: <span className={SG.finishBalance}>{balanceAfter}</span>
+                {gamePackCopy("components__solo-games__SoloGameFinishScreen", "coin_balance")}{" "}
+                <span className={SG.finishBalance}>{balanceAfter}</span>
               </p>
             ) : null}
             {diamondBalanceAfter != null && diamondsAwarded > 0 ? (
               <p className={SG.finishMuted}>
-                Diamond balance: <span className={SG.finishBalance}>{diamondBalanceAfter}</span>
+                {gamePackCopy("components__solo-games__SoloGameFinishScreen", "diamond_balance")}{" "}
+                <span className={SG.finishBalance}>{diamondBalanceAfter}</span>
               </p>
             ) : null}
           </div>

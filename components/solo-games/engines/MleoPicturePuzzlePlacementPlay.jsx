@@ -276,6 +276,8 @@ function TrayGrid({
 
  */
 
+import { gameHudScoreColon, gameHudLabel } from "../../../lib/games/game-hud-copy.js";
+
 export default function MleoPicturePuzzlePlacementPlay({
 
   puzzleImage,
@@ -533,7 +535,7 @@ export default function MleoPicturePuzzlePlacementPlay({
 
       <div className="picture-puzzle-score-bar pointer-events-none absolute left-1/2 top-1 z-[80] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-2 py-1 text-center text-[10px] font-bold leading-snug sm:top-1.5 sm:px-3 sm:py-1.5 sm:text-sm">
 
-        <span className="text-amber-300">Score: {won ? computeWinScore(timeLeft, moves) : 0}</span>
+        <span className="text-amber-300">{gameHudScoreColon()} {won ? computeWinScore(timeLeft, moves) : 0}</span>
 
         {" · "}
 

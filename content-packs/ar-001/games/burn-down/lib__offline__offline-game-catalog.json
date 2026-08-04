@@ -1,6 +1,6 @@
 {
   "copy": {
-    "tic_tac_toe": "Tic-Tac-Toe",
+    "tic_tac_toe": "إكس أو",
     "boards_from_3_3_to_7_7_with_score_tracking": "لوحات من 3 × 3 إلى 7 × 7 مع تتبع النتيجة.",
     "rock_paper_scissors": "حجر · ورق · مقص",
     "quick_rounds_best_of_all": "جولات سريعة – الأفضل على الإطلاق.",

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "total": 1017,
+    "missing": 0,
+    "enStem": 5,
+    "enOpt": 4,
+    "enExpl": 7,
+    "draft": 0,
+    "mixed": 0,
+    "grade": 0,
+    "wisk": 0
+  },
+  "samples": {
+    "enStem": [
+      {
+        "id": "science_remaining_g1_hard_earth_space",
+        "f": "stem",
+        "s": "What causes overdag op Aarde?",
+        "en": "What causes daytime on Earth?"
+      },
+      {
+        "id": "sci_pb1_g4_body_hard_01",
+        "f": "stem",
+        "s": "Which explanation best links pols om te lichaam activity?",
+        "en": "Which explanation best links pulse to body activity?"
+      },
+      {
+        "id": "sci_p0_g2_animals_medium_06",
+        "f": "stem",
+        "s": "Wat is true over veel lizards?",
+        "en": "What is true about many lizards?"
+      },
+      {
+        "id": "sci_p1_g4_body_hard_01",
+        "f": "stem",
+        "s": "If je pols is faster, Wat is meestal true?",
+        "en": "If your pulse is faster, what is usually true?"
+      },
+      {
+        "id": "sci_phb_g3_earth_space_eas_01",
+        "f": "stem",
+        "s": "What causes overdag?",
+        "en": "What causes daytime?"
+      }
+    ],
+    "enOpt": [
+      {
+        "id": "sci_p0_g1_plants_hard_06",
+        "s": "Bladeren fall because trees become dieren."
+      },
+      {
+        "id": "sci_p0_g2_body_hard_08",
+        "s": "What color je onze ogen zal become"
+      },
+      {
+        "id": "sci_p1_g4_experiments_easy_06",
+        "s": "Proves elke hypothese true automatically"
+      },
+      {
+        "id": "sci_vol_g6_experiments_medium_03",
+        "s": "Details over what je actually zien, hear, of meten"
+      }
+    ],
+    "enExpl": [
+      {
+        "id": "sci_closure_g3mat_023",
+        "f": "explanation",
+        "s": "metaal cookware vaak warmtes voedsel quickly because metaal geleidens warmte well."
+      },
+      {
+        "id": "sci_pb1_g4_environment_easy_01",
+        "f": "explanation",
+        "s": "Batteries nodig hebben special recycling of disposal because zij kan contain harmful materiaalen."
+      },
+      {
+        "id": "sci_p0_g3_experiments_easy_02",
+        "f": "explanation",
+        "s": "Time stamps keep records organized. Je kan zien growth, weer links, of which proef came first."
+      },
+      {
+        "id": "sci_p1_g5_experiments_easy_03",
+        "f": "explanation",
+        "s": "Detailed logs let je en andere understand what was done en found. Zij support honest analysis en replication."
+      },
+      {
+        "id": "sci_vol_g1_body_medium_02",
+        "f": "explanation",
+        "s": "Water helps je lichaam stay voldoende gedronken dus cells en organs kan doen their jobs."
+      },
+      {
+        "id": "sci_vol_g1_plants_hard_02",
+        "f": "explanation",
+        "s": "Planten groeien toward licht because zij nodig hebben it naar carry out fotosynthese en maken voedsel. Dit behavior is called phototropism."
+      },
+      {
+        "id": "sci_vol_g5_animals_medium_01",
+        "f": "explanation",
+        "s": "When habitats stay gezond, animals kan find what zij need om te survive en reproduce."
+      }
+    ],
+    "draft": [],
+    "mixed": []
+  },
+  "bankCount": 1,
+  "bankHits": [
+    {
+      "id": "env_40",
+      "enStem": "How can plants along a stream help naturally filter flowing water?",
+      "nlStem": "Hoe kunnen planten langs een beek stromend water op natuurlijke wijze helpen filteren?",
+      "nlOptions": [
+        "Wortels en bodemstructuur ondersteunen mechanische filtering en enige chemische opname",
+        "Planten bouwen een betonnen barrière die de waterstroom volledig blokkeert",
+        "Er is geen link; alleen fabrieksfilters maken ooit schoon water",
+        "Stromend water is altijd schoon, ongeacht welke planten er in de buurt zijn"
+      ],
+      "enOptions": [
+        "Roots and soil structure support mechanical filtering and some chemical uptake",
+        "Plants build a concrete barrier that fully blocks water flow",
+        "There is no link; only factory filters ever clean water",
+        "Flowing water is always clean no matter what plants are nearby"
+      ]
+    }
+  ]
+}

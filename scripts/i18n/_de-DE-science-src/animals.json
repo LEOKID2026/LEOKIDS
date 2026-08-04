@@ -1,0 +1,716 @@
+{
+  "animals_1": {
+    "stem": "Which animal is a mammal?",
+    "options": [
+      "Frog",
+      "Crocodile",
+      "Cat",
+      "Rooster"
+    ],
+    "explanation": "Mammals usually give birth to live young and feed them milk. A cat is a mammal; a frog is an amphibian and a rooster is a bird.",
+    "theoryLines": [
+      "Most mammals have fur or hair and breathe with lungs.",
+      "Birds have feathers and lay eggs."
+    ]
+  },
+  "animals_2": {
+    "stem": "Which trait helps a fish live in water?",
+    "options": [
+      "Fins and a torpedo-shaped body",
+      "Long legs and a flat tail",
+      "Wide wings and a thin beak",
+      "Scales and a long, skinny body alone"
+    ],
+    "explanation": "Fins and a streamlined body help a fish swim well through water.",
+    "theoryLines": [
+      "Animals have traits that fit the places where they live.",
+      "Body shape affects how well an animal moves in water, air, or on land."
+    ]
+  },
+  "animals_3": {
+    "stem": "Which statement about reptiles is true?",
+    "options": [
+      "Most are covered in scales and lay eggs",
+      "They are mammals that nurse their babies with milk",
+      "They have no skin or scales",
+      "They usually live only in water"
+    ],
+    "explanation": "Most reptiles have scales and lay eggs. They do not nurse babies with milk the way mammals do.",
+    "theoryLines": [
+      "Reptiles include snakes, lizards, turtles, and crocodiles.",
+      "They are cold-blooded, so their body temperature follows the surroundings."
+    ]
+  },
+  "animals_4": {
+    "stem": "What is a food chain?",
+    "options": [
+      "All living things in an area that drink from the same water source",
+      "A sequence of living things in which each one is food for the next",
+      "A sequence in which every living thing makes food only by photosynthesis",
+      "A group where every animal stays at the same energy level forever"
+    ],
+    "explanation": "A food chain shows how energy moves from producers like plants to consumers like animals.",
+    "theoryLines": [
+      "Plants are usually producers because they make food using sunlight.",
+      "Herbivores and carnivores are part of food chains and food webs."
+    ]
+  },
+  "animals_5": {
+    "stem": "Which statement about behavioral adaptations in animals is true?",
+    "options": [
+      "Behavior changes that help survival, such as migration",
+      "Only a color change with no link to survival",
+      "The same behavior in every season",
+      "Random behavior with no link to the environment"
+    ],
+    "explanation": "Behavioral adaptations are actions that help an animal survive, such as migrating or being active at night.",
+    "theoryLines": [
+      "Animals can have body adaptations and behavior adaptations.",
+      "Helpful traits become more common over many generations."
+    ]
+  },
+  "animals_gapfix_hard_g12": {
+    "stem": "Which comparison between a fish and a dolphin is true?",
+    "options": [
+      "A dolphin breathes air; a fish takes oxygen from water with gills",
+      "Both a dolphin and a fish breathe only with gills",
+      "Both breathe only air outside the water",
+      "There is no breathing difference between a dolphin and a fish"
+    ],
+    "explanation": "Dolphins are mammals that breathe air with lungs. Fish take oxygen from water using gills.",
+    "theoryLines": [
+      "Animals that live in water can look alike, but breathing and birth traits show their real group.",
+      "Fish use gills in water; dolphins are mammals with lungs."
+    ]
+  },
+  "animals_gapfix_easy_g456": {
+    "stem": "Which sentence about animals' basic needs is true?",
+    "options": [
+      "Animals need food, water, and a suitable place to live",
+      "Animals need only food",
+      "Animals do not need water",
+      "Animals can live without special living conditions"
+    ],
+    "explanation": "Every animal needs food, water, and suitable conditions such as shelter and temperature to stay healthy.",
+    "theoryLines": [
+      "Basic needs include food for energy, water for the body, and a fitting habitat.",
+      "Missing one of these needs can harm an animal's health."
+    ]
+  },
+  "animals_6": {
+    "stem": "Which animal lays eggs?",
+    "options": [
+      "Pet dog",
+      "Chicken",
+      "Cow, usually",
+      "Rabbit"
+    ],
+    "explanation": "A chicken is a bird and lays eggs. Dogs, cats, and cows are mammals that give birth to live young.",
+    "theoryLines": [
+      "Birds lay eggs and often sit on them to keep them warm.",
+      "Mammals usually give birth to live young and feed them milk."
+    ]
+  },
+  "animals_7": {
+    "stem": "Which animal lives in water?",
+    "options": [
+      "Rabbit",
+      "Fish",
+      "Cat",
+      "Chicken"
+    ],
+    "explanation": "Fish live in water. They use fins to swim and gills to take oxygen from water.",
+    "theoryLines": [
+      "Fish are adapted for life in water.",
+      "Gills take oxygen from water so fish can breathe."
+    ]
+  },
+  "animals_8": {
+    "stem": "What do all animals need to stay alive?",
+    "options": [
+      "Only water — food is not essential for most animals.",
+      "Both food and water — animals need food for energy and water to survive.",
+      "Food provides all the water animals need, so they never drink.",
+      "Only food — animals do not need to drink water."
+    ],
+    "explanation": "Every living animal needs food for energy and water to keep its body working. Without food, an animal cannot grow or move. Without water, its cells cannot function.",
+    "theoryLines": [
+      "Animals get energy by eating food — either plants, other animals, or both.",
+      "Water makes up most of an animal's body and is needed for almost every life process."
+    ]
+  },
+  "animals_9": {
+    "stem": "Which animal can fly?",
+    "options": [
+      "Fish",
+      "Bird",
+      "Snake",
+      "Frog"
+    ],
+    "explanation": "Birds have wings for flying. Many also have light feathers and hollow bones.",
+    "theoryLines": [
+      "Wings help birds fly.",
+      "Some birds have larger, stronger wings than others."
+    ]
+  },
+  "animals_10": {
+    "stem": "Which statement about what animals eat is true?",
+    "options": [
+      "Different animals eat different foods — some eat plants, some eat other animals, and some eat both.",
+      "All animals eat exactly the same type of food.",
+      "Plants are the only food source for every animal on Earth.",
+      "Animals never need water — they get everything they need from food alone."
+    ],
+    "explanation": "Animals that eat only plants are called herbivores. Animals that eat only other animals are called carnivores. Animals that eat both plants and animals are called omnivores. This variety in diet helps different animals live in different habitats.",
+    "theoryLines": [
+      "An animal's teeth and digestive system are shaped to match what it eats.",
+      "Herbivores, carnivores, and omnivores all play important roles in the food web."
+    ]
+  },
+  "animals_11": {
+    "stem": "What is the main difference between warm-blooded and cold-blooded animals?",
+    "options": [
+      "Both types always match the temperature of their environment.",
+      "Warm-blooded animals keep a steady body temperature on their own; cold-blooded animals rely on the environment for body heat.",
+      "Cold-blooded animals can always maintain a warm, steady body temperature.",
+      "Warm-blooded animals can only survive in water."
+    ],
+    "explanation": "Warm-blooded animals, such as birds and mammals, regulate their own body temperature no matter how hot or cold it is outside. Cold-blooded animals, such as reptiles and fish, cannot do this — their body temperature rises and falls with the environment.",
+    "theoryLines": [
+      "Warm-blooded animals include mammals and birds; they use energy from food to stay warm.",
+      "Cold-blooded animals include reptiles, fish, and amphibians; they bask in the sun to warm up."
+    ]
+  },
+  "animals_12": {
+    "stem": "What is a habitat?",
+    "options": [
+      "A house built by people",
+      "The natural place where an animal lives and finds what it needs",
+      "Only a forest, never an ocean or grassland",
+      "Only deep ocean, never shore, forest, or reef"
+    ],
+    "explanation": "A habitat is the natural place where an animal lives and finds food, water, and shelter.",
+    "theoryLines": [
+      "A habitat includes everything an animal needs to live.",
+      "Different animals live in different habitats."
+    ]
+  },
+  "animals_13": {
+    "stem": "What is a life cycle?",
+    "options": [
+      "Birth alone, with no growth or reproduction",
+      "Birth, growth, reproduction, and death—the stages of life",
+      "Sudden death with no development stages",
+      "Growth over time with no birth or reproduction"
+    ],
+    "explanation": "A life cycle includes the main stages of life: birth, growth, adulthood, reproduction, and death.",
+    "theoryLines": [
+      "Each kind of animal has its own life cycle.",
+      "Some animals go through metamorphosis, a big change in form."
+    ]
+  },
+  "animals_14": {
+    "stem": "What does a food chain show about energy in nature?",
+    "options": [
+      "A list of all the foods one animal can eat in a single day.",
+      "A sequence that shows how energy passes from one living thing to another through eating.",
+      "A list of all the plants found in one ecosystem.",
+      "A path that animals follow to find water in the wild."
+    ],
+    "explanation": "A food chain shows how energy moves when one living thing eats another, starting from producers like plants.",
+    "theoryLines": [
+      "Energy in many food chains begins with sunlight captured by plants.",
+      "Each link in the chain depends on the one before it."
+    ]
+  },
+  "animals_15": {
+    "stem": "What is an adaptation?",
+    "options": [
+      "A change a plant usually makes",
+      "A trait or behavior that helps an animal survive",
+      "Body color with no link to the environment",
+      "Body size as the only trait that matters"
+    ],
+    "explanation": "An adaptation is a trait or behavior that helps an animal survive and live well in its environment.",
+    "theoryLines": [
+      "Adaptations can be body features or behaviors.",
+      "They develop over many generations."
+    ]
+  },
+  "animals_16": {
+    "stem": "Which animal can swim?",
+    "options": [
+      "Chicken",
+      "Fish",
+      "Tiger",
+      "Rabbit"
+    ],
+    "explanation": "Fish swim in water. Their fins help them move.",
+    "theoryLines": [
+      "Fish live in water.",
+      "They are adapted for life in water."
+    ]
+  },
+  "animals_17": {
+    "stem": "Which animal is covered in fur?",
+    "options": [
+      "Fish",
+      "Dog",
+      "Snake",
+      "Bird"
+    ],
+    "explanation": "A dog is a mammal with fur. Fur helps keep the body warm.",
+    "theoryLines": [
+      "Mammals have fur or hair.",
+      "Fur helps hold in body heat."
+    ]
+  },
+  "animals_18": {
+    "stem": "Which animal is covered in feathers?",
+    "options": [
+      "Pet dog",
+      "Furred cat",
+      "Chicken",
+      "Fish in water"
+    ],
+    "explanation": "A chicken is a bird with feathers. Feathers help birds fly and stay warm.",
+    "theoryLines": [
+      "Birds have feathers.",
+      "Feathers help with flying and staying warm."
+    ]
+  },
+  "animals_19": {
+    "stem": "Which statement about dogs and cats is true?",
+    "options": [
+      "They are mammals",
+      "They are reptiles that lay eggs",
+      "They are fish that live in water",
+      "They are birds with feathers"
+    ],
+    "explanation": "Dogs and cats are mammals. They give birth to live young and feed them milk.",
+    "theoryLines": [
+      "Mammals usually give birth to live young.",
+      "They nurse their babies with milk."
+    ]
+  },
+  "animals_20": {
+    "stem": "What do animals do in winter?",
+    "options": [
+      "Almost every species migrates to the same place",
+      "Some migrate, some hibernate, and some stay active",
+      "All sleep the same way and at the same depth",
+      "All follow a similar flying pattern"
+    ],
+    "explanation": "Animals handle winter in different ways: some migrate, some hibernate, and some stay active.",
+    "theoryLines": [
+      "Animals adjust to the seasons in different ways.",
+      "Each kind of animal has its own way to survive."
+    ]
+  },
+  "animals_21": {
+    "stem": "What is the difference between a predator and prey?",
+    "options": [
+      "Both describe a living thing that gets energy only from plants",
+      "A predator hunts and eats other animals; prey is the animal that is hunted",
+      "A predator is always the animal that gets eaten, not the one that hunts",
+      "Prey is always the animal that hunts others in the food chain"
+    ],
+    "explanation": "A predator hunts and eats other animals. Prey is the animal that is hunted and eaten.",
+    "theoryLines": [
+      "Predator and prey are part of food chains.",
+      "Predators hunt; prey is hunted."
+    ]
+  },
+  "animals_22": {
+    "stem": "What is a herbivore?",
+    "options": [
+      "An animal that eats meat",
+      "An animal that eats plants",
+      "An animal that eats everything",
+      "An animal that eats nothing"
+    ],
+    "explanation": "A herbivore eats plants—grass, leaves, fruit, and more. Cows, rabbits, and deer are examples.",
+    "theoryLines": [
+      "Herbivores are an important part of food chains.",
+      "They eat plants, which are producers."
+    ]
+  },
+  "animals_23": {
+    "stem": "What is an omnivore?",
+    "options": [
+      "An animal that eats only meat",
+      "An animal that eats both plants and meat",
+      "An animal that eats only plants",
+      "An animal that eats nothing"
+    ],
+    "explanation": "An omnivore eats both plants and animals. People, bears, and pigs are examples.",
+    "theoryLines": [
+      "Omnivores can eat a wider variety of foods.",
+      "That flexibility can help them survive in more places."
+    ]
+  },
+  "animals_24": {
+    "stem": "What do all animals need to stay alive?",
+    "options": [
+      "Animals only need shelter — nothing else is required.",
+      "All animals need food, water, air, and the right conditions to survive.",
+      "Only muscles and movement keep animals alive.",
+      "Animals only need food and nothing else."
+    ],
+    "explanation": "All living animals share basic needs: food for energy, water to stay hydrated, and air to breathe. Without these, they cannot survive.",
+    "theoryLines": [
+      "All living things share basic needs to survive.",
+      "Animals get the energy they need from the food they eat."
+    ]
+  },
+  "animals_25": {
+    "stem": "What is a camouflage pattern?",
+    "options": [
+      "One solid color with no pattern on the skin",
+      "Colors and patterns that help an animal blend into its surroundings",
+      "Fast movement with no change in appearance",
+      "Copying sounds with no change in body shape"
+    ],
+    "explanation": "Camouflage uses colors and patterns so an animal looks like its surroundings and can hide.",
+    "theoryLines": [
+      "Camouflage helps animals survive.",
+      "Examples include a rabbit in winter and a frog on green leaves."
+    ]
+  },
+  "animals_26": {
+    "stem": "What is an extinct species?",
+    "options": [
+      "A species that now breeds on every continent",
+      "A species in which every individual has died and none are left alive",
+      "A species whose body size doubled in one year",
+      "A species that was only recently discovered"
+    ],
+    "explanation": "An extinct species has no living members left. The dodo is one example.",
+    "theoryLines": [
+      "Extinction can happen for many reasons.",
+      "Protecting species helps prevent extinction."
+    ]
+  },
+  "animals_27": {
+    "stem": "What is a species?",
+    "options": [
+      "A single individual that cannot reproduce with others",
+      "A group of animals that can breed with each other and produce offspring",
+      "A plant group with no shared breeding definition",
+      "Two unrelated animals that never produce offspring"
+    ],
+    "explanation": "A species is a group of living things that can breed with each other and produce fertile offspring. Dogs are one species; cats are another.",
+    "theoryLines": [
+      "Species is a way scientists group living things.",
+      "It helps explain relationships among organisms."
+    ]
+  },
+  "animals_28": {
+    "stem": "What is domestication?",
+    "options": [
+      "Crossing two wild species with no breeding over generations",
+      "Breeding animals over generations so they fit living with people and helping them",
+      "Seasonal migration of a population with no genetic change",
+      "A one-time wild adaptation with no human contact"
+    ],
+    "explanation": "Domestication is when people breed animals over many generations so they live with humans and help them—like dogs, cats, and cows.",
+    "theoryLines": [
+      "Domestication happened over thousands of years.",
+      "Domestic animals differ from their wild relatives."
+    ]
+  },
+  "animals_29": {
+    "stem": "What do animals do to survive?",
+    "options": [
+      "Usually nothing",
+      "Eat, drink, and find shelter",
+      "Sleep all day without seeking food",
+      "Run fast without drinking"
+    ],
+    "explanation": "Animals survive by finding food and water, staying in safe places, reproducing, and avoiding predators.",
+    "theoryLines": [
+      "Every animal has basic needs.",
+      "Animals work to stay alive."
+    ]
+  },
+  "animals_30": {
+    "stem": "What is the difference between a wild animal and a pet?",
+    "options": [
+      "Both live only in open nature with no link to people or homes",
+      "A wild animal lives in nature; a pet lives with people and is suited to living with them",
+      "A pet is defined as an animal that lives only in nature with no domestication history",
+      "A wild animal is always raised at home from birth"
+    ],
+    "explanation": "Wild animals live on their own in nature. Pets live with people, are cared for by them, and are suited to home life.",
+    "theoryLines": [
+      "Pets are domesticated animals.",
+      "Wild animals live independently."
+    ]
+  },
+  "animals_26__v2": {
+    "stem": "What sound does a cat make?",
+    "options": [
+      "Meow",
+      "Bark",
+      "Moo",
+      "Chirp"
+    ],
+    "explanation": "A cat makes a meow sound when it wants attention or is talking to people.",
+    "theoryLines": [
+      "Different animals make different sounds.",
+      "Sounds help us recognize animals."
+    ]
+  },
+  "animals_11__v2": {
+    "stem": "Which animal barks?",
+    "options": [
+      "Cat",
+      "Dog",
+      "Bird",
+      "Fish"
+    ],
+    "explanation": "A dog barks. Barking is one way dogs communicate.",
+    "theoryLines": [
+      "Different animals make different sounds.",
+      "Sounds help animals communicate."
+    ]
+  },
+  "animals_12__v2": {
+    "stem": "Which animal says “meow”?",
+    "options": [
+      "Dog",
+      "Cat",
+      "Bird",
+      "Fish"
+    ],
+    "explanation": "A cat says “meow.” That is the sound cats often use to communicate.",
+    "theoryLines": [
+      "Cats are popular pets.",
+      "They can be very friendly."
+    ]
+  },
+  "animals_13__v2": {
+    "stem": "Which animal has wings?",
+    "options": [
+      "Dog",
+      "Cat",
+      "Bird",
+      "Fish"
+    ],
+    "explanation": "Birds have wings that help them fly.",
+    "theoryLines": [
+      "Wings help birds fly.",
+      "There are many kinds of birds."
+    ]
+  },
+  "animals_14__v2": {
+    "stem": "Which animal lives in water and has fins?",
+    "options": [
+      "Dog",
+      "Cat",
+      "Fish",
+      "Bird"
+    ],
+    "explanation": "Fish live in water and use fins to swim.",
+    "theoryLines": [
+      "Fish breathe with gills.",
+      "There are many kinds of fish."
+    ]
+  },
+  "animals_15__v2": {
+    "stem": "Which animal has fur?",
+    "options": [
+      "Fish",
+      "Bird",
+      "Dog",
+      "Snake"
+    ],
+    "explanation": "Dogs have fur that helps keep them warm and protected.",
+    "theoryLines": [
+      "Mammals have fur or hair.",
+      "Fur helps hold body heat."
+    ]
+  },
+  "animals_17__v2": {
+    "stem": "Which animal has four legs?",
+    "options": [
+      "Fish",
+      "Bird",
+      "Dog",
+      "Snake"
+    ],
+    "explanation": "Dogs have four legs that help them run and jump.",
+    "theoryLines": [
+      "Most mammals have four legs.",
+      "Four legs help many animals move quickly."
+    ]
+  },
+  "animals_19__v2": {
+    "stem": "Which animal can run fast?",
+    "options": [
+      "Fish",
+      "Bird",
+      "Horse",
+      "Hen"
+    ],
+    "explanation": "Horses can run very fast. They have strong, long legs.",
+    "theoryLines": [
+      "Horses are strong, fast animals.",
+      "People have used horses for riding and work."
+    ]
+  },
+  "animals_20__v2": {
+    "stem": "Which of these is an animal?",
+    "options": [
+      "Dog",
+      "Tree",
+      "Rock",
+      "Cloud"
+    ],
+    "explanation": "A dog is a living animal. A tree is a plant, and a rock and a cloud are not animals.",
+    "theoryLines": [
+      "Animals are living things that can usually move and sense their surroundings.",
+      "Plants, rocks, and clouds are not animals."
+    ]
+  },
+  "animals_21__v2": {
+    "stem": "What is the difference between a mammal and a bird?",
+    "options": [
+      "Both lay eggs on the ground and never nurse young",
+      "A mammal gives birth to live young and nurses them; a bird lays eggs",
+      "A bird always gives birth to live young; a mammal lays eggs in a nest",
+      "The only difference is feather color, with no link to reproduction"
+    ],
+    "explanation": "Mammals usually give birth to live young and feed them milk. Birds lay eggs and often sit on them.",
+    "theoryLines": [
+      "Mammals have fur or hair.",
+      "Birds are covered in feathers."
+    ]
+  },
+  "animals_22__v2": {
+    "stem": "What is an animal's habitat?",
+    "options": [
+      "The shape and size of an animal's body.",
+      "The natural environment where an animal lives and finds food, water, and shelter.",
+      "The animals that it hunts only during the night.",
+      "The part of the ecosystem that the animal damages over time."
+    ],
+    "explanation": "A habitat is the natural environment where an animal lives. It provides everything the animal needs: food, water, shelter, and space to survive and reproduce.",
+    "theoryLines": [
+      "Different animals are adapted to live in different habitats.",
+      "Habitats include forests, deserts, oceans, and grasslands."
+    ]
+  },
+  "animals_23__v2": {
+    "stem": "What is a predator?",
+    "options": [
+      "An animal that eats only plants",
+      "An animal that hunts and eats other animals",
+      "A plant that makes food and is not a predator",
+      "A fish that mainly eats algae and plankton"
+    ],
+    "explanation": "A predator hunts and eats other animals. Lions, eagles, and sharks are examples.",
+    "theoryLines": [
+      "Many predators have sharp teeth or claws.",
+      "They are adapted for hunting."
+    ]
+  },
+  "animals_24__v2": {
+    "stem": "What is a herbivore?",
+    "options": [
+      "An animal specialized in hunting live prey",
+      "An animal that mainly eats plants",
+      "A plant that does not eat animal food",
+      "A predatory fish that mainly eats other fish"
+    ],
+    "explanation": "A herbivore eats plants. Cows, rabbits, and zebras are examples.",
+    "theoryLines": [
+      "Herbivores often have teeth suited for chewing plants.",
+      "They do not eat meat as their main food."
+    ]
+  },
+  "animals_25__v2": {
+    "stem": "What is an omnivore?",
+    "options": [
+      "An animal that eats meat with almost no plants",
+      "An animal that eats both plants and meat",
+      "An animal that eats only plants, like a cow",
+      "An animal specialized in algae and plankton"
+    ],
+    "explanation": "An omnivore eats both plants and meat. Bears, pigs, and people are examples.",
+    "theoryLines": [
+      "Omnivores can eat many kinds of food.",
+      "That helps them survive in different places."
+    ]
+  },
+  "animals_26__v3": {
+    "stem": "What is camouflage?",
+    "options": [
+      "A bright color with no link to hiding",
+      "Blending into the surroundings so an animal is harder to see",
+      "Fast movement with no match to the background",
+      "Copying sounds with no visual match to the surroundings"
+    ],
+    "explanation": "Camouflage helps an animal hide by matching its color or shape to the surroundings.",
+    "theoryLines": [
+      "Camouflage can help animals avoid predators or sneak up on prey.",
+      "Examples include zebras, leopards, and octopuses."
+    ]
+  },
+  "animals_27__v2": {
+    "stem": "What is migration?",
+    "options": [
+      "Daily trips with no link to the season",
+      "A seasonal move of animals from one area to another",
+      "Standing in one fixed spot for months",
+      "Short circle runs with no survival purpose"
+    ],
+    "explanation": "Migration is a seasonal journey animals make to find food or better weather.",
+    "theoryLines": [
+      "Many birds migrate long distances.",
+      "Migration happens in certain seasons."
+    ]
+  },
+  "animals_28__v2": {
+    "stem": "What is hibernation?",
+    "options": [
+      "A short, light summer nap",
+      "A deep winter sleep that saves energy",
+      "Staying awake with no rest all winter",
+      "Running faster in winter to stay warm"
+    ],
+    "explanation": "Hibernation is a deep winter sleep that helps an animal save energy when food is scarce.",
+    "theoryLines": [
+      "Bears and some other animals hibernate.",
+      "Hibernation helps them survive winter."
+    ]
+  },
+  "animals_29__v2": {
+    "stem": "What is a life cycle?",
+    "options": [
+      "Life with no growth or maturing",
+      "The stages from birth through growth to the end of life",
+      "Sudden death with no earlier stages",
+      "Birth with no later body development"
+    ],
+    "explanation": "A life cycle is the set of stages in an animal's life—from birth through growth and reproduction to death.",
+    "theoryLines": [
+      "Different animals have different life cycles.",
+      "Life cycles include birth, growth, reproduction, and death."
+    ]
+  },
+  "animals_30__v2": {
+    "stem": "What is an adaptation to the environment?",
+    "options": [
+      "A decorative color with no help for survival",
+      "Traits that make living in a certain environment easier",
+      "Movement with no link to local conditions",
+      "Making sounds with no ecological meaning"
+    ],
+    "explanation": "An environmental adaptation is a trait that helps an animal live in a certain place—such as thick fur for cold or fins for water.",
+    "theoryLines": [
+      "Adaptations can be body features or behaviors.",
+      "They help animals survive."
+    ]
+  }
+}

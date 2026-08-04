@@ -1,0 +1,705 @@
+0	Two identical pots, same amount of water and same light; only temperature different (variable).
+1	A wool string is made of natural fibers — also an insulator; electricity does not pass easily.
+2	Today we'll learn long division — a step-by-step way to divide a big number by a smaller one.
+3	When you fill equal boxes (or groups), the answer is the remainder — not the number of boxes!
+4	In a square you can draw a line from one corner to the opposite corner — that is a diagonal.
+5	Today we're going to learn multiplication — here it's both equal groups and the times table.
+6	In practice you'll find triangle areas — make sure the height is perpendicular to the base!
+7	There are 18 cookies shared equally among 3 children. How many cookies does each child get?
+8	Today we'll check when a number divides evenly by 2, 3, 5, 6, 9, or 10 — using quick rules.
+9	When you practice, look for questions about eggs, young animals, and similarity to parents.
+10	Today in geometry we will learn an important rule: the sum of angles in a triangle = 180°.
+11	Step 3 — Count hops: after Monday: (1) Tuesday → (2) Wednesday → (3) Thursday → (4) Friday
+12	Today in geometry we will learn the perimeter of a triangle — the sum of all three sides.
+13	In practice you'll find trapezoid areas — add bases, multiply by height, and divide by 2!
+14	Important: here we don't practice remainders or long division — only simple fair sharing.
+15	Today we'll learn to estimate a multiplication answer — round the factors, then multiply.
+16	When you practice, look for questions about connections between living things in nature.
+17	Today in geometry we will learn about a rectangular prism — a three-dimensional solid.
+18	In practice you'll find parallelogram areas — make sure the distance is perpendicular!
+19	In practice you'll find dimensions — calculate one layer, then multiply by the height!
+20	Now you know how to solve equal-group problems — like the times table, but in a story.
+21	When you practice, look for questions about observation, comparison, and one variable.
+22	When you practice, look for questions about variables, graphs, and presenting results.
+23	Second way — rows: each row has a certain number of squares; how many rows? Multiply.
+24	In practice you'll find questions: how much is missing to make 10? Use the ten-frame!
+25	2,999 → 3,000: the neighbor after 2,999 = 3,000 — crossing a thousand, still just +1.
+26	When you practice, look for questions about similarity between parents and offspring.
+27	In practice you'll find prisms — calculate base area first, then multiply by height!
+28	Every flower smells a little different — that is the sense of smell helping us know.
+29	When you practice, look for questions about hypothesis, variable, and results table.
+30	Today we will learn about ratios — a comparison between two parts of the same kind.
+31	In practice you will find sequences with missing terms — write down the step first!
+32	- Transparency — light passes through (glass); opacity — light does not pass (wall)
+33	Example: an arrow pointing up — after a quarter turn (90°) it points to the right.
+34	A square has side 6. Is the diagonal shorter than 6, equal to 6, or longer than 6?
+35	A rectangle also has 4 right angles — but in a square all the sides are equal too.
+36	No — in a general parallelogram you need extra information (an angle or a height).
+37	Today we'll classify quadrilaterals — parallelogram, trapezoid, rectangle, square.
+38	Today we'll learn to find all the factors of a number — in math and number theory.
+39	One variable — change only one thing; everything else stays the same (a fair test)
+40	Everything else is the same — same type of plant, same amount of water, same soil.
+41	In a valley — a thick soil layer; rains nourish the soil, sun dries the top layer.
+42	Today we're going to learn multiplication — and here we learn it in a simple way:
+43	Today we'll strengthen division — equal sharing — with numbers up to about 1,000.
+44	Climate change — scientists track changes in average world temperature over time:
+45	In a general parallelogram — the angle between the sides is not necessarily 90°.
+46	Today we'll learn the perimeter of a triangle — the path around all three sides.
+47	A real challenge — but there is something to do, and every small choice matters.
+48	A quadrilateral with 4 angles of 90° and all 4 sides 5 cm. Square or rectangle?
+49	Square with side 6 cm. What is the length of the diagonal? (expression with √2)
+50	Prism — triangular base 6 cm, triangle height 4 cm, prism height 10 cm. Volume?
+51	Interactions — the relationships between living things in the same environment.
+52	Today we will strengthen adding decimals — two digits after the decimal point.
+53	Example: 6 apples and 4 oranges → ratio apples:oranges = 6:4 = 3:2 (simplify).
+54	When you practice, look for questions about coordination between body systems.
+55	Balanced nutrition, enough sleep, and physical activity — support all systems.
+56	Rectangle — 4 right angles; opposite sides equal (not necessarily all sides).
+57	In practice you will find a square — compare the diagonal to the side length!
+58	An improper fraction = numerator is greater than or equal to the denominator.
+59	When you practice, look for questions about ice, water, and states of matter.
+60	Natural water supplies are limited — rain does not always refill them enough.
+61	Round each number to a friendly number (for example to the nearest hundred):
+62	In practice you will find map→real life — first figure out what 1 cm equals!
+63	When you practice, look for questions about human impact on the environment.
+64	Trial number, how many milliliters of water each sponge absorbed, and notes.
+65	When you practice, look for questions about ways to protect the environment.
+66	All three angles "sit" at three different vertices — each in its own place.
+67	Today we will apply parallel and perpendicular to the sides of a rectangle.
+68	399 → 400: the neighbor after 399 = 400 — a hundred boundary, but still +1.
+69	Find how much is missing to the nearest round ten (for example 37 + 3 = 40)
+70	Multiplying by 0 — the answer is always 0, no matter how big the number is.
+71	When you practice, look for questions about soil types and changes in soil.
+72	Horizontal axis — trial number, for example first sponge and second sponge.
+73	In practice you will find a rectangular prism — count 6 rectangular faces!
+74	Reasoning: walk once around the square — you pass 4 sides, each 9 cm long.
+75	An even number — you can split it into 2 equal groups (with no remainder).
+76	It doesn't matter how many hundreds or tens — only the ones digit decides.
+77	When you practice, look for questions about relationships between animals.
+78	When you practice, look for questions about research steps and conclusion.
+79	Now you know how to find the perimeter of a square — first count 4 sides!
+80	In practice you will find length, width, and height — multiply all three!
+81	In practice you'll find heights — don't mix up with the triangle formula!
+82	Check: 60° + 70° + 50° = 180° — the three angles "close" a straight line.
+83	When you add the values, you find out how much money there is altogether.
+84	What does 2⁴ mean? (Base? Exponent? Write it as repeated multiplication.)
+85	29: 2? no. 3? no. 4? no. 5? no. √29 ≈ 5.4 — we've checked enough → prime.
+86	Large example: 48,000, 50,000, 52,000, 54,000 — step of +2,000 each time.
+87	When you practice, look for questions about habitat and special features.
+88	Measure how many milliliters of water each sponge absorbed — and compare.
+89	Diagonal of a rectangle = a line from one corner to the opposite corner.
+90	In practice you will find a rectangle — look for 2 pairs of equal sides!
+91	Check: divisor × quotient = dividend — always check with multiplication.
+92	Check: cannot simplify further — 3 and 2 share no common factor except 1
+93	There are no instructions for wiring circuits here — only understanding.
+94	Now you know how to identify pairs of sides in a rectangle in geometry.
+95	First calculate the area of the base — then "stretch" it by the height.
+96	Here we use small multiplication: groups up to 5, and answers up to 20.
+97	Divisible by 2 = you can split into two equal groups with no remainder.
+98	When you split something into four equal parts, each part is a quarter.
+99	It's like multiplying by 4, then adding a 0 (moving to the tens place).
+100	When you know the pairs, it's easy to find what's missing to reach 100.
+101	When you practice, look for questions about protecting the environment.
+102	In practice you will find a square — look for all 4 lines of symmetry!
+103	A quadrilateral with only parallel bases — trapezoid or parallelogram?
+104	Addition is when you put two groups together to make one bigger group.
+105	67 marbles. Put 7 in each bag. How many marbles won't fill a full bag?
+106	In practice you will find additions with carrying — work step by step!
+107	Example: a sticker on a window — you see it in a mirror from outside.
+108	Also: cylinder, pyramid, cone, sphere — names and general properties.
+109	Multiply by the height — the perpendicular distance between the bases
+110	In a coin problem we usually ask: how much money is there altogether?
+111	Step 2 — Neighbor after: 199 + 1 = 200 (crossing ten — we reach 200!)
+112	Important: don't count the start day. No clock or dates in the month.
+113	Link to factors: if 5 is a factor of 20 — then 20 is a multiple of 5.
+114	When you practice, look for questions about seeds, water, and growth.
+115	In a rectangle — top side and right side. Parallel or perpendicular?
+116	Equal groups: 4 coins of 5 ₪ → 4 × 5 = 20 (like in the times table).
+117	In practice you'll find addition of three numbers. Add step by step!
+118	In practice you'll find complements to 100 and estimation questions!
+119	Ten thousands: after borrowing there are 6 ten thousands. 6 − 2 = 4.
+120	When you practice, look for questions about hands, teeth, and sleep.
+121	When you practice, look for questions about who eats whom in nature.
+122	Does a plant in a warm room grow faster than a plant in a cold room?
+123	- Scientists measure temperature, glaciers, sea level — over decades
+124	Today in geometry we will learn the names of common quadrilaterals.
+125	A floor tile — 4 equal sides and 4 right angles. What is it called?
+126	A playground — a "tilted" parallelogram: 2 pairs of parallel sides.
+127	In practice you'll find circle circumferences — don't forget the 2!
+128	When you split something into two equal parts, each part is a half.
+129	Does a plant by a window grow taller than a plant in a dark corner?
+130	When you divide an amount fairly, each person gets an equal share.
+131	In practice you will find percents — multiply, then divide by 100!
+132	Imagine a flashlight on a wall — shadow; on a mirror — reflection.
+133	When you practice, look for questions about shadow and reflection.
+134	In practice you will find a square — add all the sides around it!
+135	In practice you'll find perimeters — don't mix them up with area!
+136	Important rule: The farther right a number is — the bigger it is.
+137	Now you know how to solve coin problems — including equal groups.
+138	Important: one step only. No division — that's a different topic.
+139	Now you know: in multiplication and subtraction — multiply first.
+140	- Soil — a place to hold on and get water and important nutrients
+141	When you practice, look for questions about variables and graphs.
+142	Today in geometry we will learn about two ways a shape can move:
+143	In practice you'll find trapezoid heights — add the bases first!
+144	Multiplication = how many equal groups × how many in each group.
+145	In practice you will find real life→map — convert km to m first!
+146	a square floor tile, a square window, a square on a game board.
+147	Step 1 (reasoning): a square has 4 equal sides, each 7 cm long.
+148	In practice you'll find circle areas — square the radius first!
+149	- Chocolate broken into 4 equal pieces — each piece = a quarter
+150	In practice you will find sales — calculate the discount first!
+151	When you practice, look for questions about forces and magnets.
+152	Perimeter = side + side + side + side — go around all 4 sides.
+153	Quadrilateral PQRS — only PQ ∥ SR. Trapezoid or parallelogram?
+154	In practice you'll find triangle perimeters — add them all up!
+155	In practice you'll find prisms — don't forget ÷2 for the area!
+156	Check: 6 is to the right of 4, so 6 is bigger than 4. Correct!
+157	1. What do we know? — how many altogether, and how many groups
+158	Today, tomorrow, in how many days — hop along the row of days.
+159	Now you know: in addition and multiplication — multiply first.
+160	Find a round number — 100, 1,000 — that's close to the amount!
+161	√37 ≈ 6.1 — we've checked enough. No factors besides 1 and 37.
+162	You need the difference — bigger minus smaller, not the total!
+163	In practice you will find the GCF — list shared factors first!
+164	A plant moved to a dark room — what will happen to its leaves?
+165	In practice: opposite → parallel; corner → 90° perpendicular!
+166	In practice you'll find diagonals — don't just multiply by 2!
+167	In practice you'll find pyramids — base area, then one third!
+168	In practice you'll find three dimensions — multiply them all!
+169	Imagine 47 children going on a trip — split into groups of 6.
+170	Write repeated multiplication — and work it out step by step.
+171	Today we'll learn to find the price after a percent discount.
+172	Now you know how to solve shopping questions with a discount.
+173	Reflection — we make a mirror image of it, like in a mirror.
+174	Check sides — width and height are different → not a square.
+175	Today in geometry we will learn about rotation in the plane.
+176	Today in geometry we will learn about symmetry in the plane.
+177	Diagonal of a parallelogram — first understand what it does.
+178	In practice you'll find cylinders — square the radius first!
+179	Today we're going to learn word problems about equal groups.
+180	When the division comes out exactly — there is no remainder.
+181	Now you know how to continue sequences with a constant step.
+182	In practice you'll find adding times. Add the minutes first!
+183	Climate is the weather pattern over years in a certain area.
+184	In a rectangle — top and bottom: parallel or perpendicular?
+185	3 pairs of opposite faces — like a rectangle, but in space.
+186	In a rectangle that is not a square — usually only 2 lines.
+187	Trapezoid — separate: only one pair parallel (not 2 pairs).
+188	Friendly pair first: 350 + (120 + 80) — when 120 + 80 = 200
+189	Tenths: 3 (after borrowing) < 7 → borrow from ones. 13−7=6.
+190	Remainders appear in word problems — how much is left over.
+191	Recycling bottles — less waste, less need for new material.
+192	When you practice, look for questions about Earth's layers.
+193	In practice you'll find diagonals — first square each leg!
+194	Height — the perpendicular distance between the two bases.
+195	2. × height — the perpendicular distance between the bases
+196	A friendly pair first: 125 + (40 + 35) — when 40 + 35 = 75
+197	Write repeated multiplication — and multiply step by step!
+198	Hundreds: after borrowing there are 3 hundreds. 3 − 3 = 0.
+199	When you divide fairly, each person gets the same amount.
+200	Important: whole shekels only — no agorot. One step only.
+201	Step 1 — What do we know? 3 coins, each worth 10 shekels.
+202	Now you know how to continue sequences with a fixed step.
+203	When there's no remainder, the division comes out evenly.
+204	Today we'll find neighbors in big numbers — up to 10,000.
+205	Important: add all three numbers — do not stop after two!
+206	Vertical axis — amount of water absorbed, in milliliters.
+207	Today we'll review three-dimensional solids in geometry.
+208	Today we will learn volume of a prism — triangular base.
+209	The denominator — how many equal parts there are in all.
+210	Using it in addition: "make 10 first" — then keep going.
+211	On the number line: each step = a jump of the same size.
+212	hundreds: after borrowing, 5 hundreds remain → 5 − 3 = 2
+213	Add in a handy order, and don't forget the third number!
+214	Write 23 on top, 4 on the bottom (lined up on the right)
+215	Hundreds: after borrowing, 5 hundreds remain → 5 − 3 = 2
+216	Ten-thousands, thousands, hundreds — all equal (41,5__).
+217	Check: 30,000 − 25,000 = 5,000 — the step stays the same
+218	One digit + one digit = 2 digits after the decimal point
+219	Leftover questions = division with remainder + checking.
+220	4 groups, 3 stickers in each group → 3 + 3 + 3 + 3 = 12
+221	Important: whole shekels only. One step — one purchase.
+222	Fair sharing = split the whole amount into equal parts.
+223	Step 1 — What do we know? 6 bags, 3 apples in each bag.
+224	Round each number to a friendly number — then multiply.
+225	Break apart: 12 × 8 = (10 × 8) + (2 × 8) = 80 + 16 = 96
+226	What are you asked? How many more the one with more has
+227	0 × 125 = 0 — even when 0 comes first, the answer is 0.
+228	Count digits after the decimal point: 1 + 1 = 2 digits.
+229	Difference questions appear often — with large numbers.
+230	Second step — hypothesis: what do we think will happen?
+231	Example: a baked egg — does not return to a liquid egg.
+232	At each stage — shape, size, and behavior change a lot.
+233	Variable — what we change (for example amount of water)
+234	Volume of a triangular prism = triangle area × height.
+235	Today we will learn volume of a pyramid — square base.
+236	Perimeter or area? — and then 4 × side or side × side!
+237	repeated addition of the same number, or equal groups.
+238	We need to find the difference — bigger minus smaller.
+239	9 × 8 = 72 — comes out exactly, no remainder (0 left).
+240	You need to borrow in many places — work step by step.
+241	0.3 × 0.2 = 0.06 — two digits after the decimal point.
+242	- Legs — muscles contract and move thanks to the bones
+243	Every triangle has three angles — one at each vertex.
+244	In practice you'll find spheres — calculate r³ first!
+245	Multiplication = adding equal groups again and again.
+246	Now you know how to find what's missing to reach 100.
+247	Does 7 go into 56? 7 × 8 = 56. Write 8 in the answer.
+248	Multiplying by 0 means "zero groups" or "zero times."
+249	You can add two first, then the third — step by step.
+250	In practice you'll find store and discount questions.
+251	141 = full boxes; 4 = packages left over (remainder).
+252	What happens to the food web if all tigers disappear?
+253	You can calculate in steps: first 5 + 6, then add 7.
+254	Fold a sheet in two — each side = half of the sheet.
+255	38 children in groups of 5 — how many are left over?
+256	2,450 + 1,200 = 3,650 (the two bigger numbers first)
+257	Today we'll find neighbors in numbers up to 100,000.
+258	Now you know how to find the price after a discount.
+259	Thousands: 7 (after borrowing) − 9 — borrow → 17−9=8
+260	Imagine a large puddle in the schoolyard after rain.
+261	Here we do not calculate volume — only count parts.
+262	Why? In each row there are 7 units, 7 rows → 7 × 7.
+263	Perimeter = a + b + c — the sum of all three sides.
+264	Join groups or hop to the right on the number line!
+265	For example: 399 → 400 → 401 — each step is only 1.
+266	Steps: multiply left to right — or in small groups.
+267	We will also learn what animals need to stay alive.
+268	- Heart — pulse rises (connection to other systems)
+269	→ Trapezoid — not a parallelogram (only one pair).
+270	Or: 5 × 4 × 6 = 120 — multiply all three together.
+271	Number line from 0 to 10 (every number is marked):
+272	Half = 6 — that's one part out of two equal parts.
+273	Half = 5 — that's one part out of two equal parts.
+274	1 — neither prime nor composite (only one factor).
+275	8,400 ÷ 12 = how many times does 12 go into 8,400?
+276	Tens: after borrowing there are 9 tens. 9 − 6 = 3.
+277	Write in a table how many seeds sprouted each day.
+278	Same type of sponge, same amount of water to test.
+279	4 edges on top, 4 on the bottom, 4 on the sides →
+280	- Reasoning: 4 sides, and each side is 9 cm long.
+281	- 10 + 10 = 20 (one group + one group = 2 groups)
+282	Today we're going to learn what a number line is.
+283	Today we're going to review even and odd numbers.
+284	2. What are we asked? — how many each person gets
+285	How many in each group? 4 × 21 = 84 → 84 ÷ 4 = 21
+286	31 balloons — split into pairs (2 in each group).
+287	How many full groups? 9 × 6 = 54 (6 full groups).
+288	How many eggs are left after filling the cartons?
+289	- (6 + 10) = 16 — average of the bases before ÷2
+290	In practice you'll find cones — don't forget ÷3!
+291	Pyramid — base 4 cm × 6 cm, height 9 cm. Volume?
+292	Pyramid — square base 6 cm, height 9 cm. Volume?
+293	There are 12 objects, split into 3 equal groups.
+294	There are 20 objects, split into 5 equal groups.
+295	Find how many in each group, or how many groups!
+296	Important: 4 equal parts — each one = a quarter.
+297	Important: no remainder. One step — one sharing.
+298	In practice you'll find distance-time questions.
+299	- Oil, coal, gas — formed over millions of years
+300	Climate — weather pattern over years in an area:
+301	- Moon — satellite; other planets — farther away
+302	Parallelogram — base 8 cm, area 40 cm². Height?
+303	Cone — one circular base + one apex at the top.
+304	Tip (after pairing up): look at the last digit:
+305	Step 3 — divisible by 5? Yes — last digit is 5.
+306	First make 10: 7 + 3 = 10, 3 left → 10 + 3 = 13
+307	8 × 6 = 6 × 8 (easier to think: 6 groups of 8).
+308	First thousands, then hundreds, tens, and ones!
+309	You need the difference — bigger minus smaller.
+310	Check: order — tomatoes first, cucumbers second
+311	Solid — hard, keeps its shape (rock, wood, ice)
+312	Plants make food for themselves using sunlight.
+313	First step — question: what do we want to test?
+314	Fill it in rows — 3 small squares in each row.
+315	A square with side 6 cm — count all the sides:
+316	Rectangular prism (box) — 6 rectangular faces.
+317	185 + 160 = 345 (the two bigger numbers first)
+318	Friendly pair first: 45 + 55 = 100 (ends in 0)
+319	31 − 30 = 1 — 1 balloon left over (remainder).
+320	A crate of apples: 127 apples, 15 in each box.
+321	Fast multiplication helps in every math topic.
+322	Fourth step — recording: a table with results.
+323	The light comes back to us — we see ourselves.
+324	In practice, fill in small squares and count!
+325	Don't use the slanted side — only the height.
+326	- Paper folded into 4 — each part = a quarter
+327	| **title_english** | Word Problems — Coins |
+328	Making 100: ask — how much do we need to add?
+329	In practice you'll find comparison questions.
+330	In both cases the answer is the same — 2,150.
+331	Find the base and how many times to multiply!
+332	In both cases the answer is the same — 2,350.
+333	Add three numbers — first two, then the third
+334	In practice you'll find difference questions.
+335	Egg, then tadpole, and finally an adult frog.
+336	What comes first in a butterfly's life cycle?
+337	Go around the triangle — add each side once.
+338	- Rectangle: base 10, height 6 → 10 × 6 = 60
+339	One step to the right → 13 (neighbor after).
+340	When you subtract — you take away an amount.
+341	40 divides by 2 — 20 + 20 (two equal groups)
+342	How many full groups? 6 × 7 = 42 (7 groups).
+343	In practice you'll find remainder questions.
+344	Round from every side (like a soccer ball).
+345	Each step to the right = one number bigger.
+346	Break apart — 60 + 8 = 68, and 20 + 4 = 24.
+347	In practice you'll find discount questions.
+348	In practice you'll find two-step questions.
+349	Fifth step — conclusion: what did we learn?
+350	Example: the corner of a room — two walls.
+351	In a square every corner is a right angle:
+352	7, 8, 9, 10 — that's counting forward too!
+353	One step to the right → 9 (neighbor after)
+354	- A pizza cut in two — each slice = a half
+355	12 cookies — split into four equal groups.
+356	20 cookies — split into four equal groups.
+357	5 × 4 = 20 — 4 in each box (4 full boxes).
+358	Check: 70 + 30 = 100, and 2 + 8 = 10 → 100
+359	35 minutes + 25 minutes — how many in all?
+360	Strategy — "get to 100 first" in addition:
+361	You don't count one by one — you estimate:
+362	Ten-thousands: 2 (after borrowing) − 0 = 2
+363	Ten-thousands: 6 (after borrowing) − 2 = 4
+364	Same amount of water, same pot, same seed.
+365	In practice you will find questions like:
+366	Parallelogram: 2 pairs of parallel sides.
+367	Height of a triangle = (area × 2) ÷ base.
+368	(A parallelogram = 2 pairs; here only 1.)
+369	When you add tens — you add groups of 10:
+370	Each time you move one step to the right.
+371	Divisible by 2? Yes — you can do 15 + 15.
+372	6 × 7 = 42 — 7 in each bag (7 full bags).
+373	- How many groups like that? ≈ 120 groups
+374	First understand step one, then step two.
+375	Store questions = percents + subtraction.
+376	Fill it in rows — 4 squares in each row.
+377	Edges — the lines between two faces: 12.
+378	Perimeter = 5 + 6 + 7 — all three sides.
+379	Height of a parallelogram = area ÷ base.
+380	Area of a parallelogram = base × height.
+381	Area unit: cm² — not cm (that's length).
+382	2. What are we asked? — the total amount
+383	15 ÷ 3 = 5 — each child gets 5 stickers.
+384	Break apart: 11 × 7 = (10 × 7) + (1 × 7)
+385	About how many are 500 marbles in a box?
+386	2 digits after the decimal point → 3.60.
+387	Area of a triangle = base × height ÷ 2.
+388	Cylinder — two circular bases, no apex.
+389	How much is left — we need to subtract.
+390	- 199 → neighbor after = 200 (not 190!)
+391	18 ÷ 3 = 6 → each child gets 6 cookies.
+392	Now you're practicing the times tables.
+393	Neighbor after = +1 (one step forward).
+394	Strategy — "make 10" in a big addition:
+395	Check: 1,200 − 1,100 = 100 — same jump.
+396	- Thousands digit 8 → round up → 40,000
+397	Check: 45 is 30 parts out of 100 of 150
+398	- Root — under the soil, takes in water
+399	Does a plant by the window grow taller?
+400	Color, size, shape — sometimes similar.
+401	Each edge is a line between two faces.
+402	Square: rectangle + all 4 sides equal.
+403	Trapezoid: one pair of parallel sides.
+404	6 faces — all rectangles (or squares).
+405	Here — the angle of each tile matters.
+406	Prism: base 6 cm × 4 cm, height 10 cm:
+407	Split: 4 + 4 + 4 = 12 — 3 groups of 4.
+408	84 ÷ 4 — 84 balls into 4 equal groups:
+409	96 ÷ 3 = 32 — 32 balls in each basket.
+410	What's inside the parentheses — first!
+411	Break each number apart by place value
+412	First find the amount of the discount!
+413	- Hundreds digit 7 → round up → 39,000
+414	Thousands: 9 (after borrowing) − 3 = 6
+415	4 packages were left over (remainder).
+416	- A windy day — the leaves move around
+417	You move it to a dark room for a week.
+418	A square has 4 sides, each 8 cm long.
+419	from corner to corner — longer than 6
+420	The short sides (opposite each other)
+421	Cube — all 6 faces are equal squares.
+422	3 + 3 + 3 + 3 = 12 — 3 in each group.
+423	5 + 5 + 5 + 5 = 20 — 5 in each group.
+424	Start with groups or the times table!
+425	First hundreds, then tens, then ones!
+426	Neighbor before = −1 (one step back).
+427	Thousands digit 8 → round up → 40,000
+428	Hundreds: 9 (after borrowing) − 4 = 5
+429	Read the question — what is step one?
+430	300 + 150 = 450, then 450 − 100 = 350
+431	4 bottles were left over (remainder).
+432	Who is usually first in a food chain?
+433	Pot A gets the right amount of water.
+434	There is also competition — for what?
+435	Pollution exists in all environments:
+436	- 12 edges (lines between the faces)
+437	- A third side that is different (6)
+438	A triangle has only 3 sides — not 4!
+439	- Not a square — not all sides equal
+440	The long sides (opposite each other)
+441	Count — top, bottom, and four sides.
+442	In a rectangle — all angles are 90°.
+443	Step 1 (reasoning): 4 sides of 9 cm.
+444	Sum of angles around a point = 360°.
+445	She walks step by step to the right:
+446	How many minutes of watching in all?
+447	Add two first: 5,000 + 3,500 = 8,500
+448	Before 82,000: 81,999; after: 82,001
+449	Write: 0.3̄ (a bar over 3) or 0.333…
+450	Fins help it swim and move in water.
+451	What comes after experiment results?
+452	- 6 on top ∥ 6 on bottom — parallel
+453	There are 4 corners — add them all:
+454	5 + 5 + 5 + 5 = 20 — 4 groups of 5.
+455	Important: the parts must be equal!
+456	Important: 4 parts — and all equal!
+457	Neighbor after = the number plus 1.
+458	5 × 4 = 20 → 20 pencils altogether.
+459	23 ÷ 5 — 23 cookies, 5 in each box:
+460	One after another: (350 + 120) + 80
+461	Tenths: 5 (after borrowing) − 3 = 2
+462	Yes, 8,800 is a reasonable estimate
+463	Neighbor after: 75,300 + 1 = 75,301
+464	Work by place first, then by value!
+465	In a square all 4 sides are equal.
+466	Multiply the first two dimensions:
+467	- Two sides of length 8 (opposite)
+468	- Two sides of length 3 (opposite)
+469	Quadrilateral PQRS — only PQ ∥ SR.
+470	Write 52 and 27 — ones under ones.
+471	One after another: (125 + 40) + 35
+472	23 − 20 = 3 — 3 cookies left over.
+473	Ones: 7 (after borrowing) − 3 = 4.
+474	Grass, then a beetle, then a bird.
+475	8 − __ = 3 — how many were taken?
+476	Does 30 divide by 2? By 5? By 10?
+477	Divisible by 10? Yes — ends in 0.
+478	How many cookies each child gets.
+479	0.3 + 0.4 = 0.7 (after the point)
+480	Before 499 = 498, after 499 = 500
+481	47 ÷ 6 — 47 coins, 6 in each bag:
+482	850 ÷ 7 — does not divide evenly.
+483	A small puppy, then an adult dog.
+484	Why write in a journal every day?
+485	In a square every corner is 90°.
+486	2 pairs — not all 4 sides equal.
+487	For example (base 10, height 4):
+488	3 × 2 — three groups of 2 stars:
+489	Divisible by 5? Yes — ends in 0.
+490	Three more quarters — each is 4.
+491	Three more quarters — each is 5.
+492	17 − 16 = 1 — 1 cookie left over
+493	Now you know: parentheses first.
+494	47 − 42 = 5 — 5 coins left over.
+495	Multiples of 4 (the first ones):
+496	17 — factors: 1, 17 only → prime
+497	Work step by step with borrowing
+498	First solid, then liquid (water)
+499	Another step to the right → 10.
+500	12 cookies — four equal groups:
+501	- Or 4 × 4 = 16 (4 groups of 4)
+502	Break apart into tens and ones!
+503	5 boxes, 4 pencils in each box.
+504	Total watching time: 60 minutes
+505	53 − 48 = 5 — 5 coins left over
+506	Look only at the ones digit: 8.
+507	Ones digit 7 → round up → 3,850
+508	Check: 2/3 = 8/12  (same value)
+509	340 oranges, 12 in each basket.
+510	- hundreds = 8 (≥ 5) → round up
+511	- tens: 9−7=2 (after borrowing)
+512	The hand needs to move quickly.
+513	Count 4 sides — each one is 6.
+514	Square base 6 cm, height 9 cm:
+515	Cylinder — two circular bases.
+516	● ● ● ● ● ● ● ● ← 8 were there
+517	Hop one step to the right → 9.
+518	Hop one step to the right → 3.
+519	Another step to the right → 4.
+520	Another step to the right → 5.
+521	Tomorrow = the day after today
+522	4 coins, each worth 5 shekels.
+523	Find the multiplication first!
+524	5 × 5 = 25, then 25 × 5 = 125.
+525	0 groups of 125 = nothing = 0.
+526	What does a pulling action do?
+527	- 4 rows: 4 × 4 = 16 squares.
+528	- 6 faces (each one a square)
+529	The diagonal is longer than 8
+530	4 right angles — all are 90°.
+531	4 sides in total — all are 5.
+532	48 ≠ 144 — don't mix them up!
+533	You don't have to start at 1.
+534	Hop one step to the right → 6
+535	Another step to the right → 7
+536	Another step to the right → 8
+537	Hop one step to the right → 5
+538	Another step to the right → 6
+539	6 + 6 = 12 — 6 in each group.
+540	8 + 8 = 16 — 8 in each group.
+541	Parentheses first: 8 + 2 = 10
+542	Parentheses first: 15 − 6 = 9
+543	185 − 180 = 5 The step is +5.
+544	Hundreds digit: 7 → round up.
+545	- Throw trash only in the bin
+546	Measure the height every day.
+547	It does not run out like oil.
+548	How does climate affect life?
+549	Square on every face → cube.
+550	Cone — circular base + apex.
+551	9 × 4 — 9 groups, 4 in each:
+552	612 bottles, 8 on each tray.
+553	Plants make food with light.
+554	Height every day in a table.
+555	Electricity (concepts only):
+556	- 4 side faces — rectangles
+557	Connects opposite vertices.
+558	= means "that's the total".
+559	- Split into 3 equal groups
+560	- Total: 6 + 6 + 6 + 6 = 24
+561	3. Subtract ones, then tens
+562	5 boxes, 4 pencils in each:
+563	3 × 6 = 18 — 6 full groups.
+564	5 × 7 = 35 — 7 full groups.
+565	Box 1–6: 80 pencils in each
+566	7 × 8 = 56 (8 full groups).
+567	Find all the factors of 30.
+568	Ones digit: 2 → round down.
+569	List all the factors of 36.
+570	List all the factors of 48.
+571	Value of each part: 40÷4=10
+572	Height = (area × 2) ÷ base
+573	3 × 3 = three groups of 3.
+574	3 + 3 = 6, then 6 + 3 = 9.
+575	Make equal groups and add!
+576	4 groups, 6 in each group.
+577	7 groups, 3 in each group.
+578	4 × 4 = 16 — 4 in each box
+579	19 − 18 = 1 — 1 left over.
+580	Add the other two numbers!
+581	7 × 8 = 7 groups of 8 = 56
+582	Multiply first: 5 × 3 = 15
+583	Multiply first: 3 × 4 = 12
+584	Multiply first: 4 × 6 = 24
+585	8 × 6 = 48 — 6 in each bag
+586	59 − 56 = 3 — 3 left over.
+587	Check only the ones digit!
+588	Tens digit: 3 → round down
+589	Find all the factors of 36
+590	Price after discount: $120
+591	Break apart by place value
+592	Price after discount: $170
+593	List all the factors of 48
+594	The rule: −50 at each step
+595	Adaptations help survival:
+596	- Work with a teacher only
+597	An arrow drawn on a page:
+598	6 faces, each a rectangle
+599	Area = base × height ÷ 2.
+600	Still need to add 2 more:
+601	3 × 2 = three groups of 2
+602	- A number above each dot
+603	Break into tens and ones!
+604	76 is divisible by 2 only
+605	- 9 + 1 = 10, 5 left over
+606	Multiply first: 4 × 2 = 8
+607	Before 3,998, after 4,000
+608	- The jump: +50 each time
+609	Use the result for step 2
+610	- The rule: a step of +50
+611	- Height — bottom to top
+612	4 right angles, each 90°
+613	4 sides, all of length 4
+614	- Not 9×9 — that's area!
+615	Area = base × height ÷ 2
+616	Multiply base by height:
+617	- > — read: greater than
+618	Look for what's missing!
+619	- The step: +5 each time
+620	The step: +10 each time.
+621	5² — base 5, exponent 2.
+622	Ones digit: 5 → round up
+623	72 pens — 9 in each box.
+624	Break apart: 30 + 5 = 35
+625	Break apart: 10 + 5 = 15
+626	Break apart: 10 + 4 = 14
+627	Color, size, body shape.
+628	Circular base → circle.
+629	Example with a ladybug:
+630	# Word Problems — Coins
+631	÷10: ones digit 0 only.
+632	About how many is that?
+633	- 1,999 → after = 2,000
+634	The neighbor after = +1
+635	You need a food source.
+636	How many rows? 3 rows.
+637	5 + 6 = 11 (two sides)
+638	Example with a rocket:
+639	There were 8 stickers.
+640	3 stickers were taken.
+641	Look for equal groups!
+642	9 × 7 — 9 groups of 7:
+643	Safe experiments only:
+644	- Not all sides equal
+645	Area = base × height.
+646	- < — read: less than
+647	Multiplication first!
+648	What did each one do?
+649	4 rows — 4 × 4 = 16.
+650	5 rows — 5 × 5 = 25.
+651	Height = area ÷ base
+652	Area = base × height
+653	Step 1 — base layer:
+654	Find what's missing!
+655	× means "groups of".
+656	Example with apples:
+657	- Total: 50 + 9 = 59
+658	35 divides only by 5
+659	4 groups of 6 stars:
+660	- Total: 40 + 4 = 44
+661	3 children left over
+662	Find the jump first!
+663	With a teacher only.
+664	- Neighbor after: 6
+665	Example with paper:
+666	Example with pizza:
+667	- Total: 5 × 4 = 20
+668	- 499 → after = 500
+669	Find the GCF first!
+670	Solve step by step!
+671	4 < 5 → round down.
+672	Look at a sticker:
+673	There are 6 rows →
+674	In every triangle:
+675	- CD — bottom base
+676	- > — greater than
+677	But still only +1.
+678	Does 6 go into 36?
+679	- 6 in each group
+680	- 4 in each group
+681	Yes — 6 × 2 = 12.
+682	Yes — 6 × 6 = 36.
+683	8 ≥ 5 → round up.
+684	Today: Thursday.
+685	Round, then add!
+686	- The step: +500
+687	- after: 125,001
+688	- AB — top base
+689	- < — less than
+690	- after: 45,601
+691	- after: 72,001
+692	- after: 48,651
+693	Today: Friday.
+694	Pair up first!
+695	Today: Monday.
+696	- after: 2,451
+697	2 groups of 4
+698	Today: Monday
+699	We also move:
+700	- after: 351
+701	Solve step 1
+702	- 4 groups
+703	- 5 groups
+704	- 5 rows

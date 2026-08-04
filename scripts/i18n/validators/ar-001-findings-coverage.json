@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "purpose": "Map current audit findings to validator rule IDs (fail-before / pass-after)",
+    "linguistic_total": 29,
+    "runtime_total": 3,
+    "broad_allowlists": 0
+  },
+  "linguistic": [
+    { "id": "L01", "family": "Leo learning template", "ruleIds": ["brand-leo-lion-translation", "brand-leo-missing-latin"], "validator": "ar-001-brand-validator.mjs" },
+    { "id": "L02", "family": "Leo learning template — balls", "ruleIds": ["brand-leo-missing-latin"], "validator": "ar-001-brand-validator.mjs" },
+    { "id": "L03", "family": "Leo transliteration ليو", "ruleIds": ["brand-leo-transliteration"], "validator": "ar-001-brand-validator.mjs" },
+    { "id": "L04", "family": "Leo stickers/coins/average/shopping family", "ruleIds": ["brand-leo-en-authority"], "validator": "ar-001-brand-validator.mjs" },
+    { "id": "L05", "family": "Leo average template", "ruleIds": ["brand-leo-missing-latin"], "validator": "ar-001-brand-validator.mjs" },
+    { "id": "L06", "family": "Leo shopping template", "ruleIds": ["brand-leo-missing-latin"], "validator": "ar-001-brand-validator.mjs" },
+    { "id": "L07", "family": "demo friends/Leo Number", "ruleIds": ["content-demo-leo-number"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L08", "family": "School Subject", "ruleIds": ["content-school-subject-operator", "term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L09", "family": "School Subject portal family", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L10", "family": "Public Subject", "ruleIds": ["content-public-subject-kids-benefit", "term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L11", "family": "Public Subject parallel", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L12", "family": "Grade year level", "ruleIds": ["content-public-grade-phase", "term-academic-grade-darajat"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L13", "family": "Grade year level sweep", "ruleIds": ["term-academic-grade-darajat"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L14", "family": "Copilot Subject", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L15", "family": "Report Subject — across/by/coverage", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L16", "family": "Report Subject — in this subject", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L17", "family": "Report Subject — coverage by subject", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L18", "family": "Report Subject vs Topic", "ruleIds": ["term-academic-subject-mawdu", "term-topic-as-subject"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L19", "family": "Learning subject-level / cross-subject", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L20", "family": "Rewards series.subjects", "ruleIds": ["term-academic-subject-mawdu"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L21", "family": "Class group → طبقة", "ruleIds": ["term-class-group-wrong"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L22", "family": "Class group → درس", "ruleIds": ["term-class-group-wrong"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L23", "family": "Tic-Tac-Toe", "ruleIds": ["content-tic-tac-toe-title"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L24", "family": "Books audio stop", "ruleIds": ["content-books-audio-stop"], "validator": "ar-001-terminology-validator.mjs" },
+    { "id": "L25", "family": "Leaf/index mismatch — School", "ruleIds": ["leaf-index-value-mismatch"], "validator": "ar-001-leaf-index-parity-validator.mjs" },
+    { "id": "L26", "family": "Leaf/index mismatch — Worksheets", "ruleIds": ["leaf-index-value-mismatch"], "validator": "ar-001-leaf-index-parity-validator.mjs" },
+    { "id": "L27", "family": "Leaf/index mismatch — Reports", "ruleIds": ["leaf-index-value-mismatch"], "validator": "ar-001-leaf-index-parity-validator.mjs" },
+    { "id": "L28", "family": "Leaf/index mismatch — Learning", "ruleIds": ["leaf-index-value-mismatch"], "validator": "ar-001-leaf-index-parity-validator.mjs" },
+    { "id": "L29", "family": "Leaf/index stale index values", "ruleIds": ["index-key-missing-in-leaf"], "validator": "ar-001-leaf-index-parity-validator.mjs" }
+  ],
+  "runtime": [
+    { "id": "R01", "family": "game interstitial", "ruleIds": ["runtime-interstitial-hardcoded-en", "runtime-interstitial-not-wired"], "validator": "ar-001-hardcoded-runtime-validator.mjs" },
+    { "id": "R02", "family": "finish keys", "ruleIds": ["runtime-finish-key-missing-leaf", "runtime-finish-raw-key-fallback"], "validator": "ar-001-hardcoded-runtime-validator.mjs" },
+    { "id": "R03", "family": "worksheet PDF", "ruleIds": ["runtime-worksheet-pdf-standalone"], "validator": "ar-001-hardcoded-runtime-validator.mjs" }
+  ]
+}

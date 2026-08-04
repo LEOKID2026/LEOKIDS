@@ -12,8 +12,10 @@
     "topics_worth_watching": "مواضيع تستحق المشاهدة",
     "topics_worth_strengthening": "مواضيع تستحق التعزيز",
     "topics_worth_guiding_in_practice": "مواضيع تستحق التوجيه في الممارسة العملية",
-    "topics_with_few_questions": "المواضيع مع بعض الأسئلة",
+    "topics_with_few_questions": "مواضيع بأسئلة قليلة",
     "practice_above_grade_level": "ممارسة فوق مستوى الصف",
-    "earlier_foundation_practice": "الممارسة التأسيسية السابقة"
+    "earlier_foundation_practice": "الممارسة التأسيسية السابقة",
+    "in_review": "قيد المراجعة",
+    "topics": "مواضيع"
   }
 }

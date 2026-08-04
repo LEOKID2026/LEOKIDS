@@ -109,6 +109,7 @@ export default async function handler(req, res) {
     titleHe: body?.titleHe,
     seed: body?.seed,
     mixedTopicKeys: body?.mixedTopicKeys,
+    interfaceLocale: body?.interfaceLocale,
   });
 
   if (!validated.ok) {

@@ -19,7 +19,7 @@
     "personal_activity": "النشاط الشخصي",
     "class_activity": "النشاط الصفي",
     "not_available": "غير متوفر",
-    "personal_activity_from_parent": "نشاط شخصي من الوالدين",
+    "personal_activity_from_parent": "نشاط شخصي من ولي الأمر",
     "report": "تقرير",
     "activity": "نشاط",
     "partial": "جزئي",
@@ -39,6 +39,14 @@
     "moderate": "معتدل",
     "strong": "قوي",
     "limited": "محدود",
-    "inconsistent": "غير متناسق"
+    "inconsistent": "غير متناسق",
+    "subject_math": "الرياضيات",
+    "subject_geometry": "الهندسة",
+    "subject_english": "الإنجليزية",
+    "subject_science": "العلوم",
+    "unknown": "غير معروف",
+    "activity_subject_grade": "{base} - {subject} الصف {grade}",
+    "speed": "السرعة",
+    "quiz": "اختبار"
   }
 }

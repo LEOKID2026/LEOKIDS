@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "view_result": "عرض النتيجة",
+    "continue": "متابعة",
+    "start": "ابدأ",
+    "questions_meta": "أسئلة",
+    "class_activities": "أنشطة الفصل",
+    "parent_activities": "أنشطة أولياء الأمور",
+    "intro": "تظهر هنا الأنشطة التي عيّنها معلمك أو ولي أمرك.",
+    "personal_activities_section": "الأنشطة الشخصية",
+    "show_landscape": "عرض أفقي",
+    "show_portrait": "عرض عمودي",
+    "landscape": "↔️ أفقي",
+    "portrait": "↕️ عمودي"
+  }
+}

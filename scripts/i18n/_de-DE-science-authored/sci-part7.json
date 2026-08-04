@@ -1,0 +1,815 @@
+{
+  "sci_vol_g3_experiments_hard_02": {
+    "stem": "Warum verwenden Wissenschaftlerinnen und Wissenschaftler eine Kontrollgruppe?",
+    "options": [
+      "Um zu vergleichen, was ohne die geprüfte Änderung geschieht",
+      "Um das Sammeln jeglicher Belege zu vermeiden",
+      "Um jeden Durchgang magisch identisch zu machen",
+      "Um Messen durch Raten zu ersetzen"
+    ],
+    "explanation": "Eine Kontrollgruppe zeigt das normale Ergebnis, damit du die Wirkung der geprüften Änderung erkennen kannst.",
+    "theoryLines": [
+      "Vergleich macht Versuchsergebnisse aussagekräftig.",
+      "Kontrollen helfen, Schlussfolgerungen zu vertrauen."
+    ]
+  },
+  "sci_vol_g3_animals_easy_01": {
+    "stem": "Was fressen Kühe hauptsächlich?",
+    "options": [
+      "Pflanzen wie Gras",
+      "Nur andere Kühe",
+      "Nur lebendiges Metall",
+      "Nur Meeressalz"
+    ],
+    "explanation": "Kühe sind Pflanzenfresser, deshalb besteht ihre Nahrung meist aus Pflanzen.",
+    "theoryLines": [
+      "Pflanzenfresser fressen Pflanzenmaterial.",
+      "Die Zähne einer Kuh helfen ihr, zähe Pflanzen zu kauen."
+    ]
+  },
+  "sci_vol_g3_animals_easy_02": {
+    "stem": "Woher bekommen Pflanzen die Energie, die sie zur Nahrungsherstellung nutzen?",
+    "options": [
+      "Aus Sonnenlicht",
+      "Vom Jagen von Tieren",
+      "Vom Trinken von Blut",
+      "Nur vom Schmelzen von Gestein"
+    ],
+    "explanation": "Pflanzen fangen Sonnenlicht ein und nutzen es während der Fotosynthese, um Nahrung herzustellen.",
+    "theoryLines": [
+      "Sonnenlicht ist die Energiequelle für die meisten Nahrungsketten.",
+      "Konsumenten hängen von pflanzlich erzeugter Nahrungsenergie ab."
+    ]
+  },
+  "sci_vol_g3_animals_hard_01": {
+    "stem": "Wie bekommen Fische Sauerstoff, während sie im Wasser leben?",
+    "options": [
+      "Sie nehmen Sauerstoff aus dem Wasser mit Kiemen auf",
+      "Sie atmen nur trockene Wüstenluft",
+      "Sie speichern Sonnenlicht in ihren Flossen",
+      "Sie brauchen überhaupt keinen Sauerstoff"
+    ],
+    "explanation": "Kiemen entziehen dem Wasser gelösten Sauerstoff, damit Fische unter Wasser leben können.",
+    "theoryLines": [
+      "Wasser enthält gelösten Sauerstoff.",
+      "Kiemen sind Atmungsorgane für Fische."
+    ]
+  },
+  "sci_vol_g3_animals_hard_02": {
+    "stem": "Warum sind Flossen für Fische wichtig?",
+    "options": [
+      "Sie helfen Fischen zu schwimmen, zu steuern und das Gleichgewicht zu halten",
+      "Sie verwandeln Wasser in trockenes Land",
+      "Sie lassen Fische durch Federn atmen",
+      "Sie hindern Fische daran, sich jemals zu bewegen"
+    ],
+    "explanation": "Flossen sind Körperteile, die Fischen helfen, sich durch Wasser zu bewegen und stabil zu bleiben.",
+    "theoryLines": [
+      "Verschiedene Flossen haben verschiedene Aufgaben beim Schwimmen.",
+      "Fischkörper sind an das Leben im Wasser angepasst."
+    ]
+  },
+  "sci_vol_g3_plants_easy_01": {
+    "stem": "Warum werfen manche Bäume im Herbst ihre Blätter ab?",
+    "options": [
+      "Um in den kalten, dunklen Wintermonaten Wasser und Energie zu sparen",
+      "Weil sie im Sommer zu viel Sonnenlicht bekommen",
+      "Weil ihre Wurzeln im Herbst aufhören, neue Zellen zu bilden",
+      "Alle Bäume werfen ihre Blätter jedes Jahr genau zur gleichen Zeit ab"
+    ],
+    "explanation": "Bäume werfen im Herbst Blätter ab, um Wasserverlust zu verringern und Energie zu sparen, wenn Sonnenlicht knapp ist und die Temperaturen im Winter sinken.",
+    "theoryLines": []
+  },
+  "sci_vol_g3_plants_easy_02": {
+    "stem": "Wie kann Dünger einer Pflanze helfen?",
+    "options": [
+      "Er kann Nährstoffe hinzufügen, die die Pflanze zum Wachsen braucht",
+      "Er ersetzt Sonnenlicht vollständig",
+      "Er stoppt, dass Wurzeln Wasser brauchen",
+      "Er verwandelt Blätter in Tiere"
+    ],
+    "explanation": "Dünger liefert Mineralien und Nährstoffe, die gesundes Pflanzenwachstum unterstützen, wenn er sorgfältig eingesetzt wird.",
+    "theoryLines": [
+      "Pflanzen nehmen Nährstoffe aus dem Boden auf.",
+      "Zu viel Dünger kann Pflanzen und die Umwelt schädigen."
+    ]
+  },
+  "sci_vol_g3_plants_hard_01": {
+    "stem": "Was geschieht mit einer Pflanze, wenn sie nicht genug Wasser bekommt?",
+    "options": [
+      "Die Pflanze welkt, hört auf zu wachsen und kann schließlich sterben.",
+      "Die Pflanze wächst höher, um Regen von nahen Bergen zu finden.",
+      "Die Pflanze bildet mehr Blätter, um Feuchtigkeit aus der Luft zu sammeln.",
+      "Die Pflanze wächst ihre Wurzeln seitwärts zu anderen nahen Pflanzen."
+    ],
+    "explanation": "Wasser ist für Pflanzen unerlässlich. Ohne genug Wasser kann eine Pflanze keine Fotosynthese durchführen, ihre Zellen verlieren Druck und sie welkt. Sie kann sterben, wenn kein Wasser bereitgestellt wird.",
+    "theoryLines": []
+  },
+  "sci_vol_g3_plants_hard_02": {
+    "stem": "Wie stellen grüne Pflanzen Zucker als Nahrung her?",
+    "options": [
+      "Durch Fotosynthese mit Licht, Wasser und Kohlenstoffdioxid",
+      "Indem sie nachts Fleisch jagen",
+      "Indem sie Wasser zu Metall einfrieren",
+      "Indem sie nur die Verdauung von Tieren nachahmen"
+    ],
+    "explanation": "Bei der Fotosynthese nutzen Pflanzen Sonnenlicht, um Zucker aus Wasser und Kohlenstoffdioxid herzustellen.",
+    "theoryLines": [
+      "Fotosynthese geschieht hauptsächlich in grünen Blättern.",
+      "Die Zucker, die Pflanzen herstellen, speichern Energie."
+    ]
+  },
+  "sci_vol_g4_body_hard_01": {
+    "stem": "Was ist die Hauptaufgabe der Zähne bei der Verdauung?",
+    "options": [
+      "Nahrung zu kauen und in kleinere Stücke zu zerlegen, damit sie leichter zu schlucken und zu verdauen ist.",
+      "Sauerstoff in den Mund hinein und hinaus zu atmen.",
+      "Blut durch das Verdauungssystem zu pumpen.",
+      "Heiße Nahrung abzukühlen, bevor du sie schluckst."
+    ],
+    "explanation": "Zähne zerlegen Nahrung durch Kauen in kleinere Stücke. Diese mechanische Zerlegung ist der erste Schritt der Verdauung und macht es Magen und Darm leichter, Nahrung zu verarbeiten.",
+    "theoryLines": []
+  },
+  "sci_vol_g4_body_hard_02": {
+    "stem": "Was geschieht, wenn du tiefer einatmest?",
+    "options": [
+      "Mehr Luft gelangt in die Lungen",
+      "Die Verdauung stoppt plötzlich für immer",
+      "Blut verschwindet aus dem Körper",
+      "Knochen hören auf, dich zu stützen"
+    ],
+    "explanation": "Ein tiefer Atemzug füllt die Lungen mit mehr Luft und bringt mehr Sauerstoff herein.",
+    "theoryLines": [
+      "Lungen dehnen sich aus, wenn du einatmest.",
+      "Tieferes Atmen kann nach harter Bewegung helfen."
+    ]
+  },
+  "sci_vol_g4_experiments_easy_01": {
+    "stem": "Warum wiederholen Wissenschaftlerinnen und Wissenschaftler einen Test oft mehrmals?",
+    "options": [
+      "Um zu sehen, ob die Ergebnisse ungefähr gleich bleiben",
+      "Um keine Notizen zu schreiben",
+      "Um die Frage jede Sekunde zu ändern",
+      "Um eine neue Hypothese ohne Daten zu erfinden"
+    ],
+    "explanation": "Durchgänge zu wiederholen hilft zu zeigen, ob Befunde zuverlässig sind.",
+    "theoryLines": [
+      "Zuverlässige Ergebnisse lassen sich wiederholen.",
+      "Ein ungewöhnlicher Durchgang könnte ein Fehler sein."
+    ]
+  },
+  "sci_vol_g4_experiments_easy_02": {
+    "stem": "Warum solltest du ein Experiment planen, bevor du beginnst?",
+    "options": [
+      "Ein Plan hilft dir, deine Idee sicher und klar zu prüfen",
+      "Pläne machen Messwerkzeuge überflüssig",
+      "Pläne löschen den Bedarf an einer Hypothese",
+      "Pläne stoppen alle Beobachtungen"
+    ],
+    "explanation": "Planen hilft dir, Materialien, Schritte, Variablen und Sicherheitsregeln zu wählen, bevor du startest.",
+    "theoryLines": [
+      "Ein klarer Ablauf macht Experimente leichter zu befolgen.",
+      "Gute Pläne verbessern Fairness und Sicherheit."
+    ]
+  },
+  "sci_vol_g4_experiments_hard_01": {
+    "stem": "Was ist eine nützliche Aufgabe einer Tabelle in einem Experiment?",
+    "options": [
+      "Sie ordnet Daten, damit Muster leichter zu erkennen sind",
+      "Sie ersetzt den Bedarf an jeglichen Messungen",
+      "Sie wird von allein zur Hypothese",
+      "Sie erzeugt Schlussfolgerungen ohne Belege"
+    ],
+    "explanation": "Tabellen und Diagramme helfen, Zahlen und Beobachtungen klar anzuordnen.",
+    "theoryLines": [
+      "Geordnete Daten sind leichter zu vergleichen.",
+      "Diagramme und Tabellen vermitteln Ergebnisse an andere."
+    ]
+  },
+  "sci_vol_g4_experiments_hard_02": {
+    "stem": "Warum solltest du in einem Experiment nur eine Variable gleichzeitig verändern?",
+    "options": [
+      "Damit du genau erkennen kannst, welche Änderung das Ergebnis verursacht hat, und das Experiment fair bleibt.",
+      "Damit das Experiment so schnell wie möglich fertig wird.",
+      "Damit alle Variablen im gleichen Tempo zunehmen.",
+      "Damit die Hypothese ohne Ergebnisse als richtig gilt."
+    ],
+    "explanation": "Wenn du mehr als eine Sache gleichzeitig veränderst, kannst du nicht wissen, welche Änderung das beobachtete Ergebnis verursacht hat. Nur eine Variable zu verändern und alles andere gleich zu halten macht den Test fair. Das ist eine der wichtigsten Regeln guter Versuchsplanung.",
+    "theoryLines": [
+      "Ein fairer Test bedeutet, dass nur die unabhängige Variable sich ändert, während alle anderen Bedingungen gleich bleiben.",
+      "Experimente, die eine Variable gleichzeitig verändern, liefern Ergebnisse, die leichter zu deuten und zu vertrauen sind."
+    ]
+  },
+  "sci_vol_g4_animals_hard_01": {
+    "stem": "Was ist ein klarer Unterschied zwischen den meisten Vögeln und Fischen?",
+    "options": [
+      "Vögel haben Federn, während Fische Schuppen und Kiemen haben",
+      "Vögel atmen nur mit Kiemen unter Wasser",
+      "Fische bilden Federn zum Fliegen",
+      "Keine der beiden Gruppen braucht Sauerstoff"
+    ],
+    "explanation": "Vögel sind gefiederte Tiere, die gewöhnlich Luft mit Lungen atmen. Fische haben typischerweise Schuppen und nutzen Kiemen im Wasser.",
+    "theoryLines": [
+      "Tiergruppen teilen Sätze von Merkmalen.",
+      "Merkmale zu vergleichen hilft, Lebewesen einzuordnen."
+    ]
+  },
+  "sci_vol_g4_animals_hard_02": {
+    "stem": "Welche wichtige Rolle hat Pollen für Blütenpflanzen?",
+    "options": [
+      "Er hilft Pflanzen bei der Fortpflanzung, indem er andere Blüten erreicht",
+      "Er verwandelt Wurzeln in Metalldrähte",
+      "Er stoppt Fotosynthese für immer",
+      "Er ersetzt Wasser in jeder Pflanze"
+    ],
+    "explanation": "Pollen trägt Material, das für die Samenbildung nötig ist, wenn er den richtigen Teil einer Blüte erreicht.",
+    "theoryLines": [
+      "Bestäubung ist nötig, damit viele Pflanzen Samen bilden.",
+      "Wind und Tiere können Pollen bewegen."
+    ]
+  },
+  "sci_vol_g5_body_easy_01": {
+    "stem": "Warum hilft Bewegung dem Herzen, gesund zu bleiben?",
+    "options": [
+      "Sie gibt dem Kreislaufsystem ein hilfreiches Training",
+      "Sie stoppt, dass Blut sich überhaupt bewegt",
+      "Sie entfernt den Bedarf an Sauerstoff",
+      "Sie verwandelt das Herz in Knochen"
+    ],
+    "explanation": "Regelmäßige Aktivität macht das Herz stärker, damit es Blut wirksamer pumpen kann.",
+    "theoryLines": [
+      "Bewegung erhöht die Herzfrequenz eine Weile.",
+      "Ein starkes Herz unterstützt die allgemeine Fitness."
+    ]
+  },
+  "sci_vol_g5_body_easy_02": {
+    "stem": "Was tun die Nieren im Körper?",
+    "options": [
+      "Sie filtern Abfallstoffe aus dem Blut",
+      "Sie pumpen Luft in die Ohren",
+      "Sie speichern Sonnenlicht unter der Haut",
+      "Sie verdauen Nahrung im Mund"
+    ],
+    "explanation": "Nieren reinigen das Blut, indem sie Abfallstoffe entfernen, die den Körper als Urin verlassen.",
+    "theoryLines": [
+      "Nieren helfen, das Blut im Gleichgewicht zu halten.",
+      "Das Ausscheidungssystem entfernt Abfallstoffe."
+    ]
+  },
+  "sci_vol_g5_body_easy_03": {
+    "stem": "Was kann geschehen, wenn der Körper nicht genug Wasser bekommt?",
+    "options": [
+      "Eine Person kann dehydriert werden und sich unwohl fühlen",
+      "Knochen werden sofort zu Gummi",
+      "Atmen wird überflüssig",
+      "Nahrungsenergie hört für immer auf, eine Rolle zu spielen"
+    ],
+    "explanation": "Ohne genug Wasser kann der Körper nicht gut arbeiten. Dehydration kann Durst, Müdigkeit und andere Probleme verursachen.",
+    "theoryLines": [
+      "Wasser ist jeden Tag unerlässlich.",
+      "Heißes Wetter und Bewegung erhöhen den Bedarf zu trinken."
+    ]
+  },
+  "sci_vol_g5_body_easy_04": {
+    "stem": "Was macht das Kreislaufsystem?",
+    "options": [
+      "Es pumpt Blut, das Sauerstoff und Nährstoffe zu allen Teilen des Körpers trägt.",
+      "Es zieht Muskeln zusammen, damit der Körper sich bewegen und trainieren kann.",
+      "Es bewegt Luft beim Atmen in die Lungen hinein und hinaus.",
+      "Es verbindet Knochen und lässt das Skelett sich bewegen."
+    ],
+    "explanation": "Das Kreislaufsystem — bestehend aus Herz, Blut und Blutgefäßen — pumpt Blut zu jeder Zelle im Körper, bringt Sauerstoff und Nährstoffe und entfernt Abfallstoffe.",
+    "theoryLines": []
+  },
+  "sci_vol_g5_body_medium_01": {
+    "stem": "Warum ist ausgewogene Ernährung wichtig?",
+    "options": [
+      "Verschiedene Lebensmittel geben dem Körper eine Mischung an Nährstoffen, die er braucht",
+      "Nur eine Lebensmittelgruppe ist jemals nützlich",
+      "Nahrung steht in keinem Zusammenhang mit Energie",
+      "Ausgewogene Mahlzeiten stoppen jedes Wachstum"
+    ],
+    "explanation": "Eine ausgewogene Ernährung umfasst eine Vielfalt an Lebensmitteln, die Energie, Vitamine, Mineralien und andere Nährstoffe liefern.",
+    "theoryLines": [
+      "Obst, Gemüse, Getreide, Proteine und Milchprodukte können alle Rollen spielen.",
+      "Gute Ernährung unterstützt Wachstum und Gesundheit."
+    ]
+  },
+  "sci_vol_g5_body_medium_02": {
+    "stem": "Was ist die Hauptaufgabe des Gehirns im Körper?",
+    "options": [
+      "Es ist die Steuerzentrale für Denken, Wahrnehmen und Bewegung",
+      "Es verdaut alle Nahrung allein",
+      "Es pumpt Blut wie ein zweites Herz",
+      "Es erzeugt Sonnenlicht für die Augen"
+    ],
+    "explanation": "Das Gehirn empfängt Informationen, trifft Entscheidungen und sendet Signale, die den Körper lenken.",
+    "theoryLines": [
+      "Das Gehirn ist Teil des Nervensystems.",
+      "Lernen und Gedächtnis geschehen im Gehirn."
+    ]
+  },
+  "sci_vol_g5_body_hard_01": {
+    "stem": "Warum solltest du dich vor intensiver Bewegung aufwärmen?",
+    "options": [
+      "Aufwärmen bereitet Muskeln auf härtere Arbeit vor",
+      "Es entfernt Sauerstoff aus dem Blut",
+      "Es friert Gelenke steif ein",
+      "Es stoppt, dass das Herz schlägt"
+    ],
+    "explanation": "Leichte Aufwärmaktivität erhöht den Blutfluss und macht Muskeln bereit; das kann die Chance auf Überanstrengung senken.",
+    "theoryLines": [
+      "Muskeln arbeiten besser, wenn sie aufgewärmt sind.",
+      "Sichere Bewegung umfasst Aufwärm- und Abkühlzeit."
+    ]
+  },
+  "sci_vol_g5_body_hard_02": {
+    "stem": "Was verursacht den starken Drang zu atmen, wenn du eine kurze Zeit den Atem anhältst?",
+    "options": [
+      "Ein Anstieg von Kohlenstoffdioxid (CO₂) in deinem Blut signalisiert deinem Gehirn zu atmen",
+      "Dein Körper geht völlig ohne Sauerstoff aus und stellt alle Prozesse ein",
+      "Dein Verdauungssystem sendet Signale, die den Atemreflex unterbrechen",
+      "Dein Skelett wird zu schwer und drückt auf deine Lungen"
+    ],
+    "explanation": "Wenn du den Atem anhältst, steigt CO₂ in deinem Blut an. Sensoren erkennen das und senden ein Signal an dein Gehirn, das den Drang zu atmen auslöst.",
+    "theoryLines": []
+  },
+  "sci_vol_g5_experiments_easy_01": {
+    "stem": "Warum sollten Schülerinnen und Schüler riskante Experimente nicht ohne Aufsicht Erwachsener machen?",
+    "options": [
+      "Sicherheitsregeln und Hilfe Erwachsener verhindern Verletzungen",
+      "Erwachsene entfernen den Bedarf an jeglichen Daten",
+      "Aufsicht macht Messen unmöglich",
+      "Sicherheitsregeln verstecken alle Ergebnisse"
+    ],
+    "explanation": "Manche Materialien und Werkzeuge können gefährlich sein. Eine erwachsene Person hilft, die Untersuchung sicher zu halten.",
+    "theoryLines": [
+      "Laborsicherheit schützt Menschen und Eigentum.",
+      "Frage nach, bevor du Hitze, Chemikalien oder scharfe Werkzeuge benutzt."
+    ]
+  },
+  "sci_vol_g5_experiments_easy_02": {
+    "stem": "Was bedeutet es, wenn ein anderes Team dein Experiment wiederholen und ein ähnliches Ergebnis bekommen kann?",
+    "options": [
+      "Dein Ergebnis ist eher zuverlässig",
+      "Deine Hypothese muss für immer falsch sein",
+      "Messwerkzeuge werden nicht mehr gebraucht",
+      "Das Experiment hatte keine Variablen"
+    ],
+    "explanation": "Replikation bedeutet, dass andere ähnliche Ergebnisse bekommen können; das stärkt das Vertrauen in die Befunde.",
+    "theoryLines": [
+      "Naturwissenschaft wird stärker, wenn Ergebnisse wiederholt werden können.",
+      "Klare Methoden helfen anderen Menschen, einen Test nachzumachen."
+    ]
+  },
+  "sci_vol_g5_experiments_medium_01": {
+    "stem": "Warum solltest du bei einem naturwissenschaftlichen Experiment eine Schutzbrille tragen?",
+    "options": [
+      "Um deine Augen vor schädlichen Chemikalien oder fliegenden Teilchen zu schützen.",
+      "Um mehr Sauerstoff zu bekommen, während du mit Chemikalien arbeitest.",
+      "Um deine Hände sauber zu halten und Keime nicht zu verbreiten.",
+      "Weil alle naturwissenschaftlichen Experimente draußen gemacht werden müssen."
+    ],
+    "explanation": "Eine Schutzbrille schützt deine Augen vor Spritzern, schädlichen Chemikalien und fliegenden Partikeln, die während eines Experiments auftreten können.",
+    "theoryLines": []
+  },
+  "sci_vol_g5_experiments_medium_02": {
+    "stem": "Was solltest du tun, wenn deine Ergebnisse deine Hypothese nicht stützen?",
+    "options": [
+      "Die Belege annehmen und dein Denken anpassen",
+      "Die Daten ändern, bis sie zur Vermutung passen",
+      "Das Naturwissenschaftsheft wegwerfen",
+      "So tun, als wäre der Test nie geschehen"
+    ],
+    "explanation": "Eine Hypothese ist eine Idee zum Prüfen. Wenn Belege widersprechen, aktualisieren Wissenschaftlerinnen und Wissenschaftler ihre Ideen.",
+    "theoryLines": [
+      "Belege zählen mehr, als beim ersten Mal recht zu haben.",
+      "Aus unerwarteten Ergebnissen zu lernen gehört zur Naturwissenschaft."
+    ]
+  },
+  "sci_vol_g5_experiments_medium_03": {
+    "stem": "Was ist eine Hypothese?",
+    "options": [
+      "Eine überprüfbare mögliche Antwort auf eine naturwissenschaftliche Frage",
+      "Eine endgültige Schlussfolgerung ohne Belege",
+      "Eine Liste unzusammenhängender Witze",
+      "Ein kaputtes Messwerkzeug"
+    ],
+    "explanation": "Eine Hypothese ist eine überprüfbare mögliche Antwort auf eine naturwissenschaftliche Frage. Du prüfst sie mit einem Experiment und Belegen; sie ist keine endgültige Schlussfolgerung und kein zufälliges Raten.",
+    "theoryLines": [
+      "Hypothesen leiten Untersuchungen, bevor du Ergebnisse sammelst.",
+      "Belege können eine Hypothese stützen oder zeigen, dass sie nicht gestützt wird."
+    ]
+  },
+  "sci_vol_g5_animals_easy_01": {
+    "stem": "Was macht Amphibien einzigartig darin, wie und wo sie leben?",
+    "options": [
+      "Sie können im Laufe ihres Lebens sowohl im Wasser als auch an Land leben",
+      "Sie atmen ihr ganzes Leben nur über Kiemen",
+      "Sie nutzen vom Schlüpfen an nur ihre Lungen",
+      "Sie leben ausschließlich in den trockensten Wüstenumgebungen"
+    ],
+    "explanation": "Amphibien wie Frösche und Salamander schlüpfen im Wasser und atmen über Kiemen; später entwickeln sie Lungen und können als Erwachsene auch an Land leben.",
+    "theoryLines": []
+  },
+  "sci_vol_g5_animals_easy_02": {
+    "stem": "Wie finden Fledermäuse Insekten oft im Dunkeln?",
+    "options": [
+      "Sie nutzen Echoortung mit Schallechos",
+      "Sie lesen nur bei hellem Sonnenlicht",
+      "Sie schmecken Farben auf Blättern",
+      "Sie graben Tunnel voller Feuer"
+    ],
+    "explanation": "Viele Fledermäuse senden Laute aus und hören Echos, die von Beute und Objekten zurückkommen.",
+    "theoryLines": [
+      "Echoortung hilft Nachtjägern.",
+      "Fledermäuse sind Säugetiere, die oft nach Einbruch der Dunkelheit aktiv sind."
+    ]
+  },
+  "sci_vol_g5_animals_easy_03": {
+    "stem": "Warum bleiben Schnecken oft an feuchten Orten?",
+    "options": [
+      "Feuchtigkeit hilft, ihre weichen Körper vor dem Austrocknen zu bewahren",
+      "Sie brauchen trockenen Sand zum Atmen",
+      "Sie schmelzen, wenn sie Wasser berühren",
+      "Sie jagen nur in hellen Wüsten"
+    ],
+    "explanation": "Schnecken haben weiche, feuchte Körper und können austrocknen, wenn ihre Umgebung zu trocken ist.",
+    "theoryLines": [
+      "Viele weichkörperige Tiere brauchen feuchte Lebensräume.",
+      "Der Schleim einer Schnecke hilft ihr auch bei der Bewegung."
+    ]
+  },
+  "sci_vol_g5_animals_easy_04": {
+    "stem": "Welche Art von Skelett haben viele Insekten?",
+    "options": [
+      "Ein Außenskelett außerhalb des Körpers",
+      "Ein Skelett nur aus Federn",
+      "Überhaupt keine Stütze für den Körper",
+      "Ein hölzernes Skelett, das Blätter wachsen lässt"
+    ],
+    "explanation": "Insekten haben eine harte äußere Hülle namens Außenskelett, die sie stützt und schützt.",
+    "theoryLines": [
+      "Außenskelette liegen außerhalb des Körpers.",
+      "Menschen haben ein Innenskelett im Inneren des Körpers."
+    ]
+  },
+  "sci_vol_g5_animals_medium_01": {
+    "stem": "Warum ist es wichtig, Lebensräume für Tiere zu schützen?",
+    "options": [
+      "Tiere brauchen Lebensraum-Ressourcen wie Nahrung, Wasser und Schutz",
+      "Tiere können ganz ohne Lebensraum gut leben",
+      "Lebensräume sind nur nützlich, um Lärm zu machen",
+      "Land zu schützen entfernt alle Lebewesen"
+    ],
+    "explanation": "Wenn Lebensräume gesund bleiben, können Tiere finden, was sie zum Überleben und zur Fortpflanzung brauchen.",
+    "theoryLines": [
+      "Lebensraumverlust bedroht viele Arten.",
+      "Naturschutz hilft, Ökosysteme zu schützen."
+    ]
+  },
+  "sci_vol_g5_animals_medium_02": {
+    "stem": "Welche Abfolge zeigt den Lebenszyklus eines Schmetterlings?",
+    "options": [
+      "Ei, Raupe, Puppe, erwachsener Schmetterling",
+      "Nur Same, Wurzel, Blüte, Frucht",
+      "Ei, erwachsener Vogel, Nest, Feder",
+      "Kaulquappe, Fisch, Hai, Wal"
+    ],
+    "explanation": "Schmetterlinge durchlaufen vollständige Metamorphose: Ei, Larve (Raupe), Puppe und Erwachsener.",
+    "theoryLines": [
+      "Metamorphose bedeutet eine große Veränderung der Körperform.",
+      "Jedes Stadium hat eine andere Aufgabe im Lebenszyklus."
+    ]
+  },
+  "sci_vol_g5_animals_hard_01": {
+    "stem": "Was ist eine Hauptaufgabe der Flossen eines Fisches?",
+    "options": [
+      "Dem Fisch helfen, sich zu bewegen und im Wasser das Gleichgewicht zu halten",
+      "Federn zum Fliegen herzustellen",
+      "Pollen für Blüten zu erzeugen",
+      "Blut wie Nieren zu filtern"
+    ],
+    "explanation": "Flossen helfen Fischen zu schwimmen, zu wenden und im Wasser stabil zu bleiben.",
+    "theoryLines": [
+      "Fische sind an das Schwimmen angepasst.",
+      "Körperform und Flossen arbeiten im Wasser zusammen."
+    ]
+  },
+  "sci_vol_g5_animals_hard_02": {
+    "stem": "Welche Aussage vergleicht Vögel und Fische richtig?",
+    "options": [
+      "Die meisten Vögel atmen Luft mit Lungen; Fische nutzen gewöhnlich Kiemen",
+      "Fische haben Federn und fliegen weite Strecken",
+      "Vögel nehmen Sauerstoff nur aus Unterwasser-Kiemen auf",
+      "Keine der beiden Gruppen kann sich von Ort zu Ort bewegen"
+    ],
+    "explanation": "Vögel und Fische sind beide Tiere, aber sie haben unterschiedliche Körpermerkmale für unterschiedliche Lebensräume.",
+    "theoryLines": [
+      "Lungen und Kiemen sind verschiedene Wege, Sauerstoff zu bekommen.",
+      "Merkmale helfen Wissenschaftlerinnen und Wissenschaftlern, Tiere in Gruppen einzuteilen."
+    ]
+  },
+  "sci_vol_g6_body_medium_01": {
+    "stem": "Warum ist es wichtig, deine Zähne mindestens zweimal am Tag zu putzen?",
+    "options": [
+      "Putzen entfernt Bakterien und Speisereste, die Zahnverfall und Zahnfleischerkrankungen verursachen",
+      "Putzen hilft dem Verdauungssystem, Nahrung im Magen schneller zu zerlegen",
+      "Putzen erhöht die Menge Luft, die in deine Lungen fließt",
+      "Putzen erhöht den Blutfluss zu deinem Gehirn und verbessert das Gedächtnis"
+    ],
+    "explanation": "Zähneputzen entfernt schädliche Bakterien und Speisereste, verhindert Löcher und Zahnfleischerkrankungen und hält deinen Mund gesund.",
+    "theoryLines": []
+  },
+  "sci_vol_g6_body_medium_02": {
+    "stem": "Was ist ein wichtiger Vorteil, genug Schlaf zu bekommen?",
+    "options": [
+      "Der Körper kann ruhen und sich für den nächsten Tag erholen",
+      "Verdauung wird überflüssig",
+      "Der Kreislauf stoppt dauerhaft",
+      "Knochen lösen sich über Nacht auf"
+    ],
+    "explanation": "Schlaf hilft Körper und Gehirn, sich zu erholen, damit du lernen, wachsen und gesund bleiben kannst.",
+    "theoryLines": [
+      "Kinder brauchen im Allgemeinen mehr Schlaf als Erwachsene.",
+      "Ruhe gehört zu einem gesunden Lebensstil."
+    ]
+  },
+  "sci_vol_g6_body_hard_01": {
+    "stem": "Warum sollten Mahlzeiten eine Vielfalt gesunder Lebensmittel enthalten?",
+    "options": [
+      "Verschiedene Lebensmittel liefern verschiedene Nährstoffe, die der Körper braucht",
+      "Nur Süßigkeiten zu essen liefert jeden Nährstoff",
+      "Lebensmittelvielfalt entfernt den Bedarf an Wasser",
+      "Nährstoffe stehen in keinem Zusammenhang mit Wachstum"
+    ],
+    "explanation": "Eine ausgewogene Ernährung liefert Proteine, Kohlenhydrate, Fette, Vitamine und Mineralien in nützlichen Mengen.",
+    "theoryLines": [
+      "Kein einzelnes Lebensmittel hat jeden Nährstoff, den du brauchst.",
+      "Gesundes Essen unterstützt Energie und Wachstum."
+    ]
+  },
+  "sci_vol_g6_body_hard_02": {
+    "stem": "Welche Rolle spielen Zähne am Anfang der Verdauung, und warum ist dieser Schritt für die weitere Verdauung wichtig?",
+    "options": [
+      "Sie zerlegen Nahrung in kleinere Stücke und schaffen mehr Oberfläche, damit Verdauungssäfte im ganzen Verdauungssystem wirksamer arbeiten können.",
+      "Sie erzeugen Speichel ganz allein, und dieser Speichel ist der einzige chemische Schritt, der nötig ist, bevor Nährstoffe direkt ins Blut gelangen.",
+      "Sie pumpen Verdauungssäure vom Magen nach oben in den Mund, um Nahrung chemisch aufzuweichen, bevor sie geschluckt wird.",
+      "Sie erzeugen Wärme, die Nahrung wärmt und aufweicht, damit der Dünndarm sie ohne weitere Zerlegung aufnehmen kann."
+    ],
+    "explanation": "Zähne kauen und zerreiben Nahrung in kleine Stücke. Diese mechanische Zerlegung vergrößert die Gesamtoberfläche der Nahrung, sodass Verdauungssäfte — darunter Enzyme im Speichel und Magensäure — mehr von der Nahrung erreichen und sie wirksamer zerlegen können. Ohne diesen ersten Schritt wäre die chemische Verdauung viel langsamer und unvollständiger.",
+    "theoryLines": [
+      "Verdauung beginnt im Mund: Zähne sorgen für mechanische Zerlegung, während Speichel die chemische Verdauung von Stärke beginnt.",
+      "Nahrung in kleinere Stücke zu zerlegen vergrößert die Oberfläche und macht es Verdauungsenzymen in Magen und Dünndarm leichter."
+    ]
+  },
+  "sci_vol_g6_experiments_medium_01": {
+    "stem": "Wenn ein Datenpunkt weit von den anderen entfernt liegt, was ist ein kluger nächster Schritt?",
+    "options": [
+      "Die Messung noch einmal prüfen und nach Fehlern suchen",
+      "Das ganze Experiment sofort löschen",
+      "Einheiten von da an ignorieren",
+      "Einen neuen Planeten erfinden, um es zu erklären"
+    ],
+    "explanation": "Ungewöhnliche Werte können Fehler sein. Nochmal Prüfen hilft dir zu entscheiden, was die Daten wirklich zeigen.",
+    "theoryLines": [
+      "Sorgfältige Überprüfung stärkt naturwissenschaftliches Vertrauen.",
+      "Einen Durchgang zu wiederholen kann ein Ergebnis bestätigen oder korrigieren."
+    ]
+  },
+  "sci_vol_g6_experiments_medium_02": {
+    "stem": "Warum müssen Messungen Einheiten enthalten?",
+    "options": [
+      "Einheiten sagen, was die Zahl bedeutet, damit andere sie vergleichen können",
+      "Einheiten verstecken die wahre Größe von Objekten",
+      "Einheiten lassen Werkzeuge aufhören zu arbeiten",
+      "Einheiten ersetzen den Bedarf an Sicherheit"
+    ],
+    "explanation": "Eine Zahl ohne Einheit ist unklar. 5 Zentimeter zu sagen ist etwas anderes als 5 Kilogramm zu sagen.",
+    "theoryLines": [
+      "Standardeinheiten helfen Menschen, Daten zu teilen.",
+      "Schreibe die Einheit immer zusammen mit der Zahl."
+    ]
+  },
+  "sci_vol_g6_experiments_medium_03": {
+    "stem": "Was sollte eine sorgfältige Beobachtung enthalten?",
+    "options": [
+      "Einzelheiten darüber, was du wirklich siehst, hörst oder misst",
+      "Nur Meinungen ohne Belege",
+      "Geänderte Zahlen, damit sie perfekt aussehen",
+      "Eine Schlussfolgerung, die vor jedem Test geschrieben wurde"
+    ],
+    "explanation": "Gute Beobachtungen halten sich an Belege aus Sinnen und Instrumenten.",
+    "theoryLines": [
+      "Beobachtungen kommen zuerst; Schlussfolgerungen kommen später.",
+      "Klare Notizen helfen anderen Menschen, deine Arbeit zu verstehen."
+    ]
+  },
+  "sci_vol_g6_animals_easy_01": {
+    "stem": "Was ist ein zentrales Merkmal, das die meisten Reptilien teilen?",
+    "options": [
+      "Sie haben trockene, schuppige Haut, die Wasserverlust verhindern hilft",
+      "Sie leben nur im Wasser und atmen ihr ganzes Leben über Kiemen",
+      "Sie sind warmblütig und halten eine gleichmäßige innere Körpertemperatur",
+      "Sie haben dichtes Fell, das ihren Körper bei kaltem Wetter warm hält"
+    ],
+    "explanation": "Reptilien sind wechselwarme Tiere mit trockener, schuppiger Haut. Die Schuppen helfen, sie zu schützen und Wasserverlust aus dem Körper zu verringern.",
+    "theoryLines": []
+  },
+  "sci_vol_g6_animals_easy_02": {
+    "stem": "Warum sind Pflanzen der Ausgangspunkt vieler Nahrungsketten?",
+    "options": [
+      "Sie erzeugen Nahrungsenergie aus Sonnenlicht",
+      "Sie jagen Tiere für jede Mahlzeit",
+      "Sie nehmen nie Wasser auf",
+      "Sie erzeugen Blut für Konsumenten"
+    ],
+    "explanation": "Pflanzen sind Produzenten. Tiere, die Pflanzen fressen, und Tiere, die diese Tiere fressen, hängen von dieser Nahrungsenergie ab.",
+    "theoryLines": [
+      "Produzenten fangen Energie von der Sonne ein.",
+      "Konsumenten bekommen Energie, indem sie andere Lebewesen fressen."
+    ]
+  },
+  "sci_vol_g6_animals_easy_03": {
+    "stem": "Wie helfen Flossen einem Fisch beim Überleben?",
+    "options": [
+      "Sie helfen dem Fisch zu schwimmen und sein Gleichgewicht zu halten",
+      "Sie lassen den Fisch nur auf trockenem Land atmen",
+      "Sie verwandeln Wasser sofort in frische Luft",
+      "Sie bilden Federn zum Fliegen"
+    ],
+    "explanation": "Flossen sind Schwimmanpassungen, die Fischen helfen, sich durch Wasser zu bewegen.",
+    "theoryLines": [
+      "Fischkörper sind für das Leben im Wasser geformt.",
+      "Bewegung hilft Fischen, Nahrung zu finden und Gefahr zu entkommen."
+    ]
+  },
+  "sci_vol_g6_animals_easy_04": {
+    "stem": "Welches Merkmal gehört zu Vögeln, aber nicht zu Fischen?",
+    "options": [
+      "Federn",
+      "Kiemen zum Atmen unter Wasser",
+      "Schuppen, die den ganzen Körper bedecken",
+      "Für immer nur unter Wasser leben"
+    ],
+    "explanation": "Federn sind ein zentrales Vogelmerkmal. Fische haben typischerweise Schuppen und nutzen Kiemen im Wasser.",
+    "theoryLines": [
+      "Merkmale zu vergleichen hilft, Tiergruppen zu erkennen.",
+      "Vögel und Fische sind an unterschiedliche Lebensräume angepasst."
+    ]
+  },
+  "sci_vol_g6_animals_hard_01": {
+    "stem": "Warum ist Pollen für Blütenpflanzen wichtig?",
+    "options": [
+      "Er wird gebraucht, damit Pflanzen sich fortpflanzen und Samen bilden",
+      "Er kühlt die Sonne jede Nacht ab",
+      "Er ersetzt Erde für jede Wurzel",
+      "Er hält Insekten davon ab, Blüten zu besuchen"
+    ],
+    "explanation": "Wenn Pollen die richtigen Blütenteile erreicht, können Samen entstehen und eine neue Pflanzengeneration beginnen.",
+    "theoryLines": [
+      "Bestäubung verbindet Blüten für die Fortpflanzung.",
+      "Bienen und andere Tiere helfen oft, Pollen zu bewegen."
+    ]
+  },
+  "sci_vol_g6_animals_hard_02": {
+    "stem": "Warum ist Biodiversität in einem Ökosystem wertvoll?",
+    "options": [
+      "Viele Arten von Lebewesen helfen, natürliche Systeme stabiler zu halten",
+      "Nur eine Art zu haben ist immer besser",
+      "Biodiversität entfernt alle Nahrungsnetze",
+      "Sie stoppt, dass Pflanzen Sonnenlicht brauchen"
+    ],
+    "explanation": "Eine reiche Mischung an Arten stützt Nahrungsnetze, Stoffkreisläufe und gesündere Lebensräume.",
+    "theoryLines": [
+      "Biodiversität bedeutet Vielfalt des Lebens.",
+      "Lebensräume zu schützen schützt viele Arten zugleich."
+    ]
+  },
+  "sci_g3_body_001": {
+    "stem": "Welches Organ nutzen wir hauptsächlich zum Hören?",
+    "options": [
+      "Ohren",
+      "Augen",
+      "Nase",
+      "Zunge"
+    ],
+    "explanation": "Ohren sammeln Schall und senden Hörsignale an das Gehirn.",
+    "theoryLines": [
+      "Hören ist einer der fünf Sinne.",
+      "Schall gelangt in die Ohren und wird vom Gehirn gedeutet."
+    ]
+  },
+  "sci_g3_body_002": {
+    "stem": "Was ist eine wichtige Aufgabe der Haut?",
+    "options": [
+      "Sie schützt den Körper und hilft dir, Berührung zu spüren",
+      "Sie verdaut Nahrung im Magen",
+      "Sie pumpt Blut wie das Herz",
+      "Sie stellt alle deine Knochen her"
+    ],
+    "explanation": "Haut bedeckt und schützt den Körper. Nervenenden in der Haut helfen dir, Berührung, Hitze und Schmerz wahrzunehmen.",
+    "theoryLines": [
+      "Haut ist die äußere Hülle des Körpers.",
+      "Berührungssensoren in der Haut senden Botschaften an das Gehirn."
+    ]
+  },
+  "sci_g3_body_003": {
+    "stem": "Welcher Körperteil hilft dir, Nahrung zu schmecken?",
+    "options": [
+      "Zunge",
+      "Ohren",
+      "Ellbogen",
+      "Knie"
+    ],
+    "explanation": "Geschmacksknospen auf der Zunge helfen dir, Geschmacksrichtungen wie süß, salzig, sauer und bitter zu erkennen.",
+    "theoryLines": [
+      "Schmecken ist einer der Sinne.",
+      "Geruch und Geschmack arbeiten oft zusammen."
+    ]
+  },
+  "sci_g3_body_004": {
+    "stem": "Welches Organ hilft dir zu riechen?",
+    "options": [
+      "Nase",
+      "Augen",
+      "Füße",
+      "Magen"
+    ],
+    "explanation": "Die Nase erkennt Gerüche und sendet Geruchsinformationen an das Gehirn.",
+    "theoryLines": [
+      "Riechen hilft dir, Lebensmittel und Gefahren wie Rauch zu bemerken.",
+      "Luft mit Geruchsteilchen gelangt in die Nase."
+    ]
+  },
+  "sci_g3_body_005": {
+    "stem": "Was geschieht mit Licht, nachdem es in deine Augen gelangt?",
+    "options": [
+      "Signale reisen zum Gehirn, damit du sehen kannst",
+      "Das Licht verdaut Nahrung im Magen",
+      "Das Licht wird in den Ohren zu Schall",
+      "Das Licht wird im Herzen zu Blut"
+    ],
+    "explanation": "Augen erkennen Licht und senden Nervensignale an das Gehirn, das die Bilder aufbaut, die du siehst.",
+    "theoryLines": [
+      "Sehen hängt sowohl von den Augen als auch vom Gehirn ab.",
+      "Der Sehnerv trägt visuelle Signale."
+    ]
+  },
+  "sci_g3_body_006": {
+    "stem": "Warum solltest du deine Zähne putzen?",
+    "options": [
+      "Damit Zähne sauber und gesund bleiben",
+      "Damit Lungen unter Wasser atmen",
+      "Damit Knochen aufhören, dich zu stützen",
+      "Um den Bedarf an Nahrung zu entfernen"
+    ],
+    "explanation": "Putzen entfernt Speisereste und Belag, die Zähnen und Zahnfleisch schaden können.",
+    "theoryLines": [
+      "Zahnpflege schützt die Zähne.",
+      "Gesunde Zähne helfen dir, Nahrung gut zu kauen."
+    ]
+  },
+  "sci_g3_body_007": {
+    "stem": "Was ist die Hauptaufgabe der Muskeln?",
+    "options": [
+      "Sie helfen dem Körper, sich zu bewegen",
+      "Sie speichern ungenutzte Luft für immer",
+      "Sie erzeugen Sonnenlicht für Pflanzen",
+      "Sie ersetzen das Skelett vollständig"
+    ],
+    "explanation": "Muskeln spannen sich an und entspannen sich, um Knochen und andere Körperteile zu bewegen.",
+    "theoryLines": [
+      "Skelettmuskeln arbeiten mit Knochen.",
+      "Du nutzt Muskeln, wann immer du gehst, springst oder lächelst."
+    ]
+  },
+  "sci_g3_body_008": {
+    "stem": "Wobei helfen Skelettknochen?",
+    "options": [
+      "Den Körper zu stützen und weiche Organe zu schützen",
+      "Mahlzeiten allein zu verdauen",
+      "Gerüche in die Lungen zu tragen",
+      "Wasser in Metall zu verwandeln"
+    ],
+    "explanation": "Knochen bilden ein starkes Gerüst, das dich aufrecht hält und Organe wie das Gehirn mit schützen hilft.",
+    "theoryLines": [
+      "Das Skelett gibt dem Körper Form.",
+      "Knochen und Muskeln arbeiten zusammen für Bewegung."
+    ]
+  },
+  "sci_g3_body_009": {
+    "stem": "Welche Organe sind die Hauptteile des Atmungssystems?",
+    "options": [
+      "Die Lungen",
+      "Nur der Magen",
+      "Die Fingernägel",
+      "Die Haare auf deinem Kopf"
+    ],
+    "explanation": "Luft gelangt zu den Lungen, wo Sauerstoff ins Blut eintritt.",
+    "theoryLines": [
+      "Atmen bringt Sauerstoff in den Körper.",
+      "Das Atmungssystem umfasst Atemwege und Lungen."
+    ]
+  }
+}

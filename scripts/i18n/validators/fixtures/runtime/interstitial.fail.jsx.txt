@@ -1,0 +1,9 @@
+export default function SoloGameEndInterstitialOverlay({ didWin, onDone }) {
+  return (
+    <div dir="ltr" aria-label={didWin ? "Great job" : "Game over"}>
+      <h2>{didWin ? "Great job!" : "Game over"}</h2>
+      <p>Calculating your score...</p>
+      <button type="button">Skip</button>
+    </div>
+  );
+}

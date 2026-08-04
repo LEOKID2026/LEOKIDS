@@ -1,0 +1,2441 @@
+[
+  {
+    "id": "animals_7",
+    "stem": "Which animal lives in water?",
+    "options": [
+      "Rabbit",
+      "Fish",
+      "Cat",
+      "Chicken"
+    ],
+    "explanation": "Fish live in water. They use fins to swim and gills to take oxygen from water.",
+    "theoryLines": [
+      "Fish are adapted for life in water.",
+      "Gills take oxygen from water so fish can breathe."
+    ]
+  },
+  {
+    "id": "plants_15",
+    "stem": "What happens during photosynthesis?",
+    "options": [
+      "Plants release carbon dioxide and take in oxygen to make energy.",
+      "Plants use sunlight and water to make their own food and release oxygen.",
+      "Plants absorb only water to produce all the energy they need.",
+      "Photosynthesis only takes place in the stem and only during the night."
+    ],
+    "explanation": "During photosynthesis, plants capture energy from sunlight and use it to convert water and carbon dioxide into glucose — a sugar the plant uses for energy and growth. Oxygen is released as a byproduct, which is the oxygen that most living things breathe.",
+    "theoryLines": [
+      "Photosynthesis takes place mainly in the leaves, where cells contain a green pigment called chlorophyll.",
+      "Without photosynthesis, there would be no oxygen in the air and no food at the base of the food chain."
+    ]
+  },
+  {
+    "id": "body_37__v2",
+    "stem": "What happens when we breathe?",
+    "options": [
+      "Air enters the lungs and never leaves",
+      "Air goes in and air goes out",
+      "Air only leaves the body and never enters",
+      "No gas exchange happens"
+    ],
+    "explanation": "When we breathe, air enters through the nose and mouth, and air also leaves the body.",
+    "theoryLines": [
+      "Breathing is essential for life.",
+      "Without breathing, we cannot live."
+    ]
+  },
+  {
+    "id": "p4b1_g6_experiments_004",
+    "stem": "Why record results in a table?",
+    "options": [
+      "To compare measurements and spot patterns",
+      "To delete data",
+      "To avoid repeating trials",
+      "To change the hypothesis after every row"
+    ],
+    "explanation": "Organized records make analysis easier.",
+    "theoryLines": [
+      "A table shows data clearly.",
+      "Patterns support conclusions."
+    ]
+  },
+  {
+    "id": "p4b1_g4_animals_003",
+    "stem": "What describes a fish?",
+    "options": [
+      "It lives in water and breathes with gills",
+      "It flies with wings",
+      "It has fur and nurses young",
+      "It eats only rocks"
+    ],
+    "explanation": "A fish is adapted for life in water.",
+    "theoryLines": [
+      "Gills allow breathing in water.",
+      "Fins help with swimming."
+    ]
+  },
+  {
+    "id": "p4b1_g4_experiments_004",
+    "stem": "Why repeat a measurement?",
+    "options": [
+      "To spot mistakes",
+      "It is always unnecessary",
+      "One measurement is always enough",
+      "It changes the goal of the experiment"
+    ],
+    "explanation": "Repeating improves reliability.",
+    "theoryLines": [
+      "Random mistakes can happen.",
+      "Repeating reduces uncertainty."
+    ]
+  },
+  {
+    "id": "p4b1_g2_environment_001",
+    "stem": "What best describes weather?",
+    "options": [
+      "The conditions outside on a given day, such as temperature, rain, or sunshine.",
+      "The exact same conditions that repeat every single day throughout the year.",
+      "Only the amount of sunshine measured in one particular place.",
+      "How hot or cold the Moon is at night."
+    ],
+    "explanation": "Weather describes the conditions in the atmosphere on a particular day, including temperature, rainfall, wind, and cloud cover.",
+    "theoryLines": [
+      "Weather can change from day to day.",
+      "Temperature, wind, clouds, and precipitation are all parts of weather."
+    ]
+  },
+  {
+    "id": "sci_closure_g3es_027",
+    "stem": "What is a reasonable link between wind and local sea level at a shore?",
+    "options": [
+      "Strong wind can push water toward or away from the coast",
+      "There is usually no link",
+      "Wind always flattens waves to zero",
+      "Usually only darkness affects the water"
+    ],
+    "explanation": "Wind can pile water up along a shore or push it away, changing local water height.",
+    "theoryLines": [
+      "Wind transfers energy to the water surface.",
+      "Storms can raise water levels along coasts."
+    ]
+  },
+  {
+    "id": "sci_closure_g4mat_031",
+    "stem": "What is an example of a physical change that happens to water?",
+    "options": [
+      "Freezing or evaporating under the right conditions",
+      "Water always turning into a new kind of rock",
+      "Water never changing at all",
+      "Always a chemical reaction"
+    ],
+    "explanation": "Freezing, melting, and evaporating change water’s state but keep it as water.",
+    "theoryLines": [
+      "State changes are often physical changes.",
+      "Ice, liquid water, and vapor are the same substance."
+    ]
+  },
+  {
+    "id": "sci_closure_g5bd_032",
+    "stem": "Which statement correctly describes protecting skin from the Sun?",
+    "options": [
+      "Clothing and shade can reduce risk",
+      "Protection is usually unnecessary",
+      "Sunlight never affects skin",
+      "Usually only water protects skin"
+    ],
+    "explanation": "Covering up and staying in shade help protect skin from strong sunlight.",
+    "theoryLines": [
+      "Too much sun can harm skin.",
+      "Shade, clothes, and sunscreen are common protections."
+    ]
+  },
+  {
+    "id": "sci_pb1_g3_body_hard_01",
+    "stem": "Which statement correctly describes the blood vessels that carry blood from the heart to body tissues?",
+    "options": [
+      "Arteries carry blood pumped out of the heart to the body",
+      "Veins always carry oxygen-rich blood",
+      "Capillaries connect only two nerves",
+      "Capillaries create the heartbeat"
+    ],
+    "explanation": "Arteries generally carry blood away from the heart; veins return blood to the heart.",
+    "theoryLines": [
+      "The heart pumps blood into arteries.",
+      "Capillaries are tiny vessels where exchange with tissues happens."
+    ]
+  },
+  {
+    "id": "sci_pb1_g3_body_hard_02",
+    "stem": "Which statement correctly describes how breathing works with circulation?",
+    "options": [
+      "Breathing loads blood with oxygen, and blood carries that oxygen to tissues",
+      "Blood usually makes oxygen inside lung cells",
+      "Muscles take oxygen straight from air",
+      "The heart only drains waste and has no link to oxygen"
+    ],
+    "explanation": "Gas exchange in the lungs changes the oxygen in blood, which then travels to tissues.",
+    "theoryLines": [
+      "Lungs and blood vessels work as a team.",
+      "Cells need oxygen delivered by blood."
+    ]
+  },
+  {
+    "id": "sci_pb1_g3_earth_space_easy_01",
+    "stem": "Which statement correctly describes Earth’s motion around the Sun?",
+    "options": [
+      "Earth travels around the Sun on a nearly circular elliptical path",
+      "Earth stays still while the Moon orbits the Sun with no link to Earth",
+      "The Sun orbits Earth once a day with no seasons",
+      "Seasons are caused only by daily spin on Earth’s axis"
+    ],
+    "explanation": "Earth’s yearly path around the Sun is linked to seasons and changing sunlight angles.",
+    "theoryLines": [
+      "One trip around the Sun takes about one year.",
+      "Earth also spins daily to make day and night."
+    ]
+  },
+  {
+    "id": "sci_pb1_g4_body_easy_01",
+    "stem": "Which statement correctly describes the digestive system at a basic level?",
+    "options": [
+      "It breaks food into smaller parts and absorbs materials into the body",
+      "It usually makes oxygen directly from food",
+      "It only swaps jobs with the lungs to make red blood",
+      "It works only during fast leg movement"
+    ],
+    "explanation": "Digestion breaks food down and helps the body absorb nutrients.",
+    "theoryLines": [
+      "Food travels through a digestive pathway.",
+      "Absorption moves useful materials into the blood."
+    ]
+  },
+  {
+    "id": "sci_pb1_g4_animals_easy_01",
+    "stem": "What typically describes the life cycle of an insect with complete metamorphosis?",
+    "options": [
+      "Stages such as egg, larva, pupa, and adult that look different",
+      "Every stage looks exactly the same",
+      "Usually no development stages at all",
+      "The adult returns to being an egg with the same shape"
+    ],
+    "explanation": "Complete metamorphosis has clear stages with major changes in form.",
+    "theoryLines": [
+      "Butterflies and beetles are examples.",
+      "Each stage can use different resources."
+    ]
+  },
+  {
+    "id": "sci_pb1_g4_animals_hard_01",
+    "stem": "What happens in a food web when a basic producer plant is sharply reduced?",
+    "options": [
+      "Energy pathways and consumer dependence can change",
+      "Nothing changes because plants do not matter in a web",
+      "All animals automatically grow more",
+      "Waste disappears with no ecological effect"
+    ],
+    "explanation": "Producer plants make organic material that feeds many levels of a food web.",
+    "theoryLines": [
+      "Producers form the base of most food webs.",
+      "Losing producers can stress consumers."
+    ]
+  },
+  {
+    "id": "sci_pb1_g4_experiments_hard_01",
+    "stem": "What is a correct reason to repeat measurements in the same experiment?",
+    "options": [
+      "Repeats help reveal spread and measurement mistakes",
+      "Repeats are always unnecessary if a result looks nice",
+      "One trial is always enough no matter the precision needed",
+      "Repeats change the original goal for no reason"
+    ],
+    "explanation": "Repeating improves reliability and helps show how much results vary.",
+    "theoryLines": [
+      "Random error can appear in single trials.",
+      "Consistent repeats strengthen confidence."
+    ]
+  },
+  {
+    "id": "sci_pb1_g5_body_easy_01",
+    "stem": "Which statement correctly describes the kidneys’ role with blood and body fluids?",
+    "options": [
+      "They filter wastes and help keep fluid balance",
+      "They make oxygen for blood",
+      "They are usually responsible only for vision",
+      "They replace the lungs in gas exchange"
+    ],
+    "explanation": "Kidneys filter blood and help regulate fluids and wastes.",
+    "theoryLines": [
+      "Urine carries filtered wastes out of the body.",
+      "Kidneys work with the circulatory system."
+    ]
+  },
+  {
+    "id": "sci_pb1_g5_body_medium_01",
+    "stem": "What usually happens to heart rate when you move from rest to moderate effort for several minutes?",
+    "options": [
+      "It rises gradually to send more oxygen to muscles",
+      "It drops immediately with no rise",
+      "It stays fixed forever with no link to blood flow",
+      "It is set only by room temperature"
+    ],
+    "explanation": "During sustained effort the heart works harder to meet oxygen demand.",
+    "theoryLines": [
+      "Active muscles need more oxygenated blood.",
+      "Heart rate is a useful fitness indicator."
+    ]
+  },
+  {
+    "id": "sci_pb1_g6_body_medium_01",
+    "stem": "What is a reasonable link between balanced eating and steady energy during a school day?",
+    "options": [
+      "Timed meals with complex carbohydrates and protein support steadier energy",
+      "Skipping breakfast always improves focus with no exceptions",
+      "Only quick sugar is a source of steady energy",
+      "Lots of coffee usually replaces sleep with no effects"
+    ],
+    "explanation": "Regular, balanced meals help keep energy more stable through the day.",
+    "theoryLines": [
+      "The body needs fuel from food.",
+      "Sleep and hydration also support energy and focus."
+    ]
+  },
+  {
+    "id": "sci_pb1_g2_earth_space_easy_01",
+    "stem": "What correctly describes how the sky looks during a clear day?",
+    "options": [
+      "The Sun appears to move across the sky, and shadows change",
+      "The Moon always stays fixed with no motion",
+      "Stars disappear at noon because of desk height",
+      "Time of day has no link to shadow direction"
+    ],
+    "explanation": "As the day goes on, the Sun’s position in the sky changes and shadows shift.",
+    "theoryLines": [
+      "Earth’s rotation makes the Sun appear to move.",
+      "Shadow length and direction change with time."
+    ]
+  },
+  {
+    "id": "sci_pb1_g2_earth_space_easy_02",
+    "stem": "What describes the Moon in the night sky in a simple observation?",
+    "options": [
+      "It looks like a bright disk that can be seen without special tools",
+      "It is always full every evening with no cycle",
+      "It shines with its own light like the Sun",
+      "It is usually visible only at noon"
+    ],
+    "explanation": "The Moon reflects sunlight and appears in changing shapes through its cycle.",
+    "theoryLines": [
+      "Moon phases change over about a month.",
+      "The Moon does not make its own light."
+    ]
+  },
+  {
+    "id": "sci_pb1_g2_earth_space_easy_04",
+    "stem": "What is a safe way to observe the Sun during the day?",
+    "options": [
+      "Use a proper solar filter or a supervised projection or shade method",
+      "Stare directly for a long time with no protection",
+      "Use a regular telescope with no filter",
+      "Usually point a laser at the Sun"
+    ],
+    "explanation": "Looking at the Sun can hurt eyes. Use approved filters and adult supervision.",
+    "theoryLines": [
+      "Sunlight is intense enough to damage vision.",
+      "Safe solar viewing needs special tools."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_body_medium_02",
+    "stem": "Why is it important to wash hands before eating?",
+    "options": [
+      "To reduce germs that could enter the body",
+      "So hands are always dry",
+      "Usually only to strengthen muscles",
+      "Usually so we do not need sleep"
+    ],
+    "explanation": "Handwashing reduces germs that can travel into the digestive system.",
+    "theoryLines": [
+      "Germs can live on hands.",
+      "Clean hands help keep you healthier."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_body_medium_05",
+    "stem": "Why is it helpful to get enough sleep at night?",
+    "options": [
+      "To let the body rest and recover",
+      "So we do not need to eat",
+      "So hair grows faster",
+      "Usually so we do not breathe"
+    ],
+    "explanation": "Sleep supports growth and recovery.",
+    "theoryLines": [
+      "Rest helps the body and brain.",
+      "Kids need enough sleep to feel ready for the day."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_body_hard_05",
+    "stem": "Why should you wear a helmet when you ride a bike?",
+    "options": [
+      "A helmet helps protect your brain if you fall.",
+      "A helmet makes your bike go faster by itself.",
+      "A helmet replaces the need for brakes.",
+      "A helmet feeds your muscles."
+    ],
+    "explanation": "Your brain is inside your skull. A helmet adds extra protection if you bump your head.",
+    "theoryLines": [
+      "The brain controls thinking and movement.",
+      "Safety gear helps prevent injuries."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_animals_medium_02",
+    "stem": "Which animal lives in water and breathes with gills?",
+    "options": [
+      "A fish",
+      "A cat",
+      "A chicken",
+      "A butterfly"
+    ],
+    "explanation": "Fish live in water. Gills help them take oxygen from the water.",
+    "theoryLines": [
+      "Different animals live in different habitats.",
+      "Gills work underwater."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_animals_hard_03",
+    "stem": "Why do fish have gills?",
+    "options": [
+      "Gills help fish take oxygen from water.",
+      "Gills help fish bark like dogs.",
+      "Gills help fish make honey.",
+      "Gills help fish grow feathers."
+    ],
+    "explanation": "Fish need oxygen just like we do. Gills pull oxygen out of the water so fish can breathe underwater.",
+    "theoryLines": [
+      "Land animals usually breathe with lungs.",
+      "Water animals may use gills."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_animals_hard_05",
+    "stem": "Why are many bats active at night?",
+    "options": [
+      "Night can make finding food safer or easier for them.",
+      "They melt in sunlight like ice cream.",
+      "They can only fly when it snows.",
+      "They are afraid of trees."
+    ],
+    "explanation": "Bats are often nocturnal. Night activity can help them hunt insects and avoid some dangers.",
+    "theoryLines": [
+      "Nocturnal animals are active at night.",
+      "Different animals are active at different times."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_medium_01",
+    "stem": "What is one main role of the skeleton?",
+    "options": [
+      "It supports the body and protects organs like the brain and heart.",
+      "It digests sugar in the mouth only.",
+      "It senses smells better than the nose.",
+      "It makes all of your memories."
+    ],
+    "explanation": "Bones give shape and support. The skull protects the brain, and the rib cage helps protect the heart and lungs.",
+    "theoryLines": [
+      "The skeleton is a living framework.",
+      "Joints let bones move where they meet."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_medium_02",
+    "stem": "Why is eating a variety of healthy foods important?",
+    "options": [
+      "Different foods give different nutrients your body needs.",
+      "One candy bar gives every nutrient forever.",
+      "Food is only for changing hair color.",
+      "People do not need nutrients at all."
+    ],
+    "explanation": "Nutrients include proteins, vitamins, minerals, and more. A balanced diet helps growth, energy, and health.",
+    "theoryLines": [
+      "No single food has everything you need.",
+      "Fruits, vegetables, grains, and proteins each help in different ways."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_medium_05",
+    "stem": "Why is warming up before hard exercise helpful?",
+    "options": [
+      "It gently prepares muscles and joints for activity.",
+      "It freezes your muscles solid.",
+      "It removes the need to breathe.",
+      "It turns sweat into glue."
+    ],
+    "explanation": "A warm-up increases blood flow and loosens muscles. That can help you move better and lower injury risk.",
+    "theoryLines": [
+      "Start activity slowly, then go harder.",
+      "Stretching and light movement are common warm-ups."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_experiments_medium_02",
+    "stem": "Why do scientists often repeat an experiment?",
+    "options": [
+      "Repeating helps check whether results are reliable.",
+      "Repeating erases the need for any data.",
+      "Repeating makes safety rules unnecessary.",
+      "Repeating turns opinions into magic spells."
+    ],
+    "explanation": "One trial might be a lucky accident. Similar results across repeats make findings more trustworthy.",
+    "theoryLines": [
+      "Reliable results can be repeated.",
+      "More trials can reveal mistakes or chance differences."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_experiments_hard_06",
+    "stem": "Why do scientists keep experiment conditions the same when possible?",
+    "options": [
+      "So differences in results are more likely caused by the variable being tested",
+      "So no one needs to measure anything",
+      "So safety rules can be ignored",
+      "So hypotheses become facts automatically"
+    ],
+    "explanation": "Controlled conditions make comparisons fair. Then you can better link the changed variable to the outcome.",
+    "theoryLines": [
+      "Same conditions support fair tests.",
+      "Write down the conditions you used."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_animals_medium_03",
+    "stem": "What major change happens in a butterfly's life cycle?",
+    "options": [
+      "It goes through stages, including caterpillar and chrysalis, before becoming an adult butterfly.",
+      "It stays a caterpillar forever with no changes.",
+      "It hatches as a mammal with fur.",
+      "It skips being young and starts as a tree."
+    ],
+    "explanation": "Butterflies metamorphose. The caterpillar feeds and grows, then transforms inside a chrysalis into a winged adult.",
+    "theoryLines": [
+      "Life cycles show how animals grow and change.",
+      "Different stages may use different foods or habitats."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_plants_medium_01",
+    "stem": "What do plants make during photosynthesis?",
+    "options": [
+      "Food (sugar) using light, water, and carbon dioxide",
+      "Rocks using only darkness",
+      "Plastic using saltwater only",
+      "Electricity using sand"
+    ],
+    "explanation": "In photosynthesis, plants capture light energy and build sugar. Oxygen is released as a useful byproduct.",
+    "theoryLines": [
+      "Leaves are major sites of photosynthesis.",
+      "Animals depend on plant-made food energy."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_plants_hard_06",
+    "stem": "What happens to most plants without enough water?",
+    "options": [
+      "They wilt and may die if the drought continues.",
+      "They instantly become desert cameras.",
+      "They stop needing sunlight forever.",
+      "They turn into mushrooms overnight."
+    ],
+    "explanation": "Water keeps plant cells firm and supports photosynthesis. Without it, leaves droop and life processes slow or stop.",
+    "theoryLines": [
+      "Wilting is an early water-stress sign.",
+      "Different plants tolerate drought differently."
+    ]
+  },
+  {
+    "id": "sci_p0_g3_body_hard_01",
+    "stem": "What happens to blood when it travels through the lungs?",
+    "options": [
+      "It picks up oxygen and drops off carbon dioxide.",
+      "It turns into stomach acid.",
+      "It stores leftover bones.",
+      "It becomes plant sap."
+    ],
+    "explanation": "In the lungs, gas exchange occurs. Blood gains oxygen for the body and releases carbon dioxide to be exhaled.",
+    "theoryLines": [
+      "The heart sends blood to the lungs and body.",
+      "Oxygen-rich blood fuels active cells."
+    ]
+  },
+  {
+    "id": "sci_p0_g3_body_hard_02",
+    "stem": "What do the kidneys help do?",
+    "options": [
+      "Filter waste from the blood and help make urine",
+      "Pump air into the ears",
+      "Digest food using chlorophyll",
+      "Grow new skull bones each hour"
+    ],
+    "explanation": "Kidneys clean the blood by removing wastes and extra water. The wastes leave the body as urine.",
+    "theoryLines": [
+      "Healthy kidneys support internal balance.",
+      "Drinking enough water helps body systems, including the kidneys."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_experiments_easy_02",
+    "stem": "What belongs in a data table during an experiment?",
+    "options": [
+      "Organized measurements and observations from each trial",
+      "Only jokes with no numbers",
+      "Only the title of your favorite movie",
+      "Only guesses with no recording of results"
+    ],
+    "explanation": "Tables capture what happened in a structured way. Labels, units, and trial numbers keep data usable.",
+    "theoryLines": [
+      "Good records support analysis.",
+      "Others should be able to read your table."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_experiments_hard_01",
+    "stem": "Why do scientists often repeat the same trial many times?",
+    "options": [
+      "To build confidence that results are not just a one-time accident",
+      "To ignore safety rules",
+      "To change two variables secretly",
+      "To avoid writing units"
+    ],
+    "explanation": "Repeats reveal consistency. Outliers become clearer, and average trends are more trustworthy.",
+    "theoryLines": [
+      "Reliability grows with careful repetition.",
+      "Report all honest trials, not only favorites."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_experiments_hard_05",
+    "stem": "What is watching birds at a feeder without changing anything mainly called?",
+    "options": [
+      "Observation",
+      "An experiment that changes a variable",
+      "A control group chemical test",
+      "A measurement of mass with a balance"
+    ],
+    "explanation": "Observation gathers information carefully. An experiment would add a planned change, such as feeder type, to test an effect.",
+    "theoryLines": [
+      "Both skills are valuable in science.",
+      "Questions determine whether you only observe or also experiment."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_animals_hard_03",
+    "stem": "What is an insect that looks like a leaf most likely using?",
+    "options": [
+      "Camouflage to avoid being eaten",
+      "Echolocation to find nectar",
+      "Gills to breathe on land",
+      "Migration to leave Earth's orbit"
+    ],
+    "explanation": "Looking like a leaf hides the insect from predators. Camouflage is a defensive adaptation.",
+    "theoryLines": [
+      "Appearance can improve survival odds.",
+      "Predators may also use camouflage when hunting."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_easy_01",
+    "stem": "The kidneys are part of which body job?",
+    "options": [
+      "Filtering wastes from blood",
+      "Pumping air into feathers",
+      "Making chlorophyll for skin",
+      "Storing pollen in bone marrow"
+    ],
+    "explanation": "Kidneys clean blood and help control water and salt balance. Wastes leave as urine.",
+    "theoryLines": [
+      "Excretion removes harmful leftovers.",
+      "Organ systems cooperate to keep conditions stable."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_easy_05",
+    "stem": "What happens to your lungs when you inhale?",
+    "options": [
+      "Fill with air so oxygen can enter the blood",
+      "Fill with food for digestion",
+      "Pump blood to the feet only",
+      "Produce urine for the kidneys"
+    ],
+    "explanation": "Inhaling brings fresh air into tiny air sacs. Oxygen crosses into blood while carbon dioxide exits.",
+    "theoryLines": [
+      "Breathing moves air in and out of the lungs.",
+      "Respiratory health affects energy and endurance."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_medium_04",
+    "stem": "Why does staying hydrated help during long sports practices?",
+    "options": [
+      "Water lost in sweat must be replaced for the body to work well.",
+      "Water freezes muscles so they cannot move.",
+      "Water removes oxygen from blood on purpose.",
+      "Water stops nerves from sending any signals."
+    ],
+    "explanation": "Sweating cools you but reduces body water. Replacing fluids helps circulation, temperature control, and performance.",
+    "theoryLines": [
+      "Thirst and dark urine can signal low fluid levels.",
+      "Plan water breaks in hot weather."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_medium_06",
+    "stem": "Why do scientists or doctors measure a person's pulse?",
+    "options": [
+      "To learn about heart rate and how hard the circulatory system is working",
+      "To measure exact hair length in millimeters only",
+      "To learn stomach enzyme brand names",
+      "To count the number of bones grown that hour"
+    ],
+    "explanation": "Pulse is a window into heart activity. It can show rest, exercise response, or possible health concerns.",
+    "theoryLines": [
+      "Heart rate is beats per minute.",
+      "Context matters when interpreting pulse."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_hard_02",
+    "stem": "Why is warming up properly before sprinting useful?",
+    "options": [
+      "Increases blood flow and prepares muscles for sudden hard effort",
+      "Removes lactic acid by stopping breathing",
+      "Converts muscle into bone for speed",
+      "Eliminates the need for shoes and safety"
+    ],
+    "explanation": "Warm tissues move more freely and receive more blood. That preparation can improve performance and reduce injury risk.",
+    "theoryLines": [
+      "Warm-ups are part of smart training.",
+      "Intensity should rise gradually."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_experiments_easy_03",
+    "stem": "What should a lab log include?",
+    "options": [
+      "Procedures, observations, measurements, and dates",
+      "Only emojis with no data",
+      "Only the final guess, with methods erased",
+      "Only a list of friends' names"
+    ],
+    "explanation": "Detailed logs let you and others understand what was done and found. They support honest analysis and replication.",
+    "theoryLines": [
+      "Science depends on clear communication.",
+      "Write observations as they happen."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_animals_easy_06",
+    "stem": "Why are gills useful for many aquatic animals?",
+    "options": [
+      "Allow many aquatic animals to take oxygen from water",
+      "Let land mammals photosynthesize",
+      "Store pollen for winter nests",
+      "Turn carbon dioxide into fur"
+    ],
+    "explanation": "Water holds dissolved oxygen. Gills extract it so fish and some other aquatic animals can breathe underwater.",
+    "theoryLines": [
+      "Gas exchange structures fit the environment.",
+      "Lungs are common for breathing air."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_body_medium_03",
+    "stem": "What is an important job of the kidneys?",
+    "options": [
+      "Filter waste from the blood and help make urine",
+      "Pump oxygen straight into the ears",
+      "Store sunlight under the skin",
+      "Heat the body by burning bones"
+    ],
+    "explanation": "Kidneys clean the blood by removing wastes and extra water, which leave the body as urine.",
+    "theoryLines": [
+      "Kidneys are part of the excretory system.",
+      "Healthy kidneys help keep blood chemistry balanced."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_body_medium_05",
+    "stem": "Why is warming up before hard exercise helpful?",
+    "options": [
+      "It gently prepares muscles for stronger activity",
+      "It removes the need for oxygen",
+      "It turns muscles into bone",
+      "It stops the heart from pumping"
+    ],
+    "explanation": "A warm-up increases blood flow and loosens muscles so they are ready for harder movement and less likely to strain.",
+    "theoryLines": [
+      "Warm muscles work more safely during exercise.",
+      "Light activity before a workout prepares the body."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_experiments_easy_02",
+    "stem": "Why do scientists change only one variable at a time in a fair test?",
+    "options": [
+      "So they can tell what caused the result",
+      "So every measurement becomes identical forever",
+      "So they never need to record data",
+      "So the experiment finishes without tools"
+    ],
+    "explanation": "If too many things change at once, you cannot know which change caused the outcome.",
+    "theoryLines": [
+      "A fair test keeps most conditions the same.",
+      "The independent variable is the one you purposely change."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_experiments_easy_03",
+    "stem": "Why should you write down what happens during an experiment?",
+    "options": [
+      "A clear log helps you remember and share results",
+      "Notes make the equipment heavier",
+      "Writing replaces the need for safety",
+      "Logs turn water into ice instantly"
+    ],
+    "explanation": "Recording observations and measurements lets you check your work and compare results later.",
+    "theoryLines": [
+      "Scientists keep careful records of procedures and data.",
+      "Good notes make experiments easier to repeat."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_experiments_easy_04",
+    "stem": "Why do scientists often repeat an experiment?",
+    "options": [
+      "To check whether the results are reliable",
+      "To invent a new planet each time",
+      "To avoid measuring anything",
+      "To erase all earlier evidence"
+    ],
+    "explanation": "Repeating a test helps show whether results happen again and are not just a lucky accident.",
+    "theoryLines": [
+      "Reliable results can be repeated under similar conditions.",
+      "Repeating trials reduces the chance of a one-time mistake."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_experiments_easy_07",
+    "stem": "What is the most important reason to follow safety rules in a lab?",
+    "options": [
+      "To protect people and prevent accidents",
+      "To make experiments finish faster only",
+      "To avoid writing any observations",
+      "To keep results secret from everyone"
+    ],
+    "explanation": "Safety rules reduce harm from spills, heat, sharp tools, and other lab risks.",
+    "theoryLines": [
+      "Wear safety gear when a procedure calls for it.",
+      "Ask an adult before using unfamiliar lab materials."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_animals_hard_01",
+    "stem": "What usually happens when predators become scarce in an ecosystem?",
+    "options": [
+      "Prey populations may grow larger for a while",
+      "All plants instantly disappear",
+      "Rain stops falling forever",
+      "Every animal turns into a producer"
+    ],
+    "explanation": "Predators help control prey numbers. With fewer predators, prey can increase until food or space runs short.",
+    "theoryLines": [
+      "Predator and prey populations affect each other.",
+      "Balance in ecosystems depends on many living links."
+    ]
+  },
+  {
+    "id": "sci_vol_g1_animals_hard_01",
+    "stem": "Why is it helpful when many different animals live in a place?",
+    "options": [
+      "A variety of living things helps keep nature systems healthier",
+      "Rain becomes unnecessary",
+      "Food disappears forever",
+      "Light stops reaching Earth"
+    ],
+    "explanation": "Biodiversity means many kinds of living things. Together they support food webs and healthier habitats.",
+    "theoryLines": [
+      "Different animals play different roles in nature.",
+      "Protecting habitats protects many species."
+    ]
+  },
+  {
+    "id": "sci_vol_g2_experiments_easy_01",
+    "stem": "Why do graphs need clear labels on the axes?",
+    "options": [
+      "So readers know what the numbers and categories mean",
+      "So the graph can hide all of the data",
+      "So hypotheses become unnecessary",
+      "So experiments never need measuring"
+    ],
+    "explanation": "Axis labels tell people what was measured and how to read the graph correctly.",
+    "theoryLines": [
+      "A graph is a picture of data.",
+      "Clear labels make science communication easier."
+    ]
+  },
+  {
+    "id": "sci_vol_g3_experiments_easy_02",
+    "stem": "What should you do if one measurement looks very different from the others?",
+    "options": [
+      "Check it again and think about possible mistakes",
+      "Always delete all of your data",
+      "Change the hypothesis to match one odd number only",
+      "Stop using units forever"
+    ],
+    "explanation": "An outlier may be an error. Rechecking helps you decide whether to keep, fix, or explain the unusual result.",
+    "theoryLines": [
+      "Careful checking improves data quality.",
+      "Repeating a measurement can reveal mistakes."
+    ]
+  },
+  {
+    "id": "sci_vol_g3_experiments_hard_02",
+    "stem": "Why do scientists use a control group?",
+    "options": [
+      "To compare what happens without the tested change",
+      "To avoid collecting any evidence",
+      "To make every trial identical by magic",
+      "To replace measuring with guessing"
+    ],
+    "explanation": "A control group shows the normal result, so you can see the effect of the change you tested.",
+    "theoryLines": [
+      "Comparison makes experimental results meaningful.",
+      "Controls help scientists trust their conclusions."
+    ]
+  },
+  {
+    "id": "sci_vol_g3_plants_hard_01",
+    "stem": "What happens to a plant when it does not get enough water?",
+    "options": [
+      "The plant wilts, stops growing, and may eventually die.",
+      "The plant grows taller to find rain coming from nearby mountains.",
+      "The plant produces more leaves to collect moisture from the air.",
+      "The plant grows its roots sideways toward other nearby plants."
+    ],
+    "explanation": "Water is essential for plants. Without enough water, a plant cannot carry out photosynthesis, its cells lose pressure, and it wilts. It may die if water is not provided."
+  },
+  {
+    "id": "sci_vol_g4_body_hard_01",
+    "stem": "What is the main role of teeth in digestion?",
+    "options": [
+      "To chew and break food into smaller pieces, making it easier to swallow and digest.",
+      "To breathe oxygen in and out of the mouth.",
+      "To pump blood through the digestive system.",
+      "To cool down hot food before you swallow it."
+    ],
+    "explanation": "Teeth break food into smaller pieces through chewing. This mechanical breakdown is the first step in digestion and makes it easier for the stomach and intestines to process food."
+  },
+  {
+    "id": "sci_vol_g4_animals_hard_01",
+    "stem": "What is one clear difference between most birds and fish?",
+    "options": [
+      "Birds have feathers, while fish have scales and gills",
+      "Birds breathe only with gills underwater",
+      "Fish grow feathers for flight",
+      "Neither group needs oxygen"
+    ],
+    "explanation": "Birds are feathered animals that usually breathe air with lungs. Fish typically have scales and use gills in water.",
+    "theoryLines": [
+      "Animal groups share sets of traits.",
+      "Comparing traits helps classify living things."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_body_easy_02",
+    "stem": "What do the kidneys do in the body?",
+    "options": [
+      "They filter wastes from the blood",
+      "They pump air into the ears",
+      "They store sunlight under the skin",
+      "They digest food in the mouth"
+    ],
+    "explanation": "Kidneys clean the blood by removing wastes that leave the body as urine.",
+    "theoryLines": [
+      "Kidneys help keep blood balanced.",
+      "The excretory system removes wastes."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_body_medium_01",
+    "stem": "Why is eating a balanced diet important?",
+    "options": [
+      "Different foods give the body a mix of nutrients it needs",
+      "Only one food group is ever useful",
+      "Food is unrelated to energy",
+      "Balanced meals stop all growth"
+    ],
+    "explanation": "A balanced diet includes a variety of foods that supply energy, vitamins, minerals, and other nutrients.",
+    "theoryLines": [
+      "Fruits, vegetables, grains, proteins, and dairy can all play roles.",
+      "Good nutrition supports growth and health."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_body_medium_02",
+    "stem": "What is the brain's main role in the body?",
+    "options": [
+      "It is the control center for thinking, sensing, and movement",
+      "It digests all food by itself",
+      "It pumps blood like a second heart",
+      "It makes sunlight for the eyes"
+    ],
+    "explanation": "The brain receives information, makes decisions, and sends signals that guide the body.",
+    "theoryLines": [
+      "The brain is part of the nervous system.",
+      "Learning and memory happen in the brain."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_experiments_easy_02",
+    "stem": "What does it mean when another team can repeat your experiment and get a similar result?",
+    "options": [
+      "Your result is more likely to be reliable",
+      "Your hypothesis must be false forever",
+      "Measuring tools are no longer needed",
+      "The experiment had no variables"
+    ],
+    "explanation": "Replication means others can get similar results, which builds confidence in the findings.",
+    "theoryLines": [
+      "Science becomes stronger when results can be repeated.",
+      "Clear methods help other people replicate a test."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_animals_hard_01",
+    "stem": "What is one main job of a fish's fins?",
+    "options": [
+      "Helping the fish move and stay balanced in water",
+      "Making feathers for flight",
+      "Producing pollen for flowers",
+      "Filtering blood like kidneys"
+    ],
+    "explanation": "Fins help fish swim, turn, and keep steady in the water.",
+    "theoryLines": [
+      "Fish are adapted for swimming.",
+      "Body shape and fins work together in water."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_animals_hard_02",
+    "stem": "Which statement correctly compares birds and fish?",
+    "options": [
+      "Most birds breathe air with lungs; fish usually use gills",
+      "Fish have feathers and fly long distances",
+      "Birds take oxygen only from underwater gills",
+      "Neither group can move from place to place"
+    ],
+    "explanation": "Birds and fish are both animals, but they have different body features for different habitats.",
+    "theoryLines": [
+      "Lungs and gills are different ways to get oxygen.",
+      "Traits help scientists sort animals into groups."
+    ]
+  },
+  {
+    "id": "sci_g3_body_005",
+    "stem": "What happens to light after it enters your eyes?",
+    "options": [
+      "Signals travel to the brain so you can see",
+      "The light digests food in the stomach",
+      "The light turns into sound in the ears",
+      "The light becomes blood in the heart"
+    ],
+    "explanation": "Eyes detect light and send nerve signals to the brain, which builds the images you see.",
+    "theoryLines": [
+      "Vision depends on both the eyes and the brain.",
+      "The optic nerve carries visual signals."
+    ]
+  },
+  {
+    "id": "sci_g3_body_013",
+    "stem": "Why do you breathe faster after hard exercise?",
+    "options": [
+      "The body needs more oxygen for working muscles",
+      "The stomach suddenly stops digesting",
+      "Bones need less blood",
+      "The eyes stop sending signals"
+    ],
+    "explanation": "Active muscles use more oxygen, so breathing and heart rate increase to deliver it.",
+    "theoryLines": [
+      "Exercise raises the body's oxygen demand.",
+      "Faster breathing helps bring in more air."
+    ]
+  },
+  {
+    "id": "sci_g3_body_016",
+    "stem": "Why should you wash your hands before eating?",
+    "options": [
+      "To help remove germs that could make you sick",
+      "To make food taste colder",
+      "To stop bones from growing",
+      "To replace brushing your teeth"
+    ],
+    "explanation": "Clean hands reduce the chance of spreading harmful microbes to your mouth and food.",
+    "theoryLines": [
+      "Handwashing is a simple health habit.",
+      "Soap and water help remove dirt and germs."
+    ]
+  },
+  {
+    "id": "sci_g3_body_018",
+    "stem": "What does a balanced diet provide?",
+    "options": [
+      "A mix of nutrients the body needs to stay healthy",
+      "Only sugar and nothing else",
+      "A way to avoid all water",
+      "Energy that never comes from food"
+    ],
+    "explanation": "Eating different healthy foods supplies proteins, carbohydrates, fats, vitamins, and minerals.",
+    "theoryLines": [
+      "Variety helps cover nutrient needs.",
+      "Good food choices support growth and energy."
+    ]
+  },
+  {
+    "id": "sci_g3_body_021",
+    "stem": "What often happens to your pulse after running hard?",
+    "options": [
+      "It becomes faster",
+      "It disappears completely",
+      "It turns into a smell signal",
+      "It measures only eye color"
+    ],
+    "explanation": "During activity the heart beats faster, so the pulse rate rises.",
+    "theoryLines": [
+      "Pulse is a sign of heart rate.",
+      "Resting brings the pulse back down."
+    ]
+  },
+  {
+    "id": "sci_g3_body_022",
+    "stem": "Why should you wear a helmet for biking or skating?",
+    "options": [
+      "To help protect your head from injury",
+      "To make hearing louder",
+      "To digest food faster",
+      "To stop blood from circulating"
+    ],
+    "explanation": "A helmet cushions the head if you fall and helps prevent serious injuries.",
+    "theoryLines": [
+      "The brain is protected by the skull and by safe habits.",
+      "Safety gear reduces risk during sports."
+    ]
+  },
+  {
+    "id": "sci_g3_body_028",
+    "stem": "What do the kidneys help remove from the blood?",
+    "options": [
+      "Wastes that leave the body as urine",
+      "All of the body's oxygen forever",
+      "Every red blood cell permanently",
+      "Only unused sunlight"
+    ],
+    "explanation": "Kidneys filter blood and help form urine that carries wastes away.",
+    "theoryLines": [
+      "Excretion removes wastes from the body.",
+      "Healthy kidneys support clean, balanced blood."
+    ]
+  },
+  {
+    "id": "sci_g3_body_029",
+    "stem": "Why is breakfast helpful for many kids?",
+    "options": [
+      "It gives energy to start the day",
+      "It stops all learning at school",
+      "It removes the need to drink water",
+      "It freezes muscles until night"
+    ],
+    "explanation": "Eating in the morning provides fuel after a night without food.",
+    "theoryLines": [
+      "Food supplies energy for activity and thinking.",
+      "A healthy breakfast can include fruits, grains, and protein foods."
+    ]
+  },
+  {
+    "id": "sci_g3_body_031",
+    "stem": "Which foods are especially helpful for strong bones because they provide calcium?",
+    "options": [
+      "Milk, yogurt, and other calcium-rich foods",
+      "Only candy and soda",
+      "Only dry paper",
+      "Only pure salt water"
+    ],
+    "explanation": "Calcium helps build and maintain strong bones and teeth.",
+    "theoryLines": [
+      "Dairy foods are common calcium sources.",
+      "Some leafy greens and fortified foods also provide calcium."
+    ]
+  },
+  {
+    "id": "sci_g3_body_046",
+    "stem": "Why are fruits and vegetables helpful in a daily diet?",
+    "options": [
+      "They provide vitamins, minerals, and fiber",
+      "They remove all need for water",
+      "They replace oxygen in the lungs",
+      "They turn bones into rubber"
+    ],
+    "explanation": "Fruits and vegetables supply nutrients that support health and growth.",
+    "theoryLines": [
+      "Colorful produce often means a variety of nutrients.",
+      "Fiber helps digestion."
+    ]
+  },
+  {
+    "id": "sci_g3_body_052",
+    "stem": "Why is good posture helpful for your back?",
+    "options": [
+      "It supports the spine and can reduce strain",
+      "It stops bones from existing",
+      "It removes the need for muscles",
+      "It freezes joints permanently"
+    ],
+    "explanation": "Sitting and standing tall helps the backbone carry your body weight more comfortably.",
+    "theoryLines": [
+      "The spine supports the head and trunk.",
+      "Strong core muscles also help posture."
+    ]
+  },
+  {
+    "id": "sci_phb_g1_materials_med_02",
+    "stem": "What best describes the texture of a sponge when you touch it?",
+    "options": [
+      "It is soft and can be squeezed easily",
+      "It is hard and cannot be bent or compressed",
+      "It is rough and sharp like coarse sandpaper",
+      "It feels like cold, smooth metal"
+    ],
+    "explanation": "A sponge is a soft material that can be easily squeezed and compressed because it contains many tiny holes filled with air.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g1_materials_hard_02",
+    "stem": "What happens to a soft sponge when you press down hard on it?",
+    "options": [
+      "It changes shape while pressed but returns to its original shape when released",
+      "It breaks apart into tiny pieces that cannot be put back together",
+      "It hardens and becomes as stiff as a piece of metal",
+      "It always stays exactly the same shape no matter how hard you press"
+    ],
+    "explanation": "A sponge is a soft, elastic material. When you press it, it compresses and changes shape, but it springs back to its original form when you let go.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g1_earth_space_med_01",
+    "stem": "What does the sun give us during the daytime?",
+    "options": [
+      "Light and warmth that let us see and keep Earth at a comfortable temperature",
+      "Cold winds and heavy rain that fall from the sky",
+      "Fresh drinking water that drips down from the clouds",
+      "Gravity that pulls all objects down to the ground"
+    ],
+    "explanation": "The sun provides light and heat during the day. Its light lets us see, and its warmth keeps the Earth at temperatures that support life.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g1_earth_space_med_04",
+    "stem": "What can you often see in the night sky?",
+    "options": [
+      "The Moon and stars",
+      "Only ocean waves",
+      "Only underground roots",
+      "Only classroom chalkboards"
+    ],
+    "explanation": "At night the sky looks dark, and the Moon and stars are easier to notice.",
+    "theoryLines": [
+      "The Moon reflects sunlight.",
+      "Stars are distant suns that look like points of light."
+    ]
+  },
+  {
+    "id": "sci_phb_g1_earth_space_hard_02",
+    "stem": "What can thick clouds do to sunlight during the day?",
+    "options": [
+      "Block some light and make the ground look dimmer",
+      "Turn the sun into the Moon",
+      "Stop Earth from rotating",
+      "Make shadows impossible forever"
+    ],
+    "explanation": "Cloud cover can reduce the sunlight that reaches the ground, so a day may look gray and less bright.",
+    "theoryLines": [
+      "Clouds are made of tiny water droplets or ice crystals.",
+      "Weather can change how much sunlight we receive."
+    ]
+  },
+  {
+    "id": "sci_phb_g1_earth_space_hard_04",
+    "stem": "Why do we wear a raincoat when it rains?",
+    "options": [
+      "To keep our body dry and protected from getting wet in the rain.",
+      "To see the Moon more clearly through the rainy clouds.",
+      "To help Earth absorb rainwater faster into the ground.",
+      "To make rain fall more slowly and gently."
+    ],
+    "explanation": "We wear a raincoat so rain does not soak our body and clothes. The waterproof material keeps us dry and protected while it is raining.",
+    "theoryLines": [
+      "Waterproof materials make water run off instead of soaking in.",
+      "We choose clothes that match the weather to stay comfortable and protected."
+    ]
+  },
+  {
+    "id": "sci_phb_g1_environment_hard_03",
+    "stem": "Why are trees in a park helpful?",
+    "options": [
+      "They give shade, homes for animals, and fresher air",
+      "They remove all need for water on Earth",
+      "They stop seasons from changing",
+      "They turn playgrounds into deserts"
+    ],
+    "explanation": "Trees provide shade, shelter, and oxygen while making parks nicer places to visit.",
+    "theoryLines": [
+      "Plants support healthy environments.",
+      "Parks need care so living things can thrive."
+    ]
+  },
+  {
+    "id": "sci_phb_g2_earth_space_hard_02",
+    "stem": "What happens to a puddle of water on a warm, sunny day?",
+    "options": [
+      "The heat from the sun causes the water to evaporate and turn into water vapor in the air",
+      "The water sinks straight down into the ground and is gone forever",
+      "The puddle grows larger because sunlight creates extra water",
+      "Sunlight hardens the surface of the puddle so it stays as a permanent solid"
+    ],
+    "explanation": "Heat from the sun gives water molecules enough energy to escape from the liquid surface and rise into the air as invisible water vapor. This is called evaporation.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g3_environment_eas_02",
+    "stem": "Why is recycling paper helpful?",
+    "options": [
+      "It saves materials and can reduce waste",
+      "It makes trees disappear faster on purpose",
+      "It pollutes rivers automatically",
+      "It stops people from reading books"
+    ],
+    "explanation": "Recycling paper reuses fiber so fewer new resources may be needed and less trash piles up.",
+    "theoryLines": [
+      "Paper comes from plant materials.",
+      "Recycling is one way to care for the environment."
+    ]
+  },
+  {
+    "id": "sci_phb_g6_materials_med_01",
+    "stem": "What happens during a phase change of water?",
+    "options": [
+      "Water changes form, such as liquid to gas, without becoming a new substance",
+      "Water turns into a brand-new metal element",
+      "Water permanently loses all hydrogen",
+      "Water becomes living tissue"
+    ],
+    "explanation": "Melting, freezing, evaporation, and condensation change water's state, not its chemical identity.",
+    "theoryLines": [
+      "H2O stays water in solid, liquid, or gas form.",
+      "Heat energy drives many phase changes."
+    ]
+  },
+  {
+    "id": "env_8",
+    "stem": "What is recycling?",
+    "options": [
+      "Burying everything in backyard soil with no sorting",
+      "Using old materials again to make new products",
+      "Piling waste forever in one place with no recycling",
+      "Crushing mixed materials together with no prep for reuse"
+    ],
+    "explanation": "Recycling turns used materials such as plastic, paper, and glass into new products instead of throwing them away.",
+    "theoryLines": [
+      "Recycling helps protect the environment.",
+      "It reduces waste and saves resources."
+    ]
+  },
+  {
+    "id": "exp_15",
+    "stem": "What is a control group in an experiment?",
+    "options": [
+      "A group that usually never changes for any reason",
+      "A group in the experiment that you leave unchanged so you can compare results",
+      "A group that always changes",
+      "An experiment with only one group and no comparison"
+    ],
+    "explanation": "A control group is left unchanged so you can compare and see what really caused the result.",
+    "theoryLines": [
+      "A control group is part of a strong experiment.",
+      "It helps you understand what caused the outcome."
+    ]
+  },
+  {
+    "id": "exp_23",
+    "stem": "Why is it important to do experiments?",
+    "options": [
+      "Because an opinion is enough without testing a real case",
+      "To learn about the world, test ideas, and understand how things work",
+      "Only to pass time with no clear experiment question",
+      "To watch once and rely on memory with no notes or repeats"
+    ],
+    "explanation": "Experiments help us learn about the world, test ideas, understand how things work, and discover new things.",
+    "theoryLines": [
+      "Experiments are a scientific way to learn.",
+      "They help students think like scientists."
+    ]
+  },
+  {
+    "id": "earth_18__v2",
+    "stem": "What is inside clouds?",
+    "options": [
+      "Completely dry air with no water",
+      "Tiny water droplets",
+      "Dust with no liquid water",
+      "Strong wind with no moisture"
+    ],
+    "explanation": "Clouds are made of tiny water droplets or ice crystals. When they get heavy, rain can fall.",
+    "theoryLines": [
+      "Clouds form when water vapor condenses.",
+      "When droplets grow heavy, rain or snow can fall."
+    ]
+  },
+  {
+    "id": "env_15__v2",
+    "stem": "What is recycling?",
+    "options": [
+      "Putting paper and used oil in the same trash bag with no sorting",
+      "Using old materials again to make new things",
+      "Leaving unsorted waste in the yard for a long time",
+      "Burning mixed yard waste with uncontrolled smoke"
+    ],
+    "explanation": "Recycling means using old materials again to make new products instead of throwing them away.",
+    "theoryLines": [
+      "Recycling helps protect the environment.",
+      "It reduces waste and saves resources."
+    ]
+  },
+  {
+    "id": "earth_25__v2",
+    "stem": "What are clouds?",
+    "options": [
+      "Dry air with no visible droplets",
+      "Tiny water droplets or ice crystals in the atmosphere",
+      "Dust alone with no moisture",
+      "Fast wind with no gathered droplets"
+    ],
+    "explanation": "Clouds are tiny water droplets or ice crystals in the air. When they get heavy, rain or snow can fall.",
+    "theoryLines": [
+      "Clouds form when water vapor condenses.",
+      "There are many kinds of clouds."
+    ]
+  },
+  {
+    "id": "exp_20__v2",
+    "stem": "What is a control group?",
+    "options": [
+      "A group where you change every factor at once with no baseline for comparison",
+      "A group you compare other results against",
+      "A group measured only at the end with no starting treatment",
+      "A group meant to copy the main result with no baseline"
+    ],
+    "explanation": "A control group is left unchanged so you can compare results and see what made the difference.",
+    "theoryLines": [
+      "It helps you understand what caused the outcome.",
+      "It is an important part of a science experiment."
+    ]
+  },
+  {
+    "id": "science_remaining_g1_hard_earth_space",
+    "stem": "What causes daytime on Earth?",
+    "options": [
+      "Earth rotating so that our side faces toward the Sun.",
+      "The Sun moving to the far side of the Moon each night.",
+      "The Moon blocking sunlight and bouncing it back toward Earth.",
+      "Earth staying still while the Sun circles around it."
+    ],
+    "explanation": "Earth spins on its axis, making one full turn every 24 hours. When the side of Earth where you live faces the Sun, it is daytime. When that side faces away from the Sun, it is nighttime.",
+    "theoryLines": [
+      "Earth's rotation is what creates the 24-hour cycle of day and night.",
+      "The Sun itself does not move around Earth — Earth's spin makes it look like the Sun rises and sets."
+    ]
+  },
+  {
+    "id": "sci_closure_g5env_013",
+    "stem": "What is a basic example of recycling?",
+    "options": [
+      "Collecting bottles for recycling",
+      "Burning trash with no sorting",
+      "Throwing everything in the same bin",
+      "Never sorting materials"
+    ],
+    "explanation": "Recycling means collecting used materials so they can be made into new products.",
+    "theoryLines": [
+      "Sorting materials helps recycling work.",
+      "Recycling can save resources and reduce landfill waste."
+    ]
+  },
+  {
+    "id": "sci_pb1_g3_experiments_easy_01",
+    "stem": "What is an important step before repeating a measurement in the same experiment?",
+    "options": [
+      "Clearly define what stays the same and what changes",
+      "Change every variable together",
+      "Erase earlier results without recording them",
+      "Make sure there is no planned variable"
+    ],
+    "explanation": "In a controlled experiment, change one variable and keep other conditions as steady as possible.",
+    "theoryLines": [
+      "Clear variables make repeats meaningful.",
+      "Good planning comes before measuring."
+    ]
+  },
+  {
+    "id": "sci_pb1_g4_body_hard_01",
+    "stem": "Which explanation best links pulse to body activity?",
+    "options": [
+      "During hard physical effort, heart rate often rises to supply muscles",
+      "Pulse is always the same no matter the activity",
+      "The heart stops during effort",
+      "Pulse depends only on room temperature, not muscles"
+    ],
+    "explanation": "During exercise the body needs more oxygen, so the heart usually beats faster.",
+    "theoryLines": [
+      "Working muscles need more blood flow.",
+      "Pulse rate is a useful activity clue."
+    ]
+  },
+  {
+    "id": "sci_pb1_g2_earth_space_easy_03",
+    "stem": "What can a simple weather log include?",
+    "options": [
+      "Approximate temperature, cloud clues, and wind direction",
+      "Only the observer’s shirt color",
+      "Only the number of classroom windows",
+      "Only the teacher’s name, with no link to the sky"
+    ],
+    "explanation": "Weather records use observations that others can repeat and compare.",
+    "theoryLines": [
+      "Temperature, clouds, and wind are common weather measures.",
+      "Logs help spot patterns over days."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_body_medium_09",
+    "stem": "How can you help keep your teeth healthy?",
+    "options": [
+      "Brush your teeth and avoid lots of sugary snacks.",
+      "Never brush your teeth at all.",
+      "Only wash your hair each morning.",
+      "Sleep with candy under your pillow."
+    ],
+    "explanation": "Brushing removes food and germs that can hurt teeth. Limiting sugary snacks also helps prevent cavities.",
+    "theoryLines": [
+      "Teeth help you chew food.",
+      "Healthy teeth need daily care."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_body_hard_07",
+    "stem": "Why does your pulse feel faster after you run?",
+    "options": [
+      "Your heart is beating faster to send blood to your muscles.",
+      "Your bones are melting from heat.",
+      "Your skin stops sensing touch.",
+      "Your stomach turns into a lung."
+    ],
+    "explanation": "Running uses a lot of energy. Your heart speeds up so blood can carry more oxygen to working muscles.",
+    "theoryLines": [
+      "Pulse is the beat of blood from the heart.",
+      "You can feel a pulse on your wrist or neck."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_plants_medium_03",
+    "stem": "What is an important job of leaves?",
+    "options": [
+      "They help the plant make food using sunlight.",
+      "They dig tunnels under roads.",
+      "They pump blood through the plant.",
+      "They chew insects for dinner."
+    ],
+    "explanation": "Leaves catch sunlight. Plants use light, water, and air to make sugar food in a process called photosynthesis.",
+    "theoryLines": [
+      "Green leaves often do photosynthesis.",
+      "Food made in leaves feeds the whole plant."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_plants_medium_08",
+    "stem": "What is one important role of fruit on a plant?",
+    "options": [
+      "Fruit helps protect and spread seeds.",
+      "Fruit turns the plant into a rock.",
+      "Fruit stops the plant from needing light.",
+      "Fruit digests food for animals' bones."
+    ],
+    "explanation": "Fruits hold seeds. Animals may eat fruit and carry seeds to new places, helping plants spread.",
+    "theoryLines": [
+      "Seeds grow into new plants.",
+      "Fruit is part of a plant's life cycle."
+    ]
+  },
+  {
+    "id": "sci_p0_g1_plants_hard_04",
+    "stem": "In a simple food chain, what do plants provide?",
+    "options": [
+      "Food energy for animals that eat them",
+      "Only plastic for packaging",
+      "Electricity for televisions",
+      "Clouds made of sugar"
+    ],
+    "explanation": "A food chain shows who eats whom. Plants make food energy that plant-eaters use first.",
+    "theoryLines": [
+      "Energy moves from plants to animals.",
+      "Food chains start with producers."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_medium_04",
+    "stem": "What is digestion?",
+    "options": [
+      "Breaking food into smaller parts the body can use",
+      "Pumping blood through the lungs only",
+      "Growing new teeth from sunlight",
+      "Turning bones into water"
+    ],
+    "explanation": "Digestion starts in the mouth and continues in the stomach and intestines. Nutrients then move into the blood.",
+    "theoryLines": [
+      "Teeth help begin digestion by chewing.",
+      "The digestive system turns food into usable fuel."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_hard_03",
+    "stem": "What is one important job of blood?",
+    "options": [
+      "It carries oxygen, nutrients, and waste around the body.",
+      "It digests rocks in the stomach.",
+      "It grows feathers on your arms.",
+      "It replaces the need for a brain."
+    ],
+    "explanation": "Blood is a transport system. It delivers what cells need and carries away wastes.",
+    "theoryLines": [
+      "The heart keeps blood moving.",
+      "Blood travels in blood vessels."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_hard_05",
+    "stem": "Why can breakfast help many kids at school?",
+    "options": [
+      "It gives energy and nutrients after a night without eating.",
+      "It makes homework finish itself.",
+      "It replaces the need to drink water all day.",
+      "It turns books into toys."
+    ],
+    "explanation": "After sleep, your body needs fuel again. A good breakfast can support focus, energy, and learning.",
+    "theoryLines": [
+      "Food provides energy for brain and body.",
+      "Regular meals support healthy habits."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_body_hard_08",
+    "stem": "What does your pulse tell you?",
+    "options": [
+      "How fast your heart is beating",
+      "How tall you will be next year",
+      "What color your eyes will become",
+      "How many teeth you will grow tomorrow"
+    ],
+    "explanation": "Each heartbeat pushes blood, making a pulse you can feel. Counting pulse beats shows heart rate.",
+    "theoryLines": [
+      "Pulse is linked to heart activity.",
+      "Heart rate changes with rest and exercise."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_experiments_medium_04",
+    "stem": "Why do experiments often include a control?",
+    "options": [
+      "A control is a comparison that helps show what the change caused.",
+      "A control is a prize for finishing early.",
+      "A control deletes all measurements.",
+      "A control means changing every factor at once."
+    ],
+    "explanation": "A control setup stays unchanged on purpose. Comparing it with the test setup shows the effect of the variable you changed.",
+    "theoryLines": [
+      "Controls make tests fairer.",
+      "Compare results to see real differences."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_experiments_hard_03",
+    "stem": "Why is changing two variables at the same time a problem in a fair test?",
+    "options": [
+      "You cannot tell which change caused the result.",
+      "It makes the experiment perfectly fair.",
+      "It removes the need for any control.",
+      "It guarantees the same result every time."
+    ],
+    "explanation": "If light and water both change, either one—or both—might explain the outcome. Change one main variable at a time.",
+    "theoryLines": [
+      "Fair tests isolate one factor.",
+      "Keep other conditions the same."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_experiments_hard_04",
+    "stem": "Why should measurements include units?",
+    "options": [
+      "Units tell what the number means, like centimeters or grams.",
+      "Units are only for decoration.",
+      "Units make numbers unnecessary.",
+      "Units erase differences between trials."
+    ],
+    "explanation": "A number without units is unclear. Saying \"5 centimeters\" is different from \"5 grams.\"",
+    "theoryLines": [
+      "Always label measurements with units.",
+      "Matching units helps you compare data."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_animals_medium_07",
+    "stem": "Why are bees important to many flowering plants?",
+    "options": [
+      "Bees help pollinate flowers as they collect nectar.",
+      "Bees turn flowers into plastic.",
+      "Bees stop seeds from ever forming.",
+      "Bees replace sunlight for plants."
+    ],
+    "explanation": "Pollen sticks to bees and moves between flowers. Pollination helps plants make fruits and seeds.",
+    "theoryLines": [
+      "Pollinators support food webs and farms.",
+      "Protecting bees helps ecosystems."
+    ]
+  },
+  {
+    "id": "sci_p0_g2_animals_hard_05",
+    "stem": "What do fins help a fish do?",
+    "options": [
+      "Swim, steer, and keep balance in water",
+      "Walk on land like a horse",
+      "Make pollen for flowers",
+      "Pump blood without a heart"
+    ],
+    "explanation": "Different fins have jobs like moving forward, turning, and staying upright. Together they help fish move well underwater.",
+    "theoryLines": [
+      "Body structures match the environment.",
+      "Water animals need ways to move through water."
+    ]
+  },
+  {
+    "id": "sci_p0_g3_experiments_easy_02",
+    "stem": "Why should a science log include the date?",
+    "options": [
+      "Dates help you track when observations were made and compare changes over time.",
+      "Dates make plants grow faster by themselves.",
+      "Dates replace the need for measurements.",
+      "Dates erase experimental errors."
+    ],
+    "explanation": "Time stamps keep records organized. You can see growth, weather links, or which trial came first.",
+    "theoryLines": [
+      "Clear notebooks support good science.",
+      "Details make data useful later."
+    ]
+  },
+  {
+    "id": "sci_p0_g3_plants_easy_02",
+    "stem": "Why are leaves especially important for a plant?",
+    "options": [
+      "Capture light and help make food for the plant",
+      "Chase insects across the ground",
+      "Pump blood to animal hearts",
+      "Store electricity for cities"
+    ],
+    "explanation": "Most photosynthesis happens in leaves. That food energy supports roots, stems, flowers, and fruits.",
+    "theoryLines": [
+      "Leaf shape and arrangement can affect light capture.",
+      "Green plants rely on leaf function."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_body_easy_01",
+    "stem": "Where does digestion of food begin?",
+    "options": [
+      "In the mouth, where chewing and saliva start breaking food down",
+      "Only in the hair follicles",
+      "Only in the fingernails",
+      "Only in the outer ear"
+    ],
+    "explanation": "Teeth grind food and saliva begins chemical breakdown. Digestion continues in the stomach and intestines.",
+    "theoryLines": [
+      "Mechanical and chemical digestion work together.",
+      "The digestive tract is a long pathway for food."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_body_easy_03",
+    "stem": "Why are teeth important for digestion?",
+    "options": [
+      "They break food into smaller pieces that are easier to swallow and digest.",
+      "They filter wastes from the blood like kidneys.",
+      "They carry nerve signals to the toes only.",
+      "They produce red blood cells."
+    ],
+    "explanation": "Chewing increases food's surface area so enzymes can work better. Different teeth shapes suit cutting and grinding.",
+    "theoryLines": [
+      "Dental care supports good nutrition.",
+      "Digestion is harder with very large unchewed bites."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_body_hard_01",
+    "stem": "If your pulse is faster, what is usually true?",
+    "options": [
+      "Your heart is beating more times per minute.",
+      "Your bones have disappeared.",
+      "Your skin has stopped sensing touch.",
+      "Your stomach has become a lung."
+    ],
+    "explanation": "Pulse rate matches heart rate. Exercise, excitement, or fever can raise how often the heart beats.",
+    "theoryLines": [
+      "You can measure pulse at wrist or neck.",
+      "Resting rates are usually lower than exercise rates."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_animals_easy_02",
+    "stem": "What is a caterpillar becoming a butterfly an example of?",
+    "options": [
+      "Metamorphosis during a life cycle",
+      "Photosynthesis in animal cells",
+      "Hibernation inside a seed coat",
+      "Camouflage turning into migration"
+    ],
+    "explanation": "Metamorphosis is a major body-form change across life stages. Butterflies are a classic example.",
+    "theoryLines": [
+      "Life-cycle stages can look very different.",
+      "Each stage may have different needs."
+    ]
+  },
+  {
+    "id": "sci_p1_g4_animals_hard_02",
+    "stem": "Why can camels survive well in desert conditions?",
+    "options": [
+      "They conserve water and tolerate heat well",
+      "They need constant rainforest rainfall",
+      "They breathe only with fish gills",
+      "They hibernate under sea ice"
+    ],
+    "explanation": "Desert specialists manage heat and limited water. Camels are classic examples of such adaptations.",
+    "theoryLines": [
+      "Extreme habitats demand extreme adaptations.",
+      "Behavior and body traits both matter."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_easy_02",
+    "stem": "Why can you feel a pulse?",
+    "options": [
+      "Blood surges through arteries with each heartbeat",
+      "Bones vibrate from photosynthesis",
+      "Hair follicles beat like drums",
+      "Skin cells pump oxygen into the air"
+    ],
+    "explanation": "Arterial pulses match heartbeats. Feeling pulse is a simple way to monitor heart rate.",
+    "theoryLines": [
+      "Pulse points include wrist and neck.",
+      "Heart rate responds to activity and rest."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_easy_04",
+    "stem": "Why are nutrients from food important for your body?",
+    "options": [
+      "Provide energy and materials for growth and repair",
+      "Replace the need for oxygen completely",
+      "Turn blood into plant sap",
+      "Stop cells from ever needing water"
+    ],
+    "explanation": "Proteins, carbohydrates, fats, vitamins, and minerals each play roles. Balanced eating supports body function.",
+    "theoryLines": [
+      "Digestion releases nutrients for absorption.",
+      "Different foods supply different nutrient mixes."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_body_medium_03",
+    "stem": "What is one important job of the liver?",
+    "options": [
+      "It helps process nutrients and clean many harmful substances from the blood.",
+      "It pumps air into the lungs with each breath.",
+      "It stores urine made by the skin.",
+      "It replaces the need for a digestive system."
+    ],
+    "explanation": "The liver is a busy chemical factory. It processes nutrients and helps manage toxins and wastes in the blood.",
+    "theoryLines": [
+      "Organ systems share overlapping jobs.",
+      "A healthy lifestyle supports liver function."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_experiments_easy_04",
+    "stem": "Why might one unusual trial not be enough to trust a conclusion?",
+    "options": [
+      "A single result could be a mistake or random chance.",
+      "Unusual trials always prove the hypothesis.",
+      "Science never uses more than one measurement.",
+      "Repeating trials is against lab rules."
+    ],
+    "explanation": "Outliers happen. More trials help you see whether a pattern is real or just noise.",
+    "theoryLines": [
+      "Sample size and repeats matter.",
+      "Investigate possible errors when results look odd."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_animals_medium_05",
+    "stem": "Why is it important to leave nesting wildlife alone?",
+    "options": [
+      "Disturbance can cause parents to abandon eggs or young.",
+      "Nests explode when photographed from far away.",
+      "Young animals never need protection.",
+      "Nests are not part of animal survival strategies."
+    ],
+    "explanation": "Breeding success depends on quiet, safe nesting sites. People can watch respectfully from a distance.",
+    "theoryLines": [
+      "Human behavior affects wildlife outcomes.",
+      "Laws often protect nests of certain species."
+    ]
+  },
+  {
+    "id": "sci_p1_g5_animals_hard_02",
+    "stem": "In a food chain, what do producers provide for the rest of the living things?",
+    "options": [
+      "Food energy made from sunlight",
+      "Only shade and cooler air",
+      "Nothing useful for animals",
+      "Only rocks and minerals"
+    ],
+    "explanation": "Producers such as plants capture sunlight and make food. That food energy then moves to animals that eat plants and to animals that eat other animals.",
+    "theoryLines": [
+      "Producers make food using sunlight.",
+      "Energy moves from producers to consumers along a food chain."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_body_medium_06",
+    "stem": "What is one important job of the skin?",
+    "options": [
+      "Protect the body and help sense touch",
+      "Make light for night vision",
+      "Pump blood to the lungs",
+      "Digest food in the mouth"
+    ],
+    "explanation": "Skin is a protective covering. It also helps with touch sensing and helps control body temperature.",
+    "theoryLines": [
+      "Skin is the body's outer protective layer.",
+      "Nerve endings in the skin detect touch, heat, and pain."
+    ]
+  },
+  {
+    "id": "sci_p1_g6_body_hard_01",
+    "stem": "What does your pulse mainly tell you about?",
+    "options": [
+      "How fast your heart is beating",
+      "How long your hair is growing",
+      "How much light your eyes store",
+      "How thick your skin feels"
+    ],
+    "explanation": "A pulse is the throb you feel when blood is pushed by each heartbeat. Counting it shows heart rate.",
+    "theoryLines": [
+      "Pulse rate rises during exercise and strong feelings.",
+      "Heartbeats push waves of blood through arteries."
+    ]
+  },
+  {
+    "id": "sci_vol_g1_body_medium_02",
+    "stem": "Why is drinking water important for your body?",
+    "options": [
+      "It helps keep your body working and feeling well",
+      "It replaces the need to breathe",
+      "It turns muscles into stone",
+      "It stops you from ever resting"
+    ],
+    "explanation": "Water helps your body stay hydrated so cells and organs can do their jobs.",
+    "theoryLines": [
+      "People need water every day.",
+      "Thirst is a signal that your body needs fluid."
+    ]
+  },
+  {
+    "id": "sci_vol_g1_body_hard_02",
+    "stem": "What is an important job of bones in the body?",
+    "options": [
+      "Support the body and protect soft organs",
+      "Digest food in the stomach",
+      "Carry smells to the nose",
+      "Make rain clouds form"
+    ],
+    "explanation": "Bones form the skeleton, which holds you up and helps protect parts such as the brain and heart.",
+    "theoryLines": [
+      "The skeleton gives the body shape.",
+      "Bones and muscles work together for movement."
+    ]
+  },
+  {
+    "id": "sci_vol_g2_body_hard_01",
+    "stem": "Why is it important to brush your teeth every day?",
+    "options": [
+      "To remove food particles and harmful bacteria that can cause cavities and tooth decay.",
+      "To make your teeth grow longer and stronger more quickly.",
+      "To help your lungs breathe better throughout the day.",
+      "To help the heart pump blood more easily to the rest of the body."
+    ],
+    "explanation": "Brushing your teeth removes food particles and bacteria. If left on the teeth, bacteria produce acids that cause cavities and tooth decay."
+  },
+  {
+    "id": "sci_vol_g2_body_hard_02",
+    "stem": "Why is sleep important for your body?",
+    "options": [
+      "It helps your body rest and recover",
+      "It digests food without any organs",
+      "It replaces circulating blood with air",
+      "It turns bones into rubber"
+    ],
+    "explanation": "During sleep, the body rests and recovers so you can grow, learn, and feel ready for a new day.",
+    "theoryLines": [
+      "Kids need enough sleep each night.",
+      "Rest supports a healthy body and mind."
+    ]
+  },
+  {
+    "id": "sci_vol_g3_animals_hard_02",
+    "stem": "Why are fins important for fish?",
+    "options": [
+      "They help fish swim, steer, and keep balance",
+      "They turn water into dry land",
+      "They make fish breathe through feathers",
+      "They stop fish from ever moving"
+    ],
+    "explanation": "Fins are body parts that help fish move through water and stay steady.",
+    "theoryLines": [
+      "Different fins have different jobs in swimming.",
+      "Fish bodies are adapted for life in water."
+    ]
+  },
+  {
+    "id": "sci_vol_g4_animals_hard_02",
+    "stem": "What is pollen's important role for flowering plants?",
+    "options": [
+      "It helps plants reproduce by reaching other flowers",
+      "It turns roots into metal wires",
+      "It stops photosynthesis forever",
+      "It replaces water in every plant"
+    ],
+    "explanation": "Pollen carries material needed for seed production when it moves to the right part of a flower.",
+    "theoryLines": [
+      "Pollination is needed for many plants to make seeds.",
+      "Wind and animals can move pollen."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_body_easy_01",
+    "stem": "Why does exercise help the heart stay healthy?",
+    "options": [
+      "It gives the circulatory system a helpful workout",
+      "It stops blood from moving at all",
+      "It removes the need for oxygen",
+      "It turns the heart into bone"
+    ],
+    "explanation": "Regular activity makes the heart stronger so it can pump blood more effectively.",
+    "theoryLines": [
+      "Exercise raises heart rate for a while.",
+      "A strong heart supports overall fitness."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_animals_medium_01",
+    "stem": "Why is protecting habitats important for animals?",
+    "options": [
+      "Animals need habitat resources like food, water, and shelter",
+      "Animals can live well with no habitat at all",
+      "Habitats are useful only for making noise",
+      "Protecting land removes all living things"
+    ],
+    "explanation": "When habitats stay healthy, animals can find what they need to survive and reproduce.",
+    "theoryLines": [
+      "Habitat loss threatens many species.",
+      "Conservation helps protect ecosystems."
+    ]
+  },
+  {
+    "id": "sci_vol_g5_animals_medium_02",
+    "stem": "Which sequence shows a butterfly's life cycle?",
+    "options": [
+      "Egg, caterpillar, pupa, adult butterfly",
+      "Seed, root, flower, fruit only",
+      "Egg, adult bird, nest, feather",
+      "Tadpole, fish, shark, whale"
+    ],
+    "explanation": "Butterflies go through complete metamorphosis: egg, larva (caterpillar), pupa, and adult.",
+    "theoryLines": [
+      "Metamorphosis means a big change in body form.",
+      "Each stage has a different job in the life cycle."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_body_medium_01",
+    "stem": "Why is it important to brush your teeth at least twice a day?",
+    "options": [
+      "Brushing removes bacteria and food particles that cause tooth decay and gum disease",
+      "Brushing helps the digestive system break down food faster in the stomach",
+      "Brushing increases the amount of air that flows into your lungs",
+      "Brushing increases blood flow to your brain and improves memory"
+    ],
+    "explanation": "Brushing your teeth removes harmful bacteria and food particles, preventing cavities and gum disease and keeping your mouth healthy.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_vol_g6_body_medium_02",
+    "stem": "What is one important benefit of getting enough sleep?",
+    "options": [
+      "The body can rest and recover for the next day",
+      "Digestion becomes unnecessary",
+      "Circulation permanently stops",
+      "Bones dissolve overnight"
+    ],
+    "explanation": "Sleep helps the body and brain recover so you can learn, grow, and stay healthy.",
+    "theoryLines": [
+      "Kids generally need more sleep than adults.",
+      "Rest is part of a healthy lifestyle."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_body_hard_01",
+    "stem": "Why should meals include a variety of healthy foods?",
+    "options": [
+      "Different foods supply different nutrients the body needs",
+      "Eating only candy gives every nutrient",
+      "Food variety removes the need for water",
+      "Nutrients are unrelated to growth"
+    ],
+    "explanation": "A balanced diet provides proteins, carbohydrates, fats, vitamins, and minerals in useful amounts.",
+    "theoryLines": [
+      "No single food has every nutrient you need.",
+      "Healthy eating supports energy and growth."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_body_hard_02",
+    "stem": "What role do teeth play at the beginning of the digestive process, and why does this step matter for the rest of digestion?",
+    "options": [
+      "They break food into smaller pieces, creating more surface area so digestive juices can work more efficiently throughout the digestive system.",
+      "They produce saliva on their own, and that saliva is the only chemical step needed before nutrients pass directly into the bloodstream.",
+      "They pump digestive acid upward from the stomach into the mouth to chemically soften food before it is swallowed.",
+      "They generate heat that warms and softens food so the small intestine can absorb it without any further breakdown."
+    ],
+    "explanation": "Teeth chew and grind food into small pieces. This mechanical breakdown increases the total surface area of the food, which allows digestive juices — including enzymes in saliva and stomach acid — to reach more of the food and break it down more efficiently. Without this first step, chemical digestion would be much slower and less complete.",
+    "theoryLines": [
+      "Digestion begins in the mouth: teeth provide mechanical breakdown while saliva begins chemical digestion of starches.",
+      "Breaking food into smaller pieces increases surface area, making it easier for digestive enzymes in the stomach and small intestine to do their work."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_experiments_medium_02",
+    "stem": "Why must measurements include units?",
+    "options": [
+      "Units tell what the number means so others can compare it",
+      "Units hide the true size of objects",
+      "Units make tools stop working",
+      "Units replace the need for safety"
+    ],
+    "explanation": "A number without a unit is unclear. Saying 5 centimeters is different from saying 5 kilograms.",
+    "theoryLines": [
+      "Standard units help people share data.",
+      "Always write the unit with the number."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_experiments_medium_03",
+    "stem": "What should a careful observation include?",
+    "options": [
+      "Details about what you actually see, hear, or measure",
+      "Only opinions with no evidence",
+      "Changed numbers to look perfect",
+      "A conclusion written before any test"
+    ],
+    "explanation": "Good observations stick to evidence from senses and instruments.",
+    "theoryLines": [
+      "Observations come first; conclusions come later.",
+      "Clear notes help other people understand your work."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_animals_easy_03",
+    "stem": "How do fins help a fish survive?",
+    "options": [
+      "They help the fish swim and keep its balance",
+      "They let the fish breathe on dry land only",
+      "They turn water into fresh air instantly",
+      "They grow feathers for flying"
+    ],
+    "explanation": "Fins are swimming adaptations that help fish move through water.",
+    "theoryLines": [
+      "Fish bodies are shaped for aquatic life.",
+      "Movement helps fish find food and escape danger."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_animals_easy_04",
+    "stem": "Which trait belongs to birds but not to fish?",
+    "options": [
+      "Feathers",
+      "Gills for underwater breathing",
+      "Scales covering the whole body",
+      "Living only underwater forever"
+    ],
+    "explanation": "Feathers are a key bird trait. Fish typically have scales and use gills in water.",
+    "theoryLines": [
+      "Comparing traits helps identify animal groups.",
+      "Birds and fish are adapted to different habitats."
+    ]
+  },
+  {
+    "id": "sci_vol_g6_animals_hard_01",
+    "stem": "Why is pollen important to flowering plants?",
+    "options": [
+      "It is needed for plants to reproduce and make seeds",
+      "It cools the sun each night",
+      "It replaces soil for every root",
+      "It stops insects from visiting flowers"
+    ],
+    "explanation": "When pollen reaches the right flower parts, seeds can form and a new plant generation can begin.",
+    "theoryLines": [
+      "Pollination connects flowers for reproduction.",
+      "Bees and other animals often help move pollen."
+    ]
+  },
+  {
+    "id": "sci_g3_body_002",
+    "stem": "What is one important job of the skin?",
+    "options": [
+      "It protects the body and helps you feel touch",
+      "It digests food in the stomach",
+      "It pumps blood like the heart",
+      "It makes all of your bones"
+    ],
+    "explanation": "Skin covers and protects the body. Nerve endings in skin help you sense touch, heat, and pain.",
+    "theoryLines": [
+      "Skin is the body's outer covering.",
+      "Touch sensors in skin send messages to the brain."
+    ]
+  },
+  {
+    "id": "sci_g3_body_012",
+    "stem": "Which habits help keep the body healthy?",
+    "options": [
+      "Eating well, moving often, resting, and staying clean",
+      "Never drinking water",
+      "Skipping sleep every night",
+      "Avoiding all fruits and vegetables forever"
+    ],
+    "explanation": "Healthy routines support energy, growth, and strong body systems.",
+    "theoryLines": [
+      "Lifestyle choices affect health.",
+      "Exercise, sleep, and nutrition work together."
+    ]
+  },
+  {
+    "id": "sci_g3_body_014",
+    "stem": "Which organ is an important part of the digestive system?",
+    "options": [
+      "The stomach",
+      "The eyelashes",
+      "The fingernails",
+      "The outer ear only"
+    ],
+    "explanation": "The stomach helps break food down so nutrients can be absorbed later.",
+    "theoryLines": [
+      "Digestion begins in the mouth and continues in the stomach and intestines.",
+      "Digestive organs work as a team."
+    ]
+  },
+  {
+    "id": "sci_g3_body_027",
+    "stem": "What is a healthy habit for your eyes?",
+    "options": [
+      "Take breaks from screens and avoid staring at bright glare",
+      "Look directly at the sun for a long time",
+      "Rub dirt into your eyes each morning",
+      "Never blink during the day"
+    ],
+    "explanation": "Protecting eyes from strain and bright glare helps keep vision comfortable and safer.",
+    "theoryLines": [
+      "Eyes are delicate sense organs.",
+      "Good lighting and breaks support eye comfort."
+    ]
+  },
+  {
+    "id": "sci_g3_body_032",
+    "stem": "What is true about sleep for growing kids?",
+    "options": [
+      "Sleep helps the body grow and recover",
+      "Sleep is useless for health",
+      "Sleep replaces all food needs",
+      "Sleep stops the brain from learning forever"
+    ],
+    "explanation": "During sleep, the body repairs itself and supports growth and memory.",
+    "theoryLines": [
+      "Kids usually need plenty of nighttime sleep.",
+      "A regular bedtime supports better rest."
+    ]
+  },
+  {
+    "id": "sci_g3_body_040",
+    "stem": "Which organs are a major part of the body's waste-filtering system?",
+    "options": [
+      "The kidneys",
+      "The eyebrows",
+      "The toenails",
+      "The earlobes"
+    ],
+    "explanation": "Kidneys filter wastes from blood and help make urine.",
+    "theoryLines": [
+      "The excretory system removes wastes.",
+      "Healthy kidneys support internal balance."
+    ]
+  },
+  {
+    "id": "sci_g3_body_042",
+    "stem": "What is an important job of the small intestine?",
+    "options": [
+      "Absorb digested nutrients into the blood",
+      "Pump air into the lungs",
+      "Store unused sunlight",
+      "Make all of the body's bones"
+    ],
+    "explanation": "After food is broken down, the small intestine absorbs nutrients so they can travel through the blood.",
+    "theoryLines": [
+      "Digestion prepares nutrients for absorption.",
+      "Blood carries absorbed nutrients to cells."
+    ]
+  },
+  {
+    "id": "sci_g3_body_043",
+    "stem": "What is a healthy way to care for yourself when you have a cold?",
+    "options": [
+      "Rest, drink fluids, and keep hands clean",
+      "Share drinks with everyone at school",
+      "Skip sleep for several nights",
+      "Rub dirt into your nose"
+    ],
+    "explanation": "Rest and fluids help your body recover. Clean hands help stop germs from spreading.",
+    "theoryLines": [
+      "Hygiene helps protect you and others.",
+      "The body needs energy to fight illness."
+    ]
+  },
+  {
+    "id": "sci_g3_body_051",
+    "stem": "What can you observe about your pulse after jumping jacks?",
+    "options": [
+      "It usually beats faster than at rest",
+      "It permanently disappears",
+      "It measures only hair length",
+      "It turns into a smell signal"
+    ],
+    "explanation": "Activity makes the heart work harder, so pulse rate increases for a while.",
+    "theoryLines": [
+      "Pulse rate is a useful health observation.",
+      "After rest, pulse often returns toward normal."
+    ]
+  },
+  {
+    "id": "sci_phb_g1_environment_med_01",
+    "stem": "Why is it important to put trash in a trash bin?",
+    "options": [
+      "It keeps our surroundings clean and prevents animals from getting hurt by litter",
+      "Trash bins are only decoration and do not actually help the environment",
+      "Leaving trash outside is fine because rain washes it all away quickly",
+      "The sun will break down all garbage outdoors before it causes any harm"
+    ],
+    "explanation": "Throwing trash in a bin keeps the environment clean, prevents animals from eating harmful waste, and stops litter from polluting soil and water.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g1_environment_med_02",
+    "stem": "What do plants need to grow and stay healthy?",
+    "options": [
+      "Water and sunlight",
+      "Only packaged nutrients bought from a store",
+      "Salt water and deep shade to grow well",
+      "Sand and freezing cold weather to survive"
+    ],
+    "explanation": "Plants need water and sunlight to carry out photosynthesis, the process they use to make their own food and grow.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g1_environment_hard_01",
+    "stem": "Why is it important to save water and not waste it?",
+    "options": [
+      "Fresh water is a limited resource and all living things need it to survive",
+      "There is so much water on Earth that it can never run out",
+      "Saving water and saving sunlight are exactly the same thing",
+      "Water only comes from rivers and cannot be found underground or recycled"
+    ],
+    "explanation": "Although Earth has a lot of water, only a small amount is fresh and clean enough for living things to use, so it is important to use it carefully.",
+    "theoryLines": []
+  },
+  {
+    "id": "sci_phb_g2_environment_med_01",
+    "stem": "Why should empty bottles be recycled when possible?",
+    "options": [
+      "Recycling helps reuse materials and reduce waste",
+      "Recycling makes litter grow faster",
+      "Recycling removes all oxygen from air",
+      "Recycling turns parks into deserts"
+    ],
+    "explanation": "Recycling keeps useful materials in use and can reduce trash that harms the environment.",
+    "theoryLines": [
+      "Reduce, reuse, and recycle help the planet.",
+      "Sorting recyclables correctly matters."
+    ]
+  },
+  {
+    "id": "sci_phb_g3_earth_space_eas_01",
+    "stem": "What causes daytime?",
+    "options": [
+      "Earth rotating so that our part of the planet faces toward the Sun.",
+      "The Moon moving in front of the Sun and reflecting light downward.",
+      "The Sun traveling around Earth once every 24 hours.",
+      "Rain clouds moving away to let sunlight through."
+    ],
+    "explanation": "Earth spins on its own axis once every 24 hours. When the part of Earth where you live turns to face the Sun, sunlight reaches you and it becomes daytime. As Earth continues spinning, that same part faces away from the Sun and it becomes night.",
+    "theoryLines": [
+      "Earth's rotation — its spin on its axis — is what creates the cycle of day and night.",
+      "The Sun does not move around Earth; Earth's spin just makes it look that way from the ground."
+    ]
+  },
+  {
+    "id": "sci_phb_g5_environment_eas_02",
+    "stem": "Why is recycling important?",
+    "options": [
+      "It reduces waste and helps reuse valuable materials",
+      "It creates more ocean litter on purpose",
+      "It removes all plants from forests",
+      "It makes clean air disappear"
+    ],
+    "explanation": "Recycling keeps materials in use longer and can lessen pollution and landfill trash.",
+    "theoryLines": [
+      "Recycling works best when materials are sorted correctly.",
+      "Reduce and reuse are also helpful habits."
+    ]
+  }
+]

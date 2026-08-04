@@ -77,7 +77,7 @@ function PlanItemCards({ items, windowTotalQuestions = 0 }) {
   if (!items?.length)
     return (
       <p className="pr-detailed-muted text-sm">
-        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
+        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : reportPackCopy("pages__learning__parent-report-detailed", "no_data_to_display")}
       </p>
     );
   return (
@@ -99,7 +99,7 @@ function GoalItemCards({ items, windowTotalQuestions = 0 }) {
   if (!items?.length)
     return (
       <p className="pr-detailed-muted text-sm">
-        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
+        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : reportPackCopy("pages__learning__parent-report-detailed", "no_data_to_display")}
       </p>
     );
   return (
@@ -1170,19 +1170,19 @@ export default function ParentReportDetailedPage() {
                 {/* A */}
                 <header className="pr-detailed-doc-header mb-6 text-center border-b border-white/15 pb-4">
                   <h1 className="pr-detailed-doc-title text-2xl md:text-3xl font-black text-white mb-1 tracking-tight">
-                    Detailed Report for the Period
+                    {reportPackCopy("pages__learning__parent-report-detailed", "detailed_report_for_the_period")}
                   </h1>
                   <p className="pr-detailed-mode-hint text-xs font-semibold text-amber-200/90 mb-1">
                     {displayMode === "summary" ? "Short report" : "Full report"}
                   </p>
                   <p className="pr-detailed-body-text text-white/85 text-sm md:text-base">
-                    Detailed parent report - based on the selected dates
+                    {reportPackCopy("pages__learning__parent-report-detailed", "detailed_parent_report_based_on_the_selected_dates")}
                   </p>
                   <p className="pr-detailed-muted text-sm mt-2">
-                    Date range: {pi.startDateLabelHe} – {pi.endDateLabelHe}
+                    {reportPackCopy("pages__learning__parent-report-detailed", "date_range_label")} {pi.startDateLabelHe} – {pi.endDateLabelHe}
                     <span className="text-white/40 mx-1">|</span>
-                    Period: {" "}
-                    {pi.period === "custom" ? "Custom dates" : pi.period === "month" ? "Month" : "Week"}
+                    {reportPackCopy("pages__learning__parent-report-detailed", "period_label")} {" "}
+                    {pi.period === "custom" ? reportPackCopy("pages__learning__parent-report-detailed", "custom_dates") : pi.period === "month" ? reportPackCopy("pages__learning__parent-report-detailed", "month") : reportPackCopy("pages__learning__parent-report-detailed", "week")}
                   </p>
                 </header>
 
@@ -1198,33 +1198,33 @@ export default function ParentReportDetailedPage() {
                 <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed.renderable", "what_we_did_during_this_period")} compact={displayMode === "summary"}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">Total time</div>
+                    <div className="text-xs text-white/55 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "total_time")}</div>
                     <div className="text-xl font-bold text-blue-300">
-                      {payload.overallSnapshot.totalTime} min
+                      {reportPackCopy("pages__learning__parent-report-detailed", "minutes_short", { m: String(payload.overallSnapshot.totalTime) })}
                     </div>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">Questions</div>
+                    <div className="text-xs text-white/55 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "questions")}</div>
                     <div className="text-xl font-bold text-emerald-300">
                       {payload.overallSnapshot.totalQuestions}
                     </div>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">Overall accuracy</div>
+                    <div className="text-xs text-white/55 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "overall_accuracy")}</div>
                     <div className="text-xl font-bold text-amber-300">
                       {payload.overallSnapshot.overallAccuracy}%
                     </div>
                   </div>
                 </div>
-                <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">Coverage by subject</p>
+                <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">{reportPackCopy("pages__learning__parent-report-detailed", "coverage_by_subject")}</p>
                 <div className="overflow-x-auto rounded-lg border border-white/10">
                   <table className="w-full text-sm text-start">
                     <thead>
                       <tr className="border-b border-white/15 bg-white/5">
-                        <th className="p-2 font-semibold">Subject</th>
-                        <th className="p-2 font-semibold">Questions</th>
-                        <th className="p-2 font-semibold">Accuracy</th>
-                        <th className="p-2 font-semibold">Time (min)</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "subject")}</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "questions")}</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "accuracy")}</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "time_min")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1243,7 +1243,7 @@ export default function ParentReportDetailedPage() {
                   {payload.overallSnapshot.sparseSubjectsHe?.length ? (
                     <div>
                       <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">
-                        Subjects with limited data this period
+                        {reportPackCopy("pages__learning__parent-report-detailed", "subjects_limited_data")}
                       </p>
                       <Bullets
                         items={payload.overallSnapshot.sparseSubjectsHe}
@@ -1252,7 +1252,7 @@ export default function ParentReportDetailedPage() {
                     </div>
                   ) : null}
                   <div>
-                    <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">Notable subjects</p>
+                    <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "notable_subjects")}</p>
                     <Bullets
                       items={payload.overallSnapshot.notableSubjectsHe}
                       volumeQuestionsTotal={Number(payload.overallSnapshot?.totalQuestions) || 0}

@@ -1,0 +1,1132 @@
+{
+  "summary": {
+    "arabicFilesChecked": 779,
+    "arabicStringsChecked": 19832,
+    "es419JsonFiles": 407,
+    "missingFiles": 0,
+    "missingKeys": 139,
+    "emptyValues": 0,
+    "untranslatedForbiddenEnglish": 0,
+    "englishFallbackCausedByMissingArabic": 139,
+    "leafIndexGaps": 0,
+    "contentPresentInEs419AbsentInAr001": 139,
+    "codeArtifactNoiseKeys": 94,
+    "missingKeysTotal": 139,
+    "missingKeysAlsoInEnAuthority": 0,
+    "missingKeysEs419ExtraNotInEn": 139
+  },
+  "rows": [
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.item_cookies",
+      "es419": "galletas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.item_cupcakes",
+      "es419": "pastelitos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.item_rolls",
+      "es419": "rollos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.item_muffins",
+      "es419": "magdalenas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.item_croissants",
+      "es419": "croissants",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.prompt_build",
+      "es419": "Configure {trays} bandejas con {perTray} {itemLabel} en cada bandeja.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.prompt_find_trays",
+      "es419": "Hay {total} {itemLabel}. Cada bandeja tiene capacidad para {perTray}. ¿Cuantas bandejas necesitas?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.prompt_find_per_tray",
+      "es419": "Divida {total} {itemLabel} en partes iguales entre {trays} bandejas. ¿Cuantos van en cada bandeja?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.prompt_find_total",
+      "es419": "Hay {trays} bandejas con {perTray} {itemLabel} en cada una. ¿Cuántos {itemLabel} en total?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.prompt_same_total",
+      "es419": "Hay {total} {itemLabel}. Están dispuestas como {givenTrays} bandejas con {givenPerTray} en cada una. Reorganice el mismo",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.prompt_build_fallback",
+      "es419": "Configura el pedido.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.control_build",
+      "es419": "Construye el pedido.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.control_find_total",
+      "es419": "Elija el número total de artículos.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.control_find_trays",
+      "es419": "Elige cuántas bandejas necesitas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.control_find_per_tray",
+      "es419": "Elige cuántos van en cada bandeja.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.control_same_total",
+      "es419": "Elija un arreglo diferente con el mismo total.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.solution_text_same_total",
+      "es419": "Otra forma: {trays} bandejas con {perTray} en cada una.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.solution_text_find_trays",
+      "es419": "Necesitas {trays} bandejas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.solution_text_find_per_tray",
+      "es419": "Cada bandeja obtiene {perTray}.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.solution_text_default",
+      "es419": "Solución:",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.solution_default",
+      "es419": "Solución: {trays} × {perTray} = {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.solution_same_total",
+      "es419": "Posible solución: {trays} × {perTray} = {total} (en lugar de {givenTrays} × {givenPerTray})",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.feedback_ok",
+      "es419": "¡Excelente! El pedido está listo.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.feedback_almost",
+      "es419": "Verifique la cantidad de bandejas y cuántas hay en cada bandeja.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.info_find_trays",
+      "es419": "{total} {itemLabel} · {perTray} por bandeja",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.info_find_per_tray",
+      "es419": "{total} {itemLabel} · {trays} bandejas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.info_find_total",
+      "es419": "{trays} bandejas · {perTray} {itemLabel} por bandeja",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-bakery__leo-bakery-data.info_same_total_given",
+      "es419": "Dado: {givenTrays} × {givenPerTray} = {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_gifts_one",
+      "es419": "regalo",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_gifts_other",
+      "es419": "regalos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_candies_one",
+      "es419": "dulce",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_candies_other",
+      "es419": "golosinas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_stickers_one",
+      "es419": "etiqueta engomada",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_stickers_other",
+      "es419": "pegatinas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_stars_one",
+      "es419": "estrella",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_stars_other",
+      "es419": "estrellas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_sweets_one",
+      "es419": "dulce",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_sweets_other",
+      "es419": "dulces",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_gifts",
+      "es419": "regalos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_candies",
+      "es419": "golosinas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_stickers",
+      "es419": "pegatinas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_stars",
+      "es419": "estrellas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.item_sweets",
+      "es419": "dulces",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.remaining_none",
+      "es419": "No sobra nada.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.remaining_one",
+      "es419": "1 artículo sobrante.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.remaining_other",
+      "es419": "{count} artículos sobrantes.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.prompt_share_equal",
+      "es419": "Reparta {total} {itemLabel} equitativamente entre {children} niños. ¿Cuántos recibe cada niño?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.prompt_share_with_remainder",
+      "es419": "Reparta {total} {itemLabel} equitativamente entre {children} niños. ¿Cuántos recibe cada niño y cuántos quedan?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.prompt_make_groups",
+      "es419": "Hay {total} {itemLabel}. Pon {groupSize} en cada bolsa. ¿Cuántas bolsas llenas puedes hacer?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.prompt_make_groups_with_remainder",
+      "es419": "Hay {total} {itemLabel}. Pon {groupSize} en cada bolsa. ¿Cuántas bolsas llenas puedes hacer y cuántas quedan?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_text_share",
+      "es419": "Cada niño obtiene {quotient}.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_text_share_remainder",
+      "es419": "Cada niño obtiene {quotient}. {remaining}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_text_groups",
+      "es419": "Puedes hacer {quotient} bolsas completas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_text_groups_remainder",
+      "es419": "Puedes hacer {quotient} bolsas completas. {remaining}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_share",
+      "es419": "Solución: {quotient} por niño × {divisor} niños = {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_share_with_remainder",
+      "es419": "Solución: {quotient} por niño × {divisor} niños + {remainder} izquierda = {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_groups",
+      "es419": "Solución: {quotient} bolsas × {divisor} cada una = {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.solution_groups_with_remainder",
+      "es419": "Solución: {quotient} bolsas × {divisor} cada una + {remainder} izquierda = {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.feedback_ok",
+      "es419": "¡Excelente! Compartiste correctamente.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.feedback_almost_groups",
+      "es419": "Comprueba cuántas bolsas llenas puedes hacer.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.feedback_almost_share",
+      "es419": "Comprueba que cada niño recibe la misma parte y que el resto es correcto.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.feedback_ok_with_remainder",
+      "es419": "¡Lindo! Cada niño obtuvo {perChild} y a Leo le queda {remainder}.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.feedback_almost",
+      "es419": "¡Casi! Compruebe que todos los niños reciban una parte igual y que Leo no se quede con demasiados.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.label_children",
+      "es419": "Niños",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.label_bags",
+      "es419": "Bolsas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.quotient_per_child",
+      "es419": "Por niño",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.quotient_full_bags",
+      "es419": "Bolsas llenas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.idle_make_groups_remainder",
+      "es419": "Elige cuantas bolsas llenas y cuantas quedan",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.idle_make_groups",
+      "es419": "Elige cuántas bolsas completas puedes hacer",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.idle_share_remainder",
+      "es419": "Elige cuántos recibe cada niño y cuántos quedan",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-gifts__leo-gifts-data.idle_share_equal",
+      "es419": "Elige cuántos recibe cada niño",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.prompt_skip",
+      "es419": "Comience en {start} y salte {direction} hasta {step}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.direction_backward",
+      "es419": "hacia atrás",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.direction_forward",
+      "es419": "adelante",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.prompt_arithmetic_sequence",
+      "es419": "Secuencia aritmética: comience en {start}, agregue {step} en cada paso. Elija en orden.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.feedback_ok",
+      "es419": "¡Excelente! Elegiste el camino correcto.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.feedback_almost",
+      "es419": "¡Casi! Verifique nuevamente la regla y el orden.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-number-path__leo-number-path-data.solution_correct_path",
+      "es419": "Ruta correcta: {path}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.topping_cheese",
+      "es419": "Queso",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.topping_tomato",
+      "es419": "Tomate",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.topping_olives",
+      "es419": "aceitunas",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.topping_mushrooms",
+      "es419": "Hongos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.topping_pepper",
+      "es419": "Pimienta",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.topping_basil",
+      "es419": "Albahaca",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.hint_easy",
+      "es419": "Entero, mitad, tercio y cuarto",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.difficulty_easy",
+      "es419": "Fácil",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.difficulty_medium",
+      "es419": "Medio",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.difficulty_hard",
+      "es419": "Difícil",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.hint_medium",
+      "es419": "Construye fracciones, fracciones equivalentes y compara",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.hint_hard",
+      "es419": "Fracciones equivalentes, compara y combina visualmente",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.greeting_build",
+      "es419": "Construye la pizza para esta fracción.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.ticket_build",
+      "es419": "Marque el número correspondiente de rebanadas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.greeting_identify",
+      "es419": "¿Cuántas rebanadas están marcadas?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.ticket_identify",
+      "es419": "Elija cuántas rebanadas están marcadas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.greeting_complete",
+      "es419": "Completa la pizza hasta formar un todo.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.ticket_complete",
+      "es419": "Marque las rebanadas que faltan.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.greeting_equivalent",
+      "es419": "Haz una fracción igual a la que se muestra.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.ticket_equivalent",
+      "es419": "Marca la parte correspondiente en la pizza.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.greeting_compare",
+      "es419": "¿Qué fracción es mayor?",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.ticket_compare",
+      "es419": "Elija la respuesta correcta.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.greeting_combine",
+      "es419": "Combina las fracciones de la pizza.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.ticket_combine",
+      "es419": "Marca la suma en la pizza.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.error_extra_topping",
+      "es419": "Aderezo adicional para la pizza: compruébalo nuevamente.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.error_almost_check_slices",
+      "es419": "¡Casi! Comprueba cuántas rebanadas están marcadas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.success_pizza_ready",
+      "es419": "¡Bien hecho! La pizza está lista.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.error_invalid_task",
+      "es419": "Tarea no válida",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.feedback_identify_ok",
+      "es419": "¡Excelente! Identificaste la fracción.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.feedback_identify_almost",
+      "es419": "Comprueba cuántas rebanadas están marcadas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.feedback_compare_ok",
+      "es419": "Comparación correcta!",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.feedback_compare_almost",
+      "es419": "Intente comparar nuevamente por tamaño de porción.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.error_missing_answer",
+      "es419": "respuesta faltante",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_compare_greater",
+      "es419": "Solución: la primera fracción es mayor.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_compare_less",
+      "es419": "Solución: la segunda fracción es mayor.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_compare_equal",
+      "es419": "Solución: igual",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_identify",
+      "es419": "Solución: esa es la fracción correcta",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_equivalent",
+      "es419": "Solución: las fracciones son iguales.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_complete",
+      "es419": "Solución: tenía {given}, sumó {added}, juntos {total}",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_combine",
+      "es419": "Solución: marca la suma de partes en la pizza.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "components__educational-games__leo-pizzeria__leo-pizzeria-data.solution_build",
+      "es419": "Solución: marca el número correcto de rebanadas para la fracción",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.equal_sharing_groups_and_remainder",
+      "es419": "Igualdad de reparto, grupos y restos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.divide_among_children_or_bags_find_quotient_and_remainder",
+      "es419": "Divida entre niños o en bolsas: encuentre cuántos hay por grupo y cuántos quedan, luego toque Verificar división.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.solution_shown_after_failed_attempts",
+      "es419": "Respuesta correcta +30, bonificación de tiempo, racha. Después de algunos intentos fallidos se muestra la solución.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.watch_whether_task_asks_per_child_or_full_bags",
+      "es419": "Observe si la tarea pide por niño o bolsas llenas.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.multiplication_equal_groups_and_missing_factor",
+      "es419": "Multiplicación, grupos iguales y factor faltante.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.build_trays_find_total_or_factor_rearrange_same_total",
+      "es419": "Cree bandejas, encuentre el total o el factor faltante, o reorganice el mismo total y luego toque Verificar pedido.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.build_identify_equivalent_compare_and_combine_fractions",
+      "es419": "Construir, identificar, equivaler, comparar y combinar fracciones.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.build_identify_complete_compare_or_match_equivalent_fractions_on_pizza",
+      "es419": "Construya fracciones en una pizza, identifíquelas a partir de una imagen, complételas hasta obtener un todo, compare o c",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.numerators_and_denominators_equal_slices_not_position",
+      "es419": "Presta atención al numerador y al denominador: las porciones de pizza siempre son partes iguales.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/games/burn-down-index.json",
+      "key": "lib__educational-games__educational-game-registry.solution_shown_after_failed_attempts_per_customer",
+      "es419": "Respuesta correcta +30, bonificación por racha. Después de algunos intentos fallidos se muestra la solución.",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/global-burn-down/burn-down-index.json",
+      "key": "utils__detailed-report-parent-letter.sparse_data",
+      "es419": "Datos escasos",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/learning/diagnostic-labels.json",
+      "key": "languageArtsTopics.vowels_reading",
+      "es419": "Lectura de vocales",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down/utils__math-report-generator.json",
+      "key": "copy.reading_with_vowels",
+      "es419": "Leer con vocales",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down/utils__math-report-generator.json",
+      "key": "copy.history",
+      "es419": "Historia",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json",
+      "key": "copy.history",
+      "es419": "Historia",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json",
+      "key": "copy.geography",
+      "es419": "Geografía",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down-index.json",
+      "key": "utils__math-report-generator.reading_with_vowels",
+      "es419": "Leer con vocales",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down-index.json",
+      "key": "utils__math-report-generator.history",
+      "es419": "Historia",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down-index.json",
+      "key": "utils__parent-report-language__parent-report-display-labels.history",
+      "es419": "Historia",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    },
+    {
+      "file": "content-packs/ar-001/reports/burn-down-index.json",
+      "key": "utils__parent-report-language__parent-report-display-labels.geography",
+      "es419": "Geografía",
+      "en": "(absent in en)",
+      "ar001": "key present in es-419, absent in ar-001",
+      "class": "es-419-extra-beyond-en"
+    }
+  ]
+}

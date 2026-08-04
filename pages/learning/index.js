@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import Link from "next/link";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
@@ -34,7 +34,6 @@ const DEFAULT_SUBJECT_CARD = {
   emoji: "bg-slate-50 border-slate-100",
 };
 
-const learningSeo = getPublicPageSeo("learning");
 
 export async function getServerSideProps() {
   return {
@@ -46,6 +45,7 @@ export async function getServerSideProps() {
 }
 
 export default function LearningHub({ showDevStudentSimulator }) {
+  const learningSeo = usePublicPageSeo("learning");
   useIOSViewportFix();
   const { tokens: T, theme, subjectHubCard } = useStudentTheme();
   const { direction, locale } = useI18n();

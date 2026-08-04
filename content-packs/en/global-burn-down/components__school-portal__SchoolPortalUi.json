@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "col_subject": "Subject",
+    "col_class": "Class",
+    "col_teacher": "Teacher",
+    "col_type": "Type",
+    "view_answers": "View answers"
+  }
+}

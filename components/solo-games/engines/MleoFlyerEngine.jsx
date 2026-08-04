@@ -20,6 +20,8 @@ const sizeBomb = 50;
 /**
  * @param {{ autoStart?: boolean, onSessionEnd?: (metrics: object) => void }} props
  */
+import { gameHudScoreColon, gameHudLabel } from "../../../lib/games/game-hud-copy.js";
+
 export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
   const sfx = useSoloEngineAudio();
   const sfxRef = useRef(sfx);
@@ -493,7 +495,7 @@ export default function MleoFlyerEngine({ autoStart = false, onSessionEnd }) {
               ) : null}
 
               <div className="pointer-events-none absolute left-1/2 top-2 z-20 max-w-[95vw] -translate-x-1/2 rounded-lg bg-black/60 px-4 py-2 text-base font-bold sm:text-lg">
-                Score: {score}
+                {gameHudScoreColon()} {score}
               </div>
               <canvas
                 ref={canvasRef}

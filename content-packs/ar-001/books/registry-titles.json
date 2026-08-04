@@ -56,7 +56,7 @@
         "title": "الزوايا في المثلث"
       },
       "e": {
-        "title": "التناوب في الطائرة وأكثر من ذلك"
+        "title": "الدوران في الطائرة وأكثر من ذلك"
       }
     },
     "geometry.g4": {
@@ -386,6 +386,1000 @@
     },
     "science.g6": {
       "bookTitle": "العلوم - الصف السادس"
+    }
+  },
+  "pages": {
+    "english.g1": {
+      "classroom_words": {
+        "title": "كلمات الفصول الدراسية"
+      },
+      "first_words_cvc": {
+        "title": "كلمات من ثلاثة أحرف"
+      },
+      "first_words_simple": {
+        "title": "الكلمات البسيطة الأولى"
+      },
+      "letters_lower": {
+        "title": "الحروف الصغيرة من a إلى z"
+      },
+      "letters_match": {
+        "title": "مطابقة الحروف الكبيرة والصغيرة"
+      },
+      "letters_upper": {
+        "title": "الحروف الكبيرة من A إلى Z"
+      },
+      "letter_names": {
+        "title": "أسماء الحروف"
+      },
+      "listening_classroom": {
+        "title": "تعليمات الفصول الدراسية"
+      },
+      "listening_commands": {
+        "title": "المزيد من التعليمات القصيرة"
+      },
+      "phonics_first_sound": {
+        "title": "الصوت الأول في الكلمة"
+      },
+      "phonics_sounds": {
+        "title": "أصوات الحروف"
+      },
+      "picture_word_match": {
+        "title": "صورة وكلمة"
+      }
+    },
+    "english.g2": {
+      "classroom_vocab_g2": {
+        "title": "المفردات الصفية"
+      },
+      "early_sentences_exposure": {
+        "title": "جمل قصيرة"
+      },
+      "first_word_reading": {
+        "title": "قراءة كلماتك الأولى"
+      },
+      "letters_order": {
+        "title": "ترتيب الأبجدية"
+      },
+      "letters_review": {
+        "title": "مراجعة: الحروف والأسماء"
+      },
+      "listening_comprehension": {
+        "title": "الفهم السمعي"
+      },
+      "phonics_blending": {
+        "title": "مزج الأصوات"
+      },
+      "phonics_sounds_review": {
+        "title": "مراجعة: الأصوات"
+      },
+      "picture_audio_word_match": {
+        "title": "الصورة والصوت والكلمة"
+      },
+      "sound_letter_match": {
+        "title": "الصوت والحرف"
+      },
+      "word_families_cvc": {
+        "title": "عائلات الكلمة"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "shapes_basic_rectangle": {
+        "title": "التعرف على المستطيل"
+      },
+      "shapes_basic_square": {
+        "title": "التعرف على الساحة"
+      },
+      "transformations": {
+        "title": "الترجمة والتأمل — مقدمة"
+      }
+    },
+    "geometry.g2": {
+      "solids": {
+        "title": "المواد الصلبة ثلاثية الأبعاد — الأسماء والمقدمة"
+      },
+      "square_area": {
+        "title": "مساحة المربع"
+      },
+      "transformations": {
+        "title": "الترجمة والتأمل — المزيد من الممارسة"
+      }
+    },
+    "geometry.g3": {
+      "parallel_perpendicular": {
+        "title": "الخطوط المتوازية والمتعامدة"
+      },
+      "quadrilaterals": {
+        "title": "أنواع الرباعيات"
+      },
+      "rotation": {
+        "title": "الدوران في الطائرة"
+      },
+      "solids": {
+        "title": "المواد الصلبة — الوجوه، القمم، والحواف"
+      },
+      "square_area": {
+        "title": "مساحة المربع — الصف الثالث"
+      },
+      "square_perimeter": {
+        "title": "محيط المربع"
+      },
+      "triangles": {
+        "title": "أنواع المثلثات"
+      },
+      "triangle_angles": {
+        "title": "الزوايا في المثلث"
+      },
+      "triangle_perimeter": {
+        "title": "محيط المثلث"
+      }
+    },
+    "geometry.g4": {
+      "diagonal_rectangle": {
+        "title": "قطري المستطيل"
+      },
+      "diagonal_square": {
+        "title": "قطري للمربع"
+      },
+      "parallel_perpendicular": {
+        "title": "المتوازي والمتعامد — في المضلعات"
+      },
+      "quadrilaterals": {
+        "title": "الرباعيات — الخصائص والتصنيف"
+      },
+      "rectangular_prism_volume": {
+        "title": "حجم المنشور المستطيل"
+      },
+      "shapes_basic_properties_angles": {
+        "title": "الزوايا القائمة في الشكل الرباعي"
+      },
+      "shapes_basic_properties_rectangle": {
+        "title": "خواص المستطيل — أزواج الأضلاع"
+      },
+      "shapes_basic_properties_square": {
+        "title": "خصائص المربع — الجوانب"
+      },
+      "solids": {
+        "title": "المواد الصلبة — الوجوه في المستوى"
+      },
+      "square_area": {
+        "title": "مساحة المربع — الصف الرابع"
+      },
+      "square_perimeter": {
+        "title": "محيط المربع — الصف الرابع"
+      },
+      "symmetry": {
+        "title": "التماثل في الطائرة"
+      },
+      "triangle_angles": {
+        "title": "الزوايا في المثلث — الصف الرابع"
+      },
+      "triangle_perimeter": {
+        "title": "محيط المثلث — الصف الرابع"
+      }
+    },
+    "geometry.g5": {
+      "diagonal_parallelogram": {
+        "title": "قطري متوازي الأضلاع"
+      },
+      "diagonal_rectangle": {
+        "title": "قطري المستطيل"
+      },
+      "diagonal_square": {
+        "title": "قطري للمربع"
+      },
+      "heights_parallelogram": {
+        "title": "ارتفاع متوازي الأضلاع"
+      },
+      "heights_trapezoid": {
+        "title": "ارتفاع شبه منحرف"
+      },
+      "heights_triangle": {
+        "title": "ارتفاع المثلث"
+      },
+      "parallelogram_area": {
+        "title": "مساحة متوازي الأضلاع"
+      },
+      "parallel_perpendicular": {
+        "title": "الخطوط المتوازية والمتعامدة"
+      },
+      "quadrilaterals": {
+        "title": "تصنيف الأشكال الرباعية — الصف الخامس"
+      },
+      "rectangular_prism_volume": {
+        "title": "حجم المنشور المستطيل"
+      },
+      "solids": {
+        "title": "المواد الصلبة ثلاثية الأبعاد — مراجعة"
+      },
+      "square_area": {
+        "title": "مساحة المربع"
+      },
+      "square_perimeter": {
+        "title": "محيط المربع"
+      },
+      "tiling": {
+        "title": "تبليط الطائرة"
+      },
+      "trapezoid_area": {
+        "title": "مساحة شبه منحرف"
+      },
+      "triangle_angles": {
+        "title": "الزوايا في المثلث"
+      },
+      "triangle_area": {
+        "title": "مساحة المثلث"
+      },
+      "triangle_perimeter": {
+        "title": "محيط المثلث"
+      }
+    },
+    "geometry.g6": {
+      "circle_area": {
+        "title": "مساحة الدائرة"
+      },
+      "circle_perimeter": {
+        "title": "محيط الدائرة"
+      },
+      "cone_volume": {
+        "title": "حجم المخروط"
+      },
+      "cylinder_volume": {
+        "title": "حجم الاسطوانة"
+      },
+      "parallelogram_area": {
+        "title": "مساحة متوازي الأضلاع — الصف السادس"
+      },
+      "prism_volume_rectangular": {
+        "title": "حجم المنشور — القاعدة المستطيلة"
+      },
+      "prism_volume_triangle": {
+        "title": "حجم المنشور — القاعدة الثلاثية"
+      },
+      "pyramid_volume_rectangular": {
+        "title": "حجم الهرم — القاعدة المستطيلة"
+      },
+      "pyramid_volume_square": {
+        "title": "حجم الهرم — القاعدة المربعة"
+      },
+      "pythagoras_hyp": {
+        "title": "نظرية فيثاغورس — إيجاد الوتر"
+      },
+      "pythagoras_leg": {
+        "title": "نظرية فيثاغورس — العثور على الساق"
+      },
+      "rectangular_prism_volume": {
+        "title": "حجم المنشور المستطيل — الصف السادس"
+      },
+      "solids": {
+        "title": "المواد الصلبة — الاسطوانة، الهرم، المخروط، المجال"
+      },
+      "sphere_volume": {
+        "title": "حجم الكرة"
+      },
+      "square_area": {
+        "title": "مساحة المربع — الصف السادس"
+      },
+      "square_perimeter": {
+        "title": "محيط المربع — الصف السادس"
+      },
+      "trapezoid_area": {
+        "title": "مساحة شبه المنحرف — الصف السادس"
+      },
+      "triangle_angles": {
+        "title": "الزوايا في المثلث — الصف السادس"
+      },
+      "triangle_perimeter": {
+        "title": "محيط المثلث — الصف السادس"
+      }
+    },
+    "math.g1": {
+      "add_second_decade": {
+        "title": "جمع المراهقين — الأعداد من 11 إلى 19"
+      },
+      "add_tens_only": {
+        "title": "إضافة عشرات كاملة"
+      },
+      "add_two": {
+        "title": "إضافة رقمين"
+      },
+      "cmp": {
+        "title": "مقارنة الأرقام"
+      },
+      "eq_add_simple": {
+        "title": "الجمع مع رقم مفقود"
+      },
+      "eq_sub_simple": {
+        "title": "الطرح مع عدد مفقود"
+      },
+      "mul": {
+        "title": "الضرب — الجمع المتكرر"
+      },
+      "ns_complement10": {
+        "title": "الأزواج التي تشكل 10"
+      },
+      "ns_counting_backward": {
+        "title": "العد التنازلي على خط الأعداد"
+      },
+      "ns_counting_forward": {
+        "title": "العد للأمام على خط الأعداد"
+      },
+      "ns_even_odd": {
+        "title": "الأرقام الزوجية والفردية"
+      },
+      "ns_neighbors": {
+        "title": "عدد الجيران"
+      },
+      "ns_number_line": {
+        "title": "خط الأعداد"
+      },
+      "ns_place_tens_units": {
+        "title": "العشرات والآحاد"
+      },
+      "sub_two": {
+        "title": "طرح رقمين"
+      },
+      "wp_coins": {
+        "title": "مسائل كلامية — قيم العملة"
+      },
+      "wp_coins_spent": {
+        "title": "المسائل اللفظية — كم بقي؟"
+      },
+      "wp_time_date": {
+        "title": "مسائل لفظية — أيام الأسبوع"
+      },
+      "wp_time_days": {
+        "title": "مسائل كلامية — كم عدد الأيام بين الأيام"
+      }
+    },
+    "math.g2": {
+      "add_two": {
+        "title": "جمع رقمين — ما يصل إلى 100"
+      },
+      "add_vertical": {
+        "title": "إضافة عمودية"
+      },
+      "cmp": {
+        "title": "مقارنة الأعداد حتى 1000"
+      },
+      "div": {
+        "title": "القسم — المشاركة العادلة"
+      },
+      "divisibility": {
+        "title": "متى يتم قسمة الرقم على 2 و 5 و 10؟"
+      },
+      "frac_half": {
+        "title": "نصف الكل"
+      },
+      "frac_half_reverse": {
+        "title": "العثور على الكل عندما تعرف النصف"
+      },
+      "frac_quarter": {
+        "title": "ربع الكل"
+      },
+      "frac_quarter_reverse": {
+        "title": "العثور على الكل عندما تعرف الربع"
+      },
+      "mul": {
+        "title": "جدول الضرب — المجموعات المتساوية"
+      },
+      "ns_complement10": {
+        "title": "الأزواج التي تكون 10 — مساعد الإضافة"
+      },
+      "ns_even_odd": {
+        "title": "الزوجية والفردية — المراجعة والممارسة"
+      },
+      "ns_neighbors": {
+        "title": "عدد الجيران — أعداد أكبر"
+      },
+      "ns_place_tens_units": {
+        "title": "المئات والعشرات والآحاد — ما يصل إلى 1000"
+      },
+      "sub_two": {
+        "title": "طرح رقمين — ما يصل إلى 100"
+      },
+      "sub_vertical": {
+        "title": "الطرح العمودي"
+      },
+      "wp_coins": {
+        "title": "مسائل كلامية — عملات معدنية"
+      },
+      "wp_coins_spent": {
+        "title": "مشاكل كلامية — التسوق والتغيير"
+      },
+      "wp_division_simple": {
+        "title": "مشاكل كلامية — المشاركة العادلة"
+      },
+      "wp_groups_g2": {
+        "title": "مسائل كلامية — مجموعات متساوية"
+      },
+      "wp_time_date": {
+        "title": "مسائل لفظية — أيام الأسبوع"
+      },
+      "wp_time_days": {
+        "title": "مسائل كلامية — كم عدد الأيام بين الأيام"
+      }
+    },
+    "math.g3": {
+      "add_three": {
+        "title": "جمع ثلاثة أرقام"
+      },
+      "add_two": {
+        "title": "جمع رقمين — ما يصل إلى 1000"
+      },
+      "cmp": {
+        "title": "مقارنة الأعداد حتى 1000"
+      },
+      "dec_add": {
+        "title": "إضافة الكسور العشرية"
+      },
+      "dec_sub": {
+        "title": "طرح الأعداد العشرية"
+      },
+      "div": {
+        "title": "القسمة — المشاركة المتساوية"
+      },
+      "divisibility": {
+        "title": "قابلية القسمة على 2 و 5 و 10"
+      },
+      "div_with_remainder": {
+        "title": "القسمة بالباقي"
+      },
+      "eq_add": {
+        "title": "معادلة الجمع — الرقم المفقود"
+      },
+      "eq_sub": {
+        "title": "معادلة الطرح — العدد المفقود"
+      },
+      "fractions": {
+        "title": "الكسور — ما هي وكيف نقارنها؟"
+      },
+      "mul": {
+        "title": "الضرب — جداول الضرب"
+      },
+      "mul_hundreds": {
+        "title": "الضرب بالمئات"
+      },
+      "mul_tens": {
+        "title": "الضرب بالعشرات"
+      },
+      "ns_complement10": {
+        "title": "الأزواج التي تكون 10 — مراجعة"
+      },
+      "ns_complement100": {
+        "title": "الأزواج التي تشكل 100"
+      },
+      "ns_even_odd": {
+        "title": "الزوجية والفردية — الأعداد الأكبر"
+      },
+      "ns_neighbors": {
+        "title": "عدد الجيران — ما يصل إلى 1000"
+      },
+      "ns_place_hundreds": {
+        "title": "المئات والعشرات والآحاد — ما يصل إلى 1000"
+      },
+      "order_add_mul": {
+        "title": "ترتيب العمليات — الجمع والضرب"
+      },
+      "order_mul_sub": {
+        "title": "ترتيب العمليات — الضرب والطرح"
+      },
+      "order_parentheses": {
+        "title": "الأقواس في العمليات الحسابية"
+      },
+      "sequence": {
+        "title": "تسلسلات الأرقام"
+      },
+      "sub_two": {
+        "title": "طرح رقمين — ما يصل إلى 1000"
+      },
+      "wp_comparison_more": {
+        "title": "مشكلة كلامية — كم عددها؟"
+      },
+      "wp_leftover": {
+        "title": "مشكلة كلامية — ماذا بقي؟"
+      },
+      "wp_time_sum": {
+        "title": "مشكلة الكلمة — إضافة الأوقات"
+      }
+    },
+    "math.g4": {
+      "add_three": {
+        "title": "جمع ثلاثة أرقام"
+      },
+      "add_two": {
+        "title": "جمع رقمين — ما يصل إلى 10000"
+      },
+      "cmp": {
+        "title": "مقارنة الأعداد الكبيرة"
+      },
+      "dec_add": {
+        "title": "إضافة الكسور العشرية — رقمين بعد النقطة"
+      },
+      "dec_sub": {
+        "title": "طرح الأعداد العشرية — رقمين بعد النقطة"
+      },
+      "div": {
+        "title": "القسمة — المشاركة المتساوية"
+      },
+      "divisibility": {
+        "title": "قابلية القسمة — قواعد 2، 3، 5، 6، 9، و10"
+      },
+      "div_long": {
+        "title": "القسمة الطويلة"
+      },
+      "div_with_remainder": {
+        "title": "القسمة بالباقي"
+      },
+      "eq_add": {
+        "title": "معادلة الجمع — العدد المفقود (المئات)"
+      },
+      "eq_sub": {
+        "title": "معادلة الطرح — العدد المفقود (المئات)"
+      },
+      "est_add": {
+        "title": "تقدير الإجابة — الإضافة"
+      },
+      "est_mul": {
+        "title": "تقدير الإجابة — الضرب"
+      },
+      "est_quantity": {
+        "title": "تقدير الكمية"
+      },
+      "fm_factor": {
+        "title": "عوامل العدد"
+      },
+      "fm_gcd": {
+        "title": "العامل المشترك الأكبر (GCF)"
+      },
+      "fm_multiple": {
+        "title": "مضاعفات العدد"
+      },
+      "mul": {
+        "title": "الضرب — جدول الضرب والاستراتيجيات"
+      },
+      "mul_vertical": {
+        "title": "الضرب العمودي"
+      },
+      "ns_complement10": {
+        "title": "الأزواج التي تكون 10 — مراجعة"
+      },
+      "ns_complement100": {
+        "title": "صنع 100"
+      },
+      "ns_even_odd": {
+        "title": "الزوجية والفردية — الأعداد الكبيرة"
+      },
+      "ns_neighbors": {
+        "title": "عدد الجيران — أعداد كبيرة"
+      },
+      "ns_place_hundreds": {
+        "title": "القيمة المكانية — الآلاف حتى 10000"
+      },
+      "one_mul": {
+        "title": "الضرب بـ 1"
+      },
+      "power_base": {
+        "title": "القوى — القاعدة والأس"
+      },
+      "power_calc": {
+        "title": "القوى — حساب القيمة"
+      },
+      "prime_composite": {
+        "title": "الأعداد الأولية والمركبة"
+      },
+      "round": {
+        "title": "التقريب إلى العشرات والمئات والآلاف"
+      },
+      "sequence": {
+        "title": "تسلسلات الأرقام — القفزات الكبيرة"
+      },
+      "sub_two": {
+        "title": "طرح رقمين — ما يصل إلى 10000"
+      },
+      "wp_comparison_more": {
+        "title": "المسائل اللفظية — كم عددها؟"
+      },
+      "wp_leftover": {
+        "title": "مشاكل كلامية — ماذا بقي؟"
+      },
+      "wp_time_sum": {
+        "title": "مسائل كلامية — جمع الأوقات معًا"
+      },
+      "zero_add": {
+        "title": "الإضافة مع 0"
+      },
+      "zero_mul": {
+        "title": "الضرب في 0"
+      },
+      "zero_sub": {
+        "title": "طرح 0"
+      }
+    },
+    "math.g5": {
+      "add_three": {
+        "title": "جمع ثلاثة أرقام"
+      },
+      "add_two": {
+        "title": "جمع رقمين — ما يصل إلى 100000"
+      },
+      "cmp": {
+        "title": "مقارنة الأرقام — ما يصل إلى 100000"
+      },
+      "dec_add": {
+        "title": "إضافة الكسور العشرية"
+      },
+      "dec_sub": {
+        "title": "طرح الأعداد العشرية"
+      },
+      "div": {
+        "title": "القسمة — المشاركة المتساوية"
+      },
+      "div_two_digit": {
+        "title": "القسمة على عدد مكون من رقمين"
+      },
+      "div_with_remainder": {
+        "title": "القسمة على الباقي — أعداد كبيرة"
+      },
+      "eq_add": {
+        "title": "معادلات الجمع"
+      },
+      "eq_div": {
+        "title": "معادلات القسمة"
+      },
+      "eq_mul": {
+        "title": "معادلات الضرب"
+      },
+      "eq_sub": {
+        "title": "معادلات الطرح"
+      },
+      "est_add": {
+        "title": "تقدير الإضافة"
+      },
+      "est_mul": {
+        "title": "تقدير الضرب"
+      },
+      "est_quantity": {
+        "title": "تقدير الكمية"
+      },
+      "fm_factor": {
+        "title": "عوامل العدد"
+      },
+      "fm_gcd": {
+        "title": "العامل المشترك الأكبر (GCF)"
+      },
+      "fm_multiple": {
+        "title": "مضاعفات العدد"
+      },
+      "frac_add_sub": {
+        "title": "جمع وطرح الكسور"
+      },
+      "frac_expand": {
+        "title": "توسيع الكسور"
+      },
+      "frac_reduce": {
+        "title": "تبسيط الكسور"
+      },
+      "frac_to_mixed": {
+        "title": "كسر غير صحيح لعدد مختلط"
+      },
+      "mixed_to_frac": {
+        "title": "رقم مختلط إلى كسر غير حقيقي"
+      },
+      "mul": {
+        "title": "الضرب — الاستراتيجيات والأعداد الكبيرة"
+      },
+      "ns_complement100": {
+        "title": "الأزواج التي تشكل 100"
+      },
+      "ns_neighbors": {
+        "title": "عدد الجيران — ما يصل إلى 100000"
+      },
+      "ns_place_hundreds": {
+        "title": "القيمة المكانية — ما يصل إلى 100000"
+      },
+      "perc_discount": {
+        "title": "خصم في المئة"
+      },
+      "perc_part_of": {
+        "title": "النسبة المئوية للكمية"
+      },
+      "round": {
+        "title": "التقريب — العشرات والمئات والآلاف وعشرة الآلاف"
+      },
+      "sequence": {
+        "title": "تسلسلات الأرقام — خطوات كبيرة"
+      },
+      "sub_two": {
+        "title": "طرح رقمين — ما يصل إلى 100000"
+      },
+      "wp_comparison_more": {
+        "title": "المسائل اللفظية — كم عددها؟"
+      },
+      "wp_distance_time": {
+        "title": "المسافة والوقت والسرعة"
+      },
+      "wp_leftover": {
+        "title": "المسائل اللفظية — كم عددها المتبقي؟"
+      },
+      "wp_multi_step": {
+        "title": "مسائل كلامية — متعددة الخطوات"
+      },
+      "wp_shop_discount": {
+        "title": "التسوق والخصومات"
+      },
+      "wp_time_sum": {
+        "title": "المسائل اللفظية — إضافة الأوقات"
+      },
+      "wp_unit_cm_to_m": {
+        "title": "تحويل الوحدات — السنتيمترات والأمتار"
+      },
+      "wp_unit_g_to_kg": {
+        "title": "تحويل الوحدة — الجرام والكيلوجرام"
+      }
+    },
+    "math.g6": {
+      "add_three": {
+        "title": "جمع ثلاثة أرقام"
+      },
+      "add_two": {
+        "title": "جمع رقمين — ما يصل إلى 200000"
+      },
+      "cmp": {
+        "title": "مقارنة الأعداد الكبيرة"
+      },
+      "dec_add": {
+        "title": "إضافة أرقام عشرية"
+      },
+      "dec_divide": {
+        "title": "قسمة الأعداد العشرية"
+      },
+      "dec_divide_10_100": {
+        "title": "قسمة عدد عشري على 10 أو 100"
+      },
+      "dec_multiply": {
+        "title": "ضرب الأعداد العشرية"
+      },
+      "dec_multiply_10_100": {
+        "title": "ضرب عدد عشري في 10 أو 100"
+      },
+      "dec_repeating": {
+        "title": "تكرار الكسور العشرية"
+      },
+      "dec_sub": {
+        "title": "طرح الأعداد العشرية"
+      },
+      "div": {
+        "title": "القسمة — المشاركة المتساوية"
+      },
+      "div_with_remainder": {
+        "title": "القسمة بالباقي"
+      },
+      "eq_add": {
+        "title": "معادلة الجمع — الرقم المفقود"
+      },
+      "eq_div": {
+        "title": "معادلة القسمة — الرقم المفقود"
+      },
+      "eq_mul": {
+        "title": "معادلة الضرب — العدد المفقود"
+      },
+      "eq_sub": {
+        "title": "معادلة الطرح — العدد المفقود"
+      },
+      "fm_factor": {
+        "title": "عوامل العدد"
+      },
+      "fm_gcd": {
+        "title": "العامل المشترك الأكبر (GCF)"
+      },
+      "fm_multiple": {
+        "title": "مضاعفات العدد"
+      },
+      "frac_as_division": {
+        "title": "الكسر كقسمة"
+      },
+      "frac_divide": {
+        "title": "قسمة الكسور"
+      },
+      "frac_multiply": {
+        "title": "ضرب الكسور"
+      },
+      "mul": {
+        "title": "الضرب — الاستراتيجيات والأعداد الكبيرة"
+      },
+      "ns_complement100": {
+        "title": "صنع 100 — الاستعداد للنسب المئوية"
+      },
+      "ns_neighbors": {
+        "title": "الجيران — أعداد تصل إلى 200000"
+      },
+      "ns_place_hundreds": {
+        "title": "القيمة المكانية — ما يصل إلى 200000"
+      },
+      "perc_discount": {
+        "title": "خصم في المئة"
+      },
+      "perc_part_of": {
+        "title": "النسبة المئوية للكمية"
+      },
+      "ratio_find": {
+        "title": "إيجاد الكمية المفقودة في النسبة"
+      },
+      "ratio_first": {
+        "title": "النسب — ماذا تعني؟"
+      },
+      "ratio_second": {
+        "title": "النسبة بين كميتين"
+      },
+      "round": {
+        "title": "التقريب — العشرات والمئات والآلاف"
+      },
+      "scale_find": {
+        "title": "مقياس — العثور على المسافة"
+      },
+      "scale_map_to_real": {
+        "title": "من الخريطة إلى الحياة الحقيقية"
+      },
+      "scale_real_to_map": {
+        "title": "من الحياة الحقيقية إلى الخريطة"
+      },
+      "sequence": {
+        "title": "تسلسلات الأرقام — العثور على القاعدة"
+      },
+      "sub_two": {
+        "title": "طرح رقمين — ما يصل إلى 200000"
+      },
+      "wp_comparison_more": {
+        "title": "المسائل اللفظية — كم عددها؟"
+      },
+      "wp_distance_time": {
+        "title": "المسافة والوقت والسرعة"
+      },
+      "wp_leftover": {
+        "title": "مشاكل كلامية — ماذا بقي؟"
+      },
+      "wp_shop_discount": {
+        "title": "مسائل كلامية — بيع المتجر"
+      },
+      "wp_time_sum": {
+        "title": "المسائل اللفظية — إضافة الأوقات"
+      },
+      "wp_unit_cm_to_m": {
+        "title": "تحويل الوحدات — السنتيمترات والأمتار"
+      },
+      "wp_unit_g_to_kg": {
+        "title": "تحويل الوحدة — الجرام والكيلوجرام"
+      }
+    },
+    "science.g1": {
+      "animals": {
+        "title": "الحيوانات — الحية مقابل غير الحية"
+      },
+      "body": {
+        "title": "جسم الإنسان — الحواس والحركة"
+      },
+      "earth_space": {
+        "title": "الأرض والطقس"
+      },
+      "environment": {
+        "title": "بيئتنا"
+      },
+      "materials": {
+        "title": "المواد — الخصائص اليومية"
+      },
+      "plants": {
+        "title": "النباتات — ما تحتاجه النباتات"
+      }
+    },
+    "science.g2": {
+      "animals": {
+        "title": "الحيوانات — دورة الحياة"
+      },
+      "body": {
+        "title": "جسم الإنسان — الصحة والعادات"
+      },
+      "earth_space": {
+        "title": "الأرض — الفصول والسماء"
+      },
+      "environment": {
+        "title": "البيئة — حماية الطبيعة"
+      },
+      "experiments": {
+        "title": "المراقبة والتحقيق"
+      },
+      "materials": {
+        "title": "المواد — حالات المادة"
+      },
+      "plants": {
+        "title": "النباتات — النمو والدورة"
+      }
+    },
+    "science.g3": {
+      "animals": {
+        "title": "الحيوانات — التكيف مع البيئة"
+      },
+      "body": {
+        "title": "جسم الإنسان — الأنظمة الأساسية"
+      },
+      "earth_space": {
+        "title": "الأرض — الطقس والماء"
+      },
+      "environment": {
+        "title": "البيئة — النظم البيئية الصغيرة"
+      },
+      "experiments": {
+        "title": "تجربة علمية قصيرة"
+      },
+      "materials": {
+        "title": "المواد — القوى والحركة"
+      },
+      "plants": {
+        "title": "النباتات — ظروف النمو (ملخص)"
+      }
+    },
+    "science.g4": {
+      "animals": {
+        "title": "الحيوانات — التفاعلات"
+      },
+      "body": {
+        "title": "جسم الإنسان — التنفس والهضم"
+      },
+      "earth_space": {
+        "title": "الأرض — الصخور والتربة والفصول"
+      },
+      "environment": {
+        "title": "البيئة — الحفاظ على الموارد"
+      },
+      "experiments": {
+        "title": "التخطيط للتجربة"
+      },
+      "materials": {
+        "title": "المواد — التغييرات والكهرباء (مفاهيم)"
+      }
+    },
+    "science.g5": {
+      "animals": {
+        "title": "الحيوانات — التكاثر والتكيف"
+      },
+      "body": {
+        "title": "جسم الإنسان — الهيكل العظمي والعضلات والحواس"
+      },
+      "earth_space": {
+        "title": "الأرض — الموارد والظواهر"
+      },
+      "environment": {
+        "title": "البيئة — الموارد الطبيعية"
+      },
+      "experiments": {
+        "title": "التحقيق الكامل — التوثيق"
+      },
+      "materials": {
+        "title": "المواد — المخاليط والضوء"
+      }
+    },
+    "science.g6": {
+      "animals": {
+        "title": "الحيوانات — النظم البيئية"
+      },
+      "body": {
+        "title": "جسم الإنسان — التنسيق بين الأنظمة"
+      },
+      "earth_space": {
+        "title": "الأرض — المناخ والفضاء"
+      },
+      "environment": {
+        "title": "البيئة — تغير المناخ والعمل"
+      },
+      "experiments": {
+        "title": "مشروع العلوم"
+      },
+      "materials": {
+        "title": "المواد — الكيمياء الأساسية"
+      }
     }
   }
 }

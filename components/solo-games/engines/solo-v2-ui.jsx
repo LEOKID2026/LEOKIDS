@@ -1,6 +1,7 @@
 /** Shared Leo Kids UI bits for Solo Games V2 engines. */
 
 import { useEffect, useRef, useState } from "react";
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useSoloGameShellUi } from "../../../hooks/solo-games/useSoloGameShellUi.js";
 export const SOLO_V2_ASSETS = {
   leo: "/images/leo.png",
@@ -20,16 +21,33 @@ export const SOLO_V2_ASSETS = {
 };
 
 /**
- * @param {{ rows: { label: string, value: import("react").ReactNode, accent?: string }[] }} props
+ * @param {{
+ *   rows: { id?: string, label?: string, value: import("react").ReactNode, accent?: string }[],
+ *   packSlug?: string,
+ * }} props
  */
-export function SoloV2Hud({ rows }) {
+export function SoloV2Hud({ rows, packSlug }) {
   return (
     <div className="flex w-full max-w-lg shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-xl border border-yellow-400/40 bg-black/50 px-3 py-2 text-xs font-bold sm:text-sm">
-      {rows.map((row) => (
-        <span key={row.label} className={row.accent || "text-white"}>
-          {row.label}: {row.value}
-        </span>
-      ))}
+      {rows.map((row) => {
+        const rawLabel = row.label != null ? String(row.label) : "";
+        const id = row.id != null ? String(row.id) : "";
+        // Prefer live pack resolution when slug+id provided so HUD never sticks on raw keys
+        // (e.g. score/sorted/lives) if an earlier call resolved before locale bind.
+        const fromPack =
+          packSlug && id ? gamePackCopy(packSlug, id) : "";
+        const label =
+          fromPack && fromPack !== id
+            ? fromPack
+            : rawLabel && rawLabel !== id
+              ? rawLabel
+              : fromPack || rawLabel || id;
+        return (
+          <span key={id || label} className={row.accent || "text-white"}>
+            {label}: {row.value}
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -90,7 +108,7 @@ export function SoloV2Intro({ title, lines, onStart }) {
         ))}
       </ul>
       <button type="button" onClick={onStart} className={SG.introStartBtn}>
-        Start Game
+        {gamePackCopy("components__solo-games__SoloGameEntryScreen", "start_game")}
       </button>
     </div>
   );

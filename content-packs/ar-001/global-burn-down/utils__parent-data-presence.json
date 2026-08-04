@@ -1,5 +1,10 @@
 {
   "copy": {
-    "social_studies_geography": "الدراسات الاجتماعية والجغرافيا"
+    "social_studies_geography": "الدراسات الاجتماعية والجغرافيا",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra": "هناك بعض التمرين في الفترة المحددة، لكنّه لا يكفي بعد لاستخلاص ملاحظة واضحة. يُفضّل المواصلة لبضعة أيام إضافية ثم التحقق مرة أخرى.",
+    "there_is_no_practice_yet_in_the_selected_period": "لا يوجد تمرين بعد في الفترة المحددة.",
+    "there_is_limited_data_in_the_selected_period": "البيانات محدودة في الفترة المحددة.",
+    "there_is_enough_data_in_the_selected_period_for_a_clear_picture": "توجد بيانات كافية في الفترة المحددة لصورة واضحة.",
+    "practice_volume_not_yet_enough_in_the_selected_period": "حجم التمرين في الفترة المحددة لا يكفي بعد لصورة واضحة."
   }
 }

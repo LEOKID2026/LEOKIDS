@@ -14,6 +14,8 @@ import {
 } from "../../lib/school-portal/school-communication.js";
 import { getSchoolMessageId } from "../../lib/school-portal/school-messaging-ui";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+import { hasParentDemoSession } from "../../lib/demo/parent-demo-mode.client.js";
 
 export default function ParentSchoolInboxPage() {
   const router = useRouter();
@@ -27,6 +29,13 @@ export default function ParentSchoolInboxPage() {
 
   const loadInbox = async () => {
     setLoading(true);
+    if (hasParentDemoSession()) {
+      setMessages([]);
+      setMustChangePin(false);
+      setPinGateDone(true);
+      setLoading(false);
+      return;
+    }
     const me = await fetch("/api/guardian/me", { credentials: "same-origin", cache: "no-store" });
     if (me.status === 401) {
       router.replace("/parent/login");
@@ -98,14 +107,16 @@ export default function ParentSchoolInboxPage() {
     <Layout>
       <TeacherPortalShell title={SC_INBOX_TITLE_PARENT}>
         <div className="mb-4">
-          <Link href="/parent/guardian/view" className="text-sm text-amber-300 hover:underline cursor-pointer">
-            ← Back to report
+          <Link href="/parent/guardian/view" className="text-sm text-amber-300 hover:underline cursor-pointer" data-testid="parent-school-inbox-back">
+            {globalBurnDownCopy("pages__parent__school-inbox", "back_to_report")}
           </Link>
         </div>
         {loading ? (
-          <p className="text-white/50 text-sm">Loading…</p>
+          <p className="text-white/50 text-sm" data-testid="parent-school-inbox-loading">
+            {globalBurnDownCopy("pages__parent__school-inbox", "loading")}
+          </p>
         ) : messages.length ? (
-          <ul className="space-y-3">
+          <ul className="space-y-3" data-testid="parent-school-inbox-list">
             {messages.map((m) => {
               const messageId = getSchoolMessageId(m);
               return (
@@ -116,7 +127,7 @@ export default function ParentSchoolInboxPage() {
             })}
           </ul>
         ) : (
-          <p className="text-white/50 text-sm">{SC_INBOX_EMPTY}</p>
+          <p className="text-white/50 text-sm" data-testid="parent-school-inbox-empty">{SC_INBOX_EMPTY}</p>
         )}
 
         <SchoolMessageDetailModal open={Boolean(selected && selectedId)} onClose={() => setSelected(null)}>

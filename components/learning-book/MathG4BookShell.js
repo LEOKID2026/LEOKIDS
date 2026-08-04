@@ -1,5 +1,6 @@
-﻿import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { MATH_G4_BOOK_META } from "../../lib/learning-book/math-g4-registry";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
 import { formatBookShellTitleHe } from "../../lib/learning-book/format-book-shell-title";
@@ -23,6 +24,7 @@ export default function MathG4BookShell({
   pageMeta = null,
 }) {
   const router = useRouter();
+  const { direction } = useI18n();
   const [tocOpen, setTocOpen] = useState(false);
   const isIndex = activePageId === null;
   const fromLearning = isMathG4BookLearningReturn(router.query);
@@ -44,7 +46,7 @@ export default function MathG4BookShell({
       >
         <header
           className={`sticky top-0 z-50 border-b border-[color:var(--book-accent-border)] backdrop-blur-md ${theme.classes.headerBg}`}
-          dir="ltr"
+          dir={direction === "rtl" ? "rtl" : "ltr"}
           style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
         >
           <BookShellHeader
@@ -55,7 +57,7 @@ export default function MathG4BookShell({
             titleHe={formatBookShellTitleHe(MATH_G4_BOOK_META.bookTitleHe)}
             isIndex={isIndex}
             pageMeta={pageMeta}
-            indexSubtitle={`${MATH_G4_BOOK_META.gradeShortLabel} · Pick a topic and read page by page`}
+            indexSubtitle={`${MATH_G4_BOOK_META.gradeShortLabel} � Pick a topic and read page by page`}
             activePageTitleClass={theme.classes.activePageTitle}
           />
         </header>
@@ -64,7 +66,7 @@ export default function MathG4BookShell({
           <div className="min-w-0">{children}</div>
 
           {isIndex ? (
-            <footer className="mt-8 pb-6 text-center" dir="ltr">
+            <footer className="mt-8 pb-6 text-center" dir={direction === "rtl" ? "rtl" : "ltr"}>
               <button
                 type="button"
                 onClick={handleReturnClick}

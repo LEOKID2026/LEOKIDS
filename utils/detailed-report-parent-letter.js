@@ -3,6 +3,7 @@
  * Short, sharp, no sub-layers — does not change engine payload fields.
  */
 
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
 import { pickVariant } from "./parent-report-language/variants.js";
 import {
@@ -552,14 +553,19 @@ function collectSubjectLetterTopicSlots(sp) {
  * @param {Record<string, unknown>|null|undefined} sp
  */
 export function buildSubjectParentLetterDetailedPhase1(sp) {
-  const lab = String(sp?.subjectLabel || "the subject").trim();
+  const lab = String(
+    sp?.subjectLabel ||
+      reportPackCopy("utils__detailed-report-parent-letter", "the_subject_fallback")
+  ).trim();
   const subjQ = Number(sp?.subjectQuestionCount) || 0;
   const emptyTail = { diagnosisHe: "", homeAction: "", closing: "", goingWell: "", fragile: "", reliabilityNoteHe: null };
 
   if (subjQ < 5) {
     return {
       ...emptyTail,
-      opening: `There's little practice in ${lab} this period, so a broad conclusion isn't possible yet. It helps to continue with short practice and check if the direction holds after more questions.`,
+      opening: reportPackCopy("utils__detailed-report-parent-letter", "little_practice_opening", {
+        lab,
+      }),
     };
   }
 
@@ -567,22 +573,46 @@ export function buildSubjectParentLetterDetailedPhase1(sp) {
   if (!slots.length) {
     return {
       ...emptyTail,
-      opening: `There's practice in ${lab}, but not yet enough detail by topic to show a precise conclusion. It helps to continue with short practice, and in the next report it will be easier to see what repeats.`,
+      opening: reportPackCopy(
+        "utils__detailed-report-parent-letter",
+        "practice_no_topic_detail_opening",
+        { lab }
+      ),
     };
   }
 
   if (slots.length >= 2) {
     const t0 = slots[0];
     const t1 = slots[1];
-    let opening = `In ${lab} it's worth focusing first on ${t0.topic}. ${t0.questions} questions were solved, with ${t0.accuracy}% accuracy.`;
-    opening += ` Another topic worth watching is ${t1.topic}, with ${t1.questions} questions and ${t1.accuracy}% accuracy.`;
-    if (t0.pattern) opening += ` The main pattern seen: ${t0.pattern}.`;
+    let opening = reportPackCopy("utils__detailed-report-parent-letter", "focus_first_two_topics", {
+      lab,
+      topic0: t0.topic,
+      questions0: t0.questions,
+      accuracy0: t0.accuracy,
+      topic1: t1.topic,
+      questions1: t1.questions,
+      accuracy1: t1.accuracy,
+    });
+    if (t0.pattern) {
+      opening += ` ${reportPackCopy("utils__detailed-report-parent-letter", "main_pattern_seen", {
+        pattern: t0.pattern,
+      })}`;
+    }
     return { ...emptyTail, opening };
   }
 
   const t0 = slots[0];
-  let opening = `In ${lab} it's worth focusing right now on ${t0.topic}. ${t0.questions} questions were solved, with ${t0.accuracy}% accuracy.`;
-  if (t0.pattern) opening += ` The main pattern seen: ${t0.pattern}.`;
+  let opening = reportPackCopy("utils__detailed-report-parent-letter", "focus_now_one_topic", {
+    lab,
+    topic: t0.topic,
+    questions: t0.questions,
+    accuracy: t0.accuracy,
+  });
+  if (t0.pattern) {
+    opening += ` ${reportPackCopy("utils__detailed-report-parent-letter", "main_pattern_seen", {
+      pattern: t0.pattern,
+    })}`;
+  }
   return { ...emptyTail, opening };
 }
 

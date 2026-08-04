@@ -110,7 +110,7 @@ export default function OfflineEducationalGameShell({ gameKey }) {
   return (
     <>
       <Head>
-        <title>{ui.title} - Offline Games</title>
+        <title>{ui.title} - {gamePackCopy("components__educational-games__OfflineEducationalGameShell", "page_title_suffix")}</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}

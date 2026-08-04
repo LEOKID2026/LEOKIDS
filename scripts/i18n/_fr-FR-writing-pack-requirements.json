@@ -1,0 +1,34 @@
+{
+  "locale": "fr-FR",
+  "note": "Ready for main-agent wiring into data/writing/word-packs.locale.js — do not apply here.",
+  "packTitles": {
+    "colors": "Couleurs",
+    "animals": "Animaux",
+    "family": "Famille",
+    "food": "Aliments",
+    "school": "École",
+    "body": "Corps",
+    "home": "Maison",
+    "nature": "Nature",
+    "transport": "Transports",
+    "numbers": "Nombres",
+    "cvc": "Mots CVC",
+    "sight": "Mots fréquents"
+  },
+  "colorInstructions": {
+    "Color in red": "Colorie en rouge",
+    "Color in blue": "Colorie en bleu",
+    "Color in green": "Colorie en vert",
+    "Color in yellow": "Colorie en jaune",
+    "Color in orange": "Colorie en orange",
+    "Color in purple": "Colorie en violet",
+    "Color in pink": "Colorie en rose",
+    "Color in black": "Colorie en noir"
+  },
+  "chromeVerbs": {
+    "write": "Écris",
+    "trace": "Repasse",
+    "color": "Colorie"
+  },
+  "learningWordsRemainEnglish": true
+}

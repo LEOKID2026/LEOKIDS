@@ -1,5 +1,33 @@
 {
   "copy": {
-    "player_2": "Player 2"
+    "player_2": "Player 2",
+    "back": "Back",
+    "local_badge": "Local",
+    "title": "🪨📄✂️ Rock · Paper · Scissors",
+    "round_subtitle": "Round {round} • First to {firstTo}",
+    "player_1_label": "Player 1",
+    "round_label": "Round",
+    "first_to_option": "First to {target}",
+    "vs_bot": "vs Bot",
+    "reset": "Reset",
+    "match_winner": "{winner} won the match!",
+    "results_in": "Results in {timer}...",
+    "tie_result": "Tie!",
+    "p1_won_result": "Player 1 won!",
+    "bot_won_result": "The bot won!",
+    "p2_won_result": "Player 2 won!",
+    "player_1_choose": "Player 1: choose a move",
+    "leo_bot_label": "Leo Bot",
+    "your_choice": "Your choice:",
+    "player_1_chose": "Player 1 chose:",
+    "player_2_turn": "Player 2: your turn (no peeking!)",
+    "recent": "Recent",
+    "tie_short": "Tie",
+    "p1_won_short": "Player 1 won",
+    "bot_won_short": "The bot won",
+    "p2_won_short": "Player 2 won",
+    "rock": "Rock",
+    "paper": "Paper",
+    "scissors": "Scissors"
   }
 }

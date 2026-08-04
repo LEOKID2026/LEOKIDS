@@ -1,0 +1,14 @@
+{
+  "ok": false,
+  "locale": "ar-001",
+  "route": "/student/solo-games/memory",
+  "path": "start → gameplay → completion → interstitial → skip/continue → finish → retry",
+  "generatedAt": "2026-08-04T19:35:13.048Z",
+  "steps": {
+    "entry_navigated": true,
+    "gameplay_ready": false
+  },
+  "errors": [
+    "memory-gameplay data-memory-ready!=1"
+  ]
+}

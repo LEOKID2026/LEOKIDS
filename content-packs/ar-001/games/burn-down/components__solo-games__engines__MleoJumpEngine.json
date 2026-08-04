@@ -1,7 +1,7 @@
 {
   "copy": {
-    "date_now": "التاريخ.الآن ()",
-    "b_x_a_y": "ب.x && a.y",
+    "date_now": "Date.now()",
+    "b_x_a_y": "b.x && a.y",
     "jump": "اقفز 🦘"
   }
 }

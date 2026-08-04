@@ -11,6 +11,11 @@
     "percentages": "Percentages",
     "ratio_and_scale": "Ratio and scale",
     "word_problems": "Word problems",
-    "mixed_practice": "Mixed practice"
+    "mixed_practice": "Mixed practice",
+    "horizontal_addition": "Horizontal addition",
+    "vertical_addition": "Vertical addition",
+    "horizontal_subtraction": "Horizontal subtraction",
+    "vertical_subtraction": "Vertical subtraction",
+    "unit_fractions_halves_quarters": "Unit fractions — halves and quarters"
   }
 }

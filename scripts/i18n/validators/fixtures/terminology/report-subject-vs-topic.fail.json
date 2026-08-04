@@ -1,0 +1,16 @@
+{
+  "pairs": [
+    {
+      "key": "coverage_by_subject",
+      "en": "Coverage by subject",
+      "ar": "التغطية حسب الموضوع",
+      "expectDetect": ["academic-subject-mawdu"]
+    },
+    {
+      "key": "snapshot_by_topic",
+      "en": "Snapshot by topic",
+      "ar": "لقطة حسب المادة",
+      "expectDetect": ["topic-as-subject"]
+    }
+  ]
+}

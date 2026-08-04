@@ -1,0 +1,6 @@
+{
+  "key": "boundary.diagnosticBoundary",
+  "en": "The report highlights subjects and topics that need reinforcement.",
+  "ar": "يسلّط التقرير الضوء على المواضيع والموضوعات التي تحتاج إلى تعزيز.",
+  "expectDetect": ["academic-subject-mawdu"]
+}

@@ -5,6 +5,7 @@ import { sanitizeQuestionForStudentDisplay } from "./student-question-stem-sanit
 import { attachCanonicalMetadataToMathGeometryQuestion } from "../lib/learning/math-geometry-canonical-metadata.js";
 import { repairMcqObviousAnswerContent } from "./mcq-fail-content-repair.js";
 import { ensureMcqFourOptions, NORMAL_MCQ_OPTION_COUNT } from "./mcq-four-options.js";
+import { localizeGeometryConceptualQuestionAr001 } from "./learning-content-ar-001/geometry-conceptual.js";
 
 /**
  * Conceptual geometry questions — inference, comparison, classification,
@@ -128,22 +129,24 @@ export function renderGeometryConceptualRowToQuestion(row, ctx) {
   const outCorrect = String(repaired.correctAnswer ?? correct).trim();
   const outIdx = outAnswers.findIndex((a) => String(a).trim() === outCorrect);
 
-  return sanitizeQuestionForStudentDisplay(
-    attachCanonicalMetadataToMathGeometryQuestion(
-      {
-        question: qText,
-        correctAnswer: outCorrect,
-        answers: outAnswers,
-        topic,
-        shape: null,
-        params: { ...params, conceptualLevelFraming: levelFr },
-      },
-      {
-        subject: "geometry",
-        gradeKey,
-        levelKey: lv,
-        topic,
-      }
+  return localizeGeometryConceptualQuestionAr001(
+    sanitizeQuestionForStudentDisplay(
+      attachCanonicalMetadataToMathGeometryQuestion(
+        {
+          question: qText,
+          correctAnswer: outCorrect,
+          answers: outAnswers,
+          topic,
+          shape: null,
+          params: { ...params, conceptualLevelFraming: levelFr },
+        },
+        {
+          subject: "geometry",
+          gradeKey,
+          levelKey: lv,
+          topic,
+        }
+      )
     )
   );
 }

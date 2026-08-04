@@ -6,15 +6,15 @@ import { SUBJECT_ARTICLES } from "./subjects.js";
 export const SECTIONS_AR_001 = {
   "parents": {
     "key": "parents",
-    "title": "دليل للآباء والأمهات",
-    "description": "قم بالتسجيل وإدارة الأطفال والتقارير وأدوات الوالدين.",
+    "title": "دليل لأولياء الأمور",
+    "description": "سجّل الدخول، وأدر الأطفال والتقارير وأدوات أولياء الأمور.",
     "href": "/help/parents",
     "emoji": "👨‍👩‍👧",
     "hubGradientKey": "parents"
   },
   "students": {
     "key": "students",
-    "title": "دليل للطلاب",
+    "title": "دليل للتلاميذ",
     "description": "تسجيل الدخول والممارسة والمهام والألعاب - بلغة بسيطة.",
     "href": "/help/students",
     "emoji": "🎒",
@@ -22,7 +22,7 @@ export const SECTIONS_AR_001 = {
   },
   "parent-report": {
     "key": "parent-report",
-    "title": "وأوضح تقرير الوالدين",
+    "title": "شرح تقرير ولي الأمر",
     "description": "كيفية قراءة كل جزء من التقرير – خطوة بخطوة.",
     "href": "/help/parent-report",
     "emoji": "📊",
@@ -30,8 +30,8 @@ export const SECTIONS_AR_001 = {
   },
   "subjects": {
     "key": "subjects",
-    "title": "أدلة الموضوع",
-    "description": "ما يجب التدرب عليه في كل موضوع وكيف.",
+    "title": "أدلة المواد الدراسية",
+    "description": "ما يجب التدرّب عليه في كل مادة وكيف.",
     "href": "/help/subjects",
     "emoji": "📚",
     "hubGradientKey": "subjects"

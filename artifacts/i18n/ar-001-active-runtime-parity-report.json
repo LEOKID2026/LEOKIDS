@@ -1,0 +1,15 @@
+{
+  "activeKeysClassified": "116/116",
+  "englishCanonicalPresent": 116,
+  "arabicPresent": 116,
+  "activeRuntimeKeysMissingInEn": 0,
+  "activeRuntimeKeysMissingInAr": 0,
+  "arabicFallbackCausedByMissingActiveKey": 0,
+  "staleEs419OnlyKeys": 23,
+  "staleKeysCountedAsRequired": 0,
+  "staleEs419OnlyKeysExcluded": "23/23",
+  "leafIndexMismatches": 0,
+  "missingEnSample": [],
+  "missingArSample": [],
+  "leafMismatchSample": []
+}

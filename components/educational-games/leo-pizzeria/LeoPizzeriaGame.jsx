@@ -988,7 +988,7 @@ export default function LeoPizzeriaGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🎉 Shift complete!</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-pizzeria__LeoPizzeriaGame", "end_score", { score })}</p>
             <p className={frame.endStat}>
               ✅ Customers: {successCount}/{customers.length}
             </p>
@@ -1006,7 +1006,7 @@ export default function LeoPizzeriaGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🍕 Shift ended</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-pizzeria__LeoPizzeriaGame", "end_score", { score })}</p>
             <p className={frame.endStat}>✅ Correct pizzas: {successCount}</p>
             <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>

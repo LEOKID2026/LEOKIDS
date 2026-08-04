@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useT } from "../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../lib/i18n/I18nProvider.jsx";
 import {
   getDeferredInstallPrompt,
   isCapacitorNative,
@@ -11,6 +11,7 @@ import {
 
 export default function InstallAppPrompt() {
   const t = useT();
+  const { direction, locale } = useI18n();
   const hasNativePrompt = usePwaInstallPromptAvailable();
   const promptInstall = usePromptPwaInstall();
   const [showPrompt, setShowPrompt] = useState(false);
@@ -88,7 +89,7 @@ export default function InstallAppPrompt() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-50 animate-slide-up" dir="ltr" lang="en">
+    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-50 animate-slide-up" dir={direction} lang={locale}>
       <div className="bg-gradient-to-br from-amber-500/90 to-orange-600/90 backdrop-blur-sm rounded-2xl p-5 shadow-2xl border border-white/20">
         <div className="flex items-start gap-4">
           <div className="flex-shrink-0">

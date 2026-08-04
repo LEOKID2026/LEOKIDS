@@ -1,5 +1,5 @@
-import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const CARD_SHELLS_BRIGHT = [
   "from-teal-400 to-cyan-500",
@@ -19,13 +19,14 @@ const CARD_SHELLS_CLASSIC = [
  */
 export default function HomeValueCards({ isBright }) {
   const { valueCards: cards } = useHomepageCopy();
+  const t = useT();
   const shells = isBright ? CARD_SHELLS_BRIGHT : CARD_SHELLS_CLASSIC;
 
   return (
     <section
       className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8"
       data-testid="home-value-cards"
-      aria-label={globalBurnDownCopy("components__home__HomeValueCards", "product_values")}
+      aria-label={t("ui.public.homepage.valueCardsAria")}
     >
       <div className="grid gap-4 md:grid-cols-3 md:gap-5">
         {cards.map((card, index) => (

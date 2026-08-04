@@ -1,0 +1,6 @@
+{
+  "key": "patterns.cross_subject_summary",
+  "en": "Cross-subject learning pattern summary",
+  "ar": "ملخص نمط التعلم عبر الموضوع",
+  "expectDetect": ["academic-subject-mawdu"]
+}

@@ -16,12 +16,12 @@ export default function LanguageSwitcher({
   appearance = "default",
   onChange,
 }) {
-  const { locale, selectableLocales, setLocale, t } = useI18n();
+  const { locale, localePickerLocales, setLocale, t } = useI18n();
   const [open, setOpen] = useState(false);
   const rootRef = useRef(/** @type {HTMLDivElement | null} */ (null));
   const listId = useId();
 
-  const locales = selectableLocales || [];
+  const locales = localePickerLocales || [];
   const current =
     locales.find((loc) => loc.id === locale) ||
     locales[0] ||

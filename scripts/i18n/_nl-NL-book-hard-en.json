@@ -1,0 +1,3398 @@
+[
+  {
+    "en": "What do you see in the example?",
+    "n": 7
+  },
+  {
+    "en": "What are the next two numbers?",
+    "n": 4
+  },
+  {
+    "en": "What is the whole?",
+    "n": 4
+  },
+  {
+    "en": "6 + ? = 10 — what is the missing number?",
+    "n": 4
+  },
+  {
+    "en": "Volume = (1/3) × base area × height",
+    "n": 3
+  },
+  {
+    "en": "7 + ? = 10 — what is the missing number?",
+    "n": 3
+  },
+  {
+    "en": "In practice you'll find what comes before?",
+    "n": 3
+  },
+  {
+    "en": "Always check the place!",
+    "n": 3
+  },
+  {
+    "en": "What is the total watching time?",
+    "n": 3
+  },
+  {
+    "en": "64 + ? = 100 — what is the missing number?",
+    "n": 3
+  },
+  {
+    "en": "Rectangle",
+    "n": 2
+  },
+  {
+    "en": "Did left and right swap places? No — this is not a mirror image.",
+    "n": 2
+  },
+  {
+    "en": "Square or rectangle?",
+    "n": 2
+  },
+  {
+    "en": "A triangle with sides 3, 3, and 5 — what type of triangle is it?",
+    "n": 2
+  },
+  {
+    "en": "# Diagonal of a Rectangle",
+    "n": 2
+  },
+  {
+    "en": "Rectangle:",
+    "n": 2
+  },
+  {
+    "en": "# Diagonal of a Square",
+    "n": 2
+  },
+  {
+    "en": "A quadrilateral with angles 90° and sides 3 and 7 — rectangle or square?",
+    "n": 2
+  },
+  {
+    "en": "# Volume of a Rectangular Prism",
+    "n": 2
+  },
+  {
+    "en": "Rectangular prism: 2 × 4 × 6 cm — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "For a rectangular prism — how many pairs of equal faces are there?",
+    "n": 2
+  },
+  {
+    "en": "A rectangle that is not a square — how many lines of symmetry does it have?",
+    "n": 2
+  },
+  {
+    "en": "Diagonal = side × √2",
+    "n": 2
+  },
+  {
+    "en": "Rectangular prism 2 cm × 6 cm × 3 cm — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "Which solid — cube or rectangular prism — has rectangular faces that are not squares?",
+    "n": 2
+  },
+  {
+    "en": "Volume = (1/3) × base area × height.",
+    "n": 2
+  },
+  {
+    "en": "Rectangular prism 3 cm × 4 cm × 7 cm — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "Which solid — cone or cylinder — has one apex and a circular base?",
+    "n": 2
+  },
+  {
+    "en": "Sphere radius 6 cm (π = 3.14) — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "There is a blank — you need to find the missing number.",
+    "n": 2
+  },
+  {
+    "en": "2 + __ = 8 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "10 − __ = 7 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "8 + ? = 10 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "4 + ? = 10 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "What are the neighbors of 12?",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find questions: what comes before?",
+    "n": 2
+  },
+  {
+    "en": "And what comes after?",
+    "n": 2
+  },
+  {
+    "en": "Before you calculate — read out loud:",
+    "n": 2
+  },
+  {
+    "en": "How do you write vertically?",
+    "n": 2
+  },
+  {
+    "en": "What happens?",
+    "n": 2
+  },
+  {
+    "en": "What is half of 16?",
+    "n": 2
+  },
+  {
+    "en": "A quarter = one part out of four equal parts.",
+    "n": 2
+  },
+  {
+    "en": "A quarter of 12 = 3",
+    "n": 2
+  },
+  {
+    "en": "What is a quarter of 20?",
+    "n": 2
+  },
+  {
+    "en": "A quarter of 20 = 5",
+    "n": 2
+  },
+  {
+    "en": "A quarter of the whole is 5.",
+    "n": 2
+  },
+  {
+    "en": "What are the neighbors of 199?",
+    "n": 2
+  },
+  {
+    "en": "There are 3 coins of 10 shekels.",
+    "n": 2
+  },
+  {
+    "en": "How much money is there altogether?",
+    "n": 2
+  },
+  {
+    "en": "There are 20 stickers shared equally among 5 children.",
+    "n": 2
+  },
+  {
+    "en": "There are 6 bags.",
+    "n": 2
+  },
+  {
+    "en": "How many apples are there altogether?",
+    "n": 2
+  },
+  {
+    "en": "56 + __ = 83 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "__ − 34 = 48 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "78 + ? = 100 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "(What is the value of the hundreds digit?)",
+    "n": 2
+  },
+  {
+    "en": "180 + __ = 460 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "__ − 63 = 175 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "37 + ? = 100 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "What is the neighbor before and after the number 3,999?",
+    "n": 2
+  },
+  {
+    "en": "What does 5³ mean?",
+    "n": 2
+  },
+  {
+    "en": "Write it as repeated multiplication — and what's the value?",
+    "n": 2
+  },
+  {
+    "en": "There are 61 students.",
+    "n": 2
+  },
+  {
+    "en": "__ + 5,300 = 12,700 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "4,500 ÷ __ = 75 — what is the missing divisor?",
+    "n": 2
+  },
+  {
+    "en": "__ × 15 = 600 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "15,000 − __ = 6,500 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "Price $240, discount 25% — what is the price after the discount?",
+    "n": 2
+  },
+  {
+    "en": "What is 20% of 150?",
+    "n": 2
+  },
+  {
+    "en": "What is the distance?",
+    "n": 2
+  },
+  {
+    "en": "There were $600, they spent $180, then another $95.",
+    "n": 2
+  },
+  {
+    "en": "What are the neighbors of 75,300?",
+    "n": 2
+  },
+  {
+    "en": "In 125,480 — what is the value of the digit 2?",
+    "n": 2
+  },
+  {
+    "en": "80 km/h, 3 hours — what is the distance?",
+    "n": 2
+  },
+  {
+    "en": "What is the first stage in a frog's life cycle?",
+    "n": 2
+  },
+  {
+    "en": "At night — who or what gives us light in the sky?",
+    "n": 2
+  },
+  {
+    "en": "In the neighborhood there is a big tree where birds build a nest.",
+    "n": 2
+  },
+  {
+    "en": "What should we do when we play near the tree?",
+    "n": 2
+  },
+  {
+    "en": "So we know what caused the change",
+    "n": 2
+  },
+  {
+    "en": "And a bottle that looks empty — what is inside?",
+    "n": 2
+  },
+  {
+    "en": "What will happen to its leaves?",
+    "n": 2
+  },
+  {
+    "en": "What is the hypothesis?",
+    "n": 2
+  },
+  {
+    "en": "What is the variable?",
+    "n": 2
+  },
+  {
+    "en": "Research question — what are we testing?",
+    "n": 2
+  },
+  {
+    "en": "What did we learn?",
+    "n": 2
+  },
+  {
+    "en": "**Content scope:** Identifying a rectangle; different length and width; opposite side pairs; no measurements",
+    "n": 1
+  },
+  {
+    "en": "A rectangle is like a square — but it usually has a different length and width.",
+    "n": 1
+  },
+  {
+    "en": "In a rectangle there is a length (a longer side) and a width (a shorter side).",
+    "n": 1
+  },
+  {
+    "en": "That is a rectangle (not a square, because the length and width are different).",
+    "n": 1
+  },
+  {
+    "en": "Different length and width — not a square (in a square everything is equal).",
+    "n": 1
+  },
+  {
+    "en": "Does it have 4 right corners? Yes — like a rectangle.",
+    "n": 1
+  },
+  {
+    "en": "Is the long side different from the short side? Yes — it has a different length and width.",
+    "n": 1
+  },
+  {
+    "en": "Now you know the rectangle in geometry.",
+    "n": 1
+  },
+  {
+    "en": "Check the length and width!",
+    "n": 1
+  },
+  {
+    "en": "A square is a shape we see everywhere — tiles, windows, and games.",
+    "n": 1
+  },
+  {
+    "en": "A square has 4 corners — at each corner there is a right angle (like the corner of a box).",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Translation (moving without flipping); reflection (mirror image); no rotation in grade 1",
+    "n": 1
+  },
+  {
+    "en": "Translation — we move the shape from one place to another.",
+    "n": 1
+  },
+  {
+    "en": "Reflection — we make a mirror image of it, like in a mirror.",
+    "n": 1
+  },
+  {
+    "en": "We move a shape without flipping it over.",
+    "n": 1
+  },
+  {
+    "en": "We get a shape that looks like it does in a mirror — left and right swap places.",
+    "n": 1
+  },
+  {
+    "en": "Example: a butterfly drawing — if you fold the paper down the middle, the other side looks like a mirror image.",
+    "n": 1
+  },
+  {
+    "en": "Here we will learn translation and reflection.",
+    "n": 1
+  },
+  {
+    "en": "- Hold a mirror next to it — you see a reflection (mirror image)",
+    "n": 1
+  },
+  {
+    "en": "You slide a triangle sticker across the page to the right without flipping it over. What kind of move is this?",
+    "n": 1
+  },
+  {
+    "en": "This is not a mirror image — it is a translation.",
+    "n": 1
+  },
+  {
+    "en": "What kind of move is this — translation or reflection?",
+    "n": 1
+  },
+  {
+    "en": "What kind of move is this?",
+    "n": 1
+  },
+  {
+    "en": "Did the shape move to a new place, or does it look like a mirror image?",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Cube, rectangular prism, cylinder, pyramid, cone, sphere — identification; no volume",
+    "n": 1
+  },
+  {
+    "en": "cube, rectangular prism, cylinder, pyramid, cone, and sphere.",
+    "n": 1
+  },
+  {
+    "en": "A three-dimensional solid is a shape that is not flat on the page — you can hold it in your hand.",
+    "n": 1
+  },
+  {
+    "en": "Cube: 6 equal square faces (like a dice).",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism: 6 rectangular faces (like a shoe box).",
+    "n": 1
+  },
+  {
+    "en": "Cylinder:",
+    "n": 1
+  },
+  {
+    "en": "Pyramid:",
+    "n": 1
+  },
+  {
+    "en": "A polygon base and triangular faces (like a tent).",
+    "n": 1
+  },
+  {
+    "en": "Cone:",
+    "n": 1
+  },
+  {
+    "en": "Sphere:",
+    "n": 1
+  },
+  {
+    "en": "Here we focus on the name and description — not on calculating volume.",
+    "n": 1
+  },
+  {
+    "en": "Imagine a dice:",
+    "n": 1
+  },
+  {
+    "en": "- It has 6 faces",
+    "n": 1
+  },
+  {
+    "en": "Imagine a shoe box — rectangular faces, not all the same.",
+    "n": 1
+  },
+  {
+    "en": "6 faces — like a cube.",
+    "n": 1
+  },
+  {
+    "en": "A solid with two round bases and a curved side — like a soda can.",
+    "n": 1
+  },
+  {
+    "en": "The side is curved — not flat like a cube or rectangular prism.",
+    "n": 1
+  },
+  {
+    "en": "Two round bases and a curved side — that is a cylinder.",
+    "n": 1
+  },
+  {
+    "en": "Cylinder",
+    "n": 1
+  },
+  {
+    "en": "In practice you will read a description of a solid — look for how many faces it has and what shape each face is!",
+    "n": 1
+  },
+  {
+    "en": "Here we check more carefully:",
+    "n": 1
+  },
+  {
+    "en": "Did the shape only move to a new place, or did it flip like in a mirror?",
+    "n": 1
+  },
+  {
+    "en": "A shape like a mirror image — left and right swap places.",
+    "n": 1
+  },
+  {
+    "en": "Example: a sticker on a window — you see it in a mirror from outside.",
+    "n": 1
+  },
+  {
+    "en": "- Hold a mirror next to the arrow — the arrow looks flipped → reflection",
+    "n": 1
+  },
+  {
+    "en": "We stick a heart sticker on glass and see it from outside in a mirror. What kind of move is this?",
+    "n": 1
+  },
+  {
+    "en": "Did the shape only move to a new place, or does it look like a mirror image?",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Parallel lines; train tracks; right angle 90°",
+    "n": 1
+  },
+  {
+    "en": "We will see an example from life: train tracks — parallel lines.",
+    "n": 1
+  },
+  {
+    "en": "Example: two rails of a train track — parallel.",
+    "n": 1
+  },
+  {
+    "en": "Train tracks — two rails side by side:",
+    "n": 1
+  },
+  {
+    "en": "Now you can tell parallel lines (train tracks) apart from perpendicular lines (room corner)!",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Square, rectangle, parallelogram, trapezoid — basic names",
+    "n": 1
+  },
+  {
+    "en": "We will identify a square, rectangle, parallelogram, and trapezoid — from a short description.",
+    "n": 1
+  },
+  {
+    "en": "Rectangle — 4 right angles; opposite sides equal (not necessarily all sides).",
+    "n": 1
+  },
+  {
+    "en": "Here we focus on the name and identification — not on calculations.",
+    "n": 1
+  },
+  {
+    "en": "Name: rectangle (not a square).",
+    "n": 1
+  },
+  {
+    "en": "Check angles — there are 4 right angles → fits a rectangle and also a square.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will read a description — choose:",
+    "n": 1
+  },
+  {
+    "en": "square, rectangle, parallelogram, or trapezoid!",
+    "n": 1
+  },
+  {
+    "en": "We turn a shape around a point — the shape stays the same size, only the direction changes.",
+    "n": 1
+  },
+  {
+    "en": "Here we focus on getting to know rotation — not on calculating the center of rotation.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find questions about rotation — check if it is a quarter (90°) or another part of the path!",
+    "n": 1
+  },
+  {
+    "en": "# Solids — Faces, Vertices, and Edges",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Cube: 6 faces, 8 vertices, 12 edges; no volume",
+    "n": 1
+  },
+  {
+    "en": "We will learn to count faces, vertices, and edges on a cube.",
+    "n": 1
+  },
+  {
+    "en": "A solid with 6 equal square faces.",
+    "n": 1
+  },
+  {
+    "en": "A flat surface of the solid — a cube has 6 faces.",
+    "n": 1
+  },
+  {
+    "en": "A point where edges meet — a cube has 8 vertices.",
+    "n": 1
+  },
+  {
+    "en": "The line where two faces meet — a cube has 12 edges.",
+    "n": 1
+  },
+  {
+    "en": "Here we do not calculate volume — only count parts.",
+    "n": 1
+  },
+  {
+    "en": "A dice:",
+    "n": 1
+  },
+  {
+    "en": "- 6 faces (each one a square)",
+    "n": 1
+  },
+  {
+    "en": "- 8 vertices (corners)",
+    "n": 1
+  },
+  {
+    "en": "- 12 edges (lines between the faces)",
+    "n": 1
+  },
+  {
+    "en": "How many vertices and how many edges does a cube have?",
+    "n": 1
+  },
+  {
+    "en": "Vertices — the corners of the cube: 8.",
+    "n": 1
+  },
+  {
+    "en": "Edges — the lines between two faces: 12.",
+    "n": 1
+  },
+  {
+    "en": "8 vertices, 12 edges",
+    "n": 1
+  },
+  {
+    "en": "You have a dice in front of you.",
+    "n": 1
+  },
+  {
+    "en": "How many edges does it have?",
+    "n": 1
+  },
+  {
+    "en": "A dice — how many edges does it have?",
+    "n": 1
+  },
+  {
+    "en": "Each edge is a line between two faces.",
+    "n": 1
+  },
+  {
+    "en": "4 edges on top, 4 on the bottom, 4 on the sides →",
+    "n": 1
+  },
+  {
+    "en": "A cube has 12 edges",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find questions about a cube — check if they ask about faces, vertices, or edges!",
+    "n": 1
+  },
+  {
+    "en": "There are 6 rows →",
+    "n": 1
+  },
+  {
+    "en": "In practice count square units or multiply side by side!",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Equilateral, isosceles, scalene; identification",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn to sort triangles by the length of their sides.",
+    "n": 1
+  },
+  {
+    "en": "A triangle has three sides of length 5, 5, and 5. What type is it?",
+    "n": 1
+  },
+  {
+    "en": "Check if there are two equal sides — the side 3 appears twice: yes, two equal sides.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will see a triangle and check how many sides are equal — that tells you if it is equilateral, isosceles, or scalene.",
+    "n": 1
+  },
+  {
+    "en": "We will learn to read degrees and compare:",
+    "n": 1
+  },
+  {
+    "en": "A triangle has 3 vertices → 3 angles.",
+    "n": 1
+  },
+  {
+    "en": "All three angles \"sit\" at three different vertices — each in its own place.",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Rectangle 3×4; diagonal 5 (3-4-5 triangle)",
+    "n": 1
+  },
+  {
+    "en": "We will see that in a 3 by 4 rectangle — the diagonal from corner to corner is 5.",
+    "n": 1
+  },
+  {
+    "en": "Diagonal of a rectangle = a line from one corner to the opposite corner.",
+    "n": 1
+  },
+  {
+    "en": "In a 3 by 4 rectangle — the diagonal forms a triangle with sides 3 and 4.",
+    "n": 1
+  },
+  {
+    "en": "Here we learn this relationship — without requiring the square root formula.",
+    "n": 1
+  },
+  {
+    "en": "- Diagonal from corner to corner: 5",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find a 3 by 4 rectangle — look for the diagonal 5!",
+    "n": 1
+  },
+  {
+    "en": "Diagonal = a straight line from one corner to the opposite corner — and it is longer than a side of the square.",
+    "n": 1
+  },
+  {
+    "en": "In a square you can draw a line from one corner to the opposite corner — that is a diagonal.",
+    "n": 1
+  },
+  {
+    "en": "The diagonal is longer than any side — but shorter than the sum of two sides.",
+    "n": 1
+  },
+  {
+    "en": "Here we compare to the side length — no square root formula required.",
+    "n": 1
+  },
+  {
+    "en": "- Diagonal:",
+    "n": 1
+  },
+  {
+    "en": "Diagonal = a slanted line — crosses the square. Longer than 6.",
+    "n": 1
+  },
+  {
+    "en": "The diagonal is a slanted line from corner to corner — it crosses the square diagonally, so it is longer than the side.",
+    "n": 1
+  },
+  {
+    "en": "The diagonal is longer than 8",
+    "n": 1
+  },
+  {
+    "en": "Now you know the diagonal of a square in geometry.",
+    "n": 1
+  },
+  {
+    "en": "Rectangle 6 × 4:",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Square ⊂ rectangle; parallelogram; trapezoid; G4 depth",
+    "n": 1
+  },
+  {
+    "en": "Rectangle: 4 angles of 90°, 2 pairs of equal sides.",
+    "n": 1
+  },
+  {
+    "en": "Square: rectangle + all 4 sides equal.",
+    "n": 1
+  },
+  {
+    "en": "- Rectangle — equal pairs, right angles",
+    "n": 1
+  },
+  {
+    "en": "A quadrilateral with 4 angles of 90° and all 4 sides 5 cm. Square or rectangle?",
+    "n": 1
+  },
+  {
+    "en": "In practice check: 90°?",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn to calculate the volume of a rectangular prism — a box, crate, or small storage space.",
+    "n": 1
+  },
+  {
+    "en": "Volume = how much space is inside the solid — calculate: length × width × height.",
+    "n": 1
+  },
+  {
+    "en": "Volume = length × width × height",
+    "n": 1
+  },
+  {
+    "en": "Volume ≠ area — area is on a surface; volume is in space.",
+    "n": 1
+  },
+  {
+    "en": "Volume: 60 cm³ — 60 cubic units fit inside.",
+    "n": 1
+  },
+  {
+    "en": "A rectangular prism has length 3 cm, width 4 cm, and height 5 cm. What is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume = 48 cm³",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to calculate the volume of a rectangular prism in geometry.",
+    "n": 1
+  },
+  {
+    "en": "There are 4 corners — add them all:",
+    "n": 1
+  },
+  {
+    "en": "Rectangle: side 5 and side 2 — how many pairs of equal sides are there?",
+    "n": 1
+  },
+  {
+    "en": "There is a pair of sides of length 5 (opposite) and a pair of sides of length 2 (opposite).",
+    "n": 1
+  },
+  {
+    "en": "That is what makes a square different from a regular rectangle — in a rectangle not all sides are necessarily equal.",
+    "n": 1
+  },
+  {
+    "en": "# Solids — Faces in the Plane",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Rectangular prism: 6 rectangles; identification; no complex volume",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn about a rectangular prism — a three-dimensional solid.",
+    "n": 1
+  },
+  {
+    "en": "We will see that a rectangular prism has 6 faces — and each face is a rectangle (or a square).",
+    "n": 1
+  },
+  {
+    "en": "A solid with 6 faces.",
+    "n": 1
+  },
+  {
+    "en": "3 pairs of opposite faces — like a rectangle, but in space.",
+    "n": 1
+  },
+  {
+    "en": "Here we identify the faces — before calculating volume.",
+    "n": 1
+  },
+  {
+    "en": "- Top face — rectangle",
+    "n": 1
+  },
+  {
+    "en": "- Bottom face — rectangle",
+    "n": 1
+  },
+  {
+    "en": "- 4 side faces — rectangles",
+    "n": 1
+  },
+  {
+    "en": "6 rectangular faces.",
+    "n": 1
+  },
+  {
+    "en": "How many faces does a rectangular prism have, and what shape is each face?",
+    "n": 1
+  },
+  {
+    "en": "6 faces — all rectangles (or squares).",
+    "n": 1
+  },
+  {
+    "en": "6 faces, each a rectangle",
+    "n": 1
+  },
+  {
+    "en": "A rectangular prism has 6 faces — top, bottom, and four sides.",
+    "n": 1
+  },
+  {
+    "en": "3 pairs of equal faces",
+    "n": 1
+  },
+  {
+    "en": "Now you can identify the faces of a rectangular prism in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find a rectangular prism — count 6 rectangular faces!",
+    "n": 1
+  },
+  {
+    "en": "Here we work with bigger numbers — for example side 8 cm.",
+    "n": 1
+  },
+  {
+    "en": "A line that divides a shape into two equal parts — like a mirror.",
+    "n": 1
+  },
+  {
+    "en": "If you fold the paper on the line — the two halves match exactly.",
+    "n": 1
+  },
+  {
+    "en": "- Diagonal fold — two equal triangles",
+    "n": 1
+  },
+  {
+    "en": "How many lines of symmetry does a square have?",
+    "n": 1
+  },
+  {
+    "en": "Check folding corner to corner — that works too. There are 4 of these.",
+    "n": 1
+  },
+  {
+    "en": "Check folding on a diagonal — in a rectangle that is not a square the sides are not equal, so the diagonal fold does not make two matching halves.",
+    "n": 1
+  },
+  {
+    "en": "In practice add three sides — check that none is missing!",
+    "n": 1
+  },
+  {
+    "en": "# Diagonal of a Parallelogram",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** diagonal in a parallelogram — concepts; not the √(a²+b²) formula for every parallelogram",
+    "n": 1
+  },
+  {
+    "en": "A diagonal — a segment that connects two opposite vertices.",
+    "n": 1
+  },
+  {
+    "en": "In a rectangle — there are right angles; we learn the diagonal separately there.",
+    "n": 1
+  },
+  {
+    "en": "In a parallelogram, one diagonal creates two triangles — the same area in each (half of the quadrilateral).",
+    "n": 1
+  },
+  {
+    "en": "In a parallelogram, what does the diagonal do?",
+    "n": 1
+  },
+  {
+    "en": "Connects opposite vertices.",
+    "n": 1
+  },
+  {
+    "en": "In a rectangle there are right angles — so √(a²+b²) works.",
+    "n": 1
+  },
+  {
+    "en": "Diagonal of a parallelogram — first understand what it does.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll recognize when there's enough information — and when not to use the rectangle formula!",
+    "n": 1
+  },
+  {
+    "en": "The diagonal is the hypotenuse in a right triangle — with length and width as the legs.",
+    "n": 1
+  },
+  {
+    "en": "Diagonal = √(length² + width²)",
+    "n": 1
+  },
+  {
+    "en": "Rectangle 6 cm × 8 cm:",
+    "n": 1
+  },
+  {
+    "en": "Rectangle 6 cm by 8 cm. Diagonal?",
+    "n": 1
+  },
+  {
+    "en": "Diagonal = 13 cm",
+    "n": 1
+  },
+  {
+    "en": "Diagonal of a rectangle = √(length² + width²).",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** diagonal = side × √2",
+    "n": 1
+  },
+  {
+    "en": "A diagonal — a segment that connects two vertices that are not on the same side.",
+    "n": 1
+  },
+  {
+    "en": "Diagonal = 6 × √2 cm",
+    "n": 1
+  },
+  {
+    "en": "Diagonal of a square formula:",
+    "n": 1
+  },
+  {
+    "en": "Diagonal = 5√2 cm",
+    "n": 1
+  },
+  {
+    "en": "Diagonal of a square = side × √2.",
+    "n": 1
+  },
+  {
+    "en": "In a parallelogram there is no division by 2 in the area formula.",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** parallelogram, trapezoid, rectangle, square; inclusion relationships",
+    "n": 1
+  },
+  {
+    "en": "Today we'll classify quadrilaterals — parallelogram, trapezoid, rectangle, square.",
+    "n": 1
+  },
+  {
+    "en": "Parallelogram ← rectangle ← square (inclusion chain)",
+    "n": 1
+  },
+  {
+    "en": "Rectangle — 2 pairs + 90°.",
+    "n": 1
+  },
+  {
+    "en": "A house roof — trapezoid shape: parallel bases, non-parallel side edges.",
+    "n": 1
+  },
+  {
+    "en": "(A parallelogram = 2 pairs; here only 1.)",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn the volume of a rectangular prism — through layers and dimensions.",
+    "n": 1
+  },
+  {
+    "en": "Imagine unit cubes: one layer = a grid of cubes; 5 layers = the full volume.",
+    "n": 1
+  },
+  {
+    "en": "Volume = 4 × 3 × 5 = 60 (cm³)",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism 4 cm × 3 cm × 5 cm. What is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume = 36 cm³",
+    "n": 1
+  },
+  {
+    "en": "Volume of a rectangular prism = one layer × height = length × width × height.",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** cube, rectangular prism, cylinder, sphere — names and properties",
+    "n": 1
+  },
+  {
+    "en": "A solid — a shape with length, width, and height (not just area!).",
+    "n": 1
+  },
+  {
+    "en": "Cube — all 6 faces are equal squares.",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism (box) — 6 rectangular faces.",
+    "n": 1
+  },
+  {
+    "en": "Also: cylinder, pyramid, cone, sphere — names and general properties.",
+    "n": 1
+  },
+  {
+    "en": "Cube — 12 equal edges, 8 vertices.",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism — rectangular faces — different length, width, and height.",
+    "n": 1
+  },
+  {
+    "en": "Which solid has all faces as equal squares?",
+    "n": 1
+  },
+  {
+    "en": "In a cube — all 6 faces are equal squares (all edges equal).",
+    "n": 1
+  },
+  {
+    "en": "In a rectangular prism — the faces are rectangles, and usually length ≠ width ≠ height, so the faces are not squares.",
+    "n": 1
+  },
+  {
+    "en": "Knowing solids prepares you for volume calculations.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find cubes and rectangular prisms — check the shape of the faces!",
+    "n": 1
+  },
+  {
+    "en": "Tiling depends on the angles of the tile.",
+    "n": 1
+  },
+  {
+    "en": "Connection to rectangle area: the triangle's area is half the area of a rectangle with the same base and height.",
+    "n": 1
+  },
+  {
+    "en": "The radius — the distance from the center of the circle to any point on the circle.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Cone",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a cone in geometry.",
+    "n": 1
+  },
+  {
+    "en": "Volume = (1/3) × π × r² × h.",
+    "n": 1
+  },
+  {
+    "en": "A cone — like a cylinder but with an apex.",
+    "n": 1
+  },
+  {
+    "en": "Cone — radius 3 cm, height 9 cm (π = 3.14). Volume?",
+    "n": 1
+  },
+  {
+    "en": "Cone: radius 5 cm, height 6 cm (π = 3.14) — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Cone — radius 5 cm, height 6 cm (π = 3.14) — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume of a cone = (1/3) × π × r² × h.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Cylinder",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a cylinder in geometry.",
+    "n": 1
+  },
+  {
+    "en": "Volume = π × r² × h.",
+    "n": 1
+  },
+  {
+    "en": "3. Base area × height = volume",
+    "n": 1
+  },
+  {
+    "en": "Cylinder — radius 3 cm, height 10 cm (π = 3.14). Volume?",
+    "n": 1
+  },
+  {
+    "en": "Cylinder: radius 5 cm, height 8 cm (π = 3.14) — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Cylinder — radius 5 cm, height 8 cm (π = 3.14) — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume of a cylinder = π × r² × h.",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** base × height; comparison to rectangle; 10, 6 cm; 60 cm²",
+    "n": 1
+  },
+  {
+    "en": "Parallelogram vs. rectangle — same area formula: base × height.",
+    "n": 1
+  },
+  {
+    "en": "Rectangle — 90° angles.",
+    "n": 1
+  },
+  {
+    "en": "- Rectangle: base 10, height 6 → 10 × 6 = 60",
+    "n": 1
+  },
+  {
+    "en": "Area of a parallelogram = area of an imaginary rectangle with the same base and height.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Prism — Rectangular Base",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Volume = base area × height; 6, 4, 10 cm; 240 cm³",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a prism — a solid with two identical bases (rectangle) and rectangular faces.",
+    "n": 1
+  },
+  {
+    "en": "Formula: volume = base area × height.",
+    "n": 1
+  },
+  {
+    "en": "Volume = base area × height",
+    "n": 1
+  },
+  {
+    "en": "- Volume: 24 × 10 = 240 cm³",
+    "n": 1
+  },
+  {
+    "en": "Prism — base 6 cm × 4 cm, height 10 cm. What is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume — 24 × 10 = 240.",
+    "n": 1
+  },
+  {
+    "en": "Prism: base 7 cm × 5 cm, height 4 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Prism — base 7 cm × 5 cm, height 4 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume — 35 × 4 = 140.",
+    "n": 1
+  },
+  {
+    "en": "Volume of a prism = base area × height.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Prism — Triangular Base",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a prism — triangular base.",
+    "n": 1
+  },
+  {
+    "en": "Volume = base area × height.",
+    "n": 1
+  },
+  {
+    "en": "Volume = base area × height of the prism",
+    "n": 1
+  },
+  {
+    "en": "Prism — triangular base 6 cm, triangle height 4 cm, prism height 10 cm. Volume?",
+    "n": 1
+  },
+  {
+    "en": "Prism: base 8 cm, triangle height 6 cm, prism height 7 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Prism — base 8 cm, triangle height 6 cm, prism height 7 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume — 24 × 7 = 168.",
+    "n": 1
+  },
+  {
+    "en": "Volume of a triangular prism = triangle area × height.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Pyramid — Rectangular Base",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a pyramid — rectangular base.",
+    "n": 1
+  },
+  {
+    "en": "Pyramid — base 4 cm × 6 cm, height 9 cm. Volume?",
+    "n": 1
+  },
+  {
+    "en": "Pyramid: base 5 cm × 9 cm, height 6 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Pyramid — base 5 cm × 9 cm, height 6 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume of a rectangular pyramid = (1/3) × length × width × height.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Pyramid — Square Base",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a pyramid — square base.",
+    "n": 1
+  },
+  {
+    "en": "A pyramid — one apex above the base.",
+    "n": 1
+  },
+  {
+    "en": "Pyramid — square base 6 cm, height 9 cm. Volume?",
+    "n": 1
+  },
+  {
+    "en": "Pyramid: square base 4 cm, height 12 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Pyramid — square base 4 cm, height 12 cm — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume of a pyramid = (1/3) × base area × height.",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Rectangular Prism — Grade 6",
+    "n": 1
+  },
+  {
+    "en": "Today we will calculate volume of a rectangular prism directly — all three dimensions in one multiplication.",
+    "n": 1
+  },
+  {
+    "en": "Volume = a × b × h — length × width × height.",
+    "n": 1
+  },
+  {
+    "en": "(Different from \"prism\": here it's a box — all faces are rectangles, without separating a \"base area\" step.)",
+    "n": 1
+  },
+  {
+    "en": "Volume = a × b × h",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism 5 cm × 4 cm × 6 cm. What is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume of a rectangular prism = a × b × h.",
+    "n": 1
+  },
+  {
+    "en": "# Solids — Cylinder, Pyramid, Cone, Sphere",
+    "n": 1
+  },
+  {
+    "en": "Besides cube and rectangular prism — we'll meet cylinder, pyramid, cone, and sphere.",
+    "n": 1
+  },
+  {
+    "en": "Cube — 6 equal square faces.",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism — 6 rectangular faces.",
+    "n": 1
+  },
+  {
+    "en": "Cylinder — two circular bases.",
+    "n": 1
+  },
+  {
+    "en": "Pyramid — polygon base + one apex.",
+    "n": 1
+  },
+  {
+    "en": "Cone — circular base + apex.",
+    "n": 1
+  },
+  {
+    "en": "Sphere — all points the same distance from the center.",
+    "n": 1
+  },
+  {
+    "en": "Cylinder — like a can.",
+    "n": 1
+  },
+  {
+    "en": "Pyramid — like a tent with a square base.",
+    "n": 1
+  },
+  {
+    "en": "Cylinder.",
+    "n": 1
+  },
+  {
+    "en": "Cylinder — two circular bases, no apex.",
+    "n": 1
+  },
+  {
+    "en": "Cone — one circular base + one apex at the top.",
+    "n": 1
+  },
+  {
+    "en": "Cone",
+    "n": 1
+  },
+  {
+    "en": "Learning solids prepares you for volume calculations.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find cylinder, pyramid, cone, and sphere — check the shape of the base!",
+    "n": 1
+  },
+  {
+    "en": "# Volume of a Sphere",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn volume of a sphere in geometry.",
+    "n": 1
+  },
+  {
+    "en": "Volume = (4/3) × π × r³.",
+    "n": 1
+  },
+  {
+    "en": "Sphere radius 3 cm (π = 3.14) — what is the volume?",
+    "n": 1
+  },
+  {
+    "en": "Volume of a sphere = (4/3) × π × r³.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll be asked:",
+    "n": 1
+  },
+  {
+    "en": "Here we work with larger measurements and break it into clear steps.",
+    "n": 1
+  },
+  {
+    "en": "3. ÷ 2 — half of the \"imaginary\" rectangle that wraps the trapezoid",
+    "n": 1
+  },
+  {
+    "en": "Here we find a missing angle with an equation and a check.",
+    "n": 1
+  },
+  {
+    "en": "8 + 5 on the number line — the answer is in the teens (13):",
+    "n": 1
+  },
+  {
+    "en": "Here we'll use tens 10, 20, and 30 — with no single ones.",
+    "n": 1
+  },
+  {
+    "en": "Join groups or hop to the right on the number line!",
+    "n": 1
+  },
+  {
+    "en": "There are three comparison symbols:",
+    "n": 1
+  },
+  {
+    "en": "Sometimes in an addition problem there is a blank:",
+    "n": 1
+  },
+  {
+    "en": "3 + __ = 7 on the number line:",
+    "n": 1
+  },
+  {
+    "en": "6 + __ = 10 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "On the number line — from 2 to 8 there are 6 jumps: 3, 4, 5, 6, 7, 8.",
+    "n": 1
+  },
+  {
+    "en": "Sometimes in a subtraction problem there is a blank:",
+    "n": 1
+  },
+  {
+    "en": "The question is: \"How many were there at the start?\" — put back what was taken.",
+    "n": 1
+  },
+  {
+    "en": "On the number line:",
+    "n": 1
+  },
+  {
+    "en": "__ − 2 = 6 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "On the number line — how many steps from 10 to 7? 3 steps: 9, 8, 7.",
+    "n": 1
+  },
+  {
+    "en": "how many were taken, or how many there were at the start.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn multiplication — and here we learn it in a simple way:",
+    "n": 1
+  },
+  {
+    "en": "Here we use small multiplication: groups up to 5, and answers up to 20.",
+    "n": 1
+  },
+  {
+    "en": "There are special pairs that always add up to 10:",
+    "n": 1
+  },
+  {
+    "en": "# Counting Backward on the Number Line",
+    "n": 1
+  },
+  {
+    "en": "Count backward from 7. What are the next three numbers?",
+    "n": 1
+  },
+  {
+    "en": "# Counting Forward on the Number Line",
+    "n": 1
+  },
+  {
+    "en": "Count forward from 5. What are the next three numbers?",
+    "n": 1
+  },
+  {
+    "en": "There are 4 pairs, and one star is left without a partner.",
+    "n": 1
+  },
+  {
+    "en": "Neighbor before = the number that comes right before (one step left on the number line).",
+    "n": 1
+  },
+  {
+    "en": "Neighbor after = the number that comes right after (one step right on the number line).",
+    "n": 1
+  },
+  {
+    "en": "On the number line: left = one less, right = one more.",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 8?",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn what a number line is.",
+    "n": 1
+  },
+  {
+    "en": "The numbers go from left to right: 0 on the left side, then 1, 2, 3...",
+    "n": 1
+  },
+  {
+    "en": "- In 15 there is 1 ten-stick and 5 single cubes",
+    "n": 1
+  },
+  {
+    "en": "- In 20 there are 2 ten-sticks and 0 single cubes",
+    "n": 1
+  },
+  {
+    "en": "In 23 there are 2 ten-sticks and 3 single cubes.",
+    "n": 1
+  },
+  {
+    "en": "In 17 there is one ten-stick and 7 single cubes.",
+    "n": 1
+  },
+  {
+    "en": "In 17 there is 1 ten and 7 ones.",
+    "n": 1
+  },
+  {
+    "en": "In 29 there are 2 ten-sticks (20) and 9 single cubes.",
+    "n": 1
+  },
+  {
+    "en": "In 29 there are 2 tens and 9 ones.",
+    "n": 1
+  },
+  {
+    "en": "There were eight, three were taken — five are left.",
+    "n": 1
+  },
+  {
+    "en": "There were 8 stickers.",
+    "n": 1
+  },
+  {
+    "en": "(You can also: on the number line — start at 9, hop 4 steps to the left → 5)",
+    "n": 1
+  },
+  {
+    "en": "Mark what was taken or hop to the left on the number line!",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn to read a word problem about money.",
+    "n": 1
+  },
+  {
+    "en": "When you add the values, you find out how much money there is altogether.",
+    "n": 1
+  },
+  {
+    "en": "In a coin problem we usually ask: how much money is there altogether?",
+    "n": 1
+  },
+  {
+    "en": "1. What do we know? — which coins there are and what each is worth",
+    "n": 1
+  },
+  {
+    "en": "5 + 5 + 2 = 12 → there are 12 shekels altogether.",
+    "n": 1
+  },
+  {
+    "en": "There are 2 coins of 5 → 5 + 5",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to read a problem about coin values.",
+    "n": 1
+  },
+  {
+    "en": "Read what you know, what you're asked, and add the values!",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn to read a word problem about spending.",
+    "n": 1
+  },
+  {
+    "en": "In these problems there are three parts:",
+    "n": 1
+  },
+  {
+    "en": "- Had — how much money there was before",
+    "n": 1
+  },
+  {
+    "en": "- Left / change — what remains",
+    "n": 1
+  },
+  {
+    "en": "1. What do we know? — how much there was, how much was spent (or how much it cost)",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to read a problem about spending and change.",
+    "n": 1
+  },
+  {
+    "en": "Check how much there was, how much was paid or spent, then subtract.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn to read a word problem about days of the week.",
+    "n": 1
+  },
+  {
+    "en": "You know the order of the days — then you can answer: what day is tomorrow? Or which day will it be in two days?",
+    "n": 1
+  },
+  {
+    "en": "In 2 days = hop 2 steps forward on the days",
+    "n": 1
+  },
+  {
+    "en": "Before you answer — read out loud:",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to read a problem about days of the week.",
+    "n": 1
+  },
+  {
+    "en": "Find today's day, and count forward or backward on the row of days!",
+    "n": 1
+  },
+  {
+    "en": "Count steps on the row of weekdays, like hops on a number line.",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to count days on the week row.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn vertical addition — write numbers one under the other and add column by column.",
+    "n": 1
+  },
+  {
+    "en": "- + sign on the left",
+    "n": 1
+  },
+  {
+    "en": "3. Add the tens (including carry if there is one)",
+    "n": 1
+  },
+  {
+    "en": "- Ones: 7 + 8 = 15 → write 5, carry 1 to tens",
+    "n": 1
+  },
+  {
+    "en": "Write 47 and 28 — ones under ones, tens under tens.",
+    "n": 1
+  },
+  {
+    "en": "Ones: 7 + 8 = 15 → write 5, carry 1 to tens.",
+    "n": 1
+  },
+  {
+    "en": "Step 1 — ones: 6 + 7 = 13 → write 3, carry 1 to tens",
+    "n": 1
+  },
+  {
+    "en": "- There are 12 objects",
+    "n": 1
+  },
+  {
+    "en": "Important: here we don't practice remainders or long division — only simple fair sharing.",
+    "n": 1
+  },
+  {
+    "en": "There are 12 objects, split into 3 equal groups.",
+    "n": 1
+  },
+  {
+    "en": "There are 20 objects, split into 5 equal groups.",
+    "n": 1
+  },
+  {
+    "en": "# When Does a Number Divide by 2, 5, and 10?",
+    "n": 1
+  },
+  {
+    "en": "Important: here we only learn 2, 5, and 10 — not 3, 6, or 9.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn what a half is — half of the whole.",
+    "n": 1
+  },
+  {
+    "en": "What is half of 12?",
+    "n": 1
+  },
+  {
+    "en": "Half of the whole is 6 — what is the whole?",
+    "n": 1
+  },
+  {
+    "en": "Half of the whole is 6. What is the whole?",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find: the half is … — what is the whole? Add twice or multiply by 2!",
+    "n": 1
+  },
+  {
+    "en": "# A Quarter of the Whole",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** A quarter as a visual part. A quarter = one part out of four equal parts. No thirds/eighths, no fraction calculation.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn what a quarter is — a quarter of the whole.",
+    "n": 1
+  },
+  {
+    "en": "When you split something into four equal parts, each part is a quarter.",
+    "n": 1
+  },
+  {
+    "en": "- Chocolate broken into 4 equal pieces — each piece = a quarter",
+    "n": 1
+  },
+  {
+    "en": "- Paper folded into 4 — each part = a quarter",
+    "n": 1
+  },
+  {
+    "en": "(Here we learn half and quarter — not third or eighth.)",
+    "n": 1
+  },
+  {
+    "en": "Pizza cut into 4 equal slices — each slice = a quarter of the pizza.",
+    "n": 1
+  },
+  {
+    "en": "What is a quarter of 12?",
+    "n": 1
+  },
+  {
+    "en": "Now you know that a quarter = one part out of four equal parts.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find: a quarter of…?",
+    "n": 1
+  },
+  {
+    "en": "A quarter = one part out of four equal parts — when we know one quarter, the whole is four equal quarters.",
+    "n": 1
+  },
+  {
+    "en": "If a quarter of the whole is a certain number — the whole = 4 times that number.",
+    "n": 1
+  },
+  {
+    "en": "A quarter of the whole is 4 → the whole is 16 — because 4 + 4 + 4 + 4 = 16.",
+    "n": 1
+  },
+  {
+    "en": "Important: 4 equal parts — each one = a quarter.",
+    "n": 1
+  },
+  {
+    "en": "A quarter of the whole is 4 — what is the whole?",
+    "n": 1
+  },
+  {
+    "en": "A quarter of the whole is 4. What is the whole?",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find: the quarter is … — what is the whole? Add 4 times or 4 × the quarter!",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn multiplication — here it's both equal groups and the times table.",
+    "n": 1
+  },
+  {
+    "en": "Multiplication helps you count fast when there are several same-size groups.",
+    "n": 1
+  },
+  {
+    "en": "(On the next division page — we'll see that division is related to multiplication.)",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 248?",
+    "n": 1
+  },
+  {
+    "en": "- The digit 2 on the left = 2 hundreds (200)",
+    "n": 1
+  },
+  {
+    "en": "- The digit 6 on the right = 6 ones",
+    "n": 1
+  },
+  {
+    "en": "Here we'll work a lot with numbers like 124, 236, and 405, and also numbers up to 1,000.",
+    "n": 1
+  },
+  {
+    "en": "What do you see?",
+    "n": 1
+  },
+  {
+    "en": "In 236 there are 2 hundreds, 3 tens, and 6 ones.",
+    "n": 1
+  },
+  {
+    "en": "In 312 there are 3 hundreds, 1 ten, and 2 ones.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn vertical subtraction — write numbers one under the other and subtract column by column.",
+    "n": 1
+  },
+  {
+    "en": "2. When there aren't enough ones, trade one ten for 10 ones (for example 52 → 4 tens and 12 ones)",
+    "n": 1
+  },
+  {
+    "en": "(In class this is sometimes called borrowing — but here we'll say: trade one ten for 10 ones.)",
+    "n": 1
+  },
+  {
+    "en": "Write 52 and 27 — ones under ones.",
+    "n": 1
+  },
+  {
+    "en": "When there are several coins of the same value, you can figure out how much money there is altogether — with addition or equal groups.",
+    "n": 1
+  },
+  {
+    "en": "4 × 5 = 20 → there are 20 shekels altogether.",
+    "n": 1
+  },
+  {
+    "en": "There are 4 coins of 5 shekels. How much money is there altogether?",
+    "n": 1
+  },
+  {
+    "en": "There are 20 shekels altogether.",
+    "n": 1
+  },
+  {
+    "en": "There are 30 shekels altogether",
+    "n": 1
+  },
+  {
+    "en": "(We already learned division — fair sharing — here we use it in a story.)",
+    "n": 1
+  },
+  {
+    "en": "- There are 18 objects",
+    "n": 1
+  },
+  {
+    "en": "There are 18 cookies shared equally among 3 children. How many cookies does each child get?",
+    "n": 1
+  },
+  {
+    "en": "When there are several groups of the same size, you can find how many there are altogether — with multiplication.",
+    "n": 1
+  },
+  {
+    "en": "(We already learned multiplication and equal groups on the times table page — here we'll use it in a story.)",
+    "n": 1
+  },
+  {
+    "en": "There are 5 boxes. Each box has 4 pencils. How many pencils are there altogether?",
+    "n": 1
+  },
+  {
+    "en": "There are 20 pencils altogether.",
+    "n": 1
+  },
+  {
+    "en": "There are 18 apples altogether",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to find a day in so many days on the week row.",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn how many days pass from one day to another on the row of days.",
+    "n": 1
+  },
+  {
+    "en": "- ones: 8 + 6 = 14 → write 4, carry 1",
+    "n": 1
+  },
+  {
+    "en": "- tens: 4 + 5 + 1 = 10 → write 0, carry 1",
+    "n": 1
+  },
+  {
+    "en": "ones: 9 + 4 = 13 → write 3, carry 1",
+    "n": 1
+  },
+  {
+    "en": "When the division comes out exactly — there is no remainder.",
+    "n": 1
+  },
+  {
+    "en": "Remainder? On this page only when it comes out even — remainder is on the division with remainder page.",
+    "n": 1
+  },
+  {
+    "en": "Here we check divisibility by the ones digit — without doing long division.",
+    "n": 1
+  },
+  {
+    "en": "There is a quotient (how many in each group) and a remainder (what's left).",
+    "n": 1
+  },
+  {
+    "en": "52 + __ = 80 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "Ask: from some number we subtracted 18 and got 42 — what was the number?",
+    "n": 1
+  },
+  {
+    "en": "__ − 14 = 56 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "From some number we subtracted 34 and got 48 — what was the number?",
+    "n": 1
+  },
+  {
+    "en": "# Fractions — What Are They and How Do We Compare?",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** What a fraction is. Numerator and denominator. Halves, thirds, quarters. Basic comparison between fractions with the same denominator.",
+    "n": 1
+  },
+  {
+    "en": "The denominator — how many equal parts there are in all.",
+    "n": 1
+  },
+  {
+    "en": "¼ — a quarter:",
+    "n": 1
+  },
+  {
+    "en": "For each fraction check: what is the denominator?",
+    "n": 1
+  },
+  {
+    "en": "What is the numerator?",
+    "n": 1
+  },
+  {
+    "en": "72 + ? = 100 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "Quick shortcut: look only at the ones digit (the rightmost digit):",
+    "n": 1
+  },
+  {
+    "en": "Check the ones digit!",
+    "n": 1
+  },
+  {
+    "en": "628 on the number line:",
+    "n": 1
+  },
+  {
+    "en": "What is the neighbor before 415? What is the neighbor after 415?",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors before and after the number 499?",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 499?",
+    "n": 1
+  },
+  {
+    "en": "And what comes after? ±1 every time!",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn to read numbers up to 1,000 and figure out what each digit means by its place.",
+    "n": 1
+  },
+  {
+    "en": "In a big number there are hundreds, tens, and ones.",
+    "n": 1
+  },
+  {
+    "en": "In the number 527 — what is the value of the hundreds digit?",
+    "n": 1
+  },
+  {
+    "en": "In the number 836 — what is the value of the hundreds digit?",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn order of operations — when there is addition and multiplication in the same problem, multiply first!",
+    "n": 1
+  },
+  {
+    "en": "Today we will learn order of operations when there is subtraction and multiplication — multiply first, then subtract.",
+    "n": 1
+  },
+  {
+    "en": "On the number line: each step = a jump of the same size.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find what is the next number?",
+    "n": 1
+  },
+  {
+    "en": "When there aren't enough ones (or tens) — we borrow from the place to the left.",
+    "n": 1
+  },
+  {
+    "en": "When there isn't enough — borrow!",
+    "n": 1
+  },
+  {
+    "en": "There are 43 stickers. You put 5 on each page. How many stickers will be left without a full page?",
+    "n": 1
+  },
+  {
+    "en": "There are 38 children.",
+    "n": 1
+  },
+  {
+    "en": "Here we work only with minutes — no hours.",
+    "n": 1
+  },
+  {
+    "en": "Hundredths: 8 + 6 = 14 → write 4, carry 1 to tenths",
+    "n": 1
+  },
+  {
+    "en": "Tip: look in the times table — 6 × ? = 480",
+    "n": 1
+  },
+  {
+    "en": "Check: divisor × quotient = dividend. Remainder — only on the division-with-remainder page.",
+    "n": 1
+  },
+  {
+    "en": "Here we expand to six divisors — including 3, 6, 9 (by the sum of the digits).",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find does it divide evenly? — use the rules!",
+    "n": 1
+  },
+  {
+    "en": "Write 2 in the answer.",
+    "n": 1
+  },
+  {
+    "en": "Write 6 in the answer.",
+    "n": 1
+  },
+  {
+    "en": "Does 3 go into 18? Yes — 3 × 6 = 18. Write 6.",
+    "n": 1
+  },
+  {
+    "en": "Does 3 go into 9? Yes — 3 × 3 = 9. Write 3.",
+    "n": 1
+  },
+  {
+    "en": "Does 7 go into 19 (the first two digits)? 7 × 2 = 14. Write 2 in the answer.",
+    "n": 1
+  },
+  {
+    "en": "Does 7 go into 56? 7 × 8 = 56. Write 8 in the answer.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find division with a remainder — always write quotient and remainder!",
+    "n": 1
+  },
+  {
+    "en": "Ask: what do you add to 125 to reach 380?",
+    "n": 1
+  },
+  {
+    "en": "318 + __ = 600 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "__ − 38 = 142 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find what are the factors? — look for multiplication pairs!",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find what are the multiples? — multiply by 1, 2, 3…!",
+    "n": 1
+  },
+  {
+    "en": "Try breaking numbers into easy parts!",
+    "n": 1
+  },
+  {
+    "en": "Write 23 on top, 4 on the bottom (lined up on the right)",
+    "n": 1
+  },
+  {
+    "en": "Ones: 3 × 4 = 12 → write 2, carry 1",
+    "n": 1
+  },
+  {
+    "en": "Ones: 7 × 6 = 42 → write 2, carry 4.",
+    "n": 1
+  },
+  {
+    "en": "Write 22 → answer: 222.",
+    "n": 1
+  },
+  {
+    "en": "11 + ? = 15 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "Look only at the ones digit: 8.",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 2,450?",
+    "n": 1
+  },
+  {
+    "en": "And what comes after? Just ±1!",
+    "n": 1
+  },
+  {
+    "en": "Today we're going to learn to read big numbers up to 10,000 and figure out what each digit means by its place.",
+    "n": 1
+  },
+  {
+    "en": "In a four-digit number there are thousands, hundreds, tens, and ones.",
+    "n": 1
+  },
+  {
+    "en": "When we write a big number, we sometimes put a comma after the thousands: 3,482.",
+    "n": 1
+  },
+  {
+    "en": "In the number 5,218 — what is the value of the thousands digit?",
+    "n": 1
+  },
+  {
+    "en": "(What is the value of the thousands digit?)",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn what happens when you multiply a number by 1.",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn what a power means — short writing for repeated multiplication of the same number.",
+    "n": 1
+  },
+  {
+    "en": "What does 2⁴ mean? (Base? Exponent? Write it as repeated multiplication.)",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to read a power — base, exponent, and repeated multiplication.",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn to calculate the value of a power — for example 2⁵.",
+    "n": 1
+  },
+  {
+    "en": "Write repeated multiplication — and work it out step by step.",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to calculate powers.",
+    "n": 1
+  },
+  {
+    "en": "Write repeated multiplication — and multiply step by step!",
+    "n": 1
+  },
+  {
+    "en": "If there are none — it's prime.",
+    "n": 1
+  },
+  {
+    "en": "When there aren't enough in the ones, tens, hundreds, or thousands — borrow from the place to the left.",
+    "n": 1
+  },
+  {
+    "en": "When there aren't enough — borrow!",
+    "n": 1
+  },
+  {
+    "en": "What do you know? Two amounts — for example 156 and 89",
+    "n": 1
+  },
+  {
+    "en": "What are you asked? How many more the one with more has",
+    "n": 1
+  },
+  {
+    "en": "What do you do? Subtract: bigger − smaller",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll also find bigger comparison questions.",
+    "n": 1
+  },
+  {
+    "en": "Library: there are 53 new books. Each shelf holds 8 books.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll also find bigger division-with-remainder word problems.",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll also find bigger questions about adding times. Add the minutes!",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn what happens when you add 0 to a number.",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn what happens when you multiply a number by 0.",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn what happens when you subtract 0 from a number.",
+    "n": 1
+  },
+  {
+    "en": "Here you subtract 0, not the number itself.",
+    "n": 1
+  },
+  {
+    "en": "Tens: 5 + 7 = 12 → write 2, carry 1",
+    "n": 1
+  },
+  {
+    "en": "Thousands: 8 + 6 = 14 → write 4, carry 1",
+    "n": 1
+  },
+  {
+    "en": "First check the ten-thousands digit — the number with the bigger digit is larger (read from left to right)",
+    "n": 1
+  },
+  {
+    "en": "If they're equal — check the thousands",
+    "n": 1
+  },
+  {
+    "en": "If they're equal — check the hundreds, tens, ones",
+    "n": 1
+  },
+  {
+    "en": "Ask: what do you add to 3,250 to reach 8,400?",
+    "n": 1
+  },
+  {
+    "en": "3,250 + __ = 8,400 — what is missing?",
+    "n": 1
+  },
+  {
+    "en": "2,400 ÷ __ = 60 — what is the divisor?",
+    "n": 1
+  },
+  {
+    "en": "__ × 12 = 480 — what is missing?",
+    "n": 1
+  },
+  {
+    "en": "Ask: from some number you subtract 1,875 and get 4,200 — what is the number?",
+    "n": 1
+  },
+  {
+    "en": "__ − 1,875 = 4,200 — what is missing?",
+    "n": 1
+  },
+  {
+    "en": "Ask: 15,000 minus what equals 6,500?",
+    "n": 1
+  },
+  {
+    "en": "Check the order of magnitude: 8,800 is close to 9,000",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find larger numbers too. What are the factors? — look for multiplication pairs!",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find what is the GCF? — look for common factors!",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn to simplify a fraction — write it in its simplest form.",
+    "n": 1
+  },
+  {
+    "en": "8 + ? = 15 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "±1 works even when there are zeros in the middle — for example 45,600.",
+    "n": 1
+  },
+  {
+    "en": "When there are zeros: 45,600 − 1 = 45,599 — not 45,500!",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 45,600?",
+    "n": 1
+  },
+  {
+    "en": "What is the neighbor before 82,000?",
+    "n": 1
+  },
+  {
+    "en": "And what comes after 82,000?",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 82,000?",
+    "n": 1
+  },
+  {
+    "en": "And what comes after? ±1 — even with zeros!",
+    "n": 1
+  },
+  {
+    "en": "Today we'll learn to read large numbers up to 100,000 and figure out what each digit means by its place.",
+    "n": 1
+  },
+  {
+    "en": "In a five-digit number there are ten-thousands, thousands, hundreds, tens, and ones.",
+    "n": 1
+  },
+  {
+    "en": "When you write a large number, use commas: 48,726.",
+    "n": 1
+  },
+  {
+    "en": "In the number 48,726 — what is the value of the thousands digit?",
+    "n": 1
+  },
+  {
+    "en": "In the number 75,294 — what is the value of the hundreds digit?",
+    "n": 1
+  },
+  {
+    "en": "A shirt costs $150, discount 20%. What is the price?",
+    "n": 1
+  },
+  {
+    "en": "What is 25% of 80?",
+    "n": 1
+  },
+  {
+    "en": "In practice you'll find what is X% of Y? — find the part!",
+    "n": 1
+  },
+  {
+    "en": "The step might be +500, +1,000, +2,000 and more — it's important to find what size repeats.",
+    "n": 1
+  },
+  {
+    "en": "Subtract the ones — if there aren't enough, borrow 1 from the tens",
+    "n": 1
+  },
+  {
+    "en": "What do you know? Two amounts — for example 420 liters and 275 liters",
+    "n": 1
+  },
+  {
+    "en": "What are you asked? What is the difference — who has more?",
+    "n": 1
+  },
+  {
+    "en": "What do you do? Always: bigger − smaller",
+    "n": 1
+  },
+  {
+    "en": "420 − 275 = 145 — there are 145 liters more.",
+    "n": 1
+  },
+  {
+    "en": "A car travels 60 km/h for 3 hours. What is the distance?",
+    "n": 1
+  },
+  {
+    "en": "There were $450, they spent $120, then another $80. How much is left?",
+    "n": 1
+  },
+  {
+    "en": "An item costs $200, discount 15%. What is the price?",
+    "n": 1
+  },
+  {
+    "en": "An item costs $300, there is a 20% discount.",
+    "n": 1
+  },
+  {
+    "en": "What is the price after the discount?",
+    "n": 1
+  },
+  {
+    "en": "An item $300, discount 20% — what is the price after the discount?",
+    "n": 1
+  },
+  {
+    "en": "Here we write time as hours:minutes (for example 1:25 = 1 hour and 25 minutes).",
+    "n": 1
+  },
+  {
+    "en": "Music lesson 1:25 + practice 0:45. What is the total activity time?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will add three numbers — pick a convenient pair to add first!",
+    "n": 1
+  },
+  {
+    "en": "Tens: 5 + 8 = 13 → write 3, carry 1",
+    "n": 1
+  },
+  {
+    "en": "Hundreds: 7 + 6 + 1 = 14 → write 4, carry 1",
+    "n": 1
+  },
+  {
+    "en": "Thousands: 8 + 5 + 1 = 14 → write 4, carry 1",
+    "n": 1
+  },
+  {
+    "en": "In practice you will compare large numbers — work from the left!",
+    "n": 1
+  },
+  {
+    "en": "In practice you will add decimals — always line them up!",
+    "n": 1
+  },
+  {
+    "en": "In practice you will divide decimals — change to whole numbers first!",
+    "n": 1
+  },
+  {
+    "en": "In practice you will divide by 10 and 100 — watch the direction of the decimal point!",
+    "n": 1
+  },
+  {
+    "en": "In practice you will multiply decimals — count digits after the decimal point!",
+    "n": 1
+  },
+  {
+    "en": "In practice you will multiply by 10 and 100 — the direction of the decimal point matters!",
+    "n": 1
+  },
+  {
+    "en": "What is 1/3 as a decimal?",
+    "n": 1
+  },
+  {
+    "en": "Write 2/3 as a decimal number.",
+    "n": 1
+  },
+  {
+    "en": "Write 2/3 as a decimal number",
+    "n": 1
+  },
+  {
+    "en": "In practice you will subtract decimals — check with addition!",
+    "n": 1
+  },
+  {
+    "en": "Calculate: 968 ÷ 9 — what is the quotient and what is the remainder?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find division equations — figure out what is missing!",
+    "n": 1
+  },
+  {
+    "en": "Write in order: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.",
+    "n": 1
+  },
+  {
+    "en": "What is the GCF of 24 and 36?",
+    "n": 1
+  },
+  {
+    "en": "What is the value of 3/4 as a decimal?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will divide fractions — flip and multiply!",
+    "n": 1
+  },
+  {
+    "en": "In practice you will multiply fractions — simplify at the end!",
+    "n": 1
+  },
+  {
+    "en": "Here we practice multiplication up to 500×500.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will multiply two-digit numbers — use breaking apart!",
+    "n": 1
+  },
+  {
+    "en": "63 + ? = 100 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "45 + ? = 100 — what is the missing number?",
+    "n": 1
+  },
+  {
+    "en": "What are the neighbors of 48,650?",
+    "n": 1
+  },
+  {
+    "en": "When you read a big number — start from the left (the largest digit).",
+    "n": 1
+  },
+  {
+    "en": "In 125,480 — what is the value of the digit 5?",
+    "n": 1
+  },
+  {
+    "en": "Price 250 shekels, 10% off — what is the final price?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find discounts — calculate the percent of the price!",
+    "n": 1
+  },
+  {
+    "en": "Ratio 2:5, total 35. What are the two parts?",
+    "n": 1
+  },
+  {
+    "en": "Ratio 1:3, total 40 — what are the two parts?",
+    "n": 1
+  },
+  {
+    "en": "# Ratios — What Do They Mean?",
+    "n": 1
+  },
+  {
+    "en": "We write 3:2 (3 to 2).",
+    "n": 1
+  },
+  {
+    "en": "3:2 = for every 3 units on one side, 2 on the other side.",
+    "n": 1
+  },
+  {
+    "en": "In a group of 6 boys and 4 girls — what is the ratio boys:girls?",
+    "n": 1
+  },
+  {
+    "en": "18 cards and 12 stickers — what is the ratio cards:stickers?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will round to tens, hundreds, and thousands — identify the deciding digit correctly!",
+    "n": 1
+  },
+  {
+    "en": "1:50,000 = 1 cm on the map = 50,000 cm in real life.",
+    "n": 1
+  },
+  {
+    "en": "3 cm on the map = 3 × 500 m = 1,500 m",
+    "n": 1
+  },
+  {
+    "en": "Scale 1:50,000. 2 cm on the map = ? in real life.",
+    "n": 1
+  },
+  {
+    "en": "Scale 1:50,000 — 5 cm on the map = ? in real life.",
+    "n": 1
+  },
+  {
+    "en": "Scale 1:50,000 — 5 cm on the map",
+    "n": 1
+  },
+  {
+    "en": "4 cm on the map, scale 1:25,000.",
+    "n": 1
+  },
+  {
+    "en": "4 cm on the map, 1:25,000. Real distance?",
+    "n": 1
+  },
+  {
+    "en": "6 cm on the map, 1:25,000 — what is the real distance?",
+    "n": 1
+  },
+  {
+    "en": "6 cm on the map, 1:25,000",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find map→real life — first figure out what 1 cm equals!",
+    "n": 1
+  },
+  {
+    "en": "2,000 m = 2,000 ÷ 500 = 4 cm on the map",
+    "n": 1
+  },
+  {
+    "en": "2 km (=2,000 m), 1:50,000. How many cm on the map?",
+    "n": 1
+  },
+  {
+    "en": "3 km in real life, 1:50,000 — how many cm on the map?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find sequences with missing terms — write down the step first!",
+    "n": 1
+  },
+  {
+    "en": "Tens: after borrowing there are 9 tens. 9 − 6 = 3.",
+    "n": 1
+  },
+  {
+    "en": "Hundreds: after borrowing there are 3 hundreds. 3 − 3 = 0.",
+    "n": 1
+  },
+  {
+    "en": "Ten thousands: after borrowing there are 6 ten thousands. 6 − 2 = 4.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find distance/speed/time — figure out what you are looking for!",
+    "n": 1
+  },
+  {
+    "en": "Pants 200 shekels, 25% off — what is the final price?",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find sales — calculate the discount first!",
+    "n": 1
+  },
+  {
+    "en": "Here we add parts of the day — clubs, trips, breaks — in h:mm format.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will add hours — add the minutes, then convert 60 minutes to 1 hour!",
+    "n": 1
+  },
+  {
+    "en": "We will also learn what animals need to stay alive.",
+    "n": 1
+  },
+  {
+    "en": "In a garden there is a dog, a tree, and a rock.",
+    "n": 1
+  },
+  {
+    "en": "Is a rock on the beach a living thing?",
+    "n": 1
+  },
+  {
+    "en": "What does it need to stay alive?",
+    "n": 1
+  },
+  {
+    "en": "What does it need?",
+    "n": 1
+  },
+  {
+    "en": "In practice, look for questions about what animals need.",
+    "n": 1
+  },
+  {
+    "en": "Danny wants to know what is happening outside.",
+    "n": 1
+  },
+  {
+    "en": "Today in science we will learn about our Earth — what we see in the sky and how the weather changes.",
+    "n": 1
+  },
+  {
+    "en": "In the sky there is the sun, clouds, and wind.",
+    "n": 1
+  },
+  {
+    "en": "You can write in your notebook:",
+    "n": 1
+  },
+  {
+    "en": "During the day there is light — the sun shines.",
+    "n": 1
+  },
+  {
+    "en": "What did you see in the sky?",
+    "n": 1
+  },
+  {
+    "en": "On a rainy day there are dark clouds in the sky.",
+    "n": 1
+  },
+  {
+    "en": "On a rainy day — it is cold and wet outside, and there are dark clouds in the sky.",
+    "n": 1
+  },
+  {
+    "en": "In practice, look for questions about the sun, rain, and what happens in the sky.",
+    "n": 1
+  },
+  {
+    "en": "When we throw trash on the floor or in nature — we make the environment dirty.",
+    "n": 1
+  },
+  {
+    "en": "In the yard no bags were left on the grass.",
+    "n": 1
+  },
+  {
+    "en": "In the classroom there is a pen, a sponge, and a small rock.",
+    "n": 1
+  },
+  {
+    "en": "Think about a pillow you put on the sofa.",
+    "n": 1
+  },
+  {
+    "en": "What happens when you press on it?",
+    "n": 1
+  },
+  {
+    "en": "# Plants — What Plants Need",
+    "n": 1
+  },
+  {
+    "en": "Today in science we will learn about plants — what they look like and what they need to grow.",
+    "n": 1
+  },
+  {
+    "en": "In the classroom there is a pot with a small plant.",
+    "n": 1
+  },
+  {
+    "en": "What does a plant need to grow?",
+    "n": 1
+  },
+  {
+    "en": "Think about what you see in a garden — sun, water, soil.",
+    "n": 1
+  },
+  {
+    "en": "What will happen if we do not pour water for a whole week?",
+    "n": 1
+  },
+  {
+    "en": "What will happen to the pot if we do not pour water for a whole week?",
+    "n": 1
+  },
+  {
+    "en": "Now you know plant parts and what plants need to grow in science.",
+    "n": 1
+  },
+  {
+    "en": "In practice, look for questions about roots, leaves, and what a plant needs.",
+    "n": 1
+  },
+  {
+    "en": "What comes first in a butterfly's life cycle?",
+    "n": 1
+  },
+  {
+    "en": "What could they have done differently?",
+    "n": 1
+  },
+  {
+    "en": "A child who ate without washing hands — what could they have done differently?",
+    "n": 1
+  },
+  {
+    "en": "During the year there are seasons:",
+    "n": 1
+  },
+  {
+    "en": "What gives light and heat during the day?",
+    "n": 1
+  },
+  {
+    "en": "Throw trash in a bin — not on the ground",
+    "n": 1
+  },
+  {
+    "en": "Observation — we look and describe (what is happening?)",
+    "n": 1
+  },
+  {
+    "en": "Comparison — we compare two situations (what is different?)",
+    "n": 1
+  },
+  {
+    "en": "Does a plant by the window grow taller?",
+    "n": 1
+  },
+  {
+    "en": "Write down what you see — without guessing.",
+    "n": 1
+  },
+  {
+    "en": "If you change both water and light — you do not know what made the difference.",
+    "n": 1
+  },
+  {
+    "en": "Does a plant by a window grow taller than a plant in a dark corner?",
+    "n": 1
+  },
+  {
+    "en": "What will be the variable in this test?",
+    "n": 1
+  },
+  {
+    "en": "What will be the variable in a test of a plant by a window versus a plant in a dark corner?",
+    "n": 1
+  },
+  {
+    "en": "Ice is a solid.",
+    "n": 1
+  },
+  {
+    "en": "A cup of juice on the table — which state of matter?",
+    "n": 1
+  },
+  {
+    "en": "Today in science we will learn how a plant grows from a seed — and what happens when water is missing.",
+    "n": 1
+  },
+  {
+    "en": "What happens to a seed without water?",
+    "n": 1
+  },
+  {
+    "en": "A plant moved to a dark room — what will happen to its leaves?",
+    "n": 1
+  },
+  {
+    "en": "Why does a fish have fins?",
+    "n": 1
+  },
+  {
+    "en": "What is the main adaptation?",
+    "n": 1
+  },
+  {
+    "en": "What is the role of the skeleton in the body?",
+    "n": 1
+  },
+  {
+    "en": "A hot summer that returns here every year is part of the climate.",
+    "n": 1
+  },
+  {
+    "en": "What will happen to the puddle on a sunny day?",
+    "n": 1
+  },
+  {
+    "en": "Which stage of the water cycle does it enter?",
+    "n": 1
+  },
+  {
+    "en": "Grass makes food with light — the beetle eats the grass — the bird feeds on the beetle.",
+    "n": 1
+  },
+  {
+    "en": "Fifth step — conclusion: what did we learn?",
+    "n": 1
+  },
+  {
+    "en": "Write in a table how many seeds sprouted each day.",
+    "n": 1
+  },
+  {
+    "en": "If you change several things — you do not know what made the difference.",
+    "n": 1
+  },
+  {
+    "en": "What stays the same?",
+    "n": 1
+  },
+  {
+    "en": "What does a pulling action do?",
+    "n": 1
+  },
+  {
+    "en": "What happens when you stop pushing — why does the book stop?",
+    "n": 1
+  },
+  {
+    "en": "Today we will summarize what we learned in science about plants — the last lesson summary on this topic.",
+    "n": 1
+  },
+  {
+    "en": "Two identical pots in the classroom — both on the same sunny window.",
+    "n": 1
+  },
+  {
+    "en": "What does the plant do with sunlight?",
+    "n": 1
+  },
+  {
+    "en": "What will happen to food production in the plant?",
+    "n": 1
+  },
+  {
+    "en": "Light, water, and suitable soil are important growing conditions; without light there is no food production in leaves.",
+    "n": 1
+  },
+  {
+    "en": "What is the difference between predator and prey?",
+    "n": 1
+  },
+  {
+    "en": "There is also competition — for what?",
+    "n": 1
+  },
+  {
+    "en": "The question: a kingfisher and a small fish in a river — who is predator and who is prey? And there is also competition — for what?",
+    "n": 1
+  },
+  {
+    "en": "What happens to food in the mouth?",
+    "n": 1
+  },
+  {
+    "en": "Where does it go after swallowing?",
+    "n": 1
+  },
+  {
+    "en": "The question: what happens to food in the mouth — and where does it go after swallowing?",
+    "n": 1
+  },
+  {
+    "en": "The rock on the beach — hard, whole piece, rock. Sand — small grains from rock; similar to soil.",
+    "n": 1
+  },
+  {
+    "en": "Today in science we will learn about natural resources — what nature gives us — and how to protect them.",
+    "n": 1
+  },
+  {
+    "en": "When you practice, look for questions about human impact on the environment.",
+    "n": 1
+  },
+  {
+    "en": "Method — what we do, what is the variable, what stays the same",
+    "n": 1
+  },
+  {
+    "en": "Does a plant in a warm room grow faster than a plant in a cold room?",
+    "n": 1
+  },
+  {
+    "en": "What comes after experiment results?",
+    "n": 1
+  },
+  {
+    "en": "There is data in the table.",
+    "n": 1
+  },
+  {
+    "en": "We interpret and write a conclusion.",
+    "n": 1
+  },
+  {
+    "en": "What conclusion would you want to write after the table?",
+    "n": 1
+  },
+  {
+    "en": "In this experiment, the variable is sponge size — that is what changes between trials.",
+    "n": 1
+  },
+  {
+    "en": "There are no instructions for wiring circuits here — only understanding.",
+    "n": 1
+  },
+  {
+    "en": "What is similar between a puppy and its parents?",
+    "n": 1
+  },
+  {
+    "en": "Inherited traits — what offspring receive from parents.",
+    "n": 1
+  },
+  {
+    "en": "What changes in the stages?",
+    "n": 1
+  },
+  {
+    "en": "What stays the same species?",
+    "n": 1
+  },
+  {
+    "en": "The question: in a butterfly and caterpillar — what changes in the life stages? And what stays the same species?",
+    "n": 1
+  },
+  {
+    "en": "What stays?",
+    "n": 1
+  },
+  {
+    "en": "- The brain decides what to do",
+    "n": 1
+  },
+  {
+    "en": "What is the role of muscles in throwing a ball?",
+    "n": 1
+  },
+  {
+    "en": "We live on the crust — the outer thin layer of Earth.",
+    "n": 1
+  },
+  {
+    "en": "An earthquake — a sudden movement of rocks or plates in Earth's crust, releasing energy and causing shaking felt on the surface.",
+    "n": 1
+  },
+  {
+    "en": "In places with active volcanoes — there are warning systems and safety plans.",
+    "n": 1
+  },
+  {
+    "en": "We are on the surface.",
+    "n": 1
+  },
+  {
+    "en": "The question: water from a well — where does it come from? And which natural phenomenon is related to movement inside Earth?",
+    "n": 1
+  },
+  {
+    "en": "Today in science we will learn about natural resources — what is renewable and what is not — and about pollution and ways to help.",
+    "n": 1
+  },
+  {
+    "en": "What we can do:",
+    "n": 1
+  },
+  {
+    "en": "Variable — what we change (for example amount of water)",
+    "n": 1
+  },
+  {
+    "en": "Controlled conditions — what stays the same (plant type, light)",
+    "n": 1
+  },
+  {
+    "en": "Does a plant that gets the right amount of water grow more than a plant that gets almost no water after a week?",
+    "n": 1
+  },
+  {
+    "en": "Day 1 to 7 on the horizontal axis, height on the vertical axis.",
+    "n": 1
+  },
+  {
+    "en": "Why write in a journal every day?",
+    "n": 1
+  },
+  {
+    "en": "What will you write in the journal?",
+    "n": 1
+  },
+  {
+    "en": "What will the graph look like (axes, points)?",
+    "n": 1
+  },
+  {
+    "en": "The question: plan an investigation — which sponge absorbs more water? What do you write in the journal and how do you build a graph?",
+    "n": 1
+  },
+  {
+    "en": "Each measurement becomes a point on the graph; you can see which sponge absorbed more.",
+    "n": 1
+  },
+  {
+    "en": "- Reflection — light bounces off a surface (mirror, water)",
+    "n": 1
+  },
+  {
+    "en": "Imagine a flashlight on a wall — shadow; on a mirror — reflection.",
+    "n": 1
+  },
+  {
+    "en": "Cardboard on the table — shadow underneath.",
+    "n": 1
+  },
+  {
+    "en": "Three different light effects — on the same day.",
+    "n": 1
+  },
+  {
+    "en": "What happens to light that hits a mirror?",
+    "n": 1
+  },
+  {
+    "en": "A mirror is smooth.",
+    "n": 1
+  },
+  {
+    "en": "Hold a mirror in front of you in the sun.",
+    "n": 1
+  },
+  {
+    "en": "What is the difference between a mirror and clear glass — in which does light pass and in which does it return?",
+    "n": 1
+  },
+  {
+    "en": "The question: what is the difference between a mirror and clear glass — in which does light pass and in which does it return?",
+    "n": 1
+  },
+  {
+    "en": "A mirror — smooth shiny surface; light bounces off at an equal angle to the angle it hit.",
+    "n": 1
+  },
+  {
+    "en": "Mirror — returns light (we see ourselves); glass — passes light (we see what is behind).",
+    "n": 1
+  },
+  {
+    "en": "Mirror — returns light (reflection). Clear glass — passes light (transparency).",
+    "n": 1
+  },
+  {
+    "en": "What happens to the food web if all tigers disappear?",
+    "n": 1
+  },
+  {
+    "en": "Each link depends on the one before it — if the grasshopper disappears, the bird will suffer from lack of food.",
+    "n": 1
+  },
+  {
+    "en": "The more species there are — the stronger and more resilient the web is to changes.",
+    "n": 1
+  },
+  {
+    "en": "What did each one do?",
+    "n": 1
+  },
+  {
+    "en": "What is the main source of light and heat for Earth?",
+    "n": 1
+  },
+  {
+    "en": "What do you know about the sun and Earth from your lessons?",
+    "n": 1
+  },
+  {
+    "en": "The question: how does climate affect life — and what is the sun's role in all of this?",
+    "n": 1
+  },
+  {
+    "en": "- Talk with family — what can change at home",
+    "n": 1
+  },
+  {
+    "en": "A real challenge — but there is something to do, and every small choice matters.",
+    "n": 1
+  },
+  {
+    "en": "What reduces carbon footprint — walking or driving alone in a car?",
+    "n": 1
+  },
+  {
+    "en": "The question: what are three daily choices you can change — and which footprint do they reduce?",
+    "n": 1
+  },
+  {
+    "en": "Carbon footprint measures our overall impact on the environment — energy, water, and waste.",
+    "n": 1
+  },
+  {
+    "en": "Hypothesis — what seems likely to happen?",
+    "n": 1
+  },
+  {
+    "en": "Variable — what we change; constant — what stays the same",
+    "n": 1
+  },
+  {
+    "en": "Conclusion — what did we learn from the data?",
+    "n": 1
+  },
+  {
+    "en": "What is the difference between comparison and variable?",
+    "n": 1
+  },
+  {
+    "en": "Variable — what we change (light).",
+    "n": 1
+  },
+  {
+    "en": "Variable — what differs; comparison — between the situations",
+    "n": 1
+  },
+  {
+    "en": "What will you present in class?",
+    "n": 1
+  },
+  {
+    "en": "The question: plan a project — which material insulates heat better: cloth or paper? What do you present in class?",
+    "n": 1
+  },
+  {
+    "en": "Density — how much material or mass is in a certain volume:",
+    "n": 1
+  },
+  {
+    "en": "Fire is dangerous, so students do not do fire experiments at home or alone. If there is a demonstration in class, only a responsible teacher does it; if there is danger, move away and call an adult immediately.",
+    "n": 1
+  },
+  {
+    "en": "Folding — reversible change. Burning — irreversible change. Safety — do not try alone.",
+    "n": 1
+  }
+]

@@ -1,0 +1,604 @@
+{
+  "materials_1": {
+    "stem": "What is the state of matter of ice?",
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Mixture"
+    ],
+    "explanation": "Ice is water in the solid state. Warming ice turns it into liquid water.",
+    "theoryLines": [
+      "Water can be solid (ice), liquid (water), or gas (water vapor).",
+      "Changing temperature can change the state of matter."
+    ]
+  },
+  "materials_2": {
+    "stem": "Which statement about metals is true?",
+    "options": [
+      "They insulate electricity better than plastic and wood",
+      "They usually conduct heat and electricity well",
+      "They are transparent to light like thin glass",
+      "They break easily and cannot be bent or flattened"
+    ],
+    "explanation": "Metals often conduct heat and electricity, which is why they are used in wires and cookware.",
+    "theoryLines": [
+      "Many metals are shiny and can be hammered into sheets or drawn into wires.",
+      "Not every metal is equally strong, but many are tough and durable."
+    ]
+  },
+  "materials_3": {
+    "stem": "Which statement about plastic is true?",
+    "options": [
+      "Plastic is made in factories and is not found ready-made in nature",
+      "Plastic is found in nature the way rock is",
+      "Plastic is a kind of wood",
+      "Plastic is made only from sand"
+    ],
+    "explanation": "Plastic is manufactured, often from petroleum. It is not a natural material like wood or stone.",
+    "theoryLines": [
+      "Natural materials come from living things or Earth's nonliving materials.",
+      "Synthetic materials are made through industrial processes."
+    ]
+  },
+  "materials_4": {
+    "stem": "A solution of salt and water is an example of which kind of mixture?",
+    "options": [
+      "A heterogeneous mixture",
+      "A homogeneous mixture",
+      "A pure chemical compound",
+      "A usually flammable gas"
+    ],
+    "explanation": "When salt dissolves in water, the mixture looks the same throughout. That is a homogeneous mixture.",
+    "theoryLines": [
+      "A homogeneous mixture looks uniform, with no clear boundaries between parts.",
+      "A solution is a mixture in which one material dissolves in another."
+    ]
+  },
+  "materials_5": {
+    "stem": "What is a physical change?",
+    "options": [
+      "A change that creates a completely new substance",
+      "A change in which matter changes form or state but stays the same substance",
+      "A change that can happen only with very strong heating",
+      "A change that happens only to metals"
+    ],
+    "explanation": "In a physical change, shape or state can change, but the chemical identity stays the same.",
+    "theoryLines": [
+      "Melting ice into water is a physical change—it is still water.",
+      "Burning paper is a chemical change because new materials form."
+    ]
+  },
+  "materials_6": {
+    "stem": "What is the state of matter of water from a faucet?",
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Dry powder that does not flow"
+    ],
+    "explanation": "Tap water is a liquid. You can pour it, drink it, and wash with it.",
+    "theoryLines": [
+      "Water can be solid (ice), liquid (water), or gas (water vapor).",
+      "Heating or cooling water can change its state."
+    ]
+  },
+  "materials_7": {
+    "stem": "Which material is hard and strong?",
+    "options": [
+      "Dry sponge",
+      "Soft wax",
+      "Stone",
+      "Soft rubber"
+    ],
+    "explanation": "Stone is hard and strong. People use it for building and for heavy work.",
+    "theoryLines": [
+      "Different materials have different properties, such as hardness or softness.",
+      "Stone is a natural material from Earth."
+    ]
+  },
+  "materials_8": {
+    "stem": "Which material is soft?",
+    "options": [
+      "Stone",
+      "Metal",
+      "Cotton",
+      "Thin glass"
+    ],
+    "explanation": "Cotton is soft, so it is often used to make comfortable clothes.",
+    "theoryLines": [
+      "Soft materials feel gentle to the touch.",
+      "Cotton comes from the cotton plant."
+    ]
+  },
+  "materials_9": {
+    "stem": "Which statement correctly describes a solid material?",
+    "options": [
+      "A solid holds its own shape and does not flow.",
+      "A solid flows freely, like water.",
+      "A solid is always made from water.",
+      "A solid is always made of metal."
+    ],
+    "explanation": "A solid material has a fixed shape. Unlike liquids, solids do not flow or pour — they hold their shape on their own.",
+    "theoryLines": [
+      "Solids are one of the main states of matter.",
+      "Solids can be hard or soft, but they always keep their shape."
+    ]
+  },
+  "materials_10": {
+    "stem": "What happens when water is heated to a very high temperature?",
+    "options": [
+      "It turns into a solid, like ice.",
+      "It turns into water vapor, which is a gas.",
+      "It stays liquid no matter how hot it gets.",
+      "It always turns into a hard solid material."
+    ],
+    "explanation": "When water is heated to its boiling point, it changes state and becomes water vapor — a gas. This process is called evaporation or boiling.",
+    "theoryLines": [
+      "Water can exist as a solid (ice), liquid (water), or gas (water vapor).",
+      "Heating gives water molecules enough energy to escape into the air as gas."
+    ]
+  },
+  "materials_11": {
+    "stem": "What is a conductor?",
+    "options": [
+      "A material that does not carry electricity",
+      "A material that carries heat or electricity",
+      "A material that is always very hard",
+      "A material that is usually transparent"
+    ],
+    "explanation": "A conductor lets heat or electricity pass through easily. Metals are good conductors.",
+    "theoryLines": [
+      "Metals such as copper and iron are good conductors.",
+      "Insulators such as wood or plastic do not carry electricity well."
+    ]
+  },
+  "materials_12": {
+    "stem": "What is an insulator?",
+    "options": [
+      "A material that carries electricity well",
+      "A material that does not carry heat or electricity well",
+      "A material that is always very hard",
+      "A material that is usually transparent"
+    ],
+    "explanation": "An insulator does not carry heat or electricity well. That helps keep heat in or prevent shocks.",
+    "theoryLines": [
+      "Wood, plastic, and glass are common insulators.",
+      "Insulators are important for safety."
+    ]
+  },
+  "materials_13": {
+    "stem": "What is a chemical change?",
+    "options": [
+      "A change of shape only",
+      "A change that makes a new material with different properties",
+      "A color change with no new material forming",
+      "Getting bigger or smaller with no chemical reaction"
+    ],
+    "explanation": "In a chemical change, a new material forms. Burning paper makes ash and gases—new materials.",
+    "theoryLines": [
+      "Burning is an example of a chemical change.",
+      "After a chemical change, you usually cannot get the original material back easily."
+    ]
+  },
+  "materials_14": {
+    "stem": "What is the difference between a mixture and a compound?",
+    "options": [
+      "In a mixture, new chemical bonds always form among every part",
+      "A mixture can be separated; a compound is a new substance made when atoms join chemically",
+      "A compound is always a uniform mixture you can separate without a chemical reaction",
+      "A mixture always stays one pure solid even after strong heating"
+    ],
+    "explanation": "A mixture blends materials you can often separate, like sand and water. A compound is a new substance, like water (H₂O).",
+    "theoryLines": [
+      "In a compound, atoms are joined chemically.",
+      "In a mixture, the original materials stay separate substances."
+    ]
+  },
+  "materials_15": {
+    "stem": "What are the states of matter of water?",
+    "options": [
+      "Always solid at room temperature",
+      "Always liquid with no exceptions",
+      "Only a gas in nature in every season",
+      "Solid, liquid, or gas depending on temperature"
+    ],
+    "explanation": "Water can be ice (solid), liquid water, or water vapor (gas).",
+    "theoryLines": [
+      "Temperature changes the state of matter.",
+      "At everyday room temperatures, water is usually a liquid."
+    ]
+  },
+  "materials_16": {
+    "stem": "What happens to ice when it warms up?",
+    "options": [
+      "It stays ice if you never heat it above freezing",
+      "It turns into liquid water",
+      "It turns straight into vapor with no liquid stage",
+      "It becomes a harder solid"
+    ],
+    "explanation": "When ice warms, it melts into liquid water. That is a change from solid to liquid.",
+    "theoryLines": [
+      "This change is called melting.",
+      "It happens when the temperature rises above 32°F (0°C)."
+    ]
+  },
+  "materials_17": {
+    "stem": "In which states of matter can water exist?",
+    "options": [
+      "Solid, liquid, and gas",
+      "A place with many people",
+      "A place with water",
+      "An outdoor area"
+    ],
+    "explanation": "Water can be ice (solid), liquid water, or water vapor (gas).",
+    "theoryLines": [
+      "Temperature changes the state of matter.",
+      "Many materials can change state this way."
+    ]
+  },
+  "materials_18": {
+    "stem": "Which material is hard?",
+    "options": [
+      "A cup of water",
+      "Air",
+      "Iron",
+      "Melting ice"
+    ],
+    "explanation": "Iron is a hard metal. People use it for building and making tools.",
+    "theoryLines": [
+      "Many metals are hard and strong.",
+      "They also conduct heat and electricity."
+    ]
+  },
+  "materials_19": {
+    "stem": "What is a transparent material?",
+    "options": [
+      "A material that absorbs light and looks dark",
+      "A material that lets light through so you can see through it",
+      "A material that reflects light with no see-through quality",
+      "A hard material with no light passing through"
+    ],
+    "explanation": "Transparent materials let light pass through so you can see through them—like clear glass or clean water.",
+    "theoryLines": [
+      "Transparency means you can see through the material.",
+      "That is useful for windows and eyeglasses."
+    ]
+  },
+  "materials_20": {
+    "stem": "What is an organic material?",
+    "options": [
+      "Factory plastic that comes only from oil stores",
+      "A material that comes from living things (plants or animals)",
+      "Metal from rocks with no remains of living things",
+      "Pure limestone with no organic compounds"
+    ],
+    "explanation": "Organic materials come from living things—examples include wood, cotton, and wool.",
+    "theoryLines": [
+      "Organic materials often break down more easily.",
+      "Some are kinder to the environment."
+    ]
+  },
+  "materials_21": {
+    "stem": "What is an inorganic material?",
+    "options": [
+      "A material that usually comes from living things",
+      "A material that comes from nonliving sources such as rocks, metals, and minerals",
+      "A synthetic polymer with no mineral core",
+      "Processed wood that still contains plant cells"
+    ],
+    "explanation": "Inorganic materials come from nonliving sources—rocks, metals, glass, and clay are examples.",
+    "theoryLines": [
+      "They can be natural or made by people.",
+      "They often do not break down as easily as organic materials."
+    ]
+  },
+  "materials_22": {
+    "stem": "What is a magnetic material?",
+    "options": [
+      "Dry wood that is not attracted to a magnet",
+      "A material that is attracted to a magnet (for example, iron)",
+      "Aluminum that is usually not attracted to a household magnet",
+      "Thick glass that is not attracted to a magnet"
+    ],
+    "explanation": "Magnetic materials are pulled toward a magnet. Iron, nickel, and cobalt are examples. Not all metals are magnetic.",
+    "theoryLines": [
+      "Magnets attract magnetic materials.",
+      "This depends on the material's inner properties."
+    ]
+  },
+  "materials_23": {
+    "stem": "What is an elastic material?",
+    "options": [
+      "A material that bends and breaks without returning to shape",
+      "A material that stretches and then returns to its original shape",
+      "A material that stays sticky forever after you press it",
+      "A material that cracks in the cold and never changes again"
+    ],
+    "explanation": "An elastic material can stretch or bend and then go back to its original shape—like rubber or a spring.",
+    "theoryLines": [
+      "Elasticity is a useful material property.",
+      "Many products work because of elastic materials."
+    ]
+  },
+  "materials_24": {
+    "stem": "What is the difference between a reusable material and a disposable one?",
+    "options": [
+      "Both are defined only by weight, not by how many times you can use them",
+      "Reusable materials can be used again; disposable ones are meant for one use",
+      "Disposable materials are always stronger and better for long use than reusable ones",
+      "Reusable materials must always be artificial and become dangerous faster"
+    ],
+    "explanation": "Reusable items can be used again and again, like a glass bottle. Disposable items are meant for one use, like a single-use plastic bag.",
+    "theoryLines": [
+      "Using reusable materials helps protect the environment.",
+      "It reduces waste."
+    ]
+  },
+  "materials_25": {
+    "stem": "What does it mean when a material is biodegradable?",
+    "options": [
+      "The material is found naturally in soil, just like plastic.",
+      "The material breaks down naturally in the environment over time.",
+      "The material came from a mountain and is extremely hard.",
+      "The material dissolves in water but cannot break down in nature."
+    ],
+    "explanation": "A biodegradable material is one that can be broken down by natural processes over time, such as food scraps, paper, or wood. Plastic is not biodegradable and stays in the environment for hundreds of years.",
+    "theoryLines": [
+      "Biodegradable materials like food, paper, and wood decompose naturally.",
+      "Non-biodegradable materials like plastic stay in the environment for a very long time."
+    ]
+  },
+  "materials_26": {
+    "stem": "What is a synthetic material?",
+    "options": [
+      "A material from stone or wood with no chemical change",
+      "A material people make in a factory, not found ready-made in nature",
+      "A tree trunk cut exactly as it grew",
+      "Pure basalt rock with no processing"
+    ],
+    "explanation": "Synthetic materials are made by people through industrial processes—plastic and synthetic fibers are examples.",
+    "theoryLines": [
+      "Synthetic materials can be strong and durable.",
+      "Some do not break down easily."
+    ]
+  },
+  "materials_27": {
+    "stem": "What is the difference between a hard material and a soft material?",
+    "options": [
+      "Hardness depends only on color, not on resistance to scratching",
+      "A hard material is difficult to press or cut; a soft material is easy to press and change shape",
+      "A soft material is always easier to smash than metal and never returns to shape",
+      "A hard material is always struck without absorbing any energy"
+    ],
+    "explanation": "Hard materials resist pressing, cutting, and breaking (like stone). Soft materials are easy to press and reshape (like cotton).",
+    "theoryLines": [
+      "Every material has different properties.",
+      "Hardness is one of those properties."
+    ]
+  },
+  "materials_28": {
+    "stem": "What is true about how materials let light through?",
+    "options": [
+      "No material ever allows light to pass through it.",
+      "Some materials let light through (like glass), while others block it (like wood).",
+      "All materials always let all light pass through them completely.",
+      "Whether light passes through a material depends only on the material's color."
+    ],
+    "explanation": "Materials that let light pass through are called transparent (like glass). Materials that block light entirely are called opaque (like wood). Some let only a little light through — those are translucent.",
+    "theoryLines": [
+      "Transparent materials allow light to pass through completely.",
+      "Opaque materials block all light, and translucent materials let only some light through."
+    ]
+  },
+  "materials_12__v2": {
+    "stem": "How is metal different from glass when it comes to conducting electricity?",
+    "options": [
+      "Metal conducts electricity, while glass does not.",
+      "Both metal and glass conduct electricity equally well.",
+      "Metal is always see-through like glass, but glass is always opaque.",
+      "Glass conducts electricity better than any metal."
+    ],
+    "explanation": "Metal is a conductor, which means electricity can flow through it easily. Glass is an insulator, which means it does not let electricity pass through. That is why electrical wires are made of metal and wrapped in plastic or rubber for safety.",
+    "theoryLines": [
+      "Conductors allow electrons to move freely through the material, carrying an electric current.",
+      "Insulators block the flow of electricity and are used to keep people safe around wires."
+    ]
+  },
+  "materials_16__v2": {
+    "stem": "Which material is transparent?",
+    "options": [
+      "Opaque stone",
+      "Heavy metal",
+      "Glass",
+      "Solid wood"
+    ],
+    "explanation": "Glass is transparent. You can see through it.",
+    "theoryLines": [
+      "Transparent materials let you see through them.",
+      "That is useful for windows."
+    ]
+  },
+  "materials_17__v2": {
+    "stem": "Which material is shiny?",
+    "options": [
+      "Wood",
+      "Metal",
+      "Cotton",
+      "Soil"
+    ],
+    "explanation": "Many metals are shiny because they reflect light.",
+    "theoryLines": [
+      "Metals can look shiny.",
+      "Shine is one property people notice in metals."
+    ]
+  },
+  "materials_18__v2": {
+    "stem": "What happens to water when it gets very cold?",
+    "options": [
+      "It stays liquid",
+      "It turns into ice",
+      "It turns into a gas",
+      "It disappears"
+    ],
+    "explanation": "When water gets cold enough, it freezes into ice, a solid.",
+    "theoryLines": [
+      "This change is called freezing.",
+      "It happens when the temperature drops below 32°F (0°C)."
+    ]
+  },
+  "materials_19__v2": {
+    "stem": "Which of the following materials comes from trees?",
+    "options": [
+      "Metal.",
+      "Plastic.",
+      "Wood.",
+      "Glass."
+    ],
+    "explanation": "Wood is a natural material that comes from trees. Metal comes from ores in the ground, plastic is made from oil, and glass is made from sand.",
+    "theoryLines": [
+      "Wood is a natural material that has been used for thousands of years.",
+      "Trees are cut and processed to produce lumber for building and making objects."
+    ]
+  },
+  "materials_21__v2": {
+    "stem": "What are the states of matter?",
+    "options": [
+      "A name only for the solid state, with no liquids or gases",
+      "Solid, liquid, and gas—different forms matter can take",
+      "A description of liquids with no solid or gas",
+      "Only the gas state at every temperature"
+    ],
+    "explanation": "States of matter are the forms matter can take: solid (hard shape), liquid (flows), or gas (spreads out).",
+    "theoryLines": [
+      "Water can exist in all three states.",
+      "Temperature can change the state of matter."
+    ]
+  },
+  "materials_22__v2": {
+    "stem": "What is melting?",
+    "options": [
+      "Heating with no change of state",
+      "A change from solid to liquid",
+      "Cooling that makes ice instead of water",
+      "Freezing a liquid into a solid"
+    ],
+    "explanation": "Melting is the change from solid to liquid—for example, ice turning into water when heated.",
+    "theoryLines": [
+      "Melting happens when temperature rises.",
+      "Every material has its own melting point."
+    ]
+  },
+  "materials_23__v2": {
+    "stem": "What is freezing?",
+    "options": [
+      "Cooling with no change to a solid",
+      "A change from liquid to solid",
+      "Heating that melts ice into water",
+      "Melting a gas into a liquid"
+    ],
+    "explanation": "Freezing is the change from liquid to solid—for example, water turning into ice when cooled.",
+    "theoryLines": [
+      "Freezing happens when temperature drops.",
+      "Every material has its own freezing point."
+    ]
+  },
+  "materials_24__v2": {
+    "stem": "What is evaporation?",
+    "options": [
+      "Heating with no liquid turning into air",
+      "A change from liquid to gas",
+      "Cooling that gathers water vapor into liquid",
+      "Only melting a solid into a liquid"
+    ],
+    "explanation": "Evaporation is the change from liquid to gas—for example, water turning into water vapor when heated.",
+    "theoryLines": [
+      "Evaporation increases as temperature rises.",
+      "You can see it when water boils."
+    ]
+  },
+  "materials_25__v2": {
+    "stem": "What is condensation?",
+    "options": [
+      "Cooling with no liquid droplets forming",
+      "A change from gas to liquid",
+      "Heating that fully spreads water vapor away",
+      "Only melting ice into water"
+    ],
+    "explanation": "Condensation is the change from gas to liquid—for example, water vapor turning into water droplets when cooled.",
+    "theoryLines": [
+      "Condensation happens when temperature drops.",
+      "You can see it on cool windows when vapor turns to droplets."
+    ]
+  },
+  "materials_26__v2": {
+    "stem": "Which description fits an electrical or heat conductor?",
+    "options": [
+      "A material that blocks heat and stops it from moving.",
+      "A material that allows heat or electricity to pass through it easily.",
+      "Wood — it is the best conductor of electricity.",
+      "Plastic — it conducts electricity better than any metal."
+    ],
+    "explanation": "Conductors let heat or electricity move through them easily. Many metals are good conductors; wood and plastic usually are not.",
+    "theoryLines": [
+      "Metals such as copper and iron are common conductors.",
+      "Insulators slow down or block the flow of heat or electricity."
+    ]
+  },
+  "materials_27__v2": {
+    "stem": "What is an insulating material?",
+    "options": [
+      "Damp wood that still conducts electricity well",
+      "A material that does not carry heat or electricity well",
+      "A pure metal with free electrons",
+      "Thin glass as a strong electricity conductor"
+    ],
+    "explanation": "An insulator does not carry heat or electricity well. Wood, plastic, and rubber are examples.",
+    "theoryLines": [
+      "Insulators help keep heat in or out.",
+      "They are important for safety."
+    ]
+  },
+  "materials_28__v2": {
+    "stem": "What is a magnetic material?",
+    "options": [
+      "Purified iron that never responds to a magnet",
+      "A material that is attracted to a magnet",
+      "Copper that responds to a magnet like iron",
+      "Pure gold that sticks strongly to a permanent magnet"
+    ],
+    "explanation": "A magnetic material is attracted to a magnet. Iron, nickel, and cobalt are examples.",
+    "theoryLines": [
+      "Magnets attract magnetic materials.",
+      "Not all metals are magnetic."
+    ]
+  },
+  "materials_29": {
+    "stem": "What is a transparent material?",
+    "options": [
+      "Opaque glass you cannot see through",
+      "A material that lets light through so you can see through it",
+      "Smoked plastic that does not transmit light",
+      "Dirty water that fully blocks vision"
+    ],
+    "explanation": "A transparent material lets light pass through so you can see through it—like clear glass or clean water.",
+    "theoryLines": [
+      "Transparency means you can see through the material.",
+      "That is useful for windows and eyeglasses."
+    ]
+  },
+  "materials_30": {
+    "stem": "What is an organic material?",
+    "options": [
+      "A synthetic polymer with no link to plants",
+      "A material that comes from living things (plants or animals)",
+      "A mineral salt with no direct link to living remains",
+      "Pure sandstone with no living leftovers"
+    ],
+    "explanation": "Organic materials come from living things—wood, cotton, and wool are examples.",
+    "theoryLines": [
+      "Organic materials often break down more easily.",
+      "Some are better for the environment."
+    ]
+  }
+}

@@ -2,89 +2,132 @@ import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 /**
  * Parent-facing display-name resolution for the Insight Packet.
  *
- * The label dictionaries are inlined here on purpose so the insights module is fully self-contained
- * and can run under plain Node ESM (no Next.js bundler). They mirror the public dictionaries in
- * `utils/math-report-generator.js`. If a key is added to that file, mirror it here too - the
- * `parent-report-insights-selftest.mjs` golden fixtures will surface drift quickly.
+ * Lookups call reportPackCopy at runtime (after bindReportPackLocale) so values
+ * are not frozen to English at module load.
  */
 
-const SUBJECT_LABEL_HE = Object.freeze({
-  math: "Math",
-  geometry: "Geometry",
-  english: "English",
-  
-  science: "Science"});
+const SLUG = "utils__parent-report-insights__normalize-parent-facing-labels";
 
-const MATH_OPERATION_NAMES_HE = Object.freeze({
-  addition: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "addition"),
-  subtraction: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "subtraction"),
-  multiplication: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "multiplication"),
-  division: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "division"),
-  division_with_remainder: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "division_with_remainder"),
-  fractions: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "fractions"),
-  percentages: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "percentages"),
-  sequences: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "sequences"),
-  decimals: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "decimals"),
-  rounding: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "rounding"),
-  divisibility: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "divisibility_rules"),
-  prime_composite: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "prime_and_composite_numbers"),
-  powers: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "powers"),
-  ratio: "Ratio",
-  equations: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "equations"),
-  order_of_operations: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "order_of_operations"),
-  zero_one_properties: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "properties_of_0_and_1"),
-  estimation: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "estimation"),
-  scale: "Scale",
-  compare: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "comparison"),
-  number_sense: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "number_sense"),
-  factors_multiples: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "factors_and_multiples"),
-  word_problems: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "word_problems"),
-  multiplication_table: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "multiplication_table"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
+/** @param {string} key @param {string} [fallback] */
+function t(key, fallback = "") {
+  const v = reportPackCopy(SLUG, key);
+  // Never surface the raw pack key as visible UI copy.
+  if (v && v !== key) return v;
+  return typeof fallback === "string" ? fallback : "";
+}
 
-const GEOMETRY_TOPIC_NAMES_HE = Object.freeze({
-  shapes_basic: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "basic_shapes"),
-  shapes: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "shapes"),
-  area: "Area",
-  perimeter: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "perimeter"),
-  volume: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "volume"),
-  angles: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "angles"),
-  parallel_perpendicular: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "parallel_and_perpendicular"),
-  triangles: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "triangles"),
-  quadrilaterals: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "quadrilaterals"),
-  transformations: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "transformations"),
-  rotation: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "rotation"),
-  symmetry: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "symmetry"),
-  diagonal: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "diagonals"),
-  heights: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "heights"),
-  tiling: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "tiling"),
-  circles: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "circles"),
-  solids: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "solid_shapes"),
-  pythagoras: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "pythagorean_theorem"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
+const MATH_KEYS = Object.freeze([
+  "addition",
+  "subtraction",
+  "multiplication",
+  "division",
+  "division_with_remainder",
+  "fractions",
+  "percentages",
+  "sequences",
+  "decimals",
+  "rounding",
+  "divisibility",
+  "prime_composite",
+  "powers",
+  "ratio",
+  "equations",
+  "order_of_operations",
+  "zero_one_properties",
+  "estimation",
+  "scale",
+  "compare",
+  "number_sense",
+  "factors_multiples",
+  "word_problems",
+  "multiplication_table",
+  "mixed",
+]);
 
-const ENGLISH_TOPIC_NAMES_HE = Object.freeze({
-  vocabulary: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "vocabulary"),
-  grammar: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "grammar"),
-  grammar_basics: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "grammar_basics"),
-  translation: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "translation"),
-  sentence: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "sentence_building"),
-  sentences: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "sentence_building"),
-  writing: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "writing"),
-  reading_comprehension: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "reading_comprehension"),
-  matching: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "matching"),
-  inference: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "inference"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_practice")});
+const MATH_PACK_KEY = Object.freeze({
+  division_with_remainder: "division_with_remainder",
+  divisibility: "divisibility_rules",
+  prime_composite: "prime_and_composite_numbers",
+  zero_one_properties: "properties_of_0_and_1",
+  compare: "comparison",
+  factors_multiples: "factors_and_multiples",
+  word_problems: "word_problems",
+  multiplication_table: "multiplication_table",
+  mixed: "mixed_practice",
+  ratio: "ratio",
+  scale: "scale",
+});
 
-const SCIENCE_TOPIC_NAMES_HE = Object.freeze({
-  body: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "human_body"),
-  animals: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "animals"),
-  plants: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "plants"),
-  materials: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "materials"),
-  earth_space: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "earth_and_space"),
-  environment: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "environment_and_ecology"),
-  experiments: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "experiments_and_processes"),
-  mixed: reportPackCopy("utils__parent-report-insights__normalize-parent-facing-labels", "mixed_topics")});
+const GEOMETRY_KEYS = Object.freeze([
+  "shapes_basic",
+  "shapes",
+  "area",
+  "perimeter",
+  "volume",
+  "angles",
+  "parallel_perpendicular",
+  "triangles",
+  "quadrilaterals",
+  "transformations",
+  "rotation",
+  "symmetry",
+  "diagonal",
+  "heights",
+  "tiling",
+  "circles",
+  "solids",
+  "pythagoras",
+  "mixed",
+]);
+
+const GEOMETRY_PACK_KEY = Object.freeze({
+  shapes_basic: "basic_shapes",
+  parallel_perpendicular: "parallel_and_perpendicular",
+  diagonal: "diagonals",
+  solids: "solid_shapes",
+  pythagoras: "pythagorean_theorem",
+  mixed: "mixed_practice",
+  area: "area",
+});
+
+const ENGLISH_KEYS = Object.freeze([
+  "vocabulary",
+  "grammar",
+  "grammar_basics",
+  "translation",
+  "sentence",
+  "sentences",
+  "writing",
+  "reading_comprehension",
+  "matching",
+  "inference",
+  "mixed",
+]);
+
+const ENGLISH_PACK_KEY = Object.freeze({
+  sentence: "sentence_building",
+  sentences: "sentence_building",
+  mixed: "mixed_practice",
+});
+
+const SCIENCE_KEYS = Object.freeze([
+  "body",
+  "animals",
+  "plants",
+  "materials",
+  "earth_space",
+  "environment",
+  "experiments",
+  "mixed",
+]);
+
+const SCIENCE_PACK_KEY = Object.freeze({
+  body: "human_body",
+  earth_space: "earth_and_space",
+  environment: "environment_and_ecology",
+  experiments: "experiments_and_processes",
+  mixed: "mixed_topics",
+});
 
 const RAW_KEY_RE = /^[a-z][a-z0-9_]*$/i;
 
@@ -94,10 +137,25 @@ function stripMathKindSuffix(key) {
   return i === -1 ? key : key.slice(0, i);
 }
 
+/** @param {string} topicKey @param {Record<string, string>} packMap @param {string[]} keys */
+function lookupTopic(topicKey, packMap, keys) {
+  const tk = String(topicKey || "").trim();
+  if (!tk || !keys.includes(tk)) {
+    const packKey = packMap[tk] || tk;
+    const v = t(packKey, "");
+    return v && v !== packKey ? v : "";
+  }
+  const packKey = packMap[tk] || tk;
+  return t(packKey, "");
+}
+
 export function getSubjectDisplayNameHe(subjectKey) {
-  if (!subjectKey) return "Subject";
+  if (!subjectKey) return t("subject", "Subject");
   const k = String(subjectKey).trim().toLowerCase();
-  return SUBJECT_LABEL_HE[k] || "Subject";
+  if (k === "math" || k === "geometry" || k === "english" || k === "science") {
+    return t(`subject_${k}`, k);
+  }
+  return t("subject", "Subject");
 }
 
 export function getTopicDisplayNameHe(subjectKey, topicKey) {
@@ -107,17 +165,15 @@ export function getTopicDisplayNameHe(subjectKey, topicKey) {
   switch (sk) {
     case "math": {
       const base = stripMathKindSuffix(tk);
-      if (base.startsWith("wp_")) return MATH_OPERATION_NAMES_HE.word_problems;
-      return MATH_OPERATION_NAMES_HE[base] || "";
+      if (base.startsWith("wp_")) return t("word_problems");
+      return lookupTopic(base, MATH_PACK_KEY, MATH_KEYS) || t(base, "");
     }
     case "geometry":
-      return GEOMETRY_TOPIC_NAMES_HE[tk] || "";
+      return lookupTopic(tk, GEOMETRY_PACK_KEY, GEOMETRY_KEYS) || t(tk, "");
     case "english":
-      return ENGLISH_TOPIC_NAMES_HE[tk] || "";
+      return lookupTopic(tk, ENGLISH_PACK_KEY, ENGLISH_KEYS) || t(tk, "");
     case "science":
-      return SCIENCE_TOPIC_NAMES_HE[tk] || "";
-    
-    
+      return lookupTopic(tk, SCIENCE_PACK_KEY, SCIENCE_KEYS) || t(tk, "");
     default:
       return "";
   }
@@ -125,17 +181,33 @@ export function getTopicDisplayNameHe(subjectKey, topicKey) {
 
 export function isLikelyRawKey(label) {
   if (typeof label !== "string") return false;
-  const t = label.trim();
-  if (!t) return false;
-  return RAW_KEY_RE.test(t);
+  const tLabel = label.trim();
+  if (!tLabel) return false;
+  return RAW_KEY_RE.test(tLabel);
 }
 
 export function safeHebrewLabel(label, fallback) {
   if (typeof label === "string") {
-    const t = label.trim();
-    if (t && !isLikelyRawKey(t)) return t;
+    const trimmed = label.trim();
+    if (trimmed && !isLikelyRawKey(trimmed)) return trimmed;
   }
-  return typeof fallback === "string" && fallback.trim() ? fallback.trim() : "Topic";
+  return typeof fallback === "string" && fallback.trim() ? fallback.trim() : t("topic", "Topic");
 }
 
-export const SUBJECT_LABELS_HE_FOR_TESTS = SUBJECT_LABEL_HE;
+/** Lazy subject map for tests that still expect a dictionary shape. */
+export const SUBJECT_LABELS_HE_FOR_TESTS = new Proxy(
+  {},
+  {
+    get(_target, prop) {
+      if (typeof prop !== "string") return undefined;
+      return getSubjectDisplayNameHe(prop);
+    },
+    ownKeys() {
+      return ["math", "geometry", "english", "science"];
+    },
+    getOwnPropertyDescriptor(_t, prop) {
+      if (typeof prop !== "string") return undefined;
+      return { configurable: true, enumerable: true, value: getSubjectDisplayNameHe(prop) };
+    },
+  },
+);

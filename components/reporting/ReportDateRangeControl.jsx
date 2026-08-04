@@ -71,7 +71,7 @@ export default function ReportDateRangeControl({
             className={btnClass(!customDates && presetDays === "day")}
             data-testid="report-range-preset-day"
           >
-            Day
+            {globalBurnDownCopy("components__reporting__ReportDateRangeControl", "day")}
           </button>
         ) : null}
         <button
@@ -81,7 +81,7 @@ export default function ReportDateRangeControl({
           className={btnClass(!customDates && presetDays === 7)}
           data-testid="report-range-preset-week"
         >
-          Week
+          {globalBurnDownCopy("components__reporting__ReportDateRangeControl", "week")}
         </button>
         <button
           type="button"
@@ -90,7 +90,7 @@ export default function ReportDateRangeControl({
           className={btnClass(!customDates && presetDays === 30)}
           data-testid="report-range-preset-month"
         >
-          Month
+          {globalBurnDownCopy("components__reporting__ReportDateRangeControl", "month")}
         </button>
         {showSchoolYearPreset ? (
           <button
@@ -100,7 +100,7 @@ export default function ReportDateRangeControl({
             className={btnClass(!customDates && presetDays === "schoolYear")}
             data-testid="report-range-preset-school-year"
           >
-            Year
+            {globalBurnDownCopy("components__reporting__ReportDateRangeControl", "year")}
           </button>
         ) : null}
         <button

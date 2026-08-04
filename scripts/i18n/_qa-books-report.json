@@ -1,0 +1,88 @@
+{
+  "stats": {
+    "files": 450,
+    "grade": 0,
+    "wisk": 0,
+    "draft": 16,
+    "enInstr": 0,
+    "he": 0
+  },
+  "bySubject": {
+    "english": 130,
+    "geometry": 77,
+    "math": 199,
+    "science": 44
+  },
+  "samples": {
+    "grade": [],
+    "wisk": [],
+    "draft": [
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g1/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g1/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder; **niet** part van the 3-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g2/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g2/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder; **niet** part van the 3-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g3/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g5/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g5/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder; **niet** part van the 17-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g6/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/geometry/g6/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder; **niet** part van the 19-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g3/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g3/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder van structure expansion; **niet** part van the 26-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g4/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g4/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder; **niet** part van the 37-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g5/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g5/drafts/README.md",
+        "line": "- `book_placeholder.md` — infrastructure placeholder; **niet** part van the 40-page book."
+      },
+      {
+        "file": "docs/learning-book/nl-NL/math/g6/drafts/book_placeholder.md",
+        "line": "| **page_type** | placeholder |"
+      }
+    ],
+    "enInstr": [],
+    "he": []
+  }
+}

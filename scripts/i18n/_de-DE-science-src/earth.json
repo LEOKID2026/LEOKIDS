@@ -1,0 +1,884 @@
+{
+  "earth_1": {
+    "stem": "What causes day and night on Earth?",
+    "options": [
+      "The Sun moves around Earth once every 24 hours.",
+      "Earth spins on its own axis, so different parts face the Sun at different times.",
+      "The Moon blocks sunlight from reaching Earth at night.",
+      "Earth moves closer to and farther from the Sun each day."
+    ],
+    "explanation": "Day and night are caused by Earth rotating on its axis. The side facing the Sun experiences day; the side facing away experiences night.",
+    "theoryLines": [
+      "Earth completes one full rotation every 24 hours.",
+      "As Earth spins, each part moves from sunlight into shadow and back again."
+    ]
+  },
+  "earth_2": {
+    "stem": "Which statement about Earth is true?",
+    "options": [
+      "Earth is orbited by the Sun, not by the Moon.",
+      "Earth orbits the Sun once every year.",
+      "Earth stays completely still in space.",
+      "A full day-and-night cycle on Earth takes 48 hours."
+    ],
+    "explanation": "Earth travels around the Sun once each year. This yearly orbit, combined with Earth's tilt, gives us seasons. Earth also spins on its axis every 24 hours, giving us day and night.",
+    "theoryLines": [
+      "Earth orbits the Sun in a path called a revolution, which takes about 365 days.",
+      "Earth also rotates on its own axis, causing day and night."
+    ]
+  },
+  "earth_3": {
+    "stem": "Which statement about the Moon is true?",
+    "options": [
+      "The Moon reflects light from the Sun — it does not produce its own light.",
+      "The Moon is a planet that orbits the Sun directly.",
+      "The Moon produces its own bright light every single night.",
+      "The Moon shines with equal brightness from every direction at all times."
+    ],
+    "explanation": "The Moon is not a star or a planet — it is a natural satellite that orbits Earth. It does not generate its own light. The moonlight we see is actually sunlight bouncing off the Moon's surface.",
+    "theoryLines": [
+      "Stars, like the Sun, produce their own light through nuclear reactions.",
+      "The Moon is a rocky body that only reflects sunlight, which is why it can appear bright at night."
+    ]
+  },
+  "earth_4": {
+    "stem": "Which statement about Earth's layers is true?",
+    "options": [
+      "Earth is only a thin crust over empty space",
+      "Earth is made of a crust, a mantle, and a core",
+      "Earth is one single uniform layer",
+      "We have no information about Earth's interior"
+    ],
+    "explanation": "Earth has a thin outer crust, a thick mantle, and a very hot core.",
+    "theoryLines": [
+      "Much of what we know about Earth's interior comes from earthquakes and geologic study.",
+      "The inner core is dense and extremely hot."
+    ]
+  },
+  "earth_5": {
+    "stem": "What can you usually see in the sky during the day?",
+    "options": [
+      "Only the Moon, which belongs in the nighttime sky.",
+      "The Sun, and sometimes the Moon as well.",
+      "Stars shine just as brightly during the day as they do at night.",
+      "Only planets and water droplets high in the atmosphere."
+    ],
+    "explanation": "The Sun lights up the daytime sky. Sometimes the Moon is also visible during the day, especially when it is in a phase where part of its lit surface faces Earth. Stars are always in the sky but are too faint to see when the Sun is up.",
+    "theoryLines": [
+      "The Sun is our closest star and provides the light and warmth that make life possible.",
+      "The Moon orbits Earth and can sometimes be spotted during daylight hours."
+    ]
+  },
+  "earth_6": {
+    "stem": "What can you see in the sky at night?",
+    "options": [
+      "The Sun — it shines in the sky both during the day and at night.",
+      "The Moon and stars.",
+      "The Moon, but no stars are ever visible.",
+      "Stars only — the Moon is never seen at night."
+    ],
+    "explanation": "At night, the side of Earth you are on faces away from the Sun. Without the Sun's bright glare, you can see the Moon and stars. The Moon reflects sunlight, and stars are distant suns that produce their own light.",
+    "theoryLines": [
+      "The Moon is visible at night because it reflects light from the Sun toward Earth.",
+      "Stars are always in the sky, but they can only be seen clearly when it is dark."
+    ]
+  },
+  "earth_7": {
+    "stem": "How does weather change?",
+    "options": [
+      "It stays the same all year",
+      "It changes: hot, cold, rainy, or sunny",
+      "It stays hot everywhere on the same day",
+      "It stays cold with no warm days"
+    ],
+    "explanation": "Weather changes from day to day—hot or cold, rain, sun, wind, and more.",
+    "theoryLines": [
+      "Weather can change from one day to the next.",
+      "The seasons are summer, winter, fall, and spring."
+    ]
+  },
+  "earth_8": {
+    "stem": "When does the Sun shine?",
+    "options": [
+      "The Sun always shines—we see it by day when clouds do not block it",
+      "The Sun shines only at night",
+      "The Sun turns on and off each day",
+      "The Sun is not related to day and night"
+    ],
+    "explanation": "The Sun shines all the time. Clouds can hide it, so daylight may look dimmer.",
+    "theoryLines": [
+      "The Sun keeps shining even when clouds cover the sky.",
+      "Clouds can block our view of the Sun."
+    ]
+  },
+  "earth_9": {
+    "stem": "What causes the seasons?",
+    "options": [
+      "Earth's distance from the Sun as the only cause.",
+      "Earth's tilt and its orbit around the Sun.",
+      "Day-to-day temperature swings in the weather.",
+      "Wind speed around Earth."
+    ],
+    "explanation": "Earth is tilted on its axis and travels around the Sun over the course of a year. When a hemisphere tilts toward the Sun, it receives more direct sunlight over more hours each day — producing summer. When it tilts away, it receives less direct sunlight — producing winter.",
+    "theoryLines": [
+      "When the Northern Hemisphere tilts toward the Sun, it experiences summer while the Southern Hemisphere has winter.",
+      "Earth's distance from the Sun changes only slightly during the year and is not the main cause of seasons."
+    ]
+  },
+  "earth_10": {
+    "stem": "What is the water cycle?",
+    "options": [
+      "Rain falling to the sea with no evaporation returning to the air",
+      "The repeated movement of water among ocean, land, and air",
+      "Evaporation from the sea with no precipitation returning",
+      "Clouds that stay at one height forever"
+    ],
+    "explanation": "In the water cycle, water evaporates, forms clouds, falls as rain or snow, and returns to oceans and land.",
+    "theoryLines": [
+      "The Sun heats water and drives evaporation.",
+      "Water keeps moving through this cycle."
+    ]
+  },
+  "earth_11": {
+    "stem": "What does weather describe?",
+    "options": [
+      "Only the ocean temperature far from land",
+      "Day-to-day conditions of the air around us, such as hot, cold, rainy, or sunny",
+      "Only the rocks deep under Earth's surface",
+      "Only the positions of planets in the solar system"
+    ],
+    "explanation": "Weather is the day-to-day condition of the air outdoors — how hot or cold it is, whether it is rainy or sunny, and how windy it feels.",
+    "theoryLines": [
+      "Weather can change from morning to night and from day to day.",
+      "Climate describes the usual weather pattern in a place over many years."
+    ]
+  },
+  "earth_12": {
+    "stem": "What causes a solar eclipse?",
+    "options": [
+      "The Moon passes between the Sun and Earth and blocks some or all of the Sun",
+      "Earth passes between the Sun and Moon—that is a lunar eclipse",
+      "A full Moon's light blocks the Sun from Earth",
+      "Thick clouds cover the Sun for many hours"
+    ],
+    "explanation": "A solar eclipse happens when the Moon lines up between the Sun and Earth and blocks sunlight. It occurs near a new moon.",
+    "theoryLines": [
+      "A solar eclipse is a rare event.",
+      "It happens only when the Sun, Moon, and Earth line up."
+    ]
+  },
+  "earth_13": {
+    "stem": "What causes the Moon to appear to change shape each night?",
+    "options": [
+      "The Moon produces its own light, which changes in brightness.",
+      "As the Moon orbits Earth, we see different amounts of its sunlit side.",
+      "The Moon actually grows and shrinks throughout the month.",
+      "Earth's shadow always blocks part of the Moon's surface at night."
+    ],
+    "explanation": "The Moon does not produce its own light. As it orbits Earth, the Sun lights different portions of its surface that we can see from Earth, creating the lunar phases.",
+    "theoryLines": [
+      "The Moon completes one orbit of Earth roughly every 28 days.",
+      "The Moon's light is reflected sunlight — it does not glow on its own."
+    ]
+  },
+  "earth_14": {
+    "stem": "What is in the universe?",
+    "options": [
+      "Earth as the only body in the universe",
+      "Stars, planets, moons, and many galaxies",
+      "Only the solar system with no other galaxies",
+      "Only moons that orbit Earth"
+    ],
+    "explanation": "The universe holds stars, planets (like Earth), moons, and many galaxies. It is enormous.",
+    "theoryLines": [
+      "The universe is vast beyond everyday imagination.",
+      "Earth is only a tiny part of it."
+    ]
+  },
+  "earth_15": {
+    "stem": "How many moons does Earth have?",
+    "options": [
+      "Zero",
+      "One",
+      "Two",
+      "Three"
+    ],
+    "explanation": "Earth has one moon. It orbits Earth and is often simply called the Moon.",
+    "theoryLines": [
+      "The Moon is Earth's natural satellite.",
+      "We see it because it reflects sunlight."
+    ]
+  },
+  "earth_16": {
+    "stem": "What is the Sun?",
+    "options": [
+      "A star that gives Earth light and heat.",
+      "A planet that orbits around Earth.",
+      "A moon that travels around Earth.",
+      "A very large planet made mostly of ice."
+    ],
+    "explanation": "The Sun is a star — the closest star to Earth. It provides the light and heat that make life on Earth possible. All planets in our solar system orbit the Sun.",
+    "theoryLines": [
+      "The Sun is a star at the center of our solar system.",
+      "All the planets, including Earth, orbit the Sun."
+    ]
+  },
+  "earth_17": {
+    "stem": "What are the four seasons?",
+    "options": [
+      "There is only one season — hot weather throughout the whole year.",
+      "Spring, summer, fall, and winter — each with different weather patterns.",
+      "Only cold and rainy seasons exist in all places on Earth.",
+      "The weather never really changes, so there are no real seasons."
+    ],
+    "explanation": "Earth has four seasons — spring, summer, fall, and winter — caused by Earth's tilt as it orbits the Sun. Different parts of Earth receive more or less sunlight at different times of year.",
+    "theoryLines": [
+      "Earth's axial tilt causes different parts to receive more or less sunlight throughout the year.",
+      "Seasons are the result of Earth's orbit combined with its tilt."
+    ]
+  },
+  "earth_18": {
+    "stem": "What is a planet?",
+    "options": [
+      "A body that produces its own light and heat like the Sun.",
+      "A large body that orbits a star, such as Earth orbiting the Sun.",
+      "An object that orbits another planet.",
+      "Any small object that travels through space between planets."
+    ],
+    "explanation": "A planet is a large, roughly spherical body that orbits a star. In our solar system, eight planets orbit the Sun. Planets do not produce their own light — we can see them because they reflect sunlight. Earth, Mars, and Jupiter are all planets.",
+    "theoryLines": [
+      "Our solar system has eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+      "Planets are kept in their orbits by the gravitational pull of the Sun."
+    ]
+  },
+  "earth_19": {
+    "stem": "Which statement best describes a planet?",
+    "options": [
+      "A planet is any small object that orbits other planets.",
+      "A large body in space that orbits a star and does not produce its own light.",
+      "A planet is a type of moon that orbits the Sun directly.",
+      "A small glowing object that travels quickly across the night sky."
+    ],
+    "explanation": "A planet is a large body that orbits a star. Unlike stars, planets do not make their own light.",
+    "theoryLines": [
+      "Earth is a planet that orbits the Sun.",
+      "Moons orbit planets, not stars directly."
+    ]
+  },
+  "earth_20": {
+    "stem": "What is an asteroid?",
+    "options": [
+      "A massive body that makes its own light",
+      "A large rock in space that orbits the Sun",
+      "A heavy body that orbits a star like Earth does as a planet",
+      "A satellite that orbits only Earth"
+    ],
+    "explanation": "An asteroid is a rocky body in space that orbits the Sun. Many are found between the planets.",
+    "theoryLines": [
+      "Asteroids are leftovers from the early solar system.",
+      "Some are tiny; some are large."
+    ]
+  },
+  "earth_21": {
+    "stem": "How is a planet different from a star?",
+    "options": [
+      "A planet has its own inner fire that makes it glow in the night sky.",
+      "A planet orbits a star and does not produce its own light.",
+      "A planet is always much bigger than any star.",
+      "A planet is exactly the same as Earth in size and shape."
+    ],
+    "explanation": "A planet orbits a star and does not produce its own light — it reflects sunlight. A star, like our Sun, produces its own light and heat.",
+    "theoryLines": [
+      "Planets travel in nearly circular orbits around a star.",
+      "Our Sun is the star at the center of our solar system."
+    ]
+  },
+  "earth_22": {
+    "stem": "What is a galaxy?",
+    "options": [
+      "A single star in the solar system",
+      "A huge group of stars, planets, and gases",
+      "A moon that orbits Earth",
+      "A single comet with only a short tail"
+    ],
+    "explanation": "A galaxy is a huge collection of millions or billions of stars, planets, gas, and dust held by gravity.",
+    "theoryLines": [
+      "There are many galaxies in the universe.",
+      "Our galaxy is called the Milky Way."
+    ]
+  },
+  "earth_23": {
+    "stem": "What is a black hole?",
+    "options": [
+      "A dark empty place in space",
+      "A region in space with gravity so strong that even light cannot escape",
+      "A dead star with no gravity at all",
+      "A massive moon that blocks light because of its shadow"
+    ],
+    "explanation": "A black hole has gravity so strong that even light cannot escape. One can form when a very massive star collapses.",
+    "theoryLines": [
+      "Black holes are still mysterious to scientists.",
+      "Researchers continue to study them."
+    ]
+  },
+  "earth_24": {
+    "stem": "What is a dwarf planet?",
+    "options": [
+      "A heavy body that makes light like the Sun",
+      "A body that orbits a star and is between a planet and an asteroid in size",
+      "Usually a natural moon of a planet",
+      "A body with an icy tail near the Sun"
+    ],
+    "explanation": "A dwarf planet orbits a star. It is smaller than a regular planet but larger than a typical asteroid. Pluto is an example.",
+    "theoryLines": [
+      "The solar system has several dwarf planets.",
+      "This is a fairly recent classification."
+    ]
+  },
+  "earth_25": {
+    "stem": "What is a gas giant planet?",
+    "options": [
+      "A small rocky planet like Earth, with solid ground to walk on.",
+      "A very large planet made mostly of gas, with no solid surface.",
+      "Any body in space that orbits the Moon.",
+      "A planet made entirely of solid rock deep inside."
+    ],
+    "explanation": "Gas giants are very large planets made mostly of gases. Jupiter and Saturn are examples of gas giants in our solar system.",
+    "theoryLines": [
+      "Gas giants like Jupiter and Saturn are the largest planets in our solar system.",
+      "Strong gravity holds the thick layers of gas together in a gas giant."
+    ]
+  },
+  "earth_26": {
+    "stem": "What are the stars in the night sky?",
+    "options": [
+      "Tiny dots with no energy source",
+      "Huge, very distant stars that make their own light and look like points from Earth",
+      "Moons that reflect light like the Sun",
+      "Planets that glow exactly like stars at night"
+    ],
+    "explanation": "Night-sky stars are huge glowing balls of gas. They look tiny because they are extremely far away.",
+    "theoryLines": [
+      "They are part of our galaxy.",
+      "There are millions of stars."
+    ]
+  },
+  "earth_27": {
+    "stem": "What is a star?",
+    "options": [
+      "A large rocky body that orbits a planet.",
+      "A giant ball of hot glowing gas that produces its own light and heat.",
+      "A chunk of rock that orbits Earth like the Moon.",
+      "A cold, dark object that reflects light from the Sun."
+    ],
+    "explanation": "A star is a massive ball of hot gas held together by gravity. Inside a star, nuclear reactions release huge amounts of energy as light and heat. The Sun is the closest star to Earth.",
+    "theoryLines": [
+      "Stars appear as tiny points of light because they are extremely far away from Earth.",
+      "There are billions of stars in our galaxy alone, and the universe contains billions of galaxies."
+    ]
+  },
+  "earth_space_20": {
+    "stem": "What are the seasons of the year?",
+    "options": [
+      "Summer, winter, fall, and spring",
+      "Only two seasons in a year",
+      "The day-and-night cycle across the year",
+      "Only mood cycles with no link to temperature or rain"
+    ],
+    "explanation": "There are four seasons: summer (warm), winter (cold), fall, and spring.",
+    "theoryLines": [
+      "Seasons change because of Earth's tilt.",
+      "Each season has different typical weather."
+    ]
+  },
+  "earth_16__v2": {
+    "stem": "When does the Sun shine in the sky?",
+    "options": [
+      "The Sun shines at night when the Moon is not visible.",
+      "The Sun shines during the daytime.",
+      "The Sun shines only in the evening.",
+      "The Sun shines only in the early morning."
+    ],
+    "explanation": "We see the Sun during the day because the part of Earth we are on is facing the Sun. When our side rotates away, it becomes night.",
+    "theoryLines": [
+      "The Sun appears to rise in the east and set in the west each day.",
+      "We experience daytime when our side of Earth faces the Sun."
+    ]
+  },
+  "earth_17__v2": {
+    "stem": "When can you usually see the Moon in the sky?",
+    "options": [
+      "Only during the daytime, when the Sun is also out.",
+      "Usually at night, when the sky is dark.",
+      "Only very early in the morning before sunrise.",
+      "Only during heavy thunderstorms."
+    ],
+    "explanation": "The Moon is most visible at night when the sky is dark. It reflects sunlight, which makes it glow in the night sky.",
+    "theoryLines": [
+      "The Moon reflects sunlight, which is why we can see it.",
+      "Though the Moon can sometimes be seen during the day, it is easiest to spot at night."
+    ]
+  },
+  "earth_18__v2": {
+    "stem": "What is inside clouds?",
+    "options": [
+      "Completely dry air with no water",
+      "Tiny water droplets",
+      "Dust with no liquid water",
+      "Strong wind with no moisture"
+    ],
+    "explanation": "Clouds are made of tiny water droplets or ice crystals. When they get heavy, rain can fall.",
+    "theoryLines": [
+      "Clouds form when water vapor condenses.",
+      "When droplets grow heavy, rain or snow can fall."
+    ]
+  },
+  "earth_19__v2": {
+    "stem": "How is a planet different from a star like the Sun?",
+    "options": [
+      "A planet is any bright sparkle seen only at night.",
+      "A planet orbits a star and does not produce its own light.",
+      "A moon is exactly the same thing as a planet.",
+      "A planet produces its own light just like the Sun does."
+    ],
+    "explanation": "Stars make their own light and heat. Planets orbit stars and shine mainly by reflecting light.",
+    "theoryLines": [
+      "The Sun is a star.",
+      "Earth is a planet that orbits the Sun."
+    ]
+  },
+  "earth_20__v2": {
+    "stem": "What best describes a planet in our solar system?",
+    "options": [
+      "A planet produces its own light, just like the Sun.",
+      "A large body that orbits the Sun and does not produce its own light.",
+      "A moon that orbits Earth.",
+      "A tiny object smaller than a comet."
+    ],
+    "explanation": "Planets are large bodies that orbit the Sun. They do not generate their own light the way stars do — instead, they reflect sunlight. Earth, Mars, and Jupiter are all examples of planets in our solar system.",
+    "theoryLines": [
+      "There are eight planets in our solar system, ranging from small rocky worlds to giant gas planets.",
+      "A planet must be large enough for its gravity to pull it into a roughly round shape."
+    ]
+  },
+  "earth_21__v2": {
+    "stem": "What is the Moon?",
+    "options": [
+      "The Moon is a large planet that orbits other large planets.",
+      "The Moon is a rocky body that orbits Earth.",
+      "The Moon is a small object that orbits the Sun directly on its own.",
+      "The Moon is a cloud of water vapor surrounding Earth."
+    ],
+    "explanation": "The Moon is Earth's only natural satellite. It is a rocky body that orbits Earth about once every 28 days and reflects sunlight.",
+    "theoryLines": [
+      "The Moon is Earth's natural satellite.",
+      "The Moon reflects sunlight, which is why we can see it at night."
+    ]
+  },
+  "earth_22__v2": {
+    "stem": "What is an asteroid?",
+    "options": [
+      "A sparkling body that makes its own light",
+      "A rock in space that orbits the Sun",
+      "A heavy body like Earth in orbit",
+      "A satellite that orbits the Moon"
+    ],
+    "explanation": "An asteroid is a rocky body in space that orbits the Sun. Many are found between the planets.",
+    "theoryLines": [
+      "Asteroids are leftovers from the early solar system.",
+      "Some are tiny; some are large."
+    ]
+  },
+  "earth_24__v2": {
+    "stem": "What is the water cycle?",
+    "options": [
+      "Precipitation with no evaporation or flow back to the sea",
+      "The process in which water moves among ocean, land, and atmosphere",
+      "Snow stuck in one place with no melting or evaporating",
+      "Fixed clouds with no precipitation to the ground"
+    ],
+    "explanation": "In the water cycle, water moves among ocean, land, and air through evaporation, condensation, and precipitation.",
+    "theoryLines": [
+      "It is an ongoing process.",
+      "Water evaporates, forms clouds, and falls as rain or snow."
+    ]
+  },
+  "earth_25__v2": {
+    "stem": "What are clouds?",
+    "options": [
+      "Dry air with no visible droplets",
+      "Tiny water droplets or ice crystals in the atmosphere",
+      "Dust alone with no moisture",
+      "Fast wind with no gathered droplets"
+    ],
+    "explanation": "Clouds are tiny water droplets or ice crystals in the air. When they get heavy, rain or snow can fall.",
+    "theoryLines": [
+      "Clouds form when water vapor condenses.",
+      "There are many kinds of clouds."
+    ]
+  },
+  "earth_26__v2": {
+    "stem": "What does rain do for the Earth?",
+    "options": [
+      "Rain makes the soil harder and prevents water from reaching plant roots.",
+      "Rain brings fresh water to the soil, which plants and animals need to survive.",
+      "Rain only creates puddles on the surface and has no other purpose.",
+      "Rain is water that rises upward from the soil into the clouds."
+    ],
+    "explanation": "Rain is an important part of the water cycle. It brings fresh water to the land, filling rivers, lakes, and soil so that plants, animals, and people can use it.",
+    "theoryLines": [
+      "Rain is a key stage in the water cycle.",
+      "Water from rain is absorbed by soil and used by plants and animals."
+    ]
+  },
+  "earth_27__v2": {
+    "stem": "What is snow?",
+    "options": [
+      "Thick ice on grass with no fall from the sky",
+      "Ice crystals that fall from clouds when it is very cold",
+      "Warm rain with no ice at all",
+      "Heavy hailstones always on the ground"
+    ],
+    "explanation": "Snow is made of ice crystals that fall from clouds in very cold weather. Each snowflake has its own pattern.",
+    "theoryLines": [
+      "Snow falls when temperatures are below freezing.",
+      "Snow is important for climate and water supply."
+    ]
+  },
+  "earth_28": {
+    "stem": "How does heat move?",
+    "options": [
+      "Heat stays in one place and never moves on its own.",
+      "Heat moves from warmer areas to cooler areas.",
+      "Heat can only move through water and nothing else.",
+      "Rain is what causes heat to move upward into the sky."
+    ],
+    "explanation": "Heat always flows from a warmer area to a cooler area. This movement of energy is called heat transfer.",
+    "theoryLines": [
+      "Heat transfer happens in three ways: conduction, convection, and radiation.",
+      "On a sunny day, warm air rises because heat moves from the warm ground into the cooler air above."
+    ]
+  },
+  "earth_space_phase717_g2_1": {
+    "stem": "Why is daytime brighter than nighttime?",
+    "options": [
+      "The Sun is up and provides light and warmth during the day.",
+      "The Moon always reflects more sunlight than the Sun during the day.",
+      "Stars shine just as brightly during the night as the Sun does during the day.",
+      "Daytime and nighttime are always equally bright."
+    ],
+    "explanation": "During the day, the side of Earth you are on faces the Sun. The Sun is a powerful source of light and heat. At night, your side of Earth faces away from the Sun, so it is darker and cooler.",
+    "theoryLines": [
+      "The Sun is Earth's main source of light and energy.",
+      "Earth's rotation causes the switch between day and night every 24 hours."
+    ]
+  },
+  "earth_space_phase717_g2_2": {
+    "stem": "Which statement about Earth and the Sun is true?",
+    "options": [
+      "Earth travels around the Sun once every year.",
+      "Earth only moves through space during the daytime.",
+      "The Sun and Moon revolve around each other.",
+      "Earth and the Sun are both completely still in space."
+    ],
+    "explanation": "Earth moves around the Sun in a path called an orbit. One full orbit takes about 365 days — one year. Earth also spins on its own axis, which is what creates day and night over a 24-hour cycle.",
+    "theoryLines": [
+      "Earth's yearly journey around the Sun is called a revolution.",
+      "Earth's daily spin on its own axis is called rotation."
+    ]
+  },
+  "earth_space_phase717_g2_3": {
+    "stem": "What is the main difference between a star and a planet like Earth?",
+    "options": [
+      "A planet is a body that orbits a star",
+      "There is no difference between them",
+      "A planet is always larger than the Sun",
+      "Stars are found only on the Moon"
+    ],
+    "explanation": "A star like the Sun is a hot glowing ball that gives off its own light. A planet is cooler and orbits a star.",
+    "theoryLines": [
+      "In the solar system, Earth is a planet.",
+      "The Sun is the star at the center of the solar system."
+    ]
+  },
+  "earth_29": {
+    "stem": "Near the equator, sunlight is spread over less ground area than near the poles at the same local hour. Why is equatorial climate warmer on average?",
+    "options": [
+      "A higher sun angle concentrates more energy per unit area than low-angle rays near the poles",
+      "The Sun is always physically closer to the equator than to any other point on Earth",
+      "The poles receive no sunlight at all",
+      "The equator is warm only because of ocean salt"
+    ],
+    "explanation": "Radiation geometry and the year-long energy budget decide how much energy reaches each unit of area — a foundation for climate belts.",
+    "theoryLines": [
+      "Sun angle links to latitude and season.",
+      "Climate is a long-term average; weather is short-term."
+    ]
+  },
+  "earth_30": {
+    "stem": "On a sunny day a beach warms up; at night the sea stays relatively warm. Which description fits a typical daytime sea breeze?",
+    "options": [
+      "Warmer air over land rises, and cooler air from the sea moves inland",
+      "Wind always blows from mountains to sea at noon",
+      "The sea is always colder than land at noon in every place",
+      "Heating differences have no link to air movement"
+    ],
+    "explanation": "Land and water heat differently, creating local pressure differences and a daily land–sea breeze cycle.",
+    "theoryLines": [
+      "Different materials have different specific heat.",
+      "Wind is air moving from higher to lower pressure."
+    ]
+  },
+  "earth_31": {
+    "stem": "Why is the Moon not always visible in the night sky?",
+    "options": [
+      "Only the part of the Moon facing Earth that is lit by the Sun is visible, and the Moon's position changes throughout the month.",
+      "The Moon is always fully visible on every clear night.",
+      "The Moon disappears from the solar system for part of each month.",
+      "The Moon always shines at full brightness from every direction."
+    ],
+    "explanation": "The Moon travels around Earth about once a month. As its position changes relative to the Sun, the amount of the Moon's lit surface visible from Earth changes too — these are the phases of the Moon. During a new moon phase, the Moon is between Earth and the Sun, and its lit side faces away from us, making it invisible at night.",
+    "theoryLines": [
+      "The Moon does not produce its own light — it reflects sunlight toward Earth.",
+      "The lunar cycle from new moon to full moon and back takes about 29.5 days."
+    ]
+  },
+  "earth_32": {
+    "stem": "How do greenhouse gases such as CO₂ help warm Earth compared with a world that has little atmosphere?",
+    "options": [
+      "Visible light can enter, then more outgoing heat is trapped and returned toward the surface",
+      "CO₂ creates brand-new sunlight inside the atmosphere",
+      "They completely block all sunlight",
+      "They cool Earth directly by making ice in the air"
+    ],
+    "explanation": "An active atmosphere is not a simple glass greenhouse, but the key idea is the same: when more outgoing energy is kept in the system, the average radiative balance warms.",
+    "theoryLines": [
+      "Energy from the Sun is absorbed and later returned to space.",
+      "Atmosphere composition affects the radiation balance."
+    ]
+  },
+  "earth_33": {
+    "stem": "Which best explains why Earth experiences four different seasons each year?",
+    "options": [
+      "Earth's tilted axis causes different regions to receive more or less sunlight as it orbits the Sun",
+      "Seasons are caused by changes deep inside Earth's core that release different amounts of heat",
+      "Friction between Earth and the Moon slows Earth down in winter and speeds it up in summer",
+      "All places on Earth receive the same amount of sunlight throughout the entire year"
+    ],
+    "explanation": "Earth's axis is tilted at about 23.5 degrees. As Earth orbits the Sun, different regions receive varying amounts of sunlight, which causes the four seasons.",
+    "theoryLines": [
+      "Earth's tilt, not its distance from the Sun, is the main cause of the seasons.",
+      "Living things adapt their behavior and biology to seasonal changes in light and temperature."
+    ]
+  },
+  "earth_34": {
+    "stem": "Why do large storm systems in the Northern Hemisphere tend to rotate in a consistent direction (at school level)?",
+    "options": [
+      "Earth’s rotation creates a Coriolis deflection that bends large-scale wind paths",
+      "The Sun pushes storms in one fixed daily direction",
+      "Stronger gravity at the poles instantly reverses rotation",
+      "Wind always flows straight east to west with no curve"
+    ],
+    "explanation": "Earth’s spin adds a deflection to large, long-lasting motions. It does not explain a glass of water on a desk, but it does shape global storm patterns in simple models.",
+    "theoryLines": [
+      "Scale and time matter when spotting directional effects.",
+      "Simple models help and also have limits."
+    ]
+  },
+  "earth_35": {
+    "stem": "Why does protecting headwater drainage basins (streams and soak-up areas) help water quality downstream?",
+    "options": [
+      "They slow and filter strong flow, reduce erosion, and allow more infiltration",
+      "Headwaters never have pollution, so they have no link downstream",
+      "Erosion does not happen in streams",
+      "Water does not tend to flow downhill"
+    ],
+    "explanation": "Landscape management changes water speed and sediment load. Protecting sources reduces problems for communities farther down the flow.",
+    "theoryLines": [
+      "The water cycle connects headwaters to lowlands.",
+      "Preventing erosion protects water and soil quality."
+    ]
+  },
+  "earth_36": {
+    "stem": "Why can volcanic ash affect flights far from an eruption, and sometimes short-term climate temperature too?",
+    "options": [
+      "Particles and gases can reach high altitudes and change air quality and radiation patterns",
+      "Volcanic ash always stays only above the crater and never moves with wind",
+      "An eruption changes the Earth–Sun distance",
+      "Planes feed on ash, so they stop flying"
+    ],
+    "explanation": "A strong ash cloud can travel thousands of miles. It can affect visibility and engines, and briefly change the radiation balance.",
+    "theoryLines": [
+      "The atmosphere is a connected global system.",
+      "Volcanic events can be local or far-reaching, depending on strength."
+    ]
+  },
+  "earth_37": {
+    "stem": "Which part of Earth's atmosphere protects living things from harmful UV rays?",
+    "options": [
+      "The ozone layer, which absorbs most of the Sun's harmful ultraviolet radiation.",
+      "The cloud layer, which reflects all sunlight completely away from Earth.",
+      "The surface of the Moon, which blocks UV rays before they reach Earth.",
+      "The ocean floor, which absorbs UV radiation before it reaches land."
+    ],
+    "explanation": "The ozone layer is a region of Earth's upper atmosphere that absorbs and blocks most of the Sun's ultraviolet (UV) radiation, protecting living things from harm.",
+    "theoryLines": [
+      "The ozone layer is found in the stratosphere, high in the atmosphere.",
+      "Damage to the ozone layer allows more harmful UV rays to reach Earth's surface."
+    ]
+  },
+  "earth_38": {
+    "stem": "What is the main cause of daily ocean tides near a coast?",
+    "options": [
+      "Gravitational pull from the Moon and the Sun, plus Earth’s position relative to them",
+      "Only sweeping winds, with no Moon effect",
+      "Heat expansion from deserts alone, with no Moon or Sun effect",
+      "Water color alone"
+    ],
+    "explanation": "Tides are mainly linked to gravity from the Moon and Sun. Wind matters locally but does not alone explain the common twice-daily tidal cycle.",
+    "theoryLines": [
+      "Gravity acts on large masses, and water responds by shifting.",
+      "Ocean events can combine several helper factors."
+    ]
+  },
+  "earth_39": {
+    "stem": "What do all the planets in our solar system have in common?",
+    "options": [
+      "They all orbit the Sun.",
+      "They all produce their own light.",
+      "They all have the same number of moons.",
+      "They are all made entirely of gas."
+    ],
+    "explanation": "Every planet in our solar system orbits the Sun, held in its path by the Sun's gravity. Some planets are rocky and small, like Earth and Mars, while others are enormous balls of gas, like Jupiter and Saturn. But all eight planets share the same star — the Sun.",
+    "theoryLines": [
+      "The eight planets in our solar system are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+      "Each planet travels its own orbital path around the Sun at a different speed and distance."
+    ]
+  },
+  "earth_40": {
+    "stem": "How can shrinking ice cover and replacing it with darker seawater, in principle, speed up regional warming?",
+    "options": [
+      "Lower albedo means less sunlight is reflected and more is absorbed",
+      "Ice is always darker than water, so ice warms more",
+      "Surface color has no link to energy gain",
+      "Water never absorbs sunlight"
+    ],
+    "explanation": "Albedo — how reflective a surface is — affects how much energy is absorbed. Switching from ice to water changes the local energy budget and can support feedbacks.",
+    "theoryLines": [
+      "Climate feedbacks help explain fast local changes.",
+      "Oceans and ice help anchor climate patterns."
+    ]
+  },
+  "earth_41": {
+    "stem": "Which natural process most powerfully and steadily wears away and reshapes Earth's surface over thousands of years?",
+    "options": [
+      "Water — through rivers, rain, and ocean waves that gradually wear down and carry away rock.",
+      "Lightning striking repeatedly in the same spots on exposed hilltops.",
+      "Animals digging burrows through all types of soil and rock.",
+      "Earthquakes that violently shake and crack rock during sudden, brief events."
+    ],
+    "explanation": "Water is one of the most powerful forces of erosion on Earth. Rivers carve valleys, rain washes soil away, and ocean waves wear down cliffs. These processes happen very slowly — it can take thousands or millions of years to reshape a landscape. Earthquakes and lightning can also change the surface, but they act suddenly rather than through the long, steady wearing-down process called erosion.",
+    "theoryLines": [
+      "Erosion is the process by which rock, soil, and sediment are worn away and carried to new places over long periods of time.",
+      "Wind, ice, gravity, and flowing water all cause erosion; water is among the most powerful and widespread of these agents."
+    ]
+  },
+  "earth_42": {
+    "stem": "How is the Ring of Fire (a Pacific belt of volcanoes and earthquakes) linked to clusters of quakes and eruptions?",
+    "options": [
+      "Plate boundaries create tectonic motion and magma pathways",
+      "It is only a line marking fish locations and is unrelated to plates",
+      "Separate plates can never meet at a shared boundary",
+      "The Ring of Fire is only a cultural center"
+    ],
+    "explanation": "Plate-boundary maps help explain where geologic energy is released. That is a core Earth-science thinking tool.",
+    "theoryLines": [
+      "Earth’s structure includes boundaries between tectonic plates.",
+      "Volcanoes and earthquakes often share tectonic settings."
+    ]
+  },
+  "earth_43": {
+    "stem": "Which ocean condition supports the birth and strengthening of a strong tropical storm, at school level?",
+    "options": [
+      "Warm upper ocean water that supplies energy and moisture to the air",
+      "Only very cold ocean water",
+      "A fully dry winter season with no water vapor",
+      "Very high air pressure alone with no rotation"
+    ],
+    "explanation": "Latent heat from a warm ocean is “fuel” for these systems, so sea-surface temperature links to regional risk.",
+    "theoryLines": [
+      "Ocean and atmosphere exchange energy and moisture.",
+      "Storm development happens in stages."
+    ]
+  },
+  "earth_44": {
+    "stem": "Why is the “rock cycle” not one fixed four-step loop that always repeats in the same fast order?",
+    "options": [
+      "Different paths of heat, pressure, melting, and transport create different routes",
+      "Rock always stays fossilized forever with no change",
+      "There is only one step: crystallization",
+      "The cycle happens once on Earth and then stops"
+    ],
+    "explanation": "The rock cycle is a thinking model that links processes. Real geologic history can be complex and can jump from one rock type to another.",
+    "theoryLines": [
+      "Models simplify reality; they do not replace it.",
+      "Rocks record histories of past processes."
+    ]
+  },
+  "earth_45": {
+    "stem": "Why does climate near the equator usually differ from climate near the poles for reasons beyond sunlight alone?",
+    "options": [
+      "Oceans, winds, clouds, and surface reflectivity also shape climate belts",
+      "The Sun disappears only at night near the poles",
+      "The Moon blocks the Sun near the equator",
+      "Clouds alone turn off all light worldwide"
+    ],
+    "explanation": "Climate is multi-factor: oceans, albedo, and air flows matter. Latitude is a starting point, not the whole story.",
+    "theoryLines": [
+      "Climate results from energy and water moving across Earth.",
+      "Climate maps summarize long-term averages."
+    ]
+  },
+  "earth_46": {
+    "stem": "In a dry year, why can drilling a local aquifer deepen drought stress in places far from the well?",
+    "options": [
+      "Groundwater follows a connected hydrologic system shared across an area",
+      "Groundwater never moves between points",
+      "Drilling adds unlimited water with no effect on neighbors",
+      "Dryness is measured only with a well thermometer"
+    ],
+    "explanation": "Underground water is often a shared resource. Heavy use can reduce supply for people, farms, and streams.",
+    "theoryLines": [
+      "The water cycle includes infiltration and underground flow.",
+      "Managing water means understanding shared aquifers."
+    ]
+  },
+  "earth_47": {
+    "stem": "Why does a shadow’s length in the middle of a region change during a clear day?",
+    "options": [
+      "The Sun’s ray angle changes as Earth rotates",
+      "The Sun orbits Earth at a fixed height above",
+      "Shadows depend only on clouds, never on time of day",
+      "Earth is flat, so the angle never changes"
+    ],
+    "explanation": "Daily rotation changes the Sun’s position in the sky, so shadow length changes with hour, season, and latitude.",
+    "theoryLines": [
+      "Day and night come from Earth’s rotation.",
+      "A simple light-and-shadow model can show the idea in class."
+    ]
+  },
+  "earth_48": {
+    "stem": "Why can weather over two days be cool while a whole-year trend is still warming?",
+    "options": [
+      "Weather is short-term change; climate is the longer-term pattern",
+      "There is no difference between a day and a decade",
+      "If one day is cold, the year must be colder than average",
+      "Temperature measurement never affects understanding"
+    ],
+    "explanation": "Clear science language prevents jumping from one cool day to a climate claim. That distinction matters in climate discussions.",
+    "theoryLines": [
+      "Natural variability exists inside longer trends.",
+      "Statistics become clear only over enough time."
+    ]
+  }
+}

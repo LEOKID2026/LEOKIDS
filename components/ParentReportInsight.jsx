@@ -11,6 +11,7 @@
  */
 
 import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
+import { reportPackCopy } from "../lib/reports/report-pack-copy.js";
 import React from "react";
 import { normalizeParentFacing } from "../utils/parent-report-language/parent-facing-normalize.js";
 import { filterOutParentReportDuplicates } from "../utils/parent-report-text-dedupe.js";
@@ -87,7 +88,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
       {strengths.length > 0 ? (
         <div className="mb-3">
-          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-emerald-200/95">What's going well</p>
+          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-emerald-200/95">{reportPackCopy("components__ParentReportInsight", "whats_going_well")}</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
             {strengths.map((textHe, i) => (
               <li key={`strength-${bulletKey(rawStrengths[i], i)}`}>{textHe}</li>
@@ -98,7 +99,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
       {focusAreas.length > 0 ? (
         <div className="mb-3">
-          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-amber-200/95">Areas to strengthen</p>
+          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-amber-200/95">{reportPackCopy("components__ParentReportInsight", "areas_to_strengthen")}</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
             {focusAreas.map((textHe, i) => (
               <li key={`focus-${bulletKey(rawFocus[i], i)}`}>{textHe}</li>
@@ -109,7 +110,7 @@ function StructuredBlock({ structured, sourceLabel }) {
 
       {homeTips.length > 0 ? (
         <div className="mb-3">
-          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-sky-200/95">Home tips</p>
+          <p className="m-0 mb-1 text-xs md:text-sm font-bold text-sky-200/95">{reportPackCopy("components__ParentReportInsight", "home_tips")}</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
             {homeTips.map((textHe, i) => (
               <li key={`tip-${i}`}>{textHe}</li>
@@ -163,11 +164,16 @@ export function ParentReportInsight({ explanation, className = "", excludeHomeTi
 
   if (!structured && !fallbackText.trim()) return null;
 
-  const headingHe = structured ? "Smart summary for parents" : "Insight for parents";
+  const headingHe = structured
+    ? reportPackCopy("components__ParentReportInsight", "smart_summary_for_parents")
+    : reportPackCopy("components__ParentReportInsight", "insight_for_parents");
   const isStructuredAi = structured && (explanation.structuredSource === "ai" || explanation.source === "ai");
   const sourceLabel = structured
     ? isStructuredAi
-      ? "This summary was written with the help of AI based on the report data, and is meant to be used only as a learning aid."
+      ? reportPackCopy(
+          "components__ParentReportInsight",
+          "this_summary_was_written_with_the_help_of_ai_based_on_the_report_data_an"
+        )
       : globalBurnDownCopy("components__ParentReportInsight", "this_summary_was_generated_automatically_from_the_report_data_and_is_mea")
     : "";
 

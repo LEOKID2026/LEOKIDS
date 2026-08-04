@@ -4,6 +4,7 @@
  */
 
 import { pickVariant } from "../parent-report-language/variants.js";
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 import {
   buildSkillDetailLimitationUncertaintyHe,
   hasTopicLevelEvidence,
@@ -154,25 +155,30 @@ function deriveEnvelope(input) {
   return "WE3";
 }
 
+const NARRATIVE_SLUG = "utils__contracts__narrative-contract-v1";
+
 function buildObservationSlot(displayName, q, acc, seed) {
   if (q <= 0) {
     return pickVariant(seed, [
-      `In ${displayName} there's still too little practice in the selected period to know how it's really going.`,
-      `In ${displayName} we're only seeing a few attempts so far - that's okay; we'll add a bit more and come back to it.`,
-      `In ${displayName} there's still little practice in the selected period, so we're keeping a cautious wording.`]);
+      reportPackCopy(NARRATIVE_SLUG, "observation_little_1", { displayName }),
+      reportPackCopy(NARRATIVE_SLUG, "observation_little_2", { displayName }),
+      reportPackCopy(NARRATIVE_SLUG, "observation_little_3", { displayName }),
+    ]);
   }
   return pickVariant(seed, [
-    `In ${displayName} in the selected period there are ${q} questions, with about ${acc}% accuracy.`,
-    `In ${displayName}, ${q} questions were collected this period, with accuracy around ${acc}%.`,
-    `In ${displayName}, ${q} questions were collected this period, with average accuracy of about ${acc}%.`]);
+    reportPackCopy(NARRATIVE_SLUG, "observation_volume_1", { displayName, q, acc }),
+    reportPackCopy(NARRATIVE_SLUG, "observation_volume_2", { displayName, q, acc }),
+    reportPackCopy(NARRATIVE_SLUG, "observation_volume_3", { displayName, q, acc }),
+  ]);
 }
 
 function buildInterpretationSlot(envelope, cannotConcludeYet, seed, q = 0, acc = 0) {
   if (cannotConcludeYet || envelope === "WE0") {
     return pickVariant(seed, [
-      "It's still too early to set a clear direction here - we'll keep watching the practice.",
-      "It's too early to write a final summary; we'll add a bit more practice and see how it holds.",
-      "There still isn't enough data to set a clear direction - we'll move slowly and carefully."]);
+      reportPackCopy(NARRATIVE_SLUG, "interpretation_we0_1"),
+      reportPackCopy(NARRATIVE_SLUG, "interpretation_we0_2"),
+      reportPackCopy(NARRATIVE_SLUG, "interpretation_we0_3"),
+    ]);
   }
   if (envelope === "WE1") {
     const qWeak = Math.max(0, Math.round(Number(q) || 0));

@@ -22,12 +22,12 @@ const OPERATION_NAMES = {
   divisibility: reportPackCopy("utils__math-report-generator", "divisibility_rules"),
   prime_composite: reportPackCopy("utils__math-report-generator", "prime_and_composite_numbers"),
   powers: reportPackCopy("utils__math-report-generator", "powers"),
-  ratio: "Ratio",
+  ratio: reportPackCopy("utils__math-report-generator", "ratio"),
   equations: reportPackCopy("utils__math-report-generator", "equations"),
   order_of_operations: reportPackCopy("utils__math-report-generator", "order_of_operations"),
   zero_one_properties: reportPackCopy("utils__math-report-generator", "properties_of_0_and_1"),
   estimation: reportPackCopy("utils__math-report-generator", "estimation"),
-  scale: "Scale",
+  scale: reportPackCopy("utils__math-report-generator", "scale"),
   compare: reportPackCopy("utils__math-report-generator", "comparison"),
   number_sense: reportPackCopy("utils__math-report-generator", "number_sense"),
   factors_multiples: reportPackCopy("utils__math-report-generator", "factors_and_multiples"),
@@ -37,32 +37,40 @@ const OPERATION_NAMES = {
   comparison: reportPackCopy("utils__math-report-generator", "comparison"),
   patterns: reportPackCopy("utils__math-report-generator", "patterns_and_sequences"),
   multiplication_advanced: reportPackCopy("utils__math-report-generator", "advanced_multiplication"),
-  mixed: "Mixed"
+  mixed: reportPackCopy("utils__math-report-generator", "mixed_practice")
 };
 
-// Topic display names (geometry)
-const TOPIC_NAMES = {
-  shapes_basic: reportPackCopy("utils__math-report-generator", "basic_shapes"),
-  shapes: reportPackCopy("utils__math-report-generator", "shapes"),
-  area: "Area",
-  perimeter: reportPackCopy("utils__math-report-generator", "perimeter"),
-  volume: reportPackCopy("utils__math-report-generator", "volume"),
-  angles: reportPackCopy("utils__math-report-generator", "angles"),
-  parallel_perpendicular: reportPackCopy("utils__math-report-generator", "parallel_and_perpendicular"),
-  triangles: reportPackCopy("utils__math-report-generator", "triangles"),
-  quadrilaterals: reportPackCopy("utils__math-report-generator", "quadrilaterals"),
-  transformations: reportPackCopy("utils__math-report-generator", "transformations"),
-  rotation: reportPackCopy("utils__math-report-generator", "rotation"),
-  symmetry: reportPackCopy("utils__math-report-generator", "symmetry"),
-  diagonal: reportPackCopy("utils__math-report-generator", "diagonal"),
-  heights: reportPackCopy("utils__math-report-generator", "heights"),
-  tiling: reportPackCopy("utils__math-report-generator", "tiling"),
-  circles: reportPackCopy("utils__math-report-generator", "circle"),
-  solids: reportPackCopy("utils__math-report-generator", "solids"),
-  pythagoras: reportPackCopy("utils__math-report-generator", "pythagoras"),
-  coordinates: reportPackCopy("utils__math-report-generator", "points_and_coordinates"),
-  mixed: "Mixed"
+// Topic display names (geometry) — pack keys for locale-aware lookup at call time
+const TOPIC_PACK_KEYS = {
+  shapes_basic: "basic_shapes",
+  shapes: "shapes",
+  area: "area",
+  perimeter: "perimeter",
+  volume: "volume",
+  angles: "angles",
+  parallel_perpendicular: "parallel_and_perpendicular",
+  triangles: "triangles",
+  quadrilaterals: "quadrilaterals",
+  transformations: "transformations",
+  rotation: "rotation",
+  symmetry: "symmetry",
+  diagonal: "diagonal",
+  heights: "heights",
+  tiling: "tiling",
+  circles: "circle",
+  solids: "solids",
+  pythagoras: "pythagoras",
+  coordinates: "points_and_coordinates",
+  mixed: "mixed_practice"
 };
+
+/** @deprecated Prefer getTopicName — kept for any legacy direct map reads */
+const TOPIC_NAMES = Object.fromEntries(
+  Object.entries(TOPIC_PACK_KEYS).map(([k, packKey]) => [
+    k,
+    reportPackCopy("utils__math-report-generator", packKey),
+  ])
+);
 
 /**
  * Strip grade/kind suffixes from stored topic bucket keys (e.g. area::grade:g4, area\u0001g4).
@@ -99,8 +107,19 @@ function resolveMathOperationLabelHe(baseKey) {
   const base = String(baseKey || "").trim();
   if (!base) return "";
   if (MATH_TOPIC_PLACEHOLDER_KEYS.has(base.toLowerCase())) return "";
+  const normalized = base.toLowerCase().replace(/\s+/g, "_");
+  const aliases = {
+    compare: "comparison",
+    comparison: "comparison",
+  };
+  const packKey = normalized.startsWith("wp_")
+    ? "word_problems"
+    : aliases[normalized] || normalized;
+  const fromPack = reportPackCopy("utils__math-report-generator", packKey);
+  if (fromPack && fromPack !== packKey) return fromPack;
   if (OPERATION_NAMES[base]) return OPERATION_NAMES[base];
-  if (base.startsWith("wp_")) return OPERATION_NAMES.word_problems;
+  if (OPERATION_NAMES[normalized]) return OPERATION_NAMES[normalized];
+  if (normalized.startsWith("wp_")) return OPERATION_NAMES.word_problems;
   return "";
 }
 
@@ -136,6 +155,11 @@ export function getMathReportBucketDisplayName(bucketKey) {
 export function getTopicName(topic) {
   const key = normalizeReportTopicBucketKey(topic);
   if (!key || MATH_TOPIC_PLACEHOLDER_KEYS.has(key.toLowerCase())) return "";
+  const packKey = TOPIC_PACK_KEYS[key];
+  if (packKey) {
+    const fromPack = reportPackCopy("utils__math-report-generator", packKey);
+    if (fromPack && fromPack !== packKey) return fromPack;
+  }
   return TOPIC_NAMES[key] || "";
 }
 
@@ -159,6 +183,14 @@ const ENGLISH_TOPIC_NAMES = {
 export function getEnglishTopicName(topic) {
   const key = normalizeReportTopicBucketKey(topic);
   if (!key) return "";
+  const aliases = {
+    sentence: "sentence_building",
+    sentences: "sentence_building",
+    mixed: "mixed_practice",
+  };
+  const packKey = aliases[key] || key;
+  const fromPack = reportPackCopy("utils__math-report-generator", packKey);
+  if (fromPack && fromPack !== packKey) return fromPack;
   return ENGLISH_TOPIC_NAMES[key] || "";
 }
 

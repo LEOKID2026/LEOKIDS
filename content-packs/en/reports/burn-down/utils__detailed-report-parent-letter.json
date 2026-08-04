@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "the_subject_fallback": "the subject",
+    "little_practice_opening": "There's little practice in {lab} this period, so a broad conclusion isn't possible yet. It helps to continue with short practice and check if the direction holds after more questions.",
+    "practice_no_topic_detail_opening": "There's practice in {lab}, but not yet enough detail by topic to show a precise conclusion. It helps to continue with short practice, and in the next report it will be easier to see what repeats.",
+    "focus_first_two_topics": "In {lab} it's worth focusing first on {topic0}. {questions0} questions were solved, with {accuracy0}% accuracy. Another topic worth watching is {topic1}, with {questions1} questions and {accuracy1}% accuracy.",
+    "focus_now_one_topic": "In {lab} it's worth focusing right now on {topic}. {questions} questions were solved, with {accuracy}% accuracy.",
+    "main_pattern_seen": "The main pattern seen: {pattern}."
+  }
+}

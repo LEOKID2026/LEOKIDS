@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "summary_got_of": "أجبت بشكل صحيح على {correct} من {total} أسئلة",
+    "summary_got": "أجبت بشكل صحيح على {correct} أسئلة",
+    "summary_finished": "أنهيت النشاط",
+    "score_chip_of": "{correct}/{total} أسئلة",
+    "score_chip": "{correct} أسئلة"
+  }
+}

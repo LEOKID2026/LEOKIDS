@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "title": "Finish and submit this activity?",
+    "answered_of": "You answered {answered} of {questionCount} questions",
+    "unanswered_warn": "There are {count} unanswered questions. After submitting you cannot go back and change answers.",
+    "submit_note": "After submitting you cannot go back and change answers.",
+    "cancel": "Cancel",
+    "submitting": "Submitting…",
+    "confirm": "Yes, finish and submit"
+  }
+}

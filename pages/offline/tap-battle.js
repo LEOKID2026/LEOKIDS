@@ -10,6 +10,9 @@ import OfflineGameHoldShell from "../../components/offline/OfflineGameHoldShell.
 import { useGameAudio } from "../../hooks/useGameAudio";
 import { assertDemoPlayAllowed } from "../../lib/demo/demo-play-guard.client.js";
 
+const PACK = "pages__offline__tap-battle";
+const copy = (key, vars) => gamePackCopy(PACK, key, vars);
+
 const DURATIONS = [5, 10, 15];
 
 export default function TapBattle() {
@@ -116,13 +119,13 @@ export default function TapBattle() {
 
   function finalizeRound() {
     setPhase("finished");
-    let message = "Tie!";
+    let message = copy("tie_result");
     const nextScore = { ...score };
     if (counts.left > counts.right) {
-      message = gamePackCopy("pages__offline__tap-battle", "left_side_wins");
+      message = copy("left_side_wins");
       nextScore.left += 1;
     } else if (counts.right > counts.left) {
-      message = gamePackCopy("pages__offline__tap-battle", "right_side_wins");
+      message = copy("right_side_wins");
       nextScore.right += 1;
     } else {
       nextScore.ties += 1;
@@ -202,13 +205,13 @@ export default function TapBattle() {
                 onClick={backSafe}
                 className="min-w-[60px] px-3 py-1 rounded-lg text-sm font-bold bg-white/5 border border-white/10 hover:bg-white/10"
               >
-                Back
+                {copy("back")}
               </button>
               {showAudioButton ? <GameAudioSettingsButton /> : null}
             </div>
             <div className="absolute end-2 top-2 pointer-events-auto">
               <span className="text-xs uppercase tracking-[0.3em] text-white/60">
-                Local
+                {copy("local_badge")}
               </span>
             </div>
           </div>
@@ -226,10 +229,10 @@ export default function TapBattle() {
         >
           <div className="text-center mb-1">
             <h1 className="text-2xl font-extrabold text-white mb-0.5">
-              ⚡️ Tap Battle
+              {copy("title")}
             </h1>
             <p className="text-white/70 text-xs">
-              Round {round} • {roundDuration} seconds
+              {copy("round_subtitle", { round, duration: roundDuration })}
             </p>
           </div>
 
@@ -238,15 +241,15 @@ export default function TapBattle() {
             className="grid grid-cols-3 gap-1 mb-1 w-full max-w-md"
           >
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Left</div>
+              <div className="text-[10px] text-white/60">{copy("score_left")}</div>
               <div className="text-sm font-bold text-purple-400">{score.left}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Tie</div>
+              <div className="text-[10px] text-white/60">{copy("score_tie")}</div>
               <div className="text-sm font-bold text-amber-400">{score.ties}</div>
             </div>
             <div className="bg-black/30 border border-white/10 rounded-lg p-1 text-center">
-              <div className="text-[10px] text-white/60">Right</div>
+              <div className="text-[10px] text-white/60">{copy("score_right")}</div>
               <div className="text-sm font-bold text-orange-400">{score.right}</div>
             </div>
           </div>
@@ -262,7 +265,7 @@ export default function TapBattle() {
             >
               {DURATIONS.map((dur) => (
                 <option key={dur} value={dur}>
-                  {dur} seconds
+                  {copy("duration_option", { duration: dur })}
                 </option>
               ))}
             </select>
@@ -271,26 +274,26 @@ export default function TapBattle() {
               disabled={phase === "countdown" || phase === "playing"}
               className="h-9 px-4 rounded-lg bg-red-500/80 hover:bg-red-500 font-bold text-sm disabled:opacity-50"
             >
-              Start
+              {copy("start")}
             </button>
             <button
               onClick={nextRound}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              Next
+              {copy("next_round")}
             </button>
             <button
               onClick={resetMatch}
               className="h-9 px-4 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm"
             >
-              Reset
+              {copy("reset")}
             </button>
           </div>
 
           <div className="text-center mb-1 text-sm text-white/80 font-semibold">
-            {phase === "idle" && "Press Start to begin"}
-            {phase === "countdown" && `Get ready... ${countdown}`}
-            {phase === "playing" && `Time: ${timeLeft.toFixed(1)} seconds`}
+            {phase === "idle" && copy("press_start")}
+            {phase === "countdown" && copy("get_ready", { countdown })}
+            {phase === "playing" && copy("time_left", { time: timeLeft.toFixed(1) })}
             {phase === "finished" && winnerMessage}
           </div>
 
@@ -317,8 +320,8 @@ export default function TapBattle() {
                   : "bg-[#120f1b] opacity-80"
               }`}
             >
-              <div className="text-4xl font-black">L</div>
-              <div className="text-sm text-white/80 font-semibold mt-2">{counts.left} taps</div>
+              <div className="text-4xl font-black">{copy("left_label")}</div>
+              <div className="text-sm text-white/80 font-semibold mt-2">{copy("taps_count", { count: counts.left })}</div>
             </button>
             <button
               onClick={() => handleTap("right")}
@@ -328,8 +331,8 @@ export default function TapBattle() {
                   : "bg-[#120f1b] opacity-80"
               }`}
             >
-              <div className="text-4xl font-black">R</div>
-              <div className="text-sm text-white/80 font-semibold mt-2">{counts.right} taps</div>
+              <div className="text-4xl font-black">{copy("right_label")}</div>
+              <div className="text-sm text-white/80 font-semibold mt-2">{copy("taps_count", { count: counts.right })}</div>
             </button>
           </div>
         </div>

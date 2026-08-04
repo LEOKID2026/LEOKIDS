@@ -1,0 +1,650 @@
+{
+  "meta": {
+    "locale": "ar-001",
+    "created": "2026-08-04T17:30:00+03:00",
+    "updated": "2026-08-04T22:25:00+03:00",
+    "purpose": "Runtime reachability map — all ar-001 user surfaces with route, persona, entry, and copy source",
+    "note": "not-proven ≠ product defect. Auditors must separate: Confirmed product defect / Audit infrastructure failure / Coverage not executed",
+    "canonical_surface_count_frozen": 29,
+    "surface_count_decision": "Frozen at 29 after removing duplicate reports_copilot (same overlay as parent_copilot). Previous totals.surfaces_mapped=25 was stale vs Object.keys(surfaces)=30; canonical list is the surfaces object keys after dedupe. Number must match Object.keys(surfaces).length and totals.surfaces_mapped.",
+    "agent4_ownership": "artifacts/i18n/ar-001-runtime-reachability-map.json + scripts/i18n/validators/ar-001-reachability-map-validator.mjs + scripts/i18n/harness/* Memory/email audit harness"
+  },
+  "surfaces": {
+    "parent_portal": {
+      "persona": "parent",
+      "canonical_responsibility": "parent dashboard shell + student list",
+      "route": "/parent/dashboard",
+      "route_kind": "page",
+      "page_file": "pages/parent/dashboard.js",
+      "entry_action": "Parent login or demo parent enter → /parent/dashboard with locale=ar-001",
+      "ready_marker": "Parent dashboard body rendered (Arabic chrome) + students area loaded or empty state",
+      "ready_selector": "body (route=/parent/dashboard)",
+      "loading_marker": "skeleton / spinner",
+      "empty_marker": "no students message",
+      "error_marker": "error banner",
+      "copy_sources": [
+        "locales/ar-001/reports.json",
+        "locales/ar-001/ui.json",
+        "locales/ar-001/common.json",
+        "content-packs/ar-001/global-burn-down/lib__global__product-context.server.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "parent_report_short": {
+      "persona": "parent",
+      "canonical_responsibility": "short/regular parent report surface",
+      "route": "/parent/parent-report",
+      "route_kind": "page",
+      "page_file": "pages/parent/parent-report.js",
+      "route_note": "Canonical short report is /parent/parent-report (re-exports pages/learning/parent-report). Dashboard links here. Separate from detailed summary mode: /parent/parent-report-detailed?mode=summary is a display mode of parent_report_detailed, not this surface.",
+      "entry_action": "From parent dashboard open report link → /parent/parent-report?studentId=…&source=parent",
+      "ready_marker": "parent-report-ready mounted + report data loaded",
+      "ready_selector": "[data-testid=parent-report-ready]",
+      "loading_marker": "[data-testid=parent-report-loading]",
+      "empty_marker": "[data-testid=parent-report-empty-period]",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/reports.json",
+        "content-packs/ar-001/reports/burn-down/lib__parent-ui__parent-report-regular-display.json",
+        "content-packs/ar-001/reports/burn-down/pages__learning__parent-report.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "parent_report_detailed": {
+      "persona": "parent",
+      "canonical_responsibility": "detailed parent report + optional summary display mode",
+      "route": "/parent/parent-report-detailed",
+      "route_kind": "page",
+      "page_file": "pages/parent/parent-report-detailed.js",
+      "route_note": "Product route is /parent/parent-report-detailed (NOT /learning/…). Summary/short print view of THIS page uses ?mode=summary — still this surface, not parent_report_short.",
+      "entry_action": "Parent opens detailed report → /parent/parent-report-detailed?studentId=…&source=parent&period=week",
+      "ready_marker": "parent-report-detailed-ready mounted + sections rendered",
+      "ready_selector": "[data-testid=parent-report-detailed-ready]",
+      "loading_marker": "[data-testid=parent-report-detailed-loading]",
+      "empty_marker": "[data-testid=parent-report-detailed-empty]",
+      "error_marker": "error banner",
+      "copy_sources": [
+        "locales/ar-001/reports.json",
+        "content-packs/ar-001/reports/burn-down/components__parent-report-detailed-surface.json",
+        "content-packs/ar-001/reports/burn-down/utils__detailed-parent-report.json",
+        "content-packs/ar-001/reports/burn-down/pages__learning__parent-report-detailed.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "parent_copilot": {
+      "persona": "parent",
+      "canonical_responsibility": "Leo Parent Copilot panel (single overlay surface)",
+      "route": "/parent/parent-report-detailed (panel overlay)",
+      "route_kind": "overlay",
+      "host_route": "/parent/parent-report-detailed",
+      "page_file": "pages/parent/parent-report-detailed.js",
+      "route_note": "Canonical Copilot entry is on the detailed report page via ParentCopilotShell (also lazy-available on short report). Duplicate id reports_copilot removed — one surface only.",
+      "entry_action": "On detailed report ready → click [data-testid=parent-copilot-entrypoint]",
+      "ready_marker": "parent-copilot-panel mounted + disclaimer/intro first Arabic state visible",
+      "ready_selector": "[data-testid=parent-copilot-panel][data-copilot-ready=true] + [data-testid=parent-copilot-disclaimer]",
+      "loading_marker": "thinking indicator / data-copilot-busy=true",
+      "empty_marker": "intro / start prompt (panel intro copy)",
+      "error_marker": "error message in chat",
+      "copy_sources": [
+        "locales/ar-001/copilot.json",
+        "locales/ar-001/ui.json",
+        "locales/ar-001/reports.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "parent_school_inbox": {
+      "persona": "parent / guardian",
+      "canonical_responsibility": "parent school messages inbox",
+      "route": "/parent/school-inbox",
+      "route_kind": "page",
+      "page_file": "pages/parent/school-inbox.js",
+      "entry_action": "Parent views school messages",
+      "ready_marker": "messages list loaded or empty state",
+      "ready_selector": "body (route=/parent/school-inbox)",
+      "loading_marker": "list skeleton",
+      "empty_marker": "no messages state",
+      "error_marker": "error banner",
+      "copy_sources": [
+        "locales/ar-001/ui.json",
+        "content-packs/ar-001/global-burn-down/pages__parent__school-inbox.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "student_home": {
+      "persona": "student",
+      "canonical_responsibility": "student home / world hub",
+      "route": "/student/home",
+      "route_kind": "page",
+      "page_file": "pages/student/home.js",
+      "entry_action": "Student login or demo enter with ar-001 locale",
+      "ready_marker": "StudentWorldHub mounted + profile/home chrome loaded",
+      "ready_selector": "body (route=/student/home)",
+      "loading_marker": "home skeleton",
+      "empty_marker": "no activities message",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/ui.json",
+        "locales/ar-001/common.json",
+        "locales/ar-001/platform.json",
+        "content-packs/ar-001/global-burn-down/lib__global__product-context.server.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "student_learning_math": {
+      "persona": "student",
+      "canonical_responsibility": "math learning session",
+      "route": "/learning/math-master",
+      "route_kind": "page",
+      "page_file": "pages/learning/math-master.js",
+      "entry_action": "Student starts math session (math-start-game)",
+      "ready_marker": "first question rendered (math-question-surface)",
+      "ready_selector": "[data-testid=math-question-surface]",
+      "loading_marker": "question loading spinner",
+      "empty_marker": "N/A",
+      "error_marker": "error overlay",
+      "copy_sources": [
+        "locales/ar-001/learning.json",
+        "content-packs/ar-001/learning/burn-down/utils__geometry-question-generator.json",
+        "content-packs/ar-001/learning/math-animation-titles.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "student_learning_geometry": {
+      "persona": "student",
+      "canonical_responsibility": "geometry learning session",
+      "route": "/learning/geometry-master",
+      "route_kind": "page",
+      "page_file": "pages/learning/geometry-master.js",
+      "entry_action": "Student starts geometry session (geometry-start-game)",
+      "ready_marker": "first question rendered (geometry-question-stem)",
+      "ready_selector": "[data-testid=geometry-question-stem]",
+      "loading_marker": "question loading spinner",
+      "empty_marker": "N/A",
+      "error_marker": "error overlay",
+      "copy_sources": [
+        "locales/ar-001/learning.json",
+        "content-packs/ar-001/learning/geometry-content.json",
+        "content-packs/ar-001/learning/burn-down/utils__geometry-conceptual-bank.json",
+        "content-packs/ar-001/learning/burn-down/utils__geometry-question-generator.json"
+      ],
+      "caution": "Geometry EN leaves are parity stubs — not full pedagogical quality",
+      "audit_status": "mapped-not-proven"
+    },
+    "student_learning_science": {
+      "persona": "student",
+      "canonical_responsibility": "science learning session",
+      "route": "/learning/science-master",
+      "route_kind": "page",
+      "page_file": "pages/learning/science-master.js",
+      "entry_action": "Student starts science session (science-start-game)",
+      "ready_marker": "first question rendered (science-question-stem)",
+      "ready_selector": "[data-testid=science-question-stem]",
+      "loading_marker": "question loading spinner",
+      "empty_marker": "N/A",
+      "error_marker": "error overlay",
+      "copy_sources": [
+        "locales/ar-001/learning.json",
+        "content-packs/ar-001/learning/diagnostic-labels.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "student_learning_english": {
+      "persona": "student",
+      "canonical_responsibility": "english learning session",
+      "route": "/learning/english-master",
+      "route_kind": "page",
+      "page_file": "pages/learning/english-master.js",
+      "entry_action": "Student starts English session (english-start-game)",
+      "ready_marker": "first question rendered (english-question-stem)",
+      "ready_selector": "[data-testid=english-question-stem]",
+      "loading_marker": "question loading spinner",
+      "empty_marker": "N/A",
+      "error_marker": "error overlay",
+      "copy_sources": [
+        "locales/ar-001/learning.json"
+      ],
+      "note": "English-learning Q&A content remains LTR; only Arabic chrome is RTL",
+      "audit_status": "mapped-not-proven"
+    },
+    "student_learning_book": {
+      "persona": "student",
+      "canonical_responsibility": "learning book shell + TOC",
+      "route": "/student/learning/book/{subject}/{grade}",
+      "route_kind": "page",
+      "page_file": "pages/student/learning/book/[subject]/[grade]/index.js",
+      "entry_action": "Student opens learning book",
+      "ready_marker": "BookShell + TOC rendered (book-toc-open / book-toc-dialog)",
+      "ready_selector": "[data-testid=book-toc-open]",
+      "loading_marker": "book loading skeleton",
+      "empty_marker": "no pages state",
+      "error_marker": "error state",
+      "copy_sources": [
+        "content-packs/ar-001/books/registry-titles.json",
+        "content-packs/ar-001/books/ui.json",
+        "content-packs/ar-001/books/page-title-leaves/**"
+      ],
+      "canonical_title_key": "{subject}.{grade}.{pageId}",
+      "audit_status": "mapped-not-proven"
+    },
+    "student_games": {
+      "persona": "student",
+      "canonical_responsibility": "student games hub catalog",
+      "route": "/student/games",
+      "route_kind": "page",
+      "page_file": "pages/student/games/index.js",
+      "entry_action": "Student opens games hub",
+      "ready_marker": "game list rendered",
+      "ready_selector": "body (route=/student/games)",
+      "loading_marker": "game list skeleton",
+      "empty_marker": "no games available",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/games.json",
+        "content-packs/ar-001/games/burn-down-index.json",
+        "content-packs/ar-001/global-burn-down/lib__games__game-catalog.constants.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "student_solo_games": {
+      "persona": "student",
+      "canonical_responsibility": "solo games engines (memory + sort-shapes primary audit path)",
+      "route": "/student/solo-games/memory",
+      "alternate_routes": [
+        "/student/solo-games/sort-shapes"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/student/solo-games/memory.js",
+      "entry_action": "Student starts Memory via entry screen → gameplay",
+      "ready_marker": "memory-gameplay with data-memory-ready=1 (engine mounted + deck ready)",
+      "ready_selector": "[data-testid=memory-gameplay][data-memory-ready='1']",
+      "full_loop_harness": "scripts/i18n/harness/memory-full-loop.mjs",
+      "full_loop_path": "start → gameplay → completion → interstitial → skip/continue → finish → retry",
+      "loading_marker": "game loading screen / deck loading",
+      "empty_marker": "N/A",
+      "error_marker": "deck error screen",
+      "copy_sources": [
+        "locales/ar-001/games.json",
+        "content-packs/ar-001/games/burn-down/components__solo-games__engines__MleoMemoryEngine.json",
+        "content-packs/ar-001/games/burn-down/components__solo-games__engines__MleoSortShapesEngine.json",
+        "content-packs/ar-001/games/burn-down/components__solo-games__SoloGameShell.json"
+      ],
+      "slug_sort_shapes": "components__solo-games__engines__MleoSortShapesEngine",
+      "audit_status": "mapped-not-proven"
+    },
+    "student_arcade": {
+      "persona": "student",
+      "canonical_responsibility": "arcade hub + multiplayer rooms chrome",
+      "route": "/student/arcade",
+      "route_kind": "page",
+      "page_file": "pages/student/arcade.js",
+      "entry_action": "Student enters arcade",
+      "ready_marker": "arcade hub loaded + friends/rooms chrome",
+      "ready_selector": "body (route=/student/arcade)",
+      "loading_marker": "arcade skeleton",
+      "empty_marker": "no rooms state",
+      "error_marker": "error banner",
+      "copy_sources": [
+        "locales/ar-001/games.json",
+        "locales/ar-001/ui.json",
+        "content-packs/ar-001/games/bingo.json",
+        "content-packs/ar-001/games/chess.json",
+        "content-packs/ar-001/games/checkers.json",
+        "content-packs/ar-001/games/dominoes.json",
+        "content-packs/ar-001/games/fourline.json",
+        "content-packs/ar-001/games/ludo.json",
+        "content-packs/ar-001/games/snakes-and-ladders.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "student_cards_shop": {
+      "persona": "student",
+      "canonical_responsibility": "cards collection / shop",
+      "route": "/student/cards",
+      "route_kind": "page",
+      "page_file": "pages/student/cards.js",
+      "entry_action": "Student opens cards/shop",
+      "ready_marker": "card collection rendered",
+      "ready_selector": "body (route=/student/cards)",
+      "loading_marker": "cards skeleton",
+      "empty_marker": "no cards message",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/ui.json",
+        "content-packs/ar-001/rewards/card-catalog.json",
+        "content-packs/ar-001/rewards/ui.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "teacher_portal": {
+      "persona": "teacher",
+      "canonical_responsibility": "teacher dashboard",
+      "route": "/teacher/dashboard",
+      "route_kind": "page",
+      "page_file": "pages/teacher/dashboard.js",
+      "entry_action": "Teacher login with ar-001 locale",
+      "ready_marker": "TeacherDashboard mounted + classes loaded or empty",
+      "ready_selector": "body (route=/teacher/dashboard)",
+      "loading_marker": "dashboard skeleton",
+      "empty_marker": "no classes message",
+      "error_marker": "error banner",
+      "copy_sources": [
+        "locales/ar-001/teacher.json",
+        "locales/ar-001/school.json",
+        "locales/ar-001/ui.json",
+        "content-packs/ar-001/global-burn-down/components__teacher-portal__TeacherDashboardClient.json",
+        "content-packs/ar-001/global-burn-down/pages__teacher__dashboard.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "teacher_class_activities": {
+      "persona": "teacher",
+      "canonical_responsibility": "teacher class activities list",
+      "route": "/teacher/class/{classId}/activities",
+      "route_kind": "page",
+      "page_file": "pages/teacher/class/[classId]/activities/index.js",
+      "entry_action": "Teacher opens class activities",
+      "ready_marker": "activities list rendered or empty",
+      "ready_selector": "body (route=/teacher/class/*/activities)",
+      "loading_marker": "list skeleton",
+      "empty_marker": "no activities message",
+      "error_marker": "error banner",
+      "copy_sources": [
+        "locales/ar-001/teacher.json",
+        "content-packs/ar-001/global-burn-down/components__teacher-portal__TeacherClassActivitiesNav.json",
+        "content-packs/ar-001/global-burn-down/pages__teacher__class__[classId]__activities__index.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "teacher_worksheets": {
+      "persona": "teacher",
+      "canonical_responsibility": "teacher worksheets hub",
+      "route": "/teacher/worksheets",
+      "route_kind": "page",
+      "page_file": "pages/teacher/worksheets/index.js",
+      "entry_action": "Teacher opens worksheets hub",
+      "ready_marker": "worksheets list loaded or empty",
+      "ready_selector": "body (route=/teacher/worksheets)",
+      "loading_marker": "list skeleton",
+      "empty_marker": "no worksheets message",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/worksheets.json",
+        "locales/ar-001/teacher.json",
+        "content-packs/ar-001/global-burn-down/lib__worksheets__worksheet-ui.json",
+        "content-packs/ar-001/global-burn-down/pages__teacher__worksheets__index.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "school_portal": {
+      "persona": "school-operator / school-admin",
+      "canonical_responsibility": "school portal dashboard shell",
+      "route": "/school/dashboard",
+      "route_kind": "page",
+      "page_file": "pages/school/dashboard.js",
+      "entry_action": "School staff login",
+      "ready_marker": "SchoolPortalShell RTL mounted + dashboard data or empty",
+      "ready_selector": "body (route=/school/dashboard)",
+      "loading_marker": "portal skeleton",
+      "empty_marker": "empty state per section",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/school.json",
+        "locales/ar-001/ui.json",
+        "content-packs/ar-001/global-burn-down/components__school-portal__SchoolPortalUi.json",
+        "content-packs/ar-001/global-burn-down/lib__school-portal__school-report-view-model.json",
+        "content-packs/ar-001/global-burn-down/lib__school-portal__school-messaging-ui.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "worksheets_public": {
+      "persona": "public / parent",
+      "canonical_responsibility": "public worksheets practice hub",
+      "route": "/practice/worksheets",
+      "route_kind": "page",
+      "page_file": "pages/practice/worksheets/index.js",
+      "entry_action": "Public visits worksheets page",
+      "ready_marker": "worksheets hub rendered",
+      "ready_selector": "body (route=/practice/worksheets)",
+      "loading_marker": "grid skeleton",
+      "empty_marker": "no worksheets available",
+      "error_marker": "error state",
+      "copy_sources": [
+        "locales/ar-001/worksheets.json",
+        "content-packs/ar-001/global-burn-down/lib__worksheets__worksheet-ui.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "pwa_install": {
+      "persona": "any",
+      "canonical_responsibility": "portal install-app pages (deterministic PWA surface)",
+      "route": "/parent/install-app",
+      "alternate_routes": [
+        "/student/install-app",
+        "/teacher/install-app"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/parent/install-app.js",
+      "route_note": "PWA strategy = install-app page + shell ready marker. beforeinstallprompt is NOT a mandatory ready path (nondeterministic browser event).",
+      "entry_action": "Navigate to /parent/install-app (or student/teacher variant) under ar-001",
+      "ready_marker": "PwaInstallPageShell mounted + ios-install-help-trigger visible (install body copy loaded)",
+      "ready_selector": "[data-testid=ios-install-help-trigger]",
+      "loading_marker": "N/A",
+      "empty_marker": "N/A",
+      "error_marker": "page error",
+      "nondeterministic_mandatory_browser_events": [],
+      "copy_sources": [
+        "locales/ar-001/platform.json",
+        "locales/ar-001/ui.json",
+        "components/pwa/PwaInstallPageShell.jsx",
+        "pages/api/pwa/manifest.js"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "pwa_offline": {
+      "persona": "any",
+      "canonical_responsibility": "offline hub pages",
+      "route": "/student/offline",
+      "alternate_routes": [
+        "/offline"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/student/offline/index.js",
+      "entry_action": "Navigate to offline hub under ar-001 (page render proof; network offline optional)",
+      "ready_marker": "offline hub page rendered",
+      "ready_selector": "body (route=/student/offline|/offline)",
+      "loading_marker": "N/A",
+      "empty_marker": "N/A",
+      "error_marker": "N/A",
+      "copy_sources": [
+        "locales/ar-001/platform.json",
+        "content-packs/ar-001/global-burn-down/components__offline__OfflineHub.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "emails_server": {
+      "persona": "parent / teacher / student",
+      "canonical_responsibility": "email copy namespace loader render proof (not live SMTP delivery)",
+      "route": "render_surface:locales/ar-001/emails.json via loadLocaleBundles",
+      "route_kind": "render_surface",
+      "page_file": null,
+      "proof_artifact": "artifacts/i18n/ar-001-emails-render-proof.json",
+      "proof_harness": "scripts/i18n/harness/emails-render-proof.mjs",
+      "route_note": "Emails strategy = deterministic loader/render proof. No accessible send/preview endpoint mapped; do NOT claim live 'email sent'. No new SMTP.",
+      "entry_action": "Run emails-render-proof harness (loadLocaleBundles + lookupMessage for emails.* keys)",
+      "ready_marker": "render proof artifact written with Arabic emails.resetSubject / welcomeSubject / resetBodyIntro",
+      "ready_selector": "artifacts/i18n/ar-001-emails-render-proof.json (ok=true)",
+      "loading_marker": "N/A",
+      "empty_marker": "N/A",
+      "error_marker": "N/A",
+      "copy_sources": [
+        "locales/ar-001/emails.json"
+      ],
+      "note": "Subject line and body intro must be natural Arabic — linguistic audit is separate",
+      "audit_status": "mapped-not-proven"
+    },
+    "auth": {
+      "persona": "any",
+      "canonical_responsibility": "auth forms (login + reset)",
+      "route": "/parent/login",
+      "alternate_routes": [
+        "/teacher/login",
+        "/student/login",
+        "/auth/reset-password"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/parent/login.js",
+      "entry_action": "User opens auth form under ar-001",
+      "ready_marker": "auth form rendered",
+      "ready_selector": "body (route=/parent/login|/teacher/login|/student/login|/auth/reset-password)",
+      "loading_marker": "button loading state",
+      "empty_marker": "N/A",
+      "error_marker": "validation error messages",
+      "copy_sources": [
+        "locales/ar-001/auth.json",
+        "locales/ar-001/validation.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "public_marketing": {
+      "persona": "public",
+      "canonical_responsibility": "public marketing landing pages",
+      "route": "/",
+      "alternate_routes": [
+        "/parents",
+        "/kids",
+        "/teachers",
+        "/schools",
+        "/about",
+        "/contact",
+        "/gallery"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/index.js",
+      "entry_action": "Public visitor with ar-001 locale",
+      "ready_marker": "marketing page rendered",
+      "ready_selector": "body (route=/|/parents|/kids|/teachers|/schools|/about|/contact|/gallery)",
+      "loading_marker": "page skeleton",
+      "empty_marker": "N/A",
+      "error_marker": "404 or error page",
+      "copy_sources": [
+        "locales/ar-001/seo.json",
+        "locales/ar-001/common.json",
+        "locales/ar-001/platform.json",
+        "content-packs/ar-001/public-seo/**",
+        "content-packs/ar-001/global-burn-down/components__seo__public-seo-wide-defaults.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "help_center": {
+      "persona": "any",
+      "canonical_responsibility": "help center articles",
+      "route": "/help",
+      "alternate_routes": [
+        "/help/parents/[slug]",
+        "/help/students/[slug]",
+        "/help/subjects/[slug]",
+        "/help/parent-report/[slug]"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/help/index.js",
+      "entry_action": "User navigates to help center under ar-001",
+      "ready_marker": "help hub or article rendered",
+      "ready_selector": "body (route=/help*)",
+      "loading_marker": "article skeleton",
+      "empty_marker": "no articles state",
+      "error_marker": "404",
+      "copy_sources": [
+        "data/help-center/ar-001/index.js",
+        "data/help-center/ar-001/parents.js",
+        "data/help-center/ar-001/students.js",
+        "data/help-center/ar-001/parent-report.js",
+        "data/help-center/ar-001/subjects.js"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "legal": {
+      "persona": "any",
+      "canonical_responsibility": "legal / privacy / terms pages",
+      "route": "/legal",
+      "alternate_routes": [
+        "/privacy",
+        "/terms"
+      ],
+      "route_kind": "page",
+      "page_file": "pages/legal.js",
+      "route_note": "Product routes are /legal, /privacy, /terms (not /legal/privacy).",
+      "entry_action": "User views legal pages under ar-001",
+      "ready_marker": "policy page rendered",
+      "ready_selector": "body (route=/legal|/privacy|/terms)",
+      "loading_marker": "N/A",
+      "empty_marker": "N/A",
+      "error_marker": "N/A",
+      "copy_sources": [
+        "locales/ar-001/legal.json"
+      ],
+      "audit_status": "mapped-not-proven"
+    },
+    "demo_parent": {
+      "persona": "demo parent",
+      "canonical_responsibility": "demo parent session entry",
+      "route": "/demo/parent/enter",
+      "route_kind": "page",
+      "page_file": "pages/demo/parent/enter.js",
+      "entry_action": "Demo parent session start (parent-demo-enter-button)",
+      "ready_marker": "demo session active → lands on /parent/dashboard",
+      "ready_selector": "[data-testid=parent-demo-enter-button]",
+      "loading_marker": "demo loading",
+      "empty_marker": "N/A",
+      "error_marker": "demo error",
+      "copy_sources": [
+        "content-packs/ar-001/demo/ui.json",
+        "lib/demo/demo-cards-shop-fixture.js"
+      ],
+      "demo_key": "leokids_global_parent_demo_session",
+      "audit_status": "mapped-not-proven"
+    },
+    "demo_student": {
+      "persona": "demo student",
+      "canonical_responsibility": "demo student session entry",
+      "route": "/demo/enter",
+      "route_kind": "page",
+      "page_file": "pages/demo/enter.js",
+      "entry_action": "Demo student session start",
+      "ready_marker": "demo session active → student home/hub",
+      "ready_selector": "body (route=/demo/enter)",
+      "loading_marker": "demo loading",
+      "empty_marker": "N/A",
+      "error_marker": "demo error",
+      "copy_sources": [
+        "content-packs/ar-001/demo/ui.json"
+      ],
+      "demo_key": "leokids_global_demo_session",
+      "audit_status": "mapped-not-proven"
+    }
+  },
+  "removed_duplicates": [
+    {
+      "id": "reports_copilot",
+      "reason": "Duplicate of parent_copilot — same ParentCopilotShell overlay on parent report surfaces",
+      "canonical_kept": "parent_copilot"
+    }
+  ],
+  "strategies": {
+    "pwa": "install-app page + real ready marker (ios-install-help-trigger / shell). beforeinstallprompt never mandatory.",
+    "emails": "loader/render proof via scripts/i18n/harness/emails-render-proof.mjs → artifacts/i18n/ar-001-emails-render-proof.json. Not live delivery.",
+    "memory_full_loop": "scripts/i18n/harness/memory-full-loop.mjs — deterministic pair matching (no random clicks), interstitial Skip is product path, waits bound to MISMATCH_HOLD_MS + interstitial duration (no soft skip)."
+  },
+  "totals": {
+    "surfaces_mapped": 29,
+    "surfaces_without_route_modal": 0,
+    "surfaces_without_ready_marker": 0,
+    "surfaces_without_entry_action": 0,
+    "surfaces_without_copy_source": 0,
+    "duplicate_surface_ids": 0,
+    "duplicate_canonical_responsibility": 0,
+    "stale_routes": 0,
+    "nondeterministic_mandatory_ready_markers": 0,
+    "audit_status_all": "mapped-not-proven",
+    "note": "Canonical count frozen at 29. totals.surfaces_mapped MUST equal Object.keys(surfaces).length. Runtime proof requires independent runtime audit / harness runs."
+  }
+}

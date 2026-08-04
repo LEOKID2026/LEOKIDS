@@ -1,5 +1,16 @@
 {
   "copy": {
-    "my_dashboard": "My dashboard"
+    "my_dashboard": "My dashboard",
+    "verifying_connection": "Verifying connection…",
+    "loading_dashboard": "Loading dashboard…",
+    "load_data_error": "Something went wrong loading the data. Refresh the page and try again.",
+    "load_report_error": "Something went wrong loading the report. Refresh and try again.",
+    "load_report_error_long": "Something went wrong loading the report. Refresh the page and try again.",
+    "loading_report_hint": "Loading the report — this may take a few seconds.",
+    "session_expired": "Your session expired. Please sign in again.",
+    "load_timeout": "Loading took too long. Refresh and try again.",
+    "system_warming_up": "The system is still warming up. Try again in a few minutes.",
+    "try_again": "Try again",
+    "back_to_dashboard": "Back to dashboard"
   }
 }

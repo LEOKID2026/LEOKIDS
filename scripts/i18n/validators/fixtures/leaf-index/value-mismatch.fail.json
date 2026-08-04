@@ -1,0 +1,15 @@
+{
+  "leaf": {
+    "copy": {
+      "school": "المدرسة",
+      "worksheets": "أوراق العمل",
+      "learning_style": "أسلوب التعلّم"
+    }
+  },
+  "index": {
+    "school": "مدرسة",
+    "worksheets": "أوراق العمل",
+    "learning_style": "نمط التعلم القديم"
+  },
+  "expectMismatches": ["school", "learning_style"]
+}

@@ -1,6 +1,6 @@
 {
   "copy": {
-    "unknown_subject_for_normalization": "موضوع غير معروف للتطبيع.",
+    "unknown_subject_for_normalization": "مادة غير معروفة للتطبيع.",
     "mapped_from_math_generator_operation_topic_key": "تم تعيينه من مفتاح تشغيل/موضوع مولد الرياضيات.",
     "mapped_from_geometry_topic_generator_kind": "تم تعيينها من موضوع الهندسة / نوع المولد.",
     "expand_geometry_strand_map_for_this_topic_kind": "قم بتوسيع الخريطة الهندسية لهذا الموضوع/النوع.",

@@ -1,6 +1,17 @@
 {
   "copy": {
     "grade_status": "Grade status",
-    "class_status": "Class status"
+    "class_status": "Class status",
+    "loading": "Loading…",
+    "try_again": "Try again",
+    "col_subject": "Subject",
+    "col_class": "Class",
+    "col_teacher": "Teacher",
+    "col_type": "Type",
+    "active_classes": "{count} active classes",
+    "children_count": "{count} children",
+    "activities_count": "Activities: {count}",
+    "view_answers": "View answers",
+    "suspended_label": "Suspended"
   }
 }

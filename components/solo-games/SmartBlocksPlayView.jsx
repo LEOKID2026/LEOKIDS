@@ -95,6 +95,8 @@ function TrayShapeSlot({ shape, slotIndex, dragSlotIndex, onPointerDown, disable
  *   onCompleteEndInterstitial: () => void,
  * }} props
  */
+import { gameHudScoreColon, gameHudLabel } from "../../lib/games/game-hud-copy.js";
+
 export default function SmartBlocksPlayView({
   gridSize,
   board,
@@ -113,7 +115,7 @@ export default function SmartBlocksPlayView({
   return (
     <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
       <div className="pointer-events-none absolute left-1/2 top-2 z-[60] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-3 py-2 text-center text-[11px] font-bold leading-snug sm:text-sm">
-        <span className="text-amber-300">Score: {score}</span>
+        <span className="text-amber-300">{gameHudScoreColon()} {score}</span>
         {" · "}
         <span className="text-sky-200">Goal: {scoreTarget}</span>
       </div>

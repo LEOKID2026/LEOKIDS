@@ -50,6 +50,8 @@ function findDropZoneAtPoint(x, y) {
  *   onFullscreenToggle?: () => void,
  * }} props
  */
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+
 export default function LeoLabGame({
   autoStart = false,
   initialDifficulty = "easy",
@@ -651,7 +653,7 @@ export default function LeoLabGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🎉 You finished the lab!</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-lab__LeoLabGame", "end_score", { score })}</p>
             <p className={frame.endStat}>
               ✅ Successes: {successCount}/{experiments.length}
             </p>

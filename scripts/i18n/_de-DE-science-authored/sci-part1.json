@@ -1,0 +1,842 @@
+{
+  "sci_closure_g4exp_001": {
+    "stem": "Was ist eine einfache Hypothese in einer Untersuchung?",
+    "options": [
+      "Eine überprüfbare Vermutung darüber, was geschehen wird",
+      "Das endgültige Ergebnis, das sich nie ändern kann",
+      "Alle Daten löschen",
+      "Eine Zeichnung ohne Messen"
+    ],
+    "explanation": "Eine Hypothese ist eine Vermutung, die du mit einem Experiment prüfen kannst.",
+    "theoryLines": [
+      "Eine Hypothese leitet den Plan.",
+      "Ergebnisse können sie stützen oder widerlegen."
+    ]
+  },
+  "sci_closure_g4exp_002": {
+    "stem": "Welche Aussage beschreibt den Schritt des Aufzeichnens richtig?",
+    "options": [
+      "Beobachtungen und Messungen während der Untersuchung aufschreiben",
+      "Belege löschen, damit niemand nachprüfen kann",
+      "Ein Ergebnis wählen, bevor Daten gesammelt werden",
+      "Notizen weglassen, weil das Gedächtnis reicht"
+    ],
+    "explanation": "Aufzeichnen hält fest, was in der Untersuchung geschehen ist.",
+    "theoryLines": [
+      "Gute Notizen unterstützen später die Auswertung.",
+      "Naturwissenschaften brauchen Belege, die man nachprüfen kann."
+    ]
+  },
+  "sci_closure_g4es_003": {
+    "stem": "Was beschreibt Tag und Nacht an einem Ort?",
+    "options": [
+      "Die Erdrotation lässt die Sonne auf- und unterzugehen scheinen",
+      "Die Sonne wird jede Nacht wie ein Lampenschalter ausgeschaltet",
+      "Nacht gibt es nur, wenn es regnet",
+      "Tag und Nacht ändern sich nie"
+    ],
+    "explanation": "Wenn sich die Erde dreht, gelangen Orte ins Sonnenlicht und dann in den Schatten.",
+    "theoryLines": [
+      "Eine volle Umdrehung dauert etwa einen Tag.",
+      "Tag und Nacht sind ein sich wiederholender Kreislauf."
+    ]
+  },
+  "sci_closure_g4es_004": {
+    "stem": "Was ist ein Beispiel für eine Wetterbeobachtung?",
+    "options": [
+      "Die Temperatur in einem Heft aufschreiben",
+      "Raten, ohne hinzusehen",
+      "Die Wolken ignorieren",
+      "Nur Ferientage zählen"
+    ],
+    "explanation": "Wetterbeobachtungen sind Messungen oder Notizen zu den Bedingungen draußen, zum Beispiel zur Temperatur.",
+    "theoryLines": [
+      "Beobachten ist eine grundlegende naturwissenschaftliche Fähigkeit.",
+      "Schriftliche Aufzeichnungen machen Wettermuster leichter vergleichbar."
+    ]
+  },
+  "sci_closure_g4env_005": {
+    "stem": "Was ist eine einfache Verbindung zwischen einer Pflanze und Wasser?",
+    "options": [
+      "Eine Pflanze braucht Wasser zum Wachsen",
+      "Eine Pflanze berührt nie Wasser",
+      "Wasser steht nur im Weg",
+      "Es gibt gewöhnlich keine Verbindung"
+    ],
+    "explanation": "Pflanzen nehmen Wasser auf, um zu wachsen und gesund zu bleiben.",
+    "theoryLines": [
+      "Wurzeln helfen Pflanzen, Wasser aus dem Boden zu bekommen.",
+      "Ohne Wasser welken die meisten Pflanzen."
+    ]
+  },
+  "sci_closure_g4env_006": {
+    "stem": "Was ist ein Beispiel für einen Unterschied zwischen Lebewesen und Nichtlebewesen?",
+    "options": [
+      "Eine Katze atmet und bewegt sich",
+      "Ein Stein springt von allein",
+      "Wasser bewegt sich nie",
+      "Es gibt keinen Unterschied"
+    ],
+    "explanation": "Lebewesen können wachsen, sich bewegen und reagieren; Nichtlebewesen wie Steine leben nicht.",
+    "theoryLines": [
+      "Atmen und Bewegung sind bei vielen Tieren Lebenszeichen.",
+      "Lebewesen und Nichtlebewesen zu sortieren ist eine grundlegende Fähigkeit."
+    ]
+  },
+  "sci_closure_g5an_007": {
+    "stem": "Was ist ein vernünftiges Ergebnis, wenn sich ein Lebensraum verändert?",
+    "options": [
+      "Eine Population kann sinken, wenn sie nicht mehr findet, was sie braucht",
+      "Sie wächst immer ohne Grenze",
+      "Lebensraumänderung hat gewöhnlich keine Wirkung",
+      "Alle Tiere werden gleich"
+    ],
+    "explanation": "Wenn sich ein Lebensraum ändert, können manche Arten Nahrung, Schutz oder Raum verlieren.",
+    "theoryLines": [
+      "Lebensräume liefern, was Lebewesen zum Überleben brauchen.",
+      "Die Populationsgröße kann sich ändern, wenn sich die Bedingungen ändern."
+    ]
+  },
+  "sci_closure_g5an_008": {
+    "stem": "Wie hängen Anpassung und Überleben zusammen?",
+    "options": [
+      "Eine hilfreiche Anpassung kann die Überlebenschancen verbessern",
+      "Es gibt keinen Zusammenhang",
+      "Überleben hängt nur vom Glück ab",
+      "Alle Tiere sind an jedem Ort gleich gut angepasst"
+    ],
+    "explanation": "Merkmale, die zur Umwelt passen, können einem Tier helfen zu überleben und sich fortzupflanzen.",
+    "theoryLines": [
+      "Anpassungen verbinden Lebewesen mit ihrer Umgebung.",
+      "Bessere Passung bedeutet oft besseres Überleben."
+    ]
+  },
+  "sci_closure_g5ex_009": {
+    "stem": "Was ist in einem einfachen Experiment eine gut gewählte Variable zum Ändern?",
+    "options": [
+      "Ein Faktor, den du absichtlich änderst",
+      "Alles auf einmal",
+      "Gewöhnlich überhaupt keine Variable",
+      "Nur die Farbe der Hose von jemandem"
+    ],
+    "explanation": "Ein fairer Test ändert gewöhnlich einen geplanten Faktor und hält andere Bedingungen möglichst gleich.",
+    "theoryLines": [
+      "Die unabhängige Variable ist das, was du änderst.",
+      "Andere Bedingungen zu kontrollieren macht Ergebnisse klarer."
+    ]
+  },
+  "sci_closure_g5ex_010": {
+    "stem": "Warum wiederholen Wissenschaftlerinnen und Wissenschaftler manchmal ein Experiment?",
+    "options": [
+      "Um zu prüfen, ob das Ergebnis übereinstimmt",
+      "Um Experimente zu verbieten",
+      "Um Messungen aufzuheben",
+      "Gewöhnlich um Zeit zu verkürzen"
+    ],
+    "explanation": "Einen Test zu wiederholen hilft zu bestätigen, dass ein Ergebnis kein einmaliger Zufall war.",
+    "theoryLines": [
+      "Übereinstimmende Ergebnisse stärken das Vertrauen.",
+      "Wiederholungen können Fehler aufdecken."
+    ]
+  },
+  "sci_closure_g5es_011": {
+    "stem": "Was ist eine grundlegende Beschreibung einer Jahreszeit?",
+    "options": [
+      "Ein Zeitraum mit einem typischen Wettermuster",
+      "Gewöhnlich nur ein Tag",
+      "Gewöhnlich nur Zimmertemperatur",
+      "Jedes Jahr immer gleich ohne jede Abweichung"
+    ],
+    "explanation": "Jahreszeiten sind Teile des Jahres mit charakteristischen Wettermustern.",
+    "theoryLines": [
+      "Klima beschreibt langfristige jahreszeitliche Muster.",
+      "Das Wetter an einem Tag kann innerhalb einer Jahreszeit trotzdem schwanken."
+    ]
+  },
+  "sci_closure_g5es_012": {
+    "stem": "Was ist ein Beispiel für ein Sedimentgestein?",
+    "options": [
+      "Ein Gestein, das aus aufgeschichteten Sedimenten entsteht, die hart werden",
+      "Nur flüssiges Eis",
+      "Gewöhnlich natürlicher Kunststoff",
+      "Gewöhnlich eine feste Wolke"
+    ],
+    "explanation": "Sedimentgesteine entstehen, wenn sich Sedimentschichten aufbauen und mit der Zeit erhärten.",
+    "theoryLines": [
+      "Sandstein und Kalkstein sind häufige Sedimentgesteine.",
+      "Sedimente können von abgetragenem Gestein, Schalen oder anderen Stoffen stammen."
+    ]
+  },
+  "sci_closure_g5env_013": {
+    "stem": "Was ist ein einfaches Beispiel für Recycling?",
+    "options": [
+      "Flaschen zum Recyceln sammeln",
+      "Müll ohne Sortieren verbrennen",
+      "Alles in denselben Behälter werfen",
+      "Materialien nie sortieren"
+    ],
+    "explanation": "Recycling bedeutet, gebrauchte Materialien zu sammeln, damit daraus neue Produkte entstehen können.",
+    "theoryLines": [
+      "Materialien zu sortieren hilft dem Recycling.",
+      "Recycling kann Ressourcen sparen und Deponiemüll verringern."
+    ]
+  },
+  "sci_closure_g5env_014": {
+    "stem": "Wie sind Pflanzen mit der Luft verbunden?",
+    "options": [
+      "Pflanzen nehmen Gase auf und geben sie ab, während sie Nahrung herstellen und wachsen",
+      "Es gibt gewöhnlich keine Verbindung",
+      "Pflanzen tauschen nie Gase aus",
+      "Nur Tiere brauchen Luft"
+    ],
+    "explanation": "Pflanzen tauschen bei Fotosynthese und Atmung Gase mit der Luft aus.",
+    "theoryLines": [
+      "Pflanzen nehmen Kohlenstoffdioxid auf, wenn sie bei Licht Nahrung herstellen.",
+      "Lebewesen teilen sich die Luft der Erde."
+    ]
+  },
+  "sci_closure_g6bd_015": {
+    "stem": "Was ist eine richtige Verbindung zwischen Puls und Aktivität?",
+    "options": [
+      "Körperliche Aktivität kann den Puls erhöhen",
+      "Der Puls ändert sich nie",
+      "Aktivität senkt den Puls immer auf null",
+      "Der Puls hat keinen Bezug zum Herz"
+    ],
+    "explanation": "Bei Anstrengung schlägt das Herz oft schneller, um mehr Blut zu den Muskeln zu schicken.",
+    "theoryLines": [
+      "Am Puls kannst du Herzschläge spüren.",
+      "Der Körper erhöht die Herzfrequenz, wenn Muskeln mehr Sauerstoff brauchen."
+    ]
+  },
+  "sci_closure_g6bd_016": {
+    "stem": "Was ist eine einfache Aufgabe der Blutgefäße?",
+    "options": [
+      "Blut zu Organen transportieren",
+      "Sauerstoff aus Luft erzeugen",
+      "Nahrung direkt verdauen",
+      "Geräusche hören"
+    ],
+    "explanation": "Blutgefäße sind Röhren, die Blut durch den Körper transportieren.",
+    "theoryLines": [
+      "Arterien, Venen und Kapillaren sind Arten von Blutgefäßen.",
+      "Blut liefert Sauerstoff und Nährstoffe an Organe."
+    ]
+  },
+  "sci_closure_g6es_017": {
+    "stem": "Wie unterscheiden sich innere Planeten oft von äußeren Planeten im Sonnensystem?",
+    "options": [
+      "Innere Planeten sind relativ kleiner und oft felsig",
+      "Sie sind gewöhnlich alle gleich",
+      "Äußere Planeten sind immer kleiner als innere",
+      "Es gibt gewöhnlich überhaupt keinen Unterschied"
+    ],
+    "explanation": "Die inneren Planeten sind im Allgemeinen kleiner und felsiger; viele äußere Planeten sind größere Gasriesen.",
+    "theoryLines": [
+      "Merkur, Venus, Erde und Mars sind die inneren Planeten.",
+      "Jupiter, Saturn, Uranus und Neptun sind die äußeren Planeten."
+    ]
+  },
+  "sci_closure_g6es_018": {
+    "stem": "Was ist ein Beispiel für den Tag-Nacht-Zyklus?",
+    "options": [
+      "Die Erdrotation bringt einen Ort ins Sonnenlicht und dann in den Schatten",
+      "Nur Jahreszeiten, ohne Tag und Nacht",
+      "Nacht ohne jegliche Himmelsobjekte",
+      "Tag ganz ohne Licht"
+    ],
+    "explanation": "Tag und Nacht entstehen, weil sich die Erde dreht und Sonnenlicht mit der Zeit verschiedene Orte erreicht.",
+    "theoryLines": [
+      "Eine volle Umdrehung dauert etwa 24 Stunden.",
+      "Die sonnenzugewandte Seite hat Tag; die andere Seite hat Nacht."
+    ]
+  },
+  "sci_closure_g6env_019": {
+    "stem": "Was ist eine vernünftige Gesundheitswirkung von Luftverschmutzung?",
+    "options": [
+      "Atembeschwerden bei empfindlichen Menschen",
+      "Immer genau dasselbe Ergebnis für alle",
+      "Keine wissenschaftliche Wirkung",
+      "Wirkungen nur auf Pflanzen"
+    ],
+    "explanation": "Schmutzige Luft kann das Atmen erschweren, besonders für Menschen mit empfindlichen Lungen.",
+    "theoryLines": [
+      "Luftqualität beeinflusst die menschliche Gesundheit.",
+      "Verschmutzung zu verringern hilft Gemeinden."
+    ]
+  },
+  "sci_closure_g6env_020": {
+    "stem": "Was ist ein Beispiel für die globale Erwärmung auf Klassenzimmerebene?",
+    "options": [
+      "Ein langfristiger Anstieg der Durchschnittstemperatur",
+      "Gewöhnlich nur ein heißer Tag",
+      "Allein die gewöhnliche tägliche Wetteränderung",
+      "Gewöhnlich nur extreme Kälte"
+    ],
+    "explanation": "Globale Erwärmung meint einen anhaltenden Anstieg der Durchschnittstemperatur der Erde, nicht einen warmen Nachmittag.",
+    "theoryLines": [
+      "Klima ist ein langfristiges Muster; Wetter ist kurzfristig.",
+      "Trends der Durchschnittstemperatur brauchen Daten über viele Jahre."
+    ]
+  },
+  "sci_closure_g3bd_021": {
+    "stem": "Was ist eine logische Reihenfolge dafür, wie der Körper auf Hitze reagiert?",
+    "options": [
+      "Hitze wahrnehmen → dann reagieren (zum Beispiel durch Schwitzen oder in den Schatten gehen)",
+      "Abkühlen ohne jegliche Wahrnehmung",
+      "Gewöhnlich keine Reaktion",
+      "Nur eine Pulsänderung ohne Bezug zur Hitze"
+    ],
+    "explanation": "Der Körper nimmt Hitze wahr und reagiert dann, um abzukühlen oder sicher zu bleiben.",
+    "theoryLines": [
+      "Sinnesorgane und Nerven erkennen Temperaturänderungen.",
+      "Schwitzen und Schatten suchen sind häufige Reaktionen auf Hitze."
+    ]
+  },
+  "sci_closure_g3an_022": {
+    "stem": "Was ist eine sorgfältige Hypothese zum Tierverhalten im Winter?",
+    "options": [
+      "Manche Tiere suchen Schutz oder speichern Energie — je nach Art",
+      "Alle Tiere verschwinden gewöhnlich",
+      "Verhalten ändert sich gewöhnlich nie",
+      "Jedes Tier hält auf genau dieselbe Weise Winterschlaf"
+    ],
+    "explanation": "Verschiedene Arten nutzen unterschiedliche Winterstrategien, zum Beispiel Wandern, mehr Ruhen oder Nahrung speichern.",
+    "theoryLines": [
+      "Eine Hypothese ist eine überprüfbare Idee.",
+      "Winterbedingungen können das Verhalten von Tieren ändern."
+    ]
+  },
+  "sci_closure_g3mat_023": {
+    "stem": "Was ist ein einfacher Unterschied zwischen Metall und Kunststoff bei Kochtöpfen?",
+    "options": [
+      "Metall leitet Wärme gewöhnlich besser",
+      "Kunststoff leitet immer besser",
+      "Es gibt gewöhnlich keinen Unterschied",
+      "Beide sind identische Isolatoren"
+    ],
+    "explanation": "Metallkochtöpfe erhitzen Nahrung oft schnell, weil Metall Wärme gut leitet.",
+    "theoryLines": [
+      "Leiter übertragen Wärme leichter als viele Kunststoffe.",
+      "Die Materialwahl hängt von der Aufgabe ab."
+    ]
+  },
+  "sci_closure_g3mat_024": {
+    "stem": "Was ist ein einfacher Unterschied zwischen einer physikalischen und einer chemischen Veränderung?",
+    "options": [
+      "Eine chemische Veränderung erzeugt einen neuen Stoff",
+      "Es gibt gewöhnlich keinen Unterschied",
+      "Eine physikalische Veränderung erzeugt immer einen neuen Stoff",
+      "Eine chemische Veränderung ändert nie Eigenschaften"
+    ],
+    "explanation": "Physikalische Veränderungen ändern Form oder Zustand; chemische Veränderungen erzeugen neue Stoffe.",
+    "theoryLines": [
+      "Eis schmelzen ist eine physikalische Veränderung.",
+      "Papier verbrennen ist eine chemische Veränderung."
+    ]
+  },
+  "sci_closure_g3ex_025": {
+    "stem": "Was gilt für das Messen mit Einheiten?",
+    "options": [
+      "Vergleiche Zahlen nur in denselben Einheiten oder rechne zuerst um",
+      "Du kannst Zentimeter und Liter ohne Umrechnung mischen",
+      "Einheiten sind gewöhnlich egal",
+      "Nur Zeichnen ist wichtig"
+    ],
+    "explanation": "Messungen brauchen passende Einheiten, bevor du sie vergleichst oder addierst.",
+    "theoryLines": [
+      "Einheiten sagen, was eine Zahl bedeutet.",
+      "Umrechnen hält Vergleiche fair."
+    ]
+  },
+  "sci_closure_g3es_026": {
+    "stem": "Was ist eine einfache Beschreibung einer Wolke?",
+    "options": [
+      "Winzige Wassertröpfchen oder Eiskristalle, die in der Luft schweben",
+      "Immer ein Säuregas",
+      "Nur ein fester Stoff",
+      "Gewöhnlich überhaupt kein Material"
+    ],
+    "explanation": "Wolken bestehen aus vielen winzigen Wassertröpfchen oder Eiskristallen in der Luft.",
+    "theoryLines": [
+      "Wasserdampf kann abkühlen und Wolkentröpfchen bilden.",
+      "Wolken gehören zum Wasserkreislauf."
+    ]
+  },
+  "sci_closure_g3es_027": {
+    "stem": "Was ist eine vernünftige Verbindung zwischen Wind und örtlichem Meeresspiegel an einer Küste?",
+    "options": [
+      "Starker Wind kann Wasser zur Küste hin oder von ihr wegdrücken",
+      "Es gibt gewöhnlich keine Verbindung",
+      "Wind flacht Wellen immer auf null ab",
+      "Gewöhnlich beeinflusst nur Dunkelheit das Wasser"
+    ],
+    "explanation": "Wind kann Wasser an einer Küste aufstauen oder wegdrücken und so die örtliche Wasserhöhe ändern.",
+    "theoryLines": [
+      "Wind überträgt Energie auf die Wasseroberfläche.",
+      "Stürme können den Wasserstand an Küsten erhöhen."
+    ]
+  },
+  "sci_closure_g3env_028": {
+    "stem": "Was ist ein Beispiel für eine Pflanze als grundlegenden Nahrungserzeuger?",
+    "options": [
+      "Ein Obstbaum, der Früchte erzeugt, die Menschen essen können",
+      "Ein Stein, der gewöhnlich Früchte erzeugt",
+      "Eine Wolke, die gewöhnlich Früchte erzeugt",
+      "Kunststoff, der Früchte erzeugt"
+    ],
+    "explanation": "Pflanzen erzeugen Nahrung, die Menschen und Tiere nutzen können.",
+    "theoryLines": [
+      "Erzeuger stellen Nahrung mit Sonnenlicht her.",
+      "Obstbäume sind Pflanzenerzeuger, auf die Menschen angewiesen sind."
+    ]
+  },
+  "sci_closure_g3env_029": {
+    "stem": "Wie kann Müll mit Gartenerde zusammenhängen?",
+    "options": [
+      "Falscher Müll kann Gartenerde verschmutzen oder schädigen",
+      "Müll verbessert den Boden immer, ohne Prüfung",
+      "Es gibt gewöhnlich keine Verbindung",
+      "Gewöhnlich ist nur die Luft betroffen"
+    ],
+    "explanation": "Herumliegender Müll und unsicherer Abfall können den Boden verschmutzen und Pflanzen oder Tiere schädigen.",
+    "theoryLines": [
+      "Gesunder Boden unterstützt Pflanzenwachstum.",
+      "Abfall sorgfältig zu sortieren und zu entsorgen schützt Gärten."
+    ]
+  },
+  "sci_closure_g4bd_030": {
+    "stem": "Was ist eine grundlegende Erklärung des Lungenkreislaufs?",
+    "options": [
+      "Blut geht zu den Lungen, nimmt Sauerstoff auf und kehrt zum Herzen zurück",
+      "Blut geht gewöhnlich nie durch die Lungen",
+      "Lungen erzeugen brandneues Blut",
+      "Das Herz hat gewöhnlich keinen Bezug zu den Lungen"
+    ],
+    "explanation": "Im Lungenkreislauf fließt Blut zwischen Herz und Lungen für den Gasaustausch.",
+    "theoryLines": [
+      "Lungen fügen dem Blut Sauerstoff hinzu und entfernen Kohlenstoffdioxid.",
+      "Das Herz pumpt Blut zu den Lungen und dann in den Körper."
+    ]
+  },
+  "sci_closure_g4mat_031": {
+    "stem": "Was ist ein Beispiel für eine physikalische Veränderung bei Wasser?",
+    "options": [
+      "Gefrieren oder Verdunsten unter den richtigen Bedingungen",
+      "Wasser wird immer zu einer neuen Art von Gestein",
+      "Wasser ändert sich überhaupt nie",
+      "Immer eine chemische Reaktion"
+    ],
+    "explanation": "Gefrieren, Schmelzen und Verdunsten ändern den Zustand von Wasser, aber es bleibt Wasser.",
+    "theoryLines": [
+      "Zustandsänderungen sind oft physikalische Veränderungen.",
+      "Eis, flüssiges Wasser und Dampf sind dieselbe Substanz."
+    ]
+  },
+  "sci_closure_g5bd_032": {
+    "stem": "Welche Aussage beschreibt den Schutz der Haut vor der Sonne richtig?",
+    "options": [
+      "Kleidung und Schatten können das Risiko verringern",
+      "Schutz ist gewöhnlich unnötig",
+      "Sonnenlicht beeinflusst die Haut nie",
+      "Gewöhnlich schützt nur Wasser die Haut"
+    ],
+    "explanation": "Bedecken und im Schatten bleiben helfen, die Haut vor starkem Sonnenlicht zu schützen.",
+    "theoryLines": [
+      "Zu viel Sonne kann die Haut schädigen.",
+      "Schatten, Kleidung und Sonnencreme sind häufige Schutzmaßnahmen."
+    ]
+  },
+  "sci_closure_g5mat_033": {
+    "stem": "Was ist im Unterricht der Unterschied zwischen einem Leiter und einem Isolator?",
+    "options": [
+      "Ein Leiter lässt elektrischen Strom leichter durch",
+      "Ein Isolator leitet immer stärker",
+      "Es gibt keinen Unterschied",
+      "Sie sind immer identisch"
+    ],
+    "explanation": "Leiter lassen Strom leichter fließen als Isolatoren.",
+    "theoryLines": [
+      "Metalldrähte sind häufige Leiter.",
+      "Kunststoffummantelungen wirken oft als Isolatoren."
+    ]
+  },
+  "sci_closure_g6mat_034": {
+    "stem": "Was ist ein Beispiel dafür, eine Materialeigenschaft in der Technik zu nutzen?",
+    "options": [
+      "Ein festes Material wählen, das zu Aufgabe und Sicherheitsbedarf passt",
+      "Das Material beeinflusst das Ergebnis nie",
+      "Immer dasselbe Material für jede Aufgabe verwenden",
+      "Sicherheit hat keinen Bezug zur Materialwahl"
+    ],
+    "explanation": "Ingenieurinnen und Ingenieure wählen Materialien nach Festigkeit, Flexibilität, Hitzebeständigkeit und anderen Eigenschaften.",
+    "theoryLines": [
+      "Eigenschaften leiten, wie Materialien genutzt werden.",
+      "Das richtige Material macht Konstruktionen sicherer und stärker."
+    ]
+  },
+  "sci_pb1_g3_body_easy_01": {
+    "stem": "Was ist die Hauptaufgabe der Lungen im menschlichen Körper?",
+    "options": [
+      "Sauerstoff und Kohlenstoffdioxid mit der Luft austauschen",
+      "Rotes Blut aus fertigem Material erzeugen",
+      "Gifte nur durch die Haut filtern, ohne Bezug zu den Lungen",
+      "Nahrung lange speichern, ohne zu atmen"
+    ],
+    "explanation": "Das Atemsystem tauscht Gase zwischen dem Körper und der Außenluft aus.",
+    "theoryLines": [
+      "Sauerstoff gelangt in den Lungen ins Blut.",
+      "Kohlenstoffdioxid verlässt das Blut und wird ausgeatmet."
+    ]
+  },
+  "sci_pb1_g3_body_easy_02": {
+    "stem": "Welche Organe helfen, Nahrung zu verdauen, nachdem du sie geschluckt hast?",
+    "options": [
+      "Magen und Därme",
+      "Gewöhnlich die Lungen",
+      "Der Sehnerv",
+      "Nur der Armmuskel"
+    ],
+    "explanation": "Zum Verdauungssystem gehören Organe wie Magen und Därme, die Nahrung zerlegen und aufnehmen.",
+    "theoryLines": [
+      "Nahrung wandert vom Mund durch den Verdauungstrakt.",
+      "Nährstoffe werden vor allem in den Därmen aufgenommen."
+    ]
+  },
+  "sci_pb1_g3_body_hard_01": {
+    "stem": "Welche Aussage beschreibt richtig die Blutgefäße, die Blut vom Herzen zu Körpergeweben transportieren?",
+    "options": [
+      "Arterien transportieren Blut, das aus dem Herzen in den Körper gepumpt wird",
+      "Venen transportieren immer sauerstoffreiches Blut",
+      "Kapillaren verbinden nur zwei Nerven",
+      "Kapillaren erzeugen den Herzschlag"
+    ],
+    "explanation": "Arterien transportieren Blut im Allgemeinen vom Herzen weg; Venen bringen Blut zum Herzen zurück.",
+    "theoryLines": [
+      "Das Herz pumpt Blut in die Arterien.",
+      "Kapillaren sind winzige Gefäße, in denen der Austausch mit Geweben stattfindet."
+    ]
+  },
+  "sci_pb1_g3_body_hard_02": {
+    "stem": "Welche Aussage beschreibt richtig, wie Atmen mit dem Kreislauf zusammenarbeitet?",
+    "options": [
+      "Atmen lädt Blut mit Sauerstoff; Blut trägt diesen Sauerstoff zu den Geweben",
+      "Blut erzeugt gewöhnlich Sauerstoff in Lungenzellen",
+      "Muskeln nehmen Sauerstoff direkt aus der Luft",
+      "Das Herz entfernt nur Abfall und hat keinen Bezug zu Sauerstoff"
+    ],
+    "explanation": "Der Gasaustausch in den Lungen verändert den Sauerstoffgehalt im Blut, das dann zu den Geweben fließt.",
+    "theoryLines": [
+      "Lungen und Blutgefäße arbeiten als Team.",
+      "Zellen brauchen Sauerstoff, den das Blut liefert."
+    ]
+  },
+  "sci_pb1_g3_animals_easy_01": {
+    "stem": "Was ist ein übliches Merkmal junger Säugetiere?",
+    "options": [
+      "Sie säugen bald nach der Geburt oder früh im Leben",
+      "Sie bellen, um zu fliegen",
+      "Sie atmen nur mit Kiemen wie Fische",
+      "Sie wachsen gewöhnlich nur in einer Schale"
+    ],
+    "explanation": "Junge Säugetiere bekommen gewöhnlich Milch von einem Elternteil.",
+    "theoryLines": [
+      "Säugen ist ein Säugetier-Merkmal.",
+      "Säugetierbabys brauchen oft elterliche Fürsorge."
+    ]
+  },
+  "sci_pb1_g3_animals_hard_01": {
+    "stem": "Was ist ein gutes Beispiel für eine Tieranpassung an einen heißen, trockenen Lebensraum?",
+    "options": [
+      "Vor allem nachts aktiv sein, um extreme Hitze zu meiden",
+      "Nur in Süßwasser leben, ohne Ausnahme",
+      "Jeder Vogel braucht genau dieselbe Nahrung",
+      "Fische brauchen lange Beine für die Wüste"
+    ],
+    "explanation": "Verhalten und Körpermerkmale, die zum Lebensraum passen, helfen Tieren zu überleben.",
+    "theoryLines": [
+      "Wüstentiere meiden oft die heißesten Stunden.",
+      "Anpassungen verringern Wasserverlust und Hitzestress."
+    ]
+  },
+  "sci_pb1_g3_plants_easy_01": {
+    "stem": "Was brauchen Pflanzen an einem hellen Tag für die Fotosynthese?",
+    "options": [
+      "Licht, Wasser und Kohlenstoffdioxid aus der Luft",
+      "Gewöhnlich nur heißen Sand ohne Wasser",
+      "Gewöhnlich nur laute Musik",
+      "Boden ganz ohne Mineralstoffe"
+    ],
+    "explanation": "Bei der Fotosynthese nutzen Pflanzen Licht, Wasser und Kohlenstoffdioxid, um Zucker herzustellen.",
+    "theoryLines": [
+      "Blätter fangen Lichtenergie ein.",
+      "Fotosynthese setzt auch Sauerstoff frei."
+    ]
+  },
+  "sci_pb1_g3_materials_easy_01": {
+    "stem": "Wie kannst du im Unterricht einfach einen elektrischen Leiter von einem Isolator unterscheiden?",
+    "options": [
+      "Prüfen, ob ein Stromkreis mit einer Glühlampe durch das Material schließt",
+      "Das Material immer mit Öl bedecken, ohne einen Stromkreis zu prüfen",
+      "Auf das Material stampfen ohne Experiment",
+      "Jedes Metall als Isolator behandeln"
+    ],
+    "explanation": "Leiter lassen Strom in einem einfachen Stromkreis fließen; Isolatoren blockieren den Fluss.",
+    "theoryLines": [
+      "Eine leuchtende Lampe zeigt einen vollständigen Leitungsweg.",
+      "Sicherheit ist beim Prüfen elektrischer Materialien wichtig."
+    ]
+  },
+  "sci_pb1_g3_materials_hard_01": {
+    "stem": "Was beeinflusst, wie schnell ein kleiner Eiswürfel im selben Klassenzimmer schmilzt?",
+    "options": [
+      "Raumtemperatur und Luftbewegung um das Eis",
+      "Gewöhnlich nur die Wandfarbe",
+      "Der Name der Person, die das Experiment beobachtet",
+      "Tischhöhe ohne Bezug zur Umgebung"
+    ],
+    "explanation": "Temperatur und die umgebende Luft beeinflussen, wie schnell Eis zu flüssigem Wasser wird.",
+    "theoryLines": [
+      "Wärmere Luft lässt Eis gewöhnlich schneller schmelzen.",
+      "Bewegte Luft kann die Wärmeübertragung beschleunigen."
+    ]
+  },
+  "sci_pb1_g3_experiments_easy_01": {
+    "stem": "Was ist ein wichtiger Schritt, bevor du eine Messung im selben Experiment wiederholst?",
+    "options": [
+      "Klar festlegen, was gleich bleibt und was sich ändert",
+      "Jede Variable zusammen ändern",
+      "Frühere Ergebnisse löschen, ohne sie aufzuschreiben",
+      "Sicherstellen, dass es keine geplante Variable gibt"
+    ],
+    "explanation": "In einem kontrollierten Experiment änderst du eine Variable und hältst andere Bedingungen möglichst gleich.",
+    "theoryLines": [
+      "Klare Variablen machen Wiederholungen sinnvoll.",
+      "Gute Planung kommt vor dem Messen."
+    ]
+  },
+  "sci_pb1_g3_earth_space_easy_01": {
+    "stem": "Welche Aussage beschreibt die Bewegung der Erde um die Sonne richtig?",
+    "options": [
+      "Die Erde wandert auf einer nahezu kreisförmigen elliptischen Bahn um die Sonne",
+      "Die Erde steht still, während der Mond die Sonne umkreist, ohne Bezug zur Erde",
+      "Die Sonne umkreist die Erde einmal am Tag, ohne Jahreszeiten",
+      "Jahreszeiten entstehen nur durch die tägliche Drehung um die Erdachse"
+    ],
+    "explanation": "Der jährliche Weg der Erde um die Sonne hängt mit Jahreszeiten und wechselnden Sonnenwinkeln zusammen.",
+    "theoryLines": [
+      "Eine Reise um die Sonne dauert etwa ein Jahr.",
+      "Die Erde dreht sich auch täglich und erzeugt so Tag und Nacht."
+    ]
+  },
+  "sci_pb1_g3_earth_space_hard_01": {
+    "stem": "Wie hängen Jahreszeiten mit dem Einfallswinkel des Sonnenlichts in einer Region zusammen?",
+    "options": [
+      "Trifft Sonnenlicht direkter, tendiert diese Region zu wärmeren Jahreszeiten",
+      "Jahreszeiten entstehen nur durch die tägliche Drehung um die Achse",
+      "Der Sonnenwinkel hat gewöhnlich keinen Bezug zur jahreszeitlichen Temperatur",
+      "Der Mond legt die Jahreszeiten jeden Tag direkt fest"
+    ],
+    "explanation": "Jahreszeiten hängen mit der Tageslänge und damit zusammen, wie direkt Sonnenlicht einen Ort im Jahr trifft.",
+    "theoryLines": [
+      "Direkteres Sonnenlicht liefert mehr Energie pro Fläche.",
+      "Die Neigung der Erde hilft, jahreszeitliche Muster zu erzeugen."
+    ]
+  },
+  "sci_pb1_g3_environment_easy_01": {
+    "stem": "Was ist eine einfache Möglichkeit, Verpackungsmüll in der Schule zu verringern?",
+    "options": [
+      "Eine wiederverwendbare Lunchbox mitbringen und weniger Einwegverpackungen nutzen",
+      "Verpackungen gewöhnlich im Klassenzimmer verbrennen",
+      "Verpackungen nie recyceln",
+      "Verpackungen ohne Sortieren in irgendeinen Behälter werfen"
+    ],
+    "explanation": "Weniger Wegwerfverpackungen und wiederverwendbare Behälter verringern Abfall.",
+    "theoryLines": [
+      "Vermeiden kommt vor Recyceln.",
+      "Wiederverwendbare Dinge verringern Müll in der Schule."
+    ]
+  },
+  "sci_pb1_g3_environment_hard_01": {
+    "stem": "Was ist ein wahrscheinliches Ergebnis, wenn man Pflanzen in einen durch Erdrutsche geschädigten Garten pflanzt?",
+    "options": [
+      "Wurzeln können den Boden mit der Zeit stabilisieren, wenn die Pflanzung sorgfältig geplant ist",
+      "Eine einzige Pflanzung entfernt jedes Risiko für immer",
+      "Starker Regen schwächt den Boden immer sofort, ohne andere Faktoren",
+      "Du kannst pflanzen, ohne den Hang überhaupt zu prüfen"
+    ],
+    "explanation": "Pflanzen können helfen, Boden festzuhalten, aber Hangsicherheit braucht trotzdem Planung und Sorgfalt.",
+    "theoryLines": [
+      "Wurzeln binden Bodenpartikel zusammen.",
+      "Steile Hänge brauchen sorgfältige Landnutzung."
+    ]
+  },
+  "sci_pb1_g4_body_easy_01": {
+    "stem": "Welche Aussage beschreibt das Verdauungssystem auf grundlegender Ebene richtig?",
+    "options": [
+      "Es zerlegt Nahrung in kleinere Teile und nimmt Stoffe in den Körper auf",
+      "Es erzeugt gewöhnlich Sauerstoff direkt aus Nahrung",
+      "Es tauscht nur die Aufgaben mit den Lungen, um rotes Blut zu erzeugen",
+      "Es arbeitet nur bei schneller Beinbewegung"
+    ],
+    "explanation": "Verdauung zerlegt Nahrung und hilft dem Körper, Nährstoffe aufzunehmen.",
+    "theoryLines": [
+      "Nahrung wandert durch einen Verdauungsweg.",
+      "Aufnahme bringt nützliche Stoffe ins Blut."
+    ]
+  },
+  "sci_pb1_g4_body_hard_01": {
+    "stem": "Welche Erklärung verbindet Puls und Körperaktivität am besten?",
+    "options": [
+      "Bei harter körperlicher Anstrengung steigt die Herzfrequenz oft, um Muskeln zu versorgen",
+      "Der Puls ist unabhängig von der Aktivität immer gleich",
+      "Das Herz stoppt bei Anstrengung",
+      "Der Puls hängt nur von der Raumtemperatur ab, nicht von Muskeln"
+    ],
+    "explanation": "Bei Bewegung braucht der Körper mehr Sauerstoff, deshalb schlägt das Herz gewöhnlich schneller.",
+    "theoryLines": [
+      "Arbeitende Muskeln brauchen mehr Blutfluss.",
+      "Die Pulsfrequenz ist ein nützlicher Hinweis auf Aktivität."
+    ]
+  },
+  "sci_pb1_g4_animals_easy_01": {
+    "stem": "Was beschreibt typischerweise den Lebenszyklus eines Insekts mit vollständiger Metamorphose?",
+    "options": [
+      "Stadien wie Ei, Larve, Puppe und erwachsenes Tier, die unterschiedlich aussehen",
+      "Jedes Stadium sieht genau gleich aus",
+      "Gewöhnlich überhaupt keine Entwicklungsstadien",
+      "Das erwachsene Tier wird wieder zum Ei mit derselben Form"
+    ],
+    "explanation": "Vollständige Metamorphose hat klare Stadien mit großen Formänderungen.",
+    "theoryLines": [
+      "Schmetterlinge und Käfer sind Beispiele.",
+      "Jedes Stadium kann unterschiedliche Ressourcen nutzen."
+    ]
+  },
+  "sci_pb1_g4_animals_hard_01": {
+    "stem": "Was geschieht in einem Nahrungsnetz, wenn eine grundlegende Erzeugerpflanze stark abnimmt?",
+    "options": [
+      "Energiewege und die Abhängigkeit von Verbrauchern können sich ändern",
+      "Nichts ändert sich, weil Pflanzen in einem Netz keine Rolle spielen",
+      "Alle Tiere wachsen automatisch mehr",
+      "Abfall verschwindet ohne ökologische Wirkung"
+    ],
+    "explanation": "Erzeugerpflanzen stellen organisches Material her, das viele Stufen eines Nahrungsnetzes ernährt.",
+    "theoryLines": [
+      "Erzeuger bilden die Basis der meisten Nahrungsnetze.",
+      "Fehlende Erzeuger können Verbraucher belasten."
+    ]
+  },
+  "sci_pb1_g4_materials_easy_01": {
+    "stem": "Was ist eine typische physikalische Art, ein Gemisch aus Sand und Wasser in einem Behälter zu trennen?",
+    "options": [
+      "Den Sand absinken lassen, dann filtern oder das Wasser vorsichtig abgießen",
+      "Das Gemisch immer anzünden, ohne Sicherheitsprüfungen",
+      "Gewöhnlich neue Stoffe erzeugen, ohne zu prüfen",
+      "Sand ohne Experiment in neues Wasser verwandeln"
+    ],
+    "explanation": "Bestandteile kann man nach Dichte und Teilchengröße durch Absinken und Filtern trennen.",
+    "theoryLines": [
+      "Sand ist dichter als Wasser und sinkt ab.",
+      "Filtration trennt Feststoffe von Flüssigkeiten."
+    ]
+  },
+  "sci_pb1_g4_materials_hard_01": {
+    "stem": "Wann sollte eine Veränderung im Klassenzimmer als physikalisch und nicht als chemisch eingeordnet werden?",
+    "options": [
+      "Wenn derselbe Stoff seine chemische Identität behält, aber Form oder Zustand ändert",
+      "Wenn ein neuer Stoff mit völlig anderen Eigenschaften entsteht",
+      "Wenn irreversible neue Gasblasen und ein neuer Geruch erscheinen",
+      "Wenn ein Farbstoff auf Papier dauerhaft die Farbe ändert und nicht zurückkehrt"
+    ],
+    "explanation": "Eine chemische Veränderung erzeugt einen neuen Stoff; eine physikalische behält denselben Stoff.",
+    "theoryLines": [
+      "Schmelzen und Gefrieren sind physikalische Veränderungen.",
+      "Verbrennen und Rosten sind chemische Veränderungen."
+    ]
+  },
+  "sci_pb1_g4_experiments_easy_01": {
+    "stem": "Was ist die Aufgabe einer Hypothese in einer geordneten Untersuchung?",
+    "options": [
+      "Eine Vorhersage, die du mit einem Experiment prüfen kannst",
+      "Ein endgültiges Ergebnis, das sich nie ändert",
+      "Gewöhnlich ein Schritt zum Löschen von Daten",
+      "Eine Geräteliste ohne Bezug zur Frage"
+    ],
+    "explanation": "Eine Hypothese ist eine Vorhersage, die Messungen und Experimente prüfen können.",
+    "theoryLines": [
+      "Hypothesen leiten, was du prüfst.",
+      "Belege können eine Hypothese stützen oder widerlegen."
+    ]
+  },
+  "sci_pb1_g4_experiments_hard_01": {
+    "stem": "Was ist ein richtiger Grund, Messungen im selben Experiment zu wiederholen?",
+    "options": [
+      "Wiederholungen helfen, Streuung und Messfehler zu erkennen",
+      "Wiederholungen sind immer unnötig, wenn ein Ergebnis nett aussieht",
+      "Ein Versuch reicht immer, egal welche Genauigkeit nötig ist",
+      "Wiederholungen ändern das ursprüngliche Ziel ohne Grund"
+    ],
+    "explanation": "Wiederholen verbessert die Zuverlässigkeit und zeigt, wie stark Ergebnisse schwanken.",
+    "theoryLines": [
+      "Zufällige Fehler können in einzelnen Versuchen auftreten.",
+      "Übereinstimmende Wiederholungen stärken das Vertrauen."
+    ]
+  },
+  "sci_pb1_g4_earth_space_easy_01": {
+    "stem": "Was beeinflusst die Tageslänge im Sommer im Vergleich zum Winter in unserer Region?",
+    "options": [
+      "Die Neigung der Erde und ihr Weg um die Sonne",
+      "Nur die Himmelsfarbe, ohne Bezug zur Jahreszeit",
+      "Nur die Wolkenmenge, ohne Bezug zur Jahreszeit",
+      "Gewöhnlich nur die Gebäudehöhe"
+    ],
+    "explanation": "Der Jahreszyklus und der Sonnenwinkel beeinflussen, wie lange das Tageslicht dauert.",
+    "theoryLines": [
+      "Sommertage sind oft länger als Wintertage.",
+      "Die Neigung der Erde hilft, Jahreszeiten zu erzeugen."
+    ]
+  },
+  "sci_pb1_g4_environment_easy_01": {
+    "stem": "Was ist eine sichere Art, gebrauchte Batterien zu Hause zu behandeln?",
+    "options": [
+      "Sie zu einer richtigen Sammelstelle bringen statt in den normalen Müll",
+      "Sie gewöhnlich im privaten Garten verbrennen",
+      "Sie aufbrechen und ohne Anleitung in den Abfluss schütten",
+      "Sie gewöhnlich in Erde nahe der Schule vergraben"
+    ],
+    "explanation": "Batterien brauchen besonderes Recycling oder besondere Entsorgung, weil sie schädliche Stoffe enthalten können.",
+    "theoryLines": [
+      "Gefährlicher Abfall gehört nicht in den normalen Müll.",
+      "Sammelstellen halten Chemikalien von Boden und Wasser fern."
+    ]
+  },
+  "sci_pb1_g5_body_easy_01": {
+    "stem": "Welche Aussage beschreibt die Rolle der Nieren für Blut und Körperflüssigkeiten richtig?",
+    "options": [
+      "Sie filtern Abfallstoffe und helfen, den Flüssigkeitshaushalt zu halten",
+      "Sie erzeugen Sauerstoff für das Blut",
+      "Sie sind gewöhnlich nur für das Sehen zuständig",
+      "Sie ersetzen die Lungen beim Gasaustausch"
+    ],
+    "explanation": "Nieren filtern Blut und helfen, Flüssigkeiten und Abfallstoffe zu regulieren.",
+    "theoryLines": [
+      "Urin trägt gefilterte Abfallstoffe aus dem Körper.",
+      "Nieren arbeiten mit dem Kreislaufsystem zusammen."
+    ]
+  },
+  "sci_pb1_g5_body_medium_01": {
+    "stem": "Was geschieht gewöhnlich mit der Herzfrequenz, wenn du dich mehrere Minuten von Ruhe zu mäßiger Anstrengung bewegst?",
+    "options": [
+      "Sie steigt allmählich, um mehr Sauerstoff zu den Muskeln zu schicken",
+      "Sie sinkt sofort, ohne zu steigen",
+      "Sie bleibt für immer fest, ohne Bezug zum Blutfluss",
+      "Sie wird nur durch die Raumtemperatur festgelegt"
+    ],
+    "explanation": "Bei anhaltender Anstrengung arbeitet das Herz stärker, um den Sauerstoffbedarf zu decken.",
+    "theoryLines": [
+      "Aktive Muskeln brauchen mehr sauerstoffreiches Blut.",
+      "Die Herzfrequenz ist ein nützlicher Fitness-Hinweis."
+    ]
+  }
+}

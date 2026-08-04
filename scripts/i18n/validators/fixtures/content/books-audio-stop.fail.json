@@ -1,0 +1,6 @@
+{
+  "key": "shell.audioStop",
+  "ar": "توقف",
+  "expectEquals": "إيقاف",
+  "expectDetect": ["audio-stop-mismatch"]
+}

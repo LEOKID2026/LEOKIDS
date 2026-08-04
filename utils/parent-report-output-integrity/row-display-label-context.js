@@ -22,8 +22,10 @@ export const LONG_NARRATIVE_TITLE_RE = /(?!)/iu;
 /**
  * @param {string} displayName
  */
+const CTX_SLUG = "utils__parent-report-output-integrity__row-display-label-context";
+
 export function cleanTopicLabelHe(displayName) {
-  return String(displayName || "").trim() || "Topic";
+  return String(displayName || "").trim() || reportPackCopy(CTX_SLUG, "topic");
 }
 
 /**
@@ -31,10 +33,18 @@ export function cleanTopicLabelHe(displayName) {
  */
 export function gradeRelationSublineFromRelation(gradeRelation) {
   const rel = String(gradeRelation || "").trim();
-  if (rel === "higher" || rel === "above_registered_grade") return "Above registered grade";
-  if (rel === "lower" || rel === "below_registered_grade") return "Below registered grade";
-  if (rel === "same" || rel === "at_registered_grade") return "At registered grade level";
-  if (rel === "outside_regular_grade_band") return "Outside the registered grade band";
+  if (rel === "higher" || rel === "above_registered_grade") {
+    return reportPackCopy(CTX_SLUG, "above_registered_grade");
+  }
+  if (rel === "lower" || rel === "below_registered_grade") {
+    return reportPackCopy(CTX_SLUG, "below_registered_grade");
+  }
+  if (rel === "same" || rel === "at_registered_grade") {
+    return reportPackCopy(CTX_SLUG, "at_registered_grade_level");
+  }
+  if (rel === "outside_regular_grade_band") {
+    return reportPackCopy(CTX_SLUG, "outside_the_registered_grade_band");
+  }
   return "";
 }
 
@@ -78,7 +88,10 @@ export function resolveNarrativeDisplayLabels(args) {
     return { titleHe: name, gradeRelationSublineHe: null };
   }
   const gradeShort = gradeLabel.replace(/(?!)/iu, "").trim();
-  const titleHe = `${name} - Grade ${gradeShort}`;
+  const titleHe = reportPackCopy(CTX_SLUG, "topic_grade_title", {
+    topic: name,
+    grade: gradeShort,
+  });
   const sub = gradeRelationSublineFromRelation(args?.gradeRelation);
   return { titleHe, gradeRelationSublineHe: sub || null };
 }

@@ -1,0 +1,206 @@
+{
+  "namespaces": {
+    "files": {
+      "en": 15,
+      "fr": 15,
+      "namesMatch": true
+    },
+    "keyMismatches": [],
+    "placeholderMismatches": 0,
+    "placeholderSamples": [],
+    "enLeakCount": 2,
+    "enLeakSamples": [
+      "learning.json:.master.strongRelative=Parent fort :",
+      "ui.json:.student.messageParent=Parent du message"
+    ]
+  },
+  "packs": {
+    "counts": {
+      "en": 396,
+      "fr": 396
+    },
+    "keyOrMissing": 0,
+    "placeholderMismatches": 0,
+    "enLeakCount": 37,
+    "enLeakSamples": [
+      "books\\english-page-skills.json: Identify and name capital letters A–Z in groups",
+      "books\\english-page-skills.json: Identify and name lowercase letters a–z",
+      "books\\english-page-skills.json: Stand up, Sit down, Open your book, Close your book",
+      "books\\english-page-skills.json: Point to the door, Show me your pen",
+      "books\\english-page-skills.json: red, blue, green, yellow — identify and match; no spelling yet",
+      "books\\english-page-skills.json: zero–ten; identify the English number",
+      "books\\english-page-skills.json: Hello, Thank you, Please — short word/phrase practice",
+      "books\\english-page-skills.json: The dog runs fast — sentence with a verb",
+      "books\\english-page-skills.json: The sky is blue — description with is",
+      "books\\english-page-skills.json: The book is on the table — prep for in/on/under",
+      "books\\english-page-skills.json: Basic adjectives, a/an/the, and place prepositions in/on/under",
+      "books\\english-page-skills.json: Basic articles + place; The cat is under the bed",
+      "books\\english-page-skills.json: Do you…? / What is…? — review with present simple",
+      "books\\english-page-skills.json: The big dog runs fast — adjective + noun + verb",
+      "books\\english-page-skills.json: I like to draw / She plays the piano",
+      "books\\english-page-skills.json: The birds are flying — link to continuous",
+      "books\\english-page-skills.json: The students read books",
+      "books\\english-page-skills.json: The park is in our town",
+      "books\\english-page-skills.json: We protect the trees",
+      "books\\english-page-skills.json: The tall girl runs quickly",
+      "books\\english-page-skills.json: The library is near the school",
+      "books\\english-page-skills.json: The elephant walked slowly — past-tense verb",
+      "books\\english-page-skills.json: We visited the museum — community places in the past",
+      "books\\english-page-skills.json: She felt proud — feelings in the past",
+      "books\\english-page-skills.json: Our class won the project"
+    ]
+  },
+  "science": {
+    "counts": {
+      "en": 1017,
+      "fr": 1017,
+      "idParity": true
+    },
+    "optionMismatches": 0,
+    "enLeakCount": 1,
+    "enLeakSamples": [
+      "earth_10.th1=L'eau continue de circuler tout au long de ce cycle."
+    ]
+  },
+  "help": {
+    "count": 40,
+    "slugParity": true,
+    "enLeakCount": 0,
+    "enLeakSamples": []
+  },
+  "meanings": {
+    "total": 745,
+    "missing": 0,
+    "identicalLongGloss": 34
+  },
+  "books": {
+    "counts": {
+      "en": 450,
+      "fr": 450,
+      "pathParity": true
+    },
+    "gradeEnglishHits": 0,
+    "enLeakFiles": 244,
+    "enLeakLines": 636,
+    "enLeakSamples": [
+      "english/g1/drafts/classroom_words.md: Aujourd'hui, nous allons apprendre des mots en classe en anglais.",
+      "english/g1/drafts/classroom_words.md: Tu connaissez maintenant les mots en classe.",
+      "english/g1/drafts/first_words_cvc.md: Aujourd'hui, nous allons apprendre des mots courts de trois lettres.",
+      "english/g1/drafts/first_words_cvc.md: Par exemple, le mot chat comporte trois lettres.",
+      "english/g1/drafts/first_words_cvc.md: Quel mot obtenons-nous des lettres b, e, d ?",
+      "english/g1/drafts/first_words_cvc.md: Quel mot obtenons-nous des lettres b, e, d ?",
+      "english/g1/drafts/first_words_cvc.md: Tu avez maintenant entendu des mots courts, comme chat, assis et soleil.",
+      "english/g1/drafts/first_words_simple.md: Quel mot anglais signifie maman ?",
+      "english/g1/drafts/first_words_simple.md: Tu connaissez maintenant des mots simples.",
+      "english/g1/drafts/grammar_be.md: Ensuite, nous ajoutons un mot comme heureux ou triste.",
+      "english/g1/drafts/grammar_be.md: Tu connaissez maintenant I am and You are.",
+      "english/g1/drafts/grammar_be.md: En pratique, tu trouverez des motifs courts comme I am happy.",
+      "english/g1/drafts/letters_lower.md: Les lettres minuscules sont la petite forme des lettres majuscules.",
+      "english/g1/drafts/letters_lower.md: Des lettres minuscules apparaissent dans les mots que nous lisons.",
+      "english/g1/drafts/letters_lower.md: Une lettre minuscule est la forme que nous voyons souvent dans les mots.",
+      "english/g1/drafts/letters_lower.md: d est la forme minuscule de D.",
+      "english/g1/drafts/letters_lower.md: t est la forme minuscule de T.",
+      "english/g1/drafts/letters_lower.md: Aujourd'hui, nous reconnaissons la forme et nous ne confondons pas les lettres.",
+      "english/g1/drafts/letters_lower.md: De quelle lettre minuscule s'agit-il ?",
+      "english/g1/drafts/letters_lower.md: De quelle lettre minuscule s'agit-il ?",
+      "english/g1/drafts/letters_lower.md: De quelle lettre minuscule s'agit-il ?",
+      "english/g1/drafts/letters_lower.md: Maintenant, tu connaissez aussi les lettres minuscules.",
+      "english/g1/drafts/letters_match.md: Le M majuscule correspond au m minuscule.",
+      "english/g1/drafts/letters_match.md: Le F majuscule correspond au f minuscule.",
+      "english/g1/drafts/letters_match.md: Quelle est la paire de H ?",
+      "english/g1/drafts/letters_match.md: Quelle est la paire de k minuscules ?",
+      "english/g1/drafts/letters_match.md: Quelle est la paire de k minuscules ?",
+      "english/g1/drafts/letters_match.md: Tu savez maintenant comment relier les lettres majuscules et minuscules.",
+      "english/g1/drafts/letters_upper.md: De quelle lettre majuscule s'agit-il ?",
+      "english/g1/drafts/letters_upper.md: K a une ligne droite et deux lignes obliques qui se rejoignent au milieu.",
+      "english/g1/drafts/letters_upper.md: De quelle lettre majuscule s'agit-il ?",
+      "english/g1/drafts/letters_upper.md: De quelle lettre majuscule s'agit-il ?",
+      "english/g1/drafts/letters_upper.md: S a une forme courbe, comme une ligne qui se courbe dans les deux sens.",
+      "english/g1/drafts/letters_upper.md: Dans les pages suivantes, nous apprendrons les lettres minuscules et entendrons leurs noms.",
+      "english/g1/drafts/letter_names.md: Aujourd'hui, nous allons apprendre les noms des lettres en anglais.",
+      "english/g1/drafts/letter_names.md: Lorsque nous entendons le nom de la lettre A, nous recherchons A.",
+      "english/g1/drafts/letter_names.md: Lorsque nous entendons le nom de la lettre M, nous recherchons M.",
+      "english/g1/drafts/letter_names.md: Quel est le nom de la lettre ?",
+      "english/g1/drafts/letter_names.md: Quel est le nom de la lettre J ?",
+      "english/g1/drafts/letter_names.md: Quel est le nom de la lettre J ?"
+    ]
+  },
+  "stems": {
+    "math": "function",
+    "geo": "function",
+    "money": "Emma a 10 euros. Elle achète une collation pour 3 euros. Combien d'argent reste-t-il ?",
+    "circle": "Un cercle de rayon 5. Quelle est l’aire ? (π = 3.14)"
+  },
+  "leakage": {},
+  "tuVous": {
+    "brokenFiles": 7,
+    "samples": [
+      "locales\\fr-FR\\learning.json :: /à tu /gi",
+      "content-packs\\fr-FR\\games\\burn-down\\components__educational-games__leo-pizzeria__leo-pizzeria-data.json :: /Il tu /gi",
+      "content-packs\\fr-FR\\games\\burn-down-index.json :: /Il tu /gi",
+      "content-packs\\fr-FR\\learning\\example-pattern-diagnostics-payload.json :: /à tu /gi",
+      "data\\science-questions-fr-FR-overlay.js :: /à tu /gi",
+      "docs\\learning-book\\fr-FR\\geometry\\g6\\drafts\\square_perimeter.md :: /Il tu /gi",
+      "docs\\learning-book\\fr-FR\\math\\g4\\drafts\\ns_complement100.md :: /Il tu /gi"
+    ]
+  },
+  "grades": {
+    "common": {
+      "startLearning": "Commencez à apprendre",
+      "continue": "Continuer",
+      "back": "Retour",
+      "next": "Suivant",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "close": "Fermer",
+      "loading": "Chargement…",
+      "retry": "Réessaie",
+      "errorGeneric": "Quelque chose s'est mal passé. Veuillez réessayer.",
+      "notFound": "Page introuvable",
+      "accessDenied": "Vous n'avez pas accès à cette page.",
+      "writeDisabled": "L'enregistrement est temporairement désactivé lorsque le site global est en mode aperçu.",
+      "mockModeBanner": "Mode aperçu : les données d'entraînement ne sont pas enregistrées en production.",
+      "brandName": "Leo Kids",
+      "brandTagline": "Un apprentissage qui ressemble à un jeu",
+      "yes": "Oui",
+      "no": "Non",
+      "ok": "OK",
+      "search": "Recherche",
+      "settings": "Paramètres",
+      "logout": "Se déconnecter",
+      "login": "Se connecter",
+      "home": "Accueil",
+      "help": "Aide",
+      "more": "Plus",
+      "gradeLabel": "Classe {grade}",
+      "subjectMath": "Mathématiques",
+      "subjectGeometry": "Géométrie",
+      "subjectEnglish": "Anglais",
+      "subjectScience": "Sciences",
+      "grade1": "CP",
+      "grade2": "CE1",
+      "grade3": "CE2",
+      "grade4": "CM1",
+      "grade5": "CM2",
+      "grade6": "6e",
+      "truthNoData": "Aucune donnée pour l'instant",
+      "truthUnavailable": "Données indisponibles pour le moment",
+      "truthLoading": "Chargement…",
+      "truthCumulative": "Cumulatif",
+      "truthPeriodThisMonth": "Pour le mois en cours",
+      "truthPeriodLifetime": "Cumul de toutes les sessions",
+      "truthCompletedSessionsOnly": "À partir de séances terminées",
+      "truthAllSessionsWithDuration": "De toutes les sessions avec durée",
+      "truthCreditedMinutes": "Temps d'apprentissage crédité - questions, livres et activités pour les parents"
+    },
+    "bookGradeEnglishHits": 0
+  },
+  "etudiant": {
+    "count": 0,
+    "samples": []
+  },
+  "forbidden": {
+    "feuilleCalcul": 0,
+    "regional": 0
+  }
+}

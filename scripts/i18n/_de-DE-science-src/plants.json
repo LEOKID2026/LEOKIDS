@@ -1,0 +1,632 @@
+{
+  "plants_1": {
+    "stem": "What does a plant need in order to grow?",
+    "options": [
+      "Water only, without sunlight or soil",
+      "Sunlight, water, and soil",
+      "Sunlight only, without water from the soil",
+      "Dry soil without water or light"
+    ],
+    "explanation": "A plant needs light, water, minerals from soil, and air to grow well.",
+    "theoryLines": [
+      "Leaves take in light; roots take in water and minerals.",
+      "Without enough light or water, a plant can weaken and die."
+    ]
+  },
+  "plants_2": {
+    "stem": "Which part of a plant absorbs water from the soil?",
+    "options": [
+      "The leaves — they collect water that falls from rain.",
+      "The stem — it holds the plant upright but does not absorb water from the soil.",
+      "The roots — they absorb water and minerals from the soil.",
+      "The lower part of the stem in the soil — it absorbs water just like roots do."
+    ],
+    "explanation": "Roots grow underground and absorb water and dissolved minerals from the soil. The water then travels up through the stem to reach the leaves and other parts of the plant. Without roots taking in water, the plant would dry out and die.",
+    "theoryLines": [
+      "Roots anchor the plant in the soil and absorb the water and nutrients it needs to grow.",
+      "Water travels from the roots through the stem and into the leaves, where it is used for photosynthesis."
+    ]
+  },
+  "plants_3": {
+    "stem": "What is photosynthesis?",
+    "options": [
+      "A process in which a plant breaks sugar apart using oxygen for energy",
+      "A process in which a plant makes food from light, water, and carbon dioxide",
+      "A process in which a plant loses water through leaf openings on a bright day",
+      "A process that mostly happens in the stem underground"
+    ],
+    "explanation": "In photosynthesis, a plant uses light, water, and carbon dioxide to make sugar and release oxygen.",
+    "theoryLines": [
+      "Photosynthesis happens in chloroplasts, mostly in leaves.",
+      "Photosynthesis supports food chains in most ecosystems."
+    ]
+  },
+  "plants_4": {
+    "stem": "When do plants carry out cellular respiration?",
+    "options": [
+      "Plants respire at night and during the day",
+      "Plants respire only in daytime sunlight",
+      "Plants usually do not respire at all",
+      "Only roots respire, not leaves"
+    ],
+    "explanation": "Cellular respiration happens day and night. Photosynthesis happens only when there is light.",
+    "theoryLines": [
+      "Cellular respiration releases energy from sugar.",
+      "Photosynthesis makes sugar; respiration uses that sugar for energy."
+    ]
+  },
+  "plants_5": {
+    "stem": "What do stomata do for a plant leaf?",
+    "options": [
+      "They carry water from the soil directly to the leaf.",
+      "They absorb sunlight for the plant to use.",
+      "They let gases like carbon dioxide and oxygen pass in and out of the leaf.",
+      "They anchor the plant firmly in the ground."
+    ],
+    "explanation": "Stomata are tiny openings on a leaf that allow gas exchange — letting carbon dioxide in and oxygen out during photosynthesis.",
+    "theoryLines": [
+      "Light energy and water are used by the plant during photosynthesis.",
+      "Gases move in and out of leaves through stomata."
+    ]
+  },
+  "plants_6": {
+    "stem": "What is found near the top of a plant?",
+    "options": [
+      "Roots",
+      "Leaves",
+      "Flowers",
+      "Fruits"
+    ],
+    "explanation": "Leaves grow on the upper parts of a plant, above the stem, where they can take in sunlight.",
+    "theoryLines": [
+      "A plant has roots below, a stem in the middle, and leaves and flowers above.",
+      "Leaves look green because they contain chlorophyll."
+    ]
+  },
+  "plants_7": {
+    "stem": "What is found at the bottom of a plant?",
+    "options": [
+      "Leaves",
+      "Roots",
+      "Flowers",
+      "Fruits"
+    ],
+    "explanation": "Roots grow in the soil. They hold the plant in place and take in water and minerals.",
+    "theoryLines": [
+      "Roots grow down into the ground.",
+      "Roots help the plant stand steady."
+    ]
+  },
+  "plants_8": {
+    "stem": "What happens to a plant if it has no water?",
+    "options": [
+      "It keeps growing for a long time if it has lots of light",
+      "It wilts and becomes weak",
+      "Its leaves stay upright and green for a long time without water",
+      "It stops respiring until water returns"
+    ],
+    "explanation": "Water is essential. Without it, a plant wilts, leaves dry out, and the plant may die.",
+    "theoryLines": [
+      "Water helps a plant stay alive and strong.",
+      "Roots take water from the soil."
+    ]
+  },
+  "plants_9": {
+    "stem": "What does a plant need in order to grow?",
+    "options": [
+      "Water, light, air, and materials from the soil",
+      "A plant can grow with no sunlight at all",
+      "A place with lots of people nearby",
+      "Only a place that has water"
+    ],
+    "explanation": "Plants need sunlight for photosynthesis. Without light, a plant cannot grow well.",
+    "theoryLines": [
+      "Sunlight helps a plant make food.",
+      "A plant without light often becomes weak and yellow."
+    ]
+  },
+  "plants_10": {
+    "stem": "What color are the leaves of most plants?",
+    "options": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    "explanation": "Most leaves are green because they contain chlorophyll, which takes in sunlight.",
+    "theoryLines": [
+      "Chlorophyll helps a plant make food from light.",
+      "In fall, leaves change color as chlorophyll breaks down."
+    ]
+  },
+  "plants_11": {
+    "stem": "What is chlorophyll?",
+    "options": [
+      "A structural protein in the cell wall that only moves water",
+      "A green pigment in leaves that takes in light for making food",
+      "A wax layer on a leaf that fully blocks all leaf openings",
+      "A filling liquid between cells that has no pigment"
+    ],
+    "explanation": "Chlorophyll is the green material in leaves that takes in sunlight for photosynthesis.",
+    "theoryLines": [
+      "Chlorophyll gives leaves their green color.",
+      "It is found in chloroplasts inside leaf cells."
+    ]
+  },
+  "plants_12": {
+    "stem": "What is the job of flowers?",
+    "options": [
+      "Color and scent with no link to seeds or pollination",
+      "Attracting insects, pollination, and making seeds",
+      "Taking water from soil directly through the petals",
+      "Casting fixed shade on the stem with no role in reproduction"
+    ],
+    "explanation": "Flowers attract insects that move pollen. After that, seeds can form and grow into new plants.",
+    "theoryLines": [
+      "Bright flowers help attract insects.",
+      "Insects help move pollen from flower to flower."
+    ]
+  },
+  "plants_13": {
+    "stem": "What is pollination?",
+    "options": [
+      "When a plant dies at the end of winter",
+      "When pollen moves from one flower to another so seeds can form",
+      "When a plant burns in a forest fire",
+      "When a flower blooms before any pollen exists"
+    ],
+    "explanation": "Pollination is the transfer of pollen, often by insects, wind, or other animals. It helps plants make seeds and grow new plants.",
+    "theoryLines": [
+      "Many flowers attract insects that carry pollen.",
+      "Without pollination, many plants cannot make seeds."
+    ]
+  },
+  "plants_14": {
+    "stem": "How do many seeds travel to new places away from the parent plant?",
+    "options": [
+      "They stay attached to the parent plant forever and never move.",
+      "They are carried by wind, water, or animals to new growing places.",
+      "They dig tunnels under the soil using tiny roots only.",
+      "They wait for photosynthesis to push them into the air."
+    ],
+    "explanation": "Seed dispersal moves seeds away from the parent plant so new plants can grow in other places. Wind, water, and animals are common ways seeds travel.",
+    "theoryLines": [
+      "Seeds need space, light, water, and nutrients to grow well.",
+      "Fruits, hooks, wings, and floating shapes can help seeds travel."
+    ]
+  },
+  "plants_15": {
+    "stem": "What happens during photosynthesis?",
+    "options": [
+      "Plants release carbon dioxide and take in oxygen to make energy.",
+      "Plants use sunlight and water to make their own food and release oxygen.",
+      "Plants absorb only water to produce all the energy they need.",
+      "Photosynthesis only takes place in the stem and only during the night."
+    ],
+    "explanation": "During photosynthesis, plants capture energy from sunlight and use it to convert water and carbon dioxide into glucose — a sugar the plant uses for energy and growth. Oxygen is released as a byproduct, which is the oxygen that most living things breathe.",
+    "theoryLines": [
+      "Photosynthesis takes place mainly in the leaves, where cells contain a green pigment called chlorophyll.",
+      "Without photosynthesis, there would be no oxygen in the air and no food at the base of the food chain."
+    ]
+  },
+  "plants_16": {
+    "stem": "Where do plants grow?",
+    "options": [
+      "Only in deep water where there is no sunlight.",
+      "In soil, in water, or even without soil in certain conditions.",
+      "Only in water, never in soil.",
+      "Only in soil, never in water."
+    ],
+    "explanation": "Most plants grow in soil, where their roots anchor them and absorb water and minerals. However, many plants grow in water, such as water lilies. Some plants can even grow without soil when given the right nutrients directly.",
+    "theoryLines": [
+      "Soil provides plants with water, minerals, and a place to anchor their roots.",
+      "Plants that grow in water have special features that help them float or stay upright."
+    ]
+  },
+  "plants_17": {
+    "stem": "What color are green plants?",
+    "options": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    "explanation": "Green plants look green because they contain chlorophyll, which takes in sunlight.",
+    "theoryLines": [
+      "Chlorophyll helps a plant make food.",
+      "It gives the plant its green color."
+    ]
+  },
+  "plants_18": {
+    "stem": "Which plant part uses water with sunlight to make food?",
+    "options": [
+      "Leaves",
+      "Roots",
+      "Stem",
+      "Flowers"
+    ],
+    "explanation": "Leaves use water, carbon dioxide, and sunlight to make food during photosynthesis.",
+    "theoryLines": [
+      "Water helps keep a plant strong and alive.",
+      "Roots take water from the soil and send it up to the leaves."
+    ]
+  },
+  "plants_19": {
+    "stem": "What happens to leaves in the fall?",
+    "options": [
+      "They become greener",
+      "They change color and fall off",
+      "They grow larger",
+      "They usually disappear completely overnight"
+    ],
+    "explanation": "In fall, many leaves turn yellow, red, or orange and drop from trees as light and temperature change.",
+    "theoryLines": [
+      "Leaf drop is part of many trees' yearly cycle.",
+      "In spring, new leaves grow again."
+    ]
+  },
+  "plants_20": {
+    "stem": "What is a seed?",
+    "options": [
+      "The outer skin of a fruit with no plant embryo",
+      "A plant part that holds a plant embryo and can grow into a new plant",
+      "A colorful flower with no seed stage",
+      "A leaf that stores starch with no plant embryo"
+    ],
+    "explanation": "A seed holds a tiny plant embryo. With the right conditions, it can sprout into a new plant.",
+    "theoryLines": [
+      "Seeds form after flowers are pollinated.",
+      "A seed contains what is needed to start a new plant."
+    ]
+  },
+  "plants_21": {
+    "stem": "What is the role of a fruit in a plant?",
+    "options": [
+      "A fruit makes food for the plant's roots.",
+      "A fruit is the part of the plant that contains and protects the seeds.",
+      "A fruit is a special leaf that stores sunlight.",
+      "A fruit is the root that absorbs water from the soil."
+    ],
+    "explanation": "The fruit grows from the flower and contains seeds. It protects the seeds and often helps them spread to new locations by attracting animals.",
+    "theoryLines": [
+      "Fruits help spread seeds by attracting animals that eat them.",
+      "Animals eat the fruit and carry the seeds away to new places."
+    ]
+  },
+  "plants_22": {
+    "stem": "What is the main role of roots in a plant?",
+    "options": [
+      "Roots capture sunlight and store it for the plant to use.",
+      "Roots absorb water and minerals from the soil and anchor the plant in place.",
+      "Roots open up to release seeds when the flower blooms.",
+      "Roots help leaves breathe by filtering air from the soil."
+    ],
+    "explanation": "Roots anchor the plant in the soil and absorb water and nutrients that the plant needs to grow. These travel up through the stem to the rest of the plant.",
+    "theoryLines": [
+      "Roots grow downward into the soil.",
+      "Water and minerals travel from the roots upward to the rest of the plant."
+    ]
+  },
+  "plants_23": {
+    "stem": "What is a chloroplast?",
+    "options": [
+      "A color pigment with no separate structure in the cell",
+      "A small part of a plant cell that holds chlorophyll and is where photosynthesis happens",
+      "A water pad around the cell with no chlorophyll",
+      "Soil grains that float into the cell"
+    ],
+    "explanation": "A chloroplast is a small structure in plant cells that contains chlorophyll and carries out photosynthesis.",
+    "theoryLines": [
+      "Chloroplasts are found mainly in leaves.",
+      "They look green because they contain chlorophyll."
+    ]
+  },
+  "plants_24": {
+    "stem": "What is pollen?",
+    "options": [
+      "The blooming stage before any pollen forms",
+      "A powder made in flowers that must reach another flower for seeds to form",
+      "Dry leaves scattered among flowers",
+      "A root that moves pollen grains"
+    ],
+    "explanation": "Pollen is a powder from the male parts of a flower. It must reach the female parts so seeds can form.",
+    "theoryLines": [
+      "Insects, wind, or water can move pollen.",
+      "Pollination is part of how many plants reproduce."
+    ]
+  },
+  "plants_25": {
+    "stem": "How do plants move water from their roots to their leaves?",
+    "options": [
+      "Water collects in the roots and stays there permanently.",
+      "Plants transport water upward through tiny tubes called xylem.",
+      "Sunlight pulls the water along the outside surface of the plant.",
+      "The stem stores water permanently inside its cells."
+    ],
+    "explanation": "Plants have a network of tiny tubes called xylem that carry water from the roots upward through the stem and into the leaves.",
+    "theoryLines": [
+      "Xylem tubes transport water from the roots up to the leaves.",
+      "Water moves upward through the plant by capillary action and evaporation from leaves."
+    ]
+  },
+  "plants_26": {
+    "stem": "What is organic fertilizer (compost-style manure)?",
+    "options": [
+      "Barren soil with no plant leftovers",
+      "Material from animals or plants that breaks down and becomes fertilizer",
+      "Clean irrigation water with no decaying materials",
+      "Crushed rocks that never become fertilizer"
+    ],
+    "explanation": "Organic fertilizer comes from animal or plant material that breaks down and adds nutrients to soil.",
+    "theoryLines": [
+      "It is a natural kind of fertilizer.",
+      "It helps keep soil healthy for plants."
+    ]
+  },
+  "plants_27": {
+    "stem": "What is fertilizer?",
+    "options": [
+      "Irrigation water with no added minerals",
+      "A material added to soil to give plants nutrients",
+      "Dry clay with no nitrogen or phosphorus",
+      "Sunlight with no soil nutrients"
+    ],
+    "explanation": "Fertilizer adds nutrients such as nitrogen and phosphorus to soil so plants can grow better.",
+    "theoryLines": [
+      "There are natural and synthetic fertilizers.",
+      "Fertilizer can help plants grow stronger."
+    ]
+  },
+  "plants_28": {
+    "stem": "What does soil provide for plants?",
+    "options": [
+      "Soil only provides sunlight for plants to grow.",
+      "Soil provides nutrients and minerals that plants need to grow, and it holds roots in place.",
+      "Soil provides only water and nothing else.",
+      "Soil provides only carbon dioxide for photosynthesis."
+    ],
+    "explanation": "Soil is rich in nutrients and minerals that plants need. It also holds the roots firmly in place and helps retain water near the roots.",
+    "theoryLines": [
+      "Plant roots absorb water and nutrients from the soil.",
+      "Healthy soil contains more nutrients, which helps plants grow better."
+    ]
+  },
+  "plants_29": {
+    "stem": "What happens to a plant when it does not get enough light?",
+    "options": [
+      "It boosts photosynthesis until it no longer needs water",
+      "It becomes weak, turns yellow, and does not grow well",
+      "It rushes into blooming with no leaves",
+      "Its cell walls thicken at once with no water loss"
+    ],
+    "explanation": "Without enough light, a plant cannot photosynthesize well, so it weakens, yellows, and grows poorly.",
+    "theoryLines": [
+      "Light is very important for plants.",
+      "Without light, a plant cannot make food."
+    ]
+  },
+  "plants_30": {
+    "stem": "Why are plants important for life on Earth?",
+    "options": [
+      "Plants are not important — animals could survive without them.",
+      "Plants produce oxygen and provide food for animals and other living things.",
+      "Plants are important only because they perform photosynthesis in science labs.",
+      "Plants are important only because they store extra food underground."
+    ],
+    "explanation": "Plants are essential: they produce the oxygen we breathe through photosynthesis and serve as the base of most food chains on Earth.",
+    "theoryLines": [
+      "Without plants, most life on Earth could not survive.",
+      "Plants are producers — they make food using sunlight, water, and carbon dioxide."
+    ]
+  },
+  "plants_15__v2": {
+    "stem": "What does a plant need to grow and develop?",
+    "options": [
+      "Water and soil without sunlight",
+      "Water, sunlight, and soil",
+      "Light and soil without water from the roots",
+      "Water and light without rich soil"
+    ],
+    "explanation": "A plant needs water, sunlight, and soil to grow and stay healthy.",
+    "theoryLines": [
+      "Without water, a plant dries out.",
+      "Without sunlight, a plant cannot photosynthesize."
+    ]
+  },
+  "plants_14__v2": {
+    "stem": "What is found on the upper part of a plant?",
+    "options": [
+      "Roots, usually",
+      "Leaves and flowers",
+      "Only a trunk with no leaves",
+      "Prepared soil with no stem or leaf"
+    ],
+    "explanation": "Leaves and flowers grow on the upper part of a plant, where they can take in sunlight.",
+    "theoryLines": [
+      "Leaves take in sunlight.",
+      "Flowers are often colorful and attract insects."
+    ]
+  },
+  "plants_15__v3": {
+    "stem": "What is found on the lower part of a plant?",
+    "options": [
+      "Leaves",
+      "Roots",
+      "Flowers",
+      "Fruits"
+    ],
+    "explanation": "Roots grow in the soil at the bottom of the plant.",
+    "theoryLines": [
+      "Roots anchor the plant.",
+      "They take in water and minerals."
+    ]
+  },
+  "plants_16__v2": {
+    "stem": "What do plants need in order to grow?",
+    "options": [
+      "Sunlight, water, air, and materials from the soil",
+      "A place with many people",
+      "Only a place that has water",
+      "Full darkness with no water"
+    ],
+    "explanation": "Plants need sunlight to make food and grow. They also need water, air, and soil nutrients.",
+    "theoryLines": [
+      "Sunlight helps a plant make food.",
+      "Without light, a plant cannot grow well."
+    ]
+  },
+  "plants_19__v2": {
+    "stem": "What is found in a flower?",
+    "options": [
+      "Only leaves with no petals or nectar",
+      "Petals and nectar that attract insects",
+      "Only roots with no flower",
+      "Barren soil with no stem or flower"
+    ],
+    "explanation": "A flower has petals, pollen parts, and nectar that attract insects.",
+    "theoryLines": [
+      "Flowers are often colorful.",
+      "Insects that visit flowers help with pollination."
+    ]
+  },
+  "plants_20__v2": {
+    "stem": "What is the first part of a plant to grow when a seed sprouts?",
+    "options": [
+      "The first part to grow is the flower.",
+      "The first part to grow is a tiny root, which pushes down into the soil.",
+      "The first part to grow is a large green leaf.",
+      "The first part to grow is a flower full of new seeds."
+    ],
+    "explanation": "When a seed germinates, the very first part to grow is a small root called the radicle. It pushes down into the soil to anchor the plant and absorb water.",
+    "theoryLines": [
+      "The root is the first part to appear when a seed germinates.",
+      "The seed uses stored energy until the plant grows leaves that can make food."
+    ]
+  },
+  "plants_21__v2": {
+    "stem": "What is photosynthesis?",
+    "options": [
+      "Growth with no use of light or green pigment",
+      "Making food from light, using water and carbon dioxide",
+      "Only cellular respiration like in animals",
+      "Drinking water with no converting light energy into food"
+    ],
+    "explanation": "Photosynthesis is how a plant uses sunlight, water, and carbon dioxide to make sugar and release oxygen.",
+    "theoryLines": [
+      "It happens in chloroplasts in the leaves.",
+      "It is the base of many food chains."
+    ]
+  },
+  "plants_22__v2": {
+    "stem": "What is chlorophyll?",
+    "options": [
+      "A decorative color with no light capture",
+      "A green pigment in leaves that takes in light and allows photosynthesis",
+      "Water alone holding all the plant's energy",
+      "Soil minerals with no help from pigments"
+    ],
+    "explanation": "Chlorophyll is the green material in leaves that takes in sunlight so the plant can make food.",
+    "theoryLines": [
+      "Chlorophyll gives leaves their green color.",
+      "It is found in chloroplasts."
+    ]
+  },
+  "plants_23__v2": {
+    "stem": "What is the role of roots in a plant?",
+    "options": [
+      "Roots capture sunlight for all parts of the plant.",
+      "Roots absorb water and nutrients from the soil to feed the plant.",
+      "Roots are where animals find shelter during cold weather.",
+      "Roots release seeds into the surrounding soil."
+    ],
+    "explanation": "Roots absorb water and nutrients from the soil. These travel upward through the stem and into the rest of the plant, supporting its growth.",
+    "theoryLines": [
+      "Roots grow underground and anchor the plant in the soil.",
+      "Water and minerals travel from the roots upward through the stem."
+    ]
+  },
+  "plants_24__v2": {
+    "stem": "What is the role of the stem in a plant?",
+    "options": [
+      "The stem produces food for the plant by using sunlight.",
+      "The stem supports the plant and carries water and nutrients to other parts.",
+      "The stem is where animals find shelter during winter.",
+      "The stem absorbs carbon dioxide directly from the soil."
+    ],
+    "explanation": "The stem supports the plant and acts like a pipe, carrying water and nutrients from the roots to the leaves and other parts of the plant.",
+    "theoryLines": [
+      "The stem connects the roots to the leaves.",
+      "Water absorbed by roots travels through the stem to reach the leaves."
+    ]
+  },
+  "plants_25__v2": {
+    "stem": "What is the role of leaves in a plant?",
+    "options": [
+      "Leaves help animals see where to find food.",
+      "Leaves capture sunlight for photosynthesis and produce oxygen as a result.",
+      "Leaves act as the lungs for animals that live inside the plant.",
+      "Leaves carry water through the plant instead of the stem."
+    ],
+    "explanation": "Leaves are the plant's food factory. They capture sunlight and use it, along with water and carbon dioxide, to make food through photosynthesis. Oxygen is released as a byproduct.",
+    "theoryLines": [
+      "Leaves contain chlorophyll, which captures sunlight.",
+      "Photosynthesis produces food for the plant and releases oxygen into the air."
+    ]
+  },
+  "plants_27__v2": {
+    "stem": "What is a seed?",
+    "options": [
+      "Fruit tissue with no embryo that can grow",
+      "A plant part with an embryo that can grow into a new plant",
+      "A flower structure with no embryo for sprouting",
+      "A dry leaf that cannot start new growth"
+    ],
+    "explanation": "A seed holds a tiny plant embryo. With the right conditions, it can sprout into a new plant.",
+    "theoryLines": [
+      "Seeds come from flowers.",
+      "A seed has what is needed to start a new plant."
+    ]
+  },
+  "plants_28__v2": {
+    "stem": "What does a fruit do for a plant?",
+    "options": [
+      "A fruit makes food to help the flower bloom each season.",
+      "A fruit contains and protects seeds, helping them spread to new places.",
+      "A fruit is a part of the leaf that stores water for the plant.",
+      "A fruit grows directly from the plant's roots underground."
+    ],
+    "explanation": "The fruit develops around the seeds to protect them. Animals eat the fruit and carry the seeds to new locations, helping the plant spread.",
+    "theoryLines": [
+      "Fruits help with seed dispersal by attracting animals.",
+      "Animals eat the fruit and carry the seeds away from the parent plant."
+    ]
+  },
+  "plants_29__v2": {
+    "stem": "What happens when a seed gets enough water, warmth, and light?",
+    "options": [
+      "The entire plant, including all its roots and flowers, appears instantly.",
+      "The seed germinates and begins to grow into a new plant.",
+      "Water fills the seed but nothing else happens.",
+      "The root dries out and falls off the seed."
+    ],
+    "explanation": "When conditions are right — enough water, warmth, and sometimes light — a seed germinates. A small root and shoot grow out of the seed and develop into a new plant.",
+    "theoryLines": [
+      "Germination is the process of a seed beginning to sprout and grow.",
+      "Seeds need water, warmth, and sometimes light to germinate successfully."
+    ]
+  },
+  "plants_30__v2": {
+    "stem": "How does a fruit form on a plant?",
+    "options": [
+      "A seed falls to the ground and turns directly into a fruit.",
+      "A fruit develops from the flower after pollination.",
+      "Fruit grows inside the leaves when they get enough sunlight.",
+      "Water flowing up through the root forms the fruit directly."
+    ],
+    "explanation": "After a flower is pollinated, the petals fall away and the base of the flower swells and grows into a fruit that contains seeds.",
+    "theoryLines": [
+      "Pollination is the transfer of pollen that fertilizes the flower.",
+      "The fertilized flower develops into a fruit that holds and protects the seeds."
+    ]
+  }
+}

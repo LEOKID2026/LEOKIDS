@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { formatParentDateTime } from "../../lib/parent-ui/format-parent-date.js";
-import { useReportT } from "../../lib/i18n/I18nProvider.jsx";
+import { useReportT, useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 function formatMessageDate(iso) {
   if (!iso) return "";
@@ -48,6 +48,7 @@ export default function ParentReportParentSections({
   visibleSections = DEFAULT_VISIBLE_SECTIONS,
 }) {
   const reportT = useReportT();
+  const { direction, locale } = useI18n();
   const { insights, homeRecommendations, teacherMessages } = useMemo(
     () => normalizeParentFacing(report),
     [report]
@@ -134,7 +135,7 @@ export default function ParentReportParentSections({
     ) : null;
 
   return (
-    <div className="space-y-0" dir="ltr" lang="en" data-testid="parent-report-parent-sections">
+    <div className="space-y-0" dir={direction} lang={locale} data-testid="parent-report-parent-sections">
       {insightsSection}
       {teacherSection}
       {homeSection}

@@ -59,6 +59,8 @@ function shrinkHitbox(rect, shrink) {
 /**
  * @param {{ autoStart?: boolean, onSessionEnd?: (metrics: object) => void }} props
  */
+import { gameHudScoreColon, gameHudLabel } from "../../../lib/games/game-hud-copy.js";
+
 export default function MleoJumpEngine({ autoStart = false, onSessionEnd }) {
   const sfx = useSoloEngineAudio();
 
@@ -619,11 +621,11 @@ export default function MleoJumpEngine({ autoStart = false, onSessionEnd }) {
       {!showIntro && (
         <div className="flex min-h-0 w-full flex-1 flex-col px-1 pb-2 pt-1">
           <div className="pointer-events-none absolute left-1/2 top-2 z-20 hidden max-w-[95vw] -translate-x-1/2 rounded-lg bg-black/60 px-4 py-2 text-sm font-bold sm:text-lg">
-            Score: {score} || Level: {level} || Coins: {coinsCollected}
+            {gameHudScoreColon()} {score} || {gameHudLabel('level')}: {level} || {gameHudLabel('coins')}: {coinsCollected}
             {magnetSec > 0 ? ` || 🧲 Magnet: ${magnetSec}s` : ""}
           </div>
           <div className="pointer-events-none absolute bottom-36 left-1/2 z-20 max-w-[95vw] -translate-x-1/2 rounded-md bg-black/60 px-3 py-1 text-xs font-bold sm:hidden">
-            Score: {score} || Level: {level} || 🪙 {coinsCollected}
+            {gameHudScoreColon()} {score} || {gameHudLabel('level')}: {level} || 🪙 {coinsCollected}
             {magnetSec > 0 ? ` || 🧲 ${magnetSec}s` : ""}
           </div>
 

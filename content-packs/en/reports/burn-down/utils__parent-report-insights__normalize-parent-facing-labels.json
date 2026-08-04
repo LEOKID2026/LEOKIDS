@@ -70,6 +70,15 @@
     "values": "Values",
     "map_reading": "Map reading",
     "directions": "Directions",
-    "places": "Places"
+    "places": "Places",
+    "subject": "Subject",
+    "topic": "Topic",
+    "subject_math": "Math",
+    "subject_geometry": "Geometry",
+    "subject_english": "English",
+    "subject_science": "Science",
+    "ratio": "Ratio",
+    "scale": "Scale",
+    "area": "Area"
   }
 }

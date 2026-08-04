@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../hooks/usePublicPageSeo.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useSharedShellUi } from "../hooks/useSharedShellUi.js";
 import { useI18n, useT } from "../lib/i18n/I18nProvider.jsx";
@@ -9,9 +9,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 
-const aboutSeo = getPublicPageSeo("about");
 
 export default function About() {
+  const aboutSeo = usePublicPageSeo("about");
   const { theme } = useStudentTheme();
   const { SP } = useSharedShellUi();
   const { direction, locale } = useI18n();

@@ -1,0 +1,38 @@
+{
+  "summary": {
+    "booksEnChrome": 0,
+    "booksHe": 0,
+    "booksMostlyEnglish": 0,
+    "bookCount": 450,
+    "gradeLabel": "{grade}",
+    "grade6": "1ª secondaria"
+  },
+  "report": {
+    "locales": {
+      "samples": {}
+    },
+    "packs": {
+      "samples": {}
+    },
+    "books": {
+      "samples": {}
+    },
+    "help": {
+      "samples": {}
+    },
+    "math": {
+      "samples": {}
+    },
+    "science-questions-it-IT-overlay.js": {
+      "samples": {
+        "ES": [
+          "data/science-questions-it-IT-overlay.js"
+        ]
+      },
+      "ES": 1
+    },
+    "it-IT.js": {
+      "samples": {}
+    }
+  }
+}

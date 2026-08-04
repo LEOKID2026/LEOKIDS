@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "locale": "ar-001",
+  "strategy": "loader_render_proof",
+  "note": "Render surface proof only — does not send email / no SMTP",
+  "generatedAt": "2026-08-04T19:25:37.333Z",
+  "keysChecked": [
+    "emails.resetSubject",
+    "emails.welcomeSubject",
+    "emails.resetBodyIntro"
+  ],
+  "rendered": {
+    "emails.resetSubject": "إعادة تعيين كلمة مرور Leo Kids الخاصة بك",
+    "emails.welcomeSubject": "مرحبًا بكم في Leo Kids",
+    "emails.resetBodyIntro": "استخدم الرابط أدناه لإعادة تعيين كلمة المرور الخاصة بك."
+  },
+  "missing": [],
+  "nonArabic": []
+}

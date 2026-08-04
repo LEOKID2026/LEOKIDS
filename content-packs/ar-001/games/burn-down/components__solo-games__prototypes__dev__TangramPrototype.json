@@ -8,7 +8,7 @@
     "triangle_2": "المثلث 2",
     "tangram": "تنغرم",
     "prototype_drag_pieces_double_tap_to_rotate": "النموذج الأولي · اسحب القطع · انقر نقرًا مزدوجًا للتدوير",
-    "rotatepiece_selected_classname_min_h_44px_rounded_xl_border_2_border_sky": "تدوير القطعة (محدد)}\n            className = \"min-h-[44px] rounded-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 text-sm Font-bold text-sky-100\"\n          >\n            ↻ تدوير القطعة المحددة",
+    "rotatepiece_selected_classname_min_h_44px_rounded_xl_border_2_border_sky": "rotatePiece(selected)}\n            className=\"min-h-[44px] rounded-xl border-2 border-sky-400 bg-sky-500/25 px-5 py-2 text-sm font-bold text-sky-100\"\n          >\n            ↻ تدوير القطعة المحددة",
     "no_perfect_fit_check_just_drag_feel_and_layout": "لا يوجد فحص مناسب تمامًا - ما عليك سوى سحب الشكل والتخطيط",
     "fill_the_target_shape_double_tap_rotate_45": "املأ الشكل المستهدف · انقر نقرًا مزدوجًا = تدوير 45 درجة",
     "reset": "إعادة ضبط",

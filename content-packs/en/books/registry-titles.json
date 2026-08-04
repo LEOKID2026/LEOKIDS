@@ -387,5 +387,999 @@
     "science.g6": {
       "bookTitle": "Science — Grade 6"
     }
+  },
+  "pages": {
+    "english.g1": {
+      "classroom_words": {
+        "title": "Classroom Words"
+      },
+      "first_words_cvc": {
+        "title": "Three-Letter Words"
+      },
+      "first_words_simple": {
+        "title": "First Simple Words"
+      },
+      "letters_lower": {
+        "title": "Lowercase Letters a–z"
+      },
+      "letters_match": {
+        "title": "Matching Uppercase and Lowercase Letters"
+      },
+      "letters_upper": {
+        "title": "Uppercase Letters A–Z"
+      },
+      "letter_names": {
+        "title": "Letter Names"
+      },
+      "listening_classroom": {
+        "title": "Classroom Instructions"
+      },
+      "listening_commands": {
+        "title": "More Short Instructions"
+      },
+      "phonics_first_sound": {
+        "title": "The First Sound in a Word"
+      },
+      "phonics_sounds": {
+        "title": "Letter Sounds"
+      },
+      "picture_word_match": {
+        "title": "Picture and Word"
+      }
+    },
+    "english.g2": {
+      "classroom_vocab_g2": {
+        "title": "Classroom Vocabulary"
+      },
+      "early_sentences_exposure": {
+        "title": "Short Sentences"
+      },
+      "first_word_reading": {
+        "title": "Reading Your First Words"
+      },
+      "letters_order": {
+        "title": "The Order of the Alphabet"
+      },
+      "letters_review": {
+        "title": "Review: Letters and Names"
+      },
+      "listening_comprehension": {
+        "title": "Listening Comprehension"
+      },
+      "phonics_blending": {
+        "title": "Blending Sounds"
+      },
+      "phonics_sounds_review": {
+        "title": "Review: Sounds"
+      },
+      "picture_audio_word_match": {
+        "title": "Picture, Sound, and Word"
+      },
+      "sound_letter_match": {
+        "title": "Sound and Letter"
+      },
+      "word_families_cvc": {
+        "title": "Word Families"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "shapes_basic_rectangle": {
+        "title": "Getting to Know the Rectangle"
+      },
+      "shapes_basic_square": {
+        "title": "Getting to Know the Square"
+      },
+      "transformations": {
+        "title": "Translation and Reflection — Introduction"
+      }
+    },
+    "geometry.g2": {
+      "solids": {
+        "title": "Three-Dimensional Solids — Names and Introduction"
+      },
+      "square_area": {
+        "title": "Area of a Square"
+      },
+      "transformations": {
+        "title": "Translation and Reflection — More Practice"
+      }
+    },
+    "geometry.g3": {
+      "parallel_perpendicular": {
+        "title": "Parallel and Perpendicular Lines"
+      },
+      "quadrilaterals": {
+        "title": "Types of Quadrilaterals"
+      },
+      "rotation": {
+        "title": "Rotation in the Plane"
+      },
+      "solids": {
+        "title": "Solids — Faces, Vertices, and Edges"
+      },
+      "square_area": {
+        "title": "Area of a Square — Grade 3"
+      },
+      "square_perimeter": {
+        "title": "Perimeter of a Square"
+      },
+      "triangles": {
+        "title": "Types of Triangles"
+      },
+      "triangle_angles": {
+        "title": "Angles in a Triangle"
+      },
+      "triangle_perimeter": {
+        "title": "Perimeter of a Triangle"
+      }
+    },
+    "geometry.g4": {
+      "diagonal_rectangle": {
+        "title": "Diagonal of a Rectangle"
+      },
+      "diagonal_square": {
+        "title": "Diagonal of a Square"
+      },
+      "parallel_perpendicular": {
+        "title": "Parallel and Perpendicular — in Polygons"
+      },
+      "quadrilaterals": {
+        "title": "Quadrilaterals — Properties and Classification"
+      },
+      "rectangular_prism_volume": {
+        "title": "Volume of a Rectangular Prism"
+      },
+      "shapes_basic_properties_angles": {
+        "title": "Right Angles in a Quadrilateral"
+      },
+      "shapes_basic_properties_rectangle": {
+        "title": "Properties of a Rectangle — Pairs of Sides"
+      },
+      "shapes_basic_properties_square": {
+        "title": "Properties of a Square — Sides"
+      },
+      "solids": {
+        "title": "Solids — Faces in the Plane"
+      },
+      "square_area": {
+        "title": "Area of a Square — Grade 4"
+      },
+      "square_perimeter": {
+        "title": "Perimeter of a Square — Grade 4"
+      },
+      "symmetry": {
+        "title": "Symmetry in the Plane"
+      },
+      "triangle_angles": {
+        "title": "Angles in a Triangle — Grade 4"
+      },
+      "triangle_perimeter": {
+        "title": "Perimeter of a Triangle — Grade 4"
+      }
+    },
+    "geometry.g5": {
+      "diagonal_parallelogram": {
+        "title": "Diagonal of a Parallelogram"
+      },
+      "diagonal_rectangle": {
+        "title": "Diagonal of a Rectangle"
+      },
+      "diagonal_square": {
+        "title": "Diagonal of a Square"
+      },
+      "heights_parallelogram": {
+        "title": "Height of a Parallelogram"
+      },
+      "heights_trapezoid": {
+        "title": "Height of a Trapezoid"
+      },
+      "heights_triangle": {
+        "title": "Height of a Triangle"
+      },
+      "parallelogram_area": {
+        "title": "Area of a Parallelogram"
+      },
+      "parallel_perpendicular": {
+        "title": "Parallel and Perpendicular Lines"
+      },
+      "quadrilaterals": {
+        "title": "Classifying Quadrilaterals — Grade 5"
+      },
+      "rectangular_prism_volume": {
+        "title": "Volume of a Rectangular Prism"
+      },
+      "solids": {
+        "title": "Three-Dimensional Solids — Review"
+      },
+      "square_area": {
+        "title": "Area of a Square"
+      },
+      "square_perimeter": {
+        "title": "Perimeter of a Square"
+      },
+      "tiling": {
+        "title": "Tiling a Plane"
+      },
+      "trapezoid_area": {
+        "title": "Area of a Trapezoid"
+      },
+      "triangle_angles": {
+        "title": "Angles in a Triangle"
+      },
+      "triangle_area": {
+        "title": "Area of a Triangle"
+      },
+      "triangle_perimeter": {
+        "title": "Perimeter of a Triangle"
+      }
+    },
+    "geometry.g6": {
+      "circle_area": {
+        "title": "Area of a Circle"
+      },
+      "circle_perimeter": {
+        "title": "Circumference of a Circle"
+      },
+      "cone_volume": {
+        "title": "Volume of a Cone"
+      },
+      "cylinder_volume": {
+        "title": "Volume of a Cylinder"
+      },
+      "parallelogram_area": {
+        "title": "Area of a Parallelogram — Grade 6"
+      },
+      "prism_volume_rectangular": {
+        "title": "Volume of a Prism — Rectangular Base"
+      },
+      "prism_volume_triangle": {
+        "title": "Volume of a Prism — Triangular Base"
+      },
+      "pyramid_volume_rectangular": {
+        "title": "Volume of a Pyramid — Rectangular Base"
+      },
+      "pyramid_volume_square": {
+        "title": "Volume of a Pyramid — Square Base"
+      },
+      "pythagoras_hyp": {
+        "title": "Pythagorean Theorem — Finding the Hypotenuse"
+      },
+      "pythagoras_leg": {
+        "title": "Pythagorean Theorem — Finding a Leg"
+      },
+      "rectangular_prism_volume": {
+        "title": "Volume of a Rectangular Prism — Grade 6"
+      },
+      "solids": {
+        "title": "Solids — Cylinder, Pyramid, Cone, Sphere"
+      },
+      "sphere_volume": {
+        "title": "Volume of a Sphere"
+      },
+      "square_area": {
+        "title": "Area of a Square — Grade 6"
+      },
+      "square_perimeter": {
+        "title": "Perimeter of a Square — Grade 6"
+      },
+      "trapezoid_area": {
+        "title": "Area of a Trapezoid — Grade 6"
+      },
+      "triangle_angles": {
+        "title": "Angles in a Triangle — Grade 6"
+      },
+      "triangle_perimeter": {
+        "title": "Perimeter of a Triangle — Grade 6"
+      }
+    },
+    "math.g1": {
+      "add_second_decade": {
+        "title": "Adding in the Teens — Numbers from 11 to 19"
+      },
+      "add_tens_only": {
+        "title": "Adding Whole Tens"
+      },
+      "add_two": {
+        "title": "Adding Two Numbers"
+      },
+      "cmp": {
+        "title": "Comparing Numbers"
+      },
+      "eq_add_simple": {
+        "title": "Addition with a Missing Number"
+      },
+      "eq_sub_simple": {
+        "title": "Subtraction with a Missing Number"
+      },
+      "mul": {
+        "title": "Multiplication — Repeated Addition"
+      },
+      "ns_complement10": {
+        "title": "Pairs That Make 10"
+      },
+      "ns_counting_backward": {
+        "title": "Counting Backward on the Number Line"
+      },
+      "ns_counting_forward": {
+        "title": "Counting Forward on the Number Line"
+      },
+      "ns_even_odd": {
+        "title": "Even and Odd Numbers"
+      },
+      "ns_neighbors": {
+        "title": "Number Neighbors"
+      },
+      "ns_number_line": {
+        "title": "The Number Line"
+      },
+      "ns_place_tens_units": {
+        "title": "Tens and Ones"
+      },
+      "sub_two": {
+        "title": "Subtracting Two Numbers"
+      },
+      "wp_coins": {
+        "title": "Word Problems — Coin Values"
+      },
+      "wp_coins_spent": {
+        "title": "Word Problems — How Much Is Left?"
+      },
+      "wp_time_date": {
+        "title": "Word Problems — Days of the Week"
+      },
+      "wp_time_days": {
+        "title": "Word Problems — How Many Days Between Days"
+      }
+    },
+    "math.g2": {
+      "add_two": {
+        "title": "Adding Two Numbers — Up to 100"
+      },
+      "add_vertical": {
+        "title": "Vertical Addition"
+      },
+      "cmp": {
+        "title": "Comparing Numbers Up to 1,000"
+      },
+      "div": {
+        "title": "Division — Fair Sharing"
+      },
+      "divisibility": {
+        "title": "When Does a Number Divide by 2, 5, and 10?"
+      },
+      "frac_half": {
+        "title": "Half of the Whole"
+      },
+      "frac_half_reverse": {
+        "title": "Finding the Whole When You Know the Half"
+      },
+      "frac_quarter": {
+        "title": "A Quarter of the Whole"
+      },
+      "frac_quarter_reverse": {
+        "title": "Finding the Whole When You Know the Quarter"
+      },
+      "mul": {
+        "title": "Times Table — Equal Groups"
+      },
+      "ns_complement10": {
+        "title": "Pairs That Make 10 — Addition Helper"
+      },
+      "ns_even_odd": {
+        "title": "Even and Odd — Review and Practice"
+      },
+      "ns_neighbors": {
+        "title": "Number Neighbors — Bigger Numbers"
+      },
+      "ns_place_tens_units": {
+        "title": "Hundreds, Tens, and Ones — Up to 1,000"
+      },
+      "sub_two": {
+        "title": "Subtracting Two Numbers — Up to 100"
+      },
+      "sub_vertical": {
+        "title": "Vertical Subtraction"
+      },
+      "wp_coins": {
+        "title": "Word Problems — Coins"
+      },
+      "wp_coins_spent": {
+        "title": "Word Problems — Shopping and Change"
+      },
+      "wp_division_simple": {
+        "title": "Word Problems — Fair Sharing"
+      },
+      "wp_groups_g2": {
+        "title": "Word Problems — Equal Groups"
+      },
+      "wp_time_date": {
+        "title": "Word Problems — Days of the Week"
+      },
+      "wp_time_days": {
+        "title": "Word Problems — How Many Days Between Days"
+      }
+    },
+    "math.g3": {
+      "add_three": {
+        "title": "Adding Three Numbers"
+      },
+      "add_two": {
+        "title": "Adding Two Numbers — Up to 1,000"
+      },
+      "cmp": {
+        "title": "Comparing Numbers Up to 1,000"
+      },
+      "dec_add": {
+        "title": "Adding Decimals"
+      },
+      "dec_sub": {
+        "title": "Subtracting Decimals"
+      },
+      "div": {
+        "title": "Division — Equal Sharing"
+      },
+      "divisibility": {
+        "title": "Divisibility by 2, 5, and 10"
+      },
+      "div_with_remainder": {
+        "title": "Division with a Remainder"
+      },
+      "eq_add": {
+        "title": "Addition Equation — Missing Number"
+      },
+      "eq_sub": {
+        "title": "Subtraction Equation — Missing Number"
+      },
+      "fractions": {
+        "title": "Fractions — What Are They and How Do We Compare?"
+      },
+      "mul": {
+        "title": "Multiplication — Times Tables"
+      },
+      "mul_hundreds": {
+        "title": "Multiplying by Hundreds"
+      },
+      "mul_tens": {
+        "title": "Multiplying by Tens"
+      },
+      "ns_complement10": {
+        "title": "Pairs That Make 10 — Review"
+      },
+      "ns_complement100": {
+        "title": "Pairs That Make 100"
+      },
+      "ns_even_odd": {
+        "title": "Even and Odd — Larger Numbers"
+      },
+      "ns_neighbors": {
+        "title": "Number Neighbors — Up to 1,000"
+      },
+      "ns_place_hundreds": {
+        "title": "Hundreds, Tens, and Ones — Up to 1,000"
+      },
+      "order_add_mul": {
+        "title": "Order of Operations — Addition and Multiplication"
+      },
+      "order_mul_sub": {
+        "title": "Order of Operations — Multiplication and Subtraction"
+      },
+      "order_parentheses": {
+        "title": "Parentheses in Calculations"
+      },
+      "sequence": {
+        "title": "Number Sequences"
+      },
+      "sub_two": {
+        "title": "Subtracting Two Numbers — Up to 1,000"
+      },
+      "wp_comparison_more": {
+        "title": "Word Problem — How Many More?"
+      },
+      "wp_leftover": {
+        "title": "Word Problem — What's Left Over?"
+      },
+      "wp_time_sum": {
+        "title": "Word Problem — Adding Times"
+      }
+    },
+    "math.g4": {
+      "add_three": {
+        "title": "Adding Three Numbers"
+      },
+      "add_two": {
+        "title": "Adding Two Numbers — Up to 10,000"
+      },
+      "cmp": {
+        "title": "Comparing Large Numbers"
+      },
+      "dec_add": {
+        "title": "Adding Decimals — Two Digits After the Point"
+      },
+      "dec_sub": {
+        "title": "Subtracting Decimals — Two Digits After the Point"
+      },
+      "div": {
+        "title": "Division — Equal Sharing"
+      },
+      "divisibility": {
+        "title": "Divisibility — Rules for 2, 3, 5, 6, 9, and 10"
+      },
+      "div_long": {
+        "title": "Long Division"
+      },
+      "div_with_remainder": {
+        "title": "Division with a Remainder"
+      },
+      "eq_add": {
+        "title": "Addition Equation — Missing Number (Hundreds)"
+      },
+      "eq_sub": {
+        "title": "Subtraction Equation — Missing Number (Hundreds)"
+      },
+      "est_add": {
+        "title": "Estimating an Answer — Addition"
+      },
+      "est_mul": {
+        "title": "Estimating an Answer — Multiplication"
+      },
+      "est_quantity": {
+        "title": "Estimating a Quantity"
+      },
+      "fm_factor": {
+        "title": "Factors of a Number"
+      },
+      "fm_gcd": {
+        "title": "Greatest Common Factor (GCF)"
+      },
+      "fm_multiple": {
+        "title": "Multiples of a Number"
+      },
+      "mul": {
+        "title": "Multiplication — Times Table and Strategies"
+      },
+      "mul_vertical": {
+        "title": "Vertical Multiplication"
+      },
+      "ns_complement10": {
+        "title": "Pairs That Make 10 — Review"
+      },
+      "ns_complement100": {
+        "title": "Making 100"
+      },
+      "ns_even_odd": {
+        "title": "Even and Odd — Large Numbers"
+      },
+      "ns_neighbors": {
+        "title": "Number Neighbors — Large Numbers"
+      },
+      "ns_place_hundreds": {
+        "title": "Place Value — Thousands Up to 10,000"
+      },
+      "one_mul": {
+        "title": "Multiplying by 1"
+      },
+      "power_base": {
+        "title": "Powers — Base and Exponent"
+      },
+      "power_calc": {
+        "title": "Powers — Calculating the Value"
+      },
+      "prime_composite": {
+        "title": "Prime and Composite Numbers"
+      },
+      "round": {
+        "title": "Rounding to Tens, Hundreds, and Thousands"
+      },
+      "sequence": {
+        "title": "Number Sequences — Big Jumps"
+      },
+      "sub_two": {
+        "title": "Subtracting Two Numbers — Up to 10,000"
+      },
+      "wp_comparison_more": {
+        "title": "Word Problems — How Many More?"
+      },
+      "wp_leftover": {
+        "title": "Word Problems — What's Left Over?"
+      },
+      "wp_time_sum": {
+        "title": "Word Problems — Adding Times Together"
+      },
+      "zero_add": {
+        "title": "Adding with 0"
+      },
+      "zero_mul": {
+        "title": "Multiplying by 0"
+      },
+      "zero_sub": {
+        "title": "Subtracting 0"
+      }
+    },
+    "math.g5": {
+      "add_three": {
+        "title": "Adding Three Numbers"
+      },
+      "add_two": {
+        "title": "Adding Two Numbers — Up to 100,000"
+      },
+      "cmp": {
+        "title": "Comparing Numbers — Up to 100,000"
+      },
+      "dec_add": {
+        "title": "Adding Decimals"
+      },
+      "dec_sub": {
+        "title": "Subtracting Decimals"
+      },
+      "div": {
+        "title": "Division — Equal Sharing"
+      },
+      "div_two_digit": {
+        "title": "Division by a Two-Digit Number"
+      },
+      "div_with_remainder": {
+        "title": "Division with Remainder — Large Numbers"
+      },
+      "eq_add": {
+        "title": "Addition Equations"
+      },
+      "eq_div": {
+        "title": "Division Equations"
+      },
+      "eq_mul": {
+        "title": "Multiplication Equations"
+      },
+      "eq_sub": {
+        "title": "Subtraction Equations"
+      },
+      "est_add": {
+        "title": "Estimating Addition"
+      },
+      "est_mul": {
+        "title": "Estimating Multiplication"
+      },
+      "est_quantity": {
+        "title": "Estimating Quantity"
+      },
+      "fm_factor": {
+        "title": "Factors of a Number"
+      },
+      "fm_gcd": {
+        "title": "Greatest Common Factor (GCF)"
+      },
+      "fm_multiple": {
+        "title": "Multiples of a Number"
+      },
+      "frac_add_sub": {
+        "title": "Adding and Subtracting Fractions"
+      },
+      "frac_expand": {
+        "title": "Expanding Fractions"
+      },
+      "frac_reduce": {
+        "title": "Simplifying Fractions"
+      },
+      "frac_to_mixed": {
+        "title": "Improper Fraction to Mixed Number"
+      },
+      "mixed_to_frac": {
+        "title": "Mixed Number to Improper Fraction"
+      },
+      "mul": {
+        "title": "Multiplication — Strategies and Large Numbers"
+      },
+      "ns_complement100": {
+        "title": "Pairs That Make 100"
+      },
+      "ns_neighbors": {
+        "title": "Number Neighbors — Up to 100,000"
+      },
+      "ns_place_hundreds": {
+        "title": "Place Value — Up to 100,000"
+      },
+      "perc_discount": {
+        "title": "Percent Discount"
+      },
+      "perc_part_of": {
+        "title": "Percent of a Quantity"
+      },
+      "round": {
+        "title": "Rounding — Tens, Hundreds, Thousands, and Ten-Thousands"
+      },
+      "sequence": {
+        "title": "Number Sequences — Large Steps"
+      },
+      "sub_two": {
+        "title": "Subtracting Two Numbers — Up to 100,000"
+      },
+      "wp_comparison_more": {
+        "title": "Word Problems — How Many More?"
+      },
+      "wp_distance_time": {
+        "title": "Distance, Time, and Speed"
+      },
+      "wp_leftover": {
+        "title": "Word Problems — How Many Are Left?"
+      },
+      "wp_multi_step": {
+        "title": "Word Problems — Multi-Step"
+      },
+      "wp_shop_discount": {
+        "title": "Shopping and Discounts"
+      },
+      "wp_time_sum": {
+        "title": "Word Problems — Adding Times"
+      },
+      "wp_unit_cm_to_m": {
+        "title": "Unit Conversion — Centimeters and Meters"
+      },
+      "wp_unit_g_to_kg": {
+        "title": "Unit Conversion — Grams and Kilograms"
+      }
+    },
+    "math.g6": {
+      "add_three": {
+        "title": "Adding Three Numbers"
+      },
+      "add_two": {
+        "title": "Adding Two Numbers — Up to 200,000"
+      },
+      "cmp": {
+        "title": "Comparing Large Numbers"
+      },
+      "dec_add": {
+        "title": "Adding Decimal Numbers"
+      },
+      "dec_divide": {
+        "title": "Dividing Decimal Numbers"
+      },
+      "dec_divide_10_100": {
+        "title": "Dividing a Decimal by 10 or 100"
+      },
+      "dec_multiply": {
+        "title": "Multiplying Decimal Numbers"
+      },
+      "dec_multiply_10_100": {
+        "title": "Multiplying a Decimal by 10 or 100"
+      },
+      "dec_repeating": {
+        "title": "Repeating Decimals"
+      },
+      "dec_sub": {
+        "title": "Subtracting Decimal Numbers"
+      },
+      "div": {
+        "title": "Division — Equal Sharing"
+      },
+      "div_with_remainder": {
+        "title": "Division with a Remainder"
+      },
+      "eq_add": {
+        "title": "Addition Equation — Missing Number"
+      },
+      "eq_div": {
+        "title": "Division Equation — Missing Number"
+      },
+      "eq_mul": {
+        "title": "Multiplication Equation — Missing Number"
+      },
+      "eq_sub": {
+        "title": "Subtraction Equation — Missing Number"
+      },
+      "fm_factor": {
+        "title": "Factors of a Number"
+      },
+      "fm_gcd": {
+        "title": "Greatest Common Factor (GCF)"
+      },
+      "fm_multiple": {
+        "title": "Multiples of a Number"
+      },
+      "frac_as_division": {
+        "title": "A Fraction as Division"
+      },
+      "frac_divide": {
+        "title": "Dividing Fractions"
+      },
+      "frac_multiply": {
+        "title": "Multiplying Fractions"
+      },
+      "mul": {
+        "title": "Multiplication — Strategies and Large Numbers"
+      },
+      "ns_complement100": {
+        "title": "Making 100 — Getting Ready for Percents"
+      },
+      "ns_neighbors": {
+        "title": "Neighbors — Numbers Up to 200,000"
+      },
+      "ns_place_hundreds": {
+        "title": "Place Value — Up to 200,000"
+      },
+      "perc_discount": {
+        "title": "Percent Discount"
+      },
+      "perc_part_of": {
+        "title": "Percent of a Quantity"
+      },
+      "ratio_find": {
+        "title": "Finding a Missing Quantity in a Ratio"
+      },
+      "ratio_first": {
+        "title": "Ratios — What Do They Mean?"
+      },
+      "ratio_second": {
+        "title": "Ratio Between Two Quantities"
+      },
+      "round": {
+        "title": "Rounding — Tens, Hundreds, and Thousands"
+      },
+      "scale_find": {
+        "title": "Scale — Finding a Distance"
+      },
+      "scale_map_to_real": {
+        "title": "From Map to Real Life"
+      },
+      "scale_real_to_map": {
+        "title": "From Real Life to Map"
+      },
+      "sequence": {
+        "title": "Number Sequences — Finding the Rule"
+      },
+      "sub_two": {
+        "title": "Subtracting Two Numbers — Up to 200,000"
+      },
+      "wp_comparison_more": {
+        "title": "Word Problems — How Many More?"
+      },
+      "wp_distance_time": {
+        "title": "Distance, Time, and Speed"
+      },
+      "wp_leftover": {
+        "title": "Word Problems — What's Left?"
+      },
+      "wp_shop_discount": {
+        "title": "Word Problems — Store Sale"
+      },
+      "wp_time_sum": {
+        "title": "Word Problems — Adding Times"
+      },
+      "wp_unit_cm_to_m": {
+        "title": "Unit Conversion — Centimeters and Meters"
+      },
+      "wp_unit_g_to_kg": {
+        "title": "Unit Conversion — Grams and Kilograms"
+      }
+    },
+    "science.g1": {
+      "animals": {
+        "title": "Animals — Living vs Non-Living"
+      },
+      "body": {
+        "title": "The Human Body — Senses and Movement"
+      },
+      "earth_space": {
+        "title": "Earth and Weather"
+      },
+      "environment": {
+        "title": "Our Environment"
+      },
+      "materials": {
+        "title": "Materials — Everyday Properties"
+      },
+      "plants": {
+        "title": "Plants — What Plants Need"
+      }
+    },
+    "science.g2": {
+      "animals": {
+        "title": "Animals — Life Cycle"
+      },
+      "body": {
+        "title": "The Human Body — Health and Habits"
+      },
+      "earth_space": {
+        "title": "Earth — Seasons and the Sky"
+      },
+      "environment": {
+        "title": "Environment — Protecting Nature"
+      },
+      "experiments": {
+        "title": "Observation and Investigation"
+      },
+      "materials": {
+        "title": "Materials — States of Matter"
+      },
+      "plants": {
+        "title": "Plants — Growth and Cycle"
+      }
+    },
+    "science.g3": {
+      "animals": {
+        "title": "Animals — Adaptation to the Environment"
+      },
+      "body": {
+        "title": "The Human Body — Basic Systems"
+      },
+      "earth_space": {
+        "title": "Earth — Weather and Water"
+      },
+      "environment": {
+        "title": "Environment — Small Ecosystems"
+      },
+      "experiments": {
+        "title": "A Short Scientific Experiment"
+      },
+      "materials": {
+        "title": "Materials — Forces and Motion"
+      },
+      "plants": {
+        "title": "Plants — Growing Conditions (Summary)"
+      }
+    },
+    "science.g4": {
+      "animals": {
+        "title": "Animals — Interactions"
+      },
+      "body": {
+        "title": "The Human Body — Breathing and Digestion"
+      },
+      "earth_space": {
+        "title": "Earth — Rocks, Soil, and Seasons"
+      },
+      "environment": {
+        "title": "Environment — Conserving Resources"
+      },
+      "experiments": {
+        "title": "Planning an Experiment"
+      },
+      "materials": {
+        "title": "Materials — Changes and Electricity (Concepts)"
+      }
+    },
+    "science.g5": {
+      "animals": {
+        "title": "Animals — Reproduction and Adaptations"
+      },
+      "body": {
+        "title": "The Human Body — Skeleton, Muscles, and Senses"
+      },
+      "earth_space": {
+        "title": "Earth — Resources and Phenomena"
+      },
+      "environment": {
+        "title": "Environment — Natural Resources"
+      },
+      "experiments": {
+        "title": "Full Investigation — Documentation"
+      },
+      "materials": {
+        "title": "Materials — Mixtures and Light"
+      }
+    },
+    "science.g6": {
+      "animals": {
+        "title": "Animals — Ecological Systems"
+      },
+      "body": {
+        "title": "The Human Body — Coordination Between Systems"
+      },
+      "earth_space": {
+        "title": "Earth — Climate and Space"
+      },
+      "environment": {
+        "title": "Environment — Climate Change and Action"
+      },
+      "experiments": {
+        "title": "Science Project"
+      },
+      "materials": {
+        "title": "Materials — Basic Chemistry"
+      }
+    }
   }
 }

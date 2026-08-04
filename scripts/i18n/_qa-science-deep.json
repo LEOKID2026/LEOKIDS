@@ -1,0 +1,672 @@
+{
+  "badIdCount": 106,
+  "fieldCount": 8070,
+  "samples": [
+    {
+      "id": "animals_29",
+      "field": "explanation",
+      "s": "Dieren overleven door finding food en water, staying in veilig places, reproducing, en avoiding predators.",
+      "en": "Animals survive by finding food and water, staying in safe places, reproducing, and avoiding predators.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "animals_29",
+      "field": "options[2]",
+      "s": "Sleep alle day zonder seeking food",
+      "en": "Sleep all day without seeking food",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "exp_22__v2",
+      "field": "options[2]",
+      "s": "Een opening met no data analysis",
+      "en": "An opening with no data analysis",
+      "enTok": [
+        "analysis"
+      ]
+    },
+    {
+      "id": "science_remaining_g1_hard_earth_space",
+      "field": "stem",
+      "s": "Wat veroorzaakt overdag op Aarde?",
+      "en": "What causes daytime on Earth?",
+      "enTok": []
+    },
+    {
+      "id": "p4b1_g6_animals_005",
+      "field": "options[0]",
+      "s": "Het provides food, shelter, en conditions voor groei en voortplanting",
+      "en": "It provides food, shelter, and conditions for growth and reproduction",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "p4b1_g6_experiments_007",
+      "field": "theoryLines[1]",
+      "s": "Units van measure matter.",
+      "en": "Units of measure matter.",
+      "enTok": [
+        "measure"
+      ]
+    },
+    {
+      "id": "p4b1_g4_experiments_006",
+      "field": "theoryLines[0]",
+      "s": "een conclusie comes na analysis.",
+      "en": "A conclusion comes after analysis.",
+      "enTok": [
+        "analysis"
+      ]
+    },
+    {
+      "id": "sci_closure_g6bd_016",
+      "field": "options[2]",
+      "s": "Digest food directly",
+      "en": "Digest food directly",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_closure_g3an_022",
+      "field": "stem",
+      "s": "Wat is een zorgvuldig hypothese over dier behavior in winter?",
+      "en": "What is a careful hypothesis about animal behavior in winter?",
+      "enTok": [
+        "behavior"
+      ]
+    },
+    {
+      "id": "sci_closure_g3an_022",
+      "field": "explanation",
+      "s": "Verschillend soorten use verschillend winter strategieën, zulke als migreren, rusten meer, van opslaan food.",
+      "en": "Different species use different winter strategies, such as migrating, resting more, or storing food.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_closure_g3an_022",
+      "field": "options[2]",
+      "s": "Behavior meestal nooit changes",
+      "en": "Behavior usually never changes",
+      "enTok": [
+        "Behavior"
+      ]
+    },
+    {
+      "id": "sci_closure_g3an_022",
+      "field": "theoryLines[1]",
+      "s": "Winter conditions kan change dier behavior.",
+      "en": "Winter conditions can change animal behavior.",
+      "enTok": [
+        "behavior"
+      ]
+    },
+    {
+      "id": "sci_closure_g3mat_023",
+      "field": "explanation",
+      "s": "Metaal cookware vaak heats food snel omdat metaal geleidt warmte goed.",
+      "en": "Metal cookware often heats food quickly because metal conducts heat well.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g3_animals_hard_01",
+      "field": "explanation",
+      "s": "Behavior en lichaam features dat fit de leefgebied helpen dieren overleven.",
+      "en": "Behavior and body features that fit the habitat help animals survive.",
+      "enTok": [
+        "Behavior"
+      ]
+    },
+    {
+      "id": "sci_pb1_g3_animals_hard_01",
+      "field": "options[2]",
+      "s": "Elke vogel needing exactly de zelfde food",
+      "en": "Every bird needing exactly the same food",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g4_animals_hard_01",
+      "field": "stem",
+      "s": "Wat gebeurt er in een food web wanneer een basic producer plant is sharply reduced?",
+      "en": "What happens in a food web when a basic producer plant is sharply reduced?",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g4_animals_hard_01",
+      "field": "explanation",
+      "s": "Producer planten make organic materiaal dat feeds veel levels van een food web.",
+      "en": "Producer plants make organic material that feeds many levels of a food web.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g4_animals_hard_01",
+      "field": "theoryLines[0]",
+      "s": "Producers form de base van meeste food webs.",
+      "en": "Producers form the base of most food webs.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g5_animals_medium_01",
+      "field": "explanation",
+      "s": "Changing predators kan change prey getallen en food-web balance.",
+      "en": "Changing predators can change prey numbers and food-web balance.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g5_animals_medium_01",
+      "field": "options[2]",
+      "s": "Het affects alleen fur color, met no food-web verband",
+      "en": "It affects only fur color, with no food-web link",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g5_animals_medium_01",
+      "field": "theoryLines[1]",
+      "s": "Food webs connect veel soorten.",
+      "en": "Food webs connect many species.",
+      "enTok": [
+        "Food"
+      ]
+    },
+    {
+      "id": "sci_pb1_g2_earth_space_easy_04",
+      "field": "stem",
+      "s": "Wat is een veilig way naar observe de Zon tijdens de day?",
+      "en": "What is a safe way to observe the Sun during the day?",
+      "enTok": [
+        "observe"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_body_medium_06",
+      "field": "options[1]",
+      "s": "Het digests food in de maag.",
+      "en": "It digests food in the stomach.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_body_medium_09",
+      "field": "explanation",
+      "s": "Brushing removes food en germs dat kan hurt tanden. Limiting sugary snacks ook helps prevent cavities.",
+      "en": "Brushing removes food and germs that can hurt teeth. Limiting sugary snacks also helps prevent cavities.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_body_medium_09",
+      "field": "theoryLines[0]",
+      "s": "Tanden helpen je chew food.",
+      "en": "Teeth help you chew food.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_body_hard_03",
+      "field": "explanation",
+      "s": "Food gives je lichaam energie en building materialen. Verschillend foods helpen je groeien, move, en think.",
+      "en": "Food gives your body energy and building materials. Different foods help you grow, move, and think.",
+      "enTok": [
+        "Food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_body_hard_03",
+      "field": "options[0]",
+      "s": "Van de food je eat",
+      "en": "From the food you eat",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_body_hard_07",
+      "field": "stem",
+      "s": "Waarom doet je pols feel faster na je run?",
+      "en": "Why does your pulse feel faster after you run?",
+      "enTok": []
+    },
+    {
+      "id": "sci_p0_g1_body_hard_09",
+      "field": "options[2]",
+      "s": "Zij turn licht in food.",
+      "en": "They turn light into food.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_animals_medium_03",
+      "field": "theoryLines[0]",
+      "s": "Dieren eat verschillend kinds van food.",
+      "en": "Animals eat different kinds of food.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_animals_hard_05",
+      "field": "options[0]",
+      "s": "Night kan make finding food safer van easier voor hen.",
+      "en": "Night can make finding food safer or easier for them.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_03",
+      "field": "explanation",
+      "s": "Bladeren catch zonlicht. Planten use licht, water, en lucht naar make sugar food in een proces genoemd fotosynthese.",
+      "en": "Leaves catch sunlight. Plants use light, water, and air to make sugar food in a process called photosynthesis.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_03",
+      "field": "options[0]",
+      "s": "Zij helpen de plant make food using zonlicht.",
+      "en": "They help the plant make food using sunlight.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_03",
+      "field": "theoryLines[1]",
+      "s": "Food gemaakt in bladeren feeds de hele plant.",
+      "en": "Food made in leaves feeds the whole plant.",
+      "enTok": [
+        "Food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_06",
+      "field": "explanation",
+      "s": "Producers make food energie van zonlicht. Dieren dat eat planten depend op dat food.",
+      "en": "Producers make food energy from sunlight. Animals that eat plants depend on that food.",
+      "enTok": [
+        "food",
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_06",
+      "field": "options[0]",
+      "s": "Zij make hun eigen food using zonlicht.",
+      "en": "They make their own food using sunlight.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_06",
+      "field": "theoryLines[0]",
+      "s": "Planten zijn de start van veel food chains.",
+      "en": "Plants are the start of many food chains.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_07",
+      "field": "options[1]",
+      "s": "Light fires next to dry grass voor fun.",
+      "en": "Light fires next to dry grass for fun.",
+      "enTok": [
+        "Light"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_08",
+      "field": "options[3]",
+      "s": "Fruit digests food voor dieren' botten.",
+      "en": "Fruit digests food for animals' bones.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_hard_01",
+      "field": "stem",
+      "s": "Wat mag happen als a green plant gets no light voor a long time?",
+      "en": "What may happen if a green plant gets no light for a long time?",
+      "enTok": [
+        "light"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_hard_01",
+      "field": "explanation",
+      "s": "Planten need light to make food. Zonder light, zij cannot keep growing goed.",
+      "en": "Plants need light to make food. Without light, they cannot keep growing well.",
+      "enTok": [
+        "light",
+        "food",
+        "light"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_hard_01",
+      "field": "options[0]",
+      "s": "It mag groeien weak, turn pale, en stop making enough food.",
+      "en": "It may grow weak, turn pale, and stop making enough food.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_hard_01",
+      "field": "theoryLines[0]",
+      "s": "Fotosynthese needs light.",
+      "en": "Photosynthesis needs light.",
+      "enTok": [
+        "light"
+      ]
+    },
+    {
+      "id": "sci_p0_g1_plants_hard_01",
+      "field": "theoryLines[1]",
+      "s": "Window planten lean naar light sources.",
+      "en": "Window plants lean toward light sources.",
+      "enTok": [
+        "light"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_body_medium_02",
+      "field": "options[2]",
+      "s": "Food is alleen voor changing hair color.",
+      "en": "Food is only for changing hair color.",
+      "enTok": [
+        "Food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_body_medium_02",
+      "field": "theoryLines[0]",
+      "s": "No single food heeft everything je need.",
+      "en": "No single food has everything you need.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_body_hard_02",
+      "field": "options[0]",
+      "s": "Zuurstof helps spieren release energie van food nutrients.",
+      "en": "Oxygen helps muscles release energy from food nutrients.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_body_hard_05",
+      "field": "theoryLines[0]",
+      "s": "Food provides energie voor hersenen en lichaam.",
+      "en": "Food provides energy for brain and body.",
+      "enTok": [
+        "Food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_body_hard_08",
+      "field": "stem",
+      "s": "Wat doet je pols tell je?",
+      "en": "What does your pulse tell you?",
+      "enTok": []
+    },
+    {
+      "id": "sci_p0_g2_experiments_medium_06",
+      "field": "options[0]",
+      "s": "No—nooit taste experiment materialen tenzij een leerkracht says een food test is veilig.",
+      "en": "No—never taste experiment materials unless a teacher says a food test is safe.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_experiments_hard_02",
+      "field": "explanation",
+      "s": "Mistakes happen. Honest recording en zorgvuldig repeats helpen je fix errors en keep resultaten trustworthy.",
+      "en": "Mistakes happen. Honest recording and careful repeats help you fix errors and keep results trustworthy.",
+      "enTok": [
+        "Honest"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_experiments_hard_02",
+      "field": "options[0]",
+      "s": "Record wat happened en measure opnieuw carefully.",
+      "en": "Record what happened and measure again carefully.",
+      "enTok": [
+        "measure"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_experiments_hard_06",
+      "field": "options[1]",
+      "s": "Dus no één moet measure anything",
+      "en": "So no one needs to measure anything",
+      "enTok": [
+        "measure"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_animals_medium_02",
+      "field": "stem",
+      "s": "Wat kind van food doen rabbits mainly eat?",
+      "en": "What kind of food do rabbits mainly eat?",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_animals_medium_06",
+      "field": "theoryLines[1]",
+      "s": "Leefgebied en behavior helpen regulate lichaam warmte.",
+      "en": "Habitat and behavior help regulate body heat.",
+      "enTok": [
+        "behavior"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_animals_hard_03",
+      "field": "options[0]",
+      "s": "Zij mag struggle to find food, shelter, en veilig places to raise young.",
+      "en": "They may struggle to find food, shelter, and safe places to raise young.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_animals_hard_09",
+      "field": "options[1]",
+      "s": "Whiskers digest food outside het lichaam.",
+      "en": "Whiskers digest food outside the body.",
+      "enTok": [
+        "food"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_plants_medium_01",
+      "field": "explanation",
+      "s": "In fotosynthese, planten capture light energie en build sugar. Zuurstof is released als a useful byproduct.",
+      "en": "In photosynthesis, plants capture light energy and build sugar. Oxygen is released as a useful byproduct.",
+      "enTok": [
+        "light"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_plants_medium_01",
+      "field": "options[0]",
+      "s": "Food (sugar) using light, water, en koolstofdioxide",
+      "en": "Food (sugar) using light, water, and carbon dioxide",
+      "enTok": [
+        "Food",
+        "light"
+      ]
+    },
+    {
+      "id": "sci_p0_g2_plants_medium_01",
+      "field": "theoryLines[1]",
+      "s": "Dieren depend on plant-made food energie.",
+      "en": "Animals depend on plant-made food energy.",
+      "enTok": [
+        "food"
+      ]
+    }
+  ],
+  "bankRecords": [
+    {
+      "id": "env_40",
+      "enStem": "How can plants along a stream help naturally filter flowing water?",
+      "enOptions": [
+        "Roots and soil structure support mechanical filtering and some chemical uptake",
+        "Plants build a concrete barrier that fully blocks water flow",
+        "There is no link; only factory filters ever clean water",
+        "Flowing water is always clean no matter what plants are nearby"
+      ],
+      "nlStem": "Hoe kunnen planten langs een beek stromend water op natuurlijke wijze helpen filteren?",
+      "nlOptions": [
+        "Wortels en bodemstructuur ondersteunen mechanische filtering en enige chemische opname",
+        "Planten bouwen een betonnen barrière die de waterstroom volledig blokkeert",
+        "Er is geen link; alleen fabrieksfilters maken ooit schoon water",
+        "Stromend water is altijd schoon, ongeacht welke planten er in de buurt zijn"
+      ],
+      "nlExpl": "Bankplanten verbeteren de bodemstructuur, verminderen erosie en ondersteunen microben die dingen afbreken. Ze helpen, maar zijn geen volledige vervanging van behandelsystemen."
+    }
+  ],
+  "badIds": [
+    "animals_29",
+    "exp_22__v2",
+    "p4b1_g4_experiments_006",
+    "p4b1_g6_animals_005",
+    "p4b1_g6_experiments_007",
+    "sci_closure_g3an_022",
+    "sci_closure_g3mat_023",
+    "sci_closure_g6bd_016",
+    "sci_g3_body_005",
+    "sci_g3_body_006",
+    "sci_g3_body_010",
+    "sci_g3_body_014",
+    "sci_g3_body_015",
+    "sci_g3_body_016",
+    "sci_g3_body_018",
+    "sci_g3_body_021",
+    "sci_g3_body_025",
+    "sci_g3_body_032",
+    "sci_g3_body_036",
+    "sci_g3_body_042",
+    "sci_g3_body_051",
+    "sci_p0_g1_animals_hard_05",
+    "sci_p0_g1_animals_medium_03",
+    "sci_p0_g1_body_hard_03",
+    "sci_p0_g1_body_hard_07",
+    "sci_p0_g1_body_hard_09",
+    "sci_p0_g1_body_medium_06",
+    "sci_p0_g1_body_medium_09",
+    "sci_p0_g1_plants_hard_01",
+    "sci_p0_g1_plants_medium_03",
+    "sci_p0_g1_plants_medium_06",
+    "sci_p0_g1_plants_medium_07",
+    "sci_p0_g1_plants_medium_08",
+    "sci_p0_g2_animals_hard_03",
+    "sci_p0_g2_animals_hard_09",
+    "sci_p0_g2_animals_medium_02",
+    "sci_p0_g2_animals_medium_06",
+    "sci_p0_g2_body_hard_02",
+    "sci_p0_g2_body_hard_05",
+    "sci_p0_g2_body_hard_08",
+    "sci_p0_g2_body_medium_02",
+    "sci_p0_g2_experiments_hard_02",
+    "sci_p0_g2_experiments_hard_06",
+    "sci_p0_g2_experiments_medium_06",
+    "sci_p0_g2_plants_hard_05",
+    "sci_p0_g2_plants_medium_01",
+    "sci_p0_g2_plants_medium_02",
+    "sci_p0_g2_plants_medium_04",
+    "sci_p0_g2_plants_medium_05",
+    "sci_p0_g3_experiments_easy_05",
+    "sci_p0_g3_experiments_hard_02",
+    "sci_p0_g3_experiments_hard_04",
+    "sci_p0_g3_plants_easy_01",
+    "sci_p0_g3_plants_easy_02",
+    "sci_p1_g4_animals_easy_03",
+    "sci_p1_g4_animals_hard_02",
+    "sci_p1_g4_animals_hard_05",
+    "sci_p1_g4_body_easy_01",
+    "sci_p1_g4_body_easy_03",
+    "sci_p1_g4_body_hard_01",
+    "sci_p1_g4_experiments_easy_02",
+    "sci_p1_g4_experiments_easy_04",
+    "sci_p1_g4_experiments_hard_01",
+    "sci_p1_g4_experiments_hard_04",
+    "sci_p1_g5_animals_hard_01",
+    "sci_p1_g5_animals_hard_03",
+    "sci_p1_g5_animals_medium_02",
+    "sci_p1_g5_animals_medium_05",
+    "sci_p1_g5_body_easy_04",
+    "sci_p1_g5_body_medium_06",
+    "sci_p1_g5_experiments_easy_02",
+    "sci_p1_g5_experiments_easy_03",
+    "sci_p1_g5_experiments_easy_06",
+    "sci_p1_g6_animals_hard_02",
+    "sci_p1_g6_animals_medium_06",
+    "sci_p1_g6_body_easy_01",
+    "sci_p1_g6_body_easy_05",
+    "sci_p1_g6_body_hard_01",
+    "sci_p1_g6_body_hard_03",
+    "sci_p1_g6_body_medium_04",
+    "sci_p1_g6_body_medium_06",
+    "sci_pb1_g2_earth_space_easy_04",
+    "sci_pb1_g3_animals_hard_01",
+    "sci_pb1_g4_animals_hard_01",
+    "sci_pb1_g5_animals_medium_01",
+    "sci_phb_g1_environment_med_02",
+    "sci_phb_g1_materials_hard_01",
+    "sci_phb_g2_materials_hard_02",
+    "sci_vol_g1_animals_hard_01",
+    "sci_vol_g1_body_hard_02",
+    "sci_vol_g1_plants_hard_02",
+    "sci_vol_g2_animals_medium_02",
+    "sci_vol_g2_body_hard_01",
+    "sci_vol_g2_body_hard_02",
+    "sci_vol_g2_experiments_hard_01",
+    "sci_vol_g2_plants_medium_02",
+    "sci_vol_g3_body_hard_02",
+    "sci_vol_g3_plants_hard_01",
+    "sci_vol_g5_animals_medium_01",
+    "sci_vol_g5_body_easy_03",
+    "sci_vol_g5_body_medium_01",
+    "sci_vol_g6_animals_easy_03",
+    "sci_vol_g6_body_hard_01",
+    "sci_vol_g6_body_hard_02",
+    "sci_vol_g6_body_medium_01",
+    "science_remaining_g1_hard_earth_space"
+  ]
+}

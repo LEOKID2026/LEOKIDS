@@ -1,6 +1,6 @@
 {
   "copy": {
     "number_r_accuracy": "الرقم (دقة الدقة)",
-    "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o": "توجد صفوف مواضيع ضعيفة متعددة - لا يمكن أخذ الاهتمام على مستوى الموضوع في الاعتبار إلا عند استيفاء معايير الاتساع."
+    "multiple_weak_topic_rows_exist_subject_level_concern_may_be_considered_o": "توجد صفوف مواضيع ضعيفة متعددة - لا يمكن أخذ الاهتمام على مستوى المادة في الاعتبار إلا عند استيفاء معايير الاتساع."
   }
 }

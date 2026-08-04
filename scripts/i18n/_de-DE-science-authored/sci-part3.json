@@ -1,0 +1,842 @@
+{
+  "sci_p0_g1_plants_hard_09": {
+    "stem": "Warum setzen Gärtnerinnen und Gärtner Jungpflanzen oft langsam nach draußen, bevor sie gepflanzt werden?",
+    "options": [
+      "Damit junge Pflanzen sich an Sonne, Wind und Außentemperaturen gewöhnen",
+      "Damit Jungpflanzen zu Steinen werden",
+      "Damit Jungpflanzen nie wieder Wasser brauchen",
+      "Damit Jungpflanzen Angst vor Erde bekommen"
+    ],
+    "explanation": "Plötzliches Wetter draußen kann zarte Pflanzen schocken. Langsames Abhärten hilft ihnen, sich sicher anzupassen.",
+    "theoryLines": [
+      "Junge Pflanzen können empfindlich sein.",
+      "Vorsichtige Veränderungen helfen Pflanzen zu überleben."
+    ]
+  },
+  "sci_p0_g2_body_medium_01": {
+    "stem": "Was ist eine Hauptaufgabe des Skeletts?",
+    "options": [
+      "Es stützt den Körper und schützt Organe wie Gehirn und Herz.",
+      "Es verdaut Zucker nur im Mund.",
+      "Es nimmt Gerüche besser wahr als die Nase.",
+      "Es erzeugt all deine Erinnerungen."
+    ],
+    "explanation": "Knochen geben Form und Halt. Der Schädel schützt das Gehirn, und der Brustkorb hilft, Herz und Lungen zu schützen.",
+    "theoryLines": [
+      "Das Skelett ist ein lebendiges Gerüst.",
+      "Gelenke lassen Knochen sich dort bewegen, wo sie zusammentreffen."
+    ]
+  },
+  "sci_p0_g2_body_medium_02": {
+    "stem": "Warum ist es wichtig, vielfältige gesunde Lebensmittel zu essen?",
+    "options": [
+      "Verschiedene Lebensmittel liefern unterschiedliche Nährstoffe, die dein Körper braucht.",
+      "Ein Schokoriegel liefert für immer jeden Nährstoff.",
+      "Nahrung dient nur dazu, die Haarfarbe zu ändern.",
+      "Menschen brauchen überhaupt keine Nährstoffe."
+    ],
+    "explanation": "Zu den Nährstoffen gehören Eiweiße, Vitamine, Mineralstoffe und mehr. Eine ausgewogene Ernährung hilft bei Wachstum, Energie und Gesundheit.",
+    "theoryLines": [
+      "Kein einzelnes Lebensmittel hat alles, was du brauchst.",
+      "Obst, Gemüse, Getreide und Eiweiße helfen jeweils auf andere Weise."
+    ]
+  },
+  "sci_p0_g2_body_medium_03": {
+    "stem": "Was macht das Gehirn?",
+    "options": [
+      "Es steuert Denken, Sinne und viele Körperhandlungen.",
+      "Es pumpt Blut wie ein zweites Herz.",
+      "Es speichert nur ungenutzte Nahrung.",
+      "Es lässt Wurzeln in den Boden wachsen."
+    ],
+    "explanation": "Dein Gehirn ist die Steuerzentrale. Es hilft dir zu lernen, zu fühlen, dich zu bewegen und auf die Welt zu reagieren.",
+    "theoryLines": [
+      "Nerven tragen Botschaften zum Gehirn und vom Gehirn weg.",
+      "Das Gehirn braucht Sauerstoff und Nährstoffe aus dem Blut."
+    ]
+  },
+  "sci_p0_g2_body_medium_04": {
+    "stem": "Was ist Verdauung?",
+    "options": [
+      "Nahrung in kleinere Teile zerlegen, die der Körper nutzen kann",
+      "Blut nur durch die Lungen pumpen",
+      "Neue Zähne aus Sonnenlicht wachsen lassen",
+      "Knochen in Wasser verwandeln"
+    ],
+    "explanation": "Verdauung beginnt im Mund und geht in Magen und Darm weiter. Nährstoffe gelangen dann ins Blut.",
+    "theoryLines": [
+      "Zähne helfen beim Beginn der Verdauung durch Kauen.",
+      "Das Verdauungssystem macht aus Nahrung nutzbaren Brennstoff."
+    ]
+  },
+  "sci_p0_g2_body_medium_05": {
+    "stem": "Warum ist Aufwärmen vor harter Bewegung hilfreich?",
+    "options": [
+      "Es bereitet Muskeln und Gelenke sanft auf die Aktivität vor.",
+      "Es friert deine Muskeln fest ein.",
+      "Es nimmt den Bedarf zu atmen weg.",
+      "Es verwandelt Schweiß in Klebstoff."
+    ],
+    "explanation": "Aufwärmen steigert den Blutfluss und lockert Muskeln. Das kann dir helfen, dich besser zu bewegen und das Verletzungsrisiko zu senken.",
+    "theoryLines": [
+      "Beginne Aktivität langsam, dann werde intensiver.",
+      "Dehnen und leichte Bewegung sind übliche Aufwärmarten."
+    ]
+  },
+  "sci_p0_g2_body_medium_06": {
+    "stem": "Was bedeutet Durst gewöhnlich?",
+    "options": [
+      "Dein Körper braucht mehr Wasser.",
+      "Deine Knochen sind zu lang.",
+      "Deine Ohren brauchen lautere Musik.",
+      "Dein Haar wächst zu schnell."
+    ],
+    "explanation": "Durst ist ein Signal deines Körpers. Trinken hilft, Flüssigkeit zu ersetzen, die du über Schweiß und andere Tätigkeiten verlierst.",
+    "theoryLines": [
+      "Wasser hält Körpersysteme in Gang.",
+      "Trinke Wasser beim Spielen und Sport."
+    ]
+  },
+  "sci_p0_g2_body_medium_07": {
+    "stem": "Wie hilft dir die Haut, die Welt wahrzunehmen?",
+    "options": [
+      "Haut hat Sensoren, die Berührung, Druck, Hitze und Schmerz erkennen.",
+      "Haut verdaut Nahrung für den Magen.",
+      "Haut pumpt Sauerstoff in Knochen.",
+      "Haut bildet alle roten Blutkörperchen."
+    ],
+    "explanation": "Tastsensoren in der Haut senden Botschaften an das Gehirn. So spürst du Weiches, Raues, Heißes, Kaltes oder Schmerzhaftes.",
+    "theoryLines": [
+      "Haut ist die äußere Hülle des Körpers.",
+      "Haut hilft auch, vor Keimen und Verletzungen zu schützen."
+    ]
+  },
+  "sci_p0_g2_body_medium_08": {
+    "stem": "Was hilft, Zahnkaries zu verhindern?",
+    "options": [
+      "Putzen, Zahnseide und zuckerhaltige Getränke einschränken",
+      "Deine Zähne nie reinigen",
+      "Den ganzen Tag nur klebrige Süßigkeiten kauen",
+      "Limonade statt Zahnpasta verwenden"
+    ],
+    "explanation": "Zucker ernährt Keime, die Säure bilden, und Säure kann Zähne schädigen. Zähne putzen und kluge Snacks schützen den Zahnschmelz.",
+    "theoryLines": [
+      "Zahnärztinnen und Zahnärzte prüfen die Zahngesundheit.",
+      "Gesunde Zähne helfen dir beim Essen und Sprechen."
+    ]
+  },
+  "sci_p0_g2_body_medium_09": {
+    "stem": "Was geschieht mit deinem Herzen beim aktiven Spielen?",
+    "options": [
+      "Es schlägt schneller, um mehr Blut zu arbeitenden Muskeln zu schicken.",
+      "Es schaltet ab, bis du dich hinsetzt.",
+      "Es stoppt, dass Blut Sauerstoff trägt.",
+      "Es wandert in deinen Fuß."
+    ],
+    "explanation": "Aktive Muskeln brauchen extra Sauerstoff und Nährstoffe. Ein schnellerer Herzschlag hilft, sie rasch zu liefern.",
+    "theoryLines": [
+      "Die Herzfrequenz steigt bei Bewegung.",
+      "Ruhe bringt die Herzfrequenz wieder herunter."
+    ]
+  },
+  "sci_p0_g2_body_hard_01": {
+    "stem": "Warum atmest du beim Laufen stärker?",
+    "options": [
+      "Dein Körper braucht mehr Sauerstoff und muss mehr Kohlenstoffdioxid abgeben.",
+      "Deine Lungen schrumpfen und verschwinden.",
+      "Laufen ersetzt das Atmen für immer.",
+      "Deine Nase funktioniert in Bewegung nicht mehr."
+    ],
+    "explanation": "Laufen steigert den Energieverbrauch. Schnellere, tiefere Atemzüge helfen beim Gasaustausch, damit Muskeln weiterarbeiten können.",
+    "theoryLines": [
+      "Lungen und Herz arbeiten bei Bewegung als Team.",
+      "Kohlenstoffdioxid ist ein Abfallgas, das du ausatmest."
+    ]
+  },
+  "sci_p0_g2_body_hard_02": {
+    "stem": "Warum brauchen arbeitende Muskeln Sauerstoff?",
+    "options": [
+      "Sauerstoff hilft Muskeln, Energie aus Nährstoffen der Nahrung freizusetzen.",
+      "Sauerstoff verwandelt Muskeln in Knochen.",
+      "Sauerstoff lässt Muskeln aufhören sich zu bewegen.",
+      "Sauerstoff wird nur von Haarfollikeln genutzt."
+    ],
+    "explanation": "Zellen nutzen Sauerstoff, um aus Nährstoffen nutzbare Energie zu gewinnen. Ohne genug Sauerstoff ermüden Muskeln schneller.",
+    "theoryLines": [
+      "Blut trägt Sauerstoff zu den Muskeln.",
+      "Atmen und Kreislauf unterstützen Aktivität."
+    ]
+  },
+  "sci_p0_g2_body_hard_03": {
+    "stem": "Was ist eine wichtige Aufgabe des Blutes?",
+    "options": [
+      "Es transportiert Sauerstoff, Nährstoffe und Abfallstoffe durch den Körper.",
+      "Es verdaut Steine im Magen.",
+      "Es lässt Federn an deinen Armen wachsen.",
+      "Es ersetzt den Bedarf an einem Gehirn."
+    ],
+    "explanation": "Blut ist ein Transportsystem. Es liefert, was Zellen brauchen, und trägt Abfallstoffe weg.",
+    "theoryLines": [
+      "Das Herz hält das Blut in Bewegung.",
+      "Blut fließt in Blutgefäßen."
+    ]
+  },
+  "sci_p0_g2_body_hard_04": {
+    "stem": "Was schützt das Gehirn im Kopf?",
+    "options": [
+      "Der Schädel (sowie Flüssigkeit und weiches Gewebe um das Gehirn)",
+      "Nur eine Schicht Baumrinde",
+      "Nur die Fingernägel",
+      "Nur die Zunge"
+    ],
+    "explanation": "Der harte Schädel umgibt das Gehirn. Weiches Gewebe und Flüssigkeit polstern zusätzlich gegen Stöße.",
+    "theoryLines": [
+      "Helme geben beim Sport zusätzlichen Schutz.",
+      "Das Gehirn ist empfindlich und wichtig."
+    ]
+  },
+  "sci_p0_g2_body_hard_05": {
+    "stem": "Warum kann Frühstück vielen Kindern in der Schule helfen?",
+    "options": [
+      "Es liefert Energie und Nährstoffe nach einer Nacht ohne Essen.",
+      "Es erledigt Hausaufgaben von allein.",
+      "Es ersetzt den Bedarf, den ganzen Tag Wasser zu trinken.",
+      "Es verwandelt Bücher in Spielzeug."
+    ],
+    "explanation": "Nach dem Schlaf braucht dein Körper wieder Brennstoff. Ein gutes Frühstück kann Konzentration, Energie und Lernen unterstützen.",
+    "theoryLines": [
+      "Nahrung liefert Energie für Gehirn und Körper.",
+      "Regelmäßige Mahlzeiten stützen gesunde Gewohnheiten."
+    ]
+  },
+  "sci_p0_g2_body_hard_06": {
+    "stem": "Was machen Armmuskeln, wenn du einen Rucksack hebst?",
+    "options": [
+      "Sie ziehen sich zusammen (spannen), ziehen an Knochen und heben die Last.",
+      "Sie werden zu Wasserdampf.",
+      "Sie stoppen den Blutfluss.",
+      "Sie machen den Rucksack magisch leichter."
+    ],
+    "explanation": "Muskeln ziehen; sie drücken nicht von allein. Sich zusammenziehende Armmuskeln bewegen Knochen an den Gelenken, damit du heben kannst.",
+    "theoryLines": [
+      "Muskeln und Knochen arbeiten zusammen.",
+      "Übung und Training können Muskeln stärken."
+    ]
+  },
+  "sci_p0_g2_body_hard_07": {
+    "stem": "Warum solltest du bei Sport an einem heißen Tag Wasser trinken?",
+    "options": [
+      "Du verlierst Wasser beim Schwitzen, und dein Körper muss es ersetzen.",
+      "Wasser lässt deine Schuhe für dich laufen.",
+      "Wasser stoppt dein Herz dauerhaft.",
+      "Wasser nimmt den Bedarf an Übung weg."
+    ],
+    "explanation": "Schwitzen kühlt dich, verbraucht aber Körperwasser. Trinken hilft dir, sicher zu bleiben und leistungsfähig zu bleiben.",
+    "theoryLines": [
+      "Flüssigkeitsmangel kann Müdigkeit und Kopfschmerzen verursachen.",
+      "Wasser ist gewöhnlich das beste Alltagsgetränk beim Sport für Kinder."
+    ]
+  },
+  "sci_p0_g2_body_hard_08": {
+    "stem": "Was sagt dir dein Puls?",
+    "options": [
+      "Wie schnell dein Herz schlägt",
+      "Wie groß du nächstes Jahr wirst",
+      "Welche Farbe deine Augen bekommen",
+      "Wie viele Zähne morgen wachsen"
+    ],
+    "explanation": "Jeder Herzschlag drückt Blut und erzeugt einen Puls, den du fühlen kannst. Pulsschläge zu zählen zeigt die Herzfrequenz.",
+    "theoryLines": [
+      "Der Puls hängt mit der Herztätigkeit zusammen.",
+      "Die Herzfrequenz ändert sich bei Ruhe und Bewegung."
+    ]
+  },
+  "sci_p0_g2_experiments_easy_01": {
+    "stem": "Was solltest du tun, bevor du ein Experiment im Unterricht startest?",
+    "options": [
+      "Die Schritte lesen, Material sammeln und Sicherheitsregeln befolgen.",
+      "Wild raten und alle Anweisungen überspringen.",
+      "Unbekannte Chemikalien zuerst kosten.",
+      "Die Messwerkzeuge wegwerfen."
+    ],
+    "explanation": "Gute Vorbereitung hält dich sicherer und macht Ergebnisse klarer. Den Plan zu kennen hilft, dass das Experiment gut läuft.",
+    "theoryLines": [
+      "Forscherinnen und Forscher planen, bevor sie prüfen.",
+      "Sicherheit kommt bei jeder Untersuchung zuerst."
+    ]
+  },
+  "sci_p0_g2_experiments_easy_02": {
+    "stem": "Welches Werkzeug würdest du nutzen, um die Länge einer Jungpflanze zu messen?",
+    "options": [
+      "Ein Lineal",
+      "Nur ein Thermometer",
+      "Ein Musikinstrument",
+      "Eine Taschenlampenbatterie"
+    ],
+    "explanation": "Ein Lineal misst Länge. In den Naturwissenschaften wählt man Werkzeuge, die zu dem passen, was gemessen werden soll.",
+    "theoryLines": [
+      "Messen braucht das passende Werkzeug.",
+      "Länge wird oft in Zentimetern festgehalten."
+    ]
+  },
+  "sci_p0_g2_experiments_easy_03": {
+    "stem": "Warum halten Forscherinnen und Forscher Ergebnisse oft in einer Tabelle fest?",
+    "options": [
+      "Eine Tabelle ordnet Daten, sodass Muster leichter zu sehen sind.",
+      "Eine Tabelle lässt Pflanzen ohne Wasser wachsen.",
+      "Eine Tabelle ersetzt den Bedarf an jeglichen Messungen.",
+      "Eine Tabelle löscht Fehler automatisch."
+    ],
+    "explanation": "Tabellen halten Zahlen und Beobachtungen übersichtlich. Klare Aufzeichnungen helfen, Versuche zu vergleichen und Ergebnisse zu teilen.",
+    "theoryLines": [
+      "Geordnete Daten stützen bessere Schlussfolgerungen.",
+      "Spalten und Zeilen machen Vergleiche einfach."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_01": {
+    "stem": "Was ist in einem fairen Test eine Variable?",
+    "options": [
+      "Etwas, das sich im Experiment ändern kann",
+      "Eine Regel, die jedes Messen verbietet",
+      "Eine Dekoration an der Klassenzimmerwand",
+      "Eine Art von Brotdose"
+    ],
+    "explanation": "Variablen sind Faktoren, die sich ändern können, etwa Wassermenge oder Lichtdauer. In einem fairen Test änderst du gewöhnlich nur eine Hauptvariable.",
+    "theoryLines": [
+      "Erkenne, was du änderst und was du gleich hältst.",
+      "Faire Tests helfen, Ursache und Wirkung zu zeigen."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_02": {
+    "stem": "Warum wiederholen Forscherinnen und Forscher ein Experiment oft?",
+    "options": [
+      "Wiederholen hilft zu prüfen, ob Ergebnisse zuverlässig sind.",
+      "Wiederholen löscht den Bedarf an jeglichen Daten.",
+      "Wiederholen macht Sicherheitsregeln unnötig.",
+      "Wiederholen verwandelt Meinungen in Zaubersprüche."
+    ],
+    "explanation": "Ein einzelner Versuch könnte ein Zufallstreffer sein. Ähnliche Ergebnisse bei Wiederholungen machen Befunde vertrauenswürdiger.",
+    "theoryLines": [
+      "Zuverlässige Ergebnisse lassen sich wiederholen.",
+      "Mehr Versuche können Fehler oder Zufallsunterschiede aufzeigen."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_03": {
+    "stem": "Was ist eine Hypothese?",
+    "options": [
+      "Eine überprüfbare Idee darüber, was geschehen könnte und warum",
+      "Eine endgültige Antwort, die nie geprüft werden kann",
+      "Eine Liste unzusammenhängender Kritzeleien",
+      "Ein kaputter Messbecher"
+    ],
+    "explanation": "Eine Hypothese ist eine begründete Vermutung, die du prüfen kannst. Experimente liefern Belege, die sie stützen oder nicht stützen.",
+    "theoryLines": [
+      "Hypothesen leiten Untersuchungen.",
+      "Belege zählen mehr als bloßes Raten."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_04": {
+    "stem": "Warum enthalten Experimente oft eine Kontrolle?",
+    "options": [
+      "Eine Kontrolle ist ein Vergleich, der zeigt, was die Änderung bewirkt hat.",
+      "Eine Kontrolle ist ein Preis für frühes Fertigwerden.",
+      "Eine Kontrolle löscht alle Messungen.",
+      "Eine Kontrolle bedeutet, jeden Faktor auf einmal zu ändern."
+    ],
+    "explanation": "Ein Kontrollaufbau bleibt absichtlich unverändert. Der Vergleich mit dem Testaufbau zeigt die Wirkung der geänderten Variable.",
+    "theoryLines": [
+      "Kontrollen machen Tests fairer.",
+      "Vergleiche Ergebnisse, um echte Unterschiede zu sehen."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_05": {
+    "stem": "Worauf sollte eine gute Schlussfolgerung beruhen?",
+    "options": [
+      "Auf den Belegen und Daten aus der Untersuchung",
+      "Nur darauf, was du dir erhofft hast",
+      "Auf einer zufälligen Geschichte ohne Messungen",
+      "Auf der Lieblingsfarbe einer Person"
+    ],
+    "explanation": "Schlussfolgerungen erklären, was die Ergebnisse zeigen. In den Naturwissenschaften verbindet man Aussagen mit Belegen, auch wenn das Ergebnis überraschend war.",
+    "theoryLines": [
+      "Belege stützen naturwissenschaftliche Aussagen.",
+      "Es ist in Ordnung, wenn eine Hypothese nicht gestützt wurde."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_06": {
+    "stem": "Solltest du Materialien in einem naturwissenschaftlichen Experiment kosten?",
+    "options": [
+      "Nein — koste Experimentmaterialien nie, außer eine Lehrkraft sagt, ein Lebensmitteltest sei sicher.",
+      "Ja — koste jede Flüssigkeit, um sie zu erkennen.",
+      "Ja — koste Pulver, um zu prüfen, ob sie süß sind.",
+      "Ja — zuerst kosten, dann später Etiketten lesen."
+    ],
+    "explanation": "Viele Labormaterialien sind unsicher zum Essen oder Trinken. Folge den Regeln der Lehrkraft und nutze Sinne, die für die Aktivität sicher sind.",
+    "theoryLines": [
+      "Sicherheit in den Naturwissenschaften schützt deinen Körper.",
+      "Frage nach, bevor du unbekannte Stoffe berührst oder riechst."
+    ]
+  },
+  "sci_p0_g2_experiments_medium_07": {
+    "stem": "Welche Praxis macht experimentelle Ergebnisse zuverlässiger?",
+    "options": [
+      "Sorgfältig messen und Versuche wiederholen",
+      "Absichtlich viele Dinge auf einmal ändern",
+      "Daten wegwerfen, die dir nicht gefallen",
+      "Bei jeder Zahl die Einheit weglassen"
+    ],
+    "explanation": "Sorgfältige Methoden und Wiederholungen verringern Fehler und Zufallsabweichungen. Zuverlässige Arbeit können auch andere prüfen.",
+    "theoryLines": [
+      "Gute Methoden schaffen Vertrauen in Ergebnisse.",
+      "Klare Aufzeichnungen helfen anderen, deine Arbeit zu verstehen."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_01": {
+    "stem": "Wie unterscheidet sich ein Experiment vom bloßen Beobachten?",
+    "options": [
+      "In einem Experiment prüfst du eine Idee, indem du absichtlich etwas änderst.",
+      "Experimente nutzen nie Beobachtungen.",
+      "Beobachten verlangt immer, Chemikalien zu kosten.",
+      "Experimente verbieten, irgendetwas aufzuschreiben."
+    ],
+    "explanation": "Beobachten heißt, sorgfältig wahrzunehmen. Ein Experiment fügt eine geplante Prüfung hinzu, oft indem eine Variable geändert wird, um die Wirkung zu sehen.",
+    "theoryLines": [
+      "Beobachten und Experimentieren sind beide naturwissenschaftliche Fähigkeiten.",
+      "Tests helfen bei Fragen zu Ursache und Wirkung."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_02": {
+    "stem": "Was solltest du tun, wenn dir ein Messfehler auffällt?",
+    "options": [
+      "Festhalten, was geschehen ist, und sorgfältig erneut messen.",
+      "Den Fehler verstecken und eine Zahl erfinden.",
+      "Für immer mit Naturwissenschaften aufhören.",
+      "Die Pflanze beschuldigen, das Lineal bewegt zu haben."
+    ],
+    "explanation": "Fehler passieren. Ehrliches Aufzeichnen und sorgfältige Wiederholungen helfen, Irrtümer zu beheben und Ergebnisse vertrauenswürdig zu halten.",
+    "theoryLines": [
+      "Forscherinnen und Forscher rechnen mit Fehlern und prüfen sie.",
+      "Ehrlichkeit gehört zu guter Wissenschaft."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_03": {
+    "stem": "Warum ist es in einem fairen Test ein Problem, zwei Variablen gleichzeitig zu ändern?",
+    "options": [
+      "Du kannst nicht sagen, welche Änderung das Ergebnis verursacht hat.",
+      "Es macht das Experiment vollkommen fair.",
+      "Es nimmt den Bedarf an jeglicher Kontrolle weg.",
+      "Es garantiert jedes Mal dasselbe Ergebnis."
+    ],
+    "explanation": "Wenn Licht und Wasser sich beide ändern, könnte eines von beiden — oder beides — das Ergebnis erklären. Ändere jeweils eine Hauptvariable.",
+    "theoryLines": [
+      "Faire Tests isolieren einen Faktor.",
+      "Halte andere Bedingungen gleich."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_04": {
+    "stem": "Warum sollten Messungen Einheiten enthalten?",
+    "options": [
+      "Einheiten sagen, was die Zahl bedeutet, etwa Zentimeter oder Gramm.",
+      "Einheiten dienen nur zur Dekoration.",
+      "Einheiten machen Zahlen unnötig.",
+      "Einheiten löschen Unterschiede zwischen Versuchen."
+    ],
+    "explanation": "Eine Zahl ohne Einheiten ist unklar. „5 Zentimeter“ ist etwas anderes als „5 Gramm“.",
+    "theoryLines": [
+      "Beschrifte Messungen immer mit Einheiten.",
+      "Passende Einheiten helfen, Daten zu vergleichen."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_05": {
+    "stem": "Was ist eine starke naturwissenschaftliche Schlussfolgerung?",
+    "options": [
+      "Eine, die zu den Daten passt und erklärt, was sie zeigen",
+      "Eine, die alle Messungen ignoriert",
+      "Eine, die nur auf einem Glückstreffer ohne Prüfung beruht",
+      "Eine, die Zahlen ändert, damit sie schöner aussehen"
+    ],
+    "explanation": "Eine starke Schlussfolgerung bleibt an Belege gebunden. Sie kann auch Grenzen nennen, etwa dass mehr Versuche nötig sind.",
+    "theoryLines": [
+      "Aussagen brauchen Unterstützung durch Ergebnisse.",
+      "Klare Sprache hilft anderen, Befunde zu verstehen."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_06": {
+    "stem": "Warum halten Forscherinnen und Forscher Versuchsbedingungen möglichst gleich?",
+    "options": [
+      "Damit Unterschiede in den Ergebnissen eher durch die geprüfte Variable entstehen",
+      "Damit niemand irgendetwas messen muss",
+      "Damit Sicherheitsregeln ignoriert werden können",
+      "Damit Hypothesen automatisch zu Tatsachen werden"
+    ],
+    "explanation": "Kontrollierte Bedingungen machen Vergleiche fair. Dann kannst du die geänderte Variable besser mit dem Ergebnis verknüpfen.",
+    "theoryLines": [
+      "Gleiche Bedingungen stützen faire Tests.",
+      "Schreib auf, welche Bedingungen du genutzt hast."
+    ]
+  },
+  "sci_p0_g2_experiments_hard_07": {
+    "stem": "Wobei kann dir ein Diagramm bei Versuchsdaten helfen?",
+    "options": [
+      "Muster zu sehen und Ergebnisse leichter zu vergleichen",
+      "Pflanzen ohne Wasser oder Licht wachsen zu lassen",
+      "Falsche Sicherheitsregeln zu löschen",
+      "Den Bedarf an jeglichen Beobachtungen zu ersetzen"
+    ],
+    "explanation": "Diagramme machen aus Zahlen ein Bild. Trends, Höchst- und Tiefstwerte sind in einem Diagramm oft leichter zu erkennen.",
+    "theoryLines": [
+      "Wähle ein Diagramm, das zu deinen Daten passt.",
+      "Beschriftungen und Einheiten machen Diagramme klar."
+    ]
+  },
+  "sci_p0_g2_animals_medium_01": {
+    "stem": "Welches Merkmal hilft Fischen, im Wasser zu leben?",
+    "options": [
+      "Kiemen, die Sauerstoff aus dem Wasser aufnehmen",
+      "Fell, das Honig macht",
+      "Lungen, die nur auf Berggipfeln arbeiten",
+      "Federn zum Fliegen unter der Erde"
+    ],
+    "explanation": "Fische sind an das Leben im Wasser angepasst. Kiemen lassen sie Sauerstoff bekommen, ohne an Land zu gehen.",
+    "theoryLines": [
+      "Anpassungen helfen Tieren, in Lebensräumen zu überleben.",
+      "Flossen helfen Fischen beim Schwimmen und Steuern."
+    ]
+  },
+  "sci_p0_g2_animals_medium_02": {
+    "stem": "Welche Nahrung fressen Kaninchen hauptsächlich?",
+    "options": [
+      "Pflanzen wie Gras, Blätter und Gemüse",
+      "Nur andere Kaninchen",
+      "Nur Metallreste",
+      "Nur Meeresfische"
+    ],
+    "explanation": "Kaninchen sind Pflanzenfresser. Ihre Zähne und Verdauungssysteme passen zu pflanzlicher Nahrung.",
+    "theoryLines": [
+      "Die Ernährung passt zu den Körpermerkmalen eines Tieres.",
+      "Pflanzenfresser prägen das Pflanzenwachstum in Lebensräumen mit."
+    ]
+  },
+  "sci_p0_g2_animals_medium_03": {
+    "stem": "Welche große Veränderung geschieht im Lebenszyklus eines Schmetterlings?",
+    "options": [
+      "Er durchläuft Stadien, darunter Raupe und Puppe, bevor er ein erwachsener Schmetterling wird.",
+      "Er bleibt für immer eine Raupe ohne Veränderungen.",
+      "Er schlüpft als Säugetier mit Fell.",
+      "Er überspringt das Jungsein und beginnt als Baum."
+    ],
+    "explanation": "Schmetterlinge machen eine Metamorphose durch. Die Raupe frisst und wächst, dann verwandelt sie sich in der Puppe in ein geflügeltes erwachsenes Tier.",
+    "theoryLines": [
+      "Lebenszyklen zeigen, wie Tiere wachsen und sich verändern.",
+      "Verschiedene Stadien können unterschiedliche Nahrung oder Lebensräume nutzen."
+    ]
+  },
+  "sci_p0_g2_animals_medium_04": {
+    "stem": "Wie hilft einem Vogel sein Schnabel beim Überleben?",
+    "options": [
+      "Die Schnabelform hilft dem Vogel, die Nahrung zu bekommen, die er frisst.",
+      "Schnäbel pumpen Blut durch Federn.",
+      "Schnäbel betreiben Fotosynthese wie Blätter.",
+      "Schnäbel verwandeln Vögel über Nacht in Reptilien."
+    ],
+    "explanation": "Der dünne Schnabel eines Kolibris passt zu Nektar, während der gebogene Schnabel eines Habichts hilft, Fleisch zu zerreißen. Form und Funktion passen zusammen.",
+    "theoryLines": [
+      "Körperteile sind an Bedürfnisse angepasst.",
+      "Schnäbel zu vergleichen zeigt unterschiedliche Ernährungsweisen."
+    ]
+  },
+  "sci_p0_g2_animals_medium_05": {
+    "stem": "Wie kann Fell einem Säugetier helfen?",
+    "options": [
+      "Fell kann Wärme halten und die Haut schützen.",
+      "Fell lässt Säugetiere unter Wasser mit Kiemen atmen.",
+      "Fell lässt Säugetiere Blütennektar erzeugen.",
+      "Fell ersetzt den Bedarf an Nahrung."
+    ],
+    "explanation": "Fell ist eine Anpassung für Temperatur und Schutz. Manche Säugetiere haben in kalten Jahreszeiten dichtere Fellkleider.",
+    "theoryLines": [
+      "Säugetiere haben oft Haare oder Fell.",
+      "Dämmung hilft, Körperwärme zu halten."
+    ]
+  },
+  "sci_p0_g2_animals_medium_06": {
+    "stem": "Was stimmt über viele Echsen?",
+    "options": [
+      "Sie sind Reptilien, die sich oft in der Sonne aufwärmen.",
+      "Sie sind Säugetiere, die Milch für Pflanzen machen.",
+      "Sie sind Fische mit Federn.",
+      "Sie sind Insekten mit nur sechs Knochen."
+    ],
+    "explanation": "Echsen gehören zur Gruppe der Reptilien. Sonnenbaden hilft ihnen, Temperaturen zu erreichen, die sie für Aktivität brauchen.",
+    "theoryLines": [
+      "Reptilien haben gewöhnlich trockene Haut mit Schuppen.",
+      "Lebensraum und Verhalten helfen, die Körperwärme zu steuern."
+    ]
+  },
+  "sci_p0_g2_animals_medium_07": {
+    "stem": "Warum sind Bienen für viele Blütenpflanzen wichtig?",
+    "options": [
+      "Bienen helfen, Blüten zu bestäuben, während sie Nektar sammeln.",
+      "Bienen verwandeln Blüten in Plastik.",
+      "Bienen verhindern, dass jemals Samen entstehen.",
+      "Bienen ersetzen Sonnenlicht für Pflanzen."
+    ],
+    "explanation": "Pollen bleibt an Bienen haften und wandert zwischen Blüten. Bestäubung hilft Pflanzen, Früchte und Samen zu bilden.",
+    "theoryLines": [
+      "Bestäuber stützen Nahrungsnetze und Landwirtschaft.",
+      "Bienen zu schützen hilft Ökosystemen."
+    ]
+  },
+  "sci_p0_g2_animals_hard_01": {
+    "stem": "Wie sind Kamele an das trockene Wüstenleben angepasst?",
+    "options": [
+      "Sie können lange zwischen Trinkpausen aushalten und mit heißen, trockenen Bedingungen umgehen.",
+      "Sie brauchen jede Stunde Regenwaldfeuchtigkeit.",
+      "Sie atmen nur durch Unterwasserkiemen.",
+      "Sie halten den ganzen Sommer Winterschlaf in Schneewehen."
+    ],
+    "explanation": "Kamele speichern Reserven und gehen sparsam mit Wasser um. Breite Füße und andere Merkmale helfen auch in sandigen Wüsten.",
+    "theoryLines": [
+      "Wüstentiere haben besondere Anpassungen.",
+      "Wasser sparen ist in trockenen Lebensräumen entscheidend."
+    ]
+  },
+  "sci_p0_g2_animals_hard_02": {
+    "stem": "Wie finden viele Fledermäuse Beute in der Dunkelheit?",
+    "options": [
+      "Sie nutzen Echoortung — Schallechos, um nahe Gegenstände wahrzunehmen.",
+      "Sie lesen winzige gedruckte Karten mit Taschenlampen.",
+      "Sie lassen Pflanzenwurzeln wachsen, um Insekten zu fühlen.",
+      "Sie warten, bis die Sonne eingeschaltet wird."
+    ],
+    "explanation": "Fledermäuse senden Töne aus und hören auf Echos. Echo-Muster helfen ihnen, Insekten und Hindernisse nachts zu finden.",
+    "theoryLines": [
+      "Sinne können an die Lebensweise eines Tieres angepasst sein.",
+      "Nachtjäger brauchen Wege, bei wenig Licht zu navigieren."
+    ]
+  },
+  "sci_p0_g2_animals_hard_03": {
+    "stem": "Was kann geschehen, wenn Tiere ihren Lebensraum verlieren?",
+    "options": [
+      "Sie können Schwierigkeiten haben, Nahrung, Schutz und sichere Plätze für Junge zu finden.",
+      "Sie verwandeln sich sofort in eine andere Art.",
+      "Sie brauchen kein Wasser und keinen Raum mehr.",
+      "Sie werden automatisch zu Haustieren."
+    ],
+    "explanation": "Lebensraumverlust durch Abholzung, Bebauung oder Verschmutzung nimmt Tieren, was sie brauchen. Bestände können schrumpfen oder örtlich verschwinden.",
+    "theoryLines": [
+      "Gesunde Lebensräume stützen die Artenvielfalt.",
+      "Lebensräume zu schützen hilft Wildtieren zu überleben."
+    ]
+  },
+  "sci_p0_g2_animals_hard_04": {
+    "stem": "Welche Rolle können Räuber in einem Ökosystem spielen?",
+    "options": [
+      "Sie helfen, die Zahlen der Beutetiere zu steuern.",
+      "Sie erzeugen mit Sonnenlicht alle pflanzliche Nahrung.",
+      "Sie nehmen den Bedarf an jeglichen Nahrungsketten weg.",
+      "Sie stoppen, dass Tiere Lebensräume brauchen."
+    ],
+    "explanation": "Indem sie Beute jagen, können Räuber verhindern, dass manche Bestände zu groß werden. Das hilft, Ökosysteme im Gleichgewicht zu halten.",
+    "theoryLines": [
+      "Räuber und Beute beeinflussen einander.",
+      "Energie fließt durch Nahrungsnetze."
+    ]
+  },
+  "sci_p0_g2_animals_hard_05": {
+    "stem": "Wobei helfen Flossen einem Fisch?",
+    "options": [
+      "Schwimmen, steuern und im Wasser das Gleichgewicht halten",
+      "An Land wie ein Pferd gehen",
+      "Pollen für Blüten machen",
+      "Blut ohne Herz pumpen"
+    ],
+    "explanation": "Verschiedene Flossen haben Aufgaben wie Vorwärtsbewegen, Wenden und Aufrechtbleiben. Zusammen helfen sie Fischen, sich unter Wasser gut zu bewegen.",
+    "theoryLines": [
+      "Körperstrukturen passen zur Umgebung.",
+      "Wassertiere brauchen Wege, sich durch Wasser zu bewegen."
+    ]
+  },
+  "sci_p0_g2_animals_hard_06": {
+    "stem": "Was ist am Lebenszyklus eines Frosches besonders?",
+    "options": [
+      "Frösche beginnen oft als Kaulquappen im Wasser und leben später als Erwachsene mehr an Land.",
+      "Frösche schlüpfen bereits als fellige Säugetiere.",
+      "Frösche ändern beim Wachsen nie ihre Form.",
+      "Frösche beginnen das Leben als Samen im Boden."
+    ],
+    "explanation": "Viele Frösche verwandeln sich von wasserlebenden Kaulquappen mit Kiemen zu Erwachsenen mit Lungen und Beinen. Ihre Bedürfnisse ändern sich mit jedem Stadium.",
+    "theoryLines": [
+      "Amphibien brauchen oft feuchte Lebensräume.",
+      "Stadien im Lebenszyklus können sehr unterschiedlich aussehen."
+    ]
+  },
+  "sci_p0_g2_animals_hard_07": {
+    "stem": "Warum brauchen Wildtiere genug Raum?",
+    "options": [
+      "Raum hilft ihnen, Nahrung, Partner und sicheren Schutz zu finden.",
+      "Raum dient nur dazu, in der Schule Karten zu zeichnen.",
+      "Wildtiere leben am liebsten in geschlossenen Gläsern.",
+      "Raum stoppt, dass Tiere Luft atmen."
+    ],
+    "explanation": "Gedränge kann weniger Nahrung und mehr Stress oder Krankheit bedeuten. Genug Lebensraum stützt gesunde Wildtierbestände.",
+    "theoryLines": [
+      "Tiere haben Streifgebiete und Reviere.",
+      "Land zu schützen sichert die Bedürfnisse von Wildtieren."
+    ]
+  },
+  "sci_p0_g2_animals_hard_08": {
+    "stem": "Was ist eine Art, wie Vögel mit dem Winter umgehen?",
+    "options": [
+      "Manche ziehen in wärmere Gegenden; andere nutzen Federn und Nahrungsvorräte, um zu bleiben.",
+      "Alle Vögel frieren bis zum Frühling fest ein, ohne Anpassungen.",
+      "Vögel werden jeden Dezember zu Reptilien.",
+      "Vögel brauchen bei Kälte keine Energie mehr."
+    ],
+    "explanation": "Zug, aufgeplusterte Federn und genug Nahrung zu finden sind übliche Winterstrategien. Verschiedene Arten nutzen unterschiedliche Lösungen.",
+    "theoryLines": [
+      "Jahreszeiten ändern verfügbare Ressourcen.",
+      "Anpassungen und Verhaltensweisen helfen beim Überleben."
+    ]
+  },
+  "sci_p0_g2_animals_hard_09": {
+    "stem": "Wie helfen einer Katze die Schnurrhaare?",
+    "options": [
+      "Schnurrhaare nehmen nahe Gegenstände wahr und helfen bei Bewegung in engen Räumen.",
+      "Schnurrhaare verdauen Nahrung außerhalb des Körpers.",
+      "Schnurrhaare betreiben Fotosynthese und machen aus Sonnenlicht Fell.",
+      "Schnurrhaare ersetzen den Bedarf der Katze, irgendetwas zu sehen."
+    ],
+    "explanation": "Schnurrhaare sind empfindliche Tastwerkzeuge. Sie helfen Katzen, Öffnungen einzuschätzen und Bewegung nahe am Gesicht wahrzunehmen.",
+    "theoryLines": [
+      "Besondere Sensoren stützen das Überleben von Tieren.",
+      "Tasten kann für manche Aufgaben so wichtig sein wie Sehen."
+    ]
+  },
+  "sci_p0_g2_plants_medium_01": {
+    "stem": "Was stellen Pflanzen bei der Fotosynthese her?",
+    "options": [
+      "Nahrung (Zucker) mit Licht, Wasser und Kohlenstoffdioxid",
+      "Steine nur mit Dunkelheit",
+      "Plastik nur mit Salzwasser",
+      "Strom mit Sand"
+    ],
+    "explanation": "Bei der Fotosynthese fangen Pflanzen Lichtenergie ein und bauen Zucker. Sauerstoff wird als nützliches Nebenprodukt freigesetzt.",
+    "theoryLines": [
+      "Blätter sind wichtige Orte der Fotosynthese.",
+      "Tiere hängen von der Nahrungsenergie der Pflanzen ab."
+    ]
+  },
+  "sci_p0_g2_plants_medium_02": {
+    "stem": "Was ist eine Aufgabe des Stängels einer Pflanze?",
+    "options": [
+      "Er stützt die Pflanze und transportiert Wasser und Nährstoffe zwischen Wurzeln und Blättern.",
+      "Er jagt Insekten mit Zähnen.",
+      "Er verdaut Nahrung wie ein Magen für Tiere.",
+      "Er ersetzt Sonnenlicht vollständig."
+    ],
+    "explanation": "Stängel halten Blätter zum Licht hoch. Röhren im Inneren bewegen Wasser nach oben und Nahrung zu anderen Pflanzenteilen.",
+    "theoryLines": [
+      "Pflanzenteile arbeiten als System.",
+      "Starke Stängel helfen hohen Pflanzen zu stehen."
+    ]
+  },
+  "sci_p0_g2_plants_medium_03": {
+    "stem": "Was machen Wurzeln außer die Pflanze festzuhalten noch?",
+    "options": [
+      "Wasser und Mineralstoffe aus dem Boden aufnehmen",
+      "Nur Pollen für Bienen machen",
+      "Schlagen, um die Pflanze über Felder zu fliegen",
+      "Blut durch Blätter pumpen"
+    ],
+    "explanation": "Wurzeln sind das unterirdische Aufnahmesystem der Pflanze. Wasser und Mineralstoffe gelangen hier hinein und wandern nach oben.",
+    "theoryLines": [
+      "Gesunder Boden hilft Wurzeln, gut zu arbeiten.",
+      "Wurzelhaare steigern die Wasseraufnahme."
+    ]
+  },
+  "sci_p0_g2_plants_medium_04": {
+    "stem": "Was bedeutet es, wenn ein Samen keimt?",
+    "options": [
+      "Der Samen treibt aus und eine junge Pflanze beginnt zu wachsen.",
+      "Der Samen wird zu einem erwachsenen Tier.",
+      "Der Samen gefriert für immer und ändert sich nie.",
+      "Der Samen wird zu einer Wolke."
+    ],
+    "explanation": "Keimen startet den Pflanzen-Lebenszyklus aus einem Samen. Wurzel und Spross erscheinen, wenn die Bedingungen stimmen.",
+    "theoryLines": [
+      "Wasser und Temperatur beeinflussen die Keimung.",
+      "Gespeicherte Nahrung im Samen treibt das frühe Wachstum an."
+    ]
+  },
+  "sci_p0_g2_plants_medium_05": {
+    "stem": "Warum sehen viele Pflanzenblätter grün aus?",
+    "options": [
+      "Sie enthalten Chlorophyll, einen grünen Farbstoff, der Licht einfängt.",
+      "Sie werden jede Nacht von Insekten grün bemalt.",
+      "Sie spiegeln nur Wärme und kein Licht wider.",
+      "Sie bestehen aus reinem Kupfermetall."
+    ],
+    "explanation": "Chlorophyll hilft, Lichtenergie für die Fotosynthese einzufangen. Es reflektiert grüne Wellenlängen, deshalb sehen Blätter grün aus.",
+    "theoryLines": [
+      "Farbstoffe beeinflussen die Pflanzenfarbe.",
+      "Chlorophyll ist entscheidend, um aus Licht Nahrung herzustellen."
+    ]
+  },
+  "sci_p0_g2_plants_hard_01": {
+    "stem": "Warum könnte eine Pflanze Blätter abwerfen?",
+    "options": [
+      "Abwerfen kann der Pflanze helfen, Wasser zu sparen oder auf Jahreszeiten und Stress zu reagieren.",
+      "Abwerfen bedeutet, dass die Pflanze zu einem Säugetier wird.",
+      "Abwerfen bedeutet immer, dass die Pflanze kein Sonnenlicht mehr braucht.",
+      "Abwerfen ersetzt Wurzeln durch Flügel."
+    ],
+    "explanation": "Laubbäume werfen im Herbst Blätter ab. Pflanzen können auch beschädigte Blätter abwerfen. Solche Veränderungen können die Pflanze schützen.",
+    "theoryLines": [
+      "Blätterabwurf ist manchmal eine Überlebensstrategie.",
+      "Nicht alle Pflanzen werfen Blätter auf dieselbe Weise ab."
+    ]
+  },
+  "sci_p0_g2_plants_hard_02": {
+    "stem": "Was ist Pollen?",
+    "options": [
+      "Ein pulveriges Material aus Blüten, das Pflanzen bei der Fortpflanzung hilft",
+      "Eine Wurzelart, die Blut speichert",
+      "Eine Flüssigkeit, die Erde ersetzt",
+      "Ein Stein, der in Baumrinde entsteht"
+    ],
+    "explanation": "Pollen trägt Material, das für die Befruchtung bei Blütenpflanzen nötig ist. Wind, Wasser oder Tiere können Pollen bewegen.",
+    "theoryLines": [
+      "Bestäubung führt zu Samen und Früchten.",
+      "Manche Menschen reagieren allergisch auf bestimmte Pollen."
+    ]
+  },
+  "sci_p0_g2_plants_hard_03": {
+    "stem": "Was ist eine sichere Gewohnheit beim Gießen von Pflanzen in der Nähe von Strom?",
+    "options": [
+      "Halte Wasser von Steckdosen, Kabeln und Geräten fern.",
+      "Gieße Wasser direkt auf eingesteckte Elektronik.",
+      "Gieße Pflanzen, während du einen Toaster in der Spüle hältst.",
+      "Ignoriere Verschüttetes auf elektrischen Geräten."
+    ],
+    "explanation": "Wasser und Strom sind eine gefährliche Mischung. Gieße Pflanzen vorsichtig, damit Kabel und Steckdosen trocken bleiben.",
+    "theoryLines": [
+      "Sicherheit zählt auch bei alltäglicher Pflanzenpflege.",
+      "Wische Verschüttetes auf und bitte eine erwachsene Person um Hilfe bei Strom."
+    ]
+  },
+  "sci_p0_g2_plants_hard_04": {
+    "stem": "Wo stehen Pflanzen gewöhnlich in einer Nahrungskette?",
+    "options": [
+      "Am Anfang, als Produzenten, die Nahrungsenergie erzeugen",
+      "Nur am Ende als Spitzenräuber",
+      "Nirgendwo — Pflanzen sind nie in Nahrungsketten",
+      "Nur als Tiere, die Fische jagen"
+    ],
+    "explanation": "Produzenten starten Nahrungsketten, indem sie energiereiche Nahrung herstellen. Pflanzenfresser fressen Pflanzen, dann können andere Tiere diese Pflanzenfresser fressen.",
+    "theoryLines": [
+      "Energie fließt von Produzenten zu Verbrauchern.",
+      "Pflanzen zu entfernen betrifft die ganze Kette."
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import {
   schoolActivityModeHe,
   schoolActivityStatusHe,
@@ -152,19 +153,19 @@ export function SchoolActivityRow({ activity }) {
           <p className="font-semibold text-white break-words">{title}</p>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Subject</dt>
+              <dt className="text-white/45">{globalBurnDownCopy("components__school-portal__SchoolPortalUi", "col_subject")}</dt>
               <dd className="text-white/85">{subject}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Class</dt>
+              <dt className="text-white/45">{globalBurnDownCopy("components__school-portal__SchoolPortalUi", "col_class")}</dt>
               <dd className="text-white/85 break-words">{className}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Teacher</dt>
+              <dt className="text-white/45">{globalBurnDownCopy("components__school-portal__SchoolPortalUi", "col_teacher")}</dt>
               <dd className="text-white/85">{teacher}</dd>
             </div>
             <div className="flex justify-between sm:block gap-2">
-              <dt className="text-white/45">Type</dt>
+              <dt className="text-white/45">{globalBurnDownCopy("components__school-portal__SchoolPortalUi", "col_type")}</dt>
               <dd className="text-white/85">{mode}</dd>
             </div>
           </dl>
@@ -174,7 +175,7 @@ export function SchoolActivityRow({ activity }) {
               className="inline-flex text-sm text-amber-300 hover:underline"
               data-testid="school-activity-review-link"
             >
-              View answers
+              {globalBurnDownCopy("components__school-portal__SchoolPortalUi", "view_answers")}
             </Link>
           ) : null}
         </div>

@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import Layout from "../Layout";
+import PageSeo from "../seo/PageSeo";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { isStudentIdentityDiagnosticsEnabled } from "../../lib/dev-student-identity-client";
 import {
@@ -24,13 +26,42 @@ import {
 import { prefetchStudentHubRoutes } from "../../lib/student-ui/student-hub-prefetch.client.js";
 import { studentPathNeedsGameAccess } from "../../lib/student-ui/student-game-access-paths.client.js";
 
+/** Map protected public hubs to SEO keys so gate/login shells keep locale metadata. */
+const GATE_SEO_BY_PATH = {
+  "/games": "games",
+  "/game": "games",
+  "/gallery": "gallery",
+};
+
+function GateRouteSeo({ pathname }) {
+  const seoKey = GATE_SEO_BY_PATH[pathname || ""];
+  const seo = usePublicPageSeo(seoKey || "home");
+  if (!seoKey) return null;
+  return (
+    <PageSeo
+      title={seo.title}
+      description={seo.description}
+      canonicalPath={seo.canonicalPath}
+    />
+  );
+}
+
 /** Allowed to store in next= after login — no open redirect */
 function isSafeNextPath(path) {
   return (
     typeof path === "string" &&
     !path.startsWith("//") &&
     !path.includes("://") &&
-    (path.startsWith("/learning") || path.startsWith("/student/"))
+    (path.startsWith("/learning") ||
+      path.startsWith("/student/") ||
+      path === "/games" ||
+      path.startsWith("/games?") ||
+      path === "/game" ||
+      path.startsWith("/game?") ||
+      path === "/gallery" ||
+      path.startsWith("/gallery?") ||
+      path === "/offline" ||
+      path.startsWith("/offline/"))
   );
 }
 
@@ -52,8 +83,9 @@ function StudentGateShell({ pathname, children }) {
 function StudentGateBlockedPanel({ loginHref }) {
   const { tokens: T } = useStudentTheme();
   const t = useT();
+  const { direction, locale } = useI18n();
   return (
-    <div className="max-w-md mx-auto px-4 py-8 md:py-12 space-y-4" dir="ltr" lang="en">
+    <div className="max-w-md mx-auto px-4 py-8 md:py-12 space-y-4" dir={direction} lang={locale}>
       <p className={`${T.loadingText} text-start`}>{t("ui.student.accessGateSignInPrompt")}</p>
       <Link href={loginHref} className={`${T.ctaPrimary} inline-flex justify-center w-full sm:w-auto`}>
         {t("ui.student.accessGateSignInCta")}
@@ -242,6 +274,7 @@ export default function StudentAccessGate({ children }) {
 
   return (
     <StudentSessionProvider value={providerValue}>
+      <GateRouteSeo pathname={pathname} />
       {showFullLoader || showGameLoader ? (
         <StudentLoadingPanel message={t("ui.student.loading")} fullPage />
       ) : (

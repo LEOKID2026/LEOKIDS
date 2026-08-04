@@ -23,6 +23,7 @@ import {
 } from "./leo-word-detective-data.js";
 import { buildLeoWordDetectiveMetrics } from "./leo-word-detective-metrics.js";
 import styles from "./LeoWordDetectiveGame.module.css";
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 
 /** @typedef {import('./leo-word-detective-data.js').DifficultyId} DifficultyId */
 
@@ -170,7 +171,7 @@ export default function LeoWordDetectiveGame({
     timerPausedRef.current = true;
     setCheckState("bad");
     setBoardAnim("shake");
-    const timeoutText = "Time's up! The case stays open.";
+    const timeoutText = gamePackCopy("components__educational-games__leo-word-detective__LeoWordDetectiveGame", "times_up");
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -547,7 +548,7 @@ export default function LeoWordDetectiveGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🎉 All cases solved!</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-word-detective__LeoWordDetectiveGame", "end_score", { score })}</p>
             <p className={frame.endStat}>✅ Successes: {successCount}/{tasksPerSession}</p>
             <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>
@@ -563,7 +564,7 @@ export default function LeoWordDetectiveGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🕵️ Investigation stopped</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-word-detective__LeoWordDetectiveGame", "end_score", { score })}</p>
             <p className={frame.endStat}>✅ Successes: {successCount}</p>
             <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>

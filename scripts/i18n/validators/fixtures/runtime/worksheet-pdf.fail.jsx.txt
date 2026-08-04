@@ -1,0 +1,7 @@
+export default function WorksheetPreviewActions({ onPrint }) {
+  return (
+    <button type="button" onClick={onPrint} data-testid="worksheet-preview-pdf">
+      PDF
+    </button>
+  );
+}

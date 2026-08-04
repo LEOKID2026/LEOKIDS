@@ -70,6 +70,15 @@
     "values": "قيم",
     "map_reading": "قراءة الخريطة",
     "directions": "الاتجاهات",
-    "places": "الأماكن"
+    "places": "الأماكن",
+    "subject": "مادة",
+    "topic": "موضوع",
+    "subject_math": "الرياضيات",
+    "subject_geometry": "الهندسة",
+    "subject_english": "الإنجليزية",
+    "subject_science": "العلوم",
+    "ratio": "النسبة",
+    "scale": "المقياس",
+    "area": "المساحة"
   }
 }

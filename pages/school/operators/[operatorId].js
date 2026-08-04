@@ -5,8 +5,10 @@ import Layout from "../../../components/Layout";
 import SchoolPortalShell from "../../../components/school-portal/SchoolPortalShell";
 import SchoolOperatorGrantPanel from "../../../components/school-portal/SchoolOperatorGrantPanel";
 import { useSchoolPortalLoad } from "../../../lib/school-portal/use-school-portal-session";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import {
   apiErrorMessageHe,
+  bindSchoolUiLocale,
   schoolAuthFetch,
   SCHOOL_LOADING,
   SCHOOL_OPERATOR_IDENTITY,
@@ -16,6 +18,8 @@ import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "../../../components/school-porta
 
 export default function SchoolOperatorDetailPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const operatorId = typeof router.query?.operatorId === "string" ? router.query.operatorId : "";
   const { state, accessToken, me } = useSchoolPortalLoad();
   const [operator, setOperator] = useState(null);

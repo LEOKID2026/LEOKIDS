@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "aria_label": "Class navigation",
+    "class_report": "Class report",
+    "activities": "Activities",
+    "worksheets": "Worksheets",
+    "discussion": "Discussion"
+  }
+}

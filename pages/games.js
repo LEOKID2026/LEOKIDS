@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../hooks/usePublicPageSeo.js";
 import { useIOSViewportFix } from "../hooks/useIOSViewportFix";
 import { useGamesHubUi } from "../hooks/useGamesHubUi.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
@@ -9,7 +9,7 @@ import GamesHubNavBar from "../components/games/GamesHubNavBar.jsx";
 import GamesHubHeader from "../components/games/GamesHubHeader.jsx";
 import { useStudentGameAccess } from "../hooks/useStudentGameAccess.js";
 import { hubCardKeyToCategory, GAME_ACCESS_STATES } from "../lib/games/game-catalog.constants.js";
-import { useT } from "../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../lib/i18n/I18nProvider.jsx";
 
 const GAME_HUB_CARD_KEYS = [
   { key: "regular", titleKey: "games.hubRegularTitle", blurbKey: "games.hubRegularBlurb", emoji: "🎮", href: "/game" },
@@ -18,11 +18,12 @@ const GAME_HUB_CARD_KEYS = [
   { key: "educational", titleKey: "games.hubEducationalTitle", blurbKey: "games.hubEducationalBlurb", emoji: "📚", href: "/student/educational-games" },
 ];
 
-const gamesSeo = getPublicPageSeo("games");
 
 export default function GamesHubPage() {
+  const gamesSeo = usePublicPageSeo("games");
   useIOSViewportFix();
   const t = useT();
+  const { direction, locale } = useI18n();
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
   const { state, categoryState, isGuest } = useStudentGameAccess();
@@ -34,7 +35,7 @@ export default function GamesHubPage() {
         description={gamesSeo.description}
         canonicalPath={gamesSeo.canonicalPath}
       />
-      <main className={GH.pageWrap} dir="ltr" lang="en">
+      <main className={GH.pageWrap} dir={direction} lang={locale}>
         <div className={`${GH.container} space-y-4`}>
           <GamesHubNavBar
             backHref="/student/home"

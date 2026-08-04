@@ -224,7 +224,7 @@ export function ParentReportTopicExplainBlock({ rows, compact = false, registere
   return (
     <div className="parent-report-topic-explain-block mt-2 rounded-lg border border-white/10 bg-black/25 overflow-hidden avoid-break">
       <div className="px-2 py-1 text-[10px] md:text-[11px] font-bold text-white/55 border-b border-white/10">
-        What stands out in each topic
+        {reportPackCopy("components__parent-report-topic-explain-row", "what_stands_out_in_each_topic")}
       </div>
       <div className="max-h-none overflow-visible">
         {withQ.map((r) => (

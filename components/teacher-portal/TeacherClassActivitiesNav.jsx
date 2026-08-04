@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+
+const NAV = "components__teacher-portal__TeacherClassActivitiesNav";
+function navCopy(key) {
+  return globalBurnDownCopy(NAV, key);
+}
 
 /**
  * @param {{ classId: string, active?: 'class'|'activities'|'worksheets'|'discussion' }} props
@@ -18,18 +24,18 @@ export default function TeacherClassActivitiesNav({ classId, active = "activitie
       : "px-3 py-1.5 rounded-lg border border-white/15 text-white/80 hover:bg-white/10";
 
   return (
-    <nav className="flex flex-wrap gap-2 mb-6 text-sm" aria-label="Class navigation">
+    <nav className="flex flex-wrap gap-2 mb-6 text-sm" aria-label={navCopy("aria_label")}>
       <Link href={base} className={linkClass("class")}>
-        Class report
+        {navCopy("class_report")}
       </Link>
       <Link href={`${base}/activities`} className={linkClass("activities")}>
-        Activities
+        {navCopy("activities")}
       </Link>
       <Link href={`${base}/worksheets`} className={linkClass("worksheets")}>
-        Worksheets
+        {navCopy("worksheets")}
       </Link>
       <Link href={`${base}/discussion/new`} className={linkClass("discussion")}>
-        Discussion
+        {navCopy("discussion")}
       </Link>
     </nav>
   );

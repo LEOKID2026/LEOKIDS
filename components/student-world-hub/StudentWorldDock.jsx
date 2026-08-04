@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
-import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
 import { formatCountdownHe } from "../../lib/rewards/rewards-ui.js";
+import { isDemoMode } from "../../lib/demo/demo-mode.client.js";
 import {
   STUDENT_WORLD_DOCK_PRIMARY,
   STUDENT_WORLD_MORE_PANELS,
@@ -69,10 +69,12 @@ export default function StudentWorldDock({
   const [secondsRemaining, setSecondsRemaining] = useState(null);
   const [maxPendingBoxes, setMaxPendingBoxes] = useState(0);
 
-  const surpriseEnabled = Boolean(onSurpriseOpen) && isCardRewardsEnabledClient();
+  const surpriseEnabled = Boolean(onSurpriseOpen);
 
   const loadSurpriseStatus = useCallback(async () => {
     if (!surpriseEnabled) return;
+    // Demo uses surpriseStatusOverride only — live API would overwrite ready state.
+    if (isDemoMode()) return;
     try {
       const res = await fetch(SURPRISE_STATUS_PATH, {
         credentials: "include",
@@ -140,7 +142,14 @@ export default function StudentWorldDock({
     onOpenPanel?.(panelId);
   };
 
-  const canOpenSurprise = surpriseEnabled && surpriseReady && !surpriseOpeningLocked;
+  const canOpenSurprise =
+    surpriseEnabled &&
+    !surpriseOpeningLocked &&
+    (surpriseReady ||
+      (surpriseStatusOverride?.pendingBoxCount != null
+        ? Math.max(0, Number(surpriseStatusOverride.pendingBoxCount) || 0) > 0
+        : surpriseStatusOverride?.ready === true) ||
+      (isDemoMode() && !surpriseStatusOverride));
   const surpriseCountdownHe =
     !atPendingMax && secondsRemaining != null && secondsRemaining > 0
       ? formatCountdownHe(secondsRemaining)
@@ -197,9 +206,9 @@ export default function StudentWorldDock({
             ? t("ui.student.surpriseNextCountdown", { time: surpriseCountdownHe })
             : t("ui.student.surpriseBox")
       }
-      disabled={!canOpenSurprise}
+      disabled={!canOpenSurprise && !isDemoMode()}
       onClick={() => {
-        if (canOpenSurprise) onSurpriseOpen?.();
+        if (canOpenSurprise || isDemoMode()) onSurpriseOpen?.();
       }}
     >
       <span className={dockIconClass} aria-hidden>

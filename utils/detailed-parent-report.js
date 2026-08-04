@@ -148,11 +148,16 @@ const SUBJECT_IDS = [
   "english",
   "science"];
 
-const SUBJECT_LABEL_HE = {
-  math: "Math",
-  geometry: "Geometry",
-  english: "English",
-  science: "Science"};
+const SUBJECT_LABEL_HE = new Proxy(
+  /** @type {Record<string, string>} */ ({}),
+  {
+    get(_target, sid) {
+      const key = String(sid || "");
+      if (!key) return "";
+      return reportPackCopy("utils__detailed-parent-report", `subject_${key}`) || key;
+    },
+  }
+);
 
 const TOPIC_REC_MIN_ACTIONABLE_QUESTIONS = 8;
 const PRIORITY_SCORE_BY_LEVEL = { P4: 400, P3: 300, P2: 200, P1: 100 };
@@ -1586,19 +1591,28 @@ function buildOverallSnapshot(baseReport, subjectCoverage) {
   for (const row of practicedCoverage) {
     if (row.questionCount > 0 && row.questionCount < 15) {
       sparseSubjectsHe.push(
-        `${row.subjectLabel} - low question count (${row.questionCount} questions)`
+        reportPackCopy("utils__detailed-parent-report", "subject_low_question_count", {
+          subject: row.subjectLabel,
+          count: String(row.questionCount),
+        })
       );
     }
     const isHighVolumeStrong = row.questionCount >= 40 && row.accuracy >= 85;
     const isMediumVolumeStrong = row.questionCount >= 18 && row.accuracy >= 88;
     if (isHighVolumeStrong || isMediumVolumeStrong) {
       notableSubjectsHe.push(
-        `${row.subjectLabel} - ${row.questionCount} questions collected with good accuracy (${row.accuracy}%)`
+        reportPackCopy("utils__detailed-parent-report", "subject_good_accuracy_volume", {
+          subject: row.subjectLabel,
+          count: String(row.questionCount),
+          accuracy: String(row.accuracy),
+        })
       );
     }
   }
   if (!notableSubjectsHe.length) {
-    notableSubjectsHe.push("There's no standout subject yet based on question count and accuracy - continued practice will make the difference.");
+    notableSubjectsHe.push(
+      reportPackCopy("utils__detailed-parent-report", "no_standout_subject_yet")
+    );
   }
   return {
     /** total learning time in minutes (like V2 summary.totalTimeMinutes) */
@@ -1623,7 +1637,9 @@ function buildCrossSubjectInsights(baseReport, subjects) {
   const sparse = coverage.filter((c) => c.questionCount > 0 && c.questionCount < 10);
   if (sparse.length) {
     bulletsHe.push(
-      `In ${sparse.map((s) => s.subjectLabel).join(", ")} there's still limited information - the picture will become clearer after more practice.`
+      reportPackCopy("utils__detailed-parent-report", "sparse_subjects_limited_info", {
+        subjects: sparse.map((s) => s.subjectLabel).join(", "),
+      })
     );
   }
   const wRows = collectWeaknessRows(subjects);

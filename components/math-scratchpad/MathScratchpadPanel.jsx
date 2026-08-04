@@ -57,7 +57,7 @@ export default function MathScratchpadPanel({
         dir="ltr"
       >
         <h3 className={isBright ? S.panelTitle : "text-sm md:text-base font-semibold text-sky-100"}>
-          Scratch pad
+          {globalBurnDownCopy("components__math-scratchpad__MathScratchpadPanel", "scratch_pad")}
         </h3>
         <button
           type="button"
@@ -69,7 +69,7 @@ export default function MathScratchpadPanel({
           }
           data-testid="math-scratchpad-close"
         >
-          Close
+          {globalBurnDownCopy("components__math-scratchpad__MathScratchpadPanel", "close")}
         </button>
       </div>
 

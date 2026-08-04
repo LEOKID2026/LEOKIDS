@@ -28,6 +28,7 @@ import WritingPrintDocument from "../writing/WritingPrintDocument.jsx";
  *   refreshLoading?: boolean,
  *   answerKeyLoading?: boolean,
  *   errorMessage?: string,
+ *   previewReady?: boolean,
  *   T: Record<string, string>,
  * }} props
  */
@@ -40,6 +41,7 @@ export default function WorksheetPreviewModal({
   refreshLoading = false,
   answerKeyLoading = false,
   errorMessage = "",
+  previewReady = true,
   T,
 }) {
   const ui = useWorksheetUi();
@@ -113,6 +115,7 @@ export default function WorksheetPreviewModal({
           role="dialog"
           aria-modal="true"
           aria-labelledby="worksheet-preview-modal-title"
+          {...(previewReady ? { "data-testid": "worksheet-preview-ready" } : {})}
           onClick={(event) => event.stopPropagation()}
         >
           <div className="worksheet-preview-modal-toolbar">

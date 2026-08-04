@@ -49,6 +49,7 @@ import { isImmersiveGameLayoutPath } from "../../lib/site-nav";
 import { useParentReportBrightPageBackground } from "../../lib/parent-ui/use-parent-report-bright-page-bg.js";
 import { mapParentReportLoadError } from "../../lib/parent-client/parent-api-errors.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { resolveDetailedParentReportPathname } from "../../lib/parent-report/detailed-report-pathname.client.js";
 import { PARENT_BULLETS_EMPTY_WITH_VOLUME_HE } from "../../utils/parent-data-presence.js";
 import {
@@ -125,7 +126,7 @@ function PlanItemCards({ items, windowTotalQuestions = 0 }) {
   if (!items?.length)
     return (
       <p className="pr-detailed-muted text-sm">
-        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
+        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : reportPackCopy("pages__learning__parent-report-detailed", "no_data_to_display")}
       </p>
     );
   return (
@@ -147,7 +148,7 @@ function GoalItemCards({ items, windowTotalQuestions = 0 }) {
   if (!items?.length)
     return (
       <p className="pr-detailed-muted text-sm">
-        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : "No data to display."}
+        {Number(windowTotalQuestions) > 0 ? PARENT_BULLETS_EMPTY_WITH_VOLUME_HE : reportPackCopy("pages__learning__parent-report-detailed", "no_data_to_display")}
       </p>
     );
   return (
@@ -260,6 +261,8 @@ export default function ParentReportDetailedPage() {
   /** Student UUID for secured `/api/parent/copilot-turn` (parent dashboard or cookie session). */
   const [copilotStudentId, setCopilotStudentId] = useState(/** @type {string || null} */ (null));
   const { theme, isBright } = useStudentTheme();
+  const { reportLocale: i18nReportLocale, locale } = useI18n();
+  const activeReportLocale = String(i18nReportLocale || locale || "en");
   const layoutProps = getParentReportLayoutProps(theme);
   const reportImmersive = isImmersiveGameLayoutPath(router.pathname);
   const reportShellOpts = { immersive: reportImmersive };
@@ -412,17 +415,17 @@ export default function ParentReportDetailedPage() {
           : hasParentDemoSession()
             ? "demo"
             : "parent";
-        const fetchKey = `${parentStudentId}|${from}|${to}|${remoteSourceKind}`;
+        const fetchKey = `${parentStudentId}|${from}|${to}|${remoteSourceKind}|${activeReportLocale}`;
         if (reportRemoteFetchKeyRef.current === fetchKey) {
           setLoading(false);
-          return;
-        }
-        if (reportRemoteInflightKeyRef.current === fetchKey) {
           return;
         }
         reportRemoteInflightKeyRef.current = fetchKey;
 
         try {
+          if (abortController.signal.aborted) {
+            throw Object.assign(new Error("Aborted"), { name: "AbortError" });
+          }
           let configOk = true;
           if (!hasParentDemoSession()) {
             try {
@@ -438,11 +441,13 @@ export default function ParentReportDetailedPage() {
               setBaseReport(null);
               setLoading(false);
             }
-            reportRemoteInflightKeyRef.current = null;
             return;
           }
 
           let token = await resolveParentReportBearerToken();
+          if (abortController.signal.aborted) {
+            throw Object.assign(new Error("Aborted"), { name: "AbortError" });
+          }
           if (
             !token &&
             typeof window !== "undefined" &&
@@ -454,8 +459,14 @@ export default function ParentReportDetailedPage() {
             if (!cancelled) {
               setParentReportError(
                 isTeacherSource
-                  ? "Teacher sign-in is required - please sign in again and try again."
-                  : reportPackCopy("pages__learning__parent-report-detailed", "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again")
+                  ? reportPackCopy(
+                      "pages__learning__parent-report-detailed",
+                      "teacher_sign_in_is_required_please_sign_in_again_and_try_again"
+                    )
+                  : reportPackCopy(
+                      "pages__learning__parent-report-detailed",
+                      "parent_sign_in_is_required_please_use_parent_sign_in_and_try_again"
+                    )
               );
               setPayload(null);
               setBaseReport(null);
@@ -465,7 +476,7 @@ export default function ParentReportDetailedPage() {
             return;
           }
 
-          const qs = new URLSearchParams({ from, to });
+          const qs = new URLSearchParams({ from, to, reportLocale: activeReportLocale });
           const remoteKind = remoteSourceKind;
           const path = parentReportRemoteDataUrl(remoteKind, parentStudentId, qs);
           const url =
@@ -476,7 +487,10 @@ export default function ParentReportDetailedPage() {
             credentials: "include",
             cache: "no-store",
             signal: abortController.signal,
-            headers: { Authorization: `Bearer ${token}` },
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "x-leo-locale": activeReportLocale,
+            },
           });
           if (cancelled) return;
           const body = await res.json().catch(() => ({}));
@@ -492,20 +506,25 @@ export default function ParentReportDetailedPage() {
               setBaseReport(null);
               setLoading(false);
             }
-            reportRemoteInflightKeyRef.current = null;
             return;
           }
 
           const uiPeriod = customDates ? "custom" : p;
-          const out = runParentReportGenerationFromApiBody(body, uiPeriod);
+          const out = runParentReportGenerationFromApiBody(body, uiPeriod, {
+            reportLocale: activeReportLocale,
+          });
           if (!out.ok || !out.detailed) {
             if (!cancelled) {
-              setParentReportError("The detailed report could not be built from the data received.");
+              setParentReportError(
+                reportPackCopy(
+                  "pages__learning__parent-report-detailed",
+                  "the_detailed_report_could_not_be_built_from_the_data_received"
+                )
+              );
               setPayload(null);
               setBaseReport(null);
               setLoading(false);
             }
-            reportRemoteInflightKeyRef.current = null;
             return;
           }
           if (!cancelled) {
@@ -514,31 +533,38 @@ export default function ParentReportDetailedPage() {
             setParentReportError("");
             setLoading(false);
             reportRemoteFetchKeyRef.current = fetchKey;
-            reportRemoteInflightKeyRef.current = null;
           }
         } catch (loadErr) {
-          if (abortController.signal.aborted || cancelled) return;
+          if (cancelled) return;
           const errName = loadErr && typeof loadErr === "object" ? loadErr.name : "";
           const errMsg = loadErr && typeof loadErr === "object" ? String(loadErr.message || "") : "";
           if (process.env.NODE_ENV === "development") {
             console.warn("[parent-report-detailed] report load failed:", errName, errMsg);
           }
-          if (!cancelled) {
-            const networkLike =
-              errName === "AbortError" |
-              /failed to fetch|networkerror|load failed|network request failed|aborted|timeout/i.test(
-                errMsg
-              );
-            setParentReportError(
-              networkLike
-                ? "Loading the report took too long - try a shorter range or refresh."
-                : reportPackCopy("pages__learning__parent-report-detailed", "the_detailed_report_cannot_be_loaded_right_now")
+          const networkLike =
+            errName === "AbortError" ||
+            abortController.signal.aborted ||
+            /failed to fetch|networkerror|load failed|network request failed|aborted|timeout/i.test(
+              errMsg
             );
-            setPayload(null);
-            setBaseReport(null);
-            setLoading(false);
+          setParentReportError(
+            networkLike
+              ? reportPackCopy(
+                  "pages__learning__parent-report-detailed",
+                  "loading_the_report_took_too_long_try_a_shorter_range_or_refresh"
+                )
+              : reportPackCopy(
+                  "pages__learning__parent-report-detailed",
+                  "the_detailed_report_cannot_be_loaded_right_now"
+                )
+          );
+          setPayload(null);
+          setBaseReport(null);
+          setLoading(false);
+        } finally {
+          if (reportRemoteInflightKeyRef.current === fetchKey) {
+            reportRemoteInflightKeyRef.current = null;
           }
-          reportRemoteInflightKeyRef.current = null;
         }
       };
 
@@ -558,7 +584,7 @@ export default function ParentReportDetailedPage() {
     setParentReportError("");
     setLoading(false);
     return undefined;
-  }, [router.isReady, queryPeriod, queryStart, queryEnd, isRemoteReportSource, isTeacherSource, parentStudentId]);
+  }, [router.isReady, queryPeriod, queryStart, queryEnd, isRemoteReportSource, isTeacherSource, parentStudentId, activeReportLocale]);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -691,7 +717,7 @@ export default function ParentReportDetailedPage() {
             : isBright ? "bg-white border-sky-200 text-slate-700 hover:bg-sky-50 shadow-sm" : "bg-white/5 border-white/20 text-white/80 hover:bg-white/10"
         }`}
       >
-        Full report
+        {reportPackCopy("pages__learning__parent-report-detailed.renderable", "full_report")}
       </button>
       <button
         type="button"
@@ -702,7 +728,7 @@ export default function ParentReportDetailedPage() {
             : isBright ? "bg-white border-sky-200 text-slate-700 hover:bg-sky-50 shadow-sm" : "bg-white/5 border-white/20 text-white/80 hover:bg-white/10"
         }`}
       >
-        Short report
+        {reportPackCopy("pages__learning__parent-report-detailed.renderable", "short_report")}
       </button>
     </div>
   );
@@ -718,12 +744,14 @@ export default function ParentReportDetailedPage() {
           }
         >
           <ParentReportThemeIcons className="absolute top-4 left-1/2 -translate-x-1/2 z-10" />
-          <PortalLoadingPanel
-            isBright={isBright}
-            fullPage={reportImmersive}
-            className="!min-h-0 h-full max-h-full overflow-hidden"
-            message={reportPackCopy("pages__learning__parent-report-detailed", "loading_detailed_report")}
-          />
+          <div data-testid="parent-report-detailed-loading">
+            <PortalLoadingPanel
+              isBright={isBright}
+              fullPage={reportImmersive}
+              className="!min-h-0 h-full max-h-full overflow-hidden"
+              message={reportPackCopy("pages__learning__parent-report-detailed", "loading_detailed_report")}
+            />
+          </div>
         </div>
         {reportImmersive ? (
           <StudentFixedBottomAdChrome theme={isBright ? "bright" : "classic"} />
@@ -851,7 +879,12 @@ export default function ParentReportDetailedPage() {
     if (!Array.isArray(sp?.topicRecommendations) || sp.topicRecommendations.length < 1) return null;
     return (
       <div className="pr-detailed-topic-rec-block parent-surface-only">
-        <p className="pr-detailed-topic-rec-head">Detailed recommendations by topic</p>
+        <p className="pr-detailed-topic-rec-head">
+          {reportPackCopy(
+            "pages__learning__parent-report-detailed.renderable",
+            "detailed_recommendations_by_topic"
+          )}
+        </p>
         <div className="space-y-2.5">
           {(() => {
             const seenStepLabels = new Set();
@@ -1782,7 +1815,12 @@ export default function ParentReportDetailedPage() {
           ) : null}
 
           {!payload ? (
-            <p className="text-center text-white/80">The detailed report could not be loaded.</p>
+            <p className="text-center text-white/80" data-testid="parent-report-detailed-empty">
+              {reportPackCopy(
+                "pages__learning__parent-report-detailed",
+                "the_detailed_report_cannot_be_loaded_right_now"
+              )}
+            </p>
           ) : !periodHasPracticeEvidence ? (
             <div className={`text-center max-w-md mx-auto ${isBright ? "text-slate-600" : "text-white/70"}`}>
               <div className="text-4xl mb-4">📊</div>
@@ -1792,25 +1830,28 @@ export default function ParentReportDetailedPage() {
             <>
               <ReportLocaleSurface
                 id="parent-report-detailed-print"
+                data-testid="parent-report-detailed-ready"
                 data-display-mode={displayMode}
                 className={displayMode === "summary" ? "pr-detailed-print-root pr-detailed-print-root--summary" : "pr-detailed-print-root pr-detailed-print-root--full"}
               >
                 {/* A */}
                 <header className="pr-detailed-doc-header mb-6 text-center border-b border-white/15 pb-4">
                   <h1 className="pr-detailed-doc-title text-2xl md:text-3xl font-black text-white mb-1 tracking-tight">
-                    Detailed Report for the Period
+                    {reportPackCopy("pages__learning__parent-report-detailed", "detailed_report_for_the_period")}
                   </h1>
                   <p className="pr-detailed-mode-hint text-xs font-semibold text-amber-200/90 mb-1">
-                    {displayMode === "summary" ? "Short report" : "Full report"}
+                    {displayMode === "summary"
+                      ? reportPackCopy("pages__learning__parent-report-detailed.renderable", "short_report")
+                      : reportPackCopy("pages__learning__parent-report-detailed.renderable", "full_report")}
                   </p>
                   <p className="pr-detailed-body-text text-white/85 text-sm md:text-base">
-                    Detailed parent report - based on the selected dates
+                    {reportPackCopy("pages__learning__parent-report-detailed", "detailed_parent_report_based_on_the_selected_dates")}
                   </p>
                   <p className="pr-detailed-muted text-sm mt-2">
-                    Date range: {pi.startDateLabelHe} – {pi.endDateLabelHe}
+                    {reportPackCopy("pages__learning__parent-report-detailed", "date_range_label")} {pi.startDateLabelHe} – {pi.endDateLabelHe}
                     <span className="text-white/40 mx-1">|</span>
-                    Period: {" "}
-                    {pi.period === "custom" ? "Custom dates" : pi.period === "month" ? "Month" : "Week"}
+                    {reportPackCopy("pages__learning__parent-report-detailed", "period_label")} {" "}
+                    {pi.period === "custom" ? reportPackCopy("pages__learning__parent-report-detailed", "custom_dates") : pi.period === "month" ? reportPackCopy("pages__learning__parent-report-detailed", "month") : reportPackCopy("pages__learning__parent-report-detailed", "week")}
                   </p>
                 </header>
 
@@ -1823,19 +1864,19 @@ export default function ParentReportDetailedPage() {
                 <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed", "what_we_did_during_this_period")} compact={displayMode === "summary"}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">Total time</div>
+                    <div className="text-xs text-white/55 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "total_time")}</div>
                     <div className="text-xl font-bold text-blue-300">
-                      {payload.overallSnapshot.totalTime} min
+                      {reportPackCopy("pages__learning__parent-report-detailed", "minutes_short", { m: String(payload.overallSnapshot.totalTime) })}
                     </div>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">Questions</div>
+                    <div className="text-xs text-white/55 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "questions")}</div>
                     <div className="text-xl font-bold text-emerald-300">
                       {payload.overallSnapshot.totalQuestions}
                     </div>
                   </div>
                   <div className="rounded-lg bg-white/5 border border-white/10 p-3 text-center">
-                    <div className="text-xs text-white/55 mb-1">Overall accuracy</div>
+                    <div className="text-xs text-white/55 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "overall_accuracy")}</div>
                     <div className="text-xl font-bold text-amber-300">
                       {payload.overallSnapshot.overallAccuracy}%
                     </div>
@@ -1852,15 +1893,15 @@ export default function ParentReportDetailedPage() {
                     </p>
                   );
                 })()}
-                <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">Coverage by subject</p>
+                <p className="pr-detailed-mini-heading font-bold text-white/90 mb-2 text-sm mt-1">{reportPackCopy("pages__learning__parent-report-detailed", "coverage_by_subject")}</p>
                 <div className="overflow-x-auto rounded-lg border border-white/10">
                   <table className="w-full text-sm text-start">
                     <thead>
                       <tr className="border-b border-white/15 bg-white/5">
-                        <th className="p-2 font-semibold">Subject</th>
-                        <th className="p-2 font-semibold">Questions</th>
-                        <th className="p-2 font-semibold">Accuracy</th>
-                        <th className="p-2 font-semibold">Time (min)</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "subject")}</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "questions")}</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "accuracy")}</th>
+                        <th className="p-2 font-semibold">{reportPackCopy("pages__learning__parent-report-detailed", "time_min")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1879,7 +1920,7 @@ export default function ParentReportDetailedPage() {
                   {payload.overallSnapshot.sparseSubjectsHe?.length ? (
                     <div>
                       <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">
-                        Subjects with limited data this period
+                        {reportPackCopy("pages__learning__parent-report-detailed", "subjects_limited_data")}
                       </p>
                       <Bullets
                         items={payload.overallSnapshot.sparseSubjectsHe}
@@ -1888,7 +1929,7 @@ export default function ParentReportDetailedPage() {
                     </div>
                   ) : null}
                   <div>
-                    <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">Notable subjects</p>
+                    <p className="pr-detailed-mini-heading font-semibold text-white/82 mb-1">{reportPackCopy("pages__learning__parent-report-detailed", "notable_subjects")}</p>
                     <Bullets
                       items={payload.overallSnapshot.notableSubjectsHe}
                       volumeQuestionsTotal={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -1956,7 +1997,10 @@ export default function ParentReportDetailedPage() {
                       id="pr-detailed-subjects-heading-summary"
                       className="pr-detailed-subjects-region-title pr-detailed-section-title text-base md:text-lg font-extrabold tracking-tight text-white m-0 mb-3 md:mb-4 pb-2 border-b border-white/10"
                     >
-                      Learning subjects
+                      {reportPackCopy(
+                        "pages__learning__parent-report-detailed.renderable",
+                        "learning_subjects"
+                      )}
                     </h2>
                     <div className="space-y-6">
                       {visibleSubjectProfiles.map((sp) => (
@@ -1966,7 +2010,7 @@ export default function ParentReportDetailedPage() {
                               {sp.subjectLabel}
                             </h3>
                             <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-                              Questions: {Number(sp?.subjectQuestionCount) || 0} || Accuracy: {Number(sp?.subjectAccuracy) || 0}%
+                              {reportPackCopy("pages__learning__parent-report-detailed", "questions")}: {Number(sp?.subjectQuestionCount) || 0} · {reportPackCopy("pages__learning__parent-report-detailed", "accuracy")}: {Number(sp?.subjectAccuracy) || 0}%
                             </p>
                           </div>
                           <div className="pr-detailed-subject-inner space-y-4 pt-3">
@@ -1995,7 +2039,10 @@ export default function ParentReportDetailedPage() {
                       id="pr-detailed-subjects-heading-full"
                       className="pr-detailed-subjects-region-title pr-detailed-section-title text-base md:text-lg font-extrabold tracking-tight text-white m-0 mb-3 md:mb-4 pb-2 border-b border-white/10"
                     >
-                      Learning subjects
+                      {reportPackCopy(
+                        "pages__learning__parent-report-detailed.renderable",
+                        "learning_subjects"
+                      )}
                     </h2>
                     <div className="space-y-6">
                       {visibleSubjectProfiles.map((sp) => (
@@ -2005,7 +2052,7 @@ export default function ParentReportDetailedPage() {
                               {sp.subjectLabel}
                             </h3>
                             <p className="pr-detailed-subject-metrics text-xs md:text-sm m-0 mt-1 text-white/75">
-                              Questions: {Number(sp?.subjectQuestionCount) || 0} || Accuracy: {Number(sp?.subjectAccuracy) || 0}%
+                              {reportPackCopy("pages__learning__parent-report-detailed", "questions")}: {Number(sp?.subjectQuestionCount) || 0} · {reportPackCopy("pages__learning__parent-report-detailed", "accuracy")}: {Number(sp?.subjectAccuracy) || 0}%
                             </p>
                           </div>
                           <div className="pr-detailed-subject-inner space-y-4 pt-3">
@@ -2047,7 +2094,7 @@ export default function ParentReportDetailedPage() {
 
                 <div className="internal-only hidden" aria-hidden="true">
                   {showCollapsedHomePlan ? (
-                    <SectionCard title="Short ideas for home" compact className="border-0 rounded-none mb-0">
+                    <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed", "short_ideas_for_home")} compact className="border-0 rounded-none mb-0">
                       <PlanItemCards
                         items={homePlanItemsForUi}
                         windowTotalQuestions={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -2055,7 +2102,7 @@ export default function ParentReportDetailedPage() {
                     </SectionCard>
                   ) : null}
                   {showCollapsedNextGoals ? (
-                    <SectionCard title="Direction for the coming days" compact className="border-0 rounded-none mb-0">
+                    <SectionCard title={reportPackCopy("pages__learning__parent-report-detailed", "direction_for_coming_days")} compact className="border-0 rounded-none mb-0">
                       <GoalItemCards
                         items={nextGoalsItemsForUi}
                         windowTotalQuestions={Number(payload.overallSnapshot?.totalQuestions) || 0}
@@ -2073,20 +2120,20 @@ export default function ParentReportDetailedPage() {
                   onClick={() => printWithMode("full")}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold bg-sky-600/85 border border-sky-400/50 hover:bg-sky-600 text-white transition-all"
                 >
-                  🖨️ Print full
+                  🖨️ {reportPackCopy("pages__learning__parent-report-detailed.renderable", "print_full")}
                 </button>
                 <button
                   type="button"
                   onClick={() => printWithMode("summary")}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold bg-amber-600/85 border border-amber-400/50 hover:bg-amber-600 text-white transition-all"
                 >
-                  🖨️ Print summary
+                  🖨️ {reportPackCopy("pages__learning__parent-report-detailed.renderable", "print_summary")}
                 </button>
                 <Link
                   href="/learning"
                   className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-bold bg-violet-600/50 border border-violet-300/40 hover:bg-violet-600/65 text-white transition-all text-center"
                 >
-                  Back to learning
+                  {reportPackCopy("pages__learning__parent-report-detailed.renderable", "back_to_learning")}
                 </Link>
               </div>
             </>

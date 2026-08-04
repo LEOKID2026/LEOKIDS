@@ -4,6 +4,7 @@
     "game_not_found": "Game not found",
     "back_to_list": "Back to List",
     "offline": "Offline",
-    "list": "List"
+    "list": "List",
+    "page_title_suffix": "Offline Games"
   }
 }

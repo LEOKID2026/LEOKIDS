@@ -5,7 +5,7 @@ import Layout from "../Layout";
 import IosInstallHelpModal from "./IosInstallHelpModal.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { getPwaInstallPageTheme } from "../../lib/pwa/pwa-install-page-theme.client.js";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Shared install-page shell — bright/classic via site theme picker.
@@ -29,6 +29,7 @@ export default function PwaInstallPageShell({
   launcher: Launcher,
 }) {
   const t = useT();
+  const { locale, direction } = useI18n();
   const { theme, isBright } = useStudentTheme();
   const T = getPwaInstallPageTheme(portal, isBright);
   const [iosHelpOpen, setIosHelpOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function PwaInstallPageShell({
         <title>{pageTitle}</title>
       </Head>
       <Layout studentTheme={theme} studentShell="home">
-        <div className={T.pageWrap} dir="ltr" lang="en">
+        <div className={T.pageWrap} dir={direction} lang={locale}>
           <p className={T.badge}>{badge}</p>
           <h1 className={T.heading}>{title}</h1>
           <p className={T.body}>{t("ui.pwa.installBody")}</p>

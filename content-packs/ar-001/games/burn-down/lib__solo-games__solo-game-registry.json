@@ -1,10 +1,10 @@
 {
   "copy": {
-    "catch_with_leo": "قبض مع ليو",
+    "catch_with_leo": "قبض مع Leo",
     "catch_coins_and_stay_away_from_bombs": "التقاط القطع النقدية والابتعاد عن القنابل!",
-    "move_leo_left_and_right_to_catch_coins_and_diamonds_falling_from_the_sky": "حرك ليو يسارًا ويمينًا لالتقاط العملات المعدنية والماس المتساقط من السماء.",
+    "move_leo_left_and_right_to_catch_coins_and_diamonds_falling_from_the_sky": "حرك Leo يسارًا ويمينًا لالتقاط العملات المعدنية والماس المتساقط من السماء.",
     "every_coin_or_diamond_caught_adds_points_hitting_a_bomb_ends_the_game": "كل عملة أو ألماسة يتم التقاطها تضيف نقاطًا. ضرب قنبلة ينهي اللعبة.",
-    "leo_in_a_plane": "ليو في الطائرة",
+    "leo_in_a_plane": "Leo في الطائرة",
     "hold_to_fly_collect_coins_and_avoid_obstacles": "عقد للطيران، وجمع القطع النقدية، وتجنب العقبات!",
     "hold_the_button_or_the_screen_to_fly_and_release_to_descend_collect_coin": "اضغط مع الاستمرار على الزر أو الشاشة للطيران، ثم حرره للنزول. جمع القطع النقدية وتجنب العقبات.",
     "coins_and_diamonds_add_points_hitting_an_obstacle_ends_the_game": "العملات المعدنية والماس تضيف نقاطًا. ضرب عقبة ينهي اللعبة.",
@@ -17,7 +17,7 @@
     "tap_a_card_to_flip_it_and_find_its_matching_pair_every_pair_you_find_sta": "اضغط على البطاقة لقلبها، وابحث عن الزوج المطابق لها. كل زوج تجده يبقى مفتوحًا.",
     "you_start_with_a_high_score_the_longer_you_take_the_lower_it_drops_findi": "تبدأ بدرجة عالية - كلما استغرقت وقتًا أطول، انخفضت النتيجة. العثور على جميع الأزواج قبل نفاد الوقت = فوز.",
     "winning_based_on_difficulty_level_grants_coins_and_diamonds_the_higher_t": "الفوز على أساس مستوى الصعوبة يمنح العملات المعدنية والماس. كلما ارتفعت النتيجة، أكبر المكافأة.",
-    "leo_jumps": "يقفز ليو",
+    "leo_jumps": "يقفز Leo",
     "jump_over_obstacles_and_collect_coins": "القفز فوق العقبات وجمع القطع النقدية!",
     "tap_to_jump_get_past_obstacles_and_collect_coins_diamonds_and_magnets_al": "اضغط للقفز. تغلب على العوائق السابقة واجمع العملات المعدنية والماس والمغناطيس على طول الطريق.",
     "coins_and_diamonds_add_points_consecutive_jumps_over_obstacles_give_a_co": "العملات المعدنية والماس تضيف نقاطًا. القفزات المتتالية فوق العوائق تمنحك مكافأة مجمعة. ضرب عقبة ينهي اللعبة.",
@@ -28,7 +28,7 @@
     "reaching_the_pop_target_or_a_high_final_score_grants_coins_and_diamonds": "يؤدي الوصول إلى هدف البوب ​​أو النتيجة النهائية العالية إلى منح العملات المعدنية والماس.",
     "watch_for_special_balloons_they_can_help_you_before_time_runs_out": "انتبه للبالونات الخاصة - يمكنها مساعدتك قبل نفاذ الوقت.",
     "find_the_exit_of_the_maze_before_time_runs_out": "ابحث عن مخرج المتاهة قبل نفاد الوقت!",
-    "move_leo_through_the_maze_collect_keys_and_stars_and_find_the_exit_befor": "حرك ليو عبر المتاهة، واجمع المفاتيح والنجوم، وابحث عن المخرج قبل نفاد الوقت.",
+    "move_leo_through_the_maze_collect_keys_and_stars_and_find_the_exit_befor": "حرك Leo عبر المتاهة، واجمع المفاتيح والنجوم، وابحث عن المخرج قبل نفاد الوقت.",
     "keys_stars_and_diamonds_add_points_finishing_the_maze_gives_a_big_bonus_": "تضيف المفاتيح والنجوم والماس نقاطًا. الانتهاء من المتاهة يعطي مكافأة كبيرة. إذا نفاد الوقت - تنتهي اللعبة.",
     "successfully_finishing_the_maze_based_on_difficulty_level_grants_coins_a": "يؤدي إنهاء المتاهة بنجاح بناءً على مستوى الصعوبة إلى منح العملات المعدنية، وتضيف مكافأة النتيجة المزيد.",
     "collect_the_keys_first_sometimes_they_unlock_a_shorter_path": "اجمع المفاتيح أولاً - أحيانًا تفتح طريقًا أقصر.",
@@ -56,9 +56,12 @@
     "drag_your_finger_across_the_screen_to_slice_flying_fruit_avoid_bombs_you": "اسحب إصبعك عبر الشاشة لتقطيع الفاكهة الطائرة. تجنب القنابل - لديك ثلاثة أخطاء مسموح بها.",
     "every_fruit_sliced_adds_points_slicing_several_fruits_at_once_gives_a_co": "كل فاكهة مقطعة تضيف نقاطًا. إن تقطيع عدة فواكه مرة واحدة يعطي مكافأة مجمعة. ضرب قنبلة أو فقدان الفاكهة يكلف خطأ.",
     "reaching_the_score_target_based_on_difficulty_level_grants_coins_and_dia": "الوصول إلى النتيجة المستهدفة بناءً على مستوى الصعوبة يمنح العملات المعدنية والماس.",
-    "leo_the_miner": "ليو عامل المنجم",
+    "leo_the_miner": "Leo عامل المنجم",
     "merge_mining_dogs_break_rocks_and_earn_points_to_redeem": "دمج كلاب التعدين، وكسر الصخور، وكسب النقاط لاستردادها!",
     "points_can_be_redeemed_for_leo_coins_and_diamonds_once_the_server_is_rea": "يمكن استبدال النقاط بعملات Leo المعدنية والماس (بمجرد أن يصبح الخادم جاهزًا).",
-    "upgrade_dps_to_break_rocks_faster_and_gold_to_earn_more_coins_from_each_": "قم بترقية DPS لتكسير الصخور بشكل أسرع، وGOLD لكسب المزيد من العملات المعدنية من كل صخرة."
+    "upgrade_dps_to_break_rocks_faster_and_gold_to_earn_more_coins_from_each_": "قم بترقية DPS لتكسير الصخور بشكل أسرع، وGOLD لكسب المزيد من العملات المعدنية من كل صخرة.",
+    "difficulty_easy": "سهل",
+    "difficulty_medium": "متوسط",
+    "difficulty_hard": "صعب"
   }
 }

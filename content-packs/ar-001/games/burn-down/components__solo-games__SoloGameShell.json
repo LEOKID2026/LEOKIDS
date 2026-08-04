@@ -2,6 +2,7 @@
   "copy": {
     "game_not_found": "لم يتم العثور على اللعبة",
     "games": "ألعاب",
-    "home": "الرئيسية"
+    "home": "الرئيسية",
+    "page_title_suffix": "ألعاب Leo"
   }
 }

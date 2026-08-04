@@ -1,0 +1,5 @@
+{
+  "en": "Leo has {a} balls and gets {b} more. How many balls does Leo have in all?",
+  "ar": "لدى الأسد {a} كرات ويحصل على {b} أكثر. كم عدد الكرات التي يمتلكها الأسد إجمالاً؟",
+  "expectDetect": ["missing-latin-leo", "lion-as-brand"]
+}

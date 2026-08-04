@@ -1,5 +1,11 @@
 {
   "copy": {
-    "unavailable": "غير متاح"
+    "unavailable": "غير متوفر",
+    "topic": "موضوع",
+    "above_registered_grade": "فوق الصف المسجّل",
+    "below_registered_grade": "دون الصف المسجّل",
+    "at_registered_grade_level": "في مستوى الصف المسجّل",
+    "outside_the_registered_grade_band": "خارج نطاق الصف المسجّل",
+    "topic_grade_title": "{topic} - الصف {grade}"
   }
 }

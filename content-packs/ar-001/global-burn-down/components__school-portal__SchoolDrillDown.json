@@ -1,6 +1,17 @@
 {
   "copy": {
     "grade_status": "حالة الصف",
-    "class_status": "حالة الفصل"
+    "class_status": "حالة الفصل",
+    "loading": "جارٍ التحميل…",
+    "try_again": "حاول مرة أخرى",
+    "col_subject": "المادة",
+    "col_class": "الفصل",
+    "col_teacher": "المعلم",
+    "col_type": "النوع",
+    "active_classes": "{count} فصول نشطة",
+    "children_count": "{count} أطفال",
+    "activities_count": "الأنشطة: {count}",
+    "view_answers": "عرض الإجابات",
+    "suspended_label": "معلق"
   }
 }

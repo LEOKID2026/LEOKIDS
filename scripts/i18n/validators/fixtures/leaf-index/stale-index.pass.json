@@ -1,0 +1,14 @@
+{
+  "leaf": {
+    "copy": {
+      "reports": "التقارير",
+      "school": "المدرسة"
+    }
+  },
+  "index": {
+    "reports": "التقارير",
+    "school": "المدرسة"
+  },
+  "expectStaleIndexKeys": [],
+  "expectMismatches": []
+}

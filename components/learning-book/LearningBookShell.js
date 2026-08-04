@@ -27,7 +27,7 @@ export default function LearningBookShell({
   const [tocOpen, setTocOpen] = useState(false);
   const isIndex = activePageId === null;
   const copy = useBookUiCopy();
-  const { contentLocale } = useI18n();
+  const { contentLocale, direction } = useI18n();
 
   const fromLearning = nav.isLearningReturn(router.query);
   const returnQuerySuffix = nav.getReturnQuerySuffix(router.query);
@@ -76,7 +76,7 @@ export default function LearningBookShell({
       >
         <header
           className={`sticky top-0 z-50 border-b border-[color:var(--book-accent-border)] backdrop-blur-md ${theme.classes.headerBg}`}
-          dir="ltr"
+          dir={direction === "rtl" ? "rtl" : "ltr"}
           style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
         >
           <BookShellHeader
@@ -87,6 +87,7 @@ export default function LearningBookShell({
             title={shellTitle}
             isIndex={isIndex}
             pageMeta={pageMeta}
+            backLabel={returnLabel}
             indexSubtitle={copy("shell", "indexSubtitle", {
               grade: bookMeta.gradeShortLabel || bookMeta.grade,
             })}
@@ -98,7 +99,7 @@ export default function LearningBookShell({
           <div className="min-w-0">{children}</div>
 
           {isIndex ? (
-            <footer className="mt-8 pb-6 text-center" dir="ltr">
+            <footer className="mt-8 pb-6 text-center" dir={direction === "rtl" ? "rtl" : "ltr"}>
               <button
                 type="button"
                 onClick={handleReturnClick}

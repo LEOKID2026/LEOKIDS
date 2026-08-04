@@ -6,6 +6,10 @@
     "diamond_balance": "ميزان الماس:",
     "coin_balance": "رصيد العملة:",
     "score": "نتيجة:",
-    "level": "مستوى:"
+    "level": "مستوى:",
+    "win_title": "أحسنت! 🎉",
+    "lose_title": "أحسنت على المحاولة!",
+    "coins_awarded": "+{n} عملات",
+    "diamonds_awarded": "+{n} ماسات"
   }
 }

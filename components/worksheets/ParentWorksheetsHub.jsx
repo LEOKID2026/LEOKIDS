@@ -6,7 +6,7 @@
 
 
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -73,11 +73,14 @@ export default function ParentWorksheetsHub({ session, students, T }) {
   const router = useRouter();
   const ui = useWorksheetUi();
   const { locale, contentLocale } = useI18n();
-  const worksheetLocaleFields = {
-    interfaceLocale: locale || "en",
-    contentLocale: contentLocale || locale || "en",
-    instructionLocale: contentLocale || locale || "en",
-  };
+  const worksheetLocaleFields = useMemo(
+    () => ({
+      interfaceLocale: locale || "en",
+      contentLocale: contentLocale || locale || "en",
+      instructionLocale: contentLocale || locale || "en",
+    }),
+    [locale, contentLocale]
+  );
   const shell = useWorksheetShellAttrs();
   const tabs = [
     { id: "ready", label: ui.tabReady, hint: ui.tabReadyHint },

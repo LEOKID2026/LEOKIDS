@@ -9,6 +9,22 @@
     "div_w_full_max_lg_div_max_w_none_max_lg_div_rounded_none_max_lg_div_bord": "div]:w-full max-lg:[&>div]:max-w-none max-lg:[&>div]:rounded-none max-lg:[&>div]:border-x-0\">",
     "you_re_done": "You're done!",
     "next_item": "Next item:",
-    "shuffling": "Shuffling!"
+    "shuffling": "Shuffling!",
+    "intro_pick_box": "Pick the right box for each shape",
+    "intro_points": "+50 for correct sorts only",
+    "intro_mistake": "Mistake = lose a life",
+    "intro_finish": "Finish all items before time runs out",
+    "youre_done": "You're done!",
+    "color_red": "Red",
+    "color_orange": "Orange",
+    "color_blue": "Blue",
+    "color_purple": "Purple",
+    "color_yellow": "Yellow",
+    "color_green": "Green",
+    "score": "Score",
+    "sorted": "Sorted",
+    "lives": "Lives",
+    "time": "Time",
+    "sec": "sec"
   }
 }

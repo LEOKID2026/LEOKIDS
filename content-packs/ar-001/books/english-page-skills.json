@@ -159,7 +159,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "كلمات العائلة باللغة الانجليزية",
+        "title": "الأسرة — Family words in English",
         "description": "أمي، أبي، أخت، أخي - الكلمات الأساسية",
         "doNotTranslateFields": [
           "description"
@@ -170,7 +170,7 @@
         "skillId": "english:vocabulary:wordlist:animals",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "الحيوانات باللغة الانجليزية",
+        "title": "الحيوانات باللغة الإنجليزية",
         "description": "القط، الكلب، الطيور، الأسماك - أسماء الحيوانات الشائعة",
         "doNotTranslateFields": [
           "description"
@@ -181,7 +181,7 @@
         "skillId": "english:vocabulary:wordlist:emotions",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "مشاعر باللغة الانجليزية",
+        "title": "مشاعر باللغة الإنجليزية",
         "description": "سعيدة، حزينة - كلمات الشعور المبكر",
         "doNotTranslateFields": [
           "description"
@@ -305,7 +305,7 @@
         "learningPageId": "",
         "pageType": "phonics_foundation",
         "title": "قراءة الكلمة الأولى",
-        "description": "CVC + البصر: أنا، أ، هو",
+        "description": "CVC + sight: the, I, a, is",
         "doNotTranslateFields": [
           "description"
         ],
@@ -392,7 +392,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "العائلة - كلمات في جملة",
+        "title": "الأسرة — words in a sentence",
         "description": "هذه أمي – نمط قصير",
         "doNotTranslateFields": [
           "description"
@@ -469,7 +469,7 @@
         "skillId": "english:pool:grammar:be_basic",
         "learningPageId": "",
         "pageType": "concept_foundation",
-        "title": "صباحا / هو / هي - تعزيز",
+        "title": "am / is / are — تعزيز",
         "description": "أنا / أنت / هو / هي - بدون تسميات نحوية رسمية",
         "doNotTranslateFields": [
           "description"
@@ -581,7 +581,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "الأسرة – الإجراءات العائلية",
+        "title": "الأسرة — family actions",
         "description": "أخي يقرأ كل يوم",
         "doNotTranslateFields": [
           "description"
@@ -781,7 +781,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "الأسرة - الآباء، العمل",
+        "title": "الأسرة — parents, work",
         "description": "والدي يعمل بجد",
         "doNotTranslateFields": [
           "description"
@@ -803,8 +803,8 @@
         "skillId": "english:vocabulary:wordlist:school",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "المدرسة - الطلاب، اقرأوا",
-        "description": "يقرأ الطلاب الكتب",
+        "title": "المدرسة - التلاميذ، اقرأوا",
+        "description": "يقرأ التلاميذ الكتب",
         "doNotTranslateFields": [
           "description"
         ],
@@ -1003,7 +1003,7 @@
         "skillId": "english:vocabulary:wordlist:family",
         "learningPageId": "",
         "pageType": "vocabulary_theme",
-        "title": "العائلة - الأجداد",
+        "title": "الأسرة — grandparents",
         "description": "أجدادي يعيشون بعيدا",
         "doNotTranslateFields": [
           "description"

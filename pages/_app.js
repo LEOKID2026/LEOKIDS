@@ -1,4 +1,4 @@
-import { globalBurnDownCopy } from "../lib/i18n/global-burn-down-copy.js";
+import { globalBurnDownCopyForLocale } from "../lib/i18n/global-burn-down-copy.js";
 import "../styles/globals.css";
 import "../styles/locale-fonts.css";
 import "../styles/worksheet-print.css";
@@ -10,7 +10,7 @@ import "../styles/worksheet-coloring-upload-print.css";
 import "../styles/worksheet-coloring-upload.css";
 import "../styles/worksheet-hub.css";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/next";
 import OfflineIndicator from "../components/OfflineIndicator";
@@ -125,6 +125,20 @@ function pathnameIsInternalDevRoute(pathname) {
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useIOSViewportFix();
+  const interfaceLocale =
+    typeof pageProps?.interfaceLocale === "string" && pageProps.interfaceLocale
+      ? pageProps.interfaceLocale
+      : "en";
+  const defaultDocumentTitle = globalBurnDownCopyForLocale(
+    interfaceLocale,
+    "pages___app",
+    "default_document_title"
+  );
+  const defaultDocumentDescription = globalBurnDownCopyForLocale(
+    interfaceLocale,
+    "lib__site__public-page-seo",
+    "leo_kids_learning_games_and_progress_tracking_for_kids"
+  );
 
   useEffect(() => {
     initParentPwaInstallPromptCapture();
@@ -289,11 +303,13 @@ export default function MyApp({ Component, pageProps }) {
   const pathname = router.pathname || "";
   const shouldGate = isStudentProtectedRoute(pathname);
   const shouldParentDemoGate = isParentDemoGateRoute(pathname);
-  const [gateKind, setGateKind] = useState(() => (shouldGate ? "student" : "none"));
+  const [gateKind, setGateKind] = useState(() => (shouldGate ? "resolving" : "none"));
   const [parentGateKind, setParentGateKind] = useState("none");
   const [parentDemoSessionActive, setParentDemoSessionActive] = useState(false);
 
-  useEffect(() => {
+  // useLayoutEffect: avoid one-frame ungated paint when navigating /demo/enter → /student/*
+  // (stale gateKind "none" would mount GameAccessGuard without DemoAccessGate → login redirect).
+  useLayoutEffect(() => {
     if (!shouldGate) {
       setGateKind("none");
     } else if (hasDemoSession() && isDemoAccessibleRoute(pathname)) {
@@ -303,7 +319,7 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [pathname, shouldGate]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!shouldParentDemoGate) {
       setParentGateKind("none");
       return;
@@ -317,9 +333,13 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [pathname, shouldParentDemoGate]);
 
-  useEffect(() => {
-    setParentDemoSessionActive(hasParentDemoSession());
+  useLayoutEffect(() => {
+    // Student demo wins — never wrap student routes with parent demo chrome/shim.
+    setParentDemoSessionActive(hasParentDemoSession() && !hasDemoSession());
   }, [pathname]);
+
+  // Stale "none" while shouldGate (SPA transition) must not render the page ungated.
+  const effectiveGateKind = shouldGate && gateKind === "none" ? "resolving" : gateKind;
 
   const isInternalDevRoute = pathnameIsInternalDevRoute(pathname);
   const pwaPortal = resolvePwaPortal(pathname);
@@ -339,7 +359,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta
           name="description"
-          content={globalBurnDownCopy("lib__site__public-page-seo", "leo_kids_learning_games_and_progress_tracking_for_kids")}
+          content={defaultDocumentDescription}
         />
         {isStudentPwaInstallMode ? (
           <>
@@ -422,7 +442,7 @@ export default function MyApp({ Component, pageProps }) {
           <link key="app-manifest" rel="manifest" href={manifestHref} />
         ) : null}
         
-        <title>{globalBurnDownCopy("pages___app", "default_document_title")}</title>
+        <title>{defaultDocumentTitle}</title>
       </Head>
       <AppLocaleShell pageProps={pageProps}>
       <OfflineIndicator />
@@ -439,15 +459,15 @@ export default function MyApp({ Component, pageProps }) {
             <ParentDemoParentRouteGuard>
               <Component {...pageProps} />
             </ParentDemoParentRouteGuard>
-          ) : gateKind === "demo" ? (
+          ) : effectiveGateKind === "demo" ? (
             <DemoAccessGate>
               <Component {...pageProps} />
             </DemoAccessGate>
-          ) : gateKind === "student" ? (
+          ) : effectiveGateKind === "student" ? (
             <StudentAccessGate>
               <Component {...pageProps} />
             </StudentAccessGate>
-          ) : (
+          ) : effectiveGateKind === "resolving" ? null : (
             <Component {...pageProps} />
           );
 

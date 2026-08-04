@@ -1,7 +1,7 @@
 {
   "copy": {
-    "marble_run": "تشغيل الرخام",
-    "prototype_pick_a_piece_place_run": "النموذج الأولي · اختر قطعة · مكان · اركض",
+    "marble_run": "سباق الكرة الزجاجية",
+    "prototype_pick_a_piece_place_run": "النموذج الأولي · اختر قطعة · ضع · شغّل",
     "reset": "إعادة ضبط",
     "run": "تشغيل ⚪"
   }

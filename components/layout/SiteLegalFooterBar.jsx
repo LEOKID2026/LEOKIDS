@@ -23,7 +23,7 @@ export default function SiteLegalFooterBar({ isStudentBright = false }) {
           <>
             {" · "}
             <Link href={legalLink.href} className={linkClass}>
-              {legalLink.label}
+              {t("legal.legalHubLink")}
             </Link>
             {" · "}
             <ConsentPreferencesLink isStudentBright={isStudentBright} />

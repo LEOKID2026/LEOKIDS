@@ -1,0 +1,636 @@
+{
+  "animals_1": {
+    "stem": "Welches Tier ist ein Säugetier?",
+    "options": ["Frosch", "Krokodil", "Katze", "Hahn"],
+    "explanation": "Säugetiere bringen meist lebende Junge zur Welt und ernähren sie mit Milch. Eine Katze ist ein Säugetier; ein Frosch ist eine Amphibie und ein Hahn ist ein Vogel.",
+    "theoryLines": [
+      "Die meisten Säugetiere haben Fell oder Haare und atmen mit Lungen.",
+      "Vögel haben Federn und legen Eier."
+    ]
+  },
+  "animals_2": {
+    "stem": "Welches Merkmal hilft einem Fisch, im Wasser zu leben?",
+    "options": [
+      "Flossen und ein torpedoförmiger Körper",
+      "Lange Beine und ein flacher Schwanz",
+      "Breite Flügel und ein dünner Schnabel",
+      "Nur Schuppen und ein langer, dünner Körper"
+    ],
+    "explanation": "Flossen und ein stromlinienförmiger Körper helfen einem Fisch, gut durchs Wasser zu schwimmen.",
+    "theoryLines": [
+      "Tiere haben Merkmale, die zu den Orten passen, an denen sie leben.",
+      "Die Körperform beeinflusst, wie gut sich ein Tier in Wasser, Luft oder an Land bewegt."
+    ]
+  },
+  "animals_3": {
+    "stem": "Welche Aussage über Reptilien ist wahr?",
+    "options": [
+      "Die meisten sind mit Schuppen bedeckt und legen Eier",
+      "Sie sind Säugetiere, die ihre Jungen mit Milch säugen",
+      "Sie haben keine Haut und keine Schuppen",
+      "Sie leben gewöhnlich nur im Wasser"
+    ],
+    "explanation": "Die meisten Reptilien haben Schuppen und legen Eier. Sie säugen ihre Jungen nicht mit Milch wie Säugetiere.",
+    "theoryLines": [
+      "Zu den Reptilien gehören Schlangen, Eidechsen, Schildkröten und Krokodile.",
+      "Sie sind wechselwarm, deshalb folgt ihre Körpertemperatur der Umgebung."
+    ]
+  },
+  "animals_4": {
+    "stem": "Was ist eine Nahrungskette?",
+    "options": [
+      "Alle Lebewesen in einem Gebiet, die aus derselben Wasserquelle trinken",
+      "Eine Abfolge von Lebewesen, in der jedes dem nächsten als Nahrung dient",
+      "Eine Abfolge, in der jedes Lebewesen Nahrung nur durch Fotosynthese erzeugt",
+      "Eine Gruppe, in der jedes Tier für immer auf derselben Energiestufe bleibt"
+    ],
+    "explanation": "Eine Nahrungskette zeigt, wie Energie von Erzeugern wie Pflanzen zu Verbrauchern wie Tieren fließt.",
+    "theoryLines": [
+      "Pflanzen sind meist Erzeuger, weil sie mit Sonnenlicht Nahrung herstellen.",
+      "Pflanzenfresser und Fleischfresser gehören zu Nahrungsketten und Nahrungsnetzen."
+    ]
+  },
+  "animals_5": {
+    "stem": "Welche Aussage über Verhaltensanpassungen bei Tieren ist wahr?",
+    "options": [
+      "Verhaltensänderungen, die beim Überleben helfen, zum Beispiel Wanderung",
+      "Nur ein Farbwechsel ohne Bezug zum Überleben",
+      "Dasselbe Verhalten in jeder Jahreszeit",
+      "Zufälliges Verhalten ohne Bezug zur Umwelt"
+    ],
+    "explanation": "Verhaltensanpassungen sind Handlungen, die einem Tier beim Überleben helfen, zum Beispiel Wandern oder nachtaktiv sein.",
+    "theoryLines": [
+      "Tiere können Körperanpassungen und Verhaltensanpassungen haben.",
+      "Hilfreiche Merkmale werden über viele Generationen häufiger."
+    ]
+  },
+  "animals_gapfix_hard_g12": {
+    "stem": "Welcher Vergleich zwischen einem Fisch und einem Delfin ist wahr?",
+    "options": [
+      "Ein Delfin atmet Luft; ein Fisch nimmt Sauerstoff mit Kiemen aus dem Wasser auf",
+      "Sowohl Delfin als auch Fisch atmen nur mit Kiemen",
+      "Beide atmen nur Luft außerhalb des Wassers",
+      "Es gibt keinen Atemunterschied zwischen Delfin und Fisch"
+    ],
+    "explanation": "Delfine sind Säugetiere, die mit Lungen Luft atmen. Fische nehmen Sauerstoff mit Kiemen aus dem Wasser auf.",
+    "theoryLines": [
+      "Tiere im Wasser können ähnlich aussehen, aber Atmung und Fortpflanzung zeigen ihre echte Gruppe.",
+      "Fische nutzen Kiemen im Wasser; Delfine sind Säugetiere mit Lungen."
+    ]
+  },
+  "animals_gapfix_easy_g456": {
+    "stem": "Welcher Satz über die Grundbedürfnisse von Tieren ist wahr?",
+    "options": [
+      "Tiere brauchen Nahrung, Wasser und einen geeigneten Lebensort",
+      "Tiere brauchen nur Nahrung",
+      "Tiere brauchen kein Wasser",
+      "Tiere können ohne besondere Lebensbedingungen leben"
+    ],
+    "explanation": "Jedes Tier braucht Nahrung, Wasser und geeignete Bedingungen wie Schutz und Temperatur, um gesund zu bleiben.",
+    "theoryLines": [
+      "Zu den Grundbedürfnissen gehören Nahrung für Energie, Wasser für den Körper und ein passender Lebensraum.",
+      "Fehlt eines dieser Bedürfnisse, kann die Gesundheit eines Tieres leiden."
+    ]
+  },
+  "animals_6": {
+    "stem": "Welches Tier legt Eier?",
+    "options": ["Haushund", "Huhn", "Kuh, gewöhnlich", "Kaninchen"],
+    "explanation": "Ein Huhn ist ein Vogel und legt Eier. Hunde, Katzen und Kühe sind Säugetiere, die lebende Junge zur Welt bringen.",
+    "theoryLines": [
+      "Vögel legen Eier und brüten sie oft, um sie warm zu halten.",
+      "Säugetiere bringen meist lebende Junge zur Welt und ernähren sie mit Milch."
+    ]
+  },
+  "animals_7": {
+    "stem": "Welches Tier lebt im Wasser?",
+    "options": ["Kaninchen", "Fisch", "Katze", "Huhn"],
+    "explanation": "Fische leben im Wasser. Sie nutzen Flossen zum Schwimmen und Kiemen, um Sauerstoff aus dem Wasser aufzunehmen.",
+    "theoryLines": [
+      "Fische sind an das Leben im Wasser angepasst.",
+      "Kiemen nehmen Sauerstoff aus dem Wasser, damit Fische atmen können."
+    ]
+  },
+  "animals_8": {
+    "stem": "Was brauchen alle Tiere, um am Leben zu bleiben?",
+    "options": [
+      "Nur Wasser — Nahrung ist für die meisten Tiere nicht nötig.",
+      "Sowohl Nahrung als auch Wasser — Tiere brauchen Nahrung für Energie und Wasser zum Überleben.",
+      "Nahrung liefert alles Wasser, das Tiere brauchen, deshalb trinken sie nie.",
+      "Nur Nahrung — Tiere müssen kein Wasser trinken."
+    ],
+    "explanation": "Jedes lebende Tier braucht Nahrung für Energie und Wasser, damit der Körper funktioniert. Ohne Nahrung kann ein Tier nicht wachsen oder sich bewegen. Ohne Wasser können seine Zellen nicht arbeiten.",
+    "theoryLines": [
+      "Tiere gewinnen Energie durch Nahrung — Pflanzen, andere Tiere oder beides.",
+      "Wasser macht den größten Teil des Tierkörpers aus und wird für fast jeden Lebensvorgang gebraucht."
+    ]
+  },
+  "animals_9": {
+    "stem": "Welches Tier kann fliegen?",
+    "options": ["Fisch", "Vogel", "Schlange", "Frosch"],
+    "explanation": "Vögel haben Flügel zum Fliegen. Viele haben auch leichte Federn und hohle Knochen.",
+    "theoryLines": [
+      "Flügel helfen Vögeln zu fliegen.",
+      "Manche Vögel haben größere, stärkere Flügel als andere."
+    ]
+  },
+  "animals_10": {
+    "stem": "Welche Aussage darüber, was Tiere fressen, ist wahr?",
+    "options": [
+      "Verschiedene Tiere fressen unterschiedliche Nahrung — manche fressen Pflanzen, manche andere Tiere, manche beides.",
+      "Alle Tiere fressen genau dieselbe Art von Nahrung.",
+      "Pflanzen sind die einzige Nahrungsquelle für jedes Tier auf der Erde.",
+      "Tiere brauchen nie Wasser — sie bekommen alles, was sie brauchen, nur aus der Nahrung."
+    ],
+    "explanation": "Tiere, die nur Pflanzen fressen, heißen Pflanzenfresser. Tiere, die nur andere Tiere fressen, heißen Fleischfresser. Tiere, die beides fressen, heißen Allesfresser. Diese Vielfalt hilft verschiedenen Tieren, in unterschiedlichen Lebensräumen zu leben.",
+    "theoryLines": [
+      "Zähne und Verdauungssystem eines Tieres sind an seine Nahrung angepasst.",
+      "Pflanzenfresser, Fleischfresser und Allesfresser spielen wichtige Rollen im Nahrungsnetz."
+    ]
+  },
+  "animals_11": {
+    "stem": "Was ist der Hauptunterschied zwischen warmblütigen und kaltblütigen Tieren?",
+    "options": [
+      "Beide passen ihre Temperatur immer der Umgebung an.",
+      "Warmblütige Tiere halten ihre Körpertemperatur selbst konstant; kaltblütige Tiere brauchen die Umgebung für Körperwärme.",
+      "Kaltblütige Tiere können immer eine warme, gleichmäßige Körpertemperatur halten.",
+      "Warmblütige Tiere können nur im Wasser überleben."
+    ],
+    "explanation": "Warmblütige Tiere wie Vögel und Säugetiere regeln ihre Körpertemperatur selbst, egal wie heiß oder kalt es draußen ist. Kaltblütige Tiere wie Reptilien und Fische können das nicht — ihre Körpertemperatur steigt und sinkt mit der Umgebung.",
+    "theoryLines": [
+      "Zu den warmblütigen Tieren gehören Säugetiere und Vögel; sie nutzen Energie aus Nahrung, um warm zu bleiben.",
+      "Zu den kaltblütigen Tieren gehören Reptilien, Fische und Amphibien; sie sonnen sich, um warm zu werden."
+    ]
+  },
+  "animals_12": {
+    "stem": "Was ist ein Lebensraum?",
+    "options": [
+      "Ein Haus, das Menschen gebaut haben",
+      "Der natürliche Ort, an dem ein Tier lebt und findet, was es braucht",
+      "Nur ein Wald, nie ein Ozean oder Grasland",
+      "Nur tiefer Ozean, nie Küste, Wald oder Riff"
+    ],
+    "explanation": "Ein Lebensraum ist der natürliche Ort, an dem ein Tier lebt und Nahrung, Wasser und Schutz findet.",
+    "theoryLines": [
+      "Ein Lebensraum umfasst alles, was ein Tier zum Leben braucht.",
+      "Verschiedene Tiere leben in verschiedenen Lebensräumen."
+    ]
+  },
+  "animals_13": {
+    "stem": "Was ist ein Lebenszyklus?",
+    "options": [
+      "Nur Geburt, ohne Wachstum oder Fortpflanzung",
+      "Geburt, Wachstum, Fortpflanzung und Tod — die Stufen des Lebens",
+      "Plötzlicher Tod ohne Entwicklungsstufen",
+      "Wachstum über die Zeit ohne Geburt oder Fortpflanzung"
+    ],
+    "explanation": "Ein Lebenszyklus umfasst die wichtigsten Lebensstufen: Geburt, Wachstum, Erwachsenenalter, Fortpflanzung und Tod.",
+    "theoryLines": [
+      "Jede Tierart hat ihren eigenen Lebenszyklus.",
+      "Manche Tiere durchlaufen eine Metamorphose, eine große Formveränderung."
+    ]
+  },
+  "animals_14": {
+    "stem": "Was zeigt eine Nahrungskette über Energie in der Natur?",
+    "options": [
+      "Eine Liste aller Nahrungsmittel, die ein Tier an einem einzigen Tag fressen kann.",
+      "Eine Abfolge, die zeigt, wie Energie durch Fressen von einem Lebewesen zum nächsten weitergegeben wird.",
+      "Eine Liste aller Pflanzen in einem Ökosystem.",
+      "Einen Weg, dem Tiere folgen, um in der Wildnis Wasser zu finden."
+    ],
+    "explanation": "Eine Nahrungskette zeigt, wie Energie fließt, wenn ein Lebewesen ein anderes frisst — beginnend bei Erzeugern wie Pflanzen.",
+    "theoryLines": [
+      "In vielen Nahrungsketten beginnt Energie mit Sonnenlicht, das Pflanzen einfangen.",
+      "Jedes Glied der Kette hängt vom vorherigen ab."
+    ]
+  },
+  "animals_15": {
+    "stem": "Was ist eine Anpassung?",
+    "options": [
+      "Eine Änderung, die eine Pflanze gewöhnlich macht",
+      "Ein Merkmal oder Verhalten, das einem Tier beim Überleben hilft",
+      "Körperfarbe ohne Bezug zur Umwelt",
+      "Körpergröße als einziges wichtiges Merkmal"
+    ],
+    "explanation": "Eine Anpassung ist ein Merkmal oder Verhalten, das einem Tier hilft, in seiner Umgebung zu überleben und gut zu leben.",
+    "theoryLines": [
+      "Anpassungen können Körpereigenschaften oder Verhaltensweisen sein.",
+      "Sie entstehen über viele Generationen."
+    ]
+  },
+  "animals_16": {
+    "stem": "Welches Tier kann schwimmen?",
+    "options": ["Huhn", "Fisch", "Tiger", "Kaninchen"],
+    "explanation": "Fische schwimmen im Wasser. Ihre Flossen helfen ihnen bei der Bewegung.",
+    "theoryLines": [
+      "Fische leben im Wasser.",
+      "Sie sind an das Leben im Wasser angepasst."
+    ]
+  },
+  "animals_17": {
+    "stem": "Welches Tier ist mit Fell bedeckt?",
+    "options": ["Fisch", "Hund", "Schlange", "Vogel"],
+    "explanation": "Ein Hund ist ein Säugetier mit Fell. Fell hilft, den Körper warm zu halten.",
+    "theoryLines": [
+      "Säugetiere haben Fell oder Haare.",
+      "Fell hilft, Körperwärme zu halten."
+    ]
+  },
+  "animals_18": {
+    "stem": "Welches Tier ist mit Federn bedeckt?",
+    "options": ["Haushund", "Katze mit Fell", "Huhn", "Fisch im Wasser"],
+    "explanation": "Ein Huhn ist ein Vogel mit Federn. Federn helfen Vögeln beim Fliegen und Warmhalten.",
+    "theoryLines": [
+      "Vögel haben Federn.",
+      "Federn helfen beim Fliegen und Warmhalten."
+    ]
+  },
+  "animals_19": {
+    "stem": "Welche Aussage über Hunde und Katzen ist wahr?",
+    "options": [
+      "Sie sind Säugetiere",
+      "Sie sind Reptilien, die Eier legen",
+      "Sie sind Fische, die im Wasser leben",
+      "Sie sind Vögel mit Federn"
+    ],
+    "explanation": "Hunde und Katzen sind Säugetiere. Sie bringen lebende Junge zur Welt und ernähren sie mit Milch.",
+    "theoryLines": [
+      "Säugetiere bringen meist lebende Junge zur Welt.",
+      "Sie säugen ihre Jungen mit Milch."
+    ]
+  },
+  "animals_20": {
+    "stem": "Was machen Tiere im Winter?",
+    "options": [
+      "Fast jede Art wandert an denselben Ort",
+      "Manche wandern, manche halten Winterschlaf, manche bleiben aktiv",
+      "Alle schlafen auf dieselbe Weise und in derselben Tiefe",
+      "Alle folgen einem ähnlichen Flugmuster"
+    ],
+    "explanation": "Tiere bewältigen den Winter unterschiedlich: manche wandern, manche halten Winterschlaf, manche bleiben aktiv.",
+    "theoryLines": [
+      "Tiere passen sich den Jahreszeiten auf unterschiedliche Weise an.",
+      "Jede Tierart hat ihre eigene Überlebensweise."
+    ]
+  },
+  "animals_21": {
+    "stem": "Was ist der Unterschied zwischen Räuber und Beute?",
+    "options": [
+      "Beide beschreiben ein Lebewesen, das Energie nur aus Pflanzen gewinnt",
+      "Ein Räuber jagt und frisst andere Tiere; Beute ist das gejagte Tier",
+      "Ein Räuber ist immer das Tier, das gefressen wird, nicht das jagende",
+      "Beute ist immer das Tier, das andere in der Nahrungskette jagt"
+    ],
+    "explanation": "Ein Räuber jagt und frisst andere Tiere. Beute ist das Tier, das gejagt und gefressen wird.",
+    "theoryLines": [
+      "Räuber und Beute gehören zu Nahrungsketten.",
+      "Räuber jagen; Beute wird gejagt."
+    ]
+  },
+  "animals_22": {
+    "stem": "Was ist ein Pflanzenfresser?",
+    "options": [
+      "Ein Tier, das Fleisch frisst",
+      "Ein Tier, das Pflanzen frisst",
+      "Ein Tier, das alles frisst",
+      "Ein Tier, das nichts frisst"
+    ],
+    "explanation": "Ein Pflanzenfresser frisst Pflanzen — Gras, Blätter, Früchte und mehr. Kühe, Kaninchen und Rehe sind Beispiele.",
+    "theoryLines": [
+      "Pflanzenfresser sind ein wichtiger Teil von Nahrungsketten.",
+      "Sie fressen Pflanzen, die Erzeuger sind."
+    ]
+  },
+  "animals_23": {
+    "stem": "Was ist ein Allesfresser?",
+    "options": [
+      "Ein Tier, das nur Fleisch frisst",
+      "Ein Tier, das sowohl Pflanzen als auch Fleisch frisst",
+      "Ein Tier, das nur Pflanzen frisst",
+      "Ein Tier, das nichts frisst"
+    ],
+    "explanation": "Ein Allesfresser frisst sowohl Pflanzen als auch Tiere. Menschen, Bären und Schweine sind Beispiele.",
+    "theoryLines": [
+      "Allesfresser können eine größere Vielfalt an Nahrung fressen.",
+      "Diese Flexibilität kann ihnen helfen, an mehr Orten zu überleben."
+    ]
+  },
+  "animals_24": {
+    "stem": "Was brauchen alle Tiere, um am Leben zu bleiben?",
+    "options": [
+      "Tiere brauchen nur Schutz — sonst nichts.",
+      "Alle Tiere brauchen Nahrung, Wasser, Luft und die richtigen Bedingungen zum Überleben.",
+      "Nur Muskeln und Bewegung halten Tiere am Leben.",
+      "Tiere brauchen nur Nahrung und sonst nichts."
+    ],
+    "explanation": "Alle lebenden Tiere haben Grundbedürfnisse: Nahrung für Energie, Wasser und Luft zum Atmen. Ohne diese können sie nicht überleben.",
+    "theoryLines": [
+      "Alle Lebewesen haben Grundbedürfnisse zum Überleben.",
+      "Tiere gewinnen die nötige Energie aus der Nahrung, die sie fressen."
+    ]
+  },
+  "animals_25": {
+    "stem": "Was ist ein Tarnungsmuster?",
+    "options": [
+      "Eine einfarbige Fläche ohne Muster auf der Haut",
+      "Farben und Muster, die einem Tier helfen, in der Umgebung unterzugehen",
+      "Schnelle Bewegung ohne Veränderung des Aussehens",
+      "Nachahmen von Geräuschen ohne Veränderung der Körperform"
+    ],
+    "explanation": "Tarnung nutzt Farben und Muster, damit ein Tier wie seine Umgebung aussieht und sich verstecken kann.",
+    "theoryLines": [
+      "Tarnung hilft Tieren zu überleben.",
+      "Beispiele sind ein Kaninchen im Winter und ein Frosch auf grünen Blättern."
+    ]
+  },
+  "animals_26": {
+    "stem": "Was ist eine ausgestorbene Art?",
+    "options": [
+      "Eine Art, die jetzt auf jedem Kontinent brütet",
+      "Eine Art, bei der jedes Individuum gestorben ist und keines mehr lebt",
+      "Eine Art, deren Körpergröße sich in einem Jahr verdoppelt hat",
+      "Eine Art, die erst kürzlich entdeckt wurde"
+    ],
+    "explanation": "Bei einer ausgestorbenen Art gibt es keine lebenden Mitglieder mehr. Der Dodo ist ein Beispiel.",
+    "theoryLines": [
+      "Aussterben kann viele Gründe haben.",
+      "Arten zu schützen hilft, Aussterben zu verhindern."
+    ]
+  },
+  "animals_27": {
+    "stem": "Was ist eine Art?",
+    "options": [
+      "Ein einzelnes Individuum, das sich nicht mit anderen fortpflanzen kann",
+      "Eine Gruppe von Tieren, die sich untereinander fortpflanzen und Nachkommen erzeugen können",
+      "Eine Pflanzengruppe ohne gemeinsame Fortpflanzungsdefinition",
+      "Zwei unverwandte Tiere, die nie Nachkommen erzeugen"
+    ],
+    "explanation": "Eine Art ist eine Gruppe von Lebewesen, die sich untereinander fortpflanzen und fruchtbare Nachkommen erzeugen können. Hunde sind eine Art; Katzen eine andere.",
+    "theoryLines": [
+      "Art ist eine Art und Weise, wie Wissenschaftler Lebewesen gruppieren.",
+      "Sie hilft, Beziehungen zwischen Organismen zu erklären."
+    ]
+  },
+  "animals_28": {
+    "stem": "Was ist Domestizierung?",
+    "options": [
+      "Kreuzung zweier Wildarten ohne Zucht über Generationen",
+      "Tiere über Generationen so züchten, dass sie zum Leben mit Menschen und zum Helfen passen",
+      "Saisonale Wanderung einer Population ohne genetische Veränderung",
+      "Eine einmalige wilde Anpassung ohne Menschenkontakt"
+    ],
+    "explanation": "Domestizierung bedeutet, dass Menschen Tiere über viele Generationen züchten, damit sie mit Menschen leben und ihnen helfen — wie Hunde, Katzen und Kühe.",
+    "theoryLines": [
+      "Domestizierung geschah über Tausende von Jahren.",
+      "Haustiere unterscheiden sich von ihren wilden Verwandten."
+    ]
+  },
+  "animals_29": {
+    "stem": "Was tun Tiere, um zu überleben?",
+    "options": [
+      "Gewöhnlich nichts",
+      "Essen, trinken und Schutz suchen",
+      "Den ganzen Tag schlafen, ohne Nahrung zu suchen",
+      "Schnell rennen, ohne zu trinken"
+    ],
+    "explanation": "Tiere überleben, indem sie Nahrung und Wasser finden, an sicheren Orten bleiben, sich fortpflanzen und Räubern ausweichen.",
+    "theoryLines": [
+      "Jedes Tier hat Grundbedürfnisse.",
+      "Tiere arbeiten daran, am Leben zu bleiben."
+    ]
+  },
+  "animals_30": {
+    "stem": "Was ist der Unterschied zwischen einem Wildtier und einem Haustier?",
+    "options": [
+      "Beide leben nur in der freien Natur ohne Bezug zu Menschen oder Häusern",
+      "Ein Wildtier lebt in der Natur; ein Haustier lebt bei Menschen und ist dafür geeignet",
+      "Ein Haustier ist als Tier definiert, das nur in der Natur lebt ohne Domestizierungsgeschichte",
+      "Ein Wildtier wird immer von Geburt an zu Hause aufgezogen"
+    ],
+    "explanation": "Wildtiere leben selbstständig in der Natur. Haustiere leben bei Menschen, werden von ihnen versorgt und sind für das Leben zu Hause geeignet.",
+    "theoryLines": [
+      "Haustiere sind domestizierte Tiere.",
+      "Wildtiere leben unabhängig."
+    ]
+  },
+  "animals_26__v2": {
+    "stem": "Welches Geräusch macht eine Katze?",
+    "options": ["Miau", "Wuff", "Muh", "Piep"],
+    "explanation": "Eine Katze macht ein Miau-Geräusch, wenn sie Aufmerksamkeit will oder mit Menschen spricht.",
+    "theoryLines": [
+      "Verschiedene Tiere machen verschiedene Geräusche.",
+      "Geräusche helfen uns, Tiere zu erkennen."
+    ]
+  },
+  "animals_11__v2": {
+    "stem": "Welches Tier bellt?",
+    "options": ["Katze", "Hund", "Vogel", "Fisch"],
+    "explanation": "Ein Hund bellt. Bellen ist eine Art, wie Hunde kommunizieren.",
+    "theoryLines": [
+      "Verschiedene Tiere machen verschiedene Geräusche.",
+      "Geräusche helfen Tieren zu kommunizieren."
+    ]
+  },
+  "animals_12__v2": {
+    "stem": "Welches Tier sagt „miau“?",
+    "options": ["Hund", "Katze", "Vogel", "Fisch"],
+    "explanation": "Eine Katze sagt „miau“. Das ist das Geräusch, das Katzen oft zur Kommunikation nutzen.",
+    "theoryLines": [
+      "Katzen sind beliebte Haustiere.",
+      "Sie können sehr freundlich sein."
+    ]
+  },
+  "animals_13__v2": {
+    "stem": "Welches Tier hat Flügel?",
+    "options": ["Hund", "Katze", "Vogel", "Fisch"],
+    "explanation": "Vögel haben Flügel, die ihnen beim Fliegen helfen.",
+    "theoryLines": [
+      "Flügel helfen Vögeln zu fliegen.",
+      "Es gibt viele Arten von Vögeln."
+    ]
+  },
+  "animals_14__v2": {
+    "stem": "Welches Tier lebt im Wasser und hat Flossen?",
+    "options": ["Hund", "Katze", "Fisch", "Vogel"],
+    "explanation": "Fische leben im Wasser und nutzen Flossen zum Schwimmen.",
+    "theoryLines": [
+      "Fische atmen mit Kiemen.",
+      "Es gibt viele Arten von Fischen."
+    ]
+  },
+  "animals_15__v2": {
+    "stem": "Welches Tier hat Fell?",
+    "options": ["Fisch", "Vogel", "Hund", "Schlange"],
+    "explanation": "Hunde haben Fell, das sie warm und geschützt hält.",
+    "theoryLines": [
+      "Säugetiere haben Fell oder Haare.",
+      "Fell hilft, Körperwärme zu halten."
+    ]
+  },
+  "animals_17__v2": {
+    "stem": "Welches Tier hat vier Beine?",
+    "options": ["Fisch", "Vogel", "Hund", "Schlange"],
+    "explanation": "Hunde haben vier Beine, die ihnen beim Laufen und Springen helfen.",
+    "theoryLines": [
+      "Die meisten Säugetiere haben vier Beine.",
+      "Vier Beine helfen vielen Tieren, sich schnell zu bewegen."
+    ]
+  },
+  "animals_19__v2": {
+    "stem": "Welches Tier kann schnell laufen?",
+    "options": ["Fisch", "Vogel", "Pferd", "Henne"],
+    "explanation": "Pferde können sehr schnell laufen. Sie haben starke, lange Beine.",
+    "theoryLines": [
+      "Pferde sind starke, schnelle Tiere.",
+      "Menschen haben Pferde zum Reiten und zur Arbeit genutzt."
+    ]
+  },
+  "animals_20__v2": {
+    "stem": "Welches davon ist ein Tier?",
+    "options": ["Hund", "Baum", "Stein", "Wolke"],
+    "explanation": "Ein Hund ist ein lebendes Tier. Ein Baum ist eine Pflanze, und Stein und Wolke sind keine Tiere.",
+    "theoryLines": [
+      "Tiere sind Lebewesen, die sich meist bewegen und ihre Umgebung wahrnehmen können.",
+      "Pflanzen, Steine und Wolken sind keine Tiere."
+    ]
+  },
+  "animals_21__v2": {
+    "stem": "Was ist der Unterschied zwischen einem Säugetier und einem Vogel?",
+    "options": [
+      "Beide legen Eier auf dem Boden und säugen nie Junge",
+      "Ein Säugetier bringt lebende Junge zur Welt und säugt sie; ein Vogel legt Eier",
+      "Ein Vogel bringt immer lebende Junge zur Welt; ein Säugetier legt Eier in einem Nest",
+      "Der einzige Unterschied ist die Federfarbe, ohne Bezug zur Fortpflanzung"
+    ],
+    "explanation": "Säugetiere bringen meist lebende Junge zur Welt und ernähren sie mit Milch. Vögel legen Eier und brüten sie oft.",
+    "theoryLines": [
+      "Säugetiere haben Fell oder Haare.",
+      "Vögel sind mit Federn bedeckt."
+    ]
+  },
+  "animals_22__v2": {
+    "stem": "Was ist der Lebensraum eines Tieres?",
+    "options": [
+      "Form und Größe des Tierkörpers.",
+      "Die natürliche Umgebung, in der ein Tier lebt und Nahrung, Wasser und Schutz findet.",
+      "Die Tiere, die es nur nachts jagt.",
+      "Der Teil des Ökosystems, den das Tier mit der Zeit schädigt."
+    ],
+    "explanation": "Ein Lebensraum ist die natürliche Umgebung, in der ein Tier lebt. Er liefert alles, was das Tier braucht: Nahrung, Wasser, Schutz und Raum zum Überleben und zur Fortpflanzung.",
+    "theoryLines": [
+      "Verschiedene Tiere sind an verschiedene Lebensräume angepasst.",
+      "Lebensräume umfassen Wälder, Wüsten, Ozeane und Grasländer."
+    ]
+  },
+  "animals_23__v2": {
+    "stem": "Was ist ein Räuber?",
+    "options": [
+      "Ein Tier, das nur Pflanzen frisst",
+      "Ein Tier, das andere Tiere jagt und frisst",
+      "Eine Pflanze, die Nahrung herstellt und kein Räuber ist",
+      "Ein Fisch, der vor allem Algen und Plankton frisst"
+    ],
+    "explanation": "Ein Räuber jagt und frisst andere Tiere. Löwen, Adler und Haie sind Beispiele.",
+    "theoryLines": [
+      "Viele Räuber haben scharfe Zähne oder Krallen.",
+      "Sie sind an das Jagen angepasst."
+    ]
+  },
+  "animals_24__v2": {
+    "stem": "Was ist ein Pflanzenfresser?",
+    "options": [
+      "Ein Tier, das auf die Jagd nach lebender Beute spezialisiert ist",
+      "Ein Tier, das vor allem Pflanzen frisst",
+      "Eine Pflanze, die keine tierische Nahrung frisst",
+      "Ein räuberischer Fisch, der vor allem andere Fische frisst"
+    ],
+    "explanation": "Ein Pflanzenfresser frisst Pflanzen. Kühe, Kaninchen und Zebras sind Beispiele.",
+    "theoryLines": [
+      "Pflanzenfresser haben oft Zähne, die zum Kauen von Pflanzen geeignet sind.",
+      "Sie fressen Fleisch nicht als Hauptnahrung."
+    ]
+  },
+  "animals_25__v2": {
+    "stem": "Was ist ein Allesfresser?",
+    "options": [
+      "Ein Tier, das Fleisch mit fast keinen Pflanzen frisst",
+      "Ein Tier, das sowohl Pflanzen als auch Fleisch frisst",
+      "Ein Tier, das nur Pflanzen frisst, wie eine Kuh",
+      "Ein Tier, das auf Algen und Plankton spezialisiert ist"
+    ],
+    "explanation": "Ein Allesfresser frisst sowohl Pflanzen als auch Fleisch. Bären, Schweine und Menschen sind Beispiele.",
+    "theoryLines": [
+      "Allesfresser können viele Arten von Nahrung fressen.",
+      "Das hilft ihnen, an verschiedenen Orten zu überleben."
+    ]
+  },
+  "animals_26__v3": {
+    "stem": "Was ist Tarnung?",
+    "options": [
+      "Eine helle Farbe ohne Bezug zum Verstecken",
+      "Sich in die Umgebung einfügen, damit ein Tier schwerer zu sehen ist",
+      "Schnelle Bewegung ohne Übereinstimmung mit dem Hintergrund",
+      "Nachahmen von Geräuschen ohne visuelle Übereinstimmung mit der Umgebung"
+    ],
+    "explanation": "Tarnung hilft einem Tier, sich zu verstecken, indem Farbe oder Form zur Umgebung passen.",
+    "theoryLines": [
+      "Tarnung kann Tieren helfen, Räubern auszuweichen oder sich an Beute heranzuschleichen.",
+      "Beispiele sind Zebras, Leoparden und Tintenfische."
+    ]
+  },
+  "animals_27__v2": {
+    "stem": "Was ist Wanderung (Migration)?",
+    "options": [
+      "Tägliche Wege ohne Bezug zur Jahreszeit",
+      "Ein jahreszeitlicher Umzug von Tieren von einem Gebiet in ein anderes",
+      "Monatelang an einem festen Spot stehen",
+      "Kurze Kreisläufe ohne Überlebenszweck"
+    ],
+    "explanation": "Wanderung ist eine jahreszeitliche Reise, die Tiere machen, um Nahrung oder besseres Wetter zu finden.",
+    "theoryLines": [
+      "Viele Vögel wandern über große Entfernungen.",
+      "Wanderung findet in bestimmten Jahreszeiten statt."
+    ]
+  },
+  "animals_28__v2": {
+    "stem": "Was ist Winterschlaf?",
+    "options": [
+      "Ein kurzes, leichtes Sommerschläfchen",
+      "Ein tiefer Winterschlaf, der Energie spart",
+      "Den ganzen Winter wach bleiben ohne Ruhe",
+      "Im Winter schneller laufen, um warm zu bleiben"
+    ],
+    "explanation": "Winterschlaf ist ein tiefer Schlaf im Winter, der einem Tier hilft, Energie zu sparen, wenn Nahrung knapp ist.",
+    "theoryLines": [
+      "Bären und manche anderen Tiere halten Winterschlaf.",
+      "Winterschlaf hilft ihnen, den Winter zu überstehen."
+    ]
+  },
+  "animals_29__v2": {
+    "stem": "Was ist ein Lebenszyklus?",
+    "options": [
+      "Leben ohne Wachstum oder Heranreifen",
+      "Die Stufen von der Geburt über das Wachstum bis zum Ende des Lebens",
+      "Plötzlicher Tod ohne frühere Stufen",
+      "Geburt ohne spätere Körperentwicklung"
+    ],
+    "explanation": "Ein Lebenszyklus ist die Menge der Stufen im Leben eines Tieres — von der Geburt über Wachstum und Fortpflanzung bis zum Tod.",
+    "theoryLines": [
+      "Verschiedene Tiere haben verschiedene Lebenszyklen.",
+      "Lebenszyklen umfassen Geburt, Wachstum, Fortpflanzung und Tod."
+    ]
+  },
+  "animals_30__v2": {
+    "stem": "Was ist eine Anpassung an die Umwelt?",
+    "options": [
+      "Eine Schmuckfarbe ohne Hilfe fürs Überleben",
+      "Merkmale, die das Leben in einer bestimmten Umgebung leichter machen",
+      "Bewegung ohne Bezug zu örtlichen Bedingungen",
+      "Geräusche machen ohne ökologische Bedeutung"
+    ],
+    "explanation": "Eine Umweltanpassung ist ein Merkmal, das einem Tier hilft, an einem bestimmten Ort zu leben — zum Beispiel dickes Fell für Kälte oder Flossen für Wasser.",
+    "theoryLines": [
+      "Anpassungen können Körpereigenschaften oder Verhaltensweisen sein.",
+      "Sie helfen Tieren zu überleben."
+    ]
+  }
+}

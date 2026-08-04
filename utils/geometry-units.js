@@ -1,3 +1,5 @@
+import { burnDownCopy } from "../lib/learning/burn-down-copy.js";
+
 /**
  * Geometry-only: infer display units from question text for trustworthy explanations.
  */
@@ -81,20 +83,20 @@ export function inferGeometryDiagramLengthUnit(question) {
 
 export function resultPhraseArea(question, value) {
   const u = inferGeometryResultUnits(question);
-  const s = u.area || "area units";
-  return `The result: ${value} ${s}.`;
+  const s = u.area || burnDownCopy("utils__geometry-explanations", "unit_area_fallback");
+  return burnDownCopy("utils__geometry-explanations", "result_phrase").replace("{value}", String(value)).replace("{unit}", s);
 }
 
 export function resultPhraseLength(question, value) {
   const u = inferGeometryResultUnits(question);
-  const s = u.length || "length units";
-  return `The result: ${value} ${s}.`;
+  const s = u.length || burnDownCopy("utils__geometry-explanations", "unit_length_fallback");
+  return burnDownCopy("utils__geometry-explanations", "result_phrase").replace("{value}", String(value)).replace("{unit}", s);
 }
 
 export function resultPhraseVolume(question, value) {
   const u = inferGeometryResultUnits(question);
-  const s = u.volume || "volume units";
-  return `The result: ${value} ${s}.`;
+  const s = u.volume || burnDownCopy("utils__geometry-explanations", "unit_volume_fallback");
+  return burnDownCopy("utils__geometry-explanations", "result_phrase").replace("{value}", String(value)).replace("{unit}", s);
 }
 
 /** Space + unit for appending after LTR math, e.g. "5" → "5 m" */
@@ -110,6 +112,8 @@ export function geometryVolumeSuffix(question) {
 
 export function resultPhraseVolumeRounded(question, value) {
   const u = inferGeometryResultUnits(question);
-  const s = u.volume || "volume units";
-  return `Rounded result: ${value} ${s}.`;
+  const s = u.volume || burnDownCopy("utils__geometry-explanations", "unit_volume_fallback");
+  return burnDownCopy("utils__geometry-explanations", "result_phrase_rounded")
+    .replace("{value}", String(value))
+    .replace("{unit}", s);
 }

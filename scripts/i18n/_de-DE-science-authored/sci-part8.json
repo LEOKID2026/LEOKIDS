@@ -1,0 +1,827 @@
+{
+  "sci_g3_body_010": {
+    "stem": "Was macht das Herz?",
+    "options": [
+      "Es pumpt Blut durch den Körper",
+      "Es schmeckt Essen auf der Zunge",
+      "Es lässt jede Stunde neues Haar wachsen",
+      "Es speichert übriges Sonnenlicht"
+    ],
+    "explanation": "Das Herz ist ein Muskel, der Blut weiterdrückt, damit Stoffe zu den Körperzellen gelangen können.",
+    "theoryLines": [
+      "Blut transportiert Sauerstoff und Nährstoffe.",
+      "Ein Herzschlag hält den Kreislauf in Bewegung."
+    ]
+  },
+  "sci_g3_body_011": {
+    "stem": "Wie hilft Trinken von Wasser dem Körper?",
+    "options": [
+      "Es hilft, den Körper mit Flüssigkeit zu versorgen und gut arbeiten zu lassen",
+      "Es ersetzt den Bedarf an Schlaf",
+      "Es verwandelt Muskeln in Stein",
+      "Es stoppt für immer jedes Schwitzen"
+    ],
+    "explanation": "Wasser unterstützt viele Körpervorgänge und hilft dir, gesund zu bleiben.",
+    "theoryLines": [
+      "Menschen brauchen jeden Tag Wasser.",
+      "Zu wenig Flüssigkeit kann dich müde oder schwindelig machen."
+    ]
+  },
+  "sci_g3_body_012": {
+    "stem": "Welche Gewohnheiten helfen, den Körper gesund zu halten?",
+    "options": [
+      "Gut essen, sich oft bewegen, ausruhen und sauber bleiben",
+      "Niemals Wasser trinken",
+      "Jede Nacht auf Schlaf verzichten",
+      "Für immer alle Obst- und Gemüsesorten meiden"
+    ],
+    "explanation": "Gesunde Routinen unterstützen Energie, Wachstum und starke Körpersysteme.",
+    "theoryLines": [
+      "Lebensgewohnheiten beeinflussen die Gesundheit.",
+      "Bewegung, Schlaf und Ernährung wirken zusammen."
+    ]
+  },
+  "sci_g3_body_013": {
+    "stem": "Warum atmest du nach anstrengender Bewegung schneller?",
+    "options": [
+      "Der Körper braucht mehr Sauerstoff für arbeitende Muskeln",
+      "Der Magen hört plötzlich auf zu verdauen",
+      "Knochen brauchen weniger Blut",
+      "Die Augen hören auf, Signale zu senden"
+    ],
+    "explanation": "Aktive Muskeln verbrauchen mehr Sauerstoff, deshalb steigen Atmung und Herzschlag, um ihn zu liefern.",
+    "theoryLines": [
+      "Bewegung erhöht den Sauerstoffbedarf des Körpers.",
+      "Schnelleres Atmen holt mehr Luft herein."
+    ]
+  },
+  "sci_g3_body_014": {
+    "stem": "Welches Organ ist ein wichtiger Teil des Verdauungssystems?",
+    "options": [
+      "Der Magen",
+      "Die Wimpern",
+      "Die Fingernägel",
+      "Nur das äußere Ohr"
+    ],
+    "explanation": "Der Magen hilft, Nahrung zu zerlegen, damit Nährstoffe später aufgenommen werden können.",
+    "theoryLines": [
+      "Die Verdauung beginnt im Mund und geht in Magen und Darm weiter.",
+      "Verdauungsorgane arbeiten als Team."
+    ]
+  },
+  "sci_g3_body_015": {
+    "stem": "Was transportiert kreisendes Blut vor allem?",
+    "options": [
+      "Sauerstoff und Nährstoffe zu Körperteilen",
+      "Nur ungenutzte Steine",
+      "Nur Geräusche von draußen",
+      "Nur Schatten vom Sonnenlicht"
+    ],
+    "explanation": "Blut transportiert nützliche Stoffe wie Sauerstoff und Nährstoffe und hilft auch, Abfallstoffe abzutransportieren.",
+    "theoryLines": [
+      "Das Kreislaufsystem bewegt das Blut.",
+      "Zellen brauchen eine stetige Lieferung von Sauerstoff und Nahrungsenergie."
+    ]
+  },
+  "sci_g3_body_016": {
+    "stem": "Warum solltest du dir vor dem Essen die Hände waschen?",
+    "options": [
+      "Um Keime zu entfernen, die dich krank machen könnten",
+      "Um Essen kälter schmecken zu lassen",
+      "Um Knochen am Wachsen zu hindern",
+      "Um das Zähneputzen zu ersetzen"
+    ],
+    "explanation": "Saubere Hände verringern die Chance, schädliche Mikroben an Mund und Essen zu bringen.",
+    "theoryLines": [
+      "Händewaschen ist eine einfache Gesundheitsgewohnheit.",
+      "Seife und Wasser helfen, Schmutz und Keime zu entfernen."
+    ]
+  },
+  "sci_g3_body_017": {
+    "stem": "Was macht das Gehirn mit Nachrichten von den Sinnen?",
+    "options": [
+      "Es deutet sie, damit du verstehst, was du wahrnimmst",
+      "Es verwandelt sie in Nahrung für den Magen",
+      "Es speichert sie nur in den Fingernägeln",
+      "Es schickt sie zum Haar zum Verdauen"
+    ],
+    "explanation": "Sinnesorgane nehmen die Welt wahr, und das Gehirn macht aus diesen Signalen Sinn.",
+    "theoryLines": [
+      "Sehen, Hören, Riechen, Schmecken und Tasten beziehen alle das Gehirn ein.",
+      "Das Nervensystem verbindet Sinne mit Denken und Handeln."
+    ]
+  },
+  "sci_g3_body_018": {
+    "stem": "Was bietet eine ausgewogene Ernährung?",
+    "options": [
+      "Eine Mischung aus Nährstoffen, die der Körper braucht, um gesund zu bleiben",
+      "Nur Zucker und sonst nichts",
+      "Einen Weg, ganz auf Wasser zu verzichten",
+      "Energie, die niemals aus Nahrung kommt"
+    ],
+    "explanation": "Verschiedene gesunde Lebensmittel liefern Eiweiße, Kohlenhydrate, Fette, Vitamine und Mineralstoffe.",
+    "theoryLines": [
+      "Abwechslung hilft, den Nährstoffbedarf zu decken.",
+      "Gute Lebensmittelwahl unterstützt Wachstum und Energie."
+    ]
+  },
+  "sci_g3_body_019": {
+    "stem": "Was nehmen die Lungen ins Blut auf?",
+    "options": [
+      "Sauerstoff",
+      "Nur unverdaute Steine",
+      "Nur übriges Licht",
+      "Nur Schallwellen"
+    ],
+    "explanation": "In den Lungen gelangt Sauerstoff aus der Luft ins Blut, und Kohlenstoffdioxid verlässt das Blut, um ausgeatmet zu werden.",
+    "theoryLines": [
+      "Der Gasaustausch findet in den Lungen statt.",
+      "Körperzellen brauchen Sauerstoff."
+    ]
+  },
+  "sci_g3_body_020": {
+    "stem": "Welche Struktur schützt das Rückenmark und stützt Kopf und Körper?",
+    "options": [
+      "Die Wirbelsäule (Rückgrat)",
+      "Nur die Zunge",
+      "Die Ohrläppchen",
+      "Die Zehennägel"
+    ],
+    "explanation": "Das Rückgrat stützt den Körper und hilft, das Rückenmark zu schützen.",
+    "theoryLines": [
+      "Wirbel sind die Knochen der Wirbelsäule.",
+      "Gute Haltung hilft, den Rücken zu schützen."
+    ]
+  },
+  "sci_g3_body_021": {
+    "stem": "Was passiert oft mit deinem Puls nach hartem Laufen?",
+    "options": [
+      "Er wird schneller",
+      "Er verschwindet vollständig",
+      "Er wird zu einem Geruchssignal",
+      "Er misst nur die Augenfarbe"
+    ],
+    "explanation": "Bei Aktivität schlägt das Herz schneller, deshalb steigt die Pulsfrequenz.",
+    "theoryLines": [
+      "Der Puls ist ein Zeichen für die Herzfrequenz.",
+      "Ruhe bringt den Puls wieder herunter."
+    ]
+  },
+  "sci_g3_body_022": {
+    "stem": "Warum solltest du beim Radfahren oder Skaten einen Helm tragen?",
+    "options": [
+      "Um deinen Kopf vor Verletzungen zu schützen",
+      "Um das Hören lauter zu machen",
+      "Um Nahrung schneller zu verdauen",
+      "Um den Blutkreislauf zu stoppen"
+    ],
+    "explanation": "Ein Helm polstert den Kopf ab, wenn du fällst, und hilft, schwere Verletzungen zu verhindern.",
+    "theoryLines": [
+      "Das Gehirn wird durch den Schädel und durch sichere Gewohnheiten geschützt.",
+      "Schutzausrüstung verringert das Risiko beim Sport."
+    ]
+  },
+  "sci_g3_body_023": {
+    "stem": "Was ist eine Aufgabe der Leber?",
+    "options": [
+      "Sie hilft, Stoffe im Blut zu verarbeiten",
+      "Sie pumpt Luft in die Ohren",
+      "Sie speichert ungenutztes Sonnenlicht",
+      "Sie ersetzt das Skelett"
+    ],
+    "explanation": "Die Leber hat viele Aufgaben, darunter Nährstoffe zu verarbeiten und bestimmte Stoffe aus dem Blut zu reinigen.",
+    "theoryLines": [
+      "Die Leber ist ein großes Organ im Bauchraum.",
+      "Körperorgane arbeiten zusammen, damit du gesund bleibst."
+    ]
+  },
+  "sci_g3_body_024": {
+    "stem": "Wozu hilft das Kauen von Nahrung im Mund?",
+    "options": [
+      "Nahrung in kleinere Stücke für die Verdauung zu zerteilen",
+      "Nahrung in reinen Sauerstoff zu verwandeln",
+      "Nahrung direkt in die Lungen zu schicken",
+      "Speichelbildung zu stoppen"
+    ],
+    "explanation": "Zähne schneiden und zerdrücken Nahrung, damit sie leichter zu schlucken und zu verdauen ist.",
+    "theoryLines": [
+      "Die Verdauung beginnt im Mund.",
+      "Speichel vermischt sich beim Kauen mit der Nahrung."
+    ]
+  },
+  "sci_g3_body_025": {
+    "stem": "Welcher Satz über Knochen und Muskeln ist richtig?",
+    "options": [
+      "Muskeln ziehen an Knochen, um Bewegung zu erzeugen",
+      "Knochen verdauen Nahrung ohne Muskeln",
+      "Muskeln ersetzen Blutgefäße",
+      "Knochen pumpen Luft in den Magen"
+    ],
+    "explanation": "Wenn sich Muskeln zusammenziehen, ziehen sie an Knochen und Körperteile bewegen sich.",
+    "theoryLines": [
+      "Knochen dienen als Hebel für Bewegung.",
+      "Gelenke erlauben Knochen, sich auf verschiedene Weise zu bewegen."
+    ]
+  },
+  "sci_g3_body_026": {
+    "stem": "Warum braucht dein Körper nach einem langen Tag Ruhe?",
+    "options": [
+      "Ruhe hilft dem Körper, Energie wiederzugewinnen",
+      "Ruhe stoppt die Atmung für immer",
+      "Ruhe beseitigt den Bedarf an Wasser",
+      "Ruhe verwandelt Muskeln in Stein"
+    ],
+    "explanation": "Ruhe und Schlaf geben deinem Körper Zeit zur Erholung, damit du dich wieder bereit fühlst.",
+    "theoryLines": [
+      "Aktivität verbraucht Energie.",
+      "Erholung gehört dazu, gesund zu bleiben."
+    ]
+  },
+  "sci_g3_body_027": {
+    "stem": "Was ist eine gesunde Gewohnheit für deine Augen?",
+    "options": [
+      "Pausen von Bildschirmen machen und helles Blenden vermeiden",
+      "Lange direkt in die Sonne schauen",
+      "Jeden Morgen Schmutz in die Augen reiben",
+      "Tagsüber niemals blinzeln"
+    ],
+    "explanation": "Augen vor Anstrengung und hellem Blenden zu schützen hilft, das Sehen angenehm und sicherer zu halten.",
+    "theoryLines": [
+      "Augen sind empfindliche Sinnesorgane.",
+      "Gutes Licht und Pausen unterstützen den Augenkomfort."
+    ]
+  },
+  "sci_g3_body_028": {
+    "stem": "Was helfen die Nieren aus dem Blut zu entfernen?",
+    "options": [
+      "Abfallstoffe, die den Körper als Urin verlassen",
+      "Für immer den gesamten Sauerstoff des Körpers",
+      "Dauerhaft jede rote Blutzelle",
+      "Nur ungenutztes Sonnenlicht"
+    ],
+    "explanation": "Nieren filtern Blut und helfen, Urin zu bilden, der Abfallstoffe abtransportiert.",
+    "theoryLines": [
+      "Ausscheidung entfernt Abfallstoffe aus dem Körper.",
+      "Gesunde Nieren unterstützen sauberes, ausgeglichenes Blut."
+    ]
+  },
+  "sci_g3_body_029": {
+    "stem": "Warum ist Frühstück für viele Kinder hilfreich?",
+    "options": [
+      "Es gibt Energie für den Start in den Tag",
+      "Es stoppt alles Lernen in der Schule",
+      "Es beseitigt den Bedarf, Wasser zu trinken",
+      "Es friert Muskeln bis zur Nacht ein"
+    ],
+    "explanation": "Essen am Morgen liefert Energie nach einer Nacht ohne Nahrung.",
+    "theoryLines": [
+      "Nahrung liefert Energie für Aktivität und Denken.",
+      "Ein gesundes Frühstück kann Obst, Getreide und proteinreiche Lebensmittel enthalten."
+    ]
+  },
+  "sci_g3_body_030": {
+    "stem": "Was ist ein Reflex, zum Beispiel die Hand von etwas Heißem wegzuziehen?",
+    "options": [
+      "Eine schnelle automatische Körperreaktion",
+      "Eine langsame Entscheidung, die immer eine lange Rede braucht",
+      "Eine Art, wie Knochen Nahrung verdauen",
+      "Eine Form der Pflanzenfotosynthese"
+    ],
+    "explanation": "Reflexe geschehen schnell, um den Körper zu schützen, oft bevor du darüber nachdenkst.",
+    "theoryLines": [
+      "Das Nervensystem steuert Reflexhandlungen.",
+      "Reflexe helfen, dich sicherer zu halten."
+    ]
+  },
+  "sci_g3_body_031": {
+    "stem": "Welche Lebensmittel sind besonders hilfreich für starke Knochen, weil sie Calcium liefern?",
+    "options": [
+      "Milch, Joghurt und andere calciumreiche Lebensmittel",
+      "Nur Süßigkeiten und Limonade",
+      "Nur trockenes Papier",
+      "Nur reines Salzwasser"
+    ],
+    "explanation": "Calcium hilft, starke Knochen und Zähne aufzubauen und zu erhalten.",
+    "theoryLines": [
+      "Milchprodukte sind häufige Calciumquellen.",
+      "Manche Blattgemüse und angereicherte Lebensmittel liefern ebenfalls Calcium."
+    ]
+  },
+  "sci_g3_body_032": {
+    "stem": "Was gilt für Schlaf bei wachsenden Kindern?",
+    "options": [
+      "Schlaf hilft dem Körper zu wachsen und sich zu erholen",
+      "Schlaf ist für die Gesundheit nutzlos",
+      "Schlaf ersetzt allen Nahrungsbedarf",
+      "Schlaf hindert das Gehirn für immer am Lernen"
+    ],
+    "explanation": "Im Schlaf repariert sich der Körper und unterstützt Wachstum und Gedächtnis.",
+    "theoryLines": [
+      "Kinder brauchen gewöhnlich reichlich Nachtschlaf.",
+      "Eine regelmäßige Schlafenszeit unterstützt bessere Erholung."
+    ]
+  },
+  "sci_g3_body_033": {
+    "stem": "Wozu hilft Speichel im Mund?",
+    "options": [
+      "Nahrung anzufeuchten und die Verdauung zu beginnen",
+      "Blut zu den Zehen zu pumpen",
+      "Sofort Knochenzellen zu erzeugen",
+      "Luft in festes Metall zu verwandeln"
+    ],
+    "explanation": "Speichel befeuchtet Nahrung und enthält Stoffe, die beginnen, manche Lebensmittel zu zerlegen.",
+    "theoryLines": [
+      "Die Verdauung beginnt, bevor Nahrung den Magen erreicht.",
+      "Kauen vermischt Nahrung mit Speichel."
+    ]
+  },
+  "sci_g3_body_034": {
+    "stem": "Was ist eine sichere Gewohnheit in der Küche?",
+    "options": [
+      "Vor Hitze oder scharfen Werkzeugen eine erwachsene Person fragen",
+      "Heiße Pfannen mit bloßen Händen anfassen",
+      "Zum Spaß mit Messern rennen",
+      "Unbekannte Reinigungsmittel kosten"
+    ],
+    "explanation": "In Küchen gibt es Hitze und scharfe Gegenstände. Hilfe von Erwachsenen und vorsichtige Gewohnheiten verhindern Verletzungen.",
+    "theoryLines": [
+      "Sicherheitsregeln schützen Menschen zu Hause.",
+      "Heiße Flächen und scharfe Werkzeuge brauchen besondere Vorsicht."
+    ]
+  },
+  "sci_g3_body_035": {
+    "stem": "Warum kann sehr lauter Lärm schädlich sein?",
+    "options": [
+      "Er kann das Gehör mit der Zeit schädigen",
+      "Er lässt Knochen für immer schneller wachsen",
+      "Er verbessert die Verdauung sofort",
+      "Er verwandelt Augen in Ohren"
+    ],
+    "explanation": "Laute Geräusche können die empfindlichen Teile des Ohrs verletzen, die dir beim Hören helfen.",
+    "theoryLines": [
+      "Schütze deine Ohren an lauten Orten.",
+      "Gehör ist wertvoll und nicht immer leicht zu reparieren."
+    ]
+  },
+  "sci_g3_body_036": {
+    "stem": "Was sendet das Nervensystem zwischen Gehirn und Körper?",
+    "options": [
+      "Nachrichten, die Wahrnehmen und Bewegen steuern",
+      "Nur übrige Essensreste",
+      "Nur ungenutztes Sonnenlicht",
+      "Nur Regenwasser"
+    ],
+    "explanation": "Nerven transportieren Signale, damit du fühlen, denken und dich bewegen kannst.",
+    "theoryLines": [
+      "Gehirn und Nerven arbeiten zusammen.",
+      "Schnelle Signale helfen dem Körper, rasch zu reagieren."
+    ]
+  },
+  "sci_g3_body_037": {
+    "stem": "Warum ist regelmäßige Bewegung gut für dich?",
+    "options": [
+      "Sie stärkt Muskeln und hilft dem Herzen",
+      "Sie beseitigt den Bedarf zu atmen",
+      "Sie stoppt den Blutkreislauf",
+      "Sie ersetzt Schlaf vollständig"
+    ],
+    "explanation": "Aktiv zu sein baut Fitness auf, unterstützt das Herz und hilft dir, dich stärker zu fühlen.",
+    "theoryLines": [
+      "Bewegung gehört zu einem gesunden Lebensstil.",
+      "Verschiedene Aktivitäten helfen dem Körper auf unterschiedliche Weise."
+    ]
+  },
+  "sci_g3_body_038": {
+    "stem": "Wie kannst du deine Augen draußen an einem sehr hellen Tag schützen?",
+    "options": [
+      "Sonnenbrille tragen und nicht in die Sonne starren",
+      "Ohne zu blinzeln in die Sonne schauen",
+      "Die Augen mit schmutzigen Händen bedecken",
+      "Augen unter Wasser mit Seife offen halten"
+    ],
+    "explanation": "Helles Sonnenlicht kann Augen belasten oder schädigen. Sonnenbrille und sichere Gewohnheiten helfen, das Sehen zu schützen.",
+    "theoryLines": [
+      "Schaue niemals direkt in die Sonne.",
+      "Augenschutz gehört zur Sicherheit im Freien."
+    ]
+  },
+  "sci_g3_body_039": {
+    "stem": "Warum zittern Menschen, wenn ihnen kalt ist?",
+    "options": [
+      "Zitternde Muskelaktivität hilft, Wärme zu erzeugen",
+      "Zittern verwandelt Blut absichtlich in Eis",
+      "Zittern verdaut Nahrung schneller als Kauen",
+      "Zittern beseitigt den Bedarf an warmer Kleidung"
+    ],
+    "explanation": "Zittern ist eine Körperreaktion, die Muskelbewegung nutzt, um Wärme zu erzeugen.",
+    "theoryLines": [
+      "Der Körper versucht, eine gleichmäßige Temperatur zu halten.",
+      "Warme Kleidung hilft ebenfalls bei kaltem Wetter."
+    ]
+  },
+  "sci_g3_body_040": {
+    "stem": "Welche Organe sind ein wichtiger Teil des Filter- und Ausscheidungssystems des Körpers?",
+    "options": [
+      "Die Nieren",
+      "Die Augenbrauen",
+      "Die Zehennägel",
+      "Die Ohrläppchen"
+    ],
+    "explanation": "Nieren filtern Abfallstoffe aus dem Blut und helfen, Urin zu bilden.",
+    "theoryLines": [
+      "Das Ausscheidungssystem entfernt Abfallstoffe.",
+      "Gesunde Nieren unterstützen das innere Gleichgewicht."
+    ]
+  },
+  "sci_g3_body_041": {
+    "stem": "Was gilt für Wasserverlust an einem heißen Tag?",
+    "options": [
+      "Der Körper kann durch Schweiß mehr Wasser verlieren",
+      "Heißes Wetter beseitigt den Bedarf zu trinken",
+      "Schweiß fügt dem Körper unbegrenzt Wasser hinzu",
+      "Hitze friert alle Körperflüssigkeiten ein"
+    ],
+    "explanation": "Schwitzen hilft dir abzukühlen, bedeutet aber auch, dass du verlorene Flüssigkeit durch Trinken ersetzen musst.",
+    "theoryLines": [
+      "Heißes Wetter erhöht den Flüssigkeitsbedarf.",
+      "Wasser trinken hilft, Austrocknung zu verhindern."
+    ]
+  },
+  "sci_g3_body_042": {
+    "stem": "Was ist eine wichtige Aufgabe des Dünndarms?",
+    "options": [
+      "Verdaute Nährstoffe ins Blut aufnehmen",
+      "Luft in die Lungen pumpen",
+      "Ungenutztes Sonnenlicht speichern",
+      "Alle Knochen des Körpers herstellen"
+    ],
+    "explanation": "Nachdem Nahrung zerlegt wurde, nimmt der Dünndarm Nährstoffe auf, damit sie über das Blut weiterreisen können.",
+    "theoryLines": [
+      "Verdauung bereitet Nährstoffe für die Aufnahme vor.",
+      "Blut transportiert aufgenommene Nährstoffe zu den Zellen."
+    ]
+  },
+  "sci_g3_body_043": {
+    "stem": "Was ist ein gesunder Weg, auf dich zu achten, wenn du eine Erkältung hast?",
+    "options": [
+      "Ausruhen, Flüssigkeit trinken und Hände sauber halten",
+      "Getränke mit allen in der Schule teilen",
+      "Mehrere Nächte auf Schlaf verzichten",
+      "Schmutz in die Nase reiben"
+    ],
+    "explanation": "Ruhe und Flüssigkeit helfen deinem Körper bei der Erholung. Saubere Hände helfen, Keime am Ausbreiten zu hindern.",
+    "theoryLines": [
+      "Hygiene schützt dich und andere.",
+      "Der Körper braucht Energie, um Krankheit zu bekämpfen."
+    ]
+  },
+  "sci_g3_body_044": {
+    "stem": "Warum brauchen hart arbeitende Muskeln mehr Sauerstoff?",
+    "options": [
+      "Aktive Muskeln nutzen mehr Sauerstoff, um Energie zu erzeugen",
+      "Sauerstoff malt Muskeln in einer neuen Farbe an",
+      "Muskeln brauchen während der Bewegung kein Blut mehr",
+      "Sauerstoff verwandelt Muskeln in Knochen"
+    ],
+    "explanation": "Wenn Muskeln härter arbeiten, brauchen sie mehr Energie, deshalb liefert der Körper mehr sauerstoffreiches Blut.",
+    "theoryLines": [
+      "Atmung und Herzschlag steigen bei Bewegung.",
+      "Sauerstoff hilft, Energie aus Nährstoffen freizusetzen."
+    ]
+  },
+  "sci_g3_body_045": {
+    "stem": "Wie hilft das Gehirn eines Kindes beim Lernen?",
+    "options": [
+      "Es speichert Informationen und hilft, neue Fähigkeiten zu üben",
+      "Es verdaut Hausaufgabenpapier als Treibstoff",
+      "Es pumpt Blut anstelle des Herzens",
+      "Es ersetzt den Bedarf an Schlaf und Nahrung"
+    ],
+    "explanation": "Das Gehirn lernt, indem es Verbindungen bildet und stärkt, während du übst und dich erinnerst.",
+    "theoryLines": [
+      "Lernen geschieht im Nervensystem.",
+      "Schlaf und Übung unterstützen beides das Lernen."
+    ]
+  },
+  "sci_g3_body_046": {
+    "stem": "Warum sind Obst und Gemüse in der täglichen Ernährung hilfreich?",
+    "options": [
+      "Sie liefern Vitamine, Mineralstoffe und Ballaststoffe",
+      "Sie beseitigen jeden Bedarf an Wasser",
+      "Sie ersetzen Sauerstoff in den Lungen",
+      "Sie verwandeln Knochen in Gummi"
+    ],
+    "explanation": "Obst und Gemüse liefern Nährstoffe, die Gesundheit und Wachstum unterstützen.",
+    "theoryLines": [
+      "Bunte Lebensmittel bedeuten oft eine Vielfalt an Nährstoffen.",
+      "Ballaststoffe helfen der Verdauung."
+    ]
+  },
+  "sci_g3_body_047": {
+    "stem": "Wozu hilft ein sauberes Pflaster bei einer kleinen Wunde?",
+    "options": [
+      "Die Wunde zu schützen, während sie heilt",
+      "Blut am Gerinnen zu hindern",
+      "Den Bedarf am Händewaschen zu ersetzen",
+      "Haut über Nacht in Knochen zu verwandeln"
+    ],
+    "explanation": "Ein Pflaster hält Schmutz fern und schützt die Haut, während sie sich selbst repariert.",
+    "theoryLines": [
+      "Wunden vor dem Abdecken sorgfältig reinigen.",
+      "Bei tieferen Schnitten eine erwachsene Person um Hilfe bitten."
+    ]
+  },
+  "sci_g3_body_048": {
+    "stem": "Wozu hilft Schwitzen dem Körper bei heißem Wetter?",
+    "options": [
+      "Abzukühlen, wenn Schweiß verdunstet",
+      "So stark wie möglich aufzuheizen",
+      "Jeden Blutfluss zu stoppen",
+      "Nahrung ohne Speichel zu verdauen"
+    ],
+    "explanation": "Wenn Schweiß von der Haut verdunstet, hilft er, die Körpertemperatur zu senken.",
+    "theoryLines": [
+      "Schwitzen ist eine Abkühlungsreaktion.",
+      "Wasser trinken ersetzt Flüssigkeit, die im Schweiß verloren geht."
+    ]
+  },
+  "sci_g3_body_049": {
+    "stem": "Wie spürst du eine sanfte Berührung am Arm?",
+    "options": [
+      "Hautsensoren senden Nachrichten an das Gehirn",
+      "Knochen schmecken die Berührung zuerst",
+      "Haar verdaut das Signal",
+      "Lungen pumpen das Gefühl in den Magen"
+    ],
+    "explanation": "Tastrezeptoren in der Haut erkennen Kontakt und senden Nervensignale an das Gehirn.",
+    "theoryLines": [
+      "Tasten ist einer der Sinne.",
+      "Das Nervensystem transportiert Tastinformationen."
+    ]
+  },
+  "sci_g3_body_050": {
+    "stem": "Wie arbeiten Körpersysteme zusammen?",
+    "options": [
+      "Sie wirken zusammen, damit der ganze Körper lebendig und aktiv bleiben kann",
+      "Jedes System arbeitet allein und interagiert nie",
+      "Nur ein System wird jemals gebraucht",
+      "Systeme verschwinden abwechselnd jeden Tag"
+    ],
+    "explanation": "Zum Beispiel holen Lungen Sauerstoff herein, Blut transportiert ihn, und Muskeln nutzen ihn für Energie.",
+    "theoryLines": [
+      "Körpersysteme sind miteinander verbunden.",
+      "Zusammenarbeit der Organe hält dich gesund."
+    ]
+  },
+  "sci_g3_body_051": {
+    "stem": "Was kannst du an deinem Puls nach Hampelmännern beobachten?",
+    "options": [
+      "Er schlägt gewöhnlich schneller als in Ruhe",
+      "Er verschwindet für immer",
+      "Er misst nur die Haarlänge",
+      "Er wird zu einem Geruchssignal"
+    ],
+    "explanation": "Aktivität lässt das Herz härter arbeiten, deshalb steigt die Pulsfrequenz eine Weile.",
+    "theoryLines": [
+      "Die Pulsfrequenz ist eine nützliche Gesundheitsbeobachtung.",
+      "Nach Ruhe kehrt der Puls oft zum normalen Wert zurück."
+    ]
+  },
+  "sci_g3_body_052": {
+    "stem": "Warum ist gute Haltung hilfreich für deinen Rücken?",
+    "options": [
+      "Sie stützt die Wirbelsäule und kann Belastung verringern",
+      "Sie lässt Knochen aufhören zu existieren",
+      "Sie beseitigt den Bedarf an Muskeln",
+      "Sie friert Gelenke für immer ein"
+    ],
+    "explanation": "Aufrecht sitzen und stehen hilft dem Rückgrat, dein Körpergewicht bequemer zu tragen.",
+    "theoryLines": [
+      "Die Wirbelsäule stützt Kopf und Rumpf.",
+      "Starke Rumpfmuskeln helfen ebenfalls der Haltung."
+    ]
+  },
+  "sci_phb_g1_materials_med_01": {
+    "stem": "Welche Oberfläche fühlt sich gewöhnlich glatt an?",
+    "options": [
+      "Ein poliertes Glasfenster",
+      "Ein Stück raues Schleifpapier",
+      "Eine Einfahrt mit Kies",
+      "Ein mit Schuppen bedeckter Tannenzapfen"
+    ],
+    "explanation": "Glatte Materialien fühlen sich gleichmäßig an, wenn du sie berührst. Glas ist oft glatt im Vergleich zu Schleifpapier oder Kies.",
+    "theoryLines": [
+      "Textur beschreibt, wie sich eine Oberfläche anfühlt.",
+      "Materialien können glatt oder rau sein."
+    ]
+  },
+  "sci_phb_g1_materials_med_02": {
+    "stem": "Was beschreibt die Textur eines Schwamms am besten, wenn du ihn berührst?",
+    "options": [
+      "Er ist weich und lässt sich leicht zusammendrücken",
+      "Er ist hart und lässt sich nicht biegen oder zusammendrücken",
+      "Er ist rau und scharf wie grobes Schleifpapier",
+      "Er fühlt sich wie kaltes, glattes Metall an"
+    ],
+    "explanation": "Ein Schwamm ist ein weiches Material, das sich leicht zusammendrücken lässt, weil er viele winzige Löcher mit Luft enthält.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_materials_med_03": {
+    "stem": "Welches Material fühlt sich bei Zimmertemperatur oft kalt an?",
+    "options": [
+      "Metall",
+      "Ein dickes trockenes Handtuch",
+      "Ein Wollpullover",
+      "Ein Schaumstoffkissen"
+    ],
+    "explanation": "Metall leitet Wärme schnell von deiner Hand weg, deshalb fühlt es sich oft kühler an als Stoff oder Schaumstoff.",
+    "theoryLines": [
+      "Verschiedene Materialien fühlen sich beim Berühren unterschiedlich an.",
+      "Metalle sind gute Wärmeleiter."
+    ]
+  },
+  "sci_phb_g1_materials_med_04": {
+    "stem": "Was für ein Material ist Kunststoff?",
+    "options": [
+      "Ein von Menschen gemachtes Material aus Chemikalien, das nicht natürlich vorkommt.",
+      "Ein natürliches Material, das direkt aus Holz entsteht.",
+      "Ein Material, das aus dem Inneren von Tieren kommt.",
+      "Ein Material, das genau dasselbe wie Glas ist."
+    ],
+    "explanation": "Kunststoff ist ein von Menschen gemachtes Material. Er wird aus Chemikalien hergestellt, von denen viele aus Öl stammen. Anders als Holz oder Stein kommt Kunststoff nicht in der Natur vor — Menschen haben ihn erfunden und stellen ihn her. Kunststoff ist leicht, wasserdicht und lässt sich in viele Formen bringen.",
+    "theoryLines": [
+      "Die meisten Kunststoffe entstehen aus Erdöl, einer Art fossilem Brennstoff.",
+      "Weil Kunststoff in der Natur nicht leicht zerfällt, kann er die Umwelt über Hunderte von Jahren belasten."
+    ]
+  },
+  "sci_phb_g1_materials_hard_01": {
+    "stem": "Wie kannst du vergleichen, welches Material härter ist?",
+    "options": [
+      "Schauen, welches das andere leichter zerkratzt",
+      "Nur ihre Farben wiegen",
+      "Auf den lautesten Schatten hören",
+      "Messen, wie süß sie schmecken"
+    ],
+    "explanation": "Härtere Materialien können weichere zerkratzen. Ein sorgfältiger Kratztest hilft, Härte zu vergleichen.",
+    "theoryLines": [
+      "Härte ist eine Eigenschaft von Materialien.",
+      "Naturwissenschaftlerinnen und Naturwissenschaftler vergleichen Eigenschaften mit einfachen Tests."
+    ]
+  },
+  "sci_phb_g1_materials_hard_02": {
+    "stem": "Was geschieht mit einem weichen Schwamm, wenn du fest darauf drückst?",
+    "options": [
+      "Er ändert die Form beim Drücken, kehrt aber zur ursprünglichen Form zurück, wenn du loslässt",
+      "Er zerbricht in winzige Stücke, die sich nicht wieder zusammensetzen lassen",
+      "Er wird hart und so steif wie ein Stück Metall",
+      "Er behält immer genau dieselbe Form, egal wie fest du drückst"
+    ],
+    "explanation": "Ein Schwamm ist ein weiches, elastisches Material. Wenn du ihn drückst, wird er zusammengedrückt und ändert die Form, federt aber in die ursprüngliche Form zurück, wenn du loslässt.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_materials_hard_03": {
+    "stem": "Woran erkennst du, dass eine Oberfläche rau ist?",
+    "options": [
+      "Sie fühlt sich uneben an und kann mehr Reibung erzeugen",
+      "Sie schmeckt immer salzig",
+      "Sie wird bei Tageslicht unsichtbar",
+      "Sie schmilzt beim Klang von Musik"
+    ],
+    "explanation": "Raue Oberflächen haben Unebenheiten oder Textur, die du spüren kannst, und sie haften oft stärker als glatte Oberflächen.",
+    "theoryLines": [
+      "Reibung ist auf vielen rauen Oberflächen größer.",
+      "Tasten ist eine nützliche Weise, Textur zu beobachten."
+    ]
+  },
+  "sci_phb_g1_materials_hard_04": {
+    "stem": "Warum nutzen Menschen verschiedene Materialien für verschiedene Gegenstände?",
+    "options": [
+      "Verschiedene Materialien haben verschiedene nützliche Eigenschaften",
+      "Jedes Material verhält sich genau gleich",
+      "Materialien haben überhaupt keine Eigenschaften",
+      "Gegenstände brauchen nie passende Materialien"
+    ],
+    "explanation": "Wir wählen Materialien nach Festigkeit, Biegsamkeit, Wasserdichtigkeit, Gewicht und anderen Eigenschaften, die zur Aufgabe passen.",
+    "theoryLines": [
+      "Eigenschaften leiten die Materialwahl.",
+      "Ein Regenmantel und ein Schwamm sind für unterschiedliche Bedürfnisse gemacht."
+    ]
+  },
+  "sci_phb_g1_earth_space_med_01": {
+    "stem": "Was gibt uns die Sonne am Tag?",
+    "options": [
+      "Licht und Wärme, damit wir sehen können und die Erde eine angenehme Temperatur behält",
+      "Kalte Winde und starken Regen, der vom Himmel fällt",
+      "Frisches Trinkwasser, das von den Wolken tropft",
+      "Schwerkraft, die alle Gegenstände zum Boden zieht"
+    ],
+    "explanation": "Die Sonne liefert am Tag Licht und Wärme. Ihr Licht lässt uns sehen, und ihre Wärme hält die Erde bei Temperaturen, die Leben ermöglichen.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_earth_space_med_02": {
+    "stem": "Was erzeugt einen Schatten?",
+    "options": [
+      "Ein Gegenstand, der Licht blockiert",
+      "Ein Gegenstand, der extra Sonnenlicht erzeugt",
+      "Schall, der von einer Wand abprallt",
+      "Wind, der sich im Kreis dreht"
+    ],
+    "explanation": "Wenn Licht einen Gegenstand nicht durchdringen kann, entsteht dahinter eine dunklere Form, die Schatten heißt.",
+    "theoryLines": [
+      "Licht breitet sich geradlinig aus.",
+      "Undurchsichtige Gegenstände blockieren Licht und werfen Schatten."
+    ]
+  },
+  "sci_phb_g1_earth_space_med_03": {
+    "stem": "Wann fühlt sich das Wetter draußen gewöhnlich am kältesten an?",
+    "options": [
+      "Im Winter an vielen Orten",
+      "Nur mittags im Hochsommer",
+      "Nur während einer Hitzewelle",
+      "Nur wenn die Sonne um Mitternacht am nächsten ist"
+    ],
+    "explanation": "In vielen Regionen bringt der Winter kältere Temperaturen als andere Jahreszeiten.",
+    "theoryLines": [
+      "Jahreszeiten verändern Temperaturmuster.",
+      "Menschen ziehen sich warm an bei kaltem Wetter."
+    ]
+  },
+  "sci_phb_g1_earth_space_med_04": {
+    "stem": "Was kannst du oft am Nachthimmel sehen?",
+    "options": [
+      "Den Mond und Sterne",
+      "Nur Meereswellen",
+      "Nur unterirdische Wurzeln",
+      "Nur Klassenzimmertafeln"
+    ],
+    "explanation": "Nachts wirkt der Himmel dunkel, und Mond und Sterne fallen leichter auf.",
+    "theoryLines": [
+      "Der Mond spiegelt Sonnenlicht wider.",
+      "Sterne sind entfernte Sonnen, die wie Lichtpunkte wirken."
+    ]
+  },
+  "sci_phb_g1_earth_space_hard_01": {
+    "stem": "Warum gibt es auf der Erde Tag und Nacht?",
+    "options": [
+      "Die Erde dreht sich um ihre Achse, deshalb sind zu verschiedenen Zeiten verschiedene Seiten der Sonne zugewandt",
+      "Der Mond stellt sich vor die Sonne und erzeugt die Nacht",
+      "Die Sonne wandert alle 24 Stunden einmal ganz um die Erde",
+      "Dicke Wolken blockieren alles Sonnenlicht und verursachen völlige Dunkelheit in der Nacht"
+    ],
+    "explanation": "Die Erde dreht sich etwa alle 24 Stunden einmal um ihre Achse. Die der Sonne zugewandte Seite erlebt Tag, und die abgewandte Seite erlebt Nacht.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_earth_space_hard_02": {
+    "stem": "Was können dicke Wolken am Tag mit dem Sonnenlicht machen?",
+    "options": [
+      "Etwas Licht blockieren und den Boden dunkler wirken lassen",
+      "Die Sonne in den Mond verwandeln",
+      "Die Erde am Drehen hindern",
+      "Schatten für immer unmöglich machen"
+    ],
+    "explanation": "Wolkenbedeckung kann das Sonnenlicht verringern, das den Boden erreicht, deshalb kann ein Tag grau und weniger hell wirken.",
+    "theoryLines": [
+      "Wolken bestehen aus winzigen Wassertröpfchen oder Eiskristallen.",
+      "Wetter kann verändern, wie viel Sonnenlicht wir erhalten."
+    ]
+  },
+  "sci_phb_g1_earth_space_hard_03": {
+    "stem": "Warum fühlt sich der Sommer heißer an als andere Jahreszeiten?",
+    "options": [
+      "Die Sonne bleibt länger am Himmel und scheint direkter, sodass extra Licht und Wärme ankommen.",
+      "Die Sonne rückt der Erde viel näher und wirkt im Sommer sichtbar größer.",
+      "Der Mond spiegelt im Sommer extra Sonnenlicht wider und macht das Wetter wärmer.",
+      "Im Sommer regnet es immer, und Regen hält Wärme in der Luft fest."
+    ],
+    "explanation": "Im Sommer ist der Teil der Erde, auf dem du lebst, zur Sonne geneigt. Dadurch steht die Sonne höher am Himmel, ihre Strahlen treffen den Boden direkter, und sie bleibt länger am Tag sichtbar. Mehr direktes Sonnenlicht über längere Zeit bedeutet mehr Wärme.",
+    "theoryLines": [
+      "Die Neigung der Erde, nicht ihre Entfernung zur Sonne, verursacht die Jahreszeiten.",
+      "Wenn die Nordhalbkugel Sommer hat, hat die Südhalbkugel Winter — und umgekehrt."
+    ]
+  },
+  "sci_phb_g1_earth_space_hard_04": {
+    "stem": "Warum tragen wir einen Regenmantel, wenn es regnet?",
+    "options": [
+      "Damit unser Körper trocken bleibt und vor Nässe im Regen geschützt ist.",
+      "Um den Mond durch die Regenwolken klarer zu sehen.",
+      "Damit die Erde Regenwasser schneller in den Boden aufnimmt.",
+      "Damit Regen langsamer und sanfter fällt."
+    ],
+    "explanation": "Wir tragen einen Regenmantel, damit Regen Körper und Kleidung nicht durchnässt. Das wasserdichte Material hält uns trocken und geschützt, während es regnet.",
+    "theoryLines": [
+      "Wasserdichte Materialien lassen Wasser ablaufen, statt es einzusaugen.",
+      "Wir wählen Kleidung passend zum Wetter, um angenehm und geschützt zu bleiben."
+    ]
+  },
+  "sci_phb_g1_environment_med_01": {
+    "stem": "Warum ist es wichtig, Müll in einen Mülleimer zu werfen?",
+    "options": [
+      "Es hält unsere Umgebung sauber und verhindert, dass Tiere durch Abfall verletzt werden",
+      "Mülleimer sind nur Dekoration und helfen der Umwelt eigentlich nicht",
+      "Müll draußen liegen zu lassen ist in Ordnung, weil Regen ihn schnell wegspült",
+      "Die Sonne zersetzt allen Abfall draußen, bevor er Schaden anrichtet"
+    ],
+    "explanation": "Müll in einen Eimer zu werfen hält die Umwelt sauber, verhindert, dass Tiere schädlichen Abfall fressen, und stoppt, dass herumliegender Müll Boden und Wasser verschmutzt.",
+    "theoryLines": []
+  }
+}

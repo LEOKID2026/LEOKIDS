@@ -231,3 +231,71 @@ export const TEACHERS_LANDING = {
     primaryCta: { label: "Open teacher account", href: "/teacher/login" },
   },
 };
+
+/** @type {MarketingPageContent} */
+export const SCHOOLS_LANDING = {
+  pageTitle: "School portal · LEO KIDS",
+  metaDescription:
+    "Manage classes, teachers, and students — with school messaging, progress visibility, and focused practice in one place.",
+  badge: "Schools · Classes · Progress",
+  hero: {
+    title: "A clear school workspace for managers and staff",
+    subtitle:
+      "Coordinate teachers and classes, send school messages, and follow student practice without juggling separate tools.",
+    primaryCta: { label: "School staff login", href: "/school/staff/login" },
+    secondaryCta: { label: "Request school access", href: "/school/register" },
+  },
+  benefits: {
+    items: [
+      {
+        title: "Classes and teachers in one view",
+        text: "See school classes, assigned teachers, and student enrollment without switching systems.",
+      },
+      {
+        title: "School messaging",
+        text: "Send updates to parents and teachers with clear delivery and read tracking.",
+      },
+      {
+        title: "Student practice visibility",
+        text: "Follow subject practice and activities so support stays targeted.",
+      },
+      {
+        title: "Staff access with codes",
+        text: "School staff sign in with a staff code and PIN — built for shared school devices.",
+      },
+      {
+        title: "Aligned with classroom work",
+        text: "Teachers keep their portal tools while the school layer stays coordinated.",
+      },
+      {
+        title: "Built for elementary schools",
+        text: "Designed for primary grades — practice, reports, and communication in one product.",
+      },
+    ],
+  },
+  infoSections: [
+    {
+      title: "What does a school get?",
+      intro: "After approval you can:",
+      bullets: [
+        "Sign in through the school staff portal.",
+        "Manage classes and teachers.",
+        "View enrolled students.",
+        "Send school messages to parents and teachers.",
+        "Follow practice and activity progress.",
+        "Keep school and teacher workflows aligned.",
+      ],
+    },
+    {
+      title: "Why schools use Leo Kids",
+      body: "It connects practice, teacher tools, and school communication so managers see what is happening without replacing the teacher portal.",
+    },
+  ],
+  closing: {
+    title: "One school layer. Clearer coordination.",
+    text: "Request access or sign in as school staff to manage classes, messaging, and progress visibility.",
+    primaryCta: { label: "School staff login", href: "/school/staff/login" },
+    secondaryCta: { label: "Request school access", href: "/school/register" },
+  },
+};
+

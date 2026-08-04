@@ -20,6 +20,11 @@ import {
 import { generateQuestion } from "../../utils/math-question-generator";
 import { sanitizeQuestionForStudentDisplay } from "../../utils/student-question-stem-sanitizer";
 import StudentQuestionDisplay from "../../components/learning/StudentQuestionDisplay";
+import LearningSessionCompletion from "../../components/learning/LearningSessionCompletion.jsx";
+import {
+  resolveLearningSessionQuestionTarget,
+  shouldCompleteLearningSessionByCount,
+} from "../../components/learning/learning-session-run.js";
 import MathScratchpadSlot from "../../components/math-scratchpad/MathScratchpadSlot";
 import { ScratchpadVirtualInputProvider } from "../../components/math-scratchpad/scratchpad-virtual-input";
 import { isMathScratchpadV1Enabled } from "../../utils/math-scratchpad/feature-flag";
@@ -469,33 +474,33 @@ function withMathBookLearningReturn(gradeKey, href) {
 
 function consumeMathBookLearningSnapshot() {
   return (
-    consumeMathG6BookLearningSnapshot() |
-    consumeMathG5BookLearningSnapshot() |
-    consumeMathG4BookLearningSnapshot() |
-    consumeMathG3BookLearningSnapshot() |
-    consumeMathG2BookLearningSnapshot() |
+    consumeMathG6BookLearningSnapshot() ||
+    consumeMathG5BookLearningSnapshot() ||
+    consumeMathG4BookLearningSnapshot() ||
+    consumeMathG3BookLearningSnapshot() ||
+    consumeMathG2BookLearningSnapshot() ||
     consumeMathG1BookLearningSnapshot()
   );
 }
 
 function isMathBookPracticeEntry(query) {
   return (
-    isMathG6BookPracticeEntry(query) |
-    isMathG5BookPracticeEntry(query) |
-    isMathG4BookPracticeEntry(query) |
-    isMathG3BookPracticeEntry(query) |
-    isMathG2BookPracticeEntry(query) |
+    isMathG6BookPracticeEntry(query) ||
+    isMathG5BookPracticeEntry(query) ||
+    isMathG4BookPracticeEntry(query) ||
+    isMathG3BookPracticeEntry(query) ||
+    isMathG2BookPracticeEntry(query) ||
     isMathG1BookPracticeEntry(query)
   );
 }
 
 function consumeMathBookPracticePreset() {
   return (
-    consumeMathG6BookPracticePreset() |
-    consumeMathG5BookPracticePreset() |
-    consumeMathG4BookPracticePreset() |
-    consumeMathG3BookPracticePreset() |
-    consumeMathG2BookPracticePreset() |
+    consumeMathG6BookPracticePreset() ||
+    consumeMathG5BookPracticePreset() ||
+    consumeMathG4BookPracticePreset() ||
+    consumeMathG3BookPracticePreset() ||
+    consumeMathG2BookPracticePreset() ||
     consumeMathG1BookPracticePreset()
   );
 }
@@ -705,6 +710,9 @@ export default function MathMaster() {
   const [lives, setLives] = useState(3);
 
   const [totalQuestions, setTotalQuestions] = useState(0);
+  const totalQuestionsRef = useRef(0);
+  const sessionQuestionTargetRef = useRef(null);
+  const [sessionComplete, setSessionComplete] = useState(false);
   const [avgTime, setAvgTime] = useState(0);
   const [questionStartTime, setQuestionStartTime] = useState(null);
 
@@ -1557,6 +1565,10 @@ export default function MathMaster() {
   }, [correct]);
 
   useEffect(() => {
+    totalQuestionsRef.current = totalQuestions;
+  }, [totalQuestions]);
+
+  useEffect(() => {
     focusedPracticeModeRef.current = focusedPracticeMode;
   }, [focusedPracticeMode]);
 
@@ -1778,6 +1790,7 @@ export default function MathMaster() {
     // Stop background music when game ends
     audio.stopMusic();
     setGameActive(false);
+    setSessionComplete(false);
     mathTrackingOperationKeyRef.current = null;
     setCurrentQuestion(null);
     setScore(0);
@@ -1790,6 +1803,7 @@ export default function MathMaster() {
     setFeedback(null);
     setLives(3);
     setTotalQuestions(0);
+    totalQuestionsRef.current = 0;
     setAvgTime(0);
     setQuestionStartTime(null);
     setShowPreviousSolution(false);
@@ -1799,6 +1813,26 @@ export default function MathMaster() {
       mathPendingDiagnosticProbeRef,
       mathHypothesisLedgerRef
     );
+  }
+
+  function enterSessionComplete() {
+    clearWrongAnswerAdvanceTimer();
+    wrongAnswerPendingRef.current = false;
+    wrongAnswerAdvanceCallbackRef.current = null;
+    setGameActive(false);
+    mathTrackingOperationKeyRef.current = null;
+    setCurrentQuestion(null);
+    setShowPreviousSolution(false);
+    setSelectedAnswer(null);
+    setTextAnswer("");
+    setIsVerticalDisplay(false);
+    setSessionComplete(true);
+    audio.stopMusic();
+  }
+
+  function handleSessionRetry() {
+    setSessionComplete(false);
+    startGame();
   }
 
   useEffect(() => {
@@ -1991,11 +2025,21 @@ export default function MathMaster() {
     clearWrongAnswerAdvanceTimer();
     wrongAnswerPendingRef.current = false;
     wrongAnswerAdvanceCallbackRef.current = null;
+    if (
+      shouldCompleteLearningSessionByCount(
+        totalQuestionsRef.current,
+        sessionQuestionTargetRef.current
+      )
+    ) {
+      recordSessionProgress();
+      enterSessionComplete();
+      return false;
+    }
     closeOpenQuestionLedger(true);
     const levelConfig = getLevelConfig(gradeNumber, level);
     if (!levelConfig) {
       console.error("Invalid level config for grade", gradeNumber, "level", level);
-      return;
+      return false;
     }
 
     let question;
@@ -2019,12 +2063,12 @@ export default function MathMaster() {
       const currentMistake = mistakeList[idx];
       if (currentMistake) {
         const snap =
-          currentMistake.snapshot |
+          currentMistake.snapshot ||
           (currentMistake.originalQuestion
             ? buildMathQuestionSnapshot({
                 ...currentMistake.originalQuestion,
                 operation:
-                  currentMistake.originalQuestion.operation |
+                  currentMistake.originalQuestion.operation ||
                   currentMistake.operation,
               })
             : null);
@@ -2063,7 +2107,7 @@ export default function MathMaster() {
           closeExplanationModal();
           setErrorExplanation("");
           stepByStepViewedRef.current = false;
-          return;
+          return true;
         }
       }
     }
@@ -2145,7 +2189,7 @@ export default function MathMaster() {
       attempts++;
 
       const questionKey =
-        mathQuestionFingerprint(question) |
+        mathQuestionFingerprint(question) ||
         `fallback|${question.question}|${question.correctAnswer}`;
 
       if (localRecentQuestions.wouldAccept(questionKey)) {
@@ -2169,8 +2213,8 @@ export default function MathMaster() {
     if (probeAtStart) {
       const pk = String(question.params?.kind || "");
       const consumed =
-        probeMetaHolder.current != null |
-        pk.startsWith("math_probe_") |
+        probeMetaHolder.current != null ||
+        pk.startsWith("math_probe_") ||
         pk.startsWith("frac_probe_");
       if (consumed) {
         mathPendingDiagnosticProbeRef.current = null;
@@ -2209,6 +2253,7 @@ export default function MathMaster() {
     closeExplanationModal();
     setErrorExplanation("");
     stepByStepViewedRef.current = false;
+    return true;
   }
 
   function trackCurrentQuestionTime() {
@@ -2434,6 +2479,10 @@ export default function MathMaster() {
       alert(ms.t('ui.student.guestLock'));
       return;
     }
+    setSessionComplete(false);
+    sessionQuestionTargetRef.current = resolveLearningSessionQuestionTarget({
+      studentId: learningProfileStudentIdRef.current,
+    });
     if (opts.focusedPracticeMode != null) {
       setFocusedPracticeMode(opts.focusedPracticeMode);
       focusedPracticeModeRef.current = opts.focusedPracticeMode;
@@ -2476,12 +2525,12 @@ export default function MathMaster() {
     wrongAnswerPendingRef.current = false;
     wrongAnswerAdvanceCallbackRef.current = null;
     setIsVerticalDisplay(false); //  :    
-    setGameActive(true);
     setScore(0);
     setStreak(0);
     setCorrect(0);
     setWrong(0);
     setTotalQuestions(0);
+    totalQuestionsRef.current = 0;
     setAvgTime(0);
     setQuestionStartTime(null);
     setFeedback(null);
@@ -2518,7 +2567,19 @@ export default function MathMaster() {
       setTimeLeft(null);
     }
 
-    generateNewQuestion();
+    try {
+      const ok = generateNewQuestion();
+      if (ok === false) {
+        setGameActive(false);
+        setCurrentQuestion(null);
+        return;
+      }
+      setGameActive(true);
+    } catch (err) {
+      console.error("[math-master] startGame question init failed", err);
+      setGameActive(false);
+      setCurrentQuestion(null);
+    }
   }
 
   function handleAdaptivePlannerRecommendedPractice() {
@@ -2528,7 +2589,7 @@ export default function MathMaster() {
       if (!out.ok) return;
       setAdaptivePlannerRecommendationView(null);
       const appliedLevelKey =
-        mapPlannerTargetToDisplayLevel(out.startOptions.targetDifficulty, "math") |
+        mapPlannerTargetToDisplayLevel(out.startOptions.targetDifficulty, "math") ||
         mapPlannerTargetDifficultyToTriLevel(out.startOptions.targetDifficulty);
       startGame({
         fromAdaptivePlannerRecommendedPractice: true,
@@ -2551,18 +2612,7 @@ export default function MathMaster() {
       mathPendingDiagnosticProbeRef,
       mathHypothesisLedgerRef
     );
-    setGameActive(false);
-    mathTrackingOperationKeyRef.current = null;
-    setCurrentQuestion(null);
-    setShowPreviousSolution(false);
-    setFeedback(null);
-    setSelectedAnswer(null);
-    setTextAnswer("");
-    setIsVerticalDisplay(false);
-
-    // Stop background music when game stops
-    audio.stopMusic();
-    
+    enterSessionComplete();
     saveRunToStorage();
   }
 
@@ -2572,15 +2622,9 @@ export default function MathMaster() {
     setStreak(0);
       setFeedback(ms.feedback.timeUpGameOver());
     audio.playSfx("sfx-game-over");
-    setGameActive(false);
-    mathTrackingOperationKeyRef.current = null;
-    setCurrentQuestion(null);
     setTimeLeft(0);
     saveRunToStorage();
-
-    setTimeout(() => {
-      hardResetGame();
-    }, 2000);
+    enterSessionComplete();
   }
 
   const saveBadge = (badge) => {
@@ -2644,6 +2688,7 @@ export default function MathMaster() {
 
     setTotalQuestions((prevCount) => {
       const newCount = prevCount + 1;
+      totalQuestionsRef.current = newCount;
       if (questionStartTime) {
         const elapsed = (Date.now() - questionStartTime) / 1000;
         setAvgTime((prevAvg) =>
@@ -2876,8 +2921,8 @@ export default function MathMaster() {
           setFeedback(ms.t("learning.master.mistakesFixed"));
           setTimeout(() => {
             setFeedback(null);
-            setGameActive(false);
-            setIsVerticalDisplay(false);
+            recordSessionProgress();
+            enterSessionComplete();
           }, 3000);
           return;
         }
@@ -3303,13 +3348,7 @@ export default function MathMaster() {
             audio.playSfx("sfx-game-over");
             recordSessionProgress();
             saveRunToStorage();
-            setGameActive(false);
-            mathTrackingOperationKeyRef.current = null;
-            setCurrentQuestion(null);
-            setTimeLeft(0);
-            setTimeout(() => {
-              hardResetGame();
-            }, 2000);
+            enterSessionComplete();
           } else {
             scheduleWrongAnswerAdvance(() => {
               generateNewQuestion();
@@ -4125,6 +4164,19 @@ export default function MathMaster() {
 
           {!gameActive ? (
             <div className="relative flex flex-col flex-1 min-h-0 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl items-center justify-start md:gap-1">
+              {sessionComplete ? (
+                <div className="w-full px-2 py-4">
+                  <LearningSessionCompletion
+                    title={ms.feedback.gameOver()}
+                    statsLine={ms.t("learning.master.correctOfTotal", {
+                      correct,
+                      total: totalQuestions,
+                    })}
+                    retryLabel={ms.t("common.retry")}
+                    onRetry={handleSessionRetry}
+                  />
+                </div>
+              ) : null}
               {bookIndexHref ? (
                 <LearningBookIndexTile
                   subject="math"

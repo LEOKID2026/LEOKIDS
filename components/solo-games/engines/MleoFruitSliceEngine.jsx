@@ -45,6 +45,8 @@ function segmentHitsCircle(p) {
  *   onSessionEnd?: (metrics: object) => void,
  * }} props
  */
+import { gameHudScoreColon, gameHudLabel } from "../../../lib/games/game-hud-copy.js";
+
 export default function MleoFruitSliceEngine({
   autoStart = false,
   initialDifficulty = "medium",
@@ -509,7 +511,7 @@ export default function MleoFruitSliceEngine({
       {!showIntro && (
         <div className="relative flex min-h-0 w-full flex-1 flex-col px-1 pb-1 pt-1">
           <div className="pointer-events-none absolute left-1/2 top-2 z-[80] max-w-[98vw] -translate-x-1/2 rounded-lg bg-black/65 px-3 py-2 text-center text-[11px] font-bold leading-snug sm:text-sm">
-            <span className="text-amber-300">Score: {score}</span>
+            <span className="text-amber-300">{gameHudScoreColon()} {score}</span>
             {" · "}
             <span>Goal: {targetScore}</span>
             {" · "}

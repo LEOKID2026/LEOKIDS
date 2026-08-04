@@ -1,0 +1,25 @@
+{
+  "namespaceFiles": 0,
+  "packFiles": 396,
+  "stringsSeen": 8630,
+  "translated": 7179,
+  "skipped": 291,
+  "bySource": {
+    "cache": 6987,
+    "override": 450,
+    "skip": 291,
+    "ph-mismatch": 1
+  },
+  "domains": {
+    "learning": 59,
+    "reports": 41,
+    "games": 148,
+    "books": 3,
+    "rewards": 2,
+    "global-burn-down": 142,
+    "demo": 1
+  },
+  "forbiddenHits": [],
+  "mtFails": 1,
+  "cacheSize": 6127
+}

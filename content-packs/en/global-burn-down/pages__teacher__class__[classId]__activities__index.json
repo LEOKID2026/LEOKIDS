@@ -1,5 +1,21 @@
 {
   "copy": {
-    "class_activities": "Class activities"
+    "class_activities": "Class activities",
+    "back_to_dashboard": "← Back to dashboard",
+    "subtitle": "Create, launch, and track class activities.",
+    "new_activity": "New activity",
+    "loading": "Loading activities…",
+    "error_loading": "Error loading",
+    "network_error": "Network error",
+    "try_again": "Try again",
+    "forbidden": "You do not have permission to view this class's activities.",
+    "empty": "No activities yet. Create a new activity.",
+    "col_title": "Title",
+    "col_status": "Status",
+    "col_type": "Type",
+    "col_progress": "Progress",
+    "col_actions": "Actions",
+    "edit_launch": "Edit / launch",
+    "view": "View"
   }
 }

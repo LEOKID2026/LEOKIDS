@@ -9,7 +9,8 @@
     "legal_document_links": "روابط الوثائق القانونية"
   },
   "components__math-scratchpad__MathScratchpadPanel": {
-    "scratch_pad": "وسادة الصفر"
+    "scratch_pad": "مسودة الحساب",
+    "close": "إغلاق"
   },
   "components__math-scratchpad__MathScratchpadWorkspace": {
     "fraction_denominator": "مقام الكسر",
@@ -46,13 +47,31 @@
   },
   "components__school-portal__SchoolDrillDown": {
     "grade_status": "حالة الصف",
-    "class_status": "حالة الفصل"
+    "class_status": "حالة الفصل",
+    "loading": "جارٍ التحميل…",
+    "try_again": "حاول مرة أخرى",
+    "col_subject": "المادة",
+    "col_class": "الفصل",
+    "col_teacher": "المعلم",
+    "col_type": "النوع",
+    "active_classes": "{count} فصول نشطة",
+    "children_count": "{count} أطفال",
+    "activities_count": "الأنشطة: {count}",
+    "view_answers": "عرض الإجابات",
+    "suspended_label": "معلق"
   },
   "components__school-portal__SchoolOperatorsManager": {
     "no_secretaries_linked": "لا يوجد سكرتيرات مرتبطة"
   },
   "components__school-portal__SchoolPortalShell": {
     "school_navigation": "الملاحة المدرسية"
+  },
+  "components__school-portal__SchoolPortalUi": {
+    "col_subject": "المادة",
+    "col_class": "الفصل",
+    "col_teacher": "المعلم",
+    "col_type": "النوع",
+    "view_answers": "عرض الإجابات"
   },
   "components__school-portal__SchoolReportModal": {
     "loading_report": "جارٍ تحميل التقرير…"
@@ -79,20 +98,20 @@
   },
   "components__seo__public-seo-wide-defaults": {
     "ready_to_start": "هل أنت مستعد للبدء؟",
-    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "افتح حساب أحد الوالدين، وأضف طفلك، ودعه يتدرب بالسرعة التي تناسبك.",
+    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "افتح حساب ولي الأمر، وأضف طفلك، ودعه يتدرب بالسرعة التي تناسبك.",
     "want_to_create_more_sheets_and_unlock_every_topic": "هل تريد إنشاء المزيد من الأوراق وفتح كل موضوع؟",
     "in_the_full_parent_portal_you_can_create_unlimited_worksheets_choose_add": "في البوابة الأصلية الكاملة، يمكنك إنشاء أوراق عمل غير محدودة، واختيار موضوعات إضافية، ودمج الأوراق مع الممارسة الرقمية وتتبع التقدم."
   },
   "components__seo__PublicSeoEntrySection": {
     "practice_areas": "مجالات الممارسة",
-    "parent_guides": "أدلة الوالدين"
+    "parent_guides": "أدلة أولياء الأمور"
   },
   "components__seo__PublicSeoPageActions": {
     "page_navigation": "التنقل في الصفحة"
   },
   "components__seo__PublicSeoParentCta": {
     "parent_login_sign_up": "تسجيل دخول/تسجيل ولي الأمر",
-    "explore_the_parent_portal": "استكشف البوابة الأم"
+    "explore_the_parent_portal": "استكشف بوابة ولي الأمر"
   },
   "components__seo__PublicSeoWideCardGrid": {
     "practice_areas": "مجالات الممارسة"
@@ -100,8 +119,41 @@
   "components__seo__PublicSeoWideRelatedGuides": {
     "related_guides": "أدلة ذات صلة"
   },
+  "components__student__StudentActivityQuestionSurface": {
+    "show_landscape": "عرض أفقي",
+    "show_portrait": "عرض عمودي",
+    "landscape": "↔️ أفقي",
+    "portrait": "↕️ عمودي"
+  },
+  "components__student__StudentActivitySubmitConfirmModal": {
+    "title": "إنهاء وإرسال هذا النشاط؟",
+    "answered_of": "أجبت على {answered} من {questionCount} أسئلة",
+    "unanswered_warn": "هناك {count} أسئلة بلا إجابة. بعد الإرسال لا يمكنك العودة وتغيير الإجابات.",
+    "submit_note": "بعد الإرسال لا يمكنك العودة وتغيير الإجابات.",
+    "cancel": "إلغاء",
+    "submitting": "جارٍ الإرسال…",
+    "confirm": "نعم، إنهاء وإرسال"
+  },
   "components__student__StudentAssignedActivityQuestionStage": {
-    "enlarge_diagram": "تكبير الرسم البياني"
+    "enlarge": "⛶ تكبير",
+    "enlarge_diagram": "تكبير الرسم"
+  },
+  "components__student__StudentAssignedActivityShell": {
+    "back_to_home": "← العودة للرئيسية"
+  },
+  "components__student__StudentClassroomActivitiesPanel": {
+    "view_result": "عرض النتيجة",
+    "continue": "متابعة",
+    "start": "ابدأ",
+    "questions_meta": "أسئلة",
+    "class_activities": "أنشطة الفصل",
+    "parent_activities": "أنشطة أولياء الأمور",
+    "intro": "تظهر هنا الأنشطة التي عيّنها معلمك أو ولي أمرك.",
+    "personal_activities_section": "الأنشطة الشخصية",
+    "show_landscape": "عرض أفقي",
+    "show_portrait": "عرض عمودي",
+    "landscape": "↔️ أفقي",
+    "portrait": "↕️ عمودي"
   },
   "components__teacher-portal__GuardianAccessPanel": {
     "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "سيتم إلغاء الرمز الحالي وإنشاء رمز جديد. احفظ الرمز الجديد، وسيظهر مرة واحدة فقط.",
@@ -119,32 +171,110 @@
   "components__teacher-portal__TeacherActivityStudentAnswersModal": {
     "close": "إغلاق"
   },
+  "components__teacher-portal__TeacherClassActivitiesNav": {
+    "aria_label": "تنقّل الفصل",
+    "class_report": "تقرير الفصل",
+    "activities": "الأنشطة",
+    "worksheets": "أوراق عمل",
+    "discussion": "نقاش"
+  },
   "components__teacher-portal__TeacherClassReportModal": {
     "please_select_valid_dates": "الرجاء تحديد تواريخ صالحة",
-    "class_report": "تقرير الطبقة",
-    "loading_class_report": "جارٍ تحميل تقرير الصف…"
+    "class_report": "تقرير الفصل",
+    "loading_class_report": "جارٍ تحميل تقرير الفصل…"
   },
   "components__teacher-portal__TeacherDashboardClient": {
-    "remove_this_student_from_the_class": "هل تريد إزالة هذا الطالب من الفصل؟",
-    "remove_this_student_from_your_teacher_list": "هل تريد إزالة هذا الطالب من قائمة المعلمين لديك؟",
-    "manage_class": "إدارة الصف",
-    "full_name_of_new_student": "الاسم الكامل للطالب الجديد",
-    "students": "الطلاب",
-    "classes": "فصول",
-    "class_report": "تقرير الطبقة",
+    "remove_this_student_from_the_class": "هل تريد إزالة هذا التلميذ من الفصل؟",
+    "remove_this_student_from_your_teacher_list": "هل تريد إزالة هذا التلميذ من قائمة المعلمين لديك؟",
+    "manage_class": "إدارة الفصل",
+    "full_name_of_new_student": "الاسم الكامل للتلميذ الجديد",
+    "students": "التلاميذ",
+    "classes": "الفصول",
+    "class_report": "تقرير الفصل",
     "activities": "أنشطة",
-    "filter_student_list": "تصفية قائمة الطلاب",
-    "search_by_name": "البحث بالاسم…"
+    "filter_student_list": "تصفية قائمة التلاميذ",
+    "search_by_name": "البحث بالاسم…",
+    "hi_teacher_name": "مرحبًا، {name}",
+    "hi_teacher_fallback": "مرحبًا، أيها المعلم",
+    "dashboard_subtitle": "لوحة التحكم — الفصول والتلاميذ",
+    "sign_out": "تسجيل الخروج",
+    "latest_topic_activity": "آخر موضوع/نشاط",
+    "loading_activity_data": "جارٍ تحميل بيانات النشاط…",
+    "not_enough_data": "لا توجد بيانات كافية بعد",
+    "worksheets_link": "أوراق العمل ←",
+    "send_activity_link": "إرسال نشاط للتلاميذ الخاصين ←",
+    "students_need_attention": "تلاميذ بحاجة إلى اهتمام",
+    "my_classes": "فصولي الدراسية",
+    "students_count": "التلاميذ: {count}",
+    "subjects_label": "المواد: {label}",
+    "show_class_students": "عرض تلاميذ الفصل",
+    "manage_class_btn": "إدارة الفصل",
+    "students_heading": "التلاميذ",
+    "showing_label": "عرض: {label}",
+    "sort_label": "ترتيب:",
+    "no_students_filter": "لا يوجد تلاميذ لهذا الفلتر.",
+    "view_report": "عرض التقرير",
+    "loading_badge": "جارٍ التحميل…",
+    "close_modal": "إغلاق",
+    "classes_heading": "الفصول الدراسية",
+    "creating": "جارٍ الإنشاء…",
+    "class_name_label": "اسم الفصل",
+    "save": "حفظ",
+    "add_student_heading": "إضافة تلميذ",
+    "add_student": "إضافة",
+    "linked_not_in_class": "تلاميذ مرتبطون غير موجودين في هذا الفصل:",
+    "add_to_class": "إضافة إلى الفصل",
+    "students_in_class_count": "التلاميذ في الفصل ({count} / {cap})",
+    "students_in_class_count_open": "التلاميذ في الفصل ({count})",
+    "class_at_cap": "بلغ هذا الفصل الحد الأقصى البالغ {cap} تلميذاً.",
+    "no_students_in_class": "لا يوجد تلاميذ في هذا الفصل.",
+    "cancel": "إلغاء",
+    "rename": "إعادة التسمية",
+    "remove_from_class": "إزالة من الفصل",
+    "remove_from_list": "إزالة من القائمة",
+    "needs_immediate_attention": "يحتاج اهتمامًا فوريًا",
+    "needs_reinforcement": "يحتاج تعزيزًا",
+    "worth_monitoring": "يستحق المتابعة",
+    "filter_all": "الكل",
+    "filter_intervention": "يحتاج تدخلاً / تعزيزاً",
+    "filter_low_activity": "نشاط منخفض",
+    "filter_watch": "مراقبة",
+    "filter_strong": "متقدم",
+    "sort_name": "الاسم",
+    "sort_activity": "آخر نشاط",
+    "sort_status": "حالة التعلم",
+    "report_subject": "تقرير {subject}",
+    "activity_subject": "نشاط {subject}",
+    "class_fallback": "فصل",
+    "student_fallback": "التلميذ",
+    "could_not_update_class_name": "تعذّر تحديث اسم الفصل.",
+    "could_not_add_student": "تعذّر إضافة التلميذ.",
+    "could_not_add_to_class": "تعذّر إضافة التلميذ إلى الفصل.",
+    "could_not_remove_from_class": "تعذّر إزالة التلميذ من الفصل.",
+    "could_not_update_student_name": "تعذّر تحديث اسم التلميذ.",
+    "could_not_remove_student": "تعذّر إزالة التلميذ.",
+    "could_not_create_class": "تعذّر إنشاء الفصل.",
+    "could_not_add_class_limit": "بلغ هذا الفصل الحد الأقصى لعدد التلاميذ (40 تلميذاً). لا يمكن إضافة المزيد.",
+    "student_stats_line": "الجلسات: {sessions} · الإجابات: {answers} · النجاح: {acc}",
+    "attention_success_pct": "{pct}% نجاح",
+    "attention_answers_count": " · {count} إجابات"
   },
   "components__teacher-portal__TeacherDiscussionQuestionPicker": {
     "level": "مستوى",
-    "whole_class": "الطبقة بأكملها",
-    "selected_students": "الطلاب المختارون",
-    "discussion_with_response_students_submit_an_answer": "مناقشة مع الرد (يرسل الطلاب إجابة)",
+    "whole_class": "الفصل بأكمله",
+    "selected_students": "التلاميذ المختارون",
+    "discussion_with_response_students_submit_an_answer": "مناقشة مع الرد (يرسل التلاميذ إجابة)",
     "explanation_only_no_response_required": "التوضيح فقط - لا يوجد رد مطلوب"
   },
   "components__teacher-portal__TeacherParentMessagePanel": {
     "write_a_short_message_to_the_parent": "اكتب رسالة قصيرة إلى ولي الأمر..."
+  },
+  "components__teacher-portal__TeacherReportPageStates": {
+    "load_report_error": "حدث خطأ أثناء تحميل التقرير. حدّث الصفحة وحاول مرة أخرى.",
+    "loading_report_hint": "جارٍ تحميل التقرير — قد يستغرق بضع ثوانٍ.",
+    "try_again": "حاول مرة أخرى",
+    "back_to_dashboard": "العودة إلى لوحة التحكم",
+    "forbidden_report": "ليس لديك صلاحية لعرض هذا التقرير."
   },
   "components__teacher-portal__TeacherStudentIndividualActivitiesPanel": {
     "level": "مستوى"
@@ -153,13 +283,13 @@
     "loading": "تحميل…"
   },
   "components__worksheet-activities__TeacherWorksheetReport": {
-    "total_students": "إجمالي الطلاب",
-    "opened_pdf": "فتح قوات الدفاع الشعبي",
+    "total_students": "إجمالي التلاميذ",
+    "opened_pdf": "فتح PDF",
     "completed_pdf": "مكتمل (PDF)",
     "submitted_answers": "الإجابات المقدمة",
     "pending_review": "في انتظار المراجعة",
     "published": "تم النشر",
-    "class_average": "متوسط ​​الفصل"
+    "class_average": "متوسط الفصل"
   },
   "components__worksheets__WorksheetAnswerKeyList": {
     "answer": "الإجابة"
@@ -171,9 +301,9 @@
     "materials": "المواد",
     "experiments": "التجارب",
     "earth_and_space": "الأرض والفضاء",
-    "environment": "بيئة",
-    "standard": "معيار",
-    "medium": "واسطة",
+    "environment": "البيئة",
+    "standard": "عادي",
+    "medium": "متوسط",
     "advanced": "متقدم",
     "basic_shapes": "الأشكال الأساسية",
     "perimeter": "المحيط",
@@ -183,13 +313,13 @@
     "triangles": "المثلثات",
     "quadrilaterals": "رباعيات",
     "transformations": "التحولات",
-    "rotation": "تناوب",
+    "rotation": "دوران",
     "symmetry": "التناظر",
     "diagonals": "الأقطار",
-    "heights": "مرتفعات",
+    "heights": "الارتفاعات",
     "tiling": "تبليط",
     "circles": "الدوائر",
-    "solid_shapes": "الأشكال الصلبة",
+    "solid_shapes": "المجسمات",
     "pythagorean_theorem": "نظرية فيثاغورس"
   },
   "lib__classroom-activities__student-activity-choice-layout.client": {
@@ -223,6 +353,16 @@
     "could_not_load_the_question_right_now": "تعذر تحميل السؤال الآن",
     "could_not_submit_an_answer_right_now": "لا يمكن تقديم إجابة الآن"
   },
+  "lib__classroom-activities__student-activity-result-labels.client": {
+    "summary_got_of": "أجبت بشكل صحيح على {correct} من {total} أسئلة",
+    "summary_got": "أجبت بشكل صحيح على {correct} أسئلة",
+    "summary_finished": "أنهيت النشاط",
+    "score_chip_of": "{correct}/{total} أسئلة",
+    "score_chip": "{correct} أسئلة"
+  },
+  "lib__classroom-activities__student-activity-scope-labels.client": {
+    "personal_activity": "نشاط شخصي"
+  },
   "lib__game-audio__game-audio-manifest": {
     "game_start": "بداية اللعبة",
     "session_end": "نهاية الجلسة",
@@ -246,16 +386,16 @@
     "line_clear": "الخط واضح",
     "correct_placement": "الموضع الصحيح",
     "wrong_placement": "وضع خاطئ",
-    "item_pickup": "بيك اب البند",
+    "item_pickup": "التقاط عنصر",
     "warning": "تحذير",
     "fruit_slice": "شريحة الفاكهة",
     "train_departs": "يغادر القطار",
     "place_mark": "علامة المكان",
     "reveal_choice": "كشف الاختيار",
-    "mine_click": "انقر لي",
+    "mine_click": "نقر المنجم",
     "mine_merge": "دمج الألغام",
     "rock_break": "استراحة صخرية",
-    "mine_gift": "هدية لي",
+    "mine_gift": "هدية المنجم",
     "learning_music": "تعلم الموسيقى",
     "educational_instruction_voice": "صوت التعليمة التعليمية",
     "educational_feedback_voice": "صوت التغذية الراجعة التعليمية",
@@ -269,26 +409,26 @@
     "cash_register": "تسجيل النقدية",
     "recycling_conveyor": "ناقل إعادة التدوير",
     "place_evidence": "مكان الأدلة",
-    "arcade_music": "موسيقى الأركيد",
+    "arcade_music": "موسيقى الصالة الألعاب",
     "puzzle_music": "موسيقى اللغز",
-    "shop_music": "تسوق الموسيقى",
+    "shop_music": "موسيقى المتجر",
     "mine_music": "موسيقى الألغام",
-    "button_click": "انقر فوق الزر",
+    "button_click": "نقر الزر",
     "window_open": "نافذة مفتوحة",
     "low_time": "وقت منخفض",
     "help_voice": "صوت المساعدة"
   },
   "lib__games__game-catalog.constants": {
     "this_game_is_not_available_right_now": "هذه اللعبة غير متوفرة حاليا",
-    "locked_by_parents": "مغلق من قبل الوالدين"
+    "locked_by_parents": "مغلق من قِبل ولي الأمر"
   },
   "lib__global__product-context.server": {
-    "this_student_does_not_belong_to_leo_kids_global": "هذا الطالب لا ينتمي إلى LEO KIDS Global.",
-    "student_not_found_for_this_parent_on_leo_kids_global": "لم يتم العثور على الطالب لهذا الوالد في LEO KIDS Global.",
+    "this_student_does_not_belong_to_leo_kids_global": "هذا التلميذ لا ينتمي إلى Leo Kids Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "لم يتم العثور على التلميذ لولي الأمر هذا في Leo Kids Global.",
     "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "مخطط عزل المنتج غير جاهز. قم بتطبيق SQL/Global-product-isolation قبل تمكين الكتابة."
   },
   "lib__global__product-membership.server": {
-    "this_leo_kids_global_membership_is_suspended": "تم تعليق عضوية LEO KIDS Global."
+    "this_leo_kids_global_membership_is_suspended": "تم تعليق عضوية Leo Kids Global."
   },
   "lib__guest__guest-economy-guard.server": {
     "the_shop_is_not_available_in_guest_mode": "المتجر غير متوفر في وضع الضيف.",
@@ -304,7 +444,7 @@
     "too_many_attempts_please_try_again_in_a_few_minutes": "هناك عدد كبير جدًا من المحاولات - يرجى المحاولة مرة أخرى خلال بضع دقائق."
   },
   "lib__guest__guest-student.server": {
-    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "هذا الرقم مرتبط بالفعل بأحد الوالدين - قم بتسجيل الدخول باستخدام اسم المستخدم ورقم التعريف الشخصي."
+    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "هذا الرقم مرتبط بالفعل بولي الأمر - قم بتسجيل الدخول باستخدام اسم المستخدم ورمز PIN."
   },
   "lib__guest__guest-topic-access.server": {
     "this_topic_is_locked_in_guest_mode": "تم تأمين هذا الموضوع في وضع الضيف."
@@ -330,7 +470,7 @@
     "review_mistakes": "مراجعة الأخطاء"
   },
   "lib__learning__subject-permissions__subject-access.server": {
-    "this_subject_is_locked_by_the_parents": "هذا الموضوع مغلق من قبل الوالدين.",
+    "this_subject_is_locked_by_the_parents": "هذه المادة مغلقة من قِبل أولياء الأمور.",
     "you_don_t_have_permission_to_select_this_grade": "ليس لديك الإذن لتحديد هذا الصف."
   },
   "lib__parent-server__delete-parent-owned-student.server": {
@@ -340,12 +480,12 @@
     "not_available_for_guest_accounts": "غير متوفر لحسابات الضيوف"
   },
   "lib__school-portal__operator-grant-labels": {
-    "manage_child_and_parent_access": "إدارة وصول الطفل والآباء",
+    "manage_child_and_parent_access": "إدارة وصول الطفل وأولياء الأمور",
     "view_reports_and_child_details": "عرض التقارير وتفاصيل الطفل"
   },
   "lib__school-portal__school-messaging-ui": {
-    "homeroom_class_parents": "آباء الطبقة المنزلية",
-    "homeroom_child_parents": "آباء الأطفال في المنزل"
+    "homeroom_class_parents": "أولياء أمور الفصل الأساسي",
+    "homeroom_child_parents": "أولياء أمور الأطفال"
   },
   "lib__school-portal__school-report-view-model": {
     "no_data_in_this_period": "لا توجد بيانات في هذه الفترة",
@@ -354,31 +494,31 @@
     "no_data": "لا توجد بيانات",
     "submitted_active": "تم الإرسال / نشط",
     "no_data_in_period": "لا توجد بيانات في الفترة",
-    "class_activities": "الأنشطة الصفية",
+    "class_activities": "أنشطة الفصل",
     "no_activities": "لا توجد أنشطة",
-    "students_in_class": "الطلاب في الصف",
+    "students_in_class": "التلاميذ في الفصل",
     "no_children": "لا أطفال",
-    "students_who_need_attention": "الطلاب الذين يحتاجون إلى الاهتمام",
-    "student_distribution": "توزيع الطلاب",
+    "students_who_need_attention": "التلاميذ الذين يحتاجون إلى الاهتمام",
+    "student_distribution": "توزيع التلاميذ",
     "no_class_activities_to_show_for_this_period": "لا توجد أنشطة صفية لعرضها لهذه الفترة.",
     "no_children_are_registered_in_this_class": "لم يتم تسجيل أي أطفال في هذا الفصل.",
-    "not_enough_data_for_a_distribution_breakdown": "لا توجد بيانات كافية لانهيار التوزيع.",
+    "not_enough_data_for_a_distribution_breakdown": "لا توجد بيانات كافية لتقسيم التوزيع.",
     "no_children_have_been_flagged_for_attention": "لم يتم وضع علامة على أي أطفال للاهتمام.",
     "learning_status": "حالة التعلم",
     "needs_intervention": "يحتاج إلى تدخل",
     "practice_day": "يوم التدريب",
     "mistake": "خطأ",
     "keep_monitoring_progress": "استمر في مراقبة التقدم",
-    "breakdown_by_subject": "التقسيم حسب الموضوع",
+    "breakdown_by_subject": "التوزيع حسب المادة",
     "no_data_yet": "لا توجد بيانات بعد",
     "recent_activities": "الأنشطة الأخيرة",
     "no_activity": "لا يوجد نشاط",
     "follow_up_recommendations": "توصيات المتابعة",
-    "no_data_by_subject": "لا توجد بيانات حسب الموضوع.",
+    "no_data_by_subject": "لا توجد بيانات حسب المادة.",
     "no_learning_activity_recently": "لا يوجد نشاط تعليمي مؤخرًا.",
     "no_further_recommendations_at_this_time": "لا توجد توصيات أخرى في هذا الوقت.",
-    "general_class_report_all_subjects": "تقرير الصف العام · جميع المواد",
-    "no_subjects_to_display": "لا توجد مواضيع لعرضها."
+    "general_class_report_all_subjects": "التقرير العام للفصل · جميع المواد",
+    "no_subjects_to_display": "لا توجد مواد لعرضها."
   },
   "lib__school-server__school-browse-status.server": {
     "not_enough_data": "لا توجد بيانات كافية"
@@ -391,60 +531,69 @@
     "admin_token_does_not_match_server_configuration": "رمز المشرف لا يتطابق مع تكوين الخادم"
   },
   "lib__site__public-page-seo": {
-    "leo_kids_learning_games_and_progress_tracking_for_kids": "Leo Kids - التعلم والألعاب وتتبع التقدم للأطفال",
-    "contact_leo_kids": "الاتصال · ليو كيدز",
-    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "اتصل بـ Leo Kids - الأسئلة أو الدعم أو تقارير الأخطاء أو الأفكار لتحسين الموقع.",
-    "about_leo_kids": "حول · ليو كيدز",
-    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "حول Leo Kids - التدريب على الموضوع، وتقارير أولياء الأمور، والألعاب، والعملات المعدنية، والبطاقات للأطفال.",
-    "learn_and_play_with_leo_leo_kids": "تعلم والعب مع Leo · Leo Kids",
-    "parent_portal_leo_kids": "بوابة الوالدين · أطفال ليو",
-    "teacher_portal_leo_kids": "بوابة المعلم · ليو كيدز",
-    "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "أدوات التتبع والأنشطة الشخصية والتقارير - مصممة للمدرسين الخصوصيين في Leo Kids.",
-    "parent_login_leo_kids": "تسجيل دخول الوالدين · أطفال ليو",
-    "sign_in_to_the_leo_kids_parent_portal": "قم بتسجيل الدخول إلى بوابة الوالدين الخاصة بـ Leo Kids.",
-    "teacher_login_leo_kids": "تسجيل دخول المعلم · أطفال ليو",
-    "sign_in_to_the_leo_kids_teacher_portal": "قم بتسجيل الدخول إلى بوابة معلم Leo Kids.",
-    "practice_by_subject_leo_kids": "الممارسة حسب الموضوع · أطفال ليو",
-    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "الممارسة الرقمية لمتعلمي المرحلة الابتدائية في الرياضيات والهندسة واللغة الإنجليزية والعلوم.",
-    "math_practice_by_grade_and_topic_leo_kids": "ممارسة الرياضيات حسب الصف والموضوع · أطفال ليو",
-    "reading_comprehension_practice_leo_kids": "ممارسة القراءة والفهم · أطفال ليو",
-    "english_practice_by_grade_and_topic_leo_kids": "ممارسة اللغة الإنجليزية حسب الصف والموضوع · أطفال ليو",
-    "english_practice_vocabulary_phonics_grammar_sentences_and_reading": "ممارسة اللغة الإنجليزية - المفردات، الصوتيات، القواعد، الجمل، والقراءة.",
-    "geometry_practice_by_grade_and_topic_leo_kids": "ممارسة الهندسة حسب الصف والموضوع · أطفال الأسد",
-    "geometry_practice_shapes_angles_perimeter_area_volume_and_more": "ممارسة الهندسة - الأشكال والزوايا والمحيط والمساحة والحجم والمزيد.",
-    "science_practice_by_topic_leo_kids": "ممارسة العلوم حسب الموضوع · أطفال الأسد",
-    "science_practice_body_animals_plants_materials_earth_and_weather": "ممارسة العلوم - الجسم والحيوانات والنباتات والمواد والأرض والطقس.",
-    "learning_games_for_kids_leo_kids": "ألعاب تعليمية للأطفال · ليو كيدز",
-    "learning_games_that_reinforce_practice_with_challenges_and_rewards": "ألعاب تعليمية تعزز الممارسة من خلال التحديات والمكافآت.",
-    "digital_practice_without_printing_leo_kids": "الممارسة الرقمية بدون طباعة · أطفال ليو",
-    "practice_online_by_subject_and_topic_no_printing_required": "تدرب عبر الإنترنت حسب الموضوع والموضوع - لا حاجة للطباعة.",
-    "parent_progress_reports_leo_kids": "تقارير تقدم الوالدين · أطفال ليو",
-    "see_what_your_child_practiced_topics_to_strengthen_and_clear_next_steps": "تعرف على ما مارسه طفلك، والمواضيع التي يجب تقويتها، ووضح الخطوات التالية.",
-    "printable_worksheets_for_kids_leo_kids": "أوراق عمل قابلة للطباعة للأطفال · أطفال الأسد",
-    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "أوراق عمل جاهزة، ومولد أوراق العمل، ومفاتيح الإجابة للتدريب الأولي.",
-    "help_center_leo_kids": "مركز المساعدة · أطفال ليو",
-    "guides_for_parents_leo_kids": "أدلة للآباء والأمهات · أطفال ليو",
-    "math_practice_at_home_leo_kids_guides": "ممارسة الرياضيات في المنزل · أدلة ليو للأطفال",
-    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "كيفية اختيار موضوع الرياضيات، والرد على الأخطاء، وبناء ممارسة منزلية ثابتة.",
-    "reading_practice_at_home_leo_kids_guides": "ممارسة القراءة في المنزل · أدلة ليو للأطفال",
-    "how_to_practice_reading_accuracy_pace_and_understanding_with_short_texts": "كيفية التدرب على دقة القراءة وسرعتها وفهمها من خلال النصوص القصيرة في المنزل.",
-    "reading_comprehension_at_home_leo_kids_guides": "القراءة والفهم في المنزل · أدلة ليو للأطفال",
-    "how_to_help_your_child_find_details_explain_answers_and_draw_conclusions": "كيف تساعد طفلك في العثور على التفاصيل وشرح الإجابات واستخلاص النتائج من النص.",
-    "english_vocabulary_practice_leo_kids_guides": "ممارسة المفردات الإنجليزية · أدلة ليو للأطفال",
-    "how_to_practice_new_words_in_context_and_review_them_through_the_week": "كيفية التدرب على الكلمات الجديدة في سياقها ومراجعتها خلال الأسبوع.",
-    "learning_games_at_home_leo_kids_guides": "ألعاب التعلم في المنزل · أدلة ليو للأطفال",
-    "how_to_combine_learning_games_with_focused_practice_by_subject_and_topic": "كيفية الجمع بين الألعاب التعليمية والممارسة المركزة حسب الموضوع والموضوع.",
-    "math_games_for_kids_leo_kids_guides": "ألعاب الرياضيات للأطفال · أدلة ليو للأطفال",
-    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "كيفية استخدام ألعاب الرياضيات للعمليات والأرقام وممارسة حل المشكلات.",
-    "parent_progress_tracking_leo_kids_guides": "تتبع تقدم الوالدين · أدلة ليو للأطفال",
-    "how_to_read_progress_reports_and_spot_patterns_over_time": "كيفية قراءة التقارير المرحلية وتحديد الأنماط مع مرور الوقت.",
-    "choosing_a_topic_to_strengthen_leo_kids_guides": "اختيار موضوع لتعزيز · أدلة ليو للأطفال",
-    "how_to_pick_the_next_topic_based_on_reports_answers_and_repeating_diffic": "كيفية اختيار الموضوع التالي بناءً على التقارير والإجابات وصعوبة التكرار.",
-    "home_practice_routine_leo_kids_guides": "روتين الممارسة المنزلية · أدلة ليو للأطفال",
-    "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "كيفية بناء روتين تدريب منزلي بهدف واحد واضح في كل جلسة.",
-    "practice_without_printing_leo_kids_guides": "ممارسة بدون طباعة · أدلة ليو للأطفال",
-    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "كيفية استخدام الممارسات والألعاب الرقمية، ومتى تساعد أوراق العمل.",
-    "leo_kids_practice_for_elementary_learners": "أطفال ليو - تدريب للمتعلمين في المرحلة الابتدائية."
+    "leo_kids_learning_games_and_progress_tracking_for_kids": "Leo Kids — التعلّم والألعاب وتتبع التقدّم للأطفال",
+    "contact_leo_kids": "تواصل · Leo Kids",
+    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "تواصل مع Leo Kids — أسئلة أو دعم أو بلاغات أخطاء أو أفكار لتحسين الموقع.",
+    "about_leo_kids": "حول · Leo Kids",
+    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "حول Leo Kids — ممارسة المواد، وتقارير أولياء الأمور، والألعاب، والعملات، والبطاقات للأطفال.",
+    "learn_and_play_with_leo_leo_kids": "تعلّم والعب مع Leo · Leo Kids",
+    "kids_page_practice_math_geometry_english_science_games_coins_cards": "صفحة الأطفال — ممارسة الرياضيات والهندسة والإنجليزية والعلوم، مع الألعاب والعملات والبطاقات.",
+    "gallery_page_photos_and_videos_of_leo_the_site_mascot": "معرض الصور والفيديوهات لـ Leo، تميمة الموقع.",
+    "parent_portal_leo_kids": "بوابة ولي الأمر · Leo Kids",
+    "parents_page_progress_reports_reinforcement_insights_personal_activities": "صفحة أولياء الأمور — تقارير التقدّم، ورؤى التعزيز، والأنشطة الشخصية.",
+    "teacher_portal_leo_kids": "بوابة المعلّم · Leo Kids",
+    "school_portal_leo_kids": "بوابة المدارس · Leo Kids",
+    "school_portal_manage_classes_teachers_students_messaging_progress": "أدِر الفصول والمعلّمين والتلاميذ — مع رسائل مدرسية ومتابعة تقدّم في Leo Kids.",
+    "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "أدوات تتبّع وأنشطة شخصية وتقارير — مصمّمة للمعلّمين الخصوصيين في Leo Kids.",
+    "parent_login_leo_kids": "دخول ولي الأمر · Leo Kids",
+    "sign_in_to_the_leo_kids_parent_portal": "سجّل الدخول إلى بوابة ولي الأمر في Leo Kids.",
+    "teacher_login_leo_kids": "دخول المعلّم · Leo Kids",
+    "sign_in_to_the_leo_kids_teacher_portal": "سجّل الدخول إلى بوابة المعلّم في Leo Kids.",
+    "practice_by_subject_leo_kids": "الممارسة حسب المادة · Leo Kids",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "ممارسة رقمية لمتعلّمي المرحلة الابتدائية في الرياضيات والهندسة والإنجليزية والعلوم.",
+    "math_practice_by_grade_and_topic_leo_kids": "ممارسة الرياضيات حسب الصف والموضوع · Leo Kids",
+    "math_practice_for_elementary_learners_operations_fractions_and_more": "ممارسة الرياضيات لمتعلّمي المرحلة الابتدائية — العمليات والكسور والمزيد.",
+    "reading_comprehension_practice_leo_kids": "ممارسة فهم المقروء · Leo Kids",
+    "reading_comprehension_short_texts_english_practice_for_elementary": "فهم المقروء — نصوص قصيرة وممارسة إنجليزية للمرحلة الابتدائية.",
+    "english_practice_by_grade_and_topic_leo_kids": "ممارسة الإنجليزية حسب الصف والموضوع · Leo Kids",
+    "english_practice_vocabulary_phonics_grammar_sentences_and_reading": "ممارسة الإنجليزية — المفردات والصوتيات والقواعد والجمل والقراءة.",
+    "geometry_practice_by_grade_and_topic_leo_kids": "ممارسة الهندسة حسب الصف والموضوع · Leo Kids",
+    "geometry_practice_shapes_angles_perimeter_area_volume_and_more": "ممارسة الهندسة — الأشكال والزوايا والمحيط والمساحة والحجم والمزيد.",
+    "science_practice_by_topic_leo_kids": "ممارسة العلوم حسب الموضوع · Leo Kids",
+    "science_practice_body_animals_plants_materials_earth_and_weather": "ممارسة العلوم — الجسم والحيوانات والنباتات والمواد والأرض والطقس.",
+    "learning_games_for_kids_leo_kids": "ألعاب تعلّم للأطفال · Leo Kids",
+    "learning_games_that_reinforce_practice_with_challenges_and_rewards": "ألعاب تعلّم تعزّز الممارسة عبر التحدّيات والمكافآت.",
+    "digital_practice_without_printing_leo_kids": "ممارسة رقمية بلا طباعة · Leo Kids",
+    "practice_online_by_subject_and_topic_no_printing_required": "تمرّن عبر الإنترنت حسب المادة والموضوع — دون حاجة للطباعة.",
+    "parent_progress_reports_leo_kids": "تقارير تقدّم ولي الأمر · Leo Kids",
+    "see_what_your_child_practiced_topics_to_strengthen_and_clear_next_steps": "اطّلع على ما تمرّن عليه طفلك، والمواضيع التي تحتاج تعزيزًا، والخطوات التالية الواضحة.",
+    "printable_worksheets_for_kids_leo_kids": "أوراق عمل قابلة للطباعة · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "أوراق عمل جاهزة، ومولّد أوراق عمل، ومفاتيح إجابات للممارسة الابتدائية.",
+    "help_center_leo_kids": "مركز المساعدة · Leo Kids",
+    "help_center_guides_for_parents_and_students_site_reports_practice": "مركز المساعدة — أدلة لأولياء الأمور والتلاميذ حول الموقع والتقارير والممارسة.",
+    "guides_for_parents_leo_kids": "أدلة لأولياء الأمور · Leo Kids",
+    "guides_hub_practical_guides_home_practice_progress_tracking": "أدلة عملية للممارسة المنزلية وتتبع التقدّم في Leo Kids.",
+    "math_practice_at_home_leo_kids_guides": "ممارسة الرياضيات في المنزل · أدلة Leo Kids",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "كيف تختار موضوعًا في الرياضيات، وتتعامل مع الأخطاء، وتبني ممارسة منزلية ثابتة.",
+    "reading_practice_at_home_leo_kids_guides": "ممارسة القراءة في المنزل · أدلة Leo Kids",
+    "how_to_practice_reading_accuracy_pace_and_understanding_with_short_texts": "كيف تتمرّن على دقة القراءة وسرعتها وفهمها عبر نصوص قصيرة في المنزل.",
+    "reading_comprehension_at_home_leo_kids_guides": "فهم المقروء في المنزل · أدلة Leo Kids",
+    "how_to_help_your_child_find_details_explain_answers_and_draw_conclusions": "كيف تساعد طفلك على إيجاد التفاصيل وشرح الإجابات واستخلاص النتائج من النص.",
+    "english_vocabulary_practice_leo_kids_guides": "ممارسة مفردات الإنجليزية · أدلة Leo Kids",
+    "how_to_practice_new_words_in_context_and_review_them_through_the_week": "كيف تتمرّن على كلمات جديدة في سياقها وتراجعها خلال الأسبوع.",
+    "learning_games_at_home_leo_kids_guides": "ألعاب التعلّم في المنزل · أدلة Leo Kids",
+    "how_to_combine_learning_games_with_focused_practice_by_subject_and_topic": "كيف تجمع بين ألعاب التعلّم والممارسة المركّزة حسب المادة والموضوع.",
+    "math_games_for_kids_leo_kids_guides": "ألعاب الرياضيات للأطفال · أدلة Leo Kids",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "كيف تستخدم ألعاب الرياضيات للعمليات والأعداد وحل المسائل.",
+    "parent_progress_tracking_leo_kids_guides": "تتبع تقدّم ولي الأمر · أدلة Leo Kids",
+    "how_to_read_progress_reports_and_spot_patterns_over_time": "كيف تقرأ تقارير التقدّم وتلاحظ الأنماط مع مرور الوقت.",
+    "choosing_a_topic_to_strengthen_leo_kids_guides": "اختيار موضوع للتعزيز · أدلة Leo Kids",
+    "how_to_pick_the_next_topic_based_on_reports_answers_and_repeating_diffic": "كيف تختار الموضوع التالي بناءً على التقارير والإجابات والصعوبة المتكرّرة.",
+    "home_practice_routine_leo_kids_guides": "روتين الممارسة المنزلية · أدلة Leo Kids",
+    "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "كيف تبني روتين ممارسة منزلية بهدف واحد واضح في كل جلسة.",
+    "practice_without_printing_leo_kids_guides": "ممارسة بلا طباعة · أدلة Leo Kids",
+    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "كيف تستخدم الممارسة والألعاب الرقمية، ومتى تساعد أوراق العمل.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — ممارسة لمتعلّمي المرحلة الابتدائية."
   },
   "lib__student-ui__student-ad-slot.client": {
     "reserved_for_ad": "محفوظة للإعلان"
@@ -473,7 +622,7 @@
   "lib__teacher-portal__teacher-activity-report-pdf": {
     "activity_report_teacher": "تقرير النشاط – المعلم",
     "questions": "أسئلة",
-    "student_summary": "ملخص الطالب",
+    "student_summary": "ملخص التلميذ",
     "question_analysis": "تحليل السؤال",
     "skill_analysis": "تحليل المهارات"
   },
@@ -495,10 +644,20 @@
     "environment": "بيئة"
   },
   "lib__teacher-portal__teacher-smoke-artifacts": {
-    "class_3_leo": "الفئة 3 - ليو"
+    "class_3_leo": "الفصل 3 - Leo"
+  },
+  "lib__teacher-portal__use-teacher-portal-session": {
+    "verifying_connection": "جارٍ التحقق من الاتصال…",
+    "loading_dashboard": "جارٍ تحميل لوحة التحكم…",
+    "load_data_error": "حدث خطأ أثناء تحميل البيانات. حدّث الصفحة وحاول مرة أخرى.",
+    "load_report_error": "حدث خطأ أثناء تحميل التقرير. حدّث الصفحة وحاول مرة أخرى.",
+    "load_report_error_long": "حدث خطأ أثناء تحميل التقرير. حدّث الصفحة وحاول مرة أخرى.",
+    "loading_report_hint": "جارٍ تحميل التقرير — قد يستغرق بضع ثوانٍ.",
+    "session_expired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى.",
+    "load_timeout": "استغرق التحميل وقتًا طويلاً. حدّث الصفحة وحاول مرة أخرى."
   },
   "lib__teacher-server__teacher-activities.server": {
-    "this_subject_is_not_supported_for_class_activities": "هذا الموضوع غير مدعوم للأنشطة الصفية",
+    "this_subject_is_not_supported_for_class_activities": "هذه المادة غير مدعومة للأنشطة الصفية",
     "please_select_at_least_one_student": "يرجى اختيار طالب واحد على الأقل"
   },
   "lib__teacher-server__teacher-dashboard.server": {
@@ -513,14 +672,14 @@
     "unexpected_server_error": "خطأ غير متوقع في الخادم"
   },
   "lib__teacher-server__teacher-student-login-access.server": {
-    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "لن يكون من الممكن استرداد رقم التعريف الشخصي (PIN) النصي العادي بعد هذا الرد. قم بالتخزين بشكل آمن."
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "لن يكون من الممكن استرداد رمز PIN النصي العادي بعد هذا الرد. قم بالتخزين بشكل آمن."
   },
   "lib__worksheet-activities__worksheet-labels.client": {
     "active": "نشيط",
     "closed": "مغلق",
     "archived": "مؤرشف",
     "digital_answer_sheet": "ورقة الإجابة الرقمية",
-    "manual_grading": "التصنيف اليدوي",
+    "manual_grading": "التصحيح اليدوي",
     "not_submitted": "لم يتم تقديمه",
     "submitted": "مُقَدَّم",
     "pending_review": "في انتظار المراجعة",
@@ -531,7 +690,9 @@
     "true_false": "صحيح / خطأ",
     "number": "رقم",
     "short_answer": "إجابة قصيرة",
-    "free_text": "نص مجاني"
+    "free_text": "نص حر",
+    "draft": "مسودة",
+    "pdf_only": "PDF فقط"
   },
   "lib__worksheets__worksheet-english-sentences-pool.server": {
     "she_already_finished_the_project": "لقد ___ أنهت المشروع بالفعل.",
@@ -540,7 +701,7 @@
     "please_carefully_before_you_answer": "من فضلك ___ بعناية قبل الإجابة.",
     "although_the_problem_was_complex_the_team_a_clear_plan": "على الرغم من أن المشكلة كانت معقدة، إلا أن الفريق ___ لديه خطة واضحة.",
     "by_the_time_we_arrived_the_presentation_already_begun": "بحلول الوقت الذي وصلنا فيه، كان العرض التقديمي ___ قد بدأ بالفعل.",
-    "students_should_evidence_before_they_form_an_opinion": "يجب على الطلاب ___ الأدلة قبل تكوين الرأي.",
+    "students_should_evidence_before_they_form_an_opinion": "يجب على التلاميذ ___ الأدلة قبل تكوين الرأي.",
     "if_we_recycle_more_our_community_cleaner": "إذا قمنا بإعادة التدوير بشكل أكبر، فإن مجتمعنا ___ أكثر نظافة.",
     "she_asked_whether_we_ready_to_present": "سألت إذا كنا ___ على استعداد للتقديم.",
     "technology_can_help_us_learn_we_use_it_wisely": "يمكن للتكنولوجيا أن تساعدنا على التعلم، ___ نستخدمها بحكمة.",
@@ -569,14 +730,19 @@
     "vertical_addition_and_subtraction": "الجمع والطرح العمودي",
     "basic_multiplication": "الضرب الأساسي",
     "long_multiplication": "الضرب الطويل",
-    "basic_division": "التقسيم الأساسي",
+    "basic_division": "القسمة الأساسية",
     "long_division": "القسمة الطويلة",
     "fractions": "الكسور",
     "decimals": "الأعداد العشرية",
     "percentages": "النسب المئوية",
-    "ratio_and_scale": "النسبة والحجم",
+    "ratio_and_scale": "النسبة والمقياس",
     "word_problems": "مسائل كلامية",
-    "mixed_practice": "تمرين مختلط"
+    "mixed_practice": "تمرين مختلط",
+    "horizontal_addition": "جمع أفقي",
+    "vertical_addition": "جمع عمودي",
+    "horizontal_subtraction": "طرح أفقي",
+    "vertical_subtraction": "طرح عمودي",
+    "unit_fractions_halves_quarters": "كسور الوحدة — أنصاف وأرباع"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "الصف 1",
@@ -591,7 +757,7 @@
     "subtraction": "الطرح",
     "multiplication": "الضرب",
     "division": "القسمة",
-    "division_with_remainder": "القسمة على الباقي",
+    "division_with_remainder": "القسمة مع الباقي",
     "fractions": "الكسور",
     "decimals": "الأعداد العشرية",
     "percentages": "النسب المئوية",
@@ -614,13 +780,13 @@
     "triangles": "المثلثات",
     "quadrilaterals": "رباعيات",
     "transformations": "التحولات",
-    "rotation": "تناوب",
+    "rotation": "دوران",
     "symmetry": "التناظر",
     "diagonals": "الأقطار",
-    "heights": "مرتفعات",
+    "heights": "الارتفاعات",
     "tiling": "تبليط",
     "circles": "الدوائر",
-    "solids": "المواد الصلبة",
+    "solids": "المجسمات",
     "pythagoras": "فيثاغورس",
     "phonics": "الصوتيات",
     "vocabulary": "المفردات",
@@ -633,7 +799,16 @@
     "matching": "مطابقة",
     "inference": "الاستدلال",
     "sentence_understanding": "فهم الجملة",
-    "simple_sentences": "جمل بسيطة"
+    "simple_sentences": "جمل بسيطة",
+    "ratio": "النسبة",
+    "scale": "القياس",
+    "area": "المساحة",
+    "subject_math": "الرياضيات",
+    "subject_geometry": "الهندسة",
+    "subject_english": "الإنجليزية",
+    "subject_science": "العلوم",
+    "worksheet_title_prefix": "ورقة عمل — {subject} · {topic}",
+    "grade_n": "الصف {n}"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "ورقة عمل",
@@ -672,12 +847,12 @@
     "select_a_child": "اختر طفلاً",
     "no_recommendations_yet": "لا توجد توصيات حتى الآن",
     "recommendations_based_on_practice": "توصيات مبنية على الممارسة",
-    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "تعتمد التوصيات على المواضيع التي مارسها طفلك مؤخرًا - وليس على تقرير الوالدين.",
+    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "تعتمد التوصيات على المواضيع التي مارسها طفلك مؤخرًا - وليس على تقرير ولي الأمر.",
     "ready_made_worksheets": "أوراق عمل جاهزة",
     "no_worksheets_found": "لم يتم العثور على أوراق عمل",
-    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "حاول تغيير عوامل التصفية - أو حدد جميع المواد والدرجات والمستويات.",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "حاول تغيير عوامل التصفية - أو حدد جميع المواد والصفوف والمستويات.",
     "create_a_new_worksheet": "إنشاء ورقة عمل جديدة",
-    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "اختر موضوعًا ودرجة وموضوعًا ومستوى - ثم قم بإنشاء ورقة عمل جاهزة للطباعة.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "اختر مادةً وصفًا وموضوعًا ومستوى - ثم قم بإنشاء ورقة عمل جاهزة للطباعة.",
     "choose_topics_for_mixed_practice": "اختر موضوعات للممارسة المختلطة",
     "check_the_topics_to_include_in_the_mixed_practice_all_topics_are_checked": "تحقق من المواضيع التي سيتم تضمينها في الممارسة المختلطة. يتم فحص كافة المواضيع بشكل افتراضي.",
     "select_all_topics": "حدد كافة المواضيع",
@@ -700,7 +875,7 @@
   },
   "pages__api__parent__create-student": {
     "please_select_a_grade": "الرجاء تحديد الصف",
-    "you_can_add_up_to_3_children_on_this_parent_account": "يمكنك إضافة ما يصل إلى 3 أطفال على حساب الوالدين هذا"
+    "you_can_add_up_to_3_children_on_this_parent_account": "يمكنك إضافة ما يصل إلى 3 أطفال على حساب أولياء الأمور هذا"
   },
   "pages__api__parent__delete-student": {
     "child_id_is_missing": "معرف الطفل مفقود",
@@ -724,6 +899,10 @@
   },
   "pages__api__teacher__students": {
     "unexpected_server_error": "خطأ غير متوقع في الخادم"
+  },
+  "pages__parent__school-inbox": {
+    "back_to_report": "← العودة إلى التقرير",
+    "loading": "جارٍ التحميل…"
   },
   "pages__school__activities__[activityId]__monitor": {
     "activity_monitor": "مراقب النشاط"
@@ -753,7 +932,39 @@
     "submit_answer": "إرسال الإجابة",
     "type_your_answer": "اكتب إجابتك",
     "enlarged_diagram": "رسم تخطيطي موسع",
-    "close_diagram": "إغلاق الرسم البياني"
+    "close_diagram": "إغلاق الرسم البياني",
+    "waiting_for_the_teacher": "في انتظار المعلم…",
+    "correct": "صحيح!",
+    "network_error": "خطأ في الشبكة",
+    "could_not_start": "تعذر بدء النشاط",
+    "could_not_save": "تعذر حفظ الإجابة",
+    "teacher_paused": "أوقف المعلم الدرس — يرجى الانتظار",
+    "done_title_activity": "أنهيت النشاط!",
+    "done_title_discussion": "أنهيت النقاش",
+    "done_title_explanation": "قرأت الشرح",
+    "done_body_explanation": "قرأت شرح المعلم. شكرًا لك!",
+    "done_body_discussion_multi": "أنهيت {count} أسئلة نقاش. شكرًا لك!",
+    "done_body_discussion": "شكرًا على إجابتك. سيراها معلمك في الفصل.",
+    "back_home": "العودة للرئيسية",
+    "question_progress": "سؤال {current} من {total}",
+    "answer_saved": "تم حفظ الإجابة",
+    "close_draft": "إغلاق المسودة",
+    "scratch_pad": "مسودة الحساب",
+    "previous_question": "السؤال السابق",
+    "next_question": "السؤال التالي",
+    "finish_and_submit": "إنهاء وإرسال",
+    "explanation_banner": "لا حاجة لإرسال إجابة — اقرأ المحتوى",
+    "read_continue": "قرأته — متابعة",
+    "finished_reading": "أنهيت القراءة",
+    "summary_got_of": "أجبت بشكل صحيح على {correct} من {total} أسئلة",
+    "summary_got": "أجبت بشكل صحيح على {correct} أسئلة",
+    "summary_finished": "أنهيت النشاط",
+    "score_chip_of": "{correct}/{total} أسئلة",
+    "score_chip": "{correct} أسئلة",
+    "show_landscape": "عرض أفقي",
+    "show_portrait": "عرض عمودي",
+    "landscape": "↔️ أفقي",
+    "portrait": "↕️ عمودي"
   },
   "pages__student__worksheet__[worksheetId]": {
     "mark_this_worksheet_as_finished": "هل تريد وضع علامة على ورقة العمل هذه على أنها منتهية؟",
@@ -761,44 +972,157 @@
     "submission_received_and_waiting_for_teacher_approval": "تم استلام التقديم وفي انتظار موافقة المعلم."
   },
   "pages__teacher__class__[classId]": {
-    "class_report": "تقرير الطبقة",
-    "invalid_class_id": "معرف الفئة غير صالح.",
-    "you_do_not_have_permission_to_view_this_class_report": "ليس لديك الإذن لعرض تقرير الفصل الدراسي هذا.",
+    "class_report": "تقرير الفصل",
+    "invalid_class_id": "معرّف الفصل غير صالح.",
+    "you_do_not_have_permission_to_view_this_class_report": "ليس لديك الإذن لعرض تقرير هذا الفصل.",
     "please_select_valid_dates": "الرجاء تحديد تواريخ صالحة"
   },
   "pages__teacher__class__[classId]__activities__index": {
-    "class_activities": "الأنشطة الصفية"
+    "class_activities": "أنشطة الفصل",
+    "back_to_dashboard": "← العودة إلى لوحة التحكم",
+    "subtitle": "أنشئ أنشطة الفصل وأطلقها وتابعها.",
+    "new_activity": "نشاط جديد",
+    "loading": "جارٍ تحميل الأنشطة…",
+    "error_loading": "تعذّر التحميل",
+    "network_error": "خطأ في الشبكة",
+    "try_again": "حاول مرة أخرى",
+    "forbidden": "ليس لديك صلاحية لعرض أنشطة هذا الفصل.",
+    "empty": "لا توجد أنشطة بعد. أنشئ نشاطًا جديدًا.",
+    "col_title": "العنوان",
+    "col_status": "الحالة",
+    "col_type": "النوع",
+    "col_progress": "التقدّم",
+    "col_actions": "إجراءات",
+    "edit_launch": "تحرير / إطلاق",
+    "view": "عرض"
   },
   "pages__teacher__class__[classId]__activities__new": {
-    "level": "مستوى"
+    "level": "مستوى",
+    "new_activity": "نشاط جديد",
+    "back_to_activities": "← العودة إلى الأنشطة",
+    "title": "العنوان",
+    "subject": "المادة",
+    "topic": "الموضوع",
+    "no_science_topics": "لا توجد مواضيع متاحة لهذا الصف في العلوم.",
+    "no_subject_topics": "لا توجد مواضيع متاحة لهذه المادة وهذا الصف.",
+    "subtopic_optional": "موضوع فرعي (اختياري)",
+    "grade_for_questions": "الصف (لإنشاء الأسئلة)",
+    "activity_mode": "نمط النشاط",
+    "number_of_questions": "عدد الأسئلة",
+    "time_limit_optional": "حدّ زمني (ثوانٍ، اختياري)",
+    "due_date_optional": "تاريخ الاستحقاق (واجب، اختياري)",
+    "generating": "جارٍ الإنشاء…",
+    "preview_questions": "معاينة الأسئلة",
+    "save_draft": "حفظ كمسودة",
+    "preview_heading": "معاينة ({n} أسئلة)",
+    "not_sent_hint": "(لا يُرسل للتلميذ)",
+    "err_no_permission": "ليس لديك صلاحية لإنشاء أنشطة لهذا الفصل. تواصل مع إدارة المدرسة.",
+    "err_load_class": "تعذّر تحميل الفصل",
+    "err_invalid_grade": "مستوى صف هذا الفصل غير صالح. تواصل مع إدارة المدرسة.",
+    "network_error": "خطأ في الشبكة",
+    "err_preview": "تعذّر إنشاء معاينة الأسئلة",
+    "err_enter_title": "يرجى إدخال عنوان",
+    "err_preview_first": "يرجى معاينة الأسئلة قبل الحفظ",
+    "err_quiz_time": "يتطلب وضع الاختبار حدًا زمنيًا (بالثواني)",
+    "err_save": "فشل الحفظ"
   },
   "pages__teacher__class__[classId]__discussion__new": {
     "new_discussion_activity": "نشاط مناقشة جديد"
   },
   "pages__teacher__class__[classId]__worksheets__index": {
-    "worksheets": "أوراق عمل"
+    "worksheets": "أوراق عمل",
+    "back_to_dashboard": "← العودة إلى لوحة التحكم",
+    "subtitle": "أنشئ أوراق عمل PDF وأطلقها وتابعها.",
+    "create_new": "إنشاء ورقة عمل جديدة",
+    "loading": "جارٍ التحميل…",
+    "error_loading": "تعذّر التحميل",
+    "network_error": "خطأ في الشبكة",
+    "empty": "لا توجد أوراق عمل بعد.",
+    "forbidden": "ليس لديك صلاحية لعرض أوراق عمل هذا الفصل.",
+    "due": "الاستحقاق: {date}",
+    "manage": "إدارة",
+    "report": "تقرير"
   },
   "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
     "grade_student": "طالب الصف"
   },
   "pages__teacher__dashboard": {
-    "my_dashboard": "لوحة القيادة الخاصة بي"
+    "my_dashboard": "لوحة التحكم الخاصة بي",
+    "verifying_connection": "جارٍ التحقق من الاتصال…",
+    "loading_dashboard": "جارٍ تحميل لوحة التحكم…",
+    "load_data_error": "حدث خطأ أثناء تحميل البيانات. حدّث الصفحة وحاول مرة أخرى.",
+    "load_report_error": "حدث خطأ أثناء تحميل التقرير. حدّث الصفحة وحاول مرة أخرى.",
+    "load_report_error_long": "حدث خطأ أثناء تحميل التقرير. حدّث الصفحة وحاول مرة أخرى.",
+    "loading_report_hint": "جارٍ تحميل التقرير — قد يستغرق بضع ثوانٍ.",
+    "session_expired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى.",
+    "load_timeout": "استغرق التحميل وقتًا طويلاً. حدّث الصفحة وحاول مرة أخرى.",
+    "system_warming_up": "النظام ما زال قيد التهيئة. حاول مرة أخرى خلال بضع دقائق.",
+    "try_again": "حاول مرة أخرى",
+    "back_to_dashboard": "العودة إلى لوحة التحكم"
   },
   "pages__teacher__pending": {
     "request_status": "حالة الطلب"
   },
   "pages__teacher__students__activities__new": {
-    "activity_for_selected_private_students": "نشاط لطلاب القطاع الخاص المختارين",
-    "level": "مستوى"
+    "activity_for_selected_private_students": "نشاط لتلاميذ خاصين مختارين",
+    "level": "مستوى",
+    "select_private_students": "اختر تلاميذ خاصين",
+    "selected_count": "المحدَّدون: {n}",
+    "loading_students": "جارٍ تحميل التلاميذ…",
+    "no_linked_private_students": "لا يوجد تلاميذ خاصون مرتبطون.",
+    "select_all": "تحديد الكل",
+    "select_all_grade": "تحديد الكل ({grade})",
+    "clear": "مسح",
+    "class_label": "الصف {grade}",
+    "multi_grade_warning": "⚠ لديك تلاميذ من صفوف مختلفة. يمكنك إرسال نشاط واحد فقط لتلاميذ من الصف نفسه.",
+    "activity_locked_to": "النشاط مقيّد بـ {grade}.",
+    "select_first_to_lock": "اختر تلميذًا أولًا لتثبيت الصف.",
+    "activity_settings": "إعدادات النشاط",
+    "title": "العنوان",
+    "subject": "المادة",
+    "grade_for_content": "الصف (للمحتوى)",
+    "derived_from_selected": "— مستنتج من التلاميذ المحدَّدين",
+    "topic": "الموضوع",
+    "no_science_topics": "لا توجد مواضيع متاحة لهذا الصف في العلوم.",
+    "activity_type": "نوع النشاط",
+    "number_of_questions": "عدد الأسئلة",
+    "time_limit_optional": "حدّ زمني (ثوانٍ، اختياري)",
+    "required_for_quiz": "مطلوب للاختبار",
+    "blank_no_limit": "فارغ = بلا حد",
+    "due_date_optional": "تاريخ الاستحقاق (اختياري)",
+    "generating_questions": "جارٍ إنشاء الأسئلة…",
+    "show_preview": "عرض معاينة",
+    "create_and_send": "إنشاء وإرسال ({n} تلاميذ)",
+    "discussion_question": "سؤال النقاش:",
+    "questions_count": "{n} أسئلة:",
+    "could_not_generate": "تعذّر إنشاء الأسئلة",
+    "err_select_student": "يرجى اختيار تلميذ واحد على الأقل",
+    "err_enter_title": "يرجى إدخال عنوان",
+    "err_generate_first": "يرجى إنشاء الأسئلة أولًا",
+    "err_quiz_time": "يتطلب الاختبار حدًا زمنيًا",
+    "creation_failed": "فشل الإنشاء",
+    "network_error": "خطأ في الشبكة",
+    "err_mix_grades": "لا يمكن خلط تلاميذ من صفوف مختلفة. هذا النشاط مقيّد بـ {locked}. هذا التلميذ في {student}."
   },
   "pages__teacher__student__[studentId]": {
-    "student_report": "تقرير الطالب",
-    "invalid_student_id": "معرف الطالب غير صالح.",
-    "you_do_not_have_permission_to_view_this_student_s_report": "ليس لديك الإذن لعرض تقرير هذا الطالب.",
+    "student_report": "تقرير التلميذ",
+    "invalid_student_id": "معرف التلميذ غير صالح.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "ليس لديك الإذن لعرض تقرير هذا التلميذ.",
     "please_select_valid_dates": "الرجاء تحديد تواريخ صالحة"
   },
   "pages__teacher__worksheets__index": {
-    "worksheets": "أوراق عمل"
+    "worksheets": "أوراق عمل",
+    "back_to_dashboard": "← العودة إلى لوحة التحكم",
+    "subtitle": "جميع أوراق العمل — للفصل بأكمله أو لتلاميذ مختارين.",
+    "create_new": "إنشاء ورقة عمل جديدة",
+    "loading": "جارٍ التحميل…",
+    "error_loading": "تعذّر التحميل",
+    "network_error": "خطأ في الشبكة",
+    "empty": "لا توجد أوراق عمل بعد.",
+    "selected_students": "تلاميذ مختارون",
+    "class_scope": "فصل",
+    "manage": "إدارة",
+    "report": "تقرير"
   },
   "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
     "grade_student": "طالب الصف"
@@ -807,13 +1131,16 @@
     "worksheet_report": "تقرير ورقة العمل"
   },
   "pages___app": {
-    "default_document_title": "أطفال ليو · التعلم لطلاب المرحلة الابتدائية"
+    "default_document_title": "Leo Kids · التعلم لتلاميذ المرحلة الابتدائية"
   },
   "utils__ai-hybrid-diagnostic__hybrid-review-record": {
     "no_conflict_between_v2_and_the_hybrid_top_hypothesis": "لا يوجد تعارض بين V2 والفرضية العليا الهجينة."
   },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "استمع إلى السؤال والجواب بناءً على ما تسمعه."
+  },
   "utils__contracts__parent-product-contract-v1": {
-    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "لا توجد بيانات كافية حتى الآن لتعيين صورة على مستوى الموضوع.",
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "لا توجد بيانات كافية حتى الآن لتعيين صورة على مستوى المادة.",
     "start_short_consistent_practice_to_build_a_measurement_baseline": "ابدأ ممارسة قصيرة ومتسقة لبناء خط أساس للقياس.",
     "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "حجم البيانات الحالي منخفض، لذلك لا يوجد أساس لاتجاه واضح.",
     "pick_one_topic_and_practice_10_15_minutes_each_session": "اختر موضوعًا واحدًا وتدرب عليه لمدة 10-15 دقيقة في كل جلسة.",
@@ -827,6 +1154,9 @@
     "how_much_to_trust_this_not_high_yet": "ما مدى الثقة بهذا: ليس مرتفعًا بعد.",
     "data_is_missing_or_partial": "البيانات مفقودة أو جزئية."
   },
+  "utils__detailed-report-parent-letter-he": {
+    "sparse_data": "بيانات متفرقة"
+  },
   "utils__detailed-report-parent-letter": {
     "sparse_data": "بيانات متفرقة"
   },
@@ -835,11 +1165,8 @@
   },
   "utils__expert-review-pack-artifact-snapshot": {
     "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "غير مأهولة في وضع لقطة قطعة أثرية. قم بتشغيل npm run qa:learning-simulator:expert-review-pack للخرائط/التجميعات الاصطناعية.",
-    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "أنماط المواضيع المشتركة هي فرضيات وتتطلب تحقيقات تأكيدية لكل موضوع.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "أنماط المواد المشتركة هي فرضيات وتتطلب تحقيقات تأكيدية لكل مادة.",
     "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "الدعم التشخيصي التعليمي الداخلي فقط - وليس سريريًا / وليس موجهًا إلى أولياء الأمور."
-  },
-  "utils__audio-narration-binding": {
-    "listen_to_the_question_and_answer_based_on_what_you_hear": "استمع إلى السؤال والجواب بناءً على ما تسمعه."
   },
   "utils__math-topic-parent-display": {
     "learning": "تعلُّم",
@@ -855,7 +1182,12 @@
     "the_report_for_the_selected_period": "التقرير للفترة المختارة"
   },
   "utils__parent-data-presence": {
-    "social_studies_geography": "الدراسات الاجتماعية والجغرافيا"
+    "social_studies_geography": "الدراسات الاجتماعية والجغرافيا",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra": "هناك بعض التمرين في الفترة المحددة، لكنّه لا يكفي بعد لاستخلاص ملاحظة واضحة. يُفضّل المواصلة لبضعة أيام إضافية ثم التحقق مرة أخرى.",
+    "there_is_no_practice_yet_in_the_selected_period": "لا يوجد تمرين بعد في الفترة المحددة.",
+    "there_is_limited_data_in_the_selected_period": "البيانات محدودة في الفترة المحددة.",
+    "there_is_enough_data_in_the_selected_period_for_a_clear_picture": "توجد بيانات كافية في الفترة المحددة لصورة واضحة.",
+    "practice_volume_not_yet_enough_in_the_selected_period": "حجم التمرين في الفترة المحددة لا يكفي بعد لصورة واضحة."
   },
   "utils__probe-pending-finalize": {
     "choose_the_correct_formula_or_first_step_before_numerical_calculation": "اختر الصيغة الصحيحة أو الخطوة الأولى قبل الحساب الرقمي.",
@@ -869,14 +1201,14 @@
     "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "جميع الاقتراحات تحافظ على needHumanReview=true حتى تتم الموافقة على التعديلات البنكية."
   },
   "utils__question-metadata-qa__geometry-metadata-enrichment-suggestions": {
-    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "يفترض تخطيط منطقة المستطيل التمييز بين المنطقة والمحيط في السياق.",
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "يفترض تخطيط مساحة المستطيل التمييز بين المساحة والمحيط في السياق.",
     "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "يمتد صف مجموع زوايا المثلث ذو النطاق المتأخر على نفس المبدأ - تأكيد التسلسل قبل التنفيذ.",
     "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "لا توجد سلسلة متطلبات مسبقة تلقائية لهذا القالب - يقوم مؤلفو المنهج الدراسي بشكل واضح."
   },
   "utils__question-metadata-qa__math-generator-metadata-map": {
     "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "لا يحل محل الإجابة الصحيحة الرقمية أو الإجابات[] أو نص السؤال بعد الإنشاء - يعمل فقط على إثراء حقول البيانات التعريفية.",
     "blanket_patternfamily_math_kind_when_absent": "نمط بطانيةعائلي `math_${kind}` عند الغياب",
-    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "تحمل صفوف التحقيق + الكسر بالفعل علامات التشخيص / علامات الخطأ المتوقعة",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "تحمل صفوف التحقيق + الكسر بالفعل علامات التحليل / علامات الخطأ المتوقعة",
     "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "تستخدم صفوف العمليات/النوع القياسية معرف مهارة الرياضيات الحتمية_${kind}",
     "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "أنواع الحواف ذات الحد الأدنى من المعلمات - لا يزال نمط المعرف آمنًا math_*"
   },
@@ -893,7 +1225,7 @@
     "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "تغطية المهارة ≥85%، والمهارة الفرعية ≥50%، ومتوسط ​​الاكتمال ≥0.65، وحصة المخاطر العالية <8%.",
     "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "تغطية المهارات قابلة للاستخدام ولكن هناك فجوات كبيرة في الإدراك/الأخطاء/المتطلبات المسبقة.",
     "large_missing_skill_or_inconsistent_tagging": "مهارة مفقودة كبيرة أو وضع علامات غير متناسقة.",
-    "skill_id_largely_absent_diagnosis_routing_unreliable": "معرف المهارة غائب إلى حد كبير - توجيه التشخيص غير موثوق به."
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "معرف المهارة غائب إلى حد كبير - توجيه التحليل غير موثوق به."
   },
   "utils__question-metadata-qa__science-enrichment-review-pack": {
     "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "جميع الاقتراحات تحافظ على needHumanReview=true حتى تتم الموافقة على التعديلات البنكية."

@@ -13,9 +13,12 @@ import {
   buildParentDemoSyntheticAuthSession,
   hasParentDemoSession,
 } from "../../../lib/demo/parent-demo-mode.client.js";
+import { useT, useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 
 export default function ParentWorksheetsPage() {
   const router = useRouter();
+  const t = useT();
+  const { direction, locale } = useI18n();
   const { theme, isBright } = useStudentTheme();
   const T = getParentPortalTheme(isBright);
   const layoutProps = { studentTheme: theme, studentShell: "home" };
@@ -90,8 +93,8 @@ export default function ParentWorksheetsPage() {
   if (!clientReady || loading || !session) {
     return (
       <Layout {...layoutProps}>
-        <div dir="ltr" lang="en" className="p-4 text-center text-slate-500">
-          Loading…
+        <div dir={direction} lang={locale} className="p-4 text-center text-slate-500">
+          {t("ui.student.loading")}
         </div>
       </Layout>
     );

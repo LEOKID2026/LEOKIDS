@@ -18,26 +18,26 @@ export const PARENT_TOPIC_TIER = Object.freeze({
   FOUNDATION_PRACTICE: "foundation_practice",
 });
 
-const TIER_LABEL_HE = Object.freeze({
-  strong: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "looks_strong"),
-  monitor: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "worth_watching"),
-  strengthen: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "worth_strengthening"),
-  needs_guidance: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "worth_guiding"),
-  clear_gap: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "needs_strengthening"),
-  low_evidence: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "few_questions"),
-  advanced_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "above_grade_level"),
-  foundation_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "earlier_foundations"),
+const TIER_LABEL_KEYS = Object.freeze({
+  strong: "looks_strong",
+  monitor: "worth_watching",
+  strengthen: "worth_strengthening",
+  needs_guidance: "worth_guiding",
+  clear_gap: "needs_strengthening",
+  low_evidence: "few_questions",
+  advanced_practice: "above_grade_level",
+  foundation_practice: "earlier_foundations",
 });
 
-const TIER_SECTION_TITLE_HE = Object.freeze({
-  strong: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "strong_topics"),
-  monitor: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_watching"),
-  strengthen: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_strengthening"),
-  needs_guidance: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_guiding_in_practice"),
-  clear_gap: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_worth_strengthening"),
-  low_evidence: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics_with_few_questions"),
-  advanced_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "practice_above_grade_level"),
-  foundation_practice: reportPackCopy("utils__parent-report-surface__parent-topic-tier", "earlier_foundation_practice"),
+const TIER_SECTION_TITLE_KEYS = Object.freeze({
+  strong: "strong_topics",
+  monitor: "topics_worth_watching",
+  strengthen: "topics_worth_strengthening",
+  needs_guidance: "topics_worth_guiding_in_practice",
+  clear_gap: "topics_worth_strengthening",
+  low_evidence: "topics_with_few_questions",
+  advanced_practice: "practice_above_grade_level",
+  foundation_practice: "earlier_foundation_practice",
 });
 
 const TIER_PLACEMENT_KIND = Object.freeze({
@@ -151,12 +151,20 @@ export function parentTopicTierFromUnit(u, mapRow) {
 
 /** @param {ParentTopicTier} tier */
 export function parentTopicTierLabelHe(tier) {
-  return TIER_LABEL_HE[String(tier || "")] || "In review";
+  const key = TIER_LABEL_KEYS[String(tier || "")];
+  if (!key) {
+    return reportPackCopy("utils__parent-report-surface__parent-topic-tier", "in_review");
+  }
+  return reportPackCopy("utils__parent-report-surface__parent-topic-tier", key);
 }
 
 /** @param {ParentTopicTier} tier */
 export function parentTopicTierSectionTitleHe(tier) {
-  return TIER_SECTION_TITLE_HE[String(tier || "")] || "Topics";
+  const key = TIER_SECTION_TITLE_KEYS[String(tier || "")];
+  if (!key) {
+    return reportPackCopy("utils__parent-report-surface__parent-topic-tier", "topics");
+  }
+  return reportPackCopy("utils__parent-report-surface__parent-topic-tier", key);
 }
 
 /** @param {ParentTopicTier} tier */

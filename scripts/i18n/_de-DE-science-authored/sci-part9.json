@@ -1,0 +1,772 @@
+{
+  "sci_phb_g1_environment_med_02": {
+    "stem": "Was brauchen Pflanzen, um zu wachsen und gesund zu bleiben?",
+    "options": [
+      "Wasser und Sonnenlicht",
+      "Nur abgepackte Nährstoffe aus dem Laden",
+      "Salzwasser und tiefen Schatten, um gut zu wachsen",
+      "Sand und eisiges Wetter, um zu überleben"
+    ],
+    "explanation": "Pflanzen brauchen Wasser und Sonnenlicht für die Fotosynthese, den Vorgang, mit dem sie ihre eigene Nahrung herstellen und wachsen.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_environment_med_03": {
+    "stem": "Warum sollen schlammige Stiefel vom Klassenzimmerteppich fernbleiben?",
+    "options": [
+      "Schlamm kann den Boden verschmutzen und das Putzen erschweren",
+      "Schlamm macht Matheaufgaben leichter",
+      "Schlamm ersetzt den Bedarf an Büchern",
+      "Schlamm verwandelt Tische in Bäume"
+    ],
+    "explanation": "Schlamm draußen zu lassen hilft, das Klassenzimmer sauber und sicher zum Gehen zu halten.",
+    "theoryLines": [
+      "Gemeinsame Räume zu pflegen gehört zur Verantwortung.",
+      "Hineingetragener Schmutz bedeutet mehr Arbeit für alle."
+    ]
+  },
+  "sci_phb_g1_environment_med_04": {
+    "stem": "Was brauchen Tiere von dem Ort, an dem sie leben?",
+    "options": [
+      "Nahrung, Wasser, Schutz und genug Raum zum Überleben",
+      "Nur Sonnenlicht und frische Luft, um am Leben zu bleiben",
+      "Einen großen offenen Ozean und ständigen Regen",
+      "Sehr viele Tiere derselben Art, die sehr dicht beieinander leben"
+    ],
+    "explanation": "Tiere brauchen in ihrem Lebensraum Nahrung, Wasser, Schutz und Raum, um ihre grundlegenden Überlebensbedürfnisse zu decken und Jungtiere aufzuziehen.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_environment_hard_01": {
+    "stem": "Warum ist es wichtig, Wasser zu sparen und es nicht zu verschwenden?",
+    "options": [
+      "Süßwasser ist eine begrenzte Ressource und alle Lebewesen brauchen es zum Überleben",
+      "Es gibt so viel Wasser auf der Erde, dass es nie ausgehen kann",
+      "Wasser sparen und Sonnenlicht sparen sind genau dasselbe",
+      "Wasser kommt nur aus Flüssen und lässt sich weder unterirdisch finden noch wiederaufbereiten"
+    ],
+    "explanation": "Obwohl die Erde viel Wasser hat, ist nur ein kleiner Teil frisch und sauber genug für Lebewesen, deshalb ist sorgsamer Umgang wichtig.",
+    "theoryLines": []
+  },
+  "sci_phb_g1_environment_hard_02": {
+    "stem": "Was kann Müll anrichten, wenn er im Meer landet?",
+    "options": [
+      "Wasser, Tiere und Küstenorte schädigen",
+      "Den Ozean automatisch reinigen",
+      "Jedem Fisch eine gesunde Mahlzeit geben",
+      "Salzwasser in frischen Saft verwandeln"
+    ],
+    "explanation": "Müll im Ozean kann Tiere verletzen und Lebensräume verschmutzen.",
+    "theoryLines": [
+      "Menschen sollten Müll richtig entsorgen.",
+      "Meere zu schützen schützt auch Wildtiere."
+    ]
+  },
+  "sci_phb_g1_environment_hard_03": {
+    "stem": "Warum sind Bäume in einem Park hilfreich?",
+    "options": [
+      "Sie geben Schatten, Wohnorte für Tiere und frischere Luft",
+      "Sie beseitigen jeden Bedarf an Wasser auf der Erde",
+      "Sie halten Jahreszeiten am Wechseln ab",
+      "Sie verwandeln Spielplätze in Wüsten"
+    ],
+    "explanation": "Bäume spenden Schatten, Schutz und Sauerstoff und machen Parks angenehmere Orte zum Besuch.",
+    "theoryLines": [
+      "Pflanzen unterstützen gesunde Umgebungen.",
+      "Parks brauchen Pflege, damit Lebewesen gedeihen können."
+    ]
+  },
+  "sci_phb_g1_environment_hard_04": {
+    "stem": "Was sollten Besucherinnen und Besucher tun, wenn sie ein Naturgebiet genießen?",
+    "options": [
+      "Pflanzen und Tiere in Ruhe lassen und Müll mitnehmen",
+      "Namen in jeden Baum ritzen",
+      "Essensverpackungen auf Wegen liegen lassen",
+      "Wildtiere zum Spaß jagen"
+    ],
+    "explanation": "Rücksichtsvolle Besucherinnen und Besucher schützen Lebensräume, damit auch andere Menschen und Wildtiere sie genießen können.",
+    "theoryLines": [
+      "Keinen Müll zurücklassen.",
+      "Naturorte bleiben gesünder, wenn Menschen vorsichtig sind."
+    ]
+  },
+  "sci_phb_g2_materials_hard_01": {
+    "stem": "Wie unterscheidet sich Metall von Holz beim Wärmeleiten?",
+    "options": [
+      "Metall leitet Wärme viel besser als Holz",
+      "Holz leitet Wärme immer besser als jedes andere Material",
+      "Metall und Holz leiten Wärme genau gleich",
+      "Holz schmilzt beim Erhitzen und wird flüssig, Metall bleibt fest"
+    ],
+    "explanation": "Metall ist ein ausgezeichneter Wärmeleiter, Holz dagegen ein schlechter. Deshalb wird ein Metalllöffel in heißer Suppe schnell heiß, während ein Holzlöffel kühl bleibt.",
+    "theoryLines": []
+  },
+  "sci_phb_g2_materials_hard_02": {
+    "stem": "Woran erkennst du, dass ein Material durchsichtig ist?",
+    "options": [
+      "Licht kann klar hindurchgehen",
+      "Es fühlt sich immer klebrig an",
+      "Es blockiert jedes bisschen Licht",
+      "Es schmilzt nur, wenn du flüsterst"
+    ],
+    "explanation": "Durchsichtige Materialien wie klares Glas oder klarer Kunststoff lassen dich hindurchsehen.",
+    "theoryLines": [
+      "Durchsichtig, durchscheinend und undurchsichtig beschreiben, wie Licht Materialien durchquert.",
+      "Fenster bestehen oft aus durchsichtigem Material."
+    ]
+  },
+  "sci_phb_g2_materials_hard_03": {
+    "stem": "Warum wird Kunststoff oft für leichte Behälter und Spielzeug genutzt?",
+    "options": [
+      "Er kann leicht, fest und gut formbar sein",
+      "Er löst sich in kaltem Wasser immer sofort auf",
+      "Er ist das schwerste Material auf der Erde",
+      "Er lässt sich nur für Kochtöpfe nutzen"
+    ],
+    "explanation": "Die Eigenschaften von Kunststoff machen ihn nützlich für viele Alltagsgegenstände, die nicht zu schwer sein sollen.",
+    "theoryLines": [
+      "Materialeigenschaften leiten, wie wir Materialien nutzen.",
+      "Kunststoffe sollten recycelt oder verantwortungsvoll entsorgt werden."
+    ]
+  },
+  "sci_phb_g2_materials_hard_04": {
+    "stem": "Was kann mit Wachs geschehen, wenn es erhitzt wird?",
+    "options": [
+      "Es kann von fest zu flüssig schmelzen",
+      "Es verwandelt sich in eine lebende Pflanze",
+      "Es wird automatisch kälter als Eis",
+      "Es wird zu reinem Metall"
+    ],
+    "explanation": "Erhitzen kann Wachs von fest zu flüssig ändern. Das ist eine physikalische Zustandsänderung.",
+    "theoryLines": [
+      "Feststoffe können schmelzen, wenn sie genug Wärme aufnehmen.",
+      "Abkühlen kann geschmolzenes Wachs wieder fest werden lassen."
+    ]
+  },
+  "sci_phb_g2_earth_space_med_01": {
+    "stem": "Was ist ein Zeichen, dass es bald regnen könnte?",
+    "options": [
+      "Dunkle Wolken sammeln sich am Himmel und sind mit Wassertröpfchen gefüllt.",
+      "Ein heller, klarer Mond ist tagsüber sichtbar.",
+      "Ein vollkommen blauer Himmel ohne Wolken.",
+      "Sterne erscheinen nachmittags am Himmel."
+    ],
+    "explanation": "Wolken bestehen aus winzigen Wassertröpfchen oder Eiskristallen. Wenn Wolken dunkel und dick werden, halten sie viel Wasser. Das ist ein Zeichen, dass das Wasser als Regen fallen kann. Wolkenformen und -farben zu beobachten ist eine Weise, das Wetter vorherzusagen.",
+    "theoryLines": [
+      "Dunkle, schwere Wolken sind oft ein Zeichen für bevorstehenden Regen.",
+      "Meteorologinnen und Meteorologen — Wetterfachleute — nutzen Wolken, Temperatur und Luftdruck für die Wettervorhersage."
+    ]
+  },
+  "sci_phb_g2_earth_space_med_02": {
+    "stem": "Was verursacht Wind?",
+    "options": [
+      "Bewegte Luft",
+      "Nur stilles Mondlicht",
+      "Wachsende unterirdische Wurzeln",
+      "Schatten, die von allein gehen"
+    ],
+    "explanation": "Wind ist Luft in Bewegung, oft verursacht durch ungleichmäßige Erwärmung der Erdoberfläche.",
+    "theoryLines": [
+      "Warme Luft und kühle Luft können Wind entstehen lassen.",
+      "Wind gehört zum alltäglichen Wetter."
+    ]
+  },
+  "sci_phb_g2_earth_space_hard_01": {
+    "stem": "Warum erleben wir im Laufe des Jahres verschiedene Jahreszeiten?",
+    "options": [
+      "Die geneigte Erdachse lässt verschiedene Regionen beim Umlauf um die Sonne mehr oder weniger Sonnenlicht erhalten",
+      "Der Mond rückt im Sommer näher an die Erde und im Winter weiter weg",
+      "Meeresströmungen ändern jede Jahreszeit die Temperatur des ganzen Planeten",
+      "Die Sonne umkreist die Erde zu verschiedenen Jahreszeiten mit unterschiedlicher Geschwindigkeit"
+    ],
+    "explanation": "Die Erdachse ist geneigt, deshalb sind beim Umlauf um die Sonne abwechselnd Nord- und Südhalbkugel der Sonne zugeneigt — das verursacht die Jahreszeiten.",
+    "theoryLines": []
+  },
+  "sci_phb_g2_earth_space_hard_02": {
+    "stem": "Was geschieht mit einer Wasserpfütze an einem warmen, sonnigen Tag?",
+    "options": [
+      "Die Wärme der Sonne lässt das Wasser verdunsten und zu Wasserdampf in der Luft werden",
+      "Das Wasser sinkt geradewegs in den Boden und ist für immer weg",
+      "Die Pfütze wird größer, weil Sonnenlicht extra Wasser erzeugt",
+      "Sonnenlicht verhärtet die Oberfläche der Pfütze, sodass sie als dauerhafter Feststoff bleibt"
+    ],
+    "explanation": "Wärme der Sonne gibt Wassermolekülen genug Energie, um von der Flüssigkeitsoberfläche zu entweichen und als unsichtbarer Wasserdampf in die Luft aufzusteigen. Das nennt man Verdunstung.",
+    "theoryLines": []
+  },
+  "sci_phb_g2_earth_space_hard_03": {
+    "stem": "Warum fühlt sich das Tote Meer so salzig an?",
+    "options": [
+      "Es enthält eine sehr große Menge gelöstes Salz",
+      "Es besteht aus rein geschmolzenem Zucker",
+      "Es hat überhaupt keine Mineralstoffe",
+      "Es friert jeden Nachmittag ein"
+    ],
+    "explanation": "Das Tote Meer ist extrem salzig, weil viel Salz in seinem Wasser gelöst bleibt.",
+    "theoryLines": [
+      "Manche Seen und Meere haben unterschiedliche Salzmengen.",
+      "Salziges Wasser kann das Schwimmen leichter erscheinen lassen."
+    ]
+  },
+  "sci_phb_g2_earth_space_hard_04": {
+    "stem": "Welche Rolle spielen Wolken beim Wetter?",
+    "options": [
+      "Wolken halten Wassertröpfchen und können Regen, Schnee oder Schatten bringen.",
+      "Wolken spiegeln Sternenlicht wider, um den Nachthimmel heller zu machen.",
+      "Wolken blockieren die Sonne vollständig und sind die Hauptursache der Nacht.",
+      "Wolken erzeugen Sonnenlicht und verteilen es über die Erdoberfläche."
+    ],
+    "explanation": "Wolken bestehen aus winzigen Wassertröpfchen oder Eiskristallen, die in der Luft schweben. Wenn genug Tröpfchen zusammenkommen, werden sie schwer und fallen als Regen oder Schnee. Wolken blockieren auch Sonnenlicht, sodass ein Tag kühler und dunkler wirken kann — ein wichtiger Teil des Wettersystems der Erde.",
+    "theoryLines": [
+      "Der Wasserkreislauf — Verdunstung, Kondensation und Niederschlag — bildet Wolken und bringt Regen.",
+      "Verschiedene Wolkentypen, etwa Cumulus und Stratus, hängen mit verschiedenen Wetterarten zusammen."
+    ]
+  },
+  "sci_phb_g2_environment_med_01": {
+    "stem": "Warum sollten leere Flaschen nach Möglichkeit recycelt werden?",
+    "options": [
+      "Recycling hilft, Materialien wiederzuverwenden und Abfall zu verringern",
+      "Recycling lässt Müll schneller wachsen",
+      "Recycling entfernt allen Sauerstoff aus der Luft",
+      "Recycling verwandelt Parks in Wüsten"
+    ],
+    "explanation": "Recycling hält nützliche Materialien im Gebrauch und kann Müll verringern, der der Umwelt schadet.",
+    "theoryLines": [
+      "Vermeiden, wiederverwenden und recyceln helfen dem Planeten.",
+      "Recyclingstoffe richtig zu trennen ist wichtig."
+    ]
+  },
+  "sci_phb_g2_environment_hard_01": {
+    "stem": "Warum ist das Verbrennen von Müll im Freien eine schlechte Idee?",
+    "options": [
+      "Es kann schädlichen Rauch in die Luft freisetzen",
+      "Es reinigt die Atmosphäre immer",
+      "Es erzeugt nur reines Trinkwasser",
+      "Es hilft jedem Tier, besser zu atmen"
+    ],
+    "explanation": "Das Verbrennen von Abfall kann Luft verschmutzen und unsichere Dämpfe erzeugen.",
+    "theoryLines": [
+      "Saubere Luft unterstützt gesunde Menschen und Wildtiere.",
+      "Müll über sichere, zugelassene Wege entsorgen."
+    ]
+  },
+  "sci_phb_g2_environment_hard_02": {
+    "stem": "Was kann Verschmutzung einem Bach antun?",
+    "options": [
+      "Das Wasser für Lebewesen unsicher machen",
+      "Automatisch mehr Süßwasserfische erzeugen",
+      "Den Bach in festes Gold verwandeln",
+      "Den Bedarf an sauberen Lebensräumen beseitigen"
+    ],
+    "explanation": "Chemikalien, Müll und andere Schadstoffe können Pflanzen, Tiere und Menschen schädigen, die auf sauberes Wasser angewiesen sind.",
+    "theoryLines": [
+      "Sauberes Wasser ist eine wichtige natürliche Ressource.",
+      "Verschmutzung zu verhindern schützt Ökosysteme."
+    ]
+  },
+  "sci_phb_g2_environment_hard_03": {
+    "stem": "Warum pflanzen Menschen Bäume?",
+    "options": [
+      "Bäume liefern Sauerstoff, Schatten und Wohnorte für Wildtiere",
+      "Bäume entfernen allen Boden von der Erde",
+      "Bäume halten Regen für immer vom Fallen ab",
+      "Bäume ersetzen den Bedarf an Sonnenlicht"
+    ],
+    "explanation": "Bäume helfen der Umwelt, indem sie Sauerstoff erzeugen, Schatten spenden und Tiere unterstützen.",
+    "theoryLines": [
+      "Pflanzen setzen Sauerstoff frei, den Tiere brauchen.",
+      "Bäume pflanzen ist eine hilfreiche Schutzmaßnahme."
+    ]
+  },
+  "sci_phb_g2_environment_hard_04": {
+    "stem": "Was tun Ameisen, damit andere Ameisen gefundene Nahrung finden?",
+    "options": [
+      "Sie hinterlassen eine chemische Duftspur, damit andere Ameisen dem Weg zur Nahrung folgen können",
+      "Sie machen laute Geräusche, um alle anderen Ameisen zur Nahrung zu rufen",
+      "Sie tragen die Nahrung still zurück, ohne mit dem Nest zu kommunizieren",
+      "Sie bauen eine Mauer um die Nahrung, um andere Tiere abzuhalten"
+    ],
+    "explanation": "Ameisen hinterlassen eine Pheromonspur (chemischen Duft) von der Nahrung zurück zum Nest. Andere Ameisen folgen dieser unsichtbaren Spur, um die Nahrung zu finden und zu sammeln.",
+    "theoryLines": []
+  },
+  "sci_phb_g3_materials_eas_01": {
+    "stem": "Welches Material ist ein guter elektrischer Leiter?",
+    "options": [
+      "Metall wie Kupfer",
+      "Trockenes Holz",
+      "Gummi",
+      "Frischhaltefolie"
+    ],
+    "explanation": "Metalle lassen elektrischen Strom leicht fließen, deshalb werden sie in Leitungen genutzt.",
+    "theoryLines": [
+      "Leiter lassen Elektrizität hindurch.",
+      "Isolatoren wie Gummi hemmen den elektrischen Fluss."
+    ]
+  },
+  "sci_phb_g3_materials_eas_02": {
+    "stem": "In welchem Aggregatzustand liegt Wasser bei Zimmertemperatur gewöhnlich vor?",
+    "options": [
+      "Flüssig",
+      "Fest",
+      "Gasförmig",
+      "Plasma"
+    ],
+    "explanation": "Bei Zimmertemperatur ist Wasser eine Flüssigkeit. Es wird zu Eis (fest), wenn es unter 0 °C abgekühlt wird, und zu Dampf (gasförmig), wenn es über 100 °C erhitzt wird.",
+    "theoryLines": []
+  },
+  "sci_phb_g3_materials_hard_01": {
+    "stem": "Was lässt einen Eiswürfel gewöhnlich schneller schmelzen?",
+    "options": [
+      "Wärmere Umgebung",
+      "Ihn in einen kälteren Gefrierschrank legen",
+      "Ihn für immer von aller Wärme fernhalten",
+      "Ihn in dickeres Eis einwickeln"
+    ],
+    "explanation": "Wärmeenergie lässt Eis schmelzen. Ein wärmerer Ort überträgt Wärme schneller auf das Eis.",
+    "theoryLines": [
+      "Schmelzen ist der Wechsel von fest zu flüssig.",
+      "Die Temperatur beeinflusst, wie schnell Eis schmilzt."
+    ]
+  },
+  "sci_phb_g3_materials_hard_02": {
+    "stem": "Was ist der Unterschied zwischen einer physikalischen und einer chemischen Veränderung?",
+    "options": [
+      "Eine physikalische Veränderung kann die Form ändern, eine chemische Veränderung erzeugt einen neuen Stoff",
+      "Physikalische Veränderungen erzeugen immer brandneue Elemente",
+      "Chemische Veränderungen geschehen nie in Küchen",
+      "Schmelzendes Eisen ist immer eine chemische Veränderung zu Holz"
+    ],
+    "explanation": "Schmelzen und Zerreißen sind physikalische Veränderungen. Holz verbrennen ist eine chemische Veränderung, weil neue Stoffe entstehen.",
+    "theoryLines": [
+      "Physikalische Veränderungen erzeugen keine neue Art von Materie.",
+      "Chemische Veränderungen ordnen Materie zu neuen Materialien um."
+    ]
+  },
+  "sci_phb_g3_earth_space_eas_01": {
+    "stem": "Was verursacht den Tag?",
+    "options": [
+      "Die Erde dreht sich so, dass unser Teil des Planeten der Sonne zugewandt ist.",
+      "Der Mond stellt sich vor die Sonne und spiegelt Licht nach unten.",
+      "Die Sonne wandert alle 24 Stunden einmal um die Erde.",
+      "Regenwolken ziehen weg und lassen Sonnenlicht durch."
+    ],
+    "explanation": "Die Erde dreht sich etwa alle 24 Stunden einmal um ihre eigene Achse. Wenn der Teil der Erde, auf dem du lebst, zur Sonne zeigt, erreicht dich Sonnenlicht und es wird Tag. Beim Weiterdrehen zeigt dieselbe Seite von der Sonne weg und es wird Nacht.",
+    "theoryLines": [
+      "Die Erdrotation — die Drehung um ihre Achse — erzeugt den Wechsel von Tag und Nacht.",
+      "Die Sonne wandert nicht um die Erde; die Erddrehung lässt es vom Boden so erscheinen."
+    ]
+  },
+  "sci_phb_g3_earth_space_eas_02": {
+    "stem": "Woher kommt das Licht des Mondes?",
+    "options": [
+      "Er spiegelt Licht von der Sonne wider",
+      "Er macht wie ein Lagerfeuer eigenes Feuer",
+      "Er leuchtet nur mit Meersalz",
+      "Er borgt Licht vom Erdkern"
+    ],
+    "explanation": "Der Mond erzeugt kein eigenes sichtbares Licht. Wir sehen Sonnenlicht, das von seiner Oberfläche zurückgeworfen wird.",
+    "theoryLines": [
+      "Der Mond kann hell wirken, obwohl er Sonnenlicht nur widerspiegelt.",
+      "Mondphasen hängen davon ab, wie wir die beleuchtete Seite sehen."
+    ]
+  },
+  "sci_phb_g3_earth_space_hard_01": {
+    "stem": "Warum sind Orte nahe dem Mittelmeer oft milder als Binnenwüsten?",
+    "options": [
+      "Nahe Meere helfen, die Temperatur auszugleichen",
+      "Wüsten liegen immer neben Gletschern",
+      "Ozeane entfernen alles Sonnenlicht",
+      "Sand erzeugt jede Stunde tropischen Regen"
+    ],
+    "explanation": "Große Wassermassen erwärmen und kühlen sich langsamer als Land, deshalb sind Küstenklimate oft milder.",
+    "theoryLines": [
+      "Geografie beeinflusst das Klima.",
+      "Wasser kann extreme Temperaturschwankungen abmildern."
+    ]
+  },
+  "sci_phb_g3_earth_space_hard_02": {
+    "stem": "Was ist Kondensation im Wasserkreislauf?",
+    "options": [
+      "Wasserdampf kühlt sich ab und bildet winzige Flüssigkeitströpfchen",
+      "Eis wird sofort zu festem Metall",
+      "Gestein löst sich zu reinem Sauerstoff auf",
+      "Sonnenlicht friert zu Schneeflocken"
+    ],
+    "explanation": "Wenn abgekühlter Wasserdampf zu Flüssigkeitströpfchen wird, können Wolken oder Tau entstehen.",
+    "theoryLines": [
+      "Kondensation ist das Gegenteil von Verdunstung.",
+      "Wolken entstehen oft durch Kondensation in der Luft."
+    ]
+  },
+  "sci_phb_g3_environment_eas_01": {
+    "stem": "Was beginnt gewöhnlich eine einfache Nahrungskette?",
+    "options": [
+      "Pflanzen, die Nahrung aus Sonnenlicht herstellen",
+      "Löwen, die nur Steine fressen",
+      "Wolken, die Insekten jagen",
+      "Autos, an denen Blätter wachsen"
+    ],
+    "explanation": "Produzenten wie Pflanzen fangen Sonnenlicht ein und liefern Nahrungsenergie für Verbraucher.",
+    "theoryLines": [
+      "Nahrungsketten zeigen, wer wen frisst.",
+      "Energie fließt von Produzenten zu Verbrauchern."
+    ]
+  },
+  "sci_phb_g3_environment_eas_02": {
+    "stem": "Warum ist Papierrecycling hilfreich?",
+    "options": [
+      "Es spart Materialien und kann Abfall verringern",
+      "Es lässt Bäume absichtlich schneller verschwinden",
+      "Es verschmutzt Flüsse automatisch",
+      "Es hält Menschen vom Bücherlesen ab"
+    ],
+    "explanation": "Papierrecycling nutzt Fasern erneut, sodass weniger neue Ressourcen nötig sein können und weniger Müll entsteht.",
+    "theoryLines": [
+      "Papier stammt aus Pflanzenmaterialien.",
+      "Recycling ist eine Weise, für die Umwelt zu sorgen."
+    ]
+  },
+  "sci_phb_g3_environment_hard_01": {
+    "stem": "Was kann Abholzung einem Waldökosystem antun?",
+    "options": [
+      "Bäume entfernen, auf die Tiere und Boden angewiesen sind",
+      "Sofort mehr uralten Wald erzeugen",
+      "Jeden Lebensraum automatisch sicherer machen",
+      "Kohlenstoffdioxid am Existieren hindern"
+    ],
+    "explanation": "Große Waldflächen zu fällen zerstört Wohnorte für Wildtiere und kann Boden und Klimagleichgewicht schädigen.",
+    "theoryLines": [
+      "Wälder unterstützen viele Lebewesen.",
+      "Wälder zu schützen hilft der Artenvielfalt."
+    ]
+  },
+  "sci_phb_g3_environment_hard_02": {
+    "stem": "Warum ist Luftverschmutzung für Menschen und Tiere schädlich?",
+    "options": [
+      "Verschmutzte Luft einzuatmen kann Lungen schädigen und schwere Gesundheitsprobleme verursachen",
+      "Luftverschmutzung betrifft nur Pflanzen und hat keine Wirkung auf Menschen oder Tiere",
+      "Sauberes Wasser spült Luftverschmutzung immer weg, bevor jemand geschädigt wird",
+      "Luftverschmutzung ist nur innerhalb von Stadtgrenzen gefährlich und auf dem Land harmlos"
+    ],
+    "explanation": "Verschmutzte Luft enthält schädliche Teilchen und Gase, die Lungen reizen und schädigen können, das Atmen erschweren und das Krankheitsrisiko erhöhen.",
+    "theoryLines": []
+  },
+  "sci_phb_g4_materials_eas_01": {
+    "stem": "Wie kannst du Sand vom Wasser trennen?",
+    "options": [
+      "Die Mischung durch einen Filter gießen",
+      "Warten, bis Sand zu Zucker wird",
+      "Nur das Sonnenlicht einfrieren",
+      "Rühren, bis der Sand für immer unsichtbar wird"
+    ],
+    "explanation": "Sand löst sich im Wasser nicht auf. Filtern kann den Sand auffangen, während Wasser hindurchgeht.",
+    "theoryLines": [
+      "Mischungen lassen sich oft mit physikalischen Methoden trennen.",
+      "Filtration funktioniert, wenn ein Stoff ungelöst ist."
+    ]
+  },
+  "sci_phb_g4_materials_eas_02": {
+    "stem": "Was gilt für eine Flüssigkeit?",
+    "options": [
+      "Sie nimmt die Form ihres Behälters an",
+      "Sie behält immer eine feste Form wie ein Stein",
+      "Sie lässt sich nicht gießen",
+      "Sie hat überhaupt kein Volumen"
+    ],
+    "explanation": "Flüssigkeiten fließen und passen sich der Form des Behälters an, behalten aber ein bestimmtes Volumen.",
+    "theoryLines": [
+      "Fest, flüssig und gasförmig sind Aggregatzustände der Materie.",
+      "Wasser ist eine häufige Flüssigkeit."
+    ]
+  },
+  "sci_phb_g4_earth_space_eas_01": {
+    "stem": "Was erzeugt vor allem das sich wiederholende Muster von Tag und Nacht?",
+    "options": [
+      "Die Erde dreht sich alle 24 Stunden um ihre Achse.",
+      "Der Mond blockiert das Sonnenlicht und erzeugt Dunkelheit.",
+      "Die Sonne wandert jeden Tag von Ost nach West um die Erde.",
+      "Regenwolken bedecken die Sonne und machen alles dunkel."
+    ],
+    "explanation": "Die Erde dreht sich etwa alle 24 Stunden einmal. Die der Sonne zugewandte Seite hat Tag, die abgewandte Seite hat Nacht.",
+    "theoryLines": [
+      "Tag und Nacht wiederholen sich, weil die Erde sich dreht.",
+      "Die Umlaufbahn der Erde um die Sonne ist der Hauptgrund für Jahreszeiten, nicht für Tag und Nacht."
+    ]
+  },
+  "sci_phb_g4_earth_space_eas_02": {
+    "stem": "Was startet den Wasserkreislauf, indem flüssiges Wasser zu Dampf wird?",
+    "options": [
+      "Verdunstung, angetrieben von Wärme der Sonne",
+      "Steine, die in Wolken springen",
+      "Fische, die Feuer atmen",
+      "Schatten, die Flüsse einfrieren"
+    ],
+    "explanation": "Sonnenlicht erwärmt Wasser, sodass ein Teil als Wasserdampf in die Luft verdunstet.",
+    "theoryLines": [
+      "Der Wasserkreislauf bewegt Wasser um die Erde.",
+      "Verdunstung, Kondensation und Niederschlag sind wichtige Schritte."
+    ]
+  },
+  "sci_phb_g4_environment_eas_01": {
+    "stem": "Was ist ein Lebensraum in der Naturwissenschaft?",
+    "options": [
+      "Der natürliche Ort, an dem ein Tier oder eine Pflanze lebt und bekommt, was zum Überleben nötig ist",
+      "Die bestimmte Nahrung, die ein Tier jeden einzelnen Tag frisst",
+      "Ein Ort, an dem Blumen nur im Frühling blühen",
+      "Das Gewässer, in dem alle Fische und Meerestiere leben müssen"
+    ],
+    "explanation": "Ein Lebensraum ist die natürliche Umgebung, in der eine Pflanze oder ein Tier lebt. Er liefert alles, was der Organismus braucht, darunter Nahrung, Wasser, Schutz und Raum.",
+    "theoryLines": []
+  },
+  "sci_phb_g4_environment_eas_02": {
+    "stem": "Was ist die ursprüngliche Energiequelle für fast alle Nahrungsketten auf der Erde?",
+    "options": [
+      "Die Sonne",
+      "Der Mond",
+      "Bodennährstoffe",
+      "Wind und Regen"
+    ],
+    "explanation": "Fast alle Nahrungsketten beginnen mit der Sonne. Pflanzen fangen Sonnenlicht durch Fotosynthese ein und erzeugen damit Nahrung, die andere Organismen dann fressen.",
+    "theoryLines": []
+  },
+  "sci_phb_g5_materials_eas_01": {
+    "stem": "Welches Material ist ein guter elektrischer Isolator?",
+    "options": [
+      "Gummi",
+      "Kupferdraht-Metall",
+      "Aluminiumfolie",
+      "Silber"
+    ],
+    "explanation": "Isolatoren hemmen elektrischen Strom. Gummi wird oft genutzt, um Leitungen zur Sicherheit zu umhüllen.",
+    "theoryLines": [
+      "Isolatoren schützen Menschen vor Stromschlag.",
+      "Metalle sind gewöhnlich Leiter, keine Isolatoren."
+    ]
+  },
+  "sci_phb_g5_materials_eas_02": {
+    "stem": "Welche Veränderung ist eine physikalische Veränderung?",
+    "options": [
+      "Eis schmilzt zu flüssigem Wasser",
+      "Holz verbrennt zu Asche und Rauch",
+      "Eisen rostet zu einem neuen Material",
+      "Backpulver reagiert in einem Kuchenteig"
+    ],
+    "explanation": "Schmelzen ändert den Zustand von Wasser, aber nicht seine chemische Identität. Verbrennen und Rosten erzeugen neue Stoffe.",
+    "theoryLines": [
+      "Physikalische Veränderungen lassen sich oft umkehren.",
+      "Chemische Veränderungen erzeugen andere Materialien."
+    ]
+  },
+  "sci_phb_g5_materials_eas_03": {
+    "stem": "Was ist eine häufige Eigenschaft vieler Metalle?",
+    "options": [
+      "Sie leiten Wärme und Elektrizität gut",
+      "Sie sind bei Zimmertemperatur immer Gase",
+      "Sie glänzen nie, wenn sie poliert werden",
+      "Sie lösen sich nur in trockener Luft sofort auf"
+    ],
+    "explanation": "Metalle sind oft glänzend, fest und gute Leiter für Wärme und Elektrizität.",
+    "theoryLines": [
+      "Kupfer und Aluminium sind nützliche Metallleiter.",
+      "Materialeigenschaften erklären, wie Metalle genutzt werden."
+    ]
+  },
+  "sci_phb_g5_materials_med_01": {
+    "stem": "Was hilft gewöhnlich, dass ein Feststoff sich im Wasser schneller auflöst?",
+    "options": [
+      "Rühren und wärmeres Wasser nutzen",
+      "Das Wasser kälter und still halten",
+      "Nur größere unzerbrechliche Brocken nutzen",
+      "Das gesamte Wasser entfernen"
+    ],
+    "explanation": "Wärme und Rühren helfen Teilchen beim Vermischen, sodass sich viele Feststoffe schneller auflösen.",
+    "theoryLines": [
+      "Auflösen bildet eine Lösung.",
+      "Temperatur und Teilchengröße können die Auflösegeschwindigkeit beeinflussen."
+    ]
+  },
+  "sci_phb_g5_materials_med_02": {
+    "stem": "Was ist der Hauptunterschied zwischen einer Mischung und einer chemischen Verbindung?",
+    "options": [
+      "In einer Mischung lassen sich die Stoffe physikalisch trennen, in einer Verbindung sind die Elemente chemisch verbunden",
+      "Mischungen und Verbindungen verhalten sich beim Erwärmen oder Abkühlen immer gleich",
+      "Eine Verbindung liegt bei Zimmertemperatur immer als Gas vor",
+      "Du kannst die Teile einer Verbindung immer leicht von Hand trennen"
+    ],
+    "explanation": "Eine Mischung ist eine Kombination von Stoffen, die ihre eigenen Eigenschaften behalten und sich physikalisch trennen lassen. Eine Verbindung entsteht, wenn Elemente chemisch binden und einen neuen Stoff mit anderen Eigenschaften bilden.",
+    "theoryLines": []
+  },
+  "sci_phb_g5_earth_space_eas_01": {
+    "stem": "Was beschreiben tägliche Wetterberichte gewöhnlich?",
+    "options": [
+      "Temperatur, Wind, Wolken und Niederschlag",
+      "Nur die Namen uralter Dinosaurier",
+      "Nur die Tiefe des Erdkerns",
+      "Nur den Geschmack von Bodenmineralien"
+    ],
+    "explanation": "Wetter ist der tägliche Zustand der Atmosphäre, darunter Wärme, Wind sowie Regen oder Schnee.",
+    "theoryLines": [
+      "Wetter kann sich von Tag zu Tag ändern.",
+      "Klima beschreibt längerfristige Muster."
+    ]
+  },
+  "sci_phb_g5_earth_space_eas_02": {
+    "stem": "Was hilft Wind zu erzeugen?",
+    "options": [
+      "Unterschiede im Luftdruck durch ungleichmäßige Erwärmung",
+      "Stilles Mondlicht, das Steine schiebt",
+      "Unterirdische Flüsse, die fest einfrieren",
+      "Schatten, die mit Wolken die Plätze tauschen"
+    ],
+    "explanation": "Wenn Luft ungleichmäßig erwärmt wird, entstehen Druckunterschiede und Luft bewegt sich als Wind.",
+    "theoryLines": [
+      "Luft bewegt sich von höherem Druck zu niedrigerem Druck.",
+      "Die Energie der Sonne treibt viel vom Wetter der Erde an."
+    ]
+  },
+  "sci_phb_g5_environment_eas_01": {
+    "stem": "Was bedeutet Naturschutz?",
+    "options": [
+      "Natürliche Ressourcen schützen und sorgfältig nutzen",
+      "Wasser und Energie absichtlich verschwenden",
+      "Lebensräume zum Spaß zerstören",
+      "Müll in Parks ignorieren"
+    ],
+    "explanation": "Naturschutz bedeutet, für die Natur zu sorgen, damit Ressourcen und Wildtiere auch in Zukunft bestehen können.",
+    "theoryLines": [
+      "Menschen teilen die Verantwortung für die Umwelt.",
+      "Kleine tägliche Entscheidungen können den Naturschutz unterstützen."
+    ]
+  },
+  "sci_phb_g5_environment_eas_02": {
+    "stem": "Warum ist Recycling wichtig?",
+    "options": [
+      "Es verringert Abfall und hilft, wertvolle Materialien wiederzuverwenden",
+      "Es erzeugt absichtlich mehr Meeresmüll",
+      "Es entfernt alle Pflanzen aus Wäldern",
+      "Es lässt saubere Luft verschwinden"
+    ],
+    "explanation": "Recycling hält Materialien länger im Gebrauch und kann Verschmutzung sowie Deponiemüll verringern.",
+    "theoryLines": [
+      "Recycling funktioniert am besten, wenn Materialien richtig getrennt werden.",
+      "Vermeiden und wiederverwenden sind ebenfalls hilfreiche Gewohnheiten."
+    ]
+  },
+  "sci_phb_g6_materials_eas_01": {
+    "stem": "Welches der Folgenden ist ein Beispiel für eine chemische Veränderung eines Materials?",
+    "options": [
+      "Holz verbrennen, wobei Asche und Rauch entstehen und sich der Vorgang nicht umkehren lässt",
+      "Einen Eiswürfel zu flüssigem Wasser schmelzen",
+      "Glas in kleinere Stücke zerbrechen",
+      "Sand in Wasser mischen"
+    ],
+    "explanation": "Eine chemische Veränderung erzeugt einen neuen Stoff mit anderen Eigenschaften. Holz verbrennen ist eine chemische Veränderung, weil Asche und Gase entstehen und das Holz sich nicht wiederherstellen lässt.",
+    "theoryLines": []
+  },
+  "sci_phb_g6_materials_eas_02": {
+    "stem": "Welches Material wird oft als elektrischer Isolator genutzt?",
+    "options": [
+      "Kunststoff",
+      "Kupfer",
+      "Aluminium",
+      "Silber"
+    ],
+    "explanation": "Kunststoff hemmt elektrischen Strom, deshalb wird er häufig genutzt, um Leitungen zu umhüllen und sichere Griffe herzustellen.",
+    "theoryLines": [
+      "Isolatoren schützen Nutzerinnen und Nutzer vor Stromschlag.",
+      "Metalle sind gewöhnlich eher Leiter."
+    ]
+  },
+  "sci_phb_g6_materials_eas_03": {
+    "stem": "In welchen drei Zuständen kann Wasser vorkommen?",
+    "options": [
+      "Fest (Eis), flüssig (Wasser) und gasförmig (Wasserdampf oder Dampf)",
+      "Nur fest und gasförmig, nie in flüssiger Form",
+      "Nur flüssig und fest, es kann nie ein Gas werden",
+      "Plasma, Kristall und flüssig"
+    ],
+    "explanation": "Wasser liegt als Eis (fest) vor, wenn es gefroren ist, als flüssiges Wasser bei normalen Temperaturen und als Wasserdampf oder Dampf (gasförmig), wenn es genug erhitzt wird. Das sind seine drei Aggregatzustände.",
+    "theoryLines": []
+  },
+  "sci_phb_g6_materials_med_01": {
+    "stem": "Was geschieht bei einer Phasenänderung von Wasser?",
+    "options": [
+      "Wasser ändert die Form, etwa von flüssig zu gasförmig, ohne ein neuer Stoff zu werden",
+      "Wasser wird zu einem brandneuen Metallelement",
+      "Wasser verliert dauerhaft allen Wasserstoff",
+      "Wasser wird zu lebendem Gewebe"
+    ],
+    "explanation": "Schmelzen, Gefrieren, Verdunstung und Kondensation ändern den Zustand von Wasser, nicht seine chemische Identität.",
+    "theoryLines": [
+      "H2O bleibt Wasser in fester, flüssiger oder gasförmiger Form.",
+      "Wärmeenergie treibt viele Phasenänderungen an."
+    ]
+  },
+  "sci_phb_g6_materials_med_02": {
+    "stem": "Welche Faktoren können das Auflösen beschleunigen?",
+    "options": [
+      "Höhere Temperatur, Rühren und kleinere Stücke",
+      "Niedrigere Temperatur und keine Bewegung",
+      "Größere Brocken, unberührt in Eiswasser gelassen",
+      "Das Lösungsmittel vollständig entfernen"
+    ],
+    "explanation": "Wärme, Rühren und größere Oberfläche helfen gelösten Teilchen, schneller in das Lösungsmittel zu gelangen.",
+    "theoryLines": [
+      "Die Auflösegeschwindigkeit hängt von den Bedingungen ab.",
+      "Naturwissenschaftlerinnen und Naturwissenschaftler steuern Variablen, wenn sie das Auflösen untersuchen."
+    ]
+  },
+  "sci_phb_g6_earth_space_eas_01": {
+    "stem": "Was verursacht vor allem die Jahreszeiten auf der Erde?",
+    "options": [
+      "Die geneigte Erdachse beim Umlauf um die Sonne",
+      "Der Mond, der die Sonne jeden Monat ausschaltet",
+      "Wolken, die den gesamten Weltraum für immer verbergen",
+      "Ozeane, die die Erde am Bewegen hindern"
+    ],
+    "explanation": "Weil die Erde geneigt ist, erhalten verschiedene Halbkugeln zu verschiedenen Jahreszeiten mehr direktes Sonnenlicht.",
+    "theoryLines": [
+      "Die Erde umkreist die Sonne einmal im Jahr.",
+      "Neigung, nicht allein die Entfernung, ist der Hauptgrund für Jahreszeiten."
+    ]
+  },
+  "sci_phb_g6_earth_space_eas_02": {
+    "stem": "Welche Rolle spielt die Sonne im Wasserkreislauf?",
+    "options": [
+      "Sie liefert Energie, die die Verdunstung antreibt",
+      "Sie friert jeden Morgen alle Ozeane ein",
+      "Sie entfernt Wasser dauerhaft von der Erde",
+      "Sie hält Wolken für immer am Entstehen ab"
+    ],
+    "explanation": "Sonnenenergie erwärmt Wasser, sodass es verdunsten kann — ein wichtiger Teil des Wasserkreislaufs beginnt damit.",
+    "theoryLines": [
+      "Die Sonne treibt Wetter und Wasserkreislauf an.",
+      "Verdunstetes Wasser kann später kondensieren und als Niederschlag fallen."
+    ]
+  },
+  "sci_phb_g6_environment_eas_01": {
+    "stem": "Was bedeutet Biodiversität?",
+    "options": [
+      "Die Vielfalt der Lebewesen in einem Gebiet",
+      "Eine einzelne Art, die für immer allein lebt",
+      "Nur Gestein und Mineralien ohne Leben",
+      "Wetter, das sich nie ändert"
+    ],
+    "explanation": "Biodiversität ist die Mischung aus Pflanzen, Tieren und anderen Organismen, die sich einen Lebensraum teilen.",
+    "theoryLines": [
+      "Gesunde Ökosysteme haben oft viele Arten.",
+      "Lebensräume zu schützen hilft, die Biodiversität zu schützen."
+    ]
+  },
+  "sci_phb_g6_environment_eas_02": {
+    "stem": "Warum ist Wasserverschmutzung ein ernstes Problem?",
+    "options": [
+      "Sie kann Menschen, Tiere und Ökosysteme schädigen, die sauberes Wasser brauchen",
+      "Sie macht jeden Fluss sicherer zum Trinken",
+      "Sie erhöht die Biodiversität automatisch",
+      "Sie beseitigt jeden Bedarf an Naturschutz"
+    ],
+    "explanation": "Verschmutztes Wasser kann schädliche Stoffe tragen, die Gesundheit und Lebensräume beschädigen.",
+    "theoryLines": [
+      "Sauberes Wasser ist für das Leben unerlässlich.",
+      "Verschmutzung zu verhindern schützt Gemeinschaften und Natur."
+    ]
+  }
+}

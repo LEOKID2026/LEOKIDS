@@ -1,4 +1,4 @@
-import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+import { useGlobalBurnDownCopy } from "../../hooks/useGlobalBurnDownCopy.js";
 import Link from "next/link";
 import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 
@@ -13,16 +13,20 @@ import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
 export default function PublicSeoWideCardGrid({
   cards,
   isBright,
-  heading = globalBurnDownCopy("components__seo__PublicSeoWideCardGrid", "practice_areas"),
+  heading,
   testId,
 }) {
+  const burnDown = useGlobalBurnDownCopy();
+  const resolvedHeading =
+    heading ?? burnDown("components__seo__PublicSeoWideCardGrid", "practice_areas");
+
   if (!cards?.length) return null;
 
   const cls = getPublicSeoWideClasses(isBright);
 
   return (
     <section className={`space-y-4 ${cls.section}`} data-testid={testId}>
-      <h2 className={cls.sectionTitle}>{heading}</h2>
+      <h2 className={cls.sectionTitle}>{resolvedHeading}</h2>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((c) => (
           <Link key={c.href} href={c.href} className={cls.hubCard}>

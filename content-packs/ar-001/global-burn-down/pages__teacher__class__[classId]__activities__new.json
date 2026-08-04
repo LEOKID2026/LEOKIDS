@@ -1,5 +1,32 @@
 {
   "copy": {
-    "level": "مستوى"
+    "level": "مستوى",
+    "new_activity": "نشاط جديد",
+    "back_to_activities": "← العودة إلى الأنشطة",
+    "title": "العنوان",
+    "subject": "المادة",
+    "topic": "الموضوع",
+    "no_science_topics": "لا توجد مواضيع متاحة لهذا الصف في العلوم.",
+    "no_subject_topics": "لا توجد مواضيع متاحة لهذه المادة وهذا الصف.",
+    "subtopic_optional": "موضوع فرعي (اختياري)",
+    "grade_for_questions": "الصف (لإنشاء الأسئلة)",
+    "activity_mode": "نمط النشاط",
+    "number_of_questions": "عدد الأسئلة",
+    "time_limit_optional": "حدّ زمني (ثوانٍ، اختياري)",
+    "due_date_optional": "تاريخ الاستحقاق (واجب، اختياري)",
+    "generating": "جارٍ الإنشاء…",
+    "preview_questions": "معاينة الأسئلة",
+    "save_draft": "حفظ كمسودة",
+    "preview_heading": "معاينة ({n} أسئلة)",
+    "not_sent_hint": "(لا يُرسل للتلميذ)",
+    "err_no_permission": "ليس لديك صلاحية لإنشاء أنشطة لهذا الفصل. تواصل مع إدارة المدرسة.",
+    "err_load_class": "تعذّر تحميل الفصل",
+    "err_invalid_grade": "مستوى صف هذا الفصل غير صالح. تواصل مع إدارة المدرسة.",
+    "network_error": "خطأ في الشبكة",
+    "err_preview": "تعذّر إنشاء معاينة الأسئلة",
+    "err_enter_title": "يرجى إدخال عنوان",
+    "err_preview_first": "يرجى معاينة الأسئلة قبل الحفظ",
+    "err_quiz_time": "يتطلب وضع الاختبار حدًا زمنيًا (بالثواني)",
+    "err_save": "فشل الحفظ"
   }
 }

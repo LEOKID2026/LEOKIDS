@@ -1,5 +1,31 @@
 {
   "copy": {
-    "cfg_maxtotal_total": "cfg.maxTotal || total"
+    "cfg_maxtotal_total": "cfg.maxTotal || total",
+    "control_build": "Build the order.",
+    "control_find_per_tray": "Choose how many go on each tray.",
+    "control_find_total": "Choose the total number of items.",
+    "control_find_trays": "Choose how many trays you need.",
+    "control_same_total": "Choose a different arrangement with the same total.",
+    "feedback_almost": "Check the number of trays and how many are on each tray.",
+    "feedback_ok": "Great! The order is ready.",
+    "info_find_per_tray": "{total} {itemLabel} · {trays} trays",
+    "info_find_total": "{trays} trays · {perTray} {itemLabel} per tray",
+    "info_find_trays": "{total} {itemLabel} · {perTray} per tray",
+    "info_same_total_given": "Given: {givenTrays} × {givenPerTray} = {total}",
+    "item_cookies": "cookies",
+    "item_croissants": "croissants",
+    "item_cupcakes": "cupcakes",
+    "item_muffins": "muffins",
+    "item_rolls": "rolls",
+    "prompt_build": "Set up {trays} trays with {perTray} {itemLabel} on each tray.",
+    "prompt_build_fallback": "Set up the order.",
+    "prompt_find_per_tray": "Share {total} {itemLabel} equally among {trays} trays. How many go on each tray?",
+    "prompt_find_total": "There are {trays} trays with {perTray} {itemLabel} on each. How many {itemLabel} in total?",
+    "prompt_find_trays": "There are {total} {itemLabel}. Each tray holds {perTray}. How many trays do you need?",
+    "prompt_same_total": "There are {total} items. They are arranged as {givenTrays} trays with {givenPerTray} on each. Rearrange the same total using a different number of trays.",
+    "solution_text_default": "Solution:",
+    "solution_text_find_per_tray": "Each tray gets {perTray}.",
+    "solution_text_find_trays": "You need {trays} trays.",
+    "solution_text_same_total": "Another way: {trays} trays with {perTray} on each."
   }
 }

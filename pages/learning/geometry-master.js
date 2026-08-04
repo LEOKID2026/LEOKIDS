@@ -28,6 +28,12 @@ import { generateQuestion } from "../../utils/geometry-question-generator";
 import { sanitizeQuestionForStudentDisplay } from "../../utils/student-question-stem-sanitizer";
 import { resolveStudentQuestionDisplayParts } from "../../utils/student-question-display";
 import StudentQuestionDisplay from "../../components/learning/StudentQuestionDisplay";
+import LearningSessionCompletion from "../../components/learning/LearningSessionCompletion.jsx";
+import {
+  resolveLearningSessionQuestionTarget,
+  shouldCompleteLearningSessionByCount,
+} from "../../components/learning/learning-session-run.js";
+
 import {
   buildLearningMasterQuestionPressureLayout,
   LEARNING_MASTER_ANSWER_SURFACE_CLASS,
@@ -457,8 +463,15 @@ export default function GeometryMaster() {
   const [bestStreak, setBestStreak] = useState(0);
   const [lives, setLives] = useState(3);
   const [totalQuestions, setTotalQuestions] = useState(0);
+  const totalQuestionsRef = useRef(0);
+  const sessionQuestionTargetRef = useRef(null);
+  const [sessionComplete, setSessionComplete] = useState(false);
   const [avgTime, setAvgTime] = useState(0);
   const [questionStartTime, setQuestionStartTime] = useState(null);
+
+  useEffect(() => {
+    totalQuestionsRef.current = totalQuestions;
+  }, [totalQuestions]);
 
   useLearningVisibilityClock({
     enabled: gameActive && isFairnessVisibilityLedgerActive(mode),
@@ -1087,6 +1100,16 @@ export default function GeometryMaster() {
   }
 
   const generateNewQuestion = () => {
+    if (
+      shouldCompleteLearningSessionByCount(
+        totalQuestionsRef.current,
+        sessionQuestionTargetRef.current
+      )
+    ) {
+      recordSessionProgress();
+      enterSessionComplete();
+      return false;
+    }
     clearWrongAnswerAdvanceState();
     closeOpenQuestionLedger(true);
     if (!GRADES[grade]) {
@@ -1348,7 +1371,7 @@ export default function GeometryMaster() {
       }
       
       const questionKey =
-        geometryQuestionFingerprint(question) |
+        geometryQuestionFingerprint(question) ||
         `fallback|${question.question}|${question.correctAnswer}`;
 
       const conceptualKind =
@@ -1662,6 +1685,7 @@ export default function GeometryMaster() {
     });
     setTotalQuestions((prevCount) => {
       const newCount = prevCount + 1;
+      totalQuestionsRef.current = newCount;
       if (questionStartTime) {
         const elapsed = (Date.now() - questionStartTime) / 1000;
         setAvgTime((prevAvg) =>
@@ -2148,13 +2172,7 @@ export default function GeometryMaster() {
             audio.playSfx("sfx-game-over");
             recordSessionProgress();
             saveRunToStorage();
-            gameActiveRef.current = false;
-            setGameActive(false);
-            setCurrentQuestion(null);
-            setTimeLeft(0);
-            setTimeout(() => {
-              hardResetGame();
-            }, 2000);
+            enterSessionComplete();
           } else {
             scheduleWrongAnswerAdvance(() => {
               generateNewQuestion();
@@ -2310,6 +2328,7 @@ export default function GeometryMaster() {
     audio.stopMusic();
     gameActiveRef.current = false;
     setGameActive(false);
+    setSessionComplete(false);
     setCurrentQuestion(null);
     setScore(0);
     setStreak(0);
@@ -2320,8 +2339,25 @@ export default function GeometryMaster() {
     setFeedback(null);
     setLives(3);
     setTotalQuestions(0);
+    totalQuestionsRef.current = 0;
     setAvgTime(0);
     setQuestionStartTime(null);
+  }
+
+  function enterSessionComplete() {
+    gameActiveRef.current = false;
+    setGameActive(false);
+    setCurrentQuestion(null);
+    setFeedback(null);
+    setSelectedAnswer(null);
+    setTextAnswer("");
+    setSessionComplete(true);
+    audio.stopMusic();
+  }
+
+  function handleSessionRetry() {
+    setSessionComplete(false);
+    startGame();
   }
 
 
@@ -2330,6 +2366,10 @@ export default function GeometryMaster() {
       alert(ms.t('ui.student.guestLock'));
       return;
     }
+    setSessionComplete(false);
+    sessionQuestionTargetRef.current = resolveLearningSessionQuestionTarget({
+      studentId: learningProfileStudentIdRef.current,
+    });
     clearActiveDiagnosticState(
       geometryPendingDiagnosticProbeRef,
       geometryHypothesisLedgerRef
@@ -2373,6 +2413,7 @@ export default function GeometryMaster() {
     setCorrect(0);
     setWrong(0);
     setTotalQuestions(0);
+    totalQuestionsRef.current = 0;
     setAvgTime(0);
     setQuestionStartTime(null);
     setFeedback(null);
@@ -2429,15 +2470,8 @@ export default function GeometryMaster() {
       geometryPendingDiagnosticProbeRef,
       geometryHypothesisLedgerRef
     );
-    // Stop background music when game stops
-    audio.stopMusic();
     recordSessionProgress();
-    gameActiveRef.current = false;
-    setGameActive(false);
-    setCurrentQuestion(null);
-    setFeedback(null);
-    setSelectedAnswer(null);
-    setTextAnswer("");
+    enterSessionComplete();
     saveRunToStorage();
   }
 
@@ -2447,14 +2481,9 @@ export default function GeometryMaster() {
     setStreak(0);
     setFeedback(ms.feedback.timeUpGameOver());
     audio.playSfx("sfx-game-over");
-    gameActiveRef.current = false;
-    setGameActive(false);
-    setCurrentQuestion(null);
     setTimeLeft(0);
     saveRunToStorage();
-    setTimeout(() => {
-      hardResetGame();
-    }, 2000);
+    enterSessionComplete();
   }
 
   function resetStats() {
@@ -2782,7 +2811,7 @@ export default function GeometryMaster() {
           MB={MB}
           desktopHeaderRef={desktopHeaderRef}
           title={ms.getSubjectTitle()}
-          subtitle={`${playerName || ms.player} • ${GRADES[grade]?.name || ""} • ${displayLevelLabel()} • ${getTopicName(topic)} • ${ms.getModeName(mode)}`}
+          subtitle={`${playerName || ms.player} • ${ms.getGradeName(grade) || GRADES[grade]?.name || ""} • ${displayLevelLabel()} • ${getTopicName(topic)} • ${ms.getModeName(mode)}`}
           onBack={backSafe}
           onCurriculumClick={() => router.push("/learning/geometry-curriculum")}
           audio={audio}
@@ -2811,7 +2840,7 @@ export default function GeometryMaster() {
         >
           <div className={LEARNING_MASTER_MOBILE_SUBTITLE_ROW_CLASS}>
             <p className={`${MB.pageSub} max-md:leading-none max-md:mb-0`}>
-              {playerName || ms.player} • {GRADES[grade]?.name || ""} • {displayLevelLabel()} • {getTopicName(topic)} • {ms.getModeName(mode)}
+              {playerName || ms.player} • {ms.getGradeName(grade) || GRADES[grade]?.name || ""} • {displayLevelLabel()} • {getTopicName(topic)} • {ms.getModeName(mode)}
             </p>
           </div>
 
@@ -2891,6 +2920,19 @@ export default function GeometryMaster() {
 
                     {!gameActive ? (
             <div className="relative flex flex-col flex-1 min-h-0 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl items-center justify-start md:gap-1">
+              {sessionComplete ? (
+                <div className="w-full px-2 py-4">
+                  <LearningSessionCompletion
+                    title={ms.feedback.gameOver()}
+                    statsLine={ms.t("learning.master.correctOfTotal", {
+                      correct,
+                      total: totalQuestions,
+                    })}
+                    retryLabel={ms.t("common.retry")}
+                    onRetry={handleSessionRetry}
+                  />
+                </div>
+              ) : null}
               {getLearningBookIndexHref("geometry", grade) ? (
                 <LearningBookIndexTile
                   subject="geometry"
@@ -2918,7 +2960,7 @@ export default function GeometryMaster() {
                 </div>
                 <select
                   value={grade}
-                  title={GRADES[grade]?.name}
+                  title={ms.getGradeName(grade) || GRADES[grade]?.name}
                   disabled={!canPickGrade}
                   aria-disabled={!canPickGrade || undefined}
                   onChange={(e) => {
@@ -2960,7 +3002,7 @@ export default function GeometryMaster() {
                 >
                   {Object.keys(GRADES).map((g) => (
                     <option key={g} value={g}>
-                      {GRADES[g].name}
+                      {ms.getGradeName(g) || GRADES[g].name}
                     </option>
                   ))}
                 </select>

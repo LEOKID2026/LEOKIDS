@@ -24,7 +24,24 @@ const DYNAMIC_CACHE = 'lk-global-dynamic-v2';
 const GLOBAL_CACHE_PREFIX = 'lk-global-';
 const LOCALE_DYNAMIC_SUFFIX = 'dynamic-v2';
 const CURRENT_GLOBAL_CACHES = new Set([CACHE_NAME, STATIC_CACHE, DYNAMIC_CACHE]);
-const SUPPORTED_LOCALE_CACHE_IDS = ['en', 'en-XA', 'ar-XB'];
+const SUPPORTED_LOCALE_CACHE_IDS = ['en', 'en-XA', 'ar-XB', 'ar-001'];
+
+/** @param {string} localeId */
+function offlineFallbackPath(localeId) {
+  const loc = String(localeId || "en").trim();
+  if (loc === "ar-001") return "/ar-001/offline";
+  if (loc && loc !== "en") return `/${loc}/offline`;
+  return "/offline";
+}
+
+/** @param {string} localeId */
+function offlineInlineFallbackHtml(localeId) {
+  const loc = String(localeId || "en").trim();
+  if (loc === "ar-001" || loc.startsWith("ar")) {
+    return '<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>غير متصل — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}a{color:#10b981}</style></head><body><h1>أنت غير متصل</h1><p>يرجى الاتصال بالإنترنت للمتابعة.</p><p><a href="/ar-001/offline">فتح صفحة عدم الاتصال</a></p><button onclick="location.reload()">حاول مرة أخرى</button></body></html>';
+  }
+  return '<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offline — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}</style></head><body><h1>You are offline</h1><p>Please connect to the internet to continue.</p><button onclick="location.reload()">Try again</button></body></html>';
+}
 const REWARD_CARD_PATH_PREFIX = '/rewards/cards/';
 
 // Install-time precache: public chrome only. Game/solo assets cache on first request
@@ -124,6 +141,7 @@ const ESSENTIAL_PAGES = [
   '/parent/login',
   '/parent/child-report',
   '/offline',
+  '/ar-001/offline',
 ];
 
 // Install event - cache static resources
@@ -294,23 +312,20 @@ self.addEventListener('fetch', (event) => {
                 });
               }
               
-              // Strategy 5: Return offline page
-              return caches.match('/offline').then((offlinePage) => {
+              // Strategy 5: Return locale-aware offline page (never serve EN HTML for non-en locales)
+              const localeId = readLocaleFromCookieHeader(request);
+              const offlinePath = offlineFallbackPath(localeId);
+              return caches.match(offlinePath).then((offlinePage) => {
                 if (offlinePage) {
                   return offlinePage;
                 }
-                
-                // Final fallback - generate basic HTML response inline
-                return new Response(
-                  '<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offline — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}button:hover{background:#059669}</style></head><body><h1>🔌 You are offline</h1><p>Please connect to the internet to continue.</p><button onclick="location.reload()">Try again</button></body></html>',
-                  { 
-                    status: 503,
-                    headers: { 
-                      'Content-Type': 'text/html; charset=utf-8',
-                      'Cache-Control': 'no-cache'
-                    }
-                  }
-                );
+                return new Response(offlineInlineFallbackHtml(localeId), {
+                  status: 503,
+                  headers: {
+                    'Content-Type': 'text/html; charset=utf-8',
+                    'Cache-Control': 'no-cache',
+                  },
+                });
               });
             });
           });
@@ -415,8 +430,22 @@ function syncScores() {
 
 // Handle push notifications (optional, for future use)
 self.addEventListener('push', (event) => {
+  let body = 'LEO K';
+  try {
+    if (event.data) {
+      const parsed = event.data.json?.() || null;
+      if (parsed && typeof parsed.body === 'string') body = parsed.body;
+      else body = event.data.text();
+    }
+  } catch (_err) {
+    try {
+      body = event.data ? event.data.text() : body;
+    } catch (__err) {
+      /* keep brand fallback */
+    }
+  }
   const options = {
-    body: event.data ? event.data.text() : 'New update available!',
+    body,
     icon: '/icons/child/android-chrome-192x192.png',
     badge: '/icons/child/android-chrome-192x192.png',
     vibrate: [200, 100, 200],

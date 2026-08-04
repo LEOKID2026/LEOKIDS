@@ -1,0 +1,212 @@
+{
+  "science_remaining_g1_hard_body": {
+    "stem": "Was tun Herz und Lungen für deinen Körper?",
+    "options": [
+      "Das Herz pumpt Blut durch den Körper, und die Lungen füllen dieses Blut mit Sauerstoff.",
+      "Die Lungen pumpen Blut, und das Herz zieht Luft in die Brust.",
+      "Beide Organe zerlegen Nahrung und verwandeln sie in Energie.",
+      "Beide Organe senden Signale, die steuern, wie das Gehirn arbeitet."
+    ],
+    "explanation": "Herz und Lungen arbeiten als Team. Die Lungen nehmen Sauerstoff aus der Luft auf und geben ihn an das Blut weiter. Das Herz pumpt dann dieses sauerstoffreiche Blut in jeden Körperteil. Gemeinsam versorgen sie jede Zelle mit dem Sauerstoff, den sie braucht.",
+    "theoryLines": [
+      "Jedes Mal, wenn du einatmest, füllen sich deine Lungen mit Luft und geben Sauerstoff in dein Blut ab.",
+      "Das Herz schlägt etwa 60 bis 100 Mal pro Minute, damit das Blut ständig fließt."
+    ]
+  },
+  "science_remaining_g1_hard_earth_space": {
+    "stem": "Was verursacht den Tag auf der Erde?",
+    "options": [
+      "Die Erde dreht sich so, dass unsere Seite zur Sonne zeigt.",
+      "Die Sonne wandert jede Nacht auf die ferne Seite des Mondes.",
+      "Der Mond blockiert Sonnenlicht und wirft es zur Erde zurück.",
+      "Die Erde bleibt still, während die Sonne um sie kreist."
+    ],
+    "explanation": "Die Erde dreht sich um ihre Achse und macht alle 24 Stunden eine volle Umdrehung. Wenn die Seite der Erde, auf der du lebst, zur Sonne zeigt, ist es Tag. Wenn diese Seite von der Sonne abgewandt ist, ist es Nacht.",
+    "theoryLines": [
+      "Die Erdrotation erzeugt den 24-Stunden-Zyklus aus Tag und Nacht.",
+      "Die Sonne selbst bewegt sich nicht um die Erde — die Drehung der Erde lässt es so aussehen, als ob die Sonne auf- und untergeht."
+    ]
+  },
+  "science_remaining_g1_hard_environment": {
+    "stem": "Welche Handlung hilft, einen Garten oder Park zu schützen?",
+    "options": [
+      "Müll aufheben und in einen Behälter legen, statt ihn auf dem Gras liegen zu lassen",
+      "Von jedem Baum, an dem du vorbeigehst, Äste abbrechen",
+      "Einen Wasserhahn die ganze Zeit laufen lassen",
+      "Auf Steine malen, ohne eine erwachsene Person zu fragen"
+    ],
+    "explanation": "Müll aufheben und einen Behälter benutzen verringert die Verschmutzung und hilft, Pflanzen und Tiere zu schützen.",
+    "theoryLines": [
+      "Jede und jeder kann helfen, Orte im Freien sauber und sicher zu halten.",
+      "Müll kann Boden und Wasser verschmutzen."
+    ]
+  },
+  "science_remaining_g1_hard_materials": {
+    "stem": "Was ist ein einfacher Unterschied zwischen einem harten und einem weichen Material, wenn du es zu biegen versuchst?",
+    "options": [
+      "Ein hartes Material lässt sich schwerer biegen, ohne zu zerbrechen",
+      "Es gibt nie einen Unterschied zwischen ihnen",
+      "Nur die Größe des Stücks spielt eine Rolle",
+      "Ein hartes Material ist immer eine Flüssigkeit"
+    ],
+    "explanation": "Härte und Weichheit sind Eigenschaften, die du spüren kannst: Weiche Materialien lassen sich leichter biegen, harte widerstehen dem Biegen oder können knacken.",
+    "theoryLines": [
+      "Wir lernen Materialien kennen, indem wir sie ansehen und vorsichtig anfassen.",
+      "Materialien können hart, weich, biegsam oder spröde sein."
+    ]
+  },
+  "science_remaining_g1_hard_plants": {
+    "stem": "Was ist der Hauptunterschied zwischen einer Pflanze und einem Stein?",
+    "options": [
+      "Eine Pflanze wächst und braucht Wasser und Licht",
+      "Beide wachsen auf dieselbe Weise",
+      "Ein Stein wächst wie ein Baum, wenn du Wasser darauf gießt",
+      "Es gibt keinen Unterschied zwischen Lebewesen und Nichtlebewesen"
+    ],
+    "explanation": "Eine Pflanze ist ein Lebewesen, das wächst und auf Bedingungen reagiert. Ein Stein ist nicht lebendig und wächst nicht wie eine Pflanze.",
+    "theoryLines": [
+      "Lebewesen wachsen und reagieren auf ihre Umgebung; Nichtlebewesen tun das nicht.",
+      "Pflanzen brauchen Wasser, Licht und Luft zum Wachsen."
+    ]
+  },
+  "science_remaining_g2_hard_body": {
+    "stem": "Was ist die Hauptaufgabe des Herzens in deinem Körper?",
+    "options": [
+      "Es pumpt Blut in alle Teile des Körpers",
+      "Es hilft dir, Luft ein- und auszuatmen",
+      "Das Herz ändert nie, wie schnell es schlägt",
+      "Es steuert, wie schnell du bei Bewegung atmest"
+    ],
+    "explanation": "Das Herz ist ein Muskel, der Blut durch den Kreislauf pumpt und Sauerstoff sowie Nährstoffe in jeden Körperteil bringt.",
+    "theoryLines": [
+      "Das Herz ist ein starker Muskel, der jeden Moment deines Lebens arbeitet.",
+      "Es pumpt Blut zu den Lungen, um Sauerstoff aufzunehmen, und sendet es dann in den Rest des Körpers."
+    ]
+  },
+  "science_remaining_g2_earth_space_easy_hard": {
+    "stem": "Welche Aussage über Sonne und Erde in unserem Sonnensystem ist wahr?",
+    "options": [
+      "Die Sonne ist das größte Objekt in unserem Sonnensystem und steht in seiner Mitte.",
+      "Der Mond ist die Hauptquelle des Tageslichts.",
+      "Die Erde steht im Zentrum des Sonnensystems.",
+      "Alle Objekte im Sonnensystem kreisen um den Mond."
+    ],
+    "explanation": "Die Sonne steht im Zentrum unseres Sonnensystems. Sie ist bei weitem das größte Objekt im System — über eine Million Erden würden hineinpassen. Alle Planeten, einschließlich der Erde, kreisen wegen ihrer starken Anziehungskraft um die Sonne.",
+    "theoryLines": [
+      "Die Schwerkraft der Sonne hält alle Planeten in ihren Bahnen.",
+      "Die Erde ist der dritte Planet von der Sonne und umkreist sie einmal alle 365 Tage."
+    ]
+  },
+  "science_remaining_g2_hard_environment": {
+    "stem": "Warum ist Plastikverschmutzung im Meer ein ernstes Problem?",
+    "options": [
+      "Meerestiere können Plastik für Nahrung halten, was sie schädigt oder tötet.",
+      "Plastik lässt Meerwasser für Fische besser schmecken.",
+      "Das Meer zerlegt Plastik von selbst in sauberes, sicheres Wasser.",
+      "Plastik sinkt immer harmlos auf den Meeresboden."
+    ],
+    "explanation": "Plastik, das ins Meer gelangt, zerfällt in immer kleinere Stücke, verschwindet aber nie vollständig. Meeresschildkröten, Fische und Seevögel halten Plastik oft für Nahrung. Wenn sie es fressen, blockiert es die Verdauung und kann sie töten. Plastikverschmutzung schädigt auch Korallenriffe und andere Meereslebensräume.",
+    "theoryLines": [
+      "Plastik kann in der Umwelt Hunderte von Jahren brauchen, bis es zerfällt.",
+      "Jedes Jahr gelangen Millionen Tonnen Plastik ins Meer und bedrohen Meeresleben weltweit."
+    ]
+  },
+  "science_remaining_g2_hard_experiments": {
+    "stem": "Was ist eine gute Reihenfolge der Schritte für ein einfaches Wissenschaftsexperiment?",
+    "options": [
+      "Eine Frage stellen, eine Vermutung machen, sie prüfen und die Ergebnisse aufschreiben",
+      "Sofort fertig sein, ohne etwas aufzuschreiben",
+      "Mitten drin jede Bedingung ohne Plan ändern",
+      "Nur raten und nie in der Wirklichkeit prüfen"
+    ],
+    "explanation": "Wissenschaft beginnt gewöhnlich mit einer Frage und einer Vermutung, dann einem sorgfältigen Test und Notizen darüber, was geschehen ist.",
+    "theoryLines": [
+      "Ein gutes Experiment umfasst einen kurzen Plan und eine Aufzeichnung dessen, was du gesehen hast.",
+      "Schlussfolgerungen sollten auf Belegen aus dem Test beruhen."
+    ]
+  },
+  "science_remaining_g2_hard_materials": {
+    "stem": "Was ist ein Beispiel nur für eine physikalische Veränderung, bei der kein neues Material entsteht?",
+    "options": [
+      "Ein Blatt Papier falten, ohne es zu verbrennen",
+      "Papier zu Asche verbrennen",
+      "Teig backen, bis er zu Brot wird",
+      "Eisen, das mit der Zeit rostet"
+    ],
+    "explanation": "Papier falten verändert seine Form, aber es bleibt Papier. Verbrennen, Rosten und Backen erzeugen oft neue Stoffe.",
+    "theoryLines": [
+      "Bei einer physikalischen Veränderung bleibt meist derselbe Stoff erhalten; Form oder Aggregatzustand können sich ändern.",
+      "Bei einer chemischen Veränderung entstehen neue Stoffe."
+    ]
+  },
+  "science_remaining_g56_easy_body": {
+    "stem": "Was ist mit einfachen Worten eine Hauptaufgabe des Blutes im Körper?",
+    "options": [
+      "Sauerstoff und Nährstoffe transportieren und helfen, Abfallstoffe aus Zellen zu entfernen",
+      "Alle Energie direkt aus Luft erzeugen, ohne Hilfe anderer Organe",
+      "Die Aufgabe von Gehirn und Nerven vollständig ersetzen",
+      "Die Atmung stoppen, wann immer der Körper Nahrung braucht"
+    ],
+    "explanation": "Blut transportiert Sauerstoff, Nährstoffe und andere nützliche Stoffe und hilft, Abfallstoffe von den Zellen wegzubringen.",
+    "theoryLines": [
+      "Der Kreislauf arbeitet mit Atmung und Verdauung zusammen.",
+      "Das Herz pumpt Blut durch Blutgefäße in den ganzen Körper."
+    ]
+  },
+  "science_remaining_g56_easy_earth_space": {
+    "stem": "Warum erleben Menschen auf der Erde etwa alle 24 Stunden Tag und Nacht?",
+    "options": [
+      "Weil die Erde sich um ihre Achse dreht, sodass jede Seite zu unterschiedlichen Zeiten zur Sonne zeigt.",
+      "Weil die Sonne einmal alle 24 Stunden um die Erde wandert.",
+      "Weil der Mond das Sonnenlicht blockiert und Dunkelheit erzeugt.",
+      "Weil die Erde sich im Laufe des Tages der Sonne nähert oder von ihr entfernt."
+    ],
+    "explanation": "Die Erdrotation wendet verschiedene Orte der Sonne zu und von ihr ab und erzeugt so Tag und Nacht.",
+    "theoryLines": [
+      "Eine volle Umdrehung der Erde dauert etwa einen Tag.",
+      "Die Sonne bewegt sich nicht jeden Tag um die Erde."
+    ]
+  },
+  "science_remaining_g56_easy_environment": {
+    "stem": "Warum ist es wichtig, zu Hause und in der Gemeinde Wasser zu sparen?",
+    "options": [
+      "Frischwasser ist begrenzt, deshalb müssen wir es für Menschen und die Natur schützen",
+      "Es gibt überall immer unbegrenztes Extra-Wasser",
+      "Wasser wird nie zum Trinken oder Pflanzenzüchten genutzt",
+      "Nur Fabriken brauchen Wasser; Haushalte nie"
+    ],
+    "explanation": "Frischwasser ist eine begrenzte Ressource. Es zu sparen hilft Menschen, Landwirtschaft und Wildtieren.",
+    "theoryLines": [
+      "Wasser ist grundlegend für das Leben.",
+      "Weniger Wasser zu nutzen entlastet Flüsse, Seen und Grundwasser."
+    ]
+  },
+  "science_remaining_g56_easy_experiments": {
+    "stem": "Was ist bei einem Wissenschaftsexperiment wichtig aufzuschreiben?",
+    "options": [
+      "Was du geprüft hast, was du beobachtet hast und was du gelernt hast",
+      "Einen Ort mit vielen Menschen",
+      "Nichts — das Gedächtnis allein reicht",
+      "Nur einen Ort, an dem es Wasser gibt"
+    ],
+    "explanation": "Gute Notizen helfen dir, Ergebnisse zu vergleichen, das Experiment zu wiederholen und Schlussfolgerungen mit Belegen zu stützen.",
+    "theoryLines": [
+      "Ein Experimenttagebuch enthält Schritte, Messungen und Beobachtungen.",
+      "Wissenschaft hängt davon ab, Daten aufzuschreiben und zu prüfen."
+    ]
+  },
+  "science_remaining_g56_easy_materials": {
+    "stem": "Was ist ein einfacher Unterschied zwischen vielen natürlichen und synthetischen Materialien?",
+    "options": [
+      "Ein natürliches Material kommt aus der Natur",
+      "Es gibt keinen Unterschied zwischen ihnen",
+      "Sie sind in jeder Eigenschaft immer identisch",
+      "Nur die Außenfarbe entscheidet über die Art"
+    ],
+    "explanation": "Natürliche Materialien wie Rohholz kommen aus der Natur. Viele Kunststoffe sind synthetische Materialien, die in der Herstellung entstehen.",
+    "theoryLines": [
+      "Wir können Materialien danach einteilen, ob sie aus der Natur kommen oder in Fabriken hergestellt werden.",
+      "Die Eigenschaften eines Materials beeinflussen, wie wir es sicher nutzen."
+    ]
+  }
+}

@@ -1,9 +1,11 @@
 import { getPublicSeoWideClasses } from "./public-seo-wide-theme";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * @param {{ items: { q: string, a: string }[], isBright: boolean }} props
  */
 export default function PracticeSeoFaq({ items, isBright }) {
+  const t = useT();
   if (!items?.length) return null;
 
   const cls = getPublicSeoWideClasses(isBright);
@@ -14,7 +16,7 @@ export default function PracticeSeoFaq({ items, isBright }) {
   return (
     <section className={`space-y-4 ${cls.section}`} aria-labelledby="seo-faq-title">
       <h2 id="seo-faq-title" className={cls.sectionTitle}>
-        Frequently asked questions
+        {t("ui.public.seoNav.faqTitle")}
       </h2>
       <div className="space-y-2">
         {items.map((item) => (

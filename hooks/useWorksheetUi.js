@@ -259,6 +259,8 @@ const WORKSHEET_UI_KEYS = [
   "writingPageNameLabel",
   "writingPageDateLabel",
   "writingPageAria",
+  "answerLineLabel",
+  "optionsHeading",
 ];
 
 /** Print documents stay LTR in the global English product. */

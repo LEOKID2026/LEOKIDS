@@ -11,8 +11,8 @@
     "event": "بطاقة الحدث"
   },
   "cardSource": {
-    "earned_achievement": "تحقيق التعلم",
-    "shop_purchase": "شراء متجر",
+    "earned_achievement": "إنجاز تعليمي",
+    "shop_purchase": "شراء من المتجر",
     "surprise_box_reward": "صندوق المفاجآت",
     "duplicate_conversion": "تحويل مكرر",
     "card_sellback": "بيع مكرر",
@@ -44,7 +44,7 @@
     "general": "الإنجازات العامة",
     "math": "إنجازات الرياضيات",
     "language": "إنجازات اللغة",
-    "subjects": "إنجازات الموضوع",
+    "subjects": "إنجازات المادة",
     "events": "الأحداث"
   },
   "fallback": {
@@ -76,12 +76,12 @@
     "total_questions": "الإجابة على {minQuestions} الأسئلة في المجموع",
     "weekly_questions": "أجب عن {minQuestions} أسئلة الأسبوع الماضي",
     "subject_questions": "أجب عن {minQuestions} الأسئلة في {subject}",
-    "subject_questions_fallback_subject": "الإجابة على {minQuestions} الأسئلة في الموضوع",
+    "subject_questions_fallback_subject": "الإجابة على {minQuestions} الأسئلة في مادة",
     "subject_accuracy": "الوصول إلى دقة {minAccuracy}% في {subject}{topicPart} (على الأقل {minQuestions} أسئلة)",
     "subject_accuracy_topic_part": "على {topic}",
     "learning_streak_days": "تعلم لمدة {minStreakDays} يومًا على التوالي",
     "active_days_streak": "كن نشطًا لمدة {minStreakDays} يومًا على التوالي",
-    "parent_activity_complete": "أكمل {minCompletedActivities} أنشطة الوالدين",
+    "parent_activity_complete": "أكمل {minCompletedActivities} أنشطة أولياء الأمور",
     "monthly_learning_minutes": "تعلم {minLearningMinutesMonthly} دقيقة هذا الشهر",
     "event_window": "بطاقة الحدث الخاص — متاحة خلال نافذة الحدث",
     "daily_mission_complete": "أكمل المهمة: {missionKey}",
@@ -101,7 +101,7 @@
     "ariaLabel": "صندوق المفاجآت",
     "title": "صندوق المفاجآت",
     "loading": "جاري التحميل…",
-    "nextBoxIn": "المربع التالي جاهز",
+    "nextBoxIn": "الصندوق التالي جاهز",
     "keepLearning": "استمر في التعلم - صندوق جديد سيأتي قريبًا!",
     "openBox": "افتح الصندوق",
     "myCollection": "مجموعتي"
@@ -139,13 +139,15 @@
   "surpriseBoxModal": {
     "close": "إغلاق",
     "openingTitle": "فتح الصندوق...",
-    "doneTitle": "لطيف - جيد! لقد حصلت على مكافآت!",
+    "doneTitle": "رائع! لقد حصلت على مكافآت!",
     "idleTitle": "صندوق المفاجآت",
     "rolling": "تدحرج مكافآتك...",
     "coinsReward": "+{amount} عملات معدنية",
     "diamondsReward": "+{amount} الماس",
     "openAnother": "افتح صندوقًا آخر",
-    "viewCards": "عرض بطاقاتي"
+    "viewCards": "عرض بطاقاتي",
+    "coinsLabel": "عملات",
+    "diamondsLabel": "ألماس"
   },
   "previewModal": {
     "close": "إغلاق",
@@ -159,7 +161,7 @@
     "seriesLabel": "السلسلة: {label}"
   },
   "cardsPage": {
-    "kidsWorldBack": "عالم الاطفال",
+    "kidsWorldBack": "عالم الأطفال",
     "title": "بطاقاتي",
     "subtitle": "التجميع والتسوق وجميع البطاقات والمسلسلات",
     "featureDisabled": "مجموعة البطاقات غير متاحة بعد.",
@@ -177,7 +179,7 @@
       },
       "shop": {
         "label": "متجر البطاقات",
-        "shortLabel": "محل"
+        "shortLabel": "متجر"
       },
       "catalog": {
         "label": "جميع البطاقات",

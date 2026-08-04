@@ -1,6 +1,24 @@
 {
   "copy": {
     "left_side_wins": "الجانب الأيسر يفوز! 🏆",
-    "right_side_wins": "الجانب الأيمن يفوز! 🏆"
+    "right_side_wins": "الجانب الأيمن يفوز! 🏆",
+    "back": "رجوع",
+    "local_badge": "محلي",
+    "title": "⚡️ معركة النقر",
+    "round_subtitle": "الجولة {round} • {duration} ثانية",
+    "score_left": "يسار",
+    "score_tie": "تعادل",
+    "score_right": "يمين",
+    "duration_option": "{duration} ثانية",
+    "start": "ابدأ",
+    "next_round": "التالي",
+    "reset": "إعادة",
+    "press_start": "اضغط ابدأ للبدء",
+    "get_ready": "استعد... {countdown}",
+    "time_left": "الوقت: {time} ثانية",
+    "tie_result": "تعادل!",
+    "left_label": "يسار",
+    "right_label": "يمين",
+    "taps_count": "{count} نقرة"
   }
 }

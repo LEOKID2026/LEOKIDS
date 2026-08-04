@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "observation_little_1": "In {displayName} there's still too little practice in the selected period to know how it's really going.",
+    "observation_little_2": "In {displayName} we're only seeing a few attempts so far - that's okay; we'll add a bit more and come back to it.",
+    "observation_little_3": "In {displayName} there's still little practice in the selected period, so we're keeping a cautious wording.",
+    "observation_volume_1": "In {displayName} in the selected period there are {q} questions, with about {acc}% accuracy.",
+    "observation_volume_2": "In {displayName}, {q} questions were collected this period, with accuracy around {acc}%.",
+    "observation_volume_3": "In {displayName}, {q} questions were collected this period, with average accuracy of about {acc}%.",
+    "interpretation_we0_1": "It's still too early to set a clear direction here - we'll keep watching the practice.",
+    "interpretation_we0_2": "It's too early to write a final summary; we'll add a bit more practice and see how it holds.",
+    "interpretation_we0_3": "There still isn't enough data to set a clear direction - we'll move slowly and carefully."
+  }
+}

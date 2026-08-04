@@ -1,7 +1,8 @@
 import GuideSeoArticlePage from "../../components/seo/GuideSeoArticlePage";
-import { getGuidePageContent } from "../../data/seo/guide-pages";
+import { useGuidePageContent } from "../../hooks/useGuidePageContent.js";
 
 export default function GuidePage() {
-  const content = getGuidePageContent("english-vocabulary-practice");
+  const content = useGuidePageContent("english-vocabulary-practice");
+  if (!content) return null;
   return <GuideSeoArticlePage content={content} />;
 }

@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
 import PortalLoginHeading from "../../../components/auth/PortalLoginHeading";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
+import { bindSchoolUiLocale } from "../../../lib/school-portal/school-ui.js";
+import { bindSchoolCommunicationLocale } from "../../../lib/school-portal/school-communication.js";
 import {
   SCHOOL_STAFF_CODE_LABEL,
   SCHOOL_STAFF_LOGIN_BUSY,
@@ -33,6 +36,9 @@ function staffLoginErrorHe(code) {
 
 export default function SchoolStaffLoginPage() {
   const router = useRouter();
+  const { direction, locale } = useI18n();
+  bindSchoolUiLocale(locale);
+  bindSchoolCommunicationLocale(locale);
   const [staffCode, setStaffCode] = useState("");
   const [pin, setPin] = useState("");
   const [busy, setBusy] = useState(false);
@@ -78,7 +84,7 @@ export default function SchoolStaffLoginPage() {
 
   return (
     <Layout>
-      <div className="max-w-md mx-auto px-3 md:px-4 py-3 md:py-8" dir="ltr" lang="en">
+      <div className="max-w-md mx-auto px-3 md:px-4 py-3 md:py-8" dir={direction} lang={locale}>
         <PortalLoginHeading
           title={SCHOOL_STAFF_LOGIN_TITLE}
           subtitle={SCHOOL_STAFF_LOGIN_SUBTITLE}

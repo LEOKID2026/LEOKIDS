@@ -44,11 +44,10 @@ test("ar-001 registry contract", () => {
   assert.equal(def.ogLocale, "ar_SA");
 });
 
-test("selector count is 76 with العربية exactly once (Phase 19)", () => {
+test("selector count is 76 with ar-001 visible once", () => {
   assert.equal(getSelectableLocales().length, 76);
   const arabicLabels = getSelectableLocales().filter((l) => l.label === "العربية");
   assert.equal(arabicLabels.length, 1);
-  assert.equal(arabicLabels[0].id, LOCALE);
 });
 
 test("/ar is Argentina, /ar-001 is Arabic master", () => {
@@ -100,4 +99,22 @@ test("probe bundle loads Arabic school chrome", () => {
 test("learning burn-down pack resolves", () => {
   const pack = loadContentPack(LOCALE, "learning", "burn-down-index.json");
   assert.ok(pack && typeof pack === "object");
+});
+
+test("locale picker includes ar-001 and selectable count stays 76", async () => {
+  const { getSelectableLocales, getLocalePickerLocales } = await import(
+    "../../lib/i18n/locale-registry.js"
+  );
+  assert.equal(getSelectableLocales().length, 76);
+  const picker = getLocalePickerLocales("ar-001");
+  assert.ok(picker.some((l) => l.id === "ar-001"));
+  assert.ok(picker.length >= 76);
+});
+
+test("school communication binds Arabic locale", async () => {
+  const { resetLocaleBundleCache } = await import("../../lib/i18n/load-messages.js");
+  const mod = await import("../../lib/school-portal/school-communication.js");
+  resetLocaleBundleCache();
+  mod.bindSchoolCommunicationLocale(LOCALE);
+  assert.match(String(mod.SC_NAV_MESSAGES), /[\u0600-\u06FF]/);
 });

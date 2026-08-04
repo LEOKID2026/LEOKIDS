@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "summary_got_of": "You got {correct} of {total} questions correct",
+    "summary_got": "You got {correct} questions correct",
+    "summary_finished": "You finished the activity",
+    "score_chip_of": "{correct}/{total} questions",
+    "score_chip": "{correct} questions"
+  }
+}

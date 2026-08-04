@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "load_report_error": "Something went wrong loading the report. Refresh the page and try again.",
+    "loading_report_hint": "Loading the report — this may take a few seconds.",
+    "try_again": "Try again",
+    "back_to_dashboard": "Back to dashboard",
+    "forbidden_report": "You do not have permission to view this report."
+  }
+}

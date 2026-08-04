@@ -77,6 +77,17 @@
     "source": "Source",
     "topic": "Topic",
     "grade": "Grade",
-    "date": "Date"
+    "date": "Date",
+    "its_better_to_reinforce_the_current_topic_first": "It's better to reinforce the current topic first.",
+    "whats_working_well": "What's working well",
+    "what_to_avoid_right_now": "What to avoid right now",
+    "ready_to_advance": "Ready to advance?",
+    "what_to_pay_attention_to": "What to pay attention to",
+    "questions_count_one": "1 question",
+    "questions_count_other": "{n} questions",
+    "not_available": "Not available",
+    "minutes_short": "{m} min",
+    "questions_answered": "Questions answered",
+    "total_learning_time": "Total learning time"
   }
 }

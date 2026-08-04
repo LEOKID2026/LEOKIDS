@@ -1,0 +1,16 @@
+{
+  "environment_25": {
+    "stem": "Warum sind Wälder wichtig für die Umwelt?",
+    "options": [
+      "Wälder erzeugen Sauerstoff, bieten Tieren Lebensraum und helfen, Luft und Wasser sauber zu halten.",
+      "Wälder sind nur als Quelle für Baumaterial nützlich.",
+      "Wälder sind nur für die Tiere darin wichtig, nicht für Menschen.",
+      "Wälder wachsen sofort wieder nach, wenn sie abgeholzt werden, deshalb gibt es keinen Grund zur Sorge."
+    ],
+    "explanation": "Wälder erzeugen Sauerstoff, nehmen Kohlenstoffdioxid auf und bieten Lebensraum für unzählige Pflanzen und Tiere. Sie helfen auch, den Wasserkreislauf zu regeln und den Boden zu schützen.",
+    "theoryLines": [
+      "Wälder werden manchmal die Lungen der Erde genannt, weil sie so viel Sauerstoff erzeugen.",
+      "Abholzung kann sowohl Wildtieren als auch dem globalen Klima schaden."
+    ]
+  }
+}

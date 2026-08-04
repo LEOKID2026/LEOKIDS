@@ -1,0 +1,3202 @@
+[
+  {
+    "en": "## Metadata",
+    "n": 302
+  },
+  {
+    "en": "| Field | Value |",
+    "n": 302
+  },
+  {
+    "en": "## 1. What are we learning?",
+    "n": 293
+  },
+  {
+    "en": "## 2. Simple explanation",
+    "n": 293
+  },
+  {
+    "en": "## 4. Let's solve together",
+    "n": 293
+  },
+  {
+    "en": "## 5. Try it yourself",
+    "n": 293
+  },
+  {
+    "en": "## 7. Let's practice!",
+    "n": 293
+  },
+  {
+    "en": "**Source references:**",
+    "n": 261
+  },
+  {
+    "en": "- `data/curriculum-spine/v1/skills.json`",
+    "n": 260
+  },
+  {
+    "en": "- `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md`",
+    "n": 260
+  },
+  {
+    "en": "Try to solve it on your own.",
+    "n": 256
+  },
+  {
+    "en": "## 3. Visual / concrete example",
+    "n": 189
+  },
+  {
+    "en": "## 6. Common mistake — watch out!",
+    "n": 189
+  },
+  {
+    "en": "On the next page we'll check the steps and the answer together.",
+    "n": 182
+  },
+  {
+    "en": "On the next page we will check the steps and the answer together.",
+    "n": 111
+  },
+  {
+    "en": "## 3. Example",
+    "n": 104
+  },
+  {
+    "en": "## 6. Let's check together",
+    "n": 104
+  },
+  {
+    "en": "- `docs/learning-book/MATH_LEARNING_BOOK_CURRICULUM_MAP.md`",
+    "n": 76
+  },
+  {
+    "en": "| File | Draft title |",
+    "n": 51
+  },
+  {
+    "en": "- `docs/learning-book/MATH_GRADE_6_LEARNING_BOOK_PLAN.md`",
+    "n": 44
+  },
+  {
+    "en": "Try to solve by yourself.",
+    "n": 37
+  },
+  {
+    "en": "- `docs/learning-book/MATH_GRADE_3_LEARNING_BOOK_PLAN.md`",
+    "n": 26
+  },
+  {
+    "en": "- `docs/learning-book/MATH_GRADE_2_LEARNING_BOOK_PLAN.md`",
+    "n": 22
+  },
+  {
+    "en": "- `docs/learning-book/GEOMETRY_GRADE_6_LEARNING_BOOK_PLAN.md`",
+    "n": 19
+  },
+  {
+    "en": "- `docs/learning-book/MATH_GRADE_1_LEARNING_BOOK_COVERAGE.md`",
+    "n": 19
+  },
+  {
+    "en": "**Date:** June 2026",
+    "n": 18
+  },
+  {
+    "en": "Scientific explanation:",
+    "n": 18
+  },
+  {
+    "en": "- `docs/learning-book/GEOMETRY_GRADE_5_LEARNING_BOOK_PLAN.md`",
+    "n": 17
+  },
+  {
+    "en": "- `scripts/lib/geometry-g4-draft-manifest.mjs`",
+    "n": 14
+  },
+  {
+    "en": "Step 1 — What do we know?",
+    "n": 14
+  },
+  {
+    "en": "Step 2 — What are we asked?",
+    "n": 14
+  },
+  {
+    "en": "## Current Status",
+    "n": 12
+  },
+  {
+    "en": "| Item | Status |",
+    "n": 12
+  },
+  {
+    "en": "Steps:",
+    "n": 11
+  },
+  {
+    "en": "## Notes",
+    "n": 9
+  },
+  {
+    "en": "- `scripts/lib/geometry-g3-draft-manifest.mjs`",
+    "n": 9
+  },
+  {
+    "en": "## Explicit Stop Rule",
+    "n": 8
+  },
+  {
+    "en": "What do you see in the example?",
+    "n": 7
+  },
+  {
+    "en": "type: triangle_parts",
+    "n": 6
+  },
+  {
+    "en": "## Source of Truth",
+    "n": 6
+  },
+  {
+    "en": "| Document / file | Role |",
+    "n": 6
+  },
+  {
+    "en": "Until owner approves content:",
+    "n": 6
+  },
+  {
+    "en": "- ❌ No registry, routes, SQL, commit, push, or deploy",
+    "n": 6
+  },
+  {
+    "en": "Step 3 — What do we do?",
+    "n": 6
+  },
+  {
+    "en": "What do we know?",
+    "n": 6
+  },
+  {
+    "en": "What are we asked?",
+    "n": 6
+  },
+  {
+    "en": "Rule:",
+    "n": 6
+  },
+  {
+    "en": "- `docs/learning-book/SCIENCE_GRADE_1_LEARNING_BOOK_PLAN.md`",
+    "n": 6
+  },
+  {
+    "en": "## Verify",
+    "n": 6
+  },
+  {
+    "en": "The question was:",
+    "n": 6
+  },
+  {
+    "en": "## Naming",
+    "n": 5
+  },
+  {
+    "en": "## Regenerate review pack",
+    "n": 5
+  },
+  {
+    "en": "- ✅ Documentation and draft markdown only",
+    "n": 5
+  },
+  {
+    "en": "type: square_area_grid",
+    "n": 5
+  },
+  {
+    "en": "| Fix | Detail |",
+    "n": 5
+  },
+  {
+    "en": "- All Hebrew titles: **`[DRAFT — not owner-approved]`**",
+    "n": 5
+  },
+  {
+    "en": "Before you answer:",
+    "n": 5
+  },
+  {
+    "en": "| `div.md` | חילוק — חלוקה שווה |",
+    "n": 5
+  },
+  {
+    "en": "## Pages",
+    "n": 5
+  },
+  {
+    "en": "| File | Title [DRAFT] |",
+    "n": 5
+  },
+  {
+    "en": "type: cube_basic",
+    "n": 4
+  },
+  {
+    "en": "## Regenerate",
+    "n": 4
+  },
+  {
+    "en": "type: square_perimeter",
+    "n": 4
+  },
+  {
+    "en": "type: angle_basic",
+    "n": 4
+  },
+  {
+    "en": "type: triangle_perimeter",
+    "n": 4
+  },
+  {
+    "en": "type: box_basic",
+    "n": 4
+  },
+  {
+    "en": "Square with side 9 cm — what is the area?",
+    "n": 4
+  },
+  {
+    "en": "What are the next two numbers?",
+    "n": 4
+  },
+  {
+    "en": "| File | learning_page_id | skill_id | page_type |",
+    "n": 4
+  },
+  {
+    "en": "**Polish pass completed:** June 2026",
+    "n": 4
+  },
+  {
+    "en": "Step 3 — Calculate:",
+    "n": 4
+  },
+  {
+    "en": "Step 3 — Count:",
+    "n": 4
+  },
+  {
+    "en": "What is the whole?",
+    "n": 4
+  },
+  {
+    "en": "6 + ? = 10 — what is the missing number?",
+    "n": 4
+  },
+  {
+    "en": "# Adding Three Numbers",
+    "n": 4
+  },
+  {
+    "en": "Work step by step!",
+    "n": 4
+  },
+  {
+    "en": "# Division — Equal Sharing",
+    "n": 4
+  },
+  {
+    "en": "| Runtime registry / routes | ❌ Not in scope — content-only task |",
+    "n": 4
+  },
+  {
+    "en": "| `add_three.md` | חיבור שלושה מספרים |",
+    "n": 4
+  },
+  {
+    "en": "| `div_with_remainder.md` | חילוק עם שארית |",
+    "n": 4
+  },
+  {
+    "en": "- Section 7: draft invitation text only — **no practice routing**.",
+    "n": 4
+  },
+  {
+    "en": "- Child-facing copy uses **חשבון**, not **מתמטיקה**.",
+    "n": 4
+  },
+  {
+    "en": "Why?",
+    "n": 4
+  },
+  {
+    "en": "**Status:** Draft content — **6 / 6** pages. No runtime insertion.",
+    "n": 4
+  },
+  {
+    "en": "- Section 7: draft invitation only — **no practice routing**.",
+    "n": 3
+  },
+  {
+    "en": "- `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md`",
+    "n": 3
+  },
+  {
+    "en": "Examples:",
+    "n": 3
+  },
+  {
+    "en": "Translation",
+    "n": 3
+  },
+  {
+    "en": "- `docs/learning-book/GEOMETRY_GRADE_2_LEARNING_BOOK_PLAN.md`",
+    "n": 3
+  },
+  {
+    "en": "type: parallel_lines",
+    "n": 3
+  },
+  {
+    "en": "type: quadrilateral_parts",
+    "n": 3
+  },
+  {
+    "en": "Area = side × side.",
+    "n": 3
+  },
+  {
+    "en": "Perimeter = 4 × side.",
+    "n": 3
+  },
+  {
+    "en": "Formula:",
+    "n": 3
+  },
+  {
+    "en": "For example:",
+    "n": 3
+  },
+  {
+    "en": "In class: π ≈ 3.14",
+    "n": 3
+  },
+  {
+    "en": "Volume = (1/3) × base area × height",
+    "n": 3
+  },
+  {
+    "en": "Comparison:",
+    "n": 3
+  },
+  {
+    "en": "Example with pencils:",
+    "n": 3
+  },
+  {
+    "en": "- `subject`: math",
+    "n": 3
+  },
+  {
+    "en": "- `grade`: g1",
+    "n": 3
+  },
+  {
+    "en": "- `age_band`: grades_1_2",
+    "n": 3
+  },
+  {
+    "en": "- `approval_status`: **draft**",
+    "n": 3
+  },
+  {
+    "en": "- Section 7 heading: **בואו נתרגל!**",
+    "n": 3
+  },
+  {
+    "en": "| Topic | Decision |",
+    "n": 3
+  },
+  {
+    "en": "[Sunday] [Monday] [Tuesday] [Wednesday] [Thursday] [Friday] [Saturday]",
+    "n": 3
+  },
+  {
+    "en": "7 + ? = 10 — what is the missing number?",
+    "n": 3
+  },
+  {
+    "en": "# Division with a Remainder",
+    "n": 3
+  },
+  {
+    "en": "In practice you'll find what comes before?",
+    "n": 3
+  },
+  {
+    "en": "Each digit in a number sits in its own place:",
+    "n": 3
+  },
+  {
+    "en": "Always check the place!",
+    "n": 3
+  },
+  {
+    "en": "| `eq_add.md` | משוואת חיבור — מספר חסר |",
+    "n": 3
+  },
+  {
+    "en": "| `eq_sub.md` | משוואת חיסור — מספר חסר |",
+    "n": 3
+  },
+  {
+    "en": "| `wp_comparison_more.md` | שאלה מילולית — כמה יותר? |",
+    "n": 3
+  },
+  {
+    "en": "| `wp_leftover.md` | שאלה מילולית — מה נשאר? |",
+    "n": 3
+  },
+  {
+    "en": "| `wp_time_sum.md` | שאלה מילולית — סכום זמנים |",
+    "n": 3
+  },
+  {
+    "en": "In a word problem.",
+    "n": 3
+  },
+  {
+    "en": "Look for the remainder!",
+    "n": 3
+  },
+  {
+    "en": "What is the total watching time?",
+    "n": 3
+  },
+  {
+    "en": "# Factors of a Number",
+    "n": 3
+  },
+  {
+    "en": "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24",
+    "n": 3
+  },
+  {
+    "en": "# Greatest Common Factor (GCF)",
+    "n": 3
+  },
+  {
+    "en": "# Multiples of a Number",
+    "n": 3
+  },
+  {
+    "en": "Write the first 5 multiples of 6.",
+    "n": 3
+  },
+  {
+    "en": "64 + ? = 100 — what is the missing number?",
+    "n": 3
+  },
+  {
+    "en": "Important:",
+    "n": 3
+  },
+  {
+    "en": "The number stays the same!",
+    "n": 3
+  },
+  {
+    "en": "| `ns_complement100.md` | השלמה ל-100 |",
+    "n": 3
+  },
+  {
+    "en": "| `sequence.md` | סדרות — קפיצות גדולות |",
+    "n": 3
+  },
+  {
+    "en": "# Word Problems — How Many More?",
+    "n": 3
+  },
+  {
+    "en": "How many more points does Noah have?",
+    "n": 3
+  },
+  {
+    "en": "Line up the decimal points!",
+    "n": 3
+  },
+  {
+    "en": "How much more does Danny have?",
+    "n": 3
+  },
+  {
+    "en": "Conclusion:",
+    "n": 3
+  },
+  {
+    "en": "Safe experiments only — with a teacher, no dangerous materials, no electrical devices.",
+    "n": 3
+  },
+  {
+    "en": "Method:",
+    "n": 3
+  },
+  {
+    "en": "**No `plants.md`** — spine `maxGrade = 3`.",
+    "n": 3
+  },
+  {
+    "en": "Graph:",
+    "n": 3
+  },
+  {
+    "en": "- `book_placeholder.md` — infrastructure placeholder; **not** part of the 3-page book.",
+    "n": 2
+  },
+  {
+    "en": "- All pages: `age_band: grades_1_2`, `approval_status: draft`, `grade: g1`.",
+    "n": 2
+  },
+  {
+    "en": "type: rectangle_sides",
+    "n": 2
+  },
+  {
+    "en": "The difference:",
+    "n": 2
+  },
+  {
+    "en": "Opposite sides are equal to each other — long opposite long, short opposite short.",
+    "n": 2
+  },
+  {
+    "en": "- 4 right corners",
+    "n": 2
+  },
+  {
+    "en": "Rectangle",
+    "n": 2
+  },
+  {
+    "en": "Is the board a rectangle?",
+    "n": 2
+  },
+  {
+    "en": "type: square_sides",
+    "n": 2
+  },
+  {
+    "en": "Square",
+    "n": 2
+  },
+  {
+    "en": "Is the sticker a square?",
+    "n": 2
+  },
+  {
+    "en": "Translation:",
+    "n": 2
+  },
+  {
+    "en": "Reflection:",
+    "n": 2
+  },
+  {
+    "en": "We will learn about rotation at a more advanced stage.",
+    "n": 2
+  },
+  {
+    "en": "You place a drawing of a car on a table and slide it forward — the car moves to a new place but does not flip over.",
+    "n": 2
+  },
+  {
+    "en": "Did left and right swap places? No — this is not a mirror image.",
+    "n": 2
+  },
+  {
+    "en": "The shape only moved from one place to another without changing direction.",
+    "n": 2
+  },
+  {
+    "en": "The name of this solid:",
+    "n": 2
+  },
+  {
+    "en": "Cube.",
+    "n": 2
+  },
+  {
+    "en": "What is the name of this solid?",
+    "n": 2
+  },
+  {
+    "en": "# Area of a Square",
+    "n": 2
+  },
+  {
+    "en": "A square with a side of 3 — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "Reflection",
+    "n": 2
+  },
+  {
+    "en": "You slide a small book across a table to the left — the book moves to a new place but does not flip over.",
+    "n": 2
+  },
+  {
+    "en": "Translation or reflection?",
+    "n": 2
+  },
+  {
+    "en": "# Parallel and Perpendicular Lines",
+    "n": 2
+  },
+  {
+    "en": "Parallelogram — 2 pairs of parallel sides.",
+    "n": 2
+  },
+  {
+    "en": "A door — 4 right angles, but different width and height.",
+    "n": 2
+  },
+  {
+    "en": "Square or rectangle?",
+    "n": 2
+  },
+  {
+    "en": "## Batches",
+    "n": 2
+  },
+  {
+    "en": "| Batch | Pages |",
+    "n": 2
+  },
+  {
+    "en": "## Stop rule",
+    "n": 2
+  },
+  {
+    "en": "How many degrees are in a half turn?",
+    "n": 2
+  },
+  {
+    "en": "A square with side 6 — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "Area = 36 cm²",
+    "n": 2
+  },
+  {
+    "en": "# Perimeter of a Square",
+    "n": 2
+  },
+  {
+    "en": "A square with side 8 cm — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "A triangle with sides 3, 3, and 5 — what type of triangle is it?",
+    "n": 2
+  },
+  {
+    "en": "# Angles in a Triangle",
+    "n": 2
+  },
+  {
+    "en": "In a triangle with angles 40°, 65°, and 75° — which angle is the largest?",
+    "n": 2
+  },
+  {
+    "en": "# Perimeter of a Triangle",
+    "n": 2
+  },
+  {
+    "en": "A triangle with sides 4, 5, and 6 cm — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "# Diagonal of a Rectangle",
+    "n": 2
+  },
+  {
+    "en": "type: rectangle_diagonal",
+    "n": 2
+  },
+  {
+    "en": "Rectangle:",
+    "n": 2
+  },
+  {
+    "en": "Rectangle 6 by 8 — what is the length of the diagonal?",
+    "n": 2
+  },
+  {
+    "en": "# Diagonal of a Square",
+    "n": 2
+  },
+  {
+    "en": "type: square_diagonal",
+    "n": 2
+  },
+  {
+    "en": "A square with side 8 — is the diagonal shorter than 8, equal to 8, or longer than 8?",
+    "n": 2
+  },
+  {
+    "en": "A quadrilateral with angles 90° and sides 3 and 7 — rectangle or square?",
+    "n": 2
+  },
+  {
+    "en": "# Volume of a Rectangular Prism",
+    "n": 2
+  },
+  {
+    "en": "Rectangular prism: 2 × 4 × 6 cm — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "In a square:",
+    "n": 2
+  },
+  {
+    "en": "A square on a page:",
+    "n": 2
+  },
+  {
+    "en": "A square with 4 corners — what is the sum of all its angles?",
+    "n": 2
+  },
+  {
+    "en": "In a rectangle opposite sides are equal.",
+    "n": 2
+  },
+  {
+    "en": "In a square all sides are equal.",
+    "n": 2
+  },
+  {
+    "en": "A square with side 4 — how many sides does it have, and what is the length of each one?",
+    "n": 2
+  },
+  {
+    "en": "For a rectangular prism — how many pairs of equal faces are there?",
+    "n": 2
+  },
+  {
+    "en": "Unit: cm².",
+    "n": 2
+  },
+  {
+    "en": "A square with side 9 — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "Substitute:",
+    "n": 2
+  },
+  {
+    "en": "Area = 81 cm²",
+    "n": 2
+  },
+  {
+    "en": "Formula — Perimeter = 4 × side.",
+    "n": 2
+  },
+  {
+    "en": "A square with side 6 cm — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "A rectangle that is not a square — how many lines of symmetry does it have?",
+    "n": 2
+  },
+  {
+    "en": "In a triangle: angle 60° and angle 80° — what is the third angle?",
+    "n": 2
+  },
+  {
+    "en": "Add the two known angles:",
+    "n": 2
+  },
+  {
+    "en": "A triangle with sides 4, 7, and 9 — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "Add the first two sides:",
+    "n": 2
+  },
+  {
+    "en": "Add the third side:",
+    "n": 2
+  },
+  {
+    "en": "In a parallelogram — can you always calculate the diagonal like in a rectangle, using only two adjacent sides?",
+    "n": 2
+  },
+  {
+    "en": "Rectangle 5 cm × 12 cm — what is the length of the diagonal?",
+    "n": 2
+  },
+  {
+    "en": "Diagonal = side × √2",
+    "n": 2
+  },
+  {
+    "en": "(with √2)",
+    "n": 2
+  },
+  {
+    "en": "Parallelogram: base 6 cm, area 54 cm² — what is the height?",
+    "n": 2
+  },
+  {
+    "en": "Trapezoid: bases 3 cm and 7 cm, area 30 cm² — what is the height?",
+    "n": 2
+  },
+  {
+    "en": "Add the bases:",
+    "n": 2
+  },
+  {
+    "en": "Multiply the area by 2:",
+    "n": 2
+  },
+  {
+    "en": "type: triangle_height",
+    "n": 2
+  },
+  {
+    "en": "Triangle: base 12 cm, area 30 cm² — what is the height?",
+    "n": 2
+  },
+  {
+    "en": "type: parallelogram_area",
+    "n": 2
+  },
+  {
+    "en": "Parallelogram: base 6 cm, height 7 cm — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "In rectangle ABCD — what is the relationship between AB and BC?",
+    "n": 2
+  },
+  {
+    "en": "Trapezoid",
+    "n": 2
+  },
+  {
+    "en": "| Runtime registry / routes | ❌ Not in scope |",
+    "n": 2
+  },
+  {
+    "en": "- All pages: `age_band: grades_5_6`, `approval_status: draft`, `grade: g5`.",
+    "n": 2
+  },
+  {
+    "en": "- Child-facing copy uses **גאומטריה**, not **הנדסה**.",
+    "n": 2
+  },
+  {
+    "en": "Rectangular prism 2 cm × 6 cm × 3 cm — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "Which solid — cube or rectangular prism — has rectangular faces that are not squares?",
+    "n": 2
+  },
+  {
+    "en": "Square with side 7 cm — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "Tiling with equilateral triangles — what is the angle of each tile?",
+    "n": 2
+  },
+  {
+    "en": "How many tiles meet at one point?",
+    "n": 2
+  },
+  {
+    "en": "type: trapezoid_area",
+    "n": 2
+  },
+  {
+    "en": "Trapezoid: bases 4 cm and 8 cm, height 6 cm — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "Area of a trapezoid = average of the bases × height.",
+    "n": 2
+  },
+  {
+    "en": "Triangle: base 8 cm, height 5 cm — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "Triangle: sides 3 cm, 7 cm, 9 cm — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "Circle radius 6 cm (π = 3.14) — what is the area?",
+    "n": 2
+  },
+  {
+    "en": "Circle radius 7 cm (π = 3.14) — what is the circumference?",
+    "n": 2
+  },
+  {
+    "en": "Area = base × height (like a rectangle).",
+    "n": 2
+  },
+  {
+    "en": "Base area = length × width",
+    "n": 2
+  },
+  {
+    "en": "**Content scope:** (1/3)×base area×height",
+    "n": 2
+  },
+  {
+    "en": "Volume = (1/3) × base area × height.",
+    "n": 2
+  },
+  {
+    "en": "type: right_triangle",
+    "n": 2
+  },
+  {
+    "en": "Right triangle: legs 5 cm and 12 cm — what is the length of the hypotenuse?",
+    "n": 2
+  },
+  {
+    "en": "Right triangle: hypotenuse 10 cm, leg 6 cm — what is the other leg?",
+    "n": 2
+  },
+  {
+    "en": "- All pages: `age_band: grades_5_6`, `approval_status: draft`, `grade: g6`.",
+    "n": 2
+  },
+  {
+    "en": "Rectangular prism 3 cm × 4 cm × 7 cm — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "Which solid — cone or cylinder — has one apex and a circular base?",
+    "n": 2
+  },
+  {
+    "en": "Sphere radius 6 cm (π = 3.14) — what is the volume?",
+    "n": 2
+  },
+  {
+    "en": "In this chapter:",
+    "n": 2
+  },
+  {
+    "en": "Square with side 15 cm — what is the perimeter?",
+    "n": 2
+  },
+  {
+    "en": "10 = 1 ten-stick",
+    "n": 2
+  },
+  {
+    "en": "Writing:",
+    "n": 2
+  },
+  {
+    "en": "When they are equal:",
+    "n": 2
+  },
+  {
+    "en": "Compare: 14 __ 9",
+    "n": 2
+  },
+  {
+    "en": "Which symbol is correct — <, >, or =?",
+    "n": 2
+  },
+  {
+    "en": "There is a blank — you need to find the missing number.",
+    "n": 2
+  },
+  {
+    "en": "2 + __ = 8 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find blanks (__).",
+    "n": 2
+  },
+  {
+    "en": "10 − __ = 7 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "8 + ? = 10 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "4 + ? = 10 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "Number line from 0 to 10:",
+    "n": 2
+  },
+  {
+    "en": "- A straight line with marked dots",
+    "n": 2
+  },
+  {
+    "en": "Count backward from 9.",
+    "n": 2
+  },
+  {
+    "en": "Count forward from 8.",
+    "n": 2
+  },
+  {
+    "en": "Remember:",
+    "n": 2
+  },
+  {
+    "en": "An even number — you can arrange in pairs, and everyone has a partner.",
+    "n": 2
+  },
+  {
+    "en": "An odd number — you arrange in pairs, and one is left without a partner.",
+    "n": 2
+  },
+  {
+    "en": "Is 9 even or odd?",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find questions: even or odd?",
+    "n": 2
+  },
+  {
+    "en": "neighbor before   neighbor after",
+    "n": 2
+  },
+  {
+    "en": "What are the neighbors of 12?",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find questions: what comes before?",
+    "n": 2
+  },
+  {
+    "en": "And what comes after?",
+    "n": 2
+  },
+  {
+    "en": "Hop just one step!",
+    "n": 2
+  },
+  {
+    "en": "Which number is 3 steps to the right of 2?",
+    "n": 2
+  },
+  {
+    "en": "How many tens and how many ones are in 29?",
+    "n": 2
+  },
+  {
+    "en": "How many ones?",
+    "n": 2
+  },
+  {
+    "en": "All Batch C pages:",
+    "n": 2
+  },
+  {
+    "en": "| learning_page_id | Draft title |",
+    "n": 2
+  },
+  {
+    "en": "All Batch D pages:",
+    "n": 2
+  },
+  {
+    "en": "## Confirmations",
+    "n": 2
+  },
+  {
+    "en": "Before you calculate — read out loud:",
+    "n": 2
+  },
+  {
+    "en": "How much money in total — we need to add.",
+    "n": 2
+  },
+  {
+    "en": "Danny has one coin of 10 shekels and 2 coins of 2 shekels.",
+    "n": 2
+  },
+  {
+    "en": "How much money does he have altogether?",
+    "n": 2
+  },
+  {
+    "en": "Noa paid 15 shekels for a book that cost 8 shekels.",
+    "n": 2
+  },
+  {
+    "en": "How much change does she get?",
+    "n": 2
+  },
+  {
+    "en": "# Word Problems — Days of the Week",
+    "n": 2
+  },
+  {
+    "en": "1. What do we know? — which day is today",
+    "n": 2
+  },
+  {
+    "en": "# Word Problems — How Many Days Between Days",
+    "n": 2
+  },
+  {
+    "en": "We'll break each number into tens and ones to make it easier.",
+    "n": 2
+  },
+  {
+    "en": "Calculate: 52 + 36 = ?",
+    "n": 2
+  },
+  {
+    "en": "How do you write vertically?",
+    "n": 2
+  },
+  {
+    "en": "- Ones under ones",
+    "n": 2
+  },
+  {
+    "en": "- Tens under tens",
+    "n": 2
+  },
+  {
+    "en": "1. Start with ones (right)",
+    "n": 2
+  },
+  {
+    "en": "What happens?",
+    "n": 2
+  },
+  {
+    "en": "Calculate vertically: 36 + 27 = ?",
+    "n": 2
+  },
+  {
+    "en": "Always start with the ones!",
+    "n": 2
+  },
+  {
+    "en": "# Comparing Numbers Up to 1,000",
+    "n": 2
+  },
+  {
+    "en": "Compare: 518 __ 485",
+    "n": 2
+  },
+  {
+    "en": "Calculate: 20 ÷ 5 = ?",
+    "n": 2
+  },
+  {
+    "en": "Does 35 divide by 2? By 5? By 10?",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to check divisibility by 2, 5, and 10.",
+    "n": 2
+  },
+  {
+    "en": "Half = one part out of two equal parts.",
+    "n": 2
+  },
+  {
+    "en": "Half of 12 = 6",
+    "n": 2
+  },
+  {
+    "en": "What is half of 16?",
+    "n": 2
+  },
+  {
+    "en": "Half of 16 = 8",
+    "n": 2
+  },
+  {
+    "en": "How do you find it?",
+    "n": 2
+  },
+  {
+    "en": "Half of the whole is 5.",
+    "n": 2
+  },
+  {
+    "en": "A quarter = one part out of four equal parts.",
+    "n": 2
+  },
+  {
+    "en": "A quarter of 12 = 3",
+    "n": 2
+  },
+  {
+    "en": "What is a quarter of 20?",
+    "n": 2
+  },
+  {
+    "en": "A quarter of 20 = 5",
+    "n": 2
+  },
+  {
+    "en": "A quarter of the whole is 5.",
+    "n": 2
+  },
+  {
+    "en": "Repeated addition: 6 + 6 + 6 + 6 = 24",
+    "n": 2
+  },
+  {
+    "en": "Calculate: 7 × 3 = ?",
+    "n": 2
+  },
+  {
+    "en": "No one is left alone.",
+    "n": 2
+  },
+  {
+    "en": "Is 46 even or odd?",
+    "n": 2
+  },
+  {
+    "en": "What are the neighbors of 199?",
+    "n": 2
+  },
+  {
+    "en": "# Hundreds, Tens, and Ones — Up to 1,000",
+    "n": 2
+  },
+  {
+    "en": "How many hundreds, tens, and ones are in 312?",
+    "n": 2
+  },
+  {
+    "en": "**Status:** ✅ Draft complete + polish pass applied",
+    "n": 2
+  },
+  {
+    "en": "| `cmp.md` | השוואת מספרים עד 1,000 |",
+    "n": 2
+  },
+  {
+    "en": "| File | learning_page_id | skill_id | page_type | Draft title |",
+    "n": 2
+  },
+  {
+    "en": "- `subject`: math · `grade`: g2 · `age_band`: grades_1_2 · `approval_status`: **draft**",
+    "n": 2
+  },
+  {
+    "en": "- Section headings: מה לומדים? / הסבר / דוגמה / בואו נפתור / נסו בעצמכם / שימו לב! / בואו נתרגל!",
+    "n": 2
+  },
+  {
+    "en": "| Page | Section 5 (try it) | Section 6 (mistake) |",
+    "n": 2
+  },
+  {
+    "en": "Calculate: 75 − 33 = ?",
+    "n": 2
+  },
+  {
+    "en": "Calculate vertically: 64 − 38 = ?",
+    "n": 2
+  },
+  {
+    "en": "There are 3 coins of 10 shekels.",
+    "n": 2
+  },
+  {
+    "en": "How much money is there altogether?",
+    "n": 2
+  },
+  {
+    "en": "Amir paid 40 shekels for a game that cost 28 shekels.",
+    "n": 2
+  },
+  {
+    "en": "How much change did he get?",
+    "n": 2
+  },
+  {
+    "en": "There are 20 stickers shared equally among 5 children.",
+    "n": 2
+  },
+  {
+    "en": "How many stickers does each child get?",
+    "n": 2
+  },
+  {
+    "en": "Divide!",
+    "n": 2
+  },
+  {
+    "en": "There are 6 bags.",
+    "n": 2
+  },
+  {
+    "en": "Each bag has 3 apples.",
+    "n": 2
+  },
+  {
+    "en": "How many apples are there altogether?",
+    "n": 2
+  },
+  {
+    "en": "3. What do we do? — count hops on the row",
+    "n": 2
+  },
+  {
+    "en": "Today is Wednesday.",
+    "n": 2
+  },
+  {
+    "en": "In 2 days — which day will it be?",
+    "n": 2
+  },
+  {
+    "en": "Count the hops!",
+    "n": 2
+  },
+  {
+    "en": "From Monday to Friday — how many days pass?",
+    "n": 2
+  },
+  {
+    "en": "Ways to add three numbers:",
+    "n": 2
+  },
+  {
+    "en": "Important: add all three numbers — don't stop after two!",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to add three numbers.",
+    "n": 2
+  },
+  {
+    "en": "Break each number apart:",
+    "n": 2
+  },
+  {
+    "en": "Add the ones — if you get 10 or more, carry 1 to the tens",
+    "n": 2
+  },
+  {
+    "en": "How do we compare big numbers?",
+    "n": 2
+  },
+  {
+    "en": "If equal — tens",
+    "n": 2
+  },
+  {
+    "en": "If equal — ones",
+    "n": 2
+  },
+  {
+    "en": "The open side of the symbol points to the bigger number.",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find >, <, =.",
+    "n": 2
+  },
+  {
+    "en": "# Adding Decimals",
+    "n": 2
+  },
+  {
+    "en": "Whole: 3 + 2 = 5",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to add decimal numbers.",
+    "n": 2
+  },
+  {
+    "en": "# Subtracting Decimals",
+    "n": 2
+  },
+  {
+    "en": "Whole: 6 − 2 = 4",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to subtract decimal numbers.",
+    "n": 2
+  },
+  {
+    "en": "# Addition Equation — Missing Number",
+    "n": 2
+  },
+  {
+    "en": "The missing number is 28.",
+    "n": 2
+  },
+  {
+    "en": "56 + __ = 83 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "# Subtraction Equation — Missing Number",
+    "n": 2
+  },
+  {
+    "en": "__ − 34 = 48 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "Which is bigger — 3/4 or 2/4?",
+    "n": 2
+  },
+  {
+    "en": "You have 6. You want to reach 10.",
+    "n": 2
+  },
+  {
+    "en": "Check: 45 + 55 = 100",
+    "n": 2
+  },
+  {
+    "en": "78 + ? = 100 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "Ones digit: 5.",
+    "n": 2
+  },
+  {
+    "en": "Is 48 even or odd?",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find even or odd?",
+    "n": 2
+  },
+  {
+    "en": "(What is the value of the hundreds digit?)",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find questions about a digit's value by its place.",
+    "n": 2
+  },
+  {
+    "en": "| `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md` | Section B (Grades 3–4) seven-section template |",
+    "n": 2
+  },
+  {
+    "en": "| `dec_add.md` | חיבור עשרוניים |",
+    "n": 2
+  },
+  {
+    "en": "| `dec_sub.md` | חיסור עשרוניים |",
+    "n": 2
+  },
+  {
+    "en": "Find the step first!",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find subtractions.",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to solve how many more?",
+    "n": 2
+  },
+  {
+    "en": "Look for the difference — not the total!",
+    "n": 2
+  },
+  {
+    "en": "Work out: 450 + 120 + 80 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 1,240 + 375 = ?",
+    "n": 2
+  },
+  {
+    "en": "Ones: 0 + 5 = 5",
+    "n": 2
+  },
+  {
+    "en": "# Comparing Large Numbers",
+    "n": 2
+  },
+  {
+    "en": "Compare: 7,234 ? 7,243 — which symbol?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 4.63 + 1.25 = ?",
+    "n": 2
+  },
+  {
+    "en": "Hundredths: 0 − 8 — borrow → 10 − 8 = 2",
+    "n": 2
+  },
+  {
+    "en": "Work out: 8.40 − 3.15 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 360 ÷ 9 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 196 ÷ 7 = ?",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find long division.",
+    "n": 2
+  },
+  {
+    "en": "Work out: 59 ÷ 7 = ? (quotient and remainder)",
+    "n": 2
+  },
+  {
+    "en": "180 + __ = 460 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "__ − 63 = 175 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "≈ means about, close to.",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to estimate an addition sum.",
+    "n": 2
+  },
+  {
+    "en": "Now you know how to estimate a multiplication answer.",
+    "n": 2
+  },
+  {
+    "en": "Factors of 18: 1, 2, 3, 6, 9, 18",
+    "n": 2
+  },
+  {
+    "en": "Find all the factors of 36.",
+    "n": 2
+  },
+  {
+    "en": "GCF(15, 25) = 5",
+    "n": 2
+  },
+  {
+    "en": "Find the GCF of 24 and 36.",
+    "n": 2
+  },
+  {
+    "en": "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.",
+    "n": 2
+  },
+  {
+    "en": "Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.",
+    "n": 2
+  },
+  {
+    "en": "Work out: 11 × 7 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 37 × 6 = ?",
+    "n": 2
+  },
+  {
+    "en": "37 + ? = 100 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "Check: 30 + 70 = 100, and 7 + 3 = 10 → 100",
+    "n": 2
+  },
+  {
+    "en": "The missing number is 63.",
+    "n": 2
+  },
+  {
+    "en": "Check: 64 + 36 = 100",
+    "n": 2
+  },
+  {
+    "en": "Is 3,578 even or odd?",
+    "n": 2
+  },
+  {
+    "en": "Neighbor before = −1",
+    "n": 2
+  },
+  {
+    "en": "Neighbor after = +1",
+    "n": 2
+  },
+  {
+    "en": "What is the neighbor before and after the number 3,999?",
+    "n": 2
+  },
+  {
+    "en": "Thousands digit — how many thousands (1,000, 2,000, 3,000…)",
+    "n": 2
+  },
+  {
+    "en": "Hundreds digit — how many hundreds (100, 200, 300…)",
+    "n": 2
+  },
+  {
+    "en": "Tens digit — how many tens (10, 20, 30…)",
+    "n": 2
+  },
+  {
+    "en": "Ones digit — how many single units (1, 2, 3…)",
+    "n": 2
+  },
+  {
+    "en": "In the number 6,729 — how many thousands are there?",
+    "n": 2
+  },
+  {
+    "en": "Even with big numbers — the rule is the same.",
+    "n": 2
+  },
+  {
+    "en": "Work out: 5,280 × 1 = ?",
+    "n": 2
+  },
+  {
+    "en": "What does 5³ mean?",
+    "n": 2
+  },
+  {
+    "en": "Write it as repeated multiplication — and what's the value?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 4³ = ?",
+    "n": 2
+  },
+  {
+    "en": "Is 37 prime?",
+    "n": 2
+  },
+  {
+    "en": "| `ns_neighbors.md` | שכנים — מספרים גדולים |",
+    "n": 2
+  },
+  {
+    "en": "| `cmp.md` | השוואת מספרים גדולים |",
+    "n": 2
+  },
+  {
+    "en": "| `fm_factor.md` | גורמים של מספר |",
+    "n": 2
+  },
+  {
+    "en": "| `fm_multiple.md` | כפולות של מספר |",
+    "n": 2
+  },
+  {
+    "en": "Steps for rounding:",
+    "n": 2
+  },
+  {
+    "en": "Look at the digit to the right of the place you're rounding to",
+    "n": 2
+  },
+  {
+    "en": "If it's 0, 1, 2, 3, or 4 — round down (stay the same)",
+    "n": 2
+  },
+  {
+    "en": "If it's 5, 6, 7, 8, or 9 — round up (add 1)",
+    "n": 2
+  },
+  {
+    "en": "Round 1,247 to the nearest hundred.",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find rounding questions.",
+    "n": 2
+  },
+  {
+    "en": "First check which digit decides!",
+    "n": 2
+  },
+  {
+    "en": "Continue the sequence: 1,000, 1,100, 1,200, ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 2,503 − 876 = ?",
+    "n": 2
+  },
+  {
+    "en": "Today we'll solve a word problem — when the question asks how many more one person has than another.",
+    "n": 2
+  },
+  {
+    "en": "Noah has 180 points and Dana has 95 points.",
+    "n": 2
+  },
+  {
+    "en": "There are 61 students.",
+    "n": 2
+  },
+  {
+    "en": "They split into groups of 9.",
+    "n": 2
+  },
+  {
+    "en": "How many students won't be in a full group?",
+    "n": 2
+  },
+  {
+    "en": "80 minutes.",
+    "n": 2
+  },
+  {
+    "en": "Two video clips last 45 minutes and 35 minutes.",
+    "n": 2
+  },
+  {
+    "en": "What's the total watching time?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 1,789 + 0 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 375 × 0 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 4,125 − 0 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 5,000 + 3,500 + 1,200 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 47,350 + 6,284 = ?",
+    "n": 2
+  },
+  {
+    "en": "Thousands: 3 = 3",
+    "n": 2
+  },
+  {
+    "en": "Work out: 8.37 + 4.45 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 14.60 − 5.38 = ?",
+    "n": 2
+  },
+  {
+    "en": "Check: 700 × 12 = 8,400",
+    "n": 2
+  },
+  {
+    "en": "Work out: 9,600 ÷ 16 = ?",
+    "n": 2
+  },
+  {
+    "en": "Check with multiplication!",
+    "n": 2
+  },
+  {
+    "en": "Work out: 3,360 ÷ 48 = ?",
+    "n": 2
+  },
+  {
+    "en": "Work out: 937 ÷ 7 = ? (quotient and remainder)",
+    "n": 2
+  },
+  {
+    "en": "Check:",
+    "n": 2
+  },
+  {
+    "en": "__ + 5,300 = 12,700 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "Missing divisor = dividend ÷ quotient",
+    "n": 2
+  },
+  {
+    "en": "4,500 ÷ __ = 75 — what is the missing divisor?",
+    "n": 2
+  },
+  {
+    "en": "Missing factor = product ÷ known factor",
+    "n": 2
+  },
+  {
+    "en": "__ × 15 = 600 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "15,000 − __ = 6,500 — what is the missing number?",
+    "n": 2
+  },
+  {
+    "en": "A hall has about 9,000 chairs.",
+    "n": 2
+  },
+  {
+    "en": "Is 8,800 a reasonable estimate?",
+    "n": 2
+  },
+  {
+    "en": "Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36",
+    "n": 2
+  },
+  {
+    "en": "Find all the factors of 48.",
+    "n": 2
+  },
+  {
+    "en": "Common factors: 1, 3, 5, 15",
+    "n": 2
+  },
+  {
+    "en": "Largest: 15",
+    "n": 2
+  },
+  {
+    "en": "Find the GCF of 40 and 60.",
+    "n": 2
+  },
+  {
+    "en": "Write the first 5 multiples of 9.",
+    "n": 2
+  },
+  {
+    "en": "Multiples help you find common multiples and solve problems about cycles, groups, and time.",
+    "n": 2
+  },
+  {
+    "en": "Work out: 4/9 + 3/9 = ?",
+    "n": 2
+  },
+  {
+    "en": "Expand 3/4 to have denominator 20.",
+    "n": 2
+  },
+  {
+    "en": "Simplify: 20/30",
+    "n": 2
+  },
+  {
+    "en": "Change 13/5 to a mixed number.",
+    "n": 2
+  },
+  {
+    "en": "In practice you'll find conversions.",
+    "n": 2
+  },
+  {
+    "en": "Change 4 1/3 to an improper fraction.",
+    "n": 2
+  },
+  {
+    "en": "# Multiplication — Strategies and Large Numbers",
+    "n": 2
+  },
+  {
+    "en": "Work out: 24 × 35 = ?",
+    "n": 2
+  },
+  {
+    "en": "# Percent Discount",
+    "n": 2
+  },
+  {
+    "en": "Price $240, discount 25% — what is the price after the discount?",
+    "n": 2
+  },
+  {
+    "en": "# Percent of a Quantity",
+    "n": 2
+  },
+  {
+    "en": "What is 20% of 150?",
+    "n": 2
+  },
+  {
+    "en": "## Batch A — ערך מקום, השוואה, סדרות ועיגול (6)",
+    "n": 2
+  },
+  {
+    "en": "| `fm_gcd.md` | המחלק המשותף הגדול ביותר (מ.א.ח) |",
+    "n": 2
+  },
+  {
+    "en": "| `perc_part_of.md` | אחוז מכמות |",
+    "n": 2
+  },
+  {
+    "en": "| `perc_discount.md` | הנחה באחוזים |",
+    "n": 2
+  },
+  {
+    "en": "38,750 to the nearest ten-thousand:",
+    "n": 2
+  },
+  {
+    "en": "Round 46,380 to the nearest thousand.",
+    "n": 2
+  },
+  {
+    "en": "Continue: 20,000, 25,000, 30,000, 35,000, ?",
+    "n": 2
+  },
+  {
+    "en": "Tens: 9 (after borrowing) − 5 = 4",
+    "n": 2
+  },
+  {
+    "en": "Work out: 70,000 − 23,456 = ?",
+    "n": 2
+  },
+  {
+    "en": "Danny has $3,200 and Mia has $2,850.",
+    "n": 2
+  },
+  {
+    "en": "# Distance, Time, and Speed",
+    "n": 2
+  },
+  {
+    "en": "What is the distance?",
+    "n": 2
+  },
+  {
+    "en": "Distance = speed × time",
+    "n": 2
+  },
+  {
+    "en": "185 eggs, 12 in each carton.",
+    "n": 2
+  },
+  {
+    "en": "There were $600, they spent $180, then another $95.",
+    "n": 2
+  },
+  {
+    "en": "How much is left?",
+    "n": 2
+  },
+  {
+    "en": "# Word Problems — Adding Times",
+    "n": 2
+  },
+  {
+    "en": "# Unit Conversion — Centimeters and Meters",
+    "n": 2
+  },
+  {
+    "en": "**Content scope:** 100 cm = 1 m",
+    "n": 2
+  },
+  {
+    "en": "Conversion:",
+    "n": 2
+  },
+  {
+    "en": "430 cm — how many meters?",
+    "n": 2
+  },
+  {
+    "en": "# Unit Conversion — Grams and Kilograms",
+    "n": 2
+  },
+  {
+    "en": "**Content scope:** 1,000 g = 1 kg",
+    "n": 2
+  },
+  {
+    "en": "4,250 g — how many kilograms?",
+    "n": 2
+  },
+  {
+    "en": "Compare: 173,650 ? 173,560",
+    "n": 2
+  },
+  {
+    "en": "Line up the decimal points.",
+    "n": 2
+  },
+  {
+    "en": "÷10 → the decimal point moves one place to the left.",
+    "n": 2
+  },
+  {
+    "en": "×10 → the decimal point moves one place to the right.",
+    "n": 2
+  },
+  {
+    "en": "Solve: 2,450 + ? = 4,030",
+    "n": 2
+  },
+  {
+    "en": "Solve: 60 ÷ ? = 5",
+    "n": 2
+  },
+  {
+    "en": "Solve: 9 × ? = 756",
+    "n": 2
+  },
+  {
+    "en": "Solve: 5,000 − ? = 3,725",
+    "n": 2
+  },
+  {
+    "en": "What are the neighbors of 75,300?",
+    "n": 2
+  },
+  {
+    "en": "In 125,480 — what is the value of the digit 2?",
+    "n": 2
+  },
+  {
+    "en": "80 km/h, 3 hours — what is the distance?",
+    "n": 2
+  },
+  {
+    "en": "- Air — to breathe",
+    "n": 2
+  },
+  {
+    "en": "During the day — the sun shines and warms us.",
+    "n": 2
+  },
+  {
+    "en": "Where does an empty plastic bottle belong?",
+    "n": 2
+  },
+  {
+    "en": "What is the first stage in a frog's life cycle?",
+    "n": 2
+  },
+  {
+    "en": "The sun",
+    "n": 2
+  },
+  {
+    "en": "At night — who or what gives us light in the sky?",
+    "n": 2
+  },
+  {
+    "en": "In the neighborhood there is a big tree where birds build a nest.",
+    "n": 2
+  },
+  {
+    "en": "What should we do when we play near the tree?",
+    "n": 2
+  },
+  {
+    "en": "Variable:",
+    "n": 2
+  },
+  {
+    "en": "So we know what caused the change",
+    "n": 2
+  },
+  {
+    "en": "And a bottle that looks empty — what is inside?",
+    "n": 2
+  },
+  {
+    "en": "What will happen to its leaves?",
+    "n": 2
+  },
+  {
+    "en": "**Status:** Draft content — **7 / 7** pages. No runtime insertion.",
+    "n": 2
+  },
+  {
+    "en": "Algae are eaten by a small fish, and the small fish is eaten by a kingfisher.",
+    "n": 2
+  },
+  {
+    "en": "Hypothesis:",
+    "n": 2
+  },
+  {
+    "en": "Plan a safe experiment:",
+    "n": 2
+  },
+  {
+    "en": "What is the hypothesis?",
+    "n": 2
+  },
+  {
+    "en": "What is the variable?",
+    "n": 2
+  },
+  {
+    "en": "Research question — what are we testing?",
+    "n": 2
+  },
+  {
+    "en": "What did we learn?",
+    "n": 2
+  },
+  {
+    "en": "# Grade 1 Geometry Learning Book — Drafts",
+    "n": 1
+  },
+  {
+    "en": "**Status:** **Owner-approved content** — **3 / 3** pages. Runtime insertion not started.",
+    "n": 1
+  },
+  {
+    "en": "**Signoff:** `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_SIGNOFF.md`",
+    "n": 1
+  },
+  {
+    "en": "**Folder:** `docs/learning-book/geometry/g1/drafts/`",
+    "n": 1
+  },
+  {
+    "en": "| Curriculum plan | ✅ `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md` |",
+    "n": 1
+  },
+  {
+    "en": "| Owner signoff | ✅ `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_SIGNOFF.md` |",
+    "n": 1
+  },
+  {
+    "en": "| Draft markdown pages | ✅ **3 / 3** (Batches A–B) — **content approved** |",
+    "n": 1
+  },
+  {
+    "en": "| Review pack | ✅ `docs/learning-book/GEOMETRY_GRADE_1_HEBREW_REVIEW_PACK.md` (generated) |",
+    "n": 1
+  },
+  {
+    "en": "| Content verification | ✅ `scripts/verify-geometry-g1-book-content.mjs` |",
+    "n": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/geometry-g1-draft-manifest.mjs` |",
+    "n": 1
+  },
+  {
+    "en": "| Runtime routes | ✅ `/learning/book/geometry/g1` + `[pageId]` (3 SSG pages) |",
+    "n": 1
+  },
+  {
+    "en": "| Practice CTA resolver | ❌ Not created — post-runtime task |",
+    "n": 1
+  },
+  {
+    "en": "- Child-facing book content uses **גאומטריה**, not **הנדסה** (owner-approved).",
+    "n": 1
+  },
+  {
+    "en": "- Internal IDs remain `geometry:g1:{pageId}` and `subject: geometry`.",
+    "n": 1
+  },
+  {
+    "en": "| `data/curriculum-spine/v1/skills.json` | Grade 1 geometry `skill_id` entries in scope |",
+    "n": 1
+  },
+  {
+    "en": "| `docs/learning-book/GEOMETRY_GRADE_1_LEARNING_BOOK_PLAN.md` | Page list, batches, boundaries |",
+    "n": 1
+  },
+  {
+    "en": "| `docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md` | Seven-section template (Grades 1–2 age band) |",
+    "n": 1
+  },
+  {
+    "en": "| `docs/learning-book/math/g1/drafts/` | Style reference only — **not modified** |",
+    "n": 1
+  },
+  {
+    "en": "| `utils/geometry-constants.js` | G1 topic descriptions (context only) |",
+    "n": 1
+  },
+  {
+    "en": "## Batch A — צורות בסיסיות (2)",
+    "n": 1
+  },
+  {
+    "en": "| `shapes_basic_square.md` | הכרת הריבוע |",
+    "n": 1
+  },
+  {
+    "en": "| `shapes_basic_rectangle.md` | הכרת המלבן |",
+    "n": 1
+  },
+  {
+    "en": "## Batch B — הזזה ושיקוף (1)",
+    "n": 1
+  },
+  {
+    "en": "| `transformations.md` | הזזה ושיקוף — היכרות |",
+    "n": 1
+  },
+  {
+    "en": "- No ASCII diagrams or markdown tables in child-facing bodies.",
+    "n": 1
+  },
+  {
+    "en": "- `geometry:kind:no_question` is spine meta only — **no** learning page.",
+    "n": 1
+  },
+  {
+    "en": "Content is owner-approved; **runtime insertion not started**:",
+    "n": 1
+  },
+  {
+    "en": "- ❌ No registry, routes, SQL, commit, push, or deploy (unless explicitly requested)",
+    "n": 1
+  },
+  {
+    "en": "- ✅ Approved Hebrew drafts remain source for a future runtime task",
+    "n": 1
+  },
+  {
+    "en": "# Getting to Know the Rectangle",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Identifying a rectangle; different length and width; opposite side pairs; no measurements",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn about the rectangle.",
+    "n": 1
+  },
+  {
+    "en": "A rectangle is like a square — but it usually has a different length and width.",
+    "n": 1
+  },
+  {
+    "en": "A rectangle has 4 sides and 4 right corners — like a square.",
+    "n": 1
+  },
+  {
+    "en": "In a rectangle there is a length (a longer side) and a width (a shorter side).",
+    "n": 1
+  },
+  {
+    "en": "a door, a sheet of paper, a TV screen.",
+    "n": 1
+  },
+  {
+    "en": "Imagine a sheet of paper:",
+    "n": 1
+  },
+  {
+    "en": "- The longer side — length",
+    "n": 1
+  },
+  {
+    "en": "- The shorter side — width",
+    "n": 1
+  },
+  {
+    "en": "That is a rectangle (not a square, because the length and width are different).",
+    "n": 1
+  },
+  {
+    "en": "A shape has a different length and width, 4 right corners, and equal opposite sides. What is it called?",
+    "n": 1
+  },
+  {
+    "en": "Different length and width — not a square (in a square everything is equal).",
+    "n": 1
+  },
+  {
+    "en": "4 right corners — like a rectangle.",
+    "n": 1
+  },
+  {
+    "en": "Imagine a chalkboard in the classroom:",
+    "n": 1
+  },
+  {
+    "en": "The long side (the width of the board) is different from the short side (the height of the board), and all 4 corners are right angles.",
+    "n": 1
+  },
+  {
+    "en": "Chalkboard in the classroom: the long side is different from the short side, and all 4 corners are right angles.",
+    "n": 1
+  },
+  {
+    "en": "Does it have 4 right corners? Yes — like a rectangle.",
+    "n": 1
+  },
+  {
+    "en": "Is the long side different from the short side? Yes — it has a different length and width.",
+    "n": 1
+  },
+  {
+    "en": "Yes, the board is a rectangle",
+    "n": 1
+  },
+  {
+    "en": "Now you know the rectangle in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find questions about identifying rectangles.",
+    "n": 1
+  },
+  {
+    "en": "Check the length and width!",
+    "n": 1
+  },
+  {
+    "en": "# Getting to Know the Square",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Identifying a square; four equal sides; right angles; no measurements",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn about the square.",
+    "n": 1
+  },
+  {
+    "en": "A square is a shape we see everywhere — tiles, windows, and games.",
+    "n": 1
+  },
+  {
+    "en": "A square has 4 sides — they are all the same length.",
+    "n": 1
+  },
+  {
+    "en": "A square has 4 corners — at each corner there is a right angle (like the corner of a box).",
+    "n": 1
+  },
+  {
+    "en": "If all the sides are equal and all the corners are right angles — the shape is a square.",
+    "n": 1
+  },
+  {
+    "en": "Everyday examples:",
+    "n": 1
+  },
+  {
+    "en": "a square floor tile, a square window, a square on a game board.",
+    "n": 1
+  },
+  {
+    "en": "Imagine a square floor tile:",
+    "n": 1
+  },
+  {
+    "en": "- 4 equal sides",
+    "n": 1
+  },
+  {
+    "en": "That is a square.",
+    "n": 1
+  },
+  {
+    "en": "If someone asks:",
+    "n": 1
+  },
+  {
+    "en": "Is this a square? — check:",
+    "n": 1
+  },
+  {
+    "en": "Are all the sides equal?",
+    "n": 1
+  },
+  {
+    "en": "Are all the corners right angles?",
+    "n": 1
+  },
+  {
+    "en": "There is a shape with 4 equal sides and 4 right angles. What is it called?",
+    "n": 1
+  },
+  {
+    "en": "4 equal sides — like a square.",
+    "n": 1
+  },
+  {
+    "en": "4 right angles — also like a square.",
+    "n": 1
+  },
+  {
+    "en": "Look at a sticker:",
+    "n": 1
+  },
+  {
+    "en": "It has 4 sides and all the corners are right angles.",
+    "n": 1
+  },
+  {
+    "en": "When you measure — all the sides are equal to each other.",
+    "n": 1
+  },
+  {
+    "en": "Sticker: 4 sides, all right corners, and all sides equal to each other.",
+    "n": 1
+  },
+  {
+    "en": "How many sides? 4 sides — like a square.",
+    "n": 1
+  },
+  {
+    "en": "Are the corners right angles? Yes — like a square.",
+    "n": 1
+  },
+  {
+    "en": "Are all the sides equal to each other? Yes — they are all the same length.",
+    "n": 1
+  },
+  {
+    "en": "Yes, the sticker is a square",
+    "n": 1
+  },
+  {
+    "en": "Now you know the square in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find questions about identifying squares.",
+    "n": 1
+  },
+  {
+    "en": "Check that all the sides are equal!",
+    "n": 1
+  },
+  {
+    "en": "# Translation and Reflection — Introduction",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Translation (moving without flipping); reflection (mirror image); no rotation in grade 1",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn about two ways a shape can move:",
+    "n": 1
+  },
+  {
+    "en": "Translation — we move the shape from one place to another.",
+    "n": 1
+  },
+  {
+    "en": "Reflection — we make a mirror image of it, like in a mirror.",
+    "n": 1
+  },
+  {
+    "en": "We move a shape without flipping it over.",
+    "n": 1
+  },
+  {
+    "en": "Example: slide a book across the table to the right — the book stays the same book, just in a different place.",
+    "n": 1
+  },
+  {
+    "en": "We get a shape that looks like it does in a mirror — left and right swap places.",
+    "n": 1
+  },
+  {
+    "en": "Example: a butterfly drawing — if you fold the paper down the middle, the other side looks like a mirror image.",
+    "n": 1
+  },
+  {
+    "en": "Here we will learn translation and reflection.",
+    "n": 1
+  },
+  {
+    "en": "A toy on a table:",
+    "n": 1
+  },
+  {
+    "en": "- Push it forward — translation",
+    "n": 1
+  },
+  {
+    "en": "- Hold a mirror next to it — you see a reflection (mirror image)",
+    "n": 1
+  },
+  {
+    "en": "Same toy — two different kinds of change.",
+    "n": 1
+  },
+  {
+    "en": "You slide a triangle sticker across the page to the right without flipping it over. What kind of move is this?",
+    "n": 1
+  },
+  {
+    "en": "The shape moved to a new place — but it did not flip over.",
+    "n": 1
+  },
+  {
+    "en": "This is not a mirror image — it is a translation.",
+    "n": 1
+  },
+  {
+    "en": "What kind of move is this — translation or reflection?",
+    "n": 1
+  },
+  {
+    "en": "What kind of move is this?",
+    "n": 1
+  },
+  {
+    "en": "Did the car flip over? No — it stays the same car, just as it was.",
+    "n": 1
+  },
+  {
+    "en": "Now you know translation and reflection in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find questions like:",
+    "n": 1
+  },
+  {
+    "en": "Did the shape move to a new place, or does it look like a mirror image?",
+    "n": 1
+  },
+  {
+    "en": "# Grade 2 Geometry Learning Book — Drafts",
+    "n": 1
+  },
+  {
+    "en": "**Status:** All batches authored — **3 / 3** draft pages complete. Owner review pending.",
+    "n": 1
+  },
+  {
+    "en": "**Folder:** `docs/learning-book/geometry/g2/drafts/`",
+    "n": 1
+  },
+  {
+    "en": "| Curriculum plan | ✅ `docs/learning-book/GEOMETRY_GRADE_2_LEARNING_BOOK_PLAN.md` |",
+    "n": 1
+  },
+  {
+    "en": "| Draft markdown pages | ✅ **3 / 3** (Batches A–C) |",
+    "n": 1
+  },
+  {
+    "en": "| Review pack | ✅ `docs/learning-book/GEOMETRY_GRADE_2_HEBREW_REVIEW_PACK.md` (generated) |",
+    "n": 1
+  },
+  {
+    "en": "| Content verification | ✅ `scripts/verify-geometry-g2-book-content.mjs` |",
+    "n": 1
+  },
+  {
+    "en": "| Draft manifest (scripts only) | ✅ `scripts/lib/geometry-g2-draft-manifest.mjs` |",
+    "n": 1
+  },
+  {
+    "en": "| Runtime registry / routes | ✅ wired (`geometry-g2-registry`, `/learning/book/geometry/g2`) |",
+    "n": 1
+  },
+  {
+    "en": "- Child-facing book content uses **גאומטריה**, not **הנדסה**.",
+    "n": 1
+  },
+  {
+    "en": "- Internal IDs: `geometry:g2:{pageId}`, `subject: geometry`.",
+    "n": 1
+  },
+  {
+    "en": "## Batch A — גופים (1)",
+    "n": 1
+  },
+  {
+    "en": "| `solids.md` | גופים תלת־ממדיים — שמות והיכרות |",
+    "n": 1
+  },
+  {
+    "en": "## Batch B — שטח (1)",
+    "n": 1
+  },
+  {
+    "en": "| `square_area.md` | שטח של ריבוע |",
+    "n": 1
+  },
+  {
+    "en": "## Batch C — הזזה ושיקוף (1)",
+    "n": 1
+  },
+  {
+    "en": "| `transformations.md` | הזזה ושיקוף — המשך |",
+    "n": 1
+  },
+  {
+    "en": "- All pages: `age_band: grades_1_2`, `approval_status: draft`, `grade: g2`.",
+    "n": 1
+  },
+  {
+    "en": "- G1 pages for `shapes_basic_square` / `shapes_basic_rectangle` are not repeated — those skills end at Grade 1 in the spine.",
+    "n": 1
+  },
+  {
+    "en": "- `geometry:kind:no_question` — meta only; no learning page.",
+    "n": 1
+  },
+  {
+    "en": "# Three-Dimensional Solids — Names and Introduction",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Cube, rectangular prism, cylinder, pyramid, cone, sphere — identification; no volume",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn about three-dimensional solids — shapes that have length, width, and height.",
+    "n": 1
+  },
+  {
+    "en": "We will learn their names:",
+    "n": 1
+  },
+  {
+    "en": "cube, rectangular prism, cylinder, pyramid, cone, and sphere.",
+    "n": 1
+  },
+  {
+    "en": "A three-dimensional solid is a shape that is not flat on the page — you can hold it in your hand.",
+    "n": 1
+  },
+  {
+    "en": "Cube: 6 equal square faces (like a dice).",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism: 6 rectangular faces (like a shoe box).",
+    "n": 1
+  },
+  {
+    "en": "Cylinder:",
+    "n": 1
+  },
+  {
+    "en": "Two round bases (like a can).",
+    "n": 1
+  },
+  {
+    "en": "Pyramid:",
+    "n": 1
+  },
+  {
+    "en": "A polygon base and triangular faces (like a tent).",
+    "n": 1
+  },
+  {
+    "en": "Cone:",
+    "n": 1
+  },
+  {
+    "en": "A round base and one point at the top (like a party hat).",
+    "n": 1
+  },
+  {
+    "en": "Sphere:",
+    "n": 1
+  },
+  {
+    "en": "Round from every side (like a soccer ball).",
+    "n": 1
+  },
+  {
+    "en": "Here we focus on the name and description — not on calculating volume.",
+    "n": 1
+  },
+  {
+    "en": "Imagine a dice:",
+    "n": 1
+  },
+  {
+    "en": "- It has 6 faces",
+    "n": 1
+  },
+  {
+    "en": "- All the faces are equal squares",
+    "n": 1
+  },
+  {
+    "en": "Imagine a shoe box — rectangular faces, not all the same.",
+    "n": 1
+  },
+  {
+    "en": "Rectangular prism.",
+    "n": 1
+  },
+  {
+    "en": "A solid has 6 equal square faces. What is it called?",
+    "n": 1
+  },
+  {
+    "en": "6 faces — like a cube.",
+    "n": 1
+  },
+  {
+    "en": "All the faces are equal squares — that is a cube, not a rectangular prism.",
+    "n": 1
+  },
+  {
+    "en": "Cube",
+    "n": 1
+  },
+  {
+    "en": "Pick a name for this solid:",
+    "n": 1
+  },
+  {
+    "en": "Two round bases and a curved side (like a soda can).",
+    "n": 1
+  },
+  {
+    "en": "A solid with two round bases and a curved side — like a soda can.",
+    "n": 1
+  },
+  {
+    "en": "The bases are round — not square or rectangular.",
+    "n": 1
+  },
+  {
+    "en": "The side is curved — not flat like a cube or rectangular prism.",
+    "n": 1
+  },
+  {
+    "en": "Two round bases and a curved side — that is a cylinder.",
+    "n": 1
+  },
+  {
+    "en": "Cylinder",
+    "n": 1
+  },
+  {
+    "en": "Now you know the names of solids in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will read a description of a solid — look for how many faces it has and what shape each face is!",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Unit grid; covering; 4, 16",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn what the area of a square is — how much space the square takes up on a surface.",
+    "n": 1
+  },
+  {
+    "en": "We will fill the square with small squares and count them.",
+    "n": 1
+  },
+  {
+    "en": "Unit grid: small squares that are 1×1 in size.",
+    "n": 1
+  },
+  {
+    "en": "First way — covering: fill the big square with small squares and count how many fit inside.",
+    "n": 1
+  },
+  {
+    "en": "Second way — rows: each row has a certain number of squares; how many rows? Multiply.",
+    "n": 1
+  },
+  {
+    "en": "Area = square units — not the length of one side.",
+    "n": 1
+  },
+  {
+    "en": "A square with a side of 4:",
+    "n": 1
+  },
+  {
+    "en": "- One row: 4 small squares",
+    "n": 1
+  },
+  {
+    "en": "- 4 rows: 4 × 4 = 16 squares.",
+    "n": 1
+  },
+  {
+    "en": "Area: 16 square units.",
+    "n": 1
+  },
+  {
+    "en": "A square has a side of length 4. What is the area?",
+    "n": 1
+  },
+  {
+    "en": "Fill it in rows — 4 squares in each row.",
+    "n": 1
+  },
+  {
+    "en": "4 rows — 4 × 4 = 16.",
+    "n": 1
+  },
+  {
+    "en": "16 square units",
+    "n": 1
+  },
+  {
+    "en": "Fill it in rows — 3 small squares in each row.",
+    "n": 1
+  },
+  {
+    "en": "How many rows? 3 rows.",
+    "n": 1
+  },
+  {
+    "en": "Side = 3",
+    "n": 1
+  },
+  {
+    "en": "9 square units",
+    "n": 1
+  },
+  {
+    "en": "Now you know how to find the area of a square — with a grid or by multiplying!",
+    "n": 1
+  },
+  {
+    "en": "In practice, fill in small squares and count!",
+    "n": 1
+  },
+  {
+    "en": "# Translation and Reflection — More Practice",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** More precise distinction; translation vs reflection; no rotation",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will strengthen the difference between translation and reflection.",
+    "n": 1
+  },
+  {
+    "en": "Here we check more carefully:",
+    "n": 1
+  },
+  {
+    "en": "Did the shape only move to a new place, or did it flip like in a mirror?",
+    "n": 1
+  },
+  {
+    "en": "Same shape, same direction — just in a new place.",
+    "n": 1
+  },
+  {
+    "en": "Example: move a pencil on a notebook to the left — the pencil stays a pencil, it does not flip over.",
+    "n": 1
+  },
+  {
+    "en": "A shape like a mirror image — left and right swap places.",
+    "n": 1
+  },
+  {
+    "en": "Example: a sticker on a window — you see it in a mirror from outside.",
+    "n": 1
+  },
+  {
+    "en": "A good question to ask:",
+    "n": 1
+  },
+  {
+    "en": "Does the direction of the letters or the arrow stay the same?",
+    "n": 1
+  },
+  {
+    "en": "If yes — it is usually a translation.",
+    "n": 1
+  },
+  {
+    "en": "If they flip over — it is a reflection.",
+    "n": 1
+  },
+  {
+    "en": "An arrow drawn on a page:",
+    "n": 1
+  },
+  {
+    "en": "- Move the page — the arrow still points the same way → translation",
+    "n": 1
+  },
+  {
+    "en": "- Hold a mirror next to the arrow — the arrow looks flipped → reflection",
+    "n": 1
+  },
+  {
+    "en": "We stick a heart sticker on glass and see it from outside in a mirror. What kind of move is this?",
+    "n": 1
+  },
+  {
+    "en": "The heart looks flipped — left and right swapped places.",
+    "n": 1
+  },
+  {
+    "en": "This is not a translation — it is a reflection.",
+    "n": 1
+  },
+  {
+    "en": "Did the book flip over? No — it stays the same book facing the same way.",
+    "n": 1
+  },
+  {
+    "en": "Now you can tell translation and reflection apart better in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will find:",
+    "n": 1
+  },
+  {
+    "en": "Did the shape only move to a new place, or does it look like a mirror image?",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Parallel lines; train tracks; right angle 90°",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn about parallel lines and perpendicular lines.",
+    "n": 1
+  },
+  {
+    "en": "We will see an example from life: train tracks — parallel lines.",
+    "n": 1
+  },
+  {
+    "en": "Parallel — two lines going the same direction that never meet.",
+    "n": 1
+  },
+  {
+    "en": "Example: two rails of a train track — parallel.",
+    "n": 1
+  },
+  {
+    "en": "Perpendicular — two lines that meet at a right angle — 90°.",
+    "n": 1
+  },
+  {
+    "en": "Example: the corner of a room — two walls.",
+    "n": 1
+  },
+  {
+    "en": "Parallel ≠ perpendicular",
+    "n": 1
+  },
+  {
+    "en": "Train tracks — two rails side by side:",
+    "n": 1
+  },
+  {
+    "en": "- Same direction",
+    "n": 1
+  },
+  {
+    "en": "- They do not meet",
+    "n": 1
+  },
+  {
+    "en": "→ The lines are parallel.",
+    "n": 1
+  },
+  {
+    "en": "Two rails of a train track — what is the relationship between them?",
+    "n": 1
+  },
+  {
+    "en": "Same direction, they do not meet.",
+    "n": 1
+  },
+  {
+    "en": "→ Parallel.",
+    "n": 1
+  },
+  {
+    "en": "Parallel",
+    "n": 1
+  },
+  {
+    "en": "Two walls in the corner of a room — they meet at a right angle. Parallel or perpendicular?",
+    "n": 1
+  },
+  {
+    "en": "Two walls in the corner of a room — they meet at a right angle.",
+    "n": 1
+  },
+  {
+    "en": "Parallel or perpendicular?",
+    "n": 1
+  },
+  {
+    "en": "Check — do the lines meet? Yes, the walls meet at the corner.",
+    "n": 1
+  },
+  {
+    "en": "They meet at a right angle (90°) → perpendicular.",
+    "n": 1
+  },
+  {
+    "en": "The walls are perpendicular",
+    "n": 1
+  },
+  {
+    "en": "Now you can tell parallel lines (train tracks) apart from perpendicular lines (room corner)!",
+    "n": 1
+  },
+  {
+    "en": "In practice:",
+    "n": 1
+  },
+  {
+    "en": "Do they meet? → perpendicular.",
+    "n": 1
+  },
+  {
+    "en": "Do they not meet? → parallel!",
+    "n": 1
+  },
+  {
+    "en": "# Types of Quadrilaterals",
+    "n": 1
+  },
+  {
+    "en": "**Content scope:** Square, rectangle, parallelogram, trapezoid — basic names",
+    "n": 1
+  },
+  {
+    "en": "Today in geometry we will learn the names of common quadrilaterals.",
+    "n": 1
+  },
+  {
+    "en": "We will identify a square, rectangle, parallelogram, and trapezoid — from a short description.",
+    "n": 1
+  },
+  {
+    "en": "Square — 4 equal sides, 4 right angles.",
+    "n": 1
+  },
+  {
+    "en": "Rectangle — 4 right angles; opposite sides equal (not necessarily all sides).",
+    "n": 1
+  },
+  {
+    "en": "Trapezoid — one pair of parallel sides (the bases).",
+    "n": 1
+  },
+  {
+    "en": "Here we focus on the name and identification — not on calculations.",
+    "n": 1
+  },
+  {
+    "en": "A window shaped like a rectangle — short width, long height:",
+    "n": 1
+  },
+  {
+    "en": "- 4 right angles",
+    "n": 1
+  },
+  {
+    "en": "- Not all sides equal",
+    "n": 1
+  },
+  {
+    "en": "Name: rectangle (not a square).",
+    "n": 1
+  },
+  {
+    "en": "A floor tile — 4 equal sides and 4 right angles. What is it called?",
+    "n": 1
+  },
+  {
+    "en": "Right angles — fits a rectangle.",
+    "n": 1
+  },
+  {
+    "en": "All sides equal too → square.",
+    "n": 1
+  },
+  {
+    "en": "Check angles — there are 4 right angles → fits a rectangle and also a square.",
+    "n": 1
+  },
+  {
+    "en": "Check sides — width and height are different → not a square.",
+    "n": 1
+  },
+  {
+    "en": "The door is a rectangle",
+    "n": 1
+  },
+  {
+    "en": "Now you know the names of quadrilaterals in geometry.",
+    "n": 1
+  },
+  {
+    "en": "In practice you will read a description — choose:",
+    "n": 1
+  },
+  {
+    "en": "square, rectangle, parallelogram, or trapezoid!",
+    "n": 1
+  },
+  {
+    "en": "# Grade 3 Geometry Learning Book — Drafts",
+    "n": 1
+  },
+  {
+    "en": "**Status:** **Owner-approved** — **9 / 9** pages; runtime wired.",
+    "n": 1
+  },
+  {
+    "en": "**Signoff:** `docs/learning-book/GEOMETRY_GRADE_3_LEARNING_BOOK_SIGNOFF.md`",
+    "n": 1
+  },
+  {
+    "en": "**Folder:** `docs/learning-book/geometry/g3/drafts/`",
+    "n": 1
+  }
+]

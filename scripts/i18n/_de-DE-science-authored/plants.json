@@ -1,0 +1,602 @@
+{
+  "plants_1": {
+    "stem": "Was braucht eine Pflanze, um zu wachsen?",
+    "options": [
+      "Nur Wasser, ohne Sonnenlicht oder Erde",
+      "Sonnenlicht, Wasser und Erde",
+      "Nur Sonnenlicht, ohne Wasser aus der Erde",
+      "Trockene Erde ohne Wasser oder Licht"
+    ],
+    "explanation": "Eine Pflanze braucht Licht, Wasser, Mineralstoffe aus der Erde und Luft, um gut zu wachsen.",
+    "theoryLines": [
+      "Blätter nehmen Licht auf; Wurzeln nehmen Wasser und Mineralstoffe auf.",
+      "Ohne genug Licht oder Wasser kann eine Pflanze schwach werden und absterben."
+    ]
+  },
+  "plants_2": {
+    "stem": "Welcher Pflanzenteil nimmt Wasser aus der Erde auf?",
+    "options": [
+      "Die Blätter — sie sammeln Wasser, das als Regen fällt.",
+      "Der Stängel — er hält die Pflanze aufrecht, nimmt aber kein Wasser aus der Erde auf.",
+      "Die Wurzeln — sie nehmen Wasser und Mineralstoffe aus der Erde auf.",
+      "Der untere Teil des Stängels in der Erde — er nimmt Wasser genauso auf wie Wurzeln."
+    ],
+    "explanation": "Wurzeln wachsen unter der Erde und nehmen Wasser und gelöste Mineralstoffe aus dem Boden auf. Das Wasser wandert dann durch den Stängel zu den Blättern und anderen Teilen der Pflanze. Ohne Wurzeln, die Wasser aufnehmen, würde die Pflanze austrocknen und absterben.",
+    "theoryLines": [
+      "Wurzeln verankern die Pflanze im Boden und nehmen das Wasser und die Nährstoffe auf, die sie zum Wachsen braucht.",
+      "Wasser wandert von den Wurzeln durch den Stängel in die Blätter, wo es für die Fotosynthese genutzt wird."
+    ]
+  },
+  "plants_3": {
+    "stem": "Was ist Fotosynthese?",
+    "options": [
+      "Ein Vorgang, bei dem eine Pflanze Zucker mit Sauerstoff zerlegt, um Energie zu gewinnen",
+      "Ein Vorgang, bei dem eine Pflanze aus Licht, Wasser und Kohlenstoffdioxid Nahrung herstellt",
+      "Ein Vorgang, bei dem eine Pflanze an einem hellen Tag Wasser durch Blattöffnungen verliert",
+      "Ein Vorgang, der meist im Stängel unter der Erde stattfindet"
+    ],
+    "explanation": "Bei der Fotosynthese nutzt eine Pflanze Licht, Wasser und Kohlenstoffdioxid, um Zucker herzustellen und Sauerstoff freizusetzen.",
+    "theoryLines": [
+      "Fotosynthese findet in Chloroplasten statt, vor allem in den Blättern.",
+      "Fotosynthese trägt zu Nahrungsketten in den meisten Ökosystemen bei."
+    ]
+  },
+  "plants_4": {
+    "stem": "Wann betreiben Pflanzen Zellatmung?",
+    "options": [
+      "Pflanzen atmen nachts und tagsüber",
+      "Pflanzen atmen nur bei Tageslicht",
+      "Pflanzen atmen gewöhnlich gar nicht",
+      "Nur Wurzeln atmen, nicht die Blätter"
+    ],
+    "explanation": "Zellatmung findet Tag und Nacht statt. Fotosynthese findet nur statt, wenn Licht vorhanden ist.",
+    "theoryLines": [
+      "Zellatmung setzt Energie aus Zucker frei.",
+      "Fotosynthese stellt Zucker her; die Atmung nutzt diesen Zucker für Energie."
+    ]
+  },
+  "plants_5": {
+    "stem": "Was tun Spaltöffnungen für ein Pflanzenblatt?",
+    "options": [
+      "Sie transportieren Wasser aus der Erde direkt zum Blatt.",
+      "Sie nehmen Sonnenlicht für die Pflanze auf.",
+      "Sie lassen Gase wie Kohlenstoffdioxid und Sauerstoff in das Blatt und aus dem Blatt.",
+      "Sie verankern die Pflanze fest im Boden."
+    ],
+    "explanation": "Spaltöffnungen sind winzige Öffnungen am Blatt, die den Gasaustausch ermöglichen — sie lassen bei der Fotosynthese Kohlenstoffdioxid hinein und Sauerstoff hinaus.",
+    "theoryLines": [
+      "Lichtenergie und Wasser werden von der Pflanze bei der Fotosynthese genutzt.",
+      "Gase gelangen durch Spaltöffnungen in die Blätter und aus ihnen heraus."
+    ]
+  },
+  "plants_6": {
+    "stem": "Was findet man im oberen Bereich einer Pflanze?",
+    "options": ["Wurzeln", "Blätter", "Blüten", "Früchte"],
+    "explanation": "Blätter wachsen an den oberen Teilen einer Pflanze, oberhalb des Stängels, wo sie Sonnenlicht aufnehmen können.",
+    "theoryLines": [
+      "Eine Pflanze hat Wurzeln unten, einen Stängel in der Mitte sowie Blätter und Blüten oben.",
+      "Blätter wirken grün, weil sie Chlorophyll enthalten."
+    ]
+  },
+  "plants_7": {
+    "stem": "Was findet man am unteren Ende einer Pflanze?",
+    "options": ["Blätter", "Wurzeln", "Blüten", "Früchte"],
+    "explanation": "Wurzeln wachsen in der Erde. Sie halten die Pflanze fest und nehmen Wasser und Mineralstoffe auf.",
+    "theoryLines": [
+      "Wurzeln wachsen nach unten in den Boden.",
+      "Wurzeln helfen der Pflanze, standfest zu bleiben."
+    ]
+  },
+  "plants_8": {
+    "stem": "Was geschieht mit einer Pflanze, wenn sie kein Wasser hat?",
+    "options": [
+      "Sie wächst noch lange weiter, wenn sie viel Licht hat",
+      "Sie welkt und wird schwach",
+      "Ihre Blätter bleiben lange aufrecht und grün ohne Wasser",
+      "Sie stellt die Atmung ein, bis wieder Wasser da ist"
+    ],
+    "explanation": "Wasser ist unverzichtbar. Ohne Wasser welkt eine Pflanze, die Blätter trocknen aus, und die Pflanze kann absterben.",
+    "theoryLines": [
+      "Wasser hilft einer Pflanze, am Leben und kräftig zu bleiben.",
+      "Wurzeln nehmen Wasser aus der Erde auf."
+    ]
+  },
+  "plants_9": {
+    "stem": "Was braucht eine Pflanze, um zu wachsen?",
+    "options": [
+      "Wasser, Licht, Luft und Stoffe aus der Erde",
+      "Eine Pflanze kann ganz ohne Sonnenlicht wachsen",
+      "Einen Ort mit vielen Menschen in der Nähe",
+      "Nur einen Ort, an dem es Wasser gibt"
+    ],
+    "explanation": "Pflanzen brauchen Sonnenlicht für die Fotosynthese. Ohne Licht kann eine Pflanze nicht gut wachsen.",
+    "theoryLines": [
+      "Sonnenlicht hilft einer Pflanze, Nahrung herzustellen.",
+      "Eine Pflanze ohne Licht wird oft schwach und gelb."
+    ]
+  },
+  "plants_10": {
+    "stem": "Welche Farbe haben die Blätter der meisten Pflanzen?",
+    "options": ["Rot", "Blau", "Grün", "Gelb"],
+    "explanation": "Die meisten Blätter sind grün, weil sie Chlorophyll enthalten, das Sonnenlicht aufnimmt.",
+    "theoryLines": [
+      "Chlorophyll hilft einer Pflanze, aus Licht Nahrung herzustellen.",
+      "Im Herbst verändern Blätter ihre Farbe, wenn Chlorophyll abgebaut wird."
+    ]
+  },
+  "plants_11": {
+    "stem": "Was ist Chlorophyll?",
+    "options": [
+      "Ein Strukturprotein in der Zellwand, das nur Wasser bewegt",
+      "Ein grüner Farbstoff in Blättern, der Licht für die Nahrungsherstellung aufnimmt",
+      "Eine Wachsschicht auf einem Blatt, die alle Blattöffnungen vollständig blockiert",
+      "Eine Füllflüssigkeit zwischen Zellen ohne Farbstoff"
+    ],
+    "explanation": "Chlorophyll ist der grüne Stoff in Blättern, der Sonnenlicht für die Fotosynthese aufnimmt.",
+    "theoryLines": [
+      "Chlorophyll gibt Blättern ihre grüne Farbe.",
+      "Es befindet sich in Chloroplasten in den Blattzellen."
+    ]
+  },
+  "plants_12": {
+    "stem": "Was ist die Aufgabe von Blüten?",
+    "options": [
+      "Farbe und Duft ohne Bezug zu Samen oder Bestäubung",
+      "Insekten anlocken, Bestäubung und Samenbildung",
+      "Wasser aus der Erde direkt durch die Blütenblätter aufnehmen",
+      "Festen Schatten auf den Stängel werfen ohne Rolle bei der Fortpflanzung"
+    ],
+    "explanation": "Blüten locken Insekten an, die Pollen transportieren. Danach können Samen entstehen und zu neuen Pflanzen heranwachsen.",
+    "theoryLines": [
+      "Bunte Blüten helfen, Insekten anzulocken.",
+      "Insekten helfen, Pollen von Blüte zu Blüte zu tragen."
+    ]
+  },
+  "plants_13": {
+    "stem": "Was ist Bestäubung?",
+    "options": [
+      "Wenn eine Pflanze am Ende des Winters abstirbt",
+      "Wenn Pollen von einer Blüte zur anderen gelangt, damit Samen entstehen können",
+      "Wenn eine Pflanze in einem Waldbrand verbrennt",
+      "Wenn eine Blüte aufblüht, bevor überhaupt Pollen vorhanden ist"
+    ],
+    "explanation": "Bestäubung ist die Übertragung von Pollen, oft durch Insekten, Wind oder andere Tiere. Sie hilft Pflanzen, Samen zu bilden und neue Pflanzen wachsen zu lassen.",
+    "theoryLines": [
+      "Viele Blüten locken Insekten an, die Pollen tragen.",
+      "Ohne Bestäubung können viele Pflanzen keine Samen bilden."
+    ]
+  },
+  "plants_14": {
+    "stem": "Wie gelangen viele Samen an neue Orte weg von der Mutterpflanze?",
+    "options": [
+      "Sie bleiben für immer an der Mutterpflanze und bewegen sich nie.",
+      "Sie werden von Wind, Wasser oder Tieren an neue Wuchsorte getragen.",
+      "Sie graben mit winzigen Wurzeln Tunnel unter der Erde.",
+      "Sie warten, bis die Fotosynthese sie in die Luft drückt."
+    ],
+    "explanation": "Samenausbreitung bringt Samen von der Mutterpflanze weg, damit neue Pflanzen an anderen Orten wachsen können. Wind, Wasser und Tiere sind häufige Wege, auf denen Samen reisen.",
+    "theoryLines": [
+      "Samen brauchen Platz, Licht, Wasser und Nährstoffe, um gut zu wachsen.",
+      "Früchte, Haken, Flügel und schwimmende Formen können Samen beim Reisen helfen."
+    ]
+  },
+  "plants_15": {
+    "stem": "Was geschieht bei der Fotosynthese?",
+    "options": [
+      "Pflanzen setzen Kohlenstoffdioxid frei und nehmen Sauerstoff auf, um Energie zu erzeugen.",
+      "Pflanzen nutzen Sonnenlicht und Wasser, um eigene Nahrung herzustellen und Sauerstoff freizusetzen.",
+      "Pflanzen nehmen nur Wasser auf, um die gesamte benötigte Energie zu erzeugen.",
+      "Fotosynthese findet nur im Stängel und nur nachts statt."
+    ],
+    "explanation": "Bei der Fotosynthese fangen Pflanzen Energie aus Sonnenlicht ein und nutzen sie, um Wasser und Kohlenstoffdioxid in Glucose umzuwandeln — einen Zucker, den die Pflanze für Energie und Wachstum braucht. Sauerstoff wird als Nebenprodukt freigesetzt; das ist der Sauerstoff, den die meisten Lebewesen atmen.",
+    "theoryLines": [
+      "Fotosynthese findet vor allem in den Blättern statt, wo Zellen einen grünen Farbstoff namens Chlorophyll enthalten.",
+      "Ohne Fotosynthese gäbe es keinen Sauerstoff in der Luft und keine Nahrung an der Basis der Nahrungskette."
+    ]
+  },
+  "plants_16": {
+    "stem": "Wo wachsen Pflanzen?",
+    "options": [
+      "Nur in tiefem Wasser, wo es kein Sonnenlicht gibt.",
+      "In Erde, im Wasser oder unter bestimmten Bedingungen sogar ohne Erde.",
+      "Nur im Wasser, nie in der Erde.",
+      "Nur in der Erde, nie im Wasser."
+    ],
+    "explanation": "Die meisten Pflanzen wachsen in der Erde, wo ihre Wurzeln sie verankern und Wasser sowie Mineralstoffe aufnehmen. Viele Pflanzen wachsen jedoch auch im Wasser, zum Beispiel Seerosen. Manche Pflanzen können sogar ohne Erde wachsen, wenn sie die richtigen Nährstoffe direkt erhalten.",
+    "theoryLines": [
+      "Erde liefert Pflanzen Wasser, Mineralstoffe und einen Ort, um die Wurzeln zu verankern.",
+      "Pflanzen, die im Wasser wachsen, haben besondere Merkmale, die ihnen helfen zu schwimmen oder aufrecht zu bleiben."
+    ]
+  },
+  "plants_17": {
+    "stem": "Welche Farbe haben grüne Pflanzen?",
+    "options": ["Rot", "Blau", "Grün", "Gelb"],
+    "explanation": "Grüne Pflanzen wirken grün, weil sie Chlorophyll enthalten, das Sonnenlicht aufnimmt.",
+    "theoryLines": [
+      "Chlorophyll hilft einer Pflanze, Nahrung herzustellen.",
+      "Es verleiht der Pflanze ihre grüne Farbe."
+    ]
+  },
+  "plants_18": {
+    "stem": "Welcher Pflanzenteil nutzt Wasser mit Sonnenlicht, um Nahrung herzustellen?",
+    "options": ["Blätter", "Wurzeln", "Stängel", "Blüten"],
+    "explanation": "Blätter nutzen Wasser, Kohlenstoffdioxid und Sonnenlicht, um bei der Fotosynthese Nahrung herzustellen.",
+    "theoryLines": [
+      "Wasser hilft, eine Pflanze stark und lebendig zu halten.",
+      "Wurzeln nehmen Wasser aus der Erde auf und leiten es zu den Blättern."
+    ]
+  },
+  "plants_19": {
+    "stem": "Was geschieht mit Blättern im Herbst?",
+    "options": [
+      "Sie werden grüner",
+      "Sie verändern ihre Farbe und fallen ab",
+      "Sie wachsen größer",
+      "Sie verschwinden gewöhnlich über Nacht vollständig"
+    ],
+    "explanation": "Im Herbst werden viele Blätter gelb, rot oder orange und fallen von den Bäumen, wenn Licht und Temperatur sich ändern.",
+    "theoryLines": [
+      "Laubfall gehört zum Jahreszyklus vieler Bäume.",
+      "Im Frühling wachsen wieder neue Blätter."
+    ]
+  },
+  "plants_20": {
+    "stem": "Was ist ein Samen?",
+    "options": [
+      "Die äußere Haut einer Frucht ohne Pflanzenembryo",
+      "Ein Pflanzenteil, der einen Pflanzenembryo enthält und zu einer neuen Pflanze heranwachsen kann",
+      "Eine bunte Blüte ohne Samenstadium",
+      "Ein Blatt, das Stärke speichert, ohne Pflanzenembryo"
+    ],
+    "explanation": "Ein Samen enthält einen winzigen Pflanzenembryo. Unter den richtigen Bedingungen kann er zu einer neuen Pflanze keimen.",
+    "theoryLines": [
+      "Samen entstehen, nachdem Blüten bestäubt wurden.",
+      "Ein Samen enthält, was nötig ist, um eine neue Pflanze zu starten."
+    ]
+  },
+  "plants_21": {
+    "stem": "Welche Rolle hat eine Frucht an einer Pflanze?",
+    "options": [
+      "Eine Frucht stellt Nahrung für die Wurzeln der Pflanze her.",
+      "Eine Frucht ist der Teil der Pflanze, der die Samen enthält und schützt.",
+      "Eine Frucht ist ein besonderes Blatt, das Sonnenlicht speichert.",
+      "Eine Frucht ist die Wurzel, die Wasser aus der Erde aufnimmt."
+    ],
+    "explanation": "Die Frucht wächst aus der Blüte und enthält Samen. Sie schützt die Samen und hilft oft dabei, sie an neue Orte zu bringen, indem sie Tiere anlockt.",
+    "theoryLines": [
+      "Früchte helfen bei der Samenausbreitung, indem sie Tiere anlocken, die sie fressen.",
+      "Tiere fressen die Frucht und tragen die Samen an neue Orte."
+    ]
+  },
+  "plants_22": {
+    "stem": "Was ist die Hauptaufgabe der Wurzeln einer Pflanze?",
+    "options": [
+      "Wurzeln fangen Sonnenlicht ein und speichern es für die Pflanze.",
+      "Wurzeln nehmen Wasser und Mineralstoffe aus der Erde auf und verankern die Pflanze.",
+      "Wurzeln öffnen sich, um Samen freizusetzen, wenn die Blüte aufblüht.",
+      "Wurzeln helfen Blättern beim Atmen, indem sie Luft aus der Erde filtern."
+    ],
+    "explanation": "Wurzeln verankern die Pflanze im Boden und nehmen Wasser und Nährstoffe auf, die die Pflanze zum Wachsen braucht. Diese wandern durch den Stängel zum Rest der Pflanze.",
+    "theoryLines": [
+      "Wurzeln wachsen nach unten in den Boden.",
+      "Wasser und Mineralstoffe wandern von den Wurzeln nach oben zum Rest der Pflanze."
+    ]
+  },
+  "plants_23": {
+    "stem": "Was ist ein Chloroplast?",
+    "options": [
+      "Ein Farbstoff ohne eigene Struktur in der Zelle",
+      "Ein kleiner Teil einer Pflanzenzelle, der Chlorophyll enthält und in dem Fotosynthese stattfindet",
+      "Ein Wasserpolster um die Zelle ohne Chlorophyll",
+      "Erdkörner, die in die Zelle schweben"
+    ],
+    "explanation": "Ein Chloroplast ist eine kleine Struktur in Pflanzenzellen, die Chlorophyll enthält und Fotosynthese durchführt.",
+    "theoryLines": [
+      "Chloroplasten findet man vor allem in Blättern.",
+      "Sie wirken grün, weil sie Chlorophyll enthalten."
+    ]
+  },
+  "plants_24": {
+    "stem": "Was ist Pollen?",
+    "options": [
+      "Das Blütestadium, bevor überhaupt Pollen entsteht",
+      "Ein Pulver aus Blüten, das eine andere Blüte erreichen muss, damit Samen entstehen",
+      "Trockene Blätter zwischen Blüten",
+      "Eine Wurzel, die Pollenkörner bewegt"
+    ],
+    "explanation": "Pollen ist ein Pulver aus den männlichen Teilen einer Blüte. Er muss die weiblichen Teile erreichen, damit Samen entstehen können.",
+    "theoryLines": [
+      "Insekten, Wind oder Wasser können Pollen bewegen.",
+      "Bestäubung gehört dazu, wie sich viele Pflanzen fortpflanzen."
+    ]
+  },
+  "plants_25": {
+    "stem": "Wie transportieren Pflanzen Wasser von den Wurzeln zu den Blättern?",
+    "options": [
+      "Wasser sammelt sich in den Wurzeln und bleibt dort für immer.",
+      "Pflanzen transportieren Wasser nach oben durch winzige Röhren namens Xylem.",
+      "Sonnenlicht zieht das Wasser entlang der Außenfläche der Pflanze.",
+      "Der Stängel speichert Wasser dauerhaft in seinen Zellen."
+    ],
+    "explanation": "Pflanzen haben ein Netz winziger Röhren namens Xylem, die Wasser von den Wurzeln durch den Stängel nach oben in die Blätter leiten.",
+    "theoryLines": [
+      "Xylem-Röhren transportieren Wasser von den Wurzeln zu den Blättern.",
+      "Wasser steigt in der Pflanze durch Kapillarwirkung und Verdunstung an den Blättern auf."
+    ]
+  },
+  "plants_26": {
+    "stem": "Was ist organischer Dünger (kompostartiger Mist)?",
+    "options": [
+      "Kahle Erde ohne Pflanzenreste",
+      "Material von Tieren oder Pflanzen, das sich zersetzt und zu Dünger wird",
+      "Sauberes Bewässerungswasser ohne zerfallendes Material",
+      "Zerkleinerte Steine, die nie zu Dünger werden"
+    ],
+    "explanation": "Organischer Dünger stammt von tierischem oder pflanzlichem Material, das sich zersetzt und dem Boden Nährstoffe zuführt.",
+    "theoryLines": [
+      "Es ist eine natürliche Art von Dünger.",
+      "Er hilft, den Boden für Pflanzen gesund zu halten."
+    ]
+  },
+  "plants_27": {
+    "stem": "Was ist Dünger?",
+    "options": [
+      "Bewässerungswasser ohne zugesetzte Mineralstoffe",
+      "Ein Stoff, der dem Boden zugegeben wird, um Pflanzen Nährstoffe zu geben",
+      "Trockener Ton ohne Stickstoff oder Phosphor",
+      "Sonnenlicht ohne Bodennährstoffe"
+    ],
+    "explanation": "Dünger führt dem Boden Nährstoffe wie Stickstoff und Phosphor zu, damit Pflanzen besser wachsen können.",
+    "theoryLines": [
+      "Es gibt natürliche und synthetische Dünger.",
+      "Dünger kann Pflanzen helfen, kräftiger zu wachsen."
+    ]
+  },
+  "plants_28": {
+    "stem": "Was bietet der Boden Pflanzen?",
+    "options": [
+      "Der Boden bietet Pflanzen nur Sonnenlicht zum Wachsen.",
+      "Der Boden bietet Nährstoffe und Mineralstoffe, die Pflanzen brauchen, und hält die Wurzeln fest.",
+      "Der Boden bietet nur Wasser und sonst nichts.",
+      "Der Boden bietet nur Kohlenstoffdioxid für die Fotosynthese."
+    ],
+    "explanation": "Der Boden ist reich an Nährstoffen und Mineralstoffen, die Pflanzen brauchen. Er hält die Wurzeln auch fest und speichert Wasser in der Nähe der Wurzeln.",
+    "theoryLines": [
+      "Pflanzenwurzeln nehmen Wasser und Nährstoffe aus dem Boden auf.",
+      "Gesunder Boden enthält mehr Nährstoffe, was Pflanzen besser wachsen lässt."
+    ]
+  },
+  "plants_29": {
+    "stem": "Was geschieht mit einer Pflanze, wenn sie nicht genug Licht bekommt?",
+    "options": [
+      "Sie steigert die Fotosynthese, bis sie kein Wasser mehr braucht",
+      "Sie wird schwach, wird gelb und wächst schlecht",
+      "Sie blüht hastig ohne Blätter",
+      "Ihre Zellwände verdicken sich sofort ohne Wasserverlust"
+    ],
+    "explanation": "Ohne genug Licht kann eine Pflanze nicht gut fotosynthetisieren, deshalb wird sie schwach, gelb und wächst schlecht.",
+    "theoryLines": [
+      "Licht ist für Pflanzen sehr wichtig.",
+      "Ohne Licht kann eine Pflanze keine Nahrung herstellen."
+    ]
+  },
+  "plants_30": {
+    "stem": "Warum sind Pflanzen für das Leben auf der Erde wichtig?",
+    "options": [
+      "Pflanzen sind nicht wichtig — Tiere könnten ohne sie überleben.",
+      "Pflanzen erzeugen Sauerstoff und liefern Nahrung für Tiere und andere Lebewesen.",
+      "Pflanzen sind nur wichtig, weil sie Fotosynthese in Wissenschaftslaboren betreiben.",
+      "Pflanzen sind nur wichtig, weil sie Extra-Nahrung unter der Erde speichern."
+    ],
+    "explanation": "Pflanzen sind unverzichtbar: Sie erzeugen durch Fotosynthese den Sauerstoff, den wir atmen, und bilden die Basis der meisten Nahrungsketten auf der Erde.",
+    "theoryLines": [
+      "Ohne Pflanzen könnte die meiste Lebensform auf der Erde nicht überleben.",
+      "Pflanzen sind Erzeuger — sie stellen Nahrung mit Sonnenlicht, Wasser und Kohlenstoffdioxid her."
+    ]
+  },
+  "plants_15__v2": {
+    "stem": "Was braucht eine Pflanze, um zu wachsen und sich zu entwickeln?",
+    "options": [
+      "Wasser und Erde ohne Sonnenlicht",
+      "Wasser, Sonnenlicht und Erde",
+      "Licht und Erde ohne Wasser aus den Wurzeln",
+      "Wasser und Licht ohne nährstoffreiche Erde"
+    ],
+    "explanation": "Eine Pflanze braucht Wasser, Sonnenlicht und Erde, um zu wachsen und gesund zu bleiben.",
+    "theoryLines": [
+      "Ohne Wasser trocknet eine Pflanze aus.",
+      "Ohne Sonnenlicht kann eine Pflanze nicht fotosynthetisieren."
+    ]
+  },
+  "plants_14__v2": {
+    "stem": "Was findet man am oberen Teil einer Pflanze?",
+    "options": [
+      "Meist Wurzeln",
+      "Blätter und Blüten",
+      "Nur einen Stamm ohne Blätter",
+      "Vorbereitete Erde ohne Stängel oder Blatt"
+    ],
+    "explanation": "Blätter und Blüten wachsen am oberen Teil einer Pflanze, wo sie Sonnenlicht aufnehmen können.",
+    "theoryLines": [
+      "Blätter nehmen Sonnenlicht auf.",
+      "Blüten sind oft bunt und locken Insekten an."
+    ]
+  },
+  "plants_15__v3": {
+    "stem": "Was findet man am unteren Teil einer Pflanze?",
+    "options": ["Blätter", "Wurzeln", "Blüten", "Früchte"],
+    "explanation": "Wurzeln wachsen in der Erde am unteren Ende der Pflanze.",
+    "theoryLines": [
+      "Wurzeln verankern die Pflanze.",
+      "Sie nehmen Wasser und Mineralstoffe auf."
+    ]
+  },
+  "plants_16__v2": {
+    "stem": "Was brauchen Pflanzen, um zu wachsen?",
+    "options": [
+      "Sonnenlicht, Wasser, Luft und Stoffe aus der Erde",
+      "Einen Ort mit vielen Menschen",
+      "Nur einen Ort, an dem es Wasser gibt",
+      "Völlige Dunkelheit ohne Wasser"
+    ],
+    "explanation": "Pflanzen brauchen Sonnenlicht, um Nahrung herzustellen und zu wachsen. Sie brauchen auch Wasser, Luft und Bodennährstoffe.",
+    "theoryLines": [
+      "Sonnenlicht hilft einer Pflanze, Nahrung herzustellen.",
+      "Ohne Licht kann eine Pflanze nicht gut wachsen."
+    ]
+  },
+  "plants_19__v2": {
+    "stem": "Was findet man in einer Blüte?",
+    "options": [
+      "Nur Blätter ohne Blütenblätter oder Nektar",
+      "Blütenblätter und Nektar, die Insekten anlocken",
+      "Nur Wurzeln ohne Blüte",
+      "Kahle Erde ohne Stängel oder Blüte"
+    ],
+    "explanation": "Eine Blüte hat Blütenblätter, Pollenteile und Nektar, die Insekten anlocken.",
+    "theoryLines": [
+      "Blüten sind oft bunt.",
+      "Insekten, die Blüten besuchen, helfen bei der Bestäubung."
+    ]
+  },
+  "plants_20__v2": {
+    "stem": "Welcher Teil einer Pflanze wächst zuerst, wenn ein Samen keimt?",
+    "options": [
+      "Zuerst wächst die Blüte.",
+      "Zuerst wächst eine winzige Wurzel, die sich in die Erde schiebt.",
+      "Zuerst wächst ein großes grünes Blatt.",
+      "Zuerst wächst eine Blüte voller neuer Samen."
+    ],
+    "explanation": "Wenn ein Samen keimt, wächst zuerst eine kleine Wurzel namens Keimwurzel. Sie schiebt sich in die Erde, um die Pflanze zu verankern und Wasser aufzunehmen.",
+    "theoryLines": [
+      "Die Wurzel ist der erste Teil, der erscheint, wenn ein Samen keimt.",
+      "Der Samen nutzt gespeicherte Energie, bis die Pflanze Blätter hat, die Nahrung herstellen können."
+    ]
+  },
+  "plants_21__v2": {
+    "stem": "Was ist Fotosynthese?",
+    "options": [
+      "Wachstum ohne Nutzung von Licht oder grünem Farbstoff",
+      "Nahrungsherstellung aus Licht unter Nutzung von Wasser und Kohlenstoffdioxid",
+      "Nur Zellatmung wie bei Tieren",
+      "Wassertrinken ohne Umwandlung von Lichtenergie in Nahrung"
+    ],
+    "explanation": "Fotosynthese ist die Art, wie eine Pflanze Sonnenlicht, Wasser und Kohlenstoffdioxid nutzt, um Zucker herzustellen und Sauerstoff freizusetzen.",
+    "theoryLines": [
+      "Sie findet in Chloroplasten in den Blättern statt.",
+      "Sie ist die Basis vieler Nahrungsketten."
+    ]
+  },
+  "plants_22__v2": {
+    "stem": "Was ist Chlorophyll?",
+    "options": [
+      "Eine Zierfarbe ohne Lichteinfang",
+      "Ein grüner Farbstoff in Blättern, der Licht aufnimmt und Fotosynthese ermöglicht",
+      "Nur Wasser, das die gesamte Energie der Pflanze hält",
+      "Bodenmineralstoffe ohne Hilfe von Farbstoffen"
+    ],
+    "explanation": "Chlorophyll ist der grüne Stoff in Blättern, der Sonnenlicht aufnimmt, damit die Pflanze Nahrung herstellen kann.",
+    "theoryLines": [
+      "Chlorophyll gibt Blättern ihre grüne Farbe.",
+      "Es befindet sich in Chloroplasten."
+    ]
+  },
+  "plants_23__v2": {
+    "stem": "Welche Rolle haben Wurzeln bei einer Pflanze?",
+    "options": [
+      "Wurzeln fangen Sonnenlicht für alle Teile der Pflanze ein.",
+      "Wurzeln nehmen Wasser und Nährstoffe aus der Erde auf, um die Pflanze zu ernähren.",
+      "In den Wurzeln finden Tiere bei Kälte Schutz.",
+      "Wurzeln setzen Samen in die umgebende Erde frei."
+    ],
+    "explanation": "Wurzeln nehmen Wasser und Nährstoffe aus der Erde auf. Diese wandern durch den Stängel nach oben in den Rest der Pflanze und unterstützen ihr Wachstum.",
+    "theoryLines": [
+      "Wurzeln wachsen unter der Erde und verankern die Pflanze im Boden.",
+      "Wasser und Mineralstoffe wandern von den Wurzeln durch den Stängel nach oben."
+    ]
+  },
+  "plants_24__v2": {
+    "stem": "Welche Rolle hat der Stängel bei einer Pflanze?",
+    "options": [
+      "Der Stängel stellt mit Sonnenlicht Nahrung für die Pflanze her.",
+      "Der Stängel stützt die Pflanze und leitet Wasser und Nährstoffe zu anderen Teilen.",
+      "Im Stängel finden Tiere im Winter Schutz.",
+      "Der Stängel nimmt Kohlenstoffdioxid direkt aus der Erde auf."
+    ],
+    "explanation": "Der Stängel stützt die Pflanze und wirkt wie eine Leitung: Er transportiert Wasser und Nährstoffe von den Wurzeln zu den Blättern und anderen Teilen der Pflanze.",
+    "theoryLines": [
+      "Der Stängel verbindet die Wurzeln mit den Blättern.",
+      "Von den Wurzeln aufgenommenes Wasser gelangt durch den Stängel zu den Blättern."
+    ]
+  },
+  "plants_25__v2": {
+    "stem": "Welche Rolle haben Blätter bei einer Pflanze?",
+    "options": [
+      "Blätter helfen Tieren zu sehen, wo sie Nahrung finden.",
+      "Blätter fangen Sonnenlicht für die Fotosynthese ein und erzeugen dabei Sauerstoff.",
+      "Blätter wirken als Lungen für Tiere, die in der Pflanze leben.",
+      "Blätter transportieren Wasser durch die Pflanze anstelle des Stängels."
+    ],
+    "explanation": "Blätter sind die Nahrungsfabrik der Pflanze. Sie fangen Sonnenlicht ein und nutzen es zusammen mit Wasser und Kohlenstoffdioxid, um durch Fotosynthese Nahrung herzustellen. Sauerstoff wird als Nebenprodukt freigesetzt.",
+    "theoryLines": [
+      "Blätter enthalten Chlorophyll, das Sonnenlicht einfängt.",
+      "Fotosynthese erzeugt Nahrung für die Pflanze und setzt Sauerstoff in die Luft frei."
+    ]
+  },
+  "plants_27__v2": {
+    "stem": "Was ist ein Samen?",
+    "options": [
+      "Fruchtgewebe ohne Embryo, der wachsen kann",
+      "Ein Pflanzenteil mit einem Embryo, der zu einer neuen Pflanze heranwachsen kann",
+      "Eine Blütenstruktur ohne Embryo zum Keimen",
+      "Ein trockenes Blatt, das kein neues Wachstum starten kann"
+    ],
+    "explanation": "Ein Samen enthält einen winzigen Pflanzenembryo. Unter den richtigen Bedingungen kann er zu einer neuen Pflanze keimen.",
+    "theoryLines": [
+      "Samen stammen von Blüten.",
+      "Ein Samen hat, was nötig ist, um eine neue Pflanze zu starten."
+    ]
+  },
+  "plants_28__v2": {
+    "stem": "Was tut eine Frucht für eine Pflanze?",
+    "options": [
+      "Eine Frucht stellt Nahrung her, damit die Blüte jede Saison blüht.",
+      "Eine Frucht enthält und schützt Samen und hilft, sie an neue Orte zu bringen.",
+      "Eine Frucht ist ein Teil des Blattes, der Wasser für die Pflanze speichert.",
+      "Eine Frucht wächst direkt aus den Wurzeln der Pflanze unter der Erde."
+    ],
+    "explanation": "Die Frucht entwickelt sich um die Samen herum, um sie zu schützen. Tiere fressen die Frucht und tragen die Samen an neue Orte — so kann sich die Pflanze ausbreiten.",
+    "theoryLines": [
+      "Früchte helfen bei der Samenausbreitung, indem sie Tiere anlocken.",
+      "Tiere fressen die Frucht und tragen die Samen von der Mutterpflanze weg."
+    ]
+  },
+  "plants_29__v2": {
+    "stem": "Was geschieht, wenn ein Samen genug Wasser, Wärme und Licht bekommt?",
+    "options": [
+      "Die ganze Pflanze mit allen Wurzeln und Blüten erscheint sofort.",
+      "Der Samen keimt und beginnt, zu einer neuen Pflanze heranzuwachsen.",
+      "Wasser füllt den Samen, aber sonst geschieht nichts.",
+      "Die Wurzel trocknet aus und fällt vom Samen ab."
+    ],
+    "explanation": "Wenn die Bedingungen stimmen — genug Wasser, Wärme und manchmal Licht — keimt ein Samen. Eine kleine Wurzel und ein Spross wachsen aus dem Samen und entwickeln sich zu einer neuen Pflanze.",
+    "theoryLines": [
+      "Keimung ist der Vorgang, bei dem ein Samen zu sprießen und zu wachsen beginnt.",
+      "Samen brauchen Wasser, Wärme und manchmal Licht, um erfolgreich zu keimen."
+    ]
+  },
+  "plants_30__v2": {
+    "stem": "Wie entsteht eine Frucht an einer Pflanze?",
+    "options": [
+      "Ein Samen fällt auf den Boden und wird direkt zu einer Frucht.",
+      "Eine Frucht entsteht aus der Blüte nach der Bestäubung.",
+      "Frucht wächst in den Blättern, wenn sie genug Sonnenlicht bekommen.",
+      "Wasser, das durch die Wurzel nach oben fließt, bildet die Frucht direkt."
+    ],
+    "explanation": "Nachdem eine Blüte bestäubt wurde, fallen die Blütenblätter ab und die Basis der Blüte schwillt an und wächst zu einer Frucht heran, die Samen enthält.",
+    "theoryLines": [
+      "Bestäubung ist die Übertragung von Pollen, die die Blüte befruchtet.",
+      "Die befruchtete Blüte entwickelt sich zu einer Frucht, die die Samen hält und schützt."
+    ]
+  }
+}

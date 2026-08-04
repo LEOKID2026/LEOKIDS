@@ -1,0 +1,131 @@
+{
+  "badIds": 20,
+  "total": 1017,
+  "samples": [
+    {
+      "id": "body_18",
+      "f": "explanation",
+      "s": "De nieren filteren bloed, verwijderen afvalstoffen en extra water en maken urine die het lichaam verlaat."
+    },
+    {
+      "id": "body_18",
+      "f": "options[1]",
+      "s": "Afval uit het bloed filteren en via urine afvoeren"
+    },
+    {
+      "id": "exp_52",
+      "f": "explanation",
+      "s": "Peer review is een filter- en verbeterstap, geen orakel. Bevindingen kunnen na latere herhalingen nog veranderen, maar review vermindert dui"
+    },
+    {
+      "id": "p4b1_g6_body_007",
+      "f": "options[0]",
+      "s": "Afvalstoffen uit het bloed filteren en helpen urine te maken"
+    },
+    {
+      "id": "p4b1_g6_body_007",
+      "f": "theory[0]",
+      "s": "Urine voert opgelost afval uit het lichaam af."
+    },
+    {
+      "id": "sci_pb1_g4_materials_easy_01",
+      "f": "options[0]",
+      "s": "Laat het zand bezinken, filter daarna of schenk voorzichtig het water af"
+    },
+    {
+      "id": "sci_pb1_g5_body_easy_01",
+      "f": "theory[0]",
+      "s": "Urine voert gefilterde afvalstoffen uit het lichaam af."
+    },
+    {
+      "id": "sci_pb1_g2_earth_space_easy_04",
+      "f": "options[2]",
+      "s": "Gebruik een gewone telescoop zonder filter"
+    },
+    {
+      "id": "sci_p0_g1_animals_medium_04",
+      "f": "options[1]",
+      "s": "Zwaar stone shoes"
+    },
+    {
+      "id": "sci_p0_g3_body_hard_02",
+      "f": "explanation",
+      "s": "Nieren zuiveren het bloed door afvalstoffen en extra water te verwijderen. De afvalstoffen verlaten het lichaam als urine."
+    },
+    {
+      "id": "sci_p0_g3_body_hard_02",
+      "f": "options[0]",
+      "s": "Afvalstoffen uit het bloed filteren en helpen urine te maken"
+    },
+    {
+      "id": "sci_p1_g4_body_hard_05",
+      "f": "explanation",
+      "s": "Bloed filteren beschermt het interne milieu. Urine voert verwijderde afvalstoffen uit het lichaam af."
+    },
+    {
+      "id": "sci_p1_g5_body_easy_01",
+      "f": "explanation",
+      "s": "Nieren zuiveren bloed en helpen water- en zoutbalans te regelen. Afvalstoffen verlaten het lichaam als urine."
+    },
+    {
+      "id": "sci_p1_g5_body_easy_05",
+      "f": "options[3]",
+      "s": "Urine maken voor de nieren"
+    },
+    {
+      "id": "sci_p1_g5_body_medium_03",
+      "f": "options[2]",
+      "s": "Urine bewaren die door de huid wordt gemaakt."
+    },
+    {
+      "id": "sci_p1_g5_body_medium_04",
+      "f": "theory[0]",
+      "s": "Dorst en donkere urine kunnen wijzen op te weinig vocht."
+    },
+    {
+      "id": "sci_p1_g6_body_medium_03",
+      "f": "explanation",
+      "s": "Nieren zuiveren het bloed door afvalstoffen en extra water te verwijderen, die het lichaam als urine verlaten."
+    },
+    {
+      "id": "sci_p1_g6_body_medium_03",
+      "f": "options[0]",
+      "s": "Afvalstoffen uit het bloed filteren en helpen urine te maken"
+    },
+    {
+      "id": "sci_vol_g5_body_easy_02",
+      "f": "explanation",
+      "s": "Nieren zuiveren het bloed door afvalstoffen te verwijderen die het lichaam als urine verlaten."
+    },
+    {
+      "id": "sci_g3_body_028",
+      "f": "explanation",
+      "s": "Nieren filteren bloed en helpen urine te vormen die afvalstoffen afvoert."
+    },
+    {
+      "id": "sci_g3_body_028",
+      "f": "options[0]",
+      "s": "Afvalstoffen die het lichaam als urine verlaten"
+    },
+    {
+      "id": "sci_g3_body_040",
+      "f": "explanation",
+      "s": "Nieren filteren afvalstoffen uit bloed en helpen urine te maken."
+    },
+    {
+      "id": "sci_phb_g1_materials_hard_02",
+      "f": "options[1]",
+      "s": "It breaks apart in hele kleine pieces dat cannot be put back together"
+    },
+    {
+      "id": "sci_phb_g1_environment_med_04",
+      "f": "options[3]",
+      "s": "Large getallen van de zelfde kind van dier living very close together"
+    },
+    {
+      "id": "sci_phb_g4_materials_eas_01",
+      "f": "options[0]",
+      "s": "Pour de mixture door a filter"
+    }
+  ]
+}

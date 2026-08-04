@@ -5,6 +5,10 @@
  */
 import { containsHebrew, mapQuestionTextFields } from "../learning-question-content-locale.js";
 import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
+import {
+  localizeGeometryConceptualQuestionAr001,
+  localizeGeometryConceptualTextAr001,
+} from "./geometry-conceptual.js";
 
 const geometryContent =
   resolveRegisteredContentPack("ar-001", "learning", "geometry-content.json") || {};
@@ -80,13 +84,74 @@ export function rebuildGeometryStemAr001(question) {
     return `ما هي مساحة المستطيل الذي طوله ${length} وعرضه ${width}؟`;
   }
   if (
-    (kind === "rectangle_perimeter" || kind.includes("rect_perimeter")) &&
+    (kind === "rectangle_perimeter" || kind.includes("rect_perimeter") || kind === "story_rectangle_perimeter") &&
     Number.isFinite(length) &&
     Number.isFinite(width) &&
     length > 0 &&
     width > 0
   ) {
+    if (String(p.kind || "").startsWith("story_")) {
+      return `نريد سياجًا حول حقل مستطيل طوله ${length} وعرضه ${width}. ما محيط الحقل؟`;
+    }
     return `ما محيط المستطيل الذي طوله ${length} وعرضه ${width}؟`;
+  }
+
+  if ((kind === "story_square_area" || kind === "square_area") && Number.isFinite(side) && side > 0) {
+    if (String(p.kind || "").startsWith("story_")) {
+      return `لدينا مربع ضلعه ${side}. ما مساحته؟`;
+    }
+  }
+  if ((kind === "story_rectangle_area" || kind === "rectangle_area") && Number.isFinite(length) && Number.isFinite(width) && length > 0 && width > 0) {
+    if (String(p.kind || "").startsWith("story_")) {
+      return `حقل مستطيل طوله ${length} وعرضه ${width}. ما مساحته؟`;
+    }
+  }
+  if (kind === "shapes_basic_square" || kind === "shapes_basic_rectangle") {
+    const shape = String(p.shape || (kind.includes("square") ? "Square" : "Rectangle"));
+    const arShape = shape.toLowerCase().includes("square") ? "مربع" : "مستطيل";
+    return `ما الشكل الذي يُوصف بأنه ${arShape}؟`;
+  }
+  if (kind.startsWith("shapes_basic_properties")) {
+    const shape = String(p.shape || "");
+    const arShape =
+      /square/i.test(shape) ? "المربع" : /rectangle/i.test(shape) ? "المستطيل" : "الشكل";
+    return `أي خاصية تصف ${arShape} بشكل صحيح؟`;
+  }
+  if (kind === "triangles" || kind === "triangle_classify") {
+    const t = String(p.type || "").toLowerCase();
+    if (t.includes("equilateral")) {
+      return "مثلث أضلاعه الثلاثة متساوية — ماذا يُسمى؟";
+    }
+    if (t.includes("isosceles")) {
+      return "مثلث له ضلعان متساويان فقط — ماذا يُسمى؟";
+    }
+    if (t.includes("scalene")) {
+      return "مثلث أضلاعه الثلاثة مختلفة — ماذا يُسمى؟";
+    }
+    return "صنّف المثلث حسب أطوال أضلاعه:";
+  }
+  if (kind === "quadrilaterals" || kind === "quad_classify") {
+    const t = String(p.type || p.shape || "").toLowerCase();
+    if (t.includes("square")) return "شكل له أربعة أضلاع متساوية وأربع زوايا قائمة — ماذا يُسمى؟";
+    if (t.includes("rectangle")) return "شكل له أربع زوايا قائمة وأضلاع متقابلة متساوية — ماذا يُسمى؟";
+    if (t.includes("parallelogram")) return "شكل رباعي أضلاعه المتقابلة متوازية — ماذا يُسمى؟";
+    if (t.includes("trapezoid") || t.includes("trapezium")) {
+      return "شكل رباعي له زوج واحد فقط من الأضلاع المتوازية — ماذا يُسمى؟";
+    }
+    if (t.includes("rhombus")) return "شكل رباعي كل أضلاعه متساوية — ماذا يُسمى؟";
+    return "صنّف الشكل الرباعي:";
+  }
+  if (kind === "triangle_perimeter" || kind === "perimeter_triangle") {
+    const a = Number(p.side1 ?? p.a);
+    const b = Number(p.side2 ?? p.b);
+    const c = Number(p.side3 ?? p.c);
+    if ([a, b, c].every((n) => Number.isFinite(n) && n > 0)) {
+      return `ما محيط المثلث الذي أطوال أضلاعه ${a} و${b} و${c}؟`;
+    }
+    return "ما محيط المثلث؟";
+  }
+  if (kind === "parallel_perpendicular" || kind === "lines_parallel_perpendicular") {
+    return "هل الخطّان متوازيان أم متعامدان؟";
   }
 
   return null;
@@ -120,32 +185,49 @@ function isShortAnswerField(field) {
 export function localizeGeometryQuestionAr001(question) {
   if (!question) return question;
 
-  const base = { ...question };
+  // Conceptual bank may already be Arabic when rendered under ar-001; keep and polish tokens.
+  const conceptualized = localizeGeometryConceptualQuestionAr001(question);
+
+  const base = { ...conceptualized };
   if (typeof base.question === "string" && containsHebrew(base.question)) base.question = "";
   if (typeof base.exerciseText === "string" && containsHebrew(base.exerciseText)) base.exerciseText = "";
   if (typeof base.questionLabel === "string" && containsHebrew(base.questionLabel)) base.questionLabel = "";
 
-  const rebuilt = rebuildGeometryStemAr001({ ...question, ...base, params: question.params });
+  const rebuilt = rebuildGeometryStemAr001({ ...conceptualized, ...base, params: conceptualized.params });
   let resolvedStem = rebuilt && !containsHebrew(rebuilt) ? rebuilt : null;
   if (!resolvedStem) {
-    const existing = String(question?.question || question?.exerciseText || "").trim();
-    if (existing && !containsHebrew(existing)) resolvedStem = existing;
+    const existing = String(conceptualized?.question || conceptualized?.exerciseText || "").trim();
+    if (existing && !containsHebrew(existing) && /[\u0600-\u06FF]/.test(existing)) {
+      resolvedStem = existing;
+    } else if (existing && !containsHebrew(existing)) {
+      const mappedStem = localizeGeometryConceptualTextAr001(existing);
+      if (mappedStem && mappedStem !== existing && /[\u0600-\u06FF]/.test(mappedStem)) {
+        resolvedStem = mappedStem;
+      }
+    }
   }
-  if (!resolvedStem) resolvedStem = "Resolva.";
+  if (!resolvedStem) resolvedStem = "أجب عن السؤال.";
 
   const out = mapQuestionTextFields({ ...base }, (field, value) => {
-    if (field === "question" || field === "sportText" || field === "questionLabel") {
-      if (!value || containsHebrew(value) || isNearlyEmptyStem(value)) return resolvedStem;
+    if (field === "question" || field === "sportText" || field === "questionLabel" || field === "exerciseText") {
+      if (!value || containsHebrew(value) || isNearlyEmptyStem(value) || !/[\u0600-\u06FF]/.test(String(value))) {
+        return resolvedStem;
+      }
       return value;
     }
     if (isShortAnswerField(field)) {
-      const label = mapGeometryLabel(value) || SHAPE_WORDS[String(value ?? "").trim()];
+      const raw = String(value ?? "").trim();
+      const label = mapGeometryLabel(value) || SHAPE_WORDS[raw];
+      if (label && label !== raw && /[\u0600-\u06FF]/.test(String(label))) return label;
+      const conceptual = localizeGeometryConceptualTextAr001(value);
+      if (conceptual && conceptual !== raw) return conceptual;
       if (label) return label;
-      const text = String(value ?? "");
-      if (!containsHebrew(text)) return text;
-      return text.replace(/(?!)/gu, "").trim() || text;
+      if (!containsHebrew(raw)) return raw;
+      return raw.replace(/(?!)/gu, "").trim() || raw;
     }
-    if (!containsHebrew(String(value ?? ""))) return value;
+    if (!containsHebrew(String(value ?? ""))) {
+      return localizeGeometryConceptualTextAr001(value);
+    }
     return translateGeometryPhrase(value);
   });
 
@@ -157,7 +239,9 @@ export function localizeGeometryQuestionAr001(question) {
 
   if (typeof out.correctAnswer === "string") {
     const mapped =
-      mapGeometryLabel(out.correctAnswer) || SHAPE_WORDS[out.correctAnswer.trim()];
+      mapGeometryLabel(out.correctAnswer) ||
+      SHAPE_WORDS[out.correctAnswer.trim()] ||
+      localizeGeometryConceptualTextAr001(out.correctAnswer);
     if (mapped) out.correctAnswer = mapped;
   }
 

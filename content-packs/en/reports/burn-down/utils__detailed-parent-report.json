@@ -2,6 +2,14 @@
   "copy": {
     "no_dominant_difficulty_is_visible_right_now": "No dominant difficulty is visible right now",
     "not_enough_information_has_accumulated_yet_to_set_a_clear_direction": "Not enough information has accumulated yet to set a clear direction.",
-    "not_enough_information_has_accumulated_yet_for_a_broad_picture_from_the_": "Not enough information has accumulated yet for a broad picture from the practice."
+    "not_enough_information_has_accumulated_yet_for_a_broad_picture_from_the_": "Not enough information has accumulated yet for a broad picture from the practice.",
+    "subject_math": "Math",
+    "subject_geometry": "Geometry",
+    "subject_english": "English",
+    "subject_science": "Science",
+    "subject_low_question_count": "{subject} - low question count ({count} questions)",
+    "subject_good_accuracy_volume": "{subject} - {count} questions collected with good accuracy ({accuracy}%)",
+    "no_standout_subject_yet": "There's no standout subject yet based on question count and accuracy - continued practice will make the difference.",
+    "sparse_subjects_limited_info": "In {subjects} there's still limited information - the picture will become clearer after more practice."
   }
 }

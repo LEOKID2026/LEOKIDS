@@ -1,5 +1,10 @@
 {
   "copy": {
-    "social_studies_geography": "Social Studies & Geography"
+    "social_studies_geography": "Social Studies & Geography",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra": "There is some practice in the selected period, but not yet enough to draw a clear insight. It helps to continue for a few more days and check again.",
+    "there_is_no_practice_yet_in_the_selected_period": "There is no practice yet in the selected period.",
+    "there_is_limited_data_in_the_selected_period": "There is limited data in the selected period.",
+    "there_is_enough_data_in_the_selected_period_for_a_clear_picture": "There is enough data in the selected period for a clear picture.",
+    "practice_volume_not_yet_enough_in_the_selected_period": "Practice volume in the selected period is not yet enough for a clear picture."
   }
 }

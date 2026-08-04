@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import PortalLoginHeading from "../../components/auth/PortalLoginHeading";
 import TeacherRegistrationRequestForm from "../../components/auth/TeacherRegistrationRequestForm";
 import PortalLoadingPanel from "../../components/ui/PortalLoadingPanel.jsx";
@@ -29,7 +29,6 @@ import {
 } from "../../lib/auth/auth-registration.js";
 import { resolveTeacherAccessToken } from "../../lib/teacher-portal/use-teacher-portal-session";
 
-const teacherLoginSeo = getPublicPageSeo("teacher-login");
 
 function portalTabBtnClass(T, active, disabled) {
   return `flex-1 min-w-0 rounded px-3 py-2 text-sm font-semibold text-center transition ${
@@ -124,6 +123,7 @@ async function postTeacherOnboard(accessToken, payload) {
 }
 
 export default function TeacherLoginPage({ inviteOnly }) {
+  const teacherLoginSeo = usePublicPageSeo("teacher-login");
   const router = useRouter();
   const { theme, isBright } = useStudentTheme();
   const { direction, locale } = useI18n();

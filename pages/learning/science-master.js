@@ -57,6 +57,12 @@ import { resolveLearningMcqChoiceClassName } from "../../utils/learning-mcq-choi
 import { sanitizeQuestionForStudentDisplay } from "../../utils/student-question-stem-sanitizer";
 import { buildQuestionFingerprint } from "../../utils/question-quality";
 import StudentQuestionDisplay from "../../components/learning/StudentQuestionDisplay";
+import LearningSessionCompletion from "../../components/learning/LearningSessionCompletion.jsx";
+import {
+  resolveLearningSessionQuestionTarget,
+  shouldCompleteLearningSessionByCount,
+} from "../../components/learning/learning-session-run.js";
+
 import {
   buildHebrewApprovedVerbalMasterLayout,
   buildHebrewApprovedVerbalMcqGridClassName,
@@ -728,8 +734,15 @@ export default function ScienceMaster() {
   const [bestStreak, setBestStreak] = useState(0);
   const [lives, setLives] = useState(3);
   const [totalQuestions, setTotalQuestions] = useState(0);
+  const totalQuestionsRef = useRef(0);
+  const sessionQuestionTargetRef = useRef(null);
+  const [sessionComplete, setSessionComplete] = useState(false);
   const [avgTime, setAvgTime] = useState(0);
   const [questionStartTime, setQuestionStartTime] = useState(null);
+
+  useEffect(() => {
+    totalQuestionsRef.current = totalQuestions;
+  }, [totalQuestions]);
   const questionTimeLedgerRef = useRef(null);
 
   useLearningVisibilityClock({
@@ -1999,6 +2012,17 @@ function saveScienceAnswerInParallel({
   );
 
   function generateNewQuestion(resetPool = false) {
+    if (
+      !resetPool &&
+      shouldCompleteLearningSessionByCount(
+        totalQuestionsRef.current,
+        sessionQuestionTargetRef.current
+      )
+    ) {
+      recordSessionProgress();
+      enterSessionComplete();
+      return;
+    }
     clearWrongAnswerAdvanceState();
     closeOpenQuestionLedger(true);
 
@@ -2171,8 +2195,29 @@ function saveScienceAnswerInParallel({
     retryQueueRef.current = [];
     askCounterRef.current = 0;
     setTotalQuestions(0);
+    totalQuestionsRef.current = 0;
     setAvgTime(0);
     setQuestionStartTime(null);
+    setSessionComplete(false);
+  }
+
+  function enterSessionComplete() {
+    setGameActive(false);
+    scienceTrackingTopicKeyRef.current = null;
+    setCurrentQuestion(null);
+    setFeedback(null);
+    setSelectedAnswer(null);
+    setShowSolution(false);
+    setShowPreviousSolution(false);
+    setPreviousExplanationQuestion(null);
+    setShowTheoryHelp(false);
+    setSessionComplete(true);
+    audio.stopMusic();
+  }
+
+  function handleSessionRetry() {
+    setSessionComplete(false);
+    startGame();
   }
 
   function saveRunToStorage() {
@@ -2232,6 +2277,10 @@ function saveScienceAnswerInParallel({
       alert(ms.t('ui.student.guestLock'));
       return;
     }
+    setSessionComplete(false);
+    sessionQuestionTargetRef.current = resolveLearningSessionQuestionTarget({
+      studentId: learningProfileStudentIdRef.current,
+    });
     if (opts.fromAdaptivePlannerRecommendedPractice && opts.plannerSessionMeta && typeof opts.plannerSessionMeta === "object") {
       plannerNextSessionClientMetaRef.current = opts.plannerSessionMeta;
       if (opts.appliedLevelKey) {
@@ -2254,6 +2303,7 @@ function saveScienceAnswerInParallel({
     correctRef.current = 0;
     setWrong(0);
     setTotalQuestions(0);
+    totalQuestionsRef.current = 0;
     setAvgTime(0);
     setQuestionStartTime(null);
     setFeedback(null);
@@ -2302,8 +2352,6 @@ function saveScienceAnswerInParallel({
   }
 
   function stopGame() {
-    // Stop background music when game stops
-    audio.stopMusic();
     pendingScienceTrackMetaRef.current = {
       correct: undefined,
       total: 1,
@@ -2311,15 +2359,7 @@ function saveScienceAnswerInParallel({
     };
     recordSessionProgress();
     saveRunToStorage();
-    setGameActive(false);
-    scienceTrackingTopicKeyRef.current = null;
-    setCurrentQuestion(null);
-    setFeedback(null);
-    setSelectedAnswer(null);
-    setShowSolution(false);
-    setShowPreviousSolution(false);
-    setPreviousExplanationQuestion(null);
-    setShowTheoryHelp(false);
+    enterSessionComplete();
     clearActiveDiagnosticState(pendingDiagnosticProbeRef, scienceHypothesisLedgerRef);
   }
 
@@ -2334,13 +2374,8 @@ function saveScienceAnswerInParallel({
     setWrong((prev) => prev + 1);
     setStreak(0);
     setFeedback(ms.feedback.timeUp());
-    setGameActive(false);
-    scienceTrackingTopicKeyRef.current = null;
-    setCurrentQuestion(null);
     saveRunToStorage();
-    setTimeout(() => {
-      hardResetGame();
-    }, 1800);
+    enterSessionComplete();
   }
 
   function handleAnswer(idx) {
@@ -2358,6 +2393,7 @@ function saveScienceAnswerInParallel({
     // update time stats
     setTotalQuestions((prev) => {
       const newTotal = prev + 1;
+      totalQuestionsRef.current = newTotal;
       if (questionStartTime) {
         const elapsed = (Date.now() - questionStartTime) / 1000;
         setAvgTime((prevAvg) =>
@@ -2710,12 +2746,7 @@ function saveScienceAnswerInParallel({
             audio.playSfx("sfx-game-over");
             recordSessionProgress();
             saveRunToStorage();
-            setGameActive(false);
-            scienceTrackingTopicKeyRef.current = null;
-            setCurrentQuestion(null);
-            setTimeout(() => {
-              hardResetGame();
-            }, 2000);
+            enterSessionComplete();
           } else {
             scheduleWrongAnswerAdvance(() => {
               generateNewQuestion();
@@ -3057,6 +3088,19 @@ function saveScienceAnswerInParallel({
           {/* SETUP / GAME */}
           {!gameActive ? (
             <div className="relative flex flex-col flex-1 min-h-0 min-w-0 w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl items-center justify-start md:gap-1">
+              {sessionComplete ? (
+                <div className="w-full px-2 py-4">
+                  <LearningSessionCompletion
+                    title={ms.feedback.gameOver()}
+                    statsLine={ms.t("learning.master.correctOfTotal", {
+                      correct,
+                      total: totalQuestions,
+                    })}
+                    retryLabel={ms.t("common.retry")}
+                    onRetry={handleSessionRetry}
+                  />
+                </div>
+              ) : null}
               {bookIndexHref ? (
                 <LearningBookIndexTile
                   subject="science"

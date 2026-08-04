@@ -1,15 +1,15 @@
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../hooks/usePublicPageSeo.js";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useSharedShellUi } from "../hooks/useSharedShellUi.js";
 import { useI18n } from "../lib/i18n/I18nProvider.jsx";
+import { useLegalPolicyBundle } from "../hooks/useLegalPolicyBundle.js";
 import {
   CONTACT_EMAIL,
-  LEGAL_CONTACT_PAGE_LINKS,
 } from "../data/legal/sitePolicies.js";
 import { validateContactForm } from "../lib/contact/contact-form.js";
 
@@ -23,17 +23,17 @@ const btnBase =
 const socialBtnBase =
   "w-full h-full px-3 py-2.5 rounded-xl transition hover:scale-105 text-center shadow-md text-sm font-semibold leading-tight flex items-center justify-center";
 
-const contactSeo = getPublicPageSeo("contact");
-
 /** Contact form hidden until mail delivery is configured for production. */
 const CONTACT_FORM_VISIBLE = false;
 
 const FAQ_KEYS = ["whoFor", "subjects", "parentsSee", "reinforcement", "games", "reportBug"];
 
 export default function Contact() {
+  const contactSeo = usePublicPageSeo("contact");
   const { theme } = useStudentTheme();
   const { SP } = useSharedShellUi();
   const { direction, locale, t } = useI18n();
+  const legal = useLegalPolicyBundle();
   const [activeAnswer, setActiveAnswer] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -347,7 +347,7 @@ export default function Contact() {
         >
           <p className={SP.navLabel}>{t("ui.public.contact.legalHeading")}</p>
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
-            {LEGAL_CONTACT_PAGE_LINKS.map((link) => (
+            {legal.legalContactPageLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className={SP.link}>
                   {link.label}

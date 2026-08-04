@@ -23,7 +23,9 @@ import {
   SC_COUNTER_UNREAD_PARENTS,
   SC_COUNTER_UNREAD_TEACHERS,
 } from "../../lib/school-portal/school-communication.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import {
+  bindSchoolUiLocale,
   schoolAuthFetch,
   SCHOOL_ALERT_ACTIVE_ACTIVITIES,
   SCHOOL_ALERT_FEW_TEACHERS,
@@ -54,6 +56,8 @@ import {
 
 export default function SchoolDashboardPage() {
   const router = useRouter();
+  const { locale } = useI18n();
+  bindSchoolUiLocale(locale);
   const { state, accessToken, me, schoolId, error, reload } = useSchoolPortalLoad();
   const [stats, setStats] = useState(me?.stats || null);
   const [activities, setActivities] = useState([]);

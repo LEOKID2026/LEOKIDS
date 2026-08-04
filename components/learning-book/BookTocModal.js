@@ -4,6 +4,9 @@ import { appendReturnQueryToHref } from "../../lib/learning-book/math-g1-book-na
 import { useBookGradeTheme } from "./BookGradeThemeContext";
 import MixedRtlMathText from "./MixedRtlMathText";
 import { useBookUiCopy } from "../../lib/learning-book/book-locale-context.jsx";
+import { tryResolveRegistryTitleKey } from "../../lib/learning-book/book-pack-copy.js";
+import { resolveTocNavTitle } from "../../lib/learning-book/build-book-toc-entries.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 export default function BookTocModal({
   open,
@@ -15,6 +18,7 @@ export default function BookTocModal({
 }) {
   const { classes: theme } = useBookGradeTheme();
   const copy = useBookUiCopy();
+  const { contentLocale, direction } = useI18n();
 
   if (!open) return null;
 
@@ -33,7 +37,8 @@ export default function BookTocModal({
       />
       <div
         className={`relative z-10 flex max-h-[min(92vh,40rem)] w-full max-w-lg flex-col rounded-t-3xl sm:rounded-3xl border shadow-2xl ${theme.tocModalPanel}`}
-        dir="ltr"
+        dir={direction}
+        data-testid="book-toc-dialog"
       >
         <div className="flex items-center justify-between gap-3 border-b border-[color:var(--book-divider)] px-5 py-4">
           <h2 id="book-toc-title" className="text-lg font-bold text-[color:var(--book-text)]">
@@ -49,36 +54,46 @@ export default function BookTocModal({
         </div>
         <div className="flex-1 overflow-y-auto px-5 py-4">
           <nav className="space-y-5" aria-label={copy("shell", "tocAria")}>
-            {batches.map((batch) => (
-              <div key={batch.id}>
-                <h3 className={`mb-2 text-sm font-bold ${theme.tocBatchHeading}`}>
-                  {batch.titleHe}
-                </h3>
-                <ul className="space-y-1.5">
-                  {batch.pages.map((entry) => {
-                    const isActive = entry.pageId === activePageId;
-                    return (
-                      <li key={entry.pageId}>
-                        <Link
-                          href={appendReturnQueryToHref(
-                            `${routeBase}/${entry.pageId}`,
-                            returnQuerySuffix
-                          )}
-                          onClick={onClose}
-                          className={`block rounded-xl px-4 py-2.5 text-left text-sm transition ${
-                            isActive
-                              ? theme.tocActiveItem
-                              : "bg-[color:var(--book-surface-soft)] text-[color:var(--book-text)] hover:bg-[color:var(--book-accent-muted)]"
-                          }`}
-                        >
-                          <MixedRtlMathText text={entry.displayTitle} />
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
+            {batches.map((batch) => {
+              const batchHeading =
+                (batch.titleKey && tryResolveRegistryTitleKey(String(batch.titleKey), contentLocale)) ||
+                resolveTocNavTitle(
+                  { titleKey: "", displayTitle: batch.titleHe, pageId: batch.id },
+                  contentLocale,
+                );
+
+              return (
+                <div key={batch.id}>
+                  <h3 className={`mb-2 text-sm font-bold ${theme.tocBatchHeading}`}>
+                    {batchHeading}
+                  </h3>
+                  <ul className="space-y-1.5">
+                    {batch.pages.map((entry) => {
+                      const isActive = entry.pageId === activePageId;
+                      const navTitle = resolveTocNavTitle(entry, contentLocale);
+                      return (
+                        <li key={entry.pageId}>
+                          <Link
+                            href={appendReturnQueryToHref(
+                              `${routeBase}/${entry.pageId}`,
+                              returnQuerySuffix
+                            )}
+                            onClick={onClose}
+                            className={`block rounded-xl px-4 py-2.5 text-start text-sm transition ${
+                              isActive
+                                ? theme.tocActiveItem
+                                : "bg-[color:var(--book-surface-soft)] text-[color:var(--book-text)] hover:bg-[color:var(--book-accent-muted)]"
+                            }`}
+                          >
+                            <MixedRtlMathText text={navTitle} />
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </nav>
         </div>
         <div className="border-t border-[color:var(--book-divider)] px-5 py-3">

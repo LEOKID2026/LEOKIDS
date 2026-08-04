@@ -1,5 +1,31 @@
 {
   "copy": {
-    "cfg_maxtotal_total": "cfg.maxTotal || المجموع"
+    "cfg_maxtotal_total": "cfg.maxTotal || total",
+    "control_build": "ابنِ الطلب.",
+    "control_find_per_tray": "اختر كم قطعة في كل صينية.",
+    "control_find_total": "اختر العدد الإجمالي للقطع.",
+    "control_find_trays": "اختر كم صينية تحتاج.",
+    "control_same_total": "اختر ترتيبًا مختلفًا بنفس المجموع.",
+    "feedback_almost": "تحقق من عدد الصواني وكم قطعة في كل صينية.",
+    "feedback_ok": "أحسنت! الطلب جاهز.",
+    "info_find_per_tray": "{total} من {itemLabel} · {trays} صوانٍ",
+    "info_find_total": "{trays} صوانٍ · {perTray} من {itemLabel} في كل صينية",
+    "info_find_trays": "{total} من {itemLabel} · {perTray} في كل صينية",
+    "info_same_total_given": "معطى: {givenTrays} × {givenPerTray} = {total}",
+    "item_cookies": "بسكويت",
+    "item_croissants": "كرواسون",
+    "item_cupcakes": "كب كيك",
+    "item_muffins": "مافن",
+    "item_rolls": "لفائف",
+    "prompt_build": "جهّز {trays} صوانٍ وفي كل صينية {perTray} من {itemLabel}.",
+    "prompt_build_fallback": "جهّز الطلب.",
+    "prompt_find_per_tray": "وزّع {total} من {itemLabel} بالتساوي على {trays} صوانٍ. كم قطعة في كل صينية؟",
+    "prompt_find_total": "يوجد {trays} صوانٍ وفي كل واحدة {perTray} من {itemLabel}. كم {itemLabel} بالمجموع؟",
+    "prompt_find_trays": "يوجد {total} من {itemLabel}. كل صينية تتسع لـ {perTray}. كم صينية تحتاج؟",
+    "prompt_same_total": "يوجد {total} قطعة. هي مرتبة كـ {givenTrays} صوانٍ وفي كل واحدة {givenPerTray}. أعد الترتيب بنفس المجموع بعدد مختلف من الصواني.",
+    "solution_text_default": "الحل:",
+    "solution_text_find_per_tray": "كل صينية تحصل على {perTray}.",
+    "solution_text_find_trays": "تحتاج إلى {trays} صوانٍ.",
+    "solution_text_same_total": "طريقة أخرى: {trays} صوانٍ وفي كل واحدة {perTray}."
   }
 }

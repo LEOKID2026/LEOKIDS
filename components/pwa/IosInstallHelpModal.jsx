@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 const STEP_KEYS = [
   "ui.pwa.iosStep1",
@@ -21,6 +21,7 @@ export default function IosInstallHelpModal({
   doneBtnClass = "",
 }) {
   const t = useT();
+  const { locale, direction } = useI18n();
   const titleId = useId();
   const closeRef = useRef(null);
   const [portalTarget, setPortalTarget] = useState(null);
@@ -97,8 +98,8 @@ export default function IosInstallHelpModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        dir="ltr"
-        lang="en"
+        dir={direction}
+        lang={locale}
         onClick={(event) => event.stopPropagation()}
       >
         <div className="mb-1 flex items-start justify-between gap-2">

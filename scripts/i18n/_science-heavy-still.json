@@ -1,0 +1,406 @@
+{
+  "patched": 169,
+  "stillCount": 144,
+  "still": [
+    {
+      "id": "env_8",
+      "cur": "Recycling helps protect de environment.",
+      "en": "Recycling helps protect the environment."
+    },
+    {
+      "id": "exp_23",
+      "cur": "Experiments help us learn about de world, test ideas, understand how things work, en discover new th",
+      "en": "Experiments help us learn about the world, test ideas, understand how things work, and discover new "
+    },
+    {
+      "id": "exp_23",
+      "cur": "Ze help students think like scientists.",
+      "en": "They help students think like scientists."
+    },
+    {
+      "id": "env_15__v2",
+      "cur": "Recycling helps protect de environment.",
+      "en": "Recycling helps protect the environment."
+    },
+    {
+      "id": "science_remaining_g56_easy_body",
+      "cur": "Carry zuurstof en voedingsstoffen en help remove afval uit cells",
+      "en": "Carry oxygen and nutrients and help remove waste from cells"
+    },
+    {
+      "id": "sci_closure_g5env_013",
+      "cur": "Sorting materials helps recycling work.",
+      "en": "Sorting materials helps recycling work."
+    },
+    {
+      "id": "sci_closure_g3env_028",
+      "cur": "Producers make food using sunlight.",
+      "en": "Producers make food using sunlight."
+    },
+    {
+      "id": "sci_closure_g4bd_030",
+      "cur": "What is een basic explanation van pulmonary circulation?",
+      "en": "What is a basic explanation of pulmonary circulation?"
+    },
+    {
+      "id": "sci_closure_g4bd_030",
+      "cur": "In pulmonary circulation, bloed travels between de heart en lungs voor gas exchange.",
+      "en": "In pulmonary circulation, blood travels between the heart and lungs for gas exchange."
+    },
+    {
+      "id": "sci_closure_g5bd_032",
+      "cur": "Covering up en staying in shade help protect skin uit strong sunlight.",
+      "en": "Covering up and staying in shade help protect skin from strong sunlight."
+    },
+    {
+      "id": "sci_pb1_g3_experiments_easy_01",
+      "cur": "Make sure there is no planned variable",
+      "en": "Make sure there is no planned variable"
+    },
+    {
+      "id": "sci_pb1_g3_experiments_easy_01",
+      "cur": "Clear variables make repeats meaningful.",
+      "en": "Clear variables make repeats meaningful."
+    },
+    {
+      "id": "sci_pb1_g3_earth_space_easy_01",
+      "cur": "Earth also spins daily om te make day en night.",
+      "en": "Earth also spins daily to make day and night."
+    },
+    {
+      "id": "sci_pb1_g4_animals_hard_01",
+      "cur": "Producer plants make organic material that feeds many levels van een food web.",
+      "en": "Producer plants make organic material that feeds many levels of a food web."
+    },
+    {
+      "id": "sci_pb1_g4_experiments_hard_01",
+      "cur": "Repeating improves reliability en helps show how much results vary.",
+      "en": "Repeating improves reliability and helps show how much results vary."
+    },
+    {
+      "id": "sci_pb1_g4_experiments_hard_01",
+      "cur": "Repeats help reveal spread en measurement mistakes",
+      "en": "Repeats help reveal spread and measurement mistakes"
+    },
+    {
+      "id": "sci_pb1_g5_body_easy_01",
+      "cur": "Ze make zuurstof voor bloed",
+      "en": "They make oxygen for blood"
+    },
+    {
+      "id": "sci_pb1_g6_body_medium_01",
+      "cur": "Regular, balanced meals help keep energy more stable through de day.",
+      "en": "Regular, balanced meals help keep energy more stable through the day."
+    },
+    {
+      "id": "sci_pb1_g2_earth_space_easy_02",
+      "cur": "The Moon does not make its own light.",
+      "en": "The Moon does not make its own light."
+    },
+    {
+      "id": "sci_pb1_g2_earth_space_easy_03",
+      "cur": "Only de number van classroom windows",
+      "en": "Only the number of classroom windows"
+    },
+    {
+      "id": "sci_pb1_g2_earth_space_easy_03",
+      "cur": "Logs help spot patterns over days.",
+      "en": "Logs help spot patterns over days."
+    },
+    {
+      "id": "sci_p0_g1_body_medium_02",
+      "cur": "Clean hands help keep je healthier.",
+      "en": "Clean hands help keep you healthier."
+    },
+    {
+      "id": "sci_p0_g1_body_medium_05",
+      "cur": "Rest helps de body en brain.",
+      "en": "Rest helps the body and brain."
+    },
+    {
+      "id": "sci_p0_g1_body_medium_09",
+      "cur": "How can je help keep je teeth healthy?",
+      "en": "How can you help keep your teeth healthy?"
+    },
+    {
+      "id": "sci_p0_g1_body_medium_09",
+      "cur": "Brushing removes food en germs that can hurt teeth. Limiting sugary snacks also helps prevent caviti",
+      "en": "Brushing removes food and germs that can hurt teeth. Limiting sugary snacks also helps prevent cavit"
+    },
+    {
+      "id": "sci_p0_g1_body_medium_09",
+      "cur": "Teeth help je chew food.",
+      "en": "Teeth help you chew food."
+    },
+    {
+      "id": "sci_p0_g1_body_hard_05",
+      "cur": "A helmet helps protect je brain if je fall.",
+      "en": "A helmet helps protect your brain if you fall."
+    },
+    {
+      "id": "sci_p0_g1_body_hard_05",
+      "cur": "Safety gear helps prevent injuries.",
+      "en": "Safety gear helps prevent injuries."
+    },
+    {
+      "id": "sci_p0_g1_animals_medium_02",
+      "cur": "Fish live in water. Gills help them take zuurstof uit de water.",
+      "en": "Fish live in water. Gills help them take oxygen from the water."
+    },
+    {
+      "id": "sci_p0_g1_animals_hard_03",
+      "cur": "Gills help fish take zuurstof uit water.",
+      "en": "Gills help fish take oxygen from water."
+    },
+    {
+      "id": "sci_p0_g1_animals_hard_03",
+      "cur": "Gills help fish bark like dogs.",
+      "en": "Gills help fish bark like dogs."
+    },
+    {
+      "id": "sci_p0_g1_animals_hard_03",
+      "cur": "Gills help fish make honey.",
+      "en": "Gills help fish make honey."
+    },
+    {
+      "id": "sci_p0_g1_animals_hard_05",
+      "cur": "Bats are often nocturnal. Night activity can help them hunt insects en avoid some dangers.",
+      "en": "Bats are often nocturnal. Night activity can help them hunt insects and avoid some dangers."
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_03",
+      "cur": "Ze help de plant make food using sunlight.",
+      "en": "They help the plant make food using sunlight."
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_04",
+      "cur": "Bees en other animals notice bright flowers. When ze visit, ze can move pollen en help plants make s",
+      "en": "Bees and other animals notice bright flowers. When they visit, they can move pollen and help plants "
+    },
+    {
+      "id": "sci_p0_g1_plants_medium_08",
+      "cur": "Fruit helps protect en spread seeds.",
+      "en": "Fruit helps protect and spread seeds."
+    },
+    {
+      "id": "sci_p0_g1_plants_hard_06",
+      "cur": "Leaves fall om te make de sun colder.",
+      "en": "Leaves fall to make the sun colder."
+    },
+    {
+      "id": "sci_p0_g2_body_medium_01",
+      "cur": "Bones give shape en support. The skull protects de brain, en de rib cage helps protect de heart en l",
+      "en": "Bones give shape and support. The skull protects the brain, and the rib cage helps protect the heart"
+    },
+    {
+      "id": "sci_p0_g2_body_medium_02",
+      "cur": "Nutrients include proteins, vitamins, minerals, en more. A balanced diet helps growth, energy, en he",
+      "en": "Nutrients include proteins, vitamins, minerals, and more. A balanced diet helps growth, energy, and "
+    },
+    {
+      "id": "sci_p0_g2_body_medium_02",
+      "cur": "Fruits, vegetables, grains, en proteins each help in different ways.",
+      "en": "Fruits, vegetables, grains, and proteins each help in different ways."
+    },
+    {
+      "id": "sci_p0_g2_body_medium_04",
+      "cur": "Digestion starts in de mouth en continues in de stomach en intestines. Nutrients then move in de blo",
+      "en": "Digestion starts in the mouth and continues in the stomach and intestines. Nutrients then move into "
+    },
+    {
+      "id": "sci_p0_g2_body_medium_04",
+      "cur": "Teeth help begin digestion door chewing.",
+      "en": "Teeth help begin digestion by chewing."
+    },
+    {
+      "id": "sci_p0_g2_body_hard_05",
+      "cur": "Why can breakfast help many kids at school?",
+      "en": "Why can breakfast help many kids at school?"
+    },
+    {
+      "id": "sci_p0_g2_experiments_medium_02",
+      "cur": "One trial might be een lucky accident. Similar results across repeats make findings more trustworthy",
+      "en": "One trial might be a lucky accident. Similar results across repeats make findings more trustworthy."
+    },
+    {
+      "id": "sci_p0_g2_experiments_medium_02",
+      "cur": "Repeating helps check whether results are reliable.",
+      "en": "Repeating helps check whether results are reliable."
+    },
+    {
+      "id": "sci_p0_g2_experiments_medium_04",
+      "cur": "A control is een comparison that helps show what de change caused.",
+      "en": "A control is a comparison that helps show what the change caused."
+    },
+    {
+      "id": "sci_p0_g2_experiments_medium_04",
+      "cur": "Controls make tests fairer.",
+      "en": "Controls make tests fairer."
+    },
+    {
+      "id": "sci_p0_g2_experiments_hard_04",
+      "cur": "Units make numbers unnecessary.",
+      "en": "Units make numbers unnecessary."
+    },
+    {
+      "id": "sci_p0_g2_experiments_hard_06",
+      "cur": "Controlled conditions make comparisons fair. Then je can better link de changed variable om te de ou",
+      "en": "Controlled conditions make comparisons fair. Then you can better link the changed variable to the ou"
+    },
+    {
+      "id": "sci_p0_g2_experiments_hard_07",
+      "cur": "Labels en units make graphs clear.",
+      "en": "Labels and units make graphs clear."
+    },
+    {
+      "id": "sci_p0_g2_animals_medium_07",
+      "cur": "Pollen sticks om te bees en moves between flowers. Pollination helps plants make fruits en seeds.",
+      "en": "Pollen sticks to bees and moves between flowers. Pollination helps plants make fruits and seeds."
+    },
+    {
+      "id": "sci_p0_g2_animals_medium_07",
+      "cur": "Bees help pollinate flowers als ze collect nectar.",
+      "en": "Bees help pollinate flowers as they collect nectar."
+    },
+    {
+      "id": "sci_p0_g2_animals_medium_07",
+      "cur": "Protecting bees helps ecosystems.",
+      "en": "Protecting bees helps ecosystems."
+    },
+    {
+      "id": "sci_p0_g2_plants_medium_03",
+      "cur": "Make pollen voor bees only",
+      "en": "Make pollen for bees only"
+    },
+    {
+      "id": "sci_p0_g3_body_hard_02",
+      "cur": "Drinking enough water helps body systems, including de nieren.",
+      "en": "Drinking enough water helps body systems, including the kidneys."
+    },
+    {
+      "id": "sci_p0_g3_body_hard_03",
+      "cur": "Circulation links lungs, digestive voedingsstoffen, en body cells.",
+      "en": "Circulation links lungs, digestive nutrients, and body cells."
+    },
+    {
+      "id": "sci_p0_g3_experiments_easy_02",
+      "cur": "Dates help je track when observations were made en compare changes over time.",
+      "en": "Dates help you track when observations were made and compare changes over time."
+    },
+    {
+      "id": "sci_p0_g3_experiments_easy_02",
+      "cur": "Dates make plants grow faster door themselves.",
+      "en": "Dates make plants grow faster by themselves."
+    },
+    {
+      "id": "sci_p0_g3_experiments_easy_02",
+      "cur": "Details make data useful later.",
+      "en": "Details make data useful later."
+    },
+    {
+      "id": "sci_p0_g3_animals_easy_04",
+      "cur": "Bees visit flowers voor nectar om te make food. While doing so, ze often move pollen between flowers",
+      "en": "Bees visit flowers for nectar to make food. While doing so, they often move pollen between flowers."
+    },
+    {
+      "id": "sci_p0_g3_plants_easy_02",
+      "cur": "Capture light en help make food voor de plant",
+      "en": "Capture light and help make food for the plant"
+    },
+    {
+      "id": "sci_p0_g3_plants_easy_04",
+      "cur": "Reproduction—helping de plant make seeds",
+      "en": "Reproduction—helping the plant make seeds"
+    },
+    {
+      "id": "sci_p1_g4_body_hard_02",
+      "cur": "Gas exchange in de lungs loads red bloed cells met zuurstof. Circulation then delivers that zuurstof",
+      "en": "Gas exchange in the lungs loads red blood cells with oxygen. Circulation then delivers that oxygen t"
+    },
+    {
+      "id": "sci_p1_g4_body_hard_03",
+      "cur": "Exercise shuts down de heart's pumping.",
+      "en": "Exercise shuts down the heart's pumping."
+    },
+    {
+      "id": "sci_p1_g4_body_hard_03",
+      "cur": "Circulation adjusts om te activity level.",
+      "en": "Circulation adjusts to activity level."
+    },
+    {
+      "id": "sci_p1_g4_experiments_hard_03",
+      "cur": "Mixed units make comparisons en graphs misleading van confusing.",
+      "en": "Mixed units make comparisons and graphs misleading or confusing."
+    },
+    {
+      "id": "sci_p1_g5_body_medium_01",
+      "cur": "Circulation has pulmonary en systemic pathways.",
+      "en": "Circulation has pulmonary and systemic pathways."
+    },
+    {
+      "id": "sci_p1_g5_body_medium_04",
+      "cur": "Sweating cools je but reduces body water. Replacing fluids helps circulation, temperature control, e",
+      "en": "Sweating cools you but reduces body water. Replacing fluids helps circulation, temperature control, "
+    },
+    {
+      "id": "sci_p1_g5_animals_hard_02",
+      "cur": "Producers such als plants capture sunlight en make food. That food energy then moves om te animals t",
+      "en": "Producers such as plants capture sunlight and make food. That food energy then moves to animals that"
+    },
+    {
+      "id": "sci_p1_g5_animals_hard_02",
+      "cur": "Producers make food using sunlight.",
+      "en": "Producers make food using sunlight."
+    },
+    {
+      "id": "sci_p1_g6_body_easy_03",
+      "cur": "Drinking water supports healthy body function.",
+      "en": "Drinking water supports healthy body function."
+    },
+    {
+      "id": "sci_p1_g6_body_medium_03",
+      "cur": "Nieren are part van de excretory system.",
+      "en": "Kidneys are part of the excretory system."
+    },
+    {
+      "id": "sci_p1_g6_body_medium_03",
+      "cur": "Healthy nieren help keep bloed chemistry balanced.",
+      "en": "Healthy kidneys help keep blood chemistry balanced."
+    },
+    {
+      "id": "sci_p1_g6_body_medium_06",
+      "cur": "Skin is een protective covering. Het also helps met touch sensing en helps control body temperature.",
+      "en": "Skin is a protective covering. It also helps with touch sensing and helps control body temperature."
+    },
+    {
+      "id": "sci_p1_g6_body_medium_06",
+      "cur": "Protect de body en help sense touch",
+      "en": "Protect the body and help sense touch"
+    },
+    {
+      "id": "sci_p1_g6_body_medium_06",
+      "cur": "Make light voor night vision",
+      "en": "Make light for night vision"
+    },
+    {
+      "id": "sci_p1_g6_experiments_easy_03",
+      "cur": "A clear log helps je remember en share results",
+      "en": "A clear log helps you remember and share results"
+    },
+    {
+      "id": "sci_p1_g6_experiments_easy_03",
+      "cur": "Notes make de equipment heavier",
+      "en": "Notes make the equipment heavier"
+    },
+    {
+      "id": "sci_p1_g6_experiments_easy_03",
+      "cur": "Good notes make experiments easier om te repeat.",
+      "en": "Good notes make experiments easier to repeat."
+    },
+    {
+      "id": "sci_p1_g6_experiments_easy_04",
+      "cur": "Repeating een test helps show whether results happen again en are not just een lucky accident.",
+      "en": "Repeating a test helps show whether results happen again and are not just a lucky accident."
+    }
+  ]
+}

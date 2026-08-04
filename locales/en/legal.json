@@ -19,5 +19,12 @@
   "cookieClose": "Close",
   "privacyLink": "Privacy policy",
   "legalHubLink": "Legal documents",
-  "dataDeletionLink": "Data deletion"
+  "dataDeletionLink": "Data deletion",
+  "lastUpdated": "Last updated",
+  "contactLabel": "Contact",
+  "unifiedIntro1": "This page explains in clear language what the service does, what information is stored, how it is used, what parents can see, and what is important to know before using the site.",
+  "unifiedIntro2": "Using the site, creating an account, signing in with Google, signing in with email and password, use by a child, use by a teacher, or continued use of the site after the terms are updated constitutes acceptance of the terms outlined on this page.",
+  "fullDocument": "Full document",
+  "questionsLabel": "Questions",
+  "additionalDocuments": "Additional documents"
 }

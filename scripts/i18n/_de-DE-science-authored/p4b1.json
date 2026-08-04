@@ -1,0 +1,1346 @@
+{
+  "p4b1_g6_body_001": {
+    "stem": "Welche Aussage beschreibt das Verdauungssystem im menschlichen Körper richtig?",
+    "options": [
+      "Es zerlegt Nahrung in Stoffe, die der Körper aufnehmen kann",
+      "Es erzeugt Sauerstoff direkt nur für Muskeln",
+      "Es leitet Nervensignale von den Augen",
+      "Es allein legt die Herzschlagfrequenz fest"
+    ],
+    "explanation": "Das Verdauungssystem zerlegt Nahrung und hilft, Nährstoffe und Wasser aufzunehmen. Es erzeugt keinen Sauerstoff und ist nicht das Nervensystem.",
+    "theoryLines": [
+      "Die Verdauung folgt einem Weg vom Mund durch Magen und Därme.",
+      "Die meiste Aufnahme geschieht im Dünndarm."
+    ]
+  },
+  "p4b1_g6_body_002": {
+    "stem": "Welche Aussage beschreibt richtig, wie Blut mit Körpergewebe zusammenhängt?",
+    "options": [
+      "Blut transportiert Sauerstoff und Nährstoffe zu Geweben und hilft, manche Abfallstoffe zu entfernen",
+      "Blut bleibt immer in einem Organ und bewegt sich nie durch den Körper",
+      "Blut liefert nur Wasser und nie Sauerstoff",
+      "Blut wird direkt in den Lungen gebildet, ohne durch das Herz zu gehen"
+    ],
+    "explanation": "Blut fließt im Kreislaufsystem und hilft, Sauerstoff, Nährstoffe und manche Abfallstoffe zu transportieren.",
+    "theoryLines": [
+      "Das Herz wirkt im Kreislaufsystem als Pumpe.",
+      "Blutgefäße verbinden Organe."
+    ]
+  },
+  "p4b1_g6_body_003": {
+    "stem": "Was ist die Hauptaufgabe der Lungen im menschlichen Körper?",
+    "options": [
+      "Gase mit der Luft austauschen und Sauerstoff ins Blut bringen",
+      "Nahrung verdauen und Darmsäfte freisetzen",
+      "Nervensignale vom Gehirn zu den Muskeln leiten",
+      "Nur rote Blutkörperchen bilden"
+    ],
+    "explanation": "Lungen übernehmen den Gasaustausch. Verdauung und Nervensystem haben andere Aufgaben.",
+    "theoryLines": [
+      "Luft gelangt durch das Atemsystem hinein und hinaus.",
+      "Zellen brauchen Sauerstoff für ihre Tätigkeit."
+    ]
+  },
+  "p4b1_g6_body_004": {
+    "stem": "Was ist eine grundlegende Aufgabe des Nervensystems?",
+    "options": [
+      "Informationen zwischen Gehirn, Sinnen und Muskeln weiterleiten",
+      "Nahrung aus dem Dünndarm aufnehmen",
+      "Gase zwischen Blut und Luft austauschen",
+      "Das Skelett ohne Bewegung stillhalten"
+    ],
+    "explanation": "Das Nervensystem koordiniert Reaktionen. Es ist nicht für Verdauung oder Atmung zuständig.",
+    "theoryLines": [
+      "Nerven leiten Signale.",
+      "Das Gehirn verarbeitet Informationen aus den Sinnen."
+    ]
+  },
+  "p4b1_g6_body_005": {
+    "stem": "Warum sind Muskeln und Knochen gemeinsam für Bewegung wichtig?",
+    "options": [
+      "Muskeln ziehen an Knochen und erzeugen Bewegung an Gelenken",
+      "Knochen erzeugen Sauerstoff für Muskeln",
+      "Muskeln ersetzen das Kreislaufsystem",
+      "Knochen verdauen Nahrung in den Därmen"
+    ],
+    "explanation": "Bewegung entsteht, wenn Muskeln, Knochen und Gelenke zusammenarbeiten.",
+    "theoryLines": [
+      "Ein Muskel zieht sich zusammen und zieht an einem Knochen.",
+      "Ein Gelenk lässt den Körper in verschiedenen Winkeln beugen."
+    ]
+  },
+  "p4b1_g6_body_006": {
+    "stem": "Was ist eine Hauptaufgabe der Haut?",
+    "options": [
+      "Schutz, Temperaturregulation und Wahrnehmen der Umgebung",
+      "Sauerstoff erzeugen wie die Lungen",
+      "Kohlenhydrate aus Nahrung verdauen",
+      "Blut zu jedem Organ transportieren"
+    ],
+    "explanation": "Haut ist eine Schutzbarriere und hilft auch, die Körpertemperatur zu regulieren.",
+    "theoryLines": [
+      "Haut schützt vor Verletzungen.",
+      "Schweißdrüsen helfen beim Abkühlen."
+    ]
+  },
+  "p4b1_g6_body_007": {
+    "stem": "Was tun die Nieren in Bezug auf das Blut?",
+    "options": [
+      "Abfallstoffe aus dem Blut filtern und helfen, Urin zu bilden",
+      "Sauerstoff direkt in die Lungen pumpen",
+      "Fette aus Nahrung verdauen",
+      "Die Aufgabe des Herzens ersetzen"
+    ],
+    "explanation": "Nieren filtern Blut und helfen, manche Abfallstoffe aus dem Körper zu entfernen.",
+    "theoryLines": [
+      "Urin trägt gelöste Abfallstoffe aus dem Körper.",
+      "Filtern braucht einen stetigen Blutfluss."
+    ]
+  },
+  "p4b1_g6_body_008": {
+    "stem": "Warum ist Schlaf für Körperprozesse wichtig?",
+    "options": [
+      "Er ermöglicht Ruhe und Erholung für viele Körpersysteme",
+      "Er macht Atmen überflüssig",
+      "Er ersetzt den Bedarf an Wasser",
+      "Er stoppt jede Gehirnaktivität vollständig"
+    ],
+    "explanation": "Schlaf unterstützt die Erholung. Der Körper bleibt am Leben, aber er ruht.",
+    "theoryLines": [
+      "Ruhe unterstützt Konzentration und Gesundheit.",
+      "Schlafentzug beeinträchtigt, wie gut der Körper arbeitet."
+    ]
+  },
+  "p4b1_g6_animals_001": {
+    "stem": "Was ist eine grundlegende Rolle einer Pflanze in einer Nahrungskette?",
+    "options": [
+      "Ein Erzeuger, der mit Lichtenergie organisches Material herstellt",
+      "Ein Jäger, der nur große Tiere frisst",
+      "Ein Zersetzer, der nur Plastik recycelt",
+      "Ein direkter Versorger jedes Tieres auf derselben Stufe"
+    ],
+    "explanation": "Viele Pflanzen betreiben Fotosynthese und bilden als Erzeuger die Basis von Nahrungsketten.",
+    "theoryLines": [
+      "Energie gelangt über Erzeuger in eine Nahrungskette.",
+      "Verbraucher fressen Erzeuger oder andere Verbraucher."
+    ]
+  },
+  "p4b1_g6_animals_002": {
+    "stem": "Wie überleben Tiere in heißen Wüstenumgebungen mit sehr wenig Wasser?",
+    "options": [
+      "Sie haben besondere Anpassungen, um Körperwasser zu sparen und nicht zu viel zu verlieren.",
+      "Sie fressen nur Pflanzen voller Wasser, die in der Wüste leicht zu finden sind.",
+      "Sie können jahrelang ganz ohne Nahrung oder Wasser überleben.",
+      "Sie trinken Wasser nur aus Flüssen, die immer durch die Wüste fließen."
+    ],
+    "explanation": "Wüstentiere haben Anpassungen wie dicke Haut, konzentrierte Ausscheidungen und nachtaktive Lebensweise, um Wasserverlust zu verringern und in heißen, trockenen Bedingungen zu überleben.",
+    "theoryLines": [
+      "Anpassungen helfen Tieren, in ihrer speziellen Umgebung zu überleben.",
+      "Wüstentiere meiden die Mittagshitze oft, indem sie nachts aktiv sind."
+    ]
+  },
+  "p4b1_g6_animals_003": {
+    "stem": "Welche Rolle hat ein Räuber in einer Nahrungskette?",
+    "options": [
+      "Er hilft, Beutepopulationen zu kontrollieren und das System im Gleichgewicht zu halten",
+      "Er frisst nur Pflanzen und nie Tiere",
+      "Er hat keinen Bezug zur Zahl der Beutetiere",
+      "Er erzeugt Lichtenergie wie eine Pflanze"
+    ],
+    "explanation": "Räuber begrenzen, wie groß Beutepopulationen werden können.",
+    "theoryLines": [
+      "Ökologisches Gleichgewicht hängt von Nahrungsbeziehungen ab.",
+      "Zu viele Beutetiere oder Räuber können ein System verändern."
+    ]
+  },
+  "p4b1_g6_animals_004": {
+    "stem": "Was unterscheidet oft ein Säugetier von einem Fisch?",
+    "options": [
+      "Es säugt seine Jungen und hält gewöhnlich eine gleichmäßige Körpertemperatur",
+      "Es atmet nur mit Kiemen",
+      "Es legt Eier nur im Wasser",
+      "Es hat kein Innenskelett"
+    ],
+    "explanation": "Säugetiere säugen gewöhnlich ihre Jungen; Fische leben im Wasser und nutzen Kiemen.",
+    "theoryLines": [
+      "Tiergruppen unterscheiden sich in ihren Anpassungen.",
+      "Merkmale helfen uns, Lebewesen einzuordnen."
+    ]
+  },
+  "p4b1_g6_animals_005": {
+    "stem": "Warum ist es wichtig, einen natürlichen Lebensraum zu schützen?",
+    "options": [
+      "Er liefert Nahrung, Schutz und Bedingungen für Wachstum und Fortpflanzung",
+      "Er stoppt jedes Pflanzenwachstum",
+      "Er beeinflusst die Artenvielfalt nicht",
+      "Er ersetzt den Bedarf an Wasser"
+    ],
+    "explanation": "Ein gesunder Lebensraum unterstützt die Biodiversität.",
+    "theoryLines": [
+      "Lebensräume zu schädigen verringert Arten.",
+      "Die Natur zu schützen ist eine gemeinsame Verantwortung."
+    ]
+  },
+  "p4b1_g6_animals_006": {
+    "stem": "Was ist der Lebenszyklus eines Schmetterlings?",
+    "options": [
+      "Ei, Larve (Raupe), Puppe, erwachsenes Tier",
+      "Nur ein erwachsenes Tier ohne Stadien",
+      "Überhaupt keine Metamorphose",
+      "Nur ein Ei ohne Entwicklung"
+    ],
+    "explanation": "Ein Schmetterling hat eine vollständige Metamorphose mit verschiedenen Stadien.",
+    "theoryLines": [
+      "Metamorphose lässt Tiere zu unterschiedlichen Zeiten unterschiedliche Ressourcen nutzen.",
+      "Jedes Stadium passt zu anderen Bedingungen."
+    ]
+  },
+  "p4b1_g6_animals_007": {
+    "stem": "Wie hilft eine Biene Pflanzen?",
+    "options": [
+      "Indem sie Pollen von Blüte zu Blüte trägt und so die Bestäubung unterstützt",
+      "Indem sie alle Blätter abfrisst",
+      "Indem sie Wurzeln aus dem Boden zieht",
+      "Indem sie Sonnenlicht für die Pflanze blockiert"
+    ],
+    "explanation": "Bienen helfen bei der Bestäubung, indem sie Pollen transportieren, damit Samen entstehen können.",
+    "theoryLines": [
+      "Bestäubung verbindet Blüten und hilft bei der Fortpflanzung.",
+      "Viele Nutzpflanzen hängen von Bestäubern ab."
+    ]
+  },
+  "p4b1_g6_materials_001": {
+    "stem": "Was geschieht, wenn sich ein Stoff in Wasser auflöst?",
+    "options": [
+      "Die Teilchen des Stoffes verteilen sich und mischen sich gleichmäßig im Wasser.",
+      "Das Wasser verwandelt sich in den gelösten Stoff und verschwindet.",
+      "Der Stoff schwimmt auf der Oberfläche, ohne sich mit dem Wasser zu mischen.",
+      "Der Stoff macht das Wasser immer trüb und unbrauchbar."
+    ],
+    "explanation": "Wenn sich ein Stoff auflöst, trennen sich seine Teilchen und verteilen sich gleichmäßig im Wasser — es entsteht eine Lösung. Der Stoff scheint zu verschwinden, ist aber noch da; du kannst ihn zurückgewinnen, wenn das Wasser verdunstet. Zucker im Tee ist ein typisches Beispiel.",
+    "theoryLines": [
+      "Eine Lösung ist ein Gemisch, in dem sich ein Stoff gleichmäßig in einem anderen auflöst.",
+      "Der Stoff, der sich auflöst, heißt gelöster Stoff; die Flüssigkeit, in der er sich auflöst, heißt Lösungsmittel."
+    ]
+  },
+  "p4b1_g6_materials_002": {
+    "stem": "Wenn du verschiedene Gegenstände im Wasser prüfst: Was entscheidet, ob ein Gegenstand schwimmt oder sinkt?",
+    "options": [
+      "Ob der Gegenstand dichter ist als Wasser — dichtere Gegenstände sinken, weniger dichte schwimmen.",
+      "Wie schwer der Gegenstand von außen aussieht.",
+      "Ob der Gegenstand aus einem natürlichen Material besteht.",
+      "Die Farbe des geprüften Materials."
+    ],
+    "explanation": "Die Dichte entscheidet, ob ein Gegenstand schwimmt oder sinkt. Gegenstände mit geringerer Dichte als Wasser schwimmen; solche mit höherer Dichte sinken.",
+    "theoryLines": [
+      "Dichte beschreibt, wie viel Masse in einem bestimmten Volumen steckt.",
+      "Ein dichter Gegenstand wie ein Metallbolzen sinkt, während ein weniger dichter Gegenstand wie Holz schwimmt."
+    ]
+  },
+  "p4b1_g6_materials_003": {
+    "stem": "Welches Material ändert seinen Aggregatzustand am leichtesten beim Erwärmen oder Abkühlen?",
+    "options": [
+      "Wasser — es wechselt leicht zwischen fest (Eis), flüssig (Wasser) und gasförmig (Wasserdampf).",
+      "Papier — es wird schwerer, wenn man es erwärmt.",
+      "Kunststoff — er wird beim Erwärmen immer zu Gas.",
+      "Metall — es wird sofort zu Gas, sobald man es erwärmt."
+    ],
+    "explanation": "Wasser ist ein klares Beispiel für ein Material, das seinen Zustand leicht ändert. Abgekühlt wird es zu Eis; genug erwärmt verdunstet es zu Wasserdampf.",
+    "theoryLines": [
+      "Wasser ändert seinen Zustand bei bestimmten Temperaturen: Es gefriert bei 0 °C und siedet bei 100 °C.",
+      "Der Aggregatzustand hängt davon ab, wie viel Wärmeenergie die Teilchen haben."
+    ]
+  },
+  "p4b1_g6_materials_004": {
+    "stem": "Wie beeinflusst Umrühren vor allem das Auflösen von Salz im Wasser?",
+    "options": [
+      "Es erhöht den Kontakt zwischen Salzteilchen und dem Wasser",
+      "Es verwandelt das Salz in einen anderen Stoff",
+      "Es macht die Temperatur völlig überflüssig",
+      "Es verhindert, dass sich das Salz überhaupt auflöst"
+    ],
+    "explanation": "Umrühren verteilt die Teilchen und beschleunigt das Auflösen.",
+    "theoryLines": [
+      "Mischen hilft, dass Lösungsmittel und gelöster Stoff häufiger aufeinandertreffen.",
+      "Temperatur und Korngröße können die Auflösegeschwindigkeit ebenfalls beeinflussen."
+    ]
+  },
+  "p4b1_g6_materials_005": {
+    "stem": "Welches dieser Materialien ist eine natürliche, erneuerbare Ressource, die von Lebewesen stammt?",
+    "options": [
+      "Holz",
+      "Nylon",
+      "Glas",
+      "Aluminium"
+    ],
+    "explanation": "Holz ist ein natürliches Material aus Bäumen. Bäume können neu gepflanzt und nachwachsen — deshalb ist Holz erneuerbar.",
+    "theoryLines": [
+      "Verschiedene Materialien haben unterschiedliche Eigenschaften, die sie für bestimmte Zwecke nützlich machen.",
+      "Holz ist fest, leicht zu formen und erneuerbar — deshalb eignet es sich gut zum Bauen und Basteln."
+    ]
+  },
+  "p4b1_g6_materials_006": {
+    "stem": "Warum löst sich ein Stoff in warmem Wasser schneller auf als in kaltem Wasser?",
+    "options": [
+      "Warmes Wasser hat mehr Energie, deshalb bewegen sich seine Teilchen schneller und zerlegen den Stoff rascher.",
+      "Papier nimmt den Stoff auf, sodass er schneller zu verschwinden scheint.",
+      "Der Stoff schwimmt an die Oberfläche und löst sich von oben auf.",
+      "Kaltes Wasser löst Stoffe immer schneller auf als warmes Wasser."
+    ],
+    "explanation": "Ist das Wasser wärmer, bewegen sich seine Moleküle schneller. Diese Extraenergie hilft ihnen, mit den Teilchen des Stoffes zusammenzustoßen und sie rascher zu zerlegen — deshalb löst er sich schneller auf. Darum löst sich Zucker in heißem Tee schneller als in kaltem Wasser.",
+    "theoryLines": [
+      "Die Temperatur ist einer der wichtigsten Faktoren dafür, wie schnell sich ein Stoff auflöst.",
+      "Umrühren und das Zerteilen des Stoffes in kleinere Stücke beschleunigen das Auflösen ebenfalls."
+    ]
+  },
+  "p4b1_g6_materials_007": {
+    "stem": "Wenn Wasser verdunstet: Welche Art von Veränderung ist das?",
+    "options": [
+      "Eine physikalische Zustandsänderung, bei der der Stoff Wasser bleibt",
+      "Die Umwandlung von Wasser in einen völlig anderen chemischen Stoff",
+      "Das Löschen aller Eigenschaften des Materials ohne Energieänderung",
+      "Die Bildung heißen Plasmas ohne Bezug zu Wasser"
+    ],
+    "explanation": "Eine Zustandsänderung ist oft eine physikalische Veränderung, bei der kein neuer Stoff entsteht.",
+    "theoryLines": [
+      "Bei physikalischen Veränderungen bleibt die Identität des Materials erhalten.",
+      "Bei Zustandsänderungen ändert sich die Energie."
+    ]
+  },
+  "p4b1_g6_materials_008": {
+    "stem": "Was geschieht mit der Menge Salz, die sich in Wasser auflösen kann, wenn das Wasser erwärmt wird?",
+    "options": [
+      "In heißem Wasser löst sich mehr Salz auf als in kaltem Wasser",
+      "Es löst sich unabhängig von der Wassertemperatur immer dieselbe Menge Salz auf",
+      "Heißes Wasser verwandelt festes Salz direkt in Gas, ohne es aufzulösen",
+      "Wasser kann im erwärmten Zustand gar keinen Stoff auflösen"
+    ],
+    "explanation": "Wärme gibt den Wassermolekülen mehr Energie zur Bewegung. Dadurch können sie mehr Teilchen des gelösten Stoffes aufbrechen und umgeben — es löst sich also mehr auf.",
+    "theoryLines": [
+      "In heißem Wasser kann sich typischerweise eine größere Menge eines Feststoffs auflösen als in kaltem Wasser.",
+      "Eine höhere Temperatur erhöht bei den meisten Feststoffen die Löslichkeit in Wasser."
+    ]
+  },
+  "p4b1_g6_experiments_001": {
+    "stem": "Um zu prüfen, ob die Bodenart das Wachstum von Keimlingen beeinflusst: Was solltest du tun?",
+    "options": [
+      "Nur die Bodenart ändern und Licht sowie Wasser möglichst gleich halten",
+      "Licht, Wasser und Boden gleichzeitig ohne Kontrolle ändern",
+      "Jedem Keimling eine andere Wassermenge geben, ohne zu messen",
+      "Das Ergebnis vorher festlegen und Wiederholungen weglassen"
+    ],
+    "explanation": "In einem fairen Experiment änderst du beim Prüfen der Bodenwirkung eine geplante Variable.",
+    "theoryLines": [
+      "Abhängige Variablen reagieren; unabhängige Variablen sind das, was du änderst.",
+      "Wiederholen verringert zufällige Fehler."
+    ]
+  },
+  "p4b1_g6_experiments_002": {
+    "stem": "Warum ist eine Kontrollgruppe in einem Klassenzimmer-Experiment wichtig?",
+    "options": [
+      "Damit du mit Bedingungen vergleichen kannst, in denen die geprüfte Variable nicht geändert wurde",
+      "Um alle Messungen zu löschen",
+      "Um jede Variable gleichzeitig zu ändern",
+      "Um das Aufschreiben von Ergebnissen zu vermeiden"
+    ],
+    "explanation": "Eine Kontrollgruppe hilft zu zeigen, welche Wirkung die von dir vorgenommene Änderung hat.",
+    "theoryLines": [
+      "Eine Kontrolle isoliert einen Faktor.",
+      "Vergleich unterstützt eine Schlussfolgerung."
+    ]
+  },
+  "p4b1_g6_experiments_003": {
+    "stem": "Was ist eine kontrollierte (geplante) Variable in einem naturwissenschaftlichen Experiment?",
+    "options": [
+      "Eine Variable, die absichtlich geändert wird",
+      "Jede Variable, die gleichzeitig geändert wird",
+      "Überhaupt nichts",
+      "Nur der Name des Experiments"
+    ],
+    "explanation": "Wenn du jeweils eine Variable änderst, wird klarer, was die Wirkung verursacht hat.",
+    "theoryLines": [
+      "Unabhängige und abhängige Variablen sind wichtig.",
+      "Planung verhindert Verwirrung."
+    ]
+  },
+  "p4b1_g6_experiments_004": {
+    "stem": "Warum solltest du Ergebnisse in einer Tabelle aufschreiben?",
+    "options": [
+      "Um Messungen zu vergleichen und Muster zu erkennen",
+      "Um Daten zu löschen",
+      "Um Wiederholungen zu vermeiden",
+      "Um die Hypothese nach jeder Zeile zu ändern"
+    ],
+    "explanation": "Gut geordnete Aufzeichnungen erleichtern die Auswertung.",
+    "theoryLines": [
+      "Eine Tabelle zeigt Daten klar.",
+      "Muster unterstützen Schlussfolgerungen."
+    ]
+  },
+  "p4b1_g6_experiments_005": {
+    "stem": "Was ist zu Beginn einer Untersuchung eine Hypothese?",
+    "options": [
+      "Eine überprüfbare Vorhersage darüber, was im Experiment geschehen wird.",
+      "Das endgültige Ergebnis, das du nach dem Experiment misst.",
+      "Eine vollständige Liste aller Materialien, die du im Experiment verwendest.",
+      "Eine Regel, die die Natur beschreibt und nie geprüft werden muss."
+    ],
+    "explanation": "Eine Hypothese ist eine überprüfbare Vorhersage, die du vor dem Experiment aufstellst. Die Ergebnisse kommen später und können sie stützen oder nicht stützen.",
+    "theoryLines": [
+      "Hypothesen leiten, was du misst und beobachtest.",
+      "Naturgesetze fassen gut geprüfte Muster zusammen; sie sind nicht dasselbe wie eine Start-Hypothese."
+    ]
+  },
+  "p4b1_g6_experiments_006": {
+    "stem": "Warum wiederholst du eine Messung im selben Experiment?",
+    "options": [
+      "Um Fehler zu finden und die Übereinstimmung zu prüfen",
+      "Weil eine einzige Messung immer ausreicht",
+      "Um die Kontrollgruppe aufzuheben",
+      "Damit du keine Daten aufschreiben musst"
+    ],
+    "explanation": "Wiederholen verbessert die Zuverlässigkeit.",
+    "theoryLines": [
+      "Wiederholte Messungen verringern zufällige Fehler.",
+      "In den Naturwissenschaften ist Beständigkeit wichtig."
+    ]
+  },
+  "p4b1_g6_experiments_007": {
+    "stem": "Welches Werkzeug eignet sich, um die Länge eines Blattes zu messen?",
+    "options": [
+      "Ein Lineal",
+      "Ein Thermometer",
+      "Eine Waage",
+      "Ein Wecker"
+    ],
+    "explanation": "Länge misst du mit einem Lineal oder einem Meterstab.",
+    "theoryLines": [
+      "Wähle ein Werkzeug, das zur Variable passt.",
+      "Maßeinheiten sind wichtig."
+    ]
+  },
+  "p4b1_g6_experiments_008": {
+    "stem": "Warum solltest du einen unbekannten Stoff im Labor nicht kosten?",
+    "options": [
+      "Der Stoff könnte gefährlich sein",
+      "Kosten verbessert die Ergebnisse",
+      "Kosten ist für eine Note vorgeschrieben",
+      "Kosten ersetzt das Messen"
+    ],
+    "explanation": "Sicherheit steht vor jeder Handlung im Experiment.",
+    "theoryLines": [
+      "Sicherheitsregeln schützen Schülerinnen und Schüler.",
+      "Erkenne einen Stoff, bevor du ihn verwendest."
+    ]
+  },
+  "p4b1_g6_earth_001": {
+    "stem": "Welche Aussage beschreibt den Wasserkreislauf im großen Maßstab richtig?",
+    "options": [
+      "Verdunstung, Kondensation, Niederschlag und Rückfluss zu Meeren und Land",
+      "Wasser entsteht einmal und wechselt nie zwischen Zuständen",
+      "Regen kommt nur von Pflanzen, ohne Verdunstung",
+      "Der Wasserkreislauf findet nur im Winter statt, ohne sommerliche Verdunstung"
+    ],
+    "explanation": "Der Wasserkreislauf umfasst Zustandsänderungen und Bewegung über Land und Meer.",
+    "theoryLines": [
+      "Wasser bewegt sich zwischen Luft, Land und Meeren.",
+      "Die Energie der Sonne treibt einen großen Teil des Kreislaufs an."
+    ]
+  },
+  "p4b1_g6_earth_002": {
+    "stem": "Was ist eine einfache Hauptursache für Jahreszeiten?",
+    "options": [
+      "Der wechselnde Einfallswinkel der Sonnenstrahlen und die relative Länge von Tag und Nacht",
+      "Nur die Zahl der Schulferien",
+      "Nur die Farbe der Stadtgebäude",
+      "Nur die Entfernung des Mondes zur Erde, ohne Bezug zur Sonne"
+    ],
+    "explanation": "Jahreszeiten hängen in einem einfachen Modell mit dem Sonnenwinkel und der Tageslänge zusammen.",
+    "theoryLines": [
+      "Die Neigung der Erde beeinflusst, wie Sonnenlicht verschiedene Breitengrade trifft.",
+      "Längere Tage im Sommer bedeuten mehr Zeit zum Aufwärmen."
+    ]
+  },
+  "p4b1_g6_earth_003": {
+    "stem": "Was geschieht mit der Sonnenenergie, wenn sie die Erdoberfläche erreicht?",
+    "options": [
+      "Ein Teil wird in den Weltraum reflektiert, ein Teil von Atmosphäre und Boden aufgenommen",
+      "Alles Licht wird aufgenommen und beeinflusst nie die Temperatur",
+      "Alle Energie bleibt nur im Ozean, ohne die Luft zu erwärmen",
+      "Die Sonne sendet überhaupt keine Energie zur Erde"
+    ],
+    "explanation": "Sonnenenergie wird aufgeteilt: Ein Teil wird reflektiert, ein Teil aufgenommen, und ein Teil erwärmt die Erde.",
+    "theoryLines": [
+      "Aufgenommene Energie kann Land, Wasser und Luft erwärmen.",
+      "Reflexion und Absorption zusammen prägen den Energiehaushalt der Erde."
+    ]
+  },
+  "p4b1_g6_earth_004": {
+    "stem": "Wie entsteht Regenwasser im Wasserkreislauf?",
+    "options": [
+      "Wasser verdunstet aus Meeren und Seen, steigt in den Himmel, bildet Wolken und fällt als Regen.",
+      "Regenwasser entsteht nur aus schmelzendem Schnee und Eis auf kalten Bergen.",
+      "Wolken sammeln Regenwasser aus Flüssen, die nach oben in den Himmel fließen.",
+      "Das Meer drückt Wasserdampf direkt in die Luft, wo er sofort als Regen fällt."
+    ],
+    "explanation": "Im Wasserkreislauf verdunstet Wasser aus Meeren und Seen, steigt in die Atmosphäre, kühlt ab und kondensiert zu Wolken und fällt dann als Regen zurück auf die Erde.",
+    "theoryLines": [
+      "Der Wasserkreislauf umfasst Verdunstung, Kondensation und Niederschlag.",
+      "Meere sind die Hauptquelle des Wassers, das in die Atmosphäre verdunstet."
+    ]
+  },
+  "p4b1_g6_earth_005": {
+    "stem": "Was geschieht im Allgemeinen mit der Tageslänge zwischen Sommer und Winter?",
+    "options": [
+      "Die Tage sind im Sommer länger und im Winter kürzer",
+      "Die Tageslänge ändert sich im Jahr nie",
+      "Wintertage sind immer länger als Sommertage",
+      "Nur Wolken entscheiden über die Tageslänge"
+    ],
+    "explanation": "Die jahreszeitliche Tageslänge ändert sich mit der Neigung und der Bahn der Erde.",
+    "theoryLines": [
+      "Längere Sommertage geben mehr Zeit zum Aufwärmen.",
+      "Die Tageslänge gehört zum jahreszeitlichen Klima."
+    ]
+  },
+  "p4b1_g6_earth_006": {
+    "stem": "Warum erwärmt sich die Erdoberfläche tagsüber?",
+    "options": [
+      "Sonnenenergie wird von Land und Wasser aufgenommen und in Wärme umgewandelt",
+      "Die Erde erzeugt ihr eigenes Sonnenlicht nur nachts",
+      "Der Mond erwärmt den Boden jeden Morgen",
+      "Die Erwärmung geschieht nur wegen Straßenlaternen"
+    ],
+    "explanation": "Aufgenommenes Sonnenlicht erwärmt die Erdoberfläche am Tag.",
+    "theoryLines": [
+      "Verschiedene Oberflächen nehmen unterschiedlich viel Sonnenlicht auf.",
+      "Nachts kühlt es ab, wenn die Erwärmung durch die Sonne aufhört."
+    ]
+  },
+  "p4b1_g6_earth_007": {
+    "stem": "Was geschieht mit dem Wasser im Meer als Teil des Wasserkreislaufs?",
+    "options": [
+      "Die Sonne erwärmt das Wasser, es verdunstet und steigt als Wasserdampf in die Atmosphäre.",
+      "Meerwasser fließt direkt unterirdisch in Flüsse.",
+      "Das Meer gewinnt Wasser nur aus Flüssen; es verliert nie Wasser.",
+      "Meerwasser bleibt für immer im Ozean und bewegt oder verändert sich nie."
+    ],
+    "explanation": "Die Sonne erwärmt die Meeresoberfläche, sodass Wasser verdunstet und als Wasserdampf aufsteigt. Das ist der Beginn des Wasserkreislaufs — später kühlt der Dampf ab, bildet Wolken und fällt als Regen.",
+    "theoryLines": [
+      "Verdunstung ist die erste große Stufe des Wasserkreislaufs.",
+      "Nach der Verdunstung kühlt Wasserdampf ab, kondensiert zu Wolken und fällt schließlich als Regen."
+    ]
+  },
+  "p4b1_g6_earth_008": {
+    "stem": "Was hilft zu erklären, warum Winde im Sommer nahe am Meer stärker sein können?",
+    "options": [
+      "Land und Meer erwärmen sich unterschiedlich und erzeugen örtliche Druckunterschiede und Brisen",
+      "Das Meer beeinflusst den Wind nie",
+      "Wind an Küsten entsteht nur durch Erdbeben",
+      "Sommerwinde entstehen nur wegen Regenbögen"
+    ],
+    "explanation": "Ungleiche Erwärmung von Land und Wasser kann Küstenbrisen antreiben, besonders in warmen Jahreszeiten.",
+    "theoryLines": [
+      "Luft bewegt sich von höherem zu niedrigerem Druck.",
+      "Örtliche Erwärmungsmuster prägen örtliche Winde."
+    ]
+  },
+  "p4b1_g6_env_001": {
+    "stem": "Was bedeutet „Biodiversität“ in einer Umwelt im Grunde?",
+    "options": [
+      "Die Vielfalt der Lebewesen und ihrer Lebensräume in einem Gebiet",
+      "Nur die Zahl der Steine in einem Park",
+      "Nur die Menge an Plastik in einer Stadt",
+      "Eine einzelne Pflanzenart, die für immer allein wächst"
+    ],
+    "explanation": "Biodiversität bedeutet viele Arten von Lebewesen und Lebensräumen.",
+    "theoryLines": [
+      "Vielfältige Ökosysteme sind oft widerstandsfähiger.",
+      "Lebensräume zu schützen schützt die Biodiversität."
+    ]
+  },
+  "p4b1_g6_env_002": {
+    "stem": "Warum ist es allgemein wichtig, Luftverschmutzung in Städten zu verringern?",
+    "options": [
+      "Um schädliche Wirkungen auf die Gesundheit der Menschen und auf die Umwelt zu verringern",
+      "Weil saubere Luft keinen Bezug zur Gesundheit hat",
+      "Weil Verschmutzung nur die Farbe von Gebäudefarbe ändert",
+      "Weil Städte nie Verschmutzung erzeugen"
+    ],
+    "explanation": "Luftverschmutzung kann Gesundheit und Umwelt schädigen; sie zu verringern schützt die Menschen.",
+    "theoryLines": [
+      "Sauberere Luft unterstützt gesündere Gemeinden.",
+      "Zu den Verschmutzungsquellen gehören Verkehr und das Verbrennen von Brennstoffen."
+    ]
+  },
+  "p4b1_g6_env_003": {
+    "stem": "Was könnte geschehen, wenn eine Art aus einer Nahrungskette verschwindet?",
+    "options": [
+      "Andere Arten, die von ihr abhängen, können Nahrung oder das Gleichgewicht im System verlieren",
+      "Im Ökosystem kann sich nie etwas ändern",
+      "Alle Tiere werden sofort zu Erzeugern",
+      "Nahrungsketten verbinden Lebewesen nicht"
+    ],
+    "explanation": "Arten sind miteinander verbunden. Fehlt eine, kann das Räuber, Beute und das größere System beeinflussen.",
+    "theoryLines": [
+      "Nahrungsnetze zeigen viele Nahrungsbeziehungen.",
+      "Das Gleichgewicht eines Ökosystems hängt von diesen Verbindungen ab."
+    ]
+  },
+  "p4b1_g6_env_004": {
+    "stem": "Was ist eine häufige Quelle von Luftverschmutzung in Städten?",
+    "options": [
+      "Autoabgase und das Verbrennen von Brennstoffen",
+      "Nur sauberes Regenwasser",
+      "Nur Baumschatten",
+      "Nur Mondlicht"
+    ],
+    "explanation": "Autos und das Verbrennen von Brennstoffen sind wichtige Quellen städtischer Luftverschmutzung.",
+    "theoryLines": [
+      "Das Verbrennen fossiler Brennstoffe setzt Schadstoffe frei.",
+      "Saubererer Verkehr kann die Stadtverschmutzung verringern."
+    ]
+  },
+  "p4b1_g6_env_005": {
+    "stem": "Was ist ein Beispiel dafür, Biodiversität in einem Park zu schützen?",
+    "options": [
+      "Einheimische Lebensräume belassen und örtliche Pflanzen und Tiere nicht schädigen",
+      "Jede Pflanze entfernen, um flachen Beton zu schaffen",
+      "Müll neben Nestern abladen",
+      "Beliebig invasive Arten zum Spaß einführen"
+    ],
+    "explanation": "Lebensräume und einheimische Arten zu schützen unterstützt die Biodiversität im Park.",
+    "theoryLines": [
+      "Einheimische Pflanzen unterstützen die örtliche Tierwelt.",
+      "Menschen können helfen, indem sie Störungen und Müll verringern."
+    ]
+  },
+  "p4b1_g6_env_006": {
+    "stem": "Wie können Menschen die Luftverschmutzung im Alltag verringern?",
+    "options": [
+      "Wenn möglich zu Fuß gehen, Rad fahren oder öffentliche Verkehrsmittel nutzen statt unnötiger Autofahrten",
+      "Jeden Tag mehr Müll im Freien verbrennen",
+      "Motoren lange im Leerlauf lassen",
+      "Regeln zu Fabrikrauch ignorieren"
+    ],
+    "explanation": "Alltagsentscheidungen, die weniger Brennstoff verbrauchen, helfen, Luftverschmutzung zu verringern.",
+    "theoryLines": [
+      "Weniger Brennstoffverbrennung bedeutet weniger Abgas-Schadstoffe.",
+      "Entscheidungen in der Gemeinschaft summieren sich."
+    ]
+  },
+  "p4b1_g6_env_007": {
+    "stem": "Warum schadet das Abholzen von Wäldern der Biodiversität?",
+    "options": [
+      "Es zerstört Lebensräume, die viele Arten zum Leben und Fortpflanzen brauchen",
+      "Wälder unterstützen nie Lebewesen",
+      "Bäume fällen erhöht immer die Artenzahl",
+      "Biodiversität hängt nur von Stadtlichtern ab"
+    ],
+    "explanation": "Wälder beherbergen viele Arten. Wer sie rodet, nimmt Wohnraum und Nahrung weg.",
+    "theoryLines": [
+      "Lebensraumverlust ist eine große Bedrohung für Arten.",
+      "Wälder beeinflussen auch Klima und Wasserkreisläufe."
+    ]
+  },
+  "p4b1_g4_body_001": {
+    "stem": "Was macht das Atemsystem?",
+    "options": [
+      "Es bringt Sauerstoff aus der Luft in den Körper und gibt Kohlenstoffdioxid ab.",
+      "Es zerlegt Nahrung in den Därmen.",
+      "Es pumpt Blut in jeden Körperteil.",
+      "Es steuert die Bewegung von Skelett und Muskeln."
+    ],
+    "explanation": "Das Atemsystem ist für das Atmen zuständig. Beim Einatmen gelangt Luft durch Nase oder Mund in die Luftröhre und in die Lungen. Sauerstoff geht von den Lungen ins Blut, und Kohlenstoffdioxid geht vom Blut zurück in die Lungen und wird ausgeatmet.",
+    "theoryLines": [
+      "Die Lungen sind die Hauptorgane des Atemsystems.",
+      "Einatmen heißt Inspiration; Ausatmen heißt Exspiration."
+    ]
+  },
+  "p4b1_g4_body_002": {
+    "stem": "Welche Organe stehen im Mittelpunkt des menschlichen Atemsystems?",
+    "options": [
+      "Die Lungen — sie nehmen Luft auf und tauschen Sauerstoff gegen Kohlenstoffdioxid.",
+      "Der Magen — er sendet Sauerstoff in alle Körperteile.",
+      "Die Knochen — sie verbinden Atem- und Kreislaufsystem.",
+      "Die Haut — sie nimmt Luft genauso auf wie die Lungen."
+    ],
+    "explanation": "Die Lungen sind die Hauptorgane des Atemsystems. Sie liegen im Brustkorb und dehnen sich beim Einatmen aus. Sauerstoff aus der Luft geht in den Lungen ins Blut, und Kohlenstoffdioxid — ein Abfallgas — geht vom Blut zurück in die Lungen und wird ausgeatmet.",
+    "theoryLines": [
+      "Menschen haben zwei Lungen, je eine auf jeder Brustseite, geschützt vom Rippenkorb.",
+      "Kohlenstoffdioxid entsteht als Abfall, wenn Zellen Sauerstoff nutzen, um Energie freizusetzen."
+    ]
+  },
+  "p4b1_g4_body_003": {
+    "stem": "Was ist die Aufgabe des Verdauungssystems?",
+    "options": [
+      "Es zerlegt Nahrung in Nährstoffe, die der Körper nutzen kann.",
+      "Es transportiert Sauerstoff von den Lungen in den restlichen Körper.",
+      "Es steuert alle Bewegungen des Körpers.",
+      "Es schützt jedes Organ im Körper."
+    ],
+    "explanation": "Das Verdauungssystem zerlegt Nahrung in kleine Moleküle — Nährstoffe wie Zucker, Eiweiße und Fette —, die der Körper aufnehmen und für Energie, Wachstum und Reparatur nutzen kann. Der Vorgang beginnt im Mund und setzt sich durch Magen und Därme fort.",
+    "theoryLines": [
+      "Die Verdauung beginnt schon beim Kauen, wenn Speichel sich mit der Nahrung vermischt.",
+      "Im Darm aufgenommene Nährstoffe gelangen ins Blut und werden zu Zellen im ganzen Körper transportiert."
+    ]
+  },
+  "p4b1_g4_body_004": {
+    "stem": "Wie ist das Herz mit dem Kreislaufsystem verbunden?",
+    "options": [
+      "Es pumpt Blut durch die Blutgefäße",
+      "Es verdaut Fette",
+      "Es filtert Luft",
+      "Es ersetzt die Lungen"
+    ],
+    "explanation": "Das Herz ist die Pumpe für das Blut.",
+    "theoryLines": [
+      "Blut fließt in einem Kreislauf durch den Körper.",
+      "Lungen und Kreislaufsystem arbeiten zusammen."
+    ]
+  },
+  "p4b1_g4_body_005": {
+    "stem": "Warum ist es wichtig, tagsüber Wasser zu trinken?",
+    "options": [
+      "Um den Flüssigkeitshaushalt des Körpers zu unterstützen",
+      "Damit wir nicht atmen müssen",
+      "Nur um die Haare zu stärken",
+      "Um Schlaf zu ersetzen"
+    ],
+    "explanation": "Wasser unterstützt viele Körperprozesse.",
+    "theoryLines": [
+      "Austrocknung ist schädlich.",
+      "Etwas Wasser kommt auch aus der Nahrung."
+    ]
+  },
+  "p4b1_g4_body_006": {
+    "stem": "Was machen Muskeln im Körper?",
+    "options": [
+      "Sie erzeugen Bewegung, wenn sie sich zusammenziehen",
+      "Sie filtern Luft",
+      "Sie erzeugen Samen",
+      "Sie schützen nur die Zähne"
+    ],
+    "explanation": "Muskeln machen Bewegung möglich.",
+    "theoryLines": [
+      "Ein Muskel ist mit einem Knochen verbunden.",
+      "Nerven helfen, Bewegung zu koordinieren."
+    ]
+  },
+  "p4b1_g4_animals_001": {
+    "stem": "Was gilt für Tiere mit einem Skelett aus Knochen?",
+    "options": [
+      "Ihre harten Knochen geben dem Körper Form, Halt und Schutz.",
+      "Alle Tiere haben ein weiches Skelett aus Knorpel statt Knochen.",
+      "Alle Tiere — auch Insekten — haben denselben Typ Knochenskelett.",
+      "Tiere mit Skelett betreiben auch Fotosynthese wie Pflanzen."
+    ],
+    "explanation": "Tiere mit Knochenskelett heißen Wirbeltiere. Ihr Skelett besteht aus hartem Knochengewebe, das den Körper stützt, Organe schützt und Ansatzpunkte für Muskeln bietet. Menschen, Hunde, Vögel und Fische sind Wirbeltiere.",
+    "theoryLines": [
+      "Zu den Wirbeltieren gehören Säugetiere, Vögel, Reptilien, Amphibien und Fische.",
+      "Wirbellose wie Insekten und Würmer haben kein Rückgrat aus Knochen."
+    ]
+  },
+  "p4b1_g4_animals_002": {
+    "stem": "Wie schützen sich viele kleine Tiere vor Räubern?",
+    "options": [
+      "Durch Tarnung, schnelles Laufen, Stacheln oder andere Abwehr je nach Art",
+      "Indem sie immer unter der Erde ohne Sauerstoff leben",
+      "Indem sie überhaupt nie Nahrung brauchen",
+      "Indem sie sich ohne Pause ewig bewegen"
+    ],
+    "explanation": "Tiere nutzen in der Natur viele Schutz- und Tarnstrategien.",
+    "theoryLines": [
+      "Räuber-Beute-Beziehungen prägen Ökosysteme.",
+      "Anpassungen verbessern die Überlebenschancen."
+    ]
+  },
+  "p4b1_g4_animals_003": {
+    "stem": "Was beschreibt einen Fisch?",
+    "options": [
+      "Er lebt im Wasser und atmet mit Kiemen",
+      "Er fliegt mit Flügeln",
+      "Er hat Fell und säugt Junge",
+      "Er frisst nur Steine"
+    ],
+    "explanation": "Ein Fisch ist an das Leben im Wasser angepasst.",
+    "theoryLines": [
+      "Kiemen ermöglichen das Atmen im Wasser.",
+      "Flossen helfen beim Schwimmen."
+    ]
+  },
+  "p4b1_g4_animals_004": {
+    "stem": "Was frisst eine Kuh?",
+    "options": [
+      "Gras und Pflanzen",
+      "Vogelfleisch",
+      "Fisch",
+      "Steine"
+    ],
+    "explanation": "Eine Kuh ist ein pflanzenfressendes Tier.",
+    "theoryLines": [
+      "Pflanzenfresser ernähren sich von Erzeugern.",
+      "Zähne und Verdauung passen zur Nahrung."
+    ]
+  },
+  "p4b1_g4_animals_005": {
+    "stem": "Warum hat ein Vogel Flügel?",
+    "options": [
+      "Zum Fliegen",
+      "Nur zum Schwimmen",
+      "Zum Atmen unter Wasser",
+      "Um Sauerstoff zu erzeugen"
+    ],
+    "explanation": "Flügel machen vielen Vögeln das Fliegen möglich.",
+    "theoryLines": [
+      "Ein leichter Körperbau unterstützt den Flug.",
+      "Federn helfen ebenfalls."
+    ]
+  },
+  "p4b1_g4_animals_006": {
+    "stem": "Was macht eine Biene für Blüten?",
+    "options": [
+      "Sie bestäubt sie",
+      "Sie frisst die Blätter",
+      "Sie schwimmt",
+      "Sie erzeugt Blut"
+    ],
+    "explanation": "Eine Biene trägt Pollen von Blüte zu Blüte.",
+    "theoryLines": [
+      "Bestäubung ist wichtig für die Fortpflanzung von Pflanzen.",
+      "Bestäuber unterstützen viele Pflanzen."
+    ]
+  },
+  "p4b1_g4_materials_001": {
+    "stem": "Was unterscheidet im Unterricht gewöhnlich einen elektrischen Leiter von einem Isolator?",
+    "options": [
+      "Ein Leiter lässt elektrischen Strom leichter durch; ein Isolator widersteht ihm",
+      "Nur die Farbe entscheidet über die Leitfähigkeit",
+      "Isolatoren schmelzen immer bei Zimmertemperatur",
+      "Leiter gibt es nie in Metallform"
+    ],
+    "explanation": "Leiter lassen Strom leichter fließen als Isolatoren.",
+    "theoryLines": [
+      "Metalle sind häufige Leiter im Unterricht.",
+      "Kunststoff und Gummi wirken oft als Isolatoren."
+    ]
+  },
+  "p4b1_g4_materials_002": {
+    "stem": "Was geschieht, wenn Zucker in Wasser gegeben wird?",
+    "options": [
+      "Der Zucker löst sich auf — er vermischt sich vollständig mit dem Wasser, bis man ihn nicht mehr sieht.",
+      "Der Zucker schwimmt auf der Wasseroberfläche und mischt sich nicht.",
+      "Das Wasser wird fest, wenn Zucker hinzugegeben wird.",
+      "Der Zucker sinkt zu Boden und bleibt dort, ohne sich zu mischen."
+    ],
+    "explanation": "Zucker löst sich in Wasser auf: Er zerfällt in winzige Teilchen, die sich gleichmäßig im Wasser verteilen. Das Wasser sieht klar aus, aber der Zucker ist noch da.",
+    "theoryLines": [
+      "Auflösen bedeutet, dass sich ein Stoff vollständig mit einer Flüssigkeit vermischt.",
+      "Zucker, Salz und viele andere Stoffe lösen sich leicht in Wasser."
+    ]
+  },
+  "p4b1_g4_materials_003": {
+    "stem": "Welche Aussage über Aggregatzustände ist richtig?",
+    "options": [
+      "Derselbe Stoff kann je nach Bedingungen fest, flüssig oder gasförmig sein",
+      "Ein Stoff kann seinen Zustand nie ändern",
+      "Nur Metalle haben Aggregatzustände",
+      "Gase sind nie ein Aggregatzustand"
+    ],
+    "explanation": "Erwärmen oder Abkühlen kann den Zustand eines Materials ändern.",
+    "theoryLines": [
+      "Eis, flüssiges Wasser und Wasserdampf sind dieselbe Substanz in verschiedenen Zuständen.",
+      "Zustandsänderungen gehen mit Energieänderungen einher."
+    ]
+  },
+  "p4b1_g4_materials_004": {
+    "stem": "Was ist der Unterschied zwischen einem elektrischen Leiter und einem Isolator?",
+    "options": [
+      "Ein Leiter lässt elektrischen Strom leichter fließen als ein Isolator",
+      "Ein Isolator leitet Strom immer besser als Metall",
+      "Es gibt keinen Unterschied in ihrem Verhalten mit Elektrizität",
+      "Leiter gibt es nur als Flüssigkeiten"
+    ],
+    "explanation": "Leitfähigkeit beschreibt, wie leicht elektrischer Strom durch ein Material fließen kann.",
+    "theoryLines": [
+      "Drähte sind oft Metallleiter.",
+      "Isolatoren helfen, Elektrizität dort zu halten, wo sie sein soll."
+    ]
+  },
+  "p4b1_g4_materials_005": {
+    "stem": "Welcher Stoff löst sich in Wasser auf?",
+    "options": [
+      "Salz — es löst sich auf und vermischt sich vollständig mit dem Wasser.",
+      "Wärme zuzuführen hilft nicht, etwas im Wasser aufzulösen.",
+      "Sand — er zerfällt in winzige Stücke, die sich dauerhaft mit Wasser vermischen.",
+      "Öl — es vermischt sich beim Umrühren gleichmäßig mit Wasser."
+    ],
+    "explanation": "Salz löst sich in Wasser auf: Es zerfällt in Teilchen, die sich gleichmäßig verteilen. Sand und Öl lösen sich in Wasser nicht.",
+    "theoryLines": [
+      "Nicht alle Stoffe lösen sich in Wasser.",
+      "Löslich sind Stoffe wie Salz und Zucker; unlöslich sind zum Beispiel Sand und Öl."
+    ]
+  },
+  "p4b1_g4_materials_006": {
+    "stem": "Welche Beschreibung passt zu Aggregatzuständen?",
+    "options": [
+      "Fest, flüssig und gasförmig sind häufige Zustände, die Materialien annehmen können",
+      "Materialien haben für immer nur einen möglichen Zustand",
+      "Nur Lebewesen haben Aggregatzustände",
+      "Aggregatzustand bedeutet nur Farbe"
+    ],
+    "explanation": "Materialien können unter verschiedenen Bedingungen in verschiedenen Zuständen vorliegen.",
+    "theoryLines": [
+      "Schmelzen und Gefrieren sind Zustandsänderungen.",
+      "Verdunstung und Kondensation sind ebenfalls Zustandsänderungen."
+    ]
+  },
+  "p4b1_g4_experiments_001": {
+    "stem": "Was solltest du vor einem Klassenzimmer-Experiment zuerst klären?",
+    "options": [
+      "Was du prüfst, was gleich bleibt und was du messen wirst",
+      "Nur die Farbe des Heftes einer Schülerin oder eines Schülers",
+      "Das Ergebnis danach festlegen, was bequem ist",
+      "Das Aufschreiben weglassen, damit du keine Daten sammelst"
+    ],
+    "explanation": "Eine Forschungsfrage und ein Plan für die Variable, die du änderst, brauchen Planung vor dem Experiment.",
+    "theoryLines": [
+      "Ein gutes Experiment beginnt mit einer klaren Hypothese.",
+      "Messungen unterstützen Schlussfolgerungen."
+    ]
+  },
+  "p4b1_g4_experiments_002": {
+    "stem": "Was sollte ein vernünftiger Plan vor einem Klassenzimmer-Experiment enthalten?",
+    "options": [
+      "Eine Hypothese, Variablen, Geräte und eine Art, Ergebnisse aufzuschreiben",
+      "Jede Bedingung gleichzeitig ändern",
+      "Messen vermeiden",
+      "Das Ergebnis vor dem Prüfen festlegen"
+    ],
+    "explanation": "Die Planung deckt ab, was geprüft wird und wie gemessen wird.",
+    "theoryLines": [
+      "Planung verhindert Fehler.",
+      "Sicherheit gehört zur Vorbereitung."
+    ]
+  },
+  "p4b1_g4_experiments_003": {
+    "stem": "Was ist die Aufgabe einer Kontrollgruppe?",
+    "options": [
+      "Vergleich, ohne die geprüfte Variable zu ändern",
+      "Daten löschen",
+      "Alles ändern",
+      "Sie wird nie gebraucht"
+    ],
+    "explanation": "Eine Kontrolle isoliert die Wirkung der Änderung.",
+    "theoryLines": [
+      "Eine Kontrolle ist eine Vergleichsbedingung.",
+      "Vergleich stärkt eine Schlussfolgerung."
+    ]
+  },
+  "p4b1_g4_experiments_004": {
+    "stem": "Warum wiederholst du eine Messung?",
+    "options": [
+      "Um Fehler zu finden",
+      "Es ist immer unnötig",
+      "Eine Messung reicht immer",
+      "Es ändert das Ziel des Experiments"
+    ],
+    "explanation": "Wiederholen verbessert die Zuverlässigkeit.",
+    "theoryLines": [
+      "Zufällige Fehler können vorkommen.",
+      "Wiederholen verringert Unsicherheit."
+    ]
+  },
+  "p4b1_g4_experiments_005": {
+    "stem": "Welches Werkzeug misst die Temperatur?",
+    "options": [
+      "Ein Thermometer",
+      "Ein Lineal",
+      "Eine Waage",
+      "Eine Brille"
+    ],
+    "explanation": "Ein Thermometer misst, wie warm oder kalt etwas ist.",
+    "theoryLines": [
+      "Temperatur wird oft in Grad Celsius oder Fahrenheit angegeben.",
+      "Passe das Werkzeug an die Variable an."
+    ]
+  },
+  "p4b1_g4_experiments_006": {
+    "stem": "Was ist eine datengestützte Schlussfolgerung?",
+    "options": [
+      "Eine, die durch die Messergebnisse gestützt wird",
+      "Eine, die nur auf Gefühl beruht",
+      "Eine ohne Experiment",
+      "Eine, die zufällig gewählt wird"
+    ],
+    "explanation": "Belege aus dem Experiment stützen die Schlussfolgerung.",
+    "theoryLines": [
+      "Eine Schlussfolgerung kommt nach der Auswertung.",
+      "Sie sollte nicht vor dem Messen kommen."
+    ]
+  },
+  "p4b1_g4_earth_space_001": {
+    "stem": "Warum ist das Meer nahe am Äquator wärmer als nahe an den Polen?",
+    "options": [
+      "Es erhält das ganze Jahr direkteres Sonnenlicht, das das Wasser stärker erwärmt.",
+      "Der Mond erwärmt das Meerwasser nahe am Äquator stärker.",
+      "Alle Teile des Meeres sind unabhängig vom Ort gleich warm.",
+      "Wind mit warmer Luft vom Mond ist nahe am Äquator am stärksten."
+    ],
+    "explanation": "Nahe am Äquator treffen die Sonnenstrahlen die Meeresoberfläche in einem direkteren Winkel und konzentrieren mehr Energie auf eine kleinere Fläche. Nahe an den Polen trifft das Sonnenlicht flach und verteilt sich über eine größere Fläche — pro Quadratmeter Meer kommt weniger Wärme an.",
+    "theoryLines": [
+      "Der Winkel, in dem Sonnenlicht eine Oberfläche trifft, beeinflusst, wie viel Energie diese Oberfläche erhält.",
+      "Meeresströmungen bewegen ebenfalls warmes und kaltes Wasser um die Erde und beeinflussen Temperaturen weltweit."
+    ]
+  },
+  "p4b1_g4_earth_space_002": {
+    "stem": "Was geschieht mit dem Boden an einem steilen Hang mit wenig Pflanzenbewuchs nach starkem Regen?",
+    "options": [
+      "Er wird eher abgetragen und den Hang hinuntergespült",
+      "Er wird sofort immer zu härterem Gestein",
+      "Regen bewegt Boden nie",
+      "Boden bewegt sich nur bergauf"
+    ],
+    "explanation": "Kahle Hänge verlieren Boden leichter, wenn Regen schnell abfließt.",
+    "theoryLines": [
+      "Pflanzenwurzeln helfen, den Boden festzuhalten.",
+      "Erosion bewegt Boden und kann Bäche trüben."
+    ]
+  },
+  "p4b1_g4_earth_space_003": {
+    "stem": "Was ist typisch für Winterwetter in einem mediterranen Klima wie in Israel?",
+    "options": [
+      "Kühlere Temperaturen und eine größere Chance auf Regen",
+      "Immer heißer als im Sommer und nie Regen",
+      "Jeden Tag Schnee in jeder Stadt",
+      "Überhaupt keine Jahreszeiten"
+    ],
+    "explanation": "In mediterranen Klimaten sind Winter oft kühler und feuchter als Sommer.",
+    "theoryLines": [
+      "Jahreszeiten folgen jährlichen Klimamustern.",
+      "Das Wetter an einem einzelnen Tag kann trotzdem schwanken."
+    ]
+  },
+  "p4b1_g4_earth_space_004": {
+    "stem": "Was hilft, Bodenerosion an einem Hang zu verhindern?",
+    "options": [
+      "Pflanzenbewuchs und Wurzeln, die den Boden festhalten",
+      "Alle Pflanzen entfernen",
+      "Den Hang völlig kahl machen",
+      "Öl auf den Boden gießen"
+    ],
+    "explanation": "Pflanzenbewuchs verlangsamt den Abfluss und verankert den Boden.",
+    "theoryLines": [
+      "Bodenbedeckung schützt den Boden vor Regentropfen.",
+      "Erosionsschutz schützt Land und Wasser."
+    ]
+  },
+  "p4b1_g4_earth_space_005": {
+    "stem": "Wann bekommt die Mittelmeerregion gewöhnlich den meisten Regen?",
+    "options": [
+      "In der kühleren Regenzeit (oft im Winter)",
+      "Nur mittags an jedem Tag des Jahres",
+      "Nie in irgendeiner Jahreszeit",
+      "Nur in den heißesten trockenen Sommerwochen"
+    ],
+    "explanation": "Mediterrane Klimate haben typischerweise feuchtere Winter und trockenere Sommer.",
+    "theoryLines": [
+      "Jahreszeitliche Regenmuster prägen die Wasserversorgung.",
+      "Klima beschreibt langfristige Mittelwerte."
+    ]
+  },
+  "p4b1_g4_earth_space_006": {
+    "stem": "Was könnte nach starkem Regen in einem bebauten Gebiet mit einem Bach geschehen?",
+    "options": [
+      "Der Wasserstand kann schnell steigen, weil mehr Abfluss den Bach erreicht",
+      "Regen erreicht in Städten nie Bäche",
+      "Bäche trocknen bei Regen immer aus",
+      "Gebäude nehmen allen Regen auf, sodass nichts abfließt"
+    ],
+    "explanation": "Harte Oberflächen leiten Regen schneller in Abflüsse und Bäche, deshalb kann der Pegel rasch steigen.",
+    "theoryLines": [
+      "Auf gepflastertem Boden nimmt der Abfluss zu.",
+      "Hochwasserrisiko hängt mit Regen und Bodenbedeckung zusammen."
+    ]
+  },
+  "p4b1_g4_environment_001": {
+    "stem": "Warum ist Wasserverschmutzung schädlich für Tiere in Flüssen und Seen?",
+    "options": [
+      "Verschmutztes Wasser schädigt die Gesundheit von Tieren, die darin trinken oder leben",
+      "Tiere finden immer irgendwo sauberes Wasser, deshalb spielt Verschmutzung keine Rolle",
+      "Alle Tiere in Wäldern sind von Wasserverschmutzung in Flüssen unberührt",
+      "Regen wäscht alle Verschmutzung weg, bevor sie Lebewesen schaden kann"
+    ],
+    "explanation": "Verschmutzung im Wasser kann Fische, Frösche und andere Lebewesen vergiften, die sauberes Wasser zum Trinken, Atmen und Überleben brauchen.",
+    "theoryLines": [
+      "Sauberes Wasser ist für alle Tiere und Pflanzen in und um ein Ökosystem unerlässlich.",
+      "Wasserverschmutzung stört die Nahrungskette und kann viele Lebewesen schädigen oder töten."
+    ]
+  },
+  "p4b1_g4_environment_002": {
+    "stem": "Was ist ein Beispiel dafür, Einwegplastik in der Schule zu verringern?",
+    "options": [
+      "Eine wiederverwendbare Trinkflasche statt Einwegplastikflaschen nutzen",
+      "Mehr Verpackungen auf dem Schulhof wegwerfen",
+      "Jeden Tag nur Einwegtüten kaufen",
+      "Plastik im Klassenzimmer verbrennen"
+    ],
+    "explanation": "Wiederverwendbare Dinge verringern den Bedarf an Wegwerfplastik.",
+    "theoryLines": [
+      "Abfallvermeidung beginnt vor dem Recyceln.",
+      "Plastikmüll kann Wildtiere schädigen."
+    ]
+  },
+  "p4b1_g4_environment_003": {
+    "stem": "Wie überleben Tiere in ihrer Umwelt?",
+    "options": [
+      "Sie entwickeln besondere Körpermerkmale und Verhaltensweisen, die ihnen helfen, Nahrung zu finden und in ihrem Lebensraum sicher zu bleiben.",
+      "Alle Tiere nutzen in jeder Umwelt genau dieselben Überlebensstrategien.",
+      "Tiere verändern die Umwelt immer vollständig nach ihren Bedürfnissen.",
+      "Nur Pflanzen können sich an ihre Umwelt anpassen — Tiere nicht."
+    ],
+    "explanation": "Tiere sind an ihre Lebensräume angepasst. Ein Eisbär hat dichtes Fell, um in der Arktis warm zu bleiben. Ein Kamel hat einen Höcker, um Fett für lange Wüstenreisen zu speichern. Diese besonderen Merkmale und Verhaltensweisen, über viele Generationen geformt, helfen jedem Tier, dort zu überleben, wo es lebt.",
+    "theoryLines": [
+      "Eine Anpassung ist ein Merkmal oder Verhalten, das einem Lebewesen hilft, in seiner Umwelt zu überleben.",
+      "Tiere, die gut an ihren Lebensraum angepasst sind, überleben eher und geben ihre Merkmale an Nachkommen weiter."
+    ]
+  },
+  "p4b1_g4_environment_004": {
+    "stem": "Wie hilft Recycling in der Schule der Umwelt?",
+    "options": [
+      "Es hält Materialien im Gebrauch und kann Deponiemüll und neuen Ressourcenverbrauch verringern",
+      "Es erzeugt absichtlich mehr Müll",
+      "Es hat keinen Einfluss auf Ressourcen",
+      "Es ersetzt völlig den Bedarf, Abfall zu vermeiden"
+    ],
+    "explanation": "Recycling kann Materialien sparen und Ablagerung verringern, besonders zusammen mit Vermeiden und Wiederverwenden.",
+    "theoryLines": [
+      "Getrenntes Recycling funktioniert besser als gemischter Müll.",
+      "Vermeiden und Wiederverwenden kommen trotzdem zuerst."
+    ]
+  },
+  "p4b1_g4_environment_005": {
+    "stem": "Welche menschliche Tätigkeit schadet Wäldern am meisten?",
+    "options": [
+      "Das Fällen großer Mengen von Bäumen für Holz oder um Land für Landwirtschaft freizumachen.",
+      "Das Pflanzen von Setzlingen, um entfernte Bäume zu ersetzen.",
+      "Das Gehen auf markierten Wanderwegen durch den Wald.",
+      "Das Beobachten und Fotografieren von Wildtieren, ohne sie zu stören."
+    ],
+    "explanation": "Abholzung — das großflächige Fällen von Wäldern — zerstört den Lebensraum unzähliger Pflanzen und Tiere. Sie verringert auch die Zahl der Bäume, die Kohlenstoffdioxid aus der Luft aufnehmen. Wird Waldland für Landwirtschaft oder Bebauung gerodet, brechen Ökosysteme zusammen und viele Arten verlieren ihr Zuhause.",
+    "theoryLines": [
+      "Wälder beherbergen mehr als die Hälfte aller Landarten auf der Erde.",
+      "Bäume helfen auch, den Wasserkreislauf zu regulieren und Bodenerosion zu verhindern."
+    ]
+  },
+  "p4b1_g2_plants_001": {
+    "stem": "Was braucht eine Pflanze gewöhnlich zum Wachsen?",
+    "options": [
+      "Licht, Wasser und Luft",
+      "Nur Dunkelheit und kein Wasser",
+      "Nur Steine ohne Luft",
+      "Nur Plastikboden"
+    ],
+    "explanation": "Die meisten Pflanzen brauchen Licht, Wasser und Luft, um gut zu wachsen.",
+    "theoryLines": [
+      "Wurzeln nehmen Wasser aus dem Boden auf.",
+      "Blätter nutzen Licht, um Nahrung herzustellen."
+    ]
+  },
+  "p4b1_g2_plants_002": {
+    "stem": "Woran erkennen wir, dass eine Pflanze lebt — im Gegensatz zu einem Stein?",
+    "options": [
+      "Sie kann wachsen und braucht Wasser und Licht",
+      "Sie verändert sich nie",
+      "Sie ist immer genau wie ein Stein",
+      "Sie reagiert nicht auf ihre Umgebung"
+    ],
+    "explanation": "Lebende Pflanzen wachsen und brauchen Ressourcen; Steine wachsen nicht wie Pflanzen.",
+    "theoryLines": [
+      "Lebewesen wachsen und reagieren.",
+      "Nichtlebende Dinge wachsen nicht so wie Pflanzen."
+    ]
+  },
+  "p4b1_g2_plants_003": {
+    "stem": "Welcher Pflanzenteil liegt gewöhnlich unter der Erde?",
+    "options": [
+      "Die Wurzeln",
+      "Nur die Blüten",
+      "Nur die Früchte",
+      "Die Stängelspitze in der Luft"
+    ],
+    "explanation": "Wurzeln wachsen gewöhnlich unter der Erde und nehmen Wasser auf.",
+    "theoryLines": [
+      "Wurzeln verankern die Pflanze.",
+      "Wurzeln helfen der Pflanze, Wasser und Mineralstoffe zu bekommen."
+    ]
+  },
+  "p4b1_g2_animals_001": {
+    "stem": "Was brauchen alle lebenden Tiere?",
+    "options": [
+      "Nahrung für Energie und Wasser, um am Leben zu bleiben.",
+      "Plastikbehälter, um ihre Nahrung zu lagern.",
+      "Nur Wasser — Nahrung ist nicht nötig.",
+      "Gar nichts — Tiere können ohne Nahrung oder Wasser überleben."
+    ],
+    "explanation": "Alle lebenden Tiere brauchen Nahrung für die Energie zum Bewegen, Wachsen und Gesundbleiben. Sie brauchen auch Wasser, das den größten Teil ihres Körpers ausmacht und an fast jedem Lebensprozess beteiligt ist.",
+    "theoryLines": [
+      "Nahrung gibt Tieren die Energie, die sie zum Bewegen, Wachsen und Warmbleiben brauchen.",
+      "Wasser ist wichtig für Verdauung, Kreislauf und das Leben der Zellen."
+    ]
+  },
+  "p4b1_g2_animals_002": {
+    "stem": "Wie können wir Tiere nach Körpermerkmalen oder ihrer Bewegungsweise einteilen?",
+    "options": [
+      "Nach Merkmalen wie Körperbedeckung, Beinzahl oder Bewegungsweise",
+      "Alle Tiere bewegen sich gleich und lassen sich nicht nach Bewegung einteilen",
+      "Tiere kann man nur nach den Pflanzenarten einteilen, die sie fressen",
+      "Wir können Tiere nicht einteilen, weil jedes völlig anders ist"
+    ],
+    "explanation": "Wissenschaftlerinnen und Wissenschaftler teilen Tiere nach gemeinsamen Merkmalen ein, zum Beispiel Körperbedeckung (Fell, Schuppen, Federn), Beinzahl und Bewegungsweise (schwimmen, fliegen, gehen).",
+    "theoryLines": [
+      "Genaues Beobachten hilft, Tiere nach körperlichen Merkmalen zu ordnen.",
+      "Tiere kann man nach Nahrung, Bewegung oder Lebensraum einteilen."
+    ]
+  },
+  "p4b1_g2_environment_001": {
+    "stem": "Was beschreibt das Wetter am besten?",
+    "options": [
+      "Die Bedingungen draußen an einem bestimmten Tag, zum Beispiel Temperatur, Regen oder Sonne.",
+      "Genau dieselben Bedingungen, die sich jeden Tag im Jahr wiederholen.",
+      "Nur die Menge an Sonnenschein an einem bestimmten Ort.",
+      "Wie warm oder kalt der Mond nachts ist."
+    ],
+    "explanation": "Wetter beschreibt die Bedingungen in der Atmosphäre an einem bestimmten Tag — darunter Temperatur, Regen, Wind und Bewölkung.",
+    "theoryLines": [
+      "Das Wetter kann sich von Tag zu Tag ändern.",
+      "Temperatur, Wind, Wolken und Niederschlag gehören alle zum Wetter."
+    ]
+  },
+  "p4b1_g2_environment_002": {
+    "stem": "Warum sind Wolken manchmal wichtig für Regen?",
+    "options": [
+      "Wassertropfen in Wolken können wachsen und als Regen fallen",
+      "Wolken bestehen nur aus Rauch, der nie Wasser hält",
+      "Regen kommt nur aus unterirdischen Rohren",
+      "Wolken stoppen immer jedes Wetter"
+    ],
+    "explanation": "Wolken enthalten winzige Wassertröpfchen, die als Niederschlag fallen können.",
+    "theoryLines": [
+      "Wasser verdunstet, bildet Wolken und kann als Regen fallen.",
+      "Der Wasserkreislauf bewegt Wasser um die Erde."
+    ]
+  },
+  "p4b1_g2_earth_space_001": {
+    "stem": "Was geschieht im Allgemeinen mit dem Tageslicht im Sommer im Vergleich zum Winter?",
+    "options": [
+      "Die Tage sind im Sommer länger als im Winter",
+      "Die Tage sind immer gleich lang",
+      "Wintertage sind immer länger",
+      "Nachts wird es im Sommer nie dunkel"
+    ],
+    "explanation": "An vielen Orten dauern Sommertage länger als Wintertage.",
+    "theoryLines": [
+      "Tag und Nacht entstehen durch die Drehung der Erde.",
+      "Jahreszeiten ändern die Tageslänge im Verlauf des Jahres."
+    ]
+  },
+  "p4b1_g2_earth_space_002": {
+    "stem": "Wie unterscheidet sich die Nacht vom Tag?",
+    "options": [
+      "Nachts ist es dunkler, weil unser Teil der Erde von der Sonne abgewandt ist.",
+      "Nachts ist es immer heißer, weil der Mond die Luft erwärmt.",
+      "Die Sonne reist jede Nacht zu einem anderen Planeten.",
+      "Sterne leuchten nur tagsüber und verschwinden nachts völlig."
+    ],
+    "explanation": "Die Erde dreht sich alle 24 Stunden um ihre Achse. Wenn die Seite der Erde, auf der du lebst, von der Sonne abgewandt ist, erreicht dich ihr Licht nicht — es wird Nacht. Ohne Sonnenlicht ist es dunkler und gewöhnlich kühler als am Tag.",
+    "theoryLines": [
+      "Tag und Nacht entstehen durch die Erdrotation, nicht dadurch, dass die Sonne wandert.",
+      "Mond und Sterne werden nachts sichtbar, weil die helle Sonne den Himmel nicht mehr erhellt."
+    ]
+  },
+  "p4b1_g2_materials_001": {
+    "stem": "Woran erkennst du einen harten Gegenstand von einem weichen?",
+    "options": [
+      "Einen harten Gegenstand kann man schwerer zusammendrücken oder biegen",
+      "Hart und weich fühlen sich immer gleich an",
+      "Nur die Farbe verrät die Härte",
+      "Weiche Gegenstände sind immer aus Metall"
+    ],
+    "explanation": "Anfassen und vorsichtiges Prüfen helfen, Härte und Weichheit zu vergleichen.",
+    "theoryLines": [
+      "Materialien haben unterschiedliche Eigenschaften.",
+      "Wir wählen Materialien für Aufgaben nach diesen Eigenschaften."
+    ]
+  },
+  "p4b1_g2_materials_002": {
+    "stem": "Was ist an Glas als Material besonders?",
+    "options": [
+      "Licht kann hindurchgehen, deshalb ist Glas durchsichtig.",
+      "Glas blockiert Licht immer vollständig und ist völlig undurchsichtig.",
+      "Glas nimmt alle Lichtfarben auf und wandelt sie in Wärme um.",
+      "Glas schwimmt immer auf Wasser, egal welche Form es hat."
+    ],
+    "explanation": "Glas ist ein durchsichtiges Material: Licht geht gerade hindurch. Deshalb eignet es sich für Fenster, Brillen und Flaschen, bei denen man sehen muss, was drin ist. Nicht alle Materialien lassen Licht durch — Holz und Metall zum Beispiel sind undurchsichtig.",
+    "theoryLines": [
+      "Durchsichtige Materialien wie Glas lassen alles Licht durch, sodass du klar sehen kannst.",
+      "Durchscheinende Materialien lassen etwas Licht durch, streuen es aber; undurchsichtige blockieren alles Licht."
+    ]
+  },
+  "p4b1_g2_materials_003": {
+    "stem": "Was ist ein Beispiel für ein Metallmaterial im Klassenzimmer?",
+    "options": [
+      "Eine Metallbüroklammer oder eine Scherenklinge",
+      "Nur ein Holzbleistift",
+      "Nur ein Radiergummi",
+      "Nur eine Papierserviette"
+    ],
+    "explanation": "Viele Werkzeuge haben Metallteile, die fest und glänzend sind.",
+    "theoryLines": [
+      "Metalle sind oft hart und können Wärme oder Elektrizität leiten.",
+      "Gegenstände im Klassenzimmer bestehen aus vielen Materialien."
+    ]
+  },
+  "p4b1_g2_experiments_001": {
+    "stem": "Was solltest du tun, bevor du eine Beobachtung im Klassenzimmer zusammenfasst?",
+    "options": [
+      "Genau hinsehen und aufschreiben, was du gesehen hast",
+      "Die Antwort raten, ohne hinzusehen",
+      "Die Ergebnisse ändern, damit sie zu einer Freundin oder einem Freund passen",
+      "Notizen völlig weglassen"
+    ],
+    "explanation": "Gute Schlussfolgerungen beginnen mit genauer Beobachtung und Notizen.",
+    "theoryLines": [
+      "Wissenschaftlerinnen und Wissenschaftler schreiben auf, was sie beobachten.",
+      "Notizen helfen dir, dich zu erinnern und zu vergleichen."
+    ]
+  },
+  "p4b1_g2_experiments_002": {
+    "stem": "Warum messen Wissenschaftlerinnen und Wissenschaftler in einem Experiment manchmal etwas zweimal?",
+    "options": [
+      "Um zu prüfen, ob das Ergebnis beide Male gleich ist und dadurch vertrauenswürdiger wird.",
+      "Weil eine einzelne Messung immer falsch ist.",
+      "Um die erste Zahl zu löschen und neu anzufangen.",
+      "Weil die Regeln der Naturwissenschaften für jedes Ergebnis mindestens drei Messungen verlangen."
+    ],
+    "explanation": "Eine Messung zu wiederholen hilft, Fehler zu finden und bestätigt, dass das Ergebnis zuverlässig ist. Stimmen beide Messungen überein, kannst du sicherer sein. Unterscheiden sie sich, weißt du, dass etwas schiefgelaufen sein könnte, und kannst noch einmal messen.",
+    "theoryLines": [
+      "Ein Ergebnis mehr als einmal zu prüfen verbessert die Zuverlässigkeit deiner Daten.",
+      "Wenn wiederholte Ergebnisse ähnlich sind, nennt man sie übereinstimmend — das stärkt das Vertrauen in die Befunde."
+    ]
+  },
+  "p4b1_g2_body_001": {
+    "stem": "Neben Nahrung und Wasser: Was ist ein weiteres Grundbedürfnis des menschlichen Körpers?",
+    "options": [
+      "Luft zum Atmen",
+      "Nur Videospiele",
+      "Nur Süßigkeiten",
+      "Nie schlafen"
+    ],
+    "explanation": "Der Körper braucht Luft, Nahrung, Wasser und Ruhe, um gesund zu bleiben.",
+    "theoryLines": [
+      "Atmen bringt Sauerstoff hinein.",
+      "Grundbedürfnisse halten den Körper in Gang."
+    ]
+  }
+}

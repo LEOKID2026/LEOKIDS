@@ -9,30 +9,31 @@ import {
   normalizeStudentActivityScope,
   studentActivityScopeBadgeHe,
 } from "../../lib/classroom-activities/student-activity-scope-labels.client.js";
-import { personalActivitiesSectionTitleHe } from "../../lib/teacher-portal/teacher-ui.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+
+const SLUG = "components__student__StudentClassroomActivitiesPanel";
 
 function ActivityCard({ a, scopeBadge = null }) {
   const { tokens: T } = useStudentTheme();
   const href = `/student/activity/${encodeURIComponent(a.activityId)}`;
+  const c = (key) => globalBurnDownCopy(SLUG, key);
   const cta =
     a.studentStatus === "submitted"
-      ? "View result"
+      ? c("view_result")
       : a.studentStatus === "in_progress"
-        ? "Continue"
-        : "Start";
+        ? c("continue")
+        : c("start");
 
   return (
     <div className={T.activityCard}>
       <div>
         <div className="flex flex-wrap items-center gap-2 justify-end">
           <h3 className={T.activityCardTitle}>{a.title}</h3>
-          {scopeBadge ? (
-            <span className={T.activityScopeBadge}>{scopeBadge}</span>
-          ) : null}
+          {scopeBadge ? <span className={T.activityScopeBadge}>{scopeBadge}</span> : null}
         </div>
         <p className={T.activityCardMeta}>
-          {activityModeLabelHe(a.mode)} · {a.questionCount} questions ·{" "}
+          {activityModeLabelHe(a.mode)} · {a.questionCount} {c("questions_meta")} ·{" "}
           {studentActivityStatusLabelHe(a.studentStatus)}
         </p>
       </div>
@@ -52,6 +53,7 @@ export default function StudentClassroomActivitiesPanel({
   emptyFallback = null,
 }) {
   const { tokens: T } = useStudentTheme();
+  const c = (key) => globalBurnDownCopy(SLUG, key);
   const useParentActivities = activitiesProp != null;
   const [activities, setActivities] = useState(() =>
     useParentActivities ? activitiesProp : []
@@ -104,7 +106,7 @@ export default function StudentClassroomActivitiesPanel({
     return emptyFallback;
   }
 
-  const personalSectionTitle = personalActivitiesSectionTitleHe();
+  const personalSectionTitle = globalBurnDownCopy(SLUG, "personal_activities_section");
   const classActivities = activities.filter(
     (a) => normalizeStudentActivityScope(a.scope) === "class"
   );
@@ -117,12 +119,10 @@ export default function StudentClassroomActivitiesPanel({
 
   return (
     <>
-      <p className={T.panelIntro}>
-        Tasks from your teacher, parent, or class — tap Start or Continue to open.
-      </p>
+      <p className={T.panelIntro}>{c("intro")}</p>
       {classActivities.length > 0 ? (
         <section className={T.activitySection}>
-          <h2 className={T.activitySectionTitle}>Class activities</h2>
+          <h2 className={T.activitySectionTitle}>{c("class_activities")}</h2>
           <div className="grid gap-3">
             {classActivities.map((a) => (
               <ActivityCard key={a.activityId} a={a} />
@@ -151,7 +151,9 @@ export default function StudentClassroomActivitiesPanel({
           className={`${T.activitySection} border-emerald-200 bg-emerald-50/50`}
           data-testid="student-parent-activities"
         >
-          <h2 className={`${T.activitySectionTitle} text-emerald-900`}>Parent activities</h2>
+          <h2 className={`${T.activitySectionTitle} text-emerald-900`}>
+            {c("parent_activities")}
+          </h2>
           <div className="grid gap-3">
             {parentActivities.map((a) => (
               <ActivityCard

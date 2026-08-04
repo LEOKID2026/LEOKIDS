@@ -1,7 +1,7 @@
 {
   "framework": {
     "version": "1.1.0",
-    "name": "إطار التشخيص المهني V1",
+    "name": "إطار التحليل التربوي V1",
     "supportedSubjectIds": [
       "الرياضيات",
       "هندسة",
@@ -9,16 +9,16 @@
       "علوم"
     ],
     "evidenceLevelEnum": [
-      "لا أحد",
+      "لا شيء",
       "رفيع",
       "محدود",
-      "واسطة",
+      "متوسط",
       "قوي"
     ],
     "confidenceEnum": [
       "very_low",
       "قليل",
-      "واسطة",
+      "متوسط",
       "عالي"
     ],
     "recommendationTypeEnum": [
@@ -45,10 +45,10 @@
     "math": {
       "arithmetic_operations": {
         "subskills": [
-          "إضافة",
+          "جمع",
           "الطرح",
           "الضرب",
-          "قسم",
+          "قسمة",
           "order_of_operations"
         ]
       },
@@ -172,7 +172,7 @@
       "shapes": {
         "subskills": [
           "identify_shapes",
-          "ملكيات",
+          "خصائص",
           "compare_shapes"
         ]
       },

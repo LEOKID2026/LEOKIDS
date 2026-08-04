@@ -1,0 +1,348 @@
+content-packs/it-CH/demo/ui.json	bar.badge	"Modalità demo"	no
+content-packs/it-CH/demo/ui.json	bar.playExpired	"Il tempo è scaduto. Puoi ricominciare."	no
+content-packs/it-CH/demo/ui.json	bar.playTime	"Tempo di gioco"	no
+content-packs/it-CH/demo/ui.json	bar.changeGrade	"Cambia classe"	no
+content-packs/it-CH/demo/ui.json	bar.exitDemo	"Esci dalla demo"	no
+content-packs/it-CH/demo/ui.json	enter.pageTitle	"Modalità demo — LEO KIDS"	no
+content-packs/it-CH/demo/ui.json	enter.pageDescription	"Prova il mondo dei bambini senza registrarti."	no
+content-packs/it-CH/demo/ui.json	enter.heading	"Modalità demo per i genitori"	no
+content-packs/it-CH/demo/ui.json	enter.intro	"Scegli una classe ed esplora il mondo dei bambini. {minutes} minuti di gioco e apprendimento — senza registrarti."	no
+content-packs/it-CH/demo/ui.json	enter.activeSessionNote	"Hai una demo attiva: cambiare classe non azzera il cronometro."	no
+content-packs/it-CH/demo/ui.json	enter.enteringButton	"Ingresso…"	no
+content-packs/it-CH/demo/ui.json	homeButton.labelDesktop	"Prova il mondo dei bambini"	no
+content-packs/it-CH/demo/ui.json	homeButton.ariaLabel	"Prova il mondo dei bambini — modalità demo"	no
+content-packs/it-CH/demo/ui.json	homeButton.dismissAriaLabel	"Nascondi il pulsante demo"	no
+content-packs/it-CH/demo/ui.json	gate.loading	"Caricamento della modalità demo…"	no
+content-packs/it-CH/demo/ui.json	gate.loadError	"Impossibile caricare la modalità demo. Prova ad aggiornare la pagina."	no
+content-packs/it-CH/demo/ui.json	timeExpiredModal.title	"Il tempo della demo è scaduto"	no
+content-packs/it-CH/demo/ui.json	timeExpiredModal.body	"Sono passati {minutes} minuti dall'inizio della demo. Puoi continuare a esplorare il mondo dei bambini, ma non puoi avviare un nuovo gioco o una nuova attività."	no
+content-packs/it-CH/demo/ui.json	timeExpiredModal.inProgressNote	"I giochi o le attività già in corso continueranno fino alla fine."	no
+content-packs/it-CH/demo/ui.json	timeExpiredModal.dismiss	"Ho capito"	no
+content-packs/it-CH/demo/ui.json	timeExpiredModal.restart	"Avvia una nuova demo"	no
+content-packs/it-CH/demo/ui.json	onlineGameUnavailable.title	"I giochi online non sono disponibili in modalità demo"	no
+content-packs/it-CH/demo/ui.json	onlineGameUnavailable.body	"In modalità demo puoi esplorare la sala giochi e vedere i giochi, ma il multigiocatore online non è attivo."	no
+content-packs/it-CH/demo/ui.json	onlineGameUnavailable.backToArcade	"Torna alla sala giochi"	no
+content-packs/it-CH/demo/ui.json	display.studentName	"Modalità demo"	no
+content-packs/it-CH/demo/ui.json	display.greeting	"Benvenuto nella modalità demo"	no
+content-packs/it-CH/demo/ui.json	display.arcadePlayerName	"Giocatore demo"	no
+content-packs/it-CH/demo/ui.json	display.myRoomMessage	"La mia stanza — anteprima demo"	no
+content-packs/it-CH/demo/ui.json	display.learningMinutesScope	"Dai riepiloghi delle sessioni (demo)"	no
+content-packs/it-CH/demo/ui.json	display.allSubjectsScope	"Tutte le materie"	no
+content-packs/it-CH/demo/ui.json	display.encouragement	"Continua a esercitarti: questa è una demo!"	no
+content-packs/it-CH/demo/ui.json	missions.mathTitle	"Esercitati in matematica"	no
+content-packs/it-CH/demo/ui.json	missions.mathDescription	"Rispondi a 5 domande di matematica"	no
+content-packs/it-CH/demo/ui.json	missions.soloTitle	"Gioco individuale"	no
+content-packs/it-CH/demo/ui.json	missions.soloDescription	"Gioca a un gioco individuale"	no
+content-packs/it-CH/demo/ui.json	missions.tier5	"5 minuti"	no
+content-packs/it-CH/demo/ui.json	missions.tier15	"15 minuti"	no
+content-packs/it-CH/demo/ui.json	missions.tier30	"30 minuti"	no
+content-packs/it-CH/demo/ui.json	cards.purchaseBlocked	"Gli acquisti non sono disponibili in modalità demo."	no
+content-packs/it-CH/demo/ui.json	cards.sellBlocked	"La vendita delle carte non è disponibile in modalità demo."	no
+content-packs/it-CH/demo/ui.json	cards.loadFailed	"Impossibile caricare le carte."	no
+content-packs/it-CH/demo/ui.json	arcade.actionBlocked	"Questa azione non è disponibile in modalità demo."	no
+content-packs/it-CH/demo/ui.json	arcade.quickPlayBlocked	"Il gioco rapido non è disponibile in modalità demo."	no
+content-packs/it-CH/demo/ui.json	activity.classroomUnavailable	"Le attività di classe non sono disponibili in modalità demo."	no
+content-packs/it-CH/demo/ui.json	worksheet.backHome	"← Torna alla home"	no
+content-packs/it-CH/demo/ui.json	worksheet.submitBlocked	"L'invio non è disponibile in modalità demo."	no
+content-packs/it-CH/demo/ui.json	myRoom.title	"La mia stanza"	no
+content-packs/it-CH/demo/ui.json	myRoom.saveBlocked	"Il salvataggio non è disponibile in modalità demo."	no
+content-packs/it-CH/demo/ui.json	friends.demoUnavailable	"Amici e numero Leo — anteprima demo. Aggiungere amici e inviti non è disponibile."	no
+content-packs/it-CH/demo/ui.json	parentPortal.barBadge	"Modalità demo per i genitori"	no
+content-packs/it-CH/demo/ui.json	parentPortal.barSubtitle	"Solo lettura · 3 bambini di esempio"	no
+content-packs/it-CH/demo/ui.json	parentPortal.barExit	"Esci dalla demo"	no
+content-packs/it-CH/demo/ui.json	parentPortal.dashboardSubtitle	"Modalità demo — portale genitori"	no
+content-packs/it-CH/demo/ui.json	parentPortal.homeParentAriaLabel	"Demo per i genitori — portale in sola lettura"	no
+content-packs/it-CH/demo/ui.json	parentPortal.homeParentDismissAriaLabel	"Nascondi il pulsante demo per i genitori"	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterPageDescription	"Esplori il portale genitori con bambini di esempio, rapporti e consigli — solo visualizzazione"	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterHeading	"Demo del portale genitori"	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterBack	"Indietro"	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterIntro	"Esplori il portale genitori con 3 bambini di esempio, rapporti, attività e consigli — solo visualizzazione, senza registrazione."	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterActiveSessionNote	"Ha una demo genitori attiva: può continuare da dove si era fermato."	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterReadOnlyNote	"In questa modalità non è possibile salvare le modifiche."	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterButton	"Entri nel portale genitori"	no
+content-packs/it-CH/demo/ui.json	parentPortal.enteringButton	"Ingresso…"	no
+content-packs/it-CH/demo/ui.json	parentPortal.enterBackHome	"Torna alla home"	no
+content-packs/it-CH/demo/ui.json	parentPortal.readOnlyDefault	"La modalità demo è in sola lettura. Non è possibile salvare le modifiche."	no
+content-packs/it-CH/demo/ui.json	parentPortal.readOnlyShare	"Modalità demo — la condivisione fuori dalla demo non è disponibile."	no
+content-packs/it-CH/demo/ui.json	parentPortal.apiReadOnlyError	"La modalità demo è in sola lettura."	no
+content-packs/it-CH/rewards/ui.json	rarity.regular	"Comune"	no
+content-packs/it-CH/rewards/ui.json	rarity.special	"Speciale"	no
+content-packs/it-CH/rewards/ui.json	cardType.achievement	"Carta premio"	no
+content-packs/it-CH/rewards/ui.json	cardType.shop	"Carta del negozio"	no
+content-packs/it-CH/rewards/ui.json	cardType.event	"Carta evento"	no
+content-packs/it-CH/rewards/ui.json	cardSource.earned_achievement	"Premio di apprendimento"	no
+content-packs/it-CH/rewards/ui.json	cardSource.shop_purchase	"Acquisto nel negozio"	no
+content-packs/it-CH/rewards/ui.json	cardSource.surprise_box_reward	"Scatola sorpresa"	no
+content-packs/it-CH/rewards/ui.json	cardSource.duplicate_conversion	"Conversione del doppione"	no
+content-packs/it-CH/rewards/ui.json	cardSource.card_sellback	"Vendita del doppione"	no
+content-packs/it-CH/rewards/ui.json	cardSource.admin_grant	"Regalo della squadra"	no
+content-packs/it-CH/rewards/ui.json	shop.alreadyOwned	"Ce l'hai già!"	no
+content-packs/it-CH/rewards/ui.json	shop.sellDuplicate	"Vendi doppione"	no
+content-packs/it-CH/rewards/ui.json	shop.catalogOwned	"In collezione"	no
+content-packs/it-CH/rewards/ui.json	shop.notEnoughCoins	"Non hai abbastanza monete per comprarla."	no
+content-packs/it-CH/rewards/ui.json	shop.purchaseFailed	"Acquisto non riuscito — riprova."	no
+content-packs/it-CH/rewards/ui.json	shop.purchaseSuccess	"Hai comprato {name}!"	no
+content-packs/it-CH/rewards/ui.json	shop.purchaseNetworkError	"Errore di rete durante l'acquisto."	no
+content-packs/it-CH/rewards/ui.json	shop.sellConfirmTitle	"Vendere un doppione di {name} per {amount}?"	no
+content-packs/it-CH/rewards/ui.json	shop.sellConfirmBody	"Manterrai una copia nella tua collezione."	no
+content-packs/it-CH/rewards/ui.json	shop.sellFailed	"Impossibile vendere il doppione — riprova."	no
+content-packs/it-CH/rewards/ui.json	shop.sellSuccess	"Hai venduto un doppione per {amount}!"	no
+content-packs/it-CH/rewards/ui.json	shop.sellNetworkError	"Errore di rete durante la vendita."	no
+content-packs/it-CH/rewards/ui.json	shop.noDuplicate	"Non hai un doppione da vendere."	no
+content-packs/it-CH/rewards/ui.json	shop.loadFailed	"Impossibile caricare il negozio in questo momento."	no
+content-packs/it-CH/rewards/ui.json	series.professions	"Professioni"	no
+content-packs/it-CH/rewards/ui.json	series.space-tech	"Spazio e tecnologia"	no
+content-packs/it-CH/rewards/ui.json	series.sport-fun	"Sport e divertimento"	no
+content-packs/it-CH/rewards/ui.json	series.style	"Stile"	no
+content-packs/it-CH/rewards/ui.json	series.general	"Premi generali"	no
+content-packs/it-CH/rewards/ui.json	series.math	"Premi di matematica"	no
+content-packs/it-CH/rewards/ui.json	series.language	"Premi di lingua"	no
+content-packs/it-CH/rewards/ui.json	series.subjects	"Premi per materia"	no
+content-packs/it-CH/rewards/ui.json	series.events	"Eventi"	no
+content-packs/it-CH/rewards/ui.json	fallback.rewardCard	"Carta premio"	no
+content-packs/it-CH/rewards/ui.json	fallback.collectName	"Colleziona {name}!"	no
+content-packs/it-CH/rewards/ui.json	fallback.earnCard	"Ottieni questa carta: {name}"	no
+content-packs/it-CH/rewards/ui.json	fallback.eventLimited	"{name} — carta evento limitata!"	no
+content-packs/it-CH/rewards/ui.json	fallback.keepLearning	"Continua a imparare per sbloccare questa carta"	no
+content-packs/it-CH/rewards/ui.json	fallback.completeRequirement	"Completa il requisito: {label}"	no
+content-packs/it-CH/rewards/ui.json	fallback.availableInShop	"Disponibile nel negozio"	no
+content-packs/it-CH/rewards/ui.json	fallback.availableInSurpriseBox	"Disponibile in una scatola sorpresa"	no
+content-packs/it-CH/rewards/ui.json	fallback.notAvailableNow	"Non disponibile al momento"	no
+content-packs/it-CH/rewards/ui.json	fallback.progressOf	"{current} di {target}"	no
+content-packs/it-CH/rewards/ui.json	topics.addition	"Addizione"	no
+content-packs/it-CH/rewards/ui.json	topics.subtraction	"Sottrazione"	no
+content-packs/it-CH/rewards/ui.json	topics.multiplication	"Moltiplicazione"	no
+content-packs/it-CH/rewards/ui.json	topics.division	"Divisione"	no
+content-packs/it-CH/rewards/ui.json	topics.vocabulary	"Vocabolario"	no
+content-packs/it-CH/rewards/ui.json	requirements.total_questions	"Rispondi a {minQuestions} domande in totale"	no
+content-packs/it-CH/rewards/ui.json	requirements.weekly_questions	"Rispondi a {minQuestions} domande nell'ultima settimana"	no
+content-packs/it-CH/rewards/ui.json	requirements.subject_questions	"Rispondi a {minQuestions} domande in {subject}"	no
+content-packs/it-CH/rewards/ui.json	requirements.subject_questions_fallback_subject	"Rispondi a {minQuestions} domande in una materia"	no
+content-packs/it-CH/rewards/ui.json	requirements.subject_accuracy	"Raggiungi {minAccuracy}% di risposte corrette in {subject}{topicPart} (almeno {minQuestions} domande)"	no
+content-packs/it-CH/rewards/ui.json	requirements.subject_accuracy_topic_part	" in {topic}"	no
+content-packs/it-CH/rewards/ui.json	requirements.learning_streak_days	"Impara per {minStreakDays} giorni di fila"	no
+content-packs/it-CH/rewards/ui.json	requirements.active_days_streak	"Resta attivo per {minStreakDays} giorni di fila"	no
+content-packs/it-CH/rewards/ui.json	requirements.parent_activity_complete	"Completa {minCompletedActivities} attività dei genitori"	no
+content-packs/it-CH/rewards/ui.json	requirements.monthly_learning_minutes	"Impara {minLearningMinutesMonthly} minuti questo mese"	no
+content-packs/it-CH/rewards/ui.json	requirements.event_window	"Carta evento speciale — disponibile durante il periodo dell'evento"	no
+content-packs/it-CH/rewards/ui.json	requirements.daily_mission_generic	"Completa una missione giornaliera"	no
+content-packs/it-CH/rewards/ui.json	requirements.grade_band_only	"Disponibile per {gradeBand}"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.loadError	"Non siamo riusciti a caricare la scatola sorpresa."	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.networkError	"Errore di rete durante il caricamento della scatola sorpresa."	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.ready	"Scatola sorpresa pronta!"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.readyMultiple	"{count} scatole pronte da aprire!"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.openError	"Non siamo riusciti ad aprire la scatola ora. Riprova tra poco."	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.noMoreBoxes	"Non ci sono altre scatole da aprire al momento."	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.noBoxReady	"Nessuna scatola pronta ora — riprova più tardi."	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.duplicateHint	"Hai ottenuto una copia in più — puoi vendere i doppioni nel negozio."	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.newCard	"Nuova carta nella tua collezione!"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.ariaLabel	"Scatola sorpresa"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.title	"Scatola sorpresa"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.nextBoxIn	"Prossima scatola pronta tra"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.keepLearning	"Continua a imparare — presto ci sarà una nuova scatola!"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.openBox	"Apri la scatola"	no
+content-packs/it-CH/rewards/ui.json	surpriseBox.myCollection	"La mia collezione"	no
+content-packs/it-CH/rewards/ui.json	preview.close	"Chiudi"	no
+content-packs/it-CH/rewards/ui.json	preview.download	"Scarica immagine"	no
+content-packs/it-CH/rewards/ui.json	preview.prev	"Carta precedente"	no
+content-packs/it-CH/rewards/ui.json	preview.next	"Carta successiva"	no
+content-packs/it-CH/rewards/ui.json	preview.locked	"Bloccata"	no
+content-packs/it-CH/rewards/ui.json	lockedStamp.label	"Bloccata"	no
+content-packs/it-CH/rewards/ui.json	shopView.loading	"Caricamento del negozio di carte…"	no
+content-packs/it-CH/rewards/ui.json	shopView.loadErrorTitle	"Non siamo riusciti a caricare il negozio di carte."	no
+content-packs/it-CH/rewards/ui.json	shopView.tryAgain	"Riprova"	no
+content-packs/it-CH/rewards/ui.json	shopView.empty	"Al momento non ci sono carte disponibili da acquistare."	no
+content-packs/it-CH/rewards/ui.json	shopView.coinBalance	"Saldo monete: {amount}"	no
+content-packs/it-CH/rewards/ui.json	shopView.buyPrice	"Prezzo di acquisto: {amount}"	no
+content-packs/it-CH/rewards/ui.json	shopView.sellValue	"Valore di vendita: {amount}"	no
+content-packs/it-CH/rewards/ui.json	shopView.needMoreCoins	"Ti mancano {amount}"	no
+content-packs/it-CH/rewards/ui.json	shopView.notEnoughCoinsShort	"Monete insufficienti"	no
+content-packs/it-CH/rewards/ui.json	shopView.noDuplicateToSell	"Non c'è un doppione da vendere."	no
+content-packs/it-CH/rewards/ui.json	shopView.sellFailed	"Impossibile vendere il doppione — riprova."	no
+content-packs/it-CH/rewards/ui.json	shopView.sellSuccess	"Hai venduto un doppione di {name} e hai ottenuto {amount}!"	no
+content-packs/it-CH/rewards/ui.json	shopView.sellNetworkError	"Errore di rete durante la vendita."	no
+content-packs/it-CH/rewards/ui.json	shopView.buy	"Compra"	no
+content-packs/it-CH/rewards/ui.json	shopView.sellDuplicateAction	"Vendi doppione"	no
+content-packs/it-CH/rewards/ui.json	shopView.selling	"Vendita…"	no
+content-packs/it-CH/rewards/ui.json	shopView.buying	"Acquisto…"	no
+content-packs/it-CH/rewards/ui.json	shopView.buyFor	"Compra per {price}"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.close	"Chiudi"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.openingTitle	"Apertura della scatola…"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.doneTitle	"Ottimo! Hai ottenuto delle ricompense!"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.idleTitle	"Scatola sorpresa"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.rolling	"Preparazione delle tue ricompense…"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.openAnother	"Apri un'altra scatola"	no
+content-packs/it-CH/rewards/ui.json	surpriseBoxModal.viewCards	"Vedi le mie carte"	no
+content-packs/it-CH/rewards/ui.json	previewModal.close	"Chiudi"	no
+content-packs/it-CH/rewards/ui.json	previewModal.download	"Scarica la mia carta"	no
+content-packs/it-CH/rewards/ui.json	previewModal.downloading	"Download…"	no
+content-packs/it-CH/rewards/ui.json	previewModal.downloadError	"Non siamo riusciti a scaricare la carta. Riprova."	no
+content-packs/it-CH/rewards/ui.json	previewModal.prev	"Carta precedente"	no
+content-packs/it-CH/rewards/ui.json	previewModal.next	"Carta successiva"	no
+content-packs/it-CH/rewards/ui.json	previewModal.cardImageAlt	"Immagine della carta"	no
+content-packs/it-CH/rewards/ui.json	previewModal.rarityLabel	"Rarità: {label}"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.kidsWorldBack	"Mondo dei bambini"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.title	"Le mie carte"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.subtitle	"Collezione, negozio, tutte le carte e le serie"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.featureDisabled	"La collezione di carte non è ancora disponibile."	no
+content-packs/it-CH/rewards/ui.json	cardsPage.loading	"Caricamento delle carte…"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.loadError	"Non siamo riusciti a caricare le carte."	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tryAgain	"Riprova"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabsAriaLabel	"Schede delle carte"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.collectionEmpty	"Non hai ancora carte in collezione — apri una scatola sorpresa nel Mondo dei bambini o compra nel negozio!"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.catalogEmpty	"Non ci sono carte da mostrare."	no
+content-packs/it-CH/rewards/ui.json	cardsPage.seriesEmpty	"Non ci sono ancora serie di carte."	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.collection.label	"La mia collezione"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.shop.label	"Negozio carte"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.shop.shortLabel	"Negozio"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.catalog.label	"Tutte le carte"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.catalog.shortLabel	"Tutte"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.series.label	"Serie"	no
+content-packs/it-CH/rewards/ui.json	cardsPage.tabs.series.shortLabel	"Serie"	no
+content-packs/it-CH/rewards/ui.json	server.economyUnavailable	"L'economia delle monete non è disponibile al momento"	no
+content-packs/it-CH/rewards/ui.json	server.duplicateConversionRemoved	"È stata rimossa la conversione dei duplicati — puoi vendere un doppione nel negozio."	no
+content-packs/it-CH/rewards/ui.json	server.missingSeries	"Serie mancante — per le carte negozio/premio è richiesta una serie con slug"	no
+content-packs/it-CH/rewards/ui.json	server.multipartRequired	"Il caricamento deve usare multipart/form-data"	no
+content-packs/it-CH/rewards/ui.json	server.variantProcessFailed	"Elaborazione della versione della carta non riuscita"	no
+content-packs/it-CH/rewards/ui.json	server.boxNeedsPrize	"La scatola richiede almeno un premio: carte e/o monete."	no
+content-packs/it-CH/rewards/ui.json	server.boxSettingsInvalidJson	"La configurazione della scatola deve essere un oggetto JSON."	no
+content-packs/it-CH/rewards/ui.json	server.notPurchasable	"Questa carta non si può acquistare"	no
+content-packs/it-CH/rewards/ui.json	server.alreadyOwnedCollection	"È già nella tua collezione"	no
+content-packs/it-CH/rewards/ui.json	server.insufficientCoinsDetailed	"Non hai abbastanza monete per questa carta"	no
+content-packs/it-CH/books/ui.json	shell.indexSubtitle	"{grade} · Scegli un argomento e leggi pagina per pagina"	no
+content-packs/it-CH/books/ui.json	shell.emptyPageContent	"Nessun contenuto da mostrare in questa pagina."	no
+content-packs/it-CH/books/ui.json	shell.pageOfTotal	"Pagina {current} di {total}"	no
+content-packs/it-CH/books/ui.json	diagramAria.triangle_parts	"Triangolo con lati e vertici"	no
+content-packs/it-CH/books/ui.json	diagramAria.triangle_height	"Altezza in un triangolo"	no
+content-packs/it-CH/books/ui.json	diagramAria.quadrilateral_parts	"Quadrilatero con lati e vertici"	no
+content-packs/it-CH/books/ui.json	diagramAria.rectangle_sides	"Rettangolo con lunghezza e larghezza"	no
+content-packs/it-CH/books/ui.json	diagramAria.rectangle_diagonal	"Rettangolo con una diagonale"	no
+content-packs/it-CH/books/ui.json	diagramAria.square_sides	"Quadrato con lati"	no
+content-packs/it-CH/books/ui.json	diagramAria.square_diagonal	"Quadrato con una diagonale"	no
+content-packs/it-CH/books/ui.json	diagramAria.square_area_grid	"Area del quadrato — quadrati unitari"	no
+content-packs/it-CH/books/ui.json	diagramAria.parallelogram_height	"Altezza in un parallelogramma"	no
+content-packs/it-CH/books/ui.json	diagramAria.trapezoid_height	"Altezza in un trapezio"	no
+content-packs/it-CH/books/ui.json	diagramAria.angle_basic	"Angolo con due raggi"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.you_can_try_a_little_only_within_the_same_topic	"Può provare un po', solo nello stesso argomento."	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.you_can_start_with_a_small_step_but_not_jump_a_level	"Può iniziare con un piccolo passo, ma senza saltare un livello."	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.you_can_try_a_small_advanced_step	"Può provare un piccolo passo avanzato."	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.still_needs_more_practice_to_determine	"Serve ancora più pratica per determinarlo."	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.practice_with_questions	"Esercitazione con domande"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.book_reading	"Lettura del libro"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.other_active_learning	"Altro apprendimento attivo"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.there_s_no_topic_worth_focusing_on_this_week_a_short_practice_routine_is	"Non c'è un argomento su cui concentrarsi questa settimana: basta una breve routine di esercitazione."	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.repeated_mistakes_and_retention_of_what_s_been_learned	"Errori ripetuti e consolidamento di quanto appreso"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.the_previous_direction_doesn_t_fit_well_enough	"La direzione precedente non è abbastanza adatta:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.where_good_results_were_seen_across_subjects	"Dove si sono visti buoni risultati tra le materie"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_s_clearer_and_what_still_needs_checking	"Cosa è più chiaro e cosa va ancora verificato"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.no_need_to_focus_on_this_now_it_can_wait	"Non è necessario concentrarsi su questo ora: può aspettare:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.is_it_worth_checking_a_different_direction	"Vale la pena verificare un'altra direzione?"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.how_much_can_you_trust_these_conclusions	"Quanto può fidarsi di queste conclusioni?"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_helps_now_and_what_s_worth_changing	"Cosa aiuta ora e cosa vale la pena cambiare"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.you_can_try_a_bit_less_help_carefully	"Può provare un po' meno aiuto, con cautela:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.worth_pausing_and_refreshing_direction	"Vale la pena fare una pausa e aggiornare la direzione:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.a_sign_for_a_careful_direction_change	"Un segnale per un cambio di direzione cauto:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_we_tried_recently_did_it_help	"Cosa abbiamo provato di recente: ha aiutato?"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.you_can_try_a_bit_more_independence	"Può provare un po' più di autonomia:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.the_difficulty_may_start_elsewhere	"La difficoltà può iniziare altrove:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_focus_on_across_subjects	"Su cosa concentrarsi (tra le materie)"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.is_the_difficulty_broad_or_narrow	"La difficoltà è ampia o ristretta?"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.does_this_match_what_we_expected	"Corrisponde a quanto ci aspettavamo:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.main_home_action_for_the_period	"Azione principale a casa per il periodo"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.a_strategy_change_is_warranted	"È opportuno un cambio di strategia:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_appears_to_be_happening	"Cosa sembra succedere:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.not_yet_ready_to_reduce_help	"Non è ancora pronto a ridurre l'aiuto:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.ready_for_careful_expansion	"Pronto per un'espansione cauta:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.how_progress_looks_over_time	"Come appare il progresso nel tempo"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.where_the_difficulty_starts	"Dove inizia la difficoltà:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.looks_focused_on_this_topic	"Sembra concentrato su questo argomento:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.direction_for_the_sequence	"Direzione per la sequenza:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.needs_updated_information	"Servono informazioni aggiornate:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_do_in_this_subject	"Cosa fare in questa materia"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_do_now_in_order	"Cosa fare ora — in ordine"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.before_raising_the_level	"Prima di alzare il livello:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_do_in_this_round	"Cosa fare in questo turno:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.where_it_seems_stronger	"Dove sembra più solido:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.direction_for_next_week	"Direzione per la prossima settimana:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.direction_going_forward	"Direzione per il futuro:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.before_changing_anything	"Prima di cambiare qualcosa"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.refresh_before_deciding	"Aggiorni prima di decidere:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_we_tried_recently	"Cosa abbiamo provato di recente:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_s_right_to_do_now	"Cosa è giusto fare ora:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.learning_time_breakdown	"Ripartizione del tempo di apprendimento"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.where_it_seems_harder	"Dove sembra più difficile:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_s_worth_checking	"Cosa vale la pena verificare:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.keep_a_short_routine	"Mantenga una breve routine:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.worth_checking_again	"Vale la pena verificare di nuovo:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.breakdown_by_subject	"Ripartizione per materia"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.risk_of_repetition	"Rischio di ripetizione:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_do_first	"Cosa fare per primo:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.good_consistency	"Buona costanza:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.a_word_about_home	"Una nota sulla casa"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.advanced_practice	"Esercitazione avanzata"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.prior_foundations	"Basi precedenti"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_do_next	"Cosa fare dopo:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_stands_out	"Cosa emerge:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.what_to_collect	"Cosa raccogliere:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.overall_picture	"Quadro generale:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.report_readiness	"Prontezza del rapporto"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.overall_status	"Stato generale:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.major_trends	"Tendenze principali"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.over_time	"Nel tempo:"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.time_min	"Tempo (min)"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.questions	"Domande"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.last_date	"Ultima data"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.activity	"Attività"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.accuracy	"Precisione"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.caution	"Attenzione"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.subject	"Materia"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.status	"Stato"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.source	"Fonte"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.topic	"Argomento"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.grade	"Classe"	no
+content-packs/it-CH/reports/burn-down/components__parent-report-detailed-surface.json	copy.date	"Data"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.history	"Storia"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.homeland_studies	"Studi sulla patria"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.geography	"Geografia"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.homeland_geography	"Patria e geografia"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.learning	"Apprendimento"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.practice	"Esercitazione"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.challenge	"Sfida"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.extended_practice	"Esercitazione estesa"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.review	"Ripasso"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.focused_practice	"Esercitazione mirata"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.graded	"Valutato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.regular	"Regolare"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.mistakes	"Errori"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.mistake_review	"Ripasso degli errori"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.homework	"Compiti"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.live_lesson	"Lezione dal vivo"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.discussion	"Discussione"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.worksheet	"Scheda di lavoro"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.learning_book	"Libro di apprendimento"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.independent_practice	"Esercitazione autonoma"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.personal_activity	"Attività personale"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.class_activity	"Attività di classe"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.not_available	"Non disponibile"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.personal_activity_from_parent	"Attività personale dal genitore"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.report	"Rapporto"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.activity	"Attività"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.partial	"Parziale"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.available	"Disponibile"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.not_measured	"Non misurato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.needs_more_data	"Servono più dati"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.completed	"Completato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.active	"Attivo"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.inactive	"Inattivo"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.submitted	"Inviato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.in_progress	"In corso"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.not_started	"Non iniziato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.sufficient	"Sufficiente"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.insufficient	"Insufficiente"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.no_data	"Nessun dato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.advanced	"Avanzato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.moderate	"Moderato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.strong	"Solido"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.limited	"Limitato"	no
+content-packs/it-CH/reports/burn-down/utils__parent-report-language__parent-report-display-labels.json	copy.inconsistent	"Incoerente"	no
+locales/it-CH/common.json	accessDenied	"Non ha accesso a questa pagina."	no

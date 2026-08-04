@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "view_result": "View result",
+    "continue": "Continue",
+    "start": "Start",
+    "questions_meta": "questions",
+    "class_activities": "Class activities",
+    "parent_activities": "Parent activities",
+    "intro": "Activities assigned by your teacher or parent appear here.",
+    "personal_activities_section": "Personal activities",
+    "show_landscape": "Show landscape",
+    "show_portrait": "Show portrait",
+    "landscape": "↔️ Landscape",
+    "portrait": "↕️ Portrait"
+  }
+}

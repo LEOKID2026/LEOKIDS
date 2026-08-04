@@ -1,0 +1,254 @@
+Danny has one coin of 10 shekels and 2 coins of 2 shekels.
+Noa paid 15 shekels for a book that cost 8 shekels.
+Amir paid 40 shekels for a game that cost 28 shekels.
+Check that all the sides are equal!
+Here we check more carefully:
+Here we focus on the name and identification — not on calculations.
+Check sides — width and height are different → not a square.
+In practice you will find questions about rotation — check if it is a quarter (90°) or another part of the path!
+4 edges on top, 4 on the bottom, 4 on the sides →
+In practice you will find questions about a cube — check if they ask about faces, vertices, or edges!
+To identify the type — check how many sides are equal, not the size of the angles.
+Check if all three sides are equal — 3, 3, 5: not all equal.
+In practice you will find degrees — check which angle is large, small, or in the middle!
+Here — we check properties, not just the name.
+If you fold the paper on the line — the two halves match exactly.
+Check folding through the middle of a side — it works.
+Check folding corner to corner — that works too. There are 4 of these.
+Check folding through the midpoints of the sides — horizontal and vertical. Two folds work.
+Check folding on a diagonal — in a rectangle that is not a square the sides are not equal, so the diagonal fold does not make two matching halves.
+A diagonal — a segment that connects two vertices that are not on the same side.
+Tiling depends on the angles of the tile.
+Why? The three angles together "fill" the opening of a straight line — so the sum is always 180°.
+In practice you'll find a missing angle — add, subtract from 180°, and check that the sum is 180°!
+The radius — the distance from the center of the circle to any point on the circle.
+Height — always perpendicular — not the slanted side.
+8 + 5 on the number line — the answer is in the teens (13):
+Join groups or hop to the right on the number line!
+Tip: Imagine a hungry alligator — the open side of the symbol always points to the bigger number!
+22 is to the right of 17 on the number line.
+14 is to the right of 9 on the number line.
+3 + __ = 7 on the number line:
+On the number line:
+On the number line — how many steps from 10 to 7? 3 steps: 9, 8, 7.
+Check what's missing:
+There are special pairs that always add up to 10:
+Today we're going to learn to count backward on the number line.
+Counting backward is like walking to the left on the number line.
+Put your finger on 7 on the number line.
+Put your finger on 9 on the number line.
+Now you know how to count backward on the number line.
+Today we're going to learn to count forward on the number line.
+Counting forward is like walking to the right on the number line.
+Put your finger on 5 on the number line.
+Put your finger on 8 on the number line.
+Now you know how to count forward on the number line.
+You can check if you can pair up objects — or if one object is left alone.
+Neighbor before = the number that comes right before (one step left on the number line).
+Neighbor after = the number that comes right after (one step right on the number line).
+On the number line: left = one less, right = one more.
+Find 8 on the number line.
+Find 12 on the number line.
+The numbers go from left to right: 0 on the left side, then 1, 2, 3...
+Find 4 on the number line.
+Find 2 on the number line.
+Subtraction is when you take part of a group — or hop backward on the number line.
+(You can also: on the number line — start at 9, hop 4 steps to the left → 5)
+Each coin has a value — the value tells how many shekels the coin is worth.
+The value tells how many shekels the coin is worth.
+2. What are we asked? — the total amount
+2 coins of 5 shekels + 1 coin of 2 shekels:
+Noa has 2 coins of 5 shekels and 3 coins of 1 shekel. How much money does she have altogether?
+Noa has 13 shekels altogether.
+Danny has 14 shekels altogether.
+Had 12 shekels, bought candy for 5 shekels:
+12 − 5 = 7 → 7 shekels are left.
+Yaël had 15 shekels. She bought a pen for 6 shekels. How much money does she have left?
+Had: 15 shekels
+Spent: 6 shekels
+Yaël has 9 shekels left.
+Paid: 15 shekels
+Cost: 8 shekels
+Noa gets 7 shekels in change.
+In 2 days = hop 2 steps forward on the days
+2. What are we asked? — which day is tomorrow, yesterday, or in how many days
+Find today's day, and count forward or backward on the row of days!
+Count steps on the row of weekdays, like hops on a number line.
+2. What are we asked? — how many days (or which day, if they ask "when")
+Now you know how to count days on the week row.
+- + sign on the left
+Today we're going to learn to compare two big numbers — up to 1,000.
+When comparing numbers with several digits — check hundreds first, then tens, then ones.
+Step 2 — Tens: if hundreds are equal, check tens.
+Step 3 — Ones: if tens are also equal, check ones.
+Check with multiplication: 3 × 5 = 15
+Step 3 — check with multiplication: 5 × 4 = 20
+Even big numbers — like 24 or 35 — can be checked the same way: pairing up.
+Now you know how to check even and odd in bigger numbers too.
+Today we're going to learn that big numbers are built from hundreds, tens, and ones.
+- The digit 2 on the left = 2 hundreds (200)
+- The digit 6 on the right = 6 ones
+**Content scope:** Coins in whole shekels. Total amount — addition or equal groups (multiplication). One step. Up to ~100. No agorot, no multi-step buying.
+Each coin has a value — how many shekels it is worth.
+2. What are we asked? — how much money altogether
+Important: whole shekels only — no agorot. One step only.
+4 coins of 5 shekels:
+There are 4 coins of 5 shekels. How much money is there altogether?
+4 coins, each worth 5 shekels.
+There are 20 shekels altogether.
+Step 1 — What do we know? 3 coins, each worth 10 shekels.
+Step 2 — What are we asked? How much money altogether.
+There are 30 shekels altogether
+**Content scope:** Paid / cost / change. Subtraction in whole shekels. One step. Up to ~100. No agorot, no multi-step buying.
+2. What are we asked? — how much change
+Important: whole shekels only. One step — one purchase.
+Noa paid 50 ₪, the book cost 35 ₪:
+15 shekels change
+Noa paid 50 shekels for a book that cost 35 shekels. How much change did she get?
+Noa got 15 shekels change.
+Step 2 — What are we asked? How much change he got.
+Amir got 12 shekels change
+1. What do we know? — how many altogether, and how many groups
+2. What are we asked? — how many each person gets
+Step 2 — What are we asked? How many stickers per child.
+(We already learned multiplication and equal groups on the times table page — here we'll use it in a story.)
+2. What are we asked? — how many altogether
+5 × 4 = 20 → 20 pencils altogether.
+How many pencils altogether.
+There are 20 pencils altogether.
+Step 2 — What are we asked? How many apples altogether.
+There are 18 apples altogether
+2. What are we asked? — which day it will be (after hops)
+Step 2 — What are we asked? Which day in 2 days.
+Now you know how to find a day in so many days on the week row.
+Today we're going to learn how many days pass from one day to another on the row of days.
+2. What are we asked? — how many days pass
+Step 2 — What are we asked? How many days pass.
+Remainder? On this page only when it comes out even — remainder is on the division with remainder page.
+Today we will check when a number divides evenly by 2, 5, or 10 — by looking at the ones digit.
+Here we check divisibility by the ones digit — without doing long division.
+Check: 5 × 4 + 3 = 23 — the remainder is always smaller than the divisor (3 < 5).
+In practice you'll find division that doesn't come out even — look for the quotient and remainder!
+We need to find what's missing so the equation is true.
+We need to find the bigger number (the one we subtract from).
+Making 100: ask — how much do we need to add?
+Now you know how to tell even and odd in big numbers too.
+**Content scope:** The number **before** and **after** on the number line. Up to 1,000. No big jumps.
+628 on the number line:
+On the number line: each step = a jump of the same size.
+We need to find the difference — bigger minus smaller.
+What are we asked? How many more for the one who has more
+Noa has 52 cards and Yuval has 37 cards.
+How many more cards does Noa have than Yuval?
+Today we'll compare big numbers up to 10,000 and pick the right symbol: > (greater than), < (less than), = (equal).
+Check: divisor × quotient = dividend. Remainder — only on the division-with-remainder page.
+In practice you'll find division with no remainder — check with multiplication!
+Today we'll check when a number divides evenly by 2, 3, 5, 6, 9, or 10 — using quick rules.
+Now you know how to check divisibility by 2, 3, 5, 6, 9, and 10.
+You get a quotient and a remainder — and check with multiplication.
+In practice you'll find division with a remainder — always write quotient and remainder!
+Today we'll solve addition equations with big numbers — up to 1,000.
+We need to find what's missing in __ so the equation is true.
+Missing number = total minus the number you already have.
+We need to find the bigger number — the one we subtract from.
+Missing number before the minus — add the result and the number being subtracted.
+Estimating helps you check if an exact answer makes sense.
+Round, add — and check if an exact answer makes sense!
+**Content scope:** Finding all factors of a number up to ~100. Multiplication pairs. 1 and the number itself are always factors. Multiples → `fm_multiple`. GCF → `fm_gcd`.
+1 and the number itself — always factors.
+Write 23 on top, 4 on the bottom (lined up on the right)
+In practice you'll find how much to make 10? And additions using make-10!
+Make 100: how much do you need to add so the sum is 100?
+Find how much is missing to the nearest round ten (for example 37 + 3 = 40)
+Check only the ones digit!
+**Content scope:** The number before and after on the number line. Up to 10,000. No large jumps.
+Today we'll find neighbors in big numbers — up to 10,000.
+How do you check? Look for factors from 2 and up.
+How many minutes did the day last altogether?
+0 in multiplication is special — the answer is always 0.
+Multiplying by 0 — the answer is always 0.
+Multiplying by 0 — the answer is always 0, no matter how big the number is.
+Now you know that multiplying by 0 always gives 0.
+The answer is always 0!
+Rule: divisor × quotient = dividend — always check with multiplication.
+You get a quotient and a remainder, and you check with the remainder check.
+The remainder is always less than the divisor (7 < 8).
+We need to find the missing number.
+Estimation helps you check if an answer makes sense.
+Pairs that make 100 = a base for thinking "how much is missing to reach 100" — also in estimation.
+Estimate: about how much is 52 + 49?
+We'll break apart by place value and borrow when we need to.
+When the question says "total" or "altogether" — you add, you don't subtract!
+We ask: how many times does the divisor fit into the dividend? And we check each step.
+In practice you will find large divisions — break apart in steps and check with multiplication!
+**Content scope:** quotient and remainder; large numbers (850÷7). Check equation: dividend = divisor × quotient + remainder.
+Check equation: 126,000 = 9 × 14,000
+Step 3 — check equation: 92,500 = 7 × 13,214 + 2
+Step 3 — check equation: 9 × 107 + 5 = 963 + 5 = 968
+In practice you will find division with a remainder — build a check equation and make sure the remainder is smaller than the divisor!
+In practice you will find equations — check by substituting back!
+In practice you will find subtraction equations — check by substituting back!
+Check from 1 up to √36 = 6.
+63 + 37 = 100 — a familiar pair.
+In practice you will find complements to 100 — check that the sum is exactly 100!
+In practice you will find neighbors of big numbers — check ±1, not ±10!
+Today we will strengthen place value with big numbers — up to 200,000.
+Now you know how to break big numbers apart by place value.
+Price 180 shekels, 20% off.
+20% of 180 = 180 × 20 ÷ 100 = 36 shekels discount.
+Final price = 180 − 36 = 144 shekels
+144 shekels.
+Price 250 shekels, 10% off — what is the final price?
+Price 250 shekels, 10% off
+Discount = 250 × 10 ÷ 100 = 25 shekels.
+Final price = 250 − 25 = 225 shekels.
+The answer: 225 shekels
+3:2 = for every 3 units on one side, 2 on the other side.
+1:50,000 = 1 cm on the map = 50,000 cm in real life.
+3 cm on the map = 3 × 500 m = 1,500 m
+Scale 1:50,000. 2 cm on the map = ? in real life.
+Scale 1:50,000 — 5 cm on the map = ? in real life.
+Scale 1:50,000 — 5 cm on the map
+4 cm on the map, scale 1:25,000.
+4 cm on the map, 1:25,000. Real distance?
+6 cm on the map, 1:25,000 — what is the real distance?
+6 cm on the map, 1:25,000
+2,000 m = 2,000 ÷ 500 = 4 cm on the map
+2 km (=2,000 m), 1:50,000. How many cm on the map?
+3 km in real life, 1:50,000 — how many cm on the map?
+A shirt costs 150 shekels, 15% off.
+15% of 150 = 150 × 15 ÷ 100 = 22.50 shekels.
+150 − 22.50 = 127.50 shekels
+150 shekels, 15% off. Final price?
+127.50 shekels.
+Pants 200 shekels, 25% off — what is the final price?
+Pants 200 shekels, 25% off
+Discount = 200 × 25 ÷ 100 = 50 shekels.
+Final price = 200 − 50 = 150 shekels.
+The answer: 150 shekels
+Soccer practice 2:25 + fitness training 1:40. How long altogether?
+Is a rock on the beach a living thing?
+When we throw trash on the floor or in nature — we make the environment dirty.
+In the yard no bags were left on the grass.
+You can check properties by touch and by looking — without doing dangerous experiments.
+Think about a pillow you put on the sofa.
+Noa woke up in the morning, washed her hands, brushed her teeth, and ate breakfast.
+Seasons change — but the sun is always the main source of light during the day.
+Throw trash in a bin — not on the ground
+A cup of juice on the table — which state of matter?
+Noa eats breakfast.
+Grass makes food with light — the beetle eats the grass — the bird feeds on the beetle.
+Two identical pots in the classroom — both on the same sunny window.
+The rock on the beach — hard, whole piece, rock. Sand — small grains from rock; similar to soil.
+Natural water supplies are limited — rain does not always refill them enough.
+When you practice, look for questions about human impact on the environment.
+We live on the crust — the outer thin layer of Earth.
+An earthquake — a sudden movement of rocks or plates in Earth's crust, releasing energy and causing shaking felt on the surface.
+We are on the surface.
+Day 1 to 7 on the horizontal axis, height on the vertical axis.
+Each measurement becomes a point on the graph; you can see which sponge absorbed more.
+Cardboard on the table — shadow underneath.
+Three different light effects — on the same day.
+Each link depends on the one before it — if the grasshopper disappears, the bird will suffer from lack of food.
+Earth's tilt and its movement around the sun affect how much light and heat reach different areas in the seasons.
+Carbon footprint measures our overall impact on the environment — energy, water, and waste.

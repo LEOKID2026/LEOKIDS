@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import HelpHubCard from "../../components/help/HelpHubCard";
 import { useIOSViewportFix } from "../../hooks/useIOSViewportFix";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
@@ -8,10 +8,10 @@ import { useSharedShellUi } from "../../hooks/useSharedShellUi.js";
 import { getHelpSections } from "../../data/help-center";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
-const helpSeo = getPublicPageSeo("help");
 
 export default function HelpCenterHome() {
   useIOSViewportFix();
+  const helpSeo = usePublicPageSeo("help");
   const { theme } = useStudentTheme();
   const { SP, isBright } = useSharedShellUi();
   const { contentLocale, t } = useI18n();
@@ -23,17 +23,9 @@ export default function HelpCenterHome() {
     sections.subjects,
   ];
 
-  const title =
-    t("nav.helpCenter") && t("nav.helpCenter") !== "nav.helpCenter"
-      ? t("nav.helpCenter")
-      : contentLocale === "es-419"
-        ? "Centro de ayuda"
-        : "Help center";
-  const badge = contentLocale === "es-419" ? "Ayuda · Guías · Preguntas frecuentes" : "Help · Guides · FAQ";
-  const subtitle =
-    contentLocale === "es-419"
-      ? "Guías para padres y estudiantes: cómo usar el sitio, leer informes y practicar por materia."
-      : "Guides for parents and students — how to use the site, read reports, and practice by subject.";
+  const title = t("ui.nav.helpCenter");
+  const badge = t("ui.help.hubBadge");
+  const subtitle = t("ui.help.hubSubtitle");
 
   return (
     <Layout studentTheme={theme} studentShell="home">

@@ -40,7 +40,11 @@ export default async function handler(req, res) {
 
   const fromYmd = fromDate.toISOString().slice(0, 10);
   const toYmd = toDate.toISOString().slice(0, 10);
-  const built = buildDemoParentReportPayload(studentId, fromYmd, toYmd);
+  const reportLocale =
+    safeString(req.query?.reportLocale, 16) ||
+    safeString(req.headers?.["x-leo-locale"], 16) ||
+    "en";
+  const built = buildDemoParentReportPayload(studentId, fromYmd, toYmd, { reportLocale });
   if (!built.ok) {
     return res.status(built.status || 500).json({ ok: false, error: built.error || "internal_error" });
   }

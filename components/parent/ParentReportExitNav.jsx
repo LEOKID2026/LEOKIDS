@@ -8,6 +8,7 @@ import {
   navigateToParentDashboard,
 } from "../../lib/parent-report-navigation";
 import { parseParentReportRemoteSource } from "../../lib/teacher-portal/parent-report-remote-source";
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
 
 const BTN_CLASS_DARK =
   "parent-report-exit-nav-btn inline-flex px-4 py-2 rounded-lg text-sm font-bold bg-white/10 border border-white/20 hover:bg-white/20 text-white transition-all";
@@ -62,12 +63,12 @@ export function ParentReportExitNav({ className = "", showShortReportLink = true
           prefetch={false}
           className={btnClass}
         >
-          Back to parent report
+          {reportPackCopy("components__parent__ParentReportExitNav", "back_to_parent_report")}
         </Link>
       ) : null}
       <ParentReportThemeIcons className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
       <button type="button" onClick={() => navigateToParentDashboard(router)} className={btnClass}>
-        Back to parent portal
+        {reportPackCopy("components__parent__ParentReportExitNav", "back_to_parent_portal")}
       </button>
     </div>
   );

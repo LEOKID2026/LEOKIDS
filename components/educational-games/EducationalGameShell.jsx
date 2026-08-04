@@ -127,7 +127,7 @@ export default function EducationalGameShell({ gameKey }) {
     <GameAccessGuard gameKey={gameKey}>
       <>
         <Head>
-          <title>{ui.title} - Educational Games</title>
+          <title>{ui.title} - {gamePackCopy("components__educational-games__EducationalGameShell", "page_title_suffix")}</title>
         </Head>
         <div
           className={

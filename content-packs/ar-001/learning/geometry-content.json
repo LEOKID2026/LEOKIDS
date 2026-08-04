@@ -16,15 +16,15 @@
       "شبه منحرف"
     ],
     "transformations": [
-      "ترجمة",
+      "انتقال",
       "انعكاس",
-      "تناوب",
+      "دوران",
       "لا حركة"
     ],
     "concept_transform": [
-      "ترجمة",
+      "انتقال",
       "انعكاس",
-      "تناوب",
+      "دوران",
       "لا حركة"
     ],
     "shapes_basic_square": [
@@ -39,7 +39,7 @@
       "2",
       "3",
       "4",
-      "لا توجد جوانب متساوية"
+      "لا توجد أضلاع متساوية"
     ],
     "shapes_basic_properties_rectangle": [
       "1",
@@ -72,6 +72,23 @@
     "cylinder": "اسطوانة",
     "pyramid": "هرم",
     "cone": "مخروط",
-    "sphere": "جسم كروي"
+    "sphere": "جسم كروي",
+    "Equilateral": "متساوي الأضلاع",
+    "Isosceles": "متساوي الساقين",
+    "Scalene": "مختلف الأضلاع",
+    "Square": "مربع",
+    "Rectangle": "المستطيل",
+    "Triangle": "مثلث",
+    "Hexagon": "سداسي",
+    "Trapezoid": "شبه منحرف",
+    "Parallelogram": "متوازي الأضلاع",
+    "Rhombus": "معين",
+    "Parallel": "موازي",
+    "Perpendicular": "عمودي",
+    "Area": "المساحة",
+    "Perimeter": "المحيط",
+    "Volume": "الحجم",
+    "No equal sides": "لا توجد أضلاع متساوية",
+    "No right angles": "لا زوايا قائمة"
   }
 }

@@ -7,7 +7,7 @@ import { resolveRegistryTitleKey } from "../../lib/learning-book/book-pack-copy.
 
 export default function LearningBookIndexContent({ batches, routeBase }) {
   const { classes: theme } = useBookGradeTheme();
-  const { contentLocale } = useI18n();
+  const { contentLocale, direction } = useI18n();
   const resolvedBatches = useMemo(
     () =>
       (batches || []).map((batch) => ({
@@ -20,11 +20,11 @@ export default function LearningBookIndexContent({ batches, routeBase }) {
   );
 
   return (
-    <div className="space-y-8" dir="ltr">
+    <div className="space-y-8" dir={direction}>
       {resolvedBatches.map((batch) => (
         <section key={batch.id}>
           <h2
-            className={`mb-4 text-left text-lg font-bold sm:text-xl ${theme.indexBatchHeading}`}
+            className={`mb-4 text-start text-lg font-bold sm:text-xl ${theme.indexBatchHeading}`}
           >
             {batch.titleHe}
           </h2>
@@ -33,7 +33,7 @@ export default function LearningBookIndexContent({ batches, routeBase }) {
               <li key={entry.pageId}>
                 <Link
                   href={`${routeBase}/${entry.pageId}`}
-                  className={`flex min-h-[3.25rem] items-center justify-between gap-3 rounded-2xl border px-5 py-4 text-left shadow-sm transition ${theme.indexTopicTile}`}
+                  className={`flex min-h-[3.25rem] items-center justify-between gap-3 rounded-2xl border px-5 py-4 text-start shadow-sm transition ${theme.indexTopicTile}`}
                 >
                   <span className="text-base font-semibold text-[color:var(--book-text)] sm:text-lg">
                     <MixedRtlMathText text={entry.displayTitle} />

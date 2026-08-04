@@ -1,0 +1,212 @@
+{
+  "science_remaining_g1_hard_body": {
+    "stem": "What do the heart and lungs do for your body?",
+    "options": [
+      "The heart pumps blood through the body, and the lungs fill that blood with oxygen.",
+      "The lungs pump blood, and the heart pulls air into the chest.",
+      "Both organs break down food and turn it into energy.",
+      "Both organs send signals to control how the brain works."
+    ],
+    "explanation": "The heart and lungs work as a team. The lungs take in oxygen from the air and pass it into the blood. The heart then pumps that oxygen-rich blood to every part of the body. Together, they keep every cell supplied with the oxygen it needs.",
+    "theoryLines": [
+      "Every time you breathe in, your lungs fill with air and pass oxygen into your bloodstream.",
+      "The heart beats around 60 to 100 times per minute to keep blood flowing constantly."
+    ]
+  },
+  "science_remaining_g1_hard_earth_space": {
+    "stem": "What causes daytime on Earth?",
+    "options": [
+      "Earth rotating so that our side faces toward the Sun.",
+      "The Sun moving to the far side of the Moon each night.",
+      "The Moon blocking sunlight and bouncing it back toward Earth.",
+      "Earth staying still while the Sun circles around it."
+    ],
+    "explanation": "Earth spins on its axis, making one full turn every 24 hours. When the side of Earth where you live faces the Sun, it is daytime. When that side faces away from the Sun, it is nighttime.",
+    "theoryLines": [
+      "Earth's rotation is what creates the 24-hour cycle of day and night.",
+      "The Sun itself does not move around Earth — Earth's spin makes it look like the Sun rises and sets."
+    ]
+  },
+  "science_remaining_g1_hard_environment": {
+    "stem": "Which action helps protect a garden or park?",
+    "options": [
+      "Pick up trash and put it in a bin instead of leaving it on the grass",
+      "Break branches off every tree you pass",
+      "Leave a water faucet running all the time",
+      "Paint on rocks without asking an adult"
+    ],
+    "explanation": "Picking up trash and using a bin cuts pollution and helps protect plants and animals.",
+    "theoryLines": [
+      "Everyone can help keep outdoor places clean and safe.",
+      "Trash can pollute soil and water."
+    ]
+  },
+  "science_remaining_g1_hard_materials": {
+    "stem": "What is a simple difference between a hard material and a soft material when you try to bend it?",
+    "options": [
+      "A hard material is harder to bend without breaking",
+      "There is never any difference between them",
+      "Only the size of the piece matters",
+      "A hard material is always a liquid"
+    ],
+    "explanation": "Hardness and softness are properties you can feel: soft materials bend more easily, while hard ones resist bending or may snap.",
+    "theoryLines": [
+      "We learn about materials by looking at them and touching them carefully.",
+      "Materials can be hard, soft, flexible, or brittle."
+    ]
+  },
+  "science_remaining_g1_hard_plants": {
+    "stem": "What is the main difference between a plant and a rock?",
+    "options": [
+      "A plant grows and needs water and light",
+      "Both grow in the same way",
+      "A rock grows like a tree if you pour water on it",
+      "There is no difference between living and nonliving things"
+    ],
+    "explanation": "A plant is a living thing that grows and responds to conditions. A rock is nonliving and does not grow like a plant.",
+    "theoryLines": [
+      "Living things grow and respond to their surroundings; nonliving things do not.",
+      "Plants need water, light, and air to grow."
+    ]
+  },
+  "science_remaining_g2_hard_body": {
+    "stem": "What is the main job of the heart in your body?",
+    "options": [
+      "It pumps blood to all parts of the body",
+      "It helps you breathe air in and out",
+      "The heart never changes how fast it beats",
+      "It controls how quickly you breathe during exercise"
+    ],
+    "explanation": "The heart is a muscle that pumps blood through the circulatory system, delivering oxygen and nutrients to every part of your body.",
+    "theoryLines": [
+      "The heart is a strong muscle that works every moment of your life.",
+      "It pumps blood to the lungs to pick up oxygen, then sends it to the rest of the body."
+    ]
+  },
+  "science_remaining_g2_earth_space_easy_hard": {
+    "stem": "Which statement about the Sun and Earth in our solar system is true?",
+    "options": [
+      "The Sun is the largest object in our solar system and sits at its center.",
+      "The Moon is the main source of daylight.",
+      "Earth is at the center of the solar system.",
+      "All objects in the solar system orbit the Moon."
+    ],
+    "explanation": "The Sun is at the center of our solar system. It is by far the largest object in the system — over a million Earths could fit inside it. All the planets, including Earth, orbit the Sun due to its strong gravitational pull.",
+    "theoryLines": [
+      "The Sun's gravity keeps all the planets moving in their orbits.",
+      "Earth is the third planet from the Sun and orbits it once every 365 days."
+    ]
+  },
+  "science_remaining_g2_hard_environment": {
+    "stem": "Why is plastic pollution in the ocean a serious problem?",
+    "options": [
+      "Sea animals can mistake plastic for food, which harms or kills them.",
+      "Plastic makes ocean water taste better for fish.",
+      "The ocean naturally breaks plastic down into clean, safe water.",
+      "Plastic always sinks harmlessly to the ocean floor."
+    ],
+    "explanation": "Plastic that reaches the ocean breaks into smaller and smaller pieces but never fully disappears. Sea turtles, fish, and seabirds often mistake plastic for food. When they eat it, it blocks their digestion and can kill them. Plastic pollution also damages coral reefs and other marine habitats.",
+    "theoryLines": [
+      "Plastic can take hundreds of years to break down in the environment.",
+      "Millions of tons of plastic enter the ocean every year, threatening marine life worldwide."
+    ]
+  },
+  "science_remaining_g2_hard_experiments": {
+    "stem": "What is a good order of steps for a simple science experiment?",
+    "options": [
+      "Ask a question, make a guess, test it, and record the results",
+      "Finish right away without writing anything down",
+      "Change every condition in the middle with no plan",
+      "Only guess and never check in real life"
+    ],
+    "explanation": "Science usually starts with a question and a guess, then a careful test and notes about what happened.",
+    "theoryLines": [
+      "A good experiment includes a short plan and a record of what you saw.",
+      "Conclusions should be based on evidence from the test."
+    ]
+  },
+  "science_remaining_g2_hard_materials": {
+    "stem": "Which is an example of a physical change only, with no new material made?",
+    "options": [
+      "Folding a sheet of paper without burning it",
+      "Burning paper into ash",
+      "Baking dough until it becomes bread",
+      "Iron rusting over time"
+    ],
+    "explanation": "Folding paper changes its shape, but it is still paper. Burning, rusting, and baking often make new materials.",
+    "theoryLines": [
+      "A physical change mostly keeps the same material and may change shape or state.",
+      "A chemical change makes new materials."
+    ]
+  },
+  "science_remaining_g56_easy_body": {
+    "stem": "In simple words, what is a main job of blood in the body?",
+    "options": [
+      "Carry oxygen and nutrients and help remove waste from cells",
+      "Make all energy straight from air with no help from other organs",
+      "Fully replace the job of the brain and nerves",
+      "Stop breathing whenever the body needs food"
+    ],
+    "explanation": "Blood carries oxygen, nutrients, and other useful materials, and it helps move waste away from cells.",
+    "theoryLines": [
+      "The circulatory system works with breathing and digestion.",
+      "The heart pumps blood through blood vessels to the whole body."
+    ]
+  },
+  "science_remaining_g56_easy_earth_space": {
+    "stem": "Why do people on Earth experience day and night about every 24 hours?",
+    "options": [
+      "Earth spinning on its axis so that each side faces the Sun at different times.",
+      "The Sun moving around Earth once every 24 hours.",
+      "The Moon blocking the Sun's light to create darkness.",
+      "Earth moving closer to or farther from the Sun throughout the day."
+    ],
+    "explanation": "Earth's rotation turns different places toward and away from the Sun, creating day and night.",
+    "theoryLines": [
+      "One full spin of Earth takes about one day.",
+      "The Sun is not moving around Earth each day."
+    ]
+  },
+  "science_remaining_g56_easy_environment": {
+    "stem": "Why is it important to save water at home and in the community?",
+    "options": [
+      "Fresh water is limited, so we need to protect it for people and nature",
+      "There is always unlimited extra water everywhere",
+      "Water is never used for drinking or growing plants",
+      "Only factories need water; homes never do"
+    ],
+    "explanation": "Fresh water is a limited resource. Saving it helps people, farms, and wildlife.",
+    "theoryLines": [
+      "Water is basic for life.",
+      "Using less water reduces stress on rivers, lakes, and groundwater."
+    ]
+  },
+  "science_remaining_g56_easy_experiments": {
+    "stem": "What is important to record during a science experiment?",
+    "options": [
+      "What you tested, what you observed, and what you learned",
+      "A place with lots of people",
+      "Nothing — memory alone is enough",
+      "Only a place that has water"
+    ],
+    "explanation": "Good notes help you compare results, repeat the experiment, and support conclusions with evidence.",
+    "theoryLines": [
+      "An experiment log includes steps, measurements, and observations.",
+      "Science depends on recording and reviewing data."
+    ]
+  },
+  "science_remaining_g56_easy_materials": {
+    "stem": "What is a simple difference between many natural materials and synthetic materials?",
+    "options": [
+      "A natural material comes from nature",
+      "There is no difference between them",
+      "They are always identical in every property",
+      "Only the outside color decides the type"
+    ],
+    "explanation": "Natural materials like raw wood come from nature. Many plastics are synthetic materials made through manufacturing.",
+    "theoryLines": [
+      "We can group materials by whether they come from nature or are made in factories.",
+      "A material’s properties affect how we use it safely."
+    ]
+  }
+}

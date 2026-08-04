@@ -1,5 +1,16 @@
 {
   "copy": {
-    "worksheets": "أوراق عمل"
+    "worksheets": "أوراق عمل",
+    "back_to_dashboard": "← العودة إلى لوحة التحكم",
+    "subtitle": "جميع أوراق العمل — للفصل بأكمله أو لتلاميذ مختارين.",
+    "create_new": "إنشاء ورقة عمل جديدة",
+    "loading": "جارٍ التحميل…",
+    "error_loading": "تعذّر التحميل",
+    "network_error": "خطأ في الشبكة",
+    "empty": "لا توجد أوراق عمل بعد.",
+    "selected_students": "تلاميذ مختارون",
+    "class_scope": "فصل",
+    "manage": "إدارة",
+    "report": "تقرير"
   }
 }

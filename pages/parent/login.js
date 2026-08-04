@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import PortalLoginHeading from "../../components/auth/PortalLoginHeading";
 import ParentGoogleSignInButton from "../../components/auth/ParentGoogleSignInButton";
 import { getLearningSupabaseBrowserClient } from "../../lib/learning-supabase/client";
@@ -30,7 +30,6 @@ import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { resolveParentBearerSession } from "../../lib/parent-client/parent-bearer-session.client.js";
 import { hasParentDemoSession } from "../../lib/demo/parent-demo-mode.client.js";
 
-const parentLoginSeo = getPublicPageSeo("parent-login");
 
 function ParentPassivePolicyNotice({ bright, className = "", t }) {
   const T = getParentPortalTheme(bright);
@@ -53,6 +52,7 @@ function isEmailIdentifier(value) {
 }
 
 export default function ParentLoginPage() {
+  const parentLoginSeo = usePublicPageSeo("parent-login");
   const router = useRouter();
   const { theme, isBright } = useStudentTheme();
   const { direction, locale } = useI18n();

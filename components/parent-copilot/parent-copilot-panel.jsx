@@ -51,9 +51,19 @@ function countCompletedAssistantTurns(lines) {
  * Optional server-side runner (e.g. `/api/parent/copilot-turn`) - keeps LLM keys off the client.
  * When omitted, uses bundled `runParentCopilotTurnAsync` / `runParentCopilotTurn` (detailed report default).
  *
- * @param {{ payload: object; selectedContextRef?: object || null; asyncTurnRunner?: ((input: object) => Promise<unknown>) || null }} props
+ * @param {{
+ *   payload: object;
+ *   selectedContextRef?: object || null;
+ *   asyncTurnRunner?: ((input: object) => Promise<unknown>) || null;
+ *   onRequestClose?: (() => void) || null;
+ * }} props
  */
-export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTurnRunner = null }) {
+export function ParentCopilotPanel({
+  payload,
+  selectedContextRef = null,
+  asyncTurnRunner = null,
+  onRequestClose = null,
+}) {
   const t = useT();
   const { reportLocale } = useI18n();
   const formId = useId();
@@ -259,17 +269,36 @@ export function ParentCopilotPanel({ payload, selectedContextRef = null, asyncTu
     <div
       className="w-full flex flex-col rounded-xl border border-white/12 bg-black/25 p-3 text-start text-white/90"
       style={{ height: "420px", minHeight: "420px" }}
+      data-testid="parent-copilot-panel-body"
+      data-copilot-busy={busy ? "true" : "false"}
     >
       <div className="flex items-center justify-between gap-2 shrink-0 mb-1">
         <div className="text-xs font-extrabold tracking-wide text-white/70">{t("ui.copilot.panel.title")}</div>
-        <Link
-          href="/ai-disclosure"
-          className="text-[10px] text-sky-300/80 hover:text-sky-200 underline whitespace-nowrap shrink-0"
-        >
-          {t("ui.copilot.panel.aiDisclosureLink")}
-        </Link>
+        <div className="flex items-center gap-2 shrink-0">
+          <Link
+            href="/ai-disclosure"
+            className="text-[10px] text-sky-300/80 hover:text-sky-200 underline whitespace-nowrap"
+          >
+            {t("ui.copilot.panel.aiDisclosureLink")}
+          </Link>
+          {typeof onRequestClose === "function" ? (
+            <button
+              type="button"
+              data-testid="parent-copilot-close"
+              onClick={() => onRequestClose()}
+              className="rounded border border-white/20 px-2 py-0.5 text-[10px] font-bold text-white/70 hover:bg-white/10"
+              aria-label={t("ui.copilot.panel.title")}
+            >
+              ✕
+            </button>
+          ) : null}
+        </div>
       </div>
-      <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-1 pe-0.5" role="note">
+      <p
+        className="text-[11px] leading-snug text-white/45 shrink-0 mb-1 pe-0.5"
+        role="note"
+        data-testid="parent-copilot-disclaimer"
+      >
         {t("ui.copilot.panel.disclaimer")}
       </p>
       <p className="text-[11px] leading-snug text-white/45 shrink-0 mb-2 pe-0.5">

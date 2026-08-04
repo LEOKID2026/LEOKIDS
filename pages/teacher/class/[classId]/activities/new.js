@@ -12,7 +12,6 @@ import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../../lib/classroo
 import { generateActivityQuestionSetClient } from "../../../../../lib/classroom-activities/generate-activity-questions-client.js";
 import { activityModeLabelHe } from "../../../../../lib/classroom-activities/classroom-activities-labels.client.js";
 import {
-  formatGradeLevelHe,
   loadClassActivityContextFromApiClass,
   resolveCanonicalGradeKey,
 } from "../../../../../lib/teacher-portal/teacher-class-grade.js";
@@ -35,6 +34,31 @@ export async function getServerSideProps(context) {
 }
 
 const MODES = ["guided_practice", "quiz", "homework", "live_lesson"];
+const ACT_NEW = "pages__teacher__class__[classId]__activities__new";
+const GRADE_PACK = "lib__teacher-portal__teacher-class-grade";
+const GRADE_COPY_KEYS = {
+  g1: "grade_1",
+  g2: "grade_2",
+  g3: "grade_3",
+  g4: "grade_4",
+  g5: "grade_5",
+  g6: "grade_6",
+};
+function actNewCopy(key, vars) {
+  let t = globalBurnDownCopy(ACT_NEW, key);
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      t = t.split("{" + k + "}").join(String(v));
+    }
+  }
+  return t;
+}
+function gradeLabel(gradeLevel) {
+  const key = String(gradeLevel || "").trim().toLowerCase();
+  const copyKey = GRADE_COPY_KEYS[key];
+  if (copyKey) return globalBurnDownCopy(GRADE_PACK, copyKey);
+  return key;
+}
 
 export default function TeacherNewActivityPage({ classId }) {
   const router = useRouter();
@@ -77,13 +101,13 @@ export default function TeacherNewActivityPage({ classId }) {
         const json = await res.json().catch(() => ({}));
         if (cancelled) return;
         if (res.status === 403) {
-          setContextError("You do not have permission to create activities for this class. Contact your school admin.");
+          setContextError(actNewCopy("err_no_permission"));
           setCreationBlocked(true);
           setClassContext((prev) => ({ ...prev, loaded: true }));
           return;
         }
         if (!res.ok) {
-          setContextError(json?.error?.message || "Could not load class");
+          setContextError(json?.error?.message || actNewCopy("err_load_class"));
           setClassContext((prev) => ({ ...prev, loaded: true }));
           return;
         }
@@ -94,7 +118,7 @@ export default function TeacherNewActivityPage({ classId }) {
         }
         const ctx = loadClassActivityContextFromApiClass(cls);
         if (ctx.gradeLocked && !ctx.gradeKey) {
-          setContextError("This class grade level is invalid. Contact your school admin.");
+          setContextError(actNewCopy("err_invalid_grade"));
           setClassContext({ ...ctx, loaded: true });
           return;
         }
@@ -109,7 +133,7 @@ export default function TeacherNewActivityPage({ classId }) {
         setClassContext({ ...ctx, loaded: true });
       } catch {
         if (!cancelled) {
-          setContextError("Network error");
+          setContextError(actNewCopy("network_error"));
           setClassContext((prev) => ({ ...prev, loaded: true }));
         }
       }
@@ -153,7 +177,7 @@ export default function TeacherNewActivityPage({ classId }) {
       });
       setPreview(qs);
     } catch (e) {
-      setError(e?.message || "Could not create question preview");
+      setError(e?.message || actNewCopy("err_preview"));
       setPreview([]);
     } finally {
       setBusy(false);
@@ -162,11 +186,11 @@ export default function TeacherNewActivityPage({ classId }) {
 
   const createDraft = useCallback(async () => {
     if (!title.trim()) {
-      setError("Please enter a title");
+      setError(actNewCopy("err_enter_title"));
       return;
     }
     if (!preview.length) {
-      setError("Please preview the questions before saving");
+      setError(actNewCopy("err_preview_first"));
       return;
     }
     setBusy(true);
@@ -194,7 +218,7 @@ export default function TeacherNewActivityPage({ classId }) {
       if (timeLimitSeconds) body.timeLimitSeconds = Number(timeLimitSeconds);
       if (dueAt) body.dueAt = new Date(dueAt).toISOString();
       if (mode === "quiz" && !timeLimitSeconds) {
-        setError("Quiz mode requires a time limit (seconds)");
+        setError(actNewCopy("err_quiz_time"));
         setBusy(false);
         return;
       }
@@ -205,7 +229,7 @@ export default function TeacherNewActivityPage({ classId }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Save failed");
+        setError(json?.error?.message || json?.error?.code || actNewCopy("err_save"));
         return;
       }
       const activityId = json?.data?.activityId;
@@ -215,7 +239,7 @@ export default function TeacherNewActivityPage({ classId }) {
         );
       }
     } catch {
-      setError("Network error");
+      setError(actNewCopy("network_error"));
     } finally {
       setBusy(false);
     }
@@ -237,7 +261,7 @@ export default function TeacherNewActivityPage({ classId }) {
 
   return (
     <Layout>
-      <TeacherPortalShell title="New activity" backHref={`/teacher/class/${classId}/activities`}>
+      <TeacherPortalShell title={actNewCopy("new_activity")} backHref={`/teacher/class/${classId}/activities`} backLabel={actNewCopy("back_to_activities")}>
         <TeacherClassActivitiesNav classId={classId} />
 
         {error || contextError ? (
@@ -250,7 +274,7 @@ export default function TeacherNewActivityPage({ classId }) {
         <>
         <div className="grid gap-4 md:grid-cols-2 mb-6">
           <label className="block text-sm">
-            <span className="text-white/70">Title</span>
+            <span className="text-white/70">{actNewCopy("title")}</span>
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={title}
@@ -259,7 +283,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">Subject</span>
+            <span className="text-white/70">{actNewCopy("subject")}</span>
             {classContext.subjectLocked ? (
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
@@ -288,14 +312,14 @@ export default function TeacherNewActivityPage({ classId }) {
             )}
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">Topic</span>
+            <span className="text-white/70">{actNewCopy("topic")}</span>
             {subject === "science" && topicOpts.length === 0 ? (
               <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                No topics available for this grade in Science.
+                {actNewCopy("no_science_topics")}
               </p>
             ) : subject !== "science" && topicOpts.length === 0 ? (
               <p className="mt-1 text-amber-200 text-sm rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2">
-                No topics available for this subject and grade level.
+                {actNewCopy("no_subject_topics")}
               </p>
             ) : subject === "geometry" ? (
               <select
@@ -354,7 +378,7 @@ export default function TeacherNewActivityPage({ classId }) {
             )}
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">Subtopic (optional)</span>
+            <span className="text-white/70">{actNewCopy("subtopic_optional")}</span>
             <input
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={subtopic}
@@ -362,11 +386,11 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">Grade (for question generation)</span>
+            <span className="text-white/70">{actNewCopy("grade_for_questions")}</span>
             {classContext.gradeLocked ? (
               <input
                 className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2 opacity-70"
-                value={formatGradeLevelHe(gradeLevel)}
+                value={gradeLabel(gradeLevel)}
                 readOnly
                 disabled
               />
@@ -382,14 +406,14 @@ export default function TeacherNewActivityPage({ classId }) {
             >
               {["g1", "g2", "g3", "g4", "g5", "g6"].map((g) => (
                 <option key={g} value={g}>
-                  {formatGradeLevelHe(g)}
+                  {gradeLabel(g)}
                 </option>
               ))}
             </select>
             )}
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">Activity mode</span>
+            <span className="text-white/70">{actNewCopy("activity_mode")}</span>
             <select
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
               value={mode}
@@ -415,7 +439,7 @@ export default function TeacherNewActivityPage({ classId }) {
             inputClassName="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
           />
           <label className="block text-sm">
-            <span className="text-white/70">Number of questions</span>
+            <span className="text-white/70">{actNewCopy("number_of_questions")}</span>
             <input
               type="number"
               min={1}
@@ -426,7 +450,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-white/70">Time limit (seconds, optional)</span>
+            <span className="text-white/70">{actNewCopy("time_limit_optional")}</span>
             <input
               type="number"
               min={30}
@@ -436,7 +460,7 @@ export default function TeacherNewActivityPage({ classId }) {
             />
           </label>
           <label className="block text-sm md:col-span-2">
-            <span className="text-white/70">Due date (homework, optional)</span>
+            <span className="text-white/70">{actNewCopy("due_date_optional")}</span>
             <input
               type="datetime-local"
               className="mt-1 w-full rounded-lg bg-white/10 border border-white/20 px-3 py-2"
@@ -453,7 +477,7 @@ export default function TeacherNewActivityPage({ classId }) {
             onClick={runPreview}
             className="px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 text-sm"
           >
-            {busy ? "Generating…" : "Preview questions"}
+            {busy ? actNewCopy("generating") : actNewCopy("preview_questions")}
           </button>
           <button
             type="button"
@@ -461,18 +485,18 @@ export default function TeacherNewActivityPage({ classId }) {
             onClick={createDraft}
             className="px-4 py-2 rounded-xl bg-amber-500/90 text-black font-semibold text-sm disabled:opacity-50"
           >
-            Save as draft
+            {actNewCopy("save_draft")}
           </button>
         </div>
 
         {preview.length > 0 ? (
           <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-            <h2 className="text-lg font-semibold mb-3">Preview ({preview.length} questions)</h2>
+            <h2 className="text-lg font-semibold mb-3">{actNewCopy("preview_heading", { n: preview.length })}</h2>
             <ol className="list-decimal list-inside space-y-3 text-sm text-white/90">
               {preview.map((q, i) => (
                 <li key={i} className="list-item">
                   <AssignedActivityQuestionDisplay question={q} variant="preview" />
-                  <span className="text-white/40 text-xs me-2"> (not sent to student)</span>
+                  <span className="text-white/40 text-xs me-2"> {actNewCopy("not_sent_hint")}</span>
                 </li>
               ))}
             </ol>

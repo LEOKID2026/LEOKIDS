@@ -3,13 +3,13 @@ export const PARENT_REPORT_ARTICLES = [
   {
     "slug": "report-overview",
     "section": "parent-report",
-    "title": "نظرة عامة على تقرير الوالدين",
+    "title": "نظرة عامة على تقرير ولي الأمر",
     "summary": "التقرير القياسي مقابل التقرير التفصيلي - متى يتم استخدام كل منهما.",
     "keywords": [
       "تقرير",
       "ملخص"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -39,8 +39,8 @@ export const PARENT_REPORT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parent-report/report-overview/desktop/short-report.png",
-        "alt": "صفحة تقرير الوالدين القياسية",
-        "caption": "صفحة تقرير الوالدين القياسية",
+        "alt": "صفحة تقرير ولي الأمر القياسية",
+        "caption": "صفحة تقرير ولي الأمر القياسية",
         "sources": {
           "mobile": "/help-center/screenshots/parent-report/report-overview/mobile/short-report.png",
           "tablet": "/help-center/screenshots/parent-report/report-overview/tablet/short-report.png"
@@ -54,7 +54,7 @@ export const PARENT_REPORT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "يتضمن تفصيلاً حسب الموضوع، والموضوعات، ورسالة الوالدين، والتوصيات المركزة."
+        "text": "يتضمن تفصيلاً حسب المادة والمواضيع، ورسالة ولي الأمر، والتوصيات المركزة."
       },
       {
         "kind": "screenshot",
@@ -77,7 +77,7 @@ export const PARENT_REPORT_ARTICLES = [
       "ملخص",
       "بطاقة"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -121,7 +121,7 @@ export const PARENT_REPORT_ARTICLES = [
       "بيانات",
       "حضور"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -143,7 +143,7 @@ export const PARENT_REPORT_ARTICLES = [
       {
         "kind": "callout",
         "tone": "معلومات",
-        "text": "كلما زادت الممارسة، أصبحت رؤى التقرير أكثر دقة."
+        "text": "كلّما زادت الممارسة، أصبحت رؤى التقرير أكثر دقة."
       },
       {
         "kind": "screenshot",
@@ -170,7 +170,7 @@ export const PARENT_REPORT_ARTICLES = [
       "اتجاه",
       "ثقة"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -214,7 +214,7 @@ export const PARENT_REPORT_ARTICLES = [
       "نقاط القوة",
       "تحسين"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -256,18 +256,18 @@ export const PARENT_REPORT_ARTICLES = [
   {
     "slug": "topics-and-buckets",
     "section": "parent-report",
-    "title": "المواضيع حسب الموضوع",
-    "summary": "تفصيل حسب موضوعات الممارسة في كل موضوع.",
+    "title": "المواضيع حسب المادة",
+    "summary": "تفصيل حسب موضوعات الممارسة في كل مادة.",
     "keywords": [
       "المواضيع",
-      "موضوع"
+      "مادة"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "topics",
-        "title": "جداول الموضوع"
+        "title": "جداول المواضيع"
       }
     ],
     "blocks": [
@@ -275,11 +275,11 @@ export const PARENT_REPORT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "topics",
-        "text": "جداول الموضوع"
+        "text": "جداول المواضيع"
       },
       {
         "kind": "paragraph",
-        "text": "يعرض كل موضوع موضوعات محددة - على سبيل المثال، الجمع في الرياضيات أو المفردات باللغة الإنجليزية."
+        "text": "تعرض كل مادة مواضيع محددة - على سبيل المثال، الجمع في الرياضيات أو المفردات باللغة الإنجليزية."
       },
       {
         "kind": "screenshot",
@@ -300,18 +300,18 @@ export const PARENT_REPORT_ARTICLES = [
   {
     "slug": "subjects-overview",
     "section": "parent-report",
-    "title": "نظرة عامة على المواضيع الأربعة",
-    "summary": "رسم بياني أو جدول لمقارنة المواضيع.",
+    "title": "نظرة عامة على المواد الأربعة",
+    "summary": "رسم بياني أو جدول لمقارنة المواد.",
     "keywords": [
-      "المواضيع",
+      "المواد",
       "جدول"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "chart",
-        "title": "مخطط المواضيع"
+        "title": "مخطط المواد"
       }
     ],
     "blocks": [
@@ -319,7 +319,7 @@ export const PARENT_REPORT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "chart",
-        "text": "مخطط المواضيع"
+        "text": "مخطط المواد"
       },
       {
         "kind": "paragraph",
@@ -328,8 +328,8 @@ export const PARENT_REPORT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parent-report/subjects-overview/desktop/six-subjects.png",
-        "alt": "مخطط نظرة عامة على الموضوعات",
-        "caption": "مخطط نظرة عامة على الموضوعات",
+        "alt": "مخطط نظرة عامة على المواد",
+        "caption": "مخطط نظرة عامة على المواد",
         "sources": {
           "mobile": "/help-center/screenshots/parent-report/subjects-overview/mobile/six-subjects.png",
           "tablet": "/help-center/screenshots/parent-report/subjects-overview/tablet/six-subjects.png"
@@ -349,7 +349,7 @@ export const PARENT_REPORT_ARTICLES = [
     "keywords": [
       "توصيات"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -392,7 +392,7 @@ export const PARENT_REPORT_ARTICLES = [
     "keywords": [
       "التحديات"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -431,12 +431,12 @@ export const PARENT_REPORT_ARTICLES = [
     "slug": "detailed-report",
     "section": "parent-report",
     "title": "تقرير مفصل",
-    "summary": "الملخص التنفيذي وخطاب الوالدين والتفصيل حسب الموضوع.",
+    "summary": "الملخص التنفيذي وخطاب أولياء الأمور والتفصيل حسب المادة.",
     "keywords": [
       "مفصل",
       "خطاب"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -445,7 +445,7 @@ export const PARENT_REPORT_ARTICLES = [
       },
       {
         "id": "letter",
-        "title": "خطاب الوالدين"
+        "title": "خطاب أولياء الأمور"
       }
     ],
     "blocks": [
@@ -463,17 +463,17 @@ export const PARENT_REPORT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "letter",
-        "text": "خطاب الوالدين"
+        "text": "خطاب أولياء الأمور"
       },
       {
         "kind": "paragraph",
-        "text": "يتضمن كل موضوع شرحًا مكتوبًا للوالدين — ما يعرفه طفلك وما يجب تعزيزه."
+        "text": "يتضمن كل موضوع شرحًا مكتوبًا لأولياء الأمور — ما يعرفه طفلك وما يجب تعزيزه."
       },
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/parent-report/detailed-report/desktop/letter.png",
-        "alt": "خطاب الوالدين لموضوع واحد",
-        "caption": "خطاب الوالدين لموضوع واحد",
+        "alt": "خطاب أولياء الأمور لموضوع واحد",
+        "caption": "خطاب أولياء الأمور لموضوع واحد",
         "sources": {
           "mobile": "/help-center/screenshots/parent-report/detailed-report/mobile/letter.png",
           "tablet": "/help-center/screenshots/parent-report/detailed-report/tablet/letter.png"
@@ -491,15 +491,15 @@ export const PARENT_REPORT_ARTICLES = [
     "title": "طباعة وتصدير PDF",
     "summary": "كيفية حفظ التقرير أو طباعته.",
     "keywords": [
-      "مطبعة",
-      "قوات الدفاع الشعبي"
+      "طباعة",
+      "PDF"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "export",
-        "title": "يصدّر"
+        "title": "تصدير"
       }
     ],
     "blocks": [
@@ -507,7 +507,7 @@ export const PARENT_REPORT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "export",
-        "text": "يصدّر"
+        "text": "تصدير"
       },
       {
         "kind": "paragraph",
@@ -540,10 +540,10 @@ export const PARENT_REPORT_ARTICLES = [
     "title": "فهم إشعار مهم",
     "summary": "ماذا يعني الإشعار الموجود أسفل التقرير – النص الكامل.",
     "keywords": [
-      "تنصل",
+      "إخلاء مسؤولية",
       "قانوني"
     ],
-    "audience": "الوالدين",
+    "audience": "أولياء الأمور",
     "updatedAt": "2026-05-23",
     "toc": [
       {
@@ -567,7 +567,7 @@ export const PARENT_REPORT_ARTICLES = [
         "title": "ملاحظة هامة",
         "paragraphs": [
           "يعتمد التقرير على بيانات الممارسة التي تم جمعها على Leo Kids.",
-          "يهدف التقرير إلى مساعدة الآباء على فهم ما يمارسه طفلهم، وأين ظهرت نقاط القوة، وما الذي يجب تعزيزه بعد ذلك.",
+          "يهدف التقرير إلى مساعدة أولياء الأمور على فهم ما يمارسه طفلهم، وأين ظهرت نقاط القوة، وما الذي يجب تعزيزه بعد ذلك.",
           "التقرير ليس تشخيصًا طبيًا أو نفسيًا أو تعليميًا ولا يحل محل المعلم أو المستشار أو المقيم أو أي متخصص آخر. إذا كانت لديك مخاوف مستمرة بشأن صعوبة أو فجوات التعلم، فتحدث مع معلم أو متخصص مؤهل."
         ]
       },

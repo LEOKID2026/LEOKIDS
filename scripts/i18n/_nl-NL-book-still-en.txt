@@ -1,0 +1,244 @@
+You slide a triangle sticker across the page to the right without flipping it over. What kind of move is this?
+What kind of move is this — translation or reflection?
+What kind of move is this?
+Did the shape move to a new place, or does it look like a mirror image?
+Cube: 6 equal square faces (like a dice).
+Imagine a dice:
+In practice you will read a description of a solid — look for how many faces it has and what shape each face is!
+We stick a heart sticker on glass and see it from outside in a mirror. What kind of move is this?
+Did the shape only move to a new place, or does it look like a mirror image?
+Check angles — there are 4 right angles → fits a rectangle and also a square.
+In practice you will read a description — choose:
+# Solids — Faces, Vertices, and Edges
+A dice:
+Vertices — the corners of the cube: 8.
+Edges — the lines between two faces: 12.
+You have a dice in front of you.
+In practice count square units or multiply side by side!
+A triangle has three sides of length 5, 5, and 5. What type is it?
+Check if there are two equal sides — the side 3 appears twice: yes, two equal sides.
+In practice you will see a triangle and check how many sides are equal — that tells you if it is equilateral, isosceles, or scalene.
+In practice check: 90°?
+Volume = how much space is inside the solid — calculate: length × width × height.
+Now you know how to calculate the volume of a rectangular prism in geometry.
+That is what makes a square different from a regular rectangle — in a rectangle not all sides are necessarily equal.
+# Solids — Faces in the Plane
+A line that divides a shape into two equal parts — like a mirror.
+In practice add three sides — check that none is missing!
+In a rectangle — there are right angles; we learn the diagonal separately there.
+In a parallelogram, what does the diagonal do?
+In a rectangle there are right angles — so √(a²+b²) works.
+Diagonal of a parallelogram — first understand what it does.
+In practice you'll recognize when there's enough information — and when not to use the rectangle formula!
+In a parallelogram there is no division by 2 in the area formula.
+A solid — a shape with length, width, and height (not just area!).
+In practice you'll find cubes and rectangular prisms — check the shape of the faces!
+Today we will learn volume of a prism — a solid with two identical bases (rectangle) and rectangular faces.
+In practice you'll find cylinder, pyramid, cone, and sphere — check the shape of the base!
+In practice you'll be asked:
+Sometimes in an addition problem there is a blank:
+On the number line — from 2 to 8 there are 6 jumps: 3, 4, 5, 6, 7, 8.
+Sometimes in a subtraction problem there is a blank:
+The question is: "How many were there at the start?" — put back what was taken.
+how many were taken, or how many there were at the start.
+Today we're going to learn what a number line is.
+- In 15 there is 1 ten-stick and 5 single cubes
+- In 20 there are 2 ten-sticks and 0 single cubes
+In 23 there are 2 ten-sticks and 3 single cubes.
+In 17 there is one ten-stick and 7 single cubes.
+In 17 there is 1 ten and 7 ones.
+In 29 there are 2 ten-sticks (20) and 9 single cubes.
+In 29 there are 2 tens and 9 ones.
+There were eight, three were taken — five are left.
+There were 8 stickers.
+Mark what was taken or hop to the left on the number line!
+When you add the values, you find out how much money there is altogether.
+In a coin problem we usually ask: how much money is there altogether?
+1. What do we know? — which coins there are and what each is worth
+5 + 5 + 2 = 12 → there are 12 shekels altogether.
+Read what you know, what you're asked, and add the values!
+In these problems there are three parts:
+- Had — how much money there was before
+- Left / change — what remains
+1. What do we know? — how much there was, how much was spent (or how much it cost)
+Check how much there was, how much was paid or spent, then subtract.
+You know the order of the days — then you can answer: what day is tomorrow? Or which day will it be in two days?
+3. Add the tens (including carry if there is one)
+# When Does a Number Divide by 2, 5, and 10?
+Today we're going to learn what a half is — half of the whole.
+Today we're going to learn what a quarter is — a quarter of the whole.
+Multiplication helps you count fast when there are several same-size groups.
+(On the next division page — we'll see that division is related to multiplication.)
+What do you see?
+In 236 there are 2 hundreds, 3 tens, and 6 ones.
+In 312 there are 3 hundreds, 1 ten, and 2 ones.
+2. When there aren't enough ones, trade one ten for 10 ones (for example 52 → 4 tens and 12 ones)
+When there are several coins of the same value, you can figure out how much money there is altogether — with addition or equal groups.
+4 × 5 = 20 → there are 20 shekels altogether.
+When there are several groups of the same size, you can find how many there are altogether — with multiplication.
+There are 5 boxes. Each box has 4 pencils. How many pencils are there altogether?
+When the division comes out exactly — there is no remainder.
+Ask: from some number we subtracted 18 and got 42 — what was the number?
+From some number we subtracted 34 and got 48 — what was the number?
+# Fractions — What Are They and How Do We Compare?
+**Content scope:** What a fraction is. Numerator and denominator. Halves, thirds, quarters. Basic comparison between fractions with the same denominator.
+The denominator — how many equal parts there are in all.
+Check the ones digit!
+Today we will learn to read numbers up to 1,000 and figure out what each digit means by its place.
+In a big number there are hundreds, tens, and ones.
+Today we will learn order of operations — when there is addition and multiplication in the same problem, multiply first!
+Today we will learn order of operations when there is subtraction and multiplication — multiply first, then subtract.
+When there aren't enough ones (or tens) — we borrow from the place to the left.
+When there isn't enough — borrow!
+In practice you'll find does it divide evenly? — use the rules!
+Ask: what do you add to 125 to reach 380?
+Today we're going to learn to read big numbers up to 10,000 and figure out what each digit means by its place.
+In a four-digit number there are thousands, hundreds, tens, and ones.
+Today we'll learn what happens when you multiply a number by 1.
+Today we'll learn what a power means — short writing for repeated multiplication of the same number.
+What does 2⁴ mean? (Base? Exponent? Write it as repeated multiplication.)
+Today we'll learn to calculate the value of a power — for example 2⁵.
+If there are none — it's prime.
+When there aren't enough in the ones, tens, hundreds, or thousands — borrow from the place to the left.
+When there aren't enough — borrow!
+What do you know? Two amounts — for example 156 and 89
+What do you do? Subtract: bigger − smaller
+In practice you'll also find bigger comparison questions.
+Library: there are 53 new books. Each shelf holds 8 books.
+In practice you'll also find bigger division-with-remainder word problems.
+In practice you'll also find bigger questions about adding times. Add the minutes!
+Today we'll learn what happens when you add 0 to a number.
+Today we'll learn what happens when you multiply a number by 0.
+Today we'll learn what happens when you subtract 0 from a number.
+First check the ten-thousands digit — the number with the bigger digit is larger (read from left to right)
+If they're equal — check the thousands
+If they're equal — check the hundreds, tens, ones
+Ask: what do you add to 3,250 to reach 8,400?
+Ask: 15,000 minus what equals 6,500?
+Check the order of magnitude: 8,800 is close to 9,000
+±1 works even when there are zeros in the middle — for example 45,600.
+When there are zeros: 45,600 − 1 = 45,599 — not 45,500!
+And what comes after 82,000?
+Today we'll learn to read large numbers up to 100,000 and figure out what each digit means by its place.
+In a five-digit number there are ten-thousands, thousands, hundreds, tens, and ones.
+The step might be +500, +1,000, +2,000 and more — it's important to find what size repeats.
+Subtract the ones — if there aren't enough, borrow 1 from the tens
+What do you know? Two amounts — for example 420 liters and 275 liters
+What do you do? Always: bigger − smaller
+420 − 275 = 145 — there are 145 liters more.
+There were $450, they spent $120, then another $80. How much is left?
+An item costs $300, there is a 20% discount.
+In practice you will add three numbers — pick a convenient pair to add first!
+In practice you will compare large numbers — work from the left!
+In practice you will add decimals — always line them up!
+In practice you will divide decimals — change to whole numbers first!
+In practice you will divide by 10 and 100 — watch the direction of the decimal point!
+In practice you will multiply decimals — count digits after the decimal point!
+In practice you will multiply by 10 and 100 — the direction of the decimal point matters!
+In practice you will subtract decimals — check with addition!
+In practice you will divide fractions — flip and multiply!
+In practice you will multiply fractions — simplify at the end!
+In practice you will multiply two-digit numbers — use breaking apart!
+In practice you will find discounts — calculate the percent of the price!
+# Ratios — What Do They Mean?
+In practice you will round to tens, hundreds, and thousands — identify the deciding digit correctly!
+In practice you will find map→real life — first figure out what 1 cm equals!
+Tens: after borrowing there are 9 tens. 9 − 6 = 3.
+Hundreds: after borrowing there are 3 hundreds. 3 − 3 = 0.
+Ten thousands: after borrowing there are 6 ten thousands. 6 − 2 = 4.
+In practice you will find distance/speed/time — figure out what you are looking for!
+In practice you will find sales — calculate the discount first!
+In practice you will add hours — add the minutes, then convert 60 minutes to 1 hour!
+We will also learn what animals need to stay alive.
+In a garden there is a dog, a tree, and a rock.
+What does it need to stay alive?
+What does it need?
+In practice, look for questions about what animals need.
+Today in science we will learn about our Earth — what we see in the sky and how the weather changes.
+In the sky there is the sun, clouds, and wind.
+During the day there is light — the sun shines.
+What did you see in the sky?
+On a rainy day there are dark clouds in the sky.
+On a rainy day — it is cold and wet outside, and there are dark clouds in the sky.
+In practice, look for questions about the sun, rain, and what happens in the sky.
+In the classroom there is a pen, a sponge, and a small rock.
+What happens when you press on it?
+# Plants — What Plants Need
+Today in science we will learn about plants — what they look like and what they need to grow.
+In the classroom there is a pot with a small plant.
+What does a plant need to grow?
+Think about what you see in a garden — sun, water, soil.
+What will happen if we do not pour water for a whole week?
+What will happen to the pot if we do not pour water for a whole week?
+Now you know plant parts and what plants need to grow in science.
+In practice, look for questions about roots, leaves, and what a plant needs.
+What comes first in a butterfly's life cycle?
+What could they have done differently?
+A child who ate without washing hands — what could they have done differently?
+During the year there are seasons:
+What gives light and heat during the day?
+Does a plant by the window grow taller?
+Write down what you see — without guessing.
+If you change both water and light — you do not know what made the difference.
+Does a plant by a window grow taller than a plant in a dark corner?
+What will be the variable in this test?
+What will be the variable in a test of a plant by a window versus a plant in a dark corner?
+Ice is a solid.
+Today in science we will learn how a plant grows from a seed — and what happens when water is missing.
+What happens to a seed without water?
+A plant moved to a dark room — what will happen to its leaves?
+Why does a fish have fins?
+What will happen to the puddle on a sunny day?
+Which stage of the water cycle does it enter?
+Fifth step — conclusion: what did we learn?
+If you change several things — you do not know what made the difference.
+What stays the same?
+What does a pulling action do?
+What happens when you stop pushing — why does the book stop?
+Today we will summarize what we learned in science about plants — the last lesson summary on this topic.
+What does the plant do with sunlight?
+What will happen to food production in the plant?
+Light, water, and suitable soil are important growing conditions; without light there is no food production in leaves.
+The question: a kingfisher and a small fish in a river — who is predator and who is prey? And there is also competition — for what?
+What happens to food in the mouth?
+Where does it go after swallowing?
+The question: what happens to food in the mouth — and where does it go after swallowing?
+Today in science we will learn about natural resources — what nature gives us — and how to protect them.
+Method — what we do, what is the variable, what stays the same
+Does a plant in a warm room grow faster than a plant in a cold room?
+What comes after experiment results?
+What conclusion would you want to write after the table?
+In this experiment, the variable is sponge size — that is what changes between trials.
+Inherited traits — what offspring receive from parents.
+What changes in the stages?
+What stays the same species?
+The question: in a butterfly and caterpillar — what changes in the life stages? And what stays the same species?
+What stays?
+- The brain decides what to do
+In places with active volcanoes — there are warning systems and safety plans.
+The question: water from a well — where does it come from? And which natural phenomenon is related to movement inside Earth?
+What we can do:
+Variable — what we change (for example amount of water)
+Controlled conditions — what stays the same (plant type, light)
+Does a plant that gets the right amount of water grow more than a plant that gets almost no water after a week?
+What will you write in the journal?
+What will the graph look like (axes, points)?
+The question: plan an investigation — which sponge absorbs more water? What do you write in the journal and how do you build a graph?
+What happens to light that hits a mirror?
+What is the difference between a mirror and clear glass — in which does light pass and in which does it return?
+The question: what is the difference between a mirror and clear glass — in which does light pass and in which does it return?
+What happens to the food web if all tigers disappear?
+The more species there are — the stronger and more resilient the web is to changes.
+What did each one do?
+What do you know about the sun and Earth from your lessons?
+- Talk with family — what can change at home
+A real challenge — but there is something to do, and every small choice matters.
+What reduces carbon footprint — walking or driving alone in a car?
+Hypothesis — what seems likely to happen?
+Variable — what we change; constant — what stays the same
+Conclusion — what did we learn from the data?
+Variable — what we change (light).
+Variable — what differs; comparison — between the situations
+What will you present in class?
+The question: plan a project — which material insulates heat better: cloth or paper? What do you present in class?
+Fire is dangerous, so students do not do fire experiments at home or alone. If there is a demonstration in class, only a responsible teacher does it; if there is danger, move away and call an adult immediately.

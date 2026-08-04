@@ -1,6 +1,11 @@
 /**
- * Owner-authored topic-level Hebrew copy — Phase B+C+D (templateId + slots only).
+ * Owner-authored topic-level copy — Phase B+C+D (templateId + slots only).
+ * Strings resolve via report burn-down packs (locale-aware).
  */
+
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
+
+const SLUG = "utils__parent-report-language__parent-report-owner-topic-copy-templates";
 
 /** @typedef {{
  *   topicName: string,
@@ -31,20 +36,17 @@ function hasPattern(s) {
 
 function formatQuestionsText(n) {
   const q = Math.max(0, Math.round(Number(n) || 0));
-  if (q === 1) return "1 question";
-  return `${q} questions`;
+  return reportPackCopy(SLUG, "questions_text", { questions: q });
 }
 
 function formatCorrectText(n) {
   const c = Math.max(0, Math.round(Number(n) || 0));
-  if (c === 1) return "1 correct answer";
-  return `${c} correct answers`;
+  return reportPackCopy(SLUG, "correct_text", { correct: c });
 }
 
 function formatWrongText(n) {
   const w = Math.max(0, Math.round(Number(n) || 0));
-  if (w === 1) return "1 wrong answer";
-  return `${w} wrong answers`;
+  return reportPackCopy(SLUG, "wrong_text", { wrong: w });
 }
 
 function hasBreakdown(s) {
@@ -66,42 +68,59 @@ function hasReliableAccuracy(s) {
 
 /** @param {TopicOwnerCopySlots} s */
 function renderTopicDataLine(s) {
-  const topic = s.topicName;
+  const topicName = s.topicName;
   const qText = formatQuestionsText(s.questions);
   if (hasBreakdown(s)) {
-    let line = `The data: ${qText} solved in ${topic}, of which ${formatCorrectText(s.correct)} and ${formatWrongText(s.wrong)}.`;
+    let line = reportPackCopy(SLUG, "data_line_breakdown", {
+      qText,
+      topicName,
+      correctText: formatCorrectText(s.correct),
+      wrongText: formatWrongText(s.wrong),
+    });
     if (hasReliableAccuracy(s) && s.accuracy > 0) {
-      line += ` Accuracy is ${s.accuracy}%.`;
+      line += reportPackCopy(SLUG, "data_line_accuracy_suffix", { accuracy: s.accuracy });
     }
     return line;
   }
   if (hasReliableAccuracy(s) && s.accuracy > 0) {
-    return `The data: ${qText} solved in ${topic}, and accuracy is ${s.accuracy}%.`;
+    return reportPackCopy(SLUG, "data_line_with_accuracy", {
+      qText,
+      topicName,
+      accuracy: s.accuracy,
+    });
   }
-  return `The data: ${qText} solved in ${topic}.`;
+  return reportPackCopy(SLUG, "data_line_basic", { qText, topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderTopicPatternLine(s) {
   if (!hasPattern(s)) return "";
-  return `The recurring mistake: ${s.detectedPattern}.`;
+  return reportPackCopy(SLUG, "pattern_line", { detectedPattern: s.detectedPattern });
 }
 
 /** @param {string} base @param {TopicOwnerCopySlots} s */
 function appendPatternToSnapshot(base, s) {
   if (!hasPattern(s)) return base;
-  return `${base} The recurring mistake: ${s.detectedPattern}.`;
+  return `${base}${reportPackCopy(SLUG, "pattern_suffix", { detectedPattern: s.detectedPattern })}`;
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedBase(s) {
-  const tn = s.topicName;
+  const topicName = s.topicName;
   const qText = formatQuestionsText(s.questions);
   let base;
   if (s.decisionCode === "clear_topic_gap") {
-    base = `${tn} is worth focusing on now. ${qText} solved, and accuracy is ${s.accuracy}%.`;
+    base = reportPackCopy(SLUG, "difficulty_base_clear_gap", {
+      topicName,
+      qText,
+      accuracy: s.accuracy,
+    });
   } else {
-    base = `${tn} shows a sign of a topic that needs reinforcement. ${qText} solved, and accuracy is ${s.accuracy}%.`;
+    base = reportPackCopy(SLUG, "difficulty_base_default", {
+      topicName,
+      qText,
+      accuracy: s.accuracy,
+    });
   }
   return appendPatternToSnapshot(base, s);
 }
@@ -109,9 +128,9 @@ function renderDifficultyObservedBase(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedIdentified(s) {
   if (hasPattern(s)) {
-    return `What we see: in ${s.topicName} there are a few mistakes that repeat around the same idea.`;
+    return reportPackCopy(SLUG, "difficulty_identified_pattern", { topicName: s.topicName });
   }
-  return `What we see: in ${s.topicName} there's difficulty based on the questions solved and the accuracy.`;
+  return reportPackCopy(SLUG, "difficulty_identified_default", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -127,50 +146,64 @@ function renderDifficultyObservedPattern(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedMeaning(s) {
   if (s.decisionCode === "clear_topic_gap") {
-    return `What it means: this probably isn't a one-time mistake. It's worth going back to the basics of ${s.topicName} before moving on.`;
+    return reportPackCopy(SLUG, "difficulty_meaning_clear_gap", { topicName: s.topicName });
   }
-  return `What it means: the child succeeds on some of the questions, but ${s.topicName} still isn't stable enough.`;
+  return reportPackCopy(SLUG, "difficulty_meaning_default", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedHomeAction(s) {
   if (hasPattern(s)) {
-    return `What to do together: solve 5-8 short questions in ${s.topicName}. After each mistake, pause, ask the child to explain how they solved it, and pay special attention to ${s.detectedPattern}.`;
+    return reportPackCopy(SLUG, "difficulty_home_pattern", {
+      topicName: s.topicName,
+      detectedPattern: s.detectedPattern,
+    });
   }
-  return `What to do together: solve 5-8 short questions in ${s.topicName}. After each mistake, pause and ask the child to explain how they solved it.`;
+  return reportPackCopy(SLUG, "difficulty_home_default", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedStepLabel(s) {
-  if (s.decisionCode === "clear_topic_gap") return "Basic reinforcement";
-  return "Reinforcement at the same level";
+  if (s.decisionCode === "clear_topic_gap") {
+    return reportPackCopy(SLUG, "difficulty_step_clear_gap");
+  }
+  return reportPackCopy(SLUG, "difficulty_step_default");
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedInterventionPlan(s) {
   if (hasPattern(s)) {
-    return `In the coming week it's recommended to focus on ${s.topicName} at the same difficulty level. Start with short questions, pay special attention to the recurring mistake pattern (${s.detectedPattern}), and only move to more complex questions after accuracy improves.`;
+    return reportPackCopy(SLUG, "difficulty_plan_pattern", {
+      topicName: s.topicName,
+      detectedPattern: s.detectedPattern,
+    });
   }
-  return `In the coming week it's recommended to focus on ${s.topicName} at the same difficulty level. Start with short questions, check the solving method, and only move to more complex questions after accuracy improves.`;
+  return reportPackCopy(SLUG, "difficulty_plan_default", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderDifficultyObservedDoNow(s) {
   if (hasPattern(s)) {
-    return `Today, solve 5 questions in ${s.topicName} together. After each question, ask the child to explain the method, and pay special attention to the pattern: ${s.detectedPattern}.`;
+    return reportPackCopy(SLUG, "difficulty_donow_pattern", {
+      topicName: s.topicName,
+      detectedPattern: s.detectedPattern,
+    });
   }
-  return `Today, solve 5 questions in ${s.topicName} together. After each question, ask the child to explain the method, not just mark an answer.`;
+  return reportPackCopy(SLUG, "difficulty_donow_default", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPositiveObservedBase(s) {
-  const qText = formatQuestionsText(s.questions);
-  return `${s.topicName} shows good success. ${qText} solved, and accuracy is ${s.accuracy}%.`;
+  return reportPackCopy(SLUG, "positive_base", {
+    topicName: s.topicName,
+    qText: formatQuestionsText(s.questions),
+    accuracy: s.accuracy,
+  });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPositiveObservedIdentified(s) {
-  return `What we see: ${s.topicName} shows good success on the questions solved.`;
+  return reportPackCopy(SLUG, "positive_identified", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -180,36 +213,39 @@ function renderPositiveObservedData(s) {
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPositiveObservedMeaning(_s) {
-  return `What it means: ${_s.topicName} looks relatively stable right now. It's worth maintaining it with short practice now and then.`;
+  return reportPackCopy(SLUG, "positive_meaning", { topicName: _s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPositiveObservedHomeAction(s) {
-  return `What to do together: solve a few short questions in ${s.topicName} now and then, to keep up momentum and confidence.`;
+  return reportPackCopy(SLUG, "positive_home", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPositiveObservedStepLabel(_s) {
-  return "Maintain with short practice";
+  return reportPackCopy(SLUG, "positive_step");
 }
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPositiveObservedCaution(_s) {
-  return "Even when success looks good, it's worth keeping up short practice now and then to make sure the topic stays stable.";
+  return reportPackCopy(SLUG, "positive_caution");
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderInitialTopicDataBase(s) {
-  const tn = s.topicName;
+  const topicName = s.topicName;
   if (s.questions === 1) {
-    return `${tn} still has only 1 question so far. This is only an initial picture.`;
+    return reportPackCopy(SLUG, "initial_base_one", { topicName });
   }
-  return `${tn} still has few questions: ${s.questions}. This is only an initial picture.`;
+  return reportPackCopy(SLUG, "initial_base_few", {
+    topicName,
+    questions: s.questions,
+  });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderInitialTopicDataIdentified(s) {
-  return `What we see: there are currently few questions in ${s.topicName}.`;
+  return reportPackCopy(SLUG, "initial_identified", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -219,22 +255,22 @@ function renderInitialTopicDataData(s) {
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderInitialTopicDataMeaning(_s) {
-  return "What it means: it's still too early to draw a clear conclusion. A few more questions on this topic are needed.";
+  return reportPackCopy(SLUG, "initial_meaning");
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderInitialTopicDataHomeAction(s) {
-  return `What to do together: solve a few more short questions in ${s.topicName}, without pressure, to get a clearer picture.`;
+  return reportPackCopy(SLUG, "initial_home", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPracticeFocusBase(s) {
-  return `${s.topicName} had a few mistakes, but there still aren't enough questions to know whether this repeats consistently.`;
+  return reportPackCopy(SLUG, "practice_base", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPracticeFocusIdentified(s) {
-  return `What we see: there were a few mistakes in ${s.topicName}, but there still aren't enough questions to know if this is a steady pattern.`;
+  return reportPackCopy(SLUG, "practice_identified", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -244,26 +280,26 @@ function renderPracticeFocusData(s) {
 
 /** @param {TopicOwnerCopySlots} _s */
 function renderPracticeFocusMeaning(_s) {
-  return "What it means: it's worth adding a bit more practice and seeing whether the same mistakes repeat.";
+  return reportPackCopy(SLUG, "practice_meaning");
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderPracticeFocusHomeAction(s) {
-  return `What to do together: practice a few short questions in ${s.topicName}, and ask the child to explain the method out loud.`;
+  return reportPackCopy(SLUG, "practice_home", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedBase(s) {
-  const base = `${s.topicName} has both correct answers and recurring mistakes. It's worth reinforcing on target without jumping a level too fast.`;
+  const base = reportPackCopy(SLUG, "mixed_base", { topicName: s.topicName });
   return appendPatternToSnapshot(base, s);
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedIdentified(s) {
   if (hasPattern(s)) {
-    return `What we see: ${s.topicName} has both successes and recurring mistakes.`;
+    return reportPackCopy(SLUG, "mixed_identified_pattern", { topicName: s.topicName });
   }
-  return `What we see: ${s.topicName} has both successes and mistakes that need reinforcement.`;
+  return reportPackCopy(SLUG, "mixed_identified_default", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -278,12 +314,12 @@ function renderMixedPattern(s) {
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedMeaning(s) {
-  return `What it means: there's a certain foundation, but ${s.topicName} still isn't fully stable.`;
+  return reportPackCopy(SLUG, "mixed_meaning", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
 function renderMixedHomeAction(s) {
-  return `What to do together: pick 5-8 questions in ${s.topicName}, mix easy and medium questions, and pause at every mistake to understand what happened.`;
+  return reportPackCopy(SLUG, "mixed_home", { topicName: s.topicName });
 }
 
 /** @param {TopicOwnerCopySlots} s */
@@ -300,10 +336,10 @@ function renderNarrativeWe0Snapshot(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderNarrativeWe0Caution(s) {
   if (s.decisionCode === "early_direction_only") {
-    return "This is still initial information - it's worth adding a few more questions and checking whether the direction holds.";
+    return reportPackCopy(SLUG, "narrative_we0_caution_early");
   }
   if (s.decisionCode === "clear_topic_gap") {
-    return "This is no longer just initial information; it's worth going back and reinforcing this topic in a focused way.";
+    return reportPackCopy(SLUG, "narrative_we0_caution_gap");
   }
   return "";
 }
@@ -324,9 +360,11 @@ function renderNarrativeWe2Snapshot(s) {
 /** @param {TopicOwnerCopySlots} s */
 function renderNarrativeWe2Caution(s) {
   if (hasPattern(s)) {
-    return `It's worth checking after a bit more short practice whether the pattern (${s.detectedPattern}) keeps showing up or starts to fade.`;
+    return reportPackCopy(SLUG, "narrative_we2_caution_pattern", {
+      detectedPattern: s.detectedPattern,
+    });
   }
-  return "It's worth checking after a bit more short practice whether accuracy improves and the topic becomes more stable.";
+  return reportPackCopy(SLUG, "narrative_we2_caution_default");
 }
 
 /** @type {Record<string, (s: TopicOwnerCopySlots) => string>} */

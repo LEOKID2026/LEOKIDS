@@ -1,6 +1,6 @@
 import Layout from "../Layout";
 import PageSeo from "./PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import PublicSeoPageActions from "./PublicSeoPageActions";
@@ -39,7 +39,7 @@ export default function PublicSeoWideLayout({
 }) {
   const { theme, isBright } = useStudentTheme();
   const { direction, locale } = useI18n();
-  const seo = getPublicPageSeo(seoKey);
+  const seo = usePublicPageSeo(seoKey);
   const cls = getPublicSeoWideClasses(isBright);
 
   return (

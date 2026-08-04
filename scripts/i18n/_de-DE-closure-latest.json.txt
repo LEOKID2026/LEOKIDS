@@ -1,0 +1,162 @@
+﻿{
+  "books": {
+    "files": 450,
+    "gradeHits": 5,
+    "studentHits": 0,
+    "enInstr": 19,
+    "atCh": 0,
+    "issues": [
+      {
+        "kind": "EN-instr",
+        "rel": "geometry/g1/drafts/shapes_basic_square.md",
+        "line": "That ist Quadrat."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "geometry/g3/drafts/rotation.md",
+        "line": "**Inhaltsumfang:** Quarter turn 90┬░; introduction; no formal center"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "geometry/g3/drafts/rotation.md",
+        "line": "A quarter turn = 90┬░ ΓÇö one quarter of a full path (360┬░)."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "geometry/g3/drafts/rotation.md",
+        "line": "Wir haben eine Form um eine quarter turn. Um wie viele Grad haben wir gedreht?"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "geometry/g3/drafts/rotation.md",
+        "line": "A quarter turn = one quarter of 360┬░."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "geometry/g3/drafts/rotation.md",
+        "line": "Jetzt wei├ƒt du a quarter turn in Geometrie."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g1/drafts/ns_number_line.md",
+        "line": "# The Number Line"
+      },
+      {
+        "kind": "Grade",
+        "rel": "math/g1/drafts/README.md"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g1/drafts/README.md",
+        "line": "**Do nicht proceed Grade 2 oder implementation until Grade 1 signoff document ist reviewed.**"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g1/drafts/sub_two.md",
+        "line": "Let's finde wie many sind left:"
+      },
+      {
+        "kind": "Grade",
+        "rel": "math/g2/drafts/README.md"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g2/drafts/README.md",
+        "line": "> **Grade 2 UI ist implemented f├╝r dev preview only.** Do nicht deploy oder treat draft content as owner-approved until sign-off."
+      },
+      {
+        "kind": "Grade",
+        "rel": "math/g3/drafts/ns_complement10.md"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g3/drafts/ns_complement10.md",
+        "line": "Link Grade 3: 7 + 3 = 10 ΓåÆ 67 + 33 = 100 ( gleich idea mit tens)."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g4/drafts/est_quantity.md",
+        "line": "Look at tens digit: 4 (4 < 5 ΓåÆ rund down)."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g5/drafts/div_two_digit.md",
+        "line": "This ist impodertant skill foder solving problems."
+      },
+      {
+        "kind": "Grade",
+        "rel": "math/g6/drafts/README.md"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g6/drafts/README.md",
+        "line": "- Grade 5 fraction/percent skills (`frac_add_sub`, `frac_reduce`, etc.) are **nicht** in G6 spine scope ΓÇö assumed covered in G5 book."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "math/g6/drafts/round.md",
+        "line": "Rounding to nearest thousand ΓÇö look at hundreds digit."
+      },
+      {
+        "kind": "Grade",
+        "rel": "science/g2/drafts/README.md"
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "science/g2/drafts/README.md",
+        "line": "**Note:** Grade 2 is first grade mit `experiments` (spine `minGrade = 2`)."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "science/g5/drafts/materials.md",
+        "line": "That ist reflection."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "science/g5/drafts/materials.md",
+        "line": "That ist transparency."
+      },
+      {
+        "kind": "EN-instr",
+        "rel": "science/g6/drafts/earth_space.md",
+        "line": "This ist challenge wir kann act on ΓÇö clean energy, less waste, protecting foderests."
+      }
+    ]
+  },
+  "locales": {
+    "namespaces": 15,
+    "student": 0,
+    "grade": 0,
+    "atCh": 0,
+    "issues": []
+  },
+  "science": {
+    "en": 1017,
+    "de": 1017,
+    "missing": 0,
+    "optMismatch": 0,
+    "atCh": 0,
+    "enLeak": 0,
+    "enLeakSamples": []
+  },
+  "packs": {
+    "files": 396,
+    "grade": 1,
+    "student": 0,
+    "atCh": 0,
+    "parseFail": 0,
+    "issues": [
+      {
+        "kind": "Grade",
+        "rel": "books/english-page-skills.json"
+      }
+    ]
+  },
+  "help": {
+    "articles": 40,
+    "student": 0,
+    "grade": 0,
+    "atCh": 0,
+    "issues": []
+  }
+}

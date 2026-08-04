@@ -70,7 +70,10 @@ export default function StudentAssignedActivityQuestionStage({
               className="absolute bottom-0.5 left-0.5 text-[10px] leading-none bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 rounded px-1.5 py-px shadow pointer-events-none select-none"
               aria-hidden
             >
-              ⛶ Enlarge
+              {globalBurnDownCopy(
+                "components__student__StudentAssignedActivityQuestionStage",
+                "enlarge"
+              )}
             </span>
           </div>
         </div>

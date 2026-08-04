@@ -1,5 +1,9 @@
 import { useEffect, useId, useRef } from "react";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+
+const SLUG = "components__student__StudentActivitySubmitConfirmModal";
 
 const MODAL_CLASSIC = {
   overlay: "fixed inset-0 z-[160] flex items-center justify-center bg-black/75 p-4",
@@ -34,6 +38,12 @@ const MODAL_BRIGHT = {
     "shrink-0 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 text-sm font-bold disabled:opacity-50 shadow-sm",
 };
 
+function fill(template, vars) {
+  return String(template).replace(/\{(\w+)\}/g, (_, key) =>
+    vars[key] == null ? "" : String(vars[key])
+  );
+}
+
 /**
  * Center-screen confirmation before student submits an assigned activity.
  */
@@ -47,10 +57,12 @@ export default function StudentActivitySubmitConfirmModal({
   onConfirm,
 }) {
   const { isBright } = useStudentTheme();
+  const { direction, locale } = useI18n();
   const M = isBright ? MODAL_BRIGHT : MODAL_CLASSIC;
   const titleId = useId();
   const confirmRef = useRef(null);
   const unansweredCount = Math.max(0, questionCount - answeredCount);
+  const c = (key) => globalBurnDownCopy(SLUG, key);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -79,31 +91,26 @@ export default function StudentActivitySubmitConfirmModal({
     >
       <div
         className={M.panel}
-        dir="ltr"
+        dir={direction}
+        lang={locale}
         onClick={(event) => event.stopPropagation()}
         data-testid="activity-submit-confirm-modal"
       >
         <div className="space-y-2">
           <h2 id={titleId} className={M.title}>
-            Finish and submit this activity?
+            {c("title")}
           </h2>
-          {activityTitle ? (
-            <p className={M.subtitle}>{activityTitle}</p>
-          ) : null}
+          {activityTitle ? <p className={M.subtitle}>{activityTitle}</p> : null}
         </div>
 
         <div className={M.summaryBox}>
           <p className={M.summaryTitle}>
-            You answered {answeredCount} of {questionCount} questions
+            {fill(c("answered_of"), { answered: answeredCount, questionCount })}
           </p>
           {unansweredCount > 0 ? (
-            <p className={M.summaryWarn}>
-              There are {unansweredCount} unanswered questions. After submitting you cannot go back and change answers.
-            </p>
+            <p className={M.summaryWarn}>{fill(c("unanswered_warn"), { count: unansweredCount })}</p>
           ) : (
-            <p className={M.summaryNote}>
-              After submitting you cannot go back and change answers.
-            </p>
+            <p className={M.summaryNote}>{c("submit_note")}</p>
           )}
         </div>
 
@@ -115,7 +122,7 @@ export default function StudentActivitySubmitConfirmModal({
             className={M.cancelBtn}
             data-testid="activity-submit-confirm-cancel"
           >
-            Cancel
+            {c("cancel")}
           </button>
           <button
             ref={confirmRef}
@@ -125,7 +132,7 @@ export default function StudentActivitySubmitConfirmModal({
             className={M.confirmBtn}
             data-testid="activity-submit-confirm-submit"
           >
-            {busy ? "Submitting…" : "Yes, finish and submit"}
+            {busy ? c("submitting") : c("confirm")}
           </button>
         </div>
       </div>

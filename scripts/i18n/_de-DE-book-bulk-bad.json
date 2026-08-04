@@ -1,0 +1,162 @@
+[
+  {
+    "en": "Area = side × side.",
+    "de": "Fläche = side × side."
+  },
+  {
+    "en": "In practice you'll find questions about a digit's value by its place.",
+    "de": "In der Übung findest du Fragen zu digit's value by its place."
+  },
+  {
+    "en": "Important: add all three numbers — don't stop after two!",
+    "de": "Important: add all three numbers — don't stop after two!"
+  },
+  {
+    "en": "We will learn about rotation at a more advanced stage.",
+    "de": "Wir will lernen über rotation bei more advanced stage."
+  },
+  {
+    "en": "In practice you'll find questions: what comes before?",
+    "de": "In der Übung findest du questions: what comes before?"
+  },
+  {
+    "en": "neighbor before   neighbor after",
+    "de": "Neighbor before neighbor after"
+  },
+  {
+    "en": "What will happen to its leaves?",
+    "de": "What will happen its leaves?"
+  },
+  {
+    "en": "Break each number apart:",
+    "de": "Break each number apart:"
+  },
+  {
+    "en": "Find the step first!",
+    "de": "Find step first!"
+  },
+  {
+    "en": "**Content scope:** Coins in whole shekels. Total amount — addition or equal groups (multiplication). One step. Up to ~100. No agorot, no multi-step buying.",
+    "de": "**Inhaltsumfang:** Coins in whole Euro. Total amount — addition oder gleich groups (multiplication). One step. Up ~100. No agorot, no multi-step buying."
+  },
+  {
+    "en": "- `wp_coins`: ₪ whole shekels only; single-step totals; equal groups / multiplication OK (e.g. 4 × 5); up to ~100; no agorot, no multi-step money",
+    "de": "- `wp_coins`: ₪ whole Euro only; single-step totals; gleich groups / multiplication OK (e.g. 4 × 5); up ~100; no agorot, no multi-step money"
+  },
+  {
+    "en": "**Content scope:** Multiplication in word problems — equal groups. One step. Grade 2 factor range. No division, no multi-step questions.",
+    "de": "**Inhaltsumfang:** Multiplication in Textaufgaben — gleich groups. One step. 2. Klasse Teiler range. No division, no multi-step questions."
+  },
+  {
+    "en": "**Content scope:** Difference between two amounts — **\"how many more\"**. One step. Numbers up to **1,000**. No multi-step subtraction.",
+    "de": "**Inhaltsumfang:** Difference between two amounts — **\"Wie viele mehr\"**. One step. Numbers up **1,000**. No multi-step subtraction."
+  },
+  {
+    "en": "**Content scope:** Vertical multiplication — two-digit number × one digit. Regrouping (carrying). No two two-digit numbers.",
+    "de": "**Inhaltsumfang:** Vertical multiplication — two-digit number × one digit. Regrouping (carrying). No two two-digit numbers."
+  },
+  {
+    "en": "3. After Grade 1 signoff, consider a **Hebrew style guide addendum**, then begin Grade 2 or implementation planning.",
+    "de": "3. After 1. Klasse signoff, consider **Hebrew style guide addendum**, then begin 2. Klasse oder implementation planning."
+  },
+  {
+    "en": "We will learn what a quarter turn is — a rotation of 90° — like when you turn an arrow a quarter of the way around.",
+    "de": "Wir will lernen what quarter turn ist — rotation 90° — wie when du turn arrow quarter way around."
+  },
+  {
+    "en": "**Content scope:** Division in word problems — fair sharing. One step. No remainder, no long division. Story only.",
+    "de": "**Inhaltsumfang:** Division in Textaufgaben — fair sharing. One step. No Rest, no long division. Story only."
+  },
+  {
+    "en": "Today in science we will learn about interactions between animals — who eats whom, and who competes for resources.",
+    "de": "Today in Naturwissenschaften wir will lernen über interactions between animals — who eats whom, und who competes für resources."
+  },
+  {
+    "en": "Today in science we will learn to plan a complete science project — from research question to class presentation.",
+    "de": "Today in Naturwissenschaften wir will lernen plan complete Naturwissenschaften project — von research question class presentation."
+  },
+  {
+    "en": "Today in geometry we will learn about three-dimensional solids — shapes that have length, width, and height.",
+    "de": "Today in Geometrie wir will lernen über three-dimensional solids — shapes that haben Länge, Breite, und Höhe."
+  },
+  {
+    "en": "**Content scope:** Line from corner to corner; longer than a side; no formal square root in grade 4",
+    "de": "**Inhaltsumfang:** Line von corner corner; longer than side; no formal Quadrat root in 4. Klasse"
+  },
+  {
+    "en": "Today we'll learn long division — a step-by-step way to divide a big number by a smaller one.",
+    "de": "Heute lernen wir long division — step-by-step way divide big number by smaller one."
+  },
+  {
+    "en": "**Content scope:** Observation; comparison; one variable — safe only; no dangerous materials",
+    "de": "**Inhaltsumfang:** Observation; comparison; one variable — safe only; no gefährliche Materialien"
+  },
+  {
+    "en": "**Content scope:** One-digit number × hundreds (100, 200, …). `maxGrade = 3` only in spine.",
+    "de": "**Inhaltsumfang:** One-digit number × hundreds (100, 200, …). `maxGrade = 3` only in spine."
+  },
+  {
+    "en": "Today in science we will learn to plan a complete experiment — from question to conclusion.",
+    "de": "Today in Naturwissenschaften wir will lernen plan complete experiment — von question conclusion."
+  },
+  {
+    "en": "Today in geometry we will go deeper into classifying quadrilaterals — by exact properties.",
+    "de": "Today in Geometrie wir will go deeper in classifying Vierecks — by exact properties."
+  },
+  {
+    "en": "Today in geometry we will learn an important rule: the sum of angles in a triangle = 180°.",
+    "de": "Today in Geometrie wir will lernen important rule: sum Winkel in ein Dreieck = 180°."
+  },
+  {
+    "en": "Today in geometry we will strengthen the difference between translation and reflection.",
+    "de": "Today in Geometrie wir will strengthen difference between translation und reflection."
+  },
+  {
+    "en": "**Content scope:** Solid/liquid/gas in daily life; ice melts — no dangerous experiments",
+    "de": "**Inhaltsumfang:** Solid/liquid/gas in daily life; ice melts — no dangerous experiments"
+  },
+  {
+    "en": "| `divisibility` | **2, 5, 10 only** in G2; child-facing last-digit rules; no 3/6/9 |",
+    "de": "| `divisibility` | **2, 5, 10 only** in G2; child-facing last-digit rules; no 3/6/9 |"
+  },
+  {
+    "en": "In practice you'll find prisms — calculate base area first, then multiply by height!",
+    "de": "In der Übung findest du prisms — berechnen Grundfläche first, then multiply by Höhe!"
+  },
+  {
+    "en": "**Content scope:** One-digit number × tens (10, 20, … 90). No two-digit × two-digit.",
+    "de": "**Inhaltsumfang:** One-digit number × tens (10, 20, … 90). No two-digit × two-digit."
+  },
+  {
+    "en": "**Content scope:** Question → prediction → method → results → conclusion — safe only",
+    "de": "**Inhaltsumfang:** Question → prediction → method → results → conclusion — safe only"
+  },
+  {
+    "en": "A rectangle also has 4 right angles — but in a square all the sides are equal too.",
+    "de": "Ein Rechteck also hat 4 rechte Winkel — aber in ein Quadrat all sides sind gleich too."
+  },
+  {
+    "en": "Today in science we will learn to tell living things apart from non-living things.",
+    "de": "Today in Naturwissenschaften wir will lernen tell living things apart von non-living things."
+  },
+  {
+    "en": "Today we'll learn to subtract a large number from a large number — up to 100,000.",
+    "de": "Heute lernen wir subtract large number von large number — up 100,000."
+  },
+  {
+    "en": "**Content scope:** Two-digit numbers up to 30. Tens and ones only — no hundreds.",
+    "de": "**Inhaltsumfang:** Two-digit numbers up 30. Tens und ones only — no hundreds."
+  },
+  {
+    "en": "Today in science we will learn about small ecosystems in nature — who eats whom.",
+    "de": "Today in Naturwissenschaften wir will lernen über small ecosystems in nature — who eats whom."
+  },
+  {
+    "en": "Today we'll learn vertical multiplication — a two-digit number times one digit.",
+    "de": "Heute lernen wir vertical multiplication — two-digit number times one digit."
+  },
+  {
+    "en": "**Content scope:** Subtracting 0 from a number. A number minus 0. No negatives.",
+    "de": "**Inhaltsumfang:** Subtracting 0 von number. number minus 0. No negatives."
+  }
+]

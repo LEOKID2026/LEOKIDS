@@ -1,7 +1,11 @@
 {
   "copy": {
-    "improving": "Improving",
-    "no_significant_change": "No significant change",
-    "needs_reinforcement": "Needs reinforcement"
+    "improving": "improving",
+    "no_significant_change": "no significant change",
+    "needs_reinforcement": "needs reinforcement",
+    "line_improving": "Trend for this period: improving - accuracy is higher in the later part of the period than at the start.",
+    "line_stable": "Trend for this period: no significant change - it still helps to reinforce this topic with short practice.",
+    "line_declining": "Trend for this period: needs reinforcement - there were more mistakes in the later part of the period, so short practice would help.",
+    "line_insufficient_data": "There still isn't enough of a practice streak to identify a trend over time."
   }
 }

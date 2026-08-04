@@ -1,0 +1,800 @@
+{
+  "exp_1": {
+    "stem": "Zwei gleiche Behälter mit Wasser stehen draußen — einer in der Sonne und einer im Schatten. Welcher verliert mehr Wasser, und warum?",
+    "options": [
+      "Der im Schatten, weil Schatten den Wasserverlust verlangsamt.",
+      "Sie verlieren dieselbe Wassermenge, weil die Lufttemperatur überall gleich ist.",
+      "Der in der Sonne, weil Wärme von der Sonne Wasser schneller verdunsten lässt.",
+      "Der in der Sonne gewinnt tatsächlich mehr Wasser durch Sonnenlicht."
+    ],
+    "explanation": "Wärme von der Sonne gibt Wassermolekülen zusätzliche Energie, sodass sie aus dem Behälter in der Sonne schneller verdunsten.",
+    "theoryLines": [
+      "Wärmeenergie geht von einem heißen Körper zu einem kühleren über.",
+      "Mehr Wärme bedeutet schnellere Verdunstung von Wasseroberflächen."
+    ]
+  },
+  "exp_2": {
+    "stem": "Was ist am Anfang jedes wissenschaftlichen Experiments wichtig?",
+    "options": [
+      "Zuerst das „richtige“ Ergebnis festlegen, damit das Experiment dazu passt",
+      "Eine klare Frage oder ein Problem aufschreiben, das du prüfen willst",
+      "Mehrere Variablen auf einmal ändern, um ein größeres Ergebnis zu bekommen",
+      "Planung überspringen und sofort mit dem Messen beginnen"
+    ],
+    "explanation": "Ein wissenschaftliches Experiment beginnt mit einer klaren Frage. Dann planst du die Schritte, um sie zu untersuchen.",
+    "theoryLines": [
+      "Wissenschaft baut auf Fragen, Beobachtungen und Experimenten auf.",
+      "Sorgfältige Notizen machen es leichter, Ergebnisse zu vergleichen."
+    ]
+  },
+  "exp_3": {
+    "stem": "Was ist eine kontrollierte Variable in einem Experiment?",
+    "options": [
+      "Ein Faktor, der in jedem Versuch gleich gehalten wird, damit der Test fair ist.",
+      "Eine Messung, die jedes Mal zufällig wechselt.",
+      "Eine Vorhersage, die am Anfang des Experiments geschrieben wird.",
+      "Die Endzahl, die am Ende des Experiments notiert wird."
+    ],
+    "explanation": "Eine kontrollierte Variable ist jede Bedingung, die du in allen Versuchen gleich hältst, damit sie die Ergebnisse nicht beeinflusst. Nur die eine Variable, die du prüfst, soll sich ändern. Testest du zum Beispiel, wie viel Wasser das Pflanzenwachstum beeinflusst, sollten Sonnenlichtmenge und Bodentyp in jedem Topf gleich bleiben.",
+    "theoryLines": [
+      "Kontrollierte Variablen machen ein Experiment fair, indem sie versteckte Ursachen entfernen.",
+      "Die Variable, die du absichtlich änderst, heißt unabhängige Variable."
+    ]
+  },
+  "exp_4": {
+    "stem": "Bringe die Stufen des Wasserkreislaufs von zuerst bis zuletzt in die richtige Reihenfolge:",
+    "options": [
+      "Verdunstung → Kondensation → Niederschlag → Sammlung in Wasserquellen",
+      "Kondensation → Sammlung → Verdunstung → Niederschlag",
+      "Sammlung → Niederschlag → Kondensation → Verdunstung",
+      "Niederschlag → Verdunstung → Kondensation → Sammlung"
+    ],
+    "explanation": "Wasser verdunstet, bildet durch Kondensation Wolken, fällt als Regen oder Schnee und sammelt sich in Meeren, Seen und Grundwasser.",
+    "theoryLines": [
+      "Der Wasserkreislauf bewegt Wasser zwischen Meer, Land und Atmosphäre.",
+      "Sonne, Wind und die Form des Landes treiben den Kreislauf an."
+    ]
+  },
+  "exp_5": {
+    "stem": "Was solltest du vor Beginn eines Experiments tun?",
+    "options": [
+      "Materialien mischen beginnen, ohne Etiketten zu lesen",
+      "Entscheiden, was du prüfst, die Schritte planen und vorsichtig sein",
+      "Die praktischen Schritte machen, bevor du aufschreibst, was du prüfst",
+      "Das erwartete Ergebnis festlegen, ohne zuerst zu messen"
+    ],
+    "explanation": "Vor einem Experiment planst du, was du prüfst, und bleibst sicher. Eine erwachsene Person sollte helfen.",
+    "theoryLines": [
+      "Experimente sollten sicher durchgeführt werden.",
+      "Eine erwachsene Person sollte bei Wissenschaftsexperimenten helfen."
+    ]
+  },
+  "exp_6": {
+    "stem": "Was ist das Hauptziel eines wissenschaftlichen Experiments?",
+    "options": [
+      "Interessante Geschichten über Materialien zu erfinden.",
+      "Eine Idee zu prüfen und herauszufinden, was geschieht, wenn du etwas änderst.",
+      "So viele Materialien wie möglich aufzulisten, ohne sie zu prüfen.",
+      "Ergebnisse aufzuschreiben, bevor irgendein Test durchgeführt wird."
+    ],
+    "explanation": "Ein wissenschaftliches Experiment erlaubt dir, eine Idee zu prüfen und zu entdecken, was unter verschiedenen Bedingungen geschieht, indem du beobachtest und Ergebnisse festhältst.",
+    "theoryLines": [
+      "Jedes Experiment beginnt mit einer Frage oder Idee, die geprüft wird.",
+      "Experimente helfen uns zu lernen, indem wir Ideen sorgfältig und fair prüfen."
+    ]
+  },
+  "exp_7": {
+    "stem": "Was ist eine Variable in einem wissenschaftlichen Experiment?",
+    "options": [
+      "Das Endergebnis, das am Ende des Experiments notiert wird.",
+      "Ein Faktor, der sich ändern oder geändert werden kann, um zu sehen, wie er das Ergebnis beeinflusst.",
+      "Alles, was aus dem Experiment völlig weggelassen wird.",
+      "Die Anzahl der Wissenschaftlerinnen und Wissenschaftler, die am Experiment teilnehmen."
+    ],
+    "explanation": "Eine Variable ist etwas, das sich in einem Experiment ändern kann. Zum Beispiel ist die Wassermenge, die eine Pflanze bekommt, eine Variable, die beeinflusst, wie die Pflanze wächst.",
+    "theoryLines": [
+      "Experimente prüfen, wie das Ändern einer Variable eine andere beeinflusst.",
+      "Die Variable, die du absichtlich änderst, heißt unabhängige Variable."
+    ]
+  },
+  "exp_8": {
+    "stem": "Was ist eine Variable in einem Experiment?",
+    "options": [
+      "Eine Regel, die in jedem Experiment ohne Ausnahme gleich bleiben muss.",
+      "Ein Faktor, der sich ändern kann und den wir beobachten oder messen, um Ergebnisse zu finden.",
+      "Ein anderes Wort für den Namen des Experiments.",
+      "Die Schlussfolgerung, die geschrieben wird, nachdem alle Ergebnisse geprüft wurden."
+    ],
+    "explanation": "Eine Variable ist alles in einem Experiment, das sich ändern kann. Beim Test, wie viel Wasser eine Pflanze braucht, ist die Wassermenge die Variable, die geändert wird. Die Höhe der Pflanze ist die Variable, die gemessen wird, um das Ergebnis zu sehen.",
+    "theoryLines": [
+      "Die Variable, die du absichtlich änderst, ist die unabhängige Variable.",
+      "Die Variable, die du misst, um zu sehen, was geschehen ist, ist die abhängige Variable."
+    ]
+  },
+  "exp_9": {
+    "stem": "Was ist eine Hypothese in einem wissenschaftlichen Experiment?",
+    "options": [
+      "Das Endergebnis",
+      "Eine begründete Vermutung darüber, was im Experiment geschehen wird",
+      "Die Forschungsfrage ohne vorhergesagtes Ergebnis aufschreiben",
+      "Eine Endantwort nach dem Zusammenfassen jedes Experiments"
+    ],
+    "explanation": "Eine Hypothese ist eine begründete Vorhersage auf Grundlage dessen, was du schon weißt. Dann prüfst du, ob sie gestützt wird.",
+    "theoryLines": [
+      "Eine Hypothese sollte auf vorhandenem Wissen beruhen.",
+      "Du prüfst eine Hypothese mit einem Experiment."
+    ]
+  },
+  "exp_10": {
+    "stem": "Was solltest du vor einem Experiment tun?",
+    "options": [
+      "Annehmen, dass ein sauber aussehendes Material völlig sicher ist",
+      "Vorsichtig sein, die Anleitung lesen und Hilfe von einer erwachsenen Person holen",
+      "Mit dem stärksten Material beginnen, ohne die Schritte zu lesen",
+      "Das Organisieren der Geräte überspringen, wenn die Zeit knapp ist"
+    ],
+    "explanation": "Vor einem Experiment bleibst du vorsichtig und holst Hilfe von einer erwachsenen Person. Denke auch darüber nach, was du prüfen willst.",
+    "theoryLines": [
+      "Sicherheit ist in Experimenten sehr wichtig.",
+      "Eine erwachsene Person sollte helfen und beaufsichtigen."
+    ]
+  },
+  "exp_12": {
+    "stem": "Was ist eine Beobachtung in einem wissenschaftlichen Experiment?",
+    "options": [
+      "Eine Vorhersage, die vor Beginn des Experiments gemacht wird.",
+      "Informationen, die du mit deinen Sinnen sammelst — was du siehst, hörst, riechst, schmeckst oder fühlst.",
+      "Die endgültige schriftliche Antwort am Ende des Experiments.",
+      "Eine mathematische Gleichung, die ein Ergebnis berechnet."
+    ],
+    "explanation": "Eine Beobachtung ist etwas, das du während eines Experiments mit deinen Sinnen bemerkst. Gute Wissenschaftlerinnen und Wissenschaftler beschreiben genau, was sie sehen, hören oder messen, ohne zu raten, warum es geschehen ist. Beobachtungen sind die Rohbelege, die zu Schlussfolgerungen führen.",
+    "theoryLines": [
+      "Beobachtungen beschreiben, was wirklich geschieht, nicht was du denkst, dass geschehen wird.",
+      "Sorgfältige, detaillierte Beobachtungen machen Experimente zuverlässiger und vertrauenswürdiger."
+    ]
+  },
+  "exp_13": {
+    "stem": "Was ist Messung?",
+    "options": [
+      "Mit dem Auge bemerken, ohne Zahlen",
+      "Mit Werkzeugen herausfinden, wie groß, wie schwer oder wie heiß etwas ist",
+      "Überhaupt keine Daten sammeln",
+      "Die Größe ohne Lineal oder Waage schätzen"
+    ],
+    "explanation": "Messung nutzt Werkzeuge wie Lineale, Waagen und Thermometer, um genaue Zahlen zu bekommen.",
+    "theoryLines": [
+      "Messungen helfen Wissenschaftlerinnen und Wissenschaftlern, präzise zu sein.",
+      "Für verschiedene Messungen werden verschiedene Werkzeuge genutzt."
+    ]
+  },
+  "exp_14": {
+    "stem": "Was ist der wissenschaftliche Prozess?",
+    "options": [
+      "Ein einzelnes Experiment ohne Frage zuerst",
+      "Eine Reihe von Schritten zum Untersuchen einer Frage",
+      "Eine Frage ohne Experiment oder Datensammlung",
+      "Eine Endvermutung ohne Beobachtungen unterwegs"
+    ],
+    "explanation": "Der wissenschaftliche Prozess umfasst eine Frage stellen, eine Hypothese bilden, prüfen, beobachten und Schlussfolgerungen ziehen.",
+    "theoryLines": [
+      "Es ist eine geordnete Art zu lernen.",
+      "Jeder Schritt ist wichtig."
+    ]
+  },
+  "exp_15": {
+    "stem": "Was ist eine Kontrollgruppe in einem Experiment?",
+    "options": [
+      "Eine Gruppe, die aus keinem Grund jemals wechselt",
+      "Eine Gruppe im Experiment, die du unverändert lässt, damit du Ergebnisse vergleichen kannst",
+      "Eine Gruppe, die immer wechselt",
+      "Ein Experiment mit nur einer Gruppe und ohne Vergleich"
+    ],
+    "explanation": "Eine Kontrollgruppe bleibt unverändert, damit du vergleichen und sehen kannst, was das Ergebnis wirklich verursacht hat.",
+    "theoryLines": [
+      "Eine Kontrollgruppe ist Teil eines starken Experiments.",
+      "Sie hilft dir zu verstehen, was das Ergebnis verursacht hat."
+    ]
+  },
+  "exp_16": {
+    "stem": "Was sind Daten?",
+    "options": [
+      "Zahlen ohne Bezug zum Experiment",
+      "Informationen, die in einem Experiment gesammelt werden — Zahlen, Beobachtungen und Ergebnisse",
+      "Beschreibende Sätze ohne Messungen",
+      "Frühe Ideen ohne Laborsammlung"
+    ],
+    "explanation": "Daten sind die Informationen, die du sammelst — Messungen, Beobachtungen und Ergebnisse.",
+    "theoryLines": [
+      "Daten helfen dir zu verstehen, was geschehen ist.",
+      "Sorgfältige Datensammlung ist wichtig."
+    ]
+  },
+  "exp_17": {
+    "stem": "Was ist ein Diagramm?",
+    "options": [
+      "Eine Schmuckzeichnung ohne Achsen",
+      "Eine Darstellung, die Daten visuell zeigt, damit Muster leichter zu sehen sind",
+      "Eine Wortliste ohne Maßstab",
+      "Eine Zahlenspalte ohne klaren Trend"
+    ],
+    "explanation": "Ein Diagramm zeigt Daten visuell mit Linien, Balken oder anderen Formen, damit Trends leichter zu erkennen sind.",
+    "theoryLines": [
+      "Diagramme helfen Menschen, Daten zu verstehen.",
+      "Es gibt viele Arten von Diagrammen."
+    ]
+  },
+  "exp_18": {
+    "stem": "Was ist eine Schlussfolgerung in einem Experiment?",
+    "options": [
+      "Den Bericht vor dem Experiment öffnen",
+      "Was du aus dem Experiment gelernt hast und was die Daten zeigen",
+      "Eine neue Frage ohne Bezug zu den Daten",
+      "Eine Vermutung, bevor du das Diagramm prüfst"
+    ],
+    "explanation": "Eine Schlussfolgerung erklärt, was die Daten zeigen, ob die Hypothese gestützt wurde und was das bedeutet.",
+    "theoryLines": [
+      "Schlussfolgerungen sind ein wichtiger Teil der Wissenschaft.",
+      "Sie erklären, was gelernt wurde."
+    ]
+  },
+  "exp_19": {
+    "stem": "Was ist eine wissenschaftliche Theorie?",
+    "options": [
+      "Eine Vermutung ohne wiederholte Experimente",
+      "Eine Erklärung eines natürlichen Musters auf Grundlage vieler Experimente und Beobachtungen",
+      "Eine Philosophiefrage ohne Prüfung",
+      "Ein Endwort ohne Unterstützung durch Daten"
+    ],
+    "explanation": "Eine wissenschaftliche Theorie ist eine gut gestützte Erklärung auf Grundlage vieler Belege — nicht nur eine beiläufige Vermutung.",
+    "theoryLines": [
+      "Theorien können sich ändern, wenn neue Belege erscheinen.",
+      "Das gehört dazu, wie Wissenschaft funktioniert."
+    ]
+  },
+  "exp_20": {
+    "stem": "Was ist ein wissenschaftliches Gesetz?",
+    "options": [
+      "Eine Vermutung darüber, was in einem wissenschaftlichen Experiment geschehen könnte.",
+      "Eine Aussage, die immer und genau beschreibt, wie sich etwas in der Natur verhält.",
+      "Etwas, das Schülerinnen und Schüler in einer Klasse ändern können, wann immer sie wollen.",
+      "Ein Satz, der ohne Belege oder Daten geschrieben wird."
+    ],
+    "explanation": "Ein wissenschaftliches Gesetz ist eine Aussage, die ein Naturphänomen jedes Mal genau und gleichbleibend beschreibt. Zum Beispiel beschreibt das Gravitationsgesetz, wie alle Körper mit Masse einander anziehen.",
+    "theoryLines": [
+      "Wissenschaftliche Gesetze beruhen auf vielen wiederholten Experimenten und Beobachtungen.",
+      "Das Gravitationsgesetz besagt, dass alle Körper mit Masse einander anziehen."
+    ]
+  },
+  "exp_21": {
+    "stem": "Was ist ein doppelblindes Experiment?",
+    "options": [
+      "Ein Experiment mit nur einer Gruppe",
+      "Ein Experiment, bei dem weder die Teilnehmenden noch die Forschenden wissen, wer welche Behandlung bekommen hat",
+      "Eine Reihe von Experimenten, bei denen alle die Behandlung kennen",
+      "Eine Beobachtung ohne Vergleich zu einer kontrollierten Bedingung"
+    ],
+    "explanation": "In einem doppelblinden Experiment wissen weder Teilnehmende noch Forschende, wer die echte Behandlung oder das Placebo bekommen hat. Das verringert Verzerrung.",
+    "theoryLines": [
+      "Doppelblind-Design ist eine wichtige wissenschaftliche Methode.",
+      "Es hilft, Ergebnisse fair und objektiv zu halten."
+    ]
+  },
+  "exp_22": {
+    "stem": "Was ist eine Stichprobe in einem Experiment?",
+    "options": [
+      "Die gesamte Population ohne Filterung",
+      "Eine kleinere Gruppe, die du prüfst, um etwas über eine größere Gruppe zu lernen",
+      "Eine einzelne Person ohne Verallgemeinerung",
+      "Eine Frage aufschreiben ohne Datensammlung"
+    ],
+    "explanation": "Eine Stichprobe ist eine kleinere Gruppe, die untersucht wird, um über eine größere Gruppe zu lernen — zum Beispiel 100 Pflanzen zu prüfen, um über viele Pflanzen zu lernen.",
+    "theoryLines": [
+      "Eine Stichprobe sollte die größere Gruppe gut vertreten.",
+      "Stichproben sparen Zeit und Ressourcen."
+    ]
+  },
+  "exp_23": {
+    "stem": "Warum ist es wichtig, Experimente zu machen?",
+    "options": [
+      "Weil eine Meinung ohne Prüfung eines echten Falls reicht",
+      "Um über die Welt zu lernen, Ideen zu prüfen und zu verstehen, wie Dinge funktionieren",
+      "Nur um Zeit zu verbringen ohne klare Experimentfrage",
+      "Einmal zuzusehen und sich aufs Gedächtnis zu verlassen, ohne Notizen oder Wiederholungen"
+    ],
+    "explanation": "Experimente helfen uns, über die Welt zu lernen, Ideen zu prüfen, zu verstehen, wie Dinge funktionieren, und Neues zu entdecken.",
+    "theoryLines": [
+      "Experimente sind eine wissenschaftliche Art zu lernen.",
+      "Sie helfen Schülerinnen und Schülern, wie Wissenschaftlerinnen und Wissenschaftler zu denken."
+    ]
+  },
+  "exp_24": {
+    "stem": "Bevor du eine Idee prüfst: Was ist eine Hypothese?",
+    "options": [
+      "Eine Liste aller Materialien, die für das Experiment gebraucht werden.",
+      "Eine Vorhersage darüber, was du denkst, dass geschehen wird, und warum.",
+      "Das Endergebnis, das nach dem Experiment notiert wird.",
+      "Die Schlussfolgerung, die geschrieben wird, nachdem die Daten geprüft wurden."
+    ],
+    "explanation": "Eine Hypothese ist eine begründete Vorhersage, die du mit einem fairen Test prüfen kannst. Du schreibst sie, bevor du die Ergebnisse sammelst.",
+    "theoryLines": [
+      "Eine gute Hypothese kann durch Belege gestützt oder nicht gestützt werden.",
+      "Materiallisten und endgültige Schlussfolgerungen sind keine Hypothesen."
+    ]
+  },
+  "exp_11__v2": {
+    "stem": "Was ist der Zweck eines wissenschaftlichen Experiments?",
+    "options": [
+      "Alle Schritte eines Verfahrens aufzulisten, ohne wirklich etwas zu prüfen.",
+      "Eine Frage zu stellen und durch das Prüfen einer Idee herauszufinden, was geschieht.",
+      "Antworten auf Wissenschaftsfragen auswendig zu lernen ohne jede Prüfung.",
+      "Vorhersagen zu schreiben und nie zu prüfen, ob sie stimmen."
+    ],
+    "explanation": "Ein wissenschaftliches Experiment hilft dir, Antworten zu finden, indem du eine Idee prüfst. Du richtest einen fairen Test ein, beobachtest, was geschieht, und hältst die Ergebnisse fest.",
+    "theoryLines": [
+      "Experimente beginnen mit einer Frage und einer Vorhersage.",
+      "Die Ergebnisse eines Experiments helfen, die ursprüngliche Frage zu beantworten."
+    ]
+  },
+  "exp_12__v2": {
+    "stem": "Wer sollte bei Experimenten helfen?",
+    "options": [
+      "Niemand",
+      "Eine erwachsene Person, die helfen und dafür sorgen kann, dass alles sicher ist",
+      "Kleine Kinder ohne Aufsicht einer erwachsenen Person",
+      "Eine erwachsene Person, die das Experiment oder die Risiken nicht kennt"
+    ],
+    "explanation": "Eine erwachsene Person sollte bei Experimenten helfen und prüfen, dass alles sicher ist.",
+    "theoryLines": [
+      "Sicherheit kommt zuerst.",
+      "Eine erwachsene Person kann helfen, das Experiment sicher zu halten."
+    ]
+  },
+  "exp_14__v2": {
+    "stem": "Was geschieht, wenn du ein Experiment machst?",
+    "options": [
+      "Meist ändert sich nichts, wenn du nichts aufschreibst",
+      "Du lernst, siehst Ergebnisse und verstehst, wie etwas funktioniert",
+      "Freie Aktivität ohne Experimentfrage",
+      "Schnelle Handlungen ohne Ordnung oder Vergleich"
+    ],
+    "explanation": "Ein Experiment zu machen hilft dir, Neues zu lernen, zu sehen, was geschieht, und zu verstehen, wie Dinge funktionieren.",
+    "theoryLines": [
+      "Experimente helfen uns zu lernen.",
+      "Sie sind eine großartige Art, die Welt zu verstehen."
+    ]
+  },
+  "exp_18__v2": {
+    "stem": "In einem fairen Test: Wie nennen wir einen Faktor, der geändert oder gemessen werden kann?",
+    "options": [
+      "Das Endergebnis, das ganz am Ende des Experiments notiert wird.",
+      "Einen Faktor in einem Experiment, der geändert oder gemessen werden kann, um zu sehen, wie er das Ergebnis beeinflusst.",
+      "Alles, was überhaupt NICHT im Experiment enthalten ist.",
+      "Die Geräte, die zum Durchführen des Experiments genutzt werden."
+    ],
+    "explanation": "Eine Variable ist etwas, das sich in einem Experiment ändern kann. Wissenschaftlerinnen und Wissenschaftler ändern oder messen Variablen, um zu lernen, was die Ergebnisse beeinflusst.",
+    "theoryLines": [
+      "In einem fairen Test wird meist nur eine Variable auf einmal geändert.",
+      "Andere Bedingungen bleiben gleich, damit der Vergleich fair ist."
+    ]
+  },
+  "exp_19__v2": {
+    "stem": "Was ist eine abhängige Variable?",
+    "options": [
+      "Die Variable, die die forschende Person absichtlich ändern will",
+      "Was du als Ergebnis der Änderung misst",
+      "Nur die Stichprobengröße, ohne Bezug zu aufgezeichneten Werten",
+      "Daten, die du ignorierst, um Messzeit zu sparen"
+    ],
+    "explanation": "Die abhängige Variable ist das, was du misst, um das Ergebnis der Änderung der unabhängigen Variable zu sehen.",
+    "theoryLines": [
+      "Es ist das, was du herausfinden willst.",
+      "Es ist das Ergebnis des Experiments."
+    ]
+  },
+  "exp_20__v2": {
+    "stem": "Was ist eine Kontrollgruppe?",
+    "options": [
+      "Eine Gruppe, in der du jeden Faktor auf einmal änderst, ohne Vergleichsbasis",
+      "Eine Gruppe, mit der du andere Ergebnisse vergleichst",
+      "Eine Gruppe, die nur am Ende gemessen wird, ohne Anfangsbehandlung",
+      "Eine Gruppe, die das Hauptergebnis ohne Basis nachahmen soll"
+    ],
+    "explanation": "Eine Kontrollgruppe bleibt unverändert, damit du Ergebnisse vergleichen und sehen kannst, was den Unterschied gemacht hat.",
+    "theoryLines": [
+      "Sie hilft dir zu verstehen, was das Ergebnis verursacht hat.",
+      "Sie ist ein wichtiger Teil eines wissenschaftlichen Experiments."
+    ]
+  },
+  "exp_22__v2": {
+    "stem": "Was ist eine Schlussfolgerung?",
+    "options": [
+      "Das Experiment beenden ohne Erklärung der Ergebnisse",
+      "Was du aus dem Experiment gelernt hast und was es bedeutet",
+      "Ein Anfang ohne Datenanalyse",
+      "Ein mittlerer Schritt ohne Bezug zur Frage"
+    ],
+    "explanation": "Eine Schlussfolgerung erklärt, was du aus dem Experiment gelernt hast und was die Ergebnisse bedeuten.",
+    "theoryLines": [
+      "Schlussfolgerungen helfen dir zu verstehen, was gelernt wurde.",
+      "Sie sind ein wichtiger Teil eines wissenschaftlichen Experiments."
+    ]
+  },
+  "exp_26": {
+    "stem": "Was bedeutet Sicherheit in Experimenten?",
+    "options": [
+      "Teilweise Vorsicht ohne Vorbereitung im Voraus",
+      "Vorsichtig sein und dafür sorgen, dass alles vor, während und nach dem Experiment sicher ist",
+      "Schritte schnell machen ohne Gerätecheck",
+      "Nur Spaß haben ohne Schutzregeln"
+    ],
+    "explanation": "Sicherheit im Experiment bedeutet, vorsichtig zu sein und zu prüfen, dass alles vor, während und nach dem Experiment sicher ist.",
+    "theoryLines": [
+      "Sicherheit ist die wichtigste Regel.",
+      "Eine erwachsene Person sollte immer helfen."
+    ]
+  },
+  "exp_27": {
+    "stem": "Eine Schülerin oder ein Schüler prüft, wie Licht das Pflanzenwachstum beeinflusst, führt das Experiment aber neben einem kalten Fenster durch. Warum ist dieses Experiment schwer zu vertrauen?",
+    "options": [
+      "Die kalte Temperatur ist eine unkontrollierte Variable, die die Pflanzen ebenfalls beeinflussen könnte — nicht nur das Licht.",
+      "Kalte Temperaturen beeinflussen Pflanzen nie, deshalb ist das Experiment immer zuverlässig.",
+      "Wasser ist die einzige Variable, die in Pflanzenwachstums-Experimenten jemals zählt.",
+      "Licht hat unter keinen Bedingungen Wirkung auf das Pflanzenwachstum."
+    ],
+    "explanation": "Ein faires Experiment ändert nur eine Variable auf einmal. Hier können sowohl die Lichtmenge als auch die Kälte vom Fenster die Pflanzen beeinflussen. Weil sich zwei Dinge geändert haben, kann die Schülerin oder der Schüler nicht sicher sein, ob Licht, Kälte oder beides die Ergebnisse verursacht hat — die Schlussfolgerung ist unzuverlässig.",
+    "theoryLines": [
+      "Eine unkontrollierte Variable — auch Störvariable genannt — ändert sich versehentlich und kann die Ergebnisse beeinflussen.",
+      "Alle Variablen außer der geprüften zu kontrollieren ist nötig, um eine vertrauenswürdige Schlussfolgerung zu ziehen."
+    ]
+  },
+  "exp_28": {
+    "stem": "Warum wiederholen Forschende ein Experiment zur selben Frage an verschiedenen Orten oder Zeiten, bevor sie einer Schlussfolgerung vertrauen?",
+    "options": [
+      "Ein einmaliges Ergebnis könnte von Glück, Messfehler oder örtlichen Bedingungen kommen",
+      "Wiederholen löscht immer die Ergebnisse des ersten Experiments",
+      "Wissenschaft erlaubt eine feste Schlussfolgerung nach nur einem Versuch",
+      "Replikation ändert immer die ursprüngliche Frage"
+    ],
+    "explanation": "Replikation baut Vertrauen auf. Taucht ein Muster erneut auf, ist es weniger wahrscheinlich ein glücklicher Zufall.",
+    "theoryLines": [
+      "Zuverlässigkeit wächst aus wiederholten Daten und sorgfältigen Fehlerchecks.",
+      "Wissenschaft hängt von Ergebnissen ab, die andere Teams prüfen können."
+    ]
+  },
+  "exp_29": {
+    "stem": "Warum ist es wichtig, deine Beobachtungen während eines wissenschaftlichen Experiments festzuhalten?",
+    "options": [
+      "Es hilft dir, festzuhalten, was geschieht, damit du später genaue Schlussfolgerungen ziehen kannst.",
+      "Es lässt das Experiment automatisch länger dauern.",
+      "Es ersetzt den Bedarf an einer Hypothese völlig.",
+      "Es sagt den Pflanzen im Experiment, wie viel Wasser sie brauchen."
+    ],
+    "explanation": "Daten unterwegs festzuhalten bedeutet, dass du genaue, detaillierte Informationen hast, auf die du zurückblicken kannst. Ohne schriftliche Beobachtungen ist es leicht, zu vergessen oder falsch zu erinnern, was geschehen ist. Gute Aufzeichnungen lassen dich Muster erkennen, Ergebnisse vergleichen und deine Hypothese mit echten Belegen stützen oder anzweifeln.",
+    "theoryLines": [
+      "Wissenschaftlerinnen und Wissenschaftler halten Beobachtungen während des Experiments in Tabellen, Diagrammen oder Notizbüchern fest.",
+      "Zuverlässige Daten machen vertrauenswürdige Schlussfolgerungen möglich und das Teilen von Ergebnissen mit anderen."
+    ]
+  },
+  "exp_30": {
+    "stem": "Eine forschende Person fragt nur Menschen, die abends ein Einkaufszentrum betreten, nach der Luftqualität. Was ist das wichtigste methodische Risiko?",
+    "options": [
+      "Die Stichprobe kann verzerrt sein, sodass die Ergebnisse nicht alle vertreten",
+      "Menschen zu fragen ändert immer die physischen Messungen des Experiments",
+      "Umfragen entfernen immer den Bedarf an einer Kontrollgruppe",
+      "Notizen sind in Umfrageforschung nie nützlich"
+    ],
+    "explanation": "Stichproben an einem Ort und zu einer Zeit erreichen eine begrenzte Gruppe. Behauptungen über „alle“ brauchen einen breiteren Stichprobenplan oder eine klare Grenzaussage.",
+    "theoryLines": [
+      "Die Qualität der Schlussfolgerung hängt davon ab, wie Daten gesammelt wurden.",
+      "Stichprobenverzerrung ist eine häufige Forschungsfalle."
+    ]
+  },
+  "exp_31": {
+    "stem": "Eine Schülerin oder ein Schüler verfolgt alle 30 Minuten kleine Änderungen der Körpertemperatur, um herauszufinden, ob leichtes Fieber steigt oder sinkt. Welches Werkzeug ist für diese Untersuchung unerlässlich, und warum ist es die richtige Wahl?",
+    "options": [
+      "Ein Thermometer — weil es Temperatur präzise genug misst, um kleine Änderungen von Bruchteilen eines Grades zu erkennen.",
+      "Ein Messzylinder — weil er das Flüssigkeitsvolumen misst, das die Patientin oder der Patient trinkt, was Temperaturänderungen direkt widerspiegelt.",
+      "Eine Stoppuhr — weil die Dauer jeder Messung der wichtigste Faktor ist, um zu entscheiden, ob Fieber schlimmer wird.",
+      "Eine Waage — weil die Masse der Patientin oder des Patienten in jedem Intervall zeigt, ob die Körpertemperatur steigt oder sinkt."
+    ],
+    "explanation": "Ein Thermometer ist das richtige Werkzeug zum Messen der Temperatur. In einer wissenschaftlichen Untersuchung ist die Wahl des richtigen Messinstruments unerlässlich: Ein Thermometer kann präzise Temperaturänderungen von Bruchteilen eines Grades erkennen — genau das, was diese Studie braucht. Die anderen Instrumente messen Volumen, Zeit und Masse — nichts davon sagt uns direkt etwas über Temperatur.",
+    "theoryLines": [
+      "Wissenschaftlerinnen und Wissenschaftler passen das Messwerkzeug immer an die gemessene Größe an: Thermometer für Temperatur, Lineal für Länge, Waage für Masse, Messzylinder für Flüssigkeitsvolumen.",
+      "Im Experiment liefert das falsche Werkzeug falsche oder sinnlose Daten, auch wenn der Ablauf sonst gut ist."
+    ]
+  },
+  "exp_32": {
+    "stem": "In einem Wassererwärmungs-Experiment gibt eine forschende Person mehr Salz hinzu und dreht gleichzeitig die Flamme höher. Was ist falsch daran, zu schließen: „Das Salz hat die Erwärmungsänderung verursacht“?",
+    "options": [
+      "Du kannst die Wirkung des Salzes nicht isolieren, weil sich auch die Flammenstärke geändert hat",
+      "Es ist immer in Ordnung, zwei Faktoren zusammen zu ändern",
+      "Eine Flamme beeinflusst die Temperatur nie",
+      "Salz hebt Erwärmung immer auf"
+    ],
+    "explanation": "Wenn sich zwei Faktoren ändern, vermischt das Ergebnis ihre Wirkungen. Getrennte Tests oder ein geplantes Faktordesign sind nötig.",
+    "theoryLines": [
+      "Variablen zu kontrollieren stützt logische Schlussfolgerungen.",
+      "Das Experimentdesign zählt genauso wie das Ausführen der Schritte."
+    ]
+  },
+  "exp_33": {
+    "stem": "In einer einfachen Studie zu einem neuen Schmerzmittel auf Grundlage dessen, wie sich Menschen fühlen: Warum mit einer Gruppe vergleichen, die ein ähnlich aussehendes Mittel ohne Wirkstoff bekommt (ein Placebo)?",
+    "options": [
+      "Erwartung allein kann ändern, wie Menschen ihr Befinden berichten — auch ohne echte Arzneimittelwirkung",
+      "Ein Placebo beweist immer, dass das Medikament wirkt",
+      "Schmerz wird in der Wissenschaft nie untersucht",
+      "Ein ähnlich aussehendes Mittel schadet immer, deshalb ist es verboten"
+    ],
+    "explanation": "Der Placeboeffekt zeigt, dass menschliche Berichte nicht nur „saubere Messungen“ sind. Eine Kontrolle hilft, Nutzen über die Erwartung hinaus zu messen.",
+    "theoryLines": [
+      "Gute Studien trennen Behandlungswirkungen vom psychologischen Kontext.",
+      "Klare Methoden machen Ergebnisse leichter zu deuten."
+    ]
+  },
+  "exp_34": {
+    "stem": "Warum schreiben Wissenschaftlerinnen und Wissenschaftler genau auf, wie Materialien, Temperaturen und Zeiten genutzt wurden — auch wenn ein Experiment „funktioniert“ hat?",
+    "options": [
+      "Damit andere es wiederholen, prüfen oder versteckte Fehler finden können",
+      "Damit niemand anderes das Experiment wiederholen kann",
+      "Notizen braucht man nur, wenn ein Experiment scheitert",
+      "Genaue Details zählen nie, wenn das Ergebnis klar aussieht"
+    ],
+    "explanation": "Replikation ist eine Kernidee der Wissenschaft. Ohne Protokoll bleiben Befunde persönliche Geschichten statt geteiltes Wissen.",
+    "theoryLines": [
+      "Wissenschaftliches Wissen sollte öffentlich und prüfbar sein.",
+      "Ein klares Protokoll verringert Missverständnisse."
+    ]
+  },
+  "exp_35": {
+    "stem": "Eine Schülerin oder ein Schüler misst die Länge einer Frucht fünfmal und bekommt 10,0, 10,1, 9,9, 10,0 und 10,2 cm, aber das Maßband ist an jeder Markierung um einen Zentimeter zu kurz. Was gilt für den Fehler?",
+    "options": [
+      "Die Streuung ist klein, aber jeder Wert ist systematisch verschoben, weil das Werkzeug falsch kalibriert ist",
+      "Wenn die Streuung klein ist, gibt es nie einen Fehler",
+      "Es ist nur Zufallsfehler, weil die Zahlen nah beieinander liegen",
+      "Fünf Versuche zu mitteln behebt einen Kalibrierungsfehler immer automatisch"
+    ],
+    "explanation": "Konsistent zu sein (kleine Streuung) garantiert keine Genauigkeit. Ein verzerrtes Werkzeug kann dieselbe falsche Antwort wiederholen. Kalibrierung und Vergleich mit einem echten Standard sind nötig.",
+    "theoryLines": [
+      "Systematischer Fehler unterscheidet sich von zufälligem Rauschen.",
+      "Ein Mittelwert entfernt eine feste Werkzeugverzerrung nicht."
+    ]
+  },
+  "exp_36": {
+    "stem": "In einem Experiment keimten nur 50 % der Samen. Warum ist es schwer, allein aus diesem Ergebnis eine feste Schlussfolgerung zu ziehen?",
+    "options": [
+      "Die Stichprobengröße kann zu klein sein, sodass das Ergebnis nicht das volle Bild vertritt.",
+      "Ein Ergebnis von 50 % ist immer zuverlässig und braucht keine weitere Prüfung.",
+      "Das Experiment wurde definitiv falsch durchgeführt.",
+      "Ergebnisse, die nicht 100 % sind, sind immer falsch und müssen ignoriert werden."
+    ],
+    "explanation": "Eine kleine Stichprobengröße kann zu unzuverlässigen Ergebnissen führen. Das Experiment mit mehr Samen zu wiederholen ergibt eine klarere und zuverlässigere Schlussfolgerung.",
+    "theoryLines": [
+      "Größere Stichproben machen experimentelle Ergebnisse zuverlässiger.",
+      "Ein Ergebnis allein reicht selten für eine solide wissenschaftliche Schlussfolgerung."
+    ]
+  },
+  "exp_37": {
+    "stem": "In einer Klassenraum-Verhaltensstudie wissen die Schülerinnen und Schüler, dass sie gefilmt werden. Warum könnte das die Befunde im Vergleich zu einer unbemerkten Situation ändern?",
+    "options": [
+      "Zu wissen, dass man beobachtet wird, kann ändern, wie Menschen handeln (ein Beobachtereffekt)",
+      "Filmen hebt immer die Physik des Klassenraums auf",
+      "Schülerinnen und Schüler reagieren nie auf soziale Umgebung",
+      "Experimente mit Menschen müssen immer ohne Einwilligung auskommen"
+    ],
+    "explanation": "Studien mit Menschen brauchen Ethik und Bewusstsein dafür, dass Beobachtetwerden Verhalten ändern kann. Manchmal ist ein anderes Design oder eine klare Grenzaussage nötig.",
+    "theoryLines": [
+      "Messen kann die gemessene Sache verändern.",
+      "Ethik in der Forschung zählt genauso wie Genauigkeit."
+    ]
+  },
+  "exp_38": {
+    "stem": "Welche Aussage beschreibt richtig den Unterschied zwischen einer Hypothese und einer Schlussfolgerung nach einem Experiment?",
+    "options": [
+      "Eine Hypothese ist eine Vorhersage vor dem Test; eine Schlussfolgerung beruht auf gesammelten Belegen",
+      "Schlussfolgerung und Hypothese sind dasselbe in verschiedenen Schreibphasen",
+      "Eine Hypothese wird erst geschrieben, nachdem du das Ergebnis gesehen hast",
+      "Eine Schlussfolgerung ist nicht erlaubt, wenn sie nicht zur ersten Erwartung passt"
+    ],
+    "explanation": "Eine Hypothese leitet den Test; eine Schlussfolgerung spiegelt wider, was die Daten stützen. Eine Hypothese abzulehnen ist normale und ehrliche Wissenschaft.",
+    "theoryLines": [
+      "Untersuchungszyklus: Frage → Hypothese → Experiment → Analyse → Schlussfolgerung.",
+      "Schwache Belege machen eine schwache Schlussfolgerung."
+    ]
+  },
+  "exp_39": {
+    "stem": "Was bedeutet ein „fairer Test“, wenn zwei Methoden zum Reinigen von Öl aus Wasser verglichen werden?",
+    "options": [
+      "Alles, was du nicht prüfst, bleibt gleich (Wassermenge, Temperatur, Mischzeit)",
+      "Du änderst jede Bedingung auf einmal, um zu sehen, welche Methode „am stärksten“ ist",
+      "Du nutzt auf jeder Seite völlig anderes Wasser ohne Messen",
+      "Du misst am Ende nichts"
+    ],
+    "explanation": "Fairness bedeutet, einen Faktor zu isolieren. Sonst könnte ein Unterschied von Glück oder einer versteckten Bedingung kommen, nicht von der Methode.",
+    "theoryLines": [
+      "Ein fairer Test isoliert eine unabhängige Variable.",
+      "Variablen zu kontrollieren verringert vermischte Erklärungen."
+    ]
+  },
+  "exp_40": {
+    "stem": "Wenn doppelter Dünger die Ernte nicht verdoppelt: Warum bricht das ein einfaches „Geraden“-Modell zwischen Düngermenge und Ergebnis?",
+    "options": [
+      "Lebende Systeme stoßen oft an Grenzen, fehlende Nährstoffe oder sogar Schaden durch zu viel Zufuhr",
+      "Dünger beeinflusst Pflanzen nie",
+      "Die Ernte wächst immer in einer perfekten Geraden für immer",
+      "Geradenmodelle gibt es nur in der Physik, nie in der Biologie"
+    ],
+    "explanation": "Ressourcengrenzen, Giftigkeit bei hohen Mengen und wechselnde Effizienz bedeuten, dass Wachstumskurven oft keine einfache Gerade sind.",
+    "theoryLines": [
+      "Einfache Modelle passen nur in einem begrenzten Bereich.",
+      "Zu viel einer Zufuhr kann statt helfen schaden."
+    ]
+  },
+  "exp_41": {
+    "stem": "Warum müssen Schülerinnen und Schüler Sicherheitsregeln während eines wissenschaftlichen Experiments im Unterricht befolgen?",
+    "options": [
+      "Chemikalien oder Hitze können Haut verbrennen oder Augen schädigen, wenn man unvorsichtig damit umgeht.",
+      "Sicherheitsregeln sind optional, solange die Lehrkraft zuschaut.",
+      "Sicherheitsregeln gelten nur für ältere Schülerinnen und Schüler in fortgeschrittenen Wissenschaftsklassen.",
+      "Wasser macht alle Experimente völlig sicher, deshalb sind keine anderen Regeln nötig."
+    ],
+    "explanation": "Wissenschaftsexperimente können Chemikalien beinhalten, die Haut oder Augen reizen, heiße Geräte, die Verbrennungen verursachen, oder scharfe Werkzeuge, die Schnitte verursachen. Sicherheitsregeln — wie Schutzbrille tragen, Geräte sorgfältig nutzen und den Anweisungen der Lehrkraft folgen — schützen alle in der Klasse vor Verletzungen.",
+    "theoryLines": [
+      "Persönliche Schutzausrüstung wie Schutzbrille und Handschuhe wird getragen, um das Verletzungsrisiko zu senken.",
+      "Wenn du bei einem Schritt unsicher bist, frag immer deine Lehrkraft, bevor du weitermachst."
+    ]
+  },
+  "exp_42": {
+    "stem": "Daten zeigen: An Sommertagen, an denen Kinder mehr Eis kaufen, werden auch mehr Ertrinkungsfälle im Pool gemeldet. Was ist die vernünftigste Schlussfolgerung?",
+    "options": [
+      "Beide können zusammen steigen wegen eines gemeinsamen Faktors wie heißem Wetter — nicht weil Eis Ertrinken verursacht",
+      "Eis kaufen verursacht Ertrinken direkt",
+      "Die Zahlen beweisen, dass Eis Schwimmerinnen und Schwimmer schützt",
+      "Korrelation bedeutet immer, dass das eine das andere verursacht"
+    ],
+    "explanation": "Korrelation ist nicht Kausalität. Dinge, die sich zusammen bewegen, brauchen eine Erklärung, einen kontrollierten Test oder Checks auf andere Faktoren.",
+    "theoryLines": [
+      "Ursachenbehauptungen brauchen mehr als Zahlen, die zusammen steigen.",
+      "Gutes Denken prüft alternative Erklärungen."
+    ]
+  },
+  "exp_43": {
+    "stem": "In einem Getränke-Geschmackstest weiß die Jury nicht, welche Tasse das Original ist. Warum hilft das?",
+    "options": [
+      "Es verringert Erwartungsverzerrung beim Bewerten",
+      "Es garantiert, dass sich das Getränk chemisch zwischen den Tassen ändert",
+      "Es hindert Teilnehmende am Trinken",
+      "Es entfernt den Bedarf an jeder Kontrollgruppe"
+    ],
+    "explanation": "Wenn die Jury nicht weiß, welche Tasse welche ist, prägen frühere Meinungen die Bewertung weniger. Das ist ein grundlegendes Werkzeug in sensorischen Studien.",
+    "theoryLines": [
+      "Objektivere Messung verringert menschliche Verzerrung.",
+      "Ein klares Protokoll baut Vertrauen in Ergebnisse auf."
+    ]
+  },
+  "exp_44": {
+    "stem": "In einer täglichen Temperatur-Zeitreihe ist ein Punkt extrem ungewöhnlich ohne Wettererklärung. Was ist ein vernünftiger Forschungsschritt, bevor du ihn löschst?",
+    "options": [
+      "Protokoll, Gerätekalibrierung oder einen Tippfehler prüfen",
+      "Den höchsten Punkt immer automatisch löschen",
+      "Ausreißer immer ignorieren, weil sie nie zählen",
+      "Einen neuen Wert ohne Erklärung erfinden"
+    ],
+    "explanation": "Ausreißer brauchen Prüfung: Sie können echte Extreme oder Fehler sein. Wissenschaftlerinnen und Wissenschaftler dokumentieren Entscheidungen zur Transparenz.",
+    "theoryLines": [
+      "Datenbereinigung ist ein sorgfältiger Prozess, kein künstlerisches Löschen.",
+      "Ein Labortagebuch verfolgt Änderungen am Datensatz."
+    ]
+  },
+  "exp_45": {
+    "stem": "Ein Gerät zeigt auf Zehntel einer Einheit, ist aber mit falschen Konstanten eingestellt. Welche Beschreibung stimmt?",
+    "options": [
+      "Hohe Auflösung behebt keinen systematischen Einstellungsfehler",
+      "Wenn die Auflösung hoch ist, muss das Gerät genau sein",
+      "Ein unkalibriertes Gerät kann nur ganze Zahlen zeigen",
+      "Konstante Fehler verschwinden, wenn du schnell misst"
+    ],
+    "explanation": "Zusätzliche Stellen hinter dem Komma machen eine Zahl nicht wahr. Kalibrierung behebt Skalenfehler; Auflösung beschreibt nur die Empfindlichkeit für kleine Änderungen.",
+    "theoryLines": [
+      "Auflösung und Genauigkeit sind verschiedene Ideen.",
+      "Eine nützliche Messung muss vertrauenswürdig sein, nicht nur detailliert."
+    ]
+  },
+  "exp_46": {
+    "stem": "Warum eine Rohbeobachtung im Labortagebuch festhalten, bevor du sie in eine saubere Schlussfolgerung verwandelst?",
+    "options": [
+      "Eine Schlussfolgerung sollte auf den tatsächlich gesammelten Daten beruhen",
+      "Schlussfolgerungen sollten vor dem Messen kommen",
+      "Schlussfolgerungen haben keinen Bezug zu Ergebnissen",
+      "Schlussfolgerungen sollen das Experiment aufheben"
+    ],
+    "explanation": "Rohnotizen lassen dich prüfen, ob eine Deutung zu den Fakten passt. Sie unterstützen auch die Prüfung durch andere und Selbstkontrolle.",
+    "theoryLines": [
+      "Rohdaten unterstützen Transparenz.",
+      "Gute Deutungen werden gegen den Originalbericht geprüft."
+    ]
+  },
+  "exp_47": {
+    "stem": "Wenn du die Schattenlänge jeden Tag nach dem Unterricht gleich misst, aber immer vergisst, den Meter zurückzusetzen: Wie verhält sich der Fehler über die Woche?",
+    "options": [
+      "Dieselbe systematische Verzerrung wiederholt sich — sie streut nicht zufällig um die Wahrheit",
+      "Der Fehler verschwindet, weil Wiederholen einen perfekten Mittelwert erzeugt",
+      "Jeden Tag kehrt sich die Fehlerrichtung völlig zufällig um",
+      "Ohne Kalibrierung hat Schattenlänge überhaupt keine Bedeutung"
+    ],
+    "explanation": "Ein fester Verfahrens- oder Werkzeugfehler erzeugt ein systematisches Muster. Wiederholen ohne Beheben der Quelle verstärkt diese Verzerrung.",
+    "theoryLines": [
+      "Stabile Protokolle und Gerätepflege verringern hartnäckige Fehler.",
+      "Ein sich wiederholendes Fehlermuster ist ein Hinweis auf Kalibrierungs- oder Methodenprobleme."
+    ]
+  },
+  "exp_48": {
+    "stem": "Eine forschende Person lässt nicht sensible Details aus, die für Replikation entscheidend sind (Konzentrationen, Heizzeiten). Was ist das Risiko für die Wissenschaftsgemeinschaft?",
+    "options": [
+      "Andere können den Befund nicht richtig prüfen",
+      "Geheimnisse zu halten verbessert Forschung immer",
+      "Replikation ist unnötig, wenn nur die Schlussfolgerung geschrieben wird",
+      "Zahlenangaben sind immer zu gefährlich zum Veröffentlichen"
+    ],
+    "explanation": "Methodentransparenz ist eine Verantwortung. Ohne klares Protokoll ist es schwer, eine Entdeckung von Fehler oder Glück zu trennen.",
+    "theoryLines": [
+      "Wissenschaft hängt von wiederholter kritischer Prüfung ab.",
+      "Vollständige Dokumentation schützt Forschende auch vor Missverständnissen."
+    ]
+  },
+  "exp_49": {
+    "stem": "In einem Experiment dazu, wie viel Wasser nach einem Tag in einer Tasse bleibt: Was ist meist das abhängige Ergebnis gegenüber den Bedingungen, die du absichtlich änderst?",
+    "options": [
+      "Die verbleibende Wassermenge ist das abhängige Ergebnis; Hitze, Ort oder Deckel sind Faktoren, die du steuerst",
+      "Die Tageszeit ist das abhängige Ergebnis; die Wassermenge bleibt immer fest",
+      "Die Tassenfarbe ist das Ergebnis; Wasser ist die gesteuerte Variable",
+      "Es gibt keinen Unterschied zwischen Variablen in einem einfachen Experiment"
+    ],
+    "explanation": "Die unabhängige Variable ist das, was du absichtlich änderst; die abhängige Variable ist das, was du als Reaktion misst. Klare Sprache hilft bei Tabellen und Diagrammen.",
+    "theoryLines": [
+      "Variablen einzuordnen organisiert experimentelles Denken.",
+      "Gute Diagramme zeigen abhängige gegenüber unabhängigen Variablen."
+    ]
+  },
+  "exp_50": {
+    "stem": "Schuldaten zeigen: Der Durchschnittswert in Zweigstelle A ist insgesamt höher als in Zweigstelle B, obwohl in jeder einzelnen Klasse Zweigstelle A im Mittel niedriger liegt. Wie ist das möglich?",
+    "options": [
+      "Simpsons Paradoxon: Gesamtdurchschnitte können Muster umkehren, die man innerhalb von Untergruppen sieht",
+      "Es ist mathematisch unmöglich",
+      "Ein Gesamtdurchschnitt entspricht immer dem kleinsten Untergruppendurchschnitt",
+      "Es geschieht nur, wenn Schülerinnen und Schüler zufällig gewählt werden"
+    ],
+    "explanation": "Ein kombiniertes Ergebnis kann sich umkehren, wenn du in Untergruppen schaust — deshalb zählt, welchen Ausschnitt der Daten du besprichst.",
+    "theoryLines": [
+      "Geschichtete Analyse kann versteckte Muster zeigen.",
+      "Ein globaler Durchschnitt passt nicht immer zu jeder Untergruppe."
+    ]
+  },
+  "exp_51": {
+    "stem": "Schülerinnen und Schüler prüfen, ob Essig das Abschälen verringert, das ein Streichholz entzündet. Warum sollte jede Gruppe bei ähnlicher Raumtemperatur arbeiten?",
+    "options": [
+      "Reaktionsraten und Gasausdehnung hängen von der Temperatur ab, die die Essigwirkung verfälschen könnte",
+      "Temperatur beeinflusst nur die Farbe der Schale",
+      "Chemische Experimente haben nie Störvariablen",
+      "Ein kalter Raum entfernt den Bedarf an jeder Kontrolle"
+    ],
+    "explanation": "Temperatur beeinflusst Reaktionsrate und Dampfdruck stark. Unterscheiden sich Gruppen in der Temperatur, ist es schwer, Essig allein zuzuschreiben.",
+    "theoryLines": [
+      "Umgebungsvariablen beeinflussen Reaktionskinetik.",
+      "Kontrollen verringern versteckte Verzerrung."
+    ]
+  },
+  "exp_52": {
+    "stem": "Welche Rolle spielt Peer-Review beim wissenschaftlichen Veröffentlichen?",
+    "options": [
+      "Gutachterinnen und Gutachter prüfen Methoden, Konsistenz und Relevanz vor der Annahme",
+      "Gutachterinnen und Gutachter garantieren, dass jede Schlussfolgerung vor jedem Experiment zu 100 % wahr ist",
+      "Peer-Review ersetzt Feldexperimente",
+      "Peer-Review blockiert für immer jede forschende Person am Veröffentlichen"
+    ],
+    "explanation": "Peer-Review ist ein Filter- und Verbesserungsschritt, kein Orakel. Befunde können sich nach späteren Replikationen immer noch ändern, aber Review verringert offensichtliche Fehler.",
+    "theoryLines": [
+      "Wissenschaftliches Wissen wächst durch kritische Prüfung in der Gemeinschaft.",
+      "Eine Primärquelle zu lesen erfordert trotzdem dein eigenes kritisches Denken."
+    ]
+  }
+}

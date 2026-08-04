@@ -34,6 +34,8 @@ const MAX_ATTEMPTS = 3;
 
 /** @typedef {import('./leo-bakery-data.js').DifficultyId} DifficultyId */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+
 export default function LeoBakeryGame({
   autoStart = false,
   initialDifficulty = "easy",
@@ -246,7 +248,7 @@ export default function LeoBakeryGame({
     timeoutHandledRef.current = true;
     registerMistake();
     onTimeUp();
-    if (task) revealAndAdvance(`Time's up. Here's the solution:\n${bakerySolutionText(task)}`);
+    if (task) revealAndAdvance(gamePackCopy("components__educational-games__leo-bakery__LeoBakeryGame", "times_up_solution", { solution: bakerySolutionText(task) }));
   }, [registerMistake, onTimeUp, task, revealAndAdvance]);
 
   useEffect(() => {
@@ -611,7 +613,7 @@ export default function LeoBakeryGame({
             <h2 className={styles.endTitle}>
               {phase === "won" ? "🎉 You finished the bakery!" : "🥐 Game over"}
             </h2>
-            <p className={styles.endStat}>⭐ Score: {score}</p>
+            <p className={styles.endStat}>{gamePackCopy("components__educational-games__leo-bakery__LeoBakeryGame", "end_score", { score })}</p>
             <p className={styles.endStat}>
               ✅ Correct answers: {successCount}/{TASKS_PER_SESSION}
             </p>

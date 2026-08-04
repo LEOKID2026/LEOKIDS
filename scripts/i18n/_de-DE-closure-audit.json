@@ -1,0 +1,41 @@
+{
+  "books": {
+    "files": 450,
+    "gradeHits": 0,
+    "studentHits": 0,
+    "enInstr": 0,
+    "atCh": 0,
+    "issues": []
+  },
+  "locales": {
+    "namespaces": 15,
+    "student": 0,
+    "grade": 0,
+    "atCh": 0,
+    "issues": []
+  },
+  "science": {
+    "en": 1017,
+    "de": 1017,
+    "missing": 0,
+    "optMismatch": 0,
+    "atCh": 0,
+    "enLeak": 0,
+    "enLeakSamples": []
+  },
+  "packs": {
+    "files": 396,
+    "grade": 0,
+    "student": 0,
+    "atCh": 0,
+    "parseFail": 0,
+    "issues": []
+  },
+  "help": {
+    "articles": 40,
+    "student": 0,
+    "grade": 0,
+    "atCh": 0,
+    "issues": []
+  }
+}

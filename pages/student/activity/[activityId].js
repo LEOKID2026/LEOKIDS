@@ -29,6 +29,7 @@ import { activityChoiceGridClassName } from "../../../lib/classroom-activities/s
 import { isTextualAssignedActivitySubject } from "../../../lib/classroom-activities/student-activity-textual-subjects.client.js";
 import { resolveStudentActivityUi } from "../../../lib/student-ui/student-theme-resolver.client.js";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
+import { useI18n, useT } from "../../../lib/i18n/I18nProvider.jsx";
 import { StudentActivityLayoutVariantProvider } from "../../../contexts/StudentActivityLayoutVariantContext.jsx";
 import { computeAssignedActivityTiming, computeOpenLearningTiming } from "../../../lib/learning/timing-policy.js";
 import {
@@ -63,16 +64,33 @@ function buildSavedAttemptsMap(attempts) {
 function feedbackFromSavedAttempt(attempt, activity) {
   if (!attempt) return null;
   if (activity?.mode === "discussion") {
-    return { type: "submitted", message: globalBurnDownCopy("pages__student__activity__[activityId]", "answer_submitted") };
+    return { type: "submitted", message: ac("answer_submitted") };
   }
   return {
     type: attempt.isCorrect ? "correct" : "wrong",
-    message: attempt.isCorrect ? "Correct!" : globalBurnDownCopy("pages__student__activity__[activityId]", "incorrect"),
+    message: attempt.isCorrect ? ac("correct") : ac("incorrect"),
   };
 }
 
 function savedAnswerDisplayText(saved) {
   return saved?.selectedAnswer != null ? String(saved.selectedAnswer) : "";
+}
+
+const ACTIVITY_COPY_SLUG = "pages__student__activity__[activityId]";
+
+/** @param {string} key */
+function ac(key) {
+  return globalBurnDownCopy(ACTIVITY_COPY_SLUG, key);
+}
+
+/**
+ * @param {string} template
+ * @param {Record<string, string|number>} vars
+ */
+function acFill(template, vars) {
+  return String(template).replace(/\{(\w+)\}/g, (_, key) =>
+    vars[key] == null ? "" : String(vars[key])
+  );
 }
 
 export async function getServerSideProps(context) {
@@ -85,6 +103,8 @@ export async function getServerSideProps(context) {
 export default function StudentActivityPage({ activityId }) {
   const router = useRouter();
   const { theme } = useStudentTheme();
+  const { direction, locale } = useI18n();
+  const t = useT();
   const [phase, setPhase] = useState("loading");
   const [activity, setActivity] = useState(null);
   const [questionSet, setQuestionSet] = useState([]);
@@ -149,7 +169,7 @@ export default function StudentActivityPage({ activityId }) {
       }
       if (!res.ok || json?.ok !== true) {
         setError(
-          resolveStudentActivityApiErrorHe(json, "Could not start the activity")
+          resolveStudentActivityApiErrorHe(json, ac("could_not_start"))
         );
         setPhase("error");
         return;
@@ -200,7 +220,7 @@ export default function StudentActivityPage({ activityId }) {
       }
       setPhase("ready");
     } catch {
-      setError("Network error");
+      setError(ac("network_error"));
       setPhase("error");
     }
   }, [activityId, router]);
@@ -227,7 +247,7 @@ export default function StudentActivityPage({ activityId }) {
           setCurrentIdx(json.currentQuestionIdx);
         }
         if (json?.activityStatus === "paused") {
-          setFeedback({ type: "wait", message: "The teacher paused the lesson — please wait" });
+          setFeedback({ type: "wait", message: ac("teacher_paused") });
         }
       } catch {
         /* ignore */
@@ -497,7 +517,7 @@ export default function StudentActivityPage({ activityId }) {
       if (!res.ok || json?.ok !== true) {
         setFeedback({
           type: "error",
-          message: resolveStudentActivityApiErrorHe(json, "Could not save the answer"),
+          message: resolveStudentActivityApiErrorHe(json, ac("could_not_save")),
         });
         return;
       }
@@ -509,7 +529,7 @@ export default function StudentActivityPage({ activityId }) {
       if (isDiscussion) {
         setFeedback({
           type: "submitted",
-          message: globalBurnDownCopy("pages__student__activity__[activityId]", "answer_submitted"),
+          message: ac("answer_submitted"),
         });
       } else {
         explanationText = showExplanation ? json.explanation : undefined;
@@ -517,7 +537,7 @@ export default function StudentActivityPage({ activityId }) {
         if (explanationText) explanationViewedRef.current = true;
         setFeedback({
           type: json.isCorrect ? "correct" : "wrong",
-          message: json.isCorrect ? "Correct!" : globalBurnDownCopy("pages__student__activity__[activityId]", "incorrect"),
+          message: json.isCorrect ? ac("correct") : ac("incorrect"),
           explanation: explanationText,
         });
       }
@@ -589,10 +609,10 @@ export default function StudentActivityPage({ activityId }) {
   if (phase === "error") {
     return (
       <Layout {...layoutProps}>
-        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir="ltr">
+        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir={direction} lang={locale}>
           <p className={`${L.errorText} mb-4`}>{error}</p>
           <Link href="/student/home" className={L.errorLink}>
-            Back home
+            {t("ui.layout.backHome")}
           </Link>
         </div>
       </Layout>
@@ -607,15 +627,15 @@ export default function StudentActivityPage({ activityId }) {
       isDiscussionDone && !isExplanationOnly && (finished.questionCount ?? questionSet.length) > 1;
     return (
       <Layout {...layoutProps}>
-        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir="ltr">
+        <div className="max-w-lg mx-auto px-4 py-12 text-center" dir={direction} lang={locale}>
           <h1 className={`${L.doneTitle} mb-4`}>
             {isExplanationOnly
-              ? "You read the explanation"
+              ? ac("done_title_explanation")
               : isDiscussionDone
                 ? multiQuestionDiscussion
-                  ? "You finished the discussion"
-                  : globalBurnDownCopy("pages__student__activity__[activityId]", "answer_submitted")
-                : "You finished the activity!"}
+                  ? ac("done_title_discussion")
+                  : ac("answer_submitted")
+                : ac("done_title_activity")}
           </h1>
           {!isDiscussionDone ? (
             <p className={`${L.doneScore} mb-6`}>
@@ -625,16 +645,18 @@ export default function StudentActivityPage({ activityId }) {
               )}
             </p>
           ) : isExplanationOnly ? (
-            <p className={`${L.doneBody} mb-6`}>You read the teacher's explanation. Thank you!</p>
+            <p className={`${L.doneBody} mb-6`}>{ac("done_body_explanation")}</p>
           ) : multiQuestionDiscussion ? (
             <p className={`${L.doneBody} mb-6`}>
-              You finished {finished.questionCount ?? questionSet.length} discussion questions. Thank you!
+              {acFill(ac("done_body_discussion_multi"), {
+                count: finished.questionCount ?? questionSet.length,
+              })}
             </p>
           ) : (
-            <p className={`${L.doneBody} mb-6`}>Thanks for your response. Your teacher will see the answer in class.</p>
+            <p className={`${L.doneBody} mb-6`}>{ac("done_body_discussion")}</p>
           )}
           <Link href="/student/home" className={L.doneButton}>
-            Back home
+            {ac("back_home")}
           </Link>
         </div>
       </Layout>
@@ -652,7 +674,10 @@ export default function StudentActivityPage({ activityId }) {
     { textualAssigned }
   );
 
-  const activitySubtitle = `${activityModeLabelHe(activity?.mode)} · Question ${effectiveIdx + 1} of ${questionSet.length}`;
+  const activitySubtitle = `${activityModeLabelHe(activity?.mode)} · ${acFill(ac("question_progress"), {
+    current: effectiveIdx + 1,
+    total: questionSet.length,
+  })}`;
 
   const feedbackToneClass =
     feedback?.type === "correct"
@@ -716,7 +741,7 @@ export default function StudentActivityPage({ activityId }) {
         submitButton={
           mobileEmbeddedNumericSubmit
             ? {
-                label: isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer"),
+                label: isCurrentQuestionAnswered ? ac("answer_saved") : ac("submit_answer"),
                 onClick: () => {
                   if (!busy && !isCurrentQuestionAnswered && String(answerInput).trim() !== "") {
                     void submitAnswer();
@@ -736,7 +761,7 @@ export default function StudentActivityPage({ activityId }) {
       testId === "math-scratchpad-toggle-dock-desktop"
         ? L.scratchpadDockDesktopScratchpadButtonOpen
         : L.scratchpadDockScratchpadButtonOpen;
-    const label = scratchpadOpen ? "Close draft" : "Scratch pad";
+    const label = scratchpadOpen ? ac("close_draft") : ac("scratch_pad");
     return (
       <button
         type="button"
@@ -745,7 +770,7 @@ export default function StudentActivityPage({ activityId }) {
         data-testid={testId}
       >
         <span className="invisible select-none" aria-hidden="true">
-          Scratch pad
+          {ac("scratch_pad")}
         </span>
         <span className="absolute inset-0 flex items-center justify-center overflow-hidden px-3">
           {label}
@@ -777,7 +802,7 @@ export default function StudentActivityPage({ activityId }) {
               }}
               className={L.scratchpadDockSecondaryButton}
             >
-              Next question
+              {ac("next_question")}
             </button>
           ) : null}
           {includeScratchpadToggle
@@ -816,7 +841,7 @@ export default function StudentActivityPage({ activityId }) {
               }}
               className={L.footerButton}
             >
-              Next question
+              {ac("next_question")}
             </button>
           ) : null}
           <button
@@ -836,7 +861,7 @@ export default function StudentActivityPage({ activityId }) {
       {isExplanationOnly ? (
         <>
           <p className={L.explanationBanner}>
-            No need to submit an answer — read the content
+            {ac("explanation_banner")}
           </p>
           <button
             type="button"
@@ -850,7 +875,7 @@ export default function StudentActivityPage({ activityId }) {
             }}
             className={L.submitButton}
           >
-            {effectiveIdx < questionSet.length - 1 ? "I read it — continue" : "I finished reading"}
+            {effectiveIdx < questionSet.length - 1 ? ac("read_continue") : ac("finished_reading")}
           </button>
         </>
       ) : assignedActivityQuestionUsesChoiceUi(currentQuestion) ? (
@@ -900,7 +925,7 @@ export default function StudentActivityPage({ activityId }) {
                   ? "activity-geometry-numeric-answer"
                   : "activity-math-numeric-answer"
               }
-              placeholder={globalBurnDownCopy("pages__student__activity__[activityId]", "type_your_answer")}
+              placeholder={ac("type_your_answer")}
               autoFocus={!scratchpadOpen || currentQuestion.subject !== "math"}
               suppressEmbeddedKeyboard={sharedScratchpadKeyboard}
               onInputFocus={() => setActiveScratchpadCell(null)}
@@ -934,7 +959,7 @@ export default function StudentActivityPage({ activityId }) {
                 busy || String(answerInput).trim() === "" || isCurrentQuestionAnswered
               }
               submitTestId="activity-submit-answer"
-              submitLabel={isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer")}
+              submitLabel={isCurrentQuestionAnswered ? ac("answer_saved") : ac("submit_answer")}
             />
           </div>
           {includeInlineKeyboard && sharedScratchpadKeyboard
@@ -947,7 +972,7 @@ export default function StudentActivityPage({ activityId }) {
             className={L.textInput}
             value={answerInput}
             onChange={(e) => setAnswerInput(e.target.value)}
-            placeholder={globalBurnDownCopy("pages__student__activity__[activityId]", "type_your_answer")}
+            placeholder={ac("type_your_answer")}
             dir="auto"
             readOnly={isCurrentQuestionAnswered}
             disabled={isCurrentQuestionAnswered}
@@ -968,7 +993,7 @@ export default function StudentActivityPage({ activityId }) {
           className={L.submitButton}
           data-testid="activity-submit-answer"
         >
-          {isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer")}
+          {isCurrentQuestionAnswered ? ac("answer_saved") : ac("submit_answer")}
         </button>
       ) : null}
     </>
@@ -991,7 +1016,7 @@ export default function StudentActivityPage({ activityId }) {
         className={className}
         data-testid="activity-submit-answer"
       >
-        {isCurrentQuestionAnswered ? "Answer saved" : globalBurnDownCopy("pages__student__activity__[activityId]", "submit_answer")}
+        {isCurrentQuestionAnswered ? ac("answer_saved") : ac("submit_answer")}
       </button>
     ) : null;
 
@@ -1020,7 +1045,7 @@ export default function StudentActivityPage({ activityId }) {
             }}
             className={L.scratchpadDockDesktopSecondaryButton}
           >
-            Next question
+            {ac("next_question")}
           </button>
         ) : null}
         {includeScratchpadToggle
@@ -1156,13 +1181,15 @@ export default function StudentActivityPage({ activityId }) {
     <StudentActivityLayoutVariantProvider textualAssigned={textualAssigned}>
       <Layout {...layoutProps}>
         {activity?.mode === "live_lesson" && activity?.activityStatus === "paused" ? (
-          <div className={L.page} dir="ltr" lang="en">
-            <p className={`${L.waitText} text-center py-4`}>Waiting for the teacher…</p>
+          <div className={L.page} dir={direction} lang={locale}>
+            <p className={`${L.waitText} text-center py-4`}>
+              {ac("waiting_for_the_teacher")}
+            </p>
           </div>
         ) : assignedActivityShell ? (
           wrapScratchpadVirtualInput(assignedActivityShell)
         ) : (
-          <div className={L.page} dir="ltr" lang="en" />
+          <div className={L.page} dir={direction} lang={locale} />
         )}
         {/* */}
         {showDiagramModal && questionDiagramSpec && currentQuestion && (
@@ -1171,7 +1198,7 @@ export default function StudentActivityPage({ activityId }) {
             onClick={() => setShowDiagramModal(false)}
             role="dialog"
             aria-modal="true"
-            aria-label={globalBurnDownCopy("pages__student__activity__[activityId]", "enlarged_diagram")}
+            aria-label={ac("enlarged_diagram")}
           >
             <div
               className="w-full max-w-lg bg-gradient-to-br from-[#080c16] to-[#0a0f1d] border-2 border-emerald-500/50 rounded-2xl p-4 shadow-2xl"
@@ -1179,12 +1206,14 @@ export default function StudentActivityPage({ activityId }) {
               dir="ltr"
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="text-emerald-300 font-bold text-sm">Diagram</span>
+                <span className="text-emerald-300 font-bold text-sm">
+                  {ac("enlarged_diagram")}
+                </span>
                 <button
                   type="button"
                   onClick={() => setShowDiagramModal(false)}
                   className="text-slate-400 hover:text-white text-lg leading-none px-1"
-                  aria-label={globalBurnDownCopy("pages__student__activity__[activityId]", "close_diagram")}
+                  aria-label={ac("close_diagram")}
                 >
                   ✕
                 </button>

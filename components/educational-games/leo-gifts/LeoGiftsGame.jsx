@@ -36,6 +36,8 @@ const MAX_ATTEMPTS = 3;
 
 /** @typedef {import('./leo-gifts-data.js').DifficultyId} DifficultyId */
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+
 export default function LeoGiftsGame({
   autoStart = false,
   initialDifficulty = "easy",
@@ -211,7 +213,7 @@ export default function LeoGiftsGame({
     registerMistake();
     onTimeUp();
     if (task) {
-      revealAndAdvance(`Time's up! ${giftsSolutionText(task)}`);
+      revealAndAdvance(gamePackCopy("components__educational-games__leo-gifts__LeoGiftsGame", "times_up_solution", { solution: giftsSolutionText(task) }));
     }
   }, [registerMistake, onTimeUp, task, revealAndAdvance]);
 
@@ -535,7 +537,7 @@ export default function LeoGiftsGame({
             <h2 className={styles.endTitle}>
               {phase === "won" ? "🎉 You finished the candy shop!" : "🍬 Game over"}
             </h2>
-            <p className={styles.endStat}>⭐ Score: {score}</p>
+            <p className={styles.endStat}>{gamePackCopy("components__educational-games__leo-gifts__LeoGiftsGame", "end_score", { score })}</p>
             <p className={styles.endStat}>
               ✅ Correct answers: {successCount}/{TASKS_PER_SESSION}
             </p>

@@ -1,11 +1,11 @@
 {
   "copy": {
-    "total_students": "إجمالي الطلاب",
-    "opened_pdf": "فتح قوات الدفاع الشعبي",
+    "total_students": "إجمالي التلاميذ",
+    "opened_pdf": "فتح PDF",
     "completed_pdf": "مكتمل (PDF)",
     "submitted_answers": "الإجابات المقدمة",
     "pending_review": "في انتظار المراجعة",
     "published": "تم النشر",
-    "class_average": "متوسط ​​الفصل"
+    "class_average": "متوسط الفصل"
   }
 }

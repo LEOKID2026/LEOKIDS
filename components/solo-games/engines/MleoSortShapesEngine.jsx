@@ -14,6 +14,12 @@ import {
   useSoloGameKeyboard,
 } from "./solo-v2-ui.jsx";
 
+const SORT_SHAPES_PACK = "components__solo-games__engines__MleoSortShapesEngine";
+
+function sortShapesCopy(key, vars) {
+  return gamePackCopy(SORT_SHAPES_PACK, key, vars);
+}
+
 const DIFFICULTY_SETTINGS = {
   easy: { itemCount: 12, durationSec: 90, maxLives: 3, queueMode: "calm", binShuffleMs: null },
   medium: { itemCount: 18, durationSec: 72, maxLives: 3, queueMode: "mixed", binShuffleMs: 11000 },
@@ -24,12 +30,42 @@ const SCORE_PER_SORT = 50;
 
 /** @type {Record<string, { labelHe: string, ring: string }>} */
 const COLOR_META = Object.freeze({
-  red: { labelHe: "Red", ring: "ring-rose-400" },
-  orange: { labelHe: "Orange", ring: "ring-orange-400" },
-  blue: { labelHe: "Blue", ring: "ring-sky-400" },
-  purple: { labelHe: "Purple", ring: "ring-violet-400" },
-  yellow: { labelHe: "Yellow", ring: "ring-yellow-400" },
-  green: { labelHe: "Green", ring: "ring-emerald-400" },
+  red: {
+    get labelHe() {
+      return sortShapesCopy("color_red");
+    },
+    ring: "ring-rose-400",
+  },
+  orange: {
+    get labelHe() {
+      return sortShapesCopy("color_orange");
+    },
+    ring: "ring-orange-400",
+  },
+  blue: {
+    get labelHe() {
+      return sortShapesCopy("color_blue");
+    },
+    ring: "ring-sky-400",
+  },
+  purple: {
+    get labelHe() {
+      return sortShapesCopy("color_purple");
+    },
+    ring: "ring-violet-400",
+  },
+  yellow: {
+    get labelHe() {
+      return sortShapesCopy("color_yellow");
+    },
+    ring: "ring-yellow-400",
+  },
+  green: {
+    get labelHe() {
+      return sortShapesCopy("color_green");
+    },
+    ring: "ring-emerald-400",
+  },
 });
 
 /**
@@ -82,17 +118,19 @@ function binForColor(color) {
   return SORT_GROUP_DEFS.find((group) => group.colors.includes(color))?.id || null;
 }
 
-/** @type {readonly { id: string, title: string, emoji: string, className: string, colors: string[], items: typeof SORT_ITEMS }[]} */
+/** @type {readonly { id: string, emoji: string, className: string, colors: string[], items: typeof SORT_ITEMS }[]} */
 const BINS = Object.freeze(
   SORT_GROUP_DEFS.map((group) => {
     const items = itemsForColors(group.colors);
     return {
       id: group.id,
-      title: groupTitle(group.colors[0], group.colors[1]),
       emoji: group.emoji,
       className: group.className,
       colors: group.colors,
       items,
+      get title() {
+        return groupTitle(group.colors[0], group.colors[1]);
+      },
     };
   })
 );
@@ -379,15 +417,15 @@ export default function MleoSortShapesEngine({
       setSelectedBin((b) => (b + BINS.length - 1) % BINS.length);
       return true;
     }
-    if (e.code === gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "digit1")) {
+    if (e.code === "Digit1") {
       setSelectedBin(0);
       return true;
     }
-    if (e.code === gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "digit2")) {
+    if (e.code === "Digit2") {
       setSelectedBin(1);
       return true;
     }
-    if (e.code === gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "digit3")) {
+    if (e.code === "Digit3") {
       setSelectedBin(2);
       return true;
     }
@@ -406,16 +444,17 @@ export default function MleoSortShapesEngine({
     >
       <div className="flex min-h-0 w-full flex-1 flex-col gap-2 px-2 py-2 max-lg:gap-1 max-lg:px-0 max-lg:py-0">
         <div className="w-full shrink-0 max-lg:[&>p]:mx-0 max-lg:[&>p]:mb-1 max-lg:[&>p]:w-full max-lg:[&>p]:max-w-none max-lg:[&>p]:rounded-none max-lg:[&>p]:border-x-0">
-          <SoloV2Goal text={gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "drag_the_shape_to_the_right_group_50_for_each_correct_sort")} />
+          <SoloV2Goal text={sortShapesCopy("drag_the_shape_to_the_right_group_50_for_each_correct_sort")} />
         </div>
         {!showIntro ? (
           <div className="w-full shrink-0 max-lg:[&>div]:w-full max-lg:[&>div]:max-w-none max-lg:[&>div]:rounded-none max-lg:[&>div]:border-x-0">
             <SoloV2Hud
+              packSlug={SORT_SHAPES_PACK}
               rows={[
-                { label: "Score", value: score, accent: "text-amber-300" },
-                { label: "Sorted", value: `${sortedCount}/${settings.itemCount}` },
-                { label: "Lives", value: "❤️".repeat(Math.max(0, lives)) },
-                { label: "Time", value: `${timeLeft} sec` },
+                { id: "score", label: sortShapesCopy("score"), value: score, accent: "text-amber-300" },
+                { id: "sorted", label: sortShapesCopy("sorted"), value: `${sortedCount}/${settings.itemCount}` },
+                { id: "lives", label: sortShapesCopy("lives"), value: "❤️".repeat(Math.max(0, lives)) },
+                { id: "time", label: sortShapesCopy("time"), value: `${timeLeft} ${sortShapesCopy("sec")}` },
               ]}
             />
           </div>
@@ -427,17 +466,20 @@ export default function MleoSortShapesEngine({
         >
         {showIntro ? (
           <SoloV2Intro
-            title={gamePackCopy("components__solo-games__engines__MleoSortShapesEngine", "sort_shapes")}
+            title={sortShapesCopy("sort_shapes")}
             lines={[
-              "Pick the right box for each shape",
-              "+50 for correct sorts only",
-              "Mistake = lose a life",
-              "Finish all items before time runs out",
+              sortShapesCopy("intro_pick_box"),
+              sortShapesCopy("intro_points"),
+              sortShapesCopy("intro_mistake"),
+              sortShapesCopy("intro_finish"),
             ]}
             onStart={startGame}
           />
         ) : (
-          <div className="relative flex h-full min-h-0 flex-col gap-3 p-3 max-lg:gap-2 max-lg:p-2">
+          <div
+            className="relative flex h-full min-h-0 flex-col gap-3 p-3 max-lg:gap-2 max-lg:p-2"
+            data-testid="sort-shapes-gameplay"
+          >
             {showFullscreenButton ? (
               <div className="pointer-events-auto absolute right-2 top-2 z-[70]">
                 <SoloGameMobileFullscreenButton
@@ -448,13 +490,17 @@ export default function MleoSortShapesEngine({
             ) : null}
 
             <div className="flex shrink-0 flex-col items-center gap-2 rounded-2xl border border-yellow-400/40 bg-black/40 p-4">
-              <p className="text-sm font-semibold text-yellow-100">Next item:</p>
+              <p className="text-sm font-semibold text-yellow-100">
+                {sortShapesCopy("next_item")}
+              </p>
               {currentItem ? (
                 <div className="flex h-24 w-24 items-center justify-center rounded-2xl border-4 border-yellow-300 bg-white/10 shadow-lg">
                   <SortShapeIcon item={currentItem} />
                 </div>
               ) : (
-                <span className="text-lg font-bold text-emerald-300">You're done!</span>
+                <span className="text-lg font-bold text-emerald-300">
+                  {sortShapesCopy("youre_done")}
+                </span>
               )}
             </div>
 
@@ -486,7 +532,7 @@ export default function MleoSortShapesEngine({
             {shuffleWarning ? (
               <div className="pointer-events-none absolute inset-x-3 top-3 z-30 flex justify-center">
                 <span className="rounded-xl bg-amber-400 px-4 py-2 text-sm font-extrabold text-black shadow-lg sm:text-base">
-                  Shuffling!
+                  {sortShapesCopy("shuffling")}
                 </span>
               </div>
             ) : null}

@@ -2,7 +2,7 @@
  * Public worksheets hub — demo generator + ready catalog, no auth.
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import ReadyWorksheetsTab from "./ReadyWorksheetsTab.jsx";
@@ -30,6 +30,8 @@ import {
 } from "../../lib/worksheets/worksheet-include-answers-pref.client.js";
 import {
   clearWorksheetPublicAnswerKeySession,
+  clearWorksheetPublicPreviewSession,
+  loadWorksheetPublicPreviewSession,
   saveWorksheetPublicPreviewSession,
   saveWorksheetPublicAnswerKeySession,
 } from "../../lib/worksheets/worksheet-public-preview-session.client.js";
@@ -82,11 +84,14 @@ export default function PublicWorksheetsHub({
   const router = useRouter();
   const ui = useWorksheetUi();
   const { locale, contentLocale } = useI18n();
-  const worksheetLocaleFields = {
-    interfaceLocale: locale || "en",
-    contentLocale: contentLocale || locale || "en",
-    instructionLocale: contentLocale || locale || "en",
-  };
+  const worksheetLocaleFields = useMemo(
+    () => ({
+      interfaceLocale: locale || "en",
+      contentLocale: contentLocale || locale || "en",
+      instructionLocale: contentLocale || locale || "en",
+    }),
+    [locale, contentLocale]
+  );
   const shell = useWorksheetShellAttrs();
   const { isBright } = useStudentTheme();
   const landingCls = landingEmbed ? getPublicSeoWideClasses(isBright) : null;
@@ -121,11 +126,33 @@ export default function PublicWorksheetsHub({
   const [previewRefreshLoading, setPreviewRefreshLoading] = useState(false);
   const [previewAnswerKeyLoading, setPreviewAnswerKeyLoading] = useState(false);
   const [previewModalError, setPreviewModalError] = useState("");
+  const [previewMounted, setPreviewMounted] = useState(false);
 
   useEffect(() => {
     setIncludeAnswers(loadWorksheetIncludeAnswersPref());
     setIncludeAnswersReady(true);
   }, []);
+
+  useEffect(() => {
+    const stored = loadWorksheetPublicPreviewSession();
+    if (!stored?.worksheetPayload) return;
+    if (stored.source === "public-ready") return;
+    setWorksheetPreviewSession({
+      worksheetPayload: stored.worksheetPayload,
+      generation: stored.generation,
+      includeAnswers: stored.includeAnswers === true,
+      source: stored.source || "public-demo",
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!worksheetPreviewSession?.worksheetPayload) {
+      setPreviewMounted(false);
+      return undefined;
+    }
+    const id = requestAnimationFrame(() => setPreviewMounted(true));
+    return () => cancelAnimationFrame(id);
+  }, [worksheetPreviewSession]);
 
   const handleIncludeAnswersChange = useCallback((next) => {
     const value = next === true;
@@ -198,15 +225,25 @@ export default function PublicWorksheetsHub({
     (worksheetPayload, generation, includeAnswersValue, source) => {
       clearWorksheetPublicAnswerKeySession();
       setPreviewModalError("");
-      setWorksheetPreviewSession({
+      setPreviewMounted(false);
+      const session = {
         worksheetPayload,
         generation,
         includeAnswers: includeAnswersValue === true,
         source,
-      });
+      };
+      saveWorksheetPublicPreviewSession(session);
+      setWorksheetPreviewSession(session);
     },
     []
   );
+
+  const closeWorksheetPreviewModal = useCallback(() => {
+    setWorksheetPreviewSession(null);
+    setPreviewMounted(false);
+    setPreviewModalError("");
+    clearWorksheetPublicPreviewSession();
+  }, []);
 
   const handlePreviewModalRefresh = useCallback(async () => {
     if (
@@ -243,12 +280,15 @@ export default function PublicWorksheetsHub({
         return;
       }
       clearWorksheetPublicAnswerKeySession();
-      setWorksheetPreviewSession({
+      const nextSession = {
         worksheetPayload: data.worksheetPayload,
         generation: data.generation,
         includeAnswers: worksheetPreviewSession.includeAnswers === true,
         source: "public-demo",
-      });
+      };
+      saveWorksheetPublicPreviewSession(nextSession);
+      setPreviewMounted(false);
+      setWorksheetPreviewSession(nextSession);
     } catch {
       setPreviewModalError(ui.refreshQuestionsError);
     } finally {
@@ -291,6 +331,7 @@ export default function PublicWorksheetsHub({
       saveWorksheetPublicPreviewSession(worksheetPreviewSession);
       saveWorksheetPublicAnswerKeySession(data.answerKeyPayload);
       setWorksheetPreviewSession(null);
+      setPreviewMounted(false);
       router.push("/practice/worksheets/preview/answers");
     } catch {
       setPreviewModalError(ui.errorGeneric);
@@ -354,14 +395,28 @@ export default function PublicWorksheetsHub({
         ...(visitSessionId ? { visitSessionId } : {}),
       };
 
-      const res = await fetch("/api/public/worksheets/generate", {
+      let res = await fetch("/api/public/worksheets/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      const data = await res.json();
+      let data = await res.json().catch(() => ({}));
+      if ((!res.ok || !data.ok) && (res.status === 429 || data?.error === "rate_limited")) {
+        await new Promise((r) => setTimeout(r, 700));
+        body.seed = Math.floor(Math.random() * 1_000_000);
+        res = await fetch("/api/public/worksheets/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        data = await res.json().catch(() => ({}));
+      }
       if (!res.ok || !data.ok) {
         setCreateError(data.message || data.error || ui.errorGeneric);
+        return;
+      }
+      if (!data.worksheetPayload) {
+        setCreateError(ui.errorGeneric);
         return;
       }
       openWorksheetPreviewModal(data.worksheetPayload, data.generation, includeAnswers, "public-demo");
@@ -370,7 +425,7 @@ export default function PublicWorksheetsHub({
     } finally {
       setCreateBusy(false);
     }
-  }, [createForm, openWorksheetPreviewModal, includeAnswers, worksheetLocaleFields]);
+  }, [createForm, openWorksheetPreviewModal, includeAnswers, worksheetLocaleFields, ui.errorGeneric]);
 
   const handleWritingCreateSubmit = useCallback(async () => {
     setWritingCreateBusy(true);
@@ -569,7 +624,8 @@ export default function PublicWorksheetsHub({
 
       <WorksheetPreviewModal
         session={worksheetPreviewSession}
-        onClose={() => setWorksheetPreviewSession(null)}
+        previewReady={previewMounted}
+        onClose={closeWorksheetPreviewModal}
         onRefresh={
           worksheetPreviewSession &&
           !isWritingWorksheetPayload(worksheetPreviewSession.worksheetPayload) &&

@@ -1,0 +1,5 @@
+{
+  "key": "friends.demoUnavailable",
+  "ar": "الأصدقاء ورقم الأسد — معاينة تجريبية. إضافة الأصدقاء والدعوات غير متوفرة.",
+  "expectDetect": ["missing-leo-number", "lion-number"]
+}

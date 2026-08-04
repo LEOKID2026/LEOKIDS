@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { useStudentActivityUi } from "../../hooks/useStudentActivityUi.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 
 /**
  * Unified assigned-activity page shell — header, progress, card grid, footer.
@@ -35,24 +37,29 @@ export default function StudentAssignedActivityShell({
   usesScratchpadDock = false,
 }) {
   const { L, textualAssigned } = useStudentActivityUi();
+  const { direction, locale } = useI18n();
   const footerOffset = L.layoutFooterOffsetPx;
+  const backLabel = globalBurnDownCopy(
+    "components__student__StudentAssignedActivityShell",
+    "back_to_home"
+  );
 
   return (
     <div
       className={L.page}
-      dir="ltr"
-      lang="en"
+      dir={direction}
+      lang={locale}
       data-scratchpad-dock={usesScratchpadDock ? "true" : undefined}
       data-activity-layout={textualAssigned ? "textual-assigned" : "default"}
     >
       <div ref={overlayTopRef}>
-        <div className={L.headerRow} dir="ltr">
+        <div className={L.headerRow} dir={direction}>
           <div className={L.headerNavGroup}>
             <Link href="/student/home" className={L.backLink}>
-              ← Back to home
+              {backLabel}
             </Link>
           </div>
-          <div className={L.titleBlock} dir="ltr">
+          <div className={L.titleBlock} dir={direction}>
             <h1 className={L.title}>{title}</h1>
             <p className={L.subtitle}>{subtitle}</p>
           </div>

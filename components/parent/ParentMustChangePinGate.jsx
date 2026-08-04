@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { bindSchoolCommunicationLocale } from "../../lib/school-portal/school-communication.js";
 import {
   SC_PIN_GATE_BTN_SUBMIT,
   SC_PIN_GATE_ERROR_DIGITS_ONLY,
@@ -14,6 +16,8 @@ import {
 } from "../../lib/school-portal/school-communication.js";
 
 export default function ParentMustChangePinGate({ onSuccess }) {
+  const { direction, locale } = useI18n();
+  bindSchoolCommunicationLocale(locale);
   const [currentPin, setCurrentPin] = useState("");
   const [newPin, setNewPin] = useState("");
   const [confirmPin, setConfirmPin] = useState("");
@@ -71,7 +75,13 @@ export default function ParentMustChangePinGate({ onSuccess }) {
   }
 
   return (
-    <div className="max-w-md mx-auto rounded-xl border border-amber-500/30 bg-black/40 p-6 text-left" dir="ltr" lang="en">
+    <div
+      className={`max-w-md mx-auto rounded-xl border border-amber-500/30 bg-black/40 p-6 ${
+        direction === "rtl" ? "text-right" : "text-left"
+      }`}
+      dir={direction}
+      lang={locale}
+    >
       <h2 className="text-xl font-bold mb-2">{SC_PIN_GATE_HEADING}</h2>
       <p className="text-sm text-white/70 mb-4">{SC_PIN_GATE_EXPLANATION}</p>
       <form onSubmit={submit} className="space-y-4">
@@ -82,6 +92,8 @@ export default function ParentMustChangePinGate({ onSuccess }) {
             inputMode="numeric"
             autoComplete="off"
             maxLength={6}
+            dir="ltr"
+            lang="en"
             value={currentPin}
             onChange={(e) => setCurrentPin(e.target.value.replace(/\D/g, ""))}
             className="mt-1 w-full rounded-lg bg-black/50 border border-white/20 px-3 py-2 font-mono"
@@ -95,6 +107,8 @@ export default function ParentMustChangePinGate({ onSuccess }) {
             inputMode="numeric"
             autoComplete="new-password"
             maxLength={6}
+            dir="ltr"
+            lang="en"
             value={newPin}
             onChange={(e) => setNewPin(e.target.value.replace(/\D/g, ""))}
             className="mt-1 w-full rounded-lg bg-black/50 border border-white/20 px-3 py-2 font-mono"
@@ -108,6 +122,8 @@ export default function ParentMustChangePinGate({ onSuccess }) {
             inputMode="numeric"
             autoComplete="new-password"
             maxLength={6}
+            dir="ltr"
+            lang="en"
             value={confirmPin}
             onChange={(e) => setConfirmPin(e.target.value.replace(/\D/g, ""))}
             className="mt-1 w-full rounded-lg bg-black/50 border border-white/20 px-3 py-2 font-mono"

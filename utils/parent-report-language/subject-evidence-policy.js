@@ -9,6 +9,8 @@ import {
   PARENT_EVIDENCE_VOLUME,
   SUBJECT_VALID_MIN_QUESTIONS} from "./parent-evidence-matrix.js";
 import { effectivePracticeAnswerCount } from "../../lib/learning/report-practice-counts.js";
+import { reportPackCopy } from "../../lib/reports/report-pack-copy.js";
+import { subjectLabel } from "../../lib/platform-ui/display-labels.js";
 
 export { SUBJECT_VALID_MIN_QUESTIONS };
 
@@ -25,6 +27,15 @@ export const SUBJECT_LABEL_BY_ID = Object.freeze({
   geometry: "Geometry",
   english: "English",
   science: "Science"});
+
+function localizedSubjectLabel(subjectIdOrLabel) {
+  const id = String(subjectIdOrLabel || "").trim().toLowerCase();
+  if (SUBJECT_LABEL_BY_ID[id]) {
+    const localized = subjectLabel(id);
+    if (localized && localized.trim() && localized !== "\u00a0") return localized;
+  }
+  return String(subjectIdOrLabel || "");
+}
 
 export const SUBJECT_EVIDENCE_TIER = Object.freeze({
   none: "none",
@@ -53,17 +64,27 @@ export function classifySubjectEvidenceTier(questionCount) {
 /**
  * @param {string} subjectLabel
  */
-export function zeroEvidenceSubjectLineHe(subjectLabel) {
-  return `${subjectLabel}: not practiced in the selected period`;
+export function zeroEvidenceSubjectLineHe(subjectLabelText) {
+  const label = localizedSubjectLabel(subjectLabelText);
+  return reportPackCopy(
+    "utils__parent-report-language__subject-evidence-policy",
+    "zero_evidence_line",
+    { subject: label }
+  );
 }
 
 /**
- * @param {string} subjectLabel
+ * @param {string} subjectLabelText
  * @param {number} q
  */
-export function thinEvidenceSubjectLineHe(subjectLabel, q) {
+export function thinEvidenceSubjectLineHe(subjectLabelText, q) {
   const n = Math.max(0, Math.floor(Number(q) || 0));
-  return `${subjectLabel}: ${n} questions in the selected period - still limited information; it's worth continuing to practice and checking again`;
+  const label = localizedSubjectLabel(subjectLabelText);
+  return reportPackCopy(
+    "utils__parent-report-language__subject-evidence-policy",
+    "thin_evidence_line",
+    { subject: label, n }
+  );
 }
 
 /**

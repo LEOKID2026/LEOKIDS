@@ -1,0 +1,842 @@
+{
+  "sci_p1_g4_animals_easy_05": {
+    "stem": "Wie bekommen Kühe Energie?",
+    "options": [
+      "Indem sie Pflanzen wie Gras fressen",
+      "Indem sie mit grünem Fell Fotosynthese betreiben",
+      "Indem sie Haie in tiefen Ozeanen jagen",
+      "Indem sie nur Motoröl trinken"
+    ],
+    "explanation": "Als Pflanzenfresser wandeln Kühe Pflanzenmaterial in Energie und Nährstoffe um. Grasenfressen ist ihre Hauptstrategie bei der Nahrungssuche.",
+    "theoryLines": [
+      "Energie gelangt in vielen landwirtschaftlichen Nahrungsketten über Pflanzen hinein.",
+      "Tierernährungen spiegeln Anpassungen wider."
+    ]
+  },
+  "sci_p1_g4_animals_easy_06": {
+    "stem": "Wozu ist ein Vogel mit dickem, starkem Schnabel am ehesten angepasst?",
+    "options": [
+      "Harte Samen oder Nüsse knacken",
+      "Ozeanplankton mit Kiemen filtern",
+      "Spinnenseide für Netze spinnen",
+      "Wasser nur über Wurzeln aufnehmen"
+    ],
+    "explanation": "Die Schnabelform passt zur Nahrungsaufgabe. Dicke Schnäbel bewältigen harte Nahrung; andere Formen passen zu Nektar, Fleisch oder dem Suchen im Schlamm.",
+    "theoryLines": [
+      "Bau und Funktion gehören zusammen.",
+      "Arten zu vergleichen zeigt Anpassungsmuster."
+    ]
+  },
+  "sci_p1_g4_animals_hard_01": {
+    "stem": "Wenn ein Habicht eine Maus jagt, welche Rolle spielt der Habicht?",
+    "options": [
+      "Räuber",
+      "Produzent",
+      "Zersetzender Pilz",
+      "Bestäubender Samen"
+    ],
+    "explanation": "Räuber fangen und fressen Beute. Habichte sind Fleischfresser, die kleinere Tiere jagen.",
+    "theoryLines": [
+      "Räuber-Beute-Paare erscheinen in ganzen Nahrungsnetzen.",
+      "Jagd-Anpassungen umfassen bei vielen Greifvögeln scharfes Sehen und Krallen."
+    ]
+  },
+  "sci_p1_g4_animals_hard_02": {
+    "stem": "Warum können Kamele in Wüstenbedingungen gut überleben?",
+    "options": [
+      "Sie sparen Wasser und verkraften Hitze gut",
+      "Sie brauchen ständigen Regenwaldregen",
+      "Sie atmen nur mit Fischkiemen",
+      "Sie halten Winterschlaf unter Meereis"
+    ],
+    "explanation": "Wüstenspezialisten bewältigen Hitze und knappes Wasser. Kamele sind klassische Beispiele für solche Anpassungen.",
+    "theoryLines": [
+      "Extreme Lebensräume fordern extreme Anpassungen.",
+      "Verhalten und Körpermerkmale sind beides wichtig."
+    ]
+  },
+  "sci_p1_g4_animals_hard_03": {
+    "stem": "Was nutzt ein Insekt, das wie ein Blatt aussieht, am ehesten?",
+    "options": [
+      "Tarnung, um nicht gefressen zu werden",
+      "Echoortung, um Nektar zu finden",
+      "Kiemen, um an Land zu atmen",
+      "Wanderung, um die Erdumlaufbahn zu verlassen"
+    ],
+    "explanation": "Wie ein Blatt auszusehen versteckt das Insekt vor Räubern. Tarnung ist eine Abwehr-Anpassung.",
+    "theoryLines": [
+      "Das Aussehen kann die Überlebenschancen verbessern.",
+      "Auch Räuber können beim Jagen Tarnung nutzen."
+    ]
+  },
+  "sci_p1_g4_animals_hard_04": {
+    "stem": "Warum leben Kaulquappen gewöhnlich im Wasser, können später aber mehr an Land leben?",
+    "options": [
+      "Sie durchlaufen eine Metamorphose mit sich verändernden Körpermerkmalen",
+      "Sie bleiben von der Geburt bis zum Erwachsenenalter gleich",
+      "Sie sind Säugetiere, die als Kaulquappen Milch trinken",
+      "Sie betreiben Fotosynthese, bis sie Flügel bekommen"
+    ],
+    "explanation": "Die Froschentwicklung verwandelt schwimmende Kaulquappen in vierbeinige Erwachsene. Atem- und Bewegungsmerkmale ändern sich mit dem Stadium.",
+    "theoryLines": [
+      "Amphibienlebenszyklen brauchen oft früh Wasser.",
+      "Lebensraumbedürfnisse können sich beim Wachstum verschieben."
+    ]
+  },
+  "sci_p1_g4_animals_hard_05": {
+    "stem": "Wie hilft der Schutz von Wäldern, Feuchtgebieten und Grasland Tieren?",
+    "options": [
+      "Er erhält Lebensräume, in denen sie Nahrung, Wasser und Schutz finden",
+      "Er entfernt über Nacht weltweit alle Räuber",
+      "Er macht Anpassungen für Tiere überflüssig",
+      "Er verwandelt jede Art in Haustiere"
+    ],
+    "explanation": "Lebensraumschutz hält Ökosysteme funktionsfähig. Ohne Lebensraum können selbst gut angepasste Tiere nicht gedeihen.",
+    "theoryLines": [
+      "Naturschutz richtet sich auf Orte ebenso wie auf Arten.",
+      "Gesunde Lebensräume unterstützen die Artenvielfalt."
+    ]
+  },
+  "sci_p1_g5_body_easy_01": {
+    "stem": "Zu welcher Körperaufgabe gehören die Nieren?",
+    "options": [
+      "Abfallstoffe aus dem Blut filtern",
+      "Luft in Federn pumpen",
+      "Chlorophyll für die Haut erzeugen",
+      "Pollen im Knochenmark speichern"
+    ],
+    "explanation": "Nieren reinigen das Blut und helfen, Wasser- und Salzgleichgewicht zu steuern. Abfälle verlassen den Körper als Urin.",
+    "theoryLines": [
+      "Ausscheidung entfernt schädliche Reststoffe.",
+      "Organsysteme arbeiten zusammen, um Bedingungen stabil zu halten."
+    ]
+  },
+  "sci_p1_g5_body_easy_02": {
+    "stem": "Warum kannst du einen Puls spüren?",
+    "options": [
+      "Blut pulsiert mit jedem Herzschlag durch Arterien",
+      "Knochen vibrieren von Fotosynthese",
+      "Haarfollikel schlagen wie Trommeln",
+      "Hautzellen pumpen Sauerstoff in die Luft"
+    ],
+    "explanation": "Arterielle Pulse entsprechen Herzschlägen. Den Puls zu spüren ist eine einfache Weise, die Herzfrequenz zu beobachten.",
+    "theoryLines": [
+      "Pulsstellen sind unter anderem Handgelenk und Hals.",
+      "Die Herzfrequenz reagiert auf Aktivität und Ruhe."
+    ]
+  },
+  "sci_p1_g5_body_easy_03": {
+    "stem": "Womit lassen sich Nerven am ehesten vergleichen?",
+    "options": [
+      "Botschaftswegen, die Signale durch den Körper tragen",
+      "Magenkammern, die Steine speichern",
+      "Blattadern, die beim Menschen Fotosynthese betreiben",
+      "Zweiten Skeletten außerhalb der Haut"
+    ],
+    "explanation": "Das Nervensystem kommuniziert mit elektrischen und chemischen Signalen. Schnelle Botschaften koordinieren Wahrnehmen und Bewegung.",
+    "theoryLines": [
+      "Gehirn, Rückenmark und Nerven bilden ein Netzwerk.",
+      "Schäden an Nerven können Gefühl oder Bewegung beeinträchtigen."
+    ]
+  },
+  "sci_p1_g5_body_easy_04": {
+    "stem": "Warum sind Nährstoffe aus der Nahrung für deinen Körper wichtig?",
+    "options": [
+      "Sie liefern Energie und Baustoffe für Wachstum und Reparatur",
+      "Sie ersetzen den Sauerstoffbedarf vollständig",
+      "Sie verwandeln Blut in Pflanzensaft",
+      "Sie sorgen dafür, dass Zellen nie Wasser brauchen"
+    ],
+    "explanation": "Proteine, Kohlenhydrate, Fette, Vitamine und Mineralstoffe haben jeweils Aufgaben. Ausgewogenes Essen unterstützt die Körperfunktion.",
+    "theoryLines": [
+      "Verdauung setzt Nährstoffe zur Aufnahme frei.",
+      "Verschiedene Lebensmittel liefern verschiedene Nährstoffmischungen."
+    ]
+  },
+  "sci_p1_g5_body_easy_05": {
+    "stem": "Was geschieht mit deinen Lungen, wenn du einatmest?",
+    "options": [
+      "Sie füllen sich mit Luft, damit Sauerstoff ins Blut gelangen kann",
+      "Sie füllen sich mit Nahrung zur Verdauung",
+      "Sie pumpen Blut nur zu den Füßen",
+      "Sie erzeugen Urin für die Nieren"
+    ],
+    "explanation": "Einatmen bringt frische Luft in winzige Luftsäckchen. Sauerstoff geht ins Blut, während Kohlenstoffdioxid austritt.",
+    "theoryLines": [
+      "Atmen bewegt Luft in die Lungen und wieder hinaus.",
+      "Atemwegsgesundheit beeinflusst Energie und Ausdauer."
+    ]
+  },
+  "sci_p1_g5_body_easy_06": {
+    "stem": "Neben dem Tastsinn: Wie hilft die Haut deinem Körper noch?",
+    "options": [
+      "Indem sie den Körper schützt und bei der Temperaturregelung hilft",
+      "Indem sie Mahlzeiten für das Gehirn durch Fotosynthese erzeugt",
+      "Indem sie Blut wie eine Niere filtert",
+      "Indem sie langfristige Sacherinnerungen speichert"
+    ],
+    "explanation": "Haut ist eine Barriere gegen Verletzungen und viele Keime. Schwitzen und Blutflussänderungen in der Haut helfen bei der Temperaturregelung.",
+    "theoryLines": [
+      "Die Haut ist das größte Organ des Körpers.",
+      "Schnitte sollten gereinigt werden, um Heilung zu unterstützen und Infektionsrisiko zu senken."
+    ]
+  },
+  "sci_p1_g5_body_medium_01": {
+    "stem": "Warum wird sauerstoffarmes Blut zu den Lungen geschickt?",
+    "options": [
+      "Es kann Sauerstoff aufnehmen, bevor es in den Körper zurückkehrt",
+      "Es kann zu Magensäure werden",
+      "Es kann zu weißem Knochengewebe werden",
+      "Es kann den Körper dauerhaft nur über Schweiß verlassen"
+    ],
+    "explanation": "Das Herz leitet Blut zu den Lungen für den Gasaustausch und schickt dann sauerstoffreiches Blut zu den Körpergeweben.",
+    "theoryLines": [
+      "Der Kreislauf hat Lungen- und Körperwege.",
+      "Gasaustausch hält Zellen mit Sauerstoff versorgt."
+    ]
+  },
+  "sci_p1_g5_body_medium_02": {
+    "stem": "Was bedeutet Muskelermüdung nach intensiver Aktivität oft?",
+    "options": [
+      "Muskeln haben viel Energie verbraucht und brauchen Ruhe und Erholung",
+      "Muskeln sind über Nacht dauerhaft zu Fett geworden",
+      "Knochen sind nicht mehr an Sehnen befestigt",
+      "Nerven sind für immer dauerhaft abgeschaltet"
+    ],
+    "explanation": "Harte Arbeit verbraucht Energievorräte und belastet Muskelfasern. Ruhe, Wasser und Nährstoffe unterstützen die Erholung.",
+    "theoryLines": [
+      "Training baut Ausdauer schrittweise auf.",
+      "Scharfen oder starken Schmerz solltest du einem Erwachsenen melden."
+    ]
+  },
+  "sci_p1_g5_body_medium_03": {
+    "stem": "Was ist eine wichtige Aufgabe der Leber?",
+    "options": [
+      "Sie hilft, Nährstoffe zu verarbeiten und viele schädliche Stoffe aus dem Blut zu reinigen.",
+      "Sie pumpt mit jedem Atemzug Luft in die Lungen.",
+      "Sie speichert Urin, den die Haut erzeugt.",
+      "Sie macht ein Verdauungssystem überflüssig."
+    ],
+    "explanation": "Die Leber ist eine fleißige chemische Fabrik. Sie verarbeitet Nährstoffe und hilft, Gifte und Abfälle im Blut zu bewältigen.",
+    "theoryLines": [
+      "Organsysteme teilen sich überlappende Aufgaben.",
+      "Ein gesunder Lebensstil unterstützt die Leberfunktion."
+    ]
+  },
+  "sci_p1_g5_body_medium_04": {
+    "stem": "Warum hilft ausreichend trinken bei langen Sportübungen?",
+    "options": [
+      "Im Schweiß verlorenes Wasser muss ersetzt werden, damit der Körper gut arbeitet.",
+      "Wasser friert Muskeln ein, damit sie sich nicht bewegen können.",
+      "Wasser entfernt absichtlich Sauerstoff aus dem Blut.",
+      "Wasser stoppt Nerven, irgendwelche Signale zu senden."
+    ],
+    "explanation": "Schwitzen kühlt dich, verringert aber Körperwasser. Flüssigkeit ersetzen hilft Kreislauf, Temperaturregelung und Leistung.",
+    "theoryLines": [
+      "Durst und dunkler Urin können auf zu wenig Flüssigkeit hinweisen.",
+      "Plane bei heißem Wetter Trinkpausen ein."
+    ]
+  },
+  "sci_p1_g5_body_medium_05": {
+    "stem": "Warum gelangt Nahrung nach dem Magen in den Darm?",
+    "options": [
+      "Um die Verdauung fortzusetzen und Nährstoffe ins Blut aufzunehmen",
+      "Um Fotosynthese mit Chlorophyll zu beginnen",
+      "Um sofort neue Schädelknochen zu bilden",
+      "Um Sauerstoff in die Lungen zu pumpen"
+    ],
+    "explanation": "Der Dünndarm ist ein Hauptort der Nährstoffaufnahme. Der Dickdarm hilft, Wasser zurückzugewinnen und Abfall zu formen.",
+    "theoryLines": [
+      "Verdauung ist ein mehrstufiger Weg.",
+      "Aufgenommene Nährstoffe gelangen über das Blut zu den Zellen."
+    ]
+  },
+  "sci_p1_g5_body_medium_06": {
+    "stem": "Warum messen Forschende oder Ärztinnen und Ärzte den Puls einer Person?",
+    "options": [
+      "Um etwas über die Herzfrequenz und die Arbeit des Kreislaufsystems zu erfahren",
+      "Um nur die genaue Haarlänge in Millimetern zu messen",
+      "Um Markennamen von Magenenzymen zu lernen",
+      "Um die Zahl der Knochen zu zählen, die in dieser Stunde gewachsen sind"
+    ],
+    "explanation": "Der Puls ist ein Fenster in die Herztätigkeit. Er kann Ruhe, Reaktion auf Anstrengung oder mögliche Gesundheitsfragen zeigen.",
+    "theoryLines": [
+      "Herzfrequenz ist Schläge pro Minute.",
+      "Der Zusammenhang ist wichtig, wenn du den Puls deutest."
+    ]
+  },
+  "sci_p1_g5_body_hard_01": {
+    "stem": "Was stärkt regelmäßiges Ausdauertraining (etwa zügiges Gehen oder Schwimmen) am direktesten?",
+    "options": [
+      "Das Herz und die Ausdauer von Kreislauf- und Atmungssystem",
+      "Nur die Härte der Fingernägel",
+      "Nur die Fähigkeit, Steine zu verdauen",
+      "Nur das Nachtsehen bei völliger Dunkelheit"
+    ],
+    "explanation": "Ausdauertraining fordert Herz und Lungen auf gesunde Weise über die Zeit. Fitnessverbesserungen zeigen sich in Ausdauer und Erholung.",
+    "theoryLines": [
+      "Körperliche Aktivität unterstützt langfristige Gesundheit.",
+      "Wähle Tätigkeiten, die sicher und angenehm sind."
+    ]
+  },
+  "sci_p1_g5_body_hard_02": {
+    "stem": "Warum ist richtiges Aufwärmen vor dem Sprinten nützlich?",
+    "options": [
+      "Es steigert den Blutfluss und bereitet Muskeln auf plötzliche harte Anstrengung vor",
+      "Es entfernt Milchsäure, indem es das Atmen stoppt",
+      "Es verwandelt Muskel in Knochen für Tempo",
+      "Es macht Schuhe und Sicherheit überflüssig"
+    ],
+    "explanation": "Warme Gewebe bewegen sich freier und erhalten mehr Blut. Diese Vorbereitung kann Leistung verbessern und Verletzungsrisiko senken.",
+    "theoryLines": [
+      "Aufwärmen gehört zu klugem Training.",
+      "Die Intensität sollte allmählich steigen."
+    ]
+  },
+  "sci_p1_g5_body_hard_03": {
+    "stem": "Was sind Arterien, Venen und Kapillaren allesamt für Arten von?",
+    "options": [
+      "Blutgefäße, die Blut im ganzen Körper transportieren",
+      "Knochen nur im Handgelenk",
+      "Arten von Verdauungsenzymen",
+      "Teile einer Pflanzenwurzelspitze"
+    ],
+    "explanation": "Verschiedene Gefäße haben verschiedene Rollen: Arterien tragen Blut gewöhnlich vom Herzen weg, Venen bringen es zurück, und Kapillaren tauschen Stoffe mit Geweben aus.",
+    "theoryLines": [
+      "Das Gefäßnetz erreicht fast jede Körperregion.",
+      "Gesunde Gefäße unterstützen die Sauerstoffversorgung."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_01": {
+    "stem": "Welche Frage lässt sich am besten mit einer überprüfbaren Hypothese untersuchen?",
+    "options": [
+      "Beeinflusst die Düngermenge die Höhe von Bohnenpflanzen nach zwei Wochen?",
+      "Welches Lied ist für immer das schönste?",
+      "Welche Bleistiftfarbe ist am glücklichsten?",
+      "Sollten Menschen Katzen oder Hunde als moralische Regel bevorzugen?"
+    ],
+    "explanation": "Naturwissenschaftliche Fragen sind solche, die du mit Messungen prüfen kannst. Schönheit und reine Meinungsfragen sind keine fairen Experimentziele.",
+    "theoryLines": [
+      "Überprüfbare Fragen führen zu messbaren Variablen.",
+      "Nicht jede interessante Frage ist ein naturwissenschaftliches Experiment."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_02": {
+    "stem": "Wenn du nur den Bodentyp änderst und Pflanzenwachstum misst, wie heißt der Bodentyp?",
+    "options": [
+      "Unabhängige Variable",
+      "Nur abhängige Variable",
+      "Tabelle zur Einheitenumrechnung",
+      "Unterschrift unter dem Sicherheitsvertrag"
+    ],
+    "explanation": "Die unabhängige Variable ist das, was die Experimentierende verändert. Wachstumsergebnisse wären die abhängige Variable.",
+    "theoryLines": [
+      "Benenne Variablen klar, bevor du startest.",
+      "Halte andere Bedingungen konstant."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_03": {
+    "stem": "Was sollte ein Laborprotokoll enthalten?",
+    "options": [
+      "Abläufe, Beobachtungen, Messungen und Daten",
+      "Nur Emojis ohne Daten",
+      "Nur die endgültige Vermutung, mit gelöschten Methoden",
+      "Nur eine Liste von Freundesnamen"
+    ],
+    "explanation": "Ausführliche Protokolle lassen dich und andere verstehen, was getan und gefunden wurde. Sie unterstützen ehrliche Auswertung und Wiederholung.",
+    "theoryLines": [
+      "Naturwissenschaft hängt von klarer Kommunikation ab.",
+      "Schreibe Beobachtungen auf, während sie geschehen."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_04": {
+    "stem": "Warum reicht ein ungewöhnlicher Durchgang oft nicht aus, um einer Schlussfolgerung zu vertrauen?",
+    "options": [
+      "Ein einzelnes Ergebnis könnte ein Fehler oder Zufall sein.",
+      "Ungewöhnliche Durchgänge beweisen die Hypothese immer.",
+      "Naturwissenschaft nutzt nie mehr als eine Messung.",
+      "Durchgänge zu wiederholen verstößt gegen Laborregeln."
+    ],
+    "explanation": "Ausreißer kommen vor. Mehr Durchgänge helfen dir zu sehen, ob ein Muster echt ist oder nur Rauschen.",
+    "theoryLines": [
+      "Stichprobengröße und Wiederholungen sind wichtig.",
+      "Untersuche mögliche Fehler, wenn Ergebnisse seltsam wirken."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_05": {
+    "stem": "Welches Werkzeug eignet sich am besten, um die Masse eines Gegenstands im Unterricht zu messen?",
+    "options": [
+      "Eine Waage",
+      "Nur ein Meterstab",
+      "Nur ein Thermometer",
+      "Nur ein Kompass"
+    ],
+    "explanation": "Waagen messen Masse (oder Gewicht, je nach Gerät). Länge und Temperatur brauchen andere Werkzeuge.",
+    "theoryLines": [
+      "Wähle Instrumente, die zur Größe passen.",
+      "Notiere Masse mit Einheiten wie Gramm."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_06": {
+    "stem": "Wenn bei einem Laborversuch eine Chemikalie verschüttet wird, was solltest du zuerst tun?",
+    "options": [
+      "Die Lehrkraft benachrichtigen und dem Klassenverfahren bei Verschüttetem folgen",
+      "Es mit bloßen Händen aufwischen und kosten, um es zu erkennen",
+      "Es ignorieren, wenn es wie Wasser aussieht",
+      "Das Verschüttete verstecken, damit niemand es bemerkt"
+    ],
+    "explanation": "Lehrkräfte kennen die sicheren Reinigungsschritte für verschiedene Stoffe. Schnelles, ehrliches Melden verhindert größere Probleme.",
+    "theoryLines": [
+      "Rate nie bei unbekannten Stoffen.",
+      "Schutzausrüstung und Verfahren verringern das Risiko."
+    ]
+  },
+  "sci_p1_g5_experiments_easy_07": {
+    "stem": "Bei einem Test zu einem Mythos über Medizin und Pflanzenwachstum: Wie heißen die unbehandelten Pflanzen oft?",
+    "options": [
+      "Kontrollgruppe zum Vergleich",
+      "Menge der unabhängigen Variable",
+      "Schriftart des Diagrammtitels",
+      "Sammlung kaputter Thermometer"
+    ],
+    "explanation": "Unbehandelte Pflanzen zeigen das Ausgangswachstum. Sie mit behandelten Pflanzen zu vergleichen zeigt, ob die Behandlung etwas bewirkt hat.",
+    "theoryLines": [
+      "Kontrollen verankern die Deutung von Ergebnissen.",
+      "Behandle Gruppen gleich, außer dem geprüften Faktor."
+    ]
+  },
+  "sci_p1_g5_animals_easy_01": {
+    "stem": "Wofür ist eine Eule, die eine Maus fängt, ein Beispiel?",
+    "options": [
+      "Eine Räuber-Beute-Beziehung",
+      "Eine Pflanze, die einen Pilz bestäubt",
+      "Ein Stadium des Gesteinskreislaufs",
+      "Ein Samen, der nur in Dunkelheit keimt"
+    ],
+    "explanation": "Eulen jagen Beute als Nahrung. Räuber-Beute-Verbindungen bewegen Energie durch Nahrungsnetze.",
+    "theoryLines": [
+      "Nachtjäger haben oft scharfe Sinne.",
+      "Beutearten haben auch Abwehr, etwa Verstecken oder Schnelligkeit."
+    ]
+  },
+  "sci_p1_g5_animals_easy_02": {
+    "stem": "Welche Körpermerkmale haben Insekten typischerweise?",
+    "options": [
+      "Sechs Beine und drei Hauptkörperteile",
+      "Nur Federn und hohle Säugetierknochen",
+      "Zugleich Kiemen und Fell als Erwachsene an Land",
+      "Keine Beine und ein Rückgrat wie Fische"
+    ],
+    "explanation": "Erwachsene Insekten zeigen gewöhnlich Kopf, Brust und Hinterleib mit sechs Beinen. Sie sind eine riesige, vielfältige Tiergruppe.",
+    "theoryLines": [
+      "Klassifikation nutzt gemeinsame Körpermerkmale.",
+      "Nicht jedes kleine krabbelnde Tier ist ein Insekt."
+    ]
+  },
+  "sci_p1_g5_animals_easy_03": {
+    "stem": "Warum schätzen Landwirtinnen und Landwirte oft Bienen?",
+    "options": [
+      "Bienen bestäuben Nutzpflanzen, die Früchte und Samen bilden",
+      "Bienen erzeugen Regen auf Abruf",
+      "Bienen ersetzen Bodennährstoffe durch Kunststoff",
+      "Bienen jagen Wale für Ozeanfarmen"
+    ],
+    "explanation": "Viele Obst- und Gemüsesorten hängen von Bestäubern ab. Bienenaktivität kann Erträge steigern und Wildpflanzen unterstützen.",
+    "theoryLines": [
+      "Ökosystemleistungen helfen Menschen ebenso wie wilden Tieren.",
+      "Lebensräume von Bestäubern zu schützen ist wichtig."
+    ]
+  },
+  "sci_p1_g5_animals_easy_04": {
+    "stem": "Kaninchen sind Pflanzenfresser. Was bedeutet das?",
+    "options": [
+      "Pflanzen fressen",
+      "Nur andere Säugetiere fressen",
+      "Nahrung aus Sonnenlicht in ihrem Fell erzeugen",
+      "Keine Energie aus Nahrung brauchen"
+    ],
+    "explanation": "Pflanzenfresser ernähren sich von Pflanzenmaterial. Zähne und Verdauung von Kaninchen passen zu dieser Ernährung.",
+    "theoryLines": [
+      "Ernährungskategorien helfen, Rollen im Nahrungsnetz zu beschreiben.",
+      "Pflanzenfresser sind oft Beute für Fleischfresser."
+    ]
+  },
+  "sci_p1_g5_animals_easy_05": {
+    "stem": "Welches Tier ist ein Reptil?",
+    "options": [
+      "Eine Schlange",
+      "Ein Rotkehlchen",
+      "Ein Delfin",
+      "Ein Schmetterling"
+    ],
+    "explanation": "Schlangen sind Reptilien. Reptilien haben typischerweise trockene schuppige Haut und andere Lebenszyklus-Merkmale als Vögel, Säugetiere und Insekten.",
+    "theoryLines": [
+      "Tiergruppen teilen bestimmende Merkmale.",
+      "Der Lebensraum allein sagt dir die Gruppe nicht."
+    ]
+  },
+  "sci_p1_g5_animals_easy_06": {
+    "stem": "Warum sind Kiemen für viele Wassertiere nützlich?",
+    "options": [
+      "Sie ermöglichen vielen Wassertieren, Sauerstoff aus dem Wasser aufzunehmen",
+      "Sie lassen Landsäugetiere Fotosynthese betreiben",
+      "Sie speichern Pollen für Winternester",
+      "Sie verwandeln Kohlenstoffdioxid in Fell"
+    ],
+    "explanation": "Wasser enthält gelösten Sauerstoff. Kiemen entnehmen ihn, damit Fische und manche anderen Wassertiere unter Wasser atmen können.",
+    "theoryLines": [
+      "Gasaustauschstrukturen passen zur Umgebung.",
+      "Lungen sind für das Atmen von Luft üblich."
+    ]
+  },
+  "sci_p1_g5_animals_easy_07": {
+    "stem": "Was sind Produzenten in einem Nahrungsnetz gewöhnlich?",
+    "options": [
+      "Pflanzen (und manche anderen Lebewesen), die mit Lichtenergie Nahrung erzeugen",
+      "Nur Spitzenräuber ohne Beute",
+      "Nur Pilze, die Säugetiere jagen",
+      "Nur Tiere, die nachts wandern"
+    ],
+    "explanation": "Produzenten bilden die Energiebasis. Verbraucher hängen direkt oder indirekt von dieser Energie ab.",
+    "theoryLines": [
+      "Nahrungsnetze beginnen mit dem Einfangen von Energie.",
+      "Ohne Produzenten brechen Verbraucherpopulationen zusammen."
+    ]
+  },
+  "sci_p1_g5_animals_medium_01": {
+    "stem": "Wenn eine Pflanzenkrankheit die meisten Produzenten in einem Gebiet tötet, was ist wahrscheinlich?",
+    "options": [
+      "Tiere, die diese Pflanzen fressen – und dann ihre Räuber – können ebenfalls zurückgehen.",
+      "Räuber beginnen stattdessen mit Fotosynthese.",
+      "Nahrungsnetze haben nichts mehr mit Energie zu tun.",
+      "Pflanzenfresser brauchen danach keine Nahrung."
+    ],
+    "explanation": "Energie- und Bevölkerungseffekte setzen sich nach oben fort. Produzenten zu verlieren belastet das gesamte Netz.",
+    "theoryLines": [
+      "Artenwechselwirkungen schaffen Abhängigkeit.",
+      "Ökosystemgesundheit beginnt bei der Primärproduktion."
+    ]
+  },
+  "sci_p1_g5_animals_medium_02": {
+    "stem": "Wozu ist dickes Speckfett bei einem Meeressäuger vor allem eine Anpassung?",
+    "options": [
+      "Dämmung gegen kaltes Wasser",
+      "Lange Strecken in der Luft fliegen",
+      "Unter Eis Fotosynthese betreiben",
+      "Auf Wüstensanddünen gehen"
+    ],
+    "explanation": "Fettschichten halten Wärme in kühlen Meeren. Dämmung ist entscheidend, wo Wasser Wärme schnell entzieht.",
+    "theoryLines": [
+      "Kalte Umgebungen begünstigen wärmesparende Merkmale.",
+      "Verhalten und Körperchemie können ebenfalls helfen."
+    ]
+  },
+  "sci_p1_g5_animals_medium_03": {
+    "stem": "Warum nutzt ein Schneeschuhhase mit weißem Winterfell Tarnung?",
+    "options": [
+      "Um sich in schneige Umgebung einzufügen und Räubern zu entgehen",
+      "Um Bienen zur Bestäubung anzulocken",
+      "Um unter Wasser mit versteckten Kiemen zu atmen",
+      "Um jeden Januar zum Mond zu wandern"
+    ],
+    "explanation": "Saisonale Fellfarbe, die zum Schnee passt, macht den Hasen schwerer zu entdecken. Tarnung verbessert die Überlebenschancen.",
+    "theoryLines": [
+      "Manche Anpassungen ändern sich mit den Jahreszeiten.",
+      "Das Sehvermögen von Räubern prägt Beuteabwehr."
+    ]
+  },
+  "sci_p1_g5_animals_medium_04": {
+    "stem": "Welche Aussage über Säugetiere ist zutreffend?",
+    "options": [
+      "Säugetiere sind Wirbeltiere, die gewöhnlich Haare haben und Milch erzeugen.",
+      "Säugetiere leben nie im Wasser.",
+      "Säugetiere sind die einzigen Tiere mit Augen.",
+      "Säugetiere legen alle gallertumhüllte Froscheier."
+    ],
+    "explanation": "Gemeinsame Merkmale definieren Säugetiere über Lebensräume hinweg – von Fledermäusen über Wale bis zu Menschen – trotz unterschiedlicher Lebensweisen.",
+    "theoryLines": [
+      "Wirbeltiere haben ein Rückgrat.",
+      "Milchfütterung ist ein Kennzeichen der Säugetiere."
+    ]
+  },
+  "sci_p1_g5_animals_medium_05": {
+    "stem": "Warum ist es wichtig, nistende Wildtiere in Ruhe zu lassen?",
+    "options": [
+      "Störung kann dazu führen, dass Eltern Eier oder Junge verlassen.",
+      "Nester explodieren, wenn man sie aus der Ferne fotografiert.",
+      "Junge Tiere brauchen nie Schutz.",
+      "Nester gehören nicht zu Überlebensstrategien von Tieren."
+    ],
+    "explanation": "Bruterfolg hängt von ruhigen, sicheren Nistplätzen ab. Menschen können respektvoll aus der Ferne zusehen.",
+    "theoryLines": [
+      "Menschliches Verhalten beeinflusst Ergebnisse bei Wildtieren.",
+      "Gesetze schützen oft Nester bestimmter Arten."
+    ]
+  },
+  "sci_p1_g5_animals_medium_06": {
+    "stem": "Warum ziehen Vögel, die weite Strecken wandern, gewöhnlich um?",
+    "options": [
+      "Um in verschiedenen Jahreszeiten besseres Klima und bessere Nahrungsquellen zu finden",
+      "Um Schwimmen mit Kiemen zu üben",
+      "Um nie Energie zu brauchen",
+      "Um für den Winter zu Säugetieren zu werden"
+    ],
+    "explanation": "Wanderung folgt wechselnder Nahrung und Wetter. Es ist eine kraftzehrende Reise, abgestimmt auf Jahreszeitenwechsel.",
+    "theoryLines": [
+      "Nicht alle Vögel ziehen um.",
+      "Navigation kann mehrere Umweltzeichen nutzen."
+    ]
+  },
+  "sci_p1_g5_animals_hard_01": {
+    "stem": "Wie kann Bebauung über Feuchtgebieten ohne Schutzmaßnahmen Tieren vor allem schaden?",
+    "options": [
+      "Indem sie Lebensraum zerstört, den sie für Nahrung, Fortpflanzung und Schutz brauchen",
+      "Indem sie jeder Art automatisch unbegrenzten neuen Raum gibt",
+      "Indem sie das Wetter für immer am Ändern hindert",
+      "Indem sie Räuber über Nacht in Produzenten verwandelt"
+    ],
+    "explanation": "Feuchtgebiete unterstützen viele Arten. Sie aufzuschütten oder zu asphaltieren entfernt kritische Ressourcen und kann örtliche Populationen zusammenbrechen lassen.",
+    "theoryLines": [
+      "Entscheidungen zur Landnutzung haben ökologische Folgen.",
+      "Lebensraumschutz ist eine zentrale Schutzstrategie."
+    ]
+  },
+  "sci_p1_g5_animals_hard_02": {
+    "stem": "Was liefern Produzenten in einer Nahrungskette für die übrigen Lebewesen?",
+    "options": [
+      "Nahrungsenergie, die aus Sonnenlicht entsteht",
+      "Nur Schatten und kühlere Luft",
+      "Nichts Nützliches für Tiere",
+      "Nur Steine und Mineralstoffe"
+    ],
+    "explanation": "Produzenten wie Pflanzen fangen Sonnenlicht ein und erzeugen Nahrung. Diese Nahrungsenergie gelangt dann zu Tieren, die Pflanzen fressen, und zu Tieren, die andere Tiere fressen.",
+    "theoryLines": [
+      "Produzenten erzeugen Nahrung mit Sonnenlicht.",
+      "Energie wandert entlang einer Nahrungskette von Produzenten zu Verbrauchern."
+    ]
+  },
+  "sci_p1_g5_animals_hard_03": {
+    "stem": "Warum sind viele Fledermäuse nachts statt tagsüber aktiv?",
+    "options": [
+      "Es gibt weniger Konkurrenz und Gefahr durch Jäger am Tag",
+      "Ihre Ohren funktionieren nur bei hellem Sonnenlicht",
+      "Sie müssen jede Stunde Salzwasser trinken",
+      "Sie können nur unter Wasser leben"
+    ],
+    "explanation": "Viele Fledermäuse jagen nachts, wenn weniger Tagjäger aktiv sind und ihre Sinne für die Nachtjagd gut wirken.",
+    "theoryLines": [
+      "Nachtaktive Tiere sind vor allem nachts aktiv.",
+      "Fledermäuse nutzen oft Gehör und Echoortung, um Nahrung im Dunkeln zu finden."
+    ]
+  },
+  "sci_p1_g6_body_easy_01": {
+    "stem": "Was ist die Hauptaufgabe des Verdauungssystems?",
+    "options": [
+      "Nahrung zerlegen, damit der Körper Nährstoffe nutzen kann",
+      "Sauerstoff in jeden Knochen tragen",
+      "Luft nur aus den Lungen pumpen",
+      "Den Körper in jeder Jahreszeit kalt halten"
+    ],
+    "explanation": "Das Verdauungssystem zerlegt Nahrung in kleinere Teile und Nährstoffe, die der Körper aufnehmen und für Energie und Wachstum nutzen kann.",
+    "theoryLines": [
+      "Verdauung zerlegt Nahrung in nutzbare Nährstoffe.",
+      "Organe wie Magen und Darm helfen, Nahrung zu verdauen."
+    ]
+  },
+  "sci_p1_g6_body_easy_02": {
+    "stem": "Was macht das Herz?",
+    "options": [
+      "Es pumpt Blut durch den Körper",
+      "Es erzeugt alles Licht, das wir sehen",
+      "Es bedeckt den Körper wie Haut",
+      "Es speichert ungenutzte Nahrung für immer"
+    ],
+    "explanation": "Das Herz ist ein starker Muskel, der Blut pumpt, damit Sauerstoff und Nährstoffe Körperzellen erreichen können.",
+    "theoryLines": [
+      "Das Herz gehört zum Kreislaufsystem.",
+      "Blut trägt Sauerstoff und Nährstoffe zu den Geweben."
+    ]
+  },
+  "sci_p1_g6_body_easy_03": {
+    "stem": "Warum braucht dein Körper jeden Tag Wasser?",
+    "options": [
+      "Wasser hilft Körpersystemen zu arbeiten und im Gleichgewicht zu bleiben",
+      "Wasser ersetzt den Schlafbedarf",
+      "Wasser verwandelt Knochen in Metall",
+      "Wasser stoppt das Herz am Schlagen"
+    ],
+    "explanation": "Wasser hilft, Stoffe zu transportieren, Temperatur zu steuern und Zellen sowie Organe gut arbeiten zu lassen.",
+    "theoryLines": [
+      "Der Körper besteht zu einem großen Teil aus Wasser.",
+      "Wasser trinken unterstützt gesunde Körperfunktion."
+    ]
+  },
+  "sci_p1_g6_body_easy_04": {
+    "stem": "Was ist die Hauptaufgabe der Lungen?",
+    "options": [
+      "Sauerstoff ins Blut bringen und Kohlenstoffdioxid entfernen",
+      "Alle Nahrung verdauen, die du isst",
+      "Das Sehvermögen bei hellem Licht steuern",
+      "Neue Knochen länger wachsen lassen"
+    ],
+    "explanation": "Wenn du atmest, nehmen die Lungen Sauerstoff auf und geben Kohlenstoffdioxid als Abfallgas ab.",
+    "theoryLines": [
+      "Die Lungen sind die Hauptorgane der Atmung.",
+      "Sauerstoff aus der Luft gelangt in den Lungen ins Blut."
+    ]
+  },
+  "sci_p1_g6_body_easy_05": {
+    "stem": "Woher kommt der größte Teil der Energie, die dein Körper nutzt?",
+    "options": [
+      "Aus der Nahrung, die du isst",
+      "Nur aus der Farbe deiner Kleidung",
+      "Aus Geräuschen, die du hörst",
+      "Aus Schatten an der Wand"
+    ],
+    "explanation": "Nahrung liefert chemische Energie. Verdauung und Körpervorgänge wandeln diese Energie in Treibstoff für Bewegung, Wachstum und Wärme um.",
+    "theoryLines": [
+      "Nahrung ist die Hauptenergiequelle des Körpers.",
+      "Nährstoffe aus der Nahrung helfen Zellen bei ihrer Arbeit."
+    ]
+  },
+  "sci_p1_g6_body_medium_01": {
+    "stem": "Wie gelangt Sauerstoff von den Lungen in den Rest des Körpers?",
+    "options": [
+      "Blut trägt Sauerstoff von den Lungen zu den Körperzellen",
+      "Blut trägt Licht von den Augen zu den Zehen",
+      "Blut verwandelt Sauerstoff in festen Stein",
+      "Sauerstoff wandert nur durch das Haar"
+    ],
+    "explanation": "Sauerstoff gelangt in den Lungen ins Blut. Zirkulierendes Blut liefert diesen Sauerstoff dann an Zellen im ganzen Körper.",
+    "theoryLines": [
+      "Das Kreislaufsystem bewegt Blut im Körper.",
+      "Rote Blutkörperchen helfen, Sauerstoff zu tragen."
+    ]
+  },
+  "sci_p1_g6_body_medium_02": {
+    "stem": "Warum brauchen arbeitende Muskeln eine stetige Sauerstoffversorgung?",
+    "options": [
+      "Sauerstoff hilft Muskeln, Energie aus Nährstoffen freizusetzen",
+      "Sauerstoff malt die Muskeln in einer neuen Farbe",
+      "Sauerstoff ersetzt Knochen während der Anstrengung",
+      "Sauerstoff verhindert, dass Muskeln jemals ruhen"
+    ],
+    "explanation": "Aktive Muskeln brauchen mehr Energie. Sauerstoff hilft Zellen, Energie aus Nahrung freizusetzen, damit Muskeln weiterarbeiten können.",
+    "theoryLines": [
+      "Muskelzellen nutzen Sauerstoff, um Energie zu erzeugen.",
+      "Atmung und Blutfluss steigen bei harter Aktivität."
+    ]
+  },
+  "sci_p1_g6_body_medium_03": {
+    "stem": "Was ist eine wichtige Aufgabe der Nieren?",
+    "options": [
+      "Abfallstoffe aus dem Blut filtern und bei der Urinbildung helfen",
+      "Sauerstoff direkt in die Ohren pumpen",
+      "Sonnenlicht unter der Haut speichern",
+      "Den Körper erwärmen, indem Knochen verbrannt werden"
+    ],
+    "explanation": "Nieren reinigen das Blut, indem sie Abfallstoffe und überschüssiges Wasser entfernen, die den Körper als Urin verlassen.",
+    "theoryLines": [
+      "Nieren gehören zum Ausscheidungssystem.",
+      "Gesunde Nieren helfen, die Blutchemie im Gleichgewicht zu halten."
+    ]
+  },
+  "sci_p1_g6_body_medium_04": {
+    "stem": "Was macht das Nervensystem vor allem?",
+    "options": [
+      "Botschaften zwischen Gehirn, Sinnen und Körperteilen senden",
+      "Nahrung nur im Magen verdauen",
+      "Licht für die Augen erzeugen",
+      "Blut statt des Herzens tragen"
+    ],
+    "explanation": "Nerven und Gehirn tragen Signale, die dir helfen, die Welt wahrzunehmen, zu denken und Bewegung zu steuern.",
+    "theoryLines": [
+      "Das Nervensystem umfasst Gehirn, Rückenmark und Nerven.",
+      "Nervensignale wandern schnell durch den Körper."
+    ]
+  },
+  "sci_p1_g6_body_medium_05": {
+    "stem": "Warum ist Aufwärmen vor harter Anstrengung hilfreich?",
+    "options": [
+      "Es bereitet Muskeln sanft auf stärkere Aktivität vor",
+      "Es macht Sauerstoff überflüssig",
+      "Es verwandelt Muskeln in Knochen",
+      "Es stoppt das Herz am Pumpen"
+    ],
+    "explanation": "Ein Aufwärmen steigert den Blutfluss und lockert Muskeln, damit sie für härtere Bewegung bereit sind und sich weniger leicht zerren.",
+    "theoryLines": [
+      "Warme Muskeln arbeiten beim Sport sicherer.",
+      "Leichte Aktivität vor dem Training bereitet den Körper vor."
+    ]
+  },
+  "sci_p1_g6_body_medium_06": {
+    "stem": "Was ist eine wichtige Aufgabe der Haut?",
+    "options": [
+      "Den Körper schützen und beim Tastsinn helfen",
+      "Licht für Nachtsehen erzeugen",
+      "Blut zu den Lungen pumpen",
+      "Nahrung im Mund verdauen"
+    ],
+    "explanation": "Haut ist eine schützende Hülle. Sie hilft auch beim Tastsinn und bei der Steuerung der Körpertemperatur.",
+    "theoryLines": [
+      "Haut ist die äußere Schutzschicht des Körpers.",
+      "Nervenenden in der Haut erkennen Berührung, Hitze und Schmerz."
+    ]
+  },
+  "sci_p1_g6_body_hard_01": {
+    "stem": "Worüber sagt dir dein Puls vor allem etwas?",
+    "options": [
+      "Wie schnell dein Herz schlägt",
+      "Wie lang dein Haar wächst",
+      "Wie viel Licht deine Augen speichern",
+      "Wie dick sich deine Haut anfühlt"
+    ],
+    "explanation": "Ein Puls ist das Pochen, das du spürst, wenn Blut bei jedem Herzschlag gestoßen wird. Ihn zu zählen zeigt die Herzfrequenz.",
+    "theoryLines": [
+      "Die Pulsfrequenz steigt bei Anstrengung und starken Gefühlen.",
+      "Herzschläge schieben Blutwellen durch Arterien."
+    ]
+  },
+  "sci_p1_g6_body_hard_02": {
+    "stem": "Was ist die Hauptaufgabe der Blutgefäße?",
+    "options": [
+      "Blut zu Körperteilen und von ihnen weg tragen",
+      "Bilder in den Augen erzeugen",
+      "Töne für das Hören erzeugen",
+      "Ungenutzte Luft in Knochen speichern"
+    ],
+    "explanation": "Arterien, Venen und Kapillaren bilden Wege, die Blut im Körper bewegen.",
+    "theoryLines": [
+      "Blutgefäße sind Röhren, die Blut transportieren.",
+      "Herz und Gefäße arbeiten als System zusammen."
+    ]
+  },
+  "sci_p1_g6_body_hard_03": {
+    "stem": "Warum brauchen Körperzellen Sauerstoff?",
+    "options": [
+      "Um Energie aus Nährstoffen der Nahrung freizusetzen",
+      "Um Hören in Sehen zu verwandeln",
+      "Um Wasser durch Sand zu ersetzen",
+      "Um alle chemischen Reaktionen zu stoppen"
+    ],
+    "explanation": "Zellen nutzen Sauerstoff in Vorgängen, die Energie aus Nährstoffen freisetzen, damit der Körper arbeiten und am Leben bleiben kann.",
+    "theoryLines": [
+      "Zellatmung nutzt Sauerstoff, um nutzbare Energie zu erzeugen.",
+      "Ohne genug Sauerstoff können Zellen nicht gut arbeiten."
+    ]
+  },
+  "sci_p1_g6_experiments_easy_01": {
+    "stem": "Was ist eine Hypothese in einem naturwissenschaftlichen Experiment?",
+    "options": [
+      "Eine überprüfbare Idee darüber, was geschehen könnte",
+      "Das Endergebnis eines Sportspiels",
+      "Eine Liste von Werkzeugen ohne Zweck",
+      "Eine Zeichnung, die man nicht prüfen kann"
+    ],
+    "explanation": "Eine Hypothese ist eine begründete Vermutung, die du mit einem Experiment und Belegen prüfen kannst.",
+    "theoryLines": [
+      "Forschende schreiben Hypothesen, bevor sie Ideen prüfen.",
+      "Ergebnisse können eine Hypothese stützen oder nicht stützen."
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "requestedKeys": ["win_title", "lose_title", "coins_awarded", "score", "play_again"],
+  "leafCopy": {
+    "score": "نتيجة:",
+    "play_again": "العب مرة أخرى"
+  },
+  "expectMissing": ["win_title", "lose_title", "coins_awarded"]
+}

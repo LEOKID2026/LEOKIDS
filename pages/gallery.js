@@ -3,15 +3,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Layout from "../components/Layout";
 import PageSeo from "../components/seo/PageSeo";
-import { getPublicPageSeo } from "../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../hooks/usePublicPageSeo.js";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useGalleryUi } from "../hooks/useGalleryUi.js";
-import { useT } from "../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../lib/i18n/I18nProvider.jsx";
 
-const gallerySeo = getPublicPageSeo("gallery");
 
 export default function Gallery() {
+  const gallerySeo = usePublicPageSeo("gallery");
   const t = useT();
+  const { direction, locale } = useI18n();
   const { theme, tokens: T } = useStudentTheme();
   const { GL } = useGalleryUi();
   const [items, setItems] = useState([]);
@@ -59,7 +60,7 @@ export default function Gallery() {
         </>
       ) : null}
 
-      <div dir="ltr" lang="en" className={GL.pageWrap}>
+      <div dir={direction} lang={locale} className={GL.pageWrap}>
         <div className={GL.container}>
           <div className={`${T.hubTopBar} mb-1 md:mb-2`}>
             <div className={T.hubTopBarBack}>

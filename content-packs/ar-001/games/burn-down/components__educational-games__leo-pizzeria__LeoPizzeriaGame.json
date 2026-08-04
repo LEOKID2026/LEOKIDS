@@ -6,11 +6,11 @@
     "aria_work_pizza": "عمل البيتزا",
     "pizza_in_progress": "بيتزا قيد التنفيذ",
     "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "الزبائن يدخلون إلى مطعم البيتزا - اصنع لهم البيتزا التي طلبوها بالضبط!",
-    "setphase_intro_new_game": "setPhase(\"مقدمة\")}>\n                لعبة جديدة",
-    "leo_apos_s_pizzeria": "مطعم بيتزا ليو",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n                New game",
+    "leo_apos_s_pizzeria": "مطعم بيتزا Leo",
     "serve_pizza": "تقديم البيتزا 🍕",
     "open_shift": "شيفت مفتوح 🍕",
-    "clear_pizza": "بيتزا واضحة",
+    "clear_pizza": "مسح البيتزا",
     "new_game": "لعبة جديدة",
     "back": "رجوع"
   }

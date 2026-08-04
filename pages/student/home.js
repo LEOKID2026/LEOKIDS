@@ -4,7 +4,7 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import { STUDENT_LAYOUT_CHROME_BOTTOM_CSS } from "../../lib/student-ui/student-ad-slot.client.js";
 import PageSeo from "../../components/seo/PageSeo";
-import { getPublicPageSeo } from "../../lib/site/public-page-seo.js";
+import { usePublicPageSeo } from "../../hooks/usePublicPageSeo.js";
 import {
   clearAllStudentScopedBrowserStorage,
   syncStudentLocalStorageIdentity,
@@ -67,9 +67,9 @@ const HOME_SUMMARY_PATH = "/api/student/home-profile/summary";
 const HOME_ANALYTICS_PATH = "/api/student/home-profile/analytics";
 const HOME_ACHIEVEMENT_GRANTS_PATH = "/api/student/home-profile/achievement-grants";
 
-const studentHomeSeo = getPublicPageSeo("student-home");
 
 function LoadingScreen({ message }) {
+  const studentHomeSeo = usePublicPageSeo("student-home");
   const { theme } = useStudentTheme();
   return (
     <Layout studentTheme={theme} studentShell="home">
@@ -299,6 +299,7 @@ function RecommendationsSection({ recommendations }) {
 }
 
 export default function StudentHomePage() {
+  const studentHomeSeo = usePublicPageSeo("student-home");
   const router = useRouter();
   const { direction, locale } = useI18n();
   const t = useT();
@@ -322,7 +323,16 @@ export default function StudentHomePage() {
   const [heroAvatarBackground, setHeroAvatarBackground] = useState("sky");
   const [boxModalOpen, setBoxModalOpen] = useState(false);
   const [boxRefreshToken, setBoxRefreshToken] = useState(0);
-  const [surpriseBoxStatus, setSurpriseBoxStatus] = useState(null);
+  const [surpriseBoxStatus, setSurpriseBoxStatus] = useState(() => {
+    // Sync demo ready state so dock/widget open is not stuck behind a post-paint effect.
+    if (typeof window === "undefined") return null;
+    try {
+      if (isDemoMode()) return { ready: true, pendingBoxCount: 1 };
+    } catch {
+      /* ignore */
+    }
+    return null;
+  });
   const [diamondBalance, setDiamondBalance] = useState(null);
   const [guestPolicy, setGuestPolicy] = useState(null);
   const [lockToast, setLockToast] = useState("");
@@ -518,6 +528,8 @@ export default function StudentHomePage() {
       setPersonalActivitiesPhase("idle");
       setHeroAvatarEmoji(DEMO_AVATAR_EMOJI);
       setHeroAvatarBackground("sky");
+      // Demo-only status so Surprise Box chrome/open can be exercised without live rewards APIs.
+      setSurpriseBoxStatus({ ready: true, pendingBoxCount: 1 });
       return undefined;
     }
     let mounted = true;
@@ -927,7 +939,7 @@ export default function StudentHomePage() {
           onOpenAvatar={isDemoMode() ? undefined : () => setShowAvatarModal(true)}
           onLogout={() => void onLogout()}
           onLockedTap={showLockToast}
-          onSurpriseOpen={cardRewardsEnabled && !isDemoMode() ? () => setBoxModalOpen(true) : undefined}
+          onSurpriseOpen={() => setBoxModalOpen(true)}
           surpriseOpeningLocked={boxModalOpen}
           surpriseRefreshToken={boxRefreshToken}
           surpriseStatusOverride={surpriseBoxStatus}
@@ -990,7 +1002,7 @@ export default function StudentHomePage() {
         {renderActivePanelContent()}
       </StudentHomeModal>
       <StudentSurpriseBoxOpenModal
-        open={boxModalOpen && !isDemoMode()}
+        open={boxModalOpen}
         onClose={() => setBoxModalOpen(false)}
         onOpened={handleSurpriseBoxOpened}
       />

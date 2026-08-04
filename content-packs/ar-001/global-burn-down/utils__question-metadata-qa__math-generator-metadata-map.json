@@ -2,7 +2,7 @@
   "copy": {
     "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "لا يحل محل الإجابة الصحيحة الرقمية أو الإجابات[] أو نص السؤال بعد الإنشاء - يعمل فقط على إثراء حقول البيانات التعريفية.",
     "blanket_patternfamily_math_kind_when_absent": "نمط بطانيةعائلي `math_${kind}` عند الغياب",
-    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "تحمل صفوف التحقيق + الكسر بالفعل علامات التشخيص / علامات الخطأ المتوقعة",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "تحمل صفوف التحقيق + الكسر بالفعل علامات التحليل / علامات الخطأ المتوقعة",
     "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "تستخدم صفوف العمليات/النوع القياسية معرف مهارة الرياضيات الحتمية_${kind}",
     "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "أنواع الحواف ذات الحد الأدنى من المعلمات - لا يزال نمط المعرف آمنًا math_*"
   }

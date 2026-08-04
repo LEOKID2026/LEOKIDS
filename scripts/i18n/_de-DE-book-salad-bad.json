@@ -1,0 +1,518 @@
+[
+  {
+    "en": "Amir paid 40 shekels for a game that cost 28 shekels.",
+    "de": "Amir hat 40 Euro für ein Spiel bezahlt, ein Spiel 28 Euro gekostet hat."
+  },
+  {
+    "en": "Noa paid 15 shekels for a book that cost 8 shekels.",
+    "de": "Noa hat 15 Euro für ein Buch bezahlt, ein Buch 8 Euro gekostet hat."
+  },
+  {
+    "en": "Noah has 180 points and Dana has 95 points.",
+    "de": "Noah hat 180 points und Dana hat 95 points."
+  },
+  {
+    "en": "Danny has $3,200 and Mia has $2,850.",
+    "de": "Danny has €3.200 und Mia has €2.850."
+  },
+  {
+    "en": "How many tiles meet at one point?",
+    "de": "Wie many tiles meet bei one point?"
+  },
+  {
+    "en": "**Confirmation:** All **19** pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — not owner-approved]`**. No code, UI, runtime registry, SQL, commit, push, or deploy.",
+    "de": "**Confirmation:** All **19** pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — nicht owner-approved]`**. No code, UI, runtime registry, SQL, commit, push, oder deploy."
+  },
+  {
+    "en": "**Confirmation:** All Batch B pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — not owner-approved]`**.",
+    "de": "**Confirmation:** All Batch B pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — nicht owner-approved]`**."
+  },
+  {
+    "en": "**Confirmation:** All Batch C pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — not owner-approved]`**.",
+    "de": "**Confirmation:** All Batch C pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — nicht owner-approved]`**."
+  },
+  {
+    "en": "**Confirmation:** All Batch D pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — not owner-approved]`**.",
+    "de": "**Confirmation:** All Batch D pages remain **`approval_status: draft`**. All titles remain **`[DRAFT — nicht owner-approved]`**."
+  },
+  {
+    "en": "In practice you will read a description of a solid — look for how many faces it has and what shape each face is!",
+    "de": "In practice du wird read description Körper — look für wie many Flächen es hat und was Form each Fläche is!"
+  },
+  {
+    "en": "- `book_placeholder.md` — infrastructure placeholder from structure expansion; **not** part of the 26-page book.",
+    "de": "- `book_placeholder.md` — infrastructure placeholder von structure expansion; **nicht** part of 26-page book."
+  },
+  {
+    "en": "There are 43 stickers. You put 5 on each page. How many stickers will be left without a full page?",
+    "de": "There sind 43 stickers. du put 5 auf each page. wie many stickers wird be left ohne full page?"
+  },
+  {
+    "en": "Noa has 2 coins of 5 shekels and 3 coins of 1 shekel. How much money does she have altogether?",
+    "de": "Noa hat 2 coins 5 Euro und 3 coins 1 Euro. wie much money does she haben altogether?"
+  },
+  {
+    "en": "A wool string is made of natural fibers — also an insulator; electricity does not pass easily.",
+    "de": "Wool string ist made natural fibers — also insulator; electricity does nicht pass easily."
+  },
+  {
+    "en": "There is a pair of sides of length 5 (opposite) and a pair of sides of length 2 (opposite).",
+    "de": "There ist pair Seiten Länge 5 (opposite) und pair Seiten Länge 2 (opposite)."
+  },
+  {
+    "en": "In practice you'll find triangle areas — make sure the height is perpendicular to the base!",
+    "de": "In practice you'll find Dreieck areas — make sure die Höhe ist perpendicular to Grundfläche!"
+  },
+  {
+    "en": "Today we'll check when a number divides evenly by 2, 3, 5, 6, 9, or 10 — using quick rules.",
+    "de": "Today we'll check wann number divides evenly by 2, 3, 5, 6, 9, oder 10 — using quick rules."
+  },
+  {
+    "en": "If all the sides are equal and all the corners are right angles — the shape is a square.",
+    "de": "If all Seiten sind gleich und all Ecken sind rechte Winkel — Form ist ein Quadrat."
+  },
+  {
+    "en": "- `book_placeholder.md` — infrastructure placeholder; **not** part of the 17-page book.",
+    "de": "- `book_placeholder.md` — infrastructure placeholder; **nicht** part of 17-page book."
+  },
+  {
+    "en": "- `book_placeholder.md` — infrastructure placeholder; **not** part of the 19-page book.",
+    "de": "- `book_placeholder.md` — infrastructure placeholder; **nicht** part of 19-page book."
+  },
+  {
+    "en": "In practice you'll find: the half is … — what is the whole? Add twice or multiply by 2!",
+    "de": "In practice you'll find: half is … — was is whole? Add twice oder multiply by 2!"
+  },
+  {
+    "en": "- `book_placeholder.md` — infrastructure placeholder; **not** part of the 37-page book.",
+    "de": "- `book_placeholder.md` — infrastructure placeholder; **nicht** part of 37-page book."
+  },
+  {
+    "en": "- `book_placeholder.md` — infrastructure placeholder; **not** part of the 40-page book.",
+    "de": "- `book_placeholder.md` — infrastructure placeholder; **nicht** part of 40-page book."
+  },
+  {
+    "en": "In practice you'll find parallelogram areas — make sure the distance is perpendicular!",
+    "de": "In practice you'll find Parallelogramm areas — make sure distance ist perpendicular!"
+  },
+  {
+    "en": "| All pages | **`approval_status: draft`** — nothing moved to review/approved/active |",
+    "de": "| All pages | **`approval_status: draft`** — nothing moved review/approved/active |"
+  },
+  {
+    "en": "In practice you'll find questions: how much is missing to make 10? Use the ten-frame!",
+    "de": "In practice you'll find questions: wie much ist missing make 10? Use ten-frame!"
+  },
+  {
+    "en": "Dana has 68 stickers and Roni has 45 stickers. How many more stickers does Dana have?",
+    "de": "Dana hat 68 stickers und Roni hat 45 stickers. wie many more stickers does Dana have?"
+  },
+  {
+    "en": "Ron has 342 stickers and Maya has 218 stickers. How many more stickers does Ron have?",
+    "de": "Ron hat 342 stickers und Maya hat 218 stickers. wie many more stickers does Ron have?"
+  },
+  {
+    "en": "Check if there are two equal sides — the side 3 appears twice: yes, two equal sides.",
+    "de": "Check if there sind two gleich Seiten — Seite 3 appears twice: yes, two gleich Seiten."
+  },
+  {
+    "en": "Every flower smells a little different — that is the sense of smell helping us know.",
+    "de": "Every flower smells little unterschiedlich — das is sense smell helping us know."
+  },
+  {
+    "en": "A square has side 6. Is the diagonal shorter than 6, equal to 6, or longer than 6?",
+    "de": "Ein Quadrat hat Seite 6. ist die Diagonale kürzer than 6, gleich 6, oder länger than 6?"
+  },
+  {
+    "en": "There are 5 boxes. Each box has 4 pencils. How many pencils are there altogether?",
+    "de": "There sind 5 boxes. Each box hat 4 pencils. wie many pencils sind there altogether?"
+  },
+  {
+    "en": "In practice you will find complements to 100 — check that the sum is exactly 100!",
+    "de": "In practice du wird find complements 100 — check that sum ist exactly 100!"
+  },
+  {
+    "en": "In practice you'll find division with no remainder — check with multiplication!",
+    "de": "In practice you'll find division mit no remainder — check mit multiplication!"
+  },
+  {
+    "en": "Check angles — there are 4 right angles → fits a rectangle and also a square.",
+    "de": "Check Winkel — there sind 4 rechte Winkel → fits ein Rechteck und also ein Quadrat."
+  },
+  {
+    "en": "All three angles \"sit\" at three different vertices — each in its own place.",
+    "de": "All three Winkel \"sit\" bei three unterschiedlich vertices — each in its own place."
+  },
+  {
+    "en": "In practice you'll find equations with __. Subtract to find what's missing!",
+    "de": "In practice you'll find equations mit __. Subtract find what's missing!"
+  },
+  {
+    "en": "In a rectangle — top and bottom: parallel or perpendicular? Top and right?",
+    "de": "In ein Rechteck — top und bottom: parallel oder perpendicular? Top und right?"
+  },
+  {
+    "en": "How many faces does a rectangular prism have, and what shape is each face?",
+    "de": "Wie many Flächen does Quader have, und was Form ist each Fläche?"
+  },
+  {
+    "en": "- All **19** learning pages are **draft only** (`approval_status: draft`).",
+    "de": "- All **19** learning pages are **draft only** (`approval_status: draft`)."
+  },
+  {
+    "en": "| **title_english** | Subtracting Decimals — Two Digits After the Point |",
+    "de": "| **title_english** | Subtracting Decimals — Two Digits After Point |"
+  },
+  {
+    "en": "- `geometry:kind:no_question` is spine meta only — **no** learning page.",
+    "de": "- `geometry:kind:no_question` ist spine meta only — **no** learning page."
+  },
+  {
+    "en": "Did the shape only move to a new place, or did it flip like in a mirror?",
+    "de": "Did Form only move new place, oder did es flip wie in mirror?"
+  },
+  {
+    "en": "- Hold a mirror next to the arrow — the arrow looks flipped → reflection",
+    "de": "- Hold mirror next to arrow — arrow looks flipped → reflection"
+  },
+  {
+    "en": "Check: divisor × quotient = dividend — always check with multiplication.",
+    "de": "Check: divisor × quotient = dividend — immer check mit multiplication."
+  },
+  {
+    "en": "Each animal has its own environment, and each has different adaptations.",
+    "de": "Each animal hat its own environment, und each hat unterschiedlich adaptations."
+  },
+  {
+    "en": "Why 4? A square has 4 equal sides — each one is the length of the side.",
+    "de": "Warum 4? ein Quadrat hat 4 gleich Seiten — each one is Länge of Seite."
+  },
+  {
+    "en": "In practice you'll find equations with __. Add to find what's missing!",
+    "de": "In practice you'll find equations mit __. Add find what's missing!"
+  },
+  {
+    "en": "Example: a sticker on a window — you see it in a mirror from outside.",
+    "de": "Beispiel: sticker auf window — du see es in mirror von outside."
+  },
+  {
+    "en": "In practice you will find a square — check that it has 4 equal sides!",
+    "de": "In practice du wird find ein Quadrat — check das es hat 4 gleich Seiten!"
+  },
+  {
+    "en": "| **title_english** | Adding Decimals — Two Digits After the Point |",
+    "de": "| **title_english** | Adding Decimals — Two Digits After Point |"
+  },
+  {
+    "en": "Danny has $3,200 and Mia has $2,850. How much more does Danny have?",
+    "de": "Danny has €3.200 und Mia has €2.850. wie much more does Danny have?"
+  },
+  {
+    "en": "In practice you'll find what's the GCF? — look for shared factors!",
+    "de": "In practice you'll find what's GCF? — look für shared factors!"
+  },
+  {
+    "en": "Important rule: The farther right a number is — the bigger it is.",
+    "de": "Important rule: farther right number is — bigger es is."
+  },
+  {
+    "en": "Important: one step only. No division — that's a different topic.",
+    "de": "Important: one step only. No division — that's unterschiedlich topic."
+  },
+  {
+    "en": "- Hold a mirror next to it — you see a reflection (mirror image)",
+    "de": "- Hold mirror next it — du see reflection (Spiegelbild)"
+  },
+  {
+    "en": "In practice you'll find 8, 9, 10 or other sides — add all three!",
+    "de": "In practice you'll find 8, 9, 10 oder other Seiten — add all three!"
+  },
+  {
+    "en": "Step 1 (reasoning): a square has 4 equal sides, each 7 cm long.",
+    "de": "Step 1 (reasoning): ein Quadrat hat 4 gleich Seiten, each 7 cm long."
+  },
+  {
+    "en": "In practice you'll find does it divide evenly? — use the rules!",
+    "de": "In practice you'll find does es divide evenly? — use rules!"
+  },
+  {
+    "en": "A rectangular prism has 6 faces — top, bottom, and four sides.",
+    "de": "Quader hat 6 Flächen — top, bottom, und four Seiten."
+  },
+  {
+    "en": "Check: 6 is to the right of 4, so 6 is bigger than 4. Correct!",
+    "de": "Check: 6 ist to right 4, so 6 ist bigger than 4. Correct!"
+  },
+  {
+    "en": "Every material has properties — ways to describe how it feels:",
+    "de": "Every material hat properties — ways describe wie es feels:"
+  },
+  {
+    "en": "- 10 stickers in two equal boxes — 5 in each box = half of 10",
+    "de": "- 10 stickers in two gleich boxes — 5 in each box = half 10"
+  },
+  {
+    "en": "Reflection — we make a mirror image of it, like in a mirror.",
+    "de": "Reflection — wir make Spiegelbild it, wie in mirror."
+  },
+  {
+    "en": "Check if all three sides are equal — 3, 3, 5: not all equal.",
+    "de": "Check if all three Seiten sind gleich — 3, 3, 5: nicht all gleich."
+  },
+  {
+    "en": "In a cube — all 6 faces are equal squares (all edges equal).",
+    "de": "In ein Würfel — all 6 Flächen sind gleich squares (all edges gleich)."
+  },
+  {
+    "en": "Climate is the weather pattern over years in a certain area.",
+    "de": "Climate is weather pattern over years in certain Fläche."
+  },
+  {
+    "en": "Step 1 — Hundreds: 518 has 5 hundreds. 485 has 4 hundreds.",
+    "de": "Step 1 — Hundreds: 518 hat 5 hundreds. 485 hat 4 hundreds."
+  },
+  {
+    "en": "Check: all three numbers were added — 1,200, 350, and 450.",
+    "de": "Check: all three numbers were added — 1.200, 350, und 450."
+  },
+  {
+    "en": "What are we asked? How many more for the one who has more",
+    "de": "Was sind wir asked? wie many more für one who hat more"
+  },
+  {
+    "en": "Gal has 75 and Ella has 48 — how many more does Gal have?",
+    "de": "Gal hat 75 und Ella hat 48 — wie viele more does Gal have?"
+  },
+  {
+    "en": "Important: add all three numbers — do not stop after two!",
+    "de": "Important: add all three numbers — do nicht stop after two!"
+  },
+  {
+    "en": "What are you asked? How many more the one with more has",
+    "de": "Was sind du asked? wie many more one mit more has"
+  },
+  {
+    "en": "÷2 — yes (0 is even). ÷5 — yes (ends in 0). ÷10 — yes.",
+    "de": "÷2 — yes (0 ist even). ÷5 — yes (ends in 0). ÷10 — yes."
+  },
+  {
+    "en": "Round, add — and check if an exact answer makes sense!",
+    "de": "Rund, add — und check if exact answer makes sense!"
+  },
+  {
+    "en": "Does it have 4 right corners? Yes — like a rectangle.",
+    "de": "Does es haben 4 rechte Ecken? Yes — wie ein Rechteck."
+  },
+  {
+    "en": "- Does not end in 0 or 5 → does not divide by 5 or 10",
+    "de": "- Does nicht end in 0 oder 5 → does nicht divide by 5 oder 10"
+  },
+  {
+    "en": "Each coin has a value — how many shekels it is worth.",
+    "de": "Each coin hat value — wie many Euro es ist worth."
+  },
+  {
+    "en": "A has 12,450 books, B has 9,875 — how many more at A?",
+    "de": "Hat 12.450 books, B hat 9.875 — wie viele more bei A?"
+  },
+  {
+    "en": "It has 4 sides and all the corners are right angles.",
+    "de": "Es hat 4 Seiten und all Ecken sind rechte Winkel."
+  },
+  {
+    "en": "Top ∥ bottom — parallel; top ⊥ right — perpendicular",
+    "de": "Top ∥ bottom — parallel; top ⊥ right — perpendicular"
+  },
+  {
+    "en": "# Subtracting Decimals — Two Digits After the Point",
+    "de": "# Subtracting Decimals — Two Digits After Point"
+  },
+  {
+    "en": "Step 3 — Ones: if tens are also equal, check ones.",
+    "de": "Step 3 — Ones: if tens sind also gleich, check ones."
+  },
+  {
+    "en": "A point where edges meet — a cube has 8 vertices.",
+    "de": "Point wo edges meet — ein Würfel hat 8 vertices."
+  },
+  {
+    "en": "If they're equal — check the hundreds, tens, ones",
+    "de": "If they're gleich — check hundreds, tens, ones"
+  },
+  {
+    "en": "How many more stickers does Gal have than Ella?",
+    "de": "Wie many more stickers does Gal haben than Ella?"
+  },
+  {
+    "en": "In practice you'll find what's the next number?",
+    "de": "In practice you'll find what's next number?"
+  },
+  {
+    "en": "Danny has $4,800 in savings and Mia has $4,200.",
+    "de": "Danny has €4.800 in savings und Mia has €4.200."
+  },
+  {
+    "en": "How many lines of symmetry does a square have?",
+    "de": "Wie many Symmetrieachsen does ein Quadrat have?"
+  },
+  {
+    "en": "After buying, we check how much money is left.",
+    "de": "After buying, wir check wie much money ist left."
+  },
+  {
+    "en": "# Adding Decimals — Two Digits After the Point",
+    "de": "# Adding Decimals — Two Digits After Point"
+  },
+  {
+    "en": "70 is the biggest → 70° is the largest angle.",
+    "de": "70 is biggest → 70° is largest Winkel."
+  },
+  {
+    "en": "75 is the biggest → 75° is the largest angle.",
+    "de": "75 is biggest → 75° is largest Winkel."
+  },
+  {
+    "en": "Gal has 75 stickers and Ella has 48 stickers.",
+    "de": "Gal hat 75 stickers und Ella hat 48 stickers."
+  },
+  {
+    "en": "÷2 yes, ÷3 yes, ÷5 no, ÷6 yes, ÷9 yes, ÷10 no",
+    "de": "÷2 yes, ÷3 yes, ÷5 no, ÷6 yes, ÷9 yes, ÷10 no"
+  },
+  {
+    "en": "Does 3 go into 18? Yes — 3 × 6 = 18. Write 6.",
+    "de": "Does 3 go in 18? Yes — 3 × 6 = 18. Write 6."
+  },
+  {
+    "en": "Does 3 go into 9? Yes — 3 × 3 = 9. Write 3.",
+    "de": "Does 3 go in 9? Yes — 3 × 3 = 9. Write 3."
+  },
+  {
+    "en": "Noah has 125 points and Dana has 89 points.",
+    "de": "Noah hat 125 points und Dana hat 89 points."
+  },
+  {
+    "en": "Each time you move one step to the right.",
+    "de": "Each time du move one step to right."
+  },
+  {
+    "en": "Hold a mirror in front of you in the sun.",
+    "de": "Hold mirror in front du in sun."
+  },
+  {
+    "en": "Noa has 52 cards and Yuval has 37 cards.",
+    "de": "Noa hat 52 cards und Yuval hat 37 cards."
+  },
+  {
+    "en": "Every star has a partner → 24 is even.",
+    "de": "Every star hat partner → 24 ist even."
+  },
+  {
+    "en": "If they're equal — check the thousands",
+    "de": "If they're gleich — check thousands"
+  },
+  {
+    "en": "A dice — how many edges does it have?",
+    "de": "Dice — wie viele edges does es have?"
+  },
+  {
+    "en": "A square has 4 sides, each 8 cm long.",
+    "de": "Ein Quadrat hat 4 Seiten, each 8 cm long."
+  },
+  {
+    "en": "The short sides (opposite each other)",
+    "de": "Short Seiten (opposite each other)"
+  },
+  {
+    "en": "All three sides are the same length.",
+    "de": "All three Seiten are gleich Länge."
+  },
+  {
+    "en": "A triangle has only 3 sides — not 4!",
+    "de": "Ein Dreieck hat only 3 Seiten — nicht 4!"
+  },
+  {
+    "en": "The long sides (opposite each other)",
+    "de": "Long Seiten (opposite each other)"
+  },
+  {
+    "en": "Does 4 go into 24? Yes — 4 × 6 = 24.",
+    "de": "Does 4 go in 24? Yes — 4 × 6 = 24."
+  },
+  {
+    "en": "Fins help it swim and move in water.",
+    "de": "Fins help es swim und move in water."
+  },
+  {
+    "en": "Check — all three sides are equal.",
+    "de": "Check — all three Seiten sind gleich."
+  },
+  {
+    "en": "Every quadrilateral has 4 corners.",
+    "de": "Every Viereck hat 4 Ecken."
+  },
+  {
+    "en": "Does 4 go into 8? Yes — 4 × 2 = 8.",
+    "de": "Does 4 go in 8? Yes — 4 × 2 = 8."
+  },
+  {
+    "en": "0.3 + 0.4 = 0.7 (after the point)",
+    "de": "0.3 + 0.4 = 0.7 (after point)"
+  },
+  {
+    "en": "A has 12,450 books, B has 9,875.",
+    "de": "Hat 12.450 books, B hat 9.875."
+  },
+  {
+    "en": "The hand needs to move quickly.",
+    "de": "Hand needs move quickly."
+  },
+  {
+    "en": "Here we check more carefully:",
+    "de": "Here wir check more carefully:"
+  },
+  {
+    "en": "How many edges does it have?",
+    "de": "Wie many edges does es have?"
+  },
+  {
+    "en": "All sides 5 → also a square.",
+    "de": "All Seiten 5 → also ein Quadrat."
+  },
+  {
+    "en": "A box has about 987 candies.",
+    "de": "Box has über 987 candies."
+  },
+  {
+    "en": "6 tiles meet at every point",
+    "de": "6 tiles meet bei every point"
+  },
+  {
+    "en": "1+2+6 = 9 → ÷3 yes, ÷9 yes.",
+    "de": "1+2+6 = 9 → ÷3 yes, ÷9 yes."
+  },
+  {
+    "en": "The top layer is the crust.",
+    "de": "Top layer is crust."
+  },
+  {
+    "en": "Check only the ones digit!",
+    "de": "Check only ones digit!"
+  },
+  {
+    "en": "÷2, ÷3, ÷6, ÷9 — all yes.",
+    "de": "÷2, ÷3, ÷6, ÷9 — all yes."
+  },
+  {
+    "en": "Check what's missing:",
+    "de": "Check what's missing:"
+  },
+  {
+    "en": "What did each one do?",
+    "de": "Was did each one do?"
+  },
+  {
+    "en": "We also move:",
+    "de": "Wir also move:"
+  }
+]

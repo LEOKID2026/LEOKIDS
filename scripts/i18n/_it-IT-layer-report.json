@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "skipped": 0,
+    "mt": 2284,
+    "cache": 283,
+    "override": 224,
+    "skip": 4
+  },
+  "report": {
+    "namespaces": [
+      "auth.json",
+      "common.json",
+      "copilot.json",
+      "emails.json",
+      "games.json",
+      "learning.json",
+      "legal.json",
+      "platform.json",
+      "reports.json",
+      "school.json",
+      "seo.json",
+      "teacher.json",
+      "ui.json",
+      "validation.json",
+      "worksheets.json"
+    ],
+    "packs": [],
+    "forbiddenHits": []
+  }
+}

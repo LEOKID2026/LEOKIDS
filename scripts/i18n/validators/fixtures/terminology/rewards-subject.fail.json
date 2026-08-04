@@ -1,0 +1,6 @@
+{
+  "key": "series.subjects",
+  "en": "Subjects",
+  "ar": "مواضيع",
+  "expectDetect": ["academic-subject-mawdu"]
+}

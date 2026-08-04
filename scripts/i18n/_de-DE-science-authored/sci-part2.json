@@ -1,0 +1,842 @@
+{
+  "sci_pb1_g5_animals_medium_01": {
+    "stem": "Welches ökologische Risiko kann entstehen, wenn Spitzenräuber seltener werden?",
+    "options": [
+      "Manche Beutetierbestände können wachsen und ein Ungleichgewicht erzeugen",
+      "Es verbessert das System immer ohne Nebenwirkungen",
+      "Es betrifft nur die Fellfarbe, ohne Zusammenhang mit dem Nahrungsnetz",
+      "Es verhindert gewöhnlich jedes Populationswachstum"
+    ],
+    "explanation": "Wenn sich die Räuber ändern, können Beutezahlen und das Gleichgewicht im Nahrungsnetz kippen.",
+    "theoryLines": [
+      "Spitzenräuber helfen, Beutetierbestände zu steuern.",
+      "Nahrungsnetze verbinden viele Arten."
+    ]
+  },
+  "sci_pb1_g5_materials_medium_01": {
+    "stem": "Was kann ein einfaches Experiment über die elektrischen Eigenschaften von Materialien zeigen?",
+    "options": [
+      "Einen Stromkreis mit Batterie und Glühbirne bauen, um zu prüfen, ob ein Material leitet",
+      "Ein Material gewöhnlich ohne Aufsicht anzünden",
+      "Ein unbekanntes Material gewöhnlich kosten",
+      "Nur die Farbe messen, ohne Stromkreis"
+    ],
+    "explanation": "Ein einfacher Stromkreis kann die Leitfähigkeit sicher prüfen, wenn Erwachsene mithelfen.",
+    "theoryLines": [
+      "Eine leuchtende Birne zeigt einen leitenden Weg.",
+      "Isolatoren verhindern, dass die Birne leuchtet."
+    ]
+  },
+  "sci_pb1_g6_body_medium_01": {
+    "stem": "Welcher Zusammenhang zwischen ausgewogener Ernährung und gleichmäßiger Energie am Schultag ist sinnvoll?",
+    "options": [
+      "Regelmäßige Mahlzeiten mit komplexen Kohlenhydraten und Eiweiß stützen gleichmäßigere Energie",
+      "Frühstück auslassen verbessert die Konzentration immer und ohne Ausnahme",
+      "Nur schneller Zucker ist eine Quelle für gleichmäßige Energie",
+      "Viel Kaffee ersetzt gewöhnlich Schlaf ohne Auswirkungen"
+    ],
+    "explanation": "Regelmäßige, ausgewogene Mahlzeiten helfen, die Energie über den Tag stabiler zu halten.",
+    "theoryLines": [
+      "Der Körper braucht Brennstoff aus der Nahrung.",
+      "Schlaf und genug trinken stützen ebenfalls Energie und Konzentration."
+    ]
+  },
+  "sci_pb1_g2_earth_space_easy_01": {
+    "stem": "Was beschreibt richtig, wie der Himmel an einem klaren Tag aussieht?",
+    "options": [
+      "Die Sonne scheint sich über den Himmel zu bewegen, und Schatten verändern sich",
+      "Der Mond bleibt immer fest und ohne Bewegung",
+      "Sterne verschwinden mittags wegen der Tischhöhe",
+      "Die Tageszeit hat keinen Zusammenhang mit der Schattenrichtung"
+    ],
+    "explanation": "Im Laufe des Tages ändert sich die Position der Sonne am Himmel und die Schatten verschieben sich.",
+    "theoryLines": [
+      "Die Erdrotation lässt die Sonne scheinbar wandern.",
+      "Schattenlänge und -richtung ändern sich mit der Zeit."
+    ]
+  },
+  "sci_pb1_g2_earth_space_easy_02": {
+    "stem": "Was beschreibt den Mond am Nachthimmel bei einer einfachen Beobachtung?",
+    "options": [
+      "Er sieht aus wie eine helle Scheibe, die man ohne besondere Hilfsmittel sehen kann",
+      "Er ist jeden Abend immer voll und ohne Zyklus",
+      "Er leuchtet mit eigenem Licht wie die Sonne",
+      "Er ist gewöhnlich nur mittags sichtbar"
+    ],
+    "explanation": "Der Mond spiegelt Sonnenlicht wider und erscheint in wechselnden Formen während seines Zyklus.",
+    "theoryLines": [
+      "Mondphasen ändern sich etwa über einen Monat.",
+      "Der Mond erzeugt kein eigenes Licht."
+    ]
+  },
+  "sci_pb1_g2_earth_space_easy_03": {
+    "stem": "Was kann ein einfaches Wettertagebuch enthalten?",
+    "options": [
+      "Ungefähre Temperatur, Wolkenhinweise und Windrichtung",
+      "Nur die Hemdfarbe der beobachtenden Person",
+      "Nur die Anzahl der Klassenzimmerfenster",
+      "Nur den Namen der Lehrkraft, ohne Bezug zum Himmel"
+    ],
+    "explanation": "Wetteraufzeichnungen nutzen Beobachtungen, die andere wiederholen und vergleichen können.",
+    "theoryLines": [
+      "Temperatur, Wolken und Wind sind übliche Wettermessungen.",
+      "Tagebücher helfen, Muster über Tage zu erkennen."
+    ]
+  },
+  "sci_pb1_g2_earth_space_easy_04": {
+    "stem": "Was ist ein sicherer Weg, die Sonne tagsüber zu beobachten?",
+    "options": [
+      "Einen geeigneten Sonnenfilter oder eine beaufsichtigte Projektions- oder Schattenmethode nutzen",
+      "Lange ohne Schutz direkt hineinstarren",
+      "Ein normales Teleskop ohne Filter verwenden",
+      "Gewöhnlich einen Laser auf die Sonne richten"
+    ],
+    "explanation": "In die Sonne zu schauen kann die Augen verletzen. Nutze zugelassene Filter und die Aufsicht Erwachsener.",
+    "theoryLines": [
+      "Sonnenlicht ist stark genug, um die Sehkraft zu schädigen.",
+      "Sicheres Beobachten der Sonne braucht besondere Hilfsmittel."
+    ]
+  },
+  "sci_pb1_g6_environment_easy_01": {
+    "stem": "Was ist ein praktischer Schritt auf Klassenebene, um Emissionen beim Schulweg zu verringern?",
+    "options": [
+      "Fahrgemeinschaften organisieren oder wenn möglich auf sicheren Wegen radeln",
+      "Private Autofahrten für jede Schülerin und jeden Schüler erhöhen",
+      "Gewöhnlich jede Verkehrsplanung vermeiden",
+      "Gewöhnlich Müll nahe am Klassenzimmer verbrennen"
+    ],
+    "explanation": "Gemeinsame Fahrten und emissionsarme Wege verringern die Belastung durch Schulwege.",
+    "theoryLines": [
+      "Weniger Einzelfahrten bedeuten weniger Abgase.",
+      "Zu Fuß gehen und Radfahren stützen auch gesunde Gewohnheiten."
+    ]
+  },
+  "sci_p0_g1_body_medium_01": {
+    "stem": "Was hilft uns, Luft in den Körper zu atmen?",
+    "options": [
+      "Die Lungen",
+      "Die Zähne",
+      "Die Haare",
+      "Die Fingernägel"
+    ],
+    "explanation": "Die Lungen nehmen Luft auf und geben Gase wieder ab.",
+    "theoryLines": [
+      "Wir brauchen Luft zum Leben.",
+      "Atmen bewegt Luft hinein und hinaus aus den Lungen."
+    ]
+  },
+  "sci_p0_g1_body_medium_02": {
+    "stem": "Warum ist es wichtig, sich vor dem Essen die Hände zu waschen?",
+    "options": [
+      "Um Keime zu verringern, die in den Körper gelangen könnten",
+      "Damit die Hände immer trocken sind",
+      "Gewöhnlich nur, um Muskeln zu stärken",
+      "Gewöhnlich, damit wir keinen Schlaf brauchen"
+    ],
+    "explanation": "Händewaschen verringert Keime, die in das Verdauungssystem gelangen können.",
+    "theoryLines": [
+      "Keime können auf Händen leben.",
+      "Saubere Hände helfen dir, gesünder zu bleiben."
+    ]
+  },
+  "sci_p0_g1_body_medium_03": {
+    "stem": "Welches Organ hilft uns, Töne zu hören?",
+    "options": [
+      "Ohren",
+      "Nase",
+      "Knie",
+      "Gelenke"
+    ],
+    "explanation": "Schall gelangt in die Ohren und Signale wandern zum Gehirn.",
+    "theoryLines": [
+      "Ohren sind die Organe des Hörens.",
+      "Ohren zu schützen hilft, das Gehör zu schützen."
+    ]
+  },
+  "sci_p0_g1_body_medium_04": {
+    "stem": "Was ist die Aufgabe der Augen?",
+    "options": [
+      "Die Umgebung zu sehen",
+      "Nahrung zu verdauen",
+      "Blut zu pumpen",
+      "Töne zu erzeugen"
+    ],
+    "explanation": "Die Augen sind die Organe des Sehens.",
+    "theoryLines": [
+      "Licht gelangt in die Augen, damit wir sehen können.",
+      "Das Gehirn hilft, das Gesehene zu verstehen."
+    ]
+  },
+  "sci_p0_g1_body_medium_05": {
+    "stem": "Warum ist es hilfreich, nachts genug zu schlafen?",
+    "options": [
+      "Damit der Körper ruhen und sich erholen kann",
+      "Damit wir nicht essen müssen",
+      "Damit Haare schneller wachsen",
+      "Gewöhnlich, damit wir nicht atmen"
+    ],
+    "explanation": "Schlaf unterstützt Wachstum und Erholung.",
+    "theoryLines": [
+      "Ruhe hilft Körper und Gehirn.",
+      "Kinder brauchen genug Schlaf, um fit für den Tag zu sein."
+    ]
+  },
+  "sci_p0_g1_body_medium_06": {
+    "stem": "Was macht das Herz im Körper?",
+    "options": [
+      "Es pumpt Blut in alle Körperteile.",
+      "Es verdaut Nahrung im Magen.",
+      "Es hilft dir, Töne zu hören.",
+      "Es lässt neue Knochen wachsen."
+    ],
+    "explanation": "Das Herz ist ein kräftiger Muskel, der Blut pumpt. Blut trägt Sauerstoff und Nährstoffe in jeden Körperteil.",
+    "theoryLines": [
+      "Das Herz schlägt ohne Pause.",
+      "Blut fließt durch Röhren, die Blutgefäße heißen."
+    ]
+  },
+  "sci_p0_g1_body_medium_07": {
+    "stem": "Welcher Körperteil hilft dir beim Riechen?",
+    "options": [
+      "Deine Nase",
+      "Deine Ellbogen",
+      "Deine Knie",
+      "Dein Haar"
+    ],
+    "explanation": "Deine Nase nimmt Gerüche in der Luft wahr. Nerven in der Nase senden Geruchsmeldungen an dein Gehirn.",
+    "theoryLines": [
+      "Riechen ist einer der fünf Sinne.",
+      "Die Nase hilft dir auch beim Atmen."
+    ]
+  },
+  "sci_p0_g1_body_medium_08": {
+    "stem": "Warum braucht dein Körper jeden Tag Wasser?",
+    "options": [
+      "Wasser hilft deinem Körper, gesund zu bleiben und gut zu arbeiten.",
+      "Wasser macht aus deinen Knochen Metall.",
+      "Wasser stoppt den Herzschlag.",
+      "Wasser ersetzt den Bedarf an Schlaf."
+    ],
+    "explanation": "Dein Körper besteht zu einem großen Teil aus Wasser. Trinken hilft dir, kühl zu bleiben, Nährstoffe zu bewegen und dich wohlzufühlen.",
+    "theoryLines": [
+      "Menschen brauchen jeden Tag Wasser.",
+      "Durst ist ein Signal, dass dein Körper etwas trinken möchte."
+    ]
+  },
+  "sci_p0_g1_body_medium_09": {
+    "stem": "Wie kannst du deine Zähne gesund halten?",
+    "options": [
+      "Zähne putzen und viele zuckerhaltige Snacks vermeiden.",
+      "Die Zähne überhaupt nie putzen.",
+      "Jeden Morgen nur die Haare waschen.",
+      "Mit Süßigkeiten unter dem Kopfkissen schlafen."
+    ],
+    "explanation": "Putzen entfernt Speisereste und Keime, die Zähnen schaden können. Weniger zuckerhaltige Snacks helfen ebenfalls gegen Karies.",
+    "theoryLines": [
+      "Zähne helfen dir, Nahrung zu kauen.",
+      "Gesunde Zähne brauchen tägliche Pflege."
+    ]
+  },
+  "sci_p0_g1_body_hard_01": {
+    "stem": "Was geschieht, wenn du dich stark bewegst?",
+    "options": [
+      "Du atmest schneller, um mehr Sauerstoff zu bekommen.",
+      "Dein Körper braucht keine Luft mehr.",
+      "Deine Knochen werden weich.",
+      "Du hörst auf, deine Muskeln zu nutzen."
+    ],
+    "explanation": "Arbeitende Muskeln brauchen mehr Sauerstoff. Du atmest schneller und dein Herz schlägt schneller, um ihn zu liefern.",
+    "theoryLines": [
+      "Bewegung lässt Herz und Lungen stärker arbeiten.",
+      "Sauerstoff hilft Muskeln, weiter zu bewegen."
+    ]
+  },
+  "sci_p0_g1_body_hard_02": {
+    "stem": "Warum solltest du keine kleinen Gegenstände in die Nase stecken?",
+    "options": [
+      "Sie können stecken bleiben und das Atmen erschweren.",
+      "Sie lassen Haare schneller wachsen.",
+      "Sie färben deine Zunge blau.",
+      "Sie helfen dir, besser zu riechen."
+    ],
+    "explanation": "Deine Nase dient dem Atmen und Riechen. Kleine Gegenstände können Luft blockieren oder stecken bleiben und ärztliche Hilfe brauchen.",
+    "theoryLines": [
+      "Halte kleine Gegenstände von Nase und Ohren fern.",
+      "Sag einer erwachsenen Person Bescheid, wenn etwas stecken bleibt."
+    ]
+  },
+  "sci_p0_g1_body_hard_03": {
+    "stem": "Woher bekommt dein Körper Energie zum Spielen und Lernen?",
+    "options": [
+      "Aus der Nahrung, die du isst",
+      "Nur vom Fernsehen",
+      "Vom den ganzen Tag Stillhalten",
+      "Vom Luftanhalten"
+    ],
+    "explanation": "Nahrung gibt deinem Körper Energie und Baustoffe. Verschiedene Lebensmittel helfen dir beim Wachsen, Bewegen und Denken.",
+    "theoryLines": [
+      "Essen gibt deinem Körper Brennstoff.",
+      "Eine ausgewogene Mahlzeit hilft dir, stark zu bleiben."
+    ]
+  },
+  "sci_p0_g1_body_hard_04": {
+    "stem": "Was macht dein Skelett?",
+    "options": [
+      "Es stützt deinen Körper und schützt wichtige Organe.",
+      "Es verdaut dein Mittagessen.",
+      "Es pumpt Blut wie ein Herz.",
+      "Es riecht die Luft um dich herum."
+    ],
+    "explanation": "Knochen bilden dein Skelett. Sie geben dem Körper Form, helfen dir zu stehen und schützen Teile wie Gehirn und Herz.",
+    "theoryLines": [
+      "Knochen sind hart und stark.",
+      "Muskeln ziehen an Knochen, damit du dich bewegen kannst."
+    ]
+  },
+  "sci_p0_g1_body_hard_05": {
+    "stem": "Warum solltest du beim Fahrradfahren einen Helm tragen?",
+    "options": [
+      "Ein Helm hilft, dein Gehirn zu schützen, wenn du fällst.",
+      "Ein Helm lässt dein Fahrrad von allein schneller fahren.",
+      "Ein Helm ersetzt die Bremsen.",
+      "Ein Helm ernährt deine Muskeln."
+    ],
+    "explanation": "Dein Gehirn liegt im Schädel. Ein Helm gibt zusätzlichen Schutz, wenn du mit dem Kopf anstößt.",
+    "theoryLines": [
+      "Das Gehirn steuert Denken und Bewegung.",
+      "Schutzausrüstung hilft, Verletzungen zu vermeiden."
+    ]
+  },
+  "sci_p0_g1_body_hard_06": {
+    "stem": "Was machen deine Lungen, wenn du tief einatmest?",
+    "options": [
+      "Sie füllen sich mit Luft, damit dein Körper Sauerstoff bekommen kann.",
+      "Sie kauen Nahrung in winzige Stücke.",
+      "Sie verwandeln Wasser in Knochen.",
+      "Sie stoppen den Blutfluss."
+    ],
+    "explanation": "Lungen nehmen Sauerstoff aus der Luft auf. Sauerstoff gelangt ins Blut und wandert durch deinen Körper.",
+    "theoryLines": [
+      "Einatmen bringt Sauerstoff hinein.",
+      "Ausatmen entfernt Kohlenstoffdioxid."
+    ]
+  },
+  "sci_p0_g1_body_hard_07": {
+    "stem": "Warum fühlt sich dein Puls nach dem Laufen schneller an?",
+    "options": [
+      "Dein Herz schlägt schneller, um Blut zu den Muskeln zu schicken.",
+      "Deine Knochen schmelzen vor Hitze.",
+      "Deine Haut hört auf, Berührung zu spüren.",
+      "Dein Magen wird zu einer Lunge."
+    ],
+    "explanation": "Laufen verbraucht viel Energie. Dein Herz wird schneller, damit Blut mehr Sauerstoff zu arbeitenden Muskeln tragen kann.",
+    "theoryLines": [
+      "Der Puls ist der Schlag des Blutes vom Herzen.",
+      "Du kannst einen Puls am Handgelenk oder Hals fühlen."
+    ]
+  },
+  "sci_p0_g1_body_hard_08": {
+    "stem": "Was solltest du tun, wenn du starke Schmerzen in der Brust spürst?",
+    "options": [
+      "Sofort einer vertrauten erwachsenen Person Bescheid sagen.",
+      "Es ignorieren und weiter stark spielen.",
+      "Süßigkeiten auf die Stirn legen.",
+      "Die Luft anhalten, bis es aufhört."
+    ],
+    "explanation": "Starker Schmerz kann ein Warnsignal sein. Eine erwachsene Person kann dir helfen, Hilfe zu holen, wenn du sie brauchst.",
+    "theoryLines": [
+      "Schmerz kann ein Signal deines Körpers sein.",
+      "Erwachsene helfen, Kinder sicher zu halten."
+    ]
+  },
+  "sci_p0_g1_body_hard_09": {
+    "stem": "Was ist die Hauptaufgabe deiner Muskeln?",
+    "options": [
+      "Sie helfen deinem Körper bei der Bewegung.",
+      "Sie speichern all deine Erinnerungen.",
+      "Sie verwandeln Licht in Nahrung.",
+      "Sie lassen nur deine Fingernägel wachsen."
+    ],
+    "explanation": "Muskeln ziehen an Knochen, damit du gehen, springen, lächeln und Dinge heben kannst. Auch dein Herz ist ein besonderer Muskel.",
+    "theoryLines": [
+      "Muskeln arbeiten mit Knochen zusammen.",
+      "Bewegung hilft Muskeln, stark zu bleiben."
+    ]
+  },
+  "sci_p0_g1_animals_medium_01": {
+    "stem": "Wie unterscheiden sich Tiere von Pflanzen?",
+    "options": [
+      "Tiere essen Nahrung; Pflanzen erzeugen ihre eigene Nahrung mit Licht.",
+      "Tiere brauchen nie Wasser.",
+      "Pflanzen jagen immer andere Pflanzen.",
+      "Tiere lassen Wurzeln im Boden wachsen."
+    ],
+    "explanation": "Die meisten Pflanzen nutzen Sonnenlicht, um Nahrung herzustellen. Tiere müssen Pflanzen oder andere Tiere fressen, um Energie zu bekommen.",
+    "theoryLines": [
+      "Lebewesen brauchen Energie.",
+      "Pflanzen und Tiere bekommen Energie auf unterschiedliche Weise."
+    ]
+  },
+  "sci_p0_g1_animals_medium_02": {
+    "stem": "Welches Tier lebt im Wasser und atmet mit Kiemen?",
+    "options": [
+      "Ein Fisch",
+      "Eine Katze",
+      "Ein Huhn",
+      "Ein Schmetterling"
+    ],
+    "explanation": "Fische leben im Wasser. Kiemen helfen ihnen, Sauerstoff aus dem Wasser aufzunehmen.",
+    "theoryLines": [
+      "Verschiedene Tiere leben in verschiedenen Lebensräumen.",
+      "Kiemen arbeiten unter Wasser."
+    ]
+  },
+  "sci_p0_g1_animals_medium_03": {
+    "stem": "Was fressen Kühe gewöhnlich?",
+    "options": [
+      "Gras und andere Pflanzen",
+      "Nur Metalldosen",
+      "Nur Steine",
+      "Nur Plastiktüten"
+    ],
+    "explanation": "Kühe sind Pflanzenfresser. Sie kauen Gras und andere Pflanzen, um Energie zu bekommen.",
+    "theoryLines": [
+      "Tiere fressen unterschiedliche Arten von Nahrung.",
+      "Pflanzenfresser nennt man Herbivoren."
+    ]
+  },
+  "sci_p0_g1_animals_medium_04": {
+    "stem": "Was hilft vielen Vögeln beim Fliegen?",
+    "options": [
+      "Flügel und leichte Körper",
+      "Schwere Steinschuhe",
+      "Wurzeln unter der Erde",
+      "Kiemen am Schnabel"
+    ],
+    "explanation": "Vögel schlagen mit den Flügeln und drücken gegen die Luft. Leichte Knochen und Federn helfen ebenfalls beim Flug.",
+    "theoryLines": [
+      "Nicht jeder Vogel fliegt gut, aber viele tun es.",
+      "Flügel sind an die Bewegung in der Luft angepasst."
+    ]
+  },
+  "sci_p0_g1_animals_medium_05": {
+    "stem": "Wie helfen Bienen blühenden Pflanzen?",
+    "options": [
+      "Sie tragen Pollen von Blüte zu Blüte.",
+      "Sie verwandeln Blüten in Steine.",
+      "Sie gießen Pflanzen nur mit Salzwasser.",
+      "Sie fressen alle Pflanzenwurzeln."
+    ],
+    "explanation": "Wenn Bienen Blüten wegen des Nektars besuchen, bleibt Pollen an ihnen haften. Das Weitertragen von Pollen hilft Pflanzen, Samen zu bilden.",
+    "theoryLines": [
+      "Bestäubung hilft Pflanzen bei der Fortpflanzung.",
+      "Bienen sind wichtige Helfer in der Natur."
+    ]
+  },
+  "sci_p0_g1_animals_medium_06": {
+    "stem": "Welches Tier ist ein Säugetier?",
+    "options": [
+      "Ein Hund",
+      "Ein Frosch",
+      "Ein Goldfisch",
+      "Eine Ameise"
+    ],
+    "explanation": "Säugetiere haben Haare oder Fell und füttern ihre Jungen mit Milch. Hunde sind Säugetiere.",
+    "theoryLines": [
+      "Menschen sind ebenfalls Säugetiere.",
+      "Säugetiere sind warmblütig."
+    ]
+  },
+  "sci_p0_g1_animals_medium_07": {
+    "stem": "Warum brauchen Tiere Wasser?",
+    "options": [
+      "Ihre Körper brauchen Wasser, um am Leben und gesund zu bleiben.",
+      "Wasser verwandelt Tiere in Pflanzen.",
+      "Tiere trinken Wasser nur an Geburtstagen.",
+      "Wasser ersetzt den Bedarf an Luft."
+    ],
+    "explanation": "Wie Menschen brauchen Tiere Wasser, damit ihre Körper arbeiten. Ohne genug Wasser werden Tiere krank oder sterben.",
+    "theoryLines": [
+      "Alle Tiere brauchen Wasser.",
+      "Lebensräume müssen irgendwie Wasser bereitstellen."
+    ]
+  },
+  "sci_p0_g1_animals_medium_08": {
+    "stem": "Wo leben und bewegen sich Hauskatzen gewöhnlich?",
+    "options": [
+      "An Land",
+      "Nur tief unter dem Meer",
+      "Nur in Baumrinde",
+      "Nur in Wolken"
+    ],
+    "explanation": "Katzen sind Landtiere. Sie gehen und laufen auf festem Boden, auch wenn sie ein wenig klettern oder schwimmen können.",
+    "theoryLines": [
+      "Tiere leben dort, wo sie Nahrung und Schutz finden können.",
+      "Land, Wasser und Luft sind unterschiedliche Lebensräume."
+    ]
+  },
+  "sci_p0_g1_animals_medium_09": {
+    "stem": "Warum sitzen viele Echsen in der Sonne?",
+    "options": [
+      "Sie nutzen die Sonnenwärme, um ihre Körper zu erwärmen.",
+      "Sie schmelzen zu Pfützen.",
+      "Sie verwandeln sich in Vögel.",
+      "Sie brauchen nie Wärme."
+    ],
+    "explanation": "Echsen sind Reptilien. Ihre Körpertemperatur hängt stark von der Umgebung ab, deshalb hilft Sonne beim Aufwärmen.",
+    "theoryLines": [
+      "Reptilien sonnen sich oft an warmen Orten.",
+      "Wärme hilft Reptilien beim Bewegen und Jagen."
+    ]
+  },
+  "sci_p0_g1_animals_hard_01": {
+    "stem": "Warum halten manche Tiere Winterschlaf?",
+    "options": [
+      "Um Energie zu sparen, wenn Nahrung schwer zu finden ist.",
+      "Um das Fliegen zum Mond zu üben.",
+      "Um Blätter wie Bäume wachsen zu lassen.",
+      "Um unter Wasser zu Fischen zu werden."
+    ],
+    "explanation": "In kalten Monaten kann Nahrung knapp sein. Tiere im Winterschlaf verlangsamen sich und ruhen durch die schwere Zeit.",
+    "theoryLines": [
+      "Winterschlaf hilft Tieren, den Winter zu überstehen.",
+      "Bären und manche anderen Tiere können Winterschlaf halten."
+    ]
+  },
+  "sci_p0_g1_animals_hard_02": {
+    "stem": "Was brauchen Jungvögel im Nest von den Elterntieren?",
+    "options": [
+      "Nahrung und Fürsorge",
+      "Hausaufgabenblätter",
+      "Autoschlüssel",
+      "Jede Stunde Eiscreme"
+    ],
+    "explanation": "Junge Vögel können sich zuerst nicht selbst versorgen. Elterntiere bringen Nahrung und halten sie sicher, bis sie stärker werden.",
+    "theoryLines": [
+      "Viele Tiereltern kümmern sich um ihren Nachwuchs.",
+      "Nester geben Jungvögeln einen sicheren Platz."
+    ]
+  },
+  "sci_p0_g1_animals_hard_03": {
+    "stem": "Warum haben Fische Kiemen?",
+    "options": [
+      "Kiemen helfen Fischen, Sauerstoff aus dem Wasser aufzunehmen.",
+      "Kiemen helfen Fischen, wie Hunde zu bellen.",
+      "Kiemen helfen Fischen, Honig zu machen.",
+      "Kiemen helfen Fischen, Federn wachsen zu lassen."
+    ],
+    "explanation": "Fische brauchen Sauerstoff wie wir. Kiemen holen Sauerstoff aus dem Wasser, damit Fische unter Wasser atmen können.",
+    "theoryLines": [
+      "Landtiere atmen gewöhnlich mit Lungen.",
+      "Wassertiere können Kiemen nutzen."
+    ]
+  },
+  "sci_p0_g1_animals_hard_04": {
+    "stem": "Was ist ein Räuber?",
+    "options": [
+      "Ein Tier, das andere Tiere jagt und frisst",
+      "Eine Pflanze, die nie Sonnenlicht braucht",
+      "Ein Stein, dem Beine wachsen",
+      "Eine Wolke, die Süßigkeiten regnet"
+    ],
+    "explanation": "Räuber fangen Beute als Nahrung. Löwen, Habichte und Haie sind Beispiele für Räuber.",
+    "theoryLines": [
+      "Nahrungsketten enthalten Räuber und Beute.",
+      "Räuber helfen, Tierzahlen im Gleichgewicht zu halten."
+    ]
+  },
+  "sci_p0_g1_animals_hard_05": {
+    "stem": "Warum sind viele Fledermäuse nachts aktiv?",
+    "options": [
+      "Nacht kann für sie das Finden von Nahrung sicherer oder leichter machen.",
+      "Sie schmelzen im Sonnenlicht wie Eiscreme.",
+      "Sie können nur fliegen, wenn es schneit.",
+      "Sie haben Angst vor Bäumen."
+    ],
+    "explanation": "Fledermäuse sind oft nachtaktiv. Nachtaktivität kann ihnen helfen, Insekten zu jagen und manchen Gefahren auszuweichen.",
+    "theoryLines": [
+      "Nachtaktive Tiere sind nachts unterwegs.",
+      "Verschiedene Tiere sind zu unterschiedlichen Zeiten aktiv."
+    ]
+  },
+  "sci_p0_g1_animals_hard_06": {
+    "stem": "Wie bleiben Vögel bei kaltem Wetter warm?",
+    "options": [
+      "Aufgeplusterte Federn halten warme Luft nahe am Körper.",
+      "Sie schalten ihre Herzen aus.",
+      "Sie lassen über Nacht Fischschuppen wachsen.",
+      "Sie hören für immer auf zu fressen."
+    ],
+    "explanation": "Federn wirken wie ein Mantel. Aufplustern hält Luft fest, die die Körperwärme speichern hilft.",
+    "theoryLines": [
+      "Tiere haben Wege, mit kaltem Wetter umzugehen.",
+      "Manche Vögel ziehen in wärmere Gegenden."
+    ]
+  },
+  "sci_p0_g1_animals_hard_07": {
+    "stem": "Wie helfen einer Katze ihre Krallen?",
+    "options": [
+      "Krallen helfen einer Katze beim Klettern, Beutefangen und Festhalten.",
+      "Krallen helfen einer Katze, unter Wasser zu atmen.",
+      "Krallen lassen eine Katze Fotosynthese betreiben.",
+      "Krallen verwandeln eine Katze in einen Vogel."
+    ],
+    "explanation": "Scharfe Krallen sind Werkzeuge. Katzen nutzen sie zum Klettern, Jagen und Festhalten.",
+    "theoryLines": [
+      "Körperteile helfen Tieren beim Überleben.",
+      "Krallen sind eine Anpassung bei Katzen."
+    ]
+  },
+  "sci_p0_g1_animals_hard_08": {
+    "stem": "Was ist Tarnung?",
+    "options": [
+      "Färbung oder Muster, die einem Tier helfen, in der Umgebung aufzugehen",
+      "Ein lautes Lied, das die Sonne vertreibt",
+      "Eine Art, wie Pflanzen zu Tieren werden",
+      "Eine Nestart aus Metall"
+    ],
+    "explanation": "Tarnung macht ein Tier schwerer zu sehen. Sie kann Beute verstecken und Räubern helfen, sich anzuschleichen.",
+    "theoryLines": [
+      "Viele Tiere nutzen Tarnung.",
+      "Aufgehen in der Umgebung kann Überleben bedeuten."
+    ]
+  },
+  "sci_p0_g1_animals_hard_09": {
+    "stem": "Warum solltest du ein Vogelnest nicht stören?",
+    "options": [
+      "Ein Nest zu stören kann Eltern vertreiben oder Eiern und Küken schaden.",
+      "Nester explodieren, wenn Menschen sie ansehen.",
+      "Vögel brauchen keine Nahrung mehr, wenn Nester berührt werden.",
+      "Eier werden zu Steinen, wenn man sie beobachtet."
+    ],
+    "explanation": "Vögel brauchen ruhige, sichere Nester, um Junge aufzuziehen. Menschen sollten aus der Distanz zusehen und Nester in Ruhe lassen.",
+    "theoryLines": [
+      "Respektiere Wildtiere und ihre Wohnorte.",
+      "Junge Tiere brauchen Schutz."
+    ]
+  },
+  "sci_p0_g1_plants_medium_01": {
+    "stem": "Was brauchen die meisten Pflanzen zum Wachsen?",
+    "options": [
+      "Licht, Wasser, Luft und Nährstoffe aus dem Boden",
+      "Nur Videospiele",
+      "Nur Plastiktüten",
+      "Nur Dunkelheit und Salz"
+    ],
+    "explanation": "Gesunde Pflanzen brauchen Sonnenlicht, Wasser, Luft und Nährstoffe. Ohne diese wachsen viele Pflanzen schlecht oder sterben.",
+    "theoryLines": [
+      "Pflanzen sind Lebewesen mit Bedürfnissen.",
+      "Gärtnerinnen und Gärtner geben Pflanzen, was sie brauchen."
+    ]
+  },
+  "sci_p0_g1_plants_medium_02": {
+    "stem": "Was machen Pflanzenwurzeln gewöhnlich?",
+    "options": [
+      "Wasser und Nährstoffe aufnehmen und die Pflanze festhalten",
+      "Wie Flügel schlagen, damit die Pflanze fliegen kann",
+      "Laute Musik für Bienen machen",
+      "Sonnenlicht in Eis verwandeln"
+    ],
+    "explanation": "Wurzeln wachsen im Boden. Sie saugen Wasser und Nährstoffe auf und halten die Pflanze, damit sie nicht umkippt.",
+    "theoryLines": [
+      "Verschiedene Pflanzenteile haben verschiedene Aufgaben.",
+      "Starke Wurzeln stützen hohe Pflanzen."
+    ]
+  },
+  "sci_p0_g1_plants_medium_03": {
+    "stem": "Was ist eine wichtige Aufgabe der Blätter?",
+    "options": [
+      "Sie helfen der Pflanze, mit Sonnenlicht Nahrung herzustellen.",
+      "Sie graben Tunnel unter Straßen.",
+      "Sie pumpen Blut durch die Pflanze.",
+      "Sie kauen Insekten zum Abendessen."
+    ],
+    "explanation": "Blätter fangen Sonnenlicht ein. Pflanzen nutzen Licht, Wasser und Luft, um in der Fotosynthese Zucker als Nahrung herzustellen.",
+    "theoryLines": [
+      "Grüne Blätter betreiben oft Fotosynthese.",
+      "Nahrung aus den Blättern ernährt die ganze Pflanze."
+    ]
+  },
+  "sci_p0_g1_plants_medium_04": {
+    "stem": "Warum sind viele Blüten bunt?",
+    "options": [
+      "Helle Farben helfen, Bienen und andere Bestäuber anzulocken.",
+      "Farben lassen den Boden verschwinden.",
+      "Farben stoppen den Wasserbedarf der Pflanzen.",
+      "Farben verwandeln Blüten in Tiere."
+    ],
+    "explanation": "Bienen und andere Tiere bemerken bunte Blüten. Beim Besuch können sie Pollen bewegen und Pflanzen helfen, Samen zu bilden.",
+    "theoryLines": [
+      "Blüten helfen Pflanzen bei der Fortpflanzung.",
+      "Farbe und Duft können Helfer anlocken."
+    ]
+  },
+  "sci_p0_g1_plants_medium_05": {
+    "stem": "Was braucht ein Samen, um zu keimen (auszutreiben)?",
+    "options": [
+      "Die richtige Menge Wasser und Wärme",
+      "Einen Fernseher und Kopfhörer",
+      "Nur für immer gefrorenes Eis",
+      "Ein Paar Schuhe"
+    ],
+    "explanation": "Keimen heißt, dass ein Samen zu wachsen beginnt. Wasser und eine gute Temperatur helfen der winzigen Pflanze im Inneren, aufzuwachen.",
+    "theoryLines": [
+      "Samen enthalten eine junge Pflanze und Nahrungsvorräte.",
+      "Nicht jeder Samen keimt sofort."
+    ]
+  },
+  "sci_p0_g1_plants_medium_06": {
+    "stem": "Warum nennt man Pflanzen Produzenten?",
+    "options": [
+      "Sie stellen ihre eigene Nahrung mit Sonnenlicht her.",
+      "Sie kaufen Snacks im Laden.",
+      "Sie fressen nur andere Tiere.",
+      "Sie brauchen nie Energie."
+    ],
+    "explanation": "Produzenten erzeugen Nahrungsenergie aus Sonnenlicht. Tiere, die Pflanzen fressen, hängen von dieser Nahrung ab.",
+    "theoryLines": [
+      "Pflanzen stehen am Anfang vieler Nahrungsketten.",
+      "Ohne Produzenten hätten andere Lebewesen es schwer."
+    ]
+  },
+  "sci_p0_g1_plants_medium_07": {
+    "stem": "Was solltest du bei trockenen Pflanzen und Feuer beachten?",
+    "options": [
+      "Sei vorsichtig — trockene Pflanzen können leicht brennen.",
+      "Zünde Feuer neben trockenem Gras zum Spaß an.",
+      "Gieße Benzin auf trockene Blätter im Freien.",
+      "Ignoriere Feuerregeln in Wäldern."
+    ],
+    "explanation": "Trockenes Gras, Blätter und Holz können schnell Feuer fangen. Bleib sicher und folge den Regeln Erwachsener zu Feuer.",
+    "theoryLines": [
+      "Feuer kann sich durch trockene Pflanzen ausbreiten.",
+      "Vorbeugung hält Menschen und Natur sicherer."
+    ]
+  },
+  "sci_p0_g1_plants_medium_08": {
+    "stem": "Was ist eine wichtige Rolle von Früchten an einer Pflanze?",
+    "options": [
+      "Früchte helfen, Samen zu schützen und zu verbreiten.",
+      "Früchte verwandeln die Pflanze in einen Stein.",
+      "Früchte stoppen den Lichtbedarf der Pflanze.",
+      "Früchte verdauen Nahrung für Tierknochen."
+    ],
+    "explanation": "Früchte enthalten Samen. Tiere können Früchte fressen und Samen an neue Orte tragen, sodass sich Pflanzen ausbreiten.",
+    "theoryLines": [
+      "Aus Samen wachsen neue Pflanzen.",
+      "Früchte sind Teil des Lebenszyklus einer Pflanze."
+    ]
+  },
+  "sci_p0_g1_plants_hard_01": {
+    "stem": "Was kann geschehen, wenn eine grüne Pflanze lange kein Licht bekommt?",
+    "options": [
+      "Sie kann schwach werden, blass werden und nicht genug Nahrung herstellen.",
+      "Sie wird zu einem Fisch.",
+      "Sie braucht für immer kein Wasser mehr.",
+      "Sie lässt Metallblätter wachsen."
+    ],
+    "explanation": "Pflanzen brauchen Licht, um Nahrung herzustellen. Ohne Licht können sie nicht gut weiterwachsen.",
+    "theoryLines": [
+      "Fotosynthese braucht Licht.",
+      "Zimmerpflanzen neigen sich zu Lichtquellen."
+    ]
+  },
+  "sci_p0_g1_plants_hard_02": {
+    "stem": "Was kann geschehen, wenn du einer Pflanze zu viel Wasser gibst?",
+    "options": [
+      "Wurzeln können zu nass werden und die Pflanze kann krank werden oder sterben.",
+      "Die Pflanze braucht nie wieder Boden.",
+      "Die Pflanze wird zu einer Wolke.",
+      "Die Blätter werden zu Magneten."
+    ],
+    "explanation": "Wurzeln brauchen etwas Luft im Boden. Dauernde Überschwemmung kann Wurzeln und die ganze Pflanze schädigen.",
+    "theoryLines": [
+      "Pflanzen brauchen die richtige Wassermenge — nicht zu wenig und nicht zu viel.",
+      "Gute Drainage hilft vielen Zimmerpflanzen."
+    ]
+  },
+  "sci_p0_g1_plants_hard_03": {
+    "stem": "Wie können Bäume Vögeln helfen?",
+    "options": [
+      "Bäume können Vögeln Plätze zum Nisten, Ruhen und Nahrungssuchen geben.",
+      "Bäume verwandeln Vögel über Nacht in Säugetiere.",
+      "Bäume stoppen den Wasserbedarf der Vögel für immer.",
+      "Bäume löschen Vogel-Lebensräume."
+    ],
+    "explanation": "Bäume bieten Schutz und Nahrung wie Samen, Früchte oder Insekten, die darauf leben. Viele Vögel sind auf Bäume angewiesen.",
+    "theoryLines": [
+      "Lebewesen sind voneinander abhängig.",
+      "Lebensräume umfassen Nahrung und Schutz."
+    ]
+  },
+  "sci_p0_g1_plants_hard_04": {
+    "stem": "Was liefern Pflanzen in einer einfachen Nahrungskette?",
+    "options": [
+      "Nahrungsenergie für Tiere, die sie fressen",
+      "Nur Plastik zum Verpacken",
+      "Strom für Fernseher",
+      "Wolken aus Zucker"
+    ],
+    "explanation": "Eine Nahrungskette zeigt, wer wen frisst. Pflanzen erzeugen Nahrungsenergie, die Pflanzenfresser zuerst nutzen.",
+    "theoryLines": [
+      "Energie wandert von Pflanzen zu Tieren.",
+      "Nahrungsketten beginnen mit Produzenten."
+    ]
+  },
+  "sci_p0_g1_plants_hard_05": {
+    "stem": "Wie kann Wind manchen Samen helfen?",
+    "options": [
+      "Wind kann leichte Samen an neue Orte tragen.",
+      "Wind verwandelt Samen sofort in Wasser.",
+      "Wind verhindert, dass jemals Samen wachsen.",
+      "Wind klebt Samen an den Mond."
+    ],
+    "explanation": "Manche Samen sind leicht oder haben Flügel und Flaum. Wind verbreitet sie, sodass neue Pflanzen weiter weg wachsen können.",
+    "theoryLines": [
+      "Samen reisen auf viele Arten.",
+      "Wind, Wasser und Tiere können Samen bewegen."
+    ]
+  },
+  "sci_p0_g1_plants_hard_06": {
+    "stem": "Warum verlieren manche Bäume im Herbst ihre Blätter?",
+    "options": [
+      "Blätter abzuwerfen hilft diesen Bäumen, in kalten Jahreszeiten Wasser und Energie zu sparen.",
+      "Blätter fallen, weil Bäume zu Tieren werden.",
+      "Blätter fallen, um die Sonne kälter zu machen.",
+      "Blätter fallen nur, wenn es nie regnet."
+    ],
+    "explanation": "In kalten Jahreszeiten kann Wasser schwerer zu nutzen sein. Blätter abzuwerfen hilft manchen Bäumen, durch den Winter zu ruhen.",
+    "theoryLines": [
+      "Laubbäume verlieren jahreszeitlich Blätter.",
+      "Immergrüne Bäume behalten Blätter länger."
+    ]
+  },
+  "sci_p0_g1_plants_hard_07": {
+    "stem": "Was ist eine vorsichtige Art, Blüten oder Pflanzen draußen zu pflücken?",
+    "options": [
+      "Nur mit Erlaubnis pflücken und genug Pflanzen für die Natur stehen lassen.",
+      "Jede Pflanze herausreißen, die du siehst.",
+      "Seltene Pflanzen in geschützten Parks pflücken.",
+      "Ganze Bäume ausgraben, ohne zu fragen."
+    ],
+    "explanation": "Pflanzen gehören zu Lebensräumen. Zu viele zu nehmen kann Wildtieren und späterem Wachstum schaden.",
+    "theoryLines": [
+      "Respektiere Lebewesen im Freien.",
+      "Frage eine erwachsene Person, bevor du Pflanzen pflückst."
+    ]
+  },
+  "sci_p0_g1_plants_hard_08": {
+    "stem": "Was macht eine Samenschale?",
+    "options": [
+      "Sie schützt die winzige Pflanze im Samen.",
+      "Sie bringt dem Samen das Schwimmen bei.",
+      "Sie verwandelt den Samen in ein Vogelei.",
+      "Sie lässt den Samen wie ein Blatt Fotosynthese betreiben."
+    ],
+    "explanation": "Eine Samenschale ist eine feste äußere Hülle. Sie schützt den Keimling, bis die Bedingungen zum Keimen stimmen.",
+    "theoryLines": [
+      "Samen haben schützende Hüllen.",
+      "Im Samen stecken eine junge Pflanze und gespeicherte Nahrung."
+    ]
+  }
+}

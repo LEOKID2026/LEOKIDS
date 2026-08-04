@@ -1,0 +1,49 @@
+{
+  "namespaces": {
+    "required": 15,
+    "missing": []
+  },
+  "contentPacksRequired": {
+    "required": 7,
+    "missing": []
+  },
+  "subjects": [
+    "math",
+    "geometry",
+    "english",
+    "science"
+  ],
+  "inventoryItems": 37,
+  "helpParity": {
+    "en": 40,
+    "es": 40
+  },
+  "science": {
+    "enComplete": true,
+    "esComplete": true,
+    "enN": 1017,
+    "esHit": 1017
+  },
+  "stems": {
+    "mathEn": true,
+    "mathEs": true,
+    "geoEn": true,
+    "geoEs": true
+  },
+  "packCounts": {
+    "gamesEn": 148,
+    "gamesEs": 148,
+    "burnEn": 142,
+    "burnEs": 142
+  },
+  "heHits": 0,
+  "vosHits": 0,
+  "heFiles": [],
+  "vosFiles": [],
+  "completeness": {
+    "enMissing": 0,
+    "esMissing": 0,
+    "enFallback": 0,
+    "esFallback": 0
+  }
+}

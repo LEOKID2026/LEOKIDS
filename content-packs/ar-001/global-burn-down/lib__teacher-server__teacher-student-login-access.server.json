@@ -1,5 +1,5 @@
 {
   "copy": {
-    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "لن يكون من الممكن استرداد رقم التعريف الشخصي (PIN) النصي العادي بعد هذا الرد. قم بالتخزين بشكل آمن."
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "لن يكون من الممكن استرداد رمز PIN النصي العادي بعد هذا الرد. قم بالتخزين بشكل آمن."
   }
 }

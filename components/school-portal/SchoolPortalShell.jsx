@@ -19,7 +19,10 @@ import {
   SCHOOL_SIGN_OUT,
   SCHOOL_SIGN_OUT_BUSY,
 } from "../../lib/school-portal/school-ui.js";
-import { SC_NAV_MESSAGES } from "../../lib/school-portal/school-communication.js";
+import {
+  bindSchoolCommunicationLocale,
+  SC_NAV_MESSAGES,
+} from "../../lib/school-portal/school-communication.js";
 
 export const SCHOOL_PAGE_CONTAINER =
   "max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 md:py-10";
@@ -43,6 +46,7 @@ export default function SchoolPortalShell({
   const router = useRouter();
   const { locale, direction, isRtl } = useI18n();
   bindSchoolUiLocale(locale);
+  bindSchoolCommunicationLocale(locale);
 
   const [busy, setBusy] = useState(false);
 

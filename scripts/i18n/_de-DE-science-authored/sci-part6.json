@@ -1,0 +1,827 @@
+{
+  "sci_p1_g6_experiments_easy_02": {
+    "stem": "Warum verändern Wissenschaftlerinnen und Wissenschaftler in einem fairen Test nur eine Variable gleichzeitig?",
+    "options": [
+      "Damit sie erkennen können, was das Ergebnis verursacht hat",
+      "Damit jede Messung für immer gleich wird",
+      "Damit sie nie Daten aufschreiben müssen",
+      "Damit das Experiment ohne Werkzeuge fertig wird"
+    ],
+    "explanation": "Wenn zu viele Dinge gleichzeitig verändert werden, kannst du nicht wissen, welche Änderung das Ergebnis verursacht hat.",
+    "theoryLines": [
+      "Ein fairer Test hält die meisten Bedingungen gleich.",
+      "Die unabhängige Variable ist die, die du absichtlich veränderst."
+    ]
+  },
+  "sci_p1_g6_experiments_easy_03": {
+    "stem": "Warum solltest du während eines Experiments aufschreiben, was geschieht?",
+    "options": [
+      "Ein klares Protokoll hilft dir, Ergebnisse zu merken und zu teilen",
+      "Notizen machen die Geräte schwerer",
+      "Schreiben ersetzt die Notwendigkeit von Sicherheit",
+      "Protokolle verwandeln Wasser sofort in Eis"
+    ],
+    "explanation": "Beobachtungen und Messungen aufzuschreiben lässt dich deine Arbeit prüfen und Ergebnisse später vergleichen.",
+    "theoryLines": [
+      "Wissenschaftlerinnen und Wissenschaftler führen sorgfältige Aufzeichnungen von Abläufen und Daten.",
+      "Gute Notizen machen Experimente leichter wiederholbar."
+    ]
+  },
+  "sci_p1_g6_experiments_easy_04": {
+    "stem": "Warum wiederholen Wissenschaftlerinnen und Wissenschaftler ein Experiment oft?",
+    "options": [
+      "Um zu prüfen, ob die Ergebnisse zuverlässig sind",
+      "Um jedes Mal einen neuen Planeten zu erfinden",
+      "Um nichts zu messen",
+      "Um alle früheren Belege zu löschen"
+    ],
+    "explanation": "Einen Test zu wiederholen hilft zu zeigen, ob Ergebnisse erneut auftreten und nicht nur ein Zufallstreffer sind.",
+    "theoryLines": [
+      "Zuverlässige Ergebnisse lassen sich unter ähnlichen Bedingungen wiederholen.",
+      "Wiederholte Durchgänge verringern die Chance auf einen einmaligen Fehler."
+    ]
+  },
+  "sci_p1_g6_experiments_easy_05": {
+    "stem": "Warum verwenden Wissenschaftlerinnen und Wissenschaftler beim Messen Standardeinheiten?",
+    "options": [
+      "Damit andere die Messungen verstehen und vergleichen können",
+      "Damit jedes Objekt gleich groß wird",
+      "Damit nie Werkzeuge nötig sind",
+      "Damit Experimente nie Sicherheitsregeln brauchen"
+    ],
+    "explanation": "Einheiten wie Zentimeter, Gramm und Grad Celsius lassen Menschen klare, vergleichbare Daten teilen.",
+    "theoryLines": [
+      "Standardeinheiten machen Messungen für andere verständlich.",
+      "Die passende Einheit passt zur Art der Messung."
+    ]
+  },
+  "sci_p1_g6_experiments_easy_06": {
+    "stem": "Was ist eine Kontrolle in vielen naturwissenschaftlichen Experimenten?",
+    "options": [
+      "Ein Vergleichsaufbau, der die geprüfte Änderung nicht bekommt",
+      "Eine Regel, die alle Messwerkzeuge verbietet",
+      "Eine Vermutung, die nie überprüft werden kann",
+      "Ein Diagramm ganz ohne Beschriftungen"
+    ],
+    "explanation": "Eine Kontrollgruppe oder ein Kontrollaufbau zeigt, was ohne die geprüfte Änderung geschieht, damit du Ergebnisse fair vergleichen kannst.",
+    "theoryLines": [
+      "Kontrollen helfen, die Wirkung einer Änderung zu erkennen.",
+      "Der Vergleich von Behandlung und Kontrolle macht Schlussfolgerungen stärker."
+    ]
+  },
+  "sci_p1_g6_experiments_easy_07": {
+    "stem": "Was ist der wichtigste Grund, Sicherheitsregeln im Labor zu befolgen?",
+    "options": [
+      "Um Menschen zu schützen und Unfälle zu verhindern",
+      "Nur damit Experimente schneller fertig werden",
+      "Um keine Beobachtungen aufzuschreiben",
+      "Um Ergebnisse vor allen geheim zu halten"
+    ],
+    "explanation": "Sicherheitsregeln verringern Schäden durch Verschüttetes, Hitze, scharfe Werkzeuge und andere Laborrisiken.",
+    "theoryLines": [
+      "Trage Schutzausrüstung, wenn ein Ablauf das verlangt.",
+      "Frage eine erwachsene Person, bevor du unbekannte Labormaterialien benutzt."
+    ]
+  },
+  "sci_p1_g6_animals_easy_01": {
+    "stem": "Welches Merkmal teilen Säugetiere meist?",
+    "options": [
+      "Sie haben Haare oder Fell und füttern ihren Nachwuchs mit Milch",
+      "Sie atmen nur mit Kiemen im Wasser",
+      "Sie sind nur mit trockenen Schuppen bedeckt und bekommen nie Haare",
+      "Sie erzeugen Nahrung aus Sonnenlicht wie grüne Pflanzen"
+    ],
+    "explanation": "Säugetiere sind warmblütige Tiere mit Haaren oder Fell. Mütter erzeugen Milch für ihre Jungen.",
+    "theoryLines": [
+      "Hunde, Katzen, Wale und Menschen sind Säugetiere.",
+      "Milchfütterung ist ein wichtiges Säugetier-Merkmal."
+    ]
+  },
+  "sci_p1_g6_animals_easy_02": {
+    "stem": "Welche Art von Fresser ist eine Kuh?",
+    "options": [
+      "Ein Pflanzenfresser, der hauptsächlich Pflanzen frisst",
+      "Ein Fleischfresser, der nur Fleisch frisst",
+      "Ein Tier, das nie Nahrung braucht",
+      "Ein Produzent, der Sonnenlicht herstellt"
+    ],
+    "explanation": "Kühe fressen Gras und andere Pflanzen, deshalb sind sie Pflanzenfresser.",
+    "theoryLines": [
+      "Pflanzenfresser fressen Pflanzen.",
+      "Kühe haben Zähne, die zum Kauen von Pflanzenmaterial geeignet sind."
+    ]
+  },
+  "sci_p1_g6_animals_easy_03": {
+    "stem": "Was hilft Fischen, erfolgreich im Wasser zu leben?",
+    "options": [
+      "Sie nehmen mit Kiemen Sauerstoff aus dem Wasser auf",
+      "Sie bilden Lungen, die nur in Wüsten funktionieren",
+      "Sie trinken nur kochendes Wasser",
+      "Sie bauen Nester nur aus trockenen Blättern"
+    ],
+    "explanation": "Fische nehmen gelösten Sauerstoff aus dem Wasser über Kiemen auf und haben Körper, die zum Schwimmen geformt sind.",
+    "theoryLines": [
+      "Kiemen lassen Fische unter Wasser atmen.",
+      "Flossen helfen Fischen bei Bewegung und Gleichgewicht."
+    ]
+  },
+  "sci_p1_g6_animals_easy_04": {
+    "stem": "Wie helfen Bienen vielen Blütenpflanzen?",
+    "options": [
+      "Sie tragen Pollen von Blüte zu Blüte",
+      "Sie verwandeln Holz in Metall",
+      "Sie ersetzen Sonnenlicht für Pflanzen",
+      "Sie pumpen Blut in Pflanzenstängel"
+    ],
+    "explanation": "Wenn Bienen Blüten wegen Nektar besuchen, bleibt Pollen an ihnen haften und gelangt zu anderen Blüten; so helfen sie Pflanzen, Samen zu bilden.",
+    "theoryLines": [
+      "Bestäubung hilft Pflanzen bei der Fortpflanzung.",
+      "Bienen sind wichtige Bestäuber."
+    ]
+  },
+  "sci_p1_g6_animals_easy_05": {
+    "stem": "Welches Merkmal hilft Vögeln beim Fliegen?",
+    "options": [
+      "Flügel und leichte Körper",
+      "Kiemen zum Atmen unter Wasser",
+      "Dicke Panzer wie bei Schildkröten",
+      "Wurzeln, die in den Boden wachsen"
+    ],
+    "explanation": "Vögel haben Flügel, Federn und Körpermerkmale, die vielen Arten das Fliegen ermöglichen.",
+    "theoryLines": [
+      "Federn helfen beim Fliegen und beim Warmhalten.",
+      "Nicht jeder Vogel fliegt gut, aber Flügel sind ein Vogelmerkmal."
+    ]
+  },
+  "sci_p1_g6_animals_easy_06": {
+    "stem": "Wie bekommen Reptilien die Wärme, die sie brauchen, gewöhnlich?",
+    "options": [
+      "Sie wärmen sich an der Umgebung um sie herum",
+      "Sie erzeugen ihre eigene Wärme so, wie Säugetiere es immer tun",
+      "Sie schmelzen Eis mit elektrischen Funken",
+      "Sie brauchen überhaupt keine Wärme"
+    ],
+    "explanation": "Die meisten Reptilien sind wechselwarm, deshalb nutzen sie Sonnenlicht und warme Umgebung, um ihre Körpertemperatur zu steuern.",
+    "theoryLines": [
+      "Eidechsen sonnen sich oft, um warm zu werden.",
+      "Bei kaltem Wetter kann die Aktivität von Reptilien nachlassen."
+    ]
+  },
+  "sci_p1_g6_animals_easy_07": {
+    "stem": "Was ist ein Räuber?",
+    "options": [
+      "Ein Tier, das andere Tiere jagt und frisst",
+      "Eine Pflanze, die ihr ganzes Fleisch selbst herstellt",
+      "Ein Tier, das nur Steine frisst",
+      "Eine Wolke, die sich über dem Ozean bildet"
+    ],
+    "explanation": "Räuber fangen Beute als Nahrung. Löwen, Habichte und Haie sind Beispiele für Räuber.",
+    "theoryLines": [
+      "Räuber sind Konsumenten in Nahrungsketten.",
+      "Beutetiere werden von Räubern gejagt."
+    ]
+  },
+  "sci_p1_g6_animals_medium_01": {
+    "stem": "Was zeigt ein Nahrungsnetz besser als eine einzelne Nahrungskette?",
+    "options": [
+      "Viele sich überschneidende Ernährungsbeziehungen in einem Ökosystem",
+      "Nur ein Tier, das für immer eine Pflanze frisst",
+      "Den genauen Geburtstag jedes Tieres",
+      "Wie sich Wolken während Stürmen bilden"
+    ],
+    "explanation": "Ein Nahrungsnetz verbindet viele Nahrungsketten und zeigt, wie Energie über mehrere Wege fließen kann.",
+    "theoryLines": [
+      "Die meisten Tiere fressen mehr als eine Art von Nahrung.",
+      "Nahrungsnetze zeigen, wie Lebewesen voneinander abhängen."
+    ]
+  },
+  "sci_p1_g6_animals_medium_02": {
+    "stem": "Was kann manchen Säugetieren helfen, bei kaltem Wetter warm zu bleiben?",
+    "options": [
+      "Dichtes Fell oder eine Schicht Körperfett",
+      "Kiemen auf dem Rücken wachsen lassen",
+      "Sich vollständig in Pflanzen verwandeln",
+      "Den gesamten Blutfluss stoppen"
+    ],
+    "explanation": "Fell und Fett helfen, Wärme festzuhalten, damit Säugetiere in kalten Lebensräumen überleben können.",
+    "theoryLines": [
+      "Anpassungen helfen Tieren, in ihrer Umgebung zu leben.",
+      "Isolation verringert Wärmeverlust an kalten Orten."
+    ]
+  },
+  "sci_p1_g6_animals_medium_03": {
+    "stem": "Wie kann Tarnung einem Tier beim Überleben helfen?",
+    "options": [
+      "Sie hilft dem Tier, in seiner Umgebung unterzugehen",
+      "Sie lässt das Tier heller als die Sonne leuchten",
+      "Sie ersetzt den Bedarf an Nahrung",
+      "Sie verwandelt Räuber in Pflanzen"
+    ],
+    "explanation": "Tarnfarben oder Muster machen ein Tier schwerer zu sehen; das kann helfen, sich vor Räubern zu verstecken oder sich an Beute anzuschleichen.",
+    "theoryLines": [
+      "Tarnung ist eine nützliche Anpassung.",
+      "Viele Insekten, Fische und Säugetiere nutzen Tarnung."
+    ]
+  },
+  "sci_p1_g6_animals_medium_04": {
+    "stem": "Was ist ein Lebenszyklus?",
+    "options": [
+      "Die Stadien, die ein Organismus beim Wachsen und Fortpflanzen durchläuft",
+      "Eine Liste von Wolken in alphabetischer Reihenfolge",
+      "Eine Karte nur von Berggestein",
+      "Eine einzelne Mahlzeit, die ein Tier einmal isst"
+    ],
+    "explanation": "Ein Lebenszyklus beschreibt Stadien wie Ei, Jungtier und Erwachsener bei Tieren oder Samen bis Pflanze bei vielen Pflanzen.",
+    "theoryLines": [
+      "Verschiedene Arten haben unterschiedliche Lebenszyklus-Stadien.",
+      "Fortpflanzung setzt den Lebenszyklus für die nächste Generation fort."
+    ]
+  },
+  "sci_p1_g6_animals_medium_05": {
+    "stem": "Warum bauen viele Vögel Nester?",
+    "options": [
+      "Um Eier zu schützen und ihren Nachwuchs aufzuziehen",
+      "Um Sonnenlicht für den Winter zu speichern",
+      "Um Blut durch Bäume zu pumpen",
+      "Um alle Wetteränderungen zu stoppen"
+    ],
+    "explanation": "Nester geben Eiern und Küken einen sichereren Ort zum Entwickeln, bis sie bereiter für mehr Selbstständigkeit sind.",
+    "theoryLines": [
+      "Die Nestbauweise kann je nach Vogelart unterschiedlich sein.",
+      "Eltern füttern und bewachen den Nachwuchs oft im Nest."
+    ]
+  },
+  "sci_p1_g6_animals_medium_06": {
+    "stem": "Was ist ein Lebensraum?",
+    "options": [
+      "Der Ort, an dem ein Organismus lebt und findet, was er braucht",
+      "Ein Werkzeug, das nur zur Temperaturmessung dient",
+      "Eine Art von Blutzelle",
+      "Ein Schatten, den der Mond erzeugt"
+    ],
+    "explanation": "Ein Lebensraum bietet Lebewesen Nahrung, Wasser, Schutz und Raum.",
+    "theoryLines": [
+      "Wälder, Wüsten, Teiche und Ozeane sind Lebensräume.",
+      "Wenn sich ein Lebensraum stark verändert, können Tiere Schwierigkeiten haben zu überleben."
+    ]
+  },
+  "sci_p1_g6_animals_medium_07": {
+    "stem": "Wie können Tiere Pflanzen helfen, ihre Samen zu verbreiten?",
+    "options": [
+      "Indem sie Samen am Fell oder im Kot an neue Orte tragen",
+      "Indem sie Samen in reines Metall verwandeln",
+      "Indem sie für immer alles Sonnenlicht blockieren",
+      "Indem sie Blut in jedes Blatt pumpen"
+    ],
+    "explanation": "Tiere bewegen Samen, wenn sie Früchte fressen oder wenn Samen an ihnen haften bleiben; so helfen sie Pflanzen, an neuen Orten zu wachsen.",
+    "theoryLines": [
+      "Samenverbreitung breitet Pflanzen über ein Gebiet aus.",
+      "Wind, Wasser und Tiere können alle Samen bewegen."
+    ]
+  },
+  "sci_p1_g6_animals_hard_01": {
+    "stem": "Was geschieht gewöhnlich, wenn Räuber in einem Ökosystem knapp werden?",
+    "options": [
+      "Beutepopulationen können eine Zeit lang größer werden",
+      "Alle Pflanzen verschwinden sofort",
+      "Regen fällt für immer nicht mehr",
+      "Jedes Tier wird zu einem Produzenten"
+    ],
+    "explanation": "Räuber helfen, Beutezahlen zu steuern. Mit weniger Räubern kann Beute zunehmen, bis Nahrung oder Raum knapp werden.",
+    "theoryLines": [
+      "Räuber- und Beutepopulationen beeinflussen einander.",
+      "Gleichgewicht in Ökosystemen hängt von vielen lebenden Verbindungen ab."
+    ]
+  },
+  "sci_p1_g6_animals_hard_02": {
+    "stem": "Was kann geschehen, wenn Tiere ihren natürlichen Lebensraum verlieren?",
+    "options": [
+      "Sie können Schwierigkeiten haben, Nahrung, Schutz und sichere Orte zum Leben zu finden",
+      "Sie erhalten automatisch unbegrenzte Nahrung",
+      "Sie brauchen kein Wasser mehr",
+      "Pflanzen brauchen kein Sonnenlicht mehr"
+    ],
+    "explanation": "Lebensraumverlust nimmt Tieren die Ressourcen, die sie brauchen; Populationen können sinken oder Tiere müssen umziehen.",
+    "theoryLines": [
+      "Lebensräume zu schützen hilft, Wildtiere zu schützen.",
+      "Menschliche Tätigkeiten können Lebensräume verkleinern oder beschädigen."
+    ]
+  },
+  "sci_p1_g6_animals_hard_03": {
+    "stem": "Wie finden viele Fledermäuse im Dunkeln Nahrung?",
+    "options": [
+      "Sie nutzen Echoortung, indem sie zurückkehrende Schallechos hören",
+      "Sie lesen Straßenkarten nur bei Sonnenlicht",
+      "Sie schmecken Farben in der Luft",
+      "Sie graben Brunnen für Salzwasser"
+    ],
+    "explanation": "Fledermäuse senden Laute aus und hören Echos, die von Insekten und anderen Objekten zurückkommen; so jagen sie nachts.",
+    "theoryLines": [
+      "Echoortung funktioniert auch bei wenig Licht.",
+      "Gehör ist für viele nachtaktive Fledermäuse besonders wichtig."
+    ]
+  },
+  "sci_p1_g6_animals_hard_04": {
+    "stem": "Warum brauchen Amphibien oft feuchte Orte zum Leben?",
+    "options": [
+      "Ihre Haut braucht gewöhnlich Feuchtigkeit, und viele legen Eier im Wasser",
+      "Sie fressen nur trockenen Sand",
+      "Sie atmen nur heiße Wüstenluft",
+      "Sie bilden Federn, die staubig bleiben müssen"
+    ],
+    "explanation": "Viele Amphibien haben durchlässige Haut und beginnen ihr Leben im Wasser, deshalb sind nasse Lebensräume fürs Überleben wichtig.",
+    "theoryLines": [
+      "Frösche und Salamander sind Amphibien.",
+      "Amphibieneier entwickeln sich oft in Teichen oder anderen nassen Orten."
+    ]
+  },
+  "sci_vol_g1_body_medium_01": {
+    "stem": "Was ist die Aufgabe des Herzens im Kreislaufsystem?",
+    "options": [
+      "Es pumpt Blut durch den Körper",
+      "Es malt die Knochen gelb",
+      "Es stellt die ganze Nahrung her, die du isst",
+      "Es speichert ungenutzten Sauerstoff im Haar"
+    ],
+    "explanation": "Das Herz treibt Blut an, damit Sauerstoff und Nährstoffe zu Körperteilen gelangen können.",
+    "theoryLines": [
+      "Blut bewegt sich in einer Schleife durch den Körper.",
+      "Ein schlagendes Herz hält den Kreislauf in Gang."
+    ]
+  },
+  "sci_vol_g1_body_medium_02": {
+    "stem": "Warum ist Trinken von Wasser für deinen Körper wichtig?",
+    "options": [
+      "Es hilft, deinen Körper funktionsfähig und wohl zu halten",
+      "Es ersetzt den Bedarf zu atmen",
+      "Es verwandelt Muskeln in Stein",
+      "Es hindert dich daran, jemals zu ruhen"
+    ],
+    "explanation": "Wasser hilft deinem Körper, mit Flüssigkeit versorgt zu bleiben, damit Zellen und Organe ihre Arbeit tun können.",
+    "theoryLines": [
+      "Menschen brauchen jeden Tag Wasser.",
+      "Durst ist ein Signal, dass dein Körper Flüssigkeit braucht."
+    ]
+  },
+  "sci_vol_g1_body_hard_01": {
+    "stem": "Wobei helfen Muskeln deinem Körper?",
+    "options": [
+      "Körperteile zu bewegen",
+      "Sonnenlicht für Pflanzen herzustellen",
+      "Zähne aus Holz wachsen zu lassen",
+      "Alles Atmen für immer zu stoppen"
+    ],
+    "explanation": "Muskeln ziehen an Knochen und anderen Teilen, damit du gehen, heben, lächeln und dich auf viele Arten bewegen kannst.",
+    "theoryLines": [
+      "Muskeln arbeiten, indem sie sich anspannen und entspannen.",
+      "Bewegung hilft, Muskeln stark zu halten."
+    ]
+  },
+  "sci_vol_g1_body_hard_02": {
+    "stem": "Was ist eine wichtige Aufgabe der Knochen im Körper?",
+    "options": [
+      "Den Körper stützen und weiche Organe schützen",
+      "Nahrung im Magen verdauen",
+      "Gerüche zur Nase tragen",
+      "Regenwolken entstehen lassen"
+    ],
+    "explanation": "Knochen bilden das Skelett, das dich aufrecht hält und Teile wie Gehirn und Herz mit schützen hilft.",
+    "theoryLines": [
+      "Das Skelett gibt dem Körper Form.",
+      "Knochen und Muskeln arbeiten zusammen für Bewegung."
+    ]
+  },
+  "sci_vol_g1_animals_medium_01": {
+    "stem": "Wie helfen Bienen Blüten?",
+    "options": [
+      "Sie bewegen Pollen, damit Pflanzen Samen bilden können",
+      "Sie verwandeln Blütenblätter in Steine",
+      "Sie entfernen alles Sonnenlicht",
+      "Sie pumpen Sauerstoff nur in den Boden"
+    ],
+    "explanation": "Bienen besuchen Blüten und tragen Pollen; das hilft Pflanzen bei der Fortpflanzung.",
+    "theoryLines": [
+      "Bestäubung ist für viele Früchte und Samen wichtig.",
+      "Bienen sind hilfreiche Insekten in Gärten und auf Feldern."
+    ]
+  },
+  "sci_vol_g1_animals_medium_02": {
+    "stem": "Warum können Kamele gut in einer heißen Wüste leben?",
+    "options": [
+      "Ihre Körper sind angepasst, Wasser zu sparen und Hitze auszuhalten",
+      "Sie müssen jede Stunde schwimmen",
+      "Sie fressen nur Eiswürfel",
+      "Sie frieren jeden Tag steif ein"
+    ],
+    "explanation": "Kamele haben Anpassungen wie das Speichern von Fett und den Umgang mit trockenen Bedingungen, die ihnen helfen, in Wüsten zu überleben.",
+    "theoryLines": [
+      "Wüstentiere sparen Wasser oft besonders sorgfältig.",
+      "Anpassungen passen ein Tier an seinen Lebensraum an."
+    ]
+  },
+  "sci_vol_g1_animals_hard_01": {
+    "stem": "Warum ist es hilfreich, wenn viele verschiedene Tiere an einem Ort leben?",
+    "options": [
+      "Eine Vielfalt an Lebewesen hilft, Natursysteme gesünder zu halten",
+      "Regen wird überflüssig",
+      "Nahrung verschwindet für immer",
+      "Licht erreicht die Erde nicht mehr"
+    ],
+    "explanation": "Biodiversität bedeutet viele Arten von Lebewesen. Gemeinsam stützen sie Nahrungsnetze und gesündere Lebensräume.",
+    "theoryLines": [
+      "Verschiedene Tiere spielen verschiedene Rollen in der Natur.",
+      "Lebensräume zu schützen schützt viele Arten."
+    ]
+  },
+  "sci_vol_g1_animals_hard_02": {
+    "stem": "Was macht einen Löwen zum Räuber?",
+    "options": [
+      "Er jagt und frisst andere Tiere",
+      "Er stellt Nahrung aus Sonnenlicht her",
+      "Er frisst nur Steine und Sand",
+      "Er braucht nie Nahrung oder Wasser"
+    ],
+    "explanation": "Löwen fangen Beute wegen des Fleisches, deshalb sind sie Räuber in ihrer Nahrungskette.",
+    "theoryLines": [
+      "Räuber helfen, Beutepopulationen zu steuern.",
+      "Löwen sind Fleischfresser."
+    ]
+  },
+  "sci_vol_g1_plants_medium_01": {
+    "stem": "Was kann geschehen, wenn eine Pflanze viel zu viel Wasser bekommt?",
+    "options": [
+      "Wurzeln können zu nass werden und die Pflanze kann ungesund werden",
+      "Die Pflanze wächst immer zu einem Berg heran",
+      "Die Pflanze braucht nie wieder Sonnenlicht",
+      "Blätter verwandeln sich in festes Metall"
+    ],
+    "explanation": "Zu viel Gießen kann Wurzeln daran hindern, genug Luft zu bekommen, und die Pflanze schädigen.",
+    "theoryLines": [
+      "Pflanzen brauchen die richtige Menge Wasser — nicht zu wenig und nicht zu viel.",
+      "Gesunder Boden sollte für die meisten Pflanzen nicht die ganze Zeit matschig bleiben."
+    ]
+  },
+  "sci_vol_g1_plants_medium_02": {
+    "stem": "Warum sind manche Samen so geformt, dass sie Wind fangen?",
+    "options": [
+      "Damit sie an neue Orte reisen können, um zu wachsen",
+      "Damit sie schwerer als Steine werden",
+      "Damit Tiere nie Nahrung finden können",
+      "Damit Blut durch Blätter fließen kann"
+    ],
+    "explanation": "Leichte, geflügelte oder flauschige Samen können auf neuen Boden geweht werden und helfen so Pflanzen, sich zu verbreiten.",
+    "theoryLines": [
+      "Samenverbreitung bewegt Samen weg von der Mutterpflanze.",
+      "Wind ist ein Weg, auf dem Samen reisen."
+    ]
+  },
+  "sci_vol_g1_plants_hard_01": {
+    "stem": "Was kann aus einem Samen in einer Frucht wachsen?",
+    "options": [
+      "Eine neue Pflanze",
+      "Eine Wolke nur aus Salz",
+      "Ein Knochen aus Glas",
+      "Ein Fluss aus reinem Metall"
+    ],
+    "explanation": "Samen enthalten den Beginn einer neuen Pflanze. Mit Wasser, Wärme und den richtigen Bedingungen kann ein Same keimen.",
+    "theoryLines": [
+      "Früchte schützen Samen oft und helfen, sie zu verbreiten.",
+      "Keimung ist der Moment, in dem ein Same zu wachsen beginnt."
+    ]
+  },
+  "sci_vol_g1_plants_hard_02": {
+    "stem": "Warum wachsen Pflanzen zum Licht hin?",
+    "options": [
+      "Pflanzen brauchen Licht, um durch Fotosynthese Nahrung herzustellen, deshalb wachsen sie dahin.",
+      "Pflanzen brauchen Wasser, und Wasser kommt nur vom Licht.",
+      "Pflanzen fühlen sich nahe am Licht wärmer und bleiben lieber warm.",
+      "Pflanzen brauchen Licht, um Nährstoffe durch ihre Stängel zu pumpen."
+    ],
+    "explanation": "Pflanzen wachsen zum Licht, weil sie es für die Fotosynthese und zur Nahrungsherstellung brauchen. Dieses Verhalten heißt Phototropismus.",
+    "theoryLines": []
+  },
+  "sci_vol_g2_body_medium_01": {
+    "stem": "Welche Rolle haben Gelenke in deinem Körper?",
+    "options": [
+      "Gelenke verbinden Knochen und lassen deinen Körper sich beugen und bewegen",
+      "Gelenke tragen Sauerstoff durch das Blut zu allen Teilen deines Körpers",
+      "Gelenke filtern Abfall aus deinem Blut, während es durch sie fließt",
+      "Gelenke schützen deine Zähne, indem sie Stöße beim Kauen abfangen"
+    ],
+    "explanation": "Gelenke sind die Stellen, an denen zwei Knochen zusammentreffen. Sie lassen deinen Körper sich beugen, drehen und in verschiedene Richtungen bewegen.",
+    "theoryLines": []
+  },
+  "sci_vol_g2_body_medium_02": {
+    "stem": "Was tun die Lungen im menschlichen Körper?",
+    "options": [
+      "Die Lungen atmen Luft ein und geben Sauerstoff an das Blut weiter, während sie Kohlenstoffdioxid entfernen.",
+      "Die Lungen pumpen Blut durch den ganzen Körper.",
+      "Die Lungen filtern altes Blut und erzeugen neue Blutzellen.",
+      "Die Lungen schützen das Herz vor Schaden, indem sie es umgeben."
+    ],
+    "explanation": "Die Lungen sind für den Gasaustausch verantwortlich: Sie nehmen Sauerstoff aus der Luft auf und geben Kohlenstoffdioxid als Abfallstoff ab. Der Sauerstoff gelangt ins Blut.",
+    "theoryLines": []
+  },
+  "sci_vol_g2_body_hard_01": {
+    "stem": "Warum ist es wichtig, deine Zähne jeden Tag zu putzen?",
+    "options": [
+      "Um Speisereste und schädliche Bakterien zu entfernen, die Löcher und Zahnverfall verursachen können.",
+      "Damit deine Zähne schneller länger und stärker wachsen.",
+      "Damit deine Lungen den ganzen Tag besser atmen.",
+      "Damit das Herz Blut leichter in den restlichen Körper pumpt."
+    ],
+    "explanation": "Zähneputzen entfernt Speisereste und Bakterien. Bleiben sie auf den Zähnen, erzeugen Bakterien Säuren, die Löcher und Zahnverfall verursachen.",
+    "theoryLines": []
+  },
+  "sci_vol_g2_body_hard_02": {
+    "stem": "Warum ist Schlaf für deinen Körper wichtig?",
+    "options": [
+      "Er hilft deinem Körper, zu ruhen und sich zu erholen",
+      "Er verdaut Nahrung ohne irgendwelche Organe",
+      "Er ersetzt kreisendes Blut durch Luft",
+      "Er verwandelt Knochen in Gummi"
+    ],
+    "explanation": "Während des Schlafs ruht und erholt sich der Körper, damit du wachsen, lernen und dich für einen neuen Tag bereit fühlen kannst.",
+    "theoryLines": [
+      "Kinder brauchen jede Nacht genug Schlaf.",
+      "Ruhe unterstützt einen gesunden Körper und Geist."
+    ]
+  },
+  "sci_vol_g2_experiments_easy_01": {
+    "stem": "Warum brauchen Diagramme klare Beschriftungen an den Achsen?",
+    "options": [
+      "Damit Leserinnen und Leser wissen, was die Zahlen und Kategorien bedeuten",
+      "Damit das Diagramm alle Daten verstecken kann",
+      "Damit Hypothesen überflüssig werden",
+      "Damit Experimente nie Messen brauchen"
+    ],
+    "explanation": "Achsenbeschriftungen sagen, was gemessen wurde und wie man das Diagramm richtig liest.",
+    "theoryLines": [
+      "Ein Diagramm ist ein Bild von Daten.",
+      "Klare Beschriftungen machen naturwissenschaftliche Kommunikation leichter."
+    ]
+  },
+  "sci_vol_g2_experiments_easy_02": {
+    "stem": "Wofür wird ein Becherglas in vielen Experimenten benutzt?",
+    "options": [
+      "Zum sorgfältigen Halten und Gießen von Flüssigkeiten",
+      "Nur zum Messen der Höhe von Bergen",
+      "Zum Hören von Tierlauten",
+      "Damit Schatten verschwinden"
+    ],
+    "explanation": "Ein Becherglas ist ein Behälter für Flüssigkeiten bei naturwissenschaftlichen Untersuchungen.",
+    "theoryLines": [
+      "Laborwerkzeuge helfen, Materialien sicher zu handhaben.",
+      "Wähle das passende Werkzeug für die Aufgabe."
+    ]
+  },
+  "sci_vol_g2_experiments_medium_01": {
+    "stem": "Welches Werkzeug eignet sich am besten, um die Länge eines Bleistifts zu messen?",
+    "options": [
+      "Ein Lineal",
+      "Ein Thermometer",
+      "Ein Magnet",
+      "Nur eine Lupe"
+    ],
+    "explanation": "Ein Lineal misst Länge in Einheiten wie Zentimetern oder Zoll.",
+    "theoryLines": [
+      "Verschiedene Werkzeuge messen verschiedene Eigenschaften.",
+      "Länge wird mit einem Lineal oder Maßband gemessen."
+    ]
+  },
+  "sci_vol_g2_experiments_medium_02": {
+    "stem": "Was ist die abhängige Variable in einem Experiment?",
+    "options": [
+      "Was du misst, um das Ergebnis einer Änderung zu sehen",
+      "Das eine Ding, das du absichtlich veränderst",
+      "Ein Werkzeug, das du nie benutzt",
+      "Eine Sicherheitsregel zu Jacken"
+    ],
+    "explanation": "Die abhängige Variable ist das Ergebnis, das du misst, nachdem du etwas anderes verändert hast.",
+    "theoryLines": [
+      "Unabhängige Variable: was du veränderst.",
+      "Abhängige Variable: was du misst."
+    ]
+  },
+  "sci_vol_g2_experiments_hard_01": {
+    "stem": "Was macht eine gute naturwissenschaftliche Beobachtung aus?",
+    "options": [
+      "Wahrnehmen und beschreiben, was du wirklich siehst oder misst",
+      "Eine Geschichte ohne Belege raten",
+      "Alle Daten absichtlich ignorieren",
+      "Die Ergebnisse ändern, damit sie schöner aussehen"
+    ],
+    "explanation": "Beobachtungen sind sorgfältige Notizen darüber, was wirklich geschieht, mit Sinnen und Werkzeugen.",
+    "theoryLines": [
+      "Beobachtungen kommen vor Schlussfolgerungen.",
+      "Genaue Beobachtungen helfen der Wissenschaft, ehrlich zu bleiben."
+    ]
+  },
+  "sci_vol_g2_experiments_hard_02": {
+    "stem": "Was misst ein Thermometer?",
+    "options": [
+      "Temperatur",
+      "Länge eines Tisches",
+      "Wie schwer ein Stein ist",
+      "Wie laut ein Geräusch ist"
+    ],
+    "explanation": "Ein Thermometer zeigt, wie heiß oder kalt etwas ist.",
+    "theoryLines": [
+      "Temperatur wird in Grad gemessen.",
+      "Wissenschaftlerinnen und Wissenschaftler wählen Werkzeuge, die zu dem passen, was sie messen wollen."
+    ]
+  },
+  "sci_vol_g2_animals_medium_01": {
+    "stem": "Warum bauen viele Vögel Nester?",
+    "options": [
+      "Damit Eier und Küken sicherer wachsen können",
+      "Um Sonnenlicht in Federn zu speichern",
+      "Damit Wind nie mehr weht",
+      "Um Bäume in Ozeane zu verwandeln"
+    ],
+    "explanation": "Ein Nest ist ein geschützter Ort, an dem Vögel Eier schützen und Nachwuchs aufziehen können.",
+    "theoryLines": [
+      "Verschiedene Vögel bauen verschiedene Arten von Nestern.",
+      "Elterntiere kümmern sich oft im Nest um die Küken."
+    ]
+  },
+  "sci_vol_g2_animals_medium_02": {
+    "stem": "Was kann geschehen, wenn Beutetiere sehr zahlreich werden?",
+    "options": [
+      "Sie können Nahrung und Raum schneller aufbrauchen",
+      "Wälder werden sofort nur durch Licht zu Wüsten",
+      "Wasser verschwindet für immer von der Erde",
+      "Räuber brauchen keine Energie mehr"
+    ],
+    "explanation": "Zu viele Beutetiere können Nahrungsvorräte und Lebensräume belasten, bis die Zahlen wieder sinken.",
+    "theoryLines": [
+      "Populationen hängen von verfügbaren Ressourcen ab.",
+      "Räuber und Nahrungsgrenzen helfen, Ökosysteme im Gleichgewicht zu halten."
+    ]
+  },
+  "sci_vol_g2_animals_hard_01": {
+    "stem": "Warum sollten Menschen Tierlebensräume schützen?",
+    "options": [
+      "Tiere brauchen Orte mit Nahrung, Wasser und Schutz, um zu überleben",
+      "Tiere nutzen Lebensräume überhaupt nie",
+      "Land zu schützen entfernt alle Pflanzen",
+      "Lebensräume sind nur nützlich, um Lärm zu machen"
+    ],
+    "explanation": "Wenn Lebensräume geschützt sind, können Tiere finden, was sie brauchen, um zu leben und Nachwuchs aufzuziehen.",
+    "theoryLines": [
+      "Lebensraumschutz hilft Wildtieren und Menschen.",
+      "Verlust von Lebensraum ist eine große Bedrohung für Tiere."
+    ]
+  },
+  "sci_vol_g2_animals_hard_02": {
+    "stem": "Was ist ein besonderes Merkmal von Reptilien wie Eidechsen und Schlangen?",
+    "options": [
+      "Reptilien haben trockene, schuppige Haut, die ihren Körper schützt und Wasser spart.",
+      "Reptilien leben nur im Wasser und atmen über Kiemen.",
+      "Reptilien haben dichtes Fell, das sie bei kaltem Wetter warm hält.",
+      "Reptilien halten ihre Körpertemperatur von innen warm, genau wie Menschen."
+    ],
+    "explanation": "Reptilien sind mit trockener, schuppiger Haut bedeckt, die ihren Körper schützt und Wasserverlust verringert. Anders als Säugetiere sind Reptilien wechselwarm und hängen für Wärme von ihrer Umgebung ab.",
+    "theoryLines": []
+  },
+  "sci_vol_g2_plants_medium_01": {
+    "stem": "Was ist die Hauptaufgabe einer Frucht?",
+    "options": [
+      "Die Samen der Pflanze zu halten und zu schützen und sie an neue Orte zu verbreiten.",
+      "Wasser und Mineralien aus dem Boden aufzunehmen.",
+      "Sonnenlicht einzufangen und Nahrung für die Pflanze herzustellen.",
+      "Fotosynthese statt der Blätter durchzuführen."
+    ],
+    "explanation": "Eine Frucht wächst um die Samen einer Blütenpflanze. Ihre Aufgabe ist, die Samen zu schützen und zu verbreiten. Tiere fressen die Frucht und tragen die Samen in ihrem Kot an neue Orte. Manche Früchte sind so gebaut, dass sie auf Wasser schwimmen oder vom Wind geweht werden.",
+    "theoryLines": [
+      "Früchte entstehen aus der Blüte einer Pflanze, nachdem sie bestäubt wurde.",
+      "Samen von der Mutterpflanze wegzubringen gibt neuen Pflanzen mehr Raum und Ressourcen zum Wachsen."
+    ]
+  },
+  "sci_vol_g2_plants_medium_02": {
+    "stem": "Warum nennt man Pflanzen in einer Nahrungskette Produzenten?",
+    "options": [
+      "Sie stellen Nahrung mithilfe von Sonnenlicht her",
+      "Sie jagen andere Pflanzen wegen Fleisch",
+      "Sie brauchen nie Energie",
+      "Sie leben nur dort, wo Tiere nicht leben können"
+    ],
+    "explanation": "Grüne Pflanzen nutzen Sonnenlicht, um Nahrung herzustellen; so erzeugen sie die Energie, die viele Nahrungsketten beginnt.",
+    "theoryLines": [
+      "Fotosynthese lässt Pflanzen Nahrung herstellen.",
+      "Tiere hängen direkt oder indirekt von pflanzlicher Nahrungsenergie ab."
+    ]
+  },
+  "sci_vol_g2_plants_hard_01": {
+    "stem": "Wo bewahren viele Nadelbäume ihre Samen auf?",
+    "options": [
+      "In Zapfen",
+      "Nur in Metallkästen",
+      "Nur unter Meereswellen",
+      "Nur für immer im Fell von Tieren"
+    ],
+    "explanation": "Nadelbäume wie Kiefern bilden Zapfen, die Samen halten und schützen.",
+    "theoryLines": [
+      "Nadelbäume sind Bäume, die oft das ganze Jahr grün bleiben.",
+      "Zapfen helfen, Samen freizugeben, wenn die Bedingungen passen."
+    ]
+  },
+  "sci_vol_g2_plants_hard_02": {
+    "stem": "Warum sollten Menschen nicht jede Wildblume pflücken, die sie sehen?",
+    "options": [
+      "Blumen stehen zu lassen hilft Pflanzen, Samen zu bilden und Wildtiere zu unterstützen",
+      "Regen wird für Pflanzen schädlich",
+      "Blumen verwandeln Blut in Wasser",
+      "Wurzeln hören auf zu arbeiten, wenn Menschen in der Nähe gehen"
+    ],
+    "explanation": "Blumen helfen Pflanzen bei der Fortpflanzung. Zu viele zu nehmen kann Pflanzenpopulationen und Tiere schädigen, die sie nutzen.",
+    "theoryLines": [
+      "Naturschutz bedeutet, für Lebewesen und Lebensräume zu sorgen.",
+      "Genieße die Natur, ohne mehr zu nehmen, als du brauchst."
+    ]
+  },
+  "sci_vol_g3_body_medium_01": {
+    "stem": "Was macht das Kreislaufsystem?",
+    "options": [
+      "Es nutzt das Herz, um Blut durch den Körper zu pumpen und Sauerstoff sowie Nährstoffe zu jeder Zelle zu bringen.",
+      "Es zerlegt Nahrung im Inneren des Magens.",
+      "Es stützt den Körper über Knochen und Knorpel.",
+      "Es schützt den Körper über die äußere Hautschicht."
+    ],
+    "explanation": "Das Kreislaufsystem besteht aus Herz, Blutgefäßen und Blut. Das Herz pumpt Blut durch ein Netz von Blutgefäßen, das jeden Körperteil erreicht. Blut trägt Sauerstoff und Nährstoffe zu Zellen und sammelt Abfallstoffe wie Kohlenstoffdioxid ein, die entfernt werden sollen.",
+    "theoryLines": [
+      "Das Herz ist eine muskulöse Pumpe, die ununterbrochen schlägt, damit Blut sich bewegt.",
+      "Zu den Blutgefäßen gehören Arterien, Venen und winzige Kapillaren, die in jedes Gewebe reichen."
+    ]
+  },
+  "sci_vol_g3_body_hard_01": {
+    "stem": "Welches Körpersystem trägt Botschaften vom Gehirn zu den Muskeln?",
+    "options": [
+      "Das Nervensystem",
+      "Das Verdauungssystem",
+      "Nur das Atmungssystem",
+      "Das Skelett allein"
+    ],
+    "explanation": "Nervensignale reisen vom Gehirn und Rückenmark zu den Muskeln, damit du dich absichtlich bewegen kannst.",
+    "theoryLines": [
+      "Das Nervensystem steuert die Kommunikation im Körper.",
+      "Muskeln reagieren auf Nervenbotschaften."
+    ]
+  },
+  "sci_vol_g3_body_hard_02": {
+    "stem": "Was ist die Hauptaufgabe der Leber?",
+    "options": [
+      "Sie reinigt das Blut, indem sie Abfall und schädliche Stoffe entfernt.",
+      "Sie hilft den Lungen, mehr Sauerstoff aufzunehmen.",
+      "Sie erzeugt Lichtenergie, die der Körper nutzen kann.",
+      "Sie macht Knochen stärker, indem sie Calcium hinzufügt."
+    ],
+    "explanation": "Die Leber ist eines der wichtigsten Organe im Körper. Sie filtert das Blut, zerlegt schädliche Chemikalien und entfernt Abfallstoffe. Außerdem hilft sie, die aus der Nahrung aufgenommenen Nährstoffe so zu verarbeiten, dass Zellen sie für Energie und Wachstum nutzen können.",
+    "theoryLines": [
+      "Die Leber ist das größte innere Organ im menschlichen Körper.",
+      "Die Leber erzeugt auch Galle, die dem Verdauungssystem hilft, Fette zu zerlegen."
+    ]
+  },
+  "sci_vol_g3_experiments_easy_01": {
+    "stem": "Was solltest du tun, bevor du eine endgültige Schlussfolgerung schreibst?",
+    "options": [
+      "Sorgfältig deine Beobachtungen und Daten ansehen",
+      "Jede Messung ignorieren, die du gemacht hast",
+      "Ergebnisse ohne Test erfinden",
+      "Das Naturwissenschaftsheft wegwerfen"
+    ],
+    "explanation": "Eine Schlussfolgerung sollte auf Belegen beruhen, die während der Untersuchung gesammelt wurden.",
+    "theoryLines": [
+      "Belege stützen naturwissenschaftliche Aussagen.",
+      "Schlussfolgerungen kommen nach dem Sammeln und Prüfen von Daten."
+    ]
+  },
+  "sci_vol_g3_experiments_easy_02": {
+    "stem": "Was solltest du tun, wenn eine Messung sehr anders aussieht als die anderen?",
+    "options": [
+      "Sie noch einmal prüfen und über mögliche Fehler nachdenken",
+      "Immer alle deine Daten löschen",
+      "Die Hypothese so ändern, dass sie nur zu einer merkwürdigen Zahl passt",
+      "Einheiten für immer nicht mehr verwenden"
+    ],
+    "explanation": "Ein Ausreißer kann ein Fehler sein. Nochmal Prüfen hilft dir zu entscheiden, ob du das ungewöhnliche Ergebnis behältst, korrigierst oder erklärst.",
+    "theoryLines": [
+      "Sorgfältiges Prüfen verbessert die Datenqualität.",
+      "Eine Messung zu wiederholen kann Fehler aufdecken."
+    ]
+  },
+  "sci_vol_g3_experiments_hard_01": {
+    "stem": "Was ist eine kontrollierte Variable in einem Experiment?",
+    "options": [
+      "Etwas, das du absichtlich gleich hältst",
+      "Das Ergebnis, das du erfinden willst",
+      "Ein Werkzeug, dessen Nutzung du verweigerst",
+      "Eine zufällige Vermutung ohne Plan"
+    ],
+    "explanation": "Kontrollierte Variablen bleiben gleich, damit der Test fair ist und nur ein Hauptfaktor untersucht wird.",
+    "theoryLines": [
+      "Faire Tests steuern Bedingungen sorgfältig.",
+      "Variablen gleich zu halten macht Ergebnisse klarer."
+    ]
+  }
+}

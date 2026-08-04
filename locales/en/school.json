@@ -211,7 +211,9 @@
     "assignTargetGrade": "Target grade",
     "activityColTitle": "Activity",
     "activityColMeta": "Details",
-    "activityColStatus": "Status"
+    "activityColStatus": "Status",
+    "hideAdvancedEnrollment": "Hide advanced enrollment",
+    "enrolling": "Enrolling…"
   },
   "teacher": {
     "navSchool": "School management",

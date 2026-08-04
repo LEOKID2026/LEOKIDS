@@ -94,6 +94,17 @@ export default function Layout({
 
   const isGamePage = isImmersiveGameLayoutPath(pathname);
 
+  // Hooks must stay above the immersive-game early return (pathname can flip mid-session).
+  const handleDemoHudHomeClick = useCallback(
+    (event, href) => {
+      if (!shouldDemoHudHomeNavigateToPublic(isDemoMode(), href)) return;
+      event.preventDefault();
+      clearDemoSession();
+      void router.push("/");
+    },
+    [router],
+  );
+
   if (isGamePage) {
     // For game pages, return only the children without header/footer
     return <>{children}</>;
@@ -142,16 +153,6 @@ export default function Layout({
   const publicDemoButtonsBottomStyle = showStudentAd
     ? { bottom: STUDENT_LAYOUT_CHROME_BOTTOM_CSS }
     : { bottom: "max(1.5rem, env(safe-area-inset-bottom, 0px))" };
-
-  const handleDemoHudHomeClick = useCallback(
-    (event, href) => {
-      if (!shouldDemoHudHomeNavigateToPublic(isDemoMode(), href)) return;
-      event.preventDefault();
-      clearDemoSession();
-      void router.push("/");
-    },
-    [router],
-  );
   const shellClassBase = isLearningBright
     ? brightLearningShell
     : isStudentBright

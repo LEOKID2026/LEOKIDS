@@ -5,12 +5,17 @@ import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
 import TeacherPortalShell from "../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../lib/learning-supabase/client";
-import { resolveTeacherAccessToken } from "../../../lib/teacher-portal/use-teacher-portal-session";
+import { resolveTeacherPortalAuth } from "../../../lib/teacher-portal/use-teacher-portal-session";
 import { teacherAuthFetch } from "../../../lib/teacher-portal/teacher-ui.js";
 import {
   worksheetModeLabelHe,
   worksheetStatusLabelHe,
 } from "../../../lib/worksheet-activities/worksheet-labels.client.js";
+
+const WS = "pages__teacher__worksheets__index";
+function wsCopy(key) {
+  return globalBurnDownCopy(WS, key);
+}
 
 export default function TeacherWorksheetsListPage() {
   const router = useRouter();
@@ -23,8 +28,10 @@ export default function TeacherWorksheetsListPage() {
     setError("");
     try {
       const supabase = getLearningSupabaseBrowserClient();
-      const session = await resolveTeacherAccessToken(supabase);
+      const session = await resolveTeacherPortalAuth(supabase);
       if (!session.ok) {
+        setPhase("error");
+        setError(wsCopy("network_error"));
         router.replace("/teacher/login");
         return;
       }
@@ -35,14 +42,14 @@ export default function TeacherWorksheetsListPage() {
         return;
       }
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "Error loading");
+        setError(body?.error?.message || body?.error?.code || wsCopy("error_loading"));
         setPhase("error");
         return;
       }
       setWorksheets(body?.data?.worksheets || []);
       setPhase("ready");
     } catch {
-      setError("Network error");
+      setError(wsCopy("network_error"));
       setPhase("error");
     }
   }, [router]);
@@ -68,58 +75,68 @@ export default function TeacherWorksheetsListPage() {
   return (
     <Layout>
       <TeacherPortalShell
-        title={globalBurnDownCopy("pages__teacher__worksheets__index", "worksheets")}
+        title={wsCopy("worksheets")}
         backHref="/teacher/dashboard"
-        backLabel="← Back to dashboard"
+        backLabel={wsCopy("back_to_dashboard")}
       >
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <p className="text-white/70 text-sm">All your worksheets — whole class or selected students.</p>
+          <p className="text-white/70 text-sm">{wsCopy("subtitle")}</p>
           <Link
             href="/teacher/worksheets/new"
             className="inline-flex items-center px-4 py-2 rounded-xl bg-violet-500/90 text-black font-semibold text-sm hover:bg-violet-400"
             data-testid="teacher-worksheets-new-link"
           >
-            Create new worksheet
+            {wsCopy("create_new")}
           </Link>
         </div>
 
-        {phase === "loading" ? <p className="text-white/60">Loading…</p> : null}
+        {phase === "loading" ? (
+          <p className="text-white/60" data-testid="teacher-worksheets-loading">
+            {wsCopy("loading")}
+          </p>
+        ) : null}
         {phase === "error" ? <p className="text-red-300">{error}</p> : null}
 
-        {phase === "ready" && worksheets.length === 0 ? (
-          <p className="text-white/60">No worksheets yet.</p>
-        ) : null}
-
-        {phase === "ready" && worksheets.length > 0 ? (
-          <div className="grid gap-3">
-            {worksheets.map((w) => (
-              <div
-                key={w.worksheetId}
-                className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-start"
-              >
-                <div>
-                  <h3 className="font-bold text-white">{w.title}</h3>
-                  <p className="text-sm text-white/65 mt-1">
-                    {worksheetModeLabelHe(w.worksheetMode)} · {worksheetStatusLabelHe(w.status)}
-                    {w.assignmentScope === "selected_students" ? " · selected students" : " · class"}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2 justify-end">
-                  <Link
-                    href={manageHref(w)}
-                    className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+        {phase === "ready" ? (
+          <div data-testid="teacher-worksheets-ready">
+            {worksheets.length === 0 ? (
+              <p className="text-white/60" data-testid="teacher-worksheets-empty">
+                {wsCopy("empty")}
+              </p>
+            ) : (
+              <div className="grid gap-3" data-testid="teacher-worksheets-list">
+                {worksheets.map((w) => (
+                  <div
+                    key={w.worksheetId}
+                    className="rounded-2xl border border-white/10 bg-black/30 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-start"
                   >
-                    Manage
-                  </Link>
-                  <Link
-                    href={reportHref(w)}
-                    className="text-sm px-3 py-1.5 rounded-lg bg-violet-500/20 text-violet-100 border border-violet-400/30"
-                  >
-                    Report
-                  </Link>
-                </div>
+                    <div>
+                      <h3 className="font-bold text-white">{w.title}</h3>
+                      <p className="text-sm text-white/65 mt-1">
+                        {worksheetModeLabelHe(w.worksheetMode)} · {worksheetStatusLabelHe(w.status)}
+                        {w.assignmentScope === "selected_students"
+                          ? ` · ${wsCopy("selected_students")}`
+                          : ` · ${wsCopy("class_scope")}`}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 justify-end">
+                      <Link
+                        href={manageHref(w)}
+                        className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+                      >
+                        {wsCopy("manage")}
+                      </Link>
+                      <Link
+                        href={reportHref(w)}
+                        className="text-sm px-3 py-1.5 rounded-lg bg-violet-500/20 text-violet-100 border border-violet-400/30"
+                      >
+                        {wsCopy("report")}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         ) : null}
       </TeacherPortalShell>

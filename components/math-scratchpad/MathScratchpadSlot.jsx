@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
+import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { isMathScratchpadV1Enabled } from "../../utils/math-scratchpad/feature-flag";
 import { getScratchpadType } from "../../utils/math-scratchpad/scratchpad-registry";
 import { extractScratchpadOperands } from "../../utils/math-scratchpad/extract-operands";
@@ -228,7 +229,10 @@ export default function MathScratchpadSlot({
               }
               data-testid="math-scratchpad-open"
             >
-              Scratch pad
+              {globalBurnDownCopy(
+                "components__math-scratchpad__MathScratchpadPanel",
+                "scratch_pad"
+              )}
             </button>
           </div>
         ) : null}

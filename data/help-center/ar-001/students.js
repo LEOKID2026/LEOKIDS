@@ -4,10 +4,10 @@ export const STUDENT_ARTICLES = [
     "slug": "student-login",
     "section": "students",
     "title": "كيف يمكنني تسجيل الدخول؟",
-    "summary": "قم بتسجيل الدخول باستخدام اسم المستخدم الخاص بك ورقم التعريف الشخصي (PIN).",
+    "summary": "قم بتسجيل الدخول باستخدام اسم المستخدم الخاص بك ورمز PIN (PIN).",
     "keywords": [
       "تسجيل الدخول",
-      "دبوس"
+      "PIN"
     ],
     "audience": "طالب",
     "updatedAt": "2026-05-23",
@@ -28,7 +28,7 @@ export const STUDENT_ARTICLES = [
         "kind": "list",
         "ordered": true,
         "items": [
-          "اطلب من والديك اسم المستخدم والرمز الخاص بك",
+          "اطلب من ولي الأمر اسم المستخدم والرمز الخاص بك",
           "اكتبها في صفحة تسجيل الدخول",
           "اضغط على تسجيل الدخول"
         ]
@@ -40,8 +40,8 @@ export const STUDENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/students/student-login/desktop/login.png",
-        "alt": "شاشة تسجيل دخول الطالب",
-        "caption": "شاشة تسجيل دخول الطالب",
+        "alt": "شاشة تسجيل دخول التلميذ",
+        "caption": "شاشة تسجيل دخول التلميذ",
         "sources": {
           "mobile": "/help-center/screenshots/students/student-login/mobile/login.png",
           "tablet": "/help-center/screenshots/students/student-login/tablet/login.png"
@@ -53,9 +53,9 @@ export const STUDENT_ARTICLES = [
     "slug": "student-home-tour",
     "section": "students",
     "title": "صفحتي الرئيسية",
-    "summary": "ما تراه بعد تسجيل الدخول: الموضوعات والعملات المعدنية والصور الرمزية.",
+    "summary": "ما تراه بعد تسجيل الدخول: المواد والعملات المعدنية والصور الرمزية.",
     "keywords": [
-      "بيت",
+      "رئيسي",
       "طالب"
     ],
     "audience": "طالب",
@@ -75,7 +75,7 @@ export const STUDENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "هنا سترى اسمك وعدد العملات المعدنية التي لديك والمواضيع التي يمكنك فتحها."
+        "text": "هنا سترى اسمك وعدد العملات المعدنية التي لديك والمواد التي يمكنك فتحها."
       },
       {
         "kind": "video",
@@ -84,8 +84,8 @@ export const STUDENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/students/student-home-tour/desktop/home.png",
-        "alt": "الصفحة الرئيسية للطالب مع بطاقات الموضوع",
-        "caption": "الصفحة الرئيسية للطالب مع بطاقات الموضوع",
+        "alt": "الصفحة الرئيسية للتلميذ مع بطاقات المواد",
+        "caption": "الصفحة الرئيسية للتلميذ مع بطاقات المواد",
         "sources": {
           "mobile": "/help-center/screenshots/students/student-home-tour/mobile/home.png",
           "tablet": "/help-center/screenshots/students/student-home-tour/tablet/home.png"
@@ -96,10 +96,10 @@ export const STUDENT_ARTICLES = [
   {
     "slug": "choose-subject-and-grade",
     "section": "students",
-    "title": "اختيار الموضوع والصف",
-    "summary": "كيفية الدخول إلى التدريب في الموضوع الذي اخترته.",
+    "title": "اختيار المادة والصف",
+    "summary": "كيفية الدخول إلى التمرين في المادة التي اخترتها.",
     "keywords": [
-      "موضوع",
+      "مادة",
       "درجة"
     ],
     "audience": "طالب",
@@ -119,7 +119,7 @@ export const STUDENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "اختر موضوعًا من القائمة. سوف تتناسب الأنشطة مع درجتك."
+        "text": "اختر مادة من القائمة. ستتناسب الأنشطة مع صفّك."
       },
       {
         "kind": "video",
@@ -128,8 +128,8 @@ export const STUDENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/students/choose-subject-and-grade/desktop/subjects.png",
-        "alt": "قائمة المواضيع في مركز التعلم",
-        "caption": "قائمة المواضيع في مركز التعلم",
+        "alt": "قائمة المواد في مركز التعلم",
+        "caption": "قائمة المواد في مركز التعلم",
         "sources": {
           "mobile": "/help-center/screenshots/students/choose-subject-and-grade/mobile/subjects.png",
           "tablet": "/help-center/screenshots/students/choose-subject-and-grade/tablet/subjects.png"
@@ -237,18 +237,18 @@ export const STUDENT_ARTICLES = [
   {
     "slug": "daily-missions",
     "section": "students",
-    "title": "البعثات اليومية",
-    "summary": "المهام الصغيرة التي تساعدك على المضي قدما كل يوم.",
+    "title": "المهام اليومية",
+    "summary": "المهام الصغيرة التي تساعدك على المضي قدمًا كل يوم.",
     "keywords": [
-      "يوميًا",
-      "البعثات"
+      "يومي",
+      "المهام"
     ],
     "audience": "طالب",
     "updatedAt": "2026-05-23",
     "toc": [
       {
         "id": "missions",
-        "title": "البعثات"
+        "title": "المهام"
       }
     ],
     "blocks": [
@@ -256,7 +256,7 @@ export const STUDENT_ARTICLES = [
         "kind": "heading",
         "level": 2,
         "id": "missions",
-        "text": "البعثات"
+        "text": "المهام"
       },
       {
         "kind": "paragraph",
@@ -304,7 +304,7 @@ export const STUDENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "كلما تدربت أكثر في الشهر، كلما قطعت رحلتك أبعد. إنه يوضح مدى استمرارك في المضي قدمًا!"
+        "text": "كلّما تدرّبت أكثر خلال الشهر، تقدّمت أكثر في رحلتك. هذا يُظهر مثابرتك!"
       },
       {
         "kind": "screenshot",
@@ -325,11 +325,11 @@ export const STUDENT_ARTICLES = [
   {
     "slug": "coins-and-arcade",
     "section": "students",
-    "title": "العملات المعدنية والممرات",
+    "title": "العملات المعدنية وصالة الألعاب",
     "summary": "كيفية كسب النقود ولعب الألعاب عبر الإنترنت.",
     "keywords": [
       "عملات معدنية",
-      "ممر"
+      "صالة الألعاب"
     ],
     "audience": "طالب",
     "updatedAt": "2026-05-23",
@@ -348,7 +348,7 @@ export const STUDENT_ARTICLES = [
       },
       {
         "kind": "paragraph",
-        "text": "ممارسة وكسب العملات المعدنية. في الممرات، يمكنك لعب ألعاب على طراز اللوحة مع الأصدقاء."
+        "text": "ممارسة وكسب العملات المعدنية. في صالة الألعاب، يمكنك لعب ألعاب على طراز اللوحة مع الأصدقاء."
       },
       {
         "kind": "video",
@@ -357,8 +357,8 @@ export const STUDENT_ARTICLES = [
       {
         "kind": "screenshot",
         "path": "/help-center/screenshots/students/coins-and-arcade/desktop/arcade.png",
-        "alt": "صفحة الممرات",
-        "caption": "صفحة الممرات",
+        "alt": "صفحة صالة الألعاب",
+        "caption": "صفحة صالة الألعاب",
         "sources": {
           "mobile": "/help-center/screenshots/students/coins-and-arcade/mobile/arcade.png",
           "tablet": "/help-center/screenshots/students/coins-and-arcade/tablet/arcade.png"
@@ -369,7 +369,7 @@ export const STUDENT_ARTICLES = [
         "items": [
           {
             "href": "/student/arcade",
-            "label": "اذهب إلى الممرات"
+            "label": "اذهب إلى صالة الألعاب"
           }
         ]
       }
@@ -382,7 +382,7 @@ export const STUDENT_ARTICLES = [
     "summary": "كيفية اختيار شخصية أو صورة لملفك الشخصي.",
     "keywords": [
       "الصورة الرمزية",
-      "حساب تعريفي"
+      "ملف شخصي"
     ],
     "audience": "طالب",
     "updatedAt": "2026-05-23",
@@ -423,7 +423,7 @@ export const STUDENT_ARTICLES = [
     "slug": "offline-games",
     "section": "students",
     "title": "ألعاب غير متصلة بالإنترنت",
-    "summary": "العاب بدون انترنت على نفس الجهاز.",
+    "summary": "ألعاب بدون انترنت على نفس الجهاز.",
     "keywords": [
       "غير متصل",
       "لعبة"
@@ -479,7 +479,7 @@ export const STUDENT_ARTICLES = [
     "summary": "أوقات الدراسة، فترات الراحة، والاتساق.",
     "keywords": [
       "نصائح",
-      "يمارس"
+      "ممارسة"
     ],
     "audience": "طالب",
     "updatedAt": "2026-05-23",

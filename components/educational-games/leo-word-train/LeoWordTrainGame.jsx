@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import EducationalDifficultyGradeHint from "../EducationalDifficultyGradeHint.jsx";
 import EducationalGameHudFullscreenButton from "../EducationalGameHudFullscreenButton.jsx";
@@ -168,7 +169,7 @@ export default function LeoWordTrainGame({
     timerPausedRef.current = true;
     setCheckState("bad");
     setTrainAnim("shake");
-    const timeoutText = "Time's up! The train stayed at the station.";
+    const timeoutText = gamePackCopy("components__educational-games__leo-word-train__LeoWordTrainGame", "times_up");
     setFeedback(timeoutText);
     onTimeUp();
     playFeedback(timeoutText);
@@ -587,7 +588,7 @@ export default function LeoWordTrainGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🎉 All stations complete!</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-word-train__LeoWordTrainGame", "end_score", { score })}</p>
             <p className={frame.endStat}>✅ Successes: {successCount}/{tasksPerSession}</p>
             <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>
@@ -603,7 +604,7 @@ export default function LeoWordTrainGame({
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
             <h2 className={frame.endTitle}>🚂 The train stopped</h2>
-            <p className={frame.endStat}>⭐ Score: {score}</p>
+            <p className={frame.endStat}>{gamePackCopy("components__educational-games__leo-word-train__LeoWordTrainGame", "end_score", { score })}</p>
             <p className={frame.endStat}>✅ Successes: {successCount}</p>
             <p className={frame.endStat}>❌ Mistakes: {mistakes}</p>
             <div className={frame.endActions}>

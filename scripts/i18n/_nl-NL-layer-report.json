@@ -1,0 +1,17 @@
+{
+  "namespaceFiles": 0,
+  "packFiles": 0,
+  "scienceRecords": 0,
+  "bookFiles": 0,
+  "helpArticles": 40,
+  "stringsSeen": 713,
+  "translated": 247,
+  "skipped": 139,
+  "bySource": {
+    "cache": 344,
+    "override": 13
+  },
+  "domains": {},
+  "forbiddenHits": [],
+  "cacheSize": 21939
+}

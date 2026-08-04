@@ -26,6 +26,7 @@ import {
 } from "../../lib/learning-client/studentCardsCacheClient.js";
 import { demoPackCopyForLocale } from "../../lib/demo/demo-pack-copy.js";
 import { DEMO_COIN_BALANCE } from "../../components/demo/demo-display-fixtures.js";
+import { buildDemoCardsShopFixture } from "../../lib/demo/demo-cards-shop-fixture.js";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 const DEMO_CARDS_DIAMOND_BALANCE = 10;
@@ -157,7 +158,7 @@ function coinBalanceBadgeClass(theme) {
   return `${shell} border-amber-400/50 bg-amber-500/15 text-amber-900`;
 }
 
-function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games", backLabel }) {
+function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games", backLabel, locale }) {
   const gridCols = coinBalanceAmount != null
     ? "grid-cols-[auto_auto]"
     : "grid-cols-[auto]";
@@ -170,12 +171,12 @@ function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games
       {coinBalanceAmount != null ? (
         <span
           className={`${coinBalanceBadgeClass(theme)} ${cardsHeaderCoinSizeClass()}`}
-          aria-label={formatCoinAmountHe(coinBalanceAmount)}
+          aria-label={formatCoinAmountHe(coinBalanceAmount, locale)}
         >
           <span aria-hidden className="text-2xl sm:text-[1.75rem] leading-none shrink-0">
             🪙
           </span>
-          <span className="shrink-0">{formatCoinAmountNumberHe(coinBalanceAmount)}</span>
+          <span className="shrink-0">{formatCoinAmountNumberHe(coinBalanceAmount, locale)}</span>
         </span>
       ) : null}
     </div>
@@ -210,7 +211,7 @@ export default function StudentCardsPage() {
   const [messageHe, setMessageHe] = useState("");
   const [messageIsError, setMessageIsError] = useState(false);
 
-  const rewardsEnabled = isCardRewardsEnabledClient();
+  const rewardsEnabled = isCardRewardsEnabledClient() || isDemoMode();
 
   const fetchCardsEndpoint = useCallback(async (path) => {
     const res = await fetch(path, {
@@ -352,17 +353,33 @@ export default function StudentCardsPage() {
       setPayload((prev) => {
         const next = { ...(prev || {}), coinBalance: DEMO_COIN_BALANCE };
         if (tabId === "collection") next.collection = json.collection;
-        if (tabId === "shop") next.shop = json.shop;
+        if (tabId === "shop") {
+          next.shop =
+            Array.isArray(json.shop) && json.shop.length > 0
+              ? json.shop
+              : buildDemoCardsShopFixture(DEMO_COIN_BALANCE).shop;
+        }
         if (tabId === "catalog") next.catalog = json.catalog;
         if (tabId === "series") next.seriesProgress = json.seriesProgress;
         return next;
       });
       loadedTabsRef.current.add(tabId);
       setLoadedTabs(new Set(loadedTabsRef.current));
-    } catch {
+    } catch (err) {
+      // Shop must still open with a deterministic fixture when the demo API fails.
+      if (tabId === "shop") {
+        setPayload((prev) => ({
+          ...(prev || {}),
+          coinBalance: DEMO_COIN_BALANCE,
+          shop: buildDemoCardsShopFixture(DEMO_COIN_BALANCE).shop,
+        }));
+        loadedTabsRef.current.add("shop");
+        setLoadedTabs(new Set(loadedTabsRef.current));
+        return;
+      }
       setMessageIsError(true);
       setMessageHe(demoPackCopyForLocale(locale, "cards", "loadFailed"));
-      throw new Error("demo_cards_load_failed");
+      throw err instanceof Error ? err : new Error("demo_cards_load_failed");
     } finally {
       setTabLoading((prev) => ({ ...prev, [tabId]: false }));
     }
@@ -374,9 +391,29 @@ export default function StudentCardsPage() {
     loadedTabsRef.current = new Set();
     setLoadedTabs(new Set());
     try {
-      await Promise.all([loadDemoTabData("collection"), loadDemoTabData("shop")]);
+      const settled = await Promise.allSettled([
+        loadDemoTabData("collection"),
+        loadDemoTabData("shop"),
+      ]);
+      const shopReady = loadedTabsRef.current.has("shop");
+      const collectionReady = loadedTabsRef.current.has("collection");
+      if (!shopReady && !collectionReady) {
+        const firstErr = settled.find((r) => r.status === "rejected");
+        setCardsError(demoPackCopyForLocale(locale, "cards", "loadFailed"));
+        setCardsPhase("error");
+        if (firstErr?.status === "rejected") throw firstErr.reason;
+        throw new Error("demo_cards_load_failed");
+      }
+      // Ensure shop fixture is present even if the shop request raced/cleared.
+      if (!shopReady) {
+        await loadDemoTabData("shop", { force: true });
+      }
       setCardsPhase("ok");
     } catch {
+      if (loadedTabsRef.current.has("shop") || loadedTabsRef.current.has("collection")) {
+        setCardsPhase("ok");
+        return;
+      }
       setCardsError(demoPackCopyForLocale(locale, "cards", "loadFailed"));
       setCardsPhase("error");
     }
@@ -449,8 +486,19 @@ export default function StudentCardsPage() {
 
   const handlePurchase = async (cardId) => {
     if (isDemoMode()) {
-      setMessageIsError(true);
-      setMessageHe(demoPackCopyForLocale(locale, "cards", "purchaseBlocked"));
+      const shopCard = payload?.shop?.find((c) => c.id === cardId);
+      if (!shopCard || shopCard.alreadyOwned) return;
+      if (shopCard.canAfford === false || Number(shopCard.missingCoins) > 0) {
+        setMessageIsError(true);
+        setMessageHe(copy("shop", "notEnoughCoins"));
+        return;
+      }
+      setMessageIsError(false);
+      setMessageHe(
+        copy("shop", "purchaseSuccess", {
+          name: shopCard.nameHe || "",
+        }),
+      );
       return;
     }
     const shopCard = payload?.shop?.find((c) => c.id === cardId);
@@ -509,7 +557,7 @@ export default function StudentCardsPage() {
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins) })}\n${copy("shop", "sellConfirmBody")}`,
+      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins, locale) })}\n${copy("shop", "sellConfirmBody")}`,
     );
     if (!confirmed) return;
 
@@ -546,7 +594,7 @@ export default function StudentCardsPage() {
         setMessageHe(
           copy("shopView", "sellSuccess", {
             name: soldName || copy("fallback", "rewardCard"),
-            amount: formatCoinAmountHe(json.sellbackCoins || 0),
+            amount: formatCoinAmountHe(json.sellbackCoins || 0, locale),
           }),
         );
       }
@@ -581,6 +629,7 @@ export default function StudentCardsPage() {
               coinBalanceAmount={coinBalanceAmount}
               backVariant="primary"
               backLabel={copy("cardsPage", "kidsWorldBack")}
+              locale={locale}
             />
           </div>
         </div>
@@ -591,6 +640,120 @@ export default function StudentCardsPage() {
   const studentDisplayName = student?.full_name ?? "";
 
   const renderTabContent = () => {
+    // Keep shop marker mounted as soon as the shop tab is selected (even during page load).
+    if (activeTab === "shop" && cardsPhase !== "idle") {
+      const shopLoading =
+        cardsPhase === "loading" || tabLoading.shop || !loadedTabs.has("shop");
+      const shopList =
+        payload?.shop?.length > 0
+          ? payload.shop
+          : isDemoMode()
+            ? buildDemoCardsShopFixture(DEMO_COIN_BALANCE).shop
+            : payload?.shop || [];
+      const demoShop = isDemoMode();
+      if (shopLoading && (!shopList || shopList.length === 0) && cardsPhase !== "error") {
+        return (
+          <div data-testid="student-cards-shop-panel" data-shop-ready="false">
+            <StudentLoadingPanel message={copy("cardsPage", "loading")} reportPage />
+          </div>
+        );
+      }
+      // Demo error recovery: still render shop fixture so the panel marker stays open.
+      if (cardsPhase === "error" && demoShop && (!payload?.shop || payload.shop.length === 0)) {
+        // fall through with fixture shopList
+      } else if (cardsPhase === "error" && !demoShop) {
+        return (
+          <div className={T.errorBox}>
+            <p className={T.errorTitle}>{cardsError}</p>
+            <button type="button" onClick={() => void loadInitialCards()} className={T.errorBtn}>
+              {copy("cardsPage", "tryAgain")}
+            </button>
+          </div>
+        );
+      }
+      const shopPreviewCards = shopList.map((c) =>
+        c.alreadyOwned ? c : { ...c, showLockedStamp: true }
+      );
+      return (
+        <div data-testid="student-cards-shop-panel" data-shop-ready="true">
+        <WindowedStudentCardsGrid
+          items={shopList}
+          emptyMessage={copy("shopView", "empty")}
+          T={T}
+          previewCards={shopPreviewCards}
+          studentFullName={studentDisplayName}
+          getPreviewAllowDownload={(card) => !demoShop && card.alreadyOwned === true}
+          renderCardProps={(card) => {
+            const canBuyDemo = demoShop && !card.alreadyOwned;
+            const canBuy = demoShop
+              ? canBuyDemo
+              : card.canAfford === true && !card.alreadyOwned;
+            const canSell = !demoShop && card.canSellDuplicate === true && card.sellbackCoins > 0;
+            const ownedOnly = !demoShop && card.alreadyOwned && !canSell;
+            const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("en-US");
+            const sellBusy = actionBusy === `sell:${card.id}`;
+            const buyBusy = actionBusy === card.id;
+            const showNeedCoins =
+              !card.alreadyOwned &&
+              (card.canAfford === false || Number(card.missingCoins) > 0);
+            return {
+              showLockedStamp: !card.alreadyOwned,
+              allowDownload: !demoShop && card.alreadyOwned,
+              footer: (
+                <>
+                  <p className={`text-sm font-semibold ${T.statValue}`}>
+                    {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins, locale) })}
+                  </p>
+                  {card.sellbackCoins > 0 ? (
+                    <p className={`text-xs leading-snug ${T.tileSub}`}>
+                      {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins, locale) })}
+                    </p>
+                  ) : (
+                    <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
+                  )}
+                  <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
+                    {showNeedCoins
+                      ? card.missingCoins > 0
+                        ? copy("shopView", "needMoreCoins", {
+                            amount: formatCoinAmountHe(card.missingCoins, locale),
+                          })
+                        : copy("shopView", "notEnoughCoinsShort")
+                      : "\u00a0"}
+                  </p>
+                  <button
+                    type="button"
+                    disabled={ownedOnly || sellBusy || buyBusy || (!canBuy && !canSell)}
+                    onClick={() => {
+                      if (canSell) void handleSellDuplicate(card);
+                      else if (canBuy || canBuyDemo) void handlePurchase(card.id);
+                    }}
+                    className={
+                      ownedOnly
+                        ? `${T.ctaPrimary} text-xs w-full !bg-amber-500 hover:!bg-amber-500 !text-white shadow-md cursor-default disabled:!opacity-100`
+                        : canSell
+                          ? `${T.ctaGames} text-xs w-full disabled:opacity-50 disabled:pointer-events-none`
+                          : `${T.ctaPrimary} text-xs w-full disabled:opacity-50 disabled:pointer-events-none`
+                    }
+                  >
+                    {canSell
+                      ? sellBusy
+                        ? copy("shopView", "selling")
+                        : copy("shop", "sellDuplicate")
+                      : card.alreadyOwned
+                        ? copy("shop", "alreadyOwned")
+                        : buyBusy
+                          ? copy("shopView", "buying")
+                          : copy("shopView", "buyFor", { price: priceLabel })}
+                  </button>
+                </>
+              ),
+            };
+          }}
+        />
+        </div>
+      );
+    }
+
     if (cardsPhase === "loading") {
       return <StudentLoadingPanel message={copy("cardsPage", "loading")} reportPage />;
     }
@@ -626,85 +789,6 @@ export default function StudentCardsPage() {
             footer: null,
             allowDownload: true,
           })}
-        />
-      );
-    }
-
-    if (activeTab === "shop") {
-      const shopList = payload?.shop || [];
-      const demoShop = isDemoMode();
-      const shopPreviewCards = shopList.map((c) =>
-        c.alreadyOwned ? c : { ...c, showLockedStamp: true }
-      );
-      return (
-        <WindowedStudentCardsGrid
-          items={shopList}
-          emptyMessage={copy("shopView", "empty")}
-          T={T}
-          previewCards={shopPreviewCards}
-          studentFullName={studentDisplayName}
-          getPreviewAllowDownload={(card) => !demoShop && card.alreadyOwned === true}
-          renderCardProps={(card) => {
-            const canBuy = !demoShop && card.canAfford === true && !card.alreadyOwned;
-            const canSell = !demoShop && card.canSellDuplicate === true && card.sellbackCoins > 0;
-            const ownedOnly = !demoShop && card.alreadyOwned && !canSell;
-            const priceLabel = Math.floor(Number(card.priceCoins) || 0).toLocaleString("en-US");
-            const sellBusy = actionBusy === `sell:${card.id}`;
-            const buyBusy = actionBusy === card.id;
-            return {
-              showLockedStamp: !card.alreadyOwned,
-              allowDownload: !demoShop && card.alreadyOwned,
-              footer: (
-                <>
-                  <p className={`text-sm font-semibold ${T.statValue}`}>
-                    {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins) })}
-                  </p>
-                  {card.sellbackCoins > 0 ? (
-                    <p className={`text-xs leading-snug ${T.tileSub}`}>
-                      {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins) })}
-                    </p>
-                  ) : (
-                    <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
-                  )}
-                  <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>
-                    {!demoShop && !card.alreadyOwned && !canBuy
-                      ? card.missingCoins > 0
-                        ? copy("shopView", "needMoreCoins", {
-                            amount: formatCoinAmountHe(card.missingCoins),
-                          })
-                        : copy("shopView", "notEnoughCoinsShort")
-                      : "\u00a0"}
-                  </p>
-                  <button
-                    type="button"
-                    disabled={demoShop || ownedOnly || sellBusy || buyBusy || (!canBuy && !canSell)}
-                    onClick={() => {
-                      if (demoShop) return;
-                      if (canSell) void handleSellDuplicate(card);
-                      else if (canBuy) void handlePurchase(card.id);
-                    }}
-                    className={
-                      ownedOnly
-                        ? `${T.ctaPrimary} text-xs w-full !bg-amber-500 hover:!bg-amber-500 !text-white shadow-md cursor-default disabled:!opacity-100`
-                        : canSell
-                          ? `${T.ctaGames} text-xs w-full disabled:opacity-50 disabled:pointer-events-none`
-                          : `${T.ctaPrimary} text-xs w-full disabled:opacity-50 disabled:pointer-events-none`
-                    }
-                  >
-                    {canSell
-                      ? sellBusy
-                        ? copy("shopView", "selling")
-                        : copy("shop", "sellDuplicate")
-                      : card.alreadyOwned
-                        ? copy("shop", "alreadyOwned")
-                        : buyBusy
-                          ? copy("shopView", "buying")
-                          : copy("shopView", "buyFor", { price: priceLabel })}
-                  </button>
-                </>
-              ),
-            };
-          }}
         />
       );
     }
@@ -770,6 +854,7 @@ export default function StudentCardsPage() {
               theme={theme}
               coinBalanceAmount={coinBalanceAmount}
               backLabel={copy("cardsPage", "kidsWorldBack")}
+              locale={locale}
             />
           </div>
         </header>
@@ -795,6 +880,7 @@ export default function StudentCardsPage() {
             <button
               key={tab.id}
               type="button"
+              data-testid={`student-cards-tab-${tab.id}`}
               onClick={() => setActiveTab(tab.id)}
               className={tabButtonClass(tab.id, activeTab === tab.id)}
             >

@@ -18,23 +18,35 @@ const APPROVED_TREND_SOURCES = new Set([
   EVIDENCE_SOURCE.PARENT_ASSIGNED
 ]);
 
-export const TREND_V1_PARENT_LINE_HE = Object.freeze({
-  improving:
-    "Trend for this period: improving - accuracy is higher in the later part of the period than at the start.",
-  stable:
-    "Trend for this period: no significant change - it still helps to reinforce this topic with short practice.",
-  declining:
-    "Trend for this period: needs reinforcement - there were more mistakes in the later part of the period, so short practice would help.",
-  insufficient_data:
-    "There still isn't enough of a practice streak to identify a trend over time."
-});
+const TREND_SLUG = "utils__parent-report-topic-trend-v1";
+
+export const TREND_V1_PARENT_LINE_HE = {
+  get improving() {
+    return reportPackCopy(TREND_SLUG, "line_improving");
+  },
+  get stable() {
+    return reportPackCopy(TREND_SLUG, "line_stable");
+  },
+  get declining() {
+    return reportPackCopy(TREND_SLUG, "line_declining");
+  },
+  get insufficient_data() {
+    return reportPackCopy(TREND_SLUG, "line_insufficient_data");
+  },
+};
 
 /** Short status label shown after "Trend for this period:" in parent-facing lines. */
-export const TREND_V1_STATUS_LABEL_HE = Object.freeze({
-  improving: reportPackCopy("utils__parent-report-topic-trend-v1", "improving"),
-  stable: reportPackCopy("utils__parent-report-topic-trend-v1", "no_significant_change"),
-  declining: reportPackCopy("utils__parent-report-topic-trend-v1", "needs_reinforcement")
-});
+export const TREND_V1_STATUS_LABEL_HE = {
+  get improving() {
+    return reportPackCopy(TREND_SLUG, "improving");
+  },
+  get stable() {
+    return reportPackCopy(TREND_SLUG, "no_significant_change");
+  },
+  get declining() {
+    return reportPackCopy(TREND_SLUG, "needs_reinforcement");
+  },
+};
 
 /** Aggregate stores `moledet_geography`; V2 maps use `moledet-geography`. */
 export const TREND_SUBJECT_STORE_KEY = Object.freeze({

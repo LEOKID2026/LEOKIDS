@@ -6,6 +6,13 @@
     "go_back_to_the_card_shop_and_make_sure_cards_are_available": "Go back to the card shop and make sure cards are available",
     "initgamewithdifficulty_difficulty": "initGameWithDifficulty(difficulty)}\n                />",
     "not_enough_shop_cards_for_memory": "Not enough shop cards for Memory",
-    "loading_cards_from_the_shop": "Loading cards from the shop…"
+    "loading_cards_from_the_shop": "Loading cards from the shop…",
+    "difficulty_easy": "Easy",
+    "difficulty_medium": "Medium",
+    "difficulty_hard": "Hard",
+    "sec": "sec",
+    "face_up_card": "Face-up card",
+    "face_down_card": "Face-down card",
+    "card": "Card"
   }
 }

@@ -1,6 +1,6 @@
 {
   "copy": {
-    "this_subject_is_locked_by_the_parents": "هذا الموضوع مغلق من قبل الوالدين.",
+    "this_subject_is_locked_by_the_parents": "هذه المادة مغلقة من قِبل أولياء الأمور.",
     "you_don_t_have_permission_to_select_this_grade": "ليس لديك الإذن لتحديد هذا الصف."
   }
 }

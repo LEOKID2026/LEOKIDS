@@ -1,0 +1,104 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "name": "namespaces-count",
+      "ok": true,
+      "detail": 15
+    },
+    {
+      "name": "locale-parse",
+      "ok": true,
+      "detail": 15
+    },
+    {
+      "name": "namespace-key-parity",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "content-pack-parity",
+      "ok": true,
+      "detail": 396
+    },
+    {
+      "name": "content-pack-parse",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "science-parity",
+      "ok": false,
+      "detail": {
+        "en": 1017,
+        "de": 1017,
+        "sciMissing": 1017,
+        "optMismatch": 0,
+        "answerTouched": 0
+      }
+    },
+    {
+      "name": "science-en-leak",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "learning-book-parity",
+      "ok": true,
+      "detail": 450
+    },
+    {
+      "name": "help-slug-parity",
+      "ok": false,
+      "detail": {
+        "files": 1,
+        "helpParity": 1
+      }
+    },
+    {
+      "name": "word-meaning-parity",
+      "ok": false,
+      "detail": {
+        "en": 1,
+        "de": 1,
+        "wmMissing": 1
+      }
+    },
+    {
+      "name": "term-scan",
+      "ok": true,
+      "detail": {
+        "studentHits": 0,
+        "gradeHits": 0,
+        "atCh": 0
+      }
+    },
+    {
+      "name": "math-geometry",
+      "ok": false,
+      "detail": {
+        "missingTerms": [
+          "Mathematik",
+          "Geometrie",
+          "Addition",
+          "Subtraktion",
+          "Multiplikation",
+          "Division",
+          "Fläche",
+          "Umfang"
+        ],
+        "badMoney": false
+      }
+    },
+    {
+      "name": "writing-requirements",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "hybrid-student",
+      "ok": true,
+      "detail": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "zero_evidence_line": "{subject}: not practiced in the selected period",
+    "thin_evidence_line": "{subject}: {n} questions in the selected period - still limited information; it is worth continuing to practice and checking again"
+  }
+}

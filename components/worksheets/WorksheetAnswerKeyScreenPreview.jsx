@@ -4,7 +4,7 @@
 
 import WorksheetScreenHeader from "./WorksheetScreenHeader.jsx";
 import WorksheetAnswerKeyList from "./WorksheetAnswerKeyList.jsx";
-import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
+import { useWorksheetUi, useWorksheetShellAttrs } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
@@ -13,10 +13,11 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
  */
 export default function WorksheetAnswerKeyScreenPreview({ answerKeyPayload }) {
   const ui = useWorksheetUi();
+  const shellAttrs = useWorksheetShellAttrs();
   const { meta, answers } = answerKeyPayload;
 
   return (
-    <div className="worksheet-screen-preview" aria-label={ui.answerKeyTitle} dir="ltr" lang="en">
+    <div className="worksheet-screen-preview" aria-label={ui.answerKeyTitle} {...shellAttrs}>
       <WorksheetScreenHeader titleHe={ui.answerKeyTitle} meta={meta} variant="answer-key" />
       <WorksheetAnswerKeyList answers={answers} mode="screen" />
     </div>

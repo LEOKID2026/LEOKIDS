@@ -7,6 +7,7 @@ import { MathFractionExpression } from "../learning/MathFractionExpression.jsx";
 import WorksheetMathLtr from "./WorksheetMathLtr.jsx";
 import { isWorksheetNumericOption } from "../../lib/worksheets/worksheet-math-ltr-display.js";
 import { hasStackedFractionToken } from "../../utils/math-fraction-expression-parse.js";
+import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 const OPTION_LABELS = ["A", "B", "C", "D", "E", "F"];
 
@@ -32,6 +33,7 @@ export default function WorksheetOptionsGrid({
   mathNumericOptions = false,
   optionCaseMode = null,
 }) {
+  const ui = useWorksheetUi();
   if (!optionsHe.length) return null;
 
   const listClass =
@@ -41,7 +43,7 @@ export default function WorksheetOptionsGrid({
 
   return (
     <div className="worksheet-options-section" dir="ltr">
-      {showHeading ? <p className="worksheet-options-heading">Options:</p> : null}
+      {showHeading ? <p className="worksheet-options-heading">{ui.optionsHeading}</p> : null}
       <ol className={listClass}>
         {optionsHe.map((opt, i) => {
           const label = OPTION_LABELS[i] || String(i + 1);

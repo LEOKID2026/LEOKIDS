@@ -1,0 +1,660 @@
+{
+  "body_1": {
+    "stem": "Wo befindet sich das Herz im menschlichen Körper?",
+    "options": [
+      "im Brustkorb, auf der rechten Körperseite",
+      "im Brustkorb, etwas links von der Mitte",
+      "im oberen Bauchraum, in der Nähe der Leber",
+      "auf Höhe des Halses, hinter der Luftröhre"
+    ],
+    "explanation": "Das Herz liegt im Brustkorb, etwas links von der Körpermitte, und pumpt Blut durch den Körper.",
+    "theoryLines": [
+      "Das Herz ist ein Muskel, der ohne Pause arbeitet.",
+      "Es pumpt Blut, das Sauerstoff und Nährstoffe zu allen Körperteilen transportiert."
+    ]
+  },
+  "body_2": {
+    "stem": "Welches Organ nutzen wir zum Sehen?",
+    "options": [
+      "Ohren",
+      "Augen",
+      "Nase",
+      "Zunge"
+    ],
+    "explanation": "Die Augen nehmen Licht auf, damit das Gehirn ein Bild von der Umgebung erzeugen kann.",
+    "theoryLines": [
+      "Die fünf Hauptsinne sind Sehen, Hören, Riechen, Schmecken und Tasten.",
+      "Die Augen senden Signale über den Sehnerv an das Gehirn."
+    ]
+  },
+  "body_3": {
+    "stem": "Was ist die Hauptaufgabe des Atemsystems?",
+    "options": [
+      "Blut zu bewegen, das bereits Sauerstoff zu den Körpergeweben trägt",
+      "Sauerstoff und Kohlenstoffdioxid mit der Luft auszutauschen",
+      "Nahrung in den Därmen in kleine Bestandteile zu zerlegen",
+      "Den Körper zu stützen, Organe zu schützen und bei Bewegungen zu helfen"
+    ],
+    "explanation": "Das Atemsystem nimmt den Sauerstoff auf, den Zellen brauchen, und hilft dem Körper, Kohlenstoffdioxid abzugeben.",
+    "theoryLines": [
+      "Zum Atemsystem gehören Nase, Luftröhre und Lungen.",
+      "Der Gasaustausch zwischen Luft und Blut findet in den Lungen statt."
+    ]
+  },
+  "body_4": {
+    "stem": "Wie helfen Muskeln und Skelett dem Körper bei der Bewegung?",
+    "options": [
+      "Muskeln ziehen an den Knochen und erzeugen so Bewegung",
+      "Knochen bewegen sich von allein, ohne Muskeln",
+      "Der Körper bewegt sich, ohne Muskeln oder Knochen zu nutzen",
+      "Bewegung entsteht nur durch das Atmen"
+    ],
+    "explanation": "Knochen geben dem Körper Halt, und Muskeln ziehen an diesen Knochen, damit du dich bewegen kannst.",
+    "theoryLines": [
+      "Ohne Skelett wäre der Körper weich und instabil.",
+      "Ohne Muskeln könnten sich Knochen nicht von allein bewegen."
+    ]
+  },
+  "body_5": {
+    "stem": "Welcher Satz beschreibt die Aufgabe des Kreislaufsystems am besten?",
+    "options": [
+      "Es verdaut Nahrung und zerlegt sie in einfache Bestandteile.",
+      "Es transportiert Nervensignale zwischen Gehirn und Muskeln.",
+      "Es bewegt Blut, das Sauerstoff und Nährstoffe transportiert und Abfallstoffe abführt.",
+      "Es schützt den Körper vor allem durch die Haut, nicht durch den Blutfluss."
+    ],
+    "explanation": "Herz, Blutgefäße und Blut arbeiten zusammen, um nützliche Stoffe zu liefern und Abfallstoffe abzutransportieren.",
+    "theoryLines": [
+      "Blut fließt durch Arterien, Venen und winzige Kapillaren.",
+      "Das Herz wirkt wie eine Pumpe, die das Blut im Körper in Bewegung hält."
+    ]
+  },
+  "body_6": {
+    "stem": "Was ist die Hauptaufgabe des Nervensystems?",
+    "options": [
+      "Informationen zwischen Körperteilen zu koordinieren und zu senden",
+      "Nur Energie zu speichern, ohne Verbindung zu Informationen",
+      "Körpersysteme nur vollständig voneinander getrennt zu halten",
+      "Den Körper nur warm zu halten"
+    ],
+    "explanation": "Das Nervensystem sammelt Sinneseindrücke, verarbeitet sie im Gehirn und sendet Anweisungen an Muskeln und Organe.",
+    "theoryLines": [
+      "Zum Nervensystem gehören Gehirn, Rückenmark und viele Nerven.",
+      "Nerven leiten schnelle elektrische Signale durch den Körper."
+    ]
+  },
+  "body_7": {
+    "stem": "Welches Organ nutzen wir dazu?",
+    "options": [
+      "Augen.",
+      "Ohren.",
+      "Nase.",
+      "Zunge."
+    ],
+    "explanation": "Ohren sind das Organ. Über sie gelangen Signale ins Gehirn.",
+    "theoryLines": [
+      "Teil ( ), Teil ( Knochen ) ( ).",
+      "Von der Haut."
+    ]
+  },
+  "body_8": {
+    "stem": "Was ist die Aufgabe des Mundes?",
+    "options": [
+      "Nahrung vollständig so zu verdauen wie der Magen",
+      "Zu essen, zu trinken und zu sprechen",
+      "Vollständig aufgenommene Nahrung direkt ins Blut zu schicken",
+      "Bei jedem Atemzug Sauerstoff im Blut mit Luft auszutauschen"
+    ],
+    "explanation": "Der Mund dient zum Essen, Trinken und Sprechen. Die Zähne zerkauen Nahrung, und die Zunge hilft beim Schmecken.",
+    "theoryLines": [
+      "Der Mund ist der Beginn des Verdauungssystems.",
+      "Die Zunge hilft dir, Nahrung zu schmecken und Wörter zu formen."
+    ]
+  },
+  "body_9": {
+    "stem": "Was ist die Aufgabe der Hände?",
+    "options": [
+      "Nur den Handmuskeln Sauerstoff über die Haut der Handflächen zu geben",
+      "Zu halten, zu tasten und präzise Handlungen auszuführen",
+      "Dieselben Gelenke zu bewegen, die vor allem die Beine steuern",
+      "Gefiltertes Blut von den Nieren zum Gehirn zu transportieren"
+    ],
+    "explanation": "Hände helfen dir, Gegenstände zu halten, Oberflächen zu fühlen und mit den Fingern sorgfältig zu arbeiten.",
+    "theoryLines": [
+      "Hände helfen bei Arbeit, Spiel und Selbstversorgung.",
+      "Die Fingerkuppen sind besonders empfindlich für Berührung."
+    ]
+  },
+  "body_10": {
+    "stem": "Was ist die Aufgabe der Beine?",
+    "options": [
+      "Gerüche aufzunehmen und wie die Nase ans Gehirn zu senden",
+      "Zu gehen, zu laufen und zu springen",
+      "Gase zwischen Blut und Luft wie die Lungen auszutauschen",
+      "Vor allem die Arme über die Schultergelenke zu bewegen"
+    ],
+    "explanation": "Beine ermöglichen Bewegungen wie Gehen, Laufen und Springen.",
+    "theoryLines": [
+      "Beine sind stark genug, um das Körpergewicht zu tragen.",
+      "Zwei Beine helfen Menschen, aufrecht zu stehen und zu gehen."
+    ]
+  },
+  "body_11": {
+    "stem": "Wie viele Hauptsinne haben Menschen?",
+    "options": [
+      "Fünf: Sehen, Hören, Riechen, Schmecken und Tasten",
+      "Drei: nur Sehen, Hören und Schmecken",
+      "Zwei: meist nur Sehen und Hören",
+      "Sieben Sinne, bei jedem Tier gleich"
+    ],
+    "explanation": "Menschen haben fünf Hauptsinne, die ihnen helfen, die Welt zu verstehen.",
+    "theoryLines": [
+      "Jeder Sinn arbeitet mit einem anderen Körperorgan.",
+      "Sinne helfen uns, sicher zu bleiben und zu lernen."
+    ]
+  },
+  "body_12": {
+    "stem": "Was ist das erste Verdauungsorgan im Körper?",
+    "options": [
+      "Magen",
+      "Mund",
+      "Dünndarm",
+      "Speiseröhre"
+    ],
+    "explanation": "Die Verdauung beginnt im Mund, wo Nahrung zerkaut und mit Speichel vermischt wird.",
+    "theoryLines": [
+      "Das Verdauungssystem beginnt am Mund und endet am After.",
+      "Speichel hilft, Nahrung zu zerlegen und erleichtert das Schlucken."
+    ]
+  },
+  "body_13": {
+    "stem": "Was ist die Aufgabe der Lungen?",
+    "options": [
+      "Nahrung in kleine Bestandteile zu zerlegen, die im Darm aufgenommen werden",
+      "Zu atmen — Sauerstoff aufzunehmen und Kohlenstoffdioxid abzugeben",
+      "Blut wie eine zentrale Pumpe durch den Körper zu pumpen",
+      "Abfallstoffe zu filtern und Wasser sowie Salze im Blut auszugleichen"
+    ],
+    "explanation": "Die Lungen nehmen Sauerstoff aus der Luft ins Blut auf und geben Kohlenstoffdioxid aus dem Körper ab.",
+    "theoryLines": [
+      "Menschen haben zwei Lungen — eine rechts und eine links.",
+      "Der Brustkorb hilft, die Lungen zu schützen."
+    ]
+  },
+  "body_14": {
+    "stem": "Was ist die Hauptaufgabe der Knochen im menschlichen Körper?",
+    "options": [
+      "Knochen zerlegen und nehmen Nahrung bei der Verdauung auf.",
+      "Knochen stützen die Körperform und schützen wichtige Organe wie Gehirn und Herz.",
+      "Knochen pumpen Blut durch den ganzen Körper.",
+      "Knochen erzeugen den Sauerstoff, den wir atmen."
+    ],
+    "explanation": "Knochen bilden das Skelett, das dem Körper Form und Halt gibt und lebenswichtige Organe schützt. Knochen arbeiten auch mit Muskeln zusammen, damit Bewegung möglich ist.",
+    "theoryLines": [
+      "Der menschliche Körper hat 206 Knochen.",
+      "Knochen schützen lebenswichtige Organe wie Gehirn, Herz und Lungen."
+    ]
+  },
+  "body_15": {
+    "stem": "Was ist die Aufgabe des Verdauungssystems?",
+    "options": [
+      "Gase zwischen Blut und Luft in den Lungen auszutauschen",
+      "Nahrung in kleine Bestandteile zu zerlegen, die der Körper nutzen kann",
+      "Sauerstoff und Nährstoffe in Blutgefäßen zu allen Geweben zu transportieren",
+      "Sinneseindrücke aufzunehmen und schnelle Signale zu senden"
+    ],
+    "explanation": "Das Verdauungssystem zerlegt Nahrung in Nährstoffe, die der Körper für Energie und Wachstum aufnehmen kann.",
+    "theoryLines": [
+      "Zum Verdauungssystem gehören Mund, Speiseröhre, Magen und Därme.",
+      "Der Magen nutzt Säuren und Enzyme, um Nahrung zu zerlegen."
+    ]
+  },
+  "body_16": {
+    "stem": "Was ist die Hauptaufgabe der Muskeln im menschlichen Körper?",
+    "options": [
+      "Muskeln verdauen Nahrung und nehmen daraus Nährstoffe auf.",
+      "Muskeln erzeugen die Kraft für Bewegung, indem sie sich zusammenziehen und entspannen.",
+      "Muskeln erzeugen rote Blutkörperchen für das Kreislaufsystem.",
+      "Muskeln leiten Lichtsignale von den Augen zum Gehirn."
+    ],
+    "explanation": "Muskeln sind an Knochen befestigt. Wenn sich ein Muskel zusammenzieht, zieht er am Knochen und erzeugt Bewegung. Muskeln arbeiten in Paaren — zieht sich einer zusammen, entspannt sich der andere.",
+    "theoryLines": [
+      "Es gibt drei Muskelarten: Skelettmuskeln, glatte Muskeln und Herzmuskel.",
+      "Muskeln arbeiten in Paaren — zieht sich einer zusammen, entspannt sich der andere."
+    ]
+  },
+  "body_17": {
+    "stem": "Was ist die Aufgabe des Gehirns?",
+    "options": [
+      "Es verdaut Nahrung im Magen.",
+      "Es ist die Steuerzentrale des Körpers — es empfängt Signale vom Körper und sendet Anweisungen zu Bewegung, Denken und Fühlen.",
+      "Es pumpt Blut in alle Körperteile.",
+      "Es bringt Sauerstoff in den Blutkreislauf."
+    ],
+    "explanation": "Das Gehirn ist die Steuerzentrale des Nervensystems. Es empfängt Informationen von den Sinnen, verarbeitet sie und sendet Signale an Muskeln und Organe. Es steuert auch Denken, Gedächtnis und Gefühle.",
+    "theoryLines": [
+      "Das Gehirn wird vom Schädel geschützt und ist über das Rückenmark mit dem Körper verbunden.",
+      "Nerven tragen Nachrichten zwischen dem Gehirn und jedem Körperteil."
+    ]
+  },
+  "body_18": {
+    "stem": "Was ist die Aufgabe der Nieren im menschlichen Körper?",
+    "options": [
+      "Nahrung zu zerlegen und Galle zu erzeugen",
+      "Abfallstoffe aus dem Blut zu filtern und mit dem Urin auszuscheiden",
+      "Blut wie das Herz zu pumpen",
+      "Sauerstoff gegen Kohlenstoffdioxid auszutauschen"
+    ],
+    "explanation": "Die Nieren filtern Blut, entfernen Abfallstoffe und überschüssiges Wasser und bilden Urin, der den Körper verlässt.",
+    "theoryLines": [
+      "Menschen haben zwei Nieren.",
+      "Nieren helfen, den Flüssigkeitshaushalt des Körpers zu halten."
+    ]
+  },
+  "body_19": {
+    "stem": "Was ist das größte Organ im menschlichen Körper?",
+    "options": [
+      "Haut",
+      "Herz",
+      "Gehirn",
+      "Leber"
+    ],
+    "explanation": "Die Haut ist das größte Organ des Körpers. Sie bedeckt den Körper und hilft, ihn zu schützen.",
+    "theoryLines": [
+      "Die Haut hilft, Keime und Verletzungen abzuwehren.",
+      "Die Haut hilft auch, die Körpertemperatur stabil zu halten."
+    ]
+  },
+  "body_20": {
+    "stem": "Was ist die Aufgabe des Immunsystems?",
+    "options": [
+      "Fette und Zucker in den Därmen zu Baustoffen zu zerlegen",
+      "Bakterien und Viren zu bekämpfen und den Körper vor Krankheiten zu schützen",
+      "Sauerstoffreiches Blut zu transportieren, ohne Keime zu bemerken",
+      "Nur auf Insektenstiche zu reagieren, ohne Immungedächtnis zu bilden"
+    ],
+    "explanation": "Das Immunsystem findet und bekämpft Keime, die in den Körper eindringen.",
+    "theoryLines": [
+      "Weiße Blutkörperchen gehören zum Immunsystem.",
+      "Wenn du krank bist, arbeitet das Immunsystem intensiver."
+    ]
+  },
+  "body_21": {
+    "stem": "Wie funktioniert das Verdauungssystem?",
+    "options": [
+      "Verdauung findet nur im Mund statt, ohne Magen oder Därme",
+      "Nahrung wandert durch Mund, Magen und Därme zur Zerlegung und Aufnahme ins Blut",
+      "Zerlegung findet nur im Magen statt, danach gibt es keine Därme",
+      "Aufnahme geschieht in den Därmen, ohne Stufe in Mund oder Magen"
+    ],
+    "explanation": "Nahrung wird zerkaut, im Magen zerlegt und in den Därmen aufgenommen. Abfallstoffe verlassen den Körper.",
+    "theoryLines": [
+      "Das Verdauungssystem ist lang und hat viele Teile.",
+      "Jeder Teil hat eine wichtige Aufgabe."
+    ]
+  },
+  "body_22": {
+    "stem": "Was ist die Aufgabe von Hormonen?",
+    "options": [
+      "Nahrung von Ort zu Ort zu bewegen, indem glatte Muskeln sich zusammenziehen",
+      "Botschaften zwischen Organen zu tragen und Wachstum, Energie und Stimmung mitzusteuern",
+      "Flüssigkeiten über die Lungen aus dem Körper zu drücken",
+      "Antikörper direkt auf der Oberfläche der Luftröhre zu bilden"
+    ],
+    "explanation": "Hormone sind chemische Botenstoffe aus Drüsen. Sie helfen, Wachstum, Stoffwechsel, Stimmung und mehr zu steuern.",
+    "theoryLines": [
+      "Drüsen bilden Hormone.",
+      "Hormone wirken oft langsam, können aber länger anhalten."
+    ]
+  },
+  "body_23": {
+    "stem": "Was ist die Aufgabe der Nase?",
+    "options": [
+      "Den größten Teil des Gasaustauschs so zu erledigen wie die Lungen",
+      "Zu riechen und Luft zum Atmen aufzunehmen",
+      "Bei jedem Ausatmen Sauerstoff im Blut auszutauschen",
+      "Blut vom Herz zum Gehirn zu bewegen"
+    ],
+    "explanation": "Die Nase dient dem Riechen und Atmen. Durch sie gelangt Luft in den Körper.",
+    "theoryLines": [
+      "Die Nase gehört zum Atemsystem.",
+      "Winzige Härchen in der Nase helfen, die Luft zu filtern."
+    ]
+  },
+  "body_24": {
+    "stem": "Wie hilft dir dein Mund beim Essen?",
+    "options": [
+      "Deine Nase riecht die Nahrung und zerlegt sie.",
+      "Deine Zähne zerkauen Nahrung in kleine Stücke, und deine Zunge hilft, sie zu bewegen.",
+      "Wasser im Mund löst alle Nahrung vollständig auf.",
+      "Du schluckst Nahrung ganz, ohne zu kauen."
+    ],
+    "explanation": "Deine Zähne zerkauen Nahrung in kleinere Stücke, damit sie leichter zu schlucken und zu verdauen ist. Deine Zunge hilft, die Nahrung im Mund zu bewegen.",
+    "theoryLines": [
+      "Zähne zerlegen Nahrung beim Kauen in kleinere Stücke.",
+      "Die Zunge hilft, Nahrung zum Schlucken Richtung Rachen zu führen."
+    ]
+  },
+  "body_25": {
+    "stem": "Wie viele Augen haben die meisten Menschen?",
+    "options": [
+      "Zwei",
+      "Eins",
+      "Drei",
+      "Vier"
+    ],
+    "explanation": "Die meisten Menschen haben zwei Augen, die bei Entfernung und Tiefenwahrnehmung helfen.",
+    "theoryLines": [
+      "Zwei Augen helfen dir, dreidimensional zu sehen.",
+      "Die Augen arbeiten zusammen."
+    ]
+  },
+  "body_26": {
+    "stem": "Was befindet sich im Inneren des Körpers?",
+    "options": [
+      "Ein Knochenskelett ohne weiche Organe",
+      "Innere Organe wie Herz, Lungen, Magen und mehr",
+      "Nur ein Herz, ohne Lungen oder andere Organe",
+      "Nur Lungen, ohne Herz oder Nieren"
+    ],
+    "explanation": "Im Körperinneren gibt es viele Organe — Herz, Lungen, Magen, Därme, Leber, Nieren und mehr — jedes mit einer wichtigen Aufgabe.",
+    "theoryLines": [
+      "Der Körper besteht aus Organen, die zusammenarbeiten.",
+      "Jedes Organ hat eine besondere Rolle."
+    ]
+  },
+  "body_27": {
+    "stem": "Was ist die Aufgabe des Skeletts?",
+    "options": [
+      "Es pumpt Blut in jeden Körperteil.",
+      "Es stützt die Körperform, schützt Organe wie das Gehirn und arbeitet mit Muskeln für Bewegung.",
+      "Knochen ersetzen Muskeln und erledigen alle Bewegung allein.",
+      "Es transportiert Nährstoffe durch den Blutkreislauf."
+    ],
+    "explanation": "Das Skelett gibt dem Körper Form und Halt. Harte Knochen schützen weiche Organe — zum Beispiel schützt der Schädel das Gehirn und der Brustkorb Herz und Lungen. Muskeln setzen an Knochen an und ziehen daran, um Bewegung zu erzeugen.",
+    "theoryLines": [
+      "Das menschliche Skelett besteht aus über 200 Knochen.",
+      "Gelenke sind Stellen, an denen zwei Knochen zusammentreffen, sodass sich der Körper beugen und bewegen kann."
+    ]
+  },
+  "body_29": {
+    "stem": "Was ist die Aufgabe des Magens?",
+    "options": [
+      "Er bringt Sauerstoff in den Körper.",
+      "Er zerlegt Nahrung mit Säuren und Muskeln und leitet sie weiter in die Därme.",
+      "Er pumpt Blut durch das Kreislaufsystem.",
+      "Er sendet Signale vom Körper zum Gehirn."
+    ],
+    "explanation": "Der Magen zerlegt Nahrung mit Verdauungssäuren und kräftigen Muskelbewegungen. Danach leitet er die Nahrung weiter in die Därme für die nächsten Schritte der Verdauung.",
+    "theoryLines": [
+      "Der Magen kann sich nach einer Mahlzeit dehnen und schrumpft, wenn er leer ist.",
+      "Magensäure hilft, Nahrung zu zerlegen, und kann auch viele schädliche Keime abtöten."
+    ]
+  },
+  "body_30": {
+    "stem": "Was ist die Aufgabe der Därme?",
+    "options": [
+      "Sie filtern schädliche Gase aus der Luft, die wir atmen.",
+      "Sie nehmen Nährstoffe aus verdauter Nahrung ins Blut auf.",
+      "Sie pumpen Blut in jeden Körperteil.",
+      "Sie zerlegen Nahrung genauso wie der Magen."
+    ],
+    "explanation": "Nachdem der Magen Nahrung zerlegt hat, gelangt sie in den Dünndarm, wo Nährstoffe ins Blut aufgenommen werden. Der Dickdarm nimmt dann Wasser auf und leitet die übrigen Abfallstoffe aus dem Körper.",
+    "theoryLines": [
+      "Der Dünndarm ist sehr lang — bei Erwachsenen etwa 6 Meter.",
+      "Die Wand des Dünndarms ist mit winzigen fingerartigen Fortsätzen bedeckt, die Nährstoffe schnell aufnehmen helfen."
+    ]
+  },
+  "body_31": {
+    "stem": "Was ist die Aufgabe der Leber?",
+    "options": [
+      "Sie kaut und schluckt Nahrung.",
+      "Sie filtert das Blut, entfernt Abfallstoffe und hilft dem Körper, Energie zu verarbeiten und zu speichern.",
+      "Sie pumpt Blut durch den ganzen Körper.",
+      "Sie holt Luft herein und stößt Luft aus den Lungen aus."
+    ],
+    "explanation": "Die Leber ist eines der größten Organe im Körper. Sie reinigt das Blut, indem sie schädliche Stoffe entfernt, baut alte rote Blutkörperchen ab und hilft, aufgenommene Nährstoffe so zu verarbeiten, dass der Körper sie als Energie nutzen kann.",
+    "theoryLines": [
+      "Die Leber liegt im oberen rechten Bauchraum, direkt unter dem Brustkorb.",
+      "Die Leber erfüllt Hunderte verschiedener Aufgaben, um den Körper gesund zu halten."
+    ]
+  },
+  "body_32": {
+    "stem": "Was ist die Aufgabe des Lymphsystems?",
+    "options": [
+      "Fett in den Därmen mit Enzymen zu zerlegen",
+      "Infektionen zu bekämpfen und Flüssigkeit aus dem Gewebe abzuleiten",
+      "Nur Blut im Tempo des Herzens zu bewegen",
+      "Bei jedem Einatmen Luft in den Lungen auszutauschen"
+    ],
+    "explanation": "Zum Lymphsystem gehören Lymphknoten, Gefäße und Lymphflüssigkeit. Es hilft, Keime zu bekämpfen und überschüssige Flüssigkeit abzuleiten.",
+    "theoryLines": [
+      "Lymphknoten befinden sich an vielen Stellen im Körper.",
+      "Sie helfen, zu verhindern, dass sich Infektionen ausbreiten."
+    ]
+  },
+  "body_33": {
+    "stem": "Was ist die Aufgabe der Schilddrüse?",
+    "options": [
+      "Gifte zu filtern und Galle für die Fettverdauung zu bilden",
+      "Hormone zu bilden, die Stoffwechsel, Wachstum und Energieverbrauch steuern",
+      "Sauerstoffreiches Blut aus Arterien in die Lungenarterien zu drücken",
+      "Insulin freizusetzen, das den Zucker vor allem in Muskelzellen steuert"
+    ],
+    "explanation": "Die Schilddrüse bildet Hormone, die steuern helfen, wie schnell der Körper Energie nutzt und wie er wächst.",
+    "theoryLines": [
+      "Die Schilddrüse liegt im Hals.",
+      "Sie ist wichtig für Wachstum und Entwicklung."
+    ]
+  },
+  "body_34": {
+    "stem": "Was macht der Dünndarm im Verdauungssystem?",
+    "options": [
+      "Er pumpt Blut in alle Körperteile.",
+      "Er nimmt Nährstoffe aus verdauter Nahrung auf und gibt sie ins Blut weiter.",
+      "Er bewegt beim Atmen Luft in die Lungen und wieder hinaus.",
+      "Er hält Knochen zusammen und schützt die Organe des Körpers."
+    ],
+    "explanation": "Der Dünndarm nimmt Nährstoffe aus verdauter Nahrung auf und gibt sie in den Blutkreislauf weiter, damit sie alle Körperteile erreichen.",
+    "theoryLines": [
+      "Der Dünndarm liegt im Verdauungssystem hinter dem Magen.",
+      "Die meiste Nährstoffaufnahme findet im Dünndarm statt."
+    ]
+  },
+  "body_35": {
+    "stem": "Was ist die Aufgabe der Nebenniere?",
+    "options": [
+      "Das wichtigste Insulin zu bilden, das Zucker nach einer Mahlzeit steuert",
+      "Hormone wie Adrenalin für Stress und Notfälle zu bilden",
+      "Den ersten Abbau von Proteinen im Magen zu erledigen",
+      "Das Hauptorgan für die Bildung roter Blutkörperchen zu sein, ohne Rolle der Nieren"
+    ],
+    "explanation": "Die Nebennieren bilden Hormone wie Adrenalin, die dem Körper helfen, auf Stress und Notfälle zu reagieren.",
+    "theoryLines": [
+      "Die Nebennieren sitzen oberhalb der Nieren.",
+      "Adrenalin hilft dem Körper, schnell Energie freizusetzen."
+    ]
+  },
+  "body_37": {
+    "stem": "Was ist die Aufgabe der Haut?",
+    "options": [
+      "Nur Aussehen, ohne Schutzfunktion",
+      "Den Körper zu schützen, die Temperatur mitzuregeln und Berührung wahrzunehmen",
+      "Hauptsächlich nur durch Poren zu atmen",
+      "Das Skelett zu stabilisieren, ohne Nerven darunter"
+    ],
+    "explanation": "Die Haut ist das größte Organ. Sie schützt den Körper, hilft bei der Temperaturregelung, nimmt Berührung wahr und gibt Schweiß ab.",
+    "theoryLines": [
+      "Die Haut bedeckt den ganzen Körper.",
+      "Sie ist eine wichtige Barriere gegen Keime."
+    ]
+  },
+  "body_25__v2": {
+    "stem": "Was ist die Aufgabe des Auges?",
+    "options": [
+      "Zu sehen",
+      "Zu hören",
+      "Zu riechen",
+      "Zu schmecken"
+    ],
+    "explanation": "Das Auge lässt uns die Welt um uns herum sehen.",
+    "theoryLines": [
+      "Das Auge ist das Organ des Sehens.",
+      "Zwei Augen helfen uns, besser zu sehen."
+    ]
+  },
+  "body_31__v2": {
+    "stem": "Wie viele Finger hat jede Hand?",
+    "options": [
+      "Fünf",
+      "Vier",
+      "Sechs",
+      "Drei"
+    ],
+    "explanation": "Jede Hand hat gewöhnlich fünf Finger: Daumen, Zeigefinger, Mittelfinger, Ringfinger und kleiner Finger.",
+    "theoryLines": [
+      "Finger helfen uns, Gegenstände zu halten.",
+      "Der Daumen hilft bei einem festen Griff."
+    ]
+  },
+  "body_32__v2": {
+    "stem": "Was haben wir auf dem Kopf?",
+    "options": [
+      "Zähne",
+      "Haare",
+      "Nägel",
+      "Knochen"
+    ],
+    "explanation": "Haare auf dem Kopf helfen, den Kopf zu schützen und warm zu halten.",
+    "theoryLines": [
+      "Haare können viele Farben haben.",
+      "Haare wachsen weiter."
+    ]
+  },
+  "body_33__v2": {
+    "stem": "Was ist die Aufgabe der Zähne?",
+    "options": [
+      "Mit den Augen zu sehen",
+      "Mit den Ohren zu hören",
+      "Nahrung zu kauen und zu zerschneiden",
+      "Auf einem Feld zu laufen"
+    ],
+    "explanation": "Zähne helfen, Nahrung zu zerschneiden und zu kauen, damit sie leichter zu schlucken ist.",
+    "theoryLines": [
+      "Menschen haben Schneidezähne, Eckzähne und Backenzähne.",
+      "Kinder haben Milchzähne, die später ersetzt werden."
+    ]
+  },
+  "body_34__v2": {
+    "stem": "Wo befindet sich das Gehirn?",
+    "options": [
+      "Im Bauch",
+      "Im Kopf",
+      "In den Beinen",
+      "In den Händen"
+    ],
+    "explanation": "Das Gehirn liegt im Kopf und wird vom Schädel geschützt.",
+    "theoryLines": [
+      "Das Gehirn ist eines der wichtigsten Organe.",
+      "Es steuert die Handlungen des Körpers."
+    ]
+  },
+  "body_35__v2": {
+    "stem": "Wie viele Arme und Beine haben die meisten Menschen?",
+    "options": [
+      "Zwei Arme und zwei Beine",
+      "Einen Arm und ein Bein",
+      "Meist vier Arme",
+      "Meist drei Beine"
+    ],
+    "explanation": "Die meisten Menschen haben zwei Arme und zwei Beine, die beim Bewegen und Arbeiten helfen.",
+    "theoryLines": [
+      "Arme helfen uns zu halten und zu arbeiten.",
+      "Beine helfen uns zu gehen und zu laufen."
+    ]
+  },
+  "body_37__v2": {
+    "stem": "Was passiert, wenn wir atmen?",
+    "options": [
+      "Luft gelangt in die Lungen und verlässt sie nie",
+      "Luft geht hinein und Luft geht hinaus",
+      "Luft verlässt den Körper nur und kommt nie herein",
+      "Es findet kein Gasaustausch statt"
+    ],
+    "explanation": "Wenn wir atmen, gelangt Luft durch Nase und Mund hinein, und Luft verlässt den Körper auch wieder.",
+    "theoryLines": [
+      "Atmen ist lebenswichtig.",
+      "Ohne Atmen können wir nicht leben."
+    ]
+  },
+  "body_38__v2": {
+    "stem": "Was ist die Aufgabe des Herzens?",
+    "options": [
+      "Im Kopf zu denken",
+      "Blut durch den Körper zu pumpen",
+      "Mit den Augen zu sehen",
+      "Mit den Ohren zu hören"
+    ],
+    "explanation": "Das Herz pumpt Blut durch den Körper. Blut transportiert Sauerstoff und Nährstoffe zu den Körperteilen.",
+    "theoryLines": [
+      "Das Herz schlägt die ganze Zeit.",
+      "Dieser Schlag ist der Puls, den du fühlen kannst."
+    ]
+  },
+  "body_39": {
+    "stem": "Was ist die Aufgabe der Zunge?",
+    "options": [
+      "Mit den Augen zu sehen",
+      "Zu schmecken und beim Sprechen zu helfen",
+      "Mit den Ohren zu hören",
+      "Auf einem Feld zu laufen"
+    ],
+    "explanation": "Die Zunge hilft dir, Nahrung zu schmecken und zu sprechen. Sie hilft auch beim Schlucken.",
+    "theoryLines": [
+      "Die Zunge kann sich in viele Richtungen bewegen.",
+      "Winzige Erhebungen auf der Zunge helfen beim Schmecken."
+    ]
+  },
+  "body_40": {
+    "stem": "Was passiert mit dem Körper von Kindern, wenn sie wachsen?",
+    "options": [
+      "Der Körper wächst allmählich",
+      "Der Körper verändert sich bis zum Alter von 18 nicht",
+      "Der Körper wird mit der Zeit kleiner",
+      "Nur der Kopf wächst, nicht der Rest"
+    ],
+    "explanation": "Der Körper von Kindern wächst mit der Zeit, weil sich Körperzellen vermehren.",
+    "theoryLines": [
+      "Wachstum ist ein natürlicher Prozess.",
+      "Gesundes Essen hilft Kindern, gut zu wachsen."
+    ]
+  },
+  "body_41": {
+    "stem": "Was ist die Aufgabe des Nervensystems?",
+    "options": [
+      "Proteine im engen Darm in Aminosäuren zu zerlegen",
+      "Informationen zwischen Körperteilen und der Umgebung zu koordinieren und zu senden",
+      "Rote Blutkörperchen vom Unterkörper zum Kopf zu transportieren",
+      "Sauerstoff direkt über die Haut aufzunehmen, ohne Lungen"
+    ],
+    "explanation": "Das Nervensystem nimmt Sinneseindrücke auf, verarbeitet sie im Gehirn und sendet Anweisungen an Muskeln und Organe.",
+    "theoryLines": [
+      "Zum Nervensystem gehören Gehirn, Rückenmark und viele Nerven.",
+      "Nerven leiten schnelle elektrische Signale."
+    ]
+  },
+  "body_43": {
+    "stem": "Was ist die Aufgabe der Milz?",
+    "options": [
+      "Die Verdauung von Nahrung in Mund und Speiseröhre zu beginnen",
+      "Bei der Abwehr zu helfen und Blutzellen zu speichern",
+      "Sauerstoff aus der Luft ins Blut zu bringen",
+      "Licht und Farbe aus der Umgebung aufzunehmen"
+    ],
+    "explanation": "Die Milz unterstützt das Immunsystem, filtert Blut und speichert rote Blutkörperchen und Blutplättchen.",
+    "theoryLines": [
+      "Die Milz liegt in der Nähe des Magens.",
+      "Sie gehört zum Immunsystem."
+    ]
+  }
+}

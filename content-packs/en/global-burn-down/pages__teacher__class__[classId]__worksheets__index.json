@@ -1,5 +1,16 @@
 {
   "copy": {
-    "worksheets": "Worksheets"
+    "worksheets": "Worksheets",
+    "back_to_dashboard": "← Back to dashboard",
+    "subtitle": "Create, launch, and track PDF worksheets.",
+    "create_new": "Create new worksheet",
+    "loading": "Loading…",
+    "error_loading": "Error loading",
+    "network_error": "Network error",
+    "empty": "No worksheets yet.",
+    "forbidden": "You do not have permission to view this class's worksheets.",
+    "due": "Due: {date}",
+    "manage": "Manage",
+    "report": "Report"
   }
 }

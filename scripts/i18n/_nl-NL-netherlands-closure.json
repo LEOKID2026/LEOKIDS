@@ -1,0 +1,39 @@
+{
+  "failures": [],
+  "ok": true,
+  "summary": {
+    "gradeTitle": "{grade}",
+    "gradeLabel": "{grade}",
+    "grades": [
+      "Groep 3",
+      "Groep 4",
+      "Groep 5",
+      "Groep 6",
+      "Groep 7",
+      "Groep 8"
+    ],
+    "helpCenter": "Helpcentrum",
+    "cta": {
+      "kids": "Ik ben een leerling",
+      "parents": "Ik ben ouder",
+      "teachers": "Ik ben leerkracht"
+    },
+    "accessGate": "Log in als leerling om verder te gaan",
+    "signInAgainParent": "Log opnieuw in als ouder.",
+    "questionsAnswered": "{count, plural, one {# vraag} other {# vragen}}",
+    "wordMeanings": {
+      "total": 745,
+      "missing": 0,
+      "orphans": 0,
+      "sight": 9
+    },
+    "orphansRemoved": true,
+    "audienceGradeParents": "Ouders van deze groep",
+    "scienceEnLeak": 0,
+    "booksEnLeak": 0,
+    "jeUmix": 0,
+    "enInstrFiles": 0,
+    "rekenen": "Rekenen",
+    "science": "Natuur en techniek"
+  }
+}

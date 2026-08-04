@@ -1,0 +1,800 @@
+{
+  "exp_1": {
+    "stem": "Two identical containers of water are left out — one in the sun and one in the shade. Which will lose more water, and why?",
+    "options": [
+      "The one in the shade, because shade slows down water loss.",
+      "They will lose the same amount of water because air temperature is the same everywhere.",
+      "The one in the sun, because heat from the sun causes water to evaporate faster.",
+      "The one in the sun will actually gain more water from sunlight."
+    ],
+    "explanation": "Heat from the sun gives water molecules extra energy, causing them to evaporate more quickly from the container in the sun.",
+    "theoryLines": [
+      "Heat energy transfers from a hot body to a cooler one.",
+      "More heat means faster evaporation from water surfaces."
+    ]
+  },
+  "exp_2": {
+    "stem": "What is important to do at the start of every science experiment?",
+    "options": [
+      "Decide the 'right' result first so the experiment matches it",
+      "Write a clear question or problem you want to test",
+      "Change several variables at once to get a bigger result",
+      "Skip planning and start measuring right away"
+    ],
+    "explanation": "A science experiment begins with a clear question. Then you plan the steps to investigate it.",
+    "theoryLines": [
+      "Science is built on questions, observations, and experiments.",
+      "Careful notes make it easier to compare results."
+    ]
+  },
+  "exp_3": {
+    "stem": "What is a controlled variable in an experiment?",
+    "options": [
+      "A factor that is kept the same in every trial to make the test fair.",
+      "A measurement that changes randomly each time it is taken.",
+      "A prediction written at the beginning of the experiment.",
+      "The final number recorded at the end of the experiment."
+    ],
+    "explanation": "A controlled variable is any condition you keep the same throughout all trials so it does not affect your results. Only the one variable you are testing should change. For example, if you are testing how much water affects plant growth, the amount of sunlight and soil type should stay the same in every pot.",
+    "theoryLines": [
+      "Controlled variables make an experiment fair by removing hidden causes.",
+      "The variable you change on purpose is called the independent variable."
+    ]
+  },
+  "exp_4": {
+    "stem": "Put the stages of the water cycle in order from first to last:",
+    "options": [
+      "Evaporation → condensation → precipitation → collection in water sources",
+      "Condensation → collection → evaporation → precipitation",
+      "Collection → precipitation → condensation → evaporation",
+      "Precipitation → evaporation → condensation → collection"
+    ],
+    "explanation": "Water evaporates, forms clouds by condensation, falls as rain or snow, then gathers in oceans, lakes, and groundwater.",
+    "theoryLines": [
+      "The water cycle moves water among ocean, land, and atmosphere.",
+      "The Sun, wind, and land shape all help drive the cycle."
+    ]
+  },
+  "exp_5": {
+    "stem": "What should you do before starting an experiment?",
+    "options": [
+      "Start mixing materials without reading labels",
+      "Decide what to test, plan the steps, and be careful",
+      "Do the hands-on steps before writing what you are testing",
+      "Decide the expected result without measuring first"
+    ],
+    "explanation": "Before an experiment, plan what you will test and stay safe. An adult should help.",
+    "theoryLines": [
+      "Experiments should be done safely.",
+      "An adult should help with science experiments."
+    ]
+  },
+  "exp_6": {
+    "stem": "What is the main goal of a science experiment?",
+    "options": [
+      "To make up interesting stories about materials.",
+      "To test an idea and find out what happens when you change something.",
+      "To list as many materials as possible without testing them.",
+      "To write down results before carrying out any test."
+    ],
+    "explanation": "A science experiment allows you to test an idea and discover what happens under different conditions by observing and recording results.",
+    "theoryLines": [
+      "Every experiment starts with a question or idea to test.",
+      "Experiments help us learn by testing ideas carefully and fairly."
+    ]
+  },
+  "exp_7": {
+    "stem": "What is a variable in a science experiment?",
+    "options": [
+      "The final result that is recorded at the end of the experiment.",
+      "A factor that can change or be changed to see how it affects the result.",
+      "Everything that is left out of the experiment completely.",
+      "The number of scientists taking part in the experiment."
+    ],
+    "explanation": "A variable is something that can change in an experiment. For example, the amount of water given to a plant is a variable that affects how the plant grows.",
+    "theoryLines": [
+      "Experiments test how changing one variable affects another.",
+      "The variable you change on purpose is called the independent variable."
+    ]
+  },
+  "exp_8": {
+    "stem": "What is a variable in an experiment?",
+    "options": [
+      "A rule that must stay the same in every experiment without exception.",
+      "A factor that can change and that we observe or measure to find results.",
+      "Another word for the name of the experiment.",
+      "The conclusion written after all results have been reviewed."
+    ],
+    "explanation": "A variable is anything in an experiment that can change. For example, in a test of how much water a plant needs, the amount of water is the variable being changed. The height of the plant is the variable being measured to see the result.",
+    "theoryLines": [
+      "The variable you change on purpose is the independent variable.",
+      "The variable you measure to see what happened is the dependent variable."
+    ]
+  },
+  "exp_9": {
+    "stem": "What is a hypothesis in a science experiment?",
+    "options": [
+      "The final result",
+      "A reasoned guess about what will happen in the experiment",
+      "Writing the research question with no predicted outcome",
+      "A final answer after summarizing every experiment"
+    ],
+    "explanation": "A hypothesis is a reasoned prediction based on what you already know. Then you test whether it is supported.",
+    "theoryLines": [
+      "A hypothesis should be based on existing knowledge.",
+      "You check a hypothesis with an experiment."
+    ]
+  },
+  "exp_10": {
+    "stem": "What should you do before an experiment?",
+    "options": [
+      "Assume a clean-looking material is completely safe",
+      "Be careful, read the instructions, and get help from an adult",
+      "Start with the strongest material without reading the steps",
+      "Skip organizing equipment if time is short"
+    ],
+    "explanation": "Before an experiment, stay careful and get adult help. Also think about what you want to test.",
+    "theoryLines": [
+      "Safety is very important in experiments.",
+      "An adult should help and supervise."
+    ]
+  },
+  "exp_12": {
+    "stem": "What is an observation in a science experiment?",
+    "options": [
+      "A prediction made before the experiment begins.",
+      "Information gathered using your senses — what you see, hear, smell, taste, or feel.",
+      "The final written answer at the end of the experiment.",
+      "A math equation used to calculate a result."
+    ],
+    "explanation": "An observation is something you notice using your senses during an experiment. Good scientists describe exactly what they see, hear, or measure without guessing why it happened. Observations are the raw evidence that leads to conclusions.",
+    "theoryLines": [
+      "Observations describe what is actually happening, not what you think will happen.",
+      "Careful, detailed observations make experiments more reliable and trustworthy."
+    ]
+  },
+  "exp_13": {
+    "stem": "What is measurement?",
+    "options": [
+      "Noticing by eye with no numbers",
+      "Using tools to find out how big, how heavy, or how hot something is",
+      "Collecting no data at all",
+      "Guessing size without a ruler or scale"
+    ],
+    "explanation": "Measurement uses tools such as rulers, scales, and thermometers to get exact numbers.",
+    "theoryLines": [
+      "Measurements help scientists be precise.",
+      "Different tools are used for different measurements."
+    ]
+  },
+  "exp_14": {
+    "stem": "What is the scientific process?",
+    "options": [
+      "A single experiment with no question first",
+      "A series of steps for investigating a question",
+      "A question with no experiment or data collection",
+      "A final guess with no observations along the way"
+    ],
+    "explanation": "The scientific process includes asking a question, making a hypothesis, testing, observing, and drawing conclusions.",
+    "theoryLines": [
+      "It is an organized way to learn.",
+      "Each step matters."
+    ]
+  },
+  "exp_15": {
+    "stem": "What is a control group in an experiment?",
+    "options": [
+      "A group that usually never changes for any reason",
+      "A group in the experiment that you leave unchanged so you can compare results",
+      "A group that always changes",
+      "An experiment with only one group and no comparison"
+    ],
+    "explanation": "A control group is left unchanged so you can compare and see what really caused the result.",
+    "theoryLines": [
+      "A control group is part of a strong experiment.",
+      "It helps you understand what caused the outcome."
+    ]
+  },
+  "exp_16": {
+    "stem": "What are data?",
+    "options": [
+      "Numbers with no link to the experiment",
+      "Information collected in an experiment—numbers, observations, and results",
+      "Descriptive sentences with no measurements",
+      "Early ideas with no lab collection"
+    ],
+    "explanation": "Data are the information you collect—measurements, observations, and results.",
+    "theoryLines": [
+      "Data help you understand what happened.",
+      "Careful data collection is important."
+    ]
+  },
+  "exp_17": {
+    "stem": "What is a graph?",
+    "options": [
+      "A decorative drawing with no axes",
+      "A chart that shows data visually so patterns are easier to see",
+      "A word list with no scale",
+      "A column of numbers with no clear trend"
+    ],
+    "explanation": "A graph shows data visually with lines, bars, or other shapes so trends are easier to spot.",
+    "theoryLines": [
+      "Graphs help people understand data.",
+      "There are many kinds of graphs."
+    ]
+  },
+  "exp_18": {
+    "stem": "What is a conclusion in an experiment?",
+    "options": [
+      "Opening the report before the experiment",
+      "What you learned from the experiment and what the data show",
+      "A new question with no link to the data",
+      "A guess before checking the graph"
+    ],
+    "explanation": "A conclusion explains what the data show, whether the hypothesis was supported, and what that means.",
+    "theoryLines": [
+      "Conclusions are an important part of science.",
+      "They explain what was learned."
+    ]
+  },
+  "exp_19": {
+    "stem": "What is a scientific theory?",
+    "options": [
+      "A guess with no repeated experiments",
+      "An explanation of a natural pattern based on many experiments and observations",
+      "A philosophy question with no testing",
+      "One final word with no support from data"
+    ],
+    "explanation": "A scientific theory is a well-supported explanation based on lots of evidence—not just a casual guess.",
+    "theoryLines": [
+      "Theories can change when new evidence appears.",
+      "That is part of how science works."
+    ]
+  },
+  "exp_20": {
+    "stem": "What is a scientific law?",
+    "options": [
+      "A guess about what might happen in a science experiment.",
+      "A statement that always and accurately describes how something in nature behaves.",
+      "Something that students in a class can change whenever they want.",
+      "A sentence written without any evidence or data to support it."
+    ],
+    "explanation": "A scientific law is a statement that accurately and consistently describes a natural phenomenon every time. For example, the law of gravity describes how all objects with mass attract each other.",
+    "theoryLines": [
+      "Scientific laws are based on many repeated experiments and observations.",
+      "The law of gravity states that all objects with mass attract each other."
+    ]
+  },
+  "exp_21": {
+    "stem": "What is a double-blind experiment?",
+    "options": [
+      "An experiment with only one group",
+      "An experiment in which neither the participant nor the researcher knows who got which treatment",
+      "A series of experiments where everyone knows the treatment",
+      "An observation with no comparison to a controlled condition"
+    ],
+    "explanation": "In a double-blind experiment, neither the participant nor the researcher knows who received the real treatment or the placebo. That reduces bias.",
+    "theoryLines": [
+      "Double-blind design is an important scientific method.",
+      "It helps keep results fair and objective."
+    ]
+  },
+  "exp_22": {
+    "stem": "What is a sample in an experiment?",
+    "options": [
+      "The entire population with no filtering",
+      "A smaller group you test in order to learn about a larger group",
+      "A single participant with no generalizing",
+      "Writing a question with no data collection"
+    ],
+    "explanation": "A sample is a smaller group studied to learn about a larger group—for example, testing 100 plants to learn about many plants.",
+    "theoryLines": [
+      "A sample should represent the larger group well.",
+      "Sampling saves time and resources."
+    ]
+  },
+  "exp_23": {
+    "stem": "Why is it important to do experiments?",
+    "options": [
+      "Because an opinion is enough without testing a real case",
+      "To learn about the world, test ideas, and understand how things work",
+      "Only to pass time with no clear experiment question",
+      "To watch once and rely on memory with no notes or repeats"
+    ],
+    "explanation": "Experiments help us learn about the world, test ideas, understand how things work, and discover new things.",
+    "theoryLines": [
+      "Experiments are a scientific way to learn.",
+      "They help students think like scientists."
+    ]
+  },
+  "exp_24": {
+    "stem": "Before you test an idea, what is a hypothesis?",
+    "options": [
+      "A list of all the materials needed for the experiment.",
+      "A prediction about what you think will happen and why.",
+      "The final result recorded after the experiment is complete.",
+      "The conclusion written after the data has been reviewed."
+    ],
+    "explanation": "A hypothesis is an educated prediction you can check with a fair test. You write it before you collect the results.",
+    "theoryLines": [
+      "A good hypothesis can be supported or not supported by evidence.",
+      "Materials lists and final conclusions are not hypotheses."
+    ]
+  },
+  "exp_11__v2": {
+    "stem": "What is the purpose of a science experiment?",
+    "options": [
+      "To list all the steps of a procedure without actually testing anything.",
+      "To ask a question and find out what happens by testing an idea.",
+      "To memorize answers to science questions without any testing.",
+      "To write predictions and never check whether they are correct."
+    ],
+    "explanation": "A science experiment helps you find answers by testing an idea. You set up a fair test, observe what happens, and record the results.",
+    "theoryLines": [
+      "Experiments start with a question and a prediction.",
+      "The results of an experiment help answer the original question."
+    ]
+  },
+  "exp_12__v2": {
+    "stem": "Who should help with experiments?",
+    "options": [
+      "No one",
+      "An adult who can help and make sure everything is safe",
+      "Young children with no adult watching",
+      "An adult who does not know the experiment or the risks"
+    ],
+    "explanation": "An adult should help with experiments and check that everything is safe.",
+    "theoryLines": [
+      "Safety comes first.",
+      "An adult can help keep the experiment safe."
+    ]
+  },
+  "exp_14__v2": {
+    "stem": "What happens when you do an experiment?",
+    "options": [
+      "Usually nothing changes if you do not write anything down",
+      "You learn, see results, and understand how something works",
+      "Free activity with no experiment question",
+      "Quick actions with no order or comparison"
+    ],
+    "explanation": "Doing an experiment helps you learn new things, see what happens, and understand how things work.",
+    "theoryLines": [
+      "Experiments help us learn.",
+      "They are a great way to understand the world."
+    ]
+  },
+  "exp_18__v2": {
+    "stem": "In a fair test, what do we call a factor that can be changed or measured?",
+    "options": [
+      "The final result that is recorded at the very end of the experiment.",
+      "A factor in an experiment that can be changed or measured to see how it affects the result.",
+      "Everything that is NOT included in the experiment at all.",
+      "The equipment used to carry out the experiment."
+    ],
+    "explanation": "A variable is something that can change in an experiment. Scientists change or measure variables to learn what affects the results.",
+    "theoryLines": [
+      "In a fair test, usually only one variable is changed at a time.",
+      "Other conditions are kept the same so the comparison is fair."
+    ]
+  },
+  "exp_19__v2": {
+    "stem": "What is a dependent variable?",
+    "options": [
+      "The variable the researcher plans to change on purpose",
+      "What you measure as the result of the change",
+      "Only the sample size, with no link to recorded values",
+      "Data you ignore to save measuring time"
+    ],
+    "explanation": "The dependent variable is what you measure to see the result of changing the independent variable.",
+    "theoryLines": [
+      "It is what you want to find out.",
+      "It is the outcome of the experiment."
+    ]
+  },
+  "exp_20__v2": {
+    "stem": "What is a control group?",
+    "options": [
+      "A group where you change every factor at once with no baseline for comparison",
+      "A group you compare other results against",
+      "A group measured only at the end with no starting treatment",
+      "A group meant to copy the main result with no baseline"
+    ],
+    "explanation": "A control group is left unchanged so you can compare results and see what made the difference.",
+    "theoryLines": [
+      "It helps you understand what caused the outcome.",
+      "It is an important part of a science experiment."
+    ]
+  },
+  "exp_22__v2": {
+    "stem": "What is a conclusion?",
+    "options": [
+      "Ending the experiment with no explanation of results",
+      "What you learned from the experiment and what it means",
+      "An opening with no data analysis",
+      "A middle step with no link to the question"
+    ],
+    "explanation": "A conclusion explains what you learned from the experiment and what the results mean.",
+    "theoryLines": [
+      "Conclusions help you understand what was learned.",
+      "They are an important part of a science experiment."
+    ]
+  },
+  "exp_26": {
+    "stem": "What does safety in experiments mean?",
+    "options": [
+      "Partial caution with no advance preparation",
+      "Being careful and making sure everything is safe before, during, and after",
+      "Doing steps quickly with no equipment check",
+      "Only having fun with no protective rules"
+    ],
+    "explanation": "Experiment safety means being careful and checking that everything is safe before, during, and after the experiment.",
+    "theoryLines": [
+      "Safety is the most important rule.",
+      "An adult should always help."
+    ]
+  },
+  "exp_27": {
+    "stem": "A student tests how light affects plant growth but conducts the experiment next to a cold window. Why is this experiment difficult to trust?",
+    "options": [
+      "The cold temperature is an uncontrolled variable that could also be affecting the plants, not just the light.",
+      "Cold temperatures never affect plants, so the experiment is always reliable.",
+      "Water is the only variable that ever matters in plant growth experiments.",
+      "Light has no effect on plant growth under any conditions."
+    ],
+    "explanation": "A fair experiment changes only one variable at a time. Here, both the amount of light and the cold temperature from the window may be affecting the plants. Because two things changed, the student cannot be sure whether the light, the cold, or both caused the results — making the conclusion unreliable.",
+    "theoryLines": [
+      "An uncontrolled variable — also called a confounding variable — is one that changes accidentally and may affect the results.",
+      "Controlling all variables except the one being tested is essential for drawing a trustworthy conclusion."
+    ]
+  },
+  "exp_28": {
+    "stem": "Why do researchers repeat an experiment on the same question in different places or times before trusting a conclusion?",
+    "options": [
+      "A one-time result might come from luck, measurement error, or local conditions",
+      "Repeating always erases the first experiment’s results",
+      "Science allows a firm conclusion after a single try only",
+      "Replication always changes the original question"
+    ],
+    "explanation": "Replication builds confidence. If a pattern shows up again, it is less likely to be a lucky accident.",
+    "theoryLines": [
+      "Reliability grows from repeated data and careful error checks.",
+      "Science depends on results that other teams can test."
+    ]
+  },
+  "exp_29": {
+    "stem": "Why is it important to record your observations during a science experiment?",
+    "options": [
+      "It helps you track what happens so you can draw accurate conclusions later.",
+      "It automatically makes the experiment last longer.",
+      "It replaces the need for a hypothesis entirely.",
+      "It tells the plants in the experiment how much water they need."
+    ],
+    "explanation": "Recording data as you go means you have accurate, detailed information to look back on. Without written observations, it is easy to forget or misremember what happened. Good records allow you to spot patterns, compare results, and support or challenge your hypothesis with real evidence.",
+    "theoryLines": [
+      "Scientists record observations in tables, charts, or notebooks during the experiment.",
+      "Reliable data makes it possible to draw trustworthy conclusions and share findings with others."
+    ]
+  },
+  "exp_30": {
+    "stem": "A researcher only asks people entering a shopping mall in the evening about air quality. What is the main methodological risk?",
+    "options": [
+      "The sample may be biased, so the results may not represent everyone",
+      "Asking people always changes the experiment’s physical measurements",
+      "Surveys always remove the need for a control group",
+      "Notes are never useful in survey research"
+    ],
+    "explanation": "Sampling in one place and time reaches a limited group. Claims about “everyone” need a broader sampling plan or a clear limit statement.",
+    "theoryLines": [
+      "Conclusion quality depends on how data were collected.",
+      "Sampling bias is a common research trap."
+    ]
+  },
+  "exp_31": {
+    "stem": "A student is tracking small changes in body temperature every 30 minutes to find out whether a mild fever is rising or falling. Which tool is essential for this investigation, and what makes it the right choice?",
+    "options": [
+      "A thermometer — because it measures temperature precisely enough to detect small changes of a fraction of a degree.",
+      "A graduated cylinder — because it measures the volume of liquid the patient drinks, which directly reflects changes in body temperature.",
+      "A stopwatch — because timing how long each reading takes is the most critical factor in deciding whether a fever is worsening.",
+      "A balance scale — because measuring the patient's mass at each interval shows whether body temperature is rising or falling."
+    ],
+    "explanation": "A thermometer is the correct tool for measuring temperature. In a scientific investigation, choosing the right measuring instrument is essential: a thermometer can detect precise temperature changes of fractions of a degree, which is exactly what this study requires. The other instruments measure volume, time, and mass — none of which directly tells us about temperature.",
+    "theoryLines": [
+      "Scientists always match the measuring tool to the quantity being measured: thermometer for temperature, ruler for length, balance for mass, graduated cylinder for liquid volume.",
+      "In an experiment, using the wrong tool gives incorrect or meaningless data, even if the procedure is otherwise good."
+    ]
+  },
+  "exp_32": {
+    "stem": "In a water-heating experiment, a researcher adds more salt and also turns up the flame at the same time. What is wrong with concluding “the salt caused the heating change”?",
+    "options": [
+      "You cannot isolate the salt’s effect because flame strength also changed",
+      "It is always fine to change two factors together",
+      "A flame never affects temperature",
+      "Salt always cancels heating"
+    ],
+    "explanation": "When two factors change, the result mixes their effects. Separate tests or a planned factor design are needed.",
+    "theoryLines": [
+      "Controlling variables supports logical conclusions.",
+      "Experiment design matters as much as doing the steps."
+    ]
+  },
+  "exp_33": {
+    "stem": "In a simple study of a new pain-relief product based on how people feel, why compare with a group that gets a look-alike with no active ingredient (a placebo)?",
+    "options": [
+      "Expectation alone can change how people report feeling, even without a real drug effect",
+      "A placebo always proves the medicine works",
+      "Pain is never studied in science",
+      "A look-alike always causes harm, so it is forbidden"
+    ],
+    "explanation": "The placebo effect shows that human reports are not only “clean measurements.” A control helps measure benefit beyond expectation.",
+    "theoryLines": [
+      "Good studies separate treatment effects from psychological context.",
+      "Clear methods make results easier to interpret."
+    ]
+  },
+  "exp_34": {
+    "stem": "Why do scientists write down exactly how materials, temperatures, and times were used, even when an experiment “worked”?",
+    "options": [
+      "So others can repeat it, check it, or find hidden mistakes",
+      "So nobody else can redo the experiment",
+      "Notes are needed only when an experiment fails",
+      "Exact details never matter if the result looks clear"
+    ],
+    "explanation": "Replication is a core idea in science. Without a protocol, findings stay personal stories instead of shared knowledge.",
+    "theoryLines": [
+      "Scientific knowledge should be public and testable.",
+      "A clear protocol reduces misunderstandings."
+    ]
+  },
+  "exp_35": {
+    "stem": "A student measures a fruit’s length five times and gets 10.0, 10.1, 9.9, 10.0, and 10.2 cm, but the tape measure is short by one centimeter on every mark. What is true about the error?",
+    "options": [
+      "The spread is small, but every value is shifted systematically because the tool is miscalibrated",
+      "If the spread is small, there is never any error",
+      "It is only random error because the numbers are close",
+      "Averaging five trials always fixes a calibration error automatically"
+    ],
+    "explanation": "Being consistent (small spread) does not guarantee accuracy. A biased tool can repeat the same wrong answer. Calibration and comparison to a true standard are needed.",
+    "theoryLines": [
+      "Systematic error is different from random noise.",
+      "An average does not remove a fixed tool bias."
+    ]
+  },
+  "exp_36": {
+    "stem": "In an experiment, only 50% of seeds sprouted. Why is it hard to draw a firm conclusion from this result alone?",
+    "options": [
+      "The sample size may be too small, so the result might not represent the full picture.",
+      "A result of 50% is always reliable and requires no further testing.",
+      "The experiment was definitely carried out incorrectly.",
+      "Results that are not 100% are always wrong and must be ignored."
+    ],
+    "explanation": "A small sample size can lead to unreliable results. Repeating the experiment with more seeds gives a clearer and more reliable conclusion.",
+    "theoryLines": [
+      "Larger sample sizes make experimental results more reliable.",
+      "One result alone is rarely enough to draw a solid scientific conclusion."
+    ]
+  },
+  "exp_37": {
+    "stem": "In a classroom behavior study, students know they are being filmed. Why might that change the findings compared with an unnoticed situation?",
+    "options": [
+      "Knowing they are watched can change how people act (an observer effect)",
+      "Filming always cancels the classroom’s physics",
+      "Students never respond to social surroundings",
+      "Experiments with people must always skip consent"
+    ],
+    "explanation": "Studies with people need ethics and awareness that being observed can change behavior. Sometimes a different design or a clear limit statement is required.",
+    "theoryLines": [
+      "Measuring can change the thing being measured.",
+      "Ethics in research matter as much as accuracy."
+    ]
+  },
+  "exp_38": {
+    "stem": "Which statement correctly describes the difference between a hypothesis and a conclusion after an experiment?",
+    "options": [
+      "A hypothesis is a prediction before the test; a conclusion is based on evidence that was collected",
+      "A conclusion and a hypothesis are the same thing at different writing stages",
+      "A hypothesis is written only after you see the result",
+      "A conclusion is not allowed if it does not match the first expectation"
+    ],
+    "explanation": "A hypothesis guides the test; a conclusion reflects what the data support. Rejecting a hypothesis is normal and honest science.",
+    "theoryLines": [
+      "Inquiry cycle: question → hypothesis → experiment → analysis → conclusion.",
+      "Weak evidence makes a weak conclusion."
+    ]
+  },
+  "exp_39": {
+    "stem": "What does a “fair test” mean when comparing two methods for cleaning oil from water?",
+    "options": [
+      "Everything you are not testing stays the same (water amount, temperature, mixing time)",
+      "You change every condition at once to see which method is “strongest”",
+      "You use completely different water on each side with no measuring",
+      "You do not measure anything at the end"
+    ],
+    "explanation": "Fairness means isolating one factor. Otherwise a difference might come from luck or a hidden condition, not from the method.",
+    "theoryLines": [
+      "A fair test isolates one independent variable.",
+      "Controlling variables reduces mixed explanations."
+    ]
+  },
+  "exp_40": {
+    "stem": "If doubling fertilizer does not double the harvest, why does that break a simple “straight-line” model between fertilizer amount and result?",
+    "options": [
+      "Living systems often hit limits, missing nutrients, or even harm from too much input",
+      "Fertilizer never affects plants",
+      "Harvest always grows in a perfect straight line forever",
+      "Straight-line models only exist in physics, never in biology"
+    ],
+    "explanation": "Resource limits, toxicity at high amounts, and changing efficiency mean growth curves are often not a simple straight line.",
+    "theoryLines": [
+      "Simple models fit only a limited range.",
+      "Too much of an input can hurt instead of help."
+    ]
+  },
+  "exp_41": {
+    "stem": "Why must students follow safety rules during a science experiment in class?",
+    "options": [
+      "Chemicals or heat can burn the skin or damage the eyes if handled carelessly.",
+      "Safety rules are optional as long as the teacher is watching.",
+      "Safety rules apply only to older students in advanced science classes.",
+      "Water makes all experiments completely safe, so no other rules are needed."
+    ],
+    "explanation": "Science experiments can involve chemicals that irritate skin or eyes, hot equipment that causes burns, or sharp tools that cause cuts. Safety rules — such as wearing goggles, using equipment carefully, and following the teacher's instructions — protect everyone in the class from getting hurt.",
+    "theoryLines": [
+      "Personal protective equipment, such as safety goggles and gloves, is worn to reduce the risk of injury.",
+      "If you are unsure about a step in an experiment, always ask your teacher before continuing."
+    ]
+  },
+  "exp_42": {
+    "stem": "Data show that on summer days when kids buy more ice cream, more pool drownings are also reported. What is the most reasonable conclusion?",
+    "options": [
+      "The two may rise together because of a shared factor like hot weather, not because ice cream causes drownings",
+      "Buying ice cream directly causes drownings",
+      "The numbers prove ice cream protects swimmers",
+      "Correlation always means one thing causes the other"
+    ],
+    "explanation": "Correlation is not causation. Things that move together need an explanation, a controlled test, or checks for other factors.",
+    "theoryLines": [
+      "Causal claims need more than numbers that rise together.",
+      "Good reasoning checks alternative explanations."
+    ]
+  },
+  "exp_43": {
+    "stem": "In a drink taste test, the judge does not know which cup is the original. Why does that help?",
+    "options": [
+      "It reduces expectation bias in the judging",
+      "It guarantees the drink changes chemically between cups",
+      "It stops participants from drinking",
+      "It removes the need for any control group"
+    ],
+    "explanation": "When the judge does not know which cup is which, prior opinions are less likely to shape the rating. This is a basic tool in sensory studies.",
+    "theoryLines": [
+      "More objective measuring reduces human bias.",
+      "A clear protocol builds trust in results."
+    ]
+  },
+  "exp_44": {
+    "stem": "In a daily temperature time series, one point is extremely unusual with no weather explanation. What is a sensible research step before deleting it?",
+    "options": [
+      "Check the log, instrument calibration, or a typing error",
+      "Always delete the highest point automatically",
+      "Always ignore outliers because they never matter",
+      "Invent a new value with no explanation"
+    ],
+    "explanation": "Outliers need checking: they may be real extremes or mistakes. Scientists document decisions for transparency.",
+    "theoryLines": [
+      "Cleaning data is a careful process, not artistic deleting.",
+      "A lab notebook tracks changes to the dataset."
+    ]
+  },
+  "exp_45": {
+    "stem": "A device reports to one-tenth of a unit but is set with wrong constants. Which description is correct?",
+    "options": [
+      "High resolution does not fix a systematic setup error",
+      "If resolution is high, the device must be accurate",
+      "An uncalibrated device can only show whole numbers",
+      "Constant errors disappear if you measure quickly"
+    ],
+    "explanation": "Extra digits after the decimal do not make a number true. Calibration fixes scale errors; resolution only describes sensitivity to small changes.",
+    "theoryLines": [
+      "Resolution and accuracy are different ideas.",
+      "A useful measurement must be trustworthy, not only detailed."
+    ]
+  },
+  "exp_46": {
+    "stem": "Why record a raw observation in a lab notebook before turning it into a neat conclusion?",
+    "options": [
+      "A conclusion should be based on the data that were actually collected",
+      "Conclusions should come before measuring",
+      "Conclusions have no link to results",
+      "Conclusions are meant to cancel the experiment"
+    ],
+    "explanation": "Raw notes let you check whether an interpretation matches the facts. They also support review by others and self-checking.",
+    "theoryLines": [
+      "Raw data support transparency.",
+      "Good interpretations are checked against the original record."
+    ]
+  },
+  "exp_47": {
+    "stem": "If you measure shadow length the same way after class each day but always forget to reset the meter, how does the error behave across the week?",
+    "options": [
+      "The same systematic bias repeats — it is not scattered randomly around the truth",
+      "The error disappears because repeating creates a perfect average",
+      "Each day the error flips direction completely at random",
+      "Without calibration, shadow length has no meaning at all"
+    ],
+    "explanation": "A fixed procedure or tool mistake creates a systematic pattern. Repeating without fixing the source strengthens that bias.",
+    "theoryLines": [
+      "Stable protocols and equipment care reduce sticky errors.",
+      "A repeating error pattern is a clue to calibration or method problems."
+    ]
+  },
+  "exp_48": {
+    "stem": "A researcher skips non-sensitive details that are critical for replication (concentrations, heating times). What is the risk for the science community?",
+    "options": [
+      "Others cannot properly check the finding",
+      "Keeping secrets always improves research",
+      "Replication is unnecessary if only the conclusion is written",
+      "Numeric details are always too dangerous to publish"
+    ],
+    "explanation": "Method transparency is a responsibility. Without a clear protocol, it is hard to separate a discovery from error or luck.",
+    "theoryLines": [
+      "Science depends on repeated critical checking.",
+      "Full documentation also protects researchers from misunderstandings."
+    ]
+  },
+  "exp_49": {
+    "stem": "In an experiment on how much water remains in a cup after a day, what is usually the dependent result versus the conditions you purposely change?",
+    "options": [
+      "Remaining water amount is the dependent result; heat, location, or cover are factors you manipulate",
+      "Time of day is the dependent result; water amount always stays fixed",
+      "Cup color is the result; water is the manipulated variable",
+      "There is no difference among variables in a simple experiment"
+    ],
+    "explanation": "The independent variable is what you choose to change; the dependent variable is what you measure as the response. Clear language helps tables and graphs.",
+    "theoryLines": [
+      "Classifying variables organizes experimental thinking.",
+      "Good graphs show dependent versus independent variables."
+    ]
+  },
+  "exp_50": {
+    "stem": "School data show the average score in Branch A is higher than Branch B overall, even though in each separate class Branch A averages lower. How is that possible?",
+    "options": [
+      "Simpson’s paradox: overall averages can reverse patterns seen inside subgroups",
+      "It is mathematically impossible",
+      "An overall average always equals the smallest subgroup average",
+      "It only happens when students are chosen by luck"
+    ],
+    "explanation": "A combined result can reverse when you look inside subgroups, so it matters which cut of the data you discuss.",
+    "theoryLines": [
+      "Layered analysis can reveal hidden patterns.",
+      "A global average does not always match every subgroup."
+    ]
+  },
+  "exp_51": {
+    "stem": "Students test whether vinegar reduces the peeling that lights a matchstick. Why should every group work at a similar room temperature?",
+    "options": [
+      "Reaction rates and gas expansion depend on temperature, which could confound the vinegar effect",
+      "Temperature only affects the peel’s color",
+      "Chemical experiments never have confounding variables",
+      "A cold room removes the need for any control"
+    ],
+    "explanation": "Temperature strongly affects reaction rate and vapor pressure. If groups differ in temperature, it is hard to credit vinegar alone.",
+    "theoryLines": [
+      "Environmental variables affect reaction kinetics.",
+      "Controls reduce hidden bias."
+    ]
+  },
+  "exp_52": {
+    "stem": "What is the role of peer review in scientific publishing?",
+    "options": [
+      "Reviewers check methods, consistency, and relevance before acceptance",
+      "Reviewers guarantee every conclusion is 100% true before any experiment",
+      "Peer review replaces field experiments",
+      "Peer review forever blocks every researcher from publishing"
+    ],
+    "explanation": "Peer review is a filter and improvement step, not an oracle. Findings can still change after later replications, but review reduces obvious mistakes.",
+    "theoryLines": [
+      "Scientific knowledge grows through critical community review.",
+      "Reading a primary source still requires your own critical thinking."
+    ]
+  }
+}

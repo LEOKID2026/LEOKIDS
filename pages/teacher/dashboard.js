@@ -41,7 +41,9 @@ export default function TeacherDashboardPage({ linkEnabled }) {
   const supabaseRef = useRef(null);
   const activityRequestRef = useRef(0);
   const [state, setState] = useState("loading");
-  const [loadingHint, setLoadingHint] = useState("Verifying connection…");
+  const [loadingHint, setLoadingHint] = useState(() =>
+    globalBurnDownCopy("pages__teacher__dashboard", "verifying_connection")
+  );
   const [dashboard, setDashboard] = useState(null);
   const [activityLoading, setActivityLoading] = useState(false);
   const [accessToken, setAccessToken] = useState(null);
@@ -74,7 +76,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
   }, []);
 
   const loadDashboardShell = useCallback(async (token, { backgroundActivity = true } = {}) => {
-    setLoadingHint("Loading dashboard…");
+    setLoadingHint(globalBurnDownCopy("pages__teacher__dashboard", "loading_dashboard"));
     try {
       const res = await withTimeout(
         teacherAuthFetch(token, "/api/teacher/dashboard"),
@@ -123,7 +125,7 @@ export default function TeacherDashboardPage({ linkEnabled }) {
       const isStaffCookie = session.authMethod === "staff_cookie";
       setAuthMethod(session.authMethod);
       setAccessToken(token);
-      setLoadingHint("Loading dashboard…");
+      setLoadingHint(globalBurnDownCopy("pages__teacher__dashboard", "loading_dashboard"));
 
       let dash;
       try {
@@ -231,8 +233,8 @@ export default function TeacherDashboardPage({ linkEnabled }) {
   if (state === "schema_not_ready" || state === "data_load_error") {
     const msg =
       state === "schema_not_ready"
-        ? "The system is still warming up. Try again in a few minutes."
-        : "Something went wrong loading the data. Refresh the page and try again.";
+        ? globalBurnDownCopy("pages__teacher__dashboard", "system_warming_up")
+        : globalBurnDownCopy("pages__teacher__dashboard", "load_data_error");
     return (
       <Layout {...privateLayoutProps}>
         <TeacherPortalShell title={globalBurnDownCopy("pages__teacher__dashboard", "my_dashboard")} titleClassName={shellTheme.shellTitle}>

@@ -1,15 +1,17 @@
 {
   "copy": {
     "choose_all_the_odd_numbers_on_the_path": "اختر جميع الأرقام الفردية على المسار",
-    "prompt_odd": "اختر جميع الأرقام الفردية.",
-    "prompt_even": "اختر جميع الأرقام الزوجية.",
-    "prompt_multiples": "اختر جميع مضاعفات {multiple}.",
-    "prompt_skip_forward": "ابدأ عند {start}. أضف {step} في كل خطوة. اختر الأرقام بالترتيب.",
-    "prompt_skip_backward": "ابدأ عند {start}. اطرح {step} في كل خطوة. اختر الأرقام بالترتيب.",
+    "feedback_almost": "كدت تصل! تحقق من القاعدة والترتيب مرة أخرى.",
+    "feedback_ok": "أحسنت! اخترت المسار الصحيح.",
     "prompt_arithmetic_ascending": "ابدأ من {start} وأضف {step} في كل خطوة. اختر الأرقام بالترتيب.",
     "prompt_arithmetic_descending": "ابدأ من {start} واطرح {step} في كل خطوة. اختر الأرقام بالترتيب.",
     "prompt_arithmetic_missing": "أكمل التسلسل. اختر الأرقام المفقودة بالترتيب.",
+    "prompt_even": "اختر جميع الأرقام الزوجية.",
     "prompt_geometric_sequence": "ابدأ بـ {start} واضرب بـ {ratio} في كل خطوة. اختر الأرقام بالترتيب.",
+    "prompt_multiples": "اختر جميع مضاعفات {multiple}.",
+    "prompt_odd": "اختر جميع الأرقام الفردية.",
+    "prompt_skip_backward": "ابدأ عند {start}. اطرح {step} في كل خطوة. اختر الأرقام بالترتيب.",
+    "prompt_skip_forward": "ابدأ عند {start}. أضف {step} في كل خطوة. اختر الأرقام بالترتيب.",
     "solution_prefix": "المسار الصحيح:"
   }
 }

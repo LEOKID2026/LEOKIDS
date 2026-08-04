@@ -1,6 +1,6 @@
 {
   "tagLabels": {
-    "calculation_slip": "قسيمة حسابية مختصرة",
+    "calculation_slip": "زلة حسابية بسيطة",
     "concept_gap": "فجوة في فهم المفهوم",
     "strategy_error": "اختيار نهج الحل غير المناسب",
     "instruction_misread": "قراءة خاطئة للصياغة",
@@ -12,12 +12,12 @@
     "language_comprehension_gap": "فهم اللغة",
     "decoding_error": "فك تشفير الحروف/الصوت",
     "comprehension_gap": "فهم المقروء",
-    "detail_recall_error": "- استرجاع التفاصيل من النص",
+    "detail_recall_error": "استرجاع التفاصيل من النص",
     "inference_error": "الاستدلال من النص",
     "vocabulary_gap": "المفردات",
     "sequence_error": "ترتيب الخطوات أو المعلومات",
     "grammar_pattern_error": "النمط النحوي",
-    "tense_confusion": "الارتباك المتوتر الفعل",
+    "tense_confusion": "الخلط في أزمنة الأفعال",
     "reading_comprehension_gap": "فهم النص بشكل عام",
     "spelling_pattern_error": "نمط التهجئة",
     "fact_recall_gap": "تذكر الحقائق",

@@ -6,6 +6,7 @@ import {
 } from "../../../lib/rewards/rewards-ui.js";
 import { resolveGlobalRewardCardDisplay } from "../../../lib/rewards/reward-card-global-display.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
+import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 
 const SHOP_PATH = "/api/student/rewards/cards/shop";
 const PURCHASE_PATH = "/api/student/rewards/shop/purchase";
@@ -34,6 +35,7 @@ export default function StudentCardsShopView({
   actionButtonClassName = "",
 }) {
   const copy = useRewardUiCopy();
+  const { locale } = useI18n();
   const [shop, setShop] = useState([]);
   const [phase, setPhase] = useState("loading");
   const [messageHe, setMessageHe] = useState("");
@@ -111,7 +113,7 @@ export default function StudentCardsShopView({
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins) })}\n${copy("shop", "sellConfirmBody")}`,
+      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins, locale) })}\n${copy("shop", "sellConfirmBody")}`,
     );
     if (!confirmed) return;
 
@@ -145,7 +147,7 @@ export default function StudentCardsShopView({
         setMessageHe(
           copy("shopView", "sellSuccess", {
             name: soldName || copy("fallback", "rewardCard"),
-            amount: formatCoinAmountHe(json.sellbackCoins || 0),
+            amount: formatCoinAmountHe(json.sellbackCoins || 0, locale),
           }),
         );
       }
@@ -182,7 +184,7 @@ export default function StudentCardsShopView({
     <div className="space-y-3 min-w-0">
       {coinBalance != null ? (
         <p className={`text-sm font-semibold ${T.statValue}`}>
-          {copy("shopView", "coinBalance", { amount: formatCoinAmountHe(coinBalance) })}
+          {copy("shopView", "coinBalance", { amount: formatCoinAmountHe(coinBalance, locale) })}
         </p>
       ) : null}
       {messageHe ? <p className={`text-sm ${T.userMessage || T.tileSub}`}>{messageHe}</p> : null}
@@ -207,11 +209,11 @@ export default function StudentCardsShopView({
             footer: (
               <>
                 <p className={`text-sm font-semibold ${T.statValue}`}>
-                  {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins) })}
+                  {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins, locale) })}
                 </p>
                 {card.sellbackCoins > 0 ? (
                   <p className={`text-xs leading-snug ${T.tileSub}`}>
-                    {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins) })}
+                    {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins, locale) })}
                   </p>
                 ) : (
                   <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -220,7 +222,7 @@ export default function StudentCardsShopView({
                   {!card.alreadyOwned && !canBuy
                     ? card.missingCoins > 0
                       ? copy("shopView", "needMoreCoins", {
-                          amount: formatCoinAmountHe(card.missingCoins),
+                          amount: formatCoinAmountHe(card.missingCoins, locale),
                         })
                       : copy("shopView", "notEnoughCoinsShort")
                     : "\u00a0"}

@@ -887,7 +887,7 @@ export default function LeoSupermarketGame({
               : `Nice work! You helped ${endMetrics?.correctCustomers ?? 0} customers and backed up Leo at the market`}
           </h2>
           <div className={styles.endStats}>
-            <p>⭐ Score: {score}</p>
+            <p>{gamePackCopy("components__educational-games__leo-supermarket__LeoSupermarketGame", "end_score", { score })}</p>
             <p>
               👤 Correct customers: {correctCustomers}/{CUSTOMERS_PER_LEVEL}
             </p>

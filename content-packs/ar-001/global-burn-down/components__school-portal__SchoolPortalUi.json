@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "col_subject": "المادة",
+    "col_class": "الفصل",
+    "col_teacher": "المعلم",
+    "col_type": "النوع",
+    "view_answers": "عرض الإجابات"
+  }
+}

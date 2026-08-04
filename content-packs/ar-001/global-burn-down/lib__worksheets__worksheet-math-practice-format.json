@@ -4,13 +4,18 @@
     "vertical_addition_and_subtraction": "الجمع والطرح العمودي",
     "basic_multiplication": "الضرب الأساسي",
     "long_multiplication": "الضرب الطويل",
-    "basic_division": "التقسيم الأساسي",
+    "basic_division": "القسمة الأساسية",
     "long_division": "القسمة الطويلة",
     "fractions": "الكسور",
     "decimals": "الأعداد العشرية",
     "percentages": "النسب المئوية",
-    "ratio_and_scale": "النسبة والحجم",
+    "ratio_and_scale": "النسبة والمقياس",
     "word_problems": "مسائل كلامية",
-    "mixed_practice": "تمرين مختلط"
+    "mixed_practice": "تمرين مختلط",
+    "horizontal_addition": "جمع أفقي",
+    "vertical_addition": "جمع عمودي",
+    "horizontal_subtraction": "طرح أفقي",
+    "vertical_subtraction": "طرح عمودي",
+    "unit_fractions_halves_quarters": "كسور الوحدة — أنصاف وأرباع"
   }
 }

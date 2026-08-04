@@ -1,5 +1,21 @@
 {
   "copy": {
-    "class_activities": "الأنشطة الصفية"
+    "class_activities": "أنشطة الفصل",
+    "back_to_dashboard": "← العودة إلى لوحة التحكم",
+    "subtitle": "أنشئ أنشطة الفصل وأطلقها وتابعها.",
+    "new_activity": "نشاط جديد",
+    "loading": "جارٍ تحميل الأنشطة…",
+    "error_loading": "تعذّر التحميل",
+    "network_error": "خطأ في الشبكة",
+    "try_again": "حاول مرة أخرى",
+    "forbidden": "ليس لديك صلاحية لعرض أنشطة هذا الفصل.",
+    "empty": "لا توجد أنشطة بعد. أنشئ نشاطًا جديدًا.",
+    "col_title": "العنوان",
+    "col_status": "الحالة",
+    "col_type": "النوع",
+    "col_progress": "التقدّم",
+    "col_actions": "إجراءات",
+    "edit_launch": "تحرير / إطلاق",
+    "view": "عرض"
   }
 }

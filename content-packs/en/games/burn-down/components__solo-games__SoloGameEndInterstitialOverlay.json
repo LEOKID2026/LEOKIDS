@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "win_title": "Great job!",
+    "lose_title": "Game over",
+    "calculating": "Calculating your score...",
+    "skip": "Skip",
+    "aria_win": "Great job",
+    "aria_lose": "Game over"
+  }
+}

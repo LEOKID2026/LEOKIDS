@@ -10,6 +10,7 @@ import {
   updateDemoGrade,
   PLAY_LIMIT_MS,
 } from "../../lib/demo/demo-mode.client.js";
+import { clearParentDemoSession } from "../../lib/demo/parent-demo-mode.client.js";
 import { demoGradeLabelForLocale, demoPackCopyForLocale } from "../../lib/demo/demo-pack-copy.js";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
@@ -42,6 +43,8 @@ export default function DemoEnterPage() {
     async (gradeLevel) => {
       setBusy(true);
       try {
+        // Isolate personas — parent demo chrome/shim must not bleed into student routes.
+        clearParentDemoSession();
         const grade = String(gradeLevel || selected).trim().toLowerCase();
         if (hasDemoSession()) {
           updateDemoGrade(grade);

@@ -1,3 +1,4 @@
+import { gamePackCopy } from "../../lib/games/game-pack-copy.js";
 import { useGameUiDisplay } from "../../lib/games/game-locale-context.jsx";
 import { useDisplayGame } from "../../hooks/games/useDisplayGame.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -133,7 +134,7 @@ export default function SoloGameShell({ gameKey }) {
     <GameAccessGuard gameKey={gameKey}>
     <>
       <Head>
-        <title>{ui.title} - Leo's Games</title>
+        <title>{ui.title} - {gamePackCopy("components__solo-games__SoloGameShell", "page_title_suffix")}</title>
       </Head>
       <div
         className={themedShell ? SG.shell : PLAY_SHELL}

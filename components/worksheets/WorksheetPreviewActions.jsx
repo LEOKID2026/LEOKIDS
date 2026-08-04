@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * @param {{
@@ -14,6 +15,7 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
  *   onRefresh?: () => void,
  *   refreshLoading?: boolean,
  *   backHref?: string,
+ *   onClose?: () => void,
  * }} props
  */
 export default function WorksheetPreviewActions({
@@ -27,6 +29,8 @@ export default function WorksheetPreviewActions({
   onClose,
 }) {
   const ui = useWorksheetUi();
+  const t = useT();
+  const pdfLabel = t("worksheets.downloadPdf");
   return (
     <div className="worksheet-preview-actions no-print">
       <button
@@ -58,6 +62,17 @@ export default function WorksheetPreviewActions({
           {answerKeyLoading ? ui.loading : ui.answerKey}
         </button>
       ) : null}
+
+      <button
+        type="button"
+        onClick={onPrint}
+        className="worksheet-action-btn worksheet-action-btn-ghost"
+        data-testid="worksheet-preview-pdf"
+        aria-label={pdfLabel}
+        title={pdfLabel}
+      >
+        {pdfLabel}
+      </button>
 
       {onClose ? (
         <button

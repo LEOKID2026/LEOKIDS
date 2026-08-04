@@ -17,10 +17,11 @@ import SoloGameHelpButton from "../components/solo-games/SoloGameHelpButton.jsx"
 import SoloGameHelpModal from "../components/solo-games/SoloGameHelpModal.jsx";
 import GamesHubLockFooter from "../components/games/GamesHubLockFooter.jsx";
 import { useSoloGameHelp } from "../hooks/solo-games/useSoloGameHelp.js";
-import { useT } from "../lib/i18n/I18nProvider.jsx";
+import { useT, useI18n } from "../lib/i18n/I18nProvider.jsx";
 
 export default function Games() {
   const t = useT();
+  const { direction, locale } = useI18n();
   const { theme } = useStudentTheme();
   const { GH } = useGamesHubUi();
   const { state, playableGames, enabledGames, isGuest } = useStudentGameAccess();
@@ -34,7 +35,7 @@ export default function Games() {
   return (
     <Layout studentTheme={theme} studentShell="home">
       <GameAccessGuard category="solo">
-        <main className={GH.pageWrap} dir="ltr" lang="en">
+        <main className={GH.pageWrap} dir={direction} lang={locale}>
           <div className={`${GH.container} space-y-4`}>
             <GamesHubNavBar
               backHref="/games"

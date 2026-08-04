@@ -79,8 +79,8 @@
     "G-04": {
       "id": "G-04",
       "domain": "تحويل",
-      "topic": "تناوب",
-      "subskill": "Direction/angle",
+      "topic": "دوران",
+      "subskill": "الاتجاه/الزاوية",
       "pattern": "دوران معكوس",
       "counterEvidence": "الصحيح على الشبكة",
       "countsWhen": "الشبكة والمحور",
@@ -110,8 +110,8 @@
       "counterEvidence": "الصحيح على مكعب بسيط",
       "countsWhen": "صافي متاح",
       "doesNotCountWhen": "لا يوجد رسم تخطيطي عندما لا يتم تدريسه",
-      "probe": "مع/بدون نت",
-      "intervention": "صافي الورق",
+      "probe": "مع/بدون شبكة",
+      "intervention": "شبكة ورقية",
       "escalation": "فشل على مكعب",
       "observableMarkers": [
         "إجابة ثنائية الأبعاد",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const GRADIENTS = {
   parents: "from-amber-500/60 to-rose-600/70",
@@ -8,6 +9,7 @@ const GRADIENTS = {
 };
 
 export default function HelpHubCard({ href, title, description, emoji, sectionKey, isBright = false }) {
+  const t = useT();
   const gradient = GRADIENTS[sectionKey] || GRADIENTS.parents;
 
   return (
@@ -31,7 +33,7 @@ export default function HelpHubCard({ href, title, description, emoji, sectionKe
           }`}
         >
           <span aria-hidden>→</span>
-          Open guide
+          {t("ui.help.openGuide")}
         </span>
       </div>
     </Link>

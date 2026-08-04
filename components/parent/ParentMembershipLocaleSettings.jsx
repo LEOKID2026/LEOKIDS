@@ -13,7 +13,7 @@ import {
  */
 export default function ParentMembershipLocaleSettings({ className = "" }) {
   const t = useT();
-  const { selectableLocales, locale: interfaceLocale, reportLocale } = useI18n();
+  const { localePickerLocales, locale: interfaceLocale, reportLocale } = useI18n();
   const { isBright } = useStudentTheme();
   const T = getParentPortalTheme(isBright);
   const {
@@ -46,7 +46,7 @@ export default function ParentMembershipLocaleSettings({ className = "" }) {
     [onReportLocaleChange]
   );
 
-  if (!loaded || !selectableLocales || selectableLocales.length < 2) {
+  if (!loaded || !localePickerLocales || localePickerLocales.length < 2) {
     return null;
   }
 
@@ -68,7 +68,7 @@ export default function ParentMembershipLocaleSettings({ className = "" }) {
           label={t("ui.localeSettings.interfaceLanguage")}
           hint={t("ui.localeSettings.interfaceHint")}
           value={interfaceValue}
-          locales={selectableLocales}
+          locales={localePickerLocales}
           onChange={handleInterfaceChange}
           T={T}
         />
@@ -77,7 +77,7 @@ export default function ParentMembershipLocaleSettings({ className = "" }) {
           label={t("ui.localeSettings.reportLanguage")}
           hint={t("ui.localeSettings.reportHint")}
           value={reportValue}
-          locales={selectableLocales}
+          locales={localePickerLocales}
           onChange={handleReportChange}
           T={T}
         />
