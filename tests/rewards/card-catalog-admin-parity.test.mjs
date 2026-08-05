@@ -14,19 +14,23 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
 
 describe("card-catalog-admin-parity", () => {
-  test("student cards view exposes requirementHe and progress fields", () => {
+  test("student cards view exposes locale-neutral requirement and progress fields", () => {
     const src = readFileSync(join(ROOT, "lib/rewards/server/reward-cards.server.js"), "utf8");
-    assert.match(src, /requirementHe/);
-    assert.match(src, /progressHe/);
+    assert.match(src, /requirementText/);
+    assert.match(src, /progressText/);
     assert.match(src, /visibilityMode/);
-    assert.match(src, /buildCardRequirementHe/);
+    assert.match(src, /resolveGlobalCardCopy/);
+    assert.doesNotMatch(src, /requirementHe/);
+    assert.doesNotMatch(src, /buildCardRequirementHe/);
   });
 
-  test("admin writable fields include visibility and requirement", () => {
+  test("admin writable fields include visibility and grade bands", () => {
     assert.ok(ADMIN_CARD_WRITABLE_FIELDS.includes("visibility_mode"));
-    assert.ok(ADMIN_CARD_WRITABLE_FIELDS.includes("requirement_text_he"));
     assert.ok(ADMIN_CARD_WRITABLE_FIELDS.includes("grade_bands"));
     assert.ok(ADMIN_CARD_WRITABLE_FIELDS.includes("image_url"));
+    assert.equal(ADMIN_CARD_WRITABLE_FIELDS.includes("requirement_text_he"), false);
+    assert.equal(ADMIN_CARD_WRITABLE_FIELDS.includes("name_he"), false);
+    assert.equal(ADMIN_CARD_WRITABLE_FIELDS.includes("description_he"), false);
   });
 
   test("admin cards API uses validateCardPayload", () => {

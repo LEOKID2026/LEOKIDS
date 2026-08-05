@@ -17,18 +17,18 @@ import {
 } from "../../lib/worksheets/worksheet-question-types.js";
 
 const META = {
-  titleHe: "דף עבודה - כפל",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "כפל",
-  levelHe: "בינוני",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "math",
 };
 
 const RAW_QUESTIONS = [
   {
-    question: "כמה זה 2 × 3?",
+    question: "  2 × 3?",
     answers: ["5", "6", "7", "8"],
     correctIndex: 1,
     explanation: "2×3=6",
@@ -36,7 +36,7 @@ const RAW_QUESTIONS = [
     seedId: 42,
   },
   {
-    question: "כמה זה 4 + 1?",
+    question: "  4 + 1?",
     answers: ["4", "5", "6", "7"],
     correctIndex: 1,
     diagnosticSkillId: "diag_add",

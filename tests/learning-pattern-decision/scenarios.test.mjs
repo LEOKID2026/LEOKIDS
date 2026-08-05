@@ -50,7 +50,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "math",
     bucket: "addition",
-    name: "חיבור",
+    name: "",
     q: 3,
     c: 1,
     w: 2,
@@ -69,7 +69,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "english",
     bucket: "grammar",
-    name: "דקדוק",
+    name: "",
     q: 3,
     c: 1,
     w: 2,
@@ -85,7 +85,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "math",
     bucket: "addition",
-    name: "חיבור",
+    name: "",
     q: 5,
     c: 1,
     w: 4,
@@ -93,7 +93,7 @@ function assertNoForbidden(text) {
     mistakes: mkWrong("math", "addition", 4),
   });
   assert.equal(lpd.findingType, "difficulty_pattern");
-  assert.match(lpd.parentVisibleFinding, /דפוס חוזר/);
+  assert.match(lpd.parentVisibleFinding, / /);
 }
 
 /** Scenario 3 — 5q 4w different pattern types */
@@ -113,7 +113,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "geometry",
     bucket: "perimeter",
-    name: "היקף",
+    name: "",
     q: 5,
     c: 1,
     w: 4,
@@ -129,7 +129,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "math",
     bucket: "addition",
-    name: "חיבור",
+    name: "",
     q: 5,
     c: 5,
     w: 0,
@@ -137,7 +137,7 @@ function assertNoForbidden(text) {
     mistakes: [],
   });
   assert.equal(lpd.topicStatus, "positive_observed");
-  assert.ok(lpd.parentVisibleFinding.includes("הצלחה"));
+  assert.ok(lpd.parentVisibleFinding.includes(""));
 }
 
 /** Scenario 5 — 10q 5w same pattern (hebrew) */
@@ -145,7 +145,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "hebrew",
     bucket: "reading",
-    name: "הבנת הנקרא",
+    name: " ",
     q: 10,
     c: 5,
     w: 5,
@@ -160,7 +160,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "science",
     bucket: "graphs",
-    name: "גרפים",
+    name: "",
     q: 12,
     c: 6,
     w: 6,
@@ -189,7 +189,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "history",
     bucket: "ancient",
-    name: "עתיקה",
+    name: "",
     q: 0,
     c: 0,
     w: 0,
@@ -205,7 +205,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "english",
     bucket: "vocabulary",
-    name: "אוצר מילים",
+    name: " ",
     q: 8,
     c: 3,
     w: 5,
@@ -214,7 +214,7 @@ function assertNoForbidden(text) {
     mode: "speed",
   });
   assert.equal(lpd.competitiveBucketOnly, true);
-  assert.match(lpd.parentVisibleFinding, /תחרותי|מהירות/);
+  assert.match(lpd.parentVisibleFinding, /|/);
 }
 
 /** Scenario — missing V3 still produces LPD via topic performance */
@@ -222,7 +222,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "moledet-geography",
     bucket: "maps",
-    name: "מפות",
+    name: "",
     q: 6,
     c: 2,
     w: 4,
@@ -241,7 +241,7 @@ function assertNoForbidden(text) {
     topicRowKey: "timeline",
     row: {
       bucketKey: "timeline",
-      displayName: "ציר זמן",
+      displayName: " ",
       questions: 20,
       correct: 18,
       wrong: 2,
@@ -262,7 +262,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "history",
     bucket: "unused-topic",
-    name: "לא תורגל",
+    name: " ",
     q: 0,
     c: 0,
     w: 0,
@@ -277,7 +277,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "english",
     bucket: "grammar",
-    name: "דקדוק",
+    name: "",
     q: 6,
     c: 2,
     w: 4,
@@ -317,7 +317,7 @@ function assertNoForbidden(text) {
     topicRowKey: "spelling",
     row: {
       bucketKey: "spelling",
-      displayName: "כתיב",
+      displayName: "",
       questions: 10,
       correct: 8,
       wrong: 2,
@@ -349,7 +349,7 @@ function assertNoForbidden(text) {
   const lpd = buildCase({
     subjectId: "geometry",
     bucket: "area",
-    name: "שטח",
+    name: "",
     q: 10,
     c: 4,
     w: 6,
@@ -362,8 +362,8 @@ function assertNoForbidden(text) {
 
 /** Forbidden wording grep — all scenario outputs */
 for (const sc of [
-  buildCase({ subjectId: "math", bucket: "addition", name: "חיבור", q: 5, c: 1, w: 4, acc: 20, mistakes: mkWrong("math", "addition", 4) }),
-  buildCase({ subjectId: "english", bucket: "grammar", name: "דקדוק", q: 8, c: 7, w: 1, acc: 87.5, mistakes: mkWrong("english", "grammar", 1) }),
+  buildCase({ subjectId: "math", bucket: "addition", name: "", q: 5, c: 1, w: 4, acc: 20, mistakes: mkWrong("math", "addition", 4) }),
+  buildCase({ subjectId: "english", bucket: "grammar", name: "", q: 8, c: 7, w: 1, acc: 87.5, mistakes: mkWrong("english", "grammar", 1) }),
 ]) {
   assertNoForbidden(sc.parentVisibleFinding);
 }

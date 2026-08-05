@@ -97,8 +97,8 @@ for (const root of checkRoots) {
 console.log("syntax_checked", checked, "syntax_fail", fail);
 
 // allowlisted auth still may have HE
-const authHe = "lib/auth/auth-registration.he.js";
+const authHe = "lib/auth/auth-registration.js";
 console.log(
-  "auth-registration.he.js HE (allowlisted):",
+  "auth-registration.js HE (allowlisted):",
   HE.test(fs.readFileSync(path.join(ROOT, authHe), "utf8"))
 );

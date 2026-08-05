@@ -32,9 +32,9 @@ export async function getStaticProps({ params }) {
   ).map((related) => ({
     slug: related.slug,
     h1: related.h1,
-    subjectHe: related.subjectHe,
-    gradeHe: related.gradeHe,
-    topicHe: related.topicHe,
+    subject: related.subject,
+    grade: related.grade,
+    topic: related.topic,
   }));
 
   return {

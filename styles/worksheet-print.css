@@ -537,7 +537,7 @@
   page-break-inside: avoid;
 }
 
-/* חילוק ארוך: קו מאוזן + מאונך כגבולות רציפים עם פינה אחת */
+/*  :   +       */
 .worksheet-long-division {
   display: inline-flex;
   flex-direction: row;
@@ -884,7 +884,7 @@
   margin-top: 0.2rem;
 }
 
-/* Pin "תשובה:" to the bottom of the geometry question balloon. */
+/* Pin ":" to the bottom of the geometry question balloon. */
 .worksheet-question.layout-geometry-double > .worksheet-question-title,
 .worksheet-question.layout-geometry-single > .worksheet-question-title {
   flex-shrink: 0;

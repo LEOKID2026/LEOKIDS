@@ -2,22 +2,22 @@ import { useCallback, useState } from "react";
 import DevPrototypeShell from "../../../solo-games/prototypes/dev/DevPrototypeShell.jsx";
 
 const BODIES = [
-  { id: "mars", name: "מאדים", emoji: "🔴", fact: "מאדים הוא הכוכב האדום - קר ואבקי." },
-  { id: "saturn", name: "שבתאי", emoji: "🪐", fact: "לשבתאי יש טבעות גדולות מקרח ואבק." },
-  { id: "earth", name: "כדור הארץ", emoji: "🌍", fact: "כדור הארץ הוא הבית שלנו - יש בו מים וחיים." },
-  { id: "moon", name: "הירח", emoji: "🌙", fact: "הירח מקיף את כדור הארץ ומאיר בלילה." },
-  { id: "sun", name: "השמש", emoji: "☀️", fact: "השמש היא כוכב שמחמם את מערכת השמש." },
-  { id: "jupiter", name: "צדק", emoji: "🟤", fact: "צדק הוא כוכב הלכת הגדול ביותר." },
-  { id: "comet", name: "שביט", emoji: "☄️", fact: "שביט הוא גוף קרח שעף בחלל ויש לו זנב." },
+  { id: "mars", name: "Mars", emoji: "🔴", fact: "Mars is the red planet — cold and dusty." },
+  { id: "saturn", name: "Saturn", emoji: "🪐", fact: "Saturn has big rings of ice and dust." },
+  { id: "earth", name: "Earth", emoji: "🌍", fact: "Earth is our home — it has water and life." },
+  { id: "moon", name: "Moon", emoji: "🌙", fact: "The Moon orbits Earth and shines at night." },
+  { id: "sun", name: "Sun", emoji: "☀️", fact: "The Sun is a star that heats the solar system." },
+  { id: "jupiter", name: "Jupiter", emoji: "🟤", fact: "Jupiter is the biggest planet." },
+  { id: "comet", name: "Comet", emoji: "☄️", fact: "A comet is an icy body flying through space with a tail." },
 ];
 
 const MISSIONS = [
-  { id: "red", prompt: "מצאו את הכוכב האדום", answer: "mars" },
-  { id: "rings", prompt: "מצאו את הכוכב עם הטבעות", answer: "saturn" },
-  { id: "home", prompt: "מצאו את הבית שלנו", answer: "earth" },
-  { id: "moon-orbit", prompt: "מי מקיף את כדור הארץ?", answer: "moon" },
-  { id: "biggest", prompt: "מצאו את כוכב הלכת הגדול", answer: "jupiter" },
-  { id: "tail", prompt: "מי עף עם זנב באורך?", answer: "comet" },
+  { id: "red", prompt: "Find the red planet", answer: "mars" },
+  { id: "rings", prompt: "Find the planet with rings", answer: "saturn" },
+  { id: "home", prompt: "Find our home", answer: "earth" },
+  { id: "moon-orbit", prompt: "What orbits Earth?", answer: "moon" },
+  { id: "biggest", prompt: "Find the biggest planet", answer: "jupiter" },
+  { id: "tail", prompt: "What flies with a long tail?", answer: "comet" },
 ];
 
 function pickMission(done = []) {
@@ -64,7 +64,7 @@ export default function SpaceMissionPrototype() {
 
       if (id === mission.answer) {
         setScore((s) => s + 10);
-        setFeedback(`משימה הושלמה! ${body?.name} ✅`);
+        setFeedback(`Mission complete! ${body?.name} ✅`);
         setFact(body?.fact ?? "");
         setFlash("ok");
         const nextDone = [...doneMissions, mission.id];
@@ -72,7 +72,7 @@ export default function SpaceMissionPrototype() {
         window.setTimeout(() => {
           setFlash("");
           if (nextDone.length >= MISSIONS.length) {
-            setFeedback("כל המשימות הושלמו! אסטרונאוט מצוין 🚀");
+            setFeedback("All missions complete! Excellent astronaut 🚀");
             setPhase("done");
             return;
           }
@@ -82,7 +82,7 @@ export default function SpaceMissionPrototype() {
           setFeedback("");
         }, 2000);
       } else {
-        setFeedback(`לא ${body?.name} - נסו שוב לפי המשימה`);
+        setFeedback(`Not ${body?.name} — try again for this mission`);
         setFact("");
         setFlash("bad");
         window.setTimeout(() => setFlash(""), 400);
@@ -93,8 +93,8 @@ export default function SpaceMissionPrototype() {
 
   return (
     <DevPrototypeShell
-      title="משימת חלל"
-      subtitle="אבטיפוס · משימות עם ליאו בחללית"
+      title="Space Mission"
+      subtitle="Prototype · Complete missions with Leo in the spaceship"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-[10px] font-bold text-amber-200">
           {score} · {doneMissions.length}/{MISSIONS.length}
@@ -105,16 +105,16 @@ export default function SpaceMissionPrototype() {
         {phase === "intro" ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
             <p className="text-5xl">🚀</p>
-            <p className="max-w-sm text-sm font-semibold text-indigo-200">עזרו לליאו להשלים משימות בחלל!</p>
+            <p className="max-w-sm text-sm font-semibold text-indigo-200">Help Leo complete missions in space!</p>
             <button type="button" onClick={start} className="min-h-[48px] rounded-xl bg-indigo-600 px-8 py-2.5 text-base font-bold text-white">
-              המראה!
+              Launch!
             </button>
           </div>
         ) : (
           <>
             {phase === "play" && mission ? (
               <div className="rounded-xl border-2 border-yellow-400/70 bg-slate-950/90 px-3 py-2 text-center">
-                <p className="text-xs font-bold text-amber-200">📡 משימה</p>
+                <p className="text-xs font-bold text-amber-200">📡 Mission</p>
                 <p className="text-sm font-extrabold sm:text-base">{mission.prompt}</p>
               </div>
             ) : null}
@@ -151,7 +151,7 @@ export default function SpaceMissionPrototype() {
             ) : null}
 
             <button type="button" onClick={reset} className="mx-auto min-h-[44px] rounded-xl border-2 border-white/25 px-6 py-2 text-sm font-bold">
-              משחק חדש
+              New game
             </button>
           </>
         )}

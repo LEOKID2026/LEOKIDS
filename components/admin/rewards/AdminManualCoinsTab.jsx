@@ -1,16 +1,16 @@
 import { useCallback, useId, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
 import AdminModal, { AdminModalButton } from "../AdminModal.jsx";
 
 const CATEGORIES = [
-  { value: "compensation", label: "פיצוי" },
-  { value: "bonus", label: "בונוס" },
-  { value: "bugfix", label: "תיקון תקלה" },
-  { value: "other", label: "אחר" },
+  { value: "compensation", label: "Compensation" },
+  { value: "bonus", label: "Bonus" },
+  { value: "bugfix", label: "Issue fix" },
+  { value: "other", label: "Other" },
 ];
 
-const PARENT_NOT_FOUND_HE = "לא נמצא הורה עם כתובת המייל הזו";
+const PARENT_NOT_FOUND_HE = "No parent found with this email";
 
 function formatBalance(n) {
   const v = Math.floor(Number(n) || 0);
@@ -27,9 +27,9 @@ function newClientRequestId() {
 function lastActivityListLine(child) {
   const la = child?.lastActivity;
   if (!la?.hasActivity || !la?.atLabelHe) {
-    return "פעילות אחרונה: אין פעילות";
+    return "Last activity: none";
   }
-  return `פעילות אחרונה: ${la.atLabelHe}`;
+  return `Last activity: ${la.atLabelHe}`;
 }
 
 export default function AdminManualCoinsTab({ accessToken }) {
@@ -67,7 +67,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
   const loadChildren = useCallback(async () => {
     const email = parentEmailInput.trim();
     if (!email) {
-      setLoadError("יש להזין כתובת מייל של הורה");
+      setLoadError("Enter a parent email address");
       return;
     }
     setLoadPhase("loading");
@@ -126,7 +126,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
           : {
               hasActivity: false,
               atLabelHe: null,
-              shortLineHe: "אין פעילות",
+              shortLineHe: "No activity",
               detailLineHe: null,
             };
         patchChild(studentId, { lastActivity });
@@ -244,12 +244,12 @@ export default function AdminManualCoinsTab({ accessToken }) {
   return (
     <div className="text-right w-full max-w-full overflow-x-hidden">
       <p className="text-xs text-white/60 mb-4">
-        חיפוש לפי מייל הורה, בחירת ילד, מעקב פעילות והוספת מטבעות - לתמיכה ובקרה.
+        Search by parent email, select a child, review activity, and add coins — for support and control.
       </p>
 
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-4 w-full max-w-xl">
         <label htmlFor={`${formId}-parent-email`} className="block text-sm font-semibold mb-2">
-          כתובת מייל של הורה
+          Parent email address
         </label>
         <div className="flex flex-col sm:flex-row gap-2">
           <input
@@ -268,7 +268,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
             disabled={loadPhase === "loading"}
             className="shrink-0 rounded-lg bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
           >
-            {loadPhase === "loading" ? ADMIN_LOADING : "טען ילדים"}
+            {loadPhase === "loading" ? ADMIN_LOADING : "Load children"}
           </button>
         </div>
         {loadError ? <p className="text-red-300 text-sm mt-2">{loadError}</p> : null}
@@ -277,7 +277,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
       {loadPhase === "ok" && children.length > 0 ? (
         <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 mb-4 w-full max-w-xl">
           <p className="text-sm text-white/50 mb-3">
-            ילדים של {parentEmail || "-"} ({children.length})
+            Children under {parentEmail || "-"} ({children.length})
           </p>
           <ul className="space-y-3">
             {children.map((child) => (
@@ -291,7 +291,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
                     <p className="text-xs text-white/60 mt-0.5">{child.gradeLabelHe}</p>
                   ) : null}
                   <p className="text-sm text-amber-200 mt-1">
-                    {formatBalance(child.balance)} מטבעות
+                    {formatBalance(child.balance)} Coins
                   </p>
                   <p className="text-xs text-white/50 mt-1">{lastActivityListLine(child)}</p>
                 </div>
@@ -304,7 +304,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
                       : "bg-white/10 border border-white/20 hover:bg-white/15"
                   }`}
                 >
-                  בחר ילד
+                  Select child
                 </button>
               </li>
             ))}
@@ -313,25 +313,25 @@ export default function AdminManualCoinsTab({ accessToken }) {
       ) : null}
 
       {loadPhase === "ok" && children.length === 0 ? (
-        <p className="text-white/60 text-sm mb-4">לא נמצאו ילדים משויכים להורה זה.</p>
+        <p className="text-white/60 text-sm mb-4">No children found under this email.</p>
       ) : null}
 
       {selectedStudent ? (
         <section className="rounded-xl border border-emerald-400/30 bg-emerald-500/5 p-4 mb-4 w-full max-w-xl">
-          <p className="text-xs text-emerald-200/80 mb-2 font-semibold">ילד נבחר</p>
-          <p className="text-sm text-white/50 mb-1">שם הילד</p>
+          <p className="text-xs text-emerald-200/80 mb-2 font-semibold">Selected child</p>
+          <p className="text-sm text-white/50 mb-1">Child name</p>
           <p className="text-base font-semibold mb-3">{selectedStudent.fullName || "-"}</p>
-          <p className="text-sm text-white/50 mb-1">מייל ההורה</p>
+          <p className="text-sm text-white/50 mb-1">Parent email</p>
           <p className="text-sm mb-3 break-all" dir="ltr">
             {parentEmail || "-"}
           </p>
-          <p className="text-sm text-white/50 mb-1">יתרה נוכחית</p>
+          <p className="text-sm text-white/50 mb-1">Coin balance</p>
           <p className="text-lg font-bold text-amber-200 mb-3">
-            {formatBalance(selectedStudent.balance)} מטבעות
+            {formatBalance(selectedStudent.balance)} Coins
           </p>
 
           <div className="rounded-lg border border-white/10 bg-black/20 p-3 mb-4 text-sm">
-            <p className="text-white/50 text-xs mb-1">פעילות אחרונה</p>
+            <p className="text-white/50 text-xs mb-1">Last activity (if any)</p>
             {selectedActivity?.hasActivity && selectedActivity?.atLabelHe ? (
               <>
                 <p className="font-semibold text-white mb-1">{selectedActivity.atLabelHe}</p>
@@ -340,7 +340,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
                 </p>
               </>
             ) : (
-              <p className="text-white/70">אין פעילות מתועדת</p>
+              <p className="text-white/70">No activity to show</p>
             )}
           </div>
 
@@ -350,14 +350,14 @@ export default function AdminManualCoinsTab({ accessToken }) {
               onClick={openEvents}
               className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-semibold hover:bg-white/5"
             >
-              אירועים אחרונים
+              Recent events
             </button>
             <button
               type="button"
               onClick={openModal}
               className="rounded-lg bg-emerald-600/40 border border-emerald-400/50 px-4 py-2 text-sm font-semibold hover:bg-emerald-600/50"
             >
-              הוסף מטבעות
+              Add coins
             </button>
           </div>
         </section>
@@ -369,13 +369,13 @@ export default function AdminManualCoinsTab({ accessToken }) {
           role="status"
         >
           <p className="text-emerald-100 font-semibold mb-2">
-            {success.duplicate ? "הפעולה כבר בוצעה (ללא כפילות)" : "המטבעות נוספו בהצלחה"}
+            {success.duplicate ? "Action already completed (no duplicates)" : "Coins added successfully"}
           </p>
           <p className="text-sm text-white/80">
-            יתרה לפני: {formatBalance(success.balanceBefore)} · אחרי:{" "}
+            Balance before: {formatBalance(success.balanceBefore)} · Balance after:{" "}
             {formatBalance(success.balanceAfter)}
             {success.amountCredited != null && !success.duplicate ? (
-              <> · נוספו: {formatBalance(success.amountCredited)}</>
+              <> · Amount credited: {formatBalance(success.amountCredited)}</>
             ) : null}
           </p>
         </div>
@@ -385,22 +385,22 @@ export default function AdminManualCoinsTab({ accessToken }) {
         <AdminModal
           open
           onClose={closeEvents}
-          title="אירועים אחרונים"
+          title="Recent events"
           titleId={`${formId}-events-title`}
           size="lg"
           footer={
-            <AdminModalButton onClick={closeEvents}>סגור</AdminModalButton>
+            <AdminModalButton onClick={closeEvents}>Close</AdminModalButton>
           }
         >
           <p className="text-xs text-white/50 mb-3">
-            {selectedStudent.fullName || "-"} · עד 20 אירועים
+            {selectedStudent.fullName || "-"} · Up to 20 recent events
           </p>
           {eventsPhase === "loading" ? (
             <p className="text-sm text-white/60">{ADMIN_LOADING}</p>
           ) : eventsPhase === "error" ? (
             <p className="text-sm text-red-300">{eventsError}</p>
           ) : recentEvents.length === 0 ? (
-            <p className="text-sm text-white/60">אין אירועים מתועדים</p>
+            <p className="text-sm text-white/60">No events to show</p>
           ) : (
             <ul className="space-y-2 text-xs text-white/85">
               {recentEvents.map((ev, i) => (
@@ -420,41 +420,41 @@ export default function AdminManualCoinsTab({ accessToken }) {
         <AdminModal
           open
           onClose={closeModal}
-          title="הוספת מטבעות לילד"
+          title="Add coins to child"
           titleId={`${formId}-modal-title`}
           size="md"
           footer={
             <>
               <AdminModalButton onClick={closeModal} disabled={submitBusy}>
-                ביטול
+                Cancel
               </AdminModalButton>
               <AdminModalButton
                 variant="primary"
                 onClick={() => void submitCredit()}
                 disabled={submitBusy || !amount}
                 busy={submitBusy}
-                busyLabel="מוסיף..."
+                busyLabel="Adding..."
               >
-                הוסף מטבעות לילד
+                Add coins to child
               </AdminModalButton>
             </>
           }
         >
           <div className="space-y-3 text-sm">
             <div>
-              <p className="text-white/50 mb-1">שם הילד</p>
+              <p className="text-white/50 mb-1">Child name</p>
               <p className="font-semibold">{selectedStudent.fullName || "-"}</p>
             </div>
             <div>
-              <p className="text-white/50 mb-1">יתרה נוכחית</p>
+              <p className="text-white/50 mb-1">Coin balance</p>
               <p className="font-semibold text-amber-200">
-                {formatBalance(selectedStudent.balance)} מטבעות
+                {formatBalance(selectedStudent.balance)} Coins
               </p>
             </div>
 
             <div>
               <label htmlFor={`${formId}-amount`} className="block font-semibold mb-1">
-                כמות מטבעות
+                Amount (coins)
               </label>
               <input
                 id={`${formId}-amount`}
@@ -470,7 +470,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
 
             <div>
               <label htmlFor={`${formId}-category`} className="block font-semibold mb-1">
-                סיבה
+                Reason
               </label>
               <select
                 id={`${formId}-category`}
@@ -488,7 +488,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
 
             <div>
               <label htmlFor={`${formId}-note`} className="block font-semibold mb-1">
-                הערה פנימית
+                Internal note
               </label>
               <textarea
                 id={`${formId}-note`}
@@ -496,7 +496,7 @@ export default function AdminManualCoinsTab({ accessToken }) {
                 className="w-full rounded-lg bg-black/30 border border-white/15 px-3 py-2 text-white resize-y min-h-[4rem]"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="אופציונלי - לתיעוד פנימי"
+                placeholder="Optional — internal notes"
               />
             </div>
           </div>

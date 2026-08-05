@@ -306,7 +306,7 @@ flowchart TB
 | Worksheets enabled | math, geometry, hebrew, english | `lib/worksheets/worksheet-print-allowlist.js` |
 | Hub tiles | 8 subjects | `pages/learning/index.js` `LEARNING_GAMES` |
 
-**`mixed`** = worksheet topic key only (`"תרגול מעורב"`), not a subject.
+**`mixed`** = worksheet topic key only (`" "`), not a subject.
 
 ### 5.2 Per-subject removal plan
 
@@ -920,7 +920,7 @@ Arcade/multiplayer is **not** automatically product-scoped:
 
 ### 23.1 Report engine — mixed logic + Hebrew
 
-Engine returns structured decisions (`topic_needs_strengthening`, `mastery_stable`) in `utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js` **but** also builds Hebrew strings inline (`"הנושא"`, Hebrew regex cleanup).
+Engine returns structured decisions (`topic_needs_strengthening`, `mastery_stable`) in `utils/learning-pattern-decision/build-parent-report-engine-decision-contract.js` **but** also builds Hebrew strings inline (`""`, Hebrew regex cleanup).
 
 **Copy layer:** entire `utils/parent-report-language/` directory (20 files) — Hebrew templates.
 

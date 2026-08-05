@@ -1,4 +1,4 @@
--- Educational game #5: leo-bakery (המאפייה של ליאו)
+-- Educational game #5: leo-bakery
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 081 (leo-gifts).
@@ -46,7 +46,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-bakery',
   'educational',
-  'המאפייה של ליאו',
+  'Leo''s Bakery',
   '/student/educational-games/leo-bakery',
   '/student/educational-games',
   coalesce(
@@ -55,7 +55,7 @@ insert into public.site_game_catalog (
   ),
   50,
   '🥐',
-  'כפל, קבוצות שוות ומגשים'
+  'Multiplication, equal groups, and missing factor'
 )
 on conflict (game_key) do update set
   category = excluded.category,

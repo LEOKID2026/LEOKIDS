@@ -91,7 +91,7 @@ assert.equal(applied.contractsV1.recommendationValidation.ok, true);
 const clamped = applyGateToTextClampToTopicRecord({
   topicKey: "math:addition:learning",
   subjectId: "math",
-  displayName: "חיבור",
+  displayName: "",
   questions: 16,
   evidenceStrength: "strong",
   dataSufficiencyLevel: "strong",
@@ -100,11 +100,11 @@ const clamped = applyGateToTextClampToTopicRecord({
   gateState: "continue_gate_active",
   dev2ConfidenceLevel: "high",
   interventionIntensity: "targeted",
-  parentHe: "כדאי לתרגל",
-  reasonHe: "יש בסיס",
-  whyThisRecommendationHe: "מתאים עכשיו",
-  doNowHe: "תרגלו",
-  interventionPlanHe: "תכנית",
+  parentHe: " ",
+  reasonHe: " ",
+  whyThisRecommendationHe: " ",
+  doNowHe: "",
+  interventionPlanHe: "",
   recommendationContractV1: cannotConcludeContract,
 });
 assert.equal(clamped.interventionIntensity, "light");

@@ -139,9 +139,9 @@ const reps = [
   [/ "mleo_/g, ' "liosh_miners_'],
   [/localStorage\.getItem\("mleo_/g, 'localStorage.getItem("liosh_miners_'],
   [/localStorage\.setItem\("mleo_/g, 'localStorage.setItem("liosh_miners_'],
-  [/ MLEO/g, " נקודות"],
-  [/MLEO/g, "נקודות"],
-  [/\+\$\{formatPointsShort\(eff \|\| 0\)\} נקודות/g, "+${formatPointsShort(eff || 0)} נקודות כרייה"],
+  [/ MLEO/g, " "],
+  [/MLEO/g, ""],
+  [/\+\$\{formatPointsShort\(eff \|\| 0\)\} /g, "+${formatPointsShort(eff || 0)}  "],
 ];
 
 for (const [re, rep] of reps) code = code.replace(re, rep);
@@ -167,25 +167,25 @@ code = code.replace(
 code = code.replace(/async function onClaimMined\(\)[\s\S]*?\n\}/m, `async function onClaimRewards() {
   try { play?.(S_CLICK); } catch {}
   if (!dbReady || !rewardsEnabled || !economy) {
-    setGiftToastWithTTL("שמירת פרסים בשרת לא פעילה עדיין");
+    setGiftToastWithTTL("     ");
     return;
   }
   try {
     await economy.flushPendingAccrual?.();
     const resp = await economy.claimCoins?.();
     if (!resp?.ok) {
-      setGiftToastWithTTL(resp?.message || "לא ניתן לאסוף פרס כרגע");
+      setGiftToastWithTTL(resp?.message || "    ");
       return;
     }
     if (resp.duplicate) return;
     if (resp.coinsGranted > 0) {
-      setGiftToastWithTTL(\`קיבלת \${resp.coinsGranted} מטבעות ליאו!\`);
+      setGiftToastWithTTL(\` \${resp.coinsGranted}  !\`);
     } else {
-      setGiftToastWithTTL("אין נקודות כרייה לאיסוף");
+      setGiftToastWithTTL("   ");
     }
   } catch (err) {
     console.error(err);
-    setGiftToastWithTTL("שגיאה באיסוף פרס");
+    setGiftToastWithTTL("  ");
   }
 }`);
 
@@ -210,9 +210,9 @@ code = code.replace(/function setPendingPointsWrapper\(v\)\{[\s\S]*?\}/, "");
 code = code.replace(/setPendingPointsWrapper\(/g, "(");
 
 // Hebrew UI
-code = code.replace(/Settings/g, "הגדרות");
-code = code.replace(/title="Back"/g, 'title="חזרה"');
-code = code.replace(/aria-label="Back"/g, 'aria-label="חזרה"');
+code = code.replace(/Settings/g, "");
+code = code.replace(/title="Back"/g, 'title=""');
+code = code.replace(/aria-label="Back"/g, 'aria-label=""');
 
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, code, "utf8");

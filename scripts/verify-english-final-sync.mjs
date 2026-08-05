@@ -252,7 +252,7 @@ function checkDiagnosticLabels() {
     subject: "english",
     gradeLevel: "g3",
   });
-  if (generic !== "מיומנות באנגלית") {
+  if (generic !== " ") {
     fail("diagnostic.label", `english unknown skill fallback wrong: ${generic}`);
   }
 }

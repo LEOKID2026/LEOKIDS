@@ -3,7 +3,7 @@ import {
   ADMIN_SUMMARY_CLASSES,
   ADMIN_SUMMARY_LINKED_STUDENTS,
   ADMIN_SUMMARY_TEACHERS,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 
 function SummaryCard({ label, value }) {
   return (

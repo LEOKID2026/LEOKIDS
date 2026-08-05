@@ -175,7 +175,7 @@ function sourceKindForSkill(skill) {
   return "mixed_or_unknown";
 }
 
-/** Phase 7.21–7.22 — סף נמוך לסוגים נדירים במתמטיקה/גיאומטריה. */
+/** Phase 7.21–7.22 —     /. */
 const MATH_GEO_RARE_KIND_THRESHOLD_3 = new Set([
   "cone_volume",
   "cylinder_volume",
@@ -183,7 +183,7 @@ const MATH_GEO_RARE_KIND_THRESHOLD_3 = new Set([
   "wp_unit_cm_to_m",
 ]);
 
-/** Phase 7.23 — ספי adequate לפי סוג (מתמטיקה + גיאומטריה). */
+/** Phase 7.23 —  adequate   ( + ). */
 function sampleAdequacyThresholdForKind(kind) {
   const k = String(kind || "");
   if (MATH_GEO_RARE_KIND_THRESHOLD_3.has(k)) return 3;
@@ -266,7 +266,7 @@ function classifyScienceTopic(topic, minG, maxG, science) {
   return { cls: "adequate", count: total, detail: { total, pairHits } };
 }
 
-/** Phase 7.21 — סף adequate לבריכות אנגלית: 6 (במקום 12). */
+/** Phase 7.21 —  adequate  : 6 ( 12). */
 const ENGLISH_POOL_ADEQUATE_MIN = 6;
 
 function classifyEnglishPool(skillId, poolCount) {
@@ -364,7 +364,7 @@ function classifyEnglishGrammarLine(skill, items) {
   return { cls: "uncertain", count: 0, note: "no_grammar_pool_rows_in_grade_span" };
 }
 
-/** Phase 7.21 — גיאוגרפיה: מדיניות broad-bucket (לא דרישת substring לשורת תכנית). */
+/** Phase 7.21 — :  broad-bucket (  substring  ). */
 function classifyGeography(bankSum) {
   if (bankSum === 0)
     return { cls: "zero", count: 0, note: "no_geography_bank_items_for_mapped_topics_in_this_grade" };

@@ -12,11 +12,11 @@ import {
 } from "../../lib/worksheets/worksheet-payload-build.server.js";
 
 const META = {
-  titleHe: "דף עבודה",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ב׳",
-  topicHe: "חיבור",
-  levelHe: "קל",
+  titleHe: " ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: true,
   subjectId: "math",
 };

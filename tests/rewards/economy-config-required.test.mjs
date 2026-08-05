@@ -29,14 +29,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
 
 const FULL_DAILY = [
-  { mission_key: "q10", grade_band: "g12", text_he: "10 שאלות", mission_type: "questions", target_value: 10, reward_coins: 20, display_order: 1 },
-  { mission_key: "q15", grade_band: "g34", text_he: "15 שאלות", mission_type: "questions", target_value: 15, reward_coins: 20, display_order: 1 },
-  { mission_key: "q20", grade_band: "g56", text_he: "20 שאלות", mission_type: "questions", target_value: 20, reward_coins: 20, display_order: 1 },
+  { mission_key: "q10", grade_band: "g12", text_he: "10 ", mission_type: "questions", target_value: 10, reward_coins: 20, display_order: 1 },
+  { mission_key: "q15", grade_band: "g34", text_he: "15 ", mission_type: "questions", target_value: 15, reward_coins: 20, display_order: 1 },
+  { mission_key: "q20", grade_band: "g56", text_he: "20 ", mission_type: "questions", target_value: 20, reward_coins: 20, display_order: 1 },
 ];
 
 const FULL_MONTHLY = [
-  { minutes_threshold: 100, reward_coins: 10000, label_he: "100 דקות", display_order: 1 },
-  { minutes_threshold: 600, reward_coins: 100000, label_he: "600 דקות", display_order: 4 },
+  { minutes_threshold: 100, reward_coins: 10000, label_he: "100 ", display_order: 1 },
+  { minutes_threshold: 600, reward_coins: 100000, label_he: "600 ", display_order: 4 },
 ];
 
 const FULL_GLOBAL = { monthly_minutes_cap: 600, monthly_coins_cap: 100000 };
@@ -90,7 +90,7 @@ function createMockSupabase(cfg = {}) {
 
 describe("economy-errors", () => {
   test("EconomyUnavailableError carries code and details", () => {
-    const err = new EconomyUnavailableError("economy_config_missing", "חסר", {
+    const err = new EconomyUnavailableError("economy_config_missing", "", {
       details: { missing: ["tiers"] },
     });
     assert.equal(err.code, "economy_config_missing");
@@ -216,10 +216,10 @@ describe("reward-feature-flags fail-closed helpers", () => {
     const { economyFeatureUnavailableResponse } = await import(
       "../../lib/rewards/reward-feature-flags.js"
     );
-    const body = economyFeatureUnavailableResponse("economy_disabled", "כבוי");
+    const body = economyFeatureUnavailableResponse("economy_disabled", "");
     assert.equal(body.ok, false);
     assert.equal(body.unavailable, true);
     assert.equal(body.error, "economy_disabled");
-    assert.equal(body.messageHe, "כבוי");
+    assert.equal(body.messageHe, "");
   });
 });

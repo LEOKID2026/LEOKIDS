@@ -11,9 +11,9 @@ import {
 export { SESSION_TASK_COUNT, MIN_POOL_SIZE, pickSessionTasks, shuffle, randInt };
 
 export const DIFFICULTIES = {
-  easy: { id: "easy", label: "קל" },
-  medium: { id: "medium", label: "בינוני" },
-  hard: { id: "hard", label: "קשה" },
+  easy: { id: "easy", label: "" },
+  medium: { id: "medium", label: "" },
+  hard: { id: "hard", label: "" },
 };
 
 export const SCORE = {

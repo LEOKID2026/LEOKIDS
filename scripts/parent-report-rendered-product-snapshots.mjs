@@ -61,12 +61,12 @@ function filterStrongTrendWords(lines, strongTrendWords) {
 
 function sectionHtml(title, lines) {
   const items = (Array.isArray(lines) ? lines : []).map((line) => `<li>${String(line || "")}</li>`).join("");
-  return `<section><h2>${title}</h2>${items ? `<ul>${items}</ul>` : "<p>אין נתונים להצגה.</p>"}</section>`;
+  return `<section><h2>${title}</h2>${items ? `<ul>${items}</ul>` : "<p>  .</p>"}</section>`;
 }
 
 function sectionTxt(title, lines) {
   const body = (Array.isArray(lines) ? lines : []).map((x) => `- ${x}`).join("\n");
-  return `## ${title}\n${body || "- אין נתונים להצגה."}\n`;
+  return `## ${title}\n${body || "-   ."}\n`;
 }
 
 function scenarioBaseReport(s) {
@@ -117,12 +117,12 @@ for (const id of SCENARIO_IDS) {
   const topContract = detailed?.parentProductContractV1?.top || null;
   const subjects = detailed?.parentProductContractV1?.subjects || {};
   const strongTrendWords = [
-    "משתפר",
-    "בירידה",
-    "מגמה חיובית",
-    "מגמה שלילית",
-    "שיפור מבוסס",
-    "ירידה מבוססת",
+    "",
+    "",
+    " ",
+    " ",
+    " ",
+    " ",
   ];
   const isTopTrendInsufficient =
     String(topContract?.evidence?.trendEvidenceStatus || "") === "insufficient";
@@ -139,14 +139,14 @@ for (const id of SCENARIO_IDS) {
       }
     : normalizedExecutive;
   const topLines = [
-    `מצב: ${topContract?.mainStatusHe || ""}`,
-    `מיקוד עיקרי: ${topContract?.mainPriorityHe || ""}`,
-    `מה עושים עכשיו: ${topContract?.doNowHe || ""}`,
-    `למה: ${topContract?.whyHe || ""}`,
-    `מה לא לעשות כרגע: ${topContract?.avoidNowHe || ""}`,
-    `רמת ודאות: ${topContract?.confidenceHe || ""}`,
-    `בסיס הנתונים: ${topContract?.evidenceSummaryHe || ""}`,
-    `בדיקה הבאה: ${topContract?.nextCheckHe || ""}`,
+    `: ${topContract?.mainStatusHe || ""}`,
+    ` : ${topContract?.mainPriorityHe || ""}`,
+    `  : ${topContract?.doNowHe || ""}`,
+    `: ${topContract?.whyHe || ""}`,
+    `   : ${topContract?.avoidNowHe || ""}`,
+    ` : ${topContract?.confidenceHe || ""}`,
+    ` : ${topContract?.evidenceSummaryHe || ""}`,
+    ` : ${topContract?.nextCheckHe || ""}`,
   ]
     .map(cleanText)
     .filter((x) => x && !x.endsWith(":"));
@@ -183,12 +183,12 @@ for (const id of SCENARIO_IDS) {
       cleanText(row?.mainPriorityHe) === cleanText(topContract?.mainPriorityHe) ? "" : row?.mainPriorityHe;
     const doNow = cleanText(row?.doNowHe) === cleanText(topContract?.doNowHe) ? "" : row?.doNowHe;
     const lines = [
-      `מקצוע: ${sid}`,
-      `סיכום להורה: ${row?.mainStatusHe || ""}`,
-      mainPriority ? `מיקוד: ${mainPriority}` : "",
-      doNow ? `מה עושים עכשיו: ${doNow}` : "",
-      `מה לא לעשות כרגע: ${row?.avoidNowHe || ""}`,
-      `רמת ודאות: ${row?.confidenceHe || ""}`,
+      `: ${sid}`,
+      ` : ${row?.mainStatusHe || ""}`,
+      mainPriority ? `: ${mainPriority}` : "",
+      doNow ? `  : ${doNow}` : "",
+      `   : ${row?.avoidNowHe || ""}`,
+      ` : ${row?.confidenceHe || ""}`,
     ]
       .map(cleanText)
       .filter(Boolean);
@@ -203,21 +203,21 @@ for (const id of SCENARIO_IDS) {
   });
 
   const html = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><title>${id}</title></head><body>
-${sectionHtml("סיכום להורה", topLines)}
-${sectionHtml("סיכום לתקופה", executiveLines)}
-${sectionHtml("מה שחוזר בכמה מקצועות", crossLinesForUi)}
-${sectionHtml("סיכום מקצועות להורה", subjectLines)}
-${sectionHtml("רעיונות קצרים לבית", homePlanLines)}
-${sectionHtml("כיוון לימים הבאים", goalsLines)}
+${sectionHtml(" ", topLines)}
+${sectionHtml(" ", executiveLines)}
+${sectionHtml("   ", crossLinesForUi)}
+${sectionHtml("  ", subjectLines)}
+${sectionHtml("  ", homePlanLines)}
+${sectionHtml("  ", goalsLines)}
 </body></html>`;
 
   const txt = [
-    sectionTxt("סיכום להורה", topLines),
-    sectionTxt("סיכום לתקופה", executiveLines),
-    sectionTxt("מה שחוזר בכמה מקצועות", crossLinesForUi),
-    sectionTxt("סיכום מקצועות להורה", subjectLines),
-    sectionTxt("רעיונות קצרים לבית", homePlanLines),
-    sectionTxt("כיוון לימים הבאים", goalsLines),
+    sectionTxt(" ", topLines),
+    sectionTxt(" ", executiveLines),
+    sectionTxt("   ", crossLinesForUi),
+    sectionTxt("  ", subjectLines),
+    sectionTxt("  ", homePlanLines),
+    sectionTxt("  ", goalsLines),
   ].join("\n");
   writeFileSync(join(OUT_DIR, `${id}.html`), html, "utf8");
   writeFileSync(join(OUT_DIR, `${id}.txt`), txt, "utf8");

@@ -179,18 +179,18 @@ test("square and rectangle templates are visually distinguishable", () => {
 });
 
 test("quadrilateral topic maps to distinct shape templates", () => {
-  assert.equal(resolveQuadrilateralTemplate("ריבוע"), "square");
-  assert.equal(resolveQuadrilateralTemplate("מלבן"), "rectangle");
-  assert.equal(resolveQuadrilateralTemplate("מקבילית"), "parallelogram");
-  assert.equal(resolveQuadrilateralTemplate("טרפז"), "trapezoid");
+  assert.equal(resolveQuadrilateralTemplate(""), "square");
+  assert.equal(resolveQuadrilateralTemplate(""), "rectangle");
+  assert.equal(resolveQuadrilateralTemplate(""), "parallelogram");
+  assert.equal(resolveQuadrilateralTemplate(""), "trapezoid");
 
   const squareSpec = getGeometryDiagramSpec({
     topic: "quadrilaterals",
-    params: { kind: "quadrilaterals", type: "ריבוע" },
+    params: { kind: "quadrilaterals", type: "" },
   });
   const paraSpec = getGeometryDiagramSpec({
     topic: "quadrilaterals",
-    params: { kind: "quadrilaterals", type: "מקבילית" },
+    params: { kind: "quadrilaterals", type: "" },
   });
   assert.notEqual(squareSpec.template, paraSpec.template);
 });

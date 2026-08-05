@@ -24,7 +24,7 @@ const { errors, markdownNotes, pageCount } = verifyScienceGradeBookContent({
   extraChecks(pageId, childFacing) {
     const extra = [];
     if (pageId === "plants") {
-      if (!/סיכום|אחרון|ג׳|ג'/.test(childFacing)) {
+      if (!/|||'/.test(childFacing)) {
         extra.push("plants: should mark final consolidation for G3 plant spine");
       }
     }

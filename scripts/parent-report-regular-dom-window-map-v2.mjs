@@ -146,13 +146,13 @@ const EXTRACT_CARDS_FN = () => {
       exactVisibleText: lines.join("\n"),
       boundingBox: { top: Math.round(rect.top), left: Math.round(rect.left), width: Math.round(rect.width), height: Math.round(rect.height) },
       domPathHint: { tag: card.tagName.toLowerCase(), id: card.id || null, classList: classes, testIds: [...new Set(testIds)].slice(0, 8) },
-      containsWeeklyActionLabel: lines.some((l) => /מה לעשות השבוע/.test(l)),
-      containsPracticedSubjectsSummary: lines.some((l) => /המקצועות שתורגלו/.test(l)),
-      containsRequiresAttention: lines.some((l) => /עוד נושאים למעקב/.test(l)),
+      containsWeeklyActionLabel: lines.some((l) => /  /.test(l)),
+      containsPracticedSubjectsSummary: lines.some((l) => / /.test(l)),
+      containsRequiresAttention: lines.some((l) => /  /.test(l)),
       containsAiSubsections: {
-        whatGoesWell: lines.some((l) => l === "מה הולך טוב"),
-        focusAreas: lines.some((l) => l === "תחומים לחיזוק"),
-        homeTips: lines.some((l) => l === "טיפים לבית"),
+        whatGoesWell: lines.some((l) => l === "  "),
+        focusAreas: lines.some((l) => l === " "),
+        homeTips: lines.some((l) => l === " "),
       },
     });
   }
@@ -169,7 +169,7 @@ const EXTRACT_CARDS_FN = () => {
       exactVisibleText: lines.join("\n"),
       boundingBox: { top: Math.round(rect.top), left: Math.round(rect.left), width: Math.round(rect.width), height: Math.round(rect.height) },
       domPathHint: { tag: "section", classList: (sec.className || "").split(/\s+/).slice(0, 10) },
-      containsWeeklyActionLabel: lines.some((l) => /מה לעשות השבוע/.test(l)),
+      containsWeeklyActionLabel: lines.some((l) => /  /.test(l)),
       containsAiSubsections: { whatGoesWell: false, focusAreas: false, homeTips: false },
     });
   }
@@ -206,7 +206,7 @@ const EXTRACT_CARDS_FN = () => {
   const weeklyLocations = [];
   for (const el of root.querySelectorAll("*")) {
     const txt = el.textContent || "";
-    if (!/מה לעשות השבוע/.test(txt)) continue;
+    if (!/  /.test(txt)) continue;
     if (el.children.length > 2) continue; // prefer leaf-ish
     let card = el.closest(".rounded-lg, .rounded-xl");
     while (card && card !== root && !/\bborder\b/.test(card.className || "")) {
@@ -245,7 +245,7 @@ const EXTRACT_CARDS_FN = () => {
     const title = heading ? (heading.textContent || "").trim() : null;
     const rect = (host || table).getBoundingClientRect();
     const headers = [...table.querySelectorAll("thead th")].map((th) => (th.textContent || "").trim());
-    const gradeIdx = headers.findIndex((h) => h === "כיתה");
+    const gradeIdx = headers.findIndex((h) => h === "");
     const grades = [];
     for (const tr of table.querySelectorAll("tbody tr")) {
       const cells = [...tr.querySelectorAll("td")].map((td) => (td.textContent || "").trim());
@@ -269,11 +269,11 @@ const EXTRACT_CARDS_FN = () => {
     tables,
     weeklyLocations,
     bodyContains: {
-      weeklyAction: /מה לעשות השבוע/.test(root.innerText || ""),
-      smartSummaryTitle: /סיכום חכם להורה/.test(root.innerText || ""),
-      shortContractTitle: /סיכום קצר להורה/.test(root.innerText || ""),
-      diagnosticOverviewTitle: /מה הכי בולט עכשיו/.test(root.innerText || ""),
-      homeRecommendationsTitle: /מה מומלץ לעשות בבית/.test(root.innerText || ""),
+      weeklyAction: /  /.test(root.innerText || ""),
+      smartSummaryTitle: /  /.test(root.innerText || ""),
+      shortContractTitle: /  /.test(root.innerText || ""),
+      diagnosticOverviewTitle: /   /.test(root.innerText || ""),
+      homeRecommendationsTitle: /   /.test(root.innerText || ""),
     },
   };
 };
@@ -283,7 +283,7 @@ function mapDomCardToSource(card) {
   const hints = card.domPathHint || {};
   const testIds = hints.testIds || [];
 
-  if (title === "מה הכי בולט עכשיו" || (card.containsWeeklyActionLabel && /בולט/.test(title))) {
+  if (title === "   " || (card.containsWeeklyActionLabel && //.test(title))) {
     return {
       component: "inline diagnostic overview card (+ optional ParentReportWeeklyHomeActionLine)",
       sourceFile: "pages/learning/parent-report.js",
@@ -293,7 +293,7 @@ function mapDomCardToSource(card) {
         "Visual card title is hardcoded Hebrew in parent-report.js; weekly line is ParentReportWeeklyHomeActionLine nested inside this amber card when showWeeklyInDiagnosticOverview.",
     };
   }
-  if (title === "סיכום קצר להורה") {
+  if (title === "  ") {
     return {
       component: "ParentReportShortContractPreview",
       sourceFile: "components/parent-report-short-contract-preview.jsx",
@@ -302,7 +302,7 @@ function mapDomCardToSource(card) {
       visualVsComponentNote: "Only rendered when !hasServerHomeRecommendations.",
     };
   }
-  if (title === "סיכום חכם להורה" || hints.classList?.includes("parent-report-parent-ai-insight")) {
+  if (title === "  " || hints.classList?.includes("parent-report-parent-ai-insight")) {
     return {
       component: "ParentReportInsight",
       sourceFile: "components/ParentReportInsight.jsx",
@@ -311,7 +311,7 @@ function mapDomCardToSource(card) {
       visualVsComponentNote: "Does NOT render ParentReportWeeklyHomeActionLine.",
     };
   }
-  if (title === "מה חשוב לדעת" || title === "מה מומלץ לעשות בבית" || title === "הודעות מהמורה") {
+  if (title === "  " || title === "   " || title === " ") {
     return {
       component: "ParentReportParentSections",
       sourceFile: "components/parent/ParentReportParentSections.jsx",
@@ -319,7 +319,7 @@ function mapDomCardToSource(card) {
       dataSource: "server_parent_facing",
     };
   }
-  if (title === "חוזקות שבלטו בתרגול") {
+  if (title === "  ") {
     return {
       component: "inline strengths block",
       sourceFile: "pages/learning/parent-report.js",
@@ -327,7 +327,7 @@ function mapDomCardToSource(card) {
       dataSource: "child_metrics",
     };
   }
-  if (title === "מצב הנתונים בדוח" || testIds.includes("parent-report-data-health-note")) {
+  if (title === "  " || testIds.includes("parent-report-data-health-note")) {
     return {
       component: "ParentReportDataHealthNote",
       sourceFile: "components/parent/ParentReportDataHealthNote.jsx",
@@ -335,7 +335,7 @@ function mapDomCardToSource(card) {
       dataSource: "child_report_payload",
     };
   }
-  if (title === "הבהרה חשובה" || hints.classList?.includes("parent-report-important-disclaimer")) {
+  if (title === " " || hints.classList?.includes("parent-report-important-disclaimer")) {
     return {
       component: "ParentReportImportantDisclaimer",
       sourceFile: "components/ParentReportImportantDisclaimer.js",
@@ -343,7 +343,7 @@ function mapDomCardToSource(card) {
       dataSource: "static_legal_copy",
     };
   }
-  if (title?.includes("התקדמות") || hints.tag === "table") {
+  if (title?.includes("") || hints.tag === "table") {
     return {
       component: "subject progress table",
       sourceFile: "pages/learning/parent-report.js",
@@ -367,7 +367,7 @@ function buildOrderedWindows(dom) {
   windows.push({
     windowOrder: ++order,
     windowId: "page_header",
-    parentVisibleTitle: "📊 דוח להורים",
+    parentVisibleTitle: "📊  ",
     parentVisibleSubtitles: [],
     exactVisibleText: [],
     renderCondition: "report loaded",
@@ -376,7 +376,7 @@ function buildOrderedWindows(dom) {
   });
 
   for (const stat of (dom.summaryStats || []).filter((s) =>
-    ["זמן כולל", "שאלות", "דיוק כללי", "רמה"].includes(s.label),
+    [" ", "", " ", ""].includes(s.label),
   )) {
     windows.push({
       windowOrder: ++order,
@@ -391,13 +391,13 @@ function buildOrderedWindows(dom) {
   }
 
   // All visual blocks sorted by boundingBox.top (from dom.blocks)
-  const seenTitles = new Set(["📊 דוח להורים", "זמן כולל", "שאלות", "דיוק כללי", "רמה"]);
+  const seenTitles = new Set(["📊  ", " ", "", " ", ""]);
   for (const block of dom.blocks || []) {
     const title = block.parentVisibleTitle;
     if (!title || seenTitles.has(title)) continue;
     if (title.length > 100) continue;
     // skip progress table hosts already captured via dom.tables
-    if (title.includes("התקדמות") && dom.tables?.some((t) => t.title === title)) continue;
+    if (title.includes("") && dom.tables?.some((t) => t.title === title)) continue;
     seenTitles.add(title);
 
     const src = mapDomCardToSource(block);
@@ -427,7 +427,7 @@ function buildOrderedWindows(dom) {
       parentVisibleTitle: table.title,
       parentVisibleSubtitles: table.headers,
       exactVisibleText: [`${table.rowCount} rows`, `grades in column: ${table.gradeColumnValues.join(", ")}`],
-      gradeDisplayRule: "per-row formatParentReportGradeHe in table column כיתה",
+      gradeDisplayRule: "per-row formatParentReportGradeHe in table column ",
       gradeColumnValues: table.gradeColumnValues,
       boundingBox: table.boundingBox,
       renderCondition: "topic map non-empty",
@@ -467,14 +467,14 @@ function buildMismatchNotes(v1, v2, dom, apiMeta) {
   lines.push("");
   const v2Weekly = v2.focusedFindings.weeklyAction;
   const v1Weekly = v1?.samples?.omer?.summary?.weeklyActionLabel;
-  lines.push(`- **Browser truth (v2):** "מה לעשות השבוע" appears under visual card **"${v2Weekly.cardTitle || "?"}"**`);
+  lines.push(`- **Browser truth (v2):** "  " appears under visual card **"${v2Weekly.cardTitle || "?"}"**`);
   lines.push(`- **v1 audit claimed:** appears in **${(v1Weekly?.appearsInWindowIds || []).join(", ") || "short_contract_preview"}**`);
   lines.push(`- **Body text flags at capture:** ${JSON.stringify(dom.bodyContains)}`);
   lines.push(`- **API hasServerHomeRecommendations:** ${apiMeta.hasServerHomeRecommendations}`);
   lines.push(`- **DOM short contract title visible:** ${dom.bodyContains.shortContractTitle}`);
   lines.push("");
 
-  lines.push("## 1. Why v1 assigned weekly action to \"סיכום קצר להורה\"");
+  lines.push("## 1. Why v1 assigned weekly action to \"  \"");
   lines.push("");
   lines.push("- v1 script (`parent-report-regular-current-ui-window-map.mjs`) **simulated React render conditions offline** from generated report payload.");
   lines.push("- It evaluated `hasServerHomeRecommendations === false` for OMER and therefore:");
@@ -484,14 +484,14 @@ function buildMismatchNotes(v1, v2, dom, apiMeta) {
   lines.push("- Specifically: browser uses `GET /api/parent/students/{id}/report-data` → `enrichPayloadWithParentFacing()` which adds `parentFacing.homeRecommendations`. v1 offline build used `aggregateParentReportPayload` + client report generators **without** that enrichment step, so `hasServerHomeRecommendations` was false in simulation.");
   lines.push("");
 
-  lines.push("## 2. Why browser shows it under \"מה הכי בולט עכשיו\"");
+  lines.push("## 2. Why browser shows it under \"   \"");
   lines.push("");
   if (apiMeta.hasServerHomeRecommendations) {
     lines.push("- Live API returns **`parentFacing.homeRecommendations`** → `hasServerHomeRecommendations = true`.");
     lines.push("- Code skips entire `ParentReportShortContractPreview` block (`!hasServerHomeRecommendations` is false).");
     lines.push("- Weekly line renders inside amber diagnostic card when `showWeeklyInDiagnosticOverview` is true.");
   } else if (!dom.bodyContains.shortContractTitle) {
-    lines.push("- **\"סיכום קצר להורה\" title not present in DOM** at capture — short contract block not visible to parent.");
+    lines.push("- **\"  \" title not present in DOM** at capture — short contract block not visible to parent.");
     lines.push("- Weekly label found in diagnostic overview card instead.");
   } else {
     lines.push("- Both titles may exist in DOM; weekly label DOM ancestry points to diagnostic overview card (see weeklyLocations in JSON).");
@@ -545,24 +545,24 @@ function buildMarkdown(report) {
   lines.push("## Focused checks");
   lines.push("");
   const f = report.focusedFindings;
-  lines.push("### סיכום חכם להורה");
+  lines.push("###   ");
   if (f.smartSummary.found) {
     lines.push(`- Title: ${f.smartSummary.title}`);
-    lines.push(`- Contains \"מה לעשות השבוע\": **${f.smartSummary.hasWeekly ? "yes" : "no"}**`);
-    lines.push(`- Subsections: מה הולך טוב=${f.smartSummary.subsections.whatGoesWell}, תחומים לחיזוק=${f.smartSummary.subsections.focusAreas}, טיפים לבית=${f.smartSummary.subsections.homeTips}`);
+    lines.push(`- Contains \"  \": **${f.smartSummary.hasWeekly ? "yes" : "no"}**`);
+    lines.push(`- Subsections:   =${f.smartSummary.subsections.whatGoesWell},  =${f.smartSummary.subsections.focusAreas},  =${f.smartSummary.subsections.homeTips}`);
     lines.push("- Exact text:");
     for (const t of f.smartSummary.lines) lines.push(`  - ${t}`);
   } else {
     lines.push("- **Not found in DOM** at capture time.");
   }
   lines.push("");
-  lines.push("### מה הכי בולט עכשיו");
+  lines.push("###    ");
   if (f.diagnosticOverview.found) {
     lines.push(`- Title: ${f.diagnosticOverview.title}`);
-    lines.push(`- Contains \"מה לעשות השבוע:\": **${f.diagnosticOverview.hasWeekly ? "yes" : "no"}**`);
+    lines.push(`- Contains \"  :\": **${f.diagnosticOverview.hasWeekly ? "yes" : "no"}**`);
     if (f.diagnosticOverview.weeklyFullLine) lines.push(`- Full weekly line: ${f.diagnosticOverview.weeklyFullLine}`);
-    lines.push(`- Contains \"המקצועות שתורגלו…\": ${f.diagnosticOverview.hasPracticedSubjects}`);
-    lines.push(`- Contains \"עוד נושאים למעקב…\": ${f.diagnosticOverview.hasRequiresAttention}`);
+    lines.push(`- Contains \" …\": ${f.diagnosticOverview.hasPracticedSubjects}`);
+    lines.push(`- Contains \"  …\": ${f.diagnosticOverview.hasRequiresAttention}`);
     lines.push("- All lines in card:");
     for (const t of f.diagnosticOverview.lines) lines.push(`  - ${t}`);
   } else {
@@ -647,7 +647,7 @@ async function main() {
   try {
     await page.goto(reportUrl, { waitUntil: "networkidle", timeout: 180_000 });
     await page.locator("#parent-report-pdf").waitFor({ timeout: 120_000 });
-    await page.getByRole("heading", { name: /דוח להורים/u }).waitFor({ timeout: 60_000 });
+    await page.getByRole("heading", { name: / /u }).waitFor({ timeout: 60_000 });
     await page.waitForTimeout(3000);
 
     const screenshotPath = join(ARTIFACT_DIR, "omer-parent-report-dom.png");
@@ -657,14 +657,14 @@ async function main() {
     const windows = buildOrderedWindows(dom);
 
     const smartCard =
-      dom.blocks?.find((c) => c.parentVisibleTitle === "סיכום חכם להורה") ||
+      dom.blocks?.find((c) => c.parentVisibleTitle === "  ") ||
       dom.blocks?.find((c) => c.domPathHint?.classList?.includes("parent-report-parent-ai-insight"));
-    const diagCard = dom.blocks?.find((c) => c.parentVisibleTitle === "מה הכי בולט עכשיו");
-    const insightsSec = dom.blocks?.find((c) => c.parentVisibleTitle === "מה חשוב לדעת");
-    const homeSec = dom.blocks?.find((c) => c.parentVisibleTitle === "מה מומלץ לעשות בבית");
-    const strengthsCard = dom.blocks?.find((c) => c.parentVisibleTitle === "חוזקות שבלטו בתרגול");
+    const diagCard = dom.blocks?.find((c) => c.parentVisibleTitle === "   ");
+    const insightsSec = dom.blocks?.find((c) => c.parentVisibleTitle === "  ");
+    const homeSec = dom.blocks?.find((c) => c.parentVisibleTitle === "   ");
+    const strengthsCard = dom.blocks?.find((c) => c.parentVisibleTitle === "  ");
 
-    const weeklyLine = (diagCard || smartCard)?.exactVisibleLines?.find((l) => /מה לעשות השבוע/.test(l)) ||
+    const weeklyLine = (diagCard || smartCard)?.exactVisibleLines?.find((l) => /  /.test(l)) ||
       dom.weeklyLocations[0]?.matchedText;
 
     const focusedFindings = {
@@ -703,7 +703,7 @@ async function main() {
         domLocations: dom.weeklyLocations,
         inSmartSummary: Boolean(smartCard?.containsWeeklyActionLabel),
         inDiagnosticOverview: Boolean(diagCard?.containsWeeklyActionLabel),
-        inShortContract: dom.bodyContains.shortContractTitle && dom.blocks?.some((c) => c.parentVisibleTitle === "סיכום קצר להורה" && c.containsWeeklyActionLabel),
+        inShortContract: dom.bodyContains.shortContractTitle && dom.blocks?.some((c) => c.parentVisibleTitle === "  " && c.containsWeeklyActionLabel),
       },
       tables: dom.tables,
     };

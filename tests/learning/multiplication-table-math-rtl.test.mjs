@@ -51,7 +51,7 @@ test("times table division result expression uses MathLtrIsland", () => {
   );
   assert.match(
     MODAL_SRC,
-    /שגיאה:[\s\S]*<MathLtrIsland>[\s\S]*\{selectedResult\} ÷ \{selectedDivisor\}/
+    /:[\s\S]*<MathLtrIsland>[\s\S]*\{selectedResult\} ÷ \{selectedDivisor\}/
   );
 });
 

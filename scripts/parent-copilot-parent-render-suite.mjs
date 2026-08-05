@@ -43,7 +43,7 @@ function ParentDetailedPageParentFacingChunk({ payload }) {
     h(
       "section",
       { className: "pr-detailed-section" },
-      h("h2", { className: "pr-detailed-section-title" }, "סיכום לתקופה"),
+      h("h2", { className: "pr-detailed-section-title" }, " "),
       h(ExecutiveSummarySection, { es: normalizeExecutiveSummary(payload), compact: false }),
     ),
   );
@@ -63,7 +63,7 @@ const mobileSnapshotHtml = renderToStaticMarkup(
 );
 assertNoForbidden(mobileSnapshotHtml, "mobile-sized copilot SSR snapshot");
 assert.ok(
-  mobileSnapshotHtml.includes("אפשר לשאול כאן בחופשיות על הדוח"),
+  mobileSnapshotHtml.includes("     "),
   "mobile snapshot should include parent helper copy",
 );
 

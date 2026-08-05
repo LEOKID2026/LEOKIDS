@@ -257,7 +257,7 @@ async function auditGeometry(results) {
         for (let i = 0; i < sampleSize; i++) {
           try {
             const q = generateQuestion(level, topic, grade); // Pass level object with maxSide
-            if (q && q.question && !q.question.includes("לא זמין") && !q.question.includes("שגיאה")) {
+            if (q && q.question && !q.question.includes(" ") && !q.question.includes("")) {
               const stem = normalizeStem(q.question);
               sampledQuestions.add(stem);
               sampledMetadata.push({

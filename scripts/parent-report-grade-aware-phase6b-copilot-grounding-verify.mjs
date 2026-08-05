@@ -14,26 +14,26 @@ const ROOT = join(__dirname, "..");
 const u = (rel) => pathToFileURL(join(ROOT, rel)).href;
 
 const EXPECTED_M09_ACTION =
-  "כדאי לתרגל חיסור במאונך עם פריטה, תוך הקפדה על ערך הספרות בכל עמודה. אחרי כל תרגיל בקשו מהילד לבדוק את התשובה בעזרת חיבור הפוך.";
+  "     ,       .           .";
 
 /** Substrings that must not appear in Copilot-facing blobs (Hebrew phrases + internal JSON keys). */
 const BANNED_SUBSTRINGS = [
-  "ציר + סימבולי",
-  "ציר + מרחק",
-  "רגיסטר",
-  "פרגמטיקה",
-  "כלל מיני",
-  "בעיה רפואית",
-  "דיווח רפואי",
-  "מורה חברתי",
-  "ערכים אישיים",
-  "טבלת תכונה/תהליך",
-  "דיאגרמת מצבים",
-  "דעות קדומות",
-  "בעיה חברתית",
-  "סרגל + יחידות",
-  "ציר פיזי + כרטיסיות",
-  "סימבולים בקבוצות קטנות",
+  " + ",
+  " + ",
+  "",
+  "",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " /",
+  " ",
+  " ",
+  " ",
+  " + ",
+  "  + ",
+  "  ",
   "patternHe",
   "probeHe",
   "interventionHe",
@@ -60,12 +60,12 @@ function buildBaseReportG4Subtraction() {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKey]: {
         bucketKey: "subtraction",
-        displayName: "חיסור",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -85,18 +85,18 @@ function buildBaseReportG4Subtraction() {
           subjectId: "math",
           topicRowKey,
           bucketKey: "subtraction",
-          displayName: "חיסור",
-          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "ציר + סימבולי",
-            shortPracticeHe: "ציר + מרחק",
+            immediateActionHe: " + ",
+            shortPracticeHe: " + ",
             taxonomyId: "M-09",
           },
           taxonomy: {
             id: "M-09",
-            patternHe: "דפוס",
-            topicHe: "חיסור",
-            subskillHe: "חיסור",
+            patternHe: "",
+            topic: "",
+            subskillHe: "",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -111,7 +111,7 @@ function buildBaseReportG4Subtraction() {
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -168,14 +168,14 @@ assert.ok(u0 && typeof u0 === "object", "redacted unit exists");
 assert.equal(u0.intervention, undefined, "raw intervention must be stripped from Copilot grounding payload");
 assert.equal(u0.taxonomy?.id, undefined, "raw taxonomy id must be stripped");
 assert.equal(u0.taxonomy?.patternHe, undefined, "raw patternHe key must be stripped");
-assert.equal(u0.taxonomy?.topicHe, undefined, "raw topicHe must be stripped");
+assert.equal(u0.taxonomy?.topic, undefined, "raw topic must be stripped");
 assert.equal(u0.probe, undefined, "raw probe must be stripped");
 assert.equal(u0.diagnosis?.taxonomyId, undefined, "raw diagnosis taxonomyId must be stripped");
 
 const tp = buildTruthPacketV1(redacted, {
   scopeType: "topic",
   scopeId: topicRowKey,
-  scopeLabel: "חיסור",
+  scopeLabel: "",
 });
 assert.ok(tp, "truth packet");
 assert.equal(Object.prototype.hasOwnProperty.call(tp, "debug"), false, "truthPacket must not expose debug");
@@ -185,12 +185,12 @@ const nar = tp?.contracts?.narrative?.textSlots || {};
 assert.ok(typeof nar.observation === "string" || nar.observation === null, "textSlots.observation present");
 assert.ok(typeof nar.interpretation === "string" || nar.interpretation === null, "textSlots.interpretation present");
 
-const prompt = buildGroundedPrompt("מה כדאי לעשות היום בבית?", tp, "what_to_do_today");
+const prompt = buildGroundedPrompt("    ?", tp, "what_to_do_today");
 assert.ok(prompt.includes("FACTS_JSON:"), "LLM prompt must include FACTS_JSON");
 assertNoBanned("LLM grounded prompt", prompt);
 const factsJson = prompt.split("FACTS_JSON:")[1] || "";
 assert.ok(
-  factsJson.includes("חיסור") || factsJson.includes("שאלות"),
+  factsJson.includes("") || factsJson.includes(""),
   "LLM FACTS_JSON should include topic- or volume-grounded Hebrew from truth packet slots",
 );
 

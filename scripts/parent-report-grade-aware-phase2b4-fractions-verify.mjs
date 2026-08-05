@@ -8,23 +8,23 @@
 import assert from "node:assert/strict";
 
 const M04_G34_ACTION =
-  "כדאי לתרגל השוואת שברים בעזרת ציור מדויק או סרגל שברים, ואז להסביר מה מייצג המונה ומה מייצג המכנה. בשברים בעלי אותו מכנה, בקשו מהילד להסביר מדוע משווים לפי מספר החלקים שנלקחו.";
+  "         ,        .    ,         .";
 const M04_G34_GOAL =
-  "בשבוע הקרוב התמקדו בהשוואת שברים ובהבנת תפקיד המונה והמכנה, במיוחד בשברים בעלי אותו מכנה או בייצוגים פשוטים וברורים.";
+  "        ,         .";
 
 const M05_G56_ACTION =
-  "כדאי לתרגל חיבור וחיסור שברים עם מכנים שונים בעזרת מציאת מכנה משותף, יצירת שברים שקולים ובדיקת התוצאה לאחר הפעולה. בקשו מהילד להסביר כל שלב לפני שהוא מפשט את התשובה.";
+  "           ,       .          .";
 const M05_G56_GOAL =
-  "בשבוע הקרוב התמקדו בפעולות חיבור וחיסור בשברים עם מכנים שונים: מכנה משותף, שברים שקולים, ביצוע הפעולה ובדיקת סבירות.";
+  "         :  ,  ,    .";
 
 /** Raw taxonomy / engine cues that must not appear in grade-aware parent-facing strings for M-04/M-05 (template bands). */
 const BANNED_IN_PARENT_FACING = [
-  "השוואה לפי מונה בלבד",
-  "טעות באותה שלב",
-  "עם/בלי שרטוט",
-  "חלק־כלל קונקרטי",
-  "המראה 2,3,4",
-  "שלבים כתובים + דוגמה מקבילה",
+  "   ",
+  "  ",
+  "/ ",
+  " ",
+  " 2,3,4",
+  "  +  ",
 ];
 
 const topicRowKeyM04 = "fractions\u0001learning\u0001g4\u0001easy";
@@ -43,18 +43,18 @@ function buildFractionUnit(taxonomyId, topicRowKey) {
     subjectId: "math",
     topicRowKey,
     bucketKey: "fractions",
-    displayName: "שברים",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
-      immediateActionHe: isM04 ? "חלק־כלל קונקרטי" : "שלבים כתובים + דוגמה מקבילה",
-      shortPracticeHe: isM04 ? "עם/בלי שרטוט" : "המראה 2,3,4",
+      immediateActionHe: isM04 ? " " : "  +  ",
+      shortPracticeHe: isM04 ? "/ " : " 2,3,4",
       taxonomyId,
     },
     taxonomy: {
       id: taxonomyId,
-      patternHe: isM04 ? "השוואה לפי מונה בלבד" : "טעות באותה שלב",
-      topicHe: "שברים",
-      subskillHe: isM04 ? "חלק־כלל" : "המראה",
+      patternHe: isM04 ? "   " : "  ",
+      topic: "",
+      subskillHe: isM04 ? "" : "",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
     confidence: { level: "moderate" },
@@ -69,7 +69,7 @@ function buildFractionUnit(taxonomyId, topicRowKey) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     canonicalState: {
       actionState: "intervene",
@@ -169,12 +169,12 @@ function runResolverAndProductSurfaces() {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKeyM04]: {
         bucketKey: "fractions",
-        displayName: "שברים",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -199,7 +199,7 @@ function runResolverAndProductSurfaces() {
 
   const shortM04 = summarizeV2UnitsForSubjectForTests(baseM04.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseM04.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -210,7 +210,7 @@ function runResolverAndProductSurfaces() {
   const tp04 = buildTruthPacketV1(detailedM04, {
     scopeType: "topic",
     scopeId: topicRowKeyM04,
-    scopeLabel: "שברים",
+    scopeLabel: "",
   });
   if (!tp04) throw new Error("buildTruthPacketV1 M-04 returned null");
   const nar04 = tp04?.contracts?.narrative?.textSlots || {};
@@ -221,12 +221,12 @@ function runResolverAndProductSurfaces() {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKeyM05]: {
         bucketKey: "fractions",
-        displayName: "שברים",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -250,7 +250,7 @@ function runResolverAndProductSurfaces() {
 
   const shortM05 = summarizeV2UnitsForSubjectForTests(baseM05.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseM05.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -262,7 +262,7 @@ function runResolverAndProductSurfaces() {
   const tp05 = buildTruthPacketV1(detailedM05, {
     scopeType: "topic",
     scopeId: topicRowKeyM05,
-    scopeLabel: "שברים",
+    scopeLabel: "",
   });
   if (!tp05) throw new Error("buildTruthPacketV1 M-05 returned null");
   assertNoBanned("truth M-05 full JSON", JSON.stringify(tp05));

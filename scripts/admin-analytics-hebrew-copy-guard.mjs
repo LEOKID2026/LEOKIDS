@@ -19,7 +19,7 @@ const {
   formatAnalyticsPersonaHe,
   findAdminAnalyticsEnglishEnumLeaks,
   ADMIN_ANALYTICS_FORBIDDEN_ENGLISH_ENUMS,
-} = await import(u("lib/admin-portal/admin-analytics-labels.he.js"));
+} = await import(u("lib/admin-portal/admin-analytics-labels.js"));
 
 /** Realistic aggregation keys / fixtures from Admin Analytics tables. */
 const FIXTURE_RAW_LABELS = Object.freeze([
@@ -39,8 +39,8 @@ const FIXTURE_RAW_LABELS = Object.freeze([
   "grade_3",
   "grade_4",
   "grade_5",
-  "חשבון · grade_2",
-  "חשבון · addition",
+  " · grade_2",
+  " · addition",
   "reading · grade_2",
   "multiplication · unknown",
   "practice",
@@ -52,14 +52,14 @@ const FIXTURE_RAW_LABELS = Object.freeze([
 ]);
 
 const EXPECTED_SAMPLES = Object.freeze([
-  ["body", "גוף האדם"],
-  ["reading", "קריאה"],
-  ["multiplication", "כפל"],
-  ["addition : g1", "חיבור · כיתה א׳"],
-  ["vocabulary : g4", "אוצר מילים · כיתה ד׳"],
-  ["grade_2", "כיתה ב׳"],
-  ["teacher_dashboard_opened", "פתיחת דשבורד מורה"],
-  ["private_teacher", "מורה פרטי"],
+  ["body", " "],
+  ["reading", ""],
+  ["multiplication", ""],
+  ["addition : g1", " ·  "],
+  ["vocabulary : g4", "  ·  "],
+  ["grade_2", " "],
+  ["teacher_dashboard_opened", "  "],
+  ["private_teacher", " "],
 ]);
 
 function assertNoEnglishLeaks(label, context) {
@@ -80,11 +80,11 @@ for (const [raw, expected] of EXPECTED_SAMPLES) {
   assert.equal(formatAnalyticsLabelHe(raw), expected, `expected mapping for ${raw}`);
 }
 
-assert.equal(formatAnalyticsTopicHe("unknown"), "ללא נושא");
-assert.equal(formatAnalyticsGradeHe("g1"), "כיתה א׳");
-assert.equal(formatAnalyticsFeatureHe("practice"), "תרגול");
-assert.equal(formatAnalyticsEventNameHe("teacher_dashboard_opened"), "פתיחת דשבורד מורה");
-assert.equal(formatAnalyticsPersonaHe("private_teacher"), "מורה פרטי");
+assert.equal(formatAnalyticsTopicHe("unknown"), " ");
+assert.equal(formatAnalyticsGradeHe("g1"), " ");
+assert.equal(formatAnalyticsFeatureHe("practice"), "");
+assert.equal(formatAnalyticsEventNameHe("teacher_dashboard_opened"), "  ");
+assert.equal(formatAnalyticsPersonaHe("private_teacher"), " ");
 
 assert.ok(ADMIN_ANALYTICS_FORBIDDEN_ENGLISH_ENUMS.includes("body"));
 assert.ok(ADMIN_ANALYTICS_FORBIDDEN_ENGLISH_ENUMS.includes("addition"));

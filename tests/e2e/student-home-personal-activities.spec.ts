@@ -30,7 +30,7 @@ test.describe("student home personal activities", () => {
     ).length;
     test.skip(parentCount < 1, "no personal activities in API for this student");
 
-    const tile = page.getByRole("button", { name: /פעילויות אישיות/ });
+    const tile = page.getByRole("button", { name: / / });
     await expect(tile).toBeVisible({ timeout: 60_000 });
     await expect(tile).toContainText(String(parentCount));
 

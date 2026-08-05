@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { buildParentReportApiBodyE2e } from "../fixtures/parent-report-api-body-e2e.mjs";
 
 const STUDENT_ID = "74c30e48-895b-4f4c-a65a-888f656f54f6";
-const LOAD_ERROR_RE = /שגיאת רשת בטעינת הדוח|שגיאה בעת טעינת הדוח/u;
+const LOAD_ERROR_RE = /   |   /u;
 
 test.describe("parent report UI load - MOCK_UI_PASS @mock-ui-pass @parent-report-ui", () => {
   test.beforeEach(async ({ page }) => {
@@ -32,15 +32,15 @@ test.describe("parent report UI load - MOCK_UI_PASS @mock-ui-pass @parent-report
     );
 
     await expect(page.getByText(LOAD_ERROR_RE)).toHaveCount(0);
-    await expect(page.getByText(/נדרשת התחברות כהורה/u)).toHaveCount(0);
-    await expect(page.getByRole("link", { name: /כניסת הורה/u })).toHaveCount(0);
+    await expect(page.getByText(/  /u)).toHaveCount(0);
+    await expect(page.getByRole("link", { name: / /u })).toHaveCount(0);
 
-    await expect(page.getByRole("heading", { name: /דוח להורים/u })).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByText(/טוען דוח/u)).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: / /u })).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByText(/ /u)).toHaveCount(0);
 
     const table = page.locator("table.parent-report-subject-table").first();
     const hasTable = await table.isVisible().catch(() => false);
-    const hasEmptyState = await page.getByText(/אין עדיין מספיק פעילות/u).isVisible().catch(() => false);
+    const hasEmptyState = await page.getByText(/   /u).isVisible().catch(() => false);
     expect(hasTable || hasEmptyState, "report shell renders (data table or empty-state, not error)").toBeTruthy();
 
     expect(pageErrors, `page errors:\n${pageErrors.join("\n")}`).toEqual([]);
@@ -54,6 +54,6 @@ test.describe("parent report UI load - MOCK_UI_PASS @mock-ui-pass @parent-report
     );
 
     await expect(page.getByText(LOAD_ERROR_RE)).toHaveCount(0);
-    await expect(page.getByRole("heading", { name: /דוח להורים/u })).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByRole("heading", { name: / /u })).toBeVisible({ timeout: 60_000 });
   });
 });

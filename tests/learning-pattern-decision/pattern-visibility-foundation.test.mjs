@@ -46,11 +46,11 @@ function wrongEvents(subjectId, bucketKey, count, patternFamily = "pf:fixture", 
 
 // Subject-agnostic composition — multiple subjects (examples only in tests)
 const SUBJECT_CASES = [
-  { subjectId: "math", topicKey: "addition", topicName: "חיבור" },
-  { subjectId: "english", topicKey: "grammar", topicName: "דקדוק" },
-  { subjectId: "hebrew", topicKey: "reading", topicName: "הבנת הנקרא" },
-  { subjectId: "geometry", topicKey: "perimeter", topicName: "היקף" },
-  { subjectId: "science", topicKey: "graphs", topicName: "גרפים" },
+  { subjectId: "math", topicKey: "addition", topicName: "" },
+  { subjectId: "english", topicKey: "grammar", topicName: "" },
+  { subjectId: "hebrew", topicKey: "reading", topicName: " " },
+  { subjectId: "geometry", topicKey: "perimeter", topicName: "" },
+  { subjectId: "science", topicKey: "graphs", topicName: "" },
 ];
 
 for (const sc of SUBJECT_CASES) {
@@ -99,8 +99,8 @@ for (const sc of SUBJECT_CASES.slice(0, 2)) {
   assert.equal(lpd.findingType, "difficulty_pattern");
   assert.equal(lpd.topicStatus, "difficulty_repeated");
   assert.equal(lpd.parentWordingLevel, "repeated_pattern");
-  assert.match(lpd.parentVisibleFinding, /מופיע דפוס חוזר/);
-  assert.doesNotMatch(lpd.parentVisibleFinding, /אין מספיק|אבחון|אזהרה/i);
+  assert.match(lpd.parentVisibleFinding, /  /);
+  assert.doesNotMatch(lpd.parentVisibleFinding, / ||/i);
 }
 
 // 5q 5 correct — positive_observed
@@ -110,7 +110,7 @@ for (const sc of SUBJECT_CASES.slice(0, 2)) {
     topicRowKey: "graphs",
     row: {
       bucketKey: "graphs",
-      displayName: "גרפים",
+      displayName: "",
       questions: 5,
       correct: 5,
       wrong: 0,
@@ -122,7 +122,7 @@ for (const sc of SUBJECT_CASES.slice(0, 2)) {
   });
   assert.equal(lpd.topicStatus, "positive_observed");
   assert.equal(lpd.findingType, "success_pattern");
-  assert.ok(lpd.parentVisibleFinding.includes("הצלחה טובה"));
+  assert.ok(lpd.parentVisibleFinding.includes(" "));
 }
 
 // evidenceStrength — q=12 not a display gate

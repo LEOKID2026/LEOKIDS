@@ -86,8 +86,8 @@ for (const pageId of MATH_G3_PAGE_ORDER) {
   }
 
   const childFacing = page.sections.map((s) => s.body).join("\n");
-  if (childFacing.includes("מתמטיקה")) {
-    errors.push(`${pageId}: child-facing body contains מתמטיקה`);
+  if (childFacing.includes("")) {
+    errors.push(`${pageId}: child-facing body contains `);
   }
   if (/\[DRAFT/i.test(childFacing)) {
     errors.push(`${pageId}: [DRAFT] marker in child-facing section body`);
@@ -114,5 +114,5 @@ if (errors.length) {
 console.log(`G3 content verification PASSED: ${MATH_G3_PAGE_ORDER.length} pages.`);
 console.log("- 7 sections each");
 console.log("- draft metadata");
-console.log("- no מתמטיקה in body");
+console.log("- no  in body");
 console.log("- Section 5/6 alignment anchors present");

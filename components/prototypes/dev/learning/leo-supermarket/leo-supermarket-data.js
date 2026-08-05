@@ -23,25 +23,25 @@
 
 /** @type {GroceryProduct[]} */
 export const PRODUCTS = [
-  { id: "apple", name: "תפוח", price: 3, requestIcon: "🍎", shelfIcon: "🍎" },
-  { id: "banana", name: "בננה", price: 4, requestIcon: "🍌", shelfIcon: "🍌" },
-  { id: "tomato", name: "עגבניה", price: 4, requestIcon: "🍅", shelfIcon: "🍅" },
-  { id: "water", name: "מים", price: 2, requestIcon: "💧", shelfIcon: "💧" },
-  { id: "bread", name: "לחם", price: 5, requestIcon: "🍞", shelfIcon: "🍞" },
-  { id: "milk", name: "חלב", price: 6, requestIcon: "🥛", shelfIcon: "🥛" },
+  { id: "apple", name: "", price: 3, requestIcon: "🍎", shelfIcon: "🍎" },
+  { id: "banana", name: "", price: 4, requestIcon: "🍌", shelfIcon: "🍌" },
+  { id: "tomato", name: "", price: 4, requestIcon: "🍅", shelfIcon: "🍅" },
+  { id: "water", name: "", price: 2, requestIcon: "💧", shelfIcon: "💧" },
+  { id: "bread", name: "", price: 5, requestIcon: "🍞", shelfIcon: "🍞" },
+  { id: "milk", name: "", price: 6, requestIcon: "🥛", shelfIcon: "🥛" },
   {
     id: "juice",
-    name: "מיץ",
+    name: "",
     price: 7,
     requestIcon: "🧃",
     shelfIcon: "🧃",
     imageSrc: "/images/grocery-items/juice.svg",
   },
-  { id: "eggs", name: "ביצים", price: 8, requestIcon: "🥚", shelfIcon: "🥚" },
-  { id: "cookies", name: "עוגיות", price: 9, requestIcon: "🍪", shelfIcon: "🍪" },
-  { id: "rice", name: "אורז", price: 10, requestIcon: "🍚", shelfIcon: "🍚" },
-  { id: "cheese", name: "גבינה", price: 12, requestIcon: "🧀", shelfIcon: "🧀" },
-  { id: "fish", name: "דג", price: 15, requestIcon: "🐟", shelfIcon: "🐟" },
+  { id: "eggs", name: "", price: 8, requestIcon: "🥚", shelfIcon: "🥚" },
+  { id: "cookies", name: "", price: 9, requestIcon: "🍪", shelfIcon: "🍪" },
+  { id: "rice", name: "", price: 10, requestIcon: "🍚", shelfIcon: "🍚" },
+  { id: "cheese", name: "", price: 12, requestIcon: "🧀", shelfIcon: "🧀" },
+  { id: "fish", name: "", price: 15, requestIcon: "🐟", shelfIcon: "🐟" },
 ];
 
 export const CUSTOMER_AVATARS = ["👧", "👦", "🧒", "👨", "👩", "🧑", "👴", "👵"];
@@ -50,7 +50,7 @@ export const CUSTOMER_AVATARS = ["👧", "👦", "🧒", "👨", "👩", "🧑",
 export const DIFFICULTIES = {
   easy: {
     id: "easy",
-    label: "קל",
+    label: "",
     customerCount: 3,
     maxPrice: 10,
     twoProductChance: 0,
@@ -62,7 +62,7 @@ export const DIFFICULTIES = {
   },
   medium: {
     id: "medium",
-    label: "בינוני",
+    label: "",
     customerCount: 4,
     maxPrice: 20,
     twoProductChance: 0,
@@ -74,7 +74,7 @@ export const DIFFICULTIES = {
   },
   hard: {
     id: "hard",
-    label: "קשה",
+    label: "",
     customerCount: 5,
     maxPrice: 50,
     twoProductChance: 0.5,
@@ -164,10 +164,10 @@ export function generateCustomers(difficulty) {
 export function customerRequestText(customer) {
   if (customer.items.length === 1) {
     const item = customer.items[0];
-    return `אני רוצה ${item.name} ${item.requestIcon}`;
+    return `  ${item.name} ${item.requestIcon}`;
   }
   const [first, second] = customer.items;
-  return `אני רוצה ${first.name} ${first.requestIcon} ו-${second.name} ${second.requestIcon}`;
+  return `  ${first.name} ${first.requestIcon} -${second.name} ${second.requestIcon}`;
 }
 
 /** @param {number} value */

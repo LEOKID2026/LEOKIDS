@@ -284,21 +284,21 @@ function pushTrans(pool, item) {
 
 // G6 global_advanced: 5 basic, 5 standard, 5 advanced (5+ words for standard/advanced)
 const g6Global = [
-  ["basic", "phase_b_g6_glob_basic_01", "We should turn off unused lights at home", "כדאי לכבות אורות שלא בשימוש בבית"],
-  ["basic", "phase_b_g6_glob_basic_02", "Our class discussed online safety rules today", "הכיתה שלנו דנה היום בכללי בטיחות ברשת"],
-  ["basic", "phase_b_g6_glob_basic_03", "The speaker explained how media shapes opinions", "הדובר הסביר איך התקשורת מעצבת דעות"],
-  ["basic", "phase_b_g6_glob_basic_04", "Students exchanged emails with partners abroad", "תלמידים החליפו מיילים עם שותפים בחו\"ל"],
-  ["basic", "phase_b_g6_glob_basic_05", "The club plans a cultural food fair next month", "המועדון מתכנן יריד אוכל תרבותי בחודש הבא"],
-  ["standard", "phase_b_g6_glob_std_01", "Reliable sources help us verify facts before we share posts online", "מקורות אמינים עוזרים לנו לאמת עובדות לפני שאנחנו משתפים פוסטים ברשת"],
-  ["standard", "phase_b_g6_glob_std_02", "Climate change affects rainfall patterns in many regions around the world", "שינויי האקלים משפיעים על דפוסי גשם באזורים רבים בעולם"],
-  ["standard", "phase_b_g6_glob_std_03", "Digital citizenship means respecting others when we comment on public forums", "אזרחות דיגיטלית פירושה לכבד אחרים כשאנחנו מגיבים בפורומים ציבוריים"],
-  ["standard", "phase_b_g6_glob_std_04", "The debate team argued politely about whether homework should be shorter", "נבחרת הדיון טענה בנימוס האם שיעורי הבית צריכים להיות קצרים יותר"],
-  ["standard", "phase_b_g6_glob_std_05", "Volunteers translated the welcome guide for visitors from several different countries", "מתנדבים תרגמו את מדריך הקבלה לאורחים ממדינות שונות"],
-  ["advanced", "phase_b_g6_glob_adv_01", "If communities reduce waste, local rivers will gradually become cleaner for wildlife", "אם קהילות מצמצמות פסולת, נהרות מקומיים יהפכו בהדרגה לנקיים יותר עבור חיות בר"],
-  ["advanced", "phase_b_g6_glob_adv_02", "Although the article was long, it explained how algorithms recommend videos to users", "למרות שהמאמר היה ארוך, הוא הסביר איך אלגוריתמים ממליצים סרטונים למשתמשים"],
-  ["advanced", "phase_b_g6_glob_adv_03", "The ambassador encouraged students to ask critical questions during the live video call", "השגריר עודד תלמידים לשאול שאלות ביקורתיות במהלך שיחת הווידאו החיה"],
-  ["advanced", "phase_b_g6_glob_adv_04", "Before publishing the podcast, we checked whether every interview quote was accurate", "לפני פרסום הפודקאסט בדקנו האם כל ציטוט בראיון היה מדויק"],
-  ["advanced", "phase_b_g6_glob_adv_05", "Global cooperation is necessary when countries share research about protecting endangered species", "שיתוף פעולה עולמי הכרחי כשמדינות חולקות מחקר על הגנה על מינים בסכנת הכחדה"],
+  ["basic", "phase_b_g6_glob_basic_01", "We should turn off unused lights at home", "     "],
+  ["basic", "phase_b_g6_glob_basic_02", "Our class discussed online safety rules today", "      "],
+  ["basic", "phase_b_g6_glob_basic_03", "The speaker explained how media shapes opinions", "     "],
+  ["basic", "phase_b_g6_glob_basic_04", "Students exchanged emails with partners abroad", "     \""],
+  ["basic", "phase_b_g6_glob_basic_05", "The club plans a cultural food fair next month", "      "],
+  ["standard", "phase_b_g6_glob_std_01", "Reliable sources help us verify facts before we share posts online", "          "],
+  ["standard", "phase_b_g6_glob_std_02", "Climate change affects rainfall patterns in many regions around the world", "        "],
+  ["standard", "phase_b_g6_glob_std_03", "Digital citizenship means respecting others when we comment on public forums", "        "],
+  ["standard", "phase_b_g6_glob_std_04", "The debate team argued politely about whether homework should be shorter", "          "],
+  ["standard", "phase_b_g6_glob_std_05", "Volunteers translated the welcome guide for visitors from several different countries", "       "],
+  ["advanced", "phase_b_g6_glob_adv_01", "If communities reduce waste, local rivers will gradually become cleaner for wildlife", "   ,         "],
+  ["advanced", "phase_b_g6_glob_adv_02", "Although the article was long, it explained how algorithms recommend videos to users", "   ,       "],
+  ["advanced", "phase_b_g6_glob_adv_03", "The ambassador encouraged students to ask critical questions during the live video call", "         "],
+  ["advanced", "phase_b_g6_glob_adv_04", "Before publishing the podcast, we checked whether every interview quote was accurate", "         "],
+  ["advanced", "phase_b_g6_glob_adv_05", "Global cooperation is necessary when countries share research about protecting endangered species", "            "],
 ];
 g6Global.forEach(([diff, pf, en, he]) =>
   pushTrans("global_advanced", { en, he, minGrade: 6, maxGrade: 6, patternFamily: pf, difficulty: diff })
@@ -306,10 +306,10 @@ g6Global.forEach(([diff, pf, en, he]) =>
 
 // G2 hard routines (4)
 const g2HardRoutines = [
-  ["phase_b_g2_rout_hard_01", "After breakfast, I always pack my school bag carefully", "אחרי ארוחת הבוקר אני תמיד אורז את התיק בזהירות"],
-  ["phase_b_g2_rout_hard_02", "My sister sometimes helps me tie my shoes before we leave", "אחותי לפעמים עוזרת לי לקשור נעליים לפני שיוצאים"],
-  ["phase_b_g2_rout_hard_03", "We never forget to wash our hands before we eat lunch", "אנחנו אף פעם לא שוכחים לשטוף ידיים לפני שאוכלים צהריים"],
-  ["phase_b_g2_rout_hard_04", "Dad reads us a short story when the lights go out", "אבא קורא לנו סיפור קצר כשהאורות כבים"],
+  ["phase_b_g2_rout_hard_01", "After breakfast, I always pack my school bag carefully", "        "],
+  ["phase_b_g2_rout_hard_02", "My sister sometimes helps me tie my shoes before we leave", "       "],
+  ["phase_b_g2_rout_hard_03", "We never forget to wash our hands before we eat lunch", "         "],
+  ["phase_b_g2_rout_hard_04", "Dad reads us a short story when the lights go out", "      "],
 ];
 g2HardRoutines.forEach(([pf, en, he]) =>
   pushTrans("phase_b_routines", { en, he, minGrade: 2, maxGrade: 2, patternFamily: pf, difficulty: "advanced" })
@@ -317,21 +317,21 @@ g2HardRoutines.forEach(([pf, en, he]) =>
 
 // G3 routines (15): 5 basic, 5 standard, 5 advanced
 const g3Routines = [
-  ["basic", "phase_b_g3_rout_basic_01", "I feed the cat before I go to school", "אני מאכיל את החתול לפני שאני הולך לבית ספר"],
-  ["basic", "phase_b_g3_rout_basic_02", "She sets the table every evening", "היא מערכת את השולחן כל ערב"],
-  ["basic", "phase_b_g3_rout_basic_03", "We take a short walk after dinner", "אנחנו הולכים בסיבוב קצר אחרי ארוחת ערב"],
-  ["basic", "phase_b_g3_rout_basic_04", "He waters the plants on the balcony", "הוא מרוווה את הצמחים במרפסת"],
-  ["basic", "phase_b_g3_rout_basic_05", "They practice spelling after homework time", "הם מתרגלים איות אחרי זמן שיעורי בית"],
-  ["standard", "phase_b_g3_rout_std_01", "On Tuesdays, I usually help my grandma carry groceries upstairs", "בימי שלישי אני בדרך כלל עוזר לסבתא להעלות קניות למעלה"],
-  ["standard", "phase_b_g3_rout_std_02", "Before bedtime, we always tidy our room and put toys away", "לפני השינה אנחנו תמיד מסדרים את החדר ומאחסנים צעצועים"],
-  ["standard", "phase_b_g3_rout_std_03", "My brother rarely forgets to charge his tablet at night", "אחי לעיתים רחוקות שוכח להטעין את הטאבלט בלילה"],
-  ["standard", "phase_b_g3_rout_std_04", "After the lesson, the class lines up quietly near the door", "אחרי השיעור הכיתה מתייצבת בשקט ליד הדלת"],
-  ["standard", "phase_b_g3_rout_std_05", "Every Friday, Mom bakes bread and we smell it in the kitchen", "כל שישי אמא אופה לחם ואנחנו מריחים אותו במטבח"],
-  ["advanced", "phase_b_g3_rout_adv_01", "If I finish my chores early, I may read an extra chapter tonight", "אם אסיים את המטלות מוקדם, אולי אקרא פרק נוסף הלילה"],
-  ["advanced", "phase_b_g3_rout_adv_02", "While Dad cooked soup, I practiced the recorder in my room", "בזמן שאבא בישל מרק, תרגלתי בחדר על חלילית"],
-  ["advanced", "phase_b_g3_rout_adv_03", "Nobody in our house leaves dishes in the sink overnight anymore", "אף אחד בבית שלנו לא משאיר כלים בכיור בלילה יותר"],
-  ["advanced", "phase_b_g3_rout_adv_04", "We sometimes ride bikes to the park when the weather is cool", "לפעמים אנחנו רוכבים על אופניים לפארק כשמזג האוויר נעים"],
-  ["advanced", "phase_b_g3_rout_adv_05", "Before the test, she always reviews her notes with a highlighter", "לפני המבחן היא תמיד חוזרת על הרשימות עם מדגש"],
+  ["basic", "phase_b_g3_rout_basic_01", "I feed the cat before I go to school", "        "],
+  ["basic", "phase_b_g3_rout_basic_02", "She sets the table every evening", "     "],
+  ["basic", "phase_b_g3_rout_basic_03", "We take a short walk after dinner", "      "],
+  ["basic", "phase_b_g3_rout_basic_04", "He waters the plants on the balcony", "    "],
+  ["basic", "phase_b_g3_rout_basic_05", "They practice spelling after homework time", "      "],
+  ["standard", "phase_b_g3_rout_std_01", "On Tuesdays, I usually help my grandma carry groceries upstairs", "         "],
+  ["standard", "phase_b_g3_rout_std_02", "Before bedtime, we always tidy our room and put toys away", "        "],
+  ["standard", "phase_b_g3_rout_std_03", "My brother rarely forgets to charge his tablet at night", "       "],
+  ["standard", "phase_b_g3_rout_std_04", "After the lesson, the class lines up quietly near the door", "      "],
+  ["standard", "phase_b_g3_rout_std_05", "Every Friday, Mom bakes bread and we smell it in the kitchen", "        "],
+  ["advanced", "phase_b_g3_rout_adv_01", "If I finish my chores early, I may read an extra chapter tonight", "    ,     "],
+  ["advanced", "phase_b_g3_rout_adv_02", "While Dad cooked soup, I practiced the recorder in my room", "   ,    "],
+  ["advanced", "phase_b_g3_rout_adv_03", "Nobody in our house leaves dishes in the sink overnight anymore", "         "],
+  ["advanced", "phase_b_g3_rout_adv_04", "We sometimes ride bikes to the park when the weather is cool", "        "],
+  ["advanced", "phase_b_g3_rout_adv_05", "Before the test, she always reviews her notes with a highlighter", "        "],
 ];
 g3Routines.forEach(([diff, pf, en, he]) =>
   pushTrans("phase_b_routines", { en, he, minGrade: 3, maxGrade: 3, patternFamily: pf, difficulty: diff })
@@ -339,21 +339,21 @@ g3Routines.forEach(([diff, pf, en, he]) =>
 
 // G4 hobbies (15)
 const g4Hobbies = [
-  ["basic", "phase_b_g4_hob_basic_01", "I enjoy drawing comics in my notebook", "אני נהנה לצייר קומיקס במחברת"],
-  ["basic", "phase_b_g4_hob_basic_02", "She plays chess with her grandfather", "היא משחקת שחמט עם סבא"],
-  ["basic", "phase_b_g4_hob_basic_03", "We collect interesting stamps from other countries", "אנחנו אוספים בולים מעניינים ממדינות אחרות"],
-  ["basic", "phase_b_g4_hob_basic_04", "He builds small models with recycled cardboard", "הוא בונה דגמים קטנים מקרטון ממוחזר"],
-  ["basic", "phase_b_g4_hob_basic_05", "They practice juggling after school on Wednesdays", "הם מתרגלים ג'גלינג אחרי בית ספר בימי רביעי"],
-  ["standard", "phase_b_g4_hob_std_01", "My hobby is learning simple songs on the keyboard during winter breaks", "התחביב שלי הוא ללמוד שירים פשוטים על הקלידים בחופשת החורף"],
-  ["standard", "phase_b_g4_hob_std_02", "She prefers painting landscapes because colors help her relax after tests", "היא מעדיפה לצייר נופים כי צבעים עוזרים לה להירגע אחרי מבחנים"],
-  ["standard", "phase_b_g4_hob_std_03", "We joined a photography club that meets near the old city walls", "הצטרפנו למועדון צילום שנפגש ליד חומות העיר העתיקה"],
-  ["standard", "phase_b_g4_hob_std_04", "He often fixes broken bikes for neighbors who cannot ride to school", "הוא לעיתים קרובות מתקן אופניים שבורים לשכנים שלא יכולים לרכוב לבית ספר"],
-  ["standard", "phase_b_g4_hob_std_05", "They sometimes bake muffins and share them with friends at the library", "לפעמים הם אופים מאפינס וחולקים אותם עם חברים בספרייה"],
-  ["advanced", "phase_b_g4_hob_adv_01", "Although the puzzle was difficult, we finished it together on Saturday morning", "למרות שהפאזל היה קשה, סיימנו אותו יחד בבוקר שבת"],
-  ["advanced", "phase_b_g4_hob_adv_02", "If you practice dribbling daily, you will improve before the next tournament", "אם תתרגל כדרור כל יום, תשתפר לפני הטורניר הבא"],
-  ["advanced", "phase_b_g4_hob_adv_03", "Nobody expected our robot kit to win the school creativity award", "אף אחד לא ציפה שערכת הרובוט שלנו תזכה בפרס היצירתיות"],
-  ["advanced", "phase_b_g4_hob_adv_04", "While I sketched the harbor, seagulls circled above the fishing boats", "בזמן ששרטטי את הנמל, שחפים עפו מעל סירות הדיג"],
-  ["advanced", "phase_b_g4_hob_adv_05", "We have never tried pottery, but we might sign up for a workshop soon", "מעולם לא ניסינו קדרות, אבל אולי נירשם לסדנה בקרוב"],
+  ["basic", "phase_b_g4_hob_basic_01", "I enjoy drawing comics in my notebook", "    "],
+  ["basic", "phase_b_g4_hob_basic_02", "She plays chess with her grandfather", "    "],
+  ["basic", "phase_b_g4_hob_basic_03", "We collect interesting stamps from other countries", "     "],
+  ["basic", "phase_b_g4_hob_basic_04", "He builds small models with recycled cardboard", "     "],
+  ["basic", "phase_b_g4_hob_basic_05", "They practice juggling after school on Wednesdays", "  '     "],
+  ["standard", "phase_b_g4_hob_std_01", "My hobby is learning simple songs on the keyboard during winter breaks", "         "],
+  ["standard", "phase_b_g4_hob_std_02", "She prefers painting landscapes because colors help her relax after tests", "          "],
+  ["standard", "phase_b_g4_hob_std_03", "We joined a photography club that meets near the old city walls", "       "],
+  ["standard", "phase_b_g4_hob_std_04", "He often fixes broken bikes for neighbors who cannot ride to school", "           "],
+  ["standard", "phase_b_g4_hob_std_05", "They sometimes bake muffins and share them with friends at the library", "        "],
+  ["advanced", "phase_b_g4_hob_adv_01", "Although the puzzle was difficult, we finished it together on Saturday morning", "   ,     "],
+  ["advanced", "phase_b_g4_hob_adv_02", "If you practice dribbling daily, you will improve before the next tournament", "    ,    "],
+  ["advanced", "phase_b_g4_hob_adv_03", "Nobody expected our robot kit to win the school creativity award", "         "],
+  ["advanced", "phase_b_g4_hob_adv_04", "While I sketched the harbor, seagulls circled above the fishing boats", "   ,     "],
+  ["advanced", "phase_b_g4_hob_adv_05", "We have never tried pottery, but we might sign up for a workshop soon", "   ,     "],
 ];
 g4Hobbies.forEach(([diff, pf, en, he]) =>
   pushTrans("phase_b_hobbies", { en, he, minGrade: 4, maxGrade: 4, patternFamily: pf, difficulty: diff })
@@ -361,27 +361,27 @@ g4Hobbies.forEach(([diff, pf, en, he]) =>
 
 // G5 community (8) + technology (7) = 15 for g5
 const g5Community = [
-  ["basic", "phase_b_g5_com_basic_01", "The library opens early on school days", "הספרייה נפתחת מוקדם בימי לימודים"],
-  ["basic", "phase_b_g5_com_basic_02", "Volunteers cleaned the neighborhood park last Sunday", "מתנדבים ניקו את הפארק השכונתי ביום ראשון שעבר"],
-  ["basic", "phase_b_g5_com_basic_03", "Our class planted trees near the community center", "הכיתה שלנו נטעה עצים ליד המרכז הקהילתי"],
-  ["standard", "phase_b_g5_com_std_01", "The mayor thanked families who donated books to the public library", "ראש העיר הודה למשפחות שתרמו ספרים לספרייה הציבורית"],
-  ["standard", "phase_b_g5_com_std_02", "Students designed posters that encourage people to recycle plastic bottles", "תלמידים עיצבו פוסטרים שמעודדים אנשים למחזר בקבוקי פלסטיק"],
-  ["standard", "phase_b_g5_com_std_03", "Neighbors organized a food drive for families who needed extra support", "שכנים ארגנו מבצע איסוף מזון למשפחות שהיו זקוקות לתמיכה"],
-  ["advanced", "phase_b_g5_com_adv_01", "If more residents vote, the city council will hear diverse opinions about parks", "אם יותר תושבים יצביעו, מועצת העיר תשמע דעות מגוונות על פארקים"],
-  ["advanced", "phase_b_g5_com_adv_02", "Although the meeting was long, teenagers presented ideas for safer crosswalks", "למרות שהפגישה הייתה ארוכה, בני נוער הציגו רעיונות למעברים בטוחים יותר"],
+  ["basic", "phase_b_g5_com_basic_01", "The library opens early on school days", "    "],
+  ["basic", "phase_b_g5_com_basic_02", "Volunteers cleaned the neighborhood park last Sunday", "       "],
+  ["basic", "phase_b_g5_com_basic_03", "Our class planted trees near the community center", "      "],
+  ["standard", "phase_b_g5_com_std_01", "The mayor thanked families who donated books to the public library", "       "],
+  ["standard", "phase_b_g5_com_std_02", "Students designed posters that encourage people to recycle plastic bottles", "       "],
+  ["standard", "phase_b_g5_com_std_03", "Neighbors organized a food drive for families who needed extra support", "        "],
+  ["advanced", "phase_b_g5_com_adv_01", "If more residents vote, the city council will hear diverse opinions about parks", "   ,       "],
+  ["advanced", "phase_b_g5_com_adv_02", "Although the meeting was long, teenagers presented ideas for safer crosswalks", "   ,       "],
 ];
 g5Community.forEach(([diff, pf, en, he]) =>
   pushTrans("phase_b_community", { en, he, minGrade: 5, maxGrade: 5, patternFamily: pf, difficulty: diff })
 );
 
 const g5Tech = [
-  ["basic", "phase_b_g5_tech_basic_01", "Please charge the tablet before the online lesson", "בבקשה טענו את הטאבלט לפני השיעור המקוון"],
-  ["basic", "phase_b_g5_tech_basic_02", "Save your document before you close the laptop", "שמרו את המסמך לפני שסוגרים את המחשב"],
-  ["standard", "phase_b_g5_tech_std_01", "Always use a strong password when you create a new account online", "תמיד השתמשו בסיסמה חזקה כשיוצרים חשבון חדש ברשת"],
-  ["standard", "phase_b_g5_tech_std_02", "The teacher showed us how to cite websites in our research project", "המורה הראתה לנו איך לצטט אתרים בפרויקט המחקר"],
-  ["advanced", "phase_b_g5_tech_adv_01", "If the Wi-Fi fails, we will continue the lesson using printed worksheets", "אם ה-Wi-Fi נכשל, נמשיך את השיעור עם דפי עבודה מודפסים"],
-  ["advanced", "phase_b_g5_tech_adv_02", "Before sharing a photo, ask whether everyone in the picture agrees", "לפני שמשתפים תמונה, שאלו האם כולם בתמונה מסכימים"],
-  ["advanced", "phase_b_g5_tech_adv_03", "Students learned to spot misleading headlines during the media literacy workshop", "תלמידים למדו לזהות כותרות מטעות במהלך סדנת אוריינות מדיה"],
+  ["basic", "phase_b_g5_tech_basic_01", "Please charge the tablet before the online lesson", "      "],
+  ["basic", "phase_b_g5_tech_basic_02", "Save your document before you close the laptop", "      "],
+  ["standard", "phase_b_g5_tech_std_01", "Always use a strong password when you create a new account online", "       "],
+  ["standard", "phase_b_g5_tech_std_02", "The teacher showed us how to cite websites in our research project", "       "],
+  ["advanced", "phase_b_g5_tech_adv_01", "If the Wi-Fi fails, we will continue the lesson using printed worksheets", " -Wi-Fi ,       "],
+  ["advanced", "phase_b_g5_tech_adv_02", "Before sharing a photo, ask whether everyone in the picture agrees", "  ,     "],
+  ["advanced", "phase_b_g5_tech_adv_03", "Students learned to spot misleading headlines during the media literacy workshop", "        "],
 ];
 g5Tech.forEach(([diff, pf, en, he]) =>
   pushTrans("phase_b_technology", { en, he, minGrade: 5, maxGrade: 5, patternFamily: pf, difficulty: diff })

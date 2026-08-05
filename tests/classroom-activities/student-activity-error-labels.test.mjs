@@ -18,40 +18,40 @@ const studentActivitySrc = readFileSync(
 test("activity_not_available maps to Hebrew", () => {
   assert.equal(
     formatStudentActivityErrorHe("activity_not_available"),
-    "הפעילות אינה זמינה כרגע"
+    "   "
   );
   assert.equal(
     resolveStudentActivityApiErrorHe({ error: "activity_not_available" }),
-    "הפעילות אינה זמינה כרגע"
+    "   "
   );
 });
 
 test("unknown snake_case errors use safe Hebrew fallback", () => {
   assert.equal(
     formatStudentActivityErrorHe("mystery_internal_code"),
-    "לא ניתן לפתוח את הפעילות כרגע"
+    "     "
   );
   assert.equal(
     resolveStudentActivityApiErrorHe({ error: "mystery_internal_code" }),
-    "לא ניתן לפתוח את הפעילות כרגע"
+    "     "
   );
 });
 
 test("English API literals map to Hebrew", () => {
   assert.equal(
     resolveStudentActivityApiErrorHe({ error: "Not authenticated" }),
-    "נדרשת התחברות"
+    " "
   );
   assert.equal(
     resolveStudentActivityApiErrorHe({ error: "Server error" }),
-    "שגיאת שרת - נסו שוב"
+    "  -  "
   );
 });
 
 test("student activity page resolves API errors through Hebrew formatter", () => {
   assert.ok(studentActivitySrc.includes("resolveStudentActivityApiErrorHe"));
   assert.ok(!studentActivitySrc.includes("json?.error || json?.message"));
-  assert.ok(!studentActivitySrc.includes('message: json?.error || "שמירת תשובה נכשלה"'));
+  assert.ok(!studentActivitySrc.includes('message: json?.error || "  "'));
 });
 
 test("student activity error UI does not render raw activity_not_available key", () => {
@@ -63,7 +63,7 @@ test("student activity error screen keeps return-home link", () => {
     studentActivitySrc.indexOf('if (phase === "error")'),
     studentActivitySrc.indexOf('if (phase === "done" && finished)')
   );
-  assert.ok(errorBlock.includes("חזרה לבית"));
+  assert.ok(errorBlock.includes(" "));
   assert.ok(errorBlock.includes("{error}"));
 });
 
@@ -85,8 +85,8 @@ test("student activity completion still uses count summary without percentages",
 });
 
 test("common student activity error codes map to Hebrew", () => {
-  assert.equal(formatStudentActivityErrorHe("activity_not_started"), "הפעילות עדיין לא התחילה");
-  assert.equal(formatStudentActivityErrorHe("forbidden"), "אין הרשאה לפתוח את הפעילות");
-  assert.equal(formatStudentActivityErrorHe("not_assigned"), "הפעילות לא משויכת אליך");
-  assert.equal(formatStudentActivityErrorHe("already_submitted"), "כבר הגשת את הפעילות");
+  assert.equal(formatStudentActivityErrorHe("activity_not_started"), "   ");
+  assert.equal(formatStudentActivityErrorHe("forbidden"), "    ");
+  assert.equal(formatStudentActivityErrorHe("not_assigned"), "   ");
+  assert.equal(formatStudentActivityErrorHe("already_submitted"), "   ");
 });

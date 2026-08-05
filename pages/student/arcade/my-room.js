@@ -80,7 +80,7 @@ export default function ArcadeMyRoomPage() {
             {demoMode ? (
               <div className={`${GH.card} space-y-4 p-4 text-start`}>
                 <h1 className={GH.sectionTitle}>{demoCopy("myRoom", "title")}</h1>
-                <p className={`text-sm ${GH.cardBlurb}`}>{demoMyRoom.messageHe}</p>
+                <p className={`text-sm ${GH.cardBlurb}`}>{demoMyRoom.message}</p>
               </div>
             ) : locked ? (
               <div className={`${GH.card} p-4 text-start`}>

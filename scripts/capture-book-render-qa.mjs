@@ -23,7 +23,7 @@ const BOOKS = [
   { id: "book-g5-add_two-s3", url: "/learning/book/math/g5/add_two", section: 3 },
 ];
 
-const FORBIDDEN = [/37 = 30 \+ 758/, /758 = 50/, /\? = 68/, /20 \+ 4-ו/, /4-ו$/, /\.24 = 20/];
+const FORBIDDEN = [/37 = 30 \+ 758/, /758 = 50/, /\? = 68/, /20 \+ 4-/, /4-$/, /\.24 = 20/];
 const errors = [];
 const shots = [];
 
@@ -44,7 +44,7 @@ async function screenshotArticle(page, shotPath) {
   await page.waitForFunction(
     () => {
       const h2 = document.querySelector("article h2");
-      return h2 && (h2.textContent || "").includes("דוגמה");
+      return h2 && (h2.textContent || "").includes("");
     },
     undefined,
     { timeout: 30000 }
@@ -61,7 +61,7 @@ async function navSection(page, targetSection) {
   for (let i = 0; i < Math.max(0, targetSection - 1); i += 1) {
     const clicked = await page.evaluate(() => {
       const btn = [...document.querySelectorAll("button")].find(
-        (el) => (el.textContent || "").trim() === "עמוד הבא"
+        (el) => (el.textContent || "").trim() === " "
       );
       if (btn && !btn.disabled) {
         btn.click();
@@ -75,7 +75,7 @@ async function navSection(page, targetSection) {
   await page.waitForFunction(
     (n) => {
       const h2 = document.querySelector("article h2");
-      return h2 && (n === 3 ? (h2.textContent || "").includes("דוגמה") : true);
+      return h2 && (n === 3 ? (h2.textContent || "").includes("") : true);
     },
     targetSection,
     { timeout: 20000 }

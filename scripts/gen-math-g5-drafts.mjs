@@ -22,13 +22,13 @@ const SOURCE_REFS = `- \`data/curriculum-spine/v1/skills.json\`
 - \`docs/learning-book/MATH_LEARNING_PAGE_TEMPLATE.md\``;
 
 const SECTION_TITLES = [
-  "מה לומדים?",
-  "הסבר",
-  "דוגמה",
-  "בואו נפתור",
-  "נסו בעצמכם",
-  "שימו לב!",
-  "בואו נתרגל!",
+  " ?",
+  "",
+  "",
+  " ",
+  " ",
+  " !",
+  " !",
 ];
 
 /** @param {string} pageId */

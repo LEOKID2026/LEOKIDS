@@ -60,9 +60,9 @@ function buildPrepFlags(page, section, spokenScript) {
     titleStripped: !spokenScript.trim().startsWith(page.displayTitle),
     sectionNavTitleStripped: !spokenScript.includes(section.title),
     hyphensNormalized: !HEBREW_HYPHEN_IN_SCRIPT.test(spokenScript),
-    hintsRemoved: !/\(רמז\s*:/u.test(spokenScript) && !/^רמז\s*:/m.test(spokenScript),
+    hintsRemoved: !/\(\s*:/u.test(spokenScript) && !/^\s*:/m.test(spokenScript),
     scaffoldingUnwrapped:
-      !/^שאלה\s*:/m.test(spokenScript) && !/^שלב\s+\d+\s*:/m.test(spokenScript),
+      !/^\s*:/m.test(spokenScript) && !/^\s+\d+\s*:/m.test(spokenScript),
     visualMarkersRemoved: !/[❌✓✔✗]/u.test(spokenScript),
     metadataExcluded: !/learning_page_id|skill_id|\.md\b/i.test(spokenScript),
     onlySectionBody: rawBody.length > 0,

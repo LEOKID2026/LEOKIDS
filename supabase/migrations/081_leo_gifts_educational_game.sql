@@ -1,4 +1,4 @@
--- Educational game #4: leo-gifts (המתנות של ליאו)
+-- Educational game #4: leo-gifts
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 077 (educational_game_sessions, reward_economy_educational_game_rules, site_game_catalog educational).
@@ -46,7 +46,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-gifts',
   'educational',
-  'המתנות של ליאו',
+  'Leo''s Candy Shop',
   '/student/educational-games/leo-gifts',
   '/student/educational-games',
   coalesce(
@@ -55,7 +55,7 @@ insert into public.site_game_catalog (
   ),
   40,
   '🎁',
-  'חילוק שווה, שארית וחשבון מהיר'
+  'Equal sharing, groups, and remainders'
 )
 on conflict (game_key) do update set
   category = excluded.category,

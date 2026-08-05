@@ -30,7 +30,7 @@ const ALL_CAMEROON_CLAIM_RE =
   /(?:tout(?:e)?\s+le\s+Cameroun|tous\s+les\s+(?:élèves|enfants)\s+(?:du|au)\s+Cameroun|représente\s+(?:le\s+)?Cameroun|pour\s+les\s+élèves\s+du\s+Cameroun(?!\s+francophone))/i;
 /** Dead Israel-curriculum / Hebrew / homeland residue must not remain as local overrides. */
 const DEAD_CURRICULUM_RE =
-  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|מולדת|עברית|ישראל/i;
+  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|||/i;
 const ANGLOPHONE_CLASS_RE = /\bClass\s*[1-6]\b|\bCL\s*[1-6]\b/i;
 
 /**

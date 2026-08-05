@@ -151,7 +151,7 @@ self.addEventListener('install', (event) => {
     caches.open(STATIC_CACHE)
       .then((cache) => {
         console.log('[SW] Caching static assets');
-        // Cache רק קבצים סטטיים אמיתיים
+        // Cache
         return cache.addAll(STATIC_ASSETS).catch((err) => {
           console.log('[SW] Some assets failed to cache:', err);
           return Promise.resolve();
@@ -199,17 +199,17 @@ self.addEventListener('activate', (event) => {
 // Helper function to check if request should be cached
 function shouldCache(request) {
   const url = new URL(request.url);
-  
+
   // Don't cache external resources
   if (url.origin !== self.location.origin) {
     return false;
   }
-  
+
   // Check patterns
   const pathname = url.pathname;
   const isImage = IMAGE_PATTERNS.some(pattern => pattern.test(pathname));
   const isSound = SOUND_PATTERNS.some(pattern => pattern.test(pathname));
-  
+
   // Cache images, sounds, CSS, JS, and HTML
   return (
     request.method === 'GET' &&
@@ -286,14 +286,14 @@ self.addEventListener('fetch', (event) => {
             if (cachedResponse) {
               return cachedResponse;
             }
-            
+
             // Strategy 2: Try URL without query params
             const urlWithoutParams = request.url.split('?')[0];
             return caches.match(urlWithoutParams).then((cachedResponse) => {
               if (cachedResponse) {
                 return cachedResponse;
               }
-              
+
               // Strategy 3: Try parent route (for nested pages)
               if (url.pathname.startsWith('/learning/')) {
                 return caches.match('/learning').then((cachedResponse) => {
@@ -302,7 +302,7 @@ self.addEventListener('fetch', (event) => {
                   }
                 });
               }
-              
+
               // Strategy 4: Try home page as ultimate fallback
               if (url.pathname !== '/') {
                 return caches.match('/').then((cachedResponse) => {
@@ -311,7 +311,7 @@ self.addEventListener('fetch', (event) => {
                   }
                 });
               }
-              
+
               // Strategy 5: Return locale-aware offline page (never serve EN HTML for non-en locales)
               const localeId = readLocaleFromCookieHeader(request);
               const offlinePath = offlineFallbackPath(localeId);
@@ -391,7 +391,7 @@ self.addEventListener('fetch', (event) => {
           if (cachedResponse) {
             return cachedResponse;
           }
-          
+
           return fetch(request)
             .then((response) => {
               if (!response || response.status !== 200 || response.type !== 'basic') {
@@ -465,7 +465,7 @@ self.addEventListener('notificationclick', (event) => {
   );
 });
 
-// Message handler - לקבל הודעות מהדף כדי לעשות pre-cache
+// Message handler -      pre-cache
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'PRE_CACHE_PAGES') {
     const pages = event.data.pages || ESSENTIAL_PAGES;
@@ -473,7 +473,7 @@ self.addEventListener('message', (event) => {
     event.waitUntil(
       Promise.all(
         pages.map((url) => {
-          // יצירת Request object עבור ה-URL
+          //  Request object  -URL
           const request = new Request(url, { credentials: 'same-origin' });
           return fetch(request)
             .then((response) => {
@@ -494,7 +494,7 @@ self.addEventListener('message', (event) => {
       })
     );
   }
-  
+
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }

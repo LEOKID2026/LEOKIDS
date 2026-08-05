@@ -3,65 +3,137 @@
   "subjects": [
     {
       "subject_key": "math",
-      "display_name_he": "Math",
+      "display_name_he": "",
       "sort_order": 1,
       "is_active": true
     },
     {
       "subject_key": "geometry",
-      "display_name_he": "Geometry",
+      "display_name_he": "",
       "sort_order": 2,
       "is_active": true
     },
     {
       "subject_key": "english",
-      "display_name_he": "English",
+      "display_name_he": "",
       "sort_order": 3,
       "is_active": true
     },
     {
       "subject_key": "science",
-      "display_name_he": "Science",
+      "display_name_he": "",
       "sort_order": 4,
       "is_active": true
     }
   ],
   "matrix": {
     "g1": {
-      "math": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "geometry": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "english": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "science": { "is_grade_suitable": true, "is_enabled_by_default": true }
+      "math": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "geometry": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "english": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "science": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      }
     },
     "g2": {
-      "math": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "geometry": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "english": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "science": { "is_grade_suitable": true, "is_enabled_by_default": true }
+      "math": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "geometry": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "english": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "science": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      }
     },
     "g3": {
-      "math": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "geometry": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "english": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "science": { "is_grade_suitable": true, "is_enabled_by_default": true }
+      "math": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "geometry": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "english": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "science": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      }
     },
     "g4": {
-      "math": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "geometry": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "english": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "science": { "is_grade_suitable": true, "is_enabled_by_default": true }
+      "math": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "geometry": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "english": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "science": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      }
     },
     "g5": {
-      "math": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "geometry": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "english": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "science": { "is_grade_suitable": true, "is_enabled_by_default": true }
+      "math": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "geometry": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "english": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "science": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      }
     },
     "g6": {
-      "math": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "geometry": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "english": { "is_grade_suitable": true, "is_enabled_by_default": true },
-      "science": { "is_grade_suitable": true, "is_enabled_by_default": true }
+      "math": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "geometry": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "english": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      },
+      "science": {
+        "is_grade_suitable": true,
+        "is_enabled_by_default": true
+      }
     }
   },
   "hasUnresolvedConflicts": false,

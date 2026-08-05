@@ -14,12 +14,12 @@ const STUDENT_ID = "33333333-3333-4333-8333-333333333333";
 
 function discussionBody(count, answerRequired = true) {
   const questionSet = Array.from({ length: count }, (_, i) => ({
-    question: `שאלה ${i + 1}?`,
+    question: ` ${i + 1}?`,
     correctAnswer: String(i + 1),
     choices: [String(i + 1), String(i + 2)],
   }));
   return {
-    title: "דיון",
+    title: "",
     classId: CLASS_ID,
     subject: "math",
     topic: "addition",

@@ -26,13 +26,13 @@ const BANNED = [
   "__RAW_PROBE_GEOM__",
   "__RAW_INTERVENTION_GEOM__",
   "__PATTERN_GEOM_INTERNAL__",
-  "מודרך מול עצמאי",
-  "תרגול סקאלה",
-  "עם/בלי ציר",
-  "רשת + קודקודים",
-  "עם/בלי פריסה",
-  "פריסה על נייר",
-  "מפתח המרה",
+  "  ",
+  " ",
+  "/ ",
+  " + ",
+  "/ ",
+  "  ",
+  " ",
 ];
 
 function assertEq(name, actual, expected) {
@@ -59,7 +59,7 @@ function assertDifferent(name, a, b) {
 function rowGeo(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "גאומטריה",
+    displayName: "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -79,8 +79,8 @@ function buildGeoUnit(taxonomyId, bucketKey, topicRowKey) {
     subjectId: "geometry",
     topicRowKey,
     bucketKey,
-    displayName: "גאומטריה",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
       immediateActionHe: "__RAW_PROBE_GEOM__",
       shortPracticeHe: "__RAW_INTERVENTION_GEOM__",
@@ -89,7 +89,7 @@ function buildGeoUnit(taxonomyId, bucketKey, topicRowKey) {
     taxonomy: {
       id: taxonomyId,
       patternHe: "__PATTERN_GEOM_INTERNAL__",
-      topicHe: "גאומטריה",
+      topic: "",
       subskillHe: "test",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
@@ -185,7 +185,7 @@ const mk = (taxonomyId, bucket, gradeKey) => {
       startDate: "2026-05-01",
       endDate: "2026-05-08",
       period: "week",
-      playerName: "בדיקה",
+      playerName: "",
       summary: { totalQuestions: 20 },
       geometryTopics: { [trk]: rowGeo(trk, bucket, gradeKey) },
       diagnosticEngineV2: { units: [buildGeoUnit(taxonomyId, bucket, trk)] },
@@ -199,7 +199,7 @@ const mpAngles = dAngles?.subjectProfiles?.find((p) => p.subject === "geometry")
 assertEq("detailed G-02 angles g4 action", mpAngles?.parentActionHe, angG4a);
 assertEq("detailed G-02 angles g4 goal", mpAngles?.nextWeekGoalHe, angG4g);
 assertNoBanned("detailed G-02 angles action", mpAngles?.parentActionHe);
-const tpAng = buildTruthPacketV1(dAngles, { scopeType: "topic", scopeId: mk("G-02", "angles", "g4").trk, scopeLabel: "זוויות" });
+const tpAng = buildTruthPacketV1(dAngles, { scopeType: "topic", scopeId: mk("G-02", "angles", "g4").trk, scopeLabel: "" });
 assertNoBanned("truth G-02 angles", tpAng?.narrative?.textSlots ? JSON.stringify(tpAng.narrative.textSlots) : "");
 
 const { base: bTrans, trk: trTrans } = mk("G-04", "transformations", "g4");
@@ -208,7 +208,7 @@ const mpTrans = dTrans?.subjectProfiles?.find((p) => p.subject === "geometry");
 const t4 = G["G-04"].bucketOverrides.transformations.g3_g4;
 assertEq("detailed G-04 transformations g4 action", mpTrans?.parentActionHe, t4.actionTextHe);
 assertDifferent("G-04 trans detailed", mpTrans?.parentActionHe, mpTrans?.nextWeekGoalHe);
-const tpTr = buildTruthPacketV1(dTrans, { scopeType: "topic", scopeId: trTrans, scopeLabel: "טרנספורמציה" });
+const tpTr = buildTruthPacketV1(dTrans, { scopeType: "topic", scopeId: trTrans, scopeLabel: "" });
 assertNoBanned("truth G-04 trans", JSON.stringify(tpTr?.narrative?.textSlots || {}));
 
 const { base: bVol, trk: trVol } = mk("G-05", "volume", "g6");
@@ -216,7 +216,7 @@ const dVol = buildDetailedParentReportFromBaseReport(bVol, { period: "week" });
 const mpVol = dVol?.subjectProfiles?.find((p) => p.subject === "geometry");
 const v6 = G["G-05"].bucketOverrides.volume.g5_g6;
 assertEq("detailed G-05 volume g6 action", mpVol?.parentActionHe, v6.actionTextHe);
-const tpVol = buildTruthPacketV1(dVol, { scopeType: "topic", scopeId: trVol, scopeLabel: "נפח" });
+const tpVol = buildTruthPacketV1(dVol, { scopeType: "topic", scopeId: trVol, scopeLabel: "" });
 assertNoBanned("truth G-05 volume", JSON.stringify(tpVol?.narrative?.textSlots || {}));
 
 const { base: bPer, trk: trPer } = mk("G-06", "perimeter", "g4");
@@ -228,13 +228,13 @@ const { base: bSym, trk: trSym } = mk("G-07", "symmetry", "g2");
 const dSym = buildDetailedParentReportFromBaseReport(bSym, { period: "week" });
 const mpSym = dSym?.subjectProfiles?.find((p) => p.subject === "geometry");
 assertEq("detailed G-07 symmetry g2", mpSym?.parentActionHe, G["G-07"].bucketOverrides.symmetry.g1_g2.actionTextHe);
-const tpSym = buildTruthPacketV1(dSym, { scopeType: "topic", scopeId: trSym, scopeLabel: "סימטריה" });
+const tpSym = buildTruthPacketV1(dSym, { scopeType: "topic", scopeId: trSym, scopeLabel: "" });
 assertNoBanned("truth G-07 symmetry", JSON.stringify(tpSym?.narrative?.textSlots || {}));
 
 const uSym = bSym.diagnosticEngineV2.units[0];
 const shSym = summarizeV2UnitsForSubjectForTests(bSym.diagnosticEngineV2.units, {
   subjectReportQuestions: 12,
-  subjectLabelHe: "גאומטריה",
+  subjectLabelHe: "",
   topicMap: bSym.geometryTopics,
   reportTotalQuestions: 20,
 });

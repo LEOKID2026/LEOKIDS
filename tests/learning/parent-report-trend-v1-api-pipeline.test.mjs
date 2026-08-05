@@ -144,7 +144,7 @@ describe("parent-report trendV1 API pipeline", () => {
       assert.ok(trendV1, "trendV1 must be set on topic row");
       assert.equal(trendV1.direction, "improving");
       assert.equal(shouldShowTrendV1Line(trendV1), true);
-      assert.ok(String(trendV1.parentLineHe || "").includes("מגמה בתקופה"));
+      assert.ok(String(trendV1.parentLineHe || "").includes(" "));
     } finally {
       globalThis.localStorage = prevLs;
     }

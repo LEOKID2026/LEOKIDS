@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 134,
+  "cardCount": 142,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -282,66 +282,6 @@
         "description": "يوم عائلة Leo - بطاقة حدث محدودة!"
       }
     },
-    "event_hanukkah": {
-      "cardKey": "event_hanukkah",
-      "title": "Leo هانوكا",
-      "description": "Leo حانوكا – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "Leo هانوكا",
-        "description": "Leo حانوكا – بطاقة حدث محدودة!"
-      }
-    },
-    "event_independence_day": {
-      "cardKey": "event_independence_day",
-      "title": "يوم استقلال Leo",
-      "description": "يوم استقلال Leo – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "يوم استقلال Leo",
-        "description": "يوم استقلال Leo – بطاقة حدث محدودة!"
-      }
-    },
-    "event_passover": {
-      "cardKey": "event_passover",
-      "title": "عيد الفصح Leo",
-      "description": "عيد الفصح Leo – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "عيد الفصح Leo",
-        "description": "عيد الفصح Leo – بطاقة حدث محدودة!"
-      }
-    },
-    "event_purim": {
-      "cardKey": "event_purim",
-      "title": "Leo بوريم",
-      "description": "Leo بوريم – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "Leo بوريم",
-        "description": "Leo بوريم – بطاقة حدث محدودة!"
-      }
-    },
-    "event_rosh_hashana": {
-      "cardKey": "event_rosh_hashana",
-      "title": "Leo روش هاشانا",
-      "description": "Leo روش هاشانا – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "Leo روش هاشانا",
-        "description": "Leo روش هاشانا – بطاقة حدث محدودة!"
-      }
-    },
-    "event_shavuot": {
-      "cardKey": "event_shavuot",
-      "title": "Leo شافوت",
-      "description": "Leo شافوت – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "Leo شافوت",
-        "description": "Leo شافوت – بطاقة حدث محدودة!"
-      }
-    },
     "event_spring": {
       "cardKey": "event_spring",
       "title": "ربيع Leo",
@@ -350,16 +290,6 @@
       "accessibility": {
         "title": "ربيع Leo",
         "description": "Leo سبرينج – بطاقة حدث محدودة!"
-      }
-    },
-    "event_sukkot": {
-      "cardKey": "event_sukkot",
-      "title": "Leo سوكوت",
-      "description": "Leo سوكوت – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "Leo سوكوت",
-        "description": "Leo سوكوت – بطاقة حدث محدودة!"
       }
     },
     "event_summer": {
@@ -380,16 +310,6 @@
       "accessibility": {
         "title": "إجازة الصيف Leo",
         "description": "عطلة Leo الصيفية - بطاقة حدث محدودة!"
-      }
-    },
-    "event_tu_bishvat": {
-      "cardKey": "event_tu_bishvat",
-      "title": "Leo تو بيشفات",
-      "description": "Leo تو بيشفات – بطاقة حدث محدودة!",
-      "category": "حدث",
-      "accessibility": {
-        "title": "Leo تو بيشفات",
-        "description": "Leo تو بيشفات – بطاقة حدث محدودة!"
       }
     },
     "event_winter": {
@@ -1340,6 +1260,166 @@
       "accessibility": {
         "title": "Leo مستكشف العالم",
         "description": "اجمع Leo مستكشف العالم!"
+      }
+    },
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "ليو بطل الأركيد",
+      "description": "اجمع ليو بطل الأركيد!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو بطل الأركيد",
+        "description": "اجمع ليو بطل الأركيد!"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "ليو حارس الغابة المسحورة",
+      "description": "اجمع ليو حارس الغابة المسحورة!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو حارس الغابة المسحورة",
+        "description": "اجمع ليو حارس الغابة المسحورة!"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "ليو رجل الإطفاء",
+      "description": "اجمع ليو رجل الإطفاء!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو رجل الإطفاء",
+        "description": "اجمع ليو رجل الإطفاء!"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "ليو مستكشف المجرات",
+      "description": "اجمع ليو مستكشف المجرات!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو مستكشف المجرات",
+        "description": "اجمع ليو مستكشف المجرات!"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "ليو المخترع العبقري",
+      "description": "اجمع ليو المخترع العبقري!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو المخترع العبقري",
+        "description": "اجمع ليو المخترع العبقري!"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "ليو الفارس الذهبي",
+      "description": "اجمع ليو الفارس الذهبي!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو الفارس الذهبي",
+        "description": "اجمع ليو الفارس الذهبي!"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "ليو الساحر العظيم",
+      "description": "اجمع ليو الساحر العظيم!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو الساحر العظيم",
+        "description": "اجمع ليو الساحر العظيم!"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "سوبر ليو الأسطوري",
+      "description": "اجمع سوبر ليو الأسطوري!",
+      "category": "shop",
+      "accessibility": {
+        "title": "سوبر ليو الأسطوري",
+        "description": "اجمع سوبر ليو الأسطوري!"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "ليو كبير الطهاة",
+      "description": "اجمع ليو كبير الطهاة!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو كبير الطهاة",
+        "description": "اجمع ليو كبير الطهاة!"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "ليو المحقق الخارق",
+      "description": "اجمع ليو المحقق الخارق!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو المحقق الخارق",
+        "description": "اجمع ليو المحقق الخارق!"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "ليو الرسام العظيم",
+      "description": "اجمع ليو الرسام العظيم!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو الرسام العظيم",
+        "description": "اجمع ليو الرسام العظيم!"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "ليو نجم المسرح",
+      "description": "اجمع ليو نجم المسرح!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو نجم المسرح",
+        "description": "اجمع ليو نجم المسرح!"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "ليو قبطان القراصنة",
+      "description": "اجمع ليو قبطان القراصنة!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو قبطان القراصنة",
+        "description": "اجمع ليو قبطان القراصنة!"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "ليو سائق السباق",
+      "description": "اجمع ليو سائق السباق!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو سائق السباق",
+        "description": "اجمع ليو سائق السباق!"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "ليو بطل كرة القدم",
+      "description": "اجمع ليو بطل كرة القدم!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو بطل كرة القدم",
+        "description": "اجمع ليو بطل كرة القدم!"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "ليو بطل الأمواج",
+      "description": "اجمع ليو بطل الأمواج!",
+      "category": "shop",
+      "accessibility": {
+        "title": "ليو بطل الأمواج",
+        "description": "اجمع ليو بطل الأمواج!"
       }
     }
   }

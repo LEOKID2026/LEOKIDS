@@ -9,7 +9,7 @@ import GameAudioSettingsButton from "../game-audio/GameAudioSettingsButton.jsx";
 
 /**
  * @param {{
- *   game: { titleHe: string, emoji: string, blurbHe: string, hasDifficultyPicker: boolean, orientationHint?: string|null },
+ *   game: { title: string, emoji: string, blurb: string, hasDifficultyPicker: boolean, orientationHint?: string|null },
  *   difficulty: string,
  *   setDifficulty: (d: string) => void,
  *   onStart: () => void,
@@ -49,8 +49,8 @@ export default function SoloGameEntryScreen({
         <div className="text-5xl" aria-hidden>
           {game.emoji}
         </div>
-        <h1 className={SG.entryTitle}>{game.titleHe}</h1>
-        <p className={SG.entryBlurb}>{game.blurbHe}</p>
+        <h1 className={SG.entryTitle}>{game.title}</h1>
+        <p className={SG.entryBlurb}>{game.blurb}</p>
 
         {orientationHintMessage ? (
           <p className={SG.orientHint} role="note">
@@ -74,7 +74,7 @@ export default function SoloGameEntryScreen({
                       selected ? GH.entryBtnSelected : GH.entryBtnDefault
                     } ${selected ? "scale-105" : ""}`}
                   >
-                    {opt.labelHe}
+                    {opt.label}
                   </button>
                 );
               })}

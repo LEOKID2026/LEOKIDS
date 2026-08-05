@@ -107,53 +107,53 @@ const FORCED_DECISION_PATH_RE =
   /parent-copilot|parent-report-ai|fast-diagnostic|topic-next-step|copilot-turn|guardrail|fallback-templates|llm-orchestrator|probe-map|student-activity-(error|result)-labels|classroom-activities-labels/i;
 
 const NEUTRAL_EXACT = new Set([
-  "חזור",
-  "שמירה",
-  "כניסה",
-  "סגירה",
-  "אישור",
-  "ביטול",
-  "הבא",
-  "הקודם",
-  "כן",
-  "לא",
-  "סגור",
-  "רענון",
-  "טוען…",
-  "טוען...",
-  "שם",
-  "סיסמה",
-  "אימייל",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "…",
+  "...",
+  "",
+  "",
+  "",
 ]);
 
 const DECISION_SIGNAL_RE =
-  /אין מספיק|לא ניתן|אסור|הרשא|מומלץ|כדאי|המלצ|המשך|נסה|עבור ל|התקדם|רמה|קידום|ירידה|הצלח|טעות|דיוק|נתונים|אבחון|מנוע|סיכון|התערבות|ביטחון|confidence|severity|tier|insufficient|no_data|RI\d|מגמה|פער|נושא הבא|תרגול|חיזוק|חלש|חזק|דורש|כוונה|פעילות|דל|חלקי|מצומצם|לא היו|UUID|PIN|עזרה|מסייע|copilot|AI|בדוק|אמת|המשך|נסו|שגיאה|חסום|לא פעיל|לא זמין|validation|off.?topic|thin|partial|permission|denied|progress|level|topic|diagnostic|recommend|intervention|monitor|critical|on_track|reinforcement|weak|strong|feedback|הסבר|למה|איך|מה לעשות|צעד הבא|שאלה/i;
+  / | |||||||| ||||||||||||||confidence|severity|tier|insufficient|no_data|RI\d||| ||||||||||| |UUID|PIN|||copilot|AI||||||| | |validation|off.?topic|thin|partial|permission|denied|progress|level|topic|diagnostic|recommend|intervention|monitor|critical|on_track|reinforcement|weak|strong|feedback|||| | |/i;
 
 const RISKY_TERMS = [
-  ["מנוע", "engine_reference", "no", "no", "no", "yes", "תאר מה המערכת אומרת בלי 'מנוע'"],
-  ["אבחון", "diagnostic", "yes_if_explained", "yes_if_explained", "yes_if_explained", "yes_if_raw", "מותר אם ברור למשתמש"],
-  ["סף", "threshold", "no", "no", "no", "yes", "החלף בניסוח על כמות נתונים"],
-  ["מגמה", "trend", "yes", "yes", "no", "yes_if_unexplained", "לא מפתח trend"],
-  ["פער ידע", "engine_jargon", "no", "no", "no", "yes", "החלף בנושאים לחיזוק"],
-  ["ביטחון", "confidence", "no", "no", "no", "yes", "לא confidence גולמי"],
-  ["confidence", "english_key", "no", "no", "no", "yes", "תרגום חובה"],
-  ["severity", "english_key", "no", "no", "no", "yes", "תרגום חובה"],
-  ["tier", "english_key", "no", "no", "no", "yes", "תרגום חובה"],
-  ["insufficient_data", "english_key", "no", "no", "no", "yes", "תרגום חובה"],
-  ["no_data", "english_key", "no", "no", "no", "yes", "תרגום חובה"],
-  ["RI0", "progression_code", "no", "no", "no", "yes", "קוד פנימי"],
-  ["RI1", "progression_code", "no", "no", "no", "yes", "קוד פנימי"],
-  ["RI2", "progression_code", "no", "no", "no", "yes", "קוד פנימי"],
-  ["קידום", "progression", "careful", "yes", "yes", "yes_if_unexplained", "רק עם הקשר והוכחה"],
-  ["עלייה ברמה", "progression", "careful", "yes", "yes", "yes_if_unexplained", "רק עם הקשר"],
-  ["ירידה", "progression", "careful", "yes", "no", "yes_if_unexplained", "הקשר נדרש"],
-  ["מוכנות לשלב הבא", "progression", "no", "careful", "no", "yes", "ניסוח פנימי"],
-  ["מסקנה חזקה", "engine_jargon", "no", "no", "no", "yes", "החלף בניסוח זהיר"],
-  ["מסקנה חדה", "engine_jargon", "no", "no", "no", "yes", "החלף בניסוח זהיר"],
-  ["אין מספיק נתונים", "thin_data", "yes", "yes", "yes", "no", "מותר אם ברור"],
-  ["דל נתון", "thin_data", "yes", "yes", "no", "yes", "העדף ניסוח מפורש"],
-  ["UUID", "technical", "no", "no", "no", "yes", "לא למשתמש"],
-  ["PIN", "technical", "no", "no", "no", "yes", "לא למשתמש"],
+  ["", "engine_reference", "no", "no", "no", "yes", "     ''"],
+  ["", "diagnostic", "yes_if_explained", "yes_if_explained", "yes_if_explained", "yes_if_raw", "   "],
+  ["", "threshold", "no", "no", "no", "yes", "    "],
+  ["", "trend", "yes", "yes", "no", "yes_if_unexplained", "  trend"],
+  [" ", "engine_jargon", "no", "no", "no", "yes", "  "],
+  ["", "confidence", "no", "no", "no", "yes", " confidence "],
+  ["confidence", "english_key", "no", "no", "no", "yes", " "],
+  ["severity", "english_key", "no", "no", "no", "yes", " "],
+  ["tier", "english_key", "no", "no", "no", "yes", " "],
+  ["insufficient_data", "english_key", "no", "no", "no", "yes", " "],
+  ["no_data", "english_key", "no", "no", "no", "yes", " "],
+  ["RI0", "progression_code", "no", "no", "no", "yes", " "],
+  ["RI1", "progression_code", "no", "no", "no", "yes", " "],
+  ["RI2", "progression_code", "no", "no", "no", "yes", " "],
+  ["", "progression", "careful", "yes", "yes", "yes_if_unexplained", "   "],
+  [" ", "progression", "careful", "yes", "yes", "yes_if_unexplained", "  "],
+  ["", "progression", "careful", "yes", "no", "yes_if_unexplained", " "],
+  ["  ", "progression", "no", "careful", "no", "yes", " "],
+  [" ", "engine_jargon", "no", "no", "no", "yes", "  "],
+  [" ", "engine_jargon", "no", "no", "no", "yes", "  "],
+  ["  ", "thin_data", "yes", "yes", "yes", "no", "  "],
+  [" ", "thin_data", "yes", "yes", "no", "yes", "  "],
+  ["UUID", "technical", "no", "no", "no", "yes", " "],
+  ["PIN", "technical", "no", "no", "no", "yes", " "],
 ];
 
 function collectFiles(relPath) {
@@ -219,7 +219,7 @@ function isNeutralUILabel(text) {
   const t = String(text || "").trim();
   if (NEUTRAL_EXACT.has(t)) return true;
   if (t.length <= 3) return true;
-  if (/^(כיתה|שכבה)\s+[א-ת״'׳0-9]+$/i.test(t)) return true;
+  if (/^(|)\s+[-'0-9]+$/i.test(t)) return true;
   return false;
 }
 
@@ -259,12 +259,12 @@ function inferSection(rel, lineText) {
   const t = `${rel} ${lineText}`;
   if (/prompt|system|instruction|orchestrator|llm/i.test(t)) return "ai_prompt";
   if (/fallback|guardrail|safety|off.?topic/i.test(t)) return "ai_safety";
-  if (/thin|insufficient|no_data|אין מספיק/i.test(t)) return "data_sufficiency";
-  if (/permission|הרשא|denied|not allowed/i.test(t)) return "permission_scope";
-  if (/recommend|המלצ|next.?step|topic-next/i.test(t)) return "recommendation";
-  if (/progress|קידום|רמה|level/i.test(t)) return "progression";
-  if (/feedback|טעות|הצלח|correct/i.test(t)) return "student_feedback";
-  if (/validation|error|שגיאה/i.test(t)) return "validation_error";
+  if (/thin|insufficient|no_data| /i.test(t)) return "data_sufficiency";
+  if (/permission||denied|not allowed/i.test(t)) return "permission_scope";
+  if (/recommend||next.?step|topic-next/i.test(t)) return "recommendation";
+  if (/progress|||level/i.test(t)) return "progression";
+  if (/feedback|||correct/i.test(t)) return "student_feedback";
+  if (/validation|error|/i.test(t)) return "validation_error";
   if (/status|severity|tier|badge/i.test(t)) return "status_label";
   return "general";
 }
@@ -278,16 +278,16 @@ function classifyDecisionType(rel, text, lineText, section) {
   }
   if (/parent-report-ai/i.test(rel)) return "ai_answer";
   if (/off.?topic|safety|guardrail/i.test(t)) return "safety_guard";
-  if (/thin|insufficient|no_data|אין מספיק|דל|מצומצם/i.test(t)) return "data_sufficiency";
-  if (/permission|הרשא|denied|not allowed|UUID/i.test(t)) return "permission_scope";
-  if (/validation|שגיאה|errorTitle|errorMessage/i.test(t)) return "validation_error";
-  if (/activity|יצירת פעילות|generate-activity/i.test(t)) return "activity_creation";
-  if (/feedback|טעות|הצלח|נסה|המשך|topic/i.test(t) && /student|master/i.test(rel)) return "student_feedback";
-  if (/next.?step|topic-next|המשך ל|נושא הבא/i.test(t)) return "next_step";
-  if (/recommend|המלצ|כדאי|מומלץ/i.test(t)) return "recommendation";
-  if (/קידום|רמה|progress|RI\d|עלייה|ירידה/i.test(t)) return "progression";
+  if (/thin|insufficient|no_data| ||/i.test(t)) return "data_sufficiency";
+  if (/permission||denied|not allowed|UUID/i.test(t)) return "permission_scope";
+  if (/validation||errorTitle|errorMessage/i.test(t)) return "validation_error";
+  if (/activity| |generate-activity/i.test(t)) return "activity_creation";
+  if (/feedback|||||topic/i.test(t) && /student|master/i.test(rel)) return "student_feedback";
+  if (/next.?step|topic-next| | /i.test(t)) return "next_step";
+  if (/recommend|||/i.test(t)) return "recommendation";
+  if (/||progress|RI\d||/i.test(t)) return "progression";
   if (/severity|tier|status|critical|monitor|on_track/i.test(t)) return "diagnostic_status";
-  if (/diagnostic|אבחון|probe-map/i.test(t)) return "diagnostic_status";
+  if (/diagnostic||probe-map/i.test(t)) return "diagnostic_status";
   return "other";
 }
 
@@ -324,14 +324,14 @@ function problemType(text, visibility, decisionType) {
     return "";
   }
   const checks = [
-    ["engine_jargon", /מנוע|פער ידע|מסקנה חזקה|מסקנה חדה|מוכנות לשלב הבא|ביטחון סטטיסטי/],
+    ["engine_jargon", /| | | |  | /],
     ["raw_key_leak", /^[a-z][a-z0-9_]{2,}$/i],
     ["untranslated_english", /[A-Za-z]{4,}/],
-    ["thin_data_tone", /אין מספיק|דל נתון|מצומצם|חלקי/],
-    ["progression_risk", /קידום|עלייה ברמה|ירידה|RI\d|העברה/],
-    ["ai_safety_risk", /off.?topic|hallucin|לא בטוח/i],
+    ["thin_data_tone", / | ||/],
+    ["progression_risk", /| ||RI\d|/],
+    ["ai_safety_risk", /off.?topic|hallucin| /i],
     ["technical_leak", /UUID|PIN\b|filterKey|low_activity/],
-    ["ambiguous_professional", /מדד|אות\b|signal|tier|severity|confidence/i],
+    ["ambiguous_professional", /|\b|signal|tier|severity|confidence/i],
   ];
   const stripped = text.replace(/\$\{[^}]+\}/g, "");
   for (const [type, re] of checks) {
@@ -352,42 +352,42 @@ function severityFor(problemType) {
 
 function inferStateType(text) {
   const t = String(text);
-  if (/no_data|אין נתונים|אין פעילות|לא היו/i.test(t)) return "no_data";
-  if (/thin|מצומצם|עדיין מעט|דל/i.test(t)) return "thin_data";
-  if (/partial|חלקי|בתקופה/i.test(t)) return "partial_data";
-  if (/insufficient|אין מספיק/i.test(t)) return "insufficient_data";
+  if (/no_data| | | /i.test(t)) return "no_data";
+  if (/thin|| |/i.test(t)) return "thin_data";
+  if (/partial||/i.test(t)) return "partial_data";
+  if (/insufficient| /i.test(t)) return "insufficient_data";
   return "other";
 }
 
 function meaningPlainHe(entry) {
   const dt = entry.decision_type;
   const t = entry.current_hebrew;
-  if (dt === "ai_answer") return "תשובת AI/עוזר שמנחה את ההורה מה לעשות או איך להבין את הנתונים.";
-  if (dt === "ai_prompt") return "הנחיית מערכת ל-AI — משפיעה על סוג התשובה (לא תמיד גלוי למשתמש).";
-  if (dt === "data_sufficiency") return "הודעה שהנתונים אינם מספיקים לקבלת החלטה.";
-  if (dt === "permission_scope") return "הודעה על מגבלת הרשאה או היקף מקצועות.";
-  if (dt === "validation_error") return "הודעת חסימה/שגיאה שמונעת פעולה.";
-  if (dt === "recommendation") return "המלצת פעולה על בסיס ניתוח למידה.";
-  if (dt === "progression") return "ניסוח שמציע שינוי רמה או המשך התקדמות.";
-  if (dt === "diagnostic_status") return "תווית סטטוס/אבחון שמסבירה מצב תלמיד/נושא.";
-  if (dt === "student_feedback") return "משוב לתלמיד שעשוי להשפיע על המשך תרגול.";
-  if (dt === "next_step") return "הכוונה לצעד הבא בתרגול או בנושא.";
-  if (dt === "safety_guard") return "הגנת AI מפני תשובה לא בטוחה או מחוץ לנושא.";
-  if (/מנוע/.test(t)) return "ניסוח שמפנה למנוע פנימי — יש להחליף בהסבר למשתמש.";
-  return "טקסט שעשוי להשפיע על החלטת משתמש במערכת.";
+  if (dt === "ai_answer") return " AI/          .";
+  if (dt === "ai_prompt") return "  -AI —     (   ).";
+  if (dt === "data_sufficiency") return "     .";
+  if (dt === "permission_scope") return "      .";
+  if (dt === "validation_error") return " /  .";
+  if (dt === "recommendation") return "     .";
+  if (dt === "progression") return "      .";
+  if (dt === "diagnostic_status") return " /   /.";
+  if (dt === "student_feedback") return "      .";
+  if (dt === "next_step") return "     .";
+  if (dt === "safety_guard") return " AI       .";
+  if (//.test(t)) return "    —    .";
+  return "      .";
 }
 
 function exampleBefore(entry) {
   const surf = entry.surface;
   const txt = entry.example_output || entry.current_hebrew;
   const map = {
-    parent_copilot: `בעוזר ההורים: ${txt}`,
-    parent_ai: `בהסבר AI בדוח: ${txt}`,
-    diagnostic_engine: `באבחון/ניתוח: ${txt}`,
-    recommendation_engine: `בהמלצת מערכת: ${txt}`,
-    classroom_activity: `בפעילות כיתתית: ${txt}`,
-    student_learning: `במסך תרגול תלמיד: ${txt}`,
-    api_layer: `בהודעת מערכת: ${txt}`,
+    parent_copilot: ` : ${txt}`,
+    parent_ai: ` AI : ${txt}`,
+    diagnostic_engine: `/: ${txt}`,
+    recommendation_engine: ` : ${txt}`,
+    classroom_activity: ` : ${txt}`,
+    student_learning: `  : ${txt}`,
+    api_layer: ` : ${txt}`,
   };
   return map[surf] || txt;
 }
@@ -398,7 +398,7 @@ function isOwnerCandidate(entry) {
   if (["data_sufficiency", "permission_scope", "validation_error", "progression", "recommendation"].includes(entry.decision_type))
     return true;
   if (entry.problem_type) return true;
-  if (/מנוע|UUID|PIN\b|RI\d|confidence|severity|tier|insufficient_/i.test(entry.current_hebrew)) return true;
+  if (/|UUID|PIN\b|RI\d|confidence|severity|tier|insufficient_/i.test(entry.current_hebrew)) return true;
   return false;
 }
 
@@ -647,7 +647,7 @@ XLSX.utils.book_append_sheet(
         surface: e.surface,
         current_hebrew: e.current_hebrew,
         example_output: e.example_output,
-        does_it_suggest_progression: /progression|קידום|רמה|RI/i.test(e.current_hebrew) ? "yes" : "no",
+        does_it_suggest_progression: /progression|||RI/i.test(e.current_hebrew) ? "yes" : "no",
         evidence_or_condition: e.condition.slice(0, 120),
         risk: e.problem_type,
         suggested_replacement: "",

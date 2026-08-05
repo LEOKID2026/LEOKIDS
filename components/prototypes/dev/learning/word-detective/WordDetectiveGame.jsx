@@ -74,11 +74,11 @@ export default function WordDetectiveGame({ backHref = "/dev/learning-game-proto
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="בלש המילים של ליאו"
+      title="to words to to"
       introHero="🕵️🔍"
-      introText="פתרו תיקי חקירה - השלימו מילים, סדרו משפטים ומצאו את הרמז הנכון!"
-      introHint={`${TASKS_PER_LEVEL} תיקים · עברית ואוצר מילים`}
-      startLabel="פתח תיק חקירה"
+      introText="- to words, Find the Hint correct!"
+      introHint={`${TASKS_PER_LEVEL}  ·   `}
+      startLabel="  "
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -95,7 +95,7 @@ export default function WordDetectiveGame({ backHref = "/dev/learning-game-proto
             </span>
             <div className={s.missionBody}>
               <p className={s.missionLabel}>{task.caseLabel}</p>
-              <h2 className={s.missionTitle}>תיק חקירה</h2>
+              <h2 className={s.missionTitle}> </h2>
               {task.passage ? (
                 <p className={styles.passage}>{task.passage}</p>
               ) : null}
@@ -140,7 +140,7 @@ export default function WordDetectiveGame({ backHref = "/dev/learning-game-proto
               checkState === "ok" ? s.feedbackOk : checkState === "bad" ? s.feedbackBad : s.feedbackNeutral
             }`}
           >
-            <p className={s.feedbackText}>{feedback || "בחרו תשובה ולחצו «בדוק תשובה»"}</p>
+            <p className={s.feedbackText}>{feedback || "   « »"}</p>
           </div>
 
           <div className={s.actionRow}>
@@ -151,11 +151,11 @@ export default function WordDetectiveGame({ backHref = "/dev/learning-game-proto
                 disabled={selected == null}
                 onClick={runCheck}
               >
-                בדוק תשובה
+
               </button>
             ) : (
               <button type="button" className={s.primaryBtn} onClick={advance}>
-                המשימה הבאה
+
               </button>
             )}
           </div>

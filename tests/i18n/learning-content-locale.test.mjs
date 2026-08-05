@@ -33,7 +33,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "../..");
 test("math question localizes via content locale path (en)", () => {
   const raw = {
     subject: "math",
-    question: "כמה זה 2 + 2?",
+    question: "  2 + 2?",
     answers: ["3", "4", "5", "6"],
     correctAnswer: "4",
     params: { kind: "addition", diagnosticSkillId: "math.addition" },
@@ -52,8 +52,8 @@ test("es-419 science uses locale overlay (not English fallback)", () => {
   const raw = {
     subject: "science",
     id: SCIENCE_QUESTIONS[0]?.id,
-    stem: SCIENCE_QUESTIONS[0]?.stem || "בדיקה",
-    options: SCIENCE_QUESTIONS[0]?.options || ["א", "ב"],
+    stem: SCIENCE_QUESTIONS[0]?.stem || "",
+    options: SCIENCE_QUESTIONS[0]?.options || ["", ""],
     correctIndex: SCIENCE_QUESTIONS[0]?.correctIndex ?? 0,
     params: SCIENCE_QUESTIONS[0]?.params || { diagnosticSkillId: "science.test" },
   };
@@ -74,8 +74,8 @@ test("unknown content locale falls back to English display layer for science", (
   const raw = {
     subject: "science",
     id: SCIENCE_QUESTIONS[0]?.id,
-    stem: SCIENCE_QUESTIONS[0]?.stem || "בדיקה",
-    options: SCIENCE_QUESTIONS[0]?.options || ["א", "ב"],
+    stem: SCIENCE_QUESTIONS[0]?.stem || "",
+    options: SCIENCE_QUESTIONS[0]?.options || ["", ""],
     correctIndex: SCIENCE_QUESTIONS[0]?.correctIndex ?? 0,
     params: SCIENCE_QUESTIONS[0]?.params || { diagnosticSkillId: "science.test" },
   };
@@ -168,7 +168,7 @@ test("English subject: learning content locale forced to en; instructions resolv
     question: "Choose the correct English sentence.",
     answers: ["I am happy.", "I is happy."],
     correctAnswer: "I am happy.",
-    explanation: "עם I משתמשים ב-am.",
+    explanation: " I  -am.",
     explanationByLocale: {
       en: "With I we use am.",
       "es-419": "Con I usamos am.",

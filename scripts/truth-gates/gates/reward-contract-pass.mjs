@@ -14,7 +14,7 @@ const tests = [
   "tests/rewards/admin-student-economy-parity.test.mjs",
   "tests/rewards/card-catalog-baseline.test.mjs",
   "tests/rewards/card-rules-no-hardcoded.test.mjs",
-  "tests/rewards/card-requirement-he.test.mjs",
+  "tests/i18n/global-card-copy-resolver.test.mjs",
   "tests/rewards/card-acquisition-evaluator.test.mjs",
   "tests/rewards/card-catalog-admin-parity.test.mjs",
   "tests/arcade/economy-entry-costs.test.mjs",

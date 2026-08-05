@@ -24,7 +24,7 @@ function fail(msg) {
 const entry = getLearningBookEntry("science", "g1");
 if (!entry) fail("missing science/g1 catalog entry");
 if (entry?.status !== "authored") fail("science/g1 must be authored");
-if (entry?.meta?.bookTitleHe !== "ספר מדעים — כיתה א׳") {
+if (entry?.meta?.bookTitleHe !== "  —  ") {
   fail(`science/g1 bookTitleHe mismatch: ${entry?.meta?.bookTitleHe}`);
 }
 if (entry?.meta?.routeBase !== "/learning/book/science/g1") {
@@ -47,7 +47,7 @@ if (getLearningBookMasterPath("science") !== "/learning/science-master") {
 }
 
 const tile = getLearningBookTileTitle("science", "g1");
-if (tile.line1 !== "ספר מדעים" || tile.line2 !== "כיתה א׳") {
+if (tile.line1 !== " " || tile.line2 !== " ") {
   fail(`science/g1 tile title mismatch: ${JSON.stringify(tile)}`);
 }
 

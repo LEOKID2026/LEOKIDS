@@ -4,24 +4,24 @@ import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const pairs = [
   {
-    input: "נכון לעכשיו כדאי להמשיך לעקוב ולבדוק שוב בשבוע הבא.",
-    mustContain: ["נכון לעכשיו", "כדאי להמשיך לעקוב"],
+    input: "        .",
+    mustContain: [" ", "  "],
   },
   {
-    input: "בשלב זה אין מספיק נתונים לקביעה חזקה.",
-    mustContain: ["בשלב זה", "אין מספיק נתונים"],
+    input: "      .",
+    mustContain: [" ", "  "],
   },
   {
-    input: "נכון לעכשיו מומלץ תרגול קצר וממוקד.",
-    mustContain: ["נכון לעכשיו", "מומלץ תרגול קצר"],
+    input: "     .",
+    mustContain: [" ", "  "],
   },
   {
-    input: "לא מדובר באבחון מקצועי, אלא בתמונת מצב לימודית.",
-    mustContain: ["לא מדובר באבחון מקצועי", "תמונת מצב לימודית"],
+    input: "   ,    .",
+    mustContain: ["   ", "  "],
   },
   {
-    input: "כדאי להמשיך במעקב זהיר לפני העלאת רמת קושי.",
-    mustContain: ["מעקב זהיר", "לפני העלאת רמת קושי"],
+    input: "       .",
+    mustContain: [" ", "   "],
   },
 ];
 

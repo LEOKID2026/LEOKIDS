@@ -16,19 +16,19 @@ const u = (rel) => pathToFileURL(join(ROOT, rel)).href;
 
 /** Phase 6-C extended banned list (includes 6-B keys + audit checklist). */
 const BANNED_SUBSTRINGS = [
-  "ציר + סימבולי",
-  "ציר + מרחק",
-  "רגיסטר",
-  "פרגמטיקה",
-  "כלל מיני",
-  "בעיה רפואית",
-  "דיווח רפואי",
-  "מורה חברתי",
-  "דעות קדומות",
-  "בעיה חברתית",
-  "סרגל + יחידות",
-  "ציר פיזי + כרטיסיות",
-  "סימבולים בקבוצות קטנות",
+  " + ",
+  " + ",
+  "",
+  "",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " + ",
+  "  + ",
+  "  ",
   "patternHe",
   "probeHe",
   "interventionHe",
@@ -54,12 +54,12 @@ function buildBaseReportG4Subtraction() {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKey]: {
         bucketKey: "subtraction",
-        displayName: "חיסור",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -79,18 +79,18 @@ function buildBaseReportG4Subtraction() {
           subjectId: "math",
           topicRowKey,
           bucketKey: "subtraction",
-          displayName: "חיסור",
-          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "ציר + סימבולי",
-            shortPracticeHe: "ציר + מרחק",
+            immediateActionHe: " + ",
+            shortPracticeHe: " + ",
             taxonomyId: "M-09",
           },
           taxonomy: {
             id: "M-09",
-            patternHe: "דפוס",
-            topicHe: "חיסור",
-            subskillHe: "חיסור",
+            patternHe: "",
+            topic: "",
+            subskillHe: "",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -105,7 +105,7 @@ function buildBaseReportG4Subtraction() {
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -174,7 +174,7 @@ const redacted = redactPayloadForCopilotGrounding(detailed);
 const ru = redacted?.diagnosticEngineV2?.units?.[0];
 assert.equal(ru?.taxonomy?.id, undefined, "raw taxonomy id must be stripped from Copilot input");
 assert.equal(ru?.taxonomy?.patternHe, undefined, "raw patternHe key must be stripped from Copilot input");
-assert.equal(ru?.taxonomy?.topicHe, undefined, "raw topicHe must be stripped from Copilot input");
+assert.equal(ru?.taxonomy?.topic, undefined, "raw topic must be stripped from Copilot input");
 assert.equal(ru?.intervention, undefined);
 assert.equal(ru?.probe, undefined);
 assert.equal(ru?.diagnosis?.taxonomyId, undefined, "raw diagnosis taxonomyId must be stripped from Copilot input");
@@ -183,7 +183,7 @@ assertNoBanned("redacted payload (Copilot engine input shape)", redacted);
 const tpTopic = buildTruthPacketV1(redacted, {
   scopeType: "topic",
   scopeId: topicRowKey,
-  scopeLabel: "חיסור",
+  scopeLabel: "",
 });
 assert.ok(tpTopic);
 assert.equal(Object.prototype.hasOwnProperty.call(tpTopic, "debug"), false);
@@ -193,33 +193,33 @@ assertNoBanned("truth-packet topic JSON", tpTopic);
 const tpExec = buildTruthPacketV1(redacted, {
   scopeType: "executive",
   scopeId: "executive",
-  scopeLabel: "מבט על התקופה",
+  scopeLabel: "  ",
   canonicalIntent: "explain_report",
-  parentUtterance: "מה קורה בדוח?",
+  parentUtterance: "  ?",
 });
 if (tpExec) {
   assert.equal(Object.prototype.hasOwnProperty.call(tpExec, "debug"), false);
   assertNoBanned("truth-packet executive narrative bundle", collectNarrativeStrings(tpExec));
   assertNoBanned("truth-packet executive JSON", tpExec);
-  const promptExec = buildGroundedPrompt("ספרי לי על הדוח בקצרה", tpExec, "explain_report");
+  const promptExec = buildGroundedPrompt("    ", tpExec, "explain_report");
   assertNoBanned("LLM prompt (executive scope)", promptExec);
   assert.ok(!promptExec.includes('"debug"'), "LLM prompt must not embed debug object");
 }
 
-const promptTopic = buildGroundedPrompt("מה לעשות היום?", tpTopic, "what_to_do_today");
+const promptTopic = buildGroundedPrompt("  ?", tpTopic, "what_to_do_today");
 assertNoBanned("LLM prompt (topic scope)", promptTopic);
 assert.ok(!promptTopic.includes('"debug"'), "LLM prompt must not embed debug object");
 
 const turn = runParentCopilotTurn({
   audience: "parent",
-  utterance: "מה כדאי לתרגל?",
+  utterance: "  ?",
   sessionId: "phase6c-audit",
   payload: detailed,
 });
 assert.ok(turn && typeof turn === "object", "sync Copilot turn returns");
 const turnJson = JSON.stringify(turn);
 assert.ok(!turnJson.includes("patternHe"), "turn JSON must not leak raw diagnostic key names");
-assert.ok(!turnJson.includes("ציר + סימבולי"), "turn JSON must not leak raw intervention Hebrew from fixture");
+assert.ok(!turnJson.includes(" + "), "turn JSON must not leak raw intervention Hebrew from fixture");
 
 const audit = {
   schemaVersion: "phase6c-v1",

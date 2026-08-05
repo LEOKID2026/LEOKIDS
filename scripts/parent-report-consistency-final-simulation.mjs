@@ -47,12 +47,12 @@ const MAP_KEY = {
 };
 
 const SUBJECT_LABEL = {
-  math: "חשבון",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
+  math: "",
+  geometry: "",
+  english: "",
+  science: "",
+  hebrew: "",
+  "moledet-geography": " ",
 };
 
 const LEAK_PATTERNS = [
@@ -70,9 +70,9 @@ const LEAK_PATTERNS = [
   /\bcontractsV1\b/,
 ];
 
-const INSUFFICIENT_HE = /אין מספיק|נתונים חלקיים|עדיין אין מספיק|בשלב זה אין מספיק|לאסוף עוד מידע/i;
+const INSUFFICIENT_HE = / | |  |   |  /i;
 const THIN_SHORT_OVERVIEW_HE = v2ShortOverviewCannotConcludeHe();
-const WEAKNESS_HE = /פער|חיזוק|תרגול ממוקד|דורש תשומת לב|מיקוד/i;
+const WEAKNESS_HE = /|| |  |/i;
 
 function v2Unit(p) {
   const q = p.questions;
@@ -86,7 +86,7 @@ function v2Unit(p) {
     displayName: p.displayName,
     classification: { state: "classified", reasonCode: null, weakFallbackBlocked: false },
     evidenceTrace: [{ type: "volume", value: { questions: q, correct, wrong, accuracy: acc } }],
-    taxonomy: p.patternHe ? { patternHe: p.patternHe, subskillHe: "תת־מיומנות" } : {},
+    taxonomy: p.patternHe ? { patternHe: p.patternHe, subskillHe: "" } : {},
     recurrence: { totalQuestions: q, wrongCountForRules: wrong },
     confidence: {
       level: q >= 40 ? "high" : "moderate",
@@ -263,7 +263,7 @@ const SCENARIOS = [
       {
         subjectId: "math",
         topicRowKey: "addition::grade:g2",
-        displayName: "חיבור",
+        displayName: "",
         gradeKey: "g2",
         questions: 80,
         accuracy: 92,
@@ -282,12 +282,12 @@ const SCENARIOS = [
       {
         subjectId: "math",
         topicRowKey: "fractions::grade:g5",
-        displayName: "שברים",
+        displayName: "",
         gradeKey: "g5",
         questions: 55,
         accuracy: 38,
         action: "intervene",
-        patternHe: "בלבול מכנה משותף",
+        patternHe: "  ",
         priority: "P4",
       },
     ],
@@ -303,7 +303,7 @@ const SCENARIOS = [
       {
         subjectId: "geometry",
         topicRowKey: "shapes::grade:g3",
-        displayName: "צורות",
+        displayName: "",
         gradeKey: "g3",
         questions: 3,
         accuracy: 33,
@@ -324,7 +324,7 @@ const SCENARIOS = [
       {
         subjectId: "hebrew",
         topicRowKey: "reading::grade:g4",
-        displayName: "הבנת הנקרא",
+        displayName: " ",
         gradeKey: "g4",
         questions: 40,
         accuracy: 88,
@@ -333,12 +333,12 @@ const SCENARIOS = [
       {
         subjectId: "hebrew",
         topicRowKey: "spelling::grade:g4",
-        displayName: "כתיב",
+        displayName: "",
         gradeKey: "g4",
         questions: 35,
         accuracy: 42,
         action: "intervene",
-        patternHe: "בלבול אותיות",
+        patternHe: " ",
       },
     ],
     expect: { thinHedge: false, weaknessMention: true },
@@ -353,12 +353,12 @@ const SCENARIOS = [
       {
         subjectId: "english",
         topicRowKey: "grammar::grade:g5",
-        displayName: "דקדוק",
+        displayName: "",
         gradeKey: "g5",
         questions: 48,
         accuracy: 44,
         action: "intervene",
-        patternHe: "הסכמה נושא-פועל",
+        patternHe: " -",
         bucket: "grammar",
       },
     ],
@@ -374,12 +374,12 @@ const SCENARIOS = [
       {
         subjectId: "science",
         topicRowKey: "body::grade:g6",
-        displayName: "גוף האדם",
+        displayName: " ",
         gradeKey: "g6",
         questions: 50,
         accuracy: 46,
         action: "intervene",
-        patternHe: "בלבול מערכות הגוף",
+        patternHe: "  ",
         bucket: "body",
       },
     ],
@@ -395,13 +395,13 @@ const SCENARIOS = [
       {
         subjectId: "moledet-geography",
         topicRowKey: "israel_regions::grade:g4",
-        displayName: "אזורי ישראל",
+        displayName: " ",
         gradeKey: "g4",
         questions: 30,
         accuracy: 40,
         action: "intervene",
-        patternHe: "בלבול אזורים",
-        probeObjective: "בדיקת הבנה של מפת ישראל והאזורים",
+        patternHe: " ",
+        probeObjective: "     ",
       },
     ],
     probeEvidence: [
@@ -430,7 +430,7 @@ const SCENARIOS = [
       {
         subjectId: "english",
         topicRowKey: "vocabulary::grade:g1",
-        displayName: "אוצר מילים",
+        displayName: " ",
         gradeKey: "g1",
         questions: 2,
         accuracy: 50,
@@ -470,7 +470,7 @@ for (const sc of SCENARIOS) {
   const thinSignals =
     INSUFFICIENT_HE.test(text) ||
     focus?.thinEvidenceDowngraded ||
-    focus?.recommendedStepLabelHe?.includes("לאסוף עוד מידע") ||
+    focus?.recommendedStepLabelHe?.includes("  ") ||
     String(focus?.dataSufficiencyLevel || "") === "low";
   if (sc.expect.thinData) {
     const unit = base.diagnosticEngineV2.units.find((u) => u.subjectId === sc.subject);
@@ -482,7 +482,7 @@ for (const sc of SCENARIOS) {
       unit?.canonicalState?.actionState === "probe_only";
     if (!cannotConclude) rowFailures.push("thin_case_must_gate_cannot_conclude");
     if (!withhold) rowFailures.push("thin_case_must_withhold_action");
-    if (/פער ידע|remediate|התערבות אגרסיבית/i.test(text) && cannotConclude) {
+    if (/ |remediate| /i.test(text) && cannotConclude) {
       rowFailures.push("thin_case_over_diagnosis");
     }
     if (!shortFocus.includes(THIN_SHORT_OVERVIEW_HE) && !text.includes(THIN_SHORT_OVERVIEW_HE)) {
@@ -516,7 +516,7 @@ for (const sc of SCENARIOS) {
     if (!r0?.probeId || r0.diagnosticSkillId) rowFailures.push("copilot_redaction_probe_shape");
   }
   const strengthSignals =
-    /תוצאות טובות|חוזק|יציב|שימור|מוכנות להתקדמות/i.test(text) ||
+    / |||| /i.test(text) ||
     Boolean(detailed.executiveSummary?.strengthsSummaryHe) ||
     Boolean(base.summary?.diagnosticOverviewHe?.strongestAreaLineHe);
   if (sc.expect.hasStrength && !strengthSignals) {

@@ -1,9 +1,9 @@
--- Parent subject permissions — catalog, per-student permissions, preferences, audit, RPCs.
--- FOR REVIEW ONLY — owner runs manually. Agent must NOT run this migration.
+-- Parent subject permissions ΓÇö catalog, per-student permissions, preferences, audit, RPCs.
+-- FOR REVIEW ONLY ΓÇö owner runs manually. Agent must NOT run this migration.
 --
 -- Prerequisites: students (with account_kind), parent_profiles, auth.users.
 -- Seed matrix: data/subject-permissions/subject-grade-defaults.matrix.json via
---   scripts/build-subject-grade-catalog-seed.mjs → data/subject-permissions/subject-grade-catalog-seed.sql
+--   scripts/build-subject-grade-catalog-seed.mjs ΓåÆ data/subject-permissions/subject-grade-catalog-seed.sql
 --
 -- Rollback (manual, destructive):
 --   revoke/grant cleanup for RPCs and helpers (see bottom comments)
@@ -123,19 +123,15 @@ create index if not exists student_subject_permissions_change_log_student_idx
   on public.student_subject_permissions_change_log (student_id, created_at desc);
 
 -- ---------------------------------------------------------------------------
--- Seed catalog (from resolver artifact — data/subject-permissions/subject-grade-catalog-seed.sql)
+-- Seed catalog (from resolver artifact ΓÇö data/subject-permissions/subject-grade-catalog-seed.sql)
 -- ---------------------------------------------------------------------------
 
 insert into public.subject_permission_catalog (subject_key, display_name_he, sort_order, is_active)
 values
-  ('math', 'מתמטיקה', 1, true),
-  ('geometry', 'גאומטריה', 2, true),
-  ('hebrew', 'עברית', 3, true),
-  ('english', 'אנגלית', 4, true),
-  ('science', 'מדעים', 5, true),
-  ('history', 'היסטוריה', 6, true),
-  ('moledet', 'מולדת', 7, true),
-  ('geography', 'גאוגרפיה', 8, true)
+  ('math', '', 1, true),
+  ('geometry', '', 2, true),
+  ('english', '', 3, true),
+  ('science', '', 4, true)
 on conflict (subject_key) do update set
   display_name_he = excluded.display_name_he,
   sort_order = excluded.sort_order,
@@ -145,52 +141,28 @@ insert into public.subject_grade_default_catalog (grade_key, subject_key, is_gra
 values
   ('g1', 'math', true, true),
   ('g1', 'geometry', true, true),
-  ('g1', 'hebrew', true, true),
   ('g1', 'english', true, true),
   ('g1', 'science', true, true),
-  ('g1', 'history', false, false),
-  ('g1', 'moledet', false, false),
-  ('g1', 'geography', false, false),
   ('g2', 'math', true, true),
   ('g2', 'geometry', true, true),
-  ('g2', 'hebrew', true, true),
   ('g2', 'english', true, true),
   ('g2', 'science', true, true),
-  ('g2', 'history', false, false),
-  ('g2', 'moledet', true, true),
-  ('g2', 'geography', false, false),
   ('g3', 'math', true, true),
   ('g3', 'geometry', true, true),
-  ('g3', 'hebrew', true, true),
   ('g3', 'english', true, true),
   ('g3', 'science', true, true),
-  ('g3', 'history', false, false),
-  ('g3', 'moledet', true, true),
-  ('g3', 'geography', false, false),
   ('g4', 'math', true, true),
   ('g4', 'geometry', true, true),
-  ('g4', 'hebrew', true, true),
   ('g4', 'english', true, true),
   ('g4', 'science', true, true),
-  ('g4', 'history', false, false),
-  ('g4', 'moledet', true, true),
-  ('g4', 'geography', false, false),
   ('g5', 'math', true, true),
   ('g5', 'geometry', true, true),
-  ('g5', 'hebrew', true, true),
   ('g5', 'english', true, true),
   ('g5', 'science', true, true),
-  ('g5', 'history', false, false),
-  ('g5', 'moledet', false, false),
-  ('g5', 'geography', true, true),
   ('g6', 'math', true, true),
   ('g6', 'geometry', true, true),
-  ('g6', 'hebrew', true, true),
   ('g6', 'english', true, true),
-  ('g6', 'science', true, true),
-  ('g6', 'history', true, true),
-  ('g6', 'moledet', false, false),
-  ('g6', 'geography', true, true)
+  ('g6', 'science', true, true)
 on conflict (grade_key, subject_key) do update set
   is_grade_suitable = excluded.is_grade_suitable,
   is_enabled_by_default = excluded.is_enabled_by_default;
@@ -995,7 +967,7 @@ revoke all on function public.set_parent_student_grade_picker(uuid, uuid, uuid, 
 grant execute on function public.set_parent_student_grade_picker(uuid, uuid, uuid, boolean) to service_role;
 
 -- ---------------------------------------------------------------------------
--- RLS — catalog tables: service_role read only; no anon/authenticated access
+-- RLS ΓÇö catalog tables: service_role read only; no anon/authenticated access
 -- ---------------------------------------------------------------------------
 
 alter table public.subject_permission_catalog enable row level security;
@@ -1010,7 +982,7 @@ grant select on public.subject_permission_catalog to service_role;
 grant select on public.subject_grade_default_catalog to service_role;
 
 -- ---------------------------------------------------------------------------
--- RLS — parent SELECT on own registered children; no direct authenticated writes
+-- RLS ΓÇö parent SELECT on own registered children; no direct authenticated writes
 -- ---------------------------------------------------------------------------
 
 alter table public.student_subject_permissions enable row level security;

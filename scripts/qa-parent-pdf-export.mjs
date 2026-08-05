@@ -156,7 +156,7 @@ async function assertPdfBufferContainsInsightHeading(buf, label) {
 /** Copilot panel uses this placeholder; it must not appear in exported PDF text (Phase C.1). */
 async function assertPdfBufferExcludesCopilotPlaceholder(buf, label) {
   const t = await extractPdfText(buf);
-  assert.ok(!t.includes("שאלה על הדוח"), `${label}: PDF text must not include Parent Copilot chat placeholder`);
+  assert.ok(!t.includes("  "), `${label}: PDF text must not include Parent Copilot chat placeholder`);
 }
 
 /**
@@ -169,7 +169,7 @@ async function assertDetailedInsightAndCopilotPrintBehavior(page, label) {
   await card.waitFor({ state: "attached", timeout: insightTimeoutMs });
   assert.ok(
     domInsightCardShowsParentAiHeading(await card.innerText()),
-    `${label}: insight card must show heading תובנה להורה or סיכום חכם להורה`,
+    `${label}: insight card must show heading   or   `,
   );
 
   await page.emulateMedia({ media: "print" });

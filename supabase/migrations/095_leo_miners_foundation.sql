@@ -254,13 +254,13 @@ insert into public.site_game_catalog (
 ) values (
   'leo-miners',
   'solo',
-  'ליאו הכורה',
+  'Leo the Miner',
   '/student/solo-games/leo-miners',
   '/game',
   false,
   130,
   '⛏️',
-  'כרו סלעים, שדרגו את ליאו הכורה ואספו פרסים!'
+  'Merge mining dogs, break rocks, and earn points to redeem!'
 )
 on conflict (game_key) do update set
   category = excluded.category,

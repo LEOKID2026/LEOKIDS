@@ -7,8 +7,8 @@ const eligiblePayload = syntheticPayload({ eligible: true });
 const insufficientPayload = syntheticPayload({ eligible: false });
 
 const insufficientCue =
-  /לא\s+ניתן|אין\s+מספיק\s+נתונים|מוקדם\s+לקבוע|כדאי\s+להמשיך\s+לעקוב|not enough evidence|too early|continuing to monitor|continue(?:\s+to)?\s+monitor|still early|insufficient|consistent reinforcement is still needed|verify stability/iu;
-const overAuthorityCue = /בוודאות|חד\s+משמעית|בטוח\s+לחלוטין|completely certain|with certainty|unequivocally/iu;
+  /\s+|\s+\s+|\s+|\s+\s+|not enough evidence|too early|continuing to monitor|continue(?:\s+to)?\s+monitor|still early|insufficient|consistent reinforcement is still needed|verify stability/iu;
+const overAuthorityCue = /|\s+|\s+|completely certain|with certainty|unequivocally/iu;
 
 let insufficientRequired = 0;
 let insufficientPresent = 0;

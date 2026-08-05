@@ -26,7 +26,7 @@ function assertLabelMatchesAction(state) {
   }
 }
 
-test("before check: visible label בדוק, action check, disabled without draft", () => {
+test("before check: visible label , action check, disabled without draft", () => {
   const state = getMathPrimaryAnswerButtonState({
     selectedAnswer: null,
     textAnswer: "  ",
@@ -36,7 +36,7 @@ test("before check: visible label בדוק, action check, disabled without draft
   assert.equal(state.disabled, true);
 });
 
-test("before check: visible label בדוק, action check, enabled with draft", () => {
+test("before check: visible label , action check, enabled with draft", () => {
   const state = getMathPrimaryAnswerButtonState({
     selectedAnswer: null,
     textAnswer: "12",
@@ -46,7 +46,7 @@ test("before check: visible label בדוק, action check, enabled with draft", (
   assert.equal(state.disabled, false);
 });
 
-test("after wrong answer: visible label שאלה הבאה, action next", () => {
+test("after wrong answer: visible label  , action next", () => {
   const state = getMathPrimaryAnswerButtonState({
     selectedAnswer: 7,
     textAnswer: "7",
@@ -67,7 +67,7 @@ test("after wrong comparison sign: label and action both next", () => {
   assert.equal(state.label, MATH_ANSWER_NEXT_LABEL);
 });
 
-test("after correct answer with feedback: label שאלה הבאה when answer locked", () => {
+test("after correct answer with feedback: label   when answer locked", () => {
   const state = getMathPrimaryAnswerButtonState({
     selectedAnswer: "42",
     textAnswer: "",
@@ -76,7 +76,7 @@ test("after correct answer with feedback: label שאלה הבאה when answer lo
   assert.equal(state.action, "next");
 });
 
-test("disabled empty input: label remains בדוק for check state", () => {
+test("disabled empty input: label remains  for check state", () => {
   const state = getMathPrimaryAnswerButtonState({
     selectedAnswer: null,
     textAnswer: "",
@@ -86,7 +86,7 @@ test("disabled empty input: label remains בדוק for check state", () => {
   assert.equal(state.disabled, true);
 });
 
-test("embedded mobile submit must use state.label (not hardcoded בדוק)", () => {
+test("embedded mobile submit must use state.label (not hardcoded )", () => {
   const answered = getMathPrimaryAnswerButtonState({
     selectedAnswer: "5",
     textAnswer: "5",

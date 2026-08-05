@@ -70,7 +70,7 @@ export function generatePathPool(difficulty, opts = {}) {
         numbers: shuffle(numbers),
         correctPath: correct,
         orderMatters: false,
-        promptHe: isEven ? "בחרו מספרים זוגיים" : "בחרו מספרים אי-זוגיים",
+        promptHe: isEven ? "Choose Books" : "Choose Books -",
       });
       continue;
     }
@@ -96,7 +96,7 @@ export function generatePathPool(difficulty, opts = {}) {
         numbers,
         correctPath: correct,
         orderMatters: true,
-        promptHe: `קפצו במסלול: ${correct.slice(0, 4).join(" → ")}${correct.length > 4 ? "…" : ""}`,
+        promptHe: ` : ${correct.slice(0, 4).join(" → ")}${correct.length > 4 ? "…" : ""}`,
       });
       continue;
     }
@@ -124,7 +124,7 @@ export function generatePathPool(difficulty, opts = {}) {
       numbers,
       correctPath: correct,
       orderMatters: false,
-      promptHe: `בחרו את כל הכפולות של ${multiple}`,
+      promptHe: `     ${multiple}`,
     });
 
     if (difficulty === "hard" && guard % 4 === 0) {
@@ -146,7 +146,7 @@ export function generatePathPool(difficulty, opts = {}) {
           numbers: numbersSeq,
           correctPath: correctSeq,
           orderMatters: true,
-          promptHe: `המשיכו את המסלול: ${correctSeq.slice(0, 3).join(" → ")} → ?`,
+          promptHe: `  : ${correctSeq.slice(0, 3).join(" → ")} → ?`,
         });
       }
     }
@@ -170,7 +170,7 @@ export function validatePath(task, selected) {
 
 /** @param {boolean} ok */
 export function pathFeedback(ok) {
-  return ok ? "מעולה! בחרתם מסלול נכון." : "כמעט! בדקו את הקפיצות בין המספרים.";
+  return ok ? "Great! to to correct." : "Almost! Check the Books.";
 }
 
 /** @param {number[]} selected @param {boolean} orderMatters */

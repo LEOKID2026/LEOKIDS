@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
 
 export default function AdminDuplicatesTab({ accessToken }) {
   const [sellbackPercent, setSellbackPercent] = useState(25);
@@ -36,10 +36,10 @@ export default function AdminDuplicatesTab({ accessToken }) {
         method: "PUT",
         body: JSON.stringify({ key: "duplicate_sellback_percent", value: sellbackPercent }),
       });
-      if (!res.ok) throw new Error("שמירה נכשלה");
-      setMessage("הגדרות מכירת כפילויות נשמרו.");
+      if (!res.ok) throw new Error("Save failed");
+      setMessage("Duplicate-sale settings saved.");
     } catch (e) {
-      setMessage(e.message || "שמירה נכשלה");
+      setMessage(e.message || "Save failed");
     } finally {
       setBusy(false);
     }
@@ -53,11 +53,11 @@ export default function AdminDuplicatesTab({ accessToken }) {
       {message ? <p className="text-sm text-emerald-300 mb-3">{message}</p> : null}
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4 space-y-4">
         <p className="text-sm text-white/75 leading-relaxed">
-          הילד/ה יכול/ה למכור עותק כפול של קלף חנות ידנית - רק מהכפתור בחנות, ותמיד נשאר עותק אחד באוסף.
-          המרת 10 כפילויות אוטומטית בוטלה.
+          A child can sell a duplicate shop card manually — only via the shop button, always keeping one
+          copy in the collection. Automatic convert-10-duplicates was removed.
         </p>
         <label className="block text-xs text-white/70">
-          אחוז מכירת קלפים כפולים
+          Duplicate card sale percent
           <input
             type="number"
             min={0}
@@ -68,7 +68,7 @@ export default function AdminDuplicatesTab({ accessToken }) {
           />
         </label>
         <p className="text-xs text-white/55">
-          שווי מכירה = floor(מחיר הקלף × אחוז ÷ 100). לדוגמה: קלף ב-100 מטבעות ו-25% → 25 מטבעות.
+          Sale value = floor(Card price × Percent ÷ 100). Example: a 100-coin card at 25% → 25 coins.
         </p>
         <button
           type="button"
@@ -76,7 +76,7 @@ export default function AdminDuplicatesTab({ accessToken }) {
           onClick={() => void save()}
           className="rounded bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
         >
-          {busy ? "שומר..." : "שמירה"}
+          {busy ? "Saving..." : "Save"}
         </button>
       </section>
     </div>

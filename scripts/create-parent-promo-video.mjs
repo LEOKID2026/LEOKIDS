@@ -35,7 +35,7 @@ const VOICEOVER_FILE = join(
   "ElevenLabs_2026-06-26T14_39_02_Hope - Professional, Clear and Natural_pvc_sp100_s50_sb75_v3.mp3"
 );
 const OUTPUT_ALIAS = "leo-kids-parent-promo-draft-1.mp4";
-const PROJECT_NAME = "סרטון הורים - טיוטה 1";
+const PROJECT_NAME = "  -  1";
 
 const FFMPEG_BIN =
   process.env.FFMPEG_BIN ||
@@ -99,17 +99,17 @@ async function loginParent(page) {
   if (!password) throw new Error("Missing parent password (E2E_PARENT_PASSWORD)");
 
   await page.goto(`${BASE}/parent/login`, { waitUntil: "domcontentloaded", timeout: 60_000 });
-  await page.getByPlaceholder("הקלידו אימייל או שם משתמש שקיבלתם מהמורה").fill(email);
-  await page.getByPlaceholder("הקלידו סיסמה או קוד כניסה").fill(password);
-  await page.locator("form").getByRole("button", { name: "כניסה" }).click();
+  await page.getByPlaceholder("      ").fill(email);
+  await page.getByPlaceholder("    ").fill(password);
+  await page.locator("form").getByRole("button", { name: "" }).click();
   await page.waitForURL("**/parent/dashboard", { timeout: 30_000 });
 
-  const policyApprove = page.getByRole("button", { name: "אישור והמשך" });
+  const policyApprove = page.getByRole("button", { name: " " });
   if (await policyApprove.isVisible({ timeout: 4000 }).catch(() => false)) {
     await page.getByRole("checkbox").check({ force: true });
     await policyApprove.click();
   }
-  await page.getByRole("heading", { name: "דשבורד הורים" }).waitFor({ timeout: 20_000 });
+  await page.getByRole("heading", { name: " " }).waitFor({ timeout: 20_000 });
   return email;
 }
 
@@ -140,12 +140,12 @@ async function getParentAccessToken(email, password) {
 async function loginStudent(page, account) {
   await page.context().clearCookies();
   await page.goto(`${BASE}/student/login`, { waitUntil: "domcontentloaded", timeout: 60_000 });
-  await page.getByText("בודקים חיבור...").waitFor({ state: "detached", timeout: 30_000 }).catch(() => {});
+  await page.getByText(" ...").waitFor({ state: "detached", timeout: 30_000 }).catch(() => {});
   if (page.url().includes("/student/home")) return;
 
-  await page.getByPlaceholder("שם משתמש").fill(account.username);
-  await page.getByPlaceholder("קוד כניסה").fill(account.pin);
-  await page.getByRole("button", { name: /כניסה ללמידה|כניסה/ }).click();
+  await page.getByPlaceholder(" ").fill(account.username);
+  await page.getByPlaceholder(" ").fill(account.pin);
+  await page.getByRole("button", { name: / |/ }).click();
   await page.waitForURL((url) => url.pathname.startsWith("/student/") && !url.pathname.includes("/login"), {
     timeout: 45_000,
   });
@@ -194,12 +194,12 @@ async function captureAllScreenshots() {
   });
   const page = await context.newPage();
 
-  log("[screenshots] 01 — דף נחיתה להורים");
+  log("[screenshots] 01 —   ");
   await page.goto(`${BASE}/parents`, { waitUntil: "networkidle", timeout: 60_000 });
   await page.waitForTimeout(800);
   shots.push({ file: "01-parents-landing.png", path: await captureScreenshot(page, "01-parents-landing.png") });
 
-  log("[screenshots] 02 — כניסת הורה");
+  log("[screenshots] 02 —  ");
   await page.goto(`${BASE}/parent/login`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(600);
   shots.push({ file: "02-parent-login.png", path: await captureScreenshot(page, "02-parent-login.png") });
@@ -208,17 +208,17 @@ async function captureAllScreenshots() {
   await loginParent(page);
   shots.push({ file: "03-parent-dashboard.png", path: await captureScreenshot(page, "03-parent-dashboard.png") });
 
-  const detailsBtn = page.getByRole("button", { name: "פרטים" }).first();
-  const activityBtn = page.getByRole("button", { name: "פעילות" }).first();
+  const detailsBtn = page.getByRole("button", { name: "" }).first();
+  const activityBtn = page.getByRole("button", { name: "" }).first();
   const hasChild = (await detailsBtn.count()) > 0;
 
   if (hasChild) {
-    log("[screenshots] 04 — כרטיסי ילדים");
+    log("[screenshots] 04 —  ");
     shots.push({ file: "04-children-cards.png", path: await captureScreenshot(page, "04-children-cards.png") });
   }
 
-  log("[screenshots] 05 — הוספת ילד");
-  await page.getByRole("button", { name: "הוספת ילד" }).click();
+  log("[screenshots] 05 —  ");
+  await page.getByRole("button", { name: " " }).click();
   await page.getByRole("dialog").waitFor({ timeout: 10_000 });
   await page.waitForTimeout(400);
   shots.push({ file: "05-add-child-modal.png", path: await captureScreenshot(page, "05-add-child-modal.png") });
@@ -227,7 +227,7 @@ async function captureAllScreenshots() {
 
   let studentId = null;
   if (hasChild) {
-    log("[screenshots] 06 — פרטי ילד");
+    log("[screenshots] 06 —  ");
     await detailsBtn.click();
     await page.getByRole("dialog").waitFor({ timeout: 10_000 });
     await page.waitForTimeout(500);
@@ -240,7 +240,7 @@ async function captureAllScreenshots() {
     studentId = active[0]?.id || null;
 
     if (studentId) {
-      log("[screenshots] 07 — דוח הורים");
+      log("[screenshots] 07 —  ");
       await page.goto(
         `${BASE}/learning/parent-report?studentId=${encodeURIComponent(studentId)}&source=parent`,
         { waitUntil: "domcontentloaded", timeout: 60_000 }
@@ -248,7 +248,7 @@ async function captureAllScreenshots() {
       await page.waitForTimeout(2500);
       shots.push({ file: "07-parent-report.png", path: await captureScreenshot(page, "07-parent-report.png") });
 
-      log("[screenshots] 08 — דוח מפורט");
+      log("[screenshots] 08 —  ");
       await page.goto(
         `${BASE}/learning/parent-report-detailed?studentId=${encodeURIComponent(studentId)}&source=parent`,
         { waitUntil: "domcontentloaded", timeout: 60_000 }
@@ -259,9 +259,9 @@ async function captureAllScreenshots() {
         path: await captureScreenshot(page, "08-parent-report-detailed.png"),
       });
 
-      log("[screenshots] 09 — שליחת פעילות");
+      log("[screenshots] 09 —  ");
       await page.goto(`${BASE}/parent/dashboard`, { waitUntil: "domcontentloaded" });
-      await page.getByRole("heading", { name: "דשבורד הורים" }).waitFor({ timeout: 15_000 });
+      await page.getByRole("heading", { name: " " }).waitFor({ timeout: 15_000 });
       await activityBtn.click();
       await page.waitForTimeout(1200);
       shots.push({ file: "09-assign-activity.png", path: await captureScreenshot(page, "09-assign-activity.png") });
@@ -270,7 +270,7 @@ async function captureAllScreenshots() {
   }
 
   const studentAccount = resolveStudentAccount();
-  log("[screenshots] 10–14 — פורטל ילד");
+  log("[screenshots] 10–14 —  ");
   await page.context().clearCookies();
   await page.goto(`${BASE}/student/login`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(500);
@@ -292,13 +292,13 @@ async function captureAllScreenshots() {
   await gotoStudentPage(page, "/learning/math-master");
   shots.push({ file: "14-student-learning.png", path: await captureScreenshot(page, "14-student-learning.png") });
 
-  log("[screenshots] 15 — התקנת אפליקציה להורים");
+  log("[screenshots] 15 —   ");
   await page.context().clearCookies();
   await page.goto(`${BASE}/parent/install-app`, { waitUntil: "domcontentloaded", timeout: 60_000 });
   await page.waitForTimeout(800);
   shots.push({ file: "15-parent-install-app.png", path: await captureScreenshot(page, "15-parent-install-app.png") });
 
-  log("[screenshots] 16 — סיום / CTA");
+  log("[screenshots] 16 —  / CTA");
   await page.goto(`${BASE}/parents`, { waitUntil: "networkidle", timeout: 60_000 });
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.35));
   await page.waitForTimeout(600);

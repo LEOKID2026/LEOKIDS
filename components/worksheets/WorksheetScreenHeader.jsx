@@ -6,23 +6,23 @@ import { useWorksheetUi } from "../../hooks/useWorksheetUi.js";
 
 /**
  * @param {{
- *   titleHe?: string,
+ *   title?: string,
  *   meta: {
- *     subjectHe: string,
- *     gradeHe: string,
- *     topicHe: string,
- *     levelHe: string,
+ *     subject: string,
+ *     grade: string,
+ *     topic: string,
+ *     level: string,
  *   },
  *   variant?: "worksheet" || "answer-key",
  * }} props
  */
 export default function WorksheetScreenHeader({
-  titleHe,
+  title,
   meta,
   variant = "worksheet",
 }) {
   const ui = useWorksheetUi();
-  const title = titleHe || ui.documentTitle;
+  const resolvedTitle = title || ui.documentTitle;
   const showFields = variant === "worksheet";
 
   return (
@@ -37,9 +37,9 @@ export default function WorksheetScreenHeader({
           className="worksheet-screen-brand-logo"
         />
       </div>
-      <h1 className="worksheet-screen-title">{title}</h1>
+      <h1 className="worksheet-screen-title">{resolvedTitle}</h1>
       <p className="worksheet-screen-meta">
-        {meta.subjectHe} · {meta.gradeHe} · {meta.topicHe} · {meta.levelHe}
+        {meta.subject} · {meta.grade} · {meta.topic} · {meta.level}
       </p>
       {showFields ? (
         <div className="worksheet-screen-fields">

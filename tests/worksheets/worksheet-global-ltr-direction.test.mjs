@@ -25,26 +25,26 @@ const HUB_CSS = readFileSync(join(__dirname, "../../styles/worksheet-hub.css"), 
 
 const ENGLISH_META = {
   titleHe: "English worksheet",
-  subjectHe: "English",
-  gradeHe: "Grade 5",
-  topicHe: "Vocabulary",
-  levelHe: "Regular",
+  subject: "English",
+  grade: "Grade 5",
+  topic: "Vocabulary",
+  level: "Regular",
   inkSave: false,
   subjectId: "english",
 };
 
 const MATH_META = {
   titleHe: "Math worksheet",
-  subjectHe: "Math",
-  gradeHe: "Grade 3",
-  topicHe: "Addition",
-  levelHe: "Regular",
+  subject: "Math",
+  grade: "Grade 3",
+  topic: "Addition",
+  level: "Regular",
   inkSave: false,
   subjectId: "math",
 };
 
 const WRITING_RAW = {
-  question: 'כתוב את המילה "break" באנגלית',
+  question: '   "break" ',
   correctAnswer: "break",
   topic: "writing",
   subject: "english",
@@ -57,7 +57,7 @@ const WRITING_RAW = {
 };
 
 const VOCAB_RAW = {
-  question: 'מה פירוש המילה "bridge"?',
+  question: '   "bridge"?',
   answers: ["bridge", "river", "road", "tunnel"],
   correctAnswer: "bridge",
   topic: "vocabulary",
@@ -65,7 +65,7 @@ const VOCAB_RAW = {
   params: {
     direction: "en_to_meaning",
     word: "bridge",
-    translation: "גשר",
+    translation: "",
     patternFamily: "vocab_translation",
   },
 };

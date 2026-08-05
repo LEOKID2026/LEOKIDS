@@ -30,7 +30,7 @@ const SCOPE_LEAK_RE =
 const ALL_FRENCH_CLAIM_RE =
   /(?:seule\s+langue|unique\s+langue|langue\s+unique|tous\s+les\s+(?:élèves|enfants|togolais).*(?:parlent|utilisent)\s+le\s+français|français\s+est\s+la\s+seule|représente\s+(?:tout\s+)?le\s+Togo)/i;
 const DEAD_CURRICULUM_RE =
-  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|מולדת|עברית|ישראל/i;
+  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|||/i;
 
 /**
  * @param {string} dir

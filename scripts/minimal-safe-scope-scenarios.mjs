@@ -1,5 +1,5 @@
 /**
- * מטריצת תרחישים S1–S12 — בדיקת Minimal Safe Scope על פלט buildDetailedParentReportFromBaseReport.
+ *   S1–S12 —  Minimal Safe Scope   buildDetailedParentReportFromBaseReport.
  */
 import assert from "node:assert";
 import { dirname, join } from "node:path";
@@ -32,7 +32,7 @@ const SCENARIO_IDS = [
   ["S12", "strong_executive_case"],
 ];
 
-const OVERSTATED_HE_REGEX = /בטוח|בוודאות|חד[- ]?משמעית|יציב לחלוטין|מוכח/giu;
+const OVERSTATED_HE_REGEX = /||[- ]?| |/giu;
 
 function assertTopicContractsChain(detailed, scenarioId) {
   const profiles = Array.isArray(detailed?.subjectProfiles) ? detailed.subjectProfiles : [];

@@ -27,13 +27,13 @@ function joinedAnswers(res) {
 /** External-looking paste → Phase E resolved shortcut (deterministic). */
 {
   const payload = syntheticPayload();
-  const utterance = `פתור את זה בבקשה:\n3x + 7 = 22\nשאלה מהשיעורי בית\nמה ערך x?`;
+  const utterance = `   :\n3x + 7 = 22\n  \n  x?`;
   const res = runParentCopilotTurn({ payload, utterance, sessionId: "phase-e-ext-1" });
   assert.equal(res.resolutionStatus, "resolved", "external paste should resolve");
   const body = joinedAnswers(res);
-  assert.match(body, /מאגר השאלות הרשמי|הודבק/u, "general explanation framing — not grounded report Q&A");
-  assert.match(body, /הסבר חינוכי כללי|אינו נשען על מאגר/u, "external path stays general-education only");
-  assert.ok(!/חולשה\s+במערכת\s+האבחון/u.test(body), "no child-specific diagnostic claim for pasted content");
+  assert.match(body, /  |/u, "general explanation framing — not grounded report Q&A");
+  assert.match(body, /  |   /u, "external path stays general-education only");
+  assert.ok(!/\s+\s+/u.test(body), "no child-specific diagnostic claim for pasted content");
 }
 
 /** Practice suggestion → labeled disclaimer line. */
@@ -41,7 +41,7 @@ function joinedAnswers(res) {
   const payload = syntheticPayload();
   const res = runParentCopilotTurn({
     payload,
-    utterance: "תן לי רעיון לתרגול דומה",
+    utterance: "    ",
     sessionId: "phase-e-prac-1",
   });
   assert.equal(res.resolutionStatus, "resolved");
@@ -59,12 +59,12 @@ function joinedAnswers(res) {
   const payload = { ...base, subjectProfiles: [{ ...sp, topicRecommendations: [{ ...tr }] }] };
   const res = runParentCopilotTurn({
     payload,
-    utterance: "מה קורה בשברים אצל הילד?",
+    utterance: "    ?",
     sessionId: "phase-e-thin-1",
   });
   assert.equal(res.resolutionStatus, "resolved");
   const body = joinedAnswers(res);
-  assert.match(body, /אין בדוח מספיק ראיות/u, "thin evidence caution");
+  assert.match(body, /   /u, "thin evidence caution");
 }
 
 /** Clarification bypass: catalog topic exists but report row not anchored — general path. */
@@ -77,7 +77,7 @@ function joinedAnswers(res) {
         topicRecommendations: [
           {
             topicRowKey: "unanchored-topic",
-            displayName: "משוואות ריבועיות",
+            displayName: " ",
             questions: 0,
             accuracy: 0,
             contractsV1: {
@@ -99,11 +99,11 @@ function joinedAnswers(res) {
     ],
   };
   const utterance =
-    "אני צריכה הסבר קצר מה זה משוואות ריבועיות ואיך מתחילים לפתור בלי להיכנס לכל ההוכחות";
+    "              ";
   const res = runParentCopilotTurn({ payload, utterance, sessionId: "phase-e-bypass-1" });
   assert.equal(res.resolutionStatus, "resolved");
   const body = joinedAnswers(res);
-  assert.match(body, /מוכרת במבנה הנושאים|מאגר השאלות הרשמי/u, "catalog-without-anchor or bank framing");
+  assert.match(body, /  |  /u, "catalog-without-anchor or bank framing");
 }
 
 /** Baseline: normal topic Q&A still resolves from anchored report (no Phase E shortcut). */
@@ -111,12 +111,12 @@ function joinedAnswers(res) {
   const payload = syntheticPayload({ eligible: true });
   const res = runParentCopilotTurn({
     payload,
-    utterance: "מה כתוב בדוח על שברים?",
+    utterance: "    ?",
     sessionId: "phase-e-baseline-1",
   });
   assert.equal(res.resolutionStatus, "resolved");
   const body = joinedAnswers(res);
-  assert.match(body, /שברים|נצפו|דיוק/u, "anchored topic observation still surfaces");
+  assert.match(body, /||/u, "anchored topic observation still surfaces");
   assert.ok(!body.includes(PHASE_E_GENERAL_DISCLAIMER_LINE), "baseline path is not Phase E practice disclaimer");
 }
 

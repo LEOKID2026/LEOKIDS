@@ -102,13 +102,13 @@ const v2Snap = {
   registeredGradeKey: "g4",
   gradePracticeMeta: {
     mixedGradePractice: true,
-    mixedGradePracticeNoteHe: "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד.",
+    mixedGradePracticeNoteHe: "      ,    .",
   },
   summary: { mathQuestions: 9, mathCorrect: 5, mathAccuracy: 56, totalQuestions: 9, overallAccuracy: 56 },
   mathOperations: {
     "fractions::grade:g4": {
       bucketKey: "fractions",
-      displayName: "שברים",
+      displayName: "",
       questions: 5,
       correct: 4,
       accuracy: 80,
@@ -119,7 +119,7 @@ const v2Snap = {
     },
     "fractions::grade:g5": {
       bucketKey: "fractions",
-      displayName: "שברים",
+      displayName: "",
       questions: 4,
       correct: 1,
       accuracy: 25,

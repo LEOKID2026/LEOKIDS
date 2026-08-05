@@ -1,5 +1,5 @@
 /**
- * Pass 4: fix broken quote lines + split מ.א.ח in page txt only.
+ * Pass 4: fix broken quote lines + split .. in page txt only.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -52,8 +52,8 @@ function fixBrokenQuotes(text) {
  */
 function fixMacSplit(text) {
   return text
-    .replace(/מ\.\s*\n\s*א\.\s*\n\s*ח\./g, "מ.א.ח.")
-    .replace(/מ\.\s*\n\s*א\.\s*\n\s*ח/g, "מ.א.ח");
+    .replace(/\.\s*\n\s*\.\s*\n\s*\./g, "...")
+    .replace(/\.\s*\n\s*\.\s*\n\s*/g, "..");
 }
 
 function isMathBook(file) {

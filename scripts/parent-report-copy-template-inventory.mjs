@@ -137,7 +137,7 @@ function buildSlotsFromTopic(edc, lpd, mapRow, subjectLabelHe) {
   const metrics = normalizeParentVisibleMetrics(mapRow || {}, mapRow);
   return pickSlots({
     topicName: mapRow?.displayName || edc?.topicName,
-    subjectName: subjectLabelHe || "מתמטיקה",
+    subjectName: subjectLabelHe || "",
     questions: edc?.questions ?? metrics.questions,
     correct: edc?.correct ?? metrics.correct,
     wrong: edc?.wrong ?? metrics.wrong,
@@ -216,7 +216,7 @@ function collectInventoryForStudent(ctx) {
   const mathMap = base.mathOperations || {};
   const mathSp =
     (detailed.subjectProfiles || []).find((s) => String(s?.subject) === "math") || null;
-  const subjectLabelHe = mathSp?.subjectLabelHe || "מתמטיקה";
+  const subjectLabelHe = mathSp?.subjectLabelHe || "";
   const subjectContract = readSubjectEngineContract(mathSp) || mathSp?.[SP_SUBJECT_ENGINE_CONTRACT] || null;
 
   // --- Short report: subject rollup ---

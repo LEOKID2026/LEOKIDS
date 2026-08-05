@@ -555,90 +555,6 @@
       "isActive": false
     },
     {
-      "cardKey": "event_hanukkah",
-      "displayNameHe": "Event Hanukkah",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/35d45b70-a0af-4d1f-8ea1-fa20cb81716a/display.webp",
-      "storagePath": "events/event_hanukkah.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/35d45b70-a0af-4d1f-8ea1-fa20cb81716a/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/35d45b70-a0af-4d1f-8ea1-fa20cb81716a/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/35d45b70-a0af-4d1f-8ea1-fa20cb81716a/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "event_independence_day",
-      "displayNameHe": "Event Independence Day",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d9089d5b-cc53-49ac-9fef-754f4cc7cd19/display.webp",
-      "storagePath": "events/event_independence_day.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d9089d5b-cc53-49ac-9fef-754f4cc7cd19/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d9089d5b-cc53-49ac-9fef-754f4cc7cd19/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/d9089d5b-cc53-49ac-9fef-754f4cc7cd19/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "event_lag_baomer",
-      "displayNameHe": "Event Lag Baomer",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3964324b-1249-4068-8176-5f17c5fec898/display.webp",
-      "storagePath": "events/event_lag_baomer.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3964324b-1249-4068-8176-5f17c5fec898/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3964324b-1249-4068-8176-5f17c5fec898/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/3964324b-1249-4068-8176-5f17c5fec898/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "event_passover",
-      "displayNameHe": "Event Passover",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/375ecac2-c01a-40cf-8893-ad40fe617e6e/display.webp",
-      "storagePath": "events/event_passover.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/375ecac2-c01a-40cf-8893-ad40fe617e6e/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/375ecac2-c01a-40cf-8893-ad40fe617e6e/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/375ecac2-c01a-40cf-8893-ad40fe617e6e/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "event_purim",
-      "displayNameHe": "Event Purim",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e3816dba-020d-4efb-9f59-a8bc122ca558/display.webp",
-      "storagePath": "events/event_purim.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e3816dba-020d-4efb-9f59-a8bc122ca558/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e3816dba-020d-4efb-9f59-a8bc122ca558/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/e3816dba-020d-4efb-9f59-a8bc122ca558/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "event_rosh_hashana",
-      "displayNameHe": "Event Rosh Hashana",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0fa2dc66-2058-42b2-bf54-d0de88602725/display.webp",
-      "storagePath": "events/event_rosh_hashana.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0fa2dc66-2058-42b2-bf54-d0de88602725/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0fa2dc66-2058-42b2-bf54-d0de88602725/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/0fa2dc66-2058-42b2-bf54-d0de88602725/thumb.webp",
-      "isActive": true
-    },
-    {
-      "cardKey": "event_shavuot",
-      "displayNameHe": "Event Shavuot",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cf8a9be9-623d-4e1c-850c-db52f36c6589/display.webp",
-      "storagePath": "events/event_shavuot.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cf8a9be9-623d-4e1c-850c-db52f36c6589/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cf8a9be9-623d-4e1c-850c-db52f36c6589/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/cf8a9be9-623d-4e1c-850c-db52f36c6589/thumb.webp",
-      "isActive": true
-    },
-    {
       "cardKey": "event_spring",
       "displayNameHe": "Event Spring",
       "category": "event",
@@ -649,18 +565,6 @@
       "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6793428f-ff6a-411a-ba95-cdd1be4e6ac3/display.webp",
       "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/6793428f-ff6a-411a-ba95-cdd1be4e6ac3/thumb.webp",
       "isActive": false
-    },
-    {
-      "cardKey": "event_sukkot",
-      "displayNameHe": "Event Sukkot",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dc8a02aa-ba49-406e-a339-3d8220e8adc3/display.webp",
-      "storagePath": "events/event_sukkot.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dc8a02aa-ba49-406e-a339-3d8220e8adc3/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dc8a02aa-ba49-406e-a339-3d8220e8adc3/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/dc8a02aa-ba49-406e-a339-3d8220e8adc3/thumb.webp",
-      "isActive": true
     },
     {
       "cardKey": "event_summer",
@@ -684,18 +588,6 @@
       "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/fa6e1b73-fe2a-4538-9d31-9087a60a3b4b/download.png",
       "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/fa6e1b73-fe2a-4538-9d31-9087a60a3b4b/display.webp",
       "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/fa6e1b73-fe2a-4538-9d31-9087a60a3b4b/thumb.webp",
-      "isActive": false
-    },
-    {
-      "cardKey": "event_tu_bishvat",
-      "displayNameHe": "Event Tu Bishvat",
-      "category": "event",
-      "seriesSlug": "israeli-holidays",
-      "imageUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/422b6dfa-8b3c-459d-8392-256e93aca21c/display.webp",
-      "storagePath": "events/event_tu_bishvat.webp",
-      "imageDownloadUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/422b6dfa-8b3c-459d-8392-256e93aca21c/download.png",
-      "imageDisplayUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/422b6dfa-8b3c-459d-8392-256e93aca21c/display.webp",
-      "imageThumbUrl": "https://ajxwmlwbzxwffrtlfuoe.supabase.co/storage/v1/object/public/reward-cards/processed/422b6dfa-8b3c-459d-8392-256e93aca21c/thumb.webp",
       "isActive": false
     },
     {

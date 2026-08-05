@@ -236,31 +236,31 @@ function storyChecks(presetId, data) {
   }
 
   if (presetId === "simDeep02_strong_stable_child") {
-    if (/פער ידע|שיקום|remed/i.test(textBlob)) issues.push("contains remediation/knowledge-gap tone");
+    if (/ ||remed/i.test(textBlob)) issues.push("contains remediation/knowledge-gap tone");
   }
 
   if (presetId === "simDeep03_weak_math_long_term") {
     if (data.isInsufficientEvidence) issues.push("insufficient evidence");
-    const mathSignal = /חשבון|שברים|חילוק|כפל|חיסור|חיבור|math/i.test(
+    const mathSignal = /||||||math/i.test(
       `${data.mainPriorityHe} ${data.mainStatusHe} ${data.primarySubject || ""}`
     );
     if (!mathSignal) issues.push("math is not primary");
   }
 
   if (presetId === "simDeep04_improving_child") {
-    if (!/שיפור|התקדמות|ייצוב|יציבות|stabil/i.test(textBlob)) {
+    if (!/||||stabil/i.test(textBlob)) {
       issues.push("missing improvement/stabilization signal");
     }
-    if (/שליטה מלאה|מושלם לחלוטין|mastery complete/i.test(textBlob)) issues.push("overstated improvement");
+    if (/ | |mastery complete/i.test(textBlob)) issues.push("overstated improvement");
   }
 
   if (presetId === "simDeep05_declining_after_difficulty_jump") {
     const hasStabilize =
-      /ייצוב|יציבות|לא להעלות|להישאר|stabil|לא לקפוץ לרמה|לא להרחיב רמה|קפיצת רמה|קפיצה לרמה|לא לדחוף קפיצת רמה|רמת קושי/i.test(
+      /|| ||stabil|  |  | | |   | /i.test(
         textBlob
       );
     if (!hasStabilize) issues.push("missing stabilize/no increase recommendation");
-    if (/להעלות קושי|increase difficulty|advance level/i.test(textBlob)) {
+    if (/ |increase difficulty|advance level/i.test(textBlob)) {
       issues.push("recommends increasing difficulty");
     }
   }
@@ -272,9 +272,9 @@ function storyChecks(presetId, data) {
       doms.includes("careless_pattern") ||
       doms.includes("instruction_friction");
     const hasPace =
-      /מהירות|קצב|בדיק|קשב|לחץ|עצירה|דיוק לפני|רשלנות|תשומת לב|attention|pace/i.test(textBlob);
+      /|||||| || |attention|pace/i.test(textBlob);
     if (!riskOk && !hasPace) issues.push("missing pace/checking focus");
-    if (/פער ידע/.test(textBlob) && !hasPace && !riskOk) issues.push("pure knowledge-gap framing");
+    if (/ /.test(textBlob) && !hasPace && !riskOk) issues.push("pure knowledge-gap framing");
   }
 
   return { pass: issues.length === 0, issues };
@@ -359,7 +359,7 @@ async function main() {
       expectedStory: PRESET_EXPECTATIONS[presetId]?.story || null,
       noDataWeek: noDataStatus(shortWeek),
       noDataMonth: noDataStatus(shortMonth),
-      isInsufficientEvidence: /אין מספיק ראיות/.test(String(top?.mainStatusHe || "")),
+      isInsufficientEvidence: /  /.test(String(top?.mainStatusHe || "")),
       mainStatusHe: top?.mainStatusHe || null,
       mainPriorityHe: top?.mainPriorityHe || null,
       doNowHe: top?.doNowHe || null,

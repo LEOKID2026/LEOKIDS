@@ -11,13 +11,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const INVENTORY_PATH = join(ROOT, "reports", "site-general-hebrew-copy-inventory.xlsx");
 const OUT_CSV = join(ROOT, "reports", "site-general-hebrew-context-map.csv");
-const NEEDS_FULL = "צריך לבדוק בהקשר מלא";
+const NEEDS_FULL = "   ";
 
 const PLACEHOLDER_SUBS = [
-  [/\$\{[^}]+\}/g, "[ערך]"],
-  [/\[תלמיד\]/g, "דני"],
-  [/\[מקצוע\]/g, "חשבון"],
-  [/\[נושא\]/g, "שברים"],
+  [/\$\{[^}]+\}/g, "[]"],
+  [/\[\]/g, ""],
+  [/\[\]/g, ""],
+  [/\[\]/g, ""],
 ];
 
 function substitutePlaceholders(text) {
@@ -76,21 +76,21 @@ function resolveLine(file, line, text, inv) {
 
 function surfaceLabel(surface) {
   const m = {
-    homepage: "בדף הבית",
-    navigation: "בניווט",
-    login: "במסך כניסה",
-    register: "בהרשמה",
-    dashboard: "בלוח בקרה",
-    learning_lobby: "בלובי למידה",
-    learning_screen: "במסך תרגול",
-    help_center: "במרכז העזרה",
-    onboarding: "בהדרכה/התחלה",
-    policy: "במדיניות/הסכמה",
-    admin_ui: "בממשק ניהול",
-    school_setup: "בהגדרת בית ספר",
-    general_component: "ברכיב ממשק כללי",
-    api_message: "בהודעת API למשתמש",
-    mixed_or_unclear: "בממשק כללי",
+    homepage: " ",
+    navigation: "",
+    login: " ",
+    register: "",
+    dashboard: " ",
+    learning_lobby: " ",
+    learning_screen: " ",
+    help_center: " ",
+    onboarding: "/",
+    policy: "/",
+    admin_ui: " ",
+    school_setup: "  ",
+    general_component: "  ",
+    api_message: " API ",
+    mixed_or_unclear: " ",
   };
   return m[surface] || surface;
 }
@@ -123,21 +123,21 @@ function buildBefore(candidate, inv, codeCtx) {
   const notes = [];
   const blocks = [
     surfaceLabel(candidate.surface || inv?.surface || ""),
-    candidate.section ? `אזור: ${candidate.section}` : "",
-    candidate.copy_type ? `סוג: ${candidate.copy_type}` : "",
+    candidate.section ? `: ${candidate.section}` : "",
+    candidate.copy_type ? `: ${candidate.copy_type}` : "",
   ].filter(Boolean);
 
-  if (codeCtx?.heading) blocks.push(`כותרת: ${codeCtx.heading}`);
+  if (codeCtx?.heading) blocks.push(`: ${codeCtx.heading}`);
 
   let body = substitutePlaceholders(candidate.example_before || codeCtx?.snippet || candidate.current_hebrew);
-  if (/^בדף|^במסך|^בניווט|^במרכז/.test(body)) {
-    body = body.replace(/^ב[^:]*:\s*/, "");
+  if (/^|^|^|^/.test(body)) {
+    body = body.replace(/^[^:]*:\s*/, "");
   }
   if (!body) return { text: NEEDS_FULL, notes: ["empty excerpt"] };
   if (!codeCtx?.ok) notes.push("source line not verified");
-  if (/\[ערך\]|…/.test(body)) notes.push("placeholders substituted");
+  if (/\[\]|…/.test(body)) notes.push("placeholders substituted");
 
-  blocks.push(`כפי שמופיע: ${body}`);
+  blocks.push(` : ${body}`);
   return { text: blocks.join("\n"), notes };
 }
 

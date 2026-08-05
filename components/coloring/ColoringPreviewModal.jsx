@@ -15,7 +15,7 @@ import ColoringPrintDocument from "./ColoringPrintDocument.jsx";
  */
 export default function ColoringPreviewModal({ worksheetPayload, onClose, T }) {
   const ui = useWorksheetUi();
-  const title = worksheetPayload?.displayNameHe || ui.coloringDocumentTitle;
+  const title = worksheetPayload?.displayName || ui.coloringDocumentTitle;
 
   useEffect(() => {
     if (!worksheetPayload) return undefined;

@@ -102,10 +102,10 @@ export default function LeoNumberPathGame({ backHref = "/dev/learning-game-proto
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="מסלול המספרים של ליאו"
+      title="to to Books to to"
       introHero="🔢🦁"
-      introText="בחרו מספרים במסלול לפי הכלל - קפיצות, זוגי/אי-זוגי וכפולות!"
-      introHint="מאגר משימות גדול · Tap על מספרים"
+      introText="Choose Books to to to All to -, /- to!"
+      introHint="   · Tap  "
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -120,14 +120,14 @@ export default function LeoNumberPathGame({ backHref = "/dev/learning-game-proto
           <div className={s.missionCard}>
             <span className={s.missionIcon}>🪨</span>
             <div className={s.missionBody}>
-              <p className={s.missionLabel}>מסלול</p>
-              <h2 className={s.missionTitle}>משימת מספרים</h2>
+              <p className={s.missionLabel}></p>
+              <h2 className={s.missionTitle}> </h2>
               <p className={s.missionPrompt}>{task.promptHe}</p>
             </div>
           </div>
 
           <div className={styles.selectedBar}>
-            <span className={styles.selectedLabel}>בחרנו:</span>
+            <span className={styles.selectedLabel}>:</span>
             <span className={styles.selectedPath} dir="ltr">
               {formatSelectedPath(selected, orderMatters)}
             </span>
@@ -161,15 +161,15 @@ export default function LeoNumberPathGame({ backHref = "/dev/learning-game-proto
                 checkState === "ok" ? s.feedbackOk : checkState === "bad" ? s.feedbackBad : s.feedbackNeutral
               }`}
             >
-              <p className={s.feedbackText}>{feedback || "לחצו על המספרים ואז בדקו מסלול"}</p>
+              <p className={s.feedbackText}>{feedback || "to to Books Check to to"}</p>
             </div>
 
             <div className={s.actionRow}>
               <button type="button" className={s.primaryBtn} onClick={runCheck}>
-                בדוק מסלול
+
               </button>
               <button type="button" className={s.secondaryBtn} onClick={resetTaskUi}>
-                נקה בחירה
+
               </button>
             </div>
           </div>

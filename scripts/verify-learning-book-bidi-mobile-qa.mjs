@@ -16,10 +16,10 @@ const FORBIDDEN_PATTERNS = [
   /758 = 50/,
   /\? = 68/,
   /24 = 20 \+-/,
-  /20 \+ 4.*\+-ו/,
-  /20 \+ 4-ו/,
+  /20 \+ 4.*\+-/,
+  /20 \+ 4-/,
   /\.24 = 20/,
-  /4-ו$/,
+  /4-$/,
 ];
 
 /** @type {{ subject: string, grade: string, pageId: string, section: number, required?: string[], textPatterns?: RegExp[], layoutChecks?: string[] }[]} */
@@ -37,7 +37,7 @@ const MOBILE_QA_TARGETS = [
     grade: "g2",
     pageId: "sub_two",
     section: 4,
-    required: ["68 = 60 + 8", "24 = 20 + 4", "68 − 24 = 44", "שלב 1:"],
+    required: ["68 = 60 + 8", "24 = 20 + 4", "68 − 24 = 44", " 1:"],
     layoutChecks: ["sub_two_question_equation", "sub_two_step1_rows"],
   },
   {
@@ -45,14 +45,14 @@ const MOBILE_QA_TARGETS = [
     grade: "g2",
     pageId: "ns_place_tens_units",
     section: 2,
-    required: ["236", "124", "405", "מאות", "עשרות", "אחדות"],
+    required: ["236", "124", "405", "", "", ""],
   },
   {
     subject: "math",
     grade: "g2",
     pageId: "ns_place_tens_units",
     section: 3,
-    required: ["טבלת ערך מקום", "124", "= 124"],
+    required: ["  ", "124", "= 124"],
     layoutChecks: ["place_value_table"],
   },
   {
@@ -60,7 +60,7 @@ const MOBILE_QA_TARGETS = [
     grade: "g2",
     pageId: "ns_place_tens_units",
     section: 4,
-    required: ["236", "2 מאות = 200", "3 עשרות = 30", "6 אחדות = 6"],
+    required: ["236", "2  = 200", "3  = 30", "6  = 6"],
     layoutChecks: ["comma_formula_rows"],
   },
   {
@@ -68,8 +68,8 @@ const MOBILE_QA_TARGETS = [
     grade: "g2",
     pageId: "cmp",
     section: 3,
-    required: ["612", "628", "קטן", "מאות"],
-    textPatterns: [/612[\s\S]*קטן[\s\S]*628/],
+    required: ["612", "628", "", ""],
+    textPatterns: [/612[\s\S]*[\s\S]*628/],
   },
   {
     subject: "math",
@@ -83,14 +83,14 @@ const MOBILE_QA_TARGETS = [
     grade: "g4",
     pageId: "shapes_basic_properties_angles",
     section: 3,
-    required: ["90", "°", "זוויות"],
+    required: ["90", "°", ""],
   },
   {
     subject: "geometry",
     grade: "g4",
     pageId: "parallel_perpendicular",
     section: 2,
-    required: ["מקביל", "מאונכות"],
+    required: ["", ""],
   },
 ];
 
@@ -101,12 +101,12 @@ const screenshots = [];
 async function waitForBookContent(page, timeoutMs = 60000) {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
-    const gate = await page.getByText("בודק התחברות תלמיד").count();
+    const gate = await page.getByText("  ").count();
     if (gate > 0) {
       await page.waitForTimeout(500);
       continue;
     }
-    const login = await page.getByText("יש להתחבר כתלמיד").count();
+    const login = await page.getByText("  ").count();
     if (login > 0) {
       throw new Error("student login gate — page requires auth");
     }
@@ -144,15 +144,15 @@ async function clickBookNavButton(page, name) {
 
 async function navigateToSection(page, sectionNumber) {
   for (let i = 0; i < 8; i += 1) {
-    const prev = page.getByRole("button", { name: "עמוד קודם" });
+    const prev = page.getByRole("button", { name: " " });
     if (!(await prev.isEnabled())) break;
-    await clickBookNavButton(page, "עמוד קודם");
+    await clickBookNavButton(page, " ");
     await page.waitForTimeout(300);
   }
   for (let i = 0; i < Math.max(0, sectionNumber - 1); i += 1) {
-    const next = page.getByRole("button", { name: "עמוד הבא" });
+    const next = page.getByRole("button", { name: " " });
     if (!(await next.isEnabled())) break;
-    await clickBookNavButton(page, "עמוד הבא");
+    await clickBookNavButton(page, " ");
     await page.waitForTimeout(500);
   }
 }
@@ -260,7 +260,7 @@ async function assertStep1EquationRows(page, label) {
     }
 
     const textB = (rows[1].textContent || "").replace(/\s+/g, " ");
-    if (/4-ו|\+-ו|\.24 =/.test(textB)) {
+    if (/4-|\+-|\.24 =/.test(textB)) {
       return { ok: false, reason: `row 2 mangled: "${textB.trim()}"` };
     }
     if (!/24 = 20 \+ 4/.test(textB)) {
@@ -291,7 +291,7 @@ async function runLayoutChecks(page, target) {
     } else if (check === "sub_two_step1_rows") {
       await assertStep1EquationRows(page, tag);
     } else if (check === "place_value_table") {
-      const count = await page.locator('[aria-label="טבלת ערך מקום"]').count();
+      const count = await page.locator('[aria-label="  "]').count();
       if (count < 1) {
         errors.push(`${tag}: missing place-value table`);
       }
@@ -351,12 +351,12 @@ async function main() {
         }
       }
 
-      if (/השוואת\d{3}/.test(bodyText) || /קטן מ-\d{3}\d{3}/.test(bodyText)) {
+      if (/\d{3}/.test(bodyText) || / -\d{3}\d{3}/.test(bodyText)) {
         errors.push(`${tag}: glued Hebrew/digit text`);
       }
 
       const mangled =
-        /20 \+ 4.*\+-ו|24 = 20 \+-|000,1|9 \+ 50 = 59/.test(bodyText) ||
+        /20 \+ 4.*\+-|24 = 20 \+-|000,1|9 \+ 50 = 59/.test(bodyText) ||
         (bodyText.includes("24 = 20") &&
           bodyText.includes("68 = 60") &&
           bodyText.indexOf("24 = 20") < bodyText.indexOf("68 = 60"));

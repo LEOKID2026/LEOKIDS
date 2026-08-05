@@ -3,7 +3,7 @@ import LockedSubjectCard from "./LockedSubjectCard.jsx";
 /**
  * @param {{
  *   permissionKey: string,
- *   titleHe?: string,
+ *   title?: string,
  *   isLocked: boolean,
  *   enforced?: boolean,
  *   children: React.ReactNode,
@@ -11,13 +11,13 @@ import LockedSubjectCard from "./LockedSubjectCard.jsx";
  */
 export default function SubjectAccessGuard({
   permissionKey,
-  titleHe,
+  title,
   isLocked,
   enforced = true,
   children,
 }) {
   if (enforced && isLocked) {
-    return <LockedSubjectCard titleHe={titleHe || permissionKey} />;
+    return <LockedSubjectCard title={title || permissionKey} />;
   }
   return children;
 }

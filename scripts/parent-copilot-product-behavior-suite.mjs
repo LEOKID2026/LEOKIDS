@@ -37,27 +37,27 @@ for (const [intent, phrases] of Object.entries(PARAPHRASE_BANK)) {
 }
 
 const EQUIVALENCE = [
-  ["מה רואים בנתונים?", "מה כתוב בדוח?", "מה המצב בדוח?"],
-  ["מה לעשות היום בבית?", "מה עושים היום?", "צעד קטן להיום"],
-  ["מה לעשות השבוע?", "מה לעשות בשבוע הזה?", "מה הכי חשוב עכשיו בבית?", "מה היית מציע לנו לימים הקרובים?"],
-  ["למה לא להתקדם?", "למה אתה לא ממליץ להעלות רמה?", "למה לעצור כאן?", "מה הסיבה שלא ממשיכים?"],
-  ["מה טוב ומה חלש?", "איפה הוא מצליח ואיפה פחות?", "מה עובד טוב ומה דורש חיזוק?", "תסכם לי חוזקות מול קושי"],
-  ["איך להגיד את זה לילד?", "איך להסביר לו את זה?", "באיזה ניסוח לדבר איתו?", "מה לומר לו בלי להלחיץ?"],
-  ["מה לשאול את המורה?", "יש משהו שכדאי לשאול את המורה?", "איך לנסח שאלה למורה?", "מה חשוב לברר מול המורה?"],
-  ["האם צריך התערבות?", "זה דורש עזרה מעבר לבית?", "יש פה משהו מדאיג?", "צריך לפנות למורה או לאיש מקצוע?"],
-  ["מה זה אומר?", "תסביר לי את המושג הזה", "מה המשמעות של זה?", "לא הבנתי את הניסוח הזה"],
+  ["  ?", "  ?", "  ?"],
+  ["   ?", "  ?", "  "],
+  ["  ?", "   ?", "    ?", "     ?"],
+  ["  ?", "     ?", "  ?", "   ?"],
+  ["   ?", "    ?", "     ?", "    "],
+  ["    ?", "    ?", "   ?", "    ?"],
+  ["   ?", "     ?", "   ?", "    ?"],
+  ["  ?", "    ?", "   ?", "     ?"],
+  ["  ?", "    ", "   ?", "    "],
 ];
 for (const cluster of EQUIVALENCE) {
   const parsed = cluster.map((u) => interpretFreeformStageA(u, null));
   const intents = new Set(parsed.map((p) => p.canonicalIntent));
   const scopeClasses = new Set(parsed.map((p) => p.scopeClass));
-  const basePlan = planConversation(parsed[0].canonicalIntent, buildTruthPacketV1(payloadIneligibleRec(), { scopeType: "topic", scopeId: "t1", scopeLabel: "שברים", scopeClass: parsed[0].scopeClass }), {
+  const basePlan = planConversation(parsed[0].canonicalIntent, buildTruthPacketV1(payloadIneligibleRec(), { scopeType: "topic", scopeId: "t1", scopeLabel: "", scopeClass: parsed[0].scopeClass }), {
     continuityRepeat: false,
     turnOrdinal: 0,
     scopeType: "topic",
   }).blockPlan.join("|");
   const sameStructure = parsed.every((p) => {
-    const blockPlan = planConversation(p.canonicalIntent, buildTruthPacketV1(payloadIneligibleRec(), { scopeType: "topic", scopeId: "t1", scopeLabel: "שברים", scopeClass: p.scopeClass }), {
+    const blockPlan = planConversation(p.canonicalIntent, buildTruthPacketV1(payloadIneligibleRec(), { scopeType: "topic", scopeId: "t1", scopeLabel: "", scopeClass: p.scopeClass }), {
       continuityRepeat: false,
       turnOrdinal: 0,
       scopeType: "topic",
@@ -79,19 +79,19 @@ function payloadIneligibleRec() {
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
     forbiddenPhrases: [],
-    requiredHedges: ["נכון לעכשיו"],
+    requiredHedges: [" "],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI0",
     textSlots: {
-      observation: "בנושא נצפו 6 שאלות.",
-      interpretation: "נכון לעכשיו התמונה עדיין רכה.",
-      action: "להמשיך בתרגול קצר ומדוד.",
-      uncertainty: "נכון לעכשיו כדאי לאסוף עוד תרגול לפני כיוון ברור.",
+      observation: "  6 .",
+      interpretation: "    .",
+      action: "   .",
+      uncertainty: "        .",
     },
   };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "",
     questions: 6,
     accuracy: 70,
     contractsV1: {
@@ -117,7 +117,7 @@ function payloadIneligibleRec() {
 }
 
 const pInel = payloadIneligibleRec();
-const scope = { scopeType: "topic", scopeId: "t1", scopeLabel: "שברים", scopeClass: "recommendation" };
+const scope = { scopeType: "topic", scopeId: "t1", scopeLabel: "", scopeClass: "recommendation" };
 const tp = buildTruthPacketV1(pInel, scope);
 assert.ok(tp && tp.derivedLimits.recommendationEligible === false);
 const plan = planConversation("what_to_do_today", tp, { continuityRepeat: false, turnOrdinal: 0, scopeType: "topic" });
@@ -132,7 +132,7 @@ const forbiddenSubstrings = [
   "reviewHybrid",
   "ai-hybrid-internal-reviewer",
   "mleo_internal_hybrid_reviewer",
-  "ביקורת פנימית",
+  " ",
 ];
 for (const s of forbiddenSubstrings) {
   assert.ok(
@@ -159,12 +159,12 @@ assert.ok(CANONICAL_PARENT_INTENTS.includes("explain_report"), "canonical intent
 const res = runTurn({
   audience: "parent",
   payload: pInel,
-  utterance: "מה לעשות היום בשברים?",
+  utterance: "   ?",
   sessionId: "product-behavior-withhold",
 });
 assert.equal(res.resolutionStatus, "resolved");
 assert.ok(
-  !(res.answerBlocks || []).some((b) => b.type === "next_step" && /תרגול קצר ומדוד/u.test(String(b.textHe || ""))),
+  !(res.answerBlocks || []).some((b) => b.type === "next_step" && /  /u.test(String(b.textHe || ""))),
   "withhold: parent answer blocks should not push contract action as next_step when ineligible"
 );
 

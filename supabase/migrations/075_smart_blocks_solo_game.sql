@@ -1,4 +1,4 @@
--- Solo game #11: smart-blocks (בלוקים חכמים)
+-- Solo game #11: smart-blocks
 -- Single migration: allowlist, payout rules, hub catalog (/game).
 -- Run once: supabase/migrations/075_smart_blocks_solo_game.sql
 
@@ -57,13 +57,13 @@ insert into public.site_game_catalog (
 ) values (
   'smart-blocks',
   'solo',
-  'בלוקים חכמים',
+  'Smart Blocks',
   '/student/solo-games/smart-blocks',
   '/student/solo-games',
   coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'smart-blocks'), true),
   110,
   '🧱',
-  'הניחו צורות, נקו שורות ועמודות והגיעו ליעד הניקוד!'
+  'Place shapes, clear rows and columns, and reach the score target!'
 )
 on conflict (game_key) do update set
   category = excluded.category,

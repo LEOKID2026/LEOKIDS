@@ -688,7 +688,7 @@ function buildSpotChecks(rowById, cleanGroups) {
   const specs = [
     {
       id: "omer_fractions",
-      label: "שברים — OMER — 206/108/98/52% — השוואה לפי מונה בלבד",
+      label: " — OMER — 206/108/98/52% —    ",
       match: (r) =>
         r.student === "omer" &&
         r.subject === "math" &&
@@ -696,7 +696,7 @@ function buildSpotChecks(rowById, cleanGroups) {
           (["subjectSummary", "subjectRollup", "parentLetter", "homeAction", "diagnosticOverview"].includes(
             r.surface,
           ) &&
-            (String(r.exactParentVisibleHebrewText || "").includes("שברים") ||
+            (String(r.exactParentVisibleHebrewText || "").includes("") ||
               String(r.section || "").includes("attention")))) &&
         isLiveRow(r) &&
         resolveRenderedToParent(r).renderedToParent,
@@ -714,7 +714,7 @@ function buildSpotChecks(rowById, cleanGroups) {
     },
     {
       id: "omer_multiplication",
-      label: "כפל — OMER — 32/22/10/69% — אותם זוגות שגויים",
+      label: " — OMER — 32/22/10/69% —   ",
       match: (r) =>
         r.student === "omer" &&
         String(r.topicKey || "").includes("multiplication") &&
@@ -733,7 +733,7 @@ function buildSpotChecks(rowById, cleanGroups) {
     },
     {
       id: "omer_decimals",
-      label: "עשרוניים — OMER — 17/11/6/65% — בלבול בכיוון העיגול",
+      label: " — OMER — 17/11/6/65% —   ",
       match: (r) =>
         r.student === "omer" &&
         String(r.topicKey || "").includes("decimals") &&
@@ -748,7 +748,7 @@ function buildSpotChecks(rowById, cleanGroups) {
     },
     {
       id: "aaa7_addition",
-      label: "חיבור — Aaa7 — 10/2/8/20% — clear_topic_gap",
+      label: " — Aaa7 — 10/2/8/20% — clear_topic_gap",
       match: (r) =>
         r.student === "aaa7" &&
         String(r.topicKey || "").includes("addition") &&
@@ -765,7 +765,7 @@ function buildSpotChecks(rowById, cleanGroups) {
     },
     {
       id: "omer_hebrew_reading",
-      label: "עברית קריאה — OMER — השוואה חלקית שגויה",
+      label: "  — OMER —   ",
       match: (r) =>
         r.student === "omer" &&
         r.subject === "hebrew" &&

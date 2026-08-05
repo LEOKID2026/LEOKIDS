@@ -25,7 +25,7 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
   const [successCount, setSuccessCount] = useState(0);
   const [attemptsTotal, setAttemptsTotal] = useState(0);
   const [checkState, setCheckState] = useState(/** @type {'idle'|'ok'|'bad'} */ ("idle"));
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState("to");
   const [canAdvance, setCanAdvance] = useState(false);
   const [strongAreas, setStrongAreas] = useState(/** @type {string[]} */ ([]));
 
@@ -40,7 +40,7 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
   const resetTask = useCallback(() => {
     setSelected(null);
     setCheckState("idle");
-    setFeedback("");
+    setFeedback("Medium");
     setCanAdvance(false);
   }, []);
 
@@ -99,31 +99,31 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
       <div className={`${s.shell} ${s.shellWarm}`} dir="rtl">
         <header className={s.header}>
           <Link href={backHref} className={s.backBtn}>
-            ← חזרה
+            ←
           </Link>
           <div className={s.hud}>
-            <span className={s.hudChip}>🧠 סיכום</span>
+            <span className={s.hudChip}>🧠 </span>
           </div>
           <div style={{ minWidth: 40 }} aria-hidden />
         </header>
         <div className={styles.pickScreen}>
           <div className={styles.summaryCard}>
-            <h2 className={styles.summaryTitle}>🎉 האימון הסתיים!</h2>
-            <p className={styles.summaryLine}>תרגלתם היום כמה נקודות חשובות</p>
+            <h2 className={styles.summaryTitle}>🎉  !</h2>
+            <p className={styles.summaryLine}>    </p>
             <p className={styles.summaryLine}>
-              ✅ {successCount} תשובות נכונות מתוך {tasksTotal}
+              ✅ {successCount}    {tasksTotal}
             </p>
             <p className={styles.summaryLine}>{trainingSummaryMessage(successCount, tasksTotal)}</p>
             {strongAreas.length > 0 ? (
-              <p className={styles.summaryLine}>הצלחתם ב: {strongAreas.join(" · ")}</p>
+              <p className={styles.summaryLine}> : {strongAreas.join(" · ")}</p>
             ) : null}
-            <p className={styles.summaryLine}>כדאי לחזק: {selectedArea?.title ?? "המשך תרגול"}</p>
+            <p className={styles.summaryLine}> : {selectedArea?.title ?? "to"}</p>
             <div className={s.endActions}>
               <button type="button" className={s.startBtn} onClick={() => setScreen("pick")}>
-                אימון נוסף
+
               </button>
               <Link href={backHref} className={s.secondaryBtn} style={{ textAlign: "center" }}>
-                חזרה לאבטיפוסים
+
               </Link>
             </div>
           </div>
@@ -137,24 +137,24 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
       <div className={`${s.shell} ${s.shellWarm}`} dir="rtl">
         <header className={s.header}>
           <Link href={backHref} className={s.backBtn}>
-            ← חזרה
+            ←
           </Link>
           <div className={s.hud}>
-            <span className={s.hudChip}>🧪 אבטיפוס</span>
+            <span className={s.hudChip}>🧪 </span>
           </div>
           <div style={{ minWidth: 40 }} aria-hidden />
         </header>
         <div className={styles.pickScreen}>
-          <p className={styles.pickTitle}>🧠 חדר האימון של ליאo</p>
+          <p className={styles.pickTitle}>🧠    o</p>
           <p className={styles.pickSub}>
-            היום ליאo מצא כמה דברים שכדאי לחזק. בחרu תחום אימון או התחילu אימון אקראי.
+             o     . u    u  .
           </p>
           <div className={styles.areaGrid}>
             {TRAINING_AREAS.map((area) => (
               <button
                 key={area.id}
                 type="button"
-                className={`${styles.areaCard} ${areaId === area.id ? styles.areaCardSelected : ""}`}
+                className={`${styles.areaCard} ${areaId === area.id ? styles.areaCardSelected : "Training"}`}
                 onClick={() => setAreaId(area.id)}
               >
                 <span className={styles.areaEmoji}>{area.emoji}</span>
@@ -168,10 +168,10 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
               <button
                 key={id}
                 type="button"
-                className={`${s.diffBtn} ${difficulty === id ? s.diffBtnSelected : ""}`}
+                className={`${s.diffBtn} ${difficulty === id ? s.diffBtnSelected : "to"}`}
                 onClick={() => setDifficulty(/** @type {DifficultyId} */ (id))}
               >
-                {id === "easy" ? "קל" : id === "hard" ? "קשה" : "בינוני"}
+                {id === "easy" ? "Medium" : id === "hard" ? "Training" : "Medium"}
               </button>
             ))}
           </div>
@@ -181,14 +181,14 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
             disabled={!areaId}
             onClick={() => beginTraining(areaId)}
           >
-            התחל אימון
+
           </button>
           <button
             type="button"
             className={s.secondaryBtn}
             onClick={() => beginTraining(TRAINING_AREAS[Math.floor(Math.random() * TRAINING_AREAS.length)].id)}
           >
-            אימון אקראי
+
           </button>
         </div>
       </div>
@@ -202,9 +202,9 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
       phase="play"
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="חדר האימון של ליאo"
+      title="   o"
       introHero="🧠💪"
-      introText=""
+      introText="Training"
       onStart={() => {}}
       score={score}
       mistakes={mistakes}
@@ -223,8 +223,8 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
           <div className={s.missionCard}>
             {task.emoji ? <span className={s.missionIcon}>{task.emoji}</span> : <span className={s.missionIcon}>🎯</span>}
             <div className={s.missionBody}>
-              <p className={s.missionLabel}>{selectedArea?.title ?? "אימון"}</p>
-              <h2 className={s.missionTitle}>משימה {taskIndex + 1}</h2>
+              <p className={s.missionLabel}>{selectedArea?.title ?? "Training"}</p>
+              <h2 className={s.missionTitle}> {taskIndex + 1}</h2>
               <p className={s.missionPrompt}>{task.prompt}</p>
             </div>
           </div>
@@ -253,17 +253,17 @@ export default function TrainingRoomGame({ backHref = "/dev/learning-game-protot
               checkState === "ok" ? s.feedbackOk : checkState === "bad" ? s.feedbackBad : s.feedbackNeutral
             }`}
           >
-            <p className={s.feedbackText}>{feedback || "בחרu תשובה ולחצu «בדוק»"}</p>
+            <p className={s.feedbackText}>{feedback || "u  u «»"}</p>
           </div>
 
           <div className={s.actionRow}>
             {!canAdvance ? (
               <button type="button" className={s.primaryBtn} disabled={selected == null} onClick={runCheck}>
-                בדוק תשובה
+
               </button>
             ) : (
               <button type="button" className={s.primaryBtn} onClick={advance}>
-                המשימה הבאה
+
               </button>
             )}
           </div>

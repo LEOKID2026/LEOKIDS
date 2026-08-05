@@ -10,13 +10,13 @@ import {
   ADMIN_REJECT_REASON_LABEL,
   ADMIN_REJECTED_SUCCESS,
   ADMIN_STATUS_PENDING,
-} from "../../lib/auth/auth-registration.he.js";
+} from "../../lib/auth/auth-registration.js";
 import {
   ADMIN_LIFECYCLE_NETWORK_ERROR,
   adminFormatDateHe,
   apiErrorMessageHe,
   entitlementStatusLabelHe,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 
 /**
  * @param {{ accessToken: string, school: object, registrationRequest?: object|null, onChanged?: () => void }} props
@@ -58,13 +58,13 @@ export default function AdminSchoolRegistrationPanel({
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "הפעולה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, " "));
         return;
       }
       if (action === "approve") {
         const setupMsg =
           json?.data?.passwordSetup?.ok === true
-            ? " · קישור להגדרת סיסמה נשלח לאיש קשר"
+            ? " ·      "
             : "";
         setMessage(`${ADMIN_APPROVED_SUCCESS}${setupMsg}`);
       } else {
@@ -82,7 +82,7 @@ export default function AdminSchoolRegistrationPanel({
   if (!req && !isPendingSchool) return null;
 
   const confirmTitle =
-    confirmAction === "approve" ? "אישור בקשת רישום" : "דחיית בקשת רישום";
+    confirmAction === "approve" ? "  " : "  ";
 
   return (
     <div className="space-y-4 mb-6">
@@ -91,22 +91,22 @@ export default function AdminSchoolRegistrationPanel({
           className="rounded-xl border border-amber-400/20 bg-amber-500/5 p-4 text-right"
           data-testid="admin-school-registration-request"
         >
-          <h2 className="font-semibold mb-3">פרטי בקשת רישום</h2>
+          <h2 className="font-semibold mb-3">  </h2>
           <div className="space-y-2 text-sm">
             <p>
-              <span className="text-white/50">סטטוס: </span>
+              <span className="text-white/50">: </span>
               {entitlementStatusLabelHe(req.status)}
             </p>
             <p>
-              <span className="text-white/50">נשלח: </span>
+              <span className="text-white/50">: </span>
               {adminFormatDateHe(req.createdAt)}
             </p>
             <p>
-              <span className="text-white/50">איש קשר: </span>
+              <span className="text-white/50"> : </span>
               {req.contactName || "-"}
             </p>
             <p>
-              <span className="text-white/50">דוא״ל: </span>
+              <span className="text-white/50">: </span>
               {req.contactEmail || "-"}
             </p>
             {req.contactPhone ? (
@@ -117,19 +117,19 @@ export default function AdminSchoolRegistrationPanel({
             ) : null}
             {req.approxTeachers != null ? (
               <p>
-                <span className="text-white/50">מורים משוער: </span>
+                <span className="text-white/50"> : </span>
                 {req.approxTeachers}
               </p>
             ) : null}
             {req.approxStudents != null ? (
               <p>
-                <span className="text-white/50">ילדים משוער: </span>
+                <span className="text-white/50"> : </span>
                 {req.approxStudents}
               </p>
             ) : null}
             {req.message ? (
               <div>
-                <p className="text-white/50 text-xs mb-1">הערות</p>
+                <p className="text-white/50 text-xs mb-1"></p>
                 <p className="text-white/85 whitespace-pre-wrap">{req.message}</p>
               </div>
             ) : null}
@@ -144,7 +144,7 @@ export default function AdminSchoolRegistrationPanel({
         >
           <h2 className="font-semibold mb-2">{ADMIN_STATUS_PENDING}</h2>
           <p className="text-sm text-white/70 mb-4">
-            בית ספר זה נרשם וממתין לאישור מנהל/ת המערכת.
+                  / .
           </p>
           <div className="flex flex-wrap gap-2 justify-end">
             <button
@@ -185,14 +185,14 @@ export default function AdminSchoolRegistrationPanel({
         footer={
           <>
             <AdminModalButton onClick={closeConfirm} disabled={!!busy}>
-              ביטול
+
             </AdminModalButton>
             <AdminModalButton
               variant={confirmAction === "reject" ? "danger" : "primary"}
               onClick={() => void run(confirmAction)}
               disabled={!!busy}
               busy={busy === confirmAction}
-              busyLabel="מעבד…"
+              busyLabel="…"
               data-testid={confirmAction === "approve" ? "school-reg-approve-submit" : "school-reg-reject-submit"}
             >
               {confirmAction === "approve" ? ADMIN_APPROVE_ACTION : ADMIN_REJECT_ACTION}
@@ -202,7 +202,7 @@ export default function AdminSchoolRegistrationPanel({
       >
         {confirmAction === "approve" ? (
           <p className="text-sm text-white/80">
-            לאשר את בקשת הרישום של {school?.name || "בית הספר"}?
+                 {school?.name || " "}?
           </p>
         ) : (
           <label className="block text-sm">

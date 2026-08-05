@@ -15,8 +15,8 @@ create table if not exists public.reward_economy_daily_missions (
   id uuid primary key default gen_random_uuid(),
   mission_key text not null check (char_length(mission_key) between 1 and 80),
   grade_band text not null check (grade_band in ('g12', 'g34', 'g56')),
-  name_he text not null check (char_length(name_he) between 1 and 120),
-  text_he text not null check (char_length(text_he) between 1 and 240),
+  name_he text not null check (char_length(name_he) between 0 and 120),
+  text_he text not null check (char_length(text_he) between 0 and 240),
   mission_type text not null check (mission_type in ('questions', 'minutes', 'subjects')),
   target_value integer not null check (target_value > 0),
   reward_coins integer not null check (reward_coins > 0),
@@ -37,7 +37,7 @@ create table if not exists public.reward_economy_monthly_tiers (
   id uuid primary key default gen_random_uuid(),
   minutes_threshold integer not null check (minutes_threshold > 0),
   reward_coins integer not null check (reward_coins > 0),
-  label_he text not null check (char_length(label_he) between 1 and 120),
+  label_he text not null check (char_length(label_he) between 0 and 120),
   is_active boolean not null default true,
   display_order integer not null default 0,
   created_at timestamptz not null default now(),
@@ -100,7 +100,7 @@ comment on table public.reward_card_settings is
 
 create table if not exists public.reward_card_series (
   id uuid primary key default gen_random_uuid(),
-  name_he text not null check (char_length(name_he) between 1 and 120),
+  name_he text not null check (char_length(name_he) between 0 and 120),
   slug text not null unique check (char_length(slug) between 1 and 80),
   description_he text null check (description_he is null or char_length(description_he) <= 500),
   display_order integer not null default 0,
@@ -118,7 +118,7 @@ comment on table public.reward_card_series is
 create table if not exists public.reward_cards (
   id uuid primary key default gen_random_uuid(),
   card_key text null unique check (card_key is null or char_length(card_key) between 1 and 80),
-  name_he text not null check (char_length(name_he) between 1 and 120),
+  name_he text not null check (char_length(name_he) between 0 and 120),
   description_he text null check (description_he is null or char_length(description_he) <= 500),
   image_url text null check (image_url is null or char_length(image_url) <= 500),
   series_id uuid not null references public.reward_card_series (id) on delete restrict,
@@ -421,24 +421,24 @@ create policy reward_card_transactions_parent_read_owned
 insert into public.reward_economy_daily_missions (
   mission_key, grade_band, name_he, text_he, mission_type, target_value, reward_coins, display_order
 ) values
-  ('questions_10', 'g12', '10 שאלות', 'ענה על 10 שאלות היום', 'questions', 10, 20, 1),
-  ('minutes_5',    'g12', '5 דקות',   'למד 5 דקות היום',          'minutes',   5,  20, 2),
-  ('subjects_1',   'g12', 'מקצוע אחד', 'תרגל מקצוע אחד לפחות',    'subjects',  1,  20, 3),
-  ('questions_15', 'g34', '15 שאלות', 'ענה על 15 שאלות היום',    'questions', 15, 20, 1),
-  ('minutes_8',    'g34', '8 דקות',   'למד 8 דקות היום',          'minutes',   8,  20, 2),
-  ('subjects_2',   'g34', 'שני מקצועות', 'תרגל שני מקצועות שונים',  'subjects',  2,  20, 3),
-  ('questions_20', 'g56', '20 שאלות', 'ענה על 20 שאלות היום',    'questions', 20, 20, 1),
-  ('minutes_10',   'g56', '10 דקות',  'למד 10 דקות היום',         'minutes',   10, 20, 2),
-  ('subjects_2',   'g56', 'שני מקצועות', 'תרגל שני מקצועות שונים',  'subjects',  2,  20, 3)
+  ('questions_10', 'g12', '', '', 'questions', 10, 20, 1),
+  ('minutes_5', 'g12', '', '',          'minutes',   5,  20, 2),
+  ('subjects_1', 'g12', '', '',    'subjects',  1,  20, 3),
+  ('questions_15', 'g34', '', '',    'questions', 15, 20, 1),
+  ('minutes_8', 'g34', '', '',          'minutes',   8,  20, 2),
+  ('subjects_2', 'g34', '', '',  'subjects',  2,  20, 3),
+  ('questions_20', 'g56', '', '',    'questions', 20, 20, 1),
+  ('minutes_10', 'g56', '', '',         'minutes',   10, 20, 2),
+  ('subjects_2', 'g56', '', '',  'subjects',  2,  20, 3)
 on conflict (mission_key, grade_band) do nothing;
 
 insert into public.reward_economy_monthly_tiers (
   minutes_threshold, reward_coins, label_he, display_order
 ) values
-  (100, 10000,  '100 דקות התמדה', 1),
-  (250, 30000,  '250 דקות התמדה', 2),
-  (400, 60000,  '400 דקות התמדה', 3),
-  (600, 100000, '600 דקות התמדה', 4)
+  (100, 10000, '', 1),
+  (250, 30000, '', 2),
+  (400, 60000, '', 3),
+  (600, 100000, '', 4)
 on conflict (minutes_threshold) do nothing;
 
 insert into public.reward_economy_global_settings (id, monthly_minutes_cap, monthly_coins_cap)
@@ -490,22 +490,22 @@ on conflict (setting_key) do nothing;
 -- ===========================================================================
 
 insert into public.reward_card_series (slug, name_he, description_he, display_order) values
-  ('animals',     'חיות',         'קלפי חיות מגניבות',              1),
-  ('space',       'חלל',          'קלפי חלל וכוכבים',               2),
-  ('dinosaurs',   'דינוזאורים',   'קלפי דינוזאורים אמיצים',         3),
-  ('robots',      'רובוטים',      'קלפי רובוטים חכמים',             4),
-  ('heroes',      'גיבורי למידה','קלפי גיבורים שלומדים',           5),
-  ('fantasy',     'פנטזיה',       'קלפי קסם ודרקונים',             6),
-  ('nature',      'טבע',          'קלפי טבע וחיות בר',             7),
-  ('football',    'כדורגל',       'קלפי כדורגל וספורט',             8),
-  ('math',        'חשבון',        'קלפי הישג בחשבון',               9),
-  ('hebrew',      'עברית',        'קלפי הישג בעברית',              10),
-  ('english',     'אנגלית',       'קלפי הישג באנגלית',             11),
-  ('science',     'מדעים',        'קלפי הישג במדעים',              12),
-  ('geometry',    'גיאומטריה',    'קלפי הישג בגיאומטריה',          13),
-  ('moledet',     'מולדת',        'קלפי הישג במולדת',              14),
-  ('general',     'כללי',         'קלפי הישג כלליים',              15),
-  ('persistence', 'התמדה',        'קלפי הישג בהתמדה',              16)
+  ('animals', '', '', 1),
+  ('space', '', '', 2),
+  ('dinosaurs', '', '', 3),
+  ('robots', '', '', 4),
+  ('heroes', '', '', 5),
+  ('fantasy', '', '', 6),
+  ('nature', '', '', 7),
+  ('football', '', '', 8),
+  ('math', '', '', 9),
+
+  ('english', '', '', 11),
+  ('science', '', '', 12),
+  ('geometry', '', '', 13),
+
+  ('general', '', '', 15),
+  ('persistence', '', '', 16)
 on conflict (slug) do nothing;
 
 -- ===========================================================================
@@ -531,49 +531,49 @@ select
 from (
   values
     -- animals (6)
-    ('animals',     'lion_gold',       'אריה זהב',       'אריה מוזהב עוצמתי',           'gold'),
-    ('animals',     'tiger_fast',      'נמר מהיר',       'נמר מהיר וזריז',              'special'),
-    ('animals',     'panda_happy',     'פנדה שמחה',      'פנדה שמח ואוהב',              'regular'),
-    ('animals',     'dog_loyal',       'כלב נאמן',       'כלב נאמן ואוהב',              'regular'),
-    ('animals',     'bear_strong',     'דוב חזק',        'דוב חזק ואמיץ',               'regular'),
-    ('animals',     'fox_clever',      'שועל זריז',      'שועל חכם וזריז',              'special'),
+    ('animals', 'lion_gold', '', '', 'gold'),
+    ('animals', 'tiger_fast', '', '', 'special'),
+    ('animals', 'panda_happy', '', '', 'regular'),
+    ('animals', 'dog_loyal', '', '', 'regular'),
+    ('animals', 'bear_strong', '', '', 'regular'),
+    ('animals', 'fox_clever', '', '', 'special'),
     -- space (6)
-    ('space',       'space_cat',       'חתול חלל',       'חתול אמיץ בחלל',              'special'),
-    ('space',       'star_rocket',     'טיל כוכבים',     'טיל שטס בין כוכבים',          'regular'),
-    ('space',       'green_star',      'כוכב ירוק',      'כוכב ירוק זוהר',              'regular'),
-    ('space',       'space_pilot',     'טייס חלל',       'טייס חלל מנוסה',             'regular'),
-    ('space',       'cute_alien',      'חייזר חמוד',     'חייזר חמוד מכוכב רחוק',       'special'),
-    ('space',       'nebula_glow',     'ערפילית זוהרת',  'ערפילית צבעונית בחלל',        'rare'),
+    ('space', 'space_cat', '', '', 'special'),
+    ('space', 'star_rocket', '', '', 'regular'),
+    ('space', 'green_star', '', '', 'regular'),
+    ('space', 'space_pilot', '', '', 'regular'),
+    ('space', 'cute_alien', '', '', 'special'),
+    ('space', 'nebula_glow', '', '', 'rare'),
     -- dinosaurs (4)
-    ('dinosaurs',   'blue_dino',       'דינוזאור כחול',  'דינוזאור כחול ידידותי',       'regular'),
-    ('dinosaurs',   'trex_mighty',     'טי-רекс',        'טי-רекс עוצמתי',              'special'),
-    ('dinosaurs',   'ptero_fly',       'פטרוזאור',       'פטרוזאור שט בגובה',           'regular'),
-    ('dinosaurs',   'tri_guard',       'טריצרטופס',      'טריצרטופס עם קרניים',         'rare'),
+    ('dinosaurs', 'blue_dino', '', '', 'regular'),
+    ('dinosaurs', 'trex_mighty', '', '', 'special'),
+    ('dinosaurs', 'ptero_fly', '', '', 'regular'),
+    ('dinosaurs', 'tri_guard', '', '', 'rare'),
     -- robots (4)
-    ('robots',      'smart_robot',     'רובוט חכם',      'רובוט חכם שעוזר ללמוד',       'special'),
-    ('robots',      'silver_robot',    'רובוט כסוף',     'רובוט כסוף מבריק',            'regular'),
-    ('robots',      'gold_robot',      'רובוט זהב',      'רובוט זהב נדיר',              'gold'),
-    ('robots',      'helper_bot',      'עוזר רובוט',     'רובוט עוזר קטן',              'regular'),
+    ('robots', 'smart_robot', '', '', 'special'),
+    ('robots', 'silver_robot', '', '', 'regular'),
+    ('robots', 'gold_robot', '', '', 'gold'),
+    ('robots', 'helper_bot', '', '', 'regular'),
     -- heroes (4)
-    ('heroes',      'learning_hero',   'גיבור למידה',    'גיבור שלומד כל יום',          'regular'),
-    ('heroes',      'class_star',      'כוכב הכיתה',     'כוכב שמאיר בכיתה',            'special'),
-    ('heroes',      'number_hero',     'גיבור המספרים',  'גיבור שאוהב מספרים',          'regular'),
-    ('heroes',      'persistence_hero','גיבור התמדה',    'גיבור שלא מוותר',             'rare'),
+    ('heroes', 'learning_hero', '', '', 'regular'),
+    ('heroes', 'class_star', '', '', 'special'),
+    ('heroes', 'number_hero', '', '', 'regular'),
+    ('heroes', 'persistence_hero', '', '', 'rare'),
     -- fantasy (4)
-    ('fantasy',     'little_dragon',   'דרקון קטן',      'דרקון קטן וחמוד',             'special'),
-    ('fantasy',     'magic_shield',    'מגן הקסם',       'מגן קסום מגן',                'regular'),
-    ('fantasy',     'green_spell',     'קסם ירוק',       'קסם ירוק מנצח',               'regular'),
-    ('fantasy',     'golden_knight',   'אביר זהב',       'אביר זהב אמיץ',               'gold'),
+    ('fantasy', 'little_dragon', '', '', 'special'),
+    ('fantasy', 'magic_shield', '', '', 'regular'),
+    ('fantasy', 'green_spell', '', '', 'regular'),
+    ('fantasy', 'golden_knight', '', '', 'gold'),
     -- nature (4)
-    ('nature',      'wise_owl',        'ינשוף חכם',      'ינשוף חכם ביער',              'special'),
-    ('nature',      'wise_turtle',     'צב חכם',         'צב חכם וסבלני',               'regular'),
-    ('nature',      'color_flower',    'פרח צבעוני',     'פרח צבעוני בטבע',             'regular'),
-    ('nature',      'magic_forest',    'יער קסום',       'יער קסום מלא חיים',           'rare'),
+    ('nature', 'wise_owl', '', '', 'special'),
+    ('nature', 'wise_turtle', '', '', 'regular'),
+    ('nature', 'color_flower', '', '', 'regular'),
+    ('nature', 'magic_forest', '', '', 'rare'),
     -- football (4)
-    ('football',    'gold_striker',    'כדורגלן זהב',    'כדורגלן מוזהב',               'gold'),
-    ('football',    'top_goalkeeper',  'שוער מעולה',     'שוער שומר על השער',           'special'),
-    ('football',    'goal_king',       'מלך השערים',     'מלך שמבקיע שערים',            'regular'),
-    ('football',    'field_star',      'כוכב המגרש',     'כוכב שמאיר על המגרש',         'regular')
+    ('football', 'gold_striker', '', '', 'gold'),
+    ('football', 'top_goalkeeper', '', '', 'special'),
+    ('football', 'goal_king', '', '', 'regular'),
+    ('football', 'field_star', '', '', 'regular')
 ) as v(slug, card_key, name_he, description_he, rarity)
 join public.reward_card_series s on s.slug = v.slug
 on conflict (card_key) do nothing;
@@ -602,30 +602,30 @@ select
   true
 from (
   values
-    ('general',     'strong_start',        'מתחיל חזק',        'סיים 20 שאלות כלליות',              'regular', null,    null),
-    ('general',     'week_star',           'כוכב השבוע',       'סיים 100 שאלות בשבוע',              'special', null,    null),
-    ('general',     'never_give_up',       'לא מוותר',         'שיפור בנושא שהיה חלש',              'rare',    null,    null),
-    ('general',     'mission_done',        'משימה הושלמה',     'סיים פעילות אישית מהורה',           'regular', null,    null),
-    ('general',     'question_master',     'מאסטר שאלות',      'סיים 50 שאלות כלליות',              'special', null,    null),
-    ('general',     'power_week',          'שבוע חזק',         '200 שאלות בשבוע',                   'gold',    null,    null),
-    ('persistence', 'streak_3',            'מתמיד 3 ימים',     'למד 3 ימים ברצף',                   'regular', null,    null),
-    ('persistence', 'streak_7',            'מתמיד 7 ימים',     'למד 7 ימים ברצף',                   'special', null,    null),
-    ('persistence', 'streak_14',           'לוחם התמדה',       'למד 14 ימים ברצף',                  'rare',    null,    null),
-    ('math',        'number_explorer',     'חוקר המספרים',     '30 שאלות בחשבון',                   'regular', 'math',  null),
-    ('math',        'math_star',           'כוכב חשבון',       '50 שאלות בחשבון',                   'special', 'math',  null),
-    ('math',        'multiplication_champ','אלוף הכפל',         '80% הצלחה בכפל עם 30 שאלות',        'gold',    'math',  'multiplication'),
-    ('hebrew',      'young_reader',        'קורא צעיר',        '30 שאלות בעברית',                   'regular', 'hebrew', null),
-    ('hebrew',      'winning_reader',      'קורא מנצח',        '50 שאלות בעברית',                   'special', 'hebrew', null),
-    ('hebrew',      'word_discoverer',     'מגלה מילים',       'הצלחה באוצר מילים',                'rare',    'hebrew', 'vocabulary'),
-    ('english',     'english_star',        'כוכב אנגלית',      '30 שאלות באנגלית',                  'regular', 'english', null),
-    ('english',     'english_speaker',     'דובר אנגלית',      '50 שאלות באנגלית',                  'special', 'english', null),
-    ('science',     'nature_explorer',     'חוקר הטבע',        '30 שאלות במדעים',                   'regular', 'science', null),
-    ('science',     'young_scientist',     'מדען צעיר',        '50 שאלות במדעים',                   'special', 'science', null),
-    ('geometry',    'geometry_ace',        'אלוף הגיאומטריה',  '30 שאלות בגיאומטריה',               'regular', 'geometry', null),
-    ('geometry',    'shape_master',        'גיאומטר מוכשר',    '50 שאלות בגיאומטריה',               'special', 'geometry', null),
-    ('moledet',     'homeland_explorer',   'חוקר המולדת',      '30 שאלות במולדת',                   'regular', 'moledet', null),
-    ('moledet',     'homeland_scholar',    'ידע מולדת',        '50 שאלות במולדת',                   'special', 'moledet', null),
-    ('general',     'parent_activity',     'פעילות מהורה',     'סיים פעילות אישית מהורה',           'regular', null,    null)
+    ('general', 'strong_start', '', '', 'regular', null,    null),
+    ('general', 'week_star', '', '', 'special', null,    null),
+    ('general', 'never_give_up', '', '', 'rare',    null,    null),
+    ('general', 'mission_done', '', '', 'regular', null,    null),
+    ('general', 'question_master', '', '', 'special', null,    null),
+    ('general', 'power_week', '', '', 'gold',    null,    null),
+    ('persistence', 'streak_3', '', '', 'regular', null,    null),
+    ('persistence', 'streak_7', '', '', 'special', null,    null),
+    ('persistence', 'streak_14', '', '', 'rare',    null,    null),
+    ('math', 'number_explorer', '', '', 'regular', 'math',  null),
+    ('math', 'math_star', '', '', 'special', 'math',  null),
+    ('math', 'multiplication_champ', '', '', 'gold',    'math',  'multiplication'),
+
+
+
+    ('english', 'english_star', '', '', 'regular', 'english', null),
+    ('english', 'english_speaker', '', '', 'special', 'english', null),
+    ('science', 'nature_explorer', '', '', 'regular', 'science', null),
+    ('science', 'young_scientist', '', '', 'special', 'science', null),
+    ('geometry', 'geometry_ace', '', '', 'regular', 'geometry', null),
+    ('geometry', 'shape_master', '', '', 'special', 'geometry', null),
+
+
+    ('general', 'parent_activity', '', '', 'regular', null,    null)
 ) as v(slug, card_key, name_he, description_he, rarity, subject, topic)
 join public.reward_card_series s on s.slug = v.slug
 on conflict (card_key) do nothing;
@@ -656,17 +656,14 @@ from (
     ('number_explorer',      'subject_questions',        'math',    null,           30,   null,  null, null),
     ('math_star',            'subject_questions',        'math',    null,           50,   null,  null, null),
     ('multiplication_champ', 'subject_accuracy',         'math',    'multiplication', 30, 80.00, null, null),
-    ('young_reader',         'subject_questions',        'hebrew',  null,           30,   null,  null, null),
-    ('winning_reader',       'subject_questions',        'hebrew',  null,           50,   null,  null, null),
-    ('word_discoverer',      'subject_accuracy',         'hebrew',  'vocabulary',   20,   70.00, null, null),
+
     ('english_star',         'subject_questions',        'english', null,           30,   null,  null, null),
     ('english_speaker',      'subject_questions',        'english', null,           50,   null,  null, null),
     ('nature_explorer',      'subject_questions',        'science', null,           30,   null,  null, null),
     ('young_scientist',      'subject_questions',        'science', null,           50,   null,  null, null),
     ('geometry_ace',         'subject_questions',        'geometry', null,          30,   null,  null, null),
     ('shape_master',         'subject_questions',        'geometry', null,          50,   null,  null, null),
-    ('homeland_explorer',    'subject_questions',        'moledet', null,           30,   null,  null, null),
-    ('homeland_scholar',     'subject_questions',        'moledet', null,           50,   null,  null, null),
+
     ('parent_activity',      'parent_activity_complete', null,      null,           null, null,  null,    1)
 ) as r(card_key, rule_type, subject, topic, min_questions, min_accuracy, min_streak_days, min_completed_activities)
 join public.reward_cards c on c.card_key = r.card_key and c.card_type = 'achievement'

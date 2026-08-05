@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRAFTS_DIR = path.join(__dirname, "../docs/learning-book/science/g6/drafts");
 
 const CLIMATE_FEAR_RE =
-  /סוף העולם|אין תקווה|נגמר הכל|נחרב|אסון בלתי נמנע|אין מה לעשות/i;
+  / | | ||  |  /i;
 
 const { errors, markdownNotes, pageCount } = verifyScienceGradeBookContent({
   gradeKey: "g6",
@@ -31,13 +31,13 @@ const { errors, markdownNotes, pageCount } = verifyScienceGradeBookContent({
       if (CLIMATE_FEAR_RE.test(childFacing)) {
         extra.push(`${pageId}: climate content must not use fear-based framing`);
       }
-      if (!/פעול|בחיר|אפשר/.test(childFacing)) {
+      if (!/||/.test(childFacing)) {
         extra.push(`${pageId}: climate/environment content should be action-oriented`);
       }
     }
     if (pageId === "materials") {
-      if (!childFacing.includes("בטיחות") && !childFacing.includes("בטוח")) {
-        extra.push("materials: must mention safety (בטיחות/בטוח)");
+      if (!childFacing.includes("") && !childFacing.includes("")) {
+        extra.push("materials: must mention safety (/)");
       }
     }
     return extra;

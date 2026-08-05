@@ -232,11 +232,11 @@ create table if not exists public.arcade_achievements (
 
 insert into public.arcade_achievements (key, name_he, description_he, condition_type, condition_value) values
 
-  ('first_game', 'שחקן ראשון', 'שחק משחק ארקייד אחד', 'games_played', 1),
+  ('first_game', '', '', 'games_played', 1),
 
-  ('ten_wins', '10 ניצחונות', 'נצח 10 פעמים', 'wins', 10),
+  ('ten_wins', '', '', 'wins', 10),
 
-  ('fifty_games', '50 משחקים', 'שחק 50 משחקי ארקייד', 'games_played', 50)
+  ('fifty_games', '', '', 'games_played', 50)
 
 on conflict (key) do nothing;
 

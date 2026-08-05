@@ -59,16 +59,16 @@ const ENGLISH_IN_HEBREW =
   /\b(?:the|and|or|what|when|where|which|choose|select|true|false|DNA|RNA|CO2|H2O|pH)\b/i;
 
 const GRADE_MARKER_RE =
-  /בכיתה\s*[א-ו׳'"]|בכיתה\s*[1-6]|grade\s*[1-6]/i;
+  /\s*[-'"]|\s*[1-6]|grade\s*[1-6]/i;
 
 const ADVANCED_TERMS_G12 = [
-  /מולקול/i,
-  /תא\s/i,
-  /אנד\s?וס\s?כ\s?י/i,
-  /פוטוסינתז/i,
-  /אקולוג/i,
-  /מערכת\s+עצבים/i,
-  /מטבול/i,
+  //i,
+  /\s/i,
+  /\s?\s?\s?/i,
+  //i,
+  //i,
+  /\s+/i,
+  //i,
   /DNA|RNA/i,
 ];
 
@@ -107,7 +107,7 @@ function scanLeaks(text) {
   for (const re of RAW_ID_PATTERNS) {
     if (re.test(text)) issues.push({ code: "raw_id_leak", detail: re.source });
   }
-  if (/\([^)]*(?:בלי|pattern|diagnostic|subtype)[^)]*\)/i.test(text)) {
+  if (/\([^)]*(?:|pattern|diagnostic|subtype)[^)]*\)/i.test(text)) {
     issues.push({ code: "metadata_paren", detail: "suspicious parenthetical" });
   }
   return issues;
@@ -135,7 +135,7 @@ function metadataRowPass(q) {
 }
 
 const INTERNAL_STEM_METADATA =
-  /(?:^|\s)(?:כיתה\s*[א-ו׳'"]\s*·\s*רמה|·\s*מוקד\s+[a-z0-9_]+)/i;
+  /(?:^|\s)(?:\s*[-'"]\s*·\s*|·\s*\s+[a-z0-9_]+)/i;
 
 function structuralPass(q) {
   const fails = [];
@@ -226,7 +226,7 @@ function mcqIssues(q) {
   const distractors = opts.filter((_, i) => i !== q.correctIndex);
   const plausible = distractors.filter((d) => {
     const dl = String(d).trim().length;
-    return dl >= 3 && !/^לא\s/.test(String(d).trim()) && !/^אין\s/.test(String(d).trim());
+    return dl >= 3 && !/^\s/.test(String(d).trim()) && !/^\s/.test(String(d).trim());
   });
   if (distractors.length >= 2 && plausible.length < 2) {
     issues.push({
@@ -267,20 +267,20 @@ function gradeFitIssues(q) {
     for (const gk of grades) {
       const n = parseGk(gk);
       const markers = [
-        ["א", 1],
-        ["ב", 2],
-        ["ג", 3],
-        ["ד", 4],
-        ["ה", 5],
-        ["ו", 6],
+        ["", 1],
+        ["", 2],
+        ["", 3],
+        ["", 4],
+        ["", 5],
+        ["", 6],
       ];
       for (const [heb, gn] of markers) {
-        if (stem.includes(`כיתה ${heb}`) && n != null && n !== gn) {
+        if (stem.includes(` ${heb}`) && n != null && n !== gn) {
           issues.push({
             code: "grade_marker_mismatch",
             severity: "warn",
             grade: gk,
-            detail: `Stem mentions כיתה ${heb} but question tagged ${gk}`,
+            detail: `Stem mentions  ${heb} but question tagged ${gk}`,
           });
         }
       }
@@ -334,28 +334,28 @@ function gradeFitIssues(q) {
 }
 
 function classifyThinBucket({ grade, topic, level, n }) {
-  if (n >= 8) return { launch: "ok", repetition: "ok", label: "מספיק" };
+  if (n >= 8) return { launch: "ok", repetition: "ok", label: "" };
   if (n < 5) {
     return {
       launch: "blocks",
       repetition: "high",
-      label: "דל וחוסם launch",
-      recommendation: `הוסף ≥${8 - n} שאלות ל-${grade}/${topic}/${level} או הרחב minLevel/maxLevel`,
+      label: "  launch",
+      recommendation: ` ≥${8 - n}  -${grade}/${topic}/${level}   minLevel/maxLevel`,
     };
   }
   if (n <= 6) {
     return {
       launch: "risk",
       repetition: "high",
-      label: "דל וגורם לחזרתיות",
-      recommendation: `העלה ל-8+ שאלות; בינתיים צפוי חזרה ב-${topic} ${level}`,
+      label: "  ",
+      recommendation: ` -8+ ;    -${topic} ${level}`,
     };
   }
   return {
     launch: "advisory",
     repetition: "medium",
-    label: "דל אבל סביר",
-    recommendation: "מעקב — לא חוסם launch אם שאר הכיתה מכוסה",
+    label: "  ",
+    recommendation: " —   launch    ",
   };
 }
 
@@ -497,12 +497,12 @@ async function main() {
           code: iss.code,
           fixSuggestion:
             iss.code === "stem_too_long_for_grade"
-              ? "קצר ניסוח או העבר לכיתה גבוהה יותר"
+              ? "      "
               : iss.code === "advanced_term_in_g12"
-                ? "החלף מונח מתקדם בניסוח יומיומי לג1–ג2"
+                ? "     1–2"
                 : iss.code === "grade_marker_mismatch"
-                  ? "הסר 'בכיתה X' מהשאלה או יישר grades[]"
-                  : "בדוק cognitiveLevel ואורך מסיחים",
+                  ? " ' X'    grades[]"
+                  : " cognitiveLevel  ",
         });
       }
     }
@@ -584,8 +584,8 @@ async function main() {
       examples: v.stems,
       recommendation:
         v.count >= 25
-          ? "פזר stems/מסיחים או הוסף variant families"
-          : "מעקב חזרתיות — לא חוסם launch",
+          ? " stems/   variant families"
+          : "  —   launch",
     }));
 
   const stage5 = {
@@ -667,12 +667,12 @@ async function main() {
         examples: (stage3.issuesByCode[issueType] || []).slice(0, 2),
         recommendation:
           issueType === "true_false_two_options_runtime"
-            ? "המר ל-MCQ 4 אפשרויות או הוסף שני מסיחים הגיוניים"
+            ? " -MCQ 4      "
             : issueType === "mcq_option_count_not_4"
-              ? "השלם ל-4 options"
+              ? " -4 options"
               : issueType === "correct_answer_length_bias"
-                ? "איזון אורך מסיחים"
-                : "ראה דוגמאות ב-JSON",
+                ? "  "
+                : "  -JSON",
       })),
   };
 
@@ -697,7 +697,7 @@ async function main() {
     "",
     "## Grade table (stage 2)",
     "",
-    "| כיתה | שאלות | topics | metadata pass | failures |",
+    "|  |  | topics | metadata pass | failures |",
     "| --- | ---: | ---: | ---: | ---: |",
     ...payload.gradeTable.map(
       (r) =>

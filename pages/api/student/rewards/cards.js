@@ -6,10 +6,11 @@ import {
 import { guardCardRewardsApi } from "../../../../lib/rewards/guards.server.js";
 import { getStudentCardsView } from "../../../../lib/rewards/server/reward-cards.server.js";
 import { isCardRewardsSystemEnabledInDb } from "../../../../lib/rewards/server/reward-settings.server.js";
+import { resolveCardApiLocales } from "../../../../lib/rewards/server/card-api-locale.server.js";
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
-  res.setHeader("Vary", "Cookie");
+  res.setHeader("Vary", "Cookie, Accept-Language, x-lk-interface-locale");
 
   if (req.method !== "GET") {
     return res.status(405).json({ ok: false, error: "Method not allowed" });
@@ -29,8 +30,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const view = await getStudentCardsView(supabase, auth.studentId);
-    return res.status(200).json({ ok: true, ...view });
+    const { contentLocale } = resolveCardApiLocales(req);
+    const view = await getStudentCardsView(supabase, auth.studentId, contentLocale);
+    return res.status(200).json({ ok: true, contentLocale, ...view });
   } catch (err) {
     return res.status(500).json({ ok: false, error: err?.message || "cards_load_failed" });
   }

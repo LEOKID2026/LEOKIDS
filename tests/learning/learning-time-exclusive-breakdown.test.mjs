@@ -93,8 +93,8 @@ test("normalize rejects incomplete breakdown; accepts full", () => {
     bySubject: [{ subjectKey: "math", questionPracticeMinutes: 4, bookReadingMinutes: 1 }],
   });
   assert.ok(n);
-  assert.equal(n.bySubject[0].subjectLabel, "מתמטיקה");
-  assert.match(formatLearningTimeDivisionLineHe(n), /חלוקת זמן הלמידה/);
+  assert.equal(n.bySubject[0].subjectLabel, "");
+  assert.match(formatLearningTimeDivisionLineHe(n), /  /);
   assert.equal(formatExclusiveLearningMinutesHe(4), "4");
 });
 
@@ -169,7 +169,7 @@ test("UI sources do not use raw meta.learningTimeBreakdown for exclusive display
   assert.match(detailedPage, /displayMode === \"full\"/);
   assert.doesNotMatch(detailedPage, /meta\.learningTimeBreakdown/);
   const regularPage = readFileSync(join(ROOT, "pages/learning/parent-report.js"), "utf8");
-  assert.match(regularPage, /חלוקת זמן הלמידה/);
+  assert.match(regularPage, /  /);
   assert.match(regularPage, /layout=\"vertical\"/);
   assert.match(regularPage, /stackId=\"lt\"/);
   assert.doesNotMatch(regularPage, /meta\.learningTimeBreakdown/);
@@ -179,14 +179,14 @@ test("UI sources do not use raw meta.learningTimeBreakdown for exclusive display
     regularPage.indexOf('grid grid-cols-2 md:grid-cols-4'),
     summaryCardsEnd
   );
-  assert.doesNotMatch(combinedAfterCards, /חלוקת זמן הלמידה/);
-  const learningTableIdx = regularPage.indexOf("סוג הלמידה");
-  const recommendationsIdx = regularPage.indexOf("💡 המלצות");
+  assert.doesNotMatch(combinedAfterCards, /  /);
+  const learningTableIdx = regularPage.indexOf(" ");
+  const recommendationsIdx = regularPage.indexOf("💡 ");
   assert.ok(learningTableIdx > 0 && recommendationsIdx > learningTableIdx);
-  const graphSectionIdx = regularPage.indexOf('aria-label="גרפים"');
+  const graphSectionIdx = regularPage.indexOf('aria-label=""');
   assert.ok(graphSectionIdx > recommendationsIdx);
-  const learningChartTitleIdx = regularPage.indexOf("חלוקת זמן הלמידה", graphSectionIdx);
-  const dailyChartIdx = regularPage.indexOf("פעילות יומית", graphSectionIdx);
+  const learningChartTitleIdx = regularPage.indexOf("  ", graphSectionIdx);
+  const dailyChartIdx = regularPage.indexOf(" ", graphSectionIdx);
   assert.ok(learningChartTitleIdx > graphSectionIdx);
   assert.ok(dailyChartIdx > learningChartTitleIdx);
   const surface = readFileSync(join(ROOT, "components/parent-report-detailed-surface.jsx"), "utf8");
@@ -212,5 +212,5 @@ test("summary mode keeps division line wiring; details gated to full", () => {
   const fullGateIdx = detailedPage.lastIndexOf('displayMode === "full"', detailsIdx);
   assert.ok(detailsIdx > 0);
   assert.ok(fullGateIdx > 0 && fullGateIdx < detailsIdx);
-  assert.match(detailedPage, /כיסוי לפי מקצוע/);
+  assert.match(detailedPage, /  /);
 });

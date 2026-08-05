@@ -121,7 +121,7 @@ function assertLineStructure(line, context) {
     if (seg.type === "text" && /\d\s*[+−\-=×÷]\s*\d/.test(seg.value)) {
       fail(`${context}: un-isolated math in text segment "${seg.value}" from "${line}"`);
     }
-    if (seg.type === "math" && /שלב/u.test(seg.value)) {
+    if (seg.type === "math" && //u.test(seg.value)) {
       fail(`${context}: step label inside math run "${seg.value}"`);
     }
   }
@@ -196,7 +196,7 @@ const baseUrl = process.env.BIDI_QA_BASE_URL?.replace(/\/$/, "");
 
 async function navigateToSection(page, sectionNumber) {
   for (let i = 0; i < 8; i += 1) {
-    const prev = page.getByRole("button", { name: "עמוד קודם" });
+    const prev = page.getByRole("button", { name: " " });
     if (!(await prev.isEnabled())) break;
     await prev.scrollIntoViewIfNeeded();
     await prev.click();
@@ -205,7 +205,7 @@ async function navigateToSection(page, sectionNumber) {
 
   const targetIndex = Math.max(0, sectionNumber - 1);
   for (let i = 0; i < targetIndex; i += 1) {
-    const next = page.getByRole("button", { name: "עמוד הבא" });
+    const next = page.getByRole("button", { name: " " });
     if (!(await next.isEnabled())) break;
     await next.scrollIntoViewIfNeeded();
     await next.click();
@@ -265,7 +265,7 @@ async function waitForProductionHydration(page, url) {
   }
 
   await page.waitForTimeout(1500);
-  const next = page.getByRole("button", { name: "עמוד הבא" });
+  const next = page.getByRole("button", { name: " " });
   if (!(await next.isEnabled())) {
     return { ok: false, reason: "next button disabled" };
   }
@@ -304,11 +304,11 @@ async function runPlaywrightDomChecks() {
   };
 
   const G5_REQUIRED_TEXT = {
-    2: ["155 ושארית 7", "נשאר 7"],
+    2: ["155  7", " 7"],
     4: [
-      "שלב 1: מחשבים כמה קרוב אפשר להגיע.",
-      "שלב 2: מחשבים מה נשאר.",
-      "תשובה: 155 ושארית 7",
+      " 1:     .",
+      " 2:   .",
+      ": 155  7",
     ],
   };
 
@@ -333,7 +333,7 @@ async function runPlaywrightDomChecks() {
         }
 
         for (let i = 0; i < 6; i += 1) {
-          const prev = page.getByRole("button", { name: "עמוד קודם" });
+          const prev = page.getByRole("button", { name: " " });
           if (!(await prev.isEnabled())) break;
           await prev.click();
           await page.waitForTimeout(300);
@@ -347,7 +347,7 @@ async function runPlaywrightDomChecks() {
           if (bodyText.includes("[DRAFT") || bodyText.includes("**") || bodyText.includes(":::")) {
             fail(`${url} §${sectionNumber}: raw markdown artifacts in visible text`);
           }
-          if (/מחולק\s*=\s*\(מחלק/.test(bodyText)) {
+          if (/\s*=\s*\(/.test(bodyText)) {
             fail(`${url} §${sectionNumber}: verbal formula still visible`);
           }
 
@@ -379,13 +379,13 @@ async function runPlaywrightDomChecks() {
         screenshotPaths.push("tmp/bidi-qa-screenshots/g5-div_with_remainder-topic-cards-mobile.png");
 
         const nextTitle = await page
-          .getByText("נושא הבא")
+          .getByText(" ")
           .locator("..")
           .innerText();
-        if (/חילוקבמחלק|דו-ספרתינושא/.test(nextTitle)) {
+        if (/|-/.test(nextTitle)) {
           fail(`${url}: topic card text appears glued: ${JSON.stringify(nextTitle)}`);
         }
-        if (!nextTitle.includes("חילוק במחלק דו-ספרתי")) {
+        if (!nextTitle.includes("  -")) {
           fail(`${url}: topic card missing spaced next title: ${JSON.stringify(nextTitle)}`);
         }
         continue;
@@ -398,7 +398,7 @@ async function runPlaywrightDomChecks() {
       }
 
       await page.waitForTimeout(1500);
-      const loginGate = await page.getByText("כניסה ללמידה").count();
+      const loginGate = await page.getByText(" ").count();
       if (loginGate > 0) {
         notes.push(`DOM skip ${url} — login gate (static checks still apply)`);
         continue;
@@ -422,7 +422,7 @@ async function runPlaywrightDomChecks() {
 
       // Return to section 1 before iterating target sections
       for (let i = 0; i < 6; i += 1) {
-        const prev = page.getByRole("button", { name: "עמוד קודם" });
+        const prev = page.getByRole("button", { name: " " });
         if (!(await prev.isEnabled())) break;
         await prev.click();
         await page.waitForTimeout(300);

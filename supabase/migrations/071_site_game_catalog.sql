@@ -93,93 +93,93 @@ insert into public.site_game_catalog (
   game_key, category, title_he, route, hub_route, is_enabled, sort_order, emoji, blurb_he
 ) values
   (
-    'fourline', 'online', 'ארבע בשורה', '/student/games/fourline', '/student/arcade',
+    'fourline', 'online', 'Four in a Row', '/student/games/fourline', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'fourline'), true),
-    10, '🎯', 'ארבע בשורה מרובת משתתפים'
+    10, '🎯', 'Play with friends in the arcade'
   ),
   (
-    'ludo', 'online', 'לודו', '/student/games/ludo', '/student/arcade',
+    'ludo', 'online', 'Ludo', '/student/games/ludo', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'ludo'), true),
-    20, '🎲', 'לודו קלאסי עם חברים'
+    20, '🎲', 'Play with friends in the arcade'
   ),
   (
-    'snakes-and-ladders', 'online', 'נחשים וסולמות', '/student/games/snakes-and-ladders', '/student/arcade',
+    'snakes-and-ladders', 'online', 'Snakes and Ladders', '/student/games/snakes-and-ladders', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'snakes-and-ladders'), true),
-    30, '🐍', 'נחשים וסולמות מרובי משתתפים'
+    30, '🐍', 'Play with friends in the arcade'
   ),
   (
-    'checkers', 'online', 'דמקה', '/student/games/checkers', '/student/arcade',
+    'checkers', 'online', 'Checkers', '/student/games/checkers', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'checkers'), true),
-    40, '♟️', 'דמקה מרובת משתתפים'
+    40, '♟️', 'Play with friends in the arcade'
   ),
   (
-    'chess', 'online', 'שחמט', '/student/games/chess', '/student/arcade',
+    'chess', 'online', 'Chess', '/student/games/chess', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'chess'), true),
-    50, '♚', 'שחמט מרובה משתתפים'
+    50, '♚', 'Play with friends in the arcade'
   ),
   (
-    'dominoes', 'online', 'דומינו', '/student/games/dominoes', '/student/arcade',
+    'dominoes', 'online', 'Dominoes', '/student/games/dominoes', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'dominoes'), true),
-    60, '🁫', 'דומינו מרובה משתתפים'
+    60, '🁫', 'Play with friends in the arcade'
   ),
   (
-    'bingo', 'online', 'בינגו', '/student/games/bingo', '/student/arcade',
+    'bingo', 'online', 'Bingo', '/student/games/bingo', '/student/arcade',
     coalesce((select enabled from public.arcade_games where game_key = 'bingo'), true),
-    70, '🎱', 'בינגו מרובה משתתפים'
+    70, '🎱', 'Play with friends in the arcade'
   ),
-  ('tic-tac-toe', 'offline', 'איקס עיגול XL', '/offline/tic-tac-toe', '/offline', true, 10, '❌⭕️', 'לוחות מ 3×3 ועד 7×7'),
-  ('rock-paper-scissors', 'offline', 'אבן · נייר · מספריים', '/offline/rock-paper-scissors', '/offline', true, 20, '🪨📄✂️', 'משחקים מהירים על אותו מכשיר'),
-  ('tap-battle', 'offline', 'קרב הקשות', '/offline/tap-battle', '/offline', true, 30, '⚡️', 'מי מקיש הכי מהר?'),
-  ('memory-match', 'offline', 'התאמת זיכרון', '/offline/memory-match', '/offline', true, 40, '🧠', 'התאמת זוגות על אותו מכשיר'),
+  ('tic-tac-toe', 'offline', 'Tic-Tac-Toe', '/offline/tic-tac-toe', '/offline', true, 10, '❌⭕️', 'Boards from 3×3 to 7×7 with score tracking.'),
+  ('rock-paper-scissors', 'offline', 'Rock · Paper · Scissors', '/offline/rock-paper-scissors', '/offline', true, 20, '🪨📄✂️', 'Quick rounds — best of all.'),
+  ('tap-battle', 'offline', 'Tap Battle', '/offline/tap-battle', '/offline', true, 30, '⚡️', 'Each side taps as fast as they can — who wins?'),
+  ('memory-match', 'offline', 'Memory Match', '/offline/memory-match', '/offline', true, 40, '🧠', 'Flip cards, find pairs, and try to win.'),
   (
-    'catcher', 'solo', 'תופס עם ליאו', '/student/solo-games/catcher', '/student/solo-games',
+    'catcher', 'solo', 'Catch with Leo', '/student/solo-games/catcher', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'catcher'), true),
-    10, '🎯', 'תפסו מטבעות והתרחקו מפצצות'
+    10, '🎯', 'Catch coins and stay away from bombs!'
   ),
   (
-    'flyer', 'solo', 'ליאו במטוס', '/student/solo-games/flyer', '/student/solo-games',
+    'flyer', 'solo', 'Leo in a Plane', '/student/solo-games/flyer', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'flyer'), true),
-    20, '🪂', 'החזיקו לטוס ואספו מטבעות'
+    20, '🪂', 'Hold to fly, collect coins, and avoid obstacles!'
   ),
   (
-    'puzzle', 'solo', 'חידת ליאו', '/student/solo-games/puzzle', '/student/solo-games',
+    'puzzle', 'solo', 'Leo''s Puzzle', '/student/solo-games/puzzle', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'puzzle'), true),
-    30, '🧩', 'שלבו אריחים לפני שהזמן נגמר'
+    30, '🧩', 'Merge tiles and rack up points before time runs out!'
   ),
   (
-    'memory', 'solo', 'זיכרון ליאו', '/student/solo-games/memory', '/student/solo-games',
+    'memory', 'solo', 'Leo''s Memory Game', '/student/solo-games/memory', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'memory'), true),
-    40, '🧠', 'מצאו זוגות לפני שהשעון נגמר'
+    40, '🧠', 'Flip cards and find pairs before the clock runs out!'
   ),
   (
-    'leo-jump', 'solo', 'ליאו קופץ', '/student/solo-games/leo-jump', '/student/solo-games',
+    'leo-jump', 'solo', 'Leo Jumps', '/student/solo-games/leo-jump', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'leo-jump'), true),
-    50, '🦘', 'קפצו מעל מכשולים'
+    50, '🦘', 'Jump over obstacles and collect coins!'
   ),
   (
-    'balloons', 'solo', 'פיצוץ בלונים', '/student/solo-games/balloons', '/student/solo-games',
+    'balloons', 'solo', 'Balloon Pop', '/student/solo-games/balloons', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'balloons'), true),
-    60, '🎈', 'פוצצו בלונים לפני שהזמן נגמר'
+    60, '🎈', 'Pop balloons before time runs out!'
   ),
   (
-    'maze', 'solo', 'מבוך ליאו', '/student/solo-games/maze', '/student/solo-games',
+    'maze', 'solo', 'Leo''s Maze', '/student/solo-games/maze', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'maze'), true),
-    70, '🌀', 'מצאו את היציאה במבוך'
+    70, '🌀', 'Find the exit of the maze before time runs out!'
   ),
   (
-    'picture-puzzle', 'solo', 'פאזל תמונה', '/student/solo-games/picture-puzzle', '/student/solo-games',
+    'picture-puzzle', 'solo', 'Picture Puzzle', '/student/solo-games/picture-puzzle', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'picture-puzzle'), true),
-    80, '🖼️', 'סדרו את חלקי התמונה'
+    80, '🖼️', 'Complete the pieces of Leo''s picture!'
   ),
   (
-    'target-tap', 'solo', 'קליעה למטרה', '/student/solo-games/target-tap', '/student/solo-games',
+    'target-tap', 'solo', 'Target Tap', '/student/solo-games/target-tap', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'target-tap'), true),
-    90, '🎯', 'לחצו על המטרות בזמן'
+    90, '🎯', 'Tap the targets before they disappear!'
   ),
   (
-    'sort-shapes', 'solo', 'מיון צורות', '/student/solo-games/sort-shapes', '/student/solo-games',
+    'sort-shapes', 'solo', 'Sort Shapes', '/student/solo-games/sort-shapes', '/student/solo-games',
     coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'sort-shapes'), true),
-    100, '🔺', 'מיינו צורות לתיבות הנכונות'
+    100, '🔺', 'Sort shapes and colors into the correct boxes!'
   )
 on conflict (game_key) do update set
   category = excluded.category,

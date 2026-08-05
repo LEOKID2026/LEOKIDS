@@ -9,8 +9,8 @@ import {
   ADMIN_LOADING,
   ADMIN_TEACHERS_TITLE,
   apiErrorMessageHe,
-} from "../../../lib/admin-portal/admin-ui.he.js";
-import { ADMIN_PENDING_REQUESTS_TAB } from "../../../lib/auth/auth-registration.he.js";
+} from "../../../lib/admin-portal/admin-ui.js";
+import { ADMIN_PENDING_REQUESTS_TAB } from "../../../lib/auth/auth-registration.js";
 
 export default function AdminTeachersIndexPage() {
   const { state, accessToken } = useAdminSession();
@@ -59,7 +59,7 @@ export default function AdminTeachersIndexPage() {
                 }`}
                 data-testid="admin-teachers-filter-all"
               >
-                הכל
+
               </button>
               <button
                 type="button"

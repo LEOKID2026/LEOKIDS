@@ -295,14 +295,14 @@ function checkGeometrySequenceRules() {
     subject: "geometry",
     gradeLevel: "g3",
   });
-  if (generic !== "מיומנות בגאומטריה") {
+  if (generic !== " ") {
     fail("diagnostic.label", `geo_area_triangle_formula g3 label not fail-closed: ${generic}`);
   }
   const specific = resolveClassroomSkillLabelHe("geo_area_triangle_formula", {
     subject: "geometry",
     gradeLevel: "g5",
   });
-  if (specific !== "שטח משולש") {
+  if (specific !== " ") {
     fail("diagnostic.label", `geo_area_triangle_formula g5 label wrong: ${specific}`);
   }
 }

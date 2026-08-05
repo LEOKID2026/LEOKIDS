@@ -46,12 +46,12 @@ const BANNED = [
   "__RAW_PROBE_GEOM_B__",
   "__RAW_INTERVENTION_GEOM_B__",
   "__PATTERN_GEOM_B_INTERNAL__",
-  "עם סימון זווית/צלע",
-  "כרטיסיות הגדרה",
-  "עם/בלי קו גובה",
-  "הדגשת גובה",
-  "עם/בלי פריסה",
-  "גובה חיצוני מודגש",
+  "  /",
+  " ",
+  "/  ",
+  " ",
+  "/ ",
+  "  ",
 ];
 
 function assertEq(name, actual, expected) {
@@ -84,7 +84,7 @@ function r(sid, tid, bucket, grade, slot) {
 function rowGeo(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "גאומטריה",
+    displayName: "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -104,8 +104,8 @@ function buildGeoUnit(taxonomyId, bucketKey, topicRowKey) {
     subjectId: "geometry",
     topicRowKey,
     bucketKey,
-    displayName: "גאומטריה",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
       immediateActionHe: "__RAW_PROBE_GEOM_B__",
       shortPracticeHe: "__RAW_INTERVENTION_GEOM_B__",
@@ -114,7 +114,7 @@ function buildGeoUnit(taxonomyId, bucketKey, topicRowKey) {
     taxonomy: {
       id: taxonomyId,
       patternHe: "__PATTERN_GEOM_B_INTERNAL__",
-      topicHe: "גאומטריה",
+      topic: "",
       subskillHe: "test",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
@@ -214,7 +214,7 @@ const mk = (taxonomyId, bucket, gradeKey) => {
       startDate: "2026-05-01",
       endDate: "2026-05-08",
       period: "week",
-      playerName: "בדיקה",
+      playerName: "",
       summary: { totalQuestions: 20 },
       geometryTopics: { [trk]: rowGeo(trk, bucket, gradeKey) },
       diagnosticEngineV2: { units: [buildGeoUnit(taxonomyId, bucket, trk)] },
@@ -227,7 +227,7 @@ const d1 = buildDetailedParentReportFromBaseReport(mk("G-01", "quadrilaterals", 
 const mp1 = d1?.subjectProfiles?.find((p) => p.subject === "geometry");
 assertEq("detailed G-01 quad g4", mp1?.parentActionHe, qCopy);
 assertNoBanned("detailed G-01", mp1?.parentActionHe);
-const tp1 = buildTruthPacketV1(d1, { scopeType: "topic", scopeId: mk("G-01", "quadrilaterals", "g4").trk, scopeLabel: "מרובעים" });
+const tp1 = buildTruthPacketV1(d1, { scopeType: "topic", scopeId: mk("G-01", "quadrilaterals", "g4").trk, scopeLabel: "" });
 assertNoBanned("truth G-01", JSON.stringify(tp1?.narrative?.textSlots || {}));
 
 const { base: b3, trk: t3 } = mk("G-03", "heights", "g5");
@@ -240,13 +240,13 @@ const { base: b8, trk: t8 } = mk("G-08", "triangles", "g6");
 const d8 = buildDetailedParentReportFromBaseReport(b8, { period: "week" });
 const mp8 = d8?.subjectProfiles?.find((p) => p.subject === "geometry");
 assertEq("detailed G-08 triangles g6", mp8?.parentActionHe, tCopy);
-const tp8 = buildTruthPacketV1(d8, { scopeType: "topic", scopeId: t8, scopeLabel: "משולשים" });
+const tp8 = buildTruthPacketV1(d8, { scopeType: "topic", scopeId: t8, scopeLabel: "" });
 assertNoBanned("truth G-08", JSON.stringify(tp8?.narrative?.textSlots || {}));
 
 const u8 = b8.diagnosticEngineV2.units[0];
 const sh = summarizeV2UnitsForSubjectForTests(b8.diagnosticEngineV2.units, {
   subjectReportQuestions: 12,
-  subjectLabelHe: "גאומטריה",
+  subjectLabelHe: "",
   topicMap: b8.geometryTopics,
   reportTotalQuestions: 20,
 });

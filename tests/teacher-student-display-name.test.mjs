@@ -6,13 +6,13 @@ import {
 } from "../lib/teacher-server/teacher-students.server.js";
 
 test("teacherStudentDisplayName returns full first and last name", () => {
-  assert.equal(teacherStudentDisplayName("  איתי   ביטון  "), "איתי ביטון");
+  assert.equal(teacherStudentDisplayName("       "), " ");
 });
 
 test("maskStudentFullName still abbreviates for guardian-style surfaces", () => {
-  assert.equal(maskStudentFullName("איתי ביטון"), "איתי ב.");
+  assert.equal(maskStudentFullName(" "), " .");
 });
 
 test("teacherStudentDisplayName preserves multi-part names", () => {
-  assert.equal(teacherStudentDisplayName("דנה לוי כהן"), "דנה לוי כהן");
+  assert.equal(teacherStudentDisplayName("  "), "  ");
 });

@@ -70,7 +70,7 @@ for (const bookDir of listBookDirs(BOOKS_ROOT)) {
     page.estimatedCharacters = text.length;
     page.estimatedWords = countWords(text);
     fullParts.push(
-      `## Chapter ${padPageNum(page.pageNumber)} — עמוד ${page.pageNumber}`,
+      `## Chapter ${padPageNum(page.pageNumber)} —  ${page.pageNumber}`,
       "",
       text,
       ""

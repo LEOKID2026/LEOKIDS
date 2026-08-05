@@ -114,15 +114,15 @@ import {
 
 const ACTIONS = [
 
-  { id: "feed", emoji: "🍖", label: "אוכל" },
+  { id: "feed", emoji: "🍖", label: "All" },
 
-  { id: "bath", emoji: "🛁", label: "מקלחת" },
+  { id: "bath", emoji: "🛁", label: "to" },
 
-  { id: "play", emoji: "⚽", label: "משחק" },
+  { id: "play", emoji: "⚽", label: "to" },
 
-  { id: "pet", emoji: "🤗", label: "ליטוף" },
+  { id: "pet", emoji: "🤗", label: "to" },
 
-  { id: "rest", emoji: "😴", label: "מנוחה", wakeEmoji: "☀️", wakeLabel: "להעיר" },
+  { id: "rest", emoji: "😴", label: "to", wakeEmoji: "☀️", wakeLabel: "to" },
 
 ];
 
@@ -732,9 +732,9 @@ export default function LeoDogGame() {
 
     return (
 
-      <DevPrototypeShell title="הכלב של ליאו" subtitle="טוען...">
+      <DevPrototypeShell title="All to to" subtitle="...">
 
-        <div className="flex flex-1 items-center justify-center text-white/60 text-sm">טוען...</div>
+        <div className="flex flex-1 items-center justify-center text-white/60 text-sm">...</div>
 
       </DevPrototypeShell>
 
@@ -748,9 +748,9 @@ export default function LeoDogGame() {
 
     <DevPrototypeShell
 
-      title="הכלב של ליאו"
+      title="All to to"
 
-      subtitle="טפלו בליאו, שחקו איתו וראו איך הוא מגיב"
+      subtitle="to to,"
 
       headerExtra={<LinkBack href="/dev/solo-game-prototypes" />}
 
@@ -1014,7 +1014,7 @@ export default function LeoDogGame() {
 
         <div className={styles.debugPanel}>
 
-          <p className={styles.debugTitle}>🛠️ Debug (אדמין)</p>
+          <p className={styles.debugTitle}>🛠️ Debug ()</p>
 
           <div className={styles.debugBtns}>
 
@@ -1044,37 +1044,37 @@ export default function LeoDogGame() {
 
             <button type="button" className={styles.debugBtn} onClick={() => debugAdvance(1)}>
 
-              +1 שעה
+              +1
 
             </button>
 
             <button type="button" className={styles.debugBtn} onClick={() => debugAdvance(24)}>
 
-              +1 יום
+              +1
 
             </button>
 
             <button type="button" className={styles.debugBtn} onClick={() => debugAdvance(72)}>
 
-              +3 ימים
+              +3
 
             </button>
 
             <button type="button" className={styles.debugBtn} onClick={debugDirty}>
 
-              לכלך
+
 
             </button>
 
             <button type="button" className={styles.debugBtn} onClick={debugReset}>
 
-              איפוס
+
 
             </button>
 
             <button type="button" className={styles.debugBtn} onClick={() => setShowRaw((v) => !v)}>
 
-              {showRaw ? "הסתר state" : "הצג state"}
+              {showRaw ? " state" : " state"}
 
             </button>
 
@@ -1138,7 +1138,7 @@ function LinkBack({ href }) {
 
     >
 
-      אבטיפוסים
+
 
     </a>
 

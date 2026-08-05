@@ -126,26 +126,26 @@ const EXCLUDE_PATH_RE = [
 ];
 
 const RISKY_TERMS = [
-  ["מנוע", "engine_reference", "no", "תאר מה המערכת עושה בלי 'מנוע'"],
-  ["אבחון", "diagnostic", "yes_if_explained", "מותר אם ברור למשתמש"],
-  ["סף", "threshold", "no", "החלף בניסוח על כמות נתונים"],
-  ["מגמה", "trend", "yes_if_unexplained", "לא מפתח trend"],
-  ["פער ידע", "engine_jargon", "no", "החלף בנושאים לחיזוק"],
-  ["ביטחון", "confidence", "no", "לא confidence גולמי"],
-  ["confidence", "english_key", "no", "תרגום חובה"],
-  ["severity", "english_key", "no", "תרגום חובה"],
-  ["tier", "english_key", "no", "תרגום חובה"],
-  ["insufficient_data", "english_key", "no", "תרגום חובה"],
-  ["no_data", "english_key", "no", "תרגום חובה"],
-  ["UUID", "technical", "no", "לא למשתמש"],
-  ["PIN", "technical", "no", "לא למשתמש"],
-  ["dashboard", "mixed_he_en", "no", "העדף עברית אחידה"],
-  ["login", "mixed_he_en", "no", "העדף עברית אחידה"],
-  ["report", "mixed_he_en", "careful", "בדוק עקביות דוח/דיווח"],
-  ["טווח", "period_label", "careful", "בדוק מול 'תקופה'"],
-  ["תקופה", "period_label", "careful", "בדוק עקביות"],
-  ["מערכת", "system_word", "careful", "עלול להישמע טכני"],
-  ["דוח", "report_label", "careful", "בדוק עקביות מונח"],
+  ["", "engine_reference", "no", "     ''"],
+  ["", "diagnostic", "yes_if_explained", "   "],
+  ["", "threshold", "no", "    "],
+  ["", "trend", "yes_if_unexplained", "  trend"],
+  [" ", "engine_jargon", "no", "  "],
+  ["", "confidence", "no", " confidence "],
+  ["confidence", "english_key", "no", " "],
+  ["severity", "english_key", "no", " "],
+  ["tier", "english_key", "no", " "],
+  ["insufficient_data", "english_key", "no", " "],
+  ["no_data", "english_key", "no", " "],
+  ["UUID", "technical", "no", " "],
+  ["PIN", "technical", "no", " "],
+  ["dashboard", "mixed_he_en", "no", "  "],
+  ["login", "mixed_he_en", "no", "  "],
+  ["report", "mixed_he_en", "careful", "  /"],
+  ["", "period_label", "careful", "  ''"],
+  ["", "period_label", "careful", " "],
+  ["", "system_word", "careful", "  "],
+  ["", "report_label", "careful", "  "],
 ];
 
 const PRIOR_INVENTORY_PATHS = [
@@ -289,14 +289,14 @@ function inferSurface(rel) {
 
 function inferSection(rel, lineText) {
   const t = `${rel} ${lineText}`;
-  if (/empty|אין |לא נמצא|עדיין אין/i.test(t)) return "empty_state";
-  if (/error|שגיאה|נכשל/i.test(t)) return "error";
-  if (/success|הצלח|נשמר/i.test(t)) return "success";
-  if (/warning|אזהרה|שים לב/i.test(t)) return "warning";
-  if (/help|עזרה|הסבר/i.test(t)) return "help";
-  if (/policy|תנאים|פרטיות/i.test(t)) return "policy";
-  if (/onboard|ברוכים|התחלה/i.test(t)) return "onboarding";
-  if (/nav|menu|תפריט/i.test(t)) return "navigation";
+  if (/empty| | | /i.test(t)) return "empty_state";
+  if (/error||/i.test(t)) return "error";
+  if (/success||/i.test(t)) return "success";
+  if (/warning|| /i.test(t)) return "warning";
+  if (/help||/i.test(t)) return "help";
+  if (/policy||/i.test(t)) return "policy";
+  if (/onboard||/i.test(t)) return "onboarding";
+  if (/nav|menu|/i.test(t)) return "navigation";
   if (/modal|dialog/i.test(t)) return "modal";
   if (/form|input|label/i.test(t)) return "form";
   return "general";
@@ -312,14 +312,14 @@ function classifyCopyType(rel, text, lineText) {
   if (/modal|dialog|Dialog/i.test(lineText) || /modal/i.test(rel)) return "modal";
   if (/placeholder=/i.test(lineText)) return "form_label";
   if (/label|Label/i.test(lineText)) return "label";
-  if (/empty|אין |לא נמצא/i.test(t)) return "empty_state";
-  if (/error|שגיאה|נכשל/i.test(t)) return "error_message";
-  if (/success|הצלח|נשמר/i.test(t)) return "success_message";
-  if (/warning|אזהרה/i.test(t)) return "warning";
-  if (/disclaimer|הבהרה|שים לב/i.test(t)) return "disclaimer";
+  if (/empty| | /i.test(t)) return "empty_state";
+  if (/error||/i.test(t)) return "error_message";
+  if (/success||/i.test(t)) return "success_message";
+  if (/warning|/i.test(t)) return "warning";
+  if (/disclaimer|| /i.test(t)) return "disclaimer";
   if (/nav|menu|href/i.test(lineText)) return "navigation";
-  if (/instruction|הוראות|כיצד|איך/i.test(t)) return "instruction";
-  if (/info|מידע|שימו לב/i.test(t)) return "info";
+  if (/instruction|||/i.test(t)) return "instruction";
+  if (/info|| /i.test(t)) return "info";
   if (text.length > 60) return "explanation";
   return "other";
 }
@@ -361,14 +361,14 @@ function problemType(text, visibility, copyType, rel) {
   }
   const checks = [
     ["mixed_he_en", /[A-Za-z]{4,}/],
-    ["engine_jargon", /מנוע|פער ידע|מסקנה חזקה/],
+    ["engine_jargon", /| | /],
     ["technical_leak", /UUID|PIN\b|filterKey|localhost/],
     ["raw_key_leak", /^[a-z][a-z0-9_]{2,}$/i],
     ["placeholder_leak", /\$\{[^}]+\}|TODO|FIXME|undefined/],
-    ["inconsistent_period", /טווח|תקופה/],
-    ["unclear_cta", /^(המשך|הבא|אישור|שלח|בצע)$/],
-    ["overly_formal", /בהתאם ל|על פי הוראות|לפיכך/],
-    ["overly_childish", /וואו|יאי|מגניב/],
+    ["inconsistent_period", /|/],
+    ["unclear_cta", /^(||||)$/],
+    ["overly_formal", / |  |/],
+    ["overly_childish", /||/],
   ];
   const stripped = text.replace(/\$\{[^}]+\}/g, "");
   for (const [type, re] of checks) {
@@ -389,11 +389,11 @@ function severityFor(problemType) {
 
 function inferStateType(text) {
   const t = String(text);
-  if (/error|שגיאה|נכשל/i.test(t)) return "error";
-  if (/success|הצלח|נשמר|בוצע/i.test(t)) return "success";
-  if (/warning|אזהרה|שים לב/i.test(t)) return "warning";
-  if (/info|מידע|שימו לב/i.test(t)) return "info";
-  if (/empty|אין |לא נמצא|עדיין אין/i.test(t)) return "empty";
+  if (/error||/i.test(t)) return "error";
+  if (/success|||/i.test(t)) return "success";
+  if (/warning|| /i.test(t)) return "warning";
+  if (/info|| /i.test(t)) return "info";
+  if (/empty| | | /i.test(t)) return "empty";
   return "other";
 }
 
@@ -408,7 +408,7 @@ function inferSubject(rel) {
 }
 
 function inferGrade(rel, text) {
-  const m = rel.match(/g([1-6])/i) || text.match(/כיתה\s*([א-ו1-6])/);
+  const m = rel.match(/g([1-6])/i) || text.match(/\s*([-1-6])/);
   return m ? m[1] : "";
 }
 
@@ -438,33 +438,33 @@ function isLearningUI(rel, surface) {
 function meaningPlainHe(entry) {
   const ct = entry.copy_type;
   const surf = entry.surface;
-  if (ct === "button") return "כפתור פעולה — הטקסט מגדיר מה קורה בלחיצה.";
-  if (ct === "empty_state") return "הודעה כשאין תוכן להצגה.";
-  if (ct === "error_message") return "הודעת שגיאה למשתמש.";
-  if (ct === "instruction") return "הוראות שימוש או הסבר תהליך.";
-  if (surf === "help_center") return "טקסט במרכז העזרה.";
-  if (surf === "policy") return "טקסט מדיניות/הסכמה משפטי.";
-  if (surf === "homepage") return "טקסט בדף הבית הציבורי.";
-  if (surf === "learning_lobby" || surf === "learning_screen") return "טקסט בממשק הלמידה.";
-  return "טקסט ממשק כללי שרואה המשתמש.";
+  if (ct === "button") return "  —     .";
+  if (ct === "empty_state") return "   .";
+  if (ct === "error_message") return "  .";
+  if (ct === "instruction") return "    .";
+  if (surf === "help_center") return "  .";
+  if (surf === "policy") return " / .";
+  if (surf === "homepage") return "   .";
+  if (surf === "learning_lobby" || surf === "learning_screen") return "  .";
+  return "    .";
 }
 
 function exampleBefore(entry) {
   const surf = entry.surface;
   const txt = entry.example_output || entry.current_hebrew;
   const map = {
-    homepage: `בדף הבית: ${txt}`,
-    navigation: `בניווט: ${txt}`,
-    login: `במסך כניסה: ${txt}`,
-    register: `בהרשמה: ${txt}`,
-    dashboard: `בלוח בקרה: ${txt}`,
-    help_center: `במרכז העזרה: ${txt}`,
-    onboarding: `בהדרכה: ${txt}`,
-    policy: `במדיניות/הסכמה: ${txt}`,
-    learning_lobby: `בלובי למידה: ${txt}`,
-    learning_screen: `במסך תרגול: ${txt}`,
-    admin_ui: `בממשק ניהול: ${txt}`,
-    api_message: `בהודעת מערכת: ${txt}`,
+    homepage: ` : ${txt}`,
+    navigation: `: ${txt}`,
+    login: ` : ${txt}`,
+    register: `: ${txt}`,
+    dashboard: ` : ${txt}`,
+    help_center: ` : ${txt}`,
+    onboarding: `: ${txt}`,
+    policy: `/: ${txt}`,
+    learning_lobby: ` : ${txt}`,
+    learning_screen: ` : ${txt}`,
+    admin_ui: ` : ${txt}`,
+    api_message: ` : ${txt}`,
   };
   return map[surf] || txt;
 }
@@ -472,9 +472,9 @@ function exampleBefore(entry) {
 function inferActionTriggered(copyType, text, lineText) {
   if (copyType !== "button" && !/onClick/i.test(lineText)) return "";
   if (/navigate|router\.push|href=/i.test(lineText)) return "navigation";
-  if (/submit|save|שמירה/i.test(lineText + text)) return "submit_or_save";
-  if (/close|סגירה|ביטול/i.test(text)) return "dismiss";
-  if (/delete|מחיק/i.test(text)) return "destructive";
+  if (/submit|save|/i.test(lineText + text)) return "submit_or_save";
+  if (/close||/i.test(text)) return "dismiss";
+  if (/delete|/i.test(text)) return "destructive";
   return "generic_action";
 }
 
@@ -485,7 +485,7 @@ function isOwnerCandidate(entry) {
   if (entry.problem_type) return true;
   if (entry.copy_type === "empty_state" && entry.visibility !== "needs_review") return true;
   if (entry.copy_type === "error_message" && entry.text_length < 25) return true;
-  if (/מנוע|UUID|PIN\b|TODO|undefined|\$\{/.test(entry.current_hebrew)) return true;
+  if (/|UUID|PIN\b|TODO|undefined|\$\{/.test(entry.current_hebrew)) return true;
   if (/[A-Za-z]{5,}/.test(entry.current_hebrew) && !/LEO|KIDS|API/i.test(entry.current_hebrew)) return true;
   if (entry.surface === "homepage" && entry.copy_type === "heading") return true;
   return false;

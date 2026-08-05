@@ -281,7 +281,7 @@ export default function CreateWritingWorksheetTab({
           >
             {PUBLIC_WRITING_DEMO_PRESETS.map((preset) => (
               <option key={preset.id} value={preset.id}>
-                {preset.titleHe}
+                {preset.title}
               </option>
             ))}
           </select>
@@ -311,7 +311,7 @@ export default function CreateWritingWorksheetTab({
                 <option key={key} value={key}>
                   {typeof REFERENCE_SHEET_PRESETS[key].labelForLocale === "function"
                     ? REFERENCE_SHEET_PRESETS[key].labelForLocale(locale || "en")
-                    : REFERENCE_SHEET_PRESETS[key].labelHe}
+                    : REFERENCE_SHEET_PRESETS[key].label}
                 </option>
               ))}
             </select>

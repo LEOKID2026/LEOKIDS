@@ -4,74 +4,74 @@ import DevPrototypeShell from "../../../solo-games/prototypes/dev/DevPrototypeSh
 const WEATHER = [
   {
     id: "sun",
-    label: "שמש",
+    label: "Sunny",
     emoji: "☀️",
     temp: 32,
     wind: 1,
     cloud: 0,
     items: ["hat", "water"],
-    hint: "חם ושמש - מה צריך?",
+    hint: "Hot and sunny — what do you need?",
   },
   {
     id: "rain",
-    label: "גשם",
+    label: "Rainy",
     emoji: "🌧️",
     temp: 14,
     wind: 2,
     cloud: 4,
     items: ["umbrella", "boots"],
-    hint: "יורד גשם - מה לוקחים?",
+    hint: "It's raining — what should you take?",
   },
   {
     id: "wind",
-    label: "רוח",
+    label: "Windy",
     emoji: "💨",
     temp: 18,
     wind: 5,
     cloud: 2,
     items: ["kite", "jacket"],
-    hint: "רוח חזקה - מה מתאים?",
+    hint: "Strong wind — what fits best?",
   },
   {
     id: "snow",
-    label: "שלג",
+    label: "Snowy",
     emoji: "❄️",
     temp: -2,
     wind: 3,
     cloud: 5,
     items: ["coat", "boots"],
-    hint: "קר ושלג - מה לובשים?",
+    hint: "Cold and snowy — what do you wear?",
   },
   {
     id: "clouds",
-    label: "עננים",
+    label: "Cloudy",
     emoji: "☁️",
     temp: 20,
     wind: 2,
     cloud: 4,
     items: ["jacket"],
-    hint: "מעונן וקריר - מה עוזר?",
+    hint: "Cloudy and cool — what helps?",
   },
   {
     id: "heat",
-    label: "חום כבד",
+    label: "Heat wave",
     emoji: "🥵",
     temp: 38,
     wind: 0,
     cloud: 0,
     items: ["water", "hat"],
-    hint: "חום כבד מאוד - מה חשוב?",
+    hint: "Very hot — what's important?",
   },
 ];
 
 const GEAR = [
-  { id: "umbrella", emoji: "☂️", name: "מטרייה" },
-  { id: "coat", emoji: "🧥", name: "מעיל" },
-  { id: "hat", emoji: "🧢", name: "כובע" },
-  { id: "water", emoji: "💧", name: "מים" },
-  { id: "boots", emoji: "👢", name: "מגפיים" },
-  { id: "kite", emoji: "🪁", name: "עפיפון" },
-  { id: "jacket", emoji: "🧶", name: "סוודר" },
+  { id: "umbrella", emoji: "☂️", name: "Umbrella" },
+  { id: "coat", emoji: "🧥", name: "Coat" },
+  { id: "hat", emoji: "🧢", name: "Hat" },
+  { id: "water", emoji: "💧", name: "Water" },
+  { id: "boots", emoji: "👢", name: "Boots" },
+  { id: "kite", emoji: "🪁", name: "Kite" },
+  { id: "jacket", emoji: "🧶", name: "Jacket" },
 ];
 
 function pickWeather(exclude = []) {
@@ -123,7 +123,7 @@ export default function WeatherStationPrototype() {
     if (correct) {
       setScore((s) => s + 10);
       setRoundsDone((r) => r + 1);
-      setFeedback(`נכון! ${round.label} - בחירה טובה ✅`);
+      setFeedback(`Correct! ${round.label} — good choices ✅`);
       setFlash("ok");
       window.setTimeout(() => {
         setFlash("");
@@ -132,7 +132,7 @@ export default function WeatherStationPrototype() {
         setFeedback("");
       }, 1600);
     } else {
-      setFeedback("לא בדיוק - חשבו מה מתאים למזג האוויר");
+      setFeedback("Not quite — think about what fits this weather");
       setFlash("bad");
       window.setTimeout(() => setFlash(""), 450);
     }
@@ -140,11 +140,11 @@ export default function WeatherStationPrototype() {
 
   return (
     <DevPrototypeShell
-      title="תחנת מזג האוויר"
-      subtitle="אבטיפוס · התאימו ציוד למזג האוויר"
+      title="Weather Station"
+      subtitle="Prototype · Match gear to the weather"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-[10px] font-bold text-amber-200">
-          {score} · {roundsDone} סבבים
+          {score} · {roundsDone} rounds
         </span>
       }
     >
@@ -152,9 +152,9 @@ export default function WeatherStationPrototype() {
         {phase === "intro" ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
             <p className="text-5xl">🌤️</p>
-            <p className="max-w-sm text-sm font-semibold text-cyan-200">בחרו את הציוד המתאים למזג האוויר שמוצג!</p>
+            <p className="max-w-sm text-sm font-semibold text-cyan-200">Pick the gear that matches the weather shown!</p>
             <button type="button" onClick={start} className="min-h-[48px] rounded-xl bg-cyan-600 px-8 py-2.5 text-base font-bold text-white">
-              פתח תחנה
+              Open station
             </button>
           </div>
         ) : (
@@ -164,13 +164,13 @@ export default function WeatherStationPrototype() {
                 flash === "ok" ? "ring-4 ring-emerald-400/40" : flash === "bad" ? "ring-4 ring-rose-400/40" : ""
               }`}
             >
-              <p className="text-center text-xs font-bold text-amber-200">תחנת ליאו</p>
+              <p className="text-center text-xs font-bold text-amber-200">Leo&apos;s station</p>
               <p className="mt-2 text-center text-5xl">{round.emoji}</p>
               <p className="text-center text-lg font-extrabold">{round.label}</p>
               <p className="mt-1 text-center text-xs text-white/65">{round.hint}</p>
               <div className="mt-3 flex flex-wrap justify-center gap-3 text-xs font-bold">
                 <span className="rounded-lg bg-rose-500/20 px-2 py-1">🌡️ {round.temp}°</span>
-                <span className="rounded-lg bg-sky-500/20 px-2 py-1">💨 רוח {round.wind}/5</span>
+                <span className="rounded-lg bg-sky-500/20 px-2 py-1">💨 Wind {round.wind}/5</span>
                 <span className="rounded-lg bg-slate-500/30 px-2 py-1">{"☁️".repeat(round.cloud) || "☀️"}</span>
               </div>
             </div>
@@ -200,13 +200,13 @@ export default function WeatherStationPrototype() {
               disabled={!picked.length}
               className="min-h-[48px] rounded-xl bg-sky-500 px-8 py-2.5 text-base font-bold text-white disabled:opacity-40"
             >
-              בדוק התאמה ✓
+              Check match ✓
             </button>
 
             {feedback ? <p className="text-center text-sm font-bold text-white/90">{feedback}</p> : null}
 
             <button type="button" onClick={reset} className="mx-auto min-h-[44px] rounded-xl border-2 border-white/25 px-6 py-2 text-sm font-bold">
-              משחק חדש
+              New game
             </button>
           </>
         )}

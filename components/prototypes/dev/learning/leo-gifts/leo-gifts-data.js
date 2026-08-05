@@ -12,11 +12,11 @@ import { MIN_POOL_SIZE, randInt, shuffle } from "../shared/task-session.js";
  * }} GiftsTask */
 
 const ITEM_TYPES = [
-  { itemLabel: "מתנות", itemEmoji: "🎁" },
-  { itemLabel: "סוכריות", itemEmoji: "🍬" },
-  { itemLabel: "מדבקות", itemEmoji: "⭐" },
-  { itemLabel: "כוכבים", itemEmoji: "🌟" },
-  { itemLabel: "ממתקים", itemEmoji: "🍭" },
+  { itemLabel: "star", itemEmoji: "🎁" },
+  { itemLabel: "Candy", itemEmoji: "🍬" },
+  { itemLabel: "star", itemEmoji: "⭐" },
+  { itemLabel: "Candy", itemEmoji: "🌟" },
+  { itemLabel: "Candy", itemEmoji: "🍭" },
 ];
 
 /** @type {Record<DifficultyId, { childrenMin: number, childrenMax: number, maxTotal: number, allowRemainder: boolean }>} */
@@ -113,18 +113,18 @@ export function validateGiftsDivision(task, perChild, remainder) {
 
 /** @param {GiftsTask} task */
 export function giftsPrompt(task) {
-  return `לליאו יש ${task.total} ${task.itemLabel}. הגיעו ${task.children} ילדים. כמה יקבל כל ילד?`;
+  return `  ${task.total} ${task.itemLabel}.  ${task.children} .    ?`;
 }
 
 /** @param {boolean} ok @param {number} perChild @param {number} remainder */
 export function giftsFeedback(ok, perChild, remainder) {
   if (ok) {
     if (remainder > 0) {
-      return `יפה! כל ילד קיבל ${perChild} ולליאו נשארו ${remainder}.`;
+      return `!    ${perChild}   ${remainder}.`;
     }
-    return "מעולה! כל ילד קיבל אותו מספר.";
+    return "Great! All to to Number.";
   }
-  return "כמעט! בדקו שכל הילדים קיבלו שווה בשווה ושלא נשאר יותר מדי לליאו.";
+  return "Almost! Check All Children to not to to.";
 }
 
 const CHILD_EMOJIS = ["👧", "👦", "🧒", "👧🏽", "👦🏽", "🧒🏻", "👧🏻", "👦🏻", "🧒🏽", "👧🏼", "👦🏼", "🧒🏼"];

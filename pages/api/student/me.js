@@ -68,7 +68,7 @@ export default async function handler(req, res) {
       leoNumber: student.leo_number ?? null,
       guest_status: student.guest_status ?? null,
       guestStatus: student.guest_status ?? null,
-      displayNameHe: isGuestStudent(student) ? formatGuestDisplayNameHe(student) : student.full_name,
+      displayName: isGuestStudent(student) ? formatGuestDisplayNameHe(student) : student.full_name,
       greetingHe: formatStudentGreetingHe(student),
       leoNumberLabelHe: formatLeoNumberLabelHe(student),
     };

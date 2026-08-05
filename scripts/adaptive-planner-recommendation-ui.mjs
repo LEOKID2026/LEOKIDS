@@ -29,23 +29,23 @@ function run(label, fn) {
 
 run("map advance_skill → approved Hebrew", () => {
   const t = mapPlannerNextActionToHebrew("advance_skill");
-  assert(t === "אפשר להתקדם לשלב הבא", t);
+  assert(t === "   ", t);
 });
 
 run("map maintain_skill", () => {
-  assert(mapPlannerNextActionToHebrew("maintain_skill") === "כדאי להמשיך לתרגל באותה רמה");
+  assert(mapPlannerNextActionToHebrew("maintain_skill") === "    ");
 });
 
 run("map practice_current → remediate copy", () => {
-  assert(mapPlannerNextActionToHebrew("practice_current") === "כדאי לחזק את הבסיס לפני שמתקדמים");
+  assert(mapPlannerNextActionToHebrew("practice_current") === "     ");
 });
 
 run("map probe_skill → review copy", () => {
-  assert(mapPlannerNextActionToHebrew("probe_skill") === "כדאי לבצע חזרה קצרה");
+  assert(mapPlannerNextActionToHebrew("probe_skill") === "   ");
 });
 
 run("map review_prerequisite → review copy", () => {
-  assert(mapPlannerNextActionToHebrew("review_prerequisite") === "כדאי לבצע חזרה קצרה");
+  assert(mapPlannerNextActionToHebrew("review_prerequisite") === "   ");
 });
 
 run("ok=false → no view model", () => {

@@ -10,8 +10,8 @@ import {
   ADMIN_LOADING,
   ADMIN_SCHOOLS_TITLE,
   apiErrorMessageHe,
-} from "../../../lib/admin-portal/admin-ui.he.js";
-import { ADMIN_PENDING_REQUESTS_TAB } from "../../../lib/auth/auth-registration.he.js";
+} from "../../../lib/admin-portal/admin-ui.js";
+import { ADMIN_PENDING_REQUESTS_TAB } from "../../../lib/auth/auth-registration.js";
 
 const EMPTY_SCHOOL = { name: "", city: "", contactEmail: "" };
 
@@ -66,7 +66,7 @@ export default function AdminSchoolsIndexPage() {
         await loadSchools(accessToken, statusFilter);
         return;
       }
-      setCreateError(apiErrorMessageHe(body?.error, "יצירה נכשלה"));
+      setCreateError(apiErrorMessageHe(body?.error, " "));
     } finally {
       setCreateBusy(false);
     }
@@ -90,7 +90,7 @@ export default function AdminSchoolsIndexPage() {
                 }}
                 className="rounded-lg bg-emerald-500/20 border border-emerald-400/30 px-3 py-1.5 text-sm font-semibold"
               >
-                בית ספר חדש
+
               </button>
               <div
                 className="flex flex-wrap gap-2"
@@ -106,7 +106,7 @@ export default function AdminSchoolsIndexPage() {
                   }`}
                   data-testid="admin-schools-filter-all"
                 >
-                  הכל
+
                 </button>
                 <button
                   type="button"
@@ -127,21 +127,21 @@ export default function AdminSchoolsIndexPage() {
             <AdminModal
               open={createOpen}
               onClose={closeCreate}
-              title="בית ספר חדש"
+              title="  "
               size="md"
               footer={
                 <>
                   <AdminModalButton onClick={closeCreate} disabled={createBusy}>
-                    ביטול
+
                   </AdminModalButton>
                   <AdminModalButton
                     variant="primary"
                     onClick={() => void onCreate()}
                     disabled={createBusy || !createDraft.name?.trim()}
                     busy={createBusy}
-                    busyLabel="שומר…"
+                    busyLabel="…"
                   >
-                    יצירה
+
                   </AdminModalButton>
                 </>
               }

@@ -1,6 +1,6 @@
 /**
- * בדיקות עצמאיות ל־Phase 1 (ללא Jest) — הרצה: npm run test:parent-report-phase1
- * תיעוד: docs/PARENT_REPORT.md
+ *   Phase 1 ( Jest) — : npm run test:parent-report-phase1
+ * : docs/PARENT_REPORT.md
  */
 import assert from "node:assert/strict";
 
@@ -25,7 +25,7 @@ const startMs = Date.UTC(2026, 3, 3, 0, 0, 0);
 
 const row = {
   bucketKey: "addition",
-  displayName: "חיבור",
+  displayName: "",
   questions: 12,
   correct: 10,
   wrong: 2,
@@ -295,19 +295,19 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     topicRowKey: "addition\u0001learning",
     subjectId: "math",
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     evidenceTrace: [
       { type: "volume", value: { questions: 14, accuracy: 86, correct: 12, wrong: 2 } },
     ],
-    taxonomy: { id: "tax_demo", patternHe: "דפוס הדגמה" },
-    diagnosis: { allowed: true, lineHe: "שורת אבחון" },
+    taxonomy: { id: "tax_demo", patternHe: " " },
+    diagnosis: { allowed: true, lineHe: " " },
     confidence: { level: "medium" },
     priority: { level: "P3" },
     canonicalState: { assessment: { confidenceLevel: "medium" } },
   };
   const rowForUnit = {
-    trend: { summaryHe: "מגמה יציבה בטווח" },
-    decisionTrace: [{ detailHe: "חישוב יציבות: ערכים בטווח תקין" }],
+    trend: { summaryHe: "  " },
+    decisionTrace: [{ detailHe: " :   " }],
     contractsV1: {
       evidence: { evidenceStrength: "medium", evidenceBand: "E2", questionCount: 14, accuracyPct: 86 },
     },
@@ -325,12 +325,12 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   }
 
   const body = v2PositiveStrengthBodyFromUnitForTests(minimalStrengthUnit);
-  const genericOnly = "ביצועים גבוהים ועקביים — נראה שליטה טובה בנושא.";
+  const genericOnly = "   —    .";
   assert.ok(body.includes("14") && body.includes("86"), "strength body uses trace numbers when present");
   assert.notEqual(body.trim(), genericOnly.trim());
 
   const linesBare = collectDiagnosticEvidenceLinesForTests(
-    { evidenceTrace: [], displayName: "ריק", bucketKey: "x", taxonomy: null },
+    { evidenceTrace: [], displayName: "", bucketKey: "x", taxonomy: null },
     {}
   );
   assert.ok(linesBare.length >= 1);
@@ -419,10 +419,10 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   const { buildDiagnosticOverviewHeV2ForTests } = await importUtils("../utils/parent-report-v2.js");
 
   const fallback = {
-    mainFocusAreaLineHe: "חשבון: נושא מהרשימה הישנה",
-    strongestAreaLineHe: "עברית: חוזק ישן",
-    readyForProgressPreviewHe: ["מדעים: ישן"],
-    requiresAttentionPreviewHe: ["גאומטריה: ישן"],
+    mainFocusAreaLineHe: ":   ",
+    strongestAreaLineHe: ":  ",
+    readyForProgressPreviewHe: [": "],
+    requiresAttentionPreviewHe: [": "],
   };
 
   const v2out = buildDiagnosticOverviewHeV2ForTests({
@@ -430,12 +430,12 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
       units: [
         {
           subjectId: "math",
-          displayName: "נושא ראשון במפה",
+          displayName: "  ",
           topicRowKey: "k1",
           priority: { level: "P1" },
-          diagnosis: { allowed: true, lineHe: "אבחון א׳" },
+          diagnosis: { allowed: true, lineHe: " " },
           evidenceTrace: [{ type: "volume", value: { questions: 5, accuracy: 50 } }],
-          taxonomy: { patternHe: "רקע P1" },
+          taxonomy: { patternHe: " P1" },
           canonicalState: {
             evidence: { positiveAuthorityLevel: "none" },
             actionState: "withhold",
@@ -444,12 +444,12 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
         },
         {
           subjectId: "geometry",
-          displayName: "נושא דחיפות",
+          displayName: " ",
           topicRowKey: "k2",
           priority: { level: "P4" },
-          diagnosis: { allowed: true, lineHe: "אבחון ב׳" },
+          diagnosis: { allowed: true, lineHe: " " },
           evidenceTrace: [{ type: "volume", value: { questions: 12, accuracy: 62 } }],
-          taxonomy: { patternHe: "דפוס עומק מהמנוע" },
+          taxonomy: { patternHe: "  " },
           canonicalState: {
             evidence: { positiveAuthorityLevel: "good" },
             actionState: "maintain",
@@ -466,8 +466,8 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   });
 
   assert.ok(
-    String(v2out.mainFocusAreaLineHe || "").includes("דפוס עומק") ||
-      String(v2out.mainFocusAreaLineHe || "").includes("נושא דחיפות"),
+    String(v2out.mainFocusAreaLineHe || "").includes(" ") ||
+      String(v2out.mainFocusAreaLineHe || "").includes(" "),
     "main focus follows higher-priority V2 unit, not fallback map-order line"
   );
   assert.notEqual(String(v2out.mainFocusAreaLineHe || "").trim(), String(fallback.mainFocusAreaLineHe).trim());
@@ -489,18 +489,18 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     patternDiagnostics: null,
     maps: {},
     fallbackOverview: fallback,
-    insufficientDataSubjectsHe: ["חשבון: מעט נתונים"],
+    insufficientDataSubjectsHe: [":  "],
   });
   assert.equal(noUnits.mainFocusAreaLineHe, fallback.mainFocusAreaLineHe);
   assert.deepEqual(noUnits.requiresAttentionPreviewHe, fallback.requiresAttentionPreviewHe);
-  assert.deepEqual(noUnits.insufficientDataSubjectsHe, ["חשבון: מעט נתונים"]);
+  assert.deepEqual(noUnits.insufficientDataSubjectsHe, [":  "]);
 
   const noAttentionSignal = buildDiagnosticOverviewHeV2ForTests({
     diagnosticEngineV2: {
       units: [
         {
           subjectId: "math",
-          displayName: "נושא חזק בלבד",
+          displayName: "  ",
           evidenceTrace: [{ type: "volume", value: { questions: 20, accuracy: 95 } }],
           diagnosis: { allowed: false },
           recurrence: { wrongCountForRules: 0 },
@@ -515,24 +515,24 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     patternDiagnostics: { version: 2, subjects: {} },
     maps: {},
     fallbackOverview: {
-      mainFocusAreaLineHe: "מיקוד שמגיע מרשימת needsPractice",
-      strongestAreaLineHe: "חוזק שמור",
+      mainFocusAreaLineHe: "   needsPractice",
+      strongestAreaLineHe: " ",
       readyForProgressPreviewHe: [],
-      requiresAttentionPreviewHe: ["מעקב משני א׳", "מעקב משני ב׳"],
+      requiresAttentionPreviewHe: ["  ", "  "],
     },
     insufficientDataSubjectsHe: [],
   });
   assert.equal(
     noAttentionSignal.mainFocusAreaLineHe,
-    "מיקוד שמגיע מרשימת needsPractice",
+    "   needsPractice",
     "no P/diagnosis/wrongs: main focus must not pick an arbitrary V2 unit"
   );
   assert.ok(
-    !String(noAttentionSignal.mainFocusAreaLineHe || "").includes("נושא חזק בלבד"),
+    !String(noAttentionSignal.mainFocusAreaLineHe || "").includes("  "),
     "main focus must not be built from a non-attention V2 unit displayName"
   );
-  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[0], "מעקב משני א׳");
-  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[1], "מעקב משני ב׳");
+  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[0], "  ");
+  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[1], "  ");
 }
 
 // Fast Educational Diagnosis (deterministic): stages, probes, parent-safe copy.
@@ -543,7 +543,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   const unitBase = {
     subjectId: "math",
     bucketKey: "fractions",
-    displayName: "שברים",
+    displayName: "",
   };
 
   /** @param {unknown[]} events @param {object} fd */
@@ -683,7 +683,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     extractDiagnosticMetadataFromQuestion(
       {
         id: "sci_42",
-        stem: "שאלה?",
+        stem: "?",
         correctIndex: 2,
         options: ["a", "b", "c"],
         params: {
@@ -772,7 +772,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     unit: {
       subjectId: "math",
       bucketKey: "fractions",
-      displayName: "שברים",
+      displayName: "",
     },
     events: [
       {
@@ -796,7 +796,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     unit: {
       subjectId: "math",
       bucketKey: "fractions",
-      displayName: "שברים",
+      displayName: "",
     },
     events: Array.from({ length: 4 }, () => ({
       isCorrect: false,
@@ -811,7 +811,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     unit: {
       subjectId: "science",
       bucketKey: "body",
-      displayName: "גוף האדם",
+      displayName: " ",
     },
     events: [
       {
@@ -1379,7 +1379,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   assert.ok(rowProbe.matches);
 
   const qWithProbe = attachProbeMetaToQuestion(
-    { question: "בדיקה", topic: "reading", params: {} },
+    { question: "", topic: "reading", params: {} },
     {
       probeSnapshot: {
         ...engProbe,

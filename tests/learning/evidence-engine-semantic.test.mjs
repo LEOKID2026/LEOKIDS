@@ -152,7 +152,7 @@ describe("subtraction falsification — M-09 blocked without a+b evidence", () =
       math: {
         "subtraction\u0001practice": {
           bucketKey: "subtraction",
-          displayName: "חיסור",
+          displayName: "",
           questions: 8,
           correct: 0,
           wrong: 8,
@@ -179,7 +179,7 @@ describe("subtraction falsification — M-09 blocked without a+b evidence", () =
 
   test("M-09 copy gated without add_instead_of_sub", () => {
     const pipeline = buildParentEvidenceStatements({ questions: 8, correct: 0, wrong: 8, taxonomyId: "M-09" });
-    const gated = gateParentPatternCopy("כיוון הפוך / הוספה במקום חיסור", pipeline);
+    const gated = gateParentPatternCopy("  /   ", pipeline);
     assert.equal(gated, null);
   });
 

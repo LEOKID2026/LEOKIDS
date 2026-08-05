@@ -31,7 +31,7 @@ export function runParentAiExternalQuestionSimulator() {
   /** Pasted homework-style (Phase E resolved shortcut). */
   {
     const payload = syntheticPayload();
-    const utterance = `פתור את זה בבקשה:\n3x + 7 = 22\nשאלה מהשיעורי בית\nמה ערך x?`;
+    const utterance = `   :\n3x + 7 = 22\n  \n  x?`;
     const res = runParentCopilotTurn({ payload, utterance, sessionId: "pf-ext-paste" });
     const text = joinedAnswers(res);
     const check = assertScenarioOutput(text, { profile: "external" });
@@ -48,7 +48,7 @@ export function runParentAiExternalQuestionSimulator() {
   /** Practice idea — exact mandated label. */
   {
     const payload = syntheticPayload();
-    const utterance = "תן לי רעיון לתרגול דומה";
+    const utterance = "    ";
     const res = runParentCopilotTurn({ payload, utterance, sessionId: "pf-ext-practice" });
     const text = joinedAnswers(res);
     const check = assertScenarioOutput(text, { profile: "practice" });
@@ -71,7 +71,7 @@ export function runParentAiExternalQuestionSimulator() {
     const sp = base.subjectProfiles[0];
     const tr = { ...sp.topicRecommendations[0], questions: 0, q: 0 };
     const payload = { ...base, subjectProfiles: [{ ...sp, topicRecommendations: [tr] }] };
-    const utterance = "מה קורה בשברים אצל הילד?";
+    const utterance = "    ?";
     const res = runParentCopilotTurn({ payload, utterance, sessionId: "pf-ext-thin" });
     const text = joinedAnswers(res);
     const check = assertScenarioOutput(text, { profile: "thin_evidence" });
@@ -95,7 +95,7 @@ export function runParentAiExternalQuestionSimulator() {
           topicRecommendations: [
             {
               topicRowKey: "unanchored-topic-f",
-              displayName: "משוואות ריבועיות",
+              displayName: " ",
               questions: 0,
               accuracy: 0,
               contractsV1: {
@@ -112,7 +112,7 @@ export function runParentAiExternalQuestionSimulator() {
       ],
     };
     const utterance =
-      "אני צריכה הסבר קצר מה זה משוואות ריבועיות ואיך מתחילים לפתור בלי להיכנס לכל ההוכחות";
+      "              ";
     const res = runParentCopilotTurn({ payload, utterance, sessionId: "pf-ext-catalog" });
     const text = joinedAnswers(res);
     const check = assertScenarioOutput(text, { profile: "external" });

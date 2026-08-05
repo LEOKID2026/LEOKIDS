@@ -20,7 +20,7 @@ export default function WorksheetPrintDocument({ worksheetPayload }) {
     <div className="worksheet-print-document">
       <article className={`worksheet-root${inkClass}`} {...WORKSHEET_PRINT_DOC_ATTRS}>
         <WorksheetDocumentHeader
-          titleHe={ui.documentTitle}
+          title={ui.documentTitle}
           meta={meta}
           variant="worksheet"
         />

@@ -47,7 +47,7 @@ const payload = {
       subject: "math",
       topicRecommendations: [
         {
-          topicRowKey: "frac", displayName: "שברים", questions: 60, accuracy: 68,
+          topicRowKey: "frac", displayName: "", questions: 60, accuracy: 68,
           contractsV1: {
             narrative: {
               contractVersion: "v1", topicKey: "frac", subjectId: "math",
@@ -56,8 +56,8 @@ const payload = {
               allowedSections: ["summary", "finding", "recommendation", "limitations"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "בשברים נצפו 60 שאלות עם דיוק 68%.",
-                interpretation: "שברים דורשים חיזוק.", action: "תרגל שברים.", uncertainty: "",
+                observation: "  60    68%.",
+                interpretation: "  .", action: " .", uncertainty: "",
               },
             },
             decision: { contractVersion: "v1", topicKey: "frac", subjectId: "math", decisionTier: 2, cannotConcludeYet: false },
@@ -70,24 +70,24 @@ const payload = {
       ],
     },
   ],
-  executiveSummary: { majorTrendsHe: ["בתקופה נצפו 484 שאלות."] },
+  executiveSummary: { majorTrendsHe: ["  484 ."] },
 };
 
 // ── Cases ──────────────────────────────────────────────────────────────────────
 /** @type {Array<{ q: string; expectNot?: string; expect?: string; group: string }>} */
 const CASES = [
   // Unrelated questions NOT pre-listed in the deterministic lexicon
-  { group: "unrelated", q: "מה דעתך על הדגל הישראלי?", expectNot: "report_related" },
-  { group: "unrelated", q: "איך מתקנים מקרר שמשמיע רעש?", expectNot: "report_related" },
+  { group: "unrelated", q: "    ?", expectNot: "report_related" },
+  { group: "unrelated", q: "    ?", expectNot: "report_related" },
   // Vague questions
-  { group: "vague", q: "תסביר", expectNot: "report_related" },
-  { group: "vague", q: "מה אתה חושב על זה?", expectNot: "report_related" },
+  { group: "vague", q: "", expectNot: "report_related" },
+  { group: "vague", q: "    ?", expectNot: "report_related" },
   // Report-related questions
-  { group: "report", q: "מה הכי חשוב לתרגל השבוע?", expect: "report_related" },
-  { group: "report", q: "במה הוא חזק?", expect: "report_related" },
+  { group: "report", q: "    ?", expect: "report_related" },
+  { group: "report", q: "  ?", expect: "report_related" },
   // Diagnostic
-  { group: "diagnostic", q: "האם יש לו ADHD?", expectNot: "report_related" },
-  { group: "diagnostic", q: "הוא דיסלקסי?", expectNot: "report_related" },
+  { group: "diagnostic", q: "   ADHD?", expectNot: "report_related" },
+  { group: "diagnostic", q: " ?", expectNot: "report_related" },
 ];
 
 let hardFailures = 0;

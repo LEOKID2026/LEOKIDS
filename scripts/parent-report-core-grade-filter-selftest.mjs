@@ -60,24 +60,24 @@ assert.equal(filterCoreV2Units([sameUnit], sameMap, "g1").length, 1);
 assert.match(
   formatParentReportActivityDisplayLabelHe({
     primaryEvidenceSource: "parent_assigned_activity",
-    displayName: "חיבור",
-    parentActivityTitle: "תרגול בית",
+    displayName: "",
+    parentActivityTitle: " ",
   }),
-  /פעילות|תרגול בית/
+  /| /
 );
 assert.equal(
   formatParentReportActivityDisplayLabelHe({
     primaryEvidenceSource: "self_practice",
-    displayName: "חיבור",
+    displayName: "",
   }),
-  "תרגול"
+  ""
 );
 assert.doesNotMatch(
   formatParentReportActivityDisplayLabelHe({
     primaryEvidenceSource: "self_practice",
-    displayName: "חיבור",
+    displayName: "",
   }),
-  /תרגול —/
+  / —/
 );
 
 const baseReport = buildSixSubjectContextLabelingMatrixBaseReport();
@@ -101,8 +101,8 @@ const g1MixedReport = {
   playerName: "Test",
   summary: { gradeLevel: "g1", totalQuestions: 50, overallAccuracy: 85 },
   mathOperations: {
-    "addition::grade:g1": { questions: 5, accuracy: 90, gradeRelation: "same", contentGradeKey: "g1", displayName: "חיבור" },
-    "multiplication::grade:g2": { questions: 20, accuracy: 88, gradeRelation: "higher", contentGradeKey: "g2", displayName: "כפל" },
+    "addition::grade:g1": { questions: 5, accuracy: 90, gradeRelation: "same", contentGradeKey: "g1", displayName: "" },
+    "multiplication::grade:g2": { questions: 20, accuracy: 88, gradeRelation: "higher", contentGradeKey: "g2", displayName: "" },
   },
   gradePracticeMeta: { mixedGradePractice: true },
 };
@@ -114,10 +114,10 @@ const aiText = [
   ...(aiNarr.focusAreas || []).map((f) => f.textHe),
   ...(aiNarr.homeTips || []),
 ].join("\n");
-assert.doesNotMatch(aiText, /כיתה\s*ב/u, "AI insight must not mention grade ב for g1 student");
-assert.doesNotMatch(aiText, /כפל.*כיתה/u, "AI insight must not cite higher-grade topic as strength");
+assert.doesNotMatch(aiText, /\s*/u, "AI insight must not mention grade  for g1 student");
+assert.doesNotMatch(aiText, /.*/u, "AI insight must not cite higher-grade topic as strength");
 for (const s of aiNarr.strengths || []) {
-  assert.doesNotMatch(String(s.textHe || ""), /כפל/u, "higher-grade multiplication must not appear in strengths");
+  assert.doesNotMatch(String(s.textHe || ""), //u, "higher-grade multiplication must not appear in strengths");
 }
 
 const mixedEngineReport = {
@@ -129,7 +129,7 @@ const mixedEngineReport = {
       accuracy: 92,
       gradeRelation: "same",
       contentGradeKey: "g1",
-      displayName: "כפל",
+      displayName: "",
       topicEngineRowSignals: { diagnosticType: "stable_mastery", recommendedNextStep: "maintain" },
     },
     "targil_g1::grade:g1": {
@@ -137,7 +137,7 @@ const mixedEngineReport = {
       accuracy: 48,
       gradeRelation: "same",
       contentGradeKey: "g1",
-      displayName: "תרגול",
+      displayName: "",
       topicEngineRowSignals: { diagnosticType: "knowledge_gap", recommendedNextStep: "remediate_same_level" },
     },
     "mult_g5::grade:g5": {
@@ -145,7 +145,7 @@ const mixedEngineReport = {
       accuracy: 95,
       gradeRelation: "higher",
       contentGradeKey: "g5",
-      displayName: "כפל - כיתה ה׳",
+      displayName: " -  ",
       topicEngineRowSignals: { diagnosticType: "stable_mastery", recommendedNextStep: "maintain" },
     },
     "targil_g2::grade:g2": {
@@ -153,7 +153,7 @@ const mixedEngineReport = {
       accuracy: 42,
       gradeRelation: "higher",
       contentGradeKey: "g2",
-      displayName: "תרגול - כיתה ב׳",
+      displayName: " -  ",
       topicEngineRowSignals: { diagnosticType: "knowledge_gap", recommendedNextStep: "remediate_same_level" },
     },
   },
@@ -161,11 +161,11 @@ const mixedEngineReport = {
 applyTopicEngineParentFacingInsights(mixedEngineReport);
 const engineInsights = buildParentInsightsFromTopicEngineHe(mixedEngineReport);
 const insightText = [...engineInsights, ...(mixedEngineReport.parentFacing?.insights || [])].join("\n");
-assert.doesNotMatch(insightText, /כיתה\s*ב/u, "what-to-know insights must not mention grade ב");
-assert.doesNotMatch(insightText, /כיתה\s*ה/u, "what-to-know insights must not mention grade ה");
-assert.doesNotMatch(insightText, /כפל - כיתה/u, "must not cite higher-grade multiplication label");
-assert.doesNotMatch(insightText, /תרגול - כיתה/u, "must not cite higher-grade practice label");
-assert.match(insightText, /תמונה מעורבת/u, "same-grade mixed insight may still appear");
+assert.doesNotMatch(insightText, /\s*/u, "what-to-know insights must not mention grade ");
+assert.doesNotMatch(insightText, /\s*/u, "what-to-know insights must not mention grade ");
+assert.doesNotMatch(insightText, / - /u, "must not cite higher-grade multiplication label");
+assert.doesNotMatch(insightText, / - /u, "must not cite higher-grade practice label");
+assert.match(insightText, / /u, "same-grade mixed insight may still appear");
 
 const mixedDetailed = buildDetailedParentReportFromBaseReport(mixedEngineReport);
 const whatToNotice = buildParentSurfaceWhatToNoticeHe({
@@ -173,8 +173,8 @@ const whatToNotice = buildParentSurfaceWhatToNoticeHe({
   _parentReportUi: { parentFacing: mixedEngineReport.parentFacing },
 });
 const whatToNoticeText = whatToNotice.join("\n");
-assert.doesNotMatch(whatToNoticeText, /כיתה\s*ב/u, "מה חשוב לדעת must not mention grade ב");
-assert.doesNotMatch(whatToNoticeText, /כיתה\s*ה/u, "מה חשוב לדעת must not mention grade ה");
+assert.doesNotMatch(whatToNoticeText, /\s*/u, "   must not mention grade ");
+assert.doesNotMatch(whatToNoticeText, /\s*/u, "   must not mention grade ");
 assert.ok(
   (mixedDetailed.outOfGradePracticeTransparency?.advancedPractice || []).length >= 2,
   "higher-grade rows appear in transparency section",

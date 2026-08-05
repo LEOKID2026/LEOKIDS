@@ -29,7 +29,7 @@ const BATCH_UUID = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";
 
 const VALID_QUESTION_SET = [
   {
-    question: "כמה זה 2 + 2?",
+    question: "  2 + 2?",
     choices: ["3", "4", "5"],
     correct_answer: "4",
   },
@@ -39,7 +39,7 @@ const VALID_QUESTION_SET = [
 function baseBody(overrides = {}) {
   return {
     studentIds: [S1, S2],
-    title: "מבחן חשבון",
+    title: " ",
     subject: "math",
     topic: "addition",
     mode: "guided_practice",
@@ -386,9 +386,9 @@ test("createStudentActivityBatch rejects student not assigned to teacher", async
 
 test("loadStudentActivityBatchMonitor returns roster and summary", async () => {
   const activities = [
-    { id: "act-1", student_id: S1, title: "חשבון", subject: "math", topic: "addition",
+    { id: "act-1", student_id: S1, title: "", subject: "math", topic: "addition",
       mode: "guided_practice", question_count: 3, status: "active", activated_at: new Date().toISOString(), closed_at: null },
-    { id: "act-2", student_id: S2, title: "חשבון", subject: "math", topic: "addition",
+    { id: "act-2", student_id: S2, title: "", subject: "math", topic: "addition",
       mode: "guided_practice", question_count: 3, status: "active", activated_at: new Date().toISOString(), closed_at: null },
   ];
   const statusRows = [
@@ -396,8 +396,8 @@ test("loadStudentActivityBatchMonitor returns roster and summary", async () => {
     { activity_id: "act-2", student_id: S2, status: "not_started", answers_count: 0, correct_count: 0, score_pct: null, submitted_at: null },
   ];
   const studentRows = [
-    { id: S1, full_name: "ראובן לוי" },
-    { id: S2, full_name: "שמעון כהן" },
+    { id: S1, full_name: " " },
+    { id: S2, full_name: " " },
   ];
 
   const sr = {

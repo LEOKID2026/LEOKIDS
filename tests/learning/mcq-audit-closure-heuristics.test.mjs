@@ -12,8 +12,8 @@ const { detectMcqObviousAnswerRisks } = await import(
 
 test("Hebrew negation antonym MCQ is not flagged for hebPrefix format outlier", () => {
   const q = {
-    question: "מה זה קרוב?",
-    answers: ["לא רחוק", "רחוק", "גבוה", "נמוך"],
+    question: "  ?",
+    answers: [" ", "", "", ""],
     correctIndex: 0,
   };
   const risks = detectMcqObviousAnswerRisks(q, {
@@ -25,8 +25,8 @@ test("Hebrew negation antonym MCQ is not flagged for hebPrefix format outlier", 
 
 test("Binary true/false Hebrew MCQ is not flagged for format outlier", () => {
   const q = {
-    question: "הצמח נושם רק ביום. נכון או לא נכון?",
-    answers: ["נכון", "לא נכון"],
+    question: "   .    ?",
+    answers: ["", " "],
     correctIndex: 1,
   };
   const risks = detectMcqObviousAnswerRisks(q, {
@@ -38,8 +38,8 @@ test("Binary true/false Hebrew MCQ is not flagged for format outlier", () => {
 
 test("Short Hebrew vocabulary MCQ is not flagged for hebPrefix outlier", () => {
   const q = {
-    question: "מהו מצב הצבירה של קרח?",
-    answers: ["מוצק", "נוזל", "גז", "תערובת"],
+    question: "    ?",
+    answers: ["", "", "", ""],
     correctIndex: 0,
   };
   const risks = detectMcqObviousAnswerRisks(q, {
@@ -63,15 +63,15 @@ test("NaN distractor generator artifact is not flagged for numeric plausibility 
 
 test("Hebrew stem substring does not leak when answer is embedded in another word", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
-  assert.equal(detectStemLeak("מה צבע הצמחים הירוקים?", "ירוק"), false);
-  assert.equal(detectStemLeak("מה צבע הדשא?", "ירוק"), false);
+  assert.equal(detectStemLeak("   ?", ""), false);
+  assert.equal(detectStemLeak("  ?", ""), false);
 });
 
 test("plain MCQ option text is not an option_label_prefix leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   const { mcqCellLabel, mcqCellValue } = await import(href("utils/mcq-option-cell.js"));
-  const answers = ["מוצק", "נוזל", "גז", "תערובת"];
-  const correct = "מוצק";
+  const answers = ["", "", "", ""];
+  const correct = "";
   for (let i = 0; i < answers.length; i++) {
     const label = mcqCellLabel(answers[i]);
     const value = String(mcqCellValue(answers[i]) ?? "");
@@ -84,20 +84,20 @@ test("plain MCQ option text is not an option_label_prefix leak", async () => {
 
 test("math expression operand is not a stem leak for evaluate-expression items", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
-  assert.equal(detectStemLeak("מה ערך הביטוי 23 + 0?", "23"), false);
-  assert.equal(detectStemLeak("נתון השוויון 50 + __ = 100. מה המספר החסר?", "50"), false);
+  assert.equal(detectStemLeak("   23 + 0?", "23"), false);
+  assert.equal(detectStemLeak("  50 + __ = 100.   ?", "50"), false);
   assert.equal(detectStemLeak("__ × 473 = 223729", "473"), false);
 });
 
 test("factor subject number is not a stem leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
-  assert.equal(detectStemLeak("איזה מהמספרים הבאים הוא מחלק (גורם) של 16?", "16"), false);
+  assert.equal(detectStemLeak("     ()  16?", "16"), false);
 });
 
-test("true/false stem does not leak multi-word לא נכון", async () => {
+test("true/false stem does not leak multi-word  ", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   assert.equal(
-    detectStemLeak("כל מעוין הוא תמיד גם מלבן. נכון או לא נכון?", "לא נכון"),
+    detectStemLeak("     .    ?", " "),
     false
   );
 });
@@ -106,8 +106,8 @@ test("Hebrew reading passage overlap is not a stem leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   assert.equal(
     detectStemLeak(
-      "קראו: 'הצמחים בגינה זקוקים למים ולאור כדי לגדול.' מה רעיון מרכזי?",
-      "טיפול מתאים (מים ואור) חיוני לצמיחה"
+      ": '      .'   ?",
+      "  ( )  "
     ),
     false
   );
@@ -128,12 +128,12 @@ test("English quantifier grammar cloze is not flagged for article format outlier
 
 test("Perpendicular 90° concept MCQ is not flagged for numeric plausibility", () => {
   const q = {
-    question: "שני קווים מאונכים זה לזה - מה נכון?",
+    question: "     -  ?",
     answers: [
-      "הם נפגשים בזווית של 90°",
-      "הם תמיד מקבילים",
-      "הם לעולם לא נפגשים",
-      "הם תמיד באותו אורך",
+      "    90°",
+      "  ",
+      "   ",
+      "   ",
     ],
     correctIndex: 0,
   };
@@ -147,7 +147,7 @@ test("Perpendicular 90° concept MCQ is not flagged for numeric plausibility", (
 test("Hebrew odd-one-out colon list is not a stem leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   assert.equal(
-    detectStemLeak("איזו מילה לא שייכת לקבוצה: כלב, חתול, פרח, דג?", "פרח"),
+    detectStemLeak("    : , , , ?", ""),
     false
   );
 });
@@ -155,7 +155,7 @@ test("Hebrew odd-one-out colon list is not a stem leak", async () => {
 test("Hebrew G2 read-sentence stem with quoted passage is not a stem leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   assert.equal(
-    detectStemLeak("קרא את המשפט: 'הילד קורא ספר בכיתה'", "הילד קורא ספר בכיתה"),
+    detectStemLeak("  : '   '", "   "),
     false
   );
 });
@@ -163,20 +163,20 @@ test("Hebrew G2 read-sentence stem with quoted passage is not a stem leak", asyn
 test("Hebrew quoted reading body after display split is not a stem leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   const { isEquationLikeText } = await import(href("utils/student-question-display.js"));
-  const bodyParen = "'התפוחים אדומים וטעימים' ( 28 )";
-  const bodyDot = "'התפוחים אדומים וטעימים' · משפט 28";
+  const bodyParen = "'  ' ( 28 )";
+  const bodyDot = "'  ' ·  28";
   assert.equal(isEquationLikeText(bodyParen), false);
   assert.equal(isEquationLikeText(bodyDot), false);
-  assert.equal(detectStemLeak(bodyParen, "התפוחים אדומים וטעימים"), false);
-  assert.equal(detectStemLeak(bodyDot, "התפוחים אדומים וטעימים"), false);
+  assert.equal(detectStemLeak(bodyParen, "  "), false);
+  assert.equal(detectStemLeak(bodyDot, "  "), false);
 });
 
 test("Hebrew pronoun reference in quoted sentence is not a stem leak", async () => {
   const { detectStemLeak } = await import(href("lib/learning/question-engine-metadata.js"));
   assert.equal(
     detectStemLeak(
-      "'רוני נתן לנועה את המחברת כי היא ביקשה.' למי שייכת המילה 'היא'?",
-      "לנועה"
+      "'       .'    ''?",
+      ""
     ),
     false
   );

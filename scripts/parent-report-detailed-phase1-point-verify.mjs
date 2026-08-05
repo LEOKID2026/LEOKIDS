@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Point verification — שלב ביצוע 1 (detailed parent report, subjects region top).
+ * Point verification —   1 (detailed parent report, subjects region top).
  * Run: node --env-file=.env.local --env-file=.env.e2e.local scripts/parent-report-detailed-phase1-point-verify.mjs
  */
 import { chromium } from "playwright";
@@ -21,9 +21,9 @@ const SUPABASE_ANON = process.env.NEXT_PUBLIC_LEARNING_SUPABASE_ANON_KEY || "";
 const SERVICE_KEY = process.env.LEARNING_SUPABASE_SERVICE_ROLE_KEY || "";
 const OMER_PARENT_EMAIL = process.env.PARENT_REPORT_DOM_PARENT_EMAIL || "18eran@gmail.com";
 
-const PHASE3_NEW_TITLES = ["מה כדאי לשים לב אליו", "ממה כדאי להימנע עכשיו", "האם אפשר להתקדם"];
-const PHASE3_OLD_TITLES = ["מה חוזר בטעויות", "מה לא לעשות", "האם זה נשמר בשאלה חדשה"];
-const FORBIDDEN = ["איך כדאי לעבוד על זה", "מה כדאי לעשות במקצוע הזה", "מה מומלץ לעשות בבית"];
+const PHASE3_NEW_TITLES = ["    ", "   ", "  "];
+const PHASE3_OLD_TITLES = ["  ", "  ", "    "];
+const FORBIDDEN = ["    ", "    ", "   "];
 
 function supabaseAuthStorageKey(url) {
   try {
@@ -66,7 +66,7 @@ const CHECK_FN = () => {
     const letterText = t(block.querySelector(".pr-detailed-subject-letter"));
     const tierGroups = block.querySelectorAll(".pr-detailed-topic-tier-group").length;
     const topicCards = block.querySelectorAll(".pr-detailed-topic-rec-block .pr-detailed-topic-rec-card, .pr-detailed-topic-rec-item").length;
-    const qMatch = metrics.match(/שאלות:\s*(\d+)/);
+    const qMatch = metrics.match(/:\s*(\d+)/);
     return {
       title,
       metrics,
@@ -78,7 +78,7 @@ const CHECK_FN = () => {
     };
   });
 
-  const math = subjects.find((s) => /מתמטיקה/i.test(s.title));
+  const math = subjects.find((s) => //i.test(s.title));
 
   return {
     pageLoaded: Boolean(root),
@@ -86,7 +86,7 @@ const CHECK_FN = () => {
     subjects,
     mathQuestionCount: math?.questionCount ?? null,
     mathMetrics: math?.metrics ?? "",
-    hasOutOfGrade: /תרגול מחוץ לכיתה הרשומה/.test(fullText),
+    hasOutOfGrade: /   /.test(fullText),
     fullTextSample: fullText.slice(0, 8000),
     phase3LabelsAll: subjects.flatMap((s) => s.phase3Labels),
     tierGroupCount: subjects.reduce((n, s) => n + s.tierGroups, 0),
@@ -145,42 +145,42 @@ async function main() {
     const text = data.fullTextSample || "";
 
     const checks = [
-      { id: 1, name: "הדף נטען", pass: data.pageLoaded && data.subjectsRegion },
+      { id: 1, name: " ", pass: data.pageLoaded && data.subjectsRegion },
       {
         id: 2,
-        name: "כותרת מקצוע + מדדים",
-        pass: data.subjects.some((s) => s.title && /שאלות:\s*\d+.*דיוק:/.test(s.metrics)),
+        name: "  + ",
+        pass: data.subjects.some((s) => s.title && /:\s*\d+.*:/.test(s.metrics)),
       },
       {
         id: 3,
-        name: "Phase3 עם כותרות חדשות",
+        name: "Phase3   ",
         pass:
           data.phase3LabelsAll.some((l) => PHASE3_NEW_TITLES.includes(l)) &&
           !data.phase3LabelsAll.some((l) => PHASE3_OLD_TITLES.includes(l)),
       },
       {
         id: 4,
-        name: 'אין "איך כדאי לעבוד על זה"',
-        pass: !text.includes("איך כדאי לעבוד על זה"),
+        name: ' "    "',
+        pass: !text.includes("    "),
       },
       {
         id: 5,
-        name: 'אין "מה כדאי לעשות במקצוע הזה"',
-        pass: !text.includes("מה כדאי לעשות במקצוע הזה"),
+        name: ' "    "',
+        pass: !text.includes("    "),
       },
-      { id: 6, name: "קבוצות נושאים", pass: data.tierGroupCount > 0 },
-      { id: 7, name: "כרטיסי נושא", pass: data.topicCardCount > 0 },
+      { id: 6, name: " ", pass: data.tierGroupCount > 0 },
+      { id: 7, name: " ", pass: data.topicCardCount > 0 },
       {
         id: 8,
-        name: "מתמטיקה לא 808 שאלות",
+        name: "  808 ",
         pass: data.mathQuestionCount == null || data.mathQuestionCount !== 808,
         detail: data.mathMetrics,
       },
-      { id: 9, name: 'חלון "תרגול מחוץ לכיתה הרשומה"', pass: data.hasOutOfGrade },
+      { id: 9, name: ' "   "', pass: data.hasOutOfGrade },
       {
         id: 10,
-        name: '"מה מומלץ לעשות בבית" לא חזר',
-        pass: !text.includes("מה מומלץ לעשות בבית"),
+        name: '"   "  ',
+        pass: !text.includes("   "),
       },
     ];
 

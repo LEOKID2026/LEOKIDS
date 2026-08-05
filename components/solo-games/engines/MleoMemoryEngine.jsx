@@ -53,7 +53,7 @@ function buildCandyFallbackDeck(pairCount) {
       pairKey: `demo-pair-${name}-${i}`,
       src: PLACEHOLDER,
       preBaked: true,
-      nameHe: name,
+      name: name,
     });
   }
   const deckItems = [];
@@ -65,7 +65,7 @@ function buildCandyFallbackDeck(pairCount) {
       pairKey: item.pairKey,
       src: item.src,
       preBaked: item.preBaked,
-      nameHe: item.nameHe,
+      name: item.name,
     })),
   };
 }
@@ -101,7 +101,7 @@ async function buildMemoryDeckFromDemoShop(pairCount) {
         pairKey,
         src,
         preBaked: card.imageVariantsReady === true,
-        nameHe: String(card.nameHe || card.name_he || "").trim(),
+        name: String(card.name || "").trim(),
       });
     }
     const shopPool = [...uniq.values()];
@@ -118,7 +118,7 @@ async function buildMemoryDeckFromDemoShop(pairCount) {
         pairKey: item.pairKey,
         src: item.src,
         preBaked: item.preBaked,
-        nameHe: item.nameHe,
+        name: item.name,
       })),
     };
   } catch {
@@ -620,7 +620,7 @@ export default function MleoMemoryEngine({
                       style={{ width: `${cardWidth}px`, height: `${cardHeight}px` }}
                       aria-label={
                         isFlipped
-                          ? card.nameHe ||
+                          ? card.name ||
                             gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "face_up_card")
                           : gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "face_down_card")
                       }
@@ -633,7 +633,7 @@ export default function MleoMemoryEngine({
                           fit="cover"
                           loading="eager"
                           alt={
-                            card.nameHe ||
+                            card.name ||
                             gamePackCopy("components__solo-games__engines__MleoMemoryEngine", "card")
                           }
                           wrapperClassName="absolute inset-0 h-full w-full"

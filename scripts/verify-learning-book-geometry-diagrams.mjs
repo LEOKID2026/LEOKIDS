@@ -1,5 +1,5 @@
 /**
- * Verify Geometry / גאומטריה visual diagram system.
+ * Verify Geometry /  visual diagram system.
  * Run: node scripts/verify-learning-book-geometry-diagrams.mjs
  */
 import fs from "fs";
@@ -68,7 +68,7 @@ for (const label of Object.values(GEOMETRY_DIAGRAM_LABELS)) {
   }
 }
 
-const sampleBody = `טקסט\n\n:::geometry-diagram\ntype: triangle_perimeter\n:::\n\nעוד טקסט`;
+const sampleBody = `\n\n:::geometry-diagram\ntype: triangle_perimeter\n:::\n\n `;
 const blocks = splitBookMarkdownBlocks(sampleBody);
 const geoBlock = blocks.find((b) => b.type === "geometry_diagram");
 if (!geoBlock || geoBlock.diagramType !== "triangle_perimeter") {
@@ -82,11 +82,11 @@ if (displayLines.join("\n").includes(":::geometry-diagram")) {
 
 for (const grade of ["g1", "g2", "g3", "g4", "g5", "g6"]) {
   const entry = getLearningBookEntry("geometry", grade);
-  if (!entry?.meta?.bookTitleHe?.includes("גאומטריה")) {
-    pushError(`geometry/${grade} book title must use גאומטריה`);
+  if (!entry?.meta?.bookTitleHe?.includes("")) {
+    pushError(`geometry/${grade} book title must use `);
   }
-  if (entry?.meta?.bookTitleHe?.includes("הנדסה")) {
-    pushError(`geometry/${grade} book title must not use הנדסה`);
+  if (entry?.meta?.bookTitleHe?.includes("")) {
+    pushError(`geometry/${grade} book title must not use `);
   }
 }
 
@@ -118,8 +118,8 @@ for (const [grade, order, meta] of BOOKS) {
     }
 
     const childFacing = page.sections.map((s) => s.body).join("\n");
-    if (childFacing.includes("הנדסה")) {
-      pushError(`${grade}/${pageId}: child-facing body contains forbidden הנדסה`);
+    if (childFacing.includes("")) {
+      pushError(`${grade}/${pageId}: child-facing body contains forbidden `);
     }
 
     const fenceMatch = raw.match(/:::geometry-diagram\n([\s\S]*?):::/);
@@ -169,6 +169,6 @@ console.log("Geometry diagram verification PASSED.");
 console.log(`- ${totalPages} geometry pages checked (G1–G6)`);
 console.log(`- ${GEOMETRY_DIAGRAM_TYPE_IDS.length} registered diagram types`);
 console.log("- page map + draft markers aligned");
-console.log("- Hebrew labels; book titles use גאומטריה");
+console.log("- Hebrew labels; book titles use ");
 console.log("- no deprecated perimeter_path on mapped pages");
 console.log("- no shape/topic mismatches detected");

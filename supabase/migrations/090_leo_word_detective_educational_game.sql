@@ -1,4 +1,4 @@
--- Educational game #9: leo-word-detective (בלש המילים של ליאו)
+-- Educational game #9: leo-word-detective
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 089 (leo-word-train).
@@ -67,7 +67,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-word-detective',
   'educational',
-  'בלש המילים של ליאו',
+  'Leo''s Word Detective',
   '/student/educational-games/leo-word-detective',
   '/student/educational-games',
   coalesce(
@@ -76,7 +76,7 @@ insert into public.site_game_catalog (
   ),
   75,
   '🕵️',
-  'חקירת מילים, משפטים והבנת הנקרא בעברית'
+  'Drag evidence onto the board and solve reading and vocabulary cases'
 )
 on conflict (game_key) do update set
   category = excluded.category,

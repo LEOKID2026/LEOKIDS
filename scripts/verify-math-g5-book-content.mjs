@@ -77,8 +77,8 @@ for (const pageId of MATH_G5_PAGE_ORDER) {
   }
 
   const childFacing = page.sections.map((s) => s.body).join("\n");
-  if (childFacing.includes("מתמטיקה")) {
-    errors.push(`${pageId}: child-facing body contains מתמטיקה`);
+  if (childFacing.includes("")) {
+    errors.push(`${pageId}: child-facing body contains `);
   }
   if (/\[DRAFT/i.test(childFacing)) {
     errors.push(`${pageId}: [DRAFT] marker in child-facing section body`);
@@ -132,7 +132,7 @@ if (errors.length) {
 console.log(`G5 content verification PASSED: ${MATH_G5_PAGE_ORDER.length} pages.`);
 console.log("- 7 sections each");
 console.log("- draft metadata + math:g5:{pageId} ids");
-console.log("- no מתמטיקה in body");
+console.log("- no  in body");
 console.log("- Section 5/6 alignment anchors present");
 console.log("- no fake practice routing in §7");
 if (bidiNotes.length) {

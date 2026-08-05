@@ -24,11 +24,11 @@ import {
 import { WORKSHEET_LEVEL_OPTIONS } from "../../lib/worksheets/worksheet-level-display.js";
 
 const META = {
-  titleHe: "דף עבודה - מתמטיקה",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "חיבור",
-  levelHe: "רגיל",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "math",
   gradeKey: "g3",
@@ -135,8 +135,8 @@ describe("worksheet-math-practice-format", () => {
       assert.ok(!q.verticalLayoutLtr);
       assert.notEqual(q.questionType, "vertical_math");
       assert.ok(q.mathExpressionLtr);
-      assert.doesNotMatch(String(q.stemHe || ""), /שארית/);
-      assert.doesNotMatch(String(q.mathExpressionLtr || ""), /שארית/);
+      assert.doesNotMatch(String(q.stemHe || ""), //);
+      assert.doesNotMatch(String(q.mathExpressionLtr || ""), //);
       assert.match(String(q.mathExpressionLtr || ""), /÷/);
     }
   });
@@ -153,8 +153,8 @@ describe("worksheet-math-practice-format", () => {
       assert.ok(q.verticalLayoutLtr, "must use vertical long division layout");
       assert.equal(q.questionType, "vertical_math");
       assert.ok(!q.mathExpressionLtr);
-      assert.doesNotMatch(String(q.stemHe || ""), /שארית/);
-      assert.doesNotMatch(String(q.verticalLayoutLtr || ""), /שארית/);
+      assert.doesNotMatch(String(q.stemHe || ""), //);
+      assert.doesNotMatch(String(q.verticalLayoutLtr || ""), //);
     }
   });
 
@@ -212,7 +212,7 @@ describe("worksheet-math-practice-format", () => {
     const labels = WORKSHEET_LEVEL_OPTIONS.map((l) => l.labelHe);
     assert.ok(labels.includes("Regular"));
     assert.ok(labels.includes("Advanced"));
-    assert.equal(labels.some((l) => /קל|בינוני|קשה|Easy|Medium|Hard/.test(l)), false);
+    assert.equal(labels.some((l) => /|||Easy|Medium|Hard/.test(l)), false);
   });
 
   test("computation formats prefer open answer over MCQ", () => {

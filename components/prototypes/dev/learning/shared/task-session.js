@@ -1,6 +1,6 @@
 /** @typedef {'easy' || 'medium' || 'hard'} DifficultyId */
 
-/** משימות בכל סשן בדיקה (המאגר מאחורה גדול בהרבה). */
+/**     (   ). */
 export const SESSION_TASK_COUNT = 12;
 
 export const MIN_POOL_SIZE = 50;

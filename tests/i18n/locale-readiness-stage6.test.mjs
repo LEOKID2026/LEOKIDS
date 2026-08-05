@@ -54,7 +54,7 @@ test("math/geometry generators: no Hebrew display string literals; EN at source"
     // Only level-name matching against legacy GRADES constants may retain HE tokens.
     for (const lit of heLits) {
       assert.ok(
-        /^(קשה|בינוני|קל|אתגר|למידה|תרגול)$/.test(lit),
+        /^(|||||)$/.test(lit),
         `${rel} unexpected HE literal: ${lit}`
       );
     }

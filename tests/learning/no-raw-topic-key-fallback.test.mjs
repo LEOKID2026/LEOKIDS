@@ -1,7 +1,7 @@
 /**
  * Regression guard: topic/operation-name resolvers in master/curriculum pages must never
  * fall back to the raw internal (English) key when no Hebrew label is mapped. They must
- * fall back to a safe generic Hebrew label instead (e.g. "נושא" / "צורה").
+ * fall back to a safe generic Hebrew label instead (e.g. "" / "").
  * Run: node --test tests/learning/no-raw-topic-key-fallback.test.mjs
  */
 

@@ -73,19 +73,19 @@ function payloadIneligibleTopic() {
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
     forbiddenPhrases: [],
-    requiredHedges: ["נכון לעכשיו"],
+    requiredHedges: [" "],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI0",
     textSlots: {
-      observation: "בנושא נצפו 6 שאלות.",
-      interpretation: "נכון לעכשיו התמונה עדיין רכה.",
-      action: "להמשיך בתרגול קצר ומדוד.",
-      uncertainty: "נכון לעכשיו כדאי לאסוף עוד תרגול לפני כיוון ברור.",
+      observation: "  6 .",
+      interpretation: "    .",
+      action: "   .",
+      uncertainty: "        .",
     },
   };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "",
     questions: 6,
     accuracy: 70,
     contractsV1: {
@@ -111,40 +111,40 @@ function payloadIneligibleTopic() {
 }
 
 const pInel = payloadIneligibleTopic();
-const topicScope = { scopeType: "topic", scopeId: "t1", scopeLabel: "שברים", scopeClass: "recommendation" };
+const topicScope = { scopeType: "topic", scopeId: "t1", scopeLabel: "", scopeClass: "recommendation" };
 
 const EQUIVALENCE_CLUSTERS = [
   {
     name: "explain_report",
-    phrases: ["מה רואים בנתונים?", "מה כתוב בדוח?", "מה המצב בדוח?", "איך נראית תמונת המצב לפי הדוח?"],
+    phrases: ["  ?", "  ?", "  ?", "     ?"],
   },
   {
     name: "what_to_do_this_week",
-    phrases: ["מה לעשות השבוע?", "במה להתמקד השבוע?", "מה הכי חשוב עכשיו בבית?", "מה היית מציע לנו לימים הקרובים?"],
+    phrases: ["  ?", "  ?", "    ?", "     ?"],
   },
   {
     name: "why_not_advance",
-    phrases: ["למה לא להתקדם?", "למה אתה לא ממליץ להעלות רמה?", "למה לעצור כאן?", "מה הסיבה שלא ממשיכים?"],
+    phrases: ["  ?", "     ?", "  ?", "   ?"],
   },
   {
     name: "strength_vs_weakness_summary",
-    phrases: ["מה טוב ומה חלש?", "איפה הוא מצליח ואיפה פחות?", "מה עובד טוב ומה דורש חיזוק?", "תסכם לי חוזקות מול קושי"],
+    phrases: ["   ?", "    ?", "     ?", "    "],
   },
   {
     name: "how_to_tell_child",
-    phrases: ["איך להגיד את זה לילד?", "איך להסביר לו את זה?", "באיזה ניסוח לדבר איתו?", "מה לומר לו בלי להלחיץ?"],
+    phrases: ["    ?", "    ?", "   ?", "    ?"],
   },
   {
     name: "question_for_teacher",
-    phrases: ["מה לשאול את המורה?", "יש משהו שכדאי לשאול את המורה?", "איך לנסח שאלה למורה?", "מה חשוב לברר מול המורה?"],
+    phrases: ["   ?", "     ?", "   ?", "    ?"],
   },
   {
     name: "is_intervention_needed",
-    phrases: ["האם צריך התערבות?", "זה דורש עזרה מעבר לבית?", "יש פה משהו מדאיג?", "צריך לפנות למורה או לאיש מקצוע?"],
+    phrases: ["  ?", "    ?", "   ?", "     ?"],
   },
   {
     name: "clarify_term",
-    phrases: ["מה זה אומר?", "תסביר לי את המושג הזה", "מה המשמעות של זה?", "לא הבנתי את הניסוח הזה"],
+    phrases: ["  ?", "    ", "   ?", "    "],
   },
 ];
 
@@ -171,13 +171,13 @@ for (const cluster of EQUIVALENCE_CLUSTERS) {
 }
 
 const NOISY_CASES = [
-  { raw: "  מה   לעשות   השבוע  ? ", expect: "what_to_do_this_week" },
-  { raw: "מה לעשות היום??", expect: "what_to_do_today" },
-  { raw: "מהלעשות היום?", expect: "what_to_do_today" },
-  { raw: "מה   לעשות   היום", expect: "what_to_do_today" },
-  { raw: "למה לא מתקדמיםים?", expect: "why_not_advance" },
-  { raw: "???מה זה אומר???", expect: "clarify_term" },
-  { raw: "מה לשאול את המורה…", expect: "question_for_teacher" },
+  { raw: "          ? ", expect: "what_to_do_this_week" },
+  { raw: "  ??", expect: "what_to_do_today" },
+  { raw: " ?", expect: "what_to_do_today" },
+  { raw: "      ", expect: "what_to_do_today" },
+  { raw: "  ?", expect: "why_not_advance" },
+  { raw: "???  ???", expect: "clarify_term" },
+  { raw: "   …", expect: "question_for_teacher" },
 ];
 
 for (const { raw, expect } of NOISY_CASES) {
@@ -206,14 +206,14 @@ function narrativeBlock(actionState, cap, hasAction) {
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
     forbiddenPhrases: [],
-    requiredHedges: ["נכון לעכשיו"],
+    requiredHedges: [" "],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: cap,
     textSlots: {
-      observation: "נכון לעכשיו בנושא נצפו 10 שאלות.",
-      interpretation: "נכון לעכשיו נשמרת מסגרת עדינה לפי הדוח.",
-      action: hasAction ? "נכון לעכשיו מומלץ תרגול קצר ממוקד." : null,
-      uncertainty: "נכון לעכשיו כדאי להמשיך במעקב.",
+      observation: "    10 .",
+      interpretation: "      .",
+      action: hasAction ? "     ." : null,
+      uncertainty: "    .",
     },
   };
 }
@@ -245,7 +245,7 @@ function payloadWithCanonicalActionState(actionState) {
         topicRecommendations: [
           {
             topicRowKey: "t1",
-            displayName: "שברים",
+            displayName: "",
             questions: 10,
             accuracy: 72,
             canonicalState: {
@@ -280,7 +280,7 @@ function payloadWithCanonicalActionState(actionState) {
         ],
       },
     ],
-    executiveSummary: { majorTrendsHe: ["קו ראשון בתקופה"] },
+    executiveSummary: { majorTrendsHe: ["  "] },
   };
 }
 
@@ -290,7 +290,7 @@ for (const st of ["withhold", "probe_only", "diagnose_only", "intervene", "maint
   const r = parentCopilot.runParentCopilotTurn({
     audience: "parent",
     payload,
-    utterance: "מה לעשות השבוע?",
+    utterance: "  ?",
     sessionId: `ph6-bound-${st}`,
     selectedContextRef: { scopeType: "topic", scopeId: "t1", subjectId: "math" },
   });
@@ -313,7 +313,7 @@ const dualPayload = {
       topicRecommendations: [
         {
           topicRowKey: "tA",
-          displayName: "נושא א",
+          displayName: " ",
           questions: 5,
           accuracy: 70,
           contractsV1: {
@@ -325,10 +325,10 @@ const dualPayload = {
               hedgeLevel: "light",
               allowedTone: "parent_professional_warm",
               forbiddenPhrases: [],
-              requiredHedges: ["נכון לעכשיו"],
+              requiredHedges: [" "],
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI1",
-              textSlots: { observation: "יש נתונים א.", interpretation: "כיוון רך.", action: null, uncertainty: "נכון לעכשיו." },
+              textSlots: { observation: "  .", interpretation: " .", action: null, uncertainty: " ." },
             },
             decision: { contractVersion: "v1", topicKey: "tA", subjectId: "math", decisionTier: 1, cannotConcludeYet: false },
             readiness: { contractVersion: "v1", topicKey: "tA", subjectId: "math", readiness: "emerging" },
@@ -349,7 +349,7 @@ const dualPayload = {
         },
         {
           topicRowKey: "tB",
-          displayName: "נושא ב",
+          displayName: " ",
           questions: 6,
           accuracy: 72,
           contractsV1: {
@@ -361,10 +361,10 @@ const dualPayload = {
               hedgeLevel: "light",
               allowedTone: "parent_professional_warm",
               forbiddenPhrases: [],
-              requiredHedges: ["נכון לעכשיו"],
+              requiredHedges: [" "],
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI1",
-              textSlots: { observation: "יש נתונים ב׳.", interpretation: "כיוון רך ב׳.", action: null, uncertainty: "נכון לעכשיו." },
+              textSlots: { observation: "  .", interpretation: "  .", action: null, uncertainty: " ." },
             },
             decision: { contractVersion: "v1", topicKey: "tB", subjectId: "math", decisionTier: 1, cannotConcludeYet: false },
             readiness: { contractVersion: "v1", topicKey: "tB", subjectId: "math", readiness: "emerging" },
@@ -386,18 +386,18 @@ const dualPayload = {
       ],
     },
   ],
-  executiveSummary: { majorTrendsHe: ["א"] },
+  executiveSummary: { majorTrendsHe: [""] },
 };
 const amb = resolveScope({
   payload: dualPayload,
-  utterance: "מה המצב בנושא א ובנושא ב?",
+  utterance: "     ?",
   selectedContextRef: null,
 });
 assert.equal(amb.resolutionStatus, "clarification_required");
 
 const subVsTopic = resolveScope({
   payload: pInel,
-  utterance: "מה המשמעות בחשבון לעומת השברים?",
+  utterance: "    ?",
   selectedContextRef: null,
 });
 assert.ok(
@@ -419,7 +419,7 @@ function ParentDetailedPageParentFacingChunk({ payload }) {
     h(
       "section",
       { className: "pr-detailed-section" },
-      h("h2", { className: "pr-detailed-section-title" }, "סיכום לתקופה"),
+      h("h2", { className: "pr-detailed-section-title" }, " "),
       h(ExecutiveSummarySection, { es: normalizeExecutiveSummary(payload), compact: false }),
     ),
   );

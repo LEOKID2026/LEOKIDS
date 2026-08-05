@@ -45,8 +45,8 @@ export default async function handler(req, res) {
     return res.status(404).json({ ok: false, error: "not_found" });
   }
 
-  const titleHe = entry.titleHe
-    ? entry.titleHe
+  const title = entry.title
+    ? entry.title
     : buildWorksheetPayloadMeta({
         subjectId: entry.subjectId,
         gradeKey: entry.gradeKey,
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
         levelKey: entry.levelKey,
         inkSave: entry.inkSave,
         mathPracticeFormat: entry.mathPracticeFormat,
-      }).titleHe;
+      }).title;
 
   const generated = await generateWorksheetForParent({
     subjectId: entry.subjectId,
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
     count: entry.count,
     seed: entry.seed,
     inkSave: entry.inkSave,
-    titleHe,
+    title,
     mathPracticeFormat: entry.mathPracticeFormat,
     ...(interfaceLocale ? { interfaceLocale } : {}),
     ...(contentLocale ? { contentLocale, instructionLocale: contentLocale } : {}),

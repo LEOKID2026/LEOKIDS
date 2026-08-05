@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     count: body?.count,
     seed: body?.seed,
     inkSave: body?.inkSave === true,
-    titleHe: typeof body?.titleHe === "string" ? body.titleHe : undefined,
+    title: typeof body?.title === "string" ? body.title : undefined,
     mathPracticeFormat:
       typeof body?.mathPracticeFormat === "string" ? body.mathPracticeFormat : undefined,
     preferMcq: body?.preferMcq,

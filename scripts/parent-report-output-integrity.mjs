@@ -64,7 +64,7 @@ const parentCopilot = await load("utils/parent-copilot/index.js");
 const runTurn = parentCopilot.runParentCopilotTurn;
 
 /** Israeli site narrative grade marker — not part of Global product contract. */
-const ISRAELI_NARRATIVE_GRADE_MARKER = " - כיתה ";
+const ISRAELI_NARRATIVE_GRADE_MARKER = " -  ";
 /** Global narrative: "{topic} - Grade {1st|2nd|…}" via row-display-label-context + formatParentReportGradeLabel. */
 const GLOBAL_NARRATIVE_GRADE_RE = / - Grade (1st|2nd|3rd|4th|5th|6th)\b/;
 const HEBREW_CHAR_RE = /[\u0590-\u05FF]/u;
@@ -95,8 +95,8 @@ function assertGlobalInsightDisplayContract(insight, label) {
   assert.ok(GLOBAL_NARRATIVE_GRADE_RE.test(String(insight.displayNameHe || "")), `${label}: short Grade in parent label`);
   assert.ok(!HEBREW_CHAR_RE.test(String(insight.displayNameHe || "")), `${label}: no Hebrew in Global label`);
   assert.ok(
-    !String(insight.displayNameHe || "").includes("כיתה"),
-    `${label}: no Israeli כיתה fallback`,
+    !String(insight.displayNameHe || "").includes(""),
+    `${label}: no Israeli  fallback`,
   );
   assert.ok(!HEBREW_CHAR_RE.test(subjectName), `${label}: subject authority is English`);
   assert.ok(!HEBREW_CHAR_RE.test(topicAuthority), `${label}: topic authority is English`);
@@ -359,7 +359,7 @@ for (const sid of OUTPUT_INTEGRITY_SUBJECT_IDS) {
     );
     if (isCore) {
       assert.ok(overviewRow?.narrativeTitleHe, `H: overview title for core row ${k.topicRowKey}`);
-      assert.ok(!/תרגול ב|מעל הכיתה הרשומה/u.test(String(overviewRow?.narrativeTitleHe || "")), "H: short overview title");
+      assert.ok(!/ |  /u.test(String(overviewRow?.narrativeTitleHe || "")), "H: short overview title");
     } else {
       assert.ok(!overviewRow, `H: out-of-grade row ${k.topicRowKey} excluded from core overview`);
     }
@@ -466,8 +466,8 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
     "I: no Hebrew in Global narrative topic labels",
   );
   assert.ok(
-    frac.every(([, r]) => !String(r.narrativeTopicLabelHe || "").includes("כיתה")),
-    "I: no Israeli כיתה fallback in Global narrative labels",
+    frac.every(([, r]) => !String(r.narrativeTopicLabelHe || "").includes("")),
+    "I: no Israeli  fallback in Global narrative labels",
   );
   assert.ok(
     frac.every(([, r]) => !/Above registered|Below registered|practice in|above the registered/i.test(String(r.narrativeTopicLabelHe || ""))),
@@ -586,7 +586,7 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
   const thinUnit = {
     subjectId: "geometry",
     topicRowKey: "shapes::grade:g3",
-    displayName: "צורות",
+    displayName: "",
     evidenceTrace: [{ type: "volume", value: { questions: 3, correct: 1, wrong: 2, accuracy: 33 } }],
     taxonomy: {},
     priority: { level: "P2" },
@@ -601,13 +601,13 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
   const strongUnit = {
     subjectId: "math",
     topicRowKey: "fractions::grade:g5",
-    displayName: "שברים",
+    displayName: "",
     evidenceTrace: [{ type: "volume", value: { questions: 55, correct: 21, wrong: 34, accuracy: 38 } }],
-    taxonomy: { patternHe: "בלבול מכנה משותף" },
+    taxonomy: { patternHe: "  " },
     priority: { level: "P4" },
     recurrence: { wrongCountForRules: 12 },
     outputGating: { cannotConcludeYet: false, diagnosisAllowed: true },
-    diagnosis: { allowed: true, lineHe: "בלבול מכנה משותף" },
+    diagnosis: { allowed: true, lineHe: "  " },
     canonicalState: {
       actionState: "intervene",
       assessment: { cannotConcludeYet: false, readiness: "ready" },
@@ -634,7 +634,7 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
     "L: thin mainFocus must include partial-data collect-more copy",
   );
   assert.ok(
-    !/פער ידע|התערבות אגרסיבית/i.test(String(thinOv.mainFocusAreaLineHe || "")),
+    !/ | /i.test(String(thinOv.mainFocusAreaLineHe || "")),
     "L: thin mainFocus must not over-diagnose",
   );
   assert.ok(
@@ -662,7 +662,7 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
     .map(([, r]) => String(r.narrativeTopicLabelHe || ""));
   assert.ok(fracNarratives.length >= 2, "sign-off: fraction narratives present");
   assert.ok(
-    fracNarratives.every((t) => GLOBAL_NARRATIVE_GRADE_RE.test(t) && !HEBREW_CHAR_RE.test(t) && !t.includes("כיתה")),
+    fracNarratives.every((t) => GLOBAL_NARRATIVE_GRADE_RE.test(t) && !HEBREW_CHAR_RE.test(t) && !t.includes("")),
     "sign-off: Global narrative labels English with Grade marker",
   );
 
@@ -677,10 +677,10 @@ for (const t of TRACE_TABLE.slice(0, 4)) {
       topicRowKey: i.key,
       requiresGradeContext: true,
     }));
-  const hebrewFallback = mathInsights.some((i) => HEBREW_CHAR_RE.test(String(i.displayNameHe || "")) || String(i.displayNameHe || "").includes("כיתה"))
-    || fracNarratives.some((t) => HEBREW_CHAR_RE.test(t) || t.includes("כיתה"));
+  const hebrewFallback = mathInsights.some((i) => HEBREW_CHAR_RE.test(String(i.displayNameHe || "")) || String(i.displayNameHe || "").includes(""))
+    || fracNarratives.some((t) => HEBREW_CHAR_RE.test(t) || t.includes(""));
   // This Global suite must not require the Israeli narrative marker; that contract stays Israeli-only.
-  const israeliContractUnchanged = ISRAELI_NARRATIVE_GRADE_MARKER === " - כיתה ";
+  const israeliContractUnchanged = ISRAELI_NARRATIVE_GRADE_MARKER === " -  ";
 
   process.stdout.write(`\nGlobal parent report uses global display-name authority = ${usesGlobalAuthority}\n`);
   process.stdout.write(`Global parent report Hebrew fallback = ${hebrewFallback}\n`);

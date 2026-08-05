@@ -11,13 +11,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const INVENTORY_PATH = join(ROOT, "reports", "site-decision-hebrew-copy-inventory.xlsx");
 const OUT_CSV = join(ROOT, "reports", "site-decision-hebrew-context-map.csv");
-const NEEDS_FULL = "צריך לבדוק בדוח מלא";
+const NEEDS_FULL = "   ";
 
 const PLACEHOLDER_SUBS = [
-  [/\$\{[^}]+\}/g, "[ערך]"],
-  [/\[תלמיד\]/g, "דני"],
-  [/\[מקצוע\]/g, "חשבון"],
-  [/\[נושא\]/g, "שברים"],
+  [/\$\{[^}]+\}/g, "[]"],
+  [/\[\]/g, ""],
+  [/\[\]/g, ""],
+  [/\[\]/g, ""],
 ];
 
 function substitutePlaceholders(text) {
@@ -76,15 +76,15 @@ function resolveLine(file, line, text, inv) {
 
 function surfaceLabel(surface) {
   const m = {
-    parent_copilot: "בעוזר ההורים (Copilot)",
-    parent_ai: "בהסבר AI להורים",
-    diagnostic_engine: "במנוע אבחון/ניתוח",
-    recommendation_engine: "בהמלצות מערכת",
-    classroom_activity: "בפעילות כיתתית",
-    student_learning: "במסך תרגול תלמיד",
-    api_layer: "בהודעת API למשתמש",
-    guardian_access: "בגישת הורה/אפוטרופוס",
-    decision_general: "בממשק החלטות",
+    parent_copilot: "  (Copilot)",
+    parent_ai: " AI ",
+    diagnostic_engine: " /",
+    recommendation_engine: " ",
+    classroom_activity: " ",
+    student_learning: "  ",
+    api_layer: " API ",
+    guardian_access: " /",
+    decision_general: " ",
   };
   return m[surface] || surface;
 }
@@ -118,21 +118,21 @@ function buildBefore(candidate, inv, codeCtx) {
   const notes = [];
   const blocks = [
     surfaceLabel(candidate.surface || inv?.surface || ""),
-    candidate.section ? `אזור: ${candidate.section}` : "",
-    candidate.decision_type ? `סוג החלטה: ${candidate.decision_type}` : "",
+    candidate.section ? `: ${candidate.section}` : "",
+    candidate.decision_type ? ` : ${candidate.decision_type}` : "",
   ].filter(Boolean);
 
-  if (codeCtx?.heading) blocks.push(`כותרת: ${codeCtx.heading}`);
+  if (codeCtx?.heading) blocks.push(`: ${codeCtx.heading}`);
 
   let body = substitutePlaceholders(candidate.example_before || codeCtx?.snippet || candidate.current_hebrew);
-  if (body.startsWith("בעוזר") || body.startsWith("במסך")) {
-    body = body.replace(/^ב[^:]*:\s*/, "");
+  if (body.startsWith("") || body.startsWith("")) {
+    body = body.replace(/^[^:]*:\s*/, "");
   }
   if (!body) return { text: NEEDS_FULL, notes: ["empty excerpt"] };
   if (!codeCtx?.ok) notes.push("source line not verified");
-  if (/\[ערך\]|…/.test(body)) notes.push("placeholders substituted");
+  if (/\[\]|…/.test(body)) notes.push("placeholders substituted");
 
-  blocks.push(`כפי שמופיע: ${body}`);
+  blocks.push(` : ${body}`);
   return { text: blocks.join("\n"), notes };
 }
 
@@ -165,7 +165,7 @@ function main() {
     const beforeResult = buildBefore(candidate, inv, codeCtx);
     const engine_meaning =
       String(candidate.meaning_plain_he || "").trim() ||
-      (inv?.decision_type ? `הטקסט משפיע על החלטה מסוג ${inv.decision_type}.` : "");
+      (inv?.decision_type ? `     ${inv.decision_type}.` : "");
 
     const notes = [...beforeResult.notes];
     const context_confidence = assessConfidence(beforeResult.text, notes, codeCtx, candidate);

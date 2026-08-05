@@ -4,12 +4,12 @@
  */
 
 const BANNED = [
-  "מספר נכון + יחידה שגויה",
-  "כישלון רק באיחוד",
-  "עם/בלי שדה יחידה",
-  "מספר + שורת יחידה",
-  "עם תבנית שלבים",
-  "שלבים + בדיקה לאחור",
+  "  +  ",
+  "  ",
+  "/  ",
+  " +  ",
+  "  ",
+  " +  ",
 ];
 
 const [templatesMod, detailedMod, parentReportV2Mod, truthMod, wpOrderMod] = await Promise.all([
@@ -43,7 +43,7 @@ function assertNoBanned(label, blob) {
 function rowFor(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "מתמטיקה",
+    displayName: "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -69,17 +69,17 @@ function buildUnit(taxonomyId, bucketKey, topicRowKey) {
     subjectId: "math",
     topicRowKey,
     bucketKey,
-    displayName: "מתמטיקה",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
-      immediateActionHe: isM07 ? "מספר + שורת יחידה" : "שלבים + בדיקה לאחור",
-      shortPracticeHe: isM07 ? "עם/בלי שדה יחידה" : "עם תבנית שלבים",
+      immediateActionHe: isM07 ? " +  " : " +  ",
+      shortPracticeHe: isM07 ? "/  " : "  ",
       taxonomyId,
     },
     taxonomy: {
       id: taxonomyId,
-      patternHe: isM07 ? "מספר נכון + יחידה שגויה" : "כישלון רק באיחוד",
-      topicHe: "מילולי",
+      patternHe: isM07 ? "  +  " : "  ",
+      topic: "",
       subskillHe: "test",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
@@ -95,7 +95,7 @@ function buildUnit(taxonomyId, bucketKey, topicRowKey) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     canonicalState: {
       actionState: "intervene",
@@ -116,7 +116,7 @@ const twp = "word_problems\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [twp]: rowFor(twp, "word_problems", "g4") },
     diagnosticEngineV2: { units: [buildUnit("M-07", "word_problems", twp)] },
@@ -127,7 +127,7 @@ const twp = "word_problems\u0001learning\u0001g4\u0001easy";
   assertEq("M-07 wp g4 goal", mpM07?.nextWeekGoalHe, M07.g3_g4.goalTextHe);
   assertNoBanned("M-07 detailed action", mpM07?.parentActionHe);
   assertNoBanned("M-07 detailed goal", mpM07?.nextWeekGoalHe);
-  const tpM07 = buildTruthPacketV1(dM07, { scopeType: "topic", scopeId: twp, scopeLabel: "מילולי" });
+  const tpM07 = buildTruthPacketV1(dM07, { scopeType: "topic", scopeId: twp, scopeLabel: "" });
   const narM07 = tpM07?.narrative?.textSlots ? JSON.stringify(tpM07.narrative.textSlots) : "";
   assertNoBanned("truth M-07 narrative textSlots", narM07);
 
@@ -135,7 +135,7 @@ const twp = "word_problems\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [twp]: rowFor(twp, "word_problems", "g4") },
     diagnosticEngineV2: { units: [buildUnit("M-08", "word_problems", twp)] },
@@ -151,7 +151,7 @@ const twp = "word_problems\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [teq]: rowFor(teq, "equations", "g6") },
     diagnosticEngineV2: { units: [buildUnit("M-08", "equations", teq)] },
@@ -167,7 +167,7 @@ const twp = "word_problems\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [too]: rowFor(too, "order_of_operations", "g6") },
     diagnosticEngineV2: { units: [buildUnit("M-08", "order_of_operations", too)] },
@@ -176,13 +176,13 @@ const twp = "word_problems\u0001learning\u0001g4\u0001easy";
   const mpM08oo = dM08oo?.subjectProfiles?.find((p) => p.subject === "math");
   assertEq("M-08 OOO g6 action", mpM08oo?.parentActionHe, M08.order_of_operations.g5_g6.actionTextHe);
   assertNoBanned("M-08 OOO detailed action", mpM08oo?.parentActionHe);
-  const tpoo = buildTruthPacketV1(dM08oo, { scopeType: "topic", scopeId: too, scopeLabel: "סדר" });
+  const tpoo = buildTruthPacketV1(dM08oo, { scopeType: "topic", scopeId: too, scopeLabel: "" });
   const narOo = tpoo?.narrative?.textSlots ? JSON.stringify(tpoo.narrative.textSlots) : "";
   assertNoBanned("truth M-08 OOO narrative textSlots", narOo);
 
   const sh = summarizeV2UnitsForSubjectForTests(baseM08oo.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseM08oo.mathOperations,
     reportTotalQuestions: 20,
   });

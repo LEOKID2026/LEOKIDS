@@ -19,11 +19,11 @@ import {
 } from "../../lib/worksheets/worksheet-math-display.server.js";
 
 const META = {
-  titleHe: "דף עבודה - חיבור במאונך",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "חיבור במאונך",
-  levelHe: "רגיל",
+  titleHe: "  -  ",
+  subject: "",
+  grade: " ",
+  topic: " ",
+  level: "",
   inkSave: false,
   subjectId: "math",
   gradeKey: "g3",
@@ -174,9 +174,9 @@ describe("math-vertical-layout", () => {
       {
         ...META,
         topicKey: "division",
-        topicHe: "חילוק ארוך",
+        topic: " ",
         gradeKey: "g4",
-        gradeHe: "כיתה ד׳",
+        grade: " ",
         mathPracticeFormat: "long_division",
       },
       {

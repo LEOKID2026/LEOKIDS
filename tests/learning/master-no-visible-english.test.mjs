@@ -16,8 +16,8 @@ const ROOT = join(__dirname, "../..");
 describe("master pages: no visible English XP text", () => {
     test(`${file} "how to play" list has no visible "XP"`, () => {
       const src = readFileSync(join(ROOT, file), "utf8");
-      assert.doesNotMatch(src, /כוכבים\s*ו\s*XP/);
-      assert.match(src, /כוכבים ונקודות ניסיון/);
+      assert.doesNotMatch(src, /\s*\s*XP/);
+      assert.match(src, /  /);
     });
   }
 });

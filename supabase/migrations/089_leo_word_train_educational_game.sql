@@ -1,4 +1,4 @@
--- Educational game #8: leo-word-train (רכבת המילים של ליאו)
+-- Educational game #8: leo-word-train
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 087 (leo-pizzeria).
@@ -65,7 +65,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-word-train',
   'educational',
-  'רכבת המילים של ליאו',
+  'Leo''s Word Train',
   '/student/educational-games/leo-word-train',
   '/student/educational-games',
   coalesce(
@@ -74,7 +74,7 @@ insert into public.site_game_catalog (
   ),
   70,
   '🚂',
-  'אותיות, מילים ומשפטים באנגלית — על קרונות הרכבת'
+  'Letters, words, and sentences in English - riding on the train cars'
 )
 on conflict (game_key) do update set
   category = excluded.category,

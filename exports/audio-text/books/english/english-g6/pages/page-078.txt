@@ -1,2 +1,0 @@
-היום נלמד Conditionals — type 0 (חוק) ו-type 1 (עתיד אפשרי).
-If it rains, we will stay at home — אם ירד גשם, נישאר בבית.

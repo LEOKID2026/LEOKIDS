@@ -5,27 +5,27 @@
  */
 
 const EXPECTED_COMPARE_ACTION =
-  "כדאי לתרגל השוואת מספרים רב ספרתיים לפי ערך הספרות. בקשו מהילד להתחיל מהספרה בעלת הערך הגבוה ביותר ולהסביר באיזו עמודה נקבע ההבדל.";
+  "        .             .";
 const EXPECTED_COMPARE_GOAL =
-  "בשבוע הקרוב התמקדו בהשוואת מספרים לפי ערך מקום, מהספרה הגדולה ביותר ועד העמודה שבה מופיע ההבדל.";
+  "       ,        .";
 
 const EXPECTED_NUMBER_SENSE_ACTION =
-  "כדאי לתרגל פירוק מספרים לפי ערך מקום: אחדות, עשרות, מאות ואלפים. בקשו מהילד לכתוב את המספר גם בצורה רגילה וגם כפירוק לפי הערך של כל ספרה.";
+  "      : , ,  .               .";
 const EXPECTED_NUMBER_SENSE_GOAL =
-  "בשבוע הקרוב התמקדו בערך מקום ובפירוק מספרים רב ספרתיים לפי הספרות שלהם.";
+  "           .";
 
 const EXPECTED_ESTIMATION_ACTION =
-  "כדאי לתרגל אומדן לפני חישוב במספרים רב ספרתיים. בקשו מהילד לעגל את המספרים בקירוב, לשער מה גודל התשובה, ואז לבדוק אם החישוב הסופי סביר.";
+  "       .      ,    ,      .";
 const EXPECTED_ESTIMATION_GOAL =
-  "בשבוע הקרוב התמקדו באומדן לפני חישוב ובבדיקת סבירות של תשובות במספרים רב ספרתיים.";
+  "            .";
 
 /** Must not appear in parent-facing resolver output when approved M-01 bucket templates apply. */
 const M01_PARENT_BANNED = [
-  "טעויות בהמרת ייצוג",
-  "מבנה / פירוק 10+1",
-  "פירוק 10+1",
-  "שני ייצוגים לאותו מספר",
-  "מניפולציה + מעבר הדרגתי לסמל",
+  "  ",
+  " /  10+1",
+  " 10+1",
+  "   ",
+  " +   ",
 ];
 
 /**
@@ -38,12 +38,12 @@ function buildBaseReportM01(bucketKey, gradeKey = "g4") {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKey]: {
         bucketKey,
-        displayName: "חשבון",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -63,18 +63,18 @@ function buildBaseReportM01(bucketKey, gradeKey = "g4") {
           subjectId: "math",
           topicRowKey,
           bucketKey,
-          displayName: "חשבון",
-          diagnosis: { allowed: true, taxonomyId: "M-01", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-01", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "מניפולציה + מעבר הדרגתי לסמל",
-            shortPracticeHe: "שני ייצוגים לאותו מספר",
+            immediateActionHe: " +   ",
+            shortPracticeHe: "   ",
             taxonomyId: "M-01",
           },
           taxonomy: {
             id: "M-01",
-            patternHe: "טעויות בהמרת ייצוג",
-            topicHe: "מבנה",
-            subskillHe: "פירוק 10+1",
+            patternHe: "  ",
+            topic: "",
+            subskillHe: " 10+1",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -89,7 +89,7 @@ function buildBaseReportM01(bucketKey, gradeKey = "g4") {
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -240,13 +240,13 @@ function runM01ApprovedBucketsG4() {
   assertM01ParentBannedAbsent("detailed compare nextWeekGoalHe", mpC?.nextWeekGoalHe);
 
   const dJsonC = JSON.stringify(detailedC);
-  if (dJsonC.includes("מניפולציה + מעבר הדרגתי לסמל") || dJsonC.includes("שני ייצוגים לאותו מספר")) {
+  if (dJsonC.includes(" +   ") || dJsonC.includes("   ")) {
     throw new Error("detailed JSON still contains raw M-01 engine intervention strings after sanitize (compare)");
   }
 
   const shortC = summarizeV2UnitsForSubjectForTests(baseCompare.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseCompare.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -256,7 +256,7 @@ function runM01ApprovedBucketsG4() {
   const tpC = buildTruthPacketV1(detailedC, {
     scopeType: "topic",
     scopeId: topicRowKeyCompare,
-    scopeLabel: "חשבון",
+    scopeLabel: "",
   });
   if (!tpC) throw new Error("buildTruthPacketV1 returned null (compare)");
   const narC = tpC?.contracts?.narrative?.textSlots || {};
@@ -283,14 +283,14 @@ function runM01ApprovedBucketsG4() {
   assertM01ParentBannedAbsent("detailed number_sense parentActionHe", mpN?.parentActionHe);
 
   const dJsonN = JSON.stringify(detailedN);
-  if (dJsonN.includes("מניפולציה + מעבר הדרגתי לסמל") || dJsonN.includes("שני ייצוגים לאותו מספר")) {
+  if (dJsonN.includes(" +   ") || dJsonN.includes("   ")) {
     throw new Error("detailed JSON still contains raw M-01 engine intervention strings after sanitize (number_sense)");
   }
 
   const tpN = buildTruthPacketV1(detailedN, {
     scopeType: "topic",
     scopeId: topicRowKeyNs,
-    scopeLabel: "חשבון",
+    scopeLabel: "",
   });
   if (!tpN) throw new Error("buildTruthPacketV1 returned null (number_sense)");
   const narN = tpN?.contracts?.narrative?.textSlots || {};
@@ -318,13 +318,13 @@ function runM01ApprovedBucketsG4() {
   assertM01ParentBannedAbsent("detailed estimation parentActionHe", mpE?.parentActionHe);
 
   const dJsonE = JSON.stringify(detailedE);
-  if (dJsonE.includes("מניפולציה + מעבר הדרגתי לסמל") || dJsonE.includes("שני ייצוגים לאותו מספר")) {
+  if (dJsonE.includes(" +   ") || dJsonE.includes("   ")) {
     throw new Error("detailed JSON still contains raw M-01 engine intervention strings after sanitize (estimation)");
   }
 
   const shortE = summarizeV2UnitsForSubjectForTests(baseEst.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseEst.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -334,7 +334,7 @@ function runM01ApprovedBucketsG4() {
   const tpE = buildTruthPacketV1(detailedE, {
     scopeType: "topic",
     scopeId: topicRowKeyEst,
-    scopeLabel: "חשבון",
+    scopeLabel: "",
   });
   if (!tpE) throw new Error("buildTruthPacketV1 returned null (estimation)");
   const narE = tpE?.contracts?.narrative?.textSlots || {};
@@ -375,7 +375,7 @@ function runM01ExtendedBucketsUseTemplatesNotEngineFallback() {
     assertEq(`detailed math nextWeekGoalHe (M-01 ${bucket} g4)`, mp?.nextWeekGoalHe, goal);
     assertM01ParentBannedAbsent(`detailed ${bucket} parentActionHe`, mp?.parentActionHe);
     const dJson = JSON.stringify(detailed);
-    if (dJson.includes("מניפולציה + מעבר הדרגתי לסמל")) {
+    if (dJson.includes(" +   ")) {
       throw new Error(`M-01 ${bucket}: detailed JSON must not contain raw engine intervention`);
     }
   }

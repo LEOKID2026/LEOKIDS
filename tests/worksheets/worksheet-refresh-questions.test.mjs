@@ -55,7 +55,7 @@ describe("worksheet-refresh-questions", () => {
     assert.equal(result.ok, true);
     assert.equal(auditWorksheetPayloadForAnswerLeaks(result.worksheetPayload).pass, true);
     assert.equal(auditWorksheetPayloadForMetadataLeaks(result.worksheetPayload).pass, true);
-    assert.equal(result.worksheetPayload.meta.levelHe, "Regular");
+    assert.equal(result.worksheetPayload.meta.level, "Regular");
   });
 
   test("ready catalog entry keeps fixed seed behavior", async () => {

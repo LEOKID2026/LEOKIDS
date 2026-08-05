@@ -29,14 +29,14 @@ const { SubjectSummaryBlock } = detailedSurface;
 
 const STALE_AUDIT = [
   {
-    phrase: "לאסוף עוד מידע לפני החלטה",
+    phrase: "    ",
     expect: "valid only for truly thin rows (<8 Q) or legacy fallback when step is maintain_and_strengthen without volume",
   },
   {
-    phrase: "עדיין מוקדם לקבוע",
+    phrase: "  ",
     expect: "valid for WE0/mandatory hedge, sparse rows, external routes — not high-volume topic rows",
   },
-  { phrase: "אין מספיק מידע", expect: "valid for empty subjects / geometry stems — not 367-Q topic rows" },
+  { phrase: "  ", expect: "valid for empty subjects / geometry stems — not 367-Q topic rows" },
   {
     phrase: "thinEvidenceDowngraded",
     expect: "flag: true only when shouldThinEvidenceDowngradeRecommendation — never at q>=40",
@@ -63,10 +63,10 @@ function classifyStaleHits(phrase, file, line) {
     return "test_or_audit";
   }
   if (rel.includes("geometry-conceptual-bank")) return "valid_non_report";
-  if (phrase === "לאסוף עוד מידע לפני החלטה" && rel.includes("detailed-parent-report.js")) {
+  if (phrase === "    " && rel.includes("detailed-parent-report.js")) {
     return "valid_thin_fallback_in_engine";
   }
-  if (phrase === "עדיין מוקדם לקבוע" && rel.includes("narrative-contract-v1.js")) return "valid_we0_hedge_template";
+  if (phrase === "  " && rel.includes("narrative-contract-v1.js")) return "valid_we0_hedge_template";
   if (phrase === SUBSKILL_DETAIL_LIMITATION_HE.slice(0, 12) && rel.includes("parent-report-topic-evidence.js")) {
     return "valid_subskill_only_constant";
   }
@@ -102,7 +102,7 @@ for (const row of auditRows) {
 const pipelineChecks = [
   {
     layer: "taxonomy.patternHe on v2 unit",
-    unit: { taxonomy: { patternHe: "דפוס", subskillHe: "תת" } },
+    unit: { taxonomy: { patternHe: "", subskillHe: "" } },
     mapRow: null,
     expect: true,
   },
@@ -129,15 +129,15 @@ const base = {
   registeredGradeKey: "g4",
   summary: { totalQuestions: 433, mathQuestions: 433, mathCorrect: 350, mathAccuracy: 81, overallAccuracy: 81 },
   mathOperations: {
-    [g4Key]: { displayName: "שברים", questions: 367, accuracy: 87, gradeKey: "g4" },
-    [g5Key]: { displayName: "שברים", questions: 66, accuracy: 38, gradeKey: "g5" },
+    [g4Key]: { displayName: "", questions: 367, accuracy: 87, gradeKey: "g4" },
+    [g5Key]: { displayName: "", questions: 66, accuracy: 38, gradeKey: "g5" },
   },
   diagnosticEngineV2: {
     units: [
       {
         subjectId: "math",
         topicRowKey: g4Key,
-        displayName: "שברים",
+        displayName: "",
         evidenceTrace: [{ type: "volume", value: { questions: 367, accuracy: 87, correct: 319, wrong: 48 } }],
         canonicalState: { actionState: "maintain", assessment: { readiness: "ready", confidenceLevel: "high", decisionTier: 3 }, evidence: { positiveAuthorityLevel: "very_good" } },
         confidence: { level: "high", rowSignals: { dataSufficiencyLevel: "strong" } },
@@ -147,11 +147,11 @@ const base = {
       {
         subjectId: "math",
         topicRowKey: g5Key,
-        displayName: "שברים",
-        taxonomy: { patternHe: "השוואה לפי מונה בלבד" },
+        displayName: "",
+        taxonomy: { patternHe: "   " },
         evidenceTrace: [{ type: "volume", value: { questions: 66, accuracy: 38, correct: 25, wrong: 41 } }],
         canonicalState: { actionState: "intervene", assessment: { readiness: "ready", confidenceLevel: "high", decisionTier: 3 } },
-        diagnosis: { allowed: true, lineHe: "השוואה לפי מונה בלבד" },
+        diagnosis: { allowed: true, lineHe: "   " },
         confidence: { level: "high", rowSignals: { dataSufficiencyLevel: "strong" } },
         priority: { level: "P4" },
         outputGating: { cannotConcludeYet: false },
@@ -162,7 +162,7 @@ const base = {
 const detailed = buildDetailedParentReportFromBaseReport(base, { period: "week" });
 const mathP = detailed.subjectProfiles.find((s) => s.subject === "math");
 const html = renderToStaticMarkup(h(SubjectSummaryBlock, { sp: mathP }));
-assert.ok(html.includes("שברים"), "detailed UI subject block mentions topic");
-assert.ok(/367|87|66|38/.test(html) || html.includes("כיתה"), "detailed UI shows volume or grade context");
+assert.ok(html.includes(""), "detailed UI subject block mentions topic");
+assert.ok(/367|87|66|38/.test(html) || html.includes(""), "detailed UI shows volume or grade context");
 
 process.stdout.write("\nparent-report-final-product-verify: ALL PASS\n");

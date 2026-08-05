@@ -32,7 +32,7 @@ const CROSS_COUNTRY_RE =
   /\b(Sénégal|Senegal|Côte d’Ivoire|Côte d'Ivoire|Cameroun|Guinée|Togo|Gabon|Congo|France|Québec|Belgique|Suisse)\b/;
 /** Dead Israel-curriculum / Hebrew / homeland residue must not remain as local overrides. */
 const DEAD_CURRICULUM_RE =
-  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|מולדת|עברית|ישראל/i;
+  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|||/i;
 
 /**
  * @param {string} dir

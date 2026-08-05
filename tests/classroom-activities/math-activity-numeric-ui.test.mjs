@@ -23,15 +23,15 @@ function assignedActivityQuestionUsesChoiceUiMirror(question) {
     if (!params || typeof params !== "object") return false;
     const baseKind = String(params.kind || "").replace(/^story_/, "");
     const hebrewLabels = {
-      parallel_perpendicular: ["מקבילות", "מאונכות"],
-      triangles: ["שווה צלעות", "שווה שוקיים", "שונה צלעות"],
-      transformations: ["הזזה", "שיקוף", "סיבוב", "ללא תנועה"],
-      concept_transform: ["הזזה", "שיקוף", "סיבוב", "ללא תנועה"],
-      shapes_basic_square: ["ריבוע", "מלבן"],
-      shapes_basic_rectangle: ["ריבוע", "מלבן"],
-      shapes_basic_properties_square: ["2", "3", "4", "אין צלעות שוות"],
+      parallel_perpendicular: ["", ""],
+      triangles: [" ", " ", " "],
+      transformations: ["", "", "", " "],
+      concept_transform: ["", "", "", " "],
+      shapes_basic_square: ["", ""],
+      shapes_basic_rectangle: ["", ""],
+      shapes_basic_properties_square: ["2", "3", "4", "  "],
       shapes_basic_properties_rectangle: ["1", "2", "3", "4"],
-      shapes_basic_properties_angles: ["2", "3", "4", "אין זוויות ישרות"],
+      shapes_basic_properties_angles: ["2", "3", "4", "  "],
     };
     const indexKinds = {
       quadrilaterals: 4,

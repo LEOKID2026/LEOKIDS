@@ -77,7 +77,7 @@ async function main() {
     await writeFile(join(OUT, r.txt), body, "utf8");
     if (r.name === "detailed" || r.name === "summary") {
       assert.ok(!STANDALONE_ZERO_LEAK_RE.test(body), `${r.name}: standalone 00000 leaked`);
-      assert.ok(!body.includes("דוגמה לכל סוג"), `${r.name}: demo taxonomy leak`);
+      assert.ok(!body.includes("  "), `${r.name}: demo taxonomy leak`);
       assert.ok(!RAW_ENUM_RE.test(body), `${r.name}: raw enum/internal token leak`);
     }
     await page.screenshot({ path: join(OUT, r.shot), fullPage: true });

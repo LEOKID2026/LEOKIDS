@@ -140,24 +140,6 @@
       "previewPath": "/assets/coloring-pages/cards/previews/achievement_great_listener.png"
     },
     {
-      "cardKey": "achievement_hebrew_star",
-      "displayNameHe": "Achievement Hebrew Star",
-      "category": "achievement",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_hebrew_star.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_hebrew_star.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/achievement_hebrew_star.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/achievement_hebrew_star.png"
-    },
-    {
-      "cardKey": "achievement_moledet_explorer",
-      "displayNameHe": "Achievement Moledet Explorer",
-      "category": "achievement",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/achievement_moledet_explorer.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/achievement_moledet_explorer.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/achievement_moledet_explorer.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/achievement_moledet_explorer.png"
-    },
-    {
       "cardKey": "achievement_multiplication_champion",
       "displayNameHe": "Achievement Multiplication Champion",
       "category": "achievement",
@@ -345,78 +327,6 @@
       "lineArtPath": "/assets/coloring-pages/cards/line-art/event_end_of_year.png",
       "a4Path": "/assets/coloring-pages/cards/a4/event_end_of_year.png",
       "previewPath": "/assets/coloring-pages/cards/previews/event_end_of_year.png"
-    },
-    {
-      "cardKey": "event_hanukkah",
-      "displayNameHe": "Event Hanukkah",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_hanukkah.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_hanukkah.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_hanukkah.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_hanukkah.png"
-    },
-    {
-      "cardKey": "event_independence_day",
-      "displayNameHe": "Event Independence Day",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_independence_day.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_independence_day.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_independence_day.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_independence_day.png"
-    },
-    {
-      "cardKey": "event_lag_baomer",
-      "displayNameHe": "Event Lag Baomer",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_lag_baomer.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_lag_baomer.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_lag_baomer.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_lag_baomer.png"
-    },
-    {
-      "cardKey": "event_passover",
-      "displayNameHe": "Event Passover",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_passover.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_passover.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_passover.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_passover.png"
-    },
-    {
-      "cardKey": "event_purim",
-      "displayNameHe": "Event Purim",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_purim.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_purim.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_purim.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_purim.png"
-    },
-    {
-      "cardKey": "event_rosh_hashana",
-      "displayNameHe": "Event Rosh Hashana",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_rosh_hashana.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_rosh_hashana.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_rosh_hashana.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_rosh_hashana.png"
-    },
-    {
-      "cardKey": "event_shavuot",
-      "displayNameHe": "Event Shavuot",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_shavuot.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_shavuot.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_shavuot.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_shavuot.png"
-    },
-    {
-      "cardKey": "event_sukkot",
-      "displayNameHe": "Event Sukkot",
-      "category": "event",
-      "sourceImagePath": "tmp/coloring-pages-work/sources/event_sukkot.png",
-      "lineArtPath": "/assets/coloring-pages/cards/line-art/event_sukkot.png",
-      "a4Path": "/assets/coloring-pages/cards/a4/event_sukkot.png",
-      "previewPath": "/assets/coloring-pages/cards/previews/event_sukkot.png"
     },
     {
       "cardKey": "event_summer",

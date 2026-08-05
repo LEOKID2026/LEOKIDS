@@ -63,7 +63,7 @@ scanPools(TRANSLATION_POOLS, "translation");
 const sentenceRow = SENTENCE_POOLS.base[0];
 const servedSentence = {
   topic: "sentences",
-  question: `השלם: ${sentenceRow.template}`,
+  question: `: ${sentenceRow.template}`,
   correctAnswer: sentenceRow.correct,
   params: mergeDiagnosticContractIntoParams(
     { patternFamily: sentenceRow.patternFamily || "sentence_completion" },
@@ -95,7 +95,7 @@ assert.equal(probeS, null, "sentences topic does not get grammar-gated probe in 
 const trRow = TRANSLATION_POOLS.classroom[0];
 const servedTr = {
   topic: "translation",
-  question: `תרגם: "${trRow.en}"`,
+  question: `: "${trRow.en}"`,
   correctAnswer: trRow.he,
   params: { patternFamily: trRow.patternFamily, direction: "en_to_meaning" },
   levelKey: "easy",

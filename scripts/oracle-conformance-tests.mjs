@@ -17,7 +17,7 @@ function syntheticCanonicalState({ actionState, family, allowed, intensityCap = 
     subjectId: "math",
     topicKey: "test_topic",
     bucketKey: "test_topic",
-    displayName: "נושא בדיקה",
+    displayName: " ",
     evidence: { questions: 10, correct: 7, wrong: 3, wrongEventCount: 3, recurrenceFull: false, taxonomyMatch: true, dataSufficiencyLevel: "medium", confidence01: 0.5, stableMastery: false, needsPractice: true, positiveAuthorityLevel },
     decisionInputs: { priorityLevel: "P2", breadth: "narrow", counterEvidenceStrong: false, weakEvidence: false, hintInvalidates: false, narrowSample: false, hardDenyReason: null, taxonomyMismatchReason: null },
     classification: { taxonomyId: "test", classificationState: "classified", classificationReasonCode: "match" },
@@ -42,7 +42,7 @@ function makeUnit(actionState, overrides = {}) {
   });
   return {
     canonicalState: cs,
-    displayName: "נושא בדיקה",
+    displayName: " ",
     subjectId: "math",
     topicRowKey: "test_topic",
     intervention: overrides.intervention || null,
@@ -83,7 +83,7 @@ test("withhold unit returns null for parentActionHe", () => {
 
 console.log("\n--- Test group 2: withhold/probe_only copilot answers have no action language ---");
 
-const FORBIDDEN_ACTION_MARKERS = ["מומלץ", "כדאי", "נעבוד בבית"];
+const FORBIDDEN_ACTION_MARKERS = ["", "", " "];
 
 test("withhold copilot explanation has no action language", () => {
   const snapshot = { taxonomyId: "test", confidence: { level: "contradictory" }, outputGating: { cannotConcludeYet: true } };
@@ -119,7 +119,7 @@ test("probe_only copilot explanation has no action language", () => {
 
 console.log("\n--- Test group 3: No forbidden parent-facing strings ---");
 
-const FORBIDDEN_PARENT_STRINGS = ["במערכת", "נשמור על ניסוח", "אפשר לנסח", "Parent Copilot (v1)"];
+const FORBIDDEN_PARENT_STRINGS = ["", "  ", " ", "Parent Copilot (v1)"];
 
 test("withhold copilot text has no forbidden strings", () => {
   const snapshot = { taxonomyId: "", confidence: { level: "insufficient_data" }, outputGating: { cannotConcludeYet: true } };
@@ -192,7 +192,7 @@ test("maintain unit produces correct home action text", () => {
   const result = resolveUnitParentActionHe(unit);
   assert.ok(result, "maintain must produce home action text");
   assert.ok(/stay at the same level|continue at the same level/i.test(result), `expected maintain template, got: ${result}`);
-  assert.ok(!/לשמר עקביות|שימור יציבות/.test(result), "must not contain old wording");
+  assert.ok(!/ | /.test(result), "must not contain old wording");
 });
 
 test("expand_cautiously unit produces correct home action text", () => {
@@ -200,7 +200,7 @@ test("expand_cautiously unit produces correct home action text", () => {
   const result = resolveUnitParentActionHe(unit);
   assert.ok(result, "expand must produce home action text");
   assert.ok(/stay at the same level for now|same level for now/i.test(result), `expected expand template, got: ${result}`);
-  assert.ok(!/לשמר את אותה רמת מורכבות/.test(result), "must not contain old wording");
+  assert.ok(!/    /.test(result), "must not contain old wording");
 });
 
 console.log("\n--- Test group 7: mainHomeRecommendationHe fallback ---");

@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
 
 const MODE_OPTIONS = [
-  { value: "win_only", label: "ניצחון / ניקוד" },
-  { value: "in_game_collect", label: "איסוף במשחק" },
+  { value: "win_only", label: "Win / score" },
+  { value: "in_game_collect", label: "In-game collect" },
 ];
 
 function newClientRequestId() {
@@ -46,15 +46,15 @@ export default function AdminDiamondsTab({ accessToken }) {
       const boxJson = await boxRes.json().catch(() => ({}));
 
       if (!settingsRes.ok || !settingsJson.ok) {
-        setError(settingsJson.error || "טעינת הגדרות נכשלה");
+        setError(settingsJson.error || "Failed to load settings");
         return;
       }
       if (!soloRes.ok || !soloJson.ok) {
-        setError(soloJson.error || "טעינת חוקי solo נכשלה");
+        setError(soloJson.error || "Failed to load solo rules");
         return;
       }
       if (!boxRes.ok || !boxJson.ok) {
-        setError(boxJson.error || "טעינת קופסת הפתעה נכשלה");
+        setError(boxJson.error || "Failed to load surprise box");
         return;
       }
 
@@ -62,7 +62,7 @@ export default function AdminDiamondsTab({ accessToken }) {
       setSoloGames(soloJson.games || []);
       setBoxRewards(Array.isArray(boxJson.rewards) ? boxJson.rewards : []);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setLoading(false);
     }
@@ -84,13 +84,13 @@ export default function AdminDiamondsTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error || "שמירה נכשלה");
+        setError(json.error || "Save failed");
         return;
       }
       setSettings(json.settings);
-      setMessage("הגדרות מערכת נשמרו");
+      setMessage("System settings saved");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -131,7 +131,7 @@ export default function AdminDiamondsTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error || json.messageHe || "שמירת חוקי solo נכשלה");
+        setError(json.error || json.messageHe || "Failed to save solo rules");
         return;
       }
       setSoloGames((prev) =>
@@ -139,9 +139,9 @@ export default function AdminDiamondsTab({ accessToken }) {
           g.gameKey === gameKey ? { ...g, diamondRules: json.diamondRules } : g
         )
       );
-      setMessage(`חוקי יהלומים נשמרו - ${row.titleHe || gameKey}`);
+      setMessage(`Diamond rules saved — ${row.titleHe || gameKey}`);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setSavingGameKey("");
     }
@@ -160,13 +160,13 @@ export default function AdminDiamondsTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error || json.messageHe || "שמירת פרסי קופסה נכשלה");
+        setError(json.error || json.messageHe || "Failed to save box rewards");
         return;
       }
       setBoxRewards(json.rewards || []);
-      setMessage("פרסי יהלומים בקופסת הפתעה נשמרו");
+      setMessage("Surprise-box diamond rewards saved");
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -185,12 +185,12 @@ export default function AdminDiamondsTab({ accessToken }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error || "ילד לא נמצא");
+        setError(json.error || "Child not found");
         return;
       }
       setStudentInfo(json);
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
@@ -201,7 +201,7 @@ export default function AdminDiamondsTab({ accessToken }) {
     const amount = Number(adjustAmount);
     const note = adjustNote.trim();
     if (!id || !accessToken || !Number.isInteger(amount) || amount === 0 || !note) {
-      setError("יש למלא מזהה ילד, סכום שלם (חיובי/שלילי) וסיבה");
+      setError("Child ID, whole amount (positive/negative), and reason are required");
       return;
     }
     setBusy(true);
@@ -223,32 +223,32 @@ export default function AdminDiamondsTab({ accessToken }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error || "עדכון נכשל");
+        setError(json.error || "Update failed");
         return;
       }
       setMessage(
         json.duplicate
-          ? "בקשה כפולה - לא בוצע שינוי נוסף"
-          : `יתרה עודכנה: ${json.balanceAfter}`
+          ? "Duplicate request — no additional change"
+          : `Balance updated: ${json.balanceAfter}`
       );
       await loadStudent();
     } catch {
-      setError("שגיאת רשת");
+      setError("Network error");
     } finally {
       setBusy(false);
     }
   };
 
   if (loading) {
-    return <p className="text-white/60 text-sm text-right">טוען יהלומים...</p>;
+    return <p className="text-white/60 text-sm text-right">Loading diamonds...</p>;
   }
 
   return (
     <div className="space-y-6 text-right" dir="rtl">
       <div>
-        <h2 className="text-lg font-bold text-white">יהלומים</h2>
+        <h2 className="text-lg font-bold text-white">Diamonds</h2>
         <p className="text-sm text-white/60 mt-1">
-          שליטה מלאה על חוקי solo, קופסת הפתעה ועדכון ידני - נפרד ממטבעות.
+          Full control of rules for solo, Surprise box and manual adjust — separate from coins.
         </p>
       </div>
 
@@ -256,7 +256,7 @@ export default function AdminDiamondsTab({ accessToken }) {
       {message ? <p className="text-emerald-300 text-sm">{message}</p> : null}
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-        <h3 className="font-semibold text-amber-200">הגדרות מערכת</h3>
+        <h3 className="font-semibold text-amber-200">System settings</h3>
         <label className="flex items-center justify-between gap-3 text-sm">
           <input
             type="checkbox"
@@ -265,7 +265,7 @@ export default function AdminDiamondsTab({ accessToken }) {
             onChange={(e) => saveSettings({ system_enabled: e.target.checked })}
             className="h-4 w-4"
           />
-          <span>מערכת יהלומים פעילה</span>
+          <span>Diamonds system active</span>
         </label>
         <p className="text-xs text-white/50">
           daily_cap_mode: {settings?.daily_cap_mode || "none"}
@@ -273,9 +273,9 @@ export default function AdminDiamondsTab({ accessToken }) {
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-4">
-        <h3 className="font-semibold text-amber-200">חוקי יהלומים - 10 משחקי Solo</h3>
+        <h3 className="font-semibold text-amber-200">Diamond rules — 10 Solo games Solo</h3>
         <p className="text-xs text-white/50">
-          שינוי כאן משפיע ישירות על סיום משחק (diamondRules ב-payout_rules_json). מטבעות לא משתנים.
+          Changes here apply directly at game end (diamondRules in payout_rules_json). Coins are unchanged.
         </p>
         <div className="space-y-3">
           {soloGames.map((game) => {
@@ -300,10 +300,10 @@ export default function AdminDiamondsTab({ accessToken }) {
                         patchSoloGame(game.gameKey, { enabled: e.target.checked })
                       }
                     />
-                    <span>פעיל</span>
+                    <span>Active</span>
                   </label>
                   <label>
-                    סוג חוק
+                    Rule type
                     <select
                       className="block w-full mt-1 rounded bg-black/40 border border-white/20 px-2 py-1 text-white"
                       value={rules.mode || "win_only"}
@@ -317,7 +317,7 @@ export default function AdminDiamondsTab({ accessToken }) {
                     </select>
                   </label>
                   <label>
-                    מקסימום למשחק
+                    Max per game
                     <input
                       type="number"
                       min={0}
@@ -333,7 +333,7 @@ export default function AdminDiamondsTab({ accessToken }) {
                   {!isCollect ? (
                     <>
                       <label>
-                        כמות קבועה
+                        Fixed amount
                         <input
                           type="number"
                           min={0}
@@ -354,15 +354,15 @@ export default function AdminDiamondsTab({ accessToken }) {
                             patchSoloGame(game.gameKey, { onlyOnWin: e.target.checked })
                           }
                         />
-                        <span>רק בניצחון</span>
+                        <span>Win only</span>
                       </label>
                       <div className="sm:col-span-2 lg:col-span-3 space-y-1">
-                        <p className="text-white/60">דרגות לפי ניקוד (אופציונלי)</p>
+                        <p className="text-white/60">Score tiers (optional)</p>
                         {tiers.map((tier, i) => (
                           <div key={i} className="flex gap-2 justify-end">
                             <input
                               type="number"
-                              placeholder="יהלומים"
+                              placeholder="Diamonds"
                               className="w-24 rounded bg-black/40 border border-white/20 px-2 py-1 text-white"
                               value={tier.amount ?? 0}
                               onChange={(e) =>
@@ -373,7 +373,7 @@ export default function AdminDiamondsTab({ accessToken }) {
                             />
                             <input
                               type="number"
-                              placeholder="ניקוד מינימלי"
+                              placeholder="Minimum score"
                               className="w-28 rounded bg-black/40 border border-white/20 px-2 py-1 text-white"
                               value={tier.minScore ?? 0}
                               onChange={(e) =>
@@ -388,7 +388,7 @@ export default function AdminDiamondsTab({ accessToken }) {
                     </>
                   ) : (
                     <label>
-                      מכפיל איסוף במשחק
+                      In-game collect multiplier
                       <input
                         type="number"
                         min={0}
@@ -410,7 +410,7 @@ export default function AdminDiamondsTab({ accessToken }) {
                   onClick={() => saveSoloGame(game.gameKey)}
                   className="rounded bg-amber-500/30 border border-amber-400/40 px-3 py-1.5 text-xs font-semibold disabled:opacity-50"
                 >
-                  {savingGameKey === game.gameKey ? "שומר..." : "שמור משחק"}
+                  {savingGameKey === game.gameKey ? "Saving..." : "Save game"}
                 </button>
               </div>
             );
@@ -419,9 +419,9 @@ export default function AdminDiamondsTab({ accessToken }) {
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-        <h3 className="font-semibold text-amber-200">קופסת הפתעה - פרסי יהלומים</h3>
+        <h3 className="font-semibold text-amber-200">Surprise box — diamond rewards</h3>
         <p className="text-xs text-white/50">
-          סכום + משקל (weighted pick). שינוי כאן משפיע על פתיחת קופסה בפועל.
+          Amount + weight (weighted pick). Changes here affect real box opens.
         </p>
         <div className="space-y-2">
           {boxRewards.map((row, i) => (
@@ -431,11 +431,11 @@ export default function AdminDiamondsTab({ accessToken }) {
                 className="text-rose-300 text-xs px-2"
                 onClick={() => setBoxRewards((prev) => prev.filter((_, idx) => idx !== i))}
               >
-                הסר
+                Remove
               </button>
               <input
                 type="number"
-                placeholder="משקל"
+                placeholder="Weight"
                 className="w-24 rounded bg-black/40 border border-white/20 px-2 py-1 text-white text-xs"
                 value={row.weight ?? 0}
                 onChange={(e) => {
@@ -446,7 +446,7 @@ export default function AdminDiamondsTab({ accessToken }) {
               />
               <input
                 type="number"
-                placeholder="יהלומים"
+                placeholder="Diamonds"
                 className="w-24 rounded bg-black/40 border border-white/20 px-2 py-1 text-white text-xs"
                 value={row.amount ?? 0}
                 onChange={(e) => {
@@ -464,7 +464,7 @@ export default function AdminDiamondsTab({ accessToken }) {
             className="rounded border border-white/20 px-3 py-1.5 text-xs"
             onClick={() => setBoxRewards((prev) => [...prev, { amount: 1, weight: 10 }])}
           >
-            הוסף פרס
+            Add reward
           </button>
           <button
             type="button"
@@ -472,17 +472,17 @@ export default function AdminDiamondsTab({ accessToken }) {
             onClick={saveBoxRewards}
             className="rounded bg-amber-500/30 border border-amber-400/40 px-4 py-1.5 text-xs font-semibold disabled:opacity-50"
           >
-            שמור פרסי קופסה
+            Save box rewards
           </button>
         </div>
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-        <h3 className="font-semibold text-amber-200">עדכון ידני + יתרה</h3>
+        <h3 className="font-semibold text-amber-200">Manual adjust + balance</h3>
         <div className="flex flex-wrap gap-2">
           <input
             className="flex-1 min-w-[200px] rounded bg-black/40 border border-white/20 px-3 py-2 text-sm"
-            placeholder="מזהה ילד (UUID)"
+            placeholder="Child ID (UUID)"
             value={studentId}
             onChange={(e) => setStudentId(e.target.value)}
           />
@@ -492,14 +492,14 @@ export default function AdminDiamondsTab({ accessToken }) {
             onClick={loadStudent}
             className="rounded bg-white/10 px-4 py-2 text-sm disabled:opacity-60"
           >
-            טען
+            Load
           </button>
         </div>
 
         {studentInfo ? (
           <div className="text-sm text-white/80 space-y-1">
             <p>{studentInfo.student?.fullName}</p>
-            <p>יתרה: {studentInfo.balance?.balance ?? 0} 💎</p>
+            <p>Balance: {studentInfo.balance?.balance ?? 0} 💎</p>
             {(studentInfo.transactions || []).slice(0, 3).map((tx) => (
               <p key={tx.id} className="text-xs text-white/50">
                 {tx.direction} {tx.amount} · {tx.reason}
@@ -511,13 +511,13 @@ export default function AdminDiamondsTab({ accessToken }) {
         <div className="grid sm:grid-cols-2 gap-2">
           <input
             className="rounded bg-black/40 border border-white/20 px-3 py-2 text-sm"
-            placeholder="סכום (+/-)"
+            placeholder="Amount (+/-)"
             value={adjustAmount}
             onChange={(e) => setAdjustAmount(e.target.value)}
           />
           <input
             className="rounded bg-black/40 border border-white/20 px-3 py-2 text-sm sm:col-span-2"
-            placeholder="סיבה (חובה)"
+            placeholder="Reason (required)"
             value={adjustNote}
             onChange={(e) => setAdjustNote(e.target.value)}
           />
@@ -528,7 +528,7 @@ export default function AdminDiamondsTab({ accessToken }) {
           onClick={submitAdjust}
           className="rounded bg-amber-500 text-black px-4 py-2 text-sm font-semibold disabled:opacity-60"
         >
-          עדכן יהלומים
+          Update diamonds
         </button>
       </section>
     </div>

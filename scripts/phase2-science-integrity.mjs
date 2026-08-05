@@ -28,8 +28,8 @@ for (let i = 0; i < origIds.length; i++) {
 /** Orphans had grades: []; plants allowed g1–g3 per science-curriculum. Assignments by array index (deterministic). */
 const orphanGradesByIndex = new Map([
   [14, ["g1", "g2", "g3"]], // medium T/F — day/night respiration vs photosynthesis
-  [15, ["g3"]], // hard — stomata (פיוניות)
-  [92, ["g3"]], // hard — cellular respiration (נשימה תאית)
+  [15, ["g3"]], // hard — stomata ()
+  [92, ["g3"]], // hard — cellular respiration ( )
   [93, ["g3"]], // hard — photosynthesis definition
   [129, ["g2", "g3"]], // hard — pollination
   [130, ["g3"]], // hard — transpiration

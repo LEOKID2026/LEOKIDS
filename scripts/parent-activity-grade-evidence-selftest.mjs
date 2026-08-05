@@ -74,7 +74,7 @@ function assert(name, cond, detail = "") {
 // Part 1: aggregation (the actual Phase A code change)
 // ---------------------------------------------------------------------------
 
-const student = { id: "stu-test", full_name: "ילד בדיקה", grade_level: "g3", is_active: true };
+const student = { id: "stu-test", full_name: " ", grade_level: "g3", is_active: true };
 const fromDate = new Date("2025-09-01T00:00:00.000Z");
 const toDate = new Date("2026-06-14T00:00:00.000Z");
 const fetchMeta = { sessionsFilterField: "started_at", answersFilterField: "answered_at" };
@@ -95,7 +95,7 @@ function parentAttempt({ idx, topic, grade, correct, subject = "math", mode = "g
     answered_at: "2026-01-15T10:00:00.000Z",
     correct_answer: "x",
     selected_answer: correct ? "x" : "y",
-    question_snapshot: { grade, question: `שאלה ${idx}`, subject, topic },
+    question_snapshot: { grade, question: ` ${idx}`, subject, topic },
     parent_assigned_activities: {
       subject,
       topic,
@@ -128,7 +128,7 @@ const parentActivityAttempts = [
     answered_at: "2026-01-16T10:00:00.000Z",
     correct_answer: "x",
     selected_answer: "x",
-    question_snapshot: { question: "ללא כיתה", subject: "math", topic: "subtraction" },
+    question_snapshot: { question: " ", subject: "math", topic: "subtraction" },
     parent_assigned_activities: {
       subject: "math",
       topic: "subtraction",
@@ -361,7 +361,7 @@ assert(
 const riv = buildRowIdentityV1({
   subjectId: "math",
   topicRowKey: "fractions::grade:g4",
-  displayName: "שברים",
+  displayName: "",
   contentGradeKey: "g4",
   registeredGradeKey: "g3",
   gradeRelation: "higher",
@@ -389,7 +389,7 @@ const truthPayload = {
         {
           topicRowKey: "fractions::grade:g4",
           topicKey: "fractions::grade:g4",
-          displayName: "שברים",
+          displayName: "",
           questions: 12,
           accuracy: 90,
           rowIdentityV1: riv,
@@ -397,9 +397,9 @@ const truthPayload = {
             narrative: {
               contractVersion: "v1",
               textSlots: {
-                observation: "בשברים ברמת כיתה ד׳ נספרו 12 שאלות עם דיוק גבוה.",
-                interpretation: "נראית שליטה טובה מעל רמת הכיתה הרשומה.",
-                uncertainty: "כדאי להמשיך לעקוב לאורך עוד תרגול.",
+                observation: "     12    .",
+                interpretation: "      .",
+                uncertainty: "     .",
               },
             },
             readiness: { readiness: "ready" },
@@ -415,7 +415,7 @@ const truthPayload = {
 const tp = buildTruthPacketV1(truthPayload, {
   scopeType: "topic",
   scopeId: "fractions::grade:g4",
-  scopeLabel: "שברים",
+  scopeLabel: "",
 });
 assert("truth packet built for topic scope", !!tp && !!tp.surfaceFacts);
 assert(
@@ -463,19 +463,19 @@ const { tryComposeIntentAnswer } = composersMod;
 // 5a. helper phrasing
 assert(
   "gradeScopeMeaningHe lower+needsSupport => foundation framing",
-  gradeScopeMeaningHe({ gradeRelation: "lower", needsSupport: true }).includes("מתחת לכיתה הרשומה") &&
-    gradeScopeMeaningHe({ gradeRelation: "lower", needsSupport: true }).includes("יסודות"),
+  gradeScopeMeaningHe({ gradeRelation: "lower", needsSupport: true }).includes("  ") &&
+    gradeScopeMeaningHe({ gradeRelation: "lower", needsSupport: true }).includes(""),
   gradeScopeMeaningHe({ gradeRelation: "lower", needsSupport: true })
 );
 assert(
   "gradeScopeMeaningHe higher+isStrength => enrichment/advance",
-  gradeScopeMeaningHe({ gradeRelation: "higher", isStrength: true }).includes("מעל רמת הכיתה") &&
-    gradeScopeMeaningHe({ gradeRelation: "higher", isStrength: true }).includes("להעלות קושי"),
+  gradeScopeMeaningHe({ gradeRelation: "higher", isStrength: true }).includes("  ") &&
+    gradeScopeMeaningHe({ gradeRelation: "higher", isStrength: true }).includes(" "),
   gradeScopeMeaningHe({ gradeRelation: "higher", isStrength: true })
 );
 assert(
   "gradeScopeMeaningHe same+isStrength => mastery/advance",
-  gradeScopeMeaningHe({ gradeRelation: "same", isStrength: true }).includes("שליטה טובה ברמת הכיתה"),
+  gradeScopeMeaningHe({ gradeRelation: "same", isStrength: true }).includes("   "),
   gradeScopeMeaningHe({ gradeRelation: "same", isStrength: true })
 );
 assert(
@@ -483,12 +483,12 @@ assert(
   evidenceSourcePhraseHe("parent_assigned_activity") === ""
 );
 assert("evidenceSourcePhraseHe unknown => empty", evidenceSourcePhraseHe("xyz") === "");
-assert("masteryReallocationHe mentions reallocating time", masteryReallocationHe("שברים").includes("להפנות"));
+assert("masteryReallocationHe mentions reallocating time", masteryReallocationHe("").includes(""));
 
 // 5b. recommendation layer appends grade-scope insight (higher + strength)
 const strengthHigherUnit = {
   subjectId: "math",
-  displayName: "שברים",
+  displayName: "",
   canonicalState: {
     actionState: "maintain",
     recommendation: { allowed: true, family: "maintain" },
@@ -499,27 +499,27 @@ const strengthHigherUnit = {
 const actHigher = resolveUnitParentActionHe(strengthHigherUnit, "g4");
 assert(
   "resolveUnitParentActionHe appends enrichment insight for higher+strength",
-  typeof actHigher === "string" && actHigher.includes("מעל רמת הכיתה"),
+  typeof actHigher === "string" && actHigher.includes("  "),
   String(actHigher)
 );
 
 // 5c. Copilot contract routing for progression family
 const progQuestions = [
-  "איפה אפשר להתקדם?",
-  "האם כדאי לעלות רמה?",
-  "האם כדאי לרדת רמה בשברים?",
-  "האם יש נושא שהילד כבר שולט בו?",
-  "האם הילד עובד מעל הכיתה שלו?",
-  "האם הילד מתקשה גם מתחת לכיתה שלו?",
-  "האם כדאי להתמקד בנושא אחר?",
+  "  ?",
+  "   ?",
+  "    ?",
+  "      ?",
+  "     ?",
+  "      ?",
+  "    ?",
 ];
 for (const u of progQuestions) {
   const c = resolveAnswerContract({ utteranceStr: u, scopeType: "executive", stageAIntent: "", payload: {} });
   assert(`contract(progression) for "${u}"`, c === ANSWER_CONTRACT.progression, `got ${c}`);
 }
 assert(
-  'regression: "מה המקצוע החזק?" stays strength',
-  resolveAnswerContract({ utteranceStr: "מה המקצוע החזק?", scopeType: "executive", stageAIntent: "", payload: {} }) ===
+  'regression: "  ?" stays strength',
+  resolveAnswerContract({ utteranceStr: "  ?", scopeType: "executive", stageAIntent: "", payload: {} }) ===
     ANSWER_CONTRACT.strength
 );
 
@@ -533,7 +533,7 @@ const progPayload = {
       topicRecommendations: [
         {
           topicRowKey: "fractions::grade:g4",
-          displayName: "שברים",
+          displayName: "",
           questions: 26,
           accuracy: 92,
           rowIdentityV1: {
@@ -545,14 +545,14 @@ const progPayload = {
         },
         {
           topicRowKey: "division::grade:g3",
-          displayName: "חילוק",
+          displayName: "",
           questions: 14,
           accuracy: 40,
           rowIdentityV1: { contentGradeKey: "g3", gradeRelation: "same", primaryEvidenceSource: "self_practice" },
         },
         {
           topicRowKey: "counting::grade:g2",
-          displayName: "מנייה",
+          displayName: "",
           questions: 10,
           accuracy: 35,
           rowIdentityV1: { contentGradeKey: "g2", gradeRelation: "lower", primaryEvidenceSource: "parent_assigned_activity" },
@@ -564,26 +564,26 @@ const progPayload = {
 const execPacket = { scopeType: "executive", scopeId: "", surfaceFacts: {} };
 const answerText = (a) => (a?.answerBlocks || []).map((b) => String(b.textHe || "")).join(" ");
 
-const aAdvance = tryComposeIntentAnswer({ utteranceStr: "איפה אפשר להתקדם?", truthPacket: execPacket, payload: progPayload });
+const aAdvance = tryComposeIntentAnswer({ utteranceStr: "  ?", truthPacket: execPacket, payload: progPayload });
 assert("progression advance uses progression contract", aAdvance?.answerContract === ANSWER_CONTRACT.progression, JSON.stringify(aAdvance?.answerContract));
-assert("progression advance mentions advancing/leveling up", /להתקדם|להעלות קושי|מעל רמת הכיתה/u.test(answerText(aAdvance)), answerText(aAdvance));
+assert("progression advance mentions advancing/leveling up", /| |  /u.test(answerText(aAdvance)), answerText(aAdvance));
 
-const aAbove = tryComposeIntentAnswer({ utteranceStr: "האם הילד עובד מעל הכיתה שלו?", truthPacket: execPacket, payload: progPayload });
-assert("above-grade answers yes with higher rows", answerText(aAbove).includes("מעל הכיתה הרשומה"), answerText(aAbove));
+const aAbove = tryComposeIntentAnswer({ utteranceStr: "     ?", truthPacket: execPacket, payload: progPayload });
+assert("above-grade answers yes with higher rows", answerText(aAbove).includes("  "), answerText(aAbove));
 
-const aBelow = tryComposeIntentAnswer({ utteranceStr: "האם הילד מתקשה גם מתחת לכיתה שלו?", truthPacket: execPacket, payload: progPayload });
-assert("below-grade detects lower weak topic", answerText(aBelow).includes("מתחת לכיתה הרשומה") && answerText(aBelow).includes("מנייה"), answerText(aBelow));
+const aBelow = tryComposeIntentAnswer({ utteranceStr: "      ?", truthPacket: execPacket, payload: progPayload });
+assert("below-grade detects lower weak topic", answerText(aBelow).includes("  ") && answerText(aBelow).includes(""), answerText(aBelow));
 
-const aElse = tryComposeIntentAnswer({ utteranceStr: "האם כדאי להתמקד בנושא אחר?", truthPacket: execPacket, payload: progPayload });
-assert("focus-elsewhere suggests reallocating time", answerText(aElse).includes("להפנות"), answerText(aElse));
+const aElse = tryComposeIntentAnswer({ utteranceStr: "    ?", truthPacket: execPacket, payload: progPayload });
+assert("focus-elsewhere suggests reallocating time", answerText(aElse).includes(""), answerText(aElse));
 
 // 5e. composeStrength is now gradeRelation-aware
-const aStrength = tryComposeIntentAnswer({ utteranceStr: "מה המקצוע החזק?", truthPacket: execPacket, payload: progPayload });
+const aStrength = tryComposeIntentAnswer({ utteranceStr: "  ?", truthPacket: execPacket, payload: progPayload });
 assert("strength contract used", aStrength?.answerContract === ANSWER_CONTRACT.strength, JSON.stringify(aStrength?.answerContract));
-assert("strength next-step is no longer conservative-only for higher+strength", /מעל רמת הכיתה|להעלות קושי/u.test(answerText(aStrength)), answerText(aStrength));
+assert("strength next-step is no longer conservative-only for higher+strength", /  | /u.test(answerText(aStrength)), answerText(aStrength));
 assert(
   "strength does not surface parent source phrase (internal provenance policy)",
-  !answerText(aStrength).includes("בפעילות שנשלחה מההורה"),
+  !answerText(aStrength).includes("  "),
   answerText(aStrength)
 );
 

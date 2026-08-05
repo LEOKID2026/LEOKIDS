@@ -38,7 +38,7 @@ function cmpUserMatchesCanonical(q, user) {
 function buildCompareQuestion(a, b, corruptCorrect = null) {
   const symbol = computeComparisonSign(a, b);
   return {
-    question: `השלם את הסימן: ${a} __ ${b}`,
+    question: `  : ${a} __ ${b}`,
     exerciseText: `${a} __ ${b}`,
     correctAnswer: corruptCorrect ?? symbol,
     answers: [...COMPARISON_SIGN_DISPLAY_ORDER],
@@ -53,7 +53,7 @@ function assertStudentVisibleCompareChoices(q, label) {
   assert.equal(q.answers.length, 3, `${label}: expected 3 options`);
   assert.ok(isExactComparisonSignOptionSet(q.answers), `${label}: options must be >, =, <`);
   assert.deepEqual(q.answers, COMPARISON_SIGN_DISPLAY_ORDER, `${label}: display order <, =, >`);
-  for (const bad of ["><", "1<", "<x", ">1", ">x", "<1", "לא תמיד"]) {
+  for (const bad of ["><", "1<", "<x", ">1", ">x", "<1", " "]) {
     assert.ok(!q.answers.includes(bad), `${label}: malformed option ${bad}`);
   }
 }
@@ -112,9 +112,9 @@ test("D - validation uses operands even when correctAnswer field is stale", () =
 
 test("E - step-by-step explanation sign matches canonical answer (no contradiction)", () => {
   const cases = [
-    [79, 35, ">", /79 > 35/, /הסימן .*>/],
-    [85, 98, "<", /85 < 98/, /הסימן .*</],
-    [12, 12, "=", /12 = 12/, /הסימן .*=/],
+    [79, 35, ">", /79 > 35/, / .*>/],
+    [85, 98, "<", /85 < 98/, / .*</],
+    [12, 12, "=", /12 = 12/, / .*=/],
   ];
   for (const [a, b, expected, mathRe, signRe] of cases) {
     const q = sanitizeQuestionForStudentDisplay(buildCompareQuestion(a, b, expected === ">" ? "<" : ">"));
@@ -125,7 +125,7 @@ test("E - step-by-step explanation sign matches canonical answer (no contradicti
     assert.match(calc.text, signRe, `sign clause ${a} ${b}`);
     assert.doesNotMatch(
       calc.text,
-      a > b ? /הסימן .*</ : a < b ? /הסימן .*>/ : /הסימן .*[<>]/,
+      a > b ? / .*</ : a < b ? / .*>/ : / .*[<>]/,
       `must not contradict for ${a} ${b}`
     );
     assert.ok(fin.text.includes(isolateComparisonSignForDisplay(expected)));
@@ -136,7 +136,7 @@ test("E - step-by-step explanation sign matches canonical answer (no contradicti
 });
 
 test("comparison expressions parse as LTR math runs in mixed Hebrew renderer", () => {
-  const runs = splitLearningMixedHebrewMathRuns("⁦79 > 35⁩ כי 79 גדול מ-35.");
+  const runs = splitLearningMixedHebrewMathRuns("⁦79 > 35⁩  79  -35.");
   assert.ok(runs.some((r) => r.type === "math" && r.value.includes("79") && r.value.includes(">")));
 });
 

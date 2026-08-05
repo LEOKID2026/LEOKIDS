@@ -42,13 +42,13 @@ import {
   adminGradeLabelHe,
   planCodeLabelHe,
   entitlementStatusLabelHe,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 import {
   SUBJECT_LABELS_HE,
   regRequestIntentLabelHe as regIntentLabelHe,
   ADMIN_REG_REQUEST_INTENT,
   ADMIN_REG_REQUEST_PHONE,
-} from "../../lib/auth/auth-registration.he.js";
+} from "../../lib/auth/auth-registration.js";
 import AdminPasswordSetupPanel from "./AdminPasswordSetupPanel.jsx";
 
 function StatusBadge({ teacher }) {
@@ -198,11 +198,11 @@ function SchoolMembershipSection({ teacher }) {
       ) : (
         <div className="space-y-2 text-sm">
           <p>
-            <span className="text-white/50">בית ספר: </span>
+            <span className="text-white/50"> : </span>
             <span className="font-medium">{sm.schoolName || sm.schoolId}</span>
           </p>
           <p>
-            <span className="text-white/50">תפקיד: </span>
+            <span className="text-white/50">: </span>
             {sm.schoolRole === "school_admin" ? ADMIN_SCHOOL_ROLE_MANAGER : ADMIN_SCHOOL_ROLE_TEACHER}
           </p>
           <Link

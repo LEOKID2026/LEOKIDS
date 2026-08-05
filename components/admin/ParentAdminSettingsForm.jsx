@@ -14,7 +14,7 @@ import {
   accountStatusLabelHe,
   apiErrorMessageHe,
   planCodeLabelHe,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 
 const PLANS = ["free", "trial", "basic", "family", "premium", "school_linked"];
 const STATUSES = ["active", "trial", "suspended", "cancelled"];
@@ -61,13 +61,13 @@ export default function ParentAdminSettingsForm({ accessToken, parentUserId, ini
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "שמירה נכשלה"));
+        setError(apiErrorMessageHe(json?.error, " "));
         return;
       }
-      setMessage("נשמר");
+      setMessage("");
       onSaved?.(json?.data?.settings);
     } catch {
-      setError("שגיאת רשת");
+      setError(" ");
     } finally {
       setBusy(false);
     }
@@ -144,7 +144,7 @@ export default function ParentAdminSettingsForm({ accessToken, parentUserId, ini
           disabled={busy}
           className="rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 disabled:opacity-60"
         >
-          {busy ? "שומר…" : ADMIN_LIFECYCLE_SAVE}
+          {busy ? "…" : ADMIN_LIFECYCLE_SAVE}
         </button>
       </form>
     </section>

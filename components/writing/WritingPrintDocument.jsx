@@ -41,7 +41,7 @@ export default function WritingPrintDocument({ worksheetPayload }) {
           mode="print"
           inkSave={meta.inkSave}
           showPrintHeader={pageIndex === 0}
-          printHeaderTitle={meta.titleHe || ui.writingDocumentTitle}
+          printHeaderTitle={meta.title || ui.writingDocumentTitle}
           isLastPrintPage={pageIndex === printablePages.length - 1}
         />
       ))}

@@ -3,22 +3,22 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
 
 const BOOL_FIELDS = [
-  { key: "enabled", label: "המשחק פעיל לילדים" },
-  { key: "economy_enabled", label: "כלכלת המשחק פעילה" },
-  { key: "accrue_enabled", label: "צבירת נקודות פעילה" },
-  { key: "claim_enabled", label: "Claim פעיל" },
-  { key: "offline_enabled", label: "Offline פעיל" },
-  { key: "gifts_enabled", label: "מתנות פעילות" },
-  { key: "diamond_chest_enabled", label: "Diamond chest פעיל" },
-  { key: "guest_play_enabled", label: "משחק אורח פעיל" },
-  { key: "guest_claim_enabled", label: "Guest claim פעיל" },
-  { key: "guest_diamond_enabled", label: "Guest diamond פעיל" },
-  { key: "reject_impossible_stage_jump", label: "דחיית קפיצת stage בלתי אפשרית" },
+  { key: "enabled", label: "to to Children" },
+  { key: "economy_enabled", label: "All All to" },
+  { key: "accrue_enabled", label: "points to" },
+  { key: "claim_enabled", label: "Claim " },
+  { key: "offline_enabled", label: "Offline " },
+  { key: "gifts_enabled", label: "Loading…" },
+  { key: "diamond_chest_enabled", label: "Diamond chest " },
+  { key: "guest_play_enabled", label: "to" },
+  { key: "guest_claim_enabled", label: "Guest claim " },
+  { key: "guest_diamond_enabled", label: "Guest diamond " },
+  { key: "reject_impossible_stage_jump", label: "  stage  " },
 ];
 
 const NUMBER_SECTIONS = [
   {
-    title: "כלכלה / פרסים",
+    title: "All All / Rewards",
     fields: [
       { key: "daily_points_cap", label: "Daily points cap" },
       { key: "daily_coins_cap", label: "Daily coins cap" },
@@ -29,7 +29,7 @@ const NUMBER_SECTIONS = [
     ],
   },
   {
-    title: "יהלומים",
+    title: "Save",
     fields: [
       { key: "diamond_chest_cost", label: "Diamond chest cost" },
       { key: "diamond_chest_amount", label: "Diamond chest amount" },
@@ -56,7 +56,7 @@ const NUMBER_SECTIONS = [
     ],
   },
   {
-    title: "אורחים",
+    title: "Save",
     fields: [
       { key: "guest_multiplier", label: "Guest multiplier", step: "0.01" },
       { key: "guest_daily_points_cap", label: "Guest daily points cap" },
@@ -65,7 +65,7 @@ const NUMBER_SECTIONS = [
     ],
   },
   {
-    title: "Gameplay tuning (משפיע על הלקוח אחרי refresh)",
+    title: "Gameplay tuning (    refresh)",
     fields: [
       { key: "base_dps", label: "Base DPS", step: "0.1" },
       { key: "level_dps_multiplier", label: "Level DPS multiplier", step: "0.01" },
@@ -118,7 +118,7 @@ function NumberRow({ label, value, onChange, disabled, step = "1" }) {
         type="number"
         min="0"
         step={step}
-        value={value ?? ""}
+        value={value ?? "Save"}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
         className="rounded-md border border-white/15 bg-black/30 px-2 py-1 text-sm text-white"
@@ -130,8 +130,8 @@ function NumberRow({ label, value, onChange, disabled, step = "1" }) {
 export default function AdminLeoMinersConfigTab({ accessToken }) {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  const [error, setError] = useState("Save");
+  const [message, setMessage] = useState("Save");
   const [dbReady, setDbReady] = useState(false);
   const [code, setCode] = useState(null);
   const [isActive, setIsActive] = useState(false);
@@ -152,7 +152,7 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       const res = await adminAuthFetch(accessToken, "/api/admin/leo-miners/config");
       const json = await res.json().catch(() => ({}));
       if (!json.defaults) {
-        setError(json.error?.message || json.error?.code || "טעינה נכשלה");
+        setError(json.error?.message || json.error?.code || "Loading…");
         return;
       }
       setDbReady(json.dbReady === true);
@@ -167,7 +167,7 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       setSettings(nextSettings);
       setCoinsRounding(String(nextSettings.coins_rounding || "floor"));
     } catch {
-      setError("שגיאת רשת");
+      setError("Loading…");
     } finally {
       setLoading(false);
     }
@@ -215,10 +215,10 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error?.message || json.error?.code || json.message || "שמירה נכשלה");
+        setError(json.error?.message || json.error?.code || json.message || "Save failed");
         return;
       }
-      setMessage(resetToDefaults ? "אופס לברירות מחדל" : "נשמר בהצלחה");
+      setMessage(resetToDefaults ? "to to" : "saved to");
       setDbReady(json.dbReady === true);
       setGameEnabled(json.gameEnabled === true);
       setMergedPreview(json.merged || null);
@@ -228,14 +228,14 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       if (typeof json.catalogEnabled === "boolean") setCatalogEnabled(json.catalogEnabled);
       if (typeof json.soloRuleActive === "boolean") setSoloRuleActive(json.soloRuleActive);
     } catch {
-      setError("שגיאת רשת");
+      setError("Loading…");
     } finally {
       setSaving(false);
     }
   };
 
   if (loading) {
-    return <p className="text-white/60 text-sm text-right">טוען הגדרות Leo Miners…</p>;
+    return <p className="text-white/60 text-sm text-right">  Leo Miners…</p>;
   }
 
   const formDisabled = !dbReady || saving;
@@ -244,23 +244,23 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
     <div className="space-y-6 text-right" dir="rtl">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="text-lg font-bold text-white">Leo Miners - הגדרות משחק</h2>
+          <h2 className="text-lg font-bold text-white">Leo Miners -  </h2>
           <p className="text-sm text-white/60 mt-1">
-            שינוי איזון/פרסים/הפעלה - ללא migration נוסף אחרי SQL 095.
+             // -  migration   SQL 095.
           </p>
         </div>
         <Link
           href="/admin/games"
           className="text-sm text-amber-200 hover:text-amber-100 underline"
         >
-          ← חזרה לקטלוג משחקים
+          ←
         </Link>
       </div>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-        <h3 className="font-semibold text-amber-200">סטטוס</h3>
+        <h3 className="font-semibold text-amber-200"></h3>
         <div className="flex flex-wrap gap-2">
-          <StatusBadge ok={dbReady} labelOn="DB מוכן" labelOff="DB לא מוכן" />
+          <StatusBadge ok={dbReady} labelOn="DB " labelOff="DB  " />
           <StatusBadge ok={isActive && settings.enabled} labelOn="Game enabled" labelOff="Game disabled" />
           <StatusBadge ok={catalogEnabled} labelOn="Catalog enabled" labelOff="Catalog disabled" />
           <StatusBadge ok={soloRuleActive} labelOn="Solo rule active" labelOff="Solo rule inactive" />
@@ -269,8 +269,8 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
         {!dbReady ? (
           <p className="text-sm text-rose-200">
             {code === "miners_db_not_ready"
-              ? "טבלאות Leo Miners עדיין לא קיימות - יש להריץ migration 095 לפני שמירה."
-              : "מסד הנתונים לא מוכן."}
+              ? " Leo Miners    -   migration 095  ."
+              : "not."}
           </p>
         ) : null}
       </section>
@@ -279,15 +279,15 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       {message ? <p className="text-emerald-300 text-sm">{message}</p> : null}
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-        <h3 className="font-semibold text-amber-200">הפעלה ראשית</h3>
+        <h3 className="font-semibold text-amber-200"> </h3>
         <ToggleRow
-          label="is_active (שורת config ב-DB)"
+          label="is_active ( config -DB)"
           checked={isActive}
           onChange={setIsActive}
           disabled={formDisabled}
         />
         <ToggleRow
-          label="קטלוג site_game_catalog - leo-miners"
+          label=" site_game_catalog - leo-miners"
           checked={catalogEnabled}
           onChange={setCatalogEnabled}
           disabled={formDisabled}
@@ -301,7 +301,7 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
-        <h3 className="font-semibold text-amber-200 mb-2">דגלי הפעלה (settings_json)</h3>
+        <h3 className="font-semibold text-amber-200 mb-2">  (settings_json)</h3>
         {BOOL_FIELDS.map((f) => (
           <ToggleRow
             key={f.key}
@@ -314,7 +314,7 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-        <h3 className="font-semibold text-amber-200">עיגול מטבעות</h3>
+        <h3 className="font-semibold text-amber-200"> </h3>
         <select
           value={coinsRounding}
           onChange={(e) => setCoinsRounding(e.target.value)}
@@ -348,7 +348,7 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
         <h3 className="font-semibold text-amber-200">softcut / stage_blocks</h3>
         <p className="text-sm text-white/60">
-          נשמרים ב-settings_json ונקראים בשרת. לעריכה מתקדמת - JSON מלא (reset משחזר ברירות מחדל).
+           -settings_json  .   - JSON  (reset   ).
         </p>
         {mergedPreview ? (
           <pre className="text-xs text-white/70 bg-black/40 rounded-lg p-3 overflow-x-auto text-left dir-ltr">
@@ -371,12 +371,12 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
           disabled={formDisabled}
           className="rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-semibold px-4 py-2 disabled:opacity-50"
         >
-          {saving ? "שומר…" : "שמירה"}
+          {saving ? "…" : ""}
         </button>
         <button
           type="button"
           onClick={() => {
-            if (window.confirm("לאפס את כל ההגדרות לברירות מחדל?")) void save(true);
+            if (window.confirm("not the All to to?")) void save(true);
           }}
           disabled={formDisabled}
           className="rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold disabled:opacity-50"
@@ -388,7 +388,7 @@ export default function AdminLeoMinersConfigTab({ accessToken }) {
           onClick={() => setShowJson((v) => !v)}
           className="rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold"
         >
-          {showJson ? "הסתר JSON" : "Preview JSON"}
+          {showJson ? " JSON" : "Preview JSON"}
         </button>
       </div>
 

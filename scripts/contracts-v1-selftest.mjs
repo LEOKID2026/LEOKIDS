@@ -29,7 +29,7 @@ const baseRow = {
   wrong: 2,
   accuracy: 86,
   modeKey: "learning",
-  customHe: "טקסט קיים שלא אמור להשתנות",
+  customHe: "    ",
   lastSessionMs: periodEndMs - 2 * 24 * 60 * 60 * 1000,
 };
 

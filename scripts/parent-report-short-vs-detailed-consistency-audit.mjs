@@ -35,9 +35,9 @@ const FORBIDDEN_TERMS = [
   "outputGating",
   "rowSignals",
 ];
-const STRONG_TREND_WORDS = ["משתפר", "בירידה", "מגמה חיובית", "מגמה שלילית", "שיפור מבוסס", "ירידה מבוססת"];
-const REMEDIATION_WORDS = ["פער ידע", "remediate", "שיקום", "התערבות אגרסיבית"];
-const INSUFFICIENT_WORDS = ["אין מספיק", "נתונים חלקיים", "עדיין אין מספיק", "בשלב זה אין מספיק"];
+const STRONG_TREND_WORDS = ["", "", " ", " ", " ", " "];
+const REMEDIATION_WORDS = [" ", "remediate", "", " "];
+const INSUFFICIENT_WORDS = [" ", " ", "  ", "   "];
 
 const { buildDetailedParentReportFromBaseReport } = await import(
   pathToFileURL(join(ROOT, "utils", "detailed-parent-report.js")).href
@@ -73,7 +73,7 @@ function scenarioBaseReport(s) {
         mainFocusAreaLineHe: "",
         strongestAreaLineHe: "",
         readyForProgressPreviewHe: [],
-        insufficientDataSubjectsHe: ["אין מספיק נתונים"],
+        insufficientDataSubjectsHe: ["  "],
       },
     },
     mathOperations: {},
@@ -90,13 +90,13 @@ function scenarioBaseReport(s) {
 function shortLegacyLines(baseReport) {
   const overview = baseReport?.summary?.diagnosticOverviewHe || {};
   const out = [];
-  if (overview.mainFocusAreaLineHe) out.push(`דורש תשומת לב כעת: ${overview.mainFocusAreaLineHe}`);
-  if (overview.strongestAreaLineHe) out.push(`תוצאות טובות יחסית — כדאי לשמר: ${overview.strongestAreaLineHe}`);
+  if (overview.mainFocusAreaLineHe) out.push(`   : ${overview.mainFocusAreaLineHe}`);
+  if (overview.strongestAreaLineHe) out.push(`   —  : ${overview.strongestAreaLineHe}`);
   if (Array.isArray(overview.readyForProgressPreviewHe) && overview.readyForProgressPreviewHe.length) {
-    out.push(`מוכנות להתקדמות נוספת: ${overview.readyForProgressPreviewHe.join(" · ")}`);
+    out.push(`  : ${overview.readyForProgressPreviewHe.join(" · ")}`);
   }
   if (Array.isArray(overview.insufficientDataSubjectsHe) && overview.insufficientDataSubjectsHe.length) {
-    out.push(`נתונים חלקיים במקצועות: ${overview.insufficientDataSubjectsHe.join(" · ")}`);
+    out.push(`  : ${overview.insufficientDataSubjectsHe.join(" · ")}`);
   }
   return out.map(cleanText).filter(Boolean);
 }
@@ -126,12 +126,12 @@ function uniqueNonEmpty(lines) {
 
 function stableOrMaintainDetailed(top) {
   const t = `${top?.mainStatusHe || ""} ${top?.mainPriorityHe || ""} ${top?.doNowHe || ""}`;
-  return /שימור|יציב|יציבות|עקביות|להמשיך/.test(t) && !/פער ידע/.test(t);
+  return /||||/.test(t) && !/ /.test(t);
 }
 
 function speedOnlyDetailed(top) {
   const t = `${top?.mainStatusHe || ""} ${top?.mainPriorityHe || ""} ${top?.doNowHe || ""}`;
-  return /מהירות|קצב/.test(t) && !/פער ידע|ידע חסר/.test(t);
+  return /|/.test(t) && !/ | /.test(t);
 }
 
 function evaluateConsistency({ topContract, shortLines, primaryActions, hasDetailedLink }) {
@@ -158,7 +158,7 @@ function evaluateConsistency({ topContract, shortLines, primaryActions, hasDetai
   if (stableOrMaintainDetailed(topContract) && containsAny(allText, REMEDIATION_WORDS)) {
     contradictions.push("remediation_on_stable_mastery");
   }
-  if (speedOnlyDetailed(topContract) && /פער ידע|ידע חסר/.test(allText)) {
+  if (speedOnlyDetailed(topContract) && / | /.test(allText)) {
     contradictions.push("knowledge_gap_on_speed_only");
   }
   if (trendInsufficient && containsAny(allText, STRONG_TREND_WORDS)) {
@@ -197,9 +197,9 @@ for (const id of SCENARIO_IDS) {
   const legacyLines = uniqueNonEmpty([...shortLegacyLines(base), ...shortRecommendationLines(base)]);
   const previewLines = contractAvailableInShortReport
     ? uniqueNonEmpty([
-        `מצב: ${top?.mainStatusHe || ""}`,
-        `מיקוד עיקרי: ${top?.mainPriorityHe || ""}`,
-        `מה עושים עכשיו: ${top?.doNowHe || ""}`,
+        `: ${top?.mainStatusHe || ""}`,
+        ` : ${top?.mainPriorityHe || ""}`,
+        `  : ${top?.doNowHe || ""}`,
       ])
     : [];
 
@@ -215,7 +215,7 @@ for (const id of SCENARIO_IDS) {
     ? uniqueNonEmpty([top?.mainPriorityHe || ""])
     : beforeFixPrimary;
   const afterFixVisibleLines = contractAvailableInShortReport
-    ? uniqueNonEmpty([...previewLines, ...legacyLines.filter((l) => !/^דורש תשומת לב כעת:/.test(l))])
+    ? uniqueNonEmpty([...previewLines, ...legacyLines.filter((l) => !/^   :/.test(l))])
     : uniqueNonEmpty([...legacyLines]);
   const afterFixEval = evaluateConsistency({
     topContract: top,

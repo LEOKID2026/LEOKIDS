@@ -7,7 +7,7 @@
  *   npm run test:parent-copilot-async-live-smoke
  *
  * Single question (report-related payload — best for proving llm_grounded without hammering the API):
- *   npm run test:parent-copilot-async-live-smoke -- --only "מה הכי חשוב לתרגל השבוע?"
+ *   npm run test:parent-copilot-async-live-smoke -- --only "    ?"
  *
  * Delay between Report-related questions (default 2500 ms; avoids free-tier rate limits):
  *   PARENT_COPILOT_ASYNC_SMOKE_DELAY_MS=3000 npm run test:parent-copilot-async-live-smoke
@@ -23,7 +23,7 @@
  *   GEMINI_API_KEY=...
  *
  * Force primary to fail transiently (tests fallback without hitting Gemini) when fallback env is set:
- *   npm run test:parent-copilot-async-live-smoke -- --only "מה הכי חשוב לתרגל השבוע?" --simulate-primary-fail http_429
+ *   npm run test:parent-copilot-async-live-smoke -- --only "    ?" --simulate-primary-fail http_429
  */
 
 import { readFileSync, existsSync } from "fs";
@@ -98,7 +98,7 @@ loadEnvLocalBestEffort();
 function makeContract(topicKey, subjectId, obs, interp, act, unc, qCount = 12, acc = 75, recEligible = true) {
   return {
     topicRowKey: topicKey,
-    displayName: topicKey === "geo" ? "גאומטריה" : topicKey === "frac" ? "שברים" : topicKey === "eng_vocab" ? "אוצר מילים" : "נושא כללי",
+    displayName: topicKey === "geo" ? "" : topicKey === "frac" ? "" : topicKey === "eng_vocab" ? " " : " ",
     questions: qCount,
     accuracy: acc,
     contractsV1: {
@@ -143,25 +143,25 @@ function highDataPayload() {
   const mathGeo = makeContract(
     "geo",
     "math",
-    "בגאומטריה נצפו 45 שאלות, עם דיוק של כ־72%.",
-    "יש כיוון עבודה ברור בגאומטריה ונדרש חיזוק בזיהוי תכונות צורות.",
-    "מומלץ לתרגל באופן ממוקד בזיהוי צורות וחישוב שטחים.",
-    "כדאי לעקוב אחרי ההתקדמות בסבב הבא.",
+    "  45 ,    72%.",
+    "         .",
+    "       .",
+    "     .",
   );
   const mathFrac = makeContract(
     "frac",
     "math",
-    "בשברים נצפו 60 שאלות, עם דיוק של כ־68%.",
-    "שברים מהווים אתגר ייחודי ודורשים חיזוק בסיסי בהמרות.",
-    "מומלץ לתרגל המרות שברים וחיבור שברים פשוטים.",
-    "כדאי לחזור לנושא אחרי עוד תרגול.",
+    "  60 ,    68%.",
+    "       .",
+    "      .",
+    "     .",
   );
   const engVocab = makeContract(
     "eng_vocab",
     "english",
-    "באוצר מילים אנגלית נצפו 38 שאלות, עם דיוק של כ־81%.",
-    "אוצר מילים מתפתח בצורה טובה.",
-    "המשך עם תרגול יומי קצר.",
+    "    38 ,    81%.",
+    "    .",
+    "    .",
     "",
   );
   return {
@@ -174,9 +174,9 @@ function highDataPayload() {
     ],
     executiveSummary: {
       majorTrendsHe: [
-        "בתקופה הנבחרת נצפו 484 שאלות עם דיוק ממוצע של כ-74%.",
-        "תחומי הדגש העיקריים הם שברים וגאומטריה.",
-        "אנגלית מראה ביצועים טובים.",
+        "   484      -74%.",
+        "     .",
+        "   .",
       ],
     },
   };
@@ -252,25 +252,25 @@ const GROUPS_BASE = [
   {
     name: "Off-topic",
     questions: [
-      "כמה עולה ביטקוין?",
-      "איך מכינים פיצה?",
-      "מי כתב את הארי פוטר?",
-      "מה זה פוטוסינתזה?",
+      "  ?",
+      "  ?",
+      "    ?",
+      "  ?",
     ],
   },
   {
     name: "Ambiguous",
-    questions: ["מה אתה חושב?", "תסביר"],
+    questions: ["  ?", ""],
   },
   {
     name: "Report-related",
     questions: [
-      "מה הכי חשוב לתרגל השבוע?",
-      "במה הוא חזק?",
-      "איפה הוא מתקשה?",
-      "מה לעשות בבית?",
-      "מה עם גאומטריה?",
-      "האם יש סיבה לדאגה?",
+      "    ?",
+      "  ?",
+      "  ?",
+      "  ?",
+      "  ?",
+      "   ?",
     ],
   },
 ];
@@ -280,7 +280,7 @@ const { onlyQuestion, delayMs, simulatePrimaryTransientFailure } = smokeArgsEarl
 let GROUPS = GROUPS_BASE;
 if (onlyQuestion != null) {
   if (!onlyQuestion) {
-    console.error('Usage: --only requires a question string, e.g. --only "מה הכי חשוב לתרגל השבוע?"');
+    console.error('Usage: --only requires a question string, e.g. --only "    ?"');
     process.exit(2);
   }
   GROUPS = [{ name: "Report-related (--only)", questions: [onlyQuestion] }];
@@ -356,18 +356,18 @@ for (const g of GROUPS) {
     if (g.name === "Off-topic" || g.name === "Ambiguous") {
       const t = visibleAnswerFull(res);
       const bad =
-        /\d{2,}\s*שאלות/.test(t) ||
-        /דיוק\s+של\s*\d/.test(t) ||
-        /לפי\s+הדוח|על\s+פי\s+הדוח/.test(t) ||
-        /גאומטריה|שברים|אנגלית|אוצר מילים/.test(t);
+        /\d{2,}\s*/.test(t) ||
+        /\s+\s*\d/.test(t) ||
+        /\s+|\s+\s+/.test(t) ||
+        /||| /.test(t);
       if (bad && g.name === "Off-topic") {
         console.log("\n[CHECK] WARNING: possible report-data leakage in off-topic boundary text.");
       }
     }
 
-    if (q === "במה הוא חזק?") {
+    if (q === "  ?") {
       const t = visibleAnswerFull(res);
-      if (/מתקשה|חיזוק נדרש|דורש(?:ים)?\s+חיזוק|חולשה|קושי(?!.*חזק)/u.test(t) && /חוזק|חזק/u.test(t)) {
+      if (/| |(?:)?\s+||(?!.*)/u.test(t) && /|/u.test(t)) {
         console.log("\n[CHECK] NOTE: strength answer may mention weakness language — review manually.");
       }
     }

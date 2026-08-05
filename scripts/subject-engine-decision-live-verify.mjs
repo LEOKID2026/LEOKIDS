@@ -44,10 +44,10 @@ const {
 } = await load("utils/learning-pattern-decision/engine-decision-codes.js");
 
 const LEGACY_FORBIDDEN = [
-  "בחלק מהשורות",
-  "עדיין מוקדם",
-  "אין תמונה מספיק ברורה",
-  "עדיין לא מספיק",
+  " ",
+  " ",
+  "   ",
+  "  ",
 ];
 
 const INTERNAL_FORBIDDEN = [
@@ -77,7 +77,7 @@ function collectTopicOwnerCopySurfaces(mathSp, base) {
       const row = {
         ...shortRow,
         ...tr,
-        subjectLabelHe: "מתמטיקה",
+        subjectLabelHe: "",
         label: tr.displayName || shortRow.label,
         displayName: tr.displayName || shortRow.displayName,
         learningPatternDecision: tr.learningPatternDecision,
@@ -266,7 +266,7 @@ async function verifyCase(supabase, { label, username, from, to, assertFn }) {
         (Number(surf.questions) || 0) <= 2;
       if (!allowEarly) assertNoLegacy(text, `${label} topic ${surf.topicKey}`);
       else {
-        for (const frag of LEGACY_FORBIDDEN.filter((f) => f !== "עדיין מוקדם")) {
+        for (const frag of LEGACY_FORBIDDEN.filter((f) => f !== " ")) {
           assert.doesNotMatch(String(text || ""), new RegExp(frag), `${label} topic ${surf.topicKey} legacy: ${frag}`);
         }
       }
@@ -299,20 +299,20 @@ async function main() {
       assert.equal(shortMath.subjectSummaryRenderSource, RENDER_SOURCE_SUBJECT_ENGINE);
       assert.equal(shortContract?.subjectDecision, "multiple_topic_gaps");
       assert.equal(shortMath.summaryHe, mathSp.summaryHe);
-      assert.match(String(shortMath.summaryHe || ""), /בולטים כמה נושאים שדורשים חיזוק/);
-      assert.match(String(shortMath.summaryHe || ""), /שברים/);
-      assert.match(String(shortMath.summaryHe || ""), /השוואה לפי מונה בלבד/);
-      assert.match(String(letter.diagnosisHe || ""), /כפל/);
-      assert.match(String(letter.diagnosisHe || ""), /אותם זוגות שגויים/);
-      assert.match(String(letter.homeAction || ""), /בשבוע הקרוב מומלץ לתרגל/);
+      assert.match(String(shortMath.summaryHe || ""), /    /);
+      assert.match(String(shortMath.summaryHe || ""), //);
+      assert.match(String(shortMath.summaryHe || ""), /   /);
+      assert.match(String(letter.diagnosisHe || ""), //);
+      assert.match(String(letter.diagnosisHe || ""), /  /);
+      assert.match(String(letter.homeAction || ""), /   /);
       assert.doesNotMatch(String(letter.homeAction || ""), /remediate/i);
-      assert.doesNotMatch(String(rollupText || ""), /כדאי לחזק את הנושא\. מבוסס/);
+      assert.doesNotMatch(String(rollupText || ""), /   \. /);
       assert.ok(
-        subjectContract.strongestDetectedPatterns?.includes("השוואה לפי מונה בלבד"),
+        subjectContract.strongestDetectedPatterns?.includes("   "),
         "missing fractions pattern",
       );
       assert.ok(
-        subjectContract.strongestDetectedPatterns?.includes("אותם זוגות שגויים"),
+        subjectContract.strongestDetectedPatterns?.includes("  "),
         "missing multiplication pattern",
       );
       assert.ok(String(rollupText || "").trim().length > 0, "subject summary/letter must not be empty");
@@ -324,12 +324,12 @@ async function main() {
       if (positiveAddition?.recommendationCard?.cautionLineHe) {
         assert.match(
           String(positiveAddition.recommendationCard.cautionLineHe),
-          /גם כשנראית הצלחה/u,
+          /  /u,
           "positive caution must use owner RECOMMENDATION_CAUTION",
         );
         assert.doesNotMatch(
           String(positiveAddition.recommendationCard.cautionLineHe),
-          /עדיין לא קובעים כיוון חזק/u,
+          /    /u,
           "positive caution must not use legacy gated text",
         );
       }
@@ -359,11 +359,11 @@ async function main() {
       assert.equal(letter.renderSource, "subjectEngineDecisionContract");
       assert.equal(shortMath.subjectSummaryRenderSource, RENDER_SOURCE_SUBJECT_ENGINE);
       assert.equal(shortContract?.subjectDecision, "focused_strengthening_needed");
-      assert.match(String(shortMath.summaryHe || ""), /בולט כרגע נושא אחד שדורש חיזוק/);
-      assert.match(String(shortMath.summaryHe || ""), /חיבור/);
+      assert.match(String(shortMath.summaryHe || ""), /     /);
+      assert.match(String(shortMath.summaryHe || ""), //);
       assert.match(String(shortMath.summaryHe || ""), /20%/);
-      assert.match(String(shortMath.summaryHe || ""), /מומלץ לחזק את הנושא לפני שממשיכים/u);
-      assert.match(String(letter.homeAction || ""), /בשבוע הקרוב מומלץ לתרגל/);
+      assert.match(String(shortMath.summaryHe || ""), /     /u);
+      assert.match(String(letter.homeAction || ""), /   /);
       assert.doesNotMatch(String(letter.homeAction || ""), /remediate/i);
       assert.doesNotMatch(String(letter.homeAction || ""), /maintain/i);
     },

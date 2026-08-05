@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Remove Hebrew maqaf (U+05BE "־") from user-facing source strings.
+ * Remove Hebrew maqaf (U+05BE "") from user-facing source strings.
  * Rules:
- * 1. ל־ + Latin/digit → אל + space
- * 2. ב/ל/מ/כ/ה/ש/ו + ־ + Hebrew letter → join (no maqaf)
- * 3. Any remaining ־ → space
+ * 1.  + Latin/digit →  + space
+ * 2. ////// +  + Hebrew letter → join (no maqaf)
+ * 3. Any remaining  → space
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -17,9 +17,9 @@ const MAQAF = "\u05BE";
 export function removeHebrewMaqaf(text) {
   if (!text.includes(MAQAF)) return text;
   let s = text;
-  s = s.replace(/([בלמכהשו])־(?=[א-ת])/g, "$1");
-  s = s.replace(/ל־/g, "אל ");
-  s = s.replace(/־/g, " ");
+  s = s.replace(/([])(?=[-])/g, "$1");
+  s = s.replace(//g, " ");
+  s = s.replace(//g, " ");
   return s;
 }
 

@@ -18,8 +18,8 @@ async function shot(page, name) {
 async function evaluateShort(page) {
   return page.evaluate(() => {
     const text = document.body?.innerText || "";
-    const hasShortContract = text.includes("סיכום קצר להורה");
-    const hasActionHint = /מה עושים עכשיו|מיקוד עיקרי|מיקוד/.test(text);
+    const hasShortContract = text.includes("  ");
+    const hasActionHint = /  | |/.test(text);
     const hasDetailLink = [...document.querySelectorAll("a")]
       .some((a) => String(a.getAttribute("href") || "").includes("/learning/parent-report-detailed"));
     const root = document.documentElement;
@@ -37,13 +37,13 @@ async function evaluateShort(page) {
 async function evaluateDetailed(page) {
   return page.evaluate(() => {
     const text = document.body?.innerText || "";
-    const iTop = text.indexOf("סיכום להורה");
-    const iLegacy = text.indexOf("סיכום לתקופה");
+    const iTop = text.indexOf(" ");
+    const iLegacy = text.indexOf(" ");
     const topBeforeLegacy = iTop >= 0 && (iLegacy < 0 || iTop < iLegacy);
-    const hasStatus = text.includes("מצב");
-    const hasPriority = text.includes("מיקוד עיקרי");
-    const hasDoNow = text.includes("מה עושים עכשיו");
-    const hasSubjectContractLike = text.includes("סיכום מקצועות להורה") || text.includes("סיכום להורה");
+    const hasStatus = text.includes("");
+    const hasPriority = text.includes(" ");
+    const hasDoNow = text.includes("  ");
+    const hasSubjectContractLike = text.includes("  ") || text.includes(" ");
     const root = document.documentElement;
     const noHorizontal = root.scrollWidth <= root.clientWidth + 1;
     return {

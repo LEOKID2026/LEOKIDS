@@ -1,4 +1,4 @@
--- Educational game #3: leo-lab (מעבדת הניסויים של ליאו)
+-- Educational game #3: leo-lab
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 078 (educational_game_sessions, reward_economy_educational_game_rules, site_game_catalog educational).
@@ -48,7 +48,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-lab',
   'educational',
-  'מעבדת הניסויים של ליאו',
+  'Leo''s Experiment Lab',
   '/student/educational-games/leo-lab',
   '/student/educational-games',
   coalesce(
@@ -57,7 +57,7 @@ insert into public.site_game_catalog (
   ),
   30,
   '🔬',
-  'משחק ניסויים, חומרים וסיבה ותוצאה'
+  'A game about experiments, materials, and cause and effect'
 )
 on conflict (game_key) do update set
   category = excluded.category,

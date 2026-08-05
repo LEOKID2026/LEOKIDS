@@ -96,15 +96,15 @@ try {
 }
 assert.equal((overview?.notPracticedSubjectsHe || []).length, 0, "overview uses compact summary only");
 const coverage = lang.buildSubjectEvidenceCoverageLines(subjectQuestionCounts, {
-  math: "חשבון",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
+  math: "",
+  geometry: "",
+  english: "",
+  science: "",
+  hebrew: "",
+  "moledet-geography": " ",
 });
 assert.ok(coverage.notPracticedSubjectsHe.length >= 1, "coverage builder keeps per-subject lines for tooling");
-assert.ok(String(coverage.notPracticedSubjectsSummaryHe || "").includes("גאומטריה"), "compact summary in coverage");
+assert.ok(String(coverage.notPracticedSubjectsSummaryHe || "").includes(""), "compact summary in coverage");
 
 const regressionBase = buildRealGradeSplitRegressionBaseReport();
 

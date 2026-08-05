@@ -18,11 +18,11 @@ const ROOT = join(__dirname, "..");
 const PRINT_CSS = readFileSync(join(ROOT, "styles/worksheet-print.css"), "utf8");
 
 const META = {
-  titleHe: "דף עבודה — חיבור",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "חיבור",
-  levelHe: "רגיל",
+  titleHe: "  — ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "math",
   gradeKey: "g3",

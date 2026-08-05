@@ -26,7 +26,7 @@ describe("surprise-box-settings validation", () => {
       coin_prizes_per_open: 0,
     });
     assert.equal(result.ok, false);
-    assert.match(result.messageHe, /לפחות פרס אחד/);
+    assert.match(result.messageHe, /  /);
   });
 
   test("allows composition: 2 cards + 1 coin", () => {
@@ -158,7 +158,7 @@ describe("surprise-box runtime uses admin settings (no hardcoded 2+1)", () => {
       join(ROOT, "components/student/rewards/StudentSurpriseBoxOpenModal.jsx"),
       "utf8"
     );
-    assert.doesNotMatch(src, /שני קלפים/);
+    assert.doesNotMatch(src, / /);
     assert.match(src, /coinAmounts/);
     assert.doesNotMatch(src, /\[open,\s*onOpened\]/);
     assert.match(src, /onOpenedRef/);
@@ -167,7 +167,7 @@ describe("surprise-box runtime uses admin settings (no hardcoded 2+1)", () => {
     assert.match(src, /OPEN_TIMEOUT_MS/);
     assert.match(src, /OPEN_ERROR_HE/);
     assert.match(src, /pendingBoxCountAfter/);
-    assert.match(src, /פתח קופסה נוספת/);
+    assert.match(src, /  /);
     assert.match(src, /NO_MORE_BOX_HE/);
     assert.match(src, /openAttempt/);
   });
@@ -195,15 +195,15 @@ describe("surprise-box runtime uses admin settings (no hardcoded 2+1)", () => {
     );
     assert.match(cardsTab, /AdminCardGrantByParent/);
     assert.doesNotMatch(cardsTab, /grantStudentId/);
-    assert.doesNotMatch(cardsTab, /מזהה תלמיד/);
+    assert.doesNotMatch(cardsTab, / /);
 
     const grant = readFileSync(
       join(ROOT, "components/admin/rewards/AdminCardGrantByParent.jsx"),
       "utf8"
     );
-    assert.match(grant, /מייל הורה/);
-    assert.match(grant, /חיפוש ילדים/);
-    assert.match(grant, /הענק קלף לילד/);
+    assert.match(grant, / /);
+    assert.match(grant, / /);
+    assert.match(grant, /  /);
     assert.match(grant, /\/api\/admin\/parents\/by-email/);
   });
 });

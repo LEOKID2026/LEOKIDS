@@ -93,7 +93,7 @@ describe("Q2-C1 - geometry procedural", () => {
     );
     const out = attachCanonicalMetadataToMathGeometryQuestion(
       {
-        question: "מה שטח הריבוע?",
+        question: "  ?",
         topic: "area",
         shape: "square",
         answers: ["16", "12", "8", "4"],

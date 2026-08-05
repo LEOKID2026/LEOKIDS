@@ -40,7 +40,7 @@ export default function StudentRewardCard({
           type="button"
           className="relative aspect-[2/3] w-full shrink-0 mb-2 p-0 border-0 bg-transparent cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70"
           onClick={openPreview}
-          aria-label={`Enlarge card image ${card.nameHe || ""}`.trim()}
+          aria-label={`Enlarge card image ${card.name || ""}`.trim()}
         >
           <RewardCardImage
             src={card.imageThumbUrl || card.imageUrl || "/rewards/cards/placeholders/regular/default.svg"}
@@ -54,13 +54,13 @@ export default function StudentRewardCard({
         </button>
         <div className="flex flex-col flex-1 gap-1 min-w-0">
           <h3 className={`font-bold text-sm leading-snug line-clamp-2 ${T.subjectTitle}`}>
-            {card.nameHe}
+            {card.name}
           </h3>
-          {card.seriesNameHe ? (
-            <p className={`text-xs truncate ${T.tileSub}`}>{card.seriesNameHe}</p>
+          {card.seriesName ? (
+            <p className={`text-xs truncate ${T.tileSub}`}>{card.seriesName}</p>
           ) : null}
-          {card.rarityHe ? (
-            <p className={`text-xs ${T.tileSub}`}>{card.rarityHe}</p>
+          {card.rarityLabel ? (
+            <p className={`text-xs ${T.tileSub}`}>{card.rarityLabel}</p>
           ) : null}
           {card.duplicateCount > 0 ? (
             <p className="text-xs text-amber-700 dark:text-amber-300">
@@ -121,7 +121,7 @@ function VirtualizedSeriesThumb({ card, index, imageSrc, onOpen, keepMounted }) 
           className="relative w-full h-full p-0 border-0 bg-transparent cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70"
           onClick={() => onOpen(index)}
           aria-label={
-            card.owned ? `Enlarge card image ${card.nameHe}` : `${card.nameHe} — locked`
+            card.owned ? `Enlarge card image ${card.name}` : `${card.name} — locked`
           }
         >
           <RewardCardImage
@@ -159,7 +159,7 @@ export function StudentSeriesProgressCard({ series, T, studentFullName = "" }) {
       >
         <div className="flex justify-between items-start gap-2 mb-2 min-w-0">
           <span className={`font-bold text-sm sm:text-base leading-snug min-w-0 ${T.subjectTitle}`}>
-            {series.nameHe}
+            {series.name}
           </span>
           <span className={`text-xs sm:text-sm tabular-nums shrink-0 ${T.tileSub}`}>
             {series.ownedCount} of {series.totalCount}
@@ -174,7 +174,7 @@ export function StudentSeriesProgressCard({ series, T, studentFullName = "" }) {
           <div
             className="mt-3 flex flex-wrap gap-1.5 sm:gap-2 w-full min-w-0"
             role="list"
-            aria-label={`Cards in series ${series.nameHe}`}
+            aria-label={`Cards in series ${series.name}`}
             data-testid="series-card-thumbs"
           >
             {cards.map((card, index) => {

@@ -13,7 +13,7 @@ const ROOT = join(__dirname, "..");
 const u = (rel) => pathToFileURL(join(ROOT, rel)).href;
 
 const HEBREW_RE = /[\u0590-\u05FF]/;
-const HEBREW_EXTRACT_RE = /[\u0590-\u05FF][\u0590-\u05FF\s.,;:!?'"«»()\-–—%0-9${}a-zA-Z_א-ת]*/gu;
+const HEBREW_EXTRACT_RE = /[\u0590-\u05FF][\u0590-\u05FF\s.,;:!?'"«»()\-–—%0-9${}a-zA-Z_-]*/gu;
 
 const SCAN_ROOTS = [
   "pages/learning/parent-report.js",
@@ -50,10 +50,10 @@ const SKIP_DIR_PARTS = new Set([
 ]);
 
 const INTERNAL_ONLY_SNIPPETS = [
-  "עדיין לא ברור כיוון הדיוק לאורך זמן",
-  "ייתכן שהקושי קשור להבנת המשימה",
-  "יש סימן לקושי, אבל הדיוק משתפר",
-  "כשהמידע חלקי או ישן — כדאי לעשות בדיקה קצרה",
+  "      ",
+  "    ",
+  "  ,   ",
+  "    —    ",
 ];
 
 function collectFiles(relPath) {
@@ -102,14 +102,14 @@ function inferSurface(rel) {
 
 function inferSection(rel, lineText, keyHint = "") {
   const t = `${keyHint} ${lineText}`;
-  if (/empty|zero|thin|insufficient|אין מספיק|לא תורגל|דל/i.test(t)) return "data_health";
-  if (/home|בית|recommendedHome|homePlan|homeRec/i.test(t)) return "home_recommendations";
-  if (/insight|מה חשוב|notice/i.test(t)) return "insights";
-  if (/topic|נושא/i.test(t)) return "topic_card";
-  if (/subject|מקצוע/i.test(t)) return "subject_card";
-  if (/executive|סיכום/i.test(t)) return "executive_summary";
-  if (/details|פירוט|phase3|collapsed/i.test(t)) return "collapsed_details";
-  if (/letter|מכתב/i.test(t)) return "subject_letter";
+  if (/empty|zero|thin|insufficient| | |/i.test(t)) return "data_health";
+  if (/home||recommendedHome|homePlan|homeRec/i.test(t)) return "home_recommendations";
+  if (/insight| |notice/i.test(t)) return "insights";
+  if (/topic|/i.test(t)) return "topic_card";
+  if (/subject|/i.test(t)) return "subject_card";
+  if (/executive|/i.test(t)) return "executive_summary";
+  if (/details||phase3|collapsed/i.test(t)) return "collapsed_details";
+  if (/letter|/i.test(t)) return "subject_letter";
   if (/forbidden|normalize/i.test(rel)) return "guard_normalization";
   return "general";
 }
@@ -161,11 +161,11 @@ function classifyVisibility(rel, lineText, text, fn) {
 function problemType(text, visibility) {
   if (visibility !== "parent-visible") return "";
   const risky = [
-    ["jargon", /מגמת|פער ידע|ביטחון סטטיסטי|שורות דוח|אגרסיב|מאסטרי|טקסונומיה|בטווח/],
-    ["thin_data_tone", /אין מספיק|עדיין מעט|דל|חלקי|מצומצם/],
-    ["progression_risk", /העברה|קידום|שחרור|ירידה|עלייה ברמה|מעבר שלב/],
-    ["awkward_phrasing", /בתקופה[^ ש]|מה שנאסף|לעמיס/],
-    ["over_cautious", /מוקדם מדי|לא סוגרים|זהיר/],
+    ["jargon", /| | | ||||/],
+    ["thin_data_tone", / | |||/],
+    ["progression_risk", /|||| | /],
+    ["awkward_phrasing", /[^ ]| |/],
+    ["over_cautious", / | |/],
   ];
   for (const [type, re] of risky) {
     if (re.test(text)) return type;
@@ -196,7 +196,7 @@ function extractStringsFromLine(line, lineNo) {
       results.push({ text: raw, col: m.index + 1 });
     }
   }
-  // JSX text nodes: >עברית<
+  // JSX text nodes: ><
   const jsxRe = />([^<>{}]*[\u0590-\u05FF][^<>{}]*)</g;
   let jm;
   while ((jm = jsxRe.exec(line))) {
@@ -270,11 +270,11 @@ for (const term of [...termUnion].sort()) {
     if (content.includes(term)) found.push(rel);
   }
   const count = found.length;
-  const category = /בתקופה|שנבחרה/.test(term)
+  const category = /|/.test(term)
     ? "duplicate_phrase"
-    : /מגמת|פער|שורות|ביטחון|אגרסיב|מאסטרי/.test(term)
+    : /|||||/.test(term)
       ? "engine_jargon"
-      : /בטווח|נדגמו|סף/.test(term)
+      : /||/.test(term)
         ? "range_jargon"
         : "readability";
   forbiddenRows.push({
@@ -313,12 +313,12 @@ function flagTerms(s) {
 
 const scenarioRows = [];
 const subjects = [
-  ["math", "חשבון"],
-  ["geometry", "גאומטריה"],
-  ["hebrew", "עברית"],
-  ["english", "אנגלית"],
-  ["science", "מדעים"],
-  ["moledet_geography", "מולדת וגאוגרפיה"],
+  ["math", ""],
+  ["geometry", ""],
+  ["hebrew", ""],
+  ["english", ""],
+  ["science", ""],
+  ["moledet_geography", " "],
 ];
 
 function addScenario(id, desc, route, subject, grade, texts) {
@@ -337,11 +337,11 @@ function addScenario(id, desc, route, subject, grade, texts) {
   }
 }
 
-addScenario("zero_data", "Zero questions in period", "zeroEvidenceSubjectLineHe", "חשבון", "", [
-  zeroEvidenceSubjectLineHe("חשבון"),
+addScenario("zero_data", "Zero questions in period", "zeroEvidenceSubjectLineHe", "", "", [
+  zeroEvidenceSubjectLineHe(""),
 ]);
-addScenario("thin_data", "Thin evidence subject", "thinEvidenceSubjectLineHe", "עברית", "", [
-  thinEvidenceSubjectLineHe("עברית", 5),
+addScenario("thin_data", "Thin evidence subject", "thinEvidenceSubjectLineHe", "", "", [
+  thinEvidenceSubjectLineHe("", 5),
 ]);
 
 for (const [sid, label] of subjects) {
@@ -383,17 +383,17 @@ const internalOnly = allEntries.filter((e) => e.visibility === "internal-only");
 const needsReview = allEntries.filter((e) => e.visibility === "needs_review");
 const dynamicTemplates = allEntries.filter((e) => e.is_template);
 const emptyThin = allEntries.filter((e) =>
-  /data_health|אין מספיק|לא תורגל|דל|מצומצם|zero|thin|insufficient/i.test(
+  /data_health| | |||zero|thin|insufficient/i.test(
     `${e.section} ${e.current_hebrew} ${e.condition}`
   )
 );
 const recoProg = allEntries.filter((e) =>
-  /home_recommendations|recommend|progress|המלצ|כיוון|שלב|RI\d/i.test(
+  /home_recommendations|recommend|progress||||RI\d/i.test(
     `${e.section} ${e.current_hebrew} ${e.file}`
   )
 );
 const collapsed = allEntries.filter((e) =>
-  /collapsed|phase3|executive|details|SubjectPhase3|פירוט/i.test(`${e.section} ${e.file} ${e.function}`)
+  /collapsed|phase3|executive|details|SubjectPhase3|/i.test(`${e.section} ${e.file} ${e.function}`)
 );
 const aiCopy = allEntries.filter((e) => e.file.includes("parent-report-ai") || e.surface === "ai_explainer");
 
@@ -504,7 +504,7 @@ XLSX.utils.book_append_sheet(
         file: e.file,
         function: e.function,
         line: e.line,
-        state_type: /אין|zero|לא תורגל/i.test(e.current_hebrew) ? "zero_or_empty" : "thin_data",
+        state_type: /|zero| /i.test(e.current_hebrew) ? "zero_or_empty" : "thin_data",
         current_hebrew: e.current_hebrew,
         example_output: e.example_output,
         why_problematic: e.problem_type,
@@ -540,7 +540,7 @@ XLSX.utils.book_append_sheet(
         condition: e.condition,
         current_hebrew: e.current_hebrew,
         example_output: e.example_output,
-        does_it_suggest_progression: /העברה|קידום|שלב|רמה|RI/i.test(e.current_hebrew) ? "yes" : "no",
+        does_it_suggest_progression: /||||RI/i.test(e.current_hebrew) ? "yes" : "no",
         evidence_level_required: "",
         risk: e.problem_type,
         suggested_replacement: "",

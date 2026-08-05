@@ -23,9 +23,9 @@ async function mockStudentSession(page: Page) {
 }
 
 async function confirmMixedModal(page: Page) {
-  const save = page.getByRole("button", { name: "שמור", exact: true });
+  const save = page.getByRole("button", { name: "", exact: true });
   if (await save.isVisible()) {
-    const allBtn = page.getByRole("button", { name: "הכל", exact: true });
+    const allBtn = page.getByRole("button", { name: "", exact: true });
     if (await allBtn.isVisible()) {
       await allBtn.click();
     }
@@ -70,8 +70,8 @@ test.describe("Active diagnosis - learning flows (smoke)", () => {
     await page.goto("/learning/math-master");
     await page.getByTestId("math-player-name").fill(QA_USER);
     await page.getByTestId("math-operation-select").selectOption("mixed");
-    await page.getByRole("button", { name: "הכל", exact: true }).click();
-    await page.getByRole("button", { name: "שמור", exact: true }).click();
+    await page.getByRole("button", { name: "", exact: true }).click();
+    await page.getByRole("button", { name: "", exact: true }).click();
     await page.getByTestId("math-start-game").click();
 
     const surface = page.getByTestId("math-question-surface");
@@ -92,8 +92,8 @@ test.describe("Active diagnosis - learning flows (smoke)", () => {
     await page.goto("/learning/geometry-master");
     await page.getByTestId("geometry-player-name").fill(QA_USER);
     await page.getByTestId("geometry-topic-select").selectOption("mixed");
-    await page.getByRole("button", { name: "הכל", exact: true }).click();
-    await page.getByRole("button", { name: "שמור", exact: true }).click();
+    await page.getByRole("button", { name: "", exact: true }).click();
+    await page.getByRole("button", { name: "", exact: true }).click();
     await page.getByTestId("geometry-start-game").click();
 
     const stem = page.getByTestId("geometry-question-stem");
@@ -169,8 +169,8 @@ test.describe("Active diagnosis - learning flows (smoke)", () => {
         await mcq0.scrollIntoViewIfNeeded();
         await mcq0.click({ force: true });
       } else {
-        await page.getByPlaceholder("כתוב את התשובה שלך כאן...").fill("wrong");
-        await page.getByRole("button", { name: /בדוק תשובה/ }).click();
+        await page.getByPlaceholder("    ...").fill("wrong");
+        await page.getByRole("button", { name: / / }).click();
       }
       await expect
         .poll(async () => stem.innerText(), { timeout: 15_000 })
@@ -196,8 +196,8 @@ test.describe("Active diagnosis - learning flows (smoke)", () => {
       await mcq0.scrollIntoViewIfNeeded();
       await mcq0.click({ force: true });
     } else {
-      await page.getByPlaceholder("כתוב את התשובה שלך כאן...").fill("wrong");
-      await page.getByRole("button", { name: /בדוק תשובה/ }).click();
+      await page.getByPlaceholder("    ...").fill("wrong");
+      await page.getByRole("button", { name: / / }).click();
     }
 
     await expect

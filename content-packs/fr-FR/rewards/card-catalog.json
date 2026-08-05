@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 136,
+  "cardCount": 142,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -282,66 +282,6 @@
         "description": "Journée de la Famille Lion – carte d'événement limitée !"
       }
     },
-    "event_hanukkah": {
-      "cardKey": "event_hanukkah",
-      "title": "Lion Hanoukka",
-      "description": "Lion Hanukkah — carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Lion Hanoukka",
-        "description": "Lion Hanukkah — carte d'événement limitée !"
-      }
-    },
-    "event_independence_day": {
-      "cardKey": "event_independence_day",
-      "title": "Jour de l'Indépendance du Lion",
-      "description": "Fête de l'Indépendance du Lion : carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Jour de l'Indépendance du Lion",
-        "description": "Fête de l'Indépendance du Lion : carte d'événement limitée !"
-      }
-    },
-    "event_passover": {
-      "cardKey": "event_passover",
-      "title": "Pâque du Lion",
-      "description": "Pâque du Lion – carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Pâque du Lion",
-        "description": "Pâque du Lion – carte d'événement limitée !"
-      }
-    },
-    "event_purim": {
-      "cardKey": "event_purim",
-      "title": "Lion Pourim",
-      "description": "Leo Pourim — carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Lion Pourim",
-        "description": "Leo Pourim — carte d'événement limitée !"
-      }
-    },
-    "event_rosh_hashana": {
-      "cardKey": "event_rosh_hashana",
-      "title": "Lion Rosh Hashana",
-      "description": "Leo Rosh Hashana — carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Lion Rosh Hashana",
-        "description": "Leo Rosh Hashana — carte d'événement limitée !"
-      }
-    },
-    "event_shavuot": {
-      "cardKey": "event_shavuot",
-      "title": "Léon Chavouot",
-      "description": "Léon Chavouot — carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Léon Chavouot",
-        "description": "Léon Chavouot — carte d'événement limitée !"
-      }
-    },
     "event_spring": {
       "cardKey": "event_spring",
       "title": "Lion Printemps",
@@ -350,16 +290,6 @@
       "accessibility": {
         "title": "Lion Printemps",
         "description": "Leo Spring — carte d'événement limitée !"
-      }
-    },
-    "event_sukkot": {
-      "cardKey": "event_sukkot",
-      "title": "Léon Souccot",
-      "description": "Lion Souccot — carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Léon Souccot",
-        "description": "Lion Souccot — carte d'événement limitée !"
       }
     },
     "event_summer": {
@@ -380,16 +310,6 @@
       "accessibility": {
         "title": "Vacances d'été du Lion",
         "description": "Vacances d'été Lion – carte d'événement limitée !"
-      }
-    },
-    "event_tu_bishvat": {
-      "cardKey": "event_tu_bishvat",
-      "title": "Léon Tu Bichvat",
-      "description": "Leo Tu Bishvat — carte d'événement limitée !",
-      "category": "événement",
-      "accessibility": {
-        "title": "Léon Tu Bichvat",
-        "description": "Leo Tu Bishvat — carte d'événement limitée !"
       }
     },
     "event_winter": {
@@ -1340,6 +1260,166 @@
       "accessibility": {
         "title": "Explorateur du monde Lion",
         "description": "Collectionnez Leo World Explorer !"
+      }
+    },
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "Léo champion d’arcade",
+      "description": "Collectionne Léo champion d’arcade !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo champion d’arcade",
+        "description": "Collectionne Léo champion d’arcade !"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "Léo gardien de la forêt enchantée",
+      "description": "Collectionne Léo gardien de la forêt enchantée !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo gardien de la forêt enchantée",
+        "description": "Collectionne Léo gardien de la forêt enchantée !"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "Léo pompier",
+      "description": "Collectionne Léo pompier !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo pompier",
+        "description": "Collectionne Léo pompier !"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "Léo explorateur galactique",
+      "description": "Collectionne Léo explorateur galactique !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo explorateur galactique",
+        "description": "Collectionne Léo explorateur galactique !"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "Léo inventeur de génie",
+      "description": "Collectionne Léo inventeur de génie !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo inventeur de génie",
+        "description": "Collectionne Léo inventeur de génie !"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "Léo chevalier d’or",
+      "description": "Collectionne Léo chevalier d’or !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo chevalier d’or",
+        "description": "Collectionne Léo chevalier d’or !"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "Léo grand magicien",
+      "description": "Collectionne Léo grand magicien !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo grand magicien",
+        "description": "Collectionne Léo grand magicien !"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "Super Léo légendaire",
+      "description": "Collectionne Super Léo légendaire !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Super Léo légendaire",
+        "description": "Collectionne Super Léo légendaire !"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "Léo chef cuisinier",
+      "description": "Collectionne Léo chef cuisinier !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo chef cuisinier",
+        "description": "Collectionne Léo chef cuisinier !"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "Léo maître détective",
+      "description": "Collectionne Léo maître détective !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo maître détective",
+        "description": "Collectionne Léo maître détective !"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "Léo maître peintre",
+      "description": "Collectionne Léo maître peintre !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo maître peintre",
+        "description": "Collectionne Léo maître peintre !"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "Léo star de la musique",
+      "description": "Collectionne Léo star de la musique !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo star de la musique",
+        "description": "Collectionne Léo star de la musique !"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "Léo capitaine pirate",
+      "description": "Collectionne Léo capitaine pirate !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo capitaine pirate",
+        "description": "Collectionne Léo capitaine pirate !"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "Léo pilote de course",
+      "description": "Collectionne Léo pilote de course !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo pilote de course",
+        "description": "Collectionne Léo pilote de course !"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "Léo champion de football",
+      "description": "Collectionne Léo champion de football !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo champion de football",
+        "description": "Collectionne Léo champion de football !"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "Léo champion des vagues",
+      "description": "Collectionne Léo champion des vagues !",
+      "category": "shop",
+      "accessibility": {
+        "title": "Léo champion des vagues",
+        "description": "Collectionne Léo champion des vagues !"
       }
     }
   }

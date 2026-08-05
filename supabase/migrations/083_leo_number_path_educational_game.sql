@@ -1,4 +1,4 @@
--- Educational game #6: leo-number-path (מסלול המספרים של ליאו)
+-- Educational game #6: leo-number-path
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 082 (leo-bakery).
@@ -46,7 +46,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-number-path',
   'educational',
-  'מסלול המספרים של ליאו',
+  'Leo''s Number Path',
   '/student/educational-games/leo-number-path',
   '/student/educational-games',
   coalesce(
@@ -55,7 +55,7 @@ insert into public.site_game_catalog (
   ),
   60,
   '🔢',
-  'סדרות, זוגי־אי זוגי וכפולות'
+  'Sequences, odd-even, and multiples'
 )
 on conflict (game_key) do update set
   category = excluded.category,

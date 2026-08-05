@@ -29,12 +29,12 @@ const SEP = "\u0001";
 
 /** Raw S-01 taxonomy strings — must not appear in resolved parent-facing Hebrew. */
 const BANNED = [
-  "בלבול קטגוריה",
-  "הפרדה בין תכונה לבין תהליך",
-  "תרגול ממוקד",
-  "טבלת תכונה/תהליך",
-  "בלבול מושגי",
-  "אין מדעים",
+  " ",
+  "    ",
+  " ",
+  " /",
+  " ",
+  " ",
 ];
 
 function assertEq(name, actual, expected) {
@@ -143,7 +143,7 @@ const summaryFixture = {
 function rowScience(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "מדעים",
+    displayName: "",
     questions: 10,
     correct: 6,
     wrong: 4,
@@ -164,20 +164,20 @@ function buildS01Unit(bucketKey, gradeKey) {
     subjectId: "science",
     topicRowKey: trk,
     bucketKey,
-    displayName: "מדעים",
-    diagnosis: { allowed: true, taxonomyId: "S-01", lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId: "S-01", lineHe: "  ." },
     intervention: {
-      immediateActionHe: "טבלת תכונה/תהליך",
-      shortPracticeHe: "הפרדה בין תכונה לבין תהליך (תרגול ממוקד)",
+      immediateActionHe: " /",
+      shortPracticeHe: "     ( )",
       taxonomyId: "S-01",
     },
     taxonomy: {
       id: "S-01",
-      patternHe: "בלבול קטגוריה",
-      topicHe: "סיווג",
-      subskillHe: "תכונה מול תהליך",
-      rootsHe: ["בלבול מושגי"],
-      competitorsHe: ["קריאה"],
+      patternHe: " ",
+      topic: "",
+      subskillHe: "  ",
+      rootsHe: [" "],
+      competitorsHe: [""],
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
     confidence: { level: "moderate" },
@@ -193,8 +193,8 @@ function buildS01Unit(bucketKey, gradeKey) {
       positiveAuthorityLevel: "none",
     },
     probe: {
-      specificationHe: "הפרדה בין תכונה לבין תהליך (תרגול ממוקד)",
-      objectiveHe: "בלבול קטגוריה",
+      specificationHe: "     ( )",
+      objectiveHe: " ",
     },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     canonicalState: {
@@ -214,7 +214,7 @@ function mkBase(bucket, gradeKey) {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: summaryFixture,
     scienceTopics: { [trk]: rowScience(trk, bucket, gradeKey) },
     diagnosticEngineV2: { units: [buildS01Unit(bucket, gradeKey)] },
@@ -226,7 +226,7 @@ const dA = buildDetailedParentReportFromBaseReport(mkBase("animals", "g4"), { pe
 const mpA = dA?.subjectProfiles?.find((p) => p.subject === "science");
 assertEq("detailed S-01 animals g4", mpA?.parentActionHe, S01A.g3_g4.actionTextHe);
 assertNoBanned("detailed S-01 animals g4", mpA?.parentActionHe);
-const tpA = buildTruthPacketV1(dA, { scopeType: "topic", scopeId: trkA, scopeLabel: "בעלי חיים" });
+const tpA = buildTruthPacketV1(dA, { scopeType: "topic", scopeId: trkA, scopeLabel: " " });
 assertNoBanned("truth S-01 animals g4", JSON.stringify(tpA?.narrative?.textSlots || {}));
 
 const trkP = `plants${SEP}learning${SEP}g4${SEP}easy`;
@@ -246,14 +246,14 @@ const dMx = buildDetailedParentReportFromBaseReport(mkBase("mixed", "g6"), { per
 const mpMx = dMx?.subjectProfiles?.find((p) => p.subject === "science");
 assertEq("detailed S-01 mixed g6 action", mpMx?.parentActionHe, S01M.g5_g6.actionTextHe);
 assertNoBanned("detailed S-01 mixed g6", mpMx?.parentActionHe);
-const tpMx = buildTruthPacketV1(dMx, { scopeType: "topic", scopeId: trkMx, scopeLabel: "מעורב" });
+const tpMx = buildTruthPacketV1(dMx, { scopeType: "topic", scopeId: trkMx, scopeLabel: "" });
 assertNoBanned("truth S-01 mixed g6", JSON.stringify(tpMx?.narrative?.textSlots || {}));
 
 const bMx = mkBase("mixed", "g6");
 const uMx = bMx.diagnosticEngineV2.units[0];
 const sh = summarizeV2UnitsForSubjectForTests(bMx.diagnosticEngineV2.units, {
   subjectReportQuestions: 10,
-  subjectLabelHe: "מדעים",
+  subjectLabelHe: "",
   topicMap: bMx.scienceTopics,
   reportTotalQuestions: 20,
 });

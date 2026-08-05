@@ -81,7 +81,7 @@ function upperToLowerTask(id, stationLabel, letter) {
     id,
     type: "upper_to_lower",
     stationLabel,
-    missionHe: `העמיסו אות קטנה ליד ${upper}`,
+    missionHe: `Load the lowercase letter next to ${upper}`,
     carriages: [
       { id: "ref", kind: /** @type {'fixed'} */ ("fixed"), content: upper },
       { id: "slot", kind: /** @type {'slot'} */ ("slot") },
@@ -99,7 +99,7 @@ function lowerToUpperTask(id, stationLabel, letter) {
     id,
     type: "lower_to_upper",
     stationLabel,
-    missionHe: `העמיסו אות גדולה ליד ${lower}`,
+    missionHe: `Load the uppercase letter next to ${lower}`,
     carriages: [
       { id: "ref", kind: /** @type {'fixed'} */ ("fixed"), content: lower },
       { id: "slot", kind: /** @type {'slot'} */ ("slot") },
@@ -116,7 +116,7 @@ function firstLetterTask(id, stationLabel, word) {
     id,
     type: "first_letter",
     stationLabel,
-    missionHe: `איזו אות פותחת את ${word}?`,
+    missionHe: `Which letter starts ${word}?`,
     carriages: [
       { id: "word", kind: /** @type {'fixed'} */ ("fixed"), content: word },
       { id: "slot", kind: /** @type {'slot'} */ ("slot") },
@@ -136,7 +136,7 @@ function oneMissingLetterTask(id, stationLabel, word, blankIdx) {
     id,
     type: "one_gap",
     stationLabel,
-    missionHe: "מלאו אות אחת חסרה בקרון",
+    missionHe: "Fill in one missing letter in the carriage",
     carriages: letters.map((ch, i) =>
       i === blankIdx
         ? { id: `s${i}`, kind: /** @type {'slot'} */ ("slot") }
@@ -150,27 +150,27 @@ function oneMissingLetterTask(id, stationLabel, word, blankIdx) {
 /** @type {Record<DifficultyId, TrainTask[]>} */
 export const WORD_TRAIN_TASKS = {
   easy: [
-    upperToLowerTask("e1", "תחנה 1", "B"),
-    upperToLowerTask("e2", "תחנה 2", "A"),
-    upperToLowerTask("e3", "תחנה 3", "M"),
-    lowerToUpperTask("e4", "תחנה 4", "b"),
-    upperToLowerTask("e5", "תחנה 5", "T"),
-    firstLetterTask("e6", "תחנה 6", "sun"),
-    firstLetterTask("e7", "תחנה 7", "dog"),
-    firstLetterTask("e8", "תחנה 8", "cat"),
-    oneMissingLetterTask("e9", "תחנה 9", "dog", 1),
-    oneMissingLetterTask("e10", "תחנה 10", "cat", 1),
+    upperToLowerTask("e1", "Station 1", "B"),
+    upperToLowerTask("e2", "Station 2", "A"),
+    upperToLowerTask("e3", "Station 3", "M"),
+    lowerToUpperTask("e4", "Station 4", "b"),
+    upperToLowerTask("e5", "Station 5", "T"),
+    firstLetterTask("e6", "Station 6", "sun"),
+    firstLetterTask("e7", "Station 7", "dog"),
+    firstLetterTask("e8", "Station 8", "cat"),
+    oneMissingLetterTask("e9", "Station 9", "dog", 1),
+    oneMissingLetterTask("e10", "Station 10", "cat", 1),
   ],
   medium: [
-    buildWordTask("m1", "תחנה 1", "בנו את המילה על הקרונות", "🥛", "milk"),
+    buildWordTask("m1", "Station 1", "Build the word on the carriages", "🥛", "milk"),
     {
       id: "m2",
       type: "dual_phrase",
-      stationLabel: "תחנה 2",
-      missionHe: "העמיסו שני קרונות: red + hat",
+      stationLabel: "Station 2",
+      missionHe: "Load two carriages: red + hat",
       carriages: [
-        { id: "c1", kind: "slot", hint: "צבע" },
-        { id: "c2", kind: "slot", hint: "חפץ" },
+        { id: "c1", kind: "slot", hint: "Color" },
+        { id: "c2", kind: "slot", hint: "Object" },
       ],
       pieces: shuffleTasks([
         { id: "r1", label: "red" },
@@ -184,11 +184,11 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "m3",
       type: "dual_phrase",
-      stationLabel: "תחנה 3",
-      missionHe: "העמיסו שני קרונות: blue + bag",
+      stationLabel: "Station 3",
+      missionHe: "Load two carriages: blue + bag",
       carriages: [
-        { id: "c1", kind: "slot", hint: "צבע" },
-        { id: "c2", kind: "slot", hint: "חפץ" },
+        { id: "c1", kind: "slot", hint: "Color" },
+        { id: "c2", kind: "slot", hint: "Object" },
       ],
       pieces: shuffleTasks([
         { id: "pb1", label: "blue" },
@@ -199,20 +199,20 @@ export const WORD_TRAIN_TASKS = {
       ]),
       solution: { c1: "blue", c2: "bag" },
     },
-    buildWordTask("m4", "תחנה 4", "בנו את המילה school", "🏫", "school"),
-    fillWordTask("m5", "תחנה 5", "השלימו shirt - אות חסרה", "shirt", [2], "👕"),
-    buildWordTask("m6", "תחנה 6", "בנו את המילה book", "📚", "book"),
-    buildWordTask("m7", "תחנה 7", "בנו את המילה green", "🟢", "green"),
-    buildWordTask("m8", "תחנה 8", "העמיסו מילה - כיסא", "🪑", "chair"),
-    buildWordTask("m9", "תחנה 9", "בנו את המילה desk", "📝", "desk"),
-    buildWordTask("m10", "תחנה 10", "העמיסו מילה - מים", "💧", "water"),
+    buildWordTask("m4", "Station 4", "Build the word school", "🏫", "school"),
+    fillWordTask("m5", "Station 5", "Complete shirt — missing letter", "shirt", [2], "👕"),
+    buildWordTask("m6", "Station 6", "Build the word book", "📚", "book"),
+    buildWordTask("m7", "Station 7", "Build the word green", "🟢", "green"),
+    buildWordTask("m8", "Station 8", "Load the word — chair", "🪑", "chair"),
+    buildWordTask("m9", "Station 9", "Build the word desk", "📝", "desk"),
+    buildWordTask("m10", "Station 10", "Load the word — water", "💧", "water"),
   ],
   hard: [
     {
       id: "h1",
       type: "word_order",
-      stationLabel: "תחנה 1",
-      missionHe: "סדרו מילים על הקרונות - I / like / pizza",
+      stationLabel: "Station 1",
+      missionHe: "Order the words — I / like / pizza",
       carriages: [
         { id: "w0", kind: "slot", hint: "1" },
         { id: "w1", kind: "slot", hint: "2" },
@@ -229,8 +229,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h2",
       type: "word_order",
-      stationLabel: "תחנה 2",
-      missionHe: "סדרו מילים - The / dog / runs",
+      stationLabel: "Station 2",
+      missionHe: "Order the words — The / dog / runs",
       carriages: [
         { id: "w0", kind: "slot", hint: "1" },
         { id: "w1", kind: "slot", hint: "2" },
@@ -247,8 +247,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h3",
       type: "sentence_gap",
-      stationLabel: "תחנה 3",
-      missionHe: "העמיסו מילה חסרה - I drink ___",
+      stationLabel: "Station 3",
+      missionHe: "Load the missing word — I drink ___",
       carriages: [
         { id: "p1", kind: "fixed", content: "I" },
         { id: "p2", kind: "fixed", content: "drink" },
@@ -260,8 +260,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h4",
       type: "sentence_gap",
-      stationLabel: "תחנה 4",
-      missionHe: "העמיסו מילה - The cat is ___",
+      stationLabel: "Station 4",
+      missionHe: "Load the missing word — The cat is ___",
       carriages: [
         { id: "p1", kind: "fixed", content: "The" },
         { id: "p2", kind: "fixed", content: "cat" },
@@ -274,8 +274,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h5",
       type: "word_order",
-      stationLabel: "תחנה 5",
-      missionHe: "סדרו - We / go / to / school",
+      stationLabel: "Station 5",
+      missionHe: "Order the words — We / go / to / school",
       carriages: [
         { id: "w0", kind: "slot", hint: "1" },
         { id: "w1", kind: "slot", hint: "2" },
@@ -294,8 +294,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h6",
       type: "word_order",
-      stationLabel: "תחנה 6",
-      missionHe: "סדרו - She / likes / red",
+      stationLabel: "Station 6",
+      missionHe: "Order the words — She / likes / red",
       carriages: [
         { id: "w0", kind: "slot", hint: "1" },
         { id: "w1", kind: "slot", hint: "2" },
@@ -312,8 +312,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h7",
       type: "sentence_gap",
-      stationLabel: "תחנה 7",
-      missionHe: "העמיסו מילה - I ___ a cat",
+      stationLabel: "Station 7",
+      missionHe: "Load the missing word — I ___ a cat",
       carriages: [
         { id: "p1", kind: "fixed", content: "I" },
         { id: "gap", kind: "slot" },
@@ -326,7 +326,7 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h8",
       type: "sentence_gap",
-      stationLabel: "תחנה 8",
+      stationLabel: "Station 8",
       missionHe: gamePackCopy("components__prototypes__dev__learning__leo-word-train__leo-word-train-data", "the_apple_is"),
       carriages: [
         { id: "p1", kind: "fixed", content: "The" },
@@ -340,8 +340,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h9",
       type: "word_order",
-      stationLabel: "תחנה 9",
-      missionHe: "סדרו - I / read / a / book",
+      stationLabel: "Station 9",
+      missionHe: "Order the words — I / read / a / book",
       carriages: [
         { id: "w0", kind: "slot", hint: "1" },
         { id: "w1", kind: "slot", hint: "2" },
@@ -360,8 +360,8 @@ export const WORD_TRAIN_TASKS = {
     {
       id: "h10",
       type: "sentence_gap",
-      stationLabel: "תחנה 10",
-      missionHe: "I am hungry - העמיסו מילת הקשר",
+      stationLabel: "Station 10",
+      missionHe: "I am hungry — load the linking word",
       carriages: [
         { id: "p1", kind: "fixed", content: "I" },
         { id: "p2", kind: "fixed", content: "want" },
@@ -391,7 +391,7 @@ export function validateTrainTask(task, fills) {
 }
 
 export function trainFeedback(ok) {
-  return ok ? "🚂 הרכבת יוצאת מהתחנה!" : "הקרונות רועדים - בדקו שוב";
+  return ok ? "🚂 The train leaves the station!" : "The carriages shake — check again";
 }
 
 /** @param {DifficultyId} difficulty */

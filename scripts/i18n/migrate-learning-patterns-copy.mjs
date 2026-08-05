@@ -70,8 +70,6 @@ src = src.replace(
   ...learningSubjectsEn.subjects,
   history: patternCopy("subject_history"),
   hebrew: patternCopy("subject_hebrew"),
-  "moledet-geography": patternCopy("subject_moledet_geography"),
-  moledet: patternCopy("subject_moledet"),
   geography: patternCopy("subject_geography"),
 };`
 );

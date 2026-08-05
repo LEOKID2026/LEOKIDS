@@ -23,12 +23,12 @@ const OUT_DIR = join(ROOT, "reports", "parent-report-product-contract");
 mkdirSync(OUT_DIR, { recursive: true });
 
 const STRONG_TREND_WORDS = [
-  "משתפר",
-  "בירידה",
-  "מגמה חיובית",
-  "מגמה שלילית",
-  "שיפור מבוסס",
-  "ירידה מבוססת",
+  "",
+  "",
+  " ",
+  " ",
+  " ",
+  " ",
 ];
 const AGGRESSIVE_STEPS = new Set([
   "advance_level",
@@ -37,10 +37,10 @@ const AGGRESSIVE_STEPS = new Set([
   "drop_one_grade_topic_only",
   "remediate_same_level",
 ]);
-const MONITORING_WORDS = ["מעקב", "ניטור", "איסוף", "נתונים", "זהיר", "לצפות", "לתעד", "בלבד"];
-const INSUFFICIENT_WORDS = ["אין מספיק", "חלקי", "נדרש עוד", "לאסוף"];
-const REMEDIATION_WORDS = ["לתקן פער", "פער", "שיקום", "חיזוק יסודי"];
-const INCREASE_DIFFICULTY_WORDS = ["להעלות רמה", "להעלות קושי", "להעלות כיתה", "קושי גבוה יותר"];
+const MONITORING_WORDS = ["", "", "", "", "", "", "", ""];
+const INSUFFICIENT_WORDS = [" ", "", " ", ""];
+const REMEDIATION_WORDS = [" ", "", "", " "];
+const INCREASE_DIFFICULTY_WORDS = [" ", " ", " ", "  "];
 
 function cleanText(v) {
   return String(v || "").replace(/\s+/g, " ").trim();
@@ -285,7 +285,7 @@ function evaluateSemanticExpectations(s, report, top, allTopicRows) {
     push("requiresInsufficientLanguage", hasAnyWord(texts, INSUFFICIENT_WORDS), "needs insufficiency language");
   }
   if (exp.forbidsWeakDiagnosis) {
-    push("forbidsWeakDiagnosis", !hasAnyWord(texts, ["פער ידע", "חולשה עמוקה"]), "must avoid strong weakness diagnosis");
+    push("forbidsWeakDiagnosis", !hasAnyWord(texts, [" ", " "]), "must avoid strong weakness diagnosis");
   }
   if (exp.forbidsTrendDirectionWords) {
     push(
@@ -301,14 +301,14 @@ function evaluateSemanticExpectations(s, report, top, allTopicRows) {
     push("requiresConcreteAction", cleanText(top?.doNowHe).length >= 8, "doNow should be concrete");
   }
   if (exp.forbidsCollectMoreOnly) {
-    const onlyCollect = hasAnyWord(top?.mainPriorityHe, ["לאסוף", "נתונים"]) && cleanText(top?.doNowHe).length < 8;
+    const onlyCollect = hasAnyWord(top?.mainPriorityHe, ["", ""]) && cleanText(top?.doNowHe).length < 8;
     push("forbidsCollectMoreOnly", !onlyCollect, "not collect-data-only when enough evidence");
   }
   if (exp.requiresCautiousTone) {
     push("requiresCautiousTone", hasAnyWord(texts, MONITORING_WORDS), "needs caution/monitoring language");
   }
   if (exp.forbidsStrongDiagnosis) {
-    push("forbidsStrongDiagnosis", !hasAnyWord(texts, ["כשל", "חמור", "פער יסודי"]), "no strong diagnosis on thin evidence");
+    push("forbidsStrongDiagnosis", !hasAnyWord(texts, ["", "", " "]), "no strong diagnosis on thin evidence");
   }
   if (exp.forbidsAggressiveIntervention) {
     const hasAggressive = AGGRESSIVE_STEPS.has(String(report?.parentProductContractV1?.top?.recommendedNextStep || ""));
@@ -317,29 +317,29 @@ function evaluateSemanticExpectations(s, report, top, allTopicRows) {
   if (exp.requiresStrengthOrMaintain) {
     const enough = (Number(top?.evidence?.questionCount) || 0) >= PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS;
     const noRemediation = !hasAnyWord(texts, REMEDIATION_WORDS);
-    push("requiresStrengthOrMaintain", hasAnyWord(texts, ["לשמר", "שימור", "הרחבה מבוקרת"]) || (enough && noRemediation), "must present maintain/strength framing");
+    push("requiresStrengthOrMaintain", hasAnyWord(texts, ["", "", " "]) || (enough && noRemediation), "must present maintain/strength framing");
   }
   if (exp.forbidsInsufficientLanguageWhenEnoughEvidence) {
     const enough = (Number(top?.evidence?.questionCount) || 0) >= PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS;
     const topText = [top?.mainStatusHe, top?.whyHe, top?.evidenceSummaryHe].map(cleanText).join(" ");
-    const bad = enough && hasAnyWord(topText, ["אין מספיק נתונים", "נתון חסר"]);
+    const bad = enough && hasAnyWord(topText, ["  ", " "]);
     push("forbidsInsufficientLanguageWhenEnoughEvidence", !bad, "enough evidence should not read as insufficient");
   }
   if (exp.forbidsRemediation) {
     push("forbidsRemediation", !hasAnyWord(texts, REMEDIATION_WORDS), "strong stable mastery should not remediate");
   }
   if (exp.mustMentionFragilityOrCaution) {
-    push("mustMentionFragilityOrCaution", hasAnyWord(texts, ["זהיר", "יציבות", "עצמאות", "שביר"]), "must mention fragility/caution");
+    push("mustMentionFragilityOrCaution", hasAnyWord(texts, ["", "", "", ""]), "must mention fragility/caution");
   }
   if (exp.forbidsKnowledgeGapLabel) {
-    push("forbidsKnowledgeGapLabel", !hasAnyWord(texts, ["פער ידע"]), "speed-only should not be labeled knowledge gap");
+    push("forbidsKnowledgeGapLabel", !hasAnyWord(texts, [" "]), "speed-only should not be labeled knowledge gap");
   }
   if (exp.requiresSpeedCaution) {
-    push("requiresSpeedCaution", hasAnyWord(texts, ["קצב", "מהירות", "לחץ זמן"]), "must mention speed/pace cautiously");
+    push("requiresSpeedCaution", hasAnyWord(texts, ["", "", " "]), "must mention speed/pace cautiously");
   }
   if (exp.allowsTrendUpWhenSufficient) {
     const hasSufficient = String(top?.evidence?.trendEvidenceStatus || "") === "sufficient";
-    const usesUpWords = hasAnyWord(texts, ["שיפור מבוסס", "מגמה חיובית", "משתפר"]);
+    const usesUpWords = hasAnyWord(texts, [" ", " ", ""]);
     push(
       "allowsTrendUpWhenSufficient",
       !usesUpWords || hasSufficient,
@@ -348,7 +348,7 @@ function evaluateSemanticExpectations(s, report, top, allTopicRows) {
   }
   if (exp.allowsTrendDownWhenSufficient) {
     const hasSufficient = String(top?.evidence?.trendEvidenceStatus || "") === "sufficient";
-    const usesDownWords = hasAnyWord(texts, ["ירידה מבוססת", "מגמה שלילית", "בירידה"]);
+    const usesDownWords = hasAnyWord(texts, [" ", " ", ""]);
     push(
       "allowsTrendDownWhenSufficient",
       !usesDownWords || hasSufficient,
@@ -413,14 +413,14 @@ function evaluateMaintainOnlyContract(report) {
   const top = report?.parentProductContractV1?.top || {};
   const enough = (Number(top?.evidence?.questionCount) || 0) >= PRODUCT_CONTRACT_MIN_EVIDENCE_QUESTIONS;
   const text = [top?.mainStatusHe, top?.mainPriorityHe, top?.whyHe, top?.doNowHe].map(cleanText).join(" ");
-  const ok = !enough || !hasAnyWord(text, ["אין מספיק נתונים", "נתון חסר"]);
+  const ok = !enough || !hasAnyWord(text, ["  ", " "]);
   return { ok, enoughEvidence: enough, notes: ok ? "maintain-only profile remains non-insufficient" : "unexpected insufficient wording with enough evidence" };
 }
 
 function evaluateStableMasteryContract(report) {
   const top = report?.parentProductContractV1?.top || {};
   const text = [top?.mainStatusHe, top?.mainPriorityHe, top?.whyHe].map(cleanText).join(" ");
-  const ok = !hasAnyWord(text, REMEDIATION_WORDS) && !hasAnyWord(text, ["פער ידע חמור"]);
+  const ok = !hasAnyWord(text, REMEDIATION_WORDS) && !hasAnyWord(text, ["  "]);
   return { ok, notes: ok ? "no remediation language on stable mastery" : "stable mastery includes remediation wording" };
 }
 
@@ -428,8 +428,8 @@ function evaluateCopilotAlignment(s, contract, answerText) {
   const primarySubjectId = cleanText(contract?.primarySubjectId);
   const top = contract?.top || {};
   const insufficient = String(top?.evidence?.trendEvidenceStatus || "") !== "sufficient";
-  const allowsMaintain = hasAnyWord([top?.mainStatusHe, top?.mainPriorityHe].map(cleanText).join(" "), ["לשמר", "הרחבה מבוקרת"]);
-  const forbidsIncrease = hasAnyWord(cleanText(top?.avoidNowHe), ["לא להעלות קושי", "לא לשנות רמת קושי"]);
+  const allowsMaintain = hasAnyWord([top?.mainStatusHe, top?.mainPriorityHe].map(cleanText).join(" "), ["", " "]);
+  const forbidsIncrease = hasAnyWord(cleanText(top?.avoidNowHe), ["  ", "   "]);
   const checks = [
     {
       id: "same_primary_focus",
@@ -440,11 +440,11 @@ function evaluateCopilotAlignment(s, contract, answerText) {
     },
     {
       id: "not_stronger_than_contract",
-      ok: insufficient ? !hasAnyWord(answerText, ["פער חמור", "טיפול מיידי"]) : true,
+      ok: insufficient ? !hasAnyWord(answerText, [" ", " "]) : true,
     },
     {
       id: "insufficient_no_strong_diagnosis",
-      ok: insufficient ? !hasAnyWord(answerText, ["אבחנה חד משמעית", "בעיה עמוקה"]) : true,
+      ok: insufficient ? !hasAnyWord(answerText, ["  ", " "]) : true,
     },
     {
       id: "forbid_difficulty_increase_when_blocked",
@@ -472,7 +472,7 @@ for (const s of PARENT_REPORT_PRODUCT_SCENARIOS) {
     const turn = runParentCopilotTurn({
       audience: "parent",
       payload,
-      utterance: "מה הכי חשוב לעשות השבוע בבית?",
+      utterance: "     ?",
       sessionId: "phase9-product-contract-audit",
     });
     const text = cleanText((turn?.answerBlocks || []).map((b) => b?.textHe || "").join(" "));

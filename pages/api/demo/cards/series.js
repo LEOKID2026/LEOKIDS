@@ -2,6 +2,7 @@ import { getLearningSupabaseServiceRoleClient } from "../../../../lib/learning-s
 import { getDemoCardsSeriesView } from "../../../../lib/rewards/server/reward-cards.server.js";
 import { normalizePracticeGradeKey } from "../../../../lib/learning-supabase/practice-grade-resolution.js";
 import { guardCardRewardsApi } from "../../../../lib/rewards/guards.server.js";
+import { resolveCardApiLocales } from "../../../../lib/rewards/server/card-api-locale.server.js";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
@@ -10,13 +11,15 @@ export default async function handler(req, res) {
   if (!guardCardRewardsApi(res)) return;
 
   res.setHeader("Cache-Control", "public, max-age=60, stale-while-revalidate=300");
+  res.setHeader("Vary", "Cookie, Accept-Language, x-lk-interface-locale");
 
   try {
+    const { contentLocale } = resolveCardApiLocales(req);
     const gradeLevel =
       normalizePracticeGradeKey(String(req.query.gradeLevel || "g3")) || "g3";
     const supabase = getLearningSupabaseServiceRoleClient();
-    const view = await getDemoCardsSeriesView(supabase, gradeLevel);
-    return res.status(200).json({ ok: true, ...view });
+    const view = await getDemoCardsSeriesView(supabase, gradeLevel, contentLocale);
+    return res.status(200).json({ ok: true, contentLocale, ...view });
   } catch (_err) {
     return res.status(500).json({ ok: false, error: "demo_series_load_failed" });
   }

@@ -100,7 +100,7 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
     timerPausedRef.current = true;
     setCheckState("bad");
     setBoardAnim("shake");
-    setFeedback("הזמן נגמר! התיק נשאר פתוח.");
+    setFeedback("time!.");
     registerMistake();
     window.setTimeout(() => {
       if (mistakesRef.current >= diffConfig.maxMistakes) return;
@@ -181,7 +181,7 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
     if (!task || timerPausedRef.current) return;
     const required = Object.keys(task.solution);
     if (required.some((z) => !zoneFills[z])) {
-      setFeedback("מלאו את כל מקומות הראיות בלוח");
+      setFeedback("not the All to");
       return;
     }
 
@@ -240,20 +240,20 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
 
   const cardsPanel = (
     <>
-      <p className={proto.cardsPanelTitle}>🧾 כרטיסי ראיות</p>
+      <p className={proto.cardsPanelTitle}>🧾  </p>
       <div className={proto.cardGrid}>{evidenceButtons}</div>
     </>
   );
 
   const feedbackBar = (
-    <p className={shop.feedbackText}>{feedback || "גררו ראיות ללוח ולחצו פתור תיק"}</p>
+    <p className={shop.feedbackText}>{feedback || "lives to to to"}</p>
   );
 
   return (
     <div className={`${frame.shell} ${frame.shellLavender}`} dir="rtl">
       <header className={frame.header}>
         <Link href={backHref} className={frame.hudChip}>
-          חזרה
+
         </Link>
         {phase === "play" ? (
           <div className={frame.hud}>
@@ -270,12 +270,12 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
           </div>
         ) : (
           <div className={frame.hud}>
-            <span className={frame.hudChip}>🕵️ אבטיפוס</span>
+            <span className={frame.hudChip}>🕵️ </span>
           </div>
         )}
         {phase === "play" ? (
           <button type="button" className={frame.hudChip} onClick={exitToIntro}>
-            יציאה
+
           </button>
         ) : (
           <div style={{ minWidth: 40 }} aria-hidden />
@@ -285,9 +285,9 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
       {phase === "intro" ? (
         <div className={frame.screenCenter}>
           <p className={frame.introHero}>🕵️🔍</p>
-          <h1 className={frame.introTitle}>בלש המילים של ליאו</h1>
+          <h1 className={frame.introTitle}>   </h1>
           <p className={frame.introText}>
-            גררו ראיות ללוח החקירה - אותיות, מילים וכרטיסי אירועים. כשהתיק מוכן, חותמים נפתר!
+                - ,   .  ,  !
           </p>
           <div className={frame.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -303,10 +303,10 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
           </div>
           <EducationalDifficultyGradeHint className={`${frame.introText} opacity-70`} style={{ fontSize: "0.72rem" }} />
           <p className={frame.introText} style={{ fontSize: "0.78rem" }}>
-            {LANGUAGE_PROTOTYPE_TASKS} תיקים · לוח חקירה · בלי הקלדה
+            {LANGUAGE_PROTOTYPE_TASKS}  ·   ·
           </p>
           <button type="button" className={frame.startBtn} onClick={startGame}>
-            פתח תיק חקירה 🕵️
+               🕵️
           </button>
         </div>
       ) : null}
@@ -314,7 +314,7 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🔍 {task.caseLabel} · תיק {taskIndex + 1}/{LANGUAGE_PROTOTYPE_TASKS}
+            🔍 {task.caseLabel} ·  {taskIndex + 1}/{LANGUAGE_PROTOTYPE_TASKS}
           </p>
           <div className={`${shop.shopGrid} ${proto.protoShopGrid}`} data-educational-workplace-grid="">
             <aside className={`${shop.customerCol} ${proto.missionMobile}`}>
@@ -323,14 +323,14 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
                   📁
                 </span>
                 <div className={shop.customerSpeechWrap}>
-                  <p className={shop.customerName}>תיק חקירה</p>
+                  <p className={shop.customerName}> </p>
                   <p className={shop.missionText}>{task.missionHe}</p>
                 </div>
               </div>
             </aside>
 
             <div key={`desk-${taskKey}`} className={proto.missionDesktop}>
-              <p className={proto.missionDesktopTitle}>תיק חקירה</p>
+              <p className={proto.missionDesktopTitle}> </p>
               <p className={proto.missionDesktopText}>{task.missionHe}</p>
             </div>
 
@@ -344,7 +344,7 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
                 >
                   {boardAnim === "stamp" ? (
                     <div className={styles.stampOverlay}>
-                      <span className={styles.stamp}>התיק נפתר ✓</span>
+                      <span className={styles.stamp}>  ✓</span>
                     </div>
                   ) : null}
                   {task.zones.map((zone) => {
@@ -381,10 +381,10 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
             <div className={`${shop.bottomBar} ${proto.protoBottomBar}`}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} disabled={boardAnim === "stamp"} onClick={solveCase}>
-                  פתור תיק 🕵️
+                    🕵️
                 </button>
                 <button type="button" className={shop.secondaryBtn} disabled={boardAnim === "stamp"} onClick={clearBoard}>
-                  נקה לוח
+
                 </button>
               </div>
             </div>
@@ -395,13 +395,13 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
       {phase === "won" ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🎉 כל התיקים נפתרו!</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ הצלחות: {successCount}/{LANGUAGE_PROTOTYPE_TASKS}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🎉   !</h2>
+            <p className={frame.endStat}>⭐ : {score}</p>
+            <p className={frame.endStat}>✅ : {successCount}/{LANGUAGE_PROTOTYPE_TASKS}</p>
+            <p className={frame.endStat}>❌ : {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={() => setPhase("intro")}>
-                משחק חדש
+
               </button>
             </div>
           </div>
@@ -411,16 +411,16 @@ export default function LeoWordDetectivePrototype({ backHref = "/dev/learning-ga
       {phase === "lost" ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🕵️ החקירה נעצרה</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ הצלחות: {successCount}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🕵️  </h2>
+            <p className={frame.endStat}>⭐ : {score}</p>
+            <p className={frame.endStat}>✅ : {successCount}</p>
+            <p className={frame.endStat}>❌ : {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={startGame}>
-                נסו שוב
+
               </button>
               <button type="button" className={frame.secondaryBtn} onClick={() => setPhase("intro")}>
-                בחירת רמה
+
               </button>
             </div>
           </div>

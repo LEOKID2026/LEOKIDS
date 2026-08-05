@@ -45,7 +45,7 @@ describe("public-worksheets-topic-lock", () => {
     assert.equal(res.error, "TOPIC_NOT_ALLOWED_IN_PUBLIC_DEMO");
   });
 
-  test("geometry uses גאומטריה spelling in allowlist subjects only", () => {
+  test("geometry uses  spelling in allowlist subjects only", () => {
     assert.ok(PUBLIC_DEMO_ALLOWED_BY_GRADE.geometry);
     assert.equal(PUBLIC_DEMO_ALLOWED_BY_GRADE.g1, undefined);
     assert.equal(PUBLIC_DEMO_ALLOWED_BY_GRADE.giometry, undefined);

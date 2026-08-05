@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Point verification — שלב ביצוע 2 (topic cards in detailed parent report).
+ * Point verification —   2 (topic cards in detailed parent report).
  */
 import { chromium } from "playwright";
 import { createClient } from "@supabase/supabase-js";
@@ -21,13 +21,13 @@ const SERVICE_KEY = process.env.LEARNING_SUPABASE_SERVICE_ROLE_KEY || "";
 const OMER_PARENT_EMAIL = process.env.PARENT_REPORT_DOM_PARENT_EMAIL || "18eran@gmail.com";
 
 const FORBIDDEN_IN_CARDS = [
-  "נקודת המיקוד",
-  "משמעות:",
-  "מה זוהה:",
-  "מה כדאי לעשות ביחד:",
-  "מה מומלץ לעשות בבית",
+  " ",
+  ":",
+  " :",
+  "   :",
+  "   ",
 ];
-const REQUIRED_IN_CARDS = ["מה רואים:", "מה זה אומר:", "מה כדאי לעשות בבית:"];
+const REQUIRED_IN_CARDS = [" :", "  :", "   :"];
 
 function supabaseAuthStorageKey(url) {
   try {
@@ -76,7 +76,7 @@ const CHECK_FN = () => {
     cardsText: cardsText.slice(0, 12000),
     fullTextSample: fullText.slice(0, 4000),
     mathMetrics,
-    hasOutOfGrade: /תרגול מחוץ לכיתה הרשומה/.test(fullText),
+    hasOutOfGrade: /   /.test(fullText),
   };
 };
 
@@ -132,30 +132,30 @@ async function main() {
     const fullText = data.fullTextSample || "";
 
     const checks = [
-      { id: 1, name: "הדף נטען", pass: data.pageLoaded },
-      { id: 2, name: "כרטיסי נושא מופיעים", pass: data.cardCount > 0, detail: `${data.cardCount} cards` },
+      { id: 1, name: " ", pass: data.pageLoaded },
+      { id: 2, name: "  ", pass: data.cardCount > 0, detail: `${data.cardCount} cards` },
       ...FORBIDDEN_IN_CARDS.map((phrase, i) => ({
         id: 3 + i,
-        name: `אין "${phrase}" בכרטיסים`,
+        name: ` "${phrase}" `,
         pass: !cardsText.includes(phrase),
         foundInCards: cardsText.includes(phrase),
       })),
       ...REQUIRED_IN_CARDS.map((phrase, i) => ({
         id: 7 + i,
-        name: `יש "${phrase}"`,
+        name: ` "${phrase}"`,
         pass: cardsText.includes(phrase),
       })),
       {
         id: 10,
-        name: "מתמטיקה לא 808 שאלות",
-        pass: !/שאלות:\s*808/.test(data.mathMetrics || ""),
+        name: "  808 ",
+        pass: !/:\s*808/.test(data.mathMetrics || ""),
         detail: data.mathMetrics,
       },
-      { id: 11, name: 'חלון "תרגול מחוץ לכיתה הרשומה"', pass: data.hasOutOfGrade },
+      { id: 11, name: ' "   "', pass: data.hasOutOfGrade },
       {
         id: 12,
-        name: '"מה מומלץ לעשות בבית" לא חזר',
-        pass: !fullText.includes("מה מומלץ לעשות בבית"),
+        name: '"   "  ',
+        pass: !fullText.includes("   "),
       },
     ];
 

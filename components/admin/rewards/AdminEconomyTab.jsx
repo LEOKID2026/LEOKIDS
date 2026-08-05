@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
 import {
   formatEconomyEntityKeyHe,
   formatEconomyFieldNameHe,
   formatEconomySettingAreaHe,
-} from "../../../lib/admin-portal/admin-rewards-ui.he.js";
+} from "../../../lib/admin-portal/admin-rewards-ui.js";
 import AdminModal, { AdminModalButton } from "../AdminModal.jsx";
 
 const GRADE_BANDS = [
-  { value: "g12", label: "כיתות א׳–ב׳" },
-  { value: "g34", label: "כיתות ג׳–ד׳" },
-  { value: "g56", label: "כיתות ה׳–ו׳" },
+  { value: "g12", label: "Grades 1–2" },
+  { value: "g34", label: "Grades 3–4" },
+  { value: "g56", label: "Grades 5–6" },
 ];
 
 const inputClass =
@@ -26,7 +26,7 @@ function AdminSection({ title, children }) {
   );
 }
 
-function AdminSaveButton({ busy, onClick, label = "שמירה" }) {
+function AdminSaveButton({ busy, onClick, label = "Save" }) {
   return (
     <button
       type="button"
@@ -34,7 +34,7 @@ function AdminSaveButton({ busy, onClick, label = "שמירה" }) {
       onClick={onClick}
       className="rounded-lg bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold text-amber-100 disabled:opacity-50"
     >
-      {busy ? "שומר..." : label}
+      {busy ? "Saving..." : label}
     </button>
   );
 }
@@ -43,15 +43,15 @@ function DailyMissionFormFields({ draft, setDraft }) {
   return (
     <div className="space-y-3 text-sm">
       <label className="block">
-        טקסט לילד
+        Child text
         <input
           className={inputClass}
-          value={draft.text_he || ""}
-          onChange={(e) => setDraft((d) => ({ ...d, text_he: e.target.value }))}
+          value={draft.text || ""}
+          onChange={(e) => setDraft((d) => ({ ...d, text: e.target.value }))}
         />
       </label>
       <label className="block">
-        יעד
+        Target
         <input
           type="number"
           className={inputClass}
@@ -60,7 +60,7 @@ function DailyMissionFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        מטבעות
+        Coins
         <input
           type="number"
           className={inputClass}
@@ -69,7 +69,7 @@ function DailyMissionFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        סדר תצוגה
+        Display order
         <input
           type="number"
           className={inputClass}
@@ -83,7 +83,7 @@ function DailyMissionFormFields({ draft, setDraft }) {
           checked={draft.is_active !== false}
           onChange={(e) => setDraft((d) => ({ ...d, is_active: e.target.checked }))}
         />
-        פעיל
+        Active
       </label>
     </div>
   );
@@ -93,7 +93,7 @@ function MonthlyTierFormFields({ draft, setDraft }) {
   return (
     <div className="space-y-3 text-sm">
       <label className="block">
-        דקות (סף)
+        Minutes (threshold)
         <input
           type="number"
           className={inputClass}
@@ -102,7 +102,7 @@ function MonthlyTierFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        מטבעות
+        Coins
         <input
           type="number"
           className={inputClass}
@@ -111,15 +111,15 @@ function MonthlyTierFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        שם לילד
+        Child name
         <input
           className={inputClass}
-          value={draft.label_he || ""}
-          onChange={(e) => setDraft((d) => ({ ...d, label_he: e.target.value }))}
+          value={draft.label || ""}
+          onChange={(e) => setDraft((d) => ({ ...d, label: e.target.value }))}
         />
       </label>
       <label className="block">
-        סדר תצוגה
+        Display order
         <input
           type="number"
           className={inputClass}
@@ -133,7 +133,7 @@ function MonthlyTierFormFields({ draft, setDraft }) {
           checked={draft.is_active !== false}
           onChange={(e) => setDraft((d) => ({ ...d, is_active: e.target.checked }))}
         />
-        פעיל
+        Active
       </label>
     </div>
   );
@@ -203,7 +203,7 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
     setEditKind("daily");
     setEditId(row.id);
     setEditDraft({
-      text_he: row.text_he || "",
+      text: row.text || "",
       target_value: row.target_value ?? "",
       reward_coins: row.reward_coins ?? "",
       is_active: row.is_active !== false,
@@ -218,7 +218,7 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
     setEditDraft({
       minutes_threshold: row.minutes_threshold ?? "",
       reward_coins: row.reward_coins ?? "",
-      label_he: row.label_he || "",
+      label: row.label || "",
       is_active: row.is_active !== false,
       display_order: row.display_order ?? 0,
     });
@@ -233,7 +233,7 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
       body: JSON.stringify({
         id: editId,
         patch: {
-          text_he: editDraft.text_he,
+          text: editDraft.text,
           target_value: Number(editDraft.target_value),
           reward_coins: Number(editDraft.reward_coins),
           is_active: editDraft.is_active,
@@ -244,10 +244,10 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
     const body = await res.json().catch(() => ({}));
     setBusy("");
     if (!res.ok) {
-      setMessage(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
+      setMessage(apiErrorMessageHe(body?.error, "Save failed"));
       return;
     }
-    setMessage("משימה יומית נשמרה - השינוי יחול על פרסים עתידיים בלבד.");
+    setMessage("Daily mission saved — change applies to future rewards only.");
     closeEdit();
     void loadAll();
   };
@@ -263,7 +263,7 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
         patch: {
           minutes_threshold: Number(editDraft.minutes_threshold),
           reward_coins: Number(editDraft.reward_coins),
-          label_he: editDraft.label_he,
+          label: editDraft.label,
           is_active: editDraft.is_active,
           display_order: Number(editDraft.display_order),
         },
@@ -272,10 +272,10 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
     const body = await res.json().catch(() => ({}));
     setBusy("");
     if (!res.ok) {
-      setMessage(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
+      setMessage(apiErrorMessageHe(body?.error, "Save failed"));
       return;
     }
-    setMessage("מדרגת התמדה נשמרה - השינוי יחול על פרסים עתידיים בלבד.");
+    setMessage("Streak tier saved — change applies to future rewards only.");
     closeEdit();
     void loadAll();
   };
@@ -294,10 +294,10 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
     const body = await res.json().catch(() => ({}));
     setBusy("");
     if (!res.ok) {
-      setMessage(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
+      setMessage(apiErrorMessageHe(body?.error, "Save failed"));
       return;
     }
-    setMessage("תקרות גלובליות נשמרו.");
+    setMessage("Global caps saved.");
     void loadAll();
   };
 
@@ -312,12 +312,12 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
 
   const editTitle =
     editKind === "daily"
-      ? editingDaily?.text_he
-        ? `עריכת משימה יומית: ${editingDaily.text_he}`
-        : "עריכת משימה יומית"
-      : editingMonthly?.label_he
-        ? `עריכת מדרגת התמדה: ${editingMonthly.label_he}`
-        : "עריכת מדרגת התמדה";
+      ? editingDaily?.text
+        ? `Edit daily mission: ${editingDaily.text}`
+        : "Edit daily mission"
+      : editingMonthly?.label
+        ? `Edit streak tier: ${editingMonthly.label}`
+        : "Edit streak tier";
 
   const handleSaveEdit = () => {
     if (editKind === "daily") void saveDaily();
@@ -327,11 +327,11 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
   return (
     <div className="text-right">
       <p className="text-xs text-amber-200/80 mb-4">
-        שינוי יחול על פרסים עתידיים בלבד - לא על מטבעות שכבר ניתנו.
+        ItemItemItemItemItem ItemItemItemItem ItemItem ItemItemItemItemItemItemItem ItemItemItemItem - No ItemItem Coins ItemItemItemItem ItemItemItemItemItem.
       </p>
       {pageMessage ? <p className="text-sm text-emerald-300 mb-3">{pageMessage}</p> : null}
 
-      <AdminSection title="משימות יומיות">
+      <AdminSection title="Daily missions">
         <div className="flex flex-wrap gap-2 mb-3 justify-end">
           {GRADE_BANDS.map((g) => (
             <button
@@ -352,27 +352,27 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
           <table className="w-full text-xs text-right min-w-[520px]">
             <thead>
               <tr className="text-white/60 border-b border-white/10">
-                <th className="py-2 px-2">טקסט לילד</th>
-                <th className="py-2 px-2">יעד</th>
-                <th className="py-2 px-2">מטבעות</th>
-                <th className="py-2 px-2">פעיל</th>
+                <th className="py-2 px-2">Child text</th>
+                <th className="py-2 px-2">Target</th>
+                <th className="py-2 px-2">Coins</th>
+                <th className="py-2 px-2">Active</th>
                 <th className="py-2 px-2" />
               </tr>
             </thead>
             <tbody>
               {filteredDaily.map((row) => (
                 <tr key={row.id} className="border-b border-white/5">
-                  <td className="py-2 px-2">{row.text_he || "-"}</td>
+                  <td className="py-2 px-2">{row.text || "-"}</td>
                   <td className="py-2 px-2">{row.target_value ?? "-"}</td>
                   <td className="py-2 px-2">{row.reward_coins ?? "-"}</td>
-                  <td className="py-2 px-2">{row.is_active !== false ? "כן" : "לא"}</td>
+                  <td className="py-2 px-2">{row.is_active !== false ? "Yes" : "No"}</td>
                   <td className="py-2 px-2">
                     <button
                       type="button"
                       onClick={() => startDailyEdit(row)}
                       className="rounded border border-white/15 px-2 py-1 hover:bg-white/5"
                     >
-                      עריכה
+                      Edit
                     </button>
                   </td>
                 </tr>
@@ -382,15 +382,15 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
         </div>
       </AdminSection>
 
-      <AdminSection title="התמדה חודשית">
+      <AdminSection title="Monthly streak">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-right min-w-[480px]">
             <thead>
               <tr className="text-white/60 border-b border-white/10">
-                <th className="py-2 px-2">דקות</th>
-                <th className="py-2 px-2">מטבעות</th>
-                <th className="py-2 px-2">שם לילד</th>
-                <th className="py-2 px-2">פעיל</th>
+                <th className="py-2 px-2">Minutes</th>
+                <th className="py-2 px-2">Coins</th>
+                <th className="py-2 px-2">Child name</th>
+                <th className="py-2 px-2">Active</th>
                 <th className="py-2 px-2" />
               </tr>
             </thead>
@@ -399,15 +399,15 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
                 <tr key={row.id} className="border-b border-white/5">
                   <td className="py-2 px-2">{row.minutes_threshold ?? "-"}</td>
                   <td className="py-2 px-2">{row.reward_coins ?? "-"}</td>
-                  <td className="py-2 px-2">{row.label_he || "-"}</td>
-                  <td className="py-2 px-2">{row.is_active !== false ? "כן" : "לא"}</td>
+                  <td className="py-2 px-2">{row.label || "-"}</td>
+                  <td className="py-2 px-2">{row.is_active !== false ? "Yes" : "No"}</td>
                   <td className="py-2 px-2">
                     <button
                       type="button"
                       onClick={() => startMonthlyEdit(row)}
                       className="rounded border border-white/15 px-2 py-1 hover:bg-white/5"
                     >
-                      עריכה
+                      Edit
                     </button>
                   </td>
                 </tr>
@@ -417,11 +417,11 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
         </div>
       </AdminSection>
 
-      <AdminSection title="תקרות גלובליות">
+      <AdminSection title="Global caps">
         {globalRow ? (
           <div className="flex flex-wrap gap-4 items-end justify-end">
             <label className="text-xs text-white/70">
-              תקרת דקות חודשית
+              Monthly minutes cap
               <input
                 type="number"
                 className="block mt-1 w-32 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
@@ -432,7 +432,7 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
               />
             </label>
             <label className="text-xs text-white/70">
-              תקרת מטבעות חודשית
+              Monthly coin cap
               <input
                 type="number"
                 className="block mt-1 w-32 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
@@ -445,52 +445,52 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
             <AdminSaveButton busy={busy === "global"} onClick={() => void saveGlobal()} />
           </div>
         ) : (
-          <p className="text-white/50 text-sm">אין הגדרות גלובליות - יש להריץ את עדכון מסד הנתונים של מערכת הקלפים.</p>
+          <p className="text-white/50 text-sm">No global settings — run the cards system database migration.</p>
         )}
       </AdminSection>
 
-      <AdminSection title="קישורים מהירים">
+      <AdminSection title="Quick links">
         <div className="flex flex-wrap gap-2 justify-end">
           <button
             type="button"
             onClick={() => onNavigateTab?.("box")}
             className="rounded-lg border border-white/15 px-3 py-1.5 text-xs hover:bg-white/5"
           >
-            הגדרות קופסת הפתעה ←
+            Surprise box settings ←
           </button>
           <button
             type="button"
             onClick={() => onNavigateTab?.("shop")}
             className="rounded-lg border border-white/15 px-3 py-1.5 text-xs hover:bg-white/5"
           >
-            הגדרות חנות ←
+            Shop settings ←
           </button>
           <button
             type="button"
             onClick={() => onNavigateTab?.("duplicates")}
             className="rounded-lg border border-white/15 px-3 py-1.5 text-xs hover:bg-white/5"
           >
-            הגדרות כפילויות ←
+            Duplicate settings ←
           </button>
         </div>
       </AdminSection>
 
-      <AdminSection title="יומן שינויים">
+      <AdminSection title="Change log">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-right min-w-[600px]">
             <thead>
               <tr className="text-white/60 border-b border-white/10">
-                <th className="py-2 px-2">מתי</th>
-                <th className="py-2 px-2">אזור</th>
-                <th className="py-2 px-2">ישות</th>
-                <th className="py-2 px-2">שדה</th>
+                <th className="py-2 px-2">When</th>
+                <th className="py-2 px-2">Area</th>
+                <th className="py-2 px-2">Entity</th>
+                <th className="py-2 px-2">Field</th>
               </tr>
             </thead>
             <tbody>
               {changeLog.length === 0 ? (
                 <tr>
                   <td colSpan={4} className="py-4 text-white/50 text-center">
-                    אין רשומות עדיין
+                    No records yet
                   </td>
                 </tr>
               ) : (
@@ -518,22 +518,22 @@ export default function AdminEconomyTab({ accessToken, onNavigateTab }) {
         footer={
           <>
             <AdminModalButton onClick={closeEdit} disabled={editBusy}>
-              ביטול
+              Cancel
             </AdminModalButton>
             <AdminModalButton
               variant="primary"
               onClick={handleSaveEdit}
               disabled={editBusy}
               busy={editBusy}
-              busyLabel="שומר..."
+              busyLabel="Saving..."
             >
-              שמירה
+              Save
             </AdminModalButton>
           </>
         }
       >
         {modalMessage ? (
-          <p className={`text-sm mb-3 ${message.includes("נכשל") ? "text-red-300" : "text-emerald-300"}`}>
+          <p className={`text-sm mb-3 ${message.includes("failed") ? "text-red-300" : "text-emerald-300"}`}>
             {message}
           </p>
         ) : null}

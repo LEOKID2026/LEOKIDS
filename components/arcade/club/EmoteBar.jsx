@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 /**
  * Safe preset messages / emotes inside an arcade room.
- * @param {{ roomId: string, emotes?: Array<{ studentId?: string, textHe?: string, emoji?: string, expiresAt?: string }>, className?: string }} props
+ * @param {{ roomId: string, emotes?: Array<{ studentId?: string, text?: string, emoji?: string, expiresAt?: string }>, className?: string }} props
  */
 export default function EmoteBar({ roomId, emotes = [], className = "" }) {
   const [messages, setMessages] = useState([]);
@@ -53,7 +53,7 @@ export default function EmoteBar({ roomId, emotes = [], className = "" }) {
         const json = await res.json().catch(() => ({}));
         if (json.ok) {
           setLocalBubble({
-            textHe: preview.textHe,
+            text: preview.text,
             emoji: preview.emoji,
             expiresAt: new Date(Date.now() + 10_000).toISOString(),
           });
@@ -74,11 +74,11 @@ export default function EmoteBar({ roomId, emotes = [], className = "" }) {
         <div className="mb-2 flex flex-wrap gap-2 justify-center">
           {visibleEmotes.slice(-3).map((e, i) => (
             <span
-              key={`${e.textHe}-${i}`}
+              key={`${e.text}-${i}`}
               className="animate-pulse rounded-full border border-white/20 bg-zinc-800/90 px-3 py-1 text-sm shadow-lg"
             >
               {e.emoji ? `${e.emoji} ` : ""}
-              {e.textHe}
+              {e.text}
             </span>
           ))}
         </div>
@@ -105,7 +105,7 @@ export default function EmoteBar({ roomId, emotes = [], className = "" }) {
                 className="rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-xs hover:bg-white/10"
               >
                 {m.emoji ? `${m.emoji} ` : ""}
-                {m.textHe}
+                {m.text}
               </button>
             ))}
           </div>

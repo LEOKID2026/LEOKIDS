@@ -7,7 +7,7 @@ import {
   VB_PREVIEW_SCENE,
   VB_PREVIEW_STOP,
   VB_PREVIEW_WITH_AUDIO,
-} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.js";
 import { computePreviewTotalDurationSec } from "../../../lib/admin-portal/admin-video-builder-utils.js";
 import AdminSectionCard from "../AdminSectionCard.jsx";
 
@@ -131,7 +131,7 @@ export default function AdminVideoPreviewPlayer({
         <>
           <p className="text-xs text-white/50 text-right">
             {VB_PREVIEW_SCENE} {sceneIndex + 1} / {scenes.length}
-            {playing ? ` · ${totalSec} שנ׳ סה״כ` : ""}
+            {playing ? ` · ${totalSec}  ` : ""}
           </p>
           <div className={embedded ? "mx-auto max-w-xl" : ""}>
             <AdminVideoScenePreview
@@ -147,7 +147,7 @@ export default function AdminVideoPreviewPlayer({
           </div>
         </>
       ) : (
-        <p className="text-sm text-white/50 text-right py-12 text-center">אין סצנות לתצוגה</p>
+        <p className="text-sm text-white/50 text-right py-12 text-center">  </p>
       )}
       {voiceoverUrl ? <audio ref={voiceRef} src={voiceoverUrl} preload="auto" /> : null}
       {musicUrl ? <audio ref={musicRef} src={musicUrl} preload="auto" loop /> : null}

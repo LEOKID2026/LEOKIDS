@@ -31,9 +31,9 @@ const PEER_LEAK_RE =
   /\b(Rwanda|Ghana|Kenya|Nigeria|South Africa|Cameroon|Basic [1-6]|Primary [1-6]|Year [1-6]|CP1|CP2|\bCI\b|SIL)\b/;
 /** Leaf-key / value residue from Israel/Hebrew curriculum scaffolds. */
 const ISRAEL_RESIDUE_LEAF_RE =
-  /hebrew|homeland|israel|israeli|hasmonaean|judea|judean|hellenism_judaism|moledet|עברית|מולדת|ישראל/i;
+  /hebrew|homeland|israel|israeli|hasmonaean|judea|judean|hellenism_judaism|moledet|||/i;
 const ISRAEL_RESIDUE_VALUE_RE =
-  /\b(Hebrew|Homeland|Israel|Israeli|Hasmonaean|Judea|Judean|Moledet|עברית|מולדת|ישראל)\b/;
+  /\b(Hebrew|Homeland|Israel|Israeli|Hasmonaean|Judea|Judean|Moledet|||)\b/;
 const FOREIGN_CURRENCY_RE = /\b(USD|dollar|naira|cedi|shilling|rand|₹|\$)\b/i;
 const ALLOWED_CONTENT_ROOTS = [
   path.join(ROOT, "locales", LOCALE),
@@ -583,7 +583,7 @@ test("en-MU has no local overrides under Israeli curriculum authority slugs", ()
       const abs = path.join(helpDir, ent);
       if (!fs.statSync(abs).isFile()) continue;
       const raw = fs.readFileSync(abs, "utf8");
-      if (/israeli-primary-curriculum-map|Hebrew|homeland|Israel|Israeli|Moledet|Hasmonaean|Judea|Judaism|עברית|מולדת|ישראל/i.test(raw)) {
+      if (/israeli-primary-curriculum-map|Hebrew|homeland|Israel|Israeli|Moledet|Hasmonaean|Judea|Judaism|||/i.test(raw)) {
         helpHits.push(`help-center/${ent}`);
       }
     }

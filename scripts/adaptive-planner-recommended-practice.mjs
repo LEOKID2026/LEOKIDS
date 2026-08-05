@@ -130,7 +130,7 @@ run("view model never exposes reasonCodes/mustNotSay on forPractice", () => {
 });
 
 run("Hebrew button label constant", () => {
-  assert(PLANNER_RECOMMENDED_PRACTICE_BUTTON_HE === "המשך לתרגול מומלץ");
+  assert(PLANNER_RECOMMENDED_PRACTICE_BUTTON_HE === "  ");
 });
 
 const prev = process.env.NEXT_PUBLIC_ENABLE_ADAPTIVE_PLANNER_RECOMMENDATION;

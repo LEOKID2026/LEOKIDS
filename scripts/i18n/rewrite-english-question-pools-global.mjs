@@ -17,52 +17,52 @@ const HE_RE = /[\u0590-\u05FF]/;
 
 /** Manual EN glosses for short/formulaic Hebrew explanations (child-friendly). */
 const EXPLANATION_HE_TO_EN = {
-  "עם I משתמשים ב-am.": "With I we use am.",
-  "You → Do בשאלות.": "With You we use Do in questions.",
-  "שואלים על שם בעזרת What.": "Ask about a name with What.",
-  "שאלה על מקום → Where.": "Ask about a place with Where.",
-  "שואלים על חפץ עם What.": "Ask about a thing with What.",
-  "שואלים על מצב/בריאות עם How.": "Ask about feelings or health with How.",
-  "שואלים על זמן עם When.": "Ask about time with When.",
-  "שואלים על בחירה/דעה עם What.": "Ask about a choice or opinion with What.",
-  "שואלים על שעה/זמן עם When.": "Ask about a time of day with When.",
-  "שואלים על אדם עם Who.": "Ask about a person with Who.",
-  "שואלים על דרך/אמצעי עם How.": "Ask about how or by what means with How.",
-  "שואלים על תכונה עם What + noun.": "Ask about a feature with What + noun.",
-  "שואלים על סיבה עם Why.": "Ask about a reason with Why.",
-  "שואלים על גיל עם How old.": "Ask about age with How old.",
-  "שואלים על זמן התחלה עם When.": "Ask about a start time with When.",
-  "שואלים על מיקום עם Where.": "Ask about a location with Where.",
-  "שואלים על פעילות עם What.": "Ask about an activity with What.",
-  "שואלים על כמות עם How many.": "Ask about a countable amount with How many.",
-  "שואלים על כמות עם How much.": "Ask about an uncountable amount with How much.",
-  "שואלים על נושא לימוד עם What.": "Ask about a school subject with What.",
-  "שואלים על בחירה עם What.": "Ask about a choice with What.",
-  "שואלים על מקום עם Where.": "Ask about a place with Where.",
-  "שואלים על דרך עם How.": "Ask about how with How.",
-  "תיאור מיקום שכיח לכיתה ג'.": "A common place phrase for grade 3.",
-  "השוואה → ‎-er‎.": "Comparatives often end with -er.",
-  "תארים מתארים שמות עצם.": "Adjectives describe nouns.",
-  "תיאור מיקום.": "This phrase describes a place.",
-  "תיאור מיקום → under.": "Place phrase → under.",
-  "השוואה → heavier.": "Comparative → heavier.",
-  "תואר → beautiful.": "Adjective → beautiful.",
-  "השוואה → bigger.": "Comparative → bigger.",
-  "תיאור מיקום → in.": "Place phrase → in.",
-  "תואר → good.": "Adjective → good.",
-  "השוואה → taller.": "Comparative → taller.",
-  "תיאור מיקום → on.": "Place phrase → on.",
-  "תואר → loud.": "Adjective → loud.",
-  "She + ‎-es‎ בזמן הווה.": "She takes -es in the present tense.",
-  "Tom (he) → goes עם ‎-es.": "Tom (he) → goes with -es.",
-  "He → goes עם ‎-es.": "He → goes with -es.",
-  "My father (he) → cooks עם ‎-s.": "My father (he) → cooks with -s.",
-  "My aunt (she) → cooks עם ‎-s.": "My aunt (she) → cooks with -s.",
-  "He → cleans עם ‎-s.": "He → cleans with -s.",
-  "She → rides עם ‎-s.": "She → rides with -s.",
-  "מעשה שהושלם.": "A completed action in the past.",
-  "essential that + בסיס (סגנון סוביוונקטיבי).": "After essential that, use the base verb (subjunctive style).",
-  "היפוך אחרי Seldom בעבר → did.": "Inversion after Seldom in the past → did.",
+  " I  -am.": "With I we use am.",
+  "You → Do .": "With You we use Do in questions.",
+  "    What.": "Ask about a name with What.",
+  "   → Where.": "Ask about a place with Where.",
+  "    What.": "Ask about a thing with What.",
+  "  /  How.": "Ask about feelings or health with How.",
+  "    When.": "Ask about time with When.",
+  "  /  What.": "Ask about a choice or opinion with What.",
+  "  /  When.": "Ask about a time of day with When.",
+  "    Who.": "Ask about a person with Who.",
+  "  /  How.": "Ask about how or by what means with How.",
+  "    What + noun.": "Ask about a feature with What + noun.",
+  "    Why.": "Ask about a reason with Why.",
+  "    How old.": "Ask about age with How old.",
+  "     When.": "Ask about a start time with When.",
+  "    Where.": "Ask about a location with Where.",
+  "    What.": "Ask about an activity with What.",
+  "    How many.": "Ask about a countable amount with How many.",
+  "    How much.": "Ask about an uncountable amount with How much.",
+  "     What.": "Ask about a school subject with What.",
+  "    What.": "Ask about a choice with What.",
+  "    Where.": "Ask about a place with Where.",
+  "    How.": "Ask about how with How.",
+  "    '.": "A common place phrase for grade 3.",
+  " → ‎-er‎.": "Comparatives often end with -er.",
+  "   .": "Adjectives describe nouns.",
+  " .": "This phrase describes a place.",
+  "  → under.": "Place phrase → under.",
+  " → heavier.": "Comparative → heavier.",
+  " → beautiful.": "Adjective → beautiful.",
+  " → bigger.": "Comparative → bigger.",
+  "  → in.": "Place phrase → in.",
+  " → good.": "Adjective → good.",
+  " → taller.": "Comparative → taller.",
+  "  → on.": "Place phrase → on.",
+  " → loud.": "Adjective → loud.",
+  "She + ‎-es‎  .": "She takes -es in the present tense.",
+  "Tom (he) → goes  ‎-es.": "Tom (he) → goes with -es.",
+  "He → goes  ‎-es.": "He → goes with -es.",
+  "My father (he) → cooks  ‎-s.": "My father (he) → cooks with -s.",
+  "My aunt (she) → cooks  ‎-s.": "My aunt (she) → cooks with -s.",
+  "He → cleans  ‎-s.": "He → cleans with -s.",
+  "She → rides  ‎-s.": "She → rides with -s.",
+  " .": "A completed action in the past.",
+  "essential that +  ( ).": "After essential that, use the base verb (subjunctive style).",
+  "  Seldom  → did.": "Inversion after Seldom in the past → did.",
 };
 
 /** Hand-authored Global MCQ replacements (was Hebrew meaning options). */
@@ -219,18 +219,18 @@ function heuristicHeToEn(he) {
   if (!HE_RE.test(s)) return s;
   if (EXPLANATION_HE_TO_EN[s]) return EXPLANATION_HE_TO_EN[s];
   s = s
-    .replace(/בזמן הווה/g, "in the present tense")
-    .replace(/בשאלות/g, "in questions")
-    .replace(/שואלים על /g, "Ask about ")
-    .replace(/שאלה על /g, "Ask about ")
-    .replace(/בעזרת /g, "with ")
-    .replace(/עם /g, "with ")
-    .replace(/משתמשים ב-/g, "we use ")
-    .replace(/תיאור מיקום/g, "Place description")
-    .replace(/השוואה/g, "Comparative")
-    .replace(/תואר/g, "Adjective")
-    .replace(/תארים מתארים שמות עצם\.?/g, "Adjectives describe nouns.")
-    .replace(/שכיח לכיתה ג'\.?/g, "common for grade 3.")
+    .replace(/ /g, "in the present tense")
+    .replace(//g, "in questions")
+    .replace(/  /g, "Ask about ")
+    .replace(/  /g, "Ask about ")
+    .replace(/ /g, "with ")
+    .replace(/ /g, "with ")
+    .replace(/ -/g, "we use ")
+    .replace(/ /g, "Place description")
+    .replace(//g, "Comparative")
+    .replace(//g, "Adjective")
+    .replace(/   \.?/g, "Adjectives describe nouns.")
+    .replace(/  '\.?/g, "common for grade 3.")
     .replace(/\u200e/g, "")
     .replace(/\s+/g, " ")
     .trim();

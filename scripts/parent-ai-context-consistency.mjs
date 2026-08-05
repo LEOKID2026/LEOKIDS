@@ -94,12 +94,12 @@ const mockV2NoAnchored = {
     moledetGeographyQuestions: 0,
     moledetGeographyAccuracy: 0,
     diagnosticOverviewHe: {
-      strongestAreaLineHe: "חשבון: נראה סדר ותרגול עקבי בטווח",
-      mainFocusAreaLineHe: "חשבון: כדאי לאחד דיוק בשאלות דומות",
+      strongestAreaLineHe: ":     ",
+      mainFocusAreaLineHe: ":     ",
       requiresAttentionPreviewHe: [],
     },
   },
-  rawMetricStrengthsHe: ["חשבון: נוכחות טובה בפעילות בתקופה"],
+  rawMetricStrengthsHe: [":    "],
   mathOperations: {
     row_fixture: { questions: 25, gradeKey: "g4", accuracy: 72, timeMinutes: 40 },
   },
@@ -136,12 +136,12 @@ function buildAnchoredEligiblePayload() {
       moledetGeographyQuestions: 0,
       moledetGeographyAccuracy: 0,
       diagnosticOverviewHe: {
-        strongestAreaLineHe: "חשבון: דיוק יציב בפעולות בסיסיות",
-        mainFocusAreaLineHe: "חשבון: לחזק שאלות מורכבות יותר בהדרגה",
-        requiresAttentionPreviewHe: ["שאלות מילוליות באורך בינוני"],
+        strongestAreaLineHe: ":    ",
+        mainFocusAreaLineHe: ":     ",
+        requiresAttentionPreviewHe: ["   "],
       },
     },
-    rawMetricStrengthsHe: ["חשבון: התמדה בתרגולים"],
+    rawMetricStrengthsHe: [":  "],
     mathOperations: {
       row_eligible: { questions: 30, gradeKey: "g4", accuracy: 88, timeMinutes: 50 },
     },
@@ -157,7 +157,7 @@ function buildAnchoredEligiblePayload() {
         topicRecommendations: [
           {
             topicRowKey: "math:topic_eligible",
-            displayName: "פעולות חשבון",
+            displayName: " ",
             questions: 30,
             accuracy: 88,
             contractsV1: {
@@ -198,17 +198,17 @@ function buildAnchoredEligiblePayload() {
                 wordingEnvelope: "WE2",
                 hedgeLevel: "light",
                 allowedTone: "parent_professional_warm",
-                forbiddenPhrases: ["בטוח לחלוטין"],
-                requiredHedges: ["נכון לעכשיו"],
+                forbiddenPhrases: [" "],
+                requiredHedges: [" "],
                 allowedSections: ["summary", "finding", "recommendation", "limitations"],
                 recommendationIntensityCap: "RI2",
                 textSlots: {
                   observation:
-                    "נכון לעכשיו בפעולות חשבון נצפו 30 שאלות עם דיוק של כ־88% — תמונה יציבה לתקופה.",
+                    "     30     88% —   .",
                   interpretation:
-                    "נכון לעכשיו ניתן לזהות בסיס איתן לפעולות חשבון, מה שמאפשר לבחון העלאה הדרגתית של רמת הקושי.",
-                  action: "נכון לעכשיו אפשר להוסיף תרגול קצר ברמת קושי גבוהה יותר בשבוע הקרוב.",
-                  uncertainty: "נכון לעכשיו כדאי להמשיך ולבדוק את היציבות בסבב התרגול הבא.",
+                    "       ,        .",
+                  action: "           .",
+                  uncertainty: "         .",
                 },
               },
             },
@@ -216,7 +216,7 @@ function buildAnchoredEligiblePayload() {
         ],
       },
     ],
-    executiveSummary: { majorTrendsHe: ["מגמה חיובית עקבית בחשבון בתקופה זו."] },
+    executiveSummary: { majorTrendsHe: ["     ."] },
   };
 }
 
@@ -246,7 +246,7 @@ function buildAnchoredIneligiblePayload() {
       moledetGeographyAccuracy: 0,
       diagnosticOverviewHe: {
         strongestAreaLineHe: "",
-        mainFocusAreaLineHe: "חשבון: עדיין מוקדם לקבוע תמונה ברורה — דרושים עוד תרגולים",
+        mainFocusAreaLineHe: ":      —   ",
         requiresAttentionPreviewHe: [],
       },
     },
@@ -266,7 +266,7 @@ function buildAnchoredIneligiblePayload() {
         topicRecommendations: [
           {
             topicRowKey: "math:topic_ineligible",
-            displayName: "פעולות חשבון",
+            displayName: " ",
             questions: 4,
             accuracy: 50,
             contractsV1: {
@@ -307,17 +307,17 @@ function buildAnchoredIneligiblePayload() {
                 wordingEnvelope: "WE0",
                 hedgeLevel: "mandatory",
                 allowedTone: "parent_professional_warm",
-                forbiddenPhrases: ["בטוח לחלוטין"],
-                requiredHedges: ["בשלב זה", "עדיין מוקדם לקבוע"],
+                forbiddenPhrases: [" "],
+                requiredHedges: [" ", "  "],
                 allowedSections: ["summary", "finding", "recommendation", "limitations"],
                 recommendationIntensityCap: "RI0",
                 textSlots: {
                   observation:
-                    "נכון לעכשיו בפעולות חשבון נצפו 4 שאלות בלבד — מעט מדי כדי לקבוע תמונה.",
+                    "     4   —     .",
                   interpretation:
-                    "נכון לעכשיו עוד מוקדם לקבוע מסקנות יציבות; כדאי להמשיך ולתרגל לפני קביעת המלצה.",
+                    "      ;      .",
                   action: null,
-                  uncertainty: "נכון לעכשיו עדיין מוקדם לקבוע מסקנות בסיסיות על המקצוע הזה.",
+                  uncertainty: "         .",
                 },
               },
             },
@@ -420,7 +420,7 @@ run("TC4: NEGATIVE — cannot-conclude truth vs advance strict is detected as ha
       dataConfidence: "strong",
       mainStrengths: "abc",
       mainPracticeNeeds: "def",
-      recommendedNextStep: "אפשר להתקדם לשלב הבא",
+      recommendedNextStep: "   ",
     },
     scope: { scopeType: "topic", scopeId: "math:topic_x" },
   };
@@ -471,7 +471,7 @@ run("TC5: NEGATIVE — eligible+confident truth vs pause/thin strict is detected
       dataConfidence: "thin",
       mainStrengths: "",
       mainPracticeNeeds: "",
-      recommendedNextStep: "המערכת מציעה להמשיך לתרגל בהתאם למה שמתאים לך עכשיו",
+      recommendedNextStep: "        ",
     },
     scope: { scopeType: "executive", scopeId: "executive" },
   };
@@ -520,7 +520,7 @@ run("TC6: NEGATIVE — non-executive scope subject mismatch is detected", () => 
       dataConfidence: "strong",
       mainStrengths: "abc",
       mainPracticeNeeds: "def",
-      recommendedNextStep: "אפשר להתקדם לשלב הבא",
+      recommendedNextStep: "   ",
     },
     scope: { scopeType: "topic", scopeId: "math:topic_x" },
   };
@@ -554,8 +554,8 @@ run("TC7: degenerate inputs are safe", () => {
 run("TC8: real fixtures both round-trip through buildTruthPacketV1 (sanity)", () => {
   const eligible = buildAnchoredEligiblePayload();
   const ineligible = buildAnchoredIneligiblePayload();
-  const tp1 = buildTruthPacketV1(eligible, { scopeType: "executive", scopeId: "executive", scopeLabel: "סיכום" });
-  const tp2 = buildTruthPacketV1(ineligible, { scopeType: "executive", scopeId: "executive", scopeLabel: "סיכום" });
+  const tp1 = buildTruthPacketV1(eligible, { scopeType: "executive", scopeId: "executive", scopeLabel: "" });
+  const tp2 = buildTruthPacketV1(ineligible, { scopeType: "executive", scopeId: "executive", scopeLabel: "" });
   assert(tp1?.derivedLimits?.recommendationEligible === true, "eligible fixture should produce eligible truth packet");
   assert(tp2?.derivedLimits?.cannotConcludeYet === true, "ineligible fixture should produce cannotConcludeYet truth packet");
 });

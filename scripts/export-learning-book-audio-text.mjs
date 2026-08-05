@@ -67,7 +67,7 @@ function exportBook(entry) {
 
   const bookTitle =
     String(entry.meta?.bookTitleHe || "").trim() ||
-    `ספר ${subject} — ${grade}`;
+    ` ${subject} — ${grade}`;
 
   fullMdParts.push(`# ${bookTitle}`, "");
 
@@ -81,7 +81,7 @@ function exportBook(entry) {
       const fileName = `page-${padPageNum(pageNumber)}.txt`;
       const textFile = `pages/${fileName}`;
       const sectionTitle = getSectionDisplayTitle(section.title);
-      const indexTitle = sectionTitle || topicTitle || `עמוד ${pageNumber}`;
+      const indexTitle = sectionTitle || topicTitle || ` ${pageNumber}`;
 
       if (!text.trim()) {
         issues.push({
@@ -102,7 +102,7 @@ function exportBook(entry) {
       fs.writeFileSync(path.join(bookDir, textFile), `${text}\n`, "utf8");
 
       fullMdParts.push(
-        `## Chapter ${padPageNum(pageNumber)} — עמוד ${pageNumber}`,
+        `## Chapter ${padPageNum(pageNumber)} —  ${pageNumber}`,
         "",
         text,
         ""

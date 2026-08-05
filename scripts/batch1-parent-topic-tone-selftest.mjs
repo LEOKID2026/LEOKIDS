@@ -1,6 +1,6 @@
 /**
- * Batch 1 — בדיקות acceptance ל-parentTopicTone (לוגיקה בלבד).
- * הרצה: npx tsx scripts/batch1-parent-topic-tone-selftest.mjs
+ * Batch 1 —  acceptance -parentTopicTone ( ).
+ * : npx tsx scripts/batch1-parent-topic-tone-selftest.mjs
  */
 /** @param {string} path */
 async function importUtils(path) {
@@ -12,13 +12,13 @@ const { analyzeLearningPatterns } = await importUtils("../utils/learning-pattern
 const { buildTopicRecommendationsForSubject } = await importUtils("../utils/topic-next-step-engine.js");
 
 const SEP = "\u0001";
-/** שורת מתמטיקה scoped — תואם parent-report-v2 (פעולה+מצב+כיתה+רמה) */
+/**   scoped —  parent-report-v2 (+++) */
 const multKey = `multiplication${SEP}learning${SEP}g4${SEP}medium`;
 
 function mkWrongMult(i) {
   return {
     operation: "multiplication",
-    grade: "ד׳",
+    grade: "",
     level: "medium",
     mode: "learning",
     isCorrect: false,
@@ -41,7 +41,7 @@ function mkReportMultHigh() {
         accuracy: 94,
         needsPractice: false,
         excellent: true,
-        displayName: "כפל",
+        displayName: "",
         modeKey: "learning",
         gradeKey: "g4",
         levelKey: "medium",
@@ -58,7 +58,7 @@ function at1() {
   const tone = m.parentTopicToneByKey?.[multKey];
   const hasLines = Array.isArray(m.parentStrengthWithCautionLinesByKey?.[multKey]);
   const noMultWeakness = !(m.topWeaknesses || []).some((w) =>
-    String(w.labelHe || "").includes("כפל")
+    String(w.labelHe || "").includes("")
   );
   if (tone !== "strength_with_caution") {
     console.error("AT1 FAIL tone", tone, m.topWeaknesses, m.parentTopicToneByKey);
@@ -69,11 +69,11 @@ function at1() {
     process.exit(1);
   }
   if (!noMultWeakness) {
-    console.error("AT1 FAIL weakness still lists כפל", m.topWeaknesses);
+    console.error("AT1 FAIL weakness still lists ", m.topWeaknesses);
     process.exit(1);
   }
   const lines = m.parentStrengthWithCautionLinesByKey[multKey];
-  if (!lines[0].includes("שליטה טובה") || !lines[1].includes("כשיש טעות")) {
+  if (!lines[0].includes(" ") || !lines[1].includes(" ")) {
     console.error("AT1 FAIL sentence order", lines);
     process.exit(1);
   }
@@ -93,7 +93,7 @@ function at1() {
     console.error("AT1 FAIL topic record", row);
     process.exit(1);
   }
-  if (!String(row.whyThisRecommendationHe || "").includes("שליטה טובה")) {
+  if (!String(row.whyThisRecommendationHe || "").includes(" ")) {
     console.error("AT1 FAIL whyHe", row.whyThisRecommendationHe);
     process.exit(1);
   }
@@ -112,7 +112,7 @@ function at2() {
         accuracy: 50,
         needsPractice: true,
         excellent: false,
-        displayName: "כפל",
+        displayName: "",
         modeKey: "learning",
         gradeKey: "g4",
         levelKey: "medium",
@@ -123,13 +123,13 @@ function at2() {
   const pd = analyzeLearningPatterns(report, { math: wrong });
   const m = pd.subjects.math;
   const tone = m.parentTopicToneByKey?.[multKey];
-  const hasWeak = (m.topWeaknesses || []).some((w) => String(w.labelHe || "").includes("כפל"));
+  const hasWeak = (m.topWeaknesses || []).some((w) => String(w.labelHe || "").includes(""));
   if (tone !== "true_weakness") {
     console.error("AT2 FAIL tone", tone);
     process.exit(1);
   }
   if (!hasWeak) {
-    console.error("AT2 FAIL expected weakness for כפל", m.topWeaknesses);
+    console.error("AT2 FAIL expected weakness for ", m.topWeaknesses);
     process.exit(1);
   }
   console.log("AT2 OK");
@@ -143,7 +143,7 @@ function at3() {
   const tone = m.parentTopicToneByKey?.[multKey];
   const lines = m.parentStrengthWithCautionLinesByKey?.[multKey];
   const hasMultWeakness = (m.topWeaknesses || []).some((w) =>
-    String(w.labelHe || "").includes("כפל")
+    String(w.labelHe || "").includes("")
   );
   if (tone !== "strength") {
     console.error("AT3 FAIL tone", tone, m.topWeaknesses);
@@ -154,7 +154,7 @@ function at3() {
     process.exit(1);
   }
   if (hasMultWeakness) {
-    console.error("AT3 FAIL no stable pattern should not list כפל weakness", m.topWeaknesses);
+    console.error("AT3 FAIL no stable pattern should not list  weakness", m.topWeaknesses);
     process.exit(1);
   }
   console.log("AT3 OK");

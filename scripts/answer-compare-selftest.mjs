@@ -355,14 +355,14 @@ assert.equal(
 assert.equal(
   compareAnswers({
     mode: "hebrew_relaxed_text",
-    user: "  שלום  ",
-    acceptedList: ["שלום"],
+    user: "    ",
+    acceptedList: [""],
   }).isCorrect,
   true
 );
 
 // normalizeHebrewRelaxedAnswer export parity
-const n1 = normalizeHebrewRelaxedAnswer('  א  ');
+const n1 = normalizeHebrewRelaxedAnswer('    ');
 assert.ok(typeof n1 === "string" && n1.length > 0);
 assert.equal(normalizeAnswerExactText("  Hi  "), "hi");
 

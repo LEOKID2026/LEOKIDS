@@ -53,7 +53,7 @@ function v2Unit({ subjectId, topicRowKey, displayName, questions, accuracy, prio
     intervention: action === "intervene" ? {} : null,
     evidenceTrace: [{ type: "volume", value: { questions, accuracy, wrong, correct: questions - wrong } }],
     recurrence: { totalQuestions: questions, wrongCountForRules: wrong },
-    taxonomy: { patternHe: accuracy < 55 ? "דפוס טעויות חוזר" : "" },
+    taxonomy: { patternHe: accuracy < 55 ? "  " : "" },
     canonicalState: {
       actionState: action,
       assessment: {
@@ -106,7 +106,7 @@ function recFromUnit(u, gradeKey = "g4") {
   const u = v2Unit({
     subjectId: "math",
     topicRowKey: "multiplication::grade:g4",
-    displayName: "כפל",
+    displayName: "",
     questions: 120,
     accuracy: 88,
     action: "maintain",
@@ -115,7 +115,7 @@ function recFromUnit(u, gradeKey = "g4") {
   assert.equal(rec.thinEvidenceDowngraded, false, "math strong: not thin downgraded");
   assert.equal(rec.dataSufficiencyLevel, "strong");
   assert.ok(
-    !/collect more (?:information|data)|לאסוף עוד מידע/i.test(String(rec.recommendedStepLabelHe || "")),
+    !/collect more (?:information|data)|  /i.test(String(rec.recommendedStepLabelHe || "")),
     "high volume must not get collect-more-data label",
   );
 }
@@ -125,7 +125,7 @@ function recFromUnit(u, gradeKey = "g4") {
   const u = v2Unit({
     subjectId: "math",
     topicRowKey: "division::grade:g4",
-    displayName: "חילוק",
+    displayName: "",
     questions: 95,
     accuracy: 41,
   });
@@ -136,10 +136,10 @@ function recFromUnit(u, gradeKey = "g4") {
 
 // ─── C–F: Other subjects high volume ─────────────────────────────────────────
 for (const [sid, key, name] of [
-  ["hebrew", "reading::grade:g4", "הבנת הנקרא"],
-  ["english", "grammar::grade:g5", "דקדוק"],
-  ["science", "life::grade:g4", "מדעים כללי"],
-  ["moledet-geography", "israel::grade:g4", "מולדת"],
+  ["hebrew", "reading::grade:g4", " "],
+  ["english", "grammar::grade:g5", ""],
+  ["science", "life::grade:g4", " "],
+  ["moledet-geography", "israel::grade:g4", ""],
 ]) {
   const u = v2Unit({ subjectId: sid, topicRowKey: key, displayName: name, questions: 80, accuracy: 72 });
   const rec = recFromUnit(u);
@@ -155,24 +155,24 @@ for (const [sid, key, name] of [
       topicRowKey: "fractions::grade:g4",
       contentGradeKey: "g4",
       labelHe: parentFacingTopicRowLabelHe({
-        displayName: "שברים",
+        displayName: "",
         contentGradeKey: "g4",
         gradeRelation: "same",
         topicRowKey: "fractions::grade:g4",
       }),
-      subjectLabelHe: "חשבון",
+      subjectLabelHe: "",
     },
     {
       subjectId: "math",
       topicRowKey: "fractions::grade:g5",
       contentGradeKey: "g5",
       labelHe: parentFacingTopicRowLabelHe({
-        displayName: "שברים",
+        displayName: "",
         contentGradeKey: "g5",
         gradeRelation: "higher",
         topicRowKey: "fractions::grade:g5",
       }),
-      subjectLabelHe: "חשבון",
+      subjectLabelHe: "",
     },
   ];
   const k1 = executiveRowDedupeKey(rows[0]);
@@ -193,7 +193,7 @@ for (const [sid, key, name] of [
   const narMissing = buildNarrativeContractV1({
     topicKey: "geometry::grade:g4",
     subjectId: "geometry",
-    displayName: "צורות",
+    displayName: "",
     questions: 150,
     accuracy: 35,
     contractsV1: {
@@ -210,14 +210,14 @@ for (const [sid, key, name] of [
     "subskill limitation when pattern metadata absent",
   );
   assert.ok(
-    !/still too early to (?:decide|determine)|עדיין מוקדם לקבוע/i.test(uncMissing),
+    !/still too early to (?:decide|determine)|  /i.test(uncMissing),
     "high volume must not use early generic thin hedge",
   );
 
   const narPresent = buildNarrativeContractV1({
     topicKey: "fractions::grade:g5",
     subjectId: "math",
-    displayName: "שברים",
+    displayName: "",
     questions: 66,
     accuracy: 38,
     hasSubskillMetadata: true,
@@ -262,7 +262,7 @@ const { buildGradeSplitBaseReport } = await import(
   const weakRecDirect = recFromUnit(g5Unit, "g5");
   assert.equal(weakRecDirect.thinEvidenceDowngraded, false, "g5 weak: sufficient volume at unit level");
   assert.ok(
-    !/collect more (?:information|data)|לאסוף עוד מידע/i.test(
+    !/collect more (?:information|data)|  /i.test(
       String(weakRecDirect.recommendedStepLabelHe || ""),
     ),
     "g5 weak: 66 Q must not get collect-more-data label at unit level",

@@ -1,7 +1,7 @@
 /**
  * Regression guard: the parent-facing "insufficient evidence" diagnostic label must use
- * the softer, approved wording ("עדיין מוקדם לקבוע...") and must never regress to the
- * blunter "עדיין אין מספיק מידע כדי לקבוע..." phrasing.
+ * the softer, approved wording ("  ...") and must never regress to the
+ * blunter "     ..." phrasing.
  * Run: node --test tests/parent-report-language/insufficient-evidence-softer-wording.test.mjs
  */
 
@@ -10,17 +10,17 @@ import assert from "node:assert/strict";
 import { PARENT_DIAGNOSTIC_TYPE_LABEL_HE } from "../../utils/parent-report-language/parent-report-copy-spec.js";
 
 test("insufficient_evidence label uses the softer approved wording", () => {
-  assert.match(PARENT_DIAGNOSTIC_TYPE_LABEL_HE.insufficient_evidence, /עדיין מוקדם לקבוע/);
+  assert.match(PARENT_DIAGNOSTIC_TYPE_LABEL_HE.insufficient_evidence, /  /);
   assert.doesNotMatch(
     PARENT_DIAGNOSTIC_TYPE_LABEL_HE.insufficient_evidence,
-    /אין מספיק מידע כדי לקבוע/
+    /    /
   );
 });
 
 test("mixed_low_signal label uses the softer approved wording", () => {
-  assert.match(PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_low_signal, /עדיין מוקדם לקבוע/);
+  assert.match(PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_low_signal, /  /);
   assert.doesNotMatch(
     PARENT_DIAGNOSTIC_TYPE_LABEL_HE.mixed_low_signal,
-    /אין מספיק מידע כדי לקבוע/
+    /    /
   );
 });

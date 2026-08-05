@@ -12,8 +12,7 @@ create table if not exists public.private_teacher_subjects (
                           references public.teacher_profiles(id) on delete cascade,
   subject     text        not null
                           check (subject in (
-                            'math','geometry','hebrew','english',
-                            'science','moledet_geography'
+                            'math', 'geometry', 'english', 'science'
                           )),
   granted_by  uuid        not null
                           references auth.users(id),

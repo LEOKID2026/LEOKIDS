@@ -1,7 +1,7 @@
 /**
- * רינדור SSR לרכיבים שמוצגים בדפי הדוח (לא E2E מלא) — עמידות לפני שינויי payload.
- * הרצה: npm run test:parent-report-phase6 (שרשרת ב-package.json), או ישירות: npx tsx scripts/parent-report-pages-ssr.mjs
- * תיעוד: docs/PARENT_REPORT.md
+ *  SSR     ( E2E ) —    payload.
+ * : npm run test:parent-report-phase6 ( -package.json),  : npx tsx scripts/parent-report-pages-ssr.mjs
+ * : docs/PARENT_REPORT.md
  */
 import assert from "node:assert/strict";
 import { createElement as h } from "react";
@@ -57,8 +57,8 @@ function render(label, el) {
 }
 
 function runDetailedPageChunks() {
-  const longHe = "כותרת־ארוכה־".repeat(40);
-  const longWhy = "למה ".repeat(120) + "knowledge_gap — הסבר ארוך ללא קריסה.";
+  const longHe = "".repeat(40);
+  const longWhy = " ".repeat(120) + "knowledge_gap —    .";
 
   const sparse = buildDetailedParentReportFromBaseReport(PARENT_REPORT_SCENARIOS.all_sparse(), { period: "week" });
   assert.ok(sparse);
@@ -77,20 +77,20 @@ function runDetailedPageChunks() {
   );
   const esP9 = {
     ...normalizeExecutiveSummary(strong),
-    dominantCrossSubjectMistakePatternLabelHe: "תערובת טעויות לא אחידה",
-    crossSubjectLearningStageLabelHe: "ייצוב חלקי",
+    dominantCrossSubjectMistakePatternLabelHe: "   ",
+    crossSubjectLearningStageLabelHe: " ",
     crossSubjectRetentionRisk: "moderate",
     crossSubjectTransferReadiness: "limited",
-    reviewBeforeAdvanceAreasHe: ["חשבון: לחזור על אותה רמה לפני קידום."],
+    reviewBeforeAdvanceAreasHe: [":      ."],
     transferReadyAreasHe: [],
     crossSubjectResponseToIntervention: "early_positive_response",
-    crossSubjectResponseToInterventionLabelHe: "סימנים ראשונים לשיפור — עדיין מוקדם לסגור",
+    crossSubjectResponseToInterventionLabelHe: "   —   ",
     crossSubjectSupportAdjustmentNeed: "hold_course",
-    crossSubjectSupportAdjustmentNeedHe: "להמשיך באותו כיוון זהירותית",
+    crossSubjectSupportAdjustmentNeedHe: "   ",
     crossSubjectConclusionFreshness: "medium",
     crossSubjectRecalibrationNeed: "light_review",
-    crossSubjectRecalibrationNeedHe: "מספיק סקירה קלה לפני שינוי מהותי",
-    majorRecheckAreasHe: ["עברית: לעשות סבב תצפית קצר לפני שינוי משמעותי."],
+    crossSubjectRecalibrationNeedHe: "     ",
+    majorRecheckAreasHe: [":       ."],
     areasWhereSupportCanBeReducedHe: [],
     areasNeedingStrategyChangeHe: [],
   };
@@ -109,24 +109,24 @@ function runDetailedPageChunks() {
 
   const spPartial = {
     subject: "math",
-    subjectLabelHe: "חשבון",
+    subjectLabelHe: "",
     topStrengths: [],
     topWeaknesses: [],
     topicRecommendations: [],
     dominantLearningRisk: "knowledge_gap",
     dominantSuccessPattern: null,
-    dominantLearningRiskLabelHe: "פער ידע",
+    dominantLearningRiskLabelHe: " ",
     dominantSuccessPatternLabelHe: null,
     dominantRootCause: "insufficient_evidence",
-    dominantRootCauseLabelHe: "אין די נתון לשורש קושי ברור",
+    dominantRootCauseLabelHe: "     ",
     secondaryRootCause: null,
     rootCauseDistribution: {},
-    subjectDiagnosticRestraintHe: "עדיין אין די נתון לשורש קושי ברור — ממשיכים לאסוף תרגול.",
+    subjectDiagnosticRestraintHe: "       —   .",
     subjectConclusionReadiness: "partial",
-    subjectInterventionPriorityHe: "מעקב ותרגול מבוקר לפני החמרה",
-    subjectPriorityReasonHe: "מקצוע עם נתון חלקי — מעקב לפני החמרה.",
-    subjectDoNowHe: "מפגש קצר אחד לפי אותה רמה.",
-    subjectAvoidNowHe: "לא לסגור מסקנה חזקה מהר מדי.",
+    subjectInterventionPriorityHe: "    ",
+    subjectPriorityReasonHe: "    —   .",
+    subjectDoNowHe: "     .",
+    subjectAvoidNowHe: "     .",
     trendNarrativeHe: null,
     confidenceSummaryHe: null,
     recommendedHomeMethodHe: null,
@@ -137,14 +137,14 @@ function runDetailedPageChunks() {
     stableMasteryRowCount: 0,
     modeConcentrationNoteHe: null,
     subjectResponseToIntervention: "not_enough_evidence",
-    subjectResponseToInterventionLabelHe: "אין עדיין די אות להעריך אם התמיכה עוזרת",
+    subjectResponseToInterventionLabelHe: "       ",
     subjectSupportFit: "unknown",
     subjectSupportAdjustmentNeed: "monitor_only",
-    subjectSupportAdjustmentNeedHe: "לצפות ולאסוף עוד אות לפני החלטה",
+    subjectSupportAdjustmentNeedHe: "     ",
     subjectConclusionFreshness: "medium",
     subjectRecalibrationNeed: "light_review",
-    subjectRecalibrationNeedHe: "מספיק סקירה קלה לפני שינוי מהותי",
-    subjectEffectivenessNarrativeHe: "בחשבון: אין עדיין די אות להעריך אם התמיכה עוזרת. מספיק סקירה קלה לפני שינוי מהותי",
+    subjectRecalibrationNeedHe: "     ",
+    subjectEffectivenessNarrativeHe: ":        .      ",
   };
   render("phase3:partial-fields", h(SubjectPhase3Insights, { sp: spPartial, compact: true }));
   render("summary-block:sparse", h(SubjectSummaryBlock, { sp: sparse.subjectProfiles[0] }));
@@ -153,7 +153,7 @@ function runDetailedPageChunks() {
   const tr = oneDom.subjectProfiles[0]?.topicRecommendations?.[0];
   assert.ok(tr, "topic rec for strip");
   assert.ok(
-    String(tr.displayName || "").length > 0 && !String(tr.displayName || "").includes("כיתה"),
+    String(tr.displayName || "").length > 0 && !String(tr.displayName || "").includes(""),
     `math topic displayName should be operation-only (grade/level in table columns; got ${tr.displayName})`
   );
   render("topic-strip:golden", h(TopicRecommendationExplainStrip, { tr }));
@@ -163,7 +163,7 @@ function runDetailedPageChunks() {
     trendV1: {
       ok: true,
       direction: "improving",
-      parentLineHe: "מגמה בתקופה: משתפר — בחלק המאוחר של התקופה הדיוק גבוה יותר מאשר בתחילתה.",
+      parentLineHe: " :  —         .",
     },
   };
   const trendStripHtml = render("topic-strip:trend-v1", h(TopicRecommendationExplainStrip, { tr: trTrendV1 }));
@@ -187,10 +187,10 @@ function runDetailedPageChunks() {
 
   const trPhase8 = {
     ...tr,
-    interventionPlanHe: "תוכנית מיקרו קצרה לנושא — צעד אחד ברור.",
-    doNowHe: "מפגש קצר עם משימה אחת.",
-    avoidNowHe: "לא להעמיס יעדים גדולים כשהתמונה עדיין לא בשלה.",
-    cautionLineHe: "עדיין אין די נתון למסקנה חזקה יותר.",
+    interventionPlanHe: "    —   .",
+    doNowHe: "    .",
+    avoidNowHe: "       .",
+    cautionLineHe: "      .",
     recommendedSessionCount: 2,
     recommendedSessionLengthBand: "very_short",
     recommendedPracticeLoad: "minimal",
@@ -206,10 +206,10 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      responseToInterventionLabelHe: "סימנים ראשונים לשיפור — עדיין מוקדם לסגור",
-      freshnessStateLabelHe: "המידע מתחיל להתיישן",
-      conclusionFreshnessLabelHe: "ביטחון במסקנה נמוך — כדאי לעדכן תצפית",
-      nextSupportAdjustmentHe: "לעשות סבב תצפית/בדיקה לפני העלאת קושי או קידום",
+      responseToInterventionLabelHe: "   —   ",
+      freshnessStateLabelHe: "  ",
+      conclusionFreshnessLabelHe: "   —   ",
+      nextSupportAdjustmentHe: "  /     ",
     },
   };
   render("topic-strip:phase10-compact", h(TopicRecommendationExplainStrip, { tr: trPhase10 }));
@@ -217,10 +217,10 @@ function runDetailedPageChunks() {
   const esPhase11 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectSupportSequenceState: "continuing_sequence",
-    crossSubjectSupportSequenceStateLabelHe: "ממשיכים ברצף תמיכה שנראה עקבי",
+    crossSubjectSupportSequenceStateLabelHe: "    ",
     crossSubjectNextBestSequenceStep: "continue_current_sequence",
-    crossSubjectNextBestSequenceStepHe: "להמשיך באותו רצף בזהירות — בלי להגדיל עומס בלי צורך",
-    subjectsReadyForReleaseHe: ["חשבון: נראה שאפשר להתחיל מעבר זהיר מתמיכה להצלחה עצמאית קצרה"],
+    crossSubjectNextBestSequenceStepHe: "    —     ",
+    subjectsReadyForReleaseHe: [":         "],
     subjectsAtRiskOfSupportRepetitionHe: [],
     subjectsNeedingSupportResetHe: [],
   };
@@ -230,10 +230,10 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      supportSequenceNarrativeHe: "נראה שהתמיכה עוזרת — כדאי לעקוב אם לא חוזרים על אותו כלי יתר על המידה.",
-      strategyRepetitionRiskHe: "סיכון בינוני לחזור על אותו כיוון בלי שינוי",
-      strategyFatigueRiskHe: "סיכון נמוך לחזרה מיותרת על אותה שיטה",
-      nextSupportSequenceActionHe: "להמשיך ברצף הנוכחי עם מטרה צרה יותר לפני שינוי מהותי",
+      supportSequenceNarrativeHe: "   —           .",
+      strategyRepetitionRiskHe: "       ",
+      strategyFatigueRiskHe: "      ",
+      nextSupportSequenceActionHe: "         ",
     },
   };
   render("topic-strip:phase11-compact", h(TopicRecommendationExplainStrip, { tr: trPhase11 }));
@@ -241,15 +241,15 @@ function runDetailedPageChunks() {
   const esPhase12 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectRecommendationMemoryState: "light_memory",
-    crossSubjectRecommendationMemoryStateLabelHe: "יש זיכרון חלש בלבד — בעיקר מהחלון הנוכחי",
+    crossSubjectRecommendationMemoryStateLabelHe: "    —   ",
     crossSubjectSupportHistoryDepth: "short_history",
-    crossSubjectSupportHistoryDepthLabelHe: "עומק היסטוריה: שני חלונות השוואה",
+    crossSubjectSupportHistoryDepthLabelHe: " :   ",
     crossSubjectExpectedVsObservedMatch: "partly_aligned",
-    crossSubjectExpectedVsObservedMatchHe: "יש חפיפה חלקית בין מה שציפינו למה שרואים",
+    crossSubjectExpectedVsObservedMatchHe: "       ",
     crossSubjectContinuationDecision: "continue_but_refine",
-    crossSubjectContinuationDecisionHe: "להמשיך באותו כיוון, אך בצורה מעט מדויקת יותר",
+    crossSubjectContinuationDecisionHe: "  ,     ",
     subjectsWithClearCarryoverHe: [],
-    subjectsNeedingFreshEvidenceHe: ["חשבון: כדאי לאסוף עוד אות לפני שממשיכים אותו מסלול."],
+    subjectsNeedingFreshEvidenceHe: [":        ."],
     subjectsWherePriorPathSeemsMisalignedHe: [],
   };
   render("exec:phase12-memory-strip", h(ExecutiveSummarySection, { es: esPhase12, compact: false }));
@@ -258,10 +258,10 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      recommendationMemoryNarrativeHe: "ב«חיבור»: יש זיכרון שימושי מספיק כדי להשוות המשך מול עבר קרוב.",
-      outcomeTrackingNarrativeHe: "ב«חיבור»: ציפינו לייצוב דיוק · בפועל יש התקדמות חלקית · יש חפיפה חלקית.",
-      recommendationContinuationDecisionHe: "להמשיך באותו כיוון, אך בצורה מעט מדויקת יותר",
-      whatNeedsFreshEvidenceNowHe: "כדי לא לבנות המשך על ניחוש: שני מפגשים קצרים עם רישום קטן בסוף.",
+      recommendationMemoryNarrativeHe: "«»:          .",
+      outcomeTrackingNarrativeHe: "«»:    ·     ·   .",
+      recommendationContinuationDecisionHe: "  ,     ",
+      whatNeedsFreshEvidenceNowHe: "     :       .",
       recommendationMemoryState: "light_memory",
       expectedVsObservedMatch: "not_enough_evidence",
     },
@@ -271,15 +271,15 @@ function runDetailedPageChunks() {
   const esPhase13 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectGateState: "recheck_gate_visible",
-    crossSubjectGateStateLabelHe: "יש סבב שבו כדאי לרענן תצפית לפני החלטה מהותית",
+    crossSubjectGateStateLabelHe: "        ",
     crossSubjectNextCycleDecisionFocus: "refresh_baseline_before_decision",
-    crossSubjectNextCycleDecisionFocusHe: "לעדכן בסיס תצפית לפני החלטה חדה",
+    crossSubjectNextCycleDecisionFocusHe: "     ",
     crossSubjectEvidenceTargetType: "fresh_data_needed",
-    crossSubjectEvidenceTargetTypeLabelHe: "נדרש מידע/תצפית עדכנית יותר",
+    crossSubjectEvidenceTargetTypeLabelHe: " /  ",
     crossSubjectTargetObservationWindow: "needs_fresh_baseline",
-    crossSubjectTargetObservationWindowLabelHe: "צריך בסיס חדש לפני מסקנה",
-    subjectsNearReleaseButNotThereHe: ["חשבון: קרובים לשחרור זהיר — עדיין חסר אות עצמאות קצר."],
-    subjectsNeedingRecheckBeforeDecisionHe: ["גיאומטריה: כדאי סבב תצפית/נתון עדכני לפני החלטה מהותית."],
+    crossSubjectTargetObservationWindowLabelHe: "    ",
+    subjectsNearReleaseButNotThereHe: [":    —     ."],
+    subjectsNeedingRecheckBeforeDecisionHe: [":   /    ."],
     subjectsWithVisiblePivotTriggerHe: [],
   };
   render("exec:phase13-gates-strip", h(ExecutiveSummarySection, { es: esPhase13, compact: false }));
@@ -288,11 +288,11 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      gateNarrativeHe: "ב«חיבור»: שער רצף — עדיין לא סוגרים שחרור.",
-      evidenceTargetNarrativeHe: "ב«חיבור»: אימות עצמאות קצר · סבב קצר הבא.",
-      nextCycleDecisionFocusHe: "לבדוק עצמאות קצרה לפני שחרור תמיכה",
+      gateNarrativeHe: "«»:   —    .",
+      evidenceTargetNarrativeHe: "«»:    ·   .",
+      nextCycleDecisionFocusHe: "     ",
       releaseGate: "pending",
-      whatWouldJustifyReleaseHe: "שני מפגשים קצרים עם הצלחה בסוף בלי הכוונה באמצע.",
+      whatWouldJustifyReleaseHe: "        .",
       recheckGate: "off",
       pivotGate: "off",
     },
@@ -302,14 +302,14 @@ function runDetailedPageChunks() {
   const esPhase14 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectDependencyState: "likely_local_issue",
-    crossSubjectDependencyStateLabelHe: "נראה שהקושי נשאר מקומי יותר — אפשר לטפל בו במיקוד",
+    crossSubjectDependencyStateLabelHe: "     —    ",
     crossSubjectLikelyFoundationalBlocker: "unknown",
-    crossSubjectLikelyFoundationalBlockerLabelHe: "לא נקבע סוג בסיס ספציפי",
+    crossSubjectLikelyFoundationalBlockerLabelHe: "    ",
     crossSubjectFoundationFirstPriority: false,
-    crossSubjectFoundationFirstPriorityHe: "רוב המקצועות נראים יותר מקומיים או עם ראיה חלקית — לא חייבים «בסיס גדול» בכל מקום.",
+    crossSubjectFoundationFirstPriorityHe: "         —   « »  .",
     subjectsLikelyShowingDownstreamSymptomsHe: [],
     subjectsNeedingFoundationFirstHe: [],
-    subjectsSafeForLocalInterventionHe: ["חשבון: נראה מקומי יותר — אפשר טיפול ממוקד בלי סיפור רחב."],
+    subjectsSafeForLocalInterventionHe: [":    —      ."],
   };
   render("exec:phase14-foundation-strip", h(ExecutiveSummarySection, { es: esPhase14, compact: false }));
 
@@ -317,8 +317,8 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      foundationDependencyNarrativeHe: "ב«חיבור»: נראה שהקושי נשאר מקומי יותר — אפשר לטפל במיקוד.",
-      interventionOrderingHe: "קודם תמיכה ממוקדת בנושא עצמו",
+      foundationDependencyNarrativeHe: "«»:      —   .",
+      interventionOrderingHe: "    ",
       foundationBeforeExpansion: false,
     },
   };
@@ -330,15 +330,15 @@ function runDetailedPageChunks() {
       ...(trPhase14.topicEngineRowSignals && typeof trPhase14.topicEngineRowSignals === "object"
         ? trPhase14.topicEngineRowSignals
         : {}),
-      freshnessStateLabelHe: "המידע מתחיל להתיישן",
-      conclusionFreshnessLabelHe: "ביטחון במסקנה יורד",
-      whatNeedsFreshEvidenceNowHe: "כדאי ראיה טרייה לפני החמרה",
-      gateNarrativeHe: "שער: לאסוף ראיה לפני החלטה",
-      evidenceTargetNarrativeHe: "יעד: דיוק קצר בלי לחץ",
-      nextSupportAdjustmentHe: "להתאים עומס — צעד קדימה זהיר",
-      nextSupportSequenceActionHe: "להתאים עומס — צעד קדימה זהיר",
-      recommendationMemoryNarrativeHe: "זיכרון חלש מהחלון האחרון",
-      outcomeTrackingNarrativeHe: "תוצאה לא תואמת ציפייה",
+      freshnessStateLabelHe: "  ",
+      conclusionFreshnessLabelHe: "  ",
+      whatNeedsFreshEvidenceNowHe: "    ",
+      gateNarrativeHe: ":    ",
+      evidenceTargetNarrativeHe: ":    ",
+      nextSupportAdjustmentHe: "  —   ",
+      nextSupportSequenceActionHe: "  —   ",
+      recommendationMemoryNarrativeHe: "   ",
+      outcomeTrackingNarrativeHe: "   ",
     },
   };
   render("topic-strip:phase15-unified-compact", h(TopicRecommendationExplainStrip, { tr: trPhase15 }));
@@ -399,8 +399,8 @@ function runContractBindingChunks() {
 }
 
 function runParentReportPageChunks() {
-  const longLabel = "שם־נושא־ארוך־" + "א".repeat(200);
-  const longWhy = "ב".repeat(500);
+  const longLabel = "" + "".repeat(200);
+  const longWhy = "".repeat(500);
   const row = {
     rowKey: "k1",
     label: longLabel,
@@ -412,7 +412,7 @@ function runParentReportPageChunks() {
       confidenceBadge: "medium",
       sufficiencyBadge: "low",
     },
-    trend: { version: 1, accuracyDirection: "down", independenceDirection: "up", fluencyDirection: "flat", confidence: 0.5, summaryHe: "מגמה קצרה." },
+    trend: { version: 1, accuracyDirection: "down", independenceDirection: "up", fluencyDirection: "flat", confidence: 0.5, summaryHe: " ." },
     behaviorProfile: { version: 1, dominantType: "instruction_friction", signals: {}, decisionTrace: [] },
     decisionTrace: [],
     recommendationDecisionTrace: [],
@@ -422,7 +422,7 @@ function runParentReportPageChunks() {
 
   const rowMinimal = {
     rowKey: "k2",
-    label: "חיבור",
+    label: "",
     questions: 8,
     topicEngineRowSignals: null,
     trend: null,
@@ -451,7 +451,7 @@ function runParentReportPageChunks() {
 
   const rowChartLive = {
     rowKey: "geometry_area\u0001g4",
-    label: "שטח - כיתה ד׳",
+    label: " -  ",
     questions: 12,
     accuracy: 45,
     wrong: 6,
@@ -471,14 +471,14 @@ function runParentReportPageChunks() {
 
   const rowPhase8 = {
     rowKey: "p8-row",
-    label: "חיבור",
+    label: "",
     questions: 11,
     topicEngineRowSignals: {
-      whyThisRecommendationHe: "המלצה מהמנוע לבדיקת SSR.",
-      interventionPlanHe: "תוכנית מיקרו: חזרה קצרה באותה רמה.",
-      doNowHe: "שלוש חזרות קצרות.",
-      avoidNowHe: "לא להחמיר רמה לפני שני מפגשים עקביים.",
-      cautionLineHe: "זהירות: ראיות חלקיות.",
+      whyThisRecommendationHe: "   SSR.",
+      interventionPlanHe: " :    .",
+      doNowHe: "  .",
+      avoidNowHe: "      .",
+      cautionLineHe: ":  .",
       recommendedSessionCount: 2,
       recommendedSessionLengthBand: "short",
       recommendedPracticeLoad: "light",
@@ -498,10 +498,10 @@ function runParentReportPageChunks() {
     ...rowPhase8,
     topicEngineRowSignals: {
       ...rowPhase8.topicEngineRowSignals,
-      responseToInterventionLabelHe: "סימנים ראשונים לשיפור — עדיין מוקדם לסגור",
-      freshnessStateLabelHe: "המידע מתחיל להתיישן",
-      conclusionFreshnessLabelHe: "ביטחון במסקנה נמוך — כדאי לעדכן תצפית",
-      nextSupportAdjustmentHe: "לעשות סבב תצפית/בדיקה לפני העלאת קושי או קידום",
+      responseToInterventionLabelHe: "   —   ",
+      freshnessStateLabelHe: "  ",
+      conclusionFreshnessLabelHe: "   —   ",
+      nextSupportAdjustmentHe: "  /     ",
     },
   };
   render("parent-report:explain-row-phase10", h(ParentReportTopicExplainRow, { row: rowPhase10 }));
@@ -510,9 +510,9 @@ function runParentReportPageChunks() {
     ...rowPhase10,
     topicEngineRowSignals: {
       ...rowPhase10.topicEngineRowSignals,
-      supportSequenceStateLabelHe: "בתחילת רצף תמיכה — כדאי לעקוב בלי להעמיס",
-      strategyRepetitionRiskHe: "סיכון בינוני לחזור על אותו כיוון בלי שינוי",
-      nextSupportSequenceActionHe: "להתחיל שחרור הדרגתי קצר — לא לקפוץ לעצמאות מלאה",
+      supportSequenceStateLabelHe: "   —    ",
+      strategyRepetitionRiskHe: "       ",
+      nextSupportSequenceActionHe: "    —    ",
     },
   };
   render("parent-report:explain-row-phase11", h(ParentReportTopicExplainRow, { row: rowPhase11 }));
@@ -521,9 +521,9 @@ function runParentReportPageChunks() {
     ...rowPhase11,
     topicEngineRowSignals: {
       ...rowPhase11.topicEngineRowSignals,
-      recommendationMemoryStateLabelHe: "יש זיכרון חלש בלבד — בעיקר מהחלון הנוכחי",
-      outcomeTrackingNarrativeHe: "ציפינו לייצוב דיוק — ובפועל עדיין לא רואים התייצבות מספקת.",
-      recommendationContinuationDecisionHe: "עדיף לא לחזור שוב על אותו מסלול בלי ראיה חדשה",
+      recommendationMemoryStateLabelHe: "    —   ",
+      outcomeTrackingNarrativeHe: "   —      .",
+      recommendationContinuationDecisionHe: "         ",
     },
   };
   render("parent-report:explain-row-phase12", h(ParentReportTopicExplainRow, { row: rowPhase12 }));
@@ -532,10 +532,10 @@ function runParentReportPageChunks() {
     ...rowPhase12,
     topicEngineRowSignals: {
       ...rowPhase12.topicEngineRowSignals,
-      gateNarrativeHe: "שער: להמשיך בכיוון הנוכחי עם תצפית קצרה.",
-      evidenceTargetNarrativeHe: "יעד: לאשר דיוק ברוגע לפני לחץ.",
+      gateNarrativeHe: ":      .",
+      evidenceTargetNarrativeHe: ":     .",
       releaseGate: "pending",
-      whatWouldJustifyReleaseHe: "הצלחה קצרה בלי הכוונה באמצע לפני שחרור.",
+      whatWouldJustifyReleaseHe: "      .",
       pivotGate: "off",
       recheckGate: "off",
     },
@@ -546,10 +546,10 @@ function runParentReportPageChunks() {
     ...rowPhase13,
     topicEngineRowSignals: {
       ...rowPhase13.topicEngineRowSignals,
-      foundationDependencyNarrativeHe: "ב«חיבור»: ייתכן קשר לבסיס — לא רק נקודה.",
-      interventionOrderingHe: "קודם לייצב בסיס — ואז לחדד בנושא",
+      foundationDependencyNarrativeHe: "«»:    —   .",
+      interventionOrderingHe: "   —   ",
       foundationBeforeExpansion: true,
-      foundationBeforeExpansionHe: "לפני שמרחיבים את הדרישה כאן — כדאי לייצב קודם את היסוד שעליו הנושא נשען.",
+      foundationBeforeExpansionHe: "     —        .",
     },
   };
   render("parent-report:explain-row-phase14", h(ParentReportTopicExplainRow, { row: rowPhase14 }));
@@ -558,11 +558,11 @@ function runParentReportPageChunks() {
     ...rowPhase14,
     topicEngineRowSignals: {
       ...rowPhase14.topicEngineRowSignals,
-      freshnessStateLabelHe: "המידע מתחיל להתיישן",
-      conclusionFreshnessLabelHe: "ביטחון במסקנה יורד",
-      whatNeedsFreshEvidenceNowHe: "כדאי ראיה טרייה לפני החמרה",
-      nextSupportAdjustmentHe: "להתאים עומס — צעד קדימה זהיר",
-      nextSupportSequenceActionHe: "להתאים עומס — צעד קדימה זהיר",
+      freshnessStateLabelHe: "  ",
+      conclusionFreshnessLabelHe: "  ",
+      whatNeedsFreshEvidenceNowHe: "    ",
+      nextSupportAdjustmentHe: "  —   ",
+      nextSupportSequenceActionHe: "  —   ",
     },
   };
   render("parent-report:explain-row-phase15", h(ParentReportTopicExplainRow, { row: rowPhase15 }));
@@ -585,15 +585,15 @@ function runParentReportInsightChunk() {
 function runParentAssignedActivitiesSectionChunk() {
   const rows = [
     {
-      activityLabelHe: "פעילות אישית מהורה — חיבור",
-      subjectLabelHe: "מתמטיקה",
-      topicLabelHe: "חיבור",
-      gradeLabelHe: "א׳",
+      activityLabelHe: "   — ",
+      subjectLabelHe: "",
+      topicLabelHe: "",
+      gradeLabelHe: "",
       lastActivityAtHe: "01/03/2026",
       questionCount: 10,
       accuracy: 80,
       timeMinutes: 5,
-      statusLabelHe: "הושלם",
+      statusLabelHe: "",
     },
   ];
   const html = render(

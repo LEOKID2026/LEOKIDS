@@ -95,7 +95,7 @@ async function main() {
     `status=${list.status} count=${list.json?.data?.physicalClasses?.length ?? 0}`
   );
 
-  const testClassName = `בדיקה-${Date.now().toString(36).slice(-5)}`;
+  const testClassName = `-${Date.now().toString(36).slice(-5)}`;
   const create = await api("POST", "/api/school/physical-classes", managerToken, {
     name: testClassName,
     gradeLevel: "1",
@@ -107,7 +107,7 @@ async function main() {
   );
 
   const teacherCreate = await api("POST", "/api/school/physical-classes", teacherToken, {
-    name: "כיתה-מורה",
+    name: "-",
     gradeLevel: "1",
   });
   record(
@@ -118,7 +118,7 @@ async function main() {
 
   if (privateToken) {
     const privCreate = await api("POST", "/api/school/physical-classes", privateToken, {
-      name: "כיתה-פרטי",
+      name: "-",
       gradeLevel: "1",
     });
     record(
@@ -130,7 +130,7 @@ async function main() {
 
   if (parentToken) {
     const parCreate = await api("POST", "/api/school/physical-classes", parentToken, {
-      name: "כיתה-הורה",
+      name: "-",
       gradeLevel: "1",
     });
     record(
@@ -182,7 +182,7 @@ async function main() {
 
     const badTarget = await api("PATCH", `/api/school/students/${studentId}/assignment`, managerToken, {
       toGradeLevel: "1",
-      toPhysicalClassName: "כיתה שלא קיימת בבית ספר",
+      toPhysicalClassName: "    ",
       fromGradeLevel: "1",
       fromPhysicalClassName: fromClass,
     });
@@ -257,7 +257,7 @@ async function main() {
       }
 
       const opCreate = await api("POST", "/api/school/physical-classes", operatorToken, {
-        name: "כיתה-מזכירות",
+        name: "-",
         gradeLevel: "1",
       });
       record(

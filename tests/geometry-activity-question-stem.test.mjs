@@ -10,23 +10,23 @@ import {
 import { generateActivityQuestionSetClient } from "../lib/classroom-activities/generate-activity-questions-client.js";
 
 const FROZEN_TRIANGLE_STEM =
-  "אלגברה של זוויות - סכום שתי זוויות ידועות הוא 57°+67° - השלימו לזווית השלישית במשולש.";
+  "   -      57°+67° -    .";
 
 test("sanitizeGeometryActivityQuestionStem rewrites algebra-of-angles prefix", () => {
   const out = sanitizeGeometryActivityQuestionStem(FROZEN_TRIANGLE_STEM, {
     kind: "triangle_angles",
     topic: "angles",
   });
-  assert.ok(!/אלגברה/u.test(out));
+  assert.ok(!//u.test(out));
   assert.equal(out, formatTriangleAnglesKnownTwoStem(57, 67));
 });
 
 test("sanitizeGeometryActivityQuestionStem rewrites equation-style triangle prompt", () => {
   const out = sanitizeGeometryActivityQuestionStem(
-    "משוואת זוויות: 57° + 67° + ? = 180° - מה החסר?",
+    " : 57° + 67° + ? = 180° -  ?",
     { kind: "triangle_angles", topic: "angles" }
   );
-  assert.ok(!/משווא/u.test(out));
+  assert.ok(!//u.test(out));
   assert.equal(out, formatTriangleAnglesKnownTwoStem(57, 67));
 });
 
@@ -70,14 +70,14 @@ test("newly generated geometry angles items use elementary wording", async () =>
   for (const item of triangleItems) {
     assert.match(
       item.question,
-      /חישוב|מציאת|השלימ|מה הזווית|מה נשאר|סה״כ 180°|כלל בסיס|במשולש|זווית אחת|זווית שנייה/,
+      /||| | | 180°| || | /,
       `unexpected stem shape: ${item.question}`
     );
   }
 });
 
 test("forbidden-term regex documents blocked elementary geometry jargon", () => {
-  assert.match("אלגברה של זוויות", GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE);
-  assert.match("משוואת זוויות", GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE);
-  assert.doesNotMatch("חישוב זוויות במשולש", GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE);
+  assert.match("  ", GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE);
+  assert.match(" ", GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE);
+  assert.doesNotMatch("  ", GEOMETRY_ELEMENTARY_FORBIDDEN_STEM_RE);
 });

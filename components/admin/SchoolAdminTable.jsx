@@ -5,7 +5,7 @@ import {
   ADMIN_SCHOOL_NO_SCHOOLS,
   ADMIN_SCHOOL_NAME,
   adminYesNoHe,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 
 export default function SchoolAdminTable({ schools }) {
   if (!schools?.length) {
@@ -19,10 +19,10 @@ export default function SchoolAdminTable({ schools }) {
           <thead className="bg-black/40 text-white/70 text-xs">
             <tr>
               <th className="px-3 py-2.5 font-medium">{ADMIN_SCHOOL_NAME}</th>
-              <th className="px-3 py-2.5 font-medium">עיר</th>
-              <th className="px-3 py-2.5 font-medium text-center">מורים</th>
-              <th className="px-3 py-2.5 font-medium text-center">ילדים</th>
-              <th className="px-3 py-2.5 font-medium text-center">פעיל</th>
+              <th className="px-3 py-2.5 font-medium"></th>
+              <th className="px-3 py-2.5 font-medium text-center"></th>
+              <th className="px-3 py-2.5 font-medium text-center"></th>
+              <th className="px-3 py-2.5 font-medium text-center"></th>
               <th className="px-3 py-2.5 font-medium">{ADMIN_COL_ACTIONS}</th>
             </tr>
           </thead>

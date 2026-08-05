@@ -23,8 +23,7 @@ function isObject(value) {
 function readBulletText(item) {
   if (typeof item === "string") return item.trim();
   if (!isObject(item)) return "";
-  if (typeof item.textHe === "string" && item.textHe.trim()) return item.textHe.trim();
-  if (typeof item.text_he === "string" && item.text_he.trim()) return item.text_he.trim();
+  if (typeof item.text === "string" && item.text.trim()) return item.text.trim();
   return "";
 }
 
@@ -90,8 +89,8 @@ function StructuredBlock({ structured, sourceLabel }) {
         <div className="mb-3">
           <p className="m-0 mb-1 text-xs md:text-sm font-bold text-emerald-200/95">{reportPackCopy("components__ParentReportInsight", "whats_going_well")}</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
-            {strengths.map((textHe, i) => (
-              <li key={`strength-${bulletKey(rawStrengths[i], i)}`}>{textHe}</li>
+            {strengths.map((text, i) => (
+              <li key={`strength-${bulletKey(rawStrengths[i], i)}`}>{text}</li>
             ))}
           </ul>
         </div>
@@ -101,8 +100,8 @@ function StructuredBlock({ structured, sourceLabel }) {
         <div className="mb-3">
           <p className="m-0 mb-1 text-xs md:text-sm font-bold text-amber-200/95">{reportPackCopy("components__ParentReportInsight", "areas_to_strengthen")}</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
-            {focusAreas.map((textHe, i) => (
-              <li key={`focus-${bulletKey(rawFocus[i], i)}`}>{textHe}</li>
+            {focusAreas.map((text, i) => (
+              <li key={`focus-${bulletKey(rawFocus[i], i)}`}>{text}</li>
             ))}
           </ul>
         </div>
@@ -112,8 +111,8 @@ function StructuredBlock({ structured, sourceLabel }) {
         <div className="mb-3">
           <p className="m-0 mb-1 text-xs md:text-sm font-bold text-sky-200/95">{reportPackCopy("components__ParentReportInsight", "home_tips")}</p>
           <ul className="m-0 ps-5 text-xs md:text-sm text-white/88 leading-relaxed list-disc">
-            {homeTips.map((textHe, i) => (
-              <li key={`tip-${i}`}>{textHe}</li>
+            {homeTips.map((text, i) => (
+              <li key={`tip-${i}`}>{text}</li>
             ))}
           </ul>
         </div>

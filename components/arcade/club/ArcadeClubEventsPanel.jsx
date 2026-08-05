@@ -130,7 +130,7 @@ export default function ArcadeClubEventsPanel({ gh, className = "" }) {
 
           <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Daily event</p>
 
-          <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{event.titleHe || "Today's challenge"}</p>
+          <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{event.title || "Today's challenge"}</p>
 
           <p className={`text-sm ${gh.arcadePanelBlurb || gh.cardBlurb}`}>+{event.rewardCoins || 0} coins</p>
 
@@ -162,7 +162,7 @@ export default function ArcadeClubEventsPanel({ gh, className = "" }) {
 
           <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Tournament</p>
 
-          <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{tournament.titleHe}</p>
+          <p className={`font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{tournament.title}</p>
 
           {tournament.registered ? (
 

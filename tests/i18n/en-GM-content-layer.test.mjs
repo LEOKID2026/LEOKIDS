@@ -35,9 +35,9 @@ const UPPER_BASIC_PRODUCT_RE =
 const PEER_LEAK_RE =
   /\b(Ghana|Nigeria|Sierra Leone|Liberia|Kenya|Rwanda|Cameroon|Mauritius|Basic [1-6]|Primary [1-6]|Year [1-6]|CP1|CP2|\bCI\b|SIL)\b/;
 const ISRAEL_RESIDUE_LEAF_RE =
-  /hebrew|homeland|israel|israeli|hasmonaean|judea|judean|hellenism|judaism|moledet|עברית|מולדת|ישראל/i;
+  /hebrew|homeland|israel|israeli|hasmonaean|judea|judean|hellenism|judaism|moledet|||/i;
 const ISRAEL_RESIDUE_VALUE_RE =
-  /\b(Hebrew|Homeland|Israel|Israeli|Hasmonaean|Judea|Judean|Hellenism|Judaism|Moledet|עברית|מולדת|ישראל)\b/;
+  /\b(Hebrew|Homeland|Israel|Israeli|Hasmonaean|Judea|Judean|Hellenism|Judaism|Moledet|||)\b/;
 const AMERICAN_VERB_PRACTICE_RE = /\b(to practice|helps to practice|Keep practicing|keep practicing|start practicing)\b/;
 const BARE_CLASS_ACTION_RE =
   /\b(?:Class name|Active classes|No active classes|(?:Manage|Create) class(?! groups?\b))\b/;
@@ -683,7 +683,7 @@ test("en-GM has no local overrides under Israeli curriculum authority slugs", ()
       const abs = path.join(helpDir, ent);
       if (!fs.statSync(abs).isFile()) continue;
       const raw = fs.readFileSync(abs, "utf8");
-      if (/israeli-primary-curriculum-map|Hebrew|homeland|Israel|Israeli|Moledet|Hasmonaean|Judea|Judaism|Hellenism|עברית|מולדת|ישראל/i.test(raw)) {
+      if (/israeli-primary-curriculum-map|Hebrew|homeland|Israel|Israeli|Moledet|Hasmonaean|Judea|Judaism|Hellenism|||/i.test(raw)) {
         helpHits.push(`help-center/${ent}`);
       }
     }

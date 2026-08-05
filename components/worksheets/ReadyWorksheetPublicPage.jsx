@@ -40,9 +40,9 @@ const CATALOG_HREF = "/practice/worksheets";
  *   relatedPages: Array<{
  *     slug: string,
  *     h1: string,
- *     subjectHe: string,
- *     gradeHe: string,
- *     topicHe: string,
+ *     subject: string,
+ *     grade: string,
+ *     topic: string,
  *   }>,
  * }} props
  */
@@ -168,7 +168,7 @@ export default function ReadyWorksheetPublicPage({
           <PublicSeoPageActions pageKind="practice-inner" isBright={isBright} />
 
           <header className={`space-y-4 ${cls.heroShell}`}>
-            <p className={cls.badge}>{page.subjectHe}</p>
+            <p className={cls.badge}>{page.subject}</p>
             <h1 className={cls.h1}>{page.h1}</h1>
             <p className={cls.intro}>{page.shortDescription}</p>
           </header>
@@ -224,15 +224,15 @@ export default function ReadyWorksheetPublicPage({
             <dl className="grid gap-3 sm:grid-cols-2">
               <div className={cls.bulletRow}>
                 <dt className="font-semibold">{ui.subjectField}</dt>
-                <dd>{page.subjectHe}</dd>
+                <dd>{page.subject}</dd>
               </div>
               <div className={cls.bulletRow}>
                 <dt className="font-semibold">{ui.gradeField}</dt>
-                <dd>{page.gradeHe}</dd>
+                <dd>{page.grade}</dd>
               </div>
               <div className={cls.bulletRow}>
                 <dt className="font-semibold">{ui.levelField}</dt>
-                <dd>{page.levelHe}</dd>
+                <dd>{page.level}</dd>
               </div>
               <div className={cls.bulletRow}>
                 <dt className="font-semibold">{ui.countField}</dt>
@@ -242,7 +242,7 @@ export default function ReadyWorksheetPublicPage({
               </div>
               <div className={`${cls.bulletRow} sm:col-span-2`}>
                 <dt className="font-semibold">{ui.topicField}</dt>
-                <dd>{page.topicHe}</dd>
+                <dd>{page.topic}</dd>
               </div>
             </dl>
           </section>
@@ -275,9 +275,9 @@ export default function ReadyWorksheetPublicPage({
                       href={readyWorksheetPublicPath(related.slug)}
                       className={`block ${cls.hubCard}`}
                     >
-                      <span className={cls.hubCardTitle}>{related.topicHe}</span>
+                      <span className={cls.hubCardTitle}>{related.topic}</span>
                       <span className={cls.hubCardBlurb}>
-                        {related.subjectHe} · {related.gradeHe}
+                        {related.subject} · {related.grade}
                       </span>
                     </Link>
                   </li>

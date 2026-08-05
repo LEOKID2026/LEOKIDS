@@ -218,7 +218,7 @@ function verifySectionScope(scope) {
       if (!script || script.length < 5) {
         fail(`spoken script too short: ${pageId} section ${sectionNumber}`);
       }
-      if (/^מה לומדים\?|^מה אנחנו לומדים\?/m.test(script)) {
+      if (/^ \?|^  \?/m.test(script)) {
         fail(`spoken script must not include section nav title: ${pageId} section ${sectionNumber}`);
       }
       if (HEBREW_HYPHEN_IN_SCRIPT.test(script)) {
@@ -320,7 +320,7 @@ if (!resolverMod.resolveLearningBookAudio("hebrew", "g1", "g1.phoneme_awareness"
 
 const mathPage = catalogMod.getLearningBookEntry("math", "g1").loader.loadPage("add_two");
 const mathS5 = textMod.prepareBookSectionAudioText("math", "g1", "add_two", mathPage, 5);
-if (!/שבע (וְעוֹד|ועוד) ארבע (שָׁוֶה|שווה)/.test(mathS5)) {
+if (!/ (|)  (|)/.test(mathS5)) {
   fail("math exercise section should speak addition in Hebrew words");
 }
 

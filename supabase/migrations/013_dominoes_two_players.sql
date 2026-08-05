@@ -1,4 +1,4 @@
--- דומינו: משחק לשני שחקנים בלבד (מתאים למנוע ול־maybeStartDominoesSession)
+-- Dominoes: two-player only (fits engine and maybeStartDominoesSession).
 
 begin;
 

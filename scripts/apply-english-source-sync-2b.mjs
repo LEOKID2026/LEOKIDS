@@ -2,7 +2,7 @@
  * English Source Sync — Phase 2B (PASS14 only).
  * In mapped markdown sections only:
  * - remove single ✓ (skip if 0 or 2+)
- * - replace יכול/מותר → יכול או מותר (skip if 0 or 2+)
+ * - replace / →    (skip if 0 or 2+)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -71,18 +71,18 @@ for (const row of pass14Rows) {
   let changed = false;
   const rowSkipped = [];
 
-  const slashCount = (body.match(/יכול\/מותר/g) || []).length;
+  const slashCount = (body.match(/\//g) || []).length;
   if (slashCount === 1) {
-    body = body.replace("יכול/מותר", "יכול או מותר");
+    body = body.replace("/", "  ");
     applied.push({
       exportTxt: row.exportTxt,
       md: row.sourceMarkdown,
       section: sectionNumber,
-      change: "יכול/מותר → יכול או מותר",
+      change: "/ →   ",
     });
     changed = true;
   } else if (slashCount > 1) {
-    rowSkipped.push("multiple_יכול/מותר_in_section");
+    rowSkipped.push("multiple_/_in_section");
   }
 
   const checkCount = countChar(body, "✓");

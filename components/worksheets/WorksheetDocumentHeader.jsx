@@ -6,23 +6,23 @@ import { useWorksheetUi, WORKSHEET_PRINT_DOC_ATTRS } from "../../hooks/useWorksh
 
 /**
  * @param {{
- *   titleHe?: string,
+ *   title?: string,
  *   meta: {
- *     subjectHe: string,
- *     gradeHe: string,
- *     topicHe: string,
- *     levelHe: string,
+ *     subject: string,
+ *     grade: string,
+ *     topic: string,
+ *     level: string,
  *   },
  *   variant?: "worksheet" || "answer-key",
  * }} props
  */
 export default function WorksheetDocumentHeader({
-  titleHe,
+  title,
   meta,
   variant = "worksheet",
 }) {
   const ui = useWorksheetUi();
-  const title = titleHe || ui.documentTitle;
+  const resolvedTitle = title || ui.documentTitle;
   const showFields = variant === "worksheet";
 
   return (
@@ -38,10 +38,10 @@ export default function WorksheetDocumentHeader({
           />
           <span className="worksheet-brand-name">LEO KIDS</span>
         </div>
-        <h1 className="worksheet-title">{title}</h1>
+        <h1 className="worksheet-title">{resolvedTitle}</h1>
       </div>
       <p className="worksheet-meta">
-        {meta.subjectHe} · {meta.gradeHe} · {meta.topicHe} · {meta.levelHe}
+        {meta.subject} · {meta.grade} · {meta.topic} · {meta.level}
       </p>
       {showFields ? (
         <div className="worksheet-fields worksheet-fields-centered">

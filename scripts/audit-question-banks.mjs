@@ -1,13 +1,13 @@
 /**
- * סריקה כמותית של מאגרי שאלות: עברית, אנגלית, גיאומטריה (קונספטואלי + דגימת גנרטור),
- * מתמטיקה (דגימת גנרטור), מדעים (`SCIENCE_QUESTIONS`), גיאוגרפיה סטטית.
+ *     : , ,  ( +  ),
+ *  ( ),  (`SCIENCE_QUESTIONS`),  .
  *
- * פלט: reports/question-audit/items.json, items.csv, findings.json, stage2.json
+ * : reports/question-audit/items.json, items.csv, findings.json, stage2.json
  * Phase 21: Hebrew C1 spiral overlaps → stage2.hebrewIntentionalSpiralOverlaps (allowlist JSON); withinBandClassPairOverlaps = unresolved only.
  * Phase 25: English audit `subtype` defaults from `poolKey` when bank omits it (audit CSV/JSON only).
  *
- * הרצה: npm run audit:questions
- *    (דורש tsx לייבוא מודולי הפרויקט ללא סיומת .js בנתיבים פנימיים)
+ * : npm run audit:questions
+ *    ( tsx      .js  )
  */
 
 import { createHash } from "node:crypto";
@@ -20,7 +20,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUT_DIR = join(ROOT, "reports", "question-audit");
 
-/** נקודת התחלה קבועה ל־LCG — דגימות אודיט חוזרות בין ריצות (עם אותו קוד). */
+/**    LCG —      (  ). */
 const AUDIT_RNG_BASE = 0x4c104334;
 
 function runWithAuditRandom(seed, fn) {
@@ -37,7 +37,7 @@ function runWithAuditRandom(seed, fn) {
   }
 }
 
-/** מאחד סוגי kind מקובץ harness (combos + רשימות forced בראש הקובץ). */
+/**   kind  harness (combos +  forced  ). */
 function loadHarnessKindSet(fileName) {
   const p = join(OUT_DIR, fileName);
   try {
@@ -68,24 +68,24 @@ const {
   gradeBandForKey,
 } = await import(modUrl("utils/grade-gating.js"));
 
-/** מיפוי דטרמיניסטי ל־spine `english:grammar:line:*` (ללא regex) — Phase 7.19 */
+/**   spine `english:grammar:line:*` ( regex) — Phase 7.19 */
 const EGG_LINE_ID = {
   G1_EXPOSURE:
-    "english:grammar:line:חשיפה_ל_i_am_you_are_ולכינויי_גוף_בסיסיים_בתוך_תבניות_קבועות",
-  G2_BE: "english:grammar:line:חיזוק_to_be_am_is_are_וכינויי_גוף",
+    "english:grammar:line:__i_am_you_are______",
+  G2_BE: "english:grammar:line:_to_be_am_is_are__",
   G2_PLURAL_QUESTIONS:
-    "english:grammar:line:ריבוי_שמות_עצם_והיכרות_עם_מבני_שאלות_פשוטים",
+    "english:grammar:line:_______",
   G3_ADJECTIVES_ARTICLES_PREPS:
-    "english:grammar:line:תארים_בסיסיים_יידוע_a_an_the_ומילות_יחס_מקום_in_on_under",
-  G3_PRESENT_SIMPLE: "english:grammar:line:present_simple_בחיובי_שלילי_שאלה",
-  G4_PRESENT_VS_CONT: "english:grammar:line:present_simple_לעומת_present_continuous",
+    "english:grammar:line:___a_an_the____in_on_under",
+  G3_PRESENT_SIMPLE: "english:grammar:line:present_simple___",
+  G4_PRESENT_VS_CONT: "english:grammar:line:present_simple__present_continuous",
   G4_QUANTIFIERS:
-    "english:grammar:line:some_any_much_many_כינויי_שייכות_ותוארי_פועל_slowly_quickly",
-  G5_MODALS: "english:grammar:line:מודאליים_בסיסיים_future_will_going_to_והשוואתיים",
-  G5_PAST_SIMPLE: "english:grammar:line:past_simple_סדירים_חריגים_נפוצים",
-  G6_CONDITIONALS: "english:grammar:line:conditionals_type_0_1_ומודאליים_should_might_could",
+    "english:grammar:line:some_any_much_many_____slowly_quickly",
+  G5_MODALS: "english:grammar:line:__future_will_going_to_",
+  G5_PAST_SIMPLE: "english:grammar:line:past_simple___",
+  G6_CONDITIONALS: "english:grammar:line:conditionals_type_0_1__should_might_could",
   G6_COMPLEX_TENSES:
-    "english:grammar:line:past_continuous_לצד_past_simple_היכרות_עם_present_perfect",
+    "english:grammar:line:past_continuous__past_simple___present_perfect",
 };
 
 function representativeGrammarGrade(lo, hi, poolKey) {
@@ -104,8 +104,8 @@ function representativeGrammarGrade(lo, hi, poolKey) {
 }
 
 /**
- * מיפוי שורת spine לדקדוק אנגלית (דטרמיניסטי). patternFamily — פרמטר אופציונלי לעתיד; ללא regex.
- * question_frames בטווח 2–3 מתפצל ב-collectEnglishPool ל־g2|g3 — Where/מיקום בכיתה ג׳ → קו התארים.
+ *   spine   (). patternFamily —   ;  regex.
+ * question_frames  2–3  -collectEnglishPool g2|g3 — Where/   →  .
  */
 function grammarLineIdForEnglishGrammarPool(poolKey, lo, hi, _patternFamily = "") {
   const g = representativeGrammarGrade(lo, hi, poolKey);
@@ -327,7 +327,7 @@ function collectGeographyBankItems(rows) {
 }
 
 /**
- * מאגר מדעים סטטי (כולל phase3) — לא גנרטור.
+ *    ( phase3) —  .
  * bankProvenance: science_direct_bank
  */
 function collectScienceBankItems(rows) {
@@ -394,13 +394,13 @@ function collectHebrewLegacy(rows) {
         if (
           gNum >= 1 &&
           gNum <= 6 &&
-          /^איזה משפט נכון\?$/i.test(
+          /^  \?$/i.test(
             String(item.question || item.exerciseText || "").trim()
           ) &&
           (topic === "grammar" || topic === "writing")
         ) {
-          const heb = ["א׳", "ב׳", "ג׳", "ד׳", "ה׳", "ו׳"][gNum - 1];
-          stem = `בהתאם לכיתה ${heb} [רמה ${levelKey}]: ${String(item.question || "").trim()}`;
+          const heb = ["", "", "", "", "", ""][gNum - 1];
+          stem = `  ${heb} [ ${levelKey}]: ${String(item.question || "").trim()}`;
           if (!item.patternFamily || item.patternFamily === "grammar_correct_sentence") {
             pf = "grammar_correct_sentence_scoped";
           }
@@ -530,7 +530,7 @@ function collectEnglishPool(rows, category, pools) {
     sentence: "data/english-questions/sentence-pools.js",
   };
   const sourceFile = fileMap[category] || `data/english-questions/${category}.js`;
-  const gradeHeb = ["", "א׳", "ב׳", "ג׳", "ד׳", "ה׳", "ו׳"];
+  const gradeb = ["", "", "", "", "", "", ""];
   const splitG5G6Pool = (poolKey) =>
     (category === "grammar" &&
       (poolKey === "modals" || poolKey === "comparatives")) ||
@@ -569,7 +569,7 @@ function collectEnglishPool(rows, category, pools) {
         hi >= 3
       ) {
         for (const g of [2, 3]) {
-          const scoped = `(כיתה ${gradeHeb[g]}) ${stem}`;
+          const scoped = `( ${gradeb[g]}) ${stem}`;
           const basePf = item.patternFamily || poolKey;
           const grammar_line_id =
             category === "grammar"
@@ -609,7 +609,7 @@ function collectEnglishPool(rows, category, pools) {
 
       if (!explicitGate && splitG5G6Pool(poolKey) && lo <= 5 && hi >= 6) {
         for (const g of [5, 6]) {
-          const scoped = `(כיתה ${gradeHeb[g]}) ${stem}`;
+          const scoped = `( ${gradeb[g]}) ${stem}`;
           const basePf = item.patternFamily || poolKey;
           const grammar_line_id =
             category === "grammar"
@@ -716,7 +716,7 @@ function intersectGeometryConceptWithProductGrades(item, bandLo, bandHi) {
 }
 
 function collectGeometryConceptual(rows) {
-  const hebG = ["", "א׳", "ב׳", "ג׳", "ד׳", "ה׳", "ו׳"];
+  const hebG = ["", "", "", "", "", "", ""];
   GEOMETRY_CONCEPTUAL_ITEMS.forEach((item, idx) => {
     let [lo, hi] = itemGradeSpan(item);
     const clipped = intersectGeometryConceptWithProductGrades(item, lo, hi);
@@ -725,7 +725,7 @@ function collectGeometryConceptual(rows) {
     const stem = item.question || "";
     for (let g = lo; g <= hi; g++) {
       const scoped =
-        g >= 1 && g <= 6 ? `(כיתה ${hebG[g]}) ${stem}` : stem;
+        g >= 1 && g <= 6 ? `( ${hebG[g]}) ${stem}` : stem;
       pushRow(rows, {
         subject: "geometry",
         topic: (item.topics || []).join("|"),
@@ -853,7 +853,7 @@ function sampleMathGenerator(rows, samplesPerOp = 10) {
     }
   }
 
-  /** Phase 7.20 — דגימות כפויות לאודיט בלבד (מזהה מין spine); לא משנה משחק רגיל. */
+  /** Phase 7.20 —     (  spine);    . */
   const MATH_AUDIT_FORCE_PROBES = [
     { force: "dec_divide", gk: "g6", lev: "hard", op: "decimals" },
     { force: "dec_repeating", gk: "g6", lev: "hard", op: "decimals" },
@@ -862,7 +862,7 @@ function sampleMathGenerator(rows, samplesPerOp = 10) {
     { force: "frac_to_mixed", gk: "g5", lev: "medium", op: "fractions" },
     { force: "wp_unit_cm_to_m", gk: "g5", lev: "medium", op: "word_problems" },
     { force: "wp_unit_cm_to_m", gk: "g6", lev: "medium", op: "word_problems" },
-    /** Phase 7.23 — כפייה לאודיט: ns_counting_backward (auditReps=4), dec_multiply. */
+    /** Phase 7.23 —  : ns_counting_backward (auditReps=4), dec_multiply. */
     { force: "ns_counting_backward", gk: "g1", lev: "easy", op: "number_sense", auditReps: 6 },
     { force: "dec_multiply", gk: "g6", lev: "hard", op: "decimals" },
   ];
@@ -1030,14 +1030,14 @@ function weakLevelSeparationFromSamples(rows) {
     if (o.easy.length < 5 || o.medium.length < 5 || o.hard.length < 5) continue;
     const all = [...o.easy, ...o.medium, ...o.hard];
     const uniq = new Set(all);
-    // ≤2 תבניות ניסוח בלבד נחשבות חלשות (3 תבניות מספיקות להבחנה בין רמות)
+    // ≤2      (3     )
     if (uniq.size <= 2) {
       out.push({
         comboKey: key,
         uniqueStemHashesAcrossLevels: uniq.size,
         samplesPerLevel: { easy: o.easy.length, medium: o.medium.length, hard: o.hard.length },
         note:
-          "דגימות רבות אך מעט צורות ניסוח שונות בין רמות — לרוב תבנית מספרית זהה.",
+          "         —    .",
       });
     }
   }
@@ -1075,22 +1075,22 @@ function buildFallbackMap() {
       {
         path: "utils/hebrew-question-generator.js",
         steps: [
-          "מיזוג rich+legacy לפי כיתה/רמה/נושא (filterRichHebrewPool + mergeTopicPools)",
-          "אם ריק: ניסיון רמות אחרות באותו נושא (עדיין אותה כיתה)",
-          "אם עדיין ריק: ניסיון reading באותה כיתה עם סדר רמות",
-          "אם עדיין ריק: הודעת empty_pool + patternFamily no_questions",
+          " rich+legacy  // (filterRichHebrewPool + mergeTopicPools)",
+          " :      (  )",
+          "  :  reading     ",
+          "  :  empty_pool + patternFamily no_questions",
         ],
         keepsGrade: true,
-        keepsTopic: "עד כמה שאפשר לפני מעבר ל-reading",
+        keepsTopic: "     -reading",
       },
     ],
     english: [
       {
         path: "pages/learning/english-master.js",
         steps: [
-          "סינון בריכות עם englishPoolItemAllowedWithClassSplit (כולל פיצול כיתה בתוך טווח בריכה)",
-          "אם ריק אחרי שער: בריכת grammar/translation/sentence חלופית מותרת לכיתה",
-          "אם עדיין ריק: placeholder + english_empty_pool",
+          "   englishPoolItemAllowedWithClassSplit (     )",
+          "   :  grammar/translation/sentence   ",
+          "  : placeholder + english_empty_pool",
         ],
         keepsGrade: true,
       },
@@ -1099,8 +1099,8 @@ function buildFallbackMap() {
       {
         path: "utils/geometry-question-generator.js",
         steps: [
-          "נושא לא מותר לכיתה → נושא חלופי מאותה כיתה",
-          "אין צורות לנושא → הודעת no_question",
+          "    →    ",
+          "   →  no_question",
         ],
         keepsGrade: true,
       },
@@ -1108,7 +1108,7 @@ function buildFallbackMap() {
     math: [
       {
         path: "utils/math-question-generator.js",
-        notes: "אין fallback לכיתה אחרת בתוך הגנרטור; בחירת פעולה מותרת לפי GRADES",
+        notes: " fallback    ;     GRADES",
         keepsGrade: true,
       },
     ],
@@ -1149,7 +1149,7 @@ function buildStage2Report(rows, declaredMathKinds, declaredGeoKinds) {
     harnessMerged: {
       mathKindsFromHarnessFiles: harnessMathKinds.size,
       geoKindsFromHarnessFiles: harnessGeoKinds.size,
-      note: "איחוד kind מ־harness-math.json + harness-geometry.json + harness-geometry-conceptual.json (הרץ npm run audit:harness לפני אודיט).",
+      note: " kind harness-math.json + harness-geometry.json + harness-geometry-conceptual.json ( npm run audit:harness  ).",
     },
     generatorBranchCoverage: {
       math: {
@@ -1161,7 +1161,7 @@ function buildStage2Report(rows, declaredMathKinds, declaredGeoKinds) {
           .filter((k) => !declaredMathKinds.includes(k))
           .slice(0, 40),
         coverageNote:
-          "דגימת אודיט דטרמיניסטית (LCG קבוע לכל צירוף) + איחוד תוצאות harness וכפיית ענפים נדירים.",
+          "   (LCG   ) +   harness   .",
       },
       geometry: {
         sourceFile: "utils/geometry-question-generator.js",
@@ -1172,7 +1172,7 @@ function buildStage2Report(rows, declaredMathKinds, declaredGeoKinds) {
           .filter((k) => !declaredGeoKinds.includes(k))
           .slice(0, 40),
         coverageNote:
-          "דגימת אודיט דטרמיניסטית + harness נוסחתי וקונספטואלי + כפיית צורה (prism / parallelogram) בקובץ harness.",
+          "   + harness   +   (prism / parallelogram)  harness.",
       },
     },
     withinBandClassPairOverlaps: unresolved,
@@ -1182,7 +1182,7 @@ function buildStage2Report(rows, declaredMathKinds, declaredGeoKinds) {
     weakLevelSeparationCombos: weakLevelSeparationFromSamples(rows),
     topicMetadataCoverage: topicMetadataCoverage(rows),
     englishClassSplitPools: {
-      note: "פיצול דטרמיניסטי בין כיתות בתוך אותה בריכה — englishPoolItemAllowedWithClassSplit ב־grade-gating.js",
+      note: "       — englishPoolItemAllowedWithClassSplit grade-gating.js",
       pools: [
         "grammar: present_simple (g3|g4), quantifiers (g4|g5)",
         "grammar: modals, comparatives (g5|g6)",
@@ -1192,7 +1192,7 @@ function buildStage2Report(rows, declaredMathKinds, declaredGeoKinds) {
     },
     fallbackMap: buildFallbackMap(),
     hebrewLegacyMetadata: {
-      note: "מיפוי patternFamily/subtype ל־legacy — inferHebrewLegacyMeta ב־utils/hebrew-legacy-metadata.js (גם בזמן ריצה ב־finalizeHebrewMcq)",
+      note: " patternFamily/subtype legacy — inferHebrewLegacyMeta utils/hebrew-legacy-metadata.js (   finalizeHebrewMcq)",
     },
   };
 }
@@ -1330,7 +1330,7 @@ function analyze(rows) {
 
   const exactCrossGradeClassification = {
     note:
-      "רוב המקרים עם דגימות math ונרמול ספרות ל-# משקפים אותה תבנית ניסוח עם מספרים שונים — מוצדק פדגוגית. מקרים סטטיים או לא־מתמטיים דורשים סקירה.",
+      "    math   -#        —  .      .",
     totalListed: exactCrossGrade.length,
     justifiedMathGeneratorTemplate: exactCrossGrade.filter(
       (x) =>
@@ -1492,22 +1492,22 @@ function analyze(rows) {
       {
         where: "utils/hebrew-question-generator.js",
         behavior:
-          "אם אין בריכה: ניסיון רמות אחרות באותו נושא (עם rich+legacy), אחר כך אותו דבר ל-reading; רק אז הודעת ריק.",
+          "  :      ( rich+legacy),     -reading;    .",
       },
       {
         where: "pages/learning/english-master.js",
         behavior:
-          "בריכות ריקות אחרי שער → placeholder עם patternFamily english_empty_pool (לא פתיחת כל המילון).",
+          "    → placeholder  patternFamily english_empty_pool (   ).",
       },
       {
         where: "utils/geometry-question-generator.js",
         behavior:
-          "נושא לא לכיתה → החלפה לנושא חלופי באותה כיתה (עדיין גנרטור).",
+          "   →      ( ).",
       },
     ],
     staticVsSample: {
       note:
-        "שורות math/geometry עם rowKind *_sample נוצרות עם RNG דטרמיניסטי באודיט; מיפוי kind מלא משתמש גם בקובצי harness.",
+        " math/geometry  rowKind *_sample   RNG  ;  kind     harness.",
     },
   };
 }

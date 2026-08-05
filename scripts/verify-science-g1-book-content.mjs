@@ -23,7 +23,7 @@ const FAKE_PRACTICE_RE =
 const RAW_MARKDOWN_RE = /\*\*[^*]+\*\*/;
 const HIGH_RISK_RE = /```|^\s*\|.*\|.*\|/m;
 const UNSAFE_RE =
-  /חשמל בית|שקע|להדליק אש|ניסוי כימי|חומצ|נתCH|סכין|toch sharp|mains/i;
+  / || | ||CH||toch sharp|mains/i;
 
 function readMetadataField(raw, field) {
   const re = new RegExp(`\\|\\s*\\*\\*${field}\\*\\*\\s*\\|\\s*(.+?)\\s*\\|`, "i");
@@ -104,8 +104,8 @@ for (const pageId of SCIENCE_G1_PAGE_ORDER) {
   if (FAKE_PRACTICE_RE.test(s7)) {
     errors.push(`${pageId}: Section 7 contains fake practice routing`);
   }
-  if (!/מדעים/.test(childFacing)) {
-    errors.push(`${pageId}: child-facing body should mention מדעים at least once`);
+  if (!//.test(childFacing)) {
+    errors.push(`${pageId}: child-facing body should mention  at least once`);
   }
 
   const anchors = SCIENCE_G1_ALIGNMENT_ANCHORS[pageId] || [];
@@ -136,7 +136,7 @@ if (errors.length) {
 console.log(`G1 Science content verification PASSED: ${SCIENCE_G1_PAGE_ORDER.length} pages.`);
 console.log("- 7 sections each");
 console.log("- draft metadata + science:g1:{topic} ids");
-console.log("- מדעים wording; no internal keys in body");
+console.log("-  wording; no internal keys in body");
 console.log("- Section 5/6 alignment anchors present");
 console.log("- no fake practice routing in §7");
 if (markdownNotes.length) {

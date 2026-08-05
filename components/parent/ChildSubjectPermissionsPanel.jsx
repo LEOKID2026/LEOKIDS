@@ -182,7 +182,7 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
                 />
               </button>
               <div className="flex-1 text-start">
-                <span className={T.permissionsLabel}>{SUBJECT_LABELS[row.subjectKey] || row.labelHe || row.subjectKey}</span>
+                <span className={T.permissionsLabel}>{SUBJECT_LABELS[row.subjectKey] || row.label || row.subjectKey}</span>
                 {row.isGradeSuitable ? (
                   <span
                     className={`me-2 text-[10px] rounded px-1.5 py-0.5 ${

@@ -501,7 +501,7 @@ export default function WritingBlockContent({ block, meta, scriptStyle, mode }) 
 
       <h2 className="writing-block writing-block--title" dir={dir}>
 
-        {block.textHe}
+        {block.text}
 
       </h2>
 
@@ -517,7 +517,7 @@ export default function WritingBlockContent({ block, meta, scriptStyle, mode }) 
 
       <p className="writing-block writing-block--instruction" dir={dir}>
 
-        {block.textHe}
+        {block.text}
 
       </p>
 

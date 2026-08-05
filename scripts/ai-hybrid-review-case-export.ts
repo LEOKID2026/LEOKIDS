@@ -74,7 +74,7 @@ const HARNESS_CASES: Record<
   weak_sparse_suppresses_hybrid: {
     maps: {
       math: {
-        "addition\u0001learning\u0001g4\u0001medium": row("חיבור", 4, 3, 1, 75),
+        "addition\u0001learning\u0001g4\u0001medium": row("", 4, 3, 1, 75),
       },
     },
     raw: { math: wrongEvents("math", "addition", 1) },
@@ -82,7 +82,7 @@ const HARNESS_CASES: Record<
   hybrid_attaches_per_unit: {
     maps: {
       geometry: {
-        "perimeter\u0001learning": row("היקף", 20, 10, 10, 50, "knowledge_gap"),
+        "perimeter\u0001learning": row("", 20, 10, 10, 50, "knowledge_gap"),
       },
     },
     raw: { geometry: wrongEvents("geometry", "perimeter", 10) },

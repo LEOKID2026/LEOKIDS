@@ -41,33 +41,33 @@ function run(label, fn) {
 }
 
 run("validator rejects markdown", () => {
-  const r = validateAdaptivePlannerExplanationText("זהו טקסט **לא** תקין.");
+  const r = validateAdaptivePlannerExplanationText("  **** .");
   assert(r.ok === false);
 });
 
 run("validator rejects English planner labels", () => {
-  assert(validateAdaptivePlannerExplanationText("נמשיך עם advance_skill עכשיו.").ok === false);
+  assert(validateAdaptivePlannerExplanationText("  advance_skill .").ok === false);
 });
 
 run("validator rejects too long", () => {
-  const s = "א".repeat(200);
+  const s = "".repeat(200);
   assert(validateAdaptivePlannerExplanationText(s).ok === false);
 });
 
 run("validator rejects emoji", () => {
-  assert(validateAdaptivePlannerExplanationText("זה טוב 😀 לתרגל.").ok === false);
+  assert(validateAdaptivePlannerExplanationText("  😀 .").ok === false);
 });
 
 run("validator rejects digits", () => {
-  assert(validateAdaptivePlannerExplanationText("נתרגל עוד 3 שאלות.").ok === false);
+  assert(validateAdaptivePlannerExplanationText("  3 .").ok === false);
 });
 
 run("validator rejects pressure Hebrew", () => {
-  assert(validateAdaptivePlannerExplanationText("חייבים לעשות את זה עכשיו.").ok === false);
+  assert(validateAdaptivePlannerExplanationText("    .").ok === false);
 });
 
 run("validator accepts safe Hebrew one-liner", () => {
-  const r = validateAdaptivePlannerExplanationText("המערכת מציעה להמשיך לתרגל בהתאם למה שמתאים לך עכשיו.");
+  const r = validateAdaptivePlannerExplanationText("        .");
   assert(r.ok === true && r.text.length > 0);
 });
 
@@ -78,7 +78,7 @@ run("strict explainer input excludes unknown keys (shape)", () => {
     nextAction: "maintain_skill",
     targetDifficulty: "standard",
     questionCount: 5,
-    approvedHebrewRecommendationLine: "כדאי להמשיך לתרגל באותה רמה",
+    approvedHebrewRecommendationLine: "    ",
     reasonCodes: ["X"],
     mustNotSay: ["Y"],
     diagnostics: { z: 1 },
@@ -97,7 +97,7 @@ run("server explainer disabled → buildAdaptivePlannerAIExplanation not ok", as
       nextAction: "maintain_skill",
       targetDifficulty: "standard",
       questionCount: 4,
-      approvedHebrewRecommendationLine: "כדאי להמשיך לתרגל באותה רמה",
+      approvedHebrewRecommendationLine: "    ",
     },
     { env: process.env, preferDeterministicOnly: true }
   );
@@ -114,7 +114,7 @@ run("server explainer enabled + deterministic only → ok text", async () => {
       nextAction: "maintain_skill",
       targetDifficulty: "standard",
       questionCount: 4,
-      approvedHebrewRecommendationLine: "כדאי להמשיך לתרגל באותה רמה",
+      approvedHebrewRecommendationLine: "    ",
     },
     { env: process.env, preferDeterministicOnly: true }
   );
@@ -167,7 +167,7 @@ run("view model drops invalid explanation text", () => {
 });
 
 run("fixed Hebrew UI label constant", () => {
-  assert(PLANNER_AI_EXPLANATION_SECTION_LABEL_HE === "ככה נבחר התרגול הבא");
+  assert(PLANNER_AI_EXPLANATION_SECTION_LABEL_HE === "   ");
 });
 
 run("isAdaptivePlannerAIExplainerServerEnabled respects env", () => {

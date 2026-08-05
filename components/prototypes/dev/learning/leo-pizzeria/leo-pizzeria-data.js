@@ -18,18 +18,18 @@ export const PROTOTYPE_CUSTOMER_COUNT = 4;
 
 /** @type {PizzaTopping[]} */
 export const TOPPINGS = [
-  { id: "cheese", emoji: "🧀", name: "גבינה" },
-  { id: "tomato", emoji: "🍅", name: "עגבניה" },
-  { id: "olive", emoji: "🫒", name: "זיתים" },
-  { id: "mushroom", emoji: "🍄", name: "פטריות" },
-  { id: "pepper", emoji: "🫑", name: "פלפל" },
-  { id: "basil", emoji: "🌿", name: "בזיליקום" },
+  { id: "cheese", emoji: "🧀", name: "to to" },
+  { id: "tomato", emoji: "🍅", name: "to" },
+  { id: "olive", emoji: "🫒", name: "to" },
+  { id: "mushroom", emoji: "🍄", name: "Who" },
+  { id: "pepper", emoji: "🫑", name: "to" },
+  { id: "basil", emoji: "🌿", name: "to" },
 ];
 
 export const DIFFICULTY_HINTS = {
-  easy: "הזמנות פשוטות - שלם, חצי ורבע על פיצה ב-4 חלקים",
-  medium: "יותר תוספות - רבעים, חצי ושלושה רבעים על 8 חלקים",
-  hard: "הזמנות מורכבות יותר - שמיניות ושילובים (דוגמה זמנית)",
+  easy: "- to, to Pizza -4 to",
+  medium: "-, to to 8 to",
+  hard: "- Who to ()",
 };
 
 /** @param {Record<number, string>} sliceMap @param {string} toppingId */
@@ -46,11 +46,11 @@ function filledCount(sliceMap) {
 function exactly(sliceMap, sliceCount, toppingId, count) {
   const n = countTopping(sliceMap, toppingId);
   if (n === count) {
-    return { ok: true, message: "מעולה! הלקוח מרוצה מאוד 😊🍕" };
+    return { ok: true, message: "!    😊🍕" };
   }
   return {
     ok: false,
-    message: `עוד לא בדיוק - צריך ${count} חלקים עם ${toppingLabel(toppingId)} (יש ${n})`,
+    message: `   -  ${count}   ${toppingLabel(toppingId)} ( ${n})`,
   };
 }
 
@@ -64,44 +64,44 @@ export const CUSTOMERS_BY_DIFFICULTY = {
   easy: [
     {
       id: "easy-gal",
-      customerName: "גל",
+      customerName: "to",
       customerEmoji: "👧",
-      greeting: "שלום! אפשר פיצה עם גבינה על כל החלקים?",
-      ticketLine: "גבינה 🧀 - על כל הפיצה",
+      greeting: "to! Pizza with to All to?",
+      ticketLine: " 🧀 -   ",
       sliceCount: 4,
       validate: (m) => exactly(m, 4, "cheese", 4),
     },
     {
       id: "easy-ori",
-      customerName: "אורי",
+      customerName: "Who",
       customerEmoji: "👦",
-      greeting: "אני רוצה זיתים על חצי מהפיצה, בבקשה!",
-      ticketLine: "זיתים 🫒 - חצי מהפיצה (2 מתוך 4)",
+      greeting: "to Pizza,!",
+      ticketLine: " 🫒 -   (2  4)",
       sliceCount: 4,
       validate: (m) => exactly(m, 4, "olive", 2),
     },
     {
       id: "easy-noa",
-      customerName: "נועה",
+      customerName: "to",
       customerEmoji: "👧🏻",
-      greeting: "חצי גבינה וחצי עגבניות - כמו שאתם אוהבים!",
-      ticketLine: "חצי 🧀 + חצי 🍅",
+      greeting: "- the!",
+      ticketLine: " 🧀 +  🍅",
       sliceCount: 4,
       validate: (m) => {
         const c = countTopping(m, "cheese");
         const t = countTopping(m, "tomato");
         if (c === 2 && t === 2 && filledCount(m) === 4) {
-          return { ok: true, message: "מושלם! נועה אוהבת את זה 🍕" };
+          return { ok: true, message: "!     🍕" };
         }
-        return { ok: false, message: "צריך 2 חלקים גבינה ו-2 חלקים עגבניה" };
+        return { ok: false, message: "needed 2 to -2 to" };
       },
     },
     {
       id: "easy-amit",
-      customerName: "עמית",
+      customerName: "to",
       customerEmoji: "🧒",
-      greeting: "תשימו עגבניות על כל הפיצה - תודה!",
-      ticketLine: "עגבניה 🍅 - על כל הפיצה",
+      greeting: "to All Pizza -!",
+      ticketLine: " 🍅 -   ",
       sliceCount: 4,
       validate: (m) => exactly(m, 4, "tomato", 4),
     },
@@ -109,89 +109,89 @@ export const CUSTOMERS_BY_DIFFICULTY = {
   medium: [
     {
       id: "med-sara",
-      customerName: "שרה",
+      customerName: "to",
       customerEmoji: "👩",
-      greeting: "שלום! פלפל על חצי מהפיצה, בבקשה.",
-      ticketLine: "פלפל 🫑 - חצי (4 מתוך 8)",
+      greeting: "to! to to to Pizza,.",
+      ticketLine: " 🫑 -  (4  8)",
       sliceCount: 8,
       validate: (m) => exactly(m, 8, "pepper", 4),
     },
     {
       id: "med-dan",
-      customerName: "דן",
+      customerName: "to",
       customerEmoji: "👨",
-      greeting: "אפשר רבע פיצה עם פטריות?",
-      ticketLine: "פטריות 🍄 - רבע (2 מתוך 8)",
+      greeting: "Pizza with?",
+      ticketLine: " 🍄 -  (2  8)",
       sliceCount: 8,
       validate: (m) => exactly(m, 8, "mushroom", 2),
     },
     {
       id: "med-maya",
-      customerName: "מאיה",
+      customerName: "to",
       customerEmoji: "👧🏽",
-      greeting: "גבינה על שלושה רבעים - כמעט הכל!",
-      ticketLine: "גבינה 🧀 - 6 מתוך 8 חלקים",
+      greeting: "to to - Almost All!",
+      ticketLine: " 🧀 - 6  8 ",
       sliceCount: 8,
       validate: (m) => exactly(m, 8, "cheese", 6),
     },
     {
       id: "med-yoni",
-      customerName: "יוני",
+      customerName: "to",
       customerEmoji: "👦🏻",
-      greeting: "חצי זיתים וחצי עגבניות - תודה רבה!",
-      ticketLine: "חצי 🫒 + חצי 🍅",
+      greeting: "- to Who!",
+      ticketLine: " 🫒 +  🍅",
       sliceCount: 8,
       validate: (m) => {
         const o = countTopping(m, "olive");
         const t = countTopping(m, "tomato");
         if (o === 4 && t === 4 && filledCount(m) === 8) {
-          return { ok: true, message: "הפיצה יצאה מדויק! 🎉" };
+          return { ok: true, message: "  ! 🎉" };
         }
-        return { ok: false, message: "צריך 4 חלקים זיתים ו-4 חלקים עגבניה" };
+        return { ok: false, message: "needed 4 to -4 to" };
       },
     },
   ],
   hard: [
     {
       id: "hard-lia",
-      customerName: "ליה",
+      customerName: "",
       customerEmoji: "👧🏻",
-      greeting: "רק שמינית אחת עם בזיליקום - קטן ומדויק!",
-      ticketLine: "בזיליקום 🌿 - שמינית (1 מתוך 8)",
+      greeting: "Who with to - Small!",
+      ticketLine: " 🌿 -  (1  8)",
       sliceCount: 8,
       validate: (m) => exactly(m, 8, "basil", 1),
     },
     {
       id: "hard-ido",
-      customerName: "עידו",
+      customerName: "",
       customerEmoji: "👦",
-      greeting: "גבינה על חמישה שמיניות - זה הכמות שלי!",
-      ticketLine: "גבינה 🧀 - 5 מתוך 8 חלקים",
+      greeting: "to There are Who - to!",
+      ticketLine: " 🧀 - 5  8 ",
       sliceCount: 8,
       validate: (m) => exactly(m, 8, "cheese", 5),
     },
     {
       id: "hard-tal",
-      customerName: "טל",
+      customerName: "",
       customerEmoji: "🧑",
-      greeting: "רבע פטריות וחצי עגבניות - שילוב מיוחד!",
-      ticketLine: "2 פטריות 🍄 + 4 עגבניות 🍅",
+      greeting: "to to - Almost to!",
+      ticketLine: "2  🍄 + 4  🍅",
       sliceCount: 8,
       validate: (m) => {
         const mu = countTopping(m, "mushroom");
         const to = countTopping(m, "tomato");
         if (mu === 2 && to === 4 && filledCount(m) === 6) {
-          return { ok: true, message: "שילוב מעולה! הלקוח מרוצה 🍕" };
+          return { ok: true, message: " !   🍕" };
         }
-        return { ok: false, message: "צריך 2 חלקי פטריות ו-4 חלקי עגבניה" };
+        return { ok: false, message: "needed 2 to -4 to" };
       },
     },
     {
       id: "hard-ron",
-      customerName: "רון",
+      customerName: "",
       customerEmoji: "👨🏻",
-      greeting: "זיתים על שלושה רבעים - כמעט שלמה!",
-      ticketLine: "זיתים 🫒 - 6 מתוך 8 חלקים",
+      greeting: "to to - Almost to!",
+      ticketLine: " 🫒 - 6  8 ",
       sliceCount: 8,
       validate: (m) => exactly(m, 8, "olive", 6),
     },
@@ -237,9 +237,9 @@ export function validateCustomerOrder(order, sliceMap) {
 }
 
 export function serveOkMessage() {
-  return "הפיצה הוגשה! הלקוח הולך מרוצה 🎉";
+  return " !    🎉";
 }
 
 export function serveBadMessage() {
-  return "עוד לא בדיוק כמו בפתק - תקנו ונסו שוב";
+  return "not - Buy Try again";
 }

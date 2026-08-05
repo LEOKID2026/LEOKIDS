@@ -1,4 +1,4 @@
--- Arcade: הפעלת נחשים וסולמות.
+-- Arcade: enable snakes and ladders.
 
 begin;
 

@@ -6,12 +6,12 @@
 import assert from "node:assert/strict";
 
 const BANNED = [
-  "אותם זוגות שגויים",
-  "בחירת כפל לא מתאים לחילוק",
-  "זמן כפול לאותו סט",
-  "תרגול ממוקד זוג",
-  "עם/בלי משפט כפל",
-  "קישור כפל־חילוק",
+  "  ",
+  "    ",
+  "   ",
+  "  ",
+  "/  ",
+  " ",
 ];
 
 const [templatesMod, detailedMod, parentReportV2Mod, truthMod] = await Promise.all([
@@ -55,17 +55,17 @@ function buildUnit(taxonomyId, bucketKey, topicRowKey) {
     subjectId: "math",
     topicRowKey,
     bucketKey,
-    displayName: "מתמטיקה",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
-      immediateActionHe: isM03 ? "תרגול ממוקד זוג" : "קישור כפל־חילוק",
-      shortPracticeHe: isM03 ? "זמן כפול לאותו סט" : "עם/בלי משפט כפל",
+      immediateActionHe: isM03 ? "  " : " ",
+      shortPracticeHe: isM03 ? "   " : "/  ",
       taxonomyId,
     },
     taxonomy: {
       id: taxonomyId,
-      patternHe: isM03 ? "אותם זוגות שגויים" : "בחירת כפל לא מתאים לחילוק",
-      topicHe: "כפל",
+      patternHe: isM03 ? "  " : "    ",
+      topic: "",
       subskillHe: "test",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
@@ -81,7 +81,7 @@ function buildUnit(taxonomyId, bucketKey, topicRowKey) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     canonicalState: {
       actionState: "intervene",
@@ -97,7 +97,7 @@ function buildUnit(taxonomyId, bucketKey, topicRowKey) {
 function rowFor(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "מתמטיקה",
+    displayName: "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -117,7 +117,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [tMult]: rowFor(tMult, "multiplication", "g4") },
     diagnosticEngineV2: { units: [buildUnit("M-03", "multiplication", tMult)] },
@@ -126,7 +126,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
   const mp1 = d1?.subjectProfiles?.find((p) => p.subject === "math");
   assertEq("M-03 mult g4 action", mp1?.parentActionHe, M03.multiplication.g3_g4.actionTextHe);
   assertNoBanned("M-03 mult detailed", mp1?.parentActionHe);
-  const tp1 = buildTruthPacketV1(d1, { scopeType: "topic", scopeId: tMult, scopeLabel: "כפל" });
+  const tp1 = buildTruthPacketV1(d1, { scopeType: "topic", scopeId: tMult, scopeLabel: "" });
   assertNoBanned("truth M-03 mult", JSON.stringify(tp1));
 
   const tPow = "powers\u0001learning\u0001g6\u0001easy";
@@ -134,7 +134,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [tPow]: rowFor(tPow, "powers", "g6") },
     diagnosticEngineV2: { units: [buildUnit("M-03", "powers", tPow)] },
@@ -149,7 +149,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [tDiv]: rowFor(tDiv, "division", "g4") },
     diagnosticEngineV2: { units: [buildUnit("M-10", "division", tDiv)] },
@@ -162,7 +162,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
   assertNoBanned("M-10 division math profile", mp3);
   const sh3 = summarizeV2UnitsForSubjectForTests(baseM10Div.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseM10Div.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -174,7 +174,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [tRat]: rowFor(tRat, "ratio", "g6") },
     diagnosticEngineV2: { units: [buildUnit("M-10", "ratio", tRat)] },
@@ -186,7 +186,7 @@ const tMult = "multiplication\u0001learning\u0001g4\u0001easy";
   assertNoBanned("M-10 ratio detailed action", mp4?.parentActionHe);
   assertNoBanned("M-10 ratio detailed full", d4);
   assertNoBanned("M-10 ratio math profile", mp4);
-  const tp4 = buildTruthPacketV1(d4, { scopeType: "topic", scopeId: tRat, scopeLabel: "יחס" });
+  const tp4 = buildTruthPacketV1(d4, { scopeType: "topic", scopeId: tRat, scopeLabel: "" });
   assertNoBanned("truth M-10 ratio", JSON.stringify(tp4));
 
 process.stdout.write("OK parent-report-grade-aware-phase2c3-mult-div-verify\n");

@@ -138,21 +138,21 @@ check("resolveClassroomSkillLabelHe fail-closed for geo_area_triangle_formula", 
       subject: "geometry",
       gradeLevel: "g3",
     }),
-    "מיומנות בגאומטריה"
+    " "
   );
   assert.equal(
     resolveClassroomSkillLabelHe("geo_area_triangle_formula", {
       subject: "geometry",
       gradeLevel: null,
     }),
-    "מיומנות בגאומטריה"
+    " "
   );
   assert.equal(
     resolveClassroomSkillLabelHe("geo_area_triangle_formula", {
       subject: "geometry",
       gradeLevel: "g5",
     }),
-    "שטח משולש"
+    " "
   );
 });
 

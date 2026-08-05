@@ -27,7 +27,7 @@ describe("english-phonics-blocked", () => {
 
   test("requiresAudio question classified blocked", () => {
     const block = classifyEnglishWorksheetPrintBlock({
-      question: "האזינו ובחרו",
+      question: " ",
       requiresAudio: true,
       answers: ["a", "b"],
       correctAnswer: "a",
@@ -38,7 +38,7 @@ describe("english-phonics-blocked", () => {
 
   test("pictureRef question classified blocked", () => {
     const block = classifyEnglishWorksheetPrintBlock({
-      question: "בחרו את התמונה הנכונה",
+      question: "   ",
       pictureRef: "img/cat.png",
       answers: ["a", "b"],
       correctAnswer: "a",
@@ -50,7 +50,7 @@ describe("english-phonics-blocked", () => {
   test("picture_word_matching itemType blocked from printable", () => {
     const printable = toPrintableWorksheetQuestion(
       {
-        question: "התאימו מילה לתמונה",
+        question: "  ",
         answers: ["dog", "cat", "bird", "fish"],
         correctAnswer: "dog",
         topic: "phonics",
@@ -60,7 +60,7 @@ describe("english-phonics-blocked", () => {
     );
     assert.equal(printable.printability, WORKSHEET_PRINTABILITY.blocked_image);
     const block = classifyEnglishWorksheetPrintBlock({
-      question: "התאימו",
+      question: "",
       answers: ["a", "b"],
       correctAnswer: "a",
       params: { itemType: "picture_word_matching" },
@@ -87,11 +87,11 @@ describe("english-phonics-blocked", () => {
       assert.equal(printable.printability, WORKSHEET_PRINTABILITY.printable);
     }
     const payload = buildWorksheetPayload(questions, {
-      titleHe: "פוניקה",
-      subjectHe: "אנגלית",
-      gradeHe: "א׳",
-      topicHe: "פוניקה",
-      levelHe: "קל",
+      titleHe: "",
+      subject: "",
+      grade: "",
+      topic: "",
+      level: "",
       inkSave: false,
       subjectId: "english",
     }, { subjectId: "english" });

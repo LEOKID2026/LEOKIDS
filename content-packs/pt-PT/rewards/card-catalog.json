@@ -34,13 +34,166 @@
         "description": "Colete o cão Leo Techno!"
       }
     },
-    "event_tu_bishvat": {
-      "title": "Leo Tu Bishvat",
-      "description": "Leo Tu Bishvat – cartão de evento limitado!",
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "Leo campeão de arcade",
+      "description": "Coleciona Leo campeão de arcade!",
+      "category": "shop",
       "accessibility": {
-        "title": "Leo Tu Bishvat",
-        "description": "Leo Tu Bishvat – cartão de evento limitado!"
+        "title": "Leo campeão de arcade",
+        "description": "Coleciona Leo campeão de arcade!"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "Leo guardião da floresta encantada",
+      "description": "Coleciona Leo guardião da floresta encantada!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo guardião da floresta encantada",
+        "description": "Coleciona Leo guardião da floresta encantada!"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "Leo bombeiro",
+      "description": "Coleciona Leo bombeiro!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo bombeiro",
+        "description": "Coleciona Leo bombeiro!"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "Leo explorador galáctico",
+      "description": "Coleciona Leo explorador galáctico!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo explorador galáctico",
+        "description": "Coleciona Leo explorador galáctico!"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "Leo inventor genial",
+      "description": "Coleciona Leo inventor genial!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo inventor genial",
+        "description": "Coleciona Leo inventor genial!"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "Leo cavaleiro dourado",
+      "description": "Coleciona Leo cavaleiro dourado!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo cavaleiro dourado",
+        "description": "Coleciona Leo cavaleiro dourado!"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "Leo grande mago",
+      "description": "Coleciona Leo grande mago!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo grande mago",
+        "description": "Coleciona Leo grande mago!"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "Super Leo lendário",
+      "description": "Coleciona Super Leo lendário!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Super Leo lendário",
+        "description": "Coleciona Super Leo lendário!"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "Leo chef principal",
+      "description": "Coleciona Leo chef principal!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo chef principal",
+        "description": "Coleciona Leo chef principal!"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "Leo detetive-mestre",
+      "description": "Coleciona Leo detetive-mestre!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo detetive-mestre",
+        "description": "Coleciona Leo detetive-mestre!"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "Leo pintor-mestre",
+      "description": "Coleciona Leo pintor-mestre!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo pintor-mestre",
+        "description": "Coleciona Leo pintor-mestre!"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "Leo estrela da música",
+      "description": "Coleciona Leo estrela da música!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo estrela da música",
+        "description": "Coleciona Leo estrela da música!"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "Leo capitão pirata",
+      "description": "Coleciona Leo capitão pirata!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo capitão pirata",
+        "description": "Coleciona Leo capitão pirata!"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "Leo piloto de corridas",
+      "description": "Coleciona Leo piloto de corridas!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo piloto de corridas",
+        "description": "Coleciona Leo piloto de corridas!"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "Leo campeão de futebol",
+      "description": "Coleciona Leo campeão de futebol!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo campeão de futebol",
+        "description": "Coleciona Leo campeão de futebol!"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "Leo campeão das ondas",
+      "description": "Coleciona Leo campeão das ondas!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo campeão das ondas",
+        "description": "Coleciona Leo campeão das ondas!"
       }
     }
-  }
+  },
+  "cardCount": 21
 }

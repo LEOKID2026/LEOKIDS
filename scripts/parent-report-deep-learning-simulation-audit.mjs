@@ -80,25 +80,25 @@ function auditTopForSim(simId, top, periodLabel) {
 
   /* mainPriorityHe is derived from doNow in buildContractRow — identical strings are normal. */
 
-  if (status.includes("אין מספיק ראיות")) {
+  if (status.includes("  ")) {
     fails.push("top_status_insufficient_evidence");
   }
 
   if (simId === "simDeep02_strong_stable_child") {
-    if (t.includes("פער ידע")) fails.push("strong_child_knowledge_gap_tone");
-    if (t.includes("שיקום")) fails.push("strong_child_remediation_word");
+    if (t.includes(" ")) fails.push("strong_child_knowledge_gap_tone");
+    if (t.includes("")) fails.push("strong_child_remediation_word");
   }
 
   if (simId === "simDeep03_weak_math_long_term") {
     const m = `${pri} ${dn} ${status}`;
-    if (!/(חשבון|חיבור|חילוק|שברים|מספר|כפל|חיסור)/.test(m)) {
+    if (!/(||||||)/.test(m)) {
       fails.push("weak_math_missing_math_focus_heuristic");
     }
   }
 
   if (simId === "simDeep04_improving_child") {
     const full = JSON.stringify(top);
-    if (full.includes("מגמת שיפור") || full.includes("שיפור")) {
+    if (full.includes(" ") || full.includes("")) {
       /* ok */
     } else {
       /* soft — only warn if trend evidence sufficient elsewhere */
@@ -107,19 +107,19 @@ function auditTopForSim(simId, top, periodLabel) {
 
   if (simId === "simDeep05_declining_after_difficulty_jump") {
     const pack = `${t}`;
-    if (!pack.includes("לא") && !pack.includes("ייצוב") && !pack.includes("קושי")) {
+    if (!pack.includes("") && !pack.includes("") && !pack.includes("")) {
       /* non-fatal heuristic */
     }
   }
 
   if (simId === "simDeep06_fast_careless_vs_slow_accurate_mix") {
-    if (status.includes("פער ידע") && !t.includes("מהירות") && !t.includes("בדיק")) {
+    if (status.includes(" ") && !t.includes("") && !t.includes("")) {
       fails.push("pace_child_only_knowledge_gap");
     }
   }
 
   if (simId === "simDeep01_mixed_real_child") {
-    if (status.includes("אין מספיק נתונים כדי לקבוע תמונת מצב מקצועית")) {
+    if (status.includes("       ")) {
       fails.push("mixed_child_global_insufficient");
     }
   }
@@ -273,34 +273,34 @@ async function main() {
   const reviewer = ["# Deep simulations — reviewer pack", ""];
   for (const s of sims) {
     const artw = pdfMap[s.id]?.week;
-    reviewer.push(`## ${s.id}`, "", `**שם מוצג:** ${s.studentName}`, "");
-    reviewer.push("### סיפור הילד המדומה", "");
+    reviewer.push(`## ${s.id}`, "", `** :** ${s.studentName}`, "");
+    reviewer.push("###   ", "");
     reviewer.push(
-      `- טווח: ${s.simulatedDateRange?.start} → ${s.simulatedDateRange?.end} (${s.totalDays} ימים מתוכננים, ${s.activeDays} ימים עם פעילות)`,
-      `- נפח: ${s.totalSessions} מפגשים, ${s.totalQuestions} שאלות, ~${s.totalTimeMinutes} דקות פעילות`,
-      `- מקצועות: ${s.subjects.join(", ")}`,
-      `- דפוס מגמה (תכנון): ${s.trendPattern}`,
+      `- : ${s.simulatedDateRange?.start} → ${s.simulatedDateRange?.end} (${s.totalDays}  , ${s.activeDays}   )`,
+      `- : ${s.totalSessions} , ${s.totalQuestions} , ~${s.totalTimeMinutes}  `,
+      `- : ${s.subjects.join(", ")}`,
+      `-   (): ${s.trendPattern}`,
       ""
     );
-    reviewer.push("### מה אנחנו מצפים מהדוח", "", s.expectedReportBehavior, "", "**חייב לא לקרות:**", ...(s.mustNotHappen || []).map((x) => `- ${x}`), "");
-    reviewer.push("### קבצים", "");
-    if (artw?.shortPdf) reviewer.push(`- [שבוע — דוח קצר (PDF)](${artw.shortPdf})`);
+    reviewer.push("###    ", "", s.expectedReportBehavior, "", "**  :**", ...(s.mustNotHappen || []).map((x) => `- ${x}`), "");
+    reviewer.push("### ", "");
+    if (artw?.shortPdf) reviewer.push(`- [ —   (PDF)](${artw.shortPdf})`);
     const artm = pdfMap[s.id]?.month;
-    if (artm?.shortPdf) reviewer.push(`- [חודש — דוח קצר (PDF)](${artm.shortPdf})`);
+    if (artm?.shortPdf) reviewer.push(`- [ —   (PDF)](${artm.shortPdf})`);
     const artf = pdfMap[s.id]?.full;
-    if (artf && !artf.skipped && artf.shortPdf) reviewer.push(`- [מלא — דוח קצר (PDF)](${artf.shortPdf})`);
+    if (artf && !artf.skipped && artf.shortPdf) reviewer.push(`- [ —   (PDF)](${artf.shortPdf})`);
     reviewer.push(
       "",
-      "### שאלות לבודק",
+      "###  ",
       "",
-      "- האם הדוח מספר את סיפור הילד נכון?",
-      "- האם ההורה יודע מה לעשות?",
-      "- האם יש סתירה בין דוח קצר למפורט?",
-      "- האם הטון מתאים?",
-      "- האם יש יותר מדי טקסט?",
-      "- האם ההמלצה מתאימה לכמות הנתונים?",
-      "- ציון 1–5",
-      "- הערות",
+      "-       ?",
+      "-     ?",
+      "-       ?",
+      "-   ?",
+      "-     ?",
+      "-     ?",
+      "-  1–5",
+      "- ",
       "",
       "---",
       ""

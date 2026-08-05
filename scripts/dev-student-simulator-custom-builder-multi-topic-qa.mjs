@@ -101,11 +101,11 @@ const EXPECT_UNITS = [
 ];
 
 const HE_PREVIEW_SNIPPETS = [
-  "חשבון / חילוק עם שארית",
-  "חשבון / כפל",
-  "חשבון / שברים",
-  "עברית / קריאה",
-  "עברית / הבנת הנקרא",
+  " /   ",
+  " / ",
+  " / ",
+  " / ",
+  " /  ",
 ];
 
 function sleep(ms) {
@@ -171,7 +171,7 @@ async function loginIfNeeded(page) {
   const pw = await page.locator('input[type="password"]').count();
   if (pw > 0) {
     await page.locator('input[type="password"]').fill(SIM_PASSWORD);
-    await page.getByRole("button", { name: "כניסה" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await waitLoggedIn(page);
   } else {
     await waitLoggedIn(page);
@@ -190,8 +190,8 @@ async function clickPreviewUntilCustomSuccess(page, { maxAttempts = 16 } = {}) {
       /* list not ready yet */
     }
     const body = await page.innerText("body");
-    if (/נוצרה תצוגה מקדימה מנתונים ידניים/i.test(body)) return;
-    if (/נוצרה תצוגה מקדימה/i.test(body) && page.url().includes("dev-student-simulator")) return;
+    if (/    /i.test(body)) return;
+    if (/  /i.test(body) && page.url().includes("dev-student-simulator")) return;
     await sleep(600);
   }
   const body = await page.innerText("body").catch(() => "");
@@ -243,11 +243,11 @@ async function main() {
       await sleep(800);
     }
 
-    log("3. Switch to בנייה ידנית (custom mode)");
+    log("3. Switch to   (custom mode)");
     await page.getByTestId("dev-sim-mode-custom").click();
     await sleep(300);
 
-    log("4. Open חשבון (math) — enable subject");
+    log("4. Open  (math) — enable subject");
     await page.getByTestId("dev-sim-subject-enable-math").check();
     await sleep(200);
 
@@ -258,7 +258,7 @@ async function main() {
     }
     await sleep(150);
 
-    log("5. Select math topics: חילוק עם שארית, כפל, שברים");
+    log("5. Select math topics:   , , ");
     for (const t of ["division_with_remainder", "multiplication", "fractions"]) {
       await page.getByTestId(`dev-sim-topic-active-math-${t}`).check();
     }
@@ -270,18 +270,18 @@ async function main() {
     result.allTopicsRemainedSelected = m1 && m2 && m3;
     log(`6. Math three topics still checked: ${result.allTopicsRemainedSelected}`);
 
-    log("7. Open עברית — enable subject");
+    log("7. Open  — enable subject");
     await page.getByTestId("dev-sim-subject-enable-hebrew").check();
     await sleep(200);
 
-    log("7b. Clear any Hebrew topic checkboxes, then select only קריאה + הבנת הנקרא");
+    log("7b. Clear any Hebrew topic checkboxes, then select only  +  ");
     for (const t of HEBREW_TOPIC_KEYS) {
       const el = page.getByTestId(`dev-sim-topic-active-hebrew-${t}`);
       if ((await el.count()) > 0 && (await el.isChecked())) await el.uncheck();
     }
     await sleep(150);
 
-    log("8. Select עברית: קריאה, הבנת הנקרא");
+    log("8. Select : ,  ");
     await page.getByTestId("dev-sim-topic-active-hebrew-reading").check();
     await page.getByTestId("dev-sim-topic-active-hebrew-comprehension").check();
     await sleep(200);
@@ -311,30 +311,30 @@ async function main() {
     }
 
     const bodyAfterPreview = await page.innerText("body");
-    if (/גיאומטריה.*חובה|חובה.*גיאומטריה|geometry.*required/i.test(bodyAfterPreview)) {
+    if (/.*|.*|geometry.*required/i.test(bodyAfterPreview)) {
       result.errors.push("Unexpected geometry gate text in body");
     }
 
     log("12. Screenshot — preview with five topics");
     await page.screenshot({ path: join(evidence, "02-preview-five-topics.png"), fullPage: true });
 
-    log("13. Per-topic question change — only כפל row should change");
+    log("13. Per-topic question change — only  row should change");
     const beforeLines = await list.locator("li").allInnerTexts();
     await page.getByTestId("dev-sim-topic-questions-math-multiplication").fill("99");
     await sleep(150);
     await clickPreviewUntilCustomSuccess(page);
     const afterLines = await list.locator("li").allInnerTexts();
-    const lineKefel = (arr) => arr.find((l) => l.includes("כפל") && l.includes("חשבון"));
+    const lineKefel = (arr) => arr.find((l) => l.includes("") && l.includes(""));
     if (lineKefel(beforeLines) === lineKefel(afterLines)) {
-      result.errors.push("Expected כפל preview line to change after question count edit");
+      result.errors.push("Expected  preview line to change after question count edit");
     }
-    const otherStable = beforeLines.filter((l) => !l.includes("כפל")).sort();
-    const afterOther = afterLines.filter((l) => !l.includes("כפל")).sort();
+    const otherStable = beforeLines.filter((l) => !l.includes("")).sort();
+    const afterOther = afterLines.filter((l) => !l.includes("")).sort();
     if (JSON.stringify(otherStable) !== JSON.stringify(afterOther)) {
-      result.errors.push("Non-כפל preview lines changed unexpectedly");
+      result.errors.push("Non- preview lines changed unexpectedly");
     }
 
-    log("14. Uncheck שברים — preview should drop only that topic");
+    log("14. Uncheck  — preview should drop only that topic");
     await page.getByTestId("dev-sim-topic-active-math-fractions").uncheck();
     await sleep(200);
     await clickPreviewUntilCustomSuccess(page);
@@ -343,11 +343,11 @@ async function main() {
       result.errors.push(`After uncheck fractions expected 4 preview rows, got ${lis4}`);
     }
     const t4 = await list.innerText();
-    if (t4.includes("שברים")) {
-      result.errors.push("שברים should not appear after uncheck");
+    if (t4.includes("")) {
+      result.errors.push(" should not appear after uncheck");
     }
 
-    log("15. Re-check שברים for Apply flow");
+    log("15. Re-check  for Apply flow");
     await page.getByTestId("dev-sim-topic-active-math-fractions").check();
     await sleep(200);
     await clickPreviewUntilCustomSuccess(page);
@@ -377,7 +377,7 @@ async function main() {
       result.errors.push(`metadata missing simulationDateRange (got ${JSON.stringify(dr)})`);
     }
 
-    log("16b. Screenshot — מה הוחל בפועל panel");
+    log("16b. Screenshot —    panel");
     await page.getByTestId("dev-sim-applied-summary").waitFor({ state: "visible", timeout: 30_000 });
     await page.screenshot({ path: join(evidence, "03-applied-summary.png"), fullPage: true });
 
@@ -414,7 +414,7 @@ async function main() {
     } else {
       await page.goto(`${BASE}${shortCustomHref}`, { waitUntil: "networkidle", timeout: 120_000 });
       const body = await page.innerText("body");
-      const shortSnips = ["חילוק עם שארית", "כפל", "שברים", "קריאה", "הבנת הנקרא"];
+      const shortSnips = ["  ", "", "", "", " "];
       let hits = 0;
       for (const snip of shortSnips) {
         if (body.includes(snip)) hits += 1;
@@ -422,7 +422,7 @@ async function main() {
       if (hits < 3) {
         result.errors.push(`Short report (sim range) expected ≥3 topic labels, hits=${hits} (body len ${body.length})`);
       }
-      if (/אין עדיין מספיק פעילות בתקופה שנבחרה/i.test(body) && hits < 2) {
+      if (/     /i.test(body) && hits < 2) {
         result.errors.push("Short report empty state while expecting simulated topics in custom range");
       }
       await page.screenshot({ path: join(evidence, "04-parent-report-sim-range.png"), fullPage: true });

@@ -46,37 +46,37 @@ const SKIP_DIR_PARTS = new Set([
 ]);
 
 const PROFESSIONAL_TERMS = [
-  ["מנוע", "engine_reference", "no", "no", "yes", "הימנע מהפניה למנוע; תאר מה הדוח אומר"],
-  ["אבחון", "diagnostic", "yes_if_explained", "yes_if_explained", "yes_if_raw", "מותר למורה אם ברור; לא כתווית פנימית"],
-  ["סף", "threshold_jargon", "no", "no", "yes", "החלף בניסוח על כמות נתונים"],
-  ["מגמה", "trend", "yes", "yes", "yes_if_unexplained", "מותר אם מוסבר; לא מפתח trend"],
-  ["אות / אותות", "signal", "no", "no", "yes", "החלף ב'סימנים' או 'נתונים'"],
-  ["פער ידע", "engine_jargon", "no", "no", "yes", "החלף ב'נושאים לחיזוק'"],
-  ["מדד", "metric", "yes_if_explained", "yes", "yes_if_raw", "מותר אם מוגדר למורה"],
-  ["ביטחון", "confidence", "no", "no", "yes", "לא confidence סטטיסטי גולמי"],
-  ["confidence", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["severity", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["tier", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["filterKey", "english_key", "no", "no", "yes", "לא להציג מפתח"],
-  ["low_activity", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["insufficient_data", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["class_monitor", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["no_data", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["raw score", "english_key", "no", "no", "yes", "הצג אחוז/ציון מוסבר"],
-  ["delta", "english_key", "no", "no", "yes", "החלף ב'שינוי'"],
-  ["trend", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["engine", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["signal", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["intervention", "english_key", "yes", "yes", "yes_if_raw", "מותר 'התערבות' בעברית"],
-  ["recommendation code", "english_key", "no", "no", "yes", "לא להציג קוד"],
-  ["root cause", "english_key", "no", "no", "yes", "החלף ב'מקור הקושי'"],
-  ["diagnostic event", "english_key", "no", "no", "yes", "תרגום חובה"],
-  ["needs_reinforcement", "status_key", "no", "no", "yes", "תרגום חובה"],
-  ["critical_class", "status_key", "no", "no", "yes", "תרגום חובה"],
-  ["on_track", "status_key", "no", "no", "yes", "תרגום חובה"],
-  ["RI0", "progression_code", "no", "no", "yes", "קוד פנימי — לא בדוח"],
-  ["RI1", "progression_code", "no", "no", "yes", "קוד פנימי — לא בדוח"],
-  ["RI2", "progression_code", "no", "no", "yes", "קוד פנימי — לא בדוח"],
+  ["", "engine_reference", "no", "no", "yes", "  ;    "],
+  ["", "diagnostic", "yes_if_explained", "yes_if_explained", "yes_if_raw", "   ;   "],
+  ["", "threshold_jargon", "no", "no", "yes", "    "],
+  ["", "trend", "yes", "yes", "yes_if_unexplained", "  ;   trend"],
+  [" / ", "signal", "no", "no", "yes", " ''  ''"],
+  [" ", "engine_jargon", "no", "no", "yes", " ' '"],
+  ["", "metric", "yes_if_explained", "yes", "yes_if_raw", "   "],
+  ["", "confidence", "no", "no", "yes", " confidence  "],
+  ["confidence", "english_key", "no", "no", "yes", " "],
+  ["severity", "english_key", "no", "no", "yes", " "],
+  ["tier", "english_key", "no", "no", "yes", " "],
+  ["filterKey", "english_key", "no", "no", "yes", "  "],
+  ["low_activity", "english_key", "no", "no", "yes", " "],
+  ["insufficient_data", "english_key", "no", "no", "yes", " "],
+  ["class_monitor", "english_key", "no", "no", "yes", " "],
+  ["no_data", "english_key", "no", "no", "yes", " "],
+  ["raw score", "english_key", "no", "no", "yes", " / "],
+  ["delta", "english_key", "no", "no", "yes", " ''"],
+  ["trend", "english_key", "no", "no", "yes", " "],
+  ["engine", "english_key", "no", "no", "yes", " "],
+  ["signal", "english_key", "no", "no", "yes", " "],
+  ["intervention", "english_key", "yes", "yes", "yes_if_raw", " '' "],
+  ["recommendation code", "english_key", "no", "no", "yes", "  "],
+  ["root cause", "english_key", "no", "no", "yes", " ' '"],
+  ["diagnostic event", "english_key", "no", "no", "yes", " "],
+  ["needs_reinforcement", "status_key", "no", "no", "yes", " "],
+  ["critical_class", "status_key", "no", "no", "yes", " "],
+  ["on_track", "status_key", "no", "no", "yes", " "],
+  ["RI0", "progression_code", "no", "no", "yes", "  —  "],
+  ["RI1", "progression_code", "no", "no", "yes", "  —  "],
+  ["RI2", "progression_code", "no", "no", "yes", "  —  "],
 ];
 
 function collectFiles(relPath) {
@@ -145,15 +145,15 @@ function inferSurface(rel, lineText) {
 
 function inferSection(rel, lineText, keyHint = "") {
   const t = `${keyHint} ${lineText} ${rel}`;
-  if (/empty|zero|thin|insufficient|אין מספיק|לא היו|no_data|no_classes|EMPTY/i.test(t)) return "data_health";
-  if (/guidance|recommend|המלצ|כיוון|intervention|severity|tier/i.test(t)) return "guidance_recommendation";
+  if (/empty|zero|thin|insufficient| | |no_data|no_classes|EMPTY/i.test(t)) return "data_health";
+  if (/guidance|recommend|||intervention|severity|tier/i.test(t)) return "guidance_recommendation";
   if (/export|sheet|column|header|xlsx|csv/i.test(t)) return "export_labels";
   if (/status|badge|health|monitor|critical|on_track/i.test(t)) return "status_labels";
-  if (/subject|מקצוע|permission|הרשא/i.test(t)) return "subject_scope";
-  if (/activity|פעילות/i.test(t)) return "activity";
-  if (/collapsed|details|פירוט/i.test(t)) return "collapsed_details";
-  if (/class|כיתה/i.test(t)) return "class_summary";
-  if (/student|תלמיד/i.test(t)) return "student_summary";
+  if (/subject||permission|/i.test(t)) return "subject_scope";
+  if (/activity|/i.test(t)) return "activity";
+  if (/collapsed|details|/i.test(t)) return "collapsed_details";
+  if (/class|/i.test(t)) return "class_summary";
+  if (/student|/i.test(t)) return "student_summary";
   return "general";
 }
 
@@ -199,14 +199,14 @@ function problemType(text, visibility, rel) {
   }
   const stripped = String(text).replace(/\$\{[^}]+\}/g, "").trim();
   const checks = [
-    ["engine_jargon", /מנוע|פער ידע|ביטחון סטטיסטי|טקסונומיה|מאסטרי|שורות דוח|אגרסיב|סף נתונים/],
+    ["engine_jargon", /| | ||| || /],
     ["raw_key_leak", /^[a-z][a-z0-9_]{2,}$/i],
     ["untranslated_english", /[A-Za-z]{4,}/],
-    ["thin_data_tone", /אין מספיק|עדיין מעט|דל|חלקי|מצומצם|לא היו|לא הייתה/],
+    ["thin_data_tone", / | |||| | /],
     ["status_label_unclear", /needs_|critical_class|on_track|low_activity|insufficient_/i],
-    ["progression_intervention", /העברה|קידום|שחרור|עלייה ברמה|התערבות מיידית|RI\d/i],
-    ["ambiguous_professional", /מדד|אות\b|signal|tier|severity|confidence/i],
-    ["guidance_wording", /אבחון|אבחוני|ניתוח|מעקב ותרגול/],
+    ["progression_intervention", /||| | |RI\d/i],
+    ["ambiguous_professional", /|\b|signal|tier|severity|confidence/i],
+    ["guidance_wording", /||| /],
   ];
   for (const [type, re] of checks) {
     const target = type === "raw_key_leak" ? String(text).trim() : stripped;
@@ -254,49 +254,49 @@ function dedupeKey(file, line, text) {
 
 function inferStateType(text, section, lineText) {
   const t = `${text} ${section} ${lineText}`;
-  if (/never_active|no_activity|no_classes|אין כיתות|אין פעילות|אין תלמידים|אין מורים/i.test(t)) return "no_data";
-  if (/thin|מצומצם|עדיין מעט|חלקי/i.test(t)) return "thin_data";
-  if (/insufficient_answers|אין מספיק נתונים/i.test(t)) return "insufficient_answers";
-  if (/insufficient_students|מעט תלמידים/i.test(t)) return "insufficient_students";
-  if (/insufficient_sessions|לא היו מפגש/i.test(t)) return "insufficient_sessions";
-  if (/no_activity|אין פעילות/i.test(t)) return "no_activity";
-  if (/partial_scope|הרשאה|permission|מקצוע מוגבל/i.test(t)) return "subject_permission_limited";
-  if (/date_range|בתקופה|no_sessions_in_range/i.test(t)) return "date_range_empty";
-  if (/class_empty|כיתה ריקה/i.test(t)) return "class_empty";
-  if (/not_completed|לא הושלם/i.test(t)) return "activity_not_completed";
+  if (/never_active|no_activity|no_classes| | | | /i.test(t)) return "no_data";
+  if (/thin|| |/i.test(t)) return "thin_data";
+  if (/insufficient_answers|  /i.test(t)) return "insufficient_answers";
+  if (/insufficient_students| /i.test(t)) return "insufficient_students";
+  if (/insufficient_sessions|  /i.test(t)) return "insufficient_sessions";
+  if (/no_activity| /i.test(t)) return "no_activity";
+  if (/partial_scope||permission| /i.test(t)) return "subject_permission_limited";
+  if (/date_range||no_sessions_in_range/i.test(t)) return "date_range_empty";
+  if (/class_empty| /i.test(t)) return "class_empty";
+  if (/not_completed| /i.test(t)) return "activity_not_completed";
   if (/insufficient/i.test(t)) return "insufficient_answers";
   return "thin_data";
 }
 
 function diagnosticMeaningPlain(text) {
   const t = String(text || "");
-  if (/דורש התערבות|critical/i.test(t)) return "המערכת מסמנת שיש צורך בפעולה מיידית של המורה.";
-  if (/דורש חיזוק|reinforcement/i.test(t)) return "המערכת ממליצה על חיזוק לפני המשך.";
-  if (/כדאי לעקוב|monitor/i.test(t)) return "המערכת מבקשת מעקב — עדיין אין צורך בהתערבות חזקה.";
-  if (/בקצב תקין|on_track/i.test(t)) return "המערכת מציגה שהכיתה/תלמיד בקצב תקין.";
-  if (/אין מספיק נתונים|no_data/i.test(t)) return "אין מספיק נתונים לקביעת מסקנה.";
-  if (/טעויות|mistakes/i.test(t)) return "המערכת מדגישה טעויות חוזרות שדורשות תשומת לב.";
+  if (/ |critical/i.test(t)) return "       .";
+  if (/ |reinforcement/i.test(t)) return "     .";
+  if (/ |monitor/i.test(t)) return "   —     .";
+  if (/ |on_track/i.test(t)) return "  /  .";
+  if (/  |no_data/i.test(t)) return "    .";
+  if (/|mistakes/i.test(t)) return "      .";
   return "";
 }
 
 function meaningPlainHe(entry) {
   const dm = diagnosticMeaningPlain(entry.current_hebrew);
   if (dm) return dm;
-  if (entry.section === "data_health") return "הודעה על מצב נתונים דל או חסר בדוח.";
-  if (entry.section === "export_labels") return "תווית בקובץ ייצוא שמורה/מנהל רואים.";
-  if (entry.section === "guidance_recommendation") return "המלצת פעולה או כיוון תמיכה למורה.";
+  if (entry.section === "data_health") return "       .";
+  if (entry.section === "export_labels") return "   / .";
+  if (entry.section === "guidance_recommendation") return "     .";
   return "";
 }
 
 function exampleBefore(entry) {
   const surf = entry.surface;
   const txt = entry.example_output || entry.current_hebrew;
-  if (surf === "student_report") return `בדוח תלמיד: ${txt}`;
-  if (surf === "class_report") return `בדוח כיתה: ${txt}`;
-  if (surf === "activity_report") return `בדוח פעילות: ${txt}`;
-  if (surf === "activity_export") return `בייצוא Excel: ${txt}`;
-  if (surf === "teacher_dashboard") return `בלוח בקרה: ${txt}`;
-  if (surf === "school_admin_ui") return `בממשק בית ספר: ${txt}`;
+  if (surf === "student_report") return ` : ${txt}`;
+  if (surf === "class_report") return ` : ${txt}`;
+  if (surf === "activity_report") return ` : ${txt}`;
+  if (surf === "activity_export") return ` Excel: ${txt}`;
+  if (surf === "teacher_dashboard") return ` : ${txt}`;
+  if (surf === "school_admin_ui") return `  : ${txt}`;
   return txt;
 }
 
@@ -311,10 +311,10 @@ function flagProfessionalTerms(text) {
 function templateExamples(template) {
   const base = template.replace(/\$\{[^}]+\}/g, "…");
   return {
-    low: base.replace(/…/g, "מעט"),
+    low: base.replace(/…/g, ""),
     normal: base,
-    weak: base.replace(/…/g, "חלש"),
-    strong: base.replace(/…/g, "חזק"),
+    weak: base.replace(/…/g, ""),
+    strong: base.replace(/…/g, ""),
   };
 }
 
@@ -324,7 +324,7 @@ function isOwnerReviewCandidate(entry) {
   if (entry.section === "data_health") return true;
   if (entry.section === "guidance_recommendation" || entry.section === "status_labels") return true;
   if (entry.problem_type) return true;
-  if (/אבחון|מנוע|סף|פער|מדד|RI\d|needs_|critical_|on_track|insufficient_/i.test(entry.current_hebrew))
+  if (/|||||RI\d|needs_|critical_|on_track|insufficient_/i.test(entry.current_hebrew))
     return true;
   return false;
 }
@@ -398,7 +398,7 @@ const professionalRows = PROFESSIONAL_TERMS.map(
 );
 
 // --- Scenario samples ---
-const teacherUi = await import(u("lib/teacher-portal/teacher-ui.he.js"));
+const teacherUi = await import(u("lib/teacher-portal/teacher-ui.js"));
 const schoolUi = await import(u("lib/school-portal/school-ui.he.js"));
 const exportLabels = await import(u("lib/teacher-portal/teacher-activity-report-export-labels.js"));
 
@@ -426,7 +426,7 @@ addScenario(
   "teacher_dashboard_no_data",
   "Teacher dashboard with no active classes",
   "teacher",
-  "teacher-ui.he.js / DASHBOARD_NO_CLASSES",
+  "teacher-ui.js / DASHBOARD_NO_CLASSES",
   "",
   "",
   0,
@@ -440,7 +440,7 @@ addScenario(
   "teacher",
   "classHealthHe",
   "math",
-  "ה׳",
+  "",
   28,
   "normal_data",
   ["strong", "monitor", "needs_reinforcement", "critical_class", "no_data"].map((s) => teacherUi.classHealthHe(s))
@@ -451,13 +451,13 @@ addScenario(
   "Teacher student report thin data",
   "teacher",
   "riskSignalHe / formatStudentSubjectFallback",
-  "חשבון",
-  "ה׳",
+  "",
+  "",
   1,
   "thin_data",
   [
     teacherUi.riskSignalHe("insufficient_answers"),
-    teacherUi.formatStudentSubjectFallbackHeadlineHe("חשבון"),
+    teacherUi.formatStudentSubjectFallbackHeadlineHe(""),
     teacherUi.formatStudentSubjectFallbackEvidenceHe(42, 6),
     teacherUi.formatStudentSubjectFallbackActionHe(),
   ]
@@ -468,8 +468,8 @@ addScenario(
   "Teacher student report normal data",
   "teacher",
   "guidanceSeverityTierHe / studentGuidanceHeadlineHe",
-  "חשבון",
-  "ה׳",
+  "",
+  "",
   1,
   "normal_data",
   [
@@ -484,8 +484,8 @@ addScenario(
   "Teacher class report guidance",
   "teacher",
   "classGuidanceSeverityTierHe / CLASS_WEAK_TOPICS",
-  "חשבון",
-  "ה׳",
+  "",
+  "",
   28,
   "normal_data",
   [
@@ -501,10 +501,10 @@ addScenario(
   "teacher",
   "activityExportTitleHe",
   "math",
-  "ה׳",
+  "",
   28,
   "normal_data",
-  [exportLabels.activityExportTitleHe("תרגול שברים", "math", { gradeLevel: 5 })]
+  [exportLabels.activityExportTitleHe(" ", "math", { gradeLevel: 5 })]
 );
 
 addScenario(
@@ -512,8 +512,8 @@ addScenario(
   "School manager student report",
   "school_manager",
   "school-ui.he.js",
-  "חשבון",
-  "ה׳",
+  "",
+  "",
   1,
   "normal_data",
   [schoolUi.SCHOOL_STUDENT_REPORT_TITLE, schoolUi.SCHOOL_REPORT_SUMMARY, schoolUi.SCHOOL_REPORT_LOADING]
@@ -525,7 +525,7 @@ addScenario(
   "school_manager",
   "school-ui.he.js",
   "",
-  "ה׳",
+  "",
   28,
   "normal_data",
   [
@@ -544,7 +544,7 @@ addScenario(
   "",
   0,
   "partial_scope",
-  [teacherUi.subjectLabelHe("math"), "מקצועות מותרים: חשבון בלבד"]
+  [teacherUi.subjectLabelHe("math"), " :  "]
 );
 
 addScenario(
@@ -565,7 +565,7 @@ addScenario(
   "teacher",
   "teacher-activity-report-export-labels",
   "math",
-  "ה׳",
+  "",
   28,
   "partial_data",
   [
@@ -581,7 +581,7 @@ addScenario(
   "teacher",
   "classHealthHe + export labels",
   "math",
-  "ה׳",
+  "",
   28,
   "weak_result",
   [teacherUi.classHealthHe("needs_reinforcement"), teacherUi.riskSignalHe("low_overall_accuracy")]
@@ -611,7 +611,7 @@ const internalOnly = allEntries.filter((e) => e.visibility === "internal_only");
 const needsReview = allEntries.filter((e) => e.visibility === "needs_review");
 const dynamicTemplates = allEntries.filter((e) => e.is_template);
 const emptyThin = allEntries.filter((e) =>
-  /data_health|אין מספיק|לא היו|לא הייתה|no_data|insufficient|EMPTY|thin|מצומצם/i.test(
+  /data_health| | | |no_data|insufficient|EMPTY|thin|/i.test(
     `${e.section} ${e.current_hebrew} ${e.condition}`
   )
 );

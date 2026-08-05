@@ -10,7 +10,7 @@ const OUT_JSON = `${RUN_DIR}/WARNING_TRIAGE.json`;
 const OUT_MD = `${RUN_DIR}/WARNING_TRIAGE.md`;
 
 /** Same literal check as ai-response-quality-audit.mjs contradiction_challenge branch. */
-const AUDIT_CONTRADICTION_NUMERIC_RE = /\d+\s*%|\d+\s+שאלות/;
+const AUDIT_CONTRADICTION_NUMERIC_RE = /\d+\s*%|\d+\s+/;
 
 function archetypeFromStudentId(studentId) {
   const parts = String(studentId).split("_");
@@ -22,70 +22,70 @@ function archetypeFromStudentId(studentId) {
 
 function contradictionSubBucket(aiAnswer) {
   const a = String(aiAnswer || "").trim();
-  if (a.startsWith("לא הבנתי")) return "disambiguation_clarification";
-  if (a.includes("יכול להיות פער בין הצלחה בבית")) return "short_home_vs_app_bridge_no_digits";
-  if (a.includes("בדוח כרגע רואים מה שנכתב כראיה מהתרגול")) return "qualitative_numeric_framing_no_literal_digits";
+  if (a.startsWith(" ")) return "disambiguation_clarification";
+  if (a.includes("     ")) return "short_home_vs_app_bridge_no_digits";
+  if (a.includes("      ")) return "qualitative_numeric_framing_no_literal_digits";
   return "other";
 }
 
 function thinDataSubBucket(aiAnswer) {
   const a = String(aiAnswer || "").trim();
-  if (a.startsWith("לא הבנתי")) return "disambiguation_template";
-  if (/מצומצמים|מצומצמות|מוגבלים|מוגבלות|דלילים|דלילות/u.test(a)) return "has_scarcity_morphology_not_matched_by_audit_regex";
+  if (a.startsWith(" ")) return "disambiguation_template";
+  if (/|||||/u.test(a)) return "has_scarcity_morphology_not_matched_by_audit_regex";
   return "other";
 }
 
 const FAMILY_META = {
   audit_contradiction_missing_numeric_evidence: {
     whyTheWarningFired:
-      "Rubric for questionCategory=contradiction_challenge requires the answer to match /\\d+\\s*%|\\d+\\s+שאלות/ (ASCII-digit percentage or 'N שאלות' with a normal space). If the model answers with clarification, a short qualitative bridge, or prose that mentions numeric ideas without those exact literals, the warning is emitted.",
+      "Rubric for questionCategory=contradiction_challenge requires the answer to match /\\d+\\s*%|\\d+\\s+/ (ASCII-digit percentage or 'N ' with a normal space). If the model answers with clarification, a short qualitative bridge, or prose that mentions numeric ideas without those exact literals, the warning is emitted.",
     classificationPrimary: "audit_too_strict",
     classification: "audit_too_strict_with_some_expected_deterministic_templates",
     classificationRationale:
       "No failures were recorded; answers generally address home↔report tension. Disambiguation and short qualitative bridges are not numeric contradictions. Some longer answers intentionally avoid repeating digits while still describing evidence; the audit rule is a shallow surface check.",
     recommendedAction: "audit_rubric_alignment",
     recommendedActionDetail:
-      "Optional follow-up (not in this task): exclude clarification/disambiguation turns from numeric-evidence checks; accept כ־NN% / NN% variants and morphological 'שאלות' counts if desired; or require numeric evidence only when the parent turn is clearly disputing numbers (narrower classifier). Product code was not changed per instructions.",
+      "Optional follow-up (not in this task): exclude clarification/disambiguation turns from numeric-evidence checks; accept NN% / NN% variants and morphological '' counts if desired; or require numeric evidence only when the parent turn is clearly disputing numbers (narrower classifier). Product code was not changed per instructions.",
     specialCheck: {
       didAnswerContradictNumericData:
         "Not observed in this sample set; warnings fire on missing literal digit patterns, not on detected logical contradiction with report JSON.",
       didAnswerOmitNumericEvidenceWhereExpected:
         "The rubric expects literals for this category; several answers omit them while still discussing report-vs-home framing.",
       didAuditExpectNumbersWhereQualitativeIsAcceptable:
-        "Partially yes for disambiguation and possibly for very short bridge answers; less so for full contradiction_challenge answers that only say 'ניסוח מספרי' without numbers.",
+        "Partially yes for disambiguation and possibly for very short bridge answers; less so for full contradiction_challenge answers that only say ' ' without numbers.",
       reportVsCopilotNumericMismatch:
         "Not evidenced from audit rows alone; this gate does not compare to detailed.json numbers.",
       syntheticProfileOrQuestionRowsMismatch:
-        "Unlikely as root cause; the same Hebrew disambiguation string appears across many students for the vague parent line 'האם יכול להיות שהדוח טועה?'.",
+        "Unlikely as root cause; the same Hebrew disambiguation string appears across many students for the vague parent line '    ?'.",
     },
   },
   audit_thin_data_missing_scarcity_language: {
     whyTheWarningFired:
-      "For thin_data profile and thin_data category, the audit requires THIN_DATA_LANGUAGE or /מעט|מצומצם|דליל|מוגבל/. Answers using plural/adjective forms like 'מצומצמים' or the disambiguation template do not match.",
+      "For thin_data profile and thin_data category, the audit requires THIN_DATA_LANGUAGE or /|||/. Answers using plural/adjective forms like '' or the disambiguation template do not match.",
     classificationPrimary: "audit_too_strict",
     classification: "audit_too_strict",
     classificationRationale:
-      "Representative answers already communicate scarcity ('מצומצמים', 'מוקדם למסקנה חזקה') or are non-answers; this is regex morphology / template interaction, not missing parent-facing caution.",
+      "Representative answers already communicate scarcity ('', '  ') or are non-answers; this is regex morphology / template interaction, not missing parent-facing caution.",
     recommendedAction: "audit_rubric_alignment",
     recommendedActionDetail:
-      "Extend THIN_DATA_LANGUAGE and the fallback lemma list to include מצומצמים/מצומצמות and similar; exclude disambiguation from thin_data scarcity checks. No product change in this pass.",
+      "Extend THIN_DATA_LANGUAGE and the fallback lemma list to include / and similar; exclude disambiguation from thin_data scarcity checks. No product change in this pass.",
     specialCheck: null,
   },
   audit_missing_subject_soft_language: {
     whyTheWarningFired:
-      "missing_subject_data category expects phrases built around 'אין מספיק' contiguously (among other patterns). The canonical answer uses 'בדוח אין כרגע מספיק שאלות מעוגנות', which breaks the /אין\\s+מספיק/ sub-pattern.",
+      "missing_subject_data category expects phrases built around ' ' contiguously (among other patterns). The canonical answer uses '     ', which breaks the /\\s+/ sub-pattern.",
     classificationPrimary: "audit_too_strict",
     classification: "audit_too_strict",
     classificationRationale:
       "The answer is clearly a scoped missing-data refusal for chess; the audit's positive phrase list is narrower than the product copy.",
     recommendedAction: "audit_rubric_alignment",
     recommendedActionDetail:
-      "Add 'אין כרגע מספיק' / anchored-question scarcity phrasing to hasMissingSubjectLanguage, or normalize before the check. No product change in this pass.",
+      "Add '  ' / anchored-question scarcity phrasing to hasMissingSubjectLanguage, or normalize before the check. No product change in this pass.",
     specialCheck: null,
   },
   audit_simple_explanation_no_subject: {
     whyTheWarningFired:
-      "simple_explanation with totalQuestions>=50 warns when detectSubjects() finds no SUBJECT_HINTS match. Answers anchor on topic labels ('בהסקה', 'בניסויים בסיסיים') instead of the word 'מדעים' / 'עברית'.",
+      "simple_explanation with totalQuestions>=50 warns when detectSubjects() finds no SUBJECT_HINTS match. Answers anchor on topic labels ('', ' ') instead of the word '' / ''.",
     classificationPrimary: "audit_too_strict",
     classification: "audit_too_strict",
     classificationRationale:

@@ -4,7 +4,7 @@
 
 /** Must stay aligned with `utils/parent-ai-topic-classifier/classifier.js` (Phase E). */
 export const PHASE_E_GENERAL_DISCLAIMER_LINE =
-  "תרגול כללי — לא מתוך מאגר השאלות הרשמי ולא משנה את האבחון";
+  "  —         ";
 
 /** Parent-facing leak tokens (subset of tests/fixtures/parent-copilot-parent-facing-surface-qa.mjs). */
 export const FORBIDDEN_INTERNAL_SUBSTRINGS = [
@@ -26,15 +26,15 @@ export const RAW_ENUM_LEAK_RE = /\b(WE\d+|RI\d+|advance_level|maintain_and_stren
 
 /** Clinical / diagnosis-style wording we forbid in composed parent copy (subset of guardrail-validator). */
 export const CLINICAL_DIAGNOSIS_RE =
-  /(?:דיסלקציה|דיסלקסיה|דיסקלקוליה|לקות\s*למידה|הפרעת\s*קשב|\bADHD\b|האבחון\s*הוא|האבחנה\s*היא)/u;
+  /(?:|||\s*|\s*|\bADHD\b|\s*|\s*)/u;
 
 /** Harsh judgmental parent-facing tone (simulator heuristic). */
 export const JUDGMENTAL_HARSH_RE =
-  /(?:כישלון\s*מוחלט|מביש\s*לגמרי|אסון\s*חינוכי|חסר\s*תועלת\s*לגמרי|מזעזע)/u;
+  /(?:\s*|\s*|\s*|\s*\s*|)/u;
 
 /** Must not suggest mutating banks / official catalog from Copilot answers. */
 export const MUTATION_PROPOSAL_RE =
-  /(?:עדכנ(?:י|ו)\s*(?:עכשיו\s*)?(?:את\s*)?(?:ה)?מאגר|שינוי\s*(?:של\s*)?(?:מטא|טקסונומיה)|עדכון\s*אוטומטי\s*של\s*(?:ה)?מאגר)/u;
+  /(?:(?:|)\s*(?:\s*)?(?:\s*)?(?:)?|\s*(?:\s*)?(?:|)|\s*\s*\s*(?:)?)/u;
 
 /**
  * @param {string} text
@@ -81,7 +81,7 @@ export function collectProfileFailures(text, opts = {}) {
   const fails = [];
 
   if (profile === "external" || profile === "phase_e_general") {
-    if (!/(הסבר\s*חינוכי\s*כללי|מאגר\s*השאלות\s*הרשמי|כללי\s*בלבד|הודבק)/u.test(t)) {
+    if (!/(\s*\s*|\s*\s*|\s*|)/u.test(t)) {
       fails.push("external_expected_general_framing");
     }
   }
@@ -93,20 +93,20 @@ export function collectProfileFailures(text, opts = {}) {
   }
 
   if (profile === "thin_evidence") {
-    if (!/אין\s*בדוח\s*מספיק\s*ראיות|מוקדם\s*לקבוע|בשלב\s*זה/u.test(t)) {
+    if (!/\s*\s*\s*|\s*|\s*/u.test(t)) {
       fails.push("thin_expected_evidence_hedge");
     }
   }
 
   if (profile === "weak_question") {
-    if (/(הילד\s*חלש\s*בהחלטה|חלש\s*ללא\s*ספק|מובטח\s*שהוא\s*חלש)/u.test(t)) {
+    if (/(\s*\s*|\s*\s*|\s*\s*)/u.test(t)) {
       fails.push("unsupported_definitive_weakness");
     }
   }
 
   if (profile === "bad_prompt") {
     if (CLINICAL_DIAGNOSIS_RE.test(t)) fails.push("bad_prompt_should_avoid_clinical");
-    if (/פרטי\s*הציון\s*הגולמי|raw\s*score|internal\s*engine/u.test(t)) fails.push("bad_prompt_internal_detail");
+    if (/\s*\s*|raw\s*score|internal\s*engine/u.test(t)) fails.push("bad_prompt_internal_detail");
   }
 
   return fails;

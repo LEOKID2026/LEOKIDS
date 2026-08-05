@@ -68,7 +68,7 @@ export default async function handler(req, res) {
 
     const entryCostPayload = entryCostOptions.map((o) => ({
       amount: o.amount,
-      labelHe: o.labelHe,
+      label: o.label,
     }));
 
     if (list.length === 0) {

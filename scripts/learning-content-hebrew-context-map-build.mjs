@@ -14,14 +14,14 @@ const OUT_CSV = join(ROOT, "reports", "learning-content-hebrew-context-map.csv")
 const OUT_SUMMARY = join(ROOT, "reports", "learning-content-hebrew-context-map-summary.txt");
 
 const PLACEHOLDER_SUBS = [
-  [/\$\{lab\}/g, "חשבון"],
+  [/\$\{lab\}/g, ""],
   [/\$\{side\}/g, "5"],
   [/\$\{angle\}/g, "90"],
   [/\$\{a\}/g, "3"],
   [/\$\{b\}/g, "4"],
   [/\$\{c\}/g, "7"],
   [/\$\{correctAnswer\}/g, "12"],
-  [/\$\{[^}]+\}/g, "[ערך]"],
+  [/\$\{[^}]+\}/g, "[]"],
 ];
 
 function substitutePlaceholders(text) {
@@ -106,19 +106,19 @@ function findLine(file, text) {
 function inferMeaningPlainHe(row) {
   const ct = String(row.content_type || "");
   const subj = String(row.subject || "");
-  if (ct === "question_stem") return `גזע שאלת ${subj || "למידה"} שמוצגת לתלמיד`;
-  if (ct === "answer_option") return `אפשרות תשובה לשאלת ${subj || "למידה"}`;
-  if (ct === "hint") return "רמז שמוצג לתלמיד בזמן פתרון";
-  if (ct === "explanation") return "הסבר לאחר תשובה או בחלון פתרון";
-  if (ct === "feedback_correct") return "משוב חיובי לאחר תשובה נכונה";
-  if (ct === "feedback_wrong") return "משוב לאחר תשובה שגויה";
-  if (ct === "fallback_question") return "הודעת גיבוי כשאין שאלה זמינה";
-  if (ct === "topic_label") return "שם נושא שמוצג בתפריט/מסך למידה";
-  if (ct === "skill_label") return "תווית מיומנות בתוכנית הלימודים";
-  if (ct === "level_label") return "תווית רמת קושי";
-  if (ct === "activity_instruction") return "הוראות פעילות כיתתית לתלמיד";
-  if (ct === "generator_template") return "תבנית דינמית ליצירת שאלה";
-  return "טקסט למידה";
+  if (ct === "question_stem") return `  ${subj || ""}  `;
+  if (ct === "answer_option") return `   ${subj || ""}`;
+  if (ct === "hint") return "    ";
+  if (ct === "explanation") return "     ";
+  if (ct === "feedback_correct") return "    ";
+  if (ct === "feedback_wrong") return "   ";
+  if (ct === "fallback_question") return "    ";
+  if (ct === "topic_label") return "   / ";
+  if (ct === "skill_label") return "   ";
+  if (ct === "level_label") return "  ";
+  if (ct === "activity_instruction") return "   ";
+  if (ct === "generator_template") return "   ";
+  return " ";
 }
 
 function buildBeforeInContext(row, scenarioIndex) {
@@ -131,10 +131,10 @@ function buildBeforeInContext(row, scenarioIndex) {
   const scenario = scenarioIndex.get(`${subj}:${grade}:${topic}`);
   if (scenario && ct === "question_stem") {
     const parts = [
-      `שאלה: ${scenario.question_stem || text}`,
-      scenario.options ? `אפשרויות: ${scenario.options}` : "",
-      scenario.hint ? `רמז: ${scenario.hint}` : "",
-      scenario.explanation ? `הסבר: ${scenario.explanation}` : "",
+      `: ${scenario.question_stem || text}`,
+      scenario.options ? `: ${scenario.options}` : "",
+      scenario.hint ? `: ${scenario.hint}` : "",
+      scenario.explanation ? `: ${scenario.explanation}` : "",
       scenario.notes ? `[${scenario.notes}]` : "",
     ].filter(Boolean);
     return parts.join("\n").slice(0, 1200);
@@ -149,19 +149,19 @@ function buildBeforeInContext(row, scenarioIndex) {
   }
 
   if (ct === "answer_option") {
-    return `אפשרות תשובה בנושא ${topic || "לא ידוע"}, מקצוע ${subj || "לא ידוע"}, כיתה ${grade || "?"}`;
+    return `   ${topic || " "},  ${subj || " "},  ${grade || "?"}`;
   }
   if (ct === "hint" || ct === "explanation") {
-    return `טקסט ${ct === "hint" ? "רמז" : "הסבר"} עבור נושא ${topic || "לא ידוע"} (${subj || "?"})`;
+    return ` ${ct === "hint" ? "" : ""}   ${topic || " "} (${subj || "?"})`;
   }
   if (["topic_label", "skill_label", "level_label"].includes(ct)) {
-    return `תווית תוכנית: ${text} | מקצוע ${subj || "?"} כיתה ${grade || "?"}`;
+    return ` : ${text} |  ${subj || "?"}  ${grade || "?"}`;
   }
   return text.slice(0, 400);
 }
 
 function contextConfidence(row, before) {
-  if (before.includes("שאלה:") && before.includes("אפשרויות:")) return "high";
+  if (before.includes(":") && before.includes(":")) return "high";
   if (before.length > 120 && before.includes(substitutePlaceholders(row.current_hebrew || "").slice(0, 20))) return "high";
   if (Number(row.line) > 0 && before.length > 80) return "medium";
   if (row.inventory_sheet === "Owner Review Candidates") return "medium";

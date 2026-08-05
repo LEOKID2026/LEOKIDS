@@ -54,7 +54,7 @@ function row({ displayName, questions, correct, wrong, accuracy, behaviorType })
 }
 
 // Run the english_fragile_hints scenario
-const rowData = row({ displayName: "דקדוק", questions: 16, correct: 12, wrong: 4, accuracy: 75, behaviorType: "fragile_success" });
+const rowData = row({ displayName: "", questions: 16, correct: 12, wrong: 4, accuracy: 75, behaviorType: "fragile_success" });
 const mistakes = wrongEvents({ subject: "english", bucketKey: "grammar", count: 5, withHints: true });
 
 const result = runDiagnosticEngineV2({

@@ -26,7 +26,7 @@ import {
 
 describe("Global product — no active Hebrew", () => {
   test("synthetic Hebrew SVG/string is detected by Unicode guard", () => {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg"><text>שלום</text></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg"><text>\u05E9\u05DC\u05D5\u05DD</text></svg>`;
     const hit = scanTextForGlobalHebrewGuards(svg, { rel: "synthetic.svg" });
     assert.equal(hit.hebrew, true);
     const clean = scanTextForGlobalHebrewGuards(`<svg><text>Hello</text></svg>`, {
@@ -54,13 +54,17 @@ describe("Global product — no active Hebrew", () => {
     assert.equal(isAllowedPath("components/admin/Panel.jsx"), true);
     assert.equal(isAllowedPath("components/prototypes/X.jsx"), true);
     assert.equal(isAllowedPath("lib/admin-portal/labels.js"), true);
-    assert.equal(isAllowedPath("lib/auth/auth-registration-request.server.he.js"), true);
+    assert.equal(
+      fs.existsSync(path.join(ROOT, "lib/auth/auth-registration-request.server.he.js")),
+      false,
+      "GLOBAL must not ship auth-registration-request.server.he.js"
+    );
     assert.equal(isAllowedPath("public/rewards/cards/placeholders/gold/default.svg"), false);
     assert.equal(isAllowedPath("locales/en/common.json"), false);
   });
 
   test("comment-only Hebrew is exempt from rendered scan", () => {
-    const swComment = `// Cache רק קבצים סטטיים אמיתיים`;
+    const swComment = `// Cache \u05E8\u05E7 \u05E7\u05D1\u05E6\u05D9\u05DD \u05E1\u05D8\u05D8\u05D9\u05D9\u05DD \u05D0\u05DE\u05D9\u05EA\u05D9\u05D9\u05DD`;
     const hit = scanTextForGlobalHebrewGuards(swComment, { rel: "public/sw.js" });
     assert.equal(hit.hebrew, false);
     assert.equal(textHasHebrewUnicode(stripCommentsForScan(swComment, "public/sw.js")), false);

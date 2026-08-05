@@ -41,7 +41,7 @@ function buildForSource(
     topicRowKey: "grammar",
     row: {
       bucketKey: "grammar",
-      displayName: "דקדוק",
+      displayName: "",
       questions: q,
       correct: c,
       wrong: w,
@@ -94,7 +94,7 @@ function assertLpdParity(lpds, context) {
   );
   assertLpdParity(lpds, "q=5 repeated difficulty");
   assert.equal(lpds[0].findingType, "difficulty_pattern");
-  assert.match(lpds[0].parentVisibleFinding, /דפוס חוזר/);
+  assert.match(lpds[0].parentVisibleFinding, / /);
   assert.ok(lpds[0].blockedClaims.includes("no_root_cause_claim"));
 }
 
@@ -106,7 +106,7 @@ function assertLpdParity(lpds, context) {
       topicRowKey: "grammar",
       row: {
         bucketKey: "grammar",
-        displayName: "דקדוק",
+        displayName: "",
         questions: 5,
         correct: 5,
         wrong: 0,
@@ -121,7 +121,7 @@ function assertLpdParity(lpds, context) {
   assertLpdParity(lpds, "q=5 all correct");
   assert.equal(lpds[0].topicStatus, "positive_observed");
   assert.equal(lpds[0].findingType, "success_pattern");
-  assert.ok(lpds[0].parentVisibleFinding.includes("הצלחה"));
+  assert.ok(lpds[0].parentVisibleFinding.includes(""));
 }
 
 console.log("assigned-vs-self-parity.test.mjs - all passed");

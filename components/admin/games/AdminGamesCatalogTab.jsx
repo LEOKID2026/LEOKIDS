@@ -3,10 +3,10 @@ import Link from "next/link";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
 
 const CATEGORY_LABELS = {
-  online: "משחקי אונליין",
-  offline: "משחקים לא מקוונים",
-  solo: "משחקים רגילים",
-  educational: "משחקים חינוכיים",
+  online: " ",
+  offline: "  ",
+  solo: " ",
+  educational: " ",
 };
 
 export default function AdminGamesCatalogTab({ accessToken }) {
@@ -23,13 +23,13 @@ export default function AdminGamesCatalogTab({ accessToken }) {
       const res = await adminAuthFetch(accessToken, "/api/admin/games/catalog");
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error?.message || json.error?.code || json.error || "טעינה נכשלה");
+        setError(json.error?.message || json.error?.code || json.error || " ");
         setGames([]);
         return;
       }
       setGames(json.games || []);
     } catch {
-      setError("שגיאת רשת");
+      setError(" ");
     } finally {
       setLoading(false);
     }
@@ -54,14 +54,14 @@ export default function AdminGamesCatalogTab({ accessToken }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        setError(json.error?.message || json.error?.code || json.error || "שמירה נכשלה");
+        setError(json.error?.message || json.error?.code || json.error || " ");
         return;
       }
       setGames((prev) =>
         prev.map((g) => (g.game_key === gameKey ? { ...g, is_enabled: nextEnabled } : g))
       );
     } catch {
-      setError("שגיאת רשת");
+      setError(" ");
     } finally {
       setSavingKey(null);
     }
@@ -73,19 +73,19 @@ export default function AdminGamesCatalogTab({ accessToken }) {
   }));
 
   if (loading) {
-    return <p className="text-white/60 text-sm text-right">טוען משחקים...</p>;
+    return <p className="text-white/60 text-sm text-right"> ...</p>;
   }
 
   return (
     <div className="space-y-6 text-right" dir="rtl">
       <div>
-        <h2 className="text-lg font-bold text-white">ניהול משחקים (21)</h2>
+        <h2 className="text-lg font-bold text-white">  (21)</h2>
         <p className="text-sm text-white/60 mt-1">
-          כיבוי משחק בודד - מסתיר רק אותו. כיבוי כל המשחקים בקטגוריה - מסתיר את כרטיס הקטגוריה.
+             -   .     -    .
         </p>
         <p className="text-sm mt-2">
           <Link href="/admin/games/leo-miners" className="text-amber-200 hover:text-amber-100 underline">
-            Leo Miners - הגדרות משחק מלאות (כלכלה, caps, הפעלה)
+            Leo Miners -    (, caps, )
           </Link>
         </p>
       </div>
@@ -106,13 +106,13 @@ export default function AdminGamesCatalogTab({ accessToken }) {
                 <div>
                   <p className="font-semibold text-white">
                     {g.emoji ? `${g.emoji} ` : ""}
-                    {g.title_he}
+                    {g.title}
                   </p>
                   <p className="text-xs text-white/50">{g.game_key} · {g.route}</p>
                 </div>
                 <label className="inline-flex items-center gap-2 text-sm">
                   <span className={g.is_enabled ? "text-emerald-300" : "text-rose-300"}>
-                    {g.is_enabled ? "פעיל" : "לא פעיל"}
+                    {g.is_enabled ? "" : " "}
                   </span>
                   <input
                     type="checkbox"

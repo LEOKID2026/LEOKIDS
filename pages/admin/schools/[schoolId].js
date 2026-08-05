@@ -18,7 +18,7 @@ import {
   ADMIN_SECTION_AUDIT,
   auditActionLabelHe,
   apiErrorMessageHe,
-} from "../../../lib/admin-portal/admin-ui.he.js";
+} from "../../../lib/admin-portal/admin-ui.js";
 
 export default function AdminSchoolDetailPage() {
   const router = useRouter();
@@ -70,7 +70,7 @@ export default function AdminSchoolDetailPage() {
           <div className="space-y-8 text-right">
             <div>
               <Link href="/admin/schools" className="text-amber-300 text-sm hover:underline">
-                ← חזרה לבתי ספר
+                ←
               </Link>
             </div>
 
@@ -97,7 +97,7 @@ export default function AdminSchoolDetailPage() {
             </section>
 
             <section className="rounded-xl border border-white/15 bg-black/25 p-4">
-              <h2 className="font-semibold mb-3">שיוך מורים</h2>
+              <h2 className="font-semibold mb-3"> </h2>
               <SchoolTeacherAssignPanel
                 accessToken={accessToken}
                 schoolId={school.schoolId}
@@ -117,7 +117,7 @@ export default function AdminSchoolDetailPage() {
                   ))}
                 </ul>
               ) : (
-                <p className="text-white/50 text-sm">אין רשומות.</p>
+                <p className="text-white/50 text-sm"> .</p>
               )}
             </section>
           </div>

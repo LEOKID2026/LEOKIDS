@@ -25,7 +25,7 @@ test("fraction stems are detected and blanks stripped only for MCQ", () => {
   const open = {
     subject: "math",
     topic: "fractions",
-    question: "צמצם את השבר 3/15: __",
+    question: "   3/15: __",
   };
   assert.equal(isMathFractionsQuestionStem(open), true);
   assert.equal(shouldHideFractionsMcqTrailingBlank(open, { usesChoiceUi: false }), false);
@@ -38,7 +38,7 @@ test("fraction stems are detected and blanks stripped only for MCQ", () => {
   );
   assert.equal(stripRedundantTrailingAnswerBlank("1/4 + 2/3 = __"), "1/4 + 2/3 =");
   assert.equal(hasStackedFractionToken("1/4 + 2/3 ="), true);
-  assert.equal(hasStackedFractionToken("המר את המספר המעורב 1 7/8 לשבר"), true);
+  assert.equal(hasStackedFractionToken("    1 7/8 "), true);
 });
 
 test("frac_add_sub is not misclassified as addition for scratchpad", () => {
@@ -117,7 +117,7 @@ test("activity math MCQ for fractions and division_with_remainder", async () => 
     assignedActivityQuestionUsesChoiceUi({
       subject: "math",
       topic: "division_with_remainder",
-      answers: ["3 ושארית 1", "3 ושארית 2", "4 ושארית 1", "2 ושארית 1"],
+      answers: ["3  1", "3  2", "4  1", "2  1"],
     }),
     true
   );
@@ -129,7 +129,7 @@ test("activity math MCQ for fractions and division_with_remainder", async () => 
     question: "791 ÷ 10 = __",
     params: {
       kind: "div_with_remainder",
-      answers: ["79 ושארית 2", "79 ושארית 1", "78 ושארית 1", "80 ושארית 1"],
+      answers: ["79  2", "79  1", "78  1", "80  1"],
       dividend: 791,
       divisor: 10,
       quotient: 79,
@@ -137,10 +137,10 @@ test("activity math MCQ for fractions and division_with_remainder", async () => 
     },
   };
   assert.deepEqual(extractAssignedActivityMathMcqChoiceList(legacy), [
-    "79 ושארית 2",
-    "79 ושארית 1",
-    "78 ושארית 1",
-    "80 ושארית 1",
+    "79  2",
+    "79  1",
+    "78  1",
+    "80  1",
   ]);
   assert.equal(assignedActivityQuestionUsesChoiceUi(legacy), true);
   const promoted = promoteAssignedActivityMathMcqChoices(legacy);
@@ -155,10 +155,10 @@ test("activity math MCQ for fractions and division_with_remainder", async () => 
       question: "79 ÷ 5 = __",
       params: { kind: "div_with_remainder", dividend: 79, divisor: 5, quotient: 15, remainder: 4 },
     },
-    { correctAnswer: "15 ושארית 4" }
+    { correctAnswer: "15  4" }
   );
   assert.ok(Array.isArray(rebuilt.choices) && rebuilt.choices.length >= 2);
-  assert.ok(rebuilt.choices.includes("15 ושארית 4"));
+  assert.ok(rebuilt.choices.includes("15  4"));
   const rebuilt2 = hydrateAssignedActivityMathMcqQuestion(
     {
       subject: "math",
@@ -167,7 +167,7 @@ test("activity math MCQ for fractions and division_with_remainder", async () => 
       question: "79 ÷ 5 = __",
       params: { kind: "div_with_remainder", dividend: 79, divisor: 5, quotient: 15, remainder: 4 },
     },
-    { correctAnswer: "15 ושארית 4" }
+    { correctAnswer: "15  4" }
   );
   assert.deepEqual(rebuilt.choices, rebuilt2.choices);
 

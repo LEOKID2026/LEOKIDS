@@ -580,7 +580,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   if (Array.isArray(sub.weaknesses)) return sub;
   const weaknesses = (sub.stableWeaknesses || []).slice(0, 2).map((w, i) => ({
     id: w.id || `${subjectId}:w:${i}`,
-    labelHe:
+    label:
       stripTechnicalParensHe(
         String(w.label || "").replace(
           /Mistake pattern\s*\([^)]+\)/i,
@@ -592,7 +592,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   const legacyStrengths = sub.stableStrengths || [];
   const excellent = legacyStrengths.slice(0, 2).map((s) => ({
     id: s.id,
-    labelHe: stripTechnicalParensHe(
+    label: stripTechnicalParensHe(
       String(s.label || "").replace(/^[^:]+:\s*/, "").trim()
     ) || reportPackCopy("pages__learning__parent-report", "in_this_topic"),
     questions: Number(s.questions) || 0,
@@ -604,16 +604,16 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
     .slice(0, 1)
     .map((r, i) => ({
       id: r.id || `stu-imp:${i}`,
-      textHe: stripTechnicalParensHe(r.text),
+      text: stripTechnicalParensHe(r.text),
       strength: r.strength || "moderate"}))
-    .filter((r) => r.textHe);
+    .filter((r) => r.text);
   const parentRecommendationsImprove = (sub.parentRecommendations || [])
     .slice(0, 1)
     .map((r, i) => ({
       id: r.id || `par-imp:${i}`,
-      textHe: stripTechnicalParensHe(r.text),
+      text: stripTechnicalParensHe(r.text),
       strength: r.strength || "moderate"}))
-    .filter((r) => r.textHe);
+    .filter((r) => r.text);
   let evidenceMistake = (sub.evidenceExamples || [])[0] || null;
   if (evidenceMistake) {
     const c = evidenceMistake.confidence;
@@ -631,7 +631,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
   }
   const topWeaknesses = weaknesses.map((w, i) => ({
     id: w.id || `${subjectId}:w:${i}`,
-    labelHe: w.labelHe,
+    label: w.label,
     mistakeCount: w.mistakeCount,
     confidence: w.confidence,
     tierHe:
@@ -647,7 +647,7 @@ function migrateDiagnosticSubjectV1ToRow(sub, subjectId) {
       : reportPackCopy("pages__learning__parent-report", "tier_strong_now")}));
   const evidenceExamples = [];
   if (evidenceMistake) evidenceExamples.push({ type: "mistake", ...evidenceMistake });
-  const parentActionHe = parentRecommendationsImprove[0]?.textHe || null;
+  const parentActionHe = parentRecommendationsImprove[0]?.text || null;
   const hasAnySignal =
     weaknesses.length > 0 ||
     excellent.length > 0 ||
@@ -1619,10 +1619,10 @@ export default function ParentReport() {
           <ParentReportThemeIcons className="mb-2" />
           <div className="text-4xl">📊</div>
           <h1 className={`text-2xl font-bold ${isBright ? "text-slate-900" : "text-white"}`}>
-            {PARENT_REPORT_PORTAL_GATE.titleHe}
+            {PARENT_REPORT_PORTAL_GATE.title}
           </h1>
           <p className={`text-center max-w-md ${isBright ? "text-slate-600" : "text-white/80"}`}>
-            {PARENT_REPORT_PORTAL_GATE.messageHe}
+            {PARENT_REPORT_PORTAL_GATE.message}
           </p>
           <p className={`text-center text-sm max-w-md ${isBright ? "text-slate-500" : "text-white/50"}`}>
             {PARENT_REPORT_PORTAL_GATE.hintHe}
@@ -2966,7 +2966,7 @@ export default function ParentReport() {
                         if (evS && (evS.confidence === "high" || evS.confidence === "moderate")) {
                           evidenceList.push({
                             type: "success",
-                            titleHe: evS.titleHe,
+                            title: evS.title,
                             bodyHe: evS.bodyHe,
                             confidence: evS.confidence});
                         }
@@ -3016,7 +3016,7 @@ export default function ParentReport() {
                                       className="space-y-0.5 border-b border-white/10 last:border-0 pb-1.5 last:pb-0"
                                     >
                                       <div className="font-semibold text-white/88 break-words">
-                                        {diagnosticParentVisibleTextHe(card.labelHe)}
+                                        {diagnosticParentVisibleTextHe(card.label)}
                                       </div>
                                       {Array.isArray(card.evidence)
                                         ? card.evidence.map((line, li) => (
@@ -3092,7 +3092,7 @@ export default function ParentReport() {
                                       {x.tierHe || reportPackCopy("pages__learning__parent-report", "tier_does_well_over_time")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
+                                      {diagnosticParentVisibleTextHe(x.label)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3115,7 +3115,7 @@ export default function ParentReport() {
                                       {x.tierHe || reportPackCopy("pages__learning__parent-report", "good_results_in_this_topic")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
+                                      {diagnosticParentVisibleTextHe(x.label)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3138,7 +3138,7 @@ export default function ParentReport() {
                                       {maintainTierHeDisplay(x.tierHe) || reportPackCopy("pages__learning__parent-report", "tier_consistency")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(x.labelHe)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
+                                      {diagnosticParentVisibleTextHe(x.label)} - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
                                   </div>
                                 </div>
@@ -3162,7 +3162,7 @@ export default function ParentReport() {
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
                                       {diagnosticParentVisibleTextHe(
-                                        improvingDiagnosticsDisplayLabelHe(x.labelHe)
+                                        improvingDiagnosticsDisplayLabelHe(x.label)
                                       )}{" "}
                                       - {reportPackCopy("pages__learning__parent-report", "accuracy_questions_meta", { accuracy: x.accuracy, questions: x.questions })}
                                     </div>
@@ -3187,7 +3187,7 @@ export default function ParentReport() {
                                       {weaknessTierHeDisplay(w.tierHe) || reportPackCopy("pages__learning__parent-report", "area_to_reinforce")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(w.labelHe)}
+                                      {diagnosticParentVisibleTextHe(w.label)}
                                       {typeof w.mistakeCount === "number"
                                         ? ` (${reportPackCopy("pages__learning__parent-report", "similar_mistakes_count", { n: w.mistakeCount })})`
                                         : ""}
@@ -3245,7 +3245,7 @@ export default function ParentReport() {
                                       {reportPackCopy("pages__learning__parent-report", "recommendation_for_child")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(r.textHe)}
+                                      {diagnosticParentVisibleTextHe(r.text)}
                                     </div>
                                   </div>
                                 </div>
@@ -3263,7 +3263,7 @@ export default function ParentReport() {
                                       {reportPackCopy("pages__learning__parent-report", "recommendation_for_child_maintain")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(r.textHe)}
+                                      {diagnosticParentVisibleTextHe(r.text)}
                                     </div>
                                   </div>
                                 </div>
@@ -3281,7 +3281,7 @@ export default function ParentReport() {
                                       {reportPackCopy("pages__learning__parent-report", "recommendation_for_parent_encourage")}
                                     </div>
                                     <div className="parent-report-print-muted-text text-xs md:text-sm text-white/80 break-words">
-                                      {diagnosticParentVisibleTextHe(r.textHe)}
+                                      {diagnosticParentVisibleTextHe(r.text)}
                                     </div>
                                   </div>
                                 </div>
@@ -3348,7 +3348,7 @@ export default function ParentReport() {
                                   className="parent-report-rec-item parent-report-example-card parent-report-example-success p-2 md:p-3 rounded-lg border bg-emerald-500/10 border-emerald-400/30"
                                 >
                                   <div className="parent-report-example-heading font-semibold text-xs text-emerald-100/90 mb-1">
-                                    {ev.titleHe}
+                                    {ev.title}
                                   </div>
                                   <div className="parent-report-example-prose text-xs text-white/85 break-words">
                                     {ev.bodyHe}

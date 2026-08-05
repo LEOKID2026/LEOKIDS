@@ -19,14 +19,14 @@ const root = join(__dirname, "..");
 const phase3Ids = new Set(SCIENCE_QUESTIONS_PHASE3.map((q) => q.id));
 
 const TOPIC_HEADERS = {
-  body: "גוף האדם",
-  animals: "בעלי חיים",
-  plants: "צמחים",
-  materials: "חומרים",
-  earth_space: "כדור הארץ והחלל",
-  environment: "סביבה ואקולוגיה",
-  experiments: "ניסויים ותהליכים",
-  mixed: "ערבוב נושאים",
+  body: " ",
+  animals: " ",
+  plants: "",
+  materials: "",
+  earth_space: "  ",
+  environment: " ",
+  experiments: " ",
+  mixed: " ",
 };
 
 function jsStr(s) {
@@ -34,37 +34,37 @@ function jsStr(s) {
 }
 
 function rakInner(rak) {
-  return rak.replace(/^רק\s+/, "").trim();
+  return rak.replace(/^\s+/, "").trim();
 }
 
 /** Varied, parallel-length wrong lines — avoid one shared prefix that marks distractors */
 function expandRak(rak, salt) {
   const x = rakInner(rak);
   const openers = [
-    () => `מתמקד ב${x} בלבד ומתעלם משאר הרכיבים הנדרשים להבנה מלאה`,
-    () => `מצמצם את ההסבר ל${x} בלי להשלים את החלקים החסרים בהגדרה`,
-    () => `מניח שהדגש על ${x} מספיק כאן בלי להרחיב את ההגדרה`,
-    () => `מתאר בעיקר את ${x} ולא את המבנה המלא של התשובה הנכונה`,
+    () => ` ${x}       `,
+    () => `   ${x}      `,
+    () => `   ${x}      `,
+    () => `   ${x}       `,
   ];
   return openers[salt % 4]();
 }
 
 function expandTiny(o, salt) {
   const tails = [
-    ` — אינו ממלא את כל מה שהשאלה מבקשת`,
-    ` — קצר מדי בשביל להיות תשובה שלמה כאן`,
-    ` — לא סוגר את כל הדרוש להבנה`,
-    ` — חסר פירוט בהשוואה לניסוח מלא`,
+    ` —       `,
+    ` —       `,
+    ` —      `,
+    ` —     `,
   ];
   return `${o}${tails[salt % 4]}`;
 }
 
 function padShort(o, salt) {
   const tails = [
-    ` — חסר הקשרים הנוספים להבנה מלאה`,
-    ` — לא מוסיף את שכבת ההסבר הנדרשת כאן`,
-    ` — נשאר כללי מדי בלי לחבר את כל החלקים`,
-    ` — אינו משלים את התמונה שבשאלה`,
+    ` —     `,
+    ` —       `,
+    ` —        `,
+    ` —     `,
   ];
   return `${o}${tails[salt % 4]}`;
 }
@@ -92,7 +92,7 @@ function rebalanceQuestion(q) {
   for (let i = 0; i < opts.length; i++) {
     if (i === ci) continue;
     let o = opts[i];
-    if (/^רק\s+/.test(o)) opts[i] = expandRak(o, salt + i);
+    if (/^\s+/.test(o)) opts[i] = expandRak(o, salt + i);
     else if (o.length < 14 && cl > 38) opts[i] = expandTiny(o, salt + i);
   }
 

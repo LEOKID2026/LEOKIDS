@@ -1319,9 +1319,9 @@ test.describe("monitor student answers UI @monitor-student-answers", () => {
   test("[MON-UI-01] monitor page opens student answers modal", async ({ page }) => {
     test.skip(!classId || !activityId, "setup missing");
     await page.goto("/teacher/login", { waitUntil: "domcontentloaded" });
-    await page.getByPlaceholder("המייל שלך").fill(TEACHER_EMAIL);
+    await page.getByPlaceholder(" ").fill(TEACHER_EMAIL);
     await page.locator('input[type="password"]').fill(TEACHER_PASSWORD);
-    await page.getByRole("button", { name: "כניסה" }).click();
+    await page.getByRole("button", { name: "" }).click();
     await page.waitForURL(/\/teacher\/dashboard\/?/, { timeout: 45_000 });
 
     await page.goto(
@@ -1337,7 +1337,7 @@ test.describe("monitor student answers UI @monitor-student-answers", () => {
     );
     await page
       .locator("tbody tr")
-      .filter({ hasText: "הוגש" })
+      .filter({ hasText: "" })
       .getByTestId("teacher-view-student-answers")
       .click();
     await expect(page.getByTestId("teacher-student-answers-modal")).toBeVisible({
@@ -1349,6 +1349,6 @@ test.describe("monitor student answers UI @monitor-student-answers", () => {
     });
     await expect(page.getByTestId("student-selected-answer").first()).not.toHaveText("-");
     await expect(page.getByTestId("student-correct-answer").first()).not.toHaveText("-");
-    await expect(page.getByText("נכון").first()).toBeVisible();
+    await expect(page.getByText("").first()).toBeVisible();
   });
 });

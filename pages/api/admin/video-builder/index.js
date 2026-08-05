@@ -33,7 +33,7 @@ export default async function handler(req, res) {
 
       const created = await createVideoProject(parsed.payload);
       if (!created.ok) {
-        return sendAdminApiError(res, 500, "create_failed", "יצירת סרטון נכשלה");
+        return sendAdminApiError(res, 500, "create_failed", "  ");
       }
       return res.status(201).json({ data: { project: created.project } });
     }

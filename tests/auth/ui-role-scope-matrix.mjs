@@ -196,7 +196,7 @@ async function main() {
     "staff_invite_form_no_student_wording",
     !inviteFormSource.includes("SCHOOL_STUDENT_ID") &&
       !inviteFormSource.includes("SCHOOL_ENROLL_SECTION") &&
-      !inviteFormSource.includes("תלמיד"),
+      !inviteFormSource.includes(""),
     "SchoolStaffEmailInviteForm uses email-first copy"
   );
 
@@ -206,8 +206,8 @@ async function main() {
   record(
     "operator_ui_no_teacher_subject_strings",
     !operatorGrantSource.includes("SCHOOL_SUBJECT") &&
-      !operatorGrantSource.includes("כיתות של המורה") &&
-      !operatorGrantSource.includes("הוספת מקצוע"),
+      !operatorGrantSource.includes("  ") &&
+      !operatorGrantSource.includes(" "),
     "operator grant panel is grant-only"
   );
 
@@ -251,10 +251,10 @@ async function main() {
     "plan label mapper"
   );
 
-  const { planCodeLabelHe } = await import("../../lib/admin-portal/admin-ui.he.js");
+  const { planCodeLabelHe } = await import("../../lib/admin-portal/admin-ui.js");
   record(
     "plan_label_teacher_basic_20",
-    planCodeLabelHe("teacher_basic_20") === "תוכנית בסיסית - עד 20 תלמידים",
+    planCodeLabelHe("teacher_basic_20") === "  -  20 ",
     planCodeLabelHe("teacher_basic_20")
   );
 

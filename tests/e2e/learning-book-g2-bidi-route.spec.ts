@@ -7,63 +7,63 @@ const REQUIRED_ROUTES = [
   {
     pageId: "add_two",
     section: 2,
-    title: "חיבור שני מספרים",
+    title: "  ",
     expected: ["30 + 20 = 50", "4 + 5 = 9", "50 + 9 = 59"],
     forbidden: ["5030", "5950"],
   },
   {
     pageId: "sub_two",
     section: 2,
-    title: "חיסור שני מספרים",
+    title: "  ",
     expected: ["60 − 20 = 40", "8 − 4 = 4", "40 + 4 = 44"],
     forbidden: ["4060", "4440"],
   },
   {
     pageId: "sub_two",
     section: 3,
-    title: "חיסור שני מספרים - דוגמה מלאה",
+    title: "   -  ",
     expected: ["68 − 24 = 44"],
     forbidden: ["4468 − 24"],
   },
   {
     pageId: "sub_vertical",
     section: 3,
-    title: "חיסור מאונך",
+    title: " ",
     expected: ["52 − 27 = 25"],
     forbidden: ["2552"],
   },
   {
     pageId: "add_vertical",
     section: 3,
-    title: "חיבור מאונך",
+    title: " ",
     expected: ["7 + 8 = 15", "47 + 28 = 75"],
     forbidden: ["157 + 8", "7547 + 28"],
   },
   {
     pageId: "ns_even_odd",
     section: 3,
-    title: "זוגי ואי-זוגי",
-    expected: ["24 זוגי", "35 אי-זוגי"],
-    forbidden: ["24זוגי", "35אי-זוגי"],
+    title: " -",
+    expected: ["24 ", "35 -"],
+    forbidden: ["24", "35-"],
   },
   {
     pageId: "ns_neighbors",
     section: 3,
-    title: "ציר מספרים",
+    title: " ",
     expected: ["248 − 1 = 247", "248 + 1 = 249"],
     forbidden: ["137 + 6", "10 + 133"],
   },
   {
     pageId: "ns_place_tens_units",
     section: 3,
-    title: "עשרות ואחדות",
+    title: " ",
     expected: ["100 + 20 + 4 = 124", "400 + 0 + 5 = 405"],
     forbidden: ["124 = 100 + 20 + 4", "405 = 400 + 0 + 5"],
   },
   {
     pageId: "cmp",
     section: 3,
-    title: "השוואות",
+    title: "",
     expected: ["612 < 628", "628 > 612"],
     forbidden: ["628612", "612628"],
   },
@@ -75,7 +75,7 @@ const OWNER_FORBIDDEN = [
   "2552",
   "4060",
   "4440",
-  "24זוגי",
+  "24",
   "137 + 6",
   "10 + 133",
   "58 = 50 + 8",
@@ -102,12 +102,12 @@ async function openBookSection(page: Page, pageId: string, section: number, grad
 
   for (let current = 1; current < section; current += 1) {
     const next = page
-      .getByRole("navigation", { name: "ניווט בין עמודים בנושא" })
-      .getByRole("button", { name: "עמוד הבא" });
+      .getByRole("navigation", { name: "   " })
+      .getByRole("button", { name: " " });
     await next.scrollIntoViewIfNeeded();
     await expect(next).toBeEnabled();
     await next.click();
-    await expect(page.getByText(`עמוד ${current + 1} מתוך`, { exact: false })).toBeVisible();
+    await expect(page.getByText(` ${current + 1} `, { exact: false })).toBeVisible();
   }
 }
 
@@ -227,7 +227,7 @@ async function getRenderedDiagramAndAnswerBlock(page: Page, answerText: string) 
         .replace(/\s+/g, " ")
         .trim();
 
-    const diagram = root.querySelector<HTMLElement>('[role="img"][aria-label="דוגמה"]');
+    const diagram = root.querySelector<HTMLElement>('[role="img"][aria-label=""]');
     const diagramRows = diagram
       ? Array.from(diagram.querySelectorAll<HTMLElement>("[data-book-diagram-line]")).map(
           (line) => ({
@@ -274,7 +274,7 @@ type DiagramVisualRow = {
 };
 
 async function getDiagramVisualLayout(page: Page): Promise<DiagramVisualRow[]> {
-  return page.locator('[role="img"][aria-label="דוגמה"]').evaluate((diagram) => {
+  return page.locator('[role="img"][aria-label=""]').evaluate((diagram) => {
     const normalize = (value: string) =>
       value
         .replace(/\u00a0/g, " ")
@@ -405,7 +405,7 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
     });
   }
 
-  test("חיבור עם נשיאה: exact ordered explanation block uses one structured renderer", async ({
+  test("  : exact ordered explanation block uses one structured renderer", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
@@ -415,9 +415,9 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
     expect(block.lines).toEqual([
       "50 + 8 = 58",
       "30 + 7 = 37",
-      "עשרות: 50 + 30 = 80",
-      "אחדות: 8 + 7 = 15 → 5, נשיאה 1",
-      "סה״כ: 80 + 15 = 95",
+      ": 50 + 30 = 80",
+      ": 8 + 7 = 15 → 5,  1",
+      ": 80 + 15 = 95",
       "58 + 37 = 95",
     ]);
     expect(new Set(block.diagramRenderers)).toEqual(new Set(["structured-mixed"]));
@@ -428,7 +428,7 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
     });
   });
 
-  test("חיבור עם נשיאה: diagram layout keeps one math column and label gaps", async ({
+  test("  : diagram layout keeps one math column and label gaps", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
@@ -440,7 +440,7 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
     const pureMathRows = layout.filter(
       (row) => row.innerText === "50 + 8 = 58" || row.innerText === "30 + 7 = 37"
     );
-    const labeledRows = layout.filter((row) => /^(עשרות|אחדות|סה״כ):/.test(row.innerText));
+    const labeledRows = layout.filter((row) => /^(||):/.test(row.innerText));
 
     expect(pureMathRows).toHaveLength(2);
     expect(labeledRows).toHaveLength(3);
@@ -459,20 +459,20 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
       ).toBeLessThanOrEqual(4);
     }
 
-    const tensRow = layout.find((row) => row.innerText.startsWith("עשרות:"));
+    const tensRow = layout.find((row) => row.innerText.startsWith(":"));
     expect(tensRow?.labelToMathGapPx ?? 0).toBeGreaterThanOrEqual(4);
-    expect(tensRow?.visualText).toMatch(/^עשרות:\s+50 \+ 30 = 80$/);
+    expect(tensRow?.visualText).toMatch(/^:\s+50 \+ 30 = 80$/);
 
-    const onesRow = layout.find((row) => row.innerText.startsWith("אחדות:"));
-    expect(onesRow?.visualText).toMatch(/^אחדות:\s+8 \+ 7 = 15 → 5,\s*נשיאה 1$/);
+    const onesRow = layout.find((row) => row.innerText.startsWith(":"));
+    expect(onesRow?.visualText).toMatch(/^:\s+8 \+ 7 = 15 → 5,\s* 1$/);
     expect(onesRow?.proseToMathGapPx ?? 99).toBeLessThanOrEqual(8);
 
-    await page.locator('[role="img"][aria-label="דוגמה"]').screenshot({
+    await page.locator('[role="img"][aria-label=""]').screenshot({
       path: `${SCREENSHOT_DIR}/g2-add_two-section-3-diagram-layout.png`,
     });
   });
 
-  test("חיסור: diagram decomposition rows are parts-first and compact", async ({
+  test(": diagram decomposition rows are parts-first and compact", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
@@ -482,30 +482,30 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
     expect(layout.map((row) => row.innerText)).toEqual([
       "60 + 8 = 68",
       "20 + 4 = 24",
-      "עשרות: 60 − 20 = 40",
-      "אחדות: 8 − 4 = 4",
-      "סה״כ: 40 + 4 = 44",
+      ": 60 − 20 = 40",
+      ": 8 − 4 = 4",
+      ": 40 + 4 = 44",
     ]);
 
     for (const forbidden of ["68 = 60 + 8", "24 = 20 + 4"]) {
       expect(layout.some((row) => row.innerText === forbidden)).toBe(false);
     }
 
-    const tensRow = layout.find((row) => row.innerText.startsWith("עשרות:"));
+    const tensRow = layout.find((row) => row.innerText.startsWith(":"));
     expect(tensRow?.labelToMathGapPx ?? 0).toBeGreaterThanOrEqual(4);
-    expect(tensRow?.visualText).toMatch(/^עשרות:\s+60 − 20 = 40$/);
+    expect(tensRow?.visualText).toMatch(/^:\s+60 − 20 = 40$/);
 
     await page.screenshot({
       path: `${SCREENSHOT_DIR}/g2-sub_two-section-3-exact-block.png`,
       fullPage: true,
     });
 
-    await page.locator('[role="img"][aria-label="דוגמה"]').screenshot({
+    await page.locator('[role="img"][aria-label=""]').screenshot({
       path: `${SCREENSHOT_DIR}/g2-sub_two-section-3-diagram-layout.png`,
     });
   });
 
-  test("חיסור: exact ordered explanation block uses one structured renderer", async ({
+  test(": exact ordered explanation block uses one structured renderer", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
@@ -515,9 +515,9 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
     expect(block.lines).toEqual([
       "60 + 8 = 68",
       "20 + 4 = 24",
-      "עשרות: 60 − 20 = 40",
-      "אחדות: 8 − 4 = 4",
-      "סה״כ: 40 + 4 = 44",
+      ": 60 − 20 = 40",
+      ": 8 − 4 = 4",
+      ": 40 + 4 = 44",
       "68 − 24 = 44",
     ]);
     expect(new Set(block.diagramRenderers)).toEqual(new Set(["structured-mixed"]));
@@ -525,70 +525,70 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
 
   for (const blockCase of [
     {
-      title: "חיבור מאונך",
+      title: " ",
       pageId: "add_vertical",
       section: 3,
       expected: [
-        "אחדות: 7 + 8 = 15 → כותבים 5, מעבירים 1 לעשרות",
-        "עשרות: 4 + 2 + 1 (נשיאה) = 7",
+        ": 7 + 8 = 15 →  5,  1 ",
+        ": 4 + 2 + 1 () = 7",
         "47 + 28 = 75",
       ],
     },
     {
-      title: "חיסור עם השאלה",
+      title: "  ",
       pageId: "sub_vertical",
       section: 3,
       expected: [
-        "באחדות 2 קטן מ-7 → מחליפים עשרה: 52 → 42 + 12 (4 עשרות, 12 אחדות)",
-        "אחדות: 12 − 7 = 5",
-        "עשרות: 4 − 2 = 2",
+        " 2  -7 →  : 52 → 42 + 12 (4 , 12 )",
+        ": 12 − 7 = 5",
+        ": 4 − 2 = 2",
         "52 − 27 = 25",
       ],
     },
     {
-      title: "כפל קבוצות",
+      title: " ",
       pageId: "mul",
       section: 3,
-      expected: ["4 × 6 = 24", "חיבור חוזר: 6 + 6 + 6 + 6 = 24"],
+      expected: ["4 × 6 = 24", " : 6 + 6 + 6 + 6 = 24"],
     },
     {
-      title: "זוגי ואי-זוגי",
+      title: " -",
       pageId: "ns_even_odd",
       section: 3,
       expected: [
-        "24 - זוגי:",
-        "לכל כוכב יש שותף → 24 זוגי.",
-        "35 - אי-זוגי:",
-        "נשאר כוכב אחד לבד → 35 אי-זוגי.",
-        "טיפ: ב-35 הספרה האחרונה היא 5 → אי-זוגי.",
+        "24 - :",
+        "    → 24 .",
+        "35 - -:",
+        "    → 35 -.",
+        ": -35    5 → -.",
       ],
     },
     {
-      title: "ציר מספרים",
+      title: " ",
       pageId: "ns_neighbors",
       section: 3,
       expected: ["248 − 1 = 247", "248 + 1 = 249"],
     },
     {
-      title: "עשרות ואחדות",
+      title: " ",
       pageId: "ns_place_tens_units",
       section: 3,
       expected: [
-        "1 מאה + 2 עשרות + 4 אחדות = 124",
+        "1  + 2  + 4  = 124",
         "100 + 20 + 4 = 124",
-        "דוגמה נוספת - 405:",
-        "4 מאות, 0 עשרות, 5 אחדות",
+        "  - 405:",
+        "4 , 0 , 5 ",
         "400 + 0 + 5 = 405",
       ],
     },
     {
-      title: "השוואות",
+      title: "",
       pageId: "cmp",
       section: 3,
       expected: [
-        "מאות: 6 = 6 → שוות, ממשיכים",
-        "עשרות: 1 < 2",
-        "612 קטן מ-628, לכן: 612 < 628",
+        ": 6 = 6 → , ",
+        ": 1 < 2",
+        "612  -628, : 612 < 628",
       ],
     },
   ]) {
@@ -638,23 +638,23 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
       renderer: "PlaceValueDiagram",
       pageId: "ns_place_tens_units",
       section: 3,
-      selector: "[aria-label='טבלת ערך מקום']",
-      expected: ["מאות", "עשרות", "אחדות", "1", "2", "4"],
+      selector: "[aria-label='  ']",
+      expected: ["", "", "", "1", "2", "4"],
       forbidden: ["124 = 100 + 20 + 4", "405 = 400 + 0 + 5"],
     },
     {
       renderer: "object visual rows",
       pageId: "mul",
       section: 3,
-      selector: "[role='img'][aria-label='דוגמה']",
-      expected: ["4 × 6 = 24", "חיבור חוזר: 6 + 6 + 6 + 6 = 24"],
-      forbidden: ["246 + 6 + 6", "24זוגי"],
+      selector: "[role='img'][aria-label='']",
+      expected: ["4 × 6 = 24", " : 6 + 6 + 6 + 6 = 24"],
+      forbidden: ["246 + 6 + 6", "24"],
     },
     {
       renderer: "card visual rows",
       pageId: "wp_groups_g2",
       section: 3,
-      selector: "[role='img'][aria-label='דוגמה']",
+      selector: "[role='img'][aria-label='']",
       expected: ["5 × 4 = 20"],
       forbidden: ["2552", "5030"],
     },
@@ -662,29 +662,29 @@ test.describe("Grade 2 math learning book route-level BiDi regressions", () => {
       renderer: "coin visual rows",
       pageId: "wp_coins",
       section: 3,
-      selector: "[role='img'][aria-label='דוגמה']",
+      selector: "[role='img'][aria-label='']",
       expected: ["4 × 5 = 20"],
-      forbidden: ["24זוגי", "5030"],
+      forbidden: ["24", "5030"],
     },
     {
       renderer: "BookExampleTitleLine",
       pageId: "add_two",
       section: 3,
       selector: "[data-book-example-title]",
-      expected: ["58 + 37", "פירוק לעשרות ואחדות"],
-      forbidden: ["3758", "58 + 37פירוק"],
+      expected: ["58 + 37", "  "],
+      forbidden: ["3758", "58 + 37"],
     },
     {
       renderer: "FrameDiagram",
       pageId: "ns_complement10",
       section: 3,
-      selector: "[role='img'][aria-label='דוגמה']",
+      selector: "[role='img'][aria-label='']",
       expected: [
-        "7 מקומות מלאים",
-        "3 מקומות ריקים",
+        "7  ",
+        "3  ",
         "7 + 3 = 10",
       ],
-      forbidden: ["37 מקומות", "73 מקומות", "5030", "3020"],
+      forbidden: ["37 ", "73 ", "5030", "3020"],
       noLtrHebrewPhrase: true,
     },
   ]) {

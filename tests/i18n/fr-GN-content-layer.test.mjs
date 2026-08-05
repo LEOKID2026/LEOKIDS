@@ -32,7 +32,7 @@ const SCOPE_LEAK_RE =
 const ALL_GUINEA_FRENCH_CLAIM_RE =
   /(?:français\s+(?:est\s+)?(?:la\s+)?seule\s+langue|seule\s+langue\s+(?:parlée\s+)?(?:en\s+)?Guinée|tous\s+les\s+(?:élèves|enfants)\s+(?:de\s+la\s+)?Guinée|représente\s+(?:toute\s+)?(?:la\s+)?Guinée|pour\s+toute\s+la\s+Guinée)/i;
 const DEAD_CURRICULUM_RE =
-  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|מולדת|עברית|ישראל/i;
+  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|||/i;
 
 /**
  * @param {string} dir

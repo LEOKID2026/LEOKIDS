@@ -78,7 +78,7 @@ export default async function handler(req, res) {
       const subjects = Object.entries(payload.subjectPermissions)
         .map(([subjectKey, row]) => ({
           subjectKey,
-          labelHe: getSubjectPermissionLabelHe(subjectKey),
+          label: getSubjectPermissionLabelHe(subjectKey),
           isEnabled: row.isEnabled,
           isGradeSuitable: row.isGradeSuitable,
           effectiveGrade: row.effectiveGrade,
@@ -149,7 +149,7 @@ export default async function handler(req, res) {
       );
       const subjects = Object.entries(payload.subjectPermissions).map(([subjectKey, row]) => ({
         subjectKey,
-        labelHe: getSubjectPermissionLabelHe(subjectKey),
+        label: getSubjectPermissionLabelHe(subjectKey),
         isEnabled: row.isEnabled,
         isGradeSuitable: row.isGradeSuitable,
         effectiveGrade: row.effectiveGrade,

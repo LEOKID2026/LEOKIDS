@@ -24,7 +24,7 @@ const payload = syntheticPayload();
 const tp = buildTruthPacketV1(payload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "",
   interpretationScope: "executive",
   scopeClass: "executive",
 });
@@ -35,7 +35,7 @@ const tpIneligible = buildTruthPacketV1(
   {
     scopeType: "topic",
     scopeId: "t1",
-    scopeLabel: "שברים",
+    scopeLabel: "",
     interpretationScope: "recommendation",
     scopeClass: "recommendation",
   },
@@ -48,7 +48,7 @@ const badNext = validateAnswerDraft(
     answerBlocks: [
       { type: "observation", textHe: String(tp.contracts?.narrative?.textSlots?.observation || "x"), source: "contract_slot" },
       { type: "meaning", textHe: String(tp.contracts?.narrative?.textSlots?.interpretation || "y"), source: "contract_slot" },
-      { type: "next_step", textHe: "מומלץ חיזוק ממוקד.", source: "contract_slot" },
+      { type: "next_step", textHe: "  .", source: "contract_slot" },
     ],
   },
   tpIneligible,
@@ -62,7 +62,7 @@ const badContradiction = validateAnswerDraft(
     answerBlocks: [
       { type: "observation", textHe: String(tpIneligible.contracts?.narrative?.textSlots?.observation || ""), source: "contract_slot" },
       { type: "meaning", textHe: String(tpIneligible.contracts?.narrative?.textSlots?.interpretation || ""), source: "contract_slot" },
-      { type: "uncertainty_reason", textHe: "זה סופי שאין מה לדייק כאן.", source: "composed" },
+      { type: "uncertainty_reason", textHe: "     .", source: "composed" },
     ],
   },
   tpIneligible,
@@ -76,7 +76,7 @@ const badRecWording = validateAnswerDraft(
     answerBlocks: [
       { type: "observation", textHe: String(tpIneligible.contracts?.narrative?.textSlots?.observation || ""), source: "contract_slot" },
       { type: "meaning", textHe: String(tpIneligible.contracts?.narrative?.textSlots?.interpretation || ""), source: "contract_slot" },
-      { type: "meaning", textHe: "מומלץ לכם לתרגל עשר דקות היום בבית.", source: "composed" },
+      { type: "meaning", textHe: "      .", source: "composed" },
     ],
   },
   tpIneligible,
@@ -104,7 +104,7 @@ const badRi = validateAnswerDraft(
   {
     answerBlocks: [
       { type: "observation", textHe: String(tp.contracts?.narrative?.textSlots?.observation || ""), source: "contract_slot" },
-      { type: "meaning", textHe: "עלו לרמה RI2 מיד.", source: "composed" },
+      { type: "meaning", textHe: "  RI2 .", source: "composed" },
     ],
   },
   tp,
@@ -118,7 +118,7 @@ const badStrength = validateAnswerDraft(
     answerBlocks: [
       { type: "observation", textHe: String(tpIneligible.contracts?.narrative?.textSlots?.observation || ""), source: "contract_slot" },
       { type: "meaning", textHe: String(tpIneligible.contracts?.narrative?.textSlots?.interpretation || ""), source: "contract_slot" },
-      { type: "meaning", textHe: "הילד מצטיין במקצוע וחוזק יוצא דופן.", source: "composed" },
+      { type: "meaning", textHe: "     .", source: "composed" },
     ],
   },
   tpIneligible,
@@ -137,7 +137,7 @@ sessionMemory.resetParentCopilotSessionForTests("phase5-fb");
 const r = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: syntheticPayload({ eligible: false }),
-  utterance: "מה לעשות עכשיו",
+  utterance: "  ",
   sessionId: "phase5-fb",
 });
 assert.equal(r.resolutionStatus, "resolved");

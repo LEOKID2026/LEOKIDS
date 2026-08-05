@@ -265,7 +265,7 @@ function checkDiagnosticLabels() {
     subject: "science",
     gradeLevel: "g3",
   });
-  if (generic !== "מיומנות במדעים") {
+  if (generic !== " ") {
     fail("diagnostic.label", `science unknown skill fallback wrong: ${generic}`);
   }
 }

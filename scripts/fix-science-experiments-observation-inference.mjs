@@ -13,7 +13,7 @@ const mainPath = path.join(root, "data/science-questions.js");
 const phase3Path = path.join(root, "data/science-questions-phase3.js");
 
 const OBS_RE =
-  /מסקנה|מסקנות|השערה|תצפית|ניתוח תוצאות|ניתוח הנתונים|הסבר את התוצא|מה למדנו מהניסוי|הסקת מסקנה|רושמים תצפית|הבדל בין השערה למסקנה|מסקנה בניסוי|תצפית גולמית/i;
+  /|||| | |  |  | | |   | | /i;
 
 function esc(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

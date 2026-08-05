@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+﻿import { useRouter } from "next/router";
 import { useState } from "react";
 import { MATH_G1_BOOK_META } from "../../lib/learning-book/math-g1-registry";
 import { getBookGradeTheme } from "../../lib/learning-book/book-grade-themes";
@@ -52,10 +52,10 @@ export default function MathG1BookShell({
             onReturn={handleReturnClick}
             onOpenToc={() => setTocOpen(true)}
             themeClasses={theme.classes}
-            titleHe={formatBookShellTitleHe(MATH_G1_BOOK_META.bookTitleHe)}
+            title={formatBookShellTitleHe(MATH_G1_BOOK_META.bookTitleHe)}
             isIndex={isIndex}
             pageMeta={pageMeta}
-            indexSubtitle={`${MATH_G1_BOOK_META.gradeShortLabel} � Pick a topic and read page by page`}
+            indexSubtitle={`${MATH_G1_BOOK_META.gradeShortLabel} - Pick a topic and read page by page`}
             activePageTitleClass={theme.classes.activePageTitle}
           />
         </header>

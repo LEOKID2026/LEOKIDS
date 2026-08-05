@@ -37,11 +37,11 @@ const ROUTES = [
 function activityBody(classId, subject, topic, gradeKey, mode) {
   const questionSet =
     mode === "discussion"
-      ? [{ question: "שאלה?", correctAnswer: "1", choices: ["1", "2"] }]
+      ? [{ question: "?", correctAnswer: "1", choices: ["1", "2"] }]
       : [{ question: "2+2?", correctAnswer: "4", choices: ["3", "4", "5"] }];
   const questionCount = mode === "discussion" ? 1 : 1;
   return {
-    title: "בדיקת QA",
+    title: " QA",
     classId,
     subject,
     topic,

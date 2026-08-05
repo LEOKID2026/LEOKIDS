@@ -42,7 +42,7 @@ const maps = {
   history: {
     "ancient::grade:g4": {
       bucketKey: "ancient",
-      displayName: "עתיקה",
+      displayName: "",
       questions: 12,
       correct: 8,
       wrong: 4,
@@ -54,7 +54,7 @@ const maps = {
   historySubtopics: {
     hist_sub_demo: {
       parentTopicKey: "ancient",
-      displayName: "מקורות — דוגמה",
+      displayName: " — ",
       questions: 4,
       correct: 2,
       accuracy: 50,

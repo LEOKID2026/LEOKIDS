@@ -13,7 +13,7 @@ import {
   LEGACY_TOPIC_ATTENTION_INSIGHT_DISABLED,
 } from "../../utils/learning-pattern-decision/index.js";
 import { topicAttentionInsightHe } from "../../utils/parent-report-language/parent-report-copy-spec.js";
-import { subjectLabel, topicLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
+import { subjectLabel, topicLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
 
 const START = Date.UTC(2026, 3, 1);
 
@@ -50,40 +50,40 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
   const payload = hedgedPayload({ q: 8, acc: 40, mistakes: mkMistakes("math", "fractions", 8) });
   const insights = buildParentInsightsHe(payload);
   const legacy = topicAttentionInsightHe({
-    subject: "מתמטיקה",
+    subject: "",
     subjectId: "math",
-    topic: "שברים",
+    topic: "",
     q: 8,
     acc: 40,
     wrongRatio: 60,
     rootCause: "knowledge_gap",
     diagnosticType: "knowledge_gap",
     patternId: "pf:same",
-    engineAction: "כדאי לחזק",
+    engineAction: " ",
   });
-  assert.ok(legacy.includes("מה כדאי לעשות") || legacy.includes("כדאי"));
+  assert.ok(legacy.includes("  ") || legacy.includes(""));
   for (const line of insights) {
-    assert.ok(!line.includes("מה כדאי לעשות"), `legacy action leak: ${line}`);
+    assert.ok(!line.includes("  "), `legacy action leak: ${line}`);
     assert.equal(findForbiddenParentWords(line).length, 0);
   }
   assert.ok(LEGACY_TOPIC_ATTENTION_INSIGHT_DISABLED.includes("topicAttentionInsightHe"));
 }
 
-/** B — q=1–2 server weak-topic helper: no כדאי לחזק */
+/** B — q=1–2 server weak-topic helper: no   */
 {
   const payload = hedgedPayload({ q: 2, acc: 0 });
   const line = buildLpdSafeTopicInsightFromWeakTopic(
     payload,
     { subject: "math", topicKey: "fractions", answers: 2, accuracy: 0 },
-    () => "שברים",
-    () => "מתמטיקה",
+    () => "",
+    () => "",
   );
   assert.ok(line.length > 0);
-  assert.ok(!line.includes("כדאי לחזק"), line);
-  assert.ok(!line.includes("כדאי לשים דגש"), line);
+  assert.ok(!line.includes(" "), line);
+  assert.ok(!line.includes("  "), line);
 }
 
-/** C — q=3–4 server weak-topic helper: no דפוס חוזר */
+/** C — q=3–4 server weak-topic helper: no   */
 {
   const payload = hedgedPayload({
     q: 4,
@@ -93,11 +93,11 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
   const line = buildLpdSafeTopicInsightFromWeakTopic(
     payload,
     { subject: "math", topicKey: "fractions", answers: 4, accuracy: 25 },
-    () => "שברים",
-    () => "מתמטיקה",
+    () => "",
+    () => "",
   );
   assert.ok(line.length > 0);
-  assert.ok(!line.includes("דפוס חוזר"), line);
+  assert.ok(!line.includes(" "), line);
 }
 
 /** D — forbidden words guarded on server insights */
@@ -114,8 +114,8 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
 {
   const row = {
     subjectId: "math",
-    subjectLabel: "מתמטיקה",
-    label: "חיבור",
+    subjectLabel: "",
+    label: "",
     topicKey: "addition",
     questions: 2,
     correct: 0,
@@ -123,19 +123,19 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
     accuracy: 0,
     topicEngineRowSignals: {
       diagnosticType: "knowledge_gap",
-      doNowHe: "כדאי לחזק את הנושא בדחיפות",
+      doNowHe: "    ",
     },
   };
   const line = buildLpdSafeTopicInsightLineHe(row);
   assert.ok(line.length > 0);
-  assert.ok(!line.includes("בדחיפות"));
-  assert.ok(!line.includes("כדאי לחזק"));
+  assert.ok(!line.includes(""));
+  assert.ok(!line.includes(" "));
   const lpd = buildLearningPatternDecision({
     subjectId: "math",
     topicRowKey: "addition",
     row: {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: 2,
       correct: 0,
       wrong: 2,
@@ -154,11 +154,11 @@ function mkMistakes(subject, topic, n, patternFamily = "pf:same") {
  */
 {
   const singleWordTopics = [
-    { topicKey: "fractions", hebrew: "שברים" },
-    { topicKey: "addition", hebrew: "חיבור" },
-    { topicKey: "subtraction", hebrew: "חיסור" },
-    { topicKey: "multiplication", hebrew: "כפל" },
-    { topicKey: "percentages", hebrew: "אחוזים" },
+    { topicKey: "fractions", hebrew: "" },
+    { topicKey: "addition", hebrew: "" },
+    { topicKey: "subtraction", hebrew: "" },
+    { topicKey: "multiplication", hebrew: "" },
+    { topicKey: "percentages", hebrew: "" },
   ];
   for (const { topicKey, hebrew } of singleWordTopics) {
     const payload = hedgedPayload({ subject: "math", topic: topicKey, q: 8, acc: 40 });

@@ -25,8 +25,8 @@ const { errors, markdownNotes, pageCount } = verifyScienceGradeBookContent({
   extraChecks(pageId, childFacing) {
     const extra = [];
     if (pageId === "materials") {
-      if (!childFacing.includes("מוליך") || !childFacing.includes("מבודד")) {
-        extra.push("materials: must mention מוליך and מבודד (conceptual electricity)");
+      if (!childFacing.includes("") || !childFacing.includes("")) {
+        extra.push("materials: must mention  and  (conceptual electricity)");
       }
     }
     return extra;
@@ -42,7 +42,7 @@ if (errors.length) {
 
 console.log(`G4 Science content verification PASSED: ${pageCount} pages.`);
 console.log("- 7 sections each; grades_3_4; science:g4:{topic}");
-console.log("- no plants page; materials: conceptual מוליך/מבודד only");
+console.log("- no plants page; materials: conceptual / only");
 console.log("- no fake practice routing; safety checks");
 if (markdownNotes.length) {
   console.log("\nMarkdown notes:", markdownNotes.join("; "));

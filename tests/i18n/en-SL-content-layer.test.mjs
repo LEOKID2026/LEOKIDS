@@ -31,9 +31,9 @@ const PHYSICAL_CLASS_RE = /\bphysical class\b/i;
 const LOCAL_LANG_RE =
   /\b(krio|mende|temne|limba|kono|loko|sherbro|fullah|susu|yalunka|kissi|kuranko)\b/i;
 const DEAD_CURRICULUM_RE =
-  /\b(israel|israeli|hebrew|homeland|moledet|hasmonaean|hasmon|judea|judaism|hellenism|עברית|מולדת|ישראל)\b/i;
+  /\b(israel|israeli|hebrew|homeland|moledet|hasmonaean|hasmon|judea|judaism|hellenism|||)\b/i;
 const DEAD_CURRICULUM_KEY_RE =
-  /israel|israeli|hebrew|homeland|moledet|hasmon|judea|judaism|hellenism|עברית|מולדת|ישראל/i;
+  /israel|israeli|hebrew|homeland|moledet|hasmon|judea|judaism|hellenism|||/i;
 const ALL_ENGLISH_CLAIM_RE =
   /(?:only\s+language|sole\s+language|English\s+is\s+the\s+only|represents?\s+(?:all\s+)?Sierra\s+Leone|for\s+all\s+(?:pupils|learners|students|children)\s+(?:in|across)\s+Sierra\s+Leone|all\s+of\s+Sierra\s+Leone(?:'s|\u2019s)?\s+languages)/i;
 const FOREIGN_COUNTRY_RE =

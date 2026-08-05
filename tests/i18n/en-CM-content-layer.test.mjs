@@ -33,7 +33,7 @@ const PHYSICAL_CLASS_RE = /\bphysical class\b/i;
 const LOCAL_LANG_RE =
   /\b(pidgin|camfranglais|ewondo|duala|fulfulde|bamileke|fang)\b/i;
 const DEAD_CURRICULUM_RE =
-  /\b(israel|israeli|hebrew|homeland|moledet|hasmon|judea|judaism|עברית|מולדת|ישראל)\b/i;
+  /\b(israel|israeli|hebrew|homeland|moledet|hasmon|judea|judaism|||)\b/i;
 const ALL_CAMEROON_CLAIM_RE =
   /(?:all\s+(?:of\s+)?Cameroon|every\s+(?:pupil|learner|student|child)\s+in\s+Cameroon|represents?\s+(?:all\s+)?Cameroon|for\s+(?:all\s+)?(?:pupils|learners|students|children)\s+(?:in|across)\s+Cameroon(?!\s*['’]?s\s+English))/i;
 const FOREIGN_COUNTRY_RE =

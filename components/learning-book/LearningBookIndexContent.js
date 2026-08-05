@@ -12,9 +12,9 @@ export default function LearningBookIndexContent({ batches, routeBase }) {
     () =>
       (batches || []).map((batch) => ({
         ...batch,
-        titleHe: batch.titleKey
+        title: batch.titleKey
           ? resolveRegistryTitleKey(String(batch.titleKey), contentLocale)
-          : batch.titleHe || batch.title || "",
+          : batch.title || batch.title || "",
       })),
     [batches, contentLocale],
   );
@@ -26,7 +26,7 @@ export default function LearningBookIndexContent({ batches, routeBase }) {
           <h2
             className={`mb-4 text-start text-lg font-bold sm:text-xl ${theme.indexBatchHeading}`}
           >
-            {batch.titleHe}
+            {batch.title}
           </h2>
           <ul className="grid gap-3 sm:grid-cols-2">
             {batch.pages.map((entry) => (

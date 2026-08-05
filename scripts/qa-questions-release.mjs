@@ -58,9 +58,9 @@ const LAUNCH_CRITICAL_SESSION_IDS = new Set([
 
 /** Content regressions only — metadata leaks are covered by qa:student-question-stem-metadata. */
 const REGRESSION_STEM_PATTERNS = [
-  { id: "geometry_bad_multiply", re: /\d+\s+על\s+\d+/ },
-  { id: "geometry_face_area_2d", re: /שטח\s*הפנים/ },
-  { id: "banned_all_correct", re: /כל\s*התשובות\s*נכונות/i },
+  { id: "geometry_bad_multiply", re: /\d+\s+\s+\d+/ },
+  { id: "geometry_face_area_2d", re: /\s*/ },
+  { id: "banned_all_correct", re: /\s*\s*/i },
 ];
 
 const MANUAL_REVIEW_CELLS = [

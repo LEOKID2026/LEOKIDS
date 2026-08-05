@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
   const subjects = DEMO_PARENT_SUBJECTS.map((subjectKey) => ({
     subjectKey,
-    labelHe: getSubjectPermissionLabelHe(subjectKey),
+    label: getSubjectPermissionLabelHe(subjectKey),
     isEnabled: true,
     isGradeSuitable: true,
     effectiveGrade: gradeKey,

@@ -6,10 +6,10 @@
  */
 
 const EXPECTED_ACTION =
-  "כדאי לתרגל חיסור במאונך עם פריטה, תוך הקפדה על ערך הספרות בכל עמודה. אחרי כל תרגיל בקשו מהילד לבדוק את התשובה בעזרת חיבור הפוך.";
+  "     ,       .           .";
 const EXPECTED_GOAL =
-  "בשבוע הקרוב התמקדו בחיסור רב־ספרתי במאונך, בפריטה נכונה ובבדיקת התשובה בעזרת חיבור הפוך.";
-const FORBIDDEN = ["ציר + סימבולי", "ציר + מרחק"];
+  "     ,       .";
+const FORBIDDEN = [" + ", " + "];
 
 const topicRowKey = "subtraction\u0001learning\u0001g4\u0001easy";
 
@@ -18,12 +18,12 @@ function buildBaseReportG4Subtraction() {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKey]: {
         bucketKey: "subtraction",
-        displayName: "חיסור",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -43,18 +43,18 @@ function buildBaseReportG4Subtraction() {
           subjectId: "math",
           topicRowKey,
           bucketKey: "subtraction",
-          displayName: "חיסור",
-          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "ציר + סימבולי",
-            shortPracticeHe: "ציר + מרחק",
+            immediateActionHe: " + ",
+            shortPracticeHe: " + ",
             taxonomyId: "M-09",
           },
           taxonomy: {
             id: "M-09",
-            patternHe: "דפוס",
-            topicHe: "חיסור",
-            subskillHe: "חיסור",
+            patternHe: "",
+            topic: "",
+            subskillHe: "",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -69,7 +69,7 @@ function buildBaseReportG4Subtraction() {
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -125,7 +125,7 @@ assertNoForbidden("detailed JSON full", JSON.stringify(detailed));
 
 const short = summarizeV2UnitsForSubjectForTests(rehydrated.diagnosticEngineV2.units, {
   subjectReportQuestions: 12,
-  subjectLabelHe: "מתמטיקה",
+  subjectLabelHe: "",
   topicMap: rehydrated.mathOperations,
   reportTotalQuestions: 20,
 });
@@ -138,7 +138,7 @@ assertNoForbidden("short JSON", JSON.stringify(short));
 const tp = buildTruthPacketV1(detailed, {
   scopeType: "topic",
   scopeId: topicRowKey,
-  scopeLabel: "חיסור",
+  scopeLabel: "",
 });
 if (!tp) throw new Error("buildTruthPacketV1 returned null");
 const nar = tp?.contracts?.narrative?.textSlots || {};

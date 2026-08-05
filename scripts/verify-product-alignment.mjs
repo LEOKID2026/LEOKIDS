@@ -234,7 +234,7 @@ function runChecks(ctx) {
     );
   }
 
-  // GEO-04 — official G5 order: heights (§ ד.4) before area formulas (§ ה)
+  // GEO-04 — official G5 order: heights (§ .4) before area formulas (§ )
   const heightsIdx = g5Pages.indexOf("heights_triangle");
   const triangleAreaIdx = g5Pages.indexOf("triangle_area");
   const areaFormulaPages = ["square_area", "triangle_area", "parallelogram_area", "trapezoid_area"];
@@ -250,10 +250,10 @@ function runChecks(ctx) {
             topic: pageId,
             product_surface: "learning_book",
             file_path: "lib/learning-book/geometry-g5-registry.js",
-            current_behavior: `${pageId} (index ${areaIdx}) appears before heights_triangle (index ${heightsIdx}); kita5.pdf order is § ד.4 גבהים then § ה. מדידות שטחים.`,
+            current_behavior: `${pageId} (index ${areaIdx}) appears before heights_triangle (index ${heightsIdx}); kita5.pdf order is § .4  then § .  .`,
             oracle_status: heightsOracle?.status,
             evidence_from_code: `GEOMETRY_G5_PAGE_ORDER indices ${pageId}=${areaIdx} heights_triangle=${heightsIdx}`,
-            evidence_from_oracle: "kita5.pdf § ד.4 before § ה",
+            evidence_from_oracle: "kita5.pdf § .4 before § ",
             classification: "OUT_OF_SEQUENCE",
             severity: "P1",
             recommended_action: "Move heights batch before area formula pages in G5 book registry.",
@@ -318,7 +318,7 @@ function runChecks(ctx) {
           file_path: "lib/classroom-activities/classroom-skill-labels.js",
           current_behavior: `geo_area_triangle_formula label present without grade-aware gate via isTriangleAreaFormulaGradeAllowed.`,
           oracle_status: triangleOracle?.status,
-          evidence_from_code: 'geo_area_triangle_formula: "שטח משולש"',
+          evidence_from_code: 'geo_area_triangle_formula: " "',
           evidence_from_oracle: `${triangleOracle?.row_id} grade=${oracleTriangleGrade}`,
           classification: "UNSUPPORTED_REPORT_LABEL",
           severity: "P0",

@@ -50,7 +50,7 @@ describe("worksheet-ready-catalog-integrity", () => {
     const rows = listReadyCatalogSummaryRows();
     assert.equal(rows.length, READY_WORKSHEET_CATALOG.length);
     for (const row of rows) {
-      assert.ok(row.levelHe === "Regular" || row.levelHe === "Advanced", row.slug);
+      assert.ok(row.level === "Regular" || row.level === "Advanced", row.slug);
       assert.equal(findForbiddenPublicLevelLabels(JSON.stringify(row)).length, 0);
     }
   });

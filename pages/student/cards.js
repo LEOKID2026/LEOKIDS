@@ -10,7 +10,7 @@ import WindowedStudentCardsGrid from "../../components/student/rewards/WindowedS
 import { syncStudentLocalStorageIdentity } from "../../lib/learning-student-local-sync";
 import { useStudentTheme } from "../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../lib/rewards/reward-feature-flags.client.js";
-import { formatCoinAmountHe, formatCoinAmountNumberHe } from "../../lib/rewards/rewards-ui.js";
+import { formatCoinAmountLabel, formatCoinAmountNumber } from "../../lib/rewards/rewards-ui.js";
 import { resolveGlobalRewardCardDisplay } from "../../lib/rewards/reward-card-global-display.js";
 import { useRewardUiCopy } from "../../lib/rewards/reward-locale-context.jsx";
 import StudentLoadingPanel from "../../components/ui/StudentLoadingPanel.jsx";
@@ -75,10 +75,12 @@ const CARDS_HEADER_ROW_HEIGHT = "min-h-[2.75rem] sm:min-h-[3.25rem]";
 function CardRequirementProgress({ card, T }) {
   const target = Number(card.progressTarget);
   const current = Math.max(0, Number(card.progressCurrent) || 0);
+  // GLOBAL UI: locale-neutral fields only — never fall back to *He.
+  const requirementText = card.requirementText || card.lockMessage || "";
+  const progressText = card.progressText || "";
   if (!Number.isFinite(target) || target <= 0) {
-    const text = card.requirementHe || card.lockMessageHe;
-    return text ? (
-      <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>{text}</p>
+    return requirementText ? (
+      <p className={`text-xs leading-snug min-h-[1.125rem] ${T.tileSub}`}>{requirementText}</p>
     ) : (
       <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
     );
@@ -87,13 +89,13 @@ function CardRequirementProgress({ card, T }) {
   return (
     <div className="space-y-1 min-w-0">
       <p className={`text-xs leading-snug ${T.tileSub}`}>
-        {card.requirementHe || card.progressHe || card.lockMessageHe}
+        {requirementText || progressText}
       </p>
       <div className={`${T.progressTrack} w-full`}>
         <div className={T.progressFill} style={{ width: `${pct}%` }} />
       </div>
-      {card.progressHe ? (
-        <p className={`text-[10px] tabular-nums ${T.tileSub}`}>{card.progressHe}</p>
+      {progressText ? (
+        <p className={`text-[10px] tabular-nums ${T.tileSub}`}>{progressText}</p>
       ) : null}
     </div>
   );
@@ -171,12 +173,12 @@ function CardsPageHeaderActions({ theme, coinBalanceAmount, backVariant = "games
       {coinBalanceAmount != null ? (
         <span
           className={`${coinBalanceBadgeClass(theme)} ${cardsHeaderCoinSizeClass()}`}
-          aria-label={formatCoinAmountHe(coinBalanceAmount, locale)}
+          aria-label={formatCoinAmountLabel(coinBalanceAmount, locale)}
         >
           <span aria-hidden className="text-2xl sm:text-[1.75rem] leading-none shrink-0">
             🪙
           </span>
-          <span className="shrink-0">{formatCoinAmountNumberHe(coinBalanceAmount, locale)}</span>
+          <span className="shrink-0">{formatCoinAmountNumber(coinBalanceAmount, locale)}</span>
         </span>
       ) : null}
     </div>
@@ -208,7 +210,7 @@ export default function StudentCardsPage() {
   const [tabLoading, setTabLoading] = useState({});
   const loadedTabsRef = useRef(new Set());
   const [actionBusy, setActionBusy] = useState("");
-  const [messageHe, setMessageHe] = useState("");
+  const [message, setMessage] = useState("");
   const [messageIsError, setMessageIsError] = useState(false);
 
   const rewardsEnabled = isCardRewardsEnabledClient() || isDemoMode();
@@ -378,7 +380,7 @@ export default function StudentCardsPage() {
         return;
       }
       setMessageIsError(true);
-      setMessageHe(demoPackCopyForLocale(locale, "cards", "loadFailed"));
+      setMessage(demoPackCopyForLocale(locale, "cards", "loadFailed"));
       throw err instanceof Error ? err : new Error("demo_cards_load_failed");
     } finally {
       setTabLoading((prev) => ({ ...prev, [tabId]: false }));
@@ -490,13 +492,13 @@ export default function StudentCardsPage() {
       if (!shopCard || shopCard.alreadyOwned) return;
       if (shopCard.canAfford === false || Number(shopCard.missingCoins) > 0) {
         setMessageIsError(true);
-        setMessageHe(copy("shop", "notEnoughCoins"));
+        setMessage(copy("shop", "notEnoughCoins"));
         return;
       }
       setMessageIsError(false);
-      setMessageHe(
+      setMessage(
         copy("shop", "purchaseSuccess", {
-          name: shopCard.nameHe || "",
+          name: shopCard.name || "",
         }),
       );
       return;
@@ -505,7 +507,7 @@ export default function StudentCardsPage() {
     if (shopCard?.alreadyOwned || shopCard?.canAfford === false) return;
 
     setActionBusy(cardId);
-    setMessageHe("");
+    setMessage("");
     setMessageIsError(false);
     try {
       const res = await fetch(PURCHASE_PATH, {
@@ -517,7 +519,7 @@ export default function StudentCardsPage() {
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
         setMessageIsError(true);
-        setMessageHe(
+        setMessage(
           json?.code === "insufficient_coins"
             ? copy("shop", "notEnoughCoins")
             : copy("shop", "purchaseFailed"),
@@ -528,9 +530,9 @@ export default function StudentCardsPage() {
       {
         const purchasedName = resolveGlobalRewardCardDisplay({
           cardKey: json.card?.card_key || json.card?.cardKey,
-          nameHe: json.card?.nameHe,
+          name: json.card?.name,
         }).name;
-        setMessageHe(
+        setMessage(
           copy("shop", "purchaseSuccess", {
             name: purchasedName || copy("fallback", "rewardCard"),
           }),
@@ -542,7 +544,7 @@ export default function StudentCardsPage() {
       await refreshAfterCardAction();
     } catch {
       setMessageIsError(true);
-      setMessageHe(copy("shop", "purchaseNetworkError"));
+      setMessage(copy("shop", "purchaseNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -551,19 +553,19 @@ export default function StudentCardsPage() {
   const handleSellDuplicate = async (card) => {
     if (isDemoMode()) {
       setMessageIsError(true);
-      setMessageHe(demoPackCopyForLocale(locale, "cards", "sellBlocked"));
+      setMessage(demoPackCopyForLocale(locale, "cards", "sellBlocked"));
       return;
     }
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins, locale) })}\n${copy("shop", "sellConfirmBody")}`,
+      `${copy("shop", "sellConfirmTitle", { name: card.name, amount: formatCoinAmountLabel(card.sellbackCoins, locale) })}\n${copy("shop", "sellConfirmBody")}`,
     );
     if (!confirmed) return;
 
     const busyKey = `sell:${card.id}`;
     setActionBusy(busyKey);
-    setMessageHe("");
+    setMessage("");
     setMessageIsError(false);
     try {
       const res = await fetch(SELL_DUPLICATE_PATH, {
@@ -578,7 +580,7 @@ export default function StudentCardsPage() {
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
         setMessageIsError(true);
-        setMessageHe(
+        setMessage(
           json?.code === "no_duplicate"
             ? copy("shopView", "noDuplicateToSell")
             : copy("shopView", "sellFailed"),
@@ -589,12 +591,12 @@ export default function StudentCardsPage() {
       {
         const soldName = resolveGlobalRewardCardDisplay({
           cardKey: json.card?.card_key || json.card?.cardKey || card.card_key || card.cardKey,
-          nameHe: json.card?.nameHe || card.nameHe,
+          name: json.card?.name || card.name,
         }).name;
-        setMessageHe(
+        setMessage(
           copy("shopView", "sellSuccess", {
             name: soldName || copy("fallback", "rewardCard"),
-            amount: formatCoinAmountHe(json.sellbackCoins || 0, locale),
+            amount: formatCoinAmountLabel(json.sellbackCoins || 0, locale),
           }),
         );
       }
@@ -604,7 +606,7 @@ export default function StudentCardsPage() {
       await refreshAfterCardAction();
     } catch {
       setMessageIsError(true);
-      setMessageHe(copy("shopView", "sellNetworkError"));
+      setMessage(copy("shopView", "sellNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -702,11 +704,11 @@ export default function StudentCardsPage() {
               footer: (
                 <>
                   <p className={`text-sm font-semibold ${T.statValue}`}>
-                    {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins, locale) })}
+                    {copy("shopView", "buyPrice", { amount: formatCoinAmountLabel(card.priceCoins, locale) })}
                   </p>
                   {card.sellbackCoins > 0 ? (
                     <p className={`text-xs leading-snug ${T.tileSub}`}>
-                      {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins, locale) })}
+                      {copy("shopView", "sellValue", { amount: formatCoinAmountLabel(card.sellbackCoins, locale) })}
                     </p>
                   ) : (
                     <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -715,7 +717,7 @@ export default function StudentCardsPage() {
                     {showNeedCoins
                       ? card.missingCoins > 0
                         ? copy("shopView", "needMoreCoins", {
-                            amount: formatCoinAmountHe(card.missingCoins, locale),
+                            amount: formatCoinAmountLabel(card.missingCoins, locale),
                           })
                         : copy("shopView", "notEnoughCoinsShort")
                       : "\u00a0"}
@@ -859,7 +861,7 @@ export default function StudentCardsPage() {
           </div>
         </header>
 
-        {messageHe ? (
+        {message ? (
           <p
             className={`mb-3 text-sm text-start ${
               messageIsError
@@ -868,7 +870,7 @@ export default function StudentCardsPage() {
             }`}
             role={messageIsError ? "alert" : "status"}
           >
-            {messageHe}
+            {message}
           </p>
         ) : null}
 

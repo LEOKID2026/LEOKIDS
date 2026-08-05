@@ -57,7 +57,7 @@ async function checkHome(cookie, label) {
   }
   pass(`${label}: /student/home HTTP 200`);
   const html = await res.text();
-  if (html.includes("המשימות שלי להיום") || html.includes("daily-missions-heading")) {
+  if (html.includes("  ") || html.includes("daily-missions-heading")) {
     pass(`${label}: daily missions section markup present`);
   } else {
     // SSR may not include client-rendered panels — check Next.js page loads

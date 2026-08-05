@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Verbatim DOM extract — "מקצועות הלימוד" region only (detailed parent report, full mode).
+ * Verbatim DOM extract — " " region only (detailed parent report, full mode).
  * No product changes. Run: node --env-file=.env.local --env-file=.env.e2e.local scripts/parent-report-detailed-subjects-region-verbatim-dom.mjs
  */
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -76,7 +76,7 @@ const EXTRACT_FN = () => {
 
   push(
     "—",
-    "כותרת אזור",
+    " ",
     t(region.querySelector(".pr-detailed-subjects-region-title")),
     ".pr-detailed-subjects-region-title"
   );
@@ -85,16 +85,16 @@ const EXTRACT_FN = () => {
   for (const block of blocks) {
     const subject = t(block.querySelector(".pr-detailed-subject-title")) || "?";
 
-    push(subject, "כותרת מקצוע", subject, ".pr-detailed-subject-title");
-    push(subject, "שורת מדדים (שאלות|דיוק)", t(block.querySelector(".pr-detailed-subject-metrics")), ".pr-detailed-subject-metrics");
+    push(subject, " ", subject, ".pr-detailed-subject-title");
+    push(subject, "  (|)", t(block.querySelector(".pr-detailed-subject-metrics")), ".pr-detailed-subject-metrics");
 
     const phase3 = block.querySelector(".pr-detailed-phase3-dl");
     if (phase3) {
       for (const row of phase3.querySelectorAll(":scope > div")) {
         const label = t(row.querySelector(".font-bold, .text-white\\/50"));
         const val = t(row.querySelector(".text-white\\/\\[0\\.88\\], .leading-relaxed"));
-        if (label) push(subject, `Phase3 — כותרת: ${label}`, label, "SubjectPhase3Insights label");
-        if (val && val !== label) push(subject, `Phase3 — תוכן (${label || "?"})`, val, "SubjectPhase3Insights value");
+        if (label) push(subject, `Phase3 — : ${label}`, label, "SubjectPhase3Insights label");
+        if (val && val !== label) push(subject, `Phase3 —  (${label || "?"})`, val, "SubjectPhase3Insights value");
       }
     }
 
@@ -106,24 +106,24 @@ const EXTRACT_FN = () => {
         const isHeading = el.classList.contains("pr-detailed-mini-heading") || el.tagName === "H4";
         const inDiag = Boolean(el.closest(".pr-detailed-diagnostic-explanation, [class*='diagnostic']"));
         const inHome = Boolean(el.closest(".rounded-lg.border-amber-400\\/28"));
-        let area = "מכתב להורה — פסקה";
-        if (isHeading) area = "מכתב — כותרת ביניים";
-        else if (inHome && !isHeading) area = "מכתב — איך כדאי לעבוד על זה";
-        else if (inDiag) area = "מכתב — הסבר אבחוני / דוגמה";
+        let area = "  — ";
+        if (isHeading) area = " —  ";
+        else if (inHome && !isHeading) area = " —     ";
+        else if (inDiag) area = " —   / ";
         push(subject, area, txt, "SubjectParentLetter / ParentDiagnosticExplanationBlock");
       }
     }
 
     for (const tierGroup of block.querySelectorAll(".pr-detailed-topic-tier-group")) {
       const tierTitle = t(tierGroup.querySelector(".pr-detailed-topic-rec-head"));
-      if (tierTitle) push(subject, "קבוצת tier — כותרת", tierTitle, "SubjectTopicTierGroups tier title");
+      if (tierTitle) push(subject, " tier — ", tierTitle, "SubjectTopicTierGroups tier title");
       for (const item of tierGroup.querySelectorAll(".pr-detailed-topic-overview-item")) {
         const title = t(item.querySelector(".font-bold"));
         const sub = t(item.querySelector(".pr-detailed-muted"));
         const status = t(item.querySelector("p.pr-detailed-body-text"));
-        if (title) push(subject, `tier — כותרת נושא (${tierTitle})`, title, "topicGroupsByTier row narrativeTitleHe");
-        if (sub) push(subject, `tier — שורת כיתה (${title})`, sub, "gradeRelationSublineHe");
-        if (status) push(subject, `tier — מדדים/סטטוס (${title})`, status, "overviewStatusHe + questions + accuracy");
+        if (title) push(subject, `tier —   (${tierTitle})`, title, "topicGroupsByTier row narrativeTitleHe");
+        if (sub) push(subject, `tier —   (${title})`, sub, "gradeRelationSublineHe");
+        if (status) push(subject, `tier — / (${title})`, status, "overviewStatusHe + questions + accuracy");
       }
     }
 
@@ -131,28 +131,28 @@ const EXTRACT_FN = () => {
       if (letter && letter.contains(action)) continue;
       const head = t(action.querySelector(".pr-detailed-mini-heading"));
       const body = t(action.querySelector(".pr-detailed-body-text"));
-      if (head) push(subject, "פעולה מקצועית — כותרת", head, "SubjectPrimaryActionBlock heading");
-      if (body) push(subject, "פעולה מקצועית — תוכן", body, "sp.primaryParentActionHe");
+      if (head) push(subject, "  — ", head, "SubjectPrimaryActionBlock heading");
+      if (body) push(subject, "  — ", body, "sp.primaryParentActionHe");
     }
 
     const examples = block.querySelector(".pr-detailed-tier-examples");
     if (examples) {
-      push(subject, "דוגמאות — הקדמה", t(examples.querySelector("p.pr-detailed-body-text")), "evidenceExamples intro");
+      push(subject, " — ", t(examples.querySelector("p.pr-detailed-body-text")), "evidenceExamples intro");
       for (const li of examples.querySelectorAll("li")) {
-        push(subject, "דוגמה מהתרגול", t(li), "sp.evidenceExamples[]");
+        push(subject, " ", t(li), "sp.evidenceExamples[]");
       }
     }
 
     const recBlock = block.querySelector(".pr-detailed-topic-rec-block");
     if (recBlock) {
-      push(subject, "המלצות לפי נושא — כותרת אזור", t(recBlock.querySelector(".pr-detailed-topic-rec-head")), "topicRecommendations section head");
+      push(subject, "   —  ", t(recBlock.querySelector(".pr-detailed-topic-rec-head")), "topicRecommendations section head");
       for (const card of recBlock.querySelectorAll(".pr-detailed-topic-nextstep-card")) {
         const topicTitle = t(card.querySelector(".font-bold"));
         const gradeLine = t(card.querySelector(".pr-detailed-muted"));
         const badge = t(card.querySelector(".pr-detailed-topic-badge"));
-        if (topicTitle) push(subject, "כרטיס נושא — כותרת", topicTitle, "tr.narrativeTitleHe / labelHe");
-        if (gradeLine) push(subject, `כרטיס נושא — כיתה (${topicTitle})`, gradeLine, "tr.gradeRelationSublineHe");
-        if (badge) push(subject, `כרטיס נושא — תג (${topicTitle})`, badge, "tr.recommendedStepLabelHe");
+        if (topicTitle) push(subject, "  — ", topicTitle, "tr.narrativeTitleHe / labelHe");
+        if (gradeLine) push(subject, `  —  (${topicTitle})`, gradeLine, "tr.gradeRelationSublineHe");
+        if (badge) push(subject, `  —  (${topicTitle})`, badge, "tr.recommendedStepLabelHe");
 
         const bodyPs = [...card.querySelectorAll(":scope > p.pr-detailed-body-text, :scope > div > p.pr-detailed-body-text")].filter(
           (p) => !p.closest('[data-testid="parent-report-lpd-topic-explain"]')
@@ -162,7 +162,7 @@ const EXTRACT_FN = () => {
           const isAmber = /amber/i.test(p.className || "");
           push(
             subject,
-            isAmber ? `כרטיס נושא — מה כדאי לעשות ביחד (${topicTitle})` : `כרטיס נושא — תמצית (${topicTitle})`,
+            isAmber ? `  —     (${topicTitle})` : `  —  (${topicTitle})`,
             txt,
             isAmber ? "nar.homeLine" : "nar.snapshot / buildTopicRecommendationNarrative"
           );
@@ -172,12 +172,12 @@ const EXTRACT_FN = () => {
         if (explain) {
           for (const p of explain.querySelectorAll("p")) {
             const txt = t(p);
-            let area = "כרטיס נושא — explain strip";
-            if (/^מה זוהה:/.test(txt)) area = "כרטיס נושא — מה זוהה";
-            else if (/^הנתונים:/.test(txt)) area = "כרטיס נושא — הנתונים (מה רואים)";
-            else if (/^דפוס הטעות:/.test(txt)) area = "כרטיס נושא — דפוס";
-            else if (/^משמעות:/.test(txt)) area = "כרטיס נושא — מה זה אומר (משמעות)";
-            else if (/^מה כדאי לעשות/.test(txt)) area = "כרטיס נושא — מה כדאי לעשות";
+            let area = "  — explain strip";
+            if (/^ :/.test(txt)) area = "  —  ";
+            else if (/^:/.test(txt)) area = "  —  ( )";
+            else if (/^ :/.test(txt)) area = "  — ";
+            else if (/^:/.test(txt)) area = "  —    ()";
+            else if (/^  /.test(txt)) area = "  —   ";
             push(subject, `${area} (${topicTitle})`, txt, "TopicRecommendationExplainStrip / topicExplain");
           }
         }
@@ -200,7 +200,7 @@ function escapeMdCell(s) {
 
 function buildMd(data, meta) {
   const lines = [];
-  lines.push("# דוח הורים מפורט — מיפוי מילה במילה: מקצועות הלימוד");
+  lines.push("#    —   :  ");
   lines.push("");
   lines.push(`Generated: ${meta.generatedAt}`);
   lines.push(`Student: ${meta.student.label} (${meta.student.id})`);
@@ -208,11 +208,11 @@ function buildMd(data, meta) {
   lines.push(`URL: ${meta.url}`);
   lines.push(`Display mode: full`);
   lines.push("");
-  lines.push("> העתקה מ-DOM בלבד. ללא תיקון, ללא סיכום, ללא הצעות.");
+  lines.push(">  -DOM .  ,  ,  .");
   lines.push("");
-  lines.push("## מקצועות הלימוד");
+  lines.push("##  ");
   lines.push("");
-  lines.push("| # | מקצוע | אזור פנימי | טקסט מילה במילה | הערה טכנית קצרה |");
+  lines.push("| # |  |   |    |    |");
   lines.push("|---|-------|------------|------------------|------------------|");
   for (const r of data.rows) {
     lines.push(`| ${r.order} | ${escapeMdCell(r.subject)} | ${escapeMdCell(r.innerArea)} | ${escapeMdCell(r.verbatimText)} | ${escapeMdCell(r.technicalNote)} |`);
@@ -220,15 +220,15 @@ function buildMd(data, meta) {
   lines.push("");
   lines.push("---");
   lines.push("");
-  lines.push("## ניתוח קצר (ללא הצעות ניסוח)");
+  lines.push("##   (  )");
   lines.push("");
-  lines.push("### ביטויים שחוזרים על עצמם");
+  lines.push("###    ");
   for (const x of meta.analysis.repeatedPhrases) lines.push(`- ${x}`);
   lines.push("");
-  lines.push("### שפת מנוע / טכני");
+  lines.push("###   / ");
   for (const x of meta.analysis.engineLanguage) lines.push(`- ${x}`);
   lines.push("");
-  lines.push("### טקסט כללי מדי");
+  lines.push("###   ");
   for (const x of meta.analysis.tooGeneric) lines.push(`- ${x}`);
   return lines.join("\n");
 }
@@ -248,11 +248,11 @@ function analyzeRows(rows) {
     .map(([tx, c]) => `"${tx}" (${c}×)`);
 
   const enginePatterns = [
-    /הפרדה בין פער יסוד לבעיית נושא/,
-    /מתחילה|לא עכשיו|not_ready|advance_level|maintain_and_strengthen/,
+    /     /,
+    /| |not_ready|advance_level|maintain_and_strengthen/,
     /Phase3|phase3|pf:|k:|to:/,
-    /נקודת המיקוד היא/,
-    /כיוון ראשוני בלבד/,
+    /  /,
+    /  /,
     /subjectTransferReadiness|dominantLearningRisk/,
   ];
   /** @type {string[]} */
@@ -267,13 +267,13 @@ function analyzeRows(rows) {
   }
 
   const genericPatterns = [
-    /עוד קצת תרגול יבהיר את הכיוון/,
-    /התמונה עדיין חלקית/,
-    /יש בסיס תרגול במקצוע/,
-    /כדאי להמשיך לאסוף תרגול/,
-    /עדיף לעבוד קצר וממוקד/,
-    /בקצב רגוע/,
-    /לפני שמעלים רמת קושי/,
+    /     /,
+    /  /,
+    /   /,
+    /   /,
+    /   /,
+    / /,
+    /   /,
   ];
   /** @type {string[]} */
   const tooGeneric = [];

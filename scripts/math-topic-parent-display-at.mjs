@@ -1,5 +1,5 @@
 /**
- * Acceptance — תווית שם נושא מתמטיקה (רק שם פעולה; מצב רק בכפילות אותו scope).
+ * Acceptance —     (  ;     scope).
  * npx tsx scripts/math-topic-parent-display-at.mjs
  */
 import assert from "node:assert/strict";
@@ -32,8 +32,8 @@ function at1() {
     k2: rowStub({ bk: "addition", gk: "g3", lk: "medium", mode: "learning" }),
   };
   applyMathScopedParentDisplayNames(m);
-  assert.equal(m.k1.displayName, "חיבור");
-  assert.equal(m.k2.displayName, "חיבור");
+  assert.equal(m.k1.displayName, "");
+  assert.equal(m.k2.displayName, "");
 }
 
 function at2() {
@@ -42,34 +42,34 @@ function at2() {
     b: rowStub({ bk: "addition", gk: "g2", lk: "medium", mode: "practice" }),
   };
   applyMathScopedParentDisplayNames(m);
-  assert.equal(m.a.displayName, "חיבור — למידה");
-  assert.equal(m.b.displayName, "חיבור — תרגול");
+  assert.equal(m.a.displayName, " — ");
+  assert.equal(m.b.displayName, " — ");
 }
 
 function at3() {
   const r = rowStub({ bk: "addition", gk: "g2", lk: null, mode: "learning" });
   const m = { k: r };
   applyMathScopedParentDisplayNames(m);
-  assert.equal(m.k.displayName, "חיבור");
+  assert.equal(m.k.displayName, "");
 }
 
 function at4() {
   const r = rowStub({ bk: "addition", gk: null, lk: "medium", mode: "learning" });
   const m = { k: r };
   applyMathScopedParentDisplayNames(m);
-  assert.equal(m.k.displayName, "חיבור");
+  assert.equal(m.k.displayName, "");
 }
 
 function at5_coreSingleTopicNoFakeUnknown() {
   const r = rowStub({ bk: "addition", gk: null, lk: null, mode: "learning" });
-  assert.equal(mathTopicParentDisplayCoreFromRow(r, "addition"), "חיבור");
+  assert.equal(mathTopicParentDisplayCoreFromRow(r, "addition"), "");
 }
 
 function at6_wpKindMapsToWordProblems() {
-  assert.equal(getMathReportBucketDisplayName("wp_shop_discount"), "בעיות מילוליות");
-  assert.equal(getMathReportBucketDisplayName("multiplication_table"), "לוח הכפל");
-  assert.notEqual(getMathReportBucketDisplayName("general"), "נושא");
-  assert.equal(getMathReportBucketDisplayName("general"), "תרגול");
+  assert.equal(getMathReportBucketDisplayName("wp_shop_discount"), " ");
+  assert.equal(getMathReportBucketDisplayName("multiplication_table"), " ");
+  assert.notEqual(getMathReportBucketDisplayName("general"), "");
+  assert.equal(getMathReportBucketDisplayName("general"), "");
 }
 
 at1();

@@ -12,7 +12,7 @@ const CATEGORY_LABELS = {
 
 /**
  * @param {{
- *   cards: Array<{ cardKey: string, displayNameHe: string, category?: string, previewPath?: string }>,
+ *   cards: Array<{ cardKey: string, displayName: string, category?: string, previewPath?: string }>,
  *   selectedCardKey: string,
  *   onSelectCardKey: (key: string) => void,
  *   onSubmit: (cardKey?: string) => void,
@@ -48,7 +48,7 @@ export default function CreateColoringWorksheetTab({
       if (category && card.category !== category) return false;
       if (!q) return true;
       return (
-        card.displayNameHe.includes(q) ||
+        card.displayName.includes(q) ||
         card.cardKey.includes(q)
       );
     });
@@ -122,7 +122,7 @@ export default function CreateColoringWorksheetTab({
                     <img src={card.previewPath} alt="" loading="lazy" draggable={false} />
                   ) : null}
                 </div>
-                <span className="coloring-card-tile-name">{card.displayNameHe}</span>
+                <span className="coloring-card-tile-name">{card.displayName}</span>
               </button>
             );
           })}
@@ -131,7 +131,7 @@ export default function CreateColoringWorksheetTab({
 
       {selected ? (
         <p className={`text-sm ${T.muted}`}>
-          {ui.coloringSelectedLabel}: <strong>{selected.displayNameHe}</strong>
+          {ui.coloringSelectedLabel}: <strong>{selected.displayName}</strong>
         </p>
       ) : null}
 

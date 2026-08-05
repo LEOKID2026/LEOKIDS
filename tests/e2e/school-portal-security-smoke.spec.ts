@@ -35,11 +35,11 @@ async function supabasePasswordToken(email: string, password: string): Promise<s
   return json.access_token || null;
 }
 
-const NOT_FOUND_RE = /404|This page could not be found|הדף לא נמצא/u;
+const NOT_FOUND_RE = /404|This page could not be found|  /u;
 
 async function teacherLogin(page: import("@playwright/test").Page, email: string, password: string) {
   await page.goto("/teacher/login", { waitUntil: "domcontentloaded" });
-  await page.getByPlaceholder("המייל שלך").fill(email);
+  await page.getByPlaceholder(" ").fill(email);
   await page.locator('input[type="password"]').fill(password);
   await page.locator('form button[type="submit"]').click({ force: true });
 }
@@ -87,10 +87,10 @@ test.describe("school portal security smoke @school-portal", () => {
 
     await page.goto("/admin/schools", { waitUntil: "domcontentloaded" });
     await assertNo404(page);
-    await expect(page.getByRole("heading", { name: "ניהול בתי ספר" })).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByRole("heading", { name: "  " })).toBeVisible({ timeout: 30_000 });
 
     const table = page.locator("table");
-    const emptyList = page.getByText("אין בתי ספר.");
+    const emptyList = page.getByText("  .");
     await expect(table.or(emptyList)).toBeVisible({ timeout: 30_000 });
 
     const manageLink = page.locator('a[href^="/admin/schools/"]').first();
@@ -98,11 +98,11 @@ test.describe("school portal security smoke @school-portal", () => {
     await manageLink.click();
     await assertNo404(page);
 
-    await expect(page.getByRole("heading", { name: "מורים בבית הספר" })).toBeVisible({
+    await expect(page.getByRole("heading", { name: "  " })).toBeVisible({
       timeout: 30_000,
     });
-    await expect(page.getByText("מינוי מנהל/ת בית ספר")).toBeVisible();
-    await expect(page.getByText("שיוך מורה")).toBeVisible();
+    await expect(page.getByText(" /  ")).toBeVisible();
+    await expect(page.getByText(" ")).toBeVisible();
 
     const managerToken = await supabasePasswordToken(SCHOOL_MANAGER_EMAIL, SCHOOL_PASSWORD);
     test.skip(!managerToken, "School manager token unavailable");

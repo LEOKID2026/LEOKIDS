@@ -27,7 +27,7 @@ test("resolveExerciseView routes place-value addition steps", () => {
 test("shouldShowStandaloneExerciseView hides wordProblem and expression text-only", () => {
   assert.equal(
     shouldShowStandaloneExerciseView(
-      { exerciseView: "wordProblem", text: "סיפור" },
+      { exerciseView: "wordProblem", text: "" },
       { operation: "word_problems" },
       {}
     ),

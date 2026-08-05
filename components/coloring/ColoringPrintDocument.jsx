@@ -3,7 +3,7 @@
  */
 export default function ColoringPrintDocument({ worksheetPayload }) {
   const src = worksheetPayload?.a4Url || worksheetPayload?.previewUrl || "";
-  const title = worksheetPayload?.displayNameHe || worksheetPayload?.title || "";
+  const title = worksheetPayload?.displayName || worksheetPayload?.title || "";
 
   if (!src) return null;
 

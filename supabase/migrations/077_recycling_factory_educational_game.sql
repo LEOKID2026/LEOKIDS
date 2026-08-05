@@ -1,4 +1,4 @@
--- Educational game #1: recycling-factory (מפעל המיחזור של ליאו)
+-- Educational game #1: recycling-factory
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Rollback (manual):
@@ -135,7 +135,7 @@ insert into public.site_game_catalog (
 ) values (
   'recycling-factory',
   'educational',
-  'מפעל המיחזור של ליאו',
+  'Leo''s Recycling Factory',
   '/student/educational-games/recycling-factory',
   '/student/educational-games',
   coalesce(
@@ -144,7 +144,7 @@ insert into public.site_game_catalog (
   ),
   10,
   '♻️',
-  'מיינו פסולת לפחים הנכונים ושמרו על הסביבה'
+  'Sort trash into the right bins and help protect the environment'
 )
 on conflict (game_key) do update set
   category = excluded.category,

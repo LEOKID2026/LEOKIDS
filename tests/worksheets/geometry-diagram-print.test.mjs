@@ -16,17 +16,17 @@ import {
 import { WORKSHEET_PRINTABILITY } from "../../lib/worksheets/worksheet-question-types.js";
 
 const META = {
-  titleHe: "דף עבודה - גאומטריה",
-  subjectHe: "גאומטריה",
-  gradeHe: "כיתה ד׳",
-  topicHe: "שטח",
-  levelHe: "בינוני",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "geometry",
 };
 
 const AREA_SQUARE_RAW = {
-  question: "מה שטח הריבוע?",
+  question: "  ?",
   answers: ["16", "20", "25", "30"],
   correctAnswer: "25",
   topic: "area",
@@ -82,7 +82,7 @@ describe("geometry-diagram-print", () => {
 
   test("pythagoras diagram renders right triangle", () => {
     const raw = {
-      question: "מה אורך היתר?",
+      question: "  ?",
       answers: ["5", "10", "13", "15"],
       correctAnswer: "13",
       topic: "pythagoras",

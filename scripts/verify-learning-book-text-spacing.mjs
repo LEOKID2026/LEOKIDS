@@ -51,30 +51,30 @@ const CATALOG = [
 ];
 
 const KNOWN_GLUED_PATTERNS = [
-  "קוישר",
-  "נקודותמסומנות",
-  "חציימינה",
-  "מעלהקו",
-  "מספרגדוליותר",
-  "צעד־צעדימינה",
-  "קדימה=ימינה",
-  "היאהולכת",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "=",
+  "",
 ];
 
 const CANONICAL_CASES = [
-  { line: "קו ישר עם נקודות מסומנות", mustInclude: ["קו ישר", "נקודות מסומנות"] },
-  { line: "חץ ימינה מעל הקו", mustInclude: ["חץ ימינה", "מעל הקו"] },
+  { line: "    ", mustInclude: [" ", " "] },
+  { line: "   ", mustInclude: [" ", " "] },
   {
-    line: "קדימה = ימינה = מספר גדול יותר",
-    mustInclude: ["קדימה =", "ימינה =", "מספר גדול יותר"],
+    line: " =  =   ",
+    mustInclude: [" =", " =", "  "],
   },
-  { line: "היא הולכת צעד-צעד ימינה", mustInclude: ["היא הולכת", "צעד-צעד", "ימינה"] },
-  { line: "מספר גדול יותר", mustInclude: ["מספר גדול יותר"] },
-  { line: "חילוק במחלק דו־ספרתי", mustInclude: ["חילוק", "דו־ספרתי"] },
-  { line: "155 ושארית 7", mustInclude: ["155", "ושארית 7"] },
+  { line: "  - ", mustInclude: [" ", "-", ""] },
+  { line: "  ", mustInclude: ["  "] },
+  { line: "  ", mustInclude: ["", ""] },
+  { line: "155  7", mustInclude: ["155", " 7"] },
   {
-    line: "1,247 ÷ 8 = 155 ושארית 7",
-    mustInclude: ["1,247 ÷ 8 = 155", "ושארית 7"],
+    line: "1,247 ÷ 8 = 155  7",
+    mustInclude: ["1,247 ÷ 8 = 155", " 7"],
   },
 ];
 
@@ -186,23 +186,23 @@ for (const { subject, grade, order } of CATALOG) {
 const beforeAfterExamples = [
   {
     label: "Formula-like equals chain (diagram caption)",
-    before: "קדימה=ימינה=מספרגדוליותר",
-    after: flattenMixedHebrewMathVisibleText("קדימה = ימינה = מספר גדול יותר"),
+    before: "==",
+    after: flattenMixedHebrewMathVisibleText(" =  =   "),
   },
   {
     label: "Word-hyphen prose misclassified as formula",
-    before: "היאהולכתצעד-צעדימינה",
-    after: flattenMixedHebrewMathVisibleText("היא הולכת צעד-צעד ימינה"),
+    before: "-",
+    after: flattenMixedHebrewMathVisibleText("  - "),
   },
   {
     label: "List item Hebrew phrase",
-    before: "קוישרעםנקודותמסומנות",
-    after: flattenMixedHebrewMathVisibleText("קו ישר עם נקודות מסומנות"),
+    before: "",
+    after: flattenMixedHebrewMathVisibleText("    "),
   },
   {
     label: "Geometry-style label phrase",
-    before: "חציימינהמעלהקו",
-    after: flattenMixedHebrewMathVisibleText("חץ ימינה מעל הקו"),
+    before: "",
+    after: flattenMixedHebrewMathVisibleText("   "),
   },
 ];
 
@@ -230,8 +230,8 @@ Generated: ${new Date().toISOString().slice(0, 10)}
 
 The RTL/LTR renderer treated some **plain Hebrew prose** as **formula-like bodies** (\`isFormulaLikeBody\`):
 
-1. **ASCII hyphen** in patterns like \`צעד-צעד\` matched formula operators, routing prose into \`splitFormulaTokens\`.
-2. **Equals chains** like \`קדימה = ימינה = מספר גדול יותר\` were classified as formulas despite being child-facing explanations.
+1. **ASCII hyphen** in patterns like \`-\` matched formula operators, routing prose into \`splitFormulaTokens\`.
+2. **Equals chains** like \` =  =   \` were classified as formulas despite being child-facing explanations.
 3. \`splitFormulaTokens\` used \`.trim()\` on chunks and **discarded whitespace tokens**, so adjacent \`<span>\` / \`<bdi>\` runs glued in the browser.
 4. \`renderContentRuns\` / \`renderMixedBodyInner\` did not re-insert **source gaps** between digit/math/text runs, so \`unicode-bidi: isolate\` spans could collapse inter-word spaces.
 
@@ -347,13 +347,13 @@ async function captureScreenshots() {
       url: `${baseUrl}/learning/book/math/g1/ns_counting_forward`,
       section: 3,
       name: "g1-number-line-section3-mobile.png",
-      checks: ["קו ישר", "נקודות מסומנות", "קדימה = ימינה"],
+      checks: [" ", " ", " = "],
     },
     {
       url: `${baseUrl}/learning/book/math/g5/div_with_remainder`,
       section: 2,
       name: "g5-div_with_remainder-section2-mobile.png",
-      checks: ["155 ושארית 7", "1,247 ÷ 8"],
+      checks: ["155  7", "1,247 ÷ 8"],
     },
     {
       url: `${baseUrl}/learning/book/geometry/g4/shapes_basic_properties_angles`,
@@ -364,13 +364,13 @@ async function captureScreenshots() {
 
   async function navigateToSection(sectionNumber) {
     for (let i = 0; i < 8; i += 1) {
-      const prev = page.getByRole("button", { name: "עמוד קודם" });
+      const prev = page.getByRole("button", { name: " " });
       if (!(await prev.isEnabled())) break;
       await prev.click();
       await page.waitForTimeout(250);
     }
     for (let s = 1; s < sectionNumber; s += 1) {
-      const next = page.getByRole("button", { name: "עמוד הבא" });
+      const next = page.getByRole("button", { name: " " });
       await next.scrollIntoViewIfNeeded();
       await next.click();
       await page.waitForTimeout(400);

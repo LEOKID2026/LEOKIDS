@@ -101,8 +101,8 @@ export function OfflineSoloGamesHub() {
               key={game.id}
               href={game.route}
               emoji={game.emoji}
-              title={game.titleHe}
-              blurb={game.blurbHe}
+              title={game.title}
+              blurb={game.blurb}
               GH={GH}
             />
           ))}
@@ -127,8 +127,8 @@ export function OfflineEducationalGamesHub() {
               key={game.id}
               href={game.route}
               emoji={game.emoji}
-              title={game.titleHe}
-              blurb={game.blurbHe}
+              title={game.title}
+              blurb={game.blurb}
               GH={GH}
             />
           ))}

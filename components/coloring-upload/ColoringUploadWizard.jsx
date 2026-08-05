@@ -358,7 +358,7 @@ export default function ColoringUploadWizard() {
 
     if (!valid.ok) {
 
-      setError(valid.messageHe);
+      setError(valid.message);
 
       return;
 
@@ -388,7 +388,7 @@ export default function ColoringUploadWizard() {
 
         bitmap.close();
 
-        setError(dimCheck.messageHe);
+        setError(dimCheck.message);
 
         return;
 

@@ -12,20 +12,20 @@ import { trendV1DisplayLineHe } from "../../utils/parent-report-topic-trend-v1.j
 
 {
   const label = resolveParentFacingPatternLabel("procedural_error");
-  assert.ok(label.includes("דרך פתרון"));
+  assert.ok(label.includes(" "));
   assert.ok(!/procedural_error/i.test(label));
   assert.equal(sanitizeParentPatternLabel("procedural_error"), label);
   const patternLine = explainPatternHe("procedural_error");
-  assert.ok(patternLine.includes("הטעות שחוזרת:"));
+  assert.ok(patternLine.includes(" :"));
   assert.ok(!/procedural_error/i.test(patternLine));
 }
 
 {
   const meaning = parentFacingErrorPatternMeaning("procedural_error");
-  assert.ok(meaning.includes("דרך הפתרון"));
+  assert.ok(meaning.includes(" "));
   const copy = buildApprovedTopicCopyHe(
     {
-      label: "שברים",
+      label: "",
       questions: 12,
       accuracy: 52,
       learningPatternDecision: {
@@ -40,21 +40,21 @@ import { trendV1DisplayLineHe } from "../../utils/parent-report-topic-trend-v1.j
   );
   assert.ok(copy.whatItMeans);
   assert.ok(!/procedural_error/i.test(copy.whatItMeans));
-  assert.ok(copy.whatItMeans.includes("דרך"));
+  assert.ok(copy.whatItMeans.includes(""));
 }
 
 {
-  assert.equal(getTopicName("area::grade:g4"), "שטח");
-  assert.equal(getTopicName("volume\u0001g5"), "נפח");
+  assert.equal(getTopicName("area::grade:g4"), "");
+  assert.equal(getTopicName("volume\u0001g5"), "");
   assert.equal(normalizeReportTopicBucketKey("triangles::grade:g3"), "triangles");
-  assert.notEqual(getTopicName("triangles::grade:g3"), "נושא");
+  assert.notEqual(getTopicName("triangles::grade:g3"), "");
   assert.notEqual(getTopicName("triangles::grade:g3"), "");
 }
 
 {
   const row = {
     rowKey: "geometry_area",
-    label: "שטח",
+    label: "",
     questions: 20,
     accuracy: 52,
     trendV1: {
@@ -64,16 +64,16 @@ import { trendV1DisplayLineHe } from "../../utils/parent-report-topic-trend-v1.j
     },
   };
   const trendLine = trendV1DisplayLineHe(row.trendV1);
-  assert.ok(trendLine.includes("מגמה בתקופה: ללא שינוי משמעותי"));
+  assert.ok(trendLine.includes(" :   "));
   const copy = buildApprovedTopicCopyHe(row, "g5");
-  assert.ok(copy.title === "שטח" || copy.title.includes("שטח"));
-  assert.ok(!/^\s*נושא\s*$/u.test(copy.title));
+  assert.ok(copy.title === "" || copy.title.includes(""));
+  assert.ok(!/^\s*\s*$/u.test(copy.title));
 }
 
 {
   const action = explainActionHe("knowledge_gap", "knowledge_gap", "");
   assert.ok(action.startsWith(`${PARENT_TOPIC_HOME_ACTION_HEADING_HE}:`));
-  assert.ok(!action.includes("בבית"));
+  assert.ok(!action.includes(""));
 }
 
 console.log("parent-report-topic-card-parent-facing.test.mjs: ok");

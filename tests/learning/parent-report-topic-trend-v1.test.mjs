@@ -121,8 +121,8 @@ function buildEvents(pattern, dayOffsets) {
     direction: "improving",
     parentLineHe: TREND_V1_PARENT_LINE_HE.improving,
   });
-  assert.ok(line.includes("משתפר"));
-  assert.ok(line.includes("מגמה בתקופה: משתפר -"));
+  assert.ok(line.includes(""));
+  assert.ok(line.includes(" :  -"));
   assert.equal(
     trendV1DisplayLineHe({ ok: true, direction: "insufficient_data", parentLineHe: "x" }),
     "",
@@ -133,10 +133,10 @@ function buildEvents(pattern, dayOffsets) {
   const line = trendV1DisplayLineHe({
     ok: true,
     direction: "stable",
-    parentLineHe: "מגמה בתקופה: התוצאות בנושא הזה יציבות יחסית בתקופה שנבחרה.",
+    parentLineHe: " :       .",
   });
-  assert.ok(line.includes("מגמה בתקופה: ללא שינוי משמעותי -"));
-  assert.ok(line.includes("עדיין כדאי לחזק את הנושא בתרגול קצר"));
+  assert.ok(line.includes(" :    -"));
+  assert.ok(line.includes("      "));
 }
 
 console.log("parent-report-topic-trend-v1.test.mjs: ok");

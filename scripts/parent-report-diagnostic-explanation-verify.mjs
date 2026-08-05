@@ -5,101 +5,101 @@
 
 import assert from "node:assert/strict";
 
-const M02_PATTERN = "שגיאה בעמודת עשרות";
-const M10_ENGINE_PATTERN = "בחירת כפל לא מתאים לחילוק";
-const M02_EXPLANATION_PREFIX = "המערכת זיהתה קושי בחיבור";
-const M03_EXPLANATION_PREFIX = "המערכת זיהתה קושי בשליפה";
-const M10_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבנת הקשר בין חילוק לכפל";
-const M05_EXPLANATION_PREFIX = "המערכת זיהתה קושי בחיבור או חיסור שברים";
-const M09_EXPLANATION_PREFIX = "המערכת זיהתה קושי בשימוש בעשר הקרובה";
-const G01_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבחנה בין תכונות";
-const G03_EXPLANATION_PREFIX = "המערכת זיהתה קושי בזיהוי הגובה המתאים";
-const G08_EXPLANATION_PREFIX = "המערכת זיהתה קושי בחישוב שטח משולש";
-const H01_EXPLANATION_PREFIX = "המערכת זיהתה קושי בבחירת מילה נרדפת";
-const H04_EXPLANATION_PREFIX = "המערכת זיהתה קושי באיתור מידע";
-const H05_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבחנה בין מילים שנשמעות";
-const H08_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהתאמת רמת הלשון";
-const E01_EXPLANATION_PREFIX = "המערכת זיהתה קושי בשימוש בצירופי מילים טבעיים באנגלית";
-const E05_EXPLANATION_PREFIX = "המערכת זיהתה קושי בשימוש במילות יחס באנגלית";
-const E08_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבחנה בין מילים באנגלית שנשמעות";
-const S01_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבחנה בין תכונה של דבר";
-const S04_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבנה שחומר לא נעלם";
-const S07_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבנת קשרי אכילה";
-const S08_EXPLANATION_PREFIX = "המערכת זיהתה קושי בביסוס תשובה על מקור מידע";
-const MG01_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבנת סולם במפה";
-const MG07_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבנת התפקיד של מוסדות ציבור";
-const MG08_EXPLANATION_PREFIX = "המערכת זיהתה קושי בהבנת סימנים במפה";
+const M02_PATTERN = "  ";
+const M10_ENGINE_PATTERN = "    ";
+const M02_EXPLANATION_PREFIX = "   ";
+const M03_EXPLANATION_PREFIX = "   ";
+const M10_EXPLANATION_PREFIX = "       ";
+const M05_EXPLANATION_PREFIX = "      ";
+const M09_EXPLANATION_PREFIX = "     ";
+const G01_EXPLANATION_PREFIX = "     ";
+const G03_EXPLANATION_PREFIX = "     ";
+const G08_EXPLANATION_PREFIX = "     ";
+const H01_EXPLANATION_PREFIX = "     ";
+const H04_EXPLANATION_PREFIX = "    ";
+const H05_EXPLANATION_PREFIX = "      ";
+const H08_EXPLANATION_PREFIX = "     ";
+const E01_EXPLANATION_PREFIX = "       ";
+const E05_EXPLANATION_PREFIX = "      ";
+const E08_EXPLANATION_PREFIX = "       ";
+const S01_EXPLANATION_PREFIX = "       ";
+const S04_EXPLANATION_PREFIX = "      ";
+const S07_EXPLANATION_PREFIX = "     ";
+const S08_EXPLANATION_PREFIX = "       ";
+const MG01_EXPLANATION_PREFIX = "     ";
+const MG07_EXPLANATION_PREFIX = "       ";
+const MG08_EXPLANATION_PREFIX = "     ";
 
 /** @type {Record<string, { patternHe: string; subskillHe: string; bucketKey: string; displayName: string; topicRowSuffix: string }>} */
 const MATH_TAXONOMY_FIXTURE = {
   "M-01": {
-    patternHe: "טעויות בהמרת ייצוג",
-    subskillHe: "פירוק 10+1",
+    patternHe: "  ",
+    subskillHe: " 10+1",
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     topicRowSuffix: "addition\u0001learning\u0001g2\u0001easy",
   },
   "M-02": {
     patternHe: M02_PATTERN,
-    subskillHe: "נשיאה",
+    subskillHe: "",
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     topicRowSuffix: "addition\u0001learning\u0001g3\u0001easy",
   },
   "M-03": {
-    patternHe: "אותם זוגות שגויים",
-    subskillHe: "עובדת כפל",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "multiplication",
-    displayName: "כפל",
+    displayName: "",
     topicRowSuffix: "multiplication\u0001learning\u0001g3\u0001easy",
   },
   "M-04": {
-    patternHe: "השוואה לפי מונה בלבד",
-    subskillHe: "חלק־כלל",
+    patternHe: "   ",
+    subskillHe: "",
     bucketKey: "fractions",
-    displayName: "שברים",
+    displayName: "",
     topicRowSuffix: "fractions\u0001learning\u0001g4\u0001easy",
   },
   "M-05": {
-    patternHe: "טעות באותה שלב",
-    subskillHe: "המראה",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "fractions",
-    displayName: "שברים",
+    displayName: "",
     topicRowSuffix: "fractions\u0001learning\u0001g5\u0001easy",
   },
   "M-06": {
-    patternHe: "טעות כיוון עיגול",
-    subskillHe: "עיגול/השוואה",
+    patternHe: "  ",
+    subskillHe: "/",
     bucketKey: "decimals",
-    displayName: "עשרוניים",
+    displayName: "",
     topicRowSuffix: "decimals\u0001learning\u0001g5\u0001easy",
   },
   "M-07": {
-    patternHe: "מספר נכון + יחידה שגויה",
-    subskillHe: "יחידות",
+    patternHe: "  +  ",
+    subskillHe: "",
     bucketKey: "word_problems",
-    displayName: "בעיות מילוליות",
+    displayName: " ",
     topicRowSuffix: "word_problems\u0001learning\u0001g4\u0001easy",
   },
   "M-08": {
-    patternHe: "כישלון רק באיחוד",
-    subskillHe: "רב־שלבי",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "word_problems",
-    displayName: "בעיות מילוליות",
+    displayName: " ",
     topicRowSuffix: "word_problems\u0001learning\u0001g5\u0001easy",
   },
   "M-09": {
-    patternHe: "כיוון הפוך / הוספה במקום חיסור",
-    subskillHe: "השלמה לעשר",
+    patternHe: "  /   ",
+    subskillHe: " ",
     bucketKey: "subtraction",
-    displayName: "חיסור",
+    displayName: "",
     topicRowSuffix: "subtraction\u0001learning\u0001g3\u0001easy",
   },
   "M-10": {
     patternHe: M10_ENGINE_PATTERN,
-    subskillHe: "הופכיות",
+    subskillHe: "",
     bucketKey: "division",
-    displayName: "חילוק",
+    displayName: "",
     topicRowSuffix: "division\u0001learning\u0001g4\u0001easy",
   },
 };
@@ -107,59 +107,59 @@ const MATH_TAXONOMY_FIXTURE = {
 /** @type {Record<string, { patternHe: string; subskillHe: string; bucketKey: string; displayName: string; topicRowSuffix: string }>} */
 const GEOMETRY_TAXONOMY_FIXTURE = {
   "G-01": {
-    patternHe: "בלבול תכונות",
-    subskillHe: "תכונות מלבן/מקבילית",
+    patternHe: " ",
+    subskillHe: " /",
     bucketKey: "quadrilaterals",
-    displayName: "מרובעים",
+    displayName: "",
     topicRowSuffix: "quadrilaterals\u0001learning\u0001g4\u0001easy",
   },
   "G-02": {
-    patternHe: "טעות בטווח זווית",
-    subskillHe: "קריאת משקף",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "angles",
-    displayName: "זוויות",
+    displayName: "",
     topicRowSuffix: "angles\u0001learning\u0001g4\u0001easy",
   },
   "G-03": {
-    patternHe: "צלעות כגובה",
-    subskillHe: "גובה",
+    patternHe: " ",
+    subskillHe: "",
     bucketKey: "area",
-    displayName: "שטח",
+    displayName: "",
     topicRowSuffix: "area\u0001learning\u0001g4\u0001easy",
   },
   "G-04": {
-    patternHe: "סיבוב הפוך",
-    subskillHe: "כיוון/זווית",
+    patternHe: " ",
+    subskillHe: "/",
     bucketKey: "rotation",
-    displayName: "סיבוב",
+    displayName: "",
     topicRowSuffix: "rotation\u0001learning\u0001g4\u0001easy",
   },
   "G-05": {
-    patternHe: "שוכח עומק",
-    subskillHe: "מודל 3D",
+    patternHe: " ",
+    subskillHe: " 3D",
     bucketKey: "volume",
-    displayName: "נפח",
+    displayName: "",
     topicRowSuffix: "volume\u0001learning\u0001g4\u0001easy",
   },
   "G-06": {
-    patternHe: "טעות יחידה חוזרת",
-    subskillHe: "המרת יחידות",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "perimeter",
-    displayName: "היקף",
+    displayName: "",
     topicRowSuffix: "perimeter\u0001learning\u0001g4\u0001easy",
   },
   "G-07": {
-    patternHe: "ציר שגוי חוזר",
-    subskillHe: "ציר",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "symmetry",
-    displayName: "סימטריה",
+    displayName: "",
     topicRowSuffix: "symmetry\u0001learning\u0001g4\u0001easy",
   },
   "G-08": {
-    patternHe: "שוכח ÷2 או גובה שגוי",
-    subskillHe: "בסיס×גובה÷2",
+    patternHe: " ÷2   ",
+    subskillHe: "×÷2",
     bucketKey: "triangles",
-    displayName: "משולשים",
+    displayName: "",
     topicRowSuffix: "triangles\u0001learning\u0001g4\u0001easy",
   },
 };
@@ -167,59 +167,59 @@ const GEOMETRY_TAXONOMY_FIXTURE = {
 /** @type {Record<string, { patternHe: string; subskillHe: string; bucketKey: string; displayName: string; topicRowSuffix: string }>} */
 const HEBREW_SUBJECT_TAXONOMY_FIXTURE = {
   "H-01": {
-    patternHe: "מילה קרובה לא נכונה",
-    subskillHe: "נרדפת",
+    patternHe: "   ",
+    subskillHe: "",
     bucketKey: "vocabulary",
-    displayName: "אוצר מילים",
+    displayName: " ",
     topicRowSuffix: "vocabulary\u0001learning\u0001g4\u0001easy",
   },
   "H-02": {
-    patternHe: "כינוי/שם עצם שגוי",
-    subskillHe: "מגדר/מספר",
+    patternHe: "/  ",
+    subskillHe: "/",
     bucketKey: "grammar",
-    displayName: "דקדוק",
+    displayName: "",
     topicRowSuffix: "grammar\u0001learning\u0001g4\u0001easy",
   },
   "H-03": {
-    patternHe: "אותה משפחה שגויה",
-    subskillHe: "משפחת כתיב",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "writing",
-    displayName: "כתיב",
+    displayName: "",
     topicRowSuffix: "writing\u0001learning\u0001g4\u0001easy",
   },
   "H-04": {
-    patternHe: "טעות כשעובדה לא בסדר קריאה",
-    subskillHe: "חיפוש",
+    patternHe: "    ",
+    subskillHe: "",
     bucketKey: "reading",
-    displayName: "קריאה",
+    displayName: "",
     topicRowSuffix: "reading\u0001learning\u0001g4\u0001easy",
   },
   "H-05": {
-    patternHe: "טעות רק בהומופון",
-    subskillHe: "הומופון",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "vocabulary",
-    displayName: "אוצר מילים",
+    displayName: " ",
     topicRowSuffix: "vocabulary\u0001learning\u0001g5\u0001easy",
   },
   "H-06": {
-    patternHe: "סדר מילים שגוי",
-    subskillHe: "סדר שאלה",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "grammar",
-    displayName: "דקדוק",
+    displayName: "",
     topicRowSuffix: "grammar\u0001learning\u0001g5\u0001easy",
   },
   "H-07": {
-    patternHe: "משפטים לא מחוברים",
-    subskillHe: "חיבור משפטים",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "writing",
-    displayName: "כתיבה",
+    displayName: "",
     topicRowSuffix: "writing\u0001learning\u0001g5\u0001easy",
   },
   "H-08": {
-    patternHe: "רגיסטר שגוי חוזר",
-    subskillHe: "פורמליות",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "speaking",
-    displayName: "דיבור",
+    displayName: "",
     topicRowSuffix: "speaking\u0001learning\u0001g5\u0001easy",
   },
 };
@@ -227,59 +227,59 @@ const HEBREW_SUBJECT_TAXONOMY_FIXTURE = {
 /** @type {Record<string, { patternHe: string; subskillHe: string; bucketKey: string; displayName: string; topicRowSuffix: string }>} */
 const ENGLISH_SUBJECT_TAXONOMY_FIXTURE = {
   "E-01": {
-    patternHe: "תרגום מילולי שגוי",
+    patternHe: "  ",
     subskillHe: "collocation",
     bucketKey: "vocabulary",
-    displayName: "אוצר מילים",
+    displayName: " ",
     topicRowSuffix: "vocabulary\u0001learning\u0001g4\u0001easy",
   },
   "E-02": {
     patternHe: "past/present",
-    subskillHe: "סממן זמן",
+    subskillHe: " ",
     bucketKey: "grammar",
-    displayName: "דקדוק",
+    displayName: "",
     topicRowSuffix: "grammar\u0001learning\u0001g4\u0001easy",
   },
   "E-03": {
-    patternHe: "טעות בדו־עמודי",
-    subskillHe: "מעקב שורות",
+    patternHe: " ",
+    subskillHe: " ",
     bucketKey: "translation",
-    displayName: "תרגום",
+    displayName: "",
     topicRowSuffix: "translation\u0001learning\u0001g4\u0001easy",
   },
   "E-04": {
     patternHe: "he/she/it",
-    subskillHe: "כינוי לנושא",
+    subskillHe: " ",
     bucketKey: "grammar",
-    displayName: "דקדוק",
+    displayName: "",
     topicRowSuffix: "grammar\u0001learning\u0001g5\u0001easy",
   },
   "E-05": {
-    patternHe: "אותה יחס שגויה",
+    patternHe: "  ",
     subskillHe: "preposition",
     bucketKey: "vocabulary",
-    displayName: "אוצר מילים",
+    displayName: " ",
     topicRowSuffix: "vocabulary\u0001learning\u0001g5\u0001easy",
   },
   "E-06": {
-    patternHe: "עובדה במקום הסקה",
+    patternHe: "  ",
     subskillHe: "inference",
     bucketKey: "sentences",
-    displayName: "משפטים",
+    displayName: "",
     topicRowSuffix: "sentences\u0001learning\u0001g5\u0001easy",
   },
   "E-07": {
-    patternHe: "שגיאות חוזרות",
-    subskillHe: "תבניות שקטות",
+    patternHe: " ",
+    subskillHe: " ",
     bucketKey: "writing",
-    displayName: "כתיבה",
+    displayName: "",
     topicRowSuffix: "writing\u0001learning\u0001g5\u0001easy",
   },
   "E-08": {
-    patternHe: "בלבול צמד צלילים",
+    patternHe: "  ",
     subskillHe: "minimal pairs",
     bucketKey: "vocabulary",
-    displayName: "אוצר מילים",
+    displayName: " ",
     topicRowSuffix: "vocabulary\u0001learning\u0001g6\u0001easy",
   },
 };
@@ -287,59 +287,59 @@ const ENGLISH_SUBJECT_TAXONOMY_FIXTURE = {
 /** @type {Record<string, { patternHe: string; subskillHe: string; bucketKey: string; displayName: string; topicRowSuffix: string }>} */
 const SCIENCE_SUBJECT_TAXONOMY_FIXTURE = {
   "S-01": {
-    patternHe: "בלבול קטגוריה",
-    subskillHe: "תכונה מול תהליך",
+    patternHe: " ",
+    subskillHe: "  ",
     bucketKey: "animals",
-    displayName: "בעלי חיים",
+    displayName: " ",
     topicRowSuffix: "animals\u0001learning\u0001g4\u0001easy",
   },
   "S-02": {
-    patternHe: "לשנות הכול",
-    subskillHe: "משתנה מבודד",
+    patternHe: " ",
+    subskillHe: " ",
     bucketKey: "experiments",
-    displayName: "ניסויים",
+    displayName: "",
     topicRowSuffix: "experiments\u0001learning\u0001g4\u0001easy",
   },
   "S-03": {
-    patternHe: "סדר/מיקום שגוי",
-    subskillHe: "מיקום/זרימה",
+    patternHe: "/ ",
+    subskillHe: "/",
     bucketKey: "body",
-    displayName: "גוף האדם",
+    displayName: " ",
     topicRowSuffix: "body\u0001learning\u0001g4\u0001easy",
   },
   "S-04": {
-    patternHe: "נעלם בלי שימור",
-    subskillHe: "שימור מסה",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "materials",
-    displayName: "חומרים",
+    displayName: "",
     topicRowSuffix: "materials\u0001learning\u0001g4\u0001easy",
   },
   "S-05": {
-    patternHe: "בלבול יחידות",
-    subskillHe: "המרת יחידות",
+    patternHe: " ",
+    subskillHe: " ",
     bucketKey: "experiments",
-    displayName: "ניסויים",
+    displayName: "",
     topicRowSuffix: "experiments\u0001learning\u0001g5\u0001easy",
   },
   "S-06": {
-    patternHe: "טעות בערך מגרף",
-    subskillHe: "קריאת ציר",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "earth_space",
-    displayName: "כדור הארץ והחלל",
+    displayName: "  ",
     topicRowSuffix: "earth_space\u0001learning\u0001g5\u0001easy",
   },
   "S-07": {
-    patternHe: "רמה שגויה חוזרת",
-    subskillHe: "רשת מזון",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "environment",
-    displayName: "סביבה",
+    displayName: "",
     topicRowSuffix: "environment\u0001learning\u0001g5\u0001easy",
   },
   "S-08": {
-    patternHe: "טענה לא מבוססת",
-    subskillHe: "מקור לטענה",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "mixed",
-    displayName: "מדעים",
+    displayName: "",
     topicRowSuffix: "mixed\u0001learning\u0001g5\u0001easy",
   },
 };
@@ -347,59 +347,59 @@ const SCIENCE_SUBJECT_TAXONOMY_FIXTURE = {
 /** @type {Record<string, { patternHe: string; subskillHe: string; bucketKey: string; displayName: string; topicRowSuffix: string }>} */
 const MOLEDET_GEOGRAPHY_TAXONOMY_FIXTURE = {
   "MG-01": {
-    patternHe: "מרחקים יחסיים שגויים",
-    subskillHe: "סולם",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "maps",
-    displayName: "מפות",
+    displayName: "",
     topicRowSuffix: "maps\u0001learning\u0001g4\u0001easy",
   },
   "MG-02": {
-    patternHe: "בלבול כשהמפה מוטה",
-    subskillHe: "צפון מוחלט",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "maps",
-    displayName: "מפות",
+    displayName: "",
     topicRowSuffix: "maps\u0001learning\u0001g4\u0001medium",
   },
   "MG-03": {
-    patternHe: "מיון שגוי חוזר",
-    subskillHe: "זכות/חובה",
+    patternHe: "  ",
+    subskillHe: "/",
     bucketKey: "citizenship",
-    displayName: "אזרחות",
+    displayName: "",
     topicRowSuffix: "citizenship\u0001learning\u0001g4\u0001easy",
   },
   "MG-04": {
-    patternHe: "סדר הפוך",
-    subskillHe: "סדר אירועים",
+    patternHe: " ",
+    subskillHe: " ",
     bucketKey: "homeland",
-    displayName: "מולדת",
+    displayName: "",
     topicRowSuffix: "homeland\u0001learning\u0001g4\u0001easy",
   },
   "MG-05": {
-    patternHe: "אזור שגוי חוזר",
-    subskillHe: "מפת אקלים",
+    patternHe: "  ",
+    subskillHe: " ",
     bucketKey: "geography",
-    displayName: "גאוגרפיה",
+    displayName: "",
     topicRowSuffix: "geography\u0001learning\u0001g5\u0001easy",
   },
   "MG-06": {
-    patternHe: "סיבה שגויה חוזרת",
-    subskillHe: "סיבה־תוצאה",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "homeland",
-    displayName: "מולדת",
+    displayName: "",
     topicRowSuffix: "homeland\u0001learning\u0001g5\u0001easy",
   },
   "MG-07": {
-    patternHe: "בלבול תפקידים",
-    subskillHe: "תפקיד מוסד",
+    patternHe: " ",
+    subskillHe: " ",
     bucketKey: "community",
-    displayName: "קהילה",
+    displayName: "",
     topicRowSuffix: "community\u0001learning\u0001g5\u0001easy",
   },
   "MG-08": {
-    patternHe: "סימול שגוי חוזר",
-    subskillHe: "סימבולים",
+    patternHe: "  ",
+    subskillHe: "",
     bucketKey: "maps",
-    displayName: "מפות",
+    displayName: "",
     topicRowSuffix: "maps\u0001learning\u0001g5\u0001easy",
   },
 };
@@ -445,7 +445,7 @@ function buildMathUnit(taxonomyId) {
     diagnosis: {
       allowed: true,
       taxonomyId,
-      lineHe: `מצביע על דפוס: ${fx.patternHe} (נקודת מיקוד: ${fx.subskillHe}) ב${fx.bucketKey}.`,
+      lineHe: `  : ${fx.patternHe} ( : ${fx.subskillHe}) ${fx.bucketKey}.`,
     },
     intervention: { taxonomyId },
     taxonomy: { id: taxonomyId, patternHe: fx.patternHe, subskillHe: fx.subskillHe },
@@ -462,7 +462,7 @@ function buildMathUnit(taxonomyId) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -492,12 +492,12 @@ function rowFor(unit) {
 }
 
 function subjectLabelHeForUnit(unit) {
-  if (unit.subjectId === "geometry") return "גאומטריה";
-  if (unit.subjectId === "hebrew") return "עברית";
-  if (unit.subjectId === "english") return "אנגלית";
-  if (unit.subjectId === "science") return "מדעים";
-  if (unit.subjectId === "moledet-geography") return "מולדת וגאוגרפיה";
-  return "מתמטיקה";
+  if (unit.subjectId === "geometry") return "";
+  if (unit.subjectId === "hebrew") return "";
+  if (unit.subjectId === "english") return "";
+  if (unit.subjectId === "science") return "";
+  if (unit.subjectId === "moledet-geography") return " ";
+  return "";
 }
 
 function shortSummaryForUnit(unit) {
@@ -526,7 +526,7 @@ function buildGeometryUnit(taxonomyId) {
     diagnosis: {
       allowed: true,
       taxonomyId,
-      lineHe: `מצביע על דפוס: ${fx.patternHe} (נקודת מיקוד: ${fx.subskillHe}) ב${fx.bucketKey}.`,
+      lineHe: `  : ${fx.patternHe} ( : ${fx.subskillHe}) ${fx.bucketKey}.`,
     },
     intervention: { taxonomyId },
     taxonomy: { id: taxonomyId, patternHe: fx.patternHe, subskillHe: fx.subskillHe },
@@ -543,7 +543,7 @@ function buildGeometryUnit(taxonomyId) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -572,7 +572,7 @@ function buildHebrewSubjectUnit(taxonomyId) {
     diagnosis: {
       allowed: true,
       taxonomyId,
-      lineHe: `מצביע על דפוס: ${fx.patternHe} (נקודת מיקוד: ${fx.subskillHe}) ב${fx.bucketKey}.`,
+      lineHe: `  : ${fx.patternHe} ( : ${fx.subskillHe}) ${fx.bucketKey}.`,
     },
     intervention: { taxonomyId },
     taxonomy: { id: taxonomyId, patternHe: fx.patternHe, subskillHe: fx.subskillHe },
@@ -589,7 +589,7 @@ function buildHebrewSubjectUnit(taxonomyId) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -618,7 +618,7 @@ function buildEnglishSubjectUnit(taxonomyId) {
     diagnosis: {
       allowed: true,
       taxonomyId,
-      lineHe: `מצביע על דפוס: ${fx.patternHe} (נקודת מיקוד: ${fx.subskillHe}) ב${fx.bucketKey}.`,
+      lineHe: `  : ${fx.patternHe} ( : ${fx.subskillHe}) ${fx.bucketKey}.`,
     },
     intervention: { taxonomyId },
     taxonomy: { id: taxonomyId, patternHe: fx.patternHe, subskillHe: fx.subskillHe },
@@ -635,7 +635,7 @@ function buildEnglishSubjectUnit(taxonomyId) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -664,7 +664,7 @@ function buildScienceSubjectUnit(taxonomyId) {
     diagnosis: {
       allowed: true,
       taxonomyId,
-      lineHe: `מצביע על דפוס: ${fx.patternHe} (נקודת מיקוד: ${fx.subskillHe}) ב${fx.bucketKey}.`,
+      lineHe: `  : ${fx.patternHe} ( : ${fx.subskillHe}) ${fx.bucketKey}.`,
     },
     intervention: { taxonomyId },
     taxonomy: { id: taxonomyId, patternHe: fx.patternHe, subskillHe: fx.subskillHe },
@@ -681,7 +681,7 @@ function buildScienceSubjectUnit(taxonomyId) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -710,7 +710,7 @@ function buildMoledetGeographySubjectUnit(taxonomyId) {
     diagnosis: {
       allowed: true,
       taxonomyId,
-      lineHe: `מצביע על דפוס: ${fx.patternHe} (נקודת מיקוד: ${fx.subskillHe}) ב${fx.bucketKey}.`,
+      lineHe: `  : ${fx.patternHe} ( : ${fx.subskillHe}) ${fx.bucketKey}.`,
     },
     intervention: { taxonomyId },
     taxonomy: { id: taxonomyId, patternHe: fx.patternHe, subskillHe: fx.subskillHe },
@@ -727,7 +727,7 @@ function buildMoledetGeographySubjectUnit(taxonomyId) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -801,8 +801,8 @@ function buildMoledetGeographySubjectUnit(taxonomyId) {
   }
   for (const e of catalog) {
     assert.equal(e.status, "approved");
-    assert.ok(e.explanationHe.startsWith("המערכת זיהתה"), `${e.lookupKey} prefix`);
-    assert.ok(!e.explanationHe.includes("הילד/ה מתקשה"), `${e.lookupKey} no child-blame wording`);
+    assert.ok(e.explanationHe.startsWith(" "), `${e.lookupKey} prefix`);
+    assert.ok(!e.explanationHe.includes("/ "), `${e.lookupKey} no child-blame wording`);
     if (e.exampleHe) {
       assert.ok(!e.explanationHe.includes(String(e.exampleHe)), `${e.lookupKey} example separate from explanation`);
     }
@@ -836,13 +836,13 @@ for (const taxonomyId of mathTaxonomyExplanationIdsForTests()) {
   const m02 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "M-02" });
   assert.equal(
     m02.explanationHe,
-    "המערכת זיהתה קושי בחיבור שבו צריך להעביר עשרת לעמודה הבאה. זה קורה כשמחברים ספרות ומתקבל מספר גדול מ־9.",
+    "         .        9.",
   );
   assert.equal(m02.exampleHe, "27 + 18");
   const m10 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "M-10" });
   assert.equal(
     m10.explanationHe,
-    "המערכת זיהתה קושי בהבנת הקשר בין חילוק לכפל. כלומר, להשתמש בכפל כדי לבדוק תרגיל חילוק או לבחור את הפעולה המתאימה.",
+    "       . ,           .",
   );
   assert.equal(m10.exampleHe, "12 ÷ 3 = 4; 4 × 3 = 12");
 }
@@ -863,7 +863,7 @@ for (const taxonomyId of mathTaxonomyExplanationIdsForTests()) {
   const topicRowKey = "addition\u0001learning\u0001g3\u0001easy";
   const unit = {
     ...buildMathUnit("M-02"),
-    taxonomy: { id: "M-02", patternHe: "", subskillHe: "נשיאה" },
+    taxonomy: { id: "M-02", patternHe: "", subskillHe: "" },
     diagnosis: { allowed: true, taxonomyId: "M-02", lineHe: "" },
     canonicalState: {
       actionState: "maintain",
@@ -936,7 +936,7 @@ for (const taxonomyId of geometryTaxonomyExplanationIdsForTests()) {
 {
   const unit = {
     ...buildGeometryUnit("G-03"),
-    taxonomy: { id: "G-03", patternHe: "", subskillHe: "גובה" },
+    taxonomy: { id: "G-03", patternHe: "", subskillHe: "" },
     diagnosis: { allowed: true, taxonomyId: "G-03", lineHe: "" },
     canonicalState: {
       actionState: "maintain",
@@ -956,13 +956,13 @@ for (const taxonomyId of geometryTaxonomyExplanationIdsForTests()) {
 // --- Geometry LTR example lines (separate from explanationHe) ---
 {
   const g03 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "G-03" });
-  assert.equal(g03.exampleHe, "גובה ⟂ בסיס");
+  assert.equal(g03.exampleHe, " ⟂ ");
   assert.ok(!g03.explanationHe.includes("⟂"));
   const g06 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "G-06" });
-  assert.equal(g06.exampleHe, "120 ס״מ = 1.2 מ׳");
+  assert.equal(g06.exampleHe, "120  = 1.2 ");
   assert.ok(!g06.explanationHe.includes("1.2"));
   const g08 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "G-08" });
-  assert.equal(g08.exampleHe, "בסיס 6, גובה 4: 6 × 4 ÷ 2");
+  assert.equal(g08.exampleHe, " 6,  4: 6 × 4 ÷ 2");
   assert.ok(!g08.explanationHe.includes("6 × 4"));
 }
 
@@ -971,9 +971,9 @@ for (const taxonomyId of geometryTaxonomyExplanationIdsForTests()) {
   const unit = buildGeometryUnit("G-08");
   const ex = buildParentDiagnosticExplanationV1FromV2Unit(unit);
   assert.ok(ex.explanationHe.startsWith(G08_EXPLANATION_PREFIX));
-  assert.equal(ex.exampleHe, "בסיס 6, גובה 4: 6 × 4 ÷ 2");
+  assert.equal(ex.exampleHe, " 6,  4: 6 × 4 ÷ 2");
   process.stdout.write(
-    `\n[G-08 snapshot]\n${ex.explanationHe}\nדוגמה כללית: ${ex.exampleHe}\n`,
+    `\n[G-08 snapshot]\n${ex.explanationHe}\n : ${ex.exampleHe}\n`,
   );
 }
 
@@ -1010,7 +1010,7 @@ for (const taxonomyId of hebrewSubjectTaxonomyExplanationIdsForTests()) {
 {
   const unit = {
     ...buildHebrewSubjectUnit("H-04"),
-    taxonomy: { id: "H-04", patternHe: "", subskillHe: "חיפוש" },
+    taxonomy: { id: "H-04", patternHe: "", subskillHe: "" },
     diagnosis: { allowed: true, taxonomyId: "H-04", lineHe: "" },
     canonicalState: {
       actionState: "maintain",
@@ -1030,14 +1030,14 @@ for (const taxonomyId of hebrewSubjectTaxonomyExplanationIdsForTests()) {
 // --- Hebrew-subject LTR example lines (separate from explanationHe) ---
 {
   const h04 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "H-04" });
-  assert.equal(h04.exampleHe, "מתי קרה? / מי עשה?");
-  assert.ok(!h04.explanationHe.includes("מתי קרה"));
+  assert.equal(h04.exampleHe, " ? /  ?");
+  assert.ok(!h04.explanationHe.includes(" "));
   const h05 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "H-05" });
-  assert.equal(h05.exampleHe, "אם / עם");
-  assert.ok(!h05.explanationHe.includes("אם / עם"));
+  assert.equal(h05.exampleHe, " / ");
+  assert.ok(!h05.explanationHe.includes(" / "));
   const h01 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "H-01" });
-  assert.equal(h01.exampleHe, "שמח / עליז");
-  assert.ok(!h01.explanationHe.includes("שמח"));
+  assert.equal(h01.exampleHe, " / ");
+  assert.ok(!h01.explanationHe.includes(""));
 }
 
 // --- H-05 snapshot (short + detailed) ---
@@ -1045,7 +1045,7 @@ for (const taxonomyId of hebrewSubjectTaxonomyExplanationIdsForTests()) {
   const unit = buildHebrewSubjectUnit("H-05");
   const ex = buildParentDiagnosticExplanationV1FromV2Unit(unit);
   assert.ok(ex.explanationHe.startsWith(H05_EXPLANATION_PREFIX));
-  assert.equal(ex.exampleHe, "אם / עם");
+  assert.equal(ex.exampleHe, " / ");
 
   const short = shortSummaryForUnit(unit);
   assert.equal(short.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe, ex.explanationHe);
@@ -1065,7 +1065,7 @@ for (const taxonomyId of hebrewSubjectTaxonomyExplanationIdsForTests()) {
   const sp = detailed.subjectProfiles.find((p) => p.subject === "hebrew");
   assert.ok(sp.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe.startsWith(H05_EXPLANATION_PREFIX));
   process.stdout.write(
-    `\n[H-05 snapshot]\n${ex.explanationHe}\nדוגמה כללית: ${ex.exampleHe}\n`,
+    `\n[H-05 snapshot]\n${ex.explanationHe}\n : ${ex.exampleHe}\n`,
   );
 }
 
@@ -1158,7 +1158,7 @@ for (const taxonomyId of englishSubjectTaxonomyExplanationIdsForTests()) {
   const sp = detailed.subjectProfiles.find((p) => p.subject === "english");
   assert.ok(sp.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe.startsWith(E08_EXPLANATION_PREFIX));
   process.stdout.write(
-    `\n[E-08 snapshot]\n${ex.explanationHe}\nדוגמה כללית: ${ex.exampleHe}\n`,
+    `\n[E-08 snapshot]\n${ex.explanationHe}\n : ${ex.exampleHe}\n`,
   );
 }
 
@@ -1197,7 +1197,7 @@ for (const taxonomyId of scienceSubjectTaxonomyExplanationIdsForTests()) {
 {
   const unit = {
     ...buildScienceSubjectUnit("S-04"),
-    taxonomy: { id: "S-04", patternHe: "", subskillHe: "שימור מסה" },
+    taxonomy: { id: "S-04", patternHe: "", subskillHe: " " },
     diagnosis: { allowed: true, taxonomyId: "S-04", lineHe: "" },
     canonicalState: {
       actionState: "maintain",
@@ -1217,17 +1217,17 @@ for (const taxonomyId of scienceSubjectTaxonomyExplanationIdsForTests()) {
 // --- Science-subject example lines (separate from explanationHe) ---
 {
   const s03 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "S-03" });
-  assert.equal(s03.exampleHe, "לב → כלי דם");
-  assert.ok(!s03.explanationHe.includes("לב → כלי דם"));
+  assert.equal(s03.exampleHe, " →  ");
+  assert.ok(!s03.explanationHe.includes(" →  "));
   const s04 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "S-04" });
-  assert.equal(s04.exampleHe, "קרח → מים");
-  assert.ok(!s04.explanationHe.includes("קרח → מים"));
+  assert.equal(s04.exampleHe, " → ");
+  assert.ok(!s04.explanationHe.includes(" → "));
   const s05 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "S-05" });
-  assert.equal(s05.exampleHe, "1000 גרם = 1 ק״ג");
-  assert.ok(!s05.explanationHe.includes("1000 גרם"));
+  assert.equal(s05.exampleHe, "1000  = 1 ");
+  assert.ok(!s05.explanationHe.includes("1000 "));
   const s07 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "S-07" });
-  assert.equal(s07.exampleHe, "צמח → ארנב → שועל");
-  assert.ok(!s07.explanationHe.includes("צמח → ארנב"));
+  assert.equal(s07.exampleHe, " →  → ");
+  assert.ok(!s07.explanationHe.includes(" → "));
 }
 
 // --- S-07 snapshot (short + detailed) ---
@@ -1235,7 +1235,7 @@ for (const taxonomyId of scienceSubjectTaxonomyExplanationIdsForTests()) {
   const unit = buildScienceSubjectUnit("S-07");
   const ex = buildParentDiagnosticExplanationV1FromV2Unit(unit);
   assert.ok(ex.explanationHe.startsWith(S07_EXPLANATION_PREFIX));
-  assert.equal(ex.exampleHe, "צמח → ארנב → שועל");
+  assert.equal(ex.exampleHe, " →  → ");
 
   const short = shortSummaryForUnit(unit);
   assert.equal(short.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe, ex.explanationHe);
@@ -1255,7 +1255,7 @@ for (const taxonomyId of scienceSubjectTaxonomyExplanationIdsForTests()) {
   const sp = detailed.subjectProfiles.find((p) => p.subject === "science");
   assert.ok(sp.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe.startsWith(S07_EXPLANATION_PREFIX));
   process.stdout.write(
-    `\n[S-07 snapshot]\n${ex.explanationHe}\nדוגמה כללית: ${ex.exampleHe}\n`,
+    `\n[S-07 snapshot]\n${ex.explanationHe}\n : ${ex.exampleHe}\n`,
   );
 }
 
@@ -1294,7 +1294,7 @@ for (const taxonomyId of moledetGeographyTaxonomyExplanationIdsForTests()) {
 {
   const unit = {
     ...buildMoledetGeographySubjectUnit("MG-01"),
-    taxonomy: { id: "MG-01", patternHe: "", subskillHe: "סולם" },
+    taxonomy: { id: "MG-01", patternHe: "", subskillHe: "" },
     diagnosis: { allowed: true, taxonomyId: "MG-01", lineHe: "" },
     canonicalState: {
       actionState: "maintain",
@@ -1314,14 +1314,14 @@ for (const taxonomyId of moledetGeographyTaxonomyExplanationIdsForTests()) {
 // --- Moledet/Geography example lines (separate from explanationHe) ---
 {
   const mg01 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "MG-01" });
-  assert.equal(mg01.exampleHe, "1 ס״מ במפה = 1 ק״מ במציאות");
-  assert.ok(!mg01.explanationHe.includes("1 ס״מ במפה"));
+  assert.equal(mg01.exampleHe, "1   = 1  ");
+  assert.ok(!mg01.explanationHe.includes("1  "));
   const mg03 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "MG-03" });
-  assert.equal(mg03.exampleHe, "זכות לחינוך / חובה לשמור על הכללים");
-  assert.ok(!mg03.explanationHe.includes("זכות לחינוך"));
+  assert.equal(mg03.exampleHe, "  /    ");
+  assert.ok(!mg03.explanationHe.includes(" "));
   const mg07 = resolveApprovedParentDiagnosticExplanationV1({ taxonomyId: "MG-07" });
-  assert.equal(mg07.exampleHe, "כנסת — חקיקה / בית משפט — שיפוט");
-  assert.ok(!mg07.explanationHe.includes("כנסת — חקיקה"));
+  assert.equal(mg07.exampleHe, " —  /   — ");
+  assert.ok(!mg07.explanationHe.includes(" — "));
 }
 
 // --- MG-07 snapshot (short + detailed) ---
@@ -1329,7 +1329,7 @@ for (const taxonomyId of moledetGeographyTaxonomyExplanationIdsForTests()) {
   const unit = buildMoledetGeographySubjectUnit("MG-07");
   const ex = buildParentDiagnosticExplanationV1FromV2Unit(unit);
   assert.ok(ex.explanationHe.startsWith(MG07_EXPLANATION_PREFIX));
-  assert.equal(ex.exampleHe, "כנסת — חקיקה / בית משפט — שיפוט");
+  assert.equal(ex.exampleHe, " —  /   — ");
 
   const short = shortSummaryForUnit(unit);
   assert.equal(short.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe, ex.explanationHe);
@@ -1349,14 +1349,14 @@ for (const taxonomyId of moledetGeographyTaxonomyExplanationIdsForTests()) {
   const sp = detailed.subjectProfiles.find((p) => p.subject === "moledet-geography");
   assert.ok(sp.topWeaknesses[0].parentDiagnosticExplanationV1.explanationHe.startsWith(MG07_EXPLANATION_PREFIX));
   process.stdout.write(
-    `\n[MG-07 snapshot]\n${ex.explanationHe}\nדוגמה כללית: ${ex.exampleHe}\n`,
+    `\n[MG-07 snapshot]\n${ex.explanationHe}\n : ${ex.exampleHe}\n`,
   );
 }
 
 // --- School report unchanged ---
 if (schoolMod.buildSchoolClassReportViewModel) {
   const vm = schoolMod.buildSchoolClassReportViewModel({
-    classLabel: "א",
+    classLabel: "",
     subjectReports: [],
     guidanceFocus: [],
   });

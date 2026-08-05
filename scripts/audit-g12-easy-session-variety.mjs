@@ -36,12 +36,12 @@ function mergeTopicPools(gradeKey, levelKey, topic, legacyList) {
   return base.concat(fromRich);
 }
 
-/** מאחד מילים מצוטטות — למדידת חזרתיות תבניתית (לא ניסוח מילה-במילה). */
+/**    —    (  -). */
 function cognitiveTemplate(stem) {
   return String(stem || "")
     .replace(/[“”"]/g, "'")
-    .replace(/['׳][^'׳]{1,14}['׳]/g, "'@'")
-    .replace(/׳[^׳]{1,14}׳/g, "׳@׳")
+    .replace(/['][^']{1,14}[']/g, "'@'")
+    .replace(/[^]{1,14}/g, "@")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -126,7 +126,7 @@ function analyze(gradeKey) {
           ? Number(
               (
                 (rows.filter((r) =>
-                  /grammar_pos|pos_inventory|מה חלק הדיבר|חלקי הדיבר|חלקי דיבר/i.test(
+                  /grammar_pos|pos_inventory|  | | /i.test(
                     `${r.pf}|${r.stemN}`
                   )
                 ).length /

@@ -4,11 +4,11 @@
  * Pass criteria: no black edge-map, no crash, crop/preset/manual available.
  */
 export const QA_GATE_CATEGORIES = [
-  { id: "portraits", count: 5, labelHe: "פורטרטים" },
-  { id: "pets", count: 5, labelHe: "חיות מחמד" },
-  { id: "toys", count: 5, labelHe: "צעצועים/מוצרים" },
-  { id: "busy-bg", count: 5, labelHe: "רקע עמוס" },
-  { id: "dark-weak", count: 5, labelHe: "כהות/חלשות" },
+  { id: "portraits", count: 5, labelHe: "" },
+  { id: "pets", count: 5, labelHe: " " },
+  { id: "toys", count: 5, labelHe: "/" },
+  { id: "busy-bg", count: 5, labelHe: " " },
+  { id: "dark-weak", count: 5, labelHe: "/" },
 ];
 
 console.log(

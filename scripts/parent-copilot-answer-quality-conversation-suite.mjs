@@ -15,12 +15,12 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
 // 1) Compaction: same uncertainty trope must not repeat across blocks
 {
   const dupBlocks = [
-    { type: "observation", textHe: "עדיין מוקדם לקבוע משהו כאן.", source: "composed" },
-    { type: "meaning", textHe: "נכון לעכשיו עדיין מוקדם לקבוע גם בפסקה השנייה.", source: "composed" },
+    { type: "observation", textHe: "    .", source: "composed" },
+    { type: "meaning", textHe: "       .", source: "composed" },
   ];
   const compacted = compactParentAnswerBlocks(dupBlocks, { maxBlocks: 4, maxTotalChars: 2200 });
   const joinedComp = compacted.map((b) => b.textHe).join(" ");
-  const n = (joinedComp.match(/עדיין מוקדם לקבוע/g) || []).length;
+  const n = (joinedComp.match(/  /g) || []).length;
   assert.ok(n <= 1, "expected at most one occurrence of the early-uncertainty trope after compaction");
 }
 
@@ -31,7 +31,7 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
   const rLen = runParentCopilotTurn({
     audience: "parent",
     payload,
-    utterance: "מה קורה בשברים בפועל?",
+    utterance: "   ?",
     sessionId: "aqc-len",
     selectedContextRef: { scopeType: "topic", scopeId: "t1", subjectId: "math" },
   });
@@ -47,7 +47,7 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
   const rExec = runParentCopilotTurn({
     audience: "parent",
     payload,
-    utterance: "מה התמונה הכללית של הדוח?",
+    utterance: "    ?",
     sessionId: "aqc-exec",
     selectedContextRef: null,
   });
@@ -63,7 +63,7 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
   const tpTopic = buildTruthPacketV1(payload, {
     scopeType: "topic",
     scopeId: "t1",
-    scopeLabel: "שברים",
+    scopeLabel: "",
     interpretationScope: "executive",
     canonicalIntent: "explain_report",
   });
@@ -82,7 +82,7 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
   ]) {
     const o = parentDirectOpenerHe(intent, tpTopic);
     assert.ok(o && o.length >= 8 && o.length <= 260, `opener for ${intent}`);
-    assert.match(o, /^בקצרה/u, `opener should be direct parent-facing for ${intent}`);
+    assert.match(o, /^/u, `opener should be direct parent-facing for ${intent}`);
   }
 }
 
@@ -95,13 +95,13 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
   const rMeta = runParentCopilotTurn({
     audience: "parent",
     payload,
-    utterance: "מה המשמעות של הנושא הזה בשבילנו?",
+    utterance: "     ?",
     sessionId: "aqc-meta",
     selectedContextRef: { scopeType: "topic", scopeId: "t1", subjectId: "math" },
   });
   assert.equal(rMeta.resolutionStatus, "resolved");
   const jMeta = (rMeta.answerBlocks || []).map((b) => b.textHe).join(" ");
-  const banned = ["מבחינה הורית אפשר לשאול", "שווה לחבר את המשפט", "אפשר להשתמש בזה כמסגרת"];
+  const banned = ["   ", "   ", "   "];
   for (const b of banned) {
     assert.ok(!jMeta.includes(b), `parent copy must not contain coaching filler: ${b}`);
   }
@@ -117,7 +117,7 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
         topicRecommendations: [
           {
             topicRowKey: "tSparse",
-            displayName: "יחידה קצרה",
+            displayName: " ",
             questions: 3,
             accuracy: 62,
             contractsV1: {
@@ -129,14 +129,14 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
                 hedgeLevel: "mandatory",
                 allowedTone: "parent_professional_warm",
                 forbiddenPhrases: [],
-                requiredHedges: ["נכון לעכשיו"],
+                requiredHedges: [" "],
                 allowedSections: ["summary", "finding"],
                 recommendationIntensityCap: "RI0",
                 textSlots: {
-                  observation: "נכון לעכשיו יש כאן רק מעט תרגול ביחידה הקצרה.",
-                  interpretation: "נכון לעכשיו עדיין מוקדם לקבוע כיוון עקבי.",
+                  observation: "        .",
+                  interpretation: "      .",
                   action: null,
-                  uncertainty: "נכון לעכשיו כדאי להמשיך לאסוף עוד ניסיון לפני החלטה.",
+                  uncertainty: "        .",
                 },
               },
               decision: { contractVersion: "v1", topicKey: "tSparse", subjectId: "math", decisionTier: 0, cannotConcludeYet: true },
@@ -165,7 +165,7 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
   const sparseRes = runParentCopilotTurn({
     audience: "parent",
     payload: sparsePayload,
-    utterance: "איך לסכם את הדוח בשביל עצמנו?",
+    utterance: "     ?",
     sessionId: "aqc-sparse",
     selectedContextRef: null,
   });

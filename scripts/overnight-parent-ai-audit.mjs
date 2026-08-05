@@ -88,19 +88,19 @@ function buildLatestAuditMd(args) {
     `- **Coverage thresholds:** ${thr === true ? "PASS" : thr === false ? "FAIL" : "n/a"}${coverageManifestFailed ? " (manifest error)" : ""}`,
     `- **Manifest:** \`${path.join(OUT, "COVERAGE_MANIFEST.md")}\``,
     ``,
-    `## מה נבדק — תמונת מצב`,
-    `- **תרחישים משוקללים (aggregate+deep+critical+synthetic):** ${o?.combinedScenarios ?? "—"}`,
-    `- **שאלות מדומות (aggregate+deep):** ${o?.combinedQuestions ?? "—"}`,
-    `- **סשנים מדומים:** ${o?.combinedSessions ?? "—"}`,
-    `- **PDFים (דוגמת overnight PDF):** ${o?.pdfsGeneratedCount ?? "—"}`,
-    `- **כיתות מיוצגות:** ${g}`,
-    `- **מקצועות (איחוד):** ${subs}`,
-    `- **פקודות שעברו (pass):** ${o?.aiTestsCommands ?? "—"} / ${cov?.overall?.totalCommands ?? "—"}`,
+    `##   —  `,
+    `- **  (aggregate+deep+critical+synthetic):** ${o?.combinedScenarios ?? "—"}`,
+    `- **  (aggregate+deep):** ${o?.combinedQuestions ?? "—"}`,
+    `- ** :** ${o?.combinedSessions ?? "—"}`,
+    `- **PDF ( overnight PDF):** ${o?.pdfsGeneratedCount ?? "—"}`,
+    `- ** :** ${g}`,
+    `- ** ():** ${subs}`,
+    `- **  (pass):** ${o?.aiTestsCommands ?? "—"} / ${cov?.overall?.totalCommands ?? "—"}`,
     ``,
-    `## פערים (קצר)`,
+    `##  ()`,
     ...(cov?.gapsHebrew?.length ? cov.gapsHebrew.slice(0, 12).map((x) => `- ${x}`) : ["- (none recorded)"]),
     ``,
-    `לטבלאות מלאות (A–H) ראו \`COVERAGE_MANIFEST.md\` בתיקיית הריצה.`,
+    `  (A–H)  \`COVERAGE_MANIFEST.md\`  .`,
     ``,
   ].join("\n");
 }
@@ -736,9 +736,9 @@ async function main() {
   writeJson(path.join(OUT, "FINAL_REPORT.json"), finalJson);
 
   const hebrewSummary = [
-    `סיכום לילי אוטומטי (${ts})${SMOKE ? " [מצב smoke]" : ""}: מצב כולל ${overall}.`,
-    `פקודות שעברו: ${passed}, נכשלו: ${failed}, timeout: ${timeouts}, דולגו: ${skipped}.`,
-    `כשלי מוצר (משוערים): ${productFail}; כשלי תשתית/רנר: ${infraFail}.`,
+    `   (${ts})${SMOKE ? " [ smoke]" : ""}:   ${overall}.`,
+    ` : ${passed}, : ${failed}, timeout: ${timeouts}, : ${skipped}.`,
+    `  (): ${productFail};  /: ${infraFail}.`,
   ].join("\n");
 
   const md = [

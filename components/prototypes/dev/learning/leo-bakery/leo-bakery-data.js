@@ -15,11 +15,11 @@ import { MIN_POOL_SIZE, randInt, shuffle } from "../shared/task-session.js";
  * }} BakeryTask */
 
 const ITEM_TYPES = [
-  { itemLabel: "עוגיות", itemEmoji: "🍪" },
-  { itemLabel: "קאפקייקס", itemEmoji: "🧁" },
-  { itemLabel: "לחמניות", itemEmoji: "🥖" },
-  { itemLabel: "מאפינס", itemEmoji: "🧁" },
-  { itemLabel: "קרואסונים", itemEmoji: "🥐" },
+  { itemLabel: "Cookies", itemEmoji: "🍪" },
+  { itemLabel: "Cupcakes", itemEmoji: "🧁" },
+  { itemLabel: "Rolls", itemEmoji: "🥖" },
+  { itemLabel: "Muffins", itemEmoji: "🧁" },
+  { itemLabel: "Croissants", itemEmoji: "🥐" },
 ];
 
 /** @type {Record<DifficultyId, { traysMin: number, traysMax: number, perMin: number, perMax: number, maxTotal: number, inverseRatio: number }>} */
@@ -122,15 +122,15 @@ export function generateBakeryPool(difficulty, opts = {}) {
 /** @param {BakeryTask} task */
 export function bakeryPrompt(task) {
   if (task.mode === "build") {
-    return `הכינו ${task.trays} תבניות. בכל תבנית ${task.perTray} ${task.itemLabel}. כמה ${task.itemLabel} צריך?`;
+    return ` ${task.trays} .   ${task.perTray} ${task.itemLabel}.  ${task.itemLabel} ?`;
   }
   if (task.mode === "findTrays") {
-    return `יש ${task.total} ${task.itemLabel}. בכל תבנית ${task.perTray}. כמה תבניות צריך?`;
+    return ` ${task.total} ${task.itemLabel}.   ${task.perTray}.   ?`;
   }
   if (task.mode === "findPerTray") {
-    return `יש ${task.total} ${task.itemLabel} ל-${task.trays} תבניות. כמה בכל תבנית?`;
+    return ` ${task.total} ${task.itemLabel} -${task.trays} .   ?`;
   }
-  return `יש ${task.trays} מגשים, בכל מגש ${task.perTray} ${task.itemLabel}. כמה סך הכול?`;
+  return ` ${task.trays} ,   ${task.perTray} ${task.itemLabel}.   ?`;
 }
 
 /** @param {BakeryTask} task */
@@ -167,7 +167,7 @@ export function validateBakery(task, answer) {
 
 /** @param {boolean} ok */
 export function bakeryFeedback(ok) {
-  return ok ? "מעולה! הכנתם בדיוק את ההזמנה." : "כמעט! בדקו כמה תבניות יש וכמה יש בכל תבנית.";
+  return ok ? "Great! You made the order exactly right." : "Almost! Check how many trays there are and how many are on each tray.";
 }
 
 /** @param {number} count @param {string} emoji */

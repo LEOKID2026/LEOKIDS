@@ -22,7 +22,7 @@ function analyze() {
 
     let reasons = [];
 
-    const hasRek = opts.some((o) => /^רק\s/.test(o.trim()) || /^רק[\u0590-\u05FF]/.test(o.trim()));
+    const hasRek = opts.some((o) => /^\s/.test(o.trim()) || /^[\u0590-\u05FF]/.test(o.trim()));
     if (hasRek) reasons.push("rek");
 
     if (Lc >= maxW + 20 && Lc > 40) reasons.push("correct_much_longer");

@@ -30,7 +30,7 @@ const FORBIDDEN_TERMS = [
   "outputGating",
   "rowSignals",
 ];
-const STRONG_TREND_WORDS = ["משתפר", "בירידה", "מגמה חיובית", "מגמה שלילית", "שיפור מבוסס", "ירידה מבוססת"];
+const STRONG_TREND_WORDS = ["", "", " ", " ", " ", " "];
 
 const { PARENT_REPORT_PERSONA_CORPUS } = await import(
   pathToFileURL(join(ROOT, "tests", "fixtures", "parent-report-persona-corpus.mjs")).href
@@ -174,20 +174,20 @@ async function collectRouteChecks(page, { routeKind, allowNoData }) {
       const t = document.body?.innerText || "";
       const root = document.documentElement;
       const top = t.slice(0, 3200);
-      const noPlayer = t.includes("לא נמצא שם שחקן");
-      const noData = t.includes("אין עדיין מספיק פעילות") || t.includes("אין נתונים להצגה");
-      const firstTop = top.indexOf("סיכום להורה");
-      const firstPeriod = top.indexOf("סיכום לתקופה");
-      const priorityMatch = top.match(/מיקוד עיקרי:\s*([^\n]+)/);
+      const noPlayer = t.includes("   ");
+      const noData = t.includes("   ") || t.includes("  ");
+      const firstTop = top.indexOf(" ");
+      const firstPeriod = top.indexOf(" ");
+      const priorityMatch = top.match(/ :\s*([^\n]+)/);
       const priority = priorityMatch ? priorityMatch[1].trim() : "";
       const forbiddenHits = forbiddenTerms.filter((x) => t.includes(x));
       const strongTrendHits = strongTrendWords.filter((x) => t.includes(x));
       return {
         noPlayer,
         noData,
-        hasShortTop: t.includes("סיכום קצר להורה"),
-        hasDetailedTop: t.includes("סיכום להורה"),
-        hasSummaryPrint: t.includes("תקציר להדפסה"),
+        hasShortTop: t.includes("  "),
+        hasDetailedTop: t.includes(" "),
+        hasSummaryPrint: t.includes(" "),
         detailedOrderOk: firstTop >= 0 && firstPeriod >= 0 && firstTop < firstPeriod,
         noHorizontalOverflow: root.scrollWidth <= root.clientWidth + 2,
         forbiddenHits,
@@ -260,8 +260,8 @@ async function capturePersona(browser, persona) {
       results.routes["detailed.desktop"]?.mainPriorityHe,
     ].join(" ")
   );
-  results.speedNoKnowledgeGapWording = !speedGate || !/פער ידע|ידע חסר/.test(detailedText);
-  results.strongNoRemediation = !strongGate || !/שיקום|התערבות|remediate|פער ידע/.test(detailedText);
+  results.speedNoKnowledgeGapWording = !speedGate || !/ | /.test(detailedText);
+  results.strongNoRemediation = !strongGate || !/||remediate| /.test(detailedText);
   const trendHitsCount =
     (results.routes["detailed.mobile"]?.strongTrendHits?.length || 0) +
     (results.routes["summary.mobile"]?.strongTrendHits?.length || 0);

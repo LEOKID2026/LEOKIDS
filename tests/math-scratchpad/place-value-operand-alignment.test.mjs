@@ -65,8 +65,8 @@ test("three-digit over shorter operands: shared right edge", () => {
 test("addition/subtraction headers align with operand place-value columns", () => {
   const { topRow, bottomRow, headerLabels } = layout(42, 3);
   const onesCol = onesColumn(topRow);
-  assert.equal(headerLabels[onesCol], "א");
+  assert.equal(headerLabels[onesCol], "");
   assert.equal(bottomRow[onesCol], "3");
-  assert.equal(headerLabels[onesCol - 1], "ע");
+  assert.equal(headerLabels[onesCol - 1], "");
   assert.equal(topRow[onesCol - 1], "4");
 });

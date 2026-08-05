@@ -820,10 +820,10 @@ export default function ParentReportDetailedPage() {
           <ParentReportThemeIcons className="mb-2" />
           <div className="text-4xl">📋</div>
           <h1 className={`text-2xl font-bold ${isBright ? "text-slate-900" : "text-white"}`}>
-            {PARENT_REPORT_PORTAL_GATE.titleHe}
+            {PARENT_REPORT_PORTAL_GATE.title}
           </h1>
           <p className={`text-center max-w-md ${isBright ? "text-slate-600" : "text-white/80"}`}>
-            {PARENT_REPORT_PORTAL_GATE.messageHe}
+            {PARENT_REPORT_PORTAL_GATE.message}
           </p>
           <p className={`text-center text-sm max-w-md ${isBright ? "text-slate-500" : "text-white/50"}`}>
             {PARENT_REPORT_PORTAL_GATE.hintHe}
@@ -907,7 +907,7 @@ export default function ParentReportDetailedPage() {
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                       <div className="min-w-0 flex-1">
                         <span className="pr-detailed-body-text font-bold text-white/95 leading-snug block">
-                          {tr.narrativeTitleHe || tr.labelHe || tr.displayName}
+                          {tr.narrativeTitleHe || tr.label || tr.displayName}
                         </span>
                         {tr.gradeRelationSublineHe ? (
                           <p className="pr-detailed-muted text-xs m-0 mt-0.5 text-white/60">

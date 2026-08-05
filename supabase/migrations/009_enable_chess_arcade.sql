@@ -1,4 +1,4 @@
--- Arcade: הפעלת שחמט (chess).
+-- Arcade: enable chess.
 
 begin;
 

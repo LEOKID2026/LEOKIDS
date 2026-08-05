@@ -105,7 +105,7 @@ const OPENROUTER_JSON_SYSTEM_INSTRUCTION =
 const SMALL_JSON_USER_PROMPT = [
   "You are helping format a parent-facing Hebrew coaching reply.",
   'Return one JSON object only with shape:',
-  '{"answerBlocks":[{"type":"observation","textHe":"משפט קצר בעברית","source":"composed"}]}',
+  '{"answerBlocks":[{"type":"observation","textHe":"  ","source":"composed"}]}',
   "Use a plausible short Hebrew sentence in textHe.",
 ].join(" ");
 

@@ -1,4 +1,4 @@
--- Arcade: הפעלת דומינו.
+-- Arcade: enable dominoes.
 
 begin;
 

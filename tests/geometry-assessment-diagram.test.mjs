@@ -93,7 +93,7 @@ test("assessment diagram labels are Hebrew notes, not raw keys", () => {
   const spec = getGeometryDiagramSpec(TRIANGLE_Q, { hideUnknownValues: true });
   const visible = getAssessmentDiagramVisibleValues(spec).join(" ");
   assert.ok(!/triangle_angles|angle3|pythagoras_hyp/.test(visible));
-  assert.ok(!visible.includes("סכום זוויות במשולש = 180°"));
+  assert.ok(!visible.includes("   = 180°"));
   assert.ok(visible.includes("57°"));
   assert.ok(visible.includes("?"));
 });

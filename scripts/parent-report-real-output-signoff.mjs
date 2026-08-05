@@ -193,11 +193,11 @@ function assertNoCollapsedGradeSplitNarrative(detailed, base) {
     (detailed?.outOfGradePracticeTransparency?.foundationPractice?.length || 0);
   const hasSplitExplanation =
     (es.gradeSplitTopicNoticesHe || []).length > 0 || transparencyRows > 0;
-  if (/שברים[^.\n]{0,30}דורש חיזוק/u.test(bundle) && !hasSplitExplanation) {
-    fail("aggregate narrative collapses grade-split שברים into single weakness without split notice");
+  if (/[^.\n]{0,30} /u.test(bundle) && !hasSplitExplanation) {
+    fail("aggregate narrative collapses grade-split  into single weakness without split notice");
   }
   if (!hasSplitExplanation && !base?.registeredGradeKey) {
-    fail("grade-split שברים rows present but no split explanation (notice or transparency)");
+    fail("grade-split  rows present but no split explanation (notice or transparency)");
   }
 }
 
@@ -213,8 +213,8 @@ function runHardChecks(traces, detailed, printBundle) {
       const grades = group.map((g) => g.identity.contentGradeKey).join(",");
       const hasGradeInLabels = group.some(
         (g) =>
-          /כיתה|מעל|תרגול/u.test(String(g.stages.detailedTopicRec?.recommendedStepLabelHe || "")) ||
-          /כיתה|מעל|תרגול/u.test(String(g.stages.detailedStrength?.labelHe || "")),
+          /||/u.test(String(g.stages.detailedTopicRec?.recommendedStepLabelHe || "")) ||
+          /||/u.test(String(g.stages.detailedStrength?.labelHe || "")),
       );
       if (!hasGradeInLabels) {
         fail(`duplicate label "${label}" without grade context (${grades})`);
@@ -229,7 +229,7 @@ function runHardChecks(traces, detailed, printBundle) {
     const recLabel = tr?.recommendedStepLabelHe || "";
 
     if (id.questions >= 40 && id.accuracy >= 78) {
-      if (placement === "weakness" || /תמיכה|חולשה|דורש חיזוק/i.test(recLabel)) {
+      if (placement === "weakness" || /|| /i.test(recLabel)) {
         fail(`${id.sourceId}: strong row in weakness/support without reason`);
       }
       if (textImpliesThinDataMislabel(id, recLabel) || textImpliesThinDataMislabel(id, t.stages.narrativeUncertainty || "")) {
@@ -237,7 +237,7 @@ function runHardChecks(traces, detailed, printBundle) {
       }
     }
     if (id.questions >= 12 && id.accuracy < 55) {
-      if (/שימור|הצלחה|מצוין|חזק מאוד/i.test(recLabel) && !/חיזוק|תרגול|מיקוד/i.test(recLabel)) {
+      if (/||| /i.test(recLabel) && !/||/i.test(recLabel)) {
         fail(`${id.sourceId}: low-accuracy row has success/maintenance wording`);
       }
     }
@@ -259,7 +259,7 @@ function runHardChecks(traces, detailed, printBundle) {
   }
 
   const bundle = String(printBundle || "");
-  if (/לאסוף עוד מידע[\s\S]{0,80}450/u.test(bundle)) {
+  if (/  [\s\S]{0,80}450/u.test(bundle)) {
     fail("print bundle pairs 450-Q row with collect-more-data");
   }
 }
@@ -396,12 +396,12 @@ const { hardenBaseReportWithRowIdentity } = await import(
 const zeroBase = buildMathOnlyOtherSubjectsZeroBaseReport();
 hardenBaseReportWithRowIdentity(zeroBase);
 const zLabels = {
-  math: "חשבון",
-  geometry: "גאומטריה",
-  english: "אנגלית",
-  science: "מדעים",
-  hebrew: "עברית",
-  "moledet-geography": "מולדת וגאוגרפיה",
+  math: "",
+  geometry: "",
+  english: "",
+  science: "",
+  hebrew: "",
+  "moledet-geography": " ",
 };
 const zCounts = subjectQuestionCountsFromBase(zeroBase);
 const zCov = buildSubjectEvidenceCoverageLines(zCounts, zLabels);
@@ -473,7 +473,7 @@ if (g5Unit) {
   if (g5Rec.thinEvidenceDowngraded) {
     fail("fractions g5 weak row must not be thin-downgraded at unit level (66 Q)");
   }
-  if (g5Rec.recommendedStepLabelHe === "לאסוף עוד מידע לפני החלטה") {
+  if (g5Rec.recommendedStepLabelHe === "    ") {
     fail("fractions g5 weak row must not get collect-more-data label at unit level");
   }
 }
@@ -487,12 +487,12 @@ for (const k of rowKeys.filter((r) => r.subjectId === "math")) {
   const res = runTurn({
     audience: "parent",
     payload,
-    utterance: `מה הבעיה ב${traces.find((t) => t.topicRowKey === k.topicRowKey)?.identity.displayName || "שברים"}?`,
+    utterance: `  ${traces.find((t) => t.topicRowKey === k.topicRowKey)?.identity.displayName || ""}?`,
     sessionId: `signoff-${k.topicRowKey}`,
   });
   const text = (res.answerBlocks || []).map((b) => b.textHe).join("\n");
   copilotTextByRow.set(k.topicRowKey, text);
-  if (/ממוצע\s*דיוק\s*של\s*כ־80/u.test(text) && k.topicRowKey.includes("fractions")) {
+  if (/\s*\s*\s*80/u.test(text) && k.topicRowKey.includes("fractions")) {
     fail("Copilot averaged grade-split fractions rows (~80% subject average)");
   }
 }
@@ -500,12 +500,12 @@ for (const k of rowKeys.filter((r) => r.subjectId === "math")) {
 const splitRes = runTurn({
   audience: "parent",
   payload,
-  utterance: "למה יש שתי כיתות באותו נושא בשברים?",
+  utterance: "      ?",
   sessionId: "signoff-split",
 });
 const splitText = (splitRes.answerBlocks || []).map((b) => b.textHe).join("\n");
-if (!/כיתה|450|76|88|41|נפרד|שברים/i.test(splitText)) {
-    fail("Copilot did not explain grade-split for שברים");
+if (!/|450|76|88|41||/i.test(splitText)) {
+    fail("Copilot did not explain grade-split for ");
 }
 
 for (const t of traces) {

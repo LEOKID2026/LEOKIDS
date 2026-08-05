@@ -58,7 +58,7 @@ export default function BookTocModal({
               const batchHeading =
                 (batch.titleKey && tryResolveRegistryTitleKey(String(batch.titleKey), contentLocale)) ||
                 resolveTocNavTitle(
-                  { titleKey: "", displayTitle: batch.titleHe, pageId: batch.id },
+                  { titleKey: "", displayTitle: batch.title, pageId: batch.id },
                   contentLocale,
                 );
 

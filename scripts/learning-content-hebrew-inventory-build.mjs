@@ -124,7 +124,7 @@ const SUBJECT_FROM_PATH = [
 const GRADE_FROM_PATH = [
   [/g([1-6])\b/i, (m) => Number(m[1])],
   [/grade[_-]?([1-6])/i, (m) => Number(m[1])],
-  [/כיתה\s*([א-ו])/u, (m) => ({ א: 1, ב: 2, ג: 3, ד: 4, ה: 5, ו: 6 }[m[1]] || "")],
+  [/\s*([-])/u, (m) => ({ : 1, : 2, : 3, : 4, : 5, : 6 }[m[1]] || "")],
 ];
 
 function collectFiles(relPath) {
@@ -175,9 +175,9 @@ function inferGrade(rel, line = "") {
 
 function inferLevel(line, text) {
   const t = `${line} ${text}`.toLowerCase();
-  if (/\bhard\b|קשה/.test(t)) return "hard";
-  if (/\bmedium\b|בינוני/.test(t)) return "medium";
-  if (/\beasy\b|קל/.test(t)) return "easy";
+  if (/\bhard\b|/.test(t)) return "hard";
+  if (/\bmedium\b|/.test(t)) return "medium";
+  if (/\beasy\b|/.test(t)) return "easy";
   return "";
 }
 
@@ -209,27 +209,27 @@ function enclosingFunction(lines, lineIdx) {
 function classifyContentType(rel, line, text, fn) {
   const ctx = `${line} ${fn}`.toLowerCase();
   const t = text.trim();
-  if (/gethint|hint\s*[:=]|רמז/.test(ctx) && !/hintused|hintcount/i.test(ctx)) return "hint";
-  if (/getsolutionsteps|solutionsteps|full_solution|פתרון צעד/.test(ctx)) return "full_solution";
-  if (/workedexample|דוגמה/.test(ctx)) return "worked_example";
-  if (/feedbacktext|feedback\.includes|לא נכון|נכון!|כל הכבוד/.test(ctx)) {
-    return /לא נכון|wrong|❌/.test(t) || /לא נכון/.test(line) ? "feedback_wrong" : "feedback_correct";
+  if (/gethint|hint\s*[:=]|/.test(ctx) && !/hintused|hintcount/i.test(ctx)) return "hint";
+  if (/getsolutionsteps|solutionsteps|full_solution| /.test(ctx)) return "full_solution";
+  if (/workedexample|/.test(ctx)) return "worked_example";
+  if (/feedbacktext|feedback\.includes| |!| /.test(ctx)) {
+    return / |wrong|❌/.test(t) || / /.test(line) ? "feedback_wrong" : "feedback_correct";
   }
   if (/explanationhe|explanation\s*[:=]|theorylines|geterrorexplanation/.test(ctx)) return "explanation";
   if (/answers\s*:|options\s*:|option_text/.test(ctx)) return "answer_option";
   if (/question\s*:|stem\s*:|exercisetext\s*:/.test(ctx) || fn === "generateQuestion") {
-    if (/שגיאה|אין שאלות|אין נושאים|נסה שוב|לא תקין/.test(t)) return "fallback_question";
+    if (/| | | | /.test(t)) return "fallback_question";
     return "question_stem";
   }
-  if (/instruction|הוראות|activity_instruction|formatstudentactivity/.test(ctx)) return "activity_instruction";
+  if (/instruction||activity_instruction|formatstudentactivity/.test(ctx)) return "activity_instruction";
   if (/TOPICS|LEVELS|GRADE_LEVELS|name\s*:|description\s*:/.test(line) && /name|description|label/.test(ctx)) {
-    if (/קל|בינוני|קשה|level/.test(ctx)) return "level_label";
+    if (/|||level/.test(ctx)) return "level_label";
     if (/skill|grammar|vocabulary|focus|skills/.test(ctx)) return "skill_label";
     return "topic_label";
   }
   if (/\$\{/.test(t)) return "generator_template";
-  if (/נסה שוב|שגיאה ביצירת|אין שאלות|אין נושאים/.test(t)) return "fallback_question";
-  if (/נסה|כל הכבוד|המשיכו|סיימת|ענית נכון/.test(t)) return "feedback_correct";
+  if (/ | | | /.test(t)) return "fallback_question";
+  if (/| ||| /.test(t)) return "feedback_correct";
   return "other";
 }
 
@@ -278,7 +278,7 @@ function classifyVisibility(rel, line, text, fn, contentType) {
 function detectRisks(text, contentType, subject) {
   const risks = [];
   const t = String(text || "");
-  if (/__[A-Z_]+__|\$\{[a-zA-Z_]+\}|TODO|FIXME|\[נושא\]|\[ערך\]/.test(t)) {
+  if (/__[A-Z_]+__|\$\{[a-zA-Z_]+\}|TODO|FIXME|\[\]|\[\]/.test(t)) {
     risks.push({ category: "raw_key_or_placeholder", why: "Contains placeholder or template variable", severity: "high" });
   }
   if (/[a-zA-Z]{4,}/.test(t) && !/^(mcq|g[1-6]|xp|badges?)$/i.test(t) && HEBREW_RE.test(t)) {
@@ -286,10 +286,10 @@ function detectRisks(text, contentType, subject) {
       risks.push({ category: "mixed_hebrew_english", why: "Mixed Hebrew and Latin script in student copy", severity: "medium" });
     }
   }
-  if (/שגיאה ביצירת|אין שאלות זמינות|אין נושאים זמינים/.test(t)) {
+  if (/ |  |  /.test(t)) {
     risks.push({ category: "unclear_instruction", why: "Error/fallback message shown to students", severity: "medium" });
   }
-  if (contentType === "question_stem" && /^(חשבו|פתרו|השלם|מצאו|בחרו)\.?$/u.test(t.trim())) {
+  if (contentType === "question_stem" && /^(||||)\.?$/u.test(t.trim())) {
     risks.push({ category: "duplicate_or_repetitive", why: "Generic meta stem without exercise body", severity: "medium" });
   }
   if (contentType === "answer_option") {
@@ -301,7 +301,7 @@ function detectRisks(text, contentType, subject) {
       }
     }
   }
-  if (/😔|❌|טיפש|מגוחך|כישלון/.test(t)) {
+  if (/😔|❌|||/.test(t)) {
     risks.push({
       category: "potentially_sensitive_or_discouraging_feedback",
       why: "Harsh or discouraging feedback tone",
@@ -311,10 +311,10 @@ function detectRisks(text, contentType, subject) {
   if (subject === "english" && contentType === "question_stem" && !HEBREW_RE.test(t)) {
     risks.push({ category: "english_learning_term_issue", why: "English stem — verify Hebrew explanation pairing", severity: "low" });
   }
-  if (/חציבסיס|בסיס×|אורך×/.test(t)) {
+  if (/|×|×/.test(t)) {
     risks.push({ category: "confusing_ltr_rtl_mix", why: "Formula tokens may render poorly in RTL", severity: "medium" });
   }
-  if (/\?\s*\(רמז:|רמז:\s*\d/.test(t)) {
+  if (/\?\s*\(:|:\s*\d/.test(t)) {
     risks.push({ category: "gives_answer_away", why: "Stem may include hint that reveals answer", severity: "high" });
   }
   if (t.length > 220 && ["question_stem", "instruction", "activity_instruction"].includes(contentType)) {
@@ -521,7 +521,7 @@ const hintsExplanations = allEntries.filter((e) =>
 const studentFeedback = allEntries.filter(
   (e) =>
     ["feedback_correct", "feedback_wrong", "other"].includes(e.content_type) &&
-    /נסה|כל הכבוד|לא נכון|נכון|המשיכו|סיימת|ענית|רצף|הגעת|אתגר/.test(e.current_hebrew)
+    /| | |||||||/.test(e.current_hebrew)
 );
 const curriculumLabels = allEntries.filter((e) =>
   ["topic_label", "skill_label", "level_label"].includes(e.content_type)
@@ -864,17 +864,17 @@ appendSheet(
   "Student Feedback Encouragement",
   studentFeedback.map((e) => ({
     ...e,
-    feedback_type: /לא נכון|wrong/i.test(e.current_hebrew)
+    feedback_type: / |wrong/i.test(e.current_hebrew)
       ? "wrong"
-      : /נסה שוב|נסו שוב/i.test(e.current_hebrew)
+      : / | /i.test(e.current_hebrew)
         ? "retry"
-        : /כל הכבוד|רצף/i.test(e.current_hebrew)
+        : / |/i.test(e.current_hebrew)
           ? "encouragement"
-          : /סיימת|הושלם|הגעת/i.test(e.current_hebrew)
+          : /||/i.test(e.current_hebrew)
             ? "completion"
-            : /המשיכו|הבא/i.test(e.current_hebrew)
+            : /|/i.test(e.current_hebrew)
               ? "next_step"
-              : /נכון/i.test(e.current_hebrew)
+              : //i.test(e.current_hebrew)
                 ? "correct"
                 : "progress",
     tone_risk: e.problem_type,

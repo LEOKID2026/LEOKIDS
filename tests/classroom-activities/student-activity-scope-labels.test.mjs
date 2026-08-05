@@ -11,8 +11,8 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../..");
 
-test("studentActivityScopeBadgeHe: parent renders פעילות אישית", () => {
-  assert.equal(studentActivityScopeBadgeHe("parent"), "פעילות אישית");
+test("studentActivityScopeBadgeHe: parent renders  ", () => {
+  assert.equal(studentActivityScopeBadgeHe("parent"), " ");
 });
 
 test("studentActivityScopeBadgeHe: class has no badge", () => {
@@ -21,7 +21,7 @@ test("studentActivityScopeBadgeHe: class has no badge", () => {
 });
 
 test("studentActivityScopeBadgeHe: student keeps existing individual badge", () => {
-  assert.equal(studentActivityScopeBadgeHe("student"), "אישי");
+  assert.equal(studentActivityScopeBadgeHe("student"), "");
 });
 
 test("normalizeStudentActivityScope maps scopes safely", () => {
@@ -39,7 +39,7 @@ test("StudentClassroomActivitiesPanel: parent scope not grouped as classroom", (
   assert.match(src, /normalizeStudentActivityScope\(a\.scope\) === "class"/);
   assert.match(src, /normalizeStudentActivityScope\(a\.scope\) === "parent"/);
   assert.match(src, /studentActivityScopeBadgeHe\("parent"\)/);
-  assert.match(src, /פעילויות כיתה/);
+  assert.match(src, / /);
   assert.doesNotMatch(src, /a\.scope !== "student"/);
 });
 
@@ -48,7 +48,7 @@ test("StudentClassroomActivitiesPanel: class section keeps classroom title", () 
     path.join(repoRoot, "components/student/StudentClassroomActivitiesPanel.jsx"),
     "utf8"
   );
-  assert.match(src, /פעילויות כיתה/);
+  assert.match(src, / /);
   assert.match(src, /studentActivityScopeBadgeHe\("student"\)/);
 });
 
@@ -56,7 +56,7 @@ test("formatActivityTopicDisplayHe maps internal keys to Hebrew", async () => {
   const { formatActivityTopicDisplayHe } = await import(
     "../../lib/classroom-activities/student-activity-display-labels.client.js"
   );
-  assert.equal(formatActivityTopicDisplayHe("math", "addition"), "חיבור");
+  assert.equal(formatActivityTopicDisplayHe("math", "addition"), "");
   assert.doesNotMatch(formatActivityTopicDisplayHe("math", "addition"), /addition/i);
 });
 
@@ -73,8 +73,8 @@ test("ParentSentActivitiesPanel uses modal trigger not inline list", () => {
 
 test("student home personal activities tile label and count", () => {
   const src = readFileSync(path.join(repoRoot, "pages/student/home.js"), "utf8");
-  assert.match(src, /פעילויות אישיות/);
-  assert.doesNotMatch(src, /פעילויות מהמורה/);
+  assert.match(src, / /);
+  assert.doesNotMatch(src, / /);
   assert.match(src, /personalActivityCount/);
   assert.match(src, /normalizeStudentActivityScope/);
 });
@@ -108,8 +108,8 @@ test("student activity page supports layout toggle and numeric input", () => {
     path.join(repoRoot, "components/student/StudentActivityQuestionSurface.jsx"),
     "utf8"
   );
-  assert.match(surface, /↕️ מאונך/);
-  assert.match(surface, /↔️ מאוזן/);
+  assert.match(surface, /↕️ /);
+  assert.match(surface, /↔️ /);
   assert.match(surface, /activity-math-layout-toggle/);
 });
 

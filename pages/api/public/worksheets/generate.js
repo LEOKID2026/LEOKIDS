@@ -106,7 +106,7 @@ export default async function handler(req, res) {
     mathPracticeFormat: body?.mathPracticeFormat,
     preferMcq: body?.preferMcq,
     inkSave: body?.inkSave,
-    titleHe: body?.titleHe,
+    title: body?.title,
     seed: body?.seed,
     mixedTopicKeys: body?.mixedTopicKeys,
     interfaceLocale: body?.interfaceLocale,

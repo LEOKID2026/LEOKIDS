@@ -1,4 +1,4 @@
--- Solo game #12: fruit-slice (חיתוך פירות)
+-- Solo game #12: fruit-slice
 -- Single migration: allowlist, payout rules, hub catalog (/game).
 -- Run once: supabase/migrations/076_fruit_slice_solo_game.sql
 
@@ -59,13 +59,13 @@ insert into public.site_game_catalog (
 ) values (
   'fruit-slice',
   'solo',
-  'חיתוך פירות',
+  'Fruit Slice',
   '/student/solo-games/fruit-slice',
   '/student/solo-games',
   coalesce((select is_active from public.reward_economy_solo_game_rules where game_key = 'fruit-slice'), true),
   120,
   '🍎',
-  'חתכו פירות, הימנעו מפצצות והגיעו ליעד הניקוד!'
+  'Slice fruit, avoid bombs, and reach the score target!'
 )
 on conflict (game_key) do update set
   category = excluded.category,

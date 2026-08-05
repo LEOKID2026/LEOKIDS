@@ -19,13 +19,13 @@ const reportPageSrc = readFileSync(
 );
 
 test("formatStudentActivityCompletionSummaryHe uses preferred Hebrew wording", () => {
-  assert.equal(formatStudentActivityCompletionSummaryHe(1, 5), "ענית נכון על 1 מתוך 5 שאלות");
-  assert.equal(formatStudentActivityCompletionSummaryHe(4, 5), "ענית נכון על 4 מתוך 5 שאלות");
-  assert.equal(formatStudentActivityCompletionSummaryHe(0, 5), "ענית נכון על 0 מתוך 5 שאלות");
+  assert.equal(formatStudentActivityCompletionSummaryHe(1, 5), "   1  5 ");
+  assert.equal(formatStudentActivityCompletionSummaryHe(4, 5), "   4  5 ");
+  assert.equal(formatStudentActivityCompletionSummaryHe(0, 5), "   0  5 ");
 });
 
 test("formatStudentActivityCompletionSummaryShortHe uses compact count wording", () => {
-  assert.equal(formatStudentActivityCompletionSummaryShortHe(1, 5), "1/5 שאלות");
+  assert.equal(formatStudentActivityCompletionSummaryShortHe(1, 5), "1/5 ");
 });
 
 test("student activity completion screen does not render percentage grades", () => {

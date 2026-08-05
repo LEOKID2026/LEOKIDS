@@ -1,7 +1,7 @@
 /**
- * דגימה דטרמיניסטית + כפיית ענפים נדירים (מתמטיקה) + גיאומטריה נוסחתית/קונספטואלית.
+ *   +    () +  /.
  *
- * פלט:
+ * :
  *   reports/question-audit/harness-math.json
  *   reports/question-audit/harness-geometry.json
  *   reports/question-audit/harness-geometry-conceptual.json

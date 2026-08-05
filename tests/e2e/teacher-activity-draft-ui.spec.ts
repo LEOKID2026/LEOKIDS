@@ -21,9 +21,9 @@ async function teacherLoginViaUi(page: Page) {
   await expect(page.locator('[data-testid="teacher-login-root"]')).toBeVisible({
     timeout: 30_000,
   });
-  await page.getByPlaceholder("המייל שלך").fill(TEACHER_EMAIL);
+  await page.getByPlaceholder(" ").fill(TEACHER_EMAIL);
   await page.locator('input[type="password"]').fill(TEACHER_PASSWORD);
-  await page.getByRole("button", { name: "כניסה" }).click();
+  await page.getByRole("button", { name: "" }).click();
   await page.waitForURL(/\/teacher\/dashboard\/?(\?.*)?$/, { timeout: 45_000 });
 }
 
@@ -57,14 +57,14 @@ test.describe("teacher activity draft - browser UI auth @teacher-activity-draft-
     });
 
     const title = `UI E2E draft ${Date.now()}`;
-    await page.locator("label").filter({ hasText: "כותרת" }).locator("input").fill(title);
+    await page.locator("label").filter({ hasText: "" }).locator("input").fill(title);
 
-    await page.getByRole("button", { name: "תצוגה מקדימה של שאלות" }).click();
-    await expect(page.getByRole("heading", { name: /תצוגה מקדימה/u })).toBeVisible({
+    await page.getByRole("button", { name: "   " }).click();
+    await expect(page.getByRole("heading", { name: / /u })).toBeVisible({
       timeout: 30_000,
     });
 
-    await page.getByRole("button", { name: "שמירה כטיוטה" }).click();
+    await page.getByRole("button", { name: " " }).click();
 
     await expect(page.getByText("Invalid session")).toHaveCount(0);
     await page.waitForURL(

@@ -367,9 +367,9 @@ function parseSubjectList(raw) {
 
 async function answerFewQuestions(page, subject) {
   const controlRe =
-    /(תוכנית לימודים|BACK|🔊|אווטר|למידה|אתגר|מהירות|מרתון|תרגול|רמז|הסבר מלא|עצור|התחל|שאלה הבאה|בדוק|leaderboard|סטטיסטיקות|איך משחקים|options)/i;
+    /( |BACK|🔊|||||||| ||| ||leaderboard|| |options)/i;
 
-  const startButton = page.getByRole("button", { name: /התחל|Start/ }).first();
+  const startButton = page.getByRole("button", { name: /|Start/ }).first();
   if (await withTimeout("startButton.count", DEFAULT_STEP_TIMEOUT_MS, async () => startButton.count())) {
     await withTimeout("startButton.click", DEFAULT_STEP_TIMEOUT_MS, async () =>
       startButton.click().catch(() => {})
@@ -385,7 +385,7 @@ async function answerFewQuestions(page, subject) {
       await withTimeout("input.fill", DEFAULT_STEP_TIMEOUT_MS, async () =>
         input.fill(String(loop + 7)).catch(() => {})
       );
-      const check = page.getByRole("button", { name: /בדוק|Check/ }).first();
+      const check = page.getByRole("button", { name: /|Check/ }).first();
       if (await withTimeout("check.count", DEFAULT_STEP_TIMEOUT_MS, async () => check.count())) {
         const disabled = await withTimeout("check.isDisabled", DEFAULT_STEP_TIMEOUT_MS, async () =>
           check.isDisabled().catch(() => true)
@@ -431,14 +431,14 @@ async function answerFewQuestions(page, subject) {
     await withTimeout("between-answer wait", DEFAULT_STEP_TIMEOUT_MS, async () =>
       page.waitForTimeout(900)
     );
-    const nextButton = page.getByRole("button", { name: /שאלה הבאה|Next/ }).first();
+    const nextButton = page.getByRole("button", { name: / |Next/ }).first();
     if (await withTimeout("next.count", DEFAULT_STEP_TIMEOUT_MS, async () => nextButton.count())) {
       await withTimeout("next.click", DEFAULT_STEP_TIMEOUT_MS, async () =>
         nextButton.click().catch(() => {})
       );
     }
   }
-  const stopButton = page.getByRole("button", { name: /עצור|Stop/ }).first();
+  const stopButton = page.getByRole("button", { name: /|Stop/ }).first();
   if (await withTimeout("stop.count", DEFAULT_STEP_TIMEOUT_MS, async () => stopButton.count())) {
     await withTimeout("stop.click", DEFAULT_STEP_TIMEOUT_MS, async () =>
       stopButton.click().catch(() => {})
@@ -465,7 +465,7 @@ async function prepareLocalDataInBrowser(page, baseUrl, prepareSubjects) {
     await withTimeout(`route_check.${subject}`, DEFAULT_STEP_TIMEOUT_MS, async () =>
       page.waitForURL(url => String(url).includes(route), { timeout: DEFAULT_STEP_TIMEOUT_MS })
     );
-    const playerInput = page.getByPlaceholder("שם שחקן").first();
+    const playerInput = page.getByPlaceholder(" ").first();
     if (await withTimeout(`player.count.${subject}`, DEFAULT_STEP_TIMEOUT_MS, async () => playerInput.count())) {
       await withTimeout(`player.fill.${subject}`, DEFAULT_STEP_TIMEOUT_MS, async () =>
         playerInput.fill("ShadowC6").catch(() => {})

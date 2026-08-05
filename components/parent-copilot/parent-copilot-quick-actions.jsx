@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * @param {{ items: Array<{ id: string; labelHe: string; enabled: boolean; onPress: () => void; disabledReasonCode?: string }>; compact?: boolean }} props
+ * @param {{ items: Array<{ id: string; label: string; enabled: boolean; onPress: () => void; disabledReasonCode?: string }>; compact?: boolean }} props
  */
 export function ParentCopilotQuickActions({ items, compact = false }) {
   if (!items?.length) return null;
@@ -26,7 +26,7 @@ export function ParentCopilotQuickActions({ items, compact = false }) {
               : "border-white/10 bg-white/[0.03] text-white/35 cursor-not-allowed"
           }`}
         >
-          {it.labelHe}
+          {it.label}
         </button>
       ))}
     </div>

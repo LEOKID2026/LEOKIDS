@@ -54,9 +54,9 @@ export default function LearningBookShell({
     () =>
       (batches || []).map((batch) => ({
         ...batch,
-        titleHe: batch.titleKey
+        title: batch.titleKey
           ? resolveRegistryTitleKey(String(batch.titleKey), contentLocale)
-          : batch.titleHe || batch.title || "",
+          : batch.title || batch.title || "",
       })),
     [batches, contentLocale],
   );

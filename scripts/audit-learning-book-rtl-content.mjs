@@ -131,11 +131,11 @@ ${remainingRisky.length ? remainingRisky.slice(0, 40).map((r) => `- \`${r.file}:
 
 ## Content rules applied
 
-1. Remainder phrasing: \`155 ושארית 7\` (not \`155 שארית 7\`)
-2. No child-facing verbal formulas like \`מחולק = (מחלק × מנה) + שארית\`
-3. Split comma-after-equation Hebrew (\`, ונשאר\`) into separate lines
+1. Remainder phrasing: \`155  7\` (not \`155  7\`)
+2. No child-facing verbal formulas like \` = ( × ) + \`
+3. Split comma-after-equation Hebrew (\`, \`) into separate lines
 4. Split chained comma equations (\`522, + 1 =\`) into separate math lines
-5. Replace geometry verbal \`נוסחה:\` lines with numeric examples where matched
+5. Replace geometry verbal \`:\` lines with numeric examples where matched
 
 `;
 

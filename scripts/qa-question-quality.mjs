@@ -256,7 +256,7 @@ function classifyNearDuplicate(sample) {
   const subj = sample?.subject || "";
   const topic = sample?.topic || "";
   const stem = String(sample?.stem || "");
-  if (/מה התנהגות מתאימה|מתמקדים ב־/.test(stem)) {
+  if (/  | /.test(stem)) {
     return "meta_template_duplicate";
   }
   if (subj === "math" || subj === "geometry") {
@@ -273,7 +273,7 @@ function auditScienceG3Body(scienceQuestions) {
   const LEVEL_RANK = { easy: 0, medium: 1, hard: 2 };
   let metaCount = 0;
   for (const row of SCIENCE_G3_BODY_BANK) {
-    if (/מה התנהגות|מתמקדים/.test(row.stem)) metaCount += 1;
+    if (/ |/.test(row.stem)) metaCount += 1;
   }
   const pool = scienceQuestions.filter((q) => {
     if (q.topic !== "body") return false;

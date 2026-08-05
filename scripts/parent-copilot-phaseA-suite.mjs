@@ -505,7 +505,7 @@ const rPeriod = parentCopilot.runParentCopilotTurn({
 const rPeriodText = rPeriod.answerBlocks.map((b) => String(b.answerText || "")).join("\n");
 assert.ok(rPeriodText.includes("What stands out in the period"), rPeriodText);
 assert.ok(rPeriodText.includes("First"), rPeriodText);
-assert.ok(!rPeriodText.includes("קו מגמה"), rPeriodText);
+assert.ok(!rPeriodText.includes(" "), rPeriodText);
 assert.equal(rPeriod.suggestedFollowUp, null);
 
 console.log("parent-copilot-phaseA-suite: OK");

@@ -5,34 +5,34 @@ import { mapTeacherActivityStudentAnswerDetail } from "../../lib/teacher-server/
 test("mapTeacherActivityStudentAnswerDetail merges attempts with frozen question set", () => {
   const questionSet = [
     {
-      question: "מהו Q1?",
-      correctAnswer: "א",
-      choices: ["א", "ב"],
+      question: " Q1?",
+      correctAnswer: "",
+      choices: ["", ""],
       subject: "science",
     },
     {
-      question: "מהו Q2?",
-      correctAnswer: "ג",
-      choices: ["ג", "ד"],
+      question: " Q2?",
+      correctAnswer: "",
+      choices: ["", ""],
       subject: "science",
     },
   ];
   const attempts = [
     {
       question_index: 0,
-      selected_answer: "א",
-      correct_answer: "א",
+      selected_answer: "",
+      correct_answer: "",
       is_correct: true,
       answered_at: "2026-05-25T12:00:00.000Z",
-      question_snapshot: { question: "מהו Q1?", choices: ["א", "ב"], subject: "science" },
+      question_snapshot: { question: " Q1?", choices: ["", ""], subject: "science" },
     },
     {
       question_index: 1,
-      selected_answer: "ד",
-      correct_answer: "ג",
+      selected_answer: "",
+      correct_answer: "",
       is_correct: false,
       answered_at: "2026-05-25T12:01:00.000Z",
-      question_snapshot: { question: "מהו Q2?", choices: ["ג", "ד"], subject: "science" },
+      question_snapshot: { question: " Q2?", choices: ["", ""], subject: "science" },
     },
   ];
 
@@ -43,18 +43,18 @@ test("mapTeacherActivityStudentAnswerDetail merges attempts with frozen question
   });
 
   assert.equal(rows.length, 2);
-  assert.equal(rows[0].question, "מהו Q1?");
-  assert.equal(rows[0].selectedAnswer, "א");
-  assert.equal(rows[0].correctAnswer, "א");
+  assert.equal(rows[0].question, " Q1?");
+  assert.equal(rows[0].selectedAnswer, "");
+  assert.equal(rows[0].correctAnswer, "");
   assert.equal(rows[0].isCorrect, true);
-  assert.deepEqual(rows[0].choices, ["א", "ב"]);
+  assert.deepEqual(rows[0].choices, ["", ""]);
   assert.equal(rows[1].isCorrect, false);
-  assert.equal(rows[1].selectedAnswer, "ד");
-  assert.equal(rows[1].correctAnswer, "ג");
+  assert.equal(rows[1].selectedAnswer, "");
+  assert.equal(rows[1].correctAnswer, "");
 });
 
 test("mapTeacherActivityStudentAnswerDetail includes unanswered slots from frozen set", () => {
-  const questionSet = [{ question: "שאלה 1", correctAnswer: "5", subject: "math" }];
+  const questionSet = [{ question: " 1", correctAnswer: "5", subject: "math" }];
   const rows = mapTeacherActivityStudentAnswerDetail({
     questionSet,
     attempts: [],

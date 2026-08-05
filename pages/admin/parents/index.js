@@ -8,7 +8,7 @@ import {
   ADMIN_LOADING,
   ADMIN_PARENTS_TITLE,
   apiErrorMessageHe,
-} from "../../../lib/admin-portal/admin-ui.he.js";
+} from "../../../lib/admin-portal/admin-ui.js";
 
 export default function AdminParentsIndexPage() {
   const { state, accessToken } = useAdminSession();

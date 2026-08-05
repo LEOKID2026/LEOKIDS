@@ -258,7 +258,7 @@ async function enterDemoAndOpenMemory(page) {
   const enterCandidates = [
     page.getByTestId("demo-enter-button"),
     page.getByTestId("student-demo-enter-button"),
-    page.getByRole("button", { name: /enter|התח|ابدأ|demo/i }),
+    page.getByRole("button", { name: /enter||ابدأ|demo/i }),
   ];
   for (const loc of enterCandidates) {
     if (await loc.first().isVisible().catch(() => false)) {
@@ -281,7 +281,7 @@ async function enterDemoAndOpenMemory(page) {
       return t.length > 0 && t.length < 24 && !/start|ابدأ|loading|تحميل/i.test(t);
     });
     // Prefer known easy labels across locales; else first short chip in entry area
-    const easy = chips.find((b) => /سهل|easy|קל/i.test(b.innerText || ""));
+    const easy = chips.find((b) => /سهل|easy|/i.test(b.innerText || ""));
     (easy || chips[0])?.click();
   });
   await sleep(300);

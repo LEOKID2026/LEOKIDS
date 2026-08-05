@@ -84,8 +84,8 @@ export default function ReadyWorksheetsTab({
       if (filterLevel && item.levelKey !== filterLevel) return false;
       if (q) {
         const haystack = [
-          item.titleHe,
-          item.topicHe,
+          item.title,
+          item.topic,
           item.catalogNumber,
           item.categoryHe,
           item.slug,
@@ -309,12 +309,12 @@ export default function ReadyWorksheetsTab({
                         </span>
                       ) : (
                         <span className="worksheet-subject-badge" data-subject={item.subjectId}>
-                          {item.subjectHe}
+                          {item.subject}
                         </span>
                       )}
-                      {!isWriting && item.levelHe ? (
+                      {!isWriting && item.level ? (
                         <span className="worksheet-level-pill" data-level={item.levelKey}>
-                          {item.levelHe}
+                          {item.level}
                         </span>
                       ) : null}
                       {item.catalogNumber ? (
@@ -323,7 +323,7 @@ export default function ReadyWorksheetsTab({
                     </div>
 
                     <h3 className={`worksheet-ready-card-title ${T.heading}`}>
-                      {item.titleHe || item.topicHe}
+                      {item.title || item.topic}
                     </h3>
 
                     {isWriting ? (
@@ -332,7 +332,7 @@ export default function ReadyWorksheetsTab({
                       </p>
                     ) : (
                       <>
-                        <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>{item.gradeHe}</p>
+                        <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>{item.grade}</p>
                         <p className={`worksheet-ready-card-count ${T.muted}`}>
                           {item.count} {ui.questionCount}
                         </p>
@@ -350,7 +350,7 @@ export default function ReadyWorksheetsTab({
                       className={T.cardReportBtn}
                       aria-label={
                         isLocked
-                          ? `${item.titleHe || item.topicHe} — ${ui.writingLockedTitle}`
+                          ? `${item.title || item.topic} — ${ui.writingLockedTitle}`
                           : undefined
                       }
                     >

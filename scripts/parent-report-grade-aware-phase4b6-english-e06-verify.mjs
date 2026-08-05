@@ -29,24 +29,24 @@ const SEP = "\u0001";
 const E06_FORBIDDEN = [
   "inference",
   "Inference",
-  "עובדה במקום הסקה",
-  "עובדה מול inference",
-  "מילות סימן להסקה",
-  "טעות רק ב־inference",
-  "לפני לימוד inference",
+  "  ",
+  "  inference",
+  "  ",
+  "  inference",
+  "  inference",
 ];
 
 const BANNED = [
-  "טעות בדו־עמודי",
-  "גופן גדול מול קטן",
-  "מספר שורה / אצבע",
-  "דיווח ראייה",
-  "שגיאות חוזרות",
-  "כתב יד מבוקר",
-  "כלל איות מיני",
-  "פונולוגיה",
-  "לקות",
-  "דיווח מקצועי",
+  " ",
+  "   ",
+  "  / ",
+  " ",
+  " ",
+  "  ",
+  "  ",
+  "",
+  "",
+  " ",
 ];
 
 function assertEq(name, actual, expected) {
@@ -140,7 +140,7 @@ assertNoE06Forbidden("resolver E-06 outputs", resolvedBlob);
 // —— Narrow normalize: raw E-06 taxonomy mix must not leak "inference" ——
 {
   const raw =
-    "עובדה מול inference · עובדה במקום הסקה · מילות סימן להסקה · טעות רק ב־inference · לפני לימוד inference";
+    "  inference ·    ·    ·   inference ·   inference";
   const n = normalizeParentFacing(raw);
   assertNoE06Forbidden("normalizeParentFacing E-06 raw concat", n);
 }
@@ -172,7 +172,7 @@ const summaryFixture = {
 function rowEnglish(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "אנגלית",
+    displayName: "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -193,17 +193,17 @@ function buildEnglishUnit(taxonomyId, bucketKey, topicRowKey) {
     subjectId: "english",
     topicRowKey,
     bucketKey,
-    displayName: "אנגלית",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
-      immediateActionHe: isE07 ? "שגיאות חוזרות" : "טעות בדו־עמודי",
-      shortPracticeHe: isE07 ? "כתב יד מבוקר" : "גופן גדול מול קטן",
+      immediateActionHe: isE07 ? " " : " ",
+      shortPracticeHe: isE07 ? "  " : "   ",
       taxonomyId,
     },
     taxonomy: {
       id: taxonomyId,
-      patternHe: "עובדה במקום הסקה",
-      topicHe: "הבנה",
+      patternHe: "  ",
+      topic: "",
       subskillHe: "inference",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
@@ -220,8 +220,8 @@ function buildEnglishUnit(taxonomyId, bucketKey, topicRowKey) {
       positiveAuthorityLevel: "none",
     },
     probe: {
-      specificationHe: "עובדה מול inference",
-      objectiveHe: "מילות סימן להסקה",
+      specificationHe: "  inference",
+      objectiveHe: "  ",
     },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     canonicalState: {
@@ -241,7 +241,7 @@ function mkBase(taxonomyId, bucket, gradeKey) {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: summaryFixture,
     englishTopics: { [trk]: rowEnglish(trk, bucket, gradeKey) },
     diagnosticEngineV2: { units: [buildEnglishUnit(taxonomyId, bucket, trk)] },
@@ -254,7 +254,7 @@ const mpS4 = dS4?.subjectProfiles?.find((p) => p.subject === "english");
 assertEq("detailed E-06 sentences g4", mpS4?.parentActionHe, E06_S.g3_g4.actionTextHe);
 assertNoBanned("detailed E-06 sentences g4", mpS4?.parentActionHe);
 assertNoE06Forbidden("detailed E-06 sentences g4", mpS4?.parentActionHe);
-const tpS4 = buildTruthPacketV1(dS4, { scopeType: "topic", scopeId: trkS4, scopeLabel: "משפטים" });
+const tpS4 = buildTruthPacketV1(dS4, { scopeType: "topic", scopeId: trkS4, scopeLabel: "" });
 assertNoE06Forbidden("truth E-06 sentences g4", JSON.stringify(tpS4?.narrative?.textSlots || {}));
 
 const trkS6 = `sentences${SEP}learning${SEP}g6${SEP}easy`;
@@ -275,7 +275,7 @@ const bS6 = mkBase("E-06", "sentences", "g6");
 const uS6 = bS6.diagnosticEngineV2.units[0];
 const sh = summarizeV2UnitsForSubjectForTests(bS6.diagnosticEngineV2.units, {
   subjectReportQuestions: 12,
-  subjectLabelHe: "אנגלית",
+  subjectLabelHe: "",
   topicMap: bS6.englishTopics,
   reportTotalQuestions: 20,
 });

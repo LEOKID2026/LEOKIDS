@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+﻿import { useRouter } from "next/router";
 import { useState } from "react";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import { MATH_G2_BOOK_META } from "../../lib/learning-book/math-g2-registry";
@@ -54,10 +54,10 @@ export default function MathG2BookShell({
             onReturn={handleReturnClick}
             onOpenToc={() => setTocOpen(true)}
             themeClasses={theme.classes}
-            titleHe={formatBookShellTitleHe(MATH_G2_BOOK_META.bookTitleHe)}
+            title={formatBookShellTitleHe(MATH_G2_BOOK_META.bookTitleHe)}
             isIndex={isIndex}
             pageMeta={pageMeta}
-            indexSubtitle={`${MATH_G2_BOOK_META.gradeShortLabel} � Pick a topic and read page by page`}
+            indexSubtitle={`${MATH_G2_BOOK_META.gradeShortLabel} - Pick a topic and read page by page`}
             activePageTitleClass={theme.classes.activePageTitle}
           />
         </header>

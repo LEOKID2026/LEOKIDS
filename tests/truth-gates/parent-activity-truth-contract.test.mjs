@@ -56,8 +56,8 @@ test("parent activity answers roll into general subject/topic totals", () => {
 test("report pages must not expose separate parent-activity section labels in source", () => {
   for (const rel of ["pages/learning/parent-report.js", "pages/learning/parent-report-detailed.js"]) {
     const src = readFileSync(join(ROOT, rel), "utf8");
-    assert.doesNotMatch(src, /פעילות\s*מהורה/u, `${rel} must not render separate parent-activity heading`);
-    assert.doesNotMatch(src, /פעילות\s*אישית\s*מהורה/u, `${rel} must not render personal parent-activity heading`);
+    assert.doesNotMatch(src, /\s*/u, `${rel} must not render separate parent-activity heading`);
+    assert.doesNotMatch(src, /\s*\s*/u, `${rel} must not render personal parent-activity heading`);
   }
 });
 

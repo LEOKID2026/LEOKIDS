@@ -62,7 +62,7 @@ export default function EnglishWordBuilderGame({ backHref = "/dev/learning-game-
   }, [task, needsTrain, resetTaskUi]);
 
   const built = useMemo(() => {
-    if (task?.type === "sentence_order") return slots.join(" ");
+    if (task?.type === "sentence_order") return slots.join("Train the");
     return slots.join("");
   }, [slots, task]);
 
@@ -159,11 +159,11 @@ export default function EnglishWordBuilderGame({ backHref = "/dev/learning-game-
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="רכבת המילים באנגלית"
+      title="Train words English"
       introHero="🚂🔤"
-      introText="הרכיבו מילים ומשפטים באנגלית - גררו אותיות לקרונות הרכבת!"
-      introHint={`${TASKS_PER_LEVEL} תחנות · אוצר מילים באנגלית`}
-      startLabel="הרכבת יוצאת"
+      introText="words English - lives to Train!"
+      introHint={`${TASKS_PER_LEVEL}  ·   `}
+      startLabel="Train the"
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -177,7 +177,7 @@ export default function EnglishWordBuilderGame({ backHref = "/dev/learning-game-
           <div className={s.missionCard}>
             {task.emoji ? <PrototypeVisual emoji={task.emoji} size="md" /> : <span className={s.missionIcon}>🚂</span>}
             <div className={s.missionBody}>
-              <p className={s.missionLabel}>תחנה {taskIndex + 1}</p>
+              <p className={s.missionLabel}> {taskIndex + 1}</p>
               <h2 className={s.missionTitle}>{task.promptHe}</h2>
               {task.hebrewHint ? <p className={styles.hebrewHint}>{task.hebrewHint}</p> : null}
               {task.sentenceTemplate ? (
@@ -188,7 +188,7 @@ export default function EnglishWordBuilderGame({ backHref = "/dev/learning-game-
               {task.type === "listen_pick" ? (
                 <>
                   <button type="button" className={styles.listenBtn} onClick={playListen}>
-                    🔊 השמע מילה
+                    🔊
                   </button>
                   {listenFlash ? (
                     <p className={s.missionPrompt} dir="ltr">
@@ -229,7 +229,7 @@ export default function EnglishWordBuilderGame({ backHref = "/dev/learning-game-
                 <span className={styles.wheel} />
               </div>
               <div className={`${s.panel} ${styles.bankPanel}`}>
-                <p className={s.panelTitle}>בנק אותיות ומילים</p>
+                <p className={s.panelTitle}>  </p>
                 <div className={styles.letterGrid} dir="ltr">
                   {bank.map((item, i) => (
                     <button
@@ -273,17 +273,17 @@ export default function EnglishWordBuilderGame({ backHref = "/dev/learning-game-
               checkState === "ok" ? s.feedbackOk : checkState === "bad" ? s.feedbackBad : s.feedbackNeutral
             }`}
           >
-            <p className={s.feedbackText}>{feedback || "מלאו את הקרונות ולחצו «בדוק רכבת»"}</p>
+            <p className={s.feedbackText}>{feedback || "    « »"}</p>
           </div>
 
           <div className={s.actionRow}>
             {!canAdvance ? (
               <button type="button" className={s.primaryBtn} onClick={runCheck}>
-                בדוק רכבת
+
               </button>
             ) : (
               <button type="button" className={s.primaryBtn} onClick={advance}>
-                התחנה הבאה
+
               </button>
             )}
           </div>

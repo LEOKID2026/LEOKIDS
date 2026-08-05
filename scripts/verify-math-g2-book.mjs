@@ -40,8 +40,8 @@ try {
     const raw = fs.readFileSync(filePath, "utf8");
     const page = parseLearningPageMarkdown(raw, pageId);
     assertMathG1PageSections(page);
-    if (raw.includes("כיתה ב'")) {
-      throw new Error(`${pageId}.md contains forbidden כיתה ב'`);
+    if (raw.includes(" '")) {
+      throw new Error(`${pageId}.md contains forbidden  '`);
     }
     const approvalMatch = raw.match(/\|\s*\*\*approval_status\*\*\s*\|\s*(\S+)\s*\|/i);
     if (!approvalMatch || approvalMatch[1] !== "draft") {

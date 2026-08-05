@@ -18,7 +18,7 @@ import {
   VB_SCENES,
   VB_TEMPLATE_APPLY,
   VB_VIDEO_NAME,
-} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.js";
 
 function clientUuid() {
   if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
@@ -72,7 +72,7 @@ export default function AdminVideoSceneList({ project, assets, onChange, onSelec
   function duplicateScene(index) {
     const src = scenes[index];
     if (!src) return;
-    const copy = { ...src, id: clientUuid(), title: `${src.title} (עותק)` };
+    const copy = { ...src, id: clientUuid(), title: `${src.title} ()` };
     const next = [...scenes];
     next.splice(index + 1, 0, copy);
     updateScenes(next);
@@ -168,7 +168,7 @@ export default function AdminVideoSceneList({ project, assets, onChange, onSelec
                   onClick={() => moveScene(index, -1)}
                   disabled={index === 0}
                   className="rounded border border-white/20 px-2 py-0.5 text-xs disabled:opacity-30"
-                  aria-label="הזז למעלה"
+                  aria-label=" "
                 >
                   {VB_MOVE_UP}
                 </button>
@@ -177,7 +177,7 @@ export default function AdminVideoSceneList({ project, assets, onChange, onSelec
                   onClick={() => moveScene(index, 1)}
                   disabled={index === scenes.length - 1}
                   className="rounded border border-white/20 px-2 py-0.5 text-xs disabled:opacity-30"
-                  aria-label="הזז למטה"
+                  aria-label=" "
                 >
                   {VB_MOVE_DOWN}
                 </button>
@@ -256,7 +256,7 @@ export default function AdminVideoSceneList({ project, assets, onChange, onSelec
                         onClick={() => onSelectMedia(String(scene.id))}
                         className="rounded border border-white/20 px-2 py-1 text-xs hover:bg-white/10"
                       >
-                        בחר מדיה
+
                       </button>
                       {scene.mediaAssetId ? (
                         <button
@@ -264,7 +264,7 @@ export default function AdminVideoSceneList({ project, assets, onChange, onSelec
                           onClick={() => updateScene(index, { mediaAssetId: null })}
                           className="text-xs text-red-300"
                         >
-                          הסר
+
                         </button>
                       ) : null}
                     </div>

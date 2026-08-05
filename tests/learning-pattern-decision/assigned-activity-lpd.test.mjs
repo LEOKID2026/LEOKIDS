@@ -27,7 +27,7 @@ function assignedCase({ mode, source, q, c, w, acc, pf = "pf:assigned", same = t
     topicRowKey: "grammar",
     row: {
       bucketKey: "grammar",
-      displayName: "דקדוק",
+      displayName: "",
       questions: q,
       correct: c,
       wrong: w,
@@ -50,7 +50,7 @@ function assignedCase({ mode, source, q, c, w, acc, pf = "pf:assigned", same = t
     acc: 0,
   });
   assert.equal(lpd.findingType, "initial_topic_data");
-  assert.ok(!lpd.parentVisibleFinding.includes("כדאי לחזק"));
+  assert.ok(!lpd.parentVisibleFinding.includes(" "));
 }
 
 // teacher assigned q=2 → initial only
@@ -78,7 +78,7 @@ function assignedCase({ mode, source, q, c, w, acc, pf = "pf:assigned", same = t
     same: true,
   });
   assert.equal(lpd.findingType, "difficulty_pattern");
-  assert.match(lpd.parentVisibleFinding, /דפוס חוזר/);
+  assert.match(lpd.parentVisibleFinding, / /);
 }
 
 console.log("assigned-activity-lpd.test.mjs - all passed");

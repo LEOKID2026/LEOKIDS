@@ -271,7 +271,7 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.match(switcher, /overflow-x-hidden/);
   assert.match(switcher, /overscroll-contain/);
   assert.doesNotMatch(switcher, /es-419/);
-  assert.doesNotMatch(switcher, /Hebrew|עברית|flag/i);
+  assert.doesNotMatch(switcher, /Hebrew||flag/i);
 });
 
 test("LanguageSwitcher list can reach all selectable locales including group-1 countries", () => {

@@ -33,14 +33,14 @@ function topicRowFromContract(input) {
   const fractions = topicRowFromContract({
     subjectId: "math",
     topicRowKey: "fractions::grade:g5",
-    topicName: "שברים",
-    row: { questions: 206, correct: 108, wrong: 98, accuracy: 52, displayName: "שברים" },
+    topicName: "",
+    row: { questions: 206, correct: 108, wrong: 98, accuracy: 52, displayName: "" },
     unit: {
       subjectId: "math",
       topicRowKey: "fractions::grade:g5",
-      displayName: "שברים",
-      taxonomy: { patternHe: "השוואה לפי מונה בלבד", subskillHe: "השוואת שברים" },
-      diagnosis: { allowed: true, lineHe: "השוואה לפי מונה בלבד" },
+      displayName: "",
+      taxonomy: { patternHe: "   ", subskillHe: " " },
+      diagnosis: { allowed: true, lineHe: "   " },
       classification: { state: "classified", primaryTag: "numerator_only_compare" },
       patternEvidence: { allowed: true, evidenceCount: 98 },
       canonicalState: {
@@ -54,14 +54,14 @@ function topicRowFromContract(input) {
   const multiplication = topicRowFromContract({
     subjectId: "math",
     topicRowKey: "multiplication::grade:g5",
-    topicName: "כפל",
-    row: { questions: 32, correct: 22, wrong: 10, accuracy: 69, displayName: "כפל" },
+    topicName: "",
+    row: { questions: 32, correct: 22, wrong: 10, accuracy: 69, displayName: "" },
     unit: {
       subjectId: "math",
       topicRowKey: "multiplication::grade:g5",
-      displayName: "כפל",
-      taxonomy: { patternHe: "אותם זוגות שגויים", subskillHe: "כפל" },
-      diagnosis: { allowed: true, lineHe: "אותם זוגות שגויים" },
+      displayName: "",
+      taxonomy: { patternHe: "  ", subskillHe: "" },
+      diagnosis: { allowed: true, lineHe: "  " },
       classification: { state: "classified", primaryTag: "multiplication_fact_error" },
       patternEvidence: { allowed: true, evidenceCount: 10 },
       canonicalState: {
@@ -85,24 +85,24 @@ function topicRowFromContract(input) {
   assert.equal(contract.priorityTopics.length, 2);
   assert.equal(contract.priorityTopics[0].topicKey, "fractions::grade:g5");
   assert.equal(contract.priorityTopics[1].topicKey, "multiplication::grade:g5");
-  assert.match(String(contract.priorityTopics[0].detectedPattern), /השוואת שברים לפי המונה בלבד|השוואה לפי מונה בלבד/);
-  assert.match(String(contract.priorityTopics[1].detectedPattern), /טעויות חוזרות בעובדות כפל|אותם זוגות שגויים/);
+  assert.match(String(contract.priorityTopics[0].detectedPattern), /    |   /);
+  assert.match(String(contract.priorityTopics[1].detectedPattern), /   |  /);
   assert.ok(
-    contract.strongestDetectedPatterns.some((p) => /מונה בלבד/.test(String(p))) &&
-      contract.strongestDetectedPatterns.some((p) => /כפל|זוגות/.test(String(p))),
+    contract.strongestDetectedPatterns.some((p) => / /.test(String(p))) &&
+      contract.strongestDetectedPatterns.some((p) => /|/.test(String(p))),
   );
   assert.equal(contract.totalQuestions, 238);
   assert.ok(contract.weightedAccuracy > 0 && contract.weightedAccuracy < 100);
 
-  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "מתמטיקה" });
+  const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "" });
   assert.ok(summary && summary.length > 0);
   assert.match(summary, /topics stand out as needing reinforcement/i);
-  assert.match(summary, /שברים/);
-  assert.match(summary, /השוואת שברים לפי המונה בלבד|השוואה לפי מונה בלבד/);
+  assert.match(summary, //);
+  assert.match(summary, /    |   /);
 
   const sp = {
     subject: "math",
-    subjectLabel: "חשבון",
+    subjectLabel: "",
     subjectEngineDecisionContract: contract,
     topicRecommendations: [fractions, multiplication],
     topWeaknesses: [],
@@ -119,8 +119,8 @@ function topicRowFromContract(input) {
   const addition = topicRowFromContract({
     subjectId: "math",
     topicRowKey: "addition::grade:g1",
-    topicName: "חיבור",
-    row: { questions: 10, correct: 2, wrong: 8, accuracy: 20, displayName: "חיבור" },
+    topicName: "",
+    row: { questions: 10, correct: 2, wrong: 8, accuracy: 20, displayName: "" },
     unit: {
       canonicalState: {
         actionState: "probe_only",
@@ -149,14 +149,14 @@ function topicRowFromContract(input) {
   const fractions = topicRowFromContract({
     subjectId: "math",
     topicRowKey: "fractions::grade:g5",
-    topicName: "שברים",
-    row: { questions: 206, correct: 108, wrong: 98, accuracy: 52, displayName: "שברים" },
+    topicName: "",
+    row: { questions: 206, correct: 108, wrong: 98, accuracy: 52, displayName: "" },
     unit: {
       subjectId: "math",
       topicRowKey: "fractions::grade:g5",
-      displayName: "שברים",
-      taxonomy: { patternHe: "השוואה לפי מונה בלבד", subskillHe: "השוואת שברים" },
-      diagnosis: { allowed: true, lineHe: "השוואה לפי מונה בלבד" },
+      displayName: "",
+      taxonomy: { patternHe: "   ", subskillHe: " " },
+      diagnosis: { allowed: true, lineHe: "   " },
       classification: { state: "classified", primaryTag: "numerator_only_compare" },
       patternEvidence: { allowed: true, evidenceCount: 98 },
       canonicalState: {
@@ -171,14 +171,14 @@ function topicRowFromContract(input) {
   const multiplication = topicRowFromContract({
     subjectId: "math",
     topicRowKey: "multiplication::grade:g5",
-    topicName: "כפל",
-    row: { questions: 32, correct: 22, wrong: 10, accuracy: 69, displayName: "כפל" },
+    topicName: "",
+    row: { questions: 32, correct: 22, wrong: 10, accuracy: 69, displayName: "" },
     unit: {
       subjectId: "math",
       topicRowKey: "multiplication::grade:g5",
-      displayName: "כפל",
-      taxonomy: { patternHe: "אותם זוגות שגויים", subskillHe: "טבלת כפל" },
-      diagnosis: { allowed: true, lineHe: "אותם זוגות שגויים" },
+      displayName: "",
+      taxonomy: { patternHe: "  ", subskillHe: " " },
+      diagnosis: { allowed: true, lineHe: "  " },
       classification: { state: "classified", primaryTag: "multiplication_fact_error" },
       patternEvidence: { allowed: true, evidenceCount: 10 },
       canonicalState: {
@@ -196,7 +196,7 @@ function topicRowFromContract(input) {
       correct: 108,
       wrong: 98,
       accuracy: 52,
-      displayName: "שברים",
+      displayName: "",
       engineDecisionContract: fractions.engineDecisionContract,
       learningPatternDecision: fractions.learningPatternDecision,
     },
@@ -205,7 +205,7 @@ function topicRowFromContract(input) {
       correct: 22,
       wrong: 10,
       accuracy: 69,
-      displayName: "כפל",
+      displayName: "",
       engineDecisionContract: multiplication.engineDecisionContract,
       learningPatternDecision: multiplication.learningPatternDecision,
     },
@@ -222,7 +222,7 @@ function topicRowFromContract(input) {
       {
         subjectId: "math",
         topicRowKey: "fractions::grade:g5",
-        displayName: "שברים",
+        displayName: "",
         diagnosis: { allowed: true },
         canonicalState: {
           actionState: "intervene",
@@ -234,7 +234,7 @@ function topicRowFromContract(input) {
       {
         subjectId: "math",
         topicRowKey: "multiplication::grade:g5",
-        displayName: "כפל",
+        displayName: "",
         diagnosis: { allowed: true },
         canonicalState: {
           actionState: "intervene",
@@ -248,13 +248,13 @@ function topicRowFromContract(input) {
       subjectId: "math",
       topicMap,
       subjectReportQuestions: 238,
-      subjectLabel: "מתמטיקה",
+      subjectLabel: "",
     },
   );
 
   assert.equal(shortSubject.subjectSummaryRenderSource, RENDER_SOURCE_SUBJECT_ENGINE);
   assert.equal(shortSubject.subjectSummaryDecisionCode, "multiple_topic_gaps");
-  assert.equal(shortSubject.summaryHe, resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "מתמטיקה" }));
+  assert.equal(shortSubject.summaryHe, resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "" }));
   assert.match(shortSubject.summaryHe, /topics stand out as needing reinforcement/i);
 }
 

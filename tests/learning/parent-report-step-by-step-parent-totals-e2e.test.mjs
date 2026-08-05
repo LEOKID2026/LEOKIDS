@@ -138,7 +138,7 @@ describe("parent report step-by-step parent totals e2e (Aaa7 regression)", () =>
       topicRowKey: "addition",
       row: {
         bucketKey: "addition",
-        displayName: "חיבור",
+        displayName: "",
         questions: 10,
         correct: 2,
         wrong: 8,
@@ -153,24 +153,24 @@ describe("parent report step-by-step parent totals e2e (Aaa7 regression)", () =>
     assert.notEqual(lpd.topicStatus, "initial_data");
     assert.notEqual(lpd.findingType, "initial_topic_data");
     assert.notEqual(lpd.findingType, "no_clear_pattern");
-    // Wording updated: "שגויות" (a bare adjective with no noun — not standalone-grammatical
-    // Hebrew) was replaced with "שגיאות" (mistakes, a proper noun) in formatWrongOfQuestionsTextHe
+    // Wording updated: "" (a bare adjective with no noun — not standalone-grammatical
+    // Hebrew) was replaced with "" (mistakes, a proper noun) in formatWrongOfQuestionsTextHe
     // per an explicit product-owner-mandated grammar fix. Old expectation asserted the
     // ungrammatical form; updated to match the corrected, currently-shipped wording.
-    assert.match(String(lpd.parentVisibleFinding), /שגיאות/);
-    assert.match(String(lpd.parentVisibleFinding), /8 שגיאות מתוך 10 שאלות/);
+    assert.match(String(lpd.parentVisibleFinding), //);
+    assert.match(String(lpd.parentVisibleFinding), /8   10 /);
 
     const subjectLine = withholdSummaryCopyHe("subject", {
       subjectReportQuestions: 10,
       sumUnitQuestions: 10,
       reportSubjectAccuracy: 20,
       reportTotalQuestions: 10,
-      subjectLabel: "מתמטיקה",
-      clearWeakTopicLabelHe: "חיבור",
+      subjectLabel: "",
+      clearWeakTopicLabelHe: "",
       clearWeakTopicQuestions: 10,
       clearWeakTopicAccuracy: 20,
     });
     assert.ok(!INSUFFICIENT_SUBJECT_SUMMARY_RE.test(subjectLine), subjectLine);
-    assert.match(subjectLine, /חיבור/);
+    assert.match(subjectLine, //);
   });
 });

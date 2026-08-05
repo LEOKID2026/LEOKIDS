@@ -25,16 +25,16 @@ const E07_WR = ENG["E-07"].bucketOverrides.writing;
 const SEP = "\u0001";
 
 const BANNED = [
-  "טעות בדו־עמודי",
-  "גופן גדול מול קטן",
-  "מספר שורה / אצבע",
-  "דיווח ראייה",
-  "שגיאות חוזרות",
-  "כתב יד מבוקר",
-  "כלל איות מיני",
-  "פונולוגיה",
-  "לקות",
-  "דיווח מקצועי",
+  " ",
+  "   ",
+  "  / ",
+  " ",
+  " ",
+  "  ",
+  "  ",
+  "",
+  "",
+  " ",
 ];
 
 function assertEq(name, actual, expected) {
@@ -133,7 +133,7 @@ const summaryFixture = {
 function rowEnglish(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "אנגלית",
+    displayName: "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -154,17 +154,17 @@ function buildEnglishUnit(taxonomyId, bucketKey, topicRowKey) {
     subjectId: "english",
     topicRowKey,
     bucketKey,
-    displayName: "אנגלית",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
-      immediateActionHe: isE07 ? "שגיאות חוזרות" : "טעות בדו־עמודי",
-      shortPracticeHe: isE07 ? "כתב יד מבוקר" : "גופן גדול מול קטן",
+      immediateActionHe: isE07 ? " " : " ",
+      shortPracticeHe: isE07 ? "  " : "   ",
       taxonomyId,
     },
     taxonomy: {
       id: taxonomyId,
-      patternHe: "דפוס לבדיקת מערכת",
-      topicHe: "אנגלית",
+      patternHe: "  ",
+      topic: "",
       subskillHe: "test",
     },
     recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
@@ -181,8 +181,8 @@ function buildEnglishUnit(taxonomyId, bucketKey, topicRowKey) {
       positiveAuthorityLevel: "none",
     },
     probe: {
-      specificationHe: isE07 ? "כלל איות מיני" : "מספר שורה / אצבע",
-      objectiveHe: isE07 ? "פונולוגיה" : "דיווח ראייה",
+      specificationHe: isE07 ? "  " : "  / ",
+      objectiveHe: isE07 ? "" : " ",
     },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     canonicalState: {
@@ -202,7 +202,7 @@ function mkBase(taxonomyId, bucket, gradeKey) {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: summaryFixture,
     englishTopics: { [trk]: rowEnglish(trk, bucket, gradeKey) },
     diagnosticEngineV2: { units: [buildEnglishUnit(taxonomyId, bucket, trk)] },
@@ -214,7 +214,7 @@ const dE03g4 = buildDetailedParentReportFromBaseReport(mkBase("E-03", "translati
 const mpE03g4 = dE03g4?.subjectProfiles?.find((p) => p.subject === "english");
 assertEq("detailed E-03 translation g4", mpE03g4?.parentActionHe, E03_TR.g3_g4.actionTextHe);
 assertNoBanned("detailed E-03 g4", mpE03g4?.parentActionHe);
-const tpE03g4 = buildTruthPacketV1(dE03g4, { scopeType: "topic", scopeId: trkE03g4, scopeLabel: "תרגום" });
+const tpE03g4 = buildTruthPacketV1(dE03g4, { scopeType: "topic", scopeId: trkE03g4, scopeLabel: "" });
 assertNoBanned("truth E-03 g4", JSON.stringify(tpE03g4?.narrative?.textSlots || {}));
 
 const trkE03g6 = `translation${SEP}learning${SEP}g6${SEP}easy`;
@@ -222,7 +222,7 @@ const dE03g6 = buildDetailedParentReportFromBaseReport(mkBase("E-03", "translati
 const mpE03g6 = dE03g6?.subjectProfiles?.find((p) => p.subject === "english");
 assertEq("detailed E-03 translation g6", mpE03g6?.parentActionHe, E03_TR.g5_g6.actionTextHe);
 assertNoBanned("detailed E-03 g6", mpE03g6?.parentActionHe);
-const tpE03g6 = buildTruthPacketV1(dE03g6, { scopeType: "topic", scopeId: trkE03g6, scopeLabel: "תרגום" });
+const tpE03g6 = buildTruthPacketV1(dE03g6, { scopeType: "topic", scopeId: trkE03g6, scopeLabel: "" });
 assertNoBanned("truth E-03 g6", JSON.stringify(tpE03g6?.narrative?.textSlots || {}));
 
 const trkE07g4 = `writing${SEP}learning${SEP}g4${SEP}easy`;
@@ -230,7 +230,7 @@ const dE07g4 = buildDetailedParentReportFromBaseReport(mkBase("E-07", "writing",
 const mpE07g4 = dE07g4?.subjectProfiles?.find((p) => p.subject === "english");
 assertEq("detailed E-07 writing g4", mpE07g4?.parentActionHe, E07_WR.g3_g4.actionTextHe);
 assertNoBanned("detailed E-07 g4", mpE07g4?.parentActionHe);
-const tpE07g4 = buildTruthPacketV1(dE07g4, { scopeType: "topic", scopeId: trkE07g4, scopeLabel: "כתיבה" });
+const tpE07g4 = buildTruthPacketV1(dE07g4, { scopeType: "topic", scopeId: trkE07g4, scopeLabel: "" });
 assertNoBanned("truth E-07 g4", JSON.stringify(tpE07g4?.narrative?.textSlots || {}));
 
 const trkE07g6 = `writing${SEP}learning${SEP}g6${SEP}easy`;
@@ -239,13 +239,13 @@ const dE07g6 = buildDetailedParentReportFromBaseReport(bE07g6, { period: "week" 
 const mpE07g6 = dE07g6?.subjectProfiles?.find((p) => p.subject === "english");
 assertEq("detailed E-07 writing g6", mpE07g6?.parentActionHe, E07_WR.g5_g6.actionTextHe);
 assertNoBanned("detailed E-07 g6", mpE07g6?.parentActionHe);
-const tpE07g6 = buildTruthPacketV1(dE07g6, { scopeType: "topic", scopeId: trkE07g6, scopeLabel: "כתיבה" });
+const tpE07g6 = buildTruthPacketV1(dE07g6, { scopeType: "topic", scopeId: trkE07g6, scopeLabel: "" });
 assertNoBanned("truth E-07 g6", JSON.stringify(tpE07g6?.narrative?.textSlots || {}));
 
 const uE07 = bE07g6.diagnosticEngineV2.units[0];
 const sh = summarizeV2UnitsForSubjectForTests(bE07g6.diagnosticEngineV2.units, {
   subjectReportQuestions: 12,
-  subjectLabelHe: "אנגלית",
+  subjectLabelHe: "",
   topicMap: bE07g6.englishTopics,
   reportTotalQuestions: 20,
 });

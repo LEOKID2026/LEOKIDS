@@ -13,17 +13,17 @@ import { mapFrozenQuestionDetail } from "../../lib/classroom-activities/frozen-a
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DIRTY =
-  "כיתה ה׳ · רמה קלה · מה עושה חילזון בלחות? · מוקד snail_moisture_v3";
-const CLEAN = "מה עושה חילזון בלחות?";
+  "  ·   ·    ? ·  snail_moisture_v3";
+const CLEAN = "   ?";
 
 test("1) gen-science-p1 source templates have no grade/level framing", () => {
   const src = readFileSync(
     join(ROOT, "scripts/gen-science-p1-g456-fill.mjs"),
     "utf8"
   );
-  assert.equal(/\["בכיתה/.test(src), false);
-  assert.equal(/\["כיתה\s+[אבגדהו]/.test(src), false);
-  assert.equal(/מוקד\s+[a-z0-9_]+/.test(src), false);
+  assert.equal(/\["/.test(src), false);
+  assert.equal(/\["\s+[]/.test(src), false);
+  assert.equal(/\s+[a-z0-9_]+/.test(src), false);
 });
 
 test("2) gen-science-needs-more-volume framedStem returns core only", () => {
@@ -49,8 +49,8 @@ test("4) legacy frozen activity displays clean via prepare pipeline", () => {
   const [q] = prepareAssignedActivityQuestionSetForStudentDisplay([
     {
       question: DIRTY,
-      choices: ["א", "ב", "ג", "ד"],
-      correctAnswer: "ג",
+      choices: ["", "", "", ""],
+      correctAnswer: "",
       subject: "science",
       skillId: "keep_skill",
       params: { diagnosticSkillId: "keep_diag" },
@@ -64,8 +64,8 @@ test("5) new activity freezes clean stem unchanged", () => {
   const [q] = prepareAssignedActivityQuestionSetForStudentDisplay([
     {
       question: CLEAN,
-      choices: ["א", "ב", "ג", "ד"],
-      correctAnswer: "ב",
+      choices: ["", "", "", ""],
+      correctAnswer: "",
       subject: "science",
       topicKey: "snail_moisture_v3",
       gradeLevel: "g5",
@@ -83,8 +83,8 @@ test("6-8) parent / student / class scopes share clean prepare path", () => {
     const [q] = prepareAssignedActivityQuestionSetForStudentDisplay([
       {
         question: DIRTY,
-        choices: ["א", "ב", "ג", "ד"],
-        correctAnswer: "א",
+        choices: ["", "", "", ""],
+        correctAnswer: "",
         subject: "science",
         scopeHint: scope,
         skillId: "sci_keep",
@@ -92,8 +92,8 @@ test("6-8) parent / student / class scopes share clean prepare path", () => {
       },
     ]);
     assert.equal(q.question, CLEAN, scope);
-    assert.equal(q.correctAnswer, "א", scope);
-    assert.deepEqual(q.choices, ["א", "ב", "ג", "ד"], scope);
+    assert.equal(q.correctAnswer, "", scope);
+    assert.deepEqual(q.choices, ["", "", "", ""], scope);
     assert.equal(q.skillId, "sci_keep", scope);
     assert.equal(q.params.diagnosticSkillId, "diag_keep", scope);
   }
@@ -132,13 +132,13 @@ test("11) correctAnswer / choices / matching fields are unchanged", () => {
   const [q] = prepareAssignedActivityQuestionSetForStudentDisplay([
     {
       question: DIRTY,
-      choices: ["נכון", "לא נכון", "חלקית", "לא יודע"],
-      correctAnswer: "נכון",
+      choices: ["", " ", "", " "],
+      correctAnswer: "",
       subject: "science",
     },
   ]);
-  assert.equal(q.correctAnswer, "נכון");
-  assert.deepEqual(q.choices, ["נכון", "לא נכון", "חלקית", "לא יודע"]);
+  assert.equal(q.correctAnswer, "");
+  assert.deepEqual(q.choices, ["", " ", "", " "]);
 });
 
 test("12) Science product level is regular-only (UI label wiring)", () => {
@@ -149,7 +149,7 @@ test("12) Science product level is regular-only (UI label wiring)", () => {
   assert.match(scienceMaster, /studentDisplayLevelLabel\("regular"\)/);
   assert.match(
     scienceMaster,
-    /easy:\s*\{\s*name:\s*"קל"/
+    /easy:\s*\{\s*name:\s*""/
   );
   // Internal tiers exist; advanced is not a subject-level SCIENCE option in subtitle
   assert.doesNotMatch(
@@ -162,8 +162,8 @@ test("frozen mapper cleans legacy stem without DB rewrite", () => {
   const mapped = mapFrozenQuestionDetail(
     {
       question: DIRTY,
-      choices: ["א", "ב", "ג", "ד"],
-      correctAnswer: "ב",
+      choices: ["", "", "", ""],
+      correctAnswer: "",
       subject: "science",
       skillKey: "sci_keep",
     },
@@ -172,15 +172,15 @@ test("frozen mapper cleans legacy stem without DB rewrite", () => {
   );
   assert.equal(mapped.questionText, CLEAN);
   assert.equal(mapped.skillKey, "sci_keep");
-  assert.deepEqual(mapped.choices, ["א", "ב", "ג", "ד"]);
+  assert.deepEqual(mapped.choices, ["", "", "", ""]);
 });
 
-test("english natural stem preserved; technical מוקד stripped", () => {
+test("english natural stem preserved; technical  stripped", () => {
   assert.equal(
     sanitizeStudentQuestionStem("I have ___ finished my project"),
     "I have ___ finished my project"
   );
-  assert.equal(sanitizeStudentQuestionStem("מוקד present_perfect_v3"), "");
+  assert.equal(sanitizeStudentQuestionStem(" present_perfect_v3"), "");
 });
 
 test("geometry gradeTag no longer interpolated in generator source", () => {
@@ -191,8 +191,8 @@ test("geometry gradeTag no longer interpolated in generator source", () => {
   assert.doesNotMatch(geo, /\$\{gradeTag \? `\$\{gradeTag\}/);
   assert.equal(
     sanitizeStudentQuestionStem(
-      "כיתה ג׳ | לפי השרטוט, איזה יחס מתקיים בין שני הישרים?"
+      "  |  ,      ?"
     ),
-    "לפי השרטוט, איזה יחס מתקיים בין שני הישרים?"
+    " ,      ?"
   );
 });

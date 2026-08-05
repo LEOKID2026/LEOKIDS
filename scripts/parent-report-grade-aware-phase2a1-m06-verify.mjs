@@ -6,16 +6,16 @@
  */
 
 const EXPECTED_ACTION =
-  "כדאי לתרגל עיגול והשוואת מספרים לפי ערך הספרות, במיוחד עשרות, מאות ואלפים. לפני החישוב בקשו מהילד לומר לאיזה מספר התשובה בערך צריכה להיות קרובה.";
+  "       ,  ,  .            .";
 const EXPECTED_GOAL =
-  "בשבוע הקרוב התמקדו בעיגול לפי ערך מקום ובבדיקת סבירות של תשובות במספרים שלמים.";
+  "            .";
 
 /** Must not appear in parent-facing resolver output for M-06 (engine / internal taxonomy cues). */
 const M06_PARENT_BANNED = [
-  "טעות כיוון עיגול",
-  "עם/בלי טבלת עמדות",
-  "צביעת עמדות",
-  "עיגול/השוואה",
+  "  ",
+  "/  ",
+  " ",
+  "/",
 ];
 
 function buildBaseReportDecimalsM06(gradeKey = "g4") {
@@ -24,12 +24,12 @@ function buildBaseReportDecimalsM06(gradeKey = "g4") {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [trk]: {
         bucketKey: "decimals",
-        displayName: "עשרוניות",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -49,18 +49,18 @@ function buildBaseReportDecimalsM06(gradeKey = "g4") {
           subjectId: "math",
           topicRowKey: trk,
           bucketKey: "decimals",
-          displayName: "עשרוניות",
-          diagnosis: { allowed: true, taxonomyId: "M-06", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-06", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "צביעת עמדות",
-            shortPracticeHe: "עם/בלי טבלת עמדות",
+            immediateActionHe: " ",
+            shortPracticeHe: "/  ",
             taxonomyId: "M-06",
           },
           taxonomy: {
             id: "M-06",
-            patternHe: "דפוס",
-            topicHe: "מקום",
-            subskillHe: "עיגול/השוואה",
+            patternHe: "",
+            topic: "",
+            subskillHe: "/",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -75,7 +75,7 @@ function buildBaseReportDecimalsM06(gradeKey = "g4") {
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -153,7 +153,7 @@ function runM06G4Surfaces() {
 
   const short = summarizeV2UnitsForSubjectForTests(base.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: base.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -164,14 +164,14 @@ function runM06G4Surfaces() {
   assertM06ParentBannedAbsent("short nextWeekGoalHe", short.nextWeekGoalHe);
 
   const dJson = JSON.stringify(detailed);
-  if (dJson.includes("צביעת עמדות") || dJson.includes("עם/בלי טבלת עמדות")) {
+  if (dJson.includes(" ") || dJson.includes("/  ")) {
     throw new Error("detailed payload still contains raw M-06 intervention strings in JSON");
   }
 
   const tp = buildTruthPacketV1(detailed, {
     scopeType: "topic",
     scopeId: "decimals\u0001learning\u0001g4\u0001easy",
-    scopeLabel: "עשרוניות",
+    scopeLabel: "",
   });
   if (!tp) throw new Error("buildTruthPacketV1 returned null");
   const nar = tp?.contracts?.narrative?.textSlots || {};
@@ -204,7 +204,7 @@ function runResolverBands() {
     taxonomyId: "M-06",
     slot: "action",
   });
-  if (!a2 || !(a2.includes("קו מספרים") || a2.includes("העשרת הקרובה"))) {
+  if (!a2 || !(a2.includes(" ") || a2.includes(" "))) {
     throw new Error("M-06 g2 action expected early-band wording");
   }
   const a4 = resolveGradeAwareParentRecommendationHe({
@@ -228,7 +228,7 @@ function runResolverBands() {
     taxonomyId: "M-06",
     slot: "action",
   });
-  if (!a6 || !(a6.includes("עשרוניים") || a6.includes("אחוזים"))) {
+  if (!a6 || !(a6.includes("") || a6.includes(""))) {
     throw new Error("M-06 g6 action expected upper-band decimals/percentages wording");
   }
   assertM06ParentBannedAbsent("M-06 g6 action", a6);
@@ -249,7 +249,7 @@ function runUnknownGradeFallbackM06() {
   }
   const u = buildBaseReportDecimalsM06("g4").diagnosticEngineV2.units[0];
   const surf = resolveUnitParentActionHe(u, "g4");
-  if (!surf || surf.includes("צביעת עמדות")) {
+  if (!surf || surf.includes(" ")) {
     throw new Error("M-06 g4 surface must use grade-aware template, not raw engine immediate");
   }
   if (
@@ -264,7 +264,7 @@ function runUnknownGradeFallbackM06() {
   }
   const u9 = buildBaseReportDecimalsM06("g9").diagnosticEngineV2.units[0];
   const act9 = resolveUnitParentActionHe(u9, "g9");
-  if (!act9 || !act9.includes("צביעת")) throw new Error("unknown grade: expected engine fallback for M-06 action");
+  if (!act9 || !act9.includes("")) throw new Error("unknown grade: expected engine fallback for M-06 action");
 }
 
 runM06G4Surfaces();

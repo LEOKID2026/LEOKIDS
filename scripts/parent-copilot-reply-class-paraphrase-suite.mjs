@@ -16,64 +16,64 @@ const runParentCopilotTurn = parentCopilot.runParentCopilotTurn;
 /** @type {Record<string, string[]>} */
 const PARAPHRASE_FAMILIES = {
   affirmation_continue: [
-    "כן",
-    "כן בטח",
-    "בטח",
-    "סבבה",
-    "לגמרי",
-    "נשמע טוב",
-    "מסכים",
-    "מסכימה לגמרי",
-    "יאללה קדימה",
-    "בסדר גמור",
-    "ככה זה",
+    "",
+    " ",
+    "",
+    "",
+    "",
+    " ",
+    "",
+    " ",
+    " ",
+    " ",
+    " ",
   ],
   rejection_not_now: [
-    "לא",
-    "לא עכשיו",
-    "לא כרגע",
-    "אחר כך",
-    "עדיין לא",
-    "מספיק לעכשיו",
-    "לא היום",
-    "לא מתאים לי עכשיו",
-    "נעצור כאן",
+    "",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "   ",
+    " ",
   ],
   concern_reaction: [
-    "זה לא טוב",
-    "לא טוב",
-    "זה ממש מדאיג",
-    "אני דואגת",
-    "חוששת שיש בעיה",
-    "זה נשמע רע",
-    "מלחיץ אותי",
+    "  ",
+    " ",
+    "  ",
+    " ",
+    "  ",
+    "  ",
+    " ",
   ],
   confusion_simpler: [
-    "לא הבנתי",
-    "לא מבין",
-    "מה זאת אומרת",
-    "מה זה אומר",
-    "אפשר יותר פשוט",
-    "תסביר שוב בקצרה",
-    "לא ברור לי",
-    "לא בטוח שהבנתי",
+    " ",
+    " ",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
   ],
   clarify_previous: [
-    "מה הכוונה",
-    "מה שאמרת לפני רגע",
-    "למה אמרת את זה",
-    "מה הקשר לזה",
-    "תחזור על החלק האחרון",
-    "לא הבנתי את הקטע",
+    " ",
+    "   ",
+    "   ",
+    "  ",
+    "   ",
+    "   ",
   ],
   brief_continue: [
-    "אז?",
-    "ואז",
-    "מה עכשיו",
-    "תמשיך",
-    "עוד קצת",
-    "מה הלאה",
-    "נמשיך",
+    "?",
+    "",
+    " ",
+    "",
+    " ",
+    " ",
+    "",
   ],
 };
 
@@ -89,12 +89,12 @@ for (const [expectedClass, variants] of Object.entries(PARAPHRASE_FAMILIES)) {
 }
 
 /** Light typo / messy spacing should still land in affirmation. */
-assert.equal(classifyShortParentReplyClass("כנ", {}), "affirmation_continue");
-assert.equal(classifyShortParentReplyClass("  כן!!  ", {}), "affirmation_continue");
+assert.equal(classifyShortParentReplyClass("", {}), "affirmation_continue");
+assert.equal(classifyShortParentReplyClass("  !!  ", {}), "affirmation_continue");
 
 /** Long utterances should not be treated as short reply classes. */
 assert.equal(
-  classifyShortParentReplyClass("מה דעתך על המצב בשברים ובדקדוק ובאנגלית ובחשבון השבוע", {}),
+  classifyShortParentReplyClass("        ", {}),
   null,
 );
 
@@ -103,10 +103,10 @@ function seedTopicContinuity(sid) {
   sessionMemory.applyConversationStateDelta(sid, {
     addedScopeKey: "topic:t1",
     addedIntent: "what_to_do_today",
-    scopeLabelSnapshotHe: "שברים",
+    scopeLabelSnapshotHe: "",
     plannerIntentSnapshot: "what_to_do_today",
     lastOfferedFollowupFamily: "action_today",
-    assistantAnswerSummary: "נכון לעכשיו בשברים נצפו שאלות עם דיוק יחסי; מומלץ צעד קטן לפי הדוח.",
+    assistantAnswerSummary: "       ;     .",
   });
 }
 
@@ -120,7 +120,7 @@ function assertContinuityNotGenericReport(sid, utterance, label) {
   });
   assert.equal(r.resolutionStatus, "resolved", label);
   const first = String(r.answerBlocks?.[0]?.textHe || "").trim();
-  assert.ok(!/^בקצרה:/u.test(first), `${label}: should not reopen like a fresh generic opener`);
+  assert.ok(!/^:/u.test(first), `${label}: should not reopen like a fresh generic opener`);
   assert.ok(first.length >= 8 && first.length <= 700, `${label}: expected compact continuation lead`);
 }
 
@@ -137,10 +137,10 @@ for (let ci = 0; ci < 2; ci += 1) {
   sessionMemory.applyConversationStateDelta(sid, {
     addedScopeKey: "topic:t1",
     addedIntent: "explain_report",
-    scopeLabelSnapshotHe: "שברים",
+    scopeLabelSnapshotHe: "",
     plannerIntentSnapshot: "explain_report",
     lastOfferedFollowupFamily: "uncertainty_boundary",
-    assistantAnswerSummary: "סיכום קצר על שברים לפי הדוח.",
+    assistantAnswerSummary: "     .",
   });
   const r = runParentCopilotTurn({
     audience: "parent",
@@ -150,8 +150,8 @@ for (let ci = 0; ci < 2; ci += 1) {
   });
   assert.equal(r.resolutionStatus, "resolved");
   const first = String(r.answerBlocks?.[0]?.textHe || "").trim();
-  assert.ok(!/^בקצרה:/u.test(first), `concern ${u}`);
-  assert.ok(/זה לא בהכרח|לפי מה שמופיע|תמונה/u.test(r.answerBlocks.map((b) => b.textHe).join(" ")));
+  assert.ok(!/^:/u.test(first), `concern ${u}`);
+  assert.ok(/  |  |/u.test(r.answerBlocks.map((b) => b.textHe).join(" ")));
 }
 
 assertContinuityNotGenericReport("rc-e2e-conf", PARAPHRASE_FAMILIES.confusion_simpler[2], "confusion");
@@ -161,10 +161,10 @@ sessionMemory.resetParentCopilotSessionForTests("rc-e2e-clar");
 sessionMemory.applyConversationStateDelta("rc-e2e-clar", {
   addedScopeKey: "topic:t1",
   addedIntent: "explain_report",
-  scopeLabelSnapshotHe: "שברים",
+  scopeLabelSnapshotHe: "",
   plannerIntentSnapshot: "explain_report",
   lastOfferedFollowupFamily: "uncertainty_boundary",
-  assistantAnswerSummary: "הדגשה קצרה על מה שמופיע בשברים לפי המדדים.",
+  assistantAnswerSummary: "       .",
 });
 const rClar = runParentCopilotTurn({
   audience: "parent",
@@ -173,7 +173,7 @@ const rClar = runParentCopilotTurn({
   sessionId: "rc-e2e-clar",
 });
 assert.equal(rClar.resolutionStatus, "resolved");
-assert.ok(!/^בקצרה:/u.test(String(rClar.answerBlocks?.[0]?.textHe || "").trim()));
-assert.ok(String(rClar.answerBlocks?.[0]?.textHe || "").includes("שברים") || String(rClar.answerBlocks?.[0]?.textHe || "").includes("נשארים"));
+assert.ok(!/^:/u.test(String(rClar.answerBlocks?.[0]?.textHe || "").trim()));
+assert.ok(String(rClar.answerBlocks?.[0]?.textHe || "").includes("") || String(rClar.answerBlocks?.[0]?.textHe || "").includes(""));
 
 console.log("parent-copilot-reply-class-paraphrase-suite: OK");

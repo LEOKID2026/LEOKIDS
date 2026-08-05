@@ -1,6 +1,6 @@
 /**
- * Acceptance — שורות מתמטיקה scoped (פעולה+מצב+כיתה+רמה), ללא UI.
- * הרצה: npx tsx scripts/math-scoped-topic-rows-acceptance.mjs
+ * Acceptance —   scoped (+++),  UI.
+ * : npx tsx scripts/math-scoped-topic-rows-acceptance.mjs
  */
 import assert from "node:assert/strict";
 import { dirname, join } from "node:path";

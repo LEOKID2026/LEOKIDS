@@ -2,24 +2,24 @@ import { useRef, useState } from "react";
 import DevPrototypeShell from "../../../solo-games/prototypes/dev/DevPrototypeShell.jsx";
 
 const HABITATS = [
-  { id: "sea", label: "ים", emoji: "🌊", color: "border-sky-400 bg-sky-500/20" },
-  { id: "desert", label: "מדבר", emoji: "🏜️", color: "border-amber-400 bg-amber-500/20" },
-  { id: "forest", label: "יער", emoji: "🌲", color: "border-emerald-400 bg-emerald-500/20" },
-  { id: "polar", label: "\u05e7\u05d5\u05d8\u05d1", emoji: "❄️", color: "border-cyan-300 bg-cyan-500/15" },
-  { id: "farm", label: "חווה", emoji: "🌾", color: "border-lime-400 bg-lime-500/15" },
+  { id: "sea", label: "Sea", emoji: "🌊", color: "border-sky-400 bg-sky-500/20" },
+  { id: "desert", label: "Desert", emoji: "🏜️", color: "border-amber-400 bg-amber-500/20" },
+  { id: "forest", label: "Forest", emoji: "🌲", color: "border-emerald-400 bg-emerald-500/20" },
+  { id: "polar", label: "Polar", emoji: "❄️", color: "border-cyan-300 bg-cyan-500/15" },
+  { id: "farm", label: "Farm", emoji: "🌾", color: "border-lime-400 bg-lime-500/15" },
 ];
 
 const ANIMALS = [
-  { id: "dolphin", emoji: "🐬", name: "\u05d3\u05d5\u05dc\u05e4\u05d9\u05df", habitat: "sea", fact: "\u05d3\u05d5\u05dc\u05e4\u05d9\u05e0\u05d9\u05dd \u05d7\u05d9\u05d9\u05dd \u05d1\u05de\u05d9\u05dd \u05d5\u05e0\u05d5\u05e9\u05de\u05d9\u05dd \u05d0\u05d5\u05d5\u05d9\u05e8." },
-  { id: "camel", emoji: "🐫", name: "גמל", habitat: "desert", fact: "גמלים מותאמים לחום ולמעט מים במדבר." },
-  { id: "bear", emoji: "🐻", name: "דוב", habitat: "forest", fact: "דובים מוצאים מזון ומחסה ביער." },
-  { id: "penguin", emoji: "🐧", name: "פינגווין", habitat: "polar", fact: "פינגווינים חיים באזורים קרים מאוד." },
-  { id: "cow", emoji: "🐄", name: "פרה", habitat: "farm", fact: "פרות גדלות בחווה וניזונות מעשב." },
-  { id: "fish", emoji: "🐠", name: "דג", habitat: "sea", fact: "\u05d3\u05d2\u05d9\u05dd \u05d7\u05d9\u05d9\u05dd \u05d1\u05de\u05d9\u05dd \u05d5\u05e9\u05d5\u05d7\u05d9\u05dd \u05e2\u05dd \u05e1\u05e0\u05e4\u05d9\u05e8\u05d9\u05dd." },
-  { id: "snake", emoji: "🐍", name: "נחש", habitat: "desert", fact: "נחשים במדבר מסתתרים מהשמש בחול." },
-  { id: "owl", emoji: "🦉", name: "\u05d9\u05e0\u05e9\u05d5\u05e3", habitat: "forest", fact: "\u05d9\u05e0\u05e9\u05d5\u05e4\u05d9\u05dd \u05e6\u05d3\u05d9\u05dd \u05d1\u05d9\u05e2\u05e8 \u05d1\u05dc\u05d9\u05dc\u05d4." },
-  { id: "seal", emoji: "🦭", name: "כלב ים", habitat: "polar", fact: "כלבי ים שוחים במים קפואים ושוהים על קרח." },
-  { id: "chicken", emoji: "🐔", name: "תרנגולת", habitat: "farm", fact: "תרנגולות מטילות ביצים בחווה." },
+  { id: "dolphin", emoji: "🐬", name: "Dolphin", habitat: "sea", fact: "Dolphins live in the sea and breathe air." },
+  { id: "camel", emoji: "🐫", name: "Camel", habitat: "desert", fact: "Camels are adapted to heat and little water in the desert." },
+  { id: "bear", emoji: "🐻", name: "Bear", habitat: "forest", fact: "Bears find food and shelter in the forest." },
+  { id: "penguin", emoji: "🐧", name: "Penguin", habitat: "polar", fact: "Penguins live in very cold regions." },
+  { id: "cow", emoji: "🐄", name: "Cow", habitat: "farm", fact: "Cows grow on farms and eat grass." },
+  { id: "fish", emoji: "🐠", name: "Fish", habitat: "sea", fact: "Fish live in water and swim with fins." },
+  { id: "snake", emoji: "🐍", name: "Snake", habitat: "desert", fact: "Desert snakes hide from the sun in the sand." },
+  { id: "owl", emoji: "🦉", name: "Owl", habitat: "forest", fact: "Owls hunt at night in the forest." },
+  { id: "seal", emoji: "🦭", name: "Seal", habitat: "polar", fact: "Seals swim in icy water and rest on ice." },
+  { id: "chicken", emoji: "🐔", name: "Chicken", habitat: "farm", fact: "Chickens lay eggs on the farm." },
 ];
 
 export default function AnimalHomesPrototype() {
@@ -59,12 +59,12 @@ export default function AnimalHomesPrototype() {
       setPool((p) => p.filter((id) => id !== animalId));
       setSelected(null);
       setScore((s) => s + 10);
-      setFeedback(`כל הכבוד! ${animal.name} → ${HABITATS.find((h) => h.id === habitatId)?.label} ✅`);
+      setFeedback(`Well done! ${animal.name} → ${HABITATS.find((h) => h.id === habitatId)?.label} ✅`);
       setFact(animal.fact);
       setFlash("ok");
     } else {
       setFeedback(
-        `${animal.name} לא גר ב${HABITATS.find((h) => h.id === habitatId)?.label} - נסו שוב`,
+        `${animal.name} doesn't live in ${HABITATS.find((h) => h.id === habitatId)?.label} — try again`,
       );
       setFact("");
       setFlash("bad");
@@ -76,11 +76,11 @@ export default function AnimalHomesPrototype() {
 
   return (
     <DevPrototypeShell
-      title="הבית של החיות"
-      subtitle="אבטיפוס · בחרו חיה ואז אזור"
+      title="Animal Homes"
+      subtitle="Prototype · Pick an animal, then its habitat"
       headerExtra={
         <span className="rounded-lg bg-black/50 px-2 py-1 text-[10px] font-bold text-amber-200">
-          {score} · {remaining} נשארו
+          {score} · {remaining} left
         </span>
       }
     >
@@ -89,24 +89,24 @@ export default function AnimalHomesPrototype() {
           <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
             <p className="text-5xl">🦁</p>
             <p className="max-w-sm text-sm font-semibold text-lime-200">
-              בחרו חיה ואז את בית הגידול המתאים!
+              Pick an animal, then its matching habitat!
             </p>
             <button
               type="button"
               onClick={start}
               className="min-h-[48px] rounded-xl bg-lime-600 px-8 py-2.5 text-base font-bold text-white"
             >
-              התחל
+              Start
             </button>
           </div>
         ) : (
           <>
             {remaining === 0 ? (
-              <p className="text-center text-base font-bold text-emerald-300">סיימתם! כל החיות בבית 🎉</p>
+              <p className="text-center text-base font-bold text-emerald-300">All done! Every animal is home 🎉</p>
             ) : null}
 
             <div className="rounded-xl border-2 border-yellow-400/70 bg-slate-950/80 p-3">
-              <p className="text-xs font-bold text-amber-200">🐾 חיות - לחצו לבחירה</p>
+              <p className="text-xs font-bold text-amber-200">🐾 Animals — tap to select</p>
               <div className="mt-2 flex flex-wrap justify-center gap-2">
                 {pool.map((id) => {
                   const a = ANIMALS.find((x) => x.id === id);
@@ -160,7 +160,7 @@ export default function AnimalHomesPrototype() {
               onClick={reset}
               className="mx-auto min-h-[44px] rounded-xl border-2 border-white/25 px-6 py-2 text-sm font-bold"
             >
-              משחק חדש
+              New game
             </button>
           </>
         )}

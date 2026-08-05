@@ -180,13 +180,13 @@ function applyProfileSeed(profileId) {
 }
 
 const QUESTIONS = [
-  "מה כדאי לתרגל?",
-  "למה זאת ההמלצה?",
-  "מה לא כדאי לעשות עכשיו?",
-  "האם אפשר לעלות רמה?",
-  "האם הילד חלש?",
-  "מה המצב במקצוע שאין בו נתונים?",
-  "תן לי תרגול דומה.",
+  "  ?",
+  "  ?",
+  "    ?",
+  "   ?",
+  "  ?",
+  "     ?",
+  "   .",
 ];
 
 async function main() {
@@ -243,10 +243,10 @@ async function main() {
   applyProfileSeed("strong-stable");
   const extPayload = syntheticPayload();
   const extUtterances = [
-    "פתור: 2x+1=5",
-    "תן לי חמש שאלות דומות",
-    "מה האבחון של הילד?",
-    "תגיד בדיוק מה לא בסדר עם הילד שלי",
+    ": 2x+1=5",
+    "    ",
+    "   ?",
+    "       ",
   ];
   for (const u of extUtterances) {
     const res = runParentCopilotTurn({

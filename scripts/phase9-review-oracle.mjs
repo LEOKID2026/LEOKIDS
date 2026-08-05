@@ -18,25 +18,25 @@ const ROOT = path.join(__dirname, "..");
 const DEFAULT_PACK = path.join(ROOT, "reports", "phase8-mass-coverage-full", "2026-05-13T18-37-21");
 
 const LEAK_PATTERNS = [
-  { id: "axis_symbolic", re: /ציר\s*\+\s*סימבולי/u },
-  { id: "axis_distance", re: /ציר\s*\+\s*מרחק/u },
-  { id: "register_he", re: /\bרגיסטר\b/u },
-  { id: "pragmatics_he", re: /\bפרגמטיקה\b/u },
-  { id: "mini_rule", re: /כלל\s+מיני/u },
+  { id: "axis_symbolic", re: /\s*\+\s*/u },
+  { id: "axis_distance", re: /\s*\+\s*/u },
+  { id: "register_he", re: /\b\b/u },
+  { id: "pragmatics_he", re: /\b\b/u },
+  { id: "mini_rule", re: /\s+/u },
   { id: "inference_ascii", re: /\binference\b/i },
   { id: "collocation_ascii", re: /\bcollocation\b/i },
   { id: "preposition_ascii", re: /\bpreposition\b/i },
   { id: "false_friend_ascii", re: /\bfalse\s*friend\b/i },
   { id: "he_she_it_ascii", re: /\bhe\/she\/it\b/i },
   { id: "past_present_ascii", re: /\bpast\/present\b/i },
-  { id: "medical_problem", re: /בעיה\s*רפואית/u },
-  { id: "medical_report", re: /דיווח\s*רפואי/u },
-  { id: "social_teacher", re: /מורה\s*חברתי/u },
-  { id: "prejudice", re: /דעות\s*קדומות/u },
-  { id: "social_problem", re: /בעיה\s*חברתית/u },
-  { id: "ruler_units", re: /סרגל\s*\+\s*יחידות/u },
-  { id: "axis_physical_cards", re: /ציר\s*פיזי\s*\+\s*כרטיסיות/u },
-  { id: "symbols_small_groups", re: /סימבולים\s*בקבוצות\s*קטנות/u },
+  { id: "medical_problem", re: /\s*/u },
+  { id: "medical_report", re: /\s*/u },
+  { id: "social_teacher", re: /\s*/u },
+  { id: "prejudice", re: /\s*/u },
+  { id: "social_problem", re: /\s*/u },
+  { id: "ruler_units", re: /\s*\+\s*/u },
+  { id: "axis_physical_cards", re: /\s*\s*\+\s*/u },
+  { id: "symbols_small_groups", re: /\s*\s*/u },
   { id: "patternHe", re: /\bpatternHe\b/ },
   { id: "probeHe", re: /\bprobeHe\b/ },
   { id: "interventionHe", re: /\binterventionHe\b/ },
@@ -46,9 +46,9 @@ const LEAK_PATTERNS = [
   { id: "rootsHe", re: /\brootsHe\b/ },
 ];
 
-const GENERIC_RECOMMENDATION_RE = /להמשיך\s+תרגול|מומלץ\s+לתרגל|חשוב\s+לתרגל|כדאי\s+לתרגל/u;
-const THIN_DATA_INSUFFICIENT_RE = /אין\s+מספיק|לא\s+מספיק\s+נתונים|מעט\s+מדי\s+נתונים|דליל|מצומצם|מוקדם\s+למסקנה/u;
-const REMEDIATION_HEAVY_RE = /לתקן|תיקון\s+דחוף|חובה\s+לחזור|כישלון|כשלון/u;
+const GENERIC_RECOMMENDATION_RE = /\s+|\s+|\s+|\s+/u;
+const THIN_DATA_INSUFFICIENT_RE = /\s+|\s+\s+|\s+\s+|||\s+/u;
+const REMEDIATION_HEAVY_RE = /|\s+|\s+||/u;
 
 function readJson(p) {
   try {
@@ -76,9 +76,9 @@ function hebrewLetters(s) {
 
 function parentInsightFingerprintOk(text) {
   const t = String(text || "");
-  if (/תובנה\s+להורה/u.test(t)) return { ok: true, kind: "tovana_lehora" };
-  if (/סיכום\s+חכם\s+להורה/u.test(t)) return { ok: true, kind: "sihum_haham_lehora" };
-  if (/סיכום/u.test(t) && /להורה/u.test(t)) return { ok: true, kind: "sihum_lehora" };
+  if (/\s+/u.test(t)) return { ok: true, kind: "tovana_lehora" };
+  if (/\s+\s+/u.test(t)) return { ok: true, kind: "sihum_haham_lehora" };
+  if (//u.test(t) && //u.test(t)) return { ok: true, kind: "sihum_lehora" };
   return { ok: false, kind: "none" };
 }
 
@@ -117,7 +117,7 @@ function shortReportJsonMdConsistency(shortJson, shortMd) {
   const issues = [];
   const md = String(shortMd || "");
   if (md.length < 200) issues.push("short_md_too_short");
-  if (!/#\s*דוח\s+קצר/u.test(md) && !/דוח\s+קצר/u.test(md)) issues.push("short_md_missing_title_signal");
+  if (!/#\s*\s+/u.test(md) && !/\s+/u.test(md)) issues.push("short_md_missing_title_signal");
   const o = shortJson?.overallSnapshot || {};
   if (o.totalQuestions != null && !md.includes(String(o.totalQuestions))) issues.push("md_missing_totalQuestions");
   if (o.overallAccuracy != null && !md.includes(String(o.overallAccuracy))) issues.push("md_missing_overallAccuracy");
@@ -453,8 +453,8 @@ async function main() {
     if (thinById.has(sid)) {
       const tinfo = thinById.get(sid);
       const lowQ = Number(tinfo?.questionCount || 0) <= 20;
-      const cautious = THIN_DATA_INSUFFICIENT_RE.test(bigSurface) || /מצומצם|מוקדם\s+למסקנה|מעט\s+נתונים/u.test(bigSurface);
-      const over = /מצוין|מושלם|ללא\s+חולשות|דיוק\s+מלא|100%/u.test(bigSurface) && !cautious;
+      const cautious = THIN_DATA_INSUFFICIENT_RE.test(bigSurface) || /|\s+|\s+/u.test(bigSurface);
+      const over = /||\s+|\s+|100%/u.test(bigSurface) && !cautious;
       if (!cautious && lowQ) {
         score += W.thin_overconfident;
         flags.push("thin_data_missing_explicit_caution");
@@ -500,7 +500,7 @@ async function main() {
         flags.push("weak_accuracy_not_low");
       }
       const wtext = bigSurface;
-      const actionable = /תרגול|בית|שאלות|דקות|צעד/u.test(wtext);
+      const actionable = /||||/u.test(wtext);
       if (!actionable) {
         score += W.weak_vague;
         flags.push("weak_topic_low_actionability_heuristic");
@@ -569,10 +569,10 @@ async function main() {
 
   function manualHebrewChecklist(sid) {
     return [
-      "לוודא שה־PDF הקצר והמפורט תואמים לתחושה מהדוח ב־MD.",
-      "לבדוק שאין ניסוח פנימי/טכני בולט בטקסט שחולץ מה־PDF.",
-      "לעבור על 2–3 תשובות Copilot בקטגוריות רגישות (סתירה, חוסר נתונים, בקשות לא נתמכות).",
-      "אם מדובר בפרופיל thin_data — לוודא שההמלצות לא נשמעות כמו דוח עשיר מדי.",
+      " PDF      MD.",
+      "   /    PDF.",
+      "  2–3  Copilot   (,  ,   ).",
+      "   thin_data —        .",
     ].join(" ");
   }
 
@@ -633,15 +633,15 @@ async function main() {
     [
       "# REVIEW_ORACLE_SUMMARY",
       "",
-      `נוצר: ${summary.generatedAt}`,
+      `: ${summary.generatedAt}`,
       "",
-      `- חבילת מקור: \`${summary.packRoot}\``,
-      `- תלמידים: **${summary.studentsAnalyzed}**`,
-      `- PDF שנסרקו (זוגות): **${summary.pdfsAnalyzed}**`,
-      `- כשלי oracle (חוסמים): **${summary.blockerCount}**`,
-      `- אזהרות oracle: **${summary.oracleWarningCount}**`,
-      `- QUALITY_FLAGS failedChecks (הרנס): **${summary.harnessQualityFailedChecks}**`,
-      `- AI audit finalStatus: **${summary.auditFinalStatus}**; כשלי audit: **${summary.auditTotalFailures}**`,
+      `-  : \`${summary.packRoot}\``,
+      `- : **${summary.studentsAnalyzed}**`,
+      `- PDF  (): **${summary.pdfsAnalyzed}**`,
+      `-  oracle (): **${summary.blockerCount}**`,
+      `-  oracle: **${summary.oracleWarningCount}**`,
+      `- QUALITY_FLAGS failedChecks (): **${summary.harnessQualityFailedChecks}**`,
+      `- AI audit finalStatus: **${summary.auditFinalStatus}**;  audit: **${summary.auditTotalFailures}**`,
       "",
       "## Top suspicion flags",
       "",
@@ -666,7 +666,7 @@ async function main() {
       "",
       ...manualTop.map(
         (p, i) =>
-          `## ${i + 1}. ${p.studentId}\n\n- ציון חשד: ${p.suspicionScore}\n- כיתה: ${p.grade}; ארכיטיפ: ${p.archetype}; מקצוע ממוקד: ${p.primarySubject}; פרופיל: ${p.profileType}\n- סיבת בחירה: ${p.reasonSelected}\n- PDF קצר: \`${p.paths.pdfShort}\`\n- PDF מפורט: \`${p.paths.pdfDetailed}\`\n- MD קצר: \`${p.paths.reportShortMd}\`\n- MD מפורט: \`${p.paths.reportDetailedMd}\`\n- Copilot: \`${p.paths.copilotTurns}\`\n- **מה לבדוק ידנית:** ${p.ownerManualHe}\n`,
+          `## ${i + 1}. ${p.studentId}\n\n-  : ${p.suspicionScore}\n- : ${p.grade}; : ${p.archetype};  : ${p.primarySubject}; : ${p.profileType}\n-  : ${p.reasonSelected}\n- PDF : \`${p.paths.pdfShort}\`\n- PDF : \`${p.paths.pdfDetailed}\`\n- MD : \`${p.paths.reportShortMd}\`\n- MD : \`${p.paths.reportDetailedMd}\`\n- Copilot: \`${p.paths.copilotTurns}\`\n- **  :** ${p.ownerManualHe}\n`,
       ),
     ].join("\n"),
     "utf8",
@@ -678,12 +678,12 @@ async function main() {
     [
       "# PDF_RICHNESS_AUDIT",
       "",
-      `- סה״כ שורות: ${pdfRichnessRows.length}`,
-      `- detailedRicherThanShort (PDF או MD): **${pdfRichnessRows.filter((r) => r.detailedRicherThanShort).length}**`,
-      `- pdfExtractRicher בלבד: **${pdfRichnessRows.filter((r) => r.pdfExtractRicher).length}**`,
+      `-  : ${pdfRichnessRows.length}`,
+      `- detailedRicherThanShort (PDF  MD): **${pdfRichnessRows.filter((r) => r.detailedRicherThanShort).length}**`,
+      `- pdfExtractRicher : **${pdfRichnessRows.filter((r) => r.pdfExtractRicher).length}**`,
       `- mdDetailedRicherThanShort: **${pdfRichnessRows.filter((r) => r.mdDetailedRicherThanShort).length}**`,
-      `- detailedRicherThanShort=false (גם MD לא ארוך יותר): **${pdfRichnessRows.filter((r) => !r.detailedRicherThanShort).length}**`,
-      `- exceptionNote (מסלולי borderline / MD vs חילוץ): **${pdfRichnessRows.filter((r) => r.exceptionNote).length}**`,
+      `- detailedRicherThanShort=false ( MD   ): **${pdfRichnessRows.filter((r) => !r.detailedRicherThanShort).length}**`,
+      `- exceptionNote ( borderline / MD vs ): **${pdfRichnessRows.filter((r) => r.exceptionNote).length}**`,
       "",
     ].join("\n"),
     "utf8",

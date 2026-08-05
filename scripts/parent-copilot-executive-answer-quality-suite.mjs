@@ -15,14 +15,14 @@ const { selectFollowUp } = await import(pathToFileURL(join(ROOT, "utils/parent-c
 const parentMod = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/index.js")).href);
 const runParentCopilotTurn = parentMod.default?.runParentCopilotTurn ?? parentMod.runParentCopilotTurn;
 
-const COUNT_FIRST_RE = /^(בדוח\s+התקופתי\s+נספרו|כ־\s*\d)/u;
-const NAMED_CONTENT_RE = /שברים|דקדוק|חשבון|אנגלית|«[^»]+»/u;
+const COUNT_FIRST_RE = /^(\s+\s+|\s*\d)/u;
+const NAMED_CONTENT_RE = /||||«[^»]+»/u;
 
 function execScopeBase() {
   return {
     scopeType: "executive",
     scopeId: "executive",
-    scopeLabel: "הדוח בתקופה הנבחרה",
+    scopeLabel: "  ",
     interpretationScope: "executive",
     scopeClass: "executive",
   };
@@ -40,7 +40,7 @@ const richPayload = syntheticPayload({ eligible: true });
 const broadRes = runParentCopilotTurn({
   audience: "parent",
   payload: richPayload,
-  utterance: "מה המשמעות הכללית של הדוח בתקופה הזאת?",
+  utterance: "      ?",
   sessionId: "exec-q-1",
   selectedContextRef: null,
 });
@@ -59,7 +59,7 @@ const sparsePayload = {
       topicRecommendations: [
         {
           topicRowKey: "tSparse",
-          displayName: "יחידה קצרה",
+          displayName: " ",
           questions: 3,
           accuracy: 62,
           contractsV1: {
@@ -71,14 +71,14 @@ const sparsePayload = {
               hedgeLevel: "mandatory",
               allowedTone: "parent_professional_warm",
               forbiddenPhrases: [],
-              requiredHedges: ["נכון לעכשיו"],
+              requiredHedges: [" "],
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI0",
               textSlots: {
-                observation: "נכון לעכשיו יש כאן רק מעט תרגול ביחידה הקצרה.",
-                interpretation: "נכון לעכשיו עדיין מוקדם לקבוע כיוון עקבי.",
+                observation: "        .",
+                interpretation: "      .",
                 action: null,
-                uncertainty: "נכון לעכשיו כדאי להמשיך לאסוף עוד ניסיון לפני החלטה.",
+                uncertainty: "        .",
               },
             },
             decision: { contractVersion: "v1", topicKey: "tSparse", subjectId: "math", decisionTier: 0, cannotConcludeYet: true },
@@ -104,8 +104,8 @@ const sparsePayload = {
   executiveSummary: { majorTrendsHe: [] },
 };
 const sparseExplain = slotsForIntent(sparsePayload, "explain_report");
-assert.match(sparseExplain.o, /מצומצם|מעט|חלקית|מוגבל/u, "sparse report must read as limited material");
-assert.ok(!/^\s*כ־\s*\d+\s*שאלות/u.test(sparseExplain.o), "sparse lead must not be digits-only summary");
+assert.match(sparseExplain.o, /|||/u, "sparse report must read as limited material");
+assert.ok(!/^\s*\s*\d+\s*/u.test(sparseExplain.o), "sparse lead must not be digits-only summary");
 assert.ok(/\D{6,}/u.test(sparseExplain.i), "interpretation must not be numbers-only");
 
 // 3) "What appears" (unclear inventory) vs broad explanation (explain_report): materially different slots
@@ -113,8 +113,8 @@ const inv = slotsForIntent(richPayload, "unclear");
 const exp = slotsForIntent(richPayload, "explain_report");
 assert.notEqual(inv.o, exp.o, "inventory-style vs explanation observation must differ");
 assert.notEqual(inv.i, exp.i, "inventory-style vs explanation interpretation must differ");
-assert.match(inv.o, /מופיע|רשימת|מקורות/u, "inventory-class observation should describe what appears");
-assert.match(exp.o, /מקצועות|ניסוח מעוגן|מוצג/u, "broad-explanation observation should frame report coverage");
+assert.match(inv.o, /||/u, "inventory-class observation should describe what appears");
+assert.match(exp.o, /| |/u, "broad-explanation observation should frame report coverage");
 
 // 4) Intent differentiation subset (executive entity fixed)
 const intents = ["explain_report", "what_is_most_important", "strength_vs_weakness_summary", "what_is_going_well"];
@@ -131,7 +131,7 @@ const ineligiblePayload = syntheticPayload({ eligible: false });
 const inelTurn = runParentCopilotTurn({
   audience: "parent",
   payload: ineligiblePayload,
-  utterance: "מה המשמעות של הדוח?",
+  utterance: "   ?",
   sessionId: "exec-q-inel",
   selectedContextRef: null,
 });

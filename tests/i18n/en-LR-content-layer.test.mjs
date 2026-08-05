@@ -35,7 +35,7 @@ const ENGLISH_SCOPE_RE = /English-medium|English-language|English experience/i;
 const LOCAL_LANG_RE =
   /\b(kpelle|bassa|gio|mano|krahn|vai|grebo|kissi|gola|lorma|belle|manda|dei)\b/i;
 const DEAD_CURRICULUM_RE =
-  /\b(israel|israeli|hebrew|homeland|moledet|hasmon|judea|judaism|עברית|מולדת|ישראל)\b/i;
+  /\b(israel|israeli|hebrew|homeland|moledet|hasmon|judea|judaism|||)\b/i;
 const FOREIGN_CURRENCY_RE = /\b(USD|GHS|NGN|KES|CFA|British pound|Naira|Cedi)\b/;
 const LR_GRADES = ["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6"];
 const LR_BANDS = ["Grade 1–2", "Grade 3–4", "Grade 5–6"];

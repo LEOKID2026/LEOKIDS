@@ -5,11 +5,11 @@ import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const payload = syntheticPayload({ eligible: true });
 const utterances = [
-  "מה המשמעות בנושא שברים?",
-  "מה כדאי לעשות השבוע?",
-  "מה הכי בולט בתקופה?",
-  "איך להסביר לילד את זה?",
-  "מה לא כדאי לעשות עכשיו?",
+  "   ?",
+  "   ?",
+  "   ?",
+  "    ?",
+  "    ?",
 ];
 
 const outputs = [];

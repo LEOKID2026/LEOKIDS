@@ -169,7 +169,7 @@ function SubjectsSection({ subjects, t }) {
               className={`${T.subjectAccentBar} ${subjectKeyAccent[s.key] || "bg-sky-400"}`}
               aria-hidden
             />
-            <h3 className={T.subjectTitle}>{s.labelHe}</h3>
+            <h3 className={T.subjectTitle}>{s.label}</h3>
             <div className={`${T.subjectBody} flex-1`}>
               <div className={T.subjectStatRow}>
                 <span className={T.subjectStatLabel}>{t("ui.student.accuracy")}</span>
@@ -246,9 +246,9 @@ function RecommendationsSection({ recommendations }) {
           key={r.id}
           className={T.recommendCard}
         >
-          <h3 className={T.recommendTitle}>{r.titleHe}</h3>
+          <h3 className={T.recommendTitle}>{r.title}</h3>
           {r.hintHe ? <p className="text-xs text-slate-500 mb-1">{r.hintHe}</p> : null}
-          <p className={T.recommendBody}>{r.descriptionHe}</p>
+          <p className={T.recommendBody}>{r.description}</p>
           <Link
             href={r.href}
             className={T.recommendCta}
@@ -800,7 +800,7 @@ export default function WorldHomePrototypePage() {
     return <LoadingScreen message={t("ui.student.loading")} />;
   }
 
-  const heroName = String(student.displayNameHe || student.full_name || "").trim() || t("ui.student.childDefault");
+  const heroName = String(student.displayName || student.full_name || "").trim() || t("ui.student.childDefault");
   const heroGreeting = String(student.greetingHe || "").trim() || t("ui.student.hello", { name: heroName });
   const heroLeoNumber = String(student.leoNumber ?? student.leo_number ?? "").trim();
   const heroLeoLabel = String(student.leoNumberLabelHe || "").trim();

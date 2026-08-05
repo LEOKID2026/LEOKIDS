@@ -63,8 +63,8 @@ function isUsableMcq(q) {
 function extractHebrewPassage(stem) {
   const s = String(stem || "");
   const m =
-    s.match(/קרא את הטקסט:\s*'([^']+)'/) ||
-    s.match(/['׳]([^'׳]{10,})['׳]/) ||
+    s.match(/  :\s*'([^']+)'/) ||
+    s.match(/[']([^']{10,})[']/) ||
     s.match(/"([^"]{10,})"/);
   return m ? (m[1] || m[2] || "").trim() : "";
 }

@@ -62,7 +62,7 @@ describe("parseManualCoinCreditCategory", () => {
   });
 
   test("rejects unknown category", () => {
-    assert.equal(parseManualCoinCreditCategory("פיצוי").ok, false);
+    assert.equal(parseManualCoinCreditCategory("").ok, false);
     assert.equal(parseManualCoinCreditCategory("").ok, false);
   });
 });
@@ -178,12 +178,12 @@ describe("Admin UI Hebrew-only labels", () => {
       join(ROOT, "components/admin/rewards/AdminManualCoinsTab.jsx"),
       "utf8"
     );
-    assert.match(uiSrc, /כתובת מייל של הורה/);
-    assert.match(uiSrc, /טען ילדים/);
-    assert.match(uiSrc, /לא נמצא הורה עם כתובת המייל הזו/);
-    assert.match(uiSrc, /בחר ילד/);
-    assert.match(uiSrc, /ילד נבחר/);
-    assert.doesNotMatch(uiSrc, /מזהה ילד/);
+    assert.match(uiSrc, /   /);
+    assert.match(uiSrc, / /);
+    assert.match(uiSrc, /      /);
+    assert.match(uiSrc, / /);
+    assert.match(uiSrc, / /);
+    assert.doesNotMatch(uiSrc, / /);
     assert.doesNotMatch(uiSrc, /coin-info/);
   });
 
@@ -192,11 +192,11 @@ describe("Admin UI Hebrew-only labels", () => {
       join(ROOT, "components/admin/rewards/AdminManualCoinsTab.jsx"),
       "utf8"
     );
-    assert.match(uiSrc, /פיצוי/);
-    assert.match(uiSrc, /בונוס/);
-    assert.match(uiSrc, /תיקון תקלה/);
-    assert.match(uiSrc, /הוסף מטבעות לילד/);
-    assert.match(uiSrc, /המטבעות נוספו בהצלחה/);
+    assert.match(uiSrc, //);
+    assert.match(uiSrc, //);
+    assert.match(uiSrc, / /);
+    assert.match(uiSrc, /  /);
+    assert.match(uiSrc, /  /);
     assert.doesNotMatch(uiSrc, />\s*compensation\s*</);
     assert.doesNotMatch(uiSrc, />\s*bugfix\s*</);
   });
@@ -215,9 +215,9 @@ describe("Admin UI Hebrew-only labels", () => {
       join(ROOT, "components/admin/rewards/AdminManualCoinsTab.jsx"),
       "utf8"
     );
-    assert.match(uiSrc, /פעילות אחרונה/);
-    assert.match(uiSrc, /אין פעילות מתועדת/);
-    assert.match(uiSrc, /אירועים אחרונים/);
+    assert.match(uiSrc, / /);
+    assert.match(uiSrc, /  /);
+    assert.match(uiSrc, / /);
     assert.match(uiSrc, /recent-events/);
   });
 });
@@ -229,19 +229,19 @@ describe("Admin student support activity", () => {
     );
     const empty = summarizeLastStudentActivity([]);
     assert.equal(empty.hasActivity, false);
-    assert.equal(empty.shortLineHe, "אין פעילות");
+    assert.equal(empty.shortLineHe, " ");
 
     const withEvent = summarizeLastStudentActivity([
       {
         atIso: "2026-06-20T02:04:00.000Z",
         atLabelHe: "20/06/2026 02:04",
-        lineHe: "סיים תרגול חשבון - 16 שאלות - 75% - 26 דקות",
-        detailLineHe: "תרגול חשבון · 16 שאלות · 75% · 26 דקות",
+        lineHe: "   - 16  - 75% - 26 ",
+        detailLineHe: "  · 16  · 75% · 26 ",
       },
     ]);
     assert.equal(withEvent.hasActivity, true);
     assert.equal(withEvent.atLabelHe, "20/06/2026 02:04");
-    assert.equal(withEvent.detailLineHe, "תרגול חשבון · 16 שאלות · 75% · 26 דקות");
+    assert.equal(withEvent.detailLineHe, "  · 16  · 75% · 26 ");
   });
 
   test("manual coin lines use Hebrew category in timeline source", () => {
@@ -249,7 +249,7 @@ describe("Admin student support activity", () => {
       join(ROOT, "lib/admin-server/admin-student-support-activity.server.js"),
       "utf8"
     );
-    assert.match(src, /מטבעות ידנית - סיבה:/);
+    assert.match(src, /  - :/);
     assert.match(src, /ADMIN_MANUAL_COIN_REASON/);
     assert.match(src, /learning_sessions/);
     assert.match(src, /coin_transactions/);

@@ -11,25 +11,25 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
 const PRIORITY_TERMS = [
-  "רצף תמיכה",
-  "זיכרון המלצה",
-  "תלות יסוד",
-  "יסוד מול מקומי",
-  "פער ידע",
-  "מגמת דיוק",
-  "מסקנה חדה",
-  "מסקנה חזקה",
-  "יעד קידום",
-  "עלייה ברמה",
-  "מוכנות לשלב הבא",
-  "ירידה מבוססת",
-  "בירידה",
-  "ביטחון סטטיסטי",
-  "שורות דוח",
-  "לא מדרגים",
-  "לא מסכמים",
-  "חיכוך הוראה",
-  "אגרסיבית",
+  " ",
+  " ",
+  " ",
+  "  ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  "  ",
+  " ",
+  "",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  "",
 ];
 
 const EXCLUDE_FILES = new Set([
@@ -68,17 +68,17 @@ function hasPriorityTerm(text) {
 function isArithmeticCarryingContext(file, text) {
   const f = String(file || "");
   const t = String(text || "");
-  if (!t.includes("העברה")) return false;
+  if (!t.includes("")) return false;
   if (f.includes("pedagogy-glossary.js")) return true;
   if (
-    /חיבור|עשרונית|בלי העברה|בלי בסיס להעברה|נכון כשאין העברה|ספרות הקיצון|העברה עשרונית|עם העברה ובלי/.test(
+    /|| |  |  | | |  /.test(
       t
     )
   ) {
     return true;
   }
-  if (/קידום|עלייה ברמה|מוכנות לשלב|העברה לרמה|ירידה ברמה/.test(t)) return false;
-  if (f.includes("parent-facing-normalize.js") && /בחיבור|עשרונית/.test(t)) return true;
+  if (/| | | | /.test(t)) return false;
+  if (f.includes("parent-facing-normalize.js") && /|/.test(t)) return true;
   return false;
 }
 
@@ -106,24 +106,24 @@ function whyThisMatters(row) {
   const text = String(row.current_hebrew || "");
   const hits = PRIORITY_TERMS.filter((t) => text.includes(t));
   if (hits.length) {
-    return `מכיל מונחים פנימיים/מקצועיים שאינם ברורים להורה: ${hits.join(", ")}`;
+    return `  /   : ${hits.join(", ")}`;
   }
-  if (row.problem_type === "jargon") return "ז'רגון מנוע/אבחון עלול להופיע בדוח הורה";
-  if (row.problem_type === "progression_risk") return "ניסוח עלול לרמוז על קידום/ירידת רמה בלי הסבר פשוט";
-  if (row.problem_type === "thin_data_tone") return "הודעת מעט נתונים — חשוב שנשמעת ברורה ולא טכנית";
-  if (row.problem_type === "awkward_phrasing") return "ניסוח לא טבעי או מבלבל להורה";
-  if (row.state_type) return `מצב ${row.state_type} — טקסט שמופיע כשיש מעט/אין תרגול`;
-  if (row.does_it_suggest_progression === "yes") return "המלצה שעשויה להיתפרש כשינוי רמה או קצב";
-  if (String(row.visibility || "") === "needs_review") return "לא ברור אם מגיע לטקסט גלוי להורה — דורש אימות";
-  if (row.section === "topic_card") return "כרטיס נושא — טקסט שמופיע בהמלצה לנושא";
-  if (row.section === "data_health") return "הודעת מצב נתונים — גלויה להורה";
-  return "טקסט גלוי להורה בדוח — דורש ניסוח סופי מאושר";
+  if (row.problem_type === "jargon") return "' /    ";
+  if (row.problem_type === "progression_risk") return "    /    ";
+  if (row.problem_type === "thin_data_tone") return "   —     ";
+  if (row.problem_type === "awkward_phrasing") return "     ";
+  if (row.state_type) return ` ${row.state_type} —    / `;
+  if (row.does_it_suggest_progression === "yes") return "      ";
+  if (String(row.visibility || "") === "needs_review") return "       —  ";
+  if (row.section === "topic_card") return "  —    ";
+  if (row.section === "data_health") return "   —  ";
+  return "    —    ";
 }
 
 function conservativeSuggestion(row) {
   const text = String(row.current_hebrew || "");
   // Only ultra-safe empty-state directions; never invent full sentences.
-  if (text.includes("שורות דוח") && !text.includes("${")) {
+  if (text.includes(" ") && !text.includes("${")) {
     return "";
   }
   if (hasPriorityTerm(text)) return "";
@@ -200,7 +200,7 @@ function inWave1Scope(row, sourceSheet) {
 
   if (sourceSheet === "Dynamic Templates") {
     return (
-      /topic-next-step|topic.explain|topic_card|נושא/i.test(`${row.file} ${row.function}`) ||
+      /topic-next-step|topic.explain|topic_card|/i.test(`${row.file} ${row.function}`) ||
       hasPriorityTerm(row.current_hebrew)
     );
   }
@@ -338,7 +338,7 @@ Output: \`reports/parent-report-hebrew-copy-wave1-owner-review.xlsx\`
 - Topic recommendation templates
 - AI parent report copy
 - High-risk and needs_review rows
-- Excludes internal-only, guard/denylist sources, and arithmetic "העברה" glossary entries
+- Excludes internal-only, guard/denylist sources, and arithmetic "" glossary entries
 
 ## Counts
 

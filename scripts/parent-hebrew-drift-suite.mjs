@@ -4,12 +4,12 @@ import { syntheticPayload } from "./parent-copilot-test-fixtures.mjs";
 import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const utterances = [
-  "מה המשמעות בנושא שברים?",
-  "מה כדאי לעשות השבוע?",
-  "מה המקצוע החזק?",
-  "מה לא כדאי לעשות עכשיו?",
-  "איך להסביר לילד?",
-  "מה הכי בולט בתקופה?",
+  "   ?",
+  "   ?",
+  "  ?",
+  "    ?",
+  "  ?",
+  "   ?",
 ];
 
 const payload = syntheticPayload({ eligible: true });
@@ -25,12 +25,12 @@ for (let i = 0; i < 180; i++) {
   });
   const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim() : "";
   const clarification = String(out?.clarificationQuestionHe || "").trim();
-  outputs.push(text || clarification || "ללא טקסט");
+  outputs.push(text || clarification || " ");
 }
 
-const roboticCues = ["נכון לעכשיו", "בשלב זה", "כדאי להמשיך לעקוב", "ממשיכים לעקוב"];
+const roboticCues = [" ", " ", "  ", " "];
 const internalLeakRe = /\b(internal_|contractsV1|scopeReason|llmAttempt|reasonCodes|[A-Z]{4,})\b/;
-const overAuthority = ["בוודאות", "חד משמעית", "בטוח לחלוטין"];
+const overAuthority = ["", " ", " "];
 
 let roboticCount = 0;
 let leakageCount = 0;

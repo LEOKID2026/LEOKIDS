@@ -70,9 +70,9 @@ test("classroom activity preview supported subjects", () => {
 });
 
 test("normalizeScienceTopic maps Hebrew labels to bank keys", () => {
-  assert.equal(normalizeScienceTopic("גופנו"), "body");
+  assert.equal(normalizeScienceTopic(""), "body");
   assert.equal(normalizeScienceTopic("body"), "body");
-  assert.equal(normalizeScienceTopic("  בעלי חיים "), "animals");
+  assert.equal(normalizeScienceTopic("    "), "animals");
 });
 
 test("scienceLevelAllowed mirrors science-master level gate", () => {
@@ -127,11 +127,11 @@ test("Science preview items match requested grade and difficulty band", async ()
   }
 });
 
-test("Science preview Hebrew topic גופנו normalizes to body", async () => {
+test("Science preview Hebrew topic  normalizes to body", async () => {
   const qs = await generateActivityQuestionSetClient({
     subject: "science",
     gradeLevel: "g3",
-    topic: "גופנו",
+    topic: "",
     difficulty: "easy",
     count: 3,
   });
@@ -152,9 +152,9 @@ test("Science preview throws for empty pool (g1 experiments hard)", async () => 
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), /אין מספיק שאלות מדע/);
-      assert.match(String(err.message), /כיתה א׳/);
-      assert.match(String(err.message), /ניסויים/);
+      assert.match(String(err.message), /   /);
+      assert.match(String(err.message), / /);
+      assert.match(String(err.message), //);
       return true;
     }
   );
@@ -359,8 +359,8 @@ test("quiz mode strips hint and explanation from geometry start payload", async 
 test("geometry answersMatch numeric and Hebrew labels", async () => {
   assert.equal(answersMatch("16", "16"), true);
   assert.equal(answersMatch("16.0", "16"), true);
-  assert.equal(answersMatch("שטח", "שטח"), true);
-  assert.equal(answersMatch("היקף", "שטח"), false);
+  assert.equal(answersMatch("", ""), true);
+  assert.equal(answersMatch("", ""), false);
 });
 
 test("geometry tamper: scoring uses server answer not body.correctAnswer", async () => {
@@ -422,8 +422,8 @@ test("quiz mode strips hint and explanation from hebrew start payload", async ()
 });
 
 test("hebrew answersMatch scores Hebrew MCQ correct and wrong", () => {
-  assert.equal(answersMatch("ילד", "ילד"), true);
-  assert.equal(answersMatch("ילדה", "ילד"), false);
+  assert.equal(answersMatch("", ""), true);
+  assert.equal(answersMatch("", ""), false);
 });
 
 test("hebrew correct MCQ scores isCorrect via answersMatch", async () => {
@@ -501,7 +501,7 @@ test("english answersMatch case and semantics", () => {
   assert.equal(answersMatch("am", "am"), true);
   assert.equal(answersMatch("AM", "am"), true);
   assert.equal(answersMatch("is", "am"), false);
-  assert.equal(answersMatch("כלב", "כלב"), true);
+  assert.equal(answersMatch("", ""), true);
 });
 
 test("english correct MCQ scores via answersMatch", async () => {

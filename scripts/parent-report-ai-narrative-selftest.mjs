@@ -68,7 +68,7 @@ function topic(answers, correct, opts = {}) {
 function buildAggregate(opts = {}) {
   const base = {
     ok: true,
-    student: { id: "stu_1", full_name: "ילד דוגמה", grade_level: "g4", is_active: true },
+    student: { id: "stu_1", full_name: " ", grade_level: "g4", is_active: true },
     range: { from: "2026-05-01", to: "2026-05-08" },
     summary: {
       totalSessions: 6, completedSessions: 6,
@@ -185,26 +185,26 @@ async function testValidatorRejectsBadOutputs() {
 
   // Missing fields
   check("validator :: missing fields rejected",
-    validateNarrativeOutput({ summary: "טקסט", strengths: [], focusAreas: [], homeTips: [] }, packet).ok === false);
+    validateNarrativeOutput({ summary: "", strengths: [], focusAreas: [], homeTips: [] }, packet).ok === false);
 
   // homeTips count out of range
   check("validator :: homeTips count rejected",
     validateNarrativeOutput({
-      summary: "טקסט בעברית.", strengths: [], focusAreas: [],
-      homeTips: ["טיפ"], cautionNote: ""
+      summary: " .", strengths: [], focusAreas: [],
+      homeTips: [""], cautionNote: ""
     }, packet).ok === false);
 
   // Raw English key in textHe (mostly Hebrew so dominance passes; raw key embedded)
   const bad1 = {
-    summary: "מהתרגול אפשר לראות תמונה כללית של הילד בתקופה זו.",
+    summary: "        .",
     strengths: [
       {
-        textHe: "התרגול בנושא multiplication_table נראה מבוסס מאוד אצל הילד הזה כעת.",
+        textHe: "  multiplication_table       .",
         sourceId: packet.availableStrengthSourceIds[0] || "subject:math",
       },
     ],
     focusAreas: [],
-    homeTips: ["לתרגל בבית בעדינות.", "לעודד שיח רגוע סביב למידה."],
+    homeTips: ["  .", "    ."],
     cautionNote: "",
   };
   const r1 = validateNarrativeOutput(bad1, packet);
@@ -212,10 +212,10 @@ async function testValidatorRejectsBadOutputs() {
 
   // sourceId not grounded
   const bad2 = {
-    summary: "מהתרגול אפשר לראות תמונה כללית בתקופה זו.",
-    strengths: [{ textHe: "המקצוע יציב מאוד", sourceId: "subject:imaginary" }],
+    summary: "      .",
+    strengths: [{ textHe: "  ", sourceId: "subject:imaginary" }],
     focusAreas: [],
-    homeTips: ["לתרגל קצת בכל יום.", "לעודד שיח רגוע."],
+    homeTips: ["   .", "  ."],
     cautionNote: "",
   };
   const r2 = validateNarrativeOutput(bad2, packet);
@@ -227,10 +227,10 @@ async function testValidatorRejectsBadOutputs() {
   // Force focus side to also include this id (rare test path)
   const packetForOverlap = { ...packet, availableFocusSourceIds: [sId, ...(packet.availableFocusSourceIds || [])] };
   const bad3 = {
-    summary: "מהתרגול ניתן לראות תמונה ראשונית בתקופה זו.",
-    strengths: [{ textHe: "התרגול יציב באופן עקבי", sourceId: sId }],
-    focusAreas: [{ textHe: "כדאי להמשיך לחזק בעדינות", sourceId: sId }],
-    homeTips: ["שגרת תרגול קצרה.", "שיח רגוע על למידה."],
+    summary: "      .",
+    strengths: [{ textHe: "   ", sourceId: sId }],
+    focusAreas: [{ textHe: "   ", sourceId: sId }],
+    homeTips: ["  .", "   ."],
     cautionNote: "",
   };
   const r3 = validateNarrativeOutput(bad3, packetForOverlap);
@@ -240,9 +240,9 @@ async function testValidatorRejectsBadOutputs() {
   // Thin data without caution
   const thin = thinPacket();
   const bad4 = {
-    summary: "מהתרגול ניתן לראות תמונה.",
+    summary: "   .",
     strengths: [], focusAreas: [],
-    homeTips: ["לתרגל בבית קצת.", "לעודד שיח רגוע."],
+    homeTips: ["  .", "  ."],
     cautionNote: "",
   };
   const r4 = validateNarrativeOutput(bad4, thin);
@@ -251,9 +251,9 @@ async function testValidatorRejectsBadOutputs() {
 
   // Absolute claim
   const bad5 = {
-    summary: "תמיד הילד מצליח בכל תרגול בלי בעיה.",
+    summary: "      .",
     strengths: [], focusAreas: [],
-    homeTips: ["לתרגל בבית.", "לעודד שיח רגוע."],
+    homeTips: [" .", "  ."],
     cautionNote: "",
   };
   const r5 = validateNarrativeOutput(bad5, packet);
@@ -264,16 +264,16 @@ async function testValidatorRejectsBadOutputs() {
 async function testValidAiOutputAccepted() {
   const packet = strongPacket();
   const wellFormed = {
-    summary: "מהתרגול בתקופה הזו ניתן לראות תמונה יציבה ומעודדת — ילד דוגמה התקדם בקצב טוב.",
+    summary: "        —     .",
     strengths: packet.strengths.slice(0, 2).map((s) => ({
-      textHe: `התרגול ב${s.displayNameHe} נראה יציב ומבוסס.`,
+      textHe: ` ${s.displayNameHe}   .`,
       sourceId: s.sourceId,
     })),
     focusAreas: [],
     homeTips: [
-      "לקבוע זמן קצר וקבוע בבית לתרגול שגרתי.",
-      "לעודד שיח רגוע על מה הצליח, ולא רק על תוצאה.",
-      "להמשיך לעקוב לאורך זמן לפני הסקת מסקנות חזקות.",
+      "      .",
+      "     ,    .",
+      "       .",
     ],
     cautionNote: "",
   };
@@ -290,10 +290,10 @@ async function testValidAiOutputAccepted() {
 async function testInvalidAiOutputFallsBack() {
   const packet = strongPacket();
   const badPayload = {
-    summary: "תמיד הילד מצליח.",
+    summary: "  .",
     strengths: [],
     focusAreas: [],
-    homeTips: ["לתרגל.", "לעודד."],
+    homeTips: [".", "."],
     cautionNote: "",
   };
   const fetchImpl = mockFetch(buildOpenAiResponseBody(badPayload));

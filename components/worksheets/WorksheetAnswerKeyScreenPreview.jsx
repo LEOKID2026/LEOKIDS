@@ -18,7 +18,7 @@ export default function WorksheetAnswerKeyScreenPreview({ answerKeyPayload }) {
 
   return (
     <div className="worksheet-screen-preview" aria-label={ui.answerKeyTitle} {...shellAttrs}>
-      <WorksheetScreenHeader titleHe={ui.answerKeyTitle} meta={meta} variant="answer-key" />
+      <WorksheetScreenHeader title={ui.answerKeyTitle} meta={meta} variant="answer-key" />
       <WorksheetAnswerKeyList answers={answers} mode="screen" />
     </div>
   );

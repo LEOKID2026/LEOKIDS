@@ -271,7 +271,7 @@ async function waitForDetailedReportReadyForPrint(page, label) {
   const t = await page.locator(".parent-report-parent-ai-insight").first().innerText();
   if (!domInsightCardShowsParentAiHeading(t)) {
     throw new Error(
-      `[${label}] Parent AI insight card missing heading (expected "תובנה להורה" or "סיכום חכם להורה" in card)`,
+      `[${label}] Parent AI insight card missing heading (expected " " or "  " in card)`,
     );
   }
   logLine(`detailed insight ready label=${label}`);
@@ -289,7 +289,7 @@ async function waitForShortReportInsightForPrint(page, label) {
   });
   const t = await page.locator(".parent-report-parent-ai-insight").first().innerText();
   if (!domInsightCardShowsParentAiHeading(t)) {
-    throw new Error(`[${label}] short report insight missing heading ("תובנה להורה" or "סיכום חכם להורה")`);
+    throw new Error(`[${label}] short report insight missing heading (" " or "  ")`);
   }
   logLine(`short insight ready label=${label}`);
 }

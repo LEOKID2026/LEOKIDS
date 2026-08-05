@@ -22,7 +22,7 @@ export default function WorksheetScreenPreview({ worksheetPayload }) {
       aria-label={ui.previewTitle}
       {...shellAttrs}
     >
-      <WorksheetScreenHeader titleHe={ui.documentTitle} meta={meta} variant="worksheet" />
+      <WorksheetScreenHeader title={ui.documentTitle} meta={meta} variant="worksheet" />
       <WorksheetQuestionList questions={questions} mode="screen" subjectId={meta.subjectId} />
     </div>
   );

@@ -84,7 +84,7 @@ function TrayShapeSlot({ shape, slotIndex, dragSlotIndex, onPointerDown }) {
         onPointerDown={onPointerDown}
         className="flex h-full w-full items-center justify-center rounded-2xl p-1.5 active:scale-[0.98]"
         style={{ touchAction: "none" }}
-        aria-label={`Drag ${shape.labelHe}`}
+        aria-label={`Drag ${shape.label}`}
       >
         <div
           className={`flex shrink-0 items-center justify-center transition-opacity ${isDragging ? "opacity-40" : "opacity-100"}`}

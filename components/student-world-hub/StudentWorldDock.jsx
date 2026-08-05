@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useT } from "../../lib/i18n/I18nProvider.jsx";
-import { formatCountdownHe } from "../../lib/rewards/rewards-ui.js";
+import { formatCountdownLabel } from "../../lib/rewards/rewards-ui.js";
 import { isDemoMode } from "../../lib/demo/demo-mode.client.js";
 import {
   STUDENT_WORLD_DOCK_PRIMARY,
@@ -152,7 +152,7 @@ export default function StudentWorldDock({
       (isDemoMode() && !surpriseStatusOverride));
   const surpriseCountdownHe =
     !atPendingMax && secondsRemaining != null && secondsRemaining > 0
-      ? formatCountdownHe(secondsRemaining)
+      ? formatCountdownLabel(secondsRemaining)
       : null;
 
   const surpriseStatusLine = useMemo(() => {

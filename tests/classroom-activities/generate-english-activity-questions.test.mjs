@@ -17,8 +17,8 @@ const ADAPTER_SRC = readFileSync(
 );
 
 test("normalizeEnglishTopic maps ENGLISH_TOPICS labels", () => {
-  assert.equal(normalizeEnglishTopic("דקדוק", "g3"), "grammar");
-  assert.equal(normalizeEnglishTopic("תרגום", "g3"), "translation");
+  assert.equal(normalizeEnglishTopic("", "g3"), "grammar");
+  assert.equal(normalizeEnglishTopic("", "g3"), "translation");
   assert.equal(normalizeEnglishTopic("grammar", "g3"), "grammar");
 });
 
@@ -108,7 +108,7 @@ test("english invalid topic throws Hebrew error", async () => {
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), /אין מספיק שאלות אנגלית/);
+      assert.match(String(err.message), /   /);
       return true;
     }
   );
@@ -125,7 +125,7 @@ test("english writing topic yields no MCQ pool (throws)", async () => {
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), /אין מספיק שאלות אנגלית/);
+      assert.match(String(err.message), /   /);
       return true;
     }
   );

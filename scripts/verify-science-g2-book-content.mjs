@@ -24,10 +24,10 @@ const { errors, markdownNotes, pageCount } = verifyScienceGradeBookContent({
   extraChecks(pageId, childFacing) {
     const extra = [];
     if (pageId === "experiments") {
-      if (!/תצפית|השווא/.test(childFacing)) {
+      if (!/|/.test(childFacing)) {
         extra.push("experiments: must include observation/comparison vocabulary");
       }
-      if (!/משתנה|דבר אחד|הוגנ/.test(childFacing)) {
+      if (!/| |/.test(childFacing)) {
         extra.push("experiments: must introduce fair-test / one-variable concept");
       }
     }

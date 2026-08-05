@@ -44,7 +44,7 @@ const ENGINE_PATTERNS = [
   { id: "memory_tokens", re: /\b(no_memory|light_memory|not_enough_evidence|undetermined)\b/gi },
   { id: "pf_k_to_paren", re: /\((pf|k|to|st|ct):[^)]*\)/gi },
   { id: "english_tech", re: /\b(responseMs|retry|hint|tier|low_confidence|min_questions)\b/gi },
-  { id: "insufficient_data_he", re: /אין מספיק נתונים|עדיין אין מספיק נתונים|אין נתונים להצגה/g },
+  { id: "insufficient_data_he", re: /  |   |  /g },
   { id: "grade_g_token", re: /\bg[1-9]\b/gi },
 ];
 
@@ -115,7 +115,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
   const headerBlock = header
     ? {
         kind: "header",
-        parentVisibleTitle: (header.querySelector("h1")?.textContent || "").trim() || "דוח מקיף לתקופה",
+        parentVisibleTitle: (header.querySelector("h1")?.textContent || "").trim() || "  ",
         exactVisibleLines: lines(header),
         boundingBox: bbox(header),
       }
@@ -167,7 +167,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
   const aiBlock = aiInsight
     ? {
         kind: "aiInsight",
-        parentVisibleTitle: (aiInsight.querySelector("h2, p.font-bold")?.textContent || "תובנת AI").trim(),
+        parentVisibleTitle: (aiInsight.querySelector("h2, p.font-bold")?.textContent || " AI").trim(),
         exactVisibleLines: lines(aiInsight),
         boundingBox: bbox(aiInsight),
       }
@@ -192,7 +192,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
       if (letter) {
         innerWindows.push({
           kind: "subjectLetter",
-          parentVisibleTitle: "מכתב מקצוע (ללא כותרת חיצונית)",
+          parentVisibleTitle: "  (  )",
           subHeadings: [...letter.querySelectorAll(".pr-detailed-mini-heading")].map((h) => (h.textContent || "").trim()),
           exactVisibleLines: lines(letter).slice(0, 30),
         });
@@ -202,7 +202,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
       if (phase3) {
         innerWindows.push({
           kind: "phase3Insights",
-          parentVisibleTitle: "תובנות Phase3 (שורות קטנות)",
+          parentVisibleTitle: " Phase3 ( )",
           rowLabels: [...phase3.querySelectorAll(".font-bold")].map((h) => (h.textContent || "").trim()),
           exactVisibleLines: lines(phase3),
         });
@@ -220,7 +220,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
 
       const primaryAction = block.querySelector(".pr-detailed-callout-action, .rounded-lg.border-amber-400\\/28");
       const actionEl = [...block.querySelectorAll(".pr-detailed-mini-heading")].find((h) =>
-        /מה כדאי לעשות במקצוע|איך כדאי לעבוד/.test(h.textContent || "")
+        /   |  /.test(h.textContent || "")
       );
       if (actionEl) {
         const wrap = actionEl.closest(".rounded-lg") || actionEl.parentElement;
@@ -235,7 +235,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
       if (examples) {
         innerWindows.push({
           kind: "evidenceExamples",
-          parentVisibleTitle: "דוגמאות מהתרגול",
+          parentVisibleTitle: " ",
           exactVisibleLines: lines(examples),
         });
       }
@@ -245,7 +245,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
         const cards = [...topicRecBlock.querySelectorAll(".pr-detailed-topic-nextstep-card")];
         innerWindows.push({
           kind: "topicRecommendations",
-          parentVisibleTitle: (topicRecBlock.querySelector(".pr-detailed-topic-rec-head")?.textContent || "המלצות מפורטות לפי נושא").trim(),
+          parentVisibleTitle: (topicRecBlock.querySelector(".pr-detailed-topic-rec-head")?.textContent || "   ").trim(),
           cardCount: cards.length,
           cards: cards.slice(0, 12).map((card) => ({
             title: (card.querySelector(".font-bold")?.textContent || "").trim(),
@@ -272,7 +272,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
   const disclaimerBlock = disclaimer
     ? {
         kind: "disclaimer",
-        parentVisibleTitle: (disclaimer.querySelector(".parent-report-important-disclaimer-title")?.textContent || "הבהרה חשובה").trim(),
+        parentVisibleTitle: (disclaimer.querySelector(".parent-report-important-disclaimer-title")?.textContent || " ").trim(),
         exactVisibleLines: lines(disclaimer),
         boundingBox: bbox(disclaimer),
       }
@@ -306,7 +306,7 @@ const EXTRACT_DETAILED_DOM_FN = () => {
   if (dataHealth && root.contains(dataHealth)) {
     topLevel.push({
       kind: "dataHealth",
-      parentVisibleTitle: "מצב הנתונים בדוח",
+      parentVisibleTitle: "  ",
       exactVisibleLines: lines(dataHealth),
       boundingBox: bbox(dataHealth),
     });
@@ -339,10 +339,10 @@ const EXTRACT_DETAILED_DOM_FN = () => {
     tables,
     topLevelWindows: topLevel,
     bodyContains: {
-      executiveSummaryTitle: /סיכום לתקופה/.test(allText),
-      subjectsRegionFull: /מקצועות הלימוד/.test(allText),
-      subjectsRegionSummary: /מקוצר: מילה לכל מקצוע/.test(allText),
-      noSubjectsMessage: /אין מקצועות עם מספיק נתונים/.test(allText),
+      executiveSummaryTitle: / /.test(allText),
+      subjectsRegionFull: / /.test(allText),
+      subjectsRegionSummary: /:   /.test(allText),
+      noSubjectsMessage: /    /.test(allText),
       copilot: Boolean(document.querySelector(".no-pdf") && document.body.innerText.includes("Copilot")),
     },
     fullTextSample: allText.slice(0, 8000),
@@ -365,13 +365,13 @@ function inferDataSource(windowMeta) {
   const k = windowMeta.kind || "";
   if (k === "header") return "payload.periodInfo + static copy";
   if (k === "aiInsight") return "parentAiExplanation (async enrichDetailedParentReportWithParentAi / deterministic fallback)";
-  if (t === "מה עשינו בתקופה הזאת") return "payload.overallSnapshot (totalTime, totalQuestions, overallAccuracy, subjectCoverage, sparseSubjectsHe, notableSubjectsHe)";
-  if (t === "מה חשוב לדעת") return "buildParentSurfaceWhatToNoticeHe(payload) ← crossSubjectInsights / parentFacing";
-  if (t === "הודעות מהמורה") return "payload._parentReportUi.parentFacing.teacherMessages";
-  if (t === "מה מומלץ לעשות בבית") return "buildParentSurfaceHomeActionsHe(payload) ← homePlan / parentFacing.homeRecommendations";
-  if (t === "מצב הנתונים בדוח" || k === "dataHealth") return "uiAuthority.diagnosticOverviewHe + crossSubjectInsights.dataQualityNoteHe + gradePracticeMeta.mixedGradePracticeNoteHe";
-  if (t === "סיכום לתקופה") return "payload.executiveSummary → ExecutiveSummarySection (normalizeExecutiveSummary)";
-  if (/מקצועות הלימוד|מקוצר: מילה/.test(t)) return "visibleSubjectProfiles ← payload.subjectProfiles filtered by subjectProfileHasPracticeEvidence";
+  if (t === "   ") return "payload.overallSnapshot (totalTime, totalQuestions, overallAccuracy, subjectCoverage, sparseSubjectsHe, notableSubjectsHe)";
+  if (t === "  ") return "buildParentSurfaceWhatToNoticeHe(payload) ← crossSubjectInsights / parentFacing";
+  if (t === " ") return "payload._parentReportUi.parentFacing.teacherMessages";
+  if (t === "   ") return "buildParentSurfaceHomeActionsHe(payload) ← homePlan / parentFacing.homeRecommendations";
+  if (t === "  " || k === "dataHealth") return "uiAuthority.diagnosticOverviewHe + crossSubjectInsights.dataQualityNoteHe + gradePracticeMeta.mixedGradePracticeNoteHe";
+  if (t === " ") return "payload.executiveSummary → ExecutiveSummarySection (normalizeExecutiveSummary)";
+  if (/ |: /.test(t)) return "visibleSubjectProfiles ← payload.subjectProfiles filtered by subjectProfileHasPracticeEvidence";
   if (k === "subjectLetter") return "parentLetter ← buildSubjectParentLetter(sp) + topWeaknesses.parentDiagnosticExplanationV1";
   if (k === "phase3Insights") return "subjectRollup labels: dominantLearningRiskLabelHe, dominantSuccessPatternLabelHe, whatNotToDoHe, transferReadiness";
   if (k === "topicTierGroup") return "subjectRollup topicGroupsByTier + topicInsightLine (overviewStatusHe)";
@@ -379,8 +379,8 @@ function inferDataSource(windowMeta) {
   if (k === "topicRecommendations") return "recommendationCard ← sp.topicRecommendations + buildTopicRecommendationNarrative + topicExplain strip";
   if (k === "evidenceExamples") return "sp.evidenceExamples";
   if (k === "disclaimer") return "static ParentReportImportantDisclaimer";
-  if (/פעילויות אישיות/.test(t)) return "payload.parentAssignedActivitiesInPeriod";
-  if (/תרגול מחוץ/.test(t)) return "payload.outOfGradePracticeTransparency";
+  if (/ /.test(t)) return "payload.parentAssignedActivitiesInPeriod";
+  if (/ /.test(t)) return "payload.outOfGradePracticeTransparency";
   return "unknown — inspect DOM kind/subject";
 }
 
@@ -554,21 +554,21 @@ function flattenWindows(domExtract) {
 function detectDuplications(windows, domExtract) {
   const dups = [];
   const homeTitles = windows.filter((w) =>
-    /מה מומלץ לעשות בבית|פעולת בית|איך כדאי לעבוד|מה כדאי לעשות במקצוע/.test(w.parentVisibleTitle || "")
+    /   | |  |   /.test(w.parentVisibleTitle || "")
   );
   if (homeTitles.length > 2) {
-    dups.push(`המלצות בית/פעולה מופיעות ב-${homeTitles.length} חלונות/תת-חלונות שונים (גלובלי + per-subject + topic cards).`);
+    dups.push(` /  -${homeTitles.length} /-  ( + per-subject + topic cards).`);
   }
 
-  const metricsSections = windows.filter((w) => w.kind === "sectionCard" && w.parentVisibleTitle === "מה עשינו בתקופה הזאת");
+  const metricsSections = windows.filter((w) => w.kind === "sectionCard" && w.parentVisibleTitle === "   ");
   if (metricsSections.length) {
-    dups.push("סטטיסטיקות תקופה (זמן/שאלות/דיוק) חוזרות גם בכותרת כל מקצוע (שאלות|דיוק) ובטבלת כיסוי.");
+    dups.push("  (//)      (|)  .");
   }
 
   if (domExtract.bodyContains?.executiveSummaryTitle) {
-    dups.push("קיים 'סיכום לתקופה' ב-DOM — ייתכן חפיפה עם 'מה חשוב לדעת' / AI insight / המלצות בית.");
+    dups.push(" ' ' -DOM —    '  ' / AI insight /  .");
   } else if (domExtract.payloadMeta?.hasExecutiveSummaryInPayload) {
-    dups.push("payload.executiveSummary קיים בשרת אך 'סיכום לתקופה' לא נראה ב-DOM (חסר ExecutiveSummarySection בדף production).");
+    dups.push("payload.executiveSummary    ' '   -DOM ( ExecutiveSummarySection  production).");
   }
 
   return dups;
@@ -672,7 +672,7 @@ async function main() {
   try {
     await page.goto(reportUrl, { waitUntil: "networkidle", timeout: 180_000 });
     await page.locator("#parent-report-detailed-print").waitFor({ timeout: 120_000 });
-    await page.getByRole("heading", { name: /דוח מקיף לתקופה/u }).waitFor({ timeout: 60_000 });
+    await page.getByRole("heading", { name: /  /u }).waitFor({ timeout: 60_000 });
     await page.waitForTimeout(4000);
 
     const screenshotPath = join(ARTIFACT_DIR, "omer-parent-report-detailed-full-dom.png");
@@ -685,17 +685,17 @@ async function main() {
 
     const windows = flattenWindows(domExtract);
 
-    const statsSection = domExtract.sectionCards?.find((s) => s.parentVisibleTitle === "מה עשינו בתקופה הזאת");
+    const statsSection = domExtract.sectionCards?.find((s) => s.parentVisibleTitle === "   ");
     let domTime = null;
     let domQuestions = null;
     let domAccuracy = null;
     if (statsSection) {
       const L = statsSection.exactVisibleLines;
-      const ti = L.indexOf("זמן כולל");
+      const ti = L.indexOf(" ");
       if (ti >= 0 && L[ti + 1]) domTime = parseInt(L[ti + 1], 10);
-      const qi = L.indexOf("שאלות");
+      const qi = L.indexOf("");
       if (qi >= 0 && L[qi + 1]) domQuestions = parseInt(L[qi + 1], 10);
-      const ai = L.indexOf("דיוק כללי");
+      const ai = L.indexOf(" ");
       if (ai >= 0 && L[ai + 1]) domAccuracy = parseInt(String(L[ai + 1]).replace("%", ""), 10);
     }
 
@@ -733,7 +733,7 @@ async function main() {
 
     const engineHitsGlobal = scanEngineLanguage(domExtract.fullTextSample || "");
     const insufficientDataLines = windows
-      .flatMap((w) => (w.exactVisibleLines || []).filter((l) => /אין מספיק נתונים|אין נתונים להצגה|עדיין אין מספיק/.test(l)))
+      .flatMap((w) => (w.exactVisibleLines || []).filter((l) => /  |  |  /.test(l)))
       .slice(0, 15);
 
     const duplications = detectDuplications(windows, domExtract);
@@ -742,14 +742,14 @@ async function main() {
     const findingsSummary = [];
     findingsSummary.push(`Top-level section cards in DOM: ${(domExtract.sectionCards || []).map((s) => s.parentVisibleTitle).join(" → ")}`);
     findingsSummary.push(`Subjects region title: "${domExtract.subjectsRegionTitle}" (${domExtract.subjectBlocks?.length || 0} subject blocks)`);
-    findingsSummary.push(`Executive summary card "סיכום לתקופה" in DOM: ${domExtract.bodyContains?.executiveSummaryTitle ? "yes" : "**no**"}`);
+    findingsSummary.push(`Executive summary card " " in DOM: ${domExtract.bodyContains?.executiveSummaryTitle ? "yes" : "**no**"}`);
     if (payloadAnalysis?.subjectsWithZeroQuestionsInCoverageTable?.length) {
       findingsSummary.push(
         `Coverage table lists ${payloadAnalysis.subjectsWithZeroQuestionsInCoverageTable.length} subjects with 0 questions: ${payloadAnalysis.subjectsWithZeroQuestionsInCoverageTable.map((s) => s.label).join(", ")}`
       );
     }
     if (insufficientDataLines.length) {
-      findingsSummary.push(`"אין מספיק נתונים" / empty-data lines in UI: ${insufficientDataLines.length} occurrences (see windows)`);
+      findingsSummary.push(`"  " / empty-data lines in UI: ${insufficientDataLines.length} occurrences (see windows)`);
     }
     if (engineHitsGlobal.length) {
       findingsSummary.push(`Engine-language pattern hits in sample text: ${engineHitsGlobal.map((h) => h.patternId).join(", ")}`);
@@ -759,12 +759,12 @@ async function main() {
     );
 
     const initialDecisions = [
-      "האם להחזיר/להסיר 'סיכום לתקופה' (ExecutiveSummary) — קיים ב-renderable.jsx וב-payload אך חסר ב-parent-report-detailed.js production?",
-      "האם מקצועות עם 0 שאלות בטבלת 'כיסוי לפי מקצוע' צריכים להופיע להורה?",
-      "כמה שכבות המלצות בית לשמור: גלובלי ('מה מומלץ לעשות בבית') + per-subject + per-topic?",
-      "האם SubjectTopicTierGroups + topic recommendation cards — כפילות שצריך לאחד?",
-      "האם 'מצב הנתונים בדוח' / sparse subjects — מספיק ברורים או מבלבלים עם 'אין מספיק נתונים'?",
-      "האם Copilot + ParentReportInsight (מחוץ להדפסה) נחשבים חלק מהדוח המפורט לצורך מיפוי?",
+      " / ' ' (ExecutiveSummary) —  -renderable.jsx -payload   -parent-report-detailed.js production?",
+      "   0   '  '   ?",
+      "    :  ('   ') + per-subject + per-topic?",
+      " SubjectTopicTierGroups + topic recommendation cards —   ?",
+      " '  ' / sparse subjects —      '  '?",
+      " Copilot + ParentReportInsight ( )      ?",
     ];
 
     const report = {

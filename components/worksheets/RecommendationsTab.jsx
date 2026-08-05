@@ -192,19 +192,19 @@ export default function RecommendationsTab({
 
                   <span className="worksheet-subject-badge" data-subject={rec.subjectId}>
 
-                    {rec.subjectHe}
+                    {rec.subject}
 
                   </span>
 
                   <span className="worksheet-level-pill" data-level={rec.levelKey}>
 
-                    {rec.levelHe}
+                    {rec.level}
 
                   </span>
 
                 </div>
 
-                <h3 className={`worksheet-ready-card-title ${T.heading}`}>{rec.topicHe}</h3>
+                <h3 className={`worksheet-ready-card-title ${T.heading}`}>{rec.topic}</h3>
 
                 <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>
 

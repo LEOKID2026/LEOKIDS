@@ -76,17 +76,17 @@ function assertSurfacesParity(raw, expected, opts = {}) {
 
   const sections = buildLpdSafeTopicExplainSectionsHe(explainRow);
   assert.ok(sections?.data, `${label}: explain data line`);
-  assert.ok(!sections.data.includes("0 נכונות"), `${label}: no fake zero correct`);
+  assert.ok(!sections.data.includes("0 "), `${label}: no fake zero correct`);
   if (canonical.questions > 4 && canonical.canShowCorrectWrongBreakdown) {
-    assert.match(sections.data, new RegExp(`${canonical.correct} תשובות נכונות`), `${label}: correct in data`);
+    assert.match(sections.data, new RegExp(`${canonical.correct}  `), `${label}: correct in data`);
     if (canonical.wrong > 0) {
-      assert.match(sections.data, new RegExp(`${canonical.wrong} תשובות שגויות`), `${label}: wrong in data`);
+      assert.match(sections.data, new RegExp(`${canonical.wrong}  `), `${label}: wrong in data`);
     }
   }
 
   const copy = resolveParentExplainRowCopy(explainRow);
   if (copy.explainSections?.data) {
-    assert.ok(!copy.explainSections.data.includes("0 נכונות"), `${label}: resolve copy`);
+    assert.ok(!copy.explainSections.data.includes("0 "), `${label}: resolve copy`);
   }
 
   if (v2Unit && baseReport) {
@@ -117,11 +117,11 @@ describe("parent visible metrics contract", () => {
     assert.equal(metrics.source, "derived_accuracy");
     assert.equal(isForbiddenZeroCorrectAllWrongCopy(metrics), false);
 
-    const dataLine = buildParentMetricsDataLineHe(metrics, "שברים");
-    assert.ok(!dataLine.includes("0 נכונות"));
-    assert.ok(!dataLine.includes("206 שגויות"));
-    assert.match(dataLine, /107 תשובות נכונות/);
-    assert.match(dataLine, /99 תשובות שגויות/);
+    const dataLine = buildParentMetricsDataLineHe(metrics, "");
+    assert.ok(!dataLine.includes("0 "));
+    assert.ok(!dataLine.includes("206 "));
+    assert.match(dataLine, /107  /);
+    assert.match(dataLine, /99  /);
   });
 
   test("B - q=206 correct=107 wrong=99 accuracy=52: consistent aggregate path", () => {
@@ -142,7 +142,7 @@ describe("parent visible metrics contract", () => {
       expected,
       {
         label: "fractions",
-        topicName: "שברים",
+        topicName: "",
         mapRow,
         v2Unit,
         baseReport,
@@ -162,7 +162,7 @@ describe("parent visible metrics contract", () => {
       expected,
       {
         label: "multiplication",
-        topicName: "כפל",
+        topicName: "",
         mapRow,
         v2Unit,
         baseReport,
@@ -182,7 +182,7 @@ describe("parent visible metrics contract", () => {
       expected,
       {
         label: "addition",
-        topicName: "חיבור",
+        topicName: "",
         mapRow,
         v2Unit,
         baseReport,
@@ -198,7 +198,7 @@ describe("parent visible metrics contract", () => {
     const lpd = buildLearningPatternDecision({
       subjectId: "math",
       topicRowKey: "addition",
-      row: { displayName: "חיבור", ...expected },
+      row: { displayName: "", ...expected },
       rawMistakes: [],
       startMs: START,
       endMs: END,
@@ -206,12 +206,12 @@ describe("parent visible metrics contract", () => {
     assert.equal(lpd.topicStatus, "initial_data");
 
     const copy = resolveParentExplainRowCopy({
-      label: "חיבור",
+      label: "",
       ...expected,
       learningPatternDecision: lpd,
     });
-    assert.match(copy.explainSections?.meaning || "", /מוקדם/);
-    assert.match(copy.explainSections?.data || "", /2 שאלות/);
+    assert.match(copy.explainSections?.meaning || "", //);
+    assert.match(copy.explainSections?.data || "", /2 /);
   });
 
   test("F - cross-surface parity via collectTopicEngineRowsFromReport", () => {
@@ -222,7 +222,7 @@ describe("parent visible metrics contract", () => {
         [topicRowKey]: {
           questions: 206,
           accuracy: 52,
-          displayName: "שברים",
+          displayName: "",
           parentVisibleMetrics: metrics,
           correct: metrics.correct,
           wrong: metrics.wrong,
@@ -252,7 +252,7 @@ describe("parent visible metrics contract", () => {
       subjectId: "math",
       topicRowKey: "fractions",
       row: {
-        displayName: "שברים",
+        displayName: "",
         questions: fixed.questions,
         correct: fixed.correct,
         wrong: fixed.wrong,
@@ -264,7 +264,7 @@ describe("parent visible metrics contract", () => {
     });
 
     const sections = buildLpdSafeTopicExplainSectionsHe({
-      label: "שברים",
+      label: "",
       questions: 206,
       accuracy: 52,
       parentVisibleMetrics: fixed,
@@ -272,8 +272,8 @@ describe("parent visible metrics contract", () => {
     });
 
     assert.ok(sections?.data);
-    assert.ok(!sections.data.includes("0 נכונות ו-206 שגויות"));
-    assert.ok(!sections.data.includes("0 נכונות"));
+    assert.ok(!sections.data.includes("0  -206 "));
+    assert.ok(!sections.data.includes("0 "));
   });
 
   test("H - trendV1 only on practiced topics with displayable direction", () => {
@@ -298,7 +298,7 @@ describe("parent visible metrics contract", () => {
           correct: 9,
           wrong: 3,
           accuracy: 75,
-          displayName: "חיבור",
+          displayName: "",
           trendV1: improving,
         },
         subtraction: {
@@ -306,7 +306,7 @@ describe("parent visible metrics contract", () => {
           correct: 0,
           wrong: 0,
           accuracy: 0,
-          displayName: "חיסור",
+          displayName: "",
           trendV1: insufficient,
         },
       },

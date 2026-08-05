@@ -110,7 +110,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       ok: true,
-      message: result.messageHe,
+      message: result.message,
       coinsTransferred: result.coinsTransferred,
       cardsTransferred: result.cardsTransferred,
     });

@@ -49,9 +49,9 @@ const { classifyActivityEvidence, EVIDENCE_CATEGORIES } = await load("lib/learni
 
 /** @type {{ labelHe: string, bucketKeys: string[], expected: { q: number, c: number, w: number, acc: number } }[]} */
 const TARGETS = [
-  { labelHe: "חיבור", bucketKeys: ["addition"], expected: { q: 10, c: 2, w: 8, acc: 20 } },
-  { labelHe: "שברים", bucketKeys: ["fractions", "fraction"], expected: { q: 206, c: 107, w: 99, acc: 52 } },
-  { labelHe: "כפל", bucketKeys: ["multiplication", "multiply"], expected: { q: 32, c: 22, w: 10, acc: 69 } },
+  { labelHe: "", bucketKeys: ["addition"], expected: { q: 10, c: 2, w: 8, acc: 20 } },
+  { labelHe: "", bucketKeys: ["fractions", "fraction"], expected: { q: 206, c: 107, w: 99, acc: 52 } },
+  { labelHe: "", bucketKeys: ["multiplication", "multiply"], expected: { q: 32, c: 22, w: 10, acc: 69 } },
 ];
 
 function normalizeMode(payload) {
@@ -196,7 +196,7 @@ function diagnoseFailure(row) {
   if (row.lpdOutput?.topicStatus === "no_clear_pattern" && exp.q >= 5 && exp.acc < 70) issues.push("lpd:no_clear_pattern_despite_volume");
   const finding = String(row.lpdOutput?.parentVisibleFinding || "");
   if (/unknown/i.test(finding)) issues.push("lpd:unknown_in_finding");
-  if (/מעט נתונים|אין תמונה|עדיין מוקדם/u.test(row.renderedTextCombined || "")) {
+  if (/ | | /u.test(row.renderedTextCombined || "")) {
     if (exp.q >= 20) issues.push("copy:thin_data_wording_at_high_q");
     if (exp.q >= 50) issues.push("copy:thin_data_wording_at_very_high_q");
   }
@@ -392,8 +392,8 @@ async function main() {
     const detailData = explainSections?.data || "";
     const headerDetailContradiction =
       metrics.accuracy > 0 &&
-      detailData.includes("0 נכונות") &&
-      detailData.includes(`${metrics.questions} שגויות`);
+      detailData.includes("0 ") &&
+      detailData.includes(`${metrics.questions} `);
 
     const row = {
       topic: target.labelHe,

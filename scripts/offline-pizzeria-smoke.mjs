@@ -19,7 +19,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = process.env.OFFLINE_TEST_BASE || "http://127.0.0.1:3099";
 const HUB = `${BASE}/student/offline/educational`;
 const GAME = `${BASE}/student/offline/educational/leo-pizzeria`;
-const ERROR_TEXT = "אופס! משהו השתבש";
+const ERROR_TEXT = "!  ";
 
 function loadRequiredChunkUrls() {
   const buildId = fs.readFileSync(path.join(ROOT, ".next", "BUILD_ID"), "utf8").trim();
@@ -40,7 +40,7 @@ async function registerServiceWorker(page) {
 }
 
 async function dismissPortraitModalIfVisible(page) {
-  const btn = page.getByRole("button", { name: "המשך בכל זאת" });
+  const btn = page.getByRole("button", { name: "  " });
   if ((await btn.count()) > 0) {
     await btn.click();
     await page.waitForTimeout(500);
@@ -48,11 +48,11 @@ async function dismissPortraitModalIfVisible(page) {
 }
 
 async function serveFirstEasyPizza(page) {
-  await page.getByRole("button", { name: "גבינה" }).click();
+  await page.getByRole("button", { name: "" }).click();
   for (let i = 1; i <= 4; i += 1) {
-    await page.getByRole("button", { name: new RegExp(`^חלק ${i}`) }).click();
+    await page.getByRole("button", { name: new RegExp(`^ ${i}`) }).click();
   }
-  await page.getByRole("button", { name: /הגש פיצה/ }).click();
+  await page.getByRole("button", { name: / / }).click();
   await page.waitForTimeout(1500);
 }
 
@@ -75,18 +75,18 @@ async function main() {
     throw new Error("error boundary on game entry");
   }
 
-  await page.getByRole("button", { name: "קל" }).click();
-  await page.getByRole("button", { name: "התחל משחק" }).click({ timeout: 30_000 });
+  await page.getByRole("button", { name: "" }).click();
+  await page.getByRole("button", { name: " " }).click({ timeout: 30_000 });
   await dismissPortraitModalIfVisible(page);
 
-  await page.getByRole("button", { name: /הגש פיצה/ }).waitFor({ timeout: 30_000 });
+  await page.getByRole("button", { name: / / }).waitFor({ timeout: 30_000 });
   await serveFirstEasyPizza(page);
 
   const hasErrorBoundary = (await page.getByText(ERROR_TEXT).count()) > 0;
   const progressAfterSubmit =
-    (await page.getByText(/לקוח\s*2/).count()) > 0 ||
-    (await page.getByText(/2\s*מתוך\s*20/).count()) > 0 ||
-    (await page.getByText(/נכון|מעולה|כל הכבוד|יופי/i).count()) > 0;
+    (await page.getByText(/\s*2/).count()) > 0 ||
+    (await page.getByText(/2\s*\s*20/).count()) > 0 ||
+    (await page.getByText(/|| |/i).count()) > 0;
 
   const onlineOk = await page.evaluate(async (urls) => {
     const results = await Promise.all(

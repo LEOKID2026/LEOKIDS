@@ -82,8 +82,8 @@ async function main() {
   const scenes = [
     {
       id: crypto.randomUUID(),
-      title: "ברוכים הבאים ל-Leo",
-      subtitle: "פלטפורמת למידה מהנה לילדים",
+      title: "  -Leo",
+      subtitle: "   ",
       mediaAssetId: logo.json.data.asset.id,
       durationSec: 4,
       bgType: "colorful",
@@ -91,8 +91,8 @@ async function main() {
     },
     {
       id: crypto.randomUUID(),
-      title: "למידה, משחקים ותגמולים",
-      subtitle: "הכל במקום אחד",
+      title: ",  ",
+      subtitle: "  ",
       mediaAssetId: null,
       durationSec: 4,
       bgType: "dark",
@@ -100,8 +100,8 @@ async function main() {
     },
     {
       id: crypto.randomUUID(),
-      title: "הצטרפו אלינו היום",
-      subtitle: "Leo — לומדים עם חיוך",
+      title: "  ",
+      subtitle: "Leo —   ",
       mediaAssetId: logo.json.data.asset.id,
       durationSec: 4,
       bgType: "light",
@@ -110,7 +110,7 @@ async function main() {
   ];
 
   const saved = await api(token, "PUT", `/api/admin/video-builder/${id}`, {
-    name: "בדיקת Intro",
+    name: " Intro",
     aspectRatio: "16:9",
     scenes,
     voiceoverAssetId: voice.json.data.asset.id,
@@ -135,7 +135,7 @@ async function main() {
   );
   const streams = JSON.parse(probe.stdout || "{}").streams || [];
   console.log("\n=== Sample video ready ===");
-  console.log("Name: בדיקת Intro");
+  console.log("Name:  Intro");
   console.log("Project ID:", id);
   console.log("File:", outPath);
   console.log("Size:", size, "bytes");

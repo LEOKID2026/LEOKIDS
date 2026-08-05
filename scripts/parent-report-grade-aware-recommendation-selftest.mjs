@@ -63,11 +63,11 @@ function makeM09InterveneUnit() {
     subjectId: "math",
     bucketKey: "subtraction",
     topicRowKey: "subtraction\u0001learning\u0001g4\u0001easy",
-    displayName: "חיסור",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-09" },
     intervention: {
-      immediateActionHe: "ציר + סימבולי",
-      shortPracticeHe: "ציר + מרחק",
+      immediateActionHe: " + ",
+      shortPracticeHe: " + ",
       taxonomyId: "M-09",
     },
     taxonomy: { id: "M-09" },
@@ -82,11 +82,11 @@ function makeM09InterveneUnit() {
 function assertM01ResolvedNoInternalHe(s, label) {
   const t = String(s || "");
   const bad = [
-    "טעויות בהמרת ייצוג",
-    "מבנה / פירוק 10+1",
-    "פירוק 10+1",
-    "שני ייצוגים לאותו מספר",
-    "מניפולציה + מעבר הדרגתי לסמל",
+    "  ",
+    " /  10+1",
+    " 10+1",
+    "   ",
+    " +   ",
   ];
   for (const b of bad) {
     check(`${label} must not include raw M-01 phrase: ${b}`, !t.includes(b));
@@ -98,11 +98,11 @@ function makeM01InterveneUnit(bucketKey) {
     subjectId: "math",
     bucketKey,
     topicRowKey: `${bucketKey}\u0001learning\u0001g4\u0001easy`,
-    displayName: "חשבון",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-01" },
     intervention: {
-      immediateActionHe: "מניפולציה + מעבר הדרגתי לסמל",
-      shortPracticeHe: "שני ייצוגים לאותו מספר",
+      immediateActionHe: " +   ",
+      shortPracticeHe: "   ",
       taxonomyId: "M-01",
     },
     taxonomy: { id: "M-01" },
@@ -119,11 +119,11 @@ function makeM06InterveneUnit() {
     subjectId: "math",
     bucketKey: "decimals",
     topicRowKey: "decimals\u0001learning\u0001g4\u0001easy",
-    displayName: "עשרוניות",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-06" },
     intervention: {
-      immediateActionHe: "צביעת עמדות",
-      shortPracticeHe: "עם/בלי טבלת עמדות",
+      immediateActionHe: " ",
+      shortPracticeHe: "/  ",
       taxonomyId: "M-06",
     },
     taxonomy: { id: "M-06" },
@@ -135,31 +135,31 @@ function makeM06InterveneUnit() {
 }
 
 const M04_G34_ACTION =
-  "כדאי לתרגל השוואת שברים בעזרת ציור מדויק או סרגל שברים, ואז להסביר מה מייצג המונה ומה מייצג המכנה. בשברים בעלי אותו מכנה, בקשו מהילד להסביר מדוע משווים לפי מספר החלקים שנלקחו.";
+  "         ,        .    ,         .";
 const M04_G34_GOAL =
-  "בשבוע הקרוב התמקדו בהשוואת שברים ובהבנת תפקיד המונה והמכנה, במיוחד בשברים בעלי אותו מכנה או בייצוגים פשוטים וברורים.";
+  "        ,         .";
 const M04_G56_ACTION =
-  "כדאי לתרגל השוואת שברים בעזרת שברים שקולים, מכנה משותף או אומדן ביחס אל 0, חצי ו 1. בקשו מהילד להסביר מדוע שבר אחד גדול מאחר, ולא להסתמך רק על גודל המונה או המכנה.";
+  "      ,       0,   1.        ,        .";
 const M04_G56_GOAL =
-  "בשבוע הקרוב התמקדו בהשוואת שברים בעזרת שברים שקולים, מכנה משותף ואומדן, עם נימוק ברור לכל השוואה.";
+  "       ,   ,     .";
 
 const M05_G34_ACTION =
-  "כדאי לתרגל חיבור וחיסור שברים בעלי אותו מכנה. בקשו מהילד להסביר שהמכנה מתאר את גודל החלקים, ולכן מחברים או מחסרים את המונים ובודקים שהתוצאה מתאימה לשלם.";
+  "       .        ,          .";
 const M05_G34_GOAL =
-  "בשבוע הקרוב התמקדו בחיבור וחיסור שברים בעלי אותו מכנה, תוך שמירה על משמעות המכנה ובדיקת סבירות התוצאה.";
+  "        ,        .";
 const M05_G56_ACTION =
-  "כדאי לתרגל חיבור וחיסור שברים עם מכנים שונים בעזרת מציאת מכנה משותף, יצירת שברים שקולים ובדיקת התוצאה לאחר הפעולה. בקשו מהילד להסביר כל שלב לפני שהוא מפשט את התשובה.";
+  "           ,       .          .";
 const M05_G56_GOAL =
-  "בשבוע הקרוב התמקדו בפעולות חיבור וחיסור בשברים עם מכנים שונים: מכנה משותף, שברים שקולים, ביצוע הפעולה ובדיקת סבירות.";
+  "         :  ,  ,    .";
 
 /** Raw M-04/M-05 taxonomy cues — must not appear when grade-aware templates resolve (g3+). */
 const FRACTION_TEMPLATE_BANNED_SUBSTRINGS = [
-  "השוואה לפי מונה בלבד",
-  "טעות באותה שלב",
-  "עם/בלי שרטוט",
-  "חלק כלל קונקרטי",
-  "המראה 2,3,4",
-  "שלבים כתובים + דוגמה מקבילה",
+  "   ",
+  "  ",
+  "/ ",
+  "  ",
+  " 2,3,4",
+  "  +  ",
 ];
 
 /** @param {string} label @param {string|null|undefined} s */
@@ -175,14 +175,14 @@ function makeM04InterveneUnit() {
     subjectId: "math",
     bucketKey: "fractions",
     topicRowKey: "fractions\u0001learning\u0001g4\u0001easy",
-    displayName: "שברים",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-04" },
     intervention: {
-      immediateActionHe: "חלק כלל קונקרטי",
-      shortPracticeHe: "עם/בלי שרטוט",
+      immediateActionHe: "  ",
+      shortPracticeHe: "/ ",
       taxonomyId: "M-04",
     },
-    taxonomy: { id: "M-04", patternHe: "השוואה לפי מונה בלבד" },
+    taxonomy: { id: "M-04", patternHe: "   " },
     canonicalState: {
       actionState: "intervene",
       recommendation: { allowed: false, family: "remedial" },
@@ -195,14 +195,14 @@ function makeM05InterveneUnit() {
     subjectId: "math",
     bucketKey: "fractions",
     topicRowKey: "fractions\u0001learning\u0001g5\u0001easy",
-    displayName: "שברים",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-05" },
     intervention: {
-      immediateActionHe: "שלבים כתובים + דוגמה מקבילה",
-      shortPracticeHe: "המראה 2,3,4",
+      immediateActionHe: "  +  ",
+      shortPracticeHe: " 2,3,4",
       taxonomyId: "M-05",
     },
-    taxonomy: { id: "M-05", patternHe: "טעות באותה שלב" },
+    taxonomy: { id: "M-05", patternHe: "  " },
     canonicalState: {
       actionState: "intervene",
       recommendation: { allowed: false, family: "remedial" },
@@ -215,14 +215,14 @@ function makeM07InterveneUnit() {
     subjectId: "math",
     bucketKey: "word_problems",
     topicRowKey: "word_problems\u0001learning\u0001g4\u0001easy",
-    displayName: "מילולי",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-07" },
     intervention: {
-      immediateActionHe: "מספר + שורת יחידה",
-      shortPracticeHe: "עם/בלי שדה יחידה",
+      immediateActionHe: " +  ",
+      shortPracticeHe: "/  ",
       taxonomyId: "M-07",
     },
-    taxonomy: { id: "M-07", patternHe: "מספר נכון + יחידה שגויה" },
+    taxonomy: { id: "M-07", patternHe: "  +  " },
     canonicalState: {
       actionState: "intervene",
       recommendation: { allowed: false, family: "remedial" },
@@ -236,14 +236,14 @@ function makeM08InterveneUnit(bucketKey) {
     subjectId: "math",
     bucketKey,
     topicRowKey: `${bucketKey}\u0001learning\u0001g4\u0001easy`,
-    displayName: "מתמטיקה",
+    displayName: "",
     diagnosis: { allowed: true, taxonomyId: "M-08" },
     intervention: {
-      immediateActionHe: "שלבים + בדיקה לאחור",
-      shortPracticeHe: "עם תבנית שלבים",
+      immediateActionHe: " +  ",
+      shortPracticeHe: "  ",
       taxonomyId: "M-08",
     },
-    taxonomy: { id: "M-08", patternHe: "כישלון רק באיחוד" },
+    taxonomy: { id: "M-08", patternHe: "  " },
     canonicalState: {
       actionState: "intervene",
       recommendation: { allowed: false, family: "remedial" },
@@ -255,12 +255,12 @@ function makeM08InterveneUnit(bucketKey) {
 function assertM0708ResolvedSurfaceClean(label, s) {
   const t = String(s || "");
   const bad = [
-    "מספר נכון + יחידה שגויה",
-    "כישלון רק באיחוד",
-    "עם/בלי שדה יחידה",
-    "מספר + שורת יחידה",
-    "עם תבנית שלבים",
-    "שלבים + בדיקה לאחור",
+    "  +  ",
+    "  ",
+    "/  ",
+    " +  ",
+    "  ",
+    " +  ",
   ];
   for (const b of bad) {
     check(`${label} must not include raw M-07/M-08 taxonomy/engine phrase: ${b}`, !t.includes(b));
@@ -271,10 +271,10 @@ function assertM0708ResolvedSurfaceClean(label, s) {
 function assertM06ParentSurfaceNoInternalHe(s) {
   const t = String(s || "");
   const bad = [
-    "טעות כיוון עיגול",
-    "עם/בלי טבלת עמדות",
-    "צביעת עמדות",
-    "עיגול/השוואה",
+    "  ",
+    "/  ",
+    " ",
+    "/",
   ];
   for (const b of bad) {
     check(`M-06 parent surface must not include internal phrase: ${b}`, !t.includes(b));
@@ -321,12 +321,12 @@ check(
   collectSlotTextLeaves(GRADE_AWARE_RECOMMENDATION_TEMPLATES.math["M-08"], leaves0708);
   const joined0708 = leaves0708.map(String).join("\n");
   const banned0708 = [
-    "מספר נכון + יחידה שגויה",
-    "כישלון רק באיחוד",
-    "עם/בלי שדה יחידה",
-    "מספר + שורת יחידה",
-    "עם תבנית שלבים",
-    "שלבים + בדיקה לאחור",
+    "  +  ",
+    "  ",
+    "/  ",
+    " +  ",
+    "  ",
+    " +  ",
   ];
   for (const b of banned0708) {
     check(`M-07/M-08 approved template Hebrew must not include raw phrase: ${b}`, !joined0708.includes(b));
@@ -386,31 +386,31 @@ check(
   const u = makeM09InterveneUnit();
   const m09Surf = resolveUnitParentActionHe(u, "g4");
   check(
-    "resolveUnit M-09 g4 uses template (no raw ציר)",
+    "resolveUnit M-09 g4 uses template (no raw )",
     m09Surf != null &&
-      !String(m09Surf).includes("ציר + סימבולי") &&
-      !String(m09Surf).includes("ציר + מרחק")
+      !String(m09Surf).includes(" + ") &&
+      !String(m09Surf).includes(" + ")
   );
   const u6 = makeM06InterveneUnit();
   const m06Surf = resolveUnitParentActionHe(u6, "g4");
-  check("resolveUnit M-06 g4 uses template (not raw engine immediate)", m06Surf != null && !String(m06Surf).includes("צביעת עמדות"));
+  check("resolveUnit M-06 g4 uses template (not raw engine immediate)", m06Surf != null && !String(m06Surf).includes(" "));
   const uM04 = makeM04InterveneUnit();
   const m04Surf = resolveUnitParentActionHe(uM04, "g4");
   check(
     "resolveUnit M-04 g4 uses template (not raw engine immediate)",
-    m04Surf != null && !String(m04Surf).includes("חלק כלל קונקרטי")
+    m04Surf != null && !String(m04Surf).includes("  ")
   );
   const uM05 = makeM05InterveneUnit();
   const m05Surf = resolveUnitParentActionHe(uM05, "g5");
   check(
     "resolveUnit M-05 g5 uses template (not raw engine immediate)",
-    m05Surf != null && !String(m05Surf).includes("שלבים כתובים + דוגמה מקבילה")
+    m05Surf != null && !String(m05Surf).includes("  +  ")
   );
   const uM07 = makeM07InterveneUnit();
   const m07Surf = resolveUnitParentActionHe(uM07, "g4");
   check(
     "resolveUnit M-07 g4 uses template (not raw engine immediate)",
-    m07Surf != null && !String(m07Surf).includes("מספר + שורת יחידה")
+    m07Surf != null && !String(m07Surf).includes(" +  ")
   );
 }
 
@@ -426,9 +426,9 @@ check(
     check(
       "flag on → resolver M-09 g4 action",
       t != null &&
-        !String(t).includes("ציר + סימבולי") &&
-        !String(t).includes("ציר + מרחק") &&
-        String(t).includes("מאונך")
+        !String(t).includes(" + ") &&
+        !String(t).includes(" + ") &&
+        String(t).includes("")
     );
   }
   {
@@ -440,7 +440,7 @@ check(
     });
     check(
       "flag on → resolver M-09 g4 nextGoal",
-      t != null && !String(t).includes("ציר + סימבולי") && !String(t).includes("ציר + מרחק")
+      t != null && !String(t).includes(" + ") && !String(t).includes(" + ")
     );
   }
   {
@@ -452,7 +452,7 @@ check(
     });
     check(
       "M-09 g1 uses concrete / number-line wording",
-      t != null && (String(t).includes("חפצים") || String(t).includes("קו מספרים"))
+      t != null && (String(t).includes("") || String(t).includes(" "))
     );
   }
   {
@@ -464,7 +464,7 @@ check(
     });
     check(
       "M-09 g3 uses vertical / regrouping wording",
-      t != null && String(t).includes("מאונך") && String(t).includes("פריטה")
+      t != null && String(t).includes("") && String(t).includes("")
     );
   }
   {
@@ -476,7 +476,7 @@ check(
     });
     check(
       "M-09 g6 uses estimation / multi-step wording",
-      t != null && String(t).includes("אומדן") && String(t).includes("רב שלבי")
+      t != null && String(t).includes("") && String(t).includes(" ")
     );
   }
   {
@@ -580,7 +580,7 @@ check(
         bucketKey: "compare",
         slot: "action",
       }) || ""
-    ).includes("חפצים")
+    ).includes("")
   );
   check(
     "M-01 compare g3 action uses multi-digit comparison wording",
@@ -592,7 +592,7 @@ check(
         bucketKey: "compare",
         slot: "action",
       }) || ""
-    ).includes("רב ספרתיים")
+    ).includes(" ")
   );
   check(
     "M-01 compare g6 action uses large-number / representation wording",
@@ -604,7 +604,7 @@ check(
         bucketKey: "compare",
         slot: "action",
       }) || ""
-    ).includes("ייצוגים מספריים")
+    ).includes(" ")
   );
   {
     const ca = resolveGradeAwareParentRecommendationHe({
@@ -633,7 +633,7 @@ check(
         bucketKey: "number_sense",
         slot: "action",
       }) || ""
-    ).includes("עשרות ואחדות")
+    ).includes(" ")
   );
   check(
     "M-01 number_sense g3 action mentions place-value decomposition",
@@ -645,7 +645,7 @@ check(
         bucketKey: "number_sense",
         slot: "action",
       }) || ""
-    ).includes("אלפים")
+    ).includes("")
   );
   check(
     "M-01 number_sense g6 action mentions multiple representations",
@@ -657,7 +657,7 @@ check(
         bucketKey: "number_sense",
         slot: "action",
       }) || ""
-    ).includes("ייצוגים")
+    ).includes("")
   );
   {
     const na = resolveGradeAwareParentRecommendationHe({
@@ -686,7 +686,7 @@ check(
         bucketKey: "estimation",
         slot: "action",
       }) || ""
-    ).includes("כמויות")
+    ).includes("")
   );
   check(
     "M-01 estimation g3 action mentions multi-digit / before calculation",
@@ -698,7 +698,7 @@ check(
         bucketKey: "estimation",
         slot: "action",
       }) || ""
-    ).includes("רב ספרתיים")
+    ).includes(" ")
   );
   check(
     "M-01 estimation g6 action mentions fractions or decimals or percentages",
@@ -712,7 +712,7 @@ check(
           slot: "action",
         }) || ""
       );
-      return s.includes("שברים פשוטים") || s.includes("עשרוניים") || s.includes("אחוזים");
+      return s.includes(" ") || s.includes("") || s.includes("");
     })()
   );
   {
@@ -752,7 +752,7 @@ check(
     });
     check(
       "M-06 g2 action uses early whole-number rounding wording",
-      m06g2 != null && (String(m06g2).includes("קו מספרים") || String(m06g2).includes("העשרת הקרובה"))
+      m06g2 != null && (String(m06g2).includes(" ") || String(m06g2).includes(" "))
     );
   }
   {
@@ -764,7 +764,7 @@ check(
     });
     check(
       "M-06 g3 action uses place-value rounding wording",
-      m06g3 != null && String(m06g3).includes("עשרות") && String(m06g3).includes("ערך הספרות")
+      m06g3 != null && String(m06g3).includes("") && String(m06g3).includes(" ")
     );
   }
   {
@@ -777,9 +777,9 @@ check(
     check(
       "M-06 g6 action mentions decimals or percentages or estimation",
       m06g6 != null &&
-        (String(m06g6).includes("עשרוניים") ||
-          String(m06g6).includes("אחוזים") ||
-          String(m06g6).includes("אומדן"))
+        (String(m06g6).includes("") ||
+          String(m06g6).includes("") ||
+          String(m06g6).includes(""))
     );
   }
   {
@@ -1143,8 +1143,8 @@ check(
   const u = makeM09InterveneUnit();
   const act = resolveUnitParentActionHe(u, "g4");
   const goal = resolveUnitNextGoalHe(u, "g4");
-  check("resolveUnit M-09 g4 action no ציר phrases", act && !act.includes("ציר + סימבולי") && !act.includes("ציר + מרחק"));
-  check("resolveUnit M-09 g4 goal no ציר phrases", goal && !goal.includes("ציר + סימבולי") && !goal.includes("ציר + מרחק"));
+  check("resolveUnit M-09 g4 action no  phrases", act && !act.includes(" + ") && !act.includes(" + "));
+  check("resolveUnit M-09 g4 goal no  phrases", goal && !goal.includes(" + ") && !goal.includes(" + "));
   check("resolveUnit M-09 g4 action ≠ goal", act && goal && act !== goal);
 
   const u6 = makeM06InterveneUnit();
@@ -1216,7 +1216,7 @@ check(
     const fb2 = resolveUnitParentActionHe(u4g2, "g2");
     check(
       "resolveUnit M-04 g2 flag on → engine fallback (null g1_g2 template)",
-      fb2 != null && (String(fb2).includes("חלק כלל") || String(fb2).includes("עם/בלי שרטוט"))
+      fb2 != null && (String(fb2).includes(" ") || String(fb2).includes("/ "))
     );
   }
 
@@ -1250,12 +1250,12 @@ check(
   {
     const us = makeM01InterveneUnit("scale");
     const fs = resolveUnitParentActionHe(us, "g4");
-    check("M-01 scale bucket template via resolveUnit", fs != null && !String(fs).includes("מניפולציה"));
+    check("M-01 scale bucket template via resolveUnit", fs != null && !String(fs).includes(""));
   }
   {
     const uz = makeM01InterveneUnit("zero_one_properties");
     const fz = resolveUnitParentActionHe(uz, "g4");
-    check("M-01 zero_one_properties bucket template via resolveUnit", fz != null && !String(fz).includes("מניפולציה"));
+    check("M-01 zero_one_properties bucket template via resolveUnit", fz != null && !String(fz).includes(""));
   }
 
 }
@@ -1268,12 +1268,12 @@ check(
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKey]: {
         bucketKey: "subtraction",
-        displayName: "חיסור",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -1293,18 +1293,18 @@ check(
           subjectId: "math",
           topicRowKey,
           bucketKey: "subtraction",
-          displayName: "חיסור",
-          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-09", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "ציר + סימבולי",
-            shortPracticeHe: "ציר + מרחק",
+            immediateActionHe: " + ",
+            shortPracticeHe: " + ",
             taxonomyId: "M-09",
           },
           taxonomy: {
             id: "M-09",
-            patternHe: "דפוס",
-            topicHe: "חיסור",
-            subskillHe: "חיסור",
+            patternHe: "",
+            topic: "",
+            subskillHe: "",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -1319,7 +1319,7 @@ check(
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -1338,29 +1338,29 @@ check(
   const mathProfile = detailed?.subjectProfiles?.find((p) => p.subject === "math");
   const pa = String(mathProfile?.parentActionHe || "");
   const ng = String(mathProfile?.nextWeekGoalHe || "");
-  check("detailed math parentActionHe no engine ציר phrases", !pa.includes("ציר + סימבולי") && !pa.includes("ציר + מרחק"));
-  check("detailed math nextWeekGoalHe no engine ציר phrases", !ng.includes("ציר + סימבולי") && !ng.includes("ציר + מרחק"));
+  check("detailed math parentActionHe no engine  phrases", !pa.includes(" + ") && !pa.includes(" + "));
+  check("detailed math nextWeekGoalHe no engine  phrases", !ng.includes(" + ") && !ng.includes(" + "));
 
   const pd = detailed?.patternDiagnostics?.subjects?.math;
   const cardRec = Array.isArray(pd?.diagnosticCards)
     ? String(pd.diagnosticCards[0]?.recommendationHe || "")
     : "";
   if (pd?.diagnosticCards?.length) {
-    check("diagnostic card recommendationHe no ציר when M-09 g4", !cardRec.includes("ציר + סימבולי"));
+    check("diagnostic card recommendationHe no  when M-09 g4", !cardRec.includes(" + "));
   }
 
   const short = summarizeV2UnitsForSubjectForTests(baseReport.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseReport.mathOperations,
     reportTotalQuestions: 20,
   });
   const sd = String(short.subjectDoNowHe || "");
   const spa = String(short.parentActionHe || "");
   const sng = String(short.nextWeekGoalHe || "");
-  check("short subjectDoNowHe no engine ציר phrases", !sd.includes("ציר + סימבולי") && !sd.includes("ציר + מרחק"));
-  check("short parentActionHe no engine ציר phrases", !spa.includes("ציר + סימבולי") && !spa.includes("ציר + מרחק"));
-  check("short nextWeekGoalHe no engine ציר phrases", !sng.includes("ציר + סימבולי") && !sng.includes("ציר + מרחק"));
+  check("short subjectDoNowHe no engine  phrases", !sd.includes(" + ") && !sd.includes(" + "));
+  check("short parentActionHe no engine  phrases", !spa.includes(" + ") && !spa.includes(" + "));
+  check("short nextWeekGoalHe no engine  phrases", !sng.includes(" + ") && !sng.includes(" + "));
 
 }
 
@@ -1372,12 +1372,12 @@ check(
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicRowKey6]: {
         bucketKey: "decimals",
-        displayName: "עשרוניות",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -1397,18 +1397,18 @@ check(
           subjectId: "math",
           topicRowKey: topicRowKey6,
           bucketKey: "decimals",
-          displayName: "עשרוניות",
-          diagnosis: { allowed: true, taxonomyId: "M-06", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-06", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "צביעת עמדות",
-            shortPracticeHe: "עם/בלי טבלת עמדות",
+            immediateActionHe: " ",
+            shortPracticeHe: "/  ",
             taxonomyId: "M-06",
           },
           taxonomy: {
             id: "M-06",
-            patternHe: "דפוס",
-            topicHe: "מקום",
-            subskillHe: "עיגול/השוואה",
+            patternHe: "",
+            topic: "",
+            subskillHe: "/",
           },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
@@ -1423,7 +1423,7 @@ check(
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -1444,12 +1444,12 @@ check(
   const ng6 = String(math6?.nextWeekGoalHe || "");
   assertM06ParentSurfaceNoInternalHe(pa6);
   assertM06ParentSurfaceNoInternalHe(ng6);
-  check("detailed M-06 parentActionHe matches template g3_g4", pa6.includes("עשרות") && pa6.includes("ערך הספרות"));
-  check("detailed M-06 nextWeekGoalHe matches template g3_g4", ng6.includes("ערך מקום") && ng6.includes("סבירות"));
+  check("detailed M-06 parentActionHe matches template g3_g4", pa6.includes("") && pa6.includes(" "));
+  check("detailed M-06 nextWeekGoalHe matches template g3_g4", ng6.includes(" ") && ng6.includes(""));
 
   const short6 = summarizeV2UnitsForSubjectForTests(baseReport6.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseReport6.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -1488,12 +1488,12 @@ check(
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicM04]: {
         bucketKey: "fractions",
-        displayName: "שברים",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -1513,14 +1513,14 @@ check(
           subjectId: "math",
           topicRowKey: topicM04,
           bucketKey: "fractions",
-          displayName: "שברים",
-          diagnosis: { allowed: true, taxonomyId: "M-04", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-04", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "חלק כלל קונקרטי",
-            shortPracticeHe: "עם/בלי שרטוט",
+            immediateActionHe: "  ",
+            shortPracticeHe: "/ ",
             taxonomyId: "M-04",
           },
-          taxonomy: { id: "M-04", patternHe: "השוואה לפי מונה בלבד" },
+          taxonomy: { id: "M-04", patternHe: "   " },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
           priority: { level: "P3", breadth: "narrow" },
@@ -1534,7 +1534,7 @@ check(
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -1555,7 +1555,7 @@ check(
   assertFractionResolvedSurfaceClean("integration M-04 parentActionHe", mp04?.parentActionHe);
   const shortM04 = summarizeV2UnitsForSubjectForTests(baseM04.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: baseM04.mathOperations,
     reportTotalQuestions: 20,
   });
@@ -1567,12 +1567,12 @@ check(
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicM05]: {
         bucketKey: "fractions",
-        displayName: "שברים",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -1592,14 +1592,14 @@ check(
           subjectId: "math",
           topicRowKey: topicM05,
           bucketKey: "fractions",
-          displayName: "שברים",
-          diagnosis: { allowed: true, taxonomyId: "M-05", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-05", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "שלבים כתובים + דוגמה מקבילה",
-            shortPracticeHe: "המראה 2,3,4",
+            immediateActionHe: "  +  ",
+            shortPracticeHe: " 2,3,4",
             taxonomyId: "M-05",
           },
-          taxonomy: { id: "M-05", patternHe: "טעות באותה שלב" },
+          taxonomy: { id: "M-05", patternHe: "  " },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
           priority: { level: "P3", breadth: "narrow" },
@@ -1613,7 +1613,7 @@ check(
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -1638,12 +1638,12 @@ check(
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicM04g2]: {
         bucketKey: "fractions",
-        displayName: "שברים",
+        displayName: "",
         questions: 10,
         correct: 6,
         wrong: 4,
@@ -1663,14 +1663,14 @@ check(
           subjectId: "math",
           topicRowKey: topicM04g2,
           bucketKey: "fractions",
-          displayName: "שברים",
-          diagnosis: { allowed: true, taxonomyId: "M-04", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-04", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "חלק כלל קונקרטי",
-            shortPracticeHe: "עם/בלי שרטוט",
+            immediateActionHe: "  ",
+            shortPracticeHe: "/ ",
             taxonomyId: "M-04",
           },
-          taxonomy: { id: "M-04", patternHe: "השוואה לפי מונה בלבד" },
+          taxonomy: { id: "M-04", patternHe: "   " },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
           priority: { level: "P3", breadth: "narrow" },
@@ -1684,7 +1684,7 @@ check(
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",

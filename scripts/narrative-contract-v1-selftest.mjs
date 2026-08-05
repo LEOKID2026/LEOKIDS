@@ -74,7 +74,7 @@ function runNarrativeContractV1Selftest() {
     questions: 22,
     accuracy: 93,
     topicRowKey: "multiplication",
-    recommendedParentActionHe: "להמשיך",
+    recommendedParentActionHe: "",
     contractsV1: { narrative: highSignal },
   };
   const narrative = buildTopicRecommendationNarrative(tr);

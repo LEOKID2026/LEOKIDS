@@ -18,13 +18,6 @@ set
   updated_at = now()
 where card_type = 'event'
   and card_key in (
-    'event_hanukkah',
-    'event_purim',
-    'event_passover',
-    'event_rosh_hashana',
-    'event_sukkot',
-    'event_shavuot',
-    'event_independence_day',
     'event_back_to_learning',
     'event_summer',
     'event_winter',

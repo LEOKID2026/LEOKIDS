@@ -39,8 +39,8 @@ try {
     const raw = fs.readFileSync(filePath, "utf8");
     const page = parseLearningPageMarkdown(raw, pageId);
     assertMathG1PageSections(page);
-    if (raw.includes("מתמטיקה")) {
-      throw new Error(`${pageId}.md contains forbidden מתמטיקה`);
+    if (raw.includes("")) {
+      throw new Error(`${pageId}.md contains forbidden `);
     }
     const approvalMatch = raw.match(/\|\s*\*\*approval_status\*\*\s*\|\s*(\S+)\s*\|/i);
     if (!approvalMatch || approvalMatch[1] !== "draft") {
@@ -55,7 +55,7 @@ try {
       console.error(`FAIL ${page.pageId}: dirty displayTitle "${page.displayTitle}"`);
       ok = false;
     }
-    if (page.pageId === "fm_gcd" && !page.displayTitle.includes("המחלק המשותף הגדול ביותר")) {
+    if (page.pageId === "fm_gcd" && !page.displayTitle.includes("   ")) {
       console.error(
         `FAIL fm_gcd: displayTitle must lead with full phrase, got "${page.displayTitle}"`
       );
@@ -63,8 +63,8 @@ try {
     }
     if (page.pageId === "cmp") {
       const childFacing = page.sections.map((s) => s.body).join("\n");
-      if (!childFacing.includes("משמאל לימין")) {
-        console.error("FAIL cmp: child-facing body must mention משמאל לימין");
+      if (!childFacing.includes(" ")) {
+        console.error("FAIL cmp: child-facing body must mention  ");
         ok = false;
       }
     }

@@ -1,5 +1,5 @@
 /**
- * Insert column H "דוגמה בהקשר בדוח" into owner-review chunk Excel files.
+ * Insert column H "  " into owner-review chunk Excel files.
  * Run: node scripts/parent-report-hebrew-owner-review-add-context-column.mjs
  */
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync } from "node:fs";
@@ -12,22 +12,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const FOLDER = join(ROOT, "parent-report-hebrew-owner-review-chunks-with-meaning");
 const INSERT_AT = 7; // H (0-based)
-const NEEDS_REVIEW = "צריך לבדוק בהקשר מלא";
-const SHEET_NAME = "לאישור";
+const NEEDS_REVIEW = "   ";
+const SHEET_NAME = "";
 
 function substitutePlaceholders(text) {
   return String(text || "")
-    .replace(/\$\{lab\}/g, "חשבון")
-    .replace(/\$\{core\}/g, "חשבון")
-    .replace(/\$\{label\}/g, "חשבון")
-    .replace(/\$\{displayName\}/g, "שברים")
-    .replace(/\$\{displayTopicPhraseHe\([^)]*\)\}/g, "שברים")
-    .replace(/\$\{statsLine\}/g, "לפי 146 שאלות, דיוק כ־51%.")
-    .replace(/\$\{domRc\}/g, "טעויות בקריאת המשימה")
-    .replace(/\$\{opening\}/g, "בחשבון")
+    .replace(/\$\{lab\}/g, "")
+    .replace(/\$\{core\}/g, "")
+    .replace(/\$\{label\}/g, "")
+    .replace(/\$\{displayName\}/g, "")
+    .replace(/\$\{displayTopicPhraseHe\([^)]*\)\}/g, "")
+    .replace(/\$\{statsLine\}/g, " 146 ,  51%.")
+    .replace(/\$\{domRc\}/g, "  ")
+    .replace(/\$\{opening\}/g, "")
     .replace(/\$\{acc\}/g, "51")
     .replace(/\$\{q\}/g, "146")
-    .replace(/\$\{[^}]+\}/g, "[ערך]")
+    .replace(/\$\{[^}]+\}/g, "[]")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -35,24 +35,24 @@ function substitutePlaceholders(text) {
 function wherePrefix(where) {
   const w = String(where || "").trim();
   if (!w) return "";
-  if (w.includes("דוח מפורט") && w.includes("מקצוע")) return "בדוח המפורט, בכרטיס מקצוע: ";
-  if (w.includes("דוח מפורט") && w.includes("נושא")) return "בדוח המפורט, בכרטיס נושא: ";
-  if (w.includes("דוח מפורט")) return "בדוח המפורט: ";
-  if (w.includes("דוח קצר")) return "בדוח הקצר: ";
-  if (w.includes("כרטיס נושא")) return "בכרטיס נושא: ";
-  if (w.includes("מצב נתונים") || w.includes("נתונים דלים")) return "במצב הנתונים בדוח: ";
-  if (w.includes("המלצות") || w.includes("בית")) return "בהמלצות לבית: ";
-  if (w.includes("תובנות") || w.includes("מה חשוב")) return "במה חשוב לדעת: ";
-  if (w.includes("AI") || w.includes("מסביר")) return "בהסבר AI בדוח: ";
+  if (w.includes(" ") && w.includes("")) return " ,  : ";
+  if (w.includes(" ") && w.includes("")) return " ,  : ";
+  if (w.includes(" ")) return " : ";
+  if (w.includes(" ")) return " : ";
+  if (w.includes(" ")) return " : ";
+  if (w.includes(" ") || w.includes(" ")) return "  : ";
+  if (w.includes("") || w.includes("")) return " : ";
+  if (w.includes("") || w.includes(" ")) return "  : ";
+  if (w.includes("AI") || w.includes("")) return " AI : ";
   const tail = w.includes("—") ? w.split("—").pop().trim() : w;
-  return `ב${tail}: `;
+  return `${tail}: `;
 }
 
 function isFullSentence(text) {
   const t = String(text || "").trim();
   if (t.length < 35) return false;
   if (/^[\u0590-\u05FF]{1,18}$/.test(t)) return false;
-  return /[.!?…]$/.test(t) || t.includes(" — ") || t.includes("כדאי") || t.includes("מומלץ");
+  return /[.!?…]$/.test(t) || t.includes(" — ") || t.includes("") || t.includes("");
 }
 
 function buildContextExample(where, problematic, suggested) {
@@ -79,16 +79,16 @@ function buildContextExample(where, problematic, suggested) {
   }
 
   if (prob.length <= 20) {
-    if (/בירידה|^ירידה/.test(prob)) {
-      return `${prefix}מופיע: ${prob === "בירידה" ? "ירידה בדיוק לאחרונה" : prob}.`;
+    if (/|^/.test(prob)) {
+      return `${prefix}: ${prob === "" ? "  " : prob}.`;
     }
-    if (/מגמת|דיוק/.test(prob)) {
-      return `${prefix}מופיע: ${prob === "מגמת הדיוק" ? "שינוי בדיוק לאורך זמן" : prob}.`;
+    if (/|/.test(prob)) {
+      return `${prefix}: ${prob === " " ? "   " : prob}.`;
     }
     return `${prefix}${prob}.`;
   }
 
-  if (prob.includes("[ערך]") && !sugg) return NEEDS_REVIEW;
+  if (prob.includes("[]") && !sugg) return NEEDS_REVIEW;
   if (prob) return prefix ? `${prefix}${prob}` : prob;
   return NEEDS_REVIEW;
 }
@@ -161,7 +161,7 @@ function processWorkbook(filePath) {
 
   // Header
   const hAddr = XLSX.utils.encode_cell({ r: 0, c: INSERT_AT });
-  newSh[hAddr] = { t: "s", v: "דוגמה בהקשר בדוח", s: headerStyle() };
+  newSh[hAddr] = { t: "s", v: "  ", s: headerStyle() };
 
   let filled = 0;
   let needsReview = 0;
@@ -271,17 +271,17 @@ for (const file of files) {
 // Update README.txt
 const readmePath = join(FOLDER, "README.txt");
 const readme = readFileSync(readmePath, "utf8");
-if (!readme.includes("דוגמה בהקשר בדוח")) {
+if (!readme.includes("  ")) {
   writeFileSync(
     readmePath,
     readme
       .replace(
-        "G נוסח שלך\nH למה זה בעייתי\nI מקור טכני / ID",
-        "G נוסח שלך\nH דוגמה בהקשר בדוח\nI למה זה בעייתי\nJ מקור טכני / ID"
+        "G  \nH   \nI   / ID",
+        "G  \nH   \nI   \nJ   / ID"
       )
       .replace(
-        "H למה זה בעייתי",
-        "H דוגמה בהקשר בדוח\nI למה זה בעייתי"
+        "H   ",
+        "H   \nI   "
       ),
     "utf8"
   );

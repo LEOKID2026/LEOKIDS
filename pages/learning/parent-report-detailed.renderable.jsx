@@ -1370,7 +1370,7 @@ export default function ParentReportDetailedPage() {
                                           <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                                             <div className="min-w-0 flex-1">
                                               <span className="pr-detailed-body-text font-bold text-white/95 leading-snug block">
-                                                {tr.narrativeTitleHe || tr.labelHe || tr.displayName}
+                                                {tr.narrativeTitleHe || tr.label || tr.displayName}
                                               </span>
                                               {tr.gradeRelationSublineHe ? (
                                                 <p className="pr-detailed-muted text-xs m-0 mt-0.5 text-white/60">

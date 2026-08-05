@@ -1,5 +1,5 @@
 /**
- * Parent worksheet levels — רגיל/מתקדם only in public UI, HTML, and API payloads.
+ * Parent worksheet levels — / only in public UI, HTML, and API payloads.
  * Run: node --test tests/worksheets/worksheet-public-level-labels.test.mjs
  */
 
@@ -84,7 +84,7 @@ describe("worksheet-public-level-labels", () => {
       const html = worksheetPayloadToPreviewHtml(result.worksheetPayload);
       assert.equal(findForbiddenPublicLevelLabels(json).length, 0);
       assert.equal(findForbiddenPublicLevelLabels(html).length, 0);
-      assert.equal(pub.meta.levelHe, worksheetPublicLevelLabelHe(levelKey));
+      assert.equal(pub.meta.level, worksheetPublicLevelLabelHe(levelKey));
     }
   });
 
@@ -112,12 +112,12 @@ describe("worksheet-public-level-labels", () => {
     assert.ok(recs.length >= 1);
     for (const rec of recs) {
       assert.ok(rec.levelKey === "regular" || rec.levelKey === "advanced");
-      assert.equal(findForbiddenPublicLevelLabels(rec.levelHe).length, 0);
+      assert.equal(findForbiddenPublicLevelLabels(rec.level).length, 0);
       assert.equal(findForbiddenPublicLevelLabels(JSON.stringify(rec)).length, 0);
     }
   });
 
-  test("worksheet hub UI source has no קל/בינוני/קשה labels", () => {
+  test("worksheet hub UI source has no // labels", () => {
     for (const rel of UI_FILES) {
       const src = readFileSync(join(ROOT, rel), "utf8");
       assert.equal(findForbiddenPublicLevelLabels(src).length, 0, rel);

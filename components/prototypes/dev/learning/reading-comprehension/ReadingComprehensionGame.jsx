@@ -74,11 +74,11 @@ export default function ReadingComprehensionGame({ backHref = "/dev/learning-gam
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="סיירת הבנת הנקרא"
+      title="  "
       introHero="📖🧭"
       introText="\u05E7\u05E8\u05D0\u05D5 \u05E7\u05D8\u05E2\u05D9\u05DD \u05E7\u05E6\u05E8\u05D9\u05DD \u05D5\u05DE\u05E6\u05D0\u05D5 \u05D0\u05EA \u05D4\u05EA\u05E9\u05D5\u05D1\u05D4 \u2014 \u05E1\u05D9\u05D9\u05E8\u05EA \u05E7\u05E8\u05D9\u05D0\u05D4 \u05E2\u05DD \u05DC\u05D9\u05D0\u05D5!"
-      introHint={`${TASKS_PER_LEVEL} משימות · הבנת הנקרא`}
-      startLabel="הצטרפו לסיירת"
+      introHint={`${TASKS_PER_LEVEL}  ·  `}
+      startLabel=" "
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -90,14 +90,14 @@ export default function ReadingComprehensionGame({ backHref = "/dev/learning-gam
       {task ? (
         <div className={s.main}>
           <div className={styles.passageCard}>
-            <p className={styles.passageLabel}>📖 קטע לקריאה</p>
+            <p className={styles.passageLabel}>📖  </p>
             <p className={styles.passageText}>{task.passage}</p>
           </div>
 
           <div className={s.missionCard}>
             <span className={s.missionIcon}>🔍</span>
             <div className={s.missionBody}>
-              <p className={s.missionLabel}>שאלה {taskIndex + 1}</p>
+              <p className={s.missionLabel}> {taskIndex + 1}</p>
               <h2 className={s.missionTitle}>{task.question}</h2>
             </div>
           </div>
@@ -132,11 +132,11 @@ export default function ReadingComprehensionGame({ backHref = "/dev/learning-gam
           <div className={s.actionRow}>
             {!canAdvance ? (
               <button type="button" className={s.primaryBtn} disabled={selected == null} onClick={runCheck}>
-                בדוק תשובה
+
               </button>
             ) : (
               <button type="button" className={s.primaryBtn} onClick={advance}>
-                המשימה הבאה
+
               </button>
             )}
           </div>

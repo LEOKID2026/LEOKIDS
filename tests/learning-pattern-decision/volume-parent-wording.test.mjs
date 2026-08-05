@@ -34,7 +34,7 @@ function buildCase({ q, c, w, acc, mistakes = [] }) {
     topicRowKey: "addition",
     row: {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: q,
       correct: c,
       wrong: w,
@@ -46,7 +46,7 @@ function buildCase({ q, c, w, acc, mistakes = [] }) {
   });
 }
 
-const FORBIDDEN_OVERCLAIM = [/שליטה/u, /ודאי/u, /קבוע/u, /אבחון/u, /רמת קושי גבוהה/u];
+const FORBIDDEN_OVERCLAIM = [//u, //u, //u, //u, /  /u];
 
 function assertNoOverclaim(text) {
   assert.equal(findForbiddenParentWords(text).length, 0);
@@ -67,7 +67,7 @@ assert.equal(sharedResolve(12), "strong");
   assert.equal(lpd.evidenceStrength, "strong");
   assert.equal(lpd.observedPatternLevel, "observed");
   assert.notEqual(lpd.parentWordingLevel, "strong_pattern");
-  assert.ok(!lpd.parentVisibleFinding.includes("רמת קושי גבוהה"));
+  assert.ok(!lpd.parentVisibleFinding.includes("  "));
   assertNoOverclaim(lpd.parentVisibleFinding);
 }
 
@@ -85,11 +85,11 @@ assert.equal(sharedResolve(12), "strong");
   const mistakes = mkWrong("math", "addition", 10, "pf:same", true);
   const lpd = buildCase({ q: 12, c: 2, w: 10, acc: 17, mistakes });
   assert.equal(lpd.findingType, "difficulty_pattern");
-  assert.match(lpd.parentVisibleFinding, /דפוס חוזר/);
+  assert.match(lpd.parentVisibleFinding, / /);
   assertNoOverclaim(lpd.parentVisibleFinding);
 }
 
-// difficulty template must not use "רמת קושי גבוהה" (softened wording)
+// difficulty template must not use "  " (softened wording)
 {
   const lpd = buildCase({
     q: 6,
@@ -98,7 +98,7 @@ assert.equal(sharedResolve(12), "strong");
     acc: 17,
     mistakes: mkWrong("math", "addition", 5, "pf:a", false),
   });
-  assert.ok(!lpd.parentVisibleFinding.includes("רמת קושי גבוהה"));
+  assert.ok(!lpd.parentVisibleFinding.includes("  "));
   assert.ok(lpd.parentVisibleFinding.length > 0);
 }
 

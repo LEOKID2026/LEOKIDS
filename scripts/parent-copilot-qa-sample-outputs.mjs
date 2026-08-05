@@ -14,7 +14,7 @@ const payload = {
       topicRecommendations: [
         {
           topicRowKey: "geo",
-          displayName: "גאומטריה",
+          displayName: "",
           questions: 45,
           accuracy: 72,
           contractsV1: {
@@ -25,9 +25,9 @@ const payload = {
               allowedSections: ["summary", "finding", "recommendation", "limitations"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "בגאומטריה נצפו 45 שאלות עם דיוק של כ-72%. יש כיוון עבודה ברור; נדרש חיזוק בזיהוי תכונות צורות.",
-                interpretation: "גאומטריה מצריכה תרגול ממוקד בחישוב שטחים וזיהוי צורות.",
-                action: "מומלץ לתרגל זיהוי צורות וחישוב שטחים פשוטים.",
+                observation: "  45     -72%.    ;     .",
+                interpretation: "       .",
+                action: "      .",
                 uncertainty: "",
               },
             },
@@ -40,7 +40,7 @@ const payload = {
         },
         {
           topicRowKey: "frac",
-          displayName: "שברים",
+          displayName: "",
           questions: 60,
           accuracy: 68,
           contractsV1: {
@@ -51,9 +51,9 @@ const payload = {
               allowedSections: ["summary", "finding", "recommendation", "limitations"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "בשברים נצפו 60 שאלות עם דיוק של כ-68%. שברים הם תחום שדורש תשומת לב.",
-                interpretation: "שברים דורשים חיזוק בסיסי בהמרות ובחיבור.",
-                action: "מומלץ לתרגל המרות שברים וחיבור שברים פשוטים.",
+                observation: "  60     -68%.      .",
+                interpretation: "     .",
+                action: "      .",
                 uncertainty: "",
               },
             },
@@ -71,7 +71,7 @@ const payload = {
       topicRecommendations: [
         {
           topicRowKey: "eng_vocab",
-          displayName: "אוצר מילים",
+          displayName: " ",
           questions: 38,
           accuracy: 81,
           contractsV1: {
@@ -82,9 +82,9 @@ const payload = {
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "באוצר מילים אנגלית נצפו 38 שאלות עם דיוק של כ-81%. ביצועים טובים.",
-                interpretation: "אוצר מילים מתפתח בצורה טובה.",
-                action: "המשיכו עם תרגול יומי קצר.",
+                observation: "    38     -81%.  .",
+                interpretation: "    .",
+                action: "    .",
                 uncertainty: "",
               },
             },
@@ -100,21 +100,21 @@ const payload = {
   ],
   executiveSummary: {
     majorTrendsHe: [
-      "בתקופה נצפו 484 שאלות עם דיוק ממוצע של 74%.",
-      "תחומי הדגש: שברים וגאומטריה.",
-      "אנגלית מראה ביצועים טובים יחסית.",
+      "  484      74%.",
+      " :  .",
+      "    .",
     ],
   },
 };
 
 const questions = [
-  "מה מזג אויר?",
-  "מה הכי חשוב לתרגל השבוע?",
-  "במה הוא חזק?",
-  "איפה כדאי להתמקד?",
-  "מה לעשות בבית?",
-  "האם יש סיבה לדאגה?",
-  "מה עם גאומטריה?",
+  "  ?",
+  "    ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "   ?",
+  "  ?",
 ];
 
 let sid = 0;
@@ -129,5 +129,5 @@ for (const q of questions) {
     res.resolutionStatus === "resolved"
       ? (res.answerBlocks || []).map((b) => b.textHe).join("\n\n")
       : res.clarificationQuestionHe;
-  process.stdout.write(`--- שאלה: ${q} ---\n${text}\n\n`);
+  process.stdout.write(`--- : ${q} ---\n${text}\n\n`);
 }

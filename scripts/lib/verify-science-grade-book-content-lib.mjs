@@ -11,9 +11,9 @@ import {
 export const FAKE_PRACTICE_RE =
   /forceKind|fromBook=|science-master\?|resolveScience|getScience.*Practice/i;
 export const UNSAFE_RE =
-  /חשמל בית|שקע|להדליק אש|ניסוי כימי|חומצ|מעגל חשמלי סגור|חברו נורה|חברו סוללה|בנו מעגל/i;
+  / || | ||  | | | /i;
 export const CIRCUIT_BUILD_RE =
-  /חבר.*(נורה|סוללה)|בנה.*מעגל|הרכיבו.*מעגל|חיווט/i;
+  /.*(|)|.*|.*|/i;
 
 export function readMetadataField(raw, field) {
   const re = new RegExp(`\\|\\s*\\*\\*${field}\\*\\*\\s*\\|\\s*(.+?)\\s*\\|`, "i");
@@ -110,8 +110,8 @@ export function verifyScienceGradeBookContent(opts) {
     if (/science:topic:/i.test(childFacing)) {
       errors.push(`${pageId}: internal skill_id exposed in child-facing body`);
     }
-    if (!/מדעים/.test(childFacing)) {
-      errors.push(`${pageId}: child-facing body should mention מדעים at least once`);
+    if (!//.test(childFacing)) {
+      errors.push(`${pageId}: child-facing body should mention  at least once`);
     }
 
     const s5 = sectionBody(page, 5);

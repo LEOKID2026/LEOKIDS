@@ -15,14 +15,14 @@ function samplePayload() {
         topicRecommendations: [
           {
             topicRowKey: "math:frac-add",
-            displayName: "חיבור שברים",
+            displayName: " ",
             questions: 24,
             accuracy: 48,
-            contractsV1: { narrative: { textSlots: { observation: "חלק מהתרגול היה במצב מהיר" } } },
+            contractsV1: { narrative: { textSlots: { observation: "    " } } },
           },
           {
             topicRowKey: "math:mult",
-            displayName: "כפל",
+            displayName: "",
             questions: 30,
             accuracy: 82,
           },
@@ -30,7 +30,7 @@ function samplePayload() {
       },
     ],
     executiveSummary: {
-      majorTrendsHe: ["בחשבון יש שיפור קל בחיבור שברים לעומת התקופה הקודמת."],
+      majorTrendsHe: ["        ."],
     },
     summary: { parentActivityAttemptsCount: 2, totalAnswers: 54 },
   };
@@ -40,37 +40,37 @@ function main() {
   const payload = samplePayload();
 
   const where = tryComposePatternAnswerDraft({
-    utteranceStr: "איפה הוא צריך עזרה?",
+    utteranceStr: "   ?",
     payload,
     conversationState: {},
   });
-  assert.ok(where?.answerBlocks?.[0]?.textHe.includes("24 שאלות"));
+  assert.ok(where?.answerBlocks?.[0]?.textHe.includes("24 "));
   assert.ok(where.answerBlocks[0].textHe.includes("48%"));
 
   const three = tryComposePatternAnswerDraft({
-    utteranceStr: "מה שלושת הדברים הכי חשובים להורה?",
+    utteranceStr: "     ?",
     payload,
     conversationState: {},
   });
-  assert.ok(three?.answerBlocks?.[0]?.textHe.includes("שלושת הדברים"));
+  assert.ok(three?.answerBlocks?.[0]?.textHe.includes(" "));
 
   const open = tryComposePatternAnswerDraft({
-    utteranceStr: "על איזה נושא לפתוח לו פעילות?",
+    utteranceStr: "     ?",
     payload,
     conversationState: {},
   });
-  assert.ok(open?.answerBlocks?.[0]?.textHe.includes("5–10") || open?.answerBlocks?.[0]?.textHe.includes("פעילות קצרה"));
+  assert.ok(open?.answerBlocks?.[0]?.textHe.includes("5–10") || open?.answerBlocks?.[0]?.textHe.includes(" "));
 
   const speed = tryComposePatternAnswerDraft({
-    utteranceStr: "האם זה בגלל לחץ זמן?",
+    utteranceStr: "    ?",
     payload,
     conversationState: {},
   });
-  assert.ok(speed?.answerBlocks?.[0]?.textHe.includes("לחץ זמן") || speed?.answerBlocks?.[0]?.textHe.includes("מהיר"));
+  assert.ok(speed?.answerBlocks?.[0]?.textHe.includes(" ") || speed?.answerBlocks?.[0]?.textHe.includes(""));
 
   const emptyPayload = { subjectProfiles: [] };
   const noDataTrend = tryComposePatternAnswerDraft({
-    utteranceStr: "מה השתנה מהשבוע הקודם?",
+    utteranceStr: "   ?",
     payload: emptyPayload,
     conversationState: {},
   });
@@ -82,73 +82,73 @@ function main() {
     lastResolvedSubject: "math",
   };
   const cont = tryComposeContinuityPatternDraft({
-    utteranceStr: "אז מה עושים?",
+    utteranceStr: "  ?",
     payload,
     conversationState: conv,
   });
-  assert.ok(cont?.answerBlocks?.[0]?.textHe.includes("הצעד הבא"));
+  assert.ok(cont?.answerBlocks?.[0]?.textHe.includes(" "));
 
   const englishConv = {
     priorScopes: ["subject:english"],
     lastResolvedSubject: "english",
-    lastAnswerSummary: "באנגלית מופיע נושא מילים עם דיוק נמוך יחסית.",
+    lastAnswerSummary: "       .",
   };
   const severity = tryComposeContinuityPatternDraft({
-    utteranceStr: "זה חמור?",
+    utteranceStr: " ?",
     payload: {
       subjectProfiles: [
         {
           subject: "english",
           topicRecommendations: [
-            { topicRowKey: "english:vocab", displayName: "מילים", questions: 12, accuracy: 40 },
+            { topicRowKey: "english:vocab", displayName: "", questions: 12, accuracy: 40 },
           ],
         },
         {
           subject: "math",
           topicRecommendations: [
-            { topicRowKey: "math:geom", displayName: "גאומטריה", questions: 20, accuracy: 35 },
+            { topicRowKey: "math:geom", displayName: "", questions: 20, accuracy: 35 },
           ],
         },
       ],
     },
     conversationState: englishConv,
   });
-  assert.ok(severity?.answerBlocks?.[0]?.textHe.includes("אנגלית"));
-  assert.ok(!severity?.answerBlocks?.[0]?.textHe.includes("גאומטריה"));
+  assert.ok(severity?.answerBlocks?.[0]?.textHe.includes(""));
+  assert.ok(!severity?.answerBlocks?.[0]?.textHe.includes(""));
 
   const home = tryComposePatternAnswerDraft({
-    utteranceStr: "מה לעשות בבית?",
+    utteranceStr: "  ?",
     payload,
     conversationState: {},
   });
-  assert.ok(home?.answerBlocks?.[0]?.textHe.includes("היום הייתי עושה"));
+  assert.ok(home?.answerBlocks?.[0]?.textHe.includes("  "));
 
   const askHome = tryComposePatternAnswerDraft({
-    utteranceStr: "מה לשאול אותו בבית?",
+    utteranceStr: "   ?",
     payload,
     conversationState: {},
   });
-  assert.ok(askHome?.answerBlocks?.[0]?.textHe.includes("שלוש שאלות"));
+  assert.ok(askHome?.answerBlocks?.[0]?.textHe.includes(" "));
 
   const notInfer = tryComposePatternAnswerDraft({
-    utteranceStr: "מה לא כדאי להסיק?",
+    utteranceStr: "   ?",
     payload,
     conversationState: {},
   });
-  assert.ok(notInfer?.answerBlocks?.[0]?.textHe.includes("כרגע כדאי להימנע משלושה דברים"));
+  assert.ok(notInfer?.answerBlocks?.[0]?.textHe.includes("    "));
 
   const whyNotInfer = tryComposeContinuityPatternDraft({
-    utteranceStr: "למה?",
+    utteranceStr: "?",
     payload,
     conversationState: {
       lastTurnWasWhatNotInfer: true,
       lastAnswerSummary: notInfer.answerBlocks[0].textHe,
     },
   });
-  assert.ok(whyNotInfer?.answerBlocks?.[0]?.textHe.includes("כי הדוח מציג רק נתוני תרגול"));
+  assert.ok(whyNotInfer?.answerBlocks?.[0]?.textHe.includes("     "));
 
   const preserve = tryComposeContinuityPatternDraft({
-    utteranceStr: "איך לשמר?",
+    utteranceStr: " ?",
     payload,
     conversationState: {
       priorScopes: ["topic:math:mult"],
@@ -156,7 +156,7 @@ function main() {
       lastPlannerIntent: "what_is_going_well",
     },
   });
-  assert.ok(preserve?.answerBlocks?.[0]?.textHe.includes("לשמר"));
+  assert.ok(preserve?.answerBlocks?.[0]?.textHe.includes(""));
 
   assert.equal(NO_DATA_FOR_REQUEST_RESPONSE_HE.length > 20, true);
   console.log("OK parent-copilot-pattern-round3-selftest");

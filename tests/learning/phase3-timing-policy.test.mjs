@@ -343,7 +343,7 @@ test("explanationViewed: becomes true after explanation shown, resets next quest
   assert.equal(firstSubmitExplanationViewed, false);
 
   // Post-answer: explanation shown for guided_practice
-  const json = { isCorrect: false, explanation: "כי 3 + 4 = 7" };
+  const json = { isCorrect: false, explanation: " 3 + 4 = 7" };
   if (json.explanation) explanationViewedRef.current = true;
   assert.equal(explanationViewedRef.current, true);
 

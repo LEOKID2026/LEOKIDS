@@ -13,12 +13,12 @@ import {
 } from "./lib/ministry-oracle-shared.mjs";
 
 const GRADE_FILES = [
-  { grade: 1, file: "כיתה א.txt", validated: true },
-  { grade: 2, file: "כיתה ב.txt", validated: true },
-  { grade: 3, file: "כיתה ג.txt", validated: true },
-  { grade: 4, file: "כיתה ד.txt", validated: true },
-  { grade: 5, file: "כיתה ה.txt", validated: true },
-  { grade: 6, file: "כיתה ו.txt", validated: true },
+  { grade: 1, file: " .txt", validated: true },
+  { grade: 2, file: " .txt", validated: true },
+  { grade: 3, file: " .txt", validated: true },
+  { grade: 4, file: " .txt", validated: true },
+  { grade: 5, file: " .txt", validated: true },
+  { grade: 6, file: " .txt", validated: true },
 ];
 
 const SECTION_ORDER = ["Focus", "Skills", "Grammar & Structures", "Vocabulary Themes", "Benchmark"];
@@ -55,7 +55,7 @@ function buildValidatedRows(grade, fileName, sections) {
         official_domain: sectionName,
         official_topic: sectionName,
         official_subtopic: item,
-        ministry_source_file: `תוכנית משרד החינוך קובצי TXT/${fileName}`,
+        ministry_source_file: `    TXT/${fileName}`,
         ministry_source_type: "txt",
         source_class: "official_primary",
         source_anchor: `${fileName} § ${sectionName}`,
@@ -89,7 +89,7 @@ function buildBlockerRow(grade, fileName) {
     official_domain: null,
     official_topic: null,
     official_subtopic: null,
-    ministry_source_file: `תוכנית משרד החינוך קובצי TXT/${fileName}`,
+    ministry_source_file: `    TXT/${fileName}`,
     ministry_source_type: "txt",
     source_class: "unverified",
     source_anchor: null,

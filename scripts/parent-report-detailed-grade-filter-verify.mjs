@@ -149,7 +149,7 @@ async function main() {
     const a = subjectProfile(detailedAfter, sid);
     rows.push(
       metricPair(
-        `${label} — שאלות`,
+        `${label} — `,
         Number(b?.subjectQuestionCount) || 0,
         Number(a?.subjectQuestionCount) || 0,
         "buildSubjectCoverage → baseReport.summary (unfiltered)",
@@ -158,7 +158,7 @@ async function main() {
     );
     rows.push(
       metricPair(
-        `${label} — דיוק`,
+        `${label} — `,
         `${Number(b?.subjectAccuracy) || 0}%`,
         `${Number(a?.subjectAccuracy) || 0}%`,
         "buildSubjectCoverage → baseReport.summary (unfiltered)",
@@ -167,23 +167,23 @@ async function main() {
     );
   };
 
-  addSubject("מתמטיקה", "math");
-  addSubject("אנגלית", "english");
-  addSubject("עברית", "hebrew");
+  addSubject("", "math");
+  addSubject("", "english");
+  addSubject("", "hebrew");
 
   const mathTopics = [
-    { label: "שברים", part: "שבר" },
-    { label: "כפל", part: "כפל" },
-    { label: "עשרוניים", part: "עשר" },
-    { label: "חיסור", part: "חיס" },
-    { label: "חיבור", part: "חיב" },
+    { label: "", part: "" },
+    { label: "", part: "" },
+    { label: "", part: "" },
+    { label: "", part: "" },
+    { label: "", part: "" },
   ];
   for (const { label, part } of mathTopics) {
     const b = topicRec(detailedBefore, "math", part);
     const a = topicRec(detailedAfter, "math", part);
     rows.push(
       metricPair(
-        `${label} — שאלות`,
+        `${label} — `,
         Number(b?.questions) || 0,
         Number(a?.questions) || 0,
         "topicRecommendations ← filterCoreV2Units + unfiltered topicMap metrics",
@@ -192,7 +192,7 @@ async function main() {
     );
     rows.push(
       metricPair(
-        `${label} — דיוק`,
+        `${label} — `,
         `${Math.round(Number(b?.accuracy) || 0)}%`,
         `${Math.round(Number(a?.accuracy) || 0)}%`,
         "topicRecommendations ← filterCoreV2Units + unfiltered topicMap metrics",
@@ -208,7 +208,7 @@ async function main() {
     const a = tierAfter.find((x) => x.title === t.title) || { questions: 0, accuracy: 0 };
     rows.push(
       metricPair(
-        `topicGroupsByTier — ${t.title} — שאלות`,
+        `topicGroupsByTier — ${t.title} — `,
         Number(b.questions) || 0,
         Number(a.questions) || 0,
         "topicGroupsByTier ← coreUnits + unfiltered topicMap",
@@ -217,7 +217,7 @@ async function main() {
     );
     rows.push(
       metricPair(
-        `topicGroupsByTier — ${t.title} — דיוק`,
+        `topicGroupsByTier — ${t.title} — `,
         `${Math.round(Number(b.accuracy) || 0)}%`,
         `${Math.round(Number(a.accuracy) || 0)}%`,
         "topicGroupsByTier ← coreUnits + unfiltered topicMap",

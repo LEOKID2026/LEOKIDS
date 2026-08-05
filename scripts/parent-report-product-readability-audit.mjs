@@ -23,9 +23,9 @@ const FORBIDDEN_TERMS = [
   "outputGating",
   "rowSignals",
 ];
-const STRONG_TREND_WORDS = ["משתפר", "בירידה", "מגמה חיובית", "מגמה שלילית", "שיפור מבוסס", "ירידה מבוססת"];
-const REMEDIATION_WORDS = ["פער ידע", "remediate", "שיקום", "התערבות אגרסיבית"];
-const ALLOWED_REPEAT_LABELS = new Set(["מצב", "מיקוד", "למה", "סיכום להורה"]);
+const STRONG_TREND_WORDS = ["", "", " ", " ", " ", " "];
+const REMEDIATION_WORDS = [" ", "remediate", "", " "];
+const ALLOWED_REPEAT_LABELS = new Set(["", "", "", " "]);
 
 function cleanText(v) {
   return String(v || "").replace(/\s+/g, " ").trim();
@@ -83,16 +83,16 @@ for (const file of scenarioFiles) {
   const txt = readFileSync(join(SNAP_DIR, file), "utf8");
   const text = cleanText(txt);
   const sections = parseSectionsFromTxt(txt);
-  const topIndex = text.indexOf("סיכום להורה");
-  const legacyIndex = text.indexOf("סיכום לתקופה");
+  const topIndex = text.indexOf(" ");
+  const legacyIndex = text.indexOf(" ");
   const first600 = text.slice(0, 600);
   const lines = splitLines(txt);
   const actionLikeCount = (() => {
-    const topSection = sections.find((s) => s.name === "סיכום להורה");
-    const execSection = sections.find((s) => s.name === "סיכום לתקופה");
+    const topSection = sections.find((s) => s.name === " ");
+    const execSection = sections.find((s) => s.name === " ");
     const candidates = [
-      ...(topSection?.lines || []).filter((l) => /^מיקוד עיקרי:/.test(l)),
-      ...(execSection?.lines || []).filter((l) => /^עדיפות ראשונה:|^פעולת בית מרכזית/.test(l)),
+      ...(topSection?.lines || []).filter((l) => /^ :/.test(l)),
+      ...(execSection?.lines || []).filter((l) => /^ :|^  /.test(l)),
     ]
       .map((l) => cleanText(l.split(":").slice(1).join(":") || l))
       .filter(Boolean);
@@ -114,16 +114,16 @@ for (const file of scenarioFiles) {
     const out = [];
     for (const entries of map.values()) {
       if (entries.length <= 1) continue;
-      const allInSubjectSection = entries.every((e) => e.section === "סיכום מקצועות להורה");
+      const allInSubjectSection = entries.every((e) => e.section === "  ");
       const onlyTopAndSubject = entries.every(
-        (e) => e.section === "סיכום מקצועות להורה" || e.section === "סיכום להורה"
+        (e) => e.section === "  " || e.section === " "
       );
-      const startsWithSubjectLabel = /^(מה עושים עכשיו:|מה לא לעשות כרגע:|רמת ודאות:)/.test(
+      const startsWithSubjectLabel = /^(  :|   :| :)/.test(
         entries[0].line
       );
       const duplicateType =
         (allInSubjectSection && startsWithSubjectLabel) ||
-        (onlyTopAndSubject && /^(מה לא לעשות כרגע:|רמת ודאות:)/.test(entries[0].line))
+        (onlyTopAndSubject && /^(   :| :)/.test(entries[0].line))
           ? "acceptable_label"
           : "exact_duplicate";
       out.push({
@@ -160,8 +160,8 @@ for (const file of scenarioFiles) {
   let consecutiveRecommendationLike = 0;
   let maxConsecutiveRecommendationLike = 0;
   for (const l of topLines) {
-    const isRec = /מה עושים עכשיו|מיקוד|עדיפות|להמשיך|לא להעלות|להתמקד|לתרגל/.test(l);
-    const hasLabel = /:/.test(l) || /מה עושים עכשיו|מיקוד|מצב|למה|רמת ודאות|בסיס הנתונים/.test(l);
+    const isRec = /  |||| ||/.test(l);
+    const hasLabel = /:/.test(l) || /  |||| | /.test(l);
     if (isRec && !hasLabel) {
       consecutiveRecommendationLike += 1;
       if (consecutiveRecommendationLike > maxConsecutiveRecommendationLike) {
@@ -171,9 +171,9 @@ for (const file of scenarioFiles) {
       consecutiveRecommendationLike = 0;
     }
   }
-  const topPriorityMatch = (topStart.match(/מיקוד עיקרי\s*([^]+?)למה/) || [])[1] || "";
-  const subjectArea = text.includes("סיכום מקצועות להורה")
-    ? text.slice(text.indexOf("סיכום מקצועות להורה"))
+  const topPriorityMatch = (topStart.match(/ \s*([^]+?)/) || [])[1] || "";
+  const subjectArea = text.includes("  ")
+    ? text.slice(text.indexOf("  "))
     : "";
   const failureReasons = [];
 
@@ -181,9 +181,9 @@ for (const file of scenarioFiles) {
     id,
     topSummaryBeforeLegacy: topIndex >= 0 && legacyIndex >= 0 && topIndex < legacyIndex,
     first600HasStatusPriorityAction:
-      containsAny(first600, ["מצב"]) &&
-      containsAny(first600, ["מיקוד עיקרי"]) &&
-      containsAny(first600, ["מה עושים עכשיו"]),
+      containsAny(first600, [""]) &&
+      containsAny(first600, [" "]) &&
+      containsAny(first600, ["  "]),
     forbiddenInternalTermsCount: FORBIDDEN_TERMS.reduce(
       (acc, t) => (new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i").test(text) ? acc + 1 : acc),
       0
@@ -194,9 +194,9 @@ for (const file of scenarioFiles) {
     stableMasteryTopHasRemediation:
       id === "strong_stable_mastery" ? REMEDIATION_WORDS.filter((w) => topStart.includes(w)).length > 0 : false,
     weakThinEvidenceStrongDiagnosis:
-      id === "weak_thin_evidence" ? containsAny(topStart, ["חמור", "חד משמעית", "עמוק"]) : false,
+      id === "weak_thin_evidence" ? containsAny(topStart, ["", " ", ""]) : false,
     speedOnlyKnowledgeGapTone:
-      id === "speed_issue_only_no_knowledge_gap" ? containsAny(topStart, ["פער ידע"]) : false,
+      id === "speed_issue_only_no_knowledge_gap" ? containsAny(topStart, [" "]) : false,
     repeatedIdenticalSentences: duplicates,
     repeatedSentences,
     sectionDuplicateMap,

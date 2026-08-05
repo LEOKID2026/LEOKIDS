@@ -34,7 +34,7 @@ const SOLE_LANGUAGE_RE =
 const NATIONAL_LANG_RE = /\b(Fang|Myènè|Myene|Punu|Nzebi|Téké|Teke)\b/i;
 /** Dead Israel-curriculum / Hebrew / homeland residue must not remain as local overrides. */
 const DEAD_CURRICULUM_RE =
-  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hellenism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|hellénisme|patrie|מולדת|עברית|ישראל/i;
+  /hebrew|homeland|israel|israeli|moledet|hasmon|judea|judaism|hellenism|hébreu|hébraïque|hasmonéen|Judée|judaïsme|hellénisme|patrie|||/i;
 
 const GA_SHORT_GRADES = [
   "1re année",

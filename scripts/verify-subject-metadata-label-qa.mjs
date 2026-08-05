@@ -17,12 +17,12 @@ const SUBJECT_CASES = [
   {
     subject: "math",
     kind: "hide_metadata",
-    before: "חיסור עשרוניים (קל): 1.23 − 0.45 = __",
+    before: "  (): 1.23 − 0.45 = __",
   },
   {
     subject: "math",
     kind: "hide_metadata",
-    before: "שברים (אתגר): 1/2 + 1/4 = __",
+    before: " (): 1/2 + 1/4 = __",
   },
   {
     subject: "math",
@@ -32,47 +32,47 @@ const SUBJECT_CASES = [
   {
     subject: "math",
     kind: "preserve",
-    before: "מצאו את הנעלם: 5 + __ = 12",
+    before: "  : 5 + __ = 12",
     note: "equation instruction may omit lead for compact body",
   },
   // —— geometry ——
   {
     subject: "geometry",
     kind: "hide_metadata",
-    before: "פיתגורס (קל): ניצבים 3 ו-4 — מה אורך היתר?",
+    before: " ():  3 -4 —   ?",
   },
   {
     subject: "geometry",
     kind: "hide_metadata",
-    before: "כיתה ד׳ (קל): תיבה 2×3×4 — מה הנפח?",
+    before: "  ():  2×3×4 —  ?",
   },
   {
     subject: "geometry",
     kind: "preserve",
-    before: "מה שטח המלבן עם צלע 5 ס״מ?",
+    before: "     5 ?",
   },
   // —— hebrew ——
   {
     subject: "hebrew",
     kind: "hide_metadata",
-    before: "בהתאם לכיתה ג׳ [רמה easy]: איזה משפט נכון?",
+    before: "   [ easy]:   ?",
   },
   {
     subject: "hebrew",
     kind: "preserve",
-    before: "איזה משפט נכון?",
+    before: "  ?",
   },
   {
     subject: "hebrew",
     kind: "preserve",
-    before: "בכיתה יש 24 תלמידים. כמה תלמידים בסך הכול?",
+    before: "  24 .    ?",
     note: "in-question grade context, not metadata label",
   },
   // —— english ——
   {
     subject: "english",
     kind: "hide_metadata",
-    before: "(כיתה ד׳) · רמת medium · Choose the correct word: The cat is ___ the table.",
+    before: "( ) ·  medium · Choose the correct word: The cat is ___ the table.",
   },
   {
     subject: "english",
@@ -90,44 +90,44 @@ const SUBJECT_CASES = [
     subject: "science",
     kind: "hide_metadata",
     before:
-      "בכיתה ה׳ — רמה בינונית: מה קשר בין דם לריאות?",
+      "  —  :     ?",
   },
   {
     subject: "science",
     kind: "hide_metadata",
-    before: "נושא materials · רמת hard · מה מאפיין חומר מבודד?",
+    before: " materials ·  hard ·    ?",
   },
   {
     subject: "science",
     kind: "preserve",
-    before: "מה קשר בין דם לריאות?",
+    before: "    ?",
   },
   {
     subject: "science",
     kind: "preserve",
-    before: "לפני ניסוי בכיתה, מה חשוב לתעד?",
+    before: "  ,   ?",
   },
   // —— moledet_geography ——
   {
     subject: "moledet_geography",
     kind: "hide_metadata",
-    before: "שאלה בנושא: מולדת — מהו סמל המדינה?",
+    before: " :  —   ?",
   },
   {
     subject: "moledet_geography",
     kind: "preserve",
-    before: "מהו סמל המדינה?",
+    before: "  ?",
   },
   {
     subject: "moledet_geography",
     kind: "preserve",
-    before: "איזו עיר היא בירת ישראל?",
+    before: "    ?",
   },
 ];
 
-const METADATA_LEAD_RE = /^[^:\n]{1,72}\((קל|בינוני|אתגר|מאתגר)\)\s*:?\s*$/u;
+const METADATA_LEAD_RE = /^[^:\n]{1,72}\((|||)\)\s*:?\s*$/u;
 const GRADE_DIFF_LEAD_RE =
-  /^כיתה\s+[אבגדהו]['׳]?\s*\((קל|בינוני|אתגר|מאתגר)\)\s*:?\s*$/u;
+  /^\s+[][']?\s*\((|||)\)\s*:?\s*$/u;
 
 function visibleLeadIsMetadata(lead) {
   const t = String(lead || "").trim();
@@ -179,7 +179,7 @@ for (const c of SUBJECT_CASES) {
   if (c.kind === "hide_metadata") {
     const hadMetadataLead =
       visibleLeadIsMetadata(beforeView.leadText) ||
-      /\((קל|בינוני|אתגר|מאתגר)\)/u.test(beforeView.leadText || c.before.slice(0, 80));
+      /\((|||)\)/u.test(beforeView.leadText || c.before.slice(0, 80));
     const leadHidden = !visibleLeadIsMetadata(afterView.leadText);
     const bodyOk = afterView.bodyText.trim().length > 0;
     const ok = leadHidden && bodyOk;
@@ -199,8 +199,8 @@ for (const c of SUBJECT_CASES) {
     if (/Choose the correct word/i.test(c.before)) {
       ok = /Choose the correct word/i.test(visible);
     }
-    if (c.before.includes("בכיתה יש")) {
-      ok = visible.includes("בכיתה יש");
+    if (c.before.includes(" ")) {
+      ok = visible.includes(" ");
     }
     bump(
       c.subject,

@@ -73,19 +73,19 @@ function inWeakCell(q) {
 
 function resolveAnimals(stem, patternFamily) {
   const s = stem;
-  if (/יונק|חלב|מינק/.test(s))
+  if (/||/.test(s))
     return { skill: "sci_animals_mammal_groups", concept: "mammal_classification", family: "animals_mammal_groups" };
-  if (/דג|סנפיר|זימ|מים/.test(s))
+  if (/|||/.test(s))
     return { skill: "sci_animals_aquatic_adaptation", concept: "fish_water_adaptation", family: "animals_aquatic_adaptation" };
-  if (/זוחל|קשקש/.test(s))
+  if (/|/.test(s))
     return { skill: "sci_animals_reptile_traits", concept: "reptile_traits", family: "animals_reptile_traits" };
-  if (/עוף|נוצ|תרנגול|אייג/.test(s))
+  if (/|||/.test(s))
     return { skill: "sci_animals_bird_traits", concept: "bird_traits", family: "animals_bird_traits" };
-  if (/מחזור|זחל|גולם|ביצה.*פרפר|פרפר/.test(s))
+  if (/|||.*|/.test(s))
     return { skill: "sci_animals_life_cycle", concept: "animal_life_cycle", family: "animals_life_cycle" };
-  if (/טורף|טרף|שרשרת מזון|אוכל.*בשר|צמחוני|טורפ/.test(s))
+  if (/|| |.*||/.test(s))
     return { skill: "sci_animals_food_chain", concept: "food_chain_roles", family: "animals_food_chain" };
-  if (/מדבר|התאמה|הסוואה|בית גידול|גמל/.test(s))
+  if (/||| |/.test(s))
     return { skill: "sci_animals_habitat_adaptation", concept: "habitat_adaptation", family: "animals_habitat_adaptation" };
   if (patternFamily === "sci_animals_life_processes")
     return { skill: "sci_animals_life_processes", concept: "animal_life_process", family: "animals_life_processes" };
@@ -98,17 +98,17 @@ function resolveAnimals(stem, patternFamily) {
 
 function resolvePlants(stem, patternFamily) {
   const s = stem;
-  if (/שמש|אור|צל/.test(s))
+  if (/||/.test(s))
     return { skill: "sci_plants_light_photosynthesis", concept: "light_and_plants", family: "plants_light_photosynthesis" };
-  if (/שורש|גזע|עלה|פרח|זרע|גבעול/.test(s))
+  if (/|||||/.test(s))
     return {
       skill: patternFamily === "sci_plants_parts" ? "sci_plants_structure" : "sci_plants_structure",
       concept: "plant_parts_roles",
       family: "plants_structure_parts",
     };
-  if (/מים|השקיה|לחות/.test(s))
+  if (/||/.test(s))
     return { skill: "sci_plants_water_needs", concept: "plant_water_needs", family: "plants_water_needs" };
-  if (/אוויר|אויר/.test(s))
+  if (/|/.test(s))
     return { skill: "sci_plants_air_needs", concept: "plant_air_needs", family: "plants_air_needs" };
   if (patternFamily === "sci_plants_parts")
     return { skill: "sci_plants_structure", concept: "plant_parts", family: "plants_structure" };
@@ -117,46 +117,46 @@ function resolvePlants(stem, patternFamily) {
 
 function resolveExperiments(stem, patternFamily) {
   const s = stem;
-  if (patternFamily === "sci_experiments_observation_inference" || /תצפית/.test(s))
+  if (patternFamily === "sci_experiments_observation_inference" || //.test(s))
     return {
       skill: "sci_experiments_observation_inference",
       concept: "observation_inference",
       family: "experiments_observation_inference",
     };
-  if (patternFamily === "sci_earth_space_cycles" || /יום ולילה|עונות|מחזור/.test(s))
+  if (patternFamily === "sci_earth_space_cycles" || / ||/.test(s))
     return { skill: "sci_experiments_earth_cycles", concept: "earth_cycle_observation", family: "experiments_earth_cycles" };
-  if (/משתנה|משתנ|בודד/.test(s))
+  if (/||/.test(s))
     return { skill: "sci_experiments_fair_test", concept: "controlled_variable", family: "experiments_fair_test" };
-  if (/השערה/.test(s))
+  if (//.test(s))
     return { skill: "sci_experiments_hypothesis", concept: "testable_hypothesis", family: "experiments_hypothesis" };
-  if (/מדיד|סרגל|משקל|שעון|יחידות/.test(s))
+  if (/||||/.test(s))
     return { skill: "sci_experiments_measurement", concept: "measurement_tools", family: "experiments_measurement" };
-  if (/בטיח|מסוכן|לא לטעום/.test(s))
+  if (/|| /.test(s))
     return { skill: "sci_experiments_lab_safety", concept: "lab_safety_rules", family: "experiments_lab_safety" };
-  if (/טבלה|רישום|תיעוד|יומן/.test(s))
+  if (/|||/.test(s))
     return { skill: "sci_experiments_data_recording", concept: "experiment_recording", family: "experiments_data_recording" };
-  if (/מסקנה|ראיות|נתונים/.test(s))
+  if (/||/.test(s))
     return { skill: "sci_experiments_evidence_conclusion", concept: "data_based_conclusion", family: "experiments_evidence_conclusion" };
-  if (/ביקורת|קבוצת ביקורת|השוואה/.test(s))
+  if (/| |/.test(s))
     return { skill: "sci_experiments_control_group", concept: "control_comparison", family: "experiments_control_group" };
   return { skill: "sci_experiments_scientific_method", concept: "scientific_method_step", family: "experiments_scientific_method" };
 }
 
 function resolveBody(stem) {
   const s = stem;
-  if (/ריאות|נשימ|חמצן|פחמן דו|פחמן-דו|אוויר/.test(s))
+  if (/||| |-|/.test(s))
     return { skill: "sci_respiration_concept", concept: "respiration_gas_exchange", family: "body_respiration", probePower: "high" };
-  if (/לב|דם|דופק|עורק|וריד/.test(s))
+  if (/||||/.test(s))
     return { skill: "sci_body_circulation", concept: "heart_blood_circulation", family: "body_circulation" };
-  if (/עיכול|קיבה|מעי|מזון|רוק|לעיס|בליעה|כבד/.test(s))
+  if (/|||||||/.test(s))
     return { skill: "sci_body_digestion", concept: "digestion_pathway", family: "body_digestion" };
-  if (/עצם|שלד|שריר|מפרק|סידן/.test(s))
+  if (/||||/.test(s))
     return { skill: "sci_body_skeleton_muscles", concept: "skeleton_muscles_role", family: "body_skeleton_muscles" };
-  if (/עור|חוש|עין|אוזן|אף|לשון|ראייה|שמיע|מישוש/.test(s))
+  if (/||||||||/.test(s))
     return { skill: "sci_body_senses", concept: "senses_and_skin", family: "body_senses" };
-  if (/כליה|פסולת|שתן|הפרשה/.test(s))
+  if (/|||/.test(s))
     return { skill: "sci_body_excretory", concept: "excretory_filtration", family: "body_excretory" };
-  if (/עצב|מוח|חוט שדרה|רפלקס/.test(s))
+  if (/|| |/.test(s))
     return { skill: "sci_body_nervous", concept: "nervous_coordination", family: "body_nervous" };
   return { skill: "sci_body_systems_basic", concept: "body_system_role", family: "body_systems_basic" };
 }

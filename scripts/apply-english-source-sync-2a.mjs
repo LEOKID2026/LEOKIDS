@@ -23,20 +23,20 @@ const pass11 = [
   {
     book: "english-g2",
     page: "page-058.txt",
-    from: "רואה חתול → תמונה של cat",
-    to: "רואה חתול — בוחרים תמונה של cat.",
+    from: "  →   cat",
+    to: "  —    cat.",
   },
   {
     book: "english-g2",
     page: "page-153.txt",
-    from: "dog אחד → שניים:",
-    to: "dog אחד — שניים הם dogs.",
+    from: "dog  → :",
+    to: "dog  —   dogs.",
   },
   {
     book: "english-g2",
     page: "page-177.txt",
-    from: "בעברית → באנגלית, ובהפך",
-    to: "מעברית לאנגלית, וגם מאנגלית לעברית",
+    from: " → , ",
+    to: " ,   ",
   },
 ];
 

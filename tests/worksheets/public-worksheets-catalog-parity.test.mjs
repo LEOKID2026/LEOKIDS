@@ -21,12 +21,12 @@ describe("public-worksheets-catalog-parity", () => {
     for (const item of buildReadyWorksheetCatalogItems()) {
       assert.ok(item.slug);
       assert.ok(item.subjectId);
-      assert.ok(item.subjectHe);
+      assert.ok(item.subject);
       assert.ok(item.gradeKey);
-      assert.ok(item.gradeHe);
-      assert.ok(item.topicHe);
+      assert.ok(item.grade);
+      assert.ok(item.topic);
       assert.ok(item.levelKey);
-      assert.ok(item.levelHe);
+      assert.ok(item.level);
       assert.equal(typeof item.count, "number");
       assert.ok(item.count > 0);
     }

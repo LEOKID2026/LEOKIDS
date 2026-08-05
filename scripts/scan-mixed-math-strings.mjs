@@ -43,7 +43,7 @@ const FORBIDDEN_VISIBLE_PATTERNS = [
   { label: "2552", re: /2552/u },
   { label: "246", re: /246\s*\+\s*6/u },
   { label: "137", re: /137\s*\+\s*6/u },
-  { label: "24זוגי", re: /24זוגי/u },
+  { label: "24", re: /24/u },
 ];
 
 /**

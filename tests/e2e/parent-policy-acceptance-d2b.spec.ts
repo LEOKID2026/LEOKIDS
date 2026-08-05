@@ -9,7 +9,7 @@ test.describe("Phase D.2B - parent policy acceptance", () => {
 
     const alert = page.locator('[role="alert"]');
     await expect(alert).toBeVisible({ timeout: 15_000 });
-    await expect(alert).toContainText("פרטי ההתחברות שגויים");
+    await expect(alert).toContainText("  ");
     await expect(alert).not.toContainText(/Invalid login credentials/i);
   });
 
@@ -19,7 +19,7 @@ test.describe("Phase D.2B - parent policy acceptance", () => {
     await expect(page.getByTestId("parent-login-identifier")).toBeVisible({ timeout: 10_000 });
     await expect(page.getByTestId("parent-policy-acceptance-checkbox")).toHaveCount(0);
     await expect(page.getByTestId("parent-signup-submit")).toBeEnabled();
-    await expect(page.getByText("בהמשך השימוש ב-Leo Kids")).toBeVisible();
+    await expect(page.getByText("  -Leo Kids")).toBeVisible();
   });
 
   test("E: Google sign-in button appears on parent login only", async ({ page }) => {
@@ -55,7 +55,7 @@ test.describe("Phase D.2B - parent policy acceptance (authenticated)", () => {
     await page.getByTestId("parent-login-submit").click();
 
     await page.waitForURL("**/parent/**", { timeout: 20_000 });
-    await expect(page.getByRole("heading", { name: "דשבורד הורים" })).toBeVisible({
+    await expect(page.getByRole("heading", { name: " " })).toBeVisible({
       timeout: 15_000,
     });
     await expect(page.locator('[data-policy-acceptance-root]')).toHaveCount(0);

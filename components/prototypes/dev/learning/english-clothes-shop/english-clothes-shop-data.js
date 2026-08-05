@@ -12,21 +12,21 @@
  * }} ShopTask */
 
 export const COLORS = {
-  red: { label: "red", labelHe: "אדום", emoji: "🔴" },
-  blue: { label: "blue", labelHe: "כחול", emoji: "🔵" },
-  green: { label: "green", labelHe: "ירוק", emoji: "🟢" },
-  yellow: { label: "yellow", labelHe: "צהוב", emoji: "🟡" },
-  black: { label: "black", labelHe: "שחור", emoji: "⚫" },
-  white: { label: "white", labelHe: "לבן", emoji: "⚪" },
+  red: { label: "red", labelHe: "Red", emoji: "🔴" },
+  blue: { label: "blue", labelHe: "Blue", emoji: "🔵" },
+  green: { label: "green", labelHe: "Green", emoji: "🟢" },
+  yellow: { label: "yellow", labelHe: "Black", emoji: "🟡" },
+  black: { label: "black", labelHe: "White", emoji: "⚫" },
+  white: { label: "white", labelHe: "to", emoji: "⚪" },
 };
 
 export const ITEMS = {
-  hat: { label: "hat", labelHe: "כובע", emoji: "🎩" },
-  shoes: { label: "shoes", labelHe: "נעליים", emoji: "👟" },
-  shirt: { label: "shirt", labelHe: "חולצה", emoji: "👕" },
-  bag: { label: "bag", labelHe: "תיק", emoji: "👜" },
-  dress: { label: "dress", labelHe: "שמלה", emoji: "👗" },
-  pants: { label: "pants", labelHe: "מכנסיים", emoji: "👖" },
+  hat: { label: "hat", labelHe: "to", emoji: "🎩" },
+  shoes: { label: "shoes", labelHe: "to", emoji: "👟" },
+  shirt: { label: "shirt", labelHe: "to", emoji: "👕" },
+  bag: { label: "bag", labelHe: "to", emoji: "👜" },
+  dress: { label: "dress", labelHe: "to", emoji: "👗" },
+  pants: { label: "pants", labelHe: "", emoji: "👖" },
 };
 
 /** @type {Record<DifficultyId, ShopTask[]>} */
@@ -98,7 +98,7 @@ export function validateShopPick(task, pick) {
 }
 
 export function shopFeedback(ok) {
-  return ok ? "Perfect! ✓ הפריט נכון." : "כמעט! בדקו צבע ופריט.";
+  return ok ? "Perfect! ✓  ." : "Almost! Check.";
 }
 
 export function productLabel(colorKey, itemKey) {

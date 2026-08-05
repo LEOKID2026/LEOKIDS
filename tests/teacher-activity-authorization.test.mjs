@@ -7,7 +7,7 @@ const CLASS_ID = "11111111-1111-4111-8111-111111111111";
 
 function baseBody(overrides = {}) {
   return {
-    title: "פעילות בדיקה",
+    title: " ",
     classId: CLASS_ID,
     subject: "math",
     topic: "addition",
@@ -75,7 +75,7 @@ test("discussion with 6 questions is rejected", () => {
     })
   );
   assert.equal(parsed.ok, false);
-  assert.match(String(parsed.message), /1 עד 5/);
+  assert.match(String(parsed.message), /1  5/);
 });
 
 test("explanation-only discussion sets answerRequired false", () => {
@@ -102,7 +102,7 @@ test("discussion defaults answerRequired to true", () => {
 test("validation messages are Hebrew for invalid subject", () => {
   const parsed = parseCreateActivityBody(baseBody({ subject: "not_a_subject" }));
   assert.equal(parsed.ok, false);
-  assert.equal(parsed.message, "מקצוע לא תקין");
+  assert.equal(parsed.message, "  ");
 });
 
 test("grade authorization treats g3 and grade_3 as the same canonical key", () => {

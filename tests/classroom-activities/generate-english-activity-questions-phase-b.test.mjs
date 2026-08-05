@@ -104,7 +104,7 @@ test("english-invalid-topic-throws", async () => {
         count: COUNT,
       }),
     (err) => {
-      assert.match(String(err.message), /אין מספיק שאלות אנגלית/);
+      assert.match(String(err.message), /   /);
       return true;
     }
   );

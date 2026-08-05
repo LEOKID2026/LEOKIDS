@@ -454,7 +454,7 @@ test("nl-SR product chrome has no user-facing Leerjaar 3–8 absolute MinOWC num
 
 test("nl-SR reports: no local Hebrew/Israel/Judea/Hellenism residue; no orphan index keys", () => {
   const residue =
-    /Hebrew|Hebreeuw|homeland|thuisland|Israel|Israël|Israeli|Judea|Hellenism|hellenisme|Hasmonaean|Hasmon|Judaism|jodendom|עברית|מולדת|ישראל|Athene\/Sparta|athens_sparta/i;
+    /Hebrew|Hebreeuw|homeland|thuisland|Israel|Israël|Israeli|Judea|Hellenism|hellenisme|Hasmonaean|Hasmon|Judaism|jodendom||||Athene\/Sparta|athens_sparta/i;
   const reportRoot = path.join(ROOT, "content-packs/nl-SR/reports");
   const files = walkJson(reportRoot);
   /** @type {string[]} */

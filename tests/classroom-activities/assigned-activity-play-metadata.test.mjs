@@ -36,7 +36,7 @@ test("enrichAssignedActivityQuestionSetForStudent restores grade on stripped que
 test("prepareAssignedActivityStudentPlayData exposes gradeLevel on activity payload", () => {
   const row = {
     id: "00000000-0000-4000-8000-000000000001",
-    title: "חיבור",
+    title: "",
     mode: "guided_practice",
     subject: "math",
     topic: "addition",

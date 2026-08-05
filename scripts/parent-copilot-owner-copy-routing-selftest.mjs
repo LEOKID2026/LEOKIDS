@@ -47,15 +47,15 @@ function makeThinPayload() {
 function makeRichPayload() {
   const row = {
     topicRowKey: "frac",
-    displayName: "שברים",
+    displayName: "",
     questions: 40,
     accuracy: 70,
     contractsV1: {
       narrative: {
         textSlots: {
-          observation: "בשברים נצפו 40 שאלות, עם דיוק של כ־70%.",
-          interpretation: "נדרש חיזוק.",
-          action: "תרגול קצר.",
+          observation: "  40 ,    70%.",
+          interpretation: " .",
+          action: " .",
           uncertainty: "",
         },
       },
@@ -66,13 +66,13 @@ function makeRichPayload() {
     version: 2,
     summary: { totalAnswers: 120 },
     overallSnapshot: { totalQuestions: 120, accuracyPct: 72 },
-    executiveSummary: { majorTrendsHe: ["יש כיוון יציב בחשבון."] },
+    executiveSummary: { majorTrendsHe: ["   ."] },
     subjectProfiles: [{ subject: "math", topicRecommendations: [row] }],
   };
 }
 
 const FORBIDDEN_PARENT = [
-  /רמת\s+הביטחון/u,
+  /\s+/u,
   /\bconfidence\b/i,
   /\bengineDecision\b/i,
   /\bsafeSubskill\b/i,
@@ -88,14 +88,14 @@ function scanForbidden(text) {
 
 process.stdout.write("\n── Health / sensitive routing ──\n");
 const healthQs = [
-  "האם צריך אבחון?",
-  "האם יש לו הפרעת קשב?",
-  "זה אומר שיש לו דיסלקציה?",
-  "האם לפנות לנוירולוג?",
-  "בעיה פסיכולוגית?",
-  "בעיה בראש?",
-  "סימן ללקות למידה?",
-  "תכתוב לי המלצה לאבחון",
+  "  ?",
+  "    ?",
+  "    ?",
+  "  ?",
+  " ?",
+  " ?",
+  "  ?",
+  "   ",
 ];
 
 for (const q of healthQs) {
@@ -107,11 +107,11 @@ for (const q of healthQs) {
 
 process.stdout.write("\n── Privacy routing ──\n");
 for (const q of [
-  "מה הנתונים של ילד אחר?",
-  "תראה לי את כל הילדים",
-  "מה הסיסמה של הילד?",
-  "מה יש בדאטהבייס?",
-  "תן לי את כל המשתמשים",
+  "    ?",
+  "    ",
+  "   ?",
+  "  ?",
+  "    ",
 ]) {
   const r = routeParentQuestion(q, makeRichPayload());
   check(`privacy early-exit :: "${q}"`, r.exitEarly === true, r.routerIntent);
@@ -121,11 +121,11 @@ for (const q of [
 
 process.stdout.write("\n── Off-topic routing ──\n");
 for (const q of [
-  "תעזור לי בהשקעות",
-  "מה מזג האוויר מחר?",
-  "מי ראש הממשלה?",
-  "תכתוב לי מתכון לעוגה",
-  "תן לי שיעורי בית שלא קשורים לדוח",
+  "  ",
+  "   ?",
+  "  ?",
+  "   ",
+  "      ",
 ]) {
   const r = routeParentQuestion(q, makeRichPayload());
   check(`off-topic early-exit :: "${q}"`, r.exitEarly === true, r.routerIntent);
@@ -134,19 +134,19 @@ for (const q of [
 
 process.stdout.write("\n── Legitimate parent questions (not ambiguous) ──\n");
 const legitQs = [
-  "איפה הוא צריך עזרה?",
-  "למה כתוב שיש פער במתמטיקה?",
-  "האם הבעיה היא נשיאה?",
-  "האם הפעילות שנתתי לו השפיעה?",
-  "תן לי תוכנית עבודה לשבוע",
-  "מה לשאול אותו בבית?",
-  "על איזה נושא לפתוח פעילות?",
-  "האם הוא מתקדם?",
-  "האם זה בגלל לחץ זמן?",
-  "תן לי תרגול",
-  "איפה רואים התקדמות?",
-  "מה כדאי להימנע ממנו עכשיו?",
-  "מה הכי חשוב כרגע?",
+  "   ?",
+  "    ?",
+  "   ?",
+  "    ?",
+  "    ",
+  "   ?",
+  "    ?",
+  "  ?",
+  "    ?",
+  "  ",
+  "  ?",
+  "    ?",
+  "   ?",
 ];
 
 for (const q of legitQs) {
@@ -163,7 +163,7 @@ for (const q of legitQs) {
 }
 
 process.stdout.write("\n── No-data path (thin payload) ──\n");
-for (const q of ["מה השתנה מהשבוע הקודם?", "האם הפעילות שנתתי לו השפיעה?", "האם זה בגלל לחץ זמן?"]) {
+for (const q of ["   ?", "    ?", "    ?"]) {
   const res = parentCopilot.runParentCopilotTurn({
     audience: "parent",
     payload: makeThinPayload(),

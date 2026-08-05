@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
 
 export default function AdminGeneralTab({ accessToken }) {
   const [systemEnabled, setSystemEnabled] = useState(false);
@@ -42,10 +42,10 @@ export default function AdminGeneralTab({ accessToken }) {
         method: "PUT",
         body: JSON.stringify({ key: "surprise_box_general_settings", value: general }),
       });
-      if (!sysRes.ok || !boxRes.ok) throw new Error("שמירה נכשלה");
-      setMessage("הגדרות כלליות נשמרו.");
+      if (!sysRes.ok || !boxRes.ok) throw new Error(" ");
+      setMessage("  .");
     } catch (e) {
-      setMessage(e.message || "שמירה נכשלה");
+      setMessage(e.message || " ");
     } finally {
       setBusy(false);
     }
@@ -64,14 +64,14 @@ export default function AdminGeneralTab({ accessToken }) {
             checked={systemEnabled}
             onChange={(e) => setSystemEnabled(e.target.checked)}
           />
-          מערכת קלפים פעילה (במאגר הנתונים)
+             ( )
         </label>
         <p className="text-xs text-white/50">
-          דגל קלפים בשרת חייב להיות פעיל כדי שהממשק יוצג להורים וילדים. הגדרה זו שולטת גם בפעולות השרת.
+                    .      .
         </p>
         <div className="grid sm:grid-cols-2 gap-3 text-xs">
           <label>
-            מרווח קופסה (דקות)
+              ()
             <input
               type="number"
               className="block w-full mt-1 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
@@ -87,7 +87,7 @@ export default function AdminGeneralTab({ accessToken }) {
               checked={general.first_box_immediate !== false}
               onChange={(e) => setGeneral((g) => ({ ...g, first_box_immediate: e.target.checked }))}
             />
-            קופסה ראשונה מיד לילד חדש
+
           </label>
         </div>
         <button
@@ -96,7 +96,7 @@ export default function AdminGeneralTab({ accessToken }) {
           onClick={() => void save()}
           className="rounded bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
         >
-          {busy ? "שומר..." : "שמירה"}
+          {busy ? "..." : ""}
         </button>
       </section>
     </div>

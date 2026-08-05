@@ -66,7 +66,7 @@ async function main() {
 
     const gradeNum = parseInt(String(gk).replace(/\D/g, ""), 10) || 3;
     const band = i % 3 === 0 ? "easy" : i % 3 === 1 ? "medium" : "hard";
-    const nameHe = band === "easy" ? "קל" : band === "medium" ? "בינוני" : "קשה";
+    const nameHe = band === "easy" ? "" : band === "medium" ? "" : "";
     const gl = GRADE_LEVELS[gradeNum]?.levels?.[band];
     if (!gl) {
       errors.push(`trial ${i}: missing GRADE_LEVELS for ${gradeNum}/${band}`);

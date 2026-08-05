@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 134,
+  "cardCount": 142,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -282,66 +282,6 @@
         "description": "Leo Семейный день — ограниченная карточка события!"
       }
     },
-    "event_hanukkah": {
-      "cardKey": "event_hanukkah",
-      "title": "Leo Ханука",
-      "description": "Leo Ханука — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Ханука",
-        "description": "Leo Ханука — ограниченная карточка события!"
-      }
-    },
-    "event_independence_day": {
-      "cardKey": "event_independence_day",
-      "title": "Leo День независимости",
-      "description": "Leo День независимости — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo День независимости",
-        "description": "Leo День независимости — ограниченная карточка события!"
-      }
-    },
-    "event_passover": {
-      "cardKey": "event_passover",
-      "title": "Leo Песах",
-      "description": "Leo Песах — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Песах",
-        "description": "Leo Песах — ограниченная карточка события!"
-      }
-    },
-    "event_purim": {
-      "cardKey": "event_purim",
-      "title": "Leo Пурим",
-      "description": "Leo Пурим — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Пурим",
-        "description": "Leo Пурим — ограниченная карточка события!"
-      }
-    },
-    "event_rosh_hashana": {
-      "cardKey": "event_rosh_hashana",
-      "title": "Leo Рош ха-Шана",
-      "description": "Leo Рош ха-Шана — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Рош ха-Шана",
-        "description": "Leo Рош ха-Шана — ограниченная карточка события!"
-      }
-    },
-    "event_shavuot": {
-      "cardKey": "event_shavuot",
-      "title": "Leo Шавуот",
-      "description": "Leo Шавуот — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Шавуот",
-        "description": "Leo Шавуот — ограниченная карточка события!"
-      }
-    },
     "event_spring": {
       "cardKey": "event_spring",
       "title": "Leo Весна",
@@ -350,16 +290,6 @@
       "accessibility": {
         "title": "Leo Весна",
         "description": "Leo Весна — ограниченная карточка события!"
-      }
-    },
-    "event_sukkot": {
-      "cardKey": "event_sukkot",
-      "title": "Leo Суккот",
-      "description": "Leo Суккот — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Суккот",
-        "description": "Leo Суккот — ограниченная карточка события!"
       }
     },
     "event_summer": {
@@ -380,16 +310,6 @@
       "accessibility": {
         "title": "Leo Летние каникулы",
         "description": "Leo Летние каникулы — ограниченная карточка события!"
-      }
-    },
-    "event_tu_bishvat": {
-      "cardKey": "event_tu_bishvat",
-      "title": "Leo Ту би-Шват",
-      "description": "Leo Ту би-Шват — ограниченная карточка события!",
-      "category": "событие",
-      "accessibility": {
-        "title": "Leo Ту би-Шват",
-        "description": "Leo Ту би-Шват — ограниченная карточка события!"
       }
     },
     "event_winter": {
@@ -1340,6 +1260,166 @@
       "accessibility": {
         "title": "Leo Исследователь мира",
         "description": "Собери Leo World Explorer!"
+      }
+    },
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "Лео — чемпион аркады",
+      "description": "Собери карточку: Лео — чемпион аркады!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — чемпион аркады",
+        "description": "Собери карточку: Лео — чемпион аркады!"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "Лео — страж волшебного леса",
+      "description": "Собери карточку: Лео — страж волшебного леса!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — страж волшебного леса",
+        "description": "Собери карточку: Лео — страж волшебного леса!"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "Лео-пожарный",
+      "description": "Собери карточку: Лео-пожарный!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео-пожарный",
+        "description": "Собери карточку: Лео-пожарный!"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "Лео — галактический исследователь",
+      "description": "Собери карточку: Лео — галактический исследователь!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — галактический исследователь",
+        "description": "Собери карточку: Лео — галактический исследователь!"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "Лео — гениальный изобретатель",
+      "description": "Собери карточку: Лео — гениальный изобретатель!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — гениальный изобретатель",
+        "description": "Собери карточку: Лео — гениальный изобретатель!"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "Лео — золотой рыцарь",
+      "description": "Собери карточку: Лео — золотой рыцарь!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — золотой рыцарь",
+        "description": "Собери карточку: Лео — золотой рыцарь!"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "Лео — великий волшебник",
+      "description": "Собери карточку: Лео — великий волшебник!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — великий волшебник",
+        "description": "Собери карточку: Лео — великий волшебник!"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "Легендарный супер-Лео",
+      "description": "Собери карточку: Легендарный супер-Лео!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Легендарный супер-Лео",
+        "description": "Собери карточку: Легендарный супер-Лео!"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "Лео — шеф-повар",
+      "description": "Собери карточку: Лео — шеф-повар!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — шеф-повар",
+        "description": "Собери карточку: Лео — шеф-повар!"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "Лео — мастер-детектив",
+      "description": "Собери карточку: Лео — мастер-детектив!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — мастер-детектив",
+        "description": "Собери карточку: Лео — мастер-детектив!"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "Лео — мастер-художник",
+      "description": "Собери карточку: Лео — мастер-художник!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — мастер-художник",
+        "description": "Собери карточку: Лео — мастер-художник!"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "Лео — звезда сцены",
+      "description": "Собери карточку: Лео — звезда сцены!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — звезда сцены",
+        "description": "Собери карточку: Лео — звезда сцены!"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "Лео — капитан пиратов",
+      "description": "Собери карточку: Лео — капитан пиратов!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — капитан пиратов",
+        "description": "Собери карточку: Лео — капитан пиратов!"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "Лео — гонщик",
+      "description": "Собери карточку: Лео — гонщик!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — гонщик",
+        "description": "Собери карточку: Лео — гонщик!"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "Лео — чемпион по футболу",
+      "description": "Собери карточку: Лео — чемпион по футболу!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — чемпион по футболу",
+        "description": "Собери карточку: Лео — чемпион по футболу!"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "Лео — чемпион волн",
+      "description": "Собери карточку: Лео — чемпион волн!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Лео — чемпион волн",
+        "description": "Собери карточку: Лео — чемпион волн!"
       }
     }
   }

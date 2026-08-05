@@ -18,15 +18,15 @@ import {
 import { WORKSHEET_PRINTABILITY } from "../../lib/worksheets/worksheet-question-types.js";
 
 const TRANSLATION_RAW = {
-  question: "מה פירוש המילה 'dog' בעברית?",
-  answers: ["כלב", "חתול", "ציפור", "דג"],
-  correctAnswer: "כלב",
+  question: "   'dog' ?",
+  answers: ["", "", "", ""],
+  correctAnswer: "",
   topic: "translation",
   params: { direction: "en_to_meaning", word: "dog", gradeKey: "g2" },
 };
 
 const SENTENCE_RAW = {
-  question: "בחרו את המשפט הנכון באנגלית:",
+  question: "    :",
   answers: ["I am happy", "I happy am", "Am I happy", "Happy I am"],
   correctAnswer: "I am happy",
   topic: "sentences",
@@ -34,11 +34,11 @@ const SENTENCE_RAW = {
 };
 
 const META = {
-  titleHe: "אנגלית",
-  subjectHe: "אנגלית",
-  gradeHe: "כיתה ד׳",
-  topicHe: "תרגום",
-  levelHe: "בינוני",
+  titleHe: "",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "english",
 };
@@ -88,8 +88,8 @@ describe("english-ltr-in-rtl", () => {
 
   test("renderStemWithLtrSpansHtml escapes and wraps Latin", () => {
     const html = renderStemWithLtrSpansHtml(
-      "מה פירוש 'cat'?",
-      extractEnglishLtrSpans("מה פירוש 'cat'?"),
+      "  'cat'?",
+      extractEnglishLtrSpans("  'cat'?"),
       (t) => t.replace(/</g, "&lt;")
     );
     assert.ok(html.includes("english-ltr"));

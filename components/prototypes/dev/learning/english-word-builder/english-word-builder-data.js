@@ -23,35 +23,35 @@ export const TRAIN_TASKS = {
     {
       id: "e1",
       type: "image_word",
-      promptHe: "התאימו מילה לתמונה",
+      promptHe: "Match Who to to",
       emoji: "🐱",
       word: "cat",
     },
     {
       id: "e2",
       type: "image_word",
-      promptHe: "התאימו מילה לתמונה",
+      promptHe: "Match Who to to",
       emoji: "🐶",
       word: "dog",
     },
     {
       id: "e3",
       type: "image_word",
-      promptHe: "התאימו מילה לתמונה",
+      promptHe: "Match Who to to",
       emoji: "☀️",
       word: "sun",
     },
     {
       id: "e4",
       type: "image_word",
-      promptHe: "התאימו מילה לתמונה",
+      promptHe: "Match Who to to",
       emoji: "🔴",
       word: "red",
     },
     {
       id: "e5",
       type: "first_letter",
-      promptHe: "בחרו את האות הראשונה",
+      promptHe: "Choose the Fire",
       word: "dog",
       options: ["d", "g", "o"],
       correctIndex: 0,
@@ -59,7 +59,7 @@ export const TRAIN_TASKS = {
     {
       id: "e6",
       type: "first_letter",
-      promptHe: "בחרו את האות הראשונה",
+      promptHe: "Choose the Fire",
       word: "cat",
       options: ["c", "t", "a"],
       correctIndex: 0,
@@ -67,7 +67,7 @@ export const TRAIN_TASKS = {
     {
       id: "e7",
       type: "build_word",
-      promptHe: "בנו מילה מ-3 אותיות",
+      promptHe: "Who to -3",
       emoji: "🐱",
       word: "cat",
       letters: ["c", "a", "t", "b", "r"],
@@ -75,7 +75,7 @@ export const TRAIN_TASKS = {
     {
       id: "e8",
       type: "build_word",
-      promptHe: "בנו מילה מ-3 אותיות",
+      promptHe: "Who to -3",
       emoji: "🐶",
       word: "dog",
       letters: ["d", "o", "g", "s", "n"],
@@ -83,7 +83,7 @@ export const TRAIN_TASKS = {
     {
       id: "e9",
       type: "build_word",
-      promptHe: "בנו מילה מ-3 אותיות",
+      promptHe: "Who to -3",
       emoji: "☀️",
       word: "sun",
       letters: ["s", "u", "n", "m", "p"],
@@ -91,7 +91,7 @@ export const TRAIN_TASKS = {
     {
       id: "e10",
       type: "first_letter",
-      promptHe: "בחרו את האות הראשונה",
+      promptHe: "Choose the Fire",
       word: "sun",
       options: ["s", "u", "n"],
       correctIndex: 0,
@@ -99,7 +99,7 @@ export const TRAIN_TASKS = {
     {
       id: "e11",
       type: "build_word",
-      promptHe: "בנו מילה מ-3 אותיות",
+      promptHe: "Who to -3",
       emoji: "🔴",
       word: "red",
       letters: ["r", "e", "d", "b", "l"],
@@ -107,7 +107,7 @@ export const TRAIN_TASKS = {
     {
       id: "e12",
       type: "image_word",
-      promptHe: "התאימו מילה לתמונה",
+      promptHe: "Match Who to to",
       emoji: "🚌",
       word: "bus",
     },
@@ -116,7 +116,7 @@ export const TRAIN_TASKS = {
     {
       id: "m1",
       type: "build_word",
-      promptHe: "בנו מילה מ-4 אותיות",
+      promptHe: "Who to -4",
       emoji: "🥛",
       word: "milk",
       letters: ["m", "i", "l", "k", "a", "e"],
@@ -124,7 +124,7 @@ export const TRAIN_TASKS = {
     {
       id: "m2",
       type: "build_word",
-      promptHe: "בנו מילה מ-4 אותיות",
+      promptHe: "Who to -4",
       emoji: "📚",
       word: "book",
       letters: ["b", "o", "o", "k", "r", "t"],
@@ -132,7 +132,7 @@ export const TRAIN_TASKS = {
     {
       id: "m3",
       type: "build_word",
-      promptHe: "בנו מילה מ-5 אותיות",
+      promptHe: "Who to -5",
       emoji: "🟢",
       word: "green",
       letters: ["g", "r", "e", "e", "n", "a", "t"],
@@ -140,8 +140,8 @@ export const TRAIN_TASKS = {
     {
       id: "m4",
       type: "hebrew_match",
-      promptHe: "התאימו מילה בעברית לאנגלית",
-      hebrewHint: "כלב",
+      promptHe: "Match Who to Hebrew to English",
+      hebrewHint: "Topic",
       word: "dog",
       options: ["dog", "cat", "milk"],
       correctIndex: 0,
@@ -149,8 +149,8 @@ export const TRAIN_TASKS = {
     {
       id: "m5",
       type: "hebrew_match",
-      promptHe: "התאימו מילה בעברית לאנגלית",
-      hebrewHint: "חלב",
+      promptHe: "Match Who to Hebrew to English",
+      hebrewHint: "to",
       word: "milk",
       options: ["book", "milk", "chair"],
       correctIndex: 1,
@@ -158,7 +158,7 @@ export const TRAIN_TASKS = {
     {
       id: "m6",
       type: "listen_pick",
-      promptHe: "לחצו «השמע מילה» ובחרו את המילה הנכונה",
+      promptHe: " « »    ",
       word: "book",
       options: ["book", "milk", "green"],
       correctIndex: 0,
@@ -166,7 +166,7 @@ export const TRAIN_TASKS = {
     {
       id: "m7",
       type: "listen_pick",
-      promptHe: "לחצו «השמע מילה» ובחרו את המילה הנכונה",
+      promptHe: " « »    ",
       word: "chair",
       options: ["table", "chair", "apple"],
       correctIndex: 1,
@@ -174,7 +174,7 @@ export const TRAIN_TASKS = {
     {
       id: "m8",
       type: "build_word",
-      promptHe: "בנו מילה מ-5 אותיות",
+      promptHe: "Who to -5",
       emoji: "🪑",
       word: "chair",
       letters: ["c", "h", "a", "i", "r", "e", "o"],
@@ -182,8 +182,8 @@ export const TRAIN_TASKS = {
     {
       id: "m9",
       type: "hebrew_match",
-      promptHe: "התאימו מילה בעברית לאנגלית",
-      hebrewHint: "ספר",
+      promptHe: "Match Who to Hebrew to English",
+      hebrewHint: "Topic",
       word: "book",
       options: ["green", "book", "water"],
       correctIndex: 1,
@@ -191,7 +191,7 @@ export const TRAIN_TASKS = {
     {
       id: "m10",
       type: "build_word",
-      promptHe: "בנו מילה מ-5 אותיות",
+      promptHe: "Who to -5",
       emoji: "🍎",
       word: "apple",
       letters: ["a", "p", "p", "l", "e", "o", "r"],
@@ -199,7 +199,7 @@ export const TRAIN_TASKS = {
     {
       id: "m11",
       type: "listen_pick",
-      promptHe: "לחצו «השמע מילה» ובחרו את המילה הנכונה",
+      promptHe: " « »    ",
       word: "green",
       options: ["red", "green", "blue"],
       correctIndex: 1,
@@ -207,8 +207,8 @@ export const TRAIN_TASKS = {
     {
       id: "m12",
       type: "hebrew_match",
-      promptHe: "התאימו מילה בעברית לאנגלית",
-      hebrewHint: "כיסא",
+      promptHe: "Match Who to Hebrew to English",
+      hebrewHint: "",
       word: "chair",
       options: ["chair", "house", "dog"],
       correctIndex: 0,
@@ -218,21 +218,21 @@ export const TRAIN_TASKS = {
     {
       id: "h1",
       type: "sentence_order",
-      promptHe: "סדרו מילים למשפט קצר",
+      promptHe: "words to Short",
       words: ["I", "like", "milk"],
       word: "I like milk",
     },
     {
       id: "h2",
       type: "sentence_order",
-      promptHe: "סדרו מילים למשפט קצר",
+      promptHe: "words to Short",
       words: ["I", "see", "a", "cat"],
       word: "I see a cat",
     },
     {
       id: "h3",
       type: "fill_sentence",
-      promptHe: "השלימו את המילה החסרה",
+      promptHe: "to the the word",
       sentenceTemplate: "I see a ___",
       missingWord: "dog",
       options: ["dog", "table", "run"],
@@ -241,7 +241,7 @@ export const TRAIN_TASKS = {
     {
       id: "h4",
       type: "fill_sentence",
-      promptHe: "השלימו את המילה החסרה",
+      promptHe: "to the the word",
       sentenceTemplate: "I like ___",
       missingWord: "milk",
       options: ["milk", "chair", "green"],
@@ -250,7 +250,7 @@ export const TRAIN_TASKS = {
     {
       id: "h5",
       type: "sentence_image",
-      promptHe: "בחרו משפט שמתאים לתמונה",
+      promptHe: "Choose to",
       emoji: "🐱",
       options: ["I see a cat", "I like milk", "I run fast"],
       correctIndex: 0,
@@ -258,7 +258,7 @@ export const TRAIN_TASKS = {
     {
       id: "h6",
       type: "sentence_image",
-      promptHe: "בחרו משפט שמתאים לתמונה",
+      promptHe: "Choose to",
       emoji: "🥛",
       options: ["I like milk", "I see a dog", "I read book"],
       correctIndex: 0,
@@ -266,14 +266,14 @@ export const TRAIN_TASKS = {
     {
       id: "h7",
       type: "sentence_order",
-      promptHe: "סדרו מילים למשפט קצר",
+      promptHe: "words to Short",
       words: ["The", "cat", "is", "red"],
       word: globalBurnDownCopy("components__prototypes__dev__learning__english-word-builder__english-word-builder-data", "the_cat_is_red"),
     },
     {
       id: "h8",
       type: "fill_sentence",
-      promptHe: "השלימו את המילה החסרה",
+      promptHe: "to the the word",
       sentenceTemplate: globalBurnDownCopy("components__prototypes__dev__learning__english-word-builder__english-word-builder-data", "the_apple_is"),
       missingWord: "red",
       options: ["red", "run", "swim"],
@@ -282,7 +282,7 @@ export const TRAIN_TASKS = {
     {
       id: "h9",
       type: "sentence_image",
-      promptHe: "בחרו משפט שמתאים לתמונה",
+      promptHe: "Choose to",
       emoji: "📚",
       options: ["I read a book", "I eat apple", "I see sun"],
       correctIndex: 0,
@@ -290,14 +290,14 @@ export const TRAIN_TASKS = {
     {
       id: "h10",
       type: "sentence_order",
-      promptHe: "סדרו מילים למשפט קצר",
+      promptHe: "words to Short",
       words: ["I", "have", "a", "dog"],
       word: "I have a dog",
     },
     {
       id: "h11",
       type: "fill_sentence",
-      promptHe: "השלימו את המילה החסרה",
+      promptHe: "to the the word",
       sentenceTemplate: "I ___ a cat",
       missingWord: "see",
       options: ["see", "milk", "chair"],
@@ -306,7 +306,7 @@ export const TRAIN_TASKS = {
     {
       id: "h12",
       type: "sentence_order",
-      promptHe: "סדרו מילים למשפט קצר",
+      promptHe: "words to Short",
       words: ["She", "likes", "red"],
       word: globalBurnDownCopy("components__prototypes__dev__learning__english-word-builder__english-word-builder-data", "she_likes_red"),
     },
@@ -325,7 +325,7 @@ export function letterBankForTrainTask(task) {
 }
 
 export function trainFeedback(ok) {
-  return ok ? "מעולה! הרכבת יצאה לדרך" : "כמעט. בדקו את סדר האותיות או המילים";
+  return ok ? "Great! Train to Soft" : "Almost. Check the words";
 }
 
 /** @param {TrainTask} task @param {string} built @param {number|null} selected */

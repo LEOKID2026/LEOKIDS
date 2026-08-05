@@ -13,12 +13,12 @@ import {
 describe("subject summary clear weak topic", () => {
   test("buildSubjectParentLetter - math/addition q=10 acc=20% avoids insufficient copy", () => {
     const sp = {
-      subjectLabel: "מתמטיקה",
+      subjectLabel: "",
       subjectConclusionReadiness: "not_ready",
-      dominantRootCauseLabelHe: "קושי ביסוד",
+      dominantRootCauseLabelHe: " ",
       topWeaknesses: [
         {
-          labelHe: "חיבור",
+          labelHe: "",
           questions: 10,
           correct: 2,
           wrong: 8,
@@ -27,7 +27,7 @@ describe("subject summary clear weak topic", () => {
       ],
       topicRecommendations: [
         {
-          displayName: "חיבור",
+          displayName: "",
           questions: 10,
           correct: 2,
           wrong: 8,
@@ -44,8 +44,8 @@ describe("subject summary clear weak topic", () => {
 
     assert.ok(isClearWeakTopicMetrics({ questions: 10, correct: 2, wrong: 8, accuracy: 20 }));
     assert.ok(!INSUFFICIENT_SUBJECT_SUMMARY_RE.test(all), all);
-    assert.match(all, /חיבור/);
-    assert.match(all, /חיזוק|חזק/);
+    assert.match(all, //);
+    assert.match(all, /|/);
   });
 
   test("withholdSummaryCopyHe - subject q=10 acc=20% names weak topic", () => {
@@ -54,13 +54,13 @@ describe("subject summary clear weak topic", () => {
       sumUnitQuestions: 10,
       reportSubjectAccuracy: 20,
       reportTotalQuestions: 10,
-      subjectLabel: "מתמטיקה",
-      clearWeakTopicLabelHe: "חיבור",
+      subjectLabel: "",
+      clearWeakTopicLabelHe: "",
       clearWeakTopicQuestions: 10,
       clearWeakTopicAccuracy: 20,
     });
     assert.ok(!INSUFFICIENT_SUBJECT_SUMMARY_RE.test(line), line);
-    assert.match(line, /חיבור/);
-    assert.match(line, /חיזוק|חזק/);
+    assert.match(line, //);
+    assert.match(line, /|/);
   });
 });

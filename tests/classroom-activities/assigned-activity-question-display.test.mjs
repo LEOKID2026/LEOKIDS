@@ -12,7 +12,7 @@ test("shouldIsolateAssignedActivityTextLtr detects math equations", () => {
   assert.equal(shouldIsolateAssignedActivityTextLtr("442 + 20 = __"), true);
   assert.equal(shouldIsolateAssignedActivityTextLtr("276.06 + 48.83 = __"), true);
   assert.equal(
-    shouldIsolateAssignedActivityTextLtr("396₪ אחרי הנחה של 25%"),
+    shouldIsolateAssignedActivityTextLtr("396₪    25%"),
     false
   );
 });
@@ -41,7 +41,7 @@ test("resolveStudentQuestionDisplayParts treats plain equation as ltr body", () 
 
 test("mixed Hebrew math prose is flagged for MixedRtlMathText rendering", () => {
   assert.equal(
-    assignedActivityTextIsMixedHebrewMath("במשולש, שתי זוויות ידועות (51° ו-55°)."),
+    assignedActivityTextIsMixedHebrewMath(",    (51° -55°)."),
     true
   );
 });
@@ -52,6 +52,6 @@ test("english-leading instructions use ltr plaintext", () => {
 });
 
 test("pure Hebrew stays rtl", () => {
-  const props = assignedActivityInlineTextProps("מה פירוש המילה בטקסט?");
+  const props = assignedActivityInlineTextProps("   ?");
   assert.equal(props.dir, "rtl");
 });

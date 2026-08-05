@@ -63,14 +63,14 @@ const SKIP_FILES = new Set([
  */
 const INTERNAL_ONLY_SOURCE_SNIPPETS = Object.freeze({
   "utils/topic-next-step-phase2.js": [
-    "עדיין לא ברור כיוון הדיוק לאורך זמן — לא עושים שינוי גדול עכשיו.",
-    "ייתכן שהקושי קשור להבנת המשימה או לצורך ברמזים — לא מורידים רמה בלי מספיק תרגול שמראה שזה באמת נחוץ.",
-    "יש סימן לקושי, אבל הדיוק משתפר — עדיף לחזק באותה רמה לפני שמורידים רמה.",
-    "כשהמידע חלקי או ישן — כדאי לעשות בדיקה קצרה לפני שמחליטים לשנות כיוון.",
-    "אין מספיק מידע לשינוי גדול עכשיו.",
-    "לא מורידים רמה או כיתה כשעדיין אין מספיק מידע — ממשיכים בחיזוק באותה רמה.",
-    "הנתונים מרמזים שהבעיה אולי קשורה לבסיס של הנושא, אבל כרגע אין מספיק מידע כדי לזהות איזה חלק בסיסי צריך לחזק.",
-    "אין עדיין מספיק מידע כדי להבין מאיפה הקושי מתחיל — לא מורידים רמה; ממשיכים בחיזוק מבוקר.",
+    "       —     .",
+    "        —          .",
+    "  ,    —       .",
+    "    —        .",
+    "     .",
+    "         —    .",
+    "       ,            .",
+    "         —   ;   .",
   ],
   "utils/topic-next-step-engine.js": [],
   "utils/learning-patterns-analysis.js": [],
@@ -184,7 +184,7 @@ for (const q of [0, 3, 12, 40]) {
     const c = buildNarrativeContractV1({
       topicKey: "fractions",
       subjectId: "math",
-      displayName: "שברים",
+      displayName: "",
       questions: q,
       accuracy: acc,
       contractsV1: {
@@ -206,42 +206,42 @@ const ownerCopyRenderedSamples = (() => {
   const out = [];
   const fixtures = [
     {
-      subjectLabelHe: "מתמטיקה",
+      subjectLabelHe: "",
       contract: {
         subjectDecision: "multiple_topic_gaps",
         recommendedSubjectAction: "remediate_priority_topics_same_level",
         blockedLegacySummary: true,
         priorityTopics: [
           {
-            topicLabelKey: "שברים",
+            topicLabelKey: "",
             questions: 206,
             correct: 108,
             wrong: 98,
             accuracy: 52,
-            detectedPattern: "השוואה לפי מונה בלבד",
+            detectedPattern: "   ",
             evidenceStrength: "strong",
           },
           {
-            topicLabelKey: "כפל",
+            topicLabelKey: "",
             questions: 32,
             correct: 22,
             wrong: 10,
             accuracy: 69,
-            detectedPattern: "אותם זוגות שגויים",
+            detectedPattern: "  ",
             evidenceStrength: "strong",
           },
         ],
       },
     },
     {
-      subjectLabelHe: "מתמטיקה",
+      subjectLabelHe: "",
       contract: {
         subjectDecision: "focused_strengthening_needed",
         recommendedSubjectAction: "remediate_priority_topics_same_level",
         blockedLegacySummary: true,
         priorityTopics: [
           {
-            topicLabelKey: "חיבור",
+            topicLabelKey: "",
             questions: 10,
             correct: 2,
             wrong: 8,
@@ -271,8 +271,8 @@ const topicOwnerCopyRenderedSamples = (() => {
   const lpdWithContract = (body, contract) => ({ ...body, [EDC_CONTRACT_KEY]: contract });
   const fixtures = [
     {
-      label: "שברים",
-      subjectLabelHe: "מתמטיקה",
+      label: "",
+      subjectLabelHe: "",
       questions: 206,
       correct: 108,
       wrong: 98,
@@ -287,7 +287,7 @@ const topicOwnerCopyRenderedSamples = (() => {
         },
         {
           engineDecision: "clear_topic_gap",
-          detectedPattern: "השוואה לפי מונה בלבד",
+          detectedPattern: "   ",
           recommendedAction: "remediate_same_level",
           evidenceStrength: "strong",
         },
@@ -295,8 +295,8 @@ const topicOwnerCopyRenderedSamples = (() => {
       contractsV1: { narrative: { wordingEnvelope: "WE2" } },
     },
     {
-      label: "חיבור",
-      subjectLabelHe: "מתמטיקה",
+      label: "",
+      subjectLabelHe: "",
       questions: 10,
       correct: 2,
       wrong: 8,
@@ -319,8 +319,8 @@ const topicOwnerCopyRenderedSamples = (() => {
       contractsV1: { narrative: { wordingEnvelope: "WE1" } },
     },
     {
-      label: "חיבור חיובי",
-      subjectLabelHe: "מתמטיקה",
+      label: " ",
+      subjectLabelHe: "",
       questions: 8,
       correct: 6,
       wrong: 2,
@@ -342,8 +342,8 @@ const topicOwnerCopyRenderedSamples = (() => {
       contractsV1: { narrative: { wordingEnvelope: "WE2" } },
     },
     {
-      label: "חילוק עם שארית",
-      subjectLabelHe: "מתמטיקה",
+      label: "  ",
+      subjectLabelHe: "",
       questions: 2,
       correct: 1,
       wrong: 1,
@@ -401,8 +401,8 @@ const TOPIC_OWNER_INTERNAL_LEAK_TERMS = [
 ];
 
 const renderedSamples = [
-  zeroEvidenceSubjectLineHe("חשבון"),
-  thinEvidenceSubjectLineHe("עברית", 5),
+  zeroEvidenceSubjectLineHe(""),
+  thinEvidenceSubjectLineHe("", 5),
   ...narrativeSamples,
   ...ownerCopyRenderedSamples,
 ].map((s) => normalizeParentFacing(String(s || "")));

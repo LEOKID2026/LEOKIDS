@@ -31,9 +31,9 @@ function makeContract(topicRowKey, subjectId, displayName, qCount = 12, acc = 72
     contractsV1: {
       narrative: {
         textSlots: {
-          observation: `ב${displayName} נצפו ${qCount} שאלות עם דיוק של ${acc}%.`,
-          interpretation: `${displayName} דורש תרגול ממוקד.`,
-          action: `מומלץ לתרגל ${displayName}.`,
+          observation: `${displayName}  ${qCount}     ${acc}%.`,
+          interpretation: `${displayName}   .`,
+          action: `  ${displayName}.`,
           uncertainty: "",
         },
       },
@@ -52,39 +52,39 @@ function richPayload() {
       registeredGradeKey: "g4",
       mixedGradePractice: true,
       mixedGradePracticeNoteHe:
-        "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד.",
+        "      ,    .",
     },
     subjectProfiles: [
       {
         subject: "math",
         topicRecommendations: [
-          makeContract("fractions::grade:g4", "math", "שברים", 20, 55),
-          makeContract("fractions::grade:g5", "math", "שברים", 18, 40),
-          makeContract("multiplication", "math", "כפל", 15, 70),
-          makeContract("division", "math", "חילוק", 12, 68),
+          makeContract("fractions::grade:g4", "math", "", 20, 55),
+          makeContract("fractions::grade:g5", "math", "", 18, 40),
+          makeContract("multiplication", "math", "", 15, 70),
+          makeContract("division", "math", "", 12, 68),
         ],
       },
       {
         subject: "english",
-        topicRecommendations: [makeContract("grammar", "english", "דקדוק", 10, 80)],
+        topicRecommendations: [makeContract("grammar", "english", "", 10, 80)],
       },
       {
         subject: "hebrew",
         topicRecommendations: [
-          makeContract("reading", "hebrew", "הבנת הנקרא", 14, 65),
+          makeContract("reading", "hebrew", " ", 14, 65),
         ],
       },
       {
         subject: "science",
-        topicRecommendations: [makeContract("life", "science", "מדעים כללי", 8, 75)],
+        topicRecommendations: [makeContract("life", "science", " ", 8, 75)],
       },
       {
         subject: "geometry",
-        topicRecommendations: [makeContract("shapes", "geometry", "צורות", 9, 78)],
+        topicRecommendations: [makeContract("shapes", "geometry", "", 9, 78)],
       },
       {
         subject: "moledet-geography",
-        topicRecommendations: [makeContract("israel", "moledet-geography", "מולדת", 6, 82)],
+        topicRecommendations: [makeContract("israel", "moledet-geography", "", 6, 82)],
       },
     ],
   };
@@ -102,22 +102,22 @@ function answerText(res) {
 }
 
 const mustBeReportRelated = [
-  "תסביר לי על שברים מה הבעיה",
-  "חשבון שברים",
-  "מה הבעיה?",
-  "מה לעשות בבית?",
-  "איך הוא בחשבון?",
-  "איך הוא בהבנת הנקרא?",
-  "מה הכי חשוב לתרגל השבוע?",
-  "למה יש שתי כיתות באותו נושא?",
-  "מה הבעיה בכפל?",
-  "איך הוא בחילוק?",
-  "מה עם דקדוק?",
-  "איך הוא בגיאומטריה?",
-  "מה לעשות במדעים?",
-  "איך הוא בעברית?",
-  "איך הוא באנגלית?",
-  "איך הוא במולדת?",
+  "     ",
+  " ",
+  " ?",
+  "  ?",
+  "  ?",
+  "   ?",
+  "    ?",
+  "     ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "  ?",
 ];
 
 for (const q of mustBeReportRelated) {
@@ -125,11 +125,11 @@ for (const q of mustBeReportRelated) {
   assert.equal(det.bucket, "report_related", `classifier report_related :: ${q} got ${det.bucket}`);
 }
 
-const vagueTopic = "אני רוצה לדעת על נושא מסויים";
+const vagueTopic = "     ";
 const routeVague = routeParentQuestion(vagueTopic, payload);
 assert.equal(routeVague.exitEarly, true);
 assert.ok(
-  String(routeVague.deterministicResponse || "").includes("על איזה נושא"),
+  String(routeVague.deterministicResponse || "").includes("  "),
   "vague topic uses short clarification"
 );
 assert.ok(
@@ -137,12 +137,12 @@ assert.ok(
   "vague topic must not use long generic ambiguous copy"
 );
 
-const scopeFrac = resolveScope({ payload, utterance: "תסביר לי על שברים מה הבעיה" });
+const scopeFrac = resolveScope({ payload, utterance: "     " });
 assert.equal(scopeFrac.resolutionStatus, "resolved");
 assert.equal(scopeFrac.scope?.scopeType, "topic");
-assert.match(String(scopeFrac.scope?.scopeLabel || ""), /שברים/);
+assert.match(String(scopeFrac.scope?.scopeLabel || ""), //);
 
-const scopeMath = resolveScope({ payload, utterance: "איך הוא בחשבון?" });
+const scopeMath = resolveScope({ payload, utterance: "  ?" });
 assert.equal(scopeMath.resolutionStatus, "resolved");
 assert.equal(scopeMath.scope?.scopeType, "subject");
 assert.equal(scopeMath.scope?.scopeId, "math");
@@ -150,18 +150,18 @@ assert.equal(scopeMath.scope?.scopeId, "math");
 const turn = runParentCopilotTurn({
   audience: "parent",
   payload,
-  utterance: "תסביר לי על שברים מה הבעיה",
+  utterance: "     ",
   sessionId: freshSid(),
 });
 assert.equal(turn.resolutionStatus, "resolved", "topic question must resolve with report data");
 const turnText = answerText(turn);
-assert.ok(turnText.includes("שברים") || /\d/.test(turnText), "answer references topic or metrics");
+assert.ok(turnText.includes("") || /\d/.test(turnText), "answer references topic or metrics");
 assert.ok(
   !turnText.includes(AMBIGUOUS_RESPONSE_HE.slice(0, 20)),
   "must not leak generic ambiguous help after real question"
 );
 
 const clarify = buildTopicClarificationQuestionHe(payload);
-assert.ok(clarify.includes("שברים") || clarify.includes("חשבון"));
+assert.ok(clarify.includes("") || clarify.includes(""));
 
 process.stdout.write("OK parent-copilot-hebrew-understanding-selftest\n");

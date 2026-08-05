@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Phase 3 sweep — "מקצועות הלימוד" region only (detailed parent report, full mode).
+ * Phase 3 sweep — " " region only (detailed parent report, full mode).
  */
 import { chromium } from "playwright";
 import { createClient } from "@supabase/supabase-js";
@@ -21,45 +21,45 @@ const SERVICE_KEY = process.env.LEARNING_SUPABASE_SERVICE_ROLE_KEY || "";
 const OMER_PARENT_EMAIL = process.env.PARENT_REPORT_DOM_PARENT_EMAIL || "18eran@gmail.com";
 
 const FORBIDDEN = [
-  "מה זוהה:",
-  "דפוס הטעות:",
-  "משמעות:",
-  "מה כדאי לעשות ביחד:",
-  "נקודת המיקוד",
-  "נקודת מיקוד",
-  "מצביע על דפוס",
-  "המערכת זיהתה",
-  "דוגמה כללית",
+  " :",
+  " :",
+  ":",
+  "   :",
+  " ",
+  " ",
+  "  ",
+  " ",
+  " ",
   "13 - 5",
-  "האם זה נשמר בשאלה חדשה",
-  "מתחילה",
-  "לא עכשיו",
-  "מוגבלת",
-  "מה לא לעשות",
-  "איך כדאי לעבוד על זה",
-  "מה כדאי לעשות במקצוע הזה",
-  "הפרדה בין פער יסוד לבעיית נושא",
-  "התמונה עדיין חלקית — עוד קצת תרגול יבהיר את הכיוון",
-  "יש בסיס תרגול במקצוע, אך העדות עדיין מצומצמת",
-  "זה כיוון ראשוני בלבד",
-  "תצפית זהירה בלבד",
-  "לפני שמעלים רמת קושי",
-  "לנושאים מתקדמים יותר",
-  "הילד/ה",
-  "כדאי לטפל בו בצורה ממוקדת",
-  "1 שאלות",
+  "    ",
+  "",
+  " ",
+  "",
+  "  ",
+  "    ",
+  "    ",
+  "     ",
+  "   —      ",
+  "   ,    ",
+  "   ",
+  "  ",
+  "   ",
+  "  ",
+  "/",
+  "    ",
+  "1 ",
 ];
 
 const REQUIRED_TOPIC_CARD = [
-  "מה רואים:",
-  "הנתונים:",
-  "מה זה אומר:",
-  "מה כדאי לעשות בבית:",
+  " :",
+  ":",
+  "  :",
+  "   :",
 ];
 const REQUIRED_PHASE3 = [
-  "מה כדאי לשים לב אליו",
-  "ממה כדאי להימנע עכשיו",
-  "האם אפשר להתקדם",
+  "    ",
+  "   ",
+  "  ",
 ];
 
 function supabaseAuthStorageKey(url) {
@@ -107,13 +107,13 @@ const EXTRACT_FN = () => {
     return { title, metrics, phase3, letter, tiers, cardsText: cards.join("\n"), blockText: t(block) };
   });
 
-  const math = subjects.find((s) => /מתמטיקה/i.test(s.title));
-  const english = subjects.find((s) => /אנגלית/i.test(s.title));
+  const math = subjects.find((s) => //i.test(s.title));
+  const english = subjects.find((s) => //i.test(s.title));
 
   const headerSummary = t(root?.querySelector(".pr-detailed-smart-summary, [data-testid='parent-report-smart-summary']"));
   const homeRecSection = [...(root?.querySelectorAll("h2, .pr-detailed-section-title, .pr-detailed-subjects-region-title") || [])]
     .map((el) => t(el))
-    .filter((x) => x.includes("מה מומלץ לעשות בבית"));
+    .filter((x) => x.includes("   "));
 
   return {
     pageLoaded: Boolean(root),
@@ -124,13 +124,13 @@ const EXTRACT_FN = () => {
     mathMetrics: math?.metrics || "",
     englishInRegion: !!english,
     englishTitle: english?.title || null,
-    hasOutOfGrade: /תרגול מחוץ לכיתה הרשומה/.test(fullText),
+    hasOutOfGrade: /   /.test(fullText),
     homeRecWindow: homeRecSection.length > 0,
     subjectsRegionTitle: t(region?.querySelector(".pr-detailed-subjects-region-title")),
     phase3AllText: subjects.map((s) => s.phase3).join("\n"),
     cardsAllText: subjects.map((s) => s.cardsText).join("\n---\n"),
     structure: {
-      hasSmartSummary: !!headerSummary || /סיכום חכם/.test(fullText.slice(0, 4000)),
+      hasSmartSummary: !!headerSummary || / /.test(fullText.slice(0, 4000)),
       subjectsRegionTitle: t(region?.querySelector(".pr-detailed-subjects-region-title")),
       subjectCount: subjects.length,
       anyPhase3: subjects.some((s) => s.phase3),
@@ -177,7 +177,7 @@ async function main() {
     const forbiddenHits = FORBIDDEN.filter((phrase) => regionText.includes(phrase)).map((phrase) => ({
       phrase,
       inSubjectsRegion: true,
-      note: "DOM sweep — מקצועות הלימוד",
+      note: "DOM sweep —  ",
     }));
 
     const requiredTopicHits = REQUIRED_TOPIC_CARD.map((p) => ({ phrase: p, found: (data.cardsAllText || "").includes(p) }));
@@ -190,7 +190,7 @@ async function main() {
       requiredTopicCard: requiredTopicHits,
       requiredPhase3: requiredPhase3Hits,
       dataChecks: {
-        mathNot808: !/שאלות:\s*808/.test(data.mathMetrics),
+        mathNot808: !/:\s*808/.test(data.mathMetrics),
         mathMetrics: data.mathMetrics,
         englishInSubjectsRegion: data.englishInRegion,
         outOfGradeWindow: data.hasOutOfGrade,

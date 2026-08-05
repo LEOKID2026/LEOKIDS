@@ -72,7 +72,7 @@ describe("english phonics practice audio", () => {
   }
 
   it("audio is additive: visible prompt, target, and options remain on the question", () => {
-    const BROKEN_SLASH_PROMPT = /\/\s+'\s|קרא\s+\/\s+'/u;
+    const BROKEN_SLASH_PROMPT = /\/\s+'\s|\s+\/\s+'/u;
     const positions = new Set();
 
     for (let i = 0; i < 80; i += 1) {

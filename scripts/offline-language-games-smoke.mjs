@@ -18,28 +18,28 @@ import { chromium } from "playwright";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = process.env.OFFLINE_TEST_BASE || "http://127.0.0.1:3099";
 const HUB = `${BASE}/student/offline/educational`;
-const ERROR_TEXT = "אופס! משהו השתבש";
+const ERROR_TEXT = "!  ";
 
 const GAMES = [
   {
     key: "leo-word-train",
-    hubTitle: "רכבת המילים",
+    hubTitle: " ",
     route: `${BASE}/student/offline/educational/leo-word-train`,
-    submitPattern: /הוציאו רכבת/,
+    submitPattern: / /,
     progressPattern: /🚂\s*1\/20/,
     progressAfterPattern: /🚂\s*2\/20/,
-    successPattern: /הרכבת יוצאת|יוצאים/,
+    successPattern: / |/,
     planFn: trainPlanScript,
     solve: solveTrainTask,
   },
   {
     key: "leo-word-detective",
-    hubTitle: "בלש המילים",
+    hubTitle: " ",
     route: `${BASE}/student/offline/educational/leo-word-detective`,
-    submitPattern: /פתור תיק/,
+    submitPattern: / /,
     progressPattern: /🕵️\s*1\/20/,
     progressAfterPattern: /🕵️\s*2\/20/,
-    successPattern: /התיק נפתר/,
+    successPattern: / /,
     planFn: detectivePlanScript,
     solve: solveDetectiveTask,
   },
@@ -70,7 +70,7 @@ function loadRequiredChunkUrls() {
 function trainPlanScript() {
   const cardButtons = () => {
     const panelTitle = [...document.querySelectorAll("p")].find((p) =>
-      p.textContent.includes("קלפים לעמיסה"),
+      p.textContent.includes(" "),
     );
     const panel = panelTitle?.closest("aside, div");
     return [...(panel?.querySelectorAll("button") || [])].filter((b) => !b.disabled);
@@ -168,7 +168,7 @@ async function solveTrainTask(page, plan) {
 function detectivePlanScript() {
   const cardButtons = () => {
     const panelTitle = [...document.querySelectorAll("p")].find((p) =>
-      p.textContent.includes("כרטיסי ראיות"),
+      p.textContent.includes(" "),
     );
     const panel = panelTitle?.parentElement;
     return [...(panel?.querySelectorAll("button") || [])].filter((b) => !b.disabled);
@@ -183,8 +183,8 @@ function detectivePlanScript() {
     .map((p) => p.textContent.trim())
     .filter(Boolean);
   const mission =
-    missionCandidates.find((t) => t.includes("—") || t.includes("_") || t.includes("מתחילה ב")) ||
-    missionCandidates.find((t) => t.includes("תמונה")) ||
+    missionCandidates.find((t) => t.includes("—") || t.includes("_") || t.includes(" ")) ||
+    missionCandidates.find((t) => t.includes("")) ||
     missionCandidates[missionCandidates.length - 1] ||
     "";
 
@@ -200,22 +200,22 @@ function detectivePlanScript() {
   if (gapMatch) {
     const frag = gapMatch[1];
     const GAPS = {
-      "שו_חן": "ל",
-      "י_ד": "ל",
-      "ס_פר": "פ",
-      "ע_נן": "נ",
-      "מ_ים": "י",
-      "כ_סא": "י",
-      "ג_שם": "ש",
-      "ח_לון": "ל",
-      "_ית": "ב",
-      "כ_ב": "ל",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
+      "_": "",
     };
     const letter = GAPS[frag];
     if (letter && hasCardByText(letter)) return { ok: true, type: "fill_gap", cardLabel: letter, frag };
   }
 
-  const sortMatch = mission.match(/מתחילה ב־(.)/);
+  const sortMatch = mission.match(/ (.)/);
   if (sortMatch) {
     const letter = sortMatch[1];
     const cardLabel = findCardStartsWith(letter);
@@ -227,20 +227,20 @@ function detectivePlanScript() {
   );
   const emoji = emojiEl?.textContent.trim();
   const EMOJI_WORD = {
-    "🏠": "בית",
-    "🍎": "תפוח",
-    "✏️": "עיפרון",
-    "🐟": "דג",
-    "🎈": "בלון",
-    "🚌": "אוטובוס",
-    "🌙": "ירח",
-    "🐕": "כלב",
-    "🐱": "חתול",
-    "📚": "ספר",
-    "🌳": "עץ",
-    "💧": "מים",
-    "☀️": "שמש",
-    "🌸": "פרח",
+    "🏠": "",
+    "🍎": "",
+    "✏️": "",
+    "🐟": "",
+    "🎈": "",
+    "🚌": "",
+    "🌙": "",
+    "🐕": "",
+    "🐱": "",
+    "📚": "",
+    "🌳": "",
+    "💧": "",
+    "☀️": "",
+    "🌸": "",
   };
   if (emoji && EMOJI_WORD[emoji] && hasCardByText(EMOJI_WORD[emoji])) {
     return { ok: true, type: "image_word", cardLabel: EMOJI_WORD[emoji], emoji };
@@ -283,7 +283,7 @@ async function assertNoOops(page, step) {
 }
 
 async function dismissPortraitModal(page) {
-  const continueBtn = page.getByRole("button", { name: "המשך בכל זאת" });
+  const continueBtn = page.getByRole("button", { name: "  " });
   if ((await continueBtn.count()) > 0) {
     await continueBtn.click();
   }
@@ -292,9 +292,9 @@ async function dismissPortraitModal(page) {
 async function startOfflineGame(page, game) {
   await page.goto(game.route, { waitUntil: "domcontentloaded" });
   await assertNoOops(page, `${game.key} load`);
-  await page.getByText("בחרו רמת קושי").waitFor({ timeout: 15000 });
-  await page.getByRole("button", { name: "קל", exact: true }).click();
-  await page.getByRole("button", { name: "התחל משחק" }).click();
+  await page.getByText("  ").waitFor({ timeout: 15000 });
+  await page.getByRole("button", { name: "", exact: true }).click();
+  await page.getByRole("button", { name: " " }).click();
   await dismissPortraitModal(page);
   await page.getByText(game.progressPattern).waitFor({ timeout: 20000 });
 }

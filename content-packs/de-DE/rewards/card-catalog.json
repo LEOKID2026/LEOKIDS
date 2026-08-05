@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 134,
+  "cardCount": 142,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -282,66 +282,6 @@
         "description": "Leo Family Day — limited event card!"
       }
     },
-    "event_hanukkah": {
-      "cardKey": "event_hanukkah",
-      "title": "Leo Hanukkah",
-      "description": "Leo Hanukkah — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Hanukkah",
-        "description": "Leo Hanukkah — limited event card!"
-      }
-    },
-    "event_independence_day": {
-      "cardKey": "event_independence_day",
-      "title": "Leo Independence Day",
-      "description": "Leo Independence Day — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Independence Day",
-        "description": "Leo Independence Day — limited event card!"
-      }
-    },
-    "event_passover": {
-      "cardKey": "event_passover",
-      "title": "Leo Passover",
-      "description": "Leo Passover — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Passover",
-        "description": "Leo Passover — limited event card!"
-      }
-    },
-    "event_purim": {
-      "cardKey": "event_purim",
-      "title": "Leo Purim",
-      "description": "Leo Purim — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Purim",
-        "description": "Leo Purim — limited event card!"
-      }
-    },
-    "event_rosh_hashana": {
-      "cardKey": "event_rosh_hashana",
-      "title": "Leo Rosh Hashana",
-      "description": "Leo Rosh Hashana — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Rosh Hashana",
-        "description": "Leo Rosh Hashana — limited event card!"
-      }
-    },
-    "event_shavuot": {
-      "cardKey": "event_shavuot",
-      "title": "Leo Shavuot",
-      "description": "Leo Shavuot — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Shavuot",
-        "description": "Leo Shavuot — limited event card!"
-      }
-    },
     "event_spring": {
       "cardKey": "event_spring",
       "title": "Leo Spring",
@@ -350,16 +290,6 @@
       "accessibility": {
         "title": "Leo Spring",
         "description": "Leo Spring — limited event card!"
-      }
-    },
-    "event_sukkot": {
-      "cardKey": "event_sukkot",
-      "title": "Leo Sukkot",
-      "description": "Leo Sukkot — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Sukkot",
-        "description": "Leo Sukkot — limited event card!"
       }
     },
     "event_summer": {
@@ -380,16 +310,6 @@
       "accessibility": {
         "title": "Leo Summer Vacation",
         "description": "Leo Summer Vacation — limited event card!"
-      }
-    },
-    "event_tu_bishvat": {
-      "cardKey": "event_tu_bishvat",
-      "title": "Leo Tu Bishvat",
-      "description": "Leo Tu Bishvat — limited event card!",
-      "category": "event",
-      "accessibility": {
-        "title": "Leo Tu Bishvat",
-        "description": "Leo Tu Bishvat — limited event card!"
       }
     },
     "event_winter": {
@@ -1340,6 +1260,166 @@
       "accessibility": {
         "title": "Leo World Explorer",
         "description": "Collect Leo World Explorer!"
+      }
+    },
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "Leo Arcade-Champion",
+      "description": "Sammle Leo Arcade-Champion!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Arcade-Champion",
+        "description": "Sammle Leo Arcade-Champion!"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "Leo Hüter des Zauberwalds",
+      "description": "Sammle Leo Hüter des Zauberwalds!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Hüter des Zauberwalds",
+        "description": "Sammle Leo Hüter des Zauberwalds!"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "Leo Feuerwehrmann",
+      "description": "Sammle Leo Feuerwehrmann!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Feuerwehrmann",
+        "description": "Sammle Leo Feuerwehrmann!"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "Leo Galaxie-Entdecker",
+      "description": "Sammle Leo Galaxie-Entdecker!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Galaxie-Entdecker",
+        "description": "Sammle Leo Galaxie-Entdecker!"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "Leo Genie-Erfinder",
+      "description": "Sammle Leo Genie-Erfinder!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Genie-Erfinder",
+        "description": "Sammle Leo Genie-Erfinder!"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "Leo Goldritter",
+      "description": "Sammle Leo Goldritter!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Goldritter",
+        "description": "Sammle Leo Goldritter!"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "Leo Großzauberer",
+      "description": "Sammle Leo Großzauberer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Großzauberer",
+        "description": "Sammle Leo Großzauberer!"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "Legendärer Super-Leo",
+      "description": "Sammle Legendärer Super-Leo!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Legendärer Super-Leo",
+        "description": "Sammle Legendärer Super-Leo!"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "Leo Meisterkoch",
+      "description": "Sammle Leo Meisterkoch!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Meisterkoch",
+        "description": "Sammle Leo Meisterkoch!"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "Leo Meisterdetektiv",
+      "description": "Sammle Leo Meisterdetektiv!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Meisterdetektiv",
+        "description": "Sammle Leo Meisterdetektiv!"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "Leo Meistermaler",
+      "description": "Sammle Leo Meistermaler!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Meistermaler",
+        "description": "Sammle Leo Meistermaler!"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "Leo Musikstar",
+      "description": "Sammle Leo Musikstar!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Musikstar",
+        "description": "Sammle Leo Musikstar!"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "Leo Piratenkapitän",
+      "description": "Sammle Leo Piratenkapitän!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Piratenkapitän",
+        "description": "Sammle Leo Piratenkapitän!"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "Leo Rennfahrer",
+      "description": "Sammle Leo Rennfahrer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Rennfahrer",
+        "description": "Sammle Leo Rennfahrer!"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "Leo Fußballchampion",
+      "description": "Sammle Leo Fußballchampion!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Fußballchampion",
+        "description": "Sammle Leo Fußballchampion!"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "Leo Wellenchampion",
+      "description": "Sammle Leo Wellenchampion!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Wellenchampion",
+        "description": "Sammle Leo Wellenchampion!"
       }
     }
   }

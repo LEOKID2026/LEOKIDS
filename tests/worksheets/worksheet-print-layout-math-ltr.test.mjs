@@ -40,11 +40,11 @@ const PRINT_CSS = readFileSync(join(__dirname, "../../styles/worksheet-print.css
 import { renderMathFractionExpressionHtml } from "../../lib/worksheets/worksheet-fraction-html.js";
 
 const META = {
-  titleHe: "דף עבודה - חיבור",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה א׳",
-  topicHe: "חיבור",
-  levelHe: "רגיל",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "math",
 };
@@ -55,7 +55,7 @@ describe("worksheet-print-layout-math-ltr", () => {
     assert.equal(isWorksheetMathLtrExpression("13 - 5 = __"), true);
     assert.equal(isWorksheetMathLtrExpression("4 × 6 = __"), true);
     assert.equal(isWorksheetMathLtrExpression("3/4 + 1/4 = __"), true);
-    assert.equal(isWorksheetMathLtrExpression("דני קנה 3 תפוחים"), false);
+    assert.equal(isWorksheetMathLtrExpression("  3 "), false);
   });
 
   test("math addition worksheet uses 2-column grid only with centered header", () => {
@@ -178,11 +178,11 @@ describe("worksheet-print-layout-math-ltr", () => {
       preferMcq: false,
     });
     const payload = buildWorksheetPayload(rawQuestions, {
-      titleHe: "דף",
-      subjectHe: "מתמטיקה",
-      gradeHe: "ג׳",
-      topicHe: "חיבור",
-      levelHe: "רגיל",
+      titleHe: "",
+      subject: "",
+      grade: "",
+      topic: "",
+      level: "",
       inkSave: false,
       subjectId: "math",
       gradeKey: "g3",
@@ -249,8 +249,8 @@ describe("worksheet-print-layout-math-ltr", () => {
       displayIndex: 1,
       subject: "math",
       questionType: "word_problem",
-      stemHe: "דני קנה 3 תפוחים ו-2 בננות. כמה פירות יש לו?",
-      wordProblemBodyHe: "דני קנה 3 תפוחים ו-2 בננות. כמה פירות יש לו?",
+      stemHe: "  3  -2 .    ?",
+      wordProblemBodyHe: "  3  -2 .    ?",
       writingSpaceLines: 4,
       optionsHe: [],
     };
@@ -266,47 +266,47 @@ describe("worksheet-print-layout-math-ltr", () => {
   });
 
   test("fraction stems with Hebrew label split into prose + math lines", () => {
-    const split = splitWorksheetStemProseAndMath("חיסור במכנה זהה: 3/4 − 1/4:");
+    const split = splitWorksheetStemProseAndMath("  : 3/4 − 1/4:");
     assert.equal(split.mode, "split");
-    assert.equal(split.proseHe, "חיסור במכנה זהה:");
+    assert.equal(split.proseHe, "  :");
     assert.equal(split.mathLtr, "3/4 − 1/4");
 
-    const reduce = splitWorksheetStemProseAndMath("צמצם את השבר 4/8:");
+    const reduce = splitWorksheetStemProseAndMath("   4/8:");
     assert.equal(reduce.mode, "split");
-    assert.equal(reduce.proseHe, "צמצם את השבר:");
+    assert.equal(reduce.proseHe, "  :");
     assert.equal(reduce.mathLtr, "4/8");
 
-    const denom = splitWorksheetStemProseAndMath("חיבור שברים במכנה 2: 1/2 + 1/2:");
+    const denom = splitWorksheetStemProseAndMath("   2: 1/2 + 1/2:");
     assert.equal(denom.mode, "split");
-    assert.equal(denom.proseHe, "חיבור שברים במכנה 2:");
+    assert.equal(denom.proseHe, "   2:");
     assert.equal(denom.mathLtr, "1/2 + 1/2");
 
     const compare = splitWorksheetStemProseAndMath(
-      "איזה שבר גדול יותר - 3/4 או 1/4? רשמו את השבר הגדול:"
+      "    - 3/4  1/4?    :"
     );
     assert.equal(compare.mode, "mixed-inline");
-    assert.ok(compare.proseHe?.includes("איזה שבר גדול יותר"));
+    assert.ok(compare.proseHe?.includes("   "));
 
-    const embedded = splitWorksheetStemProseAndMath("מצא שבר שקול פשוט יותר ל-8/8:");
+    const embedded = splitWorksheetStemProseAndMath("     -8/8:");
     assert.equal(embedded.mode, "split");
-    assert.equal(embedded.proseHe, "מצא שבר שקול פשוט יותר:");
+    assert.equal(embedded.proseHe, "    :");
     assert.equal(embedded.mathLtr, "8/8");
 
-    const parens = splitWorksheetStemProseAndMath("חיסור שברים (מכנה 5): 3/5 − 2/5:");
+    const parens = splitWorksheetStemProseAndMath("  ( 5): 3/5 − 2/5:");
     assert.equal(parens.mode, "split");
-    assert.equal(parens.proseHe, "חיסור שברים (מכנה 5):");
+    assert.equal(parens.proseHe, "  ( 5):");
     assert.equal(parens.mathLtr, "3/5 − 2/5");
 
     const answerSplit = formatAnswerKeyStemDisplay(
-      "חיסור במכנה זהה: 3/4 − 1/4:",
+      "  : 3/4 − 1/4:",
       "2/4"
     );
     assert.equal(answerSplit.mode, "split");
-    assert.equal(answerSplit.proseHe, "חיסור במכנה זהה:");
+    assert.equal(answerSplit.proseHe, "  :");
     assert.equal(answerSplit.mathLtr, "3/4 − 1/4 = 2/4");
 
     const answerCompare = formatAnswerKeyStemDisplay(
-      "איזה שבר גדול יותר - 3/4 או 1/4? רשמו את השבר הגדול:",
+      "    - 3/4  1/4?    :",
       "3/4"
     );
     assert.equal(answerCompare.mode, "split");

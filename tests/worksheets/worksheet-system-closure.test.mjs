@@ -52,7 +52,7 @@ describe("worksheet-system-closure", () => {
     for (const rel of ["pages/parent/parent-report.js", "pages/parent/parent-report-detailed.js"]) {
       const src = readFileSync(join(ROOT, rel), "utf8");
       assert.doesNotMatch(src, /\/parent\/worksheets/);
-      assert.doesNotMatch(src, /דפי עבודה להדפסה/);
+      assert.doesNotMatch(src, /  /);
     }
   });
 

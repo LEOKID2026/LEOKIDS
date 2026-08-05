@@ -90,7 +90,7 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
           delete next[sliceIndex];
           return next;
         });
-        setFeedback("הסרנו תוספת מהחלק - בחרו תוספת חדשה");
+        setFeedback("to - Choose new");
         return;
       }
       applyToppingToSlice(sliceIndex, selectedTopping);
@@ -166,7 +166,7 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
             className={`${styles.slicePath} ${filled ? styles.sliceFilled : styles.sliceEmpty} ${selectedTopping ? styles.sliceHover : ""}`}
             onClick={() => onSliceTap(i)}
             role="button"
-            aria-label={`חלק ${i + 1}${topping ? ` · ${topping.name}` : ""}`}
+            aria-label={` ${i + 1}${topping ? ` · ${topping.name}` : ""}`}
           />
           {!filled && sliceCount === 4 ? (
             <text x={center.x} y={center.y + 2} textAnchor="middle" className={styles.sliceHint}>
@@ -196,11 +196,11 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="הפיצרייה של ליאו"
+      title="to to"
       introHero="🍕🦁"
-      introText="לקוחות נכנסים לפיצרייה - הכינו להם בדיוק את הפיצה שהם הזמינו!"
-      introHint={`${DIFFICULTY_HINTS[difficulty]} · ${PROTOTYPE_CUSTOMER_COUNT} לקוחות לדוגמה`}
-      startLabel="פתיחת משמרת 🍕"
+      introText="Customer to - Prepare to the Pizza Who!"
+      introHint={`${DIFFICULTY_HINTS[difficulty]} · ${PROTOTYPE_CUSTOMER_COUNT}  `}
+      startLabel="  🍕"
       onStart={startShift}
       score={score}
       mistakes={mistakes}
@@ -218,7 +218,7 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
           onPointerCancel={onPointerUp}
         >
           <p className={shop.counterLabel}>
-            🍕 דלפק הכנה · לקוח {customerIndex + 1} מתוך {customers.length}
+            🍕   ·  {customerIndex + 1}  {customers.length}
           </p>
 
           <div className={shop.shopGrid} data-educational-workplace-grid="">
@@ -242,7 +242,7 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
                 <svg
                   viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
                   className={styles.pizzaSvg}
-                  aria-label="פיצה לעבודה"
+                  aria-label="Pizza to"
                 >
                   <circle cx={CX} cy={CY} r={R + 6} fill="#92400e" />
                   <circle cx={CX} cy={CY} r={R} fill="#dc2626" opacity="0.92" />
@@ -255,7 +255,7 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
 
             <aside className={shop.sideCol}>
               <div className={`${s.panel} ${shop.toolsPanel}`}>
-                <p className={shop.toolsTitle}>🧺 מדף תוספות</p>
+                <p className={shop.toolsTitle}>🧺  </p>
                 <div className={shop.toolsGrid}>
                   {TOPPINGS.map((t) => (
                     <button
@@ -301,10 +301,10 @@ export default function LeoPizzeriaGame({ backHref = "/dev/learning-game-prototy
                   disabled={checkState === "ok"}
                   onClick={servePizza}
                 >
-                  הגש פיצה 🍕
+                    🍕
                 </button>
                 <button type="button" className={shop.secondaryBtn} onClick={resetPizza}>
-                  נקה פיצה
+
                 </button>
               </div>
             </div>

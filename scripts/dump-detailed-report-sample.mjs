@@ -84,13 +84,13 @@ function oldSubjectVisible(sp) {
   if (sp.summaryHe) lines.push(sp.summaryHe);
   const sec = sp.diagnosticSectionsHe;
   if (sec && typeof sec === "object") {
-    lines.push("מבט אבחוני לפי קטגוריות");
+    lines.push("   ");
     for (const [k, arr] of Object.entries(sec)) {
       if (Array.isArray(arr) && arr.length) lines.push(`[${k}]`, ...arr.slice(0, 5));
     }
   }
   if (sp.subSkillInsightsHe && sp.subSkillInsightsHe.length) {
-    lines.push("תת־מיומנויות (כשהנתון מאפשר)");
+    lines.push(" ( )");
     lines.push(
       ...sp.subSkillInsightsHe.slice(0, 2).map((x) => `${x.lineHe} — ${x.evidenceNoteHe || ""}`)
     );
@@ -100,27 +100,27 @@ function oldSubjectVisible(sp) {
     if (!Array.isArray(arr) || !arr.length) continue;
     const title =
       label === "excellence"
-        ? "הצלחה יציבה"
+        ? " "
         : label === "topStrengths"
-          ? "חוזקות מובילות"
+          ? " "
           : label === "maintain"
-            ? "מומלץ לשמר"
+            ? " "
             : label === "improving"
-              ? "נקודות לשיפור"
-              : "תחומים הדורשים תשומת לב";
+              ? " "
+              : "   ";
     lines.push(title);
     for (const row of arr.slice(0, 3)) {
       if (label === "topWeaknesses")
-        lines.push(`${row.labelHe}${row.mistakeCount != null ? ` (${row.mistakeCount} טעויות דומות)` : ""}`);
+        lines.push(`${row.labelHe}${row.mistakeCount != null ? ` (${row.mistakeCount}  )` : ""}`);
       else lines.push(`${row.labelHe} — ${row.accuracy}% (${row.questions})`);
     }
   }
   if (sp.parentActionHe) {
-    lines.push("פעולה לבית");
+    lines.push(" ");
     lines.push(sp.parentActionHe);
   }
   if (sp.nextWeekGoalHe) {
-    lines.push("יעד לשבוע");
+    lines.push(" ");
     lines.push(sp.nextWeekGoalHe);
   }
   return lines.join("\n");
@@ -130,16 +130,16 @@ function oldTopicCard(tr) {
   const parts = [
     tr.displayName,
     tr.recommendedStepLabelHe,
-    `שליטה ${tr.currentMastery}% · יציבות ${Math.round(tr.stability * 100)}% · ביטחון ${Math.round(tr.confidence * 100)}% · ${tr.questions} שאלות · דיוק ${tr.accuracy}%`,
+    ` ${tr.currentMastery}% ·  ${Math.round(tr.stability * 100)}% ·  ${Math.round(tr.confidence * 100)}% · ${tr.questions}  ·  ${tr.accuracy}%`,
   ];
   if (tr.recommendedEvidenceLevelHe) parts.push(tr.recommendedEvidenceLevelHe);
   if (tr.dataSufficiencyLabelHe) parts.push(tr.dataSufficiencyLabelHe);
-  if (tr.isEarlySignalOnly) parts.push("אות מוקדם (לא דפוס יציב עדיין)");
+  if (tr.isEarlySignalOnly) parts.push("  (   )");
   if (tr.recommendedStepReasonHe) parts.push(tr.recommendedStepReasonHe);
   if (tr.recommendedWhyNowHe) parts.push(tr.recommendedWhyNowHe);
   if (tr.recommendationStabilityNoteHe) parts.push(tr.recommendationStabilityNoteHe);
-  parts.push("להורה:", tr.recommendedParentActionHe);
-  parts.push("לתלמיד:", tr.recommendedStudentActionHe);
+  parts.push(":", tr.recommendedParentActionHe);
+  parts.push(":", tr.recommendedStudentActionHe);
   return parts.filter(Boolean).join("\n");
 }
 

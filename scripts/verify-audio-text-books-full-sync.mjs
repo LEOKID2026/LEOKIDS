@@ -254,7 +254,7 @@ function auditBook(bookDir) {
         fs.readFileSync(path.join(bookDir, "pages", `page-${padPageNum(i)}.txt`), "utf8")
       );
       const chapterRe = new RegExp(
-        `## Chapter ${padPageNum(i)} — עמוד ${i}\\s*\\n\\n([\\s\\S]*?)(?=\\n## Chapter |\\n*$)`,
+        `## Chapter ${padPageNum(i)} —  ${i}\\s*\\n\\n([\\s\\S]*?)(?=\\n## Chapter |\\n*$)`,
         "m"
       );
       const m = fullMd.match(chapterRe);

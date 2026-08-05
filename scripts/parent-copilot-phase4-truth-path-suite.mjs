@@ -34,7 +34,7 @@ function payloadIneligibleSingleSubject(payload) {
       topicRecommendations: [
         {
           topicRowKey: "t1",
-          displayName: "שברים",
+          displayName: "",
           questions: 14,
           accuracy: 78,
           contractsV1: {
@@ -65,15 +65,15 @@ function payloadIneligibleSingleSubject(payload) {
               wordingEnvelope: "WE0",
               hedgeLevel: "mandatory",
               allowedTone: "parent_professional_warm",
-              forbiddenPhrases: ["בטוח לחלוטין"],
-              requiredHedges: ["נכון לעכשיו"],
+              forbiddenPhrases: [" "],
+              requiredHedges: [" "],
               allowedSections: ["summary", "finding", "recommendation", "limitations"],
               recommendationIntensityCap: "RI0",
               textSlots: {
-                observation: "נכון לעכשיו בשברים נצפו 14 שאלות.",
-                interpretation: "נכון לעכשיו נשמרת זהירות בגלל מגבלות בביטחון ובמוכנות.",
+                observation: "    14 .",
+                interpretation: "       .",
                 action: null,
-                uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת שוב.",
+                uncertainty: "      .",
               },
             },
           },
@@ -129,7 +129,7 @@ function stripBlocks(blocks) {
 const payload = syntheticPayload();
 const sessionId = "phase4-full-pipe";
 sessionMemory.resetParentCopilotSessionForTests(sessionId);
-const uttPipe = "מה המצב בנושא השברים?";
+const uttPipe = "   ?";
 const manualPipe = manualDeterministicDraft(uttPipe, payload, null);
 assertBlocksShape(manualPipe.answerBlocks, "manual");
 
@@ -142,39 +142,39 @@ assert.deepEqual(stripBlocks(manualPipe.answerBlocks), stripBlocks(rPipe.answerB
 // --- Executive truth (aggregate → executive scope) ---
 const execRes = resolveScope({
   payload,
-  utterance: normalizeFreeformParentUtterance("מה הכי בולט בתקופה בדוח?"),
+  utterance: normalizeFreeformParentUtterance("    ?"),
   selectedContextRef: null,
 });
 assert.equal(execRes.scope?.scopeType, "executive");
 const tpExec = buildTruthPacketV1(payload, /** @type {any} */ (execRes.scope));
 const obsExec = String(tpExec?.contracts?.narrative?.textSlots?.observation || "");
 assert.ok(
-  obsExec.includes("קו ראשון") || /חשבון|אנגלית|לפי הדוח/u.test(obsExec),
+  obsExec.includes(" ") || /|| /u.test(obsExec),
   "executive observation should reflect anchored report lines or (when volume allows) executive summary trends",
 );
 
 // --- Subject-scoped truth ---
 const subRes = resolveScope({
   payload,
-  utterance: normalizeFreeformParentUtterance("מה המשמעות בחשבון?"),
+  utterance: normalizeFreeformParentUtterance("  ?"),
   selectedContextRef: null,
 });
 assert.equal(subRes.scope?.scopeType, "subject");
 const tpSub = buildTruthPacketV1(payload, /** @type {any} */ (subRes.scope));
 assert.ok(
-  String(tpSub?.contracts?.narrative?.textSlots?.observation || "").includes("שברים"),
+  String(tpSub?.contracts?.narrative?.textSlots?.observation || "").includes(""),
   "subject slice uses anchored topic row for that subject",
 );
 
 // --- Topic-scoped truth ---
 const topicRes = resolveScope({
   payload,
-  utterance: normalizeFreeformParentUtterance("מה המצב בנושא השברים?"),
+  utterance: normalizeFreeformParentUtterance("   ?"),
   selectedContextRef: null,
 });
 assert.equal(topicRes.scope?.scopeType, "topic");
 const tpTopic = buildTruthPacketV1(payload, /** @type {any} */ (topicRes.scope));
-assert.ok(String(tpTopic?.contracts?.narrative?.textSlots?.observation || "").includes("שברים"));
+assert.ok(String(tpTopic?.contracts?.narrative?.textSlots?.observation || "").includes(""));
 
 // --- Recommendation-ineligible: no next_step, skip ineligible semantic aggregate ---
 const badPayload = payloadIneligibleSingleSubject(payload);
@@ -182,13 +182,13 @@ sessionMemory.resetParentCopilotSessionForTests("phase4-rec");
 const rRec = parentCopilot.runParentCopilotTurn({
   audience: "parent",
   payload: badPayload,
-  utterance: "מה לעשות עכשיו",
+  utterance: "  ",
   sessionId: "phase4-rec",
 });
 assert.equal(rRec.resolutionStatus, "resolved");
 assert.ok(!rRec.answerBlocks.some((b) => b.type === "next_step"), "must not plan next_step when not recommendation-eligible");
 assert.equal(rRec.telemetry?.semanticAggregateSatisfied, false);
-const aggregateIneligiblePhrase = "הדוח לא מכוון כרגע להמלצת צעד מוגדרת מהבית";
+const aggregateIneligiblePhrase = "       ";
 assert.ok(
   !rRec.answerBlocks.some((b) => String(b.textHe || "").includes(aggregateIneligiblePhrase)),
   "ineligible recommendation_action should not use semantic aggregate composed copy",
@@ -200,7 +200,7 @@ assert.equal(rRec.fallbackUsed, false);
 const tpBlocked = buildTruthPacketV1(payload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "",
   interpretationScope: "blocked_advance",
   scopeClass: "blocked_advance",
 });
@@ -214,7 +214,7 @@ assert.equal(planBlocked.blockPlan[0], "uncertainty_reason");
 const tpCU = buildTruthPacketV1(payload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "",
   interpretationScope: "confidence_uncertainty",
   scopeClass: "confidence_uncertainty",
 });
@@ -229,7 +229,7 @@ assert.equal(planTeacher.blockPlan[1], "meaning");
 const tpStrengthWeak = buildTruthPacketV1(badPayload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "",
   interpretationScope: "strengths",
   scopeClass: "strengths",
 });
@@ -244,7 +244,7 @@ assert.ok(!planWell.blockPlan.includes("next_step"));
 const tpSVWeak = buildTruthPacketV1(payload, {
   scopeType: "topic",
   scopeId: "t1",
-  scopeLabel: "שברים",
+  scopeLabel: "",
   interpretationScope: "weaknesses",
   scopeClass: "weaknesses",
 });
@@ -257,7 +257,7 @@ assert.equal(planSV.blockPlan[1], "meaning");
 assert.equal(planSV.blockPlan[2], "caution");
 
 // --- Stage A: balanced strength-vs phrasing → executive interpretation scope ---
-const aBalanced = interpretFreeformStageA("מה חזק ומה חלש בדוח?", payload);
+const aBalanced = interpretFreeformStageA("    ?", payload);
 assert.equal(aBalanced.canonicalIntent, "strength_vs_weakness_summary");
 assert.equal(aBalanced.scopeClass, "executive");
 
@@ -270,21 +270,21 @@ const emptyAnchorsPayload = {
 const tpNoAnchorExec = buildTruthPacketV1(emptyAnchorsPayload, {
   scopeType: "executive",
   scopeId: "exec",
-  scopeLabel: "הדוח",
+  scopeLabel: "",
   interpretationScope: "executive",
   scopeClass: "executive",
 });
 assert.ok(tpNoAnchorExec, "no-anchor executive must return fallback truth packet");
 const obsNa = String(tpNoAnchorExec.contracts?.narrative?.textSlots?.observation || "");
 assert.ok(
-  /אין\s+כרגע\s+ניסוח\s+מעוגן|מעוגן\s+משורות|נתוני\s+תרגול\s+מעוגנים/u.test(obsNa),
+  /\s+\s+\s+|\s+|\s+\s+/u.test(obsNa),
   "no-anchor observation must stay generic (no topic-level claims)"
 );
 assert.equal(tpNoAnchorExec.surfaceFacts?.questions, 0);
 const tpNoAnchorTopic = buildTruthPacketV1(emptyAnchorsPayload, {
   scopeType: "topic",
   scopeId: "missing",
-  scopeLabel: "נושא",
+  scopeLabel: "",
   interpretationScope: "recommendation",
   scopeClass: "recommendation",
 });

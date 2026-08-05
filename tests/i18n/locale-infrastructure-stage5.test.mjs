@@ -28,7 +28,7 @@ test("math question display stem comes from params — no Hebrew left in stem", 
   const q = localizeLearningQuestion(
     {
       subject: "math",
-      question: "כמה זה?",
+      question: " ?",
       exerciseText: "2 + 3",
       operation: "addition",
       answers: ["4", "5", "6", "7"],
@@ -50,7 +50,7 @@ test("geometry params-based stem — no HE→EN sentence dependency for covered 
   const q = localizeLearningQuestion(
     {
       subject: "geometry",
-      question: "מה שטח הריבוע?",
+      question: "  ?",
       answers: ["16", "8", "4", "12"],
       correctAnswer: "16",
       params: { kind: "square_area", side: 4 },

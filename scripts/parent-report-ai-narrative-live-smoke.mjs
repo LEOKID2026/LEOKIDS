@@ -79,7 +79,7 @@ function topic(answers, correct, opts = {}) {
 function strongAggregate() {
   return {
     ok: true,
-    student: { id: "smoke_strong", full_name: "ילד דוגמה", grade_level: "g4", is_active: true },
+    student: { id: "smoke_strong", full_name: " ", grade_level: "g4", is_active: true },
     range: { from: "2026-05-01", to: "2026-05-08" },
     summary: {
       totalSessions: 6, completedSessions: 6,
@@ -122,7 +122,7 @@ function strongAggregate() {
 
 function thinAggregate() {
   const a = strongAggregate();
-  a.student = { id: "smoke_thin", full_name: "ילדה דוגמה", grade_level: "g3", is_active: true };
+  a.student = { id: "smoke_thin", full_name: " ", grade_level: "g3", is_active: true };
   a.summary.totalAnswers = 4;
   a.summary.correctAnswers = 2;
   a.summary.wrongAnswers = 2;
@@ -136,7 +136,7 @@ function thinAggregate() {
 
 function mixedAggregate() {
   const a = strongAggregate();
-  a.student = { id: "smoke_mixed", full_name: "תלמיד מעורב", grade_level: "g5", is_active: true };
+  a.student = { id: "smoke_mixed", full_name: " ", grade_level: "g5", is_active: true };
   // weak math, strong hebrew
   a.summary.totalAnswers = 50;
   a.summary.correctAnswers = 30;
@@ -222,7 +222,7 @@ async function main() {
     const ping = await callNarrativeLlm({
       env,
       prompt:
-        'Return ONLY this exact JSON, nothing else: {"summary":"שלום","strengths":[],"focus_areas":[],"home_tips":["א","ב"],"caution_note":""}',
+        'Return ONLY this exact JSON, nothing else: {"summary":"","strengths":[],"focus_areas":[],"home_tips":["",""],"caution_note":""}',
     });
     if (ping.ok) {
       const rawPreview = previewText(ping.raw, 240);

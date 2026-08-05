@@ -936,7 +936,7 @@ export function OutOfGradePracticeSection({ transparency }) {
         id="pr-detailed-out-of-grade-heading"
         className="pr-detailed-section-title cursor-pointer select-none list-none text-base md:text-lg font-extrabold tracking-tight text-white m-0 px-3 py-3 md:px-4 md:py-3.5 border-b border-white/10 [&::-webkit-details-marker]:hidden"
       >
-        {block.titleHe ||
+        {block.title ||
           reportPackCopy(
             "utils__parent-report-out-of-grade-transparency",
             "practice_outside_registered_grade"

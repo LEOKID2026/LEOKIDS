@@ -3,7 +3,7 @@ import Link from "next/link";
 import StudentShareFriendsButton from "../StudentShareFriendsButton.jsx";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
 import { isCardRewardsEnabledClient } from "../../../lib/rewards/reward-feature-flags.client.js";
-import { formatCountdownHe } from "../../../lib/rewards/rewards-ui.js";
+import { formatCountdownLabel } from "../../../lib/rewards/rewards-ui.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
 
@@ -43,12 +43,12 @@ export default function StudentSurpriseBoxWidget({
     return 1;
   });
   const [secondsRemaining, setSecondsRemaining] = useState(null);
-  const [errorHe, setErrorHe] = useState("");
+  const [error, setError] = useState("");
 
   const loadStatus = useCallback(async () => {
     if (demo) return;
     setPhase("loading");
-    setErrorHe("");
+    setError("");
     try {
       const res = await fetch(STATUS_PATH, {
         credentials: "include",
@@ -57,7 +57,7 @@ export default function StudentSurpriseBoxWidget({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setErrorHe(copy("surpriseBox", "loadError"));
+        setError(copy("surpriseBox", "loadError"));
         setPhase("error");
         return;
       }
@@ -68,7 +68,7 @@ export default function StudentSurpriseBoxWidget({
       );
       setPhase("ok");
     } catch {
-      setErrorHe(copy("surpriseBox", "networkError"));
+      setError(copy("surpriseBox", "networkError"));
       setPhase("error");
     }
   }, [copy, demo]);
@@ -150,7 +150,7 @@ export default function StudentSurpriseBoxWidget({
           {phase === "loading" ? (
             <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>{copy("surpriseBox", "loading")}</p>
           ) : phase === "error" ? (
-            <p className="mt-0.5 text-xs md:text-sm text-rose-600">{errorHe}</p>
+            <p className="mt-0.5 text-xs md:text-sm text-rose-600">{error}</p>
           ) : ready ? (
             <p className="mt-0.5 text-xs md:text-sm font-semibold text-emerald-700 dark:text-emerald-300">
               {pendingBoxCount > 1
@@ -160,7 +160,7 @@ export default function StudentSurpriseBoxWidget({
           ) : secondsRemaining != null ? (
             <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>
               {copy("surpriseBox", "nextBoxIn")}{" "}
-              <span className="tabular-nums font-semibold">{formatCountdownHe(secondsRemaining)}</span>
+              <span className="tabular-nums font-semibold">{formatCountdownLabel(secondsRemaining)}</span>
             </p>
           ) : (
             <p className={`mt-0.5 text-xs md:text-sm ${T.tileSub}`}>

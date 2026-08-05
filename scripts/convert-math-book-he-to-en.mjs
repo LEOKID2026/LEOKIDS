@@ -79,14 +79,14 @@ function restoreContent(text, preserved) {
 
 function preprocessHebrew(text) {
   const terms = [
-    [/חיבור/g, "ADDITION"], [/חיסור/g, "SUBTRACTION"], [/כפל/g, "MULTIPLICATION"],
-    [/חילוק/g, "DIVISION"], [/שברים/g, "FRACTIONS"], [/שבר/g, "FRACTION"],
-    [/משוואות/g, "EQUATIONS"], [/משוואה/g, "EQUATION"], [/השוואה/g, "COMPARISON"],
-    [/עשרוניים/g, "DECIMALS"], [/עשרוני/g, "DECIMAL"], [/אחוזים/g, "PERCENTS"],
-    [/אחוז/g, "PERCENT"], [/יחס/g, "RATIO"], [/קנה מידה/g, "SCALE"],
-    [/עיגול/g, "ROUNDING"], [/שכנים/g, "NEIGHBORS"], [/מאות/g, "HUNDREDS"],
-    [/עשרות/g, "TENS"], [/אחדות/g, "ONES"], [/שארית/g, "REMAINDER"],
-    [/ציר המספרים/g, "NUMBER LINE"], [/מונה/g, "NUMERATOR"], [/מכנה/g, "DENOMINATOR"],
+    [//g, "ADDITION"], [//g, "SUBTRACTION"], [//g, "MULTIPLICATION"],
+    [//g, "DIVISION"], [//g, "FRACTIONS"], [//g, "FRACTION"],
+    [//g, "EQUATIONS"], [//g, "EQUATION"], [//g, "COMPARISON"],
+    [//g, "DECIMALS"], [//g, "DECIMAL"], [//g, "PERCENTS"],
+    [//g, "PERCENT"], [//g, "RATIO"], [/ /g, "SCALE"],
+    [//g, "ROUNDING"], [//g, "NEIGHBORS"], [//g, "HUNDREDS"],
+    [//g, "TENS"], [//g, "ONES"], [//g, "REMAINDER"],
+    [/ /g, "NUMBER LINE"], [//g, "NUMERATOR"], [//g, "DENOMINATOR"],
   ];
   let out = text;
   for (const [p, r] of terms) out = out.replace(p, r);

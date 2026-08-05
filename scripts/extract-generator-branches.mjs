@@ -1,6 +1,6 @@
 /**
- * מיפוי סטטי של מחרוזות kind / נושאים בגנרטורי מתמטיקה וגיאומטריה.
- * פלט: reports/question-audit/declared-branches.json
+ *     kind /    .
+ * : reports/question-audit/declared-branches.json
  *
  * npm run audit:branches
  */
@@ -55,7 +55,7 @@ const payload = {
     kindLiterals: extractKindLiterals(mathSrc),
     selectedOpBranches: extractSelectedOpBranches(mathSrc),
     note:
-      "סריקת טקסט (לא AST). ענפים דינמיים בלי מחרוזת kind קבועה לא יופיעו.",
+      "  ( AST).     kind   .",
   },
   geometry: {
     sourceFile: "utils/geometry-question-generator.js",

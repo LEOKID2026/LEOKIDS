@@ -94,7 +94,7 @@ function BeltItemView({ item, selected, dragging, onPointerDown, onClick }) {
       onClick={onClick}
       role="button"
       tabIndex={0}
-      aria-label={`פריט ${item.item.name}`}
+      aria-label={`Item ${item.item.name}`}
     >
       <div className={styles.itemCard}>
         <RecyclingItemVisual item={item.item} />
@@ -218,7 +218,7 @@ export default function RecyclingFactoryPrototype() {
       addScore(SCORE.miss);
       setStreak(0);
       setFeedback({
-        text: "הפריט עבר את המסוע - נסו להיות מהירים יותר!",
+        text: "The item passed the conveyor — try to be faster!",
         fact: "",
         type: "bad",
       });
@@ -266,7 +266,7 @@ export default function RecyclingFactoryPrototype() {
 
       const showFact = Math.random() < 0.3;
       setFeedback({
-        text: "נכון! כל הכבוד ♻️",
+        text: "Correct! Well done ♻️",
         fact: showFact ? pickFactForBin(binId) : "",
         type: "ok",
       });
@@ -299,7 +299,7 @@ export default function RecyclingFactoryPrototype() {
       const item = beltItemsRef.current.find((b) => b.uid === uid)?.item;
       const correctLabel = item ? BINS[item.bin]?.label : "";
       setFeedback({
-        text: `לא בדיוק - ${item?.name ?? "פריט"} שייך ל${correctLabel}`,
+        text: `Not quite — ${item?.name ?? "Item"} goes in ${correctLabel}`,
         fact: "",
         type: "bad",
       });
@@ -366,7 +366,7 @@ export default function RecyclingFactoryPrototype() {
     setMissedItems(0);
     setBeltItems([]);
     setSelectedUid(null);
-    setFeedback({ text: "גררו פריט לפח או לחצו על פריט ואז על פח", fact: "", type: "" });
+    setFeedback({ text: "Drag an item to a bin, or tap an item then a bin", fact: "", type: "" });
     setStartTime(Date.now());
     window.setTimeout(() => spawnItems(), 200);
   }, [spawnItems]);
@@ -556,13 +556,13 @@ export default function RecyclingFactoryPrototype() {
       <span className={`${styles.deco} ${styles.leaf2}`} aria-hidden>
         🌿
       </span>
-      <span className={`${styles.deco} ${styles.leoHelper}`} aria-hidden title="ליאו העוזר">
+      <span className={`${styles.deco} ${styles.leoHelper}`} aria-hidden title="Leo the helper">
         🦁
       </span>
 
       <header className={styles.header}>
         <Link href="/dev/learning-game-prototypes" className={styles.backBtn}>
-          ← חזרה
+          ← Back
         </Link>
         {phase === "play" ? (
           <div className={styles.hud}>
@@ -577,7 +577,7 @@ export default function RecyclingFactoryPrototype() {
           </div>
         ) : (
           <div className={styles.hud}>
-            <span className={styles.hudChip}>🧪 אבטיפוס</span>
+            <span className={styles.hudChip}>🧪 Prototype</span>
           </div>
         )}
         <div style={{ minWidth: 40 }} aria-hidden />
@@ -586,8 +586,8 @@ export default function RecyclingFactoryPrototype() {
       {phase === "intro" ? (
         <div className={styles.screenCenter}>
           <p className={styles.introHero}>🏭♻️</p>
-          <h1 className={styles.introTitle}>מפעל המיחזור של ליאו</h1>
-          <p className={styles.introText}>מיינו את הפריטים לפחים הנכונים ושמרו על הסביבה</p>
+          <h1 className={styles.introTitle}>Leo&apos;s Recycling Factory</h1>
+          <p className={styles.introText}>Sort items into the right bins and help the environment</p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
@@ -601,11 +601,11 @@ export default function RecyclingFactoryPrototype() {
             ))}
           </div>
           <p className={styles.introText} style={{ fontSize: "0.78rem" }}>
-            {diffConfig.itemsTarget} פריטים · עד {diffConfig.maxMistakes} טעויות · {activeBins.length}{" "}
-            פחים
+            {diffConfig.itemsTarget} items · up to {diffConfig.maxMistakes} mistakes · {activeBins.length}{" "}
+            bins
           </p>
           <button type="button" className={styles.startBtn} onClick={startGame}>
-            התחל משחק
+            Start game
           </button>
         </div>
       ) : null}
@@ -613,14 +613,14 @@ export default function RecyclingFactoryPrototype() {
       {phase === "play" ? (
         <div className={styles.main}>
           <div className={styles.factorySign}>
-            <h2 className={styles.factoryTitle}>מפעל המיחזור של ליאו</h2>
-            <p className={styles.factorySub}>רמה: {diffConfig.label}</p>
+            <h2 className={styles.factoryTitle}>Leo&apos;s Recycling Factory</h2>
+            <p className={styles.factorySub}>Level: {diffConfig.label}</p>
           </div>
 
           <div className={styles.playArea}>
             <div className={styles.conveyorWrap}>
               <div className={styles.conveyorFrame}>
-                <span className={styles.conveyorLabel}>🏭 מסוע</span>
+                <span className={styles.conveyorLabel}>🏭 Conveyor</span>
                 <div className={styles.beltTrack}>
                   <div className={styles.beltSurface} aria-hidden />
                   <div className={styles.beltRollLeft} aria-hidden />
@@ -653,7 +653,7 @@ export default function RecyclingFactoryPrototype() {
                 </p>
               ) : (
                 <p className={styles.feedbackText} style={{ opacity: 0.55 }}>
-                  גררו לפח או לחצו פריט ← פח
+                  Drag to bin or tap item → bin
                 </p>
               )}
             </div>
@@ -670,37 +670,37 @@ export default function RecyclingFactoryPrototype() {
           <div className={styles.endCard}>
             <h2 className={styles.endTitle}>
               {phase === "won"
-                ? "כיף גדול! הצלחתם למיין את הפריטים!"
-                : "לא נורא, ננסה שוב למיין טוב יותר."}
+                ? "Great job! You sorted all the items!"
+                : "Not bad — let's try sorting again."}
             </h2>
             <div className={styles.endStats}>
               <div className={styles.endStat}>
-                ניקוד
+                Score
                 <span className={styles.endStatValue}>{score}</span>
               </div>
               <div className={styles.endStat}>
-                פריטים נכונים
+                Correct items
                 <span className={styles.endStatValue}>{correctItems}</span>
               </div>
               <div className={styles.endStat}>
-                טעויות
+                Mistakes
                 <span className={styles.endStatValue}>{wrongItems + missedItems}</span>
               </div>
               <div className={styles.endStat}>
-                דיוק
+                Accuracy
                 <span className={styles.endStatValue}>{accuracyPct}%</span>
               </div>
               <div className={styles.endStat}>
-                רצף הכי טוב
+                Best streak
                 <span className={styles.endStatValue}>{bestStreak}</span>
               </div>
               <div className={styles.endStat}>
-                רמה
+                Level
                 <span className={styles.endStatValue}>{diffConfig.label}</span>
               </div>
             </div>
             <button type="button" className={styles.startBtn} onClick={resetGame}>
-              משחק חדש
+              New game
             </button>
           </div>
         </div>

@@ -96,23 +96,23 @@ test("mapTeacherActivityStudentAnswerDetail uses frozen question_set for unanswe
     questionSet: [
       {
         qk: "q1",
-        question: "מהו Q1?",
-        correct_answer: "א",
-        choices: ["א", "ב"],
+        question: " Q1?",
+        correct_answer: "",
+        choices: ["", ""],
       },
       {
         qk: "q2",
-        question: "מהו Q2?",
-        correct_answer: "ג",
-        choices: ["ג", "ד"],
+        question: " Q2?",
+        correct_answer: "",
+        choices: ["", ""],
       },
     ],
     attempts: [
       {
         question_index: 0,
         question_key: "q1",
-        selected_answer: "א",
-        correct_answer: "א",
+        selected_answer: "",
+        correct_answer: "",
         is_correct: true,
         question_snapshot: {},
       },
@@ -122,13 +122,13 @@ test("mapTeacherActivityStudentAnswerDetail uses frozen question_set for unanswe
   });
 
   assert.equal(rows[0].questionKey, "q1");
-  assert.equal(rows[1].question, "מהו Q2?");
+  assert.equal(rows[1].question, " Q2?");
   assert.equal(rows[1].selectedAnswer, null);
   assert.equal(rows[1].questionKey, "q2");
 });
 
 test("legacyQuestionUnavailableLabel is stable", () => {
-  assert.equal(legacyQuestionUnavailableLabel(2), "שאלה 3 - לא זמינה");
+  assert.equal(legacyQuestionUnavailableLabel(2), " 3 -  ");
 });
 
 test("normalizeSnapshotStatus defaults to legacy_missing", () => {

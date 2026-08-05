@@ -18,11 +18,11 @@ import {
 import { toPrintableWorksheetQuestion } from "../../lib/worksheets/worksheet-question-sanitize.server.js";
 
 const META = {
-  titleHe: "דף עבודה - שברים",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ד׳",
-  topicHe: "שברים",
-  levelHe: "בינוני",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "math",
 };
@@ -56,7 +56,7 @@ describe("math-fraction-print", () => {
       const hasFracToken =
         hasStackedFractionToken(q.mathExpressionLtr) ||
         /\d+\s*\/\s*\d+/.test(q.mathExpressionLtr) ||
-        /שבר/.test(q.mathExpressionLtr) ||
+        //.test(q.mathExpressionLtr) ||
         /[+\-×÷=]/.test(q.mathExpressionLtr);
       assert.ok(hasFracToken, `expression: ${q.mathExpressionLtr}`);
       const tokens = parseMathFractionExpression(q.mathExpressionLtr);

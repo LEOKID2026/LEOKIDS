@@ -23,17 +23,17 @@ const reportPageSrc = readFileSync(
 );
 
 const SAMPLE = {
-  activity: { title: "זויות תרגול", questionCount: 5, activityId: "abc" },
+  activity: { title: " ", questionCount: 5, activityId: "abc" },
   students: [
     {
-      studentFullNameMasked: "איתי ביטון",
+      studentFullNameMasked: " ",
       status: "submitted",
       answersCount: 5,
       correctCount: 4,
       scorePct: 80,
     },
     {
-      studentFullNameMasked: "גל פלג",
+      studentFullNameMasked: " ",
       status: "not_started",
       answersCount: 0,
       correctCount: 0,
@@ -45,26 +45,26 @@ const SAMPLE = {
 test("activity report CSV uses UTF-8 BOM and Hebrew headers", () => {
   const csv = buildActivityReportCsvContent(SAMPLE);
   assert.ok(csv.startsWith("\uFEFF"));
-  assert.ok(csv.includes("תלמיד,סטטוס,תשובות,נכונות,ציון"));
+  assert.ok(csv.includes(",,,,"));
   assert.ok(!csv.includes("student,status"));
 });
 
 test("activity report CSV uses Hebrew status labels", () => {
   const csv = buildActivityReportCsvContent(SAMPLE);
-  assert.ok(csv.includes("הוגש"));
-  assert.ok(csv.includes("טרם התחיל"));
+  assert.ok(csv.includes(""));
+  assert.ok(csv.includes(" "));
   assert.ok(!csv.includes("not_started"));
   assert.ok(!csv.includes("submitted"));
 });
 
 test("activity report student rows sort by score descending", () => {
   const rows = buildActivityReportStudentRows(SAMPLE);
-  assert.equal(rows[0][0], "איתי ביטון");
-  assert.equal(rows[0][1], "הוגש");
+  assert.equal(rows[0][0], " ");
+  assert.equal(rows[0][1], "");
   assert.equal(rows[0][3], "4/5");
   assert.equal(rows[0][4], 80);
-  assert.equal(rows[1][0], "גל פלג");
-  assert.equal(rows[1][1], "טרם התחיל");
+  assert.equal(rows[1][0], " ");
+  assert.equal(rows[1][1], " ");
 });
 
 test("activity report xlsx workbook uses Hebrew sheet, headers, RTL, and column widths", () => {
@@ -81,8 +81,8 @@ test("activity report xlsx workbook uses Hebrew sheet, headers, RTL, and column 
     ws["!cols"]?.map((col) => col.wch),
     ACTIVITY_REPORT_XLSX_COL_WIDTHS
   );
-  assert.equal(ws.B2?.v, "הוגש");
-  assert.equal(ws.A3?.v, "גל פלג");
+  assert.equal(ws.B2?.v, "");
+  assert.equal(ws.A3?.v, " ");
   assert.equal(ws.D2?.v, "4/5");
   assert.equal(ws.E2?.v, 80);
 });
@@ -106,12 +106,12 @@ test("activity report xlsx buffer keeps RTL view and column widths after write",
     ws["!cols"]?.map((col) => col.wch),
     ACTIVITY_REPORT_XLSX_COL_WIDTHS
   );
-  assert.equal(ws.A2?.v, "איתי ביטון");
+  assert.equal(ws.A2?.v, " ");
   assert.equal(ws.E2?.v, 80);
 });
 
 test("applyActivityReportSheetFormatting sets explicit widths for key columns", () => {
-  const sheet = XLSX.utils.aoa_to_sheet([ACTIVITY_REPORT_EXPORT_HEADERS_HE, ["א", "הוגש", 5, "4/5", 80]]);
+  const sheet = XLSX.utils.aoa_to_sheet([ACTIVITY_REPORT_EXPORT_HEADERS_HE, ["", "", 5, "4/5", 80]]);
   applyActivityReportSheetFormatting(sheet, 2, ACTIVITY_REPORT_EXPORT_HEADERS_HE.length);
   assert.deepEqual(
     sheet["!cols"]?.map((col) => col.wch),
@@ -121,8 +121,8 @@ test("applyActivityReportSheetFormatting sets explicit widths for key columns", 
 
 test("activity report download stem is Hebrew and title-based", () => {
   const stem = buildActivityReportDownloadStem(SAMPLE);
-  assert.match(stem, /^דוח-פעילות-/);
-  assert.ok(stem.includes("זויות"));
+  assert.match(stem, /^--/);
+  assert.ok(stem.includes(""));
 });
 
 test("report page uses shared Hebrew export helpers", () => {

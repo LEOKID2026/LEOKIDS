@@ -19,11 +19,11 @@ import {
 } from "../../lib/worksheets/worksheet-payload-build.server.js";
 
 const META_BASE = {
-  titleHe: "דף עבודה - מתמטיקה",
-  subjectHe: "מתמטיקה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "כפל",
-  levelHe: "בינוני",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "math",
 };

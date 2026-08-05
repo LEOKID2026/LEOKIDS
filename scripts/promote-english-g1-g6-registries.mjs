@@ -6,12 +6,12 @@ import fs from "node:fs";
 import path from "node:path";
 
 const GRADE_LABELS = {
-  g1: "א׳",
-  g2: "ב׳",
-  g3: "ג׳",
-  g4: "ד׳",
-  g5: "ה׳",
-  g6: "ו׳",
+  g1: "",
+  g2: "",
+  g3: "",
+  g4: "",
+  g5: "",
+  g6: "",
 };
 
 const MANIFESTS = {
@@ -53,8 +53,8 @@ export const ENGLISH_${upper}_BOOK_META = Object.freeze({
   subject: "english",
   grade: "${grade}",
   routeBase: "/learning/book/english/${grade}",
-  bookTitleHe: "ספר אנגלית — כיתה ${label}",
-  gradeShortLabel: "כיתה ${label}",
+  bookTitleHe: "  —  ${label}",
+  gradeShortLabel: " ${label}",
   draftsDir: "docs/learning-book/english/${grade}/drafts",
 });
 

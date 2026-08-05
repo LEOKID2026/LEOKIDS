@@ -1,4 +1,4 @@
--- Educational game #7: leo-pizzeria (הפיצרייה של ליאו)
+-- Educational game #7: leo-pizzeria
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 083 (leo-number-path).
@@ -62,7 +62,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-pizzeria',
   'educational',
-  'הפיצרייה של ליאו',
+  'Leo''s Pizzeria',
   '/student/educational-games/leo-pizzeria',
   '/student/educational-games',
   coalesce(
@@ -71,7 +71,7 @@ insert into public.site_game_catalog (
   ),
   65,
   '🍕',
-  'שברים דרך הכנת פיצות'
+  'Build, identify, equivalent, compare, and combine fractions'
 )
 on conflict (game_key) do update set
   category = excluded.category,

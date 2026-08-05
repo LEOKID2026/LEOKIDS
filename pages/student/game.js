@@ -70,11 +70,11 @@ export default function StudentSoloGamesPage() {
                         <div className="flex items-center gap-3 mb-2">
                           <div className={GH.cardEmoji}>{game.emoji}</div>
                           <div>
-                            <h2 className={GH.cardTitle}>{game.titleHe}</h2>
+                            <h2 className={GH.cardTitle}>{game.title}</h2>
                             <p className={GH.cardMeta}>{t("games.soloMeta")}</p>
                           </div>
                         </div>
-                        <p className={`${GH.cardBlurb} flex-1`}>{game.blurbHe}</p>
+                        <p className={`${GH.cardBlurb} flex-1`}>{game.blurb}</p>
                         {locked ? (
                           <GamesHubLockFooter ctaClass={GH.cardCta} />
                         ) : (
@@ -104,11 +104,11 @@ export default function StudentSoloGamesPage() {
                     <div className="flex items-center gap-3 mb-2">
                       <div className={GH.cardEmoji}>{SOLO_DEV_PROTOTYPES_HUB.emoji}</div>
                       <div>
-                        <h2 className={GH.cardTitle}>{SOLO_DEV_PROTOTYPES_HUB.titleHe}</h2>
+                        <h2 className={GH.cardTitle}>{SOLO_DEV_PROTOTYPES_HUB.title}</h2>
                         <p className={GH.cardMeta}>Dev · internal testing</p>
                       </div>
                     </div>
-                    <p className={`${GH.cardBlurb} flex-1`}>{SOLO_DEV_PROTOTYPES_HUB.blurbHe}</p>
+                    <p className={`${GH.cardBlurb} flex-1`}>{SOLO_DEV_PROTOTYPES_HUB.blurb}</p>
                     <span className={GH.cardCta}>{SOLO_DEV_PROTOTYPES_HUB.ctaHe}</span>
                   </Link>
                 ) : null}

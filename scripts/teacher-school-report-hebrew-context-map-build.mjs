@@ -11,19 +11,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const INVENTORY_PATH = join(ROOT, "reports", "teacher-school-report-hebrew-copy-inventory.xlsx");
 const OUT_CSV = join(ROOT, "reports", "teacher-school-report-hebrew-context-map.csv");
-const NEEDS_FULL = "צריך לבדוק בדוח מלא";
-const AFTER_PLACEHOLDER = "ימולא לאחר אישור נוסח";
+const NEEDS_FULL = "   ";
+const AFTER_PLACEHOLDER = "   ";
 
 const PLACEHOLDER_SUBS = [
   [/\$\{body\.data\.loginUsername\}/g, "danileo"],
-  [/\$\{displayName\}/g, "[תלמיד]"],
-  [/\$\{studentName\}/g, "[תלמיד]"],
-  [/\$\{classCard\?\.name[^}]*\}/g, "כיתה ה׳"],
-  [/\$\{classLabel[^}]*\}/g, "כיתה ה׳"],
-  [/\$\{subjectLabel[^}]*\}/g, "חשבון"],
-  [/\$\{activeSubject\.subjectLabel\}/g, "חשבון"],
-  [/\$\{topicName\}/g, "שברים"],
-  [/\$\{subjHe\}/g, "חשבון"],
+  [/\$\{displayName\}/g, "[]"],
+  [/\$\{studentName\}/g, "[]"],
+  [/\$\{classCard\?\.name[^}]*\}/g, " "],
+  [/\$\{classLabel[^}]*\}/g, " "],
+  [/\$\{subjectLabel[^}]*\}/g, ""],
+  [/\$\{activeSubject\.subjectLabel\}/g, ""],
+  [/\$\{topicName\}/g, ""],
+  [/\$\{subjHe\}/g, ""],
   [/\$\{acc\}/g, "51%"],
   [/\$\{answers\}/g, "146"],
   [/\$\{sessions\}/g, "12"],
@@ -31,16 +31,16 @@ const PLACEHOLDER_SUBS = [
   [/\$\{total\}/g, "146"],
   [/\$\{count\}/g, "24"],
   [/\$\{days\}/g, "3"],
-  [/\$\{level\}/g, "ה׳"],
-  [/\$\{gradeLevel[^}]*\}/g, "כיתה ה׳"],
+  [/\$\{level\}/g, ""],
+  [/\$\{gradeLevel[^}]*\}/g, " "],
   [/\$\{item\.count\}/g, "28"],
   [/\$\{cls\.memberCount[^}]*\}/g, "28"],
   [/\$\{cls\.activityCount\}/g, "4"],
-  [/\$\{cls\.teacherName[^}]*\}/g, "[מורה]"],
+  [/\$\{cls\.teacherName[^}]*\}/g, "[]"],
   [/\$\{w\}/g, "5"],
   [/\$\{tagLab[^}]*\}/g, ""],
   [/\$\{tagLab\s*\?[^`]*`?/g, ""],
-  [/\$\{[^}]+\}/g, "[ערך]"],
+  [/\$\{[^}]+\}/g, "[]"],
   [/\?\s*["'`]/g, ""],
   [/\s+\./g, "."],
 ];
@@ -148,119 +148,119 @@ function mapKeyLabel(line) {
 
 function surfaceLocationLabel(surface, audience) {
   const map = {
-    teacher_dashboard: "בלוח בקרה של המורה",
-    student_report: "בדוח תלמיד",
-    class_report: "בדוח כיתה",
-    activity_report: "בדוח פעילות כיתתית",
-    activity_export: "בייצוא דוח פעילות (Excel/PDF)",
-    guidance_diagnostic: "בבלוק הכוונה/אבחון",
-    school_admin_ui: "בממשק ניהול בית הספר",
-    subject_permission: "בהרשאות מקצוע / סינון מקצועות",
-    api_layer: "בהודעת מערכת למורה/מנהל",
-    report_general: audience === "school_manager" ? "בממשק בית הספר" : "בממשק המורה",
+    teacher_dashboard: "   ",
+    student_report: " ",
+    class_report: " ",
+    activity_report: "  ",
+    activity_export: "   (Excel/PDF)",
+    guidance_diagnostic: " /",
+    school_admin_ui: "   ",
+    subject_permission: "  /  ",
+    api_layer: "  /",
+    report_general: audience === "school_manager" ? "  " : " ",
   };
-  return map[surface] || "בדוח/ממשק מורה או בית ספר";
+  return map[surface] || "/    ";
 }
 
 function sectionLocationLabel(section) {
   const map = {
-    data_health: "מצב נתונים",
-    guidance_recommendation: "המלצות והכוונה",
-    status_labels: "תוויות סטטוס",
-    export_labels: "תוויות ייצוא",
-    student_summary: "סיכום תלמיד",
-    class_summary: "סיכום כיתה",
-    activity: "פעילות",
-    subject_scope: "היקף מקצועות",
-    collapsed_details: "פירוט מקצועי (מורחב)",
-    general: "אזור כללי",
+    data_health: " ",
+    guidance_recommendation: " ",
+    status_labels: " ",
+    export_labels: " ",
+    student_summary: " ",
+    class_summary: " ",
+    activity: "",
+    subject_scope: " ",
+    collapsed_details: "  ()",
+    general: " ",
   };
-  return map[section] || section || "כללי";
+  return map[section] || section || "";
 }
 
 function inferSubject(surface, section, text, inventory) {
-  if (/מקצוע|subject|חשבון|עברית|גאומטריה|אנגלית/i.test(`${text} ${inventory?.condition || ""}`)) {
-    if (/עברית/.test(text)) return "עברית";
-    if (/גאומטריה/.test(text)) return "גאומטריה";
-    if (/אנגלית/.test(text)) return "אנגלית";
-    return "חשבון";
+  if (/|subject||||/i.test(`${text} ${inventory?.condition || ""}`)) {
+    if (//.test(text)) return "";
+    if (//.test(text)) return "";
+    if (//.test(text)) return "";
+    return "";
   }
-  if (section === "subject_scope" || surface === "subject_permission") return "חשבון (לדוגמה)";
-  if (/student_report|class_report|activity/.test(surface)) return "חשבון";
+  if (section === "subject_scope" || surface === "subject_permission") return " ()";
+  if (/student_report|class_report|activity/.test(surface)) return "";
   return "";
 }
 
 function inferGrade(surface, scenarios, text) {
-  if (/כיתה|שכבה|grade/i.test(text)) {
-    const m = text.match(/כיתה\s*([א-ת״'׳]+)/);
-    if (m) return `כיתה ${m[1]}`;
+  if (/||grade/i.test(text)) {
+    const m = text.match(/\s*([-']+)/);
+    if (m) return ` ${m[1]}`;
   }
   const sc = scenarios.find((s) => s.grade);
   if (sc?.grade) return sc.grade;
-  if (/class_report|student_report|teacher_dashboard|activity/.test(surface)) return "כיתה ה׳";
+  if (/class_report|student_report|teacher_dashboard|activity/.test(surface)) return " ";
   return "";
 }
 
 function inferClassOrStudentContext(surface, audience, text) {
-  if (surface === "student_report" || /תלמיד/.test(text)) return "תלמיד בודד — [תלמיד]";
-  if (surface === "class_report" || /כיתה/.test(text)) return "כיתה — כיתה ה׳ (28 תלמידים)";
-  if (surface === "teacher_dashboard") return "רשימת כיתות/תלמידים בלוח בקרה";
+  if (surface === "student_report" || //.test(text)) return "  — []";
+  if (surface === "class_report" || //.test(text)) return " —   (28 )";
+  if (surface === "teacher_dashboard") return " /  ";
   if (surface === "activity_report" || surface === "activity_export")
-    return "פעילות כיתתית — תרגול מודרך בחשבון";
-  if (audience === "school_manager") return "מנהל/ת בית ספר — סקירת בית ספר";
-  if (audience === "school_teacher") return "מורה בבית ספר — כיתה משויכת";
+    return "  —   ";
+  if (audience === "school_manager") return "/   —   ";
+  if (audience === "school_teacher") return "   —  ";
   return "";
 }
 
 function inferDataState(section, risk, text) {
   const t = `${section} ${risk} ${text}`;
-  if (/no_data|אין כיתות|אין תלמידים|אין פעילות|לא הייתה פעילות|never_active/i.test(t)) return "no_data";
-  if (/thin|מצומצם|עדיין מעט|insufficient|אין מספיק נתונים/i.test(t)) return "thin_data";
-  if (/weak|קושי|critical|התערבות|reinforcement/i.test(t)) return "weak_result";
-  if (/strong|בקצב תקין|on_track/i.test(t)) return "normal_or_strong";
-  if (/partial|date_range|בתקופה/i.test(t)) return "partial_date_range";
+  if (/no_data| | | |  |never_active/i.test(t)) return "no_data";
+  if (/thin|| |insufficient|  /i.test(t)) return "thin_data";
+  if (/weak||critical||reinforcement/i.test(t)) return "weak_result";
+  if (/strong| |on_track/i.test(t)) return "normal_or_strong";
+  if (/partial|date_range|/i.test(t)) return "partial_date_range";
   return "normal_data";
 }
 
 function engineMeaningPlain(candidate, inventory, codeCtx) {
   const existing = String(candidate.meaning_plain_he || "").trim();
-  if (existing && !/^תווית בקובץ ייצוא/.test(existing)) return existing;
+  if (existing && !/^  /.test(existing)) return existing;
 
   const text = normalizeCore(candidate.current_hebrew);
   const risk = String(candidate.risk || inventory?.problem_type || "");
 
-  if (/דורש התערבות מיידית|critical/i.test(text)) {
-    return "הדוח מסמן שהמורה צריך לפעול במהירות — הנתונים מצביעים על קושי משמעותי שדורש טיפול.";
+  if (/  |critical/i.test(text)) {
+    return "      —       .";
   }
-  if (/דורש חיזוק|needs_reinforcement/i.test(text)) {
-    return "הדוח ממליץ על חיזוק ממוקד לפני המשך התקדמות.";
+  if (/ |needs_reinforcement/i.test(text)) {
+    return "       .";
   }
-  if (/כדאי לעקוב|monitor/i.test(text)) {
-    return "הדוח מבקש מהמורה לעקוב אחרי התלמיד/הכיתה — עדיין אין צורך בהתערבות חזקה.";
+  if (/ |monitor/i.test(text)) {
+    return "     / —     .";
   }
-  if (/בקצב תקין|on_track/i.test(text)) {
-    return "הדוח מציג שהכיתה/התלמיד מתקדמים בקצב סביר.";
+  if (/ |on_track/i.test(text)) {
+    return "  /   .";
   }
-  if (/אין מספיק נתונים|no_data|לא היו מפגש|לא הייתה פעילות/i.test(text)) {
-    return "המערכת מודיעה שאין מספיק נתוני תרגול בתקופה — לא ניתן להסיק מסקנה חזקה.";
+  if (/  |no_data|  |  /i.test(text)) {
+    return "       —     .";
   }
-  if (/מנוע האבחון|engine_jargon/.test(`${text} ${risk}`)) {
-    return "הטקסט מסביר למורה שדוח זה נפרד ממסלול האבחון האוטומטי — יש לנסח מחדש בלי אזכור 'מנוע'.";
+  if (/ |engine_jargon/.test(`${text} ${risk}`)) {
+    return "         —      ''.";
   }
-  if (/אבחון|diagnostic|guidance_wording/.test(`${text} ${risk}`)) {
-    return "הדוח מנסה להסביר למורה את מקור הקושי או את כיוון הפעולה המקצועית.";
+  if (/|diagnostic|guidance_wording/.test(`${text} ${risk}`)) {
+    return "           .";
   }
   if (/UUID|PIN|untranslated_english/i.test(`${text} ${risk}`)) {
-    return "הטקסט מיועד למורה/מנהל אך מכיל מונח טכני באנגלית שעלול לבלבל.";
+    return "  /       .";
   }
-  if (/המלצ|כיוון|תרגול|פעולה/i.test(text)) {
-    return "הדוח נותן למורה המלצת פעולה מקצועית על בסיס הנתונים.";
+  if (/|||/i.test(text)) {
+    return "        .";
   }
   if (codeCtx?.mapLabel) {
-    return `תווית/משפט במפתח ${codeCtx.mapLabel} — מוצג למורה/מנהל בהקשר ${sectionLocationLabel(candidate.section)}.`;
+    return `/  ${codeCtx.mapLabel} —  /  ${sectionLocationLabel(candidate.section)}.`;
   }
   if (existing) return existing;
-  return "הטקסט מוצג למורה או למנהל/ת בית ספר כחלק מדוח או ממשק ניהול.";
+  return "    /       .";
 }
 
 function extractCodeContext(file, line, text, inventory) {
@@ -310,17 +310,17 @@ function buildBeforeContext(candidate, inventory, codeCtx, subject, grade, class
   const blocks = [
     `${loc} | ${sec}`,
   ];
-  if (subject) blocks.push(`מקצוע לדוגמה: ${subject}`);
-  if (grade) blocks.push(`שכבה לדוגמה: ${grade}`);
-  if (classCtx) blocks.push(`הקשר: ${classCtx}`);
-  if (dataState) blocks.push(`מצב נתונים: ${dataState}`);
+  if (subject) blocks.push(` : ${subject}`);
+  if (grade) blocks.push(` : ${grade}`);
+  if (classCtx) blocks.push(`: ${classCtx}`);
+  if (dataState) blocks.push(` : ${dataState}`);
 
-  if (codeCtx?.heading) blocks.push(`כותרת במסך: ${codeCtx.heading}`);
+  if (codeCtx?.heading) blocks.push(` : ${codeCtx.heading}`);
 
   let body = "";
   const invExample = substitutePlaceholders(inventory?.example_output || "");
-  if (candidate.example_before && !/^ב[^:]*:\s*$/.test(candidate.example_before)) {
-    body = substitutePlaceholders(candidate.example_before.replace(/^ב[^:]*:\s*/, ""));
+  if (candidate.example_before && !/^[^:]*:\s*$/.test(candidate.example_before)) {
+    body = substitutePlaceholders(candidate.example_before.replace(/^[^:]*:\s*/, ""));
   } else if (invExample && invExample.length > 3) {
     body = invExample;
   } else if (codeCtx?.snippet) {
@@ -336,7 +336,7 @@ function buildBeforeContext(candidate, inventory, codeCtx, subject, grade, class
   if (!codeCtx?.ok) notes.push("exact source line not verified; used inventory example_before");
   if (/\$\{|\\n/.test(candidate.current_hebrew)) notes.push("template placeholders substituted with examples");
 
-  blocks.push(`כפי שמופיע היום: ${body}`);
+  blocks.push(`  : ${body}`);
   return { text: blocks.join("\n"), notes };
 }
 
@@ -494,7 +494,7 @@ function main() {
       `Confidence high: ${confidenceCounts.high}`,
       `Confidence medium: ${confidenceCounts.medium}`,
       `Confidence low: ${confidenceCounts.low}`,
-      `Needs full report (צריך לבדוק בדוח מלא): ${needsFullCount}`,
+      `Needs full report (   ): ${needsFullCount}`,
       "",
       "Top unclear / medium-confidence rows:",
       ...unclear.slice(0, 20).map(

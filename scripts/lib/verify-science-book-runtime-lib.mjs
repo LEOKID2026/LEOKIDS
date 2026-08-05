@@ -55,8 +55,8 @@ export function verifyScienceBookRuntime(spec) {
   }
 
   const tile = getLearningBookTileTitle("science", spec.grade);
-  const expectedLine2 = `כיתה ${getGradeShortLabel(spec.grade)}`;
-  if (tile.line1 !== "ספר מדעים" || tile.line2 !== expectedLine2) {
+  const expectedLine2 = ` ${getGradeShortLabel(spec.grade)}`;
+  if (tile.line1 !== " " || tile.line2 !== expectedLine2) {
     errors.push(`${label} tile title mismatch: ${JSON.stringify(tile)}`);
   }
 

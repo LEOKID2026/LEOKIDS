@@ -39,7 +39,7 @@ export default function LeoDogReferenceGallery({ mode }) {
     return (
       <div className={styles.galleryPanel}>
         <p className={styles.galleryNote}>
-          המשחק: toggle &quot;ליאו החדש&quot; / &quot;SVG ישן&quot;. גלריות - בלשוניות למטה.
+          : toggle &quot; &quot; / &quot;SVG &quot;.  -  .
         </p>
       </div>
     );
@@ -48,16 +48,16 @@ export default function LeoDogReferenceGallery({ mode }) {
   if (mode === "photos") {
     return (
       <div className={styles.galleryPanel}>
-        <GallerySection title="תמונות אמיתיות (reference)" items={LEO_DOG_REFERENCE_PHOTOS} />
+        <GallerySection title="  (reference)" items={LEO_DOG_REFERENCE_PHOTOS} />
       </div>
     );
   }
 
   return (
     <div className={styles.galleryPanel}>
-      <p className={styles.galleryNote}>צפייה בלבד - לא משפיע על המשחק.</p>
+      <p className={styles.galleryNote}>  -    .</p>
       <GallerySection title={globalBurnDownCopy("components__prototypes__dev__leo-dog__LeoDogReferenceGallery", "sprites_png")} items={LEO_DOG_SPRITE_GALLERY} />
-      <GallerySection title="קלפים legacy (לא למשחק)" items={LEO_DOG_CARD_GALLERY} />
+      <GallerySection title=" legacy ( )" items={LEO_DOG_CARD_GALLERY} />
     </div>
   );
 }

@@ -5,26 +5,26 @@ import { GRADES as MATH_GRADES } from "../utils/math-constants.js";
 import { GRADES as GEOMETRY_GRADES } from "../utils/geometry-constants.js";
 import { generateActivityQuestionSetClient } from "../lib/classroom-activities/generate-activity-questions-client.js";
 
-test("formatGradeLevelHe g3 returns כיתה ג׳", () => {
-  assert.equal(formatGradeLevelHe("g3"), "כיתה ג׳");
+test("formatGradeLevelHe g3 returns  ", () => {
+  assert.equal(formatGradeLevelHe("g3"), " ");
 });
 
 test("formatGradeLevelHe for all g1–g6 returns proper Hebrew letters", () => {
   const expected = {
-    g1: "כיתה א׳",
-    g2: "כיתה ב׳",
-    g3: "כיתה ג׳",
-    g4: "כיתה ד׳",
-    g5: "כיתה ה׳",
-    g6: "כיתה ו׳",
+    g1: " ",
+    g2: " ",
+    g3: " ",
+    g4: " ",
+    g5: " ",
+    g6: " ",
   };
   for (const [key, label] of Object.entries(expected)) {
     assert.equal(formatGradeLevelHe(key), label);
   }
 });
 
-test("formatGradeLevelHe grade_3 returns כיתה ג׳", () => {
-  assert.equal(formatGradeLevelHe("grade_3"), "כיתה ג׳");
+test("formatGradeLevelHe grade_3 returns  ", () => {
+  assert.equal(formatGradeLevelHe("grade_3"), " ");
 });
 
 test("normalizeGradeLevelToKey maps grade_3 to g3 for topic banks", () => {
@@ -56,7 +56,7 @@ test("generator error messages do not contain raw grade keys", async () => {
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), /כיתה/);
+      assert.match(String(err.message), //);
       assert.doesNotMatch(String(err.message), /\bg[1-6]\b/);
       return true;
     }

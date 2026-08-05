@@ -11,7 +11,7 @@ import {
 
 function testSanitize() {
   assert.equal(sanitizeRewardCardPathSegment("leo_musician"), "leo_musician");
-  assert.equal(sanitizeRewardCardPathSegment("Israeli-Holidays"), "israeli-holidays");
+  assert.equal(sanitizeRewardCardPathSegment("Seasonal-Events"), "seasonal-events");
   assert.equal(sanitizeRewardCardPathSegment("../../../etc"), "etc");
   assert.equal(sanitizeRewardCardPathSegment(""), null);
 }

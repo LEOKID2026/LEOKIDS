@@ -79,11 +79,11 @@ async function main() {
   const schoolEmail = `reg-school-${ts}@test.invalid`;
 
   const teacherPayload = {
-    fullName: "מורה בדיקה",
+    fullName: " ",
     email: teacherEmail,
     phone: "0501234567",
     requestIntent: "private_teacher",
-    description: "בקשה לחשבון מורה פרטי לצורכי בדיקה",
+    description: "     ",
     requestedSubjects: ["math"],
   };
 
@@ -123,11 +123,11 @@ async function main() {
 
   const noSubjectsEmail = `reg-teacher-nosubj-${ts}@test.invalid`;
   const noSubjectsReq = await api("POST", "/api/auth/teacher-request", null, {
-    fullName: "מורה ללא מקצועות",
+    fullName: "  ",
     email: noSubjectsEmail,
     phone: "0527654321",
     requestIntent: "school_representative",
-    description: "אני נציג בית ספר ומבקש גישה לניהול בית הספר שלנו",
+    description: "         ",
     requestedSubjects: [],
   });
   record(
@@ -189,11 +189,11 @@ async function main() {
   );
 
   const rejectPayload = {
-    fullName: "מורה נדחה",
+    fullName: " ",
     email: rejectTeacherEmail,
     phone: "0541112233",
     requestIntent: "general_access",
-    description: "בקשת גישה כללית לצורכי בדיקת דחייה",
+    description: "     ",
     requestedSubjects: ["hebrew"],
   };
   await api("POST", "/api/auth/teacher-request", null, rejectPayload);
@@ -207,7 +207,7 @@ async function main() {
     rejectUser.id,
     "reject",
     "private_teacher",
-    "בדיקה"
+    ""
   );
   record(
     "admin_reject_teacher",
@@ -224,13 +224,13 @@ async function main() {
   );
 
   const schoolPayload = {
-    schoolName: `בית ספר בדיקה ${ts}`,
-    city: "תל אביב",
-    contactName: "איש קשר בדיקה",
+    schoolName: `   ${ts}`,
+    city: " ",
+    contactName: "  ",
     contactEmail: schoolEmail,
     approxTeachers: 5,
     approxStudents: 120,
-    message: "בדיקה",
+    message: "",
   };
 
   const schoolReq = await api("POST", "/api/auth/school-request", null, schoolPayload);
@@ -328,9 +328,9 @@ async function main() {
   const rejectSchoolEmail = `reg-school-reject-${ts}@test.invalid`;
   const rejectSchoolReq = await api("POST", "/api/auth/school-request", null, {
     ...schoolPayload,
-    schoolName: `בית ספר דחייה ${ts}`,
+    schoolName: `   ${ts}`,
     contactEmail: rejectSchoolEmail,
-    contactName: "דחייה בדיקה",
+    contactName: " ",
   });
   const rejectSchoolUser = await findAuthUserByEmail(db, rejectSchoolEmail);
   let rejectSchoolId = rejectSchoolReq.json?.data?.schoolId;
@@ -347,7 +347,7 @@ async function main() {
       "POST",
       `/api/admin/schools/${rejectSchoolId}/reject`,
       adminToken,
-      { reason: "בדיקת דחייה" }
+      { reason: " " }
     );
     record(
       "admin_reject_school",

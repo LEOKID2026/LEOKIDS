@@ -7,19 +7,19 @@ import {
 import { sanitizeQuestionForStudentDisplay } from "../utils/student-question-stem-sanitizer.js";
 
 const METADATA_CASES = [
-  ["dec_sub", "חיסור עשרוניים (קל): 1.23 − 0.45 = __"],
-  ["dec_add", "חיבור עשרוניים (בינוני): 2.10 + 3.20 = __"],
-  ["geometry_pyth", "פיתגורס (קל): ניצבים 3 ו-4 - מה אורך היתר?"],
-  ["divisibility", "התחלקות (קל): האם 24 מתחלק ב-3 בלי שארית?"],
-  ["grade_level", "כיתה ד׳ (קל): תיבה 2×3×4 - מה הנפח?"],
-  ["fractions", "שברים (אתגר): 1/2 + 1/4 = __"],
+  ["dec_sub", "  (): 1.23 − 0.45 = __"],
+  ["dec_add", "  (): 2.10 + 3.20 = __"],
+  ["geometry_pyth", " ():  3 -4 -   ?"],
+  ["divisibility", " ():  24  -3  ?"],
+  ["grade_level", "  ():  2×3×4 -  ?"],
+  ["fractions", " (): 1/2 + 1/4 = __"],
 ];
 
 const PRESERVE_CASES = [
   ["plain_add", "7 + 3 = __"],
   ["english", "Choose the correct word: The cat is ___ the table."],
-  ["hebrew_instruction", "איזה משפט נכון?"],
-  ["word_problem", "לליאו יש גינה בצורת ריבוע, אורך כל צלע הוא 5 מטר. כמה מטרים רבועים שטח הגינה?"],
+  ["hebrew_instruction", "  ?"],
+  ["word_problem", "    ,     5 .     ?"],
 ];
 
 for (const [name, before] of METADATA_CASES) {
@@ -29,10 +29,10 @@ for (const [name, before] of METADATA_CASES) {
   assert.equal(sanitized.questionLabel, undefined, `${name}: questionLabel removed`);
   const body = String(sanitized.exerciseText || sanitized.question).trim();
   assert.ok(body.length > 0, `${name}: exercise preserved`);
-  assert.equal(body.includes("פיתגורס (קל)"), false, `${name}: no metadata in body`);
-  assert.equal(body.includes("חיסור עשרוניים"), false, `${name}: no decimal metadata in body`);
-  assert.equal(body.includes("התחלקות (קל)"), false, `${name}: no divisibility metadata in body`);
-  assert.equal(/^כיתה\s+[אבגדהו]/u.test(body), false, `${name}: no grade metadata in body`);
+  assert.equal(body.includes(" ()"), false, `${name}: no metadata in body`);
+  assert.equal(body.includes(" "), false, `${name}: no decimal metadata in body`);
+  assert.equal(body.includes(" ()"), false, `${name}: no divisibility metadata in body`);
+  assert.equal(/^\s+[]/u.test(body), false, `${name}: no grade metadata in body`);
 
   const display = resolveStudentQuestionDisplayParts(sanitized);
   assert.equal(display.leadText, "", `${name}: no visible lead`);
@@ -55,7 +55,7 @@ for (const [name, text] of PRESERVE_CASES) {
 }
 
 assert.equal(
-  shouldOmitInstructionLead("מצאו את הנעלם:", "5 + __ = 12"),
+  shouldOmitInstructionLead("  :", "5 + __ = 12"),
   true,
   "equation instruction still omitted for compact body"
 );

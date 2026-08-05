@@ -24,13 +24,13 @@ function collectStrings(value, out = []) {
 describe("Global English subject — no Hebrew with instructionLocale", () => {
   test("vocabulary en_to_meaning remaps meanings to Spanish for es-419", () => {
     const raw = {
-      question: 'מה פירוש המילה "dog"?',
+      question: '\u05DE\u05D4 \u05E4\u05D9\u05E8\u05D5\u05E9 \u05D4\u05DE\u05D9\u05DC\u05D4 "dog"?',
       topic: "vocabulary",
-      correctAnswer: "כלב",
-      answers: ["כלב", "חתול", "ציפור", "דג"],
+      correctAnswer: "\u05DB\u05DC\u05D1",
+      answers: ["\u05DB\u05DC\u05D1", "\u05D7\u05EA\u05D5\u05DC", "\u05E6\u05D9\u05E4\u05D5\u05E8", "\u05D3\u05D2"],
       params: {
         word: "dog",
-        translation: "כלב",
+        translation: "\u05DB\u05DC\u05D1",
           direction: "en_to_meaning",
           listKey: "animals",
           patternFamily: "vocab_translation",
@@ -50,12 +50,12 @@ describe("Global English subject — no Hebrew with instructionLocale", () => {
 
     test("vocabulary meaning_to_en uses Spanish cue, English answer for es-419", () => {
       const raw = {
-        question: 'כתוב את המילה "כלב" באנגלית',
+        question: '\u05DB\u05EA\u05D5\u05D1 \u05D0\u05EA \u05D4\u05DE\u05D9\u05DC\u05D4 "\u05DB\u05DC\u05D1" \u05D1\u05D0\u05E0\u05D2\u05DC\u05D9\u05EA',
         topic: "vocabulary",
         correctAnswer: "dog",
         answers: ["dog", "cat", "bird", "fish"],
         params: {
-          word: "כלב",
+          word: "\u05DB\u05DC\u05D1",
           translation: "dog",
           direction: "meaning_to_en",
           listKey: "animals",
@@ -78,13 +78,13 @@ describe("Global English subject — no Hebrew with instructionLocale", () => {
 
     test("en instructionLocale never surfaces Hebrew in localized vocab", () => {
       const raw = {
-        question: 'מה פירוש המילה "red"?',
+        question: '\u05DE\u05D4 \u05E4\u05D9\u05E8\u05D5\u05E9 \u05D4\u05DE\u05D9\u05DC\u05D4 "red"?',
         topic: "vocabulary",
-        correctAnswer: "אדום",
-        answers: ["אדום", "כחול", "צהוב", "ירוק"],
+        correctAnswer: "\u05D0\u05D3\u05D5\u05DD",
+        answers: ["\u05D0\u05D3\u05D5\u05DD", "\u05DB\u05D7\u05D5\u05DC", "\u05E6\u05D4\u05D5\u05D1", "\u05D9\u05E8\u05D5\u05E7"],
         params: {
           word: "red",
-          translation: "אדום",
+          translation: "\u05D0\u05D3\u05D5\u05DD",
           direction: "en_to_meaning",
           listKey: "colors",
           patternFamily: "vocab_translation",

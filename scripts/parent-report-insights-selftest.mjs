@@ -38,7 +38,7 @@ function clone(o) {
 function makeAggregate(overrides = {}) {
   const base = {
     ok: true,
-    student: { id: "stu_1", full_name: "ילד דוגמה", grade_level: "g4", is_active: true },
+    student: { id: "stu_1", full_name: " ", grade_level: "g4", is_active: true },
     range: { from: "2026-05-01", to: "2026-05-08" },
     summary: {
       totalSessions: 6,

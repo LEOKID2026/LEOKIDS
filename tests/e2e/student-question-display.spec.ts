@@ -48,9 +48,9 @@ async function pickMathOperation(page: Page, preferred: string) {
 }
 
 async function confirmMixedModal(page: Page) {
-  const save = page.getByRole("button", { name: "שמור", exact: true });
+  const save = page.getByRole("button", { name: "", exact: true });
   if (await save.isVisible()) {
-    const allBtn = page.getByRole("button", { name: "הכל", exact: true });
+    const allBtn = page.getByRole("button", { name: "", exact: true });
     if (await allBtn.isVisible()) await allBtn.click();
     await save.click();
   }
@@ -65,32 +65,32 @@ test.describe("Student question display - layout (mobile)", () => {
   test("unit: compact expression and omit redundant lead", () => {
     expect(formatCompactExpression("13   +   10 × 6 = __")).toBe("13 + 10 × 6 = __");
     expect(
-      shouldOmitInstructionLead("מצאו את הנעלם:", "13 + 10 × 6 = __")
+      shouldOmitInstructionLead("  :", "13 + 10 × 6 = __")
     ).toBe(true);
-    const split = splitStudentQuestionForDisplay("מצאו את הנעלם: 13 + 10 × 6 = __");
+    const split = splitStudentQuestionForDisplay("  : 13 + 10 × 6 = __");
     expect(split.leadText).toBe("");
     expect(split.bodyText).toBe("13 + 10 × 6 = __");
   });
 
   test("unit: formats geometry formula spacing and child-friendly wording", () => {
-    expect(formatFormulaSpacing("שטח = חצי×בסיס×גובה")).toBe(
-      "שטח = חצי × בסיס × גובה"
+    expect(formatFormulaSpacing(" = ××")).toBe(
+      " =  ×  × "
     );
     expect(
       formatGeometryChildFriendlyQuestion(
-        "מלבן במישור: 2 על 4. מה שטח הפנים?"
+        " : 2  4.   ?"
       )
-    ).toContain("מלבן שאורכו 2 יחידות ורוחבו 4 יחידות");
+    ).toContain("  2   4 ");
     expect(
       formatGeometryChildFriendlyQuestion(
-        "מלבן במישור: 2 על 4. מה שטח הפנים?"
+        " : 2  4.   ?"
       )
-    ).toContain("מה שטח המלבן");
+    ).toContain("  ");
     expect(
       formatGeometryChildFriendlyQuestion(
-        "בסיסים 1 ו - 8 , גובה 1. מה השטח? ( ממוצע הבסיסים × גובה )"
+        " 1  - 8 ,  1.  ? (   ×  )"
       )
-    ).toBe("בסיסים 1 ו - 8 , גובה 1. מה השטח?");
+    ).toBe(" 1  - 8 ,  1.  ?");
   });
 
   test("math: compact equation without horizontal scroll", async ({ page }) => {
@@ -109,11 +109,11 @@ test.describe("Student question display - layout (mobile)", () => {
     const body = surface.getByTestId("student-question-body");
     await expect(body).toBeVisible();
     if (await lead.isVisible()) {
-      await expect(lead).not.toContainText("מצאו את הנעלם");
+      await expect(lead).not.toContainText("  ");
     }
     const bodyText = await body.innerText();
     expect(bodyText).toMatch(/=|×|\+|−|-|\(/);
-    expect(bodyText).not.toMatch(/מצאו את הנעלם/);
+    expect(bodyText).not.toMatch(/  /);
     await expect(body).toHaveAttribute("dir", "ltr");
     await assertStemNoHorizontalScroll(surface);
     await assertCompactMathSpacing(body);
@@ -136,11 +136,11 @@ test.describe("Student question display - layout (mobile)", () => {
     const stem = page.getByTestId("geometry-question-stem");
     await expect(stem).toBeVisible({ timeout: 60_000 });
     const full = await stem.innerText();
-    if (/שטח\s*=/.test(full)) {
-      expect(full).not.toMatch(/חציבסיסגובה/);
+    if (/\s*=/.test(full)) {
+      expect(full).not.toMatch(//);
       expect(full).toMatch(/×/);
     }
-    if (/מלבן/u.test(full)) {
+    if (//u.test(full)) {
       assertGeometryWording(full);
     }
     await assertStemNoHorizontalScroll(stem);

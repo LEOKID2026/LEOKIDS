@@ -57,36 +57,36 @@ function gradesFromText(str) {
 }
 
 const SUBJECT_LABELS = {
-  hebrew: "עברית",
-  english: "אנגלית",
-  math: "מתמטיקה",
-  geometry: "גיאומטריה",
-  science: "מדעים",
-  moledet_geography: "מולדת / גיאוגרפיה",
+  hebrew: "",
+  english: "",
+  math: "",
+  geometry: "",
+  science: "",
+  moledet_geography: " / ",
 };
 
 const PROFILE_BEHAVIOR_MAP = [
-  { match: /strong_all_subjects|strong-stable|strong_stable/, label: "תלמיד חזק ויציב (רב-מקצועי)" },
-  { match: /thin_data|very-little-data|very_little/, label: "מעט נתונים / דקירות נתונים" },
-  { match: /improving/, label: "משתפר לאורך זמן" },
-  { match: /declining/, label: "מצטנן / יורד בביצועים" },
-  { match: /weak_all|weak_all_subjects/, label: "חלש ברוב המקצועות" },
-  { match: /weak_math_fractions|weak_math/, label: "חולשה במתמטיקה (מוקד מדויק)" },
-  { match: /weak_geometry/, label: "חולשה בגיאומטריה" },
-  { match: /weak_hebrew/, label: "חולשה בעברית" },
-  { match: /weak_english/, label: "חולשה באנגלית" },
-  { match: /weak_science/, label: "חולשה במדעים" },
-  { match: /weak_moledet/, label: "חולשה במולדת/גיאוגרפיה" },
-  { match: /random_guessing/, label: "ניחושים / עקביות נמוכה" },
-  { match: /inconsistent/, label: "דפוס לא עקבי" },
-  { match: /fast_wrong|fast wrong/, label: "מהיר ושגוי" },
-  { match: /slow_correct|slow correct/, label: "איטי ומדויק" },
-  { match: /external-question|external_question/, label: "זרימת שאלה חיצונית" },
-  { match: /six-subject|six_subject/, label: "מיקס רב-מקצועי" },
-  { match: /inconsistent-guessing/, label: "ניחוש בלתי עקבי" },
-  { match: /math-only/, label: "מיקוד מתמטיקה בלבד" },
-  { match: /geometry-only/, label: "מיקוד גיאומטריה בלבד" },
-  { match: /english-no-data/, label: "אנגלית עם חוסר נתונים" },
+  { match: /strong_all_subjects|strong-stable|strong_stable/, label: "   (-)" },
+  { match: /thin_data|very-little-data|very_little/, label: "  /  " },
+  { match: /improving/, label: "  " },
+  { match: /declining/, label: " /  " },
+  { match: /weak_all|weak_all_subjects/, label: "  " },
+  { match: /weak_math_fractions|weak_math/, label: "  ( )" },
+  { match: /weak_geometry/, label: " " },
+  { match: /weak_hebrew/, label: " " },
+  { match: /weak_english/, label: " " },
+  { match: /weak_science/, label: " " },
+  { match: /weak_moledet/, label: " /" },
+  { match: /random_guessing/, label: " /  " },
+  { match: /inconsistent/, label: "  " },
+  { match: /fast_wrong|fast wrong/, label: " " },
+  { match: /slow_correct|slow correct/, label: " " },
+  { match: /external-question|external_question/, label: "  " },
+  { match: /six-subject|six_subject/, label: " -" },
+  { match: /inconsistent-guessing/, label: "  " },
+  { match: /math-only/, label: "  " },
+  { match: /geometry-only/, label: "  " },
+  { match: /english-no-data/, label: "   " },
 ];
 
 function behaviorLabelForId(id) {
@@ -141,9 +141,9 @@ function buildAiModuleRows(commands) {
     "i-synthetic",
   ]);
   const label = {
-    b1: "Parent AI core — הקשר עקבי",
-    b2: "Parent report AI — אינטגרציה",
-    b3: "Parent report AI — סימולטור תרחישים",
+    b1: "Parent AI core —  ",
+    b2: "Parent report AI — ",
+    b3: "Parent report AI —  ",
     d4: "Assistant QA",
     d5: "External question flow",
     d6: "Bad prompt handling",
@@ -297,29 +297,29 @@ function main() {
     thresholdResults.push({ code, pass, detail });
   }
 
-  pushTh("SMOKE_MODE_OFF", !smokeMode, smokeMode ? "נמצא מצב smoke — לא מיועד כשגרת השקה מלאה" : "מצב מלא");
-  pushTh("GRADE_COVERAGE_6", allGrades.size >= T.minGrades, `דירוגים ייחודיים: ${allGrades.size} (נדרש ≥ ${T.minGrades})`);
-  pushTh("COMBINED_SCENARIOS", combinedScenarios >= T.minScenarios, `סה״כ תרחישים משוקללים: ${combinedScenarios} (נדרש ≥ ${T.minScenarios})`);
-  pushTh("COMBINED_QUESTIONS", combinedQuestions >= T.minQuestions, `סה״כ שאלות מדומות: ${combinedQuestions} (נדרש ≥ ${T.minQuestions})`);
-  pushTh("COMBINED_SESSIONS", combinedSessions >= T.minSessions, `סה״כ סשנים: ${combinedSessions} (נדרש ≥ ${T.minSessions})`);
-  pushTh("PDF_PROFILES", pdfProfiles.length >= T.minPdfProfiles, `פרופילי PDF: ${pdfProfiles.length} (נדרש ≥ ${T.minPdfProfiles})`);
-  pushTh("PDF_SUMMARY_OK", pdfOk, pdfOk ? "sample-pdfs-summary ok" : "sample-pdfs-summary לא עבר");
-  pushTh("PDF_VALIDATION_CLEAN", pdfValidationErrors.length === 0, `שגיאות ולידציית PDF: ${pdfValidationErrors.length}`);
+  pushTh("SMOKE_MODE_OFF", !smokeMode, smokeMode ? "  smoke —     " : " ");
+  pushTh("GRADE_COVERAGE_6", allGrades.size >= T.minGrades, ` : ${allGrades.size} ( ≥ ${T.minGrades})`);
+  pushTh("COMBINED_SCENARIOS", combinedScenarios >= T.minScenarios, `  : ${combinedScenarios} ( ≥ ${T.minScenarios})`);
+  pushTh("COMBINED_QUESTIONS", combinedQuestions >= T.minQuestions, `  : ${combinedQuestions} ( ≥ ${T.minQuestions})`);
+  pushTh("COMBINED_SESSIONS", combinedSessions >= T.minSessions, ` : ${combinedSessions} ( ≥ ${T.minSessions})`);
+  pushTh("PDF_PROFILES", pdfProfiles.length >= T.minPdfProfiles, ` PDF: ${pdfProfiles.length} ( ≥ ${T.minPdfProfiles})`);
+  pushTh("PDF_SUMMARY_OK", pdfOk, pdfOk ? "sample-pdfs-summary ok" : "sample-pdfs-summary  ");
+  pushTh("PDF_VALIDATION_CLEAN", pdfValidationErrors.length === 0, `  PDF: ${pdfValidationErrors.length}`);
   pushTh(
     "SHORT_AND_DETAILED_PDF",
     !T.requireShortLongPdf || shortDetailedPairs >= T.minPdfProfiles,
-    `זוגות קצר/מפורט: ${shortDetailedPairs}`
+    ` /: ${shortDetailedPairs}`
   );
-  pushTh("SUBJECTS_MAJOR_SET", missingSubjects.length === 0, missingSubjects.length ? `חסרים מקצועות: ${missingSubjects.join(", ")}` : "כל המקצועות המרכזיים מיוצגים");
-  pushTh("DIFFICULTY_LEVELS", missingDifficulty.length === 0, missingDifficulty.length ? `חסרים רמות: ${missingDifficulty.join(", ")}` : "easy/medium/hard מכוסים בקריטיקל דיפ");
-  pushTh("DEEP_ASSERTION_HEALTH", !deepAssertionsFail, deepAssertionsFail ? "כשלים בדוח עמוק או assertions" : "אין כשל assertions בעומק");
+  pushTh("SUBJECTS_MAJOR_SET", missingSubjects.length === 0, missingSubjects.length ? ` : ${missingSubjects.join(", ")}` : "   ");
+  pushTh("DIFFICULTY_LEVELS", missingDifficulty.length === 0, missingDifficulty.length ? ` : ${missingDifficulty.join(", ")}` : "easy/medium/hard   ");
+  pushTh("DEEP_ASSERTION_HEALTH", !deepAssertionsFail, deepAssertionsFail ? "    assertions" : "  assertions ");
 
   const critInternalOk =
     !critical || Number(critAssertions.no_internal_terms ?? 0) === Number(critical.scenarioCount ?? 0);
   pushTh(
     "CRITICAL_NO_INTERNAL_TERMS",
     critInternalOk,
-    critical ? `no_internal_terms=${critAssertions.no_internal_terms} vs scenarios=${critical.scenarioCount}` : "אין קובץ critical-matrix"
+    critical ? `no_internal_terms=${critAssertions.no_internal_terms} vs scenarios=${critical.scenarioCount}` : "  critical-matrix"
   );
 
   /** Baselines: fixtures default to 10 quick + 12 deep + 9 synthetic profiles (one round). */
@@ -338,45 +338,45 @@ function main() {
       "SOAK_EXPANSION",
       expansionDetected,
       expansionDetected
-        ? `הרחבה מדידה: aggregate ${aggSc} (בסיס ${baselineAgg}), deep ${deepSc} (בסיס ${baselineDeep}), synthetic שורות ${synthProfiles}`
+        ? ` : aggregate ${aggSc} ( ${baselineAgg}), deep ${deepSc} ( ${baselineDeep}), synthetic  ${synthProfiles}`
         : "SOAK mode was requested but no measurable expansion was detected vs baseline counts."
     );
   } else {
-    pushTh("SOAK_EXPANSION", true, "לא ריצת soak — בדיקת הרחבה לא חלה");
+    pushTh("SOAK_EXPANSION", true, "  soak —    ");
   }
 
   let thresholdsPass = thresholdResults.every((x) => x.pass);
   if (!enforce) thresholdsPass = true;
 
   const gapsHe = [];
-  if (combinedScenarios < T.minScenarios) gapsHe.push(`ספירת תרחישים משוקללת (${combinedScenarios}) מתחת ליעד ${T.minScenarios}`);
-  if (combinedQuestions < T.minQuestions) gapsHe.push(`סה״כ שאלות (${combinedQuestions}) מתחת ליעד ${T.minQuestions}`);
-  if (combinedSessions < T.minSessions) gapsHe.push(`סה״כ סשנים (${combinedSessions}) מתחת ליעד ${T.minSessions}`);
-  if (missingGrades.length) gapsHe.push(`דירוגים חסרים בקטלוג: ${missingGrades.join(", ")}`);
-  if (missingSubjects.length) gapsHe.push(`מקצועות שלא הופיעו בקטלוג מכוסה: ${missingSubjects.join(", ")}`);
-  if (!pdfOk || pdfValidationErrors.length) gapsHe.push("וולידציית PDF או sample-pdfs-summary נכשלו");
-  if (deepAssertionsFail) gapsHe.push("כשל בדוחות/התנהגות בסימולטור עמוק");
+  if (combinedScenarios < T.minScenarios) gapsHe.push(`   (${combinedScenarios})   ${T.minScenarios}`);
+  if (combinedQuestions < T.minQuestions) gapsHe.push(`  (${combinedQuestions})   ${T.minQuestions}`);
+  if (combinedSessions < T.minSessions) gapsHe.push(`  (${combinedSessions})   ${T.minSessions}`);
+  if (missingGrades.length) gapsHe.push(`  : ${missingGrades.join(", ")}`);
+  if (missingSubjects.length) gapsHe.push(`    : ${missingSubjects.join(", ")}`);
+  if (!pdfOk || pdfValidationErrors.length) gapsHe.push(" PDF  sample-pdfs-summary ");
+  if (deepAssertionsFail) gapsHe.push(" /  ");
 
   if (soakModeDetected && !expansionDetected) {
     gapsHe.push(
-      "SOAK mode was requested but no measurable expansion was detected — בדוק משתני סביבה (OVERNIGHT_STUDENT_MULTIPLIER / OVERNIGHT_TARGET_SCENARIOS) או תקלות בסימולטור."
+      "SOAK mode was requested but no measurable expansion was detected —    (OVERNIGHT_STUDENT_MULTIPLIER / OVERNIGHT_TARGET_SCENARIOS)   ."
     );
   } else if (soakModeDetected && expansionDetected) {
     gapsHe.push(
-      "ריצת soak הופעלה והרחבה מדידה זוהתה (שכפול תרחישי aggregate/deep ו/או סבבי synthetic)."
+      " soak     (  aggregate/deep /  synthetic)."
     );
     gapsHe.push(
-      "אופציונלי לפני השקה: הגדלת חזרות/זרעים רנדומליים (OVERNIGHT_REPEATS), העלאת OVERNIGHT_TARGET_SCENARIOS למאמץ נוסף, מעקב אחר תאים דלילים במטריצה הקריטית (בעיקר רמת קושי medium), והרחבת תרחישי קצה חסרים."
+      "  :  /  (OVERNIGHT_REPEATS),  OVERNIGHT_TARGET_SCENARIOS  ,       (   medium),    ."
     );
   } else if (!smokeMode) {
     gapsHe.push(
-      "להקשחת השקה: שקלו `npm run qa:overnight-parent-ai:soak` או הגדרת OVERNIGHT_SOAK=1 עם מכפילים — מרחיב כיסוי בלי שינה."
+      " :  `npm run qa:overnight-parent-ai:soak`   OVERNIGHT_SOAK=1   —    ."
     );
     gapsHe.push(
-      "כיסוי נוסף: רנדומיזציה, הרצות ארוכות יותר באמצעות משתני סביבה (לא שינה), ומעקב אחר דילול בתאי המטריצה."
+      " : ,       ( ),     ."
     );
   } else {
-    gapsHe.push("מצב smoke — להערכת השקה יש להריץ מסלול מלא + soak.");
+    gapsHe.push(" smoke —       + soak.");
   }
 
   const manifest = {
@@ -441,100 +441,100 @@ function main() {
   fs.writeFileSync(jsonPath, JSON.stringify(manifest, null, 2), "utf8");
 
   const mdLines = [
-    `# COVERAGE_MANIFEST — כיסוי בדיקות Parent AI / Learning Simulator / דוחות הורה`,
+    `# COVERAGE_MANIFEST —   Parent AI / Learning Simulator /  `,
     ``,
-    `נוצר: ${manifest.generatedAt}`,
-    `תיקיית ריצה: \`${OUT}\``,
-    `מצב enforcement: **${enforce ? "פעיל" : "כבוי"}** | ספי כיסוי: **${thresholdsPass ? "עבר" : "נכשל"}**`,
-    `Soak (\`OVERNIGHT_SOAK=1\`): **${soakModeDetected ? "כן" : "לא"}** | הרחבה מדידה: **${expansionDetected ? "כן" : "לא"}** — aggregate ${aggSc}/${baselineAgg}, deep ${deepSc}/${baselineDeep}, synthetic ${synthProfiles} שורות`,
+    `: ${manifest.generatedAt}`,
+    ` : \`${OUT}\``,
+    ` enforcement: **${enforce ? "" : ""}** |  : **${thresholdsPass ? "" : ""}**`,
+    `Soak (\`OVERNIGHT_SOAK=1\`): **${soakModeDetected ? "" : ""}** |  : **${expansionDetected ? "" : ""}** — aggregate ${aggSc}/${baselineAgg}, deep ${deepSc}/${baselineDeep}, synthetic ${synthProfiles} `,
     ``,
-    `## A. היקף כולל`,
+    `## A.  `,
     ``,
-    "| מדד | ערך |",
+    "|  |  |",
     "| --- | ---: |",
-    `| פקודות npm/node בריצת overnight | ${manifest.overall.totalCommands} |`,
-    `| תרחישים משוקללים (aggregate+deep+critical+synthetic) | ${combinedScenarios} |`,
-    `| מזהי תרחיש סינתטי ייחודיים (aggregate+deep) | ${manifest.overall.syntheticStudentsUniqueScenarioIds} |`,
-    `| סשנים מדומים (aggregate+deep) | ${combinedSessions} |`,
-    `| שאלות מדומות (aggregate+deep) | ${combinedQuestions} |`,
-    `| שורות טעות מצטברות (aggregate+deep) | ${manifest.overall.combinedMistakes} |`,
-    `| דוחות הורה מוערכים (deep+critical) | ${manifest.overall.parentReportsGeneratedApprox} |`,
-    `| קבצי PDF שנוצרו (דוגמאות) | ${manifest.overall.pdfsGeneratedCount} |`,
-    `| פקודות בסטטוס pass | ${manifest.overall.aiTestsCommands} |`,
+    `|  npm/node  overnight | ${manifest.overall.totalCommands} |`,
+    `|   (aggregate+deep+critical+synthetic) | ${combinedScenarios} |`,
+    `|     (aggregate+deep) | ${manifest.overall.syntheticStudentsUniqueScenarioIds} |`,
+    `|   (aggregate+deep) | ${combinedSessions} |`,
+    `|   (aggregate+deep) | ${combinedQuestions} |`,
+    `|    (aggregate+deep) | ${manifest.overall.combinedMistakes} |`,
+    `|    (deep+critical) | ${manifest.overall.parentReportsGeneratedApprox} |`,
+    `|  PDF  () | ${manifest.overall.pdfsGeneratedCount} |`,
+    `|   pass | ${manifest.overall.aiTestsCommands} |`,
     ``,
-    `## B. כיסוי כיתות (g1–g6)`,
+    `## B.   (g1–g6)`,
     ``,
-    "| כיתה | כמות תאים בקטלוג (covered) |",
+    "|  |    (covered) |",
     "| --- | ---: |",
     ...gradeList.map((g) => `| ${g} | ${gradeCoverage[g] ?? 0} |`),
     ``,
-    `**חסרות:** ${missingGrades.length ? missingGrades.join(", ") : "—"}`,
+    `**:** ${missingGrades.length ? missingGrades.join(", ") : "—"}`,
     ``,
-    `## C. כיסוי מקצועות`,
+    `## C.  `,
     ``,
-    "| מקצוע | תאים בקטלוג |",
+    "|  |   |",
     "| --- | ---: |",
     ...expectedSubjects.map((s) => `| ${SUBJECT_LABELS[s] || s} | ${subjectCounts[s] ?? 0} |`),
     ``,
-    `**חסרים יחסית לציפייה:** ${missingSubjects.length ? missingSubjects.map((s) => SUBJECT_LABELS[s] || s).join(", ") : "—"}`,
+    `**  :** ${missingSubjects.length ? missingSubjects.map((s) => SUBJECT_LABELS[s] || s).join(", ") : "—"}`,
     ``,
-    `## D. רמות קושי`,
+    `## D.  `,
     ``,
-    "| רמה | תאים במטריצה קריטית |",
+    "|  |    |",
     "| --- | ---: |",
     ...levelKeys.map((lv) => `| ${lv} | ${difficultyCounts[lv] ?? 0} |`),
     ``,
-    `## E. פרופילי למידה / התנהגות ילד (חינוכי בלבד)`,
+    `## E.   /   ( )`,
     ``,
-    "| מזהה | תיאור התנהגות |",
+    "|  |   |",
     "| --- | --- |",
     ...manifest.studentProfiles.slice(0, 40).map((r) => `| \`${r.scenarioOrProfileId}\` | ${r.behaviorSummary} |`),
-    manifest.studentProfiles.length > 40 ? `\n_(מוצגות 40 ראשונות; סה״כ ${manifest.studentProfiles.length} בשורות JSON)_\n` : "",
+    manifest.studentProfiles.length > 40 ? `\n_( 40 ;  ${manifest.studentProfiles.length}  JSON)_\n` : "",
     ``,
-    `## F. דוח הורה — איכות והוכחות`,
+    `## F.   —  `,
     ``,
-    "| פרופיל PDF | קצר | מפורט | סטטוס |",
+    "|  PDF |  |  |  |",
     "| --- | :---: | :---: | --- |",
-    ...pdfProfiles.map((p) => `| ${p.id} | ${p.shortPath ? "כן" : "לא"} | ${p.detailedPath ? "כן" : "לא"} | ${p.status || "—"} |`),
+    ...pdfProfiles.map((p) => `| ${p.id} | ${p.shortPath ? "" : ""} | ${p.detailedPath ? "" : ""} | ${p.status || "—"} |`),
     ``,
-    "### מטריצה קריטית — בדיקות איכות (מניין עבר לכל תרחיש)",
+    "###   —   (   )",
     ``,
-    "| מפתח בדיקה | כמות עוברות | משמעות |",
+    "|   |   |  |",
     "| --- | ---: | --- |",
     ...Object.entries(critAssertions).map(([k, v]) => {
       const hint = {
-        storage_pipeline_ok: "זרימת אחסון",
-        report_build_ok: "בניית דוח",
-        behavior_summary_ok: "סיכום התנהגות",
-        no_crash: "ללא קריסה",
-        no_internal_terms: "ללא מונחי פיתוח פנימיים בטקסט להורה",
-        non_generic_report_ok: "דוח לא גנרי / ממוקד נתונים",
-        no_false_strong_weak_ok: "ללא היפוך חזק/חלש שגוי",
-        trend_guard_ok: "שומר מגמה סבירה",
-        evidence_level_ok: "רמת עדות עקבית לנתונים",
+        storage_pipeline_ok: " ",
+        report_build_ok: " ",
+        behavior_summary_ok: " ",
+        no_crash: " ",
+        no_internal_terms: "     ",
+        non_generic_report_ok: "   /  ",
+        no_false_strong_weak_ok: "  / ",
+        trend_guard_ok: "  ",
+        evidence_level_ok: "   ",
       }[k] || k;
       return `| \`${k}\` | ${v} | ${hint} |`;
     }),
     ``,
-    "### מטריצה קריטית — JSON גולמי",
+    "###   — JSON ",
     ``,
     "```json",
     JSON.stringify(critAssertions, null, 2),
     "```",
     ``,
-    `## G. רכיבי AI שנבדקו (מתוך FINAL_REPORT)`,
+    `## G.  AI  ( FINAL_REPORT)`,
     ``,
-    "| id | סטטוס | משך (ms) | פקודה |",
+    "| id |  |  (ms) |  |",
     "| --- | --- | ---: | --- |",
     ...buildAiModuleRows(final.commands)
       .slice(0, 60)
       .map((r) => `| ${r.id} | ${r.status} | ${r.ms ?? ""} | ${String(r.npmOrCommand).slice(0, 80)} |`),
     ``,
-    `## ספי כיסוי (launch readiness)`,
+    `##   (launch readiness)`,
     ``,
     ...thresholdResults.map((t) => `- **${t.code}**: ${t.pass ? "✓" : "✗"} — ${t.detail}`),
     ``,
-    `## H. מה עדיין לא מכוסה מספיק לפני השקה`,
+    `## H.       `,
     ``,
     ...gapsHe.map((g) => `- ${g}`),
     ``,

@@ -1,4 +1,4 @@
--- Educational game #2: leo-supermarket (המכולת של ליאו)
+-- Educational game #2: leo-supermarket
 -- FOR REVIEW ONLY — run manually after owner approval.
 --
 -- Requires migration 077 (educational_game_sessions, reward_economy_educational_game_rules, site_game_catalog educational).
@@ -48,7 +48,7 @@ insert into public.site_game_catalog (
 ) values (
   'leo-supermarket',
   'educational',
-  'המכולת של ליאו',
+  'Leo''s Grocery Store',
   '/student/educational-games/leo-supermarket',
   '/student/educational-games',
   coalesce(
@@ -57,7 +57,7 @@ insert into public.site_game_catalog (
   ),
   20,
   '🏪',
-  'משחק כסף, קניות והחזרת עודף'
+  'A game about money, shopping, and giving change'
 )
 on conflict (game_key) do update set
   category = excluded.category,

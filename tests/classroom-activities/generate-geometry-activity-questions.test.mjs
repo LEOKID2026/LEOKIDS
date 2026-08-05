@@ -8,7 +8,7 @@ import {
 } from "../../lib/classroom-activities/generate-activity-questions-client.js";
 
 test("normalizeGeometryTopic maps Hebrew labels and English keys", () => {
-  assert.equal(normalizeGeometryTopic("שטח", "g3"), "area");
+  assert.equal(normalizeGeometryTopic("", "g3"), "area");
   assert.equal(normalizeGeometryTopic("area", "g3"), "area");
 });
 
@@ -56,7 +56,7 @@ test("geometry invalid topic for grade throws (g1 pythagoras)", async () => {
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), /אין מספיק שאלות גאומטריה/);
+      assert.match(String(err.message), /   /);
       return true;
     }
   );

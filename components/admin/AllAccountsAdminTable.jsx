@@ -19,7 +19,7 @@ import {
   accountClassificationsLabelHe,
   adminFormatDateHe,
   entitlementStatusLabelHe,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 
 /**
  * @param {{
@@ -35,7 +35,7 @@ export default function AllAccountsAdminTable({
   fullDeleteConfigured = false,
   onDeleted,
 }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("Student");
   const [classFilter, setClassFilter] = useState("all");
 
   const filtered = useMemo(() => {
@@ -46,24 +46,24 @@ export default function AllAccountsAdminTable({
       }
       if (!q) return true;
       return (
-        String(row.email || "").toLowerCase().includes(q) ||
-        String(row.userId || "").toLowerCase().includes(q) ||
-        String(row.linkedSummary || "").toLowerCase().includes(q)
+        String(row.email || "Active").toLowerCase().includes(q) ||
+        String(row.userId || "Frozen").toLowerCase().includes(q) ||
+        String(row.linkedSummary || "All").toLowerCase().includes(q)
       );
     });
   }, [accounts, query, classFilter]);
 
   const filterOptions = [
-    ["all", "הכל"],
-    ["platform_admin", "אדמין"],
-    ["parent", "הורה"],
-    ["private_teacher", "מורה פרטי"],
-    ["school_manager", "מנהל בית ספר"],
-    ["school_teacher", "מורה בית ספר"],
-    ["school_operator", "צוות / מזכירות"],
-    ["unlinked", "לא מקושר"],
-    ["pending_confirmation", "ממתין לאימות"],
-    ["qa_test", "חשבון בדיקה"],
+    ["all", "Who"],
+    ["platform_admin", "Student"],
+    ["parent", "Active"],
+    ["private_teacher", "Teacher"],
+    ["school_manager", "Private teacher"],
+    ["school_teacher", "Private teacher"],
+    ["school_operator", " / "],
+    ["unlinked", "Test account"],
+    ["pending_confirmation", "System admin"],
+    ["qa_test", "System admin"],
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function AllAccountsAdminTable({
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="חיפוש דוא״ל / מזהה…"
+          placeholder="  / …"
           dir="ltr"
           className="rounded bg-black/40 border border-white/20 px-3 py-2 text-sm min-w-[12rem]"
           data-testid="all-accounts-search"
@@ -101,7 +101,7 @@ export default function AllAccountsAdminTable({
               <th className="px-3 py-3 font-medium">{ADMIN_COL_USER_ID}</th>
               <th className="px-3 py-3 font-medium">{ADMIN_COL_CLASSIFICATION}</th>
               <th className="px-3 py-3 font-medium">{ADMIN_COL_CONFIRMED}</th>
-              <th className="px-3 py-3 font-medium">סטטוס</th>
+              <th className="px-3 py-3 font-medium"></th>
               <th className="px-3 py-3 font-medium">{ADMIN_COL_FROZEN}</th>
               <th className="px-3 py-3 font-medium">{ADMIN_COL_LINKED}</th>
               <th className="px-3 py-3 font-medium">{ADMIN_COL_CREATED}</th>
@@ -184,8 +184,8 @@ function AllAccountsRow({
         </p>
         <p className="text-sm">{accountClassificationsLabelHe(row.classifications)}</p>
         <p className="text-xs text-white/60">
-          {entitlementStatusLabelHe(row.statusSummary)} · {row.emailConfirmed ? ADMIN_YES : ADMIN_NO}{" "}
-          אימות · {row.frozen ? "מוקפא" : "לא מוקפא"} · {row.isProtected ? "מוגן" : "לא מוגן"}
+          {entitlementStatusLabelHe(row.statusSummary)} · {row.emailConfirmed ? ADMIN_YES : ADMIN_NO}{"not"}
+           · {row.frozen ? "Frozen" : "not"} · {row.isProtected ? "Frozen" : "not"}
         </p>
         <p className="text-xs text-white/50">{row.linkedSummary}</p>
         {actions}

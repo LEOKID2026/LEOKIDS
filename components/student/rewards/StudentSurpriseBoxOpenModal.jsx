@@ -2,7 +2,7 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import Link from "next/link";
 import { useStudentTheme } from "../../../contexts/StudentThemeContext.jsx";
-import { formatCoinAmountHe } from "../../../lib/rewards/rewards-ui.js";
+import { formatCoinAmountLabel } from "../../../lib/rewards/rewards-ui.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import RewardCardImage from "./RewardCardImage.jsx";
@@ -20,13 +20,13 @@ function SurpriseBoxCardPrizeRow({ card, T, copy }) {
     <li className={`rounded-lg border p-2 min-w-0 overflow-hidden ${T.subjectCard}`}>
       <div className="flex items-center gap-2 min-w-0">
         <div className="flex-1 min-w-0 text-start">
-          <p className={`text-sm font-bold leading-snug ${T.subjectTitle}`}>{card.nameHe}</p>
+          <p className={`text-sm font-bold leading-snug ${T.subjectTitle}`}>{card.name}</p>
           <p className={`text-xs mt-0.5 ${T.tileSub}`}>
-            {copy("previewModal", "rarityLabel", { label: card.rarityHe })}
+            {copy("previewModal", "rarityLabel", { label: card.rarityLabel })}
           </p>
           {card.wasDuplicate ? (
             <p className="text-xs mt-1 text-amber-700 dark:text-amber-300 line-clamp-2">
-              {card.conversionProgressHe || copy("surpriseBox", "duplicateHint")}
+              {card.conversionProgress || copy("surpriseBox", "duplicateHint")}
             </p>
           ) : (
             <p className="text-xs mt-1 text-emerald-700 dark:text-emerald-300">
@@ -61,7 +61,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
   const [openAttempt, setOpenAttempt] = useState(0);
   const [phase, setPhase] = useState("idle");
   const [result, setResult] = useState(null);
-  const [errorHe, setErrorHe] = useState("");
+  const [error, setError] = useState("");
   const [remainingPending, setRemainingPending] = useState(0);
 
   const notifyOpened = useCallback((json) => {
@@ -77,7 +77,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
       setOpenAttempt(0);
       setPhase("idle");
       setResult(null);
-      setErrorHe("");
+      setError("");
       setRemainingPending(0);
       isReopenAttemptRef.current = false;
       return undefined;
@@ -89,7 +89,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
     const idempotencyKey = `box:${Date.now()}:${openAttempt}`;
 
     setPhase("opening");
-    setErrorHe("");
+    setError("");
     setResult(null);
 
     (async () => {
@@ -118,10 +118,10 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
         if (!res.ok || json?.ok !== true) {
           if (json?.code === "no_pending_box") {
             setRemainingPending(0);
-            setErrorHe(isReopen ? copy("surpriseBox", "noMoreBoxes") : copy("surpriseBox", "noBoxReady"));
+            setError(isReopen ? copy("surpriseBox", "noMoreBoxes") : copy("surpriseBox", "noBoxReady"));
             notifyOpened(json);
           } else {
-            setErrorHe(copy("surpriseBox", "openError"));
+            setError(copy("surpriseBox", "openError"));
           }
           setPhase("error");
           return;
@@ -135,7 +135,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
         notifyOpened(json);
       } catch {
         if (cancelled) return;
-        setErrorHe(copy("surpriseBox", "openError"));
+        setError(copy("surpriseBox", "openError"));
         setPhase("error");
       } finally {
         clearTimeout(timeoutId);
@@ -235,7 +235,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
 
           {phase === "error" ? (
             <div className={T.errorBox}>
-              <p className={T.errorTitle}>{errorHe}</p>
+              <p className={T.errorTitle}>{error}</p>
               <button type="button" onClick={onClose} className={T.errorBtn}>
                 {copy("surpriseBoxModal", "close")}
               </button>
@@ -253,13 +253,13 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
                       </p>
                       {coinAmounts.length === 1 ? (
                         <p className={`text-base font-bold leading-tight ${T.statValue}`}>
-                          {formatCoinAmountHe(coinAmounts[0], locale)}
+                          {formatCoinAmountLabel(coinAmounts[0], locale)}
                         </p>
                       ) : (
                         <ul className="space-y-0.5">
                           {coinAmounts.map((amount, i) => (
                             <li key={i} className={`text-xs font-bold leading-tight ${T.statValue}`}>
-                              {i + 1}: {formatCoinAmountHe(amount, locale)}
+                              {i + 1}: {formatCoinAmountLabel(amount, locale)}
                             </li>
                           ))}
                         </ul>
@@ -280,7 +280,7 @@ export default function StudentSurpriseBoxOpenModal({ open, onClose, onOpened })
               {cards.length > 0 ? (
                 <ul className="space-y-1.5 min-w-0">
                   {cards.map((card, i) => (
-                    <SurpriseBoxCardPrizeRow key={`${card.nameHe}-${i}`} card={card} T={T} copy={copy} />
+                    <SurpriseBoxCardPrizeRow key={`${card.name}-${i}`} card={card} T={T} copy={copy} />
                   ))}
                 </ul>
               ) : null}

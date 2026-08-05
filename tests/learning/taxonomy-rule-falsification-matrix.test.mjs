@@ -74,9 +74,9 @@ describe("all 59 rules — E2E scenario checks", () => {
 
 describe("typed classifiers — deterministic only", () => {
   test("Hebrew spelling — one edit", () => {
-    const hit = classifyHebrewTypedAnswer("בית", "בית", { patternFamily: "g1_spelling_meaning_home", answerMode: "typing" });
+    const hit = classifyHebrewTypedAnswer("", "", { patternFamily: "g1_spelling_meaning_home", answerMode: "typing" });
     assert.equal(hit, null);
-    const wrong = classifyHebrewTypedAnswer("בית", "ביט", { patternFamily: "g1_spelling_meaning_home", answerMode: "typing" });
+    const wrong = classifyHebrewTypedAnswer("", "", { patternFamily: "g1_spelling_meaning_home", answerMode: "typing" });
     assert.equal(wrong?.tag, "spelling_pattern_error");
   });
 
@@ -98,7 +98,7 @@ describe("typed classifiers — deterministic only", () => {
   });
 
   test("no topic inference for Hebrew", () => {
-    const hit = classifyHebrewTypedAnswer("שלום", "שalom", { topic: "grammar" });
+    const hit = classifyHebrewTypedAnswer("", "alom", { topic: "grammar" });
     assert.equal(hit, null);
   });
 });

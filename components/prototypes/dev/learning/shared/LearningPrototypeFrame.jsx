@@ -35,7 +35,7 @@ export default function LearningPrototypeFrame({
   introHero,
   introText,
   introHint,
-  startLabel = "התחל משחק",
+  startLabel = " ",
   onStart,
   score,
   mistakes,
@@ -63,7 +63,7 @@ export default function LearningPrototypeFrame({
     <div className={`${styles.shell} ${shellTheme}`} dir="rtl">
       <header className={styles.header}>
         <Link href={backHref} className={styles.backBtn}>
-          ← חזרה
+          ←
         </Link>
         {phase === "play" ? (
           <div className={styles.hud}>
@@ -76,7 +76,7 @@ export default function LearningPrototypeFrame({
           </div>
         ) : (
           <div className={styles.hud}>
-            <span className={styles.hudChip}>🧪 אבטיפוס</span>
+            <span className={styles.hudChip}>🧪 </span>
           </div>
         )}
         <div style={{ minWidth: 40 }} aria-hidden />
@@ -117,20 +117,20 @@ export default function LearningPrototypeFrame({
       {phase === "won" ? (
         <div className={styles.screenCenter}>
           <div className={styles.endCard}>
-            <h2 className={styles.endTitle}>🎉 סיימתם!</h2>
-            <p className={styles.endStat}>⭐ ניקוד: {score}</p>
+            <h2 className={styles.endTitle}>🎉 !</h2>
+            <p className={styles.endStat}>⭐ : {score}</p>
             <p className={styles.endStat}>
-              ✅ הצלחות: {successCount} מתוך {tasksTotal}
+              ✅ : {successCount}  {tasksTotal}
             </p>
-            <p className={styles.endStat}>❌ טעויות: {mistakes}</p>
-            <p className={styles.endStat}>🔄 ניסיונות: {attemptsTotal}</p>
-            <p className={styles.endStat}>📊 רמה: {diffConfig.label}</p>
+            <p className={styles.endStat}>❌ : {mistakes}</p>
+            <p className={styles.endStat}>🔄 : {attemptsTotal}</p>
+            <p className={styles.endStat}>📊 : {diffConfig.label}</p>
             <div className={styles.endActions}>
               <button type="button" className={styles.startBtn} onClick={onPlayAgain}>
-                משחק חדש
+
               </button>
               <Link href={backHref} className={styles.secondaryBtn} style={{ textAlign: "center" }}>
-                חזרה לאבטיפוסים
+
               </Link>
             </div>
           </div>

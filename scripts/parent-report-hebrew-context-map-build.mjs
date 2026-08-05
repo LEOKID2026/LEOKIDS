@@ -12,27 +12,27 @@ const ROOT = join(__dirname, "..");
 const REVIEW_FOLDER = join(ROOT, "parent-report-hebrew-owner-review-chunks-with-meaning");
 const INVENTORY_PATH = join(ROOT, "reports", "parent-report-hebrew-copy-inventory.xlsx");
 const OUT_CSV = join(ROOT, "reports", "parent-report-hebrew-context-map.csv");
-const SHEET_NAME = "לאישור";
-const NEEDS_FULL = "צריך לבדוק בדוח מלא";
+const SHEET_NAME = "";
+const NEEDS_FULL = "   ";
 
 const PLACEHOLDER_SUBS = [
-  [/\$\{lab\}/g, "חשבון"],
-  [/\$\{core\}/g, "חשבון"],
-  [/\$\{label\}/g, "חשבון"],
-  [/\$\{subjectLabel\}/g, "חשבון"],
-  [/\$\{displayName\}/g, "שברים"],
-  [/\$\{displayTopicPhraseHe\([^)]*\)\}/g, "שברים"],
-  [/\$\{statsLine\}/g, "לפי 146 שאלות, דיוק כ־51%"],
-  [/\$\{domRc\}/g, "טעויות בקריאת המשימה"],
-  [/\$\{opening\}/g, "בחשבון"],
+  [/\$\{lab\}/g, ""],
+  [/\$\{core\}/g, ""],
+  [/\$\{label\}/g, ""],
+  [/\$\{subjectLabel\}/g, ""],
+  [/\$\{displayName\}/g, ""],
+  [/\$\{displayTopicPhraseHe\([^)]*\)\}/g, ""],
+  [/\$\{statsLine\}/g, " 146 ,  51%"],
+  [/\$\{domRc\}/g, "  "],
+  [/\$\{opening\}/g, ""],
   [/\$\{acc\}/g, "51%"],
-  [/\$\{q\}/g, "146 שאלות"],
-  [/\$\{gradeHe\}/g, "כיתה ה׳"],
-  [/\$\{childName\}/g, "דני"],
-  [/\$\{[^}]+\}/g, "[ערך]"],
-  [/\[נושא\]/g, "שברים"],
-  [/\[מקצוע\]/g, "חשבון"],
-  [/\[שם הילד\]/g, "דני"],
+  [/\$\{q\}/g, "146 "],
+  [/\$\{grade\}/g, " "],
+  [/\$\{childName\}/g, ""],
+  [/\$\{[^}]+\}/g, "[]"],
+  [/\[\]/g, ""],
+  [/\[\]/g, ""],
+  [/\[ \]/g, ""],
 ];
 
 function substitutePlaceholders(text) {
@@ -100,37 +100,37 @@ function resolveSourceLine(file, line, problematic, inventory) {
 
 function mapWhereToSurface(where) {
   const w = String(where || "");
-  if (w.includes("דוח מפורט")) return "detailed_report";
-  if (w.includes("דוח קצר")) return "short_report";
-  if (w.includes("AI") || w.includes("מסביר")) return "ai_explainer";
-  if (w.includes("שכבת ניסוח")) return "language_layer";
-  if (w.includes("דשבורד")) return "parent_dashboard";
-  if (w.includes("בונה דוח")) return "report_builder";
+  if (w.includes(" ")) return "detailed_report";
+  if (w.includes(" ")) return "short_report";
+  if (w.includes("AI") || w.includes("")) return "ai_explainer";
+  if (w.includes(" ")) return "language_layer";
+  if (w.includes("")) return "parent_dashboard";
+  if (w.includes(" ")) return "report_builder";
   return "report_general";
 }
 
 function mapWhereToSection(where) {
   const w = String(where || "");
-  if (w.includes("כרטיס מקצוע")) return "subject_card";
-  if (w.includes("כרטיס נושא")) return "topic_card";
-  if (w.includes("מצב נתונים") || w.includes("נתונים דלים")) return "data_health";
-  if (w.includes("המלצות") || w.includes("בית")) return "home_recommendations";
-  if (w.includes("תובנות") || w.includes("מה חשוב")) return "insights";
-  if (w.includes("סיכום")) return "executive_summary";
+  if (w.includes(" ")) return "subject_card";
+  if (w.includes(" ")) return "topic_card";
+  if (w.includes(" ") || w.includes(" ")) return "data_health";
+  if (w.includes("") || w.includes("")) return "home_recommendations";
+  if (w.includes("") || w.includes(" ")) return "insights";
+  if (w.includes("")) return "executive_summary";
   return "general";
 }
 
 function inferSubject(where, inventory) {
   const w = String(where || "");
-  if (w.includes("כרטיס מקצוע") || w.includes("מקצוע —")) return "חשבון";
-  if (inventory?.section === "subject_card" || inventory?.section === "subject_letter") return "חשבון";
+  if (w.includes(" ") || w.includes(" —")) return "";
+  if (inventory?.section === "subject_card" || inventory?.section === "subject_letter") return "";
   return "";
 }
 
 function inferTopic(where, inventory) {
   const w = String(where || "");
-  if (w.includes("כרטיס נושא") || w.includes("נושא —")) return "שברים";
-  if (inventory?.section === "topic_card") return "שברים";
+  if (w.includes(" ") || w.includes(" —")) return "";
+  if (inventory?.section === "topic_card") return "";
   return "";
 }
 
@@ -167,11 +167,11 @@ function mapKeyLabel(line) {
   const exportM = line.match(/export const ([A-Z0-9_]+)/);
   if (exportM) {
     const name = exportM[1];
-    if (/HOME|RECOMMEND/i.test(name)) return "המלצות לבית";
-    if (/SUPPORT|SEQUENCE/i.test(name)) return "כיוון תמיכה";
-    if (/TREND|EXECUTIVE/i.test(name)) return "מגמות / סיכום";
-    if (/NARRATIVE|CONTRACT/i.test(name)) return "ניסוח חוזה נרטיב";
-    return "תווית מנוע";
+    if (/HOME|RECOMMEND/i.test(name)) return " ";
+    if (/SUPPORT|SEQUENCE/i.test(name)) return " ";
+    if (/TREND|EXECUTIVE/i.test(name)) return " / ";
+    if (/NARRATIVE|CONTRACT/i.test(name)) return "  ";
+    return " ";
   }
   const keyM = line.match(/^\s*([a-zA-Z_][\w]*)\s*:/);
   if (keyM) return keyM[1].replace(/_/g, " ");
@@ -205,10 +205,10 @@ function extractCodeContext(file, line, problematic, inventory) {
   const heading = nearestHeading(lines, idx);
   const inlineLabel = nearestLabel(lines, idx);
   const mapLabel = mapKeyLabel(lineText) || mapKeyLabel(lines[Math.max(0, idx - 1)] || "");
-  const mentionsSubject = /מקצוע|subject|Subject/.test(
+  const mentionsSubject = /|subject|Subject/.test(
     lines.slice(Math.max(0, idx - 20), idx + 5).join("\n")
   );
-  const mentionsTopic = /נושא|topic|Topic|displayName/.test(
+  const mentionsTopic = /|topic|Topic|displayName/.test(
     lines.slice(Math.max(0, idx - 20), idx + 5).join("\n")
   );
 
@@ -220,7 +220,7 @@ function extractCodeContext(file, line, problematic, inventory) {
   } else if (usageKind === "variant_or_bullet") {
     hostSnippet = `• ${core}`;
   } else if (usageKind === "trend_filter_vocabulary") {
-    hostSnippet = `מילת מגמה שעשויה להופיע בסיכום: ${core}`;
+    hostSnippet = `    : ${core}`;
   } else if (inventory?.example_output) {
     hostSnippet = substitutePlaceholders(inventory.example_output);
   }
@@ -241,8 +241,8 @@ function extractCodeContext(file, line, problematic, inventory) {
 
 function reportLocationLine(where, subject, topic) {
   const parts = [String(where || "").trim()];
-  if (subject) parts.push(`מקצוע לדוגמה: ${subject}`);
-  if (topic) parts.push(`נושא לדוגמה: ${topic}`);
+  if (subject) parts.push(` : ${subject}`);
+  if (topic) parts.push(` : ${topic}`);
   return parts.filter(Boolean).join(" | ");
 }
 
@@ -264,19 +264,19 @@ function buildBeforeInReportContext(where, problematic, suggested, inventory, co
   }
 
   const blocks = [loc];
-  if (codeCtx?.heading) blocks.push(`כותרת בדוח: ${codeCtx.heading}`);
+  if (codeCtx?.heading) blocks.push(` : ${codeCtx.heading}`);
   else if (inventory?.section && inventory.section !== "general") {
-    blocks.push(`אזור בדוח: ${inventory.section}`);
+    blocks.push(` : ${inventory.section}`);
   }
 
   let body = "";
   const displayPhrase = substitutePlaceholders(problematic) || core;
   if (codeCtx?.usageKind === "trend_filter_vocabulary") {
-    body = `בסיכום המנהלים (מגמות מרכזיות), שורת מגמה עלולה להציג: «${core}».`;
-    notes.push("המחרוזת מופיעה גם ברשימת מילות מגמה שמסוננות/מנורמלות לפני תצוגה");
+    body = `  ( ),    : «${core}».`;
+    notes.push("      /  ");
   } else if (codeCtx?.usageKind === "variant_or_bullet") {
-    const section = codeCtx.heading || "רשימת נקודות בדוח";
-    body = `ב${section}: «${displayPhrase}».`;
+    const section = codeCtx.heading || "  ";
+    body = `${section}: «${displayPhrase}».`;
   } else if (codeCtx?.usageKind === "template" || codeCtx?.usageKind === "jsx_render") {
     const prefix = codeCtx.inlineLabel ? `${codeCtx.inlineLabel}: ` : "";
     body = `${prefix}${displayPhrase}`;
@@ -289,7 +289,7 @@ function buildBeforeInReportContext(where, problematic, suggested, inventory, co
   }
 
   body = substitutePlaceholders(body);
-  blocks.push(`לפני החלפה: ${body}`);
+  blocks.push(` : ${body}`);
   return { text: blocks.join("\n"), notes };
 }
 
@@ -303,11 +303,11 @@ function buildAfterInReportContext(before, problematic, suggested) {
     return { text: NEEDS_FULL, notes: ["cannot apply replacement without before context"] };
   }
   if (normalizeCore(sugg) === prob) {
-    return { text: before.replace("לפני החלפה:", "אחרי החלפה (ללא שינוי מוצע):"), notes: [] };
+    return { text: before.replace(" :", "  (  ):"), notes: [] };
   }
 
-  const beforeBody = before.includes("לפני החלפה:")
-    ? before.split("לפני החלפה:").slice(1).join("לפני החלפה:").trim()
+  const beforeBody = before.includes(" :")
+    ? before.split(" :").slice(1).join(" :").trim()
     : before;
 
   let afterBody = beforeBody;
@@ -323,12 +323,12 @@ function buildAfterInReportContext(before, problematic, suggested) {
   if (!replaced) {
     afterBody = `${beforeBody} → ${substitutePlaceholders(sugg)}`;
     return {
-      text: before.replace("לפני החלפה:", "אחרי החלפה:").replace(beforeBody, afterBody),
+      text: before.replace(" :", " :").replace(beforeBody, afterBody),
       notes: ["suggested replacement does not embed cleanly in the excerpt; appended after arrow"],
     };
   }
 
-  const afterText = before.replace("לפני החלפה:", "אחרי החלפה:").replace(beforeBody, substitutePlaceholders(afterBody));
+  const afterText = before.replace(" :", " :").replace(beforeBody, substitutePlaceholders(afterBody));
   const notes = [];
   if (prob.length <= 12 && sugg.length > prob.length * 2) {
     notes.push("suggested replacement is much longer than the original phrase slot");
@@ -348,7 +348,7 @@ function assessConfidence(codeCtx, inventory, before, afterNotes, where) {
   if (afterNotes.some((n) => n.includes("does not embed cleanly"))) return "medium";
   if (afterNotes.some((n) => n.includes("exact source line not resolved"))) return "medium";
   if (inventory && codeCtx.ok && substitutePlaceholders(inventory.current_hebrew || "")) {
-    return /חשבון|שברים|146|51%/.test(before) ? "medium" : "high";
+    return /||146|51%/.test(before) ? "medium" : "high";
   }
   if (where) return "medium";
   return "low";
@@ -515,7 +515,7 @@ function main() {
       `Confidence high: ${confidenceCounts.high}`,
       `Confidence medium: ${confidenceCounts.medium}`,
       `Confidence low: ${confidenceCounts.low}`,
-      `Needs full report (צריך לבדוק בדוח מלא): ${needsFullCount}`,
+      `Needs full report (   ): ${needsFullCount}`,
       `Misfit candidates: ${misfits.length}`,
       "",
       "Top misfit rows:",

@@ -1,6 +1,6 @@
 /**
- * Phase 2 — בדיקות מנוע המלצות (הרצה: npm run test:topic-next-step-phase2)
- * תיעוד: docs/PARENT_REPORT.md
+ * Phase 2 —    (: npm run test:topic-next-step-phase2)
+ * : docs/PARENT_REPORT.md
  */
 import assert from "node:assert/strict";
 
@@ -47,13 +47,13 @@ function behaviorBase(type, extra = {}) {
   };
 }
 
-/** שורה מינימלית + שדות דיאגנוסטיקה לטסט ישיר של decideTopicNextStep */
+/**   +      decideTopicNextStep */
 function rowAug(p) {
   const q = p.questions ?? 20;
   const acc = p.accuracy ?? 88;
   const wrong = p.wrong ?? Math.max(0, q - Math.round((q * acc) / 100));
   return {
-    displayName: p.displayName || "נושא",
+    displayName: p.displayName || "",
     bucketKey: p.bucketKey || "topic_a",
     modeKey: p.modeKey ?? "learning",
     questions: q,
@@ -63,7 +63,7 @@ function rowAug(p) {
     gradeKey: p.gradeKey ?? "g3",
     levelKey: p.levelKey ?? "medium",
     grade: p.grade ?? "g3",
-    level: p.level ?? "בינוני",
+    level: p.level ?? "",
     recencyScore: p.recencyScore ?? 50,
     dataSufficiencyLevel: p.dataSufficiencyLevel ?? "strong",
     evidenceStrength: p.evidenceStrength ?? "strong",
@@ -87,7 +87,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   }
 }
 
-// 1) דיוק גבוה + תלות רמזים => לא advance אוטומטי
+// 1)   +   =>  advance
 {
   const row = rowAug({
     questions: 20,
@@ -101,7 +101,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assertStep("hint_dependence_blocks_advance", row, 2, "maintain_and_strengthen", ["advance_level", "advance_grade_topic_only"]);
 }
 
-// 2) חולשה במצב מהירות בלבד => לא drop
+// 2)     =>  drop
 {
   const row = rowAug({
     questions: 20,
@@ -122,7 +122,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.equal(d.riskFlags.speedOnlyRisk, true);
 }
 
-// 3) מגמה חיובית + מאסטרי מספיק => advance או maintain (לא drop)
+// 3)   +   => advance  maintain ( drop)
 {
   const row = rowAug({
     questions: 20,
@@ -145,7 +145,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.notEqual(d.step, "drop_one_level_topic_only");
 }
 
-// 4) מגמה שלילית אחרי קושי אחרון => לא drop_one_grade (מרוכך)
+// 4)      =>  drop_one_grade ()
 {
   const row = rowAug({
     questions: 20,
@@ -175,7 +175,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   );
 }
 
-// 5) careless_pattern + דיוק בינוני => לא drop מהיר
+// 5) careless_pattern +   =>  drop
 {
   const row = rowAug({
     questions: 18,
@@ -191,7 +191,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.notEqual(d.step, "drop_one_level_topic_only");
 }
 
-// 6) knowledge_gap אמיתי — יורדים רמה כשהמגמה לא מפריכה (דיוק לא עולה)
+// 6) knowledge_gap  —      (  )
 {
   const row = rowAug({
     questions: 20,
@@ -210,7 +210,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   );
 }
 
-// 7) ראיות חלקיות + צעד אגרסיבי מהלגאסי => cap
+// 7)   +    => cap
 {
   const row = rowAug({
     questions: 20,
@@ -227,7 +227,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.equal(d.step, "maintain_and_strengthen", `insufficient_cap: ${d.step}`);
 }
 
-// 8) stable_mastery + מגמה תומכת + סיכון נמוך => advance מותר
+// 8) stable_mastery +   +   => advance
 {
   const row = rowAug({
     questions: 20,
@@ -248,7 +248,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.equal(d.riskFlags.falsePromotionRisk, false);
 }
 
-// מבנה trace
+//  trace
 {
   const row = rowAug({ questions: 15, accuracy: 80, wrong: 3, dataSufficiencyLevel: "medium" });
   const d = decideTopicNextStep(row, 2, DEFAULT_TOPIC_NEXT_STEP_CONFIG);
@@ -260,7 +260,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.ok("phase7RuleId" in st.sections.chosenRule);
 }
 
-// 9) Phase 7 — מגנון מהירות מול «פער ידע»: לא ירידה אגרסיבית (מעורב + ריסון)
+// 9) Phase 7 —    « »:    ( + )
 {
   const row = rowAug({
     questions: 22,
@@ -281,7 +281,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.ok(["remediate_same_level", "maintain_and_strengthen"].includes(d.step), d.step);
 }
 
-// 10) Phase 7 — מסלול מהיר: שורש לחץ מהירות
+// 10) Phase 7 —  :
 {
   const row = rowAug({
     questions: 20,
@@ -297,7 +297,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.equal(d.rootCause, "speed_pressure", `root ${d.rootCause}`);
 }
 
-// 11) Phase 7 — חיכוך הוראה: לא לאבחן כפער ידע כשורש ראשי
+// 11) Phase 7 —  :
 {
   const row = rowAug({
     questions: 18,
@@ -314,7 +314,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.equal(d.rootCause, "instruction_friction", `root ${d.rootCause}`);
 }
 
-// 12) Phase 8 — כיול עומס ביתי: נתון דל / ריסון => עומס מינימלי
+// 12) Phase 8 —   :   /  =>
 {
   const c = buildPracticeCalibration({
     rootCause: "insufficient_evidence",
@@ -331,7 +331,7 @@ function assertStep(name, row, mC, expectedStep, forbiddenSteps = []) {
   assert.ok(c.recommendedSessionCount <= 3);
 }
 
-// 13) Phase 9 — overlay מצב תרגול לפי דפוס טעות ושלב למידה
+// 13) Phase 9 — overlay
 {
   const o1 = buildPhase9RecommendationOverlay({
     dominantMistakePattern: "insufficient_mistake_evidence",

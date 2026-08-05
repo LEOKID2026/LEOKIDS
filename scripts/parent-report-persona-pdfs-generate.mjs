@@ -18,14 +18,14 @@ const { PARENT_REPORT_PERSONA_CORPUS } = await import(
 );
 
 const REVIEWER_QS_HE = [
-  "האם הבנת תוך 10 שניות מה קורה?",
-  "האם ברור מה לעשות בבית?",
-  "האם ההמלצה מתאימה לילד?",
-  "האם הטון חזק מדי?",
-  "האם יש סתירה?",
-  "האם יש יותר מדי טקסט?",
-  "ציון 1–5",
-  "הערות",
+  "   10   ?",
+  "    ?",
+  "   ?",
+  "   ?",
+  "  ?",
+  "    ?",
+  " 1–5",
+  "",
 ];
 
 function esc(v) {
@@ -41,22 +41,22 @@ function personaBlock(persona, bodyText, kind, blind = false) {
   const expected = blind
     ? ""
     : `
-      <div class="meta"><strong>התנהגות צפויה:</strong> ${esc(persona.expectedParentConclusionHe)}</div>
-      <div class="meta"><strong>מיקוד ראשי צפוי:</strong> ${esc(persona.expectedPrimaryFocusType)}</div>
-      <div class="meta"><strong>טון צפוי:</strong> ${esc(persona.expectedTone)}</div>
-      <div class="meta"><strong>דגלי סיכון צפויים:</strong> ${esc((persona.expectedRiskFlags || []).join(", "))}</div>
+      <div class="meta"><strong> :</strong> ${esc(persona.expectedParentConclusionHe)}</div>
+      <div class="meta"><strong>  :</strong> ${esc(persona.expectedPrimaryFocusType)}</div>
+      <div class="meta"><strong> :</strong> ${esc(persona.expectedTone)}</div>
+      <div class="meta"><strong>  :</strong> ${esc((persona.expectedRiskFlags || []).join(", "))}</div>
     `;
   const questions = REVIEWER_QS_HE.map((q) => `<li>${esc(q)}</li>`).join("");
   return `
   <section class="page">
     <h1>${esc(persona.id)} — ${esc(persona.titleHe)}</h1>
-    <div class="meta"><strong>סוג מסמך:</strong> ${esc(kind)}</div>
-    <div class="meta"><strong>קטגוריה:</strong> ${esc(persona.category)}</div>
-    <div class="meta"><strong>תיאור תרחיש:</strong> ${esc(persona.descriptionHe)}</div>
+    <div class="meta"><strong> :</strong> ${esc(kind)}</div>
+    <div class="meta"><strong>:</strong> ${esc(persona.category)}</div>
+    <div class="meta"><strong> :</strong> ${esc(persona.descriptionHe)}</div>
     ${expected}
-    <h2>תוכן הדוח</h2>
+    <h2> </h2>
     <pre>${esc(bodyText)}</pre>
-    <h2>שאלות לסוקר/ת</h2>
+    <h2> /</h2>
     <ol>${questions}</ol>
   </section>`;
 }
@@ -150,9 +150,9 @@ writeFileSync(join(OUT_DIR, "index.md"), indexLines.join("\n"), "utf8");
 const reviewerPackLines = ["# Reviewer Pack (With Expected Behavior)", ""];
 for (const persona of PARENT_REPORT_PERSONA_CORPUS) {
   reviewerPackLines.push(`## ${persona.id} — ${persona.titleHe}`);
-  reviewerPackLines.push(`- קטגוריה: ${persona.category}`);
-  reviewerPackLines.push(`- תיאור: ${persona.descriptionHe}`);
-  reviewerPackLines.push(`- התנהגות צפויה: ${persona.expectedParentConclusionHe}`);
+  reviewerPackLines.push(`- : ${persona.category}`);
+  reviewerPackLines.push(`- : ${persona.descriptionHe}`);
+  reviewerPackLines.push(`-  : ${persona.expectedParentConclusionHe}`);
   reviewerPackLines.push(`- short pdf: \`reports/parent-report-persona-corpus/pdf/${persona.id}.short.pdf\``);
   reviewerPackLines.push(`- detailed pdf: \`reports/parent-report-persona-corpus/pdf/${persona.id}.detailed.pdf\``);
   reviewerPackLines.push(`- summary pdf: \`reports/parent-report-persona-corpus/pdf/${persona.id}.summary.pdf\``);
@@ -168,8 +168,8 @@ writeFileSync(join(OUT_DIR, "reviewer-pack.md"), reviewerPackLines.join("\n"), "
 const blindLines = ["# Reviewer Pack (Blind)", ""];
 for (const persona of PARENT_REPORT_PERSONA_CORPUS) {
   blindLines.push(`## ${persona.id} — ${persona.titleHe}`);
-  blindLines.push(`- קטגוריה: ${persona.category}`);
-  blindLines.push(`- תיאור: ${persona.descriptionHe}`);
+  blindLines.push(`- : ${persona.category}`);
+  blindLines.push(`- : ${persona.descriptionHe}`);
   blindLines.push(`- short pdf: \`reports/parent-report-persona-corpus/pdf/${persona.id}.short.pdf\``);
   blindLines.push(`- detailed pdf: \`reports/parent-report-persona-corpus/pdf/${persona.id}.detailed.pdf\``);
   blindLines.push(`- summary pdf: \`reports/parent-report-persona-corpus/pdf/${persona.id}.summary.pdf\``);

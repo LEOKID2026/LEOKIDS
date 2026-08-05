@@ -1,4 +1,4 @@
--- Arcade: הפעלת בינגו.
+-- Arcade: enable bingo.
 
 begin;
 

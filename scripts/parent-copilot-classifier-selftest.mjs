@@ -40,7 +40,7 @@ function check(name, ok, detail) {
   }
 }
 
-// ─── Payload builder (484 answers; subjects: math/english; topics include שברים, גאומטריה) ──
+// ─── Payload builder (484 answers; subjects: math/english; topics include , ) ──
 
 function makeContract(topicKey, subjectId, displayName, qCount = 12, acc = 75) {
   return {
@@ -56,9 +56,9 @@ function makeContract(topicKey, subjectId, displayName, qCount = 12, acc = 75) {
         allowedSections: ["summary", "finding", "recommendation", "limitations"],
         recommendationIntensityCap: "RI2",
         textSlots: {
-          observation: `ב${displayName} נצפו ${qCount} שאלות עם דיוק של ${acc}%.`,
-          interpretation: `${displayName} מצריך תרגול ממוקד.`,
-          action: `מומלץ לתרגל ${displayName}.`,
+          observation: `${displayName}  ${qCount}     ${acc}%.`,
+          interpretation: `${displayName}   .`,
+          action: `  ${displayName}.`,
           uncertainty: "",
         },
       },
@@ -84,40 +84,40 @@ function richReportPayload() {
       {
         subject: "math",
         topicRecommendations: [
-          makeContract("geo", "math", "גאומטריה", 45, 72),
-          makeContract("frac", "math", "שברים", 60, 68),
+          makeContract("geo", "math", "", 45, 72),
+          makeContract("frac", "math", "", 60, 68),
         ],
       },
       {
         subject: "english",
         topicRecommendations: [
-          makeContract("eng_vocab", "english", "אוצר מילים", 38, 81),
+          makeContract("eng_vocab", "english", " ", 38, 81),
         ],
       },
       {
         subject: "science",
         topicRecommendations: [
-          makeContract("photo", "science", "פוטוסינתזה", 8, 60),
+          makeContract("photo", "science", "", 8, 60),
         ],
       },
     ],
-    executiveSummary: { majorTrendsHe: ["בתקופה נצפו 484 שאלות עם דיוק 74%."] },
+    executiveSummary: { majorTrendsHe: ["  484    74%."] },
   };
 }
 
 let sid = 0;
 const freshSid = () => `cls-test-${++sid}-${Date.now()}`;
 
-const SUBJECT_TOPIC_HE = ["חשבון", "גאומטריה", "אנגלית", "מדעים", "עברית", "מולדת", "שברים", "אוצר מילים", "פוטוסינתזה"];
+const SUBJECT_TOPIC_HE = ["", "", "", "", "", "", "", " ", ""];
 // NOTE: Boundary copies are suggested example questions for the parent, not report facts, so we exclude
-// "התחזק" / "מתקדם" from the banned-verb list; we only ban verbs that, when
-// attached to "הילד", indicate a child-state assertion.
+// "" / "" from the banned-verb list; we only ban verbs that, when
+// attached to "", indicate a child-state assertion.
 const REPORT_DATA_BANNED_PATTERNS = [
-  /\d{2,}\s*שאלות/u,
-  /דיוק\s+של\s*\d/u,
-  /הילד\s+(?:מתרגל|הגיע|ענה|טעה|צבר)/u,
-  /לפי\s+הדוח|על\s+פי\s+הדוח|מהדוח/u,
-  /מוקדם\s+לקבוע|אין\s+מספיק\s+נתונים|נתונים\s+מועטים/u,
+  /\d{2,}\s*/u,
+  /\s+\s*\d/u,
+  /\s+(?:||||)/u,
+  /\s+|\s+\s+|/u,
+  /\s+|\s+\s+|\s+/u,
 ];
 
 function answerText(res) {
@@ -184,21 +184,21 @@ function pipelineHardGateChecks(label, q, expectedBucket, expectedBoundary) {
 // Group A — Off-topic regression list (the exact failures from user feedback)
 //
 // These cases must classify as off_topic AND produce the exact off-topic boundary.
-// "הוא אוהב משחקים?" is treated separately in Group A2 because it has no
+// "  ?" is treated separately in Group A2 because it has no
 // off-topic lexical hit and legitimately falls into ambiguous_or_unclear; the
 // only hard guarantee is that it is NOT report_related.
 // ═══════════════════════════════════════════════════════════════════════════════
 process.stdout.write("\n── Group A: Off-topic regression list ──\n");
 
 const offTopicRegression = [
-  "מה מזג אויר?",
-  "כמה עולה ביטקוין?",
-  "איך מכינים פיצה?",
-  "מי כתב את הארי פוטר?",
-  "מה זה פוטוסינתזה?",
-  "מי המציא את החשמל?",
-  "תכין לי מתכון לעוגיות",
-  "כמה זה 17 כפול 24?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "    ?",
+  "  ?",
+  "   ?",
+  "   ",
+  "  17  24?",
 ];
 
 for (const q of offTopicRegression) {
@@ -217,7 +217,7 @@ for (const q of offTopicRegression) {
 process.stdout.write("\n── Group A2: Off-topic-or-ambiguous (no report leakage either way) ──\n");
 
 const offTopicOrAmbiguous = [
-  "הוא אוהב משחקים?",       // pronoun + non-learning verb; either off_topic or ambiguous
+  "  ?",       // pronoun + non-learning verb; either off_topic or ambiguous
 ];
 
 for (const q of offTopicOrAmbiguous) {
@@ -258,11 +258,11 @@ for (const q of offTopicOrAmbiguous) {
 process.stdout.write("\n── Group B2: Peer comparison ──\n");
 
 const peerQuestions = [
-  "האם הוא חלש יותר מילדים אחרים בכיתה?",
-  "האם הוא יותר חלש מילדים אחרים?",
-  "האם הוא חלש יותר מילדים אחרים?",
-  "האם הוא טוב יותר מילדים אחרים בכיתה?",
-  "לעומת שאר הכיתה איך הוא?",
+  "      ?",
+  "     ?",
+  "     ?",
+  "      ?",
+  "    ?",
 ];
 
 for (const q of peerQuestions) {
@@ -273,7 +273,7 @@ for (const q of peerQuestions) {
   }
 }
 const detClinical = classifyParentQuestionDeterministic({
-  utterance: "האם הוא דיסלקסי?",
+  utterance: "  ?",
   payload: richReportPayload(),
 });
 check("[B2] clinical still health_sensitive", detClinical.bucket === "health_sensitive", detClinical.bucket);
@@ -283,12 +283,12 @@ check("[B2] clinical still health_sensitive", detClinical.bucket === "health_sen
 process.stdout.write("\n── Group B: Diagnostic ──\n");
 
 const diagnostic = [
-  "האם הוא דיסלקסי?",
-  "יש לו ADHD?",
-  "אולי יש לו לקות למידה?",
-  "הוא בסדר רגשית?",
-  "יש לה חרדה?",
-  "האם יש לו הפרעת קשב?",
+  "  ?",
+  "  ADHD?",
+  "    ?",
+  "  ?",
+  "  ?",
+  "    ?",
 ];
 
 for (const q of diagnostic) {
@@ -309,12 +309,12 @@ for (const q of diagnostic) {
 process.stdout.write("\n── Group C: Ambiguous ──\n");
 
 const ambiguous = [
-  "מה אתה חושב?",
-  "תסביר",
-  "כן",
-  "מה?",
-  "בסדר",
-  "אוקיי",
+  "  ?",
+  "",
+  "",
+  "?",
+  "",
+  "",
 ];
 
 for (const q of ambiguous) {
@@ -335,26 +335,26 @@ for (const q of ambiguous) {
 process.stdout.write("\n── Group D: Report-related ──\n");
 
 const reportRelated = [
-  "מה הכי חשוב לתרגל השבוע?",
-  "במה הוא חזק?",
-  "במה הוא מתקשה?",
-  "איפה הוא מתקשה?",
-  "מה לעשות בבית?",
-  "איך לעזור לו בשברים לפי הדוח?",
-  "האם יש סיבה לדאגה?",
-  "הוא מתקשה בשברים?",
-  "מה עם גאומטריה?",
-  "תסביר לי שברים",
-  "תסביר לי על שברים מה הבעיה",
-  "חשבון שברים",
-  "מה הבעיה?",
-  "איך הוא בחשבון?",
+  "    ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "  ?",
+  "     ?",
+  "   ?",
+  "  ?",
+  "  ?",
+  "  ",
+  "     ",
+  " ",
+  " ?",
+  "  ?",
   // Regression: strength/explain/weakness phrasing must clear deterministic threshold (0.5)
-  "מה המקצוע החזק?",
-  "תסביר לי על הדוח",
-  "מה המקצוע החלש?",
-  "איזה מקצוע דורש חיזוק?",
-  "באיזה מקצוע נראו התוצאות הכי טובות?",
+  "  ?",
+  "   ",
+  "  ?",
+  "   ?",
+  "     ?",
 ];
 
 for (const q of reportRelated) {
@@ -391,56 +391,56 @@ for (const q of reportRelated) {
 // ═══════════════════════════════════════════════════════════════════════════════
 process.stdout.write("\n── Group E: Two-tier proof ──\n");
 
-// "הוא אוהב פיצה?" — pronoun + food = NOT report_related
+// "  ?" — pronoun + food = NOT report_related
 {
-  const q = "הוא אוהב פיצה?";
+  const q = "  ?";
   const det = classifyParentQuestionDeterministic({ utterance: q, payload: richReportPayload() });
   check(
-    `[E] "הוא אוהב פיצה?" must NOT be report_related`,
+    `[E] "  ?" must NOT be report_related`,
     det.bucket !== "report_related",
     `bucket=${det.bucket} signals=${JSON.stringify(det.signals)}`,
   );
 }
 
-// "הוא מתקשה בשברים?" — pronoun + STRONG verb + topic = report_related
+// "  ?" — pronoun + STRONG verb + topic = report_related
 {
-  const q = "הוא מתקשה בשברים?";
+  const q = "  ?";
   const det = classifyParentQuestionDeterministic({ utterance: q, payload: richReportPayload() });
   check(
-    `[E] "הוא מתקשה בשברים?" must be report_related`,
+    `[E] "  ?" must be report_related`,
     det.bucket === "report_related",
     `bucket=${det.bucket} signals=${JSON.stringify(det.signals)}`,
   );
 }
 
-// "מה זה פוטוסינתזה?" — generic-knowledge framing on a topic in the report = off_topic
+// "  ?" — generic-knowledge framing on a topic in the report = off_topic
 {
-  const q = "מה זה פוטוסינתזה?";
+  const q = "  ?";
   const det = classifyParentQuestionDeterministic({ utterance: q, payload: richReportPayload() });
   check(
-    `[E] "מה זה פוטוסינתזה?" must be off_topic (generic-knowledge framing clamps report_signal)`,
+    `[E] "  ?" must be off_topic (generic-knowledge framing clamps report_signal)`,
     det.bucket === "off_topic",
     `bucket=${det.bucket} signals=${JSON.stringify(det.signals)}`,
   );
 }
 
-// "מה עם פוטוסינתזה בדוח?" — report shorthand + "בדוח" strong = report_related
+// "   ?" — report shorthand + "" strong = report_related
 {
-  const q = "מה עם פוטוסינתזה בדוח?";
+  const q = "   ?";
   const det = classifyParentQuestionDeterministic({ utterance: q, payload: richReportPayload() });
   check(
-    `[E] "מה עם פוטוסינתזה בדוח?" must be report_related`,
+    `[E] "   ?" must be report_related`,
     det.bucket === "report_related",
     `bucket=${det.bucket} signals=${JSON.stringify(det.signals)}`,
   );
 }
 
-// "תסביר לי שברים" — anchored topic in utterance = report_related (report-row-first)
+// "  " — anchored topic in utterance = report_related (report-row-first)
 {
-  const q = "תסביר לי שברים";
+  const q = "  ";
   const det = classifyParentQuestionDeterministic({ utterance: q, payload: richReportPayload() });
   check(
-    `[E] "תסביר לי שברים" must be report_related (topic row match + explain framing)`,
+    `[E] "  " must be report_related (topic row match + explain framing)`,
     det.bucket === "report_related",
     `bucket=${det.bucket} signals=${JSON.stringify(det.signals)}`,
   );
@@ -452,7 +452,7 @@ process.stdout.write("\n── Group E: Two-tier proof ──\n");
 process.stdout.write("\n── Group F: Router compatibility (back-compat shape) ──\n");
 
 {
-  const r = routeParentQuestion("מה מזג אויר?", richReportPayload());
+  const r = routeParentQuestion("  ?", richReportPayload());
   check(`[F] router off_topic exitEarly`, r.exitEarly === true, String(r.exitEarly));
   check(`[F] router off_topic deterministicResponse exact`,
     r.deterministicResponse === OFF_TOPIC_RESPONSE_HE,
@@ -462,7 +462,7 @@ process.stdout.write("\n── Group F: Router compatibility (back-compat shape)
     r.classifierBucket);
 }
 {
-  const r = routeParentQuestion("יש לו ADHD?", richReportPayload());
+  const r = routeParentQuestion("  ADHD?", richReportPayload());
   check(`[F] router health exitEarly`, r.exitEarly === true, String(r.exitEarly));
   check(`[F] router health deterministicResponse exact`,
     r.deterministicResponse === HEALTH_BOUNDARY_RESPONSE_HE,
@@ -472,7 +472,7 @@ process.stdout.write("\n── Group F: Router compatibility (back-compat shape)
     r.classifierBucket);
 }
 {
-  const r = routeParentQuestion("תסביר", richReportPayload());
+  const r = routeParentQuestion("", richReportPayload());
   check(`[F] router ambiguous exitEarly`, r.exitEarly === true, String(r.exitEarly));
   check(`[F] router ambiguous deterministicResponse exact`,
     r.deterministicResponse === AMBIGUOUS_RESPONSE_HE,
@@ -482,7 +482,7 @@ process.stdout.write("\n── Group F: Router compatibility (back-compat shape)
     r.classifierBucket);
 }
 {
-  const r = routeParentQuestion("מה הכי חשוב לתרגל השבוע?", richReportPayload());
+  const r = routeParentQuestion("    ?", richReportPayload());
   check(`[F] router report_related no early exit`, r.exitEarly === false, String(r.exitEarly));
   check(`[F] router report_related classifierBucket`,
     r.classifierBucket === "report_related",

@@ -34,7 +34,7 @@ assert.equal(
   assignedActivityQuestionUsesChoiceUi({
     subject: "geometry",
     params: { kind: "triangles" },
-    choices: ["שווה צלעות", "שווה שוקיים", "שונה צלעות"],
+    choices: [" ", " ", " "],
   }),
   true
 );
@@ -42,7 +42,7 @@ assert.equal(
   assignedActivityQuestionUsesChoiceUi({
     subject: "geometry",
     params: { kind: "concept_shape_truth", answerMode: "binary", optionCount: 2 },
-    choices: ["נכון", "לא נכון"],
+    choices: ["", " "],
   }),
   true
 );
@@ -66,10 +66,10 @@ assert.equal(gradeGeometryActivityAnswer("24,5", "24.5", numericQuestion), true)
 const choiceQuestion = {
   subject: "geometry",
   params: { kind: "triangles" },
-  choices: ["שווה צלעות", "שווה שוקיים", "שונה צלעות"],
+  choices: [" ", " ", " "],
 };
-assert.equal(gradeGeometryActivityAnswer("שווה שוקיים", "שווה שוקיים", choiceQuestion), true);
-assert.equal(gradeGeometryActivityAnswer("24", "שווה שוקיים", choiceQuestion), false);
+assert.equal(gradeGeometryActivityAnswer(" ", " ", choiceQuestion), true);
+assert.equal(gradeGeometryActivityAnswer("24", " ", choiceQuestion), false);
 
 assert.equal(
   gradeAssignedActivityAnswer("7", "7", { subject: "math", choices: ["7", "8"] }),

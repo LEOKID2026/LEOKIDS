@@ -15,7 +15,7 @@ function run() {
   const sample = {
     student: {
       id: "student-1",
-      full_name: "בדיקה",
+      full_name: "",
       grade_level: "g4",
       is_active: true,
     },

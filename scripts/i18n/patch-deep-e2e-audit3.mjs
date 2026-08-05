@@ -81,7 +81,7 @@ const rewardsNew = `test("rewards cards shop tab + home surprise + arcade", asyn
         contentType: "application/json",
         body: JSON.stringify({
           ok: true,
-          cards: [{ id: "e2e-card", nameHe: "بطاقة", rarity: "common", isNew: true }],
+          cards: [{ id: "e2e-card", rarity: "common", isNew: true }],
         }),
       });
     });

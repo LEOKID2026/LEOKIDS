@@ -33,100 +33,100 @@ const BEFORE_AFTER_SEEDS = [
     subject: "math",
     topic: "equations",
     before:
-      "רמה קלה — משוואה, מצאו את הנעלם: ___ = 1 × 5 + 12 · כיתה ג׳",
+      "  — ,   : ___ = 1 × 5 + 12 ·  ",
   },
   {
     subject: "geometry",
     topic: "area",
     before:
-      "(כיתה ג׳) מושגים (קל): רוצים גדר סביב מגרש מלבני. במה בדרך כלל מחשבים כדי לדעת כמה חומר גדר לקנות?",
+      "( )  ():     .          ?",
   },
   {
     subject: "science",
     topic: "body",
     before:
-      "סימון ייחודי זוהה · כיתה ג׳ · נושא body · רמת easy · חקר בית־ספרי: מה ההתנהגות המתאימה יותר כשמתמקדים בסיווג תוצאות לפי קריטריון ברור?",
+      "   ·   ·  body ·  easy ·  :          ?",
   },
   {
     subject: "hebrew",
     topic: "grammar",
-    before: "בהתאם לכיתה ג׳ [רמה easy]: איזה משפט נכון?",
+    before: "   [ easy]:   ?",
   },
   {
     subject: "english",
     topic: "vocabulary",
-    before: "(כיתה ד׳) · רמת medium · Choose the correct word:",
+    before: "( ) ·  medium · Choose the correct word:",
   },
   {
     subject: "moledet",
     topic: "homeland",
-    before: "שאלה בנושא: מולדת — מהו סמל המדינה?",
+    before: " :  —   ?",
   },
   {
     subject: "math",
     topic: "addition",
-    before: "(כיתה א׳) חישוב קל: 3 + 4 = __",
+    before: "( )  : 3 + 4 = __",
   },
   {
     subject: "geometry",
     topic: "perimeter",
-    before: "כיתה ד׳: מה היקף המלבן עם צלע 5 ס״מ?",
+    before: " :      5 ?",
   },
   {
     subject: "science",
     topic: "materials",
-    before: "נושא materials · רמת hard · מה מאפיין חומר מבודד?",
+    before: " materials ·  hard ·    ?",
   },
   {
     subject: "science",
     topic: "animals",
     before:
-      "כיתה ה׳ · רמה קלה · מה עושה חילזון בלחות? · מוקד snail_moisture_v3",
-    expectedAfter: "מה עושה חילזון בלחות?",
+      "  ·   ·    ? ·  snail_moisture_v3",
+    expectedAfter: "   ?",
   },
   {
     subject: "science",
     grade: "g5",
     topic: "body",
     level: "medium",
-    before: "בכיתה ה׳ — רמה בינונית: מה קשר בין דם לריאות?",
-    expectedAfter: "מה קשר בין דם לריאות?",
+    before: "  —  :     ?",
+    expectedAfter: "    ?",
   },
   {
     subject: "hebrew",
     topic: "reading",
-    before: "זיהוי כתיב: קרא את המילה ___",
-    after: "זיהוי כתיב: קרא את המילה ___",
+    before: " :    ___",
+    after: " :    ___",
   },
   {
     subject: "math",
     topic: "decimals",
-    before: "חיסור עשרוניים (קל): 1.23 − 0.45 = __",
+    before: "  (): 1.23 − 0.45 = __",
     expectedAfter: "1.23 − 0.45 = __",
   },
   {
     subject: "geometry",
     topic: "triangles",
-    before: "פיתגורס (קל): ניצבים 3 ו-4 — מה אורך היתר?",
-    expectedAfter: "ניצבים 3 ו-4 — מה אורך היתר?",
+    before: " ():  3 -4 —   ?",
+    expectedAfter: " 3 -4 —   ?",
   },
   {
     subject: "math",
     topic: "divisibility",
-    before: "התחלקות (קל): האם 24 מתחלק ב-3 בלי שארית?",
-    expectedAfter: "האם 24 מתחלק ב-3 בלי שארית?",
+    before: " ():  24  -3  ?",
+    expectedAfter: " 24  -3  ?",
   },
   {
     subject: "geometry",
     topic: "volume",
-    before: "כיתה ד׳ (קל): תיבה 2×3×4 — מה הנפח?",
-    expectedAfter: "תיבה 2×3×4 — מה הנפח?",
+    before: "  ():  2×3×4 —  ?",
+    expectedAfter: " 2×3×4 —  ?",
   },
   {
     subject: "moledet_geography",
     topic: "homeland",
-    before: "שאלה בנושא: מולדת — מהו סמל המדינה?",
-    expectedAfter: "מולדת — מהו סמל המדינה?",
+    before: " :  —   ?",
+    expectedAfter: " —   ?",
   },
   {
     subject: "english",
@@ -137,23 +137,23 @@ const BEFORE_AFTER_SEEDS = [
   {
     subject: "hebrew",
     topic: "grammar",
-    before: "איזה משפט נכון?",
-    expectedAfter: "איזה משפט נכון?",
+    before: "  ?",
+    expectedAfter: "  ?",
   },
 ];
 
 const FORBIDDEN_GEOMETRY_WORDING = [
-  { id: "dims_על", re: /\d+\s+על\s+\d+/u, label: "N על N dimensions" },
-  { id: "plane_rectangle", re: /מלבן\s+במישור/u, label: "מלבן במישור" },
-  { id: "surface_area_2d", re: /שטח\s+הפנים/u, label: "שטח הפנים for 2D" },
+  { id: "dims_", re: /\d+\s+\s+\d+/u, label: "N  N dimensions" },
+  { id: "plane_rectangle", re: /\s+/u, label: " " },
+  { id: "surface_area_2d", re: /\s+/u, label: "  for 2D" },
 ];
 
 const PRESERVATION_MUST_KEEP = [
-  "בכיתה יש 24 תלמידים ו-6 תלמידות. כמה תלמידים בסך הכול?",
-  "בבית הספר יש מגרש מלבני. רוצים גדר סביב המגרש.",
-  "מה נושא המשפט הראשי בקטע?",
-  "לפני ניסוי בכיתה, מה חשוב לתעד?",
-  "איך נבדיל פשוט בין חומר מוליך חשמלי למבודד בכיתה?",
+  "  24  -6 .    ?",
+  "    .    .",
+  "    ?",
+  "  ,   ?",
+  "        ?",
 ];
 
 const SAMPLES_PER_CELL = Math.max(

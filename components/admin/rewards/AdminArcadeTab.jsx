@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
-import { formatArcadeGameKeyHe } from "../../../lib/admin-portal/admin-rewards-ui.he.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
+import { formatArcadeGameKeyHe } from "../../../lib/admin-portal/admin-rewards-ui.js";
 import AdminModal, { AdminModalButton } from "../AdminModal.jsx";
 
 const inputClass =
@@ -16,7 +16,7 @@ function AdminSection({ title, children }) {
   );
 }
 
-function AdminSaveButton({ busy, onClick, label = "שמירה" }) {
+function AdminSaveButton({ busy, onClick, label = "Save" }) {
   return (
     <button
       type="button"
@@ -24,7 +24,7 @@ function AdminSaveButton({ busy, onClick, label = "שמירה" }) {
       onClick={onClick}
       className="rounded-lg bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold text-amber-100 disabled:opacity-50"
     >
-      {busy ? "שומר..." : label}
+      {busy ? "Saving..." : label}
     </button>
   );
 }
@@ -33,7 +33,7 @@ function EntryCostFormFields({ draft, setDraft }) {
   return (
     <div className="space-y-3 text-sm">
       <label className="block">
-        סכום
+        Amount
         <input
           type="number"
           className={inputClass}
@@ -42,16 +42,16 @@ function EntryCostFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        תווית
+        Label
         <input
           type="text"
           className={inputClass}
-          value={draft.label_he || ""}
-          onChange={(e) => setDraft((d) => ({ ...d, label_he: e.target.value }))}
+          value={draft.label || ""}
+          onChange={(e) => setDraft((d) => ({ ...d, label: e.target.value }))}
         />
       </label>
       <label className="block">
-        סדר תצוגה
+        Display order
         <input
           type="number"
           className={inputClass}
@@ -65,7 +65,7 @@ function EntryCostFormFields({ draft, setDraft }) {
           checked={draft.is_active !== false}
           onChange={(e) => setDraft((d) => ({ ...d, is_active: e.target.checked }))}
         />
-        פעיל
+        Active
       </label>
     </div>
   );
@@ -75,7 +75,7 @@ function PayoutRulesFormFields({ draft, setDraft }) {
   return (
     <div className="space-y-3 text-sm">
       <label className="block">
-        כללי תשלום (JSON)
+        Payout rules (JSON)
         <textarea
           className={`${inputClass} min-h-[120px] font-mono text-xs`}
           dir="ltr"
@@ -89,7 +89,7 @@ function PayoutRulesFormFields({ draft, setDraft }) {
           checked={draft.is_active !== false}
           onChange={(e) => setDraft((d) => ({ ...d, is_active: e.target.checked }))}
         />
-        פעיל
+        Active
       </label>
     </div>
   );
@@ -153,7 +153,7 @@ export default function AdminArcadeTab({ accessToken }) {
     setEditId(row.id);
     setEditDraft({
       amount: row.amount ?? "",
-      label_he: row.label_he || "",
+      label: row.label || "",
       display_order: row.display_order ?? 0,
       is_active: row.is_active !== false,
     });
@@ -191,11 +191,11 @@ export default function AdminArcadeTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setMessage(apiErrorMessageHe(json?.error, "שמירה נכשלה"));
+        setMessage(apiErrorMessageHe(json?.error, "Save failed"));
         return;
       }
       setSessionRow(json.row || sessionRow);
-      setMessage("נשמר - מטבעות מתרגול");
+      setMessage("Saved — practice coins");
       void loadAll();
     } finally {
       setBusy("");
@@ -214,7 +214,7 @@ export default function AdminArcadeTab({ accessToken }) {
           id: editId,
           patch: {
             amount: Number(editDraft.amount),
-            label_he: editDraft.label_he,
+            label: editDraft.label,
             display_order: Number(editDraft.display_order),
             is_active: editDraft.is_active,
           },
@@ -222,10 +222,10 @@ export default function AdminArcadeTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setMessage(apiErrorMessageHe(json?.error, "שמירה נכשלה"));
+        setMessage(apiErrorMessageHe(json?.error, "Save failed"));
         return;
       }
-      setMessage(`נשמר - עלות כניסה ${editDraft.amount}`);
+      setMessage(`Saved — entry cost ${editDraft.amount}`);
       closeEdit();
       void loadAll();
     } finally {
@@ -241,7 +241,7 @@ export default function AdminArcadeTab({ accessToken }) {
     try {
       parsed = JSON.parse(editDraft.payout_rules_json);
     } catch {
-      setMessage("מבנה כללי התשלום לא תקין");
+      setMessage("Invalid payout rules structure");
       setBusy("");
       return;
     }
@@ -259,11 +259,11 @@ export default function AdminArcadeTab({ accessToken }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setMessage(apiErrorMessageHe(json?.error, "שמירה נכשלה"));
+        setMessage(apiErrorMessageHe(json?.error, "Save failed"));
         return;
       }
       const row = payoutRows.find((r) => r.id === editId);
-      setMessage(`נשמר - ${row?.game_key || "משחק"}`);
+      setMessage(`Saved — ${row?.game_key || "game"}`);
       closeEdit();
       void loadAll();
     } finally {
@@ -287,12 +287,12 @@ export default function AdminArcadeTab({ accessToken }) {
 
   const editTitle =
     editKind === "entry"
-      ? editingEntry?.label_he
-        ? `עריכת עלות כניסה: ${editingEntry.label_he}`
-        : "עריכת עלות כניסה"
+      ? editingEntry?.label
+        ? `Edit entry cost: ${editingEntry.label}`
+        : "Edit entry cost"
       : editingPayout
-        ? `עריכת תשלום: ${formatArcadeGameKeyHe(editingPayout.game_key, editingPayout.arcade_games?.title)}`
-        : "עריכת כללי תשלום";
+        ? `Edit payout: ${formatArcadeGameKeyHe(editingPayout.game_key, editingPayout.arcade_games?.title)}`
+        : "Edit payout rules";
 
   const handleSaveEdit = () => {
     if (editKind === "entry") void saveEntryEdit();
@@ -303,14 +303,14 @@ export default function AdminArcadeTab({ accessToken }) {
     <div dir="rtl">
       {pageMessage ? <p className="text-emerald-300 text-sm mb-3 text-right">{pageMessage}</p> : null}
 
-      <AdminSection title="מטבעות מתרגול (נוסחה + תקרה יומית)">
+      <AdminSection title="Practice coins (formula + daily cap)">
         {sessionRow ? (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
             {[
-              ["base_coins", "בסיס"],
-              ["bonus_80_coins", "בונוס 80%"],
-              ["bonus_95_coins", "בונוס 95%"],
-              ["daily_cap", "תקרה יומית"],
+              ["base_coins", "Base"],
+              ["bonus_80_coins", "80% bonus"],
+              ["bonus_95_coins", "95% bonus"],
+              ["daily_cap", "Daily cap"],
             ].map(([key, label]) => (
               <label key={key} className="block">
                 <span className="text-white/60 text-xs">{label}</span>
@@ -326,21 +326,21 @@ export default function AdminArcadeTab({ accessToken }) {
             ))}
           </div>
         ) : (
-          <p className="text-white/50 text-sm">אין שורה במאגר הנתונים</p>
+          <p className="text-white/50 text-sm">No entry costs configured yet.</p>
         )}
         <div className="mt-3">
           <AdminSaveButton busy={busy === "session"} onClick={() => void saveSession()} />
         </div>
       </AdminSection>
 
-      <AdminSection title="עלויות כניסה לארקייד">
+      <AdminSection title="Arcade entry costs">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-right min-w-[420px]">
             <thead>
               <tr className="text-white/60 border-b border-white/10">
-                <th className="py-2 px-2">סכום</th>
-                <th className="py-2 px-2">תווית</th>
-                <th className="py-2 px-2">פעיל</th>
+                <th className="py-2 px-2">Amount</th>
+                <th className="py-2 px-2">Label</th>
+                <th className="py-2 px-2">Active</th>
                 <th className="py-2 px-2" />
               </tr>
             </thead>
@@ -348,15 +348,15 @@ export default function AdminArcadeTab({ accessToken }) {
               {entryRows.map((row) => (
                 <tr key={row.id} className="border-b border-white/5">
                   <td className="py-2 px-2">{row.amount ?? "-"}</td>
-                  <td className="py-2 px-2">{row.label_he || "-"}</td>
-                  <td className="py-2 px-2">{row.is_active !== false ? "כן" : "לא"}</td>
+                  <td className="py-2 px-2">{row.label || "-"}</td>
+                  <td className="py-2 px-2">{row.is_active !== false ? "Yes" : "No"}</td>
                   <td className="py-2 px-2">
                     <button
                       type="button"
                       onClick={() => startEntryEdit(row)}
                       className="rounded border border-white/15 px-2 py-1 hover:bg-white/5"
                     >
-                      עריכה
+                      Edit
                     </button>
                   </td>
                 </tr>
@@ -366,13 +366,13 @@ export default function AdminArcadeTab({ accessToken }) {
         </div>
       </AdminSection>
 
-      <AdminSection title="כללי תשלום משחקי ארקייד">
+      <AdminSection title="Arcade game payout rules">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-right min-w-[420px]">
             <thead>
               <tr className="text-white/60 border-b border-white/10">
-                <th className="py-2 px-2">משחק</th>
-                <th className="py-2 px-2">פעיל</th>
+                <th className="py-2 px-2">game</th>
+                <th className="py-2 px-2">Active</th>
                 <th className="py-2 px-2" />
               </tr>
             </thead>
@@ -382,14 +382,14 @@ export default function AdminArcadeTab({ accessToken }) {
                   <td className="py-2 px-2">
                     {formatArcadeGameKeyHe(row.game_key, row.arcade_games?.title)}
                   </td>
-                  <td className="py-2 px-2">{row.is_active !== false ? "כן" : "לא"}</td>
+                  <td className="py-2 px-2">{row.is_active !== false ? "Yes" : "No"}</td>
                   <td className="py-2 px-2">
                     <button
                       type="button"
                       onClick={() => startPayoutEdit(row)}
                       className="rounded border border-white/15 px-2 py-1 hover:bg-white/5"
                     >
-                      עריכה
+                      Edit
                     </button>
                   </td>
                 </tr>
@@ -407,22 +407,22 @@ export default function AdminArcadeTab({ accessToken }) {
         footer={
           <>
             <AdminModalButton onClick={closeEdit} disabled={editBusy}>
-              ביטול
+              Cancel
             </AdminModalButton>
             <AdminModalButton
               variant="primary"
               onClick={handleSaveEdit}
               disabled={editBusy}
               busy={editBusy}
-              busyLabel="שומר..."
+              busyLabel="Saving..."
             >
-              שמירה
+              Save
             </AdminModalButton>
           </>
         }
       >
         {modalMessage ? (
-          <p className={`text-sm mb-3 ${message.includes("נכשל") || message.includes("לא תקין") ? "text-red-300" : "text-emerald-300"}`}>
+          <p className={`text-sm mb-3 ${message.includes("failed") || message.includes("invalid") ? "text-red-300" : "text-emerald-300"}`}>
             {message}
           </p>
         ) : null}

@@ -112,13 +112,13 @@ function classifySync(passes, section, fixedTxt, replacements) {
     if (allFromInBody) {
       return {
         canSync: "yes",
-        note: "החלפת שורה/ביטוי מדויק — from קיים ב-body של section",
+        note: " /  — from  -body  section",
       };
     }
     if (passList.includes("PASS14") && reps.some((r) => r.from === "✓" && (body.includes("✓") || exported.includes("✓")))) {
       return {
         canSync: "yes",
-        note: "הסרת ✓ — סימן קיים ב-body או ב-export",
+        note: " ✓ —   -body  -export",
       };
     }
   }
@@ -126,7 +126,7 @@ function classifySync(passes, section, fixedTxt, replacements) {
   if (passList.includes("MANUAL-G1G2")) {
     return {
       canSync: "partial",
-      note: "החלפת עמוד מלא לשמע — צריך להתאים חזרה לפורמט markdown (7 sections), לא העתקה 1:1",
+      note: "    —     markdown (7 sections),   1:1",
     };
   }
 
@@ -135,8 +135,8 @@ function classifySync(passes, section, fixedTxt, replacements) {
     return {
       canSync: overlap ? "yes" : "partial",
       note: overlap
-        ? "כבר תואם export הנוכחי מה-md"
-        : "החלפת עמוד מלא ב-export — צריך לעדכן body של section במקור, לא להדביק txt",
+        ? "  export  -md"
+        : "   -export —   body  section ,   txt",
     };
   }
 
@@ -144,14 +144,14 @@ function classifySync(passes, section, fixedTxt, replacements) {
     return {
       canSync: body.includes("→") ? "yes" : "partial",
       note: body.includes("→")
-        ? "החלפת חץ → — קיים ב-body"
-        : "החץ כבר לא ב-body; ייתכן ש-sync בוצע ב-export בלבד",
+        ? "  → —  -body"
+        : "   -body;  -sync  -export ",
     };
   }
 
   return {
     canSync: fixedTxt.trim() !== exported.trim() ? "partial" : "yes",
-    note: "בדיקה לפי export מ-md מול txt מתוקן",
+    note: "  export -md  txt ",
   };
 }
 
@@ -206,7 +206,7 @@ const problematic = [];
 for (const [rel, passes] of [...changed.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
   const m = rel.match(/english-(g\d)\/pages\/(page-\d{3}\.txt)$/);
   if (!m) {
-    problematic.push({ exportTxt: rel, reason: "לא ניתן לפרש book/page מהנתיב" });
+    problematic.push({ exportTxt: rel, reason: "   book/page " });
     continue;
   }
 
@@ -216,7 +216,7 @@ for (const [rel, passes] of [...changed.entries()].sort((a, b) => a[0].localeCom
   const map = exportIndex.get(indexKey);
 
   if (!map) {
-    problematic.push({ exportTxt: rel, reason: `לא נמצא מיפוי export index ל-${indexKey}` });
+    problematic.push({ exportTxt: rel, reason: `   export index -${indexKey}` });
     continue;
   }
 

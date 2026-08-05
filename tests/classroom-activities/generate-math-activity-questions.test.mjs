@@ -51,18 +51,18 @@ test("parent and teacher creation pages share corrected generator", () => {
 });
 
 test("normalizeMathActivityTopic maps Hebrew decimals label", () => {
-  assert.equal(normalizeMathActivityTopic("עשרוניים", "g5"), "decimals");
+  assert.equal(normalizeMathActivityTopic("", "g5"), "decimals");
   assert.equal(normalizeMathActivityTopic("decimals", "g5"), "decimals");
 });
 
 test("normalizeMathActivityTopic rejects unsupported grade/topic", () => {
   assert.throws(
     () => normalizeMathActivityTopic("pythagoras", "g5"),
-    /אין נושא מתמטיקה/
+    /  /
   );
   assert.throws(
     () => normalizeMathActivityTopic("ratio", "g3"),
-    /אין נושא מתמטיקה/
+    /  /
   );
 });
 
@@ -154,7 +154,7 @@ test("invalid math topic throws before unrelated questions are returned", async 
         difficulty: "medium",
         count: 5,
       }),
-    /אין נושא מתמטיקה/
+    /  /
   );
 });
 

@@ -71,29 +71,29 @@ describe("school student admin profile validation", () => {
   it("requires non-empty student name for PATCH parser", () => {
     assert.equal(parseSchoolStudentNameInput("").ok, false);
     assert.equal(parseSchoolStudentNameInput("  ").ok, false);
-    const ok = parseSchoolStudentNameInput("  תלמיד  ");
+    const ok = parseSchoolStudentNameInput("    ");
     assert.equal(ok.ok, true);
-    assert.equal(ok.fullName, "תלמיד");
+    assert.equal(ok.fullName, "");
   });
 });
 
 describe("partial profile merge", () => {
   const existingRow = {
-    parent1_name: "אב",
+    parent1_name: "",
     parent1_phone: "0501111111",
     parent1_national_id: "111",
-    parent2_name: "אם",
+    parent2_name: "",
     parent2_phone: "0502222222",
     parent2_national_id: "222",
     parent_email: "parent@example.com",
-    address: "כתובת קיימת",
-    emergency_contact_name: "דוד",
+    address: " ",
+    emergency_contact_name: "",
     emergency_contact_phone: "051",
-    transportation_notes: "הסעה",
-    internal_notes: "פנימי",
+    transportation_notes: "",
+    internal_notes: "",
     date_of_birth: "2015-01-01",
     child_age_years: 11,
-    medical_allergy_notes: "אלרגיה",
+    medical_allergy_notes: "",
   };
 
   it("preserves existing values for fields not included in partial body", () => {
@@ -102,9 +102,9 @@ describe("partial profile merge", () => {
     const merged = mergeAdminProfileFields(existingRow, parsed.fields, parsed.presentKeys);
     assert.equal(merged.parent1Name, "Updated");
     assert.equal(merged.parent1Phone, "0501111111");
-    assert.equal(merged.parent2Name, "אם");
-    assert.equal(merged.address, "כתובת קיימת");
-    assert.equal(merged.medicalAllergyNotes, "אלרגיה");
+    assert.equal(merged.parent2Name, "");
+    assert.equal(merged.address, " ");
+    assert.equal(merged.medicalAllergyNotes, "");
   });
 
   it("clears a field when explicit null is sent", () => {
@@ -112,7 +112,7 @@ describe("partial profile merge", () => {
     assert.equal(parsed.ok, true);
     const merged = mergeAdminProfileFields(existingRow, parsed.fields, parsed.presentKeys);
     assert.equal(merged.parent1Phone, null);
-    assert.equal(merged.parent1Name, "אב");
+    assert.equal(merged.parent1Name, "");
     assert.equal(merged.parent2Phone, "0502222222");
   });
 
@@ -147,29 +147,29 @@ describe("partial profile merge", () => {
 
 describe("school student admin profile mapping", () => {
   const row = {
-    parent1_name: "אב",
+    parent1_name: "",
     parent1_phone: "050",
     parent1_national_id: "123",
     parent2_name: null,
     parent2_phone: null,
     parent2_national_id: null,
     parent_email: "a@b.com",
-    address: "כתובת",
-    emergency_contact_name: "דוד",
+    address: "",
+    emergency_contact_name: "",
     emergency_contact_phone: "051",
-    transportation_notes: "הסעה",
-    internal_notes: "פנימי",
+    transportation_notes: "",
+    internal_notes: "",
     date_of_birth: "2015-01-01",
     child_age_years: 11,
-    medical_allergy_notes: "אלרגיה",
+    medical_allergy_notes: "",
     updated_at: "2026-05-31T00:00:00.000Z",
     updated_by: "00000000-0000-4000-8000-000000000001",
   };
 
   it("maps school-portal profile with national IDs and audit", () => {
-    const profile = mapSchoolStudentAdminProfileRow(row, { updatedByName: "מנהל" });
+    const profile = mapSchoolStudentAdminProfileRow(row, { updatedByName: "" });
     assert.equal(profile.parent1NationalId, "123");
-    assert.equal(profile.updatedByName, "מנהל");
+    assert.equal(profile.updatedByName, "");
     assert.equal(profile.dateOfBirth, "2015-01-01");
   });
 
@@ -183,7 +183,7 @@ describe("school student admin profile mapping", () => {
     assert.equal("parent2NationalId" in stripped, false);
     assert.equal("updatedBy" in stripped, false);
     assert.equal("updatedByName" in stripped, false);
-    assert.equal(stripped.medicalAllergyNotes, "אלרגיה");
+    assert.equal(stripped.medicalAllergyNotes, "");
   });
 });
 

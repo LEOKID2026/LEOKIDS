@@ -49,9 +49,9 @@ test.describe("parent portal public demo @parent-portal-demo", () => {
   test("enter from public button → dashboard with 3 children", async ({ page }) => {
     const net = trackParentDemoNetwork(page);
     await enterParentDemoFromHome(page);
-    await expect(page.getByRole("heading", { name: "נועם" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "מאיה" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "ארי" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "" })).toBeVisible();
     expect(net.supabaseAuth, "no Supabase auth in demo").toHaveLength(0);
   });
 
@@ -70,9 +70,9 @@ test.describe("parent portal public demo @parent-portal-demo", () => {
       timeout: 30_000,
     });
 
-    const copilotInput = page.getByPlaceholder("שאלה על הדוח…");
+    const copilotInput = page.getByPlaceholder("  …");
     await expect(copilotInput).toBeVisible({ timeout: 30_000 });
-    await copilotInput.fill("איך הילד מתקדם בחשבון לפי הדוח?");
+    await copilotInput.fill("     ?");
     const copilotResponse = page.waitForResponse(
       (res) => res.request().method() === "POST" && /copilot-turn/.test(res.url()),
     );
@@ -80,7 +80,7 @@ test.describe("parent portal public demo @parent-portal-demo", () => {
     const response = await copilotResponse;
     expect(response.status()).toBe(200);
     await expect(
-      page.getByText("בתקופה שנבחרה לא נאספו נתוני תרגול במתמטיקה"),
+      page.getByText("      "),
     ).toBeVisible({ timeout: 30_000 });
 
     expect(net.nonDemoParentApi, "no /api/parent/* (non-demo) calls").toHaveLength(0);
@@ -91,17 +91,17 @@ test.describe("parent portal public demo @parent-portal-demo", () => {
     const net = trackParentDemoNetwork(page);
     await enterParentDemoFromHome(page);
 
-    await page.getByRole("button", { name: "הוספת ילד" }).click();
-    await page.getByPlaceholder("שם הילד").fill("ילד חדש");
+    await page.getByRole("button", { name: " " }).click();
+    await page.getByPlaceholder(" ").fill(" ");
     await page.locator("select").first().selectOption({ index: 1 });
-    await page.getByRole("button", { name: "הוסף ילד" }).click();
+    await page.getByRole("button", { name: " " }).click();
 
     await expect(
-      page.getByText("מצב הדגמה - צפייה בלבד. לא ניתן לשמור שינויים."),
+      page.getByText("  -  .    ."),
     ).toBeVisible({ timeout: 10_000 });
-    await expect(page.getByRole("heading", { name: "נועם" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "מאיה" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "ארי" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "" })).toBeVisible();
 
     const blockedWrites = net.writes.filter(
       (w) => !w.includes("/api/demo/parent/copilot-turn"),
@@ -134,9 +134,9 @@ test.describe("parent portal public demo @parent-portal-demo", () => {
     });
     const timeCard = page
       .locator(".parent-report-print-summary-card")
-      .filter({ hasText: "זמן כולל" });
+      .filter({ hasText: " " });
     await expect(timeCard).toBeVisible();
-    await expect(timeCard).not.toHaveText(/^0\s*דק/);
+    await expect(timeCard).not.toHaveText(/^0\s*/);
   });
 
   test("detailed report loads in demo without real parent login", async ({ page }) => {
@@ -146,8 +146,8 @@ test.describe("parent portal public demo @parent-portal-demo", () => {
       `/parent/parent-report-detailed?period=week&studentId=${encodeURIComponent(DEMO_CHILD_ID)}&source=parent`,
       { waitUntil: "domcontentloaded" },
     );
-    await expect(page.getByText("נדרשת התחברות כהורה")).toHaveCount(0);
-    await expect(page.getByText("זמן כולל").first()).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByText("  ")).toHaveCount(0);
+    await expect(page.getByText(" ").first()).toBeVisible({ timeout: 30_000 });
     expect(net.supabaseAuth, "no Supabase auth in demo detailed report").toHaveLength(0);
   });
 });

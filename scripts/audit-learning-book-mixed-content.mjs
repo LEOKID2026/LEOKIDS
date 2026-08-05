@@ -74,7 +74,7 @@ export function classifyMixedLine(line) {
     if (hasProseBetweenMathRuns(input)) {
       return "needs_inline_math_isolation";
     }
-    if (/(?:^|[\s,])([ובלשכה])-\d/.test(input)) {
+    if (/(?:^|[\s,])([])-\d/.test(input)) {
       return "needs_inline_math_isolation";
     }
     if (mathParts.length >= 1) {
@@ -82,7 +82,7 @@ export function classifyMixedLine(line) {
     }
   }
 
-  if (/נוסחה:\s*[\u0590-\u05FF].*[=×÷]/.test(input)) {
+  if (/:\s*[\u0590-\u05FF].*[=×÷]/.test(input)) {
     return "needs_manual_review";
   }
 

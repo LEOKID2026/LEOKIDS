@@ -32,7 +32,7 @@ function evaluate(result) {
   }
 
   const topOnly = `${d.mainPriority || ""}\n${d.doNow || ""}`;
-  if (enoughEvidenceExpected && hasAny(topOnly, ["אין מספיק ראיות", "אין עדיין מספיק פעילות"])) {
+  if (enoughEvidenceExpected && hasAny(topOnly, ["  ", "   "])) {
     fails.push("enough_evidence_but_insufficient_message");
   }
 
@@ -48,11 +48,11 @@ function evaluate(result) {
   }
 
   if (result.expectedTopSignal === "speed_or_fluency" || result.expectedTopSignal === "speed_behavior") {
-    if (hasAny(allText, ["פער ידע"])) fails.push("speed_case_has_knowledge_gap_label");
+    if (hasAny(allText, [" "])) fails.push("speed_case_has_knowledge_gap_label");
   }
 
   if (result.expectedTopSignal === "strength") {
-    if (hasAny(topOnly, ["פער ידע", "שיקום"])) fails.push("strong_case_has_remediation_language");
+    if (hasAny(topOnly, [" ", ""])) fails.push("strong_case_has_remediation_language");
   }
 
   if (result.expectedBehavior === "trend_up" || result.expectedBehavior === "trend_down_stabilize") {

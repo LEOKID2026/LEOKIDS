@@ -24,7 +24,7 @@ import {
   VB_STATUS_EXPORTED,
   VB_UNARCHIVE,
   VB_VIEW,
-} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.js";
 
 function formatDate(iso) {
   if (!iso) return "-";
@@ -135,7 +135,7 @@ export default function AdminVideoBuilderList({ accessToken }) {
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="space-y-1">
-          <p className="text-sm text-white/60">טיוטות וסרטונים שיוצאו</p>
+          <p className="text-sm text-white/60">  </p>
           {!showArchived ? (
             <p className="text-xs text-white/40">{VB_LIST_ACTIVE_HINT}</p>
           ) : null}
@@ -163,7 +163,7 @@ export default function AdminVideoBuilderList({ accessToken }) {
 
       <AdminSectionCard title="">
         {loading ? (
-          <p className="text-sm text-white/60 text-right">טוען…</p>
+          <p className="text-sm text-white/60 text-right">…</p>
         ) : projects.length === 0 ? (
           <p className="text-sm text-white/60 text-right">{VB_NO_VIDEOS}</p>
         ) : (

@@ -12,15 +12,15 @@ test.describe("Parent dashboard modals - mobile input stability", () => {
 
   async function loginParent(page: import("@playwright/test").Page) {
     await page.goto("/parent/login");
-    await page.getByPlaceholder("הקלידו אימייל או שם משתמש שקיבלתם מהמורה").fill(email);
-    await page.getByPlaceholder("הקלידו סיסמה או קוד כניסה").fill(password);
-    await page.locator("form").getByRole("button", { name: "כניסה" }).click();
+    await page.getByPlaceholder("      ").fill(email);
+    await page.getByPlaceholder("    ").fill(password);
+    await page.locator("form").getByRole("button", { name: "" }).click();
     await page.waitForURL("**/parent/dashboard", { timeout: 20_000 });
-    const policyApprove = page.getByRole("button", { name: "אישור והמשך" });
+    const policyApprove = page.getByRole("button", { name: " " });
     if (await policyApprove.isVisible({ timeout: 3_000 }).catch(() => false)) {
       await page.getByRole("checkbox").check({ force: true });
       await policyApprove.click();
-      await expect(page.getByRole("heading", { name: "דשבורד הורים" })).toBeVisible({
+      await expect(page.getByRole("heading", { name: " " })).toBeVisible({
         timeout: 15_000,
       });
     }
@@ -31,14 +31,14 @@ test.describe("Parent dashboard modals - mobile input stability", () => {
     page.on("pageerror", (err) => errors.push(err.message));
 
     await loginParent(page);
-    await page.getByRole("button", { name: "הוספת ילד" }).click();
-    const nameInput = page.getByPlaceholder("שם הילד");
+    await page.getByRole("button", { name: " " }).click();
+    const nameInput = page.getByPlaceholder(" ");
     await expect(nameInput).toBeVisible();
     await nameInput.click();
-    await nameInput.fill("בדיקת מובייל");
+    await nameInput.fill(" ");
 
     await expect(nameInput).toBeFocused();
-    await expect(nameInput).toHaveValue("בדיקת מובייל");
+    await expect(nameInput).toHaveValue(" ");
     await expect(page.getByRole("dialog")).toBeVisible();
     expect(errors).toEqual([]);
   });
@@ -48,11 +48,11 @@ test.describe("Parent dashboard modals - mobile input stability", () => {
     page.on("pageerror", (err) => errors.push(err.message));
 
     await loginParent(page);
-    const detailsBtn = page.getByRole("button", { name: "פרטים" }).first();
+    const detailsBtn = page.getByRole("button", { name: "" }).first();
     if ((await detailsBtn.count()) === 0) return;
 
     await detailsBtn.click();
-    const pinInput = page.getByPlaceholder("4 ספרות").first();
+    const pinInput = page.getByPlaceholder("4 ").first();
     await expect(pinInput).toBeVisible({ timeout: 10_000 });
     await pinInput.click();
     await pinInput.pressSequentially("1234", { delay: 80 });

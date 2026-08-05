@@ -46,7 +46,7 @@ function MoneyChip({ value, count = 1, onRemove, dragging = false }) {
       className={styles.changeChip}
       style={{ background: style.color, color: style.text }}
       onClick={onRemove}
-      aria-label={`הסר ${style.label} מהעודף`}
+      aria-label={`Remove ${style.label} from change`}
     >
       {style.label}
       {count > 1 ? <span className={styles.changeChipCount}> × {count}</span> : null}
@@ -202,7 +202,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
     setTimeoutMistakes((t) => t + 1);
     setStreak(0);
     addScore(SCORE.timeout);
-    showZoneFeedback("global", "הלקוח חיכה יותר מדי", "bad");
+    showZoneFeedback("global", "The customer waited too long", "bad");
 
     const idx = customerIndexRef.current;
     const list = customersRef.current;
@@ -240,7 +240,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
         setWrongProducts((w) => w + 1);
         setStreak(0);
         addScore(SCORE.wrongProduct);
-        showZoneFeedback("customer", "זה לא המוצר שהלקוח ביקש", "bad");
+        showZoneFeedback("customer", "That's not what the customer asked for", "bad");
         if (nextMistakes > DIFFICULTIES[difficulty].maxMistakes) finishGame(false);
         return;
       }
@@ -248,7 +248,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
       addScore(SCORE.correctProduct);
       const nextSelected = [...selectedProductIdsRef.current, productId];
       setSelectedProductIds(nextSelected);
-      showZoneFeedback("customer", "מוצר נכון!", "ok");
+      showZoneFeedback("customer", "Correct product!", "ok");
 
       if (nextSelected.length >= cust.requestedIds.length) {
         setStep("change");
@@ -282,7 +282,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
     if (sum === cust.correctChange) {
       addScore(SCORE.correctChange);
       if (isFirstTry) addScore(SCORE.firstTryBonus);
-      showZoneFeedback("register", "מעולה! החזרת עודף נכון", "ok");
+      showZoneFeedback("register", "Great! You gave the correct change", "ok");
       const wasFast = timeLeftRef.current > Math.floor(diffConfig.timeLimitSec * 0.35);
       completeCustomerSuccess(wasFast);
       return;
@@ -295,7 +295,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
     setWrongChange((w) => w + 1);
     setStreak(0);
     addScore(SCORE.wrongChange);
-    showZoneFeedback("register", "כמעט! נסו לחשב שוב את העודף", "bad");
+    showZoneFeedback("register", "Almost! Try calculating the change again", "bad");
 
     if (nextMistakes > DIFFICULTIES[difficulty].maxMistakes) {
       finishGame(false);
@@ -505,7 +505,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
 
       <header className={styles.header}>
         <Link href={backHref} className={styles.backBtn}>
-          ← חזרה
+          ← Back
         </Link>
         {phase === "play" ? (
           <div className={styles.hud}>
@@ -523,7 +523,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
           </div>
         ) : (
           <div className={styles.hud}>
-            <span className={styles.hudChip}>🧪 אבטיפוס</span>
+            <span className={styles.hudChip}>🧪 Prototype</span>
           </div>
         )}
         <div style={{ minWidth: 40 }} aria-hidden />
@@ -532,9 +532,9 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
       {phase === "intro" ? (
         <div className={styles.screenCenter}>
           <p className={styles.introHero}>🏪🛒</p>
-          <h1 className={styles.introTitle}>המכולת של ליאו</h1>
+          <h1 className={styles.introTitle}>Leo&apos;s Supermarket</h1>
           <p className={styles.introText}>
-            עזרו לליאו המוכר - בחרו מוצר, חשבו עודף והחזירו כסף נכון ללקוח
+            Help Leo the cashier — pick products, calculate change, and give the customer the right amount
           </p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -549,11 +549,11 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
             ))}
           </div>
           <p className={styles.introText} style={{ fontSize: "0.78rem" }}>
-            {diffConfig.customerCount} לקוחות · לפחות {diffConfig.minCorrectToWin} נכונים · עד{" "}
-            {diffConfig.maxMistakes} טעויות · {diffConfig.timeLimitSec} שניות ללקוח
+            {diffConfig.customerCount} customers · at least {diffConfig.minCorrectToWin} correct · up to{" "}
+            {diffConfig.maxMistakes} mistakes · {diffConfig.timeLimitSec} seconds per customer
           </p>
           <button type="button" className={styles.startBtn} onClick={startGame}>
-            התחל משחק
+            Start game
           </button>
         </div>
       ) : null}
@@ -571,7 +571,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
             <div className={styles.leoCashier}>
               <img
                 src={LEO_CASHIER_IMAGE}
-                alt="ליאו"
+                alt="Leo"
                 className={styles.leoAvatar}
                 draggable={false}
               />
@@ -579,7 +579,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
           </div>
 
           <section className={styles.shelfSection}>
-            <p className={styles.shelfTitle}>🗄️ מדף המוצרים</p>
+            <p className={styles.shelfTitle}>🗄️ Product shelf</p>
             <div className={styles.shelfGrid}>
               {PRODUCTS.map((product) => {
                 const onRegister = selectedProductIds.includes(product.id);
@@ -607,12 +607,12 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
               data-drop-zone="register"
               className={`${styles.registerZone} ${step === "product" ? styles.registerZoneActive : ""}`}
               role="region"
-              aria-label="קופה"
+              aria-label="Register"
             >
-              <p className={styles.zoneTitle}>🧾 הקופה</p>
+              <p className={styles.zoneTitle}>🧾 Register</p>
               <div className={styles.zoneItems}>
                 {selectedProductIds.length === 0 ? (
-                  <span className={styles.zoneEmpty}>בחרו את המוצר שהלקוח ביקש</span>
+                  <span className={styles.zoneEmpty}>Pick the product the customer asked for</span>
                 ) : (
                   selectedProductIds.map((id) => {
                     const p = PRODUCTS.find((x) => x.id === id);
@@ -629,10 +629,10 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
               <div className={styles.checkoutFooter}>
                 <div className={styles.checkoutFooterStack}>
                   <span className={styles.checkoutAmountLine}>
-                    סכום הקנייה: {step === "change" ? formatShekel(customer.total) : "-"}
+                    Total: {step === "change" ? formatShekel(customer.total) : "-"}
                   </span>
                   <span className={styles.checkoutAmountLinePaid}>
-                    הלקוח שילם: {step === "change" ? formatShekel(customer.paid) : "-"}
+                    Customer paid: {step === "change" ? formatShekel(customer.paid) : "-"}
                   </span>
                 </div>
               </div>
@@ -642,10 +642,10 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
               data-drop-zone="change"
               className={`${styles.changeZone} ${step === "change" ? styles.changeZoneActive : ""}`}
             >
-              <p className={styles.zoneTitle}>💵 העודף שאני מחזיר</p>
+              <p className={styles.zoneTitle}>💵 Change I give back</p>
               <div className={styles.zoneItems}>
                 {changeDenoms.length === 0 ? (
-                  <span className={styles.zoneEmpty}>{step === "change" ? "בחרו מטבעות" : "-"}</span>
+                  <span className={styles.zoneEmpty}>{step === "change" ? "Choose coins" : "-"}</span>
                 ) : (
                   groupedChangeDenoms.map(({ value, count, lastIndex }) => (
                     <MoneyChip
@@ -660,13 +660,13 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
               </div>
               <ZoneFeedbackLine fb={{ text: "", type: "" }} />
               <div className={styles.checkoutFooter}>
-                <p className={styles.checkoutAmountChange}>סכום שהחזרת: {formatShekel(changeSum)}</p>
+                <p className={styles.checkoutAmountChange}>Change given: {formatShekel(changeSum)}</p>
               </div>
             </div>
           </div>
 
           <section className={styles.moneySection}>
-            <p className={styles.moneyTitle}>💰 מגירת הקופה</p>
+            <p className={styles.moneyTitle}>💰 Cash drawer</p>
             <div className={styles.moneyGrid}>
               {diffConfig.denoms.map((value) => {
                 const style = DENOM_STYLES[value];
@@ -695,7 +695,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
               disabled={step !== "change" || changeDenoms.length === 0}
               onClick={clearChange}
             >
-              נקה עודף
+              Clear change
             </button>
             <button
               type="button"
@@ -703,7 +703,7 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
               disabled={step !== "change"}
               onClick={submitChange}
             >
-              מסור עודף ✓
+              Give change ✓
             </button>
           </div>
 
@@ -716,21 +716,21 @@ export default function LeoSupermarketGame({ backHref = "/dev/learning-game-prot
           <p className={styles.introHero}>{phase === "won" ? "🎉" : "💪"}</p>
           <h2 className={styles.introTitle}>
             {phase === "won"
-              ? "כל הכבוד! עזרתם לליאו לשרת את הלקוחות"
-              : "לא נורא, ננסה שוב להחזיר עודף נכון"}
+              ? "Well done! You helped Leo serve the customers"
+              : "No worries — let's try giving the correct change again"}
           </h2>
           <div className={styles.endStats}>
-            <p>⭐ ניקוד: {score}</p>
+            <p>⭐ Score: {score}</p>
             <p>
-              👤 לקוחות שטופלו נכון: {correctCustomers}/{customers.length}
+              👤 Customers served correctly: {correctCustomers}/{customers.length}
             </p>
-            <p>❌ טעויות: {wrongProducts + wrongChange + timeoutMistakes}</p>
-            <p>🎯 דיוק: {accuracyPct}%</p>
-            <p>📊 רמה: {DIFFICULTIES[difficulty].label}</p>
-            <p>🔥 רצף הכי טוב: {bestStreak}</p>
+            <p>❌ Mistakes: {wrongProducts + wrongChange + timeoutMistakes}</p>
+            <p>🎯 Accuracy: {accuracyPct}%</p>
+            <p>📊 Level: {DIFFICULTIES[difficulty].label}</p>
+            <p>🔥 Best streak: {bestStreak}</p>
           </div>
           <button type="button" className={styles.startBtn} onClick={() => setPhase("intro")}>
-            משחק חדש
+            New game
           </button>
         </div>
       ) : null}

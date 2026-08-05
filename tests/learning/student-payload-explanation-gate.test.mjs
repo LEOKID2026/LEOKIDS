@@ -14,10 +14,10 @@ test("quiz strip removes correct answer and may keep explanation off pre-attempt
   const stripped = stripQuestionSetForStudent(
     [
       {
-        question: "מה תפקיד הלב?",
+        question: "  ?",
         choices: ["a", "b", "c", "d"],
         correctAnswer: "b",
-        explanation: "הלב מזרים דם - b",
+        explanation: "   - b",
       },
     ],
     "quiz"
@@ -31,10 +31,10 @@ test("homework strip removes correct answer but may include explanation", () => 
   const stripped = stripQuestionSetForStudent(
     [
       {
-        question: "מה תפקיד הלב?",
+        question: "  ?",
         choices: ["a", "b", "c", "d"],
         correctAnswer: "b",
-        explanation: "הלב מזרים דם - b",
+        explanation: "   - b",
       },
     ],
     "homework"

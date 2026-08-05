@@ -14,8 +14,8 @@ export function buildDemoDailyMissions(locale = "en") {
     missions: [
       {
         id: "demo-m1",
-        titleHe: demoPackCopyForLocale(locale, "missions", "mathTitle"),
-        descriptionHe: demoPackCopyForLocale(locale, "missions", "mathDescription"),
+        title: demoPackCopyForLocale(locale, "missions", "mathTitle"),
+        description: demoPackCopyForLocale(locale, "missions", "mathDescription"),
         progressCurrent: 2,
         progressTarget: 5,
         completed: false,
@@ -23,8 +23,8 @@ export function buildDemoDailyMissions(locale = "en") {
       },
       {
         id: "demo-m2",
-        titleHe: demoPackCopyForLocale(locale, "missions", "soloTitle"),
-        descriptionHe: demoPackCopyForLocale(locale, "missions", "soloDescription"),
+        title: demoPackCopyForLocale(locale, "missions", "soloTitle"),
+        description: demoPackCopyForLocale(locale, "missions", "soloDescription"),
         progressCurrent: 0,
         progressTarget: 1,
         completed: false,
@@ -40,9 +40,9 @@ export function buildDemoDailyMissions(locale = "en") {
 export function buildDemoMonthlyPersistence(locale = "en") {
   return {
     tiers: [
-      { id: "demo-tier-1", labelHe: demoPackCopyForLocale(locale, "missions", "tier5"), minutesRequired: 5, reached: true },
-      { id: "demo-tier-2", labelHe: demoPackCopyForLocale(locale, "missions", "tier15"), minutesRequired: 15, reached: false },
-      { id: "demo-tier-3", labelHe: demoPackCopyForLocale(locale, "missions", "tier30"), minutesRequired: 30, reached: false },
+      { id: "demo-tier-1", label: demoPackCopyForLocale(locale, "missions", "tier5"), minutesRequired: 5, reached: true },
+      { id: "demo-tier-2", label: demoPackCopyForLocale(locale, "missions", "tier15"), minutesRequired: 15, reached: false },
+      { id: "demo-tier-3", label: demoPackCopyForLocale(locale, "missions", "tier30"), minutesRequired: 30, reached: false },
     ],
     minutesThisMonth: 8,
     goalMinutes: 60,
@@ -90,7 +90,7 @@ export function buildDemoDashboardView(locale = "en") {
   const displayName = demoPackCopyForLocale(locale, "display", "studentName");
   return {
     identity: {
-      displayNameHe: displayName,
+      displayName: displayName,
       coinBalanceDisplayHe: String(DEMO_COIN_BALANCE),
       coinBalance: DEMO_COIN_BALANCE,
       avatarEmoji: DEMO_AVATAR_EMOJI,
@@ -103,10 +103,10 @@ export function buildDemoDashboardView(locale = "en") {
     dailyMissions: buildDemoDailyMissions(locale),
     monthlyPersistence: buildDemoMonthlyPersistence(locale),
     subjects: [
-      { key: "math", labelHe: demoPackCopyForLocale(locale, "subjects", "math"), href: "/learning/math-master", accuracyPct: 88, level: 3, stars: 4 },
-      { key: "geometry", labelHe: demoPackCopyForLocale(locale, "subjects", "geometry"), href: "/learning/geometry-master", accuracyPct: 82, level: 2, stars: 3 },
-      { key: "english", labelHe: demoPackCopyForLocale(locale, "subjects", "english"), href: "/learning/english-master", accuracyPct: 75, level: 2, stars: 2 },
-      { key: "science", labelHe: demoPackCopyForLocale(locale, "subjects", "science"), href: "/learning/science-master", accuracyPct: 70, level: 2, stars: 2 },
+      { key: "math", label: demoPackCopyForLocale(locale, "subjects", "math"), href: "/learning/math-master", accuracyPct: 88, level: 3, stars: 4 },
+      { key: "geometry", label: demoPackCopyForLocale(locale, "subjects", "geometry"), href: "/learning/geometry-master", accuracyPct: 82, level: 2, stars: 3 },
+      { key: "english", label: demoPackCopyForLocale(locale, "subjects", "english"), href: "/learning/english-master", accuracyPct: 75, level: 2, stars: 2 },
+      { key: "science", label: demoPackCopyForLocale(locale, "subjects", "science"), href: "/learning/science-master", accuracyPct: 70, level: 2, stars: 2 },
     ],
     badges: [],
     recommendations: [],
@@ -162,7 +162,7 @@ export function buildDemoMyRoomFixture(locale = "en") {
   return {
     trophies: [],
     decorations: [],
-    messageHe: demoPackCopyForLocale(locale, "display", "myRoomMessage"),
+    message: demoPackCopyForLocale(locale, "display", "myRoomMessage"),
   };
 }
 

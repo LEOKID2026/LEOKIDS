@@ -58,12 +58,12 @@ const mockV2Report = {
     moledetGeographyQuestions: 0,
     moledetGeographyAccuracy: 0,
     diagnosticOverviewHe: {
-      strongestAreaLineHe: "חשבון: נראה סדר ותרגול עקבי בטווח",
-      mainFocusAreaLineHe: "חשבון: כדאי לאחד דיוק בשאלות דומות",
+      strongestAreaLineHe: ":     ",
+      mainFocusAreaLineHe: ":     ",
       requiresAttentionPreviewHe: [],
     },
   },
-  rawMetricStrengthsHe: ["חשבון: נוכחות טובה בפעילות בתקופה"],
+  rawMetricStrengthsHe: [":    "],
   mathOperations: {
     row_fixture: { questions: 25, gradeKey: "g4", accuracy: 72, timeMinutes: 40 },
   },
@@ -116,7 +116,7 @@ run("enrichParentReportWithParentAi returns safe explanation without API key", a
 });
 
 run("unsafe Hebrew fails validateParentReportAIText", () => {
-  const bad = "הילד חלש ויש diagnostics במערכת.";
+  const bad = "   diagnostics .";
   assert(validateParentReportAIText(bad).ok === false, "expected reject");
 });
 
@@ -129,7 +129,7 @@ run("unsafe model output rejected; deterministic fallback used", async () => {
   globalThis.fetch = async () => ({
     ok: true,
     json: async () => ({
-      choices: [{ message: { content: '{"text":"הילד חלש ויש metadata פנימי"}' } }],
+      choices: [{ message: { content: '{"text":"   metadata "}' } }],
     }),
   });
   const out = await buildParentReportAIExplanation(strict, { env: process.env, preferDeterministicOnly: false });
@@ -153,11 +153,11 @@ run("narrative guard blocks overconfident thin framing", () => {
     dataConfidence: "thin",
     mainStrengths: "",
     mainPracticeNeeds: "",
-    recommendedNextStep: "המערכת מציעה להמשיך לתרגל בהתאם למה שמתאים לך עכשיו.",
+    recommendedNextStep: "        .",
   });
   assert(strict, "strict thin");
   const snap = parentReportAiInputToNarrativeEngineSnapshot(strict);
-  const risky = "בוודאות הכל ברור ואפשר לסגור את הנושא לחלוטין בלי עוד תרגול.";
+  const risky = "          .";
   const v = validateParentReportAIText(risky, {
     runNarrativeGuard: true,
     narrativeEngineSnapshot: snap,

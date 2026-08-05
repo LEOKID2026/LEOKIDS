@@ -22,7 +22,7 @@ const BODY_1_ROW = {
   grades: ["g1", "g2"],
   minLevel: "easy",
   type: "mcq",
-  stem: "איפה נמצא הלב בגוף האדם?",
+  stem: "    ?",
   options: ["a", "b", "c", "d"],
   correctIndex: 1,
   params: {
@@ -43,7 +43,7 @@ const EXP_SPARSE_ROW = {
   grades: ["g3", "g4"],
   minLevel: "easy",
   type: "mcq",
-  stem: "ביצעת ניסוי עם שני כוסות מים: אחת בשמש ואחת בצל. באיזו כוס המים יתחממו יותר?",
+  stem: "     :    .     ?",
   options: ["a", "b", "c", "d"],
   correctIndex: 2,
   params: {

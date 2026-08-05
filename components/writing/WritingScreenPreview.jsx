@@ -33,7 +33,7 @@ export default function WritingScreenPreview({ worksheetPayload }) {
             className="worksheet-screen-brand-logo"
           />
         </div>
-        <h1 className="worksheet-screen-title">{meta.titleHe || ui.writingDocumentTitle}</h1>
+        <h1 className="worksheet-screen-title">{meta.title || ui.writingDocumentTitle}</h1>
         <p className="worksheet-screen-meta">
           {meta.categoryHe}
           {worksheetPayload.catalogNumber ? ` · ${worksheetPayload.catalogNumber}` : ""}

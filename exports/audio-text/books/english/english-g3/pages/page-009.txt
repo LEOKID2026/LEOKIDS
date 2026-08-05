@@ -1,5 +1,0 @@
-תבנית:
-The dog runs.
-הכלב רץ.
-The cat sleeps.
-החתול ישן.

@@ -1,7 +1,0 @@
-cat — חתול
-dog — כלב
-sun — שמש
-red — אדום
-blue — כחול
-mom — אמא
-dad — אבא

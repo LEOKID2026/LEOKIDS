@@ -10,13 +10,13 @@ const TEACHER_PASSWORD = process.env.TEACHER_PORTAL_VERIFY_PASSWORD || "";
 
 async function waitStudentLoginReady(page: Page) {
   await page.goto("/student/login", { waitUntil: "domcontentloaded" });
-  await expect(page.getByText("בודקים חיבור...")).toHaveCount(0, { timeout: 30_000 });
-  await expect(page.getByPlaceholder("שם משתמש")).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByText(" ...")).toHaveCount(0, { timeout: 30_000 });
+  await expect(page.getByPlaceholder(" ")).toBeVisible({ timeout: 30_000 });
 }
 
 async function submitStudentLogin(page: Page, username: string, pin: string) {
-  await page.getByPlaceholder("שם משתמש").fill(username);
-  await page.getByPlaceholder("קוד כניסה").fill(pin);
+  await page.getByPlaceholder(" ").fill(username);
+  await page.getByPlaceholder(" ").fill(pin);
   await page.getByTestId("student-login-submit").click({ force: true });
 }
 
@@ -40,7 +40,7 @@ test.describe("Android WebView parity - production mobile @android-qa", () => {
     await waitStudentLoginReady(page);
     const rtl = page.locator('[dir="rtl"]').first();
     await expect(rtl).toBeVisible();
-    await expect(page.getByText("כניסת ילד/ה")).toBeVisible();
+    await expect(page.getByText(" /")).toBeVisible();
   });
 
   test("S1–S2 - student login and home", async ({ page }) => {
@@ -48,7 +48,7 @@ test.describe("Android WebView parity - production mobile @android-qa", () => {
     await waitStudentLoginReady(page);
     await submitStudentLogin(page, STUDENT_USER, STUDENT_PIN);
     await page.waitForURL(/\/student\/(home|activity)/, { timeout: 45_000 });
-    await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
+    await expect(page.getByText(/404|  /u)).toHaveCount(0);
   });
 
   test("S3–S4 - learning activity opens (science-master smoke)", async ({ page }) => {
@@ -58,36 +58,36 @@ test.describe("Android WebView parity - production mobile @android-qa", () => {
     await page.waitForURL(/\/student\//, { timeout: 45_000 });
     const res = await page.goto("/learning/science-master", { waitUntil: "domcontentloaded" });
     expect(res?.status()).toBeLessThan(400);
-    await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0, { timeout: 30_000 });
+    await expect(page.getByText(/404|  /u)).toHaveCount(0, { timeout: 30_000 });
   });
 
   test("P1–P2 - parent login and dashboard area", async ({ page }) => {
     test.skip(!PARENT_ID || !PARENT_SECRET, "Set E2E_PARENT_EMAIL + E2E_PARENT_PASSWORD");
     await page.goto("/parent/login", { waitUntil: "domcontentloaded" });
-    await page.getByPlaceholder("הקלידו אימייל או שם משתמש שקיבלתם מהמורה").fill(PARENT_ID);
-    await page.getByPlaceholder("הקלידו סיסמה או קוד כניסה").fill(PARENT_SECRET);
+    await page.getByPlaceholder("      ").fill(PARENT_ID);
+    await page.getByPlaceholder("    ").fill(PARENT_SECRET);
     await page.locator('form button[type="submit"]').click({ force: true });
     await page.waitForURL(/\/parent\//, { timeout: 45_000 });
-    await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
+    await expect(page.getByText(/404|  /u)).toHaveCount(0);
   });
 
   test("T1 - teacher login page loads", async ({ page }) => {
     await page.goto("/teacher/login", { waitUntil: "domcontentloaded" });
-    await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
+    await expect(page.getByText(/404|  /u)).toHaveCount(0);
     await expect(page.locator('[dir="rtl"]').first()).toBeVisible();
   });
 
   test("T1b - teacher login when credentials available", async ({ page }) => {
     test.skip(!TEACHER_EMAIL || !TEACHER_PASSWORD, "Set TEACHER_PORTAL_VERIFY_EMAIL + TEACHER_PORTAL_VERIFY_PASSWORD");
     await page.goto("/teacher/login", { waitUntil: "domcontentloaded" });
-    const emailField = page.getByPlaceholder(/אימייל|email/i).first();
+    const emailField = page.getByPlaceholder(/|email/i).first();
     if (await emailField.count()) {
       await emailField.fill(TEACHER_EMAIL);
-      const passField = page.getByPlaceholder(/סיסמה|password/i).first();
+      const passField = page.getByPlaceholder(/|password/i).first();
       await passField.fill(TEACHER_PASSWORD);
       await page.locator('form button[type="submit"]').click({ force: true });
       await page.waitForURL(/\/teacher\//, { timeout: 45_000 });
-      await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
+      await expect(page.getByText(/404|  /u)).toHaveCount(0);
     }
   });
 
@@ -100,13 +100,13 @@ test.describe("Android WebView parity - production mobile @android-qa", () => {
   test("G1 - arcade games page loads", async ({ page }) => {
     const res = await page.goto("/game", { waitUntil: "domcontentloaded" });
     expect(res?.status()).toBeLessThan(400);
-    await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
+    await expect(page.getByText(/404|  /u)).toHaveCount(0);
   });
 
   test("G2 - learning zone loads", async ({ page }) => {
     const res = await page.goto("/learning", { waitUntil: "domcontentloaded" });
     expect(res?.status()).toBeLessThan(400);
-    await expect(page.getByText(/404|הדף לא נמצא/u)).toHaveCount(0);
+    await expect(page.getByText(/404|  /u)).toHaveCount(0);
   });
 
   test("W2 - browser back navigation", async ({ page }) => {
@@ -118,7 +118,7 @@ test.describe("Android WebView parity - production mobile @android-qa", () => {
 
   test("W6 - keyboard input on login form", async ({ page }) => {
     await waitStudentLoginReady(page);
-    const input = page.getByPlaceholder("שם משתמש");
+    const input = page.getByPlaceholder(" ");
     await input.tap();
     await input.fill("qa-test-user");
     await expect(input).toHaveValue("qa-test-user");

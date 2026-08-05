@@ -13,7 +13,6 @@ declare
   v text;
   v_lower text;
   v_num text;
-  v_hebrew text;
 begin
   if p_grade is null then
     return null;
@@ -34,35 +33,10 @@ begin
     return 'g' || v_lower;
   end if;
 
-  v_num := substring(v_lower from '(?:grade|grade_|g|class|כיתה)[\s_-]*([1-6])');
+  -- GLOBAL: ASCII grade tokens only (grade/g/class + digit). No locale letter grades.
+  v_num := substring(v_lower from '(?:grade|grade_|g|class)[\s_-]*([1-6])');
   if v_num is not null then
     return 'g' || v_num;
-  end if;
-
-  v_hebrew := substring(v from 'כיתה\s*([אבגדהו])');
-  if v_hebrew is not null then
-    case v_hebrew
-      when 'א' then return 'g1';
-      when 'ב' then return 'g2';
-      when 'ג' then return 'g3';
-      when 'ד' then return 'g4';
-      when 'ה' then return 'g5';
-      when 'ו' then return 'g6';
-      else null;
-    end case;
-  end if;
-
-  v_hebrew := substring(v from '^([אבגדהו])[''׳"]?$');
-  if v_hebrew is not null then
-    case v_hebrew
-      when 'א' then return 'g1';
-      when 'ב' then return 'g2';
-      when 'ג' then return 'g3';
-      when 'ד' then return 'g4';
-      when 'ה' then return 'g5';
-      when 'ו' then return 'g6';
-      else null;
-    end case;
   end if;
 
   return null;

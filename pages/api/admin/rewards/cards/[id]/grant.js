@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     const body = req.body || {};
     const studentId = String(body.student_id || body.studentId || "").trim();
     if (!studentId) {
-      return sendAdminApiError(res, 400, "validation_failed", "מזהה תלמיד חובה");
+      return sendAdminApiError(res, 400, "validation_failed", "  ");
     }
 
     const result = await adminGrantCardToStudent(ctx.serviceRole, id, studentId, {

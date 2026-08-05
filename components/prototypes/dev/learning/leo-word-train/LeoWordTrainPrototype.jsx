@@ -97,7 +97,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
     timerPausedRef.current = true;
     setCheckState("bad");
     setTrainAnim("shake");
-    setFeedback("הזמן נגמר! הרכבת נשארה בתחנה.");
+    setFeedback("time! Train.");
     registerMistake();
     window.setTimeout(() => {
       if (mistakesRef.current >= diffConfig.maxMistakes) return;
@@ -195,7 +195,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
     if (!task || timerPausedRef.current) return;
     const slotIds = task.carriages.filter((c) => c.kind === "slot").map((c) => c.id);
     if (slotIds.some((id) => !fills[id])) {
-      setFeedback("מלאו את כל הקרונות הריקים לפני יציאה");
+      setFeedback("not the All to");
       return;
     }
 
@@ -252,7 +252,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
 
   const cardsPanel = (
     <>
-      <p className={proto.cardsPanelTitle}>🎴 קלפים לעמיסה</p>
+      <p className={proto.cardsPanelTitle}>🎴  </p>
       <div className={proto.cardGrid} dir="ltr">
         {cardButtons}
       </div>
@@ -261,7 +261,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
 
   const feedbackBar = (
     <p className={shop.feedbackText}>
-      {feedback || "העמיסו קלפים על הקרונות ולחצו הוציאו רכבת"}
+      {feedback || "Who to to to Train"}
     </p>
   );
 
@@ -269,7 +269,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
     <div className={`${frame.shell} ${frame.shellSky}`} dir="rtl">
       <header className={frame.header}>
         <Link href={backHref} className={frame.hudChip}>
-          חזרה
+
         </Link>
         {phase === "play" ? (
           <div className={frame.hud}>
@@ -286,12 +286,12 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
           </div>
         ) : (
           <div className={frame.hud}>
-            <span className={frame.hudChip}>🚂 אבטיפוס</span>
+            <span className={frame.hudChip}>🚂 </span>
           </div>
         )}
         {phase === "play" ? (
           <button type="button" className={frame.hudChip} onClick={exitToIntro}>
-            יציאה
+
           </button>
         ) : (
           <div style={{ minWidth: 40 }} aria-hidden />
@@ -301,9 +301,9 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
       {phase === "intro" ? (
         <div className={frame.screenCenter}>
           <p className={frame.introHero}>🚂🔤</p>
-          <h1 className={frame.introTitle}>רכבת המילים של ליאו</h1>
+          <h1 className={frame.introTitle}>   </h1>
           <p className={frame.introText}>
-            העמיסו קלפים על קרונות הרכבת - אותיות, מילים ומשפטים. כשהרכבת מלאה, היא יוצאת מהתחנה!
+                 - ,  .  ,   !
           </p>
           <div className={frame.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
@@ -319,10 +319,10 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
           </div>
           <EducationalDifficultyGradeHint className={`${frame.introText} opacity-70`} style={{ fontSize: "0.72rem" }} />
           <p className={frame.introText} style={{ fontSize: "0.78rem" }}>
-            {LANGUAGE_PROTOTYPE_TASKS} תחנות · גרירה ולחיצה על קלפים · בלי הקלדה
+            {LANGUAGE_PROTOTYPE_TASKS}  ·     ·
           </p>
           <button type="button" className={frame.startBtn} onClick={startGame}>
-            הרכבת יוצאת 🚂
+              🚂
           </button>
         </div>
       ) : null}
@@ -330,7 +330,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🚉 {task.stationLabel} · יעד {taskIndex + 1}/{LANGUAGE_PROTOTYPE_TASKS}
+            🚉 {task.stationLabel} ·  {taskIndex + 1}/{LANGUAGE_PROTOTYPE_TASKS}
           </p>
           <div className={`${shop.shopGrid} ${proto.protoShopGrid}`} data-educational-workplace-grid="">
             <aside className={`${shop.customerCol} ${proto.missionMobile}`}>
@@ -339,7 +339,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
                   🚉
                 </span>
                 <div className={shop.customerSpeechWrap}>
-                  <p className={shop.customerName}>תחנת המילים</p>
+                  <p className={shop.customerName}> </p>
                   <p className={shop.missionText}>
                     {task.missionHe}
                     {task.emoji ? <span className={shop.missionTicket}>{task.emoji}</span> : null}
@@ -349,7 +349,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
             </aside>
 
             <div key={`desk-${taskKey}`} className={proto.missionDesktop}>
-              <p className={proto.missionDesktopTitle}>תחנת המילים</p>
+              <p className={proto.missionDesktopTitle}> </p>
               <p className={proto.missionDesktopText}>
                 {task.missionHe}
                 {task.emoji ? ` ${task.emoji}` : null}
@@ -358,7 +358,7 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
 
             <section className={`${shop.workCol} ${proto.protoWorkCol}`}>
               <div className={styles.workWrap}>
-                {trainAnim === "depart" ? <div className={styles.departBanner}>🚂 יוצאים!</div> : null}
+                {trainAnim === "depart" ? <div className={styles.departBanner}>🚂 !</div> : null}
                 <div className={styles.trainWorld}>
                   <span className={styles.steam} aria-hidden>
                     💨
@@ -417,10 +417,10 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
             <div className={`${shop.bottomBar} ${proto.protoBottomBar}`}>
               <div className={shop.actionRow}>
                 <button type="button" className={shop.primaryBtn} disabled={trainAnim === "depart"} onClick={runDepart}>
-                  הוציאו רכבת 🚂
+                    🚂
                 </button>
                 <button type="button" className={shop.secondaryBtn} disabled={trainAnim === "depart"} onClick={clearAllCarriages}>
-                  נקה קרונות
+
                 </button>
               </div>
             </div>
@@ -431,13 +431,13 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
       {phase === "won" ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🎉 כל התחנות הושלמו!</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ הצלחות: {successCount}/{LANGUAGE_PROTOTYPE_TASKS}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🎉   !</h2>
+            <p className={frame.endStat}>⭐ : {score}</p>
+            <p className={frame.endStat}>✅ : {successCount}/{LANGUAGE_PROTOTYPE_TASKS}</p>
+            <p className={frame.endStat}>❌ : {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={() => setPhase("intro")}>
-                משחק חדש
+
               </button>
             </div>
           </div>
@@ -447,16 +447,16 @@ export default function LeoWordTrainPrototype({ backHref = "/dev/learning-game-p
       {phase === "lost" ? (
         <div className={frame.screenCenter}>
           <div className={frame.endCard}>
-            <h2 className={frame.endTitle}>🚂 הרכבת נעצרה</h2>
-            <p className={frame.endStat}>⭐ ניקוד: {score}</p>
-            <p className={frame.endStat}>✅ הצלחות: {successCount}</p>
-            <p className={frame.endStat}>❌ טעויות: {mistakes}</p>
+            <h2 className={frame.endTitle}>🚂  </h2>
+            <p className={frame.endStat}>⭐ : {score}</p>
+            <p className={frame.endStat}>✅ : {successCount}</p>
+            <p className={frame.endStat}>❌ : {mistakes}</p>
             <div className={frame.endActions}>
               <button type="button" className={frame.startBtn} onClick={startGame}>
-                נסו שוב
+
               </button>
               <button type="button" className={frame.secondaryBtn} onClick={() => setPhase("intro")}>
-                בחירת רמה
+
               </button>
             </div>
           </div>

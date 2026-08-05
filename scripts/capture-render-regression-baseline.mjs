@@ -36,8 +36,8 @@ const FORBIDDEN = [
   /37 = 30 \+ 758/,
   /758 = 50/,
   /\? = 68/,
-  /20 \+ 4-ו/,
-  /4-ו$/,
+  /20 \+ 4-/,
+  /4-$/,
   /\.24 = 20/,
 ];
 
@@ -48,12 +48,12 @@ const shots = [];
 async function waitForBookContent(page, timeoutMs = 90000) {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
-    const gate = await page.getByText("בודק התחברות תלמיד").count();
+    const gate = await page.getByText("  ").count();
     if (gate > 0) {
       await page.waitForTimeout(500);
       continue;
     }
-    const login = await page.getByText("יש להתחבר כתלמיד").count();
+    const login = await page.getByText("  ").count();
     if (login > 0) throw new Error("student login gate");
     if ((await page.locator("article h2").count()) > 0 && (await page.locator(".learning-book-markdown").count()) > 0) {
       await page.waitForTimeout(600);
@@ -85,29 +85,29 @@ async function navigateToSection(page, sectionNumber) {
   for (let i = 0; i < 8; i += 1) {
     const enabled = await page.evaluate(() => {
       const btn = [...document.querySelectorAll("button")].find(
-        (el) => (el.textContent || "").trim() === "עמוד קודם"
+        (el) => (el.textContent || "").trim() === " "
       );
       return Boolean(btn && !btn.disabled);
     });
     if (!enabled) break;
-    await clickBookNavButton(page, "עמוד קודם");
+    await clickBookNavButton(page, " ");
   }
   for (let i = 0; i < Math.max(0, sectionNumber - 1); i += 1) {
     const enabled = await page.evaluate(() => {
       const btn = [...document.querySelectorAll("button")].find(
-        (el) => (el.textContent || "").trim() === "עמוד הבא"
+        (el) => (el.textContent || "").trim() === " "
       );
       return Boolean(btn && !btn.disabled);
     });
     if (!enabled) break;
-    await clickBookNavButton(page, "עמוד הבא");
+    await clickBookNavButton(page, " ");
   }
 }
 
 async function confirmMixedModal(page) {
-  const save = page.getByRole("button", { name: "שמור", exact: true });
+  const save = page.getByRole("button", { name: "", exact: true });
   if (await save.isVisible().catch(() => false)) {
-    const allBtn = page.getByRole("button", { name: "הכל", exact: true });
+    const allBtn = page.getByRole("button", { name: "", exact: true });
     if (await allBtn.isVisible().catch(() => false)) await allBtn.click();
     await save.click();
     await page.waitForTimeout(400);
@@ -143,7 +143,7 @@ async function openStepByStepModal(page) {
   await dismissDevOverlay(page);
   await page.evaluate(() => {
     const b = [...document.querySelectorAll("button")].find((el) =>
-      /צעד-צעד|הסבר מלא|איך פותרים/.test(el.textContent || "")
+      /-| | /.test(el.textContent || "")
     );
     b?.click();
   });
@@ -229,7 +229,7 @@ async function captureTarget(context, target) {
     if (target.openStepModal) {
       await openStepByStepModal(page);
       for (let i = 0; i < (target.stepIndex || 0); i += 1) {
-        await clickBookNavButton(page, "הבא");
+        await clickBookNavButton(page, "");
       }
     }
     const shotPath = path.join(outDir, `${target.id}-360px.png`);

@@ -71,22 +71,22 @@ function extractLine(text, label) {
 
 async function collectChecks(page, expectedNoData = false) {
   const bodyText = await page.locator("body").innerText();
-  const shortHasContract = bodyText.includes("סיכום קצר להורה");
-  const detailedHasTop = bodyText.includes("סיכום להורה");
-  const summaryHasTitle = bodyText.includes("תקציר להדפסה");
-  const summaryOrderOk = bodyText.indexOf("סיכום להורה") >= 0 &&
-    bodyText.indexOf("סיכום לתקופה") >= 0 &&
-    bodyText.indexOf("סיכום להורה") < bodyText.indexOf("סיכום לתקופה");
-  const missingPlayer = bodyText.includes("לא נמצא שם שחקן");
-  const insufficient = bodyText.includes("אין עדיין מספיק פעילות בתקופה שנבחרה");
+  const shortHasContract = bodyText.includes("  ");
+  const detailedHasTop = bodyText.includes(" ");
+  const summaryHasTitle = bodyText.includes(" ");
+  const summaryOrderOk = bodyText.indexOf(" ") >= 0 &&
+    bodyText.indexOf(" ") >= 0 &&
+    bodyText.indexOf(" ") < bodyText.indexOf(" ");
+  const missingPlayer = bodyText.includes("   ");
+  const insufficient = bodyText.includes("     ");
   const noDataState = missingPlayer || insufficient;
   const overflow = await page.evaluate(() => {
     const w = document.documentElement;
     return w.scrollWidth > w.clientWidth + 2;
   });
   const forbiddenHits = FORBIDDEN_TERMS.filter((t) => bodyText.includes(t));
-  const mainPriority = extractLine(bodyText, "מיקוד עיקרי");
-  const doNow = extractLine(bodyText, "מה עושים עכשיו");
+  const mainPriority = extractLine(bodyText, " ");
+  const doNow = extractLine(bodyText, "  ");
   return {
     shortHasContract,
     detailedHasTop,

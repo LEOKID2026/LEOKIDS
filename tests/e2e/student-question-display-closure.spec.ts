@@ -9,12 +9,12 @@ const MOBILE_VIEW = { width: 390, height: 844 };
 const SCREENSHOT_DIR = "reports/question-audit/screenshots";
 
 const FORBIDDEN_UI_PATTERNS: RegExp[] = [
-  /רמה\s+(קלה|בינונית|קשה|מאתגרת)/u,
-  /רמת\s+(easy|medium|hard)/iu,
-  /(?:^|[·•-(])\s*נושא\s+[a-z0-9_-]+/iu,
-  /סימון\s+ייחודי/u,
-  /שאלה\s+בנושא/u,
-  /(?:^|[·•-(])\s*כיתה\s+[אבגדהו]['׳]?/u,
+  /\s+(|||)/u,
+  /\s+(easy|medium|hard)/iu,
+  /(?:^|[·•-(])\s*\s+[a-z0-9_-]+/iu,
+  /\s+/u,
+  /\s+/u,
+  /(?:^|[·•-(])\s*\s+[][']?/u,
 ];
 
 type SubjectClosure = {
@@ -45,9 +45,9 @@ async function mockStudentSession(page: Page) {
 }
 
 async function confirmMixedModal(page: Page) {
-  const save = page.getByRole("button", { name: "שמור", exact: true });
+  const save = page.getByRole("button", { name: "", exact: true });
   if (await save.isVisible()) {
-    const allBtn = page.getByRole("button", { name: "הכל", exact: true });
+    const allBtn = page.getByRole("button", { name: "", exact: true });
     if (await allBtn.isVisible()) await allBtn.click();
     await save.click();
   }
@@ -96,7 +96,7 @@ async function assertDisplayStructure(page: Page, stem: ReturnType<Page["getByTe
     expect(leadText.length).toBeGreaterThan(0);
     expect(bodyText.length).toBeGreaterThan(0);
     if (/[=×÷+\-*/()]|___/.test(bodyText)) {
-      expect(bodyText).not.toMatch(/מצאו את הנעלם/);
+      expect(bodyText).not.toMatch(/  /);
       await expect(body).toHaveAttribute("dir", "ltr");
     }
     if (/[\u0590-\u05FF]/.test(leadText) && !/[=×÷]/.test(leadText)) {
@@ -120,7 +120,7 @@ const SUBJECTS: SubjectClosure[] = [
     name: "math",
     path: "/learning/math-master",
     stemTestId: "math-question-surface",
-    modes: [/^למידה$/, /^תרגול$/, /^אתגר$/],
+    modes: [/^$/, /^$/, /^$/],
     start: async (page) => {
       await page.locator("select").first().selectOption("6");
       await page.locator("select").nth(1).selectOption("easy");
@@ -134,7 +134,7 @@ const SUBJECTS: SubjectClosure[] = [
     name: "geometry",
     path: "/learning/geometry-master",
     stemTestId: "geometry-question-stem",
-    modes: [/^למידה$/, /^תרגול$/],
+    modes: [/^$/, /^$/],
     start: async (page) => {
       await page.locator("select").first().selectOption("g3");
       await page.locator("select").nth(1).selectOption("easy");
@@ -148,7 +148,7 @@ const SUBJECTS: SubjectClosure[] = [
     name: "science",
     path: "/learning/science-master",
     stemTestId: "science-question-stem",
-    modes: [/^למידה$/, /^תרגול$/, /^אתגר/],
+    modes: [/^$/, /^$/, /^/],
     start: async (page) => {
       await page.locator("select").first().selectOption("g3");
       await page.locator("select").nth(1).selectOption("easy");
@@ -162,7 +162,7 @@ const SUBJECTS: SubjectClosure[] = [
     name: "hebrew",
     path: "/learning/science-master",
     stemTestId: "hebrew-question-stem",
-    modes: [/^למידה$/, /^תרגול$/],
+    modes: [/^$/, /^$/],
     start: async (page) => {
       await page.locator("select").first().selectOption("3");
       await page.locator("select").nth(1).selectOption("easy");
@@ -176,7 +176,7 @@ const SUBJECTS: SubjectClosure[] = [
     name: "english",
     path: "/learning/english-master",
     stemTestId: "english-question-stem",
-    modes: [/^למידה$/, /^תרגול$/],
+    modes: [/^$/, /^$/],
     start: async (page) => {
       await page.locator("select").first().selectOption("3");
       await page.locator("select").nth(1).selectOption("easy");
@@ -190,7 +190,7 @@ const SUBJECTS: SubjectClosure[] = [
     name: "moledet",
     path: "/learning/math-master",
     stemTestId: "moledet-question-stem",
-    modes: [/^למידה$/, /^תרגול$/],
+    modes: [/^$/, /^$/],
     start: async (page) => {
       await page.locator("select").first().selectOption("3");
       await page.locator("select").nth(1).selectOption("easy");
@@ -202,7 +202,7 @@ const SUBJECTS: SubjectClosure[] = [
         if (vals[0]) await topicSelect.selectOption(vals[0]);
       }
       await confirmMixedModal(page);
-      await page.getByRole("button", { name: /התחל/ }).click();
+      await page.getByRole("button", { name: // }).click();
     },
   },
 ];

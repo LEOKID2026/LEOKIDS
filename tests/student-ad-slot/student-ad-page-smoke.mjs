@@ -35,7 +35,7 @@ for (const entry of PAGES) {
   const adSlots = await page.locator("[data-ad-slot]").count();
   const placeholders = await page.locator('[data-ad-render="placeholder"]').count();
   const externalHost = await page.locator('[data-ad-render="external-host"]').count();
-  const visibleReservedLabel = (await page.getByText("שמור לפרסומת").count()) > 0;
+  const visibleReservedLabel = (await page.getByText(" ").count()) > 0;
   const forbiddenHits = FORBIDDEN.filter((p) => p.test(html)).map((p) => p.source);
 
   results.push({

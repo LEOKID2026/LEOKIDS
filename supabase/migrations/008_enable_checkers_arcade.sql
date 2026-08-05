@@ -1,4 +1,4 @@
--- Arcade: הפעלת דמקה (checkers) אחרי חיבור קוד.
+-- Arcade: enable checkers after code connection.
 
 begin;
 

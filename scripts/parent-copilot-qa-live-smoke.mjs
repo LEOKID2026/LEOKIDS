@@ -38,7 +38,7 @@ const payload = {
       topicRecommendations: [
         {
           topicRowKey: "geo",
-          displayName: "גאומטריה",
+          displayName: "",
           questions: 45,
           accuracy: 72,
           contractsV1: {
@@ -49,9 +49,9 @@ const payload = {
               allowedSections: ["summary", "finding", "recommendation", "limitations"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "בגאומטריה נצפו 45 שאלות עם דיוק של כ-72%. נדרש חיזוק בזיהוי תכונות צורות.",
-                interpretation: "גאומטריה מצריכה תרגול ממוקד בחישוב שטחים וזיהוי צורות.",
-                action: "מומלץ לתרגל זיהוי צורות וחישוב שטחים פשוטים.",
+                observation: "  45     -72%.     .",
+                interpretation: "       .",
+                action: "      .",
                 uncertainty: "",
               },
             },
@@ -64,7 +64,7 @@ const payload = {
         },
         {
           topicRowKey: "frac",
-          displayName: "שברים",
+          displayName: "",
           questions: 60,
           accuracy: 68,
           contractsV1: {
@@ -75,9 +75,9 @@ const payload = {
               allowedSections: ["summary", "finding", "recommendation", "limitations"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "בשברים נצפו 60 שאלות עם דיוק של כ-68%. שברים הם תחום שדורש תשומת לב.",
-                interpretation: "שברים דורשים חיזוק בסיסי בהמרות ובחיבור.",
-                action: "מומלץ לתרגל המרות שברים וחיבור שברים פשוטים.",
+                observation: "  60     -68%.      .",
+                interpretation: "     .",
+                action: "      .",
                 uncertainty: "",
               },
             },
@@ -95,7 +95,7 @@ const payload = {
       topicRecommendations: [
         {
           topicRowKey: "eng_vocab",
-          displayName: "אוצר מילים",
+          displayName: " ",
           questions: 38,
           accuracy: 81,
           contractsV1: {
@@ -106,9 +106,9 @@ const payload = {
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI2",
               textSlots: {
-                observation: "באוצר מילים אנגלית נצפו 38 שאלות עם דיוק של כ-81%. ביצועים טובים.",
-                interpretation: "אוצר מילים מתפתח בצורה טובה.",
-                action: "המשיכו עם תרגול יומי קצר.",
+                observation: "    38     -81%.  .",
+                interpretation: "    .",
+                action: "    .",
                 uncertainty: "",
               },
             },
@@ -124,28 +124,28 @@ const payload = {
   ],
   executiveSummary: {
     majorTrendsHe: [
-      "בתקופה נצפו 484 שאלות עם דיוק ממוצע של 74%.",
-      "תחומי הדגש: שברים וגאומטריה.",
-      "אנגלית מראה ביצועים טובים יחסית.",
+      "  484      74%.",
+      " :  .",
+      "    .",
     ],
   },
 };
 
 const REPORT_QUESTIONS = [
-  { q: "מה הכי חשוב לתרגל השבוע?", wantLlm: true },
-  { q: "במה הוא חזק?", wantLlm: true },
-  { q: "איפה כדאי להתמקד?", wantLlm: true },
-  { q: "מה לעשות בבית?", wantLlm: true },
-  { q: "האם יש סיבה לדאגה?", wantLlm: true },
-  { q: "מה עם גאומטריה?", wantLlm: true },
+  { q: "    ?", wantLlm: true },
+  { q: "  ?", wantLlm: true },
+  { q: "  ?", wantLlm: true },
+  { q: "  ?", wantLlm: true },
+  { q: "   ?", wantLlm: true },
+  { q: "  ?", wantLlm: true },
 ];
 
 const BANNED_SYSTEM_PHRASES = [
-  "לפי הדוח, מופיעים:",
-  "המקצועות שמופיעים",
-  "מוקדים עם ניסוח יציב יחסית",
-  "אפשר לסדר מה חשוב קודם",
-  "זה מה שהדוח נותן כרגע",
+  " , :",
+  " ",
+  "    ",
+  "    ",
+  "    ",
 ];
 
 let passed = 0;

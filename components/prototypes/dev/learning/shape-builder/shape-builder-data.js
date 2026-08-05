@@ -18,13 +18,13 @@
  */
 
 export const SHAPE_LABELS = {
-  circle: "עיגול",
-  square: "ריבוע",
-  triangle: "משולש",
-  rectangle: "מלבן",
-  cube: "קובייה",
-  box: "תיבה",
-  cylinder: "גליל",
+  circle: "to",
+  square: "square",
+  triangle: "triangle",
+  rectangle: "rectangle",
+  cube: "Text",
+  box: "Text",
+  cylinder: "Text",
 };
 
 /** @type {Record<DifficultyId, ShapeTask[]>} */
@@ -33,7 +33,7 @@ export const SHAPE_TASKS = {
     {
       id: "e1",
       type: "pick_shape",
-      prompt: "בחרו את הצורה: עיגול",
+      prompt: "Text",
       shapeId: "circle",
       options: ["circle", "square", "triangle", "rectangle"],
       correctIndex: 0,
@@ -41,7 +41,7 @@ export const SHAPE_TASKS = {
     {
       id: "e2",
       type: "pick_shape",
-      prompt: "בחרו את הצורה: ריבוע",
+      prompt: "Text",
       shapeId: "square",
       options: ["triangle", "square", "circle", "rectangle"],
       correctIndex: 1,
@@ -49,7 +49,7 @@ export const SHAPE_TASKS = {
     {
       id: "e3",
       type: "pick_shape",
-      prompt: "בחרו את הצורה: משולש",
+      prompt: "Text",
       shapeId: "triangle",
       options: ["square", "circle", "triangle", "rectangle"],
       correctIndex: 2,
@@ -57,7 +57,7 @@ export const SHAPE_TASKS = {
     {
       id: "e4",
       type: "pick_shape",
-      prompt: "בחרו את הצורה: מלבן",
+      prompt: "Text",
       shapeId: "rectangle",
       options: ["rectangle", "circle", "triangle", "square"],
       correctIndex: 0,
@@ -65,7 +65,7 @@ export const SHAPE_TASKS = {
     {
       id: "e5",
       type: "pattern",
-      prompt: "השלימו את הדגם",
+      prompt: "Text",
       pattern: ["square", "triangle", "square", "triangle", "?"],
       options: ["square", "triangle", "circle", "rectangle"],
       correctIndex: 1,
@@ -73,7 +73,7 @@ export const SHAPE_TASKS = {
     {
       id: "e6",
       type: "pattern",
-      prompt: "השלימו את הדגם",
+      prompt: "Text",
       pattern: ["circle", "circle", "square", "circle", "?"],
       options: ["circle", "square", "triangle", "rectangle"],
       correctIndex: 0,
@@ -81,7 +81,7 @@ export const SHAPE_TASKS = {
     {
       id: "e7",
       type: "match_shape",
-      prompt: "מצאו צורה זהה",
+      prompt: "Text",
       shapeId: "triangle",
       options: ["triangle", "square", "circle", "rectangle"],
       correctIndex: 0,
@@ -89,7 +89,7 @@ export const SHAPE_TASKS = {
     {
       id: "e8",
       type: "match_shape",
-      prompt: "מצאו צורה זהה",
+      prompt: "Text",
       shapeId: "rectangle",
       options: ["square", "rectangle", "circle", "triangle"],
       correctIndex: 1,
@@ -97,7 +97,7 @@ export const SHAPE_TASKS = {
     {
       id: "e9",
       type: "pattern",
-      prompt: "השלימו את הדגם",
+      prompt: "Text",
       pattern: ["triangle", "square", "triangle", "square", "?"],
       options: ["triangle", "square", "circle", "rectangle"],
       correctIndex: 0,
@@ -105,7 +105,7 @@ export const SHAPE_TASKS = {
     {
       id: "e10",
       type: "pick_shape",
-      prompt: "בחרו את הצורה: ריבוע",
+      prompt: "Text",
       shapeId: "square",
       options: ["circle", "rectangle", "square", "triangle"],
       correctIndex: 2,
@@ -113,7 +113,7 @@ export const SHAPE_TASKS = {
     {
       id: "e11",
       type: "match_shape",
-      prompt: "מצאו צורה זהה",
+      prompt: "Text",
       shapeId: "circle",
       options: ["square", "triangle", "circle", "rectangle"],
       correctIndex: 2,
@@ -121,7 +121,7 @@ export const SHAPE_TASKS = {
     {
       id: "e12",
       type: "pattern",
-      prompt: "השלימו את הדגם",
+      prompt: "Text",
       pattern: ["square", "square", "circle", "square", "?"],
       options: ["square", "circle", "triangle", "rectangle"],
       correctIndex: 0,
@@ -131,23 +131,23 @@ export const SHAPE_TASKS = {
     {
       id: "m1",
       type: "symmetry",
-      prompt: "איפה עובר קו הסימטריה?",
+      prompt: "Text",
       shapeId: "square",
-      options: ["אנכי במרכז", "אלכסון בלבד", "אין סימטריה"],
+      options: ["Text", "Text", "Text"],
       correctIndex: 0,
     },
     {
       id: "m2",
       type: "symmetry",
-      prompt: "איזו צורה יש לה סימטריה?",
+      prompt: "Text",
       shapeId: "circle",
-      options: ["עיגול", "משולש לא שווה", "צורה לא סגורה"],
+      options: ["Text", "Text", "Text"],
       correctIndex: 0,
     },
     {
       id: "m3",
       type: "area",
-      prompt: "כמה ריבועים מכסים את הצורה?",
+      prompt: "Text",
       gridW: 4,
       gridH: 3,
       filledCount: 6,
@@ -157,7 +157,7 @@ export const SHAPE_TASKS = {
     {
       id: "m4",
       type: "area",
-      prompt: "כמה ריבועים מכסים את הצורה?",
+      prompt: "Text",
       gridW: 5,
       gridH: 3,
       filledCount: 8,
@@ -167,7 +167,7 @@ export const SHAPE_TASKS = {
     {
       id: "m5",
       type: "perimeter",
-      prompt: "מה ההיקף של הצורה (ביחידות רשת)?",
+      prompt: "Text",
       gridW: 3,
       gridH: 2,
       filledCount: 6,
@@ -178,7 +178,7 @@ export const SHAPE_TASKS = {
     {
       id: "m6",
       type: "perimeter",
-      prompt: "מה ההיקף של הריבוע (ביחידות)?",
+      prompt: "Text",
       gridW: 2,
       gridH: 2,
       filledCount: 4,
@@ -189,7 +189,7 @@ export const SHAPE_TASKS = {
     {
       id: "m7",
       type: "area",
-      prompt: "כמה ריבועים מכסים את הצורה?",
+      prompt: "Text",
       gridW: 4,
       gridH: 4,
       filledCount: 9,
@@ -199,15 +199,15 @@ export const SHAPE_TASKS = {
     {
       id: "m8",
       type: "symmetry",
-      prompt: "למלבן יש קו סימטריה…",
+      prompt: "…",
       shapeId: "rectangle",
-      options: ["אנכי ואופקי", "רק אלכסון", "בכלל לא"],
+      options: ["Text", "Text", "Text"],
       correctIndex: 0,
     },
     {
       id: "m9",
       type: "perimeter",
-      prompt: "מה ההיקף (ביחידות רשת)?",
+      prompt: "Text",
       gridW: 4,
       gridH: 1,
       filledCount: 4,
@@ -218,7 +218,7 @@ export const SHAPE_TASKS = {
     {
       id: "m10",
       type: "area",
-      prompt: "כמה ריבועים מכסים את הצורה?",
+      prompt: "Text",
       gridW: 3,
       gridH: 3,
       filledCount: 5,
@@ -228,14 +228,14 @@ export const SHAPE_TASKS = {
     {
       id: "m11",
       type: "symmetry",
-      prompt: "לאיזו צורה יש הכי הרבה קווי סימטריה?",
-      options: ["עיגול", "משולש", "מלבן ארוך"],
+      prompt: "Text",
+      options: ["Text", "Text", "Text"],
       correctIndex: 0,
     },
     {
       id: "m12",
       type: "perimeter",
-      prompt: "מה ההיקף (ביחידות)?",
+      prompt: "Text",
       gridW: 3,
       gridH: 2,
       filledCount: 6,
@@ -248,7 +248,7 @@ export const SHAPE_TASKS = {
     {
       id: "h1",
       type: "rotate",
-      prompt: "איזו צורה מתקבלת אחרי סיבוב של 90°?",
+      prompt: "90°?",
       rotateFrom: "L-shape",
       rotateDeg: 90,
       options: ["rotate_a", "rotate_b", "rotate_c"],
@@ -257,7 +257,7 @@ export const SHAPE_TASKS = {
     {
       id: "h2",
       type: "rotate",
-      prompt: "איזו צורה מתקבלת אחרי סיבוב?",
+      prompt: "Text",
       rotateFrom: "arrow",
       rotateDeg: 180,
       options: ["rotate_d", "rotate_e", "rotate_f"],
@@ -266,7 +266,7 @@ export const SHAPE_TASKS = {
     {
       id: "h3",
       type: "reflect",
-      prompt: "בחרו את השיקוף הנכון",
+      prompt: "Text",
       shapeId: "triangle",
       options: ["reflect_a", "reflect_b", "reflect_c"],
       correctIndex: 2,
@@ -274,7 +274,7 @@ export const SHAPE_TASKS = {
     {
       id: "h4",
       type: "reflect",
-      prompt: "בחרו את השיקוף הנכון",
+      prompt: "Text",
       shapeId: "rectangle",
       options: ["reflect_d", "reflect_e", "reflect_f"],
       correctIndex: 1,
@@ -282,28 +282,28 @@ export const SHAPE_TASKS = {
     {
       id: "h5",
       type: "net",
-      prompt: "איזו פריסה מתאימה לקובייה?",
+      prompt: "Text",
       options: ["net_cube", "net_box", "net_cylinder"],
       correctIndex: 0,
     },
     {
       id: "h6",
       type: "net",
-      prompt: "איזו פריסה מתאימה לתיבה (מלבן)?",
+      prompt: "Text",
       options: ["net_cube", "net_box", "net_cylinder"],
       correctIndex: 1,
     },
     {
       id: "h7",
       type: "net",
-      prompt: "איזו פריסה מתאימה לגליל?",
+      prompt: "Text",
       options: ["net_cube", "net_box", "net_cylinder"],
       correctIndex: 2,
     },
     {
       id: "h8",
       type: "rotate",
-      prompt: "אחרי סיבוב - איזו צורה נכונה?",
+      prompt: "Text",
       rotateFrom: "square",
       rotateDeg: 90,
       options: ["square", "rectangle", "circle"],
@@ -312,7 +312,7 @@ export const SHAPE_TASKS = {
     {
       id: "h9",
       type: "reflect",
-      prompt: "בחרו שיקוף של משולש",
+      prompt: "Text",
       shapeId: "triangle",
       options: ["reflect_a", "reflect_b", "reflect_g"],
       correctIndex: 0,
@@ -320,7 +320,7 @@ export const SHAPE_TASKS = {
     {
       id: "h10",
       type: "area",
-      prompt: "כמה ריבועים בצורה המורכבת?",
+      prompt: "how many square Shape Train?",
       gridW: 5,
       gridH: 4,
       filledCount: 12,
@@ -330,14 +330,14 @@ export const SHAPE_TASKS = {
     {
       id: "h11",
       type: "net",
-      prompt: "פריסה של קובייה - בחרו נכון",
+      prompt: "Text",
       options: ["net_cube", "net_cylinder", "net_box"],
       correctIndex: 0,
     },
     {
       id: "h12",
       type: "rotate",
-      prompt: "סיבוב חץ - מה מתקבל?",
+      prompt: "Text",
       rotateFrom: "arrow",
       rotateDeg: 90,
       options: ["rotate_e", "rotate_f", "rotate_d"],
@@ -347,7 +347,7 @@ export const SHAPE_TASKS = {
 };
 
 export function shapeFeedback(ok) {
-  return ok ? "כל הכבוד! הבנייה הצליחה" : "כמעט. בדקו שוב את הצורה או המיקום";
+  return ok ? "!" : ".";
 }
 
 /** @param {number} w @param {number} h @param {number} count */

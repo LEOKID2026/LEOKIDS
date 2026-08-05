@@ -35,7 +35,7 @@ function sendQuotaError(res, quota) {
     remaining: quota.remaining ?? 0,
     limit: quota.limit,
     resetAt: quota.resetAt,
-    messageHe: quota.messageHe,
+    message: quota.message,
   });
 }
 

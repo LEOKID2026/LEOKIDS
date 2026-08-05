@@ -43,7 +43,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
   const [attemptsOnExperiment, setAttemptsOnExperiment] = useState(0);
   const [successCount, setSuccessCount] = useState(0);
   const [checkState, setCheckState] = useState(/** @type {'idle'|'ok'|'bad'} */ ("idle"));
-  const [feedback, setFeedback] = useState({ text: "", fact: "", type: "" });
+  const [feedback, setFeedback] = useState({ text: "Text", fact: "Text", type: "Text" });
   const [showResult, setShowResult] = useState(false);
   const [resultIcon, setResultIcon] = useState("");
   const [resultText, setResultText] = useState("");
@@ -82,7 +82,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
     setSelectedIds([]);
     setAttemptsOnExperiment(0);
     setCheckState("idle");
-    setFeedback({ text: "", fact: "", type: "" });
+    setFeedback({ text: "Text", fact: "Text", type: "Text" });
     setShowResult(false);
     setResultIcon("");
     setResultText("");
@@ -119,7 +119,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
         return [...prev, itemId];
       });
       setCheckState("idle");
-      setFeedback({ text: "", fact: "", type: "" });
+      setFeedback({ text: "Text", fact: "Text", type: "Text" });
     },
     [maxPick, showResult],
   );
@@ -128,7 +128,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
     if (showResult) return;
     setSelectedIds([]);
     setCheckState("idle");
-    setFeedback({ text: "", fact: "", type: "" });
+    setFeedback({ text: "Text", fact: "Text", type: "Text" });
     setShowResult(false);
     setResultIcon("");
     setResultText("");
@@ -150,8 +150,8 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
       setResultIcon(exp.resultIcon);
       setResultText(exp.resultText);
       setFeedback({
-        text: "מעולה! הניסוי הצליח",
-        fact: `עובדה: ${exp.fact}`,
+        text: "Text",
+        fact: `: ${exp.fact}`,
         type: "ok",
       });
       setSuccessCount((c) => c + 1);
@@ -174,7 +174,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
 
     setFeedback({
       text: feedbackMessageForReason(result.reason),
-      fact: "",
+      fact: "Text",
       type: "bad",
     });
   }, [attemptsOnExperiment, addScore, advanceExperiment, showResult]);
@@ -244,7 +244,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
             return [...prev, drag.itemId];
           });
           setCheckState("idle");
-          setFeedback({ text: "", fact: "", type: "" });
+          setFeedback({ text: "Text", fact: "Text", type: "Text" });
         }
       } else {
         setSelectedIds((prev) => {
@@ -301,7 +301,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
 
       <header className={styles.header}>
         <Link href={backHref} className={styles.backBtn}>
-          ← חזרה
+          ← Back
         </Link>
         {phase === "play" ? (
           <div className={styles.hud}>
@@ -314,22 +314,13 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
           </div>
         ) : (
           <div className={styles.hud}>
-            <span className={styles.hudChip}>🔬 אבטיפוס</span>
+            <span className={styles.hudChip}>🔬 Prototype</span>
           </div>
         )}
         <div style={{ minWidth: 40 }} aria-hidden />
       </header>
 
-      {phase === "intro" ? (
-        <div className={styles.screenCenter}>
-          <p className={styles.introHero}>🔬🧪</p>
-          <h1 className={styles.introTitle}>מעבדת הניסויים של ליאו</h1>
-          <p className={styles.introText}>
-            בחרו חפצים מהמדף, שימו על שולחן הניסוי ולחצו &quot;בדוק ניסוי&quot; - גלו איך
-            העולם עובד!
-          </p>
-          <div className={styles.difficultyRow}>
-            {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
+      {phase === "intro"? ( <div className={styles.screenCenter}> <p className={styles.introHero}>🔬🧪</p> <h1 className={styles.introTitle}> </h1> <p className={styles.introText}> , &quot; &quot; - ! </p> <div className={styles.difficultyRow}> {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
                 key={id}
                 type="button"
@@ -340,39 +331,11 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
               </button>
             ))}
           </div>
-          <p className={styles.introText} style={{ fontSize: "0.78rem" }}>
-            {EXPERIMENTS_PER_LEVEL} ניסויים · גרירה או לחיצה על חפצים
-          </p>
-          <button type="button" className={styles.startBtn} onClick={startGame}>
-            כניסה למעבדה
-          </button>
-        </div>
-      ) : null}
-
-      {phase === "play" && currentExperiment ? (
+          <p className={styles.introText} style={{ fontSize: "0.78rem"}}> {EXPERIMENTS_PER_LEVEL} · </p> <button type="button"className={styles.startBtn} onClick={startGame}> </button> </div> ) : null} {phase ==="play" && currentExperiment ? (
         <div className={styles.main}>
           <div className={styles.missionCard}>
             <span className={styles.missionIcon} aria-hidden>
-              {currentExperiment.missionIcon ?? "🔬"}
-            </span>
-            <div className={styles.missionBody}>
-              <p className={styles.missionLabel}>משימה</p>
-              <h2 className={styles.missionTitle}>{currentExperiment.title}</h2>
-              <p className={styles.missionPrompt}>{currentExperiment.prompt}</p>
-            </div>
-          </div>
-
-          <div className={styles.leoRow}>
-            <span className={styles.leoBadge} aria-hidden>
-              🦁👨‍🔬
-            </span>
-            <span className={styles.leoCaption}>ליאו המדען עוזר לכם!</span>
-          </div>
-
-          <div className={styles.playStack}>
-            <div className={styles.benchSection}>
-              <p className={styles.benchLabel}>🧫 שולחן הניסוי</p>
-              <div data-drop-zone="bench" className={benchClassName}>
+              {currentExperiment.missionIcon ?? "🔬"} </span> <div className={styles.missionBody}> <p className={styles.missionLabel}></p> <h2 className={styles.missionTitle}>{currentExperiment.title}</h2> <p className={styles.missionPrompt}>{currentExperiment.prompt}</p> </div> </div> <div className={styles.leoRow}> <span className={styles.leoBadge} aria-hidden> 🦁👨‍🔬 </span> <span className={styles.leoCaption}> !</span> </div> <div className={styles.playStack}> <div className={styles.benchSection}> <p className={styles.benchLabel}>🧫 </p> <div data-drop-zone="bench" className={benchClassName}>
                 {showResult ? (
                   <div className={styles.resultDisplay}>
                     <span className={styles.resultIcon}>{resultIcon}</span>
@@ -390,7 +353,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
                           type="button"
                           className={styles.benchItemBtn}
                           onClick={() => toggleItem(id)}
-                          aria-label={`הסר ${item.name}`}
+                          aria-label={`${item.name}`}
                         >
                           {!isDragging ? (
                             <LabItemVisual item={item} size="bench" showName />
@@ -401,7 +364,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
                   </div>
                 ) : (
                   <p className={styles.benchEmptyHint}>
-                    גררו או לחצו על חפצים · בחרו {maxPick}
+                    Drag or tap objects · pick {maxPick}
                   </p>
                 )}
               </div>
@@ -413,26 +376,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
                     : checkState === "bad"
                       ? styles.feedbackBad
                       : styles.feedbackNeutral
-                }`}
-              >
-                {feedback.text ? (
-                  <p className={styles.feedbackText}>
-                    {feedback.text}
-                    {feedback.fact ? (
-                      <span className={styles.feedbackFact}>{feedback.fact}</span>
-                    ) : null}
-                  </p>
-                ) : (
-                  <p className={styles.feedbackText} style={{ opacity: 0.55 }}>
-                    בחרו חפצים ולחצו &quot;בדוק ניסוי&quot;
-                  </p>
-                )}
-              </div>
-            </div>
-
-            <section className={styles.shelfSection}>
-              <p className={styles.shelfTitle}>🗄️ מדף החפצים</p>
-              <div className={`${styles.shelfGrid} ${shelfGridClass}`}>
+                }`} > {feedback.text ? ( <p className={styles.feedbackText}> {feedback.text} {feedback.fact ? ( <span className={styles.feedbackFact}>{feedback.fact}</span> ) : null} </p> ) : ( <p className={styles.feedbackText} style={{ opacity: 0.55 }}> &quot; &quot; </p> )} </div> </div> <section className={styles.shelfSection}> <p className={styles.shelfTitle}>🗄️ </p> <div className={`${styles.shelfGrid} ${shelfGridClass}`}>
                 {shelfItems.map((item) => {
                   const onBench = selectedIds.includes(item.id);
                   const isDragging = draggingItemId === item.id;
@@ -456,65 +400,7 @@ export default function LeoLabGame({ backHref = "/dev/learning-game-prototypes" 
 
             <div className={styles.actionRow}>
               <button
-                type="button"
-                className={styles.primaryBtn}
-                disabled={showResult || selectedIds.length !== maxPick}
-                onClick={runCheck}
-              >
-                בדוק ניסוי 🧪
-              </button>
-              <button
-                type="button"
-                className={styles.secondaryBtn}
-                disabled={showResult || selectedIds.length === 0}
-                onClick={clearSelection}
-              >
-                נקה בחירה
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
-      {phase === "won" ? (
-        <div className={styles.screenCenter}>
-          <div className={styles.endCard}>
-            <h2 className={styles.endTitle}>🎉 סיימתם את המעבדה!</h2>
-            <div className={styles.endStats}>
-              <div className={styles.endStat}>
-                ניקוד
-                <span className={styles.endStatValue}>{score}</span>
-              </div>
-              <div className={styles.endStat}>
-                הצלחות
-                <span className={styles.endStatValue}>
-                  {successCount}/{experiments.length}
-                </span>
-              </div>
-              <div className={styles.endStat}>
-                טעויות
-                <span className={styles.endStatValue}>{mistakes}</span>
-              </div>
-              <div className={styles.endStat}>
-                דיוק
-                <span className={styles.endStatValue}>{accuracyPct}%</span>
-              </div>
-              <div className={styles.endStat} style={{ gridColumn: "1 / -1" }}>
-                רמה
-                <span className={styles.endStatValue}>{diffConfig.label}</span>
-              </div>
-            </div>
-            <button type="button" className={styles.startBtn} onClick={() => setPhase("intro")}>
-              משחק חדש
-            </button>
-          </div>
-        </div>
-      ) : null}
-
-      {dragGhost && LAB_ITEMS[dragGhost.itemId] ? (
-        <div className={styles.dragOverlay} aria-hidden>
-          <div
-            data-drag-ghost="true"
+                type="button"className={styles.primaryBtn} disabled={showResult || selectedIds.length !== maxPick} onClick={runCheck} > 🧪 </button> <button type="button"className={styles.secondaryBtn} disabled={showResult || selectedIds.length === 0} onClick={clearSelection} > </button> </div> </div> </div> ) : null} {phase ==="won"? ( <div className={styles.screenCenter}> <div className={styles.endCard}> <h2 className={styles.endTitle}>🎉 !</h2> <div className={styles.endStats}> <div className={styles.endStat}> <span className={styles.endStatValue}>{score}</span> </div> <div className={styles.endStat}> <span className={styles.endStatValue}> {successCount}/{experiments.length} </span> </div> <div className={styles.endStat}> <span className={styles.endStatValue}>{mistakes}</span> </div> <div className={styles.endStat}> <span className={styles.endStatValue}>{accuracyPct}%</span> </div> <div className={styles.endStat} style={{ gridColumn:"Text"}}> <span className={styles.endStatValue}>{diffConfig.label}</span> </div> </div> <button type="button" className={styles.startBtn} onClick={() => setPhase("intro")}> </button> </div> </div> ) : null} {dragGhost && LAB_ITEMS[dragGhost.itemId] ? ( <div className={styles.dragOverlay} aria-hidden> <div data-drag-ghost="true"
             className={styles.dragGhost}
             style={{ left: dragGhost.x, top: dragGhost.y }}
           >

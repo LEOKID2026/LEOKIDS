@@ -50,8 +50,8 @@ describe("REAL_RUNTIME_E2E — per rule", () => {
       const events = Array.from({ length: min }, (_, i) =>
         normalizeMistakeEvent(
           {
-            topic: row.topicHe || row.subjectId,
-            bucketKey: row.topicHe || row.subjectId,
+            topic: row.topic || row.subjectId,
+            bucketKey: row.topic || row.subjectId,
             isCorrect: false,
             userAnswer: payload.userAnswer,
             correctAnswer: payload.expectedAnswer,
@@ -75,7 +75,7 @@ describe("REAL_RUNTIME_E2E — per rule", () => {
       assert.ok(["probe", "focus", "recovery"].includes(state.phase) || state.activeTag === scenario.expectedTag);
 
       if (scenario.probeKind) {
-        const target = resolveMisconceptionAdaptiveQuestionTarget(state, { operation: row.topicHe });
+        const target = resolveMisconceptionAdaptiveQuestionTarget(state, { operation: row.topic });
         assert.ok(target.preferKind || target.topicHint || state.activeKind);
       }
 

@@ -107,7 +107,7 @@ test("getLocalizedWordEntries and remap", () => {
   const entries = getLocalizedWordEntries(["animals"], "es-419");
   assert.equal(entries.dog, "perro");
   assert.equal(
-    remapStoredMeaningToInstructionLocale("כלב", {
+    remapStoredMeaningToInstructionLocale("", {
       listKey: "animals",
       enWordHint: "dog",
       instructionLocale: "es-419",

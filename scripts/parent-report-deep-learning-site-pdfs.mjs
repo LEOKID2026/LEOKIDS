@@ -47,15 +47,15 @@ async function setShortReportPeriod(page, period, dateRange) {
   await page.goto(`${BASE_URL}/learning/parent-report`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(500);
   if (period === "week") {
-    await page.getByRole("button", { name: "שבוע" }).click();
+    await page.getByRole("button", { name: "" }).click();
   } else if (period === "month") {
-    await page.getByRole("button", { name: "חודש" }).click();
+    await page.getByRole("button", { name: "" }).click();
   } else if (period === "full" && dateRange?.start && dateRange?.end) {
-    await page.getByRole("button", { name: "תאריכים מותאמים" }).click();
+    await page.getByRole("button", { name: " " }).click();
     const inputs = page.locator('input[type="date"]');
     await inputs.nth(0).fill(dateRange.start);
     await inputs.nth(1).fill(dateRange.end);
-    await page.getByRole("button", { name: "הצג" }).click();
+    await page.getByRole("button", { name: "" }).click();
   }
   await page.waitForTimeout(900);
 }

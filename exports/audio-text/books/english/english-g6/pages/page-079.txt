@@ -1,5 +1,0 @@
-Type 0 — אמת תמיד: If you heat ice, it melts.
-אם מחממים קרח, הוא נמס.
-Type 1 — If + Present, will + פועל:
-If it rains, we will stay at home.
-אם ירד גשם, נישאר בבית.

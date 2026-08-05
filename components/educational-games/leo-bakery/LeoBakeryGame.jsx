@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import EducationalDifficultyGradeHint from "../EducationalDifficultyGradeHint.jsx";
 import EducationalGameHudFullscreenButton from "../EducationalGameHudFullscreenButton.jsx";
@@ -112,7 +112,7 @@ export default function LeoBakeryGame({
   const trayPreview = useMemo(() => {
     if (!task) return [];
     if (compactVisual) {
-      return [{ id: 0, count: displayPerTray, label: `× ${displayTrays} trays` }];
+      return [{ id: 0, count: displayPerTray, label: `Ã— ${displayTrays} trays` }];
     }
     return Array.from({ length: Math.min(12, displayTrays) }, (_, i) => ({
       id: i,
@@ -394,18 +394,18 @@ export default function LeoBakeryGame({
         </Link>
         {phase === "play" ? (
           <div className={s.hud}>
-            <span className={`${s.hudChip} ${s.hudScore}`}>⭐ {score}</span>
+            <span className={`${s.hudChip} ${s.hudScore}`}>â­ {score}</span>
             <span className={s.hudChip}>Stage {internalStage}</span>
             <span className={`${s.hudChip} ${styles.hudTime} ${timeLeft <= 8 ? styles.hudTimeWarn : ""}`}>
-              ⏱ {timeLeft}
+              â± {timeLeft}
             </span>
             <span className={`${s.hudChip} ${s.hudBad}`}>
-              ❌ {mistakes}/{diffConfig.maxMistakes}
+              âŒ {mistakes}/{diffConfig.maxMistakes}
             </span>
           </div>
         ) : (
           <div className={s.hud}>
-            <span className={s.hudChip}>{productionMode ? "🥐" : "🥐 Prototype"}</span>
+            <span className={s.hudChip}>{productionMode ? "ðŸ¥" : "ðŸ¥ Prototype"}</span>
           </div>
         )}
         {showFullscreenButton && onFullscreenToggle ? (
@@ -419,9 +419,9 @@ export default function LeoBakeryGame({
 
       {!productionMode && phase === "intro" ? (
         <div className={styles.screenCenter}>
-          <p className={styles.introHero}>🥐🦁</p>
+          <p className={styles.introHero}>ðŸ¥ðŸ¦</p>
           <h1 className={styles.introTitle}>Leo's Bakery</h1>
-          <p className={styles.introText}>Build trays with equal baked goods — multiplication and equal groups!</p>
+          <p className={styles.introText}>Build trays with equal baked goods â€” multiplication and equal groups!</p>
           <div className={styles.difficultyRow}>
             {(/** @type {DifficultyId[]} */ (["easy", "medium", "hard"])).map((id) => (
               <button
@@ -444,7 +444,7 @@ export default function LeoBakeryGame({
       {phase === "play" && task ? (
         <div className={shop.shopMain}>
           <p className={shop.counterLabel}>
-            🥐 Leo's Bakery · Stage {internalStage}
+            ðŸ¥ Leo's Bakery Â· Stage {internalStage}
           </p>
 
           <div className={`${shop.shopGrid} ${styles.bakeryShopGrid}`} data-educational-workplace-grid="">
@@ -469,7 +469,7 @@ export default function LeoBakeryGame({
             <section className={`${shop.workCol} ${styles.bakeryWorkCol}`}>
               <div className={shop.workFrame}>
                 <div className={shop.workSurface}>
-                  <p className={shop.workSurfaceTitle}>�Your trays</p>
+                  <p className={shop.workSurfaceTitle}>Your trays</p>
                   <div className={`${shop.workSurfaceBody} ${styles.trayGridFit}`}>
                     <div
                       className={`${gameUi.trayGrid} ${styles.trayGridInner} ${trayGridSizeClass}`}
@@ -523,7 +523,7 @@ export default function LeoBakeryGame({
                           clearFeedback();
                         }}
                       >
-                        −
+                        âˆ’
                       </button>
                     </div>
                   </div>
@@ -551,7 +551,7 @@ export default function LeoBakeryGame({
                           clearFeedback();
                         }}
                       >
-                        −
+                        âˆ’
                       </button>
                     </div>
                   </div>
@@ -579,7 +579,7 @@ export default function LeoBakeryGame({
                           clearFeedback();
                         }}
                       >
-                        −
+                        âˆ’
                       </button>
                     </div>
                   </div>
@@ -611,16 +611,16 @@ export default function LeoBakeryGame({
         <div className={styles.screenCenter}>
           <div className={styles.endCard}>
             <h2 className={styles.endTitle}>
-              {phase === "won" ? "🎉 You finished the bakery!" : "🥐 Game over"}
+              {phase === "won" ? "ðŸŽ‰ You finished the bakery!" : "ðŸ¥ Game over"}
             </h2>
             <p className={styles.endStat}>{gamePackCopy("components__educational-games__leo-bakery__LeoBakeryGame", "end_score", { score })}</p>
             <p className={styles.endStat}>
-              ✅ Correct answers: {successCount}/{TASKS_PER_SESSION}
+              âœ… Correct answers: {successCount}/{TASKS_PER_SESSION}
             </p>
-            <p className={styles.endStat}>❌ Mistakes: {mistakes}</p>
-            <p className={styles.endStat}>📈 Highest stage: {highestStage}</p>
-            <p className={styles.endStat}>📊 Started at: {diffConfig.label}</p>
-            <p className={styles.endStat}>⏱ Average time: {avgDisplay} seconds</p>
+            <p className={styles.endStat}>âŒ Mistakes: {mistakes}</p>
+            <p className={styles.endStat}>ðŸ“ˆ Highest stage: {highestStage}</p>
+            <p className={styles.endStat}>ðŸ“Š Started at: {diffConfig.label}</p>
+            <p className={styles.endStat}>â± Average time: {avgDisplay} seconds</p>
             <div className={styles.endActions}>
               <button type="button" className={styles.startBtn} onClick={startGame}>
                 New game

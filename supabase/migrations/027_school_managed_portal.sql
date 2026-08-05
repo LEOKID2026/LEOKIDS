@@ -6,7 +6,7 @@
 BEGIN;
 
 -- Supported subject keys (must match lib/learning-supabase/learning-activity.js LEARNING_SUBJECT_ALLOWLIST)
--- math, geometry, hebrew, english, science, moledet_geography
+-- math, geometry, english, science
 
 -- ============================================================
 -- SECTION 1: Extend school_accounts
@@ -41,12 +41,7 @@ CREATE TABLE IF NOT EXISTS public.school_teacher_subjects (
     REFERENCES public.teacher_profiles(id) ON DELETE CASCADE,
   subject     text NOT NULL
     CHECK (subject IN (
-      'math',
-      'geometry',
-      'hebrew',
-      'english',
-      'science',
-      'moledet_geography'
+      'math', 'geometry', 'english', 'science'
     )),
   grade_level text
     CHECK (grade_level IS NULL OR char_length(trim(grade_level)) BETWEEN 1 AND 32),

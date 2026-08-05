@@ -154,7 +154,7 @@ describe("parent-portal-demo activity results (real generators)", () => {
     const questions = await buildDemoActivityQuestionSet(activity, child.grade_level);
     for (const q of questions) {
       const stem = String(q.question || "");
-      assert.doesNotMatch(stem, /\(נושא\s*:/);
+      assert.doesNotMatch(stem, /\(\s*:/);
       assert.doesNotMatch(stem, /<<|>>|«|»/);
     }
   });

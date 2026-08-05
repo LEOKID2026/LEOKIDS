@@ -21,7 +21,7 @@ import {
   classifyOfficialRow,
 } from "./lib/parse-science-curriculum-docx.mjs";
 
-const DOCX_REL = "תוכנית משרד החינוך/science Curriculum2016.docx";
+const DOCX_REL = "  /science Curriculum2016.docx";
 const DOCX_PATH = path.join(PDF_DIR, "science Curriculum2016.docx");
 
 const scienceModule = await import(

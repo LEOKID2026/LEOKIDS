@@ -16,7 +16,7 @@ import {
   ADMIN_NAV_PROTOTYPES,
   ADMIN_NAV_ENGINE_REVIEW,
   ADMIN_PLATFORM_LABEL,
-} from "../../lib/admin-portal/admin-ui.he.js";
+} from "../../lib/admin-portal/admin-ui.js";
 import { SOLO_DEV_PROTOTYPES_HUB } from "../../lib/solo-games/dev-prototype-hub-list.js";
 
 /** Wide centered admin console column — not full bleed, not article-narrow. */
@@ -68,7 +68,7 @@ export default function AdminShell({ title, header, children, showLogout = false
         )}
         <nav
           className="grid grid-cols-4 gap-1.5 w-full sm:gap-2 xl:flex xl:flex-nowrap xl:justify-end xl:w-auto xl:gap-2"
-          aria-label="ניווט מנהל מערכת"
+          aria-label="  "
         >
           {NAV_ITEMS.map((item) => {
             const active = path === item.href || path.startsWith(`${item.href}/`);

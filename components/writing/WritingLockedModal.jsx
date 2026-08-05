@@ -37,8 +37,8 @@ export default function WritingLockedModal({ item, onClose, T }) {
         <p className={`worksheet-locked-modal-text ${T.muted}`}>
           {ui.writingLockedText}
         </p>
-        {item.titleHe ? (
-          <p className={`worksheet-locked-modal-item ${T.subheading}`}>{String(item.titleHe)}</p>
+        {item.title ? (
+          <p className={`worksheet-locked-modal-item ${T.subheading}`}>{String(item.title)}</p>
         ) : null}
         {item.catalogNumber ? (
           <p className={`text-sm ${T.muted}`}>{String(item.catalogNumber)}</p>

@@ -132,57 +132,57 @@ const FULL_PAGE = [
   [
     "math-g1",
     "page-073.txt",
-    `9 גולות + 12 גולות:
-נחשב בשלבים נוחים.
-קודם נוסיף 10:
+    `9  + 12 :
+  .
+  10:
 9 + 10 = 19
-נשאר להוסיף עוד 2:
+   2:
 19 + 2 = 21
-לכן:
+:
 9 + 12 = 21`,
   ],
   [
     "math-g1",
     "page-080.txt",
-    `היו 8 מדבקות.
-לקחו 3 מדבקות.
-נחשב כמה נשאר:
+    ` 8 .
+ 3 .
+  :
 8 − 3 = 5
-לכן נשארו 5 מדבקות.
-אפשר לבדוק:
+  5 .
+ :
 5 + 3 = 8`,
   ],
   [
     "hebrew-g1",
     "page-200.txt",
-    `שׁוֹתִים ממנה — מה זה?
-חושבים — ממה שותים?
-כּוֹס.`,
+    `  —  ?
+ —  ?
+.`,
   ],
   [
     "moledet-g3",
     "page-025.txt",
-    `מה ההבדל בין ים לנחל?
-ים — גוף מים גדול ורחב, ויש בו גלים וזרמים.
-נחל — מים שזורמים באפיק, בדרך כלל במסלול צר יותר.
-ים גדול ורחב; נחל זורם בדרך מוגדרת.`,
+    `    ?
+ —    ,    .
+ —   ,     .
+  ;    .`,
   ],
   [
     "english-g5",
     "page-111.txt",
-    `תרגיל: "היו הרבה מים בבקבוק."
-water — שם עצם לא ספיר.
-במשפט רגעי וטבעי משתמשים הרבה פעמים ב-a lot of.
-היו הרבה מים בבקבוק.
+    `: "   ."
+water —    .
+      -a lot of.
+   .
 There was a lot of water in the bottle.`,
   ],
   [
     "english-g5",
     "page-125.txt",
-    `תרגיל: "בשנה שעברה כיתתנו עבדה על פרויקט בנושא הסביבה."
-Last year = בשנה שעברה → פועל בעבר.
-work on a project = לעבוד על פרויקט.
-בשנה שעברה כיתתנו עבדה על פרויקט בנושא הסביבה.
+    `: "       ."
+Last year =   →  .
+work on a project =   .
+       .
 Last year our class worked on a project about the environment.`,
   ],
 ];
@@ -191,17 +191,17 @@ for (const [book, page, content] of FULL_PAGE) {
   replacePage(book, page, content);
 }
 
-// Fix typo in english-g5 page-111 - user said "רגיל" not "רגעי"
-replaceInPage("english-g5", "page-111.txt", [["במשפט רגעי", "במשפט רגיל"]]);
+// Fix typo in english-g5 page-111 - user said "" not ""
+replaceInPage("english-g5", "page-111.txt", [[" ", " "]]);
 
 // --- Exact in-page replacements from prompt ---
 const EXACT_REPLACEMENTS = [
-  ["hebrew-g1", "page-096.txt", "הַסֵּפֶר עָמֹד", "הַסֵּפֶר מוּנָח"],
-  ["hebrew-g4", "page-078.txt", "שלוש אותיות שממנן נבנות מילים", "שלוש אותיות שמהן נבנות מילים"],
-  ["hebrew-g5", "page-155.txt", "מוצאים את הזר — המוזרה.", "מוצאים את המילה היוצאת דופן."],
-  ["hebrew-g6", "page-001.txt", "מה מצפים ממנו", "מה מצופה מהטקסט"],
-  ["science-g1", "page-022.txt", "חומרים — דברים שממנו עשויים חפצים", "חומרים — דברים שמהם עשויים חפצים"],
-  ["hebrew-g1", "page-065.txt", "מַיִם — שותים ממנו.", "מַיִם — שותים אותם."],
+  ["hebrew-g1", "page-096.txt", " ", " "],
+  ["hebrew-g4", "page-078.txt", "    ", "    "],
+  ["hebrew-g5", "page-155.txt", "   — .", "    ."],
+  ["hebrew-g6", "page-001.txt", "  ", "  "],
+  ["science-g1", "page-022.txt", " —    ", " —    "],
+  ["hebrew-g1", "page-065.txt", " —  .", " —  ."],
   [
     "science-g5",
     "page-023.txt",
@@ -217,14 +217,14 @@ const EXACT_REPLACEMENTS = [
   [
     "science-g6",
     "page-016.txt",
-    "צפיפות — כמה משקל בנפח נתון:",
-    "צפיפות — כמה חומר או מסה יש בנפח מסוים:",
+    " —    :",
+    " —       :",
   ],
   [
     "english-g5",
     "page-106.txt",
-    "much/many — כמות בעבר ועתיד",
-    "much/many — כמות עם שמות עצם ספירים ולא ספירים",
+    "much/many —   ",
+    "much/many —       ",
   ],
   [
     "english-g5",
@@ -235,11 +235,11 @@ const EXACT_REPLACEMENTS = [
   [
     "english-g5",
     "page-112.txt",
-    "עכשיו אתם משתמשים ב-much/many בעבר ועתיד.",
-    "עכשיו אתם יודעים לבחור בין much ל-many לפי סוג שם העצם.",
+    "   -much/many  .",
+    "     much -many    .",
   ],
   ["english-g5", "page-124.txt", "made a project", "worked on a project"],
-  ["english-g2", "page-060.txt", "playground — מגרש.", "playground — מגרש משחקים."],
+  ["english-g2", "page-060.txt", "playground — .", "playground —  ."],
 ];
 
 for (const [book, page, from, to] of EXACT_REPLACEMENTS) {
@@ -249,11 +249,11 @@ for (const [book, page, from, to] of EXACT_REPLACEMENTS) {
 // Science earthquake pages
 {
   const s523 = readPage("science-g5", "page-023.txt");
-  if (s523 && /מעטפת|מנטל|עמוק בתוך/i.test(s523)) {
+  if (s523 && /|| /i.test(s523)) {
     replacePage(
       "science-g5",
       "page-023.txt",
-      "רעידת אדמה — תזוזה פתאומית של סלעים או לוחות בקרום כדור הארץ, שמשחררת אנרגיה וגורמת לרעידות שמורגשות בפני השטח."
+      "  —         ,       ."
     );
   }
   const s527 = readPage("science-g5", "page-027.txt");
@@ -261,8 +261,8 @@ for (const [book, page, from, to] of EXACT_REPLACEMENTS) {
     const patched = s527
       .split(/\r?\n/)
       .map((line) => {
-        if (/רעידת אדמה|רעידות/i.test(line) && /מעטפת|מנטל|עמוק/i.test(line)) {
-          return "רעידת אדמה קורית כאשר סלעים או לוחות בקרום כדור הארץ נעים בפתאומיות ומשחררים אנרגיה — והרעד מגיע לפני השטח.";
+        if (/ |/i.test(line) && /||/i.test(line)) {
+          return "              —    .";
         }
         return line;
       })
@@ -274,12 +274,12 @@ for (const [book, page, from, to] of EXACT_REPLACEMENTS) {
 // Geography safety page
 {
   const g518 = readPage("geography-g5", "page-018.txt");
-  if (g518 && /חירום|רעיד/i.test(g518)) {
+  if (g518 && /|/i.test(g518)) {
     replacePage(
       "geography-g5",
       "page-018.txt",
-      `במצב חירום פועלים לפי הוראות המבוגר האחראי והגורמים המוסמכים.
-שומרים מרחק מחלונות ומחפצים שעלולים ליפול, ונשארים רגועים ככל האפשר.`
+      `        .
+     ,    .`
     );
   }
 }
@@ -290,8 +290,8 @@ for (const file of pageFiles) {
   let text = fs.readFileSync(file, "utf8");
   const original = text;
 
-  text = text.split("שאלה מסעיף 5:").join("בואו נבדוק יחד:");
-  text = text.split("שאלה מסעיף 5").join("בואו נבדוק יחד");
+  text = text.split("  5:").join("  :");
+  text = text.split("  5").join("  ");
   text = removeAdjacentDuplicates(text);
 
   if (text !== original) {
@@ -302,50 +302,50 @@ for (const file of pageFiles) {
 
 // --- Grade/meta wording replacements (global safe patterns) ---
 const GRADE_META_GLOBAL = [
-  [/בכיתה א׳ נשתמש/gu, "כאן נשתמש"],
-  [/בכיתה א׳ נלמד/gu, "כאן נלמד"],
-  [/בכיתה א׳ לא לומדים/gu, "כאן לא מתרגלים"],
-  [/בכיתה א׳ לא נלמד/gu, "כאן לא מתרגלים"],
-  [/בכיתה ב׳ נלמד/gu, "כאן נלמד"],
-  [/בכיתה ב׳ לא נלמד/gu, "כאן לא מתרגלים"],
-  [/בכיתה ב׳ מתמקדים/gu, "כאן מתמקדים"],
-  [/בכיתה ג׳ נלמד/gu, "כאן נלמד"],
-  [/בכיתה ג׳ מתרגלים/gu, "כאן מתרגלים"],
-  [/בכיתה ד׳ קוראים/gu, "כאן קוראים"],
-  [/בכיתה ד׳ המשפטים/gu, "בטקסטים האלה המשפטים"],
-  [/בכיתה ה׳ לא מספיק/gu, "לא מספיק"],
-  [/בכיתה ו׳ קוראים/gu, "כאן קוראים"],
-  [/בכיתה ו׳ לא אומר/gu, "לא צריך"],
-  [/בכיתה ו׳ הקטעים/gu, "הקטעים"],
-  [/בכיתה ו׳ השגיאות/gu, "השגיאות"],
-  [/בכיתה ו׳:/gu, "כאן:"],
-  [/בכיתה ה׳:/gu, "כאן:"],
-  [/בכיתה ד׳:/gu, "כאן:"],
-  [/בכיתה ג׳:/gu, "כאן:"],
-  [/בכיתה ב׳:/gu, "כאן:"],
-  [/בכיתה א׳:/gu, "כאן:"],
-  [/ברמת כיתה ב׳/gu, "בתרגול הזה"],
-  [/ברמת כיתה ג׳/gu, "בתרגול הזה"],
-  [/ברמת כיתה ד׳/gu, "בתרגול הזה"],
-  [/ברמת כיתה ה׳/gu, "בתרגול הזה"],
-  [/ברמת כיתה ו׳/gu, "בתרגול הזה"],
-  [/מניחים שעברתם על יסודות כיתה א׳/gu, "נמשיך מהיסודות שכבר הכרנו"],
-  [/מניחים שעברתם על יסודות כיתה ב׳/gu, "נמשיך מהיסודות שכבר הכרנו"],
-  [/ממה שלמדנו בכיתה/gu, "ממה שכבר למדנו"],
-  [/זו מיומנות מרכזית בכיתה ב׳\./gu, "זו מיומנות מרכזית בקריאה."],
-  [/סיימתם את יסודות הקריאה וההאזנה בכיתה ב׳\./gu, "סיימתם את יסודות הקריאה וההאזנה."],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/   /gu, "  "],
+  [/   /gu, "  "],
+  [/  /gu, " "],
+  [/   /gu, "  "],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/  /gu, "  "],
+  [/   /gu, " "],
+  [/  /gu, " "],
+  [/   /gu, " "],
+  [/  /gu, ""],
+  [/  /gu, ""],
+  [/ :/gu, ":"],
+  [/ :/gu, ":"],
+  [/ :/gu, ":"],
+  [/ :/gu, ":"],
+  [/ :/gu, ":"],
+  [/ :/gu, ":"],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/  /gu, " "],
+  [/     /gu, "   "],
+  [/     /gu, "   "],
+  [/  /gu, "  "],
+  [/    \./gu, "   ."],
+  [/      \./gu, "    ."],
   [
-    /סיימתם את יסודות האותיות, הצלילים, המילים וההאזנה בכיתה א׳\./gu,
-    "סיימתם את יסודות האותיות, הצלילים, המילים וההאזנה.",
+    /   , ,    \./gu,
+    "   , ,  .",
   ],
-  [/תלמידי כיתה/gu, "תלמידים"],
-  [/קשר לכיתה/gu, "קשר לנושא"],
-  [/כיתה אחת:/gu, "במקום אחד:"],
-  [/ילד בכיתה ו'2/gu, "ילד בגיל בית הספר"],
-  [/הנגדה בכיתה ו׳:/gu, "הנגדה:"],
-  [/הערכה ביקורתית בכיתה ו׳:/gu, "הערכה ביקורתית:"],
-  [/ניתוח טקסט בכיתה ו׳/gu, "ניתוח טקסט"],
-  [/התלמידים אשר בכיתה ו׳/gu, "התלמידים"],
+  [/ /gu, ""],
+  [/ /gu, " "],
+  [/ :/gu, " :"],
+  [/  '2/gu, "   "],
+  [/  :/gu, ":"],
+  [/   :/gu, " :"],
+  [/   /gu, " "],
+  [/   /gu, ""],
 ];
 
 for (const file of pageFiles) {
@@ -390,8 +390,8 @@ for (const [key, items] of byFile) {
 
   for (const item of items) {
     const rec = item.recommendation;
-    // Pattern: להחליף `X` ב-`Y` or Replace `X` with `Y`
-    const m1 = rec.match(/להחליף(?: את)?(?: כל)?(?: המופע)?(?:ים)?:?\s*[`""'](.+?)[`""']\s*(?:ב|ל)[-:]?\s*[`""'](.+?)[`""']/u);
+    // Pattern:  `X` -`Y` or Replace `X` with `Y`
+    const m1 = rec.match(/(?: )?(?: )?(?: )?(?:)?:?\s*[`""'](.+?)[`""']\s*(?:|)[-:]?\s*[`""'](.+?)[`""']/u);
     const m2 = rec.match(/Replace(?:\s+the page with)?:?\s*[`""'](.+?)[`""']\s*with:?\s*[`""'](.+?)[`""']/iu);
     const m3 = rec.match(/Replace:\s*[`""'](.+?)[`""']\s*With:\s*[`""'](.+?)[`""']/iu);
     const match = m1 || m2 || m3;
@@ -400,11 +400,11 @@ for (const [key, items] of byFile) {
       if (from && to && text.includes(from)) text = text.split(from).join(to);
     }
 
-    if (/להסיר את השורה הכפולה/i.test(rec)) {
+    if (/   /i.test(rec)) {
       text = removeAdjacentDuplicates(text);
     }
 
-    if (/להחליף את כל העמוד/i.test(rec) && item.category === "Content correctness") {
+    if (/   /i.test(rec) && item.category === "Content correctness") {
       // handled by FULL_PAGE above
     }
   }
@@ -431,49 +431,49 @@ for (const row of csvRows.slice(1)) {
 
   // If recommendation suggests changing numbers/examples, apply simple suffix note only when identical to lower grade
   const issue = row[idx.issue] || "";
-  if (/זהה|identical|מועתק|duplicate/i.test(issue + rec)) {
+  if (/|identical||duplicate/i.test(issue + rec)) {
     // For near-duplicates: prepend contextual opener if page starts identically to a pattern
-    if (/^היום נלמד/u.test(text) && !/^בפרק הזה/u.test(text)) {
-      text = text.replace(/^היום נלמד/u, "בפרק הזה נלמד");
+    if (/^ /u.test(text) && !/^ /u.test(text)) {
+      text = text.replace(/^ /u, "  ");
     }
-    if (/^נלמד/u.test(text) && !/^כאן נלמד/u.test(text) && book.includes("-g") && parseInt(book.split("-g")[1], 10) >= 3) {
-      text = text.replace(/^נלמד/u, "כאן נלמד");
+    if (/^/u.test(text) && !/^ /u.test(text) && book.includes("-g") && parseInt(book.split("-g")[1], 10) >= 3) {
+      text = text.replace(/^/u, " ");
     }
   }
 
   // Specific adaptations noted in CSV evidence for math spiral
   if (book === "math-g2" && page === "page-073.txt") {
-    text = `12 גולות + 15 גולות:
-נחשב בשלבים נוחים.
-קודם נוסיף 10:
+    text = `12  + 15 :
+  .
+  10:
 12 + 10 = 22
-נשאר להוסיף עוד 5:
+   5:
 22 + 5 = 27
-לכן:
+:
 12 + 15 = 27`;
   }
   if (book === "math-g2" && page === "page-080.txt") {
-    text = `היו 13 מדבקות.
-לקחו 4 מדבקות.
-נחשב כמה נשאר:
+    text = ` 13 .
+ 4 .
+  :
 13 − 4 = 9
-לכן נשארו 9 מדבקות.
-אפשר לבדוק:
+  9 .
+ :
 9 + 4 = 13`;
   }
   if (book === "math-g3" && page === "page-073.txt") {
     text = `24 + 17:
-נחשב בשלבים.
+ .
 24 + 10 = 34
 34 + 7 = 41
-לכן 24 + 17 = 41`;
+ 24 + 17 = 41`;
   }
   if (book === "math-g3" && page === "page-080.txt") {
-    text = `היו 35 תפוחים.
-מכרו 18 תפוחים.
+    text = ` 35 .
+ 18 .
 35 − 18 = 17
-נשארו 17 תפוחים.
-בדיקה: 17 + 18 = 35`;
+ 17 .
+: 17 + 18 = 35`;
   }
 
   writePage(book, page, text);

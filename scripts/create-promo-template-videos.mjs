@@ -307,10 +307,10 @@ async function main() {
   const parentMobilePaths = createPlaceholderSet("parent-mobile-promo", "parent-mobile-placeholder", parentSceneCount, {
     width: 1080,
     height: 1920,
-    label: "להחלפה - מובייל",
+    label: " - ",
   });
   const parentMobile = await buildVideo({
-    projectName: "סרטון הורים מובייל - טיוטה 1",
+    projectName: "   -  1",
     aspectRatio: "9:16",
     voiceoverAssetId: PARENT_VOICEOVER_ASSET_ID,
     placeholderPaths: parentMobilePaths,
@@ -324,10 +324,10 @@ async function main() {
   const kidsDesktopPaths = createPlaceholderSet("kids-desktop-promo", "kids-desktop-placeholder", kidsSceneCount, {
     width: 1920,
     height: 1080,
-    label: "להחלפה - דסקטופ",
+    label: " - ",
   });
   const kidsDesktop = await buildVideo({
-    projectName: "סרטון ילדים דסקטופ - טיוטה 1",
+    projectName: "   -  1",
     aspectRatio: "16:9",
     voiceoverAssetId: kidsVoice.id,
     placeholderPaths: kidsDesktopPaths,
@@ -341,10 +341,10 @@ async function main() {
   const kidsMobilePaths = createPlaceholderSet("kids-mobile-promo", "kids-mobile-placeholder", kidsSceneCount, {
     width: 1080,
     height: 1920,
-    label: "להחלפה - מובייל",
+    label: " - ",
   });
   const kidsMobile = await buildVideo({
-    projectName: "סרטון ילדים מובייל - טיוטה 1",
+    projectName: "   -  1",
     aspectRatio: "9:16",
     voiceoverAssetId: kidsVoice.id,
     placeholderPaths: kidsMobilePaths,

@@ -5,7 +5,7 @@
 
 import assert from "node:assert/strict";
 
-const M10_BANNED = "בחירת כפל לא מתאים לחילוק";
+const M10_BANNED = "    ";
 
 const [
   patternMod,
@@ -58,21 +58,21 @@ function buildM10Unit(bucketKey, topicRowKey, recurrenceFull = true) {
     subjectId: "math",
     topicRowKey,
     bucketKey,
-    displayName: bucketKey === "multiplication" ? "כפל" : bucketKey === "ratio" ? "יחס" : "חילוק",
+    displayName: bucketKey === "multiplication" ? "" : bucketKey === "ratio" ? "" : "",
     diagnosis: {
       allowed: true,
       taxonomyId: "M-10",
-      lineHe: `מצביע על דפוס: ${M10_ENGINE_PATTERN_HE} (נקודת מיקוד: הופכיות) ב${bucketKey}.`,
+      lineHe: `  : ${M10_ENGINE_PATTERN_HE} ( : ) ${bucketKey}.`,
     },
     intervention: {
-      immediateActionHe: "עם/בלי משפט כפל",
-      shortPracticeHe: "קישור כפל־חילוק",
+      immediateActionHe: "/  ",
+      shortPracticeHe: " ",
       taxonomyId: "M-10",
     },
     taxonomy: {
       id: "M-10",
       patternHe: M10_ENGINE_PATTERN_HE,
-      subskillHe: "הופכיות",
+      subskillHe: "",
     },
     recurrence: { wrongCountForRules: 4, full: recurrenceFull, wrongEventCount: 4, rowWrongTotal: 4 },
     confidence: { level: recurrenceFull ? "moderate" : "low" },
@@ -87,7 +87,7 @@ function buildM10Unit(bucketKey, topicRowKey, recurrenceFull = true) {
       additiveCautionAllowed: false,
       positiveAuthorityLevel: "none",
     },
-    probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+    probe: { specificationHe: "", objectiveHe: "" },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
     evidenceTrace: [{ type: "volume", value: { questions: 12, correct: 8, wrong: 4, accuracy: 67 } }],
     canonicalState: {
@@ -104,7 +104,7 @@ function buildM10Unit(bucketKey, topicRowKey, recurrenceFull = true) {
 function rowFor(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: bucketKey === "multiplication" ? "כפל" : bucketKey === "ratio" ? "יחס" : "חילוק",
+    displayName: bucketKey === "multiplication" ? "" : bucketKey === "ratio" ? "" : "",
     questions: 12,
     correct: 8,
     wrong: 4,
@@ -144,7 +144,7 @@ for (const [bucketKey, gradeKey, topicRowKey] of [
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: { [topicRowKey]: rowFor(topicRowKey, bucketKey, gradeKey) },
     diagnosticEngineV2: { units: [unit] },
@@ -165,7 +165,7 @@ for (const [bucketKey, gradeKey, topicRowKey] of [
 
   const short = summarizeV2UnitsForSubjectForTests(base.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: base.mathOperations,
     reportTotalQuestions: 20,
   });

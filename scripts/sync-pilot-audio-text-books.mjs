@@ -102,7 +102,7 @@ function exportBookPages(entry) {
   const issues = [];
 
   const bookTitle =
-    String(entry.meta?.bookTitleHe || "").trim() || `ספר ${subject} — ${grade}`;
+    String(entry.meta?.bookTitleHe || "").trim() || ` ${subject} — ${grade}`;
 
   /** @type {string[]} */
   const fullMdParts = [`# ${bookTitle}`, ""];
@@ -111,7 +111,7 @@ function exportBookPages(entry) {
     const { pageNumber, text, topicId, sectionNumber, sectionTitle, topicTitle } = row;
     const fileName = `page-${padPageNum(pageNumber)}.txt`;
     const textFile = `pages/${fileName}`;
-    const indexTitle = sectionTitle || topicTitle || `עמוד ${pageNumber}`;
+    const indexTitle = sectionTitle || topicTitle || ` ${pageNumber}`;
 
     if (!text.trim()) {
       issues.push({ pageNumber, topicId, sectionNumber, issue: "empty" });
@@ -121,7 +121,7 @@ function exportBookPages(entry) {
 
     fs.writeFileSync(path.join(bookDir, textFile), `${text}\n`, "utf8");
     fullMdParts.push(
-      `## Chapter ${padPageNum(pageNumber)} — עמוד ${pageNumber}`,
+      `## Chapter ${padPageNum(pageNumber)} —  ${pageNumber}`,
       "",
       text,
       ""

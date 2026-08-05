@@ -8,8 +8,8 @@ const STUDENT_PIN = "1234";
 const OLD_PARENT_USER = "leo-01";
 const OLD_STUDENT_USER = "simg3-01";
 
-const REPORT_LOAD_ERROR = /לא ניתן לטעון את הדוח כרגע/u;
-const NOT_FOUND_RE = /404|This page could not be found|הדף לא נמצא/u;
+const REPORT_LOAD_ERROR = /     /u;
+const NOT_FOUND_RE = /404|This page could not be found|  /u;
 
 type ApiLog = { url: string; status: number; count: number };
 
@@ -42,26 +42,26 @@ function trackApi(page: Page, pattern: RegExp) {
 async function openParentLogin(page: Page) {
   await page.goto("/parent/login", { waitUntil: "load" });
   await page.waitForLoadState("domcontentloaded");
-  await expect(page.getByPlaceholder("הקלידו אימייל או שם משתמש שקיבלתם מהמורה")).toBeVisible({
+  await expect(page.getByPlaceholder("      ")).toBeVisible({
     timeout: 30_000,
   });
 }
 
 async function submitParentLogin(page: Page, identifier: string, secret: string) {
-  await page.getByPlaceholder("הקלידו אימייל או שם משתמש שקיבלתם מהמורה").fill(identifier);
-  const secretField = page.getByPlaceholder("הקלידו סיסמה או קוד כניסה");
+  await page.getByPlaceholder("      ").fill(identifier);
+  const secretField = page.getByPlaceholder("    ");
   await secretField.fill(secret);
   await page.locator('form button[type="submit"]').click({ force: true });
 }
 
 async function openStudentLogin(page: Page) {
   await page.goto("/student/login", { waitUntil: "domcontentloaded" });
-  await expect(page.getByText("בודקים חיבור...")).toHaveCount(0, { timeout: 30_000 });
+  await expect(page.getByText(" ...")).toHaveCount(0, { timeout: 30_000 });
 }
 
 async function submitStudentLogin(page: Page, username: string, pin: string) {
-  await page.getByPlaceholder("שם משתמש").fill(username);
-  const pinField = page.getByPlaceholder("קוד כניסה");
+  await page.getByPlaceholder(" ").fill(username);
+  const pinField = page.getByPlaceholder(" ");
   await pinField.fill(pin);
   await page.getByTestId("student-login-submit").click({ force: true });
 }
@@ -92,19 +92,19 @@ test.describe("teacher code access - full browser flows @teacher-code-access", (
     const reportRoot = page.locator('[data-testid="parent-teacher-code-report-root"][data-report-ok="1"]');
     await expect(reportRoot).toBeVisible({ timeout: 60_000 });
     await expect(page.getByText(REPORT_LOAD_ERROR)).toHaveCount(0);
-    await expect(page.getByText(/סיכום פעילות/u)).toBeVisible();
-    await expect(page.getByText(/מה חשוב לדעת/u)).toBeVisible();
-    await expect(page.getByText(/מה מומלץ לעשות בבית/u)).toBeVisible();
-    await expect(page.getByText(/הודעות מהמורה/u)).toBeVisible();
-    await expect(page.getByText(/נועה משתפרת יפה/u)).toBeVisible();
+    await expect(page.getByText(/ /u)).toBeVisible();
+    await expect(page.getByText(/  /u)).toBeVisible();
+    await expect(page.getByText(/   /u)).toBeVisible();
+    await expect(page.getByText(/ /u)).toBeVisible();
+    await expect(page.getByText(/  /u)).toBeVisible();
 
     const sectionTitles = await page.locator("h2").allTextContents();
     const idx = (label) => sectionTitles.findIndex((t) => t.includes(label));
-    expect(idx("סיכום פעילות")).toBeGreaterThanOrEqual(0);
-    expect(idx("ביצועים לפי מקצוע")).toBeGreaterThan(idx("סיכום פעילות"));
-    expect(idx("הודעות מהמורה")).toBeGreaterThan(idx("ביצועים לפי מקצוע"));
-    expect(idx("מה חשוב לדעת")).toBeGreaterThan(idx("הודעות מהמורה"));
-    expect(idx("מה מומלץ לעשות בבית")).toBeGreaterThan(idx("מה חשוב לדעת"));
+    expect(idx(" ")).toBeGreaterThanOrEqual(0);
+    expect(idx("  ")).toBeGreaterThan(idx(" "));
+    expect(idx(" ")).toBeGreaterThan(idx("  "));
+    expect(idx("  ")).toBeGreaterThan(idx(" "));
+    expect(idx("   ")).toBeGreaterThan(idx("  "));
 
     const logs = api.snapshot();
     const me = logs.find((l) => l.url.includes("/api/guardian/me"));
@@ -129,8 +129,8 @@ test.describe("teacher code access - full browser flows @teacher-code-access", (
     await submitParentLogin(page, OLD_PARENT_USER, PARENT_PIN);
 
     await expect(page).toHaveURL(/\/parent\/login/);
-    await expect(page.getByText(/שם המשתמש או הקוד שגויים|פגה|בוטלה/u)).toBeVisible();
-    await expect(page.getByRole("button", { name: "קיבלתי קוד מהמורה" })).toHaveCount(0);
+    await expect(page.getByText(/    ||/u)).toBeVisible();
+    await expect(page.getByRole("button", { name: "  " })).toHaveCount(0);
     await assertNo404(page);
   });
 
@@ -145,10 +145,10 @@ test.describe("teacher code access - full browser flows @teacher-code-access", (
     await page.waitForURL(/\/student\/home\/?(\?.*)?$/, { timeout: 45_000 });
     await assertNo404(page);
 
-    await expect(page.getByRole("heading", { name: /שלום/u })).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByRole("link", { name: "התחל ללמוד" })).toBeVisible();
-    await expect(page.getByText(/טוען את דף הבית/u)).toHaveCount(0);
-    await expect(page.getByText(/מעבירים לכניסה/u)).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: //u })).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByRole("link", { name: " " })).toBeVisible();
+    await expect(page.getByText(/   /u)).toHaveCount(0);
+    await expect(page.getByText(/ /u)).toHaveCount(0);
 
     const logs = api.snapshot();
     const loginHit = logs.find((l) => l.url.includes("/api/student/login"));
@@ -164,7 +164,7 @@ test.describe("teacher code access - full browser flows @teacher-code-access", (
     });
 
     await page.reload({ waitUntil: "domcontentloaded" });
-    await expect(page.getByRole("heading", { name: /שלום/u })).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByRole("heading", { name: //u })).toBeVisible({ timeout: 60_000 });
     await assertNo404(page);
   });
 
@@ -173,8 +173,8 @@ test.describe("teacher code access - full browser flows @teacher-code-access", (
     await submitStudentLogin(page, OLD_STUDENT_USER, STUDENT_PIN);
 
     await expect(page).toHaveURL(/\/student\/login/);
-    await expect(page.getByText(/שם המשתמש או הקוד שגויים|שגויים/u)).toBeVisible();
-    await expect(page.getByRole("button", { name: "קיבלתי קוד מהמורה" })).toHaveCount(0);
+    await expect(page.getByText(/    |/u)).toBeVisible();
+    await expect(page.getByRole("button", { name: "  " })).toHaveCount(0);
     await assertNo404(page);
   });
 
@@ -203,8 +203,8 @@ test.describe("teacher code access - full browser flows @teacher-code-access", (
 
     await page.waitForURL(/\/student\/home/, { timeout: 45_000 });
     await assertNo404(page);
-    await expect(page.getByRole("heading", { name: /שלום/u })).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByText(/טוען את דף הבית/u)).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: //u })).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByText(/   /u)).toHaveCount(0);
 
     await page.screenshot({
       path: path.join(testInfo.outputDir, "student-home-mobile.png"),

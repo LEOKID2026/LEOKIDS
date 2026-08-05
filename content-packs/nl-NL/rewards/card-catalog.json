@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cardCount": 134,
+  "cardCount": 142,
   "cards": {
     "achievement_20_questions": {
       "cardKey": "achievement_20_questions",
@@ -282,66 +282,6 @@
         "description": "Leo Family Day - beperkte evenementenkaart!"
       }
     },
-    "event_hanukkah": {
-      "cardKey": "event_hanukkah",
-      "title": "Leo Chanoeka",
-      "description": "Leo Chanoeka - kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Chanoeka",
-        "description": "Leo Chanoeka - kaart met beperkte evenementen!"
-      }
-    },
-    "event_independence_day": {
-      "cardKey": "event_independence_day",
-      "title": "Leo Independence Dag",
-      "description": "Leo Independence Day - beperkte evenementenkaart!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Independence Dag",
-        "description": "Leo Independence Day - beperkte evenementenkaart!"
-      }
-    },
-    "event_passover": {
-      "cardKey": "event_passover",
-      "title": "Leo Pascha",
-      "description": "Leo Pesach - kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Pascha",
-        "description": "Leo Pesach - kaart met beperkte evenementen!"
-      }
-    },
-    "event_purim": {
-      "cardKey": "event_purim",
-      "title": "Leo Poerim",
-      "description": "Leo Purim – kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Poerim",
-        "description": "Leo Purim – kaart met beperkte evenementen!"
-      }
-    },
-    "event_rosh_hashana": {
-      "cardKey": "event_rosh_hashana",
-      "title": "Leo Rosj Hasjana",
-      "description": "Leo Rosh Hashana – kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Rosj Hasjana",
-        "description": "Leo Rosh Hashana – kaart met beperkte evenementen!"
-      }
-    },
-    "event_shavuot": {
-      "cardKey": "event_shavuot",
-      "title": "Leo Sjavoeot",
-      "description": "Leo Shavuot – kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Sjavoeot",
-        "description": "Leo Shavuot – kaart met beperkte evenementen!"
-      }
-    },
     "event_spring": {
       "cardKey": "event_spring",
       "title": "Leeuw Lente",
@@ -350,16 +290,6 @@
       "accessibility": {
         "title": "Leeuw Lente",
         "description": "Leo Spring - beperkte evenementenkaart!"
-      }
-    },
-    "event_sukkot": {
-      "cardKey": "event_sukkot",
-      "title": "Leo Soekot",
-      "description": "Leo Soekot – kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Soekot",
-        "description": "Leo Soekot – kaart met beperkte evenementen!"
       }
     },
     "event_summer": {
@@ -380,16 +310,6 @@
       "accessibility": {
         "title": "Leo zomervakantie",
         "description": "Leo zomervakantie - beperkte evenementenkaart!"
-      }
-    },
-    "event_tu_bishvat": {
-      "cardKey": "event_tu_bishvat",
-      "title": "Leo Tu Bisjvat",
-      "description": "Leo Tu Bishvat - kaart met beperkte evenementen!",
-      "category": "evenement",
-      "accessibility": {
-        "title": "Leo Tu Bisjvat",
-        "description": "Leo Tu Bishvat - kaart met beperkte evenementen!"
       }
     },
     "event_winter": {
@@ -1340,6 +1260,166 @@
       "accessibility": {
         "title": "Leo Wereldverkenner",
         "description": "Verzamel Leo Wereldverkenner!"
+      }
+    },
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "Leo arcadekampioen",
+      "description": "Verzamel Leo arcadekampioen!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo arcadekampioen",
+        "description": "Verzamel Leo arcadekampioen!"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "Leo bewaker van het betoverde bos",
+      "description": "Verzamel Leo bewaker van het betoverde bos!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo bewaker van het betoverde bos",
+        "description": "Verzamel Leo bewaker van het betoverde bos!"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "Leo brandweerman",
+      "description": "Verzamel Leo brandweerman!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo brandweerman",
+        "description": "Verzamel Leo brandweerman!"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "Leo galactische ontdekker",
+      "description": "Verzamel Leo galactische ontdekker!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo galactische ontdekker",
+        "description": "Verzamel Leo galactische ontdekker!"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "Leo geniale uitvinder",
+      "description": "Verzamel Leo geniale uitvinder!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo geniale uitvinder",
+        "description": "Verzamel Leo geniale uitvinder!"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "Leo gouden ridder",
+      "description": "Verzamel Leo gouden ridder!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo gouden ridder",
+        "description": "Verzamel Leo gouden ridder!"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "Leo grootmagiër",
+      "description": "Verzamel Leo grootmagiër!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo grootmagiër",
+        "description": "Verzamel Leo grootmagiër!"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "Legendarische Super Leo",
+      "description": "Verzamel Legendarische Super Leo!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Legendarische Super Leo",
+        "description": "Verzamel Legendarische Super Leo!"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "Leo meesterkok",
+      "description": "Verzamel Leo meesterkok!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo meesterkok",
+        "description": "Verzamel Leo meesterkok!"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "Leo meesterdetective",
+      "description": "Verzamel Leo meesterdetective!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo meesterdetective",
+        "description": "Verzamel Leo meesterdetective!"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "Leo meesterschilder",
+      "description": "Verzamel Leo meesterschilder!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo meesterschilder",
+        "description": "Verzamel Leo meesterschilder!"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "Leo muziekster",
+      "description": "Verzamel Leo muziekster!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo muziekster",
+        "description": "Verzamel Leo muziekster!"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "Leo piratenkapitein",
+      "description": "Verzamel Leo piratenkapitein!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo piratenkapitein",
+        "description": "Verzamel Leo piratenkapitein!"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "Leo racepiloot",
+      "description": "Verzamel Leo racepiloot!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo racepiloot",
+        "description": "Verzamel Leo racepiloot!"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "Leo voetbalkampioen",
+      "description": "Verzamel Leo voetbalkampioen!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo voetbalkampioen",
+        "description": "Verzamel Leo voetbalkampioen!"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "Leo golfkampioen",
+      "description": "Verzamel Leo golfkampioen!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo golfkampioen",
+        "description": "Verzamel Leo golfkampioen!"
       }
     }
   }

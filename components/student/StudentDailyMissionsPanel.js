@@ -18,7 +18,7 @@ function missionProgressLabel(m) {
   return `${m.progress} / ${m.target}`;
 }
 
-function MissionCardHeader({ completed, type, textHe }) {
+function MissionCardHeader({ completed, type, text }) {
   return (
     <div className="flex items-start gap-3">
       <span
@@ -37,7 +37,7 @@ function MissionCardHeader({ completed, type, textHe }) {
             completed ? "text-emerald-800" : "text-slate-800",
           ].join(" ")}
         >
-          {textHe}
+          {text}
         </p>
         {completed ? (
           <p className="text-emerald-600 text-xs mt-1 font-medium">Done</p>
@@ -48,7 +48,7 @@ function MissionCardHeader({ completed, type, textHe }) {
 }
 
 function MissionCard({ mission, index }) {
-  const { completed, textHe, type, progressPct, rewardCoins, coinAwarded, target } = mission;
+  const { completed, text, type, progressPct, rewardCoins, coinAwarded, target } = mission;
 
   return (
     <article
@@ -58,13 +58,13 @@ function MissionCard({ mission, index }) {
           ? "border-emerald-200 bg-emerald-50 shadow-md"
           : "border-slate-200 bg-white hover:border-sky-200 hover:shadow-md",
       ].join(" ")}
-      aria-label={`Mission ${index + 1}: ${textHe}`}
+      aria-label={`Mission ${index + 1}: ${text}`}
     >
       {completed ? (
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-l from-emerald-400 to-teal-400" aria-hidden />
       ) : null}
 
-      <MissionCardHeader completed={completed} type={type} textHe={textHe} />
+      <MissionCardHeader completed={completed} type={type} text={text} />
 
       {!completed && target > 0 ? (
         <div className="space-y-1.5">

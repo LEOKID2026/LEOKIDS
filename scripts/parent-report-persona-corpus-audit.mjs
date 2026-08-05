@@ -24,15 +24,15 @@ function hasAny(text, words) {
   return words.some((w) => String(text || "").includes(w));
 }
 function inferFocus(topText) {
-  if (/אין מספיק נתונים|נתונים חלקיים/.test(topText)) return "insufficient_data";
-  if (/מהירות|קצב/.test(topText)) return "speed_behavior";
-  if (/לשמר|להמשיך|יציב|שמירה/.test(topText)) return "strength_maintain";
-  if (/גיאומטר|היקף|שטח/.test(topText)) return "weakness_geometry";
-  if (/עברית|דקדוק|קריאה/.test(topText)) return "weakness_hebrew";
-  if (/מתמט|חיבור|חיסור|שבר/.test(topText)) return "weakness_math";
-  if (/ירידה|החמרה/.test(topText)) return "trend_down";
-  if (/שיפור|משתפר/.test(topText)) return "trend_up";
-  if (/יציב|שטוח/.test(topText)) return "trend_flat";
+  if (/  | /.test(topText)) return "insufficient_data";
+  if (/|/.test(topText)) return "speed_behavior";
+  if (/|||/.test(topText)) return "strength_maintain";
+  if (/||/.test(topText)) return "weakness_geometry";
+  if (/||/.test(topText)) return "weakness_hebrew";
+  if (/|||/.test(topText)) return "weakness_math";
+  if (/|/.test(topText)) return "trend_down";
+  if (/|/.test(topText)) return "trend_up";
+  if (/|/.test(topText)) return "trend_flat";
   return "mixed_priority";
 }
 
@@ -51,8 +51,8 @@ const FORBIDDEN_INTERNAL_PARENT_TERMS = [
   "outputGating",
   "rowSignals",
 ];
-const STRONG_TREND_WORDS = ["משתפר", "בירידה", "מגמה חיובית", "מגמה שלילית", "שיפור מבוסס", "ירידה מבוססת"];
-const REMEDIATION_WORDS = ["פער ידע", "שיקום", "התערבות אגרסיבית", "remediate"];
+const STRONG_TREND_WORDS = ["", "", " ", " ", " ", " "];
+const REMEDIATION_WORDS = [" ", "", " ", "remediate"];
 
 const rows = [];
 const summaryKeys = new Map();
@@ -84,7 +84,7 @@ for (const p of PARENT_REPORT_PERSONA_CORPUS) {
   const strongHasRemediation =
     p.expectedPrimaryFocusType === "strength_maintain" && hasAny(topText, REMEDIATION_WORDS);
   const speedHasKnowledgeGap =
-    p.expectedPrimaryFocusType === "speed_behavior" && /פער ידע|ידע חסר/.test(topText);
+    p.expectedPrimaryFocusType === "speed_behavior" && / | /.test(topText);
   const trendInsufficientHasStrongTrend =
     p.expectedPrimaryFocusType === "trend_insufficient" && hasAny(topText, STRONG_TREND_WORDS);
   const mixedPrimaryCount = subjectRows.filter((x) => cleanText(x?.mainPriorityHe)).length;

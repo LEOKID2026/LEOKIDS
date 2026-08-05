@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
 
-const PARENT_NOT_FOUND_HE = "לא נמצא הורה עם כתובת המייל הזו";
+const PARENT_NOT_FOUND_HE = "No parent found with this email";
 
 /**
  * Parent email → children list → grant card to selected student.
@@ -18,7 +18,7 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
   const loadChildren = useCallback(async () => {
     const email = parentEmailInput.trim();
     if (!email) {
-      setLoadError("יש להזין כתובת מייל של הורה");
+      setLoadError("Enter a parent email address");
       return;
     }
     setLoadPhase("loading");
@@ -54,7 +54,7 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
   const grantCard = async () => {
     if (!cardId) return;
     if (!selectedStudentId) {
-      onMessage?.("בחרו ילד מהרשימה.");
+      onMessage?.("Select a child from the list.");
       return;
     }
     setGrantBusy(true);
@@ -65,10 +65,10 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
       });
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        onMessage?.(apiErrorMessageHe(body?.error, "הענקה נכשלה"));
+        onMessage?.(apiErrorMessageHe(body?.error, "Grant failed"));
         return;
       }
-      onMessage?.(body.alreadyOwned ? "הילד כבר מחזיק בקלף." : "קלף הוענק לילד.");
+      onMessage?.(body.alreadyOwned ? "The child already owns this card." : "Card granted to child.");
     } finally {
       setGrantBusy(false);
     }
@@ -76,10 +76,10 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
 
   return (
     <div className="border-t border-white/10 pt-3 mt-3 space-y-3">
-      <h4 className="text-xs font-bold text-white/80">הענקת קלף לילד</h4>
+      <h4 className="text-xs font-bold text-white/80">Grant card to child</h4>
       <div className="flex flex-wrap gap-2 items-end">
         <label className="text-xs flex-1 min-w-[200px]">
-          מייל הורה
+          Parent email
           <input
             type="email"
             dir="ltr"
@@ -95,14 +95,14 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
           onClick={() => void loadChildren()}
           className="rounded border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold disabled:opacity-50"
         >
-          {loadPhase === "loading" ? "מחפש..." : "חיפוש ילדים"}
+          {loadPhase === "loading" ? "Searching..." : "Search children"}
         </button>
       </div>
 
       {loadError ? <p className="text-xs text-red-300">{loadError}</p> : null}
 
       {loadPhase === "ok" && children.length === 0 ? (
-        <p className="text-xs text-white/50">לא נמצאו ילדים תחת הורה זה.</p>
+        <p className="text-xs text-white/50">No Found child children under this parent.</p>
       ) : null}
 
       {children.length > 0 ? (
@@ -111,7 +111,7 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
             const selected = selectedStudentId === child.studentId;
             const gradeLabel =
               child.gradeLevel != null && child.gradeLevel !== ""
-                ? `כיתה ${child.gradeLevel}`
+                ? `Grade ${child.gradeLevel}`
                 : null;
             return (
               <li key={child.studentId}>
@@ -124,7 +124,7 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
                       : "border-white/10 bg-black/20 hover:bg-white/5"
                   }`}
                 >
-                  <span className="font-semibold">{child.fullName || "ילד"}</span>
+                  <span className="font-semibold">{child.fullName || "child"}</span>
                   {gradeLabel ? (
                     <span className="text-white/60 mr-2"> · {gradeLabel}</span>
                   ) : null}
@@ -142,7 +142,7 @@ export default function AdminCardGrantByParent({ accessToken, cardId, onMessage 
           onClick={() => void grantCard()}
           className="rounded border border-sky-400/40 bg-sky-500/20 px-4 py-2 text-xs font-semibold disabled:opacity-50"
         >
-          {grantBusy ? "מעניק..." : "הענק קלף לילד"}
+          {grantBusy ? "Granting..." : "Grant card to child"}
         </button>
       ) : null}
     </div>

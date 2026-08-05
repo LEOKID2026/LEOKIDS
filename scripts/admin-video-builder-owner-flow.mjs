@@ -93,7 +93,7 @@ async function main() {
   report.ffmpegDetected = checkFfmpegCli();
   log(`[1] ffmpeg detected: ${report.ffmpegDetected}`);
   if (!report.ffmpegDetected) {
-    report.limitations.push("ffmpeg לא ב-PATH — יש להוסיף bin של WinGet ל-PATH");
+    report.limitations.push("ffmpeg  -PATH —   bin  WinGet -PATH");
   }
 
   const ffmpegStatus = await fetch(`${BASE}/api/admin/video-builder/ffmpeg-status`).catch(() => null);
@@ -114,8 +114,8 @@ async function main() {
   const scenes = [
     {
       id: crypto.randomUUID(),
-      title: "ברוכים הבאים ל-Leo",
-      subtitle: "פלטפורמת למידה מהנה לילדים",
+      title: "  -Leo",
+      subtitle: "   ",
       mediaAssetId: null,
       durationSec: 4,
       bgType: "colorful",
@@ -123,8 +123,8 @@ async function main() {
     },
     {
       id: crypto.randomUUID(),
-      title: "למידה, משחקים ותגמולים",
-      subtitle: "הכל במקום אחד",
+      title: ",  ",
+      subtitle: "  ",
       mediaAssetId: null,
       durationSec: 4,
       bgType: "dark",
@@ -132,8 +132,8 @@ async function main() {
     },
     {
       id: crypto.randomUUID(),
-      title: "הצטרפו אלינו היום",
-      subtitle: "Leo — לומדים עם חיוך",
+      title: "  ",
+      subtitle: "Leo —   ",
       mediaAssetId: null,
       durationSec: 4,
       bgType: "light",
@@ -149,7 +149,7 @@ async function main() {
   scenes[0].mediaAssetId = logoId;
 
   const updated = await api(token, "PUT", `/api/admin/video-builder/${projectId}`, {
-    name: "בדיקת Intro",
+    name: " Intro",
     aspectRatio: "16:9",
     scenes,
     voiceoverAssetId: null,
@@ -179,20 +179,20 @@ async function main() {
   await page.waitForURL(/\/admin\//, { timeout: 30000 });
 
   await page.goto(`${BASE}/admin/video-builder/${projectId}`);
-  await page.waitForSelector('input[value="בדיקת Intro"], input', { timeout: 15000 });
+  await page.waitForSelector('input[value=" Intro"], input', { timeout: 15000 });
 
   const nameInput = page.locator('input').first();
-  await nameInput.fill("בדיקת Intro");
+  await nameInput.fill(" Intro");
 
   try {
-    await page.getByRole("button", { name: "התחל הקלטה" }).click({ timeout: 5000 });
+    await page.getByRole("button", { name: " " }).click({ timeout: 5000 });
     await page.waitForTimeout(1500);
-    await page.getByRole("button", { name: "עצור" }).click({ timeout: 5000 });
-    await page.getByRole("button", { name: "שמור הקלטה" }).click({ timeout: 5000 });
+    await page.getByRole("button", { name: "" }).click({ timeout: 5000 });
+    await page.getByRole("button", { name: " " }).click({ timeout: 5000 });
     await page.waitForTimeout(2000);
     log("[4] Browser voiceover recorded and saved");
   } catch (e) {
-    report.uiIssues.push(`הקלטת קריינות בדפדפן: ${e.message}`);
+    report.uiIssues.push(`  : ${e.message}`);
     const wavForm = new FormData();
     const wav = spawnSync(
       "ffmpeg",
@@ -204,7 +204,7 @@ async function main() {
       const voiceUp = await api(token, "POST", "/api/admin/video-builder/media", null, wavForm);
       if (voiceUp.status === 201) {
         await api(token, "PUT", `/api/admin/video-builder/${projectId}`, {
-          name: "בדיקת Intro",
+          name: " Intro",
           aspectRatio: "16:9",
           scenes,
           voiceoverAssetId: voiceUp.json.data.asset.id,
@@ -214,25 +214,25 @@ async function main() {
     }
   }
 
-  await page.getByRole("button", { name: "שמירה" }).click();
+  await page.getByRole("button", { name: "" }).click();
   await page.waitForTimeout(1500);
   log("[5] Saved");
 
   try {
-    await page.getByRole("button", { name: "הפעל תצוגה" }).click({ timeout: 5000 });
+    await page.getByRole("button", { name: " " }).click({ timeout: 5000 });
     await page.waitForTimeout(2000);
-    const sceneLabel = page.locator("text=/סצנה \\d+ \\/ 3/");
+    const sceneLabel = page.locator("text=/ \\d+ \\/ 3/");
     await sceneLabel.waitFor({ timeout: 5000 });
     log("[6] Preview started");
-    await page.getByRole("button", { name: "עצור" }).click({ timeout: 5000 }).catch(() => {});
+    await page.getByRole("button", { name: "" }).click({ timeout: 5000 }).catch(() => {});
   } catch (e) {
     report.uiIssues.push(`Preview: ${e.message}`);
   }
 
   if (report.ffmpegDetected) {
-    await page.getByRole("button", { name: "צור סרטון MP4" }).click({ timeout: 10000 });
+    await page.getByRole("button", { name: "  MP4" }).click({ timeout: 10000 });
     await page.waitForTimeout(8000);
-    const exportMsg = await page.locator("text=/נוצר בהצלחה|יצוא נכשל|ffmpeg/").first().textContent().catch(() => "");
+    const exportMsg = await page.locator("text=/ | |ffmpeg/").first().textContent().catch(() => "");
     log(`[7] Export UI message: ${exportMsg}`);
     if (exportMsg?.includes("ffmpeg")) report.uiIssues.push(exportMsg);
   } else {
@@ -267,7 +267,7 @@ async function main() {
       const dur = probe.streams.find((s) => s.codec_type === "video")?.duration;
       log(`[9] Streams: ${types.join(", ")} duration~${dur}s`);
       if (Number(dur) < 8 || Number(dur) > 20) {
-        report.uiIssues.push(`משך סרטון חריג: ${dur}s (צפוי ~12s)`);
+        report.uiIssues.push(`  : ${dur}s ( ~12s)`);
       }
     }
     report.hebrewOk = "not_verified_visually";

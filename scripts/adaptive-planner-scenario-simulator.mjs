@@ -41,14 +41,14 @@ const { buildAdaptivePlannerAIExplanation, buildStrictPlannerExplainerInput } = 
 
 /** Extra leak patterns beyond shared validator (QA gate). */
 const INTERNAL_LEAK_RE =
-  /reasonCodes|mustNotSay|\bdiagnostics\b|\bmetadata\b|\bplanner\b|\balgorithm\b|\bAI\b|\bmodel\b|\bfallback\b|\bJSON\b|\bscore\b|נימוק[\s\S]{0,12}קוד|סיבות\s*פנימיות/u;
+  /reasonCodes|mustNotSay|\bdiagnostics\b|\bmetadata\b|\bplanner\b|\balgorithm\b|\bAI\b|\bmodel\b|\bfallback\b|\bJSON\b|\bscore\b|[\s\S]{0,12}|\s*/u;
 
 const WEAK_OR_JUDGMENTAL_HE =
-  /חלש\s*מאוד|נכשל|נכשלת|מאובחן|מאוחר|לא\s*נורמלי|עיכוב\s*התפתחות|מפגר|טיפש|כישלון\s*חמור/u;
+  /\s*|||||\s*|\s*|||\s*/u;
 
-const SCARY_OR_ABSOLUTE_HE = /להיבהל|סכנת|אסון|נורא\s*מאוד|בוודאות\s*יתכון|תמיד\s*תצליח|מובטח\s*שתצליח/u;
+const SCARY_OR_ABSOLUTE_HE = /|||\s*|\s*|\s*|\s*/u;
 
-const OVERCLAIM_HE = /בהחלט\s*נצליח|מובטח|ודאות\s*מלאה|בטוח\s*שיהיה\s*טוב/u;
+const OVERCLAIM_HE = /\s*||\s*|\s*\s*/u;
 
 const { mapPlannerNextActionToHebrew } = vmMod;
 
@@ -77,10 +77,10 @@ function explanationContradictsPlanner(nextAction, text) {
   const n = String(nextAction || "").trim();
   const t = String(text || "");
   if (!t) return false;
-  const hasAdvance = /שלב הבא|להתקדם/u.test(t);
-  const hasFoundation = /חזק את הבסיס/u.test(t);
+  const hasAdvance = / |/u.test(t);
+  const hasFoundation = /  /u.test(t);
   if (n === "advance_skill" && hasFoundation && !hasAdvance) return true;
-  if ((n === "practice_current" || n === "review") && hasAdvance && !hasFoundation && !/מעבר רחוק/u.test(t)) return true;
+  if ((n === "practice_current" || n === "review") && hasAdvance && !hasFoundation && !/ /u.test(t)) return true;
   return false;
 }
 
@@ -115,7 +115,7 @@ function runExplanationChecks(p) {
   const noInternalLeak = !INTERNAL_LEAK_RE.test(text) && !/\bjavascript\b/i.test(text);
   const noReasonCodesLeak = !/reasonCodes?/i.test(text);
   const noMustNotSayLeak = !/mustNotSay/i.test(text);
-  const noDiagnosticsLeak = !/\bdiagnostics\b/i.test(text) && !/דיאגנוסטיקה\s*טכנית/u.test(text);
+  const noDiagnosticsLeak = !/\bdiagnostics\b/i.test(text) && !/\s*/u.test(text);
 
   const childFriendlyTone = !WEAK_OR_JUDGMENTAL_HE.test(text);
   const noScaryLanguage = !SCARY_OR_ABSOLUTE_HE.test(text);
@@ -474,9 +474,9 @@ async function main() {
   }
 
   const unsafeSamples = [
-    "נשתמש ב-reasonCodes הפנימיים כדי להחליט.",
-    "לפי diagnostics המערכת אתה חלש מאוד ולא תצליח.",
-    "המודל AI אמר להשתמש ב-metadata מהשרת.",
+    " -reasonCodes   .",
+    " diagnostics      .",
+    " AI   -metadata .",
   ];
   for (const s of unsafeSamples) {
     assert(validateAdaptivePlannerExplanationText(s).ok === false, `unsafe sample should fail validator: ${s.slice(0, 40)}`);

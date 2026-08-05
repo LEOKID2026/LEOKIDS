@@ -62,10 +62,10 @@ describe("Phase 4 - unified evidence matrix", () => {
 
   test("confidence high wording hedged below strong threshold", () => {
     const hedged = confidenceLevelParentSummaryHe("high", 8);
-    assert.match(hedged, /כיוון ראשוני/u);
-    assert.ok(!hedged.includes("כיוון עקבי"));
+    assert.match(hedged, / /u);
+    assert.ok(!hedged.includes(" "));
     const strong = confidenceLevelParentSummaryHe("high", 12);
-    assert.match(strong, /כיוון עקבי/u);
+    assert.match(strong, / /u);
   });
 });
 
@@ -185,8 +185,8 @@ describe("Phase Q1 - parent-facing gating (suppression only)", () => {
 
     const insights = buildParentInsightsHe(payload);
     assert.equal(allowsStrongParentDiagnosisAtStudent(payload), false);
-    assert.ok(!insights.some((t) => t.includes("נראה שיש קושי")));
-    assert.ok(!insights.some((t) => t.includes("כדאי לשים לב ל")));
+    assert.ok(!insights.some((t) => t.includes("  ")));
+    assert.ok(!insights.some((t) => t.includes("   ")));
     assert.ok(insights.length > 0);
   });
 
@@ -246,7 +246,7 @@ describe("Phase Q1 - parent-facing gating (suppression only)", () => {
     assert.equal(allowsStrongParentDiagnosisAtStudent(payload), true);
     const insights = buildParentInsightsHe(payload);
     assert.ok(!insightsContainThinDataContradiction(insights));
-    assert.ok(insights.some((t) => /דפוס שחוזר/u.test(t)));
+    assert.ok(insights.some((t) => / /u.test(t)));
     assert.ok(insightsContainCautiousTopicSignal(insights));
     assert.ok(!insightsContainTechnicalLeak(insights));
   });

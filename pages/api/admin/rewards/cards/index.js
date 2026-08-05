@@ -6,6 +6,7 @@ import { guardRewardsAdminApi } from "../../../../../lib/rewards/guards.server.j
 import { isCardRewardsEnabled } from "../../../../../lib/rewards/reward-feature-flags.js";
 import {
   pickCardWritableFields,
+  serializeAdminRewardCard,
   validateCardPayload,
 } from "../../../../../lib/rewards/server/admin-card-rules.server.js";
 
@@ -23,14 +24,18 @@ export default async function handler(req, res) {
     const includeInactive = req.query.includeInactive === "true";
     let query = ctx.serviceRole
       .from("reward_cards")
-      .select("*, reward_card_series(name_he, slug)")
+      .select("*, reward_card_series(slug)")
       .order("created_at", { ascending: false });
     if (!includeInactive) {
       query = query.eq("is_active", true);
     }
     const { data, error } = await query;
     if (error) return sendAdminApiError(res, 500, "db_error", error.message);
-    return res.status(200).json({ ok: true, cards: data || [], includeInactive });
+    return res.status(200).json({
+      ok: true,
+      cards: (data || []).map(serializeAdminRewardCard),
+      includeInactive,
+    });
   }
 
   if (req.method === "POST") {
@@ -41,7 +46,7 @@ export default async function handler(req, res) {
     }
     const { data, error } = await ctx.serviceRole.from("reward_cards").insert(body).select("*").single();
     if (error) return sendAdminApiError(res, 400, "insert_failed", error.message);
-    return res.status(201).json({ ok: true, card: data });
+    return res.status(201).json({ ok: true, card: serializeAdminRewardCard(data) });
   }
 
   res.setHeader("Allow", "GET, POST");

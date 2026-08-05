@@ -2,9 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import WindowedStudentCardsGrid from "./WindowedStudentCardsGrid.jsx";
 import StudentLoadingPanel from "../../ui/StudentLoadingPanel.jsx";
 import {
-  formatCoinAmountHe,
+  formatCoinAmountLabel,
 } from "../../../lib/rewards/rewards-ui.js";
-import { resolveGlobalRewardCardDisplay } from "../../../lib/rewards/reward-card-global-display.js";
 import { useRewardUiCopy } from "../../../lib/rewards/reward-locale-context.jsx";
 import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 
@@ -38,7 +37,7 @@ export default function StudentCardsShopView({
   const { locale } = useI18n();
   const [shop, setShop] = useState([]);
   const [phase, setPhase] = useState("loading");
-  const [messageHe, setMessageHe] = useState("");
+  const [message, setMessage] = useState("");
   const [actionBusy, setActionBusy] = useState("");
 
   const loadShop = useCallback(async () => {
@@ -69,7 +68,7 @@ export default function StudentCardsShopView({
     if (shopCard?.alreadyOwned || shopCard?.canAfford === false) return;
 
     setActionBusy(cardId);
-    setMessageHe("");
+    setMessage("");
     try {
       const res = await fetch(PURCHASE_PATH, {
         method: "POST",
@@ -79,7 +78,7 @@ export default function StudentCardsShopView({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setMessageHe(
+        setMessage(
           json?.code === "insufficient_coins"
             ? copy("shop", "notEnoughCoins")
             : copy("shop", "purchaseFailed"),
@@ -87,13 +86,10 @@ export default function StudentCardsShopView({
         return;
       }
       {
-        const purchasedName = resolveGlobalRewardCardDisplay({
-          cardKey: json.card?.card_key || json.card?.cardKey,
-          nameHe: json.card?.nameHe,
-        }).name;
-        setMessageHe(
+        const purchasedName = json.card?.name || copy("fallback", "rewardCard");
+        setMessage(
           copy("shop", "purchaseSuccess", {
-            name: purchasedName || copy("fallback", "rewardCard"),
+            name: purchasedName,
           }),
         );
       }
@@ -103,7 +99,7 @@ export default function StudentCardsShopView({
       await loadShop();
       if (onAfterMutation) await onAfterMutation();
     } catch {
-      setMessageHe(copy("shop", "purchaseNetworkError"));
+      setMessage(copy("shop", "purchaseNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -113,13 +109,13 @@ export default function StudentCardsShopView({
     if (!card?.canSellDuplicate || card?.sellbackCoins <= 0) return;
 
     const confirmed = window.confirm(
-      `${copy("shop", "sellConfirmTitle", { name: card.nameHe, amount: formatCoinAmountHe(card.sellbackCoins, locale) })}\n${copy("shop", "sellConfirmBody")}`,
+      `${copy("shop", "sellConfirmTitle", { name: card.name, amount: formatCoinAmountLabel(card.sellbackCoins, locale) })}\n${copy("shop", "sellConfirmBody")}`,
     );
     if (!confirmed) return;
 
     const busyKey = `sell:${card.id}`;
     setActionBusy(busyKey);
-    setMessageHe("");
+    setMessage("");
     try {
       const res = await fetch(SELL_DUPLICATE_PATH, {
         method: "POST",
@@ -132,7 +128,7 @@ export default function StudentCardsShopView({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setMessageHe(
+        setMessage(
           json?.code === "no_duplicate"
             ? copy("shopView", "noDuplicateToSell")
             : copy("shopView", "sellFailed"),
@@ -140,14 +136,11 @@ export default function StudentCardsShopView({
         return;
       }
       {
-        const soldName = resolveGlobalRewardCardDisplay({
-          cardKey: json.card?.card_key || json.card?.cardKey || card.card_key || card.cardKey,
-          nameHe: json.card?.nameHe || card.nameHe,
-        }).name;
-        setMessageHe(
+        const soldName = json.card?.name || card.name || copy("fallback", "rewardCard");
+        setMessage(
           copy("shopView", "sellSuccess", {
-            name: soldName || copy("fallback", "rewardCard"),
-            amount: formatCoinAmountHe(json.sellbackCoins || 0, locale),
+            name: soldName,
+            amount: formatCoinAmountLabel(json.sellbackCoins || 0, locale),
           }),
         );
       }
@@ -157,7 +150,7 @@ export default function StudentCardsShopView({
       await loadShop();
       if (onAfterMutation) await onAfterMutation();
     } catch {
-      setMessageHe(copy("shopView", "sellNetworkError"));
+      setMessage(copy("shopView", "sellNetworkError"));
     } finally {
       setActionBusy("");
     }
@@ -184,10 +177,10 @@ export default function StudentCardsShopView({
     <div className="space-y-3 min-w-0">
       {coinBalance != null ? (
         <p className={`text-sm font-semibold ${T.statValue}`}>
-          {copy("shopView", "coinBalance", { amount: formatCoinAmountHe(coinBalance, locale) })}
+          {copy("shopView", "coinBalance", { amount: formatCoinAmountLabel(coinBalance, locale) })}
         </p>
       ) : null}
-      {messageHe ? <p className={`text-sm ${T.userMessage || T.tileSub}`}>{messageHe}</p> : null}
+      {message ? <p className={`text-sm ${T.userMessage || T.tileSub}`}>{message}</p> : null}
       <WindowedStudentCardsGrid
         items={shop}
         emptyMessage={copy("shopView", "empty")}
@@ -209,11 +202,11 @@ export default function StudentCardsShopView({
             footer: (
               <>
                 <p className={`text-sm font-semibold ${T.statValue}`}>
-                  {copy("shopView", "buyPrice", { amount: formatCoinAmountHe(card.priceCoins, locale) })}
+                  {copy("shopView", "buyPrice", { amount: formatCoinAmountLabel(card.priceCoins, locale) })}
                 </p>
                 {card.sellbackCoins > 0 ? (
                   <p className={`text-xs leading-snug ${T.tileSub}`}>
-                    {copy("shopView", "sellValue", { amount: formatCoinAmountHe(card.sellbackCoins, locale) })}
+                    {copy("shopView", "sellValue", { amount: formatCoinAmountLabel(card.sellbackCoins, locale) })}
                   </p>
                 ) : (
                   <p className={`text-xs min-h-[1.125rem] ${T.tileSub}`}>{"\u00a0"}</p>
@@ -222,7 +215,7 @@ export default function StudentCardsShopView({
                   {!card.alreadyOwned && !canBuy
                     ? card.missingCoins > 0
                       ? copy("shopView", "needMoreCoins", {
-                          amount: formatCoinAmountHe(card.missingCoins, locale),
+                          amount: formatCoinAmountLabel(card.missingCoins, locale),
                         })
                       : copy("shopView", "notEnoughCoinsShort")
                     : "\u00a0"}

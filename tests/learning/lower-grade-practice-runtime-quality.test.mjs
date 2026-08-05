@@ -21,8 +21,8 @@ import {
   isG1G2RuntimePracticeEligible,
 } from "../../utils/lower-grade-practice-runtime-quality.js";
 
-const INTERNAL_FORBIDDEN = [/משפט\s+\d+/u, /בחנה.{0,8}פונולוגית/u];
-const BROKEN_SLASH_PROMPT = /\/\s+'\s|קרא\s+\/\s+'/u;
+const INTERNAL_FORBIDDEN = [/\s+\d+/u, /.{0,8}/u];
+const BROKEN_SLASH_PROMPT = /\/\s+'\s|\s+\/\s+'/u;
 
 function visibleTextFromQuestion(q) {
   const parts = resolveStudentQuestionDisplayParts({
@@ -99,8 +99,8 @@ describe("lower-grade practice runtime quality", () => {
   });
 
   it("hasInternalChildFacingLabel catches generator suffixes", () => {
-    assert.equal(hasInternalChildFacingLabel("קראו · משפט 21"), true);
-    assert.equal(hasInternalChildFacingLabel("האזינו ובחרו לפי ההבחנה הפונולוגית"), true);
-    assert.equal(hasInternalChildFacingLabel("האזינו ובחרו את התשובה הנכונה"), false);
+    assert.equal(hasInternalChildFacingLabel(" ·  21"), true);
+    assert.equal(hasInternalChildFacingLabel("    "), true);
+    assert.equal(hasInternalChildFacingLabel("    "), false);
   });
 });

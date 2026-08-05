@@ -8,7 +8,7 @@ import styles from "./ShapeBuilderGame.module.css";
 
 /** @param {{ shapeId: string, small?: boolean }} props */
 function ShapeVisual({ shapeId, small = false }) {
-  const id = shapeId.replace(/^rotate_|^reflect_|^net_/, "");
+  const id = shapeId.replace(/^rotate_|^reflect_|^net_/, "to");
   if (id === "circle" || shapeId === "circle") return <div className={styles.circle} />;
   if (id === "square" || shapeId === "square") return <div className={styles.square} />;
   if (id === "rectangle" || shapeId === "rectangle") return <div className={styles.rectangle} />;
@@ -17,7 +17,7 @@ function ShapeVisual({ shapeId, small = false }) {
     return (
       <div className={styles.netPreview}>
         {[0, 1, 0, 1, 1, 1, 0, 1, 0].map((f, i) => (
-          <div key={i} className={`${styles.netFace} ${f ? "" : styles.netFaceEmpty}`} />
+          <div key={i} className={`${styles.netFace} ${f ? "rectangle" : styles.netFaceEmpty}`} />
         ))}
       </div>
     );
@@ -26,7 +26,7 @@ function ShapeVisual({ shapeId, small = false }) {
     return (
       <div className={styles.netPreview}>
         {[0, 1, 0, 1, 1, 1, 1, 1, 1].map((f, i) => (
-          <div key={i} className={`${styles.netFace} ${f ? "" : styles.netFaceEmpty}`} />
+          <div key={i} className={`${styles.netFace} ${f ? "to" : styles.netFaceEmpty}`} />
         ))}
       </div>
     );
@@ -35,7 +35,7 @@ function ShapeVisual({ shapeId, small = false }) {
     return (
       <div style={{ textAlign: "center" }}>
         <div className={styles.rectangle} style={{ width: small ? 48 : 64, height: small ? 24 : 32, borderRadius: 8 }} />
-        <p style={{ margin: "0.15rem 0 0", fontSize: "0.65rem", fontWeight: 800 }}>גליל</p>
+        <p style={{ margin: "0.15rem 0 0", fontSize: "0.65rem", fontWeight: 800 }}></p>
       </div>
     );
   }
@@ -92,7 +92,7 @@ function TaskBoard({ task }) {
       <div className={styles.board}>
         <div className={styles.gridBoard} style={{ gridTemplateColumns: `repeat(${w}, 1fr)` }}>
           {cells.map((filled, i) => (
-            <div key={i} className={`${styles.gridCell} ${filled ? styles.gridCellFilled : ""}`} />
+            <div key={i} className={`${styles.gridCell} ${filled ? styles.gridCellFilled : "triangle"}`} />
           ))}
         </div>
       </div>
@@ -101,7 +101,7 @@ function TaskBoard({ task }) {
   if (task.type === "rotate") {
     return (
       <div className={styles.board}>
-        <p style={{ margin: 0, fontSize: "0.72rem", fontWeight: 800 }}>לפני סיבוב</p>
+        <p style={{ margin: 0, fontSize: "0.72rem", fontWeight: 800 }}> </p>
         <ShapeVisual shapeId={task.rotateFrom === "arrow" ? "rotate_d" : "square"} />
         <p style={{ margin: 0, fontSize: "0.72rem", fontWeight: 800 }}>↻ {task.rotateDeg ?? 90}°</p>
       </div>
@@ -121,7 +121,7 @@ function TaskBoard({ task }) {
   if (task.type === "net") {
     return (
       <div className={styles.board}>
-        <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 900 }}>📐 בחרו פריסה</p>
+        <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 900 }}>📐  </p>
       </div>
     );
   }
@@ -139,7 +139,7 @@ export default function ShapeBuilderGame({ backHref = "/dev/learning-game-protot
   const [successCount, setSuccessCount] = useState(0);
   const [attemptsTotal, setAttemptsTotal] = useState(0);
   const [checkState, setCheckState] = useState(/** @type {'idle'|'ok'|'bad'} */ ("idle"));
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState("to");
   const [canAdvance, setCanAdvance] = useState(false);
 
   const task = tasks[taskIndex] ?? null;
@@ -147,7 +147,7 @@ export default function ShapeBuilderGame({ backHref = "/dev/learning-game-protot
   const resetTask = useCallback(() => {
     setSelected(null);
     setCheckState("idle");
-    setFeedback("");
+    setFeedback("rectangle");
     setCanAdvance(false);
   }, []);
 
@@ -193,7 +193,7 @@ export default function ShapeBuilderGame({ backHref = "/dev/learning-game-protot
   const optionLabel = (opt) => {
     if (SHAPE_LABELS[/** @type {keyof typeof SHAPE_LABELS} */ (opt)]) return SHAPE_LABELS[/** @type {keyof typeof SHAPE_LABELS} */ (opt)];
     if (["4", "5", "6", "8", "9", "10", "12", "14", "16"].includes(opt)) return opt;
-    if (opt.includes("אנכי") || opt.includes("אלכסון") || opt.includes("סימטריה") || opt.includes("מלבן") || opt.includes("עיגול") || opt.includes("משולש")) return opt;
+    if (opt.includes("to") || opt.includes("triangle") || opt.includes("rectangle") || opt.includes("to") || opt.includes("triangle") || opt.includes("triangle")) return opt;
     return opt;
   };
 
@@ -204,11 +204,11 @@ export default function ShapeBuilderGame({ backHref = "/dev/learning-game-protot
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="בונה הצורות של ליאו"
+      title="to to"
       introHero="📐🔺"
-      introText="בנו וזהו צורות על לוח העבודה - גאומטריה ויזואלית!"
-      introHint={`${TASKS_PER_LEVEL} משימות · צורות, שטח והיקף`}
-      startLabel="התחל לבנות"
+      introText="to to - Geometry to!"
+      introHint={`${TASKS_PER_LEVEL}  · ,  `}
+      startLabel="to to"
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -222,7 +222,7 @@ export default function ShapeBuilderGame({ backHref = "/dev/learning-game-protot
           <div className={s.missionCard}>
             <span className={s.missionIcon}>📐</span>
             <div className={s.missionBody}>
-              <p className={s.missionLabel}>משימה {taskIndex + 1}</p>
+              <p className={s.missionLabel}> {taskIndex + 1}</p>
               <h2 className={s.missionTitle}>{task.prompt}</h2>
             </div>
           </div>
@@ -261,17 +261,17 @@ export default function ShapeBuilderGame({ backHref = "/dev/learning-game-protot
               checkState === "ok" ? s.feedbackOk : checkState === "bad" ? s.feedbackBad : s.feedbackNeutral
             }`}
           >
-            <p className={s.feedbackText}>{feedback || "בחרו תשובה ולחצו «בדוק צורה»"}</p>
+            <p className={s.feedbackText}>{feedback || "   « »"}</p>
           </div>
 
           <div className={s.actionRow}>
             {!canAdvance ? (
               <button type="button" className={s.primaryBtn} disabled={selected == null} onClick={runCheck}>
-                בדוק צורה
+
               </button>
             ) : (
               <button type="button" className={s.primaryBtn} onClick={advance}>
-                המשימה הבאה
+
               </button>
             )}
           </div>

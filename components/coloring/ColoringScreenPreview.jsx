@@ -3,7 +3,7 @@
  */
 export default function ColoringScreenPreview({ worksheetPayload }) {
   const src = worksheetPayload?.previewUrl || worksheetPayload?.a4Url || "";
-  const title = worksheetPayload?.displayNameHe || worksheetPayload?.title || "";
+  const title = worksheetPayload?.displayName || worksheetPayload?.title || "";
 
   return (
     <div className="coloring-preview-screen">

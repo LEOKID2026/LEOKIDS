@@ -48,7 +48,7 @@ Fixed rendered Hebrew including:
 ### 4. Learning question content (4 subjects)
 
 - Layer `utils/learning-content-en/*` + `localizeLearningQuestion`
-- Fixed math Yes/No heuristic that mapped any `כ…` stem (e.g. `כיתה`) to `"Yes"` and destroyed fraction stems
+- Fixed math Yes/No heuristic that mapped any `…` stem (e.g. ``) to `"Yes"` and destroyed fraction stems
 - Geometry localization rebuilt from params; removed bare-noun phrase shredding
 - `npm run test:i18n:learning-questions` — **PASS**
 

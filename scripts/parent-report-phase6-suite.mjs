@@ -1,7 +1,7 @@
 /**
- * Phase 6 — מערכת בדיקות רחבה לדוחות הורים (ללא Jest).
- * הרצה: npm run test:parent-report-phase6
- * (הסקריפט ב-package.json מריץ אחריו גם scripts/parent-report-pages-ssr.mjs — ראו docs/PARENT_REPORT.md)
+ * Phase 6 —      ( Jest).
+ * : npm run test:parent-report-phase6
+ * ( -package.json    scripts/parent-report-pages-ssr.mjs —  docs/PARENT_REPORT.md)
  */
 import assert from "node:assert/strict";
 import { createElement } from "react";
@@ -280,7 +280,7 @@ const REQUIRED_SUBJECT_PROFILE_KEYS = [
   "subjectDependencyNarrativeHe",
 ];
 
-/** שדות מלאים לרשומת המלצת נושא (מנוע topic-next-step) — חוזה רגרסיה */
+/**      ( topic-next-step) —   */
 const REQUIRED_TOPIC_RECOMMENDATION_KEYS = [
   "subject",
   "topicRowKey",
@@ -685,7 +685,7 @@ function runTopicRecommendationRecordContract() {
 
 function runAggressiveEvidenceCapContract() {
   const ctx = {
-    displayName: "חיבור",
+    displayName: "",
     questions: 22,
     accuracy: 91,
     mistakeEventCount: 0,
@@ -696,7 +696,7 @@ function runAggressiveEvidenceCapContract() {
   const out = applyAggressiveEvidenceCap(
     {
       step: "advance_level",
-      reasonHe: "בדיקה",
+      reasonHe: "",
       parentHe: "p",
       studentHe: "s",
       recommendationDecisionTrace: [],
@@ -810,7 +810,7 @@ function runThresholdBoundaries() {
   const endMs = Date.UTC(2026, 3, 10, 23, 59, 59);
   const rowLow = {
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     questions: 4,
     correct: 3,
     wrong: 1,
@@ -894,7 +894,7 @@ function runLegacyMistakeAndDiagnostics() {
       mathOperations: {
         [FIXTURE_MATH_ROW_ADD_LEARN_G4_MED]: {
           bucketKey: "addition",
-          displayName: "חיבור",
+          displayName: "",
           questions: 20,
           correct: 14,
           wrong: 6,
@@ -930,7 +930,7 @@ function runLegacyMistakeAndDiagnostics() {
       math: Array.from({ length: 6 }, (_, i) => ({
         subject: "math",
         operation: "addition",
-        grade: "ד׳",
+        grade: "",
         level: "medium",
         mode: "learning",
         isCorrect: false,
@@ -996,7 +996,7 @@ function runUiResilienceHelpers() {
     "knowledge_gap " + "word ".repeat(80) + " fragile_success instruction_friction falsePromotionRisk";
   const s = sanitizeEngineSnippetHe(longWhy);
   assert.ok(!/\bknowledge_gap\b/.test(s), "sanitized ids");
-  const t = truncateHe("א".repeat(200), 40);
+  const t = truncateHe("".repeat(200), 40);
   assert.ok(t.length <= 42, "truncate");
   const rf = { falsePromotionRisk: true, hintDependenceRisk: false, speedOnlyRisk: true };
   const labs = activeRiskFlagLabelsHe(rf, 10);
@@ -1024,7 +1024,7 @@ function runQaCalibrationRedTeam() {
     independenceProgress: "improving",
     trendDer: { independenceDirection: "up" },
     finalStep: "maintain_and_strengthen",
-    displayName: "חיבור",
+    displayName: "",
     freshnessState: "fresh",
     conclusionFreshness: "high",
     recalibrationNeed: "none",
@@ -1111,7 +1111,7 @@ function runQaCalibrationRedTeam() {
     gateReadiness: "moderate",
     gateState: "continue_gate_active",
     targetEvidenceType: "accuracy_confirmation",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(speed.dependencyState, "likely_local_issue");
 
@@ -1130,7 +1130,7 @@ function runInvariantHighVolumePerfectNoReducedComplexityWithoutExplicitContradi
   const maps = {
     math: {
       [rowKey]: {
-        displayName: "כפל — כיתה ג׳ — רמה קלה",
+        displayName: " —   —  ",
         questions: 21,
         correct: 21,
         wrong: 0,
@@ -1223,7 +1223,7 @@ function runInvariantHighVolumePerfectNoReducedComplexityWithoutExplicitContradi
     "invariant: topic engine must emit at least one recommendationDecisionTrace step"
   );
 
-  const reducedActionRegex = /מורכבות מופחתת|להנמיך|פחות מורכב|אותה רמה נמוכה/u;
+  const reducedActionRegex = / || |  /u;
   const actionText = `${String(u0.intervention?.shortPracticeHe || "")} ${String(u0.intervention?.immediateActionHe || "")}`.trim();
   if (cs && (cs.actionState === "maintain" || cs.actionState === "expand_cautiously") && !explicitContradiction) {
     assert.ok(
@@ -1248,7 +1248,7 @@ function runPhase2EvidenceContractParityTopicRecommendationsV2() {
   const maps = {
     math: {
       [rowKey]: {
-        displayName: "חיבור",
+        displayName: "",
         questions: 16,
         correct: 3,
         wrong: 13,
@@ -1295,10 +1295,10 @@ function runPhase2EvidenceContractParityTopicRecommendationsV2() {
     subjectId: "math",
     topicRowKey: rowKey,
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     classification: { state: "classified", reasonCode: null, weakFallbackBlocked: false },
     evidenceTrace: [{ type: "volume", value: { questions: 16, correct: 3, wrong: 13, accuracy: 19 } }],
-    taxonomy: { patternHe: "דפוס לבדיקה" },
+    taxonomy: { patternHe: " " },
     recurrence: {
       full: false,
       minWrongRequired: null,
@@ -1332,22 +1332,22 @@ function runPhase2EvidenceContractParityTopicRecommendationsV2() {
       allowed: true,
       conditional: false,
       taxonomyId: "tid_fixture",
-      lineHe: "שורת אבחון לבדיקה.",
+      lineHe: "  .",
       humanBoundaryStripped: null,
       forbiddenInferencesHe: [],
     },
     probe: null,
     intervention: {
-      shortPracticeHe: "תרגול קצר לבדיקה.",
-      immediateActionHe: "צעד מיידי לבדיקה.",
-      avoidHe: "לא לדלג על הבסיס.",
+      shortPracticeHe: "  .",
+      immediateActionHe: "  .",
+      avoidHe: "   .",
     },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
   };
   syntheticUnit.canonicalState = syntheticCanonicalState({
     subjectId: "math",
     topicKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     actionState: "intervene",
     readiness: "forming",
     confidenceLevel: "moderate",
@@ -1407,7 +1407,7 @@ function runInvariantMaintainOnlyProfileEmptyTopicRecommendations() {
   const maps = {
     math: {
       [rowKey]: {
-        displayName: "כפל — כיתה ג׳ — רמה קלה",
+        displayName: " —   —  ",
         questions: 21,
         correct: 21,
         wrong: 0,
@@ -1483,9 +1483,9 @@ function runInvariantMaintainOnlyProfileEmptyTopicRecommendations() {
 function runPhase15NarrativeCompactAndStack() {
   const gateDup = {
     topicEngineRowSignals: {
-      gateNarrativeHe: "לפני החלטה: לאשר דיוק קצר בלי לחץ.",
-      evidenceTargetNarrativeHe: "לאשר דיוק קצר בלי לחץ — זהה לשער.",
-      nextCycleDecisionFocusHe: "להוכיח שהכיוון הנוכחי באמת עוזר",
+      gateNarrativeHe: " :     .",
+      evidenceTargetNarrativeHe: "     —  .",
+      nextCycleDecisionFocusHe: "    ",
     },
   };
   const gCompact = topicGatesEvidenceDecisionCompactLineHe(gateDup);
@@ -1494,9 +1494,9 @@ function runPhase15NarrativeCompactAndStack() {
 
   const memOverlap = {
     topicEngineRowSignals: {
-      recommendationMemoryNarrativeHe: "יש זיכרון חלש מהחלון הנוכחי.",
-      outcomeTrackingNarrativeHe: "יש זיכרון חלש מהחלון הנוכחי — כפילות מכוונת לבדיקה.",
-      recommendationContinuationDecisionHe: "להמשיך עם תצפית קצרה בלבד.",
+      recommendationMemoryNarrativeHe: "    .",
+      outcomeTrackingNarrativeHe: "     —   .",
+      recommendationContinuationDecisionHe: "    .",
     },
   };
   const moc = topicMemoryOutcomeContinuationCompactLineHe(memOverlap);
@@ -1504,9 +1504,9 @@ function runPhase15NarrativeCompactAndStack() {
 
   const seqRow = {
     topicEngineRowSignals: {
-      nextSupportAdjustmentHe: "להתאים עומס לפי התגובה בשבוע הקרוב.",
-      nextSupportSequenceActionHe: "להתאים עומס לפי התגובה בשבוע הקרוב.",
-      supportSequenceNarrativeHe: "רצף ארוך מדי",
+      nextSupportAdjustmentHe: "     .",
+      nextSupportSequenceActionHe: "     .",
+      supportSequenceNarrativeHe: "  ",
     },
   };
   const seqC = topicSequencingRepeatCompactLineHe(seqRow);
@@ -1561,7 +1561,7 @@ function runPhase5ContractIntegrityAndContradictions() {
     String(d.executiveSummary?.overallConfidenceHe || ""),
     String(d.executiveSummary?.reportReadinessHe || ""),
   ].join(" ");
-  const overstated = /בטוח|בוודאות|חד[- ]?משמעית|יציב לחלוטין|מוכח/giu;
+  const overstated = /||[- ]?| |/giu;
 
   for (const sp of d.subjectProfiles || []) {
     for (const tr of sp.topicRecommendations || []) {
@@ -1594,7 +1594,7 @@ function runReactServerSmoke() {
   const base = PARENT_REPORT_SCENARIOS.strong_executive_case();
   const detailed = buildDetailedParentReportFromBaseReport(base, { period: "week" });
   const es = detailed.executiveSummary;
-  const long = "א".repeat(400);
+  const long = "".repeat(400);
   const html = renderToStaticMarkup(
     createElement(
       "div",
@@ -1626,7 +1626,7 @@ function runOutputQualityLockedRegression() {
   base.mathOperations = {
     [FIXTURE_MATH_ROW_ADD_LEARN_G4_MED]: {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: 21,
       correct: 21,
       wrong: 0,
@@ -1643,9 +1643,9 @@ function runOutputQualityLockedRegression() {
   const lockedUnit = {
     subjectId: "math",
     topicRowKey: FIXTURE_MATH_ROW_ADD_LEARN_G4_MED,
-    displayName: "חיבור",
+    displayName: "",
     diagnosis: { allowed: false, lineHe: "" },
-    taxonomy: { patternHe: "דפוס הצלחה יציב" },
+    taxonomy: { patternHe: "  " },
     recurrence: { wrongCountForRules: 0, totalQuestions: 21 },
     confidence: { level: "moderate", rowSignals: { dataSufficiencyLevel: "strong", isEarlySignalOnly: false } },
     priority: { level: "P2" },
@@ -1657,19 +1657,19 @@ function runOutputQualityLockedRegression() {
     },
     evidenceTrace: [{ type: "volume", value: { questions: 21, correct: 21, wrong: 0, accuracy: 100 } }],
     intervention: {
-      immediateActionHe: "להמשיך בשני תרגולים קצרים ולשמר את הדפוס.",
-      shortPracticeHe: "תרגול קצר לשימור עקביות.",
-      avoidHe: "לא להעמיס קפיצת רמה חדה באותו שבוע.",
+      immediateActionHe: "      .",
+      shortPracticeHe: "   .",
+      avoidHe: "      .",
     },
     probe: {
-      objectiveHe: "לוודא שהעקביות נשמרת גם בסוגי שאלה דומים.",
-      specificationHe: "לעקוב אחרי אותו נושא עוד סבב קצר.",
+      objectiveHe: "      .",
+      specificationHe: "      .",
     },
   };
   lockedUnit.canonicalState = syntheticCanonicalState({
     subjectId: "math",
     topicKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     actionState: "maintain",
     readiness: "emerging",
     confidenceLevel: "moderate",
@@ -1688,17 +1688,17 @@ function runOutputQualityLockedRegression() {
   const es = d.executiveSummary || {};
   const trends = Array.isArray(es.majorTrendsHe) ? es.majorTrendsHe.join(" ") : "";
   assert.ok(
-    !trends.includes("ב־0 מהם אפשר כבר לנסח כיוון"),
+    !trends.includes("0     "),
     "locked sample: executive trends must not claim 0 actionable topics under strong signal"
   );
   assert.ok(
-    !String(es.overallConfidenceHe || "").includes("ב־0 מתוך 1"),
+    !String(es.overallConfidenceHe || "").includes("0  1"),
     "locked sample: overall confidence must not claim 0/1 under strong signal"
   );
   assert.ok((es.topStrengthsAcrossHe || []).length >= 1, "locked sample: must include at least one strength");
   assert.ok(
     !(d.overallSnapshot?.notableSubjectsHe || []).some((line) =>
-      String(line || "").includes("אין עדיין מקצוע בולט")
+      String(line || "").includes("   ")
     ),
     "locked sample: must not emit 'no notable subject' fallback"
   );
@@ -1735,7 +1735,7 @@ function runOutputQualityLockedRegression() {
 
 function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
   const blockedFamilyRegex =
-    /מורכבות מופחתת|להנמיך|פחות מורכב|אותה רמה נמוכה|איסוף אות|מעקב בלבד|חיזוק באותה רמה/u;
+    / || |  | | |  /u;
   const buildUnit = ({
     subjectId,
     topicRowKey,
@@ -1767,8 +1767,8 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
         contractsV1: { readiness: { readiness } },
       },
       probe: {
-        specificationHe: "משימה מקבילה באותו עקרון עם מורכבות מופחתת",
-        objectiveHe: "להמשיך לאסוף אות",
+        specificationHe: "      ",
+        objectiveHe: "  ",
       },
       intervention: {
         immediateActionHe: "",
@@ -1800,7 +1800,7 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
       unit: buildUnit({
         subjectId: "math",
         topicRowKey: "multiplication\u0001learning\u0001g4\u0001medium",
-        displayName: "כפל",
+        displayName: "",
         q: 21,
         acc: 100,
         authority: "excellent",
@@ -1815,7 +1815,7 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
       unit: buildUnit({
         subjectId: "math",
         topicRowKey: "fractions\u0001practice\u0001g4\u0001medium",
-        displayName: "שברים",
+        displayName: "",
         q: 19,
         acc: 95,
         authority: "very_good",
@@ -1830,7 +1830,7 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
       unit: buildUnit({
         subjectId: "math",
         topicRowKey: "division\u0001practice\u0001g4\u0001hard",
-        displayName: "חילוק",
+        displayName: "",
         q: 32,
         acc: 92,
         authority: "very_good",
@@ -1845,7 +1845,7 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
       unit: buildUnit({
         subjectId: "english",
         topicRowKey: "vocabulary\u0001learning",
-        displayName: "אוצר מילים",
+        displayName: " ",
         q: 24,
         acc: 93,
         authority: "excellent",
@@ -1935,7 +1935,7 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
   const controlUnit = buildUnit({
     subjectId: "math",
     topicRowKey: "algebra\u0001learning\u0001g4\u0001medium",
-    displayName: "אלגברה",
+    displayName: "",
     q: 17, // below strong-positive evidence floor
     acc: 94,
     authority: "very_good",
@@ -1963,7 +1963,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
   const mathCollapsed = collapseTopicRowsToCanonicalTopicEntityForTests("math", {
     "addition\u0001learning\u0001g4\u0001easy": {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: 8,
       correct: 7,
       wrong: 1,
@@ -1975,7 +1975,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
     },
     "addition\u0001practice\u0001g4\u0001medium": {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: 9,
       correct: 8,
       wrong: 1,
@@ -1987,7 +1987,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
     },
     "addition\u0001speed\u0001g4\u0001hard": {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: 5,
       correct: 4,
       wrong: 1,
@@ -2010,7 +2010,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
   const englishCollapsed = collapseTopicRowsToCanonicalTopicEntityForTests("english", {
     "vocabulary\u0001learning": {
       bucketKey: "vocabulary",
-      displayName: "אוצר מילים",
+      displayName: " ",
       questions: 11,
       correct: 10,
       wrong: 1,
@@ -2020,7 +2020,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
     },
     "vocabulary\u0001practice": {
       bucketKey: "vocabulary",
-      displayName: "אוצר מילים",
+      displayName: " ",
       questions: 7,
       correct: 6,
       wrong: 1,
@@ -2035,7 +2035,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
   const mathMixedGrades = collapseTopicRowsToCanonicalTopicEntityForTests("math", {
     "fractions\u0001learning\u0001g4\u0001easy": {
       bucketKey: "fractions",
-      displayName: "שברים",
+      displayName: "",
       questions: 10,
       correct: 8,
       wrong: 2,
@@ -2045,7 +2045,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
     },
     "fractions\u0001learning\u0001g5\u0001easy": {
       bucketKey: "fractions",
-      displayName: "שברים",
+      displayName: "",
       questions: 6,
       correct: 3,
       wrong: 3,
@@ -2064,7 +2064,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
   const noOverMerge = collapseTopicRowsToCanonicalTopicEntityForTests("math", {
     "addition\u0001learning\u0001g4\u0001easy": {
       bucketKey: "addition",
-      displayName: "חיבור",
+      displayName: "",
       questions: 10,
       correct: 8,
       wrong: 2,
@@ -2075,7 +2075,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
     },
     "subtraction\u0001learning\u0001g4\u0001easy": {
       bucketKey: "subtraction",
-      displayName: "חיסור",
+      displayName: "",
       questions: 10,
       correct: 8,
       wrong: 2,
@@ -2126,7 +2126,7 @@ function runPhase9MistakeMemoryAndExecutive() {
     evidenceStrength: "low",
     dataSufficiencyLevel: "low",
     conclusionStrength: "tentative",
-    displayName: "נושא",
+    displayName: "",
   });
   assert.equal(sparse.dominantMistakePattern, "insufficient_mistake_evidence");
 
@@ -2143,7 +2143,7 @@ function runPhase9MistakeMemoryAndExecutive() {
     dataSufficiencyLevel: "medium",
     conclusionStrength: "moderate",
     modeKey: "speed",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(speed.dominantMistakePattern, "speed_driven_error");
 
@@ -2159,7 +2159,7 @@ function runPhase9MistakeMemoryAndExecutive() {
     evidenceStrength: "medium",
     dataSufficiencyLevel: "medium",
     conclusionStrength: "moderate",
-    displayName: "מילים",
+    displayName: "",
   });
   assert.equal(instr.dominantMistakePattern, "instruction_misread");
 
@@ -2236,7 +2236,7 @@ function runPhase10EffectivenessConfidenceAndExecutive() {
     evidenceStrength: "low",
     dataSufficiencyLevel: "low",
     conclusionStrength: "tentative",
-    displayName: "נושא",
+    displayName: "",
   });
   assert.equal(weak.responseToIntervention, "not_enough_evidence");
 
@@ -2254,7 +2254,7 @@ function runPhase10EffectivenessConfidenceAndExecutive() {
     evidenceStrength: "medium",
     dataSufficiencyLevel: "medium",
     conclusionStrength: "moderate",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(stalled.responseToIntervention, "stalled_response");
 
@@ -2272,7 +2272,7 @@ function runPhase10EffectivenessConfidenceAndExecutive() {
     evidenceStrength: "strong",
     dataSufficiencyLevel: "strong",
     conclusionStrength: "moderate",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(over.responseToIntervention, "over_supported_progress");
 
@@ -2294,7 +2294,7 @@ function runPhase10EffectivenessConfidenceAndExecutive() {
     evidenceStrength: "strong",
     dataSufficiencyLevel: "strong",
     conclusionStrength: "strong",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(ind.responseToIntervention, "independence_growing");
 
@@ -2384,7 +2384,7 @@ function runPhase11SequencingAndDrift() {
     mistakeRecurrenceLevel: "unclear",
     trendDer: { trendConfOk: false },
     trend: null,
-    displayName: "נושא",
+    displayName: "",
   });
   assert.equal(seqWeak.supportSequenceState, "insufficient_sequence_evidence");
 
@@ -2407,7 +2407,7 @@ function runPhase11SequencingAndDrift() {
     trend: {
       windows: { previousComparablePeriod: { accuracy: 70 }, currentPeriod: { accuracy: 69 } },
     },
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.ok(
     seqGuided.strategyRepetitionRisk === "high" || seqGuided.supportSequenceState === "sequence_stalled",
@@ -2430,13 +2430,13 @@ function runPhase11SequencingAndDrift() {
     conclusionFreshness: "medium",
     freshnessState: "fresh",
     recalibrationNeed: "none",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.ok(typeof p11.nextSupportSequenceAction === "string" && p11.nextSupportSequenceAction.length > 3);
 
   const earlyRow = {
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     questions: 14,
     correct: 11,
     wrong: 3,
@@ -2478,7 +2478,7 @@ function runPhase12MemoryAndOutcome() {
     recommendedPracticeMode: "observe_only",
     interventionFormat: "observation_block",
     responseToIntervention: "not_enough_evidence",
-    displayName: "נושא",
+    displayName: "",
   });
   assert.equal(memWeak.recommendationMemoryState, "no_memory");
 
@@ -2499,7 +2499,7 @@ function runPhase12MemoryAndOutcome() {
     recommendedPracticeMode: "slow_guided_accuracy",
     interventionFormat: "guided_practice",
     responseToIntervention: "stalled_response",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.ok(
     memMulti.supportHistoryDepth === "multi_window" || memMulti.recommendationMemoryState === "usable_memory",
@@ -2512,7 +2512,7 @@ function runPhase12MemoryAndOutcome() {
     independenceProgress: "flat",
     mistakeRecurrenceLevel: "persistent",
     trendDer: { trendConfOk: true, positiveAccuracy: false },
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.ok(typeof outMis.expectedVsObservedMatch === "string");
 
@@ -2560,7 +2560,7 @@ function runPhase13DecisionsAndEvidenceTargets() {
     independenceProgress: "flat",
     trendDer: {},
     finalStep: "maintain_and_strengthen",
-    displayName: "נושא",
+    displayName: "",
   };
   const gWeak = buildDecisionGatesPhase13(baseWeak);
   assert.equal(gWeak.gateState, "gates_not_ready");
@@ -2592,7 +2592,7 @@ function runPhase13DecisionsAndEvidenceTargets() {
     independenceProgress: "improving",
     trendDer: { independenceDirection: "up" },
     finalStep: "maintain_and_strengthen",
-    displayName: "חיבור",
+    displayName: "",
     freshnessState: "fresh",
     conclusionFreshness: "high",
     recalibrationNeed: "none",
@@ -2631,7 +2631,7 @@ function runPhase13DecisionsAndEvidenceTargets() {
     independenceProgress: "flat",
     trendDer: {},
     finalStep: "maintain_and_strengthen",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(gRecheck.recheckGate, "forming");
   assert.equal(gRecheck.gateState, "recheck_gate_visible");
@@ -2676,8 +2676,8 @@ function runPhase13DecisionsAndEvidenceTargets() {
     recalibrationNeed: "none",
     trendDer: {},
     independenceProgress: "flat",
-    targetSuccessSignalHe: "בדיקה",
-    targetObservationWindowLabelHe: "חלון קצר",
+    targetSuccessSignalHe: "",
+    targetObservationWindowLabelHe: " ",
   });
   assert.equal(overlayStab.nextCycleDecisionFocus, "stabilize_before_advance");
 
@@ -2704,10 +2704,10 @@ function runPhase13DecisionsAndEvidenceTargets() {
 
   const rowUi = {
     topicEngineRowSignals: {
-      gateNarrativeHe: "ב«חיבור»: מיקוד סבב.",
-      evidenceTargetNarrativeHe: "יעד ראיה.",
+      gateNarrativeHe: "«»:  .",
+      evidenceTargetNarrativeHe: " .",
       recheckGate: "forming",
-      whatWouldTriggerRecheckHe: "סבב קצר לפני החלטה.",
+      whatWouldTriggerRecheckHe: "   .",
     },
   };
   assert.ok(gateStateLineHe(rowUi).length > 0);
@@ -2734,7 +2734,7 @@ function runPhase14FoundationDependencyAndOrdering() {
     gateReadiness: "moderate",
     gateState: "continue_gate_active",
     targetEvidenceType: "accuracy_confirmation",
-    displayName: "חיבור",
+    displayName: "",
   };
   const speed = buildFoundationDependencyPhase14(speedCtx);
   assert.equal(speed.dependencyState, "likely_local_issue");
@@ -2757,8 +2757,8 @@ function runPhase14FoundationDependencyAndOrdering() {
     advanceGate: "forming",
     nextCycleDecisionFocus: "stabilize_before_advance",
     targetEvidenceType: "retention_confirmation",
-    targetObservationWindowLabelHe: "בשני סבבים קצרים",
-    targetSuccessSignalHe: "בדיקה",
+    targetObservationWindowLabelHe: "  ",
+    targetSuccessSignalHe: "",
   });
   assert.ok(ov.foundationBeforeExpansion === true || String(ov.foundationBeforeExpansionHe || "").length > 5);
   assert.ok(
@@ -2795,7 +2795,7 @@ function runPhase8InterventionPriorityAndCalibration() {
     accuracy: 80,
     dataSufficiencyLevel: "low",
     evidenceStrength: "low",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(sparseObs.interventionFormat, "observation_block");
   assert.equal(sparseObs.interventionIntensity, "light");
@@ -2811,7 +2811,7 @@ function runPhase8InterventionPriorityAndCalibration() {
     accuracy: 72,
     dataSufficiencyLevel: "medium",
     evidenceStrength: "medium",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.notEqual(sparseObs.interventionPlanHe, speed.interventionPlanHe);
   assert.ok(
@@ -2832,7 +2832,7 @@ function runPhase8InterventionPriorityAndCalibration() {
     accuracy: 78,
     dataSufficiencyLevel: "medium",
     evidenceStrength: "medium",
-    displayName: "חלוקה",
+    displayName: "",
   });
   assert.equal(weakInd.interventionFormat, "mixed");
 
@@ -2844,7 +2844,7 @@ function runPhase8InterventionPriorityAndCalibration() {
     finalStep: "maintain_and_strengthen",
     q: 14,
     accuracy: 76,
-    displayName: "מילים",
+    displayName: "",
   });
   assert.equal(friction.interventionIntensity, "light");
   assert.equal(friction.interventionDurationBand, "very_short");
@@ -2859,7 +2859,7 @@ function runPhase8InterventionPriorityAndCalibration() {
     accuracy: 68,
     dataSufficiencyLevel: "strong",
     evidenceStrength: "strong",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.equal(gap.interventionGoal, "core_skill_gap");
   assert.ok(gap.interventionFormat === "guided_practice");
@@ -2874,7 +2874,7 @@ function runPhase8InterventionPriorityAndCalibration() {
     accuracy: 65,
     dataSufficiencyLevel: "medium",
     evidenceStrength: "medium",
-    displayName: "חיבור",
+    displayName: "",
   });
   assert.ok(gapCapped.interventionFormat !== "guided_practice" || gapCapped.interventionIntensity !== "targeted");
 
@@ -2922,8 +2922,8 @@ function runPhase8InterventionPriorityAndCalibration() {
   const sparseUnit = {
     subjectId: "math",
     topicRowKey: "addition\u0001learning",
-    displayName: "חיבור",
-    intervention: { immediateActionHe: "תרגול" },
+    displayName: "",
+    intervention: { immediateActionHe: "" },
     confidence: { level: "low", rowSignals: { dataSufficiencyLevel: "low", isEarlySignalOnly: true } },
     outputGating: { cannotConcludeYet: false, additiveCautionAllowed: false, contractsV1: {} },
     priority: { level: "P4", score: 999 },
@@ -2973,7 +2973,7 @@ function runTopicRecGoldenRow() {
   const endMs = Date.UTC(2026, 3, 10, 23, 59, 59);
   const row = {
     bucketKey: "addition",
-    displayName: "חיבור",
+    displayName: "",
     questions: 16,
     correct: 12,
     wrong: 4,

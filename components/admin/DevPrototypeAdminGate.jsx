@@ -1,5 +1,5 @@
 import { useAdminSession } from "../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING } from "../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOADING } from "../../lib/admin-portal/admin-ui.js";
 
 /** Blocks /dev/* prototype routes unless the viewer is a platform admin. */
 export default function DevPrototypeAdminGate({ children }) {

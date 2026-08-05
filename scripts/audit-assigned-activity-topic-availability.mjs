@@ -83,9 +83,9 @@ function isEnglishGeneratorPlaceholder(q) {
   const prompt = String(q.question || "").trim();
   if (!prompt) return true;
   if (
-    prompt.includes("אין כרגע שאלת דקדוק") ||
-    prompt.includes("אין כרגע משפטי תרגום") ||
-    prompt.includes("אין כרגע תבניות משפט")
+    prompt.includes("   ") ||
+    prompt.includes("   ") ||
+    prompt.includes("   ")
   ) {
     return true;
   }
@@ -93,11 +93,11 @@ function isEnglishGeneratorPlaceholder(q) {
 }
 
 const SUBJECT_LABELS = {
-  geometry: "גאומטריה",
-  hebrew: "עברית",
-  english: "אנגלית",
-  science: "מדע",
-  moledet_geography: "מולדת וגאוגרפיה",
+  geometry: "",
+  hebrew: "",
+  english: "",
+  science: "",
+  moledet_geography: " ",
 };
 
 /** @type {Record<string, Record<string, string[]>>} */
@@ -698,7 +698,7 @@ Topics with **no suitable assigned-activity workflow today** (not core MCQ gaps 
   for (const r of ownerUnique.values()) {
     let question = "Confirm visibility vs hide";
     if (r.topicKey === "mixed") {
-      question = "Keep mixed, relabel as 'תרגול מעורב', or hide? Stored topic may differ from selection.";
+      question = "Keep mixed, relabel as ' ', or hide? Stored topic may differ from selection.";
     }
     md += `| ${r.subject} | ${r.grade} | ${r.topicKey} | ${question} |\n`;
   }
@@ -738,7 +738,7 @@ Topics with **no suitable assigned-activity workflow today** (not core MCQ gaps 
 
 ### Surprising gaps
 
-- **English assigned vs learning:** Many topics work in learning master at easy but fail assigned activities at default difficulty (medium) or count=5 — product UX may show "בינוני" as default while only "קל" is bank-complete.
+- **English assigned vs learning:** Many topics work in learning master at easy but fail assigned activities at default difficulty (medium) or count=5 — product UX may show "" as default while only "" is bank-complete.
 - **English g6 translation:** Fails even at **easy** — likely pool/gating bug, not just thin bank.
 - **Hebrew writing/speaking split:** g1–g2 assigned activities still work; g3+ blocked — grade-dependent activity type, not uniform hide.
 - **Geometry diagram gate:** 8 topic/grade pairs fail assigned activities despite full learning-master + book coverage — pure rendering pipeline gap.

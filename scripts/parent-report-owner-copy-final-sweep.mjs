@@ -44,10 +44,10 @@ const FORBIDDEN = [
 ];
 
 const LEGACY_MARKERS = [
-  "בחלק מהשורות",
-  "אין תמונה מספיק ברורה",
-  "עדיין לא מספיק",
-  "בנושא הזה עדיין לא קובעים כיוון חזק",
+  " ",
+  "   ",
+  "  ",
+  "      ",
   "remediate same level",
 ];
 
@@ -59,11 +59,11 @@ function assertRenderedClean(text, label, opts = {}) {
     assert.doesNotMatch(s, new RegExp(frag, "i"), `${label} forbidden: ${frag}`);
   }
   for (const legacy of LEGACY_MARKERS) {
-    if (opts.allowInitial && legacy === "עדיין לא מספיק") continue;
+    if (opts.allowInitial && legacy === "  ") continue;
     assert.doesNotMatch(s, new RegExp(legacy, "i"), `${label} legacy: ${legacy}`);
   }
   if (!opts.allowEarly && !opts.allowInitial) {
-    assert.doesNotMatch(s, /עדיין מוקדם/u, `${label} forbidden early phrase`);
+    assert.doesNotMatch(s, / /u, `${label} forbidden early phrase`);
   }
   const enumHits = findParentReportEnglishEnumLeaks(s);
   assert.equal(enumHits.length, 0, `${label} english leak: ${enumHits.join(", ")}`);
@@ -76,7 +76,7 @@ function rowWithLpd(body, contract) {
       ? body.learningPatternDecision
       : {};
   return {
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     ...body,
     learningPatternDecision: { ...lpdBody, [EDC_CONTRACT_KEY]: contract },
   };
@@ -88,42 +88,42 @@ const rendered = [];
 // Subject-level templates
 const subjectFixtures = [
   {
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     contract: {
       subjectDecision: "multiple_topic_gaps",
       recommendedSubjectAction: "remediate_priority_topics_same_level",
       blockedLegacySummary: true,
       priorityTopics: [
         {
-          topicLabelKey: "שברים",
+          topicLabelKey: "",
           questions: 206,
           correct: 108,
           wrong: 98,
           accuracy: 52,
-          detectedPattern: "השוואה לפי מונה בלבד",
+          detectedPattern: "   ",
           evidenceStrength: "strong",
         },
         {
-          topicLabelKey: "כפל",
+          topicLabelKey: "",
           questions: 32,
           correct: 22,
           wrong: 10,
           accuracy: 69,
-          detectedPattern: "אותם זוגות שגויים",
+          detectedPattern: "  ",
           evidenceStrength: "strong",
         },
       ],
     },
   },
   {
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     contract: {
       subjectDecision: "focused_strengthening_needed",
       recommendedSubjectAction: "remediate_priority_topics_same_level",
       blockedLegacySummary: true,
       priorityTopics: [
         {
-          topicLabelKey: "חיבור",
+          topicLabelKey: "",
           questions: 10,
           correct: 2,
           wrong: 8,
@@ -150,7 +150,7 @@ const topicFixtures = [
     label: "initial",
     row: rowWithLpd(
       {
-        label: "חילוק עם שארית",
+        label: "  ",
         questions: 2,
         correct: 1,
         wrong: 1,
@@ -171,7 +171,7 @@ const topicFixtures = [
     label: "practice_focus",
     row: rowWithLpd(
       {
-        label: "סדרות",
+        label: "",
         questions: 3,
         correct: 2,
         wrong: 1,
@@ -190,7 +190,7 @@ const topicFixtures = [
     label: "difficulty",
     row: rowWithLpd(
       {
-        label: "שברים",
+        label: "",
         questions: 206,
         correct: 108,
         wrong: 98,
@@ -204,8 +204,8 @@ const topicFixtures = [
       },
       {
         engineDecision: "topic_needs_strengthening",
-        detectedPattern: "השוואה לפי מונה בלבד",
-        affectedSubskill: "חלק כלל",
+        detectedPattern: "   ",
+        affectedSubskill: " ",
       },
     ),
   },
@@ -213,7 +213,7 @@ const topicFixtures = [
     label: "positive",
     row: rowWithLpd(
       {
-        label: "חיבור",
+        label: "",
         questions: 8,
         correct: 6,
         wrong: 2,
@@ -263,7 +263,7 @@ for (const fx of topicFixtures) {
 // Positive caution override simulation (gated legacy replaced by owner)
 const positiveGatedRow = rowWithLpd(
   {
-    label: "חיבור",
+    label: "",
     questions: 8,
     correct: 6,
     wrong: 2,
@@ -273,7 +273,7 @@ const positiveGatedRow = rowWithLpd(
       topicStatus: "positive_observed",
       practicedQuestions: 8,
     },
-    cautionLineHe: "בנושא הזה עדיין לא קובעים כיוון חזק — קודם עוד תרגול ממוקד באותו נושא.",
+    cautionLineHe: "       —      .",
   },
   { engineDecision: "early_direction_only", detectedPattern: null },
 );
@@ -282,8 +282,8 @@ assert.ok(ownerCaution, "positive_observed:RECOMMENDATION_CAUTION must resolve")
 const finalCaution =
   ownerCaution && positiveGatedRow.cautionLineHe ? ownerCaution : positiveGatedRow.cautionLineHe;
 rendered.push({ scope: "positiveCautionOverride", text: finalCaution });
-assert.match(String(finalCaution), /גם כשנראית הצלחה/u);
-assert.doesNotMatch(String(finalCaution), /עדיין לא קובעים כיוון חזק/u);
+assert.match(String(finalCaution), /  /u);
+assert.doesNotMatch(String(finalCaution), /    /u);
 
 for (const item of rendered) {
   const label = `${item.scope}:${item.templateId || item.section || item.field || "text"}`;

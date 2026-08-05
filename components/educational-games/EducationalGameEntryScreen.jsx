@@ -11,7 +11,7 @@ import GameAudioSettingsButton from "../game-audio/GameAudioSettingsButton.jsx";
 
 /**
  * @param {{
- *   game: { titleHe: string, emoji: string, blurbHe: string, hasDifficultyPicker: boolean },
+ *   game: { title: string, emoji: string, blurb: string, hasDifficultyPicker: boolean },
  *   difficulty: string,
  *   setDifficulty: (d: string) => void,
  *   onStart: () => void,
@@ -48,8 +48,8 @@ export default function EducationalGameEntryScreen({
         <div className="text-5xl" aria-hidden>
           {game.emoji}
         </div>
-        <h1 className={SG.entryTitle}>{game.titleHe}</h1>
-        <p className={SG.entryBlurb}>{game.blurbHe}</p>
+        <h1 className={SG.entryTitle}>{game.title}</h1>
+        <p className={SG.entryBlurb}>{game.blurb}</p>
 
         {game.hasDifficultyPicker ? (
           <div className="space-y-2">

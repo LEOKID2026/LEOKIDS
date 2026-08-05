@@ -113,7 +113,7 @@ function buildSessionsForScenario(scenario, rng, anchorEndMs) {
 const SCENARIOS = [
   {
     id: "simDeep01_mixed_real_child",
-    studentName: "Deep 01 — מעורב",
+    studentName: "Deep 01 — ",
     spanDays: 120,
     targetSessions: 82,
     targetQuestions: 1550,
@@ -121,8 +121,8 @@ const SCENARIOS = [
     subjectException: null,
     trendPattern: "mixed",
     expectedBehavior:
-      "עדיפות ראשית אחת ברורה; לשמר חוזקות; בלי המלצות מפוזרות שקולות מדי.",
-    mustNot: ["שלוש פעולות בית שקולות", "remediation-heavy on English"],
+      "   ;  ;     .",
+    mustNot: ["   ", "remediation-heavy on English"],
     subjectWeights: {
       math: 0.26,
       geometry: 0.18,
@@ -145,15 +145,15 @@ const SCENARIOS = [
   },
   {
     id: "simDeep02_strong_stable_child",
-    studentName: "Deep 02 — יציב חזק",
+    studentName: "Deep 02 —  ",
     spanDays: 105,
     targetSessions: 68,
     targetQuestions: 1150,
     minSubjects: 4,
     subjectException: "exactly four subjects per product brief (no moledet)",
     trendPattern: "stable_strong",
-    expectedBehavior: "שימור / הרחבה מבוקרת; בלי שיקום; בלי טון של פער ידע.",
-    mustNot: ["פער ידע", "שיקום אגרסיבי"],
+    expectedBehavior: " /  ;  ;     .",
+    mustNot: [" ", " "],
     subjectWeights: { math: 0.3, english: 0.28, hebrew: 0.24, science: 0.18 },
     /* Slightly softer math so diagnostics/strength narrative can form; other subjects stay strong. */
     accuracyFn: ({ subj, rng }) => {
@@ -169,14 +169,14 @@ const SCENARIOS = [
   },
   {
     id: "simDeep03_weak_math_long_term",
-    studentName: "Deep 03 — חולשת חשבון ארוכה",
+    studentName: "Deep 03 —   ",
     spanDays: 135,
     targetSessions: 72,
     targetQuestions: 1050,
     minSubjects: 4,
     subjectException: null,
     trendPattern: "weak_math_persistent",
-    expectedBehavior: "חשבון כמיקוד ראשי; תוכנית בית אפשרית; לא אין מספיק ראיות בראש הדוח.",
+    expectedBehavior: "  ;   ;      .",
     mustNot: ["insufficient as top status for math"],
     subjectWeights: { math: 0.42, geometry: 0.18, hebrew: 0.22, english: 0.18 },
     accuracyFn: ({ subj, bucket, rng }) => {
@@ -192,14 +192,14 @@ const SCENARIOS = [
   },
   {
     id: "simDeep04_improving_child",
-    studentName: "Deep 04 — משתפר לאורך זמן",
+    studentName: "Deep 04 —   ",
     spanDays: 120,
     targetSessions: 70,
     targetQuestions: 1180,
     minSubjects: 4,
     subjectException: null,
     trendPattern: "improving",
-    expectedBehavior: "הכרה זהירה בשיפור; עדיין ייצוב; לא הפרזה במסר חיובי.",
+    expectedBehavior: "  ;  ;    .",
     mustNot: ["overconfident mastery claim"],
     subjectWeights: { math: 0.32, hebrew: 0.28, english: 0.22, geometry: 0.18 },
     accuracyFn: ({ phase, rng }) => {
@@ -210,14 +210,14 @@ const SCENARIOS = [
   },
   {
     id: "simDeep05_declining_after_difficulty_jump",
-    studentName: "Deep 05 — ירידה אחרי קפיצת קושי",
+    studentName: "Deep 05 —    ",
     spanDays: 110,
     targetSessions: 62,
     targetQuestions: 920,
     minSubjects: 5,
     subjectException: null,
     trendPattern: "decline_post_jump",
-    expectedBehavior: "ייצוב רמה; לא להעלות קושי; מגמה מספקת לזיהוי ירידה.",
+    expectedBehavior: " ;   ;    .",
     mustNot: ["push harder difficulty"],
     subjectWeights: { math: 0.28, geometry: 0.2, english: 0.2, hebrew: 0.17, science: 0.15 },
     accuracyFn: ({ phase, rng }) => {
@@ -232,14 +232,14 @@ const SCENARIOS = [
   },
   {
     id: "simDeep06_fast_careless_vs_slow_accurate_mix",
-    studentName: "Deep 06 — קצב מעורב",
+    studentName: "Deep 06 —  ",
     spanDays: 100,
     targetSessions: 58,
     targetQuestions: 880,
     minSubjects: 4,
     subjectException: null,
     trendPattern: "pace_mixed",
-    expectedBehavior: "דגש על בדיקה/קצב; לא לתייג הכל כפער ידע.",
+    expectedBehavior: "  /;     .",
     mustNot: ["pure knowledge gap framing for all topics"],
     subjectWeights: { math: 0.35, hebrew: 0.24, english: 0.2, geometry: 0.21 },
     accuracyFn: ({ subj, bucket, rng }) => {

@@ -1,5 +1,0 @@
-תבנית:
-תאר + שם עצם + פועל
-The big dog runs fast.
-הכלב הגדול רץ מהר.
-The small cat sleeps.

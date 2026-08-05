@@ -42,7 +42,7 @@ const FRENCH_ONLY_CLAIM_RE =
   /(?:seule\s+langue|unique\s+langue|langue\s+unique|seule\s+langue\s+parlée|tout(?:e)?\s+le\s+Congo\s+parle\s+français|représente\s+(?:toute\s+)?(?:la\s+)?République\s+du\s+Congo)/i;
 /** Dead Israel-curriculum / Hebrew / homeland / Hellenism residue must not remain as local overrides. */
 const DEAD_CURRICULUM_RE =
-  /hebrew|homeland|israel|israeli|israël|moledet|hasmon|judea|judaism|hellenism|hellénisme|hébreu|hébraïque|hasmonéen|Judée|judaïsme|patrie|מולדת|עברית|ישראל/i;
+  /hebrew|homeland|israel|israeli|israël|moledet|hasmon|judea|judaism|hellenism|hellénisme|hébreu|hébraïque|hasmonéen|Judée|judaïsme|patrie|||/i;
 /** User-facing DR Congo naming (product strings). Technical /cg vs /cd comments are out of scope. */
 const USER_FACING_DR_CONGO_RE =
   /République démocratique du Congo|Congo-Kinshasa|\bRDC\b|\bDR Congo\b|\bKinshasa\b|1re primaire|2e primaire|3e primaire|4e primaire|5e primaire|6e primaire/i;

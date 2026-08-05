@@ -76,11 +76,11 @@ const FIXTURE_PAYLOADS = [
         unitSummaries: [
           {
             subjectId: "math",
-            displayName: "כפל",
+            displayName: "",
             canonicalAction: "diagnose_only",
             positiveAuthorityLevel: "none",
             evidenceQuestions: 45,
-            patternHe: "שגיאה בעמודת עשרות",
+            patternHe: "  ",
             skillId: "math_mul",
             subskillId: "mul",
             skillAlignmentConfidence: "exact",
@@ -102,7 +102,7 @@ const FIXTURE_PAYLOADS = [
         unitSummaries: [
           {
             subjectId: "geometry",
-            displayName: "שטח",
+            displayName: "",
             canonicalAction: "probe_only",
             positiveAuthorityLevel: "good",
             evidenceQuestions: 80,
@@ -115,8 +115,8 @@ const FIXTURE_PAYLOADS = [
         ],
       },
       contract: { primarySubjectId: "geometry", topThinDowngraded: true },
-      crossSubject: { dataQualityNoteHe: "מעט נתונים" },
-      executive: { reportReadinessHe: "התרגול בתקופה עדיין מצומצם" },
+      crossSubject: { dataQualityNoteHe: " " },
+      executive: { reportReadinessHe: "   " },
     },
   },
   {
@@ -152,7 +152,7 @@ const FIXTURE_PAYLOADS = [
         unitSummaries: [
           {
             subjectId: "math",
-            displayName: "שברים",
+            displayName: "",
             canonicalAction: "withhold",
             engineDecision: "advance",
             positiveAuthorityLevel: "very_good",
@@ -178,7 +178,7 @@ const FIXTURE_PAYLOADS = [
         unitSummaries: [
           {
             subjectId: "hebrew",
-            displayName: "הבנה",
+            displayName: "",
             canonicalAction: "withhold",
             engineDecision: "advance",
             positiveAuthorityLevel: "very_good",

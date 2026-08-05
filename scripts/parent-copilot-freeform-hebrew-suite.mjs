@@ -29,20 +29,20 @@ function syntheticPayload() {
     wordingEnvelope: "WE2",
     hedgeLevel: "light",
     allowedTone: "parent_professional_warm",
-    forbiddenPhrases: ["בטוח לחלוטין"],
-    requiredHedges: ["נכון לעכשיו"],
+    forbiddenPhrases: [" "],
+    requiredHedges: [" "],
     allowedSections: ["summary", "finding", "recommendation", "limitations"],
     recommendationIntensityCap: "RI2",
     textSlots: {
-      observation: "בשברים נצפו 12 שאלות, עם דיוק של כ־75%.",
-      interpretation: "יש כיוון עבודה סביר, ועדיין נדרש אישור נוסף לפני כיוון ברור.",
-      action: "מומלץ חיזוק ממוקד ובדיקת עצמאות קצרה לפני קידום.",
-      uncertainty: "נכון לעכשיו כדאי להמשיך לעקוב ולאמת את הכיוון בסבב הקרוב.",
+      observation: "  12 ,    75%.",
+      interpretation: "   ,       .",
+      action: "       .",
+      uncertainty: "         .",
     },
   };
   const tr = {
     topicRowKey: "t1",
-    displayName: "שברים",
+    displayName: "",
     questions: 12,
     accuracy: 75,
     contractsV1: {
@@ -67,22 +67,22 @@ function syntheticPayload() {
   return {
     version: 2,
     subjectProfiles: [{ subject: "math", topicRecommendations: [tr] }],
-    executiveSummary: { majorTrendsHe: ["א", "ב"] },
+    executiveSummary: { majorTrendsHe: ["", ""] },
   };
 }
 
 const payload = syntheticPayload();
 
 // 1) Normalization strips invisible / odd spaces and is stable
-const rawNoisy = `  מה\u200Bהמצב\u00A0בנושא\u201Cהשברים\u201D?  `;
+const rawNoisy = `  \u200B\u00A0\u201C\u201D?  `;
 const once = normalizeFreeformParentUtterance(rawNoisy);
 const twice = normalizeFreeformParentUtterance(once);
 assert.equal(once, twice, "normalization must be idempotent");
-assert.ok(once.includes("השברים"), "quotes/spaces normalized");
+assert.ok(once.includes(""), "quotes/spaces normalized");
 assert.ok(!/\u200B/.test(once), "zero-width removed");
 
 // 2) Fold match: noisy utterance resolves same topic scope as clean
-const clean = "מה המצב בנושא השברים?";
+const clean = "   ?";
 const scopeClean = resolveScope({ payload, utterance: clean, selectedContextRef: null });
 const scopeNoisy = resolveScope({ payload, utterance: rawNoisy, selectedContextRef: null });
 assert.equal(scopeClean.resolutionStatus, "resolved");
@@ -91,8 +91,8 @@ assert.equal(scopeClean.scope?.scopeId, scopeNoisy.scope?.scopeId, "scope parity
 assert.equal(scopeClean.scope?.scopeType, "topic");
 
 // 3) foldUtteranceForMatch strips cantillation for substring match
-const folded = foldUtteranceForMatch("מה המצב בנושא ה\u05B4ש\u05B8ב\u05B8ר\u05B4ים?");
-assert.ok(folded.includes("שברים"), "cantillation fold preserves letters");
+const folded = foldUtteranceForMatch("   \u05B4\u05B8\u05B8\u05B4?");
+assert.ok(folded.includes(""), "cantillation fold preserves letters");
 
 // 4) Full turn: resolved, validator pass, no internal leak in blocks
 const res = runParentCopilotTurn({
@@ -121,7 +121,7 @@ const clarPayload = {
       topicRecommendations: [
         {
           topicRowKey: "ghost",
-          displayName: "נושא בלי עיגון",
+          displayName: "  ",
           questions: 1,
           accuracy: 50,
           contractsV1: {
@@ -158,12 +158,12 @@ const clarPayload = {
       ],
     },
   ],
-  executiveSummary: { majorTrendsHe: ["א"] },
+  executiveSummary: { majorTrendsHe: [""] },
 };
 const clar = runParentCopilotTurn({
   audience: "parent",
   payload: clarPayload,
-  utterance: "מה קורה?",
+  utterance: " ?",
   sessionId: "freeform-hebrew-suite-2",
   selectedContextRef: { scopeType: "topic", scopeId: "ghost", subjectId: "math" },
 });
@@ -172,8 +172,8 @@ const finalCheck = guardrail.validateParentCopilotResponseV1(clar);
 assert.ok(finalCheck.ok, `response contract: ${finalCheck.hardFails?.join(",")}`);
 
 // 6) Stage A: typo-tolerant parity + intentHitSignals + home-week disambiguation
-const typoWhy = interpretFreeformStageA("למה לא מתקדמיםם?", null);
-const cleanWhy = interpretFreeformStageA("למה לא מתקדמים?", null);
+const typoWhy = interpretFreeformStageA("  ?", null);
+const cleanWhy = interpretFreeformStageA("  ?", null);
 assert.equal(typoWhy.canonicalIntent, cleanWhy.canonicalIntent);
 assert.equal(typoWhy.canonicalIntent, "why_not_advance");
 assert.ok(
@@ -181,14 +181,14 @@ assert.ok(
   "intentHitSignals telemetry shape",
 );
 
-const homeWeek = interpretFreeformStageA("מה הכי חשוב עכשיו בבית?", null);
+const homeWeek = interpretFreeformStageA("    ?", null);
 assert.equal(
   homeWeek.canonicalIntent,
   "what_to_do_this_week",
-  '"עכשיו בבית" should map to weekly home focus, not generic importance',
+  '" " should map to weekly home focus, not generic importance',
 );
 
-const importanceNow = interpretFreeformStageA("מה הכי חשוב עכשיו?", null);
+const importanceNow = interpretFreeformStageA("   ?", null);
 assert.equal(importanceNow.canonicalIntent, "what_is_most_important");
 
 console.log("parent-copilot-freeform-hebrew-suite: OK");

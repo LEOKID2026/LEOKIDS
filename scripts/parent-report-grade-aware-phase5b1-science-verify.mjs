@@ -27,30 +27,30 @@ const S07 = SCI["S-07"].bucketOverrides.environment;
 const SEP = "\u0001";
 
 /** Raw taxonomy / internal strings — must not appear in grade-aware resolved parent Hebrew (Phase 5-A list).
- *  Omitted when substring-collides with approved template copy (e.g. rootsHe "הבנת ניסוי" vs goal "בהבנת ניסוי הוגן").
+ *  Omitted when substring-collides with approved template copy (e.g. rootsHe " " vs goal "  ").
  */
 const BANNED = [
-  "לשנות הכול",
-  "אותו ניסוי עם טבלה",
-  "משתנה אחד",
-  "סדר/מיקום שגוי",
-  "אנכי מול אופקי",
-  "כרטיסיות מיקום",
-  "בעיה רפואית",
-  "דיווח רפואי",
-  "נעלם בלי שימור",
-  "עם/בלי דיאגרמה",
-  "דיאגרמת מצבים",
-  "רמה שגויה חוזרת",
-  "רשת חלקית",
-  "כרטיסיות",
-  "בלבול מושגי",
-  "קריאה",
-  "מפת מרחב גסה",
-  "שפה",
-  "שימור מסה",
-  "מבנה מערכת",
-  "זיכרון שמות",
+  " ",
+  "   ",
+  " ",
+  "/ ",
+  "  ",
+  " ",
+  " ",
+  " ",
+  "  ",
+  "/ ",
+  " ",
+  "  ",
+  " ",
+  "",
+  " ",
+  "",
+  "  ",
+  "",
+  " ",
+  " ",
+  " ",
 ];
 
 function assertEq(name, actual, expected) {
@@ -101,7 +101,7 @@ assertEq("S-03 body g4 goal", r("science", "S-03", "body", "g4", "nextGoal"), S0
 assertEq("S-03 body g6 action", r("science", "S-03", "body", "g6", "action"), S03.g5_g6.actionTextHe);
 assertNe("S-03 body g4", r("science", "S-03", "body", "g4", "action"), r("science", "S-03", "body", "g4", "nextGoal"));
 const s03g4 = `${r("science", "S-03", "body", "g4", "action")}\n${r("science", "S-03", "body", "g4", "nextGoal")}`;
-for (const clinical of ["רפואי", "קליני", "בעיה רפואית", "דיווח רפואי"]) {
+for (const clinical of ["", "", " ", " "]) {
   if (s03g4.includes(clinical)) throw new Error(`S-03 g3_g4 must not include clinical phrase: ${clinical}`);
 }
 
@@ -170,7 +170,7 @@ const summaryFixture = {
 function rowScience(topicRowKey, bucketKey, gradeKey) {
   return {
     bucketKey,
-    displayName: "מדעים",
+    displayName: "",
     questions: 10,
     correct: 6,
     wrong: 4,
@@ -190,32 +190,32 @@ function rowScience(topicRowKey, bucketKey, gradeKey) {
 function buildScienceUnit(taxonomyId, bucketKey, gradeKey) {
   const rawById = {
     "S-02": {
-      patternHe: "לשנות הכול",
-      probeHe: "אותו ניסוי עם טבלה",
-      interventionHe: "משתנה אחד",
-      rootsHe: ["הבנת ניסוי"],
-      competitorsHe: ["זיכרון"],
+      patternHe: " ",
+      probeHe: "   ",
+      interventionHe: " ",
+      rootsHe: [" "],
+      competitorsHe: [""],
     },
     "S-03": {
-      patternHe: "סדר/מיקום שגוי",
-      probeHe: "אנכי מול אופקי",
-      interventionHe: "כרטיסיות מיקום",
-      rootsHe: ["מפת מרחב גסה"],
-      competitorsHe: ["שפה"],
+      patternHe: "/ ",
+      probeHe: "  ",
+      interventionHe: " ",
+      rootsHe: ["  "],
+      competitorsHe: [""],
     },
     "S-04": {
-      patternHe: "נעלם בלי שימור",
-      probeHe: "עם/בלי דיאגרמה",
-      interventionHe: "דיאגרמת מצבים",
-      rootsHe: ["שימור מסה"],
-      competitorsHe: ["שפה"],
+      patternHe: "  ",
+      probeHe: "/ ",
+      interventionHe: " ",
+      rootsHe: [" "],
+      competitorsHe: [""],
     },
     "S-07": {
-      patternHe: "רמה שגויה חוזרת",
-      probeHe: "רשת חלקית",
-      interventionHe: "כרטיסיות",
-      rootsHe: ["מבנה מערכת"],
-      competitorsHe: ["זיכרון שמות"],
+      patternHe: "  ",
+      probeHe: " ",
+      interventionHe: "",
+      rootsHe: [" "],
+      competitorsHe: [" "],
     },
   };
   const raw = rawById[taxonomyId];
@@ -228,8 +228,8 @@ function buildScienceUnit(taxonomyId, bucketKey, gradeKey) {
     subjectId: "science",
     topicRowKey: trk,
     bucketKey,
-    displayName: "מדעים",
-    diagnosis: { allowed: true, taxonomyId, lineHe: "מצביע על דפוס." },
+    displayName: "",
+    diagnosis: { allowed: true, taxonomyId, lineHe: "  ." },
     intervention: {
       immediateActionHe: raw.interventionHe,
       shortPracticeHe: raw.probeHe,
@@ -238,8 +238,8 @@ function buildScienceUnit(taxonomyId, bucketKey, gradeKey) {
     taxonomy: {
       id: taxonomyId,
       patternHe: raw.patternHe,
-      topicHe: "ניסוי",
-      subskillHe: "משתנה מבודד",
+      topic: "",
+      subskillHe: " ",
       rootsHe: raw.rootsHe,
       competitorsHe: raw.competitorsHe,
     },
@@ -278,7 +278,7 @@ function mkBase(taxonomyId, bucket, gradeKey) {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: summaryFixture,
     scienceTopics: { [trk]: rowScience(trk, bucket, gradeKey) },
     diagnosticEngineV2: { units: [buildScienceUnit(taxonomyId, bucket, gradeKey)] },
@@ -290,7 +290,7 @@ const dS2 = buildDetailedParentReportFromBaseReport(mkBase("S-02", "experiments"
 const mpS2 = dS2?.subjectProfiles?.find((p) => p.subject === "science");
 assertEq("detailed S-02 experiments g4 action", mpS2?.parentActionHe, S02.g3_g4.actionTextHe);
 assertNoBanned("detailed S-02 experiments g4", mpS2?.parentActionHe);
-const tpS2 = buildTruthPacketV1(dS2, { scopeType: "topic", scopeId: trkS2, scopeLabel: "ניסויים" });
+const tpS2 = buildTruthPacketV1(dS2, { scopeType: "topic", scopeId: trkS2, scopeLabel: "" });
 assertNoBanned("truth S-02 experiments g4", JSON.stringify(tpS2?.narrative?.textSlots || {}));
 
 const trkS3 = `body${SEP}learning${SEP}g4${SEP}easy`;
@@ -315,7 +315,7 @@ const bS4 = mkBase("S-04", "materials", "g5");
 const uS4 = bS4.diagnosticEngineV2.units[0];
 const sh = summarizeV2UnitsForSubjectForTests(bS4.diagnosticEngineV2.units, {
   subjectReportQuestions: 10,
-  subjectLabelHe: "מדעים",
+  subjectLabelHe: "",
   topicMap: bS4.scienceTopics,
   reportTotalQuestions: 20,
 });

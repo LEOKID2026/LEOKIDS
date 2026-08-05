@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Password reset UI structure and Hebrew guard checks.
+ * Password reset UI structure and zero-Hebrew guard checks.
  */
 import fs from "node:fs/promises";
 import {
@@ -8,12 +8,14 @@ import {
   AUTH_FORGOT_PASSWORD_SUCCESS,
   AUTH_FORGOT_PASSWORD_TITLE,
   AUTH_RESET_PASSWORD_TITLE,
-} from "../../lib/auth/auth-reset.he.js";
+} from "../../lib/auth/auth-reset.js";
 
 const BASE_URL = (
   process.env.ROLE_BOUNDARY_TEST_BASE_URL ||
   "http://localhost:3001"
 ).replace(/\/$/, "");
+
+const HEBREW = /[\u0590-\u05FF]/;
 
 const FORBIDDEN_ENGLISH = [
   "Forgot password",
@@ -83,13 +85,20 @@ async function main() {
   const teacherLogin = await readFile("pages/teacher/login.js");
   const studentLogin = await readFile("pages/student/login.js");
   const guardianLogin = await readFile("pages/guardian/login.js");
-  const authResetHe = await readFile("lib/auth/auth-reset.he.js");
+  const authReset = await readFile("lib/auth/auth-reset.js");
 
   record(
-    "auth_reset_hebrew_constants",
-    authResetHe?.includes(`AUTH_FORGOT_PASSWORD_TITLE = "${AUTH_FORGOT_PASSWORD_TITLE}"`) &&
-      authResetHe?.includes(`AUTH_RESET_PASSWORD_TITLE = "${AUTH_RESET_PASSWORD_TITLE}"`),
-    "Hebrew constants present"
+    "auth_reset_english_module",
+    authReset?.includes(`AUTH_FORGOT_PASSWORD_TITLE = "${AUTH_FORGOT_PASSWORD_TITLE}"`) &&
+      authReset?.includes(`AUTH_RESET_PASSWORD_TITLE = "${AUTH_RESET_PASSWORD_TITLE}"`) &&
+      !HEBREW.test(authReset || ""),
+    "English auth-reset.js constants"
+  );
+
+  record(
+    "auth_reset_no_hebrew_companion",
+    !(await readFile("lib/auth/auth-reset.he.js")),
+    "auth-reset.he.js removed"
   );
 
   record(
@@ -192,6 +201,11 @@ async function main() {
       `${name}_no_raw_updateUser`,
       !surface.includes("updateUser") && !surface.includes("resetPasswordForEmail"),
       "no raw API keys visible"
+    );
+    record(
+      `${name}_no_hebrew_unicode`,
+      !HEBREW.test(surface),
+      "no Hebrew in visible UI"
     );
   }
 

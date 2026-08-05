@@ -23,8 +23,8 @@ const { ParentTopContractSummaryBlock, ParentSubjectContractSummaryBlock } = awa
 const OUT_DIR = join(ROOT, "reports", "parent-report-product-contract");
 mkdirSync(OUT_DIR, { recursive: true });
 
-const STRONG_TREND_WORDS = ["משתפר", "בירידה", "מגמה חיובית", "מגמה שלילית", "שיפור מבוסס", "ירידה מבוססת"];
-const REMEDIATION_WORDS = ["פער ידע", "שיקום", "remediate", "remediation"];
+const STRONG_TREND_WORDS = ["", "", " ", " ", " ", " "];
+const REMEDIATION_WORDS = [" ", "", "remediate", "remediation"];
 
 function cleanText(v) {
   return String(v || "").replace(/\s+/g, " ").trim();

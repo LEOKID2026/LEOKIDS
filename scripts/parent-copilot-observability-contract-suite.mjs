@@ -9,10 +9,10 @@ telemetryStore.resetTurnTelemetryTraceStoreForTests();
 
 const payload = syntheticPayload({ eligible: true });
 const utterances = [
-  "מה המשמעות בנושא שברים?",
-  "מה כדאי לעשות השבוע?",
-  "מה הכי בולט בתקופה?",
-  "אפשר הסבר נוסף?",
+  "   ?",
+  "   ?",
+  "   ?",
+  "  ?",
 ];
 
 for (let i = 0; i < 160; i++) {

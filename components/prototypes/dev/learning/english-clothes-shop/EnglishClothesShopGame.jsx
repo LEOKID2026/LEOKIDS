@@ -103,10 +103,10 @@ export default function EnglishClothesShopGame({ backHref = "/dev/learning-game-
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="חנות הבגדים באנגלית"
+      title="shop clothes English"
       introHero="👗🛍️"
-      introText="הבינו בקשה באנגלית ובחרו את הבגד הנכון מהמדף!"
-      introHint={`${TASKS_PER_LEVEL} לקוחות · Tap על פריט`}
+      introText="English Choose the correct!"
+      introHint={`${TASKS_PER_LEVEL}  · Tap  `}
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -126,12 +126,12 @@ export default function EnglishClothesShopGame({ backHref = "/dev/learning-game-
 
           <div className={s.leoRow}>
             <span className={s.leoBadge}>🦁🛒</span>
-            <span className={s.leoCaption}>בחרו פריט מהמדף</span>
+            <span className={s.leoCaption}>  </span>
           </div>
 
           <div className={s.playArea}>
             <div className={`${s.panel} ${styles.shelfPanel}`}>
-              <p className={s.panelTitle}>🛍️ מדף בגדים</p>
+              <p className={s.panelTitle}>🛍️  </p>
               <div className={styles.shelfGrid}>
                 {displayShelf.map((p) => {
                   const it = ITEMS[/** @type {keyof typeof ITEMS} */ (p.item)];
@@ -175,15 +175,15 @@ export default function EnglishClothesShopGame({ backHref = "/dev/learning-game-
                 checkState === "ok" ? s.feedbackOk : checkState === "bad" ? s.feedbackBad : s.feedbackNeutral
               }`}
             >
-              <p className={s.feedbackText}>{feedback || "לחצו על בגד ואז מסור פריט"}</p>
+              <p className={s.feedbackText}>{feedback || "to to"}</p>
             </div>
 
             <div className={s.actionRow}>
               <button type="button" className={s.primaryBtn} disabled={!pickedId} onClick={runCheck}>
-                מסור פריט
+
               </button>
               <button type="button" className={s.secondaryBtn} onClick={resetTaskUi}>
-                ביטול בחירה
+
               </button>
             </div>
           </div>

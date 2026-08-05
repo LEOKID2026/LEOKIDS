@@ -1,18 +1,18 @@
 import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
-/** @typedef {{ id: string, labelHe: string, cells: [number, number][], color: string, glow: string }} BlockShape */
+/** @typedef {{ id: string, label: string, cells: [number, number][], color: string, glow: string }} BlockShape */
 
 /** @type {BlockShape[]} */
 export const SMART_BLOCKS_SHAPE_LIBRARY = [
   {
     id: "dot",
-    labelHe: "Dot",
+    label: "Dot",
     cells: [[0, 0]],
     color: "bg-rose-400",
     glow: "shadow-rose-400/40",
   },
   {
     id: "pair-h",
-    labelHe: "Pair",
+    label: "Pair",
     cells: [
       [0, 0],
       [0, 1],
@@ -22,7 +22,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "line-3",
-    labelHe: gamePackCopy("components__solo-games__prototypes__smart-blocks-shapes", "line_of_3"),
+    label: gamePackCopy("components__solo-games__prototypes__smart-blocks-shapes", "line_of_3"),
     cells: [
       [0, 0],
       [0, 1],
@@ -33,7 +33,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "line-4",
-    labelHe: gamePackCopy("components__solo-games__prototypes__smart-blocks-shapes", "line_of_4"),
+    label: gamePackCopy("components__solo-games__prototypes__smart-blocks-shapes", "line_of_4"),
     cells: [
       [0, 0],
       [0, 1],
@@ -45,7 +45,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "square-2",
-    labelHe: "2×2 square",
+    label: "2×2 square",
     cells: [
       [0, 0],
       [0, 1],
@@ -57,7 +57,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "L-small",
-    labelHe: "L",
+    label: "L",
     cells: [
       [0, 0],
       [1, 0],
@@ -69,7 +69,7 @@ export const SMART_BLOCKS_SHAPE_LIBRARY = [
   },
   {
     id: "T-small",
-    labelHe: "T",
+    label: "T",
     cells: [
       [0, 0],
       [0, 1],

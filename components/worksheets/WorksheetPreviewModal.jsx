@@ -50,7 +50,7 @@ export default function WorksheetPreviewModal({
   const includeAnswers = session?.includeAnswers === true;
 
   const title = isWriting
-    ? worksheetPayload?.meta?.titleHe || ui.writingDocumentTitle
+    ? worksheetPayload?.meta?.title || ui.writingDocumentTitle
     : ui.documentTitle;
 
   useEffect(() => {

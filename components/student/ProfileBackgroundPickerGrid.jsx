@@ -31,8 +31,8 @@ export default function ProfileBackgroundPickerGrid({
               key={option.id}
               type="button"
               disabled={disabled}
-              title={option.labelHe}
-              aria-label={option.labelHe}
+              title={option.label}
+              aria-label={option.label}
               aria-pressed={selected}
               onClick={() => onSelect(option.id)}
               className={`rounded-lg p-1 transition-all min-h-10 disabled:opacity-50 ${

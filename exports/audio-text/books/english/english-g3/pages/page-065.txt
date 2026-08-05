@@ -1,7 +1,0 @@
-מילים:
-head — ראש
-hand — יד
-leg — רגל
-eye — עין
-My head hurts.
-הראש שלי כואב.

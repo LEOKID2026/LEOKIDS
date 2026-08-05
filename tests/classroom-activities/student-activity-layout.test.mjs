@@ -26,14 +26,14 @@ test("shouldUseTwoColumnActivityChoices: 4 short choices use 2 columns on mobile
 });
 
 test("shouldUseTwoColumnActivityChoices: long text stays one column (legacy math/geometry path)", () => {
-  const long = "תשובה ארוכה מאוד שלא נכנסת בשורה";
+  const long = "     ";
   assert.equal(shouldUseTwoColumnActivityChoices(["1", long, "3", "4"]), false);
   assert.equal(activityChoiceGridClassName(["1", long]), "flex flex-col gap-2");
 });
 
 test("textualAssigned: always 2-col at every width, including long answers", () => {
-  const long = "תשובה ארוכה מאוד שלא נכנסת בשורה אחת בכלל";
-  const cls = activityChoiceGridClassName(["א", long, "ג", "ד"], {
+  const long = "       ";
+  const cls = activityChoiceGridClassName(["", long, "", ""], {
     textualAssigned: true,
   });
   assert.match(cls, /grid-cols-2/);
@@ -135,7 +135,7 @@ test("StudentAssignedActivityShell provides consistent header and full-width sta
     "utf8"
   );
   assert.match(shell, /useStudentActivityUi/);
-  assert.match(shell, /← חזרה לבית/);
+  assert.match(shell, /←  /);
   assert.match(shell, /activity-question-stage/);
   assert.match(shell, /activity-actions-panel/);
   assert.match(shell, /overlayTopRef/);
@@ -184,7 +184,7 @@ test("activity geometry diagram: single mini in stage flow with enlarge, no embe
   );
   assert.match(stage, /GeometryExplanationDiagram/);
   assert.match(stage, /\bmini\b/);
-  assert.match(stage, /הגדל/);
+  assert.match(stage, //);
   assert.match(stage, /onExpandDiagram/);
   assert.match(stage, /w-full shrink-0 flex justify-center/);
   assert.doesNotMatch(stage, /absolute bottom-0 left-1\/2/);
@@ -204,7 +204,7 @@ test("math/geometry base choice path unchanged when textualAssigned is false", (
   );
   assert.equal(
     activityChoiceGridClassName(
-      ["תשובה ארוכה מאוד שלא נכנסת", "ב", "ג", "ד"],
+      ["    ", "", "", ""],
       { textualAssigned: false }
     ),
     "flex flex-col gap-2"

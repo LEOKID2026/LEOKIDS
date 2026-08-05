@@ -115,8 +115,8 @@ for (const pageId of GEOMETRY_G4_PAGE_ORDER) {
   if (FAKE_PRACTICE_RE.test(s7)) {
     errors.push(`${pageId}: Section 7 contains fake practice routing`);
   }
-  if (!/בתרגול/u.test(s7)) {
-    errors.push(`${pageId}: Section 7 must use "בתרגול…" (no fake links)`);
+  if (!//u.test(s7)) {
+    errors.push(`${pageId}: Section 7 must use "…" (no fake links)`);
   }
 
   const anchors = GEOMETRY_G4_ALIGNMENT_ANCHORS[pageId] || [];

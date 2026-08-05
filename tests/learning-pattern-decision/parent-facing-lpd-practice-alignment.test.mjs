@@ -36,7 +36,7 @@ describe("parent-facing LPD practice alignment", () => {
     const lpd = buildLearningPatternDecision({
       subjectId: "math",
       topicRowKey: "addition",
-      row: { bucketKey: "addition", displayName: "חיבור", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
+      row: { bucketKey: "addition", displayName: "", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
       rawMistakes: [mistake("unknown"), mistake("unknown", 1)],
       startMs: START,
       endMs: END,
@@ -47,14 +47,14 @@ describe("parent-facing LPD practice alignment", () => {
     assert.notEqual(lpd.topicStatus, "initial_data");
     assert.notEqual(lpd.findingType, "initial_topic_data");
     assert.notEqual(lpd.topicStatus, "positive_observed");
-    assert.ok(/טעויות|שגויות/u.test(String(lpd.parentVisibleFinding)));
+    assert.ok(/|/u.test(String(lpd.parentVisibleFinding)));
     assert.ok(!String(lpd.parentVisibleFinding).toLowerCase().includes("unknown"));
     assert.equal(findForbiddenParentWords(lpd.parentVisibleFinding).length, 0);
 
     const row = {
       subjectId: "math",
       topicKey: "addition",
-      label: "חיבור",
+      label: "",
       questions: 10,
       correct: 2,
       wrong: 8,
@@ -75,26 +75,26 @@ describe("parent-facing LPD practice alignment", () => {
 
     const sections = buildLpdSafeTopicExplainSectionsHe({ ...row, learningPatternDecision: rebuilt });
     assert.ok(sections);
-    assert.match(sections.data, /10 שאלות/);
-    assert.match(sections.data, /2 נכונות/);
+    assert.match(sections.data, /10 /);
+    assert.match(sections.data, /2 /);
     assert.ok(!sections.identified.includes("unknown"));
-    assert.ok(!sections.identified.includes("רק 2"));
-    assert.ok(!sections.meaning.includes("מוקדם לזהות"));
+    assert.ok(!sections.identified.includes(" 2"));
+    assert.ok(!sections.meaning.includes(" "));
   });
 
   test("B - repeated pattern with unknown label → generic difficulty copy, no pattern name", () => {
     const lpd = buildLearningPatternDecision({
       subjectId: "math",
       topicRowKey: "addition",
-      row: { bucketKey: "addition", displayName: "חיבור", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
+      row: { bucketKey: "addition", displayName: "", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
       rawMistakes: Array.from({ length: 8 }, (_, i) => mistake("unknown", i)),
       startMs: START,
       endMs: END,
     });
 
     assert.ok(!String(lpd.parentVisibleFinding).includes("unknown"));
-    assert.ok(!String(lpd.parentVisibleFinding).includes("דפוס חוזר"));
-    assert.match(lpd.parentVisibleFinding, /טעויות|שגויות/u);
+    assert.ok(!String(lpd.parentVisibleFinding).includes(" "));
+    assert.match(lpd.parentVisibleFinding, /|/u);
   });
 
   test("C - activity gap diagnostic mismatch suppressed from parent insights", () => {
@@ -179,7 +179,7 @@ describe("parent-facing LPD practice alignment", () => {
       topicRowKey: "addition",
       row: {
         bucketKey: "addition",
-        displayName: "חיבור",
+        displayName: "",
         questions: topic.answers,
         correct: topic.correct,
         wrong: topic.wrong,
@@ -198,7 +198,7 @@ describe("parent-facing LPD practice alignment", () => {
     const lpd = buildLearningPatternDecision({
       subjectId: "math",
       topicRowKey: "addition",
-      row: { bucketKey: "addition", displayName: "חיבור", questions: 2, correct: 1, wrong: 1, accuracy: 50 },
+      row: { bucketKey: "addition", displayName: "", questions: 2, correct: 1, wrong: 1, accuracy: 50 },
       rawMistakes: [],
       startMs: START,
       endMs: END,
@@ -207,14 +207,14 @@ describe("parent-facing LPD practice alignment", () => {
     assert.equal(lpd.findingType, "initial_topic_data");
 
     const copy = resolveParentExplainRowCopy({
-      label: "חיבור",
+      label: "",
       questions: 2,
       correct: 1,
       wrong: 1,
       accuracy: 50,
       learningPatternDecision: lpd,
     });
-    assert.match(copy.explainSections.meaning, /מוקדם/);
+    assert.match(copy.explainSections.meaning, //);
     assert.equal(guardParentFacingText(copy.primaryFinding).length > 0, true);
   });
 
@@ -222,8 +222,8 @@ describe("parent-facing LPD practice alignment", () => {
     const row = {
       subjectId: "math",
       topicKey: "addition",
-      label: "חיבור",
-      displayName: "חיבור",
+      label: "",
+      displayName: "",
       questions: 10,
       correct: 2,
       wrong: 0,
@@ -243,7 +243,7 @@ describe("parent-facing LPD practice alignment", () => {
     assert.notEqual(rebuilt.topicStatus, "initial_data");
     assert.notEqual(rebuilt.topicStatus, "no_clear_pattern");
     assert.notEqual(rebuilt.topicStatus, "positive_observed");
-    assert.match(rebuilt.parentVisibleFinding, /חזק|טעויות/);
+    assert.match(rebuilt.parentVisibleFinding, /|/);
     assert.ok(!rebuilt.parentVisibleFinding.includes("unknown"));
 
     const copy = resolveParentExplainRowCopy({ ...row, learningPatternDecision: rebuilt });
@@ -256,17 +256,17 @@ describe("parent-facing LPD practice alignment", () => {
     ]
       .filter(Boolean)
       .join(" ");
-    assert.ok(!/אין תמונה מספיק|מעט נתונים|עדיין מוקדם/u.test(allText));
-    assert.match(allText, /חיבור/);
+    assert.ok(!/  | | /u.test(allText));
+    assert.match(allText, //);
     assert.match(allText, /10/);
-    assert.match(copy.explainSections.data, /8 שגויות/);
+    assert.match(copy.explainSections.data, /8 /);
   });
 
   test("H - q=10 wrong=8 with real pattern label shows specific pattern", () => {
     const lpd = buildLearningPatternDecision({
       subjectId: "math",
       topicRowKey: "addition",
-      row: { bucketKey: "addition", displayName: "חיבור", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
+      row: { bucketKey: "addition", displayName: "", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
       rawMistakes: Array.from({ length: 8 }, (_, i) => ({
         ...mistake("carry_error", i),
         patternFamily: "carry_error",
@@ -274,7 +274,7 @@ describe("parent-facing LPD practice alignment", () => {
       startMs: START,
       endMs: END,
     });
-    assert.match(lpd.parentVisibleFinding, /דפוס חוזר/);
+    assert.match(lpd.parentVisibleFinding, / /);
     assert.match(lpd.parentVisibleFinding, /carry_error/);
     assert.ok(!String(lpd.parentVisibleFinding).includes("unknown"));
   });
@@ -287,14 +287,14 @@ describe("parent-facing LPD practice alignment", () => {
     const lpd = buildLearningPatternDecision({
       subjectId: "math",
       topicRowKey: "addition",
-      row: { bucketKey: "addition", displayName: "חיבור", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
+      row: { bucketKey: "addition", displayName: "", questions: 10, correct: 2, wrong: 8, accuracy: 20 },
       rawMistakes,
       startMs: START,
       endMs: END,
     });
     assert.ok(!String(lpd.parentVisibleFinding).includes("unknown"));
     assert.ok(!String(lpd.parentVisibleFinding).includes("pf:"));
-    assert.match(lpd.parentVisibleFinding, /טעויות|שגויות/u);
+    assert.match(lpd.parentVisibleFinding, /|/u);
     assert.notEqual(lpd.topicStatus, "no_clear_pattern");
   });
 });

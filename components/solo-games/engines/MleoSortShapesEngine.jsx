@@ -28,40 +28,40 @@ const DIFFICULTY_SETTINGS = {
 
 const SCORE_PER_SORT = 50;
 
-/** @type {Record<string, { labelHe: string, ring: string }>} */
+/** @type {Record<string, { label: string, ring: string }>} */
 const COLOR_META = Object.freeze({
   red: {
-    get labelHe() {
+    get label() {
       return sortShapesCopy("color_red");
     },
     ring: "ring-rose-400",
   },
   orange: {
-    get labelHe() {
+    get label() {
       return sortShapesCopy("color_orange");
     },
     ring: "ring-orange-400",
   },
   blue: {
-    get labelHe() {
+    get label() {
       return sortShapesCopy("color_blue");
     },
     ring: "ring-sky-400",
   },
   purple: {
-    get labelHe() {
+    get label() {
       return sortShapesCopy("color_purple");
     },
     ring: "ring-violet-400",
   },
   yellow: {
-    get labelHe() {
+    get label() {
       return sortShapesCopy("color_yellow");
     },
     ring: "ring-yellow-400",
   },
   green: {
-    get labelHe() {
+    get label() {
       return sortShapesCopy("color_green");
     },
     ring: "ring-emerald-400",
@@ -107,7 +107,7 @@ const SORT_GROUP_DEFS = Object.freeze([
 ]);
 
 function groupTitle(colorA, colorB) {
-  return `${COLOR_META[colorA].labelHe} + ${COLOR_META[colorB].labelHe}`;
+  return `${COLOR_META[colorA].label} + ${COLOR_META[colorB].label}`;
 }
 
 function itemsForColors(colorIds) {

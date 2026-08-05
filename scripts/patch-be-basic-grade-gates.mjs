@@ -1,6 +1,6 @@
 /**
- * חד־פעמי/ידני: מוסיף minGrade/maxGrade לפריטי be_basic (חצי לכיתה א׳, חצי לב׳).
- * הרצה: npx tsx scripts/patch-be-basic-grade-gates.mjs
+ * /:  minGrade/maxGrade  be_basic (  ,  ).
+ * : npx tsx scripts/patch-be-basic-grade-gates.mjs
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";

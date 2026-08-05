@@ -1,12 +1,12 @@
 import { expect, type Locator } from "@playwright/test";
 
 const FORBIDDEN_GEOMETRY = [
-  /\d+\s+על\s+\d+/u,
-  /מלבן\s+במישור/u,
-  /שטח\s+הפנים/u,
+  /\d+\s+\s+\d+/u,
+  /\s+/u,
+  /\s+/u,
 ];
 
-const CHILD_FRIENDLY_GEOMETRY_HINTS = /אורך|רוחב|שטח\s+המלבן|היקף\s+המלבן|יחידות/u;
+const CHILD_FRIENDLY_GEOMETRY_HINTS = /||\s+|\s+|/u;
 
 export async function assertStemNoHorizontalScroll(stem: Locator) {
   const metrics = await stem.evaluate((root) => {
@@ -64,7 +64,7 @@ export function assertGeometryWording(text: string) {
   for (const re of FORBIDDEN_GEOMETRY) {
     expect(t, `forbidden geometry phrase in: ${t.slice(0, 120)}`).not.toMatch(re);
   }
-  if (/מלבן/u.test(t) && /שטח|היקף/u.test(t)) {
+  if (//u.test(t) && /|/u.test(t)) {
     expect(t).toMatch(CHILD_FRIENDLY_GEOMETRY_HINTS);
   }
 }

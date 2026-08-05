@@ -2,7 +2,7 @@ import Layout from "../../../components/Layout";
 import AdminShell from "../../../components/admin/AdminShell";
 import AdminLeoMinersConfigTab from "../../../components/admin/games/AdminLeoMinersConfigTab";
 import { useAdminSession } from "../../../lib/admin-portal/use-admin-session";
-import { ADMIN_LOADING } from "../../../lib/admin-portal/admin-ui.he.js";
+import { ADMIN_LOADING } from "../../../lib/admin-portal/admin-ui.js";
 
 export default function AdminLeoMinersPage() {
   const { state, accessToken } = useAdminSession();

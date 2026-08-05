@@ -11,7 +11,7 @@ let src = fs.readFileSync(file, "utf8");
 
 // Remove recursive formatPointsShort stub
 src = src.replace(
-  /\/\/ Vault display — זהה ל־נקודות button \(2 ספרות \+ קיצור באותיות\)\r?\nfunction formatPointsShort\(n\) \{\r?\n  return formatPointsShort\(n\);\r?\n\}\r?\n\r?\n\r?\n\r?\n/g,
+  /\/\/ Vault display —   button \(2  \+  \)\r?\nfunction formatPointsShort\(n\) \{\r?\n  return formatPointsShort\(n\);\r?\n\}\r?\n\r?\n\r?\n\r?\n/g,
   ""
 );
 
@@ -127,11 +127,11 @@ const initBlock = `  const router = useRouter();
   async function claimBalanceToVaultDemo() {
     try { play?.(S_CLICK); } catch {}
     if (!dbReady || !rewardsEnabled || !economy) {
-      setGiftToastWithTTL(statusMessage || "שמירת פרסים בשרת לא זמינה עדיין.");
+      setGiftToastWithTTL(statusMessage || "     .");
       return;
     }
     if (Number(pendingPoints || 0) < 1) {
-      setGiftToastWithTTL("צריך לפחות 1 נקודה למימוש.");
+      setGiftToastWithTTL("  1  .");
       return;
     }
     setClaiming(true);
@@ -140,14 +140,14 @@ const initBlock = `  const router = useRouter();
       if (resp?.ok) {
         setGiftToastWithTTL(
           resp.coinsGranted
-            ? \`מימוש הצליח! +\${resp.coinsGranted} מטבעות ליאו\`
-            : "הנקודות מומשו בהצלחה."
+            ? \` ! +\${resp.coinsGranted}  \`
+            : "  ."
         );
       } else {
-        setGiftToastWithTTL(resp?.message || resp?.error || "לא ניתן לממש כרגע.");
+        setGiftToastWithTTL(resp?.message || resp?.error || "   .");
       }
     } catch {
-      setGiftToastWithTTL("שגיאת רשת — נסו שוב.");
+      setGiftToastWithTTL("  —  .");
     } finally {
       setClaiming(false);
     }
@@ -215,13 +215,13 @@ const initBlock = `  const router = useRouter();
       const gain = Math.round(base * 0.10);
       s.gold += gain;
       setUi((u) => ({ ...u, gold: s.gold }));
-      setCenterPopup({ text: \`🎁 +\${formatShort(gain)} מטבעות\`, id: Math.random() });
+      setCenterPopup({ text: \`🎁 +\${formatShort(gain)} \`, id: Math.random() });
     } else if (type === "coins40") {
       const base = Math.max(10, expectedGiftCoinReward(s));
       const gain = Math.round(base * 0.20);
       s.gold += gain;
       setUi((u) => ({ ...u, gold: s.gold }));
-      setCenterPopup({ text: \`🎁 +\${formatShort(gain)} מטבעות\`, id: Math.random() });
+      setCenterPopup({ text: \`🎁 +\${formatShort(gain)} \`, id: Math.random() });
     } else if (type === "dps") {
       s.dpsMult = +((s.dpsMult || 1) * 1.1).toFixed(2);
       setCenterPopup({ text: \`🎁 DPS +10% (×\${(s.dpsMult || 1).toFixed(2)})\`, id: Math.random() });
@@ -230,7 +230,7 @@ const initBlock = `  const router = useRouter();
       setCenterPopup({ text: \`🎁 GOLD +10% (×\${(s.goldMult || 1).toFixed(2)})\`, id: Math.random() });
     } else if (type === "diamond") {
       s.diamonds = (s.diamonds || 0) + 1;
-      setCenterPopup({ text: \`🎁 +1 💎 (יהלומים: \${s.diamonds})\`, id: Math.random() });
+      setCenterPopup({ text: \`🎁 +1 💎 (: \${s.diamonds})\`, id: Math.random() });
     }
     s.giftReady = false;
     const now = Date.now();
@@ -313,7 +313,7 @@ src = src.replace(
 
 // Fix offline collect
 src = src.replace(
-  /\/\/ 2\) זיכוי מיידי ל-balance[\s\S]*?\/\/ 4\) ברקע[\s\S]*?\}\)\(\);\r?\n\}/,
+  /\/\/ 2\)   -balance[\s\S]*?\/\/ 4\) [\s\S]*?\}\)\(\);\r?\n\}/,
   `// 2) sync offline stages to server when ready
   if (Object.keys(stageCountsCopy).length > 0 && dbReady && rewardsEnabled && economy) {
     for (const [stage, count] of Object.entries(stageCountsCopy)) {
@@ -324,7 +324,7 @@ src = src.replace(
   // 3) popup
   if (addCoins > 0 || addPoints > 0) {
     setCenterPopup({
-      text: \`⛏️ +\${formatShort(addCoins)} מטבעות • +\${formatPointsShort(addPoints)} נקודות\`,
+      text: \`⛏️ +\${formatShort(addCoins)}  • +\${formatPointsShort(addPoints)} \`,
       id: Math.random(),
     });
   }
@@ -374,8 +374,8 @@ src = src.replace(
 );
 
 // Hebrew/crypto cleanup snippets
-src = src.replace(/on-chain claims become available[^<]*/g, "מימוש הנקודות מתבצע דרך שרת ליאו בלבד.");
-src = src.replace(/utility token for entertainment[^<]*/g, "נקודות משחק לצורכי בידור בלבד.");
+src = src.replace(/on-chain claims become available[^<]*/g, "      .");
+src = src.replace(/utility token for entertainment[^<]*/g, "    .");
 src = src.replace(/claimedToWallet/g, "claimedTotal");
 
 fs.writeFileSync(file, src);

@@ -1,6 +1,6 @@
 /**
  * Regression guard: live countdown timers in active production games must show the Hebrew
- * seconds abbreviation ("שנ׳"), never a raw English "s" suffix (e.g. "12s").
+ * seconds abbreviation (""), never a raw English "s" suffix (e.g. "12s").
  * Dev-only prototype copies under components/prototypes/dev/** are intentionally out of
  * scope (Low finding, not user-facing production surface).
  * Run: node --test tests/learning/game-timer-no-english-suffix.test.mjs

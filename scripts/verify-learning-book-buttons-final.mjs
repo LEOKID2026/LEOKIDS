@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Final learning-book button verifier — main index tile + per-topic הסבר בספר.
+ * Final learning-book button verifier — main index tile + per-topic  .
  * Run: node scripts/verify-learning-book-buttons-final.mjs
  */
 import fs from "node:fs";
@@ -236,7 +236,7 @@ function validateHrefOrNull(href, subject, grade, context) {
   return validateBookPageHref(href, subject, grade, pageId);
 }
 
-/** Topics where a null הסבר בספר href is approved (button hidden). */
+/** Topics where a null   href is approved (button hidden). */
 const EXEMPT_TOPIC_KEYS = new Set(["mixed"]);
 
 /**
@@ -265,11 +265,11 @@ function verifySubject(cfg) {
   if (!masterSrc.includes("bookTopicHref")) {
     fail("explain.ui", `${cfg.subject}: master missing bookTopicHref`);
   }
-  if (!masterSrc.includes("הסבר בספר")) {
-    fail("explain.ui", `${cfg.subject}: master missing הסבר בספר label`);
+  if (!masterSrc.includes(" ")) {
+    fail("explain.ui", `${cfg.subject}: master missing   label`);
   }
   if (!masterSrc.includes("bookTopicHref ?")) {
-    fail("explain.ui", `${cfg.subject}: master must gate הסבר בספר on bookTopicHref`);
+    fail("explain.ui", `${cfg.subject}: master must gate   on bookTopicHref`);
   }
 
   const visible = getVisibleLearningBooks(cfg.subject);
@@ -371,11 +371,11 @@ function verifyMoledetGeographyBooks() {
   if (!masterSrc.includes("bookTopicHref")) {
     fail("explain.ui", "moledet-geography: master missing bookTopicHref");
   }
-  if (!masterSrc.includes("הסבר בספר")) {
-    fail("explain.ui", "moledet-geography: master missing הסבר בספר label");
+  if (!masterSrc.includes(" ")) {
+    fail("explain.ui", "moledet-geography: master missing   label");
   }
   if (!masterSrc.includes("bookTopicHref ?")) {
-    fail("explain.ui", "moledet-geography: master must gate הסבר בספר on bookTopicHref");
+    fail("explain.ui", "moledet-geography: master must gate   on bookTopicHref");
   }
 
   for (const forbiddenSubject of ["moledet", "geography"]) {

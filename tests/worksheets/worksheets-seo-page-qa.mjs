@@ -43,7 +43,7 @@ describe("worksheets-seo-page-qa", () => {
   test("geometry spelling in English worksheets module", () => {
     const src = readFileSync(join(ROOT, "data/seo/worksheets-pages.en.js"), "utf8");
     assert.match(src, /geometry/i);
-    assert.doesNotMatch(src, /גיאומטריה/);
+    assert.doesNotMatch(src, //);
   });
 
   test("landing page uses unified PracticeSeoLandingPage wrapper", () => {

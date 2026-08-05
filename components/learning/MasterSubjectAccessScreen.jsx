@@ -5,10 +5,10 @@ import { useT } from "../../lib/i18n/I18nProvider.jsx";
 /**
  * Blocks master page content when parent locked the subject.
  */
-export default function MasterSubjectAccessScreen({ permissionKey, titleHe, title, children }) {
+export default function MasterSubjectAccessScreen({ permissionKey, title, children }) {
   const { isSubjectLocked, enforced } = useStudentSubjectAccess(permissionKey);
   const t = useT();
-  const resolvedTitle = title ?? titleHe ?? t(`learning.subjects.${permissionKey}`);
+  const resolvedTitle = title ?? t(`learning.subjects.${permissionKey}`);
   if (enforced && isSubjectLocked) {
     return <LockedSubjectCard title={resolvedTitle} />;
   }

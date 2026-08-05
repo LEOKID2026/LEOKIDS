@@ -12,7 +12,7 @@ import {
   VB_VOICEOVER_START,
   VB_VOICEOVER_STOP,
   VB_VOICEOVER_UPLOAD,
-} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.js";
 
 /**
  * @param {{
@@ -66,7 +66,7 @@ export default function AdminVideoVoiceoverPanel({
       mediaRecorderRef.current = mr;
       setRecording(true);
     } catch {
-      setError("לא ניתן לגשת למיקרופון. ניתן להעלות קובץ MP3/WAV.");
+      setError("   .    MP3/WAV.");
     }
   }
 
@@ -87,7 +87,7 @@ export default function AdminVideoVoiceoverPanel({
         body: form,
       });
       const json = await res.json();
-      if (!res.ok) throw new Error(json?.error?.message || "שמירה נכשלה");
+      if (!res.ok) throw new Error(json?.error?.message || " ");
       const asset = json?.data?.asset;
       onUploaded(asset);
       onChange(asset?.id || null);
@@ -95,7 +95,7 @@ export default function AdminVideoVoiceoverPanel({
       if (recordedUrl) URL.revokeObjectURL(recordedUrl);
       setRecordedUrl(null);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "שמירה נכשלה");
+      setError(e instanceof Error ? e.message : " ");
     } finally {
       setSaving(false);
     }
@@ -185,7 +185,7 @@ export default function AdminVideoVoiceoverPanel({
             onChange={(e) => onChange(e.target.value || null)}
             className="w-full rounded border border-white/20 bg-black/30 px-2 py-1.5 text-sm text-right"
           >
-            <option value="">- בחר קובץ -</option>
+            <option value="">-   -</option>
             {assets
               .filter((a) => a.type === "audio")
               .map((a) => (
@@ -194,7 +194,7 @@ export default function AdminVideoVoiceoverPanel({
                 </option>
               ))}
           </select>
-          <p className="text-xs text-white/40">העלאת קבצים חדשים - בטאב "מדיה"</p>
+          <p className="text-xs text-white/40">   -  ""</p>
         </>
       )}
 

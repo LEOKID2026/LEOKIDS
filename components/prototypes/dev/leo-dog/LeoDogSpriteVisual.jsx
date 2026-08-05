@@ -110,7 +110,7 @@ export default function LeoDogSpriteVisual({
 
           src={spriteSrc}
 
-          alt="ליאו"
+          alt=""
 
           className={styles.leoSpriteImg}
 

@@ -95,41 +95,41 @@ const SUBJECT_CHART_COLORS = {
 };
 
 const TOPIC_BAR_SUBJECT_CARDS = [
-  { title: "מתמטיקה — דיוק לפי נושא", mapKey: "mathOperations", prefix: "math_" },
-  { title: "גאומטריה — דיוק לפי נושא", mapKey: "geometryTopics", prefix: "geometry_" },
-  { title: "אנגלית — דיוק לפי נושא", mapKey: "englishTopics", prefix: "english_" },
-  { title: "מדעים — דיוק לפי נושא", mapKey: "scienceTopics", prefix: "science_" },
-  { title: "היסטוריה — דיוק לפי נושא", mapKey: "historyTopics", prefix: "history_" },
-  { title: "עברית — דיוק לפי נושא", mapKey: "hebrewTopics", prefix: "hebrew_" },
+  { title: " —   ", mapKey: "mathOperations", prefix: "math_" },
+  { title: " —   ", mapKey: "geometryTopics", prefix: "geometry_" },
+  { title: " —   ", mapKey: "englishTopics", prefix: "english_" },
+  { title: " —   ", mapKey: "scienceTopics", prefix: "science_" },
+  { title: " —   ", mapKey: "historyTopics", prefix: "history_" },
+  { title: " —   ", mapKey: "hebrewTopics", prefix: "hebrew_" },
   {
-    title: `${VISUAL_STRAND_LABEL_HE.moledet} — דיוק לפי נושא`,
+    title: `${VISUAL_STRAND_LABEL_HE.moledet} —   `,
     mapKey: "_visualMoledetTopics",
     prefix: "moledet_geography_",
   },
   {
-    title: `${VISUAL_STRAND_LABEL_HE.geography} — דיוק לפי נושא`,
+    title: `${VISUAL_STRAND_LABEL_HE.geography} —   `,
     mapKey: "_visualGeographyTopics",
     prefix: "moledet_geography_",
   },
 ];
 
 const PROGRESS_TABLE_CONFIG = [
-  { key: "mathOperations", title: "🧮 התקדמות במתמטיקה", labelCol: "פעולה" },
-  { key: "geometryTopics", title: "📐 התקדמות בגאומטריה", labelCol: "נושא" },
-  { key: "englishTopics", title: "📘 התקדמות באנגלית", labelCol: "נושא" },
-  { key: "scienceTopics", title: "🔬 התקדמות במדעים", labelCol: "נושא" },
-  { key: "hebrewTopics", title: "📚 התקדמות בעברית", labelCol: "נושא" },
-  { key: "_visualMoledetTopics", title: `🏠 התקדמות ב${VISUAL_STRAND_LABEL_HE.moledet}`, labelCol: "נושא" },
-  { key: "_visualGeographyTopics", title: `🗺️ התקדמות ב${VISUAL_STRAND_LABEL_HE.geography}`, labelCol: "נושא" },
+  { key: "mathOperations", title: "🧮  ", labelCol: "" },
+  { key: "geometryTopics", title: "📐  ", labelCol: "" },
+  { key: "englishTopics", title: "📘  ", labelCol: "" },
+  { key: "scienceTopics", title: "🔬  ", labelCol: "" },
+  { key: "hebrewTopics", title: "📚  ", labelCol: "" },
+  { key: "_visualMoledetTopics", title: `🏠  ${VISUAL_STRAND_LABEL_HE.moledet}`, labelCol: "" },
+  { key: "_visualGeographyTopics", title: `🗺️  ${VISUAL_STRAND_LABEL_HE.geography}`, labelCol: "" },
 ];
 
 const SUBJECT_OVERVIEW_UI = {
-  math: { emoji: "🧮", name: "מתמטיקה" },
-  geometry: { emoji: "📐", name: "גאומטריה" },
-  english: { emoji: "📘", name: "אנגלית" },
-  science: { emoji: "🔬", name: "מדעים" },
-  history: { emoji: "🏛️", name: "היסטוריה" },
-  hebrew: { emoji: "📚", name: "עברית" },
+  math: { emoji: "🧮", name: "" },
+  geometry: { emoji: "📐", name: "" },
+  english: { emoji: "📘", name: "" },
+  science: { emoji: "🔬", name: "" },
+  history: { emoji: "🏛️", name: "" },
+  hebrew: { emoji: "📚", name: "" },
   moledet: { emoji: "🏠", name: VISUAL_STRAND_LABEL_HE.moledet },
   geography: { emoji: "🗺️", name: VISUAL_STRAND_LABEL_HE.geography },
 };
@@ -143,8 +143,8 @@ function subjectPracticeSecondaryLineHe(questions, correct, accuracy, timeMinute
   const metrics = normalizeParentVisibleMetrics({ questions, correct, accuracy });
   const q = metrics.questions;
   const tm = Number(timeMinutes) || 0;
-  if (q > 0) return `${metrics.correct} נכון • ${metrics.accuracy}% דיוק`;
-  if (tm > 0) return `${tm} דק׳ תרגול`;
+  if (q > 0) return `${metrics.correct}  • ${metrics.accuracy}% `;
+  if (tm > 0) return `${tm}  `;
   return null;
 }
 
@@ -161,12 +161,12 @@ function buildSubjectOverviewRows(report) {
     return { key, name, minutes, questions: metrics.questions, correct: metrics.correct, accuracy: metrics.accuracy };
   }
   return [
-    subjectRow("math", "מתמטיקה", sumTopicMapMinutes(report.mathOperations), s.mathQuestions, s.mathCorrect, s.mathAccuracy),
-    subjectRow("geometry", "גאומטריה", sumTopicMapMinutes(report.geometryTopics), s.geometryQuestions, s.geometryCorrect, s.geometryAccuracy),
-    subjectRow("english", "אנגלית", sumTopicMapMinutes(report.englishTopics), s.englishQuestions, s.englishCorrect, s.englishAccuracy),
-    subjectRow("science", "מדעים", sumTopicMapMinutes(report.scienceTopics), s.scienceQuestions, s.scienceCorrect, s.scienceAccuracy),
-    subjectRow("history", "היסטוריה", sumTopicMapMinutes(report.historyTopics), s.historyQuestions, s.historyCorrect, s.historyAccuracy),
-    subjectRow("hebrew", "עברית", sumTopicMapMinutes(report.hebrewTopics), s.hebrewQuestions, s.hebrewCorrect, s.hebrewAccuracy),
+    subjectRow("math", "", sumTopicMapMinutes(report.mathOperations), s.mathQuestions, s.mathCorrect, s.mathAccuracy),
+    subjectRow("geometry", "", sumTopicMapMinutes(report.geometryTopics), s.geometryQuestions, s.geometryCorrect, s.geometryAccuracy),
+    subjectRow("english", "", sumTopicMapMinutes(report.englishTopics), s.englishQuestions, s.englishCorrect, s.englishAccuracy),
+    subjectRow("science", "", sumTopicMapMinutes(report.scienceTopics), s.scienceQuestions, s.scienceCorrect, s.scienceAccuracy),
+    subjectRow("history", "", sumTopicMapMinutes(report.historyTopics), s.historyQuestions, s.historyCorrect, s.historyAccuracy),
+    subjectRow("hebrew", "", sumTopicMapMinutes(report.hebrewTopics), s.hebrewQuestions, s.hebrewCorrect, s.hebrewAccuracy),
     subjectRow("moledet", VISUAL_STRAND_LABEL_HE.moledet, mgVisual.moledetStats.minutes, mgVisual.moledetStats.questions, mgVisual.moledetStats.correct, mgVisual.moledetStats.accuracy),
     subjectRow("geography", VISUAL_STRAND_LABEL_HE.geography, mgVisual.geographyStats.minutes, mgVisual.geographyStats.questions, mgVisual.geographyStats.correct, mgVisual.geographyStats.accuracy),
   ];
@@ -281,8 +281,8 @@ function extractTopicExplainVisibleText(row) {
   const q = Number(row?.questions) || 0;
   if (q <= 0) return [];
   const lpdCopy = resolveParentExplainRowCopy(row);
-  const lines = [`[נושא] ${row.label}`];
-  if (lpdCopy.primaryFinding) lines.push(`מה ראינו: ${lpdCopy.primaryFinding}`);
+  const lines = [`[] ${row.label}`];
+  if (lpdCopy.primaryFinding) lines.push(` : ${lpdCopy.primaryFinding}`);
   const sec = lpdCopy.explainSections;
   if (sec) {
     for (const part of [sec.identified, sec.data, sec.pattern, sec.meaning, sec.action]) {
@@ -290,9 +290,9 @@ function extractTopicExplainVisibleText(row) {
     }
   }
   const sig = row.topicEngineRowSignals;
-  if (sig?.doNowHe) lines.push(`עכשיו: ${String(sig.doNowHe)}`);
-  if (sig?.avoidNowHe) lines.push(`להימנע: ${String(sig.avoidNowHe)}`);
-  if (sig?.cautionLineHe) lines.push(`זהירות: ${String(sig.cautionLineHe)}`);
+  if (sig?.doNowHe) lines.push(`: ${String(sig.doNowHe)}`);
+  if (sig?.avoidNowHe) lines.push(`: ${String(sig.avoidNowHe)}`);
+  if (sig?.cautionLineHe) lines.push(`: ${String(sig.cautionLineHe)}`);
   return lines;
 }
 
@@ -323,29 +323,29 @@ function collectDiagnosticsSubjectTexts(row, serverHomeRecs) {
   const subtitles = [];
   if (s.summaryHe) texts.push(diagnosticParentVisibleTextHe(s.summaryHe));
   if (Array.isArray(s.diagnosticCards)) {
-    subtitles.push("ממה שתורגל:");
+    subtitles.push(" :");
     for (const card of s.diagnosticCards) {
       if (card.labelHe) texts.push(diagnosticParentVisibleTextHe(card.labelHe));
       if (Array.isArray(card.evidence)) texts.push(...card.evidence.map((l) => diagnosticParentVisibleTextHe(l)));
-      if (card.recommendationHe) texts.push(`מה לעשות: ${diagnosticParentVisibleTextHe(card.recommendationHe)}`);
+      if (card.recommendationHe) texts.push(` : ${diagnosticParentVisibleTextHe(card.recommendationHe)}`);
     }
   }
-  if (s.subjectDoNowHe) texts.push(`עכשיו: ${diagnosticParentVisibleTextHe(s.subjectDoNowHe)}`);
-  if (s.subjectAvoidNowHe) texts.push(`להימנע: ${diagnosticParentVisibleTextHe(s.subjectAvoidNowHe)}`);
+  if (s.subjectDoNowHe) texts.push(`: ${diagnosticParentVisibleTextHe(s.subjectDoNowHe)}`);
+  if (s.subjectAvoidNowHe) texts.push(`: ${diagnosticParentVisibleTextHe(s.subjectAvoidNowHe)}`);
   const parentHomeActionHe = mergeParentReportHomeActionHe({ parentActionHe: s.parentActionHe, parImp: s.parentRecommendationsImprove });
   if (parentHomeActionHe && !serverHomeRecs.some((rec) => isDuplicateParentReportText(parentHomeActionHe, rec))) {
-    subtitles.push("מה אפשר לעשות בבית");
+    subtitles.push("   ");
     texts.push(parentHomeActionHe);
   }
   if (s.nextWeekGoalHe) {
-    subtitles.push("יעדים לשבוע הקרוב");
+    subtitles.push("  ");
     texts.push(diagnosticParentVisibleTextHe(s.nextWeekGoalHe));
   }
   for (const w of s.topWeaknesses || s.weaknesses || []) {
     if (w.labelHe) texts.push(diagnosticParentVisibleTextHe(w.labelHe));
   }
   for (const st of s.topStrengths || s.strengths || []) {
-    if (st.labelHe) texts.push(`${diagnosticParentVisibleTextHe(st.labelHe)} — דיוק ${st.accuracy}%`);
+    if (st.labelHe) texts.push(`${diagnosticParentVisibleTextHe(st.labelHe)} —  ${st.accuracy}%`);
   }
   return { texts, subtitles };
 }
@@ -392,9 +392,9 @@ function mapRegularReportWindows(ctx) {
   // Header
   push({
     windowId: "page_header",
-    parentVisibleTitle: "📊 דוח להורים",
+    parentVisibleTitle: "📊  ",
     parentVisibleSubtitles: [report.playerName, `${range.from} - ${range.to}`],
-    exactVisibleText: [`📊 דוח להורים`, report.playerName, `${report.startDate} - ${report.endDate}`],
+    exactVisibleText: [`📊  `, report.playerName, `${report.startDate} - ${report.endDate}`],
     component: "ParentReport page header",
     sourceFile: "pages/learning/parent-report.js",
     sourceField: "report.playerName, report.startDate, report.endDate",
@@ -402,15 +402,15 @@ function mapRegularReportWindows(ctx) {
     renderCondition: "report loaded",
     subjectLevelOrTopicLevel: "general",
     gradeDisplayRule: "no grade in header",
-    notes: "Period preset controls and 'דוח מקיף לתקופה' link are no-pdf UI chrome on site.",
+    notes: "Period preset controls and '  ' link are no-pdf UI chrome on site.",
   });
 
   // Summary stats
   const summaryCards = [
-    { title: "זמן כולל", main: `${report.summary.totalTimeMinutes} דק'`, sub: `(${report.summary.totalTimeHours} שעות)` },
-    { title: "שאלות", main: String(report.summary.totalQuestions), sub: `${report.summary.totalCorrect} נכון` },
-    { title: "דיוק כללי", main: `${report.summary.overallAccuracy}%`, sub: null },
-    { title: "רמה", main: `רמה ${report.summary.playerLevel}`, sub: `⭐ ${report.summary.stars} • 🏆 ${report.summary.achievements}` },
+    { title: " ", main: `${report.summary.totalTimeMinutes} '`, sub: `(${report.summary.totalTimeHours} )` },
+    { title: "", main: String(report.summary.totalQuestions), sub: `${report.summary.totalCorrect} ` },
+    { title: " ", main: `${report.summary.overallAccuracy}%`, sub: null },
+    { title: "", main: ` ${report.summary.playerLevel}`, sub: `⭐ ${report.summary.stars} • 🏆 ${report.summary.achievements}` },
   ];
   for (const card of summaryCards) {
     push({
@@ -434,12 +434,12 @@ function mapRegularReportWindows(ctx) {
   const hasDataHealth = thinEvidence.length > 0 || dataQualityNoteHe || mixedGradeNoteHe;
   if (hasDataHealth) {
     const texts = [];
-    if (thinEvidence.length) texts.push(`נתונים מצומצמים במקצועות: ${thinEvidence.join(" · ")}`);
+    if (thinEvidence.length) texts.push(`  : ${thinEvidence.join(" · ")}`);
     if (dataQualityNoteHe) texts.push(dataQualityNoteHe);
     if (mixedGradeNoteHe) texts.push(mixedGradeNoteHe);
     push({
       windowId: "data_health_note",
-      parentVisibleTitle: "מצב הנתונים בדוח",
+      parentVisibleTitle: "  ",
       exactVisibleText: texts,
       component: "ParentReportDataHealthNote",
       sourceFile: "components/parent/ParentReportDataHealthNote.jsx",
@@ -457,17 +457,17 @@ function mapRegularReportWindows(ctx) {
     const scTexts = [];
     const scSubs = [];
     if (showWeeklyInShortContract && weeklyHomeActionHe) {
-      scSubs.push("מה לעשות השבוע:");
-      scTexts.push(`מה לעשות השבוע: ${weeklyHomeActionHe}`);
+      scSubs.push("  :");
+      scTexts.push(`  : ${weeklyHomeActionHe}`);
     }
-    if (shortContractTop?.mainStatusHe) scTexts.push(`מצב: ${shortContractTop.mainStatusHe}`);
-    if (shortContractTop?.mainPriorityHe) scTexts.push(`מה חשוב קודם: ${shortContractTop.mainPriorityHe}`);
-    if (shortContractTop?.doNowHe) scTexts.push(`מה עושים עכשיו: ${shortContractTop.doNowHe}`);
+    if (shortContractTop?.mainStatusHe) scTexts.push(`: ${shortContractTop.mainStatusHe}`);
+    if (shortContractTop?.mainPriorityHe) scTexts.push(`  : ${shortContractTop.mainPriorityHe}`);
+    if (shortContractTop?.doNowHe) scTexts.push(`  : ${shortContractTop.doNowHe}`);
     const scRendered = scTexts.length > 0;
     if (scRendered) {
       push({
         windowId: "short_contract_preview",
-        parentVisibleTitle: "סיכום קצר להורה",
+        parentVisibleTitle: "  ",
         parentVisibleSubtitles: scSubs,
         exactVisibleText: scTexts,
         component: "ParentReportShortContractPreview / ParentReportWeeklyHomeActionLine",
@@ -477,43 +477,43 @@ function mapRegularReportWindows(ctx) {
         renderCondition: "!hasServerHomeRecommendations && (weekly || shortContractTop fields)",
         subjectLevelOrTopicLevel: "general action line",
         gradeDisplayRule: "no grade",
-        notes: "'מה לעשות השבוע:' is an inline label prefix inside this card, NOT a separate window.",
+        notes: "'  :' is an inline label prefix inside this card, NOT a separate window.",
       });
     }
   }
 
-  // Diagnostic overview — מה הכי בולט עכשיו
+  // Diagnostic overview —
   if (diag) {
     const doTexts = [];
     const doSubs = [];
     if (showWeeklyInDiagnosticOverview && weeklyHomeActionHe) {
-      doSubs.push("מה לעשות השבוע:");
-      doTexts.push(`מה לעשות השבוע: ${weeklyHomeActionHe}`);
+      doSubs.push("  :");
+      doTexts.push(`  : ${weeklyHomeActionHe}`);
     }
     if (diag.practicedSubjectsSummaryHe) doTexts.push(diag.practicedSubjectsSummaryHe);
     if (!shortContractTop && diag.mainFocusAreaLineHe) {
-      const prefix = diag.mainFocusAreaIsHighAccuracy ? "למעקב: " : "כדאי לשים לב עכשיו: ";
+      const prefix = diag.mainFocusAreaIsHighAccuracy ? ": " : "   : ";
       doSubs.push(prefix.trim());
       doTexts.push(`${prefix}${diag.mainFocusAreaLineHe}`);
     } else if (!shortContractTop) {
       const fallback =
         Number(report.summary?.totalQuestions) > 0 && diagnosticsView?.presence?.state === "hasVolumeNoPattern"
-          ? "יש נתוני תרגול בתקופה שנבחרה, אך עדיין אין מספיק בסיס ברור מהתרגולים כדי לראות לאיזה נושא כדאי להתמקד — כדאי להמשיך בתרגול ולעקוב שוב לאחר מכן."
-          : "אין עדיין תחום שכדאי לשים לב עכשיו בתקופה שנבחרה.";
+          ? "    ,              —       ."
+          : "        .";
       doTexts.push(fallback);
     }
     if (diag.strongestAreaLineHe && !hasRawMetricStrengthsHe) {
-      doTexts.push(`תוצאות טובות — כדאי להמשיך לחזק: ${diag.strongestAreaLineHe}`);
+      doTexts.push(`  —   : ${diag.strongestAreaLineHe}`);
     }
     if (diag.readyForProgressPreviewHe?.length) {
-      doTexts.push(`אפשר לחזק שלב נוסף: ${diag.readyForProgressPreviewHe.join(" · ")}`);
+      doTexts.push(`   : ${diag.readyForProgressPreviewHe.join(" · ")}`);
     }
     if (diag.requiresAttentionPreviewHe?.length) {
-      doTexts.push(`עוד נושאים למעקב: ${diag.requiresAttentionPreviewHe.join(" · ")}`);
+      doTexts.push(`  : ${diag.requiresAttentionPreviewHe.join(" · ")}`);
     }
     push({
       windowId: "diagnostic_overview",
-      parentVisibleTitle: "מה הכי בולט עכשיו",
+      parentVisibleTitle: "   ",
       parentVisibleSubtitles: doSubs,
       exactVisibleText: doTexts,
       component: "inline div in parent-report.js",
@@ -524,7 +524,7 @@ function mapRegularReportWindows(ctx) {
       subjectLevelOrTopicLevel: "mixed — subject summaries and topic previews",
       gradeDisplayRule: "no explicit grade column; topic names may embed grade",
       notes: showWeeklyInDiagnosticOverview
-        ? "'מה לעשות השבוע' appears HERE as inline label when not shown in short contract and not duplicate of home recs."
+        ? "'  ' appears HERE as inline label when not shown in short contract and not duplicate of home recs."
         : hasServerHomeRecommendations
           ? "Weekly line suppressed here when duplicate of first homeRecommendations item."
           : "Weekly line shown in short contract instead.",
@@ -535,7 +535,7 @@ function mapRegularReportWindows(ctx) {
   if (insights.length) {
     push({
       windowId: "parent_insights",
-      parentVisibleTitle: "מה חשוב לדעת",
+      parentVisibleTitle: "  ",
       exactVisibleText: insights,
       component: "ParentReportParentSections",
       sourceFile: "components/parent/ParentReportParentSections.jsx",
@@ -548,7 +548,7 @@ function mapRegularReportWindows(ctx) {
   if (teacherMessages.length) {
     push({
       windowId: "parent_teacher_messages",
-      parentVisibleTitle: "הודעות מהמורה",
+      parentVisibleTitle: " ",
       exactVisibleText: teacherMessages.map((m) => m.message),
       component: "ParentReportParentSections",
       sourceFile: "components/parent/ParentReportParentSections.jsx",
@@ -561,7 +561,7 @@ function mapRegularReportWindows(ctx) {
   if (hasServerHomeRecommendations) {
     push({
       windowId: "parent_home_recommendations",
-      parentVisibleTitle: "מה מומלץ לעשות בבית",
+      parentVisibleTitle: "   ",
       exactVisibleText: serverHomeRecommendationsListHe,
       component: "ParentReportParentSections",
       sourceFile: "components/parent/ParentReportParentSections.jsx",
@@ -578,7 +578,7 @@ function mapRegularReportWindows(ctx) {
   if (strengthLines.length) {
     push({
       windowId: "raw_metric_strengths",
-      parentVisibleTitle: "חוזקות שבלטו בתרגול",
+      parentVisibleTitle: "  ",
       exactVisibleText: strengthLines,
       component: "inline div",
       sourceFile: "pages/learning/parent-report.js",
@@ -594,7 +594,7 @@ function mapRegularReportWindows(ctx) {
   for (const row of overviewRows) {
     const ui = SUBJECT_OVERVIEW_UI[row.key] || SUBJECT_OVERVIEW_UI.math;
     const secondary = subjectPracticeSecondaryLineHe(row.questions, row.correct, row.accuracy, row.minutes);
-    const mainStat = row.questions > 0 ? `${row.questions} שאלות` : `${row.minutes} דק׳`;
+    const mainStat = row.questions > 0 ? `${row.questions} ` : `${row.minutes} `;
     push({
       windowId: `subject_overview_${row.key}`,
       parentVisibleTitle: `${ui.emoji} ${row.name}`,
@@ -615,24 +615,24 @@ function mapRegularReportWindows(ctx) {
     const structured = readAiStructured(aiExp);
     const fallbackText = typeof aiExp.text === "string" ? aiExp.text.trim() : "";
     if (structured || fallbackText) {
-      const heading = structured ? "סיכום חכם להורה" : "תובנה להורה";
+      const heading = structured ? "  " : " ";
       const aiTexts = [];
       const aiSubs = [];
       if (structured) {
         if (structured.summary) aiTexts.push(structured.summary);
         if (structured.strengths.length) {
-          aiSubs.push("מה הולך טוב");
+          aiSubs.push("  ");
           aiTexts.push(...structured.strengths);
         }
         if (structured.focusAreas.length) {
-          aiSubs.push("תחומים לחיזוק");
+          aiSubs.push(" ");
           aiTexts.push(...structured.focusAreas);
         }
         const filteredTips = structured.homeTips.filter(
           (tip) => !serverHomeRecommendationsListHe.some((rec) => isDuplicateParentReportText(tip, rec)),
         );
         if (filteredTips.length) {
-          aiSubs.push("טיפים לבית");
+          aiSubs.push(" ");
           aiTexts.push(...filteredTips);
         }
         if (structured.cautionNote) aiTexts.push(structured.cautionNote);
@@ -665,7 +665,7 @@ function mapRegularReportWindows(ctx) {
       .map(([k, data]) => {
         const label = String(data.displayName || data.narrativeTopicLabelHe || k).trim();
         const grade = formatParentReportGradeHe(data.gradeKey || data.grade);
-        return `${label} | כיתה: ${grade} | ${data.questions} שאלות | ${data.accuracy}%`;
+        return `${label} | : ${grade} | ${data.questions}  | ${data.accuracy}%`;
       });
     const gradesShown = [
       ...new Set(
@@ -677,7 +677,7 @@ function mapRegularReportWindows(ctx) {
     push({
       windowId: `progress_table_${cfg.key}`,
       parentVisibleTitle: cfg.title,
-      parentVisibleSubtitles: ["פעולה/נושא", "רמה", "כיתה", "מקור", "תאריך אחרון", "זמן", "שאלות", "נכון", "דיוק", "סטטוס"],
+      parentVisibleSubtitles: ["/", "", "", "", " ", "", "", "", "", ""],
       exactVisibleText: rowSamples,
       component: "subject progress table",
       sourceFile: "pages/learning/parent-report.js",
@@ -701,7 +701,7 @@ function mapRegularReportWindows(ctx) {
     if (diagnosticsView.mode === "legacy") {
       push({
         windowId: "recommendations_legacy",
-        parentVisibleTitle: "💡 המלצות",
+        parentVisibleTitle: "💡 ",
         parentVisibleSubtitles: [sourceLabel],
         exactVisibleText: diagnosticsView.legacyRecommendations.map((r) => `${r.operationName}: ${r.message}`),
         component: "recommendations legacy cards",
@@ -719,10 +719,10 @@ function mapRegularReportWindows(ctx) {
         diagnosticsView.presence?.recommendationsExplainerHe ||
         (Number(report.summary?.totalQuestions) > 0
           ? PARENT_THIN_DATA_EXPLAINER_HE
-          : "עדיין אין מספיק נתונים לתמונה ברורה מהתרגולים");
+          : "      ");
       push({
         windowId: "recommendations_insufficient",
-        parentVisibleTitle: "💡 המלצות",
+        parentVisibleTitle: "💡 ",
         parentVisibleSubtitles: [sourceLabel],
         exactVisibleText: [explainer],
         component: "recommendations insufficient explainer",
@@ -736,7 +736,7 @@ function mapRegularReportWindows(ctx) {
     } else {
       push({
         windowId: "recommendations_header",
-        parentVisibleTitle: "💡 המלצות",
+        parentVisibleTitle: "💡 ",
         parentVisibleSubtitles: [sourceLabel],
         exactVisibleText: [],
         component: "recommendations section header",
@@ -760,8 +760,8 @@ function mapRegularReportWindows(ctx) {
           subjectLevelOrTopicLevel: "subject block with topic-level items",
           gradeDisplayRule: "topic labels may include grade; no separate grade column",
           notes:
-            row.subjectLabelHe === "לא ידוע"
-              ? `Rendered title comes from formatParentReportSubjectHe(sub.subjectLabelHe || id); subjectId=${row.subjectId}. Parent sees literal "לא ידוע" when Hebrew subjectLabelHe is passed first.`
+            row.subjectLabelHe === " "
+              ? `Rendered title comes from formatParentReportSubjectHe(sub.subjectLabelHe || id); subjectId=${row.subjectId}. Parent sees literal " " when Hebrew subjectLabelHe is passed first.`
               : null,
         });
       }
@@ -772,10 +772,10 @@ function mapRegularReportWindows(ctx) {
   if (suppressChartsForThinEvidenceWindow) {
     push({
       windowId: "graphs_thin_evidence",
-      parentVisibleTitle: "מעט שאלות בתקופה שנבחרה",
+      parentVisibleTitle: "   ",
       exactVisibleText: [
-        "מספר השאלות בתקופה שנבחרה נמוך מדי כדי להציג כאן גרפים או טבלאות בעלי משמעות ברורה.",
-        "מומלץ להסתמך על הסיכום וההסברים למעלה, ולהמשיך בתרגול כדי לצבור תמונה ברורה יותר.",
+        "              .",
+        "     ,       .",
       ],
       component: "graph section thin-evidence card",
       sourceFile: "pages/learning/parent-report.js",
@@ -788,9 +788,9 @@ function mapRegularReportWindows(ctx) {
     if (dailyActivityVisual.length > 0) {
       push({
         windowId: "chart_daily_activity",
-        parentVisibleTitle: "פעילות יומית",
-        parentVisibleSubtitles: ["זמן תרגול ושאלות לפי יום בתקופה שנבחרה"],
-        exactVisibleText: [`${dailyActivityVisual.length} ימים עם נתונים`, "צירים: זמן (דקות), שאלות"],
+        parentVisibleTitle: " ",
+        parentVisibleSubtitles: ["      "],
+        exactVisibleText: [`${dailyActivityVisual.length}   `, ":  (), "],
         component: "LineChart daily activity",
         sourceFile: "pages/learning/parent-report.js",
         sourceField: "report.dailyActivity via enrichDailyActivityWithVisualStrands",
@@ -801,9 +801,9 @@ function mapRegularReportWindows(ctx) {
       });
       push({
         windowId: "chart_daily_by_subject",
-        parentVisibleTitle: "פעילות לפי מקצועות (יומי)",
-        parentVisibleSubtitles: ["מספר נושאים שונים שתורגלו בכל יום"],
-        exactVisibleText: ["מקצועות: מתמטיקה, גאומטריה, אנגלית, מדעים, היסטוריה, עברית, מולדת, גאוגרפיה"],
+        parentVisibleTitle: "   ()",
+        parentVisibleSubtitles: ["     "],
+        exactVisibleText: [": , , , , , , , "],
         component: "LineChart daily by subject",
         sourceFile: "pages/learning/parent-report.js",
         sourceField: "dailyActivityVisual subject topic counts",
@@ -817,9 +817,9 @@ function mapRegularReportWindows(ctx) {
     if (overviewForChart.length > 0) {
       push({
         windowId: "chart_summary_six_subjects",
-        parentVisibleTitle: "סיכום לפי שש המקצועות",
-        parentVisibleSubtitles: ["זמן תרגול מצטבר לפי מקצוע"],
-        exactVisibleText: overviewForChart.map((r) => `${r.name}: ${r.minutes} דק׳`),
+        parentVisibleTitle: "   ",
+        parentVisibleSubtitles: ["    "],
+        exactVisibleText: overviewForChart.map((r) => `${r.name}: ${r.minutes} `),
         component: "BarChart summary",
         sourceFile: "pages/learning/parent-report.js",
         sourceField: "buildSubjectOverviewRows filtered",
@@ -839,8 +839,8 @@ function mapRegularReportWindows(ctx) {
       push({
         windowId: `chart_topic_bars_${cfg.mapKey}`,
         parentVisibleTitle: cfg.title,
-        parentVisibleSubtitles: ["מסילת תוויות ומסילת גרף משותפות לכל המקצועות", "דיוק %"],
-        exactVisibleText: rows.slice(0, 12).map((r) => `${r.label}: ${r.accuracy}% (${r.questions} שאלות)`),
+        parentVisibleSubtitles: ["      ", " %"],
+        exactVisibleText: rows.slice(0, 12).map((r) => `${r.label}: ${r.accuracy}% (${r.questions} )`),
         component: "BarChart topic accuracy + ParentReportTopicExplainBlock",
         sourceFile: "pages/learning/parent-report.js + components/parent-report-topic-explain-row.jsx",
         sourceField: `report.${cfg.mapKey}`,
@@ -857,7 +857,7 @@ function mapRegularReportWindows(ctx) {
       if (explainTexts.length) {
         push({
           windowId: `topic_explain_${cfg.mapKey}`,
-          parentVisibleTitle: "מה בולט בכל נושא",
+          parentVisibleTitle: "   ",
           parentVisibleSubtitles: [`under chart: ${cfg.title}`],
           exactVisibleText: explainTexts,
           component: "ParentReportTopicExplainBlock",
@@ -875,13 +875,13 @@ function mapRegularReportWindows(ctx) {
   // Challenges
   push({
     windowId: "challenges",
-    parentVisibleTitle: "🎯 אתגרים",
-    parentVisibleSubtitles: ["אתגר יומי", "אתגר שבועי"],
+    parentVisibleTitle: "🎯 ",
+    parentVisibleSubtitles: [" ", " "],
     exactVisibleText: [
-      `אתגר יומי: ${report.challenges.daily.correct} / ${report.challenges.daily.questions}`,
-      `ניקוד שיא: ${report.challenges.daily.bestScore}`,
-      `אתגר שבועי: ${report.challenges.weekly.current} / ${report.challenges.weekly.target}`,
-      ...(report.challenges.weekly.completed ? ["🎉 הושלם!"] : []),
+      ` : ${report.challenges.daily.correct} / ${report.challenges.daily.questions}`,
+      ` : ${report.challenges.daily.bestScore}`,
+      ` : ${report.challenges.weekly.current} / ${report.challenges.weekly.target}`,
+      ...(report.challenges.weekly.completed ? ["🎉 !"] : []),
     ],
     component: "challenges grid",
     sourceFile: "pages/learning/parent-report.js",
@@ -895,7 +895,7 @@ function mapRegularReportWindows(ctx) {
   if (report.achievements?.length) {
     push({
       windowId: "achievements",
-      parentVisibleTitle: "🏆 הישגים",
+      parentVisibleTitle: "🏆 ",
       exactVisibleText: report.achievements.map((a) => a.name),
       component: "achievements list",
       sourceFile: "pages/learning/parent-report.js",
@@ -995,16 +995,16 @@ function buildSampleSummary(windows) {
   const rendered = windows.filter((w) => w.rendered !== false);
   const weeklyWindows = rendered.filter(
     (w) =>
-      (w.parentVisibleSubtitles || []).some((s) => s.includes("מה לעשות השבוע")) ||
-      (w.exactVisibleText || []).some((t) => t.startsWith("מה לעשות השבוע")),
+      (w.parentVisibleSubtitles || []).some((s) => s.includes("  ")) ||
+      (w.exactVisibleText || []).some((t) => t.startsWith("  ")),
   );
   const recommendationWindows = rendered.filter(
     (w) =>
       w.windowId?.includes("recommendation") ||
       w.windowId === "parent_home_recommendations" ||
-      w.parentVisibleTitle === "💡 המלצות" ||
+      w.parentVisibleTitle === "💡 " ||
       (w.parentVisibleSubtitles || []).some((s) =>
-        ["מה אפשר לעשות בבית", "יעדים לשבוע הקרוב", "מה לעשות:"].some((x) => s.includes(x)),
+        ["   ", "  ", " :"].some((x) => s.includes(x)),
       ),
   );
   const subjectLevel = rendered.filter((w) => w.subjectLevelOrTopicLevel?.includes("subject"));
@@ -1048,7 +1048,7 @@ function buildMarkdown(report) {
     lines.push("### Window order (titles)");
     sample.summary.windowOrderTitles.forEach((t, i) => lines.push(`${i + 1}. ${t}`));
     lines.push("");
-    lines.push("### Where is \"מה לעשות השבוע\"?");
+    lines.push("### Where is \"  \"?");
     lines.push(`- Separate window: **${sample.summary.weeklyActionLabel.isSeparateWindow ? "yes" : "no"}**`);
     lines.push(`- Appears in: ${sample.summary.weeklyActionLabel.appearsInWindowIds.join(", ") || "(not rendered)"}`);
     lines.push(`- Role: ${sample.summary.weeklyActionLabel.role}`);
@@ -1159,7 +1159,7 @@ async function main() {
       ),
     ],
     weeklyActionLabelRule:
-      "Static prefix 'מה לעשות השבוע: ' in ParentReportWeeklyHomeActionLine — rendered inside short_contract_preview OR diagnostic_overview, never as standalone card.",
+      "Static prefix '  : ' in ParentReportWeeklyHomeActionLine — rendered inside short_contract_preview OR diagnostic_overview, never as standalone card.",
   };
 
   const report = {

@@ -22,8 +22,8 @@ import {
 import {
   ADMIN_LOADING,
   ADMIN_NAV_REWARDS,
-} from "../../../lib/admin-portal/admin-ui.he.js";
-import { ADMIN_REWARDS_PAGE_UNAVAILABLE } from "../../../lib/admin-portal/admin-rewards-ui.he.js";
+} from "../../../lib/admin-portal/admin-ui.js";
+import { ADMIN_REWARDS_PAGE_UNAVAILABLE } from "../../../lib/admin-portal/admin-rewards-ui.js";
 
 function renderTab(tabId, accessToken, setActiveTab) {
   switch (tabId) {

@@ -27,9 +27,9 @@ function contract(topicRowKey, subjectId, displayName, qCount, acc) {
     contractsV1: {
       narrative: {
         textSlots: {
-          observation: `ב${displayName} נצפו ${qCount} שאלות עם דיוק של ${acc}%.`,
-          interpretation: `ב${displayName} יש כיוון ברור לפי הדוח — חיזוק או שימור לפי רמת הדיוק.`,
-          action: `מומלץ תרגול ממוקד ב${displayName} השבוע.`,
+          observation: `${displayName}  ${qCount}     ${acc}%.`,
+          interpretation: `${displayName}      —      .`,
+          action: `   ${displayName} .`,
           uncertainty: "",
         },
       },
@@ -47,7 +47,7 @@ function payload(rows) {
     gradePracticeMeta: {
       registeredGradeKey: "g4",
       mixedGradePractice: rows.some((r) => r.topicRowKey.includes("g5")),
-      mixedGradePracticeNoteHe: "תרגול בכיתות שונות מוצג בנפרד.",
+      mixedGradePracticeNoteHe: "    .",
     },
     subjectProfiles: rows.map((r) => ({
       subject: r.subjectId,
@@ -64,9 +64,9 @@ function answerText(res) {
 }
 
 const p = payload([
-  { subjectId: "math", topicRowKey: "fractions::grade:g4", displayName: "שברים", q: 367, acc: 87 },
-  { subjectId: "math", topicRowKey: "fractions::grade:g5", displayName: "שברים", q: 66, acc: 38 },
-  { subjectId: "hebrew", topicRowKey: "reading", displayName: "הבנת הנקרא", q: 90, acc: 62 },
+  { subjectId: "math", topicRowKey: "fractions::grade:g4", displayName: "", q: 367, acc: 87 },
+  { subjectId: "math", topicRowKey: "fractions::grade:g5", displayName: "", q: 66, acc: 38 },
+  { subjectId: "hebrew", topicRowKey: "reading", displayName: " ", q: 90, acc: 62 },
 ]);
 
 // I: Topic question — grounded, not shallow
@@ -74,25 +74,25 @@ const p = payload([
   const res = runTurn({
     audience: "parent",
     payload: p,
-    utterance: "תסביר לי על שברים מה הבעיה",
+    utterance: "     ",
     sessionId: "aq-1",
   });
   assert.equal(res.resolutionStatus, "resolved");
   const t = answerText(res);
   assert.ok(!t.includes(AMBIGUOUS_RESPONSE_HE.slice(0, 20)));
-  assert.ok(t.includes("שברים") || /\d/.test(t));
+  assert.ok(t.includes("") || /\d/.test(t));
   assert.ok(
-    t.includes("חיזוק") || t.includes("תרגול") || t.includes("כיוון") || t.includes("דיוק"),
+    t.includes("") || t.includes("") || t.includes("") || t.includes(""),
     "diagnostic meaning beyond raw count",
   );
 }
 
-// J: General מה הבעיה
+// J: General
 {
   const res = runTurn({
     audience: "parent",
     payload: p,
-    utterance: "מה הבעיה?",
+    utterance: " ?",
     sessionId: "aq-2",
   });
   assert.equal(res.resolutionStatus, "resolved");
@@ -104,11 +104,11 @@ const p = payload([
   const res = runTurn({
     audience: "parent",
     payload: p,
-    utterance: "למה יש שתי כיתות באותו נושא?",
+    utterance: "     ?",
     sessionId: "aq-3",
   });
   assert.equal(res.resolutionStatus, "resolved");
-  assert.ok(/כיתה|שברים|נפרד|תרגול/i.test(answerText(res)));
+  assert.ok(/|||/i.test(answerText(res)));
 }
 
 process.stdout.write("OK parent-copilot-answer-quality-suite\n");

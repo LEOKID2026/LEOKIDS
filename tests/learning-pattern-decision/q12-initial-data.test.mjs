@@ -45,10 +45,10 @@ function assertInitialOnly(lpd) {
   assert.notEqual(lpd.findingType, "practice_focus");
   assert.notEqual(lpd.topicStatus, "practice_focus");
   assert.notEqual(lpd.topicStatus, "difficulty_observed");
-  assert.ok(!lpd.parentVisibleFinding.includes("כדאי לחזק"));
-  assert.ok(!lpd.parentVisibleFinding.includes("כדאי לשים דגש"));
-  assert.ok(!lpd.parentVisibleFinding.includes("דפוס חוזר"));
-  assert.ok(!lpd.parentVisibleFinding.includes("הצלחה טובה"));
+  assert.ok(!lpd.parentVisibleFinding.includes(" "));
+  assert.ok(!lpd.parentVisibleFinding.includes("  "));
+  assert.ok(!lpd.parentVisibleFinding.includes(" "));
+  assert.ok(!lpd.parentVisibleFinding.includes(" "));
   assert.equal(findForbiddenParentWords(lpd.parentVisibleFinding).length, 0);
   assert.equal(lpd.recommendedFocus, null);
 }
@@ -58,7 +58,7 @@ function assertInitialOnly(lpd) {
   const lpd = buildCase({
     subjectId: "math",
     bucket: "addition",
-    name: "חיבור",
+    name: "",
     q: 1,
     c: 0,
     w: 1,
@@ -74,7 +74,7 @@ function assertInitialOnly(lpd) {
   const lpd = buildCase({
     subjectId: "math",
     bucket: "addition",
-    name: "חיבור",
+    name: "",
     q: 2,
     c: 0,
     w: 2,
@@ -90,7 +90,7 @@ function assertInitialOnly(lpd) {
   const lpd = buildCase({
     subjectId: "geometry",
     bucket: "perimeter",
-    name: "היקף",
+    name: "",
     q: 2,
     c: 0,
     w: 2,
@@ -107,7 +107,7 @@ function assertInitialOnly(lpd) {
   const lpd = buildCase({
     subjectId: "english",
     bucket: "grammar",
-    name: "דקדוק",
+    name: "",
     q: 2,
     c: 2,
     w: 0,
@@ -123,7 +123,7 @@ function assertInitialOnly(lpd) {
   const lpd = buildCase({
     subjectId: "english",
     bucket: "grammar",
-    name: "דקדוק",
+    name: "",
     q: 2,
     c: 0,
     w: 2,

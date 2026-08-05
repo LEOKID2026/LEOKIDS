@@ -42,11 +42,11 @@ function dedupe(lines) {
 }
 function sectionTxt(title, lines) {
   const body = (Array.isArray(lines) ? lines : []).map((x) => `- ${x}`).join("\n");
-  return `## ${title}\n${body || "- אין נתונים להצגה."}\n`;
+  return `## ${title}\n${body || "-   ."}\n`;
 }
 function sectionHtml(title, lines) {
   const items = (Array.isArray(lines) ? lines : []).map((line) => `<li>${String(line || "")}</li>`).join("");
-  return `<section><h2>${title}</h2>${items ? `<ul>${items}</ul>` : "<p>אין נתונים להצגה.</p>"}</section>`;
+  return `<section><h2>${title}</h2>${items ? `<ul>${items}</ul>` : "<p>  .</p>"}</section>`;
 }
 function shortReportFromDetailed(detailed) {
   const top = detailed?.parentProductContractV1?.top || {};
@@ -84,62 +84,62 @@ for (const persona of PARENT_REPORT_PERSONA_CORPUS) {
     ...(normalizedExecutive?.monitoringOnlyAreasHe || []),
   ]);
   const topLines = dedupe([
-    `מצב: ${topContract.mainStatusHe || ""}`,
-    `מיקוד עיקרי: ${topContract.mainPriorityHe || ""}`,
-    `מה עושים עכשיו: ${topContract.doNowHe || ""}`,
-    `למה: ${topContract.whyHe || ""}`,
-    `מה לא לעשות כרגע: ${topContract.avoidNowHe || ""}`,
-    `רמת ודאות: ${topContract.confidenceHe || ""}`,
-    `בסיס נתונים: ${topContract.evidenceSummaryHe || ""}`,
-    `בדיקה הבאה: ${topContract.nextCheckHe || ""}`,
+    `: ${topContract.mainStatusHe || ""}`,
+    ` : ${topContract.mainPriorityHe || ""}`,
+    `  : ${topContract.doNowHe || ""}`,
+    `: ${topContract.whyHe || ""}`,
+    `   : ${topContract.avoidNowHe || ""}`,
+    ` : ${topContract.confidenceHe || ""}`,
+    ` : ${topContract.evidenceSummaryHe || ""}`,
+    ` : ${topContract.nextCheckHe || ""}`,
   ]);
   const subjectLines = [];
   for (const [sid, row] of Object.entries(subjectContracts)) {
     const lines = dedupe([
-      `מקצוע: ${sid}`,
-      `סיכום: ${row?.mainStatusHe || ""}`,
-      `מיקוד: ${row?.mainPriorityHe || ""}`,
-      `מה עושים עכשיו: ${row?.doNowHe || ""}`,
-      `מה לא לעשות כרגע: ${row?.avoidNowHe || ""}`,
-      `רמת ודאות: ${row?.confidenceHe || ""}`,
+      `: ${sid}`,
+      `: ${row?.mainStatusHe || ""}`,
+      `: ${row?.mainPriorityHe || ""}`,
+      `  : ${row?.doNowHe || ""}`,
+      `   : ${row?.avoidNowHe || ""}`,
+      ` : ${row?.confidenceHe || ""}`,
     ]);
     subjectLines.push(...lines);
   }
   const summaryLines = dedupe([
-    `מסקנת הורה צפויה: ${persona.expectedParentConclusionHe}`,
-    `מיקוד ראשי בפועל: ${cleanText(topContract.mainPriorityHe)}`,
-    `פעולה מיידית בפועל: ${cleanText(topContract.doNowHe)}`,
-    `מה לא לעשות בפועל: ${cleanText(topContract.avoidNowHe)}`,
+    `  : ${persona.expectedParentConclusionHe}`,
+    `  : ${cleanText(topContract.mainPriorityHe)}`,
+    `  : ${cleanText(topContract.doNowHe)}`,
+    `   : ${cleanText(topContract.avoidNowHe)}`,
   ]);
 
-  const shortTxt = sectionTxt("סיכום קצר להורה", [
-    `מצב: ${short.parentProductContractPreview.mainStatusHe}`,
-    `מיקוד עיקרי: ${short.parentProductContractPreview.mainPriorityHe}`,
-    `מה עושים עכשיו: ${short.parentProductContractPreview.doNowHe}`,
-    `מה לא לעשות כרגע: ${short.parentProductContractPreview.avoidNowHe}`,
+  const shortTxt = sectionTxt("  ", [
+    `: ${short.parentProductContractPreview.mainStatusHe}`,
+    ` : ${short.parentProductContractPreview.mainPriorityHe}`,
+    `  : ${short.parentProductContractPreview.doNowHe}`,
+    `   : ${short.parentProductContractPreview.avoidNowHe}`,
   ]);
   const detailedTxt = [
-    sectionTxt("סיכום להורה", topLines),
-    sectionTxt("סיכום לתקופה", executiveLines),
-    sectionTxt("סיכום מקצועות להורה", subjectLines),
-    sectionTxt("רעיונות קצרים לבית", detailed?.homePlan?.itemsHe || []),
-    sectionTxt("כיוון לימים הבאים", detailed?.nextPeriodGoals?.itemsHe || []),
+    sectionTxt(" ", topLines),
+    sectionTxt(" ", executiveLines),
+    sectionTxt("  ", subjectLines),
+    sectionTxt("  ", detailed?.homePlan?.itemsHe || []),
+    sectionTxt("  ", detailed?.nextPeriodGoals?.itemsHe || []),
   ].join("\n");
-  const summaryTxt = sectionTxt("תקציר לביקורת", summaryLines);
+  const summaryTxt = sectionTxt(" ", summaryLines);
 
   const html = `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><title>${persona.id}</title></head><body>
 <h1>${persona.titleHe}</h1>
 <p>${persona.descriptionHe}</p>
 <p><strong>Expected:</strong> ${persona.expectedParentConclusionHe}</p>
-${sectionHtml("סיכום קצר להורה", [
-  `מצב: ${short.parentProductContractPreview.mainStatusHe}`,
-  `מיקוד עיקרי: ${short.parentProductContractPreview.mainPriorityHe}`,
-  `מה עושים עכשיו: ${short.parentProductContractPreview.doNowHe}`,
-  `מה לא לעשות כרגע: ${short.parentProductContractPreview.avoidNowHe}`,
+${sectionHtml("  ", [
+  `: ${short.parentProductContractPreview.mainStatusHe}`,
+  ` : ${short.parentProductContractPreview.mainPriorityHe}`,
+  `  : ${short.parentProductContractPreview.doNowHe}`,
+  `   : ${short.parentProductContractPreview.avoidNowHe}`,
 ])}
-${sectionHtml("סיכום להורה", topLines)}
-${sectionHtml("סיכום לתקופה", executiveLines)}
-${sectionHtml("סיכום מקצועות להורה", subjectLines)}
+${sectionHtml(" ", topLines)}
+${sectionHtml(" ", executiveLines)}
+${sectionHtml("  ", subjectLines)}
 </body></html>`;
 
   writeFileSync(join(JSON_DIR, `${persona.id}.short.json`), JSON.stringify(short, null, 2), "utf8");
@@ -156,12 +156,12 @@ ${sectionHtml("סיכום מקצועות להורה", subjectLines)}
   );
 
   reviewerRows.push(`## ${persona.id} — ${persona.titleHe}`);
-  reviewerRows.push(`- קטגוריה: ${persona.category}`);
-  reviewerRows.push(`- סיכום מצב ילד/ה: ${persona.descriptionHe}`);
-  reviewerRows.push(`- ציפייה/אורקל: ${persona.expectedParentConclusionHe}`);
+  reviewerRows.push(`- : ${persona.category}`);
+  reviewerRows.push(`-   /: ${persona.descriptionHe}`);
+  reviewerRows.push(`- /: ${persona.expectedParentConclusionHe}`);
   reviewerRows.push(`- short: \`reports/parent-report-persona-corpus/text/${persona.id}.short.txt\``);
   reviewerRows.push(`- detailed: \`reports/parent-report-persona-corpus/text/${persona.id}.detailed.txt\``);
-  reviewerRows.push("- שאלות סקירה:");
+  reviewerRows.push("-  :");
   reviewerRows.push("  - Did you understand within 10 seconds what is happening?");
   reviewerRows.push("  - Does the recommendation match the child profile?");
   reviewerRows.push("  - Is the recommendation too strong / too weak / right?");
@@ -174,11 +174,11 @@ ${sectionHtml("סיכום מקצועות להורה", subjectLines)}
   reviewerRows.push("");
 
   reviewerBlindRows.push(`## ${persona.id} — ${persona.titleHe}`);
-  reviewerBlindRows.push(`- קטגוריה: ${persona.category}`);
-  reviewerBlindRows.push(`- סיכום מצב ילד/ה: ${persona.descriptionHe}`);
+  reviewerBlindRows.push(`- : ${persona.category}`);
+  reviewerBlindRows.push(`-   /: ${persona.descriptionHe}`);
   reviewerBlindRows.push(`- short: \`reports/parent-report-persona-corpus/text/${persona.id}.short.txt\``);
   reviewerBlindRows.push(`- detailed: \`reports/parent-report-persona-corpus/text/${persona.id}.detailed.txt\``);
-  reviewerBlindRows.push("- שאלות סקירה:");
+  reviewerBlindRows.push("-  :");
   reviewerBlindRows.push("  - Did you understand within 10 seconds what is happening?");
   reviewerBlindRows.push("  - Does the recommendation match the child profile?");
   reviewerBlindRows.push("  - Is the recommendation too strong / too weak / right?");

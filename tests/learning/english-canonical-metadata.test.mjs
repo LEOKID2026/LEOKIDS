@@ -34,7 +34,7 @@ const GRAMMAR_ROW = {
 
 const TRANSLATION_ROW = {
   en: "Please sit down",
-  he: "בבקשה שבו",
+  he: " ",
   patternFamily: "translation_classroom_g1",
   difficulty: "basic",
   cognitiveLevel: "recall",
@@ -113,7 +113,7 @@ describe("Q2-C3 - English pool enrichment", () => {
     const cm = attachCanonicalMetadataToEnglishQuestion(
       {
         question: "placeholder",
-        correctAnswer: "הבנתי",
+        correctAnswer: "",
         topic: "grammar",
         qType: "choice",
         params: { patternFamily: "english_empty_pool" },

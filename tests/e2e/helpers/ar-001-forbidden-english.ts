@@ -23,7 +23,7 @@ export function findForbiddenChromeSnippets(text) {
  * @returns {boolean}
  */
 export function hasHebrewOrIsraeliResidue(text) {
-  return /[\u0590-\u05FF]/.test(text) || /\bIsrael\b/i.test(text) || /ישראל/.test(text);
+  return /[\u0590-\u05FF]/.test(text) || /\bIsrael\b/i.test(text) || //.test(text);
 }
 
 /**

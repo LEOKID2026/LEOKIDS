@@ -36,7 +36,7 @@ export default function LeoDogSvgVisual({
 
   return (
     <div className={styles.dogWrap} data-anim={anim} data-mood={mood} data-render="svg">
-      <svg viewBox="0 0 240 160" className={styles.dogSvg} aria-label="ליאו הכלב" role="img">
+      <svg viewBox="0 0 240 160" className={styles.dogSvg} aria-label=" " role="img">
         <ellipse cx="120" cy="148" rx="52" ry="8" fill="rgba(0,0,0,0.15)" />
         <g className={styles.tail}>
           <path
@@ -123,11 +123,11 @@ export default function LeoDogSvgVisual({
 export function LeoDogTouchZones({ onTouchHead, onTouchNose, onTouchBelly, onTouchPaw, onTouchBody }) {
   return (
     <>
-      <button type="button" className={`${styles.hitZone} ${styles.hitHead}`} aria-label="ליטוף ראש" onClick={onTouchHead} />
-      <button type="button" className={`${styles.hitZone} ${styles.hitNose}`} aria-label="לחיצה על האף" onClick={onTouchNose} />
-      <button type="button" className={`${styles.hitZone} ${styles.hitBelly}`} aria-label="ליטוף בטן" onClick={onTouchBelly} />
-      <button type="button" className={`${styles.hitZone} ${styles.hitPaw}`} aria-label="כף יד" onClick={onTouchPaw} />
-      <button type="button" className={`${styles.hitZone} ${styles.hitBody}`} aria-label="ליטוף גב" onClick={onTouchBody} />
+      <button type="button" className={`${styles.hitZone} ${styles.hitHead}`} aria-label=" " onClick={onTouchHead} />
+      <button type="button" className={`${styles.hitZone} ${styles.hitNose}`} aria-label="  " onClick={onTouchNose} />
+      <button type="button" className={`${styles.hitZone} ${styles.hitBelly}`} aria-label=" " onClick={onTouchBelly} />
+      <button type="button" className={`${styles.hitZone} ${styles.hitPaw}`} aria-label=" " onClick={onTouchPaw} />
+      <button type="button" className={`${styles.hitZone} ${styles.hitBody}`} aria-label=" " onClick={onTouchBody} />
     </>
   );
 }

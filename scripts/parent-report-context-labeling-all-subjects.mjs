@@ -68,8 +68,8 @@ const mathFailures = runContextLabelingMatrixAssertions(mathBase, mathDetailed, 
       splitG4: "fractions::grade:g4",
       splitG5: "fractions::grade:g5",
       soloG4: "subtraction::grade:g4",
-      splitLabelHe: "שברים",
-      soloLabelHe: "חיסור",
+      splitLabelHe: "",
+      soloLabelHe: "",
     };
   },
 });

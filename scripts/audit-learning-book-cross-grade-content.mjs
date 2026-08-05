@@ -23,10 +23,10 @@ const KEY_SECTIONS = [1, 2, 3, 4, 5, 6, 7];
 const COMPARE_SECTIONS = [2, 3, 4, 6];
 
 const PLACEHOLDER_MARKERS = [
-  "תוכן יתווסף בהמשך",
-  "בקרוב נוסיף הסבר",
-  "הדף הזה מוכן לתוכן",
-  "ספר בהכנה",
+  "  ",
+  "  ",
+  "   ",
+  " ",
 ];
 
 /** Expected typical max operand magnitude in core sections (2–4) by grade. */
@@ -167,7 +167,7 @@ function isPlaceholderPage(page) {
   const markerHits = PLACEHOLDER_MARKERS.filter((m) => allBody.includes(m)).length;
   const wordCount = normalizeText(allBody).split(/\s+/).filter(Boolean).length;
   if (markerHits >= 2 && wordCount < 80) return true;
-  if (allBody.includes("ספר בהכנה") && wordCount < 100) return true;
+  if (allBody.includes(" ") && wordCount < 100) return true;
   return false;
 }
 
@@ -392,7 +392,7 @@ function generateReport(data) {
   lines.push("");
   lines.push(`Generated: ${new Date().toISOString().slice(0, 10)}`);
   lines.push("");
-  lines.push("Scope: Math (חשבון) + Geometry (גאומטריה), grades G1–G6 draft markdown.");
+  lines.push("Scope: Math () + Geometry (), grades G1–G6 draft markdown.");
   lines.push("Audit-only — no content was modified.");
   lines.push("");
 
@@ -413,7 +413,7 @@ function generateReport(data) {
   lines.push(`| PLACEHOLDER_ONLY | ${data.counts.PLACEHOLDER_ONLY} |`);
   lines.push("");
 
-  lines.push("## B. Math / חשבון findings");
+  lines.push("## B. Math /  findings");
   lines.push("");
   lines.push(
     "| Topic family | Grades | Files | Similarity / duplication signal | Age-fit verdict | Notes | Recommended action |"
@@ -426,7 +426,7 @@ function generateReport(data) {
   }
   lines.push("");
 
-  lines.push("## C. Geometry / גאומטריה findings");
+  lines.push("## C. Geometry /  findings");
   lines.push("");
   lines.push(
     "| Topic family | Grades | Files | Similarity / duplication signal | Age-fit verdict | Notes | Recommended action |"

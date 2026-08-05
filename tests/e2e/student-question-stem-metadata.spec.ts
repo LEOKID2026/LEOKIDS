@@ -11,22 +11,22 @@ const SCREENSHOT_DIR = "reports/question-audit/screenshots";
 
 /** UI-facing forbidden metadata (stricter than generator-only checks). */
 const FORBIDDEN_UI_PATTERNS: { id: string; re: RegExp }[] = [
-  { id: "level_he", re: /רמה\s+(קלה|בינונית|קשה|מאתגרת)/u },
-  { id: "level_ramat", re: /רמת\s+(easy|medium|hard|קלה|בינונית|קשה)/iu },
-  { id: "topic_key", re: /(?:^|[·•-(])\s*נושא\s+[a-z0-9_-]+/iu },
-  { id: "domain_key", re: /(?:^|[·•-(])\s*תחום\s+[a-z0-9_-]+/iu },
-  { id: "unique_mark", re: /סימון\s+ייחודי/u },
-  { id: "school_inquiry", re: /חקר\s+בית[\s -]?ספרי/u },
-  { id: "question_about_topic", re: /שאלה\s+בנושא/u },
-  { id: "grade_label", re: /(?:^|[·•-(])\s*כיתה\s+[אבגדהו]['׳]?/u },
-  { id: "concepts_framing", re: /^מושגים\s*\((קל|בינוני|אתגר)\)\s*:/u },
+  { id: "level_he", re: /\s+(|||)/u },
+  { id: "level_ramat", re: /\s+(easy|medium|hard|||)/iu },
+  { id: "topic_key", re: /(?:^|[·•-(])\s*\s+[a-z0-9_-]+/iu },
+  { id: "domain_key", re: /(?:^|[·•-(])\s*\s+[a-z0-9_-]+/iu },
+  { id: "unique_mark", re: /\s+/u },
+  { id: "school_inquiry", re: /\s+[\s -]?/u },
+  { id: "question_about_topic", re: /\s+/u },
+  { id: "grade_label", re: /(?:^|[·•-(])\s*\s+[][']?/u },
+  { id: "concepts_framing", re: /^\s*\((||)\)\s*:/u },
   {
     id: "topic_difficulty_paren",
-    re: /^[^:\n]{1,72}\((קל|בינוני|אתגר|מאתגר)\)\s*:?\s*$/u,
+    re: /^[^:\n]{1,72}\((|||)\)\s*:?\s*$/u,
   },
   {
     id: "grade_difficulty_paren",
-    re: /^כיתה\s+[אבגדהו]['׳]?\s*\((קל|בינוני|אתגר|מאתגר)\)\s*:?\s*$/u,
+    re: /^\s+[][']?\s*\((|||)\)\s*:?\s*$/u,
   },
   {
     id: "level_en_meta",
@@ -71,9 +71,9 @@ async function mockStudentSession(page: Page) {
 }
 
 async function confirmMixedModal(page: Page) {
-  const save = page.getByRole("button", { name: "שמור", exact: true });
+  const save = page.getByRole("button", { name: "", exact: true });
   if (await save.isVisible()) {
-    const allBtn = page.getByRole("button", { name: "הכל", exact: true });
+    const allBtn = page.getByRole("button", { name: "", exact: true });
     if (await allBtn.isVisible()) await allBtn.click();
     await save.click();
   }
@@ -109,9 +109,9 @@ const SUBJECTS: SubjectFlow[] = [
     gradesToSample: ["1", "3", "6"],
     levelsToSample: ["easy", "medium", "hard"],
     modesToSample: [
-      { key: "learning", buttonName: /^למידה$/ },
-      { key: "practice", buttonName: /^תרגול$/ },
-      { key: "challenge", buttonName: /^אתגר$/ },
+      { key: "learning", buttonName: /^$/ },
+      { key: "practice", buttonName: /^$/ },
+      { key: "challenge", buttonName: /^$/ },
     ],
     setupTopic: async (page) => {
       await page.getByTestId("math-operation-select").selectOption("addition");
@@ -128,8 +128,8 @@ const SUBJECTS: SubjectFlow[] = [
     gradesToSample: ["g1", "g3", "g6"],
     levelsToSample: ["easy", "medium", "hard"],
     modesToSample: [
-      { key: "learning", buttonName: /^למידה$/ },
-      { key: "practice", buttonName: /^תרגול$/ },
+      { key: "learning", buttonName: /^$/ },
+      { key: "practice", buttonName: /^$/ },
     ],
     setupTopic: async (page) => {
       await selectFirstTopicOption(page, "geometry-topic-select");
@@ -146,9 +146,9 @@ const SUBJECTS: SubjectFlow[] = [
     gradesToSample: ["g1", "g3", "g6"],
     levelsToSample: ["easy", "medium", "hard"],
     modesToSample: [
-      { key: "learning", buttonName: /^למידה$/ },
-      { key: "practice", buttonName: /^תרגול$/ },
-      { key: "challenge", buttonName: /^אתגר/ },
+      { key: "learning", buttonName: /^$/ },
+      { key: "practice", buttonName: /^$/ },
+      { key: "challenge", buttonName: /^/ },
     ],
     setupTopic: async (page) => {
       const topicSel = page.getByTestId("science-topic-select");
@@ -169,8 +169,8 @@ const SUBJECTS: SubjectFlow[] = [
     gradesToSample: ["1", "3", "6"],
     levelsToSample: ["easy", "medium", "hard"],
     modesToSample: [
-      { key: "learning", buttonName: /^למידה$/ },
-      { key: "practice", buttonName: /^תרגול$/ },
+      { key: "learning", buttonName: /^$/ },
+      { key: "practice", buttonName: /^$/ },
     ],
     setupTopic: async (page) => {
       await selectFirstTopicOption(page, "hebrew-topic-select");
@@ -187,8 +187,8 @@ const SUBJECTS: SubjectFlow[] = [
     gradesToSample: ["1", "3", "6"],
     levelsToSample: ["easy", "medium", "hard"],
     modesToSample: [
-      { key: "learning", buttonName: /^למידה$/ },
-      { key: "practice", buttonName: /^תרגול$/ },
+      { key: "learning", buttonName: /^$/ },
+      { key: "practice", buttonName: /^$/ },
     ],
     setupTopic: async (page) => {
       await selectFirstTopicOption(page, "english-topic-select");
@@ -204,8 +204,8 @@ const SUBJECTS: SubjectFlow[] = [
     gradesToSample: ["1", "3", "6"],
     levelsToSample: ["easy", "medium", "hard"],
     modesToSample: [
-      { key: "learning", buttonName: /^למידה$/ },
-      { key: "practice", buttonName: /^תרגול$/ },
+      { key: "learning", buttonName: /^$/ },
+      { key: "practice", buttonName: /^$/ },
     ],
     setupTopic: async (page) => {
       const topicSelect = page.locator("select").nth(2);
@@ -258,7 +258,7 @@ async function startRound(page: Page, subj: SubjectFlow) {
   if (subj.setupTopic) await subj.setupTopic(page);
   await confirmMixedModal(page);
   if (subj.name === "moledet") {
-    await page.getByRole("button", { name: /התחל/ }).click();
+    await page.getByRole("button", { name: // }).click();
   } else {
     const start = page.getByTestId(subj.startTestId);
     await expect(start).toBeEnabled({ timeout: 15_000 });
@@ -277,10 +277,10 @@ test.describe("Student question stem - rendered DOM (mobile)", () => {
 
   test("sanitizer preserves valid educational wording", () => {
     const cases = [
-      "בכיתה יש 24 ילדים ו-6 ילדות. כמה ילדים בסך הכול?",
-      "בבית הספר יש מגרש מלבני. רוצים גדר סביב המגרש.",
-      "מה נושא המשפט הראשי בקטע?",
-      "לפני ניסוי בכיתה, מה חשוב לתעד?",
+      "  24  -6 .    ?",
+      "    .    .",
+      "    ?",
+      "  ,   ?",
     ];
     for (const raw of cases) {
       const cleaned = sanitizeStudentQuestionStem(raw);
@@ -335,7 +335,7 @@ test.describe("Student question stem - rendered DOM (mobile)", () => {
         const stop = page.getByTestId("learning-stop-game");
         if (await stop.isVisible()) await stop.click();
         else {
-          const stopMoledet = page.getByRole("button", { name: /עצור/ });
+          const stopMoledet = page.getByRole("button", { name: // });
           if (await stopMoledet.isVisible()) await stopMoledet.click();
         }
       }

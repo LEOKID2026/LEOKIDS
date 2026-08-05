@@ -144,8 +144,8 @@ async function mockStudentSession(page: Page) {
 }
 
 async function confirmMixedModal(page: Page) {
-  const saveAr = page.getByRole("button", { name: /حفظ|שמור|Save/i });
-  const allAr = page.getByRole("button", { name: /الكل|הכל|All/i });
+  const saveAr = page.getByRole("button", { name: /حفظ||Save/i });
+  const allAr = page.getByRole("button", { name: /الكل||All/i });
   if (await allAr.first().isVisible().catch(() => false)) {
     await allAr.first().click();
   }

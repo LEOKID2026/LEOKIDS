@@ -34,7 +34,7 @@ const TEACHER_DASHBOARD_PHYSICAL = [
     physicalClasses: 6,
     minStudents: 20,
     maxStudents: 24,
-    subjects: ["מתמטיקה", "גאומטריה"],
+    subjects: ["", ""],
   },
   {
     email: "michal@leo-k.com",
@@ -42,7 +42,7 @@ const TEACHER_DASHBOARD_PHYSICAL = [
     physicalClasses: 6,
     minStudents: 20,
     maxStudents: 24,
-    subjects: ["אנגלית"],
+    subjects: [""],
   },
   {
     email: "liron@leo-k.com",
@@ -50,7 +50,7 @@ const TEACHER_DASHBOARD_PHYSICAL = [
     physicalClasses: 9,
     minStudents: 20,
     maxStudents: 24,
-    subjects: ["מדעים"],
+    subjects: [""],
   },
 ];
 
@@ -68,11 +68,11 @@ async function supabasePasswordToken(email: string, password: string): Promise<s
   return json.access_token || null;
 }
 
-const NOT_FOUND_RE = /404|This page could not be found|הדף לא נמצא/u;
+const NOT_FOUND_RE = /404|This page could not be found|  /u;
 
 async function teacherLogin(page: import("@playwright/test").Page, email: string, password: string) {
   await page.goto("/teacher/login", { waitUntil: "domcontentloaded" });
-  await page.getByPlaceholder("המייל שלך").fill(email);
+  await page.getByPlaceholder(" ").fill(email);
   await page.locator('input[type="password"]').fill(password);
   await page.locator('[data-testid="teacher-login-root"] form button[type="submit"]').click();
 }
@@ -99,13 +99,13 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
 
     await page.goto("/admin/schools", { waitUntil: "domcontentloaded" });
     await assertNo404(page);
-    await expect(page.getByRole("heading", { name: "ניהול בתי ספר" })).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByRole("heading", { name: "  " })).toBeVisible({ timeout: 30_000 });
 
     const demoLink = page.locator(`a[href="/admin/schools/${DEMO_SCHOOL_ID}"]`);
     await expect(demoLink).toBeVisible({ timeout: 20_000 });
     await demoLink.click();
     await assertNo404(page);
-    await expect(page.getByText("בית ספר ניסוי לאו קידס")).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByText("    ")).toBeVisible({ timeout: 20_000 });
   });
 
   test("T10 school manager portal pages and reports", async ({ page }) => {
@@ -130,18 +130,18 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
     }
 
     await page.goto("/school/teachers", { waitUntil: "domcontentloaded" });
-    await expect(page.getByText(/דן כהן/u)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/ /u)).toBeVisible({ timeout: 15_000 });
     await expect(page.getByText(/^math$/i)).toHaveCount(0);
     await expect(page.getByText(/^geometry$/i)).toHaveCount(0);
     await expect(page.getByText(/guided_practice|school_admin|moledet_geography/u)).toHaveCount(0);
-    await expect(page.getByText(/מתמטיקה · גאומטריה/u).first()).toBeVisible();
+    await expect(page.getByText(/ · /u).first()).toBeVisible();
 
     const teachersListRes = await page.request.get("/api/school/teachers", {
       headers: { Authorization: `Bearer ${token}` },
     });
     expect(teachersListRes.status()).toBe(200);
     const danTeacher = ((await teachersListRes.json())?.data?.teachers || []).find((t) =>
-      /דן כהן/u.test(String(t.displayName || ""))
+      / /u.test(String(t.displayName || ""))
     );
     expect(danTeacher?.teacherId, "Dan Cohen teacher id").toBeTruthy();
     const danSubjectsRes = await page.request.get(
@@ -157,11 +157,11 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
     await assertNo404(page);
     await expect(page.getByTestId("school-teacher-page-ready")).toBeVisible({ timeout: 45_000 });
     const teacherReady = page.getByTestId("school-teacher-page-ready");
-    await expect(teacherReady.getByText("טוען…", { exact: true })).toHaveCount(0);
+    await expect(teacherReady.getByText("…", { exact: true })).toHaveCount(0);
     await expect(teacherReady).not.toContainText(/guided_practice|school_admin|moledet_geography/u);
 
-    const classesHeading = teacherReady.getByRole("heading", { name: "כיתות של המורה" });
-    const permissionsHeading = teacherReady.getByRole("heading", { name: "הרשאות מקצועות" });
+    const classesHeading = teacherReady.getByRole("heading", { name: "  " });
+    const permissionsHeading = teacherReady.getByRole("heading", { name: " " });
     await expect(classesHeading).toBeVisible({ timeout: 15_000 });
     await expect(permissionsHeading).toBeVisible({ timeout: 15_000 });
     const classesBox = await classesHeading.boundingBox();
@@ -178,17 +178,17 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
 
     const physicalCards = teacherReady.locator('[data-testid^="school-teacher-physical-class-card-"]');
     await expect(physicalCards).toHaveCount(6, { timeout: 15_000 });
-    await expect(physicalCards.first()).toContainText(/מקצועות:\s*מתמטיקה,\s*גאומטריה/u);
-    await expect(physicalCards.first()).toContainText(/\d+\s+ילדים/u);
+    await expect(physicalCards.first()).toContainText(/:\s*,\s*/u);
+    await expect(physicalCards.first()).toContainText(/\d+\s+/u);
     await expect(teacherReady.getByText(/^math$/i)).toHaveCount(0);
     await expect(teacherReady.getByText(/^geometry$/i)).toHaveCount(0);
 
     await physicalCards.first().click();
     const picker = page.getByTestId("school-teacher-subject-picker-modal");
     await expect(picker).toBeVisible({ timeout: 10_000 });
-    await expect(picker.getByText("מתמטיקה")).toBeVisible();
-    await expect(picker.getByText("גאומטריה")).toBeVisible();
-    await picker.getByRole("button", { name: "דוח כיתה" }).first().click();
+    await expect(picker.getByText("")).toBeVisible();
+    await expect(picker.getByText("")).toBeVisible();
+    await picker.getByRole("button", { name: " " }).first().click();
     await expect(page.getByTestId("report-hub-main")).toBeVisible({ timeout: 20_000 });
     await expect(page.getByTestId("report-hub-summary-ready")).toBeVisible({ timeout: 60_000 });
     await page.getByTestId("report-hub-main").getByTestId("report-modal-close").click();
@@ -196,38 +196,38 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
 
     await physicalCards.first().click();
     await expect(picker).toBeVisible({ timeout: 10_000 });
-    await picker.getByRole("button", { name: "ילדים בכיתה" }).first().click();
+    await picker.getByRole("button", { name: " " }).first().click();
     const studentsModal = page.getByTestId("school-teacher-class-students-modal");
     await expect(studentsModal).toBeVisible({ timeout: 15_000 });
-    await expect(studentsModal.getByRole("button", { name: "דוח ילד/ה" }).first()).toBeVisible({
+    await expect(studentsModal.getByRole("button", { name: " /" }).first()).toBeVisible({
       timeout: 15_000,
     });
-    await studentsModal.getByRole("button", { name: "סגירה", exact: false }).click();
+    await studentsModal.getByRole("button", { name: "", exact: false }).click();
     await expect(studentsModal).toHaveCount(0);
     await picker.getByTestId("report-modal-close").click();
     await expect(picker).toHaveCount(0);
 
-    await expect(teacherReady.getByText(/מקצועות מורשים/u)).toBeVisible({ timeout: 15_000 });
+    await expect(teacherReady.getByText(/ /u)).toBeVisible({ timeout: 15_000 });
     await expect(teacherReady.getByTestId("school-subject-select-he")).toBeVisible({ timeout: 10_000 });
     const optionTexts = await teacherReady.getByTestId("school-subject-select-he").locator("option").allTextContents();
     expect(optionTexts.some((t) => /\b(math|geometry|english|science)\b/i.test(String(t || "")))).toBe(false);
 
     await page.goto("/school/classes", { waitUntil: "domcontentloaded" });
-    await expect(page.getByRole("heading", { name: "בחרו שכבה" })).toBeVisible({ timeout: 30_000 });
-    await page.getByRole("button", { name: "כיתה ג׳" }).click();
-    await expect(page.getByRole("heading", { name: /בחרו כיתה/u })).toBeVisible({ timeout: 15_000 });
-    await page.getByRole("button", { name: /כיתה ג׳ 1/u }).click();
-    await expect(page.getByRole("heading", { name: /מקצועות הכיתה/u })).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText("מתמטיקה")).toBeVisible();
-    await expect(page.getByText("גאומטריה")).toBeVisible();
-    await page.getByRole("button", { name: "דוח כיתה" }).first().click();
+    await expect(page.getByRole("heading", { name: " " })).toBeVisible({ timeout: 30_000 });
+    await page.getByRole("button", { name: " " }).click();
+    await expect(page.getByRole("heading", { name: / /u })).toBeVisible({ timeout: 15_000 });
+    await page.getByRole("button", { name: /  1/u }).click();
+    await expect(page.getByRole("heading", { name: / /u })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("")).toBeVisible();
+    await expect(page.getByText("")).toBeVisible();
+    await page.getByRole("button", { name: " " }).first().click();
     await expect(page.getByTestId("report-hub-main")).toBeVisible({ timeout: 20_000 });
     await expect(page.getByTestId("report-hub-summary-ready")).toBeVisible({ timeout: 60_000 });
     const classDialog = page.getByTestId("report-hub-main");
-    await expect(classDialog.getByText("טוען דוח…")).toHaveCount(0);
+    await expect(classDialog.getByText(" …")).toHaveCount(0);
     await expect(classDialog.getByTestId("report-nav-students")).toBeVisible();
     await expect(classDialog.getByTestId("report-nav-activities")).toBeVisible();
-    await expect(classDialog.getByRole("heading", { name: "פעילויות אחרונות" })).toHaveCount(0);
+    await expect(classDialog.getByRole("heading", { name: " " })).toHaveCount(0);
     await expect(classDialog.getByTestId("report-nav-distribution")).toBeVisible();
     await classDialog.getByTestId("report-nav-activities").click();
     await expect(page.getByTestId("report-hub-detail")).toBeVisible({ timeout: 10_000 });
@@ -236,33 +236,33 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
     await classDialog.getByTestId("report-modal-close").click();
     await expect(page.getByTestId("report-hub-main")).toHaveCount(0);
 
-    await page.getByRole("button", { name: "דוח כיתה" }).nth(1).click();
+    await page.getByRole("button", { name: " " }).nth(1).click();
     await expect(page.getByTestId("report-hub-main")).toBeVisible({ timeout: 20_000 });
     await expect(page.getByTestId("report-hub-summary-ready")).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByTestId("report-hub-main").getByText("טוען דוח…")).toHaveCount(0);
+    await expect(page.getByTestId("report-hub-main").getByText(" …")).toHaveCount(0);
     await page.getByTestId("report-nav-activities").click();
     await expect(page.getByTestId("report-hub-detail")).toBeVisible({ timeout: 10_000 });
     await page.getByTestId("report-hub-detail").getByTestId("report-modal-back").click();
     await page.getByTestId("report-hub-main").getByTestId("report-modal-close").click();
 
     await page.goto("/school/students", { waitUntil: "domcontentloaded" });
-    await expect(page.getByRole("heading", { name: "בחרו שכבה" })).toBeVisible({ timeout: 15_000 });
-    await page.getByRole("button", { name: "כיתה ג׳" }).click();
-    await page.getByRole("button", { name: /כיתה ג׳ 1/u }).click();
-    await expect(page.getByRole("button", { name: "דוח ילד/ה" }).first()).toBeVisible({
+    await expect(page.getByRole("heading", { name: " " })).toBeVisible({ timeout: 15_000 });
+    await page.getByRole("button", { name: " " }).click();
+    await page.getByRole("button", { name: /  1/u }).click();
+    await expect(page.getByRole("button", { name: " /" }).first()).toBeVisible({
       timeout: 20_000,
     });
-    await page.getByRole("button", { name: "דוח ילד/ה" }).first().click();
+    await page.getByRole("button", { name: " /" }).first().click();
     await expect(page.getByTestId("report-hub-main")).toBeVisible({ timeout: 20_000 });
     await expect(page.getByTestId("report-hub-summary-ready")).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByTestId("report-hub-main").getByText("טוען דוח…")).toHaveCount(0);
+    await expect(page.getByTestId("report-hub-main").getByText(" …")).toHaveCount(0);
     const studentDialog = page.getByTestId("report-hub-main");
     await expect(studentDialog.getByTestId("report-nav-subjects")).toBeVisible();
     await expect(studentDialog.getByTestId("report-nav-activities")).toBeVisible();
-    await expect(studentDialog.getByRole("heading", { name: "פעילות אחרונה" })).toHaveCount(0);
+    await expect(studentDialog.getByRole("heading", { name: " " })).toHaveCount(0);
     await studentDialog.getByTestId("report-nav-subjects").click();
     await expect(page.getByTestId("report-hub-detail")).toBeVisible({ timeout: 10_000 });
-    await expect(page.getByTestId("report-hub-detail").getByText("מתמטיקה")).toBeVisible();
+    await expect(page.getByTestId("report-hub-detail").getByText("")).toBeVisible();
     await page.getByTestId("report-hub-detail").getByTestId("report-modal-back").click();
     await studentDialog.getByTestId("report-modal-close").click();
 
@@ -310,11 +310,11 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
 
     const danGeoClass = classes.find(
       (c: { name?: string; subjectFocus?: string; teacherName?: string }) =>
-        c.name === "כיתה א׳ 2" &&
+        c.name === "  2" &&
         c.subjectFocus === "geometry" &&
-        String(c.teacherName || "").includes("דן")
+        String(c.teacherName || "").includes("")
     );
-    expect(danGeoClass, "Dan Cohen geometry class א׳ 2").toBeTruthy();
+    expect(danGeoClass, "Dan Cohen geometry class  2").toBeTruthy();
     expect(danGeoClass?.memberCount).toBe(22);
     expect(danGeoClass?.activityCount).toBe(8);
 
@@ -417,8 +417,8 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
 
     const cards = page.locator('[data-testid^="teacher-physical-class-card-"]');
     await expect(cards).toHaveCount(6, { timeout: 20_000 });
-    await expect(cards.first()).toContainText("מקצועות:");
-    await expect(cards.first()).toContainText("מתמטיקה");
+    await expect(cards.first()).toContainText(":");
+    await expect(cards.first()).toContainText("");
 
     await expect(
       page.getByTestId("teacher-dashboard-summary-students").locator(".font-bold")
@@ -433,15 +433,15 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
 
     for (let i = 0; i < 6; i += 1) {
       const card = cards.nth(i);
-      await expect(card).toContainText(/ילדים:\s*(2[0-4]|[1-9]\d)/u);
+      await expect(card).toContainText(/:\s*(2[0-4]|[1-9]\d)/u);
     }
 
-    await expect(page.getByText("ילדים: 0")).toHaveCount(0);
+    await expect(page.getByText(": 0")).toHaveCount(0);
 
-    await cards.first().getByRole("button", { name: "דוח כיתה" }).click();
+    await cards.first().getByRole("button", { name: " " }).click();
     await expect(page.getByTestId("report-hub-main")).toBeVisible({ timeout: 20_000 });
     await expect(page.getByTestId("report-hub-summary-ready")).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByTestId("report-hub-main").getByText("טוען דוח…")).toHaveCount(0);
+    await expect(page.getByTestId("report-hub-main").getByText(" …")).toHaveCount(0);
     await expect(page.locator('[data-testid^="teacher-report-subject-tab-"]').first()).toBeVisible({
       timeout: 10_000,
     });
@@ -453,8 +453,8 @@ test.describe("demo school simulation browser smoke @demo-school", () => {
     await page.getByTestId("report-hub-detail").getByTestId("report-modal-back").click();
     await mainReport.getByTestId("report-modal-close").click();
 
-    await cards.first().getByRole("button", { name: "הצגת ילדי הכיתה" }).click();
-    await expect(page.getByTestId("teacher-roster-active-label")).toContainText("כיתה", {
+    await cards.first().getByRole("button", { name: "  " }).click();
+    await expect(page.getByTestId("teacher-roster-active-label")).toContainText("", {
       timeout: 10_000,
     });
     await expect(page.getByTestId("teacher-roster-empty")).toHaveCount(0);

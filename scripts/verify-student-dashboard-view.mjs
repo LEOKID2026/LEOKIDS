@@ -40,18 +40,18 @@ function loadEnvLocal() {
   const ch = mt.challenges;
   console.log("\n=== 12-window canonical values (numeric / structured) ===\n");
   const rows = [
-    ["1", "אווטר", th.avatar ?? "(react/local image)"],
-    ["2", "טיימר", th.timer ?? "(react)"],
-    ["3", "חיים", th.lives],
-    ["4", "נכון", th.correct],
-    ["5", "רמה", th.level],
-    ["6", "כוכבים", th.stars],
-    ["7", "רצף", th.streak],
-    ["8", "ניקוד", th.score],
-    ["9", "אתגרים", `tileRole=${ch?.tileRole ?? "?"} dailyPct=${ch?.dailyProgressPct}% weeklyPct=${ch?.weeklyProgressPct}%`],
-    ["10", "דיוק", view.middleTiles.accuracyDisplayHe ?? `${mt.accuracy}%`],
-    ["11", "שיא רצף", mt.bestStreak],
-    ["12", "שיא ניקוד", mt.bestScore],
+    ["1", "", th.avatar ?? "(react/local image)"],
+    ["2", "", th.timer ?? "(react)"],
+    ["3", "", th.lives],
+    ["4", "", th.correct],
+    ["5", "", th.level],
+    ["6", "", th.stars],
+    ["7", "", th.streak],
+    ["8", "", th.score],
+    ["9", "", `tileRole=${ch?.tileRole ?? "?"} dailyPct=${ch?.dailyProgressPct}% weeklyPct=${ch?.weeklyProgressPct}%`],
+    ["10", "", view.middleTiles.accuracyDisplayHe ?? `${mt.accuracy}%`],
+    ["11", " ", mt.bestStreak],
+    ["12", " ", mt.bestScore],
   ];
   for (const [id, label, val] of rows) {
     console.log(`${id.padStart(2)}  ${label.padEnd(12, " ")}  ${val}`);
@@ -283,7 +283,7 @@ async function main() {
   }
 
   if (!view.middleTiles.challenges?.tileRole) {
-    fail("middleTiles.challenges.tileRole must be set (אתגרים contract).");
+    fail("middleTiles.challenges.tileRole must be set ( contract).");
   }
 
   process.exit(failed ? 1 : 0);

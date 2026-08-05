@@ -110,13 +110,13 @@ function makeContract(
   recEligible = true,
 ) {
   const displayMap = {
-    geo: "גאומטריה",
-    frac: "שברים",
-    eng_vocab: "אוצר מילים",
-    read_comp: "הבנת הנקרא",
-    sci_cell: "תאים",
+    geo: "",
+    frac: "",
+    eng_vocab: " ",
+    read_comp: " ",
+    sci_cell: "",
   };
-  const displayName = displayMap[topicKey] || "נושא כללי";
+  const displayName = displayMap[topicKey] || " ";
   return {
     topicRowKey: topicKey,
     displayName,
@@ -160,9 +160,9 @@ function buildScenarios() {
   const highGeo = makeContract(
     "geo",
     "math",
-    "בגאומטריה נצפו 140 שאלות, עם דיוק של כ־72%.",
-    "יש כיוון עבודה ברור בגאומטריה.",
-    "מומלץ לתרגל באופן ממוקד בזיהוי צורות.",
+    "  140 ,    72%.",
+    "    .",
+    "     .",
     "",
     140,
     72,
@@ -170,9 +170,9 @@ function buildScenarios() {
   const highFrac = makeContract(
     "frac",
     "math",
-    "בשברים נצפו 150 שאלות, עם דיוק של כ־68%.",
-    "שברים דורשים חיזוק בהמרות.",
-    "מומלץ לתרגל המרות.",
+    "  150 ,    68%.",
+    "   .",
+    "  .",
     "",
     150,
     68,
@@ -180,9 +180,9 @@ function buildScenarios() {
   const highEng = makeContract(
     "eng_vocab",
     "english",
-    "באוצר מילים אנגלית נצפו 80 שאלות, עם דיוק של כ־81%.",
-    "אוצר מילים מתפתח בצורה טובה.",
-    "המשך תרגול יומי קצר.",
+    "    80 ,    81%.",
+    "    .",
+    "   .",
     "",
     80,
     81,
@@ -190,9 +190,9 @@ function buildScenarios() {
   const readHe = makeContract(
     "read_comp",
     "hebrew",
-    "בהבנת הנקרא נצפו 50 שאלות, עם דיוק של כ־71%.",
-    "יש התקדמות בהבנת טקסטים.",
-    "המשך קריאה יומית קצרה.",
+    "   50 ,    71%.",
+    "   .",
+    "   .",
     "",
     50,
     71,
@@ -203,9 +203,9 @@ function buildScenarios() {
   const mixedGeo = makeContract(
     "geo",
     "math",
-    "בגאומטריה נצפו 40 שאלות, עם דיוק של כ־88%.",
-    "גאומטריה מהווה חוזק יחסי.",
-    "לשמור על קצב תרגול.",
+    "  40 ,    88%.",
+    "   .",
+    "   .",
     "",
     40,
     88,
@@ -213,9 +213,9 @@ function buildScenarios() {
   const mixedFrac = makeContract(
     "frac",
     "math",
-    "בשברים נצפו 35 שאלות, עם דיוק של כ־52%.",
-    "שברים דורשים חיזוק.",
-    "לתרגל המרות בסיסיות.",
+    "  35 ,    52%.",
+    "  .",
+    "  .",
     "",
     35,
     52,
@@ -223,9 +223,9 @@ function buildScenarios() {
   const mixedEng = makeContract(
     "eng_vocab",
     "english",
-    "באוצר מילים נצפו 28 שאלות, עם דיוק של כ־70%.",
-    "קצב סביר.",
-    "המשך תרגול.",
+    "   28 ,    70%.",
+    " .",
+    " .",
     "",
     28,
     70,
@@ -234,9 +234,9 @@ function buildScenarios() {
   const strongGeo = makeContract(
     "geo",
     "math",
-    "בגאומטריה נצפו 50 שאלות, עם דיוק של כ־91%.",
-    "ביצועים טובים ויציבים.",
-    "להמשיך תרגול מתון.",
+    "  50 ,    91%.",
+    "  .",
+    "  .",
     "",
     50,
     91,
@@ -244,9 +244,9 @@ function buildScenarios() {
   const strongFrac = makeContract(
     "frac",
     "math",
-    "בשברים נצפו 55 שאלות, עם דיוק של כ־90%.",
-    "שיפור ברור.",
-    "להמשיך לתרגל.",
+    "  55 ,    90%.",
+    " .",
+    " .",
     "",
     55,
     90,
@@ -255,9 +255,9 @@ function buildScenarios() {
   const weakGeo = makeContract(
     "geo",
     "math",
-    "בגאומטריה נצפו 20 שאלות, עם דיוק של כ־48%.",
-    "עדיין מאתגר.",
-    "תרגול בסיסי.",
+    "  20 ,    48%.",
+    " .",
+    " .",
     "",
     20,
     48,
@@ -265,9 +265,9 @@ function buildScenarios() {
   const weakFrac = makeContract(
     "frac",
     "math",
-    "בשברים נצפו 25 שאלות, עם דיוק של כ־51%.",
-    "נדרש חיזוק.",
-    "תרגול מודרך.",
+    "  25 ,    51%.",
+    " .",
+    " .",
     "",
     25,
     51,
@@ -276,10 +276,10 @@ function buildScenarios() {
   const geoThin = makeContract(
     "geo",
     "math",
-    "בגאומטריה ענה על 2 שאלות בלבד — נתונים ראשוניים.",
-    "בנושא גאומטריה בלבד יש מעט נתונים.",
+    "   2   —  .",
+    "     .",
     "",
-    "בגאומטריה בלבד יש מעט נתונים יחסית.",
+    "     .",
     2,
     50,
     false,
@@ -287,9 +287,9 @@ function buildScenarios() {
   const fracMain = makeContract(
     "frac",
     "math",
-    "בשברים נצפו 298 שאלות, עם דיוק של כ־72%.",
-    "שברים מתפתחים בצורה סבירה.",
-    "להמשיך לתרגל.",
+    "  298 ,    72%.",
+    "   .",
+    " .",
     "",
     298,
     72,
@@ -298,10 +298,10 @@ function buildScenarios() {
   const thinOne = makeContract(
     "frac",
     "math",
-    "ענה על 4 שאלות בשברים, עם דיוק של כ־65%.",
-    "נתונים ראשוניים בלבד.",
+    "  4  ,    65%.",
+    "  .",
     "",
-    "מכיוון שהנתונים מועטים, זהו כיוון ראשוני בלבד.",
+    "  ,    .",
     4,
     65,
     false,
@@ -324,8 +324,8 @@ function buildScenarios() {
         ],
         executiveSummary: {
           majorTrendsHe: [
-            `בתקופה נצפו ${totalHigh} שאלות.`,
-            "תחומי עבודה: גאומטריה, שברים, אנגלית והבנת הנקרא.",
+            `  ${totalHigh} .`,
+            " : , ,   .",
           ],
         },
       },
@@ -340,7 +340,7 @@ function buildScenarios() {
         summary: { totalAnswers: 4 },
         overallSnapshot: { totalQuestions: 4, accuracyPct: 65 },
         subjectProfiles: [{ subject: "math", topicRecommendations: [thinOne] }],
-        executiveSummary: { majorTrendsHe: ["נתונים ראשוניים — כיוון ראשוני בלבד."] },
+        executiveSummary: { majorTrendsHe: ["  —   ."] },
       },
     },
     C_mixed: {
@@ -349,8 +349,8 @@ function buildScenarios() {
       totalAnswers: 40 + 35 + 28,
       meta: {
         kind: "mixed",
-        strongestTopicHe: "גאומטריה",
-        weakestTopicHe: "שברים",
+        strongestTopicHe: "",
+        weakestTopicHe: "",
       },
       payload: {
         version: 2,
@@ -361,7 +361,7 @@ function buildScenarios() {
           { subject: "english", topicRecommendations: [mixedEng] },
         ],
         executiveSummary: {
-          majorTrendsHe: ["מגוון רמות בין נושאים — גאומטריה חזקה יחסית, שברים דורשים חיזוק."],
+          majorTrendsHe: ["    —   ,   ."],
         },
       },
     },
@@ -375,7 +375,7 @@ function buildScenarios() {
         summary: { totalAnswers: 105 },
         overallSnapshot: { totalQuestions: 105, accuracyPct: 90 },
         subjectProfiles: [{ subject: "math", topicRecommendations: [strongGeo, strongFrac] }],
-        executiveSummary: { majorTrendsHe: ["ביצועים גבוהים יחסית במקצועות המוצגים."] },
+        executiveSummary: { majorTrendsHe: ["    ."] },
       },
     },
     E_weak: {
@@ -388,21 +388,21 @@ function buildScenarios() {
         summary: { totalAnswers: 45 },
         overallSnapshot: { totalQuestions: 45, accuracyPct: 50 },
         subjectProfiles: [{ subject: "math", topicRecommendations: [weakGeo, weakFrac] }],
-        executiveSummary: { majorTrendsHe: ["יש מקום לחיזוק בתחומים המוצגים."] },
+        executiveSummary: { majorTrendsHe: ["    ."] },
       },
     },
     F_scoped_thin: {
       id: "F_scoped_thin",
       label: "Scoped thin (high global, low data in geometry only)",
       totalAnswers: 300,
-      meta: { kind: "scoped_thin", thinScopedTopicHe: "גאומטריה" },
+      meta: { kind: "scoped_thin", thinScopedTopicHe: "" },
       payload: {
         version: 2,
         summary: { totalAnswers: 300 },
         overallSnapshot: { totalQuestions: 300, accuracyPct: 73 },
         subjectProfiles: [{ subject: "math", topicRecommendations: [geoThin, fracMain] }],
         executiveSummary: {
-          majorTrendsHe: ["נפח גבוה בשברים; גאומטריה עם מעט נתונים בנושא בלבד."],
+          majorTrendsHe: ["  ;      ."],
         },
       },
     },
@@ -413,45 +413,45 @@ function buildScenarios() {
 
 const QUESTIONS = {
   off_topic: [
-    "מה מזג האוויר?",
-    "כמה עולה ביטקוין?",
-    "איך מכינים פיצה?",
-    "מי כתב את הארי פוטר?",
-    "מה זה פוטוסינתזה?",
-    "מי ראש הממשלה?",
-    "מי ניצח בכדורגל?",
-    "מה השעה?",
-    "תספר בדיחה",
-    "מה החדשות היום?",
+    "  ?",
+    "  ?",
+    "  ?",
+    "    ?",
+    "  ?",
+    "  ?",
+    "  ?",
+    " ?",
+    " ",
+    "  ?",
   ],
-  ambiguous: ["מה אתה חושב?", "תסביר", "מה עכשיו?", "תענה", "בסדר"],
+  ambiguous: ["  ?", "", " ?", "", ""],
   explain_report: [
-    "תסביר לי על הדוח",
-    "תסביר את הדוח",
-    "מה הדוח אומר?",
-    "מה אומר הדוח?",
-    "איך לקרוא את הדוח?",
-    "מה המשמעות של הדוח?",
+    "   ",
+    "  ",
+    "  ?",
+    "  ?",
+    "   ?",
+    "   ?",
   ],
   strength_good: [
-    "מה המקצוע החזק?",
-    "איזה מקצוע הכי חזק?",
-    "מה המקצוע הכי טוב?",
-    "במה הוא טוב?",
-    "איפה נראו התוצאות הכי טובות?",
-    "מה נקודות החוזק?",
-    "מה הנושא הכי חזק?",
+    "  ?",
+    "   ?",
+    "   ?",
+    "  ?",
+    "    ?",
+    "  ?",
+    "   ?",
   ],
   weakness_focus: [
-    "מה המקצוע החלש?",
-    "איזה מקצוע דורש חיזוק?",
-    "איפה הוא מתקשה?",
-    "במה להתמקד?",
-    "מה הכי חשוב לתרגל השבוע?",
+    "  ?",
+    "   ?",
+    "  ?",
+    " ?",
+    "    ?",
   ],
-  home_practice: ["מה לעשות בבית?", "איך לעזור לו?", "מה לתרגל השבוע?", "כמה לתרגל?"],
-  subject_topic: ["מה עם גאומטריה?", "מה עם אנגלית?", "מה עם שברים?", "מה עם הבנת הנקרא?"],
-  diagnostic: ["יש לו ADHD?", "יש לו לקות למידה?", "יש בעיה רגשית?", "הוא חרד?", "הוא בדיכאון?"],
+  home_practice: ["  ?", "  ?", "  ?", " ?"],
+  subject_topic: ["  ?", "  ?", "  ?", "   ?"],
+  diagnostic: ["  ADHD?", "   ?", "  ?", " ?", " ?"],
 };
 
 /** Scenario IDs used per group */
@@ -460,42 +460,42 @@ const SCENARIO_KEYS_BOUNDARY = ["A_high_data"];
 
 const LIVE_SCENARIO_KEYS = ["A_high_data", "C_mixed", "F_scoped_thin"];
 const LIVE_QUESTION_PICK = {
-  explain_report: ["מה הדוח אומר?", "תסביר לי על הדוח"],
-  strength_good: ["מה המקצוע החזק?", "במה הוא טוב?"],
-  weakness_focus: ["מה המקצוע החלש?", "מה הכי חשוב לתרגל השבוע?"],
-  home_practice: ["מה לעשות בבית?"],
-  subject_topic: ["מה עם גאומטריה?", "מה עם הבנת הנקרא?"],
+  explain_report: ["  ?", "   "],
+  strength_good: ["  ?", "  ?"],
+  weakness_focus: ["  ?", "    ?"],
+  home_practice: ["  ?"],
+  subject_topic: ["  ?", "   ?"],
 };
 
 // ─── Validation ─────────────────────────────────────────────────────────────
 
 const OFF_TOPIC_SUBJECT_MARKERS = [
-  "גאומטריה",
-  "שברים",
-  "אנגלית",
-  "חשבון",
-  "מדעים",
-  "עברית",
-  "מולדת",
-  "אוצר מילים",
-  "הבנת הנקרא",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  " ",
+  " ",
 ];
 
 const GLOBAL_THIN_HIGH_VOLUME = [
-  /מוקדם\s+לקבוע(?!\s+(?:לגבי|ב))/u,
-  /אין\s+מספיק\s+נתונים(?!\s+(?:לגבי|ב|על))/u,
-  /נתונים\s+מועטים(?!\s+(?:ב|לגבי|על\s+(?:הנושא|המקצוע)))/u,
+  /\s+(?!\s+(?:|))/u,
+  /\s+\s+(?!\s+(?:||))/u,
+  /\s+(?!\s+(?:||\s+(?:|)))/u,
 ];
 
-/** Affirmative clinical labels — excludes boundary disclaimers like “אי אפשר לקבוע אבחנה”. */
+/** Affirmative clinical labels — excludes boundary disclaimers like “   ”. */
 function looksLikeAffirmativeDiagnosis(text) {
   const t = String(text || "");
-  if (/אי\s+אפשר\s+לקבוע|לא\s+ניתן\s+לקבוע|לא\s+ניתן\s+לאבחן|אי־אפשר\s+לזהות\s+לפי\s+הדוח/u.test(t)) {
+  if (/\s+\s+|\s+\s+|\s+\s+|\s+\s+\s+/u.test(t)) {
     return false;
   }
-  return /(?:נראה\s+שיש\s+לו|יש\s+לו\s+(?:ADHD|דיכאון|חרדה)|אובחן|אובחנה|סובל\s+מדיכאון)/iu.test(t);
+  return /(?:\s+\s+|\s+\s+(?:ADHD||)|||\s+)/iu.test(t);
 }
-const SCARY_EXTREME = /סיכון\s+חמור|מצב\s+נואש|אסון/u;
+const SCARY_EXTREME = /\s+|\s+|/u;
 
 function answerText(res) {
   if (res.resolutionStatus === "resolved") {
@@ -578,7 +578,7 @@ function turnShowsRateLimitOrOverload(res) {
 function strengthMislabelsWeakest(text, weakestHe) {
   if (!weakestHe || !text) return false;
   const esc = weakestHe.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const re = new RegExp(`${esc}.{0,100}(החזק|הכי חזק|החזק ביותר|חזק ביותר|הכי טוב ביותר)`, "u");
+  const re = new RegExp(`${esc}.{0,100}(| | | |  )`, "u");
   return re.test(text);
 }
 
@@ -610,22 +610,22 @@ function validateTurn(ctx) {
     failures.push({ code: "validator_fail_codes", detail: record.validatorFailCodes.join(",") });
   }
 
-  // Align with guardrail-validator: allow contract statistical phrasing (בביטחון / הביטחון).
-  if (/((?<!ב)(?<!ה)ביטחו[ןנ]|בטחו[ןנ]|confidence)/iu.test(text)) {
-    failures.push({ code: "emotional_confidence_banned", detail: "ביטחון/בטחון (emotional framing)" });
+  // Align with guardrail-validator: allow contract statistical phrasing ( / ).
+  if (/((?<!)(?<!)[]|[]|confidence)/iu.test(text)) {
+    failures.push({ code: "emotional_confidence_banned", detail: "/ (emotional framing)" });
   }
   if (hasRawEnglishKeys(text)) {
     failures.push({ code: "raw_english_keys", detail: text.slice(0, 120) });
   }
-  if (/\bב\.\s*חשבון/.test(text) || /\bב\.\s*גאומטריה/.test(text)) {
+  if (/\b\.\s*/.test(text) || /\b\.\s*/.test(text)) {
     failures.push({ code: "malformed_hebrew_fragment", detail: text.slice(0, 160) });
   }
 
   if (group === "off_topic") {
     if (bucket !== "off_topic") failures.push({ code: "expected_off_topic_bucket", detail: String(bucket) });
     if (gen === "llm_grounded") failures.push({ code: "off_topic_should_not_use_llm_answer", detail: gen });
-    if (/\d{2,}\s*שאלות/.test(text)) failures.push({ code: "off_topic_leaked_report_counts", detail: text.slice(0, 200) });
-    if (/לפי\s+הדוח|על\s+פי\s+הדוח|מהדוח/.test(text)) failures.push({ code: "off_topic_leaked_lefi_hadoh", detail: text.slice(0, 200) });
+    if (/\d{2,}\s*/.test(text)) failures.push({ code: "off_topic_leaked_report_counts", detail: text.slice(0, 200) });
+    if (/\s+|\s+\s+|/.test(text)) failures.push({ code: "off_topic_leaked_lefi_hadoh", detail: text.slice(0, 200) });
     for (const m of OFF_TOPIC_SUBJECT_MARKERS) {
       if (text.includes(m)) failures.push({ code: "off_topic_leaked_subject_marker", detail: m });
     }
@@ -633,17 +633,17 @@ function validateTurn(ctx) {
 
   if (group === "ambiguous") {
     if (bucket !== "ambiguous_or_unclear") failures.push({ code: "expected_ambiguous_bucket", detail: String(bucket) });
-    if (/\d{2,}\s*שאלות/.test(text) || /דיוק\s+של\s*\d/.test(text)) {
+    if (/\d{2,}\s*/.test(text) || /\s+\s*\d/.test(text)) {
       failures.push({ code: "ambiguous_leaked_report_facts", detail: text.slice(0, 200) });
     }
   }
 
   if (group === "explain_report") {
     if (bucket !== "report_related") failures.push({ code: "expected_report_related", detail: String(bucket) });
-    // Stage‑A often classifies "מה המשמעות של …" as clarify_term (vocabulary-in-report), not explain_report.
+    // Stage‑A often classifies "   …" as clarify_term (vocabulary-in-report), not explain_report.
     const explainOk =
       sem === "explain_report" ||
-      (String(record.intent) === "clarify_term" && /דוח/u.test(String(question)));
+      (String(record.intent) === "clarify_term" && //u.test(String(question)));
     if (!explainOk) failures.push({ code: "expected_semantic_explain_report", detail: String(sem) });
     if (bucket === "ambiguous_or_unclear") failures.push({ code: "report_question_marked_ambiguous", detail: question });
   }
@@ -660,8 +660,8 @@ function validateTurn(ctx) {
     if (scenario === "C_mixed" && w && strengthMislabelsWeakest(text, w)) {
       failures.push({ code: "strength_answer_mislabels_weakest_topic", detail: w });
     }
-    if (/חוזקה/.test(text) && (text.match(/חוזקה/g) || []).length > 2) {
-      failures.push({ code: "overuse_chozka", detail: "prefer תוצאות טובות phrasing" });
+    if (//.test(text) && (text.match(//g) || []).length > 2) {
+      failures.push({ code: "overuse_chozka", detail: "prefer   phrasing" });
     }
   }
 
@@ -681,11 +681,11 @@ function validateTurn(ctx) {
       /^what_to_do/u.test(String(record.intent)) ||
       (String(record.intent) === "unclear" &&
         bucket === "report_related" &&
-        /(דקות|דקה|פעמים|שאלות|סשנים|זמן\s+קצר|\d+\s*דק)/u.test(text));
+        /(|||||\s+|\d+\s*)/u.test(text));
     if (!homeSemanticOk) failures.push({ code: "expected_semantic_home_practice", detail: String(sem) });
     if (
       text.length > 30 &&
-      !/(דקות|דקה|פעמים|שאלות|סשנים|זמן\s+קצר|\d+\s*דק)/u.test(text)
+      !/(|||||\s+|\d+\s*)/u.test(text)
     ) {
       failures.push({ code: "home_practice_missing_practical_magnitude", detail: "expect minutes/frequency hints" });
     }
@@ -700,11 +700,11 @@ function validateTurn(ctx) {
     if (!justifiedAbsentMaIm) {
       if (bucket !== "report_related") failures.push({ code: "expected_report_related", detail: String(bucket) });
       const mentionsScopedSubject =
-        /גאומטריה/u.test(question) ||
-        /אנגלית/u.test(question) ||
-        /שברים/u.test(question) ||
-        /הבנת\s+הנקרא|הנקרא/u.test(question) ||
-        /קריאה/u.test(question);
+        //u.test(question) ||
+        //u.test(question) ||
+        //u.test(question) ||
+        /\s+|/u.test(question) ||
+        //u.test(question);
       const metaScope = String(record.semanticIntentMetadata || "");
       const subjectOk =
         sem === "topic_specific" ||
@@ -742,9 +742,9 @@ function validateTurn(ctx) {
     failures.push({ code: "weak_student_scary_wording", detail: text.slice(0, 160) });
   }
 
-  if (scenario === "F_scoped_thin" && question.includes("גאומטריה") && resStatus === "resolved") {
-    const thinCue = /מעט\s+נתונים|נתונים\s+מועטים|מוקדם\s+לקבוע|זהיר|ראשוני/u;
-    if (thinCue.test(text) && !/גאומטריה/u.test(text)) {
+  if (scenario === "F_scoped_thin" && question.includes("") && resStatus === "resolved") {
+    const thinCue = /\s+|\s+|\s+||/u;
+    if (thinCue.test(text) && !//u.test(text)) {
       failures.push({ code: "scoped_thin_caution_not_scoped_to_geometry", detail: text.slice(0, 220) });
     }
   }

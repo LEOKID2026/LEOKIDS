@@ -43,8 +43,8 @@ const { GRADE_AWARE_RECOMMENDATION_TEMPLATES } = await import(
     [
       {
         patternFamily: "vocab_recall_en",
-        questionLabel: "vocabulary|vocab_recall_en|לתת|מה פירוש המילה",
-        metadata: { possibleErrorPatterns: ["תרגום מילולי שגוי", "false friend"] },
+        questionLabel: "vocabulary|vocab_recall_en||  ",
+        metadata: { possibleErrorPatterns: ["  ", "false friend"] },
         params: { direction: "meaning_to_en", patternFamily: "vocab_recall_en" },
       },
       { conceptTag: "false_friend" },
@@ -177,7 +177,7 @@ const { GRADE_AWARE_RECOMMENDATION_TEMPLATES } = await import(
     gradeKey: "g4",
     slot: "action",
   });
-  if (!a1 || !String(a1).includes("אוצר מילים")) throw new Error("E-01 vocabulary g4 action expected from routing winner");
+  if (!a1 || !String(a1).includes(" ")) throw new Error("E-01 vocabulary g4 action expected from routing winner");
 
   const v2 = orderEnglishTaxonomyCandidates(
     ["E-01", "E-05"],
@@ -192,7 +192,7 @@ const { GRADE_AWARE_RECOMMENDATION_TEMPLATES } = await import(
     gradeKey: "g6",
     slot: "action",
   });
-  if (!a5 || !String(a5).includes("מילים באנגלית")) throw new Error("E-05 vocabulary g6 action expected from routing winner");
+  if (!a5 || !String(a5).includes(" ")) throw new Error("E-05 vocabulary g6 action expected from routing winner");
 
   const g1 = orderEnglishTaxonomyCandidates(
     ["E-02", "E-04"],

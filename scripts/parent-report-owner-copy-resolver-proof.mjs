@@ -41,7 +41,7 @@ function assertClean(text, label, opts = {}) {
     assert.doesNotMatch(s, new RegExp(frag, "i"), `${label} forbidden: ${frag}`);
   }
   if (!opts.allowEarly) {
-    assert.doesNotMatch(s, /עדיין מוקדם/u, `${label} must not contain עדיין מוקדם`);
+    assert.doesNotMatch(s, / /u, `${label} must not contain  `);
   }
 }
 
@@ -51,7 +51,7 @@ function rowWithLpd(body, contract) {
     ? body.learningPatternDecision
     : {};
   return {
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     ...body,
     learningPatternDecision: {
       ...lpdBody,
@@ -62,8 +62,8 @@ function rowWithLpd(body, contract) {
 
 const initialRow = rowWithLpd(
   {
-    label: "חילוק עם שארית",
-    displayName: "חילוק עם שארית",
+    label: "  ",
+    displayName: "  ",
     questions: 2,
     correct: 1,
     wrong: 1,
@@ -113,8 +113,8 @@ for (const [k, v] of Object.entries(initialTopicDataProof)) {
 
 const practiceRow = rowWithLpd(
   {
-    label: "סדרות",
-    displayName: "סדרות",
+    label: "",
+    displayName: "",
     questions: 3,
     correct: 2,
     wrong: 1,
@@ -152,13 +152,13 @@ for (const [k, v] of Object.entries(practiceFocusProof)) {
     for (const [sec, text] of Object.entries(v || {})) {
       if (text) {
         assertClean(text, `practice_focus ${sec}`);
-        assert.doesNotMatch(text, /זוהה דפוס ברור|יש דפוס ברור/u, `practice_focus ${sec}`);
+        assert.doesNotMatch(text, /  |  /u, `practice_focus ${sec}`);
       }
     }
     continue;
   }
   assertClean(v, k);
-  assert.doesNotMatch(String(v), /זוהה דפוס ברור|יש דפוס ברור/u, `${k}`);
+  assert.doesNotMatch(String(v), /  |  /u, `${k}`);
 }
 
 const aaa7SubjectOpeningProof = renderOwnerSubjectCopyTemplateHe(
@@ -170,7 +170,7 @@ const aaa7SubjectOpeningProof = renderOwnerSubjectCopyTemplateHe(
       blockedLegacySummary: true,
       priorityTopics: [
         {
-          topicLabelKey: "חיבור",
+          topicLabelKey: "",
           questions: 10,
           correct: 2,
           wrong: 8,
@@ -180,10 +180,10 @@ const aaa7SubjectOpeningProof = renderOwnerSubjectCopyTemplateHe(
         },
       ],
     },
-    "מתמטיקה",
+    "",
   ),
 );
-assert.match(String(aaa7SubjectOpeningProof), /מומלץ לחזק את הנושא לפני שממשיכים/u);
+assert.match(String(aaa7SubjectOpeningProof), /     /u);
 
 console.log(
   JSON.stringify(

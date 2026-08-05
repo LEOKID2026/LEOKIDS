@@ -173,7 +173,7 @@ describe("Phase 6 - aggregator competitiveContext + recentMistakes", () => {
     );
     assert.equal(result.recentMistakes.length, 0);
     const insights = buildParentInsightsHe(result);
-    assert.ok(!insights.some((line) => line.includes("טעויות חוזרות")));
+    assert.ok(!insights.some((line) => line.includes(" ")));
   });
 
   test("diagnostic mistakes still appear in recentMistakes", () => {

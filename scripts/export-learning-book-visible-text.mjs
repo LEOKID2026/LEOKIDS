@@ -28,8 +28,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 
 const SUBJECT_LABEL = {
-  math: "Math / חשבון",
-  geometry: "Geometry / גאומטריה",
+  math: "Math / ",
+  geometry: "Geometry / ",
 };
 
 /** @type {{ subject: string, grade: string, order: string[] }[]} */

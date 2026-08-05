@@ -25,12 +25,12 @@ const M03 = T["M-03"].bucketOverrides;
 const M10 = T["M-10"].bucketOverrides;
 
 const BANNED = [
-  "אותם זוגות שגויים",
-  "בחירת כפל לא מתאים לחילוק",
-  "זמן כפול לאותו סט",
-  "תרגול ממוקד זוג",
-  "עם/בלי משפט כפל",
-  "קישור כפל־חילוק",
+  "  ",
+  "    ",
+  "   ",
+  "  ",
+  "/  ",
+  " ",
 ];
 
 function assertNoBanned(label, s) {
@@ -171,12 +171,12 @@ function r(input) {
     startDate: "2026-05-01",
     endDate: "2026-05-08",
     period: "week",
-    playerName: "בדיקה",
+    playerName: "",
     summary: { totalQuestions: 20 },
     mathOperations: {
       [topicKey]: {
         bucketKey: "multiplication",
-        displayName: "כפל",
+        displayName: "",
         questions: 12,
         correct: 8,
         wrong: 4,
@@ -196,14 +196,14 @@ function r(input) {
           subjectId: "math",
           topicRowKey: topicKey,
           bucketKey: "multiplication",
-          displayName: "כפל",
-          diagnosis: { allowed: true, taxonomyId: "M-03", lineHe: "מצביע על דפוס." },
+          displayName: "",
+          diagnosis: { allowed: true, taxonomyId: "M-03", lineHe: "  ." },
           intervention: {
-            immediateActionHe: "תרגול ממוקד זוג",
-            shortPracticeHe: "זמן כפול לאותו סט",
+            immediateActionHe: "  ",
+            shortPracticeHe: "   ",
             taxonomyId: "M-03",
           },
-          taxonomy: { id: "M-03", patternHe: "אותם זוגות שגויים" },
+          taxonomy: { id: "M-03", patternHe: "  " },
           recurrence: { wrongCountForRules: 4, full: true, wrongEventCount: 4, rowWrongTotal: 4 },
           confidence: { level: "moderate" },
           priority: { level: "P3", breadth: "narrow" },
@@ -217,7 +217,7 @@ function r(input) {
             additiveCautionAllowed: false,
             positiveAuthorityLevel: "none",
           },
-          probe: { specificationHe: "בדיקה", objectiveHe: "מטרה" },
+          probe: { specificationHe: "", objectiveHe: "" },
           explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
           canonicalState: {
             actionState: "intervene",
@@ -237,7 +237,7 @@ function r(input) {
   assertNoBanned("detailed M-03 mult g4 parentActionHe", mp?.parentActionHe);
   const short = summarizeV2UnitsForSubjectForTests(base.diagnosticEngineV2.units, {
     subjectReportQuestions: 12,
-    subjectLabelHe: "מתמטיקה",
+    subjectLabelHe: "",
     topicMap: base.mathOperations,
     reportTotalQuestions: 20,
   });

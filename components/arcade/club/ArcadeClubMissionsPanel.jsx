@@ -47,7 +47,7 @@ export default function ArcadeClubMissionsPanel({ gh, className = "", demoMode: 
       <ul className="space-y-2">
         {missions.map((m) => (
           <li key={m.missionId} className={gh.arcadeRoomItem || gh.roomItem}>
-            <p className={`font-medium ${gh.arcadePanelTitle || gh.cardTitle}`}>{m.descriptionHe}</p>
+            <p className={`font-medium ${gh.arcadePanelTitle || gh.cardTitle}`}>{m.description}</p>
             <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
               {m.progress}/{m.goalCount} · +{m.rewardCoins} coins {m.completed ? "✓" : ""}
             </p>
@@ -61,7 +61,7 @@ export default function ArcadeClubMissionsPanel({ gh, className = "", demoMode: 
         <ul className="space-y-2">
           {achievements.map((a) => (
             <li key={a.achievementId || a.key} className={gh.arcadeRoomItem || gh.roomItem}>
-              <span>{a.nameHe || a.key}</span>
+              <span>{a.name || a.key}</span>
               {a.unlocked ? " 🏅" : ""}
             </li>
           ))}

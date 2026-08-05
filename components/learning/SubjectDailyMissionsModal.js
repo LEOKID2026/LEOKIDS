@@ -20,7 +20,7 @@ function missionProgressLabel(m) {
 }
 
 function CompactMissionRow({ mission, index }) {
-  const { completed, textHe, type, progressPct, rewardCoins, coinAwarded, target } = mission;
+  const { completed, text, type, progressPct, rewardCoins, coinAwarded, target } = mission;
 
   return (
     <article
@@ -30,7 +30,7 @@ function CompactMissionRow({ mission, index }) {
           ? "border-emerald-400/45 bg-emerald-900/25"
           : 'border-white/12 bg-black/30',
       ].join(" ")}
-      aria-label={`Mission ${index + 1}: ${textHe}`}
+      aria-label={`Mission ${index + 1}: ${text}`}
     >
       <div className="flex items-start gap-2">
         <span
@@ -44,7 +44,7 @@ function CompactMissionRow({ mission, index }) {
         </span>
         <div className="min-w-0 flex-1">
           <p className={`text-sm font-semibold leading-snug ${completed ? "text-emerald-100" : "text-white"}`}>
-            {textHe}
+            {text}
           </p>
         </div>
       </div>

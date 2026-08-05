@@ -100,7 +100,7 @@ function isGroundedInPlanner(text, recommendedNextStep) {
  * @param {string} text
  */
 function practicalNextStepPresent(text) {
-  return /(?:מומלץ|כדאי|אפשר|להמשיך|לתרגל|המלצת\s*המערכת|לעודד|שגרה)/u.test(String(text || ""));
+  return /(?:|||||\s*||)/u.test(String(text || ""));
 }
 
 function assert(cond, msg) {
@@ -135,8 +135,8 @@ const SCENARIOS = [
       durationSeconds: 3600,
     },
     consistencyBandOverride: "stable",
-    mainStrengths: "יציבות טובה ודיוק גבוה ביחס לרמת התרגול.",
-    mainPracticeNeeds: "להמשיך לבסס את ההבנה לפני קפיצה גדולה יותר.",
+    mainStrengths: "      .",
+    mainPracticeNeeds: "       .",
     notes: "Strong signal + enough data; parent tone positive but bounded.",
   },
   {
@@ -153,8 +153,8 @@ const SCENARIOS = [
       durationSeconds: 900,
     },
     consistencyBandOverride: "stable",
-    mainStrengths: "התמדה בתרגול והבנה סבירה של הטקסטים שנבחרו.",
-    mainPracticeNeeds: "להמשיך לחזק קריאה רציפה באותה רמה לפני שינוי קצב.",
+    mainStrengths: "      .",
+    mainPracticeNeeds: "        .",
     notes: "Maintain-style planner; calm practical parent copy.",
   },
   {
@@ -171,8 +171,8 @@ const SCENARIOS = [
       durationSeconds: 600,
     },
     consistencyBandOverride: "stable",
-    mainStrengths: "ניכרת נכונות להתנסות ולנסות שוב גם כשהתשובה לא מדויקת.",
-    mainPracticeNeeds: "לחזק בסיס מושגי בנושא דרך תרגול קצר וחוזר בלי לחץ.",
+    mainStrengths: "        .",
+    mainPracticeNeeds: "         .",
     notes: "Foundation path; careful non-judgmental wording.",
   },
   {
@@ -207,8 +207,8 @@ const SCENARIOS = [
       durationSeconds: 400,
     },
     consistencyBandOverride: "mixed",
-    mainStrengths: "יש ניסיונות שבהם הבנה טובה של השאלה.",
-    mainPracticeNeeds: "לחדד יציבות בין שאלות דומות באמצעות תרגול מדורג.",
+    mainStrengths: "      .",
+    mainPracticeNeeds: "       .",
     notes: "Mixed pattern; careful inconsistency wording.",
   },
   {
@@ -225,8 +225,8 @@ const SCENARIOS = [
       durationSeconds: 40,
     },
     consistencyBandOverride: "possibly_fast",
-    mainStrengths: "בחלק מהשאלות ניכרת שליטה טובה בתוכן.",
-    mainPracticeNeeds: "להאריך מעט את זמן החשיבה כדי לוודא הבנה ולא רק מהירות.",
+    mainStrengths: "     .",
+    mainPracticeNeeds: "          .",
     notes: "Fast pattern; no accusatory tone.",
   },
   {
@@ -243,8 +243,8 @@ const SCENARIOS = [
       durationSeconds: 800,
     },
     consistencyBandOverride: "improving",
-    mainStrengths: "נראית התקדמות בהשוואה לתחילת התקופה בתרגול הקריאה.",
-    mainPracticeNeeds: "להמשיך באותו קצב עם טקסטים מתאימים לרמה.",
+    mainStrengths: "      .",
+    mainPracticeNeeds: "      .",
     notes: "Improvement without promising future outcomes.",
   },
   {
@@ -261,8 +261,8 @@ const SCENARIOS = [
       durationSeconds: 650,
     },
     consistencyBandOverride: "declining_recent",
-    mainStrengths: "עדיין יש בסיס מוכר מהשבועות הקודמים שניתן לבנות עליו.",
-    mainPracticeNeeds: "בשבועות האחרונים נראתה ירידה יחסית בדיוק ולכן כדאי חזרה מסודרת.",
+    mainStrengths: "        .",
+    mainPracticeNeeds: "         .",
     notes: "Recent dip; calm review recommendation.",
   },
   {
@@ -279,8 +279,8 @@ const SCENARIOS = [
       durationSeconds: 720,
     },
     consistencyBandOverride: "stable",
-    mainStrengths: "הבנה טובה של צורות בסיסיות בחלק מהתרגולים.",
-    mainPracticeNeeds: "לחזק קישור בין מושג היקף לבין יישום מספרי בשאלות.",
+    mainStrengths: "      .",
+    mainPracticeNeeds: "        .",
     notes: "Geometry topic need without metadata jargon.",
   },
   {
@@ -297,8 +297,8 @@ const SCENARIOS = [
       durationSeconds: 500,
     },
     consistencyBandOverride: "stable",
-    mainStrengths: "דיוק טוב בשאלות דקדוק בסיסיות שנבדקו.",
-    mainPracticeNeeds: "להרחיב מעט את מגוון המבנים בתרגול הרגיל.",
+    mainStrengths: "     .",
+    mainPracticeNeeds: "      .",
     notes: "English grammar safe metadata regression guard.",
   },
 ];
@@ -486,7 +486,7 @@ async function main() {
 
   assert(rows.length === SCENARIOS.length, "row count");
 
-  const unsafe = "הילד חלש ויש לו בעיה רפואית לפי diagnostics של המערכת.";
+  const unsafe = "       diagnostics  .";
   assert(validateParentReportAIText(unsafe).ok === false, "unsafe parent sample must fail");
 
   for (const r of rows) {

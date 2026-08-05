@@ -65,7 +65,7 @@ test("loadClassActivityContextFromApiClass normalizes bare digit grade and subje
   const ctx = loadClassActivityContextFromApiClass({
     gradeLevel: "3",
     subjectFocus: "math",
-    name: "כיתה ג׳ 1",
+    name: "  1",
   });
   assert.equal(ctx.gradeKey, "g3");
   assert.equal(ctx.subjectFocus, "math");

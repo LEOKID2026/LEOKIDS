@@ -2,379 +2,379 @@
   {
     "book": "english-g1",
     "page": "page-135.txt",
-    "reason": "הסרת סימני … ו-/ כדי שהעמוד ייקרא וישמע טבעי.",
-    "content": "שתי תבניות קבועות:\nI am — מתחיל משפט על עצמי.\nYou are — מתחיל משפט על מי שמדברים אליו.\nאחר כך מוסיפים מילה כמו happy או sad.\nדוגמה:\nI am happy — אני שמח.\nYou are sad — אתה עצוב.\n"
+    "reason": "  … -/     .",
+    "content": "  :\nI am —    .\nYou are —      .\n     happy  sad.\n:\nI am happy —  .\nYou are sad —  .\n"
   },
   {
     "book": "english-g2",
     "page": "page-011.txt",
-    "reason": "הסרת רצף אותיות עם … שלא נשמע טוב בשמע.",
-    "content": "מה בא אחרי K?\nבסדר האותיות, אחרי K באה L.\nL\nL\n"
+    "reason": "    …    .",
+    "content": "   K?\n ,  K  L.\nL\nL\n"
   },
   {
     "book": "english-g2",
     "page": "page-013.txt",
-    "reason": "הסרת רצף ... T — U — V — W ... שלא נקרא טוב.",
-    "content": "השאלה: מה בא לפני W?\nבסדר האותיות, לפני W באה V.\nV ✓\n"
+    "reason": "  ... T — U — V — W ...   .",
+    "content": ":    W?\n ,  W  V.\nV ✓\n"
   },
   {
     "book": "english-g2",
     "page": "page-039.txt",
-    "reason": "החלפת s … i … t למשפט קריא.",
-    "content": "קראו sit\nאומרים את הצלילים לאט: s, i, t.\nמחברים יחד: sit\n"
+    "reason": " s … i … t  .",
+    "content": " sit\n   : s, i, t.\n : sit\n"
   },
   {
     "book": "english-g2",
     "page": "page-041.txt",
-    "reason": "החלפת r … u … n למשפט קריא.",
-    "content": "השאלה: קראו — run\nאומרים את הצלילים לאט: r, u, n.\nמחברים יחד.\nrun ✓\n"
+    "reason": " r … u … n  .",
+    "content": ":  — run\n   : r, u, n.\n .\nrun ✓\n"
   },
   {
     "book": "english-g2",
     "page": "page-042.txt",
-    "reason": "הסרת סימן … מתוך סוגריים.",
-    "content": "התחלתם לקרוא מילים קצרות.\nבעמוד הבא נלמד משפחות מילים כמו at ו-an.\n"
+    "reason": "  …  .",
+    "content": "   .\n      at -an.\n"
   },
   {
     "book": "english-g2",
     "page": "page-066.txt",
-    "reason": "החלפת s … u … n למשפט קריא.",
-    "content": "sun — שומעים את הצלילים לאט: s, u, n. המילה היא sun, תמונה של שמש.\nbook — ספר — book.\n"
+    "reason": " s … u … n  .",
+    "content": "sun —    : s, u, n.   sun,   .\nbook —  — book.\n"
   },
   {
     "book": "english-g2",
     "page": "page-074.txt",
-    "reason": "הסרת סימן … מתוך דוגמה.",
-    "content": "איזו תמונה ל-\"It is red\"?\nred — אדום.\nבוחרים תמונה של משהו אדום, כמו תפוח או כדור.\nתמונה של משהו red\n"
+    "reason": "  …  .",
+    "content": "  -\"It is red\"?\nred — .\n    ,    .\n   red\n"
   },
   {
     "book": "english-g3",
     "page": "page-013.txt",
-    "reason": "דיוק כלל fly/flies — לא 'מוסיפים ies' בצורה מטעה.",
-    "content": "תרגיל:\nציפור קטנה בשמיים.\nהפתרון:\nThe bird flies.\nהציפור עפה.\nכל הכבוד!\nבמילה fly, כשמוסיפים s, הצורה הנכונה היא flies.\n"
+    "reason": "  fly/flies —  ' ies'  .",
+    "content": ":\n  .\n:\nThe bird flies.\n .\n !\n fly,  s,    flies.\n"
   },
   {
     "book": "english-g3",
     "page": "page-069.txt",
-    "reason": "תיקון הסבר מטעה שאמר ש-leg הוא he/she/it.",
-    "content": "תרגיל:\nילד נפל ומחזיק את רגלו.\nהפתרון:\nMy leg hurts.\nהרגל שלי כואבת.\nכל הכבוד! My + חלק גוף + hurts.\nמוסיפים s ל-hurt כי leg הוא שם עצם יחיד.\n"
+    "reason": "    -leg  he/she/it.",
+    "content": ":\n    .\n:\nMy leg hurts.\n  .\n ! My +   + hurts.\n s -hurt  leg    .\n"
   },
   {
     "book": "english-g3",
     "page": "page-105.txt",
-    "reason": "הסרת What is… שלא נקרא טוב.",
-    "content": "עכשיו אתם שואלים שאלות עם Do.\nבתרגול תמצאו Do you like music?\nוגם שאלות עם What is.\n"
+    "reason": " What is…   .",
+    "content": "     Do.\n  Do you like music?\n   What is.\n"
   },
   {
     "book": "english-g3",
     "page": "page-121.txt",
-    "reason": "החלפת אני הולך/ת וניקוי חץ.",
-    "content": "דוגמה:\nI go to bed.\nאפשר לתרגם: אני הולך לישון.\nאפשר גם: אני הולכת לישון.\nמתרגלים מעבר מעברית לאנגלית, וגם מאנגלית לעברית.\n"
+    "reason": "  /  .",
+    "content": ":\nI go to bed.\n :   .\n :   .\n   ,   .\n"
   },
   {
     "book": "english-g3",
     "page": "page-122.txt",
-    "reason": "הסרת אני הולך/ת.",
-    "content": "ילד הולך לישון.\nI go to bed.\nאני הולך לישון.\n"
+    "reason": "  /.",
+    "content": "  .\nI go to bed.\n  .\n"
   },
   {
     "book": "english-g3",
     "page": "page-123.txt",
-    "reason": "הסרת אני הולך/ת.",
-    "content": "איך אומרים \"אני הולך לישון\"?\nI go to bed\n"
+    "reason": "  /.",
+    "content": "  \"  \"?\nI go to bed\n"
   },
   {
     "book": "english-g3",
     "page": "page-125.txt",
-    "reason": "הסרת אני קם/ת וניסוח טבעי.",
-    "content": "תרגיל:\nשעון מעורר מצלצל בבוקר.\nהפתרון:\nI wake up early.\nאני קם מוקדם.\nכל הכבוד! wake up = לקום — שתי מילים לפעולה אחת. early = מוקדם.\n"
+    "reason": "  /  .",
+    "content": ":\n   .\n:\nI wake up early.\n  .\n ! wake up =  —    . early = .\n"
   },
   {
     "book": "english-g3",
     "page": "page-127.txt",
-    "reason": "הסרת אני אוהב/ת.",
-    "content": "היום נתרגל תרגום על תחביבים.\nI like to draw — אני אוהב לצייר.\nאפשר לומר גם: אני אוהבת לצייר.\n"
+    "reason": "  /.",
+    "content": "    .\nI like to draw —   .\n  :   .\n"
   },
   {
     "book": "english-g3",
     "page": "page-128.txt",
-    "reason": "הסרת אני אוהב/ת.",
-    "content": "דוגמה:\nI like to draw.\nאני אוהב לצייר.\nאפשר גם: אני אוהבת לצייר.\nShe plays the piano.\nהיא מנגנת בפסנתר.\n"
+    "reason": "  /.",
+    "content": ":\nI like to draw.\n  .\n :   .\nShe plays the piano.\n  .\n"
   },
   {
     "book": "english-g3",
     "page": "page-129.txt",
-    "reason": "התאמת התרגום לדמות ילדה.",
-    "content": "ילדה מציירת.\nI like to draw.\nאני אוהבת לצייר.\n"
+    "reason": "   .",
+    "content": " .\nI like to draw.\n  .\n"
   },
   {
     "book": "english-g3",
     "page": "page-130.txt",
-    "reason": "הסרת אני אוהב/ת.",
-    "content": "איך אומרים \"אני אוהב לצייר\"?\nI like to draw\n"
+    "reason": "  /.",
+    "content": "  \"  \"?\nI like to draw\n"
   },
   {
     "book": "english-g4",
     "page": "page-015.txt",
-    "reason": "החלפת הם/הן מרגישים/ות נרגשים/ות בניסוח טבעי.",
-    "content": "היום נלמד רגשות עם They.\nThey feel excited — הם מתרגשים.\n"
+    "reason": " / / /  .",
+    "content": "    They.\nThey feel excited —  .\n"
   },
   {
     "book": "english-g4",
     "page": "page-016.txt",
-    "reason": "הסרת לוכסנים וניסוח טבעי.",
-    "content": "תבנית:\nThey feel excited.\nהם מתרגשים.\nThey feel happy.\nהם שמחים.\n"
+    "reason": "   .",
+    "content": ":\nThey feel excited.\n .\nThey feel happy.\n .\n"
   },
   {
     "book": "english-g4",
     "page": "page-017.txt",
-    "reason": "הסרת לוכסנים.",
-    "content": "ילדים לפני טיול.\nThey feel excited.\nהם מתרגשים.\n"
+    "reason": " .",
+    "content": "  .\nThey feel excited.\n .\n"
   },
   {
     "book": "english-g4",
     "page": "page-018.txt",
-    "reason": "הסרת לוכסנים.",
-    "content": "איך אומרים \"הם מתרגשים\"?\nThey feel excited\n"
+    "reason": " .",
+    "content": "  \" \"?\nThey feel excited\n"
   },
   {
     "book": "english-g4",
     "page": "page-020.txt",
-    "reason": "הסרת הם/הן עצובים/ות וניקוי חץ.",
-    "content": "תרגיל: \"הם עצובים.\"\nthey = ריבוי — אחרי they לא מוסיפים s לפועל feel.\nsad = עצוב.\nהם עצובים.\nThey feel sad.\n"
+    "reason": " / /  .",
+    "content": ": \" .\"\nthey =  —  they   s  feel.\nsad = .\n .\nThey feel sad.\n"
   },
   {
     "book": "english-g4",
     "page": "page-037.txt",
-    "reason": "הסרת כותב/ת.",
-    "content": "תבנית:\nThe students read books.\nהתלמידים קוראים ספרים.\nThe teacher writes on the board.\nהמורה כותבת על הלוח.\n"
+    "reason": " /.",
+    "content": ":\nThe students read books.\n  .\nThe teacher writes on the board.\n   .\n"
   },
   {
     "book": "english-g4",
     "page": "page-106.txt",
-    "reason": "הסרת עוזר/ת.",
-    "content": "היום נבנה משפטי שגרה עם every day.\nEvery day I help at home — כל יום אני עוזר בבית.\nאפשר לומר גם: כל יום אני עוזרת בבית.\n"
+    "reason": " /.",
+    "content": "     every day.\nEvery day I help at home —     .\n  :     .\n"
   },
   {
     "book": "english-g4",
     "page": "page-107.txt",
-    "reason": "הסרת עוזר/ת.",
-    "content": "תבנית:\nEvery day I help at home.\nכל יום אני עוזר בבית.\nאפשר גם: כל יום אני עוזרת בבית.\nEvery day she walks to school.\nכל יום היא הולכת לבית ספר.\n"
+    "reason": " /.",
+    "content": ":\nEvery day I help at home.\n    .\n :     .\nEvery day she walks to school.\n     .\n"
   },
   {
     "book": "english-g4",
     "page": "page-108.txt",
-    "reason": "הסרת ילד/ה ועוזר/ת.",
-    "content": "ילד עוזר בבית.\nEvery day I help at home.\nכל יום אני עוזר בבית.\n"
+    "reason": " / /.",
+    "content": "  .\nEvery day I help at home.\n    .\n"
   },
   {
     "book": "english-g4",
     "page": "page-109.txt",
-    "reason": "הסרת עוזר/ת.",
-    "content": "איך אומרים \"כל יום אני עוזר בבית\"?\nEvery day I help at home\n"
+    "reason": " /.",
+    "content": "  \"    \"?\nEvery day I help at home\n"
   },
   {
     "book": "english-g4",
     "page": "page-120.txt",
-    "reason": "תיקון playing guitar ל-playing the guitar.",
-    "content": "היום נתרגל תרגום תחביבים ב-Continuous.\nHe is playing the guitar — הוא מנגן בגיטרה עכשיו.\n"
+    "reason": " playing guitar -playing the guitar.",
+    "content": "    -Continuous.\nHe is playing the guitar —    .\n"
   },
   {
     "book": "english-g4",
     "page": "page-121.txt",
-    "reason": "תיקון playing guitar ל-playing the guitar.",
-    "content": "Present Continuous בתרגום:\nHe is playing the guitar.\nהוא מנגן בגיטרה.\nShe is drawing a picture.\nהיא מציירת תמונה.\n"
+    "reason": " playing guitar -playing the guitar.",
+    "content": "Present Continuous :\nHe is playing the guitar.\n  .\nShe is drawing a picture.\n  .\n"
   },
   {
     "book": "english-g4",
     "page": "page-122.txt",
-    "reason": "תיקון playing guitar ל-playing the guitar.",
-    "content": "ילד מנגן בגיטרה.\nHe is playing the guitar.\nהוא מנגן בגיטרה.\n"
+    "reason": " playing guitar -playing the guitar.",
+    "content": "  .\nHe is playing the guitar.\n  .\n"
   },
   {
     "book": "english-g4",
     "page": "page-123.txt",
-    "reason": "תיקון playing guitar ל-playing the guitar.",
-    "content": "איך אומרים \"הוא מנגן בגיטרה\" עכשיו?\nHe is playing the guitar\n"
+    "reason": " playing guitar -playing the guitar.",
+    "content": "  \"  \" ?\nHe is playing the guitar\n"
   },
   {
     "book": "english-g4",
     "page": "page-125.txt",
-    "reason": "ניקוי חץ וניסוח טבעי.",
-    "content": "תרגיל: \"הוא שר שיר עכשיו.\"\nפעולה עכשיו — Present Continuous: is + פועל + ing.\nhe = יחיד, לכן משתמשים ב-is singing.\nהוא שר שיר עכשיו.\nHe is singing a song.\n"
+    "reason": "   .",
+    "content": ": \"   .\"\n  — Present Continuous: is +  + ing.\nhe = ,   -is singing.\n   .\nHe is singing a song.\n"
   },
   {
     "book": "english-g4",
     "page": "page-126.txt",
-    "reason": "תיקון playing guitar ל-playing the guitar.",
-    "content": "עכשיו אתם מתרגלים תרגום תחביבים ב-Continuous.\nבתרגול תמצאו He is playing the guitar.\n"
+    "reason": " playing guitar -playing the guitar.",
+    "content": "     -Continuous.\n  He is playing the guitar.\n"
   },
   {
     "book": "english-g5",
     "page": "page-043.txt",
-    "reason": "תיקון Our class won the project / ניצחה בפרויקט לניסוח טבעי.",
-    "content": "היום נלמד בית ספר — פרויקט כיתתי.\nOur class won a prize for the project — הכיתה שלנו זכתה בפרס על הפרויקט.\n"
+    "reason": " Our class won the project /    .",
+    "content": "    —  .\nOur class won a prize for the project —      .\n"
   },
   {
     "book": "english-g5",
     "page": "page-044.txt",
-    "reason": "תיקון won the project.",
-    "content": "won a prize — זכתה בפרס:\nOur class won a prize for the project.\nהכיתה שלנו זכתה בפרס על הפרויקט.\nWe worked hard last month.\nעבדנו קשה בחודש שעבר.\n"
+    "reason": " won the project.",
+    "content": "won a prize —  :\nOur class won a prize for the project.\n     .\nWe worked hard last month.\n   .\n"
   },
   {
     "book": "english-g5",
     "page": "page-045.txt",
-    "reason": "תיקון won the project.",
-    "content": "כיתה מציגה פרויקט.\nOur class won a prize for the project.\nהכיתה שלנו זכתה בפרס על הפרויקט.\n"
+    "reason": " won the project.",
+    "content": "  .\nOur class won a prize for the project.\n     .\n"
   },
   {
     "book": "english-g5",
     "page": "page-046.txt",
-    "reason": "תיקון שאלת תרגום.",
-    "content": "איך אומרים \"הכיתה שלנו זכתה בפרס על הפרויקט\"?\nOur class won a prize for the project\n"
+    "reason": "  .",
+    "content": "  \"     \"?\nOur class won a prize for the project\n"
   },
   {
     "book": "english-g5",
     "page": "page-049.txt",
-    "reason": "עדכון סיכום לפי התיקון.",
-    "content": "עכשיו אתם מתארים הצלחות בבית הספר.\nבתרגול תמצאו Our class won a prize for the project.\n"
+    "reason": "   .",
+    "content": "     .\n  Our class won a prize for the project.\n"
   },
   {
     "book": "english-g5",
     "page": "page-055.txt",
-    "reason": "תיקון 'הכניס שערים' ל'הבקיע שערים' וניקוי חץ.",
-    "content": "תרגיל: \"הכדורגלן הבקיע שני שערים במשחק.\"\nפועל סדיר בעבר: score הופך ל-scored.\ntwo goals = שני שערים; in the game = במשחק.\nהכדורגלן הבקיע שני שערים במשחק.\nThe footballer scored two goals in the game.\n"
+    "reason": " ' ' ' '  .",
+    "content": ": \"    .\"\n  : score  -scored.\ntwo goals =  ; in the game = .\n    .\nThe footballer scored two goals in the game.\n"
   },
   {
     "book": "english-g5",
     "page": "page-075.txt",
-    "reason": "תיקון 'גולשים באינטרנט לשיעורים' ל'משתמשים באינטרנט'.",
-    "content": "שיעור בבית ספר — משתמשים באינטרנט.\nWe use the internet for lessons.\nנסו לפתור בעצמכם.\nבעמוד הבא נבדוק יחד את הדרך ואת התשובה.\n"
+    "reason": " '  ' ' '.",
+    "content": "   —  .\nWe use the internet for lessons.\n  .\n       .\n"
   },
   {
     "book": "english-g5",
     "page": "page-076.txt",
-    "reason": "תיקון תרגום וניקוי חץ.",
-    "content": "תרגיל: \"אנחנו משתמשים באינטרנט לשיעורים.\"\nwe = אנחנו — אחרי we לא מוסיפים s לפועל use.\nthe internet = האינטרנט; for lessons = לשיעורים.\nאנחנו משתמשים באינטרנט לשיעורים.\nWe use the internet for lessons.\n"
+    "reason": "   .",
+    "content": ": \"   .\"\nwe =  —  we   s  use.\nthe internet = ; for lessons = .\n   .\nWe use the internet for lessons.\n"
   },
   {
     "book": "english-g6",
     "page": "page-013.txt",
-    "reason": "תיקון שגיאת עברית ריקדו → רקדו וניקוי חץ.",
-    "content": "תרגיל: \"ילדים ומבוגרים רקדו יחד בפסטיבל.\"\nפועל סדיר בעבר: dance הופך ל-danced.\ntogether = יחד; at the festival = בפסטיבל.\nילדים ומבוגרים רקדו יחד בפסטיבל.\nChildren and adults danced together at the festival.\n"
+    "reason": "    →   .",
+    "content": ": \"    .\"\n  : dance  -danced.\ntogether = ; at the festival = .\n    .\nChildren and adults danced together at the festival.\n"
   },
   {
     "book": "english-g6",
     "page": "page-016.txt",
-    "reason": "תיקון 'תרגיש מתרגשת' לניסוח טבעי.",
-    "content": "might + feel — אולי ירגיש:\nHe might feel nervous before the presentation.\nאולי הוא ירגיש לחוץ לפני ההצגה.\nShe might feel excited about the trip.\nאולי היא תתרגש מהטיול.\n"
+    "reason": " ' '  .",
+    "content": "might + feel —  :\nHe might feel nervous before the presentation.\n     .\nShe might feel excited about the trip.\n   .\n"
   },
   {
     "book": "english-g6",
     "page": "page-036.txt",
-    "reason": "תיקון 'האינטרנט נפסק' לניסוח טבעי.",
-    "content": "היום נחזק טכנולוגיה עם תנאי type 1 ו-could.\nIf the internet stops working, we could use books instead — אם האינטרנט מפסיק לעבוד, נוכל להשתמש בספרים במקום.\n"
+    "reason": " ' '  .",
+    "content": "     type 1 -could.\nIf the internet stops working, we could use books instead —    ,    .\n"
   },
   {
     "book": "english-g6",
     "page": "page-037.txt",
-    "reason": "תיקון internet stops ו'המחשב נשבר'.",
-    "content": "If + Present, could — אפשרות:\nIf the internet stops working, we could use books instead.\nאם האינטרנט מפסיק לעבוד, נוכל להשתמש בספרים במקום.\nIf the computer breaks, we could write by hand.\nאם המחשב מתקלקל, נוכל לכתוב ביד.\n"
+    "reason": " internet stops ' '.",
+    "content": "If + Present, could — :\nIf the internet stops working, we could use books instead.\n   ,    .\nIf the computer breaks, we could write by hand.\n  ,   .\n"
   },
   {
     "book": "english-g6",
     "page": "page-038.txt",
-    "reason": "תיקון internet stops.",
-    "content": "בית ספר בלי Wi‑Fi.\nIf the internet stops working, we could use books instead.\nאם האינטרנט מפסיק לעבוד, נוכל להשתמש בספרים במקום.\n"
+    "reason": " internet stops.",
+    "content": "   Wi‑Fi.\nIf the internet stops working, we could use books instead.\n   ,    .\n"
   },
   {
     "book": "english-g6",
     "page": "page-039.txt",
-    "reason": "תיקון שאלת תרגום.",
-    "content": "איך אומרים \"אם האינטרנט מפסיק לעבוד, נוכל להשתמש בספרים במקום\"?\nIf the internet stops working, we could use books instead\n"
+    "reason": "  .",
+    "content": "  \"   ,    \"?\nIf the internet stops working, we could use books instead\n"
   },
   {
     "book": "english-g6",
     "page": "page-040.txt",
-    "reason": "החלפת candles בפנסים — בטוח וטבעי יותר לילדים.",
-    "content": "חשמל כבוי — מה עושים?\nIf the electricity goes off, we could use flashlights.\nנסו לפתור בעצמכם.\nבעמוד הבא נבדוק יחד את הדרך ואת התשובה.\n"
+    "reason": " candles  —    .",
+    "content": "  —  ?\nIf the electricity goes off, we could use flashlights.\n  .\n       .\n"
   },
   {
     "book": "english-g6",
     "page": "page-041.txt",
-    "reason": "החלפת candles בפנסים וניקוי חץ.",
-    "content": "תרגיל: \"אם החשמל נכבה, נוכל להשתמש בפנסים.\"\nIf + Present Simple, could + פועל = אפשרות.\ngoes off = נכבה; could use = נוכל להשתמש.\nאם החשמל נכבה, נוכל להשתמש בפנסים.\nIf the electricity goes off, we could use flashlights.\n"
+    "reason": " candles   .",
+    "content": ": \"  ,   .\"\nIf + Present Simple, could +  = .\ngoes off = ; could use =  .\n  ,   .\nIf the electricity goes off, we could use flashlights.\n"
   },
   {
     "book": "english-g6",
     "page": "page-042.txt",
-    "reason": "עדכון סיכום לפי התיקון.",
-    "content": "עכשיו אתם מדברים על טכנולוגיה בתנאי.\nבתרגול תמצאו If the internet stops working, we could use books instead.\n"
+    "reason": "   .",
+    "content": "     .\n  If the internet stops working, we could use books instead.\n"
   },
   {
     "book": "english-g6",
     "page": "page-082.txt",
-    "reason": "תיקון 'תכנון לשיעורים' לניסוח טבעי.",
-    "content": "תכנון שיעורי בית — ציון טוב מחכה.\nIf you do your homework, you will get a good grade.\nנסו לפתור בעצמכם.\nבעמוד הבא נבדוק יחד את הדרך ואת התשובה.\n"
+    "reason": " ' '  .",
+    "content": "   —   .\nIf you do your homework, you will get a good grade.\n  .\n       .\n"
   },
   {
     "book": "english-g6",
     "page": "page-083.txt",
-    "reason": "תיקון do homework ל'תכין שיעורי בית'.",
-    "content": "תרגיל: \"אם תכין שיעורי בית, תקבל ציון טוב.\"\nType 1: If + Present Simple, will + פועל.\ndo your homework = תכין שיעורי בית; will get = תקבל.\nאם תכין שיעורי בית, תקבל ציון טוב.\nIf you do your homework, you will get a good grade.\n"
+    "reason": " do homework '  '.",
+    "content": ": \"   ,   .\"\nType 1: If + Present Simple, will + .\ndo your homework =   ; will get = .\n   ,   .\nIf you do your homework, you will get a good grade.\n"
   },
   {
     "book": "english-g6",
     "page": "page-085.txt",
-    "reason": "הסרת ניסוח מטא 'לא חוזרים על can/must'.",
-    "content": "היום נלמד should, might, could — מילים שעוזרות לתת עצה, אפשרות או רעיון.\nYou should ask the teacher for help — כדאי לשאול את המורה לעזרה.\n"
+    "reason": "   '   can/must'.",
+    "content": "  should, might, could —    ,   .\nYou should ask the teacher for help —     .\n"
   },
   {
     "book": "english-g6",
     "page": "page-097.txt",
-    "reason": "תיקון הסבר שגוי 'כפול y'.",
-    "content": "תרגיל: \"זה הסרט המצחיק ביותר שראיתי.\"\nfunny מסתיימת ב-y. בצורה funniest מחליפים את y ב-i ומוסיפים est.\nI have watched = שראיתי (Present Perfect).\nזה הסרט המצחיק ביותר שראיתי.\nThis is the funniest film I have watched.\n"
+    "reason": "   ' y'.",
+    "content": ": \"    .\"\nfunny  -y.  funniest   y -i  est.\nI have watched =  (Present Perfect).\n    .\nThis is the funniest film I have watched.\n"
   },
   {
     "book": "english-g6",
     "page": "page-113.txt",
-    "reason": "דיוק תרגום benefit.",
-    "content": "היום נתרגל תרגום על העולם — תנאי type 1 ומשפטים ארוכים.\nIf we protect the oceans, future generations will benefit — אם נגן על האוקיינוסים, דורות עתידיים יפיקו מכך תועלת.\n"
+    "reason": "  benefit.",
+    "content": "     —  type 1  .\nIf we protect the oceans, future generations will benefit —    ,     .\n"
   },
   {
     "book": "english-g6",
     "page": "page-114.txt",
-    "reason": "דיוק תרגום benefit.",
-    "content": "If + Present, will — תוצאה בעתיד:\nIf we protect the oceans, future generations will benefit.\nאם נגן על האוקיינוסים, דורות עתידיים יפיקו מכך תועלת.\nIf people work together, the world will improve.\nאם אנשים יעבדו יחד, העולם ישתפר.\n"
+    "reason": "  benefit.",
+    "content": "If + Present, will —  :\nIf we protect the oceans, future generations will benefit.\n   ,     .\nIf people work together, the world will improve.\n   ,  .\n"
   },
   {
     "book": "english-g6",
     "page": "page-115.txt",
-    "reason": "דיוק תרגום benefit.",
-    "content": "ניקוי חוף — שומרים על הים.\nIf we protect the oceans, future generations will benefit.\nאם נגן על האוקיינוסים, דורות עתידיים יפיקו מכך תועלת.\n"
+    "reason": "  benefit.",
+    "content": "  —   .\nIf we protect the oceans, future generations will benefit.\n   ,     .\n"
   },
   {
     "book": "english-g6",
     "page": "page-116.txt",
-    "reason": "דיוק שאלת תרגום benefit.",
-    "content": "איך אומרים \"אם נגן על האוקיינוסים, דורות עתידיים יפיקו מכך תועלת\"?\nIf we protect the oceans, future generations will benefit\n"
+    "reason": "   benefit.",
+    "content": "  \"   ,     \"?\nIf we protect the oceans, future generations will benefit\n"
   },
   {
     "book": "english-g6",
     "page": "page-117.txt",
-    "reason": "נשאר משפט האנגלית, הכנה לתיקון התרגום בעמוד הבא.",
-    "content": "פרויקט על שמירת היערות.\nIf we protect the forests, animals will survive.\nנסו לפתור בעצמכם.\nבעמוד הבא נבדוק יחד את הדרך ואת התשובה.\n"
+    "reason": "  ,     .",
+    "content": "   .\nIf we protect the forests, animals will survive.\n  .\n       .\n"
   },
   {
     "book": "english-g6",
     "page": "page-118.txt",
-    "reason": "תיקון will survive = ישרדו, לא יינצלו.",
-    "content": "תרגיל: \"אם נגן על היערות, בעלי החיים ישרדו.\"\nType 1: If + Present Simple, will + פועל.\nprotect = נגן; will survive = ישרדו.\nאם נגן על היערות, בעלי החיים ישרדו.\nIf we protect the forests, animals will survive.\n"
+    "reason": " will survive = ,  .",
+    "content": ": \"   ,   .\"\nType 1: If + Present Simple, will + .\nprotect = ; will survive = .\n   ,   .\nIf we protect the forests, animals will survive.\n"
   },
   {
     "book": "english-g6",
     "page": "page-119.txt",
-    "reason": "עדכון סיכום אחרי תיקון benefit.",
-    "content": "עכשיו אתם מתרגלים תרגום עם תנאי ומשפטים ארוכים.\nבתרגול תמצאו If we protect the oceans, future generations will benefit.\n"
+    "reason": "    benefit.",
+    "content": "       .\n  If we protect the oceans, future generations will benefit.\n"
   }
 ]

@@ -231,7 +231,7 @@ export function ParentCopilotPanel({
     if (!Array.isArray(qa) || !qa.length) return [];
     return qa.map((a) => ({
       id: a.id,
-      labelHe: a.labelHe,
+      label: a.label,
       enabled: !!a.enabled,
       disabledReasonCode: a.disabledReasonCode,
       onPress: () => {

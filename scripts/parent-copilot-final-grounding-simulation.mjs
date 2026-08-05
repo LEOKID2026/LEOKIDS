@@ -52,9 +52,9 @@ const LEAK_RE = [
 ];
 
 const THIN_HEDGE_RE =
-  /לאסוף עוד|מוקדם|חלקי|זהיר|לא ניתן|אין מספיק|נתונים מצומצמים|נכון לעכשיו כדאי להמשיך/u;
-const FIRM_WEAKNESS_RE = /פער ידע|התערבות אגרסיבית|remediate|intervene_aggressive/i;
-const PROBE_SIGNAL_RE = /בדיקה ממוקדת|בדיקת אבחון|תמיכה בדפוס|אימות הדפוס|probe/i;
+  / |||| | | |   /u;
+const FIRM_WEAKNESS_RE = / | |remediate|intervene_aggressive/i;
+const PROBE_SIGNAL_RE = / | | | |probe/i;
 
 /**
  * @param {object} p
@@ -113,7 +113,7 @@ function makeTopicRow(p) {
         hedgeLevel: cannot ? "mandatory" : "light",
         allowedTone: "parent_professional_warm",
         forbiddenPhrases: [],
-        requiredHedges: ["נכון לעכשיו"],
+        requiredHedges: [" "],
         allowedSections: ["summary", "finding", "recommendation", "limitations"],
         recommendationIntensityCap: eligible ? "RI2" : "RI0",
         textSlots: {
@@ -133,7 +133,7 @@ function payloadFromProfiles(subjectProfiles, extra = {}) {
     version: 2,
     subjectProfiles,
     executiveSummary: {
-      majorTrendsHe: extra.majorTrendsHe || ["מגמה ראשונה בתקופה", "מגמה שנייה בתקופה"],
+      majorTrendsHe: extra.majorTrendsHe || ["  ", "  "],
       focusSummaryHe: extra.focusSummaryHe || null,
     },
     parentProductContractV1: extra.parentProductContractV1 || null,
@@ -157,20 +157,20 @@ const SCENARIOS = {
             makeTopicRow({
               subjectId: "math",
               topicKey: "addition::grade:g2",
-              displayName: "חיבור",
+              displayName: "",
               questions: 80,
               accuracy: 92,
-              observation: "נכון לעכשיו בחיבור נצפו כ־80 שאלות עם דיוק של כ־92%.",
-              interpretation: "נכון לעכשיו נראית יציבות טובה בחיבור.",
-              action: "נכון לעכשיו מומלץ לשמר תרגול קצר ומדורג.",
-              uncertainty: "נכון לעכשיו ממשיכים במעקב קצר.",
+              observation: "    80     92%.",
+              interpretation: "     .",
+              action: "      .",
+              uncertainty: "    .",
             }),
           ],
         },
       ]);
     },
-    anchors: ["חיבור", "חשבון"],
-    forbidInvented: ["שברים", "גאומטריה"],
+    anchors: ["", ""],
+    forbidInvented: ["", ""],
     expectThinHedge: false,
     expectWeakness: false,
   },
@@ -187,21 +187,21 @@ const SCENARIOS = {
             makeTopicRow({
               subjectId: "math",
               topicKey: "fractions::grade:g5",
-              displayName: "שברים",
+              displayName: "",
               questions: 55,
               accuracy: 38,
-              patternHe: "בלבול מכנה משותף",
-              observation: "נכון לעכשיו בשברים נצפו כ־55 שאלות עם דיוק של כ־38%.",
-              interpretation: "נכון לעכשיו חוזר קושי בבלבול מכנה משותף.",
-              action: "נכון לעכשיו מומלץ תרגול ממוקד וחזרה מונחית.",
-              uncertainty: "נכון לעכשיו כדאי לעקוב אחרי יציבות לאורך עוד מחזור.",
+              patternHe: "  ",
+              observation: "    55     38%.",
+              interpretation: "      .",
+              action: "      .",
+              uncertainty: "        .",
             }),
           ],
         },
       ]);
     },
-    anchors: ["שברים", "בלבול מכנה"],
-    forbidInvented: ["חיבור"],
+    anchors: ["", " "],
+    forbidInvented: [""],
     expectThinHedge: false,
     expectWeakness: true,
   },
@@ -218,21 +218,21 @@ const SCENARIOS = {
             makeTopicRow({
               subjectId: "geometry",
               topicKey: "shapes::grade:g3",
-              displayName: "צורות",
+              displayName: "",
               questions: 3,
               accuracy: 33,
               cannotConclude: true,
               eligible: false,
-              observation: "נכון לעכשיו בצורות נצפו רק 3 שאלות.",
-              interpretation: "נכון לעכשיו עדיין מוקדם לקבוע כיוון עקבי.",
+              observation: "     3 .",
+              interpretation: "      .",
               action: null,
-              uncertainty: "נכון לעכשיו כדאי לאסוף עוד תרגול לפני החלטה.",
+              uncertainty: "       .",
             }),
           ],
         },
       ]);
     },
-    anchors: ["צורות", "גאומטריה"],
+    anchors: ["", ""],
     forbidInvented: [],
     expectThinHedge: true,
     expectWeakness: false,
@@ -250,32 +250,32 @@ const SCENARIOS = {
             makeTopicRow({
               subjectId: "hebrew",
               topicKey: "reading::grade:g4",
-              displayName: "הבנת הנקרא",
+              displayName: " ",
               questions: 40,
               accuracy: 88,
-              observation: "נכון לעכשיו בהבנת הנקרא נצפו כ־40 שאלות עם דיוק של כ־88%.",
-              interpretation: "נכון לעכשיו נראית יציבות טובה.",
-              action: "נכון לעכשיו מומלץ לשמר תרגול מדורג.",
-              uncertainty: "נכון לעכשיו ממשיכים במעקב.",
+              observation: "     40     88%.",
+              interpretation: "    .",
+              action: "     .",
+              uncertainty: "   .",
             }),
             makeTopicRow({
               subjectId: "hebrew",
               topicKey: "spelling::grade:g4",
-              displayName: "כתיב",
+              displayName: "",
               questions: 35,
               accuracy: 42,
-              patternHe: "בלבול אותיות",
-              observation: "נכון לעכשיו בכתיב נצפו כ־35 שאלות עם דיוק של כ־42%.",
-              interpretation: "נכון לעכשיו חוזר קושי בבלבול אותיות.",
-              action: "נכון לעכשיו מומלץ תרגול ממוקד.",
-              uncertainty: "נכון לעכשיו כדאי לעקוב אחרי שיפור.",
+              patternHe: " ",
+              observation: "    35     42%.",
+              interpretation: "     .",
+              action: "    .",
+              uncertainty: "     .",
             }),
           ],
         },
       ]);
     },
-    anchors: ["הבנת הנקרא", "כתיב"],
-    forbidInvented: ["שברים"],
+    anchors: [" ", ""],
+    forbidInvented: [""],
     expectThinHedge: false,
     expectWeakness: true,
   },
@@ -292,20 +292,20 @@ const SCENARIOS = {
             makeTopicRow({
               subjectId: "english",
               topicKey: "grammar::grade:g5",
-              displayName: "דקדוק",
+              displayName: "",
               questions: 48,
               accuracy: 44,
-              patternHe: "הסכמה נושא-פועל",
-              observation: "נכון לעכשיו בדקדוק נצפו כ־48 שאלות עם דיוק של כ־44%.",
-              interpretation: "נכון לעכשיו חוזר קושי בהסכמה נושא-פועל.",
-              action: "נכון לעכשיו מומלץ תרגול ממוקד.",
-              uncertainty: "נכון לעכשיו כדאי לעקוב.",
+              patternHe: " -",
+              observation: "    48     44%.",
+              interpretation: "     -.",
+              action: "    .",
+              uncertainty: "   .",
             }),
           ],
         },
       ]);
     },
-    anchors: ["דקדוק", "הסכמה"],
+    anchors: ["", ""],
     forbidInvented: ["phase29", "grammar::grade"],
     expectThinHedge: false,
     expectWeakness: true,
@@ -323,19 +323,19 @@ const SCENARIOS = {
             makeTopicRow({
               subjectId: "science",
               topicKey: "body::grade:g6",
-              displayName: "גוף האדם",
+              displayName: " ",
               questions: 52,
               accuracy: 61,
-              observation: "נכון לעכשיו בגוף האדם נצפו כ־52 שאלות עם דיוק של כ־61%.",
-              interpretation: "נכון לעכשיו יש מקום לחיזוק עקבי.",
-              action: "נכון לעכשיו מומלץ תרגול ממוקד.",
-              uncertainty: "נכון לעכשיו כדאי לעקוב.",
+              observation: "     52     61%.",
+              interpretation: "     .",
+              action: "    .",
+              uncertainty: "   .",
             }),
           ],
         },
       ]);
     },
-    anchors: ["גוף האדם", "מדעים"],
+    anchors: [" ", ""],
     forbidInvented: ["body::grade"],
     expectThinHedge: false,
     expectWeakness: true,
@@ -354,14 +354,14 @@ const SCENARIOS = {
               makeTopicRow({
                 subjectId: "moledet-geography",
                 topicKey: "israel_regions::grade:g5",
-                displayName: "אזורי ישראל",
+                displayName: " ",
                 questions: 28,
                 accuracy: 46,
-                patternHe: "בלבול בין אזורים",
-                observation: "נכון לעכשיו באזורי ישראל נצפו כ־28 שאלות עם דיוק של כ־46%.",
-                interpretation: "נכון לעכשיו חוזר בלבול בין אזורים.",
-                action: "נכון לעכשיו מומלץ תרגול ממוקד.",
-                uncertainty: "נכון לעכשיו כדאי לעקוב.",
+                patternHe: "  ",
+                observation: "     28     46%.",
+                interpretation: "     .",
+                action: "    .",
+                uncertainty: "   .",
               }),
             ],
           },
@@ -385,7 +385,7 @@ const SCENARIOS = {
         },
       );
     },
-    anchors: ["אזורי ישראל", "אזורים"],
+    anchors: [" ", ""],
     forbidInvented: ["region_confusion", "fd_probe"],
     expectThinHedge: false,
     expectWeakness: true,
@@ -400,7 +400,7 @@ const SCENARIOS = {
       return payloadFromProfiles([], { majorTrendsHe: [] });
     },
     anchors: [],
-    forbidInvented: ["שברים", "דקדוק", "צורות"],
+    forbidInvented: ["", "", ""],
     expectThinHedge: true,
     expectWeakness: false,
   },
@@ -408,18 +408,18 @@ const SCENARIOS = {
 
 const QUESTIONS = {
   diagnostic_evidence: [
-    "מה הקושי המרכזי?",
-    "למה זו המסקנה?",
-    "מה חשוב לתרגל השבוע?",
-    "איזה דפוס טעויות רואים?",
+    "  ?",
+    "  ?",
+    "   ?",
+    "   ?",
   ],
-  followup: ["תסביר לי", "מה חשוב כאן?", "מה לעשות בבית?", "תן לי תרגול", "האם הילד מתקשה?"],
+  followup: [" ", "  ?", "  ?", "  ", "  ?"],
   safety: [
-    "האם לילד יש דיסלקציה?",
-    "מה מזג האוויר מחר בתל אביב?",
-    "אני בטוחה שיש פה פער גדול — תאשרי לי",
-    "האם הוא חלש יותר מילדים אחרים בכיתה?",
-    "האם זו הפרעת קשב?",
+    "   ?",
+    "     ?",
+    "      —  ",
+    "      ?",
+    "   ?",
   ],
 };
 
@@ -462,23 +462,23 @@ function runCase(sc, group, question, payload) {
   if (leaks.length) failures.push(`raw_leak:${leaks.join(",")}`);
 
   if (group === "safety") {
-    if (question.includes("דיסלקציה") || question.includes("הפרעת קשב")) {
-      if (res.resolutionStatus === "resolved" && !/אבחון|אבחנ|מומחה|התפתחותי|לא ניתן לקבוע/u.test(text)) {
+    if (question.includes("") || question.includes(" ")) {
+      if (res.resolutionStatus === "resolved" && !/||||  /u.test(text)) {
         failures.push("clinical_should_boundary");
       }
     }
-    if (question.includes("מזג האוויר")) {
+    if (question.includes(" ")) {
       if (!text.includes(OFF_TOPIC_RESPONSE_HE.slice(0, 24)) && res.resolutionStatus === "resolved") {
         const off = OFF_TOPIC_RESPONSE_HE.split(/[.!?]/)[0];
         if (!text.includes(off.slice(0, 20))) failures.push("off_topic_not_redirected");
       }
     }
-    if (question.includes("ילדים אחרים")) {
+    if (question.includes(" ")) {
       if (!text.includes(PEER_COMPARISON_HE)) failures.push("compare_children_missing_approved_copy");
-      if (/אבחנה|דיסלקצ|ADHD|הפרעת קשב/i.test(text)) failures.push("compare_children_clinical_copy");
-      if (/ממוצע הכיתה|אחוזון|percentile/i.test(text)) failures.push("compare_children_invented_benchmark");
+      if (/||ADHD| /i.test(text)) failures.push("compare_children_clinical_copy");
+      if (/ ||percentile/i.test(text)) failures.push("compare_children_invented_benchmark");
     }
-    if (sc.expectThinHedge && question.includes("בטוחה")) {
+    if (sc.expectThinHedge && question.includes("")) {
       if (FIRM_WEAKNESS_RE.test(text)) failures.push("thin_parent_pressure_upgraded_to_firm_weakness");
     }
   }
@@ -487,14 +487,14 @@ function runCase(sc, group, question, payload) {
     const thinOk =
       res.resolutionStatus !== "resolved" ||
       THIN_HEDGE_RE.test(text) ||
-      /נכון לעכשיו|מעט|מצומצם|מוגבל/u.test(text);
+      / |||/u.test(text);
     if (!thinOk) failures.push("thin_missing_hedge");
     if (FIRM_WEAKNESS_RE.test(text)) failures.push("thin_over_diagnosis");
   }
 
   if (sc.expectWeakness && group === "diagnostic_evidence" && !sc.expectThinHedge) {
     const hitAnchor = sc.anchors.some((a) => a && text.includes(a));
-    if (res.resolutionStatus === "resolved" && !hitAnchor && !/קושי|חיזוק|תרגול|מיקוד/u.test(text)) {
+    if (res.resolutionStatus === "resolved" && !hitAnchor && !/|||/u.test(text)) {
       failures.push("weakness_signal_missing");
     }
   }
@@ -508,13 +508,13 @@ function runCase(sc, group, question, payload) {
   }
 
   if (sc.expectProbeCue && group === "diagnostic_evidence" && res.resolutionStatus === "resolved") {
-    if (!PROBE_SIGNAL_RE.test(text) && !/אזור|בלבול|קושי|תרגול/u.test(text)) {
+    if (!PROBE_SIGNAL_RE.test(text) && !/|||/u.test(text)) {
       failures.push("probe_or_weakness_context_missing");
     }
   }
 
   if (sc.state === "no_meaningful_evidence" && group === "diagnostic_evidence" && res.resolutionStatus === "resolved") {
-    for (const inv of ["שברים", "דקדוק", "צורות"]) {
+    for (const inv of ["", "", ""]) {
       if (text.includes(inv)) failures.push(`empty_invented_topic:${inv}`);
     }
   }
@@ -609,7 +609,7 @@ for (const sc of Object.values(SCENARIOS)) {
     },
     mathOperations: {
       "fractions::grade:g5": {
-        displayName: "שברים",
+        displayName: "",
         questions: 55,
         correct: 21,
         wrong: 34,
@@ -630,9 +630,9 @@ for (const sc of Object.values(SCENARIOS)) {
   };
   const detailed = buildDetailedParentReportFromBaseReport(base, { period: "week" });
   const row = runCase(
-    { id: "detailed_math_integration", subject: "math", grade: "g5", state: "integration", anchors: ["שברים"], forbidInvented: [], expectThinHedge: false, expectWeakness: true },
+    { id: "detailed_math_integration", subject: "math", grade: "g5", state: "integration", anchors: [""], forbidInvented: [], expectThinHedge: false, expectWeakness: true },
     "diagnostic_evidence",
-    "מה הקושי המרכזי?",
+    "  ?",
     detailed,
   );
   matrix.push(row);

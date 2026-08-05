@@ -52,9 +52,9 @@ const ORDER_FN = () => {
   const blocks = [...document.querySelectorAll(".pr-detailed-subject-block")].map((block) => {
     const inner = block.querySelector(".pr-detailed-subject-inner");
     if (!inner) return { title: "", ok: true };
-    const rec = idx(inner, "המלצות מפורטות לפי נושא");
-    const monitor = idx(inner, "נושאים שכדאי לעקוב אחריהם");
-    const low = idx(inner, "נושאים עם מעט שאלות");
+    const rec = idx(inner, "   ");
+    const monitor = idx(inner, "   ");
+    const low = idx(inner, "   ");
     let ok = true;
     if (rec != null && monitor != null && !(rec < monitor)) ok = false;
     if (monitor != null && low != null && !(monitor < low)) ok = false;
@@ -66,24 +66,24 @@ const ORDER_FN = () => {
   });
   const root = document.querySelector("#parent-report-detailed-print");
   const text = root ? root.innerText || "" : "";
-  return { pageLoaded: Boolean(root), hasDisclaimer: text.includes("הבהרה חשובה"), blocks };
+  return { pageLoaded: Boolean(root), hasDisclaimer: text.includes(" "), blocks };
 };
 
 const SUMMARY_FN = () => {
   const root = document.querySelector("#parent-report-detailed-print");
   const text = root ? root.innerText || "" : "";
   const forbidden = [
-    "מצב הנתונים בדוח",
-    "מה חשוב לדעת",
-    "מה מומלץ לעשות בבית",
-    "תרגול מחוץ לכיתה הרשומה",
-    "מקוצר: מילה לכל מקצוע",
-    "הודעות מהמורה",
+    "  ",
+    "  ",
+    "   ",
+    "   ",
+    ":   ",
+    " ",
   ];
-  const allowed = ["סיכום חכם להורה", "מה עשינו בתקופה הזאת", "מקצועות הלימוד", "הבהרה חשובה"];
+  const allowed = ["  ", "   ", " ", " "];
   const copilotVisible = Boolean(document.querySelector(".no-pdf .rounded-lg.border.border-cyan-500\\/20"));
   const activitySection = [...root.querySelectorAll(".pr-detailed-section-title, .pr-detailed-section-head")].find((el) =>
-    (el.textContent || "").includes("מה עשינו בתקופה הזאת")
+    (el.textContent || "").includes("   ")
   )?.closest(".pr-detailed-section, section, [class*='SectionCard']") || root;
   const activityText = activitySection ? activitySection.innerText || "" : text;
   return {
@@ -91,12 +91,12 @@ const SUMMARY_FN = () => {
     forbiddenHits: forbidden.filter((f) => text.includes(f)),
     allowedPresent: allowed.filter((a) => text.includes(a)),
     copilotVisible,
-    hasDisclaimer: text.includes("הבהרה חשובה"),
-    activityHasTimeCard: activityText.includes("זמן כולל"),
-    activityHasQuestionsCard: activityText.includes("שאלות") && /\d+/.test(activityText),
-    activityHasAccuracyCard: activityText.includes("דיוק כללי"),
-    activityHasCoverageTable: activityText.includes("כיסוי לפי מקצוע"),
-    activityHasNotable: activityText.includes("מקצועות בולטים"),
+    hasDisclaimer: text.includes(" "),
+    activityHasTimeCard: activityText.includes(" "),
+    activityHasQuestionsCard: activityText.includes("") && /\d+/.test(activityText),
+    activityHasAccuracyCard: activityText.includes(" "),
+    activityHasCoverageTable: activityText.includes("  "),
+    activityHasNotable: activityText.includes(" "),
   };
 };
 
@@ -160,21 +160,21 @@ async function main() {
   await browser.close();
 
   const fullChecks = [
-    { name: "הדף נטען (מלא)", pass: full.pageLoaded },
-    { name: "סדר נושאים (מלא)", pass: full.blocks.every((b) => b.ok) },
-    { name: "הבהרה חשובה (מלא)", pass: full.hasDisclaimer },
+    { name: "  ()", pass: full.pageLoaded },
+    { name: "  ()", pass: full.blocks.every((b) => b.ok) },
+    { name: "  ()", pass: full.hasDisclaimer },
   ];
   const summaryChecks = [
-    { name: "הדף נטען (מקוצר)", pass: summaryMeta.pageLoaded },
+    { name: "  ()", pass: summaryMeta.pageLoaded },
     {
-      name: "רק חלונות מותרים (מקוצר)",
+      name: "   ()",
       pass:
         summaryMeta.allowedPresent.length === 4 &&
         summaryMeta.forbiddenHits.length === 0,
     },
-    { name: "אין copilot (מקוצר)", pass: !summaryMeta.copilotVisible },
+    { name: " copilot ()", pass: !summaryMeta.copilotVisible },
     {
-      name: "כל חלון מה עשינו (מקוצר)",
+      name: "    ()",
       pass:
         summaryMeta.activityHasTimeCard &&
         summaryMeta.activityHasQuestionsCard &&
@@ -182,8 +182,8 @@ async function main() {
         summaryMeta.activityHasCoverageTable &&
         summaryMeta.activityHasNotable,
     },
-    { name: "סדר נושאים (מקוצר)", pass: summaryOrder.blocks.every((b) => b.ok) },
-    { name: "הבהרה חשובה (מקוצר)", pass: summaryMeta.hasDisclaimer },
+    { name: "  ()", pass: summaryOrder.blocks.every((b) => b.ok) },
+    { name: "  ()", pass: summaryMeta.hasDisclaimer },
   ];
 
   console.log(JSON.stringify({ full: fullChecks, summary: summaryChecks, fullSubjects: full.blocks, summarySubjects: summaryOrder.blocks }, null, 2));

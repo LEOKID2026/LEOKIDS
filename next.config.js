@@ -128,7 +128,7 @@ const nextConfig = {
       COLORING_WORKSHEET_API_ROUTES.map((route) => [route, [COLORING_CATALOG_FILE]])
     ),
   },
-  reactStrictMode: false, // זמנית - כדי למנוע רענון אינסופי בפיתוח
+  reactStrictMode: false, //  -
   // Explicit: never emit browser source maps in production (reduces compile RSS).
   productionBrowserSourceMaps: false,
   // Memory: Vercel Hobby/Pro build machines are 8GB. pack-catalog + locale JSON
@@ -166,9 +166,9 @@ const nextConfig = {
         ],
       };
       /**
-       * React Fast Refresh נשען על שינויי רנטיים בזמן ריצה.
-       * השבתת הפלאגין: אין Fast Refresh, אבל שמירת קבצים עדיין מרעננת את הדף (רענון מלא).
-       * ראה: https://nextjs.org/docs/messages/fast-refresh-reload
+       * React Fast Refresh      .
+       *  :  Fast Refresh,        ( ).
+       * : https://nextjs.org/docs/messages/fast-refresh-reload
        */
       if (!isServer && Array.isArray(config.plugins)) {
         config.plugins = config.plugins.filter((p) => {

@@ -121,7 +121,7 @@ assert(
 );
 
 r = resolveDiagnosticUnitSkillAlignment(
-  { subjectId: "geometry", displayName: "היקף" },
+  { subjectId: "geometry", displayName: "" },
   { metadataIndex, topicBucketKeys: ["perimeter", "angles"], scenarioId: "strong_all_subjects_g3_7d" }
 );
 assert(
@@ -133,7 +133,7 @@ assert(
 );
 
 r = resolveDiagnosticUnitSkillAlignment(
-  { subjectId: "geometry", displayName: "מקבילות ומאונכות" },
+  { subjectId: "geometry", displayName: " " },
   { metadataIndex, topicBucketKeys: ["parallel_perpendicular", "perimeter"], scenarioId: "strong_all_subjects_g3_7d" }
 );
 assert(
@@ -145,11 +145,11 @@ assert(
 
 assert(
   "geometry_hebrew_display_bucket_mismatch",
-  resolveGeometryTopicBucketKeyFromUnit({ displayName: "היקף" }, ["area"]) === ""
+  resolveGeometryTopicBucketKeyFromUnit({ displayName: "" }, ["area"]) === ""
 );
 
 r = resolveDiagnosticUnitSkillAlignment(
-  { subjectId: "geometry", displayName: "שטח", diagnosis: { taxonomyId: "G-03" } },
+  { subjectId: "geometry", displayName: "", diagnosis: { taxonomyId: "G-03" } },
   { metadataIndex, topicBucketKeys: ["perimeter"] }
 );
 assert("geometry_taxonomy_takes_precedence", r.skillId === "geo_rect_area_plan" && r.subskillId === "area_rectangle");
@@ -164,7 +164,7 @@ assert(
 );
 
 r = resolveDiagnosticUnitSkillAlignment(
-  { subjectId: "geometry", displayName: "זוויות" },
+  { subjectId: "geometry", displayName: "" },
   { metadataIndex, topicBucketKeys: ["angles", "perimeter"], scenarioId: "strong_all_subjects_g3_7d" }
 );
 assert("geometry_unmapped_hebrew_stays_missing", r.confidence === "missing" && r.source === "none");

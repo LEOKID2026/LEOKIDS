@@ -13,8 +13,8 @@ function mockUnit({ patternHe, actionState = "intervene", questions = 206, corre
   return {
     subjectId: "math",
     topicRowKey: "fractions::grade:g4",
-    displayName: "שברים",
-    taxonomy: { patternHe, id: "M-05", subskillHe: "השוואת שברים" },
+    displayName: "",
+    taxonomy: { patternHe, id: "M-05", subskillHe: " " },
     diagnosis: { allowed: true, lineHe: patternHe },
     classification: { state: "classified", primaryTag: "numerator_only_compare" },
     patternEvidence: { allowed: true, evidenceCount: Math.max(1, wrong) },
@@ -31,14 +31,14 @@ function mockUnit({ patternHe, actionState = "intervene", questions = 206, corre
 }
 
 function rowFromMetrics(q, c, w, acc) {
-  return { questions: q, correct: c, wrong: w, accuracy: acc, displayName: "חיבור" };
+  return { questions: q, correct: c, wrong: w, accuracy: acc, displayName: "" };
 }
 
-// OMER שברים — DE2 pattern must propagate to parent finding
+// OMER  — DE2 pattern must propagate to parent finding
 {
-  const unit = mockUnit({ patternHe: "השוואה לפי מונה בלבד" });
+  const unit = mockUnit({ patternHe: "   " });
   const row = rowFromMetrics(206, 108, 98, 52);
-  row.displayName = "שברים";
+  row.displayName = "";
   const lpd = buildLearningPatternDecision({
     subjectId: "math",
     topicRowKey: "fractions::grade:g4",
@@ -46,29 +46,29 @@ function rowFromMetrics(q, c, w, acc) {
     unit,
     rawMistakes: [],
   });
-  assert.match(lpd.parentVisibleFinding, /השוואת שברים לפי המונה בלבד/);
-  assert.doesNotMatch(lpd.parentVisibleFinding, /כמה טעויות/);
+  assert.match(lpd.parentVisibleFinding, /    /);
+  assert.doesNotMatch(lpd.parentVisibleFinding, / /);
   assert.equal(lpd.engineDecisionContract.sourceEngine, "de2");
-  assert.equal(lpd.engineDecisionContract.detectedPattern, "השוואת שברים לפי המונה בלבד");
+  assert.equal(lpd.engineDecisionContract.detectedPattern, "    ");
 }
 
-// OMER כפל — repeated pairs pattern
+// OMER  — repeated pairs pattern
 {
   const unit = mockUnit({
-    patternHe: "אותם זוגות שגויים",
+    patternHe: "  ",
     questions: 32,
     correct: 22,
     wrong: 10,
     accuracy: 69,
     actionState: "intervene",
   });
-  unit.displayName = "כפל";
+  unit.displayName = "";
   unit.topicRowKey = "multiplication::grade:g4";
-  unit.taxonomy = { patternHe: "אותם זוגות שגויים", id: "M-03", subskillHe: "כפל" };
+  unit.taxonomy = { patternHe: "  ", id: "M-03", subskillHe: "" };
   unit.classification = { state: "classified", primaryTag: "multiplication_fact_error" };
   unit.patternEvidence = { allowed: true, evidenceCount: 10 };
   const row = rowFromMetrics(32, 22, 10, 69);
-  row.displayName = "כפל";
+  row.displayName = "";
   const lpd = buildLearningPatternDecision({
     subjectId: "math",
     topicRowKey: "multiplication::grade:g4",
@@ -76,16 +76,16 @@ function rowFromMetrics(q, c, w, acc) {
     unit,
     rawMistakes: [],
   });
-  assert.match(lpd.parentVisibleFinding, /טעויות חוזרות בעובדות כפל/);
+  assert.match(lpd.parentVisibleFinding, /   /);
   assert.equal(lpd.engineDecisionContract.recommendedAction, "remediate_same_level");
 }
 
-// Aaa7 חיבור — clear difficulty, not maintain
+// Aaa7  — clear difficulty, not maintain
 {
   const contract = buildParentReportEngineDecisionContract({
     subjectId: "math",
     topicRowKey: "addition::grade:g1",
-    topicName: "חיבור",
+    topicName: "",
     row: rowFromMetrics(10, 2, 8, 20),
     unit: {
       canonicalState: {
@@ -143,13 +143,13 @@ function rowFromMetrics(q, c, w, acc) {
   const lpd = buildLearningPatternDecision({
     subjectId: "math",
     topicRowKey: "fractions::grade:g4",
-    row: { ...rowFromMetrics(206, 108, 98, 52), displayName: "שברים" },
-    unit: mockUnit({ patternHe: "השוואה לפי מונה בלבד" }),
+    row: { ...rowFromMetrics(206, 108, 98, 52), displayName: "" },
+    unit: mockUnit({ patternHe: "   " }),
     rawMistakes: [],
   });
   const sections = buildLpdSafeTopicExplainSectionsHe({
-    label: "שברים",
-    displayName: "שברים",
+    label: "",
+    displayName: "",
     questions: 206,
     correct: 108,
     wrong: 98,
@@ -158,7 +158,7 @@ function rowFromMetrics(q, c, w, acc) {
   });
   assert.ok(sections);
   assert.match(sections.identified, /What we see/i);
-  assert.match(sections.pattern, /השוואת שברים לפי המונה בלבד/);
+  assert.match(sections.pattern, /    /);
 }
 
 // P0: canonical probe_only/RI0 cannot be overridden by clear-gap metrics.

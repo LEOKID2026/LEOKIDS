@@ -200,7 +200,7 @@ export default function StudentRewardCardPreviewModal({
         downloadUrl: currentCard.imageDownloadUrl,
         imageVariantsReady: currentCard.imageVariantsReady === true,
         studentFullName: String(studentFullName),
-        cardNameHe: currentCard.nameHe,
+        cardNameHe: currentCard.name,
         cardKey: currentCard.cardKey,
       });
     } catch {
@@ -272,7 +272,7 @@ export default function StudentRewardCardPreviewModal({
               <StudentRewardCardModalImage
                 thumbSrc={thumbSrc}
                 displaySrc={displaySrc}
-                alt={currentCard.nameHe || copy("previewModal", "cardImageAlt")}
+                alt={currentCard.name || copy("previewModal", "cardImageAlt")}
                 showLocked={showLocked}
                 preBaked={currentCard.imageVariantsReady === true}
               />
@@ -291,16 +291,16 @@ export default function StudentRewardCardPreviewModal({
 
           <div className={`${CARD_INFO_PILL_CLASS} space-y-1 min-w-0 w-full max-w-full`}>
             <h2 id={titleId} className={`${CAPTION_CLASS} line-clamp-2`}>
-              {currentCard.nameHe}
+              {currentCard.name}
             </h2>
-            {currentCard.rarityHe || currentCard.seriesNameHe ? (
+            {currentCard.rarityLabel || currentCard.seriesName ? (
               <p className={`${SUB_CAPTION_CLASS} truncate`}>
                 {[
-                  currentCard.rarityHe
-                    ? copy("previewModal", "rarityLabel", { label: currentCard.rarityHe })
+                  currentCard.rarityLabel
+                    ? copy("previewModal", "rarityLabel", { label: currentCard.rarityLabel })
                     : null,
-                  currentCard.seriesNameHe
-                    ? copy("previewModal", "seriesLabel", { label: currentCard.seriesNameHe })
+                  currentCard.seriesName
+                    ? copy("previewModal", "seriesLabel", { label: currentCard.seriesName })
                     : null,
                 ]
                   .filter(Boolean)

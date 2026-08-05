@@ -50,17 +50,17 @@ for (const grade of GRADES) {
 
       const textOnly = body.replace(DIAGRAM_RE, "").replace(IMAGE_RE, "").trim();
       const shapeHints = [
-        "משולש",
-        "מלבן",
-        "ריבוע",
-        "מעגל",
-        "עיגול",
-        "טרפז",
-        "מקבילית",
-        "גליל",
-        "פירמיד",
-        "כדור",
-        "מנסרה",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
       ];
       const mentionedShape = shapeHints.find((s) => textOnly.includes(s));
 

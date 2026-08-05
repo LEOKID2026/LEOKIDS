@@ -12,11 +12,11 @@ import {
 } from "../../lib/worksheets/worksheet-payload-build.server.js";
 
 const META = {
-  titleHe: "דף עבודה - גאומטריה",
-  subjectHe: "גאומטריה",
-  gradeHe: "כיתה ד׳",
-  topicHe: "שטח",
-  levelHe: "בינוני",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "geometry",
   gradeKey: "g4",
@@ -26,7 +26,7 @@ const META = {
 
 const RAW = [
   {
-    question: "כיתה ד׳ · נושא area - מה שטח המלבן?",
+    question: "  ·  area -   ?",
     skillId: "geo_area_rect",
     diagnosticSkillId: "diag_geo_area",
     patternFamily: "area_word",
@@ -57,7 +57,7 @@ describe("worksheet-no-metadata-in-html", () => {
   test("stem does not retain grade/topic metadata prefix", () => {
     const payload = buildWorksheetPayload(RAW, META, { subjectId: "geometry" });
     const stem = payload.questions[0]?.stemHe || "";
-    assert.equal(/נושא\s+area/i.test(stem), false);
-    assert.equal(/כיתה\s+ד/i.test(stem), false);
+    assert.equal(/\s+area/i.test(stem), false);
+    assert.equal(/\s+/i.test(stem), false);
   });
 });

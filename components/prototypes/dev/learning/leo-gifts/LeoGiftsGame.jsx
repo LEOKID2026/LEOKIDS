@@ -114,10 +114,10 @@ export default function LeoGiftsGame({ backHref = "/dev/learning-game-prototypes
       phase={phase}
       difficulty={difficulty}
       onDifficultyChange={setDifficulty}
-      title="המתנות של ליאו"
+      title="to to"
       introHero="🎁🦁"
-      introText="עזרו לליאו לחלק מתנות וסוכריות בין הילדים בצורה שווה!"
-      introHint="מאגר משימות גדול · חלוקה שווה ושארית"
+      introText="to to to to Children Shape!"
+      introHint="   ·   "
       onStart={startGame}
       score={score}
       mistakes={mistakes}
@@ -132,23 +132,23 @@ export default function LeoGiftsGame({ backHref = "/dev/learning-game-prototypes
           <div className={s.missionCard}>
             <span className={s.missionIcon}>{task.itemEmoji}</span>
             <div className={s.missionBody}>
-              <p className={s.missionLabel}>משימה</p>
-              <h2 className={s.missionTitle}>חלוקה שווה</h2>
+              <p className={s.missionLabel}></p>
+              <h2 className={s.missionTitle}> </h2>
               <p className={s.missionPrompt}>{giftsPrompt(task)}</p>
             </div>
           </div>
 
           <div className={styles.infoBar}>
-            {task.total} {task.itemLabel} · {task.children} ילדים
+            {task.total} {task.itemLabel} · {task.children}
           </div>
 
           <div className={s.playArea}>
             <div className={`${s.panel} ${styles.childrenPanel}`}>
-              <p className={s.panelTitle}>👧👦 הילדים</p>
+              <p className={s.panelTitle}>👧👦 </p>
               <div className={`${styles.childrenGrid} ${gridClass}`}>
                 {Array.from({ length: task.children }, (_, i) => (
                   <div key={i} className={styles.childCard}>
-                    <span className={styles.childLabel}>ילד {i + 1}</span>
+                    <span className={styles.childLabel}> {i + 1}</span>
                     <span className={styles.childEmoji}>{childEmojiAt(i)}</span>
                     <span className={styles.childGift}>{task.itemEmoji}</span>
                     <span className={styles.childCount}>{perChild}</span>
@@ -159,7 +159,7 @@ export default function LeoGiftsGame({ backHref = "/dev/learning-game-prototypes
 
             <div className={`${s.panel} ${styles.controlsPanel}`}>
               <div className={styles.controlCol}>
-                <span className={styles.controlLabel}>לכל ילד</span>
+                <span className={styles.controlLabel}> </span>
                 <div className={s.stepperRow}>
                   <button type="button" className={s.stepperBtn} onClick={() => bumpPerChild(-1)}>
                     −
@@ -171,7 +171,7 @@ export default function LeoGiftsGame({ backHref = "/dev/learning-game-prototypes
                 </div>
               </div>
               <div className={styles.controlCol}>
-                <span className={styles.controlLabel}>נשאר לליאו 🧺</span>
+                <span className={styles.controlLabel}>  🧺</span>
                 <div className={s.stepperRow}>
                   <button type="button" className={s.stepperBtn} onClick={() => bumpRemainder(-1)}>
                     −
@@ -190,16 +190,16 @@ export default function LeoGiftsGame({ backHref = "/dev/learning-game-prototypes
               }`}
             >
               <p className={s.feedbackText}>
-                {feedback || "בחרו כמה כל ילד מקבל וכמה נשאר לליאו"}
+                {feedback || "Choose how many All to to how many to to"}
               </p>
             </div>
 
             <div className={s.actionRow}>
               <button type="button" className={s.primaryBtn} onClick={runCheck}>
-                בדוק חלוקה
+
               </button>
               <button type="button" className={s.secondaryBtn} onClick={resetTaskUi}>
-                איפוס
+
               </button>
             </div>
           </div>

@@ -14,8 +14,8 @@ export function useDisplayGame(gameKey, registryGame) {
     return {
       ...registryGame,
       gameKey: key,
-      titleHe: ui.title,
-      blurbHe: ui.blurb,
+      title: ui.title,
+      blurb: ui.blurb,
     };
   }, [registryGame, ui.title, ui.blurb, gameKey]);
 }

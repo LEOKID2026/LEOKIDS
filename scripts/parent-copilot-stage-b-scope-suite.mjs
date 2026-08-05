@@ -17,13 +17,13 @@ const { interpretFreeformStageA } = await import(
 const { buildTruthPacketV1 } = await import(pathToFileURL(join(ROOT, "utils/parent-copilot/truth-packet-v1.js")).href);
 
 const FORBIDDEN_CLARIFICATION_SUBSTRINGS = [
-  "נסחו",
-  "בקצרה",
-  "ממוקד",
-  "פורמט",
+  "",
+  "",
+  "",
+  "",
   "schema",
   "JSON",
-  "אינטנט",
+  "",
   "canonical",
 ];
 
@@ -38,7 +38,7 @@ function assertClarificationParentFacing(q, label) {
 const payload = syntheticPayload();
 
 // Entity: topic from utterance
-const topicOut = resolveScope({ payload, utterance: "מה המצב בנושא השברים?", selectedContextRef: null });
+const topicOut = resolveScope({ payload, utterance: "   ?", selectedContextRef: null });
 assert.equal(topicOut.resolutionStatus, "resolved");
 assert.equal(topicOut.scope?.scopeType, "topic");
 assert.equal(topicOut.scope?.scopeId, "t1");
@@ -46,20 +46,20 @@ assert.ok(topicOut.scope?.interpretationScope);
 assert.equal(topicOut.scope?.interpretationScope, topicOut.scope?.scopeClass);
 
 // Entity: subject from utterance
-const subOut = resolveScope({ payload, utterance: "אני רוצה להבין אנגלית", selectedContextRef: null });
+const subOut = resolveScope({ payload, utterance: "   ", selectedContextRef: null });
 assert.equal(subOut.resolutionStatus, "resolved");
 assert.equal(subOut.scope?.scopeType, "subject");
 assert.equal(subOut.scope?.scopeId, "english");
 
 // Entity: executive aggregate
-const aggOut = resolveScope({ payload, utterance: "מה המקצוע החזק?", selectedContextRef: null });
+const aggOut = resolveScope({ payload, utterance: "  ?", selectedContextRef: null });
 assert.equal(aggOut.resolutionStatus, "resolved");
 assert.equal(aggOut.scope?.scopeType, "executive");
 
 // Selected context: topic
 const selOut = resolveScope({
   payload,
-  utterance: "מה קורה?",
+  utterance: " ?",
   selectedContextRef: { scopeType: "topic", scopeId: "t1", subjectId: "math" },
 });
 assert.equal(selOut.resolutionStatus, "resolved");
@@ -72,9 +72,9 @@ assert.ok(tp);
 assert.equal(tp.interpretationScope, topicOut.scope.interpretationScope);
 
 // Interpretation: strengths framing on subject-scoped utterance (no aggregate short-circuit)
-const strengthsSub = interpretFreeformStageA("מה הולך טוב בחשבון?", payload);
+const strengthsSub = interpretFreeformStageA("   ?", payload);
 assert.equal(strengthsSub.canonicalIntent, "what_is_going_well");
-const subStrengthRes = resolveScope({ payload, utterance: "מה הולך טוב בחשבון?", selectedContextRef: null });
+const subStrengthRes = resolveScope({ payload, utterance: "   ?", selectedContextRef: null });
 assert.equal(subStrengthRes.scope?.scopeType, "subject");
 assert.equal(subStrengthRes.scope?.interpretationScope, "strengths");
 
@@ -87,7 +87,7 @@ const dualPayload = {
       topicRecommendations: [
         {
           topicRowKey: "tA",
-          displayName: "נושא א",
+          displayName: " ",
           questions: 5,
           accuracy: 70,
           contractsV1: {
@@ -99,10 +99,10 @@ const dualPayload = {
               hedgeLevel: "light",
               allowedTone: "parent_professional_warm",
               forbiddenPhrases: [],
-              requiredHedges: ["נכון לעכשיו"],
+              requiredHedges: [" "],
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI1",
-              textSlots: { observation: "יש נתונים.", interpretation: "כיוון רך.", action: null, uncertainty: "נכון לעכשיו." },
+              textSlots: { observation: " .", interpretation: " .", action: null, uncertainty: " ." },
             },
             decision: { contractVersion: "v1", topicKey: "tA", subjectId: "math", decisionTier: 1, cannotConcludeYet: false },
             readiness: { contractVersion: "v1", topicKey: "tA", subjectId: "math", readiness: "emerging" },
@@ -123,7 +123,7 @@ const dualPayload = {
         },
         {
           topicRowKey: "tB",
-          displayName: "נושא ב",
+          displayName: " ",
           questions: 6,
           accuracy: 72,
           contractsV1: {
@@ -135,10 +135,10 @@ const dualPayload = {
               hedgeLevel: "light",
               allowedTone: "parent_professional_warm",
               forbiddenPhrases: [],
-              requiredHedges: ["נכון לעכשיו"],
+              requiredHedges: [" "],
               allowedSections: ["summary", "finding"],
               recommendationIntensityCap: "RI1",
-              textSlots: { observation: "יש נתונים ב׳.", interpretation: "כיוון רך ב׳.", action: null, uncertainty: "נכון לעכשיו." },
+              textSlots: { observation: "  .", interpretation: "  .", action: null, uncertainty: " ." },
             },
             decision: { contractVersion: "v1", topicKey: "tB", subjectId: "math", decisionTier: 1, cannotConcludeYet: false },
             readiness: { contractVersion: "v1", topicKey: "tB", subjectId: "math", readiness: "emerging" },
@@ -160,21 +160,21 @@ const dualPayload = {
       ],
     },
   ],
-  executiveSummary: { majorTrendsHe: ["א"] },
+  executiveSummary: { majorTrendsHe: [""] },
 };
 const amb = resolveScope({
   payload: dualPayload,
-  utterance: "מה המצב בנושא א ובנושא ב?",
+  utterance: "     ?",
   selectedContextRef: null,
 });
 assert.equal(amb.resolutionStatus, "clarification_required");
 assertClarificationParentFacing(amb.clarificationQuestionHe, "topic_ambiguous");
 
 // Stage A intent tie → short clarification (injected stageA to avoid aggregate short-circuit)
-const baseStageA = interpretFreeformStageA("אפשר הסבר נוסף?", payload);
+const baseStageA = interpretFreeformStageA("  ?", payload);
 const tieOut = resolveScope({
   payload,
-  utterance: "אפשר הסבר נוסף?",
+  utterance: "  ?",
   selectedContextRef: null,
   stageA: { ...baseStageA, shouldClarifyIntent: true, ambiguityLevel: "high" },
 });
@@ -183,7 +183,7 @@ assert.equal(tieOut.scope?.scopeType, "executive");
 assert.equal(tieOut.scopeReason, "stage_a_intent_tie_executive_default");
 
 // Vague free-form without entity anchor: defaults to executive when payload has anchors (broad report class)
-const vague = resolveScope({ payload, utterance: "אפשר הסבר נוסף?", selectedContextRef: null });
+const vague = resolveScope({ payload, utterance: "  ?", selectedContextRef: null });
 assert.equal(vague.resolutionStatus, "resolved");
 assert.equal(vague.scope?.scopeType, "executive");
 assert.equal(vague.scopeReason, "broad_report_executive_fallback");

@@ -197,10 +197,10 @@ const { computeGlobalScore } = await import(
     contracts: {
       narrative: {
         textSlots: {
-          observation: "שורת תצפית לבדיקה.",
-          interpretation: "שורת פרשנות לבדיקה.",
-          action: "שורת פעולה לבדיקה.",
-          uncertainty: "שורת הגבלה לבדיקה.",
+          observation: "  .",
+          interpretation: "  .",
+          action: "  .",
+          uncertainty: "  .",
         },
       },
     },
@@ -236,10 +236,10 @@ const { computeGlobalScore } = await import(
     contracts: {
       narrative: {
         textSlots: {
-          observation: "שורת תצפית לבדיקה.",
-          interpretation: "שורת פרשנות לבדיקה.",
-          action: "שורת פעולה לבדיקה.",
-          uncertainty: "שורת הגבלה לבדיקה.",
+          observation: "  .",
+          interpretation: "  .",
+          action: "  .",
+          uncertainty: "  .",
         },
       },
     },
@@ -271,7 +271,7 @@ function rowAugTopicEngine(p) {
   const acc = p.accuracy ?? 88;
   const wrong = p.wrong ?? Math.max(0, q - Math.round((q * acc) / 100));
   return {
-    displayName: p.displayName || "נושא",
+    displayName: p.displayName || "",
     bucketKey: p.bucketKey || "topic_a",
     modeKey: p.modeKey ?? "learning",
     questions: q,
@@ -281,7 +281,7 @@ function rowAugTopicEngine(p) {
     gradeKey: p.gradeKey ?? "g3",
     levelKey: p.levelKey ?? "medium",
     grade: p.grade ?? "g3",
-    level: p.level ?? "בינוני",
+    level: p.level ?? "",
     recencyScore: p.recencyScore ?? 50,
     dataSufficiencyLevel: p.dataSufficiencyLevel ?? "strong",
     evidenceStrength: p.evidenceStrength ?? "strong",
@@ -379,7 +379,7 @@ function rowAugTopicEngine(p) {
     evidenceTrace: [{ type: "volume", value: { questions: 12, accuracy: 90 } }],
   });
   assert.ok(String(body).includes("12") && String(body).includes("90"));
-  assert.ok(!String(body).includes("ביצועים גבוהים ועקביים — נראה שליטה טובה בנושא"));
+  assert.ok(!String(body).includes("   —    "));
 }
 
 {
@@ -400,7 +400,7 @@ function rowAugTopicEngine(p) {
   const tp = buildTruthPacketV1(payload, {
     scopeType: "topic",
     scopeId: "t1",
-    scopeLabel: "שברים",
+    scopeLabel: "",
     scopeClass: "recommendation",
   });
   assert.ok(tp);
@@ -463,8 +463,8 @@ function rowAugTopicEngine(p) {
     },
     intent: "explain_report",
     answerBlocks: [
-      { type: "observation", textHe: "שורה אחת לבדיקה.", source: "contract_slot" },
-      { type: "meaning", textHe: "שורה שנייה לבדיקה.", source: "contract_slot" },
+      { type: "observation", textHe: "  .", source: "contract_slot" },
+      { type: "meaning", textHe: "  .", source: "contract_slot" },
     ],
     suggestedFollowUp: null,
     validatorStatus: "pass",
@@ -492,8 +492,8 @@ function rowAugTopicEngine(p) {
     },
     intent: "explain_report",
     answerBlocks: [
-      { type: "observation", textHe: "שורה אחת לבדיקה.", source: "contract_slot" },
-      { type: "meaning", textHe: "שורה שנייה לבדיקה.", source: "contract_slot" },
+      { type: "observation", textHe: "  .", source: "contract_slot" },
+      { type: "meaning", textHe: "  .", source: "contract_slot" },
     ],
     suggestedFollowUp: null,
     validatorStatus: "pass",

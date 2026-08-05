@@ -228,7 +228,7 @@ test("timing: wrong answer answered alone → saved with afterStepByStep=false (
   });
 
   // === AFTER SAVE: wrong branch sets ref ===
-  const errExpl = "הסבר: הדרך הנכונה היא...";
+  const errExpl = ":   ...";
   if (errExpl) ref.current = true;
 
   // Assertion: the wrong answer itself is diagnostic-eligible
@@ -298,7 +298,7 @@ test("timing: full wrong→explanation→retry→new-question lifecycle", () => 
 
   // Q1: answer wrong (no prior help)
   const q1WrongSaved = ref.current; // false
-  const errExpl = "הסבר שגיאה";
+  const errExpl = " ";
   if (errExpl) ref.current = true;
 
   const q1WrongResult = classifyActivityEvidence("challenge", "free_practice", {

@@ -26,7 +26,7 @@ const { sanitizeQuestionForStudentDisplay } = await import(
 function buildCompareQuestion(a, b, corruptCorrect = null) {
   const symbol = getCanonicalComparisonSign(a, b);
   return {
-    question: `השלם את הסימן: ${a} __ ${b}`,
+    question: `  : ${a} __ ${b}`,
     exerciseText: `${a} __ ${b}`,
     correctAnswer: corruptCorrect ?? symbol,
     answers: [...COMPARISON_SIGN_DISPLAY_ORDER],
@@ -51,7 +51,7 @@ function wrongAnswerFeedback(q, operation = "compare") {
 }
 
 function proseSignFromWrongFeedback(text) {
-  const marker = "הסימן הנכון הוא";
+  const marker = "  ";
   const idx = text.indexOf(marker);
   if (idx < 0) return null;
   const tail = text.slice(idx + marker.length);
@@ -66,7 +66,7 @@ function explanationSteps(a, b) {
 }
 
 function proseSignFromCalcText(text, expectedSign) {
-  const marker = "הסימן";
+  const marker = "";
   const idx = text.indexOf(marker);
   if (idx < 0) return null;
   const tail = text.slice(idx + marker.length);
@@ -136,9 +136,9 @@ test("3 - explanation text matches canonical sign (no contradictions)", () => {
   }
 
   const contradictions = [
-    [32, 93, /32 < 93.*הסימן\s*\u200E?>/],
-    [79, 35, /79 > 35.*הסימן\s*\u200E?</],
-    [85, 98, /85 < 98.*הסימן\s*\u200E?>/],
+    [32, 93, /32 < 93.*\s*\u200E?>/],
+    [79, 35, /79 > 35.*\s*\u200E?</],
+    [85, 98, /85 < 98.*\s*\u200E?>/],
   ];
   for (const [a, b, badRe] of contradictions) {
     const calc = explanationSteps(a, b).find((s) => s.id === "calculate");

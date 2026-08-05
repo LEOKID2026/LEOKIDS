@@ -106,7 +106,7 @@ test("deleteParentOwnedStudent returns dependency error when arcade cleanup fail
             eq: () => ({
               eq: () => ({
                 maybeSingle: async () => ({
-                  data: { id: studentId, full_name: "בדיקה" },
+                  data: { id: studentId, full_name: "" },
                   error: null,
                 }),
               }),

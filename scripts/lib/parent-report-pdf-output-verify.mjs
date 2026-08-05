@@ -53,10 +53,10 @@ export function assertPrintDomIntegrity(printDomText, label) {
   const t = String(printDomText || "");
   assert.ok(t.length >= 200, `${label}: print DOM text too short (${t.length} chars)`);
   assert.ok(
-    !/לאסוף עוד מידע לפני החלטה[\s\S]{0,60}367/u.test(t) && !/367[\s\S]{0,120}לאסוף עוד מידע/u.test(t),
+    !/    [\s\S]{0,60}367/u.test(t) && !/367[\s\S]{0,120}  /u.test(t),
     `${label}: must not pair high-volume (367) with collect-more-data wording`,
   );
-  assert.ok(!t.includes("שאלה על הדוח"), `${label}: must not include Parent Copilot chat placeholder`);
+  assert.ok(!t.includes("  "), `${label}: must not include Parent Copilot chat placeholder`);
 }
 
 /**

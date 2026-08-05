@@ -14,13 +14,13 @@ const MD_OUT = path.join(ROOT, "docs/language-review/books/CURRENT_REMAINING_LAN
 
 const PATTERNS = [
   { key: "x_mark", re: /❌/ },
-  { key: "lo_bang", re: /(?:^|[\s—-])לא!(?:\s|$|[.!])/ },
-  { key: "haser", re: /חסר/ },
-  { key: "lo_nachon", re: /לא נכון/ },
-  { key: "tsarich", re: /צריך/ },
+  { key: "lo_bang", re: /(?:^|[\s—-])!(?:\s|$|[.!])/ },
+  { key: "haser", re: // },
+  { key: "lo_nachon", re: / / },
+  { key: "tsarich", re: // },
   { key: "present_simple", re: /Present Simple/ },
-  { key: "chayav", re: /חייב/ },
-  { key: "drush", re: /דרוש/ },
+  { key: "chayav", re: // },
+  { key: "drush", re: // },
 ];
 
 const SKIP_TEXT_TYPES = new Set([
@@ -32,36 +32,36 @@ const SKIP_TEXT_TYPES = new Set([
 ]);
 
 const IMPROVED_MARKERS = [
-  /לא מתאים/,
-  /הוא בזמן/,
-  /היא בזמן/,
-  /פירושו/,
-  /לכן צריך/,
-  /אחרי /,
-  /כאן צריך/,
-  /כאן מדברים/,
-  /לא חייב/,
-  /בודקים/,
-  /זה לא משפט/,
-  /זו לא/,
-  /זה לא נכון במשפט/,
-  /אינו בזמן/,
-  /אינה צורה/,
-  /לא מספיק/,
-  /לא מתייחס/,
-  /לא פותחים/,
-  /לא קובעים/,
+  / /,
+  / /,
+  / /,
+  //,
+  / /,
+  / /,
+  / /,
+  / /,
+  / /,
+  //,
+  /  /,
+  / /,
+  /   /,
+  / /,
+  / /,
+  / /,
+  / /,
+  / /,
+  / /,
 ];
 
 const ABRUPT_MARKERS = [
-  /— לא!/,
-  /לא מקבל/,
-  /חסר s!/,
-  /חסר es!/,
+  /— !/,
+  / /,
+  / s!/,
+  / es!/,
   /Present Simple!/,
-  /= רבים!/,
-  /— לא נכון!/,
-  /צריך [a-z]+!/i,
+  /= !/,
+  /—  !/,
+  / [a-z]+!/i,
 ];
 
 /** @param {string} subject @param {string} text */
@@ -77,7 +77,7 @@ function classifyStatus(subject, text) {
     if (IMPROVED_MARKERS.some((p) => p.test(t))) return "OK_AS_TEACHING_ERROR";
     if (ABRUPT_MARKERS.some((p) => p.test(t))) return "NEEDS_FIX";
     if (["hebrew", "science", "moledet", "geography"].includes(subject)) {
-      if (/— לא!/.test(t)) return "NEEDS_FIX";
+      if (/— !/.test(t)) return "NEEDS_FIX";
       return "OK_AS_TEACHING_ERROR";
     }
     if (subject === "english") return "ENGLISH_GRAMMAR_EXPECTED";
@@ -85,12 +85,12 @@ function classifyStatus(subject, text) {
   }
 
   if (/Present Simple/.test(t)) return "ENGLISH_GRAMMAR_EXPECTED";
-  if (/(?:^|[\s—-])לא!(?:\s|$|[.!])/.test(t)) return "NEEDS_FIX";
-  if (/לא נכון/.test(t)) {
+  if (/(?:^|[\s—-])!(?:\s|$|[.!])/.test(t)) return "NEEDS_FIX";
+  if (/ /.test(t)) {
     if (subject === "science") return "OK_AS_TEACHING_ERROR";
     return "REVIEW_LATER";
   }
-  if (/חסר/.test(t) || /צריך/.test(t) || /חייב/.test(t) || /דרוש/.test(t)) {
+  if (//.test(t) || //.test(t) || //.test(t) || //.test(t)) {
     return "REVIEW_LATER";
   }
   return "REVIEW_LATER";
@@ -170,7 +170,7 @@ function main() {
   lines.push(`Generated: ${data.generated_at}`);
   lines.push(`Source: \`data/language-review/book-text-extract.json\``);
   lines.push("");
-  lines.push("Scan patterns: `❌`, `לא!`, `חסר`, `לא נכון`, `צריך`, `Present Simple`, `חייב`, `דרוש`");
+  lines.push("Scan patterns: `❌`, `!`, ``, ` `, ``, `Present Simple`, ``, ``");
   lines.push("");
   lines.push("Book markdown was **not** modified. This report reflects current extracted visible text only.");
   lines.push("");

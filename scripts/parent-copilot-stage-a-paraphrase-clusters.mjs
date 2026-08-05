@@ -43,7 +43,7 @@ assertStageAShape(empty, "empty");
 assert.equal(empty.canonicalIntent, "unclear");
 assert.equal(empty.shouldClarifyIntent, false);
 
-const tie = interpretFreeformStageA("מה לעשות היום ומה לעשות השבוע?", null);
+const tie = interpretFreeformStageA("     ?", null);
 assertStageAShape(tie, "tie-utterance");
 assert.equal(tie.ambiguityLevel, "high", "today + week action phrasing should tie at top score");
 assert.equal(tie.shouldClarifyIntent, true);

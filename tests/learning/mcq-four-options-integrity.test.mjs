@@ -64,7 +64,7 @@ test("comparison-sign MCQ is exempt from four-option enforcement", () => {
 
 test("geometry variable-label MCQ is exempt from four-option enforcement", () => {
   const q = {
-    question: '"מקבילות" מתאים לאיזה מספר?',
+    question: '""   ?',
     answers: ["1", "2"],
     correctAnswer: "1",
     params: { kind: "parallel_perpendicular", answerMode: "choice" },
@@ -74,7 +74,7 @@ test("geometry variable-label MCQ is exempt from four-option enforcement", () =>
 
 test("typing questions are not forced to four MCQ options", () => {
   const q = {
-    question: "כתוב באנגלית: שלום",
+    question: " : ",
     answers: [],
     params: { answerMode: "typing" },
   };
@@ -84,7 +84,7 @@ test("typing questions are not forced to four MCQ options", () => {
 test("ensureMcqFourOptions preserves correct answer and avoids duplicates", () => {
   const out = ensureMcqFourOptions(
     {
-      question: "בחר",
+      question: "",
       answers: ["alpha", "beta", "gamma"],
       correctAnswer: "beta",
       correctIndex: 1,

@@ -125,12 +125,12 @@ describe("resolveLearningBookAudio (flat-page Hebrew G1)", () => {
 
 describe("normalizeHebrewHyphensForTts", () => {
   test("splits Hebrew hyphen and maqaf variants", () => {
-    assert.equal(normalizeHebrewHyphensForTts("צעד-צעד"), "צעד צעד");
-    assert.equal(normalizeHebrewHyphensForTts("פתוח-סגור"), "פתוח סגור");
-    assert.equal(normalizeHebrewHyphensForTts("אלף-בית"), "אלף בית");
-    assert.equal(normalizeHebrewHyphensForTts("אלף-בית"), "אלף בית");
-    assert.equal(normalizeHebrewHyphensForTts("אלף–בית"), "אלף בית");
-    assert.equal(normalizeHebrewHyphensForTts("אלף-בית"), "אלף בית");
+    assert.equal(normalizeHebrewHyphensForTts("-"), " ");
+    assert.equal(normalizeHebrewHyphensForTts("-"), " ");
+    assert.equal(normalizeHebrewHyphensForTts("-"), " ");
+    assert.equal(normalizeHebrewHyphensForTts("-"), " ");
+    assert.equal(normalizeHebrewHyphensForTts("–"), " ");
+    assert.equal(normalizeHebrewHyphensForTts("-"), " ");
   });
 });
 
@@ -140,8 +140,8 @@ describe("prepareHebrewBookSectionAudioText", () => {
     const page = entry.loader.loadPage(SAMPLE_PAGE);
     const section = page.sections.find((s) => s.number === 1);
     const spoken = prepareHebrewBookAudioTextForSection(page, 1);
-    assert.ok(spoken.includes("אָלֶף") || spoken.includes("בֵּית"));
-    assert.doesNotMatch(section.body, /שִׁמְעוּ/);
+    assert.ok(spoken.includes("") || spoken.includes(""));
+    assert.doesNotMatch(section.body, //);
   });
 
   test("g1.letters section 1 has no title or nav labels", () => {
@@ -150,11 +150,11 @@ describe("prepareHebrewBookSectionAudioText", () => {
     const script = prepareHebrewBookAudioTextForSection(page, 1);
 
     assert.ok(script && script.length > 20);
-    assert.match(script, /היום נלמד בעברית את אוֹתִיּוֹת ה אָלֶף, בֵּית/);
+    assert.match(script, /      , /);
     assert.doesNotMatch(script, new RegExp(`^${page.displayTitle}`));
-    assert.doesNotMatch(script, /^מה לומדים\?/m);
+    assert.doesNotMatch(script, /^ \?/m);
     assert.doesNotMatch(script, /[❌✓]/u);
-    assert.doesNotMatch(script, /^רמז\s*:/m);
+    assert.doesNotMatch(script, /^\s*:/m);
   });
 
   test("each section script is unique and excludes other section content", () => {
@@ -169,15 +169,15 @@ describe("prepareHebrewBookSectionAudioText", () => {
 
     const s1 = scripts[0];
     const s3 = scripts[2];
-    assert.match(s1, /היום נלמד בעברית את אוֹתִיּוֹת ה אָלֶף, בֵּית/);
-    assert.doesNotMatch(s1, /רואים אוֹת א - אומרים/);
-    assert.match(s3, /רואים אוֹת א - אומרים/);
-    assert.doesNotMatch(s3, /היום נלמד בעברית את אוֹתִיּוֹת ה אָלֶף, בֵּית/);
+    assert.match(s1, /      , /);
+    assert.doesNotMatch(s1, /   - /);
+    assert.match(s3, /   - /);
+    assert.doesNotMatch(s3, /      , /);
 
     const s4 = scripts[3];
-    assert.match(s4, /מה שם האות ב/);
-    assert.doesNotMatch(s4, /^שאלה\s*:/m);
-    assert.doesNotMatch(s4, /^שלב\s+\d+\s*:/m);
+    assert.match(s4, /   /);
+    assert.doesNotMatch(s4, /^\s*:/m);
+    assert.doesNotMatch(s4, /^\s+\d+\s*:/m);
   });
 
   test("dispatcher prepares single section only", () => {
@@ -210,14 +210,14 @@ describe("learning book TTS generation config", () => {
 });
 
 describe("applyLearningBookPronunciationCorrections", () => {
-  test("שימעו / שמעו -> שִׁמְעוּ", () => {
+  test(" /  -> ", () => {
     for (const [input, id] of [
-      ["שימעו היטב את המילה", "shimu"],
-      ["שמעו שתי מילים", "shmu"],
+      ["   ", "shimu"],
+      ["  ", "shmu"],
     ]) {
       const { text, pronunciationReplacementsApplied } =
         applyLearningBookPronunciationCorrections(input);
-      assert.match(text, /שִׁמְעוּ/);
+      assert.match(text, //);
       assert.ok(pronunciationReplacementsApplied.some((r) => r.id === id));
     }
   });
@@ -250,26 +250,26 @@ describe("applyLearningBookPronunciationCorrections", () => {
 
 describe("convertMathExpressionsForTts", () => {
   test("converts addition, subtraction, equality, and numbers", () => {
-    assert.equal(convertMathExpressionsForTts("2 + 3 = 5"), "שתיים ועוד שלוש שווה חמש");
-    assert.equal(convertMathExpressionsForTts("7 - 4 = 3"), "שבע פחות ארבע שווה שלוש");
-    assert.equal(convertMathExpressionsForTts("10"), "עשר");
-    assert.equal(cardinalHebrewForTts(0), "אפס");
-    assert.match(convertMathExpressionsForTts("12 < 18"), /קטן מ /);
-    assert.match(convertMathExpressionsForTts("6 > 4"), /גדול מ /);
-    assert.match(convertMathExpressionsForTts("6 + __ = 10"), /מקום ריק/);
+    assert.equal(convertMathExpressionsForTts("2 + 3 = 5"), "    ");
+    assert.equal(convertMathExpressionsForTts("7 - 4 = 3"), "    ");
+    assert.equal(convertMathExpressionsForTts("10"), "");
+    assert.equal(cardinalHebrewForTts(0), "");
+    assert.match(convertMathExpressionsForTts("12 < 18"), /  /);
+    assert.match(convertMathExpressionsForTts("6 > 4"), /  /);
+    assert.match(convertMathExpressionsForTts("6 + __ = 10"), / /);
   });
 
   test("number ranges are not read as subtraction", () => {
-    assert.equal(convertMathExpressionsForTts("5-7"), "חמש עד שבע");
-    assert.equal(convertMathExpressionsForTts("18–19"), "שמונה עשרה עד תשע עשרה");
+    assert.equal(convertMathExpressionsForTts("5-7"), "  ");
+    assert.equal(convertMathExpressionsForTts("18–19"), "    ");
   });
 
   test("Hebrew maqaf cleanup does not break subtraction equations", () => {
-    const line = "צעד-צעד: 7 - 4 = 3";
+    const line = "-: 7 - 4 = 3";
     const converted = convertMathExpressionsForTts(line);
     const hyphenized = normalizeHebrewHyphensForTts(converted);
-    assert.match(hyphenized, /שבע פחות ארבע שווה שלוש/);
-    assert.match(hyphenized, /צעד צעד/);
+    assert.match(hyphenized, /    /);
+    assert.match(hyphenized, / /);
   });
 });
 
@@ -293,9 +293,9 @@ describe("prepareMathBookSectionAudioText (add_two)", () => {
     const entry = getLearningBookEntry("math", "g1");
     const page = entry.loader.loadPage("add_two");
     const s5 = prepareMathBookAudioTextForSection(page, 5);
-    assert.match(s5, /שבע (וְעוֹד|ועוד) ארבע (שָׁוֶה|שווה)/);
+    assert.match(s5, / (|)  (|)/);
     assert.doesNotMatch(s5, /7\s*\+\s*4/);
-    assert.doesNotMatch(s5, /^מה אנחנו לומדים\?/m);
+    assert.doesNotMatch(s5, /^  \?/m);
   });
 
   test("sections are unique and isolated", () => {
@@ -303,8 +303,8 @@ describe("prepareMathBookSectionAudioText (add_two)", () => {
     const page = entry.loader.loadPage("add_two");
     const scripts = Array.from({ length: 7 }, (_, i) => prepareMathBookAudioTextForSection(page, i + 1));
     assert.equal(new Set(scripts).size, scripts.length);
-    assert.doesNotMatch(scripts[4], /לדוגמה: ארבע ועוד שלוש/);
-    assert.match(scripts[1], /ארבע (וְעוֹד|ועוד) שלוש (שָׁוֶה|שווה) שבע/);
+    assert.doesNotMatch(scripts[4], /:   /);
+    assert.match(scripts[1], / (|)  (|) /);
   });
 });
 
@@ -316,14 +316,14 @@ describe("prepareEnglishBookSectionAudioText (letters_upper)", () => {
     const detail = prepareBookSectionAudioTextDetailed("english", "g1", "letters_upper", page, 1);
 
     assert.ok(script && script.length > 20);
-    assert.doesNotMatch(script, /^מה לומדים\?/m);
+    assert.doesNotMatch(script, /^ \?/m);
     assert.match(script, /A, B, C/);
     assert.ok(detail.ssml && detail.ssml.includes("en-US-JennyNeural"));
     assert.ok(detail.ssml.includes("he-IL-HilaNeural"));
   });
 
   test("mixed language runs split Hebrew and English", () => {
-    const runs = splitMixedLanguageRuns("היום נלמד cat");
+    const runs = splitMixedLanguageRuns("  cat");
     assert.equal(runs.length, 2);
     assert.equal(runs[0].lang, "he");
     assert.equal(runs[1].lang, "en");

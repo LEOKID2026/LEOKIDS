@@ -30,7 +30,7 @@ const AMBIGUOUS_LEAK = AMBIGUOUS_RESPONSE_HE.slice(0, 24);
 function makeContract(topicRowKey, subjectId, displayName, qCount = 12, acc = 72, extra = {}) {
   const hasSubskill = extra.hasSubskillMetadata === true;
   const gradeSuffix =
-    topicRowKey.includes("g4") ? " (כיתה ד׳)" : topicRowKey.includes("g5") ? " (תרגול בכיתה ה׳ — מעל הכיתה הרשומה)" : "";
+    topicRowKey.includes("g4") ? " ( )" : topicRowKey.includes("g5") ? " (   —   )" : "";
   return {
     topicRowKey,
     displayName,
@@ -43,14 +43,14 @@ function makeContract(topicRowKey, subjectId, displayName, qCount = 12, acc = 72
     contractsV1: {
       narrative: {
         textSlots: {
-          observation: `ב${displayName}${gradeSuffix} נצפו ${qCount} שאלות עם דיוק של ${acc}%.`,
+          observation: `${displayName}${gradeSuffix}  ${qCount}     ${acc}%.`,
           interpretation: hasSubskill
-            ? `בנושא ${displayName}${gradeSuffix} חוזר דפוס: השוואה לפי מונה בלבד.`
-            : `${displayName}${gradeSuffix} — מצב הנושא ברור ברמת הכיתה, בלי פירוט תת־מיומנות מדויק.`,
-          action: `מומלץ לתרגל ${displayName}${gradeSuffix}.`,
+            ? ` ${displayName}${gradeSuffix}  :    .`
+            : `${displayName}${gradeSuffix} —     ,    .`,
+          action: `  ${displayName}${gradeSuffix}.`,
           uncertainty: hasSubskill
             ? ""
-            : "יש מספיק מידע על מצב הנושא, אבל אין מספיק פירוט כדי לזהות את תת־המיומנות המדויקת.",
+            : "     ,         .",
         },
       },
       evidence: { questionCount: qCount, accuracyPct: acc, subskillBreakdownAvailable: hasSubskill },
@@ -83,32 +83,32 @@ function uiLoadedReportPayload() {
       registeredGradeKey: "g4",
       mixedGradePractice: true,
       mixedGradePracticeNoteHe:
-        "חלק מהתרגול בוצע בכיתה שונה מהכיתה הרשומה, ולכן הוא מוצג בנפרד.",
+        "      ,    .",
     },
     subjectProfiles: [
       {
         subject: "math",
         topicRecommendations: [
-          makeContract("fractions::grade:g4", "math", "שברים", 20, 55),
-          makeContract("fractions::grade:g5", "math", "שברים", 18, 40),
-          makeContract("multiplication", "math", "כפל", 15, 70),
+          makeContract("fractions::grade:g4", "math", "", 20, 55),
+          makeContract("fractions::grade:g5", "math", "", 18, 40),
+          makeContract("multiplication", "math", "", 15, 70),
         ],
       },
       {
         subject: "english",
-        topicRecommendations: [makeContract("grammar", "english", "דקדוק", 10, 80)],
+        topicRecommendations: [makeContract("grammar", "english", "", 10, 80)],
       },
       {
         subject: "hebrew",
-        topicRecommendations: [makeContract("reading", "hebrew", "הבנת הנקרא", 14, 65)],
+        topicRecommendations: [makeContract("reading", "hebrew", " ", 14, 65)],
       },
       {
         subject: "science",
-        topicRecommendations: [makeContract("life", "science", "מדעים כללי", 8, 75)],
+        topicRecommendations: [makeContract("life", "science", " ", 8, 75)],
       },
       {
         subject: "geometry",
-        topicRecommendations: [makeContract("shapes", "geometry", "צורות", 9, 78)],
+        topicRecommendations: [makeContract("shapes", "geometry", "", 9, 78)],
       },
     ],
   };
@@ -192,34 +192,34 @@ const rows = listTopicLabels(payload);
 const cases = [
   {
     id: 1,
-    q: "תסביר לי על שברים מה הבעיה",
+    q: "     ",
     run() {
       const scope = resolveScope({ payload, utterance: this.q });
       assert.equal(scope.scope?.scopeType, "topic");
-      assert.match(String(scope.scope?.scopeLabel || ""), /שברים/);
+      assert.match(String(scope.scope?.scopeLabel || ""), //);
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
-      assert.ok(t.includes("שברים") || /\d/.test(t), "grounded topic/metrics");
+      assert.ok(t.includes("") || /\d/.test(t), "grounded topic/metrics");
       assert.ok(scopeFromTurn(res).scopeReason?.includes("report_row") || scope.scopeReason?.includes("report_row"));
     },
   },
   {
     id: 2,
-    q: "חשבון שברים",
+    q: " ",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const scope = resolveScope({ payload, utterance: this.q });
       assert.equal(scope.scope?.scopeType, "topic");
-      assert.match(String(scope.scope?.scopeLabel || ""), /שברים/);
+      assert.match(String(scope.scope?.scopeLabel || ""), //);
     },
   },
   {
     id: 3,
-    q: "איך הוא בחשבון?",
+    q: "  ?",
     run() {
       const scope = resolveScope({ payload, utterance: this.q });
       assert.equal(scope.scope?.scopeType, "subject");
@@ -242,7 +242,7 @@ const cases = [
   },
   {
     id: 4,
-    q: "מה הבעיה?",
+    q: " ?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
@@ -252,7 +252,7 @@ const cases = [
   },
   {
     id: 5,
-    q: "מה הכי חשוב לתרגל השבוע?",
+    q: "    ?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
@@ -261,7 +261,7 @@ const cases = [
   },
   {
     id: 6,
-    q: "מה לעשות בבית?",
+    q: "  ?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
@@ -270,50 +270,50 @@ const cases = [
   },
   {
     id: 7,
-    q: "אני רוצה לדעת על נושא מסויים",
+    q: "     ",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.exitEarly, true);
       const text = String(route.deterministicResponse || "");
-      assert.ok(text.includes("על איזה נושא"), "short clarification");
+      assert.ok(text.includes("  "), "short clarification");
       assertNoAmbiguousLeak(text, this.q);
       assert.ok(
-        rows.some((r) => text.includes(r)) || text.includes("שברים") || text.includes("כפל"),
+        rows.some((r) => text.includes(r)) || text.includes("") || text.includes(""),
         "examples from loaded rows when possible",
       );
     },
   },
   {
     id: 8,
-    q: "הוא תרגל כיתה אחרת?",
+    q: "   ?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
       assert.ok(
-        /כיתה|גבוה|נמוך|נפרד|תרגול/i.test(t) || t.includes("כיתה"),
+        /||||/i.test(t) || t.includes(""),
         "mixed-grade awareness in answer",
       );
     },
   },
   {
     id: 9,
-    q: "למה יש שתי כיתות באותו נושא?",
+    q: "     ?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
       assert.ok(
-        /כיתה|שברים|נפרד|גבוה|נמוך|שורות|תוכן|תרגול/i.test(t),
+        /|||||||/i.test(t),
         `split-grade explanation :: ${t.slice(0, 120)}`,
       );
     },
   },
   {
     id: 10,
-    q: "תסביר",
+    q: "",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.classifierBucket, "ambiguous_or_unclear");
@@ -323,7 +323,7 @@ const cases = [
   },
   {
     id: 11,
-    q: "כן",
+    q: "",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.classifierBucket, "ambiguous_or_unclear");
@@ -332,7 +332,7 @@ const cases = [
   },
   {
     id: 12,
-    q: "מה?",
+    q: "?",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.classifierBucket, "ambiguous_or_unclear");
@@ -341,7 +341,7 @@ const cases = [
   },
   {
     id: 13,
-    q: "מה הבעיה בנושא א׳?",
+    q: "   ?",
     async run() {
       const shot = await screenshotGradeSplitPayload();
       const res = uiTurn(this.q, shot);
@@ -349,12 +349,12 @@ const cases = [
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
       assert.ok(
-        /שבר|367|66|38|87|כיתה|נושא/i.test(t),
+        /|367|66|38|87||/i.test(t),
         `grounded fractions/grade answer :: ${t.slice(0, 160)}`,
       );
-      assert.ok(!/לאסוף עוד מידע|עדיין מוקדם לקבוע|אין מספיק מידע על המצב/u.test(t), "no thin-data phrasing on high-volume rows");
+      assert.ok(!/  |  |    /u.test(t), "no thin-data phrasing on high-volume rows");
       assert.ok(
-        (t.includes("367") && t.includes("87")) || (t.includes("66") && t.includes("38")) || /כיתה|מעל|נפרד/i.test(t),
+        (t.includes("367") && t.includes("87")) || (t.includes("66") && t.includes("38")) || /||/i.test(t),
         "must reference grade-split or both volume bands — not a single averaged score",
       );
       assert.ok(
@@ -371,6 +371,6 @@ for (const c of cases) {
 }
 
 const clarify = buildTopicClarificationQuestionHe(payload);
-assert.ok(clarify.includes("שברים"), "clarification examples include report row");
+assert.ok(clarify.includes(""), "clarification examples include report row");
 
 process.stdout.write("\nparent-copilot-ui-product-verify: ALL PASS\n");

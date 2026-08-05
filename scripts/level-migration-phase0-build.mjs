@@ -10,14 +10,14 @@ const ROOT = join(import.meta.dirname, "..");
 const REPORTS = join(ROOT, "reports");
 
 const LAUNCH_SUBJECTS = [
-  { id: "math", labelHe: "מתמטיקה", patterns: ["math-master", "math-question-generator", "math-constants", "math-report"] },
-  { id: "geometry", labelHe: "גיאומטריה", patterns: ["geometry-master", "geometry-question-generator", "geometry-constants"] },
-  { id: "hebrew", labelHe: "עברית", patterns: ["hebrew-master", "hebrew-question-generator", "hebrew-constants"] },
-  { id: "english", labelHe: "אנגלית", patterns: ["english-master", "english-question-generator", "englishLevelKeysForGradeKey"] },
-  { id: "science", labelHe: "מדעים", patterns: ["science-master", "science-questions", "science-internal"] },
-  { id: "moledet", labelHe: "מולדת", patterns: ["moledet-master", "moledet-geography-master", "VISUAL_STRAND_MOLEDET", "moledet-geography-question-generator"] },
-  { id: "geography", labelHe: "גיאוגרפיה", patterns: ["geography-master", "VISUAL_STRAND_GEOGRAPHY", "moledet-geography"] },
-  { id: "history", labelHe: "היסטוריה", patterns: ["history-master", "history-questions", "history-curriculum"] },
+  { id: "math", labelHe: "", patterns: ["math-master", "math-question-generator", "math-constants", "math-report"] },
+  { id: "geometry", labelHe: "", patterns: ["geometry-master", "geometry-question-generator", "geometry-constants"] },
+  { id: "hebrew", labelHe: "", patterns: ["hebrew-master", "hebrew-question-generator", "hebrew-constants"] },
+  { id: "english", labelHe: "", patterns: ["english-master", "english-question-generator", "englishLevelKeysForGradeKey"] },
+  { id: "science", labelHe: "", patterns: ["science-master", "science-questions", "science-internal"] },
+  { id: "moledet", labelHe: "", patterns: ["moledet-master", "moledet-geography-master", "VISUAL_STRAND_MOLEDET", "moledet-geography-question-generator"] },
+  { id: "geography", labelHe: "", patterns: ["geography-master", "VISUAL_STRAND_GEOGRAPHY", "moledet-geography"] },
+  { id: "history", labelHe: "", patterns: ["history-master", "history-questions", "history-curriculum"] },
 ];
 
 function rg(pattern, globs, dirs = ["pages", "components", "lib", "utils"]) {
@@ -82,10 +82,10 @@ function subjectHits(filePath) {
 
 function isUserFacingCopy(entry) {
   const t = entry.text;
-  if (!/קל|בינוני|קשה/.test(t)) return false;
-  if (/קלט|קלות|קליל|קלוע|קליק|קלטה|hardReset|hardcoded|harder|hardness/i.test(t)) return false;
+  if (!/||/.test(t)) return false;
+  if (/||||||hardReset|hardcoded|harder|hardness/i.test(t)) return false;
   if (/font-medium|font-bold|font-semibold/.test(t)) return false;
-  if (/בינוני.*correctRate|labelHe.*בינוני/.test(t) && !/רמה|level|LEVEL/.test(t)) return false;
+  if (/.*correctRate|labelHe.*/.test(t) && !/|level|LEVEL/.test(t)) return false;
   return true;
 }
 
@@ -104,13 +104,13 @@ function classifySurface(file) {
 }
 
 // --- scans ---
-const hebrewRaw = rg("קל|בינוני|קשה", "*.{js,jsx,mjs}");
+const hebrewRaw = rg("||", "*.{js,jsx,mjs}");
 const emhRaw = rg("\\beasy\\b|\\bmedium\\b|\\bhard\\b|difficulty", "*.{js,jsx}");
 const constantsRaw = rg("LEVELS|LEVEL_ORDER|DIFFICULTY", "", ["utils", "pages", "lib"]);
 const metadataRaw = rg("metadata\\.level|questionLevel|sourceDifficulty|displayLevel", "", ["pages/api", "utils", "lib"]);
 
-const sixSubjectFiles = rgFiles("six-subject|6 subjects|6 masters|6 generators|6 מקצוע|שש מקצוע", "*.{js,jsx,mjs}");
-const threeLevelFiles = rgFiles("easy.*medium.*hard|LEVEL_ORDER|levelKeys|קל.*בינוני.*קשה", "*.{js,jsx,mjs}");
+const sixSubjectFiles = rgFiles("six-subject|6 subjects|6 masters|6 generators|6 | ", "*.{js,jsx,mjs}");
+const threeLevelFiles = rgFiles("easy.*medium.*hard|LEVEL_ORDER|levelKeys|.*.*", "*.{js,jsx,mjs}");
 const displayLevelFiles = rgFiles("displayLevel|sourceDifficulty", "*.{js,jsx,mjs}");
 
 const hebrewEntries = parseRgLines(hebrewRaw).filter(isUserFacingCopy);
@@ -170,8 +170,8 @@ const subjectImpact = LAUNCH_SUBJECTS.map((s) => {
         : s.id === "moledet" || s.id === "geography"
           ? "shared moledet-geography-master + generator; QA/UX separate strands"
           : s.id === "history"
-            ? "bank-based selection; inline LEVELS with קל/בינוני/קשה"
-            : "standard 3-level UI → רגיל/מתקדם",
+            ? "bank-based selection; inline LEVELS with //"
+            : "standard 3-level UI → /",
   };
 });
 
@@ -195,7 +195,7 @@ const risks = [
     severity: "high",
     title: "topic-next-step-engine LEVEL_ORDER 3-tier",
     location: "utils/topic-next-step-engine.js:95",
-    mitigation: "Phase 6 update to רגיל→מתקדם progression",
+    mitigation: "Phase 6 update to → progression",
   },
   {
     id: "R4",
@@ -221,9 +221,9 @@ const risks = [
   {
     id: "R7",
     severity: "medium",
-    title: "parent report labels still קל/בינוני/קשה",
+    title: "parent report labels still //",
     location: "utils/parent-report-language/parent-report-display-labels.js:93-95",
-    mitigation: "Phase 6 labels → רגיל/מתקדם",
+    mitigation: "Phase 6 labels → /",
   },
   {
     id: "R8",
@@ -244,7 +244,7 @@ const impact = {
   },
   scanScope: {
     appendixBGreps: [
-      { pattern: "קל|בינוני|קשה", dirs: ["pages", "components", "lib", "utils"], glob: "*.{js,jsx,mjs}" },
+      { pattern: "||", dirs: ["pages", "components", "lib", "utils"], glob: "*.{js,jsx,mjs}" },
       { pattern: "easy|medium|hard|difficulty", dirs: ["pages", "components", "lib"], glob: "*.{js,jsx}" },
       { pattern: "LEVELS|LEVEL_ORDER|DIFFICULTY", dirs: ["utils", "pages", "lib"] },
       { pattern: "metadata.level|questionLevel|sourceDifficulty|displayLevel", dirs: ["pages/api", "utils", "lib"] },
@@ -307,15 +307,15 @@ const impact = {
     ),
     examples: [
       { file: "utils/topic-next-step-engine.js", line: 95, pattern: 'LEVEL_ORDER = ["easy", "medium", "hard"]' },
-      { file: "utils/math-constants.js", line: 30, pattern: "3 רמות: easy / medium / hard" },
+      { file: "utils/math-constants.js", line: 30, pattern: "3 : easy / medium / hard" },
       { file: "pages/learning/science-master.js", line: 227, pattern: "ADAPTIVE_LEVEL_ORDER" },
-      { file: "components/parent/AssignActivityModal.js", line: 348, pattern: "קל / בינוני / קשה UI" },
+      { file: "components/parent/AssignActivityModal.js", line: 348, pattern: " /  /  UI" },
     ],
   },
   sixSubjectAssumptions: {
     description: "QA/scripts/docs referencing 6 subjects instead of 8 launch subjects",
     files: sixSubjectFiles.filter((f) => !f.includes("review-packages") && !f.includes("docs/school-portal")),
-    note: "Production pages/school/classes/index.js shows '6 מקצועות' — school portal scope; verify if in migration scope",
+    note: "Production pages/school/classes/index.js shows '6 ' — school portal scope; verify if in migration scope",
   },
   changesRequired: {
     phase1: ["lib/learning/display-level.js", "regular-internal-adaptive.js", "science-internal-adaptive.js"],
@@ -335,12 +335,12 @@ const impact = {
       "mixed→medium bug confirmed at generate-activity-questions-client.js:205",
       "displayLevel SSOT not yet created — expected before Phase 1",
       "Six-subject QA debt is in scripts/tests only; plan Phase 7 covers update",
-      "School portal '6 מקצועות' string may be out of learning-level scope — flag for owner if school UI should show 8",
+      "School portal '6 ' string may be out of learning-level scope — flag for owner if school UI should show 8",
     ],
     suggestedPlanUpdatesBeforePhase1: [
       {
         optional: true,
-        item: "Clarify whether pages/school/classes/index.js '6 מקצועות' is in scope for copy migration",
+        item: "Clarify whether pages/school/classes/index.js '6 ' is in scope for copy migration",
       },
       {
         optional: true,
@@ -355,8 +355,8 @@ const copyInventory = {
   meta: {
     phase: 0,
     generatedAt: impact.meta.generatedAt,
-    targetCopy: ["רגיל", "מתקדם"],
-    forbiddenUserCopy: ["קל", "בינוני", "קשה"],
+    targetCopy: ["", ""],
+    forbiddenUserCopy: ["", "", ""],
     filteredFromTotalHebrewMatches: hebrewEntries.length,
   },
   entries: hebrewEntries
@@ -368,7 +368,7 @@ const copyInventory = {
       surface: classifySurface(e.file),
       subjects: subjectHits(e.file),
       inScope: !classifySurface(e.file).includes("out_of_scope"),
-      requiredChange: "replace with רגיל/מתקדם per displayLevel mapping",
+      requiredChange: "replace with / per displayLevel mapping",
     })),
   bySurface: {},
 };

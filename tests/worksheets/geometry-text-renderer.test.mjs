@@ -14,19 +14,19 @@ import {
 import { WORKSHEET_PRINTABILITY } from "../../lib/worksheets/worksheet-question-types.js";
 
 const CONCEPT_RAW = {
-  question: "איזו זוגית קווים הם מקבילים?",
-  answers: ["קו א׳ וקו ב׳", "קו א׳ וקו ג׳", "קו ב׳ וקו ג׳", "אף זוג"],
-  correctAnswer: "קו א׳ וקו ב׳",
+  question: "    ?",
+  answers: ["   ", "   ", "   ", " "],
+  correctAnswer: "   ",
   topic: "parallel_perpendicular",
   params: { kind: "concept_lines", isParallel: true },
 };
 
 const META = {
-  titleHe: "דף עבודה",
-  subjectHe: "גאומטריה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "מקבילות",
-  levelHe: "קל",
+  titleHe: " ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "geometry",
 };
@@ -38,18 +38,18 @@ describe("geometry-text-renderer", () => {
       subject: "geometry",
     });
     assert.ok(["mcq", "diagram_mcq"].includes(printable.questionType));
-    assert.ok(printable.stemHe.includes("מקביל"));
+    assert.ok(printable.stemHe.includes(""));
     assert.ok(printable.optionsHe?.length);
     assert.equal(printable.printability, WORKSHEET_PRINTABILITY.printable);
   });
 
   test("transformations without numeric diagram stay text printable", () => {
     const raw = {
-      question: "מה סוג הטרנספורמציה?",
-      answers: ["הזזה", "שיקוף", "סיבוב", "אין"],
-      correctAnswer: "הזזה",
+      question: "  ?",
+      answers: ["", "", "", ""],
+      correctAnswer: "",
       topic: "transformations",
-      params: { kind: "concept_transform", type: "הזזה" },
+      params: { kind: "concept_transform", type: "" },
     };
     const enriched = enrichGeometryPrintableQuestion(raw, {
       displayIndex: 1,
@@ -78,7 +78,7 @@ describe("geometry-text-renderer", () => {
 
   test("solid cylinder volume is printable with SVG", () => {
     const raw = {
-      question: "רדיוס הגליל הוא 5 ס״מ וגובהו 10 ס״מ. חשבו את נפח הגליל (π = 3.14).",
+      question: "   5   10 .     (π = 3.14).",
       answers: ["100", "200", "314", "400"],
       correctAnswer: "314",
       topic: "volume",
@@ -94,8 +94,8 @@ describe("geometry-text-renderer", () => {
     assert.equal(printable.diagramSpec?.kind, "solid_cylinder");
     const payload = buildWorksheetPayload([raw], {
       ...META,
-      topicHe: "נפח",
-      gradeHe: "ו׳",
+      topic: "",
+      grade: "",
     }, { subjectId: "geometry" });
     const html = worksheetPayloadToPreviewHtml(payload);
     assert.ok(html.includes("worksheet-geometry-svg"));

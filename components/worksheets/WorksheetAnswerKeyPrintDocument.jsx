@@ -19,7 +19,7 @@ export default function WorksheetAnswerKeyPrintDocument({ answerKeyPayload }) {
     <div className="worksheet-print-document" aria-hidden="true">
       <article className="worksheet-root answer-key-root" {...WORKSHEET_PRINT_DOC_ATTRS}>
         <WorksheetDocumentHeader
-          titleHe={ui.answerKeyTitle}
+          title={ui.answerKeyTitle}
           meta={meta}
           variant="answer-key"
         />

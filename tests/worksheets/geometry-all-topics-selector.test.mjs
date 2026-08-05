@@ -23,11 +23,11 @@ import {
 } from "../../lib/worksheets/worksheet-payload-build.server.js";
 
 const META_BASE = {
-  titleHe: "דף עבודה - גאומטריה",
-  subjectHe: "גאומטריה",
-  gradeHe: "כיתה ג׳",
-  topicHe: "שטח",
-  levelHe: "בינוני",
+  titleHe: "  - ",
+  subject: "",
+  grade: " ",
+  topic: "",
+  level: "",
   inkSave: false,
   subjectId: "geometry",
 };

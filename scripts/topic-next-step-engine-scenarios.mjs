@@ -1,6 +1,6 @@
 /**
- * מטריצת תרחישי מנוע topic-next-step (ללא UI / ללא שינוי payload).
- * הרצה: npm run test:topic-next-step-engine-scenarios
+ *    topic-next-step ( UI /   payload).
+ * : npm run test:topic-next-step-engine-scenarios
  */
 import assert from "node:assert/strict";
 import {
@@ -15,7 +15,7 @@ const { buildTopicRecommendationsForSubject, DEFAULT_TOPIC_NEXT_STEP_CONFIG } =
   engMod.default && typeof engMod.default === "object" ? engMod.default : engMod;
 
 /**
- * מפת תרחישי audit — כל שורה: תרחיש, נושא, בחירת שורה, ציפיות מבניות.
+ *   audit —  : , ,  ,  .
  * @typedef {{ subjectId: string, topicRowKey?: string, geometryKey?: string }} PickSpec
  * @typedef {{
  *   id: string

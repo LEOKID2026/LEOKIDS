@@ -86,8 +86,8 @@ function sampleQuestion(topic, shape, gradeKey) {
       return {
         topic,
         shape,
-        params: { kind: "concept_transform", type: "הזזה" },
-        correctAnswer: "הזזה",
+        params: { kind: "concept_transform", type: "" },
+        correctAnswer: "",
       };
     case "rotation":
       return {
@@ -107,7 +107,7 @@ function sampleQuestion(topic, shape, gradeKey) {
       return {
         topic,
         shape: "square",
-        params: { kind: "symmetry", shape: "ריבוע", axes: 4 },
+        params: { kind: "symmetry", shape: "", axes: 4 },
         correctAnswer: 4,
       };
     case "diagonal":
@@ -121,29 +121,29 @@ function sampleQuestion(topic, shape, gradeKey) {
       return {
         topic,
         shape: "square",
-        params: { kind: "tiling", shape: "ריבוע", angle: 90 },
+        params: { kind: "tiling", shape: "", angle: 90 },
         correctAnswer: 90,
       };
     case "parallel_perpendicular":
       return {
         topic,
         shape,
-        params: { kind: "parallel_perpendicular", type: "מקבילות" },
-        correctAnswer: "מקבילות",
+        params: { kind: "parallel_perpendicular", type: "" },
+        correctAnswer: "",
       };
     case "triangles":
       return {
         topic,
         shape: "triangle",
-        params: { kind: "triangles", type: "משולש שווה צלעות" },
-        correctAnswer: "שווה צלעות",
+        params: { kind: "triangles", type: "  " },
+        correctAnswer: " ",
       };
     case "quadrilaterals":
       return {
         topic,
         shape: "rectangle",
-        params: { kind: "quadrilaterals", type: "מלבן" },
-        correctAnswer: "מלבן",
+        params: { kind: "quadrilaterals", type: "" },
+        correctAnswer: "",
       };
     case "heights":
       return {
@@ -163,7 +163,7 @@ function sampleQuestion(topic, shape, gradeKey) {
       return {
         topic,
         shape,
-        params: { kind: "shapes_basic", shape: shape === "square" ? "ריבוע" : "מלבן" },
+        params: { kind: "shapes_basic", shape: shape === "square" ? "" : "" },
         correctAnswer: 4,
       };
     default:
@@ -219,7 +219,7 @@ test("generateQuestion smoke - metadata for procedural questions", () => {
   try {
     for (const gradeKey of ["g3", "g4", "g5", "g6"]) {
       for (const topic of GRADES[gradeKey].topics.filter((t) => t !== "mixed")) {
-        const q = generateQuestion({ name: "קל" }, topic, gradeKey);
+        const q = generateQuestion({ name: "" }, topic, gradeKey);
         if (q.params?.kind === "no_question") continue;
         const spec = getGeometryDiagramSpec(q);
         if (!spec) continue;

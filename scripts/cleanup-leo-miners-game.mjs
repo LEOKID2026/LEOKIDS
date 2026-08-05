@@ -10,7 +10,7 @@ const file = path.resolve(__dirname, "../components/leo-miners/LeoMinersGame.jsx
 let code = fs.readFileSync(file, "utf8");
 
 // Fix broken DEBUG key from global MLEO replace
-code = code.replace(/const DEBUG_LS = "נקודות_DEBUG_UI"/, 'const DEBUG_LS = "liosh_miners_debug_ui"');
+code = code.replace(/const DEBUG_LS = "_DEBUG_UI"/, 'const DEBUG_LS = "liosh_miners_debug_ui"');
 
 // Add formulas import after Link import
 if (!code.includes("leo-miners-formulas.client")) {
@@ -66,12 +66,12 @@ code = code.replace(/monthsSinceTGE\([^)]*\)/g, "-1");
 code = code.replace(/async function syncMiningFromServer\(\)[\s\S]*?\n\}/m, "async function syncMiningFromServer(){ return economy?.fetchState?.(); }");
 
 // Hebrew diamond prizes
-code = code.replace(/label: "Coins ×1000%/g, 'label: "מטבעות ×10');
-code = code.replace(/label: "Dog \+3 levels"/g, 'label: "ליאו +3 רמות"');
-code = code.replace(/label: "Coins ×10000%/g, 'label: "מטבעות ×100');
-code = code.replace(/label: "Dog \+5 levels"/g, 'label: "ליאו +5 רמות"');
-code = code.replace(/label: "Coins ×100000%/g, 'label: "מטבעות ×1000');
-code = code.replace(/label: "Dog \+7 levels"/g, 'label: "ליאו +7 רמות"');
+code = code.replace(/label: "Coins ×1000%/g, 'label: " ×10');
+code = code.replace(/label: "Dog \+3 levels"/g, 'label: " +3 "');
+code = code.replace(/label: "Coins ×10000%/g, 'label: " ×100');
+code = code.replace(/label: "Dog \+5 levels"/g, 'label: " +5 "');
+code = code.replace(/label: "Coins ×100000%/g, 'label: " ×1000');
+code = code.replace(/label: "Dog \+7 levels"/g, 'label: " +7 "');
 
 // Claim button disabled when no rewards
 code = code.replace(/onClick=\{onClaimRewards\}/g, "onClick={onClaimRewards} disabled={!dbReady || !rewardsEnabled}");

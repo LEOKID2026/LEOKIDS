@@ -19,7 +19,7 @@ const TAXONOMY_FILES = [
 
 const CONTENT_STRING_FIELDS = [
   "domainHe",
-  "topicHe",
+  "topic",
   "subskillHe",
   "patternHe",
   "counterEvidenceHe",
@@ -66,7 +66,7 @@ function splitTaxonomyRow(row) {
 
   const fieldMap = {
     domainHe: "domain",
-    topicHe: "topic",
+    topic: "topic",
     subskillHe: "subskill",
     patternHe: "pattern",
     counterEvidenceHe: "counterEvidence",
