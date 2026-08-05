@@ -129,10 +129,10 @@ export default function LeoSupermarketGame({
   const sessionEndFiredRef = useRef(false);
 
   const [phase, setPhase] = useState(/** @type {'intro'|'play'|'won'|'lost'} */ (
-    productionMode && autoStart ? "play" : "intro",
+    productionMode && autoStart ? "play" : "intro"
   ));
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ (
-    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy",
+    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy"
   ));
   const [customers, setCustomers] = useState(/** @type {import('./leo-supermarket-data.js').SupermarketCustomer[]} */ ([]));
   const [customerIndex, setCustomerIndex] = useState(0);

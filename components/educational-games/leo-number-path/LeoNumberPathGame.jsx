@@ -51,10 +51,10 @@ export default function LeoNumberPathGame({
   const startTimeRef = useRef(Date.now());
 
   const [phase, setPhase] = useState(/** @type {'intro'|'play'|'won'|'lost'} */ (
-    productionMode && autoStart ? "play" : "intro",
+    productionMode && autoStart ? "play" : "intro"
   ));
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ (
-    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy",
+    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy"
   ));
   const [tasks, setTasks] = useState(/** @type {import('./leo-number-path-data.js').PathTask[]} */ ([]));
   const [taskIndex, setTaskIndex] = useState(0);

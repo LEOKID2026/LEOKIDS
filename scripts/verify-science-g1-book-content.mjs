@@ -104,8 +104,8 @@ for (const pageId of SCIENCE_G1_PAGE_ORDER) {
   if (FAKE_PRACTICE_RE.test(s7)) {
     errors.push(`${pageId}: Section 7 contains fake practice routing`);
   }
-  if (!//.test(childFacing)) {
-    errors.push(`${pageId}: child-facing body should mention  at least once`);
+  if (!/science/i.test(childFacing)) {
+    errors.push(`${pageId}: child-facing body should mention science at least once`);
   }
 
   const anchors = SCIENCE_G1_ALIGNMENT_ANCHORS[pageId] || [];

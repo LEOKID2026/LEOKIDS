@@ -57,8 +57,8 @@ function render(label, el) {
 }
 
 function runDetailedPageChunks() {
-  const longHe = "".repeat(40);
-  const longWhy = " ".repeat(120) + "knowledge_gap —    .";
+  const longHe = "Long-title-".repeat(40);
+  const longWhy = "Why ".repeat(120) + "knowledge_gap — long explanation without collapse.";
 
   const sparse = buildDetailedParentReportFromBaseReport(PARENT_REPORT_SCENARIOS.all_sparse(), { period: "week" });
   assert.ok(sparse);
@@ -77,20 +77,20 @@ function runDetailedPageChunks() {
   );
   const esP9 = {
     ...normalizeExecutiveSummary(strong),
-    dominantCrossSubjectMistakePatternLabelHe: "   ",
-    crossSubjectLearningStageLabelHe: " ",
+    dominantCrossSubjectMistakePatternLabelHe: "Mixed mistake pattern, not uniform",
+    crossSubjectLearningStageLabelHe: "Partial stabilization",
     crossSubjectRetentionRisk: "moderate",
     crossSubjectTransferReadiness: "limited",
-    reviewBeforeAdvanceAreasHe: [":      ."],
+    reviewBeforeAdvanceAreasHe: ["Math: revisit the same level before advancing."],
     transferReadyAreasHe: [],
     crossSubjectResponseToIntervention: "early_positive_response",
-    crossSubjectResponseToInterventionLabelHe: "   —   ",
+    crossSubjectResponseToInterventionLabelHe: "Early signs of improvement — still too early to close",
     crossSubjectSupportAdjustmentNeed: "hold_course",
-    crossSubjectSupportAdjustmentNeedHe: "   ",
+    crossSubjectSupportAdjustmentNeedHe: "Continue carefully in the same direction",
     crossSubjectConclusionFreshness: "medium",
     crossSubjectRecalibrationNeed: "light_review",
-    crossSubjectRecalibrationNeedHe: "     ",
-    majorRecheckAreasHe: [":       ."],
+    crossSubjectRecalibrationNeedHe: "A light review is enough before a major change",
+    majorRecheckAreasHe: ["English: run a short observation round before a significant change."],
     areasWhereSupportCanBeReducedHe: [],
     areasNeedingStrategyChangeHe: [],
   };
@@ -109,24 +109,24 @@ function runDetailedPageChunks() {
 
   const spPartial = {
     subject: "math",
-    subjectLabelHe: "",
+    subjectLabelHe: "Math",
     topStrengths: [],
     topWeaknesses: [],
     topicRecommendations: [],
     dominantLearningRisk: "knowledge_gap",
     dominantSuccessPattern: null,
-    dominantLearningRiskLabelHe: " ",
+    dominantLearningRiskLabelHe: "Knowledge gap",
     dominantSuccessPatternLabelHe: null,
     dominantRootCause: "insufficient_evidence",
-    dominantRootCauseLabelHe: "     ",
+    dominantRootCauseLabelHe: "Not enough data for a clear root cause",
     secondaryRootCause: null,
     rootCauseDistribution: {},
-    subjectDiagnosticRestraintHe: "       —   .",
+    subjectDiagnosticRestraintHe: "Still not enough data for a clear root cause — keep collecting practice.",
     subjectConclusionReadiness: "partial",
-    subjectInterventionPriorityHe: "    ",
-    subjectPriorityReasonHe: "    —   .",
-    subjectDoNowHe: "     .",
-    subjectAvoidNowHe: "     .",
+    subjectInterventionPriorityHe: "Monitor and controlled practice before escalation",
+    subjectPriorityReasonHe: "Subject with partial data — monitor before escalation.",
+    subjectDoNowHe: "One short session at the same level.",
+    subjectAvoidNowHe: "Do not draw a strong conclusion too quickly.",
     trendNarrativeHe: null,
     confidenceSummaryHe: null,
     recommendedHomeMethodHe: null,
@@ -137,14 +137,14 @@ function runDetailedPageChunks() {
     stableMasteryRowCount: 0,
     modeConcentrationNoteHe: null,
     subjectResponseToIntervention: "not_enough_evidence",
-    subjectResponseToInterventionLabelHe: "       ",
+    subjectResponseToInterventionLabelHe: "Not enough signal yet to judge whether support is helping",
     subjectSupportFit: "unknown",
     subjectSupportAdjustmentNeed: "monitor_only",
-    subjectSupportAdjustmentNeedHe: "     ",
+    subjectSupportAdjustmentNeedHe: "Observe and gather more signal before deciding",
     subjectConclusionFreshness: "medium",
     subjectRecalibrationNeed: "light_review",
-    subjectRecalibrationNeedHe: "     ",
-    subjectEffectivenessNarrativeHe: ":        .      ",
+    subjectRecalibrationNeedHe: "A light review is enough before a major change",
+    subjectEffectivenessNarrativeHe: "In math: not enough signal yet to judge whether support is helping. A light review is enough before a major change",
   };
   render("phase3:partial-fields", h(SubjectPhase3Insights, { sp: spPartial, compact: true }));
   render("summary-block:sparse", h(SubjectSummaryBlock, { sp: sparse.subjectProfiles[0] }));
@@ -153,7 +153,7 @@ function runDetailedPageChunks() {
   const tr = oneDom.subjectProfiles[0]?.topicRecommendations?.[0];
   assert.ok(tr, "topic rec for strip");
   assert.ok(
-    String(tr.displayName || "").length > 0 && !String(tr.displayName || "").includes(""),
+    String(tr.displayName || "").length > 0 && !String(tr.displayName || "").includes("grade"),
     `math topic displayName should be operation-only (grade/level in table columns; got ${tr.displayName})`
   );
   render("topic-strip:golden", h(TopicRecommendationExplainStrip, { tr }));
@@ -163,7 +163,7 @@ function runDetailedPageChunks() {
     trendV1: {
       ok: true,
       direction: "improving",
-      parentLineHe: " :  —         .",
+      parentLineHe: "Trend for this period: improving — the recent part of the period looks stronger than the start.",
     },
   };
   const trendStripHtml = render("topic-strip:trend-v1", h(TopicRecommendationExplainStrip, { tr: trTrendV1 }));
@@ -187,10 +187,10 @@ function runDetailedPageChunks() {
 
   const trPhase8 = {
     ...tr,
-    interventionPlanHe: "    —   .",
-    doNowHe: "    .",
-    avoidNowHe: "       .",
-    cautionLineHe: "      .",
+    interventionPlanHe: "Short micro-plan for the topic — one clear step.",
+    doNowHe: "Short session with one goal.",
+    avoidNowHe: "Do not add big steps while evidence is still thin.",
+    cautionLineHe: "Still not enough data for a stronger conclusion.",
     recommendedSessionCount: 2,
     recommendedSessionLengthBand: "very_short",
     recommendedPracticeLoad: "minimal",
@@ -206,10 +206,10 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      responseToInterventionLabelHe: "   —   ",
-      freshnessStateLabelHe: "  ",
-      conclusionFreshnessLabelHe: "   —   ",
-      nextSupportAdjustmentHe: "  /     ",
+      responseToInterventionLabelHe: "Early signs of improvement — still too early to close",
+      freshnessStateLabelHe: "Information is starting to age",
+      conclusionFreshnessLabelHe: "Low confidence in the conclusion — worth updating observation",
+      nextSupportAdjustmentHe: "Run an observation/check round before raising difficulty or advancing",
     },
   };
   render("topic-strip:phase10-compact", h(TopicRecommendationExplainStrip, { tr: trPhase10 }));
@@ -217,10 +217,10 @@ function runDetailedPageChunks() {
   const esPhase11 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectSupportSequenceState: "continuing_sequence",
-    crossSubjectSupportSequenceStateLabelHe: "    ",
+    crossSubjectSupportSequenceStateLabelHe: "Continuing the support sequence that was started recently",
     crossSubjectNextBestSequenceStep: "continue_current_sequence",
-    crossSubjectNextBestSequenceStepHe: "    —     ",
-    subjectsReadyForReleaseHe: [":         "],
+    crossSubjectNextBestSequenceStepHe: "Continue the same sequence carefully — without adding load without need",
+    subjectsReadyForReleaseHe: ["Math: it looks possible to start a careful step of reducing help toward short independent success"],
     subjectsAtRiskOfSupportRepetitionHe: [],
     subjectsNeedingSupportResetHe: [],
   };
@@ -230,10 +230,10 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      supportSequenceNarrativeHe: "   —           .",
-      strategyRepetitionRiskHe: "       ",
-      strategyFatigueRiskHe: "      ",
-      nextSupportSequenceActionHe: "         ",
+      supportSequenceNarrativeHe: "Support seems to be helping — worth checking whether to stay on the same path a bit longer.",
+      strategyRepetitionRiskHe: "Likely to repeat the same approach without change",
+      strategyFatigueRiskHe: "Low risk of needing a more varied approach on the same topic",
+      nextSupportSequenceActionHe: "Continue the current sequence with a clearer short goal before a major change",
     },
   };
   render("topic-strip:phase11-compact", h(TopicRecommendationExplainStrip, { tr: trPhase11 }));
@@ -241,15 +241,15 @@ function runDetailedPageChunks() {
   const esPhase12 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectRecommendationMemoryState: "light_memory",
-    crossSubjectRecommendationMemoryStateLabelHe: "    —   ",
+    crossSubjectRecommendationMemoryStateLabelHe: "There is light memory — mainly from the current window",
     crossSubjectSupportHistoryDepth: "short_history",
-    crossSubjectSupportHistoryDepthLabelHe: " :   ",
+    crossSubjectSupportHistoryDepthLabelHe: "History depth: two recent windows",
     crossSubjectExpectedVsObservedMatch: "partly_aligned",
-    crossSubjectExpectedVsObservedMatchHe: "       ",
+    crossSubjectExpectedVsObservedMatchHe: "There is partial overlap between what we expected and what we see",
     crossSubjectContinuationDecision: "continue_but_refine",
-    crossSubjectContinuationDecisionHe: "  ,     ",
+    crossSubjectContinuationDecisionHe: "Continue in the same direction, but refine more precisely",
     subjectsWithClearCarryoverHe: [],
-    subjectsNeedingFreshEvidenceHe: [":        ."],
+    subjectsNeedingFreshEvidenceHe: ["Math: worth gathering more signal before continuing the same path."],
     subjectsWherePriorPathSeemsMisalignedHe: [],
   };
   render("exec:phase12-memory-strip", h(ExecutiveSummarySection, { es: esPhase12, compact: false }));
@@ -258,10 +258,10 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      recommendationMemoryNarrativeHe: "«»:          .",
-      outcomeTrackingNarrativeHe: "«»:    ·     ·   .",
-      recommendationContinuationDecisionHe: "  ,     ",
-      whatNeedsFreshEvidenceNowHe: "     :       .",
+      recommendationMemoryNarrativeHe: "In addition: there is enough usage memory to continue more carefully.",
+      outcomeTrackingNarrativeHe: "In addition: we expected stabilization · in practice there is partial alignment · there is partial overlap.",
+      recommendationContinuationDecisionHe: "Continue in the same direction, but refine more precisely",
+      whatNeedsFreshEvidenceNowHe: "To avoid misunderstanding the path: two short sessions with a small record at the end.",
       recommendationMemoryState: "light_memory",
       expectedVsObservedMatch: "not_enough_evidence",
     },
@@ -271,15 +271,15 @@ function runDetailedPageChunks() {
   const esPhase13 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectGateState: "recheck_gate_visible",
-    crossSubjectGateStateLabelHe: "        ",
+    crossSubjectGateStateLabelHe: "There is a week that should be observed before a material decision",
     crossSubjectNextCycleDecisionFocus: "refresh_baseline_before_decision",
-    crossSubjectNextCycleDecisionFocusHe: "     ",
+    crossSubjectNextCycleDecisionFocusHe: "Refresh the observation baseline before a sharp decision",
     crossSubjectEvidenceTargetType: "fresh_data_needed",
-    crossSubjectEvidenceTargetTypeLabelHe: " /  ",
+    crossSubjectEvidenceTargetTypeLabelHe: "Needs updated information/observation",
     crossSubjectTargetObservationWindow: "needs_fresh_baseline",
-    crossSubjectTargetObservationWindowLabelHe: "    ",
-    subjectsNearReleaseButNotThereHe: [":    —     ."],
-    subjectsNeedingRecheckBeforeDecisionHe: [":   /    ."],
+    crossSubjectTargetObservationWindowLabelHe: "Needs a fresh baseline before conclusion",
+    subjectsNearReleaseButNotThereHe: ["Math: close to release — still not short independent success yet."],
+    subjectsNeedingRecheckBeforeDecisionHe: ["Geometry: worth an observation/updated-data round before a material decision."],
     subjectsWithVisiblePivotTriggerHe: [],
   };
   render("exec:phase13-gates-strip", h(ExecutiveSummarySection, { es: esPhase13, compact: false }));
@@ -288,11 +288,11 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      gateNarrativeHe: "«»:   —    .",
-      evidenceTargetNarrativeHe: "«»:    ·   .",
-      nextCycleDecisionFocusHe: "     ",
+      gateNarrativeHe: "In addition: sequence gate — still not ready for release.",
+      evidenceTargetNarrativeHe: "In addition: short independent success · next short round.",
+      nextCycleDecisionFocusHe: "Check short independent success before continuing support",
       releaseGate: "pending",
-      whatWouldJustifyReleaseHe: "        .",
+      whatWouldJustifyReleaseHe: "Two short sessions with success at the end without pressure in the middle.",
       recheckGate: "off",
       pivotGate: "off",
     },
@@ -302,14 +302,14 @@ function runDetailedPageChunks() {
   const esPhase14 = {
     ...normalizeExecutiveSummary(strong),
     crossSubjectDependencyState: "likely_local_issue",
-    crossSubjectDependencyStateLabelHe: "     —    ",
+    crossSubjectDependencyStateLabelHe: "The difficulty seems to stay more local — can be handled in place",
     crossSubjectLikelyFoundationalBlocker: "unknown",
-    crossSubjectLikelyFoundationalBlockerLabelHe: "    ",
+    crossSubjectLikelyFoundationalBlockerLabelHe: "No specific foundational blocker type identified",
     crossSubjectFoundationFirstPriority: false,
-    crossSubjectFoundationFirstPriorityHe: "         —   « »  .",
+    crossSubjectFoundationFirstPriorityHe: "Most subjects look more local or partly unclear — not required to treat everything as a big foundation first.",
     subjectsLikelyShowingDownstreamSymptomsHe: [],
     subjectsNeedingFoundationFirstHe: [],
-    subjectsSafeForLocalInterventionHe: [":    —      ."],
+    subjectsSafeForLocalInterventionHe: ["Math: looks more local — targeted handling is possible without broad skipping."],
   };
   render("exec:phase14-foundation-strip", h(ExecutiveSummarySection, { es: esPhase14, compact: false }));
 
@@ -317,8 +317,8 @@ function runDetailedPageChunks() {
     ...tr,
     topicEngineRowSignals: {
       ...(tr.topicEngineRowSignals && typeof tr.topicEngineRowSignals === "object" ? tr.topicEngineRowSignals : {}),
-      foundationDependencyNarrativeHe: "«»:      —   .",
-      interventionOrderingHe: "    ",
+      foundationDependencyNarrativeHe: "In addition: the difficulty seems to stay more local — can be handled in place.",
+      interventionOrderingHe: "Local support first in the topic itself",
       foundationBeforeExpansion: false,
     },
   };
@@ -330,15 +330,15 @@ function runDetailedPageChunks() {
       ...(trPhase14.topicEngineRowSignals && typeof trPhase14.topicEngineRowSignals === "object"
         ? trPhase14.topicEngineRowSignals
         : {}),
-      freshnessStateLabelHe: "  ",
-      conclusionFreshnessLabelHe: "  ",
-      whatNeedsFreshEvidenceNowHe: "    ",
-      gateNarrativeHe: ":    ",
-      evidenceTargetNarrativeHe: ":    ",
-      nextSupportAdjustmentHe: "  —   ",
-      nextSupportSequenceActionHe: "  —   ",
-      recommendationMemoryNarrativeHe: "   ",
-      outcomeTrackingNarrativeHe: "   ",
+      freshnessStateLabelHe: "Information is starting to age",
+      conclusionFreshnessLabelHe: "Low confidence in the conclusion",
+      whatNeedsFreshEvidenceNowHe: "Worth a fresh look before escalation",
+      gateNarrativeHe: "Gate: gather evidence before deciding",
+      evidenceTargetNarrativeHe: "Target: short check without pressure",
+      nextSupportAdjustmentHe: "Adjust load — clear immediate step",
+      nextSupportSequenceActionHe: "Adjust load — clear immediate step",
+      recommendationMemoryNarrativeHe: "Light memory from the recent window",
+      outcomeTrackingNarrativeHe: "Outcome does not fully match expectation",
     },
   };
   render("topic-strip:phase15-unified-compact", h(TopicRecommendationExplainStrip, { tr: trPhase15 }));
@@ -399,8 +399,8 @@ function runContractBindingChunks() {
 }
 
 function runParentReportPageChunks() {
-  const longLabel = "" + "".repeat(200);
-  const longWhy = "".repeat(500);
+  const longLabel = "Topic-name-long-" + "x".repeat(200);
+  const longWhy = "w".repeat(500);
   const row = {
     rowKey: "k1",
     label: longLabel,
@@ -412,7 +412,7 @@ function runParentReportPageChunks() {
       confidenceBadge: "medium",
       sufficiencyBadge: "low",
     },
-    trend: { version: 1, accuracyDirection: "down", independenceDirection: "up", fluencyDirection: "flat", confidence: 0.5, summaryHe: " ." },
+    trend: { version: 1, accuracyDirection: "down", independenceDirection: "up", fluencyDirection: "flat", confidence: 0.5, summaryHe: "Short trend." },
     behaviorProfile: { version: 1, dominantType: "instruction_friction", signals: {}, decisionTrace: [] },
     decisionTrace: [],
     recommendationDecisionTrace: [],
@@ -422,7 +422,7 @@ function runParentReportPageChunks() {
 
   const rowMinimal = {
     rowKey: "k2",
-    label: "",
+    label: "Addition",
     questions: 8,
     topicEngineRowSignals: null,
     trend: null,
@@ -451,7 +451,7 @@ function runParentReportPageChunks() {
 
   const rowChartLive = {
     rowKey: "geometry_area\u0001g4",
-    label: " -  ",
+    label: "Area - Grade 4",
     questions: 12,
     accuracy: 45,
     wrong: 6,
@@ -471,14 +471,14 @@ function runParentReportPageChunks() {
 
   const rowPhase8 = {
     rowKey: "p8-row",
-    label: "",
+    label: "Addition",
     questions: 11,
     topicEngineRowSignals: {
-      whyThisRecommendationHe: "   SSR.",
-      interventionPlanHe: " :    .",
-      doNowHe: "  .",
-      avoidNowHe: "      .",
-      cautionLineHe: ":  .",
+      whyThisRecommendationHe: "Recommendation from the engine for SSR testing.",
+      interventionPlanHe: "Short micro-plan: short return at the same level.",
+      doNowHe: "Three short returns.",
+      avoidNowHe: "Do not raise the level before two consecutive sessions.",
+      cautionLineHe: "Caution: partial evidence.",
       recommendedSessionCount: 2,
       recommendedSessionLengthBand: "short",
       recommendedPracticeLoad: "light",
@@ -498,10 +498,10 @@ function runParentReportPageChunks() {
     ...rowPhase8,
     topicEngineRowSignals: {
       ...rowPhase8.topicEngineRowSignals,
-      responseToInterventionLabelHe: "   —   ",
-      freshnessStateLabelHe: "  ",
-      conclusionFreshnessLabelHe: "   —   ",
-      nextSupportAdjustmentHe: "  /     ",
+      responseToInterventionLabelHe: "Early signs of improvement — still too early to close",
+      freshnessStateLabelHe: "Information is starting to age",
+      conclusionFreshnessLabelHe: "Low confidence in the conclusion — worth updating observation",
+      nextSupportAdjustmentHe: "Run an observation/check round before raising difficulty or advancing",
     },
   };
   render("parent-report:explain-row-phase10", h(ParentReportTopicExplainRow, { row: rowPhase10 }));
@@ -510,9 +510,9 @@ function runParentReportPageChunks() {
     ...rowPhase10,
     topicEngineRowSignals: {
       ...rowPhase10.topicEngineRowSignals,
-      supportSequenceStateLabelHe: "   —    ",
-      strategyRepetitionRiskHe: "       ",
-      nextSupportSequenceActionHe: "    —    ",
+      supportSequenceStateLabelHe: "At the start of a support sequence — worth tracking without overload",
+      strategyRepetitionRiskHe: "Likely to repeat the same approach without change",
+      nextSupportSequenceActionHe: "Start the next short step — not jumping to full independence",
     },
   };
   render("parent-report:explain-row-phase11", h(ParentReportTopicExplainRow, { row: rowPhase11 }));
@@ -521,9 +521,9 @@ function runParentReportPageChunks() {
     ...rowPhase11,
     topicEngineRowSignals: {
       ...rowPhase11.topicEngineRowSignals,
-      recommendationMemoryStateLabelHe: "    —   ",
-      outcomeTrackingNarrativeHe: "   —      .",
-      recommendationContinuationDecisionHe: "         ",
+      recommendationMemoryStateLabelHe: "There is light memory — mainly from the current window",
+      outcomeTrackingNarrativeHe: "We expected stabilization — and in practice the response is not fully visible yet.",
+      recommendationContinuationDecisionHe: "Prefer not to repeat the same path without a fresh look",
     },
   };
   render("parent-report:explain-row-phase12", h(ParentReportTopicExplainRow, { row: rowPhase12 }));
@@ -532,10 +532,10 @@ function runParentReportPageChunks() {
     ...rowPhase12,
     topicEngineRowSignals: {
       ...rowPhase12.topicEngineRowSignals,
-      gateNarrativeHe: ":      .",
-      evidenceTargetNarrativeHe: ":     .",
+      gateNarrativeHe: "Gate: continue in the current direction with short observation.",
+      evidenceTargetNarrativeHe: "Target: confirm a short check before release.",
       releaseGate: "pending",
-      whatWouldJustifyReleaseHe: "      .",
+      whatWouldJustifyReleaseHe: "Short success without pressure in the middle before release.",
       pivotGate: "off",
       recheckGate: "off",
     },
@@ -546,10 +546,10 @@ function runParentReportPageChunks() {
     ...rowPhase13,
     topicEngineRowSignals: {
       ...rowPhase13.topicEngineRowSignals,
-      foundationDependencyNarrativeHe: "«»:    —   .",
-      interventionOrderingHe: "   —   ",
+      foundationDependencyNarrativeHe: "In addition: there may be a foundation link — not just a local step.",
+      interventionOrderingHe: "Foundation first — then topic practice",
       foundationBeforeExpansion: true,
-      foundationBeforeExpansionHe: "     —        .",
+      foundationBeforeExpansionHe: "Before expanding the level here — worth stabilizing the foundation that the topic leans on.",
     },
   };
   render("parent-report:explain-row-phase14", h(ParentReportTopicExplainRow, { row: rowPhase14 }));
@@ -558,11 +558,11 @@ function runParentReportPageChunks() {
     ...rowPhase14,
     topicEngineRowSignals: {
       ...rowPhase14.topicEngineRowSignals,
-      freshnessStateLabelHe: "  ",
-      conclusionFreshnessLabelHe: "  ",
-      whatNeedsFreshEvidenceNowHe: "    ",
-      nextSupportAdjustmentHe: "  —   ",
-      nextSupportSequenceActionHe: "  —   ",
+      freshnessStateLabelHe: "Information is starting to age",
+      conclusionFreshnessLabelHe: "Low confidence in the conclusion",
+      whatNeedsFreshEvidenceNowHe: "Worth a fresh look before escalation",
+      nextSupportAdjustmentHe: "Adjust load — clear immediate step",
+      nextSupportSequenceActionHe: "Adjust load — clear immediate step",
     },
   };
   render("parent-report:explain-row-phase15", h(ParentReportTopicExplainRow, { row: rowPhase15 }));
@@ -585,15 +585,15 @@ function runParentReportInsightChunk() {
 function runParentAssignedActivitiesSectionChunk() {
   const rows = [
     {
-      activityLabelHe: "   — ",
-      subjectLabelHe: "",
-      topicLabelHe: "",
-      gradeLabelHe: "",
+      activityLabelHe: "Personal activity from parent — Addition",
+      subjectLabelHe: "Math",
+      topicLabelHe: "Addition",
+      gradeLabelHe: "G3",
       lastActivityAtHe: "01/03/2026",
       questionCount: 10,
       accuracy: 80,
       timeMinutes: 5,
-      statusLabelHe: "",
+      statusLabelHe: "Completed",
     },
   ];
   const html = render(

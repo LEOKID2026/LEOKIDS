@@ -89,9 +89,9 @@ function uiLoadedReportPayload() {
       {
         subject: "math",
         topicRecommendations: [
-          makeContract("fractions::grade:g4", "math", "", 20, 55),
-          makeContract("fractions::grade:g5", "math", "", 18, 40),
-          makeContract("multiplication", "math", "", 15, 70),
+          makeContract("fractions::grade:g4", "math", "Fractions", 20, 55),
+          makeContract("fractions::grade:g5", "math", "Fractions", 18, 40),
+          makeContract("multiplication", "math", "Multiplication", 15, 70),
         ],
       },
       {
@@ -192,34 +192,34 @@ const rows = listTopicLabels(payload);
 const cases = [
   {
     id: 1,
-    q: "     ",
+    q: "Explain fractions to me — what is the problem?",
     run() {
       const scope = resolveScope({ payload, utterance: this.q });
       assert.equal(scope.scope?.scopeType, "topic");
-      assert.match(String(scope.scope?.scopeLabel || ""), //);
+      assert.match(String(scope.scope?.scopeLabel || ""), /fractions/i);
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
-      assert.ok(t.includes("") || /\d/.test(t), "grounded topic/metrics");
+      assert.ok(t.includes("Fractions") || /\d/.test(t), "grounded topic/metrics");
       assert.ok(scopeFromTurn(res).scopeReason?.includes("report_row") || scope.scopeReason?.includes("report_row"));
     },
   },
   {
     id: 2,
-    q: " ",
+    q: "Math fractions",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const scope = resolveScope({ payload, utterance: this.q });
       assert.equal(scope.scope?.scopeType, "topic");
-      assert.match(String(scope.scope?.scopeLabel || ""), //);
+      assert.match(String(scope.scope?.scopeLabel || ""), /fractions/i);
     },
   },
   {
     id: 3,
-    q: "  ?",
+    q: "How is he doing in math?",
     run() {
       const scope = resolveScope({ payload, utterance: this.q });
       assert.equal(scope.scope?.scopeType, "subject");
@@ -242,7 +242,7 @@ const cases = [
   },
   {
     id: 4,
-    q: " ?",
+    q: "What is the problem?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
@@ -252,7 +252,7 @@ const cases = [
   },
   {
     id: 5,
-    q: "    ?",
+    q: "What matters most to practice this week?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
@@ -261,7 +261,7 @@ const cases = [
   },
   {
     id: 6,
-    q: "  ?",
+    q: "What should we do at home?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
@@ -270,50 +270,50 @@ const cases = [
   },
   {
     id: 7,
-    q: "     ",
+    q: "I want to know about a specific topic",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.exitEarly, true);
       const text = String(route.deterministicResponse || "");
-      assert.ok(text.includes("  "), "short clarification");
+      assert.ok(text.includes("which topic"), "short clarification");
       assertNoAmbiguousLeak(text, this.q);
       assert.ok(
-        rows.some((r) => text.includes(r)) || text.includes("") || text.includes(""),
+        rows.some((r) => text.includes(r)) || text.includes("Fractions") || text.includes("Math"),
         "examples from loaded rows when possible",
       );
     },
   },
   {
     id: 8,
-    q: "   ?",
+    q: "Why are there two grades on the same topic?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
       assert.ok(
-        /||||/i.test(t) || t.includes(""),
+        /grade|g4|g5|mixed|split|two/i.test(t) || t.includes("Fractions"),
         "mixed-grade awareness in answer",
       );
     },
   },
   {
     id: 9,
-    q: "     ?",
+    q: "Why does the same topic show two grade rows?",
     run() {
       const res = uiTurn(this.q, payload);
       assert.equal(res.resolutionStatus, "resolved");
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
       assert.ok(
-        /|||||||/i.test(t),
+        /grade|g4|g5|split|mixed|registered|practice/i.test(t),
         `split-grade explanation :: ${t.slice(0, 120)}`,
       );
     },
   },
   {
     id: 10,
-    q: "",
+    q: "???",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.classifierBucket, "ambiguous_or_unclear");
@@ -323,7 +323,7 @@ const cases = [
   },
   {
     id: 11,
-    q: "",
+    q: "...",
     run() {
       const route = routeParentQuestion(this.q, payload);
       assert.equal(route.classifierBucket, "ambiguous_or_unclear");
@@ -341,7 +341,7 @@ const cases = [
   },
   {
     id: 13,
-    q: "   ?",
+    q: "What is the problem with fractions?",
     async run() {
       const shot = await screenshotGradeSplitPayload();
       const res = uiTurn(this.q, shot);
@@ -349,12 +349,12 @@ const cases = [
       assertNoAmbiguousLeak(answerText(res), this.q);
       const t = answerText(res);
       assert.ok(
-        /|367|66|38|87||/i.test(t),
+        /fractions|367|66|38|87|grade/i.test(t),
         `grounded fractions/grade answer :: ${t.slice(0, 160)}`,
       );
-      assert.ok(!/  |  |    /u.test(t), "no thin-data phrasing on high-volume rows");
+      assert.ok(!/too early|not enough data|limited data/u.test(t), "no thin-data phrasing on high-volume rows");
       assert.ok(
-        (t.includes("367") && t.includes("87")) || (t.includes("66") && t.includes("38")) || /||/i.test(t),
+        (t.includes("367") && t.includes("87")) || (t.includes("66") && t.includes("38")) || /grade|split|g4|g5/i.test(t),
         "must reference grade-split or both volume bands — not a single averaged score",
       );
       assert.ok(
@@ -371,6 +371,6 @@ for (const c of cases) {
 }
 
 const clarify = buildTopicClarificationQuestionHe(payload);
-assert.ok(clarify.includes(""), "clarification examples include report row");
+assert.ok(clarify.includes("Fractions") || clarify.includes("Math"), "clarification examples include report row");
 
 process.stdout.write("\nparent-copilot-ui-product-verify: ALL PASS\n");

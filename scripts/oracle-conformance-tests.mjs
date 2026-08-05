@@ -83,7 +83,7 @@ test("withhold unit returns null for parentActionHe", () => {
 
 console.log("\n--- Test group 2: withhold/probe_only copilot answers have no action language ---");
 
-const FORBIDDEN_ACTION_MARKERS = ["", "", " "];
+const FORBIDDEN_ACTION_MARKERS = ["recommended", "worth doing", "we'll work at home"];
 
 test("withhold copilot explanation has no action language", () => {
   const snapshot = { taxonomyId: "test", confidence: { level: "contradictory" }, outputGating: { cannotConcludeYet: true } };
@@ -119,7 +119,12 @@ test("probe_only copilot explanation has no action language", () => {
 
 console.log("\n--- Test group 3: No forbidden parent-facing strings ---");
 
-const FORBIDDEN_PARENT_STRINGS = ["", "  ", " ", "Parent Copilot (v1)"];
+const FORBIDDEN_PARENT_STRINGS = [
+  "in the system",
+  "keep the wording",
+  "we can phrase",
+  "Parent Copilot (v1)",
+];
 
 test("withhold copilot text has no forbidden strings", () => {
   const snapshot = { taxonomyId: "", confidence: { level: "insufficient_data" }, outputGating: { cannotConcludeYet: true } };
@@ -192,7 +197,7 @@ test("maintain unit produces correct home action text", () => {
   const result = resolveUnitParentActionHe(unit);
   assert.ok(result, "maintain must produce home action text");
   assert.ok(/stay at the same level|continue at the same level/i.test(result), `expected maintain template, got: ${result}`);
-  assert.ok(!/ | /.test(result), "must not contain old wording");
+  assert.ok(!/preserve consistency|preserve stability/i.test(result), "must not contain old wording");
 });
 
 test("expand_cautiously unit produces correct home action text", () => {
@@ -200,7 +205,7 @@ test("expand_cautiously unit produces correct home action text", () => {
   const result = resolveUnitParentActionHe(unit);
   assert.ok(result, "expand must produce home action text");
   assert.ok(/stay at the same level for now|same level for now/i.test(result), `expected expand template, got: ${result}`);
-  assert.ok(!/    /.test(result), "must not contain old wording");
+  assert.ok(!/preserve the same complexity level/i.test(result), "must not contain old wording");
 });
 
 console.log("\n--- Test group 7: mainHomeRecommendationHe fallback ---");

@@ -696,7 +696,7 @@ function runAggressiveEvidenceCapContract() {
   const out = applyAggressiveEvidenceCap(
     {
       step: "advance_level",
-      reasonHe: "",
+      reasonHe: "fixture check",
       parentHe: "p",
       studentHe: "s",
       recommendationDecisionTrace: [],
@@ -1130,7 +1130,7 @@ function runInvariantHighVolumePerfectNoReducedComplexityWithoutExplicitContradi
   const maps = {
     math: {
       [rowKey]: {
-        displayName: " —   —  ",
+        displayName: "Multiplication — Grade 3 — Easy level",
         questions: 21,
         correct: 21,
         wrong: 0,
@@ -1223,7 +1223,7 @@ function runInvariantHighVolumePerfectNoReducedComplexityWithoutExplicitContradi
     "invariant: topic engine must emit at least one recommendationDecisionTrace step"
   );
 
-  const reducedActionRegex = / || |  /u;
+  const reducedActionRegex = /reduced complexity|lower level|less complex|same lower level/i;
   const actionText = `${String(u0.intervention?.shortPracticeHe || "")} ${String(u0.intervention?.immediateActionHe || "")}`.trim();
   if (cs && (cs.actionState === "maintain" || cs.actionState === "expand_cautiously") && !explicitContradiction) {
     assert.ok(
@@ -1298,7 +1298,7 @@ function runPhase2EvidenceContractParityTopicRecommendationsV2() {
     displayName: "",
     classification: { state: "classified", reasonCode: null, weakFallbackBlocked: false },
     evidenceTrace: [{ type: "volume", value: { questions: 16, correct: 3, wrong: 13, accuracy: 19 } }],
-    taxonomy: { patternHe: " " },
+    taxonomy: { patternHe: "test pattern" },
     recurrence: {
       full: false,
       minWrongRequired: null,
@@ -1332,15 +1332,15 @@ function runPhase2EvidenceContractParityTopicRecommendationsV2() {
       allowed: true,
       conditional: false,
       taxonomyId: "tid_fixture",
-      lineHe: "  .",
+      lineHe: "Diagnosis line for testing.",
       humanBoundaryStripped: null,
       forbiddenInferencesHe: [],
     },
     probe: null,
     intervention: {
-      shortPracticeHe: "  .",
-      immediateActionHe: "  .",
-      avoidHe: "   .",
+      shortPracticeHe: "Short practice for testing.",
+      immediateActionHe: "Immediate step for testing.",
+      avoidHe: "Do not skip the foundation.",
     },
     explainability: { whyNotStrongerConclusionHe: [], cannotConcludeYetHe: [] },
   };
@@ -1407,7 +1407,7 @@ function runInvariantMaintainOnlyProfileEmptyTopicRecommendations() {
   const maps = {
     math: {
       [rowKey]: {
-        displayName: " —   —  ",
+        displayName: "Multiplication — Grade 3 — Easy level",
         questions: 21,
         correct: 21,
         wrong: 0,
@@ -1483,9 +1483,9 @@ function runInvariantMaintainOnlyProfileEmptyTopicRecommendations() {
 function runPhase15NarrativeCompactAndStack() {
   const gateDup = {
     topicEngineRowSignals: {
-      gateNarrativeHe: " :     .",
-      evidenceTargetNarrativeHe: "     —  .",
-      nextCycleDecisionFocusHe: "    ",
+      gateNarrativeHe: "Before deciding: confirm short accuracy without pressure.",
+      evidenceTargetNarrativeHe: "Confirm short accuracy without pressure — same as gate.",
+      nextCycleDecisionFocusHe: "Prove the current direction truly helps",
     },
   };
   const gCompact = topicGatesEvidenceDecisionCompactLineHe(gateDup);
@@ -1494,9 +1494,9 @@ function runPhase15NarrativeCompactAndStack() {
 
   const memOverlap = {
     topicEngineRowSignals: {
-      recommendationMemoryNarrativeHe: "    .",
-      outcomeTrackingNarrativeHe: "     —   .",
-      recommendationContinuationDecisionHe: "    .",
+      recommendationMemoryNarrativeHe: "There is weak memory from the current window.",
+      outcomeTrackingNarrativeHe: "There is weak memory from the current window — intentional duplicate for testing.",
+      recommendationContinuationDecisionHe: "Continue with short observation only.",
     },
   };
   const moc = topicMemoryOutcomeContinuationCompactLineHe(memOverlap);
@@ -1504,9 +1504,9 @@ function runPhase15NarrativeCompactAndStack() {
 
   const seqRow = {
     topicEngineRowSignals: {
-      nextSupportAdjustmentHe: "     .",
-      nextSupportSequenceActionHe: "     .",
-      supportSequenceNarrativeHe: "  ",
+      nextSupportAdjustmentHe: "Adjust load based on response next week.",
+      nextSupportSequenceActionHe: "Adjust load based on response next week.",
+      supportSequenceNarrativeHe: "Sequence too long",
     },
   };
   const seqC = topicSequencingRepeatCompactLineHe(seqRow);
@@ -1561,7 +1561,7 @@ function runPhase5ContractIntegrityAndContradictions() {
     String(d.executiveSummary?.overallConfidenceHe || ""),
     String(d.executiveSummary?.reportReadinessHe || ""),
   ].join(" ");
-  const overstated = /||[- ]?| |/giu;
+  const overstated = /certain|with certainty|certainly|clearly|definitively|completely stable|fully stable|proven/giu;
 
   for (const sp of d.subjectProfiles || []) {
     for (const tr of sp.topicRecommendations || []) {
@@ -1645,7 +1645,7 @@ function runOutputQualityLockedRegression() {
     topicRowKey: FIXTURE_MATH_ROW_ADD_LEARN_G4_MED,
     displayName: "",
     diagnosis: { allowed: false, lineHe: "" },
-    taxonomy: { patternHe: "  " },
+    taxonomy: { patternHe: "Stable success pattern" },
     recurrence: { wrongCountForRules: 0, totalQuestions: 21 },
     confidence: { level: "moderate", rowSignals: { dataSufficiencyLevel: "strong", isEarlySignalOnly: false } },
     priority: { level: "P2" },
@@ -1657,13 +1657,13 @@ function runOutputQualityLockedRegression() {
     },
     evidenceTrace: [{ type: "volume", value: { questions: 21, correct: 21, wrong: 0, accuracy: 100 } }],
     intervention: {
-      immediateActionHe: "      .",
-      shortPracticeHe: "   .",
-      avoidHe: "      .",
+      immediateActionHe: "Continue with two short practices and maintain the pattern.",
+      shortPracticeHe: "Short practice to maintain consistency.",
+      avoidHe: "Do not add a sharp level jump in the same week.",
     },
     probe: {
-      objectiveHe: "      .",
-      specificationHe: "      .",
+      objectiveHe: "Ensure consistency is maintained across similar question types.",
+      specificationHe: "Track the same topic for one more short round.",
     },
   };
   lockedUnit.canonicalState = syntheticCanonicalState({
@@ -1735,7 +1735,7 @@ function runOutputQualityLockedRegression() {
 
 function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
   const blockedFamilyRegex =
-    / || |  | | |  /u;
+    /reduced complexity|lower level|less complex|same lower level|gather signal|collect evidence|monitor only|observation only|strengthen at same level|same level reinforcement/i;
   const buildUnit = ({
     subjectId,
     topicRowKey,
@@ -1767,8 +1767,8 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
         contractsV1: { readiness: { readiness } },
       },
       probe: {
-        specificationHe: "      ",
-        objectiveHe: "  ",
+        specificationHe: "Parallel task with same principle at reduced complexity",
+        objectiveHe: "Continue gathering signal",
       },
       intervention: {
         immediateActionHe: "",
@@ -1845,7 +1845,7 @@ function runStrongPositiveRecommendationConsistencyCrossSurfaces() {
       unit: buildUnit({
         subjectId: "english",
         topicRowKey: "vocabulary\u0001learning",
-        displayName: " ",
+        displayName: "Vocabulary",
         q: 24,
         acc: 93,
         authority: "excellent",
@@ -2010,7 +2010,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
   const englishCollapsed = collapseTopicRowsToCanonicalTopicEntityForTests("english", {
     "vocabulary\u0001learning": {
       bucketKey: "vocabulary",
-      displayName: " ",
+      displayName: "Vocabulary",
       questions: 11,
       correct: 10,
       wrong: 1,
@@ -2020,7 +2020,7 @@ function runParentReportOutputStabilizationGoldenMatrix() {
     },
     "vocabulary\u0001practice": {
       bucketKey: "vocabulary",
-      displayName: " ",
+      displayName: "Vocabulary",
       questions: 7,
       correct: 6,
       wrong: 1,
@@ -2676,8 +2676,8 @@ function runPhase13DecisionsAndEvidenceTargets() {
     recalibrationNeed: "none",
     trendDer: {},
     independenceProgress: "flat",
-    targetSuccessSignalHe: "",
-    targetObservationWindowLabelHe: " ",
+    targetSuccessSignalHe: "fixture check",
+    targetObservationWindowLabelHe: "short window",
   });
   assert.equal(overlayStab.nextCycleDecisionFocus, "stabilize_before_advance");
 
@@ -2704,10 +2704,10 @@ function runPhase13DecisionsAndEvidenceTargets() {
 
   const rowUi = {
     topicEngineRowSignals: {
-      gateNarrativeHe: "«»:  .",
-      evidenceTargetNarrativeHe: " .",
+      gateNarrativeHe: "In addition: round focus.",
+      evidenceTargetNarrativeHe: "Evidence target.",
       recheckGate: "forming",
-      whatWouldTriggerRecheckHe: "   .",
+      whatWouldTriggerRecheckHe: "Short round before deciding.",
     },
   };
   assert.ok(gateStateLineHe(rowUi).length > 0);
@@ -2757,8 +2757,8 @@ function runPhase14FoundationDependencyAndOrdering() {
     advanceGate: "forming",
     nextCycleDecisionFocus: "stabilize_before_advance",
     targetEvidenceType: "retention_confirmation",
-    targetObservationWindowLabelHe: "  ",
-    targetSuccessSignalHe: "",
+    targetObservationWindowLabelHe: "In two short rounds",
+    targetSuccessSignalHe: "fixture check",
   });
   assert.ok(ov.foundationBeforeExpansion === true || String(ov.foundationBeforeExpansionHe || "").length > 5);
   assert.ok(

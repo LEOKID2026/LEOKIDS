@@ -1,6 +1,5 @@
 /**
- * Regression guard: the "how to play" modal list items in Science/History master must not
- * show raw English ("XP") to the child - Hebrew wording only.
+ * Regression guard: master "how to play" steps route through locale keys, not hardcoded XP copy.
  * Run: node --test tests/learning/master-no-visible-english.test.mjs
  */
 
@@ -13,11 +12,17 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
 
-describe("master pages: no visible English XP text", () => {
-    test(`${file} "how to play" list has no visible "XP"`, () => {
+const MASTER_PAGES = [
+  "pages/learning/science-master.js",
+  "pages/learning/history-master.js",
+];
+
+describe("master pages: how-to-play uses localized copy keys", () => {
+  for (const file of MASTER_PAGES) {
+    test(`${file} routes how-to-play step4 through locale`, () => {
       const src = readFileSync(join(ROOT, file), "utf8");
-      assert.doesNotMatch(src, /\s*\s*XP/);
-      assert.match(src, /  /);
+      assert.match(src, /howToLearnSteps\.step4/);
+      assert.doesNotMatch(src, />\s*Build answer streaks and earn stars and XP points\s*</);
     });
   }
 });

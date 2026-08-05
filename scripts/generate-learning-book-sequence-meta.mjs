@@ -1,118 +1,111 @@
 #!/usr/bin/env node
 /**
- * Generate lib/learning-book/learning-book-sequence-meta.js from registries + oracle.
+ * Generate lib/learning-book/learning-book-sequence-meta.js from GLOBAL registries.
  * Run: node scripts/generate-learning-book-sequence-meta.mjs
+ *
+ * GLOBAL subjects only: math, geometry, english, science.
+ * Parses *_BOOK_BATCHES_RAW from registry source text (avoids circular import
+ * through learning-book-sequence.js → learning-book-sequence-meta.js).
  */
 import fs from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
 
 const ROOT = process.cwd();
-const matrix = JSON.parse(
-  fs.readFileSync(path.join(ROOT, "data/curriculum-oracle/v1/ministry-matrix.draft.json"), "utf8")
-);
-
-const SUBJECTS = ["math", "geometry", "science", "hebrew", "english", "moledet", "geography"];
+const SUBJECTS = ["math", "geometry", "english", "science"];
 const GRADES = ["g1", "g2", "g3", "g4", "g5", "g6"];
 
-/** @type {Record<string, string[]>} */
-const SUBJECT_GRADES = {
-  moledet: ["g2", "g3", "g4"],
-  geography: ["g5", "g6"],
-};
-
-/** @param {string} subject @param {number} gradeNum @param {string} pageId */
-function findOracleRow(subject, gradeNum, pageId) {
-  const rows = matrix.rows.filter(
-    (r) => r.subject === subject && r.grade === gradeNum && r.sequence_index != null
-  );
-
-  for (const row of rows) {
-    const cand = row.internal_candidate_skill_id;
-    if (!cand) continue;
-    if (cand === pageId) return row;
-    if (cand.split(";").some((part) => part.trim() === pageId || part.endsWith(`.${pageId}`))) {
-      return row;
-    }
-    if (subject === "math" || subject === "geometry") {
-      if (cand === `${subject}:kind:${pageId}` || cand === `math:kind:${pageId}` || cand === `geometry:kind:${pageId}`) {
-        return row;
-      }
-    }
-    if (subject === "science") {
-      if (cand === `science.${pageId}` || cand.includes(`science.g${gradeNum}.${pageId}`)) return row;
-      if (cand.split(";").includes(pageId)) return row;
-    }
-    if (subject === "english" && pageId.startsWith("vocab_")) {
-      const theme = pageId.replace(/^vocab_/, "");
-      if (cand === `english:vocabulary:wordlist:${theme}`) return row;
-    }
-    if (subject === "english" && pageId.startsWith("grammar_")) {
-      const pool = pageId.replace(/^grammar_/, "");
-      if (cand === `english:pool:grammar:${pool}`) return row;
-    }
-  }
-  return null;
-}
-
-/** Explicit prerequisite overrides (approved teach-path). */
 const PREREQUISITE_OVERRIDES = {
   "geometry:g5": {
     triangle_area: ["heights_triangle"],
   },
 };
 
+/**
+ * Extract *_BOOK_BATCHES_RAW array literal from registry source.
+ * @param {string} src
+ * @param {string} fileLabel
+ */
+function extractRawBatches(src, fileLabel) {
+  const marker = "_BOOK_BATCHES_RAW = ";
+  const i = src.indexOf(marker);
+  if (i < 0) {
+    throw new Error(`No *_BOOK_BATCHES_RAW in ${fileLabel}`);
+  }
+  let j = i + marker.length;
+  while (j < src.length && src[j] !== "[") j++;
+  if (src[j] !== "[") throw new Error(`No array start in ${fileLabel}`);
+  let depth = 0;
+  let end = j;
+  for (; end < src.length; end++) {
+    const ch = src[end];
+    if (ch === "[") depth++;
+    else if (ch === "]") {
+      depth--;
+      if (depth === 0) {
+        end++;
+        break;
+      }
+    }
+  }
+  const literal = src.slice(j, end);
+  try {
+    return new Function(`return (${literal});`)();
+  } catch (err) {
+    throw new Error(`Failed to parse batches in ${fileLabel}: ${err.message}`);
+  }
+}
+
 /** @type {Record<string, Record<string, object>>} */
 const LEARNING_BOOK_PAGE_SEQUENCE = {};
 
 for (const subject of SUBJECTS) {
-  const gradesForSubject = SUBJECT_GRADES[subject] || GRADES;
-  for (const grade of gradesForSubject) {
+  for (const grade of GRADES) {
     const regPath = path.join(ROOT, `lib/learning-book/${subject}-${grade}-registry.js`);
-    const upper = grade.toUpperCase();
-    const prefix = subject.toUpperCase();
-    /** @type {{ id: string, titleHe: string, pages: string[] }[]|null} */
-    let batches = null;
+    if (!fs.existsSync(regPath)) continue;
 
-    if (subject === "moledet" || subject === "geography") {
-      const manifestPath = path.join(
-        ROOT,
-        `scripts/lib/moledet-geography-${grade}-draft-manifest.mjs`
-      );
-      if (fs.existsSync(manifestPath)) {
-        const manifestMod = await import(pathToFileURL(manifestPath).href);
-        batches = manifestMod[`MOLEDET_GEOGRAPHY_${upper}_BOOK_BATCHES`];
-      }
-    } else if (fs.existsSync(regPath)) {
-      const mod = await import(pathToFileURL(regPath).href);
-      const batchesKey = `${prefix}_${upper}_BOOK_BATCHES`;
-      batches = mod[batchesKey];
+    const src = fs.readFileSync(regPath, "utf8");
+    const batches = extractRawBatches(src, regPath);
+    if (!Array.isArray(batches)) {
+      throw new Error(`Batches not an array in ${regPath}`);
     }
-
-    if (!Array.isArray(batches)) continue;
 
     const bookKey = `${subject}:${grade}`;
     LEARNING_BOOK_PAGE_SEQUENCE[bookKey] = {};
-    const gradeNum = Number(grade.replace("g", ""));
     let globalIndex = 0;
 
     batches.forEach((batch, batchOrder) => {
-      batch.pages.forEach((pageId, indexInBatch) => {
+      const pages = Array.isArray(batch?.pages) ? batch.pages : [];
+      pages.forEach((pageId, indexInBatch) => {
+        if (!pageId || typeof pageId !== "string") {
+          throw new Error(`Invalid page id in ${bookKey} batch ${batch?.id || batchOrder}`);
+        }
         globalIndex += 1;
-        const oracle = findOracleRow(subject, gradeNum, pageId);
         LEARNING_BOOK_PAGE_SEQUENCE[bookKey][pageId] = {
           sequenceIndex: globalIndex,
           batchId: batch.id,
           batchOrder,
           indexInBatch: indexInBatch + 1,
-          sequenceGroup: oracle?.sequence_group || batch.id,
-          oracleRowId: oracle?.row_id || null,
-          oracleSequenceIndex: oracle?.sequence_index ?? null,
+          sequenceGroup: batch.id,
+          oracleRowId: null,
+          oracleSequenceIndex: null,
           prerequisitePageIds: PREREQUISITE_OVERRIDES[bookKey]?.[pageId] || [],
-          source: oracle ? "oracle" : "approved_local",
+          source: "approved_local",
         };
       });
     });
+  }
+}
+
+const bookKeys = Object.keys(LEARNING_BOOK_PAGE_SEQUENCE).sort();
+if (bookKeys.length === 0) {
+  throw new Error("No GLOBAL learning-book sequences generated — check registries");
+}
+for (const key of bookKeys) {
+  if (!/^(math|geometry|english|science):g[1-6]$/.test(key)) {
+    throw new Error(`Non-GLOBAL book key generated: ${key}`);
+  }
+  if (!key.trim() || /hebrew|moledet|geography|history|israel/i.test(key)) {
+    throw new Error(`Forbidden residue book key: ${JSON.stringify(key)}`);
   }
 }
 
@@ -122,9 +115,7 @@ const out = `/**
  */
 export const LEARNING_BOOK_PAGE_SEQUENCE = ${JSON.stringify(LEARNING_BOOK_PAGE_SEQUENCE, null, 2)};
 
-export const LEARNING_BOOK_SEQUENCE_BOOK_KEYS = ${JSON.stringify(
-  Object.keys(LEARNING_BOOK_PAGE_SEQUENCE).sort()
-)};
+export const LEARNING_BOOK_SEQUENCE_BOOK_KEYS = ${JSON.stringify(bookKeys)};
 `;
 
 const outPath = path.join(ROOT, "lib/learning-book/learning-book-sequence-meta.js");
@@ -134,4 +125,5 @@ let pageCount = 0;
 for (const book of Object.values(LEARNING_BOOK_PAGE_SEQUENCE)) {
   pageCount += Object.keys(book).length;
 }
-console.log(`Wrote ${outPath} — ${Object.keys(LEARNING_BOOK_PAGE_SEQUENCE).length} books, ${pageCount} pages`);
+console.log(`Wrote ${outPath} — ${bookKeys.length} books, ${pageCount} pages`);
+console.log(`Books: ${bookKeys.join(", ")}`);

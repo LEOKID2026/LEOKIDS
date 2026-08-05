@@ -187,16 +187,16 @@ describe("Admin UI Hebrew-only labels", () => {
     assert.doesNotMatch(uiSrc, /coin-info/);
   });
 
-  test("manual coins tab uses Hebrew category labels", () => {
+  test("manual coins tab uses English category labels", () => {
     const uiSrc = readFileSync(
       join(ROOT, "components/admin/rewards/AdminManualCoinsTab.jsx"),
       "utf8"
     );
-    assert.match(uiSrc, //);
-    assert.match(uiSrc, //);
-    assert.match(uiSrc, / /);
-    assert.match(uiSrc, /  /);
-    assert.match(uiSrc, /  /);
+    assert.match(uiSrc, /Compensation/);
+    assert.match(uiSrc, /Bonus/);
+    assert.match(uiSrc, /Issue fix/);
+    assert.match(uiSrc, /Add coins to child/);
+    assert.match(uiSrc, /Coins added successfully|added successfully/i);
     assert.doesNotMatch(uiSrc, />\s*compensation\s*</);
     assert.doesNotMatch(uiSrc, />\s*bugfix\s*</);
   });

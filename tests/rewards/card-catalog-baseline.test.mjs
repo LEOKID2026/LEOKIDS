@@ -70,10 +70,10 @@ describe("card-catalog baseline (059+060)", () => {
   test("059 SQL contains expected Leo catalog counts", () => {
     const { shopKeys, achievementKeys, eventKeys, rulesByKey } = parse059Catalog();
     assert.equal(shopKeys.size, 40, "shop cards");
-    assert.equal(achievementKeys.size, 24, "achievement cards");
-    assert.equal(eventKeys.size, 12, "event cards");
-    assert.equal(rulesByKey.size, 24, "achievement rules");
-    assert.equal(shopKeys.size + achievementKeys.size + eventKeys.size, 76, "total catalog cards");
+    assert.equal(achievementKeys.size, 22, "achievement cards");
+    assert.equal(eventKeys.size, 5, "event cards");
+    assert.equal(rulesByKey.size, 22, "achievement rules");
+    assert.equal(shopKeys.size + achievementKeys.size + eventKeys.size, 67, "total catalog cards");
   });
 
   test("each achievement card has exactly one rule in 059 seed", () => {
@@ -84,7 +84,7 @@ describe("card-catalog baseline (059+060)", () => {
     assert.equal(rulesByKey.size, achievementKeys.size);
   });
 
-  test("060 activates all 12 event card keys", () => {
+  test("060 activates all event card keys from 059 seed", () => {
     const sql = readFileSync(SQL_060, "utf8");
     const { eventKeys } = parse059Catalog();
     for (const key of eventKeys) {

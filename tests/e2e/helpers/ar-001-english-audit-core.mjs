@@ -115,7 +115,7 @@ export function auditVisibleEnglish(text, opts = {}) {
   if (HEBREW.test(text)) {
     findings.push("Hebrew residue detected");
   }
-  if (/\bIsrael\b/i.test(text) || //.test(text)) {
+  if (/\bIsrael\b/i.test(text) || /\bIsraeli\b/i.test(text)) {
     if (!opts.allowEnglishLearningBody) {
       findings.push("Israeli residue detected");
     }

@@ -157,8 +157,8 @@ describe("parent report step-by-step parent totals e2e (Aaa7 regression)", () =>
     // Hebrew) was replaced with "" (mistakes, a proper noun) in formatWrongOfQuestionsTextHe
     // per an explicit product-owner-mandated grammar fix. Old expectation asserted the
     // ungrammatical form; updated to match the corrected, currently-shipped wording.
-    assert.match(String(lpd.parentVisibleFinding), //);
-    assert.match(String(lpd.parentVisibleFinding), /8   10 /);
+    assert.match(String(lpd.parentVisibleFinding), /mistakes/i);
+    assert.match(String(lpd.parentVisibleFinding), /8 mistakes out of 10 questions/i);
 
     const subjectLine = withholdSummaryCopyHe("subject", {
       subjectReportQuestions: 10,
@@ -171,6 +171,6 @@ describe("parent report step-by-step parent totals e2e (Aaa7 regression)", () =>
       clearWeakTopicAccuracy: 20,
     });
     assert.ok(!INSUFFICIENT_SUBJECT_SUMMARY_RE.test(subjectLine), subjectLine);
-    assert.match(subjectLine, //);
+    assert.match(subjectLine, /addition/i);
   });
 });

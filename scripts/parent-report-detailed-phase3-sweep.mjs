@@ -21,45 +21,44 @@ const SERVICE_KEY = process.env.LEARNING_SUPABASE_SERVICE_ROLE_KEY || "";
 const OMER_PARENT_EMAIL = process.env.PARENT_REPORT_DOM_PARENT_EMAIL || "18eran@gmail.com";
 
 const FORBIDDEN = [
-  " :",
-  " :",
-  ":",
-  "   :",
-  " ",
-  " ",
-  "  ",
-  " ",
-  " ",
+  "What was detected:",
+  "Mistake pattern:",
+  "Meaning:",
+  "What to do together:",
+  "Focus point",
+  "Indicates a pattern",
+  "The system detected",
+  "Generic example",
   "13 - 5",
-  "    ",
-  "",
-  " ",
-  "",
-  "  ",
-  "    ",
-  "    ",
-  "     ",
-  "   —      ",
-  "   ,    ",
-  "   ",
-  "  ",
-  "   ",
-  "  ",
-  "/",
-  "    ",
-  "1 ",
+  "Is this retained in a new question",
+  "Starting",
+  "Not now",
+  "Limited",
+  "What not to do",
+  "How to work on this",
+  "What to do in this subject",
+  "Separating foundation gap from topic problem",
+  "The picture is still partial — a bit more practice will clarify the direction",
+  "There is practice basis in the subject, but evidence is still limited",
+  "This is only an initial direction",
+  "Observation only",
+  "Before raising difficulty level",
+  "To more advanced topics",
+  "The child",
+  "Should be addressed in a focused way",
+  "1 questions",
 ];
 
 const REQUIRED_TOPIC_CARD = [
-  " :",
-  ":",
-  "  :",
-  "   :",
+  "What we see?",
+  "The data:",
+  "What it means?",
+  "What to do at home",
 ];
 const REQUIRED_PHASE3 = [
-  "    ",
-  "   ",
-  "  ",
+  "What to pay attention to",
+  "What to avoid right now",
+  "Ready to advance?",
 ];
 
 function supabaseAuthStorageKey(url) {
@@ -107,13 +106,13 @@ const EXTRACT_FN = () => {
     return { title, metrics, phase3, letter, tiers, cardsText: cards.join("\n"), blockText: t(block) };
   });
 
-  const math = subjects.find((s) => //i.test(s.title));
-  const english = subjects.find((s) => //i.test(s.title));
+  const math = subjects.find((s) => /math/i.test(s.title));
+  const english = subjects.find((s) => /english/i.test(s.title));
 
   const headerSummary = t(root?.querySelector(".pr-detailed-smart-summary, [data-testid='parent-report-smart-summary']"));
   const homeRecSection = [...(root?.querySelectorAll("h2, .pr-detailed-section-title, .pr-detailed-subjects-region-title") || [])]
     .map((el) => t(el))
-    .filter((x) => x.includes("   "));
+    .filter((x) => /home|direction for/i.test(x));
 
   return {
     pageLoaded: Boolean(root),
@@ -124,13 +123,13 @@ const EXTRACT_FN = () => {
     mathMetrics: math?.metrics || "",
     englishInRegion: !!english,
     englishTitle: english?.title || null,
-    hasOutOfGrade: /   /.test(fullText),
+    hasOutOfGrade: /Practice outside registered grade/i.test(fullText),
     homeRecWindow: homeRecSection.length > 0,
     subjectsRegionTitle: t(region?.querySelector(".pr-detailed-subjects-region-title")),
     phase3AllText: subjects.map((s) => s.phase3).join("\n"),
     cardsAllText: subjects.map((s) => s.cardsText).join("\n---\n"),
     structure: {
-      hasSmartSummary: !!headerSummary || / /.test(fullText.slice(0, 4000)),
+      hasSmartSummary: !!headerSummary || /Smart summary|Summary for the period/i.test(fullText.slice(0, 4000)),
       subjectsRegionTitle: t(region?.querySelector(".pr-detailed-subjects-region-title")),
       subjectCount: subjects.length,
       anyPhase3: subjects.some((s) => s.phase3),

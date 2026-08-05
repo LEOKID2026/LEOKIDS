@@ -7,8 +7,8 @@ const eligiblePayload = syntheticPayload({ eligible: true });
 const insufficientPayload = syntheticPayload({ eligible: false });
 
 const insufficientCue =
-  /\s+|\s+\s+|\s+|\s+\s+|not enough evidence|too early|continuing to monitor|continue(?:\s+to)?\s+monitor|still early|insufficient|consistent reinforcement is still needed|verify stability/iu;
-const overAuthorityCue = /|\s+|\s+|completely certain|with certainty|unequivocally/iu;
+  /not enough evidence|too early|continuing to monitor|continue(?:\s+to)?\s+monitor|still early|insufficient|consistent reinforcement is still needed|verify stability|not enough data|early to conclude/iu;
+const overAuthorityCue = /completely certain|with certainty|unequivocally|unambiguously|absolutely sure/iu;
 
 let insufficientRequired = 0;
 let insufficientPresent = 0;
@@ -31,8 +31,12 @@ for (let i = 0; i < 80; i++) {
     selectedContextRef: null,
   });
 
-  const goodText = Array.isArray(good?.answerBlocks) ? good.answerBlocks.map((b) => String(b?.answerText || "")).join(" ") : "";
-  const badText = Array.isArray(bad?.answerBlocks) ? bad.answerBlocks.map((b) => String(b?.answerText || "")).join(" ") : "";
+  const goodText = Array.isArray(good?.answerBlocks)
+    ? good.answerBlocks.map((b) => String(b?.answerText || "")).join(" ")
+    : "";
+  const badText = Array.isArray(bad?.answerBlocks)
+    ? bad.answerBlocks.map((b) => String(b?.answerText || "")).join(" ")
+    : "";
 
   total += 2;
   if (overAuthorityCue.test(goodText)) authorityViolations += 1;
@@ -53,7 +57,10 @@ writeArtifact("hebrew-authority-insufficiency-balance", {
 });
 
 assert.ok(total >= 120, "authority/insufficiency sample size too small");
-assert.ok(insufficiencyRecall >= 97, `insufficiency recall below threshold: ${insufficiencyRecall.toFixed(2)}%`);
+assert.ok(
+  insufficiencyRecall >= 97,
+  `insufficiency recall below threshold: ${insufficiencyRecall.toFixed(2)}%`
+);
 assert.ok(authorityPer1000 <= 2, `authority drift too high: ${authorityPer1000.toFixed(2)} per 1000`);
 
 console.log("parent-hebrew-authority-insufficiency-balance-suite: OK");

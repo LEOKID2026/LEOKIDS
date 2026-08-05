@@ -121,7 +121,7 @@ function assertLineStructure(line, context) {
     if (seg.type === "text" && /\d\s*[+−\-=×÷]\s*\d/.test(seg.value)) {
       fail(`${context}: un-isolated math in text segment "${seg.value}" from "${line}"`);
     }
-    if (seg.type === "math" && //u.test(seg.value)) {
+    if (seg.type === "math" && /\bstep\b/i.test(seg.value)) {
       fail(`${context}: step label inside math run "${seg.value}"`);
     }
   }

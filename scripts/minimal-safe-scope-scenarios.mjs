@@ -32,7 +32,8 @@ const SCENARIO_IDS = [
   ["S12", "strong_executive_case"],
 ];
 
-const OVERSTATED_HE_REGEX = /||[- ]?| |/giu;
+const OVERSTATED_COPY_REGEX =
+  /certain|definitely|unambiguous|completely stable|proven/giu;
 
 function assertTopicContractsChain(detailed, scenarioId) {
   const profiles = Array.isArray(detailed?.subjectProfiles) ? detailed.subjectProfiles : [];
@@ -68,7 +69,7 @@ function assertCrossSurfaceContradictions(detailed, scenarioId) {
       return we === "WE0" || we === "WE1";
     })
   );
-  if (hasRestrainedTopic && OVERSTATED_HE_REGEX.test(esText)) {
+  if (hasRestrainedTopic && OVERSTATED_COPY_REGEX.test(esText)) {
     throw new Error(`${scenarioId}: executive surface overstates while restrained topic narratives exist`);
   }
 }

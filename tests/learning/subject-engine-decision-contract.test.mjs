@@ -85,11 +85,11 @@ function topicRowFromContract(input) {
   assert.equal(contract.priorityTopics.length, 2);
   assert.equal(contract.priorityTopics[0].topicKey, "fractions::grade:g5");
   assert.equal(contract.priorityTopics[1].topicKey, "multiplication::grade:g5");
-  assert.match(String(contract.priorityTopics[0].detectedPattern), /    |   /);
-  assert.match(String(contract.priorityTopics[1].detectedPattern), /   |  /);
+  assert.match(String(contract.priorityTopics[0].detectedPattern), /numerator|fraction comparison/i);
+  assert.match(String(contract.priorityTopics[1].detectedPattern), /multiplication|multiplication facts/i);
   assert.ok(
-    contract.strongestDetectedPatterns.some((p) => / /.test(String(p))) &&
-      contract.strongestDetectedPatterns.some((p) => /|/.test(String(p))),
+    contract.strongestDetectedPatterns.some((p) => /numerator|fraction/i.test(String(p))) &&
+      contract.strongestDetectedPatterns.some((p) => /multiplication|facts/i.test(String(p))),
   );
   assert.equal(contract.totalQuestions, 238);
   assert.ok(contract.weightedAccuracy > 0 && contract.weightedAccuracy < 100);
@@ -97,8 +97,8 @@ function topicRowFromContract(input) {
   const summary = resolveSubjectSummaryTextFromEngineContract(contract, { subjectLabel: "" });
   assert.ok(summary && summary.length > 0);
   assert.match(summary, /topics stand out as needing reinforcement/i);
-  assert.match(summary, //);
-  assert.match(summary, /    |   /);
+  assert.match(summary, /fractions/i);
+  assert.match(summary, /numerator|fraction comparison/i);
 
   const sp = {
     subject: "math",

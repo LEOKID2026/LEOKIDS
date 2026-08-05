@@ -210,8 +210,8 @@ describe("parent visible metrics contract", () => {
       ...expected,
       learningPatternDecision: lpd,
     });
-    assert.match(copy.explainSections?.meaning || "", //);
-    assert.match(copy.explainSections?.data || "", /2 /);
+    assert.match(copy.explainSections?.meaning || "", /too early|early/i);
+    assert.match(copy.explainSections?.data || "", /2 questions/i);
   });
 
   test("F - cross-surface parity via collectTopicEngineRowsFromReport", () => {

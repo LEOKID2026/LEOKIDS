@@ -14,13 +14,13 @@ const MD_OUT = path.join(ROOT, "docs/language-review/books/CURRENT_REMAINING_LAN
 
 const PATTERNS = [
   { key: "x_mark", re: /❌/ },
-  { key: "lo_bang", re: /(?:^|[\s—-])!(?:\s|$|[.!])/ },
-  { key: "haser", re: // },
-  { key: "lo_nachon", re: / / },
-  { key: "tsarich", re: // },
+  { key: "lo_bang", re: /(?:^|[\s—-])not!(?:\s|$|[.!])/i },
+  { key: "haser", re: /\bmissing\b/i },
+  { key: "lo_nachon", re: /not correct/i },
+  { key: "tsarich", re: /\bneed to\b|\bshould\b/i },
   { key: "present_simple", re: /Present Simple/ },
-  { key: "chayav", re: // },
-  { key: "drush", re: // },
+  { key: "chayav", re: /\bmust\b/i },
+  { key: "drush", re: /\brequired\b/i },
 ];
 
 const SKIP_TEXT_TYPES = new Set([
@@ -32,32 +32,31 @@ const SKIP_TEXT_TYPES = new Set([
 ]);
 
 const IMPROVED_MARKERS = [
-  / /,
-  / /,
-  / /,
-  //,
-  / /,
-  / /,
-  / /,
-  / /,
-  / /,
-  //,
-  /  /,
-  / /,
-  /   /,
-  / /,
-  / /,
-  / /,
-  / /,
-  / /,
-  / /,
+  /does not fit/i,
+  /is in the/i,
+  /means/i,
+  /therefore (?:we )?need/i,
+  /after /i,
+  /here (?:we )?need/i,
+  /here (?:we )?talk about/i,
+  /does not have to/i,
+  /check/i,
+  /this is not a sentence/i,
+  /this is not/i,
+  /not correct in (?:the )?sentence/i,
+  /is not in/i,
+  /is not a form/i,
+  /not enough/i,
+  /does not refer/i,
+  /do not open/i,
+  /do not determine/i,
 ];
 
 const ABRUPT_MARKERS = [
-  /— !/,
-  / /,
-  / s!/,
-  / es!/,
+  /— not!/i,
+  /does not accept/i,
+  /does not!/i,
+  /does not!/i,
   /Present Simple!/,
   /= !/,
   /—  !/,
@@ -86,11 +85,11 @@ function classifyStatus(subject, text) {
 
   if (/Present Simple/.test(t)) return "ENGLISH_GRAMMAR_EXPECTED";
   if (/(?:^|[\s—-])!(?:\s|$|[.!])/.test(t)) return "NEEDS_FIX";
-  if (/ /.test(t)) {
+  if (/\bnot correct\b/i.test(t)) {
     if (subject === "science") return "OK_AS_TEACHING_ERROR";
     return "REVIEW_LATER";
   }
-  if (//.test(t) || //.test(t) || //.test(t) || //.test(t)) {
+  if (/\bmissing\b/i.test(t) || /not correct/i.test(t) || /\bneed to\b/i.test(t) || /\brequired\b/i.test(t)) {
     return "REVIEW_LATER";
   }
   return "REVIEW_LATER";
@@ -170,7 +169,7 @@ function main() {
   lines.push(`Generated: ${data.generated_at}`);
   lines.push(`Source: \`data/language-review/book-text-extract.json\``);
   lines.push("");
-  lines.push("Scan patterns: `❌`, `!`, ``, ` `, ``, `Present Simple`, ``, ``");
+  lines.push("Scan patterns: `❌`, `not!`, `missing`, `not correct`, `need to`, `Present Simple`, `must`, `required`");
   lines.push("");
   lines.push("Book markdown was **not** modified. This report reflects current extracted visible text only.");
   lines.push("");

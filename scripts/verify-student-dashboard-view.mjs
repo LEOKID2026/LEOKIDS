@@ -35,23 +35,24 @@ function loadEnvLocal() {
   return out;
 }
 
+function printTwelveWindowSummary(view) {
   const th = view.topHud;
   const mt = view.middleTiles;
   const ch = mt.challenges;
   console.log("\n=== 12-window canonical values (numeric / structured) ===\n");
   const rows = [
-    ["1", "", th.avatar ?? "(react/local image)"],
-    ["2", "", th.timer ?? "(react)"],
-    ["3", "", th.lives],
-    ["4", "", th.correct],
-    ["5", "", th.level],
-    ["6", "", th.stars],
-    ["7", "", th.streak],
-    ["8", "", th.score],
-    ["9", "", `tileRole=${ch?.tileRole ?? "?"} dailyPct=${ch?.dailyProgressPct}% weeklyPct=${ch?.weeklyProgressPct}%`],
-    ["10", "", view.middleTiles.accuracyDisplayHe ?? `${mt.accuracy}%`],
-    ["11", " ", mt.bestStreak],
-    ["12", " ", mt.bestScore],
+    ["1", "Avatar", th.avatar ?? "(react/local image)"],
+    ["2", "Timer", th.timer ?? "(react)"],
+    ["3", "Lives", th.lives],
+    ["4", "Correct", th.correct],
+    ["5", "Level", th.level],
+    ["6", "Stars", th.stars],
+    ["7", "Streak", th.streak],
+    ["8", "Score", th.score],
+    ["9", "Challenges", `tileRole=${ch?.tileRole ?? "?"} dailyPct=${ch?.dailyProgressPct}% weeklyPct=${ch?.weeklyProgressPct}%`],
+    ["10", "Accuracy", view.middleTiles.accuracyDisplayHe ?? `${mt.accuracy}%`],
+    ["11", "Best streak", mt.bestStreak],
+    ["12", "Best score", mt.bestScore],
   ];
   for (const [id, label, val] of rows) {
     console.log(`${id.padStart(2)}  ${label.padEnd(12, " ")}  ${val}`);

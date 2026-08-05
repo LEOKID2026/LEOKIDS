@@ -184,7 +184,7 @@ for (const q of [0, 3, 12, 40]) {
     const c = buildNarrativeContractV1({
       topicKey: "fractions",
       subjectId: "math",
-      displayName: "",
+      displayName: "Fractions",
       questions: q,
       accuracy: acc,
       contractsV1: {
@@ -206,42 +206,42 @@ const ownerCopyRenderedSamples = (() => {
   const out = [];
   const fixtures = [
     {
-      subjectLabelHe: "",
+      subjectLabelHe: "Math",
       contract: {
         subjectDecision: "multiple_topic_gaps",
         recommendedSubjectAction: "remediate_priority_topics_same_level",
         blockedLegacySummary: true,
         priorityTopics: [
           {
-            topicLabelKey: "",
+            topicLabelKey: "Fractions",
             questions: 206,
             correct: 108,
             wrong: 98,
             accuracy: 52,
-            detectedPattern: "   ",
+            detectedPattern: "comparing by numerator only",
             evidenceStrength: "strong",
           },
           {
-            topicLabelKey: "",
+            topicLabelKey: "Multiplication",
             questions: 32,
             correct: 22,
             wrong: 10,
             accuracy: 69,
-            detectedPattern: "  ",
+            detectedPattern: "the same wrong pairs",
             evidenceStrength: "strong",
           },
         ],
       },
     },
     {
-      subjectLabelHe: "",
+      subjectLabelHe: "Math",
       contract: {
         subjectDecision: "focused_strengthening_needed",
         recommendedSubjectAction: "remediate_priority_topics_same_level",
         blockedLegacySummary: true,
         priorityTopics: [
           {
-            topicLabelKey: "",
+            topicLabelKey: "Addition",
             questions: 10,
             correct: 2,
             wrong: 8,
@@ -271,8 +271,8 @@ const topicOwnerCopyRenderedSamples = (() => {
   const lpdWithContract = (body, contract) => ({ ...body, [EDC_CONTRACT_KEY]: contract });
   const fixtures = [
     {
-      label: "",
-      subjectLabelHe: "",
+      label: "Fractions",
+      subjectLabelHe: "Math",
       questions: 206,
       correct: 108,
       wrong: 98,
@@ -287,7 +287,7 @@ const topicOwnerCopyRenderedSamples = (() => {
         },
         {
           engineDecision: "clear_topic_gap",
-          detectedPattern: "   ",
+          detectedPattern: "comparing by numerator only",
           recommendedAction: "remediate_same_level",
           evidenceStrength: "strong",
         },
@@ -295,8 +295,8 @@ const topicOwnerCopyRenderedSamples = (() => {
       contractsV1: { narrative: { wordingEnvelope: "WE2" } },
     },
     {
-      label: "",
-      subjectLabelHe: "",
+      label: "Addition",
+      subjectLabelHe: "Math",
       questions: 10,
       correct: 2,
       wrong: 8,
@@ -319,8 +319,8 @@ const topicOwnerCopyRenderedSamples = (() => {
       contractsV1: { narrative: { wordingEnvelope: "WE1" } },
     },
     {
-      label: " ",
-      subjectLabelHe: "",
+      label: "Addition facts",
+      subjectLabelHe: "Math",
       questions: 8,
       correct: 6,
       wrong: 2,
@@ -342,8 +342,8 @@ const topicOwnerCopyRenderedSamples = (() => {
       contractsV1: { narrative: { wordingEnvelope: "WE2" } },
     },
     {
-      label: "  ",
-      subjectLabelHe: "",
+      label: "Division with remainder",
+      subjectLabelHe: "Math",
       questions: 2,
       correct: 1,
       wrong: 1,
@@ -401,8 +401,8 @@ const TOPIC_OWNER_INTERNAL_LEAK_TERMS = [
 ];
 
 const renderedSamples = [
-  zeroEvidenceSubjectLineHe(""),
-  thinEvidenceSubjectLineHe("", 5),
+  zeroEvidenceSubjectLineHe("Math"),
+  thinEvidenceSubjectLineHe("English", 5),
   ...narrativeSamples,
   ...ownerCopyRenderedSamples,
 ].map((s) => normalizeParentFacing(String(s || "")));

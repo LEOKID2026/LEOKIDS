@@ -179,31 +179,31 @@ function sectionLocationLabel(section) {
 }
 
 function inferSubject(surface, section, text, inventory) {
-  if (/|subject||||/i.test(`${text} ${inventory?.condition || ""}`)) {
-    if (//.test(text)) return "";
-    if (//.test(text)) return "";
-    if (//.test(text)) return "";
-    return "";
+  if (/subject|math|reading|geometry|english/i.test(`${text} ${inventory?.condition || ""}`)) {
+    if (/reading|comprehension/i.test(text)) return "Reading";
+    if (/geometry/i.test(text)) return "Geometry";
+    if (/english/i.test(text)) return "English";
+    return "Math";
   }
-  if (section === "subject_scope" || surface === "subject_permission") return " ()";
-  if (/student_report|class_report|activity/.test(surface)) return "";
+  if (section === "subject_scope" || surface === "subject_permission") return "Math (example)";
+  if (/student_report|class_report|activity/.test(surface)) return "Math";
   return "";
 }
 
 function inferGrade(surface, scenarios, text) {
-  if (/||grade/i.test(text)) {
-    const m = text.match(/\s*([-']+)/);
-    if (m) return ` ${m[1]}`;
+  if (/grade|class level/i.test(text)) {
+    const m = text.match(/Grade\s*(\d+|[A-Za-z]+)/i);
+    if (m) return `Grade ${m[1]}`;
   }
   const sc = scenarios.find((s) => s.grade);
   if (sc?.grade) return sc.grade;
-  if (/class_report|student_report|teacher_dashboard|activity/.test(surface)) return " ";
+  if (/class_report|student_report|teacher_dashboard|activity/.test(surface)) return "Grade 5";
   return "";
 }
 
 function inferClassOrStudentContext(surface, audience, text) {
-  if (surface === "student_report" || //.test(text)) return "  — []";
-  if (surface === "class_report" || //.test(text)) return " —   (28 )";
+  if (surface === "student_report" || /student/i.test(text)) return "Single student — [student]";
+  if (surface === "class_report" || /class/i.test(text)) return "Class — Grade 5 (28 students)";
   if (surface === "teacher_dashboard") return " /  ";
   if (surface === "activity_report" || surface === "activity_export")
     return "  —   ";
@@ -253,8 +253,8 @@ function engineMeaningPlain(candidate, inventory, codeCtx) {
   if (/UUID|PIN|untranslated_english/i.test(`${text} ${risk}`)) {
     return "  /       .";
   }
-  if (/|||/i.test(text)) {
-    return "        .";
+  if (/recommend|direction|practice|action/i.test(text)) {
+    return "The report gives the teacher a professional action recommendation based on the data.";
   }
   if (codeCtx?.mapLabel) {
     return `/  ${codeCtx.mapLabel} —  /  ${sectionLocationLabel(candidate.section)}.`;

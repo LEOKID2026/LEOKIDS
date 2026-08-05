@@ -25,7 +25,7 @@ const startMs = Date.UTC(2026, 3, 3, 0, 0, 0);
 
 const row = {
   bucketKey: "addition",
-  displayName: "",
+  displayName: "Addition",
   questions: 12,
   correct: 10,
   wrong: 2,
@@ -295,18 +295,18 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     topicRowKey: "addition\u0001learning",
     subjectId: "math",
     bucketKey: "addition",
-    displayName: "",
+    displayName: "Addition",
     evidenceTrace: [
       { type: "volume", value: { questions: 14, accuracy: 86, correct: 12, wrong: 2 } },
     ],
-    taxonomy: { id: "tax_demo", patternHe: " " },
-    diagnosis: { allowed: true, lineHe: " " },
+    taxonomy: { id: "tax_demo", patternHe: "Demo pattern" },
+    diagnosis: { allowed: true, lineHe: "Allowed diagnosis" },
     confidence: { level: "medium" },
     priority: { level: "P3" },
     canonicalState: { assessment: { confidenceLevel: "medium" } },
   };
   const rowForUnit = {
-    trend: { summaryHe: "  " },
+    trend: { summaryHe: "Trend summary" },
     decisionTrace: [{ detailHe: " :   " }],
     contractsV1: {
       evidence: { evidenceStrength: "medium", evidenceBand: "E2", questionCount: 14, accuracyPct: 86 },
@@ -325,12 +325,12 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   }
 
   const body = v2PositiveStrengthBodyFromUnitForTests(minimalStrengthUnit);
-  const genericOnly = "   —    .";
+  const genericOnly = "EN:47";
   assert.ok(body.includes("14") && body.includes("86"), "strength body uses trace numbers when present");
   assert.notEqual(body.trim(), genericOnly.trim());
 
   const linesBare = collectDiagnosticEvidenceLinesForTests(
-    { evidenceTrace: [], displayName: "", bucketKey: "x", taxonomy: null },
+    { evidenceTrace: [], displayName: "Empty", bucketKey: "x", taxonomy: null },
     {}
   );
   assert.ok(linesBare.length >= 1);
@@ -419,10 +419,10 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   const { buildDiagnosticOverviewHeV2ForTests } = await importUtils("../utils/parent-report-v2.js");
 
   const fallback = {
-    mainFocusAreaLineHe: ":   ",
-    strongestAreaLineHe: ":  ",
-    readyForProgressPreviewHe: [": "],
-    requiresAttentionPreviewHe: [": "],
+    mainFocusAreaLineHe: "Math: topic from legacy list",
+    strongestAreaLineHe: "English: preserved strength",
+    readyForProgressPreviewHe: ["Science: legacy"],
+    requiresAttentionPreviewHe: ["Geometry: legacy"],
   };
 
   const v2out = buildDiagnosticOverviewHeV2ForTests({
@@ -430,12 +430,12 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
       units: [
         {
           subjectId: "math",
-          displayName: "  ",
+          displayName: "First topic on map",
           topicRowKey: "k1",
           priority: { level: "P1" },
-          diagnosis: { allowed: true, lineHe: " " },
+          diagnosis: { allowed: true, lineHe: "Diagnosis A" },
           evidenceTrace: [{ type: "volume", value: { questions: 5, accuracy: 50 } }],
-          taxonomy: { patternHe: " P1" },
+          taxonomy: { patternHe: "Background P1" },
           canonicalState: {
             evidence: { positiveAuthorityLevel: "none" },
             actionState: "withhold",
@@ -444,12 +444,12 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
         },
         {
           subjectId: "geometry",
-          displayName: " ",
+          displayName: "Urgency topic",
           topicRowKey: "k2",
           priority: { level: "P4" },
-          diagnosis: { allowed: true, lineHe: " " },
+          diagnosis: { allowed: true, lineHe: "Diagnosis B" },
           evidenceTrace: [{ type: "volume", value: { questions: 12, accuracy: 62 } }],
-          taxonomy: { patternHe: "  " },
+          taxonomy: { patternHe: "Deep engine pattern" },
           canonicalState: {
             evidence: { positiveAuthorityLevel: "good" },
             actionState: "maintain",
@@ -466,8 +466,8 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   });
 
   assert.ok(
-    String(v2out.mainFocusAreaLineHe || "").includes(" ") ||
-      String(v2out.mainFocusAreaLineHe || "").includes(" "),
+    String(v2out.mainFocusAreaLineHe || "").includes("Deep engine pattern") ||
+      String(v2out.mainFocusAreaLineHe || "").includes("Urgency topic"),
     "main focus follows higher-priority V2 unit, not fallback map-order line"
   );
   assert.notEqual(String(v2out.mainFocusAreaLineHe || "").trim(), String(fallback.mainFocusAreaLineHe).trim());
@@ -489,18 +489,18 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     patternDiagnostics: null,
     maps: {},
     fallbackOverview: fallback,
-    insufficientDataSubjectsHe: [":  "],
+    insufficientDataSubjectsHe: ["Math: limited data"],
   });
   assert.equal(noUnits.mainFocusAreaLineHe, fallback.mainFocusAreaLineHe);
   assert.deepEqual(noUnits.requiresAttentionPreviewHe, fallback.requiresAttentionPreviewHe);
-  assert.deepEqual(noUnits.insufficientDataSubjectsHe, [":  "]);
+  assert.deepEqual(noUnits.insufficientDataSubjectsHe, ["Math: limited data"]);
 
   const noAttentionSignal = buildDiagnosticOverviewHeV2ForTests({
     diagnosticEngineV2: {
       units: [
         {
           subjectId: "math",
-          displayName: "  ",
+          displayName: "Strong topic only",
           evidenceTrace: [{ type: "volume", value: { questions: 20, accuracy: 95 } }],
           diagnosis: { allowed: false },
           recurrence: { wrongCountForRules: 0 },
@@ -515,24 +515,27 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     patternDiagnostics: { version: 2, subjects: {} },
     maps: {},
     fallbackOverview: {
-      mainFocusAreaLineHe: "   needsPractice",
-      strongestAreaLineHe: " ",
+      mainFocusAreaLineHe: "Focus from needsPractice",
+      strongestAreaLineHe: "Preserved strength",
       readyForProgressPreviewHe: [],
-      requiresAttentionPreviewHe: ["  ", "  "],
+      requiresAttentionPreviewHe: [
+        "Secondary follow-up A",
+        "Secondary follow-up B"
+      ],
     },
     insufficientDataSubjectsHe: [],
   });
   assert.equal(
     noAttentionSignal.mainFocusAreaLineHe,
-    "   needsPractice",
+    "Focus from needsPractice",
     "no P/diagnosis/wrongs: main focus must not pick an arbitrary V2 unit"
   );
   assert.ok(
-    !String(noAttentionSignal.mainFocusAreaLineHe || "").includes("  "),
+    !String(noAttentionSignal.mainFocusAreaLineHe || "").includes("Strong topic only"),
     "main focus must not be built from a non-attention V2 unit displayName"
   );
-  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[0], "  ");
-  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[1], "  ");
+  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[0], "Secondary follow-up A");
+  assert.equal(noAttentionSignal.requiresAttentionPreviewHe[1], "Secondary follow-up B");
 }
 
 // Fast Educational Diagnosis (deterministic): stages, probes, parent-safe copy.
@@ -543,7 +546,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
   const unitBase = {
     subjectId: "math",
     bucketKey: "fractions",
-    displayName: "",
+    displayName: "Fractions",
   };
 
   /** @param {unknown[]} events @param {object} fd */
@@ -772,7 +775,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     unit: {
       subjectId: "math",
       bucketKey: "fractions",
-      displayName: "",
+      displayName: "Fractions",
     },
     events: [
       {
@@ -796,7 +799,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     unit: {
       subjectId: "math",
       bucketKey: "fractions",
-      displayName: "",
+      displayName: "Fractions",
     },
     events: Array.from({ length: 4 }, () => ({
       isCorrect: false,
@@ -811,7 +814,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
     unit: {
       subjectId: "science",
       bucketKey: "body",
-      displayName: " ",
+      displayName: "Map topic",
     },
     events: [
       {
@@ -1126,7 +1129,7 @@ assert.ok(rec.trend == null || typeof rec.trend === "object");
       topicId: probe.topicId,
       diagnosticSkillId: "__no_such_skill__",
       suggestedQuestionType: "noop",
-      reasonHe: "",
+      reasonHe: "Reason text",
       sourceHypothesisId: "noop",
       expiresAfterQuestions: 1,
       createdAt: 1,

@@ -79,14 +79,14 @@ function restoreContent(text, preserved) {
 
 function preprocessHebrew(text) {
   const terms = [
-    [//g, "ADDITION"], [//g, "SUBTRACTION"], [//g, "MULTIPLICATION"],
-    [//g, "DIVISION"], [//g, "FRACTIONS"], [//g, "FRACTION"],
-    [//g, "EQUATIONS"], [//g, "EQUATION"], [//g, "COMPARISON"],
-    [//g, "DECIMALS"], [//g, "DECIMAL"], [//g, "PERCENTS"],
-    [//g, "PERCENT"], [//g, "RATIO"], [/ /g, "SCALE"],
-    [//g, "ROUNDING"], [//g, "NEIGHBORS"], [//g, "HUNDREDS"],
-    [//g, "TENS"], [//g, "ONES"], [//g, "REMAINDER"],
-    [/ /g, "NUMBER LINE"], [//g, "NUMERATOR"], [//g, "DENOMINATOR"],
+    [/\baddition\b/gi, "ADDITION"], [/\bsubtraction\b/gi, "SUBTRACTION"], [/\bmultiplication\b/gi, "MULTIPLICATION"],
+    [/\bdivision\b/gi, "DIVISION"], [/\bfractions\b/gi, "FRACTIONS"], [/\bfraction\b/gi, "FRACTION"],
+    [/\bequations\b/gi, "EQUATIONS"], [/\bequation\b/gi, "EQUATION"], [/\bcomparing\b/gi, "COMPARISON"],
+    [/\bdecimals\b/gi, "DECIMALS"], [/\bdecimal\b/gi, "DECIMAL"], [/\bpercents\b/gi, "PERCENTS"],
+    [/\bpercent\b/gi, "PERCENT"], [/\bratio\b/gi, "RATIO"], [/number line/gi, "NUMBER LINE"],
+    [/\brounding\b/gi, "ROUNDING"], [/\bneighbors\b/gi, "NEIGHBORS"], [/\bhundreds\b/gi, "HUNDREDS"],
+    [/\btens\b/gi, "TENS"], [/\bones\b/gi, "ONES"], [/\bremainder\b/gi, "REMAINDER"],
+    [/\bnumerator\b/gi, "NUMERATOR"], [/\bdenominator\b/gi, "DENOMINATOR"],
   ];
   let out = text;
   for (const [p, r] of terms) out = out.replace(p, r);

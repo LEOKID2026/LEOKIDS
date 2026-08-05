@@ -33,14 +33,14 @@ function UnitBlock({ unit, idx }) {
       open={idx === 0}
     >
       <summary className="cursor-pointer select-none px-3 py-2.5 text-sm font-bold text-emerald-100/95 bg-emerald-950/30">
-         {idx + 1}: <span className="font-mono text-xs opacity-90">{u.unitKey || "-"}</span>
+        Unit {idx + 1}: <span className="font-mono text-xs opacity-90">{u.unitKey || "-"}</span>
       </summary>
       <div className="px-3 pb-3 pt-1 space-y-1">
         <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-2 mb-1">v2AuthoritySnapshot</h4>
         <FieldRow label="taxonomyId">
           <span className="font-mono text-xs">{String(snap.taxonomyId ?? "-")}</span>
         </FieldRow>
-        <FieldRow label="">
+        <FieldRow label="diagnosis">
           {snap.diagnosis ? (
             <span className="font-mono text-xs">
               allowed={String(!!snap.diagnosis.allowed)} · taxonomyId={String(snap.diagnosis.taxonomyId ?? "-")}
@@ -65,11 +65,11 @@ function UnitBlock({ unit, idx }) {
               ))}
             </ul>
           ) : (
-            <span className="text-white/50"></span>
+            <span className="text-white/50">none</span>
           )}
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1"> </h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">Top hypothesis</h4>
         <FieldRow label="top1">
           <span className="font-mono text-xs">
             {String(rank.top1Id || "-")} · p={Number(rank.top1Probability || 0).toFixed(4)} · band=
@@ -77,7 +77,7 @@ function UnitBlock({ unit, idx }) {
           </span>
         </FieldRow>
         {cands.length ? (
-          <FieldRow label="( 5)">
+          <FieldRow label="Candidates (top 5)">
             <ol className="list-decimal pr-5 m-0 space-y-1 font-mono text-[11px]">
               {cands.slice(0, 5).map((c) => (
                 <li key={`${c.candidateId}-${c.rank}`}>
@@ -88,7 +88,7 @@ function UnitBlock({ unit, idx }) {
           </FieldRow>
         ) : null}
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">  V2</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">V2 disagreement</h4>
         <FieldRow label="hasDisagreement">
           <span className={d.hasDisagreement ? "text-amber-300 font-bold" : "text-emerald-300"}>
             {String(!!d.hasDisagreement)}
@@ -112,33 +112,33 @@ function UnitBlock({ unit, idx }) {
           )}
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">  (probe)</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">Probe step (probe)</h4>
         <FieldRow label="suggestedProbeId">
           <span className="font-mono text-xs">{String(p.suggestedProbeId ?? "-")}</span>
         </FieldRow>
-        <FieldRow label="">
+        <FieldRow label="metrics">
           <span className="font-mono text-[11px]">
-            Δ ≈{Number(p.uncertaintyReductionEstimate || 0).toFixed(3)} · =
-            {String(p.stoppingRuleMet)} · ={String(p.escalationRuleTriggered)}
+            Δ uncertainty≈{Number(p.uncertaintyReductionEstimate || 0).toFixed(3)} · stop=
+            {String(p.stoppingRuleMet)} · escalation={String(p.escalationRuleTriggered)}
           </span>
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1"> ( /(?!)/h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">Explanation (text / status)</h4>
         <FieldRow label="outputStatus">{String(ec.outputStatus ?? "-")}</FieldRow>
-        <FieldRow label="">
-          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{par.text | "-"}</p>
+        <FieldRow label="Parent (short)">
+          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{par.text || "-"}</p>
         </FieldRow>
-        <FieldRow label="">
-          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{tea.text | "-"}</p>
+        <FieldRow label="Teacher (short)">
+          <p className="text-xs leading-relaxed text-white/85 m-0 whitespace-pre-wrap">{tea.text || "-"}</p>
         </FieldRow>
 
-        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1"> (validator)</h4>
+        <h4 className="text-xs font-extrabold text-white/70 uppercase tracking-wide mt-3 mb-1">Validation (validator)</h4>
         <FieldRow label="overallPass">
           <span className={ev.overallPass ? "text-emerald-300 font-bold" : "text-rose-300 font-bold"}>
             {String(!!ev.overallPass)}
           </span>
         </FieldRow>
-        <FieldRow label="">
+        <FieldRow label="details">
           <span className="font-mono text-[11px]">
             boundary={String(ev.boundaryPass)} · evidenceLink={String(ev.evidenceLinkPass)} · uncertainty=
             {String(ev.uncertaintyCompliancePass)}
@@ -169,12 +169,12 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
     return (
       <section
         className="ai-hybrid-internal-reviewer rounded-xl border border-amber-500/30 bg-amber-950/25 p-4 text-amber-100/90"
-        dir="rtl"
+        dir="ltr"
       >
-        <h3 className="text-base font-black m-0 mb-2">  - AI Hybrid</h3>
+        <h3 className="text-base font-black m-0 mb-2">Internal review - AI Hybrid</h3>
         <p className="text-sm m-0">
-           <span className="font-mono">hybridRuntime</span>  (null    ).      V2
-            .
+          No <span className="font-mono">hybridRuntime</span> in this report (null or failed validation). Confirm the report
+          was built with the V2 engine and that safety checks did not block output.
         </p>
       </section>
     );
@@ -185,13 +185,13 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
   return (
     <section
       className="ai-hybrid-internal-reviewer rounded-xl border border-emerald-500/35 bg-[#0d1a14] p-3 md:p-4 text-white"
-      dir="rtl"
+      dir="ltr"
     >
       <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
         <div>
-          <h3 className="text-lg font-black m-0 text-emerald-100">  - hybridRuntime</h3>
+          <h3 className="text-lg font-black m-0 text-emerald-100">Internal review - hybridRuntime</h3>
           <p className="text-xs text-white/60 m-0 mt-1">
-               .  {summary.hybridRuntimeVersion || "-"} · exposure {summary.exposureMode || "-"}
+            Not shown to parents in print. Version {summary.hybridRuntimeVersion || "-"} · exposure {summary.exposureMode || "-"}
           </p>
         </div>
         <button
@@ -199,15 +199,15 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
           className="text-xs font-bold px-2 py-1 rounded border border-white/20 bg-white/5 hover:bg-white/10"
           onClick={() => setJsonOpen((v) => !v)}
         >
-          {jsonOpen ? "JSON" : "JSON ()"}
+          {jsonOpen ? "Hide JSON" : "Show raw JSON (secondary)"}
         </button>
       </div>
 
       <div className="rounded-lg border border-white/10 bg-black/25 p-3 mb-4 text-sm">
-        <h4 className="text-xs font-extrabold text-emerald-200/90 uppercase tracking-wide m-0 mb-2"> Shadow ()</h4>
+        <h4 className="text-xs font-extrabold text-emerald-200/90 uppercase tracking-wide m-0 mb-2">Shadow summary (local)</h4>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
           <div>
-            <div className="text-white/50"> </div>
+            <div className="text-white/50">Total units</div>
             <div className="text-white font-bold">{summary.totalUnits}</div>
           </div>
           <div>
@@ -227,18 +227,18 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
             <div>{summary.modeCounts.suppressed}</div>
           </div>
           <div>
-            <div className="text-white/50"></div>
+            <div className="text-white/50">Disagreements</div>
             <div className={summary.disagreementCount ? "text-amber-300 font-bold" : ""}>{summary.disagreementCount}</div>
           </div>
           <div className="sm:col-span-2">
-            <div className="text-white/50">  (  )</div>
+            <div className="text-white/50">Severity split (units with disagreement)</div>
             <div className="text-[11px]">
               low {summary.disagreementSeveritySplit.low} · medium {summary.disagreementSeveritySplit.medium} · high{" "}
               {summary.disagreementSeveritySplit.high}
             </div>
           </div>
           <div className="sm:col-span-2">
-            <div className="text-white/50">   severity ( none)</div>
+            <div className="text-white/50">All units by severity (including none)</div>
             <div className="text-[11px]">
               none {summary.disagreementSeverityAllUnits.none} · low {summary.disagreementSeverityAllUnits.low} · medium{" "}
               {summary.disagreementSeverityAllUnits.medium} · high {summary.disagreementSeverityAllUnits.high}
@@ -246,7 +246,7 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
           </div>
           {summary.shadowEntriesSampled != null ? (
             <div className="sm:col-span-2">
-              <div className="text-white/50"> shadow  (session)</div>
+              <div className="text-white/50">Sampled shadow entries (session)</div>
               <div>{summary.shadowEntriesSampled}</div>
             </div>
           ) : null}
@@ -254,7 +254,7 @@ export function AiHybridInternalReviewerPanel({ hybridRuntime }) {
       </div>
 
       <div className="space-y-1">
-        <h4 className="text-sm font-extrabold text-white m-0 mb-2"> </h4>
+        <h4 className="text-sm font-extrabold text-white m-0 mb-2">By unit</h4>
         {units.map((unit, idx) => (
           <UnitBlock key={unit.unitKey || idx} unit={unit} idx={idx} />
         ))}

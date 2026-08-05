@@ -91,7 +91,7 @@ export default function GuestFeaturePermissionsPanel({ accessToken, onMessage })
               <span>{f.label || f.featureKey}</span>
             </label>
             <span className="text-[10px] text-white/45">
-              : {f.defaultEnabled ? "" : ""}
+              Default: {f.defaultEnabled ? "default on" : "default off"}
             </span>
           </li>
         ))}

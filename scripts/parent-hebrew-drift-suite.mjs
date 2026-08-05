@@ -4,12 +4,12 @@ import { syntheticPayload } from "./parent-copilot-test-fixtures.mjs";
 import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const utterances = [
-  "   ?",
-  "   ?",
-  "  ?",
-  "    ?",
-  "  ?",
-  "   ?",
+  "What does this mean for fractions?",
+  "What should we do this week?",
+  "Which subject is strongest?",
+  "What should we avoid doing right now?",
+  "How should I explain this to my child?",
+  "What stands out most this period?",
 ];
 
 const payload = syntheticPayload({ eligible: true });
@@ -23,14 +23,21 @@ for (let i = 0; i < 180; i++) {
     sessionId: `hebrew-drift-${i}`,
     selectedContextRef: null,
   });
-  const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim() : "";
+  const text = Array.isArray(out?.answerBlocks)
+    ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim()
+    : "";
   const clarification = String(out?.clarificationQuestionHe || "").trim();
-  outputs.push(text || clarification || " ");
+  outputs.push(text || clarification || "no text");
 }
 
-const roboticCues = [" ", " ", "  ", " "];
+const roboticCues = [
+  "right now",
+  "at this stage",
+  "worth continuing to monitor",
+  "keep monitoring",
+];
 const internalLeakRe = /\b(internal_|contractsV1|scopeReason|llmAttempt|reasonCodes|[A-Z]{4,})\b/;
-const overAuthority = ["", " ", " "];
+const overAuthority = ["with certainty", "unambiguously", "completely sure"];
 
 let roboticCount = 0;
 let leakageCount = 0;
@@ -39,7 +46,7 @@ for (const t of outputs) {
   const cueHits = roboticCues.filter((x) => t.includes(x)).length;
   if (cueHits >= 3) roboticCount += 1;
   if (internalLeakRe.test(t)) leakageCount += 1;
-  if (overAuthority.some((x) => t.includes(x))) authorityCount += 1;
+  if (overAuthority.some((x) => x && t.includes(x))) authorityCount += 1;
 }
 
 const roboticityRate = pct(roboticCount, outputs.length);

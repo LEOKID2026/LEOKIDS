@@ -68,10 +68,10 @@ export default function LeoLabGame({
   const startTimeRef = useRef(Date.now());
 
   const [phase, setPhase] = useState(/** @type {'intro'|'play'|'won'|'lost'} */ (
-    productionMode && autoStart ? "play" : "intro",
+    productionMode && autoStart ? "play" : "intro"
   ));
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ (
-    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy",
+    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy"
   ));
   const [experiments, setExperiments] = useState(/** @type {import('./leo-lab-data.js').LabExperiment[]} */ ([]));
   const [experimentIndex, setExperimentIndex] = useState(0);

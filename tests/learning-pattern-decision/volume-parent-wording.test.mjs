@@ -46,7 +46,7 @@ function buildCase({ q, c, w, acc, mistakes = [] }) {
   });
 }
 
-const FORBIDDEN_OVERCLAIM = [//u, //u, //u, //u, /  /u];
+const FORBIDDEN_OVERCLAIM = [/mastery/i, /certain/i, /definite/i, /diagnosis/i, /high difficulty/i];
 
 function assertNoOverclaim(text) {
   assert.equal(findForbiddenParentWords(text).length, 0);
@@ -67,7 +67,7 @@ assert.equal(sharedResolve(12), "strong");
   assert.equal(lpd.evidenceStrength, "strong");
   assert.equal(lpd.observedPatternLevel, "observed");
   assert.notEqual(lpd.parentWordingLevel, "strong_pattern");
-  assert.ok(!lpd.parentVisibleFinding.includes("  "));
+  assert.ok(!lpd.parentVisibleFinding.toLowerCase().includes("high difficulty"));
   assertNoOverclaim(lpd.parentVisibleFinding);
 }
 
@@ -98,7 +98,7 @@ assert.equal(sharedResolve(12), "strong");
     acc: 17,
     mistakes: mkWrong("math", "addition", 5, "pf:a", false),
   });
-  assert.ok(!lpd.parentVisibleFinding.includes("  "));
+  assert.ok(!lpd.parentVisibleFinding.toLowerCase().includes("high difficulty"));
   assert.ok(lpd.parentVisibleFinding.length > 0);
 }
 

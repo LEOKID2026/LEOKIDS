@@ -88,7 +88,8 @@ function renderSubjectOpeningPriorityTopic0(slots) {
   // speed_check_only_subject has NO actionable gap topic (t0 is always null for it —
   // enforced upstream: gaps.length===0 && stable.length===0 && speedCheckTopics.length>=1).
   // Uses its own dedicated slot (prioritySpeedTopic0) so this branch never depends on t0.
-  // Product-owner-approved wording — must not claim a knowledge gap, must not say "" (the sentence just names the single highest-priority speed-check topic, per the
+  // Product-owner-approved wording — must not claim a knowledge gap, must not say "several topics"
+  // (the sentence just names the single highest-priority speed-check topic, per the
   // existing priority order, without counting them).
   if (slots.subjectDecision === "speed_check_only_subject") {
     const speedTopic = slots.prioritySpeedTopic0;
@@ -101,9 +102,8 @@ function renderSubjectOpeningPriorityTopic0(slots) {
   // mixed_subject_profile ALWAYS describes exactly one topic needing strengthening
   // (gaps.length === 1 && stable.length >= 1 — enforced upstream in
   // build-subject-engine-decision-contract.js). Product-owner-approved wording — must
-  // never say "" (several topics), since only one topic is a gap here. Also
-  // uses "" (in some of the topics) rather than "" (topics
-  // where...), which was imprecise when stable.length===1 (a single stable topic is
+  // never say "several topics", since only one topic is a gap here. Also
+  // uses "in some of the topics" rather than "topics where...", which was imprecise when stable.length===1 (a single stable topic is
   // not "topics", plural).
   if (slots.subjectDecision === "mixed_subject_profile") {
     return `In ${sn}, stability is visible in some topics, alongside one topic that's worth reinforcing. It's recommended to start with ${t0.topicName}.`;

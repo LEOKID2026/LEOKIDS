@@ -47,16 +47,16 @@ export default function LeoWordTrainGame({
   const scheduledRemediationRef = useRef(/** @type {Set<string>} */ (new Set()));
 
   const [phase, setPhase] = useState(/** @type {'intro'|'play'|'won'|'lost'} */ (
-    productionMode && autoStart ? "play" : "intro",
+    productionMode && autoStart ? "play" : "intro"
   ));
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ (
-    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy",
+    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy"
   ));
   const [tasks, setTasks] = useState(/** @type {import('./leo-word-train-data.js').TrainTask[]} */ ([]));
   const [taskIndex, setTaskIndex] = useState(0);
   const [fills, setFills] = useState(/** @type {Record<string, string>} */ ({}));
   const [pieceToCarriage, setPieceToCarriage] = useState(/** @type {Record<string, string>} */ ({}));
-  const [selectedPiece, setSelectedPiece] = useState(/** @type {string || null} */ (null));
+  const [selectedPiece, setSelectedPiece] = useState(/** @type {string | null} */ (null));
   const [score, setScore] = useState(0);
   const [mistakes, setMistakes] = useState(0);
   const [successCount, setSuccessCount] = useState(0);

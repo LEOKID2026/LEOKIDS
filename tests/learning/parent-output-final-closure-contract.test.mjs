@@ -303,7 +303,7 @@ check("speed_check_only_subject never produces '  ' / '  ' / ' ' or any knowledg
   assert.doesNotMatch(summary, banned);
   assert.doesNotMatch(summary, TECHNICAL_LEAK_RE);
   assert.match(summary, /\s*\s*\s*\s*\s*\s*/u, "must use the approved wording");
-  assert.match(summary, //u, "must name the priority speed-check topic");
+  assert.match(summary, /sequences/i, "must name the priority speed-check topic");
 
   const sp = {
     subjectLabel: "",
@@ -410,7 +410,7 @@ check("mixed_subject_profile (1 gap + 1 stable): correct decision, approved sing
   assert.doesNotMatch(summary, /\s*/u, "must never say 'several topics' when only 1 topic is a gap");
   assert.match(summary, /\s*\s*\s*/u, "must use the approved 'one topic to strengthen' wording");
   assert.match(summary, /\s*\s*\s*/u, "must use the approved 'stability in some of the topics' wording, not 'topics where stability is seen' (imprecise for exactly 1 stable topic)");
-  assert.match(summary, //u, "must recommend starting with the actual priority topic name");
+  assert.match(summary, /fractions|sequences/i, "must recommend starting with the actual priority topic name");
 });
 
 check("mixed_subject_profile (1 gap + 5 stable): same decision and same approved singular text as 1+1", () => {

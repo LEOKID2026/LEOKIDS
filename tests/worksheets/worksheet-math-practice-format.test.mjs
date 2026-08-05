@@ -135,8 +135,8 @@ describe("worksheet-math-practice-format", () => {
       assert.ok(!q.verticalLayoutLtr);
       assert.notEqual(q.questionType, "vertical_math");
       assert.ok(q.mathExpressionLtr);
-      assert.doesNotMatch(String(q.stemHe || ""), //);
-      assert.doesNotMatch(String(q.mathExpressionLtr || ""), //);
+      assert.doesNotMatch(String(q.stemHe || ""), /remainder/i);
+      assert.doesNotMatch(String(q.mathExpressionLtr || ""), /remainder/i);
       assert.match(String(q.mathExpressionLtr || ""), /÷/);
     }
   });
@@ -153,8 +153,8 @@ describe("worksheet-math-practice-format", () => {
       assert.ok(q.verticalLayoutLtr, "must use vertical long division layout");
       assert.equal(q.questionType, "vertical_math");
       assert.ok(!q.mathExpressionLtr);
-      assert.doesNotMatch(String(q.stemHe || ""), //);
-      assert.doesNotMatch(String(q.verticalLayoutLtr || ""), //);
+      assert.doesNotMatch(String(q.stemHe || ""), /remainder/i);
+      assert.doesNotMatch(String(q.verticalLayoutLtr || ""), /remainder/i);
     }
   });
 

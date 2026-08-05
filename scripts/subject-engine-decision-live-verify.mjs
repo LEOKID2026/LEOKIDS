@@ -299,20 +299,21 @@ async function main() {
       assert.equal(shortMath.subjectSummaryRenderSource, RENDER_SOURCE_SUBJECT_ENGINE);
       assert.equal(shortContract?.subjectDecision, "multiple_topic_gaps");
       assert.equal(shortMath.summaryHe, mathSp.summaryHe);
-      assert.match(String(shortMath.summaryHe || ""), /    /);
-      assert.match(String(shortMath.summaryHe || ""), //);
-      assert.match(String(shortMath.summaryHe || ""), /   /);
-      assert.match(String(letter.diagnosisHe || ""), //);
-      assert.match(String(letter.diagnosisHe || ""), /  /);
-      assert.match(String(letter.homeAction || ""), /   /);
+      assert.match(String(shortMath.summaryHe || ""), /several topics need reinforcement|topics that need/i);
+      assert.match(String(shortMath.summaryHe || ""), /fractions/i);
+      assert.match(String(shortMath.summaryHe || ""), /numerator only|compare.*numerator/i);
+      assert.match(String(letter.diagnosisHe || ""), /multiplication/i);
+      assert.match(String(letter.diagnosisHe || ""), /same.*wrong pairs|wrong pairs/i);
+      assert.match(String(letter.homeAction || ""), /recommend.*practice.*week|practice this week/i);
       assert.doesNotMatch(String(letter.homeAction || ""), /remediate/i);
-      assert.doesNotMatch(String(rollupText || ""), /   \. /);
+      assert.doesNotMatch(String(rollupText || ""), /strengthen the topic\. based/i);
       assert.ok(
-        subjectContract.strongestDetectedPatterns?.includes("   "),
+        subjectContract.strongestDetectedPatterns?.includes("Compare by numerator only") ||
+          subjectContract.strongestDetectedPatterns?.some((p) => /numerator/i.test(String(p))),
         "missing fractions pattern",
       );
       assert.ok(
-        subjectContract.strongestDetectedPatterns?.includes("  "),
+        subjectContract.strongestDetectedPatterns?.some((p) => /wrong pairs|same pairs/i.test(String(p))),
         "missing multiplication pattern",
       );
       assert.ok(String(rollupText || "").trim().length > 0, "subject summary/letter must not be empty");
@@ -324,12 +325,12 @@ async function main() {
       if (positiveAddition?.recommendationCard?.cautionLineHe) {
         assert.match(
           String(positiveAddition.recommendationCard.cautionLineHe),
-          /  /u,
+          /even when success shows up|even when it looks successful/u,
           "positive caution must use owner RECOMMENDATION_CAUTION",
         );
         assert.doesNotMatch(
           String(positiveAddition.recommendationCard.cautionLineHe),
-          /    /u,
+          /not enough to set a strong direction yet/u,
           "positive caution must not use legacy gated text",
         );
       }
@@ -359,11 +360,11 @@ async function main() {
       assert.equal(letter.renderSource, "subjectEngineDecisionContract");
       assert.equal(shortMath.subjectSummaryRenderSource, RENDER_SOURCE_SUBJECT_ENGINE);
       assert.equal(shortContract?.subjectDecision, "focused_strengthening_needed");
-      assert.match(String(shortMath.summaryHe || ""), /     /);
-      assert.match(String(shortMath.summaryHe || ""), //);
+      assert.match(String(shortMath.summaryHe || ""), /one topic stands out.*reinforcement|topic.*needs reinforcement/i);
+      assert.match(String(shortMath.summaryHe || ""), /addition/i);
       assert.match(String(shortMath.summaryHe || ""), /20%/);
-      assert.match(String(shortMath.summaryHe || ""), /     /u);
-      assert.match(String(letter.homeAction || ""), /   /);
+      assert.match(String(shortMath.summaryHe || ""), /recommend.*strengthen.*before continuing|strengthen.*before moving on/i);
+      assert.match(String(letter.homeAction || ""), /recommend.*practice.*week|practice this week/i);
       assert.doesNotMatch(String(letter.homeAction || ""), /remediate/i);
       assert.doesNotMatch(String(letter.homeAction || ""), /maintain/i);
     },

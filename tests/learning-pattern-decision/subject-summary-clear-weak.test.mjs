@@ -44,8 +44,8 @@ describe("subject summary clear weak topic", () => {
 
     assert.ok(isClearWeakTopicMetrics({ questions: 10, correct: 2, wrong: 8, accuracy: 20 }));
     assert.ok(!INSUFFICIENT_SUBJECT_SUMMARY_RE.test(all), all);
-    assert.match(all, //);
-    assert.match(all, /|/);
+    assert.match(all, /addition/i);
+    assert.match(all, /strengthen|reinforcement/i);
   });
 
   test("withholdSummaryCopyHe - subject q=10 acc=20% names weak topic", () => {
@@ -60,7 +60,7 @@ describe("subject summary clear weak topic", () => {
       clearWeakTopicAccuracy: 20,
     });
     assert.ok(!INSUFFICIENT_SUBJECT_SUMMARY_RE.test(line), line);
-    assert.match(line, //);
-    assert.match(line, /|/);
+    assert.match(line, /addition/i);
+    assert.match(line, /strengthen|reinforcement/i);
   });
 });

@@ -146,13 +146,13 @@ const EXTRACT_CARDS_FN = () => {
       exactVisibleText: lines.join("\n"),
       boundingBox: { top: Math.round(rect.top), left: Math.round(rect.left), width: Math.round(rect.width), height: Math.round(rect.height) },
       domPathHint: { tag: card.tagName.toLowerCase(), id: card.id || null, classList: classes, testIds: [...new Set(testIds)].slice(0, 8) },
-      containsWeeklyActionLabel: lines.some((l) => /  /.test(l)),
-      containsPracticedSubjectsSummary: lines.some((l) => / /.test(l)),
-      containsRequiresAttention: lines.some((l) => /  /.test(l)),
+      containsWeeklyActionLabel: lines.some((l) => /What to do this week/i.test(l)),
+      containsPracticedSubjectsSummary: lines.some((l) => /Subjects that were practiced|Based on what was practiced/i.test(l)),
+      containsRequiresAttention: lines.some((l) => /Topics worth watching|requires attention/i.test(l)),
       containsAiSubsections: {
-        whatGoesWell: lines.some((l) => l === "  "),
-        focusAreas: lines.some((l) => l === " "),
-        homeTips: lines.some((l) => l === " "),
+        whatGoesWell: lines.some((l) => l === "What goes well"),
+        focusAreas: lines.some((l) => l === "Areas to reinforce"),
+        homeTips: lines.some((l) => l === "Tips for home"),
       },
     });
   }
@@ -169,7 +169,7 @@ const EXTRACT_CARDS_FN = () => {
       exactVisibleText: lines.join("\n"),
       boundingBox: { top: Math.round(rect.top), left: Math.round(rect.left), width: Math.round(rect.width), height: Math.round(rect.height) },
       domPathHint: { tag: "section", classList: (sec.className || "").split(/\s+/).slice(0, 10) },
-      containsWeeklyActionLabel: lines.some((l) => /  /.test(l)),
+      containsWeeklyActionLabel: lines.some((l) => /What to do this week/i.test(l)),
       containsAiSubsections: { whatGoesWell: false, focusAreas: false, homeTips: false },
     });
   }
@@ -206,7 +206,7 @@ const EXTRACT_CARDS_FN = () => {
   const weeklyLocations = [];
   for (const el of root.querySelectorAll("*")) {
     const txt = el.textContent || "";
-    if (!/  /.test(txt)) continue;
+    if (!/What to do this week/i.test(txt)) continue;
     if (el.children.length > 2) continue; // prefer leaf-ish
     let card = el.closest(".rounded-lg, .rounded-xl");
     while (card && card !== root && !/\bborder\b/.test(card.className || "")) {
@@ -245,7 +245,7 @@ const EXTRACT_CARDS_FN = () => {
     const title = heading ? (heading.textContent || "").trim() : null;
     const rect = (host || table).getBoundingClientRect();
     const headers = [...table.querySelectorAll("thead th")].map((th) => (th.textContent || "").trim());
-    const gradeIdx = headers.findIndex((h) => h === "");
+    const gradeIdx = headers.findIndex((h) => h === "Level" || h === "Grade");
     const grades = [];
     for (const tr of table.querySelectorAll("tbody tr")) {
       const cells = [...tr.querySelectorAll("td")].map((td) => (td.textContent || "").trim());
@@ -269,11 +269,11 @@ const EXTRACT_CARDS_FN = () => {
     tables,
     weeklyLocations,
     bodyContains: {
-      weeklyAction: /  /.test(root.innerText || ""),
-      smartSummaryTitle: /  /.test(root.innerText || ""),
-      shortContractTitle: /  /.test(root.innerText || ""),
-      diagnosticOverviewTitle: /   /.test(root.innerText || ""),
-      homeRecommendationsTitle: /   /.test(root.innerText || ""),
+      weeklyAction: /What to do this week/i.test(root.innerText || ""),
+      smartSummaryTitle: /Smart summary for parents/i.test(root.innerText || ""),
+      shortContractTitle: /Short summary for parents|Smart summary - short report/i.test(root.innerText || ""),
+      diagnosticOverviewTitle: /What stands out now|stands out/i.test(root.innerText || ""),
+      homeRecommendationsTitle: /Short ideas for home|Direction for the coming days/i.test(root.innerText || ""),
     },
   };
 };
@@ -283,7 +283,7 @@ function mapDomCardToSource(card) {
   const hints = card.domPathHint || {};
   const testIds = hints.testIds || [];
 
-  if (title === "   " || (card.containsWeeklyActionLabel && //.test(title))) {
+  if (title === "What stands out now" || (card.containsWeeklyActionLabel && /stands out|notable/i.test(title))) {
     return {
       component: "inline diagnostic overview card (+ optional ParentReportWeeklyHomeActionLine)",
       sourceFile: "pages/learning/parent-report.js",
@@ -293,7 +293,7 @@ function mapDomCardToSource(card) {
         "Visual card title is hardcoded Hebrew in parent-report.js; weekly line is ParentReportWeeklyHomeActionLine nested inside this amber card when showWeeklyInDiagnosticOverview.",
     };
   }
-  if (title === "  ") {
+  if (title === "Short summary for parents" || title === "Smart summary - short report") {
     return {
       component: "ParentReportShortContractPreview",
       sourceFile: "components/parent-report-short-contract-preview.jsx",
@@ -302,7 +302,7 @@ function mapDomCardToSource(card) {
       visualVsComponentNote: "Only rendered when !hasServerHomeRecommendations.",
     };
   }
-  if (title === "  " || hints.classList?.includes("parent-report-parent-ai-insight")) {
+  if (title === "Smart summary for parents" || hints.classList?.includes("parent-report-parent-ai-insight")) {
     return {
       component: "ParentReportInsight",
       sourceFile: "components/ParentReportInsight.jsx",
@@ -311,7 +311,7 @@ function mapDomCardToSource(card) {
       visualVsComponentNote: "Does NOT render ParentReportWeeklyHomeActionLine.",
     };
   }
-  if (title === "  " || title === "   " || title === " ") {
+  if (title === "What's important to know" || title === "Short ideas for home" || title === "Messages from the teacher") {
     return {
       component: "ParentReportParentSections",
       sourceFile: "components/parent/ParentReportParentSections.jsx",
@@ -319,7 +319,7 @@ function mapDomCardToSource(card) {
       dataSource: "server_parent_facing",
     };
   }
-  if (title === "  ") {
+  if (title === "Strengths that stood out in practice") {
     return {
       component: "inline strengths block",
       sourceFile: "pages/learning/parent-report.js",
@@ -327,7 +327,7 @@ function mapDomCardToSource(card) {
       dataSource: "child_metrics",
     };
   }
-  if (title === "  " || testIds.includes("parent-report-data-health-note")) {
+  if (title === "Report data status" || testIds.includes("parent-report-data-health-note")) {
     return {
       component: "ParentReportDataHealthNote",
       sourceFile: "components/parent/ParentReportDataHealthNote.jsx",
@@ -335,7 +335,7 @@ function mapDomCardToSource(card) {
       dataSource: "child_report_payload",
     };
   }
-  if (title === " " || hints.classList?.includes("parent-report-important-disclaimer")) {
+  if (title === "Important note" || hints.classList?.includes("parent-report-important-disclaimer")) {
     return {
       component: "ParentReportImportantDisclaimer",
       sourceFile: "components/ParentReportImportantDisclaimer.js",
@@ -343,7 +343,7 @@ function mapDomCardToSource(card) {
       dataSource: "static_legal_copy",
     };
   }
-  if (title?.includes("") || hints.tag === "table") {
+  if (title?.includes("progress") || hints.tag === "table") {
     return {
       component: "subject progress table",
       sourceFile: "pages/learning/parent-report.js",
@@ -647,7 +647,7 @@ async function main() {
   try {
     await page.goto(reportUrl, { waitUntil: "networkidle", timeout: 180_000 });
     await page.locator("#parent-report-pdf").waitFor({ timeout: 120_000 });
-    await page.getByRole("heading", { name: / /u }).waitFor({ timeout: 60_000 });
+    await page.getByRole("heading", { name: /Parent report|Detailed Report/i }).waitFor({ timeout: 60_000 });
     await page.waitForTimeout(3000);
 
     const screenshotPath = join(ARTIFACT_DIR, "omer-parent-report-dom.png");
@@ -657,14 +657,14 @@ async function main() {
     const windows = buildOrderedWindows(dom);
 
     const smartCard =
-      dom.blocks?.find((c) => c.parentVisibleTitle === "  ") ||
+      dom.blocks?.find((c) => c.parentVisibleTitle === "Smart summary for parents") ||
       dom.blocks?.find((c) => c.domPathHint?.classList?.includes("parent-report-parent-ai-insight"));
-    const diagCard = dom.blocks?.find((c) => c.parentVisibleTitle === "   ");
-    const insightsSec = dom.blocks?.find((c) => c.parentVisibleTitle === "  ");
-    const homeSec = dom.blocks?.find((c) => c.parentVisibleTitle === "   ");
-    const strengthsCard = dom.blocks?.find((c) => c.parentVisibleTitle === "  ");
+    const diagCard = dom.blocks?.find((c) => c.parentVisibleTitle === "What stands out now");
+    const insightsSec = dom.blocks?.find((c) => c.parentVisibleTitle === "What's important to know");
+    const homeSec = dom.blocks?.find((c) => c.parentVisibleTitle === "Short ideas for home");
+    const strengthsCard = dom.blocks?.find((c) => c.parentVisibleTitle === "Strengths that stood out in practice");
 
-    const weeklyLine = (diagCard || smartCard)?.exactVisibleLines?.find((l) => /  /.test(l)) ||
+    const weeklyLine = (diagCard || smartCard)?.exactVisibleLines?.find((l) => /What to do this week/i.test(l)) ||
       dom.weeklyLocations[0]?.matchedText;
 
     const focusedFindings = {

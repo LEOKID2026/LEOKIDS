@@ -75,7 +75,7 @@ test("activity report CSV export uses shared Hebrew export module", () => {
 
 test("resolveClassroomSkillLabelHe avoids forbidden algebra wording for angles", () => {
   const label = resolveClassroomSkillLabelHe("geo_angle_measure", { subject: "geometry" });
-  assert.ok(!//u.test(label));
+  assert.ok(!/algebra/i.test(label));
 });
 
 test("geo_area_triangle_formula gated below G5 and fail-closed without grade", () => {
@@ -84,20 +84,20 @@ test("geo_area_triangle_formula gated below G5 and fail-closed without grade", (
       subject: "geometry",
       gradeLevel: "g4",
     }),
-    " "
+    "Geometry skill"
   );
   assert.equal(
     resolveClassroomSkillLabelHe("geo_area_triangle_formula", {
       subject: "geometry",
     }),
-    " "
+    "Geometry skill"
   );
   assert.equal(
     resolveClassroomSkillLabelHe("geo_area_triangle_formula", {
       subject: "geometry",
       gradeLevel: 5,
     }),
-    " "
+    "Triangle area"
   );
 });
 
@@ -107,5 +107,5 @@ test("decorateWeakSkillsForTeacherDisplay passes gradeLevel for formula gate", (
     "geometry",
     { gradeLevel: "g3" }
   );
-  assert.equal(rows[0].skillLabelHe, " ");
+  assert.equal(rows[0].skillLabelHe, "Geometry skill");
 });

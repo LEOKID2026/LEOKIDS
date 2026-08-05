@@ -643,7 +643,7 @@ function validateTurn(ctx) {
     // Stage‑A often classifies "   …" as clarify_term (vocabulary-in-report), not explain_report.
     const explainOk =
       sem === "explain_report" ||
-      (String(record.intent) === "clarify_term" && //u.test(String(question)));
+      (String(record.intent) === "clarify_term" && /report|meaning|data/i.test(String(question)));
     if (!explainOk) failures.push({ code: "expected_semantic_explain_report", detail: String(sem) });
     if (bucket === "ambiguous_or_unclear") failures.push({ code: "report_question_marked_ambiguous", detail: question });
   }
@@ -660,8 +660,8 @@ function validateTurn(ctx) {
     if (scenario === "C_mixed" && w && strengthMislabelsWeakest(text, w)) {
       failures.push({ code: "strength_answer_mislabels_weakest_topic", detail: w });
     }
-    if (//.test(text) && (text.match(//g) || []).length > 2) {
-      failures.push({ code: "overuse_chozka", detail: "prefer   phrasing" });
+    if (/strength|strong/i.test(text) && (text.match(/strength|strong/gi) || []).length > 2) {
+      failures.push({ code: "overuse_chozka", detail: "prefer good results phrasing" });
     }
   }
 
@@ -681,11 +681,11 @@ function validateTurn(ctx) {
       /^what_to_do/u.test(String(record.intent)) ||
       (String(record.intent) === "unclear" &&
         bucket === "report_related" &&
-        /(|||||\s+|\d+\s*)/u.test(text));
+        /(minutes|minute|times|questions|sessions|short time|\d+\s*min)/u.test(text));
     if (!homeSemanticOk) failures.push({ code: "expected_semantic_home_practice", detail: String(sem) });
     if (
       text.length > 30 &&
-      !/(|||||\s+|\d+\s*)/u.test(text)
+      !/(minutes|minute|times|questions|sessions|short time|\d+\s*min)/u.test(text)
     ) {
       failures.push({ code: "home_practice_missing_practical_magnitude", detail: "expect minutes/frequency hints" });
     }
@@ -700,11 +700,11 @@ function validateTurn(ctx) {
     if (!justifiedAbsentMaIm) {
       if (bucket !== "report_related") failures.push({ code: "expected_report_related", detail: String(bucket) });
       const mentionsScopedSubject =
-        //u.test(question) ||
-        //u.test(question) ||
-        //u.test(question) ||
-        /\s+|/u.test(question) ||
-        //u.test(question);
+        /geometry/i.test(question) ||
+        /english/i.test(question) ||
+        /fractions/i.test(question) ||
+        /reading|comprehension/i.test(question) ||
+        /reading/i.test(question);
       const metaScope = String(record.semanticIntentMetadata || "");
       const subjectOk =
         sem === "topic_specific" ||
@@ -742,9 +742,9 @@ function validateTurn(ctx) {
     failures.push({ code: "weak_student_scary_wording", detail: text.slice(0, 160) });
   }
 
-  if (scenario === "F_scoped_thin" && question.includes("") && resStatus === "resolved") {
-    const thinCue = /\s+|\s+|\s+||/u;
-    if (thinCue.test(text) && !//u.test(text)) {
+  if (scenario === "F_scoped_thin" && question.includes("geometry") && resStatus === "resolved") {
+    const thinCue = /few data points|limited data|too early to|cautious|preliminary/i;
+    if (thinCue.test(text) && !/geometry/i.test(text)) {
       failures.push({ code: "scoped_thin_caution_not_scoped_to_geometry", detail: text.slice(0, 220) });
     }
   }

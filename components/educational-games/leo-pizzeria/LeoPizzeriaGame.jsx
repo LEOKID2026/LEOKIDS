@@ -142,17 +142,17 @@ export default function LeoPizzeriaGame({
   const mistakesRef = useRef(0);
   const timeoutHandledForCustomerRef = useRef(-1);
   const timeLeftRef = useRef(0);
-  const advanceTimerRef = useRef(/** @type {ReturnType<typeof setTimeout> || null} */ (null));
+  const advanceTimerRef = useRef(/** @type {ReturnType<typeof setTimeout> | null} */ (null));
 
   const [phase, setPhase] = useState(/** @type {'intro'|'play'|'won'|'lost'} */ (
-    productionMode && autoStart ? "play" : "intro",
+    productionMode && autoStart ? "play" : "intro"
   ));
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ (
-    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy",
+    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy"
   ));
   const [customers, setCustomers] = useState(/** @type {PizzeriaCustomerOrder[]} */ ([]));
   const [customerIndex, setCustomerIndex] = useState(0);
-  const [selectedTopping, setSelectedTopping] = useState(/** @type {string || null} */ (null));
+  const [selectedTopping, setSelectedTopping] = useState(/** @type {string | null} */ (null));
   /** @type {[Record<number, string>, import('react').Dispatch<import('react').SetStateAction<Record<number, string>>>]} */
   const [sliceMap, setSliceMap] = useState({});
   const [score, setScore] = useState(0);
@@ -170,9 +170,9 @@ export default function LeoPizzeriaGame({
   const [compareRelation, setCompareRelation] = useState(/** @type {'greater'|'less'|'equal'|null} */ (null));
   const [controlsLocked, setControlsLocked] = useState(false);
 
-  const dragRef = useRef(/** @type {{ toppingId: string } || null} */ (null));
+  const dragRef = useRef(/** @type {{ toppingId: string } | null} */ (null));
   const [dragGhost, setDragGhost] = useState(
-    /** @type {{ toppingId: string, x: number, y: number } || null} */ (null),
+    /** @type {{ toppingId: string, x: number, y: number } | null} */ (null),
   );
 
   const diffConfig = DIFFICULTIES[difficulty];

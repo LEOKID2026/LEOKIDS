@@ -124,7 +124,7 @@ const SUBJECT_FROM_PATH = [
 const GRADE_FROM_PATH = [
   [/g([1-6])\b/i, (m) => Number(m[1])],
   [/grade[_-]?([1-6])/i, (m) => Number(m[1])],
-  [/\s*([-])/u, (m) => ({ : 1, : 2, : 3, : 4, : 5, : 6 }[m[1]] || "")],
+  [/grade\s*([1-6])/i, (m) => Number(m[1])],
 ];
 
 function collectFiles(relPath) {
@@ -864,17 +864,17 @@ appendSheet(
   "Student Feedback Encouragement",
   studentFeedback.map((e) => ({
     ...e,
-    feedback_type: / |wrong/i.test(e.current_hebrew)
+    feedback_type: /not correct|wrong/i.test(e.current_hebrew)
       ? "wrong"
-      : / | /i.test(e.current_hebrew)
+      : /try again|retry/i.test(e.current_hebrew)
         ? "retry"
-        : / |/i.test(e.current_hebrew)
+        : /great job|streak/i.test(e.current_hebrew)
           ? "encouragement"
-          : /||/i.test(e.current_hebrew)
+          : /finished|completed|reached/i.test(e.current_hebrew)
             ? "completion"
-            : /|/i.test(e.current_hebrew)
+            : /continue|next/i.test(e.current_hebrew)
               ? "next_step"
-              : //i.test(e.current_hebrew)
+              : /correct/i.test(e.current_hebrew)
                 ? "correct"
                 : "progress",
     tone_risk: e.problem_type,

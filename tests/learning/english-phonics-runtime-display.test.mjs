@@ -29,8 +29,8 @@ const G2_PAGES = [
   "picture_audio_word_match",
 ];
 
-const PICTURE_STEM = //u;
-const BROKEN_SLASH_PROMPT = /\/\s+'\s|\s+\/\s+'/u;
+const PICTURE_STEM = /picture/i;
+const BROKEN_SLASH_PROMPT = /\/\s+'\s|read\s+\/\s+'/iu;
 const MANGLED_HEBREW_SLASH = /(?:^|[\s-])\/\s+[\u05d0-\u05ea]\s/u;
 
 function displayTextFromQuestion(q) {

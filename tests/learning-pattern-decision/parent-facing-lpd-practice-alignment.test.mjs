@@ -214,7 +214,7 @@ describe("parent-facing LPD practice alignment", () => {
       accuracy: 50,
       learningPatternDecision: lpd,
     });
-    assert.match(copy.explainSections.meaning, //);
+    assert.match(copy.explainSections.meaning, /too early|early/i);
     assert.equal(guardParentFacingText(copy.primaryFinding).length > 0, true);
   });
 
@@ -257,7 +257,7 @@ describe("parent-facing LPD practice alignment", () => {
       .filter(Boolean)
       .join(" ");
     assert.ok(!/  | | /u.test(allText));
-    assert.match(allText, //);
+    assert.match(allText, /addition/i);
     assert.match(allText, /10/);
     assert.match(copy.explainSections.data, /8 /);
   });

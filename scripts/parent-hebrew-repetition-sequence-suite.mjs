@@ -5,11 +5,11 @@ import { pct, writeArtifact } from "./rollout-artifacts-lib.mjs";
 
 const payload = syntheticPayload({ eligible: true });
 const utterances = [
-  "   ?",
-  "   ?",
-  "   ?",
-  "    ?",
-  "    ?",
+  "What does this mean for fractions?",
+  "What should we do this week?",
+  "What stands out most this period?",
+  "How should I explain this to my child?",
+  "What should we avoid doing right now?",
 ];
 
 const outputs = [];
@@ -21,7 +21,9 @@ for (let i = 0; i < 180; i++) {
     sessionId: `repetition-seq-${i}`,
     selectedContextRef: null,
   });
-  const text = Array.isArray(out?.answerBlocks) ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim() : "";
+  const text = Array.isArray(out?.answerBlocks)
+    ? out.answerBlocks.map((b) => String(b?.answerText || "")).join(" ").trim()
+    : "";
   outputs.push(text);
 }
 

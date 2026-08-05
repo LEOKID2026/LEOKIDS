@@ -17,16 +17,16 @@ test("sanitizeGeometryActivityQuestionStem rewrites algebra-of-angles prefix", (
     kind: "triangle_angles",
     topic: "angles",
   });
-  assert.ok(!//u.test(out));
+  assert.ok(!/algebra/i.test(out));
   assert.equal(out, formatTriangleAnglesKnownTwoStem(57, 67));
 });
 
 test("sanitizeGeometryActivityQuestionStem rewrites equation-style triangle prompt", () => {
   const out = sanitizeGeometryActivityQuestionStem(
-    " : 57° + 67° + ? = 180° -  ?",
+    "Angle equation: 57° + 67° + ? = 180° - find the missing angle?",
     { kind: "triangle_angles", topic: "angles" }
   );
-  assert.ok(!//u.test(out));
+  assert.ok(!/equation/i.test(out));
   assert.equal(out, formatTriangleAnglesKnownTwoStem(57, 67));
 });
 

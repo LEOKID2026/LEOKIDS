@@ -57,10 +57,10 @@ export default function LeoBakeryGame({
   const timeoutHandledRef = useRef(false);
 
   const [phase, setPhase] = useState(/** @type {'intro'|'play'|'won'|'lost'} */ (
-    productionMode && autoStart ? "play" : "intro",
+    productionMode && autoStart ? "play" : "intro"
   ));
   const [difficulty, setDifficulty] = useState(/** @type {DifficultyId} */ (
-    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy",
+    productionMode && autoStart ? /** @type {DifficultyId} */ (initialDifficulty) : "easy"
   ));
   const [taskIndex, setTaskIndex] = useState(0);
   const [task, setTask] = useState(/** @type {import('./leo-bakery-data.js').BakeryTask|null} */ (null));

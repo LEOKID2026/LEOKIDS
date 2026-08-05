@@ -152,9 +152,9 @@ test("Science preview throws for empty pool (g1 experiments hard)", async () => 
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), /   /);
-      assert.match(String(err.message), / /);
-      assert.match(String(err.message), //);
+      assert.match(String(err.message), /not enough science questions/i);
+      assert.match(String(err.message), /Grade 1/i);
+      assert.match(String(err.message), /experiments/i);
       return true;
     }
   );

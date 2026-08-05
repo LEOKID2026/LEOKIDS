@@ -90,7 +90,7 @@ function createMockSupabase(cfg = {}) {
 
 describe("economy-errors", () => {
   test("EconomyUnavailableError carries code and details", () => {
-    const err = new EconomyUnavailableError("economy_config_missing", "", {
+    const err = new EconomyUnavailableError("economy_config_missing", "missing", {
       details: { missing: ["tiers"] },
     });
     assert.equal(err.code, "economy_config_missing");
@@ -216,10 +216,10 @@ describe("reward-feature-flags fail-closed helpers", () => {
     const { economyFeatureUnavailableResponse } = await import(
       "../../lib/rewards/reward-feature-flags.js"
     );
-    const body = economyFeatureUnavailableResponse("economy_disabled", "");
+    const body = economyFeatureUnavailableResponse("economy_disabled", "disabled");
     assert.equal(body.ok, false);
     assert.equal(body.unavailable, true);
     assert.equal(body.error, "economy_disabled");
-    assert.equal(body.messageHe, "");
+    assert.equal(body.message, "disabled");
   });
 });

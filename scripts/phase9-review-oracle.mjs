@@ -76,9 +76,9 @@ function hebrewLetters(s) {
 
 function parentInsightFingerprintOk(text) {
   const t = String(text || "");
-  if (/\s+/u.test(t)) return { ok: true, kind: "tovana_lehora" };
-  if (/\s+\s+/u.test(t)) return { ok: true, kind: "sihum_haham_lehora" };
-  if (//u.test(t) && //u.test(t)) return { ok: true, kind: "sihum_lehora" };
+  if (/insight\s+for\s+parents/u.test(t)) return { ok: true, kind: "tovana_lehora" };
+  if (/smart\s+summary\s+for\s+parents/u.test(t)) return { ok: true, kind: "sihum_haham_lehora" };
+  if (/summary/u.test(t) && /parents/u.test(t)) return { ok: true, kind: "sihum_lehora" };
   return { ok: false, kind: "none" };
 }
 
@@ -453,8 +453,8 @@ async function main() {
     if (thinById.has(sid)) {
       const tinfo = thinById.get(sid);
       const lowQ = Number(tinfo?.questionCount || 0) <= 20;
-      const cautious = THIN_DATA_INSUFFICIENT_RE.test(bigSurface) || /|\s+|\s+/u.test(bigSurface);
-      const over = /||\s+|\s+|100%/u.test(bigSurface) && !cautious;
+      const cautious = THIN_DATA_INSUFFICIENT_RE.test(bigSurface) || /limited|early to conclude|few data points/u.test(bigSurface);
+      const over = /excellent|perfect|no weaknesses|full accuracy|100%/u.test(bigSurface) && !cautious;
       if (!cautious && lowQ) {
         score += W.thin_overconfident;
         flags.push("thin_data_missing_explicit_caution");
@@ -500,7 +500,7 @@ async function main() {
         flags.push("weak_accuracy_not_low");
       }
       const wtext = bigSurface;
-      const actionable = /||||/u.test(wtext);
+      const actionable = /practice|home|questions|minutes|step/u.test(wtext);
       if (!actionable) {
         score += W.weak_vague;
         flags.push("weak_topic_low_actionability_heuristic");

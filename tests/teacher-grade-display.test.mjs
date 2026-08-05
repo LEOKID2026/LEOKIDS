@@ -56,7 +56,7 @@ test("generator error messages do not contain raw grade keys", async () => {
         count: 5,
       }),
     (err) => {
-      assert.match(String(err.message), //);
+      assert.match(String(err.message), /Grade/i);
       assert.doesNotMatch(String(err.message), /\bg[1-6]\b/);
       return true;
     }

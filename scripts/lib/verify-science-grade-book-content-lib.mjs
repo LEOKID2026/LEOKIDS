@@ -110,8 +110,8 @@ export function verifyScienceGradeBookContent(opts) {
     if (/science:topic:/i.test(childFacing)) {
       errors.push(`${pageId}: internal skill_id exposed in child-facing body`);
     }
-    if (!//.test(childFacing)) {
-      errors.push(`${pageId}: child-facing body should mention  at least once`);
+    if (!/science/i.test(childFacing)) {
+      errors.push(`${pageId}: child-facing body should mention science at least once`);
     }
 
     const s5 = sectionBody(page, 5);

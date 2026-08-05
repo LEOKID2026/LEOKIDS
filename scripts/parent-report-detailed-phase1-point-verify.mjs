@@ -21,9 +21,9 @@ const SUPABASE_ANON = process.env.NEXT_PUBLIC_LEARNING_SUPABASE_ANON_KEY || "";
 const SERVICE_KEY = process.env.LEARNING_SUPABASE_SERVICE_ROLE_KEY || "";
 const OMER_PARENT_EMAIL = process.env.PARENT_REPORT_DOM_PARENT_EMAIL || "18eran@gmail.com";
 
-const PHASE3_NEW_TITLES = ["    ", "   ", "  "];
-const PHASE3_OLD_TITLES = ["  ", "  ", "    "];
-const FORBIDDEN = ["    ", "    ", "   "];
+const PHASE3_NEW_TITLES = ["What to pay attention to", "What to avoid right now", "Ready to advance?"];
+const PHASE3_OLD_TITLES = ["What repeats as a mistake", "What not to do", "Is this retained in a new question"];
+const FORBIDDEN = ["How to work on this", "What to do in this subject", "Short ideas for home"];
 
 function supabaseAuthStorageKey(url) {
   try {
@@ -66,7 +66,7 @@ const CHECK_FN = () => {
     const letterText = t(block.querySelector(".pr-detailed-subject-letter"));
     const tierGroups = block.querySelectorAll(".pr-detailed-topic-tier-group").length;
     const topicCards = block.querySelectorAll(".pr-detailed-topic-rec-block .pr-detailed-topic-rec-card, .pr-detailed-topic-rec-item").length;
-    const qMatch = metrics.match(/:\s*(\d+)/);
+    const qMatch = metrics.match(/Questions:\s*(\d+)/i);
     return {
       title,
       metrics,
@@ -78,7 +78,7 @@ const CHECK_FN = () => {
     };
   });
 
-  const math = subjects.find((s) => //i.test(s.title));
+  const math = subjects.find((s) => /math/i.test(s.title));
 
   return {
     pageLoaded: Boolean(root),
@@ -86,7 +86,7 @@ const CHECK_FN = () => {
     subjects,
     mathQuestionCount: math?.questionCount ?? null,
     mathMetrics: math?.metrics ?? "",
-    hasOutOfGrade: /   /.test(fullText),
+    hasOutOfGrade: /Practice outside registered grade/i.test(fullText),
     fullTextSample: fullText.slice(0, 8000),
     phase3LabelsAll: subjects.flatMap((s) => s.phase3Labels),
     tierGroupCount: subjects.reduce((n, s) => n + s.tierGroups, 0),

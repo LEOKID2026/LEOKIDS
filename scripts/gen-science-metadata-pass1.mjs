@@ -73,19 +73,19 @@ function inWeakCell(q) {
 
 function resolveAnimals(stem, patternFamily) {
   const s = stem;
-  if (/||/.test(s))
+  if (/mammal|milk|nurse/i.test(s))
     return { skill: "sci_animals_mammal_groups", concept: "mammal_classification", family: "animals_mammal_groups" };
-  if (/|||/.test(s))
+  if (/fish|fin|gill|water/i.test(s))
     return { skill: "sci_animals_aquatic_adaptation", concept: "fish_water_adaptation", family: "animals_aquatic_adaptation" };
-  if (/|/.test(s))
+  if (/reptile|scale/i.test(s))
     return { skill: "sci_animals_reptile_traits", concept: "reptile_traits", family: "animals_reptile_traits" };
-  if (/|||/.test(s))
+  if (/bird|feather|chicken|egg/i.test(s))
     return { skill: "sci_animals_bird_traits", concept: "bird_traits", family: "animals_bird_traits" };
-  if (/|||.*|/.test(s))
+  if (/life cycle|larva|pupa|egg.*butterfly|butterfly/i.test(s))
     return { skill: "sci_animals_life_cycle", concept: "animal_life_cycle", family: "animals_life_cycle" };
-  if (/|| |.*||/.test(s))
+  if (/predator|prey|food chain|carnivore|herbivore/i.test(s))
     return { skill: "sci_animals_food_chain", concept: "food_chain_roles", family: "animals_food_chain" };
-  if (/||| |/.test(s))
+  if (/desert|adapt|camouflage|habitat|camel/i.test(s))
     return { skill: "sci_animals_habitat_adaptation", concept: "habitat_adaptation", family: "animals_habitat_adaptation" };
   if (patternFamily === "sci_animals_life_processes")
     return { skill: "sci_animals_life_processes", concept: "animal_life_process", family: "animals_life_processes" };
@@ -98,17 +98,17 @@ function resolveAnimals(stem, patternFamily) {
 
 function resolvePlants(stem, patternFamily) {
   const s = stem;
-  if (/||/.test(s))
+  if (/sun|light|shade/i.test(s))
     return { skill: "sci_plants_light_photosynthesis", concept: "light_and_plants", family: "plants_light_photosynthesis" };
-  if (/|||||/.test(s))
+  if (/root|stem|leaf|flower|seed|sprout/i.test(s))
     return {
       skill: patternFamily === "sci_plants_parts" ? "sci_plants_structure" : "sci_plants_structure",
       concept: "plant_parts_roles",
       family: "plants_structure_parts",
     };
-  if (/||/.test(s))
+  if (/water|irrigation|moisture/i.test(s))
     return { skill: "sci_plants_water_needs", concept: "plant_water_needs", family: "plants_water_needs" };
-  if (/|/.test(s))
+  if (/air/i.test(s))
     return { skill: "sci_plants_air_needs", concept: "plant_air_needs", family: "plants_air_needs" };
   if (patternFamily === "sci_plants_parts")
     return { skill: "sci_plants_structure", concept: "plant_parts", family: "plants_structure" };
@@ -117,46 +117,46 @@ function resolvePlants(stem, patternFamily) {
 
 function resolveExperiments(stem, patternFamily) {
   const s = stem;
-  if (patternFamily === "sci_experiments_observation_inference" || //.test(s))
+  if (patternFamily === "sci_experiments_observation_inference" || /observation/i.test(s))
     return {
       skill: "sci_experiments_observation_inference",
       concept: "observation_inference",
       family: "experiments_observation_inference",
     };
-  if (patternFamily === "sci_earth_space_cycles" || / ||/.test(s))
+  if (patternFamily === "sci_earth_space_cycles" || /day and night|seasons|cycle/i.test(s))
     return { skill: "sci_experiments_earth_cycles", concept: "earth_cycle_observation", family: "experiments_earth_cycles" };
-  if (/||/.test(s))
+  if (/variable|control|single/i.test(s))
     return { skill: "sci_experiments_fair_test", concept: "controlled_variable", family: "experiments_fair_test" };
-  if (//.test(s))
+  if (/hypothesis/i.test(s))
     return { skill: "sci_experiments_hypothesis", concept: "testable_hypothesis", family: "experiments_hypothesis" };
-  if (/||||/.test(s))
+  if (/measure|ruler|weight|clock|units/i.test(s))
     return { skill: "sci_experiments_measurement", concept: "measurement_tools", family: "experiments_measurement" };
-  if (/|| /.test(s))
+  if (/safety|danger|do not taste/i.test(s))
     return { skill: "sci_experiments_lab_safety", concept: "lab_safety_rules", family: "experiments_lab_safety" };
-  if (/|||/.test(s))
+  if (/table|record|log|journal/i.test(s))
     return { skill: "sci_experiments_data_recording", concept: "experiment_recording", family: "experiments_data_recording" };
-  if (/||/.test(s))
+  if (/conclusion|evidence|data/i.test(s))
     return { skill: "sci_experiments_evidence_conclusion", concept: "data_based_conclusion", family: "experiments_evidence_conclusion" };
-  if (/| |/.test(s))
+  if (/control group|comparison/i.test(s))
     return { skill: "sci_experiments_control_group", concept: "control_comparison", family: "experiments_control_group" };
   return { skill: "sci_experiments_scientific_method", concept: "scientific_method_step", family: "experiments_scientific_method" };
 }
 
 function resolveBody(stem) {
   const s = stem;
-  if (/||| |-|/.test(s))
+  if (/lung|breath|oxygen|carbon dioxide|air/i.test(s))
     return { skill: "sci_respiration_concept", concept: "respiration_gas_exchange", family: "body_respiration", probePower: "high" };
-  if (/||||/.test(s))
+  if (/heart|blood|pulse|artery|vein/i.test(s))
     return { skill: "sci_body_circulation", concept: "heart_blood_circulation", family: "body_circulation" };
-  if (/|||||||/.test(s))
+  if (/digest|stomach|intestine|food|saliva|chew|swallow|liver/i.test(s))
     return { skill: "sci_body_digestion", concept: "digestion_pathway", family: "body_digestion" };
-  if (/||||/.test(s))
+  if (/bone|skeleton|muscle|joint|calcium/i.test(s))
     return { skill: "sci_body_skeleton_muscles", concept: "skeleton_muscles_role", family: "body_skeleton_muscles" };
-  if (/||||||||/.test(s))
+  if (/skin|sense|eye|ear|nose|tongue|sight|hearing|touch/i.test(s))
     return { skill: "sci_body_senses", concept: "senses_and_skin", family: "body_senses" };
-  if (/|||/.test(s))
+  if (/kidney|waste|urine|excretion/i.test(s))
     return { skill: "sci_body_excretory", concept: "excretory_filtration", family: "body_excretory" };
-  if (/|| |/.test(s))
+  if (/nerve|brain|spinal cord|reflex/i.test(s))
     return { skill: "sci_body_nervous", concept: "nervous_coordination", family: "body_nervous" };
   return { skill: "sci_body_systems_basic", concept: "body_system_role", family: "body_systems_basic" };
 }

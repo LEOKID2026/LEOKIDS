@@ -184,7 +184,7 @@ test("activity geometry diagram: single mini in stage flow with enlarge, no embe
   );
   assert.match(stage, /GeometryExplanationDiagram/);
   assert.match(stage, /\bmini\b/);
-  assert.match(stage, //);
+  assert.match(stage, /Expand/i);
   assert.match(stage, /onExpandDiagram/);
   assert.match(stage, /w-full shrink-0 flex justify-center/);
   assert.doesNotMatch(stage, /absolute bottom-0 left-1\/2/);

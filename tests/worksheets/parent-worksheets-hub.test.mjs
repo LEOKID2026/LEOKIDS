@@ -77,7 +77,7 @@ describe("parent-worksheets-hub", () => {
   test("hub does not reference parent report pages", () => {
     const hubSrc = readFileSync(join(ROOT, "components/worksheets/ParentWorksheetsHub.jsx"), "utf8");
     assert.doesNotMatch(hubSrc, /parent-report/);
-    assert.doesNotMatch(hubSrc, //);
+    assert.doesNotMatch(hubSrc, /[\u0590-\u05FF]/);
   });
 
   test("parent dashboard links to worksheets hub", () => {
