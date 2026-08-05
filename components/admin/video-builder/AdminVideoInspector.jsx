@@ -17,7 +17,7 @@ import {
   VB_SCENE_N,
   VB_SCENE_SUBTITLE,
   VB_SCENE_TITLE,
-} from "../../../lib/admin-portal/admin-video-builder-ui.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 const TABS = [
   { id: "content", label: VB_INSPECTOR_TAB_CONTENT },
@@ -172,7 +172,7 @@ export default function AdminVideoInspector({
                   }}
                   className="shrink-0 rounded border border-white/20 px-2.5 py-1 text-xs hover:bg-white/10"
                 >
-
+                  בחר
                 </button>
                 {scene.mediaAssetId ? (
                   <button
@@ -180,7 +180,7 @@ export default function AdminVideoInspector({
                     onClick={() => onScenePatch({ mediaAssetId: null })}
                     className="shrink-0 text-xs text-red-300 hover:underline"
                   >
-
+                    הסר
                   </button>
                 ) : null}
               </div>
@@ -189,7 +189,7 @@ export default function AdminVideoInspector({
         ) : null}
 
         {tab === "content" && !scene ? (
-          <p className="text-sm text-white/40 text-center py-8">/   </p>
+          <p className="text-sm text-white/40 text-center py-8">הוסיפ/י סצנה כדי להתחיל</p>
         ) : null}
 
         {tab === "style" && scene ? (
@@ -197,7 +197,7 @@ export default function AdminVideoInspector({
         ) : null}
 
         {tab === "style" && !scene ? (
-          <p className="text-sm text-white/40 text-center py-8">  </p>
+          <p className="text-sm text-white/40 text-center py-8">אין סצנה נבחרת</p>
         ) : null}
 
         {tab === "audio" ? (

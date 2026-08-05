@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
-import { formatRarityHe } from "../../../lib/admin-portal/admin-rewards-ui.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { formatRarityHe } from "../../../lib/admin-portal/admin-rewards-ui.he.js";
 import {
   adminRewardsCardsUrl,
   filterAdminShopCatalogCards,
@@ -25,13 +25,13 @@ async function saveSetting(token, key, value) {
     body: JSON.stringify({ key, value }),
   });
   const body = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(apiErrorMessageHe(body?.error, "Save failed"));
+  if (!res.ok) throw new Error(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
 }
 
 function formatCardPriceDisplay(card, defaultPrices) {
   if (card.use_default_price !== false) {
     const fallback = defaultPrices?.[card.rarity];
-    return fallback != null ? `${fallback} (default)` : "Default";
+    return fallback != null ? `${fallback} (ברירת מחדל)` : "ברירת מחדל";
   }
   return card.price_coins != null ? String(card.price_coins) : "-";
 }
@@ -97,7 +97,7 @@ export default function AdminShopTab({ accessToken }) {
     setMessage("");
     try {
       await saveSetting(accessToken, "shop_default_prices", prices);
-      setMessage("Default prices saved.");
+      setMessage("מחירי ברירת מחדל נשמרו.");
     } catch (e) {
       setMessage(e.message);
     } finally {
@@ -123,10 +123,10 @@ export default function AdminShopTab({ accessToken }) {
     const body = await res.json().catch(() => ({}));
     setBusy("");
     if (!res.ok) {
-      setMessage(apiErrorMessageHe(body?.error, "Save failed"));
+      setMessage(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
       return;
     }
-    setMessage(`Price for ${card.name} saved.`);
+    setMessage(`מחיר ${card.name_he} נשמר.`);
     closePriceEdit();
     void load();
   };
@@ -135,7 +135,7 @@ export default function AdminShopTab({ accessToken }) {
   if (phase === "error") return <p className="text-red-300 text-sm text-right">{error}</p>;
 
   const editingCard = cards.find((c) => c.id === editCardId);
-  const editTitle = editingCard?.name ? `Edit price: ${editingCard.name}` : "Edit price";
+  const editTitle = editingCard?.name_he ? `עריכת מחיר: ${editingCard.name_he}` : "עריכת מחיר";
   const modalMessage = message && editCardId;
   const pageMessage = message && !editCardId;
 
@@ -143,15 +143,15 @@ export default function AdminShopTab({ accessToken }) {
     <div className="text-right space-y-4 overflow-x-hidden">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs text-white/60">
-          Showing {cards.length} shop cards
-          {!includeInactive ? " (active and purchasable)" : " (including archive)"}
+          מוצגים {cards.length} קלפי חנות
+          {!includeInactive ? " (פעילים וניתנים לרכישה)" : " (כולל ארכיון)"}
         </p>
         <AdminCatalogArchiveToggle checked={includeInactive} onChange={setIncludeInactive} />
       </div>
       {pageMessage ? <p className="text-sm text-emerald-300">{pageMessage}</p> : null}
 
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-        <h3 className="text-sm font-bold mb-3">Prices Default by rarity</h3>
+        <h3 className="text-sm font-bold mb-3">מחירי ברירת מחדל לפי נדירות</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
           {["regular", "special", "rare", "gold"].map((r) => (
             <label key={r}>
@@ -171,37 +171,37 @@ export default function AdminShopTab({ accessToken }) {
           onClick={() => void saveDefaults()}
           className="mt-3 rounded bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
         >
-          Save
+          שמירה
         </button>
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-        <h3 className="text-sm font-bold mb-3">Per-card price</h3>
+        <h3 className="text-sm font-bold mb-3">מחיר לפי קלף</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-right min-w-[480px]">
             <thead>
               <tr className="text-white/60 border-b border-white/10">
-                <th className="py-2 px-2">Name</th>
-                <th className="py-2 px-2">Rarity</th>
-                <th className="py-2 px-2">Price</th>
-                <th className="py-2 px-2">Default</th>
+                <th className="py-2 px-2">שם</th>
+                <th className="py-2 px-2">נדירות</th>
+                <th className="py-2 px-2">מחיר</th>
+                <th className="py-2 px-2">ברירת מחדל</th>
                 <th className="py-2 px-2" />
               </tr>
             </thead>
             <tbody>
               {cards.map((card) => (
                 <tr key={card.id} className="border-b border-white/5">
-                  <td className="py-2 px-2">{card.name}</td>
+                  <td className="py-2 px-2">{card.name_he}</td>
                   <td className="py-2 px-2">{formatRarityHe(card.rarity)}</td>
                   <td className="py-2 px-2">{formatCardPriceDisplay(card, prices)}</td>
-                  <td className="py-2 px-2">{card.use_default_price !== false ? "Yes" : "No"}</td>
+                  <td className="py-2 px-2">{card.use_default_price !== false ? "כן" : "לא"}</td>
                   <td className="py-2 px-2">
                     <button
                       type="button"
                       onClick={() => startPriceEdit(card)}
                       className="rounded border border-white/15 px-2 py-1 hover:bg-white/5"
                     >
-                      Edit
+                      עריכה
                     </button>
                   </td>
                 </tr>
@@ -219,33 +219,33 @@ export default function AdminShopTab({ accessToken }) {
         footer={
           <>
             <AdminModalButton onClick={closePriceEdit} disabled={busy === editCardId}>
-              Cancel
+              ביטול
             </AdminModalButton>
             <AdminModalButton
               variant="primary"
               onClick={() => void saveCardPrice()}
               disabled={busy === editCardId}
               busy={busy === editCardId}
-              busyLabel="Saving..."
+              busyLabel="שומר..."
             >
-              Save
+              שמירה
             </AdminModalButton>
           </>
         }
       >
         {modalMessage ? (
-          <p className={`text-sm mb-3 ${message.includes("failed") ? "text-red-300" : "text-emerald-300"}`}>
+          <p className={`text-sm mb-3 ${message.includes("נכשל") ? "text-red-300" : "text-emerald-300"}`}>
             {message}
           </p>
         ) : null}
         {editingCard ? (
           <div className="space-y-4 text-sm">
             <div>
-              <p className="text-white/50 text-xs mb-1">Card name</p>
-              <p className="font-semibold">{editingCard.name || "-"}</p>
+              <p className="text-white/50 text-xs mb-1">שם הקלף</p>
+              <p className="font-semibold">{editingCard.name_he || "-"}</p>
             </div>
             <div>
-              <p className="text-white/50 text-xs mb-1">Current price</p>
+              <p className="text-white/50 text-xs mb-1">מחיר נוכחי</p>
               <p className="font-semibold text-amber-200">
                 {formatCardPriceDisplay(editingCard, prices)}
               </p>
@@ -258,11 +258,11 @@ export default function AdminShopTab({ accessToken }) {
                   setPriceDraft((d) => ({ ...d, use_default_price: e.target.checked }))
                 }
               />
-              Default price by rarity
+              מחיר ברירת מחדל לפי נדירות
             </label>
             {!priceDraft.use_default_price ? (
               <label className="block">
-                Price in coins
+                מחיר במטבעות
                 <input
                   type="number"
                   className={inputClass}

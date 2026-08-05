@@ -15,7 +15,7 @@ import {
   ADMIN_PARENT_UNLINKED_DETAIL_NOTE,
   ADMIN_PARENT_UNLINKED_STATUS,
   apiErrorMessageHe,
-} from "../../../lib/admin-portal/admin-ui.js";
+} from "../../../lib/admin-portal/admin-ui.he.js";
 
 export default function AdminParentDetailPage() {
   const router = useRouter();

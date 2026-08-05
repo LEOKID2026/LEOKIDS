@@ -28,7 +28,7 @@ import {
 } from "../../lib/admin-server/admin-video-builder.server.js";
 import { computePreviewTotalDurationSec } from "../../lib/admin-portal/admin-video-builder-utils.js";
 import { getExportDimensions, VB_ASPECT_RATIOS } from "../../lib/admin-portal/admin-video-builder-catalog.js";
-import { VB_FFMPEG_UNAVAILABLE } from "../../lib/admin-portal/admin-video-builder-ui.js";
+import { VB_FFMPEG_UNAVAILABLE } from "../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
@@ -76,9 +76,9 @@ describe("admin video builder - page & auth contract", () => {
 
 describe("parseVideoProjectBody", () => {
   test("accepts valid project with scenes", () => {
-    const parsed = parseVideoProjectBody(createEmptyProjectPayload(""));
+    const parsed = parseVideoProjectBody(createEmptyProjectPayload("בדיקה"));
     assert.equal(parsed.ok, true);
-    assert.equal(parsed.payload.name, "");
+    assert.equal(parsed.payload.name, "בדיקה");
     assert.equal(parsed.payload.aspectRatio, "16:9");
     assert.equal(parsed.payload.scenes.length, 1);
   });
@@ -170,7 +170,7 @@ describe("local storage CRUD", () => {
   let projectId = null;
 
   test("create draft project", async () => {
-    const created = await createVideoProject(createEmptyProjectPayload(" "));
+    const created = await createVideoProject(createEmptyProjectPayload("טיוטת בדיקה"));
     assert.equal(created.ok, true);
     projectId = created.project.id;
     assert.ok(projectId);
@@ -217,7 +217,7 @@ describe("local storage CRUD", () => {
   });
 
   test("archive hides project from default list", async () => {
-    const created = await createVideoProject(createEmptyProjectPayload(" "));
+    const created = await createVideoProject(createEmptyProjectPayload("ארכיון בדיקה"));
     assert.equal(created.ok, true);
     const id = created.project.id;
     const archived = await setVideoProjectArchived(id, true);
@@ -260,11 +260,11 @@ describe("MP4 export", () => {
     const media = await saveMediaAsset(png, "image/png", "export-scene.png");
     assert.equal(media.ok, true);
 
-    const payload = createEmptyProjectPayload(" ");
+    const payload = createEmptyProjectPayload("ייצוא בדיקה");
     payload.scenes[0] = {
       ...payload.scenes[0],
-      title: "",
-      subtitle: "",
+      title: "שלום",
+      subtitle: "עולם",
       mediaAssetId: media.asset.id,
       durationSec: 2,
       bgType: "colorful",

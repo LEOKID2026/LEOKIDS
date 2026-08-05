@@ -13,7 +13,7 @@ import {
   apiErrorMessageHe,
   entitlementStatusLabelHe,
   personaLabelHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 /**
  * @param {{
@@ -66,7 +66,7 @@ export default function AdminSchoolStaffLifecycleCompact({
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, " "));
+        setError(apiErrorMessageHe(json?.error, "הפעולה נכשלה"));
         return;
       }
       setStatus(json?.data?.entitlement?.status || status);
@@ -145,7 +145,7 @@ export default function AdminSchoolStaffLifecycleCompact({
         footer={
           <>
             <AdminModalButton onClick={() => setRevokeConfirmOpen(false)} disabled={busy}>
-
+              ביטול
             </AdminModalButton>
             <AdminModalButton
               variant="danger"

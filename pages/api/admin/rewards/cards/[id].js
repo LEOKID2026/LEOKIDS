@@ -6,7 +6,6 @@ import { guardRewardsAdminApi } from "../../../../../lib/rewards/guards.server.j
 import { isCardRewardsEnabled } from "../../../../../lib/rewards/reward-feature-flags.js";
 import {
   pickCardWritableFields,
-  serializeAdminRewardCard,
   validateCardPayload,
 } from "../../../../../lib/rewards/server/admin-card-rules.server.js";
 
@@ -32,7 +31,7 @@ export default async function handler(req, res) {
       .eq("id", id)
       .maybeSingle();
     if (fetchErr) return sendAdminApiError(res, 500, "db_error", fetchErr.message);
-    if (!existing) return sendAdminApiError(res, 404, "card_not_found", "  ");
+    if (!existing) return sendAdminApiError(res, 404, "card_not_found", "קלף לא נמצא");
 
     const body = pickCardWritableFields(req.body || {});
     if (Object.prototype.hasOwnProperty.call(body, "id")) {
@@ -50,7 +49,7 @@ export default async function handler(req, res) {
       .select("*")
       .single();
     if (error) return sendAdminApiError(res, 400, "update_failed", error.message);
-    return res.status(200).json({ ok: true, card: serializeAdminRewardCard(data) });
+    return res.status(200).json({ ok: true, card: data });
   }
 
   res.setHeader("Allow", "PUT");

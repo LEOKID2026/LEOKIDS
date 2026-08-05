@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
 import {
   formatCardTypeHe,
   formatRarityHe,
   formatVisibilityModeHe,
   CARD_RARITY_OPTIONS,
   CARD_TYPE_OPTIONS,
-} from "../../../lib/admin-portal/admin-rewards-ui.js";
+} from "../../../lib/admin-portal/admin-rewards-ui.he.js";
 import {
   adminRewardsCardsUrl,
   adminRewardsSeriesUrl,
@@ -23,15 +23,15 @@ const inputClass =
 
 const EMPTY_CREATE = {
   card_key: "",
-  name: "",
-  description: "",
+  name_he: "",
+  description_he: "",
   image_url: "",
   series_id: "",
   rarity: "regular",
   card_type: "shop",
   event_reward_mode: "achievement",
   visibility_mode: "visible_locked",
-  requirementText: "",
+  requirement_text_he: "",
   use_default_price: true,
   price_coins: null,
   is_active: true,
@@ -40,8 +40,8 @@ const EMPTY_CREATE = {
 };
 
 const EDIT_TABS = [
-  { id: "details", label: "Card details" },
-  { id: "rules", label: "Earn rules" },
+  { id: "details", label: "פרטי קלף" },
+  { id: "rules", label: "חוקי קבלה" },
 ];
 
 export default function AdminCardsTab({ accessToken }) {
@@ -97,8 +97,8 @@ export default function AdminCardsTab({ accessToken }) {
     setCreateOpen(false);
     setDraft({
       card_key: card.card_key || "",
-      name: card.name || "",
-      description: card.description || "",
+      name_he: card.name_he || "",
+      description_he: card.description_he || "",
       image_url: card.image_url || "",
       image_asset_key: card.image_asset_key || "",
       series_id: card.series_id || "",
@@ -108,7 +108,7 @@ export default function AdminCardsTab({ accessToken }) {
       subject: card.subject || "",
       topic: card.topic || "",
       visibility_mode: card.visibility_mode || "visible_locked",
-      requirementText: card.requirementText || "",
+      requirement_text_he: card.requirement_text_he || "",
       price_coins: card.price_coins,
       use_default_price: card.use_default_price !== false,
       box_weight: card.box_weight,
@@ -135,10 +135,10 @@ export default function AdminCardsTab({ accessToken }) {
     const body = await res.json().catch(() => ({}));
     setBusy("");
     if (!res.ok) {
-      setMessage(apiErrorMessageHe(body?.error, "Save failed"));
+      setMessage(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
       return;
     }
-    setMessage("Card saved.");
+    setMessage("קלף נשמר.");
     void load();
   };
 
@@ -147,7 +147,7 @@ export default function AdminCardsTab({ accessToken }) {
     setMessage("");
     const payload = { ...createDraft };
     if (!payload.card_key?.trim()) {
-      setMessage("Card key (card_key) is required.");
+      setMessage("מפתח קלף (card_key) חובה.");
       setBusy("");
       return;
     }
@@ -158,10 +158,10 @@ export default function AdminCardsTab({ accessToken }) {
     const body = await res.json().catch(() => ({}));
     setBusy("");
     if (!res.ok) {
-      setMessage(apiErrorMessageHe(body?.error, "Create failed"));
+      setMessage(apiErrorMessageHe(body?.error, "יצירה נכשלה"));
       return;
     }
-    setMessage("New card created.");
+    setMessage("קלף חדש נוצר.");
     closeCreate();
     void load();
     if (body.card?.id) startEdit(body.card);
@@ -172,18 +172,18 @@ export default function AdminCardsTab({ accessToken }) {
 
   const typeCounts = countCardsByType(cards);
   const editingCard = cards.find((c) => c.id === editId);
-  const editModalTitle = editingCard?.name
-    ? `Edit card: ${editingCard.name}`
-    : "Edit card";
+  const editModalTitle = editingCard?.name_he
+    ? `עריכת קלף: ${editingCard.name_he}`
+    : "עריכת קלף";
   const showModalMessage = message && (createOpen || editId);
 
   return (
     <div className="text-right overflow-x-hidden">
       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
         <p className="text-xs text-white/60">
-          Showing {cards.length} Cards
-          {!includeInactive ? " (active only)" : " (including archive)"}
-          {" · "}ItemItemItemItem {typeCounts.shop} · ItemItemItemItem {typeCounts.achievement} · ItemItemItem {typeCounts.event}
+          מוצגים {cards.length} קלפים
+          {!includeInactive ? " (פעילים בלבד)" : " (כולל ארכיון)"}
+          {" · "}חנות {typeCounts.shop} · הישג {typeCounts.achievement} · אירוע {typeCounts.event}
         </p>
         <div className="flex flex-wrap gap-2 items-center">
           <button
@@ -195,7 +195,7 @@ export default function AdminCardsTab({ accessToken }) {
             }}
             className="rounded bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs font-semibold"
           >
-            New card
+            קלף חדש
           </button>
           <AdminCatalogArchiveToggle checked={includeInactive} onChange={setIncludeInactive} />
         </div>
@@ -208,22 +208,22 @@ export default function AdminCardsTab({ accessToken }) {
         <table className="w-full text-xs text-right min-w-[640px]">
           <thead>
             <tr className="text-white/60 border-b border-white/10">
-              <th className="py-2 px-2">Name</th>
-              <th className="py-2 px-2">ItemItemItem</th>
-              <th className="py-2 px-2">Rarity</th>
-              <th className="py-2 px-2">Display</th>
-              <th className="py-2 px-2">Active</th>
+              <th className="py-2 px-2">שם</th>
+              <th className="py-2 px-2">סוג</th>
+              <th className="py-2 px-2">נדירות</th>
+              <th className="py-2 px-2">תצוגה</th>
+              <th className="py-2 px-2">פעיל</th>
               <th className="py-2 px-2" />
             </tr>
           </thead>
           <tbody>
             {cards.map((card) => (
               <tr key={card.id} className="border-b border-white/5">
-                <td className="py-2 px-2">{card.name || "-"}</td>
+                <td className="py-2 px-2">{card.name_he || "-"}</td>
                 <td className="py-2 px-2">{formatCardTypeHe(card.card_type)}</td>
                 <td className="py-2 px-2">{formatRarityHe(card.rarity)}</td>
                 <td className="py-2 px-2">{formatVisibilityModeHe(card.visibility_mode)}</td>
-                <td className="py-2 px-2">{card.is_active ? "Yes" : "No"}</td>
+                <td className="py-2 px-2">{card.is_active ? "כן" : "לא"}</td>
                 <td className="py-2 px-2">
                   <button
                     type="button"
@@ -233,7 +233,7 @@ export default function AdminCardsTab({ accessToken }) {
                     }}
                     className="rounded border border-white/15 px-2 py-1 hover:bg-white/5"
                   >
-                    Edit
+                    עריכה
                   </button>
                 </td>
               </tr>
@@ -245,27 +245,27 @@ export default function AdminCardsTab({ accessToken }) {
       <AdminModal
         open={createOpen}
         onClose={closeCreate}
-        title="New card"
+        title="קלף חדש"
         size="xl"
         footer={
           <>
             <AdminModalButton onClick={closeCreate} disabled={busy === "create"}>
-              Cancel
+              ביטול
             </AdminModalButton>
             <AdminModalButton
               variant="primary"
               onClick={() => void createCard()}
               disabled={busy === "create"}
               busy={busy === "create"}
-              busyLabel="Creating..."
+              busyLabel="יוצר..."
             >
-              Create
+              יצירה
             </AdminModalButton>
           </>
         }
       >
         {showModalMessage ? (
-          <p className={`text-sm mb-3 ${message.includes("failed") || message.includes("required") ? "text-red-300" : "text-emerald-300"}`}>
+          <p className={`text-sm mb-3 ${message.includes("נכשל") || message.includes("חובה") ? "text-red-300" : "text-emerald-300"}`}>
             {message}
           </p>
         ) : null}
@@ -286,25 +286,25 @@ export default function AdminCardsTab({ accessToken }) {
           editTab === "details" ? (
             <>
               <AdminModalButton onClick={closeEdit} disabled={busy === editId}>
-                Cancel
+                ביטול
               </AdminModalButton>
               <AdminModalButton
                 variant="primary"
                 onClick={() => void save()}
                 disabled={busy === editId}
                 busy={busy === editId}
-                busyLabel="Saving..."
+                busyLabel="שומר..."
               >
-                Save
+                שמירה
               </AdminModalButton>
             </>
           ) : (
-            <AdminModalButton onClick={closeEdit}>Close</AdminModalButton>
+            <AdminModalButton onClick={closeEdit}>סגור</AdminModalButton>
           )
         }
       >
         {showModalMessage ? (
-          <p className={`text-sm mb-3 ${message.includes("failed") || message.includes("required") ? "text-red-300" : "text-emerald-300"}`}>
+          <p className={`text-sm mb-3 ${message.includes("נכשל") || message.includes("חובה") ? "text-red-300" : "text-emerald-300"}`}>
             {message}
           </p>
         ) : null}
@@ -341,7 +341,7 @@ export default function AdminCardsTab({ accessToken }) {
             embedded
             accessToken={accessToken}
             cardId={editId}
-            cardName={editingCard?.name}
+            cardName={editingCard?.name_he}
           />
         )}
       </AdminModal>
@@ -366,16 +366,16 @@ function CardForm({
   const fields = (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
       <label>
-        Card key (card_key)
+        מפתח קלף (card_key)
         <input className={inputClass} value={draft.card_key || ""} onChange={(e) => setDraft((d) => ({ ...d, card_key: e.target.value }))} />
       </label>
       <label>
-        Display name
-        <input className={inputClass} value={draft.name || ""} onChange={(e) => setDraft((d) => ({ ...d, name: e.target.value }))} />
+        שם בעברית
+        <input className={inputClass} value={draft.name_he || ""} onChange={(e) => setDraft((d) => ({ ...d, name_he: e.target.value }))} />
       </label>
       <label className="sm:col-span-2">
-        Description
-        <textarea className={inputClass} rows={2} value={draft.description || ""} onChange={(e) => setDraft((d) => ({ ...d, description: e.target.value }))} />
+        תיאור
+        <textarea className={inputClass} rows={2} value={draft.description_he || ""} onChange={(e) => setDraft((d) => ({ ...d, description_he: e.target.value }))} />
       </label>
       <div className="sm:col-span-2">
         {cardId && accessToken ? (
@@ -398,23 +398,23 @@ function CardForm({
           />
         ) : (
           <p className="text-white/50 text-xs mt-1">
-            ItemOther ItemItemItemItemItem ItemItemItemItem ItemItemItemItem ItemuploadItem ItemItemItemItem (PNG/WEBP). Cards ItemItemItemItemItem in public ItemItemItemItemItemItem ItemItemItemItemItem ItemNo ItemItemItemItemItem.
+            לאחר יצירת הקלף ניתן להעלות תמונה (PNG/WEBP). קלפים קיימים ב-public ימשיכו לעבוד ללא שינוי.
           </p>
         )}
       </div>
       <label>
-        Series
+        סדרה
         <select className={inputClass} value={draft.series_id || ""} onChange={(e) => setDraft((d) => ({ ...d, series_id: e.target.value }))}>
-          <option value="">Select series</option>
+          <option value="">בחרו סדרה</option>
           {series.map((s) => (
             <option key={s.id} value={s.id}>
-              {s.name}
+              {s.name_he}
             </option>
           ))}
         </select>
       </label>
       <label>
-        Card type
+        סוג קלף
         <select
           className={inputClass}
           value={draft.card_type}
@@ -436,7 +436,7 @@ function CardForm({
         </select>
       </label>
       <label>
-        Rarity
+        נדירות
         <select className={inputClass} value={draft.rarity} onChange={(e) => setDraft((d) => ({ ...d, rarity: e.target.value }))}>
           {CARD_RARITY_OPTIONS.map((o) => (
             <option key={o.value} value={o.value}>
@@ -446,33 +446,33 @@ function CardForm({
         </select>
       </label>
       <label>
-        Visibility
+        מצב תצוגה
         <select className={inputClass} value={draft.visibility_mode || "visible_locked"} onChange={(e) => setDraft((d) => ({ ...d, visibility_mode: e.target.value }))}>
-          <option value="visible_locked">Visible (locked)</option>
-          <option value="hidden_until_eligible">Hidden until eligible</option>
+          <option value="visible_locked">גלוי (נעול)</option>
+          <option value="hidden_until_eligible">מוסתר עד עמידה בתנאי</option>
         </select>
       </label>
       <label className="sm:col-span-2">
-        Child requirement text (override)
-        <input className={inputClass} value={draft.requirementText || ""} onChange={(e) => setDraft((d) => ({ ...d, requirementText: e.target.value }))} />
+        טקסט דרישה לילד (override)
+        <input className={inputClass} value={draft.requirement_text_he || ""} onChange={(e) => setDraft((d) => ({ ...d, requirement_text_he: e.target.value }))} />
       </label>
       {!isAchievement ? (
         <>
           <label className="flex items-center gap-2">
             <input type="checkbox" checked={draft.can_be_purchased} onChange={(e) => setDraft((d) => ({ ...d, can_be_purchased: e.target.checked }))} />
-            In shop
+            בחנות
           </label>
           <label className="flex items-center gap-2">
             <input type="checkbox" checked={draft.can_appear_in_surprise_box} onChange={(e) => setDraft((d) => ({ ...d, can_appear_in_surprise_box: e.target.checked }))} />
-            In box
+            בקופסה
           </label>
           <label className="flex items-center gap-2">
             <input type="checkbox" checked={draft.use_default_price !== false} onChange={(e) => setDraft((d) => ({ ...d, use_default_price: e.target.checked }))} />
-            Default price by rarity
+            מחיר ברירת מחדל לפי נדירות
           </label>
           {!draft.use_default_price ? (
             <label>
-              Price in coins
+              מחיר במטבעות
               <input type="number" className={inputClass} value={draft.price_coins ?? ""} onChange={(e) => setDraft((d) => ({ ...d, price_coins: Number(e.target.value) }))} />
             </label>
           ) : null}
@@ -480,24 +480,24 @@ function CardForm({
       ) : null}
       {isEvent ? (
         <label>
-          Event mode
+          מצב אירוע
           <select className={inputClass} value={draft.event_reward_mode || "achievement"} onChange={(e) => setDraft((d) => ({ ...d, event_reward_mode: e.target.value }))}>
-            <option value="achievement">ItemItemItemItem</option>
-            <option value="shop">ItemItemItemItem</option>
+            <option value="achievement">הישג</option>
+            <option value="shop">חנות</option>
           </select>
         </label>
       ) : null}
       <label>
-        Available from
+        תחילת זמינות
         <input type="datetime-local" className={inputClass} value={draft.starts_at || ""} onChange={(e) => setDraft((d) => ({ ...d, starts_at: e.target.value }))} />
       </label>
       <label>
-        Available until
+        סוף זמינות
         <input type="datetime-local" className={inputClass} value={draft.ends_at || ""} onChange={(e) => setDraft((d) => ({ ...d, ends_at: e.target.value }))} />
       </label>
       <label className="flex items-center gap-2">
         <input type="checkbox" checked={draft.is_active} onChange={(e) => setDraft((d) => ({ ...d, is_active: e.target.checked }))} />
-        Active
+        פעיל
       </label>
     </div>
   );
@@ -557,15 +557,15 @@ function CardImageUpload({ cardId, accessToken, cardType, imageUrl, imageAssetKe
 
   const upload = async () => {
     if (!selectedFile) {
-      setUploadError("Choose an image file.");
+      setUploadError("בחרו קובץ תמונה.");
       return;
     }
     if (!cardKey?.trim()) {
-      setUploadError("Card key (card_key) is required before upload.");
+      setUploadError("מפתח קלף (card_key) חובה לפני העלאה.");
       return;
     }
     if (needsSeries && !seriesId?.trim()) {
-      setUploadError("Select a series before uploading an image.");
+      setUploadError("בחרו סדרה לפני העלאת תמונה.");
       return;
     }
     setUploadBusy(true);
@@ -580,34 +580,34 @@ function CardImageUpload({ cardId, accessToken, cardType, imageUrl, imageAssetKe
     const body = await res.json().catch(() => ({}));
     setUploadBusy(false);
     if (!res.ok) {
-      setUploadError(apiErrorMessageHe(body?.error, "Image upload failed"));
+      setUploadError(apiErrorMessageHe(body?.error, "העלאת תמונה נכשלה"));
       return;
     }
-    setUploadMessage("Image uploaded and saved.");
+    setUploadMessage("תמונה הועלתה ונשמרה.");
     setSelectedFile(null);
     if (body.card) onUploaded(body.card);
   };
 
   return (
     <div className="rounded-lg border border-white/10 bg-black/20 p-3 space-y-3">
-      <p className="font-semibold text-xs">Card image</p>
+      <p className="font-semibold text-xs">תמונת קלף</p>
       <p className="text-white/45 text-[11px]">
-        ItemItemNoItemItem ItemItemItemItemItem ItemItemItemItemItemItem in Supabase Storage. Cards ItemItem ItemItemItemItem ItemItemItemItem in public ItemItemItemItemItemItem ItemItemItemItemItem ItemNo ItemItemItemItemItem.
-        ItemItem ItemItemItemItemItemItem Card key or Series - ItemItemItemItem ItemItem ItemItemItemItem before ItemItemNoItem.
+        העלאות חדשות נשמרות ב-Supabase Storage. קלפים עם נתיב יחסי ב-public ממשיכים לעבוד ללא שינוי.
+        אם שיניתם מפתח קלף או סדרה - שמרו את הקלף לפני העלאה.
       </p>
       {previewSrc ? (
         <div className="flex justify-center">
           <img
             src={previewSrc}
-            alt="Preview"
+            alt="תצוגה מקדימה"
             className="max-h-48 w-auto rounded border border-white/15 object-contain bg-black/40"
           />
         </div>
       ) : (
-        <p className="text-white/40 text-xs">No image - upload PNG or WEBP</p>
+        <p className="text-white/40 text-xs">אין תמונה - העלו PNG או WEBP</p>
       )}
       {localPreviewUrl ? (
-        <p className="text-amber-200/80 text-[11px]">Preview before Save - click &quot;Upload image&quot; ItemSave</p>
+        <p className="text-amber-200/80 text-[11px]">תצוגה מקדימה לפני שמירה - לחצו &quot;העלה תמונה&quot; לשמירה</p>
       ) : null}
       {imageUrl ? (
         <p className="text-white/40 text-[11px] break-all" dir="ltr">
@@ -628,14 +628,14 @@ function CardImageUpload({ cardId, accessToken, cardType, imageUrl, imageAssetKe
           onClick={() => void upload()}
           className="rounded border border-emerald-400/40 bg-emerald-500/20 px-3 py-1 text-xs font-semibold disabled:opacity-50"
         >
-          {uploadBusy ? "Uploading..." : imageUrl ? "Replace image" : "Upload image"}
+          {uploadBusy ? "מעלה..." : imageUrl ? "החלף תמונה" : "העלה תמונה"}
         </button>
       </div>
       {!cardKey?.trim() ? (
-        <p className="text-amber-200/70 text-[11px]">Save card key (card_key) before ItemItemNoItem.</p>
+        <p className="text-amber-200/70 text-[11px]">שמרו מפתח קלף (card_key) לפני העלאה.</p>
       ) : null}
       {needsSeries && !seriesId?.trim() ? (
-        <p className="text-amber-200/70 text-[11px]">Select a series before uploading an image.</p>
+        <p className="text-amber-200/70 text-[11px]">בחרו סדרה לפני העלאת תמונה.</p>
       ) : null}
       {uploadError ? <p className="text-red-300 text-xs">{uploadError}</p> : null}
       {uploadMessage ? <p className="text-emerald-300 text-xs">{uploadMessage}</p> : null}

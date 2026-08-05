@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         req.body?.rewards
       );
       if (!result.ok) {
-        return sendAdminApiError(res, 400, result.code || "update_failed", result.message);
+        return sendAdminApiError(res, 400, result.code || "update_failed", result.messageHe);
       }
       return res.status(200).json(result);
     }

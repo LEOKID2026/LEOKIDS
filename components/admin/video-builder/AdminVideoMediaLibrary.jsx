@@ -12,7 +12,7 @@ import {
   VB_MEDIA_TYPES,
   VB_MEDIA_UPLOAD,
   VB_MEDIA_UPLOADING,
-} from "../../../lib/admin-portal/admin-video-builder-ui.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 /**
  * @param {{
@@ -58,10 +58,10 @@ export default function AdminVideoMediaLibrary({
         body: form,
       });
       const json = await res.json();
-      if (!res.ok) throw new Error(json?.error?.message || " ");
+      if (!res.ok) throw new Error(json?.error?.message || "העלאה נכשלה");
       onUploaded(json?.data?.asset);
     } catch (err) {
-      setError(err instanceof Error ? err.message : " ");
+      setError(err instanceof Error ? err.message : "העלאה נכשלה");
     } finally {
       setUploading(false);
       if (inputRef.current) inputRef.current.value = "";
@@ -78,10 +78,10 @@ export default function AdminVideoMediaLibrary({
         method: "DELETE",
       });
       const json = await res.json();
-      if (!res.ok) throw new Error(json?.error?.message || " ");
+      if (!res.ok) throw new Error(json?.error?.message || "מחיקה נכשלה");
       onDeleted?.(assetId);
     } catch (err) {
-      setError(err instanceof Error ? err.message : " ");
+      setError(err instanceof Error ? err.message : "מחיקה נכשלה");
     } finally {
       setDeletingId(null);
     }

@@ -6,18 +6,18 @@ import {
 } from "../../../lib/rewards/reward-feature-flags.client.js";
 
 export const ADMIN_REWARDS_TABS = [
-  { id: "manual-coins", label: " ", manualCoinOnly: true, cardOnly: false, economyOnly: false },
-  { id: "diamonds", label: "", cardOnly: false, economyOnly: true },
-  { id: "general", label: " ", cardOnly: false },
-  { id: "economy", label: " ", cardOnly: false, economyOnly: true },
-  { id: "arcade", label: "", cardOnly: false, economyOnly: true },
-  { id: "cards", label: "", cardOnly: true },
-  { id: "series", label: "", cardOnly: true },
-  { id: "box", label: " ", cardOnly: true },
-  { id: "shop", label: "", cardOnly: true },
-  { id: "duplicates", label: " ", cardOnly: true },
-  { id: "events", label: "", cardOnly: true },
-  { id: "tests", label: "", cardOnly: true },
+  { id: "manual-coins", label: "מטבעות לילד", manualCoinOnly: true, cardOnly: false, economyOnly: false },
+  { id: "diamonds", label: "יהלומים", cardOnly: false, economyOnly: true },
+  { id: "general", label: "הגדרות כלליות", cardOnly: false },
+  { id: "economy", label: "כלכלת מטבעות", cardOnly: false, economyOnly: true },
+  { id: "arcade", label: "ארקייד", cardOnly: false, economyOnly: true },
+  { id: "cards", label: "קלפים", cardOnly: true },
+  { id: "series", label: "סדרות", cardOnly: true },
+  { id: "box", label: "קופסת הפתעה", cardOnly: true },
+  { id: "shop", label: "חנות", cardOnly: true },
+  { id: "duplicates", label: "מכירת כפילויות", cardOnly: true },
+  { id: "events", label: "אירועים", cardOnly: true },
+  { id: "tests", label: "בדיקות", cardOnly: true },
 ];
 
 function tabBtnClass(active) {
@@ -57,7 +57,7 @@ export default function AdminRewardsShell({ activeTab, onTabChange, children }) 
     <div className="w-full max-w-full overflow-x-hidden">
       <nav
         className="grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 w-full mb-6 xl:flex xl:flex-nowrap xl:justify-start xl:w-auto xl:gap-2"
-        aria-label=" "
+        aria-label="לשוניות תגמולים"
       >
         {visibleTabs.map((tab) => (
           <button

@@ -34,7 +34,7 @@ export default async function handler(req, res) {
           res,
           result.code === "not_found" ? 404 : 400,
           result.code || "update_failed",
-          result.message || result.code
+          result.messageHe || result.code
         );
       }
       return res.status(200).json(result);

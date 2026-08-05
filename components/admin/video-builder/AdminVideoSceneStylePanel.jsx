@@ -45,7 +45,7 @@ import {
   VB_STYLE_SECTION_BG,
   VB_STYLE_SECTION_MEDIA,
   VB_STYLE_SECTION_TEXT,
-} from "../../../lib/admin-portal/admin-video-builder-ui.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 function ColorPickerRow({ label, value, onChange, presets }) {
   return (
@@ -101,14 +101,14 @@ export default function AdminVideoSceneStylePanel({ scene, onPatch, compact = fa
           onChange={(e) => onPatch({ bgType: e.target.value, titleColor: null, subtitleColor: null })}
           className="mt-1 w-full rounded border border-white/20 bg-black/30 px-2 py-1.5 text-sm text-right"
         >
-          <optgroup label="Gradient">
+          <optgroup label="צבעים">
             {solidBgs.map((id) => (
               <option key={id} value={id}>
                 {VB_BACKGROUNDS[id].label}
               </option>
             ))}
           </optgroup>
-          <optgroup label="right">
+          <optgroup label="גרדיאנטים">
             {gradientBgs.map((id) => (
               <option key={id} value={id}>
                 {VB_BACKGROUNDS[id].label}
@@ -202,7 +202,7 @@ export default function AdminVideoSceneStylePanel({ scene, onPatch, compact = fa
           >
             {VB_TEXT_ALIGN_IDS.map((id) => (
               <option key={id} value={id}>
-                {id === "center" ? "left" : id === "right" ? "top" : "bottom"}
+                {id === "center" ? "מרכז" : id === "right" ? "ימין" : "שמאל"}
               </option>
             ))}
           </select>
@@ -286,7 +286,7 @@ export default function AdminVideoSceneStylePanel({ scene, onPatch, compact = fa
       <div className="grid grid-cols-2 gap-2">
         <label className="block text-right">
           <span className="text-xs text-white/50">
-            {String(scene.mediaFit || "contain") === "cover" ? "Who" : VB_SCENE_MEDIA_POSITION}
+            {String(scene.mediaFit || "contain") === "cover" ? "מיקום חיתוך" : VB_SCENE_MEDIA_POSITION}
           </span>
           <select
             value={String(scene.mediaPosition || "center")}
@@ -295,7 +295,7 @@ export default function AdminVideoSceneStylePanel({ scene, onPatch, compact = fa
           >
             {VB_MEDIA_POSITION_IDS.map((id) => (
               <option key={id} value={id}>
-                {id === "center" ? "Small" : id === "top" ? "Medium" : "Large"}
+                {id === "center" ? "מרכז" : id === "top" ? "למעלה" : "למטה"}
               </option>
             ))}
           </select>
@@ -310,7 +310,7 @@ export default function AdminVideoSceneStylePanel({ scene, onPatch, compact = fa
             >
               {VB_MEDIA_SCALE_IDS.map((id) => (
                 <option key={id} value={id}>
-                  {id === "sm" ? "Small" : id === "md" ? "Medium" : "Large"} (
+                  {id === "sm" ? "קטן" : id === "md" ? "בינוני" : "גדול"} (
                   {Math.round((VB_MEDIA_SCALE_FACTOR[id] || 0.65) * 100)}%)
                 </option>
               ))}

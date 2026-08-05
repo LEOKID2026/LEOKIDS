@@ -67,7 +67,7 @@ async function main() {
   record(
     "nav_has_all_accounts_tab",
     shell.includes("/admin/accounts") && shell.includes("ADMIN_NAV_ALL_ACCOUNTS"),
-    "  nav link"
+    "כל החשבונות nav link"
   );
   record(
     "all_accounts_page_exists",

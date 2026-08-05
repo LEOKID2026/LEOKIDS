@@ -49,7 +49,7 @@ export default async function handler(req, res) {
       if (rejectIfCrossOriginCookieMutation(req, res)) return undefined;
 
       if (typeof req.body?.archived !== "boolean") {
-        return sendAdminApiError(res, 400, "validation_failed", "  archived (boolean)");
+        return sendAdminApiError(res, 400, "validation_failed", "נדרש שדה archived (boolean)");
       }
 
       const updated = await setVideoProjectArchived(id, req.body.archived);

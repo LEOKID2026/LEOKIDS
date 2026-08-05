@@ -29,7 +29,7 @@ export default async function handler(req, res) {
       const games = (catalog || []).map((row) => ({
         gameKey: row.game_key,
         category: row.category,
-        title: row.title,
+        titleHe: row.title_he,
         isEnabled: row.is_enabled === true,
         sortOrder: row.sort_order,
         guestPlayable: effectivePlayable.get(row.game_key) === true,

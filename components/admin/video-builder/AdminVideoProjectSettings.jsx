@@ -22,7 +22,7 @@ import {
   VB_PROJECT_WATERMARK,
   VB_PROJECT_WATERMARK_POS,
   VB_VIDEO_NAME,
-} from "../../../lib/admin-portal/admin-video-builder-ui.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 /**
  * @param {{
@@ -127,7 +127,7 @@ export default function AdminVideoProjectSettings({
           onChange={(e) => onChange({ backgroundMusicAssetId: e.target.value || null })}
           className="w-full rounded border border-white/20 bg-black/30 px-2 py-1.5 text-sm mb-2"
         >
-          <option value=""> </option>
+          <option value="">ללא מוזיקה</option>
           {musicAssets.map((a) => (
             <option key={String(a.id)} value={String(a.id)}>
               {a.filename}
@@ -153,7 +153,7 @@ export default function AdminVideoProjectSettings({
           onChange={(e) => onChange({ watermarkAssetId: e.target.value || null })}
           className="w-full rounded border border-white/20 bg-black/30 px-2 py-1.5 text-sm mb-2"
         >
-          <option value=""> </option>
+          <option value="">ללא לוגו</option>
           {imageAssets.map((a) => (
             <option key={String(a.id)} value={String(a.id)}>
               {a.filename}
@@ -187,7 +187,7 @@ export default function AdminVideoProjectSettings({
           />
         </>
       ) : (
-        <p className="text-xs text-white/40">{VB_PROJECT_AUDIO} -  ""</p>
+        <p className="text-xs text-white/40">{VB_PROJECT_AUDIO} - בטאב "מדיה"</p>
       )}
     </div>
   );

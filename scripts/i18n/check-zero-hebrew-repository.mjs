@@ -78,6 +78,56 @@ const VALIDATOR_PATH_ALLOW = new Set([
   "lib/rewards/global-card-scope.js",
 ]);
 
+/**
+ * Platform Admin is an internal Hebrew/RTL surface — excluded from the public-product
+ * zero-Hebrew gate. Keep this list path-precise (no broad project allowlist).
+ */
+const ADMIN_PATH_PREFIXES = [
+  "components/admin/",
+  "pages/admin/",
+  "pages/api/admin/",
+  "lib/admin-portal/",
+  "lib/admin-server/",
+  "tests/admin/",
+  "data/admin-video-builder/",
+  "docs/admin/",
+  "scripts/admin-portal/",
+  "scripts/admin-",
+  "tests/auth/admin-",
+];
+
+const ADMIN_PATH_EXACT = new Set([
+  "lib/rewards/server/admin-card-rules.server.js",
+  "lib/rewards/server/diamond-admin.server.js",
+  // Shared modules imported only by Admin (public portals use the English .js twins).
+  "lib/auth/auth-registration.he.js",
+  "lib/teacher-portal/teacher-ui.he.js",
+  "scripts/admin-analytics-hebrew-copy-guard.mjs",
+  "scripts/admin-video-builder-owner-flow.mjs",
+  "scripts/admin-video-builder-archive-old-projects.mjs",
+  "scripts/tests/admin-analytics-selftest.mjs",
+  "scripts/tests/admin-analytics-web-traffic-selftest.mjs",
+  "scripts/tests/verify-school-student-admin-profile-post-sql.mjs",
+  "tests/rewards/admin-student-economy-parity.test.mjs",
+  "tests/rewards/card-catalog-admin-parity.test.mjs",
+  "tests/auth/admin-account-fixes-matrix.mjs",
+  "tests/auth/admin-all-accounts-matrix.mjs",
+  "tests/auth/admin-lifecycle-matrix.mjs",
+  "tests/auth/admin-user-delete-matrix.mjs",
+  "__tests__/school/admin-profile.test.js",
+]);
+
+function isAdminExemptPath(rel) {
+  if (ADMIN_PATH_EXACT.has(rel)) return true;
+  for (const prefix of ADMIN_PATH_PREFIXES) {
+    if (rel.startsWith(prefix)) return true;
+  }
+  // scripts/admin-*.mjs (owner-flow etc.) when not covered by prefix match quirks
+  if (/^scripts\/admin[^/]*\.mjs$/.test(rel)) return true;
+  if (/^scripts\/tests\/admin[^/]*\.mjs$/.test(rel)) return true;
+  return false;
+}
+
 function walk(dir, out = []) {
   let ents;
   try {
@@ -105,6 +155,7 @@ const failures = [];
 
 for (const abs of walk(ROOT)) {
   const rel = toPosix(abs);
+  if (isAdminExemptPath(rel)) continue;
   if (/\.he\.(js|jsx|ts|tsx|mjs|cjs|json)$/i.test(rel)) {
     failures.push({ type: "he_companion", file: rel });
     continue;
@@ -158,6 +209,7 @@ if (fs.existsSync(registryPath)) {
 const productGlobs = ["lib/rewards", "pages/api/demo/cards", "pages/api/student/rewards", "components/student"];
 for (const abs of walk(ROOT)) {
   const rel = toPosix(abs);
+  if (isAdminExemptPath(rel)) continue;
   if (!productGlobs.some((p) => rel.startsWith(p))) continue;
   if (!/\.(js|jsx|mjs)$/.test(rel)) continue;
   const text = fs.readFileSync(abs, "utf8");

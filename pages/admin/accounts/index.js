@@ -13,7 +13,7 @@ import {
   ADMIN_LOAD_ERROR,
   ADMIN_NO_ALL_ACCOUNTS,
   apiErrorMessageHe,
-} from "../../../lib/admin-portal/admin-ui.js";
+} from "../../../lib/admin-portal/admin-ui.he.js";
 
 export default function AdminAllAccountsPage() {
   const { state, accessToken } = useAdminSession();

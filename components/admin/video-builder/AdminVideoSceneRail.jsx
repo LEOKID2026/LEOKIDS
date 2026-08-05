@@ -6,7 +6,7 @@ import {
   VB_SCENE_N,
   VB_SCENES,
   VB_TEMPLATE_APPLY,
-} from "../../../lib/admin-portal/admin-video-builder-ui.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 import { VB_SCENE_TEMPLATES } from "../../../lib/admin-portal/admin-video-builder-catalog.js";
 
 /**
@@ -73,7 +73,7 @@ export default function AdminVideoSceneRail({
                     {index + 1}
                   </span>
                   <span className="text-[10px] text-white/40 tabular-nums">
-                    {Number(scene.durationSec) || 5}
+                    {Number(scene.durationSec) || 5}ש׳
                   </span>
                 </div>
                 <p className="text-xs font-medium text-white/90 truncate mt-1">{title}</p>
@@ -82,7 +82,7 @@ export default function AdminVideoSceneRail({
           );
         })}
         {scenes.length === 0 ? (
-          <p className="text-xs text-white/40 text-center py-4"> </p>
+          <p className="text-xs text-white/40 text-center py-4">אין סצנות</p>
         ) : null}
       </div>
 
@@ -93,7 +93,7 @@ export default function AdminVideoSceneRail({
             onClick={() => onMove(activeIndex, -1)}
             disabled={activeIndex <= 0 || !scenes.length}
             className="flex-1 rounded border border-white/15 px-2 py-1 text-xs disabled:opacity-30 hover:bg-white/5"
-            title=" "
+            title="הזז למעלה"
           >
             {VB_MOVE_UP}
           </button>
@@ -102,7 +102,7 @@ export default function AdminVideoSceneRail({
             onClick={() => onMove(activeIndex, 1)}
             disabled={activeIndex >= scenes.length - 1 || !scenes.length}
             className="flex-1 rounded border border-white/15 px-2 py-1 text-xs disabled:opacity-30 hover:bg-white/5"
-            title=" "
+            title="הזז למטה"
           >
             {VB_MOVE_DOWN}
           </button>

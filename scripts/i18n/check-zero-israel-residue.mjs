@@ -61,7 +61,6 @@ const VALIDATOR_ALLOW = new Set([
   "lib/rewards/canonical-global-card-manifest.js",
   "lib/rewards/reward-pack-copy.js",
   "tests/rewards/global-reward-no-hebrew.test.mjs",
-  "tests/rewards/card-catalog-admin-parity.test.mjs",
   "tests/i18n/english-report-israeli-residue.test.mjs",
   "tests/i18n/global-product-zero-hebrew-runtime.test.mjs",
   "tests/i18n/global-product-no-hebrew.test.mjs",
@@ -71,6 +70,54 @@ const VALIDATOR_ALLOW = new Set([
   "tests/i18n/english-country-local-residue-cleanup.test.mjs",
   "tests/i18n/english-country-wave3-shared-corrections.test.mjs",
 ]);
+
+/**
+ * Platform Admin (internal Hebrew/RTL) — do not strip or fail Israel/Hebrew residue inside these paths.
+ * Exact Admin surface only; public product paths remain fully gated.
+ */
+const ADMIN_PATH_PREFIXES = [
+  "components/admin/",
+  "pages/admin/",
+  "pages/api/admin/",
+  "lib/admin-portal/",
+  "lib/admin-server/",
+  "tests/admin/",
+  "data/admin-video-builder/",
+  "docs/admin/",
+  "scripts/admin-portal/",
+  "tests/auth/admin-",
+];
+
+const ADMIN_PATH_EXACT = new Set([
+  "lib/rewards/server/admin-card-rules.server.js",
+  "lib/rewards/server/diamond-admin.server.js",
+  // Shared modules imported only by Admin (public portals use the English .js twins).
+  "lib/auth/auth-registration.he.js",
+  "lib/teacher-portal/teacher-ui.he.js",
+  "scripts/admin-analytics-hebrew-copy-guard.mjs",
+  "scripts/admin-video-builder-owner-flow.mjs",
+  "scripts/admin-video-builder-archive-old-projects.mjs",
+  "scripts/tests/admin-analytics-selftest.mjs",
+  "scripts/tests/admin-analytics-web-traffic-selftest.mjs",
+  "scripts/tests/verify-school-student-admin-profile-post-sql.mjs",
+  "tests/rewards/admin-student-economy-parity.test.mjs",
+  "tests/rewards/card-catalog-admin-parity.test.mjs",
+  "tests/auth/admin-account-fixes-matrix.mjs",
+  "tests/auth/admin-all-accounts-matrix.mjs",
+  "tests/auth/admin-lifecycle-matrix.mjs",
+  "tests/auth/admin-user-delete-matrix.mjs",
+  "__tests__/school/admin-profile.test.js",
+]);
+
+function isAdminExemptPath(rel) {
+  if (ADMIN_PATH_EXACT.has(rel)) return true;
+  for (const prefix of ADMIN_PATH_PREFIXES) {
+    if (rel.startsWith(prefix)) return true;
+  }
+  if (/^scripts\/admin[^/]*\.mjs$/.test(rel)) return true;
+  if (/^scripts\/tests\/admin[^/]*\.mjs$/.test(rel)) return true;
+  return false;
+}
 
 function isValidatorPath(rel) {
   if (VALIDATOR_ALLOW.has(rel)) return true;
@@ -120,6 +167,7 @@ for (const root of SCAN_ROOTS) {
 
 for (const abs of files) {
   const rel = toPosix(abs);
+  if (isAdminExemptPath(rel)) continue;
   const text = fs.readFileSync(abs, "utf8");
   const lines = text.split(/\r?\n/);
   const isValidator = isValidatorPath(rel);

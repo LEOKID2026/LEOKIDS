@@ -40,13 +40,13 @@ export default function GuestFeaturePermissionsPanel({ accessToken, onMessage })
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        onMessage?.("  ");
+        onMessage?.("שמירת הרשאות נכשלה");
         return;
       }
       setFeatures(json.features || nextFeatures);
-      onMessage?.(" '  ");
+      onMessage?.("הרשאות פיצ'רים לאורחים עודכנו");
     } catch {
-      onMessage?.(" ");
+      onMessage?.("שגיאת רשת");
     } finally {
       setBusy(false);
     }
@@ -66,16 +66,16 @@ export default function GuestFeaturePermissionsPanel({ accessToken, onMessage })
 
   return (
     <section className="rounded-xl border border-white/15 bg-white/5 p-4 space-y-3 text-right" dir="rtl">
-      <h2 className="text-lg font-bold"> '  </h2>
+      <h2 className="text-lg font-bold">הרשאות פיצ'רים חברתיים לאורחים</h2>
       <p className="text-xs text-white/60">
-         toggle   Admin -    .    .
+        כל toggle נשלט דרך Admin - אין חסימה קשיחה בקוד. ברירת מחדל מוצגת בעמודה.
       </p>
       <div className="flex flex-wrap gap-2 justify-end">
         <button type="button" disabled={busy || !features.length} onClick={() => setAll(true)} className="rounded-lg border border-emerald-400/40 bg-emerald-500/15 px-3 py-1 text-sm">
-
+          פתח הכל
         </button>
         <button type="button" disabled={busy || !features.length} onClick={() => setAll(false)} className="rounded-lg border border-white/25 px-3 py-1 text-sm">
-
+          סגור הכל
         </button>
       </div>
       <ul className="space-y-2">
@@ -88,10 +88,10 @@ export default function GuestFeaturePermissionsPanel({ accessToken, onMessage })
                 disabled={busy}
                 onChange={() => toggle(f.featureKey)}
               />
-              <span>{f.label || f.featureKey}</span>
+              <span>{f.labelHe || f.featureKey}</span>
             </label>
             <span className="text-[10px] text-white/45">
-              Default: {f.defaultEnabled ? "default on" : "default off"}
+              ברירה: {f.defaultEnabled ? "פתוח" : "סגור"}
             </span>
           </li>
         ))}

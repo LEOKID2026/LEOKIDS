@@ -13,10 +13,10 @@ import {
 
 const ECONOMY_CONFIG = {
   monthlyTiers: [
-    { minutes: 100, coins: 10_000, labelHe: "10,000 " },
-    { minutes: 250, coins: 30_000, labelHe: "30,000 " },
-    { minutes: 400, coins: 60_000, labelHe: "60,000 " },
-    { minutes: 600, coins: 99_999, labelHe: "99,999 " },
+    { minutes: 100, coins: 10_000, labelHe: "10,000 מטבעות" },
+    { minutes: 250, coins: 30_000, labelHe: "30,000 מטבעות" },
+    { minutes: 400, coins: 60_000, labelHe: "60,000 מטבעות" },
+    { minutes: 600, coins: 99_999, labelHe: "99,999 מטבעות" },
   ],
   goalMinutes: 600,
   monthlyMinutesCap: 600,

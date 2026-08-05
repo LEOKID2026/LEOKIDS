@@ -13,7 +13,7 @@ import {
   ADMIN_LIFECYCLE_NETWORK_ERROR,
   apiErrorMessageHe,
   formatAdminDependencyLabelHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 /**
  * Shared main-admin hard-delete UI (preview + confirm code).

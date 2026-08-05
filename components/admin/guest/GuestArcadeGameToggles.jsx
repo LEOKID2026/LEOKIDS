@@ -39,13 +39,13 @@ export default function GuestArcadeGameToggles({ accessToken, onMessage }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
-        onMessage?.("  ");
+        onMessage?.("שמירת משחקים נכשלה");
         return;
       }
       setGames(nextGames);
-      onMessage?.("   ");
+      onMessage?.("משחקי ארקייד לאורחים עודכנו");
     } catch {
-      onMessage?.(" ");
+      onMessage?.("שגיאת רשת");
     } finally {
       setBusy(false);
     }
@@ -65,9 +65,9 @@ export default function GuestArcadeGameToggles({ accessToken, onMessage }) {
 
   return (
     <section className="rounded-xl border border-white/15 bg-white/5 p-4 space-y-3 text-right" dir="rtl">
-      <h2 className="text-lg font-bold">   - </h2>
+      <h2 className="text-lg font-bold">שליטת ארקייד לאורחים - משחקים</h2>
       <p className="text-xs text-white/60">
-           -     .      -quick-game  .
+        אם הכל פתוח - אורח משחק כמו שחקן רגיל. כיבוי משחק חוסם גישה גם ל-quick-game וגם לחדרים.
       </p>
       <div className="flex flex-wrap gap-2 justify-end">
         <button
@@ -76,7 +76,7 @@ export default function GuestArcadeGameToggles({ accessToken, onMessage }) {
           onClick={() => setAll(true)}
           className="rounded-lg border border-emerald-400/40 bg-emerald-500/15 px-3 py-1 text-sm"
         >
-
+          פתח הכל לאורחים
         </button>
         <button
           type="button"
@@ -84,7 +84,7 @@ export default function GuestArcadeGameToggles({ accessToken, onMessage }) {
           onClick={() => setAll(false)}
           className="rounded-lg border border-white/25 px-3 py-1 text-sm"
         >
-
+          סגור הכל לאורחים
         </button>
       </div>
       <ul className="space-y-2">
@@ -97,12 +97,12 @@ export default function GuestArcadeGameToggles({ accessToken, onMessage }) {
                 disabled={busy}
                 onChange={() => toggle(g.gameKey)}
               />
-              <span>{g.title || g.gameKey}</span>
+              <span>{g.titleHe || g.gameKey}</span>
             </label>
             <span className="text-xs text-white/50 font-mono">{g.gameKey}</span>
           </li>
         ))}
-        {!games.length ? <li className="text-sm text-white/50">   </li> : null}
+        {!games.length ? <li className="text-sm text-white/50">אין משחקי ארקייד בקטלוג</li> : null}
       </ul>
     </section>
   );

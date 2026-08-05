@@ -4,7 +4,6 @@ import {
 } from "../../../../../lib/admin-server/admin-request.server.js";
 import { guardRewardsAdminApi } from "../../../../../lib/rewards/guards.server.js";
 import { isCardRewardsEnabled } from "../../../../../lib/rewards/reward-feature-flags.js";
-import { serializeAdminRewardSeries, adminSeriesPayloadToDb } from "../../../../../lib/rewards/server/admin-card-rules.server.js";
 
 export default async function handler(req, res) {
   if (!guardRewardsAdminApi(res)) return;
@@ -24,21 +23,17 @@ export default async function handler(req, res) {
     }
     const { data, error } = await query;
     if (error) return sendAdminApiError(res, 500, "db_error", error.message);
-    return res.status(200).json({
-      ok: true,
-      series: (data || []).map(serializeAdminRewardSeries),
-      includeInactive,
-    });
+    return res.status(200).json({ ok: true, series: data || [], includeInactive });
   }
 
   if (req.method === "POST") {
     const { data, error } = await ctx.serviceRole
       .from("reward_card_series")
-      .insert(adminSeriesPayloadToDb(req.body || {}))
+      .insert(req.body || {})
       .select("*")
       .single();
     if (error) return sendAdminApiError(res, 400, "insert_failed", error.message);
-    return res.status(201).json({ ok: true, series: serializeAdminRewardSeries(data) });
+    return res.status(201).json({ ok: true, series: data });
   }
 
   res.setHeader("Allow", "GET, POST");

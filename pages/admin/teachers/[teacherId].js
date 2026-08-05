@@ -10,7 +10,7 @@ import {
   ADMIN_LOAD_ERROR,
   ADMIN_LOADING,
   ADMIN_TEACHER_DETAIL_FALLBACK,
-} from "../../../lib/admin-portal/admin-ui.js";
+} from "../../../lib/admin-portal/admin-ui.he.js";
 
 export default function AdminTeacherDetailPage() {
   const router = useRouter();

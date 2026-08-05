@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { adminAuthFetch } from "../../../lib/admin-portal/use-admin-session.js";
-import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.js";
-import { formatRarityHe } from "../../../lib/admin-portal/admin-rewards-ui.js";
+import { ADMIN_LOADING, ADMIN_LOAD_ERROR, apiErrorMessageHe } from "../../../lib/admin-portal/admin-ui.he.js";
+import { formatRarityHe } from "../../../lib/admin-portal/admin-rewards-ui.he.js";
 
 async function loadSettings(token) {
   const res = await adminAuthFetch(token, "/api/admin/rewards/settings");
@@ -16,7 +16,7 @@ async function saveSetting(token, key, value) {
     body: JSON.stringify({ key, value }),
   });
   const body = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(apiErrorMessageHe(body?.error, "Save failed"));
+  if (!res.ok) throw new Error(apiErrorMessageHe(body?.error, "שמירה נכשלה"));
   return body;
 }
 
@@ -53,7 +53,7 @@ export default function AdminBoxTab({ accessToken }) {
     setMessage("");
     try {
       await saveSetting(accessToken, "surprise_box_general_settings", general);
-      setMessage("Box settings saved.");
+      setMessage("הגדרות קופסה נשמרו.");
     } catch (e) {
       setMessage(e.message);
     } finally {
@@ -66,7 +66,7 @@ export default function AdminBoxTab({ accessToken }) {
     setMessage("");
     try {
       await saveSetting(accessToken, "surprise_box_card_rarity_weights", rarityWeights);
-      setMessage("Rarity weights saved.");
+      setMessage("משקלי נדירות נשמרו.");
     } catch (e) {
       setMessage(e.message);
     } finally {
@@ -79,7 +79,7 @@ export default function AdminBoxTab({ accessToken }) {
     setMessage("");
     try {
       await saveSetting(accessToken, "surprise_box_coin_rewards", coinRewards);
-      setMessage("Box coin rewards saved.");
+      setMessage("פרסי מטבעות בקופסה נשמרו.");
     } catch (e) {
       setMessage(e.message);
     } finally {
@@ -95,10 +95,10 @@ export default function AdminBoxTab({ accessToken }) {
       {message ? <p className="text-sm text-emerald-300">{message}</p> : null}
 
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-        <h3 className="text-sm font-bold mb-3">General settings</h3>
+        <h3 className="text-sm font-bold mb-3">הגדרות כלליות</h3>
         <div className="grid sm:grid-cols-2 gap-3 text-xs">
           <label>
-            Interval (minutes)
+            מרווח בין קופסאות (דקות)
             <input
               type="number"
               className="block w-full mt-1 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
@@ -128,7 +128,7 @@ export default function AdminBoxTab({ accessToken }) {
                 }))
               }
             />
-            First box immediately
+            קופסה ראשונה מיד
           </label>
           <label className="flex items-center gap-2">
             <input
@@ -144,10 +144,10 @@ export default function AdminBoxTab({ accessToken }) {
                 }))
               }
             />
-            Prevent duplicates in box
+            מניעת כפילות בקופסה
           </label>
           <label>
-            Max pending boxes per child
+            מקסימום קופסאות נצברות לילד
             <select
               className="block w-full mt-1 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
               value={general.max_pending_boxes ?? 1}
@@ -169,7 +169,7 @@ export default function AdminBoxTab({ accessToken }) {
             </select>
           </label>
           <label>
-            Cards per open
+            מספר קלפים בפתיחת קופסה
             <select
               className="block w-full mt-1 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
               value={general.cards_per_open ?? 2}
@@ -191,7 +191,7 @@ export default function AdminBoxTab({ accessToken }) {
             </select>
           </label>
           <label>
-            Coin prizes per open
+            מספר פרסי מטבעות בפתיחת קופסה
             <select
               className="block w-full mt-1 rounded bg-black/30 border border-white/15 px-2 py-1 text-white"
               value={general.coin_prizes_per_open ?? 1}
@@ -214,7 +214,7 @@ export default function AdminBoxTab({ accessToken }) {
           </label>
         </div>
         <p className="text-[11px] text-white/50 mt-2">
-          Total rewards per open (cards + coins). Coin prizes use amount + weight.
+          חייב להיות לפחות פרס אחד (קלפים + מטבעות). סכומי המטבעות נקבעים בטבלת פרסי מטבעות למטה.
         </p>
         <button
           type="button"
@@ -222,12 +222,12 @@ export default function AdminBoxTab({ accessToken }) {
           onClick={() => void saveGeneral()}
           className="mt-3 rounded bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
         >
-          Save general settings
+          שמירת הגדרות כלליות
         </button>
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-        <h3 className="text-sm font-bold mb-3">Rarity weights in box</h3>
+        <h3 className="text-sm font-bold mb-3">משקלי נדירות בקופסה</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
           {["regular", "special", "rare", "gold"].map((r) => (
             <label key={r}>
@@ -255,18 +255,18 @@ export default function AdminBoxTab({ accessToken }) {
           onClick={() => void saveWeights()}
           className="mt-3 rounded bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
         >
-          Save rarity weights
+          שמירת משקלים
         </button>
       </section>
 
       <section className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
-        <h3 className="text-sm font-bold mb-3">Coin rewards (amount + weight)</h3>
+        <h3 className="text-sm font-bold mb-3">פרסי מטבעות (סכום + משקל)</h3>
         <div className="space-y-2">
           {coinRewards.map((row, i) => (
             <div key={i} className="flex gap-2 justify-end">
               <input
                 type="number"
-                placeholder="Weight"
+                placeholder="משקל"
                 className="w-24 rounded bg-black/30 border border-white/15 px-2 py-1 text-white text-xs"
                 value={row.weight ?? 0}
                 onChange={(e) => {
@@ -277,7 +277,7 @@ export default function AdminBoxTab({ accessToken }) {
               />
               <input
                 type="number"
-                placeholder="Amount"
+                placeholder="סכום"
                 className="w-24 rounded bg-black/30 border border-white/15 px-2 py-1 text-white text-xs"
                 value={row.amount ?? 0}
                 onChange={(e) => {
@@ -295,7 +295,7 @@ export default function AdminBoxTab({ accessToken }) {
           onClick={() => void saveCoins()}
           className="mt-3 rounded bg-amber-500/30 border border-amber-400/40 px-4 py-2 text-sm font-semibold disabled:opacity-50"
         >
-          Save coin rewards
+          שמירת פרסי מטבעות
         </button>
       </section>
     </div>

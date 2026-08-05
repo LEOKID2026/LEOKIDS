@@ -7,8 +7,8 @@ import {
   ADMIN_PASSWORD_SETUP_SENT,
   ADMIN_PASSWORD_SETUP_STATUS,
   ADMIN_SEND_PASSWORD_SETUP,
-} from "../../lib/auth/auth-registration.js";
-import { ADMIN_LIFECYCLE_NETWORK_ERROR, adminFormatDateHe, apiErrorMessageHe } from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/auth/auth-registration.he.js";
+import { ADMIN_LIFECYCLE_NETWORK_ERROR, adminFormatDateHe, apiErrorMessageHe } from "../../lib/admin-portal/admin-ui.he.js";
 
 /**
  * @param {{

@@ -8,7 +8,7 @@ import {
   ADMIN_NO_PARENTS,
   parentListStatusLabelHe,
   planCodeLabelHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 /**
  * @param {{ parents: Array<{ parentUserId: string, email?: string|null, settings?: object|null, isOrphanUnlinked?: boolean }> }} props

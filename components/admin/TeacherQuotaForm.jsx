@@ -14,7 +14,7 @@ import {
   ADMIN_SAVE_STATUS,
   ADMIN_SECTION_PERMISSIONS,
   ADMIN_SECTION_QUOTAS,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 export default function TeacherQuotaForm({ teacher, accessToken, onUpdated }) {
   const [busy, setBusy] = useState(false);
@@ -51,7 +51,7 @@ export default function TeacherQuotaForm({ teacher, accessToken, onUpdated }) {
     const json = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 200) {
-      setError(json?.error?.message || "  ");
+      setError(json?.error?.message || "שמירת המכסות נכשלה");
       return;
     }
     onUpdated?.(json.data);
@@ -69,7 +69,7 @@ export default function TeacherQuotaForm({ teacher, accessToken, onUpdated }) {
     const json = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 200) {
-      setError(json?.error?.message || "  ");
+      setError(json?.error?.message || "שמירת ההרשאות נכשלה");
       return;
     }
     onUpdated?.(json.data);
@@ -87,7 +87,7 @@ export default function TeacherQuotaForm({ teacher, accessToken, onUpdated }) {
     const json = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 200) {
-      setError(json?.error?.message || "  ");
+      setError(json?.error?.message || "שמירת הסטטוס נכשלה");
       return;
     }
     onUpdated?.(json.data);
@@ -133,7 +133,7 @@ export default function TeacherQuotaForm({ teacher, accessToken, onUpdated }) {
       </AdminSectionCard>
 
       <AdminSectionCard title={ADMIN_SECTION_PERMISSIONS}>
-        <p className="text-xs text-white/45 mb-3">  </p>
+        <p className="text-xs text-white/45 mb-3">תכונות זמינות למורה</p>
         <div className="space-y-2 mb-4">
           {Object.keys(ADMIN_FEATURE_LABELS_HE).map((key) => (
             <label key={key} className="flex items-center gap-2 text-sm justify-end flex-row-reverse">
@@ -156,7 +156,7 @@ export default function TeacherQuotaForm({ teacher, accessToken, onUpdated }) {
         </button>
 
         <div className="border-t border-white/10 pt-4">
-          <p className="text-xs text-white/45 mb-3"> </p>
+          <p className="text-xs text-white/45 mb-3">גישה לחשבון</p>
           <label className="flex items-center gap-2 text-sm justify-end flex-row-reverse mb-4">
             <input
               type="checkbox"

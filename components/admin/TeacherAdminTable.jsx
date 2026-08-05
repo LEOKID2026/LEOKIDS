@@ -14,7 +14,7 @@ import {
   ADMIN_NO_TEACHERS,
   adminAccountStatusHe,
   entitlementStatusLabelHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 function StatusBadge({ active, entitlementStatus }) {
   if (entitlementStatus === "pending") {

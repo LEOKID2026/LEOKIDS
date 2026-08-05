@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import AdminSectionCard from "./AdminSectionCard.jsx";
-import { REPORT_SUBJECTS, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.js";
+import { REPORT_SUBJECTS, subjectLabelHe } from "../../lib/teacher-portal/teacher-ui.he.js";
 import { adminAuthFetch } from "../../lib/admin-portal/use-admin-session.js";
 
 /**
@@ -54,13 +54,13 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Loading…");
+        setError(json?.error?.message || json?.error?.code || "הקצאה נכשלה");
         return;
       }
-      setMessage("Loading…");
+      setMessage("ההרשאה נוספה");
       await load();
     } catch {
-      setError("Loading…");
+      setError("שגיאת רשת");
     } finally {
       setBusy(false);
     }
@@ -77,12 +77,12 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
       );
       if (!res.ok) {
         const json = await res.json().catch(() => ({}));
-        setError(json?.error?.message || "to to");
+        setError(json?.error?.message || "ביטול נכשל");
         return;
       }
       await load();
     } catch {
-      setError("Loading…");
+      setError("שגיאת רשת");
     } finally {
       setBusy(false);
     }
@@ -91,12 +91,12 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
   return (
     <AdminSectionCard
       id="admin-teacher-discussion-subjects"
-      title="to to (Details)"
+      title="הרשאות מקצוע לפעילות דיון (מורה פרטי)"
       className="mt-5"
     >
       <p className="text-white/60 text-sm mb-4">
-                 .      (
-           ).  /     .
+        מורה פרטי ללא הרשאות מקצוע לא יוכל ליצור פעילויות דיון. ההרשאה היא לפי מקצוע בלבד (לא
+        לפי כיתה או שכבה). רמת הילד/ה משמשת רק לבחירת שאלות מתאימות.
       </p>
 
       {error ? <p className="text-red-200 text-sm mb-3">{error}</p> : null}
@@ -104,7 +104,7 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
 
       <ul className="space-y-2 mb-4">
         {subjects.length === 0 ? (
-          <li className="text-white/50 text-sm">  </li>
+          <li className="text-white/50 text-sm">אין הרשאות מוגדרות</li>
         ) : (
           subjects.map((row) => (
             <li
@@ -118,7 +118,7 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
                 onClick={() => revoke(row.id)}
                 className="text-xs text-red-300 hover:underline"
               >
-
+                ביטול
               </button>
             </li>
           ))
@@ -127,7 +127,7 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
 
       <div className="flex flex-wrap gap-2 items-end">
         <label className="text-sm">
-          <span className="text-white/60 block mb-1"></span>
+          <span className="text-white/60 block mb-1">מקצוע</span>
           <select
             className="rounded-lg bg-white/10 border border-white/20 px-2 py-1.5"
             value={grantSubject}
@@ -146,7 +146,7 @@ export default function TeacherDiscussionSubjectsSection({ teacher, accessToken 
           onClick={grant}
           className="px-3 py-2 rounded-lg bg-amber-500/90 text-black text-sm font-semibold disabled:opacity-50"
         >
-
+          הוסף הרשאה
         </button>
       </div>
     </AdminSectionCard>

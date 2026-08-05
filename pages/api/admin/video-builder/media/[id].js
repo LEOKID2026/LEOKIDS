@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
     const assetId = String(req.query.id || "").trim();
     if (!assetId) {
-      return sendAdminApiError(res, 400, "missing_id", "  ");
+      return sendAdminApiError(res, 400, "missing_id", "מזהה קובץ חסר");
     }
 
     if (req.method === "DELETE") {

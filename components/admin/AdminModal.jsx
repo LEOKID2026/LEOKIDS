@@ -108,7 +108,7 @@ export default function AdminModal({
             type="button"
             onClick={onClose}
             className="shrink-0 rounded-lg border border-white/15 px-2 py-1 text-sm text-white/70 hover:bg-white/10 hover:text-white"
-            aria-label=""
+            aria-label="סגירה"
           >
             ✕
           </button>

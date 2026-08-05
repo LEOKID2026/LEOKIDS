@@ -3,8 +3,8 @@ import Layout from "../../../components/Layout";
 import AdminShell from "../../../components/admin/AdminShell";
 import AdminVideoBuilderEditor from "../../../components/admin/video-builder/AdminVideoBuilderEditor";
 import { useAdminSession } from "../../../lib/admin-portal/use-admin-session";
-import { ADMIN_LOADING } from "../../../lib/admin-portal/admin-ui.js";
-import { VB_TITLE } from "../../../lib/admin-portal/admin-video-builder-ui.js";
+import { ADMIN_LOADING } from "../../../lib/admin-portal/admin-ui.he.js";
+import { VB_TITLE } from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 export default function AdminVideoBuilderEditPage() {
   const router = useRouter();

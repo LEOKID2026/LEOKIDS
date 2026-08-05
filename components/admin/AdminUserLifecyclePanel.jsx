@@ -17,11 +17,11 @@ import {
   accountStatusLabelHe,
   apiErrorMessageHe,
   entitlementStatusLabelHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 import {
   ADMIN_APPROVE_ACTION,
   ADMIN_REJECT_ACTION,
-} from "../../lib/auth/auth-registration.js";
+} from "../../lib/auth/auth-registration.he.js";
 import AdminUserDeleteSection from "./AdminUserDeleteSection.jsx";
 import AdminModal, { AdminModalButton } from "./AdminModal.jsx";
 
@@ -76,7 +76,7 @@ export default function AdminUserLifecyclePanel({
       const lifecycleJson = await lifecycleRes.json().catch(() => ({}));
 
       if (!lifecycleRes.ok) {
-        setError(apiErrorMessageHe(lifecycleJson?.error, " "));
+        setError(apiErrorMessageHe(lifecycleJson?.error, "שגיאה בטעינה"));
         return;
       }
 
@@ -111,13 +111,13 @@ export default function AdminUserLifecyclePanel({
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, " "));
+        setError(apiErrorMessageHe(json?.error, "הפעולה נכשלה"));
         return;
       }
       if (json?.data?.entitlement) setEntitlement(json.data.entitlement);
       if (json?.data?.isAccountActive != null) setTeacherActive(json.data.isAccountActive);
       if (json?.data?.passwordSetup?.ok) {
-        setMessage("  ·    ");
+        setMessage("הבקשה אושרה · קישור להגדרת סיסמה נשלח");
       }
       setRevokeConfirmOpen(false);
       onChanged?.();
@@ -262,7 +262,7 @@ export default function AdminUserLifecyclePanel({
             footer={
               <>
                 <AdminModalButton onClick={() => setRevokeConfirmOpen(false)} disabled={!!busy}>
-
+                  ביטול
                 </AdminModalButton>
                 <AdminModalButton
                   variant="danger"

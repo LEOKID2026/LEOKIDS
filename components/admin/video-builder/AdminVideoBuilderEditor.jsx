@@ -29,7 +29,7 @@ import {
   VB_SAVE_ERROR,
   VB_SAVING,
   VB_VIEW,
-} from "../../../lib/admin-portal/admin-video-builder-ui.js";
+} from "../../../lib/admin-portal/admin-video-builder-ui.he.js";
 
 const AUTO_SAVE_MS = 2500;
 
@@ -211,7 +211,7 @@ export default function AdminVideoBuilderEditor({ accessToken, projectId }) {
   function duplicateScene(index) {
     const src = project?.scenes?.[index];
     if (!src) return;
-    const copy = { ...src, id: clientUuid(), title: `${src.title} ()` };
+    const copy = { ...src, id: clientUuid(), title: `${src.title} (עותק)` };
     const scenes = [...(project?.scenes || [])];
     scenes.splice(index + 1, 0, copy);
     updateScenes(scenes);
@@ -313,7 +313,7 @@ export default function AdminVideoBuilderEditor({ accessToken, projectId }) {
     : null;
 
   if (loading) {
-    return <p className="text-sm text-white/60 text-right">…</p>;
+    return <p className="text-sm text-white/60 text-right">טוען…</p>;
   }
 
   if (error && !project) {
@@ -337,7 +337,7 @@ export default function AdminVideoBuilderEditor({ accessToken, projectId }) {
               {VB_BACK_TO_LIST}
             </Link>
             <span className="text-sm font-semibold text-white truncate max-w-[12rem] md:max-w-xs">
-              {project.name || " "}
+              {project.name || "ללא שם"}
             </span>
             {ffmpegAvailable === false ? (
               <span className="text-[10px] text-amber-300/80 hidden sm:inline">ffmpeg ✕</span>
@@ -356,7 +356,7 @@ export default function AdminVideoBuilderEditor({ accessToken, projectId }) {
                 onClick={() => setShowExportVideo((v) => !v)}
                 className="text-xs text-emerald-300 underline"
               >
-                {showExportVideo ? " " : VB_VIEW}
+                {showExportVideo ? "הסתר סרטון" : VB_VIEW}
               </button>
             ) : null}
             <button
@@ -405,7 +405,7 @@ export default function AdminVideoBuilderEditor({ accessToken, projectId }) {
         </div>
       ) : null}
 
-      {/* Workspace: inspector () || preview || scenes () */}
+      {/* Workspace: inspector (ימין) || preview || scenes (שמאל) */}
       <div className="vb-editor-workspace mx-2 md:mx-4">
         <AdminVideoInspector
           activeTab={inspectorTab}

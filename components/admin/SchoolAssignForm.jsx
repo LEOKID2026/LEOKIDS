@@ -6,7 +6,7 @@ import {
   ADMIN_SCHOOL_ASSIGN_TEACHER,
   ADMIN_SCHOOL_FORCE_REASSIGN,
   apiErrorMessageHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 const inputClass =
   "mt-1 w-full rounded bg-black/40 border border-white/20 px-3 py-2 text-sm";
@@ -15,7 +15,7 @@ export function SchoolCreateFormFields({ draft, setDraft }) {
   return (
     <div className="space-y-3 text-sm text-right">
       <label className="block">
-        <span className="text-white/70">  </span>
+        <span className="text-white/70">שם בית הספר</span>
         <input
           value={draft.name}
           onChange={(e) => setDraft((d) => ({ ...d, name: e.target.value }))}
@@ -24,7 +24,7 @@ export function SchoolCreateFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        <span className="text-white/70"></span>
+        <span className="text-white/70">עיר</span>
         <input
           value={draft.city}
           onChange={(e) => setDraft((d) => ({ ...d, city: e.target.value }))}
@@ -32,7 +32,7 @@ export function SchoolCreateFormFields({ draft, setDraft }) {
         />
       </label>
       <label className="block">
-        <span className="text-white/70">  </span>
+        <span className="text-white/70">דוא״ל ליצירת קשר</span>
         <input
           type="email"
           value={draft.contactEmail}
@@ -55,14 +55,14 @@ export function SchoolCreateForm({ onCreate, busy }) {
         void onCreate(draft);
       }}
     >
-      <h2 className="font-semibold text-base">   </h2>
+      <h2 className="font-semibold text-base">יצירת בית ספר חדש</h2>
       <SchoolCreateFormFields draft={draft} setDraft={setDraft} />
       <button
         type="submit"
         disabled={busy}
         className="rounded bg-amber-500 text-black font-semibold px-4 py-2 disabled:opacity-60"
       >
-        {busy ? "…" : ""}
+        {busy ? "שומר…" : "יצירה"}
       </button>
     </form>
   );
@@ -72,11 +72,11 @@ export function SchoolTeacherAssignFormFields({ draft, setDraft, showForce = fal
   return (
     <div className="space-y-3 text-sm text-right">
       <label className="block">
-        <span className="text-white/70"> </span>
+        <span className="text-white/70">מזהה מורה</span>
         <input
           value={draft.teacherId}
           onChange={(e) => setDraft((d) => ({ ...d, teacherId: e.target.value }))}
-          placeholder=" "
+          placeholder="מזהה מורה"
           required
           className={inputClass}
         />
@@ -122,7 +122,7 @@ export function SchoolTeacherAssignForm({ label, onAssign, busy, showForce = fal
         disabled={busy}
         className="rounded border border-white/25 bg-white/10 hover:bg-white/15 px-3 py-1.5 text-sm font-semibold disabled:opacity-60"
       >
-        {busy ? "…" : ""}
+        {busy ? "מבצע…" : "שיוך"}
       </button>
     </form>
   );
@@ -162,7 +162,7 @@ export function SchoolTeacherAssignPanel({ accessToken, schoolId, onReload }) {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(data?.error, ""));
+        setError(apiErrorMessageHe(data?.error, "שגיאה"));
         return false;
       }
       onReload?.();
@@ -223,16 +223,16 @@ export function SchoolTeacherAssignPanel({ accessToken, schoolId, onReload }) {
         footer={
           <>
             <AdminModalButton onClick={closeAssign} disabled={!!busy}>
-
+              ביטול
             </AdminModalButton>
             <AdminModalButton
               variant="primary"
               onClick={() => void saveAssign()}
               disabled={!!busy || !draft.teacherId.trim()}
               busy={assignBusy}
-              busyLabel="…"
+              busyLabel="מבצע…"
             >
-
+              שיוך
             </AdminModalButton>
           </>
         }
@@ -250,7 +250,7 @@ export function SchoolTeacherAssignPanel({ accessToken, schoolId, onReload }) {
 
 export function SchoolTeachersList({ teachers, accessToken, onReload }) {
   if (!teachers?.length) {
-    return <p className="text-white/60 text-sm">  .</p>;
+    return <p className="text-white/60 text-sm">אין מורים משויכים.</p>;
   }
 
   return (
@@ -264,10 +264,10 @@ export function SchoolTeachersList({ teachers, accessToken, onReload }) {
             <p className="font-medium">{t.displayName || t.teacherId}</p>
             <p className="text-xs text-white/50">
               {t.role === "school_admin"
-                ? "/"
+                ? "מנהל/ת"
                 : t.role === "school_operator"
-                  ? "/"
-                  : ""}
+                  ? "מזכיר/ות"
+                  : "מורה"}
             </p>
             {accessToken ? (
               <AdminSchoolStaffLifecycleCompact

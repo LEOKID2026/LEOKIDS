@@ -8,20 +8,15 @@ import {
   ADMIN_LOAD_ERROR,
   adminGradeLabelHe,
   apiErrorMessageHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 import {
-  ANALYTICS_CHILD_STATUS_OPTIONS,
-  ANALYTICS_DATE_PRESETS,
-  ANALYTICS_GRADE_FILTER_OPTIONS,
-  ANALYTICS_MAIN_TAB_OPTIONS,
-  ANALYTICS_SUBJECT_FILTER_OPTIONS,
   formatAnalyticsGradeHe,
   formatAnalyticsLabelHe,
   formatAnalyticsSourceHe,
   formatAnalyticsTableHe,
   formatAnalyticsUnitHe,
   formatWebTrafficLabelHe,
-} from "../../lib/admin-portal/admin-analytics-labels.js";
+} from "../../lib/admin-portal/admin-analytics-labels.he.js";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import {
   mergeFacebookReferrers,
@@ -30,10 +25,22 @@ import {
   sumLearningAndGames,
 } from "../../lib/admin-portal/admin-web-traffic-display.js";
 
-const PRESETS = ANALYTICS_DATE_PRESETS;
+const PRESETS = [
+  { value: "today", label: "היום" },
+  { value: "last7", label: "7 ימים" },
+  { value: "last30", label: "30 ימים" },
+  { value: "currentMonth", label: "החודש" },
+  { value: "custom", label: "טווח מותאם" },
+];
 
 const GRADES = [
-  ...ANALYTICS_GRADE_FILTER_OPTIONS,
+  { value: "all", label: "כל הכיתות" },
+  { value: "grade_1", label: "כיתה א׳" },
+  { value: "grade_2", label: "כיתה ב׳" },
+  { value: "grade_3", label: "כיתה ג׳" },
+  { value: "grade_4", label: "כיתה ד׳" },
+  { value: "grade_5", label: "כיתה ה׳" },
+  { value: "grade_6", label: "כיתה ו׳" },
   { value: "g1", label: adminGradeLabelHe("g1") },
   { value: "g2", label: adminGradeLabelHe("g2") },
   { value: "g3", label: adminGradeLabelHe("g3") },
@@ -42,12 +49,41 @@ const GRADES = [
   { value: "g6", label: adminGradeLabelHe("g6") },
 ];
 
-const SUBJECTS = ANALYTICS_SUBJECT_FILTER_OPTIONS;
+const SUBJECTS = [
+  { value: "all", label: "כל המקצועות" },
+  { value: "math", label: "מתמטיקה" },
+  { value: "geometry", label: "גאומטריה" },
+  { value: "hebrew", label: "עברית" },
+  { value: "english", label: "אנגלית" },
+  { value: "science", label: "מדעים" },
+  { value: "moledet_geography", label: "מולדת וגאוגרפיה" },
+];
 
-const CHILD_STATUSES = ANALYTICS_CHILD_STATUS_OPTIONS;
+const CHILD_STATUSES = [
+  { value: "all", label: "כל הילדים" },
+  { value: "active", label: "ילדים פעילים" },
+  { value: "inactive", label: "ילדים לא פעילים" },
+];
 
 /** Main navigation tabs — only one tab panel visible at a time. */
-export const ANALYTICS_MAIN_TABS = ANALYTICS_MAIN_TAB_OPTIONS;
+export const ANALYTICS_MAIN_TABS = [
+  { id: "overview", label: "סקירה כללית" },
+  { id: "webTraffic", label: "תנועה באתר" },
+  { id: "accounts", label: "חשבונות" },
+  { id: "parents", label: "הורים" },
+  { id: "children", label: "ילדים" },
+  { id: "learning", label: "למידה" },
+  { id: "reports", label: "דוחות" },
+  { id: "parentActivities", label: "פעילויות אישיות" },
+  { id: "teachers", label: "מורים פרטיים" },
+  { id: "books", label: "ספרים ושמע" },
+  { id: "rewards", label: "פרסים" },
+  { id: "funnels", label: "משפכי שימוש" },
+  { id: "retention", label: "חזרה לשימוש" },
+  { id: "abandonment", label: "נטישה" },
+  { id: "features", label: "שימוש" },
+  { id: "quality", label: "בדיקות אמת" },
+];
 
 function formatDateHe(iso) {
   if (!iso || typeof iso !== "string") return iso || "-";
@@ -67,7 +103,7 @@ function buildFilterSummary({ preset, from, to, grade, subject, childStatus, das
   const childLabel = labelFromOptions(childStatus, CHILD_STATUSES, childStatus);
   const rangeFrom = dashboard?.filters?.range?.fromDateOnly || from;
   const rangeTo = dashboard?.filters?.range?.toDateOnly || to;
-  return `Range: ${presetLabel} · ${formatDateHe(rangeFrom)} - ${formatDateHe(rangeTo)} · ${gradeLabel} · ${subjectLabel} · ${childLabel}`;
+  return `טווח: ${presetLabel} · ${formatDateHe(rangeFrom)} - ${formatDateHe(rangeTo)} · ${gradeLabel} · ${subjectLabel} · ${childLabel}`;
 }
 
 function FilterSummaryBar({
@@ -90,7 +126,7 @@ function FilterSummaryBar({
           aria-expanded={open}
           className="shrink-0 rounded-lg border border-white/15 px-3 py-1.5 text-xs font-semibold text-white/80 hover:bg-white/5"
         >
-          {open ? "Close Filters" : "Change Filters"}
+          {open ? "סגור סינון" : "שינוי סינון"}
         </button>
       </div>
       {open ? <div className="mt-2 pt-2 border-t border-white/10">{children}</div> : null}
@@ -99,9 +135,9 @@ function FilterSummaryBar({
 }
 
 const WEB_TRAFFIC_PRESETS = [
-  { value: "today", label: "Today" },
-  { value: "last7", label: "Last 7 days" },
-  { value: "last30", label: "Last 30 days" },
+  { value: "today", label: "היום" },
+  { value: "last7", label: "7 ימים" },
+  { value: "last30", label: "30 ימים" },
 ];
 
 function webTrafficPresetFromDashboard(preset) {
@@ -130,7 +166,7 @@ function formatTrafficNumber(value) {
 
 function ActivityFunnelSummary({ funnel }) {
   if (!funnel?.steps?.length) {
-    return <p className="text-sm text-white/50">No data yet</p>;
+    return <p className="text-sm text-white/50">אין נתונים עדיין</p>;
   }
   return (
     <div className="space-y-2">
@@ -144,7 +180,7 @@ function ActivityFunnelSummary({ funnel }) {
             <p className="text-xl font-bold text-white">
               {step.placeholder && step.value == null ? "-" : formatTrafficNumber(step.value)}
             </p>
-            <p className="text-[10px] text-white/40 mt-1 break-words">Source: {formatAnalyticsSourceHe(step.source)}</p>
+            <p className="text-[10px] text-white/40 mt-1 break-words">מקור: {formatAnalyticsSourceHe(step.source)}</p>
           </div>
         ))}
       </div>
@@ -173,7 +209,7 @@ function WebTrafficPresetBar({ value, onChange }) {
   );
 }
 
-const WEB_TRAFFIC_LOADING_TEXT = "Loading data…";
+const WEB_TRAFFIC_LOADING_TEXT = "טוען נתונים…";
 
 function WebTrafficStatCard({ title, value, hint, loading, error }) {
   return (
@@ -207,7 +243,7 @@ function webTrafficQuantityCell(row) {
   return formatTrafficNumber(amount);
 }
 
-function WebTrafficTable({ rows, dimension = "generic", nameLabel = "Name", empty = "No data in this range" }) {
+function WebTrafficTable({ rows, dimension = "generic", nameLabel = "שם", empty = "אין נתונים בטווח" }) {
   return (
     <SimpleTable
       rows={rows}
@@ -218,7 +254,7 @@ function WebTrafficTable({ rows, dimension = "generic", nameLabel = "Name", empt
           render: (row) =>
             formatWebTrafficLabelHe(row.rawLabel || row.label || row.key, row.dimension || dimension),
         },
-        { key: "value", label: "Count", render: webTrafficQuantityCell },
+        { key: "value", label: "כמות", render: webTrafficQuantityCell },
       ]}
       empty={empty}
     />
@@ -266,9 +302,9 @@ function buildWebTrafficViewModel({
     adminPages: trafficReady ? adminPages : [],
     referrers: trafficReady ? mergedReferrers : [],
     devices: trafficReady ? webTraffic.devices || [] : [],
-    newGuests: activityReady ? pickUserActivityValue(activityCards, "New guest accounts created") : null,
-    newParents: activityReady ? pickUserActivityValue(activityCards, "New parents") : null,
-    activeUsers: activityReady ? pickUserActivityValue(activityCards, "Users with real activity") : null,
+    newGuests: activityReady ? pickUserActivityValue(activityCards, "אורחים חדשים שנוצרו") : null,
+    newParents: activityReady ? pickUserActivityValue(activityCards, "הורים חדשים") : null,
+    activeUsers: activityReady ? pickUserActivityValue(activityCards, "משתמשים שביצעו פעילות בפועל") : null,
     learningAndGames: activityReady ? sumLearningAndGames(activityCards) : null,
   };
 }
@@ -307,115 +343,115 @@ function WebTrafficTabContent({
       <WebTrafficPresetBar value={webTrafficPreset} onChange={onPresetChange} />
 
       <div className="space-y-2">
-        <h2 className="text-sm font-semibold text-white/80">Web traffic</h2>
+        <h2 className="text-sm font-semibold text-white/80">תנועה באתר</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
           <WebTrafficStatCard
-            title="Visitors"
+            title="מבקרים"
             value={formatTrafficNumber(model.visitors)}
-            hint="How many people visited the site"
+            hint="כמה אנשים נכנסו לאתר"
             {...trafficCardProps}
           />
           <WebTrafficStatCard
-            title="Page views"
+            title="צפיות בדפים"
             value={formatTrafficNumber(model.pageviews)}
-            hint="How many pages Opened in total"
+            hint="כמה דפים נפתחו בסך הכל"
             {...trafficCardProps}
           />
           <WebTrafficStatCard
-            title="Facebook entries"
+            title="כניסות מפייסבוק"
             value={formatTrafficNumber(model.facebookEntries)}
-            hint="Arrivals from Facebook"
+            hint="הגעה מפייסבוק"
             {...trafficCardProps}
           />
           <WebTrafficStatCard
-            title="Most viewed page"
+            title="הדף הנצפה ביותר"
             value={formatTrafficNumber(model.topPageViews)}
-            hint={model.topPageLabel || "No data yet"}
+            hint={model.topPageLabel || "אין נתונים עדיין"}
             {...trafficCardProps}
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-sm font-semibold text-white/80">Site activity</h2>
+        <h2 className="text-sm font-semibold text-white/80">פעילות באתר</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
           <WebTrafficStatCard
-            title="Label"
+            title="אורחים חדשים"
             value={formatTrafficNumber(model.newGuests)}
-            hint="Children signed in as guests"
+            hint="ילדים שנכנסו כאורחים"
             {...activityCardProps}
           />
           <WebTrafficStatCard
-            title="New parents"
+            title="הורים חדשים"
             value={formatTrafficNumber(model.newParents)}
-            hint="Parents registered for the first time"
+            hint="הורים שנרשמו לראשונה"
             {...activityCardProps}
           />
           <WebTrafficStatCard
-            title="Active users"
+            title="משתמשים פעילים"
             value={formatTrafficNumber(model.activeUsers)}
-            hint="Label"
+            hint="מי שלמד או שיחק בפועל"
             {...activityCardProps}
           />
           <WebTrafficStatCard
-            title="Learning and games"
+            title="למידה ומשחקים"
             value={formatTrafficNumber(model.learningAndGames)}
-            hint="Total sessions of Learning and play"
+            hint="סה״כ סשני למידה ומשחק"
             {...activityCardProps}
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-sm font-semibold text-white/80">Public worksheet generator</h2>
+        <h2 className="text-sm font-semibold text-white/80">מחולל דפי עבודה ציבורי</h2>
         <p className="text-xs text-white/50 leading-relaxed">
-          Visit counts in this tab only (sessionStorage) — uses the main filter range at the top of the page.
+          מדידת ביקורים בטאב הנוכחי בלבד (sessionStorage) — לפי טווח הסינון הראשי בראש העמוד.
         </p>
         <MetricGrid items={publicWorksheetVisits?.cards} />
       </div>
 
       {!model.trafficLoading && !model.trafficError ? (
         <div className="space-y-4">
-          <WebTrafficSection title="Views by day">
+          <WebTrafficSection title="צפיות לפי יום">
             <WebTrafficTable
               rows={model.daily}
               dimension="daily"
-              nameLabel="Date"
-              empty="No data yet"
+              nameLabel="תאריך"
+              empty="אין נתונים עדיין"
             />
           </WebTrafficSection>
 
-          <WebTrafficSection title="Top pages">
+          <WebTrafficSection title="דפים מובילים">
             <WebTrafficTable
               rows={model.visitorPages}
               dimension="requestPath"
-              nameLabel="Page"
-              empty="No data yet"
+              nameLabel="דף"
+              empty="אין נתונים עדיין"
             />
             {model.adminPages.length ? (
               <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.02] p-3 space-y-2">
-                <h4 className="text-sm font-semibold text-white/70">Admin activity</h4>
-                <p className="text-xs text-white/45">Admin pages — not counted with regular visitors</p>
-                <WebTrafficTable rows={model.adminPages} dimension="requestPath" nameLabel="Page" empty="No data" />
+                <h4 className="text-sm font-semibold text-white/70">פעילות מנהל</h4>
+                <p className="text-xs text-white/45">דפי ניהול - לא נספרים יחד עם מבקרים רגילים</p>
+                <WebTrafficTable rows={model.adminPages} dimension="requestPath" nameLabel="דף" empty="אין נתונים" />
               </div>
             ) : null}
           </WebTrafficSection>
 
-          <WebTrafficSection title="Traffic sources">
+          <WebTrafficSection title="מקורות הגעה">
             <WebTrafficTable
               rows={model.referrers}
               dimension="referrerHostname"
-              nameLabel="Source"
-              empty="No data yet"
+              nameLabel="מקור"
+              empty="אין נתונים עדיין"
             />
           </WebTrafficSection>
 
-          <WebTrafficSection title="Devices">
+          <WebTrafficSection title="מכשירים">
             <WebTrafficTable
               rows={model.devices}
               dimension="deviceType"
-              nameLabel="Device"
-              empty="No data yet"
+              nameLabel="מכשיר"
+              empty="אין נתונים עדיין"
             />
           </WebTrafficSection>
         </div>
@@ -440,12 +476,12 @@ function thirtyDaysAgoIso() {
 
 function valueText(metric) {
   if (!metric) return "-";
-  if (metric.status === "not_tracked") return "Not tracked yet";
-  if (metric.status === "requires_events") return "Requires event collection";
-  if (metric.status === "empty") return "No data yet";
-  if (metric.status === "not_enough_data") return "Label";
-  if (metric.status === "unavailable") return "Data source unavailable";
-  if (metric.value === null || metric.value === undefined) return metric.note || "Not tracked yet";
+  if (metric.status === "not_tracked") return "עדיין לא נמדד";
+  if (metric.status === "requires_events") return "דורש איסוף אירועים";
+  if (metric.status === "empty") return "אין נתונים עדיין";
+  if (metric.status === "not_enough_data") return "אין מספיק נתונים עדיין";
+  if (metric.status === "unavailable") return "מקור נתונים לא זמין";
+  if (metric.value === null || metric.value === undefined) return metric.note || "עדיין לא נמדד";
   if (typeof metric.value === "number") {
     return new Intl.NumberFormat("he-IL", { maximumFractionDigits: 1 }).format(metric.value);
   }
@@ -461,7 +497,7 @@ function statusClass(status) {
 }
 
 function metricsSummary(items) {
-  if (!Array.isArray(items) || items.length === 0) return "No data in this range";
+  if (!Array.isArray(items) || items.length === 0) return "אין נתונים בטווח";
   const available = items.find((item) => item?.status === "available" && item.value != null);
   if (available) {
     const unit = available.unit ? ` ${formatAnalyticsUnitHe(available.unit)}` : "";
@@ -469,22 +505,22 @@ function metricsSummary(items) {
   }
   const noteItem = items.find((item) => item?.note);
   if (noteItem?.note) return formatAnalyticsLabelHe(noteItem.note);
-  if (items.every((item) => item?.status === "empty")) return "No data yet";
-  if (items.every((item) => item?.status === "not_enough_data")) return "Label";
+  if (items.every((item) => item?.status === "empty")) return "אין נתונים עדיין";
+  if (items.every((item) => item?.status === "not_enough_data")) return "אין מספיק נתונים עדיין";
   if (items.some((item) => item?.status === "requires_events" || item?.status === "not_tracked")) {
-    return "Label";
+    return "חלק מהמדדים דורשים איסוף אירועים";
   }
-  return `${items.length} metrics`;
+  return `${items.length} מדדים`;
 }
 
-function rowsSummary(rows, emptyText = "No data in this range") {
+function rowsSummary(rows, emptyText = "אין נתונים בטווח") {
   if (!Array.isArray(rows) || rows.length === 0) return emptyText;
   const top = rows[0];
   if (top?.label != null && top?.value != null) {
     return `${formatAnalyticsLabelHe(top.label || top.key)}: ${top.value}`;
   }
-  if (top?.date != null) return `${rows.length} rows · latest: ${top.date}`;
-  return `${rows.length} rows`;
+  if (top?.date != null) return `${rows.length} רשומות · אחרון: ${top.date}`;
+  return `${rows.length} רשומות`;
 }
 
 function MetricCard({ item }) {
@@ -493,7 +529,7 @@ function MetricCard({ item }) {
       <p className="text-[11px] text-white/55 mb-1">{formatAnalyticsLabelHe(item.label)}</p>
       <p className="text-xl font-bold text-white leading-tight">{valueText(item)}</p>
       {item.unit ? <p className="text-[11px] text-white/45 mt-0.5">{formatAnalyticsUnitHe(item.unit)}</p> : null}
-      <p className="text-[10px] text-white/40 mt-1 break-words">Source: {formatAnalyticsSourceHe(item.source)}</p>
+      <p className="text-[10px] text-white/40 mt-1 break-words">מקור: {formatAnalyticsSourceHe(item.source)}</p>
       {item.note && item.status !== "available" ? (
         <p className="text-[10px] text-amber-100/80 mt-1">{formatAnalyticsLabelHe(item.note)}</p>
       ) : null}
@@ -515,7 +551,7 @@ function cellValue(row, col) {
   return col.render ? col.render(row) : formatAnalyticsLabelHe(row[col.key]) ?? "-";
 }
 
-function SimpleTable({ rows, columns, empty = "No data in this range" }) {
+function SimpleTable({ rows, columns, empty = "אין נתונים בטווח" }) {
   if (!Array.isArray(rows) || rows.length === 0) {
     return <p className="text-sm text-white/50">{empty}</p>;
   }
@@ -577,8 +613,8 @@ function TopList({ title, rows }) {
       <SimpleTable
         rows={rows}
         columns={[
-          { key: "label", label: "Name", render: (row) => formatAnalyticsLabelHe(row.label || row.key) },
-          { key: "value", label: "Count" },
+          { key: "label", label: "שם", render: (row) => formatAnalyticsLabelHe(row.label || row.key) },
+          { key: "value", label: "כמות" },
         ]}
       />
     </div>
@@ -587,7 +623,7 @@ function TopList({ title, rows }) {
 
 function FunnelList({ funnels }) {
   if (!Array.isArray(funnels) || !funnels.length) {
-    return <p className="text-sm text-white/50">No data yet</p>;
+    return <p className="text-sm text-white/50">אין נתונים עדיין</p>;
   }
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-2">
@@ -602,14 +638,14 @@ function FunnelList({ funnels }) {
           <SimpleTable
             rows={funnel.steps}
             columns={[
-              { key: "label", label: "Step", render: (row) => formatAnalyticsLabelHe(row.label) },
-              { key: "value", label: "Count", render: (row) => (row.value == null ? valueText(row) : row.value) },
+              { key: "label", label: "שלב", render: (row) => formatAnalyticsLabelHe(row.label) },
+              { key: "value", label: "כמות", render: (row) => (row.value == null ? valueText(row) : row.value) },
               {
                 key: "conversionFromPrevious",
-                label: "Conversion",
+                label: "המרה",
                 render: (row) => (row.conversionFromPrevious == null ? "-" : `${row.conversionFromPrevious}%`),
               },
-              { key: "source", label: "Source", render: (row) => formatAnalyticsSourceHe(row.source) },
+              { key: "source", label: "מקור", render: (row) => formatAnalyticsSourceHe(row.source) },
             ]}
           />
         </div>
@@ -669,7 +705,7 @@ function AnalyticsTabBar({ activeTab, onChange }) {
   return (
     <nav
       className="rounded-xl border border-white/10 bg-white/[0.03] p-1.5 w-full max-w-full overflow-x-hidden"
-      aria-label="Label"
+      aria-label="קטגוריות אנליטיקה"
       data-analytics-tab-bar
     >
       <div className="flex flex-wrap gap-1.5 w-full max-w-full">
@@ -697,21 +733,21 @@ function TabToolbar({ panelIds, openPanels, onOpenAll, onCloseAll }) {
   const openCount = panelIds.filter((id) => openPanels[id]).length;
   return (
     <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-white/45">
-      <span>{openCount} of {panelIds.length} open panels</span>
+      <span>{openCount} מתוך {panelIds.length} בלוקים פתוחים</span>
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
           onClick={() => onOpenAll(panelIds)}
           className="rounded-lg border border-white/15 px-3 py-1.5 hover:bg-white/5 text-white/70 break-words"
         >
-          Expand all in tab
+          פתח הכל בטאב
         </button>
         <button
           type="button"
           onClick={() => onCloseAll(panelIds)}
           className="rounded-lg border border-white/15 px-3 py-1.5 hover:bg-white/5 text-white/70 break-words"
         >
-          Collapse all in tab
+          סגור הכל בטאב
         </button>
       </div>
     </div>
@@ -995,12 +1031,12 @@ export default function AdminAnalyticsPage() {
             />
             <Panel
               panelId="overview-funnel"
-              title="Funnel summary"
-              subtitle="Web traffic (Vercel) vs user activity (Supabase)"
+              title="משפך סיכום"
+              subtitle="תנועה באתר (Vercel) מול פעילות משתמשים (Supabase)"
               summary={
                 overviewMergedFunnel?.steps?.length
-                  ? `${overviewMergedFunnel.steps.length} steps`
-                  : "No data in this range"
+                  ? `${overviewMergedFunnel.steps.length} שלבים`
+                  : "אין נתונים בטווח"
               }
               toggle={togglePanel}
               isOpen={isPanelOpen("overview-funnel")}
@@ -1009,8 +1045,8 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="overview-user-activity"
-              title="User activity — Supabase"
-              subtitle="Guests, parents, learning and games (excluding system, QA, and admin accounts)"
+              title="פעילות משתמשים - Supabase"
+              subtitle="אורחים, הורים, למידה ומשחקים (ללא חשבונות מערכת, QA ומנהלים)"
               summary={metricsSummary(overviewUserActivitySection?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("overview-user-activity")}
@@ -1019,8 +1055,8 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="overview-summary"
-              title="General summary"
-              subtitle="Key feature-usage metrics from existing database sources"
+              title="סיכום כללי"
+              subtitle="מדדי שימוש מרכזיים ממקורות מאגר הנתונים הקיימים"
               summary={metricsSummary(sections.overview)}
               toggle={togglePanel}
               isOpen={isPanelOpen("overview-summary")}
@@ -1051,8 +1087,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="accounts-totals"
-              title="Total accounts"
-              subtitle="Auth accounts, personas, roles, and permissions"
+              title="סך חשבונות"
+              subtitle="חשבונות אימות, פרסונות, תפקידים והרשאות"
               summary={metricsSummary(sections.accounts?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("accounts-totals")}
@@ -1061,28 +1097,28 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="accounts-by-date"
-              title="Sign-ups by date"
+              title="הרשמות לפי תאריך"
               summary={rowsSummary(sections.accounts?.joinedByDay)}
               toggle={togglePanel}
               isOpen={isPanelOpen("accounts-by-date")}
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
-                <TopList title="Label" rows={sections.accounts?.joinedByDay} />
-                <TopList title="Label" rows={sections.accounts?.joinedByWeek} />
-                <TopList title="Label" rows={sections.accounts?.joinedByMonth} />
+                <TopList title="לפי יום" rows={sections.accounts?.joinedByDay} />
+                <TopList title="לפי שבוע" rows={sections.accounts?.joinedByWeek} />
+                <TopList title="לפי חודש" rows={sections.accounts?.joinedByMonth} />
               </div>
             </Panel>
             <Panel
               panelId="accounts-by-type"
-              title="Accounts by type"
+              title="חשבונות לפי סוג"
               summary={rowsSummary(sections.accounts?.byPersona)}
               toggle={togglePanel}
               isOpen={isPanelOpen("accounts-by-type")}
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
-                <TopList title="Label" rows={sections.accounts?.byPersona} />
-                <TopList title="Label" rows={sections.accounts?.byAuthRole} />
-                <TopList title="Label" rows={sections.accounts?.byStatus} />
+                <TopList title="פרסונה" rows={sections.accounts?.byPersona} />
+                <TopList title="תפקיד באימות" rows={sections.accounts?.byAuthRole} />
+                <TopList title="סטטוס הרשאות" rows={sections.accounts?.byStatus} />
               </div>
             </Panel>
           </div>
@@ -1094,8 +1130,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="parents-summary"
-              title="Summary Parents"
-              subtitle="Join dates, children, first learning, and days to feature usage"
+              title="סיכום הורים"
+              subtitle="הצטרפות, ילדים, למידה ראשונה וימים עד שימוש"
               summary={metricsSummary(sections.parentJoin?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parents-summary")}
@@ -1104,21 +1140,21 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="parents-by-date"
-              title="Parents by join date"
+              title="הורים לפי תאריך הצטרפות"
               summary={rowsSummary(sections.parentJoin?.byDay)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parents-by-date")}
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
-                <TopList title="Label" rows={sections.parentJoin?.byDay} />
-                <TopList title="Label" rows={sections.parentJoin?.byWeek} />
-                <TopList title="Label" rows={sections.parentJoin?.byMonth} />
+                <TopList title="לפי יום" rows={sections.parentJoin?.byDay} />
+                <TopList title="לפי שבוע" rows={sections.parentJoin?.byWeek} />
+                <TopList title="לפי חודש" rows={sections.parentJoin?.byMonth} />
               </div>
             </Panel>
             <Panel
               panelId="parents-onboarding-funnel"
-              title="Parent onboarding funnel"
-              summary="Path: login → child → learning → report"
+              title="משפך הצטרפות הורים"
+              summary="מסלול: כניסה → ילד → למידה → דוח"
               toggle={togglePanel}
               isOpen={isPanelOpen("parents-onboarding-funnel")}
             >
@@ -1126,8 +1162,8 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="parents-activity-metrics"
-              title="Parent activity"
-              subtitle="Creating children, reports, and meaningful feature usage"
+              title="פעילות הורים"
+              subtitle="יצירת ילדים, דוחות ושימוש משמעותי"
               summary={metricsSummary(sections.parents)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parents-activity-metrics")}
@@ -1143,8 +1179,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="children-join-summary"
-              title="Child onboarding"
-              subtitle="When children were added and time to first learning"
+              title="הצטרפות ילדים"
+              subtitle="מתי ילדים נוספו וכמה זמן עד למידה ראשונה"
               summary={metricsSummary(sections.childJoin?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("children-join-summary")}
@@ -1153,21 +1189,21 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="children-by-date"
-              title="Children by add date"
+              title="ילדים לפי תאריך הוספה"
               summary={rowsSummary(sections.childJoin?.byDay)}
               toggle={togglePanel}
               isOpen={isPanelOpen("children-by-date")}
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
-                <TopList title="Label" rows={sections.childJoin?.byDay} />
-                <TopList title="Label" rows={sections.childJoin?.byWeek} />
-                <TopList title="Label" rows={sections.childJoin?.byMonth} />
+                <TopList title="לפי יום" rows={sections.childJoin?.byDay} />
+                <TopList title="לפי שבוע" rows={sections.childJoin?.byWeek} />
+                <TopList title="לפי חודש" rows={sections.childJoin?.byMonth} />
               </div>
             </Panel>
             <Panel
               panelId="children-usage-summary"
-              title="Actual feature usage"
-              subtitle="Whether children actually learn, not just registered"
+              title="שימוש בפועל"
+              subtitle="האם הילדים באמת לומדים, ולא רק רשומים"
               summary={metricsSummary(sections.children?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("children-usage-summary")}
@@ -1176,7 +1212,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="children-by-grade"
-              title="Children By grade"
+              title="ילדים לפי כיתה"
               summary={rowsSummary(sections.children?.byGrade)}
               toggle={togglePanel}
               isOpen={isPanelOpen("children-by-grade")}
@@ -1184,13 +1220,13 @@ export default function AdminAnalyticsPage() {
               <SimpleTable
                 rows={sections.children?.byGrade}
                 columns={[
-                  { key: "grade", label: "Grade", render: (row) => formatAnalyticsGradeHe(row.grade) },
-                  { key: "children", label: "Children" },
-                  { key: "activeChildren", label: "Active" },
-                  { key: "minutes", label: "Minutes" },
-                  { key: "avgMinutes", label: "Avg. minutes" },
-                  { key: "answers", label: "Answers" },
-                  { key: "accuracy", label: "Accuracy %" },
+                  { key: "grade", label: "כיתה", render: (row) => formatAnalyticsGradeHe(row.grade) },
+                  { key: "children", label: "ילדים" },
+                  { key: "activeChildren", label: "פעילים" },
+                  { key: "minutes", label: "דקות" },
+                  { key: "avgMinutes", label: "דקות ממוצעות" },
+                  { key: "answers", label: "תשובות" },
+                  { key: "accuracy", label: "דיוק %" },
                 ]}
               />
             </Panel>
@@ -1203,8 +1239,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="learning-summary"
-              title="Summary Learning"
-              subtitle="Sessions, Minutes, Answers Accuracy"
+              title="סיכום למידה"
+              subtitle="מפגשים, דקות, תשובות ודיוק"
               summary={metricsSummary(sections.learning?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-summary")}
@@ -1213,7 +1249,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="learning-by-subject"
-              title="Feature usage By subject"
+              title="שימוש לפי מקצוע"
               summary={rowsSummary(sections.learning?.usage?.topSubjects)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-by-subject")}
@@ -1222,7 +1258,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="learning-by-topic"
-              title="Feature usage By topic"
+              title="שימוש לפי נושא"
               summary={rowsSummary(sections.learning?.usage?.topTopics)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-by-topic")}
@@ -1231,19 +1267,19 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="learning-by-grade"
-              title="Feature usage By grade"
+              title="שימוש לפי כיתה"
               summary={rowsSummary(sections.learning?.usage?.subjectByGrade)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-by-grade")}
             >
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-2">
-                <TopList title="Subject × grade" rows={sections.learning?.usage?.subjectByGrade} />
-                <TopList title="Topic × Grade" rows={sections.learning?.usage?.topicByGrade} />
+                <TopList title="מקצוע × כיתה" rows={sections.learning?.usage?.subjectByGrade} />
+                <TopList title="נושא × כיתה" rows={sections.learning?.usage?.topicByGrade} />
               </div>
             </Panel>
             <Panel
               panelId="learning-daily-accuracy"
-              title="Questions and accuracy by day"
+              title="שאלות ודיוק לפי יום"
               summary={rowsSummary(sections.learning?.daily)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-daily-accuracy")}
@@ -1251,17 +1287,17 @@ export default function AdminAnalyticsPage() {
               <SimpleTable
                 rows={sections.learning?.daily}
                 columns={[
-                  { key: "date", label: "Date" },
-                  { key: "sessions", label: "Sessions" },
-                  { key: "minutes", label: "Minutes" },
-                  { key: "questions", label: "Questions" },
-                  { key: "accuracy", label: "Accuracy %" },
+                  { key: "date", label: "יום" },
+                  { key: "sessions", label: "מפגשים" },
+                  { key: "minutes", label: "דקות" },
+                  { key: "questions", label: "שאלות" },
+                  { key: "accuracy", label: "דיוק %" },
                 ]}
               />
             </Panel>
             <Panel
               panelId="learning-hard-topics"
-              title="Hard topics"
+              title="נושאים קשים"
               summary={rowsSummary(sections.learning?.usage?.highWrongTopics)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-hard-topics")}
@@ -1269,15 +1305,15 @@ export default function AdminAnalyticsPage() {
               <SimpleTable
                 rows={sections.learning?.usage?.highWrongTopics}
                 columns={[
-                  { key: "topic", label: "Topic", render: (row) => formatAnalyticsLabelHe(row.topic) },
-                  { key: "answers", label: "Answers" },
-                  { key: "wrongRate", label: "Wrong rate %" },
+                  { key: "topic", label: "שיעור טעויות גבוה", render: (row) => formatAnalyticsLabelHe(row.topic) },
+                  { key: "answers", label: "תשובות" },
+                  { key: "wrongRate", label: "טעויות %" },
                 ]}
               />
             </Panel>
             <Panel
               panelId="learning-success-topics"
-              title="Topics with high success"
+              title="נושאים עם הצלחה גבוהה"
               summary={rowsSummary(sections.learning?.usage?.highSuccessTopics)}
               toggle={togglePanel}
               isOpen={isPanelOpen("learning-success-topics")}
@@ -1285,9 +1321,9 @@ export default function AdminAnalyticsPage() {
               <SimpleTable
                 rows={sections.learning?.usage?.highSuccessTopics}
                 columns={[
-                  { key: "topic", label: "Topic", render: (row) => formatAnalyticsLabelHe(row.topic) },
-                  { key: "answers", label: "Answers" },
-                  { key: "accuracy", label: "Accuracy %" },
+                  { key: "topic", label: "הצלחה גבוהה", render: (row) => formatAnalyticsLabelHe(row.topic) },
+                  { key: "answers", label: "תשובות" },
+                  { key: "accuracy", label: "דיוק %" },
                 ]}
               />
             </Panel>
@@ -1300,7 +1336,7 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="reports-open-export"
-              title="Report opens and PDF export"
+              title="פתיחת דוחות וייצוא PDF"
               summary={metricsSummary(sections.reportTruth?.cards?.slice(0, 4))}
               toggle={togglePanel}
               isOpen={isPanelOpen("reports-open-export")}
@@ -1309,20 +1345,20 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="reports-truth-check"
-              title="Label"
-              subtitle="Compare reports to existing database data"
-              summary="Raw source checks"
+              title="בדיקת אמת מול מאגר נתונים"
+              subtitle="השוואת דוחות לנתוני מסד הנתונים הקיימים"
+              summary="בדיקות מקור גולמיות"
               toggle={togglePanel}
               isOpen={isPanelOpen("reports-truth-check")}
             >
               <p className="text-xs text-white/55">
-                Metrics in "Report opens and PDF export" include comparison against database sources.
+                המדדים בבלוק "פתיחת דוחות וייצוא PDF" כוללים השוואה מול מקורות מאגר הנתונים.
               </p>
             </Panel>
             <Panel
               panelId="reports-suspicious-gaps"
-              title="Label"
-              subtitle="Reports with insufficient data or suspected gaps"
+              title="פערים חשודים"
+              subtitle="דוחות בלי מספיק מידע או חשד לפערים"
               summary={metricsSummary(sections.reportTruth?.suspicious)}
               toggle={togglePanel}
               isOpen={isPanelOpen("reports-suspicious-gaps")}
@@ -1338,8 +1374,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="parent-activities-summary"
-              title="Summary Personal activities"
-              subtitle="Label"
+              title="סיכום פעילויות אישיות"
+              subtitle="יצירה, התחלה, השלמה וציון"
               summary={metricsSummary(sections.parentActivities?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parent-activities-summary")}
@@ -1348,7 +1384,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="parent-activities-by-subject"
-              title="By subject"
+              title="לפי מקצוע"
               summary={rowsSummary(sections.parentActivities?.bySubject)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parent-activities-by-subject")}
@@ -1357,7 +1393,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="parent-activities-by-topic"
-              title="By topic"
+              title="לפי נושא"
               summary={rowsSummary(sections.parentActivities?.byTopic)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parent-activities-by-topic")}
@@ -1366,7 +1402,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="parent-activities-by-grade"
-              title="Label"
+              title="לפי כיתת ילד"
               summary={rowsSummary(sections.parentActivities?.byChildGrade)}
               toggle={togglePanel}
               isOpen={isPanelOpen("parent-activities-by-grade")}
@@ -1382,8 +1418,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="teachers-summary"
-              title="Summary Private teachers"
-              subtitle="Join dates, activity, reports, activities, and worksheets"
+              title="סיכום מורים פרטיים"
+              subtitle="הצטרפות, פעילות, דוחות, פעילויות ודפי עבודה"
               summary={metricsSummary(sections.teachers?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("teachers-summary")}
@@ -1392,20 +1428,20 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="teachers-by-date"
-              title="Teachers by join date"
+              title="מורים לפי תאריך הצטרפות"
               summary={rowsSummary(sections.teachers?.byDay)}
               toggle={togglePanel}
               isOpen={isPanelOpen("teachers-by-date")}
             >
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-2">
-                <TopList title="Label" rows={sections.teachers?.byDay} />
-                <TopList title="Label" rows={sections.teachers?.byWeek} />
-                <TopList title="Label" rows={sections.teachers?.byMonth} />
+                <TopList title="לפי יום" rows={sections.teachers?.byDay} />
+                <TopList title="לפי שבוע" rows={sections.teachers?.byWeek} />
+                <TopList title="לפי חודש" rows={sections.teachers?.byMonth} />
               </div>
             </Panel>
             <Panel
               panelId="teachers-activity"
-              title="Label"
+              title="פעילות מורים לפי יום"
               summary={rowsSummary(sections.teachers?.activityByDay)}
               toggle={togglePanel}
               isOpen={isPanelOpen("teachers-activity")}
@@ -1421,8 +1457,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="books-summary"
-              title="Label"
-              subtitle="What is measured today vs what requires event collection"
+              title="ספרים, שמע, הסברים ודפי עבודה"
+              subtitle="מה שנמדד היום מול מה שדורש איסוף אירועים"
               summary={metricsSummary(sections.booksAudioWorksheets)}
               toggle={togglePanel}
               isOpen={isPanelOpen("books-summary")}
@@ -1431,7 +1467,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="books-top-pages"
-              title="Label"
+              title="עמודי ספר מובילים"
               summary={rowsSummary(sections.topBookPages)}
               toggle={togglePanel}
               isOpen={isPanelOpen("books-top-pages")}
@@ -1447,8 +1483,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="rewards-summary"
-              title="Rewards and coins"
-              subtitle="Coin transactions and child balances"
+              title="פרסים ומטבעות"
+              subtitle="עסקאות מטבעות ויתרות ילדים"
               summary={metricsSummary(sections.rewards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("rewards-summary")}
@@ -1457,7 +1493,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="rewards-by-day"
-              title="Label"
+              title="מטבעות לפי יום"
               summary={rowsSummary(sections.rewardsByDay)}
               toggle={togglePanel}
               isOpen={isPanelOpen("rewards-by-day")}
@@ -1466,7 +1502,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="rewards-by-reason"
-              title="Label"
+              title="מטבעות לפי סיבה"
               summary={rowsSummary(sections.rewardsByReason)}
               toggle={togglePanel}
               isOpen={isPanelOpen("rewards-by-reason")}
@@ -1482,9 +1518,9 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="funnels-all"
-              title="Usage funnels"
-              subtitle="Usage paths: parent, child, reports, activities, books & audio"
-              summary={`${(sections.funnels || []).length} funnels`}
+              title="משפכי שימוש"
+              subtitle="מסלולי שימוש: הורה, ילד, דוחות, פעילויות, ספרים ושמע"
+              summary={`${(sections.funnels || []).length} משפכים`}
               toggle={togglePanel}
               isOpen={isPanelOpen("funnels-all")}
             >
@@ -1499,8 +1535,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="retention-summary"
-              title="Retention"
-              subtitle="Label"
+              title="חזרה לשימוש"
+              subtitle="שימור יום 1 / 7 / 30 - רק אחרי מספיק זמן ונתונים"
               summary={metricsSummary(sections.retention)}
               toggle={togglePanel}
               isOpen={isPanelOpen("retention-summary")}
@@ -1516,8 +1552,8 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="abandonment-summary"
-              title="Abandonment and abandonment candidates"
-              subtitle="Explicit abandonment events and inferred candidates"
+              title="נטישה ומועמדי נטישה"
+              subtitle="אירועי נטישה מפורשים ומועמדים מוסקים"
               summary={metricsSummary(sections.abandonment)}
               toggle={togglePanel}
               isOpen={isPanelOpen("abandonment-summary")}
@@ -1533,7 +1569,7 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="features-summary"
-              title="Feature usage summary by feature"
+              title="סיכום שימוש בפיצ׳רים"
               summary={metricsSummary(sections.featureUsage?.cards)}
               toggle={togglePanel}
               isOpen={isPanelOpen("features-summary")}
@@ -1542,7 +1578,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="features-most-used"
-              title="Most used features"
+              title="התכונות הכי בשימוש"
               summary={rowsSummary(sections.featureUsage?.mostUsed)}
               toggle={togglePanel}
               isOpen={isPanelOpen("features-most-used")}
@@ -1551,7 +1587,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="features-least-used"
-              title="Least used features"
+              title="התכונות הכי פחות בשימוש"
               summary={rowsSummary(sections.featureUsage?.leastUsed)}
               toggle={togglePanel}
               isOpen={isPanelOpen("features-least-used")}
@@ -1560,7 +1596,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="features-by-grade"
-              title="Feature usage By grade"
+              title="שימוש לפי כיתה"
               summary={rowsSummary(sections.featureUsage?.byGrade)}
               toggle={togglePanel}
               isOpen={isPanelOpen("features-by-grade")}
@@ -1569,7 +1605,7 @@ export default function AdminAnalyticsPage() {
             </Panel>
             <Panel
               panelId="features-by-subject"
-              title="Feature usage By subject"
+              title="שימוש לפי מקצוע"
               summary={rowsSummary(sections.featureUsage?.bySubject)}
               toggle={togglePanel}
               isOpen={isPanelOpen("features-by-subject")}
@@ -1585,19 +1621,19 @@ export default function AdminAnalyticsPage() {
             <TabToolbar panelIds={currentPanelIds} openPanels={openPanels} onOpenAll={openAllPanels} onCloseAll={closeAllPanels} />
             <Panel
               panelId="quality-source-errors"
-              title="Missing data sources / quality"
-              subtitle="Tables or sources not fully loaded"
-              summary={sourceErrors.length ? `${sourceErrors.length} missing sources` : "All sources available"}
+              title="מקורות נתונים חסרים / איכות"
+              subtitle="טבלאות או מקורות שלא נטענו במלואם"
+              summary={sourceErrors.length ? `${sourceErrors.length} מקורות חסרים` : "כל המקורות זמינים"}
               toggle={togglePanel}
               isOpen={isPanelOpen("quality-source-errors")}
             >
               {sourceErrors.length ? (
                 <div className="rounded-xl border border-amber-400/25 bg-amber-400/10 p-2 text-xs text-amber-100">
-                  Some data sources are missing or unavailable:{" "}
+                  חלק ממקורות הנתונים חסרים או לא זמינים:{" "}
                   {sourceErrors.map((e) => formatAnalyticsTableHe(e.table)).join(", ")}
                 </div>
               ) : (
-                <p className="text-sm text-emerald-100/80">All primary data sources loaded successfully for the current range.</p>
+                <p className="text-sm text-emerald-100/80">כל מקורות הנתונים המרכזיים נטענו בהצלחה בטווח הנוכחי.</p>
               )}
             </Panel>
           </div>
@@ -1619,7 +1655,7 @@ export default function AdminAnalyticsPage() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
               <label className="text-xs text-white/70">
-                Range
+                טווח
                 <select value={preset} onChange={(e) => setPreset(e.target.value)} className="mt-1 w-full rounded-lg bg-slate-950 border border-white/15 px-2 py-1.5 text-sm text-white">
                   {PRESETS.map((item) => (
                     <option key={item.value} value={item.value}>{item.label}</option>
@@ -1627,15 +1663,15 @@ export default function AdminAnalyticsPage() {
                 </select>
               </label>
               <label className="text-xs text-white/70">
-                From
+                מתאריך
                 <input type="date" value={from} disabled={preset !== "custom"} onChange={(e) => setFrom(e.target.value)} className="mt-1 w-full rounded-lg bg-slate-950 border border-white/15 px-2 py-1.5 text-sm text-white disabled:opacity-50" />
               </label>
               <label className="text-xs text-white/70">
-                To
+                עד תאריך
                 <input type="date" value={to} disabled={preset !== "custom"} onChange={(e) => setTo(e.target.value)} className="mt-1 w-full rounded-lg bg-slate-950 border border-white/15 px-2 py-1.5 text-sm text-white disabled:opacity-50" />
               </label>
               <label className="text-xs text-white/70">
-                Grade
+                כיתה
                 <select value={grade} onChange={(e) => setGrade(e.target.value)} className="mt-1 w-full rounded-lg bg-slate-950 border border-white/15 px-2 py-1.5 text-sm text-white">
                   {GRADES.map((item) => (
                     <option key={item.value} value={item.value}>{item.label}</option>
@@ -1643,7 +1679,7 @@ export default function AdminAnalyticsPage() {
                 </select>
               </label>
               <label className="text-xs text-white/70">
-                Subject
+                מקצוע
                 <select value={subject} onChange={(e) => setSubject(e.target.value)} className="mt-1 w-full rounded-lg bg-slate-950 border border-white/15 px-2 py-1.5 text-sm text-white">
                   {SUBJECTS.map((item) => (
                     <option key={item.value} value={item.value}>{item.label}</option>
@@ -1651,7 +1687,7 @@ export default function AdminAnalyticsPage() {
                 </select>
               </label>
               <label className="text-xs text-white/70">
-                Child status
+                סטטוס ילד
                 <select value={childStatus} onChange={(e) => setChildStatus(e.target.value)} className="mt-1 w-full rounded-lg bg-slate-950 border border-white/15 px-2 py-1.5 text-sm text-white">
                   {CHILD_STATUSES.map((item) => (
                     <option key={item.value} value={item.value}>{item.label}</option>
@@ -1667,7 +1703,7 @@ export default function AdminAnalyticsPage() {
                   }}
                   className="w-full rounded-lg bg-amber-500/90 hover:bg-amber-500 text-slate-950 font-bold px-3 py-1.5 text-sm"
                 >
-                  Refresh data
+                  רענון נתונים
                 </button>
               </div>
             </div>
@@ -1681,7 +1717,7 @@ export default function AdminAnalyticsPage() {
             <>
               {sourceErrors.length ? (
                 <div className="rounded-xl border border-amber-400/25 bg-amber-400/10 p-2 text-xs text-amber-100">
-                  There are {sourceErrors.length} missing data sources — see the "Truth checks" tab.
+                  יש {sourceErrors.length} מקורות נתונים חסרים - פרטים בטאב "בדיקות אמת".
                 </div>
               ) : null}
 

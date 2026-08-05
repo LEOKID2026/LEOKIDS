@@ -64,7 +64,7 @@ async function main() {
   const deleteSection = await read("components/admin/AdminUserDeleteSection.jsx");
   const lifecyclePanel = await read("components/admin/AdminUserLifecyclePanel.jsx");
   const settingsApi = await read("pages/api/admin/parents/[userId]/settings.js");
-  const adminUi = await read("lib/admin-portal/admin-ui.js");
+  const adminUi = await read("lib/admin-portal/admin-ui.he.js");
 
   record(
     "list_includes_orphan_profiles",
@@ -94,7 +94,7 @@ async function main() {
   );
   record(
     "hebrew_unlinked_label",
-    adminUi.includes("  ") && adminUi.includes("parentListStatusLabelHe"),
+    adminUi.includes("חשבון לא מקושר") && adminUi.includes("parentListStatusLabelHe"),
     "Hebrew unlinked label"
   );
   record(

@@ -9,7 +9,7 @@ import {
   ADMIN_SCHOOL_LIFECYCLE_SUSPEND,
   ADMIN_SCHOOL_LIFECYCLE_SUSPENDED,
   apiErrorMessageHe,
-} from "../../lib/admin-portal/admin-ui.js";
+} from "../../lib/admin-portal/admin-ui.he.js";
 
 /**
  * @param {{ accessToken: string, school: object, onChanged?: () => void }} props
@@ -30,7 +30,7 @@ export default function AdminSchoolLifecyclePanel({ accessToken, school, onChang
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, " "));
+        setError(apiErrorMessageHe(json?.error, "עדכון נכשל"));
         return;
       }
       onChanged?.();

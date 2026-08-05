@@ -17,6 +17,7 @@ const tests = [
   "tests/i18n/global-card-copy-resolver.test.mjs",
   "tests/rewards/card-acquisition-evaluator.test.mjs",
   "tests/rewards/card-catalog-admin-parity.test.mjs",
+  "tests/rewards/global-card-catalog-parity.test.mjs",
   "tests/arcade/economy-entry-costs.test.mjs",
 ];
 
