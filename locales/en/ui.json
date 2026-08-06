@@ -713,7 +713,10 @@
   },
   "teacherShell": {
     "backToDashboard": "← Back to dashboard",
-    "schoolLabel": "School: {name}"
+    "schoolLabel": "School: {name}",
+    "signOut": "Sign out",
+    "myClasses": "My classes",
+    "classReportTitle": "Class report"
   },
   "copilot": {
     "panel": {

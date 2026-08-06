@@ -7,11 +7,11 @@ import { useState } from "react";
 import { useStudentTheme } from "../contexts/StudentThemeContext.jsx";
 import { useSharedShellUi } from "../hooks/useSharedShellUi.js";
 import { useI18n } from "../lib/i18n/I18nProvider.jsx";
-import { useLegalPolicyBundle } from "../hooks/useLegalPolicyBundle.js";
 import {
   CONTACT_EMAIL,
 } from "../data/legal/sitePolicies.js";
 import { validateContactForm } from "../lib/contact/contact-form.js";
+import { getContactLegalPageLinks, resolveContactLegalLinkLabel } from "../lib/legal/contact-legal-link-label.js";
 
 const INSTAGRAM_URL = "https://www.instagram.com/leotheshiba21";
 const YOUTUBE_URL = "https://www.youtube.com/@LEO-KIDS-2026";
@@ -33,7 +33,6 @@ export default function Contact() {
   const { theme } = useStudentTheme();
   const { SP } = useSharedShellUi();
   const { direction, locale, t } = useI18n();
-  const legal = useLegalPolicyBundle();
   const [activeAnswer, setActiveAnswer] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -347,10 +346,10 @@ export default function Contact() {
         >
           <p className={SP.navLabel}>{t("ui.public.contact.legalHeading")}</p>
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
-            {legal.legalContactPageLinks.map((link) => (
+            {getContactLegalPageLinks().map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className={SP.link}>
-                  {link.label}
+                  {resolveContactLegalLinkLabel(link.href, t, link.fallbackLabel)}
                 </Link>
               </li>
             ))}

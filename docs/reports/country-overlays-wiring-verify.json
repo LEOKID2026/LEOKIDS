@@ -1,0 +1,4925 @@
+{
+  "generatedAt": "2026-08-06T22:42:05.233Z",
+  "base": "http://127.0.0.1:3001",
+  "overallStatus": "PASS",
+  "englishSoTRemainsValid": true,
+  "mastersRemainValid": true,
+  "canProceedToFinalFixesClosure": true,
+  "totals": {
+    "overlays": 67,
+    "routesChecked": 469,
+    "loggedInSamples": 12,
+    "apiResponses": 36,
+    "findings": 0,
+    "actionableFindings": 0,
+    "hebrewHits": 0,
+    "englishLeakageHits": 0,
+    "pass": 67,
+    "fail": 0,
+    "blocked": 0
+  },
+  "inventory": [
+    {
+      "locale": "es-MX",
+      "path": "/mx",
+      "pathSegment": "mx",
+      "selectorLabel": "México",
+      "visible": true,
+      "fallbackChain": [
+        "es-MX",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 4,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-MX"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-CO",
+      "path": "/co",
+      "pathSegment": "co",
+      "selectorLabel": "Colombia",
+      "visible": true,
+      "fallbackChain": [
+        "es-CO",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de grados 1 a 6",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-CO"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-AR",
+      "path": "/ar",
+      "pathSegment": "ar",
+      "selectorLabel": "Argentina",
+      "visible": true,
+      "fallbackChain": [
+        "es-AR",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "partial",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-AR"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-PE",
+      "path": "/pe",
+      "pathSegment": "pe",
+      "selectorLabel": "Perú",
+      "visible": true,
+      "fallbackChain": [
+        "es-PE",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-PE"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-CL",
+      "path": "/cl",
+      "pathSegment": "cl",
+      "selectorLabel": "Chile",
+      "visible": true,
+      "fallbackChain": [
+        "es-CL",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de 1° a 6° básico",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-CL"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-EC",
+      "path": "/ec",
+      "pathSegment": "ec",
+      "selectorLabel": "Ecuador",
+      "visible": true,
+      "fallbackChain": [
+        "es-EC",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación General Básica",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-EC"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-GT",
+      "path": "/gt",
+      "pathSegment": "gt",
+      "selectorLabel": "Guatemala",
+      "visible": true,
+      "fallbackChain": [
+        "es-GT",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-GT"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-DO",
+      "path": "/do",
+      "pathSegment": "do",
+      "selectorLabel": "R. Dominicana",
+      "visible": true,
+      "fallbackChain": [
+        "es-DO",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Nivel Primario",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-DO"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-VE",
+      "path": "/ve",
+      "pathSegment": "ve",
+      "selectorLabel": "Venezuela",
+      "visible": true,
+      "fallbackChain": [
+        "es-VE",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-VE"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-BO",
+      "path": "/bo",
+      "pathSegment": "bo",
+      "selectorLabel": "Bolivia",
+      "visible": true,
+      "fallbackChain": [
+        "es-BO",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-BO"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-HN",
+      "path": "/hn",
+      "pathSegment": "hn",
+      "selectorLabel": "Honduras",
+      "visible": true,
+      "fallbackChain": [
+        "es-HN",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-HN"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-SV",
+      "path": "/sv",
+      "pathSegment": "sv",
+      "selectorLabel": "El Salvador",
+      "visible": true,
+      "fallbackChain": [
+        "es-SV",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Básica",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-SV"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-NI",
+      "path": "/ni",
+      "pathSegment": "ni",
+      "selectorLabel": "Nicaragua",
+      "visible": true,
+      "fallbackChain": [
+        "es-NI",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-NI"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-PY",
+      "path": "/py",
+      "pathSegment": "py",
+      "selectorLabel": "Paraguay",
+      "visible": true,
+      "fallbackChain": [
+        "es-PY",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Escolar Básica",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-PY"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-CR",
+      "path": "/cr",
+      "pathSegment": "cr",
+      "selectorLabel": "Costa Rica",
+      "visible": true,
+      "fallbackChain": [
+        "es-CR",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-CR"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-PA",
+      "path": "/pa",
+      "pathSegment": "pa",
+      "selectorLabel": "Panamá",
+      "visible": true,
+      "fallbackChain": [
+        "es-PA",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-PA"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-UY",
+      "path": "/uy",
+      "pathSegment": "uy",
+      "selectorLabel": "Uruguay",
+      "visible": true,
+      "fallbackChain": [
+        "es-UY",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-UY"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-CU",
+      "path": "/cu",
+      "pathSegment": "cu",
+      "selectorLabel": "Cuba",
+      "visible": true,
+      "fallbackChain": [
+        "es-CU",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-CU"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-PR",
+      "path": "/pr",
+      "pathSegment": "pr",
+      "selectorLabel": "Puerto Rico",
+      "visible": true,
+      "fallbackChain": [
+        "es-PR",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Nivel Primario",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-PR"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "es-ES",
+      "path": "/es",
+      "pathSegment": "es",
+      "selectorLabel": "España",
+      "visible": true,
+      "fallbackChain": [
+        "es-ES",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "partial",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica para estudiantes de Educación Primaria",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres.",
+        "lang": "es-ES"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "pt-AO",
+      "path": "/ao",
+      "pathSegment": "ao",
+      "selectorLabel": "Angola",
+      "visible": true,
+      "fallbackChain": [
+        "pt-AO",
+        "pt-PT",
+        "pt-BR",
+        "en"
+      ],
+      "master": "pt-PT",
+      "overlayType": "sparse",
+      "localesNsCount": 7,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids – Prática para alunos do Ensino Primário",
+        "description": "Prática de matemática, geometria, inglês e ciências com acompanhamento de progresso para os encarregados de educação.",
+        "lang": "pt-AO"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 10
+    },
+    {
+      "locale": "pt-MZ",
+      "path": "/mz",
+      "pathSegment": "mz",
+      "selectorLabel": "Mozambique",
+      "visible": true,
+      "fallbackChain": [
+        "pt-MZ",
+        "pt-PT",
+        "pt-BR",
+        "en"
+      ],
+      "master": "pt-PT",
+      "overlayType": "sparse",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids – Prática para alunos do Ensino Primário",
+        "description": "Prática de matemática, geometria, inglês e ciências com acompanhamento de progresso para os encarregados de educação.",
+        "lang": "pt-MZ"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 10
+    },
+    {
+      "locale": "fr-CI",
+      "path": "/ci",
+      "pathSegment": "ci",
+      "selectorLabel": "Côte d’Ivoire",
+      "visible": true,
+      "fallbackChain": [
+        "fr-CI",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire en Côte d’Ivoire",
+        "description": "Pratique des mathématiques, de la géométrie, de l'anglais et des sciences avec suivi des progrès pour les parents en Côte d’Ivoire.",
+        "lang": "fr-CI"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 1
+    },
+    {
+      "locale": "fr-CA",
+      "path": "/ca-fr",
+      "pathSegment": "ca-fr",
+      "selectorLabel": "Canada-fr",
+      "visible": true,
+      "fallbackChain": [
+        "fr-CA",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire au Canada",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents au Canada.",
+        "lang": "fr-CA"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 11
+    },
+    {
+      "locale": "de-AT",
+      "path": "/at",
+      "pathSegment": "at",
+      "selectorLabel": "Austria",
+      "visible": true,
+      "fallbackChain": [
+        "de-AT",
+        "de-DE",
+        "en"
+      ],
+      "master": "de-DE",
+      "overlayType": "partial",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Übungen für Kinder der Schulstufen 1–6",
+        "description": "Übungen in Mathematik, Geometrie, Englisch und Naturwissenschaften mit Fortschrittsanzeige für Eltern.",
+        "lang": "de-AT"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "de-CH",
+      "path": "/ch-de",
+      "pathSegment": "ch-de",
+      "selectorLabel": "Switzerland-de",
+      "visible": true,
+      "fallbackChain": [
+        "de-CH",
+        "de-DE",
+        "en"
+      ],
+      "master": "de-DE",
+      "overlayType": "sparse",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Übungen für Primarschulkinder",
+        "description": "Übungen in Mathematik, Geometrie, Englisch und Naturwissenschaften für die Primarstufe — mit Fortschrittsanzeige für Eltern.",
+        "lang": "de-CH"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 2
+    },
+    {
+      "locale": "en-AU",
+      "path": "/au",
+      "pathSegment": "au",
+      "selectorLabel": "Australia",
+      "visible": true,
+      "fallbackChain": [
+        "en-AU",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-AU"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-NZ",
+      "path": "/nz",
+      "pathSegment": "nz",
+      "selectorLabel": "New Zealand",
+      "visible": true,
+      "fallbackChain": [
+        "en-NZ",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-NZ"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-IE",
+      "path": "/ie",
+      "pathSegment": "ie",
+      "selectorLabel": "Ireland",
+      "visible": true,
+      "fallbackChain": [
+        "en-IE",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-IE"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-GB",
+      "path": "/eng",
+      "pathSegment": "eng",
+      "selectorLabel": "England",
+      "visible": true,
+      "fallbackChain": [
+        "en-GB",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-GB"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-CA",
+      "path": "/ca",
+      "pathSegment": "ca",
+      "selectorLabel": "Canada-en",
+      "visible": true,
+      "fallbackChain": [
+        "en-CA",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "sparse",
+      "localesNsCount": 3,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for elementary learners",
+        "description": "Math, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-CA"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "en-SG",
+      "path": "/sg",
+      "pathSegment": "sg",
+      "selectorLabel": "Singapore",
+      "visible": true,
+      "fallbackChain": [
+        "en-SG",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-SG"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-ZA",
+      "path": "/za",
+      "pathSegment": "za",
+      "selectorLabel": "South Africa",
+      "visible": true,
+      "fallbackChain": [
+        "en-ZA",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "sparse",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-ZA"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "en-NG",
+      "path": "/ng",
+      "pathSegment": "ng",
+      "selectorLabel": "Nigeria",
+      "visible": true,
+      "fallbackChain": [
+        "en-NG",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school pupils in Nigeria",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-NG"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-KE",
+      "path": "/ke",
+      "pathSegment": "ke",
+      "selectorLabel": "Kenya",
+      "visible": true,
+      "fallbackChain": [
+        "en-KE",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "sparse",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school learners in Kenya",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-KE"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 1
+    },
+    {
+      "locale": "en-WLS",
+      "path": "/wls",
+      "pathSegment": "wls",
+      "selectorLabel": "Wales",
+      "visible": true,
+      "fallbackChain": [
+        "en-WLS",
+        "en-GB",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "zero-content",
+      "localesNsCount": 0,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-WLS"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "en-SCT",
+      "path": "/sct",
+      "pathSegment": "sct",
+      "selectorLabel": "Scotland",
+      "visible": true,
+      "fallbackChain": [
+        "en-SCT",
+        "en-GB",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-SCT"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-NIR",
+      "path": "/nir",
+      "pathSegment": "nir",
+      "selectorLabel": "Northern Ireland",
+      "visible": true,
+      "fallbackChain": [
+        "en-NIR",
+        "en-GB",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary learners",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-NIR"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-PH",
+      "path": "/ph",
+      "pathSegment": "ph",
+      "selectorLabel": "Philippines",
+      "visible": true,
+      "fallbackChain": [
+        "en-PH",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "zero-content",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for elementary learners",
+        "description": "Math, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-PH"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "nl-BE",
+      "path": "/be-nl",
+      "pathSegment": "be-nl",
+      "selectorLabel": "Belgium-nl",
+      "visible": true,
+      "fallbackChain": [
+        "nl-BE",
+        "nl-NL",
+        "en"
+      ],
+      "master": "nl-NL",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Oefenen voor leerlingen van de lagere school",
+        "description": "Oefeningen in rekenen, meetkunde, Engels en natuur en techniek voor het lager onderwijs in België, met voortgangsregistratie voor ouders.",
+        "lang": "nl-BE"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 11
+    },
+    {
+      "locale": "fr-BE",
+      "path": "/be-fr",
+      "pathSegment": "be-fr",
+      "selectorLabel": "Belgium-fr",
+      "visible": true,
+      "fallbackChain": [
+        "fr-BE",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire en Belgique",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents en Belgique.",
+        "lang": "fr-BE"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 8
+    },
+    {
+      "locale": "fr-CH",
+      "path": "/ch-fr",
+      "pathSegment": "ch-fr",
+      "selectorLabel": "Switzerland-fr",
+      "visible": true,
+      "fallbackChain": [
+        "fr-CH",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du degré primaire en Suisse",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents en Suisse romande.",
+        "lang": "fr-CH"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 8
+    },
+    {
+      "locale": "it-CH",
+      "path": "/ch-it",
+      "pathSegment": "ch-it",
+      "selectorLabel": "Switzerland-it",
+      "visible": true,
+      "fallbackChain": [
+        "it-CH",
+        "it-IT",
+        "en"
+      ],
+      "master": "it-IT",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — esercitazione per allievi della scuola elementare in Svizzera",
+        "description": "Esercizi di matematica, geometria, inglese e scienze per la scuola elementare e la 1ª media, con monitoraggio dei progressi per i genitori in Svizzera italiana.",
+        "lang": "it-CH"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "en-IN",
+      "path": "/in-en",
+      "pathSegment": "in-en",
+      "selectorLabel": "India-en",
+      "visible": true,
+      "fallbackChain": [
+        "en-IN",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for school students in Classes 1–6 in India",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-IN"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 49
+    },
+    {
+      "locale": "en-GH",
+      "path": "/gh",
+      "pathSegment": "gh",
+      "selectorLabel": "Ghana",
+      "visible": true,
+      "fallbackChain": [
+        "en-GH",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school learners in Ghana",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents.",
+        "lang": "en-GH"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "fr-SN",
+      "path": "/sn",
+      "pathSegment": "sn",
+      "selectorLabel": "Senegal",
+      "visible": true,
+      "fallbackChain": [
+        "fr-SN",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves de l’enseignement élémentaire au Sénégal",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents au Sénégal.",
+        "lang": "fr-SN"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 11
+    },
+    {
+      "locale": "fr-CD",
+      "path": "/cd",
+      "pathSegment": "cd",
+      "selectorLabel": "DR Congo",
+      "visible": true,
+      "fallbackChain": [
+        "fr-CD",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire en République démocratique du Congo",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents en République démocratique du Congo.",
+        "lang": "fr-CD"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "es-US",
+      "path": "/us-es",
+      "pathSegment": "us-es",
+      "selectorLabel": "USA-es",
+      "visible": true,
+      "fallbackChain": [
+        "es-US",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 7,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica en español para familias en Estados Unidos",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres, madres o tutores de habla hispana en Estados Unidos.",
+        "lang": "es-US"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 0
+    },
+    {
+      "locale": "ru-KZ",
+      "path": "/kz-ru",
+      "pathSegment": "kz-ru",
+      "selectorLabel": "Kazakhstan-ru",
+      "visible": true,
+      "fallbackChain": [
+        "ru-KZ",
+        "ru-RU",
+        "en"
+      ],
+      "master": "ru-RU",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — практика для русскоязычного обучения в Казахстане",
+        "description": "Практика по математике, геометрии, английскому языку и естественным наукам с отслеживанием прогресса для родителей — для школ и семей с русским языком обучения в Казахстане.",
+        "lang": "ru-KZ"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 32
+    },
+    {
+      "locale": "ru-UZ",
+      "path": "/uz-ru",
+      "pathSegment": "uz-ru",
+      "selectorLabel": "Uzbekistan-ru",
+      "visible": true,
+      "fallbackChain": [
+        "ru-UZ",
+        "ru-RU",
+        "en"
+      ],
+      "master": "ru-RU",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — практика для русскоязычных школ Узбекистана (1–6 классы)",
+        "description": "Практика по математике, геометрии, английскому языку и естественным наукам для учеников русскоязычных школ Узбекистана — с отслеживанием прогресса для родителей.",
+        "lang": "ru-UZ"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 41
+    },
+    {
+      "locale": "ru-KG",
+      "path": "/kg-ru",
+      "pathSegment": "kg-ru",
+      "selectorLabel": "Kyrgyzstan-ru",
+      "visible": true,
+      "fallbackChain": [
+        "ru-KG",
+        "ru-RU",
+        "en"
+      ],
+      "master": "ru-RU",
+      "overlayType": "sparse",
+      "localesNsCount": 6,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — практика для учеников 1–6 классов в школах с русским языком обучения в Кыргызстане",
+        "description": "Практика по математике, геометрии, английскому языку и естественным наукам с отслеживанием прогресса для родителей в Кыргызстане. Валюта: сом (KGS).",
+        "lang": "ru-KG"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 42
+    },
+    {
+      "locale": "ru-BY",
+      "path": "/by-ru",
+      "pathSegment": "by-ru",
+      "selectorLabel": "Belarus-ru",
+      "visible": true,
+      "fallbackChain": [
+        "ru-BY",
+        "ru-RU",
+        "en"
+      ],
+      "master": "ru-RU",
+      "overlayType": "sparse",
+      "localesNsCount": 5,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — практика для русскоязычных школ Беларуси (1–6 классы)",
+        "description": "Практика по математике, геометрии, английскому языку и естественным наукам для учеников русскоязычных школ Беларуси — с отслеживанием прогресса для родителей.",
+        "lang": "ru-BY"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 41
+    },
+    {
+      "locale": "en-RW",
+      "path": "/rw-en",
+      "pathSegment": "rw-en",
+      "selectorLabel": "Rwanda-en",
+      "visible": true,
+      "fallbackChain": [
+        "en-RW",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — English-medium practice for primary school learners in Rwanda",
+        "description": "Maths, geometry, English, and science practice for families using the English experience in Rwanda, with progress tracking for parents.",
+        "lang": "en-RW"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "fr-CM",
+      "path": "/cm-fr",
+      "pathSegment": "cm-fr",
+      "selectorLabel": "Cameroon-fr",
+      "visible": true,
+      "fallbackChain": [
+        "fr-CM",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "partial",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire francophone au Cameroun",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents au Cameroun (sous-système francophone).",
+        "lang": "fr-CM"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "en-CM",
+      "path": "/cm-en",
+      "pathSegment": "cm-en",
+      "selectorLabel": "Cameroon-en",
+      "visible": true,
+      "fallbackChain": [
+        "en-CM",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school pupils in Anglophone Cameroon",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents (English subsystem).",
+        "lang": "en-CM"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 49
+    },
+    {
+      "locale": "fr-BJ",
+      "path": "/bj",
+      "pathSegment": "bj",
+      "selectorLabel": "Benin",
+      "visible": true,
+      "fallbackChain": [
+        "fr-BJ",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "partial",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves de l’enseignement primaire au Bénin",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents au Bénin.",
+        "lang": "fr-BJ"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "en-MU",
+      "path": "/mu-en",
+      "pathSegment": "mu-en",
+      "selectorLabel": "Mauritius-en",
+      "visible": true,
+      "fallbackChain": [
+        "en-MU",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 11,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — English-language practice for primary school pupils in Mauritius",
+        "description": "Maths, geometry, English, and science practice for families using the English experience in Mauritius, with progress tracking for parents.",
+        "lang": "en-MU"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 9
+    },
+    {
+      "locale": "fr-GN",
+      "path": "/gn",
+      "pathSegment": "gn",
+      "selectorLabel": "Guinea",
+      "visible": true,
+      "fallbackChain": [
+        "fr-GN",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "partial",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire en Guinée",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents en Guinée.",
+        "lang": "fr-GN"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "fr-TG",
+      "path": "/tg",
+      "pathSegment": "tg",
+      "selectorLabel": "Togo",
+      "visible": true,
+      "fallbackChain": [
+        "fr-TG",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "partial",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire au Togo",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents au Togo.",
+        "lang": "fr-TG"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "fr-GA",
+      "path": "/ga",
+      "pathSegment": "ga",
+      "selectorLabel": "Gabon",
+      "visible": true,
+      "fallbackChain": [
+        "fr-GA",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "partial",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves au Gabon",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences pour les élèves au Gabon (1re–5e année, puis 6e), avec suivi des progrès pour les parents.",
+        "lang": "fr-GA"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 19
+    },
+    {
+      "locale": "fr-CG",
+      "path": "/cg",
+      "pathSegment": "cg",
+      "selectorLabel": "Congo",
+      "visible": true,
+      "fallbackChain": [
+        "fr-CG",
+        "fr-FR",
+        "en"
+      ],
+      "master": "fr-FR",
+      "overlayType": "sparse",
+      "localesNsCount": 9,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Pratique pour les élèves du primaire en République du Congo",
+        "description": "Pratique des mathématiques, de la géométrie, de l’anglais et des sciences avec suivi des progrès pour les parents en République du Congo (interface en français).",
+        "lang": "fr-CG"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 16
+    },
+    {
+      "locale": "nl-SR",
+      "path": "/sr-nl",
+      "pathSegment": "sr-nl",
+      "selectorLabel": "Suriname-nl",
+      "visible": true,
+      "fallbackChain": [
+        "nl-SR",
+        "nl-NL",
+        "en"
+      ],
+      "master": "nl-NL",
+      "overlayType": "sparse",
+      "localesNsCount": 10,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Oefenen voor Suriname (GLO, 1e–6e leerjaar)",
+        "description": "Oefeningen in rekenen, meetkunde, Engels en natuur en techniek voor het Nederlandstalige basisonderwijs (GLO) in Suriname, met voortgangsregistratie voor ouders.",
+        "lang": "nl-SR"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 59
+    },
+    {
+      "locale": "pt-CV",
+      "path": "/cv-pt",
+      "pathSegment": "cv-pt",
+      "selectorLabel": "Cabo Verde-pt",
+      "visible": true,
+      "fallbackChain": [
+        "pt-CV",
+        "pt-PT",
+        "pt-BR",
+        "en"
+      ],
+      "master": "pt-PT",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids – Prática em português para o ensino básico em Cabo Verde",
+        "description": "Prática de matemática, geometria, inglês e ciências com acompanhamento de progresso para os encarregados de educação na experiência em português em Cabo Verde.",
+        "lang": "pt-CV"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 34
+    },
+    {
+      "locale": "es-GQ",
+      "path": "/gq-es",
+      "pathSegment": "gq-es",
+      "selectorLabel": "Equatorial Guinea-es",
+      "visible": true,
+      "fallbackChain": [
+        "es-GQ",
+        "es-419",
+        "en"
+      ],
+      "master": "es-419",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Práctica en español para familias en Guinea Ecuatorial",
+        "description": "Práctica de matemáticas, geometría, inglés y ciencias con seguimiento del progreso para padres, madres o tutores en Guinea Ecuatorial.",
+        "lang": "es-GQ"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 7
+    },
+    {
+      "locale": "en-SL",
+      "path": "/sl-en",
+      "pathSegment": "sl-en",
+      "selectorLabel": "Sierra Leone-en",
+      "visible": true,
+      "fallbackChain": [
+        "en-SL",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school pupils in Sierra Leone",
+        "description": "Maths, geometry, English, and science practice with progress tracking for parents — English used in Sierra Leone’s formal primary education.",
+        "lang": "en-SL"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 49
+    },
+    {
+      "locale": "en-LR",
+      "path": "/lr",
+      "pathSegment": "lr",
+      "selectorLabel": "Liberia",
+      "visible": true,
+      "fallbackChain": [
+        "en-LR",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "sparse",
+      "localesNsCount": 8,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — Practice for primary school students in Liberia",
+        "description": "Math, geometry, English, and science practice with progress tracking for parents — English-medium primary grades in Liberia.",
+        "lang": "en-LR"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 42
+    },
+    {
+      "locale": "en-GM",
+      "path": "/gm",
+      "pathSegment": "gm",
+      "selectorLabel": "The Gambia",
+      "visible": true,
+      "fallbackChain": [
+        "en-GM",
+        "en"
+      ],
+      "master": "en",
+      "overlayType": "partial",
+      "localesNsCount": 12,
+      "direction": "ltr",
+      "runtimeReachable": true,
+      "routeStatuses": {
+        "/": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/contact": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/help": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/guides": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/practice/worksheets": {
+          "status": 200,
+          "hebrew": false,
+          "enHits": []
+        },
+        "/demo/student": {
+          "status": 404,
+          "hebrew": false,
+          "enHits": []
+        }
+      },
+      "hebrewHits": 0,
+      "englishLeakageHits": 0,
+      "seo": {
+        "title": "Leo Kids — English-language practice for Lower Basic pupils in The Gambia",
+        "description": "Maths, geometry, English, and science practice for families using the English experience in The Gambia's Lower Basic Education, with progress tracking for parents.",
+        "lang": "en-GM"
+      },
+      "countryMismatch": false,
+      "status": "PASS",
+      "schoolOverlayKeys": 42
+    }
+  ],
+  "loggedInSampling": [
+    {
+      "locale": "es-MX",
+      "why": "Spanish LatAm primary overlay",
+      "master": "es-419",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "es-AR",
+      "why": "Spanish LatAm with denser pack",
+      "master": "es-419",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "es-ES",
+      "why": "Spain European Spanish overlay",
+      "master": "es-419",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "en-GB",
+      "why": "UK England / English country",
+      "master": "en",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "en-AU",
+      "why": "English Commonwealth country",
+      "master": "en",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "en-SCT",
+      "why": "UK family Scotland via en-GB",
+      "master": "en",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "fr-CA",
+      "why": "French country overlay",
+      "master": "fr-FR",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "de-AT",
+      "why": "German country overlay",
+      "master": "de-DE",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "pt-AO",
+      "why": "Portuguese country overlay on pt-PT",
+      "master": "pt-PT",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "ru-KZ",
+      "why": "Russian country overlay",
+      "master": "ru-RU",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "nl-BE",
+      "why": "Dutch country overlay",
+      "master": "nl-NL",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    },
+    {
+      "locale": "it-CH",
+      "why": "Italian country overlay",
+      "master": "it-IT",
+      "parentLoginOk": true,
+      "teacherLoginOk": true,
+      "routes": [
+        {
+          "role": "parent",
+          "route": "/parent/dashboard",
+          "hebrew": false,
+          "enHits": []
+        },
+        {
+          "role": "teacher",
+          "route": "/teacher/dashboard",
+          "hebrew": false,
+          "enHits": []
+        }
+      ],
+      "apis": [
+        {
+          "role": "parent",
+          "path": "/api/parent/list-students",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/me",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        },
+        {
+          "role": "teacher",
+          "path": "/api/teacher/dashboard",
+          "status": 200,
+          "hebrew": false,
+          "englishChromeHits": []
+        }
+      ],
+      "hebrew": false,
+      "englishLeakage": false,
+      "routeIssues": false,
+      "status": "PASS"
+    }
+  ],
+  "findings": [],
+  "samplePlan": [
+    {
+      "id": "es-MX",
+      "why": "Spanish LatAm primary overlay"
+    },
+    {
+      "id": "es-AR",
+      "why": "Spanish LatAm with denser pack"
+    },
+    {
+      "id": "es-ES",
+      "why": "Spain European Spanish overlay"
+    },
+    {
+      "id": "en-GB",
+      "why": "UK England / English country"
+    },
+    {
+      "id": "en-AU",
+      "why": "English Commonwealth country"
+    },
+    {
+      "id": "en-SCT",
+      "why": "UK family Scotland via en-GB"
+    },
+    {
+      "id": "fr-CA",
+      "why": "French country overlay"
+    },
+    {
+      "id": "de-AT",
+      "why": "German country overlay"
+    },
+    {
+      "id": "pt-AO",
+      "why": "Portuguese country overlay on pt-PT"
+    },
+    {
+      "id": "ru-KZ",
+      "why": "Russian country overlay"
+    },
+    {
+      "id": "nl-BE",
+      "why": "Dutch country overlay"
+    },
+    {
+      "id": "it-CH",
+      "why": "Italian country overlay"
+    }
+  ]
+}

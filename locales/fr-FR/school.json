@@ -207,7 +207,9 @@
     "assignTargetGrade": "Note cible",
     "activityColTitle": "Activité",
     "activityColMeta": "Détails",
-    "activityColStatus": "Statut"
+    "activityColStatus": "Statut",
+    "signOut": "Se déconnecter",
+    "signOutBusy": "Déconnexion…"
   },
   "teacher": {
     "navSchool": "Gestion scolaire",

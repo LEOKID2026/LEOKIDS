@@ -1,2 +1,26 @@
-{ "cookieSavePrefs": "Guardar preferências"
+{
+  "privacyTitle": "Política de Privacidade",
+  "termsTitle": "Termos de utilização",
+  "securityTitle": "Segurança",
+  "placeholderNotice": "O texto legal do site global aguarda revisão jurídica. Esta página é provisória e não constitui uma política vinculativa.",
+  "cookieBannerTitle": "Cookies e armazenamento local",
+  "cookieBannerBody": "Este site utiliza cookies e armazenamento local apenas para funcionalidades essenciais (início de sessão, preferências e continuidade). Anúncios e análises opcionais estão desativados por agora e podem ser ativados mais tarde com o seu consentimento.",
+  "cookieAccept": "Aceitar",
+  "cookieReject": "Rejeitar opcional",
+  "cookieManage": "Preferências de cookies",
+  "cookieManageAria": "Abrir preferências de cookies e publicidade",
+  "cookiePrefsTitle": "Gerir preferências de cookies",
+  "cookiePrefsBody": "Os cookies essenciais são necessários para início de sessão, preferências e funcionalidades principais do site. As opções abaixo referem-se a anúncios e medições opcionais — atualmente inativos.",
+  "cookieAdsLabel": "Anúncios (atualmente inativos)",
+  "cookieAdsHelp": "Anúncios futuros opcionais — podem ser ativados mais tarde, sujeitos à aprovação e configuração da Google.",
+  "cookieAnalyticsLabel": "Medição e análise (atualmente inativo)",
+  "cookieAnalyticsHelp": "Medição anónima opcional — pode ser ativada mais tarde, sujeita à configuração.",
+  "cookieSavePrefs": "Guardar preferências",
+  "cookieClose": "Fechar",
+  "privacyLink": "Política de Privacidade",
+  "legalHubLink": "Documentos legais",
+  "contactLegalHubLink": "Termos, privacidade e acessibilidade",
+  "accessibilityLink": "Acessibilidade",
+  "aiDisclosureLink": "Divulgação de IA",
+  "dataDeletionLink": "Eliminação de dados"
 }

@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-08-06T21:50:55.562Z",
+  "checks": [
+    {
+      "locale": "ru-RU",
+      "role": "parent",
+      "loginOk": true,
+      "url": "http://127.0.0.1:3001/ru/learning/parent-report",
+      "rows": [
+        {
+          "route": "/parent/dashboard",
+          "url": "http://127.0.0.1:3001/ru/parent/dashboard",
+          "hebrew": false,
+          "en": [],
+          "sample": "LEO KIDS\nГлавная\nРодительский портал\nО нас\nКонтакты\nСправочный центр\nRussia\n▾\n🌞\n🌙\nРодительский портал\n\neran1@leokids.com\n\n🖨️\nЛисты заданий для печати\nУчебная программа\nДобавить ребёнка\nПригласить д"
+        },
+        {
+          "route": "/parent/worksheets",
+          "url": "http://127.0.0.1:3001/ru/parent/worksheets",
+          "hebrew": false,
+          "en": [],
+          "sample": "LEO KIDS\nГлавная\nРодительский портал\nО нас\nКонтакты\nСправочный центр\nRussia\n▾\nЗагрузка…\n\n© 2026 LEO K · Игры и обучение для детей · Юридические документы · Настройки cookie"
+        },
+        {
+          "route": "/learning/parent-report",
+          "url": "http://127.0.0.1:3001/ru/learning/parent-report",
+          "hebrew": false,
+          "en": [],
+          "sample": "🌞\n🌙\n📊\nParent report\n\nThe official parent report is only available through the parent portal - after signing in and choosing a child from the dashboard.\n\nThe report cannot be built from local browse"
+        }
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "role": "school",
+      "loginOk": true,
+      "rows": [
+        {
+          "route": "/school/dashboard",
+          "url": "http://127.0.0.1:3001/br/school/dashboard",
+          "hebrew": false,
+          "en": [],
+          "sample": "LEO KIDS\nInício\nPortal do professor\nSobre\nContato\nCentral de ajuda\nBrasil\n▾\n\nGestão escolar\n\nLEO Global QA School\n\nPainel escolar\n\nVisão geral, ações rápidas e monitoramento de atividades escolares\n\nS"
+        },
+        {
+          "route": "/school/students",
+          "url": "http://127.0.0.1:3001/br/school/students",
+          "hebrew": false,
+          "en": [],
+          "sample": "LEO KIDS\nInício\nPortal do professor\nSobre\nContato\nCentral de ajuda\nBrasil\n▾\n\nGestão escolar\n\nLEO Global QA School\n\nCrianças registradas\n\nNavegue por ano e turma - relatórios infantis sem inserir IDs\n\n"
+        },
+        {
+          "route": "/school/teachers",
+          "url": "http://127.0.0.1:3001/br/school/teachers",
+          "hebrew": false,
+          "en": [],
+          "sample": "LEO KIDS\nInício\nPortal do professor\nSobre\nContato\nCentral de ajuda\nBrasil\n▾\n\nGestão escolar\n\nLEO Global QA School\n\nProfessores na escola\n\nLista de professores, funções, disciplinas e atividades\n\nSair\n"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-08-06T11:45:42.961Z",
+  "applied": [
+    {
+      "locale": "fr-FR",
+      "key": "learning.correct",
+      "from": "Correct!",
+      "to": "Correct !"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "learning.master.streakFeedback.correct",
+      "from": "Correct!",
+      "to": "Correct !"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "learning.master.feedback.excellent",
+      "from": "Excellent! ✅",
+      "to": "Excellent ! ✅"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "learning.master.badges.topic_expert",
+      "from": "🔬 {topic} expert",
+      "to": "🔬 Expert {topic}"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "learning.master.badges.topic_expert_legacy",
+      "from": "🔬 {topic} expert",
+      "to": "🔬 Expert {topic}"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "worksheets.writingCategoryPrewriting",
+      "from": "Pre-writing",
+      "to": "Pré-écriture"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "worksheets.writingNumberModeBeforeAfter",
+      "from": "Before/after",
+      "to": "Avant/après"
+    },
+    {
+      "locale": "fr-FR",
+      "key": "seo.contactTitle",
+      "from": "Contact · Leo Kids",
+      "to": "Nous contacter · Leo Kids"
+    },
+    {
+      "locale": "de-DE",
+      "key": "learning.master.start",
+      "from": "▶️ Start",
+      "to": "▶️ Starten"
+    },
+    {
+      "locale": "de-DE",
+      "key": "learning.master.levelLabel",
+      "from": "Level {level}",
+      "to": "Stufe {level}"
+    },
+    {
+      "locale": "de-DE",
+      "key": "learning.master.streakEncouragement.champion",
+      "from": "👑 Champion!",
+      "to": "👑 Meister!"
+    },
+    {
+      "locale": "de-DE",
+      "key": "learning.master.dailyStreakChampion",
+      "from": "👑 Champion!",
+      "to": "👑 Meister!"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "ui.public.contact.social.instagram",
+      "from": "Leo's Instagram",
+      "to": "Instagram van Leo"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "ui.public.contact.social.youtube",
+      "from": "Leo's YouTube",
+      "to": "YouTube van Leo"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "ui.public.contact.social.facebook",
+      "from": "Leo's Facebook",
+      "to": "Facebook van Leo"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "ui.parent.detailsTitle",
+      "from": "Details — {name}",
+      "to": "Gegevens — {name}"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "learning.master.streakFeedback.correct",
+      "from": "Correct!",
+      "to": "Goed zo!"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "learning.master.mistakeRow",
+      "from": "{question} = {wrong} ❌ (correct: {correct})",
+      "to": "{question} = {wrong} ❌ (juist: {correct})"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "worksheets.writingCategoryPrewriting",
+      "from": "Pre-writing",
+      "to": "Voorschrijven"
+    },
+    {
+      "locale": "nl-NL",
+      "key": "school.portal.navDashboard",
+      "from": "Dashboard",
+      "to": "Overzicht"
+    },
+    {
+      "locale": "es-419",
+      "key": "teacher.activities.individualBadge",
+      "from": "Personal",
+      "to": "Individual"
+    },
+    {
+      "locale": "es-419",
+      "key": "ui.student.arcadePageTitle",
+      "from": "{game} — Arcade",
+      "to": "{game} — Juegos"
+    },
+    {
+      "locale": "es-419",
+      "key": "learning.master.remainderWarning",
+      "from": "⚠️ Error:",
+      "to": "⚠️ ¡Error!"
+    },
+    {
+      "locale": "it-IT",
+      "key": "ui.parent.curriculum",
+      "from": "Curriculum",
+      "to": "Programma"
+    },
+    {
+      "locale": "it-IT",
+      "key": "learning.master.curriculum",
+      "from": "📋 Curriculum",
+      "to": "📋 Programma"
+    },
+    {
+      "locale": "it-IT",
+      "key": "worksheets.writingCategoryPrewriting",
+      "from": "Pre-writing",
+      "to": "Pre-scrittura"
+    },
+    {
+      "locale": "it-IT",
+      "key": "worksheets.writingNumberModeBeforeAfter",
+      "from": "Before/after",
+      "to": "Prima/dopo"
+    }
+  ],
+  "skippedIdentical": [],
+  "missing": []
+}

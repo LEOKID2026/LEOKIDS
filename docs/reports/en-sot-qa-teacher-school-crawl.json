@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-08-06T00:04:31.308Z",
+  "base": "http://127.0.0.1:3001",
+  "roles": {
+    "teacher": {
+      "email": "eran2@leokids.com",
+      "uiOk": true,
+      "supabaseOk": true,
+      "reason": "ok http://127.0.0.1:3001/teacher/dashboard",
+      "classId": "f44e218d-4cdc-4e99-acfc-305a87dbd55e",
+      "preferredLanguage": "en",
+      "displayName": "QA Teacher"
+    },
+    "school": {
+      "email": "eran3@leokids.com",
+      "uiOk": true,
+      "supabaseOk": true,
+      "reason": "ok landed http://127.0.0.1:3001/school/dashboard",
+      "staffLoginOk": true,
+      "staffReason": "ok http://127.0.0.1:3001/teacher/dashboard"
+    }
+  },
+  "rows": [
+    {
+      "role": "teacher",
+      "route": "/teacher/dashboard",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/teacher/dashboard",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "teacher",
+      "route": "/teacher/class/f44e218d-4cdc-4e99-acfc-305a87dbd55e",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/teacher/class/f44e218d-4cdc-4e99-acfc-305a87dbd55e",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "school-staff",
+      "route": "/school/staff/login→session",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/teacher/dashboard",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "school",
+      "route": "/school/dashboard",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/school/dashboard",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "school",
+      "route": "/school/students",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/school/students",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "school",
+      "route": "/school/teachers",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/school/teachers",
+      "title": "Leo Kids · Learning for elementary students"
+    }
+  ],
+  "apis": [
+    {
+      "role": "teacher",
+      "path": "/api/teacher/classes",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "teacher",
+      "path": "/api/teacher/me",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "teacher",
+      "path": "/api/teacher/dashboard",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "teacher",
+      "path": "/api/teacher/classes/f44e218d-4cdc-4e99-acfc-305a87dbd55e/report-data?from=2026-07-07&to=2026-08-06",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "school",
+      "path": "/api/school/me",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "school",
+      "path": "/api/teacher/me",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    }
+  ],
+  "summary": {
+    "allRolesOk": true,
+    "hebrewRoutes": 0,
+    "hebrewApis": 0,
+    "teacherPreferredLanguage": "en",
+    "teacherDisplayName": "QA Teacher",
+    "roles": {
+      "teacher": {
+        "uiOk": true,
+        "reason": "ok http://127.0.0.1:3001/teacher/dashboard"
+      },
+      "school": {
+        "uiOk": true,
+        "reason": "ok landed http://127.0.0.1:3001/school/dashboard",
+        "staffLoginOk": true
+      }
+    }
+  }
+}

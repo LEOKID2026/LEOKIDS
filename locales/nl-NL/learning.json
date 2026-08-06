@@ -226,7 +226,7 @@
       "champion": "👑 Kampioen!"
     },
     "streakFeedback": {
-      "correct": "Correct!",
+      "correct": "Goed zo!",
       "amazing": "Amazing! Streak van {streak}!",
       "excellent": "Excellent! Streak van {streak}!",
       "wellDone": "Well done! Streak van {streak}!",
@@ -317,7 +317,7 @@
     "dailyStreakNice": "⭐ Leuk!",
     "dailyStreakKeepGoing": "🔥 Ga zo door!",
     "recentMistakesMode": "Recente fouten",
-    "mistakeRow": "{question} = {wrong} ❌ (correct: {correct})",
+    "mistakeRow": "{question} = {wrong} ❌ (juist: {correct})",
     "monthMinutesProgress": "{current} / {goal} min",
     "closeRtl": "Sluiten",
     "referenceCategories": {

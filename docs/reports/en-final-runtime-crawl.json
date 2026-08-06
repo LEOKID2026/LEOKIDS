@@ -1,0 +1,909 @@
+{
+  "generatedAt": "2026-08-05T21:52:26.319Z",
+  "base": "http://127.0.0.1:3001",
+  "counts": {
+    "routesChecked": 63,
+    "hebrewRoutes": 0,
+    "apisChecked": 6,
+    "hebrewApis": 0,
+    "loggedInFlowsAttempted": 6,
+    "loggedInFlowsOk": 2,
+    "teacherDeepRoutes": 0
+  },
+  "loginStatus": {
+    "demoStudent": {
+      "ok": true,
+      "url": "http://127.0.0.1:3001/student/home"
+    },
+    "demoParent": {
+      "ok": true,
+      "url": "http://127.0.0.1:3001/demo/parent/enter"
+    },
+    "teacher": {
+      "ok": false,
+      "reason": "still on login after submit; body snippet: Cookies & local storage\n\nThis site uses cookies and local storage for essential features only (sign-in, preferences, and"
+    },
+    "parent": {
+      "ok": false,
+      "reason": "parent still on login"
+    },
+    "student": {
+      "ok": false,
+      "reason": "student still on login"
+    },
+    "school": {
+      "ok": false,
+      "reason": "missing SCHOOL_QA_PASSWORD / DEMO_TEACHER_PASSWORD / staff PIN for school login"
+    }
+  },
+  "blockedLogins": [
+    {
+      "role": "teacher",
+      "reason": "still on login after submit; body snippet: Cookies & local storage\n\nThis site uses cookies and local storage for essential features only (sign-in, preferences, and"
+    },
+    {
+      "role": "parent",
+      "reason": "parent still on login"
+    },
+    {
+      "role": "student",
+      "reason": "student still on login"
+    },
+    {
+      "role": "school",
+      "reason": "missing SCHOOL_QA_PASSWORD / DEMO_TEACHER_PASSWORD / staff PIN for school login"
+    }
+  ],
+  "hebrewRows": [],
+  "hebrewApis": [],
+  "apis": [
+    {
+      "route": "/api/public/worksheets/catalog",
+      "role": "api",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 50452
+    },
+    {
+      "route": "/api/demo/cards/catalog",
+      "role": "api",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 170329
+    },
+    {
+      "route": "/api/demo/cards/series",
+      "role": "api",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 116929
+    },
+    {
+      "route": "/api/demo/cards/shop",
+      "role": "api",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 131384
+    },
+    {
+      "route": "/api/demo/cards/collection",
+      "role": "api",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 2387
+    },
+    {
+      "route": "/api/arcade/games",
+      "role": "api",
+      "status": 401,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 67
+    }
+  ],
+  "rows": [
+    {
+      "route": "/",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/"
+    },
+    {
+      "route": "/en",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://localhost:3001/"
+    },
+    {
+      "route": "/kids",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/kids"
+    },
+    {
+      "route": "/parents",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/parents"
+    },
+    {
+      "route": "/teachers",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teachers"
+    },
+    {
+      "route": "/schools",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/schools"
+    },
+    {
+      "route": "/about",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/about"
+    },
+    {
+      "route": "/contact",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/contact"
+    },
+    {
+      "route": "/gallery",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/gallery"
+    },
+    {
+      "route": "/games",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/games"
+    },
+    {
+      "route": "/help",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/help"
+    },
+    {
+      "route": "/guides",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/guides"
+    },
+    {
+      "route": "/guides/math-practice-at-home",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/guides/math-practice-at-home"
+    },
+    {
+      "route": "/guides/home-practice-routine",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/guides/home-practice-routine"
+    },
+    {
+      "route": "/guides/how-to-follow-child-progress",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/guides/how-to-follow-child-progress"
+    },
+    {
+      "route": "/guides/learning-games-at-home",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/guides/learning-games-at-home"
+    },
+    {
+      "route": "/practice",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice"
+    },
+    {
+      "route": "/practice/math",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/math"
+    },
+    {
+      "route": "/practice/english",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/english"
+    },
+    {
+      "route": "/practice/science",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/science"
+    },
+    {
+      "route": "/practice/geometry",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/geometry"
+    },
+    {
+      "route": "/practice/games",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/games"
+    },
+    {
+      "route": "/practice/worksheets",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/worksheets"
+    },
+    {
+      "route": "/practice/reading",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/practice/reading"
+    },
+    {
+      "route": "/parent/login",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/parent/login"
+    },
+    {
+      "route": "/student/login",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login"
+    },
+    {
+      "route": "/teacher/login",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/login"
+    },
+    {
+      "route": "/school/register",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/school/register"
+    },
+    {
+      "route": "/school/staff/login",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/school/staff/login"
+    },
+    {
+      "route": "/auth/forgot-password",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/auth/forgot-password"
+    },
+    {
+      "route": "/demo/enter",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/demo/enter"
+    },
+    {
+      "route": "/demo/parent/enter",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/demo/parent/enter"
+    },
+    {
+      "route": "/learning",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Flearning"
+    },
+    {
+      "route": "/learning/curriculum",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Flearning%2Fcurriculum"
+    },
+    {
+      "route": "/learning/math-master",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Flearning%2Fmath-master"
+    },
+    {
+      "route": "/learning/geometry-master",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Flearning%2Fgeometry-master"
+    },
+    {
+      "route": "/learning/english-master",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Flearning%2Fenglish-master"
+    },
+    {
+      "route": "/learning/science-master",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Flearning%2Fscience-master"
+    },
+    {
+      "route": "/offline",
+      "role": "public",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login?next=%2Fstudent%2Foffline"
+    },
+    {
+      "route": "/404",
+      "role": "public",
+      "status": 404,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/404"
+    },
+    {
+      "route": "/help/parents",
+      "role": "public-help",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/help/parents"
+    },
+    {
+      "route": "/help/students",
+      "role": "public-help",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/help/students"
+    },
+    {
+      "route": "/help/parent-report",
+      "role": "public-help",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/help/parent-report"
+    },
+    {
+      "route": "/help/subjects",
+      "role": "public-help",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/help/subjects"
+    },
+    {
+      "route": "(login-ok:demo-student)",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "landed:http://127.0.0.1:3001/student/home"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/home"
+    },
+    {
+      "route": "/student/home",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Reject optional",
+        "btn:Cookie preferences",
+        "btn:Accept",
+        "btn:Change grade",
+        "btn:Exit demo"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/home"
+    },
+    {
+      "route": "/student/cards",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Reject optional",
+        "btn:🌞",
+        "btn:🌙",
+        "btn:Cookie preferences",
+        "btn:English\n▾"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/student/cards"
+    },
+    {
+      "route": "/student/game",
+      "role": "demo-student",
+      "status": 0,
+      "hebrew": false,
+      "hits": [],
+      "notes": [],
+      "errors": [
+        "page.goto: net::ERR_ABORTED at http://127.0.0.1:3001/student/game\nCall log:\n  - navigating to \"http://127.0.0.1:3001/student/game\", waiting until \"domcontentloaded\"\n"
+      ],
+      "finalUrl": ""
+    },
+    {
+      "route": "/learning/math-master",
+      "role": "demo-student",
+      "status": 0,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Show 16 ignore-listed frame(s)"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/learning/math-master"
+    },
+    {
+      "route": "/learning/english-master",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Show 16 ignore-listed frame(s)"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/learning/english-master"
+    },
+    {
+      "route": "/learning/science-master",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Show 16 ignore-listed frame(s)"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/learning/science-master"
+    },
+    {
+      "route": "/learning/geometry-master",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Show 16 ignore-listed frame(s)"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/learning/geometry-master"
+    },
+    {
+      "route": "/games",
+      "role": "demo-student",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:English\n▾",
+        "btn:🌞",
+        "btn:English\n▾",
+        "btn:🌞",
+        "btn:🌙"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/games"
+    },
+    {
+      "route": "(login-ok:demo-parent)",
+      "role": "demo-parent",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "landed:http://127.0.0.1:3001/demo/parent/enter"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/demo/parent/enter"
+    },
+    {
+      "route": "/parent/dashboard",
+      "role": "demo-parent",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Reject optional",
+        "btn:Cookie preferences",
+        "btn:Accept",
+        "btn:Exit demo",
+        "btn:English\n▾"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/parent/dashboard"
+    },
+    {
+      "route": "/parent/worksheets",
+      "role": "demo-parent",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Reject optional",
+        "btn:English\n▾",
+        "btn:English✓",
+        "btn:Create worksheet",
+        "btn:Recommendations"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/parent/worksheets"
+    },
+    {
+      "route": "/learning/parent-report",
+      "role": "demo-parent",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Exit demo",
+        "btn:🌞",
+        "btn:🌙"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/learning/parent-report"
+    },
+    {
+      "route": "/learning/parent-report-detailed",
+      "role": "demo-parent",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Exit demo",
+        "btn:🌞",
+        "btn:🌙"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/learning/parent-report-detailed"
+    },
+    {
+      "route": "/parent/school-inbox",
+      "role": "demo-parent",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "menu:button[aria-haspopup=\"menu\"]",
+        "btn:Exit demo",
+        "btn:English\n▾",
+        "btn:Cookie preferences"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/parent/school-inbox"
+    },
+    {
+      "route": "(login:teacher)",
+      "role": "teacher",
+      "status": 0,
+      "hebrew": false,
+      "hits": [],
+      "errors": [
+        "still on login after submit; body snippet: Cookies & local storage\n\nThis site uses cookies and local storage for essential features only (sign-in, preferences, and"
+      ],
+      "blocked": true,
+      "notes": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/login"
+    },
+    {
+      "route": "(login:parent)",
+      "role": "parent",
+      "status": 0,
+      "hebrew": false,
+      "hits": [],
+      "errors": [
+        "parent still on login"
+      ],
+      "blocked": true,
+      "notes": [],
+      "finalUrl": "http://127.0.0.1:3001/parent/login"
+    },
+    {
+      "route": "(login:student)",
+      "role": "student",
+      "status": 0,
+      "hebrew": false,
+      "hits": [],
+      "errors": [
+        "student still on login"
+      ],
+      "blocked": true,
+      "notes": [],
+      "finalUrl": "http://127.0.0.1:3001/student/login"
+    },
+    {
+      "route": "(login:school)",
+      "role": "school",
+      "status": 0,
+      "hebrew": false,
+      "hits": [],
+      "errors": [
+        "missing SCHOOL_QA_PASSWORD / DEMO_TEACHER_PASSWORD / staff PIN for school login"
+      ],
+      "blocked": true,
+      "notes": [],
+      "finalUrl": "about:blank"
+    }
+  ]
+}

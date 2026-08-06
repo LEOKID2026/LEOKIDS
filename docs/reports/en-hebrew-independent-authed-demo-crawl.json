@@ -1,0 +1,181 @@
+{
+  "generatedAt": "2026-08-05T20:16:31.614Z",
+  "hebrewStops": 0,
+  "trail": [
+    {
+      "label": "auto-enter-g3",
+      "url": "http://127.0.0.1:3001/student/home",
+      "hebrew": false,
+      "title": "For kids · Leo Kids",
+      "sample": ""
+    },
+    {
+      "label": "student:/student/home",
+      "url": "http://127.0.0.1:3001/student/home",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/student/home",
+      "url": "http://127.0.0.1:3001/student/home",
+      "hebrew": false,
+      "title": "For kids · Leo Kids",
+      "sample": ""
+    },
+    {
+      "label": "student:/student/cards",
+      "url": "http://127.0.0.1:3001/student/cards",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/student/cards",
+      "url": "http://127.0.0.1:3001/student/cards",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student:/student/game",
+      "url": "http://127.0.0.1:3001/student/game",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/student/game",
+      "url": "http://127.0.0.1:3001/student/game",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student:/learning",
+      "url": "http://127.0.0.1:3001/learning",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/learning",
+      "url": "http://127.0.0.1:3001/learning",
+      "hebrew": false,
+      "title": "Learning hub · Leo Kids",
+      "sample": ""
+    },
+    {
+      "label": "student:/learning/math-master",
+      "url": "http://127.0.0.1:3001/learning/math-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/learning/math-master",
+      "url": "http://127.0.0.1:3001/learning/math-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student:/learning/english-master",
+      "url": "http://127.0.0.1:3001/learning/english-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/learning/english-master",
+      "url": "http://127.0.0.1:3001/learning/english-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student:/learning/science-master",
+      "url": "http://127.0.0.1:3001/learning/science-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/learning/science-master",
+      "url": "http://127.0.0.1:3001/learning/science-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student:/learning/geometry-master",
+      "url": "http://127.0.0.1:3001/learning/geometry-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/learning/geometry-master",
+      "url": "http://127.0.0.1:3001/learning/geometry-master",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student:/games",
+      "url": "http://127.0.0.1:3001/games",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "student-interacted:/games",
+      "url": "http://127.0.0.1:3001/games",
+      "hebrew": false,
+      "title": "Learning games for kids · Leo Kids",
+      "sample": ""
+    },
+    {
+      "label": "parent-enter-page",
+      "url": "http://127.0.0.1:3001/demo/parent/enter",
+      "hebrew": false,
+      "title": "Parent demo — LEO KIDS",
+      "sample": ""
+    },
+    {
+      "label": "after-parent-start",
+      "url": "http://127.0.0.1:3001/demo/parent/enter",
+      "hebrew": false,
+      "title": "Parent demo — LEO KIDS",
+      "sample": ""
+    },
+    {
+      "label": "parent:/parent/dashboard",
+      "url": "http://127.0.0.1:3001/parent/dashboard",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "parent:/parent/worksheets",
+      "url": "http://127.0.0.1:3001/parent/worksheets",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "parent:/learning/parent-report",
+      "url": "http://127.0.0.1:3001/learning/parent-report",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "parent:/parent/school-inbox",
+      "url": "http://127.0.0.1:3001/parent/school-inbox",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    }
+  ]
+}

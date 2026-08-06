@@ -245,9 +245,18 @@
         "parentVideoAria": "Video für Eltern"
       },
       "valueCards": {
-        "0": { "title": "Werkzeuge für Eltern", "text": "Sehen Sie, was Ihr Kind geübt hat, wo es sich verbessert, und was gestärkt werden sollte." },
-        "1": { "title": "Erlebnis für Kinder", "text": "Übung, Spiele, Münzen und Fortschritt auf einer freundlichen, bunten Reise." },
-        "2": { "title": "Fortschrittsabbildung", "text": "Verfolgung nach Fach, Thema, Fähigkeit und Teilfähigkeit." }
+        "0": {
+          "title": "Werkzeuge für Eltern",
+          "text": "Sehen Sie, was Ihr Kind geübt hat, wo es sich verbessert, und was gestärkt werden sollte."
+        },
+        "1": {
+          "title": "Erlebnis für Kinder",
+          "text": "Übung, Spiele, Münzen und Fortschritt auf einer freundlichen, bunten Reise."
+        },
+        "2": {
+          "title": "Fortschrittsabbildung",
+          "text": "Verfolgung nach Fach, Thema, Fähigkeit und Teilfähigkeit."
+        }
       },
       "parentIntro": {
         "label": "Für Eltern",
@@ -270,20 +279,50 @@
         "flowStep2": "Eltern erhalten ein klares Bild",
         "flowStep3": "Nächsten Schritt wählen",
         "capabilities": {
-          "subject-map": { "title": "Abbildung nach Fach und Thema", "text": "Verfolge den Fortschritt in Mathematik, Geometrie, Englisch und Naturwissenschaften bis hinunter zu den geübten Themen." },
-          "skills": { "title": "Fähigkeiten und Teilfähigkeiten", "text": "Das System betrachtet, welche Fähigkeiten benötigt wurden — nicht nur, ob eine Antwort richtig war." },
-          "spot-difficulty": { "title": "Gezielte Schwierigkeiten erkennen", "text": "Wiederkehrende Fehler können auf eine bestimmte Fähigkeit hinweisen, die gestärkt werden sollte." },
-          "over-time": { "title": "Über die Zeit verfolgen", "text": "Das Bild entsteht aus echter Übung — nicht aus einer einzelnen Note." },
-          "parent-report": { "title": "Klarer Elternbericht", "text": "Einfache Sprache: was Ihr Kind weiß, wohin es sich bewegt, und worauf der Fokus liegen sollte." },
-          "focused-work": { "title": "Gezielte Nachbereitung", "text": "Eltern können eine persönliche Aktivität zu einem bestimmten Thema oder einer Fähigkeit senden." }
+          "subject-map": {
+            "title": "Abbildung nach Fach und Thema",
+            "text": "Verfolge den Fortschritt in Mathematik, Geometrie, Englisch und Naturwissenschaften bis hinunter zu den geübten Themen."
+          },
+          "skills": {
+            "title": "Fähigkeiten und Teilfähigkeiten",
+            "text": "Das System betrachtet, welche Fähigkeiten benötigt wurden — nicht nur, ob eine Antwort richtig war."
+          },
+          "spot-difficulty": {
+            "title": "Gezielte Schwierigkeiten erkennen",
+            "text": "Wiederkehrende Fehler können auf eine bestimmte Fähigkeit hinweisen, die gestärkt werden sollte."
+          },
+          "over-time": {
+            "title": "Über die Zeit verfolgen",
+            "text": "Das Bild entsteht aus echter Übung — nicht aus einer einzelnen Note."
+          },
+          "parent-report": {
+            "title": "Klarer Elternbericht",
+            "text": "Einfache Sprache: was Ihr Kind weiß, wohin es sich bewegt, und worauf der Fokus liegen sollte."
+          },
+          "focused-work": {
+            "title": "Gezielte Nachbereitung",
+            "text": "Eltern können eine persönliche Aktivität zu einem bestimmten Thema oder einer Fähigkeit senden."
+          }
         }
       },
       "parentBenefits": {
         "items": {
-          "0": { "title": "Verstehen, was los ist", "text": "Ein breiterer Blick als eine einzelne Note — aufgebaut aus echter Aktivität." },
-          "1": { "title": "Wissen, wo der Fokus liegen sollte", "text": "Berichte helfen, das nächste zu stärkende Thema zu wählen." },
-          "2": { "title": "Persönliche Aktivitäten senden", "text": "Gezielte Übung zuweisen und die Ergebnisse anschließend verfolgen." },
-          "3": { "title": "Fortschritt über die Zeit sehen", "text": "Übung, Spiele und Aktivitäten verbinden sich zu einem sich aktualisierenden Bild." }
+          "0": {
+            "title": "Verstehen, was los ist",
+            "text": "Ein breiterer Blick als eine einzelne Note — aufgebaut aus echter Aktivität."
+          },
+          "1": {
+            "title": "Wissen, wo der Fokus liegen sollte",
+            "text": "Berichte helfen, das nächste zu stärkende Thema zu wählen."
+          },
+          "2": {
+            "title": "Persönliche Aktivitäten senden",
+            "text": "Gezielte Übung zuweisen und die Ergebnisse anschließend verfolgen."
+          },
+          "3": {
+            "title": "Fortschritt über die Zeit sehen",
+            "text": "Übung, Spiele und Aktivitäten verbinden sich zu einem sich aktualisierenden Bild."
+          }
         },
         "highlight": "Statt zu raten, wo es schwierig ist — erhalten Sie einen organisierten Einblick, worauf gearbeitet werden sollte.",
         "cta": "Zum Elternportal"
@@ -295,10 +334,22 @@
         "videoTitle": "Lerne Leos Kinderwelt kennen",
         "videoDescription": "Schau ein kurzes Video über Übung, Spiele, Überraschungen und Fortschritt in der Kinderwelt.",
         "benefits": {
-          "0": { "title": "Übung, die sich wie Spielen anfühlt", "text": "Bunte Aufgaben und Herausforderungen, die das Üben leichter erscheinen lassen." },
-          "1": { "title": "Dein eigenes Tempo", "text": "Leo begleitet dich, damit du ohne Druck weiter probieren kannst." },
-          "2": { "title": "Spielen und Lernen zusammen", "text": "Fachübung mit spaßigen Pausen an einem Ort mischen." },
-          "3": { "title": "Münzen, Karten und Überraschungen", "text": "Fortschritt kommt mit Belohnungen, die zum Wiederkommen ermutigen." }
+          "0": {
+            "title": "Übung, die sich wie Spielen anfühlt",
+            "text": "Bunte Aufgaben und Herausforderungen, die das Üben leichter erscheinen lassen."
+          },
+          "1": {
+            "title": "Dein eigenes Tempo",
+            "text": "Leo begleitet dich, damit du ohne Druck weiter probieren kannst."
+          },
+          "2": {
+            "title": "Spielen und Lernen zusammen",
+            "text": "Fachübung mit spaßigen Pausen an einem Ort mischen."
+          },
+          "3": {
+            "title": "Münzen, Karten und Überraschungen",
+            "text": "Fortschritt kommt mit Belohnungen, die zum Wiederkommen ermutigen."
+          }
         },
         "cta": "Kinderwelt betreten",
         "kidsVideoAria": "Video zur Kinderwelt"
@@ -343,20 +394,50 @@
       "kidsWorldCta": "Kinderwelt",
       "parentLoginCta": "Elternanmeldung",
       "funGames": {
-        "0": { "title": "Unterhaltsame Spiele", "text": "Spiele, die Interesse und Spaß hinzufügen und Kinder zum Weiterüben ermutigen." },
-        "1": { "title": "Soziale Erlebnisse", "text": "Spielen mit Freunden und soziale Erlebnisse, wo verfügbar — auf eine positive, freundliche Art." },
-        "2": { "title": "Motivation zum Lernen", "text": "Eine Mischung aus Übung, Münzen, Karten, Spielen und Herausforderungen, die Kinder zum Weitermachen ermutigt." }
+        "0": {
+          "title": "Unterhaltsame Spiele",
+          "text": "Spiele, die Interesse und Spaß hinzufügen und Kinder zum Weiterüben ermutigen."
+        },
+        "1": {
+          "title": "Soziale Erlebnisse",
+          "text": "Spielen mit Freunden und soziale Erlebnisse, wo verfügbar — auf eine positive, freundliche Art."
+        },
+        "2": {
+          "title": "Motivation zum Lernen",
+          "text": "Eine Mischung aus Übung, Münzen, Karten, Spielen und Herausforderungen, die Kinder zum Weitermachen ermutigt."
+        }
       },
       "whyCards": {
-        "0": { "title": "Lernen im eigenen Tempo", "text": "Jedes Kind bewegt sich entsprechend seiner Fähigkeiten, mit Übungen, die zu seinem Niveau und den Themen passen, die es stärken muss." },
-        "1": { "title": "Ein klares Bild für Eltern", "text": "Berichte helfen zu verstehen, wo Ihr Kind erfolgreich ist, wo es Schwierigkeiten hat, und was als Nächstes geübt werden sollte." },
-        "2": { "title": "Ein freundliches Erlebnis für Kinder", "text": "Die Website verbindet Übung, Spiele, Münzen, Karten und ein einladendes Design, um Ausdauer und positives Lernen zu fördern." }
+        "0": {
+          "title": "Lernen im eigenen Tempo",
+          "text": "Jedes Kind bewegt sich entsprechend seiner Fähigkeiten, mit Übungen, die zu seinem Niveau und den Themen passen, die es stärken muss."
+        },
+        "1": {
+          "title": "Ein klares Bild für Eltern",
+          "text": "Berichte helfen zu verstehen, wo Ihr Kind erfolgreich ist, wo es Schwierigkeiten hat, und was als Nächstes geübt werden sollte."
+        },
+        "2": {
+          "title": "Ein freundliches Erlebnis für Kinder",
+          "text": "Die Website verbindet Übung, Spiele, Münzen, Karten und ein einladendes Design, um Ausdauer und positives Lernen zu fördern."
+        }
       },
       "siteFeatures": {
-        "0": { "phase": "Übung nach Fach", "text": "Mathematik, Geometrie, Englisch und Naturwissenschaften." },
-        "1": { "phase": "Klassen und Schwierigkeitsstufen", "text": "Übung passend zu Altersgruppe, Thema und Stufe für schrittweisen, klaren Fortschritt." },
-        "2": { "phase": "Berichte für Eltern", "text": "Eine klare Zusammenfassung von Leistung, Fehlern, Stärken und Bereichen zur Verbesserung." },
-        "3": { "phase": "Spiele und soziales Spielen", "text": "Solo-Spiele, Lernspiele, Spielen mit Freunden, Münzen und Karten." }
+        "0": {
+          "phase": "Übung nach Fach",
+          "text": "Mathematik, Geometrie, Englisch und Naturwissenschaften."
+        },
+        "1": {
+          "phase": "Klassen und Schwierigkeitsstufen",
+          "text": "Übung passend zu Altersgruppe, Thema und Stufe für schrittweisen, klaren Fortschritt."
+        },
+        "2": {
+          "phase": "Berichte für Eltern",
+          "text": "Eine klare Zusammenfassung von Leistung, Fehlern, Stärken und Bereichen zur Verbesserung."
+        },
+        "3": {
+          "phase": "Spiele und soziales Spielen",
+          "text": "Solo-Spiele, Lernspiele, Spielen mit Freunden, Münzen und Karten."
+        }
       }
     },
     "legalShell": {
@@ -416,7 +497,6 @@
     "titleParent": "Eltern-App installieren",
     "titleTeacher": "Lehrkräfte-App installieren"
   },
-
   "parent": {
     "portalTitle": "Elternportal",
     "checkingSession": "Elternsitzung wird überprüft…",
@@ -692,5 +772,12 @@
         "qa_ask_teacher": "Frage für die Lehrkraft"
       }
     }
+  },
+  "teacherShell": {
+    "backToDashboard": "← Zurück zum Dashboard",
+    "schoolLabel": "Schule: {name}",
+    "signOut": "Abmelden",
+    "myClasses": "Meine Klassen",
+    "classReportTitle": "Klassenbericht"
   }
 }

@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-08-05T21:53:53.272Z",
+  "base": "http://127.0.0.1:3001",
+  "logins": {
+    "teacherSupabase": {
+      "ok": true,
+      "reason": "ok",
+      "emailSet": true
+    },
+    "teacher": {
+      "ok": true,
+      "method": "ui",
+      "url": "http://127.0.0.1:3001/teacher/dashboard"
+    },
+    "teacherDeepDiscovery": {
+      "classLinks": [],
+      "studentLinks": [],
+      "deepCount": 0
+    },
+    "parentSupabase": {
+      "ok": false,
+      "reason": "supabase auth failed status=400 msg=Invalid login credentials"
+    },
+    "parent": {
+      "ok": false,
+      "reason": "parent email field missing"
+    },
+    "student": {
+      "ok": false,
+      "reason": "student username field missing"
+    },
+    "school": {
+      "ok": false,
+      "reason": "missing SCHOOL_QA_PASSWORD/DEMO_TEACHER_PASSWORD"
+    }
+  },
+  "rows": [
+    {
+      "route": "/teacher/dashboard",
+      "role": "teacher",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "btn:English\n▾",
+        "btn:English✓",
+        "btn:🌙",
+        "btn:Cookie preferences",
+        "btn:🌙"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/dashboard"
+    },
+    {
+      "route": "/teacher/worksheets",
+      "role": "teacher",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "btn:English\n▾",
+        "btn:English✓"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/worksheets"
+    },
+    {
+      "route": "/teacher/worksheets/new",
+      "role": "teacher",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "btn:English\n▾",
+        "btn:English✓",
+        "btn:Launch and send to selected students",
+        "btn:Cookie preferences",
+        "btn:Launch and send to selected students"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/worksheets/new"
+    },
+    {
+      "route": "/teacher/students/activities/new",
+      "role": "teacher",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "btn:English\n▾",
+        "btn:English✓",
+        "btn:Cookie preferences",
+        "btn:Show preview"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/students/activities/new"
+    },
+    {
+      "route": "/teacher/school-messages",
+      "role": "teacher",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "notes": [
+        "btn:English\n▾",
+        "btn:English✓"
+      ],
+      "errors": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/school-messages"
+    }
+  ],
+  "apis": [
+    {
+      "route": "/api/teacher/classes",
+      "role": "api-authed",
+      "status": 200,
+      "hebrew": true,
+      "sample": "כיתה ג׳ - LEO\",\"gradeLevel\":\"g3\",\"subjectFocus\":null,\"studentCount\":20,\"isArchived\":false,\"createdAt\""
+    },
+    {
+      "route": "/api/teacher/me",
+      "role": "api-authed",
+      "status": 200,
+      "hebrew": true,
+      "sample": "מורה LEO\",\"preferredLanguage\":\"he\",\"isActive\":true,\"createdAt\":\"2026-06-27T18:08:57.180492+00:00\"},\"l"
+    }
+  ],
+  "blocked": [
+    {
+      "role": "teacher-deep",
+      "reason": "Teacher logged in but no class/student links found on dashboard — cannot complete deep flow coverage"
+    },
+    {
+      "role": "parent",
+      "reason": "parent email field missing"
+    },
+    {
+      "role": "student",
+      "reason": "student username field missing"
+    },
+    {
+      "role": "school",
+      "reason": "missing SCHOOL_QA_PASSWORD/DEMO_TEACHER_PASSWORD"
+    }
+  ],
+  "summary": {
+    "routesChecked": 5,
+    "hebrewRoutes": 0,
+    "apisChecked": 2,
+    "hebrewApis": 2,
+    "blockedCount": 4,
+    "teacherOk": true,
+    "parentOk": false,
+    "studentOk": false,
+    "schoolOk": false
+  },
+  "hebrewRows": [],
+  "hebrewApis": [
+    {
+      "route": "/api/teacher/classes",
+      "role": "api-authed",
+      "status": 200,
+      "hebrew": true,
+      "sample": "כיתה ג׳ - LEO\",\"gradeLevel\":\"g3\",\"subjectFocus\":null,\"studentCount\":20,\"isArchived\":false,\"createdAt\""
+    },
+    {
+      "route": "/api/teacher/me",
+      "role": "api-authed",
+      "status": 200,
+      "hebrew": true,
+      "sample": "מורה LEO\",\"preferredLanguage\":\"he\",\"isActive\":true,\"createdAt\":\"2026-06-27T18:08:57.180492+00:00\"},\"l"
+    }
+  ]
+}

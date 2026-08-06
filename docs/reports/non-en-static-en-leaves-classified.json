@@ -1,0 +1,864 @@
+{
+  "generatedAt": "2026-08-06T22:54:45.081Z",
+  "locales": {
+    "fr-FR": {
+      "total": 47,
+      "byKind": {
+        "brand": 2,
+        "icu": 4,
+        "allowed_cognate": 41
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "ui",
+          "key": "student.dockCollection",
+          "value": "Collection",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "ui",
+          "key": "student.dockMissions",
+          "value": "Missions",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "ui",
+          "key": "copilot.panel.questionLabel",
+          "value": "Question",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "questionsAnswered",
+          "value": "{count, plural, one {# question} other {# questions}}",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.modes.marathon.name",
+          "value": "Marathon",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.divisionLabel",
+          "value": "÷ Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.monthMinutesProgress",
+          "value": "{current} / {goal} min",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.addition",
+          "value": "Addition",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.multiplication",
+          "value": "Multiplication",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.division",
+          "value": "Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.fractions",
+          "value": "Fractions",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.estimation",
+          "value": "Estimation",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.operations.division.title",
+          "value": "➗ Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.operations.fractions.title",
+          "value": "🔢 Fractions",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.terms.quotient.title",
+          "value": "➗ Quotient",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.terms.fraction.title",
+          "value": "🔢 Fraction",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.topics.triangles",
+          "value": "Triangles",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.topics.transformations",
+          "value": "Transformations",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.topics.rotation",
+          "value": "Rotation",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "science.reference.life_science.terms.adaptations.term",
+          "value": "Adaptations",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "questionsLabel",
+          "value": "Questions",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.addition",
+          "value": "Addition",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.multiplication",
+          "value": "Multiplication",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.division",
+          "value": "Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.fractions",
+          "value": "Fractions",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.estimation",
+          "value": "Estimation",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.geometry.triangles",
+          "value": "Triangles",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.geometry.transformations",
+          "value": "Transformations",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.geometry.rotation",
+          "value": "Rotation",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.body_nutrition",
+          "value": "Nutrition",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.body_circulation",
+          "value": "Circulation",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.body_respiration",
+          "value": "Respiration",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.animals_habitats",
+          "value": "Habitats",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.animals_adaptation",
+          "value": "Adaptation",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.animals_classification",
+          "value": "Classification",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "worksheets",
+          "key": "questionLabel",
+          "value": "Question",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "worksheets",
+          "key": "writingOrientationPortrait",
+          "value": "Portrait",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "worksheets",
+          "key": "writingPageAria",
+          "value": "Page {pageId}",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.topicRecommendationLine",
+          "value": "{subject} - {topic}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        },
+        {
+          "ns": "school",
+          "key": "communication.navMessages",
+          "value": "Messages",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "school",
+          "key": "communication.badgeImportant",
+          "value": "Important",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "platform",
+          "key": "activityModes.discussion",
+          "value": "Discussion",
+          "kind": "allowed_cognate"
+        }
+      ]
+    },
+    "de-DE": {
+      "total": 20,
+      "byKind": {
+        "brand": 2,
+        "allowed_cognate": 11,
+        "icu": 4,
+        "english_subject": 2,
+        "technical": 1
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.detailsTitle",
+          "value": "Details — {name}",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "learning",
+          "key": "master.badges.streak_50",
+          "value": "🌟 Champion",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.modes.marathon.name",
+          "value": "Marathon",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.divisionLabel",
+          "value": "÷ Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.addition",
+          "value": "Addition",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.division",
+          "value": "Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.operations.addition.title",
+          "value": "➕ Addition",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.operations.division.title",
+          "value": "➗ Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.reference.terms.quotient.title",
+          "value": "➗ Quotient",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "english.steps.grammarAmIsAre",
+          "value": "I = am, You/We/They = are, He/She/It = is.",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.addition",
+          "value": "Addition",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.division",
+          "value": "Division",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "worksheets",
+          "key": "writingCustomWordsPlaceholder",
+          "value": "cat, dog",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "teacher",
+          "key": "reportSubjects[1]",
+          "value": "geometry",
+          "kind": "technical"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.topicRecommendationLine",
+          "value": "{subject} - {topic}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    },
+    "nl-NL": {
+      "total": 15,
+      "byKind": {
+        "brand": 2,
+        "icu": 4,
+        "allowed_cognate": 8,
+        "must_translate": 1
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "ui",
+          "key": "student.arcadePageTitle",
+          "value": "{game} — Arcade",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "ui",
+          "key": "teacherShell.schoolLabel",
+          "value": "School: {name}",
+          "kind": "must_translate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.modes.marathon.name",
+          "value": "Marathon",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.monthMinutesProgress",
+          "value": "{current} / {goal} min",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "math.operations.percentages",
+          "value": "Percentages",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.reference.terms.volume.title",
+          "value": "📦 Volume",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.topics.pythagoras",
+          "value": "Pythagoras",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.math.percentages",
+          "value": "Percentages",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "worksheets",
+          "key": "coloringUploadAdjustContrast",
+          "value": "Contrast",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.topicRecommendationLine",
+          "value": "{subject} - {topic}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    },
+    "es-419": {
+      "total": 13,
+      "byKind": {
+        "brand": 2,
+        "icu": 3,
+        "allowed_cognate": 5,
+        "english_subject": 2,
+        "technical": 1
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "learning",
+          "key": "master.showHorizontal",
+          "value": "↔️ Horizontal",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.showVertical",
+          "value": "↕️ Vertical",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.monthMinutesProgress",
+          "value": "{current} / {goal} min",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.reference.terms.diagonal.title",
+          "value": "📐 Diagonal",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.topics.diagonal",
+          "value": "Diagonal",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "english.steps.grammarAmIsAre",
+          "value": "I = am, You/We/They = are, He/She/It = is.",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "worksheets",
+          "key": "writingCustomWordsPlaceholder",
+          "value": "cat, dog",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "teacher",
+          "key": "reportSubjects[1]",
+          "value": "geometry",
+          "kind": "technical"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    },
+    "it-IT": {
+      "total": 9,
+      "byKind": {
+        "brand": 2,
+        "icu": 4,
+        "allowed_cognate": 3
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "ui",
+          "key": "student.arcadePageTitle",
+          "value": "{game} — Arcade",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "auth",
+          "key": "password",
+          "value": "Password",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "master.monthMinutesProgress",
+          "value": "{current} / {goal} min",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.topicRecommendationLine",
+          "value": "{subject} - {topic}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    },
+    "ru-RU": {
+      "total": 10,
+      "byKind": {
+        "brand": 2,
+        "icu": 3,
+        "english_subject": 4,
+        "technical": 1
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "learning",
+          "key": "english.steps.grammarAmIsAre",
+          "value": "I = am, You/We/They = are, He/She/It = is.",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.english.grammar_present_simple",
+          "value": "Present simple",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.english.grammar_past_simple",
+          "value": "Past simple",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "worksheets",
+          "key": "writingCustomWordsPlaceholder",
+          "value": "cat, dog",
+          "kind": "english_subject"
+        },
+        {
+          "ns": "teacher",
+          "key": "reportSubjects[1]",
+          "value": "geometry",
+          "kind": "technical"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    },
+    "pt-BR": {
+      "total": 9,
+      "byKind": {
+        "brand": 2,
+        "icu": 4,
+        "allowed_cognate": 3
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "learning",
+          "key": "master.monthMinutesProgress",
+          "value": "{current} / {goal} min",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "learning",
+          "key": "geometry.topics.diagonal",
+          "value": "Diagonal",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "reports",
+          "key": "topics.science.animals_habitats",
+          "value": "Habitats",
+          "kind": "allowed_cognate"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.topicRecommendationLine",
+          "value": "{subject} - {topic}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    },
+    "ar-001": {
+      "total": 6,
+      "byKind": {
+        "brand": 2,
+        "icu": 4
+      },
+      "leaves": [
+        {
+          "ns": "common",
+          "key": "brandName",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "home.headline",
+          "value": "Leo Kids",
+          "kind": "brand"
+        },
+        {
+          "ns": "ui",
+          "key": "parent.errors.rawMessage",
+          "value": "{message}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.attentionStudentLine",
+          "value": "{name} · {suffix}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "fallback.topicRecommendationLine",
+          "value": "{subject} - {topic}",
+          "kind": "icu"
+        },
+        {
+          "ns": "teacher",
+          "key": "roster.filter.class",
+          "value": "{className} ({count})",
+          "kind": "icu"
+        }
+      ]
+    }
+  }
+}

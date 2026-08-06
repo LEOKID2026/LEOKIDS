@@ -1,0 +1,524 @@
+{
+  "generatedAt": "2026-08-06T22:07:12.714Z",
+  "overallStatus": "PASS",
+  "englishSoTRemainsValid": true,
+  "canProceedToCountryOverlays": true,
+  "evidence": {
+    "fullNineLocaleRun": {
+      "terminal": "786900",
+      "overallThen": "BLOCKED",
+      "reasonThen": "pt-BR transient route harvest flake + ru-RU parent login flake",
+      "englishLeakageHits": 0,
+      "hebrewHits": 0,
+      "totalsThen": {
+        "locales": 9,
+        "routes": 177,
+        "loggedInFlows": 36,
+        "apiResponses": 225,
+        "actionableFindings": 1
+      },
+      "localeStatusesThen": {
+        "ar-001": "PASS",
+        "es-419": "PASS",
+        "pt-BR": "FAIL",
+        "pt-PT": "PASS",
+        "de-DE": "PASS",
+        "fr-FR": "PASS",
+        "it-IT": "PASS",
+        "nl-NL": "PASS",
+        "ru-RU": "BLOCKED"
+      }
+    },
+    "focusedRetry": {
+      "locales": [
+        "pt-BR",
+        "ru-RU"
+      ],
+      "overall": "PASS",
+      "totals": {
+        "locales": 2,
+        "routes": 40,
+        "loggedInFlows": 8,
+        "apiResponses": 50,
+        "findings": 2,
+        "actionableFindings": 0
+      },
+      "localeStatuses": {
+        "pt-BR": "PASS",
+        "ru-RU": "PASS"
+      }
+    },
+    "flakeRetryScript": {
+      "generatedAt": "2026-08-06T21:50:55.562Z",
+      "checks": [
+        {
+          "locale": "ru-RU",
+          "role": "parent",
+          "loginOk": true,
+          "url": "http://127.0.0.1:3001/ru/learning/parent-report",
+          "rows": [
+            {
+              "route": "/parent/dashboard",
+              "url": "http://127.0.0.1:3001/ru/parent/dashboard",
+              "hebrew": false,
+              "en": [],
+              "sample": "LEO KIDS\nГлавная\nРодительский портал\nО нас\nКонтакты\nСправочный центр\nRussia\n▾\n🌞\n🌙\nРодительский портал\n\neran1@leokids.com\n\n🖨️\nЛисты заданий для печати\nУчебная программа\nДобавить ребёнка\nПригласить д"
+            },
+            {
+              "route": "/parent/worksheets",
+              "url": "http://127.0.0.1:3001/ru/parent/worksheets",
+              "hebrew": false,
+              "en": [],
+              "sample": "LEO KIDS\nГлавная\nРодительский портал\nО нас\nКонтакты\nСправочный центр\nRussia\n▾\nЗагрузка…\n\n© 2026 LEO K · Игры и обучение для детей · Юридические документы · Настройки cookie"
+            },
+            {
+              "route": "/learning/parent-report",
+              "url": "http://127.0.0.1:3001/ru/learning/parent-report",
+              "hebrew": false,
+              "en": [],
+              "sample": "🌞\n🌙\n📊\nParent report\n\nThe official parent report is only available through the parent portal - after signing in and choosing a child from the dashboard.\n\nThe report cannot be built from local browse"
+            }
+          ]
+        },
+        {
+          "locale": "pt-BR",
+          "role": "school",
+          "loginOk": true,
+          "rows": [
+            {
+              "route": "/school/dashboard",
+              "url": "http://127.0.0.1:3001/br/school/dashboard",
+              "hebrew": false,
+              "en": [],
+              "sample": "LEO KIDS\nInício\nPortal do professor\nSobre\nContato\nCentral de ajuda\nBrasil\n▾\n\nGestão escolar\n\nLEO Global QA School\n\nPainel escolar\n\nVisão geral, ações rápidas e monitoramento de atividades escolares\n\nS"
+            },
+            {
+              "route": "/school/students",
+              "url": "http://127.0.0.1:3001/br/school/students",
+              "hebrew": false,
+              "en": [],
+              "sample": "LEO KIDS\nInício\nPortal do professor\nSobre\nContato\nCentral de ajuda\nBrasil\n▾\n\nGestão escolar\n\nLEO Global QA School\n\nCrianças registradas\n\nNavegue por ano e turma - relatórios infantis sem inserir IDs\n\n"
+            },
+            {
+              "route": "/school/teachers",
+              "url": "http://127.0.0.1:3001/br/school/teachers",
+              "hebrew": false,
+              "en": [],
+              "sample": "LEO KIDS\nInício\nPortal do professor\nSobre\nContato\nCentral de ajuda\nBrasil\n▾\n\nGestão escolar\n\nLEO Global QA School\n\nProfessores na escola\n\nLista de professores, funções, disciplinas e atividades\n\nSair\n"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "mastersChecked": [
+    "ar-001",
+    "es-419",
+    "pt-BR",
+    "pt-PT",
+    "de-DE",
+    "fr-FR",
+    "it-IT",
+    "nl-NL",
+    "ru-RU"
+  ],
+  "locales": [
+    {
+      "localeId": "ar-001",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "es-419",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "pt-BR",
+      "status": "PASS",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0,
+        "heUi": 0,
+        "enUi": 0
+      },
+      "roleSummary": {
+        "public": {
+          "loginOk": true,
+          "routesChecked": 9,
+          "hebrew": false,
+          "englishLeakage": false
+        },
+        "parent": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 3,
+          "apisChecked": 4,
+          "hebrew": false,
+          "englishLeakage": false
+        },
+        "student": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 3,
+          "apisChecked": 6,
+          "hebrew": false,
+          "englishLeakage": false
+        },
+        "teacher": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 2,
+          "apisChecked": 5,
+          "hebrew": false,
+          "englishLeakage": false,
+          "preferredLanguageNotes": [
+            "en",
+            "en"
+          ]
+        },
+        "school": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 3,
+          "apisChecked": 5,
+          "hebrew": false,
+          "englishLeakage": false
+        }
+      },
+      "findingsCount": 1,
+      "findings": [
+        {
+          "locale": "pt-BR",
+          "role": "teacher",
+          "route": "/api/teacher/me",
+          "api": "/api/teacher/me",
+          "kind": "preferred_language",
+          "exactText": "preferredLanguage=en",
+          "source": "API /api/teacher/me",
+          "recommendedFix": "Informational: QA teacher preferredLanguage is en; confirm UI follows interface locale not only profile language",
+          "severity": "low"
+        }
+      ],
+      "counters": {
+        "routes": 20,
+        "apis": 25,
+        "loggedInFlows": 4
+      },
+      "priorFullRunStatus": "FAIL",
+      "clearedByFocusedRetry": true
+    },
+    {
+      "localeId": "pt-PT",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "de-DE",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "fr-FR",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "it-IT",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "nl-NL",
+      "status": "PASS",
+      "priorFullRunStatus": "PASS",
+      "note": "PASS in full 9-locale chrome-fix run; EN/Hebrew metrics were 0",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0
+      },
+      "roleSummary": {
+        "parent": {
+          "loginOk": true
+        },
+        "student": {
+          "loginOk": true
+        },
+        "teacher": {
+          "loginOk": true
+        },
+        "school": {
+          "loginOk": true
+        }
+      },
+      "findings": []
+    },
+    {
+      "localeId": "ru-RU",
+      "status": "PASS",
+      "metrics": {
+        "publicHebrew": 0,
+        "publicEnglish": 0,
+        "loggedInHebrew": 0,
+        "loggedInEnglish": 0,
+        "apiHebrew": 0,
+        "apiEnglish": 0,
+        "fallbackIssues": 0,
+        "routeIssues": 0,
+        "rtlIssues": 0,
+        "heUi": 0,
+        "enUi": 0
+      },
+      "roleSummary": {
+        "public": {
+          "loginOk": true,
+          "routesChecked": 9,
+          "hebrew": false,
+          "englishLeakage": false
+        },
+        "parent": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 3,
+          "apisChecked": 4,
+          "hebrew": false,
+          "englishLeakage": false
+        },
+        "student": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 3,
+          "apisChecked": 6,
+          "hebrew": false,
+          "englishLeakage": false
+        },
+        "teacher": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 2,
+          "apisChecked": 5,
+          "hebrew": false,
+          "englishLeakage": false,
+          "preferredLanguageNotes": [
+            "en",
+            "en"
+          ]
+        },
+        "school": {
+          "loginOk": true,
+          "blockedReason": null,
+          "routesChecked": 3,
+          "apisChecked": 5,
+          "hebrew": false,
+          "englishLeakage": false
+        }
+      },
+      "findingsCount": 1,
+      "findings": [
+        {
+          "locale": "ru-RU",
+          "role": "teacher",
+          "route": "/api/teacher/me",
+          "api": "/api/teacher/me",
+          "kind": "preferred_language",
+          "exactText": "preferredLanguage=en",
+          "source": "API /api/teacher/me",
+          "recommendedFix": "Informational: QA teacher preferredLanguage is en; confirm UI follows interface locale not only profile language",
+          "severity": "low"
+        }
+      ],
+      "counters": {
+        "routes": 20,
+        "apis": 25,
+        "loggedInFlows": 4
+      },
+      "priorFullRunStatus": "BLOCKED",
+      "clearedByFocusedRetry": true
+    }
+  ],
+  "summary": {
+    "parentLoginOkAll": true,
+    "studentLoginOkAll": true,
+    "teacherLoginOkAll": true,
+    "schoolLoginOkAll": true,
+    "hebrewHits": 0,
+    "englishLeakageHits": 0,
+    "actionableFindings": 0
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "generatedAt": "2026-08-05T20:10:51.143Z",
+  "base": "http://127.0.0.1:3001",
+  "routesChecked": 37,
+  "hebrewRoutes": 0,
+  "hebrewFree": true,
+  "results": [
+    {
+      "route": "/",
+      "url": "http://127.0.0.1:3001/",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/en",
+      "url": "http://127.0.0.1:3001/en",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/kids",
+      "url": "http://127.0.0.1:3001/kids",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/parents",
+      "url": "http://127.0.0.1:3001/parents",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/teachers",
+      "url": "http://127.0.0.1:3001/teachers",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/schools",
+      "url": "http://127.0.0.1:3001/schools",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/about",
+      "url": "http://127.0.0.1:3001/about",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/contact",
+      "url": "http://127.0.0.1:3001/contact",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/gallery",
+      "url": "http://127.0.0.1:3001/gallery",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [],
+      "errors": []
+    },
+    {
+      "route": "/games",
+      "url": "http://127.0.0.1:3001/games",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/help",
+      "url": "http://127.0.0.1:3001/help",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/guides",
+      "url": "http://127.0.0.1:3001/guides",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/guides/math-practice-at-home",
+      "url": "http://127.0.0.1:3001/guides/math-practice-at-home",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/guides/home-practice-routine",
+      "url": "http://127.0.0.1:3001/guides/home-practice-routine",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/guides/how-to-follow-child-progress",
+      "url": "http://127.0.0.1:3001/guides/how-to-follow-child-progress",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice",
+      "url": "http://127.0.0.1:3001/practice",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/math",
+      "url": "http://127.0.0.1:3001/practice/math",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/english",
+      "url": "http://127.0.0.1:3001/practice/english",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/science",
+      "url": "http://127.0.0.1:3001/practice/science",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/geometry",
+      "url": "http://127.0.0.1:3001/practice/geometry",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/games",
+      "url": "http://127.0.0.1:3001/practice/games",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/worksheets",
+      "url": "http://127.0.0.1:3001/practice/worksheets",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/parent/login",
+      "url": "http://127.0.0.1:3001/parent/login",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:button:has-text(\"Sign in\")",
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/student/login",
+      "url": "http://127.0.0.1:3001/student/login",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/teacher/login",
+      "url": "http://127.0.0.1:3001/teacher/login",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:button:has-text(\"Sign in\")",
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/school/register",
+      "url": "http://127.0.0.1:3001/school/register",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/school/staff/login",
+      "url": "http://127.0.0.1:3001/school/staff/login",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:button:has-text(\"Sign in\")",
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/forgot-password",
+      "url": "http://127.0.0.1:3001/auth/forgot-password",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/demo/enter",
+      "url": "http://127.0.0.1:3001/demo/enter",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning",
+      "url": "http://127.0.0.1:3001/learning",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/curriculum",
+      "url": "http://127.0.0.1:3001/learning/curriculum",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/math-master",
+      "url": "http://127.0.0.1:3001/learning/math-master",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/geometry-master",
+      "url": "http://127.0.0.1:3001/learning/geometry-master",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/english-master",
+      "url": "http://127.0.0.1:3001/learning/english-master",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/science-master",
+      "url": "http://127.0.0.1:3001/learning/science-master",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/offline",
+      "url": "http://127.0.0.1:3001/offline",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [
+        "clicked:a:has-text(\"Help\")"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/404",
+      "url": "http://127.0.0.1:3001/404",
+      "status": 404,
+      "hebrew": false,
+      "hits": [],
+      "interactions": [],
+      "errors": []
+    }
+  ]
+}

@@ -772,5 +772,12 @@
         "qa_ask_teacher": "Question pour le professeur"
       }
     }
+  },
+  "teacherShell": {
+    "backToDashboard": "← Retour au tableau de bord",
+    "schoolLabel": "École : {name}",
+    "signOut": "Se déconnecter",
+    "myClasses": "Mes classes",
+    "classReportTitle": "Rapport de classe"
   }
 }

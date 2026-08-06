@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
+import { useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const NAV = "components__teacher-portal__TeacherClassActivitiesNav";
 function navCopy(key) {
@@ -10,6 +11,7 @@ function navCopy(key) {
  * @param {{ classId: string, active?: 'class'|'activities'|'worksheets'|'discussion' }} props
  */
 export default function TeacherClassActivitiesNav({ classId, active = "activities" }) {
+  const t = useT();
   if (!classId) return null;
   const base = `/teacher/class/${encodeURIComponent(classId)}`;
   const linkClass = (key) =>
@@ -26,7 +28,7 @@ export default function TeacherClassActivitiesNav({ classId, active = "activitie
   return (
     <nav className="flex flex-wrap gap-2 mb-6 text-sm" aria-label={navCopy("aria_label")}>
       <Link href={base} className={linkClass("class")}>
-        {navCopy("class_report")}
+        {t("ui.teacherShell.classReportTitle")}
       </Link>
       <Link href={`${base}/activities`} className={linkClass("activities")}>
         {navCopy("activities")}

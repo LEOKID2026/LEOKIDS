@@ -23,7 +23,10 @@
     "classMgmtEmpty": "Nenhuma turma cadastrada - pode criar uma nova turma abaixo.",
     "backGrades": "← Voltar aos anos",
     "detailsSectionTransport": "Transporte e anos",
-    "staffChangePinExplanation": "Antes de fazer login, deve alterar o PIN inicial que recebeu do gerente da escola."
+    "staffChangePinExplanation": "Antes de fazer login, deve alterar o PIN inicial que recebeu do gerente da escola.",
+    "signOut": "Terminar sessão",
+    "signOutBusy": "A terminar sessão…",
+    "classReportTitle": "Relatório da turma"
   },
   "communication": {
     "labelDisplayName": "Nome dos encarregados de educação",

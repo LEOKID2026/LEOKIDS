@@ -207,7 +207,9 @@
     "assignTargetGrade": "Zielklasse",
     "activityColTitle": "Aktivität",
     "activityColMeta": "Details",
-    "activityColStatus": "Status"
+    "activityColStatus": "Status",
+    "signOut": "Abmelden",
+    "signOutBusy": "Abmelden…"
   },
   "teacher": {
     "navSchool": "Schulverwaltung",

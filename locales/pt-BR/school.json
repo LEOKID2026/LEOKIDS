@@ -9,7 +9,7 @@
     "loading": "Carregando…",
     "loadingData": "Carregando dados…",
     "loadError": "Erro ao carregar dados",
-    "classReportTitle": "Relatório de aula",
+    "classReportTitle": "Relatório da turma",
     "studentReportTitle": "Relatório infantil",
     "retry": "Tentar de novo",
     "refresh": "Atualizar dados",
@@ -207,7 +207,9 @@
     "assignTargetGrade": "Nota desejada",
     "activityColTitle": "Atividade",
     "activityColMeta": "Detalhes",
-    "activityColStatus": "Status"
+    "activityColStatus": "Status",
+    "signOut": "Sair",
+    "signOutBusy": "Saindo…"
   },
   "teacher": {
     "navSchool": "Gestão escolar",

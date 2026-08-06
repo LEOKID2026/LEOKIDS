@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-05T20:14:27.515Z",
+  "hebrewStops": 0,
+  "trail": [
+    {
+      "label": "demo-enter",
+      "url": "http://127.0.0.1:3001/demo/enter",
+      "hebrew": false,
+      "title": "Demo mode — LEO KIDS",
+      "sample": ""
+    },
+    {
+      "label": "role-button:/enter/i",
+      "url": "http://127.0.0.1:3001/student/home",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "demo-parent-enter",
+      "url": "http://127.0.0.1:3001/demo/parent/enter",
+      "hebrew": false,
+      "title": "Parent demo — LEO KIDS",
+      "sample": ""
+    },
+    {
+      "label": "parent-demo-started",
+      "url": "http://127.0.0.1:3001/demo/parent/enter",
+      "hebrew": false,
+      "title": "Parent demo — LEO KIDS",
+      "sample": ""
+    },
+    {
+      "label": "direct:/demo/enter",
+      "url": "http://127.0.0.1:3001/demo/enter",
+      "hebrew": false,
+      "title": "Demo mode — LEO KIDS",
+      "sample": ""
+    },
+    {
+      "label": "direct:/parent/dashboard",
+      "url": "http://127.0.0.1:3001/parent/dashboard",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "direct:/student/home",
+      "url": "http://127.0.0.1:3001/student/login?next=%2Fstudent%2Fhome",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "direct:/student/cards",
+      "url": "http://127.0.0.1:3001/student/cards",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "direct:/learning/parent-report",
+      "url": "http://127.0.0.1:3001/learning/parent-report",
+      "hebrew": false,
+      "title": "Leo Kids · Learning for elementary students",
+      "sample": ""
+    },
+    {
+      "label": "direct:/help",
+      "url": "http://127.0.0.1:3001/help",
+      "hebrew": false,
+      "title": "Help center · Leo Kids",
+      "sample": ""
+    }
+  ]
+}

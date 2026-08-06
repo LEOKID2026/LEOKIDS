@@ -255,7 +255,7 @@
     "divisionLabel": "÷ División",
     "multiplicationLabel": "× Multiplicación",
     "reset": "Restablecer",
-    "remainderWarning": "⚠️ Error:",
+    "remainderWarning": "⚠️ ¡Error!",
     "notInteger": "¡no es un número entero!",
     "remainderOf": "resto {remainder}",
     "tableTapNumberHint": "Toca un número en la tabla y luego un número de fila o columna",

@@ -793,7 +793,10 @@
   },
   "teacherShell": {
     "backToDashboard": "← العودة إلى لوحة التحكم",
-    "schoolLabel": "المدرسة: {name}"
+    "schoolLabel": "المدرسة: {name}",
+    "signOut": "تسجيل الخروج",
+    "myClasses": "فصولي الدراسية",
+    "classReportTitle": "تقرير الفصل"
   },
   "copilot": {
     "panel": {

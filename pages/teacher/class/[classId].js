@@ -16,6 +16,7 @@ import {
   useTeacherPortalLoad,
 } from "../../../lib/teacher-portal/use-teacher-portal-session";
 import { useReportDateRange } from "../../../hooks/useReportDateRange.js";
+import { useT } from "../../../lib/i18n/I18nProvider.jsx";
 import {
   actionTypeLabelHe,
   attentionReasonHe,
@@ -35,7 +36,9 @@ export async function getServerSideProps(context) {
 }
 
 export default function TeacherClassReportPage({ classId }) {
+  const t = useT();
   const reportRange = useReportDateRange();
+  const classReportTitle = t("ui.teacherShell.classReportTitle");
 
   const fetchPath = useMemo(() => {
     if (!classId) return "";
@@ -55,7 +58,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
+          title={classReportTitle}
           message={globalBurnDownCopy("pages__teacher__class__[classId]", "invalid_class_id")}
         />
       </Layout>
@@ -67,7 +70,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportLoading
           backHref="/teacher/dashboard"
-          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
+          title={classReportTitle}
           hint={loadingHint}
         />
       </Layout>
@@ -79,7 +82,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
-          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
+          title={classReportTitle}
           message={globalBurnDownCopy("pages__teacher__class__[classId]", "you_do_not_have_permission_to_view_this_class_report")}
         />
       </Layout>
@@ -91,7 +94,7 @@ export default function TeacherClassReportPage({ classId }) {
       <Layout>
         <TeacherReportError
           backHref="/teacher/dashboard"
-          title={globalBurnDownCopy("pages__teacher__class__[classId]", "class_report")}
+          title={classReportTitle}
           message={errorMessage}
           onRetry={reload}
         />
@@ -153,7 +156,7 @@ export default function TeacherClassReportPage({ classId }) {
         data-report-ok="true"
         data-member-count={String(memberCount)}
       >
-        <TeacherPortalShell backHref="/teacher/dashboard" title={`Class report: ${className}`}>
+        <TeacherPortalShell backHref="/teacher/dashboard" title={`${classReportTitle}: ${className}`}>
           <TeacherClassActivitiesNav classId={classId} />
           <ReportDateRangeControl
             presetDays={reportRange.presetDays}

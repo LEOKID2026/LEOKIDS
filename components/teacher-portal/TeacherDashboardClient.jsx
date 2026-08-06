@@ -1,5 +1,5 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
-import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { filterStudentsByRosterKey } from "../../lib/teacher-portal/teacher-dashboard-roster.js";
@@ -518,6 +518,7 @@ export default function TeacherDashboardClient({
 }) {
   const T = getTeacherPortalTheme(bright);
   const { locale } = useI18n();
+  const t = useT();
   bindTeacherUiLocale(locale);
 
   const [search, setSearch] = useState("");
@@ -596,7 +597,7 @@ export default function TeacherDashboardClient({
           <p className={`text-sm mt-1 ${T.subheading}`}>{c("dashboard_subtitle")}</p>
         </div>
         <button type="button" onClick={onLogout} className={T.logoutBtn}>
-          {c("sign_out")}
+          {t("ui.teacherShell.signOut")}
         </button>
       </div>
 
@@ -688,7 +689,7 @@ export default function TeacherDashboardClient({
 
       {(dashboard?.classes || []).length > 0 ? (
         <section className={T.classSection} data-testid="teacher-class-cards-section">
-          <h2 className={`text-lg font-semibold mb-3 ${T.heading}`}>{c("my_classes")}</h2>
+          <h2 className={`text-lg font-semibold mb-3 ${T.heading}`}>{t("ui.teacherShell.myClasses")}</h2>
           <ul className="grid gap-3 sm:grid-cols-2">
             {(dashboard.classes || []).map((cls) => {
               const rosterKey = cls.physicalGroupKey || cls.classId;
@@ -713,7 +714,7 @@ export default function TeacherDashboardClient({
                         {
                           classId: classRouteId,
                           href: classBase,
-                          label: c("class_report"),
+                          label: t("ui.teacherShell.classReportTitle"),
                         },
                       ]
                     : [];

@@ -4,7 +4,7 @@
   "chooseGrade": "Choisis une classe",
   "chooseTopic": "Choisir un sujet",
   "startPractice": "Commencer la pratique",
-  "correct": "Correct!",
+  "correct": "Correct !",
   "incorrect": "Pas tout à fait – réessayez.",
   "nextQuestion": "Question suivante",
   "finish": "Terminer",
@@ -99,9 +99,9 @@
       "correct_500": "🌟 500 bonnes réponses",
       "op_king": "🧮 Roi de {op}",
       "op_genius": "🏆 Génie du {op}",
-      "topic_expert": "🔬 {topic} expert",
+      "topic_expert": "🔬 Expert {topic}",
       "topic_genius": "🏆 {topic} génie",
-      "topic_expert_legacy": "🔬 {topic} expert",
+      "topic_expert_legacy": "🔬 Expert {topic}",
       "topic_genius_legacy": "🏆 {topic} génie"
     },
     "noBadgesYet": "Pas encore de badge. Continue à t’entraîner !",
@@ -212,7 +212,7 @@
       "wrongWithAnswer": "Pas tout à fait 😔 La bonne réponse : {answer} ✅",
       "timeUp": "Le temps est écoulé ! ⏰",
       "timeUpGameOver": "Le temps est écoulé ! Jeu terminé! ⏰",
-      "excellent": "Excellent! ✅"
+      "excellent": "Excellent ! ✅"
     },
     "practiceModes": {
       "normal": "Pratique régulière",
@@ -226,7 +226,7 @@
       "champion": "👑Championne !"
     },
     "streakFeedback": {
-      "correct": "Correct!",
+      "correct": "Correct !",
       "amazing": "Incroyable! Série de {streak} !",
       "excellent": "Excellent! Série de {streak} !",
       "wellDone": "Bien joué! Série de {streak} !",

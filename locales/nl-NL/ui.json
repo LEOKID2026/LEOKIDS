@@ -186,11 +186,11 @@
       "social": {
         "email": "Leo's e-mail",
         "emailAria": "Send email naar {email}",
-        "instagram": "Leo's Instagram",
+        "instagram": "Instagram van Leo",
         "instagramAria": "Open Instagram-pagina in een nieuw venster",
-        "youtube": "Leo's YouTube",
+        "youtube": "YouTube van Leo",
         "youtubeAria": "Open Leo Kids YouTube in een nieuw venster",
-        "facebook": "Leo's Facebook",
+        "facebook": "Facebook van Leo",
         "facebookAria": "Open Leo Kids Facebook in een nieuw venster"
       },
       "faq": {
@@ -519,7 +519,7 @@
     "pinPlaceholder": "4 cijfers",
     "usernameExample": "bijv. noam123",
     "details": "Details",
-    "detailsTitle": "Details — {name}",
+    "detailsTitle": "Gegevens — {name}",
     "childDefault": "Kind",
     "parentReport": "Ouderrapport",
     "activity": "Activiteit",
@@ -696,7 +696,7 @@
     "themeClassicShort": "Klassiek",
     "prototypeTitle": "Kinderwereld — Prototype",
     "prototypeDescription": "Prototype voor het openingsscherm van Leo Kids World",
-    "prototypeBadge": "🧪 Prototype",
+    "prototypeBadge": "🧪 Proefversie",
     "errors": {
       "sessionExpired": "Uw sessie is verlopen. Meld u opnieuw aan.",
       "serverError": "Serverfout tijdens het laden van leergegevens.",
@@ -772,5 +772,12 @@
         "qa_ask_teacher": "Question voor de leerkracht"
       }
     }
+  },
+  "teacherShell": {
+    "backToDashboard": "← Terug naar overzicht",
+    "schoolLabel": "School: {name}",
+    "signOut": "Uitloggen",
+    "myClasses": "Mijn klassen",
+    "classReportTitle": "Klasrapport"
   }
 }

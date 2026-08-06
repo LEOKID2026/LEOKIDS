@@ -245,9 +245,18 @@
         "parentVideoAria": "Video para padres"
       },
       "valueCards": {
-        "0": { "title": "Herramientas para padres", "text": "Mira qué practicó tu hijo o hija, dónde está mejorando y qué reforzar." },
-        "1": { "title": "Experiencia para niños", "text": "Práctica, juegos, monedas y progreso en un recorrido amigable y colorido." },
-        "2": { "title": "Mapeo del progreso", "text": "Seguimiento por materia, tema, habilidad y subhabilidad." }
+        "0": {
+          "title": "Herramientas para padres",
+          "text": "Mira qué practicó tu hijo o hija, dónde está mejorando y qué reforzar."
+        },
+        "1": {
+          "title": "Experiencia para niños",
+          "text": "Práctica, juegos, monedas y progreso en un recorrido amigable y colorido."
+        },
+        "2": {
+          "title": "Mapeo del progreso",
+          "text": "Seguimiento por materia, tema, habilidad y subhabilidad."
+        }
       },
       "parentIntro": {
         "label": "Para padres",
@@ -270,20 +279,50 @@
         "flowStep2": "El padre o madre obtiene una imagen clara",
         "flowStep3": "Elige el siguiente paso",
         "capabilities": {
-          "subject-map": { "title": "Mapa por materia y tema", "text": "Mira el progreso en matemáticas, geometría, inglés y ciencias hasta los temas practicados." },
-          "skills": { "title": "Habilidades y subhabilidades", "text": "El sistema mira qué habilidades se necesitaron — no solo si una respuesta fue correcta." },
-          "spot-difficulty": { "title": "Detectar dificultad enfocada", "text": "Los errores que se repiten pueden señalar una habilidad específica que conviene reforzar." },
-          "over-time": { "title": "Seguimiento en el tiempo", "text": "La imagen se construye con práctica real — no con una sola calificación." },
-          "parent-report": { "title": "Informe claro para padres", "text": "En lenguaje sencillo: qué sabe tu hijo o hija, hacia dónde avanza y en qué enfocarse." },
-          "focused-work": { "title": "Seguimiento enfocado", "text": "Los padres pueden enviar una actividad personal dirigida a un tema o habilidad." }
+          "subject-map": {
+            "title": "Mapa por materia y tema",
+            "text": "Mira el progreso en matemáticas, geometría, inglés y ciencias hasta los temas practicados."
+          },
+          "skills": {
+            "title": "Habilidades y subhabilidades",
+            "text": "El sistema mira qué habilidades se necesitaron — no solo si una respuesta fue correcta."
+          },
+          "spot-difficulty": {
+            "title": "Detectar dificultad enfocada",
+            "text": "Los errores que se repiten pueden señalar una habilidad específica que conviene reforzar."
+          },
+          "over-time": {
+            "title": "Seguimiento en el tiempo",
+            "text": "La imagen se construye con práctica real — no con una sola calificación."
+          },
+          "parent-report": {
+            "title": "Informe claro para padres",
+            "text": "En lenguaje sencillo: qué sabe tu hijo o hija, hacia dónde avanza y en qué enfocarse."
+          },
+          "focused-work": {
+            "title": "Seguimiento enfocado",
+            "text": "Los padres pueden enviar una actividad personal dirigida a un tema o habilidad."
+          }
         }
       },
       "parentBenefits": {
         "items": {
-          "0": { "title": "Entender qué está pasando", "text": "Una visión más amplia que una sola calificación — construida con actividad real." },
-          "1": { "title": "Saber en qué enfocarse", "text": "Los informes ayudan a elegir el siguiente tema a reforzar." },
-          "2": { "title": "Enviar actividades personales", "text": "Asigna práctica enfocada y sigue los resultados después." },
-          "3": { "title": "Ver el progreso en el tiempo", "text": "La práctica, los juegos y las actividades se conectan en una imagen que se actualiza." }
+          "0": {
+            "title": "Entender qué está pasando",
+            "text": "Una visión más amplia que una sola calificación — construida con actividad real."
+          },
+          "1": {
+            "title": "Saber en qué enfocarse",
+            "text": "Los informes ayudan a elegir el siguiente tema a reforzar."
+          },
+          "2": {
+            "title": "Enviar actividades personales",
+            "text": "Asigna práctica enfocada y sigue los resultados después."
+          },
+          "3": {
+            "title": "Ver el progreso en el tiempo",
+            "text": "La práctica, los juegos y las actividades se conectan en una imagen que se actualiza."
+          }
         },
         "highlight": "En lugar de adivinar dónde cuesta — obtén una visión organizada de en qué trabajar.",
         "cta": "Ir al portal de padres"
@@ -295,10 +334,22 @@
         "videoTitle": "Conoce el mundo infantil de Leo",
         "videoDescription": "Mira un video corto sobre la práctica, los juegos, las sorpresas y el progreso en el mundo infantil.",
         "benefits": {
-          "0": { "title": "Práctica que se siente como juego", "text": "Preguntas y desafíos coloridos que hacen que practicar se sienta más ligero." },
-          "1": { "title": "A tu propio ritmo", "text": "Leo te guía para que puedas seguir intentando sin presión." },
-          "2": { "title": "Juegos y aprendizaje juntos", "text": "Combina la práctica de materias con pausas divertidas en un solo lugar." },
-          "3": { "title": "Monedas, tarjetas y sorpresas", "text": "El progreso trae recompensas que animan a volver." }
+          "0": {
+            "title": "Práctica que se siente como juego",
+            "text": "Preguntas y desafíos coloridos que hacen que practicar se sienta más ligero."
+          },
+          "1": {
+            "title": "A tu propio ritmo",
+            "text": "Leo te guía para que puedas seguir intentando sin presión."
+          },
+          "2": {
+            "title": "Juegos y aprendizaje juntos",
+            "text": "Combina la práctica de materias con pausas divertidas en un solo lugar."
+          },
+          "3": {
+            "title": "Monedas, tarjetas y sorpresas",
+            "text": "El progreso trae recompensas que animan a volver."
+          }
         },
         "cta": "Entrar al mundo infantil",
         "kidsVideoAria": "Video del mundo infantil"
@@ -343,20 +394,50 @@
       "kidsWorldCta": "Mundo infantil",
       "parentLoginCta": "Inicio de sesión de padres",
       "funGames": {
-        "0": { "title": "Juegos atractivos", "text": "Juegos que suman interés y diversión, y animan a los niños a seguir practicando." },
-        "1": { "title": "Experiencias sociales", "text": "Jugar con amigos y experiencias sociales donde estén disponibles — de forma positiva y amigable." },
-        "2": { "title": "Motivación para aprender", "text": "Una mezcla de práctica, monedas, tarjetas, juegos y desafíos que anima a los niños a continuar." }
+        "0": {
+          "title": "Juegos atractivos",
+          "text": "Juegos que suman interés y diversión, y animan a los niños a seguir practicando."
+        },
+        "1": {
+          "title": "Experiencias sociales",
+          "text": "Jugar con amigos y experiencias sociales donde estén disponibles — de forma positiva y amigable."
+        },
+        "2": {
+          "title": "Motivación para aprender",
+          "text": "Una mezcla de práctica, monedas, tarjetas, juegos y desafíos que anima a los niños a continuar."
+        }
       },
       "whyCards": {
-        "0": { "title": "Aprendizaje a tu propio ritmo", "text": "Cada niño avanza según su capacidad, con práctica acorde a su nivel y a los temas que necesita reforzar." },
-        "1": { "title": "Una imagen clara para los padres", "text": "Los informes te ayudan a entender dónde tu hijo o hija tiene éxito, dónde le cuesta y qué practicar a continuación." },
-        "2": { "title": "Una experiencia amigable para los niños", "text": "El sitio combina práctica, juegos, monedas, tarjetas y un diseño acogedor para fomentar la constancia y un aprendizaje positivo." }
+        "0": {
+          "title": "Aprendizaje a tu propio ritmo",
+          "text": "Cada niño avanza según su capacidad, con práctica acorde a su nivel y a los temas que necesita reforzar."
+        },
+        "1": {
+          "title": "Una imagen clara para los padres",
+          "text": "Los informes te ayudan a entender dónde tu hijo o hija tiene éxito, dónde le cuesta y qué practicar a continuación."
+        },
+        "2": {
+          "title": "Una experiencia amigable para los niños",
+          "text": "El sitio combina práctica, juegos, monedas, tarjetas y un diseño acogedor para fomentar la constancia y un aprendizaje positivo."
+        }
       },
       "siteFeatures": {
-        "0": { "phase": "Práctica por materia", "text": "Matemáticas, geometría, inglés y ciencias." },
-        "1": { "phase": "Grados y niveles de dificultad", "text": "Práctica acorde a la franja de edad, el tema y el nivel para un avance gradual y claro." },
-        "2": { "phase": "Informes para padres", "text": "Un resumen claro del desempeño, los errores, las fortalezas y las áreas para mejorar." },
-        "3": { "phase": "Juegos y juego social", "text": "Juegos individuales, juegos educativos, jugar con amigos, monedas y tarjetas." }
+        "0": {
+          "phase": "Práctica por materia",
+          "text": "Matemáticas, geometría, inglés y ciencias."
+        },
+        "1": {
+          "phase": "Grados y niveles de dificultad",
+          "text": "Práctica acorde a la franja de edad, el tema y el nivel para un avance gradual y claro."
+        },
+        "2": {
+          "phase": "Informes para padres",
+          "text": "Un resumen claro del desempeño, los errores, las fortalezas y las áreas para mejorar."
+        },
+        "3": {
+          "phase": "Juegos y juego social",
+          "text": "Juegos individuales, juegos educativos, jugar con amigos, monedas y tarjetas."
+        }
       }
     },
     "legalShell": {
@@ -416,7 +497,6 @@
     "titleParent": "Instalar app de padres",
     "titleTeacher": "Instalar app de docentes"
   },
-
   "parent": {
     "portalTitle": "Portal de padres",
     "checkingSession": "Verificando sesión de padres…",
@@ -647,7 +727,7 @@
     "parentInviteQrAria": "Código QR de la página para padres",
     "arcadeMissingRoom": "Falta el ID de la sala.",
     "arcadeBackToArcade": "Volver al arcade",
-    "arcadePageTitle": "{game} — Arcade",
+    "arcadePageTitle": "{game} — Juegos",
     "arcadeGames": {
       "bingo": "Bingo",
       "checkers": "Damas",
@@ -692,5 +772,12 @@
         "qa_ask_teacher": "Pregunta para el docente"
       }
     }
+  },
+  "teacherShell": {
+    "backToDashboard": "← Volver al panel",
+    "schoolLabel": "Escuela: {name}",
+    "signOut": "Cerrar sesión",
+    "myClasses": "Mis clases",
+    "classReportTitle": "Informe de clase"
   }
 }

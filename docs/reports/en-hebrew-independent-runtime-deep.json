@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-08-05T20:12:47.283Z",
+  "base": "http://127.0.0.1:3001",
+  "pagesChecked": 13,
+  "apisChecked": 4,
+  "hebrewPages": 0,
+  "hebrewApis": 0,
+  "pageRows": [
+    {
+      "hebrew": false,
+      "sample": "",
+      "title": "Help center · Leo Kids",
+      "route": "/help",
+      "status": 200,
+      "notes": [
+        "links:4"
+      ]
+    },
+    {
+      "route": "/help/parents",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Guide for parents · Help center",
+      "notes": [],
+      "errors": []
+    },
+    {
+      "route": "/help/students",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Guide for students · Help center",
+      "notes": [],
+      "errors": []
+    },
+    {
+      "route": "/help/parent-report",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Parent report explained · Help center",
+      "notes": [],
+      "errors": []
+    },
+    {
+      "route": "/help/subjects",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Subject guides · Help center",
+      "notes": [],
+      "errors": []
+    },
+    {
+      "route": "/guides",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Guides for parents · Leo Kids",
+      "notes": [
+        "clicked-first-guide"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/practice/worksheets",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Printable worksheets for kids · Leo Kids",
+      "notes": [
+        "no-worksheet-link-visible"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/demo/enter",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Demo mode — LEO KIDS",
+      "notes": [
+        "clicked-btn:Enter"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/math-master",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Leo Kids · Learning for elementary students",
+      "notes": [
+        "btn-0",
+        "btn-1",
+        "btn-2",
+        "btn-3",
+        "btn-4"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/learning/english-master",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Leo Kids · Learning for elementary students",
+      "notes": [
+        "btn-0",
+        "btn-1",
+        "btn-2",
+        "btn-3",
+        "btn-4"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/student/login",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Leo Kids · Learning for elementary students",
+      "notes": [
+        "btn-0",
+        "btn-1",
+        "btn-2",
+        "btn-4"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/parent/login",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Parent login · Leo Kids",
+      "notes": [
+        "btn-0",
+        "btn-1",
+        "btn-2",
+        "btn-4"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/teacher/login",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "title": "Teacher login · Leo Kids",
+      "notes": [
+        "btn-0",
+        "btn-1",
+        "btn-2",
+        "btn-4"
+      ],
+      "errors": []
+    }
+  ],
+  "apis": [
+    {
+      "route": "/api/public/worksheets/catalog",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 50452
+    },
+    {
+      "route": "/api/demo/cards/catalog",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 170329
+    },
+    {
+      "route": "/api/demo/cards/series",
+      "status": 200,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 116929
+    },
+    {
+      "route": "/api/arcade/games",
+      "status": 401,
+      "hebrew": false,
+      "sample": "",
+      "bytes": 67
+    }
+  ]
+}

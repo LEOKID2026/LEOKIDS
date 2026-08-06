@@ -1,7 +1,7 @@
 {
   "portal": {
     "platformLabel": "Schoolmanagement",
-    "navDashboard": "Dashboard",
+    "navDashboard": "Overzicht",
     "navTeachers": "Leerkrachten",
     "navClasses": "Klassen",
     "navStudents": "Kinderen",
@@ -9,7 +9,7 @@
     "loading": "Laden……",
     "loadingData": "Laden… data…",
     "loadError": "Fout bij het laden van gegevens",
-    "classReportTitle": "Klas report",
+    "classReportTitle": "Klasrapport",
     "studentReportTitle": "Kindrapport",
     "retry": "Probeer opnieuw",
     "refresh": "Gegevens vernieuwen",
@@ -207,7 +207,9 @@
     "assignTargetGrade": "Target groep",
     "activityColTitle": "Activiteit",
     "activityColMeta": "Details",
-    "activityColStatus": "Status"
+    "activityColStatus": "Status",
+    "signOut": "Uitloggen",
+    "signOutBusy": "Bezig met uitloggen…"
   },
   "teacher": {
     "navSchool": "Schoolmanagement",

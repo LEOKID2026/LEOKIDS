@@ -1,0 +1,46 @@
+{
+  "emailUsed": "teacher@leo.com",
+  "results": [
+    {
+      "path": "/api/teacher/me",
+      "status": 200,
+      "hebrew": true,
+      "hits": [
+        "מורה LEO\",\"preferredLanguage\":\"he\",\"isActive\":true,\"createdAt\":\"2026-06-27T18:08:57.180492+00:00\"},\"l"
+      ],
+      "classCount": null,
+      "firstClassId": null
+    },
+    {
+      "path": "/api/teacher/classes",
+      "status": 200,
+      "hebrew": true,
+      "hits": [
+        "כיתה ג׳ - LEO\",\"gradeLevel\":\"g3\",\"subjectFocus\":null,\"studentCount\":20,\"isArchived\":false,\"createdAt\""
+      ],
+      "classCount": 1,
+      "firstClassId": "eb24c41d-34e6-4bc3-a395-1a7e26db8a36"
+    },
+    {
+      "path": "/api/teacher/dashboard",
+      "status": 200,
+      "hebrew": true,
+      "hits": [
+        "מורה LEO\",\"preferredLanguage\":\"he\",\"isActive\":true,\"createdAt\":\"2026-06-27T18:08:57.180492+00:00\"},\"l",
+        "כיתה ג׳ - LEO\",\"classId\":\"eb24c41d-34e6-4bc3-a395-1a7e26db8a36\",\"primaryClassId\":\"eb24c41d-34e6-4bc3-",
+        "כיתה ג׳ - LEO\",\"gradeLevel\":\"g3\",\"gradeLevelLabel\":\"Grade 3\",\"studentCount\":20,\"rosterStudentCount\":2",
+        "כיתה ג׳ - LEO\",\"type\":\"physical_class\",\"labelKey\":\"teacher.roster.filter.class\",\"classId\":\"eb24c41d-3",
+        "כיתה ג׳ - LEO\",\"subjectClassIds\":[\"eb24c41d-34e6-4bc3-a395-1a7e26db8a36\"],\"studentCount\":20},{\"key\":\"",
+        "גיא רוזן\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-34e",
+        "אביגיל דיין\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-",
+        "עידו אלון\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-34",
+        "נעמה צור\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-34e",
+        "אורי קפלן\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-34",
+        "מיקה סבן\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-34e",
+        "ליאם אזולאי\",\"gradeLevel\":\"grade_3\",\"gradeLevelLabel\":null,\"isInAnyClass\":true,\"classIds\":[\"eb24c41d-"
+      ],
+      "classCount": 1,
+      "firstClassId": "eb24c41d-34e6-4bc3-a395-1a7e26db8a36"
+    }
+  ]
+}

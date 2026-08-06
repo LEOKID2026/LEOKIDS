@@ -47,7 +47,7 @@
     "enterAnswer": "Antwort eingeben",
     "check": "Prüfen",
     "keyboard": "Tastatur",
-    "start": "▶️ Start",
+    "start": "▶️ Starten",
     "stop": "⏹️ Stopp",
     "play": "Spielen",
     "explain": "Erklären",
@@ -87,7 +87,23 @@
     "overallAccuracy": "Gesamtgenauigkeit",
     "correctOfTotal": "{correct} richtig von {total} Aufgaben",
     "topicProgress": "Fortschritt nach Thema",
-    "badges": "Abzeichen",
+    "badges": {
+      "streak_10": "🔥 Heiße Serie",
+      "streak_25": "⚡ Blitzschnell",
+      "streak_50": "🌟 Champion",
+      "streak_100_math": "👑 Mathe-König",
+      "streak_100_science": "👑 Naturwissenschafts-König",
+      "score_1000": "💎 1.000 Punkte",
+      "score_5000": "🎯 5.000 Punkte",
+      "correct_100": "⭐ 100 richtige Antworten",
+      "correct_500": "🌟 500 richtige Antworten",
+      "op_king": "🧮 König der {op}",
+      "op_genius": "🏆 Genie der {op}",
+      "topic_expert": "🔬 Experte für {topic}",
+      "topic_genius": "🏆 Genie für {topic}",
+      "topic_expert_legacy": "🔬 Experte für {topic}",
+      "topic_genius_legacy": "🏆 Genie für {topic}"
+    },
     "noBadgesYet": "Noch keine Abzeichen. Weiter üben!",
     "newBadge": "Neues Abzeichen!",
     "levelUp": "Level aufgestiegen!",
@@ -207,7 +223,7 @@
       "keepGoing": "🔥 Weiter so!",
       "nice": "⭐ Schön!",
       "great": "🌟 Super!",
-      "champion": "👑 Champion!"
+      "champion": "👑 Meister!"
     },
     "streakFeedback": {
       "correct": "Richtig! ",
@@ -220,7 +236,7 @@
     "next": "Weiter",
     "stepOf": "Schritt {current} von {total}",
     "mistakesFixed": "🎉 Alle Fehler korrigiert — gute Arbeit!",
-    "levelLabel": "Level {level}",
+    "levelLabel": "Stufe {level}",
     "progressByOperation": "Fortschritt nach Rechenart",
     "strengthen": "Zu stärken:",
     "strongRelative": "Relativ stark:",
@@ -295,7 +311,7 @@
     "correctAnswerColon": "Richtige Antwort: {answer}.",
     "topicFallback": "Thema",
     "shapeFallback": "Form",
-    "dailyStreakChampion": "👑 Champion!",
+    "dailyStreakChampion": "👑 Meister!",
     "dailyStreakExcellent": "🌟 Ausgezeichnet!",
     "dailyStreakGood": "🔥 Tolle Serie!",
     "dailyStreakNice": "⭐ Schön!",
@@ -309,23 +325,6 @@
       "formulas": "Formeln",
       "terms": "Begriffe",
       "shapes": "Formen"
-    },
-    "badges": {
-      "streak_10": "🔥 Heiße Serie",
-      "streak_25": "⚡ Blitzschnell",
-      "streak_50": "🌟 Champion",
-      "streak_100_math": "👑 Mathe-König",
-      "streak_100_science": "👑 Naturwissenschafts-König",
-      "score_1000": "💎 1.000 Punkte",
-      "score_5000": "🎯 5.000 Punkte",
-      "correct_100": "⭐ 100 richtige Antworten",
-      "correct_500": "🌟 500 richtige Antworten",
-      "op_king": "🧮 König der {op}",
-      "op_genius": "🏆 Genie der {op}",
-      "topic_expert": "🔬 Experte für {topic}",
-      "topic_genius": "🏆 Genie für {topic}",
-      "topic_expert_legacy": "🔬 Experte für {topic}",
-      "topic_genius_legacy": "🏆 Genie für {topic}"
     }
   },
   "math": {
@@ -445,16 +444,46 @@
         }
       },
       "terms": {
-        "sum": { "title": "➕ Summe", "desc": "Das Ergebnis einer Addition" },
-        "difference": { "title": "➖ Differenz", "desc": "Das Ergebnis einer Subtraktion" },
-        "product": { "title": "✖️ Produkt", "desc": "Das Ergebnis einer Multiplikation" },
-        "quotient": { "title": "➗ Quotient", "desc": "Das Ergebnis einer Division" },
-        "even": { "title": "🔢 Gerade Zahl", "desc": "Eine Zahl, die ohne Rest durch 2 teilbar ist (2, 4, 6, 8…)" },
-        "odd": { "title": "🔢 Ungerade Zahl", "desc": "Eine Zahl, die nicht ohne Rest durch 2 teilbar ist (1, 3, 5, 7…)" },
-        "prime": { "title": "🔢 Primzahl", "desc": "Eine Zahl, die nur durch 1 und sich selbst teilbar ist (2, 3, 5, 7, 11…)" },
-        "integer": { "title": "🔢 Ganze Zahl", "desc": "Eine Zahl ohne Bruchteile (0, 1, 2, 3, -1, -2…)" },
-        "fraction": { "title": "🔢 Bruch", "desc": "Eine Zahl, die einen Teil eines Ganzen darstellt (1/2, 3/4, 2/3…)" },
-        "percent": { "title": "% Prozent", "desc": "Ein Teil von 100 (50% = die Hälfte, 25% = ein Viertel)" }
+        "sum": {
+          "title": "➕ Summe",
+          "desc": "Das Ergebnis einer Addition"
+        },
+        "difference": {
+          "title": "➖ Differenz",
+          "desc": "Das Ergebnis einer Subtraktion"
+        },
+        "product": {
+          "title": "✖️ Produkt",
+          "desc": "Das Ergebnis einer Multiplikation"
+        },
+        "quotient": {
+          "title": "➗ Quotient",
+          "desc": "Das Ergebnis einer Division"
+        },
+        "even": {
+          "title": "🔢 Gerade Zahl",
+          "desc": "Eine Zahl, die ohne Rest durch 2 teilbar ist (2, 4, 6, 8…)"
+        },
+        "odd": {
+          "title": "🔢 Ungerade Zahl",
+          "desc": "Eine Zahl, die nicht ohne Rest durch 2 teilbar ist (1, 3, 5, 7…)"
+        },
+        "prime": {
+          "title": "🔢 Primzahl",
+          "desc": "Eine Zahl, die nur durch 1 und sich selbst teilbar ist (2, 3, 5, 7, 11…)"
+        },
+        "integer": {
+          "title": "🔢 Ganze Zahl",
+          "desc": "Eine Zahl ohne Bruchteile (0, 1, 2, 3, -1, -2…)"
+        },
+        "fraction": {
+          "title": "🔢 Bruch",
+          "desc": "Eine Zahl, die einen Teil eines Ganzen darstellt (1/2, 3/4, 2/3…)"
+        },
+        "percent": {
+          "title": "% Prozent",
+          "desc": "Ein Teil von 100 (50% = die Hälfte, 25% = ein Viertel)"
+        }
       }
     }
   },
@@ -472,36 +501,123 @@
     "referenceBoardBlurb": "Wähle eine Kategorie, um Formen, Formeln und wichtige Geometriebegriffe zu wiederholen.",
     "reference": {
       "shapes": {
-        "square": { "title": "🔷 Quadrat", "desc": "4 gleiche Seiten, 4 rechte Winkel" },
-        "rectangle": { "title": "⬜ Rechteck", "desc": "2 Paare gleicher Seiten, 4 rechte Winkel" },
-        "triangle": { "title": "🔺 Dreieck", "desc": "3 Seiten, 3 Winkel" },
-        "circle": { "title": "⭕ Kreis", "desc": "Runde Form; alle Punkte haben den gleichen Abstand zum Mittelpunkt" },
-        "box": { "title": "📦 Quader", "desc": "Körper mit 6 rechteckigen Flächen" },
-        "cube": { "title": "🔲 Würfel", "desc": "Ein Quader, bei dem alle Kanten gleich lang sind" }
+        "square": {
+          "title": "🔷 Quadrat",
+          "desc": "4 gleiche Seiten, 4 rechte Winkel"
+        },
+        "rectangle": {
+          "title": "⬜ Rechteck",
+          "desc": "2 Paare gleicher Seiten, 4 rechte Winkel"
+        },
+        "triangle": {
+          "title": "🔺 Dreieck",
+          "desc": "3 Seiten, 3 Winkel"
+        },
+        "circle": {
+          "title": "⭕ Kreis",
+          "desc": "Runde Form; alle Punkte haben den gleichen Abstand zum Mittelpunkt"
+        },
+        "box": {
+          "title": "📦 Quader",
+          "desc": "Körper mit 6 rechteckigen Flächen"
+        },
+        "cube": {
+          "title": "🔲 Würfel",
+          "desc": "Ein Quader, bei dem alle Kanten gleich lang sind"
+        }
       },
       "formulas": {
-        "square_area": { "title": "📐 Flächeninhalt des Quadrats", "desc": "Seite × Seite", "formula": "A = a²" },
-        "rectangle_area": { "title": "📐 Flächeninhalt des Rechtecks", "desc": "Länge × Breite", "formula": "A = a × b" },
-        "triangle_area": { "title": "📐 Flächeninhalt des Dreiecks", "desc": "(Grundseite × Höhe) ÷ 2", "formula": "A = (b × h) ÷ 2" },
-        "square_perimeter": { "title": "📏 Umfang des Quadrats", "desc": "4 × Seite", "formula": "U = 4a" },
-        "rectangle_perimeter": { "title": "📏 Umfang des Rechtecks", "desc": "2 × (Länge + Breite)", "formula": "U = 2(a + b)" },
-        "box_volume": { "title": "📦 Volumen des Quaders", "desc": "Länge × Breite × Höhe", "formula": "V = a × b × c" },
-        "cube_volume": { "title": "📦 Volumen des Würfels", "desc": "Seite × Seite × Seite", "formula": "V = a³" },
-        "circle_perimeter": { "title": "⭕ Umfang", "desc": "2 × π × Radius", "formula": "U = 2πr" },
-        "circle_area": { "title": "⭕ Flächeninhalt des Kreises", "desc": "π × Radius²", "formula": "A = πr²" }
+        "square_area": {
+          "title": "📐 Flächeninhalt des Quadrats",
+          "desc": "Seite × Seite",
+          "formula": "A = a²"
+        },
+        "rectangle_area": {
+          "title": "📐 Flächeninhalt des Rechtecks",
+          "desc": "Länge × Breite",
+          "formula": "A = a × b"
+        },
+        "triangle_area": {
+          "title": "📐 Flächeninhalt des Dreiecks",
+          "desc": "(Grundseite × Höhe) ÷ 2",
+          "formula": "A = (b × h) ÷ 2"
+        },
+        "square_perimeter": {
+          "title": "📏 Umfang des Quadrats",
+          "desc": "4 × Seite",
+          "formula": "U = 4a"
+        },
+        "rectangle_perimeter": {
+          "title": "📏 Umfang des Rechtecks",
+          "desc": "2 × (Länge + Breite)",
+          "formula": "U = 2(a + b)"
+        },
+        "box_volume": {
+          "title": "📦 Volumen des Quaders",
+          "desc": "Länge × Breite × Höhe",
+          "formula": "V = a × b × c"
+        },
+        "cube_volume": {
+          "title": "📦 Volumen des Würfels",
+          "desc": "Seite × Seite × Seite",
+          "formula": "V = a³"
+        },
+        "circle_perimeter": {
+          "title": "⭕ Umfang",
+          "desc": "2 × π × Radius",
+          "formula": "U = 2πr"
+        },
+        "circle_area": {
+          "title": "⭕ Flächeninhalt des Kreises",
+          "desc": "π × Radius²",
+          "formula": "A = πr²"
+        }
       },
       "terms": {
-        "area": { "title": "📐 Flächeninhalt", "desc": "Der Raum, den eine Form auf einer flachen Fläche einnimmt" },
-        "perimeter": { "title": "📏 Umfang", "desc": "Die Länge der Linie um eine Form" },
-        "volume": { "title": "📦 Volumen", "desc": "Der Raum, den ein Körper einnimmt" },
-        "angle": { "title": "📐 Winkel", "desc": "Der Raum zwischen zwei Strahlen vom selben Punkt" },
-        "right_angle": { "title": "📐 Rechter Winkel", "desc": "90 Grad" },
-        "acute_angle": { "title": "📐 Spitzer Winkel", "desc": "Weniger als 90 Grad" },
-        "obtuse_angle": { "title": "📐 Stumpfer Winkel", "desc": "Mehr als 90 Grad" },
-        "parallel": { "title": "📐 Parallele Linien", "desc": "Linien, die sich nie treffen" },
-        "perpendicular": { "title": "📐 Senkrechte Linien", "desc": "Linien, die sich im rechten Winkel treffen" },
-        "diagonal": { "title": "📐 Diagonale", "desc": "Eine Linie, die zwei nicht benachbarte Ecken verbindet" },
-        "symmetry": { "title": "📐 Symmetrie", "desc": "Wenn eine Form auf beiden Seiten gleich aussieht" }
+        "area": {
+          "title": "📐 Flächeninhalt",
+          "desc": "Der Raum, den eine Form auf einer flachen Fläche einnimmt"
+        },
+        "perimeter": {
+          "title": "📏 Umfang",
+          "desc": "Die Länge der Linie um eine Form"
+        },
+        "volume": {
+          "title": "📦 Volumen",
+          "desc": "Der Raum, den ein Körper einnimmt"
+        },
+        "angle": {
+          "title": "📐 Winkel",
+          "desc": "Der Raum zwischen zwei Strahlen vom selben Punkt"
+        },
+        "right_angle": {
+          "title": "📐 Rechter Winkel",
+          "desc": "90 Grad"
+        },
+        "acute_angle": {
+          "title": "📐 Spitzer Winkel",
+          "desc": "Weniger als 90 Grad"
+        },
+        "obtuse_angle": {
+          "title": "📐 Stumpfer Winkel",
+          "desc": "Mehr als 90 Grad"
+        },
+        "parallel": {
+          "title": "📐 Parallele Linien",
+          "desc": "Linien, die sich nie treffen"
+        },
+        "perpendicular": {
+          "title": "📐 Senkrechte Linien",
+          "desc": "Linien, die sich im rechten Winkel treffen"
+        },
+        "diagonal": {
+          "title": "📐 Diagonale",
+          "desc": "Eine Linie, die zwei nicht benachbarte Ecken verbindet"
+        },
+        "symmetry": {
+          "title": "📐 Symmetrie",
+          "desc": "Wenn eine Form auf beiden Seiten gleich aussieht"
+        }
       }
     },
     "topics": {
@@ -544,12 +660,24 @@
       "translation_boost": "📖 Übersetzung und Lesen"
     },
     "reference": {
-      "colors": { "label": "Farben" },
-      "animals": { "label": "Tiere" },
-      "actions": { "label": "Häufige Verben" },
-      "emotions": { "label": "Gefühle" },
-      "school": { "label": "Schulleben" },
-      "technology": { "label": "Technik" }
+      "colors": {
+        "label": "Farben"
+      },
+      "animals": {
+        "label": "Tiere"
+      },
+      "actions": {
+        "label": "Häufige Verben"
+      },
+      "emotions": {
+        "label": "Gefühle"
+      },
+      "school": {
+        "label": "Schulleben"
+      },
+      "technology": {
+        "label": "Technik"
+      }
     },
     "topics": {
       "phonics": "Phonetik",
@@ -628,28 +756,64 @@
       "life_science": {
         "label": "Biologie",
         "terms": {
-          "respiratory": { "term": "Atmungssystem", "desc": "Bringt Sauerstoff in den Körper und entfernt Kohlendioxid." },
-          "photosynthesis": { "term": "Fotosynthese", "desc": "Vorgang, bei dem Pflanzen mithilfe von Licht Nahrung herstellen." },
-          "foodWeb": { "term": "Nahrungsnetz", "desc": "Netzwerk aus Nahrungsketten, das zeigt, wie sich Energie in der Natur bewegt." },
-          "adaptations": { "term": "Anpassungen", "desc": "Körperliche oder Verhaltensänderungen, die das Überleben unterstützen." }
+          "respiratory": {
+            "term": "Atmungssystem",
+            "desc": "Bringt Sauerstoff in den Körper und entfernt Kohlendioxid."
+          },
+          "photosynthesis": {
+            "term": "Fotosynthese",
+            "desc": "Vorgang, bei dem Pflanzen mithilfe von Licht Nahrung herstellen."
+          },
+          "foodWeb": {
+            "term": "Nahrungsnetz",
+            "desc": "Netzwerk aus Nahrungsketten, das zeigt, wie sich Energie in der Natur bewegt."
+          },
+          "adaptations": {
+            "term": "Anpassungen",
+            "desc": "Körperliche oder Verhaltensänderungen, die das Überleben unterstützen."
+          }
         }
       },
       "earth_space": {
         "label": "Erde und Weltraum",
         "terms": {
-          "atmosphere": { "term": "Atmosphäre", "desc": "Gasschicht um die Erde." },
-          "waterCycle": { "term": "Wasserkreislauf", "desc": "Weg des Wassers zwischen Meer, Wolken und Land." },
-          "crust": { "term": "Erdkruste", "desc": "Äußere Gesteinsschicht mit tektonischen Platten." },
-          "planet": { "term": "Planet", "desc": "Körper, der einen Stern umkreist, z. B. die Erde oder der Mars." }
+          "atmosphere": {
+            "term": "Atmosphäre",
+            "desc": "Gasschicht um die Erde."
+          },
+          "waterCycle": {
+            "term": "Wasserkreislauf",
+            "desc": "Weg des Wassers zwischen Meer, Wolken und Land."
+          },
+          "crust": {
+            "term": "Erdkruste",
+            "desc": "Äußere Gesteinsschicht mit tektonischen Platten."
+          },
+          "planet": {
+            "term": "Planet",
+            "desc": "Körper, der einen Stern umkreist, z. B. die Erde oder der Mars."
+          }
         }
       },
       "materials_energy": {
         "label": "Materialien und Energie",
         "terms": {
-          "states": { "term": "Aggregatzustände", "desc": "Fest, flüssig und gasförmig — verschiedene Formen desselben Stoffes." },
-          "mixtureCompound": { "term": "Mischung vs. Verbindung", "desc": "Mischung — vermischt ohne chemische Bindung; Verbindung — feste Bindung." },
-          "renewable": { "term": "Erneuerbare Energie", "desc": "Quellen wie Sonne und Wind, die nicht zur Neige gehen." },
-          "physicalChange": { "term": "Physikalische Veränderung", "desc": "Veränderung der Form oder des Zustands, ohne einen neuen Stoff zu bilden." }
+          "states": {
+            "term": "Aggregatzustände",
+            "desc": "Fest, flüssig und gasförmig — verschiedene Formen desselben Stoffes."
+          },
+          "mixtureCompound": {
+            "term": "Mischung vs. Verbindung",
+            "desc": "Mischung — vermischt ohne chemische Bindung; Verbindung — feste Bindung."
+          },
+          "renewable": {
+            "term": "Erneuerbare Energie",
+            "desc": "Quellen wie Sonne und Wind, die nicht zur Neige gehen."
+          },
+          "physicalChange": {
+            "term": "Physikalische Veränderung",
+            "desc": "Veränderung der Form oder des Zustands, ohne einen neuen Stoff zu bilden."
+          }
         }
       }
     },

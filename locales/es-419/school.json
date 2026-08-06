@@ -207,7 +207,9 @@
     "assignTargetGrade": "Grado de destino",
     "activityColTitle": "Actividad",
     "activityColMeta": "Detalles",
-    "activityColStatus": "Estado"
+    "activityColStatus": "Estado",
+    "signOut": "Cerrar sesión",
+    "signOutBusy": "Cerrando sesión…"
   },
   "teacher": {
     "navSchool": "Gestión escolar",

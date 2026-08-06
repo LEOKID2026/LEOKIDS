@@ -55,7 +55,7 @@ export default function ParentLoginPage() {
   const parentLoginSeo = usePublicPageSeo("parent-login");
   const router = useRouter();
   const { theme, isBright } = useStudentTheme();
-  const { direction, locale } = useI18n();
+  const { direction, locale, localizeHref } = useI18n();
   const t = useT();
   const T = getParentPortalTheme(isBright);
   const layoutProps = { studentTheme: theme, studentShell: "home" };
@@ -83,9 +83,9 @@ export default function ParentLoginPage() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (hasParentDemoSession()) {
-      router.replace("/parent/dashboard");
+      router.replace(localizeHref("/parent/dashboard"));
     }
-  }, [router]);
+  }, [router, localizeHref]);
 
   useEffect(() => {
     if (!clientReady || !supabaseRef.current) return;
@@ -106,12 +106,12 @@ export default function ParentLoginPage() {
         setSessionCheckPending(false);
         return;
       }
-      router.replace("/parent/dashboard");
+      router.replace(localizeHref("/parent/dashboard"));
     });
     return () => {
       mounted = false;
     };
-  }, [clientReady, router]);
+  }, [clientReady, router, localizeHref]);
 
   useEffect(() => {
     if (!router.isReady || oauthErrorShownRef.current) return;
@@ -123,8 +123,8 @@ export default function ParentLoginPage() {
         : "";
     setMessage(messageKey ? t(messageKey) : t("auth.googleSignInFailed"));
     setMessageKind("account");
-    router.replace("/parent/login");
-  }, [router, t]);
+    router.replace(localizeHref("/parent/login"));
+  }, [router, t, localizeHref]);
 
   const runAccountAction = async (action) => {
     if (busy || googleBusy) return;
@@ -181,7 +181,7 @@ export default function ParentLoginPage() {
             setMessage(ready.messageKey ? t(ready.messageKey) : t("auth.signupSetupFailed"));
             return;
           }
-          router.push("/parent/dashboard");
+          router.push(localizeHref("/parent/dashboard"));
         } else {
           setMessage(t("auth.signupCompleteVerify"));
         }
@@ -203,7 +203,7 @@ export default function ParentLoginPage() {
             actorType: "parent",
             idempotencyKey: `parent_login:${Date.now()}`,
           });
-          router.push("/parent/dashboard");
+          router.push(localizeHref("/parent/dashboard"));
         }
       }
     } finally {
@@ -258,7 +258,7 @@ export default function ParentLoginPage() {
         return;
       }
 
-      router.push(finished.redirectTo || "/parent/dashboard");
+      router.push(finished.redirectTo || localizeHref("/parent/dashboard"));
     } catch (error) {
       setMessage(t(mapParentAuthError(error, "login")));
     } finally {

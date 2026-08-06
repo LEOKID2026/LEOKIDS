@@ -1,5 +1,10 @@
 {
-  "reportSubjects": ["math", "geometry", "english", "science"],
+  "reportSubjects": [
+    "math",
+    "geometry",
+    "english",
+    "science"
+  ],
   "subjects": {
     "math": "Matemáticas",
     "geometry": "Geometría",
@@ -104,7 +109,7 @@
   },
   "activities": {
     "personalSectionTitle": "Actividades personales",
-    "individualBadge": "Personal"
+    "individualBadge": "Individual"
   },
   "roster": {
     "filter": {

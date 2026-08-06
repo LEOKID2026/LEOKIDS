@@ -207,7 +207,9 @@
     "assignTargetGrade": "Целевой класс",
     "activityColTitle": "Занятие",
     "activityColMeta": "Подробности",
-    "activityColStatus": "Статус"
+    "activityColStatus": "Статус",
+    "signOut": "Выйти",
+    "signOutBusy": "Выход…"
   },
   "teacher": {
     "navSchool": "Управление школой",

@@ -1,0 +1,865 @@
+{
+  "scannedFiles": 12122,
+  "hebrewFiles": 81,
+  "summary": {
+    "admin": {
+      "count": 71,
+      "files": [
+        "components/admin/AdminModal.jsx",
+        "components/admin/AdminSchoolLifecyclePanel.jsx",
+        "components/admin/AdminSchoolRegistrationPanel.jsx",
+        "components/admin/AdminSchoolStaffLifecycleCompact.jsx",
+        "components/admin/AdminShell.jsx",
+        "components/admin/AdminUserLifecyclePanel.jsx",
+        "components/admin/AllAccountsAdminTable.jsx",
+        "components/admin/games/AdminGamesCatalogTab.jsx",
+        "components/admin/games/AdminLeoMinersConfigTab.jsx",
+        "components/admin/guest/GuestArcadeGameToggles.jsx",
+        "components/admin/guest/GuestFeaturePermissionsPanel.jsx",
+        "components/admin/ParentAdminSettingsForm.jsx",
+        "components/admin/rewards/AdminArcadeTab.jsx",
+        "components/admin/rewards/AdminBoxTab.jsx",
+        "components/admin/rewards/AdminCardGrantByParent.jsx",
+        "components/admin/rewards/AdminCardRulesPanel.jsx",
+        "components/admin/rewards/AdminCardsTab.jsx",
+        "components/admin/rewards/AdminCatalogArchiveToggle.jsx",
+        "components/admin/rewards/AdminDiamondsTab.jsx",
+        "components/admin/rewards/AdminDuplicatesTab.jsx",
+        "components/admin/rewards/AdminEconomyTab.jsx",
+        "components/admin/rewards/AdminEventsTab.jsx",
+        "components/admin/rewards/AdminGeneralTab.jsx",
+        "components/admin/rewards/AdminManualCoinsTab.jsx",
+        "components/admin/rewards/AdminRewardsShell.jsx",
+        "components/admin/rewards/AdminSeriesTab.jsx",
+        "components/admin/rewards/AdminShopTab.jsx",
+        "components/admin/rewards/AdminTestsTab.jsx",
+        "components/admin/SchoolAdminTable.jsx",
+        "components/admin/SchoolAssignForm.jsx",
+        "components/admin/TeacherAdminDetailView.jsx",
+        "components/admin/TeacherDiscussionSubjectsSection.jsx",
+        "components/admin/TeacherQuotaForm.jsx",
+        "components/admin/video-builder/AdminVideoBuilderEditor.jsx",
+        "components/admin/video-builder/AdminVideoBuilderList.jsx",
+        "components/admin/video-builder/AdminVideoInspector.jsx",
+        "components/admin/video-builder/AdminVideoMediaLibrary.jsx",
+        "components/admin/video-builder/AdminVideoPreviewPlayer.jsx",
+        "components/admin/video-builder/AdminVideoProjectSettings.jsx",
+        "components/admin/video-builder/AdminVideoSceneList.jsx",
+        "components/admin/video-builder/AdminVideoSceneRail.jsx",
+        "components/admin/video-builder/AdminVideoSceneStylePanel.jsx",
+        "components/admin/video-builder/AdminVideoTimeline.jsx",
+        "components/admin/video-builder/AdminVideoVoiceoverPanel.jsx",
+        "lib/admin-portal/admin-analytics-labels.he.js",
+        "lib/admin-portal/admin-rewards-catalog.client.js",
+        "lib/admin-portal/admin-rewards-ui.he.js",
+        "lib/admin-portal/admin-ui.he.js",
+        "lib/admin-portal/admin-video-builder-catalog.js",
+        "lib/admin-portal/admin-video-builder-ui.he.js",
+        "lib/admin-portal/admin-web-traffic-display.js",
+        "lib/admin-server/admin-all-accounts.server.js",
+        "lib/admin-server/admin-analytics.server.js",
+        "lib/admin-server/admin-manual-coin-credit.server.js",
+        "lib/admin-server/admin-student-support-activity.server.js",
+        "lib/admin-server/admin-video-builder.server.js",
+        "lib/admin-server/admin-web-traffic.server.js",
+        "pages/admin/analytics.js",
+        "pages/admin/games/index.js",
+        "pages/admin/guest/index.js",
+        "pages/admin/schools/index.js",
+        "pages/admin/schools/[schoolId].js",
+        "pages/admin/teachers/index.js",
+        "pages/api/admin/rewards/cards/[id]/grant.js",
+        "pages/api/admin/rewards/cards/[id].js",
+        "pages/api/admin/video-builder/index.js",
+        "pages/api/admin/video-builder/media/[id].js",
+        "pages/api/admin/video-builder/[id].js",
+        "scripts/admin-portal/verify-admin-login-flow.mjs",
+        "tests/admin/admin-manual-coin-credit.test.mjs",
+        "tests/admin/admin-video-builder.test.mjs"
+      ]
+    },
+    "publicLikely": {
+      "count": 0,
+      "files": []
+    },
+    "tests": {
+      "count": 4,
+      "files": [
+        "tests/auth/admin-account-fixes-matrix.mjs",
+        "tests/auth/admin-all-accounts-matrix.mjs",
+        "tests/rewards/admin-student-economy-parity.test.mjs",
+        "__tests__/school/admin-profile.test.js"
+      ]
+    },
+    "docs": {
+      "count": 0,
+      "files": []
+    },
+    "scripts": {
+      "count": 5,
+      "files": [
+        "scripts/admin-analytics-hebrew-copy-guard.mjs",
+        "scripts/admin-video-builder-owner-flow.mjs",
+        "scripts/tests/admin-analytics-selftest.mjs",
+        "scripts/tests/admin-analytics-web-traffic-selftest.mjs",
+        "scripts/tests/verify-school-student-admin-profile-post-sql.mjs"
+      ]
+    },
+    "stale": {
+      "count": 1,
+      "files": [
+        "lib/teacher-portal/teacher-ui.he.js"
+      ]
+    },
+    "other": {
+      "count": 0,
+      "files": []
+    }
+  },
+  "details": {
+    "admin": [
+      {
+        "file": "components/admin/AdminModal.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useEffect, useId } from \"react\";\r\n\r\nconst SIZE_CLASS = {\r\n  sm: \"max-w-md\",\r\n  md: \"max-w-lg\",\r\n  lg: \"max-w-2xl\",\r\n  xl: \"max-w-4xl\",\r\n};\r\n\r\n/**\r\n * @"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/AdminSchoolLifecyclePanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../lib/admin-portal/use-admin-session\";\r\nimport {\r\n  ADMIN_LIFECYCLE_NETWORK_ERROR,\r\n  ADM"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/AdminSchoolRegistrationPanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../lib/admin-portal/use-admin-session\";\r\nimport AdminPasswordSetupPanel from \"./AdminPassw"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/AdminSchoolStaffLifecycleCompact.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../lib/admin-portal/use-admin-session\";\r\nimport { schoolMembership"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/AdminShell.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import Link from \"next/link\";\r\nimport { useRouter } from \"next/router\";\r\nimport { useAdminLogout } from \"../../lib/admin-portal/use-admin-session.js\";\r\nimport {"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/AdminUserLifecyclePanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../lib/admin-portal/use-admin-session\";\r\nimport {\r\n  ADMIN_LIFECYC"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/AllAccountsAdminTable.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import Link from \"next/link\";\r\nimport { useMemo, useState } from \"react\";\r\nimport AdminUserDeleteSection from \"./AdminUserDeleteSection.jsx\";\r\nimport {\r\n  ADMIN"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/games/AdminGamesCatalogTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport Link from \"next/link\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-se"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/games/AdminLeoMinersConfigTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import Link from \"next/link\";\r\nimport { useCallback, useEffect, useMemo, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/guest/GuestArcadeGameToggles.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\n\r\n/** @param {{ accessToken: string, onMessage?: (msg: string) => void }} props */\r\nexport default fu"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/guest/GuestFeaturePermissionsPanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\n\r\n/** @param {{ accessToken: string, onMessage?: (msg: string) => void }} props */\r\nexport default fu"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/ParentAdminSettingsForm.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport PortalDarkSelect from \"../platform-ui/PortalDarkSelect.jsx\";\r\nimport { adminAuthFetch } from \"../../lib/admin-portal/u"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminArcadeTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminBoxTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminCardGrantByParent.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD_ERROR, api"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminCardRulesPanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { apiErrorMe"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminCardsTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminCatalogArchiveToggle.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/** Shared toggle — show legacy/inactive rows in admin rewards tabs. */\r\nexport default function AdminCatalogArchiveToggle({ checked, onChange, className = \"\" }"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminDiamondsTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\n\r\nconst MODE_OPTION"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminDuplicatesTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminEconomyTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminEventsTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminGeneralTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminManualCoinsTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useId, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOADING,"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminRewardsShell.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useMemo } from \"react\";\r\nimport {\r\n  isAdminManualCoinCreditEnabledClient,\r\n  isCardRewardsEnabledClient,\r\n  isRewardEconomySettingsEnabledClient,\r\n} f"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminSeriesTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminShopTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { ADMIN_LOAD"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/rewards/AdminTestsTab.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport { formatApiOkHe } from \"../../../lib"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/SchoolAdminTable.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import Link from \"next/link\";\r\nimport {\r\n  ADMIN_COL_ACTIONS,\r\n  ADMIN_MANAGE,\r\n  ADMIN_SCHOOL_NO_SCHOOLS,\r\n  ADMIN_SCHOOL_NAME,\r\n  adminYesNoHe,\r\n} from \"../.."
+          }
+        ]
+      },
+      {
+        "file": "components/admin/SchoolAssignForm.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport AdminModal, { AdminModalButton } from \"./AdminModal.jsx\";\r\nimport AdminSchoolStaffLifecycleCompact from \"./AdminSchool"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/TeacherAdminDetailView.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useMemo, useState } from \"react\";\r\nimport Link from \"next/link\";\r\nimport AdminSectionCard, { AdminFieldRow, AdminStatTile } from \"./AdminSectionCard.js"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/TeacherDiscussionSubjectsSection.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport AdminSectionCard from \"./AdminSectionCard.jsx\";\r\nimport { REPORT_SUBJECTS, subjectLabelHe } fr"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/TeacherQuotaForm.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport { DEFAULT_TEACHER_FEATURE_FLAGS } from \"../../lib/teacher-portal/teacher-feature-flags.js\";\r\nimport AdminSectionCard f"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoBuilderEditor.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport Link from \"next/link\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoBuilderList.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport Link from \"next/link\";\r\nimport { useRouter } from \"next/router\";\r\nimport { adminAuthFetch } fr"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoInspector.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport AdminVideoMediaLibrary from \"./AdminVideoMediaLibrary.jsx\";\r\nimport AdminVideoProjectSettings from \"./AdminVideoProjec"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoMediaLibrary.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useRef, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport AdminSectionCard from \"../Ad"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoPreviewPlayer.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useRef, useState } from \"react\";\r\nimport AdminVideoScenePreview from \"./AdminVideoScenePreview.jsx\";\r\nimport AdminVideoTimeline"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoProjectSettings.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import AdminSectionCard from \"../AdminSectionCard.jsx\";\r\nimport AdminVideoMediaLibrary from \"./AdminVideoMediaLibrary.jsx\";\r\nimport {\r\n  VB_EXPORT_QUALITIES,\r\n "
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoSceneList.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import AdminSectionCard from \"../AdminSectionCard.jsx\";\r\nimport AdminVideoScenePreview from \"./AdminVideoScenePreview.jsx\";\r\nimport AdminVideoSceneStylePanel fr"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoSceneRail.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import AdminVideoScenePreview from \"./AdminVideoScenePreview.jsx\";\r\nimport {\r\n  VB_ADD_SCENE,\r\n  VB_MOVE_DOWN,\r\n  VB_MOVE_UP,\r\n  VB_SCENE_N,\r\n  VB_SCENES,\r\n  VB"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoSceneStylePanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import {\r\n  VB_ANIMATION_IDS,\r\n  VB_ANIMATIONS,\r\n  VB_BACKGROUND_IDS,\r\n  VB_BACKGROUNDS,\r\n  VB_MEDIA_OVERLAY_IDS,\r\n  VB_MEDIA_OVERLAYS,\r\n  VB_TEXT_ALIGN_IDS,\r\n "
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoTimeline.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { computePreviewTotalDurationSec } from \"../../../lib/admin-portal/admin-video-builder-utils.js\";\r\nimport { VB_TIMELINE } from \"../../../lib/admin-portal"
+          }
+        ]
+      },
+      {
+        "file": "components/admin/video-builder/AdminVideoVoiceoverPanel.jsx",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useRef, useState } from \"react\";\r\nimport { adminAuthFetch } from \"../../../lib/admin-portal/use-admin-session.js\";\r\nimport AdminSectionCard from \"../Ad"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-analytics-labels.he.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Hebrew display labels for Admin Analytics (`/admin/analytics`).\r\n * Internal keys stay English — visible UI must use these helpers.\r\n */\r\n\r\nimport {\r\n  "
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-rewards-catalog.client.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/** Admin rewards catalog — active-only API URLs (default hides legacy/inactive). */\r\n\r\nexport function adminRewardsCardsUrl(includeInactive = false) {\r\n  retur"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-rewards-ui.he.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/** Hebrew display labels for Admin rewards / economy UI. */\r\n\r\nimport { CARD_RULE_TYPE_META } from \"../rewards/card-rule-types.js\";\r\n\r\nconst RARITY_LABELS_HE ="
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-ui.he.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/** Hebrew UI strings for platform admin / school-manager console. */\r\n\r\nimport {\r\n  apiErrorMessageHe,\r\n  auditActionLabelHe,\r\n  roleLabelHe,\r\n} from \"../platf"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-video-builder-catalog.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/** Shared catalog — backgrounds, animations, text styles (client + server safe). */\r\n\r\nexport const VB_BACKGROUND_IDS = [\r\n  \"light\",\r\n  \"dark\",\r\n  \"white\",\r\n "
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-video-builder-ui.he.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/** Hebrew UI strings for admin video builder. */\r\n\r\nexport const VB_TITLE = \"יוצר סרטונים\";\r\nexport const VB_NEW_VIDEO = \"סרטון חדש\";\r\nexport const VB_NO_VIDEO"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-portal/admin-web-traffic-display.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "const FACEBOOK_REFERRER_HOSTS = new Set([\r\n  \"facebook.com\",\r\n  \"m.facebook.com\",\r\n  \"www.facebook.com\",\r\n  \"l.facebook.com\",\r\n  \"lm.facebook.com\",\r\n]);\r\n\r\nexpo"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-server/admin-all-accounts.server.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { isDbSchemaNotReadyError } from \"../teacher-server/teacher-audit.server.js\";\r\nimport { normalizeAdminRole } from \"./admin-request.server.js\";\r\nimport {\r"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-server/admin-analytics.server.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import {\r\n  isIncludedAnalyticsParentProfile,\r\n  isIncludedAnalyticsStudent,\r\n} from \"./admin-analytics-production-filter.server.js\";\r\nimport { normalizeUserEma"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-server/admin-manual-coin-credit.server.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { applyArcadeCoinMove } from \"../arcade/server/arcade-coins.js\";\r\nimport { writeAdminAuditRow } from \"./admin-audit.server.js\";\r\n\r\nexport const ADMIN_MAN"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-server/admin-student-support-activity.server.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Admin student support timeline — merges learning, coins, parent activities, analytics.\r\n * Admin-only consumption via guarded API routes.\r\n */\r\n\r\nimport"
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-server/admin-video-builder.server.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Admin video builder — local JSON storage + media on disk.\r\n * MVP: data/admin-video-builder/ + public/admin-video-assets/\r\n */\r\n\r\nimport fs from \"node:f"
+          },
+          {
+            "line": 4,
+            "text": "]+)/i);\r\n      if (nameMatch) {\r\n        parts.push({\r\n          name: nameMatch[1],\r\n          filename: filenameMatch ? filenameMatch[1] : undefined,\r\n       "
+          }
+        ]
+      },
+      {
+        "file": "lib/admin-server/admin-web-traffic.server.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { resolveWebTrafficPreset } from \"./admin-web-traffic-range.server.js\";\r\n\r\nconst VERCEL_API_BASE = \"https://api.vercel.com\";\r\nconst WEB_TRAFFIC_CACHE_TTL"
+          }
+        ]
+      },
+      {
+        "file": "pages/admin/analytics.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useMemo, useRef, useState } from \"react\";\r\nimport Layout from \"../../components/Layout\";\r\nimport AdminShell from \"../../compone"
+          }
+        ]
+      },
+      {
+        "file": "pages/admin/games/index.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useState } from \"react\";\r\nimport Layout from \"../../../components/Layout\";\r\nimport AdminShell from \"../../../components/admin/AdminShell\";\r\nimport Admi"
+          }
+        ]
+      },
+      {
+        "file": "pages/admin/guest/index.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport Layout from \"../../../components/Layout\";\r\nimport AdminShell from \"../../../components/admin/A"
+          }
+        ]
+      },
+      {
+        "file": "pages/admin/schools/index.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport Layout from \"../../../components/Layout\";\r\nimport AdminShell from \"../../../components/admin/A"
+          }
+        ]
+      },
+      {
+        "file": "pages/admin/schools/[schoolId].js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport { useRouter } from \"next/router\";\r\nimport Link from \"next/link\";\r\nimport Layout from \"../../.."
+          }
+        ]
+      },
+      {
+        "file": "pages/admin/teachers/index.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { useCallback, useEffect, useState } from \"react\";\r\nimport Layout from \"../../../components/Layout\";\r\nimport AdminShell from \"../../../components/admin/A"
+          }
+        ]
+      },
+      {
+        "file": "pages/api/admin/rewards/cards/[id]/grant.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import {\r\n  requireAdminApiContext,\r\n  sendAdminApiError,\r\n} from \"../../../../../../lib/admin-server/admin-request.server.js\";\r\nimport { guardRewardsAdminApi }"
+          }
+        ]
+      },
+      {
+        "file": "pages/api/admin/rewards/cards/[id].js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import {\r\n  requireAdminApiContext,\r\n  sendAdminApiError,\r\n} from \"../../../../../lib/admin-server/admin-request.server.js\";\r\nimport { guardRewardsAdminApi } fr"
+          }
+        ]
+      },
+      {
+        "file": "pages/api/admin/video-builder/index.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { safeApiLog } from \"../../../../lib/security/safe-log.js\";\r\nimport { rejectIfCrossOriginCookieMutation } from \"../../../../lib/security/same-origin.js\";"
+          }
+        ]
+      },
+      {
+        "file": "pages/api/admin/video-builder/media/[id].js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { safeApiLog } from \"../../../../../lib/security/safe-log.js\";\r\nimport {\r\n  requireAdminApiContext,\r\n  sendAdminApiError,\r\n} from \"../../../../../lib/adm"
+          }
+        ]
+      },
+      {
+        "file": "pages/api/admin/video-builder/[id].js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import { safeApiLog } from \"../../../../lib/security/safe-log.js\";\r\nimport { rejectIfCrossOriginCookieMutation } from \"../../../../lib/security/same-origin.js\";"
+          }
+        ]
+      },
+      {
+        "file": "scripts/admin-portal/verify-admin-login-flow.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "#!/usr/bin/env node\r\n/**\r\n * Verify admin login flow: signIn + admin teachers API.\r\n * node --env-file=.env.local scripts/admin-portal/verify-admin-login-flow.m"
+          }
+        ]
+      },
+      {
+        "file": "tests/admin/admin-manual-coin-credit.test.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Admin manual coin credit — validation + API contract tests.\r\n * Run: node --test tests/admin/admin-manual-coin-credit.test.mjs\r\n */\r\n\r\nimport { describe"
+          }
+        ]
+      },
+      {
+        "file": "tests/admin/admin-video-builder.test.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Admin video builder — MVP contract + storage tests.\r\n * Run: node --test tests/admin/admin-video-builder.test.mjs\r\n */\r\n\r\nimport { describe, test } from"
+          }
+        ]
+      }
+    ],
+    "publicLikely": [],
+    "tests": [
+      {
+        "file": "tests/auth/admin-account-fixes-matrix.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "#!/usr/bin/env node\r\n/**\r\n * Orphan parent visibility + school staff delete UI checks.\r\n */\r\nimport fs from \"node:fs/promises\";\r\nimport { createServiceRole, fin"
+          }
+        ]
+      },
+      {
+        "file": "tests/auth/admin-all-accounts-matrix.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "#!/usr/bin/env node\r\n/**\r\n * Unified all-accounts admin tab/API tests (main admin only).\r\n */\r\nimport fs from \"node:fs/promises\";\r\nimport { createServiceRole, f"
+          }
+        ]
+      },
+      {
+        "file": "tests/rewards/admin-student-economy-parity.test.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Admin ↔ student economy display parity (same tier values in payload → UI).\r\n * Run: node --test tests/rewards/admin-student-economy-parity.test.mjs\r\n */"
+          }
+        ]
+      },
+      {
+        "file": "__tests__/school/admin-profile.test.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import assert from \"node:assert/strict\";\r\nimport { describe, it } from \"node:test\";\r\nimport fs from \"node:fs\";\r\nimport path from \"node:path\";\r\nimport { fileURLT"
+          }
+        ]
+      }
+    ],
+    "docs": [],
+    "scripts": [
+      {
+        "file": "scripts/admin-analytics-hebrew-copy-guard.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Admin Analytics Hebrew copy guard — visible labels must not leak English enum keys.\r\n * Run: node scripts/admin-analytics-hebrew-copy-guard.mjs\r\n */\r\nim"
+          }
+        ]
+      },
+      {
+        "file": "scripts/admin-video-builder-owner-flow.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "#!/usr/bin/env node\r\n/**\r\n * Owner flow smoke for admin video builder.\r\n * Run: node --env-file=.env.local scripts/admin-video-builder-owner-flow.mjs\r\n */\r\nimpo"
+          }
+        ]
+      },
+      {
+        "file": "scripts/tests/admin-analytics-selftest.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import assert from \"node:assert/strict\";\r\nimport { readFileSync } from \"node:fs\";\r\nimport path from \"node:path\";\r\nimport { pathToFileURL } from \"node:url\";\r\n\r\nc"
+          }
+        ]
+      },
+      {
+        "file": "scripts/tests/admin-analytics-web-traffic-selftest.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "import assert from \"node:assert/strict\";\r\nimport { readFileSync } from \"node:fs\";\r\nimport path from \"node:path\";\r\nimport { pathToFileURL } from \"node:url\";\r\n\r\nc"
+          }
+        ]
+      },
+      {
+        "file": "scripts/tests/verify-school-student-admin-profile-post-sql.mjs",
+        "samples": [
+          {
+            "line": 1,
+            "text": "#!/usr/bin/env node\r\n/**\r\n * Post-SQL 053 verification — School Student Admin Profile (live HTTP + schema).\r\n *\r\n *   node --env-file=.env.local scripts/tests/v"
+          }
+        ]
+      }
+    ],
+    "stale": [
+      {
+        "file": "lib/teacher-portal/teacher-ui.he.js",
+        "samples": [
+          {
+            "line": 1,
+            "text": "/**\r\n * Hebrew UI strings and label helpers for Teacher Portal + Guardian Access.\r\n * Client-safe — no server secrets.\r\n */\r\n\r\nimport { topicBucketLabel } from "
+          }
+        ]
+      }
+    ],
+    "other": []
+  }
+}

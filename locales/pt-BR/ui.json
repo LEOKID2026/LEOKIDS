@@ -772,5 +772,12 @@
         "qa_ask_teacher": "Pergunta para o professor"
       }
     }
+  },
+  "teacherShell": {
+    "backToDashboard": "← Voltar ao painel",
+    "schoolLabel": "Escola: {name}",
+    "signOut": "Sair",
+    "myClasses": "Minhas turmas",
+    "classReportTitle": "Relatório da turma"
   }
 }

@@ -213,5 +213,12 @@
     "ctaParents": "Sou encarregado de educação",
     "ctaKids": "Entrar como aluno",
     "ctaTeachers": "Sou professor"
+  },
+  "teacherShell": {
+    "backToDashboard": "← Voltar ao painel",
+    "schoolLabel": "Escola: {name}",
+    "signOut": "Terminar sessão",
+    "myClasses": "As minhas turmas",
+    "classReportTitle": "Relatório da turma"
   }
 }

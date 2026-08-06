@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-08-06T00:09:31.889Z",
+  "base": "http://127.0.0.1:3001",
+  "roles": {
+    "parent": {
+      "email": "eran1@leokids.com",
+      "uiOk": true,
+      "supabaseOk": true,
+      "reason": "ok http://127.0.0.1:3001/parent/dashboard"
+    },
+    "student": {
+      "username": "qa-student",
+      "pin": "7479",
+      "uiOk": true,
+      "apiOk": true,
+      "reason": "ok http://127.0.0.1:3001/student/profile",
+      "apiHebrew": false
+    }
+  },
+  "rows": [
+    {
+      "role": "parent",
+      "route": "/parent/dashboard",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/parent/dashboard",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "parent",
+      "route": "/parent/worksheets",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/parent/worksheets",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "parent",
+      "route": "/learning/parent-report",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/learning/parent-report",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "student",
+      "route": "/student/home",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/student/home",
+      "title": "For kids · Leo Kids"
+    },
+    {
+      "role": "student",
+      "route": "/student/cards",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/student/cards",
+      "title": "Leo Kids · Learning for elementary students"
+    },
+    {
+      "role": "student",
+      "route": "/student/profile",
+      "hebrew": false,
+      "samples": [],
+      "url": "http://127.0.0.1:3001/student/profile",
+      "title": "Leo Kids · Learning for elementary students"
+    }
+  ],
+  "apis": [
+    {
+      "role": "parent",
+      "path": "/api/parent/list-students",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "student",
+      "path": "/api/student/me",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    },
+    {
+      "role": "student",
+      "path": "/api/student/login",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    }
+  ],
+  "summary": {
+    "allRolesOk": true,
+    "hebrewRoutes": 0,
+    "hebrewApis": 0,
+    "roles": {
+      "parent": {
+        "uiOk": true,
+        "reason": "ok http://127.0.0.1:3001/parent/dashboard"
+      },
+      "student": {
+        "uiOk": true,
+        "reason": "ok http://127.0.0.1:3001/student/profile"
+      }
+    }
+  }
+}

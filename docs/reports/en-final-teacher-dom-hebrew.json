@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-08-05T21:58:24.467Z",
+  "dashboard": {
+    "bodyHe": true,
+    "htmlHe": true,
+    "bodySamples": [
+      "כיתה ג׳ - LEO",
+      "כיתה ג׳ - LEO (20)"
+    ],
+    "htmlSamples": [
+      "כיתה ג׳ - LEO\">",
+      "כיתה ג׳ - LEO",
+      "כיתה ג׳ - LEO\">Show class students",
+      "כיתה ג׳ - LEO\">Manage class",
+      "כיתה ג׳ - LEO\">כיתה ג׳ - LEO (20)"
+    ]
+  },
+  "classPage": {
+    "classBodyHe": true,
+    "classHtmlHe": true,
+    "classBodySamples": [
+      "כיתה ג׳ - LEO",
+      "נועה כהןInactive in this period",
+      "איתי לויInactive in this period",
+      "מאיה אברהםInactive in this period",
+      "דניאל מזרחיInactive in this period",
+      "יעל פרץInactive in this period",
+      "עומר ביטוןInactive in this period",
+      "תמר דודInactive in this period",
+      "רון ישראליInactive in this period",
+      "שירה גולןInactive in this period",
+      "יונתן חןInactive in this period"
+    ],
+    "classHtmlSamples": [
+      "כיתה ג׳ - LEO",
+      "נועה כהן",
+      "איתי לוי",
+      "מאיה אברהם",
+      "דניאל מזרחי",
+      "יעל פרץ",
+      "עומר ביטון",
+      "תמר דוד",
+      "רון ישראלי",
+      "שירה גולן",
+      "יונתן חן"
+    ]
+  },
+  "apiBodiesSeen": [
+    {
+      "url": "/api/teacher/me",
+      "status": 200,
+      "samples": [
+        "מורה LEO"
+      ]
+    },
+    {
+      "url": "/api/teacher/dashboard",
+      "status": 200,
+      "samples": [
+        "מורה LEO",
+        "כיתה ג׳ - LEO",
+        "כיתה ג׳ - LEO",
+        "כיתה ג׳ - LEO",
+        "כיתה ג׳ - LEO"
+      ]
+    },
+    {
+      "url": "/api/teacher/dashboard/activity",
+      "status": 200,
+      "samples": [
+        "מורה LEO",
+        "כיתה ג׳ - LEO",
+        "כיתה ג׳ - LEO",
+        "כיתה ג׳ - LEO",
+        "כיתה ג׳ - LEO"
+      ]
+    },
+    {
+      "url": "/api/teacher/classes/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/report-data?from=2026-07-07&to=2026-08-05",
+      "status": 200,
+      "samples": [
+        "כיתה ג׳ - LEO",
+        "נועה כהן",
+        "נועה כהן",
+        "איתי לוי",
+        "איתי לוי"
+      ]
+    }
+  ]
+}

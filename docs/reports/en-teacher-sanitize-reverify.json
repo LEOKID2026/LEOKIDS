@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-08-05T22:14:04.841Z",
+  "apis": [
+    {
+      "path": "/api/teacher/me",
+      "status": 200,
+      "hebrew": false,
+      "samples": [],
+      "preferredLanguage": null,
+      "displayName": null,
+      "classNames": []
+    },
+    {
+      "path": "/api/teacher/classes",
+      "status": 200,
+      "hebrew": false,
+      "samples": [],
+      "preferredLanguage": null,
+      "displayName": null,
+      "classNames": [
+        "Grade 3 - LEO"
+      ]
+    },
+    {
+      "path": "/api/teacher/dashboard",
+      "status": 200,
+      "hebrew": false,
+      "samples": [],
+      "preferredLanguage": null,
+      "displayName": null,
+      "classNames": []
+    },
+    {
+      "path": "/api/teacher/classes/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/report-data?from=2026-07-07&to=2026-08-05",
+      "status": 200,
+      "hebrew": false,
+      "samples": []
+    }
+  ],
+  "ui": [
+    {
+      "label": "dashboard",
+      "url": "http://127.0.0.1:3001/teacher/dashboard",
+      "hebrewBody": false,
+      "hebrewHtml": false,
+      "samples": []
+    },
+    {
+      "label": "class",
+      "url": "http://127.0.0.1:3001/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36",
+      "hebrewBody": false,
+      "hebrewHtml": false,
+      "samples": []
+    }
+  ],
+  "hebrewApis": 0,
+  "hebrewUi": 0
+}

@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-08-05T21:56:41.859Z",
+  "apiFindings": {
+    "meHebrew": true,
+    "meSamples": [
+      "מורה LEO"
+    ],
+    "classesHebrew": true,
+    "classesSamples": [
+      "כיתה ג׳ - LEO"
+    ],
+    "classIds": [
+      "eb24c41d-34e6-4bc3-a395-1a7e26db8a36"
+    ],
+    "classNames": [
+      "כיתה ג׳ - LEO"
+    ]
+  },
+  "rows": [
+    {
+      "route": "/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36",
+      "role": "teacher-deep-api",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36"
+    },
+    {
+      "route": "/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/activities",
+      "role": "teacher-deep-api",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/activities"
+    },
+    {
+      "route": "/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/activities/new",
+      "role": "teacher-deep-api",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/activities/new"
+    },
+    {
+      "route": "/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/worksheets",
+      "role": "teacher-deep-api",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/worksheets"
+    },
+    {
+      "route": "/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/worksheets/new",
+      "role": "teacher-deep-api",
+      "status": 200,
+      "hebrew": false,
+      "hits": [],
+      "finalUrl": "http://127.0.0.1:3001/teacher/class/eb24c41d-34e6-4bc3-a395-1a7e26db8a36/worksheets/new"
+    }
+  ],
+  "hebrewUiRoutes": 0
+}

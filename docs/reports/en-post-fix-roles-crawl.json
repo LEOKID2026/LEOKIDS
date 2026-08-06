@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-08-05T22:14:47.487Z",
+  "teacherMe": {
+    "preferredLanguage": null,
+    "displayName": null,
+    "hebrew": false,
+    "rawProfile": {
+      "teacher": {
+        "teacherId": "b4dd0193-6e2d-42bc-b40a-4cc2d8b2724e",
+        "displayName": "LEO Teacher",
+        "preferredLanguage": "en",
+        "isActive": true,
+        "createdAt": "2026-06-27T18:08:57.180492+00:00"
+      },
+      "limits": {
+        "planCode": "teacher_basic_20",
+        "studentLimit": null,
+        "classLimit": null,
+        "maxStudentsPerClass": 40,
+        "featureFlags": {
+          "classroom_activities": true,
+          "individual_activities": true,
+          "parent_messaging": true,
+          "ai_reports": true,
+          "live_audio": false
+        },
+        "isAccountActive": true
+      },
+      "counters": {
+        "activeStudentLinks": 20,
+        "activeClasses": 1
+      },
+      "flags": {
+        "uiCopyEnabled": true
+      }
+    }
+  },
+  "parent": {
+    "emailSet": true,
+    "supabaseOk": false,
+    "uiOk": false,
+    "reason": "supabase: Invalid login credentials",
+    "rows": []
+  },
+  "student": {
+    "userSet": true,
+    "uiOk": false,
+    "reason": "still on http://127.0.0.1:3001/student/login",
+    "rows": []
+  },
+  "school": {
+    "email": "school@leo-k.com",
+    "passwordSet": false,
+    "supabaseOk": false,
+    "uiOk": false,
+    "reason": "missing SCHOOL_QA_PASSWORD / DEMO_TEACHER_PASSWORD / E2E_SCHOOL_PASSWORD",
+    "rows": []
+  },
+  "summary": {
+    "teacherPreferredLanguage": null,
+    "teacherDisplayName": null,
+    "teacherHebrew": false,
+    "parentOk": false,
+    "studentOk": false,
+    "schoolOk": false,
+    "hebrewInRoleUi": 0,
+    "blocked": [
+      {
+        "role": "parent",
+        "reason": "supabase: Invalid login credentials"
+      },
+      {
+        "role": "student",
+        "reason": "still on http://127.0.0.1:3001/student/login"
+      },
+      {
+        "role": "school",
+        "reason": "missing SCHOOL_QA_PASSWORD / DEMO_TEACHER_PASSWORD / E2E_SCHOOL_PASSWORD"
+      }
+    ]
+  }
+}

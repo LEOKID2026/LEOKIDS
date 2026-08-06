@@ -503,7 +503,7 @@
     "share": "Condividere",
     "studentWorld": "Mondo dei bambini",
     "studentWorldAriaLabel": "Vai al mondo dei bambini",
-    "curriculum": "Curriculum",
+    "curriculum": "Programma",
     "addChild": "Aggiungi bambino",
     "addChildTitle": "Aggiungi bambino",
     "childrenCount": "Bambini in acconto: {current} / {limit}",
@@ -772,5 +772,12 @@
         "qa_ask_teacher": "Domanda per l'insegnante"
       }
     }
+  },
+  "teacherShell": {
+    "backToDashboard": "← Torna alla dashboard",
+    "schoolLabel": "Scuola: {name}",
+    "signOut": "Esci",
+    "myClasses": "Le mie classi",
+    "classReportTitle": "Report di classe"
   }
 }
