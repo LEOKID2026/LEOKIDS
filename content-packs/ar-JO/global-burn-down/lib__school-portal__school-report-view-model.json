@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "class_activities": "أنشطة الشعبة",
+    "students_in_class": "الطلاب في الشعبة",
+    "no_children_are_registered_in_this_class": "لم يتم تسجيل أي أطفال في هذه الشعبة.",
+    "general_class_report_all_subjects": "التقرير العام للشعبة · جميع المواد",
+    "students_who_need_attention": "الطلاب الذين يحتاجون إلى الاهتمام",
+    "student_distribution": "توزيع الطلاب"
+  }
+}

@@ -1,6 +1,6 @@
 /**
- * One-shot helper: generate LOCALE_PUBLIC_PATH_PREFIX map for public/sw.js
- * from locale-registry authority. Run: node docs/reports/_gen-sw-locale-prefix-map.mjs
+ * Regenerate LOCALE_PUBLIC_PATH_PREFIX in public/sw.js from locale-registry.
+ * Run: node docs/reports/_gen-sw-locale-prefix-map.mjs
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -44,12 +44,14 @@ function offlineFallbackPath(localeId) {
 `;
 
 let src = fs.readFileSync(SW_PATH, "utf8");
-const start = src.indexOf("/** @param {string} localeId */\nfunction offlineFallbackPath");
+const mapMarker =
+  "/**\n * localeId → public URL path segment (mirrors locale-registry pathPrefix).";
+const start = src.indexOf(mapMarker);
 const end = src.indexOf(
   "\n/**\n * Arabic UI locales use RTL inline offline chrome."
 );
-if (start < 0 || end < 0) {
-  throw new Error("Could not locate offlineFallbackPath block in public/sw.js");
+if (start < 0 || end < 0 || end <= start) {
+  throw new Error("Could not locate LOCALE_PUBLIC_PATH_PREFIX block in public/sw.js");
 }
 src = src.slice(0, start) + mapBlock + src.slice(end);
 fs.writeFileSync(SW_PATH, src, "utf8");

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "class_status": "حالة الشعبة",
+    "col_class": "الشعبة",
+    "active_classes": "{count} شعب نشطة"
+  }
+}

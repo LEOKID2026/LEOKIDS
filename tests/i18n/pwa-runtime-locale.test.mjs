@@ -10,7 +10,7 @@ test("buildPwaCacheKey isolates caches per locale", () => {
     buildPwaCacheKey("en", "dynamic-v2"),
     buildPwaCacheKey("ar-XB", "dynamic-v2")
   );
-  for (const id of ["ar-EG", "ar-SA", "ar-MA", "ar-DZ", "ar-001"]) {
+  for (const id of ["ar-EG", "ar-SA", "ar-MA", "ar-DZ", "ar-IQ", "ar-JO", "ar-AE", "ar-TN", "ar-001"]) {
     assert.equal(buildPwaCacheKey(id, "dynamic-v2"), `lk-global-${id}-dynamic-v2`);
   }
   assert.notEqual(buildPwaCacheKey("ar-EG", "dynamic-v2"), buildPwaCacheKey("es-AR", "dynamic-v2"));

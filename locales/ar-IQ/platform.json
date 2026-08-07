@@ -1,0 +1,8 @@
+{
+  "auditActions": {
+    "school_class_viewed": "تم عرض تقرير الشعبة",
+    "school_class_teacher_reassigned": "تم إعادة تعيين معلم الشعبة",
+    "school_class_archived": "تمت أرشفة الشعبة",
+    "viewed_class_report": "تم عرض تقرير الشعبة"
+  }
+}

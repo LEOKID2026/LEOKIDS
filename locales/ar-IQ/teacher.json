@@ -1,0 +1,36 @@
+{
+  "supportSuggestions": {
+    "targetedReview": "يوصى بتعزيز {subject} في الشعبة"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "تحتاج الشعبة إلى اهتمام فوري",
+    "class_needs_reinforcement": "تحتاج الشعبة إلى تعزيز",
+    "class_monitor": "تحتاج الشعبة إلى مراقبة وممارسة مركزة",
+    "class_on_track": "الشعبة تسير على الطريق الصحيح"
+  },
+  "classHealth": {
+    "critical_class": "تحتاج الشعبة إلى اهتمام فوري",
+    "needs_reinforcement": "تحتاج الشعبة إلى تعزيز",
+    "monitor": "تحتاج الشعبة إلى مراقبة وممارسة مركزة",
+    "strong": "الشعبة تسير على الطريق الصحيح"
+  },
+  "actionTypes": {
+    "class_reteach": "إعادة تدريس الشعبة بأكملها"
+  },
+  "focus": {
+    "classFallbackBanner": "تظهر الشعبة صعوبة في هذه المادة - يوصى بتعزيز تحليلي للشعبة"
+  },
+  "fallback": {
+    "classSubjectHeadline": "{subject} - صعوبة المادة على مستوى الشعبة",
+    "classSubjectHeadlineNoSubject": "صعوبة المادة على مستوى الشعبة",
+    "classSubjectAction": "يوصى ببدء نشاط تقييمي قصير أو مراجعة مركزة للشعبة بأكملها",
+    "classSuffix": "الشعبة {label}"
+  },
+  "dashboard": {
+    "noClassesTitle": "لا توجد شعب نشطة",
+    "noClassesHint": "أنشئ شعبة جديدة أدناه، ثم أضف الأطفال عبر \"إدارة الشعبة\" في بطاقة الشعبة.",
+    "createClassLabel": "اسم الشعبة",
+    "createClassButton": "إنشاء شعبة",
+    "createClassPlaceholder": "مثلًا: الصف الثالث — أ"
+  }
+}

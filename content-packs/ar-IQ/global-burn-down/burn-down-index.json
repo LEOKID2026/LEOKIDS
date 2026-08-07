@@ -1,0 +1,124 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "ممارسة رقمية بالعربية لمتعلّمي المرحلة الابتدائية في العراق: الرياضيات والهندسة والإنجليزية والعلوم.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — ممارسة بالعربية لمتعلّمي المرحلة الابتدائية في العراق.",
+    "school_portal_manage_classes_teachers_students_messaging_progress": "أدِر الشعب والمعلّمين والتلاميذ — مع رسائل مدرسية ومتابعة تقدّم في Leo Kids."
+  },
+  "components__school-portal__SchoolDrillDown": {
+    "class_status": "حالة الشعبة",
+    "col_class": "الشعبة",
+    "active_classes": "{count} شعب نشطة"
+  },
+  "components__school-portal__SchoolPortalUi": {
+    "col_class": "الشعبة"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "لا يوجد أطفال في هذه الشعبة."
+  },
+  "components__student__StudentClassroomActivitiesPanel": {
+    "class_activities": "أنشطة الشعبة"
+  },
+  "components__teacher-portal__TeacherClassActivitiesNav": {
+    "aria_label": "تنقّل الشعبة",
+    "class_report": "تقرير الشعبة"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "class_report": "تقرير الشعبة",
+    "loading_class_report": "جارٍ تحميل تقرير الشعبة…"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "هل تريد إزالة هذا التلميذ من الشعبة؟",
+    "manage_class": "إدارة الشعبة",
+    "classes": "الشعب",
+    "class_report": "تقرير الشعبة",
+    "dashboard_subtitle": "لوحة التحكم — الشعب والتلاميذ",
+    "my_classes": "شعبي",
+    "show_class_students": "عرض تلاميذ الشعبة",
+    "manage_class_btn": "إدارة الشعبة",
+    "classes_heading": "الشعب",
+    "class_name_label": "اسم الشعبة",
+    "linked_not_in_class": "تلاميذ مرتبطون غير موجودين في هذه الشعبة:",
+    "add_to_class": "إضافة إلى الشعبة",
+    "students_in_class_count": "التلاميذ في الشعبة ({count} / {cap})",
+    "students_in_class_count_open": "التلاميذ في الشعبة ({count})",
+    "class_at_cap": "بلغت هذه الشعبة الحد الأقصى البالغ {cap} تلميذاً.",
+    "no_students_in_class": "لا يوجد تلاميذ في هذه الشعبة.",
+    "remove_from_class": "إزالة من الشعبة",
+    "class_fallback": "شعبة",
+    "could_not_update_class_name": "تعذّر تحديث اسم الشعبة.",
+    "could_not_add_to_class": "تعذّر إضافة التلميذ إلى الشعبة.",
+    "could_not_remove_from_class": "تعذّر إزالة التلميذ من الشعبة.",
+    "could_not_create_class": "تعذّر إنشاء الشعبة.",
+    "could_not_add_class_limit": "بلغت هذه الشعبة الحد الأقصى لعدد التلاميذ (40 تلميذاً). لا يمكن إضافة المزيد."
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "whole_class": "الشعبة بأكملها"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "class_average": "متوسط الشعبة"
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "أولياء أمور الشعبة الأساسية"
+  },
+  "lib__school-portal__school-report-view-model": {
+    "class_activities": "أنشطة الشعبة",
+    "students_in_class": "التلاميذ في الشعبة",
+    "no_children_are_registered_in_this_class": "لم يتم تسجيل أي أطفال في هذه الشعبة.",
+    "general_class_report_all_subjects": "التقرير العام للشعبة · جميع المواد"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "الشعبة 3 - Leo"
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "لا توجد شعب في هذا الصف."
+  },
+  "pages__student__activity__[activityId]": {
+    "done_body_discussion": "شكرًا على إجابتك. سيراها معلمك في الشعبة."
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "تقرير الشعبة",
+    "invalid_class_id": "معرّف الشعبة غير صالح.",
+    "you_do_not_have_permission_to_view_this_class_report": "ليس لديك الإذن لعرض تقرير هذه الشعبة."
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "أنشطة الشعبة",
+    "subtitle": "أنشئ أنشطة الشعبة وأطلقها وتابعها.",
+    "forbidden": "ليس لديك صلاحية لعرض أنشطة هذه الشعبة."
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "err_no_permission": "ليس لديك صلاحية لإنشاء أنشطة لهذه الشعبة. تواصل مع إدارة المدرسة.",
+    "err_load_class": "تعذّر تحميل الشعبة",
+    "err_invalid_grade": "مستوى صف هذه الشعبة غير صالح. تواصل مع إدارة المدرسة."
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "forbidden": "ليس لديك صلاحية لعرض أوراق عمل هذه الشعبة."
+  },
+  "pages__teacher__worksheets__index": {
+    "subtitle": "جميع أوراق العمل — للشعبة بأكملها أو لتلاميذ مختارين.",
+    "class_scope": "شعبة"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "boundary": {
+    "peerComparison": "ويستند التقرير فقط على ممارسة هذا الطفل ولا يقارنه بالأطفال الآخرين في الشعبة. يمكنك التركيز على ما يظهر في التقرير والسؤال عن موضوع معين."
+  },
+  "answers": {
+    "utils_parent-copilot_intent-answer-composers": {
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "ووفقا للتقرير، لا يوجد حتى الآن ما يكفي من الأدلة للعمل فوق الصف المذكور."
+    }
+  }
+}

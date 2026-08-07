@@ -481,7 +481,7 @@ results.pass =
   results.summary.auditClosureOk &&
   results.summary.arDzInvalidSanah6 === 0 &&
   Object.values(results.locales).every((r) => r.helpParentsCount > 0) &&
-  selectorAfter === 80;
+  selectorAfter === 84;
 
 fs.writeFileSync(OUT, `${JSON.stringify(results, null, 2)}\n`, "utf8");
 console.log(JSON.stringify(results, null, 2));

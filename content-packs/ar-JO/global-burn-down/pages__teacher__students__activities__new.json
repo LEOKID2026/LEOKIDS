@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "multi_grade_warning": "⚠ لديك طلاب من صفوف مختلفة. يمكنك إرسال نشاط واحد فقط لطلاب من الصف نفسه.",
+    "select_first_to_lock": "اختر طالبًا أولًا لتثبيت الصف.",
+    "create_and_send": "إنشاء وإرسال ({n} طلاب)",
+    "err_select_student": "يرجى اختيار طالب واحد على الأقل",
+    "err_mix_grades": "لا يمكن خلط طلاب من صفوف مختلفة. هذا النشاط مقيّد بـ {locked}. هذا الطالب في {student}.",
+    "activity_for_selected_private_students": "نشاط لطلاب خاصين مختارين",
+    "select_private_students": "اختر طلاب خاصين",
+    "loading_students": "جارٍ تحميل الطلاب…",
+    "no_linked_private_students": "لا يوجد طلاب خاصون مرتبطون.",
+    "derived_from_selected": "— مستنتج من الطلاب المحدَّدين"
+  }
+}

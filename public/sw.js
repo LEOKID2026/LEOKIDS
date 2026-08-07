@@ -33,6 +33,10 @@ const SUPPORTED_LOCALE_CACHE_IDS = [
   'ar-SA',
   'ar-MA',
   'ar-DZ',
+  'ar-IQ',
+  'ar-JO',
+  'ar-AE',
+  'ar-TN',
 ];
 
 /**
@@ -41,10 +45,14 @@ const SUPPORTED_LOCALE_CACHE_IDS = [
  */
 const LOCALE_PUBLIC_PATH_PREFIX = {
   "ar-001": "ar-001",
+  "ar-AE": "ae",
   "ar-DZ": "dz",
   "ar-EG": "eg",
+  "ar-IQ": "iq",
+  "ar-JO": "jo",
   "ar-MA": "ma",
   "ar-SA": "sa",
+  "ar-TN": "tn",
   "ar-XB": "ar-XB",
   "de-AT": "at",
   "de-CH": "ch-de",
