@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "topic_grade_title": "{topic} - {grade}"
+  }
+}

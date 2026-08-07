@@ -1,6 +1,7 @@
 import { reportPackCopy, getActiveReportPackLocale } from "../../lib/reports/report-pack-copy.js";
 import { ReportLocaleSurface } from "../../lib/reports/report-locale-context.jsx";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { resolveLocaleDefinition } from "../../lib/i18n/locale-registry.js";
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Layout from "../../components/Layout";
 import { ParentReportExitNav, ParentReportThemeIcons } from "../../components/parent/ParentReportExitNav.jsx";
@@ -994,6 +995,13 @@ export default function ParentReport() {
   const router = useRouter();
   const { locale, reportLocale: i18nReportLocale } = useI18n();
   const activeReportLocale = i18nReportLocale || locale || getActiveReportPackLocale() || "en";
+  const activeReportDateLocale = (() => {
+    const def = resolveLocaleDefinition(activeReportLocale);
+    if (def.direction === "rtl" && String(def.id).startsWith("ar")) {
+      return def.intlLocale || "ar";
+    }
+    return "en-US";
+  })();
 
   const remoteReportSource = useMemo(
     () => parseParentReportRemoteSource(router),
@@ -3518,7 +3526,7 @@ export default function ParentReport() {
                       <Tooltip
                         contentStyle={activeTooltipStyle}
                         labelFormatter={(value) =>
-                          new Date(value).toLocaleDateString(activeReportLocale === "ar-001" ? "ar" : "en-US", {
+                          new Date(value).toLocaleDateString(activeReportDateLocale, {
                             weekday: "short",
                             day: "numeric",
                             month: "short"})
@@ -3607,7 +3615,7 @@ export default function ParentReport() {
                       <Tooltip
                         contentStyle={activeTooltipStyle}
                         labelFormatter={(value) =>
-                          new Date(value).toLocaleDateString(activeReportLocale === "ar-001" ? "ar" : "en-US", {
+                          new Date(value).toLocaleDateString(activeReportDateLocale, {
                             weekday: "short",
                             day: "numeric",
                             month: "short"})

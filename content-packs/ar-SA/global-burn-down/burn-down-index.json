@@ -1,0 +1,106 @@
+{
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "هل تريد إزالة هذا الطالب من الفصل؟",
+    "remove_this_student_from_your_teacher_list": "هل تريد إزالة هذا الطالب من قائمة المعلمين لديك؟",
+    "full_name_of_new_student": "الاسم الكامل للطالب الجديد",
+    "students": "الطلاب",
+    "filter_student_list": "تصفية قائمة الطلاب",
+    "dashboard_subtitle": "لوحة التحكم — الفصول والطلاب",
+    "send_activity_link": "إرسال نشاط للطلاب الخاصين ←",
+    "students_need_attention": "طلاب بحاجة إلى اهتمام",
+    "students_count": "الطلاب: {count}",
+    "show_class_students": "عرض طلاب الفصل",
+    "students_heading": "الطلاب",
+    "no_students_filter": "لا يوجد طلاب لهذا الفلتر.",
+    "add_student_heading": "إضافة طالب",
+    "linked_not_in_class": "طلاب مرتبطون غير موجودين في هذا الفصل:",
+    "students_in_class_count": "الطلاب في الفصل ({count} / {cap})",
+    "students_in_class_count_open": "الطلاب في الفصل ({count})",
+    "class_at_cap": "بلغ هذا الفصل الحد الأقصى البالغ {cap} طالباً.",
+    "no_students_in_class": "لا يوجد طلاب في هذا الفصل.",
+    "student_fallback": "الطالب",
+    "could_not_add_student": "تعذّر إضافة الطالب.",
+    "could_not_add_to_class": "تعذّر إضافة الطالب إلى الفصل.",
+    "could_not_remove_from_class": "تعذّر إزالة الطالب من الفصل.",
+    "could_not_update_student_name": "تعذّر تحديث اسم الطالب.",
+    "could_not_remove_student": "تعذّر إزالة الطالب.",
+    "could_not_add_class_limit": "بلغ هذا الفصل الحد الأقصى لعدد الطلاب (40 طالباً). لا يمكن إضافة المزيد."
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "selected_students": "الطلاب المختارون",
+    "discussion_with_response_students_submit_an_answer": "مناقشة مع الرد (يرسل الطلاب إجابة)"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "total_students": "إجمالي الطلاب"
+  },
+  "lib__global__product-context.server": {
+    "this_student_does_not_belong_to_leo_kids_global": "هذا الطالب لا ينتمي إلى Leo Kids Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "لم يتم العثور على الطالب لولي الأمر هذا في Leo Kids Global."
+  },
+  "lib__school-portal__school-report-view-model": {
+    "students_in_class": "الطلاب في الفصل",
+    "students_who_need_attention": "الطلاب الذين يحتاجون إلى الاهتمام",
+    "student_distribution": "توزيع الطلاب"
+  },
+  "lib__site__public-page-seo": {
+    "school_portal_manage_classes_teachers_students_messaging_progress": "أدِر الفصول والمعلّمين والطلاب — مع رسائل مدرسية ومتابعة تقدّم في Leo Kids.",
+    "help_center_guides_for_parents_and_students_site_reports_practice": "مركز المساعدة — أدلة لأولياء الأمور والطلاب حول الموقع والتقارير والممارسة."
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf": {
+    "student_summary": "ملخص الطالب"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "students_should_evidence_before_they_form_an_opinion": "يجب على الطلاب ___ الأدلة قبل تكوين الرأي."
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "not_sent_hint": "(لا يُرسل للطالب)"
+  },
+  "pages__teacher__students__activities__new": {
+    "activity_for_selected_private_students": "نشاط لطلاب خاصين مختارين",
+    "select_private_students": "اختر طلاب خاصين",
+    "loading_students": "جارٍ تحميل الطلاب…",
+    "no_linked_private_students": "لا يوجد طلاب خاصون مرتبطون.",
+    "multi_grade_warning": "⚠ لديك طلاب من صفوف مختلفة. يمكنك إرسال نشاط واحد فقط لطلاب من الصف نفسه.",
+    "select_first_to_lock": "اختر طالبًا أولًا لتثبيت الصف.",
+    "derived_from_selected": "— مستنتج من الطلاب المحدَّدين",
+    "create_and_send": "إنشاء وإرسال ({n} طلاب)",
+    "err_select_student": "يرجى اختيار طالب واحد على الأقل",
+    "err_mix_grades": "لا يمكن خلط طلاب من صفوف مختلفة. هذا النشاط مقيّد بـ {locked}. هذا الطالب في {student}."
+  },
+  "pages__teacher__student__[studentId]": {
+    "student_report": "تقرير الطالب",
+    "invalid_student_id": "معرف الطالب غير صالح.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "ليس لديك الإذن لعرض تقرير هذا الطالب."
+  },
+  "pages__teacher__worksheets__index": {
+    "subtitle": "جميع أوراق العمل — للفصل بأكمله أو لطلاب مختارين.",
+    "selected_students": "طلاب مختارون"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · التعلم لطلاب المرحلة الابتدائية"
+  }
+}

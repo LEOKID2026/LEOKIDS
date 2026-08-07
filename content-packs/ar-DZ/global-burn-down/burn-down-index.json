@@ -1,0 +1,38 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "السنة 1 ابتدائي",
+    "grade_2": "السنة 2 ابتدائي",
+    "grade_3": "السنة 3 ابتدائي",
+    "grade_4": "السنة 4 ابتدائي",
+    "grade_5": "السنة 5 ابتدائي",
+    "grade_6": "السنة 1 متوسط"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "السنة 1 ابتدائي",
+    "grade_2": "السنة 2 ابتدائي",
+    "grade_3": "السنة 3 ابتدائي",
+    "grade_4": "السنة 4 ابتدائي",
+    "grade_5": "السنة 5 ابتدائي",
+    "grade_6": "السنة 1 متوسط"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "السنة 1 ابتدائي",
+    "grade_2": "السنة 2 ابتدائي",
+    "grade_3": "السنة 3 ابتدائي",
+    "grade_4": "السنة 4 ابتدائي",
+    "grade_5": "السنة 5 ابتدائي",
+    "grade_6": "السنة 1 متوسط"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "حاول تغيير عوامل التصفية - أو حدد جميع المواد والسنوات والمستويات.",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "اختر مادةً وسنةً وموضوعًا ومستوى - ثم قم بإنشاء ورقة عمل جاهزة للطباعة.",
+    "ready_made_worksheets_by_grade": "أوراق عمل جاهزة حسب السنة"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "ممارسة رقمية بالعربية لمتعلّمي المرحلة الابتدائية في الجزائر: الرياضيات والهندسة والإنجليزية والعلوم.",
+    "math_practice_by_grade_and_topic_leo_kids": "ممارسة الرياضيات حسب السنة والموضوع · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "ممارسة الإنجليزية حسب السنة والموضوع · Leo Kids",
+    "geometry_practice_by_grade_and_topic_leo_kids": "ممارسة الهندسة حسب السنة والموضوع · Leo Kids",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — ممارسة بالعربية لمتعلّمي المرحلة الابتدائية في الجزائر."
+  }
+}

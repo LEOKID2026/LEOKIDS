@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "activity_subject_grade": "{base} - {subject} {grade}"
+  }
+}

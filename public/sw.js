@@ -24,21 +24,134 @@ const DYNAMIC_CACHE = 'lk-global-dynamic-v2';
 const GLOBAL_CACHE_PREFIX = 'lk-global-';
 const LOCALE_DYNAMIC_SUFFIX = 'dynamic-v2';
 const CURRENT_GLOBAL_CACHES = new Set([CACHE_NAME, STATIC_CACHE, DYNAMIC_CACHE]);
-const SUPPORTED_LOCALE_CACHE_IDS = ['en', 'en-XA', 'ar-XB', 'ar-001'];
+const SUPPORTED_LOCALE_CACHE_IDS = [
+  'en',
+  'en-XA',
+  'ar-XB',
+  'ar-001',
+  'ar-EG',
+  'ar-SA',
+  'ar-MA',
+  'ar-DZ',
+];
+
+/**
+ * localeId → public URL path segment (mirrors locale-registry pathPrefix).
+ * Service Worker cannot import the registry; keep in parity via sw-offline tests.
+ */
+const LOCALE_PUBLIC_PATH_PREFIX = {
+  "ar-001": "ar-001",
+  "ar-DZ": "dz",
+  "ar-EG": "eg",
+  "ar-MA": "ma",
+  "ar-SA": "sa",
+  "ar-XB": "ar-XB",
+  "de-AT": "at",
+  "de-CH": "ch-de",
+  "de-DE": "de",
+  "en-AU": "au",
+  "en-CA": "ca",
+  "en-CM": "cm-en",
+  "en-GB": "eng",
+  "en-GH": "gh",
+  "en-GM": "gm",
+  "en-IE": "ie",
+  "en-IN": "in-en",
+  "en-KE": "ke",
+  "en-LR": "lr",
+  "en-MU": "mu-en",
+  "en-NG": "ng",
+  "en-NIR": "nir",
+  "en-NZ": "nz",
+  "en-PH": "ph",
+  "en-RW": "rw-en",
+  "en-SCT": "sct",
+  "en-SG": "sg",
+  "en-SL": "sl-en",
+  "en-WLS": "wls",
+  "en-XA": "en-XA",
+  "en-ZA": "za",
+  "es-419": "es-419",
+  "es-AR": "ar",
+  "es-BO": "bo",
+  "es-CL": "cl",
+  "es-CO": "co",
+  "es-CR": "cr",
+  "es-CU": "cu",
+  "es-DO": "do",
+  "es-EC": "ec",
+  "es-ES": "es",
+  "es-GQ": "gq-es",
+  "es-GT": "gt",
+  "es-HN": "hn",
+  "es-MX": "mx",
+  "es-NI": "ni",
+  "es-PA": "pa",
+  "es-PE": "pe",
+  "es-PR": "pr",
+  "es-PY": "py",
+  "es-SV": "sv",
+  "es-US": "us-es",
+  "es-UY": "uy",
+  "es-VE": "ve",
+  "fr-BE": "be-fr",
+  "fr-BJ": "bj",
+  "fr-CA": "ca-fr",
+  "fr-CD": "cd",
+  "fr-CG": "cg",
+  "fr-CH": "ch-fr",
+  "fr-CI": "ci",
+  "fr-CM": "cm-fr",
+  "fr-FR": "fr",
+  "fr-GA": "ga",
+  "fr-GN": "gn",
+  "fr-SN": "sn",
+  "fr-TG": "tg",
+  "it-CH": "ch-it",
+  "it-IT": "it",
+  "nl-BE": "be-nl",
+  "nl-NL": "nl",
+  "nl-SR": "sr-nl",
+  "pt-AO": "ao",
+  "pt-BR": "br",
+  "pt-CV": "cv-pt",
+  "pt-MZ": "mz",
+  "pt-PT": "pt",
+  "ru-BY": "by-ru",
+  "ru-KG": "kg-ru",
+  "ru-KZ": "kz-ru",
+  "ru-RU": "ru",
+  "ru-UZ": "uz-ru",
+};
 
 /** @param {string} localeId */
 function offlineFallbackPath(localeId) {
   const loc = String(localeId || "en").trim();
-  if (loc === "ar-001") return "/ar-001/offline";
-  if (loc && loc !== "en") return `/${loc}/offline`;
-  return "/offline";
+  if (!loc || loc === "en") return "/offline";
+  const prefix = LOCALE_PUBLIC_PATH_PREFIX[loc] || loc;
+  return `/${prefix}/offline`;
+}
+
+/**
+ * Arabic UI locales use RTL inline offline chrome.
+ * Use locale-id prefix `ar` / `ar-*` only — never path segment `/ar` (es-AR Argentina).
+ * @param {string} localeId
+ */
+function isArabicOfflineUiLocale(localeId) {
+  const loc = String(localeId || "").trim();
+  return loc === "ar-001" || /^ar(-|$)/i.test(loc);
 }
 
 /** @param {string} localeId */
 function offlineInlineFallbackHtml(localeId) {
   const loc = String(localeId || "en").trim();
-  if (loc === "ar-001" || loc.startsWith("ar")) {
-    return '<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>غير متصل — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}a{color:#10b981}</style></head><body><h1>أنت غير متصل</h1><p>يرجى الاتصال بالإنترنت للمتابعة.</p><p><a href="/ar-001/offline">فتح صفحة عدم الاتصال</a></p><button onclick="location.reload()">حاول مرة أخرى</button></body></html>';
+  const offlinePath = offlineFallbackPath(loc);
+  if (isArabicOfflineUiLocale(loc)) {
+    return (
+      '<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>غير متصل — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}a{color:#10b981}</style></head><body><h1>أنت غير متصل</h1><p>يرجى الاتصال بالإنترنت للمتابعة.</p><p><a href="' +
+      offlinePath +
+      '">فتح صفحة عدم الاتصال</a></p><button onclick="location.reload()">حاول مرة أخرى</button></body></html>'
+    );
   }
   return '<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offline — Leo Kids</title><style>body{font-family:system-ui;text-align:center;padding:50px;background:#0a0f1d;color:#fff;margin:0}h1{font-size:2rem;margin-bottom:1rem}p{font-size:1.1rem;margin-bottom:2rem;color:#aaa}button{padding:12px 24px;margin-top:20px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:1rem}</style></head><body><h1>You are offline</h1><p>Please connect to the internet to continue.</p><button onclick="location.reload()">Try again</button></body></html>';
 }

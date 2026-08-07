@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "above_registered_grade": "فوق السنة المسجّلة",
+    "below_registered_grade": "دون السنة المسجّلة",
+    "at_registered_grade_level": "في مستوى السنة المسجّلة",
+    "outside_the_registered_grade_band": "خارج نطاق السنة المسجّلة",
+    "topic_grade_title": "{topic} - السنة {grade}"
+  }
+}

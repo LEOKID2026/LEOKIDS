@@ -328,6 +328,38 @@ function isArabicMasterInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isArabicEgyptInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "ar-eg";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isArabicSaudiInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "ar-sa";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isArabicMoroccoInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "ar-ma";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
+function isArabicAlgeriaInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "ar-dz";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isRussianKazakhstanInstructionLocale(locale) {
   return normalizeLocaleTag(locale) === "ru-kz";
 }
@@ -394,7 +426,11 @@ function isLocalizedMeaningLocale(locale) {
     isRussianUzbekistanInstructionLocale(locale) ||
     isRussianKyrgyzstanInstructionLocale(locale) ||
     isRussianBelarusInstructionLocale(locale) ||
-    isArabicMasterInstructionLocale(locale)
+    isArabicMasterInstructionLocale(locale) ||
+    isArabicEgyptInstructionLocale(locale) ||
+    isArabicSaudiInstructionLocale(locale) ||
+    isArabicMoroccoInstructionLocale(locale) ||
+    isArabicAlgeriaInstructionLocale(locale)
   );
 }
 
@@ -441,6 +477,10 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "ru-kg") chainLocale = "ru-KG";
   else if (tag === "ru-by") chainLocale = "ru-BY";
   else if (tag === "ru-ru") chainLocale = "ru-RU";
+  else if (tag === "ar-eg") chainLocale = "ar-EG";
+  else if (tag === "ar-sa") chainLocale = "ar-SA";
+  else if (tag === "ar-ma") chainLocale = "ar-MA";
+  else if (tag === "ar-dz") chainLocale = "ar-DZ";
   else if (tag === "ar-001" || tag === "ar001") chainLocale = "ar-001";
   else if (tag === "es-us") chainLocale = "es-US";
   else if (tag === "es-gq") chainLocale = "es-GQ";

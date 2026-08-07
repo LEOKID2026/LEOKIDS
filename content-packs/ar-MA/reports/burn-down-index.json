@@ -1,0 +1,62 @@
+{
+  "components__parent-report-detailed-surface": {
+    "grade": "السنة"
+  },
+  "utils__parent-report-surface__parent-topic-tier": {
+    "above_grade_level": "فوق مستوى السنة",
+    "practice_above_grade_level": "ممارسة فوق مستوى السنة"
+  },
+  "utils__parent-report-out-of-grade-transparency": {
+    "practice_outside_registered_grade": "ممارسة خارج السنة المسجّلة"
+  },
+  "utils__parent-report-output-integrity__row-display-label-context": {
+    "above_registered_grade": "فوق السنة المسجّلة",
+    "below_registered_grade": "دون السنة المسجّلة",
+    "at_registered_grade_level": "في مستوى السنة المسجّلة",
+    "outside_the_registered_grade_band": "خارج نطاق السنة المسجّلة",
+    "topic_grade_title": "{topic} - السنة {grade}"
+  },
+  "lib__parent-ui__parent-report-approved-copy": {
+    "grade_word_n": "السنة {grade}"
+  },
+  "utils__parent-report-language__parent-report-display-labels": {
+    "class_activity": "نشاط القسم",
+    "activity_subject_grade": "{base} - {subject} السنة {grade}"
+  },
+  "pages__learning__parent-report": {
+    "grade": "السنة"
+  },
+  "utils__parent-report-language__grade-aware-recommendation-templates": {
+    "do_not_provide_formal_factors_multiples_recommendations_for_grades_1_2": "لا تقدم توصيات رسمية بشأن العوامل/المضاعفات للسنوات 1-2.",
+    "do_not_provide_powers_exponents_recommendations_for_grades_1_2": "لا تقدم توصيات القوى/الأسس للسنوات 1-2.",
+    "do_not_provide_division_with_remainder_recommendations_for_grades_1_2": "لا تقدم توصيات القسمة مع الباقي للسنوات 1-2.",
+    "do_not_provide_ratio_recommendations_for_grades_1_2": "لا تقدم توصيات النسبة للسنوات 1-2.",
+    "do_not_provide_order_of_operations_recommendations_for_grades_1_2": "لا تقدم توصيات بشأن ترتيب العمليات للسنوات 1-2.",
+    "keep_scale_magnitude_recommendations_null_for_grades_1_2_until_early_num": "احتفظ بتوصيات المقياس/الحجم فارغة للسنوات من 1 إلى 2 حتى تتم الموافقة على نسخة الرقم المبكر.",
+    "keep_prime_composite_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات الأولية/المركبة فارغة للسنوات 1-2.",
+    "keep_zero_one_properties_recommendations_null_for_grades_1_2": "احتفظ بتوصيات الخصائص صفر/واحد فارغة للسنوات من 1 إلى 2.",
+    "keep_formal_volume_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المجلد الرسمية فارغة للسنوات 1-2.",
+    "keep_formal_perimeter_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المحيط الرسمية فارغة للسنوات 1-2.",
+    "keep_formal_parallel_perpendicular_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات الرسمية المتوازية/المتعامدة فارغة للسنوات من 1 إلى 2.",
+    "keep_diagonal_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات القطرية فارغة للسنوات 1-2.",
+    "keep_formal_height_recommendations_null_for_grades_1_2": "احتفظ بتوصيات الارتفاع الرسمية فارغة للسنوات من 1 إلى 2.",
+    "keep_formal_area_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المجال الرسمي فارغة للسنوات 1-2.",
+    "keep_formula_based_area_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المناطق المستندة إلى الصيغة فارغة للسنوات من 1 إلى 2.",
+    "keep_pythagoras_recommendations_null_for_grades_1_2": "أبقِ توصيات فيثاغورس فارغة للسنوات 1-2.",
+    "keep_pythagoras_recommendations_null_for_grades_3_4": "أبقِ توصيات فيثاغورس فارغة للسنوات من 3 إلى 4.",
+    "keep_formal_english_grammar_recommendations_null_for_grades_1_2": "احتفظ بتوصيات قواعد اللغة الإنجليزية الرسمية فارغة للسنوات 1-2.",
+    "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات النحوية لبنية الجملة فارغة للسنوات من 1 إلى 2.",
+    "this_week_focus_on_grade_3_4_english_sentence_structure_basic_word_order": "ركز هذا الأسبوع على بنية الجملة الإنجليزية للسنة 3-4: ترتيب الكلمات الأساسي، والموضوع/الإجراء، وإكمال المعنى.",
+    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المفردات في السياق فارغة للسنوات 1-2.",
+    "grade_3_4_unit_conversion_with_reference_table_and_unit_choice_justifica": "تحويل الوحدات من السنة 3 إلى 4 مع جدول مرجعي ومبرر اختيار الوحدة.",
+    "grade_5_6_multi_step_unit_conversion_with_reasonableness_checks": "تحويل الوحدة متعدد الخطوات من السنة 5 إلى 6 مع التحقق من المعقولية.",
+    "grade_3_4_graph_reading_axes_point_location_value_extraction": "قراءة الرسم البياني للسنة 3-4: المحاور، موقع النقطة، استخراج القيمة.",
+    "grade_5_6_graph_comparison_and_axis_based_reasoning": "مقارنة الرسوم البيانية للسنوات 5-6 والتفكير القائم على المحور.",
+    "grade_3_4_experiment_data_table_graph_reading": "قراءة جدول بيانات/رسم بياني للسنة 3-4.",
+    "grade_5_6_experiment_graph_analysis_and_variable_result_link": "تحليل الرسم البياني للتجربة للسنة 5-6 ورابط النتيجة المتغيرة.",
+    "grade_3_4_evidence_source_grounding_for_animal_science_claims": "أدلة السنة 3-4/أساس المصدر لادعاءات علوم الحيوان.",
+    "grade_5_6_claim_evidence_distinction_in_science_texts": "السنة 5-6 يدعي التمييز في النصوص العلمية.",
+    "grade_3_4_experiment_evidence_sourcing_from_observation_logs": "مصدر أدلة التجربة للسنة 3-4 من المراقبة/السجلات.",
+    "grade_5_6_data_backed_conclusions_vs_speculation": "الاستنتاجات المدعومة بالبيانات من السنة الخامسة إلى السادسة مقابل التكهنات."
+  }
+}

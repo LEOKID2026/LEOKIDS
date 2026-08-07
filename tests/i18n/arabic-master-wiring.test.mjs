@@ -44,8 +44,8 @@ test("ar-001 registry contract", () => {
   assert.equal(def.ogLocale, "ar_SA");
 });
 
-test("selector count is 76 with ar-001 visible once", () => {
-  assert.equal(getSelectableLocales().length, 76);
+test("selector count is 80 with ar-001 visible once", () => {
+  assert.equal(getSelectableLocales().length, 80);
   const arabicLabels = getSelectableLocales().filter((l) => l.label === "العربية");
   assert.equal(arabicLabels.length, 1);
 });
@@ -101,14 +101,14 @@ test("learning burn-down pack resolves", () => {
   assert.ok(pack && typeof pack === "object");
 });
 
-test("locale picker includes ar-001 and selectable count stays 76", async () => {
+test("locale picker includes ar-001 and selectable count stays 80", async () => {
   const { getSelectableLocales, getLocalePickerLocales } = await import(
     "../../lib/i18n/locale-registry.js"
   );
-  assert.equal(getSelectableLocales().length, 76);
+  assert.equal(getSelectableLocales().length, 80);
   const picker = getLocalePickerLocales("ar-001");
   assert.ok(picker.some((l) => l.id === "ar-001"));
-  assert.ok(picker.length >= 76);
+  assert.ok(picker.length >= 80);
 });
 
 test("school communication binds Arabic locale", async () => {

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "class_activity": "نشاط القسم",
+    "activity_subject_grade": "{base} - {subject} السنة {grade}"
+  }
+}

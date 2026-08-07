@@ -1,0 +1,12 @@
+{
+  "roles": {
+    "teacher": "الأستاذ"
+  },
+  "auditActions": {
+    "school_class_viewed": "تم عرض تقرير القسم",
+    "school_class_teacher_reassigned": "تم إعادة تعيين أستاذ القسم",
+    "school_class_archived": "تمت أرشفة القسم",
+    "assign_teacher": "تم تعيين الأستاذ",
+    "viewed_class_report": "تم عرض تقرير القسم"
+  }
+}

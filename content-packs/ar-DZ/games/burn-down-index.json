@@ -1,0 +1,15 @@
+{
+  "components__educational-games__leo-lab__leo-lab-data": {
+    "grades_1_2": "السنة 1–2 ابتدائي"
+  },
+  "components__educational-games__leo-word-detective__leo-word-detective-data": {
+    "grades_1_2": "السنة 1–2 ابتدائي",
+    "grades_3_4": "السنة 3–4 ابتدائي",
+    "grades_5_6": "السنة 5 ابتدائي–1 متوسط"
+  },
+  "components__educational-games__leo-word-train__leo-word-train-data": {
+    "grades_1_2": "السنة 1–2 ابتدائي",
+    "grades_3_4": "السنة 3–4 ابتدائي",
+    "grades_5_6": "السنة 5 ابتدائي–1 متوسط"
+  }
+}

@@ -3,6 +3,7 @@
  * Bank rows freeze burnDownCopy() at module load (usually English); re-map at render time.
  */
 import { getActiveLearningBurnDownLocale } from "../../lib/learning/burn-down-copy.js";
+import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { resolveRegisteredContentPack } from "../../lib/content/resolve-registered-pack.js";
 
 /** Hardcoded English stems in geometry-conceptual-bank.js (not via burnDownCopy). */
@@ -175,7 +176,8 @@ function buildEnToArMap() {
 }
 
 export function isAr001GeometryContentLocale() {
-  return String(getActiveLearningBurnDownLocale() || "") === "ar-001";
+  const loc = String(getActiveLearningBurnDownLocale() || "");
+  return getLocaleFallbackChain(loc).includes("ar-001");
 }
 
 /**

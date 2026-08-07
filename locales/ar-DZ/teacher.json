@@ -1,0 +1,36 @@
+{
+  "supportSuggestions": {
+    "targetedReview": "يوصى بتعزيز {subject} في القسم"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "يحتاج القسم إلى اهتمام فوري",
+    "class_needs_reinforcement": "يحتاج القسم إلى تعزيز",
+    "class_monitor": "يحتاج القسم إلى مراقبة وممارسة مركزة",
+    "class_on_track": "القسم يسير على الطريق الصحيح"
+  },
+  "classHealth": {
+    "critical_class": "يحتاج القسم إلى اهتمام فوري",
+    "needs_reinforcement": "يحتاج القسم إلى تعزيز",
+    "monitor": "يحتاج القسم إلى مراقبة وممارسة مركزة",
+    "strong": "القسم يسير على الطريق الصحيح"
+  },
+  "actionTypes": {
+    "class_reteach": "إعادة تدريس القسم بأكمله"
+  },
+  "focus": {
+    "classFallbackBanner": "يظهر القسم صعوبة في هذه المادة - يوصى بتعزيز تحليلي للقسم"
+  },
+  "fallback": {
+    "classSubjectHeadline": "{subject} - صعوبة المادة على مستوى القسم",
+    "classSubjectHeadlineNoSubject": "صعوبة المادة على مستوى القسم",
+    "classSubjectAction": "يوصى ببدء نشاط تقييمي قصير أو مراجعة مركزة للقسم بأكمله",
+    "classSuffix": "القسم {label}"
+  },
+  "dashboard": {
+    "noClassesTitle": "لا توجد أقسام نشطة",
+    "noClassesHint": "أنشئ قسمًا جديدًا أدناه، ثم أضف الأطفال عبر \"إدارة القسم\" في بطاقة القسم.",
+    "createClassLabel": "اسم القسم",
+    "createClassButton": "إنشاء قسم",
+    "createClassPlaceholder": "مثلًا: السنة 3 ابتدائي — أ"
+  }
+}

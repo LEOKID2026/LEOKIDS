@@ -1,0 +1,40 @@
+{
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "السنة الأولى",
+    "grade_2": "السنة الثانية",
+    "grade_3": "السنة الثالثة",
+    "grade_4": "السنة الرابعة",
+    "grade_5": "السنة الخامسة",
+    "grade_6": "السنة السادسة"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "السنة الأولى",
+    "grade_2": "السنة الثانية",
+    "grade_3": "السنة الثالثة",
+    "grade_4": "السنة الرابعة",
+    "grade_5": "السنة الخامسة",
+    "grade_6": "السنة السادسة"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "السنة الأولى",
+    "grade_2": "السنة الثانية",
+    "grade_3": "السنة الثالثة",
+    "grade_4": "السنة الرابعة",
+    "grade_5": "السنة الخامسة",
+    "grade_6": "السنة السادسة",
+    "grade_n": "السنة {n}"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "اختر مادةً والسنة وموضوعًا ومستوى - ثم قم بإنشاء ورقة عمل جاهزة للطباعة.",
+    "ready_made_worksheets_by_grade": "أوراق عمل جاهزة حسب السنة"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "ممارسة رقمية بالعربية لمتعلّمي التعليم الابتدائي بالمغرب — الرياضيات والهندسة والإنجليزية والعلوم.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — النسخة العربية لمتعلّمي التعليم الابتدائي بالمغرب.",
+    "math_practice_by_grade_and_topic_leo_kids": "ممارسة الرياضيات حسب السنة والموضوع · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "ممارسة الإنجليزية حسب السنة والموضوع · Leo Kids",
+    "geometry_practice_by_grade_and_topic_leo_kids": "ممارسة الهندسة حسب السنة والموضوع · Leo Kids",
+    "school_portal_manage_classes_teachers_students_messaging_progress": "أدِر الأقسام والمعلّمين والتلاميذ — مع رسائل مدرسية ومتابعة تقدّم في Leo Kids.",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "أوراق عمل جاهزة، ومولّد أوراق عمل، ومفاتيح إجابات لممارسة التعليم الابتدائي بالمغرب."
+  }
+}
