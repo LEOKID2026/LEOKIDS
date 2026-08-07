@@ -54,6 +54,15 @@
     "matching": "Pareo",
     "inference": "Inferencia",
     "sentence_understanding": "Comprensión de oraciones",
-    "simple_sentences": "Oraciones simples"
+    "simple_sentences": "Oraciones simples",
+    "ratio": "Razón",
+    "scale": "Escala",
+    "area": "Área",
+    "subject_math": "Matemáticas",
+    "subject_geometry": "Geometría",
+    "subject_english": "Inglés",
+    "subject_science": "Ciencias",
+    "worksheet_title_prefix": "Hoja de práctica — {subject} · {topic}",
+    "grade_n": "Grado {n}"
   }
 }

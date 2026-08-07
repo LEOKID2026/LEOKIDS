@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { getHomeBtnClasses, getHomeTextClasses } from "../home/home-theme";
 import HomeCtaLink from "../home/HomeCtaLink";
-import { useT } from "../../lib/i18n/I18nProvider.jsx";
+import LocaleLink from "../i18n/LocaleLink.jsx";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const QUICK_LINK_KEYS = [
   { labelKey: "ui.public.homepage.seoEntry.quickLinks.math", href: "/practice/math" },
@@ -22,6 +22,7 @@ const QUICK_LINK_KEYS = [
  */
 export default function PublicSeoEntrySection({ isBright }) {
   const t = useT();
+  const { localizeHref } = useI18n();
   const cls = getHomeTextClasses(isBright);
 
   return (
@@ -36,14 +37,14 @@ export default function PublicSeoEntrySection({ isBright }) {
 
       <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
         <HomeCtaLink
-          href="/practice"
+          href={localizeHref("/practice")}
           label={t("ui.public.homepage.seoEntry.practiceAreasCta")}
           className={getHomeBtnClasses("parents", isBright, "primary")}
           size="md"
           testId="public-seo-entry-practice"
         />
         <HomeCtaLink
-          href="/guides"
+          href={localizeHref("/guides")}
           label={t("ui.public.homepage.seoEntry.parentGuidesCta")}
           className={getHomeBtnClasses("parents", isBright, "secondary")}
           size="md"
@@ -54,7 +55,7 @@ export default function PublicSeoEntrySection({ isBright }) {
       <ul className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm">
         {QUICK_LINK_KEYS.map((link) => (
           <li key={link.href}>
-            <Link
+            <LocaleLink
               href={link.href}
               className={
                 isBright
@@ -63,7 +64,7 @@ export default function PublicSeoEntrySection({ isBright }) {
               }
             >
               {t(link.labelKey)}
-            </Link>
+            </LocaleLink>
           </li>
         ))}
       </ul>

@@ -375,7 +375,23 @@
         "bullet1": "Envoyer des activités personnelles",
         "bullet2": "Suivre l’achèvement et les progrès",
         "cta": "Connexion / inscription des enseignants"
-      }
+      },
+      "seoEntry": {
+        "title": "Domaines de pratique et guides parents",
+        "body": "Vous voulez explorer les domaines de pratique Leo Kids ? Parcourez les pages de pratique et les guides, lisez un court aperçu, puis connectez-vous ou inscrivez-vous dans l’espace parents.",
+        "practiceAreasCta": "Domaines de pratique",
+        "parentGuidesCta": "Guides parents",
+        "quickLinks": {
+          "math": "Maths",
+          "geometry": "Géométrie",
+          "english": "Anglais",
+          "science": "Sciences",
+          "digitalPractice": "Pratique numérique",
+          "parentReports": "Rapports parents",
+          "homePracticeRoutine": "Routine de pratique à la maison"
+        }
+      },
+      "valueCardsAria": "Valeurs du produit"
     },
     "about": {
       "imageAlt": "Lion – environnement d'apprentissage intelligent pour les enfants",
@@ -445,6 +461,22 @@
       "questions": "Questions :",
       "additionalDocuments": "Documents supplémentaires",
       "legalNavAria": "Liens vers les documents juridiques"
+    },
+    "seoNav": {
+      "pageNavigationAria": "Navigation de la page",
+      "backToPractice": "Retour aux domaines de pratique",
+      "backToGuides": "Retour aux guides",
+      "home": "Accueil",
+      "relatedGuides": "Guides associés",
+      "moreGuides": "Plus de guides",
+      "fromGuideToPracticeTitle": "Du guide à la pratique",
+      "fromGuideToPracticeBody": "Après avoir choisi une approche, allez dans le domaine de pratique correspondant et choisissez un niveau et un sujet. Vous pouvez revenir au guide à tout moment pour ajuster la suite.",
+      "fromGuidesToPracticeTitle": "Des guides à la pratique",
+      "fromGuidesToPracticeBody": "Les pages de pratique rassemblent matières, sujets et activités disponibles pour choisir la prochaine étape selon l’objectif.",
+      "chooseGuideByGoal": "Choisir un guide selon l’objectif",
+      "allPracticeAreas": "Tous les domaines de pratique",
+      "morePracticeAreas": "Plus de domaines de pratique",
+      "faqTitle": "Questions fréquentes"
     }
   },
   "gallery": {

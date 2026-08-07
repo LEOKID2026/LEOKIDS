@@ -375,7 +375,23 @@
         "bullet1": "Persönliche Aktivitäten senden",
         "bullet2": "Abschluss und Fortschritt verfolgen",
         "cta": "Anmeldung / Registrierung für Lehrkräfte"
-      }
+      },
+      "seoEntry": {
+        "title": "Übungsbereiche und Elternleitfäden",
+        "body": "Möchten Sie die Übungsbereiche von Leo Kids entdecken? Durchstöbern Sie Übungsseiten und Leitfäden, lesen Sie eine kurze Übersicht und melden Sie sich dann im Elternbereich an oder registrieren Sie sich.",
+        "practiceAreasCta": "Übungsbereiche",
+        "parentGuidesCta": "Elternleitfäden",
+        "quickLinks": {
+          "math": "Mathematik",
+          "geometry": "Geometrie",
+          "english": "Englisch",
+          "science": "Naturwissenschaften",
+          "digitalPractice": "Digitale Übung",
+          "parentReports": "Elternberichte",
+          "homePracticeRoutine": "Übungsroutine zu Hause"
+        }
+      },
+      "valueCardsAria": "Produktwerte"
     },
     "about": {
       "imageAlt": "Leo — intelligente Lernumgebung für Kinder",
@@ -445,6 +461,22 @@
       "questions": "Fragen:",
       "additionalDocuments": "Weitere Dokumente",
       "legalNavAria": "Links zu rechtlichen Dokumenten"
+    },
+    "seoNav": {
+      "pageNavigationAria": "Seitennavigation",
+      "backToPractice": "Zurück zu den Übungsbereichen",
+      "backToGuides": "Zurück zu den Leitfäden",
+      "home": "Startseite",
+      "relatedGuides": "Verwandte Leitfäden",
+      "moreGuides": "Weitere Leitfäden",
+      "fromGuideToPracticeTitle": "Vom Leitfaden zur Übung",
+      "fromGuideToPracticeBody": "Nachdem Sie einen Ansatz gewählt haben, gehen Sie zum passenden Übungsbereich und wählen Klasse und Thema. Sie können jederzeit zum Leitfaden zurückkehren, um den nächsten Schritt anzupassen.",
+      "fromGuidesToPracticeTitle": "Von Leitfäden zur Übung",
+      "fromGuidesToPracticeBody": "Übungsseiten bündeln Fächer, Themen und verfügbare Aktivitäten, damit Sie den nächsten Schritt nach Ziel wählen können.",
+      "chooseGuideByGoal": "Leitfaden nach Ziel wählen",
+      "allPracticeAreas": "Alle Übungsbereiche",
+      "morePracticeAreas": "Weitere Übungsbereiche",
+      "faqTitle": "Häufig gestellte Fragen"
     }
   },
   "gallery": {

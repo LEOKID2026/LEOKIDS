@@ -11,6 +11,11 @@
     "percentages": "Porcentajes",
     "ratio_and_scale": "Relación y escala",
     "word_problems": "Problemas verbales",
-    "mixed_practice": "Práctica mixta"
+    "mixed_practice": "Práctica mixta",
+    "horizontal_addition": "Suma horizontal",
+    "vertical_addition": "Suma vertical",
+    "horizontal_subtraction": "Resta horizontal",
+    "vertical_subtraction": "Resta vertical",
+    "unit_fractions_halves_quarters": "Fracciones unitarias — mitades y cuartos"
   }
 }

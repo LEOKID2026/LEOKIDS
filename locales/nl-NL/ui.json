@@ -375,7 +375,23 @@
         "bullet1": "Stuur persoonlijke activiteiten",
         "bullet2": "Track completion en progress",
         "cta": "Inloggen of registreren als leerkracht"
-      }
+      },
+      "seoEntry": {
+        "title": "Oefengebieden en oudergidsen",
+        "body": "Wil je de oefengebieden van Leo Kids verkennen? Blader door oefenpagina’s en gidsen, lees een korte samenvatting en log daarna in of registreer je in het oudergebied.",
+        "practiceAreasCta": "Oefengebieden",
+        "parentGuidesCta": "Oudergidsen",
+        "quickLinks": {
+          "math": "Rekenen",
+          "geometry": "Meetkunde",
+          "english": "Engels",
+          "science": "Wetenschap",
+          "digitalPractice": "Digitale oefening",
+          "parentReports": "Ouderrapporten",
+          "homePracticeRoutine": "Thuisoefenroutine"
+        }
+      },
+      "valueCardsAria": "Productwaarden"
     },
     "about": {
       "imageAlt": "Leo – slimme leeromgeving voor kinderen",
@@ -445,6 +461,22 @@
       "questions": "Vragen:",
       "additionalDocuments": "Aanvullende documenten",
       "legalNavAria": "Links naar juridische documenten"
+    },
+    "seoNav": {
+      "pageNavigationAria": "Paginanavigatie",
+      "backToPractice": "Terug naar oefengebieden",
+      "backToGuides": "Terug naar gidsen",
+      "home": "Home",
+      "relatedGuides": "Gerelateerde gidsen",
+      "moreGuides": "Meer gidsen",
+      "fromGuideToPracticeTitle": "Van gids naar oefenen",
+      "fromGuideToPracticeBody": "Na het kiezen van een aanpak ga je naar het passende oefengebied en kies je een leerjaar en onderwerp. Je kunt op elk moment terug naar de gids om de volgende stap aan te passen.",
+      "fromGuidesToPracticeTitle": "Van gidsen naar oefenen",
+      "fromGuidesToPracticeBody": "Oefenpagina’s bundelen vakken, onderwerpen en beschikbare activiteiten zodat je de volgende stap per doel kunt kiezen.",
+      "chooseGuideByGoal": "Kies een gids op doel",
+      "allPracticeAreas": "Alle oefengebieden",
+      "morePracticeAreas": "Meer oefengebieden",
+      "faqTitle": "Veelgestelde vragen"
     }
   },
   "gallery": {

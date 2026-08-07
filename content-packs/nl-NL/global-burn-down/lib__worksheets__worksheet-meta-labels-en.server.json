@@ -15,11 +15,11 @@
     "division_with_remainder": "Delen met remainder",
     "fractions": "Breuken",
     "decimals": "Decimale getallen",
-    "percentages": "Percentages",
+    "percentages": "Procenten",
     "sequences": "Rijen",
     "number_sense": "Getalbegrip",
     "comparison": "Vergelijking",
-    "order_of_operations": "Order van operations",
+    "order_of_operations": "Volgorde van bewerkingen",
     "divisibility_rules": "Deelbaarheidsregels",
     "word_problems": "Verhaalsommen",
     "rounding": "Afronden",
@@ -54,6 +54,15 @@
     "matching": "Passend",
     "inference": "Gevolgtrekking",
     "sentence_understanding": "Zin begrijpen",
-    "simple_sentences": "Simpele zinnen"
+    "simple_sentences": "Simpele zinnen",
+    "ratio": "Verhouding",
+    "scale": "Schaal",
+    "area": "Oppervlakte",
+    "subject_math": "Rekenen",
+    "subject_geometry": "Meetkunde",
+    "subject_english": "Engels",
+    "subject_science": "Wetenschap",
+    "worksheet_title_prefix": "Werkblad — {subject} · {topic}",
+    "grade_n": "Groep {n}"
   }
 }

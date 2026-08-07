@@ -1,0 +1,926 @@
+{
+  "generatedAt": "2026-08-07T00:02:39.925Z",
+  "catalog": {
+    "es-MX": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "es-CL": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "es-419": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "fr-FR": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "ar-001": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "de-DE": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "it-IT": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "nl-NL": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "pt-BR": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "pt-PT": {
+      "itemCount": 30,
+      "enHits": []
+    },
+    "ru-RU": {
+      "itemCount": 30,
+      "enHits": []
+    }
+  },
+  "seo": {
+    "es-MX": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Áreas de práctica y guías para padres",
+        "ui.public.homepage.seoEntry.body": "¿Quieres explorar las áreas de práctica de Leo Kids? Navega por páginas de práctica y guías, lee una breve descripción y luego inicia sesión o regístrate en el área de padres.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Áreas de práctica",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guías para padres",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Matemáticas",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometría",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Informes para padres"
+      },
+      "enHits": []
+    },
+    "es-CL": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Áreas de práctica y guías para padres",
+        "ui.public.homepage.seoEntry.body": "¿Quieres explorar las áreas de práctica de Leo Kids? Navega por páginas de práctica y guías, lee una breve descripción y luego inicia sesión o regístrate en el área de padres.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Áreas de práctica",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guías para padres",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Matemáticas",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometría",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Informes para padres"
+      },
+      "enHits": []
+    },
+    "es-419": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Áreas de práctica y guías para padres",
+        "ui.public.homepage.seoEntry.body": "¿Quieres explorar las áreas de práctica de Leo Kids? Navega por páginas de práctica y guías, lee una breve descripción y luego inicia sesión o regístrate en el área de padres.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Áreas de práctica",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guías para padres",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Matemáticas",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometría",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Informes para padres"
+      },
+      "enHits": []
+    },
+    "fr-FR": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Domaines de pratique et guides parents",
+        "ui.public.homepage.seoEntry.body": "Vous voulez explorer les domaines de pratique Leo Kids ? Parcourez les pages de pratique et les guides, lisez un court aperçu, puis connectez-vous ou inscrivez-vous dans l’espace parents.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Domaines de pratique",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guides parents",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Maths",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Géométrie",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Rapports parents"
+      },
+      "enHits": []
+    },
+    "ar-001": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "مجالات الممارسة وأدلة أولياء الأمور",
+        "ui.public.homepage.seoEntry.body": "هل تريد استكشاف مجالات ممارسة Leo Kids؟ تصفّح صفحات الممارسة والأدلة، واقرأ نظرة عامة قصيرة، ثم سجّل الدخول أو أنشئ حساب ولي أمر.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "مجالات الممارسة",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "أدلة أولياء الأمور",
+        "ui.public.homepage.seoEntry.quickLinks.math": "الرياضيات",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "الهندسة",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "تقارير ولي الأمر"
+      },
+      "enHits": []
+    },
+    "de-DE": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Übungsbereiche und Elternleitfäden",
+        "ui.public.homepage.seoEntry.body": "Möchten Sie die Übungsbereiche von Leo Kids entdecken? Durchstöbern Sie Übungsseiten und Leitfäden, lesen Sie eine kurze Übersicht und melden Sie sich dann im Elternbereich an oder registrieren Sie sich.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Übungsbereiche",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Elternleitfäden",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Mathematik",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometrie",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Elternberichte"
+      },
+      "enHits": []
+    },
+    "it-IT": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Aree di pratica e guide per genitori",
+        "ui.public.homepage.seoEntry.body": "Vuoi esplorare le aree di pratica di Leo Kids? Sfoglia le pagine di pratica e le guide, leggi una breve panoramica, poi accedi o registrati nell’area genitori.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Aree di pratica",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guide per genitori",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Matematica",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometria",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Report per genitori"
+      },
+      "enHits": []
+    },
+    "nl-NL": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Oefengebieden en oudergidsen",
+        "ui.public.homepage.seoEntry.body": "Wil je de oefengebieden van Leo Kids verkennen? Blader door oefenpagina’s en gidsen, lees een korte samenvatting en log daarna in of registreer je in het oudergebied.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Oefengebieden",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Oudergidsen",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Rekenen",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Meetkunde",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Ouderrapporten"
+      },
+      "enHits": []
+    },
+    "pt-BR": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Áreas de prática e guias para pais",
+        "ui.public.homepage.seoEntry.body": "Quer explorar as áreas de prática do Leo Kids? Navegue pelas páginas de prática e guias, leia uma breve visão geral e depois entre ou cadastre-se na área dos pais.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Áreas de prática",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guias para pais",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Matemática",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometria",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Relatórios para pais"
+      },
+      "enHits": []
+    },
+    "pt-PT": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Áreas de prática e guias para pais",
+        "ui.public.homepage.seoEntry.body": "Quer explorar as áreas de prática do Leo Kids? Navegue pelas páginas de prática e guias, leia uma breve visão geral e depois inicie sessão ou registe-se na área dos pais.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Áreas de prática",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Guias para pais",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Matemática",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Geometria",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Relatórios para pais"
+      },
+      "enHits": []
+    },
+    "ru-RU": {
+      "values": {
+        "ui.public.homepage.seoEntry.title": "Области практики и руководства для родителей",
+        "ui.public.homepage.seoEntry.body": "Хотите изучить области практики Leo Kids? Просмотрите страницы практики и руководства, прочитайте краткий обзор, затем войдите или зарегистрируйтесь в разделе для родителей.",
+        "ui.public.homepage.seoEntry.practiceAreasCta": "Области практики",
+        "ui.public.homepage.seoEntry.parentGuidesCta": "Руководства для родителей",
+        "ui.public.homepage.seoEntry.quickLinks.math": "Математика",
+        "ui.public.homepage.seoEntry.quickLinks.geometry": "Геометрия",
+        "ui.public.homepage.seoEntry.quickLinks.parentReports": "Отчёты для родителей"
+      },
+      "enHits": []
+    }
+  },
+  "samples": {
+    "es-MX": [
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 1",
+        "topic": "Suma horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 1",
+        "topic": "Resta horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 1",
+        "topic": "Problemas verbales"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Suma horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Suma vertical"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Resta horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Multiplicación básica"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Fracciones unitarias — mitades y cuartos"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 3",
+        "topic": "División básica"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 3",
+        "topic": "División básica"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 3",
+        "topic": "Decimales"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Avanzado",
+        "grade": "Grado 3",
+        "topic": "Orden de las operaciones"
+      }
+    ],
+    "es-CL": [
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 1",
+        "topic": "Suma horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 1",
+        "topic": "Resta horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 1",
+        "topic": "Problemas verbales"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Suma horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Suma vertical"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Resta horizontal"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Multiplicación básica"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 2",
+        "topic": "Fracciones unitarias — mitades y cuartos"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 3",
+        "topic": "División básica"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 3",
+        "topic": "División básica"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Común",
+        "grade": "Grado 3",
+        "topic": "Decimales"
+      },
+      {
+        "subject": "Matemáticas",
+        "level": "Avanzado",
+        "grade": "Grado 3",
+        "topic": "Orden de las operaciones"
+      }
+    ],
+    "fr-FR": [
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CP",
+        "topic": "Addition horizontale"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CP",
+        "topic": "Soustraction horizontale"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CP",
+        "topic": "Problèmes"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE1",
+        "topic": "Addition horizontale"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE1",
+        "topic": "Addition verticale"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE1",
+        "topic": "Soustraction horizontale"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE1",
+        "topic": "Multiplication de base"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE1",
+        "topic": "Fractions unitaires — demis et quarts"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE2",
+        "topic": "Division de base"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE2",
+        "topic": "Division de base"
+      },
+      {
+        "subject": "Maths",
+        "level": "Commune",
+        "grade": "CE2",
+        "topic": "Nombres décimaux"
+      },
+      {
+        "subject": "Maths",
+        "level": "Avancé",
+        "grade": "CE2",
+        "topic": "Ordre des opérations"
+      }
+    ],
+    "ar-001": [
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 1",
+        "topic": "جمع أفقي"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 1",
+        "topic": "طرح أفقي"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 1",
+        "topic": "مسائل كلامية"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 2",
+        "topic": "جمع أفقي"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 2",
+        "topic": "جمع عمودي"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 2",
+        "topic": "طرح أفقي"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 2",
+        "topic": "الضرب الأساسي"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 2",
+        "topic": "كسور الوحدة — أنصاف وأرباع"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 3",
+        "topic": "القسمة الأساسية"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 3",
+        "topic": "القسمة الأساسية"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "عادية",
+        "grade": "الصف 3",
+        "topic": "الأعداد العشرية"
+      },
+      {
+        "subject": "الرياضيات",
+        "level": "متقدم",
+        "grade": "الصف 3",
+        "topic": "ترتيب العمليات"
+      }
+    ],
+    "de-DE": [
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "1. Klasse",
+        "topic": "Horizontale Addition"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "1. Klasse",
+        "topic": "Horizontale Subtraktion"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "1. Klasse",
+        "topic": "Textaufgaben"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "2. Klasse",
+        "topic": "Horizontale Addition"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "2. Klasse",
+        "topic": "Vertikale Addition"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "2. Klasse",
+        "topic": "Horizontale Subtraktion"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "2. Klasse",
+        "topic": "Grundlagen der Multiplikation"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "2. Klasse",
+        "topic": "Stammbrüche — Halbe und Viertel"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "3. Klasse",
+        "topic": "Grundlagen der Division"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "3. Klasse",
+        "topic": "Grundlagen der Division"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Standard",
+        "grade": "3. Klasse",
+        "topic": "Dezimalzahlen"
+      },
+      {
+        "subject": "Mathematik",
+        "level": "Fortgeschritten",
+        "grade": "3. Klasse",
+        "topic": "Rechenreihenfolge"
+      }
+    ],
+    "it-IT": [
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "1ª primaria",
+        "topic": "Addizione orizzontale"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "1ª primaria",
+        "topic": "Sottrazione orizzontale"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "1ª primaria",
+        "topic": "Problemi di parole"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "2ª primaria",
+        "topic": "Addizione orizzontale"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "2ª primaria",
+        "topic": "Addizione verticale"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "2ª primaria",
+        "topic": "Sottrazione orizzontale"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "2ª primaria",
+        "topic": "Moltiplicazione di base"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "2ª primaria",
+        "topic": "Frazioni unitarie — metà e quarti"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "3ª primaria",
+        "topic": "Divisione di base"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "3ª primaria",
+        "topic": "Divisione di base"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Comune",
+        "grade": "3ª primaria",
+        "topic": "Decimali"
+      },
+      {
+        "subject": "Matematica",
+        "level": "Avanzato",
+        "grade": "3ª primaria",
+        "topic": "Ordine delle operazioni"
+      }
+    ],
+    "nl-NL": [
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 3",
+        "topic": "Horizontaal optellen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 3",
+        "topic": "Horizontaal aftrekken"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 3",
+        "topic": "Verhaalsommen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 4",
+        "topic": "Horizontaal optellen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 4",
+        "topic": "Verticaal optellen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 4",
+        "topic": "Horizontaal aftrekken"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 4",
+        "topic": "Basis vermenigvuldigen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 4",
+        "topic": "Eenheidsbreuken — helften en kwarten"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 5",
+        "topic": "Basis delen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 5",
+        "topic": "Basis delen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Gewoon",
+        "grade": "Groep 5",
+        "topic": "Decimale getallen"
+      },
+      {
+        "subject": "Rekenen",
+        "level": "Geavanceerd",
+        "grade": "Groep 5",
+        "topic": "Volgorde van bewerkingen"
+      }
+    ],
+    "pt-BR": [
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "1º ano",
+        "topic": "Adição horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "1º ano",
+        "topic": "Subtração horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "1º ano",
+        "topic": "Problemas de palavras"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2º ano",
+        "topic": "Adição horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2º ano",
+        "topic": "Adição vertical"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2º ano",
+        "topic": "Subtração horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2º ano",
+        "topic": "Multiplicação básica"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2º ano",
+        "topic": "Frações unitárias — metades e quartos"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "3º ano",
+        "topic": "Divisão básica"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "3º ano",
+        "topic": "Divisão básica"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "3º ano",
+        "topic": "Decimais"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Avançado",
+        "grade": "3º ano",
+        "topic": "Ordem das operações"
+      }
+    ],
+    "pt-PT": [
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "1.º ano",
+        "topic": "Adição horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "1.º ano",
+        "topic": "Subtração horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "1.º ano",
+        "topic": "Problemas de palavras"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2.º ano",
+        "topic": "Adição horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2.º ano",
+        "topic": "Adição vertical"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2.º ano",
+        "topic": "Subtração horizontal"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2.º ano",
+        "topic": "Multiplicação básica"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "2.º ano",
+        "topic": "Frações unitárias — metades e quartos"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "3.º ano",
+        "topic": "Divisão básica"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "3.º ano",
+        "topic": "Divisão básica"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Comum",
+        "grade": "3.º ano",
+        "topic": "Decimais"
+      },
+      {
+        "subject": "Matemática",
+        "level": "Avançado",
+        "grade": "3.º ano",
+        "topic": "Ordem das operações"
+      }
+    ],
+    "ru-RU": [
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "1 класс",
+        "topic": "Горизонтальное сложение"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "1 класс",
+        "topic": "Горизонтальное вычитание"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "1 класс",
+        "topic": "Текстовые задачи"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "2 класс",
+        "topic": "Горизонтальное сложение"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "2 класс",
+        "topic": "Вертикальное сложение"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "2 класс",
+        "topic": "Горизонтальное вычитание"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "2 класс",
+        "topic": "Базовое умножение"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "2 класс",
+        "topic": "Единичные дроби — половины и четверти"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "3 класс",
+        "topic": "Базовое деление"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "3 класс",
+        "topic": "Базовое деление"
+      },
+      {
+        "subject": "Математика",
+        "level": "Обычный",
+        "grade": "3 класс",
+        "topic": "Десятичные числа"
+      },
+      {
+        "subject": "Математика",
+        "level": "Продвинутый",
+        "grade": "3 класс",
+        "topic": "Порядок действий"
+      }
+    ]
+  },
+  "pass": true
+}

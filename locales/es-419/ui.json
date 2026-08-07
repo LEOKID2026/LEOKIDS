@@ -375,7 +375,23 @@
         "bullet1": "Enviar actividades personales",
         "bullet2": "Seguir la finalización y el progreso",
         "cta": "Inicio de sesión / registro de docente"
-      }
+      },
+      "seoEntry": {
+        "title": "Áreas de práctica y guías para padres",
+        "body": "¿Quieres explorar las áreas de práctica de Leo Kids? Navega por páginas de práctica y guías, lee una breve descripción y luego inicia sesión o regístrate en el área de padres.",
+        "practiceAreasCta": "Áreas de práctica",
+        "parentGuidesCta": "Guías para padres",
+        "quickLinks": {
+          "math": "Matemáticas",
+          "geometry": "Geometría",
+          "english": "Inglés",
+          "science": "Ciencias",
+          "digitalPractice": "Práctica digital",
+          "parentReports": "Informes para padres",
+          "homePracticeRoutine": "Rutina de práctica en casa"
+        }
+      },
+      "valueCardsAria": "Valores del producto"
     },
     "about": {
       "imageAlt": "Leo — entorno de aprendizaje inteligente para niños",
@@ -445,6 +461,22 @@
       "questions": "Preguntas:",
       "additionalDocuments": "Documentos adicionales",
       "legalNavAria": "Enlaces a documentos legales"
+    },
+    "seoNav": {
+      "pageNavigationAria": "Navegación de la página",
+      "backToPractice": "Volver a las áreas de práctica",
+      "backToGuides": "Volver a las guías",
+      "home": "Inicio",
+      "relatedGuides": "Guías relacionadas",
+      "moreGuides": "Más guías",
+      "fromGuideToPracticeTitle": "De la guía a la práctica",
+      "fromGuideToPracticeBody": "Después de elegir un enfoque, ve al área de práctica correspondiente y elige un grado y un tema. Puedes volver a la guía en cualquier momento para ajustar el siguiente paso.",
+      "fromGuidesToPracticeTitle": "De las guías a la práctica",
+      "fromGuidesToPracticeBody": "Las páginas de práctica reúnen materias, temas y actividades disponibles para que elijas el siguiente paso según tu objetivo.",
+      "chooseGuideByGoal": "Elige una guía según el objetivo",
+      "allPracticeAreas": "Todas las áreas de práctica",
+      "morePracticeAreas": "Más áreas de práctica",
+      "faqTitle": "Preguntas frecuentes"
     }
   },
   "gallery": {

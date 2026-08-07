@@ -11,6 +11,11 @@
     "percentages": "Pourcentages",
     "ratio_and_scale": "Ratio et échelle",
     "word_problems": "Problèmes",
-    "mixed_practice": "Pratique mixte"
+    "mixed_practice": "Pratique mixte",
+    "horizontal_addition": "Addition horizontale",
+    "vertical_addition": "Addition verticale",
+    "horizontal_subtraction": "Soustraction horizontale",
+    "vertical_subtraction": "Soustraction verticale",
+    "unit_fractions_halves_quarters": "Fractions unitaires — demis et quarts"
   }
 }

@@ -2,15 +2,20 @@
   "copy": {
     "horizontal_addition_and_subtraction": "Horizontal optellen en aftrekken",
     "vertical_addition_and_subtraction": "Vertical optellen en aftrekken",
-    "basic_multiplication": "Basic vermenigvuldigen",
-    "long_multiplication": "Long vermenigvuldigen",
-    "basic_division": "Basic delen",
-    "long_division": "Long delen",
+    "basic_multiplication": "Basis vermenigvuldigen",
+    "long_multiplication": "Staartvermenigvuldiging",
+    "basic_division": "Basis delen",
+    "long_division": "Staartdeling",
     "fractions": "Breuken",
     "decimals": "Decimale getallen",
-    "percentages": "Percentages",
+    "percentages": "Procenten",
     "ratio_and_scale": "Ratio en scale",
     "word_problems": "Verhaalsommen",
-    "mixed_practice": "Gemengd oefenen"
+    "mixed_practice": "Gemengd oefenen",
+    "horizontal_addition": "Horizontaal optellen",
+    "vertical_addition": "Verticaal optellen",
+    "horizontal_subtraction": "Horizontaal aftrekken",
+    "vertical_subtraction": "Verticaal aftrekken",
+    "unit_fractions_halves_quarters": "Eenheidsbreuken — helften en kwarten"
   }
 }

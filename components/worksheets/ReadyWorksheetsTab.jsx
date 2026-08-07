@@ -309,12 +309,12 @@ export default function ReadyWorksheetsTab({
                         </span>
                       ) : (
                         <span className="worksheet-subject-badge" data-subject={item.subjectId}>
-                          {item.subject}
+                          {worksheetSubjectLabel(t, String(item.subjectId || "")) || item.subject}
                         </span>
                       )}
-                      {!isWriting && item.level ? (
+                      {!isWriting && (item.levelKey || item.level) ? (
                         <span className="worksheet-level-pill" data-level={item.levelKey}>
-                          {item.level}
+                          {worksheetLevelLabel(t, String(item.levelKey || "")) || item.level}
                         </span>
                       ) : null}
                       {item.catalogNumber ? (
@@ -332,7 +332,9 @@ export default function ReadyWorksheetsTab({
                       </p>
                     ) : (
                       <>
-                        <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>{item.grade}</p>
+                        <p className={`worksheet-ready-card-meta ${T.cardMeta}`}>
+                          {worksheetGradeLabel(t, String(item.gradeKey || "")) || item.grade}
+                        </p>
                         <p className={`worksheet-ready-card-count ${T.muted}`}>
                           {item.count} {ui.questionCount}
                         </p>

@@ -54,6 +54,15 @@
     "matching": "Сопоставление",
     "inference": "Вывод",
     "sentence_understanding": "Понимание предложений",
-    "simple_sentences": "Простые предложения"
+    "simple_sentences": "Простые предложения",
+    "ratio": "Отношение",
+    "scale": "Масштаб",
+    "area": "Площадь",
+    "subject_math": "Математика",
+    "subject_geometry": "Геометрия",
+    "subject_english": "Английский",
+    "subject_science": "Естествознание",
+    "worksheet_title_prefix": "Лист — {subject} · {topic}",
+    "grade_n": "{n} класс"
   }
 }

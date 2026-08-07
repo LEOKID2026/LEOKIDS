@@ -54,6 +54,15 @@
     "matching": "Matching",
     "inference": "Inference",
     "sentence_understanding": "Sentence understanding",
-    "simple_sentences": "Simple sentences"
+    "simple_sentences": "Simple sentences",
+    "ratio": "Verhältnis",
+    "scale": "Maßstab",
+    "area": "Fläche",
+    "subject_math": "Mathematik",
+    "subject_geometry": "Geometrie",
+    "subject_english": "Englisch",
+    "subject_science": "Naturwissenschaften",
+    "worksheet_title_prefix": "Arbeitsblatt — {subject} · {topic}",
+    "grade_n": "{n}. Klasse"
   }
 }

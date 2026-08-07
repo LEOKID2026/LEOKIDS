@@ -575,7 +575,12 @@
     "percentages": "Porcentajes",
     "ratio_and_scale": "Relación y escala",
     "word_problems": "Problemas verbales",
-    "mixed_practice": "Práctica mixta"
+    "mixed_practice": "Práctica mixta",
+    "horizontal_addition": "Suma horizontal",
+    "vertical_addition": "Suma vertical",
+    "horizontal_subtraction": "Resta horizontal",
+    "vertical_subtraction": "Resta vertical",
+    "unit_fractions_halves_quarters": "Fracciones unitarias — mitades y cuartos"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "Grado 1",
@@ -632,7 +637,16 @@
     "matching": "Pareo",
     "inference": "Inferencia",
     "sentence_understanding": "Comprensión de oraciones",
-    "simple_sentences": "Oraciones simples"
+    "simple_sentences": "Oraciones simples",
+    "ratio": "Razón",
+    "scale": "Escala",
+    "area": "Área",
+    "subject_math": "Matemáticas",
+    "subject_geometry": "Geometría",
+    "subject_english": "Inglés",
+    "subject_science": "Ciencias",
+    "worksheet_title_prefix": "Hoja de práctica — {subject} · {topic}",
+    "grade_n": "Grado {n}"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "Hoja de actividades",

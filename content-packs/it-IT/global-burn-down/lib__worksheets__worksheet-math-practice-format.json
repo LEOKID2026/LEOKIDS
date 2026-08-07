@@ -1,16 +1,21 @@
 {
   "copy": {
-    "horizontal_addition_and_subtraction": "Suma y resta horizontales",
-    "vertical_addition_and_subtraction": "Suma y resta verticales",
+    "horizontal_addition_and_subtraction": "Addizione e sottrazione orizzontali",
+    "vertical_addition_and_subtraction": "Addizione e sottrazione verticali",
     "basic_multiplication": "Moltiplicazione di base",
     "long_multiplication": "Moltiplicazione lunga",
     "basic_division": "Divisione di base",
     "long_division": "Divisione lunga",
     "fractions": "Frazioni",
-    "decimals": "Decimales",
-    "percentages": "Porcentajes",
+    "decimals": "Decimali",
+    "percentages": "Percentuali",
     "ratio_and_scale": "Relacion y escala",
-    "word_problems": "Problemas verbales",
-    "mixed_practice": "Esercitazione mixta"
+    "word_problems": "Problemi di parole",
+    "mixed_practice": "Esercitazione mixta",
+    "horizontal_addition": "Addizione orizzontale",
+    "vertical_addition": "Addizione verticale",
+    "horizontal_subtraction": "Sottrazione orizzontale",
+    "vertical_subtraction": "Sottrazione verticale",
+    "unit_fractions_halves_quarters": "Frazioni unitarie — metà e quarti"
   }
 }

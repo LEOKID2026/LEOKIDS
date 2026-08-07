@@ -11,6 +11,11 @@
     "percentages": "Prozente",
     "ratio_and_scale": "Ratio and scale",
     "word_problems": "Textaufgaben",
-    "mixed_practice": "Gemischte Übung"
+    "mixed_practice": "Gemischte Übung",
+    "horizontal_addition": "Horizontale Addition",
+    "vertical_addition": "Vertikale Addition",
+    "horizontal_subtraction": "Horizontale Subtraktion",
+    "vertical_subtraction": "Vertikale Subtraktion",
+    "unit_fractions_halves_quarters": "Stammbrüche — Halbe und Viertel"
   }
 }

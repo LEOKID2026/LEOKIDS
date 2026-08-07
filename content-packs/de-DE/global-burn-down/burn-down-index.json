@@ -571,7 +571,12 @@
     "percentages": "Prozente",
     "ratio_and_scale": "Ratio and scale",
     "word_problems": "Textaufgaben",
-    "mixed_practice": "Gemischte Übung"
+    "mixed_practice": "Gemischte Übung",
+    "horizontal_addition": "Horizontale Addition",
+    "vertical_addition": "Vertikale Addition",
+    "horizontal_subtraction": "Horizontale Subtraktion",
+    "vertical_subtraction": "Vertikale Subtraktion",
+    "unit_fractions_halves_quarters": "Stammbrüche — Halbe und Viertel"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "1. Klasse",
@@ -628,7 +633,16 @@
     "matching": "Matching",
     "inference": "Inference",
     "sentence_understanding": "Sentence understanding",
-    "simple_sentences": "Simple sentences"
+    "simple_sentences": "Simple sentences",
+    "ratio": "Verhältnis",
+    "scale": "Maßstab",
+    "area": "Fläche",
+    "subject_math": "Mathematik",
+    "subject_geometry": "Geometrie",
+    "subject_english": "Englisch",
+    "subject_science": "Naturwissenschaften",
+    "worksheet_title_prefix": "Arbeitsblatt — {subject} · {topic}",
+    "grade_n": "{n}. Klasse"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "Arbeitsblatt",

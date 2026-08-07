@@ -97,7 +97,23 @@
       },
       "howItWorks": {
         "step3": "O sistema mapeia o progresso; os encarregados de educação recebem relatórios e podem enviar atividades específicas"
-      }
+      },
+      "seoEntry": {
+        "title": "Áreas de prática e guias para pais",
+        "body": "Quer explorar as áreas de prática do Leo Kids? Navegue pelas páginas de prática e guias, leia uma breve visão geral e depois inicie sessão ou registe-se na área dos pais.",
+        "practiceAreasCta": "Áreas de prática",
+        "parentGuidesCta": "Guias para pais",
+        "quickLinks": {
+          "math": "Matemática",
+          "geometry": "Geometria",
+          "english": "Inglês",
+          "science": "Ciências",
+          "digitalPractice": "Prática digital",
+          "parentReports": "Relatórios para pais",
+          "homePracticeRoutine": "Rotina de prática em casa"
+        }
+      },
+      "valueCardsAria": "Valores do produto"
     },
     "about": {
       "missionBody": "Ajudamos as crianças a desenvolver confiança na aprendizagem, a fortalecer competências básicas e avançadas e a dar aos encarregados de educação uma imagem mais clara do progresso dos seus filhos.",
@@ -116,6 +132,22 @@
         }
       },
       "intro1": "O site foi projetado para alunos do ensino básico com prática por matéria, ano, tópico e nível de dificuldade. Cada criança pode começar onde faz sentido, avançar gradualmente e reforçar os temas em que precisa de mais confiança."
+    },
+    "seoNav": {
+      "pageNavigationAria": "Navegação da página",
+      "backToPractice": "Voltar às áreas de prática",
+      "backToGuides": "Voltar aos guias",
+      "home": "Início",
+      "relatedGuides": "Guias relacionados",
+      "moreGuides": "Mais guias",
+      "fromGuideToPracticeTitle": "Do guia à prática",
+      "fromGuideToPracticeBody": "Depois de escolher uma abordagem, vá à área de prática correspondente e escolha ano e tópico. Pode voltar ao guia a qualquer momento para ajustar o passo seguinte.",
+      "fromGuidesToPracticeTitle": "Dos guias à prática",
+      "fromGuidesToPracticeBody": "As páginas de prática reúnem disciplinas, tópicos e atividades disponíveis para escolher o passo seguinte conforme o objetivo.",
+      "chooseGuideByGoal": "Escolha um guia por objetivo",
+      "allPracticeAreas": "Todas as áreas de prática",
+      "morePracticeAreas": "Mais áreas de prática",
+      "faqTitle": "Perguntas frequentes"
     }
   },
   "gallery": {

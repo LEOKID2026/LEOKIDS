@@ -571,7 +571,12 @@
     "percentages": "Проценты",
     "ratio_and_scale": "Отношение и масштаб",
     "word_problems": "Текстовые задачи",
-    "mixed_practice": "Смешанная практика"
+    "mixed_practice": "Смешанная практика",
+    "horizontal_addition": "Горизонтальное сложение",
+    "vertical_addition": "Вертикальное сложение",
+    "horizontal_subtraction": "Горизонтальное вычитание",
+    "vertical_subtraction": "Вертикальное вычитание",
+    "unit_fractions_halves_quarters": "Единичные дроби — половины и четверти"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "1 класс",
@@ -628,7 +633,16 @@
     "matching": "Сопоставление",
     "inference": "Вывод",
     "sentence_understanding": "Понимание предложений",
-    "simple_sentences": "Простые предложения"
+    "simple_sentences": "Простые предложения",
+    "ratio": "Отношение",
+    "scale": "Масштаб",
+    "area": "Площадь",
+    "subject_math": "Математика",
+    "subject_geometry": "Геометрия",
+    "subject_english": "Английский",
+    "subject_science": "Естествознание",
+    "worksheet_title_prefix": "Лист — {subject} · {topic}",
+    "grade_n": "{n} класс"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "Лист заданий",

@@ -54,6 +54,15 @@
     "matching": "Correspondência",
     "inference": "Inferência",
     "sentence_understanding": "Compreensão de frases",
-    "simple_sentences": "Frases simples"
+    "simple_sentences": "Frases simples",
+    "ratio": "Razão",
+    "scale": "Escala",
+    "area": "Área",
+    "subject_math": "Matemática",
+    "subject_geometry": "Geometria",
+    "subject_english": "Inglês",
+    "subject_science": "Ciências",
+    "worksheet_title_prefix": "Folha — {subject} · {topic}",
+    "grade_n": "{n}º ano"
   }
 }

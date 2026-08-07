@@ -575,7 +575,12 @@
     "percentages": "Porcentagens",
     "ratio_and_scale": "Proporção e escala",
     "word_problems": "Problemas de palavras",
-    "mixed_practice": "Prática mista"
+    "mixed_practice": "Prática mista",
+    "horizontal_addition": "Adição horizontal",
+    "vertical_addition": "Adição vertical",
+    "horizontal_subtraction": "Subtração horizontal",
+    "vertical_subtraction": "Subtração vertical",
+    "unit_fractions_halves_quarters": "Frações unitárias — metades e quartos"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "1º ano",
@@ -632,7 +637,16 @@
     "matching": "Correspondência",
     "inference": "Inferência",
     "sentence_understanding": "Compreensão de frases",
-    "simple_sentences": "Frases simples"
+    "simple_sentences": "Frases simples",
+    "ratio": "Razão",
+    "scale": "Escala",
+    "area": "Área",
+    "subject_math": "Matemática",
+    "subject_geometry": "Geometria",
+    "subject_english": "Inglês",
+    "subject_science": "Ciências",
+    "worksheet_title_prefix": "Folha — {subject} · {topic}",
+    "grade_n": "{n}º ano"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "Folha de atividades",

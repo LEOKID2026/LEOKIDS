@@ -575,7 +575,12 @@
     "percentages": "Pourcentages",
     "ratio_and_scale": "Ratio et échelle",
     "word_problems": "Problèmes",
-    "mixed_practice": "Pratique mixte"
+    "mixed_practice": "Pratique mixte",
+    "horizontal_addition": "Addition horizontale",
+    "vertical_addition": "Addition verticale",
+    "horizontal_subtraction": "Soustraction horizontale",
+    "vertical_subtraction": "Soustraction verticale",
+    "unit_fractions_halves_quarters": "Fractions unitaires — demis et quarts"
   },
   "lib__worksheets__worksheet-meta-labels-en.server": {
     "grade_1": "CP",
@@ -632,7 +637,16 @@
     "matching": "Correspondance",
     "inference": "Inférence",
     "sentence_understanding": "Compréhension des phrases",
-    "simple_sentences": "Phrases simples"
+    "simple_sentences": "Phrases simples",
+    "ratio": "Rapport",
+    "scale": "Échelle",
+    "area": "Aire",
+    "subject_math": "Maths",
+    "subject_geometry": "Géométrie",
+    "subject_english": "Anglais",
+    "subject_science": "Sciences",
+    "worksheet_title_prefix": "Fiche — {subject} · {topic}",
+    "grade_n": "Niveau {n}"
   },
   "lib__worksheets__worksheet-payload-build.server": {
     "worksheet": "Fiche d’exercices",
