@@ -155,9 +155,9 @@ test("wave3 canonical redirects and reserved routes", () => {
   assert.equal(stripLocaleFromPath("/ph/parents").locale, "en-PH");
 });
 
-test("selector adds Scotland Northern Ireland Philippines; count 69", () => {
+test("selector adds Scotland Northern Ireland Philippines; count 89", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 75);
+  assert.equal(locales.length, 89);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of WAVE3) {
     assert.equal(byId[c.id].label, c.label);
@@ -201,6 +201,8 @@ test("wave3 namespace merge and British inheritance", () => {
   assert.equal(t("en-PH")("teacher.fallback.defaultStudentName"), "Learner");
   // Missing namespaces inherit en (no British hop).
   assert.equal(t("en-PH")("common.grade1"), t("en")("common.grade1"));
+  assert.match(t("en-PH")("seo.homeTitle"), /Philippines/i);
+  assert.notEqual(t("en-PH")("seo.homeTitle"), t("en")("seo.homeTitle"));
 });
 
 test("wave3 school portal grade labels", () => {
@@ -228,6 +230,7 @@ test("wave3 content packs and reports", () => {
   assert.ok(getCatalogPackExact("en-SCT", "games/burn-down-index.json"));
   assert.ok(getCatalogPackExact("en-NIR", "learning/burn-down-index.json"));
   assert.equal(getCatalogPackExact("en-PH", "reports/burn-down-index.json"), null);
+  assert.ok(getCatalogPackExact("en-PH", "global-burn-down/burn-down-index.json"));
 
   const sctReports = loadMergedReportBurnDownIndex("en-SCT");
   const nirReports = loadMergedReportBurnDownIndex("en-NIR");
@@ -237,12 +240,12 @@ test("wave3 content packs and reports", () => {
   const sctText = JSON.stringify(sctReports);
   const nirText = JSON.stringify(nirReports);
   assert.match(sctText, /Primary 2/);
-  assert.match(sctText, /Primary 7/);
+  assert.match(sctText, /Primary 6[–-]7/);
   assert.doesNotMatch(sctText, /\bYear 1\b/);
   assert.doesNotMatch(sctText, /\bPrimary 1\b/);
   assert.doesNotMatch(sctText, /\bYear 8\b/);
   assert.match(nirText, /Primary 2/);
-  assert.match(nirText, /Primary 7/);
+  assert.match(nirText, /Primary 6[–-]7/);
   assert.doesNotMatch(nirText, /\bYear 1\b/);
   assert.doesNotMatch(nirText, /\bPrimary 1\b/);
   assert.doesNotMatch(nirText, /\bYear 8\b/);
@@ -260,6 +263,9 @@ test("wave3 content packs and reports", () => {
     reportPackCopyForLocale("en", "components__parent-report-detailed-surface", "grade")
   );
   assert.deepEqual(phReports, enReports);
+
+  const phSeo = loadContentPack("en-PH", "global-burn-down", "lib__site__public-page-seo.json");
+  assert.match(String(phSeo?.copy?.leo_kids_practice_for_elementary_learners || ""), /Philippines/i);
 
   const sctBooks = loadContentPack("en-SCT", "books", "ui.json");
   assert.ok(sctBooks && typeof sctBooks === "object");
@@ -328,8 +334,10 @@ test("wave3 word meanings fall back to English", () => {
   }
 });
 
-test("Philippines has no content packs on disk", () => {
-  assert.equal(fs.existsSync(path.join(ROOT, "content-packs/en-PH")), false);
+test("Philippines has sparse market overlay on disk (no Help)", () => {
+  assert.equal(fs.existsSync(path.join(ROOT, "content-packs/en-PH")), true);
+  assert.equal(fs.existsSync(path.join(ROOT, "locales/en-PH/seo.json")), true);
+  assert.equal(fs.existsSync(path.join(ROOT, "data/help-center/en-PH")), false);
 });
 
 test("wave3 sparse contract vs authority base", () => {
@@ -341,10 +349,7 @@ test("wave3 sparse contract vs authority base", () => {
   ];
   for (const c of overlays) {
     const countryRoot = path.join(ROOT, "content-packs", c.id);
-    if (!fs.existsSync(countryRoot)) {
-      assert.equal(c.id, "en-PH");
-      continue;
-    }
+    assert.equal(fs.existsSync(countryRoot), true, c.id);
     const baseRoot = path.join(ROOT, "content-packs", c.base);
     const baseExists = (rel) => fs.existsSync(path.join(baseRoot, rel));
     /** @type {string[]} */

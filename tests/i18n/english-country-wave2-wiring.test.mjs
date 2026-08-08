@@ -152,9 +152,9 @@ test("wave2 canonical redirects and reserved routes", () => {
   assert.equal(stripLocaleFromPath("/wls/parents").locale, "en-WLS");
 });
 
-test("selector adds Canada Singapore South Africa Wales; count 69", () => {
+test("selector adds Canada Singapore South Africa Wales; count 89", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 75);
+  assert.equal(locales.length, 89);
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   for (const c of WAVE2) {
     assert.equal(byId[c.id].label, c.label);
@@ -177,11 +177,13 @@ test("wave2 namespace merge and Wales inherits en-GB", () => {
   assert.equal(t("en-SG")("common.subjectMath"), "Maths");
   assert.equal(t("en-ZA")("common.subjectMath"), "Maths");
   assert.equal(t("en-CA")("ui.languageSwitcher.label") || t("en")("ui.languageSwitcher.label"), t("en")("ui.languageSwitcher.label"));
-  // Wales has no overlays — British Year labels from en-GB.
+  // Wales Year labels still inherit en-GB; market SEO is local.
   assert.equal(t("en-WLS")("common.grade1"), "Year 1");
   assert.equal(t("en-WLS")("common.grade1"), t("en-GB")("common.grade1"));
   assert.notEqual(t("en-WLS")("common.grade1"), t("en")("common.grade1"));
   assert.equal(t("en-WLS")("learning.chooseGrade"), t("en-GB")("learning.chooseGrade"));
+  assert.match(t("en-WLS")("seo.homeTitle"), /Wales/i);
+  assert.notEqual(t("en-WLS")("seo.homeTitle"), t("en-GB")("seo.homeTitle"));
 });
 
 test("wave2 school portal grade labels", () => {
@@ -203,6 +205,7 @@ test("wave2 content packs and Wales pack inheritance", () => {
   assert.ok(getCatalogPackExact("en-SG", "reports/burn-down-index.json"));
   assert.ok(getCatalogPackExact("en-ZA", "reports/burn-down-index.json"));
   assert.equal(getCatalogPackExact("en-WLS", "reports/burn-down-index.json"), null);
+  assert.ok(getCatalogPackExact("en-WLS", "global-burn-down/burn-down-index.json"));
 
   const walesReports = loadMergedReportBurnDownIndex("en-WLS");
   const gbReports = loadMergedReportBurnDownIndex("en-GB");
@@ -214,6 +217,9 @@ test("wave2 content packs and Wales pack inheritance", () => {
     reportPackCopyForLocale("en-WLS", "utils__parent-report-language__parent-report-display-labels", "graded"),
     reportPackCopyForLocale("en-GB", "utils__parent-report-language__parent-report-display-labels", "graded")
   );
+
+  const walesSeo = loadContentPack("en-WLS", "global-burn-down", "lib__site__public-page-seo.json");
+  assert.match(String(walesSeo?.copy?.leo_kids_practice_for_elementary_learners || ""), /Wales/i);
 
   const sgPack = loadContentPack("en-SG", "learning", "burn-down-index.json");
   assert.ok(sgPack && typeof sgPack === "object");
@@ -249,10 +255,11 @@ test("wave2 word meanings fall back to English", () => {
   }
 });
 
-test("Wales is zero-content on disk", () => {
-  assert.equal(fs.existsSync(path.join(ROOT, "locales/en-WLS")), false);
-  assert.equal(fs.existsSync(path.join(ROOT, "content-packs/en-WLS")), false);
+test("Wales has sparse market overlay on disk (no Help; Year chrome via en-GB)", () => {
+  assert.equal(fs.existsSync(path.join(ROOT, "locales/en-WLS/seo.json")), true);
+  assert.equal(fs.existsSync(path.join(ROOT, "content-packs/en-WLS")), true);
   assert.equal(fs.existsSync(path.join(ROOT, "data/help-center/en-WLS")), false);
+  assert.equal(fs.existsSync(path.join(ROOT, "locales/en-WLS/common.json")), false);
 });
 
 test("wave2 sparse contract vs authority base", () => {
@@ -261,6 +268,7 @@ test("wave2 sparse contract vs authority base", () => {
     { id: "en-CA", base: "en" },
     { id: "en-SG", base: "en" },
     { id: "en-ZA", base: "en" },
+    { id: "en-WLS", base: "en-GB" },
   ];
   for (const c of overlays) {
     const countryRoot = path.join(ROOT, "content-packs", c.id);
