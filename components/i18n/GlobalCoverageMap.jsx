@@ -107,11 +107,11 @@ export default function GlobalCoverageMap({
   const notCoveredLabel = t("ui.languageSwitcher.coverageMapNotCovered");
 
   const titleClass = compact
-    ? "text-sm font-bold text-inherit min-w-0"
-    : "text-sm font-bold text-slate-900 min-w-0 sm:text-base";
+    ? "text-base font-bold text-inherit min-w-0 md:text-lg"
+    : "text-base font-bold text-slate-900 min-w-0 md:text-lg";
   const summaryClass = compact
-    ? "text-xs font-semibold text-inherit opacity-90 min-w-0 sm:text-sm"
-    : "text-xs font-semibold text-slate-600 min-w-0 sm:text-sm";
+    ? "text-sm font-semibold text-inherit min-w-0"
+    : "text-sm font-semibold text-slate-700 min-w-0";
   const mapShellClass = compact
     ? "relative w-full min-w-0 overflow-hidden rounded-xl border border-white/20 bg-black/10"
     : "relative w-full min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50";
@@ -122,7 +122,7 @@ export default function GlobalCoverageMap({
 
   return (
     <div
-      className={`flex flex-col gap-2 min-w-0 ${className}`.trim()}
+      className={`flex flex-col gap-3 min-w-0 ${className}`.trim()}
       data-global-coverage-map="1"
       data-coverage-market-count={coverage.marketCount}
       data-coverage-locale={locale}
@@ -143,7 +143,7 @@ export default function GlobalCoverageMap({
           viewBox={worldMap.viewBox}
           role="img"
           aria-label={`${title}. ${summary}`}
-          className="block h-auto w-full max-h-[min(38vh,220px)] sm:max-h-[min(40vh,240px)]"
+          className="block h-auto w-full max-h-[min(52vh,320px)]"
           preserveAspectRatio="xMidYMid meet"
           dir="ltr"
         >
