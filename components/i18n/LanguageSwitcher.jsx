@@ -16,6 +16,7 @@ import {
 } from "../../lib/i18n/locale-selector-regions.js";
 import { computeSelectorPanelBox } from "../../lib/i18n/locale-selector-panel.js";
 import MarketFlag from "./MarketFlag.jsx";
+import GlobalCoverageMapModal from "./GlobalCoverageMapModal.jsx";
 
 /**
  * Accessible HUD language switcher — uses `getSelectableLocales()` via I18nProvider.
@@ -41,6 +42,7 @@ export default function LanguageSwitcher({
   const [panelBox, setPanelBox] = useState(
     /** @type {null | { left: number, top: number, width: number, maxHeight: number }} */ (null)
   );
+  const [mapOpen, setMapOpen] = useState(false);
   const rootRef = useRef(/** @type {HTMLDivElement | null} */ (null));
   const triggerRef = useRef(/** @type {HTMLButtonElement | null} */ (null));
   const searchRef = useRef(/** @type {HTMLInputElement | null} */ (null));
@@ -57,6 +59,15 @@ export default function LanguageSwitcher({
     setOpen(false);
     setQuery("");
     setPanelBox(null);
+  }, []);
+
+  const openCoverageMap = useCallback(() => {
+    close();
+    setMapOpen(true);
+  }, [close]);
+
+  const closeCoverageMap = useCallback(() => {
+    setMapOpen(false);
   }, []);
 
   const updatePanelPosition = useCallback(() => {
@@ -154,6 +165,13 @@ export default function LanguageSwitcher({
   const label = t("ui.languageSwitcher.label");
   const searchPlaceholder = t("ui.languageSwitcher.searchPlaceholder");
   const noResults = t("ui.languageSwitcher.noResults");
+  const viewCoverageMapLabel = t("ui.languageSwitcher.viewCoverageMap");
+  const coverageMapTitle = t("ui.languageSwitcher.coverageMapTitle");
+  const coverageMapSummary = t("ui.languageSwitcher.coverageMapSummary");
+  const coverageMapHint = t("ui.languageSwitcher.coverageMapHint");
+  const coverageMapClose = t("ui.languageSwitcher.coverageMapClose");
+  const coverageMapCovered = t("ui.languageSwitcher.coverageMapCovered");
+  const coverageMapNotCovered = t("ui.languageSwitcher.coverageMapNotCovered");
   const currentName = getSelectorDisplayLabel(current);
 
   const isBright = appearance === "bright";
@@ -214,6 +232,12 @@ export default function LanguageSwitcher({
       ? "px-3 py-4 text-sm text-white/60"
       : "px-3 py-4 text-sm text-gray-500";
 
+  const mapBtnClass = isBright
+    ? "w-full inline-flex items-center justify-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-2.5 py-2 text-xs font-bold text-sky-800 hover:bg-sky-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+    : isClassic
+      ? "w-full inline-flex items-center justify-center gap-1.5 rounded-lg border border-emerald-400/30 bg-emerald-600/15 px-2.5 py-2 text-xs font-bold text-emerald-100 hover:bg-emerald-600/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+      : "w-full inline-flex items-center justify-center gap-1.5 rounded-lg border border-sky-200 bg-sky-50 px-2.5 py-2 text-xs font-bold text-sky-900 hover:bg-sky-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500";
+
   async function selectLocale(nextId) {
     if (!nextId || nextId === locale) {
       close();
@@ -235,6 +259,7 @@ export default function LanguageSwitcher({
   }
 
   return (
+    <>
     <div
       ref={rootRef}
       className={`relative inline-flex shrink-0 ${className}`.trim()}
@@ -299,6 +324,15 @@ export default function LanguageSwitcher({
                 {currentName} ✓
               </span>
             </div>
+            <button
+              type="button"
+              className={mapBtnClass}
+              data-language-switcher-coverage-map="1"
+              onClick={openCoverageMap}
+            >
+              <span aria-hidden="true">🌍</span>
+              <span>{viewCoverageMapLabel}</span>
+            </button>
           </div>
 
           <div
@@ -368,5 +402,17 @@ export default function LanguageSwitcher({
         </div>
       ) : null}
     </div>
+    <GlobalCoverageMapModal
+      open={mapOpen}
+      onClose={closeCoverageMap}
+      title={coverageMapTitle}
+      closeLabel={coverageMapClose}
+      summaryLabel={coverageMapSummary}
+      hintLabel={coverageMapHint}
+      coveredLabel={coverageMapCovered}
+      notCoveredLabel={coverageMapNotCovered}
+      locales={locales}
+    />
+    </>
   );
 }

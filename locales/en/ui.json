@@ -24,7 +24,14 @@
       "asia": "Asia",
       "oceania": "Oceania"
     },
-    "noResults": "No matching countries"
+    "noResults": "No matching countries",
+    "viewCoverageMap": "View coverage map",
+    "coverageMapTitle": "LEO KIDS coverage",
+    "coverageMapSummary": "Available across {count} markets",
+    "coverageMapHint": "Tap a highlighted country for details",
+    "coverageMapClose": "Close",
+    "coverageMapCovered": "Covered",
+    "coverageMapNotCovered": "Not yet covered"
   },
   "localeSettings": {
     "heading": "Language preferences",
