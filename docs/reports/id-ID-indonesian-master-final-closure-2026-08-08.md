@@ -132,16 +132,16 @@ Unexpected EN SoT changes = 0
 COMMIT / PUSH
 
 Commit message = Finalize Indonesian master locale and runtime localization
-Commit hash = (filled after commit)
-Push main = (filled after push)
-Local HEAD = (filled)
-origin/main = (filled)
-HEAD parity = (filled)
+Commit hash = e3dc141922099eaa5d244eedce50cdd491044d60
+Push main = PASS
+Local HEAD = e3dc141922099eaa5d244eedce50cdd491044d60
+origin/main = e3dc141922099eaa5d244eedce50cdd491044d60
+HEAD parity = YES
 
 CI
 
-Workflow/run = (filled after push)
-CI result = (filled)
+Workflow/run = Parent report checks #109 — https://github.com/LEOKID2026/LEOKIDS/actions/runs/31259768372
+CI result = PASS
 
 FINAL
 
