@@ -14,7 +14,17 @@
     "resetDefaults": "Reset to defaults"
   },
   "languageSwitcher": {
-    "label": "Language"
+    "label": "Language",
+    "searchPlaceholder": "Search country…",
+    "regions": {
+      "americas": "Americas",
+      "europe": "Europe",
+      "africa": "Africa",
+      "middle_east": "Middle East",
+      "asia": "Asia",
+      "oceania": "Oceania"
+    },
+    "noResults": "No matching countries"
   },
   "localeSettings": {
     "heading": "Language preferences",

@@ -229,14 +229,17 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
     path.join(repoRoot, "components/i18n/LanguageSwitcher.jsx"),
     "utf8"
   );
-  assert.match(switcher, /getSelectableLocales|selectableLocales/);
+  assert.match(switcher, /getSelectableLocales|selectableLocales|localePickerLocales/);
   assert.match(switcher, /setLocale/);
   assert.match(switcher, /aria-label/);
   assert.match(switcher, /Escape/);
-  assert.match(switcher, /max-h-\[min\(70vh,520px\)\]/);
+  assert.match(switcher, /groupLocalesBySelectorRegion/);
+  assert.match(switcher, /Search country|searchPlaceholder/);
+  assert.match(switcher, /max-h-\[min\(60vh,420px\)\]/);
   assert.match(switcher, /overflow-y-auto/);
   assert.match(switcher, /overflow-x-hidden/);
   assert.match(switcher, /overscroll-contain/);
+  assert.match(switcher, /data-language-switcher-layout="region-search"/);
   assert.doesNotMatch(switcher, /es-419/);
   assert.doesNotMatch(switcher, /Hebrew|flag/i);
 });
