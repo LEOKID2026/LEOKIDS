@@ -62,12 +62,22 @@ export async function getServerSideProps({ params, req, resolvedUrl, query }) {
   const entry = getLearningBookEntry(subject, grade);
   const clientMeta = getLearningBookClientMeta(subject, grade);
   if (!entry || !clientMeta || !entry.registry.isValidPageId(pageId)) return { notFound: true };
-  const page = entry.loader.loadPage(pageId, { contentLocale });
-  if (!page) return { notFound: true };
-  const batches = entry.loader.loadTocEntries({ contentLocale });
-  const { prev, next } = entry.registry.getPageNeighbors(pageId);
-  const prevPage = prev ? entry.loader.loadPage(prev, { contentLocale }) : null;
-  const nextPage = next ? entry.loader.loadPage(next, { contentLocale }) : null;
+  let page;
+  let batches;
+  let prev = null;
+  let next = null;
+  let prevPage = null;
+  let nextPage = null;
+  try {
+    page = entry.loader.loadPage(pageId, { contentLocale });
+    if (!page) return { notFound: true };
+    batches = entry.loader.loadTocEntries({ contentLocale });
+    ({ prev, next } = entry.registry.getPageNeighbors(pageId));
+    prevPage = prev ? entry.loader.loadPage(prev, { contentLocale }) : null;
+    nextPage = next ? entry.loader.loadPage(next, { contentLocale }) : null;
+  } catch {
+    return { notFound: true };
+  }
   return {
     props: {
       page,

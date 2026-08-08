@@ -41,6 +41,8 @@ export function useTeacherProfileLocale(opts = {}) {
   }, [enabled, router.pathname]);
 
   const onLocaleChange = useCallback(async (localeId) => {
+    // Optimistic: last explicit choice must win immediately over stale profile.
+    setPreferredLanguage(localeId);
     const supabase = getLearningSupabaseBrowserClient();
     const auth = await resolveTeacherPortalAuth(supabase);
     if (!auth.ok) return;

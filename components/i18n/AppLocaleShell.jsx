@@ -8,6 +8,7 @@ import {
 import { resolveInterfaceLocale } from "../../lib/i18n/locale-resolution.js";
 import { useParentMembershipLocale } from "../../hooks/useParentMembershipLocale.js";
 import { useTeacherProfileLocale } from "../../hooks/useTeacherProfileLocale.js";
+import { useStudentSessionLocale } from "../../hooks/useStudentSessionLocale.js";
 
 function isParentMembershipLocaleRoute(pathname) {
   const p = String(pathname || "");
@@ -23,6 +24,11 @@ function isTeacherProfileLocaleRoute(pathname) {
   return p.startsWith("/teacher/") || p.startsWith("/school/");
 }
 
+function isStudentLocaleRoute(pathname) {
+  const p = String(pathname || "");
+  return p.startsWith("/student/") || p.startsWith("/learning/");
+}
+
 /**
  * Runtime locale shell: merges URL/cookie/profile sources and wires persistence hooks.
  * @param {{ pageProps: Record<string, unknown>, children: React.ReactNode }} props
@@ -33,15 +39,20 @@ export default function AppLocaleShell({ pageProps, children }) {
 
   const isParentRoute = isParentMembershipLocaleRoute(pathname);
   const isTeacherRoute = isTeacherProfileLocaleRoute(pathname);
+  // Parent/teacher take precedence when paths overlap; student covers remaining student/learning UI.
+  const isStudentRoute = !isParentRoute && !isTeacherRoute && isStudentLocaleRoute(pathname);
 
   const parentLocale = useParentMembershipLocale({ enabled: isParentRoute });
   const teacherLocale = useTeacherProfileLocale({ enabled: isTeacherRoute });
+  const studentLocale = useStudentSessionLocale({ enabled: isStudentRoute });
 
   const profileInterfaceLocale = isParentRoute
     ? parentLocale.membershipInterfaceLanguage
     : isTeacherRoute
       ? teacherLocale.preferredLanguage
-      : pageProps?.membershipInterfaceLanguage;
+      : isStudentRoute
+        ? studentLocale.interfaceLanguage
+        : pageProps?.membershipInterfaceLanguage;
 
   const preferredReportLanguage = isParentRoute
     ? parentLocale.preferredReportLanguage
@@ -51,21 +62,23 @@ export default function AppLocaleShell({ pageProps, children }) {
     ? parentLocale.onLocaleChange
     : isTeacherRoute
       ? teacherLocale.onLocaleChange
-      : pageProps?.onLocaleChange;
+      : isStudentRoute
+        ? studentLocale.onLocaleChange
+        : pageProps?.onLocaleChange;
 
   const locale = useMemo(() => {
     // On the client, resolve from live URL + cookie + profile. Do not trust
     // pageProps.interfaceLocale alone — client getInitialProps often lacks req
     // cookies and would force English after a bare-path navigation.
     if (typeof document !== "undefined") {
+      const hasCookie = /(?:^|;\s*)lk_global_locale=/.test(document.cookie || "");
       return resolveInterfaceLocale({
-        asPath: router.asPath,
+        asPath: typeof window !== "undefined" ? window.location.pathname : router.asPath,
         pathname: router.pathname,
         query: router.query,
         cookieHeader: document.cookie,
         profileInterfaceLocale,
-        hasExplicitUserChoice: Boolean(profileInterfaceLocale),
-        acceptLanguage: pageProps?.acceptLanguage,
+        hasExplicitUserChoice: Boolean(profileInterfaceLocale) || hasCookie,
       });
     }
     if (pageProps?.interfaceLocale) {
@@ -77,13 +90,11 @@ export default function AppLocaleShell({ pageProps, children }) {
       pathname: router.pathname,
       query: router.query,
       profileInterfaceLocale,
-      acceptLanguage: pageProps?.acceptLanguage,
       hasExplicitUserChoice: Boolean(profileInterfaceLocale),
     });
   }, [
     pageProps?.interfaceLocale,
     pageProps?.locale,
-    pageProps?.acceptLanguage,
     profileInterfaceLocale,
     router.asPath,
     router.pathname,

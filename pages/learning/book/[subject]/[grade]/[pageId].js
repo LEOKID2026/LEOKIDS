@@ -55,6 +55,7 @@ export default function DynamicLearningBookPage({
 }
 
 export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const subject = params.subject;
   const grade = params.grade;
   const pageId = params.pageId;
@@ -70,15 +71,24 @@ export async function getServerSideProps({ params, req, resolvedUrl, query }) {
     return { notFound: true };
   }
 
-  const page = entry.loader.loadPage(pageId, { contentLocale });
-  if (!page) {
+  let page;
+  let batches;
+  let prevPage = null;
+  let nextPage = null;
+  let prev = null;
+  let next = null;
+  try {
+    page = entry.loader.loadPage(pageId, { contentLocale });
+    if (!page) {
+      return { notFound: true };
+    }
+    batches = entry.loader.loadTocEntries({ contentLocale });
+    ({ prev, next } = entry.registry.getPageNeighbors(pageId));
+    prevPage = prev ? entry.loader.loadPage(prev, { contentLocale }) : null;
+    nextPage = next ? entry.loader.loadPage(next, { contentLocale }) : null;
+  } catch {
     return { notFound: true };
   }
-
-  const batches = entry.loader.loadTocEntries({ contentLocale });
-  const { prev, next } = entry.registry.getPageNeighbors(pageId);
-  const prevPage = prev ? entry.loader.loadPage(prev, { contentLocale }) : null;
-  const nextPage = next ? entry.loader.loadPage(next, { contentLocale }) : null;
 
   return {
     props: {

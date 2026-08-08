@@ -11,19 +11,22 @@ import { serializeLocaleCookie } from "../../lib/i18n/locale-cookie.js";
 
 const cookieAr = serializeLocaleCookie("ar-XB").split(";")[0];
 
-test("resolveInterfaceLocale priority: URL beats profile, cookie, Accept-Language, default", () => {
+test("resolveInterfaceLocale priority: profile > cookie > URL > market > default", () => {
   const base = {
     profileInterfaceLocale: "en-XA",
     cookieHeader: cookieAr,
-    acceptLanguage: "en-XA,en;q=0.9",
+    acceptLanguage: "ar-SA,ar;q=0.9",
   };
 
-  assert.equal(resolveInterfaceLocale({ ...base, asPath: "/ar-XB/parent/dashboard" }), "ar-XB");
+  // Profile wins over URL and cookie when provided (authenticated account).
+  assert.equal(resolveInterfaceLocale({ ...base, asPath: "/ar-XB/parent/dashboard" }), "en-XA");
   assert.equal(
-    resolveInterfaceLocale({ ...base, asPath: "/parent/dashboard", query: { locale: "en-XA" } }),
+    resolveInterfaceLocale({ ...base, asPath: "/parent/dashboard", query: { locale: "ar-XB" } }),
     "en-XA"
   );
   assert.equal(resolveInterfaceLocale({ ...base, asPath: "/parent/dashboard" }), "en-XA");
+
+  // Cookie wins when no profile.
   assert.equal(
     resolveInterfaceLocale({
       asPath: "/parent/dashboard",
@@ -33,13 +36,21 @@ test("resolveInterfaceLocale priority: URL beats profile, cookie, Accept-Languag
     }),
     "ar-XB"
   );
+
+  // URL first-use when no saved preference.
+  assert.equal(
+    resolveInterfaceLocale({
+      asPath: "/ar-XB/parent/dashboard",
+    }),
+    "ar-XB"
+  );
+
   assert.equal(
     resolveInterfaceLocale({
       asPath: "/parent/dashboard",
-      acceptLanguage: "en,en-US;q=0.9",
       preferCookie: false,
     }),
-    "en"
+    FALLBACK_LOCALE
   );
   assert.equal(resolveInterfaceLocale({ asPath: "/parent/dashboard" }), FALLBACK_LOCALE);
 });
@@ -51,18 +62,18 @@ test("resolveInterfaceLocale: disabled locale prefix resolves via registry fallb
       asPath: "/pl/about",
       profileInterfaceLocale: "en-XA",
     }),
-    "en"
+    "en-XA"
   );
   assert.equal(
     resolveInterfaceLocale({
       asPath: "/pl/about",
       cookieHeader: cookieAr,
     }),
-    "en"
+    "ar-XB"
   );
 });
 
-test("resolveInterfaceLocale: hasExplicitUserChoice skips Accept-Language", () => {
+test("resolveInterfaceLocale: Accept-Language ignored unless allowAcceptLanguage", () => {
   assert.equal(
     resolveInterfaceLocale({
       asPath: "/parent/dashboard",
@@ -70,6 +81,21 @@ test("resolveInterfaceLocale: hasExplicitUserChoice skips Accept-Language", () =
       hasExplicitUserChoice: true,
     }),
     DEFAULT_LOCALE
+  );
+  assert.equal(
+    resolveInterfaceLocale({
+      asPath: "/parent/dashboard",
+      acceptLanguage: "en-XA,en;q=0.9",
+    }),
+    DEFAULT_LOCALE
+  );
+  assert.equal(
+    resolveInterfaceLocale({
+      asPath: "/parent/dashboard",
+      acceptLanguage: "en-XA,en;q=0.9",
+      allowAcceptLanguage: true,
+    }),
+    "en-XA"
   );
 });
 
@@ -112,7 +138,7 @@ test("getLocaleFallbackChain uses registry configured fallback", () => {
   assert.deepEqual(getLocaleFallbackChain("es-419"), ["es-419", "en"]);
 });
 
-test("resolveInterfaceLocale: es-419 URL prefix is active", () => {
+test("resolveInterfaceLocale: es-419 URL prefix is active on first use", () => {
   assert.equal(
     resolveInterfaceLocale({
       asPath: "/es-419/parent/dashboard",

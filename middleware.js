@@ -104,6 +104,21 @@ export function middleware(request) {
       return NextResponse.redirect(url, 302);
     }
 
+    // Saved browser preference wins over a mismatched URL prefix (last explicit
+    // choice / guest cookie). URL locale is adopted only when no preference exists
+    // or it already matches — never let a stale/shared prefix overwrite the cookie.
+    const cookieRaw = request.cookies.get(LOCALE_COOKIE_NAME)?.value;
+    if (cookieRaw) {
+      const preferred = resolveLocaleDefinition(cookieRaw);
+      if (preferred.enabled && preferred.id !== def.id) {
+        const url = request.nextUrl.clone();
+        url.pathname = withLocalePath(preferred.id, parsed.pathname);
+        if (url.pathname !== pathname) {
+          return NextResponse.redirect(url, 307);
+        }
+      }
+    }
+
     const url = request.nextUrl.clone();
     url.pathname = parsed.pathname;
     const response = NextResponse.rewrite(url, {

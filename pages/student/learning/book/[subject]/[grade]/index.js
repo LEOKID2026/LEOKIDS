@@ -42,6 +42,11 @@ export async function getServerSideProps({ params, req, resolvedUrl, query }) {
   const entry = getLearningBookEntry(subject, grade);
   const clientMeta = getLearningBookClientMeta(subject, grade);
   if (!entry || !clientMeta) return { notFound: true };
-  const batches = entry.loader.loadTocEntries({ contentLocale });
+  let batches;
+  try {
+    batches = entry.loader.loadTocEntries({ contentLocale });
+  } catch {
+    return { notFound: true };
+  }
   return { props: { batches, subject, grade, bookMeta: clientMeta.meta } };
 }

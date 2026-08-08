@@ -135,7 +135,7 @@ test("ensureGlobalProductMembership preserveExistingLanguages does not overwrite
   assert.equal(loginAgain.membership.preferred_report_language, "ar-XB");
 });
 
-test("profile locale resolution chain: URL > profile > cookie > Accept-Language > en", () => {
+test("profile locale resolution chain: profile > cookie > URL > en (Accept-Language ignored)", () => {
   const cookieEnXa = serializeLocaleCookie("en-XA").split(";")[0];
   const profile = "ar-XB";
 
@@ -146,7 +146,7 @@ test("profile locale resolution chain: URL > profile > cookie > Accept-Language 
       cookieHeader: cookieEnXa,
       acceptLanguage: "en,en-US;q=0.9",
     }),
-    "en-XA"
+    "ar-XB"
   );
 
   assert.equal(

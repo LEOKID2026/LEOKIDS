@@ -43,6 +43,7 @@ export default function DynamicLearningBookIndex({
 }
 
 export async function getServerSideProps({ params, req, resolvedUrl, query }) {
+  const contentLocale = resolveBookRequestContentLocale({ req, resolvedUrl, query });
   const subject = params.subject;
   const grade = params.grade;
   const { getLearningBookEntry } = await import(
@@ -56,7 +57,12 @@ export async function getServerSideProps({ params, req, resolvedUrl, query }) {
   if (!entry || !clientMeta) {
     return { notFound: true };
   }
-  const batches = entry.loader.loadTocEntries({ contentLocale });
+  let batches;
+  try {
+    batches = entry.loader.loadTocEntries({ contentLocale });
+  } catch {
+    return { notFound: true };
+  }
   return {
     props: {
       batches,

@@ -22,6 +22,28 @@ import { safeApiLog } from "../../../lib/security/safe-log.js";
 import { trackServerAnalyticsEvent } from "../../../lib/analytics/track-event.server.js";
 import { gateMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 import { findMockStudentByAccessCode } from "../../../lib/global/mock-fixtures.js";
+import { serializeLocaleCookie, readLocaleCookie } from "../../../lib/i18n/locale-cookie.js";
+import { normalizeMembershipLocale } from "../../../lib/global/product-membership.server.js";
+import {
+  loadPriorStudentInterfaceLocale,
+} from "../../../lib/student-server/student-session-locale.server.js";
+
+/**
+ * @param {import("http").ServerResponse} res
+ * @param {string} cookie
+ */
+function appendSetCookie(res, cookie) {
+  const prev = res.getHeader("Set-Cookie");
+  if (!prev) {
+    res.setHeader("Set-Cookie", cookie);
+    return;
+  }
+  if (Array.isArray(prev)) {
+    res.setHeader("Set-Cookie", [...prev, cookie]);
+    return;
+  }
+  res.setHeader("Set-Cookie", [String(prev), cookie]);
+}
 
 const GENERIC_LOGIN_FAILURE = {
   ok: false,
@@ -152,6 +174,22 @@ async function handler(req, res) {
     const tokenHash = hashStudentSecret(token);
     const expiresAt = sessionExpiryIsoFromNow();
 
+    // Per-student locale authority: restore last explicit choice for this student
+    // so Student B on the same browser does not inherit Student A's cookie.
+    const priorInterfaceLocale = await loadPriorStudentInterfaceLocale(
+      supabase,
+      accessCode.student_id
+    );
+    const cookieLocaleRaw = readLocaleCookie(
+      typeof req.headers.cookie === "string" ? req.headers.cookie : ""
+    );
+    const cookieLocale = cookieLocaleRaw
+      ? normalizeMembershipLocale(cookieLocaleRaw, "en")
+      : null;
+    // Account prior wins; else seed from current browser choice (guest continuity).
+    const sessionLocale = priorInterfaceLocale || cookieLocale || null;
+    const clientMeta = sessionLocale ? { interface_locale: sessionLocale } : {};
+
     const { data: sessionRow, error: sessErr } = await supabase
       .from("student_sessions")
       .insert({
@@ -163,7 +201,7 @@ async function handler(req, res) {
         expires_at: expiresAt,
         ended_at: null,
         revoked_at: null,
-        client_meta: {},
+        client_meta: clientMeta,
       })
       .select("id")
       .maybeSingle();
@@ -175,6 +213,11 @@ async function handler(req, res) {
 
     recordLoginSuccess(req, credential);
     setStudentSessionCookie(res, token);
+    if (priorInterfaceLocale) {
+      appendSetCookie(res, serializeLocaleCookie(priorInterfaceLocale));
+    } else if (sessionLocale) {
+      appendSetCookie(res, serializeLocaleCookie(sessionLocale));
+    }
     void trackServerAnalyticsEvent(supabase, {
       eventName: "student_login",
       actorType: "student",

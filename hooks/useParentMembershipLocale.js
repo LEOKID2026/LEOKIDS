@@ -60,7 +60,12 @@ export function useParentMembershipLocale(opts = {}) {
       if (changeOpts.syncReportUnlessExplicit) {
         patch.preferredReportLanguage = localeId;
       }
+      // Optimistic: last explicit choice must win immediately over stale profile.
       writeLocaleCookieClient(localeId);
+      setMembershipInterfaceLanguage(localeId);
+      if (changeOpts.syncReportUnlessExplicit) {
+        setPreferredReportLanguage(localeId);
+      }
       const result = await patchLocales(patch);
       if (result.ok) {
         setMembershipInterfaceLanguage(result.interfaceLanguage);
