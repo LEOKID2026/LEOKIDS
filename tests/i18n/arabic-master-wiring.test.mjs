@@ -44,8 +44,8 @@ test("ar-001 registry contract", () => {
   assert.equal(def.ogLocale, "ar_SA");
 });
 
-test("selector count is 89 with ar-001 visible once", () => {
-  assert.equal(getSelectableLocales().length, 89);
+test("selector count is 93 with ar-001 visible once", () => {
+  assert.equal(getSelectableLocales().length, 93);
   const arabicLabels = getSelectableLocales().filter((l) => l.label === "العربية");
   assert.equal(arabicLabels.length, 1);
 });
@@ -101,11 +101,11 @@ test("learning burn-down pack resolves", () => {
   assert.ok(pack && typeof pack === "object");
 });
 
-test("locale picker includes ar-001 and selectable count stays 89", async () => {
+test("locale picker includes ar-001 and selectable count stays 93", async () => {
   const { getSelectableLocales, getLocalePickerLocales } = await import(
     "../../lib/i18n/locale-registry.js"
   );
-  assert.equal(getSelectableLocales().length, 89);
+  assert.equal(getSelectableLocales().length, 93);
   const picker = getLocalePickerLocales("ar-001");
   assert.ok(picker.some((l) => l.id === "ar-001"));
   assert.ok(picker.length >= 89);

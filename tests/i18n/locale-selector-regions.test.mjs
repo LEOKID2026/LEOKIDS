@@ -28,10 +28,10 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../..");
 
-test("selector option count remains 89", () => {
+test("selector option count remains 93", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 89);
-  assert.equal(Object.keys(LOCALE_SELECTOR_REGION).length, 89);
+  assert.equal(locales.length, 93);
+  assert.equal(Object.keys(LOCALE_SELECTOR_REGION).length, 93);
 });
 
 test("every selectable locale appears exactly once with a region", () => {
@@ -52,12 +52,12 @@ test("every selectable locale appears exactly once with a region", () => {
   }
 });
 
-test("grouped selector covers all 89 without duplicates", () => {
+test("grouped selector covers all 93 without duplicates", () => {
   const locales = getSelectableLocales();
   const groups = groupLocalesBySelectorRegion(locales);
   const flat = groups.flatMap((g) => g.locales.map((l) => l.id));
-  assert.equal(flat.length, 89);
-  assert.equal(new Set(flat).size, 89);
+  assert.equal(flat.length, 93);
+  assert.equal(new Set(flat).size, 93);
   for (const group of groups) {
     const labels = group.locales.map(getSelectorDisplayLabel);
     const sorted = [...labels].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
@@ -147,20 +147,20 @@ test("region inventory counts are stable", () => {
   const groups = groupLocalesBySelectorRegion(locales);
   const counts = Object.fromEntries(groups.map((g) => [g.regionId, g.locales.length]));
   assert.deepEqual(counts, {
-    americas: 25,
+    americas: 29,
     europe: 19,
     africa: 26,
     middle_east: 10,
     asia: 7,
     oceania: 2,
   });
-  assert.equal(Object.values(counts).reduce((a, b) => a + b, 0), 89);
+  assert.equal(Object.values(counts).reduce((a, b) => a + b, 0), 93);
 });
 
-test("89/89 selector options have flag or neutral icon metadata", () => {
+test("93/93 selector options have flag or neutral icon metadata", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 89);
-  assert.equal(Object.keys(LOCALE_SELECTOR_FLAG).length, 89);
+  assert.equal(locales.length, 93);
+  assert.equal(Object.keys(LOCALE_SELECTOR_FLAG).length, 93);
 
   /** @type {string[]} */
   const missing = [];

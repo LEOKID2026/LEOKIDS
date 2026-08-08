@@ -73,7 +73,7 @@ test("Wave2 membership: current IQ/JO/AE/TN remain selectable with paths/fallbac
     getLocaleFallbackChain
   );
   assert.equal(r.failures.length, 0, JSON.stringify(r.failures));
-  assert.equal(r.currentSelectorTotal, 89);
+  assert.equal(r.currentSelectorTotal, 93);
   for (const id of ["ar-IQ", "ar-JO", "ar-AE", "ar-TN"]) {
     assert.equal(r.checks[`${id}.selectable`], true, id);
     assert.equal(r.checks[`${id}.path`], true, id);

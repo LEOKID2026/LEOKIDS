@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "helpCenter": "Help centre"
+  },
+  "home": {
+    "subhead": "Practice maths, geometry, English, and science — built for primary learners in Trinidad and Tobago."
+  },
+  "public": {
+    "contact": {
+      "faq": {
+        "subjects": {
+          "a": "The site includes practice in maths, geometry, English, and science — based on what is open and available for your child."
+        },
+        "parentsSee": {
+          "a": "Parents can view reports showing performance, repeating mistakes, strengths, and topics to keep practising."
+        }
+      }
+    },
+    "homepage": {
+      "howItWorks": {
+        "step2": "Child starts learning, practising, and playing"
+      },
+      "valueCards": {
+        "0": {
+          "text": "See what your child practised, where they are improving, and what to reinforce."
+        },
+        "1": {
+          "text": "Practice, games, coins, and progress in a friendly, colourful journey."
+        }
+      },
+      "learningSystem": {
+        "capabilities": {
+          "subject-map": {
+            "text": "See progress across maths, geometry, English, and science down to the topics practised."
+          }
+        }
+      },
+      "parentBenefits": {
+        "items": {
+          "0": {
+            "text": "A broader view than one primary level — built from real activity."
+          }
+        },
+        "highlight": "Instead of guessing where it's hard — get organised insight about what to work on."
+      },
+      "kids": {
+        "benefits": {
+          "0": {
+            "text": "Colourful questions and challenges that make practice feel lighter."
+          }
+        }
+      },
+      "finalCta": {
+        "text": "Open an account, add your child, and build an organised learning picture from practice, activities, and games."
+      },
+      "teachers": {
+        "title": "Organised practice and tracking between lessons"
+      }
+    },
+    "about": {
+      "intro1": "The site is designed for primary learners in Trinidad and Tobago across Infant 2 through Standard 5, with practice by subject, primary level, topic, and difficulty. Every child can start where it makes sense, move forward gradually, and reinforce the topics where they need more confidence.",
+      "missionMuted": "The system combines practice, playfulness, parent reports, and progress summaries to create a learning process that feels personal, organised, and encouraging.",
+      "learnEnjoyBody": "Beyond academic practice, the site includes educational games, engaging play, coins, and cards designed to add fun, motivation, and enjoyment to learning. The goal is for kids not to feel they are only \"doing homework,\" but entering a colourful kids world where they can learn, play, and progress with a good feeling.",
+      "funGames": {
+        "0": {
+          "text": "Games that add interest and fun, encouraging kids to keep practising."
+        }
+      },
+      "siteFeatures": {
+        "0": {
+          "text": "Maths, geometry, English, and science."
+        },
+        "1": {
+          "phase": "Primary levels and difficulty levels"
+        }
+      }
+    },
+    "seoNav": {
+      "fromGuideToPracticeBody": "After you choose an approach, go to the matching practice area and pick a primary level and topic. You can return to the guide at any step to adjust what comes next."
+    }
+  },
+  "parent": {
+    "selectGrade": "Select primary level",
+    "gradeRequired": "Please select a primary level.",
+    "filterSuitable": "Suitable for primary level",
+    "gradeSuitable": "Suitable for primary level",
+    "allowGradePicker": "Allow child to pick primary level on learning pages",
+    "assignActivityGradeLabel": "Primary level for activity",
+    "assignActivityChooseGradeGenerate": "Choose a primary level for the activity before generating questions",
+    "assignActivityChooseGradeSend": "Choose a primary level for the activity before sending"
+  },
+  "student": {
+    "subjectsIntro": "Progress by subject — accuracy, questions, level, and stars. Tap \"Go to subject\" to start practising."
+  }
+}

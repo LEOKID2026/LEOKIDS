@@ -75,9 +75,9 @@ test("id-ID registry: path, selector, og, TTS, LTR", () => {
   assert.equal(resolveBrowserSpeechLang(LOCALE), "id-ID");
 });
 
-test("selector count is 89; Indonesia once; no duplicate ids/paths/labels", () => {
+test("selector count is 93; Indonesia once; no duplicate ids/paths/labels", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 89);
+  assert.equal(locales.length, 93);
   const hits = locales.filter((l) => l.id === LOCALE);
   assert.equal(hits.length, 1);
   assert.equal(hits[0].label, "Indonesia");

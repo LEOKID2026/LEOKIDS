@@ -1,0 +1,6 @@
+{
+  "communication": {
+    "audienceGradeParents": "Parents of this grade",
+    "audienceGradeTeachers": "Teachers of this grade"
+  }
+}

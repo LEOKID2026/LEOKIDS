@@ -22,9 +22,9 @@ const worldMap = JSON.parse(
   fs.readFileSync(path.join(repoRoot, "lib/i18n/data/world-countries.json"), "utf8")
 );
 
-test("selector count remains 89 while coverage excludes Arabic Master", () => {
+test("selector count remains 93 while coverage excludes Arabic Master", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 89);
+  assert.equal(locales.length, 93);
   assert.equal(getLocaleCoverageGeoId("ar-001"), null);
   assert.equal(getLocaleSelectorFlag("ar-001")?.kind, "icon");
 });
@@ -34,9 +34,10 @@ test("coverage markets are derived from selector SoT and deduplicated", () => {
   assert.equal(marketCount, markets.length);
   assert.equal(byGeoId.size, marketCount);
 
-  // Unique flag codes (82) collapse UK subdivisions → fewer geographies.
-  assert.equal(marketCount < 82, true);
+  // Unique flag codes collapse UK subdivisions → fewer geographies than selector rows.
+  assert.equal(marketCount < 90, true);
   assert.equal(marketCount > 70, true);
+  assert.equal(marketCount, 83);
 
   assert.ok(byGeoId.has("CA"));
   assert.deepEqual(byGeoId.get("CA")?.localeIds.sort(), ["en-CA", "fr-CA"]);
@@ -170,8 +171,9 @@ test("homepage hero hosts coverage map and removes both promo videos", () => {
   const indexPage = fs.readFileSync(path.join(repoRoot, "pages/index.js"), "utf8");
   assert.match(hero, /GlobalCoverageMap/);
   assert.match(hero, /home-hero-coverage-map/);
-  assert.match(hero, /content-priority/);
-  assert.match(hero, /1\.55fr/);
+  assert.match(hero, /1\.06fr/);
+  assert.match(hero, /0\.94fr/);
+  assert.doesNotMatch(hero, /content-priority|1\.55fr|max-w-\[22rem\]/);
   assert.doesNotMatch(hero, /lg:flex-nowrap/);
   assert.doesNotMatch(hero, /PromoVideoClickablePreview|ParentPromoVideo|PARENT_PROMO/);
   assert.doesNotMatch(kids, /StudentPromoVideo|PromoVideo/);

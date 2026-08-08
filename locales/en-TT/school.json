@@ -1,0 +1,21 @@
+{
+  "portal": {
+    "classesSubtitle": "Choose a primary level, physical class and subject - reports and management by primary level",
+    "chooseGrade": "Choose a primary level",
+    "backGrades": "← Back to primary levels",
+    "colGrade": "Primary level",
+    "studentsSubtitle": "Browse by primary level and physical class - child reports without entering IDs",
+    "createStudentGrade": "Primary level",
+    "classMgmtGrade": "Primary level",
+    "assignCurrentGrade": "Current primary level",
+    "assignTargetGrade": "Target primary level"
+  },
+  "communication": {
+    "audienceGradeParents": "Parents of this primary level",
+    "audienceGradeTeachers": "Teachers of this primary level",
+    "detailsFieldGrade": "Primary level"
+  },
+  "reportSummary": {
+    "studentLine": "Answers: {totalAnswers} · Accuracy: {accuracy} · Primary level: {gradeLevel}"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "hubBlurb": "Choose a subject and start practising.",
+  "chooseGrade": "Choose a primary level",
+  "subjects": {
+    "math": "Maths"
+  },
+  "master": {
+    "noBadgesYet": "No badges yet. Keep practising!",
+    "gradeRequired": "Please choose a primary level before practising. Ask a parent to update your primary level.",
+    "practiceSettingsBlurb": "Control your training: review recent mistakes, practise by primary level (start low and advance to your chosen level), or pick a focus area.",
+    "notEnoughQuestions": "Not enough questions for the topic/primary level/difficulty you chose. Try changing a setting.",
+    "gradeFallback": "Primary level",
+    "gradedPracticeBlurb": "Practise by primary level — starts low and advances to your chosen level",
+    "titles": {
+      "math": "🧮 Maths"
+    },
+    "grades": {
+      "g1": "Infant 2",
+      "g2": "Standard 1",
+      "g3": "Standard 2",
+      "g4": "Standard 3",
+      "g5": "Standard 4",
+      "g6": "Standard 5"
+    },
+    "practiceModes": {
+      "graded": "Practise by primary level"
+    },
+    "gradeTitle": "{grade}",
+    "mistakePracticeBlurb": "Pick a recent mistake to open focused practice in the same topic, primary level, and difficulty.",
+    "currentGrade": "Current primary level",
+    "smartPracticeBlurb": "Like maths and geometry, choose a special training mode, link to recent mistakes, or practise by primary level.",
+    "gradedPracticeLabel": "Practise by primary level (start low → your chosen level)",
+    "badges": {
+      "streak_100_math": "👑 Maths king"
+    },
+    "referenceCategories": {
+      "operations": "Maths operations"
+    },
+    "referenceBoardBlurb": "Pick a category to quickly review key points — like the help boards in maths and geometry."
+  },
+  "math": {
+    "levelUpScience": "You levelled up in maths!",
+    "howToLearnTitle": "📘 How to learn maths here?",
+    "howToLearnBlurb": "The goal is to practise maths in a fun way, matched to primary level, topic, and difficulty.",
+    "leaderboardTitle": "🏆 Leaderboard – Maths",
+    "referenceBoardTitle": "📚 Maths help board",
+    "howToLearnSteps": {
+      "step1": "Choose a primary level, difficulty, and operation (addition, subtraction, multiplication, division, fractions, percentages, and more)."
+    },
+    "referenceBoardBlurb": "Pick a category to review key operations, formulas, and terms in maths."
+  },
+  "geometry": {
+    "howToLearnBlurb": "The goal is to practise geometry in a fun way, matched to primary level, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a primary level, difficulty, and topic (area, perimeter, volume, angles, Pythagoras, and more)."
+    },
+    "reference": {
+      "shapes": {
+        "circle": {
+          "desc": "Round shape; all points are the same distance from the centre"
+        }
+      }
+    },
+    "errors": {
+      "invalidGrade": "Invalid primary level. Please choose another primary level.",
+      "noTopics": "No topics available for this primary level. Please choose another primary level.",
+      "noQuestions": "No questions available for the selected topic and primary level."
+    }
+  },
+  "science": {
+    "howToLearnBlurb": "The goal is to practise science in a fun way, matched to primary level, topic, and difficulty.",
+    "howToLearnSteps": {
+      "step1": "Choose a primary level, difficulty, and topic (e.g. human body, plants, animals, and more)."
+    }
+  }
+}

@@ -107,7 +107,7 @@ test("foundation: id-ID path/selector/fallback/LTR/og/TTS/SW", () => {
   const def = resolveLocaleDefinition(LOCALE);
   assert.equal(def.pathPrefix, PREFIX);
   assert.equal(def.label, "Indonesia");
-  assert.equal(getSelectableLocales().length, 89);
+  assert.equal(getSelectableLocales().length, 93);
   assert.deepEqual(getLocaleFallbackChain(LOCALE), [LOCALE, "en"]);
   assert.equal(resolveDirection(LOCALE), "ltr");
   assert.equal(isRtlLocale(LOCALE), false);

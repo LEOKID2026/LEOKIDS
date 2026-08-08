@@ -77,7 +77,7 @@ test("Qatar /qa locale is not treated as internal QA tooling", () => {
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 89);
+  assert.equal(locales.length, 93);
   const ids = locales.map((l) => l.id);
   assert.equal(new Set(ids).size, ids.length);
   assert.equal(locales[0].id, "en");
@@ -164,6 +164,14 @@ test("selectable locales for switcher are English + country names", () => {
   assert.equal(byId["en-NIR"].pathPrefix, "nir");
   assert.equal(byId["en-PH"].nativeName, "Philippines");
   assert.equal(byId["en-PH"].pathPrefix, "ph");
+  assert.equal(byId["en-JM"].nativeName, "Jamaica");
+  assert.equal(byId["en-JM"].pathPrefix, "jm");
+  assert.equal(byId["en-TT"].nativeName, "Trinidad and Tobago");
+  assert.equal(byId["en-TT"].pathPrefix, "tt");
+  assert.equal(byId["en-BS"].nativeName, "Bahamas");
+  assert.equal(byId["en-BS"].pathPrefix, "bs");
+  assert.equal(byId["en-GY"].nativeName, "Guyana");
+  assert.equal(byId["en-GY"].pathPrefix, "gy");
   assert.equal(byId["nl-BE"].nativeName, "Belgium-nl");
   assert.equal(byId["nl-BE"].pathPrefix, "be-nl");
   assert.equal(byId["fr-BE"].nativeName, "Belgium-fr");
@@ -245,7 +253,7 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
 
 test("LanguageSwitcher list can reach all selectable locales including group-1 countries", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 89);
+  assert.equal(locales.length, 93);
   assert.equal(locales[0].id, "en");
   assert.ok(locales.some((l) => l.id === "ar-QA" && l.pathPrefix === "qa" && l.label === "قطر"));
   assert.ok(locales.some((l) => l.id === "ar-KW" && l.pathPrefix === "kw"));
