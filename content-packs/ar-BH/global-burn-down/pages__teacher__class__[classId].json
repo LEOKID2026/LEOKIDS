@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "class_report": "تقرير الصف الدراسي",
+    "invalid_class_id": "معرّف الصف الدراسي غير صالح.",
+    "you_do_not_have_permission_to_view_this_class_report": "ليس لديك الإذن لعرض تقرير هذا الصف الدراسي."
+  }
+}

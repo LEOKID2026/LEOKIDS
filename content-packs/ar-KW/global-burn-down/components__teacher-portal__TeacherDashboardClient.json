@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "remove_this_student_from_the_class": "هل تريد إزالة هذا الطالب من الفصل؟",
+    "remove_this_student_from_your_teacher_list": "هل تريد إزالة هذا الطالب من قائمة المعلمين لديك؟",
+    "full_name_of_new_student": "الاسم الكامل للطالب الجديد",
+    "students": "الطلاب",
+    "filter_student_list": "تصفية قائمة الطلاب",
+    "dashboard_subtitle": "لوحة التحكم — الفصول والطلاب",
+    "send_activity_link": "إرسال نشاط للطلاب الخاصين ←",
+    "students_need_attention": "طلاب بحاجة إلى اهتمام",
+    "students_count": "الطلاب: {count}",
+    "show_class_students": "عرض طلاب الفصل",
+    "students_heading": "الطلاب",
+    "no_students_filter": "لا يوجد طلاب لهذا الفلتر.",
+    "add_student_heading": "إضافة طالب",
+    "linked_not_in_class": "طلاب مرتبطون غير موجودين في هذا الفصل:",
+    "students_in_class_count": "الطلاب في الفصل ({count} / {cap})",
+    "students_in_class_count_open": "الطلاب في الفصل ({count})",
+    "class_at_cap": "بلغ هذا الفصل الحد الأقصى البالغ {cap} طالباً.",
+    "no_students_in_class": "لا يوجد طلاب في هذا الفصل.",
+    "student_fallback": "الطالب",
+    "could_not_add_student": "تعذّر إضافة الطالب.",
+    "could_not_add_to_class": "تعذّر إضافة الطالب إلى الفصل.",
+    "could_not_remove_from_class": "تعذّر إزالة الطالب من الفصل.",
+    "could_not_update_student_name": "تعذّر تحديث اسم الطالب.",
+    "could_not_remove_student": "تعذّر إزالة الطالب.",
+    "could_not_add_class_limit": "بلغ هذا الفصل الحد الأقصى لعدد الطلاب (40 طالباً). لا يمكن إضافة المزيد."
+  }
+}

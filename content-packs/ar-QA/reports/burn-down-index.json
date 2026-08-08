@@ -1,0 +1,38 @@
+{
+  "utils__parent-report-language__grade-aware-recommendation-templates": {
+    "do_not_provide_formal_factors_multiples_recommendations_for_grades_1_2": "لا تقدم توصيات رسمية بشأن العوامل/المضاعفات للصف الأول–الثاني.",
+    "do_not_provide_powers_exponents_recommendations_for_grades_1_2": "لا تقدم توصيات القوى/الأسس للصف الأول–الثاني.",
+    "do_not_provide_division_with_remainder_recommendations_for_grades_1_2": "لا تقدم توصيات القسمة مع الباقي للصف الأول–الثاني.",
+    "do_not_provide_ratio_recommendations_for_grades_1_2": "لا تقدم توصيات النسبة للصف الأول–الثاني.",
+    "do_not_provide_order_of_operations_recommendations_for_grades_1_2": "لا تقدم توصيات بشأن ترتيب العمليات للصف الأول–الثاني.",
+    "keep_scale_magnitude_recommendations_null_for_grades_1_2_until_early_num": "احتفظ بتوصيات المقياس/الحجم فارغة للصف الأول–الثاني حتى تتم الموافقة على نسخة الرقم المبكر.",
+    "keep_prime_composite_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات الأولية/المركبة فارغة للصف الأول–الثاني.",
+    "keep_zero_one_properties_recommendations_null_for_grades_1_2": "احتفظ بتوصيات الخصائص صفر/واحد فارغة للصف الأول–الثاني.",
+    "keep_formal_volume_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المجلد الرسمية فارغة للصف الأول–الثاني.",
+    "keep_formal_perimeter_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المحيط الرسمية فارغة للصف الأول–الثاني.",
+    "keep_formal_parallel_perpendicular_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات الرسمية المتوازية/المتعامدة فارغة للصف الأول–الثاني.",
+    "keep_diagonal_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات القطرية فارغة للصف الأول–الثاني.",
+    "keep_formal_height_recommendations_null_for_grades_1_2": "احتفظ بتوصيات الارتفاع الرسمية فارغة للصف الأول–الثاني.",
+    "keep_formal_area_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المجال الرسمي فارغة للصف الأول–الثاني.",
+    "keep_formula_based_area_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المناطق المستندة إلى الصيغة فارغة للصف الأول–الثاني.",
+    "keep_pythagoras_recommendations_null_for_grades_1_2": "أبقِ توصيات فيثاغورس فارغة للصف الأول–الثاني.",
+    "keep_pythagoras_recommendations_null_for_grades_3_4": "أبقِ توصيات فيثاغورس فارغة للصف الثالث–الرابع.",
+    "keep_formal_english_grammar_recommendations_null_for_grades_1_2": "احتفظ بتوصيات قواعد اللغة الإنجليزية الرسمية فارغة للصف الأول–الثاني.",
+    "keep_sentence_structure_grammar_recommendations_null_for_grades_1_2": "احتفظ بالتوصيات النحوية لبنية الجملة فارغة للصف الأول–الثاني.",
+    "this_week_focus_on_grade_3_4_english_sentence_structure_basic_word_order": "ركز هذا الأسبوع على بنية الجملة الإنجليزية للصف الثالث–الرابع: ترتيب الكلمات الأساسي، والموضوع/الإجراء، وإكمال المعنى.",
+    "keep_vocabulary_in_context_recommendations_null_for_grades_1_2": "احتفظ بتوصيات المفردات في السياق فارغة للصف الأول–الثاني.",
+    "grade_3_4_unit_conversion_with_reference_table_and_unit_choice_justifica": "تحويل الوحدات من الصف الثالث إلى الصف الرابع مع جدول مرجعي ومبرر اختيار الوحدة.",
+    "grade_5_6_multi_step_unit_conversion_with_reasonableness_checks": "تحويل الوحدة متعدد الخطوات من الصف الخامس إلى الصف السادس مع التحقق من المعقولية.",
+    "grade_3_4_graph_reading_axes_point_location_value_extraction": "قراءة الرسم البياني للصف الثالث–الرابع: المحاور، موقع النقطة، استخراج القيمة.",
+    "grade_5_6_graph_comparison_and_axis_based_reasoning": "مقارنة الرسوم البيانية للصف الخامس–السادس والتفكير القائم على المحور.",
+    "grade_3_4_experiment_data_table_graph_reading": "قراءة جدول بيانات/رسم بياني للصف الثالث–الرابع.",
+    "grade_5_6_experiment_graph_analysis_and_variable_result_link": "تحليل الرسم البياني للتجربة للصف الخامس–السادس ورابط النتيجة المتغيرة.",
+    "grade_3_4_evidence_source_grounding_for_animal_science_claims": "أدلة الصف الثالث–الرابع/أساس المصدر لادعاءات علوم الحيوان.",
+    "grade_5_6_claim_evidence_distinction_in_science_texts": "الصف الخامس–السادس يدعي التمييز في النصوص العلمية.",
+    "grade_3_4_experiment_evidence_sourcing_from_observation_logs": "مصدر أدلة التجربة للصف الثالث–الرابع من المراقبة/السجلات.",
+    "grade_5_6_data_backed_conclusions_vs_speculation": "الاستنتاجات المدعومة بالبيانات من الصف الخامس إلى الصف السادس مقابل التكهنات."
+  },
+  "utils__parent-report-language__parent-report-display-labels": {
+    "class_activity": "نشاط الشعبة"
+  }
+}

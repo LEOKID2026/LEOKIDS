@@ -1,0 +1,37 @@
+{
+  "fallback": {
+    "defaultStudentName": "الطالب",
+    "classSubjectHeadline": "{subject} - صعوبة المادة على مستوى الصف الدراسي",
+    "classSubjectHeadlineNoSubject": "صعوبة المادة على مستوى الصف الدراسي",
+    "classSubjectAction": "يوصى ببدء نشاط تقييمي قصير أو مراجعة مركزة للصف الدراسي بأكملها",
+    "classSuffix": "الصف الدراسي {label}"
+  },
+  "supportSuggestions": {
+    "targetedReview": "يوصى بتعزيز {subject} في الصف الدراسي"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "يحتاج الصف الدراسي إلى اهتمام فوري",
+    "class_needs_reinforcement": "يحتاج الصف الدراسي إلى تعزيز",
+    "class_monitor": "يحتاج الصف الدراسي إلى مراقبة وممارسة مركزة",
+    "class_on_track": "الصف الدراسي يسير على الطريق الصحيح"
+  },
+  "classHealth": {
+    "critical_class": "يحتاج الصف الدراسي إلى اهتمام فوري",
+    "needs_reinforcement": "يحتاج الصف الدراسي إلى تعزيز",
+    "monitor": "يحتاج الصف الدراسي إلى مراقبة وممارسة مركزة",
+    "strong": "الصف الدراسي يسير على الطريق الصحيح"
+  },
+  "actionTypes": {
+    "class_reteach": "إعادة تدريس الصف الدراسي بأكملها"
+  },
+  "focus": {
+    "classFallbackBanner": "يظهر الصف الدراسي صعوبة في هذه المادة - يوصى بتعزيز تحليلي للصف الدراسي"
+  },
+  "dashboard": {
+    "noClassesHint": "أنشئ صفًا دراسيًا جديدة أدناه، ثم أضف الأطفال عبر \"إدارة الصف الدراسي\" في بطاقة الصف الدراسي.",
+    "createClassLabel": "اسم الصف الدراسي",
+    "createClassButton": "إنشاء صف دراسي",
+    "createClassPlaceholder": "مثلًا: الصف الدراسي 3 - Leo",
+    "noClassesTitle": "لا توجد صفوف دراسية نشطة"
+  }
+}

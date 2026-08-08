@@ -435,6 +435,60 @@ function probe(localeSpec) {
   };
 }
 
+/**
+ * Wave 2 membership/invariants — independent of total selector count after Wave 3+.
+ * @param {Array<{id:string,pathPrefix?:string,selectorVisible?:boolean}>} selectable
+ * @param {typeof LOCALE_REGISTRY} registry
+ * @param {(id:string)=>string|null|undefined} getPrefix
+ * @param {(id:string)=>string[]} getChain
+ * @returns {{ failures: string[], checks: Record<string, boolean>, currentSelectorTotal: number }}
+ */
+export function probeWave2LocaleMembership(
+  selectable,
+  registry = LOCALE_REGISTRY,
+  getPrefix = getPublicLocalePathPrefix,
+  getChain = getLocaleFallbackChain
+) {
+  const WAVE2 = [
+    { id: "ar-IQ", prefix: "iq" },
+    { id: "ar-JO", prefix: "jo" },
+    { id: "ar-AE", prefix: "ae" },
+    { id: "ar-TN", prefix: "tn" },
+  ];
+  const list = Array.isArray(selectable) ? selectable : [];
+  /** @type {string[]} */
+  const failures = [];
+  /** @type {Record<string, boolean>} */
+  const checks = {};
+  for (const c of WAVE2) {
+    const hit = list.find((l) => l && l.id === c.id);
+    const def = registry?.[c.id];
+    const selectableOk = Boolean(hit);
+    const enabledOk = def?.enabled === true;
+    const visibleOk = def?.selectorVisible !== false;
+    const prefixOk = getPrefix(c.id) === c.prefix;
+    const chain = getChain(c.id);
+    const chainOk =
+      Array.isArray(chain) &&
+      chain.length === 3 &&
+      chain[0] === c.id &&
+      chain[1] === "ar-001" &&
+      chain[2] === "en";
+    checks[`${c.id}.selectable`] = selectableOk;
+    checks[`${c.id}.enabled`] = enabledOk;
+    checks[`${c.id}.selectorVisible`] = visibleOk;
+    checks[`${c.id}.path`] = prefixOk;
+    checks[`${c.id}.fallback`] = chainOk;
+    if (!selectableOk) failures.push(`Wave2 missing selectable ${c.id}`);
+    if (!enabledOk) failures.push(`Wave2 ${c.id} not enabled`);
+    if (!visibleOk) failures.push(`Wave2 ${c.id} selectorVisible false`);
+    if (!prefixOk) failures.push(`Wave2 ${c.id} path want /${c.prefix}`);
+    if (!chainOk) failures.push(`Wave2 ${c.id} fallback want ${c.id}→ar-001→en got ${chain}`);
+  }
+  return { failures, checks, currentSelectorTotal: list.length };
+}
+
+function runWave2Probes() {
 const selectorBeforeNote = 80;
 const selectorAfter = getSelectableLocales().length;
 const { LOCALE_PUBLIC_PATH_PREFIX, offlineFallbackPath, isArabicOfflineUiLocale } =
@@ -470,11 +524,15 @@ for (const [id, def] of Object.entries(LOCALE_REGISTRY)) {
   if (LOCALE_PUBLIC_PATH_PREFIX[id] !== prefix) swMapMismatch += 1;
 }
 
+const wave2Membership = probeWave2LocaleMembership(getSelectableLocales());
+
 const results = {
   generatedAt: new Date().toISOString(),
   phase: "arabic-country-wave-2-wiring",
   selectorCountBefore: selectorBeforeNote,
   selectorCountAfter: selectorAfter,
+  currentSelectorTotal: wave2Membership.currentSelectorTotal,
+  wave2Membership,
   locales: {},
   sw: {
     failures: swFailures,
@@ -492,6 +550,7 @@ const results = {
     catalogParityAllOk: true,
     countryChecksOk: true,
     swOk: swFailures.length === 0 && swMapMismatch === 0,
+    wave2MembershipOk: wave2Membership.failures.length === 0,
   },
 };
 
@@ -516,8 +575,8 @@ results.pass =
   results.summary.catalogParityAllOk &&
   results.summary.countryChecksOk &&
   results.summary.swOk &&
-  Object.values(results.locales).every((r) => r.helpParentsCount > 0) &&
-  selectorAfter === 84;
+  results.summary.wave2MembershipOk &&
+  Object.values(results.locales).every((r) => r.helpParentsCount > 0);
 
 fs.writeFileSync(OUT, `${JSON.stringify(results, null, 2)}\n`, "utf8");
 console.log(JSON.stringify(results, null, 2));
@@ -528,5 +587,15 @@ if (!results.pass) {
     if (r.namespaceParityFailures?.length) console.error(id, "ns", r.namespaceParityFailures.slice(0, 5));
   }
   if (swFailures.length) console.error("sw", swFailures);
+  if (wave2Membership.failures.length) console.error("wave2Membership", wave2Membership.failures);
 }
-process.exit(results.pass ? 0 : 1);
+return results;
+}
+
+const isMain =
+  process.argv[1] &&
+  path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1]);
+if (isMain) {
+  const results = runWave2Probes();
+  process.exit(results.pass ? 0 : 1);
+}

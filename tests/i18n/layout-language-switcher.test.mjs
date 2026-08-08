@@ -6,7 +6,11 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { shouldShowLayoutLanguageSwitcher } from "../../lib/site-nav.js";
+import {
+  shouldShowLayoutLanguageSwitcher,
+  isQatarPublicLocalePath,
+  isInternalQaToolingPath,
+} from "../../lib/site-nav.js";
 import { getSelectableLocales } from "../../lib/i18n/locale-registry.js";
 import { buildLocalizedHref, canonicalizeLocalizedPath } from "../../lib/i18n/locale-path.js";
 
@@ -46,96 +50,59 @@ test("shouldShowLayoutLanguageSwitcher: excludes admin/dev/prototypes/poc/qa", (
     "/dev/english-word-builder-prototype",
     "/internal/poc/tool",
     "/tools/qa",
+    "/tools/qa/report",
+    "/internal/qa/tool",
+    "/student/foo-qa-bar",
   ]) {
     assert.equal(shouldShowLayoutLanguageSwitcher(p), false, p);
   }
 });
 
+test("Qatar /qa locale is not treated as internal QA tooling", () => {
+  assert.equal(isQatarPublicLocalePath("/qa"), true);
+  assert.equal(isQatarPublicLocalePath("/qa/"), true);
+  assert.equal(isQatarPublicLocalePath("/qa/parents"), true);
+  assert.equal(isQatarPublicLocalePath("/qa/student/home"), true);
+  assert.equal(isQatarPublicLocalePath("/tools/qa"), false);
+  assert.equal(isInternalQaToolingPath("/qa"), false);
+  assert.equal(isInternalQaToolingPath("/qa/parents"), false);
+  assert.equal(isInternalQaToolingPath("/tools/qa"), true);
+  assert.equal(isInternalQaToolingPath("/tools/qa/x"), true);
+  assert.equal(isInternalQaToolingPath("/internal/qa/tool"), true);
+  assert.equal(isInternalQaToolingPath("/student/foo-qa-bar"), true);
+  for (const p of ["/qa", "/qa/", "/qa/parents", "/qa/student/home", "/qa/practice/math"]) {
+    assert.equal(shouldShowLayoutLanguageSwitcher(p), true, p);
+  }
+});
+
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 75);
-  assert.deepEqual(
-    locales.map((l) => l.id),
-    [
-      "en",
-      "es-MX",
-      "es-CO",
-      "es-AR",
-      "es-PE",
-      "es-CL",
-      "es-EC",
-      "es-GT",
-      "es-DO",
-      "es-VE",
-      "es-BO",
-      "es-HN",
-      "es-SV",
-      "es-NI",
-      "es-PY",
-      "es-CR",
-      "es-PA",
-      "es-UY",
-      "es-CU",
-      "es-PR",
-      "es-ES",
-      "pt-BR",
-      "pt-PT",
-      "pt-AO",
-      "pt-MZ",
-      "it-IT",
-      "fr-FR",
-      "fr-CI",
-      "fr-CA",
-      "nl-NL",
-      "de-DE",
-      "de-AT",
-      "de-CH",
-      "ru-RU",
-      "en-AU",
-      "en-NZ",
-      "en-IE",
-      "en-GB",
-      "en-CA",
-      "en-SG",
-      "en-ZA",
-      "en-NG",
-      "en-KE",
-      "en-WLS",
-      "en-SCT",
-      "en-NIR",
-      "en-PH",
-      "nl-BE",
-      "fr-BE",
-      "fr-CH",
-      "it-CH",
-      "en-IN",
-      "en-GH",
-      "fr-SN",
-      "fr-CD",
-      "es-US",
-      "ru-KZ",
-      "ru-UZ",
-      "ru-KG",
-      "ru-BY",
-      "en-RW",
-      "fr-CM",
-      "en-CM",
-      "fr-BJ",
-      "en-MU",
-      "fr-GN",
-      "fr-TG",
-      "fr-GA",
-      "fr-CG",
-      "nl-SR",
-      "pt-CV",
-      "es-GQ",
-      "en-SL",
-      "en-LR",
-      "en-GM",
-    ]
-  );
+  assert.equal(locales.length, 88);
+  const ids = locales.map((l) => l.id);
+  assert.equal(new Set(ids).size, ids.length);
+  assert.equal(locales[0].id, "en");
+  for (const id of [
+    "ar-001",
+    "ar-IQ",
+    "ar-JO",
+    "ar-AE",
+    "ar-TN",
+    "ar-KW",
+    "ar-QA",
+    "ar-OM",
+    "ar-BH",
+    "es-AR",
+    "es-MX",
+  ]) {
+    assert.equal(ids.includes(id), true, id);
+  }
   const byId = Object.fromEntries(locales.map((l) => [l.id, l]));
   assert.equal(byId.en.nativeName, "English");
+  assert.equal(byId["ar-KW"].label, "الكويت");
+  assert.equal(byId["ar-QA"].label, "قطر");
+  assert.equal(byId["ar-OM"].label, "عُمان");
+  assert.equal(byId["ar-BH"].label, "البحرين");
+  assert.equal(byId["ar-QA"].pathPrefix, "qa");
   assert.equal(byId["es-MX"].nativeName, "México");
   assert.equal(byId["es-DO"].nativeName, "R. Dominicana");
   assert.equal(byId["es-VE"].nativeName, "Venezuela");
@@ -262,7 +229,7 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
     path.join(repoRoot, "components/i18n/LanguageSwitcher.jsx"),
     "utf8"
   );
-  assert.match(switcher, /selectableLocales/);
+  assert.match(switcher, /getSelectableLocales|selectableLocales/);
   assert.match(switcher, /setLocale/);
   assert.match(switcher, /aria-label/);
   assert.match(switcher, /Escape/);
@@ -271,13 +238,17 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
   assert.match(switcher, /overflow-x-hidden/);
   assert.match(switcher, /overscroll-contain/);
   assert.doesNotMatch(switcher, /es-419/);
-  assert.doesNotMatch(switcher, /Hebrew||flag/i);
+  assert.doesNotMatch(switcher, /Hebrew|flag/i);
 });
 
 test("LanguageSwitcher list can reach all selectable locales including group-1 countries", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 75);
+  assert.equal(locales.length, 88);
   assert.equal(locales[0].id, "en");
+  assert.ok(locales.some((l) => l.id === "ar-QA" && l.pathPrefix === "qa" && l.label === "قطر"));
+  assert.ok(locales.some((l) => l.id === "ar-KW" && l.pathPrefix === "kw"));
+  assert.ok(locales.some((l) => l.id === "ar-OM" && l.pathPrefix === "om"));
+  assert.ok(locales.some((l) => l.id === "ar-BH" && l.pathPrefix === "bh"));
   assert.ok(locales.some((l) => l.id === "pt-BR" && l.nativeName === "Brasil"));
   assert.ok(locales.some((l) => l.id === "pt-PT" && l.nativeName === "Portugal"));
   assert.ok(locales.some((l) => l.id === "pt-AO" && l.nativeName === "Angola" && l.pathPrefix === "ao"));

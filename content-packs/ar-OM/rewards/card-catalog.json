@@ -1,0 +1,12 @@
+{
+  "cards": {
+    "achievement_diligent_student": {
+      "title": "الطالب المجتهد",
+      "description": "احصل على هذه البطاقة: الطالب المجتهد",
+      "accessibility": {
+        "title": "الطالب المجتهد",
+        "description": "احصل على هذه البطاقة: الطالب المجتهد"
+      }
+    }
+  }
+}

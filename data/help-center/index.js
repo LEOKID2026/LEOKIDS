@@ -93,6 +93,26 @@ import {
   SECTIONS_AR_TN,
 } from "./ar-TN/index.js";
 import {
+  ALL_ARTICLES_AR_KW,
+  BY_SECTION_AR_KW,
+  SECTIONS_AR_KW,
+} from "./ar-KW/index.js";
+import {
+  ALL_ARTICLES_AR_QA,
+  BY_SECTION_AR_QA,
+  SECTIONS_AR_QA,
+} from "./ar-QA/index.js";
+import {
+  ALL_ARTICLES_AR_OM,
+  BY_SECTION_AR_OM,
+  SECTIONS_AR_OM,
+} from "./ar-OM/index.js";
+import {
+  ALL_ARTICLES_AR_BH,
+  BY_SECTION_AR_BH,
+  SECTIONS_AR_BH,
+} from "./ar-BH/index.js";
+import {
   ALL_ARTICLES_EN_AU,
   BY_SECTION_EN_AU,
   SECTIONS_EN_AU,
@@ -500,6 +520,10 @@ export function resolveHelpLocale(locale) {
   if (id === "ar-jo") return "ar-JO";
   if (id === "ar-ae") return "ar-AE";
   if (id === "ar-tn") return "ar-TN";
+  if (id === "ar-kw") return "ar-KW";
+  if (id === "ar-qa") return "ar-QA";
+  if (id === "ar-om") return "ar-OM";
+  if (id === "ar-bh") return "ar-BH";
   if (id === "ar-001") return "ar-001";
   if (id === "es-us") return "es-US";
   if (id === "es-gq") return "es-GQ";
@@ -570,6 +594,10 @@ export function getHelpSections(locale) {
   if (helpLocale === "ar-JO") return SECTIONS_AR_JO;
   if (helpLocale === "ar-AE") return SECTIONS_AR_AE;
   if (helpLocale === "ar-TN") return SECTIONS_AR_TN;
+  if (helpLocale === "ar-KW") return SECTIONS_AR_KW;
+  if (helpLocale === "ar-QA") return SECTIONS_AR_QA;
+  if (helpLocale === "ar-OM") return SECTIONS_AR_OM;
+  if (helpLocale === "ar-BH") return SECTIONS_AR_BH;
   if (helpLocale === "ar-001") return SECTIONS_AR_001;
   if (helpLocale === "es-US") return SECTIONS_ES_419;
   if (helpLocale === "es-GQ") return SECTIONS_ES_419;
@@ -758,6 +786,18 @@ export function listArticles(section, locale) {
   if (helpLocale === "ar-TN") {
     return BY_SECTION_AR_TN[section] || [];
   }
+  if (helpLocale === "ar-KW") {
+    return BY_SECTION_AR_KW[section] || [];
+  }
+  if (helpLocale === "ar-QA") {
+    return BY_SECTION_AR_QA[section] || [];
+  }
+  if (helpLocale === "ar-OM") {
+    return BY_SECTION_AR_OM[section] || [];
+  }
+  if (helpLocale === "ar-BH") {
+    return BY_SECTION_AR_BH[section] || [];
+  }
   if (helpLocale === "ar-001") {
     return BY_SECTION_AR_001[section] || [];
   }
@@ -848,6 +888,10 @@ export function assertAllArticlesValid() {
     { locale: "ar-JO", articles: ALL_ARTICLES_AR_JO },
     { locale: "ar-AE", articles: ALL_ARTICLES_AR_AE },
     { locale: "ar-TN", articles: ALL_ARTICLES_AR_TN },
+    { locale: "ar-KW", articles: ALL_ARTICLES_AR_KW },
+    { locale: "ar-QA", articles: ALL_ARTICLES_AR_QA },
+    { locale: "ar-OM", articles: ALL_ARTICLES_AR_OM },
+    { locale: "ar-BH", articles: ALL_ARTICLES_AR_BH },
     { locale: "en-AU", articles: ALL_ARTICLES_EN_AU },
     { locale: "en-NZ", articles: ALL_ARTICLES_EN_NZ },
     { locale: "en-IE", articles: ALL_ARTICLES_EN_IE },

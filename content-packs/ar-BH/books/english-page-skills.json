@@ -1,0 +1,39 @@
+{
+  "grades": {
+    "g3": {
+      "grammar_question_frames": {
+        "title": "الأسئلة - تعزيز الصف الثالث"
+      }
+    },
+    "g4": {
+      "vocab_school": {
+        "title": "المدرسة - الطلاب، اقرأوا",
+        "description": "يقرأ الطلاب الكتب"
+      }
+    },
+    "g1": {
+      "listening_classroom": {
+        "title": "تعليمات الصفوف الدراسية"
+      },
+      "vocab_school": {
+        "description": "كتاب، قلم، مكتب، معلم - عناصر الصف دراسي الدراسي"
+      },
+      "translation_classroom": {
+        "title": "عبارات الصفوف الدراسية"
+      }
+    },
+    "g2": {
+      "classroom_vocab_g2": {
+        "description": "الصف دراسي الدراسي، الملعب، الصديق، القراءة، الكتابة، الاستماع"
+      },
+      "translation_classroom": {
+        "title": "عبارات الصفوف الدراسية - الجمل"
+      }
+    },
+    "g5": {
+      "vocab_school": {
+        "title": "المدرسة - مشروع الصف الدراسي"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "english.g3": {
+      "bookTitle": "اللغة الإنجليزية - الصف الثالث"
+    },
+    "geometry.g3": {
+      "bookTitle": "الهندسة - الصف الثالث"
+    },
+    "math.g3": {
+      "bookTitle": "الرياضيات - الصف الثالث"
+    }
+  },
+  "pages": {
+    "english.g1": {
+      "classroom_words": {
+        "title": "كلمات الصفوف الدراسية"
+      },
+      "listening_classroom": {
+        "title": "تعليمات الصفوف الدراسية"
+      }
+    }
+  }
+}

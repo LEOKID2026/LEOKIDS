@@ -1,0 +1,14 @@
+{
+  "auditActions": {
+    "school_student_enrolled": "تم تسجيل الطالب",
+    "school_student_unenrolled": "تم إلغاء تسجيل الطالب",
+    "school_class_viewed": "تم عرض تقرير الشعبة",
+    "school_student_report_viewed": "تم الاطلاع على تقرير الطالب",
+    "school_student_class_transferred": "الطالب منقول",
+    "school_class_teacher_reassigned": "تم إعادة تعيين معلم الشعبة",
+    "school_class_archived": "تمت أرشفة الشعبة",
+    "class_transfer": "الطالب منقول",
+    "viewed_student_report": "تم الاطلاع على تقرير الطالب",
+    "viewed_class_report": "تم عرض تقرير الشعبة"
+  }
+}

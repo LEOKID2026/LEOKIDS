@@ -1,0 +1,10 @@
+{
+  "auditActions": {
+    "school_student_enrolled": "تم تسجيل الطالب",
+    "school_student_unenrolled": "تم إلغاء تسجيل الطالب",
+    "school_student_report_viewed": "تم الاطلاع على تقرير الطالب",
+    "school_student_class_transferred": "الطالب منقول",
+    "class_transfer": "الطالب منقول",
+    "viewed_student_report": "تم الاطلاع على تقرير الطالب"
+  }
+}

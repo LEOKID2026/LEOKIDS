@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "class_status": "حالة الصف الدراسي",
+    "col_class": "الصف الدراسي",
+    "active_classes": "{count} صفوف دراسية نشطة"
+  }
+}

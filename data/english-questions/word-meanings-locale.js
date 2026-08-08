@@ -521,6 +521,10 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "ar-jo") chainLocale = "ar-JO";
   else if (tag === "ar-ae") chainLocale = "ar-AE";
   else if (tag === "ar-tn") chainLocale = "ar-TN";
+  else if (tag === "ar-kw") chainLocale = "ar-KW";
+  else if (tag === "ar-qa") chainLocale = "ar-QA";
+  else if (tag === "ar-om") chainLocale = "ar-OM";
+  else if (tag === "ar-bh") chainLocale = "ar-BH";
   else if (tag === "ar-001" || tag === "ar001") chainLocale = "ar-001";
   else if (tag === "es-us") chainLocale = "es-US";
   else if (tag === "es-gq") chainLocale = "es-GQ";

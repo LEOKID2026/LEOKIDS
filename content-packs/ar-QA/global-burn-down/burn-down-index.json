@@ -1,0 +1,176 @@
+{
+  "components__school-portal__SchoolDrillDown": {
+    "class_status": "حالة الشعبة",
+    "col_class": "الشعبة",
+    "active_classes": "{count} شعب نشطة"
+  },
+  "components__school-portal__SchoolPortalUi": {
+    "col_class": "الشعبة"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "لا يوجد أطفال في هذه الشعبة."
+  },
+  "components__student__StudentClassroomActivitiesPanel": {
+    "class_activities": "أنشطة الشعبة"
+  },
+  "components__teacher-portal__TeacherClassActivitiesNav": {
+    "aria_label": "تنقّل الشعبة",
+    "class_report": "تقرير الشعبة"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "class_report": "تقرير الشعبة",
+    "loading_class_report": "جارٍ تحميل تقرير الشعبة…"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "هل تريد إزالة هذا الطالب من الشعبة؟",
+    "remove_this_student_from_your_teacher_list": "هل تريد إزالة هذا الطالب من قائمة المعلمين لديك؟",
+    "manage_class": "إدارة الشعبة",
+    "full_name_of_new_student": "الاسم الكامل للطالب الجديد",
+    "students": "الطلاب",
+    "classes": "الشعب",
+    "class_report": "تقرير الشعبة",
+    "filter_student_list": "تصفية قائمة الطلاب",
+    "dashboard_subtitle": "لوحة التحكم — الشعب والطلاب",
+    "send_activity_link": "إرسال نشاط للطلاب الخاصين ←",
+    "students_need_attention": "طلاب بحاجة إلى اهتمام",
+    "my_classes": "شعبي",
+    "students_count": "الطلاب: {count}",
+    "show_class_students": "عرض طلاب الشعبة",
+    "manage_class_btn": "إدارة الشعبة",
+    "students_heading": "الطلاب",
+    "no_students_filter": "لا يوجد طلاب لهذا الفلتر.",
+    "classes_heading": "الشعب",
+    "class_name_label": "اسم الشعبة",
+    "add_student_heading": "إضافة طالب",
+    "linked_not_in_class": "طلاب مرتبطون غير موجودين في هذه الشعبة:",
+    "add_to_class": "إضافة إلى الشعبة",
+    "students_in_class_count": "الطلاب في الشعبة ({count} / {cap})",
+    "students_in_class_count_open": "الطلاب في الشعبة ({count})",
+    "class_at_cap": "بلغت هذه الشعبة الحد الأقصى البالغ {cap} طالباً.",
+    "no_students_in_class": "لا يوجد طلاب في هذه الشعبة.",
+    "remove_from_class": "إزالة من الشعبة",
+    "class_fallback": "شعبة",
+    "student_fallback": "الطالب",
+    "could_not_update_class_name": "تعذّر تحديث اسم الشعبة.",
+    "could_not_add_student": "تعذّر إضافة الطالب.",
+    "could_not_add_to_class": "تعذّر إضافة الطالب إلى الشعبة.",
+    "could_not_remove_from_class": "تعذّر إزالة الطالب من الشعبة.",
+    "could_not_update_student_name": "تعذّر تحديث اسم الطالب.",
+    "could_not_remove_student": "تعذّر إزالة الطالب.",
+    "could_not_create_class": "تعذّر إنشاء الشعبة.",
+    "could_not_add_class_limit": "بلغت هذه الشعبة الحد الأقصى لعدد الطلاب (40 طالباً). لا يمكن إضافة المزيد."
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "whole_class": "الشعبة بأكملها",
+    "selected_students": "الطلاب المختارون",
+    "discussion_with_response_students_submit_an_answer": "مناقشة مع الرد (يرسل الطلاب إجابة)"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "class_average": "متوسط الشعبة",
+    "total_students": "إجمالي الطلاب"
+  },
+  "lib__global__product-context.server": {
+    "this_student_does_not_belong_to_leo_kids_global": "هذا الطالب لا ينتمي إلى Leo Kids Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "لم يتم العثور على الطالب لولي الأمر هذا في Leo Kids Global."
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "أولياء أمور الشعبة"
+  },
+  "lib__school-portal__school-report-view-model": {
+    "class_activities": "أنشطة الشعبة",
+    "students_in_class": "الطلاب في الشعبة",
+    "no_children_are_registered_in_this_class": "لم يتم تسجيل أي أطفال في هذه الشعبة.",
+    "general_class_report_all_subjects": "التقرير العام للشعبة · جميع المواد",
+    "students_who_need_attention": "الطلاب الذين يحتاجون إلى الاهتمام",
+    "student_distribution": "توزيع الطلاب"
+  },
+  "lib__site__public-page-seo": {
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "ممارسة رقمية للمرحلة الابتدائية (الصف الأول إلى الصف السادس) في قطر — الرياضيات والهندسة والإنجليزية والعلوم.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — ممارسة للمرحلة الابتدائية (الصف الأول إلى الصف السادس) في قطر.",
+    "math_practice_for_elementary_learners_operations_fractions_and_more": "ممارسة الرياضيات للمرحلة الابتدائية (الصف الأول إلى الصف السادس) في قطر — العمليات والكسور والمزيد.",
+    "reading_comprehension_short_texts_english_practice_for_elementary": "فهم المقروء — نصوص قصيرة وممارسة إنجليزية للمرحلة الابتدائية (الصف الأول إلى الصف السادس) في قطر.",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "أوراق عمل جاهزة، ومولّد أوراق عمل، ومفاتيح إجابات لممارسة الصف الأول إلى الصف السادس في قطر.",
+    "school_portal_manage_classes_teachers_students_messaging_progress": "أدِر الشعب والمعلّمين والطلاب — مع رسائل مدرسية ومتابعة تقدّم في Leo Kids.",
+    "help_center_guides_for_parents_and_students_site_reports_practice": "مركز المساعدة — أدلة لأولياء الأمور والطلاب حول الموقع والتقارير والممارسة."
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf": {
+    "student_summary": "ملخص الطالب"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "الشعبة 3 - Leo"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "الصف الأول",
+    "grade_2": "الصف الثاني",
+    "grade_3": "الصف الثالث",
+    "grade_4": "الصف الرابع",
+    "grade_5": "الصف الخامس",
+    "grade_6": "الصف السادس"
+  },
+  "pages__school__classes__index": {
+    "no_classes_in_this_grade": "لا توجد شعب في هذا الصف."
+  },
+  "pages__student__activity__[activityId]": {
+    "done_body_discussion": "شكرًا على إجابتك. سيراها معلمك في الشعبة."
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "تقرير الشعبة",
+    "invalid_class_id": "معرّف الشعبة غير صالح.",
+    "you_do_not_have_permission_to_view_this_class_report": "ليس لديك الإذن لعرض تقرير هذه الشعبة."
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "أنشطة الشعبة",
+    "subtitle": "أنشئ أنشطة الشعبة وأطلقها وتابعها.",
+    "forbidden": "ليس لديك صلاحية لعرض أنشطة هذه الشعبة."
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "not_sent_hint": "(لا يُرسل للطالب)",
+    "err_no_permission": "ليس لديك صلاحية لإنشاء أنشطة لهذه الشعبة. تواصل مع إدارة المدرسة.",
+    "err_load_class": "تعذّر تحميل الشعبة",
+    "err_invalid_grade": "مستوى صف هذه الشعبة غير صالح. تواصل مع إدارة المدرسة."
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "forbidden": "ليس لديك صلاحية لعرض أوراق عمل هذه الشعبة."
+  },
+  "pages__teacher__students__activities__new": {
+    "multi_grade_warning": "⚠ لديك طلاب من صفوف مختلفة. يمكنك إرسال نشاط واحد فقط لطلاب من الصف نفسه.",
+    "select_first_to_lock": "اختر طالبًا أولًا لتثبيت الصف.",
+    "create_and_send": "إنشاء وإرسال ({n} طلاب)",
+    "err_select_student": "يرجى اختيار طالب واحد على الأقل",
+    "err_mix_grades": "لا يمكن خلط طلاب من صفوف مختلفة. هذا النشاط مقيّد بـ {locked}. هذا الطالب في {student}.",
+    "activity_for_selected_private_students": "نشاط لطلاب خاصين مختارين",
+    "select_private_students": "اختر طلاب خاصين",
+    "loading_students": "جارٍ تحميل الطلاب…",
+    "no_linked_private_students": "لا يوجد طلاب خاصون مرتبطون.",
+    "derived_from_selected": "— مستنتج من الطلاب المحدَّدين"
+  },
+  "pages__teacher__student__[studentId]": {
+    "student_report": "تقرير الطالب",
+    "invalid_student_id": "معرف الطالب غير صالح.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "ليس لديك الإذن لعرض تقرير هذا الطالب."
+  },
+  "pages__teacher__worksheets__index": {
+    "subtitle": "جميع أوراق العمل — للشعبة بأكملها أو لطلاب مختارين.",
+    "class_scope": "شعبة",
+    "selected_students": "طلاب مختارون"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · التعلم لطلاب الصف الأول إلى الصف السادس"
+  }
+}

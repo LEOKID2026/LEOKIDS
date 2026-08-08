@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "class_activities": "أنشطة الصف الدراسي",
+    "students_in_class": "الطلاب في الصف الدراسي",
+    "students_who_need_attention": "الطلاب الذين يحتاجون إلى الاهتمام",
+    "student_distribution": "توزيع الطلاب",
+    "no_children_are_registered_in_this_class": "لم يتم تسجيل أي أطفال في هذا الصف الدراسي.",
+    "general_class_report_all_subjects": "التقرير العام للصف الدراسي · جميع المواد"
+  }
+}

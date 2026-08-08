@@ -1,0 +1,12 @@
+{
+  "utils__topic-next-step-engine": {
+    "move_up_a_grade_same_topic_only": "الانتقال إلى صف أعلى — نفس الموضوع فقط",
+    "try_a_lower_level_or_grade_then_advance_gradually": "جرب مستوى أو صف أدنى، ثم تقدم تدريجيًا."
+  },
+  "components__parent__ParentCurriculumContent": {
+    "six_grades": "الصفوف من الأول إلى السادس"
+  },
+  "utils__topic-next-step-phase2": {
+    "raising_a_class_on_the_subject": "رفع الصف الدراسي في هذه المادة"
+  }
+}
