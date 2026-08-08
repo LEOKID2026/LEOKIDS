@@ -170,9 +170,31 @@ test("homepage hero hosts coverage map and removes both promo videos", () => {
   const indexPage = fs.readFileSync(path.join(repoRoot, "pages/index.js"), "utf8");
   assert.match(hero, /GlobalCoverageMap/);
   assert.match(hero, /home-hero-coverage-map/);
+  assert.match(hero, /content-priority/);
+  assert.match(hero, /1\.55fr/);
+  assert.doesNotMatch(hero, /lg:flex-nowrap/);
   assert.doesNotMatch(hero, /PromoVideoClickablePreview|ParentPromoVideo|PARENT_PROMO/);
   assert.doesNotMatch(kids, /StudentPromoVideo|PromoVideo/);
   assert.doesNotMatch(indexPage, /HomeParentVideo/);
+});
+
+test("coverage map uses compact header and stable details height", () => {
+  const mapSrc = fs.readFileSync(
+    path.join(repoRoot, "components/i18n/GlobalCoverageMap.jsx"),
+    "utf8"
+  );
+  assert.match(mapSrc, /data-coverage-header/);
+  assert.match(mapSrc, /data-coverage-details-stable/);
+  assert.match(mapSrc, /data-coverage-layout="stable-details"/);
+  assert.match(mapSrc, /h-\[3\.75rem\]/);
+  assert.match(mapSrc, /justify-between/);
+  // Top duplicate helper above the map must not render; hint stays in details slot only.
+  assert.doesNotMatch(
+    mapSrc,
+    /<p className=\{hintClass\}>\{hint\}<\/p>/
+  );
+  const hintOccurrences = (mapSrc.match(/\{hint\}/g) || []).length;
+  assert.equal(hintOccurrences >= 1, true);
 });
 
 test("mobile panel geometry still fits after coverage-map affordance", () => {

@@ -12,7 +12,7 @@ import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Reusable interactive coverage map driven by selector SoT.
- * UI copy and market/language labels follow the active interface locale.
+ * Compact header + reserved details height prevent layout shift on selection.
  *
  * @param {{
  *   className?: string,
@@ -106,44 +106,48 @@ export default function GlobalCoverageMap({
   const coveredLabel = t("ui.languageSwitcher.coverageMapCovered");
   const notCoveredLabel = t("ui.languageSwitcher.coverageMapNotCovered");
 
+  const titleClass = compact
+    ? "text-sm font-bold text-inherit min-w-0"
+    : "text-sm font-bold text-slate-900 min-w-0 sm:text-base";
   const summaryClass = compact
-    ? "text-sm font-semibold text-inherit"
-    : "text-sm font-semibold text-slate-700";
-  const hintClass = compact ? "text-xs text-inherit/80 opacity-80" : "text-xs text-slate-500";
+    ? "text-xs font-semibold text-inherit opacity-90 min-w-0 sm:text-sm"
+    : "text-xs font-semibold text-slate-600 min-w-0 sm:text-sm";
   const mapShellClass = compact
     ? "relative w-full min-w-0 overflow-hidden rounded-xl border border-white/20 bg-black/10"
     : "relative w-full min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50";
+  // Fixed height details slot — content swap must not change card/page height.
   const detailsClass = compact
-    ? "min-h-[3.25rem] rounded-lg border border-white/15 bg-black/15 px-3 py-2 text-sm"
-    : "min-h-[3.25rem] rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm";
+    ? "h-[3.75rem] rounded-lg border border-white/15 bg-black/15 px-3 py-2 text-sm overflow-hidden"
+    : "h-[3.75rem] rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm overflow-hidden";
 
   return (
     <div
-      className={`flex flex-col gap-3 min-w-0 ${className}`.trim()}
+      className={`flex flex-col gap-2 min-w-0 ${className}`.trim()}
       data-global-coverage-map="1"
       data-coverage-market-count={coverage.marketCount}
       data-coverage-locale={locale}
+      data-coverage-layout="stable-details"
     >
-      {showTitle ? (
-        <h2 className={`text-base font-bold md:text-lg ${compact ? "text-inherit" : "text-slate-900"}`}>
-          {title}
-        </h2>
-      ) : null}
-      <p className={summaryClass} data-coverage-summary="1">
-        {summary}
-      </p>
-      <p className={hintClass}>{hint}</p>
+      <div
+        className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1"
+        data-coverage-header="1"
+      >
+        {showTitle ? <h2 className={titleClass}>{title}</h2> : null}
+        <p className={`${summaryClass} ${showTitle ? "ms-auto text-end" : ""}`} data-coverage-summary="1">
+          {summary}
+        </p>
+      </div>
 
       <div className={mapShellClass}>
         <svg
           viewBox={worldMap.viewBox}
           role="img"
-          aria-label={summary}
-          className="block h-auto w-full max-h-[min(52vh,320px)]"
+          aria-label={`${title}. ${summary}`}
+          className="block h-auto w-full max-h-[min(38vh,220px)] sm:max-h-[min(40vh,240px)]"
           preserveAspectRatio="xMidYMid meet"
           dir="ltr"
         >
-          <title>{summary}</title>
+          <title>{`${title}. ${summary}`}</title>
           {(worldMap.countries || []).map((country) => {
             const covered = coverage.byGeoId.has(country.id);
             const selected = focusGeoId === country.id;
@@ -234,21 +238,32 @@ export default function GlobalCoverageMap({
         id={detailsId}
         className={detailsClass}
         aria-live="polite"
-        data-coverage-details={focusMarket ? focusMarket.geoId : ""}
+        data-coverage-details={focusMarket ? focusMarket.geoId : "idle"}
+        data-coverage-details-stable="1"
       >
-        {focusMarket ? (
-          <div className="min-w-0">
-            <div className={`font-bold break-words ${compact ? "text-inherit" : "text-slate-800"}`}>
-              {focusMarket.title}
+        <div className="flex h-full min-w-0 items-center">
+          {focusMarket ? (
+            <div className="min-w-0 w-full">
+              <div
+                className={`font-bold leading-snug truncate ${compact ? "text-inherit" : "text-slate-800"}`}
+              >
+                {focusMarket.title}
+              </div>
+              <div
+                className={`leading-snug truncate ${compact ? "opacity-90" : "text-slate-600"}`}
+              >
+                {focusMarket.detail}
+              </div>
+              <div className="sr-only">{coveredLabel}</div>
             </div>
-            <div className={`break-words ${compact ? "opacity-90" : "text-slate-600"}`}>
-              {focusMarket.detail}
+          ) : (
+            <div
+              className={`leading-snug line-clamp-2 ${compact ? "opacity-80" : "text-slate-500"}`}
+            >
+              {hint}
             </div>
-            <div className="sr-only">{coveredLabel}</div>
-          </div>
-        ) : (
-          <div className={compact ? "opacity-80" : "text-slate-500"}>{hint}</div>
-        )}
+          )}
+        </div>
       </div>
 
       <ul className="sr-only">
