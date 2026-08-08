@@ -3,37 +3,67 @@ import worldMap from "../../lib/i18n/data/world-countries.json";
 import {
   buildSelectorCoverageMarkets,
   findUnmappedCoverageMarkets,
+  getCoverageLanguageLabel,
+  getCoverageIntlLocale,
 } from "../../lib/i18n/locale-selector-coverage.js";
 import { getSelectableLocales } from "../../lib/i18n/locale-registry.js";
+import { getSelectorDisplayLabel } from "../../lib/i18n/locale-selector-regions.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 
 /**
  * Reusable interactive coverage map driven by selector SoT.
+ * UI copy and market/language labels follow the active interface locale.
  *
  * @param {{
  *   className?: string,
- *   summaryLabel?: string,
- *   hintLabel?: string,
- *   coveredLabel?: string,
- *   notCoveredLabel?: string,
  *   locales?: Array<{ id: string, label?: string, nativeName?: string, displayName?: string }>,
+ *   showTitle?: boolean,
+ *   compact?: boolean,
  * }} props
  */
 export default function GlobalCoverageMap({
   className = "",
-  summaryLabel,
-  hintLabel,
-  coveredLabel = "Covered",
-  notCoveredLabel = "Not yet covered",
   locales,
+  showTitle = false,
+  compact = false,
 }) {
+  const { t, locale } = useI18n();
   const reactId = useId();
   const detailsId = `${reactId}-details`;
   const [activeGeoId, setActiveGeoId] = useState(/** @type {string|null} */ (null));
   const [hoverGeoId, setHoverGeoId] = useState(/** @type {string|null} */ (null));
 
+  const displayLocale = getCoverageIntlLocale(locale);
+
+  const resolveLanguageLabel = useCallback(
+    (localeId) => {
+      const lang = String(localeId || "").split("-")[0]?.toLowerCase() || "";
+      const key = `ui.languageSwitcher.coverageLanguages.${lang}`;
+      const translated = t(key);
+      if (translated && translated !== key) return translated;
+      return getCoverageLanguageLabel(localeId);
+    },
+    [t]
+  );
+
+  const resolveUkNationLabel = useCallback(
+    (loc) => {
+      const key = `ui.languageSwitcher.coverageUkNations.${loc.id}`;
+      const translated = t(key);
+      if (translated && translated !== key) return translated;
+      return getSelectorDisplayLabel(loc);
+    },
+    [t]
+  );
+
   const coverage = useMemo(
-    () => buildSelectorCoverageMarkets(locales || getSelectableLocales()),
-    [locales]
+    () =>
+      buildSelectorCoverageMarkets(locales || getSelectableLocales(), {
+        displayLocale,
+        resolveLanguageLabel,
+        resolveUkNationLabel,
+      }),
+    [locales, displayLocale, resolveLanguageLabel, resolveUkNationLabel]
   );
 
   const mapGeoIds = useMemo(() => {
@@ -50,7 +80,6 @@ export default function GlobalCoverageMap({
   );
 
   if (typeof process !== "undefined" && process.env.NODE_ENV !== "production" && unmapped.length) {
-    // Surface mapping gaps during development; tests assert zero in CI.
     // eslint-disable-next-line no-console
     console.warn(
       "[GlobalCoverageMap] unmapped markets:",
@@ -69,30 +98,52 @@ export default function GlobalCoverageMap({
     [coverage.byGeoId]
   );
 
-  const summary =
-    summaryLabel ||
-    `Available across ${coverage.marketCount} markets`;
+  const title = t("ui.languageSwitcher.coverageMapTitle");
+  const summary = t("ui.languageSwitcher.coverageMapSummary", {
+    count: coverage.marketCount,
+  });
+  const hint = t("ui.languageSwitcher.coverageMapHint");
+  const coveredLabel = t("ui.languageSwitcher.coverageMapCovered");
+  const notCoveredLabel = t("ui.languageSwitcher.coverageMapNotCovered");
+
+  const summaryClass = compact
+    ? "text-sm font-semibold text-inherit"
+    : "text-sm font-semibold text-slate-700";
+  const hintClass = compact ? "text-xs text-inherit/80 opacity-80" : "text-xs text-slate-500";
+  const mapShellClass = compact
+    ? "relative w-full min-w-0 overflow-hidden rounded-xl border border-white/20 bg-black/10"
+    : "relative w-full min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50";
+  const detailsClass = compact
+    ? "min-h-[3.25rem] rounded-lg border border-white/15 bg-black/15 px-3 py-2 text-sm"
+    : "min-h-[3.25rem] rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm";
 
   return (
     <div
       className={`flex flex-col gap-3 min-w-0 ${className}`.trim()}
       data-global-coverage-map="1"
       data-coverage-market-count={coverage.marketCount}
+      data-coverage-locale={locale}
     >
-      <p className="text-sm font-semibold text-slate-700" data-coverage-summary="1">
-        {summary.replace("{count}", String(coverage.marketCount))}
+      {showTitle ? (
+        <h2 className={`text-base font-bold md:text-lg ${compact ? "text-inherit" : "text-slate-900"}`}>
+          {title}
+        </h2>
+      ) : null}
+      <p className={summaryClass} data-coverage-summary="1">
+        {summary}
       </p>
-      {hintLabel ? <p className="text-xs text-slate-500">{hintLabel}</p> : null}
+      <p className={hintClass}>{hint}</p>
 
-      <div className="relative w-full min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+      <div className={mapShellClass}>
         <svg
           viewBox={worldMap.viewBox}
           role="img"
-          aria-label={summary.replace("{count}", String(coverage.marketCount))}
+          aria-label={summary}
           className="block h-auto w-full max-h-[min(52vh,320px)]"
           preserveAspectRatio="xMidYMid meet"
+          dir="ltr"
         >
-          <title>{summary.replace("{count}", String(coverage.marketCount))}</title>
+          <title>{summary}</title>
           {(worldMap.countries || []).map((country) => {
             const covered = coverage.byGeoId.has(country.id);
             const selected = focusGeoId === country.id;
@@ -181,18 +232,22 @@ export default function GlobalCoverageMap({
 
       <div
         id={detailsId}
-        className="min-h-[3.25rem] rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm"
+        className={detailsClass}
         aria-live="polite"
         data-coverage-details={focusMarket ? focusMarket.geoId : ""}
       >
         {focusMarket ? (
           <div className="min-w-0">
-            <div className="font-bold text-slate-800 break-words">{focusMarket.title}</div>
-            <div className="text-slate-600 break-words">{focusMarket.detail}</div>
+            <div className={`font-bold break-words ${compact ? "text-inherit" : "text-slate-800"}`}>
+              {focusMarket.title}
+            </div>
+            <div className={`break-words ${compact ? "opacity-90" : "text-slate-600"}`}>
+              {focusMarket.detail}
+            </div>
             <div className="sr-only">{coveredLabel}</div>
           </div>
         ) : (
-          <div className="text-slate-500">{hintLabel || coveredLabel}</div>
+          <div className={compact ? "opacity-80" : "text-slate-500"}>{hint}</div>
         )}
       </div>
 

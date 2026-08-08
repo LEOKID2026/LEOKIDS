@@ -7,7 +7,6 @@ import { chromium } from "playwright";
 const BASE = process.env.PROMO_CHECK_BASE || "http://localhost:3001";
 
 const PAGES_WITH_PROMO = [
-  { path: "/", preview: "[data-testid='student-promo-video-compact-home-preview']" },
   { path: "/kids", preview: "[data-testid='student-promo-video-desktop-preview']" },
   { path: "/parents", preview: "[data-testid='parent-promo-video-desktop-preview']" },
 ];

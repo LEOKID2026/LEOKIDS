@@ -1,36 +1,26 @@
 import React, { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import GlobalCoverageMap from "./GlobalCoverageMap.jsx";
 
 /**
  * Lightweight modal shell around GlobalCoverageMap.
+ * Title/close labels come from the active locale via i18n.
  *
  * @param {{
  *   open: boolean,
  *   onClose: () => void,
- *   title: string,
- *   closeLabel: string,
- *   summaryLabel?: string,
- *   hintLabel?: string,
- *   coveredLabel?: string,
- *   notCoveredLabel?: string,
  *   locales?: Array<{ id: string, label?: string, nativeName?: string, displayName?: string }>,
  * }} props
  */
-export default function GlobalCoverageMapModal({
-  open,
-  onClose,
-  title,
-  closeLabel,
-  summaryLabel,
-  hintLabel,
-  coveredLabel,
-  notCoveredLabel,
-  locales,
-}) {
+export default function GlobalCoverageMapModal({ open, onClose, locales }) {
+  const { t } = useI18n();
   const titleId = useId();
   const closeRef = useRef(/** @type {HTMLButtonElement | null} */ (null));
   const previouslyFocused = useRef(/** @type {Element | null} */ (null));
+
+  const title = t("ui.languageSwitcher.coverageMapTitle");
+  const closeLabel = t("ui.languageSwitcher.coverageMapClose");
 
   useEffect(() => {
     if (!open) return undefined;
@@ -90,13 +80,7 @@ export default function GlobalCoverageMapModal({
           </button>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain p-4">
-          <GlobalCoverageMap
-            locales={locales}
-            summaryLabel={summaryLabel}
-            hintLabel={hintLabel}
-            coveredLabel={coveredLabel}
-            notCoveredLabel={notCoveredLabel}
-          />
+          <GlobalCoverageMap locales={locales} />
         </div>
       </div>
     </div>,

@@ -14,7 +14,42 @@
     "resetDefaults": "Kembalikan ke bawaan"
   },
   "languageSwitcher": {
-    "label": "Bahasa"
+    "label": "Bahasa",
+    "searchPlaceholder": "Cari negara…",
+    "regions": {
+      "americas": "Amerika",
+      "europe": "Eropa",
+      "africa": "Afrika",
+      "middle_east": "Timur Tengah",
+      "asia": "Asia",
+      "oceania": "Oseania"
+    },
+    "noResults": "Tidak ada negara yang cocok",
+    "viewCoverageMap": "Lihat peta cakupan",
+    "coverageMapTitle": "Cakupan LEO KIDS",
+    "coverageMapSummary": "Tersedia di {count} pasar",
+    "coverageMapHint": "Ketuk negara yang disorot untuk detail",
+    "coverageMapClose": "Tutup",
+    "coverageMapCovered": "Tersedia",
+    "coverageMapNotCovered": "Belum tersedia",
+    "coverageLanguages": {
+      "en": "Inggris",
+      "fr": "Prancis",
+      "es": "Spanyol",
+      "de": "Jerman",
+      "nl": "Belanda",
+      "it": "Italia",
+      "pt": "Portugis",
+      "ar": "Arab",
+      "id": "Indonesia",
+      "ru": "Rusia"
+    },
+    "coverageUkNations": {
+      "en-GB": "Inggris",
+      "en-SCT": "Skotlandia",
+      "en-WLS": "Wales",
+      "en-NIR": "Irlandia Utara"
+    }
   },
   "localeSettings": {
     "heading": "Preferensi bahasa",

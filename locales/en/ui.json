@@ -31,7 +31,25 @@
     "coverageMapHint": "Tap a highlighted country for details",
     "coverageMapClose": "Close",
     "coverageMapCovered": "Covered",
-    "coverageMapNotCovered": "Not yet covered"
+    "coverageMapNotCovered": "Not yet covered",
+    "coverageLanguages": {
+      "en": "English",
+      "fr": "French",
+      "es": "Spanish",
+      "de": "German",
+      "nl": "Dutch",
+      "it": "Italian",
+      "pt": "Portuguese",
+      "ar": "Arabic",
+      "id": "Indonesian",
+      "ru": "Russian"
+    },
+    "coverageUkNations": {
+      "en-GB": "England",
+      "en-SCT": "Scotland",
+      "en-WLS": "Wales",
+      "en-NIR": "Northern Ireland"
+    }
   },
   "localeSettings": {
     "heading": "Language preferences",

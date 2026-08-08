@@ -1,8 +1,8 @@
-import PromoVideoClickablePreview from "../promo/PromoVideoClickablePreview.jsx";
-import { PARENT_PROMO_DESKTOP_SRC } from "../parent/ParentPromoVideo";
 import { HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
 import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { WORKSHEET_HUB_ENTRY_ENABLED } from "../../lib/worksheets/worksheet-hub-entry-enabled.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import GlobalCoverageMap from "../i18n/GlobalCoverageMap.jsx";
 import { getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
 import HomeCtaLink from "./HomeCtaLink";
 
@@ -48,7 +48,7 @@ function HeroButtons({ isBright, copy, className = "" }) {
 }
 
 /**
- * Simple marketing hero — text + buttons || large parent video. No flow diagrams.
+ * Marketing hero — text + buttons || localized coverage map (replaces upper parent promo).
  * @param {{ isBright: boolean }} props
  */
 export default function HomeHero({ isBright }) {
@@ -56,10 +56,11 @@ export default function HomeHero({ isBright }) {
   const copy = homepage.hero;
   const cls = getHomeTextClasses(isBright);
   const titleClass = isBright ? "text-sky-900" : "text-sky-100";
+  const { t } = useI18n();
 
-  const videoWrap = isBright
-    ? "w-full overflow-hidden rounded-2xl shadow-xl shadow-sky-300/35 ring-1 ring-white/50 lg:rounded-3xl lg:shadow-2xl"
-    : "w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/45 ring-1 ring-white/10 lg:rounded-3xl";
+  const mapWrap = isBright
+    ? "w-full min-w-0 overflow-hidden rounded-2xl border border-sky-100 bg-white/90 p-3 shadow-xl shadow-sky-300/35 ring-1 ring-white/50 sm:p-4 lg:rounded-3xl lg:shadow-2xl"
+    : "w-full min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-black/35 p-3 shadow-2xl shadow-black/45 ring-1 ring-white/10 sm:p-4 lg:rounded-3xl";
 
   return (
     <section data-testid="home-hero" className="w-full">
@@ -96,13 +97,15 @@ export default function HomeHero({ isBright }) {
             <HeroButtons isBright={isBright} copy={copy} className="mt-1 justify-center lg:justify-start" />
           </div>
 
-          <div className="w-full" data-testid="home-hero-video">
-            <PromoVideoClickablePreview
-              src={PARENT_PROMO_DESKTOP_SRC}
-              wrapClassName={videoWrap}
-              videoClassName="block h-auto w-full aspect-video bg-black object-contain"
-              ariaLabel={copy.parentVideoAria}
-              testId="parent-promo-video-desktop"
+          <div
+            className={mapWrap}
+            data-testid="home-hero-coverage-map"
+            aria-label={t("ui.languageSwitcher.coverageMapTitle")}
+          >
+            <GlobalCoverageMap
+              showTitle
+              compact={!isBright}
+              className={isBright ? "" : "text-sky-50"}
             />
           </div>
         </div>

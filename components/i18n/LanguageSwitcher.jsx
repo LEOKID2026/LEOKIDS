@@ -166,12 +166,6 @@ export default function LanguageSwitcher({
   const searchPlaceholder = t("ui.languageSwitcher.searchPlaceholder");
   const noResults = t("ui.languageSwitcher.noResults");
   const viewCoverageMapLabel = t("ui.languageSwitcher.viewCoverageMap");
-  const coverageMapTitle = t("ui.languageSwitcher.coverageMapTitle");
-  const coverageMapSummary = t("ui.languageSwitcher.coverageMapSummary");
-  const coverageMapHint = t("ui.languageSwitcher.coverageMapHint");
-  const coverageMapClose = t("ui.languageSwitcher.coverageMapClose");
-  const coverageMapCovered = t("ui.languageSwitcher.coverageMapCovered");
-  const coverageMapNotCovered = t("ui.languageSwitcher.coverageMapNotCovered");
   const currentName = getSelectorDisplayLabel(current);
 
   const isBright = appearance === "bright";
@@ -402,17 +396,7 @@ export default function LanguageSwitcher({
         </div>
       ) : null}
     </div>
-    <GlobalCoverageMapModal
-      open={mapOpen}
-      onClose={closeCoverageMap}
-      title={coverageMapTitle}
-      closeLabel={coverageMapClose}
-      summaryLabel={coverageMapSummary}
-      hintLabel={coverageMapHint}
-      coveredLabel={coverageMapCovered}
-      notCoveredLabel={coverageMapNotCovered}
-      locales={locales}
-    />
+    <GlobalCoverageMapModal open={mapOpen} onClose={closeCoverageMap} locales={locales} />
     </>
   );
 }

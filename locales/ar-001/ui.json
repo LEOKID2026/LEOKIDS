@@ -14,7 +14,42 @@
     "resetDefaults": "إعادة التعيين إلى الإعدادات الافتراضية"
   },
   "languageSwitcher": {
-    "label": "لغة"
+    "label": "اللغة",
+    "searchPlaceholder": "ابحث عن دولة…",
+    "regions": {
+      "americas": "الأمريكتان",
+      "europe": "أوروبا",
+      "africa": "أفريقيا",
+      "middle_east": "الشرق الأوسط",
+      "asia": "آسيا",
+      "oceania": "أوقيانوسيا"
+    },
+    "noResults": "لا توجد دول مطابقة",
+    "viewCoverageMap": "عرض خريطة التغطية",
+    "coverageMapTitle": "تغطية LEO KIDS",
+    "coverageMapSummary": "متوفر في {count} أسواق",
+    "coverageMapHint": "اضغط على دولة مميزة لعرض التفاصيل",
+    "coverageMapClose": "إغلاق",
+    "coverageMapCovered": "مغطّى",
+    "coverageMapNotCovered": "غير مغطّى بعد",
+    "coverageLanguages": {
+      "en": "الإنجليزية",
+      "fr": "الفرنسية",
+      "es": "الإسبانية",
+      "de": "الألمانية",
+      "nl": "الهولندية",
+      "it": "الإيطالية",
+      "pt": "البرتغالية",
+      "ar": "العربية",
+      "id": "الإندونيسية",
+      "ru": "الروسية"
+    },
+    "coverageUkNations": {
+      "en-GB": "إنجلترا",
+      "en-SCT": "إسكتلندا",
+      "en-WLS": "ويلز",
+      "en-NIR": "أيرلندا الشمالية"
+    }
   },
   "localeSettings": {
     "heading": "تفضيلات اللغة",

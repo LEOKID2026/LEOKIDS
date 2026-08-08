@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Source contract: promo videos use shared lightbox; login pages stay video-free.
+ * Source contract: promo videos use shared lightbox; homepage is video-free (coverage map in hero).
  */
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -21,6 +21,8 @@ const studentLogin = read("pages/student/login.js");
 const parentLogin = read("pages/parent/login.js");
 const indexPage = read("pages/index.js");
 const marketing = read("components/marketing/MarketingLandingPage.jsx");
+const homeHero = read("components/home/HomeHero.jsx");
+const homeKidsSection = read("components/home/HomeKidsSection.jsx");
 
 assert.match(studentPromo, /PromoVideoClickablePreview/);
 assert.match(parentPromo, /PromoVideoClickablePreview/);
@@ -37,12 +39,12 @@ assert.match(modal, /aspect-video/);
 assert.doesNotMatch(studentLogin, /StudentPromoVideo|ParentPromoVideo/);
 assert.doesNotMatch(parentLogin, /StudentPromoVideo|ParentPromoVideo/);
 
-assert.match(indexPage, /HomeParentVideo/);
+assert.match(indexPage, /HomeHero/);
 assert.match(indexPage, /HomeKidsSection/);
-const homeParentVideo = read("components/home/HomeParentVideo.jsx");
-const homeKidsSection = read("components/home/HomeKidsSection.jsx");
-assert.match(homeParentVideo, /ParentPromoVideo/);
-assert.match(homeKidsSection, /StudentPromoVideo/);
+assert.doesNotMatch(indexPage, /HomeParentVideo/);
+assert.match(homeHero, /GlobalCoverageMap/);
+assert.doesNotMatch(homeHero, /PromoVideoClickablePreview|ParentPromoVideo|PARENT_PROMO/);
+assert.doesNotMatch(homeKidsSection, /StudentPromoVideo|PromoVideo/);
 assert.match(marketing, /audience === "kids"/);
 assert.match(marketing, /StudentPromoVideo/);
 assert.match(marketing, /audience === "parents"/);

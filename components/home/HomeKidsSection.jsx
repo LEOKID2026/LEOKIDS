@@ -1,5 +1,4 @@
 import MarketingFeatureCard from "../marketing/MarketingFeatureCard";
-import StudentPromoVideo from "../student/StudentPromoVideo";
 import { HOMEPAGE_ROUTES } from "../../data/home/homepage-copy.js";
 import { useHomepageCopy } from "../../hooks/useHomepageCopy.js";
 import { ACCENT, getHomeBtnClasses, getHomeTextClasses } from "./home-theme";
@@ -32,14 +31,6 @@ export default function HomeKidsSection({ isBright }) {
           {copy.text}
         </p>
       </div>
-
-      <StudentPromoVideo
-        isBright={isBright}
-        title={copy.videoTitle}
-        description={copy.videoDescription}
-        titleClassName={`text-lg font-bold md:text-xl ${cls.heading}`}
-        className="py-2"
-      />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
         {copy.benefits.map((item, index) => (

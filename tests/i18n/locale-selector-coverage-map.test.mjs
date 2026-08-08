@@ -122,7 +122,57 @@ test("coverage map modal wiring stays outside the option list", () => {
     "utf8"
   );
   assert.match(mapSrc, /buildSelectorCoverageMarkets/);
+  assert.match(mapSrc, /useI18n/);
+  assert.match(mapSrc, /coverageMapSummary/);
+  assert.doesNotMatch(mapSrc, /Available across \$\{/);
   assert.doesNotMatch(mapSrc, /LOCALE_SELECTOR_FLAG\s*=/);
+});
+
+test("coverage map UI strings are localized for ar/es/id masters", () => {
+  const ar = JSON.parse(fs.readFileSync(path.join(repoRoot, "locales/ar-001/ui.json"), "utf8"));
+  const es = JSON.parse(fs.readFileSync(path.join(repoRoot, "locales/es-419/ui.json"), "utf8"));
+  const id = JSON.parse(fs.readFileSync(path.join(repoRoot, "locales/id-ID/ui.json"), "utf8"));
+  const en = JSON.parse(fs.readFileSync(path.join(repoRoot, "locales/en/ui.json"), "utf8"));
+
+  for (const pack of [ar, es, id, en]) {
+    const sw = pack.languageSwitcher;
+    assert.ok(sw.coverageMapTitle);
+    assert.match(sw.coverageMapSummary, /\{count\}/);
+    assert.ok(sw.coverageMapHint);
+    assert.ok(sw.coverageMapClose);
+    assert.ok(sw.coverageLanguages?.en);
+    assert.ok(sw.coverageUkNations?.["en-GB"]);
+  }
+
+  assert.match(ar.languageSwitcher.coverageMapTitle, /تغطية|LEO/);
+  assert.match(es.languageSwitcher.coverageMapTitle, /Cobertura/i);
+  assert.notEqual(ar.languageSwitcher.coverageMapHint, en.languageSwitcher.coverageMapHint);
+  assert.notEqual(es.languageSwitcher.coverageMapClose, en.languageSwitcher.coverageMapClose);
+});
+
+test("coverage market titles follow display locale via Intl", () => {
+  const { byGeoId: enMarkets } = buildSelectorCoverageMarkets(undefined, {
+    displayLocale: "en",
+  });
+  const { byGeoId: arMarkets } = buildSelectorCoverageMarkets(undefined, {
+    displayLocale: "ar-001",
+    resolveLanguageLabel: () => "الإنجليزية",
+    resolveUkNationLabel: (loc) => loc.id,
+  });
+  assert.equal(enMarkets.get("CA")?.title, "Canada");
+  assert.notEqual(arMarkets.get("CA")?.title, "Canada");
+  assert.match(String(arMarkets.get("CA")?.title || ""), /كندا|Canada/);
+});
+
+test("homepage hero hosts coverage map and removes both promo videos", () => {
+  const hero = fs.readFileSync(path.join(repoRoot, "components/home/HomeHero.jsx"), "utf8");
+  const kids = fs.readFileSync(path.join(repoRoot, "components/home/HomeKidsSection.jsx"), "utf8");
+  const indexPage = fs.readFileSync(path.join(repoRoot, "pages/index.js"), "utf8");
+  assert.match(hero, /GlobalCoverageMap/);
+  assert.match(hero, /home-hero-coverage-map/);
+  assert.doesNotMatch(hero, /PromoVideoClickablePreview|ParentPromoVideo|PARENT_PROMO/);
+  assert.doesNotMatch(kids, /StudentPromoVideo|PromoVideo/);
+  assert.doesNotMatch(indexPage, /HomeParentVideo/);
 });
 
 test("mobile panel geometry still fits after coverage-map affordance", () => {
