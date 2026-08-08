@@ -1,0 +1,96 @@
+{
+  "seoKey": "practice-science",
+  "slug": "science",
+  "badge": "IPA untuk pelajar sekolah dasar",
+  "h1": "Latihan IPA menurut topik",
+  "intro": "Latihan IPA di Leo Kids membantu anak meninjau konsep, memahami proses, dan menerapkan pengetahuan dalam pertanyaan. Aktivitas menggabungkan fakta, perbandingan, sebab-akibat, dan pemahaman fenomena.",
+  "sections": [
+    {
+      "title": "Topik inti IPA",
+      "bullets": [
+        "Hewan dan tumbuhan.",
+        "Tubuh manusia dan kesehatan.",
+        "Materi dan sifat.",
+        "Air, udara, dan lingkungan.",
+        "Energi dan gaya.",
+        "Bumi dan antariksa.",
+        "Proses dan fenomena alam.",
+        "Melindungi lingkungan."
+      ]
+    },
+    {
+      "title": "Bagaimana kita berlatih IPA?",
+      "paragraphs": [
+        "Pilih topik, baca setiap pertanyaan, dan cari konsep atau proses yang mendasarinya. Jika ada beberapa opsi, hilangkan jawaban yang tidak sesuai dengan fakta dalam pertanyaan."
+      ]
+    },
+    {
+      "title": "Lebih dari menghafal fakta",
+      "paragraphs": [
+        "Minta anak Anda menjelaskan mengapa jawaban benar, apa yang menyebabkan suatu proses, dan bagaimana hasil berubah saat suatu kondisi berubah."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Pengenalan hewan, tumbuhan, tubuh manusia, dan lingkungan sekitar."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Pemahaman yang lebih dalam tentang materi, proses alam, sistem kehidupan, dan fenomena lingkungan."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Topik yang lebih lanjut seperti bumi dan antariksa, lingkungan, eksperimen, dan berpikir ilmiah terstruktur."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    },
+    {
+      "href": "/practice/no-print",
+      "label": "Latihan digital"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "home-practice-routine",
+    "learning-games-at-home",
+    "parent-progress-tracking"
+  ],
+  "faq": [
+    {
+      "q": "Apakah latihan menyertakan pertanyaan pemahaman?",
+      "a": "Ya. Selain fakta dan konsep, ada pertanyaan yang meminta anak menjelaskan hubungan dan proses."
+    },
+    {
+      "q": "Bagaimana cara memilih topik?",
+      "a": "Pilih yang sedang diajarkan sekarang atau topik yang ingin ditinjau ulang anak Anda."
+    },
+    {
+      "q": "Apakah aktivitas berubah?",
+      "a": "Ya. Sesi latihan yang berbeda dapat menampilkan pertanyaan berbeda dari bank topik."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih topik IPA",
+    "body": "Tinjau ulang konsep dan gunakan untuk menjelaskan proses serta fenomena.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Buka akun orang tua"
+    },
+    "secondary": {
+      "href": "/practice",
+      "label": "Semua area latihan"
+    }
+  }
+}

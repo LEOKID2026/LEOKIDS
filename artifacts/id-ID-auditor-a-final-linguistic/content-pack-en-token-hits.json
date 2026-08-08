@@ -1,0 +1,752 @@
+[
+  {
+    "file": "content-packs\\id-ID\\books\\english-page-skills.json",
+    "line": 75,
+    "snippet": "        \"description\": \"book, pen, desk, chair, door, teacher, hello, bye\","
+  },
+  {
+    "file": "content-packs\\id-ID\\books\\english-page-skills.json",
+    "line": 207,
+    "snippet": "        \"description\": \"book, pen, desk, teacher — classroom items\","
+  },
+  {
+    "file": "content-packs\\id-ID\\books\\english-page-skills.json",
+    "line": 240,
+    "snippet": "        \"description\": \"Hello, Thank you, Please — short word/phrase practice\","
+  },
+  {
+    "file": "content-packs\\id-ID\\books\\english-page-skills.json",
+    "line": 1339,
+    "snippet": "        \"description\": \"the best / the most interesting — Grade 6 reinforce\","
+  },
+  {
+    "file": "content-packs\\id-ID\\books\\ui.json",
+    "line": 27,
+    "snippet": "    \"indexSubtitle\": \"{grade} · Pilih topik dan baca halaman demi halaman\","
+  },
+  {
+    "file": "content-packs\\id-ID\\demo\\ui.json",
+    "line": 28,
+    "snippet": "    \"loading\": \"Memuat mode demo…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\demo\\ui.json",
+    "line": 81,
+    "snippet": "  \"worksheet\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\components__arcade__club__ArcadeClubFriendsPanel.json",
+    "line": 21,
+    "snippet": "    \"cancel\": \"Batal\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\components__arcade__club__ArcadeClubFriendsPanel.json",
+    "line": 22,
+    "snippet": "    \"delete\": \"Hapus\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\components__educational-games__EducationalGameEntryScreen.json",
+    "line": 4,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\components__educational-games__leo-word-detective__leo-word-detective-data.json",
+    "line": 56,
+    "snippet": "    \"the_teacher_told_a_story_the_children_listened_quietly_at_the_end_everyo\": \"The teacher told a story. The children listened quietly. At the end everyone cl"
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\components__solo-games__SoloGameEntryScreen.json",
+    "line": 4,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\components__solo-games__SoloGameNavButtons.json",
+    "line": 3,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down\\pages__student__arcade.json",
+    "line": 4,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 39,
+    "snippet": "    \"cancel\": \"Batal\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 40,
+    "snippet": "    \"delete\": \"Hapus\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 114,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 555,
+    "snippet": "    \"the_teacher_told_a_story_the_children_listened_quietly_at_the_end_everyo\": \"The teacher told a story. The children listened quietly. At the end everyone cl"
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 941,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 967,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\games\\burn-down-index.json",
+    "line": 1347,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 51,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 133,
+    "snippet": "    \"cancel\": \"Batal\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 146,
+    "snippet": "    \"continue\": \"Lanjutkan\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 169,
+    "snippet": "    \"success\": \"Berhasil\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 222,
+    "snippet": "    \"save\": \"Simpan\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 231,
+    "snippet": "    \"cancel\": \"Batal\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 283,
+    "snippet": "    \"loading\": \"Memuat…\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 331,
+    "snippet": "  \"lib__classroom-activities__student-activity-error-labels.client\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 446,
+    "snippet": "  \"lib__guest__guest-student.server\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 476,
+    "snippet": "  \"lib__parent-server__delete-parent-owned-student.server\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 629,
+    "snippet": "  \"lib__teacher-portal__teacher-class-grade\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 649,
+    "snippet": "  \"lib__teacher-portal__use-teacher-portal-session\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 663,
+    "snippet": "  \"lib__teacher-server__teacher-dashboard.server\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 674,
+    "snippet": "  \"lib__teacher-server__teacher-student-login-access.server\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 701,
+    "snippet": "    \"please_carefully_before_you_answer\": \"Please ___ carefully before you answer.\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 814,
+    "snippet": "    \"worksheet\": \"Lembar kerja\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 844,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 860,
+    "snippet": "    \"worksheet\": \"Lembar kerja\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 876,
+    "snippet": "  \"pages__api__parent__create-student\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 880,
+    "snippet": "  \"pages__api__parent__delete-student\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 905,
+    "snippet": "    \"loading\": \"Memuat…\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 915,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 985,
+    "snippet": "    \"loading\": \"Memuat aktivitas…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1037,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1074,
+    "snippet": "    \"select_all_grade\": \"Pilih semua ({grade})\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1076,
+    "snippet": "    \"class_label\": \"Kelas {grade}\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1078,
+    "snippet": "    \"activity_locked_to\": \"Aktivitas dikunci ke {grade}.\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1105,
+    "snippet": "    \"err_mix_grades\": \"Anda tidak dapat mencampur murid dari kelas yang berbeda. Aktivitas ini dikunci untuk {locked}. Murid ini berada di {student}.\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1118,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1157,
+    "snippet": "  \"utils__detailed-report-parent-letter-he\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1160,
+    "snippet": "  \"utils__detailed-report-parent-letter\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\burn-down-index.json",
+    "line": 1171,
+    "snippet": "  \"utils__math-topic-parent-display\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__school-portal__SchoolDrillDown.json",
+    "line": 5,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__student__StudentActivitySubmitConfirmModal.json",
+    "line": 7,
+    "snippet": "    \"cancel\": \"Batal\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__student__StudentClassroomActivitiesPanel.json",
+    "line": 4,
+    "snippet": "    \"continue\": \"Lanjutkan\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__teacher-portal__SubjectSummaryCards.json",
+    "line": 5,
+    "snippet": "    \"success\": \"Berhasil\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__teacher-portal__TeacherDashboardClient.json",
+    "line": 38,
+    "snippet": "    \"save\": \"Simpan\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__teacher-portal__TeacherDashboardClient.json",
+    "line": 47,
+    "snippet": "    \"cancel\": \"Batal\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\components__ui__StudentLoadingPanel.json",
+    "line": 3,
+    "snippet": "    \"loading\": \"Memuat…\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\lib__worksheets__worksheet-english-sentences-pool.server.json",
+    "line": 6,
+    "snippet": "    \"please_carefully_before_you_answer\": \"Please ___ carefully before you answer.\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\lib__worksheets__worksheet-payload-build.server.json",
+    "line": 3,
+    "snippet": "    \"worksheet\": \"Lembar kerja\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\lib__worksheets__worksheet-ui.json",
+    "line": 23,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\lib__worksheets__worksheet-ui.json",
+    "line": 39,
+    "snippet": "    \"worksheet\": \"Lembar kerja\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__parent__school-inbox.json",
+    "line": 4,
+    "snippet": "    \"loading\": \"Memuat…\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__school__messages.json",
+    "line": 3,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__class__[classId]__activities__index.json",
+    "line": 7,
+    "snippet": "    \"loading\": \"Memuat aktivitas…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__class__[classId]__worksheets__index.json",
+    "line": 7,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__students__activities__new.json",
+    "line": 10,
+    "snippet": "    \"select_all_grade\": \"Pilih semua ({grade})\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__students__activities__new.json",
+    "line": 12,
+    "snippet": "    \"class_label\": \"Kelas {grade}\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__students__activities__new.json",
+    "line": 14,
+    "snippet": "    \"activity_locked_to\": \"Aktivitas dikunci ke {grade}.\","
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__students__activities__new.json",
+    "line": 41,
+    "snippet": "    \"err_mix_grades\": \"Anda tidak dapat mencampur murid dari kelas yang berbeda. Aktivitas ini dikunci untuk {locked}. Murid ini berada di {student}.\""
+  },
+  {
+    "file": "content-packs\\id-ID\\global-burn-down\\pages__teacher__worksheets__index.json",
+    "line": 7,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\burn-down\\lib__learning-client__student-subject-practice-gate.json",
+    "line": 3,
+    "snippet": "    \"loading\": \"Memuat...\""
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\burn-down\\lib__learning-shared__student-display-truth.json",
+    "line": 5,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\burn-down-index.json",
+    "line": 98,
+    "snippet": "    \"loading\": \"Memuat...\""
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\burn-down-index.json",
+    "line": 115,
+    "snippet": "    \"loading\": \"Memuat…\","
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\burn-down-index.json",
+    "line": 839,
+    "snippet": "  \"utils__learning-pattern-decision__parent-facing-error-pattern\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\diagnostic-labels.json",
+    "line": 151,
+    "snippet": "    \"grade\": \"grade\","
+  },
+  {
+    "file": "content-packs\\id-ID\\learning\\example-pattern-diagnostics-payload.json",
+    "line": 59,
+    "snippet": "          \"type\": \"success\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\english-vocabulary-practice.json",
+    "line": 57,
+    "snippet": "    \"parent-progress-tracking\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\english-vocabulary-practice.json",
+    "line": 67,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\home-practice-routine.json",
+    "line": 58,
+    "snippet": "    \"parent-progress-tracking\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\home-practice-routine.json",
+    "line": 68,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\how-to-follow-child-progress.json",
+    "line": 50,
+    "snippet": "  \"relatedPracticePath\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\how-to-follow-child-progress.json",
+    "line": 53,
+    "snippet": "    \"parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\how-to-follow-child-progress.json",
+    "line": 61,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\how-to-follow-child-progress.json",
+    "line": 65,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\hub-cards.json",
+    "line": 33,
+    "snippet": "    \"href\": \"/guides/parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\hub.json",
+    "line": 46,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\learning-games-at-home.json",
+    "line": 57,
+    "snippet": "    \"parent-progress-tracking\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\learning-games-at-home.json",
+    "line": 67,
+    "snippet": "      \"href\": \"/student/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\math-practice-at-home.json",
+    "line": 59,
+    "snippet": "    \"parent-progress-tracking\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\math-practice-at-home.json",
+    "line": 69,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\no-print-worksheets.json",
+    "line": 60,
+    "snippet": "    \"parent-progress-tracking\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\parent-progress-tracking.json",
+    "line": 2,
+    "snippet": "  \"seoKey\": \"guides-parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\parent-progress-tracking.json",
+    "line": 3,
+    "snippet": "  \"slug\": \"parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\parent-progress-tracking.json",
+    "line": 53,
+    "snippet": "  \"relatedPracticePath\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\parent-progress-tracking.json",
+    "line": 64,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\parent-progress-tracking.json",
+    "line": 68,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\reading-comprehension-at-home.json",
+    "line": 68,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\guides\\reading-practice-at-home.json",
+    "line": 67,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\marketing\\kids.json",
+    "line": 11,
+    "snippet": "      \"href\": \"/student/login\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\marketing\\kids.json",
+    "line": 72,
+    "snippet": "      \"href\": \"/student/login\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\marketing\\parents.json",
+    "line": 11,
+    "snippet": "      \"href\": \"/parent/login\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\marketing\\parents.json",
+    "line": 71,
+    "snippet": "      \"href\": \"/parent/login\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\marketing\\teachers.json",
+    "line": 11,
+    "snippet": "      \"href\": \"/teacher/login\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\marketing\\teachers.json",
+    "line": 70,
+    "snippet": "      \"href\": \"/teacher/login\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\english.json",
+    "line": 57,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\english.json",
+    "line": 92,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\games.json",
+    "line": 61,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\games.json",
+    "line": 92,
+    "snippet": "      \"href\": \"/student/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\geometry.json",
+    "line": 63,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\geometry.json",
+    "line": 90,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\hub-cards.json",
+    "line": 39,
+    "snippet": "    \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\hub.json",
+    "line": 17,
+    "snippet": "    \"parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\hub.json",
+    "line": 38,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\hub.json",
+    "line": 42,
+    "snippet": "      \"href\": \"/student/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\hub.json",
+    "line": 84,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\math.json",
+    "line": 61,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\math.json",
+    "line": 92,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\no-print.json",
+    "line": 63,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\parent-reports.json",
+    "line": 2,
+    "snippet": "  \"seoKey\": \"practice-parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\parent-reports.json",
+    "line": 3,
+    "snippet": "  \"slug\": \"parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\parent-reports.json",
+    "line": 65,
+    "snippet": "    \"parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\parent-reports.json",
+    "line": 87,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\parent-reports.json",
+    "line": 91,
+    "snippet": "      \"href\": \"/guides/parent-progress-tracking\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\reading.json",
+    "line": 52,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\reading.json",
+    "line": 87,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\science.json",
+    "line": 57,
+    "snippet": "      \"href\": \"/practice/parent-reports\","
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\science.json",
+    "line": 68,
+    "snippet": "    \"parent-progress-tracking\""
+  },
+  {
+    "file": "content-packs\\id-ID\\public-seo\\practice\\science.json",
+    "line": 88,
+    "snippet": "      \"href\": \"/parent/login\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down\\components__parent-report-detailed-surface.json",
+    "line": 79,
+    "snippet": "    \"grade\": \"Kelas\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down\\lib__parent-ui__parent-report-approved-copy.json",
+    "line": 22,
+    "snippet": "    \"grade_word_n\": \"Kelas {grade}\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down\\pages__learning__parent-report.json",
+    "line": 52,
+    "snippet": "    \"grade\": \"Kelas\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down\\utils__parent-report-language__parent-report-display-labels.json",
+    "line": 16,
+    "snippet": "    \"worksheet\": \"Lembar kerja\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down\\utils__parent-report-language__parent-report-display-labels.json",
+    "line": 48,
+    "snippet": "    \"activity_subject_grade\": \"{base} - {subject} Kelas {grade}\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down\\utils__parent-report-output-integrity__row-display-label-context.json",
+    "line": 9,
+    "snippet": "    \"topic_grade_title\": \"{topic} - Kelas {grade}\""
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 79,
+    "snippet": "    \"grade\": \"Kelas\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 149,
+    "snippet": "    \"grade_word_n\": \"Kelas {grade}\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 339,
+    "snippet": "    \"grade\": \"Kelas\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 414,
+    "snippet": "  \"utils__detailed-parent-report\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 427,
+    "snippet": "  \"utils__detailed-report-parent-letter\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 556,
+    "snippet": "  \"utils__parent-report-insights__normalize-parent-facing-labels\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 760,
+    "snippet": "    \"worksheet\": \"Lembar kerja\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 792,
+    "snippet": "    \"activity_subject_grade\": \"{base} - {subject} Kelas {grade}\","
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 858,
+    "snippet": "  \"utils__parent-report-out-of-grade-transparency\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 868,
+    "snippet": "    \"topic_grade_title\": \"{topic} - Kelas {grade}\""
+  },
+  {
+    "file": "content-packs\\id-ID\\reports\\burn-down-index.json",
+    "line": 892,
+    "snippet": "  \"utils__parent-report-parent-assigned-activities\": {"
+  },
+  {
+    "file": "content-packs\\id-ID\\rewards\\card-catalog.json",
+    "line": 698,
+    "snippet": "      \"description\": \"Kumpulkan Leo Forest Guardian!\","
+  }
+]

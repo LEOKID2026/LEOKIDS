@@ -45,12 +45,18 @@ import {
   SCHOOL_EMPTY_CLASSES,
   SCHOOL_LOADING,
   SCHOOL_LOADING_DATA,
+  SCHOOL_REPORT_LOAD_ERROR,
   SCHOOL_REPORT_LOADING,
   SCHOOL_STUDENTS_IN_CLASS,
   SCHOOL_PHYSICAL_CLASS_LOADING,
   SCHOOL_PHYSICAL_CLASS_REPORT_BUTTON,
   SCHOOL_PHYSICAL_CLASS_REPORT_TITLE,
   SCHOOL_VIEW_CLASS_REPORT,
+  SCHOOL_SUBJECTS_COUNT,
+  SCHOOL_PHYSICAL_CLASSES_COUNT,
+  SCHOOL_CLASS_STATUS_WITH_VALUE,
+  SCHOOL_COL_STUDENT,
+  schoolUiFill,
   studentLearningStatusBadgeClass,
 } from "../../../lib/school-portal/school-ui.js";
 
@@ -323,7 +329,7 @@ export default function SchoolClassesPage() {
         row?.name ||
         body?.student?.full_name ||
         physicalReportVm?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "Child";
+        SCHOOL_COL_STUDENT;
       setPhysicalNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -364,7 +370,7 @@ export default function SchoolClassesPage() {
         row?.name ||
         body?.student?.full_name ||
         subjectFromPhysicalVm?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "Child";
+        SCHOOL_COL_STUDENT;
       setSubjectFromPhysicalNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -430,7 +436,7 @@ export default function SchoolClassesPage() {
         force,
       });
       if (summaryResult?.status !== 200) {
-        setPhysicalReportError(apiErrorMessageHe(summaryResult?.body?.error, "Error loading report"));
+        setPhysicalReportError(apiErrorMessageHe(summaryResult?.body?.error, SCHOOL_REPORT_LOAD_ERROR));
         return;
       }
       setPhysicalReportVm(parsePhysicalClassReportViewModel(summaryResult.body, parseCtx));
@@ -449,7 +455,7 @@ export default function SchoolClassesPage() {
         setPhysicalReportVm(parsePhysicalClassReportViewModel(fullResult.body, parseCtx));
       }
     } catch {
-      setPhysicalReportError("Error loading report");
+      setPhysicalReportError(SCHOOL_REPORT_LOAD_ERROR);
     } finally {
       setPhysicalReportLoading(false);
     }
@@ -475,7 +481,7 @@ export default function SchoolClassesPage() {
     try {
       const result = await fetchSchoolReportCached({ accessToken, schoolId, path, force });
       if (result?.status !== 200) {
-        setSubjectFromPhysicalError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
+        setSubjectFromPhysicalError(apiErrorMessageHe(result?.body?.error, SCHOOL_REPORT_LOAD_ERROR));
         return;
       }
       setSubjectFromPhysicalVm(
@@ -503,7 +509,7 @@ export default function SchoolClassesPage() {
         row?.name ||
         body?.student?.full_name ||
         reportViewModel?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "Child";
+        SCHOOL_COL_STUDENT;
       setNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -565,7 +571,7 @@ export default function SchoolClassesPage() {
         force,
       });
       if (result?.status !== 200) {
-        setReportError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
+        setReportError(apiErrorMessageHe(result?.body?.error, SCHOOL_REPORT_LOAD_ERROR));
         return;
       }
       applyBody(result.body);
@@ -617,7 +623,11 @@ export default function SchoolClassesPage() {
                         key={grade.level}
                         title={grade.label}
                         subtitle={
-                          count != null ? `${count} physical classes` : loading ? "…" : "-"
+                          count != null
+                            ? schoolUiFill(SCHOOL_PHYSICAL_CLASSES_COUNT, { count })
+                            : loading
+                              ? "…"
+                              : "-"
                         }
                         gradeStatusLabel={browseStatus?.gradeStatusByLevel?.[grade.level] || null}
                         onClick={() => setGradeLevel(grade.level)}
@@ -649,7 +659,7 @@ export default function SchoolClassesPage() {
                           <SchoolManagementCard
                             key={physKey}
                             title={group.name}
-                            subtitle={`${physicalClassStudentCount(group.subjectClasses)} ${SCHOOL_STUDENTS_IN_CLASS} · 6 subjects`}
+                            subtitle={`${physicalClassStudentCount(group.subjectClasses)} ${SCHOOL_STUDENTS_IN_CLASS} · ${schoolUiFill(SCHOOL_SUBJECTS_COUNT, { count: group.subjectClasses.length })}`}
                             classStatusLabel={browseStatus?.physicalByKey?.[physKey] || null}
                             onClick={() => setPhysicalKey(physKey)}
                           />
@@ -680,7 +690,7 @@ export default function SchoolClassesPage() {
                             classStatus
                           )}`}
                         >
-                          Class status: {classStatus}
+                          {schoolUiFill(SCHOOL_CLASS_STATUS_WITH_VALUE, { status: classStatus })}
                         </span>
                       </p>
                     );

@@ -1,0 +1,232 @@
+[
+  {
+    "ns": "auth.json",
+    "path": "email",
+    "value": "Email"
+  },
+  {
+    "ns": "common.json",
+    "path": "brandName",
+    "value": "Leo Kids"
+  },
+  {
+    "ns": "games.json",
+    "path": "arcadeGames.fourline.title",
+    "value": "Connect Four"
+  },
+  {
+    "ns": "games.json",
+    "path": "arcadeGames.ludo.title",
+    "value": "Ludo"
+  },
+  {
+    "ns": "games.json",
+    "path": "arcadeGames.bingo.title",
+    "value": "Bingo"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.level",
+    "value": "Level"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.avatar",
+    "value": "Avatar"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.hudTimer",
+    "value": "Timer"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.avatarAlt",
+    "value": "Avatar"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.streak",
+    "value": "Streak"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.levelLabel",
+    "value": "Level {level}"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.showHorizontal",
+    "value": "↔️ Horizontal"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.reset",
+    "value": "Reset"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.defaultMode",
+    "value": "Default"
+  },
+  {
+    "ns": "learning.json",
+    "path": "master.diagram",
+    "value": "Diagram"
+  },
+  {
+    "ns": "learning.json",
+    "path": "geometry.reference.terms.volume.title",
+    "value": "📦 Volume"
+  },
+  {
+    "ns": "learning.json",
+    "path": "geometry.reference.terms.diagonal.title",
+    "value": "📐 Diagonal"
+  },
+  {
+    "ns": "learning.json",
+    "path": "geometry.topics.volume",
+    "value": "Volume"
+  },
+  {
+    "ns": "learning.json",
+    "path": "geometry.topics.diagonal",
+    "value": "Diagonal"
+  },
+  {
+    "ns": "learning.json",
+    "path": "geometry.topics.pythagoras",
+    "value": "Pythagoras"
+  },
+  {
+    "ns": "learning.json",
+    "path": "english.steps.grammarAmIsAre",
+    "value": "I = am, You/We/They = are, He/She/It = is."
+  },
+  {
+    "ns": "learning.json",
+    "path": "science.reference.earth_space.terms.planet.term",
+    "value": "Planet"
+  },
+  {
+    "ns": "reports.json",
+    "path": "topics.geometry.volume",
+    "value": "Volume"
+  },
+  {
+    "ns": "reports.json",
+    "path": "topics.english.grammar_present_simple",
+    "value": "Present simple"
+  },
+  {
+    "ns": "reports.json",
+    "path": "topics.english.grammar_past_simple",
+    "value": "Past simple"
+  },
+  {
+    "ns": "school.json",
+    "path": "portal.statusLabel",
+    "value": "Status"
+  },
+  {
+    "ns": "school.json",
+    "path": "portal.activityColStatus",
+    "value": "Status"
+  },
+  {
+    "ns": "teacher.json",
+    "path": "reportSubjects[0]",
+    "value": "math"
+  },
+  {
+    "ns": "teacher.json",
+    "path": "reportSubjects[1]",
+    "value": "geometry"
+  },
+  {
+    "ns": "teacher.json",
+    "path": "reportSubjects[2]",
+    "value": "english"
+  },
+  {
+    "ns": "teacher.json",
+    "path": "reportSubjects[3]",
+    "value": "science"
+  },
+  {
+    "ns": "teacher.json",
+    "path": "fallback.attentionStudentLine",
+    "value": "{name} · {suffix}"
+  },
+  {
+    "ns": "teacher.json",
+    "path": "roster.filter.class",
+    "value": "{className} ({count})"
+  },
+  {
+    "ns": "ui.json",
+    "path": "home.headline",
+    "value": "Leo Kids"
+  },
+  {
+    "ns": "ui.json",
+    "path": "layout.menu",
+    "value": "Menu"
+  },
+  {
+    "ns": "ui.json",
+    "path": "public.contact.form.emailLabel",
+    "value": "Email"
+  },
+  {
+    "ns": "ui.json",
+    "path": "parent.errors.rawMessage",
+    "value": "{message}"
+  },
+  {
+    "ns": "ui.json",
+    "path": "student.arcadeGames.bingo",
+    "value": "Bingo"
+  },
+  {
+    "ns": "ui.json",
+    "path": "student.arcadeGames.ludo",
+    "value": "Ludo"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "levelField",
+    "value": "Level"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "coloringUploadStyleAnimeTitle",
+    "value": "Anime"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "writingPrewritingZigzag",
+    "value": "Zigzag"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "writingCustomWordsPlaceholder",
+    "value": "cat, dog"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "writingNumberMin",
+    "value": "Minimum"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "writingScriptScript",
+    "value": "Script"
+  },
+  {
+    "ns": "worksheets.json",
+    "path": "writingPrintStrengthNormal",
+    "value": "Normal"
+  }
+]

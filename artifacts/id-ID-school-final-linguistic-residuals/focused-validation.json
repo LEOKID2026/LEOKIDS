@@ -1,0 +1,27 @@
+{
+  "NEW_A_001_monitorEnglishAfter": 0,
+  "NEW_A_002_teacherDetailEnglishAfter": 0,
+  "NEW_A_003_classesBrowseEnglishAfter": 0,
+  "ID_A_011_networkFallbackEnglishAfter": 0,
+  "kelasRombelDefects": 0,
+  "adultRegisterDefects": 0,
+  "phase9SchoolApiRegressionHits": 0,
+  "schoolNamespace": {
+    "missing": 0,
+    "extra": 0,
+    "empty": 0,
+    "placeholderMismatches": 0,
+    "enSchoolLeaves": 414,
+    "idSchoolLeaves": 414
+  },
+  "currentEnNamespaceLeaves": 2991,
+  "currentIdNamespaceLeaves": 2991,
+  "hits": {
+    "monitor": [],
+    "teacherDetail": [],
+    "classesBrowse": [],
+    "network": [],
+    "phase9": []
+  },
+  "pass": true
+}

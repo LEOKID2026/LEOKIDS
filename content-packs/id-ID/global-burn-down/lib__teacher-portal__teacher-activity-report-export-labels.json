@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "live_lesson": "Pelajaran langsung",
+    "guided_practice": "Latihan terbimbing",
+    "homework": "Pekerjaan rumah",
+    "class_discussion": "Diskusi kelas",
+    "standard": "Standar",
+    "advanced": "Lanjutan",
+    "angles": "Sudut",
+    "shapes": "Bentuk",
+    "perimeter": "Keliling",
+    "volume": "Volume",
+    "general_practice": "Latihan umum",
+    "asia_jerusalem": "Asia/Jerusalem"
+  }
+}

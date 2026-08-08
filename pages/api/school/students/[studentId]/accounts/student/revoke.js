@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
   const studentId = req.query?.studentId;
   const accessId = req.body?.accessId;
-  if (!accessId) return sendSchoolApiError(res, 400, "validation_failed", "accessId required");
+  if (!accessId) return sendSchoolApiError(res, 400, "validation_failed", "validation_failed");
 
   try {
     const ctx = await requireSchoolCredentialAdminApiContext(res, req);

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "unable_to_distinguish_error_mechanism_from_available_fields": "Tidak bisa membedakan mekanisme kesalahan dari kolom yang tersedia.",
+    "very_fast_incorrect_response_may_reflect_guessing_or_pacing_strategy": "Respons salah yang sangat cepat mungkin mencerminkan menebak atau strategi tempo.",
+    "numeric_text_answer_mismatch_may_be_calculation_slip_or_conceptual_confu": "Ketidakcocokan jawaban angka/teks — mungkin slip perhitungan atau kebingungan konsep."
+  }
+}

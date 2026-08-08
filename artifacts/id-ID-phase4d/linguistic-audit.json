@@ -1,0 +1,20 @@
+{
+  "unexplainedEnglish": 0,
+  "unexplainedSample": [],
+  "siswaDefects": 0,
+  "gradeDefects": 0,
+  "faseLeak": 0,
+  "registerAdultKamu": 0,
+  "registerSample": [],
+  "identical": {
+    "intentional": 13,
+    "brand": 1,
+    "tech": 392,
+    "formula": 0,
+    "loan": 5,
+    "finding": 0,
+    "findingSample": []
+  },
+  "idMutations": 0,
+  "structureDiffs": []
+}

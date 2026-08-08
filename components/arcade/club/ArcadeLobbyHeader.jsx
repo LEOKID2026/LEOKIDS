@@ -1,4 +1,7 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import StudentLearningAvatar from "./StudentLearningAvatar.jsx";
+
+const SLUG = "components__arcade__club__ArcadeLobbyHeader";
 
 /** @param {{ displayName: string, coinBalance: string|number, diamondBalance?: string|number, isGuest?: boolean, leoNumber?: string|null, avatarEmoji?: string, avatarCustomDataUrl?: string, avatarBackgroundKey?: string, className?: string, gh?: Record<string, string>, onAvatarClick?: () => void }} props */
 export default function ArcadeLobbyHeader({
@@ -24,6 +27,10 @@ export default function ArcadeLobbyHeader({
   const diamondLabel = gh.arcadeDiamondLabel || gh.arcadeCoinLabel || "text-[10px] font-semibold text-sky-800";
   const diamondValue = gh.arcadeDiamondValue || gh.arcadeCoinValue || "text-sm font-bold text-blue-900 sm:text-base";
 
+  const guestLine = `${gamePackCopy(SLUG, "guest_player")}${
+    leoNumber ? gamePackCopy(SLUG, "leo_number_part", { leoNumber }) : ""
+  }${gamePackCopy(SLUG, "guest_link_hint")}`;
+
   return (
     <div className={`${shell} ${className}`} dir="ltr">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -35,21 +42,17 @@ export default function ArcadeLobbyHeader({
             onClick={onAvatarClick}
           />
           <div className="min-w-0 text-left">
-            <h1 className={`${title} truncate`}>{displayName || "Player"}</h1>
-            {isGuest ? (
-              <p className={guest}>
-                Guest player{leoNumber ? ` · Leo number ${leoNumber}` : ""} — link with a parent for the full experience
-              </p>
-            ) : null}
+            <h1 className={`${title} truncate`}>{displayName || gamePackCopy(SLUG, "player")}</h1>
+            {isGuest ? <p className={guest}>{guestLine}</p> : null}
           </div>
         </div>
         <div className="flex shrink-0 flex-wrap items-stretch justify-start gap-2">
           <div className={coinShell}>
-            <p className={coinLabel}>Coins</p>
+            <p className={coinLabel}>{gamePackCopy(SLUG, "coins")}</p>
             <p className={coinValue}>🪙 {coinBalance}</p>
           </div>
           <div className={diamondShell}>
-            <p className={diamondLabel}>Diamonds</p>
+            <p className={diamondLabel}>{gamePackCopy(SLUG, "diamonds")}</p>
             <p className={diamondValue}>💎 {diamondBalance}</p>
           </div>
         </div>

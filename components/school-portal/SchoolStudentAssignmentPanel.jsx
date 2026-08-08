@@ -14,6 +14,11 @@ import {
   SCHOOL_ASSIGN_TARGET_GRADE,
   SCHOOL_ASSIGN_TRANSFER,
   SCHOOL_ASSIGN_UPDATE,
+  SCHOOL_LOAD_ASSIGNMENT_FAILED,
+  SCHOOL_LOAD_ERROR,
+  SCHOOL_LOADING,
+  SCHOOL_NETWORK_ERROR,
+  SCHOOL_UPDATE_ASSIGNMENT_FAILED,
 } from "../../lib/school-portal/school-ui.js";
 
 /**
@@ -69,11 +74,11 @@ export default function SchoolStudentAssignmentPanel({
       const assignJson = await assignRes.json().catch(() => ({}));
       const classesJson = await classesRes.json().catch(() => ({}));
       if (!assignRes.ok) {
-        setError(apiErrorMessageHe(assignJson?.error, "Error loading assignment"));
+        setError(apiErrorMessageHe(assignJson?.error, SCHOOL_LOAD_ASSIGNMENT_FAILED));
         return;
       }
       if (!classesRes.ok) {
-        setError(apiErrorMessageHe(classesJson?.error, "Error loading classes"));
+        setError(apiErrorMessageHe(classesJson?.error, SCHOOL_LOAD_ERROR));
         return;
       }
       const a = assignJson?.data?.assignment || null;
@@ -82,7 +87,7 @@ export default function SchoolStudentAssignmentPanel({
       setToGradeLevel(a?.gradeLevel ? String(a.gradeLevel) : "");
       setToPhysicalClassName(a?.physicalClassName || "");
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setLoading(false);
     }
@@ -110,21 +115,21 @@ export default function SchoolStudentAssignmentPanel({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Failed to update assignment"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_UPDATE_ASSIGNMENT_FAILED));
         return;
       }
       setMessage(SCHOOL_ASSIGN_SAVED);
       await load();
       onUpdated?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy(false);
     }
   };
 
   if (loading) {
-    return <p className="text-sm text-white/60 text-start">Loading…</p>;
+    return <p className="text-sm text-white/60 text-start">{SCHOOL_LOADING}</p>;
   }
 
   return (

@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "parent_report": "Laporan orang tua",
+    "the_report_cannot_be_built_from_local_browser_data_data_stored_on_this_d": "Laporan tidak dapat disusun dari data peramban lokal (data yang tersimpan di perangkat ini)."
+  }
+}

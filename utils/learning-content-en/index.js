@@ -17,6 +17,7 @@ import { applyRuUzDisplayLayer } from "../learning-content-ru-UZ/index.js";
 import { applyRuKgDisplayLayer } from "../learning-content-ru-KG/index.js";
 import { applyRuByDisplayLayer } from "../learning-content-ru-BY/index.js";
 import { applyAr001DisplayLayer } from "../learning-content-ar-001/index.js";
+import { applyIdIdDisplayLayer } from "../learning-content-id-ID/index.js";
 import { getContentFallbackChain } from "../../lib/content/locale.js";
 
 /**
@@ -49,7 +50,7 @@ function applyEnglishDisplayLayer(question, subject, opts = {}) {
  * - Shared logic/ids/params/diagnostics are untouched (mapQuestionTextFields only remaps text).
  * - Unregistered content locales (including he*) use the English display layer
  *   (never leave raw Hebrew stems for student display).
- * - Native math/geometry stem rebuilders for es-419 / pt-BR / pt-PT / it-IT / fr-FR / nl-NL / de-DE / ru-RU;
+ * - Native math/geometry stem rebuilders for es-419 / pt-BR / pt-PT / it-IT / fr-FR / nl-NL / de-DE / ru-RU / id-ID;
  *   science uses locale overlay; English subject keeps learning stems in EN.
  *
  * @param {Record<string, unknown>} question
@@ -94,6 +95,7 @@ export function localizeLearningQuestion(question, opts = {}) {
       if (loc === "ru-BY") return applyRuByDisplayLayer(question, subject);
       if (loc === "ru-RU") return applyRuRuDisplayLayer(question, subject);
       if (loc === "ar-001") return applyAr001DisplayLayer(question, subject);
+      if (loc === "id-ID") return applyIdIdDisplayLayer(question, subject);
     }
   }
 

@@ -1,0 +1,133 @@
+{
+  "boundary": {
+    "generalOffTopic": "Saya hanya dapat membantu terkait laporan anak Anda, latihan, dan kemajuan di situs. Coba tanyakan apa yang perlu dilatih minggu ini, apa yang dicoba di rumah, atau topik mana yang dibuka sebagai aktivitas singkat.",
+    "diagnosticBoundary": "Saya hanya dapat menggunakan data latihan yang muncul di situs. Laporan dapat menyoroti mata pelajaran dan topik yang perlu diperkuat, tetapi bukan diagnosis pribadi. Kita dapat berfokus pada apa yang memang ditunjukkan laporan: topik yang kuat, topik yang perlu diperkuat, atau langkah kecil untuk di rumah.",
+    "healthBoundary": "Saya hanya dapat menggunakan data latihan yang ditampilkan di situs. Laporan tidak dimaksudkan untuk menarik kesimpulan pribadi tentang anak Anda — laporan membantu Anda melihat topik belajar mana yang perlu diperkuat. Kita dapat memilih langkah belajar berikutnya yang kecil dari data tersebut.",
+    "privacyBoundary": "Saya hanya dapat membantu dengan laporan untuk anak yang tertaut ke akun orang tua ini. Saya tidak dapat menampilkan data anak lain, kata sandi, daftar pengguna, atau informasi sistem internal.",
+    "peerComparison": "Laporan hanya didasarkan pada latihan anak ini dan tidak membandingkannya dengan anak lain di kelas. Anda dapat berfokus pada apa yang muncul di laporan dan bertanya tentang topik tertentu.",
+    "ambiguous": "Saya tidak dapat memastikan bagian laporan yang Anda maksud. Coba pertanyaan yang lebih sederhana — misalnya: apa yang paling penting dilatih minggu ini, apa yang dicoba di rumah, atau topik mana yang dibuka sebagai aktivitas singkat.",
+    "noDataForRequest": "Laporan ini belum memiliki cukup informasi untuk menjawab itu dengan akurat. Lakukan sesi latihan singkat di situs, lalu periksa lagi untuk arah yang lebih jelas.",
+    "noDataSpecificForRequest": "Laporan memiliki data latihan untuk periode tersebut, tetapi belum cukup untuk menjawab poin spesifik ini dengan akurat. Lakukan sesi latihan singkat di situs, lalu periksa lagi untuk arah yang lebih jelas pada topik ini."
+  },
+  "answers": {
+    "lib_parent-client_copilot-turn-api": {
+      "please_sign_in_again_as_a_parent": "Silakan masuk lagi sebagai orang tua.",
+      "no_report_was_found_for_the_child_you_selected": "Tidak ada laporan ditemukan untuk anak yang Anda pilih."
+    },
+    "lib_parent-copilot_copilot-turn-payload": {
+      "server": {
+        "invalid_custom_range_rangefrom_rangeto_must_be_yyyy_mm_dd_and_fr": "Rentang khusus tidak valid: rangeFrom/rangeTo harus YYYY-MM-DD dan from <= to",
+        "could_not_verify_student_ownership_for_copilot_rebuild": "Tidak dapat memverifikasi kepemilikan murid untuk pembuatan ulang Copilot"
+      }
+    },
+    "pages_api_parent_copilot-turn": {
+      "could_not_verify_student_ownership": "Tidak dapat memverifikasi kepemilikan murid",
+      "student_not_found_for_this_parent": "Murid tidak ditemukan untuk orang tua ini"
+    },
+    "utils_parent-copilot_answer-composer": {
+      "still_too_early_to_decide": "Masih terlalu dini untuk memutuskan",
+      "this_is_an_initial_image_only": "Ini baru gambaran awal —",
+      "there_is_only_an_initial_sign_of_weakness": "Baru ada tanda awal kelemahan —"
+    },
+    "utils_parent-copilot_continuity-pattern-composer": {
+      "report_summary": "Ringkasan laporan"
+    },
+    "utils_parent-copilot_contract-reader": {
+      "you_should_continue_to_follow_for_several_days_of_practice": "Terus pantau selama beberapa hari latihan lagi.",
+      "general_summary_of_the_practice": "Ringkasan latihan"
+    },
+    "utils_parent-copilot_followup-engine": {
+      "is_it_possible_to_take_a_small_step_together_today_at_home_aroun": "Ingin mengambil langkah kecil bersama di rumah hari ini pada topik yang sama?",
+      "can_we_draw_together_a_short_plan_for_the_coming_week_around_thi": "Ingin menyusun rencana singkat bersama untuk minggu ini pada topik ini?",
+      "want_to_mark_together_what_you_should_avoid_in_the_coming_week": "Ingin menandai bersama apa yang sebaiknya dihindari minggu ini?",
+      "do_you_want_to_check_together_when_you_should_promote_and_when_t": "Ingin memeriksa bersama kapan naik tingkat dan kapan tetap pada topik yang sama?",
+      "want_a_short_wording_to_explain_to_a_child_without_pressure": "Ingin cara singkat untuk menjelaskan ini kepada anak Anda tanpa tekanan?",
+      "do_you_want_a_wording_for_a_targeted_question_for_the_teacher_ac": "Ingin rumusan pertanyaan terfokus untuk guru, berdasarkan apa yang muncul di laporan?",
+      "want_to_break_down_what_is_still_not_clear_from_the_data_in_the_": "Ingin menguraikan apa yang masih belum jelas dari data laporan?"
+    },
+    "utils_parent-copilot_index": {
+      "there_is_currently_little_practice_data_so_there_is_not_yet_enou": "Saat ini data latihan masih sedikit, sehingga belum cukup informasi untuk arah yang jelas.",
+      "this_mode_is_for_parent_only": "Mode ini hanya untuk orang tua.",
+      "the_relationship_cannot_be_identified_from_the_report": "Laporan tidak menunjukkan cukup informasi untuk mengidentifikasi hubungan tersebut.",
+      "no_contracts_were_found_matching_the_topic_selected_in_the_repor": "Tidak ada item yang cocok untuk topik yang dipilih di laporan."
+    },
+    "utils_parent-copilot_intent-answer-composers": {
+      "right_now_it": "Saat ini,",
+      "follow_up_after_3_4_days_like_this_then_check_in_the_report_if_t": "Tindak lanjuti setelah 3–4 hari seperti ini, lalu periksa di laporan apakah akurasi membaik atau polanya kembali.",
+      "this_does_not_mean_that_there_are_no_successes_just_that_it_is_s": "Ini tidak berarti tidak ada keberhasilan — hanya masih terlalu dini untuk menandai kekuatan yang stabil dari data pada rentang ini.",
+      "during_this_period_there_is_no_practice_data_on_this_subject_in_": "Pada periode ini tidak ada data latihan untuk mata pelajaran ini di laporan saat ini.",
+      "you_can_choose_another_topic_from_the_report_or_gain_practice_on": "Anda dapat memilih topik lain dari laporan, atau berlatih lebih banyak pada topik ini lalu bertanya lagi.",
+      "the_subject_appears_in_the_list_but_no_questions_have_been_count": "Mata pelajaran muncul dalam daftar, tetapi tidak ada soal yang dihitung untuknya pada rentang tanggal.",
+      "in_this_period_there_is_still_not_enough_practice_data_to_recomm": "Pada periode ini masih belum cukup data latihan untuk merekomendasikan menaikkan atau menurunkan tingkat.",
+      "you_should_gather_more_practice_on_the_subject_before_deciding_o": "Kumpulkan lebih banyak latihan pada mata pelajaran ini sebelum memutuskan perubahan tingkat.",
+      "no_weak_line_stood_out_with_enough_practice_at_the_range": "Tidak ada garis topik lemah yang menonjol dengan cukup latihan pada rentang ini.",
+      "according_to_the_report_there_is_still_insufficient_evidence_for": "Menurut laporan, masih belum cukup bukti untuk kerja di atas kelas yang tercantum.",
+      "it_is_worth_gathering_more_practice_before_concluding_on_above_c": "Kumpulkan lebih banyak latihan sebelum menyimpulkan bahwa kinerja di atas tingkat kelas.",
+      "it_is_therefore_impossible_to_determine_direction_from_the_curre": "Belum dapat menentukan arah dari laporan saat ini tentang kinerja pada mata pelajaran ini."
+    },
+    "utils_parent-copilot_llm-orchestrator": {
+      "you_must_not_include_a_next_step_block": "Anda tidak boleh menyertakan blok next_step.",
+      "the_next_step_block_must_not_be_included_practical_recommendatio": "Jangan sertakan blok next_step — simpan rekomendasi praktis hanya di dalam blok meaning (FACTS_JSON mengizinkan rekomendasi hanya ketika recommendation"
+    },
+    "utils_parent-copilot_parent-coaching-packs": {
+      "period_overview": "Ringkasan periode"
+    },
+    "utils_parent-copilot_parent-facing-answer-postpr": {
+      "the_report_is_based_on_the_practice_carried_out_on_the_site_in_t": "Laporan didasarkan pada latihan yang diselesaikan di situs pada periode yang dipilih."
+    },
+    "utils_parent-copilot_pattern-answer-composers": {
+      "this_is_a_focused_answer_according_to_what_appears_in_the_report": "Jawaban ini mengikuti apa yang muncul di laporan untuk periode yang dipilih dan tidak melampaui data tersebut.",
+      "the_three_most_important_things_right_now_are": "Tiga hal terpenting saat ini adalah:",
+      "report_summary": "Ringkasan laporan",
+      "if_a_clear_sub_skill_appears_in_the_report_you_should_focus_on_i": "Jika sub-keterampilan yang jelas muncul di laporan, fokuslah padanya — jangan membuka beberapa mata pelajaran sekaligus."
+    },
+    "utils_parent-copilot_render-adapter": {
+      "program_for_the_week": "Rencana untuk minggu ini",
+      "what_to_avoid_now": "Yang perlu dihindari sekarang",
+      "formulation_for_a_child": "Rumusan untuk anak Anda"
+    },
+    "utils_parent-copilot_scope-resolver": {
+      "in_this_subject_there_is_still_not_enough_practice_that_appears_": "Pada mata pelajaran ini masih belum cukup latihan di laporan — pilih mata pelajaran yang sudah memiliki latihan.",
+      "in_this_subject_there_is_not_yet_a_topic_with_enough_practice_to": "Pada mata pelajaran ini belum ada topik dengan cukup latihan untuk dibahas — Anda dapat mencoba mata pelajaran lain.",
+      "there_is_more_than_one_topic_here_which_topic_to_answer": "Ada lebih dari satu topik di sini — topik mana yang ingin saya jawab?"
+    },
+    "utils_parent-copilot_semantic-aggregate-answers": {
+      "when_subjects_appear_in_the_date_range_you_can_ask_again_and_get": "Ketika mata pelajaran muncul pada rentang tanggal, tanyakan lagi dan Anda dapat memperoleh daftar yang teratur.",
+      "the_list_is_based_on_the_subjects_that_are_shown_in_the_report_f": "Daftar didasarkan pada mata pelajaran yang ditampilkan di laporan untuk periode yang dipilih, dalam urutan tampilan.",
+      "these_are_the_summary_formulations_for_the_period_as_they_appear": "Ini adalah baris ringkasan periode sebagaimana muncul di laporan. Untuk detail menurut mata pelajaran, buka layar mata pelajaran.",
+      "the_ranking_is_based_on_averages_across_subjects_with_practice_i": "Peringkat menggunakan rata-rata lintas mata pelajaran yang memiliki latihan, bukan rumusan satu mata pelajaran saja.",
+      "when_practice_data_appears_on_at_least_one_topic_with_questions_": "Ketika data latihan muncul untuk setidaknya satu topik dengan soal, Anda dapat bertanya lagi untuk gambaran yang lebih jelas.",
+      "you_can_formulate_again_with_two_subject_names_or_ask_one_questi": "Anda dapat bertanya lagi dengan dua nama mata pelajaran, atau satu pertanyaan tentang peringkat menurut kesulitan versus hasil yang relatif kuat berdasarkan data laporan.",
+      "when_questions_and_accuracy_appear_for_both_subjects_you_can_ask": "Ketika soal dan akurasi muncul untuk kedua mata pelajaran, tanyakan lagi untuk perbandingan langsung dari rata-rata di laporan.",
+      "in_order_to_differentiate_between_the_directions_it_is_useful_to": "Untuk membedakan arahnya, lihat juga jumlah soal di setiap mata pelajaran dan rumusan topiknya sendiri.",
+      "the_comparison_is_based_on_averages_across_the_topics_that_have_": "Perbandingan menggunakan rata-rata lintas topik yang memiliki latihan di laporan, bukan rumusan satu topik saja.",
+      "when_subjects_appear_with_subject_lines_you_can_return_to_the_qu": "Ketika mata pelajaran muncul dengan baris mata pelajaran, tanyakan lagi untuk mendapatkan penilaian latihan.",
+      "the_rating_is_based_on_the_actual_amount_of_questions_in_the_per": "Penilaian didasarkan pada jumlah soal aktual di laporan periode, bukan pada perasaan kewalahan.",
+      "when_active_subjects_appear_it_is_possible_to_identify_exactly_w": "Ketika mata pelajaran aktif muncul, Anda dapat melihat tepat di mana data paling tipis.",
+      "this_is_a_sign_that_there_is_too_little_data_in_the_period_repor": "Ini berarti data di laporan periode masih terlalu sedikit — berhati-hatilah dalam menarik kesimpulan.",
+      "this_is_an_answer_based_on_the_summary_lines_in_the_report_only_": "Jawaban ini hanya menggunakan baris ringkasan di laporan dan tidak menciptakan tren dari waktu ke waktu yang tidak ditampilkan di sana.",
+      "when_complete_practice_data_by_subject_appears_in_the_report_it_": "Ketika data latihan lengkap menurut mata pelajaran muncul di laporan, Anda dapat menemukan area yang perlu perhatian.",
+      "it_is_still_correct_to_continue_practicing_and_testing_but_there": "Terus berlatih dan memeriksa — laporan saat ini tidak menunjukkan tanda kebingungan yang jelas.",
+      "the_identification_is_based_on_signs_of_doubt_regarding_the_word": "Ini berasal dari tanda bahwa rumusan masih belum jelas, atau data di laporan sendiri masih terlalu sedikit.",
+      "more_questions_and_a_wider_practice_sequence_are_needed_to_relia": "Diperlukan lebih banyak soal dan rentang latihan yang lebih panjang untuk menguji kestabilan secara andal.",
+      "when_data_appears_for_two_or_more_subjects_you_can_ask_again_and": "Ketika data muncul untuk dua mata pelajaran atau lebih, tanyakan lagi untuk penilaian dari rata-rata yang ditampilkan di laporan.",
+      "this_is_a_subject_level_description_from_the_report_for_exact_de": "Ini adalah deskripsi tingkat mata pelajaran dari laporan. Untuk detail tepat menurut topik, buka mata pelajaran di laporan.",
+      "you_can_formulate_again_with_two_subject_names": "Anda dapat bertanya lagi dengan dua nama mata pelajaran, atau satu pertanyaan tentang peringkat menurut kesulitan versus hasil yang relatif kuat berdasarkan data laporan.",
+      "in_order_to_differentiate_between_the_directions": "Untuk membedakan arahnya, lihat juga jumlah soal di setiap mata pelajaran dan rumusan topik di laporan."
+    },
+    "utils_parent-copilot_short-followup-composer": {
+      "excellent_start_with_a_small_step_that_corresponds_to_what_appea": "Bagus — mulai dengan langkah kecil yang sesuai dengan apa yang muncul di laporan, tanpa melampaui rumusan tersebut.",
+      "understandable_we_stay_with_the_same_wording_from_the_report_and": "Mengerti — kita tetap pada rumusan yang sama dari laporan dan beralih ke langkah kecil berikutnya saat sesuai.",
+      "there_is_no_long_paragraph_here_for_elaboration_you_can_put_in_a": "Tidak ada penjelasan panjang di sini — sampaikan dengan kata lain apa yang masih belum jelas.",
+      "continuing_from_the_same_point_of_the_report_staying_in_the_same": "Melanjutkan dari poin yang sama di laporan — tetap pada gambaran yang sama, tanpa menambah mata pelajaran baru di luar yang sudah ditampilkan."
+    },
+    "utils_parent-copilot_truth-packet-v1": {
+      "you_should_continue_with_a_short_and_measured_practice_to_stabil": "Pertahankan latihan singkat dan terukur untuk mengunci kemajuan di berbagai area.",
+      "there_is_a_wording_here_that_can_be_reflected_to_a_child_in_soft": "Berikut rumusan yang dapat Anda sampaikan kepada anak dengan bahasa yang lembut.",
+      "there_is_still_no_long_extension_in_all_subjects_but_there_are_n": "Belum ada rentang latihan yang panjang di semua mata pelajaran, tetapi ada total latihan numerik untuk periode tersebut.",
+      "no_long_detail_shown_here_yet": "Belum ada rincian terperinci yang ditampilkan di sini.",
+      "period_overview": "Ringkasan periode",
+      "still_lacks_cumulative_practice_for_a_stable_image": "Masih belum cukup latihan kumulatif untuk gambaran yang stabil."
+    }
+  }
+}

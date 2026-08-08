@@ -1,0 +1,73 @@
+{
+  "pageTitle": "Portal tutor privat · LEO KIDS",
+  "metaDescription": "Kelola murid, kirim latihan terfokus, lacak progres, dan datang ke pelajaran berikutnya dengan gambaran yang lebih jelas.",
+  "badge": "Tutor · Pelacakan · Latihan",
+  "installLabel": "Instal aplikasi guru",
+  "hero": {
+    "title": "Ruang kerja cerdas untuk tutor privat",
+    "subtitle": "Kelola murid, kirim latihan terfokus, lacak progres, dan datang ke pelajaran berikutnya dengan gambaran yang lebih jelas.",
+    "primaryCta": {
+      "label": "Masuk / daftar guru",
+      "href": "/teacher/login"
+    },
+    "secondaryCta": {
+      "label": "Apa yang dapat Anda lakukan di sistem?",
+      "scrollTo": "benefits"
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "Pelacakan murid yang terorganisasi",
+        "text": "Setiap murid mendapat tampilan progres yang lebih jelas menurut aktivitas, mata pelajaran, dan topik."
+      },
+      {
+        "title": "Lebih sedikit menebak sebelum pelajaran",
+        "text": "Lihat di mana murid berhasil, kesulitan, dan apa yang perlu diperkuat berikutnya."
+      },
+      {
+        "title": "Kirim aktivitas pribadi",
+        "text": "Alih-alih pekerjaan rumah umum, berikan latihan terfokus dan lacak penyelesaiannya."
+      },
+      {
+        "title": "Lebih banyak nilai untuk orang tua",
+        "text": "Orang tua melihat kerja yang terstruktur, terukur, dan jelas."
+      },
+      {
+        "title": "Alat di antara sesi pelajaran",
+        "text": "Murid dapat terus berlatih setelah sesi sementara Anda melihat apa yang terjadi."
+      },
+      {
+        "title": "Dibangun untuk bimbingan privat satu-satu",
+        "text": "Dirancang untuk murid, latihan, pelacakan, dan progres — tanpa perlu pengaturan sekolah."
+      }
+    ]
+  },
+  "infoSections": [
+    {
+      "title": "Apa yang didapat tutor?",
+      "intro": "Setelah mendaftar Anda dapat:",
+      "bullets": [
+        "Masuk ke area guru.",
+        "Kelola murid.",
+        "Lihat laporan murid.",
+        "Lihat progres dan topik yang perlu penguatan.",
+        "Kirim aktivitas pribadi.",
+        "Lacak penyelesaian dan hasil.",
+        "Gunakan sistem sebagai alat bantu pelajaran dan latihan di rumah."
+      ]
+    },
+    {
+      "title": "Mengapa cocok untuk tutor privat",
+      "body": "Ini menghemat waktu, menambah struktur, dan menunjukkan kepada orang tua kerja yang profesional dan jelas. Alih-alih datang hanya dengan perasaan, Anda datang dengan data."
+    }
+  ],
+  "closing": {
+    "title": "Lebih terstruktur. Lebih banyak pelacakan. Lebih banyak nilai per murid.",
+    "text": "Leo Kids memberi tutor privat cara yang lebih mudah untuk mendukung murid, mengirim latihan, dan melacak progres.",
+    "primaryCta": {
+      "label": "Buka akun guru",
+      "href": "/teacher/login"
+    }
+  }
+}

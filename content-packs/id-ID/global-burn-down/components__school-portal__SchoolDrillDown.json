@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "grade_status": "Status Kelas",
+    "class_status": "Status rombel",
+    "loading": "Memuat…",
+    "try_again": "Coba lagi",
+    "col_subject": "Mata pelajaran",
+    "col_class": "Rombel",
+    "col_teacher": "Guru",
+    "col_type": "Jenis",
+    "active_classes": "{count} rombel aktif",
+    "children_count": "{count} murid",
+    "activities_count": "Aktivitas: {count}",
+    "view_answers": "Lihat jawaban",
+    "suspended_label": "Ditangguhkan"
+  }
+}

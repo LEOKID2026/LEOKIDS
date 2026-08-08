@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "close": "Tutup",
+    "how_to_play_heading": "Cara main?",
+    "how_to_play_title": "Cara main {title}?",
+    "scoring_heading": "Bagaimana cara mendapat skor?",
+    "rewards_heading": "Hadiah & permata",
+    "tip_heading": "Tips cepat",
+    "got_it_lets_play": "Oke, ayo main"
+  }
+}

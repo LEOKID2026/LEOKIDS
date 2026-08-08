@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "horizontal_addition_and_subtraction": "Penjumlahan dan pengurangan mendatar",
+    "vertical_addition_and_subtraction": "Penjumlahan dan pengurangan bersusun",
+    "basic_multiplication": "Perkalian dasar",
+    "long_multiplication": "Perkalian bersusun",
+    "basic_division": "Pembagian dasar",
+    "long_division": "Pembagian bersusun",
+    "fractions": "Pecahan",
+    "decimals": "Desimal",
+    "percentages": "Persentase",
+    "ratio_and_scale": "Rasio dan skala",
+    "word_problems": "Soal cerita",
+    "mixed_practice": "Latihan campuran",
+    "horizontal_addition": "Penjumlahan mendatar",
+    "vertical_addition": "Penjumlahan bersusun",
+    "horizontal_subtraction": "Pengurangan mendatar",
+    "vertical_subtraction": "Pengurangan bersusun",
+    "unit_fractions_halves_quarters": "Pecahan satuan — setengah dan seperempat"
+  }
+}

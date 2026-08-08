@@ -19,10 +19,10 @@ export default async function handler(req, res) {
   const physicalClassName = req.query?.physicalClassName;
 
   if (!gradeLevel || !String(gradeLevel).trim()) {
-    return sendSchoolApiError(res, 400, "validation_failed", "gradeLevel is required");
+    return sendSchoolApiError(res, 400, "validation_failed", "validation_failed");
   }
   if (!physicalClassName || !String(physicalClassName).trim()) {
-    return sendSchoolApiError(res, 400, "validation_failed", "physicalClassName is required");
+    return sendSchoolApiError(res, 400, "validation_failed", "validation_failed");
   }
 
   try {

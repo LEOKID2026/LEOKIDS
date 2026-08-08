@@ -1,0 +1,11 @@
+{
+  "gameId": "target-tap",
+  "title": "Ketuk Target",
+  "blurb": "Ketuk target sebelum menghilang!",
+  "help": {
+    "howToPlay": "Ketuk target yang muncul di layar sebelum menghilang. Kamu punya tiga nyawa.",
+    "scoring": "Target biasa, bintang, dan berlian bernilai poin berbeda. Melewatkan menghabiskan nyawa. Ketukan beruntun memberi bonus combo.",
+    "rewards": "Mencapai target ketukan atau skor akhir tinggi memberi koin dan berlian.",
+    "tip": "Jangan buru-buru ke semua target — kadang target dengan berlian lebih berharga."
+  }
+}

@@ -10,9 +10,10 @@ import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
 import { buildDemoMyRoomFixture } from "../../../components/demo/demo-display-fixtures.js";
 import { demoPackCopyForLocale } from "../../../lib/demo/demo-pack-copy.js";
 import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
+import { resolveStudentApiErrorMessage } from "../../../lib/student-client/student-api-legacy-errors.js";
 
 export default function ArcadeMyRoomPage() {
-  const { locale } = useI18n();
+  const { locale, t } = useI18n();
   const demoMode = isDemoMode();
   const demoMyRoom = buildDemoMyRoomFixture(locale);
   const demoCopy = (group, key) => demoPackCopyForLocale(locale, group, key);
@@ -56,7 +57,7 @@ export default function ArcadeMyRoomPage() {
         body: JSON.stringify({ roomName }),
       });
       const json = await res.json().catch(() => ({}));
-      setMessage(json.ok ? "Saved!" : json.message || json.error || "Error");
+      setMessage(json.ok ? t("games.apiSuccess") : resolveStudentApiErrorMessage(json, t) || t("games.apiFailed"));
       if (json.ok) await load();
     } finally {
       setBusy(false);

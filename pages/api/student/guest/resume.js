@@ -9,7 +9,7 @@ import { LIOSH_GUEST_RESUME_TOKEN_KEY } from "../../../../lib/guest/constants.js
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
   }
 
   if (guardCookieMutationOrigin(req, res)) return;
@@ -28,10 +28,11 @@ export default async function handler(req, res) {
     const result = await resumeGuestStudent(supabase, resumeToken);
 
     if (!result.ok) {
+      const code = result.code || "guest_resume_failed";
       return res.status(result.status || 500).json({
         ok: false,
-        error: result.message || result.code || "guest_resume_failed",
-        code: result.code,
+        error: code,
+        code,
       });
     }
 
@@ -46,6 +47,6 @@ export default async function handler(req, res) {
     });
   } catch (_e) {
     clearStudentSessionCookie(res);
-    return res.status(500).json({ ok: false, error: "Server error" });
+    return res.status(500).json({ ok: false, error: "server_error", code: "server_error" });
   }
 }

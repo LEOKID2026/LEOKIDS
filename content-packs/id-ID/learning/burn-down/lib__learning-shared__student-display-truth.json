@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "no_data_yet": "Belum ada data",
+    "data_unavailable_right_now": "Data tidak tersedia saat ini",
+    "loading": "Memuat…",
+    "cumulative": "Kumulatif",
+    "for_the_current_month": "Untuk bulan berjalan",
+    "cumulative_from_all_sessions": "Kumulatif dari semua sesi",
+    "from_completed_sessions": "Dari sesi yang selesai",
+    "from_all_sessions_with_duration": "Dari semua sesi yang memiliki durasi",
+    "credited_learning_time_questions_books_and_parent_activities": "Waktu belajar yang dihitung — pertanyaan, buku, dan aktivitas orang tua"
+  }
+}

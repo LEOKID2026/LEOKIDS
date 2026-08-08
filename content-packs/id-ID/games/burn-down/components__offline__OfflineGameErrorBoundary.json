@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "oops_something_went_wrong": "Ups! Ada yang salah",
+    "we_couldn_t_load_the_game_you_can_try_again": "Kami tidak bisa memuat gim. Kamu bisa coba lagi.",
+    "back_to_games_list": "Kembali ke Daftar Gim",
+    "offline_games_area": "Area Gim Offline",
+    "try_again": "Coba Lagi"
+  }
+}

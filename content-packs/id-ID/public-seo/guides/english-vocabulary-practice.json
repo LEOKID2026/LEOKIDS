@@ -1,0 +1,71 @@
+{
+  "seoKey": "guides-english-vocabulary-practice",
+  "slug": "english-vocabulary-practice",
+  "displayTitle": "Kosakata Bahasa Inggris",
+  "badge": "Panduan Bahasa Inggris di rumah",
+  "h1": "Latihan kosakata Bahasa Inggris di rumah",
+  "intro": "Untuk mengingat kata Bahasa Inggris baru, melihatnya sekali tidak cukup. Baca, dengar, pahami artinya, dan gunakan dalam beberapa konteks.",
+  "sections": [
+    {
+      "title": "Latih kelompok kata yang kecil",
+      "paragraphs": [
+        "Pilih sekumpulan kecil kata dari topik yang sama, seperti keluarga, rumah, makanan, warna, atau sekolah. Kelompok yang jelas membantu anak Anda menghubungkan kata dan mengingatnya."
+      ]
+    },
+    {
+      "title": "Empat cara mengerjakan setiap kata",
+      "bullets": [
+        "Baca kata dalam bahasa Inggris.",
+        "Katakan artinya.",
+        "Kenali kata dalam kalimat.",
+        "Buat kalimat pendek baru.",
+        "Kembali ke kata itu di hari lain."
+      ]
+    },
+    {
+      "title": "Jangan hanya berlatih terjemahan",
+      "paragraphs": [
+        "Terjemahan adalah langkah penting, tetapi tujuannya agar anak Anda mengenali kata dalam kalimat. Tanyakan apa yang cocok dengan kata itu, apa lawannya, atau kapan kata itu digunakan."
+      ]
+    },
+    {
+      "title": "Cara menggunakan Leo Kids",
+      "paragraphs": [
+        "Pilih kelas, buka Bahasa Inggris, dan pilih kosakata atau topik yang sesuai. Anda dapat kembali untuk latihan lebih lanjut dan bertemu kata-kata dalam urutan berbeda."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Berapa banyak kata baru yang harus kita latih?",
+      "a": "Mulai dengan kelompok kecil yang dapat Anda tinjau ulang beberapa kali selama minggu."
+    },
+    {
+      "q": "Apakah kita harus menulis setiap kata?",
+      "a": "Menulis dapat membantu, tetapi membaca, mengucapkan, dan menggunakan kata dalam kalimat juga penting."
+    },
+    {
+      "q": "Bagaimana jika sebuah kata terlupa lagi?",
+      "a": "Masukkan kembali ke kelompok latihan dan gunakan dalam konteks lain."
+    }
+  ],
+  "relatedPracticePath": "/practice/english",
+  "practiceCtaLabel": "Latihan Bahasa Inggris",
+  "relatedGuideSlugs": [
+    "learning-games-at-home",
+    "home-practice-routine",
+    "parent-progress-tracking"
+  ],
+  "footerCta": {
+    "title": "Pilih kelompok kata dan mulai berlatih",
+    "body": "Membaca, makna, dan penggunaan dalam kalimat membantu mengubah kata baru menjadi yang familiar.",
+    "primary": {
+      "href": "/practice/english",
+      "label": "Latihan Bahasa Inggris"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

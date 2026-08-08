@@ -30,6 +30,18 @@ import {
   subjectLabel,
 } from "../../../lib/teacher-portal/teacher-ui.js";
 
+const SLUG = "pages__teacher__class__[classId]";
+
+function c(key, vars) {
+  let text = globalBurnDownCopy(SLUG, key);
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      text = text.split(`{${k}}`).join(String(v));
+    }
+  }
+  return text;
+}
+
 export async function getServerSideProps(context) {
   const classId = String(context.params?.classId || "").trim();
   return { props: { classId } };
@@ -59,7 +71,7 @@ export default function TeacherClassReportPage({ classId }) {
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
           title={classReportTitle}
-          message={globalBurnDownCopy("pages__teacher__class__[classId]", "invalid_class_id")}
+          message={c("invalid_class_id")}
         />
       </Layout>
     );
@@ -83,7 +95,7 @@ export default function TeacherClassReportPage({ classId }) {
         <TeacherReportForbidden
           backHref="/teacher/dashboard"
           title={classReportTitle}
-          message={globalBurnDownCopy("pages__teacher__class__[classId]", "you_do_not_have_permission_to_view_this_class_report")}
+          message={c("you_do_not_have_permission_to_view_this_class_report")}
         />
       </Layout>
     );
@@ -102,7 +114,7 @@ export default function TeacherClassReportPage({ classId }) {
     );
   }
 
-  const className = report.class?.name || "Class";
+  const className = report.class?.name || c("class_fallback_name");
   const cohort = report.cohortSummary || {};
   const guidance = report.teacherGuidanceBlock || {};
   const teacherSummary = guidance.teacherSummary || {};
@@ -123,8 +135,8 @@ export default function TeacherClassReportPage({ classId }) {
 
   const weaknessTopics = isGuidanceV2
     ? classRecommendationUnits.filter((u) => u.topicLabelHe || u.headlineHe)
-    : (report.weaknessTopics || guidance.priorityTopics || []).filter((t) =>
-        formatTopicLineHe(t.subject, t.topic)
+    : (report.weaknessTopics || guidance.priorityTopics || []).filter((topic) =>
+        formatTopicLineHe(topic.subject, topic.topic)
       );
   const groups = guidance.suggestedGroups || {};
   const memberCount = report.roster?.activeMemberCount ?? 0;
@@ -132,18 +144,21 @@ export default function TeacherClassReportPage({ classId }) {
   const reinforcement = isGuidanceV2
     ? []
     : (guidance.reinforcementSuggestions || [])
-        .map((t) => {
-          const line = formatTopicLineHe(t.subject, t.topic);
-          return line ? `Recommended to reinforce: ${line}` : null;
+        .map((topic) => {
+          const line = formatTopicLineHe(topic.subject, topic.topic);
+          return line ? c("recommended_to_reinforce", { line }) : null;
         })
         .filter(Boolean);
   const extension = isGuidanceV2
     ? []
     : (guidance.extensionSuggestions || [])
-        .map((t) => {
-          const line = formatTopicLineHe(t.subject, t.topic);
+        .map((topic) => {
+          const line = formatTopicLineHe(topic.subject, topic.topic);
           if (!line) return null;
-          return `${line} - strong class performance (${formatPercent(t.accuracy)})`;
+          return c("strong_class_performance", {
+            line,
+            accuracy: formatPercent(topic.accuracy),
+          });
         })
         .filter(Boolean);
 
@@ -171,43 +186,43 @@ export default function TeacherClassReportPage({ classId }) {
             onEnableCustom={() => reportRange.setCustomDates(true)}
             onApplyCustom={() => {
               const result = reportRange.applyCustom();
-              if (!result.ok) alert(globalBurnDownCopy("pages__teacher__class__[classId]", "please_select_valid_dates"));
+              if (!result.ok) alert(c("please_select_valid_dates"));
             }}
             className="mb-4"
           />
           <p className="text-white/60 text-sm mb-2">
-            {memberCount} active students
+            {c("active_students", { count: memberCount })}
           </p>
 
           {memberCount === 0 ? (
             <p className="text-amber-200 text-sm mb-6">
-              This class is empty — add students to see a report.
+              {c("empty_class_hint")}
             </p>
           ) : null}
 
           <section className="rounded-xl border border-white/15 bg-black/30 p-5 mb-6">
-            <h2 className="text-lg font-semibold mb-3">Class summary</h2>
+            <h2 className="text-lg font-semibold mb-3">{c("class_summary")}</h2>
             {guidance.insufficientData && cohort.totalAnswers < 10 ? (
               <p className="text-white/70 text-sm">
-                Cannot compute recommendations — not enough data in this period.
+                {c("insufficient_data")}
               </p>
             ) : (
               <>
                 <dl className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm mb-3">
                   <div>
-                    <dt className="text-white/60">Total practice sessions</dt>
+                    <dt className="text-white/60">{c("total_practice_sessions")}</dt>
                     <dd>{cohort.totalSessions ?? 0}</dd>
                   </div>
                   <div>
-                    <dt className="text-white/60">Total answers</dt>
+                    <dt className="text-white/60">{c("total_answers")}</dt>
                     <dd>{cohort.totalAnswers ?? 0}</dd>
                   </div>
                   <div>
-                    <dt className="text-white/60">Average success rate</dt>
+                    <dt className="text-white/60">{c("average_success_rate")}</dt>
                     <dd>{formatPercent(cohort.accuracy)}</dd>
                   </div>
                   <div>
-                    <dt className="text-white/60">Students with data</dt>
+                    <dt className="text-white/60">{c("students_with_data")}</dt>
                     <dd>{cohort.studentsWithActivity ?? 0}</dd>
                   </div>
                 </dl>
@@ -219,63 +234,77 @@ export default function TeacherClassReportPage({ classId }) {
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-3">Class performance by subject</h2>
+            <h2 className="text-lg font-semibold mb-3">{c("class_performance_by_subject")}</h2>
             <SubjectSummaryCards subjects={report.subjects} showTopics />
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Topics that need reinforcement</h2>
+            <h2 className="text-lg font-semibold mb-2">{c("topics_need_reinforcement")}</h2>
             {weaknessTopics.length ? (
               <ul className="text-sm text-white/80 space-y-2">
-                {weaknessTopics.slice(0, 10).map((t, i) => {
+                {weaknessTopics.slice(0, 10).map((topic, i) => {
                   if (isGuidanceV2) {
-                    if (t.level === "subject" && t.headlineHe) {
-                      const action = actionTypeLabelHe(t.recommendedActionType);
+                    if (topic.level === "subject" && topic.headlineHe) {
+                      const action = actionTypeLabelHe(topic.recommendedActionType);
+                      const actionSuffix = topic.actionHe
+                        ? c("action_suffix", { action: topic.actionHe })
+                        : action
+                          ? c("action_suffix", { action })
+                          : "";
                       return (
                         <li
-                          key={t.unitId || i}
+                          key={topic.unitId || i}
                           className="rounded border border-white/10 px-3 py-2"
                         >
-                          <span className="font-medium">{t.headlineHe}</span>
-                          : {t.affectedStudentCount ?? 0}/{memberCount} Students ·{" "}
-                          {formatPercent(t.cohortAccuracyPct)} Success
-                          {t.actionHe ? ` · ${t.actionHe}` : action ? ` · ${action}` : ""}
+                          {c("topic_line_subject_level", {
+                            headline: topic.headlineHe,
+                            affected: topic.affectedStudentCount ?? 0,
+                            memberCount,
+                            accuracy: formatPercent(topic.cohortAccuracyPct),
+                            actionSuffix,
+                          })}
                         </li>
                       );
                     }
-                    const subj = subjectLabel(t.subject);
-                    const headline = t.subtopicLabelHe
-                      ? `${t.topicLabelHe} - ${t.subtopicLabelHe}`
-                      : t.topicLabelHe;
+                    const subj = subjectLabel(topic.subject);
+                    const headline = topic.subtopicLabelHe
+                      ? `${topic.topicLabelHe} - ${topic.subtopicLabelHe}`
+                      : topic.topicLabelHe;
                     const errPct =
-                      t.cohortAccuracyPct != null
-                        ? formatPercent(100 - t.cohortAccuracyPct)
+                      topic.cohortAccuracyPct != null
+                        ? formatPercent(100 - topic.cohortAccuracyPct)
                         : "-";
-                    const action = actionTypeLabelHe(t.recommendedActionType);
+                    const action = actionTypeLabelHe(topic.recommendedActionType);
+                    const actionSuffix = action ? c("action_suffix", { action }) : "";
+                    const headlineText = subj ? `${subj} - ${headline}` : headline;
                     return (
                       <li
-                        key={t.unitId || i}
+                        key={topic.unitId || i}
                         className="rounded border border-white/10 px-3 py-2"
                       >
-                        <span className="font-medium">
-                          {subj ? `${subj} - ${headline}` : headline}
-                        </span>
-                        : {t.affectedStudentCount ?? 0}/{memberCount} Students ·{" "}
-                        {formatPercent(t.cohortAccuracyPct)} success · error rate {errPct}
-                        {action ? ` · ${action}` : ""}
+                        {c("topic_line_v2", {
+                          headline: headlineText,
+                          affected: topic.affectedStudentCount ?? 0,
+                          memberCount,
+                          accuracy: formatPercent(topic.cohortAccuracyPct),
+                          errPct,
+                          actionSuffix,
+                        })}
                       </li>
                     );
                   }
-                  const line = formatTopicLineHe(t.subject, t.topic);
+                  const line = formatTopicLineHe(topic.subject, topic.topic);
                   if (!line) return null;
                   const acc =
-                    t.answers > 0
-                      ? formatPercent(((t.wrong || 0) / t.answers) * 100)
+                    topic.answers > 0
+                      ? formatPercent(((topic.wrong || 0) / topic.answers) * 100)
                       : "-";
+                  const studentsSuffix = topic.studentCount
+                    ? c("students_count_suffix", { count: topic.studentCount })
+                    : "";
                   return (
                     <li key={i}>
-                      {line}: {acc} avg errors
-                      {t.studentCount ? ` · ${t.studentCount} students` : ""}
+                      {c("topic_line_legacy", { line, acc, studentsSuffix })}
                     </li>
                   );
                 }).filter(Boolean)}
@@ -283,7 +312,7 @@ export default function TeacherClassReportPage({ classId }) {
             ) : (
               <p className="text-white/60 text-sm">
                 {showCalmWeakTopics
-                  ? "No problematic topics found in this period."
+                  ? c("no_problematic_topics")
                   : CLASS_WEAK_TOPICS_FALLBACK_BANNER}
               </p>
             )}
@@ -291,17 +320,22 @@ export default function TeacherClassReportPage({ classId }) {
 
           {isGuidanceV2 && smallGroupClusters.length > 0 ? (
             <section className="mb-6">
-              <h2 className="text-lg font-semibold mb-2">Suggested support groups</h2>
+              <h2 className="text-lg font-semibold mb-2">{c("suggested_support_groups")}</h2>
               <ul className="text-sm text-white/80 space-y-2">
                 {smallGroupClusters
-                  .filter((c) => c.topicLabelHe)
-                  .map((c, i) => (
+                  .filter((cluster) => cluster.topicLabelHe)
+                  .map((cluster, i) => (
                   <li key={i} className="rounded border border-white/10 px-3 py-2">
-                    <span className="font-medium">{c.topicLabelHe}</span>
-                    : {(c.studentNamesMasked || []).join(", ")}
-                    {c.avgAccuracyPct != null
-                      ? ` · avg ${formatPercent(c.avgAccuracyPct)}`
-                      : ""}
+                    {c("support_group_line", {
+                      topic: cluster.topicLabelHe,
+                      names: (cluster.studentNamesMasked || []).join(", "),
+                      avgSuffix:
+                        cluster.avgAccuracyPct != null
+                          ? c("support_group_avg", {
+                              accuracy: formatPercent(cluster.avgAccuracyPct),
+                            })
+                          : "",
+                    })}
                   </li>
                 ))}
               </ul>
@@ -309,7 +343,7 @@ export default function TeacherClassReportPage({ classId }) {
           ) : null}
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Students who need monitoring</h2>
+            <h2 className="text-lg font-semibold mb-2">{c("students_need_monitoring")}</h2>
             {attentionList.length ? (
               <ul className="space-y-2">
                 {attentionList.map((s) => (
@@ -332,27 +366,30 @@ export default function TeacherClassReportPage({ classId }) {
                       href={`/teacher/student/${s.studentId}`}
                       className="text-amber-300 hover:underline shrink-0"
                     >
-                      View report
+                      {c("view_report")}
                     </Link>
                   </li>
                 ))}
               </ul>
             ) : memberCount > 0 ? (
               <p className="text-white/60 text-sm">
-                All students in the class are on track — no special intervention needed.
+                {c("all_students_on_track")}
               </p>
             ) : null}
           </section>
 
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Suggested work groups</h2>
+            <h2 className="text-lg font-semibold mb-2">{c("suggested_work_groups")}</h2>
             {["struggling", "on_track", "advanced"].map((tier) => {
               const list = groups[tier] || [];
               if (!list.length) return null;
               return (
                 <div key={tier} className="mb-2 text-sm">
                   <span className="font-semibold text-amber-200">
-                    {groupTierHe(tier)} ({list.length} Students):
+                    {c("work_group_header", {
+                      tier: groupTierHe(tier),
+                      count: list.length,
+                    })}
                   </span>{" "}
                   <span className="text-white/70 break-words">
                     {list.map((x) => x.studentFullName || x.studentFullNameMasked).join("، ")}
@@ -365,19 +402,19 @@ export default function TeacherClassReportPage({ classId }) {
             !groups.advanced?.length ? (
               <p className="text-white/60 text-sm">
                 {memberCount < 3
-                  ? "Not enough students with data to form groups."
-                  : "Not enough data to form groups."}
+                  ? c("not_enough_students_for_groups")
+                  : c("not_enough_data_for_groups")}
               </p>
             ) : (
               <p className="text-xs text-white/50 mt-2">
-                *Groups are computed from performance — the teacher makes the final call.
+                {c("groups_disclaimer")}
               </p>
             )}
           </section>
 
           {!isGuidanceV2 ? (
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Focus for next lesson</h2>
+            <h2 className="text-lg font-semibold mb-2">{c("focus_for_next_lesson")}</h2>
             {(guidance.nextLessonFocus || []).length ? (
               <ul className="list-disc list-inside text-sm text-white/80 space-y-1">
                 {guidance.nextLessonFocus
@@ -386,10 +423,12 @@ export default function TeacherClassReportPage({ classId }) {
                     if (!line) return null;
                     return (
                       <li key={i}>
-                        {line}
                         {f.affectedStudents
-                          ? ` - ${f.affectedStudents} students struggled with this topic`
-                          : ""}
+                          ? c("next_lesson_topic_line", {
+                              line,
+                              count: f.affectedStudents,
+                            })
+                          : line}
                       </li>
                     );
                   })
@@ -397,7 +436,7 @@ export default function TeacherClassReportPage({ classId }) {
               </ul>
             ) : (
               <p className="text-white/60 text-sm">
-                No standout topic for the next lesson — continue with the curriculum.
+                {c("no_standout_topic")}
               </p>
             )}
           </section>
@@ -405,30 +444,30 @@ export default function TeacherClassReportPage({ classId }) {
 
           {!isGuidanceV2 ? (
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Reinforcement suggestions</h2>
+            <h2 className="text-lg font-semibold mb-2">{c("reinforcement_suggestions")}</h2>
             {reinforcement.length ? (
               <ul className="list-disc list-inside text-sm text-white/80">
-                {reinforcement.map((t, i) => (
-                  <li key={i}>{t}</li>
+                {reinforcement.map((line, i) => (
+                  <li key={i}>{line}</li>
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">No special reinforcement suggestions for this period.</p>
+              <p className="text-white/60 text-sm">{c("no_reinforcement_suggestions")}</p>
             )}
           </section>
           ) : null}
 
           {!isGuidanceV2 ? (
           <section className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Enrichment suggestions</h2>
+            <h2 className="text-lg font-semibold mb-2">{c("enrichment_suggestions")}</h2>
             {extension.length ? (
               <ul className="list-disc list-inside text-sm text-white/80">
-                {extension.map((t, i) => (
-                  <li key={i}>{t}</li>
+                {extension.map((line, i) => (
+                  <li key={i}>{line}</li>
                 ))}
               </ul>
             ) : (
-              <p className="text-white/60 text-sm">No enrichment suggestions for this period.</p>
+              <p className="text-white/60 text-sm">{c("no_enrichment_suggestions")}</p>
             )}
           </section>
           ) : null}

@@ -1,0 +1,1385 @@
+{
+  "batches": {
+    "english.g1": {
+      "phonics-a": {
+        "title": "Huruf Besar A–Z dan lainnya"
+      },
+      "phonics-b": {
+        "title": "Bunyi Huruf dan lainnya"
+      },
+      "phonics-c": {
+        "title": "Kata-kata Kelas dan lainnya"
+      },
+      "phonics-d": {
+        "title": "Gambar dan Kata dan lainnya"
+      }
+    },
+    "english.g2": {
+      "phonics-review": {
+        "title": "Ulangan: Huruf dan Nama dan lainnya"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "a": {
+        "title": "Mengenal Persegi dan lainnya"
+      },
+      "b": {
+        "title": "Translasi dan Refleksi — Pengenalan"
+      }
+    },
+    "geometry.g2": {
+      "a": {
+        "title": "Bangun Ruang Tiga Dimensi — Nama dan Pengenalan"
+      },
+      "b": {
+        "title": "Luas Persegi"
+      },
+      "c": {
+        "title": "Translasi dan Refleksi — Lebih Banyak Latihan"
+      }
+    },
+    "geometry.g3": {
+      "a": {
+        "title": "Jenis-jenis Segitiga dan lainnya"
+      },
+      "b": {
+        "title": "Garis Sejajar dan Tegak Lurus"
+      },
+      "c": {
+        "title": "Luas Persegi dan lainnya"
+      },
+      "d": {
+        "title": "Sudut dalam Segitiga"
+      },
+      "e": {
+        "title": "Rotasi pada Bidang dan lainnya"
+      }
+    },
+    "geometry.g4": {
+      "a": {
+        "title": "Sifat Persegi dan lainnya"
+      },
+      "b": {
+        "title": "Segiempat dan lainnya"
+      },
+      "c": {
+        "title": "Keliling Persegi dan lainnya"
+      },
+      "d": {
+        "title": "Diagonal Persegi dan lainnya"
+      },
+      "e": {
+        "title": "Bangun Ruang dan lainnya"
+      }
+    },
+    "geometry.g5": {
+      "a": {
+        "title": "Garis Sejajar dan Tegak Lurus dan lainnya"
+      },
+      "b": {
+        "title": "Keliling Persegi dan lainnya"
+      },
+      "c": {
+        "title": "Tinggi Segitiga dan lainnya"
+      },
+      "d": {
+        "title": "Luas Persegi dan lainnya"
+      },
+      "e": {
+        "title": "Diagonal Persegi dan lainnya"
+      },
+      "f": {
+        "title": "Bangun Ruang Tiga Dimensi dan lainnya"
+      },
+      "g": {
+        "title": "Menutupi Bidang dengan Ubin"
+      }
+    },
+    "geometry.g6": {
+      "a": {
+        "title": "Keliling Persegi dan lainnya"
+      },
+      "b": {
+        "title": "Keliling Lingkaran dan lainnya"
+      },
+      "c": {
+        "title": "Teorema Pythagoras dan lainnya"
+      },
+      "d": {
+        "title": "Bangun Ruang dan lainnya"
+      },
+      "e": {
+        "title": "Volume Prisma dan lainnya"
+      },
+      "f": {
+        "title": "Volume Limas dan lainnya"
+      },
+      "g": {
+        "title": "Volume Silinder dan lainnya"
+      }
+    },
+    "math.g1": {
+      "a": {
+        "title": "Menghitung Maju pada Garis Bilangan dan lainnya"
+      },
+      "b": {
+        "title": "Puluhan dan Satuan dan lainnya"
+      },
+      "c": {
+        "title": "Menjumlahkan Dua Bilangan dan lainnya"
+      },
+      "d": {
+        "title": "Soal Cerita dan lainnya"
+      }
+    },
+    "math.g2": {
+      "a": {
+        "title": "Ratusan, Puluhan, dan Satuan dan lainnya"
+      },
+      "b": {
+        "title": "Menjumlahkan Dua Bilangan dan lainnya"
+      },
+      "c": {
+        "title": "Kapan suatu Bilangan Habis Dibagi 2, 5, dan 10? dan lainnya"
+      },
+      "d": {
+        "title": "Soal Cerita dan lainnya"
+      }
+    },
+    "math.g3": {
+      "a": {
+        "title": "Ratusan, Puluhan, dan Satuan dan lainnya"
+      },
+      "b": {
+        "title": "Menjumlahkan Dua Bilangan dan lainnya"
+      },
+      "c": {
+        "title": "Pecahan — Apa Itu dan Bagaimana Kita Membandingkannya?"
+      },
+      "d": {
+        "title": "Persamaan Penjumlahan dan lainnya"
+      },
+      "e": {
+        "title": "Soal Cerita dan lainnya"
+      }
+    },
+    "math.g4": {
+      "a": {
+        "title": "Nilai Tempat dan lainnya"
+      },
+      "b": {
+        "title": "Menjumlahkan dengan 0 dan lainnya"
+      },
+      "c": {
+        "title": "Menjumlahkan Dua Bilangan dan lainnya"
+      },
+      "d": {
+        "title": "Pembagian dan lainnya"
+      },
+      "e": {
+        "title": "Menjumlahkan Desimal dan lainnya"
+      },
+      "f": {
+        "title": "Pangkat dan lainnya"
+      },
+      "g": {
+        "title": "Soal Cerita dan lainnya"
+      }
+    },
+    "math.g5": {
+      "a": {
+        "title": "Nilai Tempat dan lainnya"
+      },
+      "b": {
+        "title": "Menjumlahkan Dua Bilangan dan lainnya"
+      },
+      "c": {
+        "title": "Pembagian dan lainnya"
+      },
+      "d": {
+        "title": "Menyederhanakan Pecahan dan lainnya"
+      },
+      "e": {
+        "title": "Menjumlahkan Desimal dan lainnya"
+      },
+      "f": {
+        "title": "Faktor suatu Bilangan dan lainnya"
+      },
+      "g": {
+        "title": "Persen dari suatu Kuantitas dan lainnya"
+      },
+      "h": {
+        "title": "Soal Cerita dan lainnya"
+      }
+    },
+    "math.g6": {
+      "a": {
+        "title": "Nilai Tempat dan lainnya"
+      },
+      "b": {
+        "title": "Menjumlahkan Dua Bilangan dan lainnya"
+      },
+      "c": {
+        "title": "Faktor suatu Bilangan dan lainnya"
+      },
+      "d": {
+        "title": "Persamaan Penjumlahan dan lainnya"
+      },
+      "e": {
+        "title": "Menjumlahkan Bilangan Desimal dan lainnya"
+      },
+      "f": {
+        "title": "Pecahan sebagai Pembagian dan lainnya"
+      },
+      "g": {
+        "title": "Rasio dan lainnya"
+      },
+      "h": {
+        "title": "Persen dari suatu Kuantitas dan lainnya"
+      },
+      "i": {
+        "title": "Soal Cerita dan lainnya"
+      }
+    },
+    "science.g1": {
+      "a": {
+        "title": "Tubuh Manusia dan lainnya"
+      },
+      "b": {
+        "title": "Bahan dan lainnya"
+      }
+    },
+    "science.g2": {
+      "a": {
+        "title": "Tubuh Manusia dan lainnya"
+      },
+      "b": {
+        "title": "Bahan dan lainnya"
+      },
+      "c": {
+        "title": "Pengamatan dan Penyelidikan"
+      }
+    },
+    "science.g3": {
+      "a": {
+        "title": "Tubuh Manusia dan lainnya"
+      },
+      "b": {
+        "title": "Bahan dan lainnya"
+      },
+      "c": {
+        "title": "Percobaan Ilmiah Singkat"
+      }
+    },
+    "science.g4": {
+      "a": {
+        "title": "Tubuh Manusia dan lainnya"
+      },
+      "b": {
+        "title": "Bahan dan lainnya"
+      },
+      "c": {
+        "title": "Merencanakan Percobaan"
+      }
+    },
+    "science.g5": {
+      "b": {
+        "title": "Bahan dan lainnya"
+      },
+      "a": {
+        "title": "Tubuh Manusia dan lainnya"
+      },
+      "c": {
+        "title": "Penyelidikan Lengkap — Dokumentasi"
+      }
+    },
+    "science.g6": {
+      "b": {
+        "title": "Bahan dan lainnya"
+      },
+      "a": {
+        "title": "Tubuh Manusia dan lainnya"
+      },
+      "c": {
+        "title": "Proyek IPA"
+      }
+    },
+    "placeholder": {
+      "comingSoon": {
+        "title": "Segera hadir"
+      }
+    }
+  },
+  "meta": {
+    "english.g1": {
+      "bookTitle": "Bahasa Inggris — Kelas 1"
+    },
+    "english.g2": {
+      "bookTitle": "Bahasa Inggris — Kelas 2"
+    },
+    "english.g3": {
+      "bookTitle": "Bahasa Inggris — Kelas 3"
+    },
+    "english.g4": {
+      "bookTitle": "Bahasa Inggris — Kelas 4"
+    },
+    "english.g5": {
+      "bookTitle": "Bahasa Inggris — Kelas 5"
+    },
+    "english.g6": {
+      "bookTitle": "Bahasa Inggris — Kelas 6"
+    },
+    "geometry.g1": {
+      "bookTitle": "Geometri — Kelas 1"
+    },
+    "geometry.g2": {
+      "bookTitle": "Geometri — Kelas 2"
+    },
+    "geometry.g3": {
+      "bookTitle": "Geometri — Kelas 3"
+    },
+    "geometry.g4": {
+      "bookTitle": "Geometri — Kelas 4"
+    },
+    "geometry.g5": {
+      "bookTitle": "Geometri — Kelas 5"
+    },
+    "geometry.g6": {
+      "bookTitle": "Geometri — Kelas 6"
+    },
+    "math.g1": {
+      "bookTitle": "Matematika — Kelas 1"
+    },
+    "math.g2": {
+      "bookTitle": "Matematika — Kelas 2"
+    },
+    "math.g3": {
+      "bookTitle": "Matematika — Kelas 3"
+    },
+    "math.g4": {
+      "bookTitle": "Matematika — Kelas 4"
+    },
+    "math.g5": {
+      "bookTitle": "Matematika — Kelas 5"
+    },
+    "math.g6": {
+      "bookTitle": "Matematika — Kelas 6"
+    },
+    "science.g1": {
+      "bookTitle": "IPA — Kelas 1"
+    },
+    "science.g2": {
+      "bookTitle": "IPA — Kelas 2"
+    },
+    "science.g3": {
+      "bookTitle": "IPA — Kelas 3"
+    },
+    "science.g4": {
+      "bookTitle": "IPA — Kelas 4"
+    },
+    "science.g5": {
+      "bookTitle": "IPA — Kelas 5"
+    },
+    "science.g6": {
+      "bookTitle": "IPA — Kelas 6"
+    }
+  },
+  "pages": {
+    "english.g1": {
+      "classroom_words": {
+        "title": "Kata-kata Kelas"
+      },
+      "first_words_cvc": {
+        "title": "Kata Tiga Huruf"
+      },
+      "first_words_simple": {
+        "title": "Kata Sederhana Pertama"
+      },
+      "letters_lower": {
+        "title": "Huruf kecil a–z"
+      },
+      "letters_match": {
+        "title": "Mencocokkan Huruf Besar dan Huruf Kecil"
+      },
+      "letters_upper": {
+        "title": "Huruf Besar A–Z"
+      },
+      "letter_names": {
+        "title": "Nama Huruf"
+      },
+      "listening_classroom": {
+        "title": "Instruksi di Kelas"
+      },
+      "listening_commands": {
+        "title": "Lebih Banyak Instruksi Singkat"
+      },
+      "phonics_first_sound": {
+        "title": "Bunyi Pertama dalam Kata"
+      },
+      "phonics_sounds": {
+        "title": "Bunyi Huruf"
+      },
+      "picture_word_match": {
+        "title": "Gambar dan Kata"
+      }
+    },
+    "english.g2": {
+      "classroom_vocab_g2": {
+        "title": "Kosakata Kelas"
+      },
+      "early_sentences_exposure": {
+        "title": "Kalimat Pendek"
+      },
+      "first_word_reading": {
+        "title": "Membaca Kata-katamu yang Pertama"
+      },
+      "letters_order": {
+        "title": "Urutan Alfabet"
+      },
+      "letters_review": {
+        "title": "Ulangan: Huruf dan Nama"
+      },
+      "listening_comprehension": {
+        "title": "Pemahaman Menyimak"
+      },
+      "phonics_blending": {
+        "title": "Menggabungkan Bunyi"
+      },
+      "phonics_sounds_review": {
+        "title": "Ulangan: Bunyi"
+      },
+      "picture_audio_word_match": {
+        "title": "Gambar, Bunyi, dan Kata"
+      },
+      "sound_letter_match": {
+        "title": "Bunyi dan Huruf"
+      },
+      "word_families_cvc": {
+        "title": "Keluarga Kata"
+      }
+    },
+    "english.g3": {},
+    "english.g4": {},
+    "english.g5": {},
+    "english.g6": {},
+    "geometry.g1": {
+      "shapes_basic_rectangle": {
+        "title": "Mengenal Persegi Panjang"
+      },
+      "shapes_basic_square": {
+        "title": "Mengenal Persegi"
+      },
+      "transformations": {
+        "title": "Translasi dan Refleksi — Pengenalan"
+      }
+    },
+    "geometry.g2": {
+      "solids": {
+        "title": "Bangun Ruang Tiga Dimensi — Nama dan Pengenalan"
+      },
+      "square_area": {
+        "title": "Luas Persegi"
+      },
+      "transformations": {
+        "title": "Translasi dan Refleksi — Lebih Banyak Latihan"
+      }
+    },
+    "geometry.g3": {
+      "parallel_perpendicular": {
+        "title": "Garis Sejajar dan Tegak Lurus"
+      },
+      "quadrilaterals": {
+        "title": "Jenis-jenis Segiempat"
+      },
+      "rotation": {
+        "title": "Rotasi pada Bidang"
+      },
+      "solids": {
+        "title": "Bangun Ruang — Sisi, Titik Sudut, dan Rusuk"
+      },
+      "square_area": {
+        "title": "Luas Persegi — Kelas 3"
+      },
+      "square_perimeter": {
+        "title": "Keliling Persegi"
+      },
+      "triangles": {
+        "title": "Jenis-jenis Segitiga"
+      },
+      "triangle_angles": {
+        "title": "Sudut dalam Segitiga"
+      },
+      "triangle_perimeter": {
+        "title": "Keliling Segitiga"
+      }
+    },
+    "geometry.g4": {
+      "diagonal_rectangle": {
+        "title": "Diagonal Persegi Panjang"
+      },
+      "diagonal_square": {
+        "title": "Diagonal Persegi"
+      },
+      "parallel_perpendicular": {
+        "title": "Sejajar dan Tegak Lurus — dalam Poligon"
+      },
+      "quadrilaterals": {
+        "title": "Segiempat — Sifat dan Klasifikasi"
+      },
+      "rectangular_prism_volume": {
+        "title": "Volume Prisma Segi Empat"
+      },
+      "shapes_basic_properties_angles": {
+        "title": "Sudut Siku-siku dalam Segiempat"
+      },
+      "shapes_basic_properties_rectangle": {
+        "title": "Sifat Persegi Panjang — Pasangan Sisi"
+      },
+      "shapes_basic_properties_square": {
+        "title": "Sifat Persegi — Sisi"
+      },
+      "solids": {
+        "title": "Bangun Ruang — Sisi pada Bidang"
+      },
+      "square_area": {
+        "title": "Luas Persegi — Kelas 4"
+      },
+      "square_perimeter": {
+        "title": "Keliling Persegi — Kelas 4"
+      },
+      "symmetry": {
+        "title": "Simetri pada Bidang"
+      },
+      "triangle_angles": {
+        "title": "Sudut dalam Segitiga — Kelas 4"
+      },
+      "triangle_perimeter": {
+        "title": "Keliling Segitiga — Kelas 4"
+      }
+    },
+    "geometry.g5": {
+      "diagonal_parallelogram": {
+        "title": "Diagonal Jajar Genjang"
+      },
+      "diagonal_rectangle": {
+        "title": "Diagonal Persegi Panjang"
+      },
+      "diagonal_square": {
+        "title": "Diagonal Persegi"
+      },
+      "heights_parallelogram": {
+        "title": "Tinggi Jajar Genjang"
+      },
+      "heights_trapezoid": {
+        "title": "Tinggi Trapesium"
+      },
+      "heights_triangle": {
+        "title": "Tinggi Segitiga"
+      },
+      "parallelogram_area": {
+        "title": "Luas Jajar Genjang"
+      },
+      "parallel_perpendicular": {
+        "title": "Garis Sejajar dan Tegak Lurus"
+      },
+      "quadrilaterals": {
+        "title": "Menggolongkan Segiempat — Kelas 5"
+      },
+      "rectangular_prism_volume": {
+        "title": "Volume Prisma Segi Empat"
+      },
+      "solids": {
+        "title": "Bangun Ruang Tiga Dimensi — Ulangan"
+      },
+      "square_area": {
+        "title": "Luas Persegi"
+      },
+      "square_perimeter": {
+        "title": "Keliling Persegi"
+      },
+      "tiling": {
+        "title": "Menutupi Bidang dengan Ubin"
+      },
+      "trapezoid_area": {
+        "title": "Luas Trapesium"
+      },
+      "triangle_angles": {
+        "title": "Sudut dalam Segitiga"
+      },
+      "triangle_area": {
+        "title": "Luas Segitiga"
+      },
+      "triangle_perimeter": {
+        "title": "Keliling Segitiga"
+      }
+    },
+    "geometry.g6": {
+      "circle_area": {
+        "title": "Luas Lingkaran"
+      },
+      "circle_perimeter": {
+        "title": "Keliling Lingkaran"
+      },
+      "cone_volume": {
+        "title": "Volume Kerucut"
+      },
+      "cylinder_volume": {
+        "title": "Volume Silinder"
+      },
+      "parallelogram_area": {
+        "title": "Luas Jajar Genjang — Kelas 6"
+      },
+      "prism_volume_rectangular": {
+        "title": "Volume Prisma — Alas Persegi Panjang"
+      },
+      "prism_volume_triangle": {
+        "title": "Volume Prisma — Alas Segitiga"
+      },
+      "pyramid_volume_rectangular": {
+        "title": "Volume Limas — Alas Persegi Panjang"
+      },
+      "pyramid_volume_square": {
+        "title": "Volume Limas — Alas Persegi"
+      },
+      "pythagoras_hyp": {
+        "title": "Teorema Pythagoras — Mencari Sisi Miring"
+      },
+      "pythagoras_leg": {
+        "title": "Teorema Pythagoras — Mencari Sisi Tegak"
+      },
+      "rectangular_prism_volume": {
+        "title": "Volume Prisma Segi Empat — Kelas 6"
+      },
+      "solids": {
+        "title": "Bangun Ruang — Silinder, Limas, Kerucut, Bola"
+      },
+      "sphere_volume": {
+        "title": "Volume Bola"
+      },
+      "square_area": {
+        "title": "Luas Persegi — Kelas 6"
+      },
+      "square_perimeter": {
+        "title": "Keliling Persegi — Kelas 6"
+      },
+      "trapezoid_area": {
+        "title": "Luas Trapesium — Kelas 6"
+      },
+      "triangle_angles": {
+        "title": "Sudut dalam Segitiga — Kelas 6"
+      },
+      "triangle_perimeter": {
+        "title": "Keliling Segitiga — Kelas 6"
+      }
+    },
+    "math.g1": {
+      "add_second_decade": {
+        "title": "Menjumlahkan Bilangan Belasan — Bilangan dari 11 sampai 19"
+      },
+      "add_tens_only": {
+        "title": "Menjumlahkan Puluhan Bulat"
+      },
+      "add_two": {
+        "title": "Menjumlahkan Dua Bilangan"
+      },
+      "cmp": {
+        "title": "Membandingkan Bilangan"
+      },
+      "eq_add_simple": {
+        "title": "Penjumlahan dengan Bilangan yang Hilang"
+      },
+      "eq_sub_simple": {
+        "title": "Pengurangan dengan Bilangan yang Hilang"
+      },
+      "mul": {
+        "title": "Perkalian — Penjumlahan Berulang"
+      },
+      "ns_complement10": {
+        "title": "Pasangan yang Menjadi 10"
+      },
+      "ns_counting_backward": {
+        "title": "Menghitung Mundur pada Garis Bilangan"
+      },
+      "ns_counting_forward": {
+        "title": "Menghitung Maju pada Garis Bilangan"
+      },
+      "ns_even_odd": {
+        "title": "Bilangan Genap dan Ganjil"
+      },
+      "ns_neighbors": {
+        "title": "Tetangga Bilangan"
+      },
+      "ns_number_line": {
+        "title": "Garis Bilangan"
+      },
+      "ns_place_tens_units": {
+        "title": "Puluhan dan Satuan"
+      },
+      "sub_two": {
+        "title": "Mengurangi Dua Bilangan"
+      },
+      "wp_coins": {
+        "title": "Soal Cerita — Nilai Koin"
+      },
+      "wp_coins_spent": {
+        "title": "Soal Cerita — Berapa yang Tersisa?"
+      },
+      "wp_time_date": {
+        "title": "Soal Cerita — Hari dalam Seminggu"
+      },
+      "wp_time_days": {
+        "title": "Soal Cerita — Berapa Hari Antara Hari"
+      }
+    },
+    "math.g2": {
+      "add_two": {
+        "title": "Menjumlahkan Dua Bilangan — Sampai 100"
+      },
+      "add_vertical": {
+        "title": "Penjumlahan Vertikal"
+      },
+      "cmp": {
+        "title": "Membandingkan Bilangan Sampai 1.000"
+      },
+      "div": {
+        "title": "Pembagian — Berbagi Adil"
+      },
+      "divisibility": {
+        "title": "Kapan suatu Bilangan Habis Dibagi 2, 5, dan 10?"
+      },
+      "frac_half": {
+        "title": "Separuh dari Keseluruhan"
+      },
+      "frac_half_reverse": {
+        "title": "Mencari Keseluruhan Ketika Kamu Tahu Separuhnya"
+      },
+      "frac_quarter": {
+        "title": "Seperempat dari Keseluruhan"
+      },
+      "frac_quarter_reverse": {
+        "title": "Mencari Keseluruhan Ketika Kamu Tahu Seperempatnya"
+      },
+      "mul": {
+        "title": "Tabel Perkalian — Kelompok Sama"
+      },
+      "ns_complement10": {
+        "title": "Pasangan yang Menjadi 10 — Pembantu Penjumlahan"
+      },
+      "ns_even_odd": {
+        "title": "Genap dan Ganjil — Ulangan dan Latihan"
+      },
+      "ns_neighbors": {
+        "title": "Tetangga Bilangan — Bilangan Lebih Besar"
+      },
+      "ns_place_tens_units": {
+        "title": "Ratusan, Puluhan, dan Satuan — Sampai 1.000"
+      },
+      "sub_two": {
+        "title": "Mengurangi Dua Bilangan — Sampai 100"
+      },
+      "sub_vertical": {
+        "title": "Pengurangan Vertikal"
+      },
+      "wp_coins": {
+        "title": "Soal Cerita — Koin"
+      },
+      "wp_coins_spent": {
+        "title": "Soal Cerita — Belanja dan Kembalian"
+      },
+      "wp_division_simple": {
+        "title": "Soal Cerita — Berbagi Adil"
+      },
+      "wp_groups_g2": {
+        "title": "Soal Cerita — Kelompok Sama"
+      },
+      "wp_time_date": {
+        "title": "Soal Cerita — Hari dalam Seminggu"
+      },
+      "wp_time_days": {
+        "title": "Soal Cerita — Berapa Hari Antara Hari"
+      }
+    },
+    "math.g3": {
+      "add_three": {
+        "title": "Menjumlahkan Tiga Bilangan"
+      },
+      "add_two": {
+        "title": "Menjumlahkan Dua Bilangan — Sampai 1.000"
+      },
+      "cmp": {
+        "title": "Membandingkan Bilangan Sampai 1.000"
+      },
+      "dec_add": {
+        "title": "Menjumlahkan Desimal"
+      },
+      "dec_sub": {
+        "title": "Mengurangi Desimal"
+      },
+      "div": {
+        "title": "Pembagian — Berbagi Sama Rata"
+      },
+      "divisibility": {
+        "title": "Keterbagian oleh 2, 5, dan 10"
+      },
+      "div_with_remainder": {
+        "title": "Pembagian dengan Sisa"
+      },
+      "eq_add": {
+        "title": "Persamaan Penjumlahan — Bilangan yang Hilang"
+      },
+      "eq_sub": {
+        "title": "Persamaan Pengurangan — Bilangan yang Hilang"
+      },
+      "fractions": {
+        "title": "Pecahan — Apa Itu dan Bagaimana Kita Membandingkannya?"
+      },
+      "mul": {
+        "title": "Perkalian — Tabel Perkalian"
+      },
+      "mul_hundreds": {
+        "title": "Mengalikan dengan Ratusan"
+      },
+      "mul_tens": {
+        "title": "Mengalikan dengan Puluhan"
+      },
+      "ns_complement10": {
+        "title": "Pasangan yang Menjadi 10 — Ulangan"
+      },
+      "ns_complement100": {
+        "title": "Pasangan yang Menjadi 100"
+      },
+      "ns_even_odd": {
+        "title": "Genap dan Ganjil — Bilangan Lebih Besar"
+      },
+      "ns_neighbors": {
+        "title": "Tetangga Bilangan — Sampai 1.000"
+      },
+      "ns_place_hundreds": {
+        "title": "Ratusan, Puluhan, dan Satuan — Sampai 1.000"
+      },
+      "order_add_mul": {
+        "title": "Urutan Operasi — Penjumlahan dan Perkalian"
+      },
+      "order_mul_sub": {
+        "title": "Urutan Operasi — Perkalian dan Pengurangan"
+      },
+      "order_parentheses": {
+        "title": "Tanda Kurung dalam Perhitungan"
+      },
+      "sequence": {
+        "title": "Barisan Bilangan"
+      },
+      "sub_two": {
+        "title": "Mengurangi Dua Bilangan — Sampai 1.000"
+      },
+      "wp_comparison_more": {
+        "title": "Soal Cerita — Berapa Lebih Banyak?"
+      },
+      "wp_leftover": {
+        "title": "Soal Cerita — Berapa Sisanya?"
+      },
+      "wp_time_sum": {
+        "title": "Soal Cerita — Menjumlahkan Waktu"
+      }
+    },
+    "math.g4": {
+      "add_three": {
+        "title": "Menjumlahkan Tiga Bilangan"
+      },
+      "add_two": {
+        "title": "Menjumlahkan Dua Bilangan — Sampai 10.000"
+      },
+      "cmp": {
+        "title": "Membandingkan Bilangan Besar"
+      },
+      "dec_add": {
+        "title": "Menjumlahkan Desimal — Dua Digit di Belakang Koma"
+      },
+      "dec_sub": {
+        "title": "Mengurangi Desimal — Dua Digit di Belakang Koma"
+      },
+      "div": {
+        "title": "Pembagian — Berbagi Sama Rata"
+      },
+      "divisibility": {
+        "title": "Keterbagian — Aturan untuk 2, 3, 5, 6, 9, dan 10"
+      },
+      "div_long": {
+        "title": "Pembagian Panjang"
+      },
+      "div_with_remainder": {
+        "title": "Pembagian dengan Sisa"
+      },
+      "eq_add": {
+        "title": "Persamaan Penjumlahan — Bilangan yang Hilang (Ratusan)"
+      },
+      "eq_sub": {
+        "title": "Persamaan Pengurangan — Bilangan yang Hilang (Ratusan)"
+      },
+      "est_add": {
+        "title": "Memperkirakan Jawaban — Penjumlahan"
+      },
+      "est_mul": {
+        "title": "Memperkirakan Jawaban — Perkalian"
+      },
+      "est_quantity": {
+        "title": "Memperkirakan suatu Kuantitas"
+      },
+      "fm_factor": {
+        "title": "Faktor suatu Bilangan"
+      },
+      "fm_gcd": {
+        "title": "Faktor Persekutuan Terbesar (FPB)"
+      },
+      "fm_multiple": {
+        "title": "Kelipatan suatu Bilangan"
+      },
+      "mul": {
+        "title": "Perkalian — Tabel Perkalian dan Strategi"
+      },
+      "mul_vertical": {
+        "title": "Perkalian Vertikal"
+      },
+      "ns_complement10": {
+        "title": "Pasangan yang Menjadi 10 — Ulangan"
+      },
+      "ns_complement100": {
+        "title": "Membuat 100"
+      },
+      "ns_even_odd": {
+        "title": "Genap dan Ganjil — Bilangan Besar"
+      },
+      "ns_neighbors": {
+        "title": "Tetangga Bilangan — Bilangan Besar"
+      },
+      "ns_place_hundreds": {
+        "title": "Nilai Tempat — Ribuan Sampai 10.000"
+      },
+      "one_mul": {
+        "title": "Mengalikan dengan 1"
+      },
+      "power_base": {
+        "title": "Pangkat — Basis dan Eksponen"
+      },
+      "power_calc": {
+        "title": "Pangkat — Menghitung Nilainya"
+      },
+      "prime_composite": {
+        "title": "Bilangan Prima dan Komposit"
+      },
+      "round": {
+        "title": "Pembulatan ke Puluhan, Ratusan, dan Ribuan"
+      },
+      "sequence": {
+        "title": "Barisan Bilangan — Loncatan Besar"
+      },
+      "sub_two": {
+        "title": "Mengurangi Dua Bilangan — Sampai 10.000"
+      },
+      "wp_comparison_more": {
+        "title": "Soal Cerita — Berapa Lebih Banyak?"
+      },
+      "wp_leftover": {
+        "title": "Soal Cerita — Berapa Sisanya?"
+      },
+      "wp_time_sum": {
+        "title": "Soal Cerita — Menjumlahkan Waktu Bersama"
+      },
+      "zero_add": {
+        "title": "Menjumlahkan dengan 0"
+      },
+      "zero_mul": {
+        "title": "Mengalikan dengan 0"
+      },
+      "zero_sub": {
+        "title": "Mengurangi 0"
+      }
+    },
+    "math.g5": {
+      "add_three": {
+        "title": "Menjumlahkan Tiga Bilangan"
+      },
+      "add_two": {
+        "title": "Menjumlahkan Dua Bilangan — Sampai 100.000"
+      },
+      "cmp": {
+        "title": "Membandingkan Bilangan — Sampai 100.000"
+      },
+      "dec_add": {
+        "title": "Menjumlahkan Desimal"
+      },
+      "dec_sub": {
+        "title": "Mengurangi Desimal"
+      },
+      "div": {
+        "title": "Pembagian — Berbagi Sama Rata"
+      },
+      "div_two_digit": {
+        "title": "Pembagian dengan Bilangan Dua Digit"
+      },
+      "div_with_remainder": {
+        "title": "Pembagian dengan Sisa — Bilangan Besar"
+      },
+      "eq_add": {
+        "title": "Persamaan Penjumlahan"
+      },
+      "eq_div": {
+        "title": "Persamaan Pembagian"
+      },
+      "eq_mul": {
+        "title": "Persamaan Perkalian"
+      },
+      "eq_sub": {
+        "title": "Persamaan Pengurangan"
+      },
+      "est_add": {
+        "title": "Memperkirakan Penjumlahan"
+      },
+      "est_mul": {
+        "title": "Memperkirakan Perkalian"
+      },
+      "est_quantity": {
+        "title": "Memperkirakan Kuantitas"
+      },
+      "fm_factor": {
+        "title": "Faktor suatu Bilangan"
+      },
+      "fm_gcd": {
+        "title": "Faktor Persekutuan Terbesar (FPB)"
+      },
+      "fm_multiple": {
+        "title": "Kelipatan suatu Bilangan"
+      },
+      "frac_add_sub": {
+        "title": "Menjumlahkan dan Mengurangi Pecahan"
+      },
+      "frac_expand": {
+        "title": "Memperluas Pecahan"
+      },
+      "frac_reduce": {
+        "title": "Menyederhanakan Pecahan"
+      },
+      "frac_to_mixed": {
+        "title": "Pecahan Tidak Sejati ke Bilangan Campuran"
+      },
+      "mixed_to_frac": {
+        "title": "Bilangan Campuran ke Pecahan Tidak Sejati"
+      },
+      "mul": {
+        "title": "Perkalian — Strategi dan Bilangan Besar"
+      },
+      "ns_complement100": {
+        "title": "Pasangan yang Menjadi 100"
+      },
+      "ns_neighbors": {
+        "title": "Tetangga Bilangan — Sampai 100.000"
+      },
+      "ns_place_hundreds": {
+        "title": "Nilai Tempat — Sampai 100.000"
+      },
+      "perc_discount": {
+        "title": "Diskon Persen"
+      },
+      "perc_part_of": {
+        "title": "Persen dari suatu Kuantitas"
+      },
+      "round": {
+        "title": "Pembulatan — Puluhan, Ratusan, Ribuan, dan Puluhan Ribu"
+      },
+      "sequence": {
+        "title": "Barisan Bilangan — Langkah Besar"
+      },
+      "sub_two": {
+        "title": "Mengurangi Dua Bilangan — Sampai 100.000"
+      },
+      "wp_comparison_more": {
+        "title": "Soal Cerita — Berapa Lebih Banyak?"
+      },
+      "wp_distance_time": {
+        "title": "Jarak, Waktu, dan Kecepatan"
+      },
+      "wp_leftover": {
+        "title": "Soal Cerita — Berapa yang Tersisa?"
+      },
+      "wp_multi_step": {
+        "title": "Soal Cerita — Banyak Langkah"
+      },
+      "wp_shop_discount": {
+        "title": "Belanja dan Diskon"
+      },
+      "wp_time_sum": {
+        "title": "Soal Cerita — Menjumlahkan Waktu"
+      },
+      "wp_unit_cm_to_m": {
+        "title": "Konversi Satuan — Sentimeter dan Meter"
+      },
+      "wp_unit_g_to_kg": {
+        "title": "Konversi Satuan — Gram dan Kilogram"
+      }
+    },
+    "math.g6": {
+      "add_three": {
+        "title": "Menjumlahkan Tiga Bilangan"
+      },
+      "add_two": {
+        "title": "Menjumlahkan Dua Bilangan — Sampai 200.000"
+      },
+      "cmp": {
+        "title": "Membandingkan Bilangan Besar"
+      },
+      "dec_add": {
+        "title": "Menjumlahkan Bilangan Desimal"
+      },
+      "dec_divide": {
+        "title": "Membagi Bilangan Desimal"
+      },
+      "dec_divide_10_100": {
+        "title": "Membagi Desimal dengan 10 atau 100"
+      },
+      "dec_multiply": {
+        "title": "Mengalikan Bilangan Desimal"
+      },
+      "dec_multiply_10_100": {
+        "title": "Mengalikan Desimal dengan 10 atau 100"
+      },
+      "dec_repeating": {
+        "title": "Desimal Berulang"
+      },
+      "dec_sub": {
+        "title": "Mengurangi Bilangan Desimal"
+      },
+      "div": {
+        "title": "Pembagian — Berbagi Sama Rata"
+      },
+      "div_with_remainder": {
+        "title": "Pembagian dengan Sisa"
+      },
+      "eq_add": {
+        "title": "Persamaan Penjumlahan — Bilangan yang Hilang"
+      },
+      "eq_div": {
+        "title": "Persamaan Pembagian — Bilangan yang Hilang"
+      },
+      "eq_mul": {
+        "title": "Persamaan Perkalian — Bilangan yang Hilang"
+      },
+      "eq_sub": {
+        "title": "Persamaan Pengurangan — Bilangan yang Hilang"
+      },
+      "fm_factor": {
+        "title": "Faktor suatu Bilangan"
+      },
+      "fm_gcd": {
+        "title": "Faktor Persekutuan Terbesar (FPB)"
+      },
+      "fm_multiple": {
+        "title": "Kelipatan suatu Bilangan"
+      },
+      "frac_as_division": {
+        "title": "Pecahan sebagai Pembagian"
+      },
+      "frac_divide": {
+        "title": "Membagi Pecahan"
+      },
+      "frac_multiply": {
+        "title": "Mengalikan Pecahan"
+      },
+      "mul": {
+        "title": "Perkalian — Strategi dan Bilangan Besar"
+      },
+      "ns_complement100": {
+        "title": "Membuat 100 — Persiapan untuk Persen"
+      },
+      "ns_neighbors": {
+        "title": "Tetangga Bilangan — Bilangan Sampai 200.000"
+      },
+      "ns_place_hundreds": {
+        "title": "Nilai Tempat — Sampai 200.000"
+      },
+      "perc_discount": {
+        "title": "Diskon Persen"
+      },
+      "perc_part_of": {
+        "title": "Persen dari suatu Kuantitas"
+      },
+      "ratio_find": {
+        "title": "Mencari Kuantitas yang Hilang dalam Rasio"
+      },
+      "ratio_first": {
+        "title": "Rasio — Apa Artinya?"
+      },
+      "ratio_second": {
+        "title": "Rasio Antara Dua Kuantitas"
+      },
+      "round": {
+        "title": "Pembulatan — Puluhan, Ratusan, dan Ribuan"
+      },
+      "scale_find": {
+        "title": "Skala — Mencari Jarak"
+      },
+      "scale_map_to_real": {
+        "title": "Dari Peta ke Kehidupan Nyata"
+      },
+      "scale_real_to_map": {
+        "title": "Dari Kehidupan Nyata ke Peta"
+      },
+      "sequence": {
+        "title": "Barisan Bilangan — Mencari Polanya"
+      },
+      "sub_two": {
+        "title": "Mengurangi Dua Bilangan — Sampai 200.000"
+      },
+      "wp_comparison_more": {
+        "title": "Soal Cerita — Berapa Lebih Banyak?"
+      },
+      "wp_distance_time": {
+        "title": "Jarak, Waktu, dan Kecepatan"
+      },
+      "wp_leftover": {
+        "title": "Soal Cerita — Apa yang Tersisa?"
+      },
+      "wp_shop_discount": {
+        "title": "Soal Cerita — Obral Toko"
+      },
+      "wp_time_sum": {
+        "title": "Soal Cerita — Menjumlahkan Waktu"
+      },
+      "wp_unit_cm_to_m": {
+        "title": "Konversi Satuan — Sentimeter dan Meter"
+      },
+      "wp_unit_g_to_kg": {
+        "title": "Konversi Satuan — Gram dan Kilogram"
+      }
+    },
+    "science.g1": {
+      "animals": {
+        "title": "Hewan — Hidup vs Tak Hidup"
+      },
+      "body": {
+        "title": "Tubuh Manusia — Indra dan Gerak"
+      },
+      "earth_space": {
+        "title": "Bumi dan Cuaca"
+      },
+      "environment": {
+        "title": "Lingkungan Kita"
+      },
+      "materials": {
+        "title": "Bahan — Sifat Sehari-hari"
+      },
+      "plants": {
+        "title": "Tumbuhan — Apa yang Dibutuhkan Tumbuhan"
+      }
+    },
+    "science.g2": {
+      "animals": {
+        "title": "Hewan — Daur Hidup"
+      },
+      "body": {
+        "title": "Tubuh Manusia — Kesehatan dan Kebiasaan"
+      },
+      "earth_space": {
+        "title": "Bumi — Musim dan Langit"
+      },
+      "environment": {
+        "title": "Lingkungan — Melindungi Alam"
+      },
+      "experiments": {
+        "title": "Pengamatan dan Penyelidikan"
+      },
+      "materials": {
+        "title": "Bahan — Wujud Zat"
+      },
+      "plants": {
+        "title": "Tumbuhan — Pertumbuhan dan Daur"
+      }
+    },
+    "science.g3": {
+      "animals": {
+        "title": "Hewan — Adaptasi terhadap Lingkungan"
+      },
+      "body": {
+        "title": "Tubuh Manusia — Sistem Dasar"
+      },
+      "earth_space": {
+        "title": "Bumi — Cuaca dan Air"
+      },
+      "environment": {
+        "title": "Lingkungan — Ekosistem Kecil"
+      },
+      "experiments": {
+        "title": "Percobaan Ilmiah Singkat"
+      },
+      "materials": {
+        "title": "Bahan — Gaya dan Gerak"
+      },
+      "plants": {
+        "title": "Tumbuhan — Kondisi Pertumbuhan (Ringkasan)"
+      }
+    },
+    "science.g4": {
+      "animals": {
+        "title": "Hewan — Interaksi"
+      },
+      "body": {
+        "title": "Tubuh Manusia — Pernapasan dan Pencernaan"
+      },
+      "earth_space": {
+        "title": "Bumi — Batuan, Tanah, dan Musim"
+      },
+      "environment": {
+        "title": "Lingkungan — Melestarikan Sumber Daya"
+      },
+      "experiments": {
+        "title": "Merencanakan Percobaan"
+      },
+      "materials": {
+        "title": "Bahan — Perubahan dan Listrik (Konsep)"
+      }
+    },
+    "science.g5": {
+      "animals": {
+        "title": "Hewan — Reproduksi dan Adaptasi"
+      },
+      "body": {
+        "title": "Tubuh Manusia — Rangka, Otot, dan Indra"
+      },
+      "earth_space": {
+        "title": "Bumi — Sumber Daya dan Fenomena"
+      },
+      "environment": {
+        "title": "Lingkungan — Sumber Daya Alam"
+      },
+      "experiments": {
+        "title": "Penyelidikan Lengkap — Dokumentasi"
+      },
+      "materials": {
+        "title": "Bahan — Campuran dan Cahaya"
+      }
+    },
+    "science.g6": {
+      "animals": {
+        "title": "Hewan — Sistem Ekologi"
+      },
+      "body": {
+        "title": "Tubuh Manusia — Koordinasi Antar Sistem"
+      },
+      "earth_space": {
+        "title": "Bumi — Iklim dan Antariksa"
+      },
+      "environment": {
+        "title": "Lingkungan — Perubahan Iklim dan Tindakan"
+      },
+      "experiments": {
+        "title": "Proyek IPA"
+      },
+      "materials": {
+        "title": "Bahan — Kimia Dasar"
+      }
+    }
+  }
+}

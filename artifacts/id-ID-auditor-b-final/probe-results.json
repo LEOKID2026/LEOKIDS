@@ -1,0 +1,474 @@
+{
+  "generatedAt": "2026-08-08T12:37:17.769Z",
+  "locale": "id-ID",
+  "foundation": {
+    "locale": "id-ID",
+    "enabled": true,
+    "pathPrefix": "id",
+    "publicPath": "/id",
+    "selector": "Indonesia",
+    "selectorCount": 89,
+    "indonesiaInSelector": true,
+    "fallbackChain": [
+      "id-ID",
+      "en"
+    ],
+    "direction": "ltr",
+    "isRtl": false,
+    "ogLocale": "id_ID",
+    "ogResolved": "id_ID",
+    "textToSpeechLocale": "id-ID",
+    "swMap": true,
+    "offlinePath": "/id/offline",
+    "resolveFromPrefix": "id-ID",
+    "prefixCollisions": [],
+    "idCollisions": [],
+    "withLocaleSample": "/",
+    "stripSample": {
+      "locale": "id-ID",
+      "pathname": "/practice/math",
+      "hadPrefix": true,
+      "pathSegment": "id"
+    }
+  },
+  "namespaces": {
+    "authorityCount": 15,
+    "namespaces": [
+      "common",
+      "ui",
+      "auth",
+      "learning",
+      "reports",
+      "emails",
+      "seo",
+      "legal",
+      "worksheets",
+      "games",
+      "validation",
+      "teacher",
+      "school",
+      "platform",
+      "copilot"
+    ],
+    "perNs": {
+      "common": {
+        "en": 46,
+        "id": 46,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "ui": {
+        "en": 673,
+        "id": 673,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "auth": {
+        "en": 181,
+        "id": 181,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "learning": {
+        "en": 617,
+        "id": 617,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "reports": {
+        "en": 249,
+        "id": 249,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "emails": {
+        "en": 4,
+        "id": 4,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "seo": {
+        "en": 10,
+        "id": 10,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "legal": {
+        "en": 31,
+        "id": 31,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "worksheets": {
+        "en": 334,
+        "id": 334,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "games": {
+        "en": 80,
+        "id": 80,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "validation": {
+        "en": 131,
+        "id": 131,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "teacher": {
+        "en": 81,
+        "id": 81,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "school": {
+        "en": 392,
+        "id": 392,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "platform": {
+        "en": 54,
+        "id": 54,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      },
+      "copilot": {
+        "en": 89,
+        "id": 89,
+        "missing": 0,
+        "extra": 0,
+        "empty": 0,
+        "ph": 0
+      }
+    },
+    "enLeaves": 2972,
+    "idLeaves": 2972,
+    "missing": 0,
+    "extra": 0,
+    "empty": 0,
+    "placeholderMismatches": 0,
+    "missingSample": [],
+    "extraSample": [],
+    "validationApi": {
+      "en": 116,
+      "id": 116,
+      "keysEqual": true
+    }
+  },
+  "validationApiRuntime": {
+    "mappedBeatsEnglish": true,
+    "unknownUsesFallback": true,
+    "mappedValue": "Nama pengguna sudah digunakan.",
+    "unknownValue": "Terjadi kesalahan — silakan coba lagi",
+    "apiErrorMessageHeSample": "Nama pengguna sudah digunakan."
+  },
+  "help": {
+    "runtimeLocale": "id-ID",
+    "articles": 0,
+    "missing": 0,
+    "extra": 0,
+    "duplicates": 0
+  },
+  "publicSeo": {
+    "diskOverlays": 28,
+    "clientIndex": 28,
+    "catalogPublicSeo": 28,
+    "seoPublicPaths": 51,
+    "clientOverlayPresent": false,
+    "runtimeProbeNote": "detailed path coverage via phase2d/phase5 tests",
+    "localizedRuntime": "0/51",
+    "runtimeMissing": [
+      "/practice",
+      "/practice/math",
+      "/practice/reading",
+      "/practice/english",
+      "/practice/geometry",
+      "/practice/science",
+      "/practice/games",
+      "/practice/no-print",
+      "/practice/parent-reports",
+      "/practice/worksheets",
+      "/practice/worksheets/math-g1-addition-horizontal-regular",
+      "/practice/worksheets/math-g1-subtraction-horizontal-regular",
+      "/practice/worksheets/math-g1-word-problems-regular",
+      "/practice/worksheets/math-g2-addition-horizontal-regular",
+      "/practice/worksheets/math-g2-addition-vertical-regular",
+      "/practice/worksheets/math-g2-subtraction-horizontal-regular",
+      "/practice/worksheets/math-g2-multiplication-basic-regular",
+      "/practice/worksheets/math-g2-fractions-regular",
+      "/practice/worksheets/math-g3-division-basic-regular",
+      "/practice/worksheets/math-g3-division-remainder-regular"
+    ],
+    "resolverExports": [
+      "getGuideHubCardsForLocale",
+      "getGuideLinkForLocale",
+      "getGuidePageContentForLocale",
+      "getMarketingLandingContentForLocale",
+      "getPracticeHubCardsForLocale",
+      "getPracticePageContentForLocale",
+      "getWorksheetsPageContentForLocale"
+    ]
+  },
+  "contentPacks": {
+    "disk": {
+      "books": 319,
+      "games": 158,
+      "rewards": 2,
+      "demo": 1,
+      "global-burn-down": 159,
+      "learning": 59,
+      "reports": 48,
+      "public-seo": 28
+    },
+    "nonSeoTotal": 746,
+    "publicSeo": 28,
+    "totalDisk": 774,
+    "catalogKeys": 56,
+    "nonSeoCatalogRoots": 28,
+    "publicSeoCatalogKeys": 28,
+    "catalogModel": "28 non-SEO + 28 public-seo = 56"
+  },
+  "runtimeProvenanceSamples": {
+    "books/ui.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    },
+    "games/ui-pack-index.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    },
+    "rewards/ui.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    },
+    "demo/ui.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    },
+    "global-burn-down/burn-down-index.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    },
+    "learning/diagnostic-labels.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    },
+    "reports/burn-down-index.json": {
+      "found": true,
+      "locale": null,
+      "exact": true
+    }
+  },
+  "burnDownRuntime": {
+    "globalIndexLeaves": 158,
+    "reportsIndexLeaves": 47,
+    "learningIndexLeaves": 41
+  },
+  "nativeLearningFiles": [
+    "geometry.js",
+    "index.js",
+    "math.js"
+  ],
+  "learningBooks": {
+    "slotsPresent": 24,
+    "missingSlots": [],
+    "localizedMdFiles": 450,
+    "enSoTPresentOnHead": false
+  },
+  "nativeLearning": {
+    "mathKinds": 75,
+    "mathTemplates": 128,
+    "geoKinds": 9,
+    "geoTemplates": 8,
+    "science": {
+      "count": 1017,
+      "totalQuestions": 0,
+      "withStableId": 0,
+      "missingId": 0,
+      "overlayHit": 0,
+      "overlayMiss": 0,
+      "overlayCoveragePct": 0,
+      "fields": {
+        "stem": {
+          "sourcePresent": 0,
+          "overlayCovered": 0,
+          "hebrewRemainingInOverlay": 0,
+          "coveragePct": 0
+        },
+        "options": {
+          "sourcePresent": 0,
+          "overlayCovered": 0,
+          "hebrewRemainingInOverlay": 0,
+          "coveragePct": 0
+        },
+        "explanation": {
+          "sourcePresent": 0,
+          "overlayCovered": 0,
+          "hebrewRemainingInOverlay": 0,
+          "coveragePct": 0
+        },
+        "theoryLines": {
+          "sourcePresent": 0,
+          "overlayCovered": 0,
+          "hebrewRemainingInOverlay": 0,
+          "coveragePct": 0
+        },
+        "hint": {
+          "sourcePresent": 0,
+          "overlayCovered": 0,
+          "hebrewRemainingInOverlay": 0,
+          "coveragePct": 0
+        },
+        "feedback": {
+          "sourcePresent": 0,
+          "overlayCovered": 0,
+          "hebrewRemainingInOverlay": 0,
+          "coveragePct": 0
+        }
+      },
+      "theoryLinesSourceCount": 0,
+      "hintSourceCount": 0,
+      "feedbackSourceCount": 0,
+      "missingOverlayIdsSample": [],
+      "incompleteOverlayIdsSample": [],
+      "incompleteOverlayCount": 0,
+      "contractComplete": true
+    },
+    "writing": {
+      "packs": 3,
+      "colorInstructions": null,
+      "readyTitles": 4,
+      "sentenceCues": 119
+    },
+    "wordMeanings": {
+      "count": 21,
+      "empty": 0,
+      "WORD_LISTS": 21
+    }
+  },
+  "completeness": {
+    "ok": 13,
+    "missing": 0,
+    "fallback": 0,
+    "exceptions": 1,
+    "summary": {
+      "ok": 13,
+      "missing": 0,
+      "fallback": 0,
+      "exceptions": 1
+    },
+    "findings": [
+      {
+        "id": "registry",
+        "status": "ok",
+        "detail": "Registered status=enabled dir=ltr"
+      },
+      {
+        "id": "fonts",
+        "status": "ok",
+        "detail": "fonts=[Segoe UI, Noto Sans, sans-serif] direction=ltr"
+      },
+      {
+        "id": "ui_namespaces",
+        "status": "ok",
+        "detail": "All 15 namespaces present"
+      },
+      {
+        "id": "content_packs",
+        "status": "ok",
+        "detail": "All required packs resolve at locale"
+      },
+      {
+        "id": "learning_books",
+        "status": "ok",
+        "detail": "ok=24 legacyFallback=0 missing=0"
+      },
+      {
+        "id": "science_overlay",
+        "status": "ok",
+        "detail": "questions=1017 overlay=100% contractComplete=true incomplete=0"
+      },
+      {
+        "id": "question_stems",
+        "status": "ok",
+        "detail": "Params-based id-ID math/geometry stem rebuilders"
+      },
+      {
+        "id": "worksheets",
+        "status": "ok",
+        "detail": "Writing packs resolve via word-packs.locale (id-ID) + writing sentence cues"
+      },
+      {
+        "id": "games",
+        "status": "ok",
+        "detail": "Game packs registered at locale in CONTENT_PACK_CATALOG"
+      },
+      {
+        "id": "reports",
+        "status": "ok",
+        "detail": "Report packs registered at locale in CONTENT_PACK_CATALOG"
+      },
+      {
+        "id": "seo",
+        "status": "ok",
+        "detail": "ogLocale=id_ID; hreflang only for status=enabled"
+      },
+      {
+        "id": "english_subject",
+        "status": "english_subject_exception",
+        "detail": "English-subject learning content remains en by resolveContentLocale({ subject: 'english' })"
+      },
+      {
+        "id": "localized_assets",
+        "status": "ok",
+        "detail": "No required localized assets declared yet; empty assets/i18n is OK"
+      },
+      {
+        "id": "fonts_resolver",
+        "status": "ok",
+        "detail": "script=Latn webfont=false systemFallback=true missingFileRefs=0"
+      }
+    ]
+  },
+  "englishSubject": {
+    "englishContentLocale": "en",
+    "mathContentLocale": "id-ID"
+  }
+}

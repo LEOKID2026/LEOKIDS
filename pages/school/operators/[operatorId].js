@@ -11,8 +11,11 @@ import {
   bindSchoolUiLocale,
   schoolAuthFetch,
   SCHOOL_LOADING,
+  SCHOOL_LOAD_ERROR,
   SCHOOL_OPERATOR_IDENTITY,
   SCHOOL_OPERATOR_NO_TEACHING,
+  SCHOOL_OPERATOR_STAFF_LABEL,
+  SCHOOL_PERMISSIONS_UPDATE_ERROR,
 } from "../../../lib/school-portal/school-ui.js";
 import { SCHOOL_CARD, SCHOOL_CARD_INNER } from "../../../components/school-portal/SchoolPortalUi";
 
@@ -38,7 +41,7 @@ export default function SchoolOperatorDetailPage() {
     const res = await schoolAuthFetch(accessToken, "/api/school/operators");
     const json = await res.json().catch(() => ({}));
     if (!res.ok) {
-      setError(apiErrorMessageHe(json?.error, "Error loading"));
+      setError(apiErrorMessageHe(json?.error, SCHOOL_LOAD_ERROR));
       return;
     }
     const match = (json?.data?.operators || []).find((o) => o.operatorUserId === operatorId);
@@ -60,7 +63,7 @@ export default function SchoolOperatorDetailPage() {
       );
       if (!res.ok) {
         const json = await res.json().catch(() => ({}));
-        setError(apiErrorMessageHe(json?.error, "Failed to update permissions"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_PERMISSIONS_UPDATE_ERROR));
         return;
       }
       await load();
@@ -74,7 +77,7 @@ export default function SchoolOperatorDetailPage() {
   return (
     <Layout>
       <SchoolPortalShell
-        title={operator?.displayName || operator?.email || "Secretary"}
+        title={operator?.displayName || operator?.email || SCHOOL_OPERATOR_STAFF_LABEL}
         subtitle={SCHOOL_OPERATOR_NO_TEACHING}
         schoolName={me?.school?.name}
         portalRole={me?.portalRole}

@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-miners",
+  "title": "Leo si Penambang",
+  "blurb": "Gabungkan anjing tambang, hancurkan batu, dan dapatkan poin untuk ditukar!",
+  "help": {
+    "howToPlay": "Tambahkan anjing tambang ke papan, seret anjing level sama untuk digabung, dan hancurkan batu untuk mendapat koin dan poin.",
+    "scoring": "Setiap batu yang dipecahkan memberi koin. Poin bertambah menurut tahap batu — dengan batas harian.",
+    "rewards": "Poin bisa ditukar menjadi koin dan berlian Leo (setelah server siap).",
+    "tip": "Tingkatkan DPS untuk menghancurkan batu lebih cepat, dan GOLD untuk mendapat lebih banyak koin dari setiap batu."
+  }
+}

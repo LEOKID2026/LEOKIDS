@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "worksheets": "Lembar kerja",
+    "back_to_dashboard": "← Kembali ke dasbor",
+    "subtitle": "Buat, luncurkan, dan pantau lembar kerja PDF.",
+    "create_new": "Buat lembar kerja baru",
+    "loading": "Memuat…",
+    "error_loading": "Terjadi kesalahan saat memuat",
+    "network_error": "Kesalahan jaringan",
+    "not_signed_in": "Anda belum masuk",
+    "error_generic": "Kesalahan",
+    "empty": "Belum ada lembar kerja.",
+    "forbidden": "Anda tidak memiliki izin untuk melihat lembar kerja rombel ini.",
+    "due": "Tenggat: {date}",
+    "manage": "Kelola",
+    "report": "Laporan"
+  }
+}

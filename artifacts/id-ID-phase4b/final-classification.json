@@ -1,0 +1,64 @@
+{
+  "families": {
+    "games": {
+      "enFiles": 149,
+      "idFiles": 149,
+      "missingFiles": 0,
+      "orphanFiles": 0,
+      "missingFileSample": [],
+      "orphanFileSample": [],
+      "enLeaves": 2736,
+      "idLeaves": 2736,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "empty": 0,
+      "schema": 0,
+      "placeholderMismatches": 0
+    },
+    "rewards": {
+      "enFiles": 2,
+      "idFiles": 2,
+      "missingFiles": 0,
+      "orphanFiles": 0,
+      "missingFileSample": [],
+      "orphanFileSample": [],
+      "enLeaves": 1014,
+      "idLeaves": 1014,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "empty": 0,
+      "schema": 0,
+      "placeholderMismatches": 0
+    },
+    "demo": {
+      "enFiles": 1,
+      "idFiles": 1,
+      "missingFiles": 0,
+      "orphanFiles": 0,
+      "missingFileSample": [],
+      "orphanFileSample": [],
+      "enLeaves": 90,
+      "idLeaves": 90,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "empty": 0,
+      "schema": 0,
+      "placeholderMismatches": 0
+    }
+  },
+  "global": {
+    "missingKeys": 0,
+    "extraKeys": 0,
+    "emptyRequiredLeaves": 0,
+    "schemaDefects": 0,
+    "placeholderMismatches": 0
+  },
+  "intentionalEnglishLearningValues": 108,
+  "unexplainedEnglishUi": 0,
+  "unexplainedSample": [],
+  "gameTerminologyDefects": 0,
+  "gameTermSample": [],
+  "studentTerminologyDefects": 0,
+  "gradeTerminologyDefects": 0,
+  "registerDefects": 0
+}

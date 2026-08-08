@@ -20,14 +20,14 @@ function reportRange() {
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
   }
   res.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
   try {
     const auth = await getAuthenticatedStudentSession(req);
     if (!auth) {
       clearStudentSessionCookie(res);
-      return res.status(401).json({ ok: false, error: "Student session expired" });
+      return res.status(401).json({ ok: false, error: "Student session expired", code: "session_expired" });
     }
     const student = {
       id: auth.studentId,
@@ -65,6 +65,6 @@ export default async function handler(req, res) {
       generatedAt: new Date().toISOString(),
     });
   } catch {
-    return res.status(500).json({ ok: false, error: "Could not build action decisions" });
+    return res.status(500).json({ ok: false, error: "unexpected_server_error", code: "unexpected_server_error" });
   }
 }

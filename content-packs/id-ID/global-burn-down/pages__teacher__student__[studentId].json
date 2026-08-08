@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "student_report": "Laporan murid",
+    "invalid_student_id": "ID murid tidak valid.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "Anda tidak memiliki izin untuk melihat laporan murid ini.",
+    "please_select_valid_dates": "Silakan pilih tanggal yang valid"
+  }
+}

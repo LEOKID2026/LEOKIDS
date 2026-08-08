@@ -1,4 +1,3 @@
-import { globalBurnDownCopy } from "../../../../lib/i18n/global-burn-down-copy.js";
 import { requireParentApiContext } from "../../../../lib/auth/persona-guard.server.js";
 import {
   transferGuestCoinsAndCards,
@@ -13,12 +12,18 @@ import {
 } from "../../../../lib/guest/guest-link-rate-limit.server.js";
 import { clientIpFromRequest } from "../../../../lib/security/in-memory-rate-limit.js";
 
-const GENERIC_LINK_ERROR = globalBurnDownCopy("pages__api__parent__guest__link", "unable_to_link_this_guest_number_check_the_number_and_try_again");
-const RATE_LIMIT_ERROR = globalBurnDownCopy("pages__api__parent__guest__link", "too_many_attempts_please_try_again_later");
+/**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   }
 
   const leoNumber = normalizeLeoNumber(req.body?.leoNumber);
@@ -27,12 +32,10 @@ export default async function handler(req, res) {
   ).trim();
 
   if (!leoNumber) {
-    return res.status(400).json({ ok: false, error: GENERIC_LINK_ERROR });
+    return fail(res, 400, "invalid_leo_number");
   }
   if (!targetStudentId) {
-    return res
-      .status(400)
-      .json({ ok: false, error: "Child ID is missing", code: "missing_student_id" });
+    return fail(res, 400, "missing_student_id");
   }
 
   try {
@@ -57,7 +60,7 @@ export default async function handler(req, res) {
         outcome: "blocked",
         shouldBlock: rl.shouldBlock === true,
       });
-      return res.status(429).json({ ok: false, error: RATE_LIMIT_ERROR });
+      return fail(res, 429, "rate_limited");
     }
 
     const guest = await findActiveGuestByLeoNumber(ctx.serviceRole, leoNumber);
@@ -79,7 +82,7 @@ export default async function handler(req, res) {
         leoNumberHash: leoHash,
         outcome: guestOutcome,
       });
-      return res.status(404).json({ ok: false, error: GENERIC_LINK_ERROR });
+      return fail(res, 404, "guest_link_failed");
     }
 
     const result = await transferGuestCoinsAndCards(ctx.serviceRole, {
@@ -96,9 +99,7 @@ export default async function handler(req, res) {
         leoNumberHash: leoHash,
         outcome: "error",
       });
-      return res
-        .status(result.status || 500)
-        .json({ ok: false, error: GENERIC_LINK_ERROR });
+      return fail(res, result.status || 500, "guest_link_failed");
     }
 
     await recordGuestLinkAttempt(ctx.serviceRole, {
@@ -110,11 +111,10 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       ok: true,
-      message: result.message,
       coinsTransferred: result.coinsTransferred,
       cardsTransferred: result.cardsTransferred,
     });
   } catch (_e) {
-    return res.status(500).json({ ok: false, error: "A temporary error occurred. Please try again later." });
+    return fail(res, 500, "unexpected_server_error");
   }
 }

@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "this_student_does_not_belong_to_leo_kids_global": "Murid ini bukan bagian dari LEO KIDS Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "Murid tidak ditemukan untuk orang tua ini di LEO KIDS Global.",
+    "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "Skema isolasi produk belum siap. Terapkan sql/global-product-isolation sebelum mengaktifkan penulisan."
+  }
+}

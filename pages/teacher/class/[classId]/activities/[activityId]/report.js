@@ -5,7 +5,7 @@ import TeacherPortalShell from "../../../../../../components/teacher-portal/Teac
 import TeacherClassActivitiesNav from "../../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   activityModeLabelHe,
   studentActivityStatusLabelHe,
@@ -43,7 +43,7 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
     );
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
-      setError(body?.error?.message || body?.error?.code || "Export error");
+      setError(apiErrorMessageHe(body?.error, "Export error"));
       return null;
     }
     return body.data;
@@ -77,7 +77,7 @@ export default function TeacherActivityReportPage({ classId, activityId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "Load failed");
+        setError(apiErrorMessageHe(body?.error, "Load failed"));
         return;
       }
       setData(body.data);

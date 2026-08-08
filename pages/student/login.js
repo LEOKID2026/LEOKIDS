@@ -166,7 +166,7 @@ export default function StudentLoginPage() {
           setGuestResumeBanner(resumeFailure);
           setMessage(t(resumeFailure.messageKey));
         } else {
-          setMessage(payload?.error || t("auth.guestUnavailable"));
+          setMessage(t("auth.guestUnavailable"));
         }
         if (shouldClearGuestResumeTokenOnResumeFailure(payload?.code)) {
           localStorage.removeItem(LIOSH_GUEST_RESUME_TOKEN_KEY);

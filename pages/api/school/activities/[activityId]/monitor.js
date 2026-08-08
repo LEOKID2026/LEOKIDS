@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   const activityId = String(req.query?.activityId || "").trim();
   if (!activityId) {
-    return sendSchoolApiError(res, 400, "validation_failed", "activityId required");
+    return sendSchoolApiError(res, 400, "validation_failed", "validation_failed");
   }
 
   try {

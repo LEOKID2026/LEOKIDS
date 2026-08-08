@@ -1,0 +1,8 @@
+{
+  "phase": "9B-3",
+  "focusedTestFile": "tests/i18n/id-ID-phase9b3-student-arcade-api-ui.test.mjs",
+  "tests": 14,
+  "passed": 14,
+  "failed": 0,
+  "ranAt": "2026-08-08"
+}

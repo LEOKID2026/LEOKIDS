@@ -10,26 +10,35 @@ import { safeApiLog } from "../../../lib/security/safe-log.js";
 import { safeUuid } from "../../../lib/security/api-input.server.js";
 import { wrapMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 
+/**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
+
 async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   }
 
   const studentId = safeUuid(req.body?.studentId);
   const usernameRaw = String(req.body?.username || "");
   const pinRaw = String(req.body?.pin || "");
   if (!studentId) {
-    return res.status(400).json({ ok: false, error: "studentId is required" });
+    return fail(res, 400, "student_id_required");
   }
 
   try {
     const username = normalizeStudentUsername(usernameRaw);
     if (!/^[a-z0-9_-]{3,24}$/.test(username)) {
-      return res.status(400).json({ ok: false, error: "Invalid username" });
+      return fail(res, 400, "invalid_username");
     }
     const pin = normalizeStudentPin(pinRaw);
     if (!/^\d{4}$/.test(pin)) {
-      return res.status(400).json({ ok: false, error: "Invalid PIN" });
+      return fail(res, 400, "invalid_pin");
     }
 
     const ctx = await requireParentApiContext(res, req.headers.authorization || "");
@@ -43,15 +52,18 @@ async function handler(req, res) {
       select: "id,parent_id,is_active,product_id",
     });
     if (!owned.ok) {
+      const code =
+        (typeof owned.error === "string" && owned.error) || "student_not_found";
       return res.status(owned.status || 403).json({
         ok: false,
-        error: owned.error || "Student not found for this parent",
+        error: code,
+        code,
         message: owned.message,
       });
     }
     const student = owned.student;
     if (student.is_active !== true) {
-      return res.status(403).json({ ok: false, error: "This child is not active" });
+      return fail(res, 403, "student_inactive");
     }
 
     const codeHash = hashStudentSecret(username);
@@ -67,10 +79,10 @@ async function handler(req, res) {
       .limit(1)
       .maybeSingle();
     if (conflictErr) {
-      return res.status(500).json({ ok: false, error: "Username check failed" });
+      return fail(res, 500, "username_check_failed");
     }
     if (conflict?.id) {
-      return res.status(409).json({ ok: false, error: "Username is already taken" });
+      return fail(res, 409, "username_taken");
     }
 
     // Mutations run with service role after explicit ownership checks above.
@@ -85,7 +97,7 @@ async function handler(req, res) {
       .eq("student_id", studentId)
       .is("revoked_at", null);
     if (revokeErr) {
-      return res.status(500).json({ ok: false, error: "Could not revoke previous code" });
+      return fail(res, 500, "access_code_revoke_failed");
     }
 
     const { getServerProductId } = await import("../../../lib/global/product-context.server.js");
@@ -121,7 +133,7 @@ async function handler(req, res) {
       }
     }
     if (insErr) {
-      return res.status(500).json({ ok: false, error: "Could not create access code" });
+      return fail(res, 500, "access_code_create_failed");
     }
 
     if (isStudentIdentityDebugEnabled()) {
@@ -135,9 +147,8 @@ async function handler(req, res) {
       username,
     });
   } catch (_e) {
-    return res.status(500).json({ ok: false, error: "Unexpected server error" });
+    return fail(res, 500, "unexpected_server_error");
   }
 }
 
 export default wrapMutatingApi(handler);
-

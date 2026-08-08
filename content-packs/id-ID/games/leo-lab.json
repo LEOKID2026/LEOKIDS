@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-lab",
+  "title": "Lab Eksperimen Leo",
+  "blurb": "Gim tentang eksperimen, bahan, serta sebab dan akibat",
+  "help": {
+    "howToPlay": "Baca tugas eksperimen, pilih benda dari rak (seret atau ketuk), letakkan di meja lab, lalu ketuk \"Cek Eksperimen\".",
+    "scoring": "Eksperimen berhasil +30, berhasil di percobaan pertama +10, rentetan 3 benar +15, rentetan 5 +30. Tidak ada poin yang dikurangi karena kesalahan.",
+    "rewards": "Koin diberikan berdasarkan berapa banyak eksperimen yang berhasil, tingkat kesulitan, ketepatan, rentetan, dan menyelesaikan 20 eksperimen — hanya jika kamu berhasil setidaknya sekali.",
+    "tip": "Pikirkan apa yang dibutuhkan untuk menyelesaikan tugas - jangan mengandalkan petunjuk di kartu benda."
+  },
+  "accessibility": {
+    "title": "Lab Eksperimen Leo"
+  }
+}

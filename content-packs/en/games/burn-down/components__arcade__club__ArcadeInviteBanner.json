@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "friend": "Friend",
+    "invites_you_to_game": "{name} invites you to {game}",
+    "invites_you_to_a_game": "{name} invites you to a game",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}

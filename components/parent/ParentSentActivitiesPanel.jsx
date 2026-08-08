@@ -1,22 +1,19 @@
 import { useCallback, useEffect, useState } from "react";
 import { subjectLabel } from "../../lib/platform-ui/display-labels.js";
 import { formatActivityTopicDisplayHe } from "../../lib/classroom-activities/student-activity-display-labels.client.js";
-import {
-  parentSentActivitiesSectionTitleHe,
-  parentSentActivityStatusLabelHe,
-  parentViewActivityResultsLabelHe,
-} from "../../lib/parent-server/parent-activity-labels.client.js";
 import AssignedActivityQuestionDisplay from "../classroom-activities/AssignedActivityQuestionDisplay.jsx";
 import AssignedActivityBidiText from "../classroom-activities/AssignedActivityBidiText.jsx";
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import { getParentPortalTheme } from "../../lib/parent-ui/parent-portal-theme.client.js";
+import { resolveParentApiErrorDisplay } from "../../lib/parent-client/parent-api-errors.js";
+import { useI18n, useT } from "../../lib/i18n/I18nProvider.jsx";
 
 const POLL_MS = 8000;
 
-function formatWhen(iso) {
+function formatWhen(iso, locale) {
   if (!iso) return "-";
   try {
-    return new Date(iso).toLocaleString("en-US", {
+    return new Date(iso).toLocaleString(locale || "en", {
       dateStyle: "short",
       timeStyle: "short",
     });
@@ -28,6 +25,13 @@ function formatWhen(iso) {
 function formatScore(scorePct) {
   if (scorePct == null || Number.isNaN(Number(scorePct))) return "-";
   return `${Number(scorePct).toFixed(0)}%`;
+}
+
+function parentSentActivityStatusLabel(status, t) {
+  const s = String(status || "not_started").trim();
+  if (s === "in_progress") return t("ui.parent.sentStatusInProgress");
+  if (s === "submitted") return t("ui.parent.sentStatusCompleted");
+  return t("ui.parent.sentStatusNotStarted");
 }
 
 function parentActivityResultStatusClass(isCorrect, bright) {
@@ -79,6 +83,8 @@ function parentViewResultsButtonClass(bright, { compact = false } = {}) {
 
 function ParentActivityResultsModal({ activityId, accessToken, onClose, bright = false }) {
   const T = getParentPortalTheme(bright);
+  const t = useT();
+  const { locale } = useI18n();
   const panelClass = bright
     ? "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3 shadow-xl text-start text-slate-900"
     : "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-white/20 bg-[#0f1629] p-4 space-y-3 shadow-xl text-start";
@@ -110,18 +116,29 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json?.ok !== true) {
-        setError(json?.message || json?.error || "Could not load results");
+        setError(
+          resolveParentApiErrorDisplay(
+            {
+              status: res.status,
+              code: json?.code || json?.errorCode,
+              error: json?.error,
+              message: json?.message,
+            },
+            "panel_load",
+            t
+          )
+        );
         setDetail(null);
         return;
       }
       setDetail(json);
     } catch {
-      setError("Network error");
+      setError(t("ui.parent.deleteNetworkError"));
       setDetail(null);
     } finally {
       setBusy(false);
     }
-  }, [activityId, accessToken]);
+  }, [activityId, accessToken, t]);
 
   useEffect(() => {
     void load();
@@ -141,37 +158,43 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
       <div className={panelClass}>
         <div className="flex items-start justify-between gap-3">
           <h3 id="parent-activity-results-title" className={titleClass}>
-            {activity?.title || "Activity results"}
+            {activity?.title || t("ui.parent.activityResultsTitle")}
           </h3>
           <button type="button" className={bright ? T.copyBtn : "rounded bg-white/10 px-2 py-1 text-xs shrink-0"} onClick={onClose}>
-            Close
+            {t("ui.common.close")}
           </button>
         </div>
 
-        {busy ? <p className={mutedClass}>Loading…</p> : null}
+        {busy ? <p className={mutedClass}>{t("ui.parent.loading")}</p> : null}
         {error ? <p className={errorClass}>{error}</p> : null}
 
         {activity ? (
           <div className={bodyClass}>
             <div>
-              Subject: {subjectLabel(activity.subject)} · Topic:{" "}
+              {t("ui.parent.metaSubject")}: {subjectLabel(activity.subject)} · {t("ui.parent.metaTopic")}:{" "}
               {formatActivityTopicDisplayHe(activity.subject, activity.topic, activity.subtopic)}
             </div>
             <div>
-              Status: {parentSentActivityStatusLabelHe(activity.studentStatus)}
+              {t("ui.parent.metaStatus")}: {parentSentActivityStatusLabel(activity.studentStatus, t)}
             </div>
             <div>
-              Answers: {activity.answersCount ?? 0} · Correct: {activity.correctCount ?? 0} ·
-              Score: {formatScore(activity.scorePct)}
+              {t("ui.parent.metaAnswers")}: {activity.answersCount ?? 0} · {t("ui.parent.metaCorrect")}:{" "}
+              {activity.correctCount ?? 0} · {t("ui.parent.metaScore")}: {formatScore(activity.scorePct)}
             </div>
-            <div>Started: {formatWhen(activity.startedAt)}</div>
-            <div>Finished: {formatWhen(activity.submittedAt)}</div>
+            <div>
+              {t("ui.parent.metaStarted")}: {formatWhen(activity.startedAt, locale)}
+            </div>
+            <div>
+              {t("ui.parent.metaFinished")}: {formatWhen(activity.submittedAt, locale)}
+            </div>
           </div>
         ) : null}
 
         {questions.length > 0 ? (
           <div className={dividerClass}>
-            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>Answer details</div>
+            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>
+              {t("ui.parent.answerDetails")}
+            </div>
             {questions.map((q) => (
               <div
                 key={q.questionIndex}
@@ -179,12 +202,12 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
                 data-testid={`parent-activity-question-${q.questionIndex}`}
               >
                 <div className={itemTitleClass}>
-                  Question {Number(q.questionIndex) + 1}:{" "}
+                  {t("ui.parent.questionLabel", { n: Number(q.questionIndex) + 1 })}:{" "}
                   <span className={parentActivityResultStatusClass(q.isCorrect, bright)}>
                     {q.isCorrect === true
-                      ? "Correct"
+                      ? t("ui.parent.correct")
                       : q.isCorrect === false
-                        ? "Incorrect"
+                        ? t("ui.parent.incorrect")
                         : "-"}
                   </span>
                 </div>
@@ -200,7 +223,7 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
                 ) : null}
                 {Array.isArray(q.choices) && q.choices.length > 0 ? (
                   <div className={itemMetaClass}>
-                    Choices:{" "}
+                    {t("ui.parent.choicesLabel")}:{" "}
                     {q.choices.map((choice, choiceIndex) => (
                       <span key={choiceIndex}>
                         {choiceIndex > 0 ? " · " : ""}
@@ -210,13 +233,14 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
                   </div>
                 ) : null}
                 <div className={itemAnswerLabelClass}>
-                  Answer:{" "}
+                  {t("ui.parent.answerLabel")}:{" "}
                   <span className={parentActivityAnswerValueClass(q.isCorrect, bright)}>
                     <AssignedActivityBidiText text={q.selectedAnswer || "-"} />
                   </span>
                 </div>
                 <div className={itemCorrectAnswerClass}>
-                  Correct answer: <AssignedActivityBidiText text={q.correctAnswer || "-"} />
+                  {t("ui.parent.correctAnswerLabel")}:{" "}
+                  <AssignedActivityBidiText text={q.correctAnswer || "-"} />
                 </div>
                 {q.legacyFallback ? (
                   <div className={itemLegacyClass} data-testid="legacy-fallback-indicator">
@@ -228,24 +252,26 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
           </div>
         ) : attempts.length > 0 ? (
           <div className={dividerClass}>
-            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>Answer details</div>
+            <div className={`font-semibold text-sm ${bright ? "text-slate-900" : "text-white"}`}>
+              {t("ui.parent.answerDetails")}
+            </div>
             {attempts.map((attempt) => (
               <div
                 key={attempt.questionIndex}
                 className={parentActivityResultItemClass(attempt.isCorrect, bright)}
               >
                 <div className={itemTitleClass}>
-                  Question {Number(attempt.questionIndex) + 1}:{" "}
+                  {t("ui.parent.questionLabel", { n: Number(attempt.questionIndex) + 1 })}:{" "}
                   <span className={parentActivityResultStatusClass(attempt.isCorrect, bright)}>
                     {attempt.isCorrect === true
-                      ? "Correct"
+                      ? t("ui.parent.correct")
                       : attempt.isCorrect === false
-                        ? "Incorrect"
+                        ? t("ui.parent.incorrect")
                         : "-"}
                   </span>
                 </div>
                 <div className={itemAnswerLabelClass}>
-                  Answer:{" "}
+                  {t("ui.parent.answerLabel")}:{" "}
                   <span className={parentActivityAnswerValueClass(attempt.isCorrect, bright)}>
                     {attempt.selectedAnswer || "-"}
                   </span>
@@ -261,6 +287,8 @@ function ParentActivityResultsModal({ activityId, accessToken, onClose, bright =
 
 function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose, bright = false }) {
   const T = getParentPortalTheme(bright);
+  const t = useT();
+  const { locale } = useI18n();
   const panelClass = bright
     ? "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3 shadow-xl text-start text-slate-900"
     : "max-w-lg w-full max-h-[85vh] overflow-y-auto rounded-lg border border-emerald-500/30 bg-[#0f1629] p-4 space-y-3 shadow-xl text-start";
@@ -322,16 +350,18 @@ function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose
         <div className={panelClass}>
           <div className="flex items-start justify-between gap-3">
             <h3 id="parent-sent-activities-title" className={titleClass}>
-              {parentSentActivitiesSectionTitleHe()}
+              {t("ui.parent.sentActivitiesTitle")}
             </h3>
             <button type="button" className={bright ? T.copyBtn : "rounded bg-white/10 px-2 py-1 text-xs shrink-0"} onClick={onClose}>
-              Close
+              {t("ui.common.close")}
             </button>
           </div>
 
-          {!loaded ? <p className={mutedClass}>Loading…</p> : null}
+          {!loaded ? <p className={mutedClass}>{t("ui.parent.loading")}</p> : null}
 
-          {loaded && activities.length === 0 ? <p className={mutedClass}>No activities sent yet</p> : null}
+          {loaded && activities.length === 0 ? (
+            <p className={mutedClass}>{t("ui.parent.noActivitiesSentYet")}</p>
+          ) : null}
 
           {activities.length > 0 ? (
             <div className="space-y-2">
@@ -347,13 +377,13 @@ function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose
                     )}
                   </div>
                   <div className={cardBodyClass}>
-                    {parentSentActivityStatusLabelHe(activity.studentStatus)} · Answers:{" "}
-                    {activity.answersCount ?? 0} · Correct: {activity.correctCount ?? 0} · Score:{" "}
-                    {formatScore(activity.scorePct)}
+                    {parentSentActivityStatusLabel(activity.studentStatus, t)} · {t("ui.parent.metaAnswers")}:{" "}
+                    {activity.answersCount ?? 0} · {t("ui.parent.metaCorrect")}: {activity.correctCount ?? 0} ·{" "}
+                    {t("ui.parent.metaScore")}: {formatScore(activity.scorePct)}
                   </div>
                   <div className={cardMetaClass}>
-                    Started: {formatWhen(activity.startedAt)} · Finished:{" "}
-                    {formatWhen(activity.submittedAt)}
+                    {t("ui.parent.metaStarted")}: {formatWhen(activity.startedAt, locale)} ·{" "}
+                    {t("ui.parent.metaFinished")}: {formatWhen(activity.submittedAt, locale)}
                   </div>
                   <button
                     type="button"
@@ -372,7 +402,7 @@ function ParentSentActivitiesModal({ studentId, accessToken, refreshKey, onClose
                       });
                     }}
                   >
-                    {parentViewActivityResultsLabelHe()}
+                    {t("ui.parent.viewActivityResults")}
                   </button>
                 </div>
               ))}
@@ -405,6 +435,7 @@ export default function ParentSentActivitiesPanel({
   buttonClassName,
   bright = false,
 }) {
+  const t = useT();
   const [open, setOpen] = useState(false);
 
   if (!accessToken) return null;
@@ -418,7 +449,7 @@ export default function ParentSentActivitiesPanel({
         className={buttonClassName || defaultBtnClass}
         onClick={() => setOpen(true)}
       >
-        {parentSentActivitiesSectionTitleHe()}
+        {t("ui.parent.sentActivitiesTitle")}
       </button>
 
       {open ? (

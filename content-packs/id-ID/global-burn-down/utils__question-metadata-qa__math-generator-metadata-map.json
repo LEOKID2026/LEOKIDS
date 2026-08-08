@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Tidak menggantikan correctAnswer numerik, answers[], atau teks soal setelah pembuatan - hanya memperkaya kolom metadata.",
+    "blanket_patternfamily_math_kind_when_absent": "Gunakan patternFamily umum `math_${kind}` jika tidak ada",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Baris probe + pecahan sudah menyertakan diagnosticSkillId / expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Baris op/kind standar menggunakan skill id math_${kind} yang deterministik",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Jenis edge dengan params minimal - pola id math_* tetap aman"
+  }
+}

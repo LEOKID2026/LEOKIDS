@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "player": "Pemain",
+    "game_over": "Gim Berakhir",
+    "right": "Kanan ▶"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "player": "Pemain",
+    "guest_player": "Pemain tamu",
+    "leo_number_part": " · Nomor Leo {leoNumber}",
+    "guest_link_hint": " — tautkan dengan orang tua untuk pengalaman lengkap",
+    "coins": "Koin",
+    "diamonds": "Permata"
+  }
+}

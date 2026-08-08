@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "total_students": "Total murid",
+    "opened_pdf": "PDF terbuka",
+    "completed_pdf": "Selesai (PDF)",
+    "submitted_answers": "Jawaban yang dikirim",
+    "pending_review": "Menunggu peninjauan",
+    "published": "Diterbitkan",
+    "class_average": "Rata-rata rombel"
+  }
+}

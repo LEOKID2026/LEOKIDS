@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "worksheet": "Lembar kerja",
+    "name": "Nama: ________________",
+    "date": "Tanggal: ________________",
+    "options": "Opsi:",
+    "answer": "Jawaban:",
+    "question": "Soal",
+    "answer_2": "Jawaban",
+    "answer_key": "Kunci jawaban"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "unavailable": "Tidak tersedia",
+    "topic": "Topik",
+    "above_registered_grade": "Di atas kelas terdaftar",
+    "below_registered_grade": "Di bawah kelas terdaftar",
+    "at_registered_grade_level": "Pada tingkat kelas terdaftar",
+    "outside_the_registered_grade_band": "Di luar rentang kelas yang terdaftar",
+    "topic_grade_title": "{topic} - Kelas {grade}"
+  }
+}

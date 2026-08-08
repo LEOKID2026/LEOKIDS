@@ -1,0 +1,18 @@
+{
+  "copy": {
+    "display_name": "Nama tampilan",
+    "setdisplayname_e_target_value_placeholder_gamepackcopy_components_arcade": "setDisplayName(e.target.value)}\r\n            placeholder=gamePackCopy(\"components__arcade__club__ArcadeClubProfilePanel\", \"display_name\")\r\n          />",
+    "display_name_for_games_only_doesn_t_change_your_official_name_or_leo_num": "Nama tampilan hanya untuk gim — tidak mengubah nama resmi atau nomor Leo kamu.",
+    "change_photo_on_the_home_page": "Ubah foto di beranda",
+    "recent_history": "Riwayat terbaru",
+    "no_games_yet": "Belum ada gim",
+    "player_card": "Kartu pemain",
+    "game_name": "Nama gim:",
+    "save_name": "Simpan nama",
+    "official_name_parent": "Nama resmi (orang tua): {fullName}",
+    "wins_games": "Menang: {wins} · Gim: {games}",
+    "game_fallback": "Gim",
+    "result_dash": "-",
+    "coins_reward": "+{amount} koin"
+  }
+}

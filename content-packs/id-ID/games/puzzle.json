@@ -1,0 +1,11 @@
+{
+  "gameId": "puzzle",
+  "title": "Puzzle Leo",
+  "blurb": "Gabungkan ubin dan kumpulkan poin sebelum waktu habis!",
+  "help": {
+    "howToPlay": "Gerakkan ubin di papan untuk menggabungkan angka yang sama. Semakin besar angkanya, semakin tinggi skornya.",
+    "scoring": "Setiap penggabungan menambah poin. Tujuannya mencapai target skor sebelum waktu habis.",
+    "rewards": "Menang sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+    "tip": "Usahakan sudut tetap kosong agar ada ruang untuk menggerakkan ubin."
+  }
+}

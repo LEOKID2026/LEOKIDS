@@ -1,0 +1,43 @@
+{
+  "missing": [],
+  "missingCount": 0,
+  "translatedLeaves": {
+    "seo": 813,
+    "legal": 211
+  },
+  "writtenFiles": 28,
+  "written": [
+    "guides/hub.json",
+    "guides/math-practice-at-home.json",
+    "guides/reading-practice-at-home.json",
+    "guides/no-print-worksheets.json",
+    "guides/learning-games-at-home.json",
+    "guides/parent-progress-tracking.json",
+    "guides/home-practice-routine.json",
+    "guides/math-games-for-kids.json",
+    "guides/reading-comprehension-at-home.json",
+    "guides/english-vocabulary-practice.json",
+    "guides/how-to-follow-child-progress.json",
+    "guides/hub-cards.json",
+    "practice/hub.json",
+    "practice/math.json",
+    "practice/reading.json",
+    "practice/english.json",
+    "practice/geometry.json",
+    "practice/science.json",
+    "practice/games.json",
+    "practice/no-print.json",
+    "practice/parent-reports.json",
+    "practice/hub-cards.json",
+    "practice/worksheets.json",
+    "marketing/kids.json",
+    "marketing/parents.json",
+    "marketing/teachers.json",
+    "marketing/schools.json",
+    "legal/unified.json"
+  ],
+  "dictSizes": {
+    "seo": 689,
+    "legal": 195
+  }
+}

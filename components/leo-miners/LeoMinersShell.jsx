@@ -111,20 +111,19 @@ export default function LeoMinersShell({ skipAccessGuard = false }) {
         if (code === LEO_MINERS_ERROR_CODES.miners_db_not_ready) {
 
           setStatusMessage(
-            message ||
-              "Leo Miners tables are not set up yet — run migration 095_leo_miners_foundation.sql"
+            gamePackCopy("pages__api__student__leo-miners__state", "server_error_try_refreshing_the_page")
           );
 
         } else if (!ready) {
 
-          setStatusMessage(message || "Server error — try refreshing the page.");
+          setStatusMessage(
+            gamePackCopy("pages__api__student__leo-miners__state", "server_error_try_refreshing_the_page")
+          );
 
         } else if (!gameOn) {
 
           setStatusMessage(
-
-            "The game is currently off — you can still play locally. For full play: Admin → Leo the Miner."
-
+            gamePackCopy("pages__api__student__leo-miners__state", "server_error_try_refreshing_the_page")
           );
 
         } else {

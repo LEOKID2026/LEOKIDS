@@ -1,0 +1,37 @@
+{
+  "phase": "9B-4",
+  "newStableCodesIntroduced": 0,
+  "existingCodesReused": [
+    "validation_failed",
+    "class_archived",
+    "already_archived",
+    "rate_limited",
+    "feature_disabled",
+    "school_inactive",
+    "teacher_profile_missing",
+    "link_unavailable",
+    "consent_required",
+    "student_not_found",
+    "wrong_school",
+    "not_school_portal_member",
+    "operator_grant_required",
+    "profile_update_failed",
+    "unexpected_server_error",
+    "internal_error"
+  ],
+  "dynamicParameterizedRemaining": [
+    {
+      "pattern": "Invalid ${field}",
+      "reason": "Prefer parameterized client template in MAIN reconciliation; consumers now code-first so English does not win when a stable code is present."
+    },
+    {
+      "pattern": "Feature disabled: ${feature}",
+      "reason": "Prefer feature_disabled mapping; no new code in 9B-4."
+    },
+    {
+      "pattern": "link-limit count templates",
+      "reason": "Parameterized template deferred to MAIN."
+    }
+  ],
+  "newCodeMappingsRequiredFromMain": []
+}

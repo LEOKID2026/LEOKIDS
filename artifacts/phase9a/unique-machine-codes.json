@@ -1,0 +1,107 @@
+[
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/activities/[activityId].js",
+    "text": "activity_not_found"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/cards/catalog.js",
+    "text": "demo_catalog_load_failed"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/cards/collection.js",
+    "text": "demo_collection_load_failed"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/cards/series.js",
+    "text": "demo_series_load_failed"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/book-events.js",
+    "text": "book_tracking_disabled"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/book-events.js",
+    "text": "internal_error"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/membership/locale.js",
+    "text": "method_not_allowed"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/worksheets/ready/[slug].js",
+    "text": "not_found"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/activities/index.js",
+    "text": "rate_limited"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student.js",
+    "text": "student_product_mismatch"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/teacher-consent/issue.js",
+    "text": "validation_failed"
+  },
+  {
+    "area": "public",
+    "file": "pages/api/public/analytics/worksheet-event.js",
+    "text": "invalid_event"
+  },
+  {
+    "area": "public",
+    "file": "pages/api/public/analytics/worksheet-event.js",
+    "text": "invalid_visit_session"
+  },
+  {
+    "area": "public",
+    "file": "pages/api/public/analytics/worksheet-event.js",
+    "text": "method_not_allowed"
+  },
+  {
+    "area": "public",
+    "file": "pages/api/public/worksheets/answer-key.js",
+    "text": "not_found"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/rewards/cards/convert-duplicates.js",
+    "text": "feature_disabled"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/worksheet-activities/[worksheetId]/pdf-url.js",
+    "text": "forbidden"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/rewards/cards/convert-duplicates.js",
+    "text": "missing_card_id"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/rewards/shop/sell-duplicate.js",
+    "text": "missing_idempotency_key"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/guest/resume.js",
+    "text": "missing_resume_token"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/activities/[activityId]/learning-visit.js",
+    "text": "not_parent_activity"
+  }
+]

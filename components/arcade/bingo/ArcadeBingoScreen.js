@@ -14,6 +14,8 @@ import Ov2BingoFinishModal from "./Ov2BingoFinishModal";
 import Ov2GameStatusStrip from "./Ov2GameStatusStrip";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
+const SLUG = "components__arcade__bingo__ArcadeBingoScreen";
+
 /** @param {number|null|undefined} ms */
 function fmtCountdown(ms) {
   if (ms == null) return "-";
@@ -44,13 +46,13 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       const j = await res.json().catch(() => ({}));
       if (!res.ok || !j?.ok) {
         setBundle(null);
-        setBundleErr(typeof j?.error === "string" ? j.error : "Could not load the room");
+        setBundleErr(typeof j?.error === "string" ? j.error : gamePackCopy(SLUG, "could_not_load_the_room"));
         return;
       }
       setBundle(j);
       setBundleErr("");
     } catch (e) {
-      setBundleErr(e instanceof Error ? e.message : "Network error");
+      setBundleErr(e instanceof Error ? e.message : gamePackCopy(SLUG, "network_error"));
       setBundle(null);
     }
   }, [roomId]);
@@ -122,16 +124,20 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
   const isRoomShell = vm.playMode === OV2_BINGO_PLAY_MODE.LIVE_ROOM_NO_MATCH_YET;
   const isLiveMatch = vm.playMode === OV2_BINGO_PLAY_MODE.LIVE_MATCH_ACTIVE;
   const stripTone = isLiveMatch ? "emerald" : isRoomShell ? "amber" : "neutral";
-  const stripTitle = isLiveMatch ? "Bingo · live game" : isRoomShell ? "Bingo · room" : "Bingo";
+  const stripTitle = isLiveMatch
+    ? gamePackCopy(SLUG, "bingo_live_game")
+    : isRoomShell
+      ? gamePackCopy(SLUG, "bingo_room")
+      : gamePackCopy(SLUG, "bingo");
 
   const prizeLabels = useMemo(
     () => ({
-      row1: "Row 1",
-      row2: "Row 2",
-      row3: "Row 3",
-      row4: "Row 4",
-      row5: "Row 5",
-      full: "Full",
+      row1: gamePackCopy(SLUG, "row_n", { n: 1 }),
+      row2: gamePackCopy(SLUG, "row_n", { n: 2 }),
+      row3: gamePackCopy(SLUG, "row_n", { n: 3 }),
+      row4: gamePackCopy(SLUG, "row_n", { n: 4 }),
+      row5: gamePackCopy(SLUG, "row_n", { n: 5 }),
+      full: gamePackCopy(SLUG, "full"),
     }),
     []
   );
@@ -148,7 +154,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
   const finishModalClaims = useMemo(() => {
     return (vm.claims || []).map(c => ({
       prizeKey: String(c.prizeKey || "").trim(),
-      claimedByName: String(c.claimedByName || "").trim() || "Player",
+      claimedByName: String(c.claimedByName || "").trim() || gamePackCopy(SLUG, "player"),
       amount: Math.floor(Number(c.amount) || 0),
       seatIndex: c.seatIndex,
     }));
@@ -203,7 +209,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
     setExitErr("");
     try {
       const r = await actions.requestRematch();
-      if (!r.ok) setExitErr(r.error || "Rematch request failed");
+      if (!r.ok) setExitErr(r.error || gamePackCopy(SLUG, "rematch_request_failed"));
     } finally {
       setRematchBusy(false);
     }
@@ -215,7 +221,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
     setExitErr("");
     try {
       const r = await actions.cancelRematch();
-      if (!r.ok) setExitErr(r.error || "Could not cancel rematch");
+      if (!r.ok) setExitErr(r.error || gamePackCopy(SLUG, "could_not_cancel_rematch"));
     } finally {
       setRematchBusy(false);
     }
@@ -228,12 +234,12 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
     try {
       const r = await actions.startNextMatch();
       if (!r.ok) {
-        setExitErr(r.error || "Could not start the next game");
+        setExitErr(r.error || gamePackCopy(SLUG, "could_not_start_next_game"));
         return;
       }
       await router.push("/student/arcade");
     } catch (e) {
-      setExitErr(e?.message || String(e) || "Could not start the next game.");
+      setExitErr(e?.message || String(e) || gamePackCopy(SLUG, "could_not_start_next_game"));
     } finally {
       setStartNextBusy(false);
     }
@@ -259,7 +265,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
 
   const cardFooterHint = useMemo(() => {
     if (!vm.isLive) return null;
-    if (!vm.cardIsAuthoritative) return "Sit in a lobby seat to see your card for this round.";
+    if (!vm.cardIsAuthoritative) return gamePackCopy(SLUG, "sit_in_lobby_seat");
     return null;
   }, [vm.isLive, vm.cardIsAuthoritative]);
 
@@ -270,12 +276,12 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       vm.authoritativeSnapshot && vm.authoritativeSnapshot.sessionId != null
         ? String(vm.authoritativeSnapshot.sessionId).trim()
         : "";
-    if (isLiveMatch && sp === "playing") return "Game in progress";
-    if (isLiveMatch && sp === "finished") return "Finished";
-    if (life === "lobby") return "Waiting for players";
-    if (life === "pending_start" || life === "pending_stakes") return "Waiting for all players to stake";
-    if (life === "active" && !vm.roomActiveSessionId && !snapSid) return "Waiting for the host to start Bingo";
-    if (life === "active" && (vm.roomActiveSessionId || snapSid)) return "Game";
+    if (isLiveMatch && sp === "playing") return gamePackCopy(SLUG, "game_in_progress");
+    if (isLiveMatch && sp === "finished") return gamePackCopy(SLUG, "finished");
+    if (life === "lobby") return gamePackCopy(SLUG, "waiting_for_players");
+    if (life === "pending_start" || life === "pending_stakes") return gamePackCopy(SLUG, "waiting_for_all_to_stake");
+    if (life === "active" && !vm.roomActiveSessionId && !snapSid) return gamePackCopy(SLUG, "waiting_for_host_start");
+    if (life === "active" && (vm.roomActiveSessionId || snapSid)) return gamePackCopy(SLUG, "game");
     return sp || life || "-";
   }, [isLiveMatch, vm.roomLifecyclePhase, vm.sessionPhase, vm.roomActiveSessionId, vm.authoritativeSnapshot]);
 
@@ -286,7 +292,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
   if (!roomId) {
     return (
       <div className="flex h-full min-h-0 w-full items-center justify-center p-4 text-sm text-zinc-400" dir="ltr">
-        Missing room id
+        {gamePackCopy(SLUG, "missing_room_id")}
       </div>
     );
   }
@@ -299,7 +305,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       >
         <p>{bundleErr}</p>
         <button type="button" className="text-sky-400 underline" onClick={() => void reloadBundle()}>
-          Try again
+          {gamePackCopy(SLUG, "try_again")}
         </button>
       </div>
     );
@@ -308,7 +314,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
   if (!bundle?.room) {
     return (
       <div className="flex h-full min-h-0 w-full items-center justify-center p-4 text-sm text-zinc-400" dir="ltr">
-        Loading…
+        {gamePackCopy(SLUG, "loading")}
       </div>
     );
   }
@@ -334,14 +340,14 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
             onClick={() => void onLeaveToLobby()}
             className="text-[10px] font-semibold text-red-200/95 underline decoration-red-400/50 disabled:opacity-45 sm:text-[11px]"
           >
-            {leaveToLobbyBusy ? "Leaving…" : "Leave game"}
+            {leaveToLobbyBusy ? gamePackCopy(SLUG, "leaving") : gamePackCopy(SLUG, "leave_game")}
           </button>
         </div>
       ) : null}
 
       <div
         className="shrink-0 overflow-x-auto rounded-lg border border-white/10 bg-black/35 py-0.5 [scrollbar-width:thin] sm:py-1"
-        aria-label={gamePackCopy("components__arcade__bingo__ArcadeBingoScreen", "seats")}
+        aria-label={gamePackCopy(SLUG, "seats")}
       >
         <div className="flex min-w-max gap-1 px-1">
           {seatSlots.map(({ seatIndex, member }) => {
@@ -350,7 +356,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
             const isCaller = vm.callerSeatIndex != null && vm.callerSeatIndex === seatIndex;
             const isWinner =
               Boolean(vm.winner?.participantKey && member?.participantKey && vm.winner.participantKey === member.participantKey);
-            const label = member?.displayName?.trim() || (member ? "Player" : "Empty");
+            const label = member?.displayName?.trim() || (member ? gamePackCopy(SLUG, "player") : gamePackCopy(SLUG, "empty"));
             return (
               <div
                 key={seatIndex}
@@ -363,16 +369,20 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
                   isCaller ? "ring-1 ring-amber-300/70" : "",
                   isWinner ? "ring-1 ring-emerald-400/60" : "",
                 ].join(" ")}
-                title={member ? `${label}${member.isReady ? " · Ready" : ""}` : `Seat ${seatIndex + 1} · Open`}
+                title={
+                  member
+                    ? `${label}${member.isReady ? ` · ${gamePackCopy(SLUG, "ready")}` : ""}`
+                    : `${gamePackCopy(SLUG, "player_n", { n: seatIndex + 1 })} · ${gamePackCopy(SLUG, "open")}`
+                }
               >
                 <div className={`truncate font-semibold ${member ? seatStyle.text : "text-zinc-400"}`}>{label}</div>
                 <div className="mt-1 text-[8px]">
                   {member ? (
                     <span className={member.isReady ? "text-emerald-300" : "text-zinc-500"}>
-                      {member.isReady ? "Ready" : "Waiting"}
+                      {member.isReady ? gamePackCopy(SLUG, "ready") : gamePackCopy(SLUG, "waiting")}
                     </span>
                   ) : (
-                    <span className="text-zinc-600">Open</span>
+                    <span className="text-zinc-600">{gamePackCopy(SLUG, "open")}</span>
                   )}
                 </div>
               </div>
@@ -384,18 +394,18 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {playingLive ? (
         <div
           className="flex shrink-0 flex-nowrap items-stretch gap-2 overflow-x-auto rounded-lg border border-white/10 bg-black/30 px-2 py-2 [scrollbar-width:thin] sm:gap-3 sm:px-4 sm:py-3"
-          aria-label={gamePackCopy("components__arcade__bingo__ArcadeBingoScreen", "live_game_stats")}
+          aria-label={gamePackCopy(SLUG, "live_game_stats")}
         >
           <span className="flex h-[2.25rem] max-h-[2.25rem] min-w-[5.5rem] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-3 py-0 text-xs leading-tight text-zinc-400 sm:h-[2.5rem] sm:max-h-[2.5rem] sm:min-w-0 sm:px-4 sm:text-sm">
-            <span className="font-semibold text-zinc-500">Last</span>
+            <span className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "last")}</span>
             <span className="font-mono font-semibold text-amber-100">{vm.lastCalled ?? "-"}</span>
           </span>
           <span className="flex h-[2.25rem] max-h-[2.25rem] min-w-[5.5rem] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-3 py-0 text-xs leading-tight text-zinc-400 sm:h-[2.5rem] sm:max-h-[2.5rem] sm:min-w-0 sm:px-4 sm:text-sm">
-            <span className="font-semibold text-zinc-500">Next</span>
+            <span className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "next")}</span>
             <span className="font-mono font-semibold text-zinc-100">{fmtCountdown(vm.msUntilNextCall)}</span>
           </span>
           <span className="flex h-[2.25rem] max-h-[2.25rem] min-w-[5.5rem] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-3 py-0 text-xs leading-tight text-zinc-400 sm:h-[2.5rem] sm:max-h-[2.5rem] sm:min-w-0 sm:px-4 sm:text-sm">
-            <span className="font-semibold text-zinc-500">Deck</span>
+            <span className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "deck")}</span>
             <span className="font-mono font-semibold text-zinc-200">
               {vm.deckRemaining}/{vm.deckTotal}
             </span>
@@ -406,18 +416,18 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {isFinishedLive ? (
         <div
           className="flex shrink-0 flex-nowrap items-stretch gap-2 overflow-x-auto rounded-lg border border-white/10 bg-black/30 px-2 py-1.5 [scrollbar-width:thin] sm:gap-3 sm:px-3 sm:py-2"
-          aria-label={gamePackCopy("components__arcade__bingo__ArcadeBingoScreen", "game_results_summary")}
+          aria-label={gamePackCopy(SLUG, "game_results_summary")}
         >
           <span className="flex h-[2rem] max-h-[2rem] min-w-[5rem] flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-2 py-0 text-[10px] leading-tight text-zinc-400 sm:h-[2.25rem] sm:max-h-[2.25rem] sm:min-w-0 sm:text-xs">
-            <span className="font-semibold text-zinc-500">Last</span>
+            <span className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "last")}</span>
             <span className="font-mono font-semibold text-amber-100">{vm.lastCalled ?? "-"}</span>
           </span>
           <span className="flex h-[2rem] max-h-[2rem] min-w-[5rem] flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-2 py-0 text-[10px] leading-tight text-zinc-400 sm:h-[2.25rem] sm:max-h-[2.25rem] sm:min-w-0 sm:text-xs">
-            <span className="font-semibold text-zinc-500">Next</span>
+            <span className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "next")}</span>
             <span className="font-mono font-semibold text-zinc-300">-</span>
           </span>
           <span className="flex h-[2rem] max-h-[2rem] min-w-[5rem] flex-1 items-center justify-center gap-1 whitespace-nowrap rounded-md border border-white/10 bg-black/40 px-2 py-0 text-[10px] leading-tight text-zinc-400 sm:h-[2.25rem] sm:max-h-[2.25rem] sm:min-w-0 sm:text-xs">
-            <span className="font-semibold text-zinc-500">Deck</span>
+            <span className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "deck")}</span>
             <span className="font-mono font-semibold text-zinc-200">
               {vm.deckRemaining}/{vm.deckTotal}
             </span>
@@ -428,18 +438,18 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {vm.isLive && liveExceptionUi ? (
         <div className="shrink-0 rounded-lg border border-white/10 bg-black/35 px-2 py-1.5 sm:flex sm:items-start sm:gap-4 sm:py-2">
           <div className="min-w-0 flex-1">
-            <div className="text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">Status</div>
+            <div className="text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">{gamePackCopy(SLUG, "status")}</div>
             <div className="mt-0.5 text-[11px] font-semibold leading-snug text-zinc-100 sm:text-xs">{phaseHeader}</div>
             {vm.phaseLine ? <p className="mt-0.5 text-[9px] leading-snug text-zinc-400 sm:text-[10px]">{vm.phaseLine}</p> : null}
           </div>
           {!playingLive && isLiveMatch && vm.sessionPhase !== "playing" ? (
             <div className="mt-2 grid grid-cols-2 gap-2 border-t border-white/10 pt-2 sm:mt-0 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
               <div>
-                <div className="text-[9px] font-semibold text-zinc-500">Last called</div>
+                <div className="text-[9px] font-semibold text-zinc-500">{gamePackCopy(SLUG, "last_called")}</div>
                 <div className="font-mono text-sm text-amber-100">{vm.lastCalled ?? "-"}</div>
               </div>
               <div>
-                <div className="text-[9px] font-semibold text-zinc-500">Next</div>
+                <div className="text-[9px] font-semibold text-zinc-500">{gamePackCopy(SLUG, "next")}</div>
                 <div className="font-mono text-sm text-zinc-100">{fmtCountdown(vm.msUntilNextCall)}</div>
               </div>
             </div>
@@ -450,15 +460,15 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {!vm.isLive ? (
         <div className="grid shrink-0 gap-1 rounded-lg border border-white/10 bg-black/30 px-1.5 py-1 sm:grid-cols-3 sm:px-2 sm:py-1.5">
           <div className="text-[9px] text-zinc-300 sm:text-[10px]">
-            <div className="font-semibold text-zinc-500">Phase</div>
+            <div className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "phase")}</div>
             <div className="mt-0.5 text-zinc-100">{phaseHeader}</div>
           </div>
           <div className="text-[9px] text-zinc-300 sm:text-[10px]">
-            <div className="font-semibold text-zinc-500">Last</div>
+            <div className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "last")}</div>
             <div className="mt-0.5 font-mono text-xs text-amber-100 sm:text-sm">{vm.lastCalled ?? "-"}</div>
           </div>
           <div className="text-[9px] text-zinc-300 sm:text-[10px]">
-            <div className="font-semibold text-zinc-500">Next</div>
+            <div className="font-semibold text-zinc-500">{gamePackCopy(SLUG, "next")}</div>
             <div className="mt-0.5 font-mono text-xs text-zinc-100 sm:text-sm">-</div>
           </div>
         </div>
@@ -467,14 +477,14 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
       {!vm.isLive ? (
         <div className="flex shrink-0 flex-wrap items-center justify-start gap-1 rounded-lg border border-white/10 bg-black/30 px-1.5 py-1">
           <div className="mr-auto text-[10px] text-zinc-500">
-            Deck {vm.deckRemaining}/{vm.deckTotal}
+            {gamePackCopy(SLUG, "deck")} {vm.deckRemaining}/{vm.deckTotal}
           </div>
           <button
             type="button"
             onClick={() => resetPreviewRound()}
             className="rounded-md border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-semibold text-white sm:py-1"
           >
-            Reset
+            {gamePackCopy(SLUG, "reset")}
           </button>
           <button
             type="button"
@@ -483,14 +493,14 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
             title={previewDisabledReasonCallNext || undefined}
             className="rounded-md border border-amber-500/40 bg-amber-900/40 px-2 py-0.5 text-[10px] font-semibold text-amber-100 disabled:opacity-40 sm:py-1"
           >
-            Call next
+            {gamePackCopy(SLUG, "call_next")}
           </button>
         </div>
       ) : null}
 
       <div className="flex min-h-0 flex-1 flex-col gap-0.5 overflow-hidden sm:gap-1 lg:grid lg:h-full lg:min-h-0 lg:grid-cols-5 lg:grid-rows-1 lg:auto-rows-[minmax(0,1fr)] lg:gap-1.5">
         <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-lg border border-white/10 bg-black/25 p-1 lg:col-span-3 lg:min-h-0 lg:h-full">
-          <div className="shrink-0 text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">Your card</div>
+          <div className="shrink-0 text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">{gamePackCopy(SLUG, "your_card")}</div>
           <div className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto py-0.5 sm:py-1">
             <Ov2BingoCard
               card={vm.card}
@@ -508,7 +518,7 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
         <div className="flex min-h-0 min-w-0 max-h-[min(44svh,14rem)] shrink overflow-y-auto flex-col gap-0.5 sm:max-h-none sm:shrink-0 sm:overflow-y-visible sm:gap-1 lg:col-span-2 lg:flex lg:h-full lg:max-h-none lg:min-h-0 lg:shrink-0 lg:flex-col lg:overflow-hidden">
           <div className="flex h-[min(7.875rem,32svh)] max-h-[min(7.875rem,34svh)] shrink-0 flex-col overflow-hidden rounded-lg border border-white/10 bg-black/25 px-1.5 py-1 sm:h-[11.5rem] sm:max-h-[11.5rem] sm:px-2 sm:py-1.5 lg:max-h-[min(30vh,10.5rem)] lg:shrink-0">
             <div className="shrink-0 text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">
-              Called numbers
+              {gamePackCopy(SLUG, "called_numbers")}
             </div>
             <div className="mt-0.5 min-h-0 min-w-0 flex-1 overflow-y-auto overflow-x-hidden pr-0.5 [scrollbar-width:thin]">
               {vm.called.length ? (
@@ -528,14 +538,16 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
                 </div>
               ) : (
                 <p className="text-[9px] text-zinc-500 sm:text-[10px]">
-                  {vm.isLive ? "Waiting for the caller to draw a number." : "Join a Bingo room from shared rooms to play live."}
+                  {vm.isLive
+                    ? gamePackCopy(SLUG, "waiting_for_caller")
+                    : gamePackCopy(SLUG, "join_bingo_from_rooms")}
                 </p>
               )}
             </div>
           </div>
 
           <div className="shrink-0 rounded-lg border border-white/10 bg-black/25 px-1.5 py-1 sm:px-2 sm:py-1.5 lg:shrink-0">
-            <div className="text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">Claim prize</div>
+            <div className="text-[9px] font-semibold uppercase tracking-wide text-zinc-500 sm:text-[10px]">{gamePackCopy(SLUG, "claim_prize")}</div>
             <div className="mt-0.5 grid grid-cols-3 gap-0.5 sm:grid-cols-6 sm:gap-1">
               {BINGO_PRIZE_KEYS.map(pk => {
                 const disableReason = vm.prizeDisabledByKey[pk];
@@ -553,10 +565,17 @@ export default function ArcadeBingoScreen({ roomId: roomIdProp }) {
                     disabled={disabled}
                     title={
                       claimed
-                        ? `Won · Seat ${claimed.seatIndex + 1}${claimed.claimedByName ? ` · ${claimed.claimedByName}` : ""}`
+                        ? gamePackCopy(SLUG, "won_seat", {
+                            seat: claimed.seatIndex + 1,
+                            namePart: claimed.claimedByName
+                              ? gamePackCopy(SLUG, "name_part", { name: claimed.claimedByName })
+                              : "",
+                          })
                         : disableReason != null
-                          ? disableReason
-                          : `Claim ${prizeLabels[pk]}`
+                          ? disableReason === "Already claimed"
+                            ? gamePackCopy(SLUG, "already_claimed")
+                            : disableReason
+                          : gamePackCopy(SLUG, "claim_label", { label: prizeLabels[pk] })
                     }
                     onClick={() => void onClaim(pk)}
                     className={[

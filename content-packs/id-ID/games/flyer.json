@@ -1,0 +1,11 @@
+{
+  "gameId": "flyer",
+  "title": "Leo di Pesawat",
+  "blurb": "Tahan untuk terbang, kumpulkan koin, dan hindari rintangan!",
+  "help": {
+    "howToPlay": "Tahan tombol atau layar untuk terbang, dan lepas untuk turun. Kumpulkan koin dan hindari rintangan.",
+    "scoring": "Koin dan berlian menambah poin. Menabrak rintangan mengakhiri gim.",
+    "rewards": "Semakin jauh kamu terbang dan semakin banyak poin yang didapat, semakin banyak koin dan permata yang kamu terima.",
+    "tip": "Jangan terbang terlalu tinggi — kadang lebih baik lewat di bawah rintangan."
+  }
+}

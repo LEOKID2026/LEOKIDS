@@ -6,7 +6,7 @@ import TeacherPortalShell from "../../../../../components/teacher-portal/Teacher
 import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { REPORT_SUBJECTS, subjectLabel, activitySubjectsForGrade } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../../lib/classroom-activities/generate-activity-questions-client.js";
@@ -107,7 +107,7 @@ export default function TeacherNewActivityPage({ classId }) {
           return;
         }
         if (!res.ok) {
-          setContextError(json?.error?.message || actNewCopy("err_load_class"));
+          setContextError(apiErrorMessageHe(json?.error, actNewCopy("err_load_class")));
           setClassContext((prev) => ({ ...prev, loaded: true }));
           return;
         }
@@ -177,7 +177,7 @@ export default function TeacherNewActivityPage({ classId }) {
       });
       setPreview(qs);
     } catch (e) {
-      setError(e?.message || actNewCopy("err_preview"));
+      setError(actNewCopy("err_preview"));
       setPreview([]);
     } finally {
       setBusy(false);
@@ -229,7 +229,7 @@ export default function TeacherNewActivityPage({ classId }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || actNewCopy("err_save"));
+        setError(apiErrorMessageHe(json?.error, actNewCopy("err_save")));
         return;
       }
       const activityId = json?.data?.activityId;

@@ -41,6 +41,8 @@ import {
   SCHOOL_CREATE_STUDENT_SECTION,
   SCHOOL_CREATE_STUDENT_SUBMIT,
   SCHOOL_CREATE_STUDENT_SUCCESS,
+  SCHOOL_CREATE_CHILD_FAILED,
+  SCHOOL_NETWORK_ERROR,
 } from "../../lib/school-portal/school-ui.js";
 
 function hasAdminProfileInput(form) {
@@ -115,7 +117,7 @@ export default function SchoolStudentCreateForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Failed to create child"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_CREATE_CHILD_FAILED));
         return;
       }
 
@@ -155,7 +157,7 @@ export default function SchoolStudentCreateForm({
       setShowOptionalDetails(false);
       onSuccess?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy(false);
     }

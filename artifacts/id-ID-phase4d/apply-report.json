@@ -1,0 +1,18 @@
+{
+  "filesWritten": 59,
+  "dictSize": 1693,
+  "stats": {
+    "translated": 2768,
+    "retainedTech": 383,
+    "retainedIntentional": 5,
+    "retainedBrand": 1,
+    "retainedFormula": 0,
+    "identicalLoan": 25,
+    "missing": [],
+    "placeholderMismatch": [],
+    "missingCount": 0,
+    "missingSample": [],
+    "placeholderMismatchCount": 0
+  },
+  "schemaDefects": []
+}

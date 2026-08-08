@@ -13,37 +13,46 @@ import {
 } from "../../../lib/learning/subject-permissions/subject-access.server.js";
 import { wrapMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 
+/**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
+
 async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   }
 
   const studentId = safeUuid(req.body?.studentId);
   const isActiveRaw = req.body?.isActive;
 
   if (!studentId) {
-    return res.status(400).json({ ok: false, error: "studentId is required" });
+    return fail(res, 400, "student_id_required");
   }
 
   const patch = {};
   if (req.body?.fullName != null && String(req.body.fullName).trim() !== "") {
     const fullNameParsed = parseBoundedTrimmedString(req.body.fullName, MAX_PARENT_STUDENT_NAME_LEN);
     if (!fullNameParsed.ok) {
-      return res.status(400).json({ ok: false, error: "fullName too long" });
+      return fail(res, 400, "full_name_too_long");
     }
     patch.full_name = fullNameParsed.value;
   }
   if (req.body?.gradeLevel != null && String(req.body.gradeLevel).trim() !== "") {
     const gradeParsed = parseBoundedTrimmedString(req.body.gradeLevel, MAX_PARENT_GRADE_LEVEL_LEN);
     if (!gradeParsed.ok) {
-      return res.status(400).json({ ok: false, error: "gradeLevel too long" });
+      return fail(res, 400, "grade_level_too_long");
     }
     patch.grade_level = gradeParsed.value;
   }
   if (typeof isActiveRaw === "boolean") patch.is_active = isActiveRaw;
 
   if (Object.keys(patch).length === 0) {
-    return res.status(400).json({ ok: false, error: "No fields to update" });
+    return fail(res, 400, "no_fields_to_update");
   }
 
   try {
@@ -57,9 +66,12 @@ async function handler(req, res) {
       select: "id,grade_level,product_id,parent_id",
     });
     if (!owned.ok) {
+      const code =
+        (typeof owned.error === "string" && owned.error) || "update_student_failed";
       return res.status(owned.status || 403).json({
         ok: false,
-        error: owned.error || "Could not update student",
+        error: code,
+        code,
         message: owned.message,
       });
     }
@@ -77,7 +89,7 @@ async function handler(req, res) {
         gradeLevel: patch.grade_level,
       });
       if (rpcResult.error && !isSchemaNotReadyError(rpcResult.error)) {
-        return res.status(403).json({ ok: false, error: "Could not update student grade" });
+        return fail(res, 403, "update_student_grade_failed");
       }
       delete patch.grade_level;
     }
@@ -88,7 +100,7 @@ async function handler(req, res) {
         .select("id,full_name,grade_level,is_active,created_at")
         .eq("id", studentId)
         .single();
-      if (error) return res.status(403).json({ ok: false, error: "Could not update student" });
+      if (error) return fail(res, 403, "update_student_failed");
       return res.status(200).json({ ok: true, student: data });
     }
 
@@ -101,12 +113,12 @@ async function handler(req, res) {
       .single();
 
     if (error) {
-      return res.status(403).json({ ok: false, error: "Could not update student" });
+      return fail(res, 403, "update_student_failed");
     }
 
     return res.status(200).json({ ok: true, student: data });
   } catch (_e) {
-    return res.status(500).json({ ok: false, error: "Unexpected server error" });
+    return fail(res, 500, "unexpected_server_error");
   }
 }
 

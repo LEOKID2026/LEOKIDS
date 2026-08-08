@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "grade_student": "Nilai murid",
+    "saved_and_marked_as_reviewed": "Disimpan dan ditandai sudah ditinjau",
+    "progress_saved": "Progres disimpan",
+    "published_to_student": "Dipublikasikan ke murid · Skor: {score}%",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  }
+}

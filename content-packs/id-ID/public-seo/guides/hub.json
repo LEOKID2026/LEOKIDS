@@ -1,0 +1,50 @@
+{
+  "seoKey": "guides-hub",
+  "slug": "hub",
+  "displayTitle": "Panduan untuk orang tua",
+  "badge": "Panduan untuk orang tua",
+  "h1": "Panduan praktis untuk latihan dan belajar di rumah",
+  "intro": "Panduan singkat dan praktis untuk membantu Anda memilih topik, membangun rutinitas di rumah, memahami progres, dan menggabungkan latihan digital, gim belajar, serta lembar kerja saat cocok.",
+  "hubCardsHeading": "Pilih panduan menurut tujuan",
+  "sections": [
+    {
+      "title": "Cara menggunakan panduan ini",
+      "paragraphs": [
+        "Pilih panduan yang sesuai dengan tujuan Anda saat ini. Anda dapat mulai dengan latihan di satu mata pelajaran, membangun rutinitas di rumah, memahami laporan progres, atau memilih topik untuk diperkuat. Anda tidak perlu melakukan semuanya sekaligus."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bagaimana cara memilih panduan yang tepat?",
+      "a": "Pilih menurut tujuan Anda saat ini: latihan di satu mata pelajaran, membangun rutinitas di rumah, memahami laporan, atau memilih topik untuk diperkuat. Mulai dengan satu panduan dan lanjut ke yang lain kemudian."
+    },
+    {
+      "q": "Bisakah saya langsung dari panduan ke latihan?",
+      "a": "Ya. Panduan menautkan ke area latihan, gim belajar, laporan orang tua, dan lembar kerja berdasarkan topik."
+    },
+    {
+      "q": "Haruskah saya menggunakan beberapa panduan sekaligus?",
+      "a": "Bisa, tetapi lebih baik mulai dengan satu tujuan yang jelas. Setelah Anda melihat apa yang cocok untuk anak Anda, tambahkan jalur latihan atau panduan lain."
+    },
+    {
+      "q": "Di mana saya dapat melihat progres anak saya?",
+      "a": "Di portal orang tua, Anda dapat melihat aktivitas yang selesai, mata pelajaran dan topik yang dilatih, jawaban, serta pola dari waktu ke waktu."
+    }
+  ],
+  "relatedPracticePath": "/practice",
+  "practiceCtaLabel": "Semua area latihan",
+  "relatedGuideSlugs": [],
+  "footerCta": {
+    "title": "Pilih panduan dan ambil satu langkah",
+    "body": "Anda tidak perlu mengubah seluruh rutinitas belajar dalam satu hari. Pilih satu tujuan, coba selama beberapa hari, dan lihat apa yang cocok untuk anak Anda.",
+    "primary": {
+      "href": "/practice",
+      "label": "Latihan menurut mata pelajaran"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

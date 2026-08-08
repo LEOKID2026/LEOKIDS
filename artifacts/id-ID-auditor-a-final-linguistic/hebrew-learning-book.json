@@ -1,0 +1,167 @@
+﻿[
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  13,
+        "snippet":  "| Dibagi section 7 heading | **Approved untuk draf gunakan:** `בואו נתרגל!` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  17,
+        "snippet":  "| `add_second_decade` title | **Draf gunakan:** `חיבור בעשרייה השנייה — מספרים בין 11 ל־19` (simpan concept \" \", anak-clear) |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  18,
+        "snippet":  "| Sepuluh-frame term | **Draf gunakan:** `מסגרת עשר` (standardized; tidak \" 10\") |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  19,
+        "snippet":  "| Tempat-nilai blocks | **Draf gunakan:** `מקל עשרת`, `קוביות בודדות` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  25,
+        "snippet":  "| Yang hilang-bilangan language | **Draf gunakan:** `מספר חסר`, `מקום ריק` — tidak variables/algebra |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  26,
+        "snippet":  "| Yang hilang-bilangan titles | **Draf gunakan:** `משפט חיבור/חיסור עם מספר חסר` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  78,
+        "snippet":  "- `ns_place_tens_units`: dua-digit bilangan sampai 30; `מקל עשרת` / `קוביות בודדות`; tidak expanded `+` notation as main penjelasan"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  80,
+        "snippet":  "- `ns_complement10`: pasangan summing ke 10; visual term **`מסגרת עשר`**"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  81,
+        "snippet":  "- `add_second_decade`: title **`חיבור בעשרייה השנייה — מספרים בין 11 ל־19`**; \"selesaikan ke 10\" strategy; max jumlah 20"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  82,
+        "snippet":  "- `add_tens_only`: **10, 20, 30 hanya**; max jumlah 30; wording **`בכיתה א\u0027 נשתמש בעשרות 10, 20 ו־30`**"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  90,
+        "snippet":  "| `add_second_decade` title | Updated ke **`חיבור בעשרייה השנייה — מספרים בין 11 ל־19`**; anak-clear penjelasan dari di seluruh |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  91,
+        "snippet":  "| Sepuluh-frame term | Standardized ke **`מסגרת עשר`** (`ns_complement10.md`) |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  92,
+        "snippet":  "| Tempat-nilai terms | Standardized ke **`מקל עשרת`**, **`קוביות בודדות`**; dihapus `10 + 7` style as main penjelasan |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  124,
+        "snippet":  "- `eq_add_simple`: yang hilang bilangan as puzzle; `__` / `מספר חסר`; links ke `מסגרת עשר` di mana helpful"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  144,
+        "snippet":  "| `add_two.md` | `שני כמויות` → **`שתי כמויות`**; persekutuan-mistake section clarified (pertama bilangan counted as pertama jump) |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  146,
+        "snippet":  "| `eq_add_simple.md` | `לעוד` → **`להוסיף`** |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  148,
+        "snippet":  "| `mul.md` | Dihapus anak-facing **`גורמים`**; cakupan wording **`בכיתה א\u0027 נשתמש בכפל קטן: קבוצות עד 5, והתוצאה עד 20`** |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  154,
+        "snippet":  "**Simpan-maju polish:** `add_two.md` worked contoh — `ספרו את הכל` → **`ספרו עוד 3 אחרי 5: 6, 7, 8`**"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  258,
+        "snippet":  "| `add_second_decade` title | `חיבור בעשרייה השנייה — מספרים בין 11 ל־19` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  259,
+        "snippet":  "| Sepuluh-frame | `מסגרת עשר` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  260,
+        "snippet":  "| Tempat nilai | `מקל עשרת`, `קוביות בודדות` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  268,
+        "snippet":  "| Yang hilang-bilangan titles | `משפט חיבור/חיסור עם מספר חסר` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  269,
+        "snippet":  "| Yang hilang-bilangan language | `מספר חסר`, `מקום ריק` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  283,
+        "snippet":  "| Kata-soal reading frame | `מה יודעים?` / `מה מבקשים?` / `מה עושים?` pada semua 4 halaman |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+        "line":  285,
+        "snippet":  "| `wp_coins_spent` title | Draf: `שאלות מילוליות — כמה נשאר או עודף` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  194,
+        "snippet":  "| `add_two` | Grammar: `מחברים את שתי התוצאות` (feminine plural) |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  195,
+        "snippet":  "| `wp_coins_spent` | Wording: `יותר מהמחיר`; Section 6: `לחסר` (tidak `לחסור`) |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  196,
+        "snippet":  "| `wp_division_simple` | Clarity: `חלק שווה`; `באופן שווה בין … ילדים` (§4 + §5) |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  214,
+        "snippet":  "| Matematika Master | General 📖 ubin (g2 hanya), `הסבר בספר`, di-pembelajaran `📖 הסבר` |"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  217,
+        "snippet":  "**Anak-facing UI:** `ספר חשבון — כיתה ב׳` · tidak `[DRAFT]` markers · tidak internal metadata."
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  222,
+        "snippet":  "- Setup `הסבר בספר` hidden untuk umbrella ops: `number_sense`, `word_problems`, `fractions`, `mixed`"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+        "line":  223,
+        "snippet":  "- Di-pembelajaran `📖 הסבר` hidden ketika kind/operation cannot resolve ke tunggal G2 halaman"
+    },
+    {
+        "file":  "docs\\learning-book\\id-ID\\math\\g4\\drafts\\README.md",
+        "line":  57,
+        "snippet":  "| `one_mul.md` | כפל ב-1 |"
+    }
+]

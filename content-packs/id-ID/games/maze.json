@@ -1,0 +1,11 @@
+{
+  "gameId": "maze",
+  "title": "Labirin Leo",
+  "blurb": "Temukan pintu keluar labirin sebelum waktu habis!",
+  "help": {
+    "howToPlay": "Gerakkan Leo di labirin, kumpulkan kunci dan bintang, dan temukan pintu keluar sebelum waktu habis.",
+    "scoring": "Kunci, bintang, dan berlian menambah poin. Menyelesaikan labirin memberi bonus besar. Jika waktu habis — gim berakhir.",
+    "rewards": "Berhasil menyelesaikan labirin sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+    "tip": "Kumpulkan kunci dulu — kadang kunci membuka jalur yang lebih pendek."
+  }
+}

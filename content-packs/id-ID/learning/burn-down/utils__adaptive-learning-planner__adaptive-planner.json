@@ -1,0 +1,26 @@
+{
+  "copy": {
+    "not_enough_context_to_plan_missing_subject": "Konteks belum cukup untuk merencanakan (mata pelajaran hilang).",
+    "more_learning_activity_is_needed_before_suggesting_a_next_focus": "Diperlukan lebih banyak aktivitas belajar sebelum menyarankan fokus berikutnya.",
+    "the_learning_system_needs_a_bit_more_practice_data_before_suggesting_the": "Sistem belajar memerlukan sedikit lebih banyak data latihan sebelum menyarankan langkah berikutnya.",
+    "collect_a_few_more_practice_items_conclusions_are_deferred": "Kumpulkan beberapa item latihan lagi; kesimpulan ditunda.",
+    "english_practice_can_continue_but_skill_routing_should_be_confirmed_by_a": "Latihan Bahasa Inggris dapat dilanjutkan, tetapi pengarahan keterampilan sebaiknya dikonfirmasi oleh guru.",
+    "english_tagging_is_incomplete_in_the_content_bank_planner_will_not_auto_": "Penandaan Bahasa Inggris belum lengkap di bank konten; perencana tidak akan mengarahkan keterampilan secara otomatis secara detail.",
+    "waiting_on_verified_question_metadata_before_suggesting_an_advanced_path": "Menunggu metadata pertanyaan yang terverifikasi sebelum menyarankan jalur lanjutan.",
+    "skill_metadata_for_the_next_step_is_not_confirmed_hold_automatic_advance": "Metadata keterampilan untuk langkah berikutnya belum dikonfirmasi; tahan kemajuan otomatis.",
+    "short_probe_to_verify_understanding_versus_guessing": "Probe singkat untuk memverifikasi pemahaman versus menebak.",
+    "inconsistent_or_guess_heavy_signals_use_a_small_diagnostic_set": "Sinyal tidak konsisten atau banyak menebak — gunakan set diagnostik kecil.",
+    "extra_practice_on_the_current_skill_at_a_supportive_difficulty": "Latihan tambahan pada keterampilan saat ini pada tingkat yang mendukung.",
+    "targeted_practice_on_the_same_skill_difficulty_held_or_lowered_slightly": "Latihan terarah pada keterampilan yang sama; tingkat kesulitan dipertahankan atau sedikit diturunkan.",
+    "brief_review_of_a_foundation_skill_that_supports_the_current_topic": "Tinjauan singkat keterampilan dasar yang mendukung topik saat ini.",
+    "strengthen_a_prerequisite_skill_before_pushing_the_main_skill_harder": "Perkuat keterampilan prasyarat sebelum mendorong keterampilan utama lebih keras.",
+    "ready_for_slightly_more_challenging_practice_on_the_same_skill_line": "Siap untuk latihan yang sedikit lebih menantang pada jalur keterampilan yang sama.",
+    "signals_support_cautious_difficulty_increase_with_monitoring": "Sinyal mendukung kenaikan kesulitan secara hati-hati dengan pemantauan.",
+    "continue_solid_practice_at_the_current_level": "Lanjutkan latihan yang solid pada tingkat saat ini.",
+    "maintain_current_difficulty_while_consolidating_mastery": "Pertahankan kesulitan saat ini sambil mengonsolidasikan penguasaan.",
+    "review_style_practice_on_the_current_skill": "Latihan bergaya tinjauan pada keterampilan saat ini.",
+    "engine_suggests_review_planner_aligns_with_same_skill_practice": "Mesin menyarankan tinjauan; perencana selaras dengan latihan keterampilan yang sama.",
+    "steady_practice_on_the_current_focus": "Latihan stabil pada fokus saat ini.",
+    "default_safe_path_continue_practice_without_advancing_difficulty": "Jalur aman bawaan: lanjutkan latihan tanpa menaikkan kesulitan."
+  }
+}

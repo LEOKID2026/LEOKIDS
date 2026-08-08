@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "server_error": "Kesalahan server",
+    "server_error_try_refreshing_the_page": "Kesalahan server — coba segarkan halaman."
+  }
+}

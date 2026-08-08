@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "the_subject_fallback": "mata pelajaran tersebut",
+    "little_practice_opening": "Latihan pada {lab} masih sedikit pada periode ini, sehingga kesimpulan umum belum dapat diambil. Akan membantu untuk melanjutkan dengan latihan singkat dan memeriksa apakah arah ini tetap berlaku setelah lebih banyak soal.",
+    "practice_no_topic_detail_opening": "Ada latihan pada {lab}, tetapi detail per topik belum cukup untuk menunjukkan kesimpulan yang tepat. Akan membantu untuk melanjutkan dengan latihan singkat, dan pada laporan berikutnya akan lebih mudah untuk melihat apa yang berulang.",
+    "focus_first_two_topics": "Pada {lab}, ada baiknya fokus dulu ke {topic0}. {questions0} soal telah dikerjakan, dengan akurasi {accuracy0}%. Topik lain yang perlu diperhatikan adalah {topic1}, dengan {questions1} soal dan akurasi {accuracy1}%.",
+    "focus_now_one_topic": "Pada {lab}, ada baiknya fokus sekarang ke {topic}. {questions} soal telah dikerjakan, dengan akurasi {accuracy}%.",
+    "main_pattern_seen": "Pola utama yang terlihat: {pattern}."
+  }
+}

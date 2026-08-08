@@ -69,7 +69,7 @@ function normalizeMetrics(raw) {
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
   }
 
   if (guardCookieMutationOrigin(req, res)) return;
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
     const auth = await getAuthenticatedStudentSession(req);
     if (!auth) {
       clearStudentSessionCookie(res);
-      return res.status(401).json({ ok: false, error: "Not authenticated" });
+      return res.status(401).json({ ok: false, error: "not_authenticated", code: "not_authenticated" });
     }
 
     const body = await readJsonBody(req);
@@ -87,24 +87,26 @@ export default async function handler(req, res) {
     const metrics = normalizeMetrics(body?.metrics);
 
     if (!sessionId) {
-      return res.status(400).json({ ok: false, error: "Game ID is missing" });
+      return res.status(400).json({ ok: false, error: "missing_game_id", code: "missing_game_id" });
     }
     if (!metrics || !Number.isFinite(metrics.score)) {
-      return res.status(400).json({ ok: false, error: "Invalid game data" });
+      return res.status(400).json({ ok: false, error: "invalid_game_data", code: "invalid_game_data" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();
     const loaded = await loadActiveSoloGameSession(supabase, sessionId, auth.studentId);
     if (!loaded.ok) {
-      return res.status(404).json({ ok: false, error: loaded.message, code: loaded.code });
+      const code = loaded.code || "not_found";
+      return res.status(404).json({ ok: false, error: code, code });
     }
 
     const access = await assertStudentCanPlayGame(supabase, auth.studentId, loaded.session.game_key);
     if (!access.ok) {
+      const code = access.code || "forbidden";
       return res.status(access.status || 403).json({
         ok: false,
-        error: access.message,
-        code: access.code,
+        error: code,
+        code,
         category: access.category,
       });
     }
@@ -113,7 +115,8 @@ export default async function handler(req, res) {
     const serverDurationMs = computeServerDurationMs(loaded.session.started_at, finishedAt);
     const durationCheck = validatePlayDurationMs(serverDurationMs);
     if (!durationCheck.ok) {
-      return res.status(400).json({ ok: false, error: durationCheck.message, code: durationCheck.code });
+      const code = durationCheck.code || "invalid_game_data";
+      return res.status(400).json({ ok: false, error: code, code });
     }
 
     metrics.durationMs = serverDurationMs;
@@ -128,7 +131,8 @@ export default async function handler(req, res) {
     if (!result.ok) {
       const status =
         result.code === "invalid_metrics" ? 400 : result.code === "coin_failed" ? 500 : 400;
-      return res.status(status).json({ ok: false, error: result.message, code: result.code });
+      const code = result.code || "finish_failed";
+      return res.status(status).json({ ok: false, error: code, code });
     }
 
     return res.status(200).json({
@@ -149,6 +153,6 @@ export default async function handler(req, res) {
     if (e?.name === "EconomyUnavailableError") {
       return res.status(503).json(economyUnavailableHttpResponse(e));
     }
-    return res.status(500).json({ ok: false, error: "Server error" });
+    return res.status(500).json({ ok: false, error: "server_error", code: "server_error" });
   }
 }

@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "fruit_slice": "Iris Buah",
+    "prototype_swipe_slice_no_full_scoring": "Prototipe · geser / iris · tanpa skor penuh",
+    "slice_fruit_avoid_mouse_or_finger": "Iris buah · hindari 💣 · mouse atau jari",
+    "f_y_120_f_y": "f.y > -120 && f.y"
+  }
+}

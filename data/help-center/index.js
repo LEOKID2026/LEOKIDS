@@ -312,6 +312,11 @@ import {
   BY_SECTION_EN_GM,
   SECTIONS_EN_GM,
 } from "./en-GM/index.js";
+import {
+  ALL_ARTICLES_ID_ID,
+  BY_SECTION_ID_ID,
+  SECTIONS_ID_ID,
+} from "./id-ID/index.js";
 
 export {
   ALL_ARTICLES_ES_419,
@@ -398,6 +403,8 @@ export {
   SECTIONS_EN_SCT,
   ALL_ARTICLES_EN_NIR,
   SECTIONS_EN_NIR,
+  ALL_ARTICLES_ID_ID,
+  SECTIONS_ID_ID,
 };
 
 export const SECTIONS = {
@@ -507,6 +514,7 @@ export function resolveHelpLocale(locale) {
   if (id === "de-at") return "de-AT";
   if (id === "de-ch") return "de-CH";
   if (id === "de-de" || id === "de") return "de-DE";
+  if (id === "id-id") return "id-ID";
   if (id === "ru-kz") return "ru-KZ";
   if (id === "ru-uz") return "ru-UZ";
   if (id === "ru-kg") return "ru-KG";
@@ -581,6 +589,7 @@ export function getHelpSections(locale) {
   if (helpLocale === "de-AT") return SECTIONS_DE_AT;
   if (helpLocale === "de-CH") return SECTIONS_DE_CH;
   if (helpLocale === "de-DE") return SECTIONS_DE_DE;
+  if (helpLocale === "id-ID") return SECTIONS_ID_ID;
   if (helpLocale === "ru-KZ") return SECTIONS_RU_RU;
   if (helpLocale === "ru-UZ") return SECTIONS_RU_RU;
   if (helpLocale === "ru-KG") return SECTIONS_RU_RU;
@@ -747,6 +756,9 @@ export function listArticles(section, locale) {
   if (helpLocale === "de-DE") {
     return BY_SECTION_DE_DE[section] || [];
   }
+  if (helpLocale === "id-ID") {
+    return BY_SECTION_ID_ID[section] || [];
+  }
   if (helpLocale === "ru-KZ") {
     return BY_SECTION_RU_KZ[section] || [];
   }
@@ -878,6 +890,7 @@ export function assertAllArticlesValid() {
     { locale: "fr-FR", articles: ALL_ARTICLES_FR_FR },
     { locale: "nl-NL", articles: ALL_ARTICLES_NL_NL },
     { locale: "de-DE", articles: ALL_ARTICLES_DE_DE },
+    { locale: "id-ID", articles: ALL_ARTICLES_ID_ID },
     { locale: "ru-RU", articles: ALL_ARTICLES_RU_RU },
     { locale: "ar-001", articles: ALL_ARTICLES_AR_001 },
     { locale: "ar-EG", articles: ALL_ARTICLES_AR_EG },

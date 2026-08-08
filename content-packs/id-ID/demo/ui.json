@@ -1,0 +1,126 @@
+{
+  "bar": {
+    "badge": "Mode demo",
+    "gradeLabel": "Kelas",
+    "playExpired": "Waktu untuk mulai baru sudah berakhir",
+    "playTime": "Waktu bermain",
+    "minutesUnit": "mnt",
+    "changeGrade": "Ubah kelas",
+    "exitDemo": "Keluar demo"
+  },
+  "enter": {
+    "pageTitle": "Mode demo — LEO KIDS",
+    "pageDescription": "Coba dunia anak tanpa mendaftar",
+    "heading": "Mode demo orang tua",
+    "intro": "Pilih kelas dan jelajahi dunia anak. {minutes} menit bermain dan belajar — tanpa daftar.",
+    "activeSessionNote": "Kamu punya demo aktif — mengubah kelas tidak akan mengatur ulang timer.",
+    "chooseGradeLegend": "Pilih kelas",
+    "enterButton": "Masuk ke dunia anak",
+    "enteringButton": "Masuk…"
+  },
+  "homeButton": {
+    "labelDesktop": "Coba dunia anak",
+    "labelMobile": "Demo",
+    "ariaLabel": "Coba dunia anak — mode demo",
+    "dismissAriaLabel": "Tombol tutup demo"
+  },
+  "gate": {
+    "loading": "Memuat mode demo…",
+    "loadError": "Tidak bisa memuat mode demo. Coba muat ulang halaman."
+  },
+  "timeExpiredModal": {
+    "title": "Waktu demo habis",
+    "body": "{minutes} menit telah berlalu sejak demo dimulai. Kamu masih bisa menjelajahi dunia anak, tapi tidak bisa memulai gim atau aktivitas baru.",
+    "inProgressNote": "Gim atau aktivitas yang sudah berjalan akan lanjut sampai selesai.",
+    "dismiss": "Mengerti",
+    "restart": "Mulai demo baru"
+  },
+  "onlineGameUnavailable": {
+    "title": "Gim daring tidak tersedia di mode demo",
+    "body": "Di mode demo kamu bisa melihat arkade dan gimnya, tapi multiplayer daring tidak aktif.",
+    "backToArcade": "Kembali ke arkade"
+  },
+  "display": {
+    "studentName": "Mode demo",
+    "greeting": "Selamat datang di mode demo",
+    "arcadePlayerName": "Pemain demo",
+    "myRoomMessage": "Kamarku — pratinjau demo",
+    "learningMinutesScope": "Dari ringkasan sesi (demo)",
+    "allSubjectsScope": "Semua mata pelajaran",
+    "encouragement": "Terus berlatih — ini demo!",
+    "lifetimeMinutesDisplay": "120",
+    "monthlyMinutesDisplay": "8"
+  },
+  "missions": {
+    "mathTitle": "Latihan matematika",
+    "mathDescription": "Jawab 5 soal matematika",
+    "soloTitle": "Gim solo",
+    "soloDescription": "Mainkan satu gim solo",
+    "tier5": "5 menit",
+    "tier15": "15 menit",
+    "tier30": "30 menit"
+  },
+  "subjects": {
+    "math": "Matematika",
+    "geometry": "Geometri",
+    "english": "Bahasa Inggris",
+    "science": "Sains"
+  },
+  "cards": {
+    "purchaseBlocked": "Pembelian tidak tersedia di mode demo.",
+    "sellBlocked": "Menjual kartu tidak tersedia di mode demo.",
+    "loadFailed": "Tidak bisa memuat kartu."
+  },
+  "arcade": {
+    "actionBlocked": "Tindakan ini tidak tersedia di mode demo.",
+    "quickPlayBlocked": "Main cepat tidak tersedia di mode demo."
+  },
+  "activity": {
+    "classroomUnavailable": "Aktivitas kelas tidak tersedia di mode demo."
+  },
+  "worksheet": {
+    "pageTitle": "Lembar kerja — mode demo",
+    "intro": "Kamu bisa melihat lembar kerja dari daftar di beranda. Pengiriman digital tidak tersedia di mode demo.",
+    "backHome": "← Kembali ke beranda",
+    "submitBlocked": "Pengiriman tidak tersedia di mode demo."
+  },
+  "myRoom": {
+    "title": "Kamarku",
+    "saveBlocked": "Menyimpan tidak tersedia di mode demo."
+  },
+  "friends": {
+    "demoUnavailable": "Teman dan nomor Leo — pratinjau demo. Menambah teman dan undangan tidak tersedia."
+  },
+  "grades": {
+    "g1": "Kelas 1",
+    "g2": "Kelas 2",
+    "g3": "Kelas 3",
+    "g4": "Kelas 4",
+    "g5": "Kelas 5",
+    "g6": "Kelas 6"
+  },
+  "parentPortal": {
+    "barBadge": "Mode demo orang tua",
+    "barSubtitle": "Hanya lihat · 3 anak contoh",
+    "barExit": "Keluar demo",
+    "dashboardSubtitle": "Mode demo — portal orang tua",
+    "homeParentLabelLine1": "Orang tua",
+    "homeParentLabelLine2": "demo",
+    "homeParentAriaLabel": "Demo orang tua — portal hanya lihat",
+    "homeParentDismissAriaLabel": "Tombol tutup demo orang tua",
+    "enterPageTitle": "Demo orang tua — LEO KIDS",
+    "enterPageDescription": "Jelajahi portal orang tua dengan anak contoh, laporan, dan rekomendasi — hanya lihat",
+    "enterHeading": "Demo portal orang tua",
+    "enterBack": "Kembali",
+    "enterIntro": "Jelajahi portal orang tua dengan 3 anak contoh, laporan, aktivitas, dan rekomendasi — hanya lihat, tanpa daftar.",
+    "enterActiveSessionNote": "Kamu punya demo orang tua aktif — kamu bisa lanjut dari tempat terakhir.",
+    "enterReadOnlyNote": "Perubahan tidak bisa disimpan di mode ini.",
+    "enterButton": "Masuk ke portal orang tua",
+    "enteringButton": "Masuk…",
+    "enterBackHome": "Kembali ke beranda",
+    "readOnlyDefault": "Mode demo hanya untuk melihat. Perubahan tidak bisa disimpan.",
+    "readOnlyShare": "Mode demo — berbagi di luar demo tidak tersedia.",
+    "readOnlyWorksheets": "Mode demo — kamu bisa melihat lembar kerja, tapi tidak bisa membuat yang baru.",
+    "apiReadOnlyError": "Mode demo hanya untuk melihat."
+  }
+}

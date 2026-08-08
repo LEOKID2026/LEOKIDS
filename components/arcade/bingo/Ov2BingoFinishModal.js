@@ -1,7 +1,10 @@
 "use client";
 
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
 import { BINGO_PRIZE_KEYS } from "../../../lib/arcade/bingo/ov2BingoEngine";
 import Ov2SharedFinishModalFrame from "./Ov2SharedFinishModalFrame";
+
+const SLUG = "components__arcade__bingo__Ov2BingoFinishModal";
 
 const BTN_PRIMARY =
   "rounded-lg border border-emerald-500/24 bg-gradient-to-b from-emerald-950/65 to-emerald-950 px-3 py-2 text-[11px] font-semibold text-emerald-100/72 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_3px_10px_rgba(0,0,0,0.26)] transition-[transform,opacity] active:scale-[0.98] disabled:opacity-45";
@@ -67,20 +70,24 @@ export default function Ov2BingoFinishModal({
 
   const claimsTotal = (claims || []).reduce((s, c) => s + Math.floor(Number(c.amount) || 0), 0);
 
-  const finishTitle = isWalkover ? "Victory" : winner?.participantKey ? "Round over" : "The game has ended";
+  const finishTitle = isWalkover
+    ? gamePackCopy(SLUG, "victory")
+    : winner?.participantKey
+      ? gamePackCopy(SLUG, "round_over")
+      : gamePackCopy(SLUG, "game_has_ended");
   const finishMultiplier = 1;
 
   const settlementText = () => {
-    if (isWalkover) return `+${walkoverAmt} coins`;
-    if (claimsTotal > 0) return `+${claimsTotal.toLocaleString()} coins (prizes)`;
+    if (isWalkover) return gamePackCopy(SLUG, "coins_amount", { amount: walkoverAmt });
+    if (claimsTotal > 0) return gamePackCopy(SLUG, "coins_prizes", { amount: claimsTotal.toLocaleString() });
     return "-";
   };
 
   const reasonLine = isWalkover
-    ? `Last one standing — ${winner?.name || winner?.participantKey || "Winner"}`
+    ? gamePackCopy(SLUG, "last_one_standing", { name: winner?.name || winner?.participantKey || gamePackCopy(SLUG, "winner") })
     : winner?.participantKey
-      ? `Winner: ${winner.name || winner.participantKey}`
-      : "The game has ended";
+      ? `${gamePackCopy(SLUG, "winner")}: ${winner.name || winner.participantKey}`
+      : gamePackCopy(SLUG, "game_has_ended");
 
   const finishLocked = vaultClaimBusy;
 
@@ -108,7 +115,7 @@ export default function Ov2BingoFinishModal({
             {isWalkover ? "🏆" : "⎔"}
           </span>
           <div className="min-w-0 flex-1 text-left">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Round result</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">{gamePackCopy(SLUG, "round_result")}</p>
             <h2
               id="ov2-bingo-finish-title"
               className={[
@@ -121,10 +128,10 @@ export default function Ov2BingoFinishModal({
             >
               {finishTitle}
             </h2>
-            <p className="mt-2 text-[10px] font-medium uppercase tracking-wide text-zinc-500">Table multiplier</p>
+            <p className="mt-2 text-[10px] font-medium uppercase tracking-wide text-zinc-500">{gamePackCopy(SLUG, "table_multiplier")}</p>
             <p className="mt-0.5 text-sm font-semibold tabular-nums text-zinc-400">×{finishMultiplier}</p>
             <div className="mt-3 rounded-lg border border-white/[0.1] bg-black/25 px-2.5 py-2.5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">Payout</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">{gamePackCopy(SLUG, "payout")}</p>
               <p
                 className={`mt-2 text-center text-xl font-bold tabular-nums leading-tight sm:text-2xl ${
                   isWalkover || claimsTotal > 0 ? "font-semibold tabular-nums text-amber-200/95" : "text-zinc-500"
@@ -135,13 +142,13 @@ export default function Ov2BingoFinishModal({
             </div>
             <p className="mt-3 text-center text-[11px] leading-snug text-zinc-400">{reasonLine}</p>
             <p className="mt-2 text-center text-[10px] leading-snug text-zinc-500">
-              {finishLocked ? "Sending results to your balance…" : "Round over — request a rematch, then the host starts the next one."}
+              {finishLocked ? gamePackCopy(SLUG, "sending_results") : gamePackCopy(SLUG, "round_over_rematch_hint")}
             </p>
           </div>
         </div>
       </div>
       <div className="max-h-[min(50dvh,320px)] min-h-0 overflow-y-auto border-b border-white/[0.06] px-4 py-3">
-        <div className="font-semibold text-[10px] uppercase tracking-wide text-zinc-500">Prizes claimed</div>
+        <div className="font-semibold text-[10px] uppercase tracking-wide text-zinc-500">{gamePackCopy(SLUG, "prizes_claimed")}</div>
         <ul className="mt-2 space-y-1 text-[11px] leading-snug text-zinc-300 sm:text-xs">
           {BINGO_PRIZE_KEYS.map(pk => {
             const c = byKey[pk];
@@ -150,7 +157,7 @@ export default function Ov2BingoFinishModal({
               return (
                 <li key={pk} className="flex justify-between gap-2 border-b border-white/[0.06] py-0.5">
                   <span>{label}</span>
-                  <span className="text-zinc-500">Unclaimed</span>
+                  <span className="text-zinc-500">{gamePackCopy(SLUG, "unclaimed")}</span>
                 </li>
               );
             }
@@ -159,8 +166,10 @@ export default function Ov2BingoFinishModal({
               <li key={pk} className="flex justify-between gap-2 border-b border-white/[0.06] py-0.5">
                 <span>{label}</span>
                 <span className="text-left">
-                  <span className="text-zinc-100">{c.claimedByName || "Player"}</span>
-                  <span className="ml-1 font-mono text-amber-200/90">{amt} coins</span>
+                  <span className="text-zinc-100">{c.claimedByName || gamePackCopy(SLUG, "player")}</span>
+                  <span className="ml-1 font-mono text-amber-200/90">
+                    {gamePackCopy(SLUG, "coins_plain", { amount: amt })}
+                  </span>
                 </span>
               </li>
             );
@@ -174,7 +183,7 @@ export default function Ov2BingoFinishModal({
           disabled={rematchBusy || !canRequestRematch || finishLocked}
           onClick={() => void onRequestRematch()}
         >
-          {rematchBusy ? "Sending request…" : "Request rematch"}
+          {rematchBusy ? gamePackCopy(SLUG, "sending_request") : gamePackCopy(SLUG, "request_rematch")}
         </button>
         <button
           type="button"
@@ -182,25 +191,27 @@ export default function Ov2BingoFinishModal({
           disabled={rematchBusy || !canCancelRematch}
           onClick={() => void onCancelRematch()}
         >
-          Cancel rematch
+          {gamePackCopy(SLUG, "cancel_rematch")}
         </button>
         <div className="w-full overflow-hidden rounded-xl border border-emerald-500/20 bg-emerald-950/15 pt-2">
-          <p className="mb-1.5 px-2 text-[10px] font-semibold uppercase tracking-wide text-emerald-200/85">Host only</p>
+          <p className="mb-1.5 px-2 text-[10px] font-semibold uppercase tracking-wide text-emerald-200/85">
+            {gamePackCopy(SLUG, "host_only")}
+          </p>
           <button
             type="button"
             className={BTN_PRIMARY + " w-full rounded-none"}
             disabled={startNextBusy || !canStartNextMatch || finishLocked}
-            title={!isHost ? "Only the host can start the next game" : undefined}
+            title={!isHost ? gamePackCopy(SLUG, "only_host_can_start") : undefined}
             onClick={() => void onStartNext()}
           >
-            {startNextBusy ? "Starting…" : "Start next (host)"}
+            {startNextBusy ? gamePackCopy(SLUG, "starting") : gamePackCopy(SLUG, "start_next_host")}
           </button>
           <p className="px-2 py-1.5 text-center text-[11px] text-zinc-500">
-            The host starts a new game when all seated players request a rematch.
+            {gamePackCopy(SLUG, "host_starts_when_all_request")}
           </p>
         </div>
         <button type="button" className={BTN_SECONDARY + " w-full"} onClick={onDismiss}>
-          Close
+          {gamePackCopy(SLUG, "close")}
         </button>
         <button
           type="button"
@@ -208,7 +219,7 @@ export default function Ov2BingoFinishModal({
           disabled={exitBusy || !selfKey}
           onClick={() => void onLeaveTable()}
         >
-          {exitBusy ? "Leaving…" : "Leave table"}
+          {exitBusy ? gamePackCopy(SLUG, "leaving") : gamePackCopy(SLUG, "leave_table")}
         </button>
         {exitErr ? <p className="text-center text-[11px] text-red-300">{exitErr}</p> : null}
       </div>

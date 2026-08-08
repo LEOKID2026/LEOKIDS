@@ -14,7 +14,8 @@ import {
 } from "../../../lib/arcade/board-orientation";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
-const GAME_TITLE = "Chess";
+const SLUG = "components__arcade__chess__ChessScreen";
+const GAME_TITLE = gamePackCopy(SLUG, "chess");
 
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
@@ -32,7 +33,7 @@ function LeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 disabled:opacity-50 sm:max-w-sm"
       >
-        {busy ? "Leaving…" : "Leave"}
+        {busy ? gamePackCopy(SLUG, "leaving") : gamePackCopy(SLUG, "leave")}
       </button>
     </div>
   );
@@ -46,7 +47,7 @@ function Hud({ onBack, balance, onOpenHelp }) {
       className="relative z-20 flex w-full shrink-0 items-center gap-1.5 rounded-xl border border-white/[0.14] bg-gradient-to-b from-zinc-700/90 via-zinc-900/95 to-black/90 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_28px_rgba(0,0,0,0.45)] sm:gap-2 sm:px-2.5 sm:py-2"
     >
       <button type="button" onClick={onBack} className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}>
-        <span className="text-xs font-extrabold text-white sm:text-sm">Back</span>
+        <span className="text-xs font-extrabold text-white sm:text-sm">{gamePackCopy(SLUG, "back")}</span>
       </button>
       <div className="min-w-0 flex-1 text-center">
         <h1 className="truncate text-base font-extrabold text-white sm:text-lg">{GAME_TITLE}</h1>
@@ -57,7 +58,7 @@ function Hud({ onBack, balance, onOpenHelp }) {
         <img src="/images/coin.png" alt="" className="h-6 w-6 object-contain sm:h-7 sm:w-7" />
         <span className="font-mono text-sm font-bold text-amber-100 sm:text-base">{balance === null ? "…" : balance}</span>
       </div>
-      <button type="button" onClick={onOpenHelp} className={HUD_BTN_SQUARE} aria-label="Help">
+      <button type="button" onClick={onOpenHelp} className={HUD_BTN_SQUARE} aria-label={gamePackCopy(SLUG, "help")}>
         <span className="text-lg text-white/95">?</span>
       </button>
     </header>
@@ -69,15 +70,15 @@ function HowToModal({ open, onClose }) {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm" role="dialog">
-      <button type="button" className="absolute inset-0" aria-label="Close" onClick={onClose} />
+      <button type="button" className="absolute inset-0" aria-label={gamePackCopy(SLUG, "close")} onClick={onClose} />
       <div
         dir="ltr"
         className="relative z-[1] max-h-[85vh] w-full max-w-md overflow-y-auto rounded-2xl border border-white/15 bg-zinc-900 p-4 shadow-2xl"
       >
         <div className="mb-3 flex justify-between border-b border-white/10 pb-2">
-          <h2 className="text-lg font-bold text-white">How to play</h2>
+          <h2 className="text-lg font-bold text-white">{gamePackCopy(SLUG, "how_to_play")}</h2>
           <button type="button" onClick={onClose} className="text-sm text-zinc-300">
-            Close
+            {gamePackCopy(SLUG, "close")}
           </button>
         </div>
         <ul className="list-disc space-y-2 pr-5 text-sm text-zinc-200">
@@ -172,9 +173,9 @@ export default function ChessScreen({ roomId }) {
     for (const m of players || []) {
       const si = Number(m?.seat_index);
       if (si !== 0 && si !== 1) continue;
-      out[si] = String(m?.display_name ?? "").trim() || `Player ${si + 1}`;
+      out[si] = String(m?.display_name ?? "").trim() || gamePackCopy(SLUG, "player_n", { n: si + 1 });
     }
-    return [out[0] || "White", out[1] || "Black"];
+    return [out[0] || gamePackCopy(SLUG, "white"), out[1] || gamePackCopy(SLUG, "black")];
   }, [players]);
 
   const myColor = vm.mySeat === 0 ? "w" : vm.mySeat === 1 ? "b" : null;
@@ -208,7 +209,7 @@ export default function ChessScreen({ roomId }) {
 
       const matches = vm.legalMoves.filter((m) => m.from === pickSquare && m.to === sq);
       if (!matches.length) {
-        setErr("Illegal move");
+        setErr(gamePackCopy(SLUG, "illegal_move"));
         return;
       }
       const preferQ = matches.find((m) => m.promotion === "q") || matches[0];
@@ -223,8 +224,8 @@ export default function ChessScreen({ roomId }) {
   const didIWin = vm.mySeat != null && vm.winnerSeat != null && vm.winnerSeat === vm.mySeat;
   const flipBoard = shouldFlipChessBoard(vm.mySeat);
   const sideLabels = boardSideLabels(seatLabels, vm.mySeat, [
-    { seat: 0, color: "White" },
-    { seat: 1, color: "Black" },
+    { seat: 0, color: gamePackCopy(SLUG, "white") },
+    { seat: 1, color: gamePackCopy(SLUG, "black") },
   ]);
 
   return (
@@ -239,15 +240,15 @@ export default function ChessScreen({ roomId }) {
 
         {showLobbyWait ? (
           <div className="mt-6 rounded-xl border border-amber-500/30 bg-amber-950/25 px-4 py-6 text-center text-amber-100">
-            <p className="text-lg font-bold">Waiting for a player…</p>
-            <p className="mt-2 text-sm text-amber-200/90">Chess — two players</p>
+            <p className="text-lg font-bold">{gamePackCopy(SLUG, "waiting_for_a_player")}</p>
+            <p className="mt-2 text-sm text-amber-200/90">{gamePackCopy(SLUG, "chess_two_players")}</p>
           </div>
         ) : null}
 
         {showSessionInitError ? (
-          <p className="mt-4 text-center text-sm text-rose-200">Couldn't load the board — try refreshing</p>
+          <p className="mt-4 text-center text-sm text-rose-200">{gamePackCopy(SLUG, "could_not_load_board")}</p>
         ) : null}
-        {showBoardLoading ? <p className="mt-6 text-center text-zinc-400">Loading…</p> : null}
+        {showBoardLoading ? <p className="mt-6 text-center text-zinc-400">{gamePackCopy(SLUG, "loading")}</p> : null}
 
         {!showLobbyWait && snapshot ? (
           <>
@@ -256,7 +257,7 @@ export default function ChessScreen({ roomId }) {
             </p>
 
             {vm.inCheck && vm.phase === "playing" ? (
-              <p className="mt-2 text-center text-sm font-bold text-rose-300">Check!</p>
+              <p className="mt-2 text-center text-sm font-bold text-rose-300">{gamePackCopy(SLUG, "check")}</p>
             ) : null}
 
             <div className="mx-auto mt-2 w-full max-w-[min(96vw,420px)] border border-sky-900/40 p-1">
@@ -288,7 +289,7 @@ export default function ChessScreen({ roomId }) {
             </div>
 
             <p className="mt-2 text-center text-xs font-semibold text-sky-100/90 sm:text-sm">
-              {sideLabels.bottom.name} · {sideLabels.bottom.color} (You)
+              {sideLabels.bottom.name} · {sideLabels.bottom.color} {gamePackCopy(SLUG, "you")}
             </p>
 
             <div className="mt-4 space-y-2 text-center">
@@ -296,14 +297,20 @@ export default function ChessScreen({ roomId }) {
               {finished ? (
                 <p className="text-lg font-bold text-emerald-200">
                   {didIWin
-                    ? "You won!"
+                    ? gamePackCopy(SLUG, "you_won")
                     : vm.winnerSeat != null
-                      ? `Winner: ${seatLabels[vm.winnerSeat] || `Seat ${vm.winnerSeat + 1}`}`
-                      : "Draw"}
+                      ? seatLabels[vm.winnerSeat]
+                        ? gamePackCopy(SLUG, "winner_name", { name: seatLabels[vm.winnerSeat] })
+                        : gamePackCopy(SLUG, "winner_seat", { n: vm.winnerSeat + 1 })
+                      : gamePackCopy(SLUG, "draw")}
                 </p>
               ) : (
                 <p className="text-sm text-zinc-400">
-                  {vm.canClientMove ? "Pick a piece, then a target square" : busy ? "Sending…" : "Wait for your turn"}
+                  {vm.canClientMove
+                    ? gamePackCopy(SLUG, "pick_piece_then_target")
+                    : busy
+                      ? gamePackCopy(SLUG, "sending")
+                      : gamePackCopy(SLUG, "wait_for_your_turn")}
                 </p>
               )}
             </div>

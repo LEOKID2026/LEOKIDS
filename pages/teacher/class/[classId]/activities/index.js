@@ -11,7 +11,7 @@ import {
   activityModeLabelHe,
   activityStatusLabelHe,
 } from "../../../../../lib/classroom-activities/classroom-activities-labels.client.js";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 
 const ACT = "pages__teacher__class__[classId]__activities__index";
 function actCopy(key) {
@@ -49,7 +49,7 @@ export default function TeacherClassActivitiesPage({ classId }) {
         return;
       }
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || actCopy("error_loading"));
+        setError(apiErrorMessageHe(body?.error, actCopy("error_loading")));
         setPhase("error");
         return;
       }

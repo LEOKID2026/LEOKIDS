@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "tic_tac_toe": "Tic-Tac-Toe",
+    "boards_from_3_3_to_7_7_with_score_tracking": "Papan dari 3×3 sampai 7×7 dengan pelacakan skor.",
+    "rock_paper_scissors": "Batu · Kertas · Gunting",
+    "quick_rounds_best_of_all": "Putaran cepat — yang terbaik dari semua.",
+    "tap_battle": "Pertarungan Ketuk",
+    "each_side_taps_as_fast_as_they_can_who_wins": "Setiap sisi mengetuk secepat mungkin — siapa yang menang?",
+    "memory_match": "Cocok Memori",
+    "flip_cards_find_pairs_and_try_to_win": "Balik kartu, temukan pasangan, dan coba menang."
+  }
+}

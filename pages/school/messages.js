@@ -51,7 +51,7 @@ import {
   schoolMessageHasParentRecipients,
   schoolMessageHasTeacherRecipients,
 } from "../../lib/school-portal/school-messaging-ui";
-import { apiErrorMessageHe, schoolAuthFetch } from "../../lib/school-portal/school-ui.js";
+import { apiErrorMessageHe, schoolAuthFetch, SCHOOL_MESSAGES_LOAD_ERROR } from "../../lib/school-portal/school-ui.js";
 
 export default function SchoolMessagesPage() {
   const router = useRouter();
@@ -102,12 +102,12 @@ export default function SchoolMessagesPage() {
       const res = await schoolAuthFetch(accessToken, `/api/school/messages${q}`);
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Error loading messages"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_MESSAGES_LOAD_ERROR));
         return;
       }
       setMessages(json.data?.messages || []);
     } catch {
-      setError("Error loading messages");
+      setError(SCHOOL_MESSAGES_LOAD_ERROR);
     } finally {
       setLoading(false);
     }

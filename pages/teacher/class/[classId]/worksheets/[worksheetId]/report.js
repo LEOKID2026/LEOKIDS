@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../../components/Layout";
@@ -6,7 +7,10 @@ import TeacherClassActivitiesNav from "../../../../../../components/teacher-port
 import TeacherWorksheetReport from "../../../../../../components/worksheet-activities/TeacherWorksheetReport";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
+
+const SLUG = "pages__teacher__class__[classId]__worksheets__[worksheetId]__report";
+const c = (key) => globalBurnDownCopy(SLUG, key);
 
 export async function getServerSideProps(context) {
   return {
@@ -36,12 +40,12 @@ export default function TeacherWorksheetReportPage({ classId, worksheetId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "Error");
+        setError(apiErrorMessageHe(body?.error, c("error_generic")));
         return;
       }
       setReport(body.data.report);
     } catch {
-      setError("Network error");
+      setError(c("network_error"));
     }
   }, [worksheetId, router]);
 
@@ -51,13 +55,13 @@ export default function TeacherWorksheetReportPage({ classId, worksheetId }) {
 
   return (
     <Layout>
-      <TeacherPortalShell title="Worksheet report" backHref={`/teacher/class/${classId}/worksheets/${worksheetId}`}>
+      <TeacherPortalShell title={c("worksheet_report")} backHref={`/teacher/class/${classId}/worksheets/${worksheetId}`}>
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
         {error ? <p className="text-red-300">{error}</p> : null}
         {report ? (
           <TeacherWorksheetReport classId={classId} worksheetId={worksheetId} report={report} />
         ) : (
-          <p className="text-white/60">Loading…</p>
+          <p className="text-white/60">{c("loading")}</p>
         )}
       </TeacherPortalShell>
     </Layout>

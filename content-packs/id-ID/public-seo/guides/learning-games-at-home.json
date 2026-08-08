@@ -1,0 +1,71 @@
+{
+  "seoKey": "guides-learning-games-at-home",
+  "slug": "learning-games-at-home",
+  "displayTitle": "Gim belajar di rumah",
+  "badge": "Panduan gim belajar",
+  "h1": "Cara menggabungkan gim belajar di rumah",
+  "intro": "Gim belajar dapat mengubah peninjauan ulang menjadi sesuatu yang ingin diselesaikan anak Anda. Agar gim mendukung pembelajaran, pilih yang sesuai dengan mata pelajaran, topik, dan tingkat.",
+  "sections": [
+    {
+      "title": "Pilih gim menurut tujuan",
+      "paragraphs": [
+        "Sebelum mulai, putuskan apa yang ingin Anda latih. Anda dapat memilih gim untuk perhitungan, membaca, kosakata, IPA, atau berpikir. Ketika tujuan jelas, lebih mudah melihat apakah gim benar-benar membantu."
+      ]
+    },
+    {
+      "title": "Apa yang dilakukan selama gim",
+      "bullets": [
+        "Biarkan anak Anda mencoba sendiri.",
+        "Berhenti sejenak hanya saat kesulitan yang sama berulang.",
+        "Minta mereka menjelaskan pilihan atau jawaban.",
+        "Perhatikan apakah mereka bertindak dari pemahaman atau menebak.",
+        "Berhenti saat tujuan tercapai."
+      ]
+    },
+    {
+      "title": "Gabungkan gim dengan latihan lebih banyak",
+      "paragraphs": [
+        "Setelah gim, lanjutkan ke beberapa pertanyaan pada topik yang sama, atau kembali ke gim di hari lain. Campuran ini membantu anak Anda bertemu ide yang sama dalam bentuk berbeda."
+      ]
+    },
+    {
+      "title": "Cara menggunakan gim di situs",
+      "paragraphs": [
+        "Pilih gim yang sesuai dengan mata pelajaran dan tingkat. Gim menggabungkan tugas edukatif, tantangan, koin, dan progres di dalam aktivitas."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bisakah gim menggantikan semua latihan?",
+      "a": "Gim adalah salah satu cara berlatih. Untuk beberapa topik, gabungkan juga pertanyaan, membaca, menulis, atau lembar kerja."
+    },
+    {
+      "q": "Bagaimana saya tahu gim cocok?",
+      "a": "Anak Anda harus memahami tugas dan menangani tantangan yang wajar tanpa menebak sebagian besar jawaban."
+    },
+    {
+      "q": "Bagaimana jika anak saya hanya fokus pada hadiah?",
+      "a": "Kadang berhenti sejenak dan tanyakan apa yang mereka pelajari atau bagaimana mereka menyelesaikan tugas."
+    }
+  ],
+  "relatedPracticePath": "/practice/games",
+  "practiceCtaLabel": "Gim belajar",
+  "relatedGuideSlugs": [
+    "math-games-for-kids",
+    "home-practice-routine",
+    "parent-progress-tracking"
+  ],
+  "footerCta": {
+    "title": "Pilih gim yang sesuai dengan tujuan Anda",
+    "body": "Gim yang baik menggabungkan kesenangan dengan latihan jelas pada topik yang dapat dipahami dan dikuasai anak Anda.",
+    "primary": {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    },
+    "secondary": {
+      "href": "/student/login",
+      "label": "Masuk murid"
+    }
+  }
+}

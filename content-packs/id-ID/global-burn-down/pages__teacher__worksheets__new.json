@@ -1,0 +1,24 @@
+{
+  "copy": {
+    "page_title": "Aktivitas lembar kerja — murid terpilih",
+    "new_worksheet": "Lembar kerja baru",
+    "title": "Judul",
+    "subject": "Mata pelajaran",
+    "instructions_for_students": "Petunjuk untuk murid",
+    "physical_due_date": "Tenggat penyerahan fisik",
+    "activity_mode": "Mode aktivitas",
+    "save_as_draft": "Simpan sebagai draf",
+    "launch_selected": "Luncurkan dan kirim ke murid terpilih",
+    "not_signed_in": "Anda belum masuk",
+    "save_draft_first": "Simpan draf terlebih dahulu",
+    "save_draft_before_pdf": "Simpan draf sebelum mengunggah PDF.",
+    "please_enter_title": "Silakan masukkan judul",
+    "please_select_at_least_one_student": "Silakan pilih setidaknya satu murid",
+    "upload_pdf_before_launch": "Unggah PDF sebelum meluncurkan",
+    "upload_failed": "Unggahan gagal",
+    "launch_failed": "Peluncuran gagal",
+    "error_saving": "Gagal menyimpan",
+    "network_error": "Kesalahan jaringan",
+    "error_generic": "Kesalahan"
+  }
+}

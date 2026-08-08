@@ -9,7 +9,9 @@ import {
   bindSchoolUiLocale,
   SCHOOL_LOADING,
   SCHOOL_LOADING_DATA,
+  SCHOOL_PORTAL_LOAD_ERROR,
   SCHOOL_SUBJECTS_TITLE,
+  SCHOOL_NO_TEACHER_ID_IN_URL,
   schoolAuthFetch,
 } from "../../../lib/school-portal/school-ui.js";
 
@@ -70,7 +72,7 @@ export default function SchoolTeacherDetailPage() {
       >
         {state === "error" ? (
           <p className="text-red-300 text-sm text-start" role="alert">
-            {portalError || "Error loading portal"}
+            {portalError || SCHOOL_PORTAL_LOAD_ERROR}
           </p>
         ) : null}
         {state !== "error" && portalBlocking ? (
@@ -80,7 +82,7 @@ export default function SchoolTeacherDetailPage() {
           <p className="text-white/60 text-sm text-start">{SCHOOL_LOADING_DATA}</p>
         ) : null}
         {state !== "error" && !portalBlocking && !hydrationWaiting && routeInvalid ? (
-          <p className="text-white/60 text-sm text-start">No teacher ID found in the URL.</p>
+          <p className="text-white/60 text-sm text-start">{SCHOOL_NO_TEACHER_ID_IN_URL}</p>
         ) : null}
         {state !== "error" && !portalBlocking && !hydrationWaiting && !routeInvalid ? (
           <SchoolTeacherDetailContent

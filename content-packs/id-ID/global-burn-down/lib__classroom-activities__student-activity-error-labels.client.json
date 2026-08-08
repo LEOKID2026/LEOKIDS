@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "this_activity_is_not_available_right_now": "Aktivitas ini tidak tersedia saat ini",
+    "activity_not_found": "Aktivitas tidak ditemukan",
+    "this_activity_has_not_started_yet": "Aktivitas ini belum dimulai",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Jawaban tidak dapat dikirim untuk aktivitas ini saat ini",
+    "this_activity_is_closed": "Aktivitas ini telah ditutup",
+    "time_is_up_for_this_activity": "Waktu untuk aktivitas ini telah habis",
+    "could_not_open_this_activity_right_now": "Tidak dapat membuka aktivitas ini saat ini",
+    "not_found": "Tidak ditemukan",
+    "please_sign_in": "Silakan masuk",
+    "you_do_not_have_permission_to_open_this_activity": "Anda tidak memiliki izin untuk membuka aktivitas ini",
+    "this_activity_is_not_assigned_to_you": "Aktivitas ini tidak ditugaskan kepada Anda",
+    "could_not_identify_the_account": "Tidak dapat mengidentifikasi akun",
+    "could_not_complete_that_action_right_now": "Tidak dapat menyelesaikan tindakan itu saat ini",
+    "you_already_submitted_this_activity": "Anda sudah mengirim aktivitas ini",
+    "you_already_answered_this_question": "Anda sudah menjawab soal ini",
+    "waiting_for_the_teacher": "Menunggu guru…",
+    "no_answer_submission_needed": "Tidak perlu mengirim jawaban",
+    "the_system_is_updating_try_again_later": "Sistem sedang diperbarui — coba lagi nanti",
+    "something_went_wrong_please_try_again": "Terjadi kesalahan — silakan coba lagi",
+    "server_error_please_try_again": "Kesalahan server — silakan coba lagi",
+    "action_not_supported": "Tindakan tidak didukung",
+    "could_not_load_the_question_right_now": "Tidak dapat memuat soal saat ini",
+    "could_not_submit_an_answer_right_now": "Tidak dapat mengirim jawaban saat ini"
+  }
+}

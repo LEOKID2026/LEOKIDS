@@ -1,0 +1,74 @@
+{
+  "seoKey": "guides-no-print-worksheets",
+  "slug": "no-print-worksheets",
+  "displayTitle": "Berlatih tanpa mencetak",
+  "badge": "Latihan di rumah",
+  "h1": "Latihan di rumah tanpa mencetak",
+  "intro": "Anda dapat berlatih di rumah langsung dari komputer, tablet, atau ponsel. Latihan digital dan gim belajar memungkinkan Anda mulai segera, mendapatkan pertanyaan baru, dan beralih topik tanpa menyiapkan halaman terlebih dahulu. Saat kertas membantu, gunakan lembar kerja Leo Kids.",
+  "sections": [
+    {
+      "title": "Kapan latihan digital cocok digunakan?",
+      "paragraphs": [
+        "Latihan digital cocok saat Anda ingin mulai cepat, umpan balik langsung, belajar yang menyenangkan, atau latihan yang lebih mandiri untuk anak Anda."
+      ],
+      "bullets": [
+        "Masuk cepat menurut kelas dan mata pelajaran.",
+        "Pertanyaan yang berubah antar sesi.",
+        "Gim belajar lintas topik.",
+        "Aktivitas tersimpan untuk pelacakan dan laporan.",
+        "Tanpa printer atau persiapan."
+      ]
+    },
+    {
+      "title": "Kapan lembar kerja cocok digunakan?",
+      "paragraphs": [
+        "Lembar kerja dapat membantu saat anak Anda lebih suka menulis di kertas, saat Anda ingin waktu tanpa layar, saat berlatih menulis dan menghitung secara terstruktur, atau saat Anda ingin lembar yang dapat digunakan ulang."
+      ]
+    },
+    {
+      "title": "Anda dapat menggabungkan keduanya",
+      "paragraphs": [
+        "Anda tidak harus memilih satu jalur saja. Mulai secara digital, cetak lembar untuk topik yang perlu pengulangan, lalu kembali ke gim atau latihan daring lebih lanjut."
+      ]
+    },
+    {
+      "title": "Cara memulai",
+      "paragraphs": [
+        "Pilih mata pelajaran dan topik. Untuk latihan digital, buka halaman latihan. Untuk lembar kerja, gunakan generator atau pilih dari lembar siap pakai."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Apakah saya harus mencetak untuk menggunakan Leo Kids?",
+      "a": "Tidak. Anda dapat menggunakan latihan digital dan gim tanpa mencetak."
+    },
+    {
+      "q": "Apakah lembar kerja juga tersedia?",
+      "a": "Ya. Coba generator dan pilih dari lembar siap pakai dengan kunci jawaban."
+    },
+    {
+      "q": "Bisakah kita mencampur latihan daring dan kertas?",
+      "a": "Ya. Pilih yang sesuai dengan topik, anak Anda, dan waktu yang Anda miliki."
+    }
+  ],
+  "relatedPracticePath": "/practice",
+  "practiceCtaLabel": "Latihan daring",
+  "relatedGuideSlugs": [
+    "home-practice-routine",
+    "math-practice-at-home",
+    "parent-progress-tracking"
+  ],
+  "footerCta": {
+    "title": "Pilih jalur latihan yang cocok",
+    "body": "Mulai daring atau buka lembar kerja. Kedua opsi tersedia saat Anda membutuhkannya.",
+    "primary": {
+      "href": "/practice",
+      "label": "Latihan daring"
+    },
+    "secondary": {
+      "href": "/practice/worksheets",
+      "label": "Lembar kerja"
+    }
+  }
+}

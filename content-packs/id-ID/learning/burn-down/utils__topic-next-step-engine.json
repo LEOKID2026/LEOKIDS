@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "move_to_advanced_same_topic_only": "Naik ke lanjutan — topik yang sama saja",
+    "move_up_a_grade_same_topic_only": "Naik satu kelas — topik yang sama saja",
+    "solidify_at_the_same_level": "Perkuat di tingkat yang sama",
+    "solidify_at_regular_level": "Perkuat di tingkat reguler",
+    "strengthen_at_the_same_level": "Kuatkan di tingkat yang sama",
+    "return_to_regular_practice": "Kembali ke latihan reguler",
+    "lower_difficulty_same_topic_only": "Turunkan kesulitan — topik yang sama saja",
+    "enough_questions_were_solved_at_regular_level_with_stable_accuracy_tryin": "Cukup banyak pertanyaan diselesaikan di tingkat reguler dengan akurasi stabil. Mencoba lanjutan pada topik yang sama masuk akal.",
+    "trying_advanced_on_the_same_topic_is_recommended": "Mencoba lanjutan pada topik yang sama direkomendasikan.",
+    "you_can_try_advanced_on_the_same_topic": "Kamu bisa mencoba lanjutan pada topik yang sama.",
+    "build_more_steady_practice_at_regular_level_before_moving_to_advanced": "Bangun lebih banyak latihan mantap di tingkat reguler sebelum naik ke lanjutan.",
+    "continue_at_regular_level_and_strengthen_accuracy_and_confidence_before_": "Lanjutkan di tingkat reguler dan perkuat akurasi serta keyakinan sebelum lanjutan.",
+    "we_will_stay_a_bit_longer_at_regular_level_get_stronger_then_try_to_adva": "Kita akan tinggal sedikit lebih lama di tingkat reguler, semakin kuat, lalu mencoba naik.",
+    "the_advanced_challenge_was_high_right_now_returning_to_regular_practice_": "Tantangan lanjutan terlalu tinggi saat ini. Kembali ke latihan reguler pada topik yang sama direkomendasikan.",
+    "the_advanced_challenge_was_high_right_now_return_to_regular_practice_str": "Tantangan lanjutan terlalu tinggi saat ini. Kembali ke latihan reguler, perkuat akurasi dan keyakinan, lalu coba lagi nanti.",
+    "we_will_return_to_regular_practice_for_a_bit_get_stronger_then_try_again": "Kita akan kembali ke latihan reguler sebentar, semakin kuat, lalu coba lagi.",
+    "strengthen_the_same_topic_with_regular_practice_at_a_comfortable_pace": "Perkuat topik yang sama dengan latihan reguler pada tempo yang nyaman.",
+    "continue_regular_practice_at_a_comfortable_pace_with_a_few_short_questio": "Lanjutkan latihan reguler pada tempo yang nyaman, dengan beberapa pertanyaan singkat untuk penguatan.",
+    "we_will_strengthen_with_regular_practice_first_then_move_on": "Kita akan perkuat dengan latihan reguler dulu, lalu lanjut.",
+    "try_a_lower_level_or_grade_then_advance_gradually": "Coba tingkat atau kelas yang lebih rendah, lalu naik secara bertahap.",
+    "limited_information": "Informasi terbatas"
+  }
+}

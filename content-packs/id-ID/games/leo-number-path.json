@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-number-path",
+  "title": "Jalur Angka Leo",
+  "blurb": "Barisan, ganjil-genap, dan kelipatan",
+  "help": {
+    "howToPlay": "Pilih angka dari jalur menurut aturan — genap, ganjil, kelipatan, loncat hitung, atau barisan — lalu ketuk \"Cek Jalur\". Urutan penting untuk loncat dan barisan.",
+    "scoring": "Benar di percobaan pertama +30, kedua +20, ketiga +10. Setelah 3 kesalahan, jalur yang benar ditampilkan.",
+    "rewards": "Koin diberikan berdasarkan berapa dari 20 tugas yang kamu selesaikan, ketepatan, rentetan, dan menyelesaikan jalur.",
+    "tip": "Perhatikan apakah urutan penting — untuk hitung loncat dan barisan kamu harus memilih secara berurutan."
+  },
+  "accessibility": {
+    "title": "Jalur Angka Leo"
+  }
+}

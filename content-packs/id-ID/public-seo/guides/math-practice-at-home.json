@@ -1,0 +1,73 @@
+{
+  "seoKey": "guides-math-practice-at-home",
+  "slug": "math-practice-at-home",
+  "displayTitle": "Matematika di rumah",
+  "badge": "Panduan matematika di rumah",
+  "h1": "Latihan matematika di rumah — cara memulai dengan baik",
+  "intro": "Latihan matematika di rumah paling baik saat Anda memilih topik yang jelas, menyesuaikan tingkat pertanyaan dengan kelas, dan berhenti sebelum latihan menjadi berlebihan. Tujuannya adalah ritme yang stabil yang memungkinkan anak Anda memahami, mencoba, dan berkembang.",
+  "sections": [
+    {
+      "title": "Mulai dengan satu topik",
+      "paragraphs": [
+        "Pilih topik yang sedang diajarkan sekarang atau topik yang perlu ditinjau ulang anak Anda. Penjumlahan, pengurangan, perkalian, pembagian, pecahan, desimal, persen, dan soal cerita memakai jenis berpikir yang berbeda, jadi latih setiap topik secara terpisah sebelum latihan campuran."
+      ],
+      "bullets": [
+        "Pilih kelas dan topik.",
+        "Mulai dengan beberapa pertanyaan di tingkat reguler.",
+        "Periksa apakah kesulitan berasal dari perhitungan, memahami soal, atau urutan operasi.",
+        "Kembali ke topik yang sama di hari lain sebelum beralih."
+      ]
+    },
+    {
+      "title": "Cara menanggapi kesalahan",
+      "paragraphs": [
+        "Alih-alih langsung memberi jawaban, minta anak Anda menjelaskan apa yang mereka coba. Bahas nilai-nilainya bersama, tandai operasi yang tepat, dan selesaikan satu langkah demi satu. Ketika kesalahan yang sama berulang, pilih latihan lebih banyak dari keluarga pertanyaan yang sama."
+      ]
+    },
+    {
+      "title": "Kapan pindah ke topik berikutnya",
+      "paragraphs": [
+        "Lanjut saat anak Anda menjawab sebagian besar pertanyaan secara stabil dan dapat menjelaskan pendekatannya. Kesempurnaan tidak diperlukan—pemahaman, konsistensi, dan menangani susunan kata yang sedikit berbeda lebih penting."
+      ]
+    },
+    {
+      "title": "Cara menggunakan Leo Kids",
+      "paragraphs": [
+        "Pilih kelas anak Anda, buka matematika, dan pilih satu topik. Setelah latihan, periksa laporan untuk jawaban benar, di mana penguatan diperlukan, dan apa yang perlu dilatih berikutnya."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Berapa lama kita harus berlatih?",
+      "a": "Lamanya bergantung pada usia, topik, dan fokus. Lebih baik menyelesaikan latihan yang terfokus dan baik daripada melanjutkan saat anak Anda lelah."
+    },
+    {
+      "q": "Haruskah kita berlatih beberapa topik sekaligus?",
+      "a": "Tidak di awal. Saat satu topik perlu diperkuat, mulai di situ dan baru pindah ke latihan campuran setelah dasar yang stabil."
+    },
+    {
+      "q": "Bagaimana jika anak saya menebak?",
+      "a": "Minta mereka menjelaskan pendekatannya, tunjuk nilai-nilainya, dan pilih operasi sebelum menjawab."
+    }
+  ],
+  "relatedPracticePath": "/practice/math",
+  "practiceCtaLabel": "Latihan matematika",
+  "relatedGuideSlugs": [
+    "math-games-for-kids",
+    "home-practice-routine",
+    "parent-progress-tracking"
+  ],
+  "footerCta": {
+    "title": "Mulai dengan satu topik matematika",
+    "body": "Pilih kelas, topik, dan tingkat, lalu biarkan anak Anda maju melalui pertanyaan yang sesuai dengan pilihan latihan Anda.",
+    "primary": {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

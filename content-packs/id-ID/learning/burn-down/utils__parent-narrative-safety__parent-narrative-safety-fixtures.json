@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "thin_evidence_but_explicit_cautious_hedging_should_not_block": "Bukti tipis tetapi dengan kehati-hatian eksplisit — tidak boleh memblokir.",
+    "thin_evidence_with_strong_certainty_and_mastery_claim_block": "Bukti tipis dengan kepastian kuat dan klaim penguasaan — blokir.",
+    "engine_lists_do_not_conclude_barriers_but_text_uses_absolute_certainty": "Mesin mencantumkan hambatan jangan-simpulkan tetapi teks memakai kepastian mutlak.",
+    "disability_clinical_framing_block": "Pembingkaian disabilitas / klinis — blokir.",
+    "engine_allows_maintenance_only_narrative_forces_level_jump": "Mesin hanya mengizinkan pemeliharaan; narasi memaksa loncatan tingkat.",
+    "engine_confidence_low_but_parent_text_is_fully_certain": "Keyakinan mesin rendah tetapi teks orang tua sepenuhnya yakin.",
+    "permanent_failure_never_succeed_framing_block": "Pembingkaian gagal permanen / tidak pernah berhasil — blokir.",
+    "high_guessing_signal_but_narrative_claims_full_mastery": "Sinyal menebak tinggi tetapi narasi mengklaim penguasaan penuh.",
+    "only_suspected_prerequisite_gap_narrative_states_proof_level_gap": "Hanya dugaan kesenjangan prasyarat; narasi menyatakan kesenjangan setingkat bukti.",
+    "internal_taxonomy_token_leaked_into_parent_copy_block": "Token taksonomi internal bocor ke salinan orang tua — blokir.",
+    "realistic_thin_data_statistical_restraint_line_pass_info_safe_thin_cauti": "Baris kehati-hatian statistik data tipis yang realistis — lulus (info: kewaspadaan tipis yang aman).",
+    "explicit_collect_more_examples_framing_pass_info": "Pembingkaian kumpulkan-lebih-banyak-contoh yang eksplisit — lulus (info).",
+    "thin_data_but_claims_determinability_significant_weakness_warning": "Data tipis tetapi mengklaim dapat ditentukan / kelemahan signifikan — peringatan.",
+    "acknowledges_lack_of_data_then_asserts_clear_problem_warning": "Mengakui kurangnya data lalu menegaskan masalah yang jelas — peringatan.",
+    "thin_row_but_vague_narrative_without_explicit_limited_data_framing_warni": "Baris tipis tetapi narasi kabur tanpa pembingkaian data-terbatas yang eksplisit — peringatan.",
+    "despite_little_data_absolute_clarity_about_struggle_overconfidence_thin_": "Meskipun sedikit data, kejelasan mutlak tentang kesulitan — terlalu percaya diri + tipis → blokir."
+  }
+}

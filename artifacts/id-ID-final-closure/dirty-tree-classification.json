@@ -1,0 +1,36 @@
+{
+  "classificationAuthority": "Indonesian Master Final Closure Gate",
+  "date": "2026-08-08",
+  "categories": {
+    "A_indonesian_product": "Indonesian Master product/content/wiring",
+    "B_en_sot_additive": "Required EN Source-of-Truth additive localization",
+    "C_indonesian_tests_reports_artifacts": "Indonesian tests/reports/artifacts",
+    "D_unrelated_preexisting": "Unrelated pre-existing change/artifact — DO NOT STAGE",
+    "E_temp_generated_exclude": "Temporary/generated — do not commit",
+    "F_suspicious": "Suspicious/unexpected"
+  },
+  "D_unrelated_preexisting": [
+    "docs/reports/ar-DZ-effective-gaps-scan.json",
+    "docs/reports/arabic-country-wave-2-runtime-probes.json",
+    "docs/reports/arabic-country-wave-3-runtime-probes.json",
+    "docs/reports/arabic-country-wave-final-closure-2026-08-08.md",
+    "docs/reports/arabic-country-wave-runtime-probes.json",
+    "docs/reports/global-en-qa-accounts-provision.json",
+    "tests/i18n/_gen-ar-SA-sparse-layer.mjs",
+    "artifacts/ar-AE-wave2/",
+    "artifacts/ar-BH-wave3/",
+    "artifacts/ar-KW-wave3/",
+    "artifacts/ar-OM-wave3/",
+    "artifacts/linguistic-audit/",
+    "artifacts/wave2-final-closure-verify.json",
+    "artifacts/wave2-final-closure-verify.mjs"
+  ],
+  "notes": {
+    "arabic_master_disk_parity": "NEW side-effect: 14 EN burn-down leaf packs added for id-ID chrome not mirrored to ar-001. Policy Other locale modifications=0. Not Indonesian product blocker. Runtime falls back to EN for missing leaf packs.",
+    "es419_namespace_parity": "Pre-existing lag vs EN SoT additive keys (auditor B already recorded fail 2). Not Indonesian blocker.",
+    "learning_content_locale_book_path": "PRE-EXISTING UNCHANGED ×2 (docs/learning-book/math/... without locale segment).",
+    "namespace_count_discrepancy": "Authoritative I18N_NAMESPACES string-leaf traversal with {name} placeholders = 2994/2994. School residual validator reports 2991 because flatLeaves treats arrays as opaque leaves and counts all locale-dir JSON files without I18N_NAMESPACES filter. Historical 2972 was pre-school residual keys; 2991 was mid-school-correction; 2994 is current after final school/ui additive keys.",
+    "public_seo_orphan_disk": "id-ID has 28 public-seo disk packs; EN stores SEO via other authority (0 under content-packs/en/public-seo). Expected architecture; not missing EN packs for required non-SEO families."
+  },
+  "suspicious_unexpected": 0
+}

@@ -1,4 +1,3 @@
-import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { requireParentApiContext } from "../../../lib/auth/persona-guard.server.js";
 import { resolveParentMaxChildren } from "../../../lib/parent-server/parent-entitlement-provision.server.js";
 import {
@@ -17,33 +16,38 @@ import { getServerProductId, PRODUCT_ERRORS } from "../../../lib/global/product-
 import { ensureGlobalProductMembership } from "../../../lib/global/product-membership.server.js";
 import { countGlobalParentStudents } from "../../../lib/global/product-student.server.js";
 
+/**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
+
 async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   }
 
   const fullNameParsed = parseBoundedTrimmedString(req.body?.fullName, MAX_PARENT_STUDENT_NAME_LEN);
   if (!fullNameParsed.ok) {
-    return res.status(400).json({ ok: false, error: "fullName too long" });
+    return fail(res, 400, "full_name_too_long");
   }
   if (!fullNameParsed.value) {
-    return res.status(400).json({ ok: false, error: "fullName is required" });
+    return fail(res, 400, "full_name_required");
   }
   const fullName = fullNameParsed.value;
 
   if (req.body?.gradeLevel != null && String(req.body.gradeLevel).trim() !== "") {
     const gradeParsed = parseBoundedTrimmedString(req.body.gradeLevel, MAX_PARENT_GRADE_LEVEL_LEN);
     if (!gradeParsed.ok) {
-      return res.status(400).json({ ok: false, error: "gradeLevel too long" });
+      return fail(res, 400, "grade_level_too_long");
     }
   }
   const gradeLevel = trimString(req.body?.gradeLevel);
   if (!gradeLevel) {
-    return res.status(400).json({
-      ok: false,
-      code: "grade_required",
-      error: globalBurnDownCopy("pages__api__parent__create-student", "please_select_a_grade"),
-    });
+    return fail(res, 400, "grade_required");
   }
 
   // Never accept client product_id.
@@ -59,9 +63,12 @@ async function handler(req, res) {
       preserveExistingLanguages: true,
     });
     if (!membership.ok) {
+      const code =
+        (typeof membership.error === "string" && membership.error) || "product_membership_required";
       return res.status(membership.status || 503).json({
         ok: false,
-        error: membership.error || PRODUCT_ERRORS.membership_required.error,
+        error: code,
+        code,
         message: membership.message || PRODUCT_ERRORS.membership_required.message,
       });
     }
@@ -72,22 +79,22 @@ async function handler(req, res) {
       ctx.user?.email
     );
     if (!limitResult.ok) {
-      return res.status(limitResult.status).json({ ok: false, error: limitResult.code });
+      return fail(res, limitResult.status, limitResult.code || "validation_failed");
     }
 
     const countResult = await countGlobalParentStudents(ctx.serviceRole, ctx.parentUserId);
     if (!countResult.ok) {
+      const code =
+        (typeof countResult.error === "string" && countResult.error) || "student_count_failed";
       return res.status(countResult.status || 403).json({
         ok: false,
-        error: countResult.error || "Could not check child count",
+        error: code,
+        code,
         message: countResult.message,
       });
     }
     if (countResult.count >= limitResult.maxChildren) {
-      return res.status(400).json({
-        ok: false,
-        error: globalBurnDownCopy("pages__api__parent__create-student", "you_can_add_up_to_3_children_on_this_parent_account"),
-      });
+      return fail(res, 400, "child_limit_reached");
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();
@@ -122,20 +129,20 @@ async function handler(req, res) {
           if (String(error.message || "").toLowerCase().includes("product_id")) {
             return res.status(503).json(PRODUCT_ERRORS.schema_not_ready);
           }
-          return res.status(403).json({ ok: false, error: "Could not create student" });
+          return fail(res, 403, "create_student_failed");
         }
         if (data?.product_id !== productId) {
-          return res.status(500).json({ ok: false, error: "student_product_mismatch" });
+          return fail(res, 500, "student_product_mismatch");
         }
         return res.status(200).json({ ok: true, student: data, productId });
       }
-      return res.status(403).json({ ok: false, error: "Could not create student" });
+      return fail(res, 403, "create_student_failed");
     }
 
     const studentId =
       rpcResult.data?.student?.id || rpcResult.data?.student_id || rpcResult.data?.studentId;
     if (!studentId) {
-      return res.status(500).json({ ok: false, error: "Could not create student" });
+      return fail(res, 500, "create_student_failed");
     }
 
     const { data, error } = await supabase
@@ -147,12 +154,12 @@ async function handler(req, res) {
       .single();
 
     if (error || !data) {
-      return res.status(500).json({ ok: false, error: "Could not load created student" });
+      return fail(res, 500, "load_created_student_failed");
     }
 
     return res.status(200).json({ ok: true, student: data, productId });
   } catch (_e) {
-    return res.status(500).json({ ok: false, error: "Unexpected server error" });
+    return fail(res, 500, "unexpected_server_error");
   }
 }
 

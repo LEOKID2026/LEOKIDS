@@ -1,0 +1,1369 @@
+{
+  "components__classroom-activities__ActivityDisplayLevelSelector": {
+    "level": "Tingkat"
+  },
+  "components__home__HomeValueCards": {
+    "product_values": "Nilai hasil kali"
+  },
+  "components__legal__UnifiedLegalPolicyPage": {
+    "legal_document_links": "Tautan dokumen hukum"
+  },
+  "components__math-scratchpad__MathScratchpadPanel": {
+    "scratch_pad": "Kertas coretan",
+    "close": "Tutup"
+  },
+  "components__math-scratchpad__MathScratchpadWorkspace": {
+    "fraction_denominator": "penyebut pecahan",
+    "fraction_exercise": "latihan pecahan",
+    "fraction_numerator": "pembilang pecahan"
+  },
+  "components__ParentReportInsight": {
+    "this_summary_was_generated_automatically_from_the_report_data_and_is_mea": "Ringkasan ini dibuat secara otomatis dari data laporan, dan hanya dimaksudkan sebagai alat bantu belajar."
+  },
+  "components__promo__PromoMobileCompareVideo": {
+    "mobile_compare_version": "Versi perbandingan seluler",
+    "mobile_test_video": "Video uji seluler"
+  },
+  "components__promo__PromoVideoModal": {
+    "close": "Tutup"
+  },
+  "components__prototypes__dev__learning__english-word-builder__english-word-builder-data": {
+    "the_cat_is_red": "The cat is red",
+    "the_apple_is": "The apple is ___",
+    "she_likes_red": "She likes red"
+  },
+  "components__prototypes__dev__leo-dog__LeoDogReferenceGallery": {
+    "sprites_png": "Sprite baru (PNG transparan)"
+  },
+  "components__reporting__ReportDateRangeControl": {
+    "custom_dates": "Tanggal kustom"
+  },
+  "components__reporting__ReportHubModal": {
+    "loading_report": "Memuat laporan…",
+    "no_children_in_this_group": "Tidak ada murid di kelompok ini."
+  },
+  "components__reporting__ReportModalFrame": {
+    "close_window": "Tutup jendela"
+  },
+  "components__school-portal__SchoolDrillDown": {
+    "grade_status": "Status Kelas",
+    "class_status": "Status rombel",
+    "loading": "Memuat…",
+    "try_again": "Coba lagi",
+    "col_subject": "Mata pelajaran",
+    "col_class": "Rombel",
+    "col_teacher": "Guru",
+    "col_type": "Jenis",
+    "active_classes": "{count} rombel aktif",
+    "children_count": "{count} murid",
+    "activities_count": "Aktivitas: {count}",
+    "view_answers": "Lihat jawaban",
+    "suspended_label": "Ditangguhkan"
+  },
+  "components__school-portal__SchoolOperatorsManager": {
+    "no_secretaries_linked": "Tidak ada sekretaris yang terhubung"
+  },
+  "components__school-portal__SchoolPortalShell": {
+    "school_navigation": "Navigasi sekolah"
+  },
+  "components__school-portal__SchoolPortalUi": {
+    "col_subject": "Mata pelajaran",
+    "col_class": "Rombel",
+    "col_teacher": "Guru",
+    "col_type": "Jenis",
+    "view_answers": "Lihat jawaban"
+  },
+  "components__school-portal__SchoolReportModal": {
+    "loading_report": "Memuat laporan…"
+  },
+  "components__school-portal__SchoolReportModalBody": {
+    "no_data_yet": "Belum ada data"
+  },
+  "components__school-portal__SchoolStaffEmailInviteForm": {
+    "name_example_com": "name@example.com",
+    "invite_by_user_id_advanced": "Undang berdasarkan ID pengguna (lanjutan)"
+  },
+  "components__school-portal__SchoolStudentAccessPanel": {
+    "account_actions": "Tindakan akun",
+    "irreversible_actions": "Tindakan yang tidak dapat dibatalkan"
+  },
+  "components__school-portal__SchoolTeacherClassStudentsModal": {
+    "no_children_in_this_class": "Tidak ada murid di rombel ini."
+  },
+  "components__seo__GuideSeoArticlePage": {
+    "all_practice_areas": "Semua area latihan"
+  },
+  "components__seo__PracticeSeoRelatedGuides": {
+    "related_guides": "Panduan terkait"
+  },
+  "components__seo__public-seo-wide-defaults": {
+    "ready_to_start": "Siap untuk mulai?",
+    "open_a_parent_account_add_your_child_and_let_them_practice_at_a_pace_tha": "Buka akun orang tua, tambahkan anak Anda, dan biarkan mereka berlatih dengan kecepatan yang sesuai untuk Anda.",
+    "want_to_create_more_sheets_and_unlock_every_topic": "Ingin membuat lebih banyak lembar kerja dan membuka semua topik?",
+    "in_the_full_parent_portal_you_can_create_unlimited_worksheets_choose_add": "Di portal orang tua lengkap, Anda dapat membuat lembar kerja tanpa batas, memilih topik tambahan, dan menggabungkan lembar kerja dengan latihan digital serta pemantauan perkembangan."
+  },
+  "components__seo__PublicSeoEntrySection": {
+    "practice_areas": "Area latihan",
+    "parent_guides": "Panduan orang tua"
+  },
+  "components__seo__PublicSeoPageActions": {
+    "page_navigation": "Navigasi halaman"
+  },
+  "components__seo__PublicSeoParentCta": {
+    "parent_login_sign_up": "Masuk / daftar orang tua",
+    "explore_the_parent_portal": "Jelajahi portal orang tua"
+  },
+  "components__seo__PublicSeoWideCardGrid": {
+    "practice_areas": "Area latihan"
+  },
+  "components__seo__PublicSeoWideRelatedGuides": {
+    "related_guides": "Panduan terkait"
+  },
+  "components__student__StudentActivityQuestionSurface": {
+    "show_landscape": "Tampilkan lanskap",
+    "show_portrait": "Tampilkan potret",
+    "landscape": "↔️ Lanskap",
+    "portrait": "↕️ Potret"
+  },
+  "components__student__StudentActivitySubmitConfirmModal": {
+    "title": "Selesaikan dan kirim aktivitas ini?",
+    "answered_of": "Anda menjawab {answered} dari {questionCount} soal",
+    "unanswered_warn": "Ada {count} soal yang belum dijawab. Setelah mengirim, Anda tidak dapat kembali dan mengubah jawaban.",
+    "submit_note": "Setelah mengirim, Anda tidak dapat kembali dan mengubah jawaban.",
+    "cancel": "Batal",
+    "submitting": "Mengirim…",
+    "confirm": "Ya, selesaikan dan kirim"
+  },
+  "components__student__StudentAssignedActivityQuestionStage": {
+    "enlarge": "⛶ Perbesar",
+    "enlarge_diagram": "Perbesar diagram"
+  },
+  "components__student__StudentAssignedActivityShell": {
+    "back_to_home": "← Kembali ke beranda"
+  },
+  "components__student__StudentClassroomActivitiesPanel": {
+    "view_result": "Lihat hasil",
+    "continue": "Lanjutkan",
+    "start": "Mulai",
+    "questions_meta": "soal",
+    "class_activities": "Aktivitas rombel",
+    "parent_activities": "Aktivitas orang tua",
+    "intro": "Aktivitas yang diberikan oleh guru atau orang tua Anda akan muncul di sini.",
+    "personal_activities_section": "Aktivitas pribadi",
+    "show_landscape": "Tampilkan lanskap",
+    "show_portrait": "Tampilkan potret",
+    "landscape": "↔️ Lanskap",
+    "portrait": "↕️ Potret"
+  },
+  "components__teacher-portal__GuardianAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "Kode saat ini akan dicabut dan kode baru akan dibuat. Simpan kode baru ini — kode hanya akan ditampilkan satu kali.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "Nama pengguna saat ini akan dicabut. Nama pengguna baru hanya akan ditampilkan satu kali."
+  },
+  "components__teacher-portal__StudentLoginAccessPanel": {
+    "the_current_code_will_be_revoked_and_a_new_one_generated_save_the_new_co": "Kode saat ini akan dicabut dan kode baru akan dibuat. Simpan kode baru ini — kode hanya akan ditampilkan satu kali.",
+    "the_current_username_will_be_revoked_the_new_username_will_be_shown_only": "Nama pengguna saat ini akan dicabut. Nama pengguna baru hanya akan ditampilkan satu kali."
+  },
+  "components__teacher-portal__SubjectSummaryCards": {
+    "sessions": "Sesi",
+    "answers": "Jawaban",
+    "success": "Berhasil"
+  },
+  "components__teacher-portal__TeacherActivityStudentAnswersModal": {
+    "close": "Tutup"
+  },
+  "components__teacher-portal__TeacherClassActivitiesNav": {
+    "aria_label": "Navigasi rombel",
+    "class_report": "Laporan rombel",
+    "activities": "Aktivitas",
+    "worksheets": "Lembar kerja",
+    "discussion": "Diskusi"
+  },
+  "components__teacher-portal__TeacherClassReportModal": {
+    "please_select_valid_dates": "Silakan pilih tanggal yang valid",
+    "class_report": "Laporan rombel",
+    "loading_class_report": "Memuat laporan rombel…"
+  },
+  "components__teacher-portal__TeacherDashboardClient": {
+    "remove_this_student_from_the_class": "Keluarkan murid ini dari rombel?",
+    "remove_this_student_from_your_teacher_list": "Hapus murid ini dari daftar guru Anda?",
+    "manage_class": "Kelola rombel",
+    "full_name_of_new_student": "Nama lengkap murid baru",
+    "students": "Murid",
+    "classes": "Rombel",
+    "class_report": "Laporan rombel",
+    "activities": "Aktivitas",
+    "filter_student_list": "Filter daftar murid",
+    "search_by_name": "Cari berdasarkan nama…",
+    "hi_teacher_name": "Hai, {name}",
+    "hi_teacher_fallback": "Hai, guru",
+    "dashboard_subtitle": "Dasbor — rombel dan murid",
+    "sign_out": "Keluar",
+    "latest_topic_activity": "Topik/aktivitas terbaru",
+    "loading_activity_data": "Memuat data aktivitas…",
+    "not_enough_data": "Data belum cukup",
+    "worksheets_link": "Lembar kerja →",
+    "send_activity_link": "Kirim aktivitas ke murid privat →",
+    "students_need_attention": "Murid yang perlu perhatian",
+    "my_classes": "Rombel saya",
+    "students_count": "Murid: {count}",
+    "subjects_label": "Mata pelajaran: {label}",
+    "show_class_students": "Tampilkan murid rombel",
+    "manage_class_btn": "Kelola rombel",
+    "students_heading": "Murid",
+    "showing_label": "Menampilkan: {label}",
+    "sort_label": "Urutkan:",
+    "no_students_filter": "Tidak ada murid untuk ditampilkan pada filter ini.",
+    "view_report": "Lihat laporan",
+    "loading_badge": "Memuat…",
+    "close_modal": "Tutup",
+    "classes_heading": "Rombel",
+    "creating": "Membuat…",
+    "class_name_label": "Nama rombel",
+    "save": "Simpan",
+    "add_student_heading": "Tambah murid",
+    "add_student": "Tambah",
+    "linked_not_in_class": "Murid tertaut yang tidak ada di rombel ini:",
+    "add_to_class": "Tambahkan ke rombel",
+    "students_in_class_count": "Murid dalam rombel ({count} / {cap})",
+    "students_in_class_count_open": "Murid dalam rombel ({count})",
+    "class_at_cap": "Rombel ini telah mencapai batas {cap} murid.",
+    "no_students_in_class": "Tidak ada murid di rombel ini.",
+    "cancel": "Batal",
+    "rename": "Ganti nama",
+    "remove_from_class": "Keluarkan dari rombel",
+    "remove_from_list": "Hapus dari daftar",
+    "needs_immediate_attention": "Perlu perhatian segera",
+    "needs_reinforcement": "Perlu penguatan",
+    "worth_monitoring": "Perlu dipantau",
+    "filter_all": "Semua",
+    "filter_intervention": "Perlu intervensi / penguatan",
+    "filter_low_activity": "Aktivitas rendah",
+    "filter_watch": "Pantau",
+    "filter_strong": "Kuat",
+    "sort_name": "Nama",
+    "sort_activity": "Aktivitas terakhir",
+    "sort_status": "Status pembelajaran",
+    "report_subject": "Laporan {subject}",
+    "activity_subject": "Aktivitas {subject}",
+    "class_fallback": "Rombel",
+    "student_fallback": "Murid",
+    "could_not_update_class_name": "Tidak dapat memperbarui nama rombel.",
+    "could_not_add_student": "Tidak dapat menambahkan murid.",
+    "could_not_add_to_class": "Tidak dapat menambahkan murid ke rombel.",
+    "could_not_remove_from_class": "Tidak dapat menghapus dari rombel.",
+    "could_not_update_student_name": "Tidak dapat memperbarui nama murid.",
+    "could_not_remove_student": "Tidak dapat menghapus murid.",
+    "could_not_create_class": "Tidak dapat membuat rombel.",
+    "could_not_add_class_limit": "Rombel ini telah mencapai batas 40 murid. Anda tidak dapat menambahkan murid lagi.",
+    "student_stats_line": "Sesi: {sessions} · Jawaban: {answers} · Keberhasilan: {acc}",
+    "attention_success_pct": "{pct}% keberhasilan",
+    "attention_answers_count": " · {count} jawaban"
+  },
+  "components__teacher-portal__TeacherDiscussionQuestionPicker": {
+    "level": "Tingkat",
+    "whole_class": "Seluruh rombel",
+    "selected_students": "Murid terpilih",
+    "discussion_with_response_students_submit_an_answer": "Diskusi dengan tanggapan (murid mengirimkan jawaban)",
+    "explanation_only_no_response_required": "Hanya penjelasan — tidak memerlukan tanggapan"
+  },
+  "components__teacher-portal__TeacherParentMessagePanel": {
+    "write_a_short_message_to_the_parent": "Tulis pesan singkat untuk orang tua..."
+  },
+  "components__teacher-portal__TeacherReportPageStates": {
+    "load_report_error": "Terjadi kesalahan saat memuat laporan. Segarkan halaman dan coba lagi.",
+    "loading_report_hint": "Memuat laporan — ini mungkin memerlukan beberapa detik.",
+    "try_again": "Coba lagi",
+    "back_to_dashboard": "Kembali ke dasbor",
+    "forbidden_report": "Anda tidak memiliki izin untuk melihat laporan ini."
+  },
+  "components__teacher-portal__TeacherStudentIndividualActivitiesPanel": {
+    "level": "Tingkat"
+  },
+  "components__ui__StudentLoadingPanel": {
+    "loading": "Memuat…"
+  },
+  "components__worksheet-activities__TeacherWorksheetReport": {
+    "total_students": "Total murid",
+    "opened_pdf": "PDF terbuka",
+    "completed_pdf": "Selesai (PDF)",
+    "submitted_answers": "Jawaban yang dikirim",
+    "pending_review": "Menunggu peninjauan",
+    "published": "Diterbitkan",
+    "class_average": "Rata-rata rombel"
+  },
+  "components__worksheets__WorksheetAnswerKeyList": {
+    "answer": "Jawaban"
+  },
+  "lib__classroom-activities__generate-activity-questions-client": {
+    "human_body": "Tubuh Manusia",
+    "animals": "Hewan",
+    "plants": "Tumbuhan",
+    "materials": "Materi",
+    "experiments": "Eksperimen",
+    "earth_and_space": "Bumi dan Antariksa",
+    "environment": "Lingkungan",
+    "standard": "Standar",
+    "medium": "Sedang",
+    "advanced": "Lanjutan",
+    "basic_shapes": "Bentuk dasar",
+    "perimeter": "Keliling",
+    "volume": "Volume",
+    "angles": "Sudut",
+    "parallel_and_perpendicular": "Garis sejajar dan tegak lurus",
+    "triangles": "Segitiga",
+    "quadrilaterals": "Segi empat",
+    "transformations": "Transformasi",
+    "rotation": "Rotasi",
+    "symmetry": "Simetri",
+    "diagonals": "Diagonal",
+    "heights": "Tinggi",
+    "tiling": "Pengubinan",
+    "circles": "Lingkaran",
+    "solid_shapes": "Bangun ruang",
+    "pythagorean_theorem": "Teorema Pythagoras"
+  },
+  "lib__classroom-activities__student-activity-choice-layout.client": {
+    "string_c_trim_length": "String(c ?? \"\").trim().length"
+  },
+  "lib__classroom-activities__student-activity-display-labels.client": {
+    "untitled_topic": "Topik tanpa judul"
+  },
+  "lib__classroom-activities__student-activity-error-labels.client": {
+    "this_activity_is_not_available_right_now": "Aktivitas ini tidak tersedia saat ini",
+    "activity_not_found": "Aktivitas tidak ditemukan",
+    "this_activity_has_not_started_yet": "Aktivitas ini belum dimulai",
+    "answers_cannot_be_submitted_for_this_activity_right_now": "Jawaban tidak dapat dikirim untuk aktivitas ini saat ini",
+    "this_activity_is_closed": "Aktivitas ini telah ditutup",
+    "time_is_up_for_this_activity": "Waktu untuk aktivitas ini telah habis",
+    "could_not_open_this_activity_right_now": "Tidak dapat membuka aktivitas ini saat ini",
+    "not_found": "Tidak ditemukan",
+    "please_sign_in": "Silakan masuk",
+    "you_do_not_have_permission_to_open_this_activity": "Anda tidak memiliki izin untuk membuka aktivitas ini",
+    "this_activity_is_not_assigned_to_you": "Aktivitas ini tidak ditugaskan kepada Anda",
+    "could_not_identify_the_account": "Tidak dapat mengidentifikasi akun",
+    "could_not_complete_that_action_right_now": "Tidak dapat menyelesaikan tindakan itu saat ini",
+    "you_already_submitted_this_activity": "Anda sudah mengirim aktivitas ini",
+    "you_already_answered_this_question": "Anda sudah menjawab soal ini",
+    "waiting_for_the_teacher": "Menunggu guru…",
+    "no_answer_submission_needed": "Tidak perlu mengirim jawaban",
+    "the_system_is_updating_try_again_later": "Sistem sedang diperbarui — coba lagi nanti",
+    "something_went_wrong_please_try_again": "Terjadi kesalahan — silakan coba lagi",
+    "server_error_please_try_again": "Kesalahan server — silakan coba lagi",
+    "action_not_supported": "Tindakan tidak didukung",
+    "could_not_load_the_question_right_now": "Tidak dapat memuat soal saat ini",
+    "could_not_submit_an_answer_right_now": "Tidak dapat mengirim jawaban saat ini"
+  },
+  "lib__classroom-activities__student-activity-result-labels.client": {
+    "summary_got_of": "Anda menjawab benar {correct} dari {total} soal",
+    "summary_got": "Anda menjawab benar {correct} soal",
+    "summary_finished": "Anda telah menyelesaikan aktivitas ini",
+    "score_chip_of": "{correct}/{total} soal",
+    "score_chip": "{correct} soal"
+  },
+  "lib__classroom-activities__student-activity-scope-labels.client": {
+    "personal_activity": "Aktivitas pribadi"
+  },
+  "lib__game-audio__game-audio-manifest": {
+    "game_start": "Mulai permainan",
+    "session_end": "Akhir sesi",
+    "correct_answer": "Jawaban benar",
+    "wrong_answer": "Jawaban salah",
+    "victory": "Kemenangan",
+    "defeat": "Kalah",
+    "coin_collect": "Kumpulkan Koin",
+    "hit_bomb": "Kena / bom",
+    "time_up": "Waktu habis",
+    "card_flip": "Balik Kartu",
+    "correct_match": "Pasangan yang benar",
+    "mismatch": "Tidak cocok",
+    "balloon_pop": "Pecahkan Balon",
+    "small_success": "Keberhasilan kecil",
+    "run_victory": "Kemenangan lari",
+    "success_streak": "Rangkaian keberhasilan",
+    "achievement_badge": "Lencana pencapaian",
+    "level_up": "Naik tingkat",
+    "countdown": "Hitung mundur",
+    "line_clear": "Bersihkan baris",
+    "correct_placement": "Penempatan yang benar",
+    "wrong_placement": "Penempatan salah",
+    "item_pickup": "Ambil barang",
+    "warning": "Peringatan",
+    "fruit_slice": "Potong buah",
+    "train_departs": "Train departs",
+    "place_mark": "Tempatkan tanda",
+    "reveal_choice": "Tampilkan pilihan",
+    "mine_click": "Klik tambang",
+    "mine_merge": "Gabung tambang",
+    "rock_break": "Pemecahan batu",
+    "mine_gift": "Hadiah tambang",
+    "learning_music": "Musik pembelajaran",
+    "educational_instruction_voice": "Suara instruksi edukatif",
+    "educational_feedback_voice": "Suara umpan balik edukatif",
+    "hebrew_question_voice": "Suara soal bahasa Ibrani",
+    "english_phonics_voice": "Suara fonik Bahasa Inggris",
+    "diamond_collect": "Kumpulkan Berlian",
+    "star_collect": "Kumpulkan bintang",
+    "key_collect": "Kumpulkan kunci",
+    "maze_exit": "Keluar labirin",
+    "target_hit": "Target tercapai",
+    "cash_register": "Mesin Kasir",
+    "recycling_conveyor": "Konveyor daur ulang",
+    "place_evidence": "Letakkan bukti",
+    "arcade_music": "Musik Arcade",
+    "puzzle_music": "Musik teka-teki",
+    "shop_music": "Musik toko",
+    "mine_music": "Musik tambang",
+    "button_click": "Klik tombol",
+    "window_open": "Jendela terbuka",
+    "low_time": "Waktu singkat",
+    "help_voice": "Suara bantuan"
+  },
+  "lib__games__game-catalog.constants": {
+    "this_game_is_not_available_right_now": "Permainan ini tidak tersedia saat ini",
+    "locked_by_parents": "Dikunci oleh orang tua"
+  },
+  "lib__global__product-context.server": {
+    "this_student_does_not_belong_to_leo_kids_global": "Murid ini bukan bagian dari LEO KIDS Global.",
+    "student_not_found_for_this_parent_on_leo_kids_global": "Murid tidak ditemukan untuk orang tua ini di LEO KIDS Global.",
+    "product_isolation_schema_is_not_ready_apply_sql_global_product_isolation": "Skema isolasi produk belum siap. Terapkan sql/global-product-isolation sebelum mengaktifkan penulisan."
+  },
+  "lib__global__product-membership.server": {
+    "this_leo_kids_global_membership_is_suspended": "Keanggotaan LEO KIDS Global ini ditangguhkan."
+  },
+  "lib__guest__guest-economy-guard.server": {
+    "the_shop_is_not_available_in_guest_mode": "Toko tidak tersedia dalam mode tamu.",
+    "cards_are_not_available_in_guest_mode": "Kartu tidak tersedia dalam mode tamu."
+  },
+  "lib__guest__guest-start-errors.server": {
+    "the_service_is_not_configured_correctly": "Layanan tidak dikonfigurasi dengan benar.",
+    "guest_mode_is_currently_disabled": "Mode tamu sedang dinonaktifkan.",
+    "the_guest_system_is_not_ready": "Sistem tamu belum siap.",
+    "could_not_start_guest_mode": "Tidak dapat memulai mode tamu."
+  },
+  "lib__guest__guest-start-rate-limit.server": {
+    "too_many_attempts_please_try_again_in_a_few_minutes": "Terlalu banyak percobaan - silakan coba lagi dalam beberapa menit."
+  },
+  "lib__guest__guest-student.server": {
+    "this_number_is_already_linked_to_a_parent_sign_in_with_a_username_and_pi": "Nomor ini sudah terhubung dengan akun orang tua - masuk menggunakan nama pengguna dan PIN."
+  },
+  "lib__guest__guest-topic-access.server": {
+    "this_topic_is_locked_in_guest_mode": "Topik ini dikunci dalam mode tamu."
+  },
+  "lib__guest__guest-transfer.server": {
+    "coins_diamonds_and_cards_were_saved_to_the_child": "Koin, berlian, dan kartu telah disimpan untuk murid.",
+    "diamond_transfer_failed": "Transfer berlian gagal.",
+    "arcade_club_data_transfer_failed": "Transfer data klub Arcade gagal."
+  },
+  "lib__learning__display-level": {
+    "regular": "Reguler",
+    "advanced": "Lanjutan"
+  },
+  "lib__learning__question-metadata-validator": {},
+  "lib__learning__report-visible-practice-sync": {
+    "learning": "Pembelajaran",
+    "practice": "Latihan",
+    "challenge": "Tantangan",
+    "extended_practice": "Latihan tambahan",
+    "graded": "Sudah dinilai",
+    "regular": "Reguler",
+    "mistakes": "Kesalahan",
+    "review_mistakes": "Tinjau kesalahan"
+  },
+  "lib__learning__subject-permissions__subject-access.server": {
+    "this_subject_is_locked_by_the_parents": "Mata pelajaran ini dikunci oleh orang tua.",
+    "you_don_t_have_permission_to_select_this_grade": "Anda tidak memiliki izin untuk memilih kelas ini."
+  },
+  "lib__parent-server__delete-parent-owned-student.server": {
+    "deleting_the_child_failed_please_try_again_or_contact_support": "Menghapus murid gagal - silakan coba lagi atau hubungi dukungan."
+  },
+  "lib__parent-server__report-data-aggregate.server": {
+    "not_available_for_guest_accounts": "Tidak tersedia untuk akun tamu"
+  },
+  "lib__school-portal__operator-grant-labels": {
+    "manage_child_and_parent_access": "Kelola akses murid dan orang tua",
+    "view_reports_and_child_details": "Lihat laporan dan detail murid"
+  },
+  "lib__school-portal__school-messaging-ui": {
+    "homeroom_class_parents": "Orang tua rombel wali kelas",
+    "homeroom_child_parents": "Orang tua murid wali kelas"
+  },
+  "lib__school-portal__school-report-view-model": {
+    "no_data_in_this_period": "Tidak ada data dalam periode ini",
+    "topics_to_strengthen": "Topik yang perlu diperkuat",
+    "practice": "Latihan",
+    "no_data": "Tidak ada data",
+    "submitted_active": "Terkirim / aktif",
+    "no_data_in_period": "Tidak ada data dalam periode",
+    "class_activities": "Aktivitas rombel",
+    "no_activities": "Tidak ada aktivitas",
+    "students_in_class": "Murid dalam rombel",
+    "no_children": "Tidak ada murid",
+    "students_who_need_attention": "Murid yang perlu perhatian",
+    "student_distribution": "Distribusi murid",
+    "no_class_activities_to_show_for_this_period": "Tidak ada aktivitas rombel untuk ditampilkan pada periode ini.",
+    "no_children_are_registered_in_this_class": "Tidak ada murid yang terdaftar di rombel ini.",
+    "not_enough_data_for_a_distribution_breakdown": "Data belum cukup untuk rincian distribusi.",
+    "no_children_have_been_flagged_for_attention": "Belum ada murid yang ditandai perlu perhatian.",
+    "learning_status": "Status pembelajaran",
+    "needs_intervention": "Perlu intervensi",
+    "practice_day": "Hari latihan",
+    "mistake": "Kesalahan",
+    "keep_monitoring_progress": "Terus pantau perkembangan",
+    "breakdown_by_subject": "Rincian berdasarkan mata pelajaran",
+    "no_data_yet": "Belum ada data",
+    "recent_activities": "Aktivitas terbaru",
+    "no_activity": "Tidak ada aktivitas",
+    "follow_up_recommendations": "Rekomendasi tindak lanjut",
+    "no_data_by_subject": "Tidak ada data per mata pelajaran.",
+    "no_learning_activity_recently": "Tidak ada aktivitas belajar belakangan ini.",
+    "no_further_recommendations_at_this_time": "Tidak ada rekomendasi lebih lanjut saat ini.",
+    "general_class_report_all_subjects": "Laporan umum rombel · semua mata pelajaran",
+    "no_subjects_to_display": "Tidak ada mata pelajaran untuk ditampilkan."
+  },
+  "lib__school-server__school-browse-status.server": {
+    "not_enough_data": "Data tidak cukup"
+  },
+  "lib__school-server__school-students.server": {
+    "not_enough_data": "Data tidak cukup"
+  },
+  "lib__security__admin-token": {
+    "missing_admin_token_header": "Header token admin tidak ada",
+    "admin_token_does_not_match_server_configuration": "Token admin tidak cocok dengan konfigurasi server"
+  },
+  "lib__site__public-page-seo": {
+    "leo_kids_learning_games_and_progress_tracking_for_kids": "Leo Kids — Pembelajaran, permainan, dan pemantauan perkembangan untuk anak",
+    "contact_leo_kids": "Kontak · Leo Kids",
+    "contact_leo_kids_questions_support_bug_reports_or_ideas_to_improve_the_s": "Hubungi Leo Kids — pertanyaan, dukungan, laporan bug, atau ide untuk meningkatkan situs.",
+    "about_leo_kids": "Tentang · Leo Kids",
+    "about_leo_kids_subject_practice_parent_reports_games_coins_and_cards_for": "Tentang Leo Kids — latihan mata pelajaran, laporan orang tua, permainan, koin, dan kartu untuk anak-anak.",
+    "learn_and_play_with_leo_leo_kids": "Belajar dan bermain bersama Leo · Leo Kids",
+    "parent_portal_leo_kids": "Portal orang tua · Leo Kids",
+    "teacher_portal_leo_kids": "Portal guru · Leo Kids",
+    "school_portal_leo_kids": "Portal sekolah · Leo Kids",
+    "school_portal_manage_classes_teachers_students_messaging_progress": "Kelola rombel, guru, dan murid — dengan pesan sekolah dan visibilitas perkembangan di Leo Kids.",
+    "tracking_tools_personal_activities_and_reports_built_for_private_tutors_": "Alat pelacakan, aktivitas pribadi, dan laporan — dibuat untuk guru privat di Leo Kids.",
+    "parent_login_leo_kids": "Masuk orang tua · Leo Kids",
+    "sign_in_to_the_leo_kids_parent_portal": "Masuk ke portal orang tua Leo Kids.",
+    "teacher_login_leo_kids": "Masuk guru · Leo Kids",
+    "sign_in_to_the_leo_kids_teacher_portal": "Masuk ke portal guru Leo Kids.",
+    "practice_by_subject_leo_kids": "Latihan per mata pelajaran · Leo Kids",
+    "digital_practice_for_elementary_learners_in_math_geometry_english_and_sc": "Latihan digital untuk murid sekolah dasar dalam matematika, geometri, Bahasa Inggris, dan sains.",
+    "math_practice_by_grade_and_topic_leo_kids": "Latihan matematika berdasarkan kelas dan topik · Leo Kids",
+    "reading_comprehension_practice_leo_kids": "Latihan pemahaman membaca · Leo Kids",
+    "english_practice_by_grade_and_topic_leo_kids": "Latihan Bahasa Inggris berdasarkan kelas dan topik · Leo Kids",
+    "english_practice_vocabulary_phonics_grammar_sentences_and_reading": "Latihan Bahasa Inggris — kosakata, fonik, tata bahasa, kalimat, dan membaca.",
+    "geometry_practice_by_grade_and_topic_leo_kids": "Latihan geometri berdasarkan kelas dan topik · Leo Kids",
+    "geometry_practice_shapes_angles_perimeter_area_volume_and_more": "Latihan geometri — bentuk, sudut, keliling, luas, volume, dan lainnya.",
+    "science_practice_by_topic_leo_kids": "Latihan Sains per topik · Leo Kids",
+    "science_practice_body_animals_plants_materials_earth_and_weather": "Latihan Sains — tubuh, hewan, tumbuhan, materi, bumi, dan cuaca.",
+    "learning_games_for_kids_leo_kids": "Permainan belajar untuk anak · Leo Kids",
+    "learning_games_that_reinforce_practice_with_challenges_and_rewards": "Permainan belajar yang memperkuat latihan dengan tantangan dan hadiah.",
+    "digital_practice_without_printing_leo_kids": "Latihan digital tanpa mencetak · Leo Kids",
+    "practice_online_by_subject_and_topic_no_printing_required": "Berlatih online berdasarkan mata pelajaran dan topik — tanpa perlu mencetak.",
+    "parent_progress_reports_leo_kids": "Laporan perkembangan orang tua · Leo Kids",
+    "see_what_your_child_practiced_topics_to_strengthen_and_clear_next_steps": "Lihat apa yang telah dilatih anak Anda, topik yang perlu diperkuat, dan langkah selanjutnya yang jelas.",
+    "printable_worksheets_for_kids_leo_kids": "Lembar kerja cetak untuk anak · Leo Kids",
+    "ready_worksheets_a_worksheet_generator_and_answer_keys_for_elementary_pr": "Lembar kerja siap pakai, pembuat lembar kerja, dan kunci jawaban untuk latihan sekolah dasar.",
+    "help_center_leo_kids": "Pusat bantuan · Leo Kids",
+    "guides_for_parents_leo_kids": "Panduan untuk orang tua · Leo Kids",
+    "math_practice_at_home_leo_kids_guides": "Latihan matematika di rumah · Panduan Leo Kids",
+    "how_to_choose_a_math_topic_respond_to_mistakes_and_build_steady_home_pra": "Cara memilih topik matematika, menanggapi kesalahan, dan membangun latihan rumah yang konsisten.",
+    "reading_practice_at_home_leo_kids_guides": "Latihan membaca di rumah · Panduan Leo Kids",
+    "how_to_practice_reading_accuracy_pace_and_understanding_with_short_texts": "Cara melatih ketepatan membaca, kecepatan, dan pemahaman dengan teks pendek di rumah.",
+    "reading_comprehension_at_home_leo_kids_guides": "Pemahaman membaca di rumah · Panduan Leo Kids",
+    "how_to_help_your_child_find_details_explain_answers_and_draw_conclusions": "Cara membantu anak Anda menemukan detail, menjelaskan jawaban, dan menarik kesimpulan dari teks.",
+    "english_vocabulary_practice_leo_kids_guides": "Latihan kosakata Bahasa Inggris · Panduan Leo Kids",
+    "how_to_practice_new_words_in_context_and_review_them_through_the_week": "Cara melatih kata-kata baru dalam konteks dan meninjaunya sepanjang minggu.",
+    "learning_games_at_home_leo_kids_guides": "Permainan belajar di rumah · Panduan Leo Kids",
+    "how_to_combine_learning_games_with_focused_practice_by_subject_and_topic": "Cara menggabungkan permainan belajar dengan latihan terfokus berdasarkan mata pelajaran dan topik.",
+    "math_games_for_kids_leo_kids_guides": "Permainan matematika untuk anak · Panduan Leo Kids",
+    "how_to_use_math_games_for_operations_numbers_and_problem_solving_practic": "Cara menggunakan permainan matematika untuk latihan operasi hitung, bilangan, dan pemecahan masalah.",
+    "parent_progress_tracking_leo_kids_guides": "Pemantauan perkembangan orang tua · Panduan Leo Kids",
+    "how_to_read_progress_reports_and_spot_patterns_over_time": "Cara membaca laporan perkembangan dan mengenali pola seiring waktu.",
+    "choosing_a_topic_to_strengthen_leo_kids_guides": "Memilih topik untuk diperkuat · Panduan Leo Kids",
+    "how_to_pick_the_next_topic_based_on_reports_answers_and_repeating_diffic": "Cara memilih topik berikutnya berdasarkan laporan, jawaban, dan kesulitan yang berulang.",
+    "home_practice_routine_leo_kids_guides": "Rutinitas latihan di rumah · Panduan Leo Kids",
+    "how_to_build_a_home_practice_routine_with_one_clear_goal_per_session": "Cara membangun rutinitas latihan di rumah dengan satu tujuan jelas per sesi.",
+    "practice_without_printing_leo_kids_guides": "Latihan tanpa mencetak · Panduan Leo Kids",
+    "how_to_use_digital_practice_and_games_and_when_worksheets_help": "Cara menggunakan latihan digital dan permainan, serta kapan lembar kerja membantu.",
+    "leo_kids_practice_for_elementary_learners": "Leo Kids — latihan untuk murid sekolah dasar.",
+    "kids_page_practice_math_geometry_english_science_games_coins_cards": "Halaman anak — berlatih matematika, geometri, bahasa Inggris, dan sains, dengan permainan, koin, dan kartu.",
+    "gallery_page_photos_and_videos_of_leo_the_site_mascot": "Galeri — foto dan video Leo, maskot situs ini.",
+    "parents_page_progress_reports_reinforcement_insights_personal_activities": "Halaman orang tua — laporan perkembangan, wawasan penguatan, dan aktivitas pribadi.",
+    "math_practice_for_elementary_learners_operations_fractions_and_more": "Latihan matematika untuk murid sekolah dasar — operasi hitung, pecahan, dan lainnya.",
+    "reading_comprehension_short_texts_english_practice_for_elementary": "Pemahaman membaca — teks singkat dan latihan bahasa Inggris untuk murid sekolah dasar.",
+    "help_center_guides_for_parents_and_students_site_reports_practice": "Pusat bantuan — panduan untuk orang tua dan murid tentang situs, laporan, dan latihan.",
+    "guides_hub_practical_guides_home_practice_progress_tracking": "Pusat panduan — panduan praktis untuk latihan di rumah dan pemantauan perkembangan."
+  },
+  "lib__student-ui__student-ad-slot.client": {
+    "reserved_for_ad": "Dicadangkan untuk iklan"
+  },
+  "lib__teacher-portal__teacher-activity-report-export-labels": {
+    "live_lesson": "Pelajaran langsung",
+    "guided_practice": "Latihan terbimbing",
+    "homework": "Pekerjaan rumah",
+    "class_discussion": "Diskusi kelas",
+    "standard": "Standar",
+    "advanced": "Lanjutan",
+    "angles": "Sudut",
+    "shapes": "Bentuk",
+    "perimeter": "Keliling",
+    "volume": "Volume",
+    "general_practice": "Latihan umum",
+    "asia_jerusalem": "Asia/Jerusalem"
+  },
+  "lib__teacher-portal__teacher-activity-report-export": {
+    "activity_report": "Laporan aktivitas",
+    "correct_out_of_all_answers": "Jawaban benar dari seluruh jawaban"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf-he": {
+    "notosanshebrew_regular_ttf": "NotoSansHebrew-Regular.ttf"
+  },
+  "lib__teacher-portal__teacher-activity-report-pdf": {
+    "activity_report_teacher": "Laporan aktivitas — guru",
+    "questions": "Soal",
+    "student_summary": "Ringkasan murid",
+    "question_analysis": "Analisis soal",
+    "skill_analysis": "Analisis skill"
+  },
+  "lib__teacher-portal__teacher-class-grade": {
+    "grade_1": "Kelas 1",
+    "grade_2": "Kelas 2",
+    "grade_3": "Kelas 3",
+    "grade_4": "Kelas 4",
+    "grade_5": "Kelas 5",
+    "grade_6": "Kelas 6"
+  },
+  "lib__teacher-portal__teacher-class-topic-options": {
+    "human_body": "Tubuh manusia",
+    "animals": "Hewan",
+    "plants": "Tumbuhan",
+    "materials": "Materi",
+    "experiments": "Eksperimen",
+    "earth_space": "Bumi & Antariksa",
+    "environment": "Lingkungan"
+  },
+  "lib__teacher-portal__teacher-smoke-artifacts": {
+    "class_3_leo": "Kelas 3 - LEO"
+  },
+  "lib__teacher-portal__use-teacher-portal-session": {
+    "verifying_connection": "Memverifikasi koneksi…",
+    "loading_dashboard": "Memuat dasbor…",
+    "load_data_error": "Terjadi kesalahan saat memuat data. Segarkan halaman dan coba lagi.",
+    "load_report_error": "Terjadi kesalahan saat memuat laporan. Segarkan dan coba lagi.",
+    "load_report_error_long": "Terjadi kesalahan saat memuat laporan. Segarkan halaman dan coba lagi.",
+    "loading_report_hint": "Memuat laporan — ini mungkin memerlukan beberapa detik.",
+    "session_expired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "load_timeout": "Pemuatan terlalu lama. Muat ulang dan coba lagi."
+  },
+  "lib__teacher-server__teacher-activities.server": {
+    "this_subject_is_not_supported_for_class_activities": "Mata pelajaran ini tidak didukung untuk aktivitas rombel",
+    "please_select_at_least_one_student": "Silakan pilih setidaknya satu murid"
+  },
+  "lib__teacher-server__teacher-dashboard.server": {
+    "grade_1": "Kelas 1",
+    "grade_2": "Kelas 2",
+    "grade_3": "Kelas 3",
+    "grade_4": "Kelas 4",
+    "grade_5": "Kelas 5",
+    "grade_6": "Kelas 6"
+  },
+  "lib__teacher-server__teacher-request.server": {
+    "unexpected_server_error": "Kesalahan server yang tidak terduga"
+  },
+  "lib__teacher-server__teacher-student-login-access.server": {
+    "plaintext_pin_will_not_be_retrievable_after_this_response_store_securely": "PIN teks biasa tidak dapat diambil kembali setelah respons ini. Simpan dengan aman."
+  },
+  "lib__worksheet-activities__worksheet-labels.client": {
+    "active": "Aktif",
+    "closed": "Ditutup",
+    "archived": "Diarsipkan",
+    "digital_answer_sheet": "Lembar jawaban digital",
+    "manual_grading": "Penilaian manual",
+    "not_submitted": "Belum dikirim",
+    "submitted": "Terkirim",
+    "pending_review": "Menunggu peninjauan",
+    "partially_checked": "Diperiksa sebagian",
+    "checked": "Dicentang",
+    "published": "Diterbitkan",
+    "multiple_choice": "Pilihan ganda",
+    "true_false": "Benar / Salah",
+    "number": "Bilangan",
+    "short_answer": "Jawaban singkat",
+    "free_text": "Teks bebas",
+    "draft": "Draf",
+    "pdf_only": "Hanya PDF"
+  },
+  "lib__worksheets__worksheet-english-sentences-pool.server": {
+    "she_already_finished_the_project": "She ___ already finished the project.",
+    "if_it_rains_tomorrow_we_indoors": "If it rains tomorrow, we ___ indoors.",
+    "they_a_science_fair_last_week": "They ___ a science fair last week.",
+    "please_carefully_before_you_answer": "Please ___ carefully before you answer.",
+    "although_the_problem_was_complex_the_team_a_clear_plan": "Although the problem was complex, the team ___ a clear plan.",
+    "by_the_time_we_arrived_the_presentation_already_begun": "By the time we arrived, the presentation ___ already begun.",
+    "students_should_evidence_before_they_form_an_opinion": "Students should ___ evidence before they form an opinion.",
+    "if_we_recycle_more_our_community_cleaner": "If we recycle more, our community ___ cleaner.",
+    "she_asked_whether_we_ready_to_present": "She asked whether we ___ ready to present.",
+    "technology_can_help_us_learn_we_use_it_wisely": "Technology can help us learn, ___ we use it wisely.",
+    "the_report_explains_the_experiment_worked": "The report explains ___ the experiment worked.",
+    "we_must_listen_carefully_we_understand_the_instructions": "We must listen carefully ___ we understand the instructions.",
+    "after_reviewing_the_data_they_their_conclusion": "After reviewing the data, they ___ their conclusion.",
+    "honest_feedback_helps_writers_stronger_drafts": "Honest feedback helps writers ___ stronger drafts.",
+    "communities_grow_stronger_when_people_each_other": "Communities grow stronger when people ___ each other.",
+    "she_prefers_asking_clear_questions_guessing_the_answer": "She prefers asking clear questions ___ guessing the answer.",
+    "before_publishing_the_article_check_fact_carefully": "Before publishing the article, check ___ fact carefully.",
+    "learning_from_mistakes_is_important_part_of_progress": "Learning from mistakes is ___ important part of progress.",
+    "exploring_different_cultures_teaches_respect_curiosity": "Exploring different cultures teaches respect ___ curiosity."
+  },
+  "lib__worksheets__worksheet-english-translation-pool.server": {
+    "choose_the_correct_english_sentence": "Pilih kalimat Bahasa Inggris yang benar."
+  },
+  "lib__worksheets__worksheet-geometry-diagram-svg": {
+    "arial_helvetica_sans_serif": "Arial, Helvetica, sans-serif"
+  },
+  "lib__worksheets__worksheet-geometry-thin-pool.server": {
+    "square": "Persegi",
+    "rectangle": "Persegi panjang"
+  },
+  "lib__worksheets__worksheet-math-practice-format": {
+    "horizontal_addition_and_subtraction": "Penjumlahan dan pengurangan mendatar",
+    "vertical_addition_and_subtraction": "Penjumlahan dan pengurangan bersusun",
+    "basic_multiplication": "Perkalian dasar",
+    "long_multiplication": "Perkalian bersusun",
+    "basic_division": "Pembagian dasar",
+    "long_division": "Pembagian bersusun",
+    "fractions": "Pecahan",
+    "decimals": "Desimal",
+    "percentages": "Persentase",
+    "ratio_and_scale": "Rasio dan skala",
+    "word_problems": "Soal cerita",
+    "mixed_practice": "Latihan campuran",
+    "horizontal_addition": "Penjumlahan mendatar",
+    "vertical_addition": "Penjumlahan bersusun",
+    "horizontal_subtraction": "Pengurangan mendatar",
+    "vertical_subtraction": "Pengurangan bersusun",
+    "unit_fractions_halves_quarters": "Pecahan satuan — setengah dan seperempat"
+  },
+  "lib__worksheets__worksheet-meta-labels-en.server": {
+    "grade_1": "Kelas 1",
+    "grade_2": "Kelas 2",
+    "grade_3": "Kelas 3",
+    "grade_4": "Kelas 4",
+    "grade_5": "Kelas 5",
+    "grade_6": "Kelas 6",
+    "regular": "Reguler",
+    "advanced": "Lanjutan",
+    "addition": "Penjumlahan",
+    "subtraction": "Pengurangan",
+    "multiplication": "Perkalian",
+    "division": "Pembagian",
+    "division_with_remainder": "Pembagian bersisa",
+    "fractions": "Pecahan",
+    "decimals": "Desimal",
+    "percentages": "Persentase",
+    "sequences": "Urutan",
+    "number_sense": "Pemahaman bilangan",
+    "comparison": "Perbandingan",
+    "order_of_operations": "Urutan operasi",
+    "divisibility_rules": "Aturan keterbagian",
+    "word_problems": "Soal cerita",
+    "rounding": "Pembulatan",
+    "equations": "Persamaan",
+    "factors_and_multiples": "Faktor dan kelipatan",
+    "estimation": "Estimasi",
+    "mixed_practice": "Latihan campuran",
+    "basic_shapes": "Bentuk dasar",
+    "perimeter": "Keliling",
+    "volume": "Volume",
+    "angles": "Sudut",
+    "parallel_and_perpendicular": "Garis sejajar dan tegak lurus",
+    "triangles": "Segitiga",
+    "quadrilaterals": "Segi empat",
+    "transformations": "Transformasi",
+    "rotation": "Rotasi",
+    "symmetry": "Simetri",
+    "diagonals": "Diagonal",
+    "heights": "Tinggi",
+    "tiling": "Pengubinan",
+    "circles": "Lingkaran",
+    "solids": "Zat padat",
+    "pythagoras": "Pythagoras",
+    "phonics": "Fonik",
+    "vocabulary": "Kosakata",
+    "grammar": "Tata bahasa",
+    "grammar_basics": "Dasar-dasar tata bahasa",
+    "translation": "Translasi",
+    "sentence_building": "Penyusunan kalimat",
+    "writing": "Menulis",
+    "reading_comprehension": "Pemahaman membaca",
+    "matching": "Mencocokkan",
+    "inference": "Inferensi",
+    "sentence_understanding": "Pemahaman kalimat",
+    "simple_sentences": "Kalimat sederhana",
+    "ratio": "Rasio",
+    "scale": "Skala",
+    "area": "Luas",
+    "subject_math": "Matematika",
+    "subject_geometry": "Geometri",
+    "subject_english": "Bahasa Inggris",
+    "subject_science": "Sains",
+    "worksheet_title_prefix": "Lembar kerja — {subject} · {topic}",
+    "grade_n": "Kelas {n}"
+  },
+  "lib__worksheets__worksheet-payload-build.server": {
+    "worksheet": "Lembar kerja",
+    "name": "Nama: ________________",
+    "date": "Tanggal: ________________",
+    "options": "Opsi:",
+    "answer": "Jawaban:",
+    "question": "Soal",
+    "answer_2": "Jawaban",
+    "answer_key": "Kunci jawaban"
+  },
+  "lib__worksheets__worksheet-ui": {
+    "printable_worksheets": "Lembar kerja cetak",
+    "ready_worksheet": "Lembar kerja siap",
+    "create_new": "Buat baru",
+    "system_recommendation": "Rekomendasi sistem",
+    "preview": "Pratinjau",
+    "answer_key": "Kunci jawaban",
+    "separate_answer_key_generated_only_on_explicit_request": "Kunci jawaban terpisah - dibuat hanya atas permintaan eksplisit",
+    "ink_saver": "Hemat tinta",
+    "no_answers_on_the_worksheet": "Tidak ada jawaban pada lembar kerja",
+    "this_question_requires_audio_and_cannot_be_printed": "Soal ini memerlukan audio dan tidak dapat dicetak",
+    "this_question_requires_an_image_and_cannot_be_printed": "Soal ini memerlukan gambar dan tidak dapat dicetak",
+    "question": "Soal",
+    "practice_type": "Jenis latihan",
+    "number_of_questions": "Jumlah soal",
+    "include_answer_key": "Sertakan kunci jawaban",
+    "multiple_choice": "Pilihan ganda",
+    "if_available_multiple_choice_options_will_be_shown": "Jika tersedia, pilihan ganda akan ditampilkan",
+    "no_multiple_choice_questions_are_available_for_this_topic": "Tidak ada soal pilihan ganda yang tersedia untuk topik ini",
+    "create_worksheet": "Buat lembar kerja",
+    "view_and_print": "Lihat dan cetak",
+    "loading": "Memuat…",
+    "something_went_wrong_please_try_again": "Terjadi kesalahan. Silakan coba lagi.",
+    "no_children_are_linked_to_this_account": "Tidak ada murid yang tertaut ke akun ini.",
+    "select_a_child": "Pilih murid",
+    "no_recommendations_yet": "Belum ada rekomendasi",
+    "recommendations_based_on_practice": "Rekomendasi berdasarkan latihan",
+    "recommendations_are_based_on_topics_your_child_practiced_recently_not_on": "Rekomendasi didasarkan pada topik yang baru-baru ini dilatih anak Anda - bukan pada laporan orang tua.",
+    "ready_made_worksheets": "Lembar kerja siap pakai",
+    "no_worksheets_found": "Tidak ada lembar kerja ditemukan",
+    "try_changing_the_filters_or_select_all_subjects_grades_and_levels": "Coba ubah filternya - atau pilih semua mata pelajaran, kelas, dan tingkat.",
+    "create_a_new_worksheet": "Buat lembar kerja baru",
+    "choose_a_subject_grade_topic_and_level_then_create_a_worksheet_ready_to_": "Pilih mata pelajaran, kelas, topik, dan level - lalu buat lembar kerja yang siap dicetak.",
+    "choose_topics_for_mixed_practice": "Pilih topik untuk latihan campuran",
+    "check_the_topics_to_include_in_the_mixed_practice_all_topics_are_checked": "Centang topik yang akan disertakan dalam latihan campuran. Semua topik dicentang secara default.",
+    "select_all_topics": "Pilih semua topik",
+    "please_select_at_least_one_topic_for_practice": "Silakan pilih setidaknya satu topik untuk latihan.",
+    "worksheet": "Lembar kerja",
+    "no_worksheet_to_preview_go_back_to_create_one": "Tidak ada lembar kerja untuk dipratinjau. Kembali untuk membuatnya.",
+    "creating_worksheet": "Membuat lembar kerja…",
+    "refresh_questions": "Segarkan soal",
+    "generating_new_questions": "Membuat soal baru…",
+    "the_answer_key_was_updated_to_match_the_current_questions_try_opening_th": "Kunci jawaban telah diperbarui agar sesuai dengan soal saat ini. Coba buka kembali kunci jawabannya.",
+    "create_worksheet_from_recommendation": "Buat lembar kerja dari rekomendasi",
+    "try_the_worksheet_generator": "Coba pembuat lembar kerja",
+    "more_topics_are_available_in_the_full_parent_system": "Lebih banyak topik tersedia di sistem orang tua lengkap",
+    "ready_made_worksheets_by_grade": "Lembar kerja siap pakai per kelas",
+    "preview_data_is_not_available_go_back_to_the_worksheets_page_and_choose_": "Data pratinjau tidak tersedia. Kembali ke halaman lembar kerja dan pilih lembar kerja lagi.",
+    "back_to_worksheets": "Kembali ke lembar kerja"
+  },
+  "pages__api__cron__monthly-persistence-award": {
+    "monthly_persistence_cron_is_disabled_set_enable_monthly_persistence_cron": "Cron persistensi bulanan dinonaktifkan. Atur ENABLE_MONTHLY_PERSISTENCE_CRON=true"
+  },
+  "pages__api__parent__create-student": {
+    "please_select_a_grade": "Silakan pilih kelas",
+    "you_can_add_up_to_3_children_on_this_parent_account": "Anda dapat menambahkan hingga 3 anak pada akun orang tua ini"
+  },
+  "pages__api__parent__delete-student": {
+    "child_id_is_missing": "ID murid tidak ada",
+    "server_error_please_try_again": "Kesalahan server — silakan coba lagi"
+  },
+  "pages__api__parent__guest__link": {
+    "unable_to_link_this_guest_number_check_the_number_and_try_again": "Tidak dapat menghubungkan nomor tamu ini. Periksa nomornya dan coba lagi.",
+    "too_many_attempts_please_try_again_later": "Terlalu banyak percobaan. Silakan coba lagi nanti."
+  },
+  "pages__api__teacher__classes__index": {
+    "unexpected_server_error": "Kesalahan server yang tidak terduga"
+  },
+  "pages__api__teacher__classes__[classId]": {
+    "unexpected_server_error": "Kesalahan server yang tidak terduga"
+  },
+  "pages__api__teacher__me": {
+    "unexpected_server_error": "Kesalahan server yang tidak terduga"
+  },
+  "pages__api__teacher__onboard": {
+    "unexpected_server_error": "Kesalahan server yang tidak terduga"
+  },
+  "pages__api__teacher__students": {
+    "unexpected_server_error": "Kesalahan server yang tidak terduga"
+  },
+  "pages__parent__school-inbox": {
+    "back_to_report": "← Kembali ke laporan",
+    "loading": "Memuat…"
+  },
+  "pages__school__activities__[activityId]__monitor": {
+    "activity_monitor": "Pemantau aktivitas"
+  },
+  "pages__school__classes__index": {
+    "please_select_valid_dates": "Silakan pilih tanggal yang valid",
+    "no_classes_in_this_grade": "Tidak ada rombel di kelas ini."
+  },
+  "pages__school__messages": {
+    "loading": "Memuat…",
+    "regular": "Reguler",
+    "important": "Penting",
+    "urgent": "Mendesak",
+    "requires_confirmation": "Memerlukan konfirmasi"
+  },
+  "pages__school__pending": {
+    "registration_status": "Status pendaftaran"
+  },
+  "pages__school__students__index": {
+    "please_select_valid_dates": "Silakan pilih tanggal yang valid",
+    "no_children_in_this_grade": "Tidak ada murid di kelas ini.",
+    "no_children_found_in_this_class": "Tidak ditemukan murid di rombel ini."
+  },
+  "pages__student__activity__[activityId]": {
+    "incorrect": "Salah",
+    "answer_submitted": "Jawaban terkirim",
+    "submit_answer": "Kirim jawaban",
+    "type_your_answer": "Ketik jawaban Anda",
+    "enlarged_diagram": "Diagram diperbesar",
+    "close_diagram": "Tutup diagram",
+    "waiting_for_the_teacher": "Menunggu guru…",
+    "correct": "Benar!",
+    "network_error": "Kesalahan jaringan",
+    "could_not_start": "Tidak dapat memulai aktivitas",
+    "could_not_save": "Tidak dapat menyimpan jawaban",
+    "teacher_paused": "Guru menghentikan sementara pelajaran — harap tunggu",
+    "done_title_activity": "Anda telah menyelesaikan aktivitas ini!",
+    "done_title_discussion": "Anda telah menyelesaikan diskusi",
+    "done_title_explanation": "Anda telah membaca penjelasan",
+    "done_body_explanation": "Anda telah membaca penjelasan guru. Terima kasih!",
+    "done_body_discussion_multi": "Anda telah menyelesaikan {count} soal diskusi. Terima kasih!",
+    "done_body_discussion": "Terima kasih atas jawabannya. Guru Anda akan melihat jawaban ini di kelas.",
+    "back_home": "Kembali ke beranda",
+    "question_progress": "Soal {current} dari {total}",
+    "answer_saved": "Jawaban tersimpan",
+    "close_draft": "Tutup draf",
+    "scratch_pad": "Kertas coretan",
+    "previous_question": "Soal sebelumnya",
+    "next_question": "Soal berikutnya",
+    "finish_and_submit": "Selesai dan kirim",
+    "explanation_banner": "Tidak perlu mengirim jawaban — baca kontennya",
+    "read_continue": "Saya sudah membacanya — lanjutkan",
+    "finished_reading": "Saya sudah selesai membaca",
+    "summary_got_of": "Anda menjawab benar {correct} dari {total} soal",
+    "summary_got": "Anda menjawab benar {correct} soal",
+    "summary_finished": "Anda telah menyelesaikan aktivitas ini",
+    "score_chip_of": "{correct}/{total} soal",
+    "score_chip": "{correct} soal",
+    "show_landscape": "Tampilkan lanskap",
+    "show_portrait": "Tampilkan potret",
+    "landscape": "↔️ Lanskap",
+    "portrait": "↕️ Potret"
+  },
+  "pages__student__worksheet__[worksheetId]": {
+    "mark_this_worksheet_as_finished": "Tandai lembar kerja ini sebagai selesai?",
+    "submit_your_answers": "Kirim jawaban Anda?",
+    "submission_received_and_waiting_for_teacher_approval": "Kiriman telah diterima dan menunggu persetujuan guru."
+  },
+  "pages__teacher__class__[classId]": {
+    "class_report": "Laporan rombel",
+    "invalid_class_id": "ID rombel tidak valid.",
+    "you_do_not_have_permission_to_view_this_class_report": "Anda tidak memiliki izin untuk melihat laporan rombel ini.",
+    "please_select_valid_dates": "Silakan pilih tanggal yang valid",
+    "class_fallback_name": "Rombel",
+    "active_students": "{count} murid aktif",
+    "empty_class_hint": "Rombel ini kosong — tambahkan murid untuk melihat laporan.",
+    "class_summary": "Ringkasan rombel",
+    "insufficient_data": "Tidak dapat menghitung rekomendasi — data belum cukup pada periode ini.",
+    "total_practice_sessions": "Total sesi latihan",
+    "total_answers": "Total jawaban",
+    "average_success_rate": "Rata-rata tingkat keberhasilan",
+    "students_with_data": "Murid dengan data",
+    "class_performance_by_subject": "Kinerja rombel menurut mata pelajaran",
+    "topics_need_reinforcement": "Topik yang perlu penguatan",
+    "topic_line_subject_level": "{headline}: {affected}/{memberCount} murid · {accuracy} berhasil{actionSuffix}",
+    "topic_line_v2": "{headline}: {affected}/{memberCount} murid · {accuracy} berhasil · tingkat kesalahan {errPct}{actionSuffix}",
+    "topic_line_legacy": "{line}: {acc} rata-rata kesalahan{studentsSuffix}",
+    "students_count_suffix": " · {count} murid",
+    "action_suffix": " · {action}",
+    "no_problematic_topics": "Tidak ditemukan topik bermasalah pada periode ini.",
+    "suggested_support_groups": "Kelompok dukungan yang disarankan",
+    "support_group_line": "{topic}: {names}{avgSuffix}",
+    "support_group_avg": " · rata-rata {accuracy}",
+    "students_need_monitoring": "Murid yang perlu dipantau",
+    "view_report": "Lihat laporan",
+    "all_students_on_track": "Semua murid di rombel sesuai jalur — tidak diperlukan intervensi khusus.",
+    "suggested_work_groups": "Kelompok kerja yang disarankan",
+    "work_group_header": "{tier} ({count} murid):",
+    "not_enough_students_for_groups": "Belum cukup murid dengan data untuk membentuk kelompok.",
+    "not_enough_data_for_groups": "Data belum cukup untuk membentuk kelompok.",
+    "groups_disclaimer": "*Kelompok dihitung dari kinerja — guru yang membuat keputusan akhir.",
+    "focus_for_next_lesson": "Fokus untuk pelajaran berikutnya",
+    "next_lesson_topic_line": "{line} - {count} murid mengalami kesulitan pada topik ini",
+    "no_standout_topic": "Tidak ada topik menonjol untuk pelajaran berikutnya — lanjutkan dengan kurikulum.",
+    "reinforcement_suggestions": "Saran penguatan",
+    "recommended_to_reinforce": "Disarankan untuk memperkuat: {line}",
+    "no_reinforcement_suggestions": "Tidak ada saran penguatan khusus untuk periode ini.",
+    "enrichment_suggestions": "Saran pengayaan",
+    "strong_class_performance": "{line} - kinerja rombel kuat ({accuracy})",
+    "no_enrichment_suggestions": "Tidak ada saran pengayaan untuk periode ini."
+  },
+  "pages__teacher__class__[classId]__activities__index": {
+    "class_activities": "Aktivitas rombel",
+    "back_to_dashboard": "← Kembali ke dasbor",
+    "subtitle": "Buat, luncurkan, dan pantau aktivitas rombel.",
+    "new_activity": "Aktivitas baru",
+    "loading": "Memuat aktivitas…",
+    "error_loading": "Terjadi kesalahan saat memuat",
+    "network_error": "Kesalahan jaringan",
+    "try_again": "Coba lagi",
+    "forbidden": "Anda tidak memiliki izin untuk melihat aktivitas rombel ini.",
+    "empty": "Belum ada aktivitas. Buat aktivitas baru.",
+    "col_title": "Judul",
+    "col_status": "Status",
+    "col_type": "Jenis",
+    "col_progress": "Kemajuan",
+    "col_actions": "Tindakan",
+    "edit_launch": "Edit / luncurkan",
+    "view": "Lihat"
+  },
+  "pages__teacher__class__[classId]__activities__new": {
+    "level": "Tingkat",
+    "new_activity": "Aktivitas baru",
+    "back_to_activities": "← Kembali ke aktivitas",
+    "title": "Judul",
+    "subject": "Mata pelajaran",
+    "topic": "Topik",
+    "no_science_topics": "Tidak ada topik yang tersedia untuk kelas ini pada mata pelajaran Sains.",
+    "no_subject_topics": "Tidak ada topik yang tersedia untuk mata pelajaran dan kelas ini.",
+    "subtopic_optional": "Subtopik (opsional)",
+    "grade_for_questions": "Kelas (untuk pembuatan soal)",
+    "activity_mode": "Mode aktivitas",
+    "number_of_questions": "Jumlah soal",
+    "time_limit_optional": "Batas waktu (detik, opsional)",
+    "due_date_optional": "Tenggat waktu (tugas rumah, opsional)",
+    "generating": "Membuat…",
+    "preview_questions": "Pratinjau soal",
+    "save_draft": "Simpan sebagai draf",
+    "preview_heading": "Pratinjau ({n} soal)",
+    "not_sent_hint": "(tidak dikirim ke murid)",
+    "err_no_permission": "Anda tidak memiliki izin untuk membuat aktivitas untuk rombel ini. Hubungi admin sekolah Anda.",
+    "err_load_class": "Tidak dapat memuat rombel",
+    "err_invalid_grade": "Tingkat kelas untuk rombel ini tidak valid. Hubungi admin sekolah Anda.",
+    "network_error": "Kesalahan jaringan",
+    "err_preview": "Tidak dapat membuat pratinjau soal",
+    "err_enter_title": "Silakan masukkan judul",
+    "err_preview_first": "Silakan pratinjau soal sebelum menyimpan",
+    "err_quiz_time": "Mode kuis memerlukan batas waktu (detik)",
+    "err_save": "Gagal menyimpan"
+  },
+  "pages__teacher__class__[classId]__discussion__new": {
+    "new_discussion_activity": "Aktivitas diskusi baru",
+    "err_load_class": "Tidak dapat memuat rombel",
+    "err_invalid_grade": "Tingkat kelas untuk rombel ini tidak valid. Hubungi admin sekolah Anda.",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…"
+  },
+  "pages__teacher__class__[classId]__worksheets__index": {
+    "worksheets": "Lembar kerja",
+    "back_to_dashboard": "← Kembali ke dasbor",
+    "subtitle": "Buat, luncurkan, dan pantau lembar kerja PDF.",
+    "create_new": "Buat lembar kerja baru",
+    "loading": "Memuat…",
+    "error_loading": "Terjadi kesalahan saat memuat",
+    "network_error": "Kesalahan jaringan",
+    "not_signed_in": "Anda belum masuk",
+    "error_generic": "Kesalahan",
+    "empty": "Belum ada lembar kerja.",
+    "forbidden": "Anda tidak memiliki izin untuk melihat lembar kerja rombel ini.",
+    "due": "Tenggat: {date}",
+    "manage": "Kelola",
+    "report": "Laporan"
+  },
+  "pages__teacher__class__[classId]__worksheets__new": {
+    "page_title": "Aktivitas lembar kerja",
+    "title": "Judul",
+    "subject": "Mata pelajaran",
+    "instructions_for_students": "Petunjuk untuk murid",
+    "physical_due_date": "Tenggat penyerahan fisik",
+    "activity_mode": "Mode aktivitas",
+    "save_as_draft": "Simpan sebagai draf",
+    "launch_class": "Luncurkan dan kirim ke rombel",
+    "not_signed_in": "Anda belum masuk",
+    "save_draft_first": "Simpan draf terlebih dahulu",
+    "save_draft_before_pdf": "Simpan draf sebelum mengunggah PDF.",
+    "please_enter_title": "Silakan masukkan judul",
+    "upload_pdf_before_launch": "Unggah PDF sebelum meluncurkan",
+    "upload_failed": "Unggahan gagal",
+    "launch_failed": "Peluncuran gagal",
+    "error_saving": "Gagal menyimpan",
+    "network_error": "Kesalahan jaringan",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]": {
+    "worksheet": "Lembar kerja",
+    "not_signed_in": "Anda belum masuk",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Nilai murid",
+    "saved_and_marked_as_reviewed": "Disimpan dan ditandai sudah ditinjau",
+    "progress_saved": "Progres disimpan",
+    "published_to_student": "Dipublikasikan ke murid · Skor: {score}%",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__report": {
+    "worksheet_report": "Laporan lembar kerja",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__dashboard": {
+    "my_dashboard": "Dasbor saya",
+    "verifying_connection": "Memverifikasi koneksi…",
+    "loading_dashboard": "Memuat dasbor…",
+    "load_data_error": "Terjadi kesalahan saat memuat data. Segarkan halaman dan coba lagi.",
+    "load_report_error": "Terjadi kesalahan saat memuat laporan. Segarkan dan coba lagi.",
+    "load_report_error_long": "Terjadi kesalahan saat memuat laporan. Segarkan halaman dan coba lagi.",
+    "loading_report_hint": "Memuat laporan — ini mungkin memerlukan beberapa detik.",
+    "session_expired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "load_timeout": "Pemuatan terlalu lama. Muat ulang dan coba lagi.",
+    "system_warming_up": "Sistem masih dalam proses pemanasan. Coba lagi dalam beberapa menit.",
+    "try_again": "Coba lagi",
+    "back_to_dashboard": "Kembali ke dasbor"
+  },
+  "pages__teacher__pending": {
+    "request_status": "Status permintaan"
+  },
+  "pages__teacher__students__activities__new": {
+    "activity_for_selected_private_students": "Aktivitas untuk murid privat yang dipilih",
+    "level": "Tingkat",
+    "select_private_students": "Pilih murid privat",
+    "selected_count": "Terpilih: {n}",
+    "loading_students": "Memuat data murid…",
+    "no_linked_private_students": "Tidak ada murid privat yang terhubung.",
+    "select_all": "Pilih semua",
+    "select_all_grade": "Pilih semua ({grade})",
+    "clear": "Bersihkan",
+    "class_label": "Kelas {grade}",
+    "multi_grade_warning": "⚠ Anda memiliki murid dari kelas yang berbeda. Anda hanya dapat mengirim satu aktivitas kepada murid pada kelas yang sama.",
+    "activity_locked_to": "Aktivitas dikunci ke {grade}.",
+    "select_first_to_lock": "Pilih murid pertama untuk mengunci kelas.",
+    "activity_settings": "Pengaturan aktivitas",
+    "title": "Judul",
+    "subject": "Mata pelajaran",
+    "grade_for_content": "Kelas (untuk konten)",
+    "derived_from_selected": "— diperoleh dari murid yang dipilih",
+    "topic": "Topik",
+    "no_science_topics": "Tidak ada topik yang tersedia untuk kelas ini pada mata pelajaran Sains.",
+    "activity_type": "Jenis aktivitas",
+    "number_of_questions": "Jumlah soal",
+    "time_limit_optional": "Batas waktu (detik, opsional)",
+    "required_for_quiz": "Diperlukan untuk kuis",
+    "blank_no_limit": "Kosong = tanpa batas",
+    "due_date_optional": "Tenggat waktu (opsional)",
+    "generating_questions": "Membuat soal…",
+    "show_preview": "Tampilkan pratinjau",
+    "create_and_send": "Buat dan kirim ({n} murid)",
+    "discussion_question": "Pertanyaan diskusi:",
+    "questions_count": "{n} soal:",
+    "could_not_generate": "Tidak dapat membuat soal",
+    "err_select_student": "Silakan pilih setidaknya satu murid",
+    "err_enter_title": "Silakan masukkan judul",
+    "err_generate_first": "Silakan buat soal terlebih dahulu",
+    "err_quiz_time": "Kuis memerlukan batas waktu",
+    "creation_failed": "Pembuatan gagal",
+    "network_error": "Kesalahan jaringan",
+    "err_mix_grades": "Anda tidak dapat mencampur murid dari kelas yang berbeda. Aktivitas ini dikunci untuk {locked}. Murid ini berada di {student}."
+  },
+  "pages__teacher__student__[studentId]": {
+    "student_report": "Laporan murid",
+    "invalid_student_id": "ID murid tidak valid.",
+    "you_do_not_have_permission_to_view_this_student_s_report": "Anda tidak memiliki izin untuk melihat laporan murid ini.",
+    "please_select_valid_dates": "Silakan pilih tanggal yang valid"
+  },
+  "pages__teacher__worksheets__index": {
+    "worksheets": "Lembar kerja",
+    "back_to_dashboard": "← Kembali ke dasbor",
+    "subtitle": "Semua lembar kerja Anda — seluruh rombel atau murid yang dipilih.",
+    "create_new": "Buat lembar kerja baru",
+    "loading": "Memuat…",
+    "error_loading": "Terjadi kesalahan saat memuat",
+    "network_error": "Kesalahan jaringan",
+    "not_signed_in": "Anda belum masuk",
+    "error_generic": "Kesalahan",
+    "empty": "Belum ada lembar kerja.",
+    "selected_students": "murid terpilih",
+    "class_scope": "rombel",
+    "manage": "Kelola",
+    "report": "Laporan"
+  },
+  "pages__teacher__worksheets__new": {
+    "page_title": "Aktivitas lembar kerja — murid terpilih",
+    "new_worksheet": "Lembar kerja baru",
+    "title": "Judul",
+    "subject": "Mata pelajaran",
+    "instructions_for_students": "Petunjuk untuk murid",
+    "physical_due_date": "Tenggat penyerahan fisik",
+    "activity_mode": "Mode aktivitas",
+    "save_as_draft": "Simpan sebagai draf",
+    "launch_selected": "Luncurkan dan kirim ke murid terpilih",
+    "not_signed_in": "Anda belum masuk",
+    "save_draft_first": "Simpan draf terlebih dahulu",
+    "save_draft_before_pdf": "Simpan draf sebelum mengunggah PDF.",
+    "please_enter_title": "Silakan masukkan judul",
+    "please_select_at_least_one_student": "Silakan pilih setidaknya satu murid",
+    "upload_pdf_before_launch": "Unggah PDF sebelum meluncurkan",
+    "upload_failed": "Unggahan gagal",
+    "launch_failed": "Peluncuran gagal",
+    "error_saving": "Gagal menyimpan",
+    "network_error": "Kesalahan jaringan",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__worksheets__[worksheetId]": {
+    "worksheet": "Lembar kerja",
+    "not_signed_in": "Anda belum masuk",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
+    "grade_student": "Nilai murid",
+    "saved_and_marked_as_reviewed": "Disimpan dan ditandai sudah ditinjau",
+    "progress_saved": "Progres disimpan",
+    "published_to_student": "Dipublikasikan ke murid · Skor: {score}%",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  },
+  "pages__teacher__worksheets__[worksheetId]__report": {
+    "worksheet_report": "Laporan lembar kerja",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  },
+  "pages___app": {
+    "default_document_title": "Leo Kids · Pembelajaran untuk murid sekolah dasar"
+  },
+  "utils__ai-hybrid-diagnostic__hybrid-review-record": {
+    "no_conflict_between_v2_and_the_hybrid_top_hypothesis": "Tidak ada konflik antara V2 dan hipotesis teratas Hybrid."
+  },
+  "utils__audio-narration-binding": {
+    "listen_to_the_question_and_answer_based_on_what_you_hear": "Dengarkan soalnya dan jawab berdasarkan apa yang Anda dengar."
+  },
+  "utils__contracts__parent-product-contract-v1": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Data belum cukup untuk membentuk gambaran pada tingkat mata pelajaran.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Mulai latihan singkat dan konsisten untuk membangun garis dasar pengukuran.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Volume data saat ini rendah, sehingga belum ada dasar untuk arah yang jelas.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Pilih satu topik dan latih selama 10–15 menit setiap sesi.",
+    "do_not_change_difficulty_based_on_sparse_data": "Jangan mengubah tingkat kesulitan berdasarkan data yang minim.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Seberapa bisa dipercaya: belum tinggi pada tahap ini.",
+    "existing_data_is_still_partial": "Data yang ada masih sebagian.",
+    "continue_basic_data_collection": "Lanjutkan pengumpulan data dasar.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Data belum cukup untuk menentukan arah yang jelas.",
+    "short_focused_practice_on_one_topic": "Latihan singkat dan terfokus pada satu topik.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Jangan menarik kesimpulan kuat dari sejumlah kecil soal.",
+    "how_much_to_trust_this_not_high_yet": "Seberapa bisa dipercaya: belum tinggi.",
+    "data_is_missing_or_partial": "Data tidak lengkap atau sebagian."
+  },
+  "utils__detailed-report-parent-letter-he": {
+    "sparse_data": "Data jarang"
+  },
+  "utils__detailed-report-parent-letter": {
+    "sparse_data": "Data jarang"
+  },
+  "utils__english-question-generator": {
+    "got_it": "Mengerti"
+  },
+  "utils__expert-review-pack-artifact-snapshot": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Tidak terisi dalam mode snapshot artifact. Jalankan `npm run qa:learning-simulator:expert-review-pack` untuk peta sintetis / agregat.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Pola lintas mata pelajaran adalah hipotesis dan memerlukan pemeriksaan konfirmasi untuk setiap mata pelajaran.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Hanya untuk dukungan diagnostik edukasi internal - bukan klinis / tidak ditampilkan ke orang tua."
+  },
+  "utils__math-topic-parent-display": {
+    "learning": "Pembelajaran",
+    "practice": "Latihan",
+    "challenge": "Tantangan",
+    "marathon": "Maraton",
+    "graded": "Sudah dinilai",
+    "normal": "Normal",
+    "mistakes": "Kesalahan",
+    "review_mistakes": "Tinjau kesalahan"
+  },
+  "utils__parent-ai-topic-classifier__external-question-route": {
+    "the_report_for_the_selected_period": "Laporan untuk periode yang dipilih"
+  },
+  "utils__parent-data-presence": {
+    "social_studies_geography": "IPS & Geografi",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra": "Ada beberapa latihan pada periode yang dipilih, tetapi belum cukup untuk menarik pemahaman yang jelas. Akan membantu untuk melanjutkan beberapa hari lagi dan memeriksa kembali.",
+    "there_is_no_practice_yet_in_the_selected_period": "Belum ada latihan pada periode yang dipilih.",
+    "there_is_limited_data_in_the_selected_period": "Data pada periode yang dipilih masih terbatas.",
+    "there_is_enough_data_in_the_selected_period_for_a_clear_picture": "Data pada periode yang dipilih sudah cukup untuk memberikan gambaran yang jelas.",
+    "practice_volume_not_yet_enough_in_the_selected_period": "Volume latihan pada periode yang dipilih belum cukup untuk memberikan gambaran yang jelas."
+  },
+  "utils__probe-pending-finalize": {
+    "choose_the_correct_formula_or_first_step_before_numerical_calculation": "Pilih rumus yang benar atau langkah pertama sebelum perhitungan numerik.",
+    "identify_one_clear_shape_property_or_state_before_calculating": "Tentukan satu sifat atau keadaan bangun yang jelas sebelum menghitung.",
+    "reinforce_a_foundational_concept_before_continuing": "Perkuat konsep dasar sebelum melanjutkan."
+  },
+  "utils__question-metadata-qa__english-metadata-enrichment-suggestions": {
+    "no_automated_prerequisite_chain_for_english_pools_in_this_fast_track_pas": "Tidak ada rantai prasyarat otomatis untuk kumpulan soal bahasa Inggris pada tahap cepat ini."
+  },
+  "utils__question-metadata-qa__geometry-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Semua saran tetap needsHumanReview=true hingga perubahan bank soal disetujui."
+  },
+  "utils__question-metadata-qa__geometry-metadata-enrichment-suggestions": {
+    "rectangle_area_planning_assumes_distinguishing_area_vs_perimeter_in_cont": "Perencanaan luas persegi panjang mengasumsikan pembedaan antara luas dan keliling sesuai konteks.",
+    "late_band_triangle_angle_sum_row_extends_the_same_principle_confirm_sequ": "Baris jumlah sudut segitiga untuk kelompok lanjut memperluas prinsip yang sama - konfirmasi urutannya sebelum diterapkan.",
+    "no_automated_prerequisite_chain_for_this_template_curriculum_authors_map": "Tidak ada rantai prasyarat otomatis untuk templat ini - penyusun kurikulum memetakannya secara eksplisit."
+  },
+  "utils__question-metadata-qa__math-generator-metadata-map": {
+    "does_not_replace_numeric_correctanswer_answers_or_question_text_after_ge": "Tidak menggantikan correctAnswer numerik, answers[], atau teks soal setelah pembuatan - hanya memperkaya kolom metadata.",
+    "blanket_patternfamily_math_kind_when_absent": "Gunakan patternFamily umum `math_${kind}` jika tidak ada",
+    "probe_fraction_rows_already_carry_diagnosticskillid_expectederrortags": "Baris probe + pecahan sudah menyertakan diagnosticSkillId / expectedErrorTags",
+    "standard_op_kind_rows_use_deterministic_math_kind_skill_id": "Baris op/kind standar menggunakan skill id math_${kind} yang deterministik",
+    "edge_kinds_with_minimal_params_still_safe_id_pattern_math": "Jenis edge dengan params minimal - pola id math_* tetap aman"
+  },
+  "utils__question-metadata-qa__question-bank-discovery": {
+    "template_rows_for_conceptual_mcq_scanned_as_static_metadata_carriers": "Baris templat untuk MCQ konseptual - dipindai sebagai pembawa metadata statis",
+    "procedural_math_items_metadata_assigned_at_generation_time": "Item matematika prosedural - metadata ditetapkan pada saat pembuatan",
+    "procedural_geometry_use_geometry_conceptual_bank_generator_params": "Geometri prosedural - gunakan geometry-conceptual-bank + generator params",
+    "english_generator_pool_merge": "Generator Bahasa Inggris + penggabungan pool"
+  },
+  "utils__question-metadata-qa__question-metadata-enrichment-suggestions": {
+    "no_probepower_cognitive_tier_inferred_from_difficulty": "Tidak ada probePower - tingkat kognitif disimpulkan dari tingkat kesulitan."
+  },
+  "utils__question-metadata-qa__question-metadata-taxonomy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Cakupan skill ≥85%, subskill ≥50%, rata-rata kelengkapan ≥0,65, porsi berisiko tinggi <8%.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Cakupan skill dapat digunakan tetapi terdapat kesenjangan signifikan pada cognitive/errors/prereqs.",
+    "large_missing_skill_or_inconsistent_tagging": "Keterampilan yang hilang besar atau penandaan yang tidak konsisten.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "Skill id sebagian besar tidak ada - perutean diagnosis tidak dapat diandalkan."
+  },
+  "utils__question-metadata-qa__science-enrichment-review-pack": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Semua saran tetap needsHumanReview=true hingga perubahan bank soal disetujui."
+  },
+  "utils__question-quality": {
+    "correct_answer_is_the_only_full_sentence_among_options": "Jawaban benar adalah satu-satunya kalimat lengkap di antara pilihan",
+    "correct_option_is_much_longer_than_all_distractors": "Pilihan benar jauh lebih panjang daripada semua pengecoh"
+  },
+  "utils__student-question-display": {
+    "short_equation_puzzle": "Teka-teki persamaan singkat:",
+    "complete_the_missing_part_of_the_equation": "Lengkapi bagian yang hilang dari persamaan:",
+    "find_the_unknown": "Temukan nilai yang belum diketahui:",
+    "find_x": "Cari x:"
+  },
+  "utils__student-question-stem-sanitizer": {
+    "hebrew_level_prefix": "Awalan tingkat bahasa Ibrani",
+    "english_level_token_as_metadata": "Token tingkat Bahasa Inggris sebagai metadata"
+  }
+}

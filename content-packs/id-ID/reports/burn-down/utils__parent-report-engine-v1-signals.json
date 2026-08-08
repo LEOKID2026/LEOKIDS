@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "do_not_emit_subskillcandidate_when_taxonomymatch_is_false_or_matchstreng": "Jangan hasilkan subskillCandidate saat taxonomyMatch bernilai false atau matchStrength lemah.",
+    "when_engineconfidencetier_is_t0_5_questions_enginedecision_stays_insuffi": "Ketika engineConfidenceTier adalah T0 (<5 soal), engineDecision tetap insufficient_data.",
+    "when_speedonlyrisk_and_mode_is_speed_marathon_and_accuracyband_is_not_cl": "Ketika speedOnlyRisk aktif dan mode adalah speed/marathon dan accuracyBand bukan clear_gap, jangan menyimpulkan knowledge_gap."
+  }
+}

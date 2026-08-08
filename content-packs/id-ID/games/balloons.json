@@ -1,0 +1,11 @@
+{
+  "gameId": "balloons",
+  "title": "Meletuskan Balon",
+  "blurb": "Meletuskan balon sebelum waktu habis!",
+  "help": {
+    "howToPlay": "Ketuk balon untuk meletuskannya. Kamu punya tiga nyawa dan satu menit. Hati-hati dengan bom!",
+    "scoring": "Balon biasa, emas, dan berlian menambah poin. Balon jam menambah waktu, dan balon hati mengembalikan nyawa. Bom mengurangi satu nyawa.",
+    "rewards": "Mencapai target peletusan atau skor akhir tinggi memberi koin dan berlian.",
+    "tip": "Perhatikan balon khusus — itu bisa membantumu sebelum waktu habis."
+  }
+}

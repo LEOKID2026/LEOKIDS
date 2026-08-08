@@ -65,7 +65,7 @@ test("ParentSentActivitiesPanel uses modal trigger not inline list", () => {
     path.join(repoRoot, "components/parent/ParentSentActivitiesPanel.jsx"),
     "utf8"
   );
-  assert.match(src, /parentSentActivitiesSectionTitleHe\(\)/);
+  assert.match(src, /ui\.parent\.sentActivitiesTitle/);
   assert.match(src, /ParentSentActivitiesModal/);
   assert.match(src, /formatActivityTopicDisplayHe/);
   assert.doesNotMatch(src, /mt-3 rounded border border-emerald-500\/25 bg-emerald-950\/20 p-3 space-y-2/);

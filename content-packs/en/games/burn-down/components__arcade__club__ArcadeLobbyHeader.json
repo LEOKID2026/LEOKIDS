@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "player": "Player",
+    "guest_player": "Guest player",
+    "leo_number_part": " · Leo number {leoNumber}",
+    "guest_link_hint": " — link with a parent for the full experience",
+    "coins": "Coins",
+    "diamonds": "Diamonds"
+  }
+}

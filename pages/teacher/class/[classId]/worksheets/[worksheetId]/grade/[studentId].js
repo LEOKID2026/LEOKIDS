@@ -7,8 +7,10 @@ import TeacherClassActivitiesNav from "../../../../../../../components/teacher-p
 import TeacherGradingScreen from "../../../../../../../components/worksheet-activities/TeacherGradingScreen";
 import { getLearningSupabaseBrowserClient } from "../../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../../../lib/teacher-portal/teacher-ui.js";
 import { useI18n } from "../../../../../../../lib/i18n/I18nProvider.jsx";
+
+const SLUG = "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]";
 
 export async function getServerSideProps(context) {
   return {
@@ -23,6 +25,7 @@ export async function getServerSideProps(context) {
 export default function TeacherWorksheetGradePage({ classId, worksheetId, studentId }) {
   const router = useRouter();
   const { locale } = useI18n();
+  const c = (key) => globalBurnDownCopyForLocale(locale, SLUG, key);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [busy, setBusy] = useState(false);
@@ -43,15 +46,15 @@ export default function TeacherWorksheetGradePage({ classId, worksheetId, studen
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "Error");
+        setError(apiErrorMessageHe(body?.error, c("error_generic")));
         return;
       }
       setQuestions(body.data.questions || []);
       setAnswers(body.data.answers || []);
     } catch {
-      setError("Network error");
+      setError(c("network_error"));
     }
-  }, [worksheetId, studentId, router]);
+  }, [worksheetId, studentId, router, locale]);
 
   useEffect(() => {
     void load();
@@ -77,16 +80,16 @@ export default function TeacherWorksheetGradePage({ classId, worksheetId, studen
         );
         const body = await res.json().catch(() => ({}));
         if (!res.ok) {
-          setError(body?.error?.code || "Error");
+          setError(apiErrorMessageHe(body?.error, c("error_generic")));
           return;
         }
-        setMsg(markChecked ? "Saved and marked as reviewed" : "Progress saved");
+        setMsg(markChecked ? c("saved_and_marked_as_reviewed") : c("progress_saved"));
         await load();
       } finally {
         setBusy(false);
       }
     },
-    [worksheetId, studentId, load]
+    [worksheetId, studentId, load, locale]
   );
 
   const publish = useCallback(async () => {
@@ -103,20 +106,24 @@ export default function TeacherWorksheetGradePage({ classId, worksheetId, studen
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "grading_incomplete");
+        setError(apiErrorMessageHe(body?.error, "grading_incomplete"));
         return;
       }
-      setMsg(`Published to student · Score: ${body?.data?.finalScorePct ?? "-"}%`);
+      setMsg(
+        c("published_to_student")
+          .split("{score}")
+          .join(String(body?.data?.finalScorePct ?? "-"))
+      );
       await load();
     } finally {
       setBusy(false);
     }
-  }, [worksheetId, studentId, load]);
+  }, [worksheetId, studentId, load, locale]);
 
   return (
     <Layout>
       <TeacherPortalShell
-        title={globalBurnDownCopyForLocale(locale, "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]", "grade_student")}
+        title={c("grade_student")}
         backHref={`/teacher/class/${classId}/worksheets/${worksheetId}/report`}
       >
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
@@ -131,7 +138,7 @@ export default function TeacherWorksheetGradePage({ classId, worksheetId, studen
             onPublish={() => void publish()}
           />
         ) : (
-          <p className="text-white/60">Loading…</p>
+          <p className="text-white/60">{c("loading")}</p>
         )}
       </TeacherPortalShell>
     </Layout>

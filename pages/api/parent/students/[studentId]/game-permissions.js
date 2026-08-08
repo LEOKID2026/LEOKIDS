@@ -6,11 +6,20 @@ import {
   upsertStudentGamePermissions,
 } from "../../../../../lib/games/server/game-access.server.js";
 
+/**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
+
 export default async function handler(req, res) {
   const authHeader = req.headers.authorization || "";
   const studentId = safeString(req.query?.studentId, 64);
   if (!studentId) {
-    return res.status(400).json({ ok: false, error: "studentId is required" });
+    return fail(res, 400, "student_id_required");
   }
 
   try {
@@ -24,9 +33,12 @@ export default async function handler(req, res) {
       select: "id,product_id,parent_id",
     });
     if (!owned.ok) {
+      const code =
+        (typeof owned.error === "string" && owned.error) || "student_not_found";
       return res.status(owned.status || 404).json({
         ok: false,
-        error: owned.error || "Student not found for this parent",
+        error: code,
+        code,
         message: owned.message,
       });
     }
@@ -46,7 +58,7 @@ export default async function handler(req, res) {
       if (typeof soloEnabled === "boolean") patch.soloEnabled = soloEnabled;
 
       if (Object.keys(patch).length === 0) {
-        return res.status(400).json({ ok: false, error: "No valid fields to update" });
+        return fail(res, 400, "no_valid_fields");
       }
 
       const permissions = await upsertStudentGamePermissions({
@@ -58,9 +70,9 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true, permissions });
     }
 
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   } catch (err) {
     console.error("[parent/game-permissions]", err);
-    return res.status(500).json({ ok: false, error: "Unexpected server error" });
+    return fail(res, 500, "unexpected_server_error");
   }
 }

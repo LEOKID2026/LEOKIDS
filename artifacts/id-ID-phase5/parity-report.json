@@ -1,0 +1,141 @@
+{
+  "locale": "id-ID",
+  "generatedAt": "2026-08-08T09:51:34.656Z",
+  "disk": {
+    "books": 319,
+    "games": 149,
+    "rewards": 2,
+    "demo": 1,
+    "globalBurnDown": 154,
+    "learning": 59,
+    "reports": 48,
+    "nonSeoTotal": 732,
+    "publicSeo": 28,
+    "total": 760
+  },
+  "families": {
+    "books": {
+      "disk": 319,
+      "catalogRoots": 3,
+      "catalogKeys": [
+        "books/ui.json",
+        "books/registry-titles.json",
+        "books/english-page-skills.json"
+      ],
+      "runtimeDiscoverable": 319,
+      "missing": 0,
+      "staleOrphan": 0
+    },
+    "games": {
+      "disk": 149,
+      "catalogRoots": 2,
+      "catalogKeys": [
+        "games/burn-down-index.json",
+        "games/ui-pack-index.json"
+      ],
+      "runtimeDiscoverable": 149,
+      "missing": 0,
+      "staleOrphan": 0
+    },
+    "rewards": {
+      "disk": 2,
+      "catalogRoots": 2,
+      "catalogKeys": [
+        "rewards/card-catalog.json",
+        "rewards/ui.json"
+      ],
+      "runtimeDiscoverable": 2,
+      "missing": 0,
+      "staleOrphan": 0
+    },
+    "demo": {
+      "disk": 1,
+      "catalogRoots": 1,
+      "catalogKeys": [
+        "demo/ui.json"
+      ],
+      "runtimeDiscoverable": 1,
+      "missing": 0,
+      "staleOrphan": 0
+    },
+    "globalBurnDown": {
+      "disk": 154,
+      "catalogRoots": 1,
+      "catalogKeys": [
+        "global-burn-down/burn-down-index.json"
+      ],
+      "runtimeDiscoverable": 154,
+      "missing": 0,
+      "staleOrphan": 0,
+      "indexKeys": 153,
+      "runtimeLeaves": 153,
+      "stale": 0
+    },
+    "learning": {
+      "disk": 59,
+      "catalogRoots": 18,
+      "catalogKeys": [
+        "learning/burn-down-index.json",
+        "learning/diagnostic-engine-v2-defaults.json",
+        "learning/diagnostic-framework-v1.json",
+        "learning/diagnostic-labels.json",
+        "learning/example-pattern-diagnostics-payload.json",
+        "learning/fast-diagnostic-probes.json",
+        "learning/fast-diagnostic-tag-labels.json",
+        "learning/geometry-content.json",
+        "learning/learning-patterns-copy.json",
+        "learning/math-animation-titles.json",
+        "learning/taxonomy/english.structure.json",
+        "learning/taxonomy/english.content.json",
+        "learning/taxonomy/geometry.structure.json",
+        "learning/taxonomy/geometry.content.json",
+        "learning/taxonomy/math.structure.json",
+        "learning/taxonomy/math.content.json",
+        "learning/taxonomy/science.structure.json",
+        "learning/taxonomy/science.content.json"
+      ],
+      "runtimeDiscoverable": 59,
+      "missing": 0,
+      "staleOrphan": 0
+    },
+    "reports": {
+      "disk": 48,
+      "catalogRoots": 1,
+      "catalogKeys": [
+        "reports/burn-down-index.json"
+      ],
+      "runtimeDiscoverable": 48,
+      "missing": 0,
+      "staleOrphan": 0,
+      "indexKeys": 47,
+      "runtimeLeaves": 47,
+      "stale": 0
+    }
+  },
+  "catalog": {
+    "model": "full-master-root-indexes (28) + public-seo (28) = 56",
+    "totalKeys": 56,
+    "nonSeoRoots": 28,
+    "publicSeo": 28,
+    "duplicateRegistrations": 0,
+    "missingVsEn": [],
+    "staleNonSeo": []
+  },
+  "provenance": {
+    "enFallback": 0,
+    "failures": []
+  },
+  "publicSeo": {
+    "disk": 28,
+    "client": 28,
+    "catalog": 28,
+    "runtimePaths": 51
+  },
+  "namespaceHelp": {
+    "namespaces": 15,
+    "bundleNamespaces": 15,
+    "helpLocale": "id-ID",
+    "helpSections": 4,
+    "helpArticles": 40
+  }
+}

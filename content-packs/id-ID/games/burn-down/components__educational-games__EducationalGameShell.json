@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "game_not_found": "Gim tidak ditemukan",
+    "back_to_educational_games": "Kembali ke gim edukasi",
+    "back": "Kembali",
+    "home": "Beranda",
+    "page_title_suffix": "Gim Edukasi"
+  }
+}

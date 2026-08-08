@@ -1,0 +1,75 @@
+{
+  "pageTitle": "Belajar dan bermain bersama Leo · LEO KIDS",
+  "metaDescription": "Berlatih matematika, geometri, Bahasa Inggris, dan IPA — dengan gim, koin, kartu, dan kejutan di sepanjang jalan.",
+  "badge": "Anak · Gim · Progres",
+  "installLabel": "Instal aplikasi anak",
+  "hero": {
+    "title": "Belajar, bermain, dan berkembang bersama Leo",
+    "subtitle": "Berlatih matematika, geometri, Bahasa Inggris, dan IPA — dengan gim, koin, kartu, dan kejutan di sepanjang jalan.",
+    "primaryCta": {
+      "label": "Masuk ke dunia anak Leo",
+      "href": "/student/login"
+    },
+    "secondaryCta": {
+      "label": "Minta orang tua untuk bergabung",
+      "action": "parentInvite"
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "Selesaikan pertanyaan dan maju",
+        "text": "Pilih mata pelajaran, jawab pertanyaan, dan maju langkah demi langkah.",
+        "emoji": "🎯"
+      },
+      {
+        "title": "Kumpulkan koin dan kartu",
+        "text": "Progres dapat membuka hadiah, kejutan, dan item baru.",
+        "emoji": "🪙"
+      },
+      {
+        "title": "Bermain dan belajar",
+        "text": "Bukan hanya latihan — gim edukatif yang terasa seperti bermain sungguhan.",
+        "emoji": "🎮"
+      },
+      {
+        "title": "Leo menuntunmu",
+        "text": "Belajar sesuai kecepatanmu, coba lagi, dan berkembang tanpa tekanan.",
+        "emoji": "🦁"
+      },
+      {
+        "title": "Aktivitas pribadi",
+        "text": "Orang tua dapat mengirim aktivitas terfokus yang sesuai dengan yang perlu Anda latih.",
+        "emoji": "📬"
+      },
+      {
+        "title": "Berkembang setiap hari",
+        "text": "Masuk, berlatih sebentar, raih kemenangan, dan terus lanjut.",
+        "emoji": "⭐"
+      }
+    ]
+  },
+  "infoSections": [
+    {
+      "title": "Bagaimana cara memulai?",
+      "steps": [
+        "Orang tua membuat akun.",
+        "Mereka menambahkanmu sebagai anak.",
+        "Kamu mendapat kode masuk pribadi.",
+        "Masuk, belajar, bermain, dan berkembang."
+      ]
+    }
+  ],
+  "closing": {
+    "title": "Siap mulai bersama Leo?",
+    "text": "Minta orang tua membuka akun, dapatkan kode masukmu, dan mulai belajar dengan cara yang menyenangkan.",
+    "primaryCta": {
+      "label": "Minta orang tua untuk bergabung",
+      "action": "parentInvite"
+    },
+    "secondaryCta": {
+      "label": "Saya sudah punya kode masuk",
+      "href": "/student/login"
+    }
+  }
+}

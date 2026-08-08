@@ -1,0 +1,370 @@
+{
+  "balloons": {
+    "gameId": "balloons",
+    "title": "Meletuskan Balon",
+    "blurb": "Meletuskan balon sebelum waktu habis!",
+    "help": {
+      "howToPlay": "Ketuk balon untuk meletuskannya. Kamu punya tiga nyawa dan satu menit. Hati-hati dengan bom!",
+      "scoring": "Balon biasa, emas, dan berlian menambah poin. Balon jam menambah waktu, dan balon hati mengembalikan nyawa. Bom mengurangi satu nyawa.",
+      "rewards": "Mencapai target peletusan atau skor akhir tinggi memberi koin dan berlian.",
+      "tip": "Perhatikan balon khusus — itu bisa membantumu sebelum waktu habis."
+    }
+  },
+  "bingo": {
+    "gameId": "bingo",
+    "title": "Bingo",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "catcher": {
+    "gameId": "catcher",
+    "title": "Tangkap bersama Leo",
+    "blurb": "Tangkap koin dan jauhi bom!",
+    "help": {
+      "howToPlay": "Gerakkan Leo ke kiri dan kanan untuk menangkap koin dan berlian yang jatuh dari langit.",
+      "scoring": "Setiap koin atau berlian yang ditangkap menambah poin. Menabrak bom mengakhiri gim.",
+      "rewards": "Semakin banyak poin yang kamu dapat, semakin banyak koin dan permata untuk dunia anakmu.",
+      "tip": "Pantau yang jatuh dan bergerak lebih dulu sebelum item sampai di bawah."
+    }
+  },
+  "checkers": {
+    "gameId": "checkers",
+    "title": "Dam",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "chess": {
+    "gameId": "chess",
+    "title": "Catur",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "dominoes": {
+    "gameId": "dominoes",
+    "title": "Domino",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "flyer": {
+    "gameId": "flyer",
+    "title": "Leo di Pesawat",
+    "blurb": "Tahan untuk terbang, kumpulkan koin, dan hindari rintangan!",
+    "help": {
+      "howToPlay": "Tahan tombol atau layar untuk terbang, dan lepas untuk turun. Kumpulkan koin dan hindari rintangan.",
+      "scoring": "Koin dan berlian menambah poin. Menabrak rintangan mengakhiri gim.",
+      "rewards": "Semakin jauh kamu terbang dan semakin banyak poin yang didapat, semakin banyak koin dan permata yang kamu terima.",
+      "tip": "Jangan terbang terlalu tinggi — kadang lebih baik lewat di bawah rintangan."
+    }
+  },
+  "fourline": {
+    "gameId": "fourline",
+    "title": "Empat Sekawan",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "fruit-slice": {
+    "gameId": "fruit-slice",
+    "title": "Iris Buah",
+    "blurb": "Iris buah, hindari bom, dan capai target skor!",
+    "help": {
+      "howToPlay": "Seret jari di layar untuk mengiris buah yang terbang. Hindari bom — kamu punya tiga kesempatan salah.",
+      "scoring": "Setiap buah yang diiris menambah poin. Mengiris beberapa buah sekaligus memberi bonus combo. Menabrak bom atau melewatkan buah menghabiskan satu kesalahan.",
+      "rewards": "Mencapai target skor sesuai tingkat kesulitan memberi koin dan berlian.",
+      "tip": "Iris hanya buah - jika melihat bom, lebih baik lewati."
+    }
+  },
+  "leo-bakery": {
+    "gameId": "leo-bakery",
+    "title": "Toko Roti Leo",
+    "blurb": "Perkalian, kelompok sama, dan nampan",
+    "help": {
+      "howToPlay": "Susun nampan dengan jumlah kue yang sama — atur jumlah nampan dan isi per nampan, lalu ketuk \"Cek Pesanan\".",
+      "scoring": "Jawaban benar +30, bonus waktu hingga +20, 5 beruntun benar +25. Kesalahan tidak mengurangi poin.",
+      "rewards": "Koin diberikan berdasarkan berapa banyak pesanan yang kamu siapkan dengan benar, ketepatan, rentetan, dan tingkat kesulitan.",
+      "tip": "Pikirkan berapa nampan × berapa di tiap nampan — bukan hanya hasil akhirnya."
+    },
+    "accessibility": {
+      "title": "Toko Roti Leo"
+    }
+  },
+  "leo-gifts": {
+    "gameId": "leo-gifts",
+    "title": "Toko Permen Leo",
+    "blurb": "Pembagian sama rata, sisa, dan Matematika cepat",
+    "help": {
+      "howToPlay": "Bagi hadiah ke anak-anak — pilih berapa yang didapat tiap anak dan berapa yang tersisa untuk Leo, lalu ketuk \"Cek Pembagian\".",
+      "scoring": "Jawaban benar +30, bonus waktu hingga +20, 5 beruntun benar +25. Kesalahan tidak mengurangi poin.",
+      "rewards": "Koin diberikan berdasarkan berapa banyak pertanyaan yang kamu jawab dengan benar, ketepatan, rentetan, dan tingkat kesulitan — meski gim berakhir karena kesalahan.",
+      "tip": "Pastikan kamu sudah membagi semuanya dan Leo tidak tersisa terlalu banyak — kamu bisa memberi lebih banyak ke setiap anak."
+    },
+    "accessibility": {
+      "title": "Toko Permen Leo"
+    }
+  },
+  "leo-jump": {
+    "gameId": "leo-jump",
+    "title": "Leo Melompat",
+    "blurb": "Lompati rintangan dan kumpulkan koin!",
+    "help": {
+      "howToPlay": "Ketuk untuk melompat. Lewati rintangan dan kumpulkan koin, berlian, serta magnet di sepanjang jalan.",
+      "scoring": "Koin dan berlian menambah poin. Lompatan beruntun melewati rintangan memberi bonus combo. Menabrak rintangan mengakhiri gim.",
+      "rewards": "Semakin jauh kamu berlari dan semakin banyak poin yang didapat, semakin banyak koin dan permata yang kamu terima.",
+      "tip": "Jangan lompat terus — kadang lebih baik menunggu sebentar dan lompat di waktu yang tepat."
+    }
+  },
+  "leo-lab": {
+    "gameId": "leo-lab",
+    "title": "Lab Eksperimen Leo",
+    "blurb": "Gim tentang eksperimen, bahan, serta sebab dan akibat",
+    "help": {
+      "howToPlay": "Baca tugas eksperimen, pilih benda dari rak (seret atau ketuk), letakkan di meja lab, lalu ketuk \"Cek Eksperimen\".",
+      "scoring": "Eksperimen berhasil +30, berhasil di percobaan pertama +10, rentetan 3 benar +15, rentetan 5 +30. Tidak ada poin yang dikurangi karena kesalahan.",
+      "rewards": "Koin diberikan berdasarkan berapa banyak eksperimen yang berhasil, tingkat kesulitan, ketepatan, rentetan, dan menyelesaikan 20 eksperimen — hanya jika kamu berhasil setidaknya sekali.",
+      "tip": "Pikirkan apa yang dibutuhkan untuk menyelesaikan tugas - jangan mengandalkan petunjuk di kartu benda."
+    },
+    "accessibility": {
+      "title": "Lab Eksperimen Leo"
+    }
+  },
+  "leo-miners": {
+    "gameId": "leo-miners",
+    "title": "Leo si Penambang",
+    "blurb": "Gabungkan anjing tambang, hancurkan batu, dan dapatkan poin untuk ditukar!",
+    "help": {
+      "howToPlay": "Tambahkan anjing tambang ke papan, seret anjing level sama untuk digabung, dan hancurkan batu untuk mendapat koin dan poin.",
+      "scoring": "Setiap batu yang dipecahkan memberi koin. Poin bertambah menurut tahap batu — dengan batas harian.",
+      "rewards": "Poin bisa ditukar menjadi koin dan berlian Leo (setelah server siap).",
+      "tip": "Tingkatkan DPS untuk menghancurkan batu lebih cepat, dan GOLD untuk mendapat lebih banyak koin dari setiap batu."
+    }
+  },
+  "leo-number-path": {
+    "gameId": "leo-number-path",
+    "title": "Jalur Angka Leo",
+    "blurb": "Barisan, ganjil-genap, dan kelipatan",
+    "help": {
+      "howToPlay": "Pilih angka dari jalur sesuai tugas — bilangan genap, kelipatan, loncat hitung, atau barisan — lalu ketuk \"Cek Jalur\".",
+      "scoring": "Benar di percobaan pertama +30, kedua +20, ketiga +10. Setelah 3 kesalahan kamu lanjut ke tugas berikutnya.",
+      "rewards": "Koin diberikan berdasarkan berapa dari 20 tugas yang kamu selesaikan, ketepatan, rentetan, dan menyelesaikan jalur.",
+      "tip": "Perhatikan apakah urutan penting — untuk hitung loncat dan barisan kamu harus memilih secara berurutan."
+    },
+    "accessibility": {
+      "title": "Jalur Angka Leo"
+    }
+  },
+  "leo-pizzeria": {
+    "gameId": "leo-pizzeria",
+    "title": "Pizzeria Leo",
+    "blurb": "Belajar pecahan lewat membuat pizza",
+    "help": {
+      "howToPlay": "Baca pesanan, tambahkan topping ke potongan pizza (ketuk atau seret), lalu ketuk \"Sajikan Pizza\".",
+      "scoring": "Pizza benar +30, 3 beruntun benar +15, 5 beruntun +30. Kesalahan tidak mengurangi poin.",
+      "rewards": "Koin diberikan berdasarkan berapa banyak pelanggan yang kamu layani, ketepatan, rentetan, dan tingkat kesulitan — meski kamu belum melayani semua 20 pelanggan.",
+      "tip": "Periksa berapa irisan yang ditutupi setiap topping — setengah, seperempat, dan seperdelapan mengacu pada jumlah irisan, bukan posisi."
+    },
+    "accessibility": {
+      "title": "Pizzeria Leo"
+    }
+  },
+  "leo-supermarket": {
+    "gameId": "leo-supermarket",
+    "title": "Toko Kelontong Leo",
+    "blurb": "Gim tentang uang, belanja, dan memberi kembalian",
+    "help": {
+      "howToPlay": "Pelanggan meminta produk — ambil dari rak, hitung kembalian, dan pilih koin yang cocok. Ketuk \"Berikan Kembalian\" saat kamu siap.",
+      "scoring": "Produk benar +10, uang kembalian benar +25, pelanggan puas +30, kembalian benar di percobaan pertama +10, layanan cepat +5. Kesalahan atau kehabisan waktu −5.",
+      "rewards": "Koin diberikan berdasarkan berapa banyak pelanggan yang kamu layani, ketepatan, rentetan, dan tingkat kesulitan — meski kamu belum melayani semua 20 pelanggan.",
+      "tip": "Periksa total belanja dan berapa yang dibayar pelanggan — hitung sendiri berapa kembalian yang harus diberikan."
+    },
+    "accessibility": {
+      "title": "Toko Kelontong Leo"
+    }
+  },
+  "leo-word-detective": {
+    "gameId": "leo-word-detective",
+    "title": "Detektif Kata Leo",
+    "blurb": "Seret bukti ke papan dan pecahkan kasus membaca serta kosakata",
+    "help": {
+      "howToPlay": "Seret kartu bukti ke papan investigasi lalu ketuk \"Selesaikan Kasus\". Kalau jawabannya benar — kasus ditutup!",
+      "scoring": "Jawaban benar +30, bonus waktu, 3 beruntun +15, 5 beruntun +30. Waktu habis −5. Kesalahan tidak mengakhiri gim — hanya dihitung.",
+      "rewards": "Koin diberikan berdasarkan berapa dari 20 kasus yang kamu pecahkan, ketepatan, rentetan, dan tingkat kesulitan.",
+      "tip": "Baca tugas kasus dengan teliti — di level sulit ada teks singkat di papan."
+    },
+    "accessibility": {
+      "title": "Detektif Kata Leo"
+    }
+  },
+  "leo-word-train": {
+    "gameId": "leo-word-train",
+    "title": "Kereta Kata Leo",
+    "blurb": "Huruf, kata, dan kalimat dalam Bahasa Inggris — naik di gerbong kereta",
+    "help": {
+      "howToPlay": "Pilih kartu, muat ke gerbong kosong, lalu ketuk \"Kirim Kereta\". Kalau jawabannya benar — kereta berangkat!",
+      "scoring": "Jawaban benar +30, bonus waktu, 3 beruntun +15, 5 beruntun +30. Waktu habis −5. Kesalahan tidak mengakhiri gim — hanya dihitung.",
+      "rewards": "Koin diberikan berdasarkan berapa dari 20 tugas yang kamu selesaikan, ketepatan, rentetan, dan tingkat kesulitan.",
+      "tip": "Mudah — hanya huruf. Sedang — kata pendek. Sulit — kalimat pendek."
+    },
+    "accessibility": {
+      "title": "Kereta Kata Leo"
+    }
+  },
+  "ludo": {
+    "gameId": "ludo",
+    "title": "Ludo",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "maze": {
+    "gameId": "maze",
+    "title": "Labirin Leo",
+    "blurb": "Temukan pintu keluar labirin sebelum waktu habis!",
+    "help": {
+      "howToPlay": "Gerakkan Leo di labirin, kumpulkan kunci dan bintang, dan temukan pintu keluar sebelum waktu habis.",
+      "scoring": "Kunci, bintang, dan berlian menambah poin. Menyelesaikan labirin memberi bonus besar. Jika waktu habis — gim berakhir.",
+      "rewards": "Berhasil menyelesaikan labirin sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+      "tip": "Kumpulkan kunci dulu — kadang kunci membuka jalur yang lebih pendek."
+    }
+  },
+  "memory-match": {
+    "gameId": "memory-match",
+    "title": "Cocok Memori",
+    "blurb": "Balik kartu, temukan pasangan, dan coba menang.",
+    "players": "1–2 pemain",
+    "help": {
+      "howToPlay": "Main bersama di perangkat yang sama."
+    }
+  },
+  "memory": {
+    "gameId": "memory",
+    "title": "Gim Memori Leo",
+    "blurb": "Balik kartu dan temukan pasangan sebelum waktu habis!",
+    "help": {
+      "howToPlay": "Ketuk kartu untuk membaliknya, dan temukan pasangannya. Setiap pasangan yang ditemukan tetap terbuka.",
+      "scoring": "Kamu mulai dengan skor tinggi — semakin lama, skornya semakin turun. Menemukan semua pasangan sebelum waktu habis = menang.",
+      "rewards": "Menang sesuai tingkat kesulitan memberi koin dan berlian. Semakin tinggi skor, semakin besar hadiahnya.",
+      "tip": "Coba ingat di mana kamu melihat setiap gambar — meskipun pasangannya belum langsung ketemu."
+    }
+  },
+  "picture-puzzle": {
+    "gameId": "picture-puzzle",
+    "title": "Puzzle Gambar",
+    "blurb": "Lengkapi potongan gambar Leo!",
+    "help": {
+      "howToPlay": "Seret potongan gambar ke tempat yang tepat di papan. Lengkapi semua potongan sebelum waktu habis.",
+      "scoring": "Semakin cepat selesai dan semakin sedikit langkah, semakin tinggi skornya. Jika waktu habis sebelum selesai - tidak ada kemenangan.",
+      "rewards": "Menyelesaikan puzzle sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+      "tip": "Mulai dari sudut dan tepi - lebih mudah melihat di mana setiap potongan berada."
+    }
+  },
+  "puzzle": {
+    "gameId": "puzzle",
+    "title": "Puzzle Leo",
+    "blurb": "Gabungkan ubin dan kumpulkan poin sebelum waktu habis!",
+    "help": {
+      "howToPlay": "Gerakkan ubin di papan untuk menggabungkan angka yang sama. Semakin besar angkanya, semakin tinggi skornya.",
+      "scoring": "Setiap penggabungan menambah poin. Tujuannya mencapai target skor sebelum waktu habis.",
+      "rewards": "Menang sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+      "tip": "Usahakan sudut tetap kosong agar ada ruang untuk menggerakkan ubin."
+    }
+  },
+  "recycling-factory": {
+    "gameId": "recycling-factory",
+    "title": "Pabrik Daur Ulang Leo",
+    "blurb": "Sortir sampah ke tempat yang tepat dan bantu jaga lingkungan",
+    "help": {
+      "howToPlay": "Seret atau ketuk item dari ban berjalan, lalu pilih tempat sampah yang benar. Sortir cukup item sebelum mencapai batas kesalahan.",
+      "scoring": "Sortir benar +10, sortir cepat +5, 5 beruntun benar +20, 10 beruntun +50. Kesalahan atau item terlewat −5 (skor tidak pernah di bawah 0).",
+      "rewards": "Koin diberikan berdasarkan berapa banyak barang yang kamu sortir dengan benar, ketepatan, rentetan, dan mencapai tujuan — meski kamu belum menyelesaikan seluruh gim.",
+      "tip": "Perhatikan jenis barang — kertas, plastik, kaca, logam, atau sampah umum."
+    },
+    "accessibility": {
+      "title": "Pabrik Daur Ulang Leo"
+    }
+  },
+  "rock-paper-scissors": {
+    "gameId": "rock-paper-scissors",
+    "title": "Batu · Kertas · Gunting",
+    "blurb": "Putaran cepat — yang terbaik dari semua.",
+    "players": "2 pemain atau vs robot",
+    "help": {
+      "howToPlay": "Main bersama di perangkat yang sama."
+    }
+  },
+  "smart-blocks": {
+    "gameId": "smart-blocks",
+    "title": "Balok Pintar",
+    "blurb": "Tempatkan bentuk, bersihkan baris dan kolom, dan capai target skor!",
+    "help": {
+      "howToPlay": "Seret bentuk ke papan, putar jika perlu, dan tempatkan untuk mengisi baris dan kolom.",
+      "scoring": "Membersihkan baris atau kolom menambah poin. Tujuannya mencapai target skor sebelum papan penuh.",
+      "rewards": "Menang sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+      "tip": "Coba bersihkan beberapa baris sekaligus — itu memberi banyak poin."
+    }
+  },
+  "snakes-and-ladders": {
+    "gameId": "snakes-and-ladders",
+    "title": "Ular Tangga",
+    "blurb": "Main bersama teman di arkade",
+    "help": {
+      "howToPlay": "Ikuti petunjuk di layar untuk gim ini.",
+      "tip": "Bergantian dan bersenang-senang."
+    }
+  },
+  "sort-shapes": {
+    "gameId": "sort-shapes",
+    "title": "Sortir Bentuk",
+    "blurb": "Sortir bentuk dan warna ke kotak yang benar!",
+    "help": {
+      "howToPlay": "Seret setiap bentuk ke kotak yang cocok menurut bentuk atau warna. Selesaikan semua penyortiran sebelum waktu habis.",
+      "scoring": "Setiap penyortiran yang benar menambah poin. Kesalahan mengurangi skor. Jika waktu habis sebelum selesai — gim berakhir.",
+      "rewards": "Menyelesaikan dengan sukses sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+      "tip": "Tentukan dulu kotak mana untuk setiap bentuk — lalu seret dengan percaya diri."
+    }
+  },
+  "tap-battle": {
+    "gameId": "tap-battle",
+    "title": "Pertarungan Ketuk",
+    "blurb": "Setiap sisi mengetuk secepat mungkin — siapa yang menang?",
+    "players": "2 pemain",
+    "help": {
+      "howToPlay": "Main bersama di perangkat yang sama."
+    }
+  },
+  "target-tap": {
+    "gameId": "target-tap",
+    "title": "Ketuk Target",
+    "blurb": "Ketuk target sebelum menghilang!",
+    "help": {
+      "howToPlay": "Ketuk target yang muncul di layar sebelum menghilang. Kamu punya tiga nyawa.",
+      "scoring": "Target biasa, bintang, dan berlian bernilai poin berbeda. Melewatkan menghabiskan nyawa. Ketukan beruntun memberi bonus combo.",
+      "rewards": "Mencapai target ketukan atau skor akhir tinggi memberi koin dan berlian.",
+      "tip": "Jangan buru-buru ke semua target — kadang target dengan berlian lebih berharga."
+    }
+  },
+  "tic-tac-toe": {
+    "gameId": "tic-tac-toe",
+    "title": "Tic-Tac-Toe",
+    "blurb": "Papan dari 3×3 sampai 7×7 dengan pelacakan skor.",
+    "players": "2 pemain",
+    "help": {
+      "howToPlay": "Main bersama di perangkat yang sama."
+    }
+  }
+}

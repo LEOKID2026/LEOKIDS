@@ -1,0 +1,72 @@
+{
+  "seoKey": "guides-reading-comprehension-at-home",
+  "slug": "reading-comprehension-at-home",
+  "displayTitle": "Pemahaman bacaan",
+  "badge": "Panduan pemahaman bacaan",
+  "h1": "Pemahaman bacaan di rumah — bekerja dengan teks dan pertanyaan",
+  "intro": "Pemahaman lebih dari sekadar membaca akurat. Anak Anda perlu menemukan detail, memahami hubungan, menarik kesimpulan, dan menjelaskan jawaban menggunakan teks.",
+  "sections": [
+    {
+      "title": "Mulai dengan gagasan utama",
+      "paragraphs": [
+        "Setelah membaca, minta anak Anda mengatakan dalam satu kalimat tentang apa teks itu. Jika sulit, kembali ke judul, kalimat pertama, dan kalimat terakhir, lalu temukan topik utama bersama-sama."
+      ]
+    },
+    {
+      "title": "Jenis pertanyaan yang layak dilatih",
+      "bullets": [
+        "Menemukan detail eksplisit dalam teks.",
+        "Mengidentifikasi tokoh, tempat, atau waktu.",
+        "Menjelaskan sebab dan akibat.",
+        "Memahami kata dari konteks.",
+        "Menarik kesimpulan yang tidak dinyatakan secara langsung.",
+        "Menjawab sepenuhnya dengan kata-kata anak sendiri."
+      ]
+    },
+    {
+      "title": "Cari bukti dalam teks",
+      "paragraphs": [
+        "Saat anak Anda menjawab, minta mereka menunjukkan kalimat mana yang membantu. Itu mengajarkan mereka mendukung jawaban alih-alih mengandalkan hafalan atau menebak."
+      ]
+    },
+    {
+      "title": "Bagaimana jika jawabannya sebagian?",
+      "paragraphs": [
+        "Pisahkan memahami pertanyaan dari merumuskan jawaban. Soroti kata tanya, temukan bagian teks yang cocok, lalu coba jawaban lengkap."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Haruskah kita membaca pertanyaan sebelum teks?",
+      "a": "Anda dapat meninjaunya secara singkat, tetapi penting untuk membaca teks secara penuh—bukan hanya mencari kata tanya."
+    },
+    {
+      "q": "Berapa banyak pertanyaan yang harus kita kerjakan?",
+      "a": "Sejumlah kecil jenis pertanyaan yang berbeda, dengan penjelasan lengkap tentang pendekatan, lebih baik daripada banyak jawaban yang terburu-buru."
+    },
+    {
+      "q": "Apa perbedaan antara membaca dan pemahaman?",
+      "a": "Membaca berfokus pada mengenali kata dan membaca secara akurat. Pemahaman berfokus pada makna, hubungan, dan kesimpulan dari teks."
+    }
+  ],
+  "relatedPracticePath": "/practice/reading",
+  "practiceCtaLabel": "Latihan pemahaman bacaan",
+  "relatedGuideSlugs": [
+    "reading-practice-at-home",
+    "home-practice-routine",
+    "how-to-follow-child-progress"
+  ],
+  "footerCta": {
+    "title": "Baca, temukan, dan jelaskan",
+    "body": "Pilih teks yang sesuai dan latih satu atau dua jenis pertanyaan setiap kali.",
+    "primary": {
+      "href": "/practice/reading",
+      "label": "Latihan pemahaman bacaan"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

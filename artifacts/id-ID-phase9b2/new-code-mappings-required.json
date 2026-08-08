@@ -1,0 +1,191 @@
+[
+  {
+    "code": "username_taken",
+    "englishIntendedCopy": "Username is already taken.",
+    "recommendedIndonesianCopy": "Nama pengguna sudah digunakan.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "No validation.api code means username uniqueness conflict; validation_failed is too generic and would lose the actionable Parent UX for credential setup."
+  },
+  {
+    "code": "invalid_pin",
+    "englishIntendedCopy": "Enter a valid 4-digit PIN.",
+    "recommendedIndonesianCopy": "Masukkan PIN 4 digit yang valid.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "No existing validation.api PIN-format code; validation_failed is generic and Parent already has PIN-specific UI copy that MAIN should align into validation.api."
+  },
+  {
+    "code": "invalid_username",
+    "englishIntendedCopy": "Invalid username.",
+    "recommendedIndonesianCopy": "Nama pengguna tidak valid.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "No student-username format code in validation.api; validation_failed would hide Parent credential-specific guidance."
+  },
+  {
+    "code": "access_code_create_failed",
+    "englishIntendedCopy": "Could not create access code.",
+    "recommendedIndonesianCopy": "Tidak dapat membuat kode akses.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "internal_error/server_error are too broad; Parent credential save needs a dedicated create-failure code for MAIN mapping."
+  },
+  {
+    "code": "username_check_failed",
+    "englishIntendedCopy": "Could not verify username availability.",
+    "recommendedIndonesianCopy": "Tidak dapat memeriksa ketersediaan nama pengguna.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "db_error is technical; this is a user-facing username-availability check failure distinct from username_taken."
+  },
+  {
+    "code": "access_code_revoke_failed",
+    "englishIntendedCopy": "Could not revoke the previous access code.",
+    "recommendedIndonesianCopy": "Tidak dapat mencabut kode akses sebelumnya.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "No revoke-specific code exists; internal_error would conflate revoke vs create failures."
+  },
+  {
+    "code": "student_inactive",
+    "englishIntendedCopy": "This child account is not active.",
+    "recommendedIndonesianCopy": "Akun anak ini tidak aktif.",
+    "sourceRoute": "pages/api/parent/create-student-access-code.js",
+    "reasonExistingCodeCannotBeReused": "account_deactivated is close but named for adult/account deactivation; Parent child inactive state is a distinct product meaning (temporary reuse of account_deactivated label until MAIN decides)."
+  },
+  {
+    "code": "create_student_failed",
+    "englishIntendedCopy": "Could not create student.",
+    "recommendedIndonesianCopy": "Tidak dapat menambahkan murid.",
+    "sourceRoute": "pages/api/parent/create-student.js",
+    "reasonExistingCodeCannotBeReused": "No parent-create-child code in validation.api; update_failed/internal_error do not communicate create-child failure."
+  },
+  {
+    "code": "load_created_student_failed",
+    "englishIntendedCopy": "Could not load the created student.",
+    "recommendedIndonesianCopy": "Tidak dapat memuat murid yang baru dibuat.",
+    "sourceRoute": "pages/api/parent/create-student.js",
+    "reasonExistingCodeCannotBeReused": "student_not_found implies missing child; here create succeeded but reload failed — distinct operational failure."
+  },
+  {
+    "code": "child_limit_reached",
+    "englishIntendedCopy": "You have reached the child limit for this parent account.",
+    "recommendedIndonesianCopy": "Anda telah mencapai batas jumlah anak untuk akun orang tua ini.",
+    "sourceRoute": "pages/api/parent/create-student.js",
+    "reasonExistingCodeCannotBeReused": "student_limit_reached is school-quota copy; link_limit_reached is linking quotas — neither matches Parent max-children entitlement."
+  },
+  {
+    "code": "full_name_required",
+    "englishIntendedCopy": "Full name is required.",
+    "recommendedIndonesianCopy": "Nama lengkap wajib diisi.",
+    "sourceRoute": "pages/api/parent/create-student.js",
+    "reasonExistingCodeCannotBeReused": "validation_failed is generic; Parent create form benefits from a specific required-name code."
+  },
+  {
+    "code": "full_name_too_long",
+    "englishIntendedCopy": "Full name is too long.",
+    "recommendedIndonesianCopy": "Nama lengkap terlalu panjang.",
+    "sourceRoute": "pages/api/parent/create-student.js",
+    "reasonExistingCodeCannotBeReused": "No field-length codes in validation.api; validation_failed loses field specificity."
+  },
+  {
+    "code": "grade_level_too_long",
+    "englishIntendedCopy": "Grade value is too long.",
+    "recommendedIndonesianCopy": "Nilai Kelas terlalu panjang.",
+    "sourceRoute": "pages/api/parent/create-student.js",
+    "reasonExistingCodeCannotBeReused": "grade_required/grade_mismatch do not cover length validation."
+  },
+  {
+    "code": "update_student_failed",
+    "englishIntendedCopy": "Could not update student.",
+    "recommendedIndonesianCopy": "Tidak dapat memperbarui data murid.",
+    "sourceRoute": "pages/api/parent/update-student.js",
+    "reasonExistingCodeCannotBeReused": "update_failed exists but is generic platform copy; Parent child-update UX should keep a dedicated code for MAIN to map precisely."
+  },
+  {
+    "code": "update_student_grade_failed",
+    "englishIntendedCopy": "Could not update student grade.",
+    "recommendedIndonesianCopy": "Tidak dapat memperbarui Kelas murid.",
+    "sourceRoute": "pages/api/parent/update-student.js",
+    "reasonExistingCodeCannotBeReused": "grade_mismatch means mismatch, not update failure; update_failed is too broad."
+  },
+  {
+    "code": "no_fields_to_update",
+    "englishIntendedCopy": "No fields to update.",
+    "recommendedIndonesianCopy": "Tidak ada data untuk diperbarui.",
+    "sourceRoute": "pages/api/parent/update-student.js",
+    "reasonExistingCodeCannotBeReused": "validation_failed is generic; empty-patch is a distinct client contract failure."
+  },
+  {
+    "code": "guest_link_failed",
+    "englishIntendedCopy": "Unable to link this guest number. Check the number and try again.",
+    "recommendedIndonesianCopy": "Tidak dapat menautkan nomor tamu ini. Periksa nomornya dan coba lagi.",
+    "sourceRoute": "pages/api/parent/guest/link.js",
+    "reasonExistingCodeCannotBeReused": "guest_not_eligible/link_unavailable/link_limit_reached have different product meanings; intentional non-enumeration guest link failure needs its own code."
+  },
+  {
+    "code": "invalid_leo_number",
+    "englishIntendedCopy": "Enter a valid Leo guest number.",
+    "recommendedIndonesianCopy": "Masukkan nomor Leo tamu yang valid.",
+    "sourceRoute": "pages/api/parent/guest/link.js",
+    "reasonExistingCodeCannotBeReused": "validation_failed/missing_student_id do not describe Leo-number format/presence failure."
+  },
+  {
+    "code": "invalid_subject",
+    "englishIntendedCopy": "Invalid subject.",
+    "recommendedIndonesianCopy": "Mata pelajaran tidak valid.",
+    "sourceRoute": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "reasonExistingCodeCannotBeReused": "subject_mismatch means grade/subject mismatch in other flows; invalid_subject is an unknown/unsupported subject key on Parent permissions PATCH (temporary map to subject_mismatch label until MAIN splits)."
+  },
+  {
+    "code": "no_valid_fields",
+    "englishIntendedCopy": "No valid fields to update.",
+    "recommendedIndonesianCopy": "Tidak ada bidang valid untuk diperbarui.",
+    "sourceRoute": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "reasonExistingCodeCannotBeReused": "Same empty-patch semantics as no_fields_to_update but on permissions PATCH body; keep distinct until MAIN unifies."
+  },
+  {
+    "code": "subject_catalog_incomplete",
+    "englishIntendedCopy": "The subject catalog is incomplete.",
+    "recommendedIndonesianCopy": "Katalog mata pelajaran belum lengkap.",
+    "sourceRoute": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "reasonExistingCodeCannotBeReused": "db_schema_not_ready is schema-missing; catalog incompleteness is data/config readiness, not column absence."
+  },
+  {
+    "code": "coin_history_load_failed",
+    "englishIntendedCopy": "Failed to load coin history.",
+    "recommendedIndonesianCopy": "Gagal memuat riwayat koin.",
+    "sourceRoute": "pages/api/parent/students/[studentId]/coin-history.js",
+    "reasonExistingCodeCannotBeReused": "No coin-history-specific code; internal_error is too broad for this read path."
+  },
+  {
+    "code": "delete_student_failed",
+    "englishIntendedCopy": "Delete failed. Please try again.",
+    "recommendedIndonesianCopy": "Penghapusan gagal. Silakan coba lagi.",
+    "sourceRoute": "pages/api/parent/delete-student.js",
+    "reasonExistingCodeCannotBeReused": "Already emitted by delete-parent-owned-student server helper; not in validation.api yet — MAIN should map Parent delete failures."
+  },
+  {
+    "code": "delete_student_timeout",
+    "englishIntendedCopy": "Deleting the child timed out. Please try again.",
+    "recommendedIndonesianCopy": "Penghapusan anak kehabisan waktu. Silakan coba lagi.",
+    "sourceRoute": "lib/parent-server/delete-parent-owned-student.server.js (via delete-student API)",
+    "reasonExistingCodeCannotBeReused": "Server helper already uses this code; distinct from generic delete_student_failed / internal_error."
+  },
+  {
+    "code": "delete_student_dependency_failed",
+    "englishIntendedCopy": "Could not delete related child data.",
+    "recommendedIndonesianCopy": "Tidak dapat menghapus data terkait anak.",
+    "sourceRoute": "lib/parent-server/delete-parent-owned-student.server.js (via delete-student API)",
+    "reasonExistingCodeCannotBeReused": "delete_blocked_by_dependencies is admin full-delete semantics; Parent child dependency cleanup is a different product path."
+  },
+  {
+    "code": "delete_student_fk_blocked",
+    "englishIntendedCopy": "A database dependency prevents deletion.",
+    "recommendedIndonesianCopy": "Ketergantungan basis data mencegah penghapusan.",
+    "sourceRoute": "lib/parent-server/delete-parent-owned-student.server.js (via delete-student API)",
+    "reasonExistingCodeCannotBeReused": "Same as above — Parent FK block vs admin dependency delete codes should stay separate for MAIN reconciliation."
+  },
+  {
+    "code": "student_not_owned",
+    "englishIntendedCopy": "You cannot delete this child or permission was denied.",
+    "recommendedIndonesianCopy": "Anda tidak dapat menghapus anak ini atau izin ditolak.",
+    "sourceRoute": "lib/parent-server/delete-parent-owned-student.server.js (via delete-student API)",
+    "reasonExistingCodeCannotBeReused": "student_not_found/forbidden exist but ownership-denied delete is a distinct Parent code already returned by the helper."
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "view_result": "Lihat hasil",
+    "continue": "Lanjutkan",
+    "start": "Mulai",
+    "questions_meta": "soal",
+    "class_activities": "Aktivitas rombel",
+    "parent_activities": "Aktivitas orang tua",
+    "intro": "Aktivitas yang diberikan oleh guru atau orang tua Anda akan muncul di sini.",
+    "personal_activities_section": "Aktivitas pribadi",
+    "show_landscape": "Tampilkan lanskap",
+    "show_portrait": "Tampilkan potret",
+    "landscape": "↔️ Lanskap",
+    "portrait": "↕️ Potret"
+  }
+}

@@ -23,7 +23,11 @@ import { trackServerAnalyticsEvent } from "../../../lib/analytics/track-event.se
 import { gateMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 import { findMockStudentByAccessCode } from "../../../lib/global/mock-fixtures.js";
 
-const GENERIC_LOGIN_FAILURE = { ok: false, error: "Incorrect username or PIN" };
+const GENERIC_LOGIN_FAILURE = {
+  ok: false,
+  error: "Incorrect username or PIN",
+  code: "invalid_credentials",
+};
 
 function mockStudentLogin(req, res) {
   const usernameNormalized = normalizeStudentUsername(req.body?.username);

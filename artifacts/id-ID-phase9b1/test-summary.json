@@ -1,0 +1,14 @@
+{
+  "phase": "9B-1",
+  "focusedTestFile": "tests/i18n/id-ID-phase9b1-api-code-foundation.test.mjs",
+  "compactRegressionFiles": [
+    "tests/i18n/id-ID-phase2e-namespace-parity.test.mjs",
+    "tests/i18n/id-ID-phase2d-help-public-seo-content.test.mjs",
+    "tests/i18n/id-ID-phase5-non-seo-runtime.test.mjs",
+    "tests/i18n/id-ID-phase7-native-learning-runtime.test.mjs",
+    "tests/i18n/id-ID-phase8-learning-books.test.mjs"
+  ],
+  "result": "PASS",
+  "testsPassed": 37,
+  "testsFailed": 0
+}

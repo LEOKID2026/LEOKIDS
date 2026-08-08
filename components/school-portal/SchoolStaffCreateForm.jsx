@@ -3,6 +3,8 @@ import { SchoolPrimaryButton, SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPor
 import {
   apiErrorMessageHe,
   schoolAuthFetch,
+  SCHOOL_CREATION_FAILED,
+  SCHOOL_NETWORK_ERROR,
   SCHOOL_STAFF_CODE_SHOWN,
   SCHOOL_STAFF_CREATE_DISPLAY_NAME,
   SCHOOL_STAFF_CREATE_SUCCESS,
@@ -48,14 +50,14 @@ export default function SchoolStaffCreateForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Creation failed"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_CREATION_FAILED));
         return;
       }
       setCreated(json?.data || null);
       setDisplayName("");
       onSuccess?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy(false);
     }

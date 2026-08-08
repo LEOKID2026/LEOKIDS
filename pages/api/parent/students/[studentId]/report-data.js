@@ -36,16 +36,25 @@ function buildDefaultRange() {
   };
 }
 
+/**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
+
 export default async function handler(req, res) {
   if (req.method !== "GET") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   }
 
   const authHeader = req.headers.authorization || "";
 
   const studentId = safeString(req.query?.studentId, 64);
   if (!studentId) {
-    return res.status(400).json({ ok: false, error: "studentId is required" });
+    return fail(res, 400, "student_id_required");
   }
 
   const defaultRange = buildDefaultRange();
@@ -55,10 +64,10 @@ export default async function handler(req, res) {
   const fromDate = fromRaw ? parseIsoDateParam(fromRaw) : parseIsoDateParam(defaultRange.from);
   const toDate = toRaw ? parseIsoDateParam(toRaw) : parseIsoDateParam(defaultRange.to);
   if (!fromDate || !toDate) {
-    return res.status(400).json({ ok: false, error: "Invalid date params, expected YYYY-MM-DD" });
+    return fail(res, 400, "invalid_date_params");
   }
   if (fromDate.getTime() > toDate.getTime()) {
-    return res.status(400).json({ ok: false, error: "from must be <= to" });
+    return fail(res, 400, "invalid_date_params");
   }
 
   try {
@@ -72,15 +81,18 @@ export default async function handler(req, res) {
       select: "id,full_name,grade_level,is_active,parent_id,account_kind,product_id",
     });
     if (!owned.ok) {
+      const code =
+        (typeof owned.error === "string" && owned.error) || "student_not_found";
       return res.status(owned.status || 403).json({
         ok: false,
-        error: owned.error || "Could not verify student ownership",
+        error: code,
+        code,
         message: owned.message,
       });
     }
     const student = owned.student;
     if (student.account_kind === "guest") {
-      return res.status(403).json({ ok: false, error: "Not available for guest accounts", code: "guest_not_eligible" });
+      return fail(res, 403, "guest_not_eligible");
     }
 
     const membershipLocales = await loadGlobalProductMembershipLocales(
@@ -133,6 +145,6 @@ export default async function handler(req, res) {
     res.setHeader("Pragma", "no-cache");
     return res.status(200).json(responseBody);
   } catch {
-    return res.status(500).json({ ok: false, error: "Unexpected server error" });
+    return fail(res, 500, "unexpected_server_error");
   }
 }

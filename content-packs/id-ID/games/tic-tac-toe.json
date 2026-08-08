@@ -1,0 +1,9 @@
+{
+  "gameId": "tic-tac-toe",
+  "title": "Tic-Tac-Toe",
+  "blurb": "Papan dari 3×3 sampai 7×7 dengan pelacakan skor.",
+  "players": "2 pemain",
+  "help": {
+    "howToPlay": "Main bersama di perangkat yang sama."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "files": 59,
+  "uniqueLeaves": 1920,
+  "toTranslate": 1689,
+  "retainTechOrIntentional": 231,
+  "structureFiles": [
+    "taxonomy/english.structure.json",
+    "taxonomy/geometry.structure.json",
+    "taxonomy/math.structure.json",
+    "taxonomy/science.structure.json"
+  ]
+}

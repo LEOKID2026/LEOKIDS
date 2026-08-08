@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "human_body": "Tubuh Manusia",
+    "animals": "Hewan",
+    "plants": "Tumbuhan",
+    "materials": "Materi",
+    "experiments": "Eksperimen",
+    "earth_and_space": "Bumi dan Antariksa",
+    "environment": "Lingkungan",
+    "standard": "Standar",
+    "medium": "Sedang",
+    "advanced": "Lanjutan",
+    "basic_shapes": "Bentuk dasar",
+    "perimeter": "Keliling",
+    "volume": "Volume",
+    "angles": "Sudut",
+    "parallel_and_perpendicular": "Garis sejajar dan tegak lurus",
+    "triangles": "Segitiga",
+    "quadrilaterals": "Segi empat",
+    "transformations": "Transformasi",
+    "rotation": "Rotasi",
+    "symmetry": "Simetri",
+    "diagonals": "Diagonal",
+    "heights": "Tinggi",
+    "tiling": "Pengubinan",
+    "circles": "Lingkaran",
+    "solid_shapes": "Bangun ruang",
+    "pythagorean_theorem": "Teorema Pythagoras"
+  }
+}

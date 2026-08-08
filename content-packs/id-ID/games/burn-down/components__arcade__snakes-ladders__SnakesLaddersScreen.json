@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "snakes_and_ladders": "Ular Tangga",
+    "back": "Kembali",
+    "coin_balance": "Saldo koin",
+    "how_to_play": "Cara bermain",
+    "on_your_turn_roll_the_dice_and_move_forward_by_that_number": "Di giliranmu, lempar dadu dan maju sesuai angkanya.",
+    "snakes_send_you_down_ladders_send_you_up_classic_board": "Ular menurunkanmu, tangga menaikkanmu — papan klasik.",
+    "reach_exactly_100_to_win": "Capai tepat 100 untuk menang.",
+    "a_roll_past_100_doesn_t_move_you_you_stay_put": "Lemparan yang melewati 100 tidak menggerakkanmu (kamu tetap di tempat)."
+  }
+}

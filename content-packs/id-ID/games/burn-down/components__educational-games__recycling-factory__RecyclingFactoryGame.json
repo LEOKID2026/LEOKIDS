@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "the_item_went_past_the_conveyor_try_to_be_faster": "Barang melewati konveyor - coba lebih cepat!",
+    "correct_great_job": "Benar! Kerja bagus ♻️",
+    "math_max_best_next_if_next_5_addscore_score_streak5_if_next_10_addscore_": "Math.max(best, next));\n        if (next === 5) addScore(SCORE.streak5);\n        if (next === 10) addScore(SCORE.streak10);\n        if (next === 5 || next === 10) onStreak();\n        return next;\n      });\n\n      addScore(bonus);\n\n      const showFact = Math.random()",
+    "b_status_moving_const_dualallowed_allowdualitemsat_sortedcountref_curren": "b.status === \"moving\");\n      const dualAllowed = allowDualItemsAt(sortedCountRef.current, difficultyRef.current);\n      const maxOnBelt = dualAllowed && Math.random()",
+    "diffconfig_bins_map_id_bins_id_diffconfig_bins_const_binsgridclass_activ": "diffConfig.bins.map((id) => BINS[id]),\n    [diffConfig.bins],\n  );\n\n  const binsGridClass =\n    activeBins.length",
+    "onitemclick_bi_uid": "onItemClick(bi.uid)}\n                          />\n                        ))}",
+    "sort_the_items_into_the_right_bins_and_help_the_environment": "Pilah barang ke tempat sampah yang tepat dan bantu lingkungan",
+    "sort_each_item_into_the_right_bin_help_the_planet": "Masukkan setiap barang ke tempat sampah yang tepat - bantu bumi!",
+    "onbinactivate_bin_id": "onBinActivate(bin.id)}\n        />\n      ))}",
+    "drag_to_a_bin_or_tap_an_item_bin": "Seret ke tempat sampah atau ketuk item → tempat sampah",
+    "leo_apos_s_recycling_factory": "Pabrik Daur Ulang Leo",
+    "correct_items": "Item benar",
+    "best_streak": "Rentetan terbaik",
+    "start_game": "Mulai gim",
+    "mistakes": "Kesalahan",
+    "accuracy": "Ketepatan",
+    "new_game": "Gim baru",
+    "mission": "Misi",
+    "score": "Skor",
+    "level": "Level",
+    "back": "Kembali"
+  }
+}

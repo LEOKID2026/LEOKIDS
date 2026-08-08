@@ -2,6 +2,8 @@ import { useState } from "react";
 import {
   apiErrorMessageHe,
   schoolAuthFetch,
+  SCHOOL_ACTION_FAILED,
+  SCHOOL_NETWORK_ERROR,
   SCHOOL_STAFF_ACTION_BUSY,
   SCHOOL_STAFF_CODE_SHOWN,
   SCHOOL_STAFF_PIN_SHOWN,
@@ -49,7 +51,7 @@ export default function SchoolStaffAccessActions({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Action failed"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_ACTION_FAILED));
         return;
       }
       if (json?.data?.initialPin) {
@@ -60,7 +62,7 @@ export default function SchoolStaffAccessActions({
       }
       onChanged?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy("");
     }

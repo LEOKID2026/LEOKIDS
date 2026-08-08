@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "learning": "Pembelajaran",
+    "practice": "Latihan",
+    "challenge": "Tantangan",
+    "marathon": "Maraton",
+    "graded": "Sudah dinilai",
+    "normal": "Normal",
+    "mistakes": "Kesalahan",
+    "review_mistakes": "Tinjau kesalahan"
+  }
+}

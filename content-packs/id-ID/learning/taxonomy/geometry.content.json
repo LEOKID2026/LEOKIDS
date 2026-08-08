@@ -1,0 +1,207 @@
+{
+  "subjectId": "geometry",
+  "rows": {
+    "G-01": {
+      "id": "G-01",
+      "domain": "Bentuk",
+      "topic": "Segiempat",
+      "subskill": "Sifat persegi panjang/jajar genjang",
+      "pattern": "Membingungkan sifat",
+      "counterEvidence": "Benar hanya pada bangun yang bersih",
+      "countsWhen": "Sudut ditandai",
+      "doesNotCountWhen": "Hanya nama tanpa diagram",
+      "probe": "Dengan penandaan sudut/sisi",
+      "intervention": "Kartu definisi",
+      "escalation": "Gagal pada setiap bangun",
+      "observableMarkers": [
+        "Kesalahan saat sudut bukan 90°"
+      ],
+      "roots": [
+        "Definisi yang tumpang tindih"
+      ],
+      "competitors": [
+        "Mengingat nama"
+      ],
+      "doNotConclude": [
+        "Tanpa geometri"
+      ]
+    },
+    "G-02": {
+      "id": "G-02",
+      "domain": "Sudut",
+      "topic": "Pengukuran",
+      "subskill": "Membaca busur derajat",
+      "pattern": "Kesalahan pada rentang sudut",
+      "counterEvidence": "Benar dengan pengukuran terbimbing",
+      "countsWhen": "Busur derajat dan instruksi valid",
+      "doesNotCountWhen": "Sudut terlalu kecil di UI yang menyesatkan",
+      "probe": "Terbimbing vs mandiri",
+      "intervention": "Latihan skala",
+      "escalation": "Laporan penglihatan",
+      "observableMarkers": [
+        "Kesalahan berulang pada rentang yang sama"
+      ],
+      "roots": [
+        "Membaca skala"
+      ],
+      "competitors": [
+        "Kecepatan"
+      ],
+      "doNotConclude": [
+        "Masalah penglihatan"
+      ]
+    },
+    "G-03": {
+      "id": "G-03",
+      "domain": "Luas",
+      "topic": "Jajar genjang",
+      "subskill": "Tinggi",
+      "pattern": "Memakai sisi sebagai tinggi",
+      "counterEvidence": "Selalu benar pada persegi panjang",
+      "countsWhen": "Tinggi dapat ditambahkan",
+      "doesNotCountWhen": "Hanya bilangan besar tanpa model",
+      "probe": "Dengan/tanpa garis tinggi",
+      "intervention": "Sorot tinggi",
+      "escalation": "Gagal pada persegi panjang",
+      "observableMarkers": [
+        "Kesalahan saat tidak digambar garis tinggi"
+      ],
+      "roots": [
+        "Memilih tinggi"
+      ],
+      "competitors": [
+        "Perkalian yang salah"
+      ],
+      "doNotConclude": [
+        "Tanpa rumus"
+      ]
+    },
+    "G-04": {
+      "id": "G-04",
+      "domain": "Transformasi",
+      "topic": "Rotasi",
+      "subskill": "Arah/sudut",
+      "pattern": "Rotasi terbalik",
+      "counterEvidence": "Benar pada kisi",
+      "countsWhen": "Kisi dan sumbu",
+      "doesNotCountWhen": "Tanpa kisi sebelum diajarkan",
+      "probe": "Dengan/tanpa sumbu",
+      "intervention": "Kisi + titik sudut",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan arah berulang"
+      ],
+      "roots": [
+        "Orientasi spasial"
+      ],
+      "competitors": [
+        "Kecerobohan"
+      ],
+      "doNotConclude": [
+        "Tanpa berpikir spasial"
+      ]
+    },
+    "G-05": {
+      "id": "G-05",
+      "domain": "Volume",
+      "topic": "Balok",
+      "subskill": "Model 3D",
+      "pattern": "Lupa kedalaman",
+      "counterEvidence": "Benar pada kubus sederhana",
+      "countsWhen": "Jaring tersedia",
+      "doesNotCountWhen": "Tanpa diagram saat belum diajarkan",
+      "probe": "Dengan/tanpa jaring",
+      "intervention": "Jaring kertas",
+      "escalation": "Gagal pada kubus",
+      "observableMarkers": [
+        "Jawaban 2D",
+        "Benar dengan jaring"
+      ],
+      "roots": [
+        "Model 3D"
+      ],
+      "competitors": [
+        "Perkalian"
+      ],
+      "doNotConclude": [
+        "Tanpa volume"
+      ]
+    },
+    "G-06": {
+      "id": "G-06",
+      "domain": "Pengukuran",
+      "topic": "Keliling",
+      "subskill": "Konversi satuan",
+      "pattern": "Kesalahan satuan berulang",
+      "counterEvidence": "Benar dengan kunci",
+      "countsWhen": "Kunci tersedia",
+      "doesNotCountWhen": "Konversi belum diajarkan",
+      "probe": "Dua satuan untuk panjang yang sama",
+      "intervention": "Kunci konversi",
+      "escalation": "Gagal pada satu garis",
+      "observableMarkers": [
+        "Kesalahan satuan yang sama"
+      ],
+      "roots": [
+        "Satuan"
+      ],
+      "competitors": [
+        "Perhitungan"
+      ],
+      "doNotConclude": [
+        "Tanpa pengukuran"
+      ]
+    },
+    "G-07": {
+      "id": "G-07",
+      "domain": "Simetri",
+      "topic": "Bangun",
+      "subskill": "Sumbu",
+      "pattern": "Sumbu yang salah berulang",
+      "counterEvidence": "Benar saat sumbu ditampilkan",
+      "countsWhen": "Titik tersedia",
+      "doesNotCountWhen": "Bangun tidak simetris",
+      "probe": "Dengan/tanpa sumbu",
+      "intervention": "Lipatan kertas",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan dengan titik yang ditandai"
+      ],
+      "roots": [
+        "Visual"
+      ],
+      "competitors": [
+        "Kecerobohan"
+      ],
+      "doNotConclude": [
+        "Tanpa simetri"
+      ]
+    },
+    "G-08": {
+      "id": "G-08",
+      "domain": "Segitiga",
+      "topic": "Luas",
+      "subskill": "alas×tinggi÷2",
+      "pattern": "Lupa ÷2 atau tinggi salah",
+      "counterEvidence": "Benar hanya pada kasus sederhana",
+      "countsWhen": "Tinggi dalam yang jelas",
+      "doesNotCountWhen": "Tumpul tanpa langkah pengajaran",
+      "probe": "Tinggi luar disorot",
+      "intervention": "Identifikasi tinggi → rumus",
+      "escalation": "Gagal pada segitiga siku-siku",
+      "observableMarkers": [
+        "Kesalahan berulang",
+        "Benar pada segitiga siku-siku dengan tinggi dalam"
+      ],
+      "roots": [
+        "Rumus"
+      ],
+      "competitors": [
+        "Struktur segitiga"
+      ],
+      "doNotConclude": [
+        "Tanpa segitiga"
+      ]
+    }
+  }
+}

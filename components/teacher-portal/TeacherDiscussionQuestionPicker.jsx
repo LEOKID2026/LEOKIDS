@@ -1,7 +1,7 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { teacherAuthFetch, subjectLabel } from "../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch, subjectLabel } from "../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { formatGradeLevelHe, resolveCanonicalGradeKey } from "../../lib/teacher-portal/teacher-class-grade.js";
 import {
@@ -166,7 +166,7 @@ export default function TeacherDiscussionQuestionPicker({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Could not generate questions");
+        setError(apiErrorMessageHe(json?.error, "Could not generate questions"));
         setPreview([]);
         return;
       }
@@ -227,7 +227,7 @@ export default function TeacherDiscussionQuestionPicker({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Creation failed");
+        setError(apiErrorMessageHe(json?.error, "Creation failed"));
         return;
       }
       const activityId = json?.data?.activityId;

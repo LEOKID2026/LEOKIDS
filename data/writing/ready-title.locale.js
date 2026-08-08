@@ -4,6 +4,7 @@
  */
 
 import { resolveWritingWordPacks } from "./word-packs.locale.js";
+import { resolveReadyWritingTitleIdId } from "./ready-title.id-ID.js";
 
 /** @type {Record<string, string>} */
 const EXACT_ES_419 = Object.freeze({
@@ -81,13 +82,30 @@ function isEs419(locale) {
 }
 
 /**
+ * @param {unknown} locale
+ */
+function isIdId(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "id-id";
+}
+
+/**
  * @param {string} titleEn
  * @param {string|null|undefined} [contentLocale]
  * @returns {string}
  */
 export function resolveReadyWritingTitle(titleEn, contentLocale) {
   const title = String(titleEn || "").trim();
-  if (!title || !isEs419(contentLocale)) return title;
+  if (!title) return title;
+
+  if (isIdId(contentLocale)) {
+    return resolveReadyWritingTitleIdId(title);
+  }
+
+  if (!isEs419(contentLocale)) return title;
 
   if (EXACT_ES_419[title]) return EXACT_ES_419[title];
 

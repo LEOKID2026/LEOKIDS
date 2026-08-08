@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "close": "Close",
+    "leave_table": "Leave table",
+    "leaving": "Leaving…",
+    "victory": "Victory",
+    "round_over": "Round over",
+    "game_has_ended": "The game has ended",
+    "last_one_standing": "Last one standing — {name}",
+    "winner": "Winner",
+    "sending_results": "Sending results to your balance…",
+    "round_over_rematch_hint": "Round over — request a rematch, then the host starts the next one.",
+    "player": "Player",
+    "sending_request": "Sending request…",
+    "request_rematch": "Request rematch",
+    "cancel_rematch": "Cancel rematch",
+    "only_host_can_start": "Only the host can start the next game",
+    "starting": "Starting…",
+    "start_next_host": "Start next (host)",
+    "round_result": "Round result",
+    "table_multiplier": "Table multiplier",
+    "payout": "Payout",
+    "prizes_claimed": "Prizes claimed",
+    "unclaimed": "Unclaimed",
+    "host_only": "Host only",
+    "host_starts_when_all_request": "The host starts a new game when all seated players request a rematch.",
+    "coins_amount": "+{amount} coins",
+    "coins_prizes": "+{amount} coins (prizes)",
+    "coins_plain": "{amount} coins"
+  }
+}

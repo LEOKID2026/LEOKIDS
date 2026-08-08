@@ -1,0 +1,71 @@
+{
+  "seoKey": "guides-reading-practice-at-home",
+  "slug": "reading-practice-at-home",
+  "displayTitle": "Membaca di rumah",
+  "badge": "Panduan membaca di rumah",
+  "h1": "Latihan membaca di rumah — ketepatan, tempo, dan pemahaman",
+  "intro": "Latihan membaca di rumah tidak harus panjang. Teks singkat pada tingkat yang tepat dapat membantu anak Anda membaca lebih akurat, mengenali kata lebih cepat, dan memahami gagasan utama.",
+  "sections": [
+    {
+      "title": "Pilih teks yang sesuai untuk anak Anda",
+      "paragraphs": [
+        "Teks yang baik adalah teks yang sebagian besar dapat dibaca anak Anda, tetapi masih memuat beberapa kata yang perlu perhatian. Teks yang terlalu mudah tidak menciptakan latihan; yang terlalu sulit dapat membuat membaca menjadi perjuangan."
+      ]
+    },
+    {
+      "title": "Apa yang perlu difokuskan saat membaca",
+      "bullets": [
+        "Membaca kata secara akurat.",
+        "Berhenti pada tanda baca.",
+        "Kembali ke kata yang dibaca salah.",
+        "Memahami kata baru dari kalimat.",
+        "Menjelaskan secara singkat apa yang terjadi dalam teks."
+      ]
+    },
+    {
+      "title": "Cara mengoreksi tanpa menghentikan setiap kalimat",
+      "paragraphs": [
+        "Anda tidak harus memperbaiki setiap kesalahan segera. Saat kesalahan mengubah makna, berhenti sejenak dan kembali ke kata itu. Saat anak Anda mengoreksi sendiri, biarkan mereka lanjut. Di akhir, pilih dua atau tiga kata untuk dibaca lagi."
+      ]
+    },
+    {
+      "title": "Cara menggunakan latihan di situs",
+      "paragraphs": [
+        "Di halaman membaca, pilih kelas dan mulai latihan yang sesuai. Pertanyaan membantu memeriksa pemahaman kata, detail dari teks, dan pemahaman keseluruhan."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Haruskah kita membaca teks yang sama lagi?",
+      "a": "Ya. Membaca ulang dapat meningkatkan ketepatan dan tempo, selama anak Anda memahami teks dan tidak hanya menghafalnya."
+    },
+    {
+      "q": "Bagaimana dengan kata yang sulit?",
+      "a": "Pecah menjadi bagian-bagian, baca dalam kalimat, dan jelaskan artinya secara singkat."
+    },
+    {
+      "q": "Haruskah kita mengukur waktu membaca?",
+      "a": "Bukan sebagai kebiasaan rutin. Ketepatan dan pemahaman lebih penting daripada kecepatan."
+    }
+  ],
+  "relatedPracticePath": "/practice/reading",
+  "practiceCtaLabel": "Latihan membaca",
+  "relatedGuideSlugs": [
+    "reading-comprehension-at-home",
+    "home-practice-routine",
+    "how-to-follow-child-progress"
+  ],
+  "footerCta": {
+    "title": "Pilih teks singkat dan mulai membaca",
+    "body": "Latihan membaca dan pemahaman yang terfokus dapat mudah masuk ke rutinitas di rumah.",
+    "primary": {
+      "href": "/practice/reading",
+      "label": "Latihan membaca"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

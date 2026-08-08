@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../components/Layout";
@@ -7,7 +8,7 @@ import PdfUploader from "../../../../../components/worksheet-activities/PdfUploa
 import TeacherQuestionBuilder from "../../../../../components/worksheet-activities/TeacherQuestionBuilder";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { REPORT_SUBJECTS, subjectLabel } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { worksheetModeLabelHe } from "../../../../../lib/worksheet-activities/worksheet-labels.client.js";
 
@@ -15,6 +16,9 @@ export async function getServerSideProps(context) {
   const classId = String(context.params?.classId || "").trim();
   return { props: { classId } };
 }
+
+const SLUG = "pages__teacher__class__[classId]__worksheets__new";
+const c = (key) => globalBurnDownCopy(SLUG, key);
 
 const MODES = ["pdf_only", "digital_answers", "manual_grading"];
 
@@ -33,10 +37,10 @@ export default function TeacherNewWorksheetPage({ classId }) {
 
   const uploadPdf = useCallback(
     async (file) => {
-      if (!worksheetId) return { ok: false, error: "Save a draft first" };
+      if (!worksheetId) return { ok: false, error: c("save_draft_first") };
       const supabase = getLearningSupabaseBrowserClient();
       const session = await resolveTeacherAccessToken(supabase);
-      if (!session.ok) return { ok: false, error: "Not signed in" };
+      if (!session.ok) return { ok: false, error: c("not_signed_in") };
 
       const pdfBase64 = await new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -62,7 +66,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        return { ok: false, error: body?.error?.message || body?.error?.code || "Upload failed" };
+        return { ok: false, error: apiErrorMessageHe(body?.error, c("upload_failed")) };
       }
       setHasPdf(true);
       return {
@@ -76,7 +80,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
 
   const saveDraft = useCallback(async () => {
     if (!title.trim()) {
-      setError("Please enter a title");
+      setError(c("please_enter_title"));
       return null;
     }
     setBusy(true);
@@ -108,7 +112,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
         });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) {
-          setError(body?.error?.message || body?.error?.code || "Error saving");
+          setError(apiErrorMessageHe(body?.error, c("error_saving")));
           return null;
         }
         id = body?.data?.worksheetId;
@@ -139,7 +143,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
 
       return id;
     } catch {
-      setError("Network error");
+      setError(c("network_error"));
       return null;
     } finally {
       setBusy(false);
@@ -160,7 +164,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
     const id = worksheetId || (await saveDraft());
     if (!id) return;
     if (!hasPdf) {
-      setError("Upload a PDF before launching");
+      setError(c("upload_pdf_before_launch"));
       return;
     }
     setBusy(true);
@@ -183,12 +187,12 @@ export default function TeacherNewWorksheetPage({ classId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "Launch failed");
+        setError(apiErrorMessageHe(body?.error, c("launch_failed")));
         return;
       }
       router.push(`/teacher/class/${encodeURIComponent(classId)}/worksheets/${encodeURIComponent(id)}`);
     } catch {
-      setError("Network error");
+      setError(c("network_error"));
     } finally {
       setBusy(false);
     }
@@ -196,14 +200,14 @@ export default function TeacherNewWorksheetPage({ classId }) {
 
   return (
     <Layout>
-      <TeacherPortalShell title="Worksheet activity" backHref={`/teacher/class/${classId}/worksheets`}>
+      <TeacherPortalShell title={c("page_title")} backHref={`/teacher/class/${classId}/worksheets`}>
         <TeacherClassActivitiesNav classId={classId} active="worksheets" />
 
         <div className="max-w-2xl mx-auto space-y-5 text-start">
           {error ? <p className="text-red-300 text-sm">{error}</p> : null}
 
           <label className="block text-sm text-white/80">
-            Title
+            {c("title")}
             <input
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
               value={title}
@@ -212,7 +216,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
           </label>
 
           <label className="block text-sm text-white/80">
-            Subject
+            {c("subject")}
             <select
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
               value={subject}
@@ -227,7 +231,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
           </label>
 
           <label className="block text-sm text-white/80">
-            Instructions for students
+            {c("instructions_for_students")}
             <textarea
               rows={3}
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
@@ -237,7 +241,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
           </label>
 
           <label className="block text-sm text-white/80">
-            Physical submission due date
+            {c("physical_due_date")}
             <input
               type="datetime-local"
               className="mt-1 w-full rounded-lg bg-black/40 border border-white/15 px-3 py-2 text-white"
@@ -247,7 +251,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
           </label>
 
           <fieldset className="space-y-2">
-            <legend className="text-sm text-white/80 mb-2">Activity mode</legend>
+            <legend className="text-sm text-white/80 mb-2">{c("activity_mode")}</legend>
             {MODES.map((m) => (
               <label key={m} className="flex items-center gap-2 justify-end cursor-pointer">
                 <span className="text-white">{worksheetModeLabelHe(m)}</span>
@@ -284,14 +288,14 @@ export default function TeacherNewWorksheetPage({ classId }) {
               onClick={() => void saveDraft()}
               className="px-4 py-2 rounded-xl border border-white/20 text-white"
             >
-              Save as draft
+              {c("save_as_draft")}
             </button>
           </div>
 
           {worksheetId ? (
             <PdfUploader disabled={busy} uploadFn={uploadPdf} onUploaded={() => setHasPdf(true)} />
           ) : (
-            <p className="text-sm text-white/50">Save a draft before uploading a PDF.</p>
+            <p className="text-sm text-white/50">{c("save_draft_before_pdf")}</p>
           )}
 
           <button
@@ -300,7 +304,7 @@ export default function TeacherNewWorksheetPage({ classId }) {
             onClick={() => void activate()}
             className="w-full py-3 rounded-xl bg-violet-500/90 text-black font-bold hover:bg-violet-400"
           >
-            Launch and send to class
+            {c("launch_class")}
           </button>
         </div>
       </TeacherPortalShell>

@@ -1,0 +1,70 @@
+{
+  "subjects": {
+    "math": "Matematika",
+    "geometry": "Geometri",
+    "english": "Bahasa Inggris",
+    "science": "IPA"
+  },
+  "activityModes": {
+    "live_lesson": "Pelajaran langsung",
+    "guided_practice": "Latihan terbimbing",
+    "quiz": "Kuis",
+    "homework": "PR",
+    "discussion": "Diskusi",
+    "practice": "Latihan",
+    "review": "Ulasan"
+  },
+  "activityStatuses": {
+    "draft": "Draf",
+    "active": "Aktif",
+    "paused": "Dijeda",
+    "closed": "Ditutup",
+    "archived": "Diarsipkan"
+  },
+  "studentActivityStatuses": {
+    "not_started": "Belum dimulai",
+    "in_progress": "Sedang berlangsung",
+    "submitted": "Dikirim",
+    "completed": "Selesai",
+    "timed_out": "Waktu habis"
+  },
+  "roles": {
+    "teacher": "Guru",
+    "school_admin": "Admin sekolah",
+    "admin": "Admin sistem"
+  },
+  "auditActions": {
+    "school_subject_granted": "Izin mata pelajaran diberikan",
+    "school_subject_revoked": "Penugasan mata pelajaran dicabut",
+    "school_student_enrolled": "Murid didaftarkan",
+    "school_student_unenrolled": "Murid dibatalkan pendaftarannya",
+    "school_class_viewed": "Laporan rombel dilihat",
+    "school_student_report_viewed": "Laporan murid dilihat",
+    "school_student_class_transferred": "Murid dipindahkan",
+    "school_class_teacher_reassigned": "Guru rombel diganti",
+    "school_class_archived": "Rombel diarsipkan",
+    "assign_teacher": "Guru ditugaskan",
+    "assign_manager": "Pengelola ditunjuk",
+    "class_transfer": "Murid dipindahkan",
+    "grant": "Izin diberikan",
+    "revoke": "Izin dihapus",
+    "archive": "Diarsipkan",
+    "viewed_student_report": "Laporan murid dilihat",
+    "viewed_class_report": "Laporan rombel dilihat",
+    "grant_created": "Izin akses dibuat",
+    "grant_revoked": "Izin akses dicabut",
+    "magic_link_issued": "Tautan masuk diterbitkan",
+    "pin_rotated": "PIN diganti",
+    "username_rotated": "Nama pengguna diganti",
+    "teacher_quota_updated": "Kuota diperbarui",
+    "teacher_features_updated": "Izin fitur diperbarui",
+    "teacher_status_updated": "Status akun diperbarui"
+  },
+  "fallback": {
+    "unknownDisplay": "-",
+    "systemAction": "Tindakan sistem",
+    "activity": "Aktivitas",
+    "classActivity": "Aktivitas rombel",
+    "activitySuffix": "aktivitas"
+  }
+}

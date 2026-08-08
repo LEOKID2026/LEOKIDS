@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "daily_event": "Acara harian",
+    "todays_challenge": "Tantangan hari ini",
+    "coins_reward": "+{amount} koin",
+    "collected": "Sudah dikumpulkan ✓",
+    "collect_reward": "Ambil hadiah",
+    "play_to_complete": "Mainkan gim arkade untuk menyelesaikan tantangan",
+    "tournament": "Turnamen",
+    "registered": "Terdaftar ✓",
+    "register": "Daftar",
+    "registration_closed": "Pendaftaran ditutup"
+  }
+}

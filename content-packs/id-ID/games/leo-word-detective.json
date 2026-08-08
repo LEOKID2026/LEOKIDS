@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-detective",
+  "title": "Detektif Kata Leo",
+  "blurb": "Seret bukti ke papan dan pecahkan kasus membaca serta kosakata",
+  "help": {
+    "howToPlay": "Seret kartu bukti ke papan investigasi lalu ketuk \"Selesaikan Kasus\". Kalau jawabannya benar — kasus ditutup!",
+    "scoring": "Jawaban benar +30, bonus waktu, 3 beruntun +15, 5 beruntun +30. Waktu habis −5. Kesalahan tidak mengakhiri gim — hanya dihitung.",
+    "rewards": "Koin diberikan berdasarkan berapa dari 20 kasus yang kamu pecahkan, ketepatan, rentetan, dan tingkat kesulitan.",
+    "tip": "Baca tugas kasus dengan teliti — di level sulit ada teks singkat di papan."
+  },
+  "accessibility": {
+    "title": "Detektif Kata Leo"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "block_tower": "Menara Balok",
+    "prototype_tap_to_place_precision_taller_tower": "Prototipe · ketuk untuk menempatkan · ketepatan = menara lebih tinggi",
+    "place_block": "Tempatkan balok",
+    "tap_when_the_block_is_over_the_tower_small_overlap_narrower_block": "Ketuk saat balok di atas menara · tumpang tindih kecil = balok lebih sempit",
+    "setflash_280_gameover_return": "setFlash(\"\"), 280);\n  }, [gameOver]);\n\n  return (",
+    "tap_to_play_again": "Ketuk untuk main lagi",
+    "game_over": "Gim Berakhir",
+    "reset": "Atur ulang"
+  }
+}

@@ -7,8 +7,11 @@ import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/
 import TeacherDiscussionQuestionPicker from "../../../../../components/teacher-portal/TeacherDiscussionQuestionPicker";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import { loadClassActivityContextFromApiClass } from "../../../../../lib/teacher-portal/teacher-class-grade.js";
+
+const SLUG = "pages__teacher__class__[classId]__discussion__new";
+const c = (key) => globalBurnDownCopy(SLUG, key);
 
 export async function getServerSideProps(context) {
   const classId = String(context.params?.classId || "").trim();
@@ -43,7 +46,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
         );
         const json = await res.json().catch(() => ({}));
         if (!res.ok) {
-          setError(json?.error?.message || "Could not load class");
+          setError(apiErrorMessageHe(json?.error, c("err_load_class")));
           return;
         }
         const cls = json?.data?.class;
@@ -51,14 +54,14 @@ export default function TeacherNewDiscussionPage({ classId }) {
         if (ctx.gradeKey) {
           setGradeLevel(ctx.gradeKey);
         } else if (ctx.gradeLocked) {
-          setError("This class grade level is invalid. Contact your school admin.");
+          setError(c("err_invalid_grade"));
         }
         if (ctx.subjectFocus) {
           setLockedSubject(ctx.subjectFocus);
           setSubjectLocked(true);
         }
       } catch {
-        if (!cancelled) setError("Network error");
+        if (!cancelled) setError(c("network_error"));
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -71,7 +74,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
   return (
     <Layout>
       <TeacherPortalShell
-        title={globalBurnDownCopy("pages__teacher__class__[classId]__discussion__new", "new_discussion_activity")}
+        title={c("new_discussion_activity")}
         backHref={`/teacher/class/${encodeURIComponent(classId)}/activities`}
       >
         <TeacherClassActivitiesNav classId={classId} active="discussion" />
@@ -83,7 +86,7 @@ export default function TeacherNewDiscussionPage({ classId }) {
         ) : null}
 
         {loading ? (
-          <p className="text-white/60 text-sm">Loading…</p>
+          <p className="text-white/60 text-sm">{c("loading")}</p>
         ) : accessToken ? (
           <TeacherDiscussionQuestionPicker
             accessToken={accessToken}

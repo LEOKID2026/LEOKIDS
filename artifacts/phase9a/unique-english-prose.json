@@ -1,0 +1,507 @@
+[
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/rooms/[roomId]/bingo-snapshot.js",
+    "text": "Access denied"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/balance.js",
+    "text": "Could not load balance"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/games/bingo/action.js",
+    "text": "Could not load game state"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/games.js",
+    "text": "Failed to load games"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/events/index.js",
+    "text": "Invalid action"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/games/bingo/action.js",
+    "text": "Invalid request"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/achievements.js",
+    "text": "Method not allowed"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/friends/index.js",
+    "text": "Missing friend ID"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/quick-game.js",
+    "text": "Missing game"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/profile/view.js",
+    "text": "Missing player ID"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/rooms/join.js",
+    "text": "Missing room ID"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/rooms/[roomId]/send-message.js",
+    "text": "Missing room or message"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/profile/view.js",
+    "text": "Player not found"
+  },
+  {
+    "area": "arcade",
+    "file": "pages/api/arcade/balance.js",
+    "text": "Server error"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/copilot-turn.js",
+    "text": "Could not build demo report for copilot"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/students/[studentId]/report-data.js",
+    "text": "from must be <= to"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/students/[studentId]/report-data.js",
+    "text": "Invalid date params, expected YYYY-MM-DD"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/cards/catalog.js",
+    "text": "Method not allowed"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/catalog.js",
+    "text": "Server error"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/students/[studentId]/game-permissions.js",
+    "text": "Student not found for demo"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/activities/index.js",
+    "text": "studentId is required"
+  },
+  {
+    "area": "demo",
+    "file": "pages/api/demo/parent/copilot-turn.js",
+    "text": "utterance is required"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/session/start.js",
+    "text": "Failed to create learning session"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/session/finish.js",
+    "text": "Failed to finish learning session"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Failed to record answer"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Invalid subject"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "isCorrect must be boolean"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Learning session not found"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "learningSessionId is required"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Method not allowed"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Not authenticated"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "questionId or questionFingerprint is required"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Server error"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/answer.js",
+    "text": "Session does not belong to student"
+  },
+  {
+    "area": "learning",
+    "file": "pages/api/learning/session/finish.js",
+    "text": "Session is not active"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/guest/link.js",
+    "text": "A temporary error occurred. Please try again later."
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/activities/[activityId].js",
+    "text": "activityId must be a UUID"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "Authorization failed"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/guest/link.js",
+    "text": "Child ID is missing"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "Could not create access code"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student.js",
+    "text": "Could not create student"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/list-students.js",
+    "text": "Could not list students"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student.js",
+    "text": "Could not load created student"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/list-students.js",
+    "text": "Could not load student credentials"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "Could not revoke previous code"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/update-student.js",
+    "text": "Could not update student"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/update-student.js",
+    "text": "Could not update student grade"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/coin-history.js",
+    "text": "Failed to load coin history"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/report-data.js",
+    "text": "from must be <= to"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student.js",
+    "text": "fullName is required"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student.js",
+    "text": "fullName too long"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student.js",
+    "text": "gradeLevel too long"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/worksheets/answer-key.js",
+    "text": "includeAnswers_required"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/report-data.js",
+    "text": "Invalid date params, expected YYYY-MM-DD"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "Invalid PIN"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/session/ready.js",
+    "text": "Invalid session"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "text": "Invalid subject"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "Invalid username"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/coin-history.js",
+    "text": "Invalid yearMonthIsrael"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/activities/index.js",
+    "text": "Method not allowed"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/session/ready.js",
+    "text": "Missing bearer token"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "Missing utterance"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/update-student.js",
+    "text": "No fields to update"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/game-permissions.js",
+    "text": "No valid fields to update"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/report-data.js",
+    "text": "Not available for guest accounts"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "studentId is not allowed in unauthenticated dev mode"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "studentId is required"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "studentId is required when using parent authorization"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/activities/index.js",
+    "text": "studentId must be a UUID"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "studentId must match the authenticated student session"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "text": "The permissions system is not enabled in the database yet"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "text": "The subject catalog is incomplete"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "This child is not active"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/students/[studentId]/subject-permissions.js",
+    "text": "This child is not linked to this parent"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "Unauthorized"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "Unauthorized: sign in as a student on this site, use a parent Bearer token with studentId, or enable local dev payload (see API comment)"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/activities/index.js",
+    "text": "Unexpected server error"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "Username check failed"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/create-student-access-code.js",
+    "text": "Username is already taken"
+  },
+  {
+    "area": "parent",
+    "file": "pages/api/parent/copilot-turn.js",
+    "text": "Utterance too long"
+  },
+  {
+    "area": "public",
+    "file": "pages/api/public/worksheets/answer-key.js",
+    "text": "includeAnswers_required"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/home-profile/achievement-grants.js",
+    "text": "A temporary error occurred. Please try again later."
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/action-decisions.js",
+    "text": "Could not build action decisions"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/learning-profile.js",
+    "text": "Failed to update learning profile"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/finish.js",
+    "text": "Game does not match this session"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/solo-games/finish.js",
+    "text": "Game ID is missing"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/start.js",
+    "text": "Game is not in the educational category"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/login.js",
+    "text": "Incorrect username or PIN"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/finish.js",
+    "text": "Invalid category"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/start.js",
+    "text": "Invalid difficulty level"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/start.js",
+    "text": "Invalid game"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/finish.js",
+    "text": "Invalid game data"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/action-decisions.js",
+    "text": "Method not allowed"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/educational-games/finish.js",
+    "text": "Missing game ID"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/activities/index.js",
+    "text": "Not authenticated"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/learning-profile.js",
+    "text": "Payload too large"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/activities/[activityId]/answer.js",
+    "text": "questionIndex required"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/leo-miners/reset.js",
+    "text": "Reset confirmation is required"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/activities/index.js",
+    "text": "Server error"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/action-decisions.js",
+    "text": "Student session expired"
+  },
+  {
+    "area": "student",
+    "file": "pages/api/student/guest/playable-topics.js",
+    "text": "subject is required"
+  }
+]

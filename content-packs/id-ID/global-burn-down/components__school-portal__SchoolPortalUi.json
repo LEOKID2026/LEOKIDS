@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "col_subject": "Mata pelajaran",
+    "col_class": "Rombel",
+    "col_teacher": "Guru",
+    "col_type": "Jenis",
+    "view_answers": "Lihat jawaban"
+  }
+}

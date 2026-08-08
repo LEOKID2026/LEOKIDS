@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "the_service_is_not_configured_correctly": "Layanan tidak dikonfigurasi dengan benar.",
+    "guest_mode_is_currently_disabled": "Mode tamu sedang dinonaktifkan.",
+    "the_guest_system_is_not_ready": "Sistem tamu belum siap.",
+    "could_not_start_guest_mode": "Tidak dapat memulai mode tamu."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "local_game_no_saving_and_no_rewards": "Gim lokal — tanpa penyimpanan dan tanpa hadiah",
+    "game_not_found": "Gim tidak ditemukan",
+    "back_to_list": "Kembali ke Daftar",
+    "offline": "Offline",
+    "list": "Daftar",
+    "page_title_suffix": "Gim Offline"
+  }
+}

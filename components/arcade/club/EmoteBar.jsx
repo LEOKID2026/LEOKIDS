@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+
+const SLUG = "components__arcade__club__EmoteBar";
 
 /**
  * Safe preset messages / emotes inside an arcade room.
@@ -90,7 +93,7 @@ export default function EmoteBar({ roomId, emotes = [], className = "" }) {
         onClick={() => setOpen((v) => !v)}
         className="rounded-full border border-white/20 bg-zinc-800/80 px-3 py-1.5 text-xs font-semibold text-zinc-100 hover:bg-zinc-700"
       >
-        😊 Message
+        {gamePackCopy(SLUG, "message")}
       </button>
 
       {open ? (

@@ -1,0 +1,1426 @@
+{
+  "version": 1,
+  "cardCount": 142,
+  "cards": {
+    "achievement_20_questions": {
+      "cardKey": "achievement_20_questions",
+      "title": "20 Pertanyaan",
+      "description": "Dapatkan kartu ini: 20 Pertanyaan",
+      "category": "achievement",
+      "accessibility": {
+        "title": "20 Pertanyaan",
+        "description": "Dapatkan kartu ini: 20 Pertanyaan"
+      }
+    },
+    "achievement_3_day_streak": {
+      "cardKey": "achievement_3_day_streak",
+      "title": "Rentetan 3 Hari",
+      "description": "Dapatkan kartu ini: 3 Hari Beruntun",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Rentetan 3 Hari",
+        "description": "Dapatkan kartu ini: 3 Hari Beruntun"
+      }
+    },
+    "achievement_7_day_streak": {
+      "cardKey": "achievement_7_day_streak",
+      "title": "Rentetan 7 Hari",
+      "description": "Dapatkan kartu ini: 7 Hari Beruntun",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Rentetan 7 Hari",
+        "description": "Dapatkan kartu ini: 7 Hari Beruntun"
+      }
+    },
+    "achievement_addition_champion": {
+      "cardKey": "achievement_addition_champion",
+      "title": "Penjumlahan si Juara",
+      "description": "Dapatkan kartu ini: Juara Penjumlahan",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Penjumlahan si Juara",
+        "description": "Dapatkan kartu ini: Juara Penjumlahan"
+      }
+    },
+    "achievement_big_progress": {
+      "cardKey": "achievement_big_progress",
+      "title": "Kemajuan Besar",
+      "description": "Dapatkan kartu ini: Progres Besar",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Kemajuan Besar",
+        "description": "Dapatkan kartu ini: Progres Besar"
+      }
+    },
+    "achievement_diligent_student": {
+      "cardKey": "achievement_diligent_student",
+      "title": "Murid Rajin",
+      "description": "Dapatkan kartu ini: Murid Rajin",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Murid Rajin",
+        "description": "Dapatkan kartu ini: Murid Rajin"
+      }
+    },
+    "achievement_division_champion": {
+      "cardKey": "achievement_division_champion",
+      "title": "Juara Pembagian",
+      "description": "Dapatkan kartu ini: Juara Pembagian",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Juara Pembagian",
+        "description": "Dapatkan kartu ini: Juara Pembagian"
+      }
+    },
+    "achievement_english_star": {
+      "cardKey": "achievement_english_star",
+      "title": "Bintang Bahasa Inggris",
+      "description": "Dapatkan kartu ini: Bintang Bahasa Inggris",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Bintang Bahasa Inggris",
+        "description": "Dapatkan kartu ini: Bintang Bahasa Inggris"
+      }
+    },
+    "achievement_great_listener": {
+      "cardKey": "achievement_great_listener",
+      "title": "Pendengar Hebat",
+      "description": "Dapatkan kartu ini: Pendengar Hebat",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Pendengar Hebat",
+        "description": "Dapatkan kartu ini: Pendengar Hebat"
+      }
+    },
+    "achievement_multiplication_champion": {
+      "cardKey": "achievement_multiplication_champion",
+      "title": "Juara Perkalian",
+      "description": "Dapatkan kartu ini: Juara Perkalian",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Juara Perkalian",
+        "description": "Dapatkan kartu ini: Juara Perkalian"
+      }
+    },
+    "achievement_never_give_up": {
+      "cardKey": "achievement_never_give_up",
+      "title": "Jangan Menyerah",
+      "description": "Dapatkan kartu ini: Pantang Menyerah",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Jangan Menyerah",
+        "description": "Dapatkan kartu ini: Pantang Menyerah"
+      }
+    },
+    "achievement_new_record": {
+      "cardKey": "achievement_new_record",
+      "title": "Rekor Baru",
+      "description": "Dapatkan kartu ini: Rekor Baru",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Rekor Baru",
+        "description": "Dapatkan kartu ini: Rekor Baru"
+      }
+    },
+    "achievement_number_explorer": {
+      "cardKey": "achievement_number_explorer",
+      "title": "Penjelajah Angka",
+      "description": "Dapatkan kartu ini: Penjelajah Angka",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Penjelajah Angka",
+        "description": "Dapatkan kartu ini: Penjelajah Angka"
+      }
+    },
+    "achievement_personal_activity": {
+      "cardKey": "achievement_personal_activity",
+      "title": "Aktivitas pribadi",
+      "description": "Dapatkan kartu ini: Aktivitas Pribadi",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Aktivitas pribadi",
+        "description": "Dapatkan kartu ini: Aktivitas Pribadi"
+      }
+    },
+    "achievement_science_explorer": {
+      "cardKey": "achievement_science_explorer",
+      "title": "Penjelajah Sains",
+      "description": "Dapatkan kartu ini: Penjelajah Sains",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Penjelajah Sains",
+        "description": "Dapatkan kartu ini: Penjelajah Sains"
+      }
+    },
+    "achievement_shapes_master": {
+      "cardKey": "achievement_shapes_master",
+      "title": "Master Bentuk",
+      "description": "Dapatkan kartu ini: Master Bentuk",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Master Bentuk",
+        "description": "Dapatkan kartu ini: Master Bentuk"
+      }
+    },
+    "achievement_strong_start": {
+      "cardKey": "achievement_strong_start",
+      "title": "Awal yang Kuat",
+      "description": "Dapatkan kartu ini: Awal Kuat",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Awal yang Kuat",
+        "description": "Dapatkan kartu ini: Awal Kuat"
+      }
+    },
+    "achievement_subtraction_champion": {
+      "cardKey": "achievement_subtraction_champion",
+      "title": "Juara Pengurangan",
+      "description": "Dapatkan kartu ini: Juara Pengurangan",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Juara Pengurangan",
+        "description": "Dapatkan kartu ini: Juara Pengurangan"
+      }
+    },
+    "achievement_task_complete": {
+      "cardKey": "achievement_task_complete",
+      "title": "Tugas Selesai",
+      "description": "Dapatkan kartu ini: Tugas Selesai",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Tugas Selesai",
+        "description": "Dapatkan kartu ini: Tugas Selesai"
+      }
+    },
+    "achievement_understanding_master": {
+      "cardKey": "achievement_understanding_master",
+      "title": "Ahli Memahami",
+      "description": "Dapatkan kartu ini: Master Pemahaman",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Ahli Memahami",
+        "description": "Dapatkan kartu ini: Master Pemahaman"
+      }
+    },
+    "achievement_week_star": {
+      "cardKey": "achievement_week_star",
+      "title": "Bintang Minggu",
+      "description": "Dapatkan kartu ini: Bintang Minggu",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Bintang Minggu",
+        "description": "Dapatkan kartu ini: Bintang Minggu"
+      }
+    },
+    "achievement_word_discoverer": {
+      "cardKey": "achievement_word_discoverer",
+      "title": "Penemu Kata",
+      "description": "Dapatkan kartu ini: Penemu Kata",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Penemu Kata",
+        "description": "Dapatkan kartu ini: Penemu Kata"
+      }
+    },
+    "achievement_young_reader": {
+      "cardKey": "achievement_young_reader",
+      "title": "Pembaca Muda",
+      "description": "Dapatkan kartu ini: Pembaca Muda",
+      "category": "achievement",
+      "accessibility": {
+        "title": "Pembaca Muda",
+        "description": "Dapatkan kartu ini: Pembaca Muda"
+      }
+    },
+    "event_autumn": {
+      "cardKey": "event_autumn",
+      "title": "Leo Musim Gugur",
+      "description": "Leo Musim Gugur — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Musim Gugur",
+        "description": "Leo Musim Gugur — kartu event terbatas!"
+      }
+    },
+    "event_back_to_learning": {
+      "cardKey": "event_back_to_learning",
+      "title": "Leo Kembali Belajar",
+      "description": "Leo Kembali Belajar — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Kembali Belajar",
+        "description": "Leo Kembali Belajar — kartu event terbatas!"
+      }
+    },
+    "event_birthday": {
+      "cardKey": "event_birthday",
+      "title": "Leo Ultah",
+      "description": "Leo Ultah — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Ultah",
+        "description": "Leo Ultah — kartu event terbatas!"
+      }
+    },
+    "event_end_of_year": {
+      "cardKey": "event_end_of_year",
+      "title": "Leo Akhir Tahun",
+      "description": "Leo Akhir Tahun — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Akhir Tahun",
+        "description": "Leo Akhir Tahun — kartu event terbatas!"
+      }
+    },
+    "event_family_day": {
+      "cardKey": "event_family_day",
+      "title": "Leo Hari Keluarga",
+      "description": "Leo Hari Keluarga — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Hari Keluarga",
+        "description": "Leo Hari Keluarga — kartu event terbatas!"
+      }
+    },
+    "event_spring": {
+      "cardKey": "event_spring",
+      "title": "Leo Musim Semi",
+      "description": "Leo Musim Semi — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Musim Semi",
+        "description": "Leo Musim Semi — kartu event terbatas!"
+      }
+    },
+    "event_summer": {
+      "cardKey": "event_summer",
+      "title": "Leo Musim Panas",
+      "description": "Leo Musim Panas — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Musim Panas",
+        "description": "Leo Musim Panas — kartu event terbatas!"
+      }
+    },
+    "event_summer_vacation": {
+      "cardKey": "event_summer_vacation",
+      "title": "Leo Liburan Musim Panas",
+      "description": "Leo Liburan Musim Panas — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Liburan Musim Panas",
+        "description": "Leo Liburan Musim Panas — kartu event terbatas!"
+      }
+    },
+    "event_winter": {
+      "cardKey": "event_winter",
+      "title": "Leo Musim Dingin",
+      "description": "Leo Musim Dingin — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Musim Dingin",
+        "description": "Leo Musim Dingin — kartu event terbatas!"
+      }
+    },
+    "event_winter_vacation": {
+      "cardKey": "event_winter_vacation",
+      "title": "Leo Liburan Musim Dingin",
+      "description": "Leo Liburan Musim Dingin — kartu event terbatas!",
+      "category": "event",
+      "accessibility": {
+        "title": "Leo Liburan Musim Dingin",
+        "description": "Leo Liburan Musim Dingin — kartu event terbatas!"
+      }
+    },
+    "leo_archaeologist": {
+      "cardKey": "leo_archaeologist",
+      "title": "Leo Arkeolog",
+      "description": "Kumpulkan Leo Archaeologist!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Arkeolog",
+        "description": "Kumpulkan Leo Archaeologist!"
+      }
+    },
+    "leo_army_dog": {
+      "cardKey": "leo_army_dog",
+      "title": "Leo Anjing Tentara",
+      "description": "Kumpulkan Leo Army Dog!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Anjing Tentara",
+        "description": "Kumpulkan Leo Army Dog!"
+      }
+    },
+    "leo_art_class": {
+      "cardKey": "leo_art_class",
+      "title": "Leo Kelas Seni",
+      "description": "Kumpulkan Leo Art Class!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Kelas Seni",
+        "description": "Kumpulkan Leo Art Class!"
+      }
+    },
+    "leo_artist": {
+      "cardKey": "leo_artist",
+      "title": "Leo si Seniman",
+      "description": "Kumpulkan Leo the Artist!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Seniman",
+        "description": "Kumpulkan Leo the Artist!"
+      }
+    },
+    "leo_astronaut": {
+      "cardKey": "leo_astronaut",
+      "title": "Leo si Astronaut",
+      "description": "Kumpulkan Leo the Astronaut!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Astronaut",
+        "description": "Kumpulkan Leo the Astronaut!"
+      }
+    },
+    "leo_at_beach": {
+      "cardKey": "leo_at_beach",
+      "title": "Leo di Pantai",
+      "description": "Kumpulkan Leo at the Beach!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo di Pantai",
+        "description": "Kumpulkan Leo at the Beach!"
+      }
+    },
+    "leo_at_library": {
+      "cardKey": "leo_at_library",
+      "title": "Leo di Perpustakaan",
+      "description": "Kumpulkan Leo at the Library!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo di Perpustakaan",
+        "description": "Kumpulkan Leo at the Library!"
+      }
+    },
+    "leo_at_pool": {
+      "cardKey": "leo_at_pool",
+      "title": "Leo di Kolam",
+      "description": "Kumpulkan Leo at the Pool!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo di Kolam",
+        "description": "Kumpulkan Leo at the Pool!"
+      }
+    },
+    "leo_at_recess": {
+      "cardKey": "leo_at_recess",
+      "title": "Leo di Istirahat",
+      "description": "Kumpulkan Leo at the Recess!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo di Istirahat",
+        "description": "Kumpulkan Leo at the Recess!"
+      }
+    },
+    "leo_at_zoo": {
+      "cardKey": "leo_at_zoo",
+      "title": "Leo di Kebun Binatang",
+      "description": "Kumpulkan Leo at the Zoo!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo di Kebun Binatang",
+        "description": "Kumpulkan Leo at the Zoo!"
+      }
+    },
+    "leo_basketball": {
+      "cardKey": "leo_basketball",
+      "title": "Leo si Pemain Basket",
+      "description": "Kumpulkan Leo the Basketball Player!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Pemain Basket",
+        "description": "Kumpulkan Leo the Basketball Player!"
+      }
+    },
+    "leo_camping": {
+      "cardKey": "leo_camping",
+      "title": "Leo Berkemah",
+      "description": "Kumpulkan Leo Camping!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Berkemah",
+        "description": "Kumpulkan Leo Camping!"
+      }
+    },
+    "leo_candy_store": {
+      "cardKey": "leo_candy_store",
+      "title": "Leo Toko Permen",
+      "description": "Kumpulkan Leo Candy Store!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Toko Permen",
+        "description": "Kumpulkan Leo Candy Store!"
+      }
+    },
+    "leo_card_common_assets": {
+      "cardKey": "leo_card_common_assets",
+      "title": "Aset Umum Kartu Leo",
+      "description": "Kumpulkan Leo Card Common Assets!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Aset Umum Kartu Leo",
+        "description": "Kumpulkan Leo Card Common Assets!"
+      }
+    },
+    "leo_carpenter": {
+      "cardKey": "leo_carpenter",
+      "title": "Leo Tukang Kayu",
+      "description": "Kumpulkan Leo Carpenter!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Tukang Kayu",
+        "description": "Kumpulkan Leo Carpenter!"
+      }
+    },
+    "leo_celebration": {
+      "cardKey": "leo_celebration",
+      "title": "Leo si Perayaan",
+      "description": "Kumpulkan Leo the Celebrator!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Perayaan",
+        "description": "Kumpulkan Leo the Celebrator!"
+      }
+    },
+    "leo_champion": {
+      "cardKey": "leo_champion",
+      "title": "Leo si Juara",
+      "description": "Kumpulkan Leo the Champion!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Juara",
+        "description": "Kumpulkan Leo the Champion!"
+      }
+    },
+    "leo_chef": {
+      "cardKey": "leo_chef",
+      "title": "Leo si Chef",
+      "description": "Kumpulkan Leo the Chef!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Chef",
+        "description": "Kumpulkan Leo the Chef!"
+      }
+    },
+    "leo_cherry_blossom": {
+      "cardKey": "leo_cherry_blossom",
+      "title": "Leo Bunga Sakura",
+      "description": "Kumpulkan Leo Cherry Blossom!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Bunga Sakura",
+        "description": "Kumpulkan Leo Cherry Blossom!"
+      }
+    },
+    "leo_chess_club": {
+      "cardKey": "leo_chess_club",
+      "title": "Leo Klub Catur",
+      "description": "Kumpulkan Leo Chess Club!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Klub Catur",
+        "description": "Kumpulkan Leo Chess Club!"
+      }
+    },
+    "leo_classic": {
+      "cardKey": "leo_classic",
+      "title": "Leo si Leo Klasik",
+      "description": "Kumpulkan Leo the Classic Leo!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Leo Klasik",
+        "description": "Kumpulkan Leo the Classic Leo!"
+      }
+    },
+    "leo_clothes_shopping": {
+      "cardKey": "leo_clothes_shopping",
+      "title": "Leo Belanja Baju",
+      "description": "Kumpulkan Leo Clothes Shopping!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Belanja Baju",
+        "description": "Kumpulkan Leo Clothes Shopping!"
+      }
+    },
+    "leo_clothing_store": {
+      "cardKey": "leo_clothing_store",
+      "title": "Leo Toko Pakaian",
+      "description": "Kumpulkan Leo Clothing Store!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Toko Pakaian",
+        "description": "Kumpulkan Leo Clothing Store!"
+      }
+    },
+    "leo_computer_class": {
+      "cardKey": "leo_computer_class",
+      "title": "Leo Kelas Komputer",
+      "description": "Kumpulkan Leo Computer Class!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Kelas Komputer",
+        "description": "Kumpulkan Leo Computer Class!"
+      }
+    },
+    "leo_cool": {
+      "cardKey": "leo_cool",
+      "title": "Leo si Keren",
+      "description": "Kumpulkan Leo the Cool One!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Keren",
+        "description": "Kumpulkan Leo the Cool One!"
+      }
+    },
+    "leo_cyclist": {
+      "cardKey": "leo_cyclist",
+      "title": "Leo Pesepeda",
+      "description": "Kumpulkan Leo Cyclist!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pesepeda",
+        "description": "Kumpulkan Leo Cyclist!"
+      }
+    },
+    "leo_dancer": {
+      "cardKey": "leo_dancer",
+      "title": "Leo si Penari",
+      "description": "Kumpulkan Leo the Dancer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Penari",
+        "description": "Kumpulkan Leo the Dancer!"
+      }
+    },
+    "leo_detective": {
+      "cardKey": "leo_detective",
+      "title": "Leo si Detektif",
+      "description": "Kumpulkan Leo the Detective!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Detektif",
+        "description": "Kumpulkan Leo the Detective!"
+      }
+    },
+    "leo_doctor": {
+      "cardKey": "leo_doctor",
+      "title": "Leo si Dokter",
+      "description": "Kumpulkan Leo the Doctor!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Dokter",
+        "description": "Kumpulkan Leo the Doctor!"
+      }
+    },
+    "leo_electrician": {
+      "cardKey": "leo_electrician",
+      "title": "Leo Tukang Listrik",
+      "description": "Kumpulkan Leo Electrician!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Tukang Listrik",
+        "description": "Kumpulkan Leo Electrician!"
+      }
+    },
+    "leo_engineer": {
+      "cardKey": "leo_engineer",
+      "title": "Leo si Insinyur",
+      "description": "Kumpulkan Leo the Engineer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Insinyur",
+        "description": "Kumpulkan Leo the Engineer!"
+      }
+    },
+    "leo_factory_manager": {
+      "cardKey": "leo_factory_manager",
+      "title": "Leo Manajer Pabrik",
+      "description": "Kumpulkan Leo Factory Manager!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Manajer Pabrik",
+        "description": "Kumpulkan Leo Factory Manager!"
+      }
+    },
+    "leo_factory_tour": {
+      "cardKey": "leo_factory_tour",
+      "title": "Leo Tur Pabrik",
+      "description": "Kumpulkan Leo Factory Tour!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Tur Pabrik",
+        "description": "Kumpulkan Leo Factory Tour!"
+      }
+    },
+    "leo_ferris_wheel": {
+      "cardKey": "leo_ferris_wheel",
+      "title": "Leo Bianglala",
+      "description": "Kumpulkan Leo Ferris Wheel!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Bianglala",
+        "description": "Kumpulkan Leo Ferris Wheel!"
+      }
+    },
+    "leo_firefighter_helper": {
+      "cardKey": "leo_firefighter_helper",
+      "title": "Leo Asisten Pemadam",
+      "description": "Kumpulkan Leo Firefighter Helper!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Asisten Pemadam",
+        "description": "Kumpulkan Leo Firefighter Helper!"
+      }
+    },
+    "leo_football": {
+      "cardKey": "leo_football",
+      "title": "Leo si Pemain Sepak Bola",
+      "description": "Kumpulkan Leo the Football Player!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Pemain Sepak Bola",
+        "description": "Kumpulkan Leo the Football Player!"
+      }
+    },
+    "leo_forest_guardian": {
+      "cardKey": "leo_forest_guardian",
+      "title": "Leo Penjaga Hutan",
+      "description": "Kumpulkan Leo Forest Guardian!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penjaga Hutan",
+        "description": "Kumpulkan Leo Forest Guardian!"
+      }
+    },
+    "leo_funny": {
+      "cardKey": "leo_funny",
+      "title": "Leo si Lucu",
+      "description": "Kumpulkan Leo the Funny One!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Lucu",
+        "description": "Kumpulkan Leo the Funny One!"
+      }
+    },
+    "leo_galaxy_captain": {
+      "cardKey": "leo_galaxy_captain",
+      "title": "Leo Kapten Galaksi",
+      "description": "Kumpulkan Leo Galaxy Captain!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Kapten Galaksi",
+        "description": "Kumpulkan Leo Galaxy Captain!"
+      }
+    },
+    "leo_gamer": {
+      "cardKey": "leo_gamer",
+      "title": "Leo si Gamer",
+      "description": "Kumpulkan Leo the Gamer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Gamer",
+        "description": "Kumpulkan Leo the Gamer!"
+      }
+    },
+    "leo_gardener": {
+      "cardKey": "leo_gardener",
+      "title": "Leo Tukang Kebun",
+      "description": "Kumpulkan Leo Gardener!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Tukang Kebun",
+        "description": "Kumpulkan Leo Gardener!"
+      }
+    },
+    "leo_gets_star": {
+      "cardKey": "leo_gets_star",
+      "title": "Leo Dapat Bintang",
+      "description": "Kumpulkan Leo Gets Star!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Dapat Bintang",
+        "description": "Kumpulkan Leo Gets Star!"
+      }
+    },
+    "leo_glasses": {
+      "cardKey": "leo_glasses",
+      "title": "Leo Berkacamata",
+      "description": "Kumpulkan Leo Berkacamata!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Berkacamata",
+        "description": "Kumpulkan Leo Berkacamata!"
+      }
+    },
+    "leo_hot_air_balloon": {
+      "cardKey": "leo_hot_air_balloon",
+      "title": "Leo Balon Udara",
+      "description": "Kumpulkan Leo Hot Air Balloon!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Balon Udara",
+        "description": "Kumpulkan Leo Hot Air Balloon!"
+      }
+    },
+    "leo_jump_rope": {
+      "cardKey": "leo_jump_rope",
+      "title": "Leo Lompat Tali",
+      "description": "Kumpulkan Leo Jump Rope!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Lompat Tali",
+        "description": "Kumpulkan Leo Jump Rope!"
+      }
+    },
+    "leo_king": {
+      "cardKey": "leo_king",
+      "title": "Leo si Raja",
+      "description": "Kumpulkan Leo the King!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Raja",
+        "description": "Kumpulkan Leo the King!"
+      }
+    },
+    "leo_knight": {
+      "cardKey": "leo_knight",
+      "title": "Leo si Ksatria",
+      "description": "Kumpulkan Leo the Knight!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Ksatria",
+        "description": "Kumpulkan Leo the Knight!"
+      }
+    },
+    "leo_magician": {
+      "cardKey": "leo_magician",
+      "title": "Leo Pesulap",
+      "description": "Kumpulkan Leo Magician!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pesulap",
+        "description": "Kumpulkan Leo Magician!"
+      }
+    },
+    "leo_marathon_runner": {
+      "cardKey": "leo_marathon_runner",
+      "title": "Leo Pelari Marathon",
+      "description": "Kumpulkan Leo Marathon the Runner!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pelari Marathon",
+        "description": "Kumpulkan Leo Marathon the Runner!"
+      }
+    },
+    "leo_miner": {
+      "cardKey": "leo_miner",
+      "title": "Leo Penambang",
+      "description": "Kumpulkan Leo Miner!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penambang",
+        "description": "Kumpulkan Leo Miner!"
+      }
+    },
+    "leo_month_star": {
+      "cardKey": "leo_month_star",
+      "title": "Leo Bintang Bulan",
+      "description": "Kumpulkan Leo Month Star!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Bintang Bulan",
+        "description": "Kumpulkan Leo Month Star!"
+      }
+    },
+    "leo_moon_walker": {
+      "cardKey": "leo_moon_walker",
+      "title": "Leo Pejalan Bulan",
+      "description": "Kumpulkan Leo Moon Walker!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pejalan Bulan",
+        "description": "Kumpulkan Leo Moon Walker!"
+      }
+    },
+    "leo_mountain_climber": {
+      "cardKey": "leo_mountain_climber",
+      "title": "Leo Pendaki Gunung",
+      "description": "Kumpulkan Leo Mountain Climber!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pendaki Gunung",
+        "description": "Kumpulkan Leo Mountain Climber!"
+      }
+    },
+    "leo_musician": {
+      "cardKey": "leo_musician",
+      "title": "Leo si Musisi",
+      "description": "Kumpulkan Leo the Musician!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Musisi",
+        "description": "Kumpulkan Leo the Musician!"
+      }
+    },
+    "leo_nature_explorer": {
+      "cardKey": "leo_nature_explorer",
+      "title": "Leo Penjelajah Alam",
+      "description": "Kumpulkan Leo Nature Explorer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penjelajah Alam",
+        "description": "Kumpulkan Leo Nature Explorer!"
+      }
+    },
+    "leo_ninja": {
+      "cardKey": "leo_ninja",
+      "title": "Leo si Ninja",
+      "description": "Kumpulkan Leo the Ninja!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Ninja",
+        "description": "Kumpulkan Leo the Ninja!"
+      }
+    },
+    "leo_office_worker": {
+      "cardKey": "leo_office_worker",
+      "title": "Leo Pegawai Kantor",
+      "description": "Kumpulkan Leo Office Worker!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pegawai Kantor",
+        "description": "Kumpulkan Leo Office Worker!"
+      }
+    },
+    "leo_on_train": {
+      "cardKey": "leo_on_train",
+      "title": "Leo di Kereta",
+      "description": "Kumpulkan Leo on Train!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo di Kereta",
+        "description": "Kumpulkan Leo on Train!"
+      }
+    },
+    "leo_pe_class": {
+      "cardKey": "leo_pe_class",
+      "title": "Leo Kelas Olahraga",
+      "description": "Kumpulkan Leo PE Class!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Kelas Olahraga",
+        "description": "Kumpulkan Leo PE Class!"
+      }
+    },
+    "leo_piano_player": {
+      "cardKey": "leo_piano_player",
+      "title": "Leo Pemain Piano",
+      "description": "Kumpulkan Leo Piano Player!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pemain Piano",
+        "description": "Kumpulkan Leo Piano Player!"
+      }
+    },
+    "leo_picnic": {
+      "cardKey": "leo_picnic",
+      "title": "Leo Piknik",
+      "description": "Kumpulkan Leo Picnic!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Piknik",
+        "description": "Kumpulkan Leo Picnic!"
+      }
+    },
+    "leo_pilot": {
+      "cardKey": "leo_pilot",
+      "title": "Leo si Pilot",
+      "description": "Kumpulkan Leo the Pilot!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Pilot",
+        "description": "Kumpulkan Leo the Pilot!"
+      }
+    },
+    "leo_pirate": {
+      "cardKey": "leo_pirate",
+      "title": "Leo si Bajak Laut",
+      "description": "Kumpulkan Leo the Pirate!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Bajak Laut",
+        "description": "Kumpulkan Leo the Pirate!"
+      }
+    },
+    "leo_playful": {
+      "cardKey": "leo_playful",
+      "title": "Leo si Ceria",
+      "description": "Kumpulkan Leo the Playful One!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Ceria",
+        "description": "Kumpulkan Leo the Playful One!"
+      }
+    },
+    "leo_police_dog": {
+      "cardKey": "leo_police_dog",
+      "title": "Leo Anjing Polisi",
+      "description": "Kumpulkan Leo Police Dog!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Anjing Polisi",
+        "description": "Kumpulkan Leo Police Dog!"
+      }
+    },
+    "leo_rain_walk": {
+      "cardKey": "leo_rain_walk",
+      "title": "Leo Jalan Hujan",
+      "description": "Kumpulkan Leo Rain Walk!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Jalan Hujan",
+        "description": "Kumpulkan Leo Rain Walk!"
+      }
+    },
+    "leo_robot_engineer": {
+      "cardKey": "leo_robot_engineer",
+      "title": "Leo Robot si Insinyur",
+      "description": "Kumpulkan Leo Robot the Engineer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Robot si Insinyur",
+        "description": "Kumpulkan Leo Robot the Engineer!"
+      }
+    },
+    "leo_robotic": {
+      "cardKey": "leo_robotic",
+      "title": "Leo Robotik",
+      "description": "Kumpulkan Leo Robotic!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Robotik",
+        "description": "Kumpulkan Leo Robotic!"
+      }
+    },
+    "leo_runner": {
+      "cardKey": "leo_runner",
+      "title": "Leo si Pelari",
+      "description": "Kumpulkan Leo si Pelari!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Pelari",
+        "description": "Kumpulkan Leo si Pelari!"
+      }
+    },
+    "leo_safari": {
+      "cardKey": "leo_safari",
+      "title": "Leo Safari",
+      "description": "Kumpulkan Leo Safari!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Safari",
+        "description": "Kumpulkan Leo Safari!"
+      }
+    },
+    "leo_science_class": {
+      "cardKey": "leo_science_class",
+      "title": "Leo Kelas Sains",
+      "description": "Kumpulkan Leo Science Class!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Kelas Sains",
+        "description": "Kumpulkan Leo Science Class!"
+      }
+    },
+    "leo_scientist": {
+      "cardKey": "leo_scientist",
+      "title": "Leo si Ilmuwan",
+      "description": "Kumpulkan Leo si Ilmuwan!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Ilmuwan",
+        "description": "Kumpulkan Leo si Ilmuwan!"
+      }
+    },
+    "leo_shoe_shopping": {
+      "cardKey": "leo_shoe_shopping",
+      "title": "Leo Belanja Sepatu",
+      "description": "Kumpulkan Leo Shoe Shopping!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Belanja Sepatu",
+        "description": "Kumpulkan Leo Shoe Shopping!"
+      }
+    },
+    "leo_skateboarder": {
+      "cardKey": "leo_skateboarder",
+      "title": "Leo Pemain Skateboard",
+      "description": "Kumpulkan Leo Skateboarder!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pemain Skateboard",
+        "description": "Kumpulkan Leo Skateboarder!"
+      }
+    },
+    "leo_skier": {
+      "cardKey": "leo_skier",
+      "title": "Leo Pemain Ski",
+      "description": "Kumpulkan Leo Skier!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pemain Ski",
+        "description": "Kumpulkan Leo Skier!"
+      }
+    },
+    "leo_smart": {
+      "cardKey": "leo_smart",
+      "title": "Leo si Pintar",
+      "description": "Kumpulkan Leo si Pintar!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Pintar",
+        "description": "Kumpulkan Leo si Pintar!"
+      }
+    },
+    "leo_sorcerer": {
+      "cardKey": "leo_sorcerer",
+      "title": "Leo si Ahli Sihir",
+      "description": "Kumpulkan Leo si Ahli Sihir!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Ahli Sihir",
+        "description": "Kumpulkan Leo si Ahli Sihir!"
+      }
+    },
+    "leo_space_commander": {
+      "cardKey": "leo_space_commander",
+      "title": "Leo Komandan Luar Angkasa",
+      "description": "Kumpulkan Leo Space Commander!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Komandan Luar Angkasa",
+        "description": "Kumpulkan Leo Space Commander!"
+      }
+    },
+    "leo_space_pilot": {
+      "cardKey": "leo_space_pilot",
+      "title": "Leo Luar Angkasa si Pilot",
+      "description": "Kumpulkan Leo Space the Pilot!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Luar Angkasa si Pilot",
+        "description": "Kumpulkan Leo Space the Pilot!"
+      }
+    },
+    "leo_sports_store": {
+      "cardKey": "leo_sports_store",
+      "title": "Leo Toko Olahraga",
+      "description": "Kumpulkan Leo Sports Store!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Toko Olahraga",
+        "description": "Kumpulkan Leo Sports Store!"
+      }
+    },
+    "leo_star_explorer": {
+      "cardKey": "leo_star_explorer",
+      "title": "Leo Penjelajah Bintang",
+      "description": "Kumpulkan Leo Star Explorer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penjelajah Bintang",
+        "description": "Kumpulkan Leo Star Explorer!"
+      }
+    },
+    "leo_suit": {
+      "cardKey": "leo_suit",
+      "title": "Leo Berjas",
+      "description": "Kumpulkan Leo in a Suit!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Berjas",
+        "description": "Kumpulkan Leo in a Suit!"
+      }
+    },
+    "leo_super_inventor": {
+      "cardKey": "leo_super_inventor",
+      "title": "Leo Penemu Super",
+      "description": "Kumpulkan Leo Super Inventor!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penemu Super",
+        "description": "Kumpulkan Leo Super Inventor!"
+      }
+    },
+    "leo_superhero": {
+      "cardKey": "leo_superhero",
+      "title": "Leo Superhero",
+      "description": "Kumpulkan Leo Superhero!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Superhero",
+        "description": "Kumpulkan Leo Superhero!"
+      }
+    },
+    "leo_surfer": {
+      "cardKey": "leo_surfer",
+      "title": "Leo si Peselancar",
+      "description": "Kumpulkan Leo si Peselancar!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Peselancar",
+        "description": "Kumpulkan Leo si Peselancar!"
+      }
+    },
+    "leo_swimmer": {
+      "cardKey": "leo_swimmer",
+      "title": "Leo si Perenang",
+      "description": "Kumpulkan Leo si Perenang!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Perenang",
+        "description": "Kumpulkan Leo si Perenang!"
+      }
+    },
+    "leo_teacher": {
+      "cardKey": "leo_teacher",
+      "title": "Leo Guru",
+      "description": "Kumpulkan Leo Teacher!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Guru",
+        "description": "Kumpulkan Leo Teacher!"
+      }
+    },
+    "leo_technodog": {
+      "cardKey": "leo_technodog",
+      "title": "Leo Anjing Tekno",
+      "description": "Kumpulkan Leo Techno Dog!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Anjing Tekno",
+        "description": "Kumpulkan Leo Techno Dog!"
+      }
+    },
+    "leo_treasure_hunter": {
+      "cardKey": "leo_treasure_hunter",
+      "title": "Leo Pemburu Harta",
+      "description": "Kumpulkan Leo Pemburu Harta!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pemburu Harta",
+        "description": "Kumpulkan Leo Pemburu Harta!"
+      }
+    },
+    "leo_veterinarian": {
+      "cardKey": "leo_veterinarian",
+      "title": "Leo Dokter Hewan",
+      "description": "Kumpulkan Leo Dokter Hewan!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Dokter Hewan",
+        "description": "Kumpulkan Leo Dokter Hewan!"
+      }
+    },
+    "leo_walk_to_school": {
+      "cardKey": "leo_walk_to_school",
+      "title": "Leo Jalan ke Sekolah",
+      "description": "Kumpulkan Leo Jalan ke Sekolah!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Jalan ke Sekolah",
+        "description": "Kumpulkan Leo Jalan ke Sekolah!"
+      }
+    },
+    "leo_wizard": {
+      "cardKey": "leo_wizard",
+      "title": "Leo si Penyihir",
+      "description": "Kumpulkan Leo si Penyihir!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo si Penyihir",
+        "description": "Kumpulkan Leo si Penyihir!"
+      }
+    },
+    "leo_world_explorer": {
+      "cardKey": "leo_world_explorer",
+      "title": "Leo Penjelajah Dunia",
+      "description": "Kumpulkan Leo Penjelajah Dunia!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penjelajah Dunia",
+        "description": "Kumpulkan Leo Penjelajah Dunia!"
+      }
+    },
+    "leo_arcade_champion": {
+      "cardKey": "leo_arcade_champion",
+      "title": "Leo Juara Arkade",
+      "description": "Kumpulkan Leo Arcade Champion!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Juara Arkade",
+        "description": "Kumpulkan Leo Arcade Champion!"
+      }
+    },
+    "leo_enchanted_forest_guardian": {
+      "cardKey": "leo_enchanted_forest_guardian",
+      "title": "Leo Penjaga Hutan Ajaib",
+      "description": "Kumpulkan Leo Enchanted Forest Guardian!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penjaga Hutan Ajaib",
+        "description": "Kumpulkan Leo Enchanted Forest Guardian!"
+      }
+    },
+    "leo_firefighter": {
+      "cardKey": "leo_firefighter",
+      "title": "Leo Pemadam Kebakaran",
+      "description": "Kumpulkan Leo Firefighter!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pemadam Kebakaran",
+        "description": "Kumpulkan Leo Firefighter!"
+      }
+    },
+    "leo_galactic_explorer": {
+      "cardKey": "leo_galactic_explorer",
+      "title": "Leo Penjelajah Galaksi",
+      "description": "Kumpulkan Leo Galactic Explorer!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penjelajah Galaksi",
+        "description": "Kumpulkan Leo Galactic Explorer!"
+      }
+    },
+    "leo_genius_inventor": {
+      "cardKey": "leo_genius_inventor",
+      "title": "Leo Penemu Jenius",
+      "description": "Kumpulkan Leo Genius Inventor!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penemu Jenius",
+        "description": "Kumpulkan Leo Genius Inventor!"
+      }
+    },
+    "leo_golden_knight": {
+      "cardKey": "leo_golden_knight",
+      "title": "Leo Ksatria Emas",
+      "description": "Kumpulkan Leo Golden Knight!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Ksatria Emas",
+        "description": "Kumpulkan Leo Golden Knight!"
+      }
+    },
+    "leo_grand_wizard": {
+      "cardKey": "leo_grand_wizard",
+      "title": "Leo Penyihir Agung",
+      "description": "Kumpulkan Leo Grand Wizard!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Penyihir Agung",
+        "description": "Kumpulkan Leo Grand Wizard!"
+      }
+    },
+    "leo_legendary_superhero": {
+      "cardKey": "leo_legendary_superhero",
+      "title": "Leo Super Legendaris",
+      "description": "Kumpulkan Legendary Super Leo!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Super Legendaris",
+        "description": "Kumpulkan Legendary Super Leo!"
+      }
+    },
+    "leo_master_chef": {
+      "cardKey": "leo_master_chef",
+      "title": "Leo Chef Master",
+      "description": "Kumpulkan Leo Master Chef!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Chef Master",
+        "description": "Kumpulkan Leo Master Chef!"
+      }
+    },
+    "leo_master_detective": {
+      "cardKey": "leo_master_detective",
+      "title": "Leo Detektif Master",
+      "description": "Kumpulkan Leo Master Detective!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Detektif Master",
+        "description": "Kumpulkan Leo Master Detective!"
+      }
+    },
+    "leo_master_painter": {
+      "cardKey": "leo_master_painter",
+      "title": "Leo Pelukis Master",
+      "description": "Kumpulkan Leo Master Painter!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pelukis Master",
+        "description": "Kumpulkan Leo Master Painter!"
+      }
+    },
+    "leo_music_star": {
+      "cardKey": "leo_music_star",
+      "title": "Leo Bintang Musik",
+      "description": "Kumpulkan Leo Music Star!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Bintang Musik",
+        "description": "Kumpulkan Leo Music Star!"
+      }
+    },
+    "leo_pirate_captain": {
+      "cardKey": "leo_pirate_captain",
+      "title": "Leo Kapten Bajak Laut",
+      "description": "Kumpulkan Leo Pirate Captain!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Kapten Bajak Laut",
+        "description": "Kumpulkan Leo Pirate Captain!"
+      }
+    },
+    "leo_racing_driver": {
+      "cardKey": "leo_racing_driver",
+      "title": "Leo Pembalap",
+      "description": "Kumpulkan Leo Racing Driver!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Pembalap",
+        "description": "Kumpulkan Leo Racing Driver!"
+      }
+    },
+    "leo_soccer_champion": {
+      "cardKey": "leo_soccer_champion",
+      "title": "Leo Juara Sepak Bola",
+      "description": "Kumpulkan Leo Soccer Champion!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Juara Sepak Bola",
+        "description": "Kumpulkan Leo Soccer Champion!"
+      }
+    },
+    "leo_wave_champion": {
+      "cardKey": "leo_wave_champion",
+      "title": "Leo Juara Ombak",
+      "description": "Kumpulkan Leo Juara Ombak!",
+      "category": "shop",
+      "accessibility": {
+        "title": "Leo Juara Ombak",
+        "description": "Kumpulkan Leo Juara Ombak!"
+      }
+    }
+  }
+}

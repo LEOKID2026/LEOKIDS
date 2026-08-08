@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "activity_report_teacher": "Laporan aktivitas — guru",
+    "questions": "Soal",
+    "student_summary": "Ringkasan murid",
+    "question_analysis": "Analisis soal",
+    "skill_analysis": "Analisis skill"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "subjectId": "science",
+  "rows": {
+    "S-01": {
+      "id": "S-01",
+      "domain": "Konsep",
+      "topic": "Klasifikasi",
+      "subskill": "Sifat vs proses",
+      "pattern": "Kebingungan kategori",
+      "counterEvidence": "Benar setelah tabel contoh",
+      "countsWhen": "Tabel terbimbing",
+      "doesNotCountWhen": "Hanya pengecoh homofon",
+      "probe": "Pisahkan sifat dari proses (latihan terfokus)",
+      "intervention": "Tabel sifat/proses",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan pada dua konsep serupa"
+      ],
+      "roots": [
+        "Kebingungan konsep"
+      ],
+      "competitors": [
+        "Membaca"
+      ],
+      "doNotConclude": [
+        "Tanpa IPA"
+      ]
+    },
+    "S-02": {
+      "id": "S-02",
+      "domain": "Metode",
+      "topic": "Percobaan",
+      "subskill": "Variabel terisolasi",
+      "pattern": "Mengubah semuanya",
+      "counterEvidence": "Benar dengan tabel variabel",
+      "countsWhen": "Tabel tersedia",
+      "doesNotCountWhen": "Teks panjang tanpa tabel",
+      "probe": "Percobaan yang sama dengan tabel",
+      "intervention": "Satu variabel",
+      "escalation": "Kegagalan berulang",
+      "observableMarkers": [
+        "Kesalahan pada skenario perubahan tunggal"
+      ],
+      "roots": [
+        "Pemahaman percobaan"
+      ],
+      "competitors": [
+        "Memori"
+      ],
+      "doNotConclude": [
+        "Tanpa berpikir"
+      ]
+    },
+    "S-03": {
+      "id": "S-03",
+      "domain": "Tubuh",
+      "topic": "Sistem",
+      "subskill": "Lokasi/aliran",
+      "pattern": "Urutan/lokasi salah",
+      "counterEvidence": "Benar dengan penomoran",
+      "countsWhen": "Diagram bernomor",
+      "doesNotCountWhen": "Nama Latin belum diajarkan",
+      "probe": "Vertikal vs horizontal",
+      "intervention": "Kartu lokasi",
+      "escalation": "Laporan medis",
+      "observableMarkers": [
+        "Kesalahan pada peta tubuh sederhana"
+      ],
+      "roots": [
+        "Peta spasial kasar"
+      ],
+      "competitors": [
+        "Bahasa"
+      ],
+      "doNotConclude": [
+        "Isu medis"
+      ]
+    },
+    "S-04": {
+      "id": "S-04",
+      "domain": "Materi",
+      "topic": "Wujud zat",
+      "subskill": "Kekekalan massa",
+      "pattern": "Menghilang tanpa kekekalan",
+      "counterEvidence": "Benar setelah diagram",
+      "countsWhen": "Diagram tersedia",
+      "doesNotCountWhen": "Kata tanpa wujud yang diajarkan",
+      "probe": "Dengan/tanpa diagram",
+      "intervention": "Diagram wujud",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan saat diagram wujud ada"
+      ],
+      "roots": [
+        "Kekekalan massa"
+      ],
+      "competitors": [
+        "Bahasa"
+      ],
+      "doNotConclude": [
+        "Tanpa fisika"
+      ]
+    },
+    "S-05": {
+      "id": "S-05",
+      "domain": "Energi",
+      "topic": "Satuan",
+      "subskill": "Konversi satuan",
+      "pattern": "Kebingungan satuan",
+      "counterEvidence": "Benar dengan kunci",
+      "countsWhen": "Kunci tersedia",
+      "doesNotCountWhen": "Sebelum satuan diajarkan",
+      "probe": "Dua satuan untuk jumlah yang sama",
+      "intervention": "Kunci satuan",
+      "escalation": "Selalu gagal",
+      "observableMarkers": [
+        "Kesalahan pada satuan yang sama"
+      ],
+      "roots": [
+        "Satuan"
+      ],
+      "competitors": [
+        "Perhitungan"
+      ],
+      "doNotConclude": [
+        "Tanpa pemahaman"
+      ]
+    },
+    "S-06": {
+      "id": "S-06",
+      "domain": "Pengukuran",
+      "topic": "Grafik",
+      "subskill": "Membaca sumbu",
+      "pattern": "Nilai salah dari grafik",
+      "counterEvidence": "Benar saat sumbu disorot",
+      "countsWhen": "Sumbu berskala",
+      "doesNotCountWhen": "Grafik tanpa skala",
+      "probe": "Dengan/tanpa sorotan titik",
+      "intervention": "Latihan satu titik pada sumbu",
+      "escalation": "Laporan penglihatan",
+      "observableMarkers": [
+        "Kesalahan pada dua grafik"
+      ],
+      "roots": [
+        "Membaca grafik"
+      ],
+      "competitors": [
+        "Perhitungan"
+      ],
+      "doNotConclude": [
+        "Tanpa IPA"
+      ]
+    },
+    "S-07": {
+      "id": "S-07",
+      "domain": "Ekologi",
+      "topic": "Hubungan",
+      "subskill": "Jaring makanan",
+      "pattern": "Tingkat yang salah berulang",
+      "counterEvidence": "Benar pada daftar tertutup",
+      "countsWhen": "Diagram atau daftar",
+      "doesNotCountWhen": "Hanya teks tanpa pengajaran",
+      "probe": "Jaring sebagian",
+      "intervention": "Kartu",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan saat diagram ada"
+      ],
+      "roots": [
+        "Struktur sistem"
+      ],
+      "competitors": [
+        "Mengingat nama"
+      ],
+      "doNotConclude": [
+        "Tanpa sistem"
+      ]
+    },
+    "S-08": {
+      "id": "S-08",
+      "domain": "Keselamatan IPA",
+      "topic": "Penalaran",
+      "subskill": "Sumber untuk klaim",
+      "pattern": "Klaim tanpa dukungan",
+      "counterEvidence": "Benar saat sumber diminta",
+      "countsWhen": "Sumber ditandai",
+      "doesNotCountWhen": "Pengecoh iklan",
+      "probe": "Dengan/tanpa sumber",
+      "intervention": "Tanyakan bagaimana kita tahu",
+      "escalation": "Guru ilmu sosial",
+      "observableMarkers": [
+        "Berulang saat sumber eksplisit ada"
+      ],
+      "roots": [
+        "Berpikir kritis"
+      ],
+      "competitors": [
+        "Membaca"
+      ],
+      "doNotConclude": [
+        "Nilai personal"
+      ]
+    }
+  }
+}

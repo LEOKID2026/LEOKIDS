@@ -1,0 +1,24 @@
+{
+  "enItems": 1017,
+  "idItems": 1017,
+  "missing": 0,
+  "orphan": 0,
+  "empty": 0,
+  "placeholderMismatches": 0,
+  "schemaDefects": 0,
+  "translatedLeaves": 8064,
+  "intentionalIdentical": 6,
+  "unexplainedEnglish": 0,
+  "unexplainedSample": [],
+  "scienceTermDefects": 0,
+  "gradeTermDefects": 0,
+  "registerDefects": 0,
+  "overlayLogicFieldsPresent": 0,
+  "coverage": {
+    "contractComplete": true,
+    "overlayHit": 1017,
+    "overlayMiss": 0,
+    "incompleteOverlayIds": 0
+  },
+  "bankCount": 1017
+}

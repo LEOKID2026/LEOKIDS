@@ -1,0 +1,2231 @@
+{
+  "guideSlugs": [
+    "hub",
+    "math-practice-at-home",
+    "reading-practice-at-home",
+    "no-print-worksheets",
+    "learning-games-at-home",
+    "parent-progress-tracking",
+    "home-practice-routine",
+    "math-games-for-kids",
+    "reading-comprehension-at-home",
+    "english-vocabulary-practice",
+    "how-to-follow-child-progress"
+  ],
+  "guidePages": {
+    "hub": {
+      "seoKey": "guides-hub",
+      "slug": "hub",
+      "displayTitle": "Guides for parents",
+      "badge": "Guides for parents",
+      "h1": "Practical guides for home practice and learning",
+      "intro": "Short, practical guides to help you choose a topic, build a home routine, understand progress, and combine digital practice, learning games, and worksheets when they fit.",
+      "hubCardsHeading": "Choose a guide by goal",
+      "sections": [
+        {
+          "title": "How to use these guides",
+          "paragraphs": [
+            "Pick the guide that matches your goal right now. You can start with practice in one subject, build a home routine, understand a progress report, or choose a topic to strengthen. You do not need to do everything at once."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do I choose the right guide?",
+          "a": "Choose by your current goal: practice in a subject, building a home routine, understanding a report, or picking a topic to strengthen. Start with one guide and move to others later."
+        },
+        {
+          "q": "Can I go from a guide straight to practice?",
+          "a": "Yes. Guides link to practice areas, learning games, parent reports, and worksheets based on the topic."
+        },
+        {
+          "q": "Should I use several guides at once?",
+          "a": "You can, but it is better to start with one clear goal. After you see what works for your child, add another practice path or guide."
+        },
+        {
+          "q": "Where can I see my child's progress?",
+          "a": "In the parent portal you can see completed activities, subjects and topics practiced, answers, and patterns over time."
+        }
+      ],
+      "relatedPracticePath": "/practice",
+      "practiceCtaLabel": "All practice areas",
+      "relatedGuideSlugs": [],
+      "footerCta": {
+        "title": "Choose a guide and take one step",
+        "body": "You do not need to change the whole learning routine in one day. Pick one goal, try it for a few days, and see what works for your child.",
+        "primary": {
+          "href": "/practice",
+          "label": "Practice by subject"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "math-practice-at-home": {
+      "seoKey": "guides-math-practice-at-home",
+      "slug": "math-practice-at-home",
+      "displayTitle": "Math at home",
+      "badge": "Guide to math at home",
+      "h1": "Math practice at home — how to start well",
+      "intro": "Home math practice works best when you choose a clear topic, match question level to grade, and stop before practice becomes overload. The goal is a steady rhythm that lets your child understand, try, and improve.",
+      "sections": [
+        {
+          "title": "Start with one topic",
+          "paragraphs": [
+            "Choose a topic being taught now or one where your child needs more review. Addition, subtraction, multiplication, division, fractions, decimals, percentages, and word problems use different kinds of thinking, so practice each topic separately before mixed practice."
+          ],
+          "bullets": [
+            "Choose grade and topic.",
+            "Start with a few questions at the regular level.",
+            "Check whether difficulty comes from calculation, understanding the prompt, or order of operations.",
+            "Return to the same topic on another day before switching."
+          ]
+        },
+        {
+          "title": "How to respond to a mistake",
+          "paragraphs": [
+            "Instead of giving the answer immediately, ask your child to explain what they tried. Go through the values together, mark the right operation, and solve one step at a time. When the same mistake repeats, choose more practice from the same family of questions."
+          ]
+        },
+        {
+          "title": "When to move to the next topic",
+          "paragraphs": [
+            "Move on when your child answers most questions steadily and can explain their approach. Perfection is not required—understanding, consistency, and handling slightly different wording matter more."
+          ]
+        },
+        {
+          "title": "How to use Leo Kids",
+          "paragraphs": [
+            "Choose your child's grade, open math, and pick one topic. After practice, check the report for correct answers, where reinforcement is needed, and what to practice next."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How long should we practice?",
+          "a": "Length depends on age, topic, and focus. It is better to finish focused, good practice than to continue when your child is tired."
+        },
+        {
+          "q": "Should we practice several topics together?",
+          "a": "Not at first. When one topic needs strengthening, start there and move to mixed practice only after a stable base."
+        },
+        {
+          "q": "What if my child is guessing?",
+          "a": "Ask them to explain their approach, point to the values, and choose the operation before answering."
+        }
+      ],
+      "relatedPracticePath": "/practice/math",
+      "practiceCtaLabel": "Math practice",
+      "relatedGuideSlugs": [
+        "math-games-for-kids",
+        "home-practice-routine",
+        "parent-progress-tracking"
+      ],
+      "footerCta": {
+        "title": "Start with one math topic",
+        "body": "Choose grade, topic, and level, and let your child progress through questions matched to your practice choice.",
+        "primary": {
+          "href": "/practice/math",
+          "label": "Math practice"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "no-print-worksheets": {
+      "seoKey": "guides-no-print-worksheets",
+      "slug": "no-print-worksheets",
+      "displayTitle": "Practice without printing",
+      "badge": "Home practice",
+      "h1": "Home practice without printing",
+      "intro": "You can practice at home directly from a computer, tablet, or phone. Digital practice and learning games let you start immediately, get new questions, and switch topics without preparing pages in advance. When paper helps, use Leo Kids worksheets.",
+      "sections": [
+        {
+          "title": "When is digital practice a good fit?",
+          "paragraphs": [
+            "Digital practice fits when you want a quick start, immediate feedback, playful learning, or more independent practice for your child."
+          ],
+          "bullets": [
+            "Quick entry by grade and subject.",
+            "Questions that change between sessions.",
+            "Learning games across topics.",
+            "Saved activity for tracking and reports.",
+            "No printer or prep required."
+          ]
+        },
+        {
+          "title": "When is a worksheet a good fit?",
+          "paragraphs": [
+            "A worksheet can help when your child prefers writing on paper, when you want screen-free time, when practicing structured writing and calculation, or when you want a sheet to reuse."
+          ]
+        },
+        {
+          "title": "You can combine both",
+          "paragraphs": [
+            "You do not have to choose one path only. Start digitally, print a sheet for a topic that needs repetition, then return to a game or more online practice."
+          ]
+        },
+        {
+          "title": "How to start",
+          "paragraphs": [
+            "Choose a subject and topic. For digital practice, go to the practice pages. For a worksheet, use the generator or pick from ready-made sheets."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Do I have to print to use Leo Kids?",
+          "a": "No. You can use digital practice and games without printing."
+        },
+        {
+          "q": "Are worksheets available too?",
+          "a": "Yes. Try the generator and choose from ready-made sheets with answer keys."
+        },
+        {
+          "q": "Can we mix online practice and paper?",
+          "a": "Yes. Pick what fits the topic, your child, and the time you have."
+        }
+      ],
+      "relatedPracticePath": "/practice",
+      "practiceCtaLabel": "Online practice",
+      "relatedGuideSlugs": [
+        "home-practice-routine",
+        "math-practice-at-home",
+        "parent-progress-tracking"
+      ],
+      "footerCta": {
+        "title": "Choose the practice path that fits",
+        "body": "Start online or go to worksheets. Both options are available when you need them.",
+        "primary": {
+          "href": "/practice",
+          "label": "Online practice"
+        },
+        "secondary": {
+          "href": "/practice/worksheets",
+          "label": "Worksheets"
+        }
+      }
+    },
+    "reading-practice-at-home": {
+      "seoKey": "guides-reading-practice-at-home",
+      "slug": "reading-practice-at-home",
+      "displayTitle": "Reading at home",
+      "badge": "Guide to reading at home",
+      "h1": "Reading practice at home — accuracy, pace, and understanding",
+      "intro": "Home reading practice does not have to be long. A short text at the right level can help your child read more accurately, recognize words faster, and understand the main idea.",
+      "sections": [
+        {
+          "title": "Choose a text that fits your child",
+          "paragraphs": [
+            "A good text is one your child can read for most of it, but still includes a few words that need attention. A text that is too easy does not create practice; one that is too hard can turn reading into a struggle."
+          ]
+        },
+        {
+          "title": "What to focus on while reading",
+          "bullets": [
+            "Reading words accurately.",
+            "Pausing at punctuation.",
+            "Returning to a word read incorrectly.",
+            "Understanding new words from the sentence.",
+            "Briefly explaining what happened in the text."
+          ]
+        },
+        {
+          "title": "How to correct without stopping every sentence",
+          "paragraphs": [
+            "You do not have to fix every mistake immediately. When a mistake changes meaning, pause and return to the word. When your child self-corrects, let them continue. At the end, choose two or three words to read again."
+          ]
+        },
+        {
+          "title": "How to use practice on the site",
+          "paragraphs": [
+            "On the reading page, choose a grade and start suitable practice. Questions help check word understanding, details from the text, and overall comprehension."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Should we read the same text again?",
+          "a": "Yes. Rereading can improve accuracy and pace, as long as your child understands the text and is not only memorizing it."
+        },
+        {
+          "q": "What about a hard word?",
+          "a": "Break it into parts, read it in the sentence, and explain its meaning briefly."
+        },
+        {
+          "q": "Should we time reading?",
+          "a": "Not as a regular habit. Accuracy and understanding matter more than speed."
+        }
+      ],
+      "relatedPracticePath": "/practice/reading",
+      "practiceCtaLabel": "Reading practice",
+      "relatedGuideSlugs": [
+        "reading-comprehension-at-home",
+        "home-practice-routine",
+        "how-to-follow-child-progress"
+      ],
+      "footerCta": {
+        "title": "Choose a short text and start reading",
+        "body": "Focused reading and comprehension practice can fit easily into a home routine.",
+        "primary": {
+          "href": "/practice/reading",
+          "label": "Reading practice"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "reading-comprehension-at-home": {
+      "seoKey": "guides-reading-comprehension-at-home",
+      "slug": "reading-comprehension-at-home",
+      "displayTitle": "Reading comprehension",
+      "badge": "Guide to reading comprehension",
+      "h1": "Reading comprehension at home — working with text and questions",
+      "intro": "Comprehension is more than accurate reading. Your child needs to find details, understand connections, draw conclusions, and explain answers using the text.",
+      "sections": [
+        {
+          "title": "Start with the main idea",
+          "paragraphs": [
+            "After reading, ask your child to say in one sentence what the text is about. If that is hard, return to the title, the first sentence, and the last sentence and find the central topic together."
+          ]
+        },
+        {
+          "title": "Question types worth practicing",
+          "bullets": [
+            "Finding an explicit detail in the text.",
+            "Identifying character, place, or time.",
+            "Explaining cause and effect.",
+            "Understanding a word from context.",
+            "Drawing a conclusion not stated directly.",
+            "Answering fully in the child's own words."
+          ]
+        },
+        {
+          "title": "Look for evidence in the text",
+          "paragraphs": [
+            "When your child answers, ask them to show which sentence helped. That teaches them to support answers instead of relying on memory or guessing."
+          ]
+        },
+        {
+          "title": "What if the answer is partial?",
+          "paragraphs": [
+            "Separate understanding the question from wording the answer. Highlight the question word, find the matching part of the text, then try a complete answer."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Should we read the questions before the text?",
+          "a": "You can skim them briefly, but it is important to read the text fully—not only hunt for question words."
+        },
+        {
+          "q": "How many questions should we do?",
+          "a": "A small number of different question types, with a full explanation of the approach, is better than many rushed answers."
+        },
+        {
+          "q": "What is the difference between reading and comprehension?",
+          "a": "Reading focuses on recognizing words and reading accurately. Comprehension focuses on meaning, connections, and conclusions from the text."
+        }
+      ],
+      "relatedPracticePath": "/practice/reading",
+      "practiceCtaLabel": "Reading comprehension practice",
+      "relatedGuideSlugs": [
+        "reading-practice-at-home",
+        "home-practice-routine",
+        "how-to-follow-child-progress"
+      ],
+      "footerCta": {
+        "title": "Read, find, and explain",
+        "body": "Choose a suitable text and practice one or two question types each time.",
+        "primary": {
+          "href": "/practice/reading",
+          "label": "Reading comprehension practice"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "english-vocabulary-practice": {
+      "seoKey": "guides-english-vocabulary-practice",
+      "slug": "english-vocabulary-practice",
+      "displayTitle": "English vocabulary",
+      "badge": "Guide to English at home",
+      "h1": "English vocabulary practice at home",
+      "intro": "To remember a new English word, seeing it once is not enough. Read it, hear it, understand its meaning, and use it in several contexts.",
+      "sections": [
+        {
+          "title": "Practice a small group of words",
+          "paragraphs": [
+            "Choose a small set of words from the same topic, such as family, home, food, colors, or school. A clear group helps your child connect words and remember them."
+          ]
+        },
+        {
+          "title": "Four ways to work with each word",
+          "bullets": [
+            "Read the word in English.",
+            "Say what it means.",
+            "Recognize the word in a sentence.",
+            "Create a new short sentence.",
+            "Return to the word on another day."
+          ]
+        },
+        {
+          "title": "Do not practice translation only",
+          "paragraphs": [
+            "Translation is an important step, but the goal is for your child to recognize the word in a sentence. Ask what fits the word, what its opposite is, or when it is used."
+          ]
+        },
+        {
+          "title": "How to use Leo Kids",
+          "paragraphs": [
+            "Choose a grade, open English, and pick vocabulary or a suitable topic. You can return for more practice and meet words in a different order."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "How many new words should we practice?",
+          "a": "Start with a small group you can review several times during the week."
+        },
+        {
+          "q": "Do we have to write every word?",
+          "a": "Writing can help, but reading, saying, and using the word in a sentence matter too."
+        },
+        {
+          "q": "What if a word is forgotten again?",
+          "a": "Bring it back into the practice group and use it in another context."
+        }
+      ],
+      "relatedPracticePath": "/practice/english",
+      "practiceCtaLabel": "English practice",
+      "relatedGuideSlugs": [
+        "learning-games-at-home",
+        "home-practice-routine",
+        "parent-progress-tracking"
+      ],
+      "footerCta": {
+        "title": "Choose a word group and start practicing",
+        "body": "Reading, meaning, and use in sentences help turn a new word into a familiar one.",
+        "primary": {
+          "href": "/practice/english",
+          "label": "English practice"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "learning-games-at-home": {
+      "seoKey": "guides-learning-games-at-home",
+      "slug": "learning-games-at-home",
+      "displayTitle": "Learning games at home",
+      "badge": "Guide to learning games",
+      "h1": "How to combine learning games at home",
+      "intro": "Learning games can turn review into something your child wants to finish. For a game to support learning, choose one that fits the subject, topic, and level.",
+      "sections": [
+        {
+          "title": "Choose a game by goal",
+          "paragraphs": [
+            "Before starting, decide what you want to practice. You can pick a game for calculation, reading, vocabulary, science, or thinking. When the goal is clear, it is easier to see whether the game really helps."
+          ]
+        },
+        {
+          "title": "What to do during the game",
+          "bullets": [
+            "Let your child try on their own.",
+            "Pause only when the same difficulty repeats.",
+            "Ask them to explain a choice or answer.",
+            "Notice whether they act from understanding or guessing.",
+            "Stop when the goal is reached."
+          ]
+        },
+        {
+          "title": "Combine games with more practice",
+          "paragraphs": [
+            "After the game, move to a few questions on the same topic, or return to the game another day. The mix helps your child meet the same idea in a different form."
+          ]
+        },
+        {
+          "title": "How to use games on the site",
+          "paragraphs": [
+            "Choose a game that fits the subject and level. Games combine educational tasks, challenges, coins, and progress inside the activity."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Can a game replace all practice?",
+          "a": "A game is one way to practice. For some topics, combine questions, reading, writing, or a worksheet too."
+        },
+        {
+          "q": "How do I know a game fits?",
+          "a": "Your child should understand the task and handle a reasonable challenge without guessing most answers."
+        },
+        {
+          "q": "What if my child focuses only on rewards?",
+          "a": "Pause sometimes and ask what they learned or how they solved a task."
+        }
+      ],
+      "relatedPracticePath": "/practice/games",
+      "practiceCtaLabel": "Learning games",
+      "relatedGuideSlugs": [
+        "math-games-for-kids",
+        "home-practice-routine",
+        "parent-progress-tracking"
+      ],
+      "footerCta": {
+        "title": "Choose a game that fits your goal",
+        "body": "A good game combines fun with clear practice of a topic your child can understand and progress in.",
+        "primary": {
+          "href": "/practice/games",
+          "label": "Learning games"
+        },
+        "secondary": {
+          "href": "/student/login",
+          "label": "Student login"
+        }
+      }
+    },
+    "math-games-for-kids": {
+      "seoKey": "guides-math-games-for-kids",
+      "slug": "math-games-for-kids",
+      "displayTitle": "Math games",
+      "badge": "Guide to math games",
+      "h1": "Math games for kids — practice through challenge",
+      "intro": "Math games let children practice operations, numbers, and thinking inside a clear task. Choose a game that fits a topic your child knows and a skill you want to strengthen.",
+      "sections": [
+        {
+          "title": "Which topics can games practice?",
+          "bullets": [
+            "Addition and subtraction.",
+            "Multiplication and division.",
+            "Order of operations.",
+            "Fractions and decimals.",
+            "Comparing quantities.",
+            "Problem solving.",
+            "Spatial and geometric thinking."
+          ]
+        },
+        {
+          "title": "Keep the math goal clear",
+          "paragraphs": [
+            "Even when a game has characters, coins, or levels, ask your child how they reached an answer. Explaining helps distinguish understanding from guessing."
+          ]
+        },
+        {
+          "title": "Match the challenge level",
+          "paragraphs": [
+            "A game that is too easy does not create new learning; one that is too hard can cause frustration. Choose a level where your child succeeds on most tasks but still has to think."
+          ]
+        },
+        {
+          "title": "After the game",
+          "paragraphs": [
+            "Choose a few questions on the same topic and check whether your child uses the same approach outside the game. That turns the game into part of broader practice."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Which game fits my child?",
+          "a": "Choose by grade, the topic your child is learning, and a difficulty level where they can work independently."
+        },
+        {
+          "q": "Should we play the same game again?",
+          "a": "Yes, especially when the game shows changing tasks and helps improve accuracy and pace."
+        },
+        {
+          "q": "What if my child is guessing?",
+          "a": "Ask them to pause and explain the operation or relationship between the numbers."
+        }
+      ],
+      "relatedPracticePath": "/practice/games",
+      "practiceCtaLabel": "Math games",
+      "relatedGuideSlugs": [
+        "math-practice-at-home",
+        "learning-games-at-home",
+        "home-practice-routine"
+      ],
+      "footerCta": {
+        "title": "Practice math through games",
+        "body": "Choose a familiar topic, match the level, and ask your child to explain their approach alongside the game.",
+        "primary": {
+          "href": "/practice/games",
+          "label": "Math games"
+        },
+        "secondary": {
+          "href": "/practice/math",
+          "label": "Math practice"
+        }
+      }
+    },
+    "parent-progress-tracking": {
+      "seoKey": "guides-parent-progress-tracking",
+      "slug": "parent-progress-tracking",
+      "displayTitle": "Tracking progress",
+      "badge": "Guide to parent reports",
+      "h1": "How to read your child's progress reports",
+      "intro": "A progress report helps you see what your child practiced, where they succeed, and where difficulty repeats. The goal is not one score—it is a broader picture over time.",
+      "sections": [
+        {
+          "title": "What to check in a report",
+          "bullets": [
+            "Which subjects and topics were practiced.",
+            "How many activities were completed.",
+            "Which question types had mistakes.",
+            "Whether performance improved between sessions.",
+            "Which topics still need review.",
+            "How much time was spent learning."
+          ]
+        },
+        {
+          "title": "Do not rely on one session",
+          "paragraphs": [
+            "One practice result can be affected by tiredness, lack of focus, or first exposure to a topic. Check whether the same pattern repeats across several activities."
+          ]
+        },
+        {
+          "title": "Separate temporary difficulty from a steady pattern",
+          "paragraphs": [
+            "One mistake does not require an immediate plan change. When the same mistake repeats on the same question type, choose focused practice and check again after a few days."
+          ]
+        },
+        {
+          "title": "What to do after reading a report",
+          "paragraphs": [
+            "Choose one action: review a topic, move to a better-matched level, add practice, or have a short conversation about how your child solved questions."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does a low score mean my child does not know the topic?",
+          "a": "Not necessarily. Look at mistake types and results across several practice sessions."
+        },
+        {
+          "q": "How often should I check reports?",
+          "a": "After several activities or about once a week, depending on how often you use the site."
+        },
+        {
+          "q": "What matters more—time or accuracy?",
+          "a": "Both provide information, but understanding the approach and mistake types matters more than one number alone."
+        }
+      ],
+      "relatedPracticePath": "/practice/parent-reports",
+      "practiceCtaLabel": "About parent reports",
+      "relatedGuideSlugs": [
+        "how-to-follow-child-progress",
+        "home-practice-routine",
+        "math-practice-at-home"
+      ],
+      "footerCta": {
+        "title": "Use the report to understand what happened in practice",
+        "body": "Review topics, spot patterns, and choose one next action.",
+        "primary": {
+          "href": "/practice/parent-reports",
+          "label": "About parent reports"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "home-practice-routine": {
+      "seoKey": "guides-home-practice-routine",
+      "slug": "home-practice-routine",
+      "displayTitle": "Home practice routine",
+      "badge": "Guide to home practice",
+      "h1": "How to build a home practice routine that fits",
+      "intro": "A good home routine does not have to look the same every day. It should be clear, doable, and include tasks that fit your time, focus, and the topic your child needs.",
+      "sections": [
+        {
+          "title": "Set a steady starting point",
+          "paragraphs": [
+            "Choose a time when your child is relatively free and not too tired. Fixed days can help, but leave flexibility on busy days or when your child needs a break."
+          ]
+        },
+        {
+          "title": "Choose one goal per session",
+          "bullets": [
+            "One math topic.",
+            "One reading text.",
+            "One vocabulary group in English.",
+            "One learning game.",
+            "One worksheet.",
+            "A quick check of a topic practiced earlier."
+          ]
+        },
+        {
+          "title": "End clearly",
+          "paragraphs": [
+            "Your child should know in advance what needs to be finished. When the task is done, stop. A clear ending builds success and willingness to return."
+          ]
+        },
+        {
+          "title": "Adjust the routine as progress changes",
+          "paragraphs": [
+            "If a topic feels stable, move to the next one. If difficulty repeats, change the practice type or choose a better-matched level."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Do we have to practice every day?",
+          "a": "No. A steady routine that fits your family matters more than a plan you cannot keep."
+        },
+        {
+          "q": "What about a busy day?",
+          "a": "Choose a shorter task or postpone practice without turning the routine into punishment."
+        },
+        {
+          "q": "Should my child choose?",
+          "a": "You can let them choose between two tasks that fit the goal you set."
+        }
+      ],
+      "relatedPracticePath": "/practice",
+      "practiceCtaLabel": "All practice areas",
+      "relatedGuideSlugs": [
+        "math-practice-at-home",
+        "reading-practice-at-home",
+        "parent-progress-tracking"
+      ],
+      "footerCta": {
+        "title": "Build a routine you can keep",
+        "body": "Choose a suitable time, one goal, and a clear ending for each session.",
+        "primary": {
+          "href": "/practice",
+          "label": "All practice areas"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    },
+    "how-to-follow-child-progress": {
+      "seoKey": "guides-how-to-follow-child-progress",
+      "slug": "how-to-follow-child-progress",
+      "displayTitle": "Choosing a topic to strengthen",
+      "badge": "Guide to choosing a topic",
+      "h1": "How to choose the next topic to strengthen",
+      "intro": "Choosing a topic to strengthen starts with spotting a pattern. Look for difficulty that repeats across several questions or sessions—not a single mistake. Then choose focused practice and check again.",
+      "sections": [
+        {
+          "title": "Three sources of information",
+          "bullets": [
+            "Progress reports and completed practice.",
+            "Question types where mistakes repeat.",
+            "Your child's explanation of how they tried to solve."
+          ]
+        },
+        {
+          "title": "Define the topic precisely",
+          "paragraphs": [
+            "Instead of a broad area like math or reading, name a focused topic: vertical addition, long multiplication, following instructions, finding details in a text, or vocabulary in a specific theme."
+          ]
+        },
+        {
+          "title": "Choose suitable practice",
+          "paragraphs": [
+            "Start at a level where your child can succeed on most questions. If it is too hard, return to a more basic step. If it is too easy, move to a harder level or question type."
+          ]
+        },
+        {
+          "title": "Check whether something changed",
+          "paragraphs": [
+            "After several practice sessions, return to the same question type and check whether your child answers more steadily and can explain their approach."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Should I always pick the topic with the lowest score?",
+          "a": "Not necessarily. Also look at how many questions were answered, what kind of difficulty appeared, and whether it repeated in later practice."
+        },
+        {
+          "q": "How many topics should we strengthen at once?",
+          "a": "Start with one topic or two closely related ones so practice stays clear."
+        },
+        {
+          "q": "When do we move to another topic?",
+          "a": "When your child shows steadier understanding and can handle questions worded differently."
+        }
+      ],
+      "relatedPracticePath": "/practice/parent-reports",
+      "practiceCtaLabel": "Track progress",
+      "relatedGuideSlugs": [
+        "parent-progress-tracking",
+        "home-practice-routine",
+        "math-practice-at-home"
+      ],
+      "footerCta": {
+        "title": "Spot a pattern and choose a focused topic",
+        "body": "Use reports, answers, and your child's explanation to choose the next step.",
+        "primary": {
+          "href": "/practice/parent-reports",
+          "label": "Track progress"
+        },
+        "secondary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        }
+      }
+    }
+  },
+  "guideHubCards": [
+    {
+      "href": "/guides/math-practice-at-home",
+      "title": "Math at home",
+      "blurb": "How to choose a math topic, match practice to grade, and keep a steady routine without turning every session into a test."
+    },
+    {
+      "href": "/guides/reading-practice-at-home",
+      "title": "Reading at home",
+      "blurb": "How to practice reading aloud, accuracy, pace, and word understanding with short texts and focused questions."
+    },
+    {
+      "href": "/guides/reading-comprehension-at-home",
+      "title": "Reading comprehension",
+      "blurb": "How to help your child find details, explain answers in their own words, and connect parts of a text."
+    },
+    {
+      "href": "/guides/english-vocabulary-practice",
+      "title": "English vocabulary",
+      "blurb": "How to practice new words in context, review them through the week, and use them in simple sentences."
+    },
+    {
+      "href": "/guides/learning-games-at-home",
+      "title": "Learning games at home",
+      "blurb": "How to combine games and digital practice as part of focused work in a chosen subject and topic."
+    },
+    {
+      "href": "/guides/math-games-for-kids",
+      "title": "Math games",
+      "blurb": "Ideas for mixing addition, subtraction, multiplication, division, and math thinking into short, playful practice."
+    },
+    {
+      "href": "/guides/parent-progress-tracking",
+      "title": "Tracking progress",
+      "blurb": "How to read reports, understand which topics were practiced, and spot trends over time."
+    },
+    {
+      "href": "/guides/how-to-follow-child-progress",
+      "title": "Choosing a topic to strengthen",
+      "blurb": "How to pick the next topic based on practice, answers, and difficulty that keeps appearing."
+    },
+    {
+      "href": "/guides/home-practice-routine",
+      "title": "Home practice routine",
+      "blurb": "How to set a suitable time, choose one task, and end practice on a good note."
+    },
+    {
+      "href": "/guides/no-print-worksheets",
+      "title": "Practice without printing",
+      "blurb": "How to use digital practice and games, and choose a worksheet only when it fits your need."
+    }
+  ],
+  "practiceSlugs": [
+    "hub",
+    "math",
+    "reading",
+    "english",
+    "geometry",
+    "science",
+    "games",
+    "no-print",
+    "parent-reports"
+  ],
+  "practicePages": {
+    "hub": {
+      "seoKey": "practice-hub",
+      "slug": "hub",
+      "badge": "Practice areas",
+      "h1": "Elementary practice by subject and grade",
+      "intro": "Choose a subject and explore the topics available in Leo Kids. Each page explains activity types, core topics, and how to get started.",
+      "sections": [
+        {
+          "title": "How do I start?",
+          "paragraphs": [
+            "Pick the subject that fits your goal. On each page you can see available topics, choose a grade, and continue to practice, games, reports, or worksheets."
+          ]
+        }
+      ],
+      "relatedGuideSlugs": [
+        "home-practice-routine",
+        "parent-progress-tracking",
+        "no-print-worksheets"
+      ],
+      "faq": [
+        {
+          "q": "Which grades is practice designed for?",
+          "a": "Practice is designed for grades 1–6, with each subject showing topics suited to the grade you select."
+        },
+        {
+          "q": "Do I have to print?",
+          "a": "No. You can practice online, play learning games, or use a worksheet when that fits your routine."
+        },
+        {
+          "q": "How do I choose a topic?",
+          "a": "Pick what is being taught now, a topic your child wants to review, or use parent reports to decide what to practice next."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose a subject and start practicing",
+        "body": "Each area shows topics and activities suited to the practice you choose.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Open parent account"
+        },
+        "secondary": {
+          "href": "/student/login",
+          "label": "Student login"
+        }
+      },
+      "hubCards": [
+        {
+          "href": "/practice/math",
+          "title": "Math",
+          "blurb": "Addition, subtraction, multiplication, division, fractions, decimals, percentages, ratios, word problems, and more by grade.",
+          "emoji": "🔢"
+        },
+        {
+          "href": "/practice/reading",
+          "title": "Reading comprehension",
+          "blurb": "Short texts, word recognition, finding details, understanding meaning, and comprehension questions.",
+          "emoji": "📚"
+        },
+        {
+          "href": "/practice/english",
+          "title": "English",
+          "blurb": "Phonics, vocabulary, sentences, grammar, reading, and following instructions in English.",
+          "emoji": "🌍"
+        },
+        {
+          "href": "/practice/geometry",
+          "title": "Geometry",
+          "blurb": "Shapes, angles, area, perimeter, solids, symmetry, circles, volume, Pythagoras, and more by grade.",
+          "emoji": "📐"
+        },
+        {
+          "href": "/practice/science",
+          "title": "Science",
+          "blurb": "Knowledge and understanding in nature, the human body, materials, environment, energy, and scientific phenomena.",
+          "emoji": "🔬"
+        },
+        {
+          "href": "/practice/games",
+          "title": "Learning games",
+          "blurb": "Educational tasks inside games, challenges, and activities in math, English, science, and reading.",
+          "emoji": "🎮"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "title": "Parent reports",
+          "blurb": "Track subjects, topics, activity, accuracy, learning time, and what to review next.",
+          "emoji": "📊"
+        },
+        {
+          "href": "/practice/worksheets",
+          "title": "Worksheets",
+          "blurb": "Worksheet generator, ready-made sheets, answer keys, and print when helpful.",
+          "emoji": "📄"
+        }
+      ]
+    },
+    "math": {
+      "seoKey": "practice-math",
+      "slug": "math",
+      "badge": "Math for grades 1–6",
+      "h1": "Math practice by grade and topic",
+      "intro": "In Leo Kids, children can practice math by grade, topic, and difficulty. Questions vary between sessions and support calculation, understanding, and problem solving.",
+      "sections": [
+        {
+          "title": "Core math topics",
+          "bullets": [
+            "Addition and subtraction.",
+            "Multiplication and division.",
+            "Horizontal and vertical operations.",
+            "Fractions and decimals.",
+            "Percentages, ratios, and scale.",
+            "Word problems.",
+            "Order of operations.",
+            "Mixed practice."
+          ]
+        },
+        {
+          "title": "How do I start?",
+          "paragraphs": [
+            "Choose a grade, open the math topic you want, and start at the regular level. After a few questions, check whether the level fits and continue with more practice."
+          ]
+        },
+        {
+          "title": "How do I choose a topic?",
+          "paragraphs": [
+            "Pick a topic being taught now, one where mistakes appeared, or a skill your child wants to strengthen. When a topic feels stable, move to mixed practice."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "Numbers, counting, basic addition and subtraction, comparing quantities, and short exercises."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Strengthening operations, multiplication and division, word problems, and practice that builds understanding—not just speed."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "Fractions, percentages, decimals, more complex problems, and topics that require step-by-step thinking."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/games",
+          "label": "Learning games"
+        },
+        {
+          "href": "/practice/no-print",
+          "label": "Digital practice"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        },
+        {
+          "href": "/practice/geometry",
+          "label": "Geometry practice"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "math-practice-at-home",
+        "math-games-for-kids",
+        "home-practice-routine"
+      ],
+      "faq": [
+        {
+          "q": "Do questions change between sessions?",
+          "a": "Yes. Activities are drawn from a question bank and can vary between practice runs."
+        },
+        {
+          "q": "Are there different levels?",
+          "a": "Yes. Topics offer regular and advanced levels based on content and grade."
+        },
+        {
+          "q": "Can I print exercises?",
+          "a": "Yes. On the worksheets page you can create a sheet or choose a ready-made one with answers."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose a math topic",
+        "body": "Start with focused practice and continue based on your child's progress.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Open parent account"
+        },
+        "secondary": {
+          "href": "/practice/worksheets",
+          "label": "Math worksheets"
+        }
+      }
+    },
+    "reading": {
+      "seoKey": "practice-reading",
+      "slug": "reading",
+      "badge": "Reading comprehension",
+      "h1": "Reading comprehension practice for elementary learners",
+      "intro": "On the reading page, children practice word recognition, accurate reading, sentence understanding, finding details, and drawing conclusions from grade-appropriate texts.",
+      "sections": [
+        {
+          "title": "Core skills",
+          "bullets": [
+            "Reading words and sentences.",
+            "Understanding meaning from context.",
+            "Finding details in a text.",
+            "Identifying the main idea.",
+            "Cause and effect.",
+            "Drawing conclusions.",
+            "Answering in complete sentences."
+          ]
+        },
+        {
+          "title": "How do I start?",
+          "paragraphs": [
+            "Choose a grade and start with a text where your child can read most of the words. After reading, move to the questions and ask your child to explain how they found each answer."
+          ]
+        },
+        {
+          "title": "What if there is difficulty?",
+          "paragraphs": [
+            "If the challenge is reading the words, return to short, focused reading. If the challenge is understanding the question, highlight the question word and find the matching part of the text."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "Early reading, short words and sentences, basic understanding, and simple questions."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Short texts, comprehension questions, finding information, and brief written answers."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "Longer texts, drawing conclusions, more detailed answers, and stronger comprehension accuracy."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        },
+        {
+          "href": "/practice/no-print",
+          "label": "Digital practice"
+        },
+        {
+          "href": "/practice/english",
+          "label": "English practice"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "reading-practice-at-home",
+        "reading-comprehension-at-home",
+        "home-practice-routine"
+      ],
+      "faq": [
+        {
+          "q": "Is this Hebrew language reading?",
+          "a": "No. This page focuses on English reading comprehension—short texts and questions that build understanding and fluency."
+        },
+        {
+          "q": "Are texts matched to grade?",
+          "a": "Yes. Practice is selected by grade and activity difficulty."
+        },
+        {
+          "q": "How do I know if my child understood?",
+          "a": "Ask them to explain the main idea and point to the part of the text that helped them answer."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose a text and start reading",
+        "body": "Practice accurate reading, comprehension, and explaining answers from the text.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Open parent account"
+        },
+        "secondary": {
+          "href": "/guides/reading-practice-at-home",
+          "label": "Reading at home guide"
+        }
+      }
+    },
+    "english": {
+      "seoKey": "practice-english",
+      "slug": "english",
+      "badge": "English for grades 1–6",
+      "h1": "English practice by grade and topic",
+      "intro": "English practice includes phonics, vocabulary, sentences, grammar, reading, and following instructions. Choose a grade and topic and work on one skill per activity.",
+      "sections": [
+        {
+          "title": "Core English topics",
+          "bullets": [
+            "Letters and sounds.",
+            "Reading words.",
+            "Vocabulary.",
+            "Matching words to meaning.",
+            "Completing sentences.",
+            "Basic grammar.",
+            "Reading and following instructions.",
+            "Writing by grade."
+          ]
+        },
+        {
+          "title": "How do I choose a topic?",
+          "paragraphs": [
+            "In younger grades, start with letters, sounds, and basic words. Later, focus on vocabulary, sentences, grammar, and reading."
+          ]
+        },
+        {
+          "title": "How do I reinforce a new word?",
+          "paragraphs": [
+            "Read the word, understand its meaning, recognize it in a sentence, and use it in another context."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "First exposure to words, sounds, letters, and short sentences."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Expanding vocabulary, understanding sentences, short reading, and basic structure practice."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "Short texts, simple writing, more advanced grammar, and context-based understanding."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/games",
+          "label": "Learning games"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        },
+        {
+          "href": "/practice/no-print",
+          "label": "Digital practice"
+        },
+        {
+          "href": "/practice/reading",
+          "label": "Reading comprehension practice"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "english-vocabulary-practice",
+        "learning-games-at-home",
+        "home-practice-routine"
+      ],
+      "faq": [
+        {
+          "q": "Is there phonics practice?",
+          "a": "Yes. Phonics activities are available for younger grades."
+        },
+        {
+          "q": "Can we practice vocabulary?",
+          "a": "Yes. Choose activities for words, meaning, and use in sentences."
+        },
+        {
+          "q": "Are there English worksheets?",
+          "a": "Yes. The worksheets page includes ready-made sheets and a generator to try."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose an English topic",
+        "body": "Start with words and sounds, then move to sentences, grammar, and reading.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Open parent account"
+        },
+        "secondary": {
+          "href": "/practice/worksheets",
+          "label": "English worksheets"
+        }
+      }
+    },
+    "geometry": {
+      "seoKey": "practice-geometry",
+      "slug": "geometry",
+      "badge": "Geometry for grades 1–6",
+      "h1": "Geometry practice by grade and topic",
+      "intro": "Geometry practice covers shapes, lines, angles, perimeter, area, solids, symmetry, circles, volume, and Pythagoras. Questions combine identification, calculation, and diagrams by topic.",
+      "sections": [
+        {
+          "title": "Core geometry topics",
+          "bullets": [
+            "Plane shapes.",
+            "Triangles and quadrilaterals.",
+            "Parallel and perpendicular lines.",
+            "Angles.",
+            "Perimeter and area.",
+            "Diagonals and heights.",
+            "Symmetry and transformations.",
+            "Solids and volume.",
+            "Circles.",
+            "Pythagoras."
+          ]
+        },
+        {
+          "title": "How do I start?",
+          "paragraphs": [
+            "Choose a grade and topic. For identification questions, look at labels on the diagram. For calculation questions, write the given values and choose the right operation or formula."
+          ]
+        },
+        {
+          "title": "How do I use the diagram?",
+          "paragraphs": [
+            "The diagram shows the shape, measurements, and labels needed to solve the problem. Read the question too—do not rely only on how the shape looks."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "Identifying shapes, telling shapes apart, lines, and basic properties."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Measurement, perimeter, angles, and properties of familiar shapes."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "Area, relationships between shapes, more advanced topics, and step-by-step reasoning."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/math",
+          "label": "Math practice"
+        },
+        {
+          "href": "/practice/games",
+          "label": "Learning games"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "math-practice-at-home",
+        "home-practice-routine",
+        "math-games-for-kids"
+      ],
+      "faq": [
+        {
+          "q": "Do questions include diagrams?",
+          "a": "Yes. Suitable questions include shape and solid diagrams with measurements and labels."
+        },
+        {
+          "q": "Can we practice area and perimeter?",
+          "a": "Yes. Topics include area, perimeter, measurements, and grade-appropriate calculations."
+        },
+        {
+          "q": "Are there geometry worksheets?",
+          "a": "Yes. Ready-made sheets and a generator are available on the worksheets page."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose a geometry topic",
+        "body": "Practice identification, drawing, and calculation with topic-matched questions.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Open parent account"
+        },
+        "secondary": {
+          "href": "/practice/worksheets",
+          "label": "Geometry worksheets"
+        }
+      }
+    },
+    "science": {
+      "seoKey": "practice-science",
+      "slug": "science",
+      "badge": "Science for elementary learners",
+      "h1": "Science practice by topic",
+      "intro": "Science practice in Leo Kids helps children review concepts, understand processes, and apply knowledge in questions. Activities combine facts, comparison, cause and effect, and understanding phenomena.",
+      "sections": [
+        {
+          "title": "Core science topics",
+          "bullets": [
+            "Animals and plants.",
+            "The human body and health.",
+            "Materials and properties.",
+            "Water, air, and environment.",
+            "Energy and forces.",
+            "Earth and space.",
+            "Natural processes and phenomena.",
+            "Protecting the environment."
+          ]
+        },
+        {
+          "title": "How do we practice science?",
+          "paragraphs": [
+            "Choose a topic, read each question, and look for the concept or process it is based on. When there are several options, eliminate answers that do not fit the facts in the question."
+          ]
+        },
+        {
+          "title": "More than memorizing facts",
+          "paragraphs": [
+            "Ask your child to explain why an answer is correct, what causes a process, and how the result changes when a condition changes."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "Introduction to animals, plants, the human body, and the nearby environment."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Deeper understanding of materials, natural processes, living systems, and environmental phenomena."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "More advanced topics such as earth and space, environment, experiments, and structured scientific thinking."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/games",
+          "label": "Learning games"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        },
+        {
+          "href": "/practice/no-print",
+          "label": "Digital practice"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "home-practice-routine",
+        "learning-games-at-home",
+        "parent-progress-tracking"
+      ],
+      "faq": [
+        {
+          "q": "Does practice include comprehension questions?",
+          "a": "Yes. Alongside facts and concepts, there are questions that ask children to explain relationships and processes."
+        },
+        {
+          "q": "How do I choose a topic?",
+          "a": "Pick what is being taught now or a topic your child wants to review."
+        },
+        {
+          "q": "Do activities change?",
+          "a": "Yes. Different practice runs can show different questions from the topic bank."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose a science topic",
+        "body": "Review concepts and use them to explain processes and phenomena.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Open parent account"
+        },
+        "secondary": {
+          "href": "/practice",
+          "label": "All practice areas"
+        }
+      }
+    },
+    "games": {
+      "seoKey": "practice-games",
+      "slug": "games",
+      "badge": "Learning games",
+      "h1": "Learning games for kids by subject and level",
+      "intro": "Leo Kids learning games combine tasks in math, English, science, and reading comprehension inside playful activities. Each game has a clear goal, questions, and challenges matched to the chosen level.",
+      "sections": [
+        {
+          "title": "What can children practice in games?",
+          "bullets": [
+            "Operations and numbers.",
+            "Reading and vocabulary.",
+            "English.",
+            "Science and environment.",
+            "Thinking and memory.",
+            "Problem solving.",
+            "Accuracy and pace.",
+            "Decisions based on information."
+          ]
+        },
+        {
+          "title": "How do I choose a game?",
+          "paragraphs": [
+            "Pick by the subject and topic your child wants to practice. Start at a level where they understand the task and can progress without guessing most answers."
+          ]
+        },
+        {
+          "title": "What after the game?",
+          "paragraphs": [
+            "Ask what the main challenge was, which question was hard, and what strategy helped them succeed."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "Games with short instructions and tasks for identification, matching, calculation, reading, and vocabulary at a young-learner level."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Games that combine multiplication, division, text understanding, vocabulary, science, task solving, and multi-step progress."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "Games with harder challenges, problem solving, accuracy, decision making, and subject-based knowledge."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/math",
+          "label": "Math practice"
+        },
+        {
+          "href": "/practice/english",
+          "label": "English practice"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "learning-games-at-home",
+        "math-games-for-kids",
+        "home-practice-routine"
+      ],
+      "faq": [
+        {
+          "q": "Do games include educational questions?",
+          "a": "Yes. Games combine questions and tasks as part of the activity."
+        },
+        {
+          "q": "Are there different levels?",
+          "a": "Yes. Games adjust task types and challenge level for different age groups and levels."
+        },
+        {
+          "q": "Can children play as guests?",
+          "a": "Access options depend on system settings and the game selected."
+        }
+      ],
+      "footerCta": {
+        "title": "Choose a game and start a learning challenge",
+        "body": "Match the game to subject and level and let your child progress through tasks and questions.",
+        "primary": {
+          "href": "/practice/games",
+          "label": "Learning games"
+        },
+        "secondary": {
+          "href": "/student/login",
+          "label": "Student login"
+        }
+      }
+    },
+    "no-print": {
+      "seoKey": "practice-no-print",
+      "slug": "no-print",
+      "badge": "Digital practice",
+      "h1": "Digital practice for kids — no printing required",
+      "intro": "Start practice directly on the site, choose a subject and topic, and get questions and activities without preparing pages in advance. Digital games and practice are available by grade and subject.",
+      "sections": [
+        {
+          "title": "What can you do online?",
+          "bullets": [
+            "Practice questions by subject and topic.",
+            "Play learning games.",
+            "Review a topic several times.",
+            "Get changing activities and questions.",
+            "Save activity for reports and tracking.",
+            "Switch between subjects as needed."
+          ]
+        },
+        {
+          "title": "Start without prep",
+          "paragraphs": [
+            "Choose a subject, grade, and topic and begin. No need to download a file or prepare materials first."
+          ]
+        },
+        {
+          "title": "Print when it helps",
+          "paragraphs": [
+            "When you want to work on paper, go to the worksheets page, use the generator, or choose from ready-made sheets."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "Grades 1–2",
+              "text": "Short activities in math, reading, language, and learning games open directly on the site with clear instructions for young learners."
+            },
+            {
+              "title": "Grades 3–4",
+              "text": "Choose a subject and topic, practice changing questions, mix in learning games, and return for more activity as needed."
+            },
+            {
+              "title": "Grades 5–6",
+              "text": "Digital practice supports focused topics, harder questions, problem solving, reading, language, and additional subjects."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice/math",
+          "label": "Math practice"
+        },
+        {
+          "href": "/practice/english",
+          "label": "English practice"
+        },
+        {
+          "href": "/practice/worksheets",
+          "label": "Worksheets"
+        },
+        {
+          "href": "/practice/parent-reports",
+          "label": "Parent reports"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "no-print-worksheets",
+        "math-practice-at-home",
+        "home-practice-routine"
+      ],
+      "faq": [
+        {
+          "q": "Do I need a printer?",
+          "a": "No. Digital practice and games work directly on the site."
+        },
+        {
+          "q": "Is there also a printable option?",
+          "a": "Yes. On the worksheets page you can create a sheet, preview it, and print when helpful."
+        },
+        {
+          "q": "Is activity saved?",
+          "a": "In the parent portal you can track activities, subjects, and topics practiced."
+        }
+      ],
+      "footerCta": {
+        "title": "Start practicing on the site",
+        "body": "Choose a subject and topic, or go to worksheets when paper practice fits better.",
+        "primary": {
+          "href": "/practice",
+          "label": "All practice areas"
+        },
+        "secondary": {
+          "href": "/practice/worksheets",
+          "label": "Worksheets"
+        }
+      }
+    },
+    "parent-reports": {
+      "seoKey": "practice-parent-reports",
+      "slug": "parent-reports",
+      "badge": "Reports for parents",
+      "h1": "Parent progress reports — see what your child practiced",
+      "intro": "Parent reports summarize activities your child completed, subjects and topics practiced, answers, and progress over time.",
+      "sections": [
+        {
+          "title": "What can you see in reports?",
+          "bullets": [
+            "Subjects and topics practiced.",
+            "Number of activities and questions.",
+            "Correct answers and mistakes.",
+            "Question types where difficulty appeared.",
+            "Learning time.",
+            "Trends across several practice sessions.",
+            "Topics worth reviewing or strengthening."
+          ]
+        },
+        {
+          "title": "Standard and detailed reports",
+          "paragraphs": [
+            "The standard report gives a quick picture of activity. The detailed report lets you go deeper into topics, questions, and patterns that repeat across practice."
+          ]
+        },
+        {
+          "title": "How to use the information",
+          "paragraphs": [
+            "After reading a report, choose one next step: review a topic, add practice, change level, or move to the next topic."
+          ]
+        },
+        {
+          "title": "By grade",
+          "gradeSections": [
+            {
+              "title": "General",
+              "text": "Reports are based on your child's actual activity on the site."
+            },
+            {
+              "title": "By subject",
+              "text": "Reports can reflect practiced areas such as math, English, geometry, and science—based on activity and available content."
+            }
+          ]
+        }
+      ],
+      "relatedPracticeLinks": [
+        {
+          "href": "/practice",
+          "label": "All practice areas"
+        },
+        {
+          "href": "/practice/math",
+          "label": "Math practice"
+        },
+        {
+          "href": "/practice/reading",
+          "label": "Reading comprehension practice"
+        },
+        {
+          "href": "/practice/english",
+          "label": "English practice"
+        }
+      ],
+      "relatedGuideSlugs": [
+        "parent-progress-tracking",
+        "how-to-follow-child-progress",
+        "home-practice-routine"
+      ],
+      "faq": [
+        {
+          "q": "Does a report show only a score?",
+          "a": "No. Reports include topics, activity, answers, and patterns over time."
+        },
+        {
+          "q": "When should I check a report?",
+          "a": "After several activities or when you want to choose a new topic to practice."
+        },
+        {
+          "q": "Can I see topics to strengthen?",
+          "a": "Reports can help identify topics where difficulty repeats and choose suitable practice."
+        }
+      ],
+      "footerCta": {
+        "title": "Turn activity into useful information",
+        "body": "See what your child practiced, spot patterns, and choose the next step.",
+        "primary": {
+          "href": "/parent/login",
+          "label": "Parent login"
+        },
+        "secondary": {
+          "href": "/guides/parent-progress-tracking",
+          "label": "Guide to reading reports"
+        }
+      }
+    }
+  },
+  "practiceHubCards": [
+    {
+      "href": "/practice/math",
+      "title": "Math",
+      "blurb": "Addition, subtraction, multiplication, division, fractions, decimals, percentages, ratios, word problems, and more by grade.",
+      "emoji": "🔢"
+    },
+    {
+      "href": "/practice/reading",
+      "title": "Reading comprehension",
+      "blurb": "Short texts, word recognition, finding details, understanding meaning, and comprehension questions.",
+      "emoji": "📚"
+    },
+    {
+      "href": "/practice/english",
+      "title": "English",
+      "blurb": "Phonics, vocabulary, sentences, grammar, reading, and following instructions in English.",
+      "emoji": "🌍"
+    },
+    {
+      "href": "/practice/geometry",
+      "title": "Geometry",
+      "blurb": "Shapes, angles, area, perimeter, solids, symmetry, circles, volume, Pythagoras, and more by grade.",
+      "emoji": "📐"
+    },
+    {
+      "href": "/practice/science",
+      "title": "Science",
+      "blurb": "Knowledge and understanding in nature, the human body, materials, environment, energy, and scientific phenomena.",
+      "emoji": "🔬"
+    },
+    {
+      "href": "/practice/games",
+      "title": "Learning games",
+      "blurb": "Educational tasks inside games, challenges, and activities in math, English, science, and reading.",
+      "emoji": "🎮"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "title": "Parent reports",
+      "blurb": "Track subjects, topics, activity, accuracy, learning time, and what to review next.",
+      "emoji": "📊"
+    },
+    {
+      "href": "/practice/worksheets",
+      "title": "Worksheets",
+      "blurb": "Worksheet generator, ready-made sheets, answer keys, and print when helpful.",
+      "emoji": "📄"
+    }
+  ],
+  "worksheets": {
+    "seoKey": "practice-worksheets",
+    "slug": "worksheets",
+    "badge": "Worksheets — try without signing up",
+    "h1": "Printable worksheets for kids — practice, print when helpful, or combine with online learning",
+    "intro": "On this page you can create a demo sheet with 8 exercises or choose from 30 ready worksheets in math, geometry, and English. Preview each sheet, print it, and open an answer key.",
+    "sections": [
+      {
+        "title": "How do I create a demo sheet?",
+        "paragraphs": [
+          "Pick a subject and grade, then create a short demo with 8 exercises. One topic per subject and grade is open for the demo; other topics show what is available in the full parent portal."
+        ]
+      },
+      {
+        "title": "Ready worksheets by grade",
+        "paragraphs": [
+          "Choose from 30 ready sheets, filter by subject, grade, and level, open the sheet, and print when it fits your routine. Each sheet can have a separate answer key."
+        ]
+      },
+      {
+        "title": "Practice without printing too",
+        "paragraphs": [
+          "Worksheets are an extra option alongside digital practice and games. Pick what fits the topic, your child, and the time you have."
+        ]
+      },
+      {
+        "title": "What does the full parent portal include?",
+        "paragraphs": [
+          "In the full parent portal you can create unlimited worksheets, choose every available topic, and generate fresh sheets again and again. Sheets are rebuilt from the question bank and change between runs."
+        ]
+      },
+      {
+        "title": "Answer keys for home checking",
+        "paragraphs": [
+          "You can open a separate answer key after creating a sheet. The demo includes answers for all 8 exercises; ready sheets include answers according to each sheet's structure."
+        ]
+      }
+    ],
+    "relatedPracticeLinks": [
+      {
+        "href": "/practice/math",
+        "label": "Math practice"
+      },
+      {
+        "href": "/practice/reading",
+        "label": "Reading practice"
+      },
+      {
+        "href": "/practice/english",
+        "label": "English practice"
+      },
+      {
+        "href": "/practice/geometry",
+        "label": "Geometry practice"
+      },
+      {
+        "href": "/practice/no-print",
+        "label": "Digital practice"
+      },
+      {
+        "href": "/practice/games",
+        "label": "Learning games"
+      }
+    ],
+    "relatedGuideSlugs": [
+      "math-practice-at-home",
+      "home-practice-routine",
+      "no-print-worksheets",
+      "learning-games-at-home"
+    ],
+    "faq": [
+      {
+        "q": "Do I need to sign up to try this?",
+        "a": "No. The demo generator and ready sheets are available without logging in."
+      },
+      {
+        "q": "How many exercises are in the demo sheet?",
+        "a": "The demo sheet has 8 exercises. Ready sheets keep their full structure."
+      },
+      {
+        "q": "Are answer keys available?",
+        "a": "Yes. You can open a separate answer key for the demo and for each ready sheet."
+      },
+      {
+        "q": "Do we have to print?",
+        "a": "No. You can practice online in Leo Kids and use a worksheet when printing helps."
+      },
+      {
+        "q": "Do the sheets change?",
+        "a": "Sheets created in the generator are rebuilt from the question bank and can differ between runs."
+      }
+    ],
+    "footerCta": {
+      "title": "Want to create more sheets and unlock every topic?",
+      "body": "In the full parent portal you can create unlimited worksheets, pick additional topics, and combine sheets with digital practice and progress insights.",
+      "primary": {
+        "href": "/parents",
+        "label": "Go to the parent portal"
+      },
+      "secondary": {
+        "href": "/practice",
+        "label": "Browse practice areas"
+      }
+    }
+  },
+  "marketing": {
+    "kids": {
+      "pageTitle": "Learn and play with Leo · LEO KIDS",
+      "metaDescription": "Practice math, geometry, English, and science — with games, coins, cards, and surprises along the way.",
+      "badge": "Kids · Games · Progress",
+      "installLabel": "Install the kids app",
+      "hero": {
+        "title": "Learn, play, and progress with Leo",
+        "subtitle": "Practice math, geometry, English, and science — with games, coins, cards, and surprises along the way.",
+        "primaryCta": {
+          "label": "Enter Leo's kids world",
+          "href": "/student/login"
+        },
+        "secondaryCta": {
+          "label": "Ask a parent to join",
+          "action": "parentInvite"
+        }
+      },
+      "benefits": {
+        "items": [
+          {
+            "title": "Solve questions and move forward",
+            "text": "Pick a subject, answer questions, and advance step by step.",
+            "emoji": "🎯"
+          },
+          {
+            "title": "Collect coins and cards",
+            "text": "Progress can unlock rewards, surprises, and new items.",
+            "emoji": "🪙"
+          },
+          {
+            "title": "Play and learn",
+            "text": "Not only practice — educational games that feel like real play.",
+            "emoji": "🎮"
+          },
+          {
+            "title": "Leo guides you",
+            "text": "Learn at your pace, try again, and improve without pressure.",
+            "emoji": "🦁"
+          },
+          {
+            "title": "Personal activities",
+            "text": "A parent can send a focused activity matched to what you should practice.",
+            "emoji": "📬"
+          },
+          {
+            "title": "Progress every day",
+            "text": "Log in, practice a little, earn wins, and keep going.",
+            "emoji": "⭐"
+          }
+        ]
+      },
+      "infoSections": [
+        {
+          "title": "How do you start?",
+          "steps": [
+            "A parent creates an account.",
+            "They add you as a child.",
+            "You get a personal login code.",
+            "Log in, learn, play, and progress."
+          ]
+        }
+      ],
+      "closing": {
+        "title": "Ready to start with Leo?",
+        "text": "Ask a parent to open an account, get your login code, and start learning in a fun way.",
+        "primaryCta": {
+          "label": "Ask a parent to join",
+          "action": "parentInvite"
+        },
+        "secondaryCta": {
+          "label": "I already have a login code",
+          "href": "/student/login"
+        }
+      }
+    },
+    "parents": {
+      "pageTitle": "Parent portal · LEO KIDS",
+      "metaDescription": "Leo Kids helps children practice in an engaging way while parents get a clear picture of progress.",
+      "badge": "Parents · Tracking · Clarity",
+      "installLabel": "Install the parent app",
+      "hero": {
+        "title": "Your child learns with joy — you see what's really happening",
+        "subtitle": "Leo Kids helps children practice in an engaging way while you get a clear picture of progress, strengths, and topics that need reinforcement.",
+        "primaryCta": {
+          "label": "Parent login / sign up",
+          "href": "/parent/login"
+        },
+        "secondaryCta": {
+          "label": "What do you get?",
+          "scrollTo": "benefits"
+        }
+      },
+      "benefits": {
+        "items": [
+          {
+            "title": "See what your child actually knows",
+            "text": "Instead of guessing, get a view by subject, topic, and real activity."
+          },
+          {
+            "title": "Spot what to reinforce",
+            "text": "Highlights strengths alongside topics worth revisiting."
+          },
+          {
+            "title": "Send personal activities",
+            "text": "Assign focused practice and see whether it was done and how it went."
+          },
+          {
+            "title": "Give kids a reason to practice",
+            "text": "Coins, cards, surprises, and games make practice something kids want to return to."
+          },
+          {
+            "title": "Practice at home without chaos",
+            "text": "Your child can practice when it fits, and you can follow along without hovering."
+          },
+          {
+            "title": "Less friction around homework time",
+            "text": "When practice feels more like play, it's easier to start and stick with it."
+          }
+        ]
+      },
+      "infoSections": [
+        {
+          "title": "What do you get after signing up?",
+          "intro": "After opening a parent account you can:",
+          "bullets": [
+            "Add a child to the system.",
+            "Get login details for your child.",
+            "View progress reports.",
+            "Check progress by subject and topic.",
+            "See strong topics and topics that need reinforcement.",
+            "Send a personal activity to your child.",
+            "Follow completion and results.",
+            "Let your child learn through rewards and games."
+          ]
+        },
+        {
+          "title": "Who is it for?",
+          "body": "Parents who want to understand where their child stands, help them move forward, and make home practice clearer and more engaging."
+        }
+      ],
+      "closing": {
+        "title": "Your child gets a learning experience. You get clarity and calm.",
+        "text": "Open a parent account, add a child, and start seeing learning in a more organized way.",
+        "primaryCta": {
+          "label": "Open parent account",
+          "href": "/parent/login"
+        }
+      }
+    },
+    "teachers": {
+      "pageTitle": "Private tutor portal · LEO KIDS",
+      "metaDescription": "Manage students, send focused practice, track progress, and arrive at the next lesson with a clearer picture.",
+      "badge": "Tutors · Tracking · Practice",
+      "installLabel": "Install the teacher app",
+      "hero": {
+        "title": "A smart workspace for private tutors",
+        "subtitle": "Manage students, send focused practice, track progress, and arrive at the next lesson with a clearer picture.",
+        "primaryCta": {
+          "label": "Teacher login / sign up",
+          "href": "/teacher/login"
+        },
+        "secondaryCta": {
+          "label": "What can you do in the system?",
+          "scrollTo": "benefits"
+        }
+      },
+      "benefits": {
+        "items": [
+          {
+            "title": "Organized student tracking",
+            "text": "Each student gets a clearer progress view by activity, subject, and topic."
+          },
+          {
+            "title": "Less guesswork before a lesson",
+            "text": "See where a student succeeded, struggled, and what to reinforce next."
+          },
+          {
+            "title": "Send personal activities",
+            "text": "Instead of generic homework, assign focused practice and track completion."
+          },
+          {
+            "title": "More value for parents",
+            "text": "Parents see work that is structured, measurable, and clear."
+          },
+          {
+            "title": "A tool between lessons",
+            "text": "Students can keep practicing after a session while you see what happened."
+          },
+          {
+            "title": "Built for one-to-one tutoring",
+            "text": "Designed for students, practice, tracking, and progress — without needing a school setup."
+          }
+        ]
+      },
+      "infoSections": [
+        {
+          "title": "What does a tutor get?",
+          "intro": "After registering you can:",
+          "bullets": [
+            "Enter the teacher area.",
+            "Manage students.",
+            "View student reports.",
+            "See progress and topics that need reinforcement.",
+            "Send personal activities.",
+            "Track completion and results.",
+            "Use the system as a lesson and home-practice aid."
+          ]
+        },
+        {
+          "title": "Why it works for private tutors",
+          "body": "It saves time, adds structure, and shows parents professional, clear work. Instead of arriving with only a feeling, you arrive with data."
+        }
+      ],
+      "closing": {
+        "title": "More structure. More tracking. More value per student.",
+        "text": "Leo Kids gives private tutors an easier way to support students, send practice, and track progress.",
+        "primaryCta": {
+          "label": "Open teacher account",
+          "href": "/teacher/login"
+        }
+      }
+    },
+    "schools": {
+      "pageTitle": "School portal · LEO KIDS",
+      "metaDescription": "Manage classes, teachers, and students — with school messaging, progress visibility, and focused practice in one place.",
+      "badge": "Schools · Classes · Progress",
+      "hero": {
+        "title": "A clear school workspace for managers and staff",
+        "subtitle": "Coordinate teachers and classes, send school messages, and follow student practice without juggling separate tools.",
+        "primaryCta": {
+          "label": "School staff login",
+          "href": "/school/staff/login"
+        },
+        "secondaryCta": {
+          "label": "Request school access",
+          "href": "/school/register"
+        }
+      },
+      "benefits": {
+        "items": [
+          {
+            "title": "Classes and teachers in one view",
+            "text": "See school classes, assigned teachers, and student enrollment without switching systems."
+          },
+          {
+            "title": "School messaging",
+            "text": "Send updates to parents and teachers with clear delivery and read tracking."
+          },
+          {
+            "title": "Student practice visibility",
+            "text": "Follow subject practice and activities so support stays targeted."
+          },
+          {
+            "title": "Staff access with codes",
+            "text": "School staff sign in with a staff code and PIN — built for shared school devices."
+          },
+          {
+            "title": "Aligned with classroom work",
+            "text": "Teachers keep their portal tools while the school layer stays coordinated."
+          },
+          {
+            "title": "Built for elementary schools",
+            "text": "Designed for primary grades — practice, reports, and communication in one product."
+          }
+        ]
+      },
+      "infoSections": [
+        {
+          "title": "What does a school get?",
+          "intro": "After approval you can:",
+          "bullets": [
+            "Sign in through the school staff portal.",
+            "Manage classes and teachers.",
+            "View enrolled students.",
+            "Send school messages to parents and teachers.",
+            "Follow practice and activity progress.",
+            "Keep school and teacher workflows aligned."
+          ]
+        },
+        {
+          "title": "Why schools use Leo Kids",
+          "body": "It connects practice, teacher tools, and school communication so managers see what is happening without replacing the teacher portal."
+        }
+      ],
+      "closing": {
+        "title": "One school layer. Clearer coordination.",
+        "text": "Request access or sign in as school staff to manage classes, messaging, and progress visibility.",
+        "primaryCta": {
+          "label": "School staff login",
+          "href": "/school/staff/login"
+        },
+        "secondaryCta": {
+          "label": "Request school access",
+          "href": "/school/register"
+        }
+      }
+    }
+  },
+  "seoPublicPaths": [
+    "/practice",
+    "/practice/math",
+    "/practice/reading",
+    "/practice/english",
+    "/practice/geometry",
+    "/practice/science",
+    "/practice/games",
+    "/practice/no-print",
+    "/practice/parent-reports",
+    "/practice/worksheets",
+    "/practice/worksheets/math-g1-addition-horizontal-regular",
+    "/practice/worksheets/math-g1-subtraction-horizontal-regular",
+    "/practice/worksheets/math-g1-word-problems-regular",
+    "/practice/worksheets/math-g2-addition-horizontal-regular",
+    "/practice/worksheets/math-g2-addition-vertical-regular",
+    "/practice/worksheets/math-g2-subtraction-horizontal-regular",
+    "/practice/worksheets/math-g2-multiplication-basic-regular",
+    "/practice/worksheets/math-g2-fractions-regular",
+    "/practice/worksheets/math-g3-division-basic-regular",
+    "/practice/worksheets/math-g3-division-remainder-regular",
+    "/practice/worksheets/math-g3-decimals-regular",
+    "/practice/worksheets/math-g3-order-of-operations-advanced",
+    "/practice/worksheets/math-g4-multiplication-long-advanced",
+    "/practice/worksheets/math-g4-division-long-regular",
+    "/practice/worksheets/math-g4-equations-regular",
+    "/practice/worksheets/math-g4-fractions-advanced",
+    "/practice/worksheets/math-g5-percentages-regular",
+    "/practice/worksheets/math-g5-word-problems-advanced",
+    "/practice/worksheets/math-g6-ratio-regular",
+    "/practice/worksheets/math-g3-multiplication-basic-regular",
+    "/practice/worksheets/geometry-g3-area-regular",
+    "/practice/worksheets/geometry-g4-perimeter-regular",
+    "/practice/worksheets/geometry-g5-angles-regular",
+    "/practice/worksheets/geometry-g5-quadrilaterals-regular",
+    "/practice/worksheets/geometry-g6-pythagoras-advanced",
+    "/practice/worksheets/english-g2-vocabulary-regular",
+    "/practice/worksheets/english-g3-grammar-regular",
+    "/practice/worksheets/english-g4-sentences-regular",
+    "/practice/worksheets/english-g5-sentences-advanced",
+    "/practice/worksheets/english-g6-grammar-advanced",
+    "/guides",
+    "/guides/math-practice-at-home",
+    "/guides/reading-practice-at-home",
+    "/guides/no-print-worksheets",
+    "/guides/learning-games-at-home",
+    "/guides/parent-progress-tracking",
+    "/guides/home-practice-routine",
+    "/guides/math-games-for-kids",
+    "/guides/reading-comprehension-at-home",
+    "/guides/english-vocabulary-practice",
+    "/guides/how-to-follow-child-progress"
+  ]
+}

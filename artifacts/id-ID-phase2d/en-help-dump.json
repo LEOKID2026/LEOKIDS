@@ -1,0 +1,2362 @@
+{
+  "parents": [
+    {
+      "slug": "welcome-and-overview",
+      "section": "parents",
+      "title": "Welcome to the parent guide",
+      "summary": "What Leo Kids is, what parents can do on the site, and how to get started.",
+      "keywords": [
+        "parents",
+        "start",
+        "overview"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "what-is-leo",
+          "title": "What is Leo Kids?"
+        },
+        {
+          "id": "parent-role",
+          "title": "The parent's role"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "what-is-leo",
+          "text": "What is Leo Kids?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Leo Kids is a learning space for elementary learners in grades 1–6, with practice in math, geometry, English, and science, plus games and progress reports for parents."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/welcome-and-overview/desktop/overview.png",
+          "alt": "Leo Kids home page with learning and game areas",
+          "caption": "Leo Kids home page with learning and game areas",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/welcome-and-overview/mobile/overview.png",
+            "tablet": "/help-center/screenshots/parents/welcome-and-overview/tablet/overview.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "parent-role",
+          "text": "The parent's role"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Create a parent account and sign in",
+            "Add children and manage login details",
+            "View reports and practice recommendations"
+          ]
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/help/parents/create-parent-account",
+              "label": "Create a parent account"
+            },
+            {
+              "href": "/help/parents/parent-dashboard-tour",
+              "label": "Parent dashboard tour"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "create-parent-account",
+      "section": "parents",
+      "title": "Create a parent account",
+      "summary": "How to sign up and enter the parent portal.",
+      "keywords": [
+        "sign up",
+        "login",
+        "parents"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "login-page",
+          "title": "Login page"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "login-page",
+          "text": "Login page"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Go to the parent login page and complete sign-up or sign-in with your email and password."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/create-parent-account/desktop/login.png",
+          "alt": "Parent login screen",
+          "caption": "Parent login screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/create-parent-account/mobile/login.png",
+            "tablet": "/help-center/screenshots/parents/create-parent-account/tablet/login.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Keep your login details in a safe place — you need them for every sign-in."
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/parent/login",
+              "label": "Go to parent login"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "parent-dashboard-tour",
+      "section": "parents",
+      "title": "Parent dashboard tour",
+      "summary": "Children list, adding a new child, and account limits.",
+      "keywords": [
+        "dashboard",
+        "children",
+        "parents"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "children-list",
+          "title": "Children list"
+        },
+        {
+          "id": "limits",
+          "title": "Account limits"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "children-list",
+          "text": "Children list"
+        },
+        {
+          "kind": "paragraph",
+          "text": "On the parent page you will see all children linked to the account, with name, grade, and management options."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/parent-dashboard-tour/desktop/dashboard.png",
+          "alt": "Parent page with children list",
+          "caption": "Parent page with children list",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/parent-dashboard-tour/mobile/dashboard.png",
+            "tablet": "/help-center/screenshots/parents/parent-dashboard-tour/tablet/dashboard.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "limits",
+          "text": "Account limits"
+        },
+        {
+          "kind": "paragraph",
+          "text": "By default, each parent account can include up to three children."
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "If you reach the limit, edit or remove an existing child before adding a new one."
+        }
+      ]
+    },
+    {
+      "slug": "add-students",
+      "section": "parents",
+      "title": "Add a child",
+      "summary": "Create a child profile, choose a grade, and save.",
+      "keywords": [
+        "child",
+        "grade",
+        "add"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "add-form",
+          "title": "Add form"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "add-form",
+          "text": "Add form"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Enter the child's name and choose a grade (1 through 6). After saving, login details for the child will appear."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/add-students/desktop/form.png",
+          "alt": "Add child form with grade selection",
+          "caption": "Add child form with grade selection",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/add-students/mobile/form.png",
+            "tablet": "/help-center/screenshots/parents/add-students/tablet/form.png"
+          }
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Grade 1 — grade_1",
+            "Grade 2 — grade_2",
+            "through Grade 6 — grade_6"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "student-pin-and-credentials",
+      "section": "parents",
+      "title": "PIN and login details for your child",
+      "summary": "What a PIN is, when it is shown once, and how to reset it.",
+      "keywords": [
+        "PIN",
+        "password",
+        "child"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "what-is-pin",
+          "title": "What is a PIN?"
+        },
+        {
+          "id": "reset",
+          "title": "Reset"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "what-is-pin",
+          "text": "What is a PIN?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your child signs in with a username and a 4-digit code. After creation or reset, the code is shown once — save it."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/student-pin-and-credentials/desktop/pin-display.png",
+          "alt": "Message showing a new PIN code",
+          "caption": "Message showing a new PIN code",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/student-pin-and-credentials/mobile/pin-display.png",
+            "tablet": "/help-center/screenshots/parents/student-pin-and-credentials/tablet/pin-display.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "reset",
+          "text": "Reset"
+        },
+        {
+          "kind": "paragraph",
+          "text": "On the parent page you can create a new login code for your child. The old code will stop working."
+        },
+        {
+          "kind": "callout",
+          "tone": "warning",
+          "text": "Do not share the code on social media or in public groups."
+        }
+      ]
+    },
+    {
+      "slug": "edit-or-delete-student",
+      "section": "parents",
+      "title": "Edit or delete a child",
+      "summary": "Change name or grade, and delete with confirmation.",
+      "keywords": [
+        "edit",
+        "delete",
+        "child"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "edit",
+          "title": "Edit"
+        },
+        {
+          "id": "delete",
+          "title": "Delete"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "edit",
+          "text": "Edit"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Click edit next to the child's name, update details, and save."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/edit-or-delete-student/desktop/edit.png",
+          "alt": "Editing a child's details",
+          "caption": "Editing a child's details",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/edit-or-delete-student/mobile/edit.png",
+            "tablet": "/help-center/screenshots/parents/edit-or-delete-student/tablet/edit.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "delete",
+          "text": "Delete"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Deletion requires typing the child's name to confirm — this cannot be undone."
+        },
+        {
+          "kind": "callout",
+          "tone": "warning",
+          "text": "Deleting a child removes their access and associated data from your account."
+        }
+      ]
+    },
+    {
+      "slug": "how-to-read-report",
+      "section": "parents",
+      "title": "How do I start reading the report?",
+      "summary": "A short introduction to the parent report and links to detailed guides.",
+      "keywords": [
+        "report",
+        "parents",
+        "reading"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "open-report",
+          "title": "Open a report"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "open-report",
+          "text": "Open a report"
+        },
+        {
+          "kind": "paragraph",
+          "text": "From the parent page, choose a child and click view report. You can switch between the standard and detailed report."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/how-to-read-report/desktop/report-link.png",
+          "alt": "Button to open a report from the parent page",
+          "caption": "Button to open a report from the parent page",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/how-to-read-report/mobile/report-link.png",
+            "tablet": "/help-center/screenshots/parents/how-to-read-report/tablet/report-link.png"
+          }
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/help/parent-report/report-overview",
+              "label": "Report overview"
+            },
+            {
+              "href": "/help/parent-report/summary-card",
+              "label": "Summary card"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "parent-copilot",
+      "section": "parents",
+      "title": "Ask about the report (Copilot)",
+      "summary": "How to ask questions about the report and what the system can answer.",
+      "keywords": [
+        "Copilot",
+        "questions",
+        "report"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "how-to-ask",
+          "title": "How to ask"
+        },
+        {
+          "id": "limits",
+          "title": "Limits"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "how-to-ask",
+          "text": "How to ask"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Inside the report, open \"Ask about the report\" and type a question in English about performance, topics, or recommendations."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/parent-copilot/desktop/copilot-panel.png",
+          "alt": "Ask-about-the-report panel",
+          "caption": "Ask-about-the-report panel",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/parent-copilot/mobile/copilot-panel.png",
+            "tablet": "/help-center/screenshots/parents/parent-copilot/tablet/copilot-panel.png"
+          }
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "limits",
+          "text": "Limits"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Answers are based on practice data on the site",
+            "They do not replace professional educational advice",
+            "Questions unrelated to the report may receive a general answer"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "monthly-rewards",
+      "section": "parents",
+      "title": "Monthly persistence reward",
+      "summary": "Persistence journey by subject and rewards for parents.",
+      "keywords": [
+        "reward",
+        "persistence",
+        "monthly"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "journey",
+          "title": "Persistence journey"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "journey",
+          "text": "Persistence journey"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Your child builds persistence through monthly practice. On the rewards page you can see progress by subject."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/monthly-rewards/desktop/rewards.png",
+          "alt": "Persistence rewards page",
+          "caption": "Persistence rewards page",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/monthly-rewards/mobile/rewards.png",
+            "tablet": "/help-center/screenshots/parents/monthly-rewards/tablet/rewards.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/parent/rewards",
+              "label": "Go to rewards page"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "install-as-app",
+      "section": "parents",
+      "title": "Install as an app",
+      "summary": "Add Leo Kids to your phone or tablet home screen.",
+      "keywords": [
+        "PWA",
+        "install",
+        "app"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "install",
+          "title": "Install"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "install",
+          "text": "Install"
+        },
+        {
+          "kind": "paragraph",
+          "text": "On the home page or in the browser you may see \"Install app\" — tap and confirm. Then you can open Leo Kids like an app."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/install-as-app/desktop/install-prompt.png",
+          "alt": "Install app prompt",
+          "caption": "Install app prompt",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/install-as-app/mobile/install-prompt.png",
+            "tablet": "/help-center/screenshots/parents/install-as-app/tablet/install-prompt.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "On iPhone: Share → Add to Home Screen."
+        }
+      ]
+    },
+    {
+      "slug": "mobile-and-offline",
+      "section": "parents",
+      "title": "Mobile and offline games",
+      "summary": "Using the site on a phone and playing without internet.",
+      "keywords": [
+        "mobile",
+        "offline"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "mobile",
+          "title": "Using mobile"
+        },
+        {
+          "id": "offline",
+          "title": "Offline"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "mobile",
+          "text": "Using mobile"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The site works on small screens. Student and parent login works from a phone too."
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "offline",
+          "text": "Offline"
+        },
+        {
+          "kind": "paragraph",
+          "text": "In the \"Offline\" area there are games that work on the same device without an internet connection."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parents/mobile-and-offline/desktop/offline-hub.png",
+          "alt": "Offline games page",
+          "caption": "Offline games page",
+          "sources": {
+            "mobile": "/help-center/screenshots/parents/mobile-and-offline/mobile/offline-hub.png",
+            "tablet": "/help-center/screenshots/parents/mobile-and-offline/tablet/offline-hub.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/offline",
+              "label": "Offline games"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "troubleshooting-login",
+      "section": "parents",
+      "title": "Login troubleshooting",
+      "summary": "Wrong PIN, locked account, and clearing browser cache.",
+      "keywords": [
+        "issue",
+        "login",
+        "PIN"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "common",
+          "title": "Common issues"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "common",
+          "text": "Common issues"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Wrong PIN — ask your parent for a new code",
+            "Username not recognized — check spelling",
+            "Page will not load — try refresh or clear browser cache"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "If the problem continues, contact us through the contact page."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/contact",
+              "label": "Contact us"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "privacy-and-data",
+      "section": "parents",
+      "title": "Privacy and data",
+      "summary": "What is collected during practice and how to reach us about privacy.",
+      "keywords": [
+        "privacy",
+        "data"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "data",
+          "title": "Practice data"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "data",
+          "text": "Practice data"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The system stores practice data to show progress and reports. Do not share children's login codes with others."
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "For privacy questions or requests, see the privacy policy or contact us."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/privacy",
+              "label": "Privacy policy"
+            },
+            {
+              "href": "/legal",
+              "label": "Terms, privacy, and accessibility"
+            },
+            {
+              "href": "/contact",
+              "label": "Contact us"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "students": [
+    {
+      "slug": "student-login",
+      "section": "students",
+      "title": "How do I sign in?",
+      "summary": "Sign in with your username and PIN.",
+      "keywords": [
+        "login",
+        "PIN"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "steps",
+          "title": "Steps"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "steps",
+          "text": "Steps"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            "Ask your parent for your username and code",
+            "Type them on the login page",
+            "Tap Sign in"
+          ]
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/student-login/desktop/login.png",
+          "alt": "Student login screen",
+          "caption": "Student login screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/student-login/mobile/login.png",
+            "tablet": "/help-center/screenshots/students/student-login/tablet/login.png"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "student-home-tour",
+      "section": "students",
+      "title": "My home page",
+      "summary": "What you see after signing in: subjects, coins, and avatar.",
+      "keywords": [
+        "home",
+        "student"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "home",
+          "title": "Home page"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "home",
+          "text": "Home page"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Here you will see your name, how many coins you have, and which subjects you can open."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/student-home-tour/desktop/home.png",
+          "alt": "Student home page with subject cards",
+          "caption": "Student home page with subject cards",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/student-home-tour/mobile/home.png",
+            "tablet": "/help-center/screenshots/students/student-home-tour/tablet/home.png"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "choose-subject-and-grade",
+      "section": "students",
+      "title": "Choose a subject and grade",
+      "summary": "How to enter practice in the subject you picked.",
+      "keywords": [
+        "subject",
+        "grade"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "learning-hub",
+          "title": "Learning hub"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "learning-hub",
+          "text": "Learning hub"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choose a subject from the list. Activities will match your grade."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/choose-subject-and-grade/desktop/subjects.png",
+          "alt": "Subject list in the learning hub",
+          "caption": "Subject list in the learning hub",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/choose-subject-and-grade/mobile/subjects.png",
+            "tablet": "/help-center/screenshots/students/choose-subject-and-grade/tablet/subjects.png"
+          }
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/learning",
+              "label": "Go to learning hub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "answering-questions",
+      "section": "students",
+      "title": "How do I answer questions?",
+      "summary": "Choosing, typing, and selecting answers.",
+      "keywords": [
+        "questions",
+        "answer"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "types",
+          "title": "Question types"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "types",
+          "text": "Question types"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Sometimes you choose an answer from a list",
+            "Sometimes you type a number or word",
+            "After your answer you will see if you were right"
+          ]
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/answering-questions/desktop/question.png",
+          "alt": "Practice question on screen",
+          "caption": "Practice question on screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/answering-questions/mobile/question.png",
+            "tablet": "/help-center/screenshots/students/answering-questions/tablet/question.png"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hints-and-explanations",
+      "section": "students",
+      "title": "Hints and explanations",
+      "summary": "What happens after a correct or incorrect answer.",
+      "keywords": [
+        "explanation",
+        "hint"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "after",
+          "title": "After the answer"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "after",
+          "text": "After the answer"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you made a mistake — read the explanation and try again. If you were right — move to the next question!"
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Do not rush — reading the explanation helps you understand."
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "daily-missions",
+      "section": "students",
+      "title": "Daily missions",
+      "summary": "Small tasks that help you move forward every day.",
+      "keywords": [
+        "daily",
+        "missions"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "missions",
+          "title": "Missions"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "missions",
+          "text": "Missions"
+        },
+        {
+          "kind": "paragraph",
+          "text": "On your home page you will see daily missions. When you finish them, you earn points and progress."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/daily-missions/desktop/missions.png",
+          "alt": "Daily missions panel",
+          "caption": "Daily missions panel",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/daily-missions/mobile/missions.png",
+            "tablet": "/help-center/screenshots/students/daily-missions/tablet/missions.png"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "monthly-persistence",
+      "section": "students",
+      "title": "Monthly persistence journey",
+      "summary": "Practice each month and build progress.",
+      "keywords": [
+        "persistence",
+        "month"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "persistence",
+          "title": "Persistence"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "persistence",
+          "text": "Persistence"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The more you practice in a month, the further your journey goes. It shows how much you kept going!"
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/monthly-persistence/desktop/persistence.png",
+          "alt": "Monthly persistence journey",
+          "caption": "Monthly persistence journey",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/monthly-persistence/mobile/persistence.png",
+            "tablet": "/help-center/screenshots/students/monthly-persistence/tablet/persistence.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "coins-and-arcade",
+      "section": "students",
+      "title": "Coins and arcade",
+      "summary": "How to earn coins and play online games.",
+      "keywords": [
+        "coins",
+        "arcade"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "coins",
+          "title": "Coins"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "coins",
+          "text": "Coins"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Practice and earn coins. In the arcade you can play board-style games with friends."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/coins-and-arcade/desktop/arcade.png",
+          "alt": "Arcade page",
+          "caption": "Arcade page",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/coins-and-arcade/mobile/arcade.png",
+            "tablet": "/help-center/screenshots/students/coins-and-arcade/tablet/arcade.png"
+          }
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/student/arcade",
+              "label": "Go to arcade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "avatar-and-profile",
+      "section": "students",
+      "title": "Change your avatar",
+      "summary": "How to choose a character or picture for your profile.",
+      "keywords": [
+        "avatar",
+        "profile"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "avatar",
+          "title": "Avatar"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "avatar",
+          "text": "Avatar"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tap your picture on the home page and choose a new avatar."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/avatar-and-profile/desktop/avatar.png",
+          "alt": "Choosing an avatar",
+          "caption": "Choosing an avatar",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/avatar-and-profile/mobile/avatar.png",
+            "tablet": "/help-center/screenshots/students/avatar-and-profile/tablet/avatar.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "offline-games",
+      "section": "students",
+      "title": "Offline games",
+      "summary": "Games without internet on the same device.",
+      "keywords": [
+        "offline",
+        "game"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "offline",
+          "title": "Offline"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "offline",
+          "text": "Offline"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tic-tac-toe and other games — no network needed."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/students/offline-games/desktop/offline.png",
+          "alt": "Offline games list",
+          "caption": "Offline games list",
+          "sources": {
+            "mobile": "/help-center/screenshots/students/offline-games/mobile/offline.png",
+            "tablet": "/help-center/screenshots/students/offline-games/tablet/offline.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/offline",
+              "label": "Offline games"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "tips-for-good-practice",
+      "section": "students",
+      "title": "Tips for good practice",
+      "summary": "Study time, breaks, and consistency.",
+      "keywords": [
+        "tips",
+        "practice"
+      ],
+      "audience": "student",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "tips",
+          "title": "Tips"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "tips",
+          "text": "Tips"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Practice a little every day",
+            "Take a break if you are tired",
+            "Read explanations when you do not understand"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Learning is more fun when you are not pressuring yourself!"
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    }
+  ],
+  "parent-report": [
+    {
+      "slug": "report-overview",
+      "section": "parent-report",
+      "title": "Parent report overview",
+      "summary": "Standard report vs detailed report — when to use each.",
+      "keywords": [
+        "report",
+        "overview"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "short",
+          "title": "Standard report"
+        },
+        {
+          "id": "detailed",
+          "title": "Detailed report"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "short",
+          "text": "Standard report"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Shows a quick picture: performance, trends, and main recommendations."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/report-overview/desktop/short-report.png",
+          "alt": "Standard parent report page",
+          "caption": "Standard parent report page",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/report-overview/mobile/short-report.png",
+            "tablet": "/help-center/screenshots/parent-report/report-overview/tablet/short-report.png"
+          }
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "detailed",
+          "text": "Detailed report"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Includes breakdown by subject, topics, parent letter, and focused recommendations."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/report-overview/desktop/detailed-report.png",
+          "alt": "Detailed report page",
+          "caption": "Detailed report page",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/report-overview/mobile/detailed-report.png",
+            "tablet": "/help-center/screenshots/parent-report/report-overview/tablet/detailed-report.png"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "summary-card",
+      "section": "parent-report",
+      "title": "Summary card",
+      "summary": "The top section of the report — overall picture.",
+      "keywords": [
+        "summary",
+        "card"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "card",
+          "title": "Summary card"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "card",
+          "text": "Summary card"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Briefly shows performance level, amount of practice, and the main message for what comes next."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/summary-card/desktop/summary.png",
+          "alt": "Summary card at the top of the report",
+          "caption": "Summary card at the top of the report",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/summary-card/mobile/summary.png",
+            "tablet": "/help-center/screenshots/parent-report/summary-card/tablet/summary.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "data-presence",
+      "section": "parent-report",
+      "title": "Enough data?",
+      "summary": "When a report has enough practice to show conclusions.",
+      "keywords": [
+        "data",
+        "presence"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "presence",
+          "title": "Data presence"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "presence",
+          "text": "Data presence"
+        },
+        {
+          "kind": "paragraph",
+          "text": "If your child practiced only a little, the report will say there is not enough information yet. That is normal — keep practicing."
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "The more practice there is, the more accurate the report insights become."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/data-presence/desktop/low-data.png",
+          "alt": "Low-data message in a report",
+          "caption": "Low-data message in a report",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/data-presence/mobile/low-data.png",
+            "tablet": "/help-center/screenshots/parent-report/data-presence/tablet/low-data.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "trends-and-confidence",
+      "section": "parent-report",
+      "title": "Trends and confidence level",
+      "summary": "How to read trend and confidence labels in the report.",
+      "keywords": [
+        "trend",
+        "confidence"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "trends",
+          "title": "Trends"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "trends",
+          "text": "Trends"
+        },
+        {
+          "kind": "paragraph",
+          "text": "A trend shows whether performance is improving, steady, or needs strengthening. Confidence level explains how reliable the data is."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/trends-and-confidence/desktop/trend.png",
+          "alt": "Trend row in a report",
+          "caption": "Trend row in a report",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/trends-and-confidence/mobile/trend.png",
+            "tablet": "/help-center/screenshots/parent-report/trends-and-confidence/tablet/trend.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "strengths-and-improvements",
+      "section": "parent-report",
+      "title": "Strengths and areas to improve",
+      "summary": "What your child does well and what to strengthen.",
+      "keywords": [
+        "strengths",
+        "improvement"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "blocks",
+          "title": "Report sections"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "blocks",
+          "text": "Report sections"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Strengths — topics where performance is strong",
+            "To improve — topics that need more practice"
+          ]
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/strengths-and-improvements/desktop/strengths.png",
+          "alt": "Strengths and improvements list",
+          "caption": "Strengths and improvements list",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/strengths-and-improvements/mobile/strengths.png",
+            "tablet": "/help-center/screenshots/parent-report/strengths-and-improvements/tablet/strengths.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "topics-and-buckets",
+      "section": "parent-report",
+      "title": "Topics by subject",
+      "summary": "Breakdown by practice topics in each subject.",
+      "keywords": [
+        "topics",
+        "subject"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "topics",
+          "title": "Topic tables"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "topics",
+          "text": "Topic tables"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Each subject shows specific topics — for example addition in math or vocabulary in English."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/topics-and-buckets/desktop/topics-table.png",
+          "alt": "Math topics table",
+          "caption": "Math topics table",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/topics-and-buckets/mobile/topics-table.png",
+            "tablet": "/help-center/screenshots/parent-report/topics-and-buckets/tablet/topics-table.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "subjects-overview",
+      "section": "parent-report",
+      "title": "Overview of the four subjects",
+      "summary": "A chart or table comparing subjects.",
+      "keywords": [
+        "subjects",
+        "chart"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "chart",
+          "title": "Subjects chart"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "chart",
+          "text": "Subjects chart"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lets you see at a glance where your child is strong and where there is room to grow across math, geometry, English, and science."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/subjects-overview/desktop/six-subjects.png",
+          "alt": "Subjects overview chart",
+          "caption": "Subjects overview chart",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/subjects-overview/mobile/six-subjects.png",
+            "tablet": "/help-center/screenshots/parent-report/subjects-overview/tablet/six-subjects.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "recommendations",
+      "section": "parent-report",
+      "title": "Practice recommendations",
+      "summary": "What the system recommends to practice next.",
+      "keywords": [
+        "recommendations"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "rec",
+          "title": "Recommendations"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "rec",
+          "text": "Recommendations"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Recommendations are based on repeating mistakes and topics not yet practiced enough."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/recommendations/desktop/recommendations.png",
+          "alt": "Recommendations area in a report",
+          "caption": "Recommendations area in a report",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/recommendations/mobile/recommendations.png",
+            "tablet": "/help-center/screenshots/parent-report/recommendations/tablet/recommendations.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "challenges-section",
+      "section": "parent-report",
+      "title": "Recommended challenges",
+      "summary": "Challenges chosen for deeper practice.",
+      "keywords": [
+        "challenges"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "challenges",
+          "title": "Challenges"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "challenges",
+          "text": "Challenges"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Challenges offer focused practice on topics that need strengthening."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/challenges-section/desktop/challenges.png",
+          "alt": "Challenges area in a report",
+          "caption": "Challenges area in a report",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/challenges-section/mobile/challenges.png",
+            "tablet": "/help-center/screenshots/parent-report/challenges-section/tablet/challenges.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "detailed-report",
+      "section": "parent-report",
+      "title": "Detailed report",
+      "summary": "Executive summary, parent letter, and breakdown by subject.",
+      "keywords": [
+        "detailed",
+        "letter"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "exec",
+          "title": "Executive summary"
+        },
+        {
+          "id": "letter",
+          "title": "Parent letter"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "exec",
+          "text": "Executive summary"
+        },
+        {
+          "kind": "paragraph",
+          "text": "General opening to the detailed report with the central message."
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "letter",
+          "text": "Parent letter"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Each subject includes a written explanation for parents — what your child knows and what to strengthen."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/detailed-report/desktop/letter.png",
+          "alt": "Parent letter for one subject",
+          "caption": "Parent letter for one subject",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/detailed-report/mobile/letter.png",
+            "tablet": "/help-center/screenshots/parent-report/detailed-report/tablet/letter.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    },
+    {
+      "slug": "printing-and-pdf",
+      "section": "parent-report",
+      "title": "Print and PDF export",
+      "summary": "How to save or print the report.",
+      "keywords": [
+        "print",
+        "PDF"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "export",
+          "title": "Export"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "export",
+          "text": "Export"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The report can be exported to PDF or printed — useful for a meeting with a teacher."
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/printing-and-pdf/desktop/pdf.png",
+          "alt": "Export PDF button",
+          "caption": "Export PDF button",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/printing-and-pdf/mobile/pdf.png",
+            "tablet": "/help-center/screenshots/parent-report/printing-and-pdf/tablet/pdf.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Before printing, check the preview to make sure everything fits on the page."
+        }
+      ]
+    },
+    {
+      "slug": "understanding-the-disclaimer",
+      "section": "parent-report",
+      "title": "Understanding the important notice",
+      "summary": "What the notice at the bottom of the report means — full text.",
+      "keywords": [
+        "disclaimer",
+        "legal"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "disclaimer",
+          "title": "Important notice"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "disclaimer",
+          "text": "Important notice"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Every report includes a notice explaining that the report is a support tool, not a professional diagnosis. Full text:"
+        },
+        {
+          "kind": "disclaimerQuote",
+          "title": "Important notice",
+          "paragraphs": [
+            "The report is based on practice data collected on Leo Kids.",
+            "The report is meant to help parents understand what their child practiced, where strengths appeared, and what to strengthen next.",
+            "The report is not a medical, psychological, or educational diagnosis and does not replace a teacher, counselor, assessor, or other professional. If you have ongoing concerns about learning difficulty or gaps, speak with a teacher or qualified professional."
+          ]
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/parent-report/understanding-the-disclaimer/desktop/disclaimer.png",
+          "alt": "Important notice box in a parent report",
+          "caption": "Important notice box in a parent report",
+          "sources": {
+            "mobile": "/help-center/screenshots/parent-report/understanding-the-disclaimer/mobile/disclaimer.png",
+            "tablet": "/help-center/screenshots/parent-report/understanding-the-disclaimer/tablet/disclaimer.png"
+          }
+        },
+        {
+          "kind": "video",
+          "src": null
+        }
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "slug": "math",
+      "section": "subjects",
+      "title": "Math guide",
+      "summary": "Math practice for grades 1–6 — what children learn and how to practice.",
+      "keywords": [
+        "Math",
+        "subject",
+        "practice"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "who",
+          "title": "Who is it for?"
+        },
+        {
+          "id": "topics",
+          "title": "What do we practice?"
+        },
+        {
+          "id": "practice",
+          "title": "What does practice look like?"
+        },
+        {
+          "id": "tips",
+          "title": "Tips"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "who",
+          "text": "Who is it for?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Practice is designed for children in grades 1 through 6, matched to grade level."
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "topics",
+          "text": "What do we practice?"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Addition, subtraction, multiplication, and division",
+            "Fractions and decimals (upper grades)",
+            "Word problems"
+          ]
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "practice",
+          "text": "What does practice look like?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choose a grade and level, answer questions, and get an explanation after each answer."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/math/desktop/question.png",
+          "alt": "Math practice screen",
+          "caption": "Math practice screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/math/mobile/question.png",
+            "tablet": "/help-center/screenshots/subjects/math/tablet/question.png"
+          }
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/math/desktop/explanation.png",
+          "alt": "Explanation for a Math question",
+          "caption": "Explanation for a Math question",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/math/mobile/explanation.png",
+            "tablet": "/help-center/screenshots/subjects/math/tablet/explanation.png"
+          }
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "tips",
+          "text": "Tips"
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Practice at a steady pace — a little each day beats a lot on one day."
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/learning/math-master",
+              "label": "Go to Math practice"
+            },
+            {
+              "href": "/learning",
+              "label": "Learning hub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "geometry",
+      "section": "subjects",
+      "title": "Geometry guide",
+      "summary": "Geometry practice for grades 1–6 — what children learn and how to practice.",
+      "keywords": [
+        "Geometry",
+        "subject",
+        "practice"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "who",
+          "title": "Who is it for?"
+        },
+        {
+          "id": "topics",
+          "title": "What do we practice?"
+        },
+        {
+          "id": "practice",
+          "title": "What does practice look like?"
+        },
+        {
+          "id": "tips",
+          "title": "Tips"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "who",
+          "text": "Who is it for?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Practice is designed for children in grades 1 through 6, matched to grade level."
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "topics",
+          "text": "What do we practice?"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Area and perimeter",
+            "Angles and shapes",
+            "Pythagoras (advanced grades)"
+          ]
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "practice",
+          "text": "What does practice look like?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choose a grade and level, answer questions, and get an explanation after each answer."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/geometry/desktop/question.png",
+          "alt": "Geometry practice screen",
+          "caption": "Geometry practice screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/geometry/mobile/question.png",
+            "tablet": "/help-center/screenshots/subjects/geometry/tablet/question.png"
+          }
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/geometry/desktop/explanation.png",
+          "alt": "Explanation for a Geometry question",
+          "caption": "Explanation for a Geometry question",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/geometry/mobile/explanation.png",
+            "tablet": "/help-center/screenshots/subjects/geometry/tablet/explanation.png"
+          }
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "tips",
+          "text": "Tips"
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Practice at a steady pace — a little each day beats a lot on one day."
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/learning/geometry-master",
+              "label": "Go to Geometry practice"
+            },
+            {
+              "href": "/learning",
+              "label": "Learning hub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "english",
+      "section": "subjects",
+      "title": "English guide",
+      "summary": "English practice for grades 1–6 — what children learn and how to practice.",
+      "keywords": [
+        "English",
+        "subject",
+        "practice"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "who",
+          "title": "Who is it for?"
+        },
+        {
+          "id": "topics",
+          "title": "What do we practice?"
+        },
+        {
+          "id": "practice",
+          "title": "What does practice look like?"
+        },
+        {
+          "id": "tips",
+          "title": "Tips"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "who",
+          "text": "Who is it for?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Practice is designed for children in grades 1 through 6, matched to grade level."
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "topics",
+          "text": "What do we practice?"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "Vocabulary",
+            "Grammar and meaning",
+            "Building sentences"
+          ]
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "practice",
+          "text": "What does practice look like?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choose a grade and level, answer questions, and get an explanation after each answer."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/english/desktop/question.png",
+          "alt": "English practice screen",
+          "caption": "English practice screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/english/mobile/question.png",
+            "tablet": "/help-center/screenshots/subjects/english/tablet/question.png"
+          }
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/english/desktop/explanation.png",
+          "alt": "Explanation for a English question",
+          "caption": "Explanation for a English question",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/english/mobile/explanation.png",
+            "tablet": "/help-center/screenshots/subjects/english/tablet/explanation.png"
+          }
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "tips",
+          "text": "Tips"
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Practice at a steady pace — a little each day beats a lot on one day."
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/learning/english-master",
+              "label": "Go to English practice"
+            },
+            {
+              "href": "/learning",
+              "label": "Learning hub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "science",
+      "section": "subjects",
+      "title": "Science guide",
+      "summary": "Science practice for grades 1–6 — what children learn and how to practice.",
+      "keywords": [
+        "Science",
+        "subject",
+        "practice"
+      ],
+      "audience": "parent",
+      "updatedAt": "2026-05-23",
+      "toc": [
+        {
+          "id": "who",
+          "title": "Who is it for?"
+        },
+        {
+          "id": "topics",
+          "title": "What do we practice?"
+        },
+        {
+          "id": "practice",
+          "title": "What does practice look like?"
+        },
+        {
+          "id": "tips",
+          "title": "Tips"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "who",
+          "text": "Who is it for?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Practice is designed for children in grades 1 through 6, matched to grade level."
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "topics",
+          "text": "What do we practice?"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            "The human body and animals",
+            "Plants and materials",
+            "Weather and forces"
+          ]
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "practice",
+          "text": "What does practice look like?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Choose a grade and level, answer questions, and get an explanation after each answer."
+        },
+        {
+          "kind": "video",
+          "src": null
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/science/desktop/question.png",
+          "alt": "Science practice screen",
+          "caption": "Science practice screen",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/science/mobile/question.png",
+            "tablet": "/help-center/screenshots/subjects/science/tablet/question.png"
+          }
+        },
+        {
+          "kind": "screenshot",
+          "path": "/help-center/screenshots/subjects/science/desktop/explanation.png",
+          "alt": "Explanation for a Science question",
+          "caption": "Explanation for a Science question",
+          "sources": {
+            "mobile": "/help-center/screenshots/subjects/science/mobile/explanation.png",
+            "tablet": "/help-center/screenshots/subjects/science/tablet/explanation.png"
+          }
+        },
+        {
+          "kind": "heading",
+          "level": 2,
+          "id": "tips",
+          "text": "Tips"
+        },
+        {
+          "kind": "callout",
+          "tone": "tip",
+          "text": "Practice at a steady pace — a little each day beats a lot on one day."
+        },
+        {
+          "kind": "relatedLinks",
+          "items": [
+            {
+              "href": "/learning/science-master",
+              "label": "Go to Science practice"
+            },
+            {
+              "href": "/learning",
+              "label": "Learning hub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

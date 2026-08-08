@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "games": "Games",
+    "friends": "Friends",
+    "shop": "Shop",
+    "profile": "Profile"
+  }
+}

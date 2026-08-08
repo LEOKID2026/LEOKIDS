@@ -1,0 +1,96 @@
+{
+  "seoKey": "practice-games",
+  "slug": "games",
+  "badge": "Gim belajar",
+  "h1": "Gim belajar untuk anak menurut mata pelajaran dan tingkat",
+  "intro": "Gim belajar Leo Kids menggabungkan tugas di matematika, Bahasa Inggris, IPA, dan pemahaman bacaan dalam aktivitas yang menyenangkan. Setiap gim punya tujuan jelas, pertanyaan, dan tantangan yang disesuaikan dengan tingkat yang dipilih.",
+  "sections": [
+    {
+      "title": "Apa yang dapat dilatih anak dalam gim?",
+      "bullets": [
+        "Operasi dan angka.",
+        "Membaca dan kosakata.",
+        "Bahasa Inggris.",
+        "IPA dan lingkungan.",
+        "Berpikir dan memori.",
+        "Pemecahan masalah.",
+        "Ketepatan dan tempo.",
+        "Keputusan berdasarkan informasi."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memilih gim?",
+      "paragraphs": [
+        "Pilih menurut mata pelajaran dan topik yang ingin dilatih anak Anda. Mulai di tingkat di mana mereka memahami tugas dan dapat maju tanpa menebak sebagian besar jawaban."
+      ]
+    },
+    {
+      "title": "Apa setelah gim?",
+      "paragraphs": [
+        "Tanyakan apa tantangan utamanya, pertanyaan mana yang sulit, dan strategi apa yang membantu mereka berhasil."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Gim dengan instruksi singkat dan tugas untuk identifikasi, mencocokkan, perhitungan, membaca, dan kosakata pada tingkat pelajar muda."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Gim yang menggabungkan perkalian, pembagian, pemahaman teks, kosakata, IPA, penyelesaian tugas, dan progres multi-langkah."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Gim dengan tantangan lebih sulit, pemecahan masalah, ketepatan, pengambilan keputusan, dan pengetahuan berbasis mata pelajaran."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    },
+    {
+      "href": "/practice/english",
+      "label": "Latihan Bahasa Inggris"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "learning-games-at-home",
+    "math-games-for-kids",
+    "home-practice-routine"
+  ],
+  "faq": [
+    {
+      "q": "Apakah gim menyertakan pertanyaan edukatif?",
+      "a": "Ya. Gim menggabungkan pertanyaan dan tugas sebagai bagian dari aktivitas."
+    },
+    {
+      "q": "Apakah ada tingkat yang berbeda?",
+      "a": "Ya. Gim menyesuaikan jenis tugas dan tingkat tantangan untuk kelompok usia dan tingkat yang berbeda."
+    },
+    {
+      "q": "Bisakah anak bermain sebagai tamu?",
+      "a": "Opsi akses bergantung pada pengaturan sistem dan gim yang dipilih."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih gim dan mulai tantangan belajar",
+    "body": "Sesuaikan gim dengan mata pelajaran dan tingkat, lalu biarkan anak Anda maju melalui tugas dan pertanyaan.",
+    "primary": {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    },
+    "secondary": {
+      "href": "/student/login",
+      "label": "Masuk murid"
+    }
+  }
+}

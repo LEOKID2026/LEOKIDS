@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "back": "Kembali",
+    "coin_balance": "Saldo koin",
+    "how_to_play": "Cara bermain",
+    "on_your_turn_the_dice_are_rolled_ov2_also_auto_opens_a_roll_animation_th": "Di giliranmu dadu dilempar (OV2 juga otomatis membuka animasi lempar), lalu pilih buah mana yang digeser.",
+    "only_a_6_gets_a_piece_out_of_the_yard_onto_the_path": "Hanya angka 6 yang mengeluarkan buah dari kandang ke jalur.",
+    "a_6_a_capture_or_entering_home_from_the_path_per_engine_rules_grants_an_": "Angka 6, tangkapan, atau masuk rumah dari jalur — sesuai aturan mesin — memberi giliran ekstra.",
+    "a_piece_that_reaches_home_finishes_four_pieces_home_wins": "Bidak yang sampai rumah selesai; empat bidak di rumah menang.",
+    "waiting_for_players": "Menunggu pemain…"
+  }
+}

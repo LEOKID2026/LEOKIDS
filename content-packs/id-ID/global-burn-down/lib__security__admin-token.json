@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "missing_admin_token_header": "Header token admin tidak ada",
+    "admin_token_does_not_match_server_configuration": "Token admin tidak cocok dengan konfigurasi server"
+  }
+}

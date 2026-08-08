@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "level": "Tingkat",
+    "whole_class": "Seluruh rombel",
+    "selected_students": "Murid terpilih",
+    "discussion_with_response_students_submit_an_answer": "Diskusi dengan tanggapan (murid mengirimkan jawaban)",
+    "explanation_only_no_response_required": "Hanya penjelasan — tidak memerlukan tanggapan"
+  }
+}

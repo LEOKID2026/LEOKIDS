@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "cannot_cancel_the_queue_in_the_current_state": "Tidak bisa membatalkan antrean di keadaan saat ini"
+  }
+}

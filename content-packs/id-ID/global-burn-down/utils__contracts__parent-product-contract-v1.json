@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "there_is_not_yet_enough_data_to_set_a_subject_level_picture": "Data belum cukup untuk membentuk gambaran pada tingkat mata pelajaran.",
+    "start_short_consistent_practice_to_build_a_measurement_baseline": "Mulai latihan singkat dan konsisten untuk membangun garis dasar pengukuran.",
+    "current_data_volume_is_low_so_there_is_no_basis_for_a_clear_direction": "Volume data saat ini rendah, sehingga belum ada dasar untuk arah yang jelas.",
+    "pick_one_topic_and_practice_10_15_minutes_each_session": "Pilih satu topik dan latih selama 10–15 menit setiap sesi.",
+    "do_not_change_difficulty_based_on_sparse_data": "Jangan mengubah tingkat kesulitan berdasarkan data yang minim.",
+    "how_much_to_trust_this_not_high_yet_at_this_stage": "Seberapa bisa dipercaya: belum tinggi pada tahap ini.",
+    "existing_data_is_still_partial": "Data yang ada masih sebagian.",
+    "continue_basic_data_collection": "Lanjutkan pengumpulan data dasar.",
+    "there_is_not_yet_enough_data_to_define_a_clear_direction": "Data belum cukup untuk menentukan arah yang jelas.",
+    "short_focused_practice_on_one_topic": "Latihan singkat dan terfokus pada satu topik.",
+    "do_not_draw_strong_conclusions_from_a_small_number_of_questions": "Jangan menarik kesimpulan kuat dari sejumlah kecil soal.",
+    "how_much_to_trust_this_not_high_yet": "Seberapa bisa dipercaya: belum tinggi.",
+    "data_is_missing_or_partial": "Data tidak lengkap atau sebagian."
+  }
+}

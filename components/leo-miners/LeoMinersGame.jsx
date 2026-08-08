@@ -636,10 +636,14 @@ export default function LeoMinersGame({
             : gamePackCopy("components__leo-miners__LeoMinersGame", "points_redeemed_successfully")
         );
       } else {
-        setGiftToastWithTTL(resp?.message || resp?.error || "Can't redeem right now.");
+        setGiftToastWithTTL(
+          gamePackCopy("pages__api__student__leo-miners__state", "server_error")
+        );
       }
     } catch {
-      setGiftToastWithTTL("Network error - try again.");
+      setGiftToastWithTTL(
+        gamePackCopy("lib__leo-miners__leo-miners-economy.client", "network_error_try_refreshing_the_page")
+      );
     } finally {
       setClaiming(false);
     }

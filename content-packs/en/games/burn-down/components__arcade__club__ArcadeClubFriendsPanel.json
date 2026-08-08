@@ -20,6 +20,10 @@
     "decline": "Decline",
     "cancel": "Cancel",
     "delete": "Delete",
-    "invite": "Invite"
+    "invite": "Invite",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "online": "● Online",
+    "offline": "○ Offline"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "games": {
+      "files": 149,
+      "leaves": 2736
+    },
+    "rewards": {
+      "files": 2,
+      "leaves": 1014
+    },
+    "demo": {
+      "files": 1,
+      "leaves": 90
+    }
+  },
+  "mapKeys": 1570,
+  "translated": 3175,
+  "preserved": 583,
+  "identicalRetained": 80,
+  "missingTranslations": 0,
+  "placeholderMismatches": 0,
+  "missingSample": [],
+  "phSample": []
+}

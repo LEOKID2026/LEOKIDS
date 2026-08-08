@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "brick_breaker": "Pemecah Bata",
+    "prototype_move_paddle_break_bricks": "Prototipe · gerakkan paddle · hancurkan bata",
+    "drag_move_below_don_t_miss_the_ball": "Seret/gerak di bawah · jangan lewatkan bola",
+    "bx_s_ballx_ball_r": "bx &&\r\n          s.ballX - BALL_R",
+    "by_s_bally_ball_r": "by &&\r\n          s.ballY - BALL_R",
+    "all_bricks_cleared": "Semua bata dibersihkan! 🎉",
+    "tap_to_play_again": "Ketuk untuk main lagi",
+    "ball_dropped": "Bola jatuh!"
+  }
+}

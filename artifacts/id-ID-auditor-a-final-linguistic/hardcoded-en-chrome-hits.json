@@ -1,0 +1,349 @@
+{
+  "total": 56,
+  "byArea": {
+    "pages/teacher": 12,
+    "pages/school": 14,
+    "pages/student": 9,
+    "components/arcade": 15,
+    "components/parent": 5,
+    "components/student": 1
+  },
+  "sample": [
+    {
+      "file": "pages\\teacher\\class\\[classId]\\discussion\\new.js",
+      "line": 46,
+      "kind": "string",
+      "text": "Could not load class"
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId]\\discussion\\new.js",
+      "line": 54,
+      "kind": "string",
+      "text": "This class grade level is invalid. Contact your school admin."
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId]\\worksheets\\new.js",
+      "line": 39,
+      "kind": "string",
+      "text": "Not signed in"
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId]\\worksheets\\[worksheetId]\\grade\\[studentId].js",
+      "line": 83,
+      "kind": "string",
+      "text": "Saved and marked as reviewed"
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId]\\worksheets\\[worksheetId]\\index.js",
+      "line": 67,
+      "kind": "string",
+      "text": "Not signed in"
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId].js",
+      "line": 286,
+      "kind": "string",
+      "text": "No problematic topics found in this period."
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId].js",
+      "line": 368,
+      "kind": "string",
+      "text": "Not enough students with data to form groups."
+    },
+    {
+      "file": "pages\\teacher\\class\\[classId].js",
+      "line": 369,
+      "kind": "string",
+      "text": "Not enough data to form groups."
+    },
+    {
+      "file": "pages\\teacher\\worksheets\\new.js",
+      "line": 38,
+      "kind": "string",
+      "text": "Not signed in"
+    },
+    {
+      "file": "pages\\teacher\\worksheets\\new.js",
+      "line": 82,
+      "kind": "string",
+      "text": "Please select at least one student"
+    },
+    {
+      "file": "pages\\teacher\\worksheets\\[worksheetId]\\grade\\[studentId].js",
+      "line": 81,
+      "kind": "string",
+      "text": "Saved and marked as reviewed"
+    },
+    {
+      "file": "pages\\teacher\\worksheets\\[worksheetId]\\index.js",
+      "line": 66,
+      "kind": "string",
+      "text": "Not signed in"
+    },
+    {
+      "file": "pages\\school\\activities\\[activityId]\\monitor.js",
+      "line": 45,
+      "kind": "string",
+      "text": "Failed to load"
+    },
+    {
+      "file": "pages\\school\\classes\\index.js",
+      "line": 433,
+      "kind": "string",
+      "text": "Error loading report"
+    },
+    {
+      "file": "pages\\school\\classes\\index.js",
+      "line": 452,
+      "kind": "string",
+      "text": "Error loading report"
+    },
+    {
+      "file": "pages\\school\\classes\\index.js",
+      "line": 478,
+      "kind": "string",
+      "text": "Error loading report"
+    },
+    {
+      "file": "pages\\school\\classes\\index.js",
+      "line": 568,
+      "kind": "string",
+      "text": "Error loading report"
+    },
+    {
+      "file": "pages\\school\\messages.js",
+      "line": 105,
+      "kind": "string",
+      "text": "Error loading messages"
+    },
+    {
+      "file": "pages\\school\\messages.js",
+      "line": 110,
+      "kind": "string",
+      "text": "Error loading messages"
+    },
+    {
+      "file": "pages\\school\\operators\\[operatorId].js",
+      "line": 63,
+      "kind": "string",
+      "text": "Failed to update permissions"
+    },
+    {
+      "file": "pages\\school\\students\\index.js",
+      "line": 148,
+      "kind": "string",
+      "text": "Error loading data"
+    },
+    {
+      "file": "pages\\school\\students\\index.js",
+      "line": 171,
+      "kind": "string",
+      "text": "Error loading data"
+    },
+    {
+      "file": "pages\\school\\students\\index.js",
+      "line": 227,
+      "kind": "string",
+      "text": "Error loading children"
+    },
+    {
+      "file": "pages\\school\\students\\index.js",
+      "line": 250,
+      "kind": "string",
+      "text": "Error loading children"
+    },
+    {
+      "file": "pages\\school\\students\\index.js",
+      "line": 316,
+      "kind": "string",
+      "text": "Error loading report"
+    },
+    {
+      "file": "pages\\school\\teachers\\[teacherId].js",
+      "line": 73,
+      "kind": "string",
+      "text": "Error loading portal"
+    },
+    {
+      "file": "pages\\student\\arcade.js",
+      "line": 192,
+      "kind": "string",
+      "text": "Pick an available game"
+    },
+    {
+      "file": "pages\\student\\arcade.js",
+      "line": 499,
+      "kind": "string",
+      "text": "Game disabled on server"
+    },
+    {
+      "file": "pages\\student\\arcade.js",
+      "line": 671,
+      "kind": "string",
+      "text": "Not enough coins"
+    },
+    {
+      "file": "pages\\student\\arcade.js",
+      "line": 704,
+      "kind": "string",
+      "text": "Waiting for another player"
+    },
+    {
+      "file": "pages\\student\\arcade.js",
+      "line": 704,
+      "kind": "string",
+      "text": "Game in progress"
+    },
+    {
+      "file": "pages\\student\\pwa-debug.js",
+      "line": 344,
+      "kind": "jsx",
+      "text": "Loading..."
+    },
+    {
+      "file": "pages\\student\\pwa-debug.js",
+      "line": 496,
+      "kind": "jsx",
+      "text": "NONE - shared chunks missing!"
+    },
+    {
+      "file": "pages\\student\\pwa-debug.js",
+      "line": 513,
+      "kind": "jsx",
+      "text": "NONE - page chunks missing!"
+    },
+    {
+      "file": "pages\\student\\pwa-debug.js",
+      "line": 551,
+      "kind": "jsx",
+      "text": "No saved errors"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 47,
+      "kind": "string",
+      "text": "Could not load the room"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 206,
+      "kind": "string",
+      "text": "Rematch request failed"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 218,
+      "kind": "string",
+      "text": "Could not cancel rematch"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 231,
+      "kind": "string",
+      "text": "Could not start the next game"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 236,
+      "kind": "string",
+      "text": "Could not start the next game."
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 273,
+      "kind": "string",
+      "text": "Game in progress"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 275,
+      "kind": "string",
+      "text": "Waiting for players"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 276,
+      "kind": "string",
+      "text": "Waiting for all players to stake"
+    },
+    {
+      "file": "components\\arcade\\bingo\\ArcadeBingoScreen.js",
+      "line": 277,
+      "kind": "string",
+      "text": "Waiting for the host to start Bingo"
+    },
+    {
+      "file": "components\\arcade\\bingo\\Ov2BingoFinishModal.js",
+      "line": 70,
+      "kind": "string",
+      "text": "The game has ended"
+    },
+    {
+      "file": "components\\arcade\\bingo\\Ov2BingoFinishModal.js",
+      "line": 83,
+      "kind": "string",
+      "text": "The game has ended"
+    },
+    {
+      "file": "components\\arcade\\bingo\\Ov2BingoFinishModal.js",
+      "line": 193,
+      "kind": "string",
+      "text": "Only the host can start the next game"
+    },
+    {
+      "file": "components\\arcade\\checkers\\CheckersScreen.js",
+      "line": 291,
+      "kind": "string",
+      "text": "Wait for your turn"
+    },
+    {
+      "file": "components\\arcade\\chess\\ChessScreen.js",
+      "line": 306,
+      "kind": "string",
+      "text": "Wait for your turn"
+    },
+    {
+      "file": "components\\arcade\\dominoes\\DominoesScreen.js",
+      "line": 338,
+      "kind": "string",
+      "text": "Wait for your turn"
+    },
+    {
+      "file": "components\\parent\\AssignActivityModal.js",
+      "line": 109,
+      "kind": "string",
+      "text": "Enter the number of questions"
+    },
+    {
+      "file": "components\\parent\\AssignActivityModal.js",
+      "line": 143,
+      "kind": "string",
+      "text": "Enter the number of questions"
+    },
+    {
+      "file": "components\\parent\\AssignActivityModal.js",
+      "line": 179,
+      "kind": "string",
+      "text": "Cannot send an activity to this child"
+    },
+    {
+      "file": "components\\parent\\ParentSentActivitiesPanel.jsx",
+      "line": 113,
+      "kind": "string",
+      "text": "Could not load results"
+    },
+    {
+      "file": "components\\parent\\ParentTeacherCodeReport.jsx",
+      "line": 287,
+      "kind": "string",
+      "text": "No practice in the recent period."
+    },
+    {
+      "file": "components\\student\\StudentDailyMissionsPanel.js",
+      "line": 87,
+      "kind": "string",
+      "text": "Great job! You got the reward"
+    }
+  ]
+}

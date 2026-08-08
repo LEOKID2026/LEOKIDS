@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "player_2": "Pemain 2",
+    "back": "Kembali",
+    "local_badge": "Lokal",
+    "title": "🪨📄✂️ Batu · Kertas · Gunting",
+    "round_subtitle": "Ronde {round} • Siapa cepat {firstTo}",
+    "player_1_label": "Pemain 1",
+    "round_label": "Ronde",
+    "first_to_option": "Pertama ke {target}",
+    "vs_bot": "Lawan Bot",
+    "reset": "Atur ulang",
+    "match_winner": "{winner} memenangkan pertandingan!",
+    "results_in": "Hasil dalam {timer}...",
+    "tie_result": "Seri!",
+    "p1_won_result": "Pemain 1 menang!",
+    "bot_won_result": "Bot menang!",
+    "p2_won_result": "Pemain 2 menang!",
+    "player_1_choose": "Pemain 1: pilih langkah",
+    "leo_bot_label": "Leo Bot",
+    "your_choice": "Pilihanmu:",
+    "player_1_chose": "Pemain 1 memilih:",
+    "player_2_turn": "Pemain 2: giliranmu (jangan mengintip!)",
+    "recent": "Terbaru",
+    "tie_short": "Seri",
+    "p1_won_short": "Pemain 1 menang",
+    "bot_won_short": "Bot menang",
+    "p2_won_short": "Pemain 2 menang",
+    "rock": "Batu",
+    "paper": "Kertas",
+    "scissors": "Gunting"
+  }
+}

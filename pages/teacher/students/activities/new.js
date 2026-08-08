@@ -5,7 +5,7 @@ import Layout from "../../../../components/Layout";
 import TeacherPortalShell from "../../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../../lib/learning-supabase/client";
 import { resolveTeacherPortalAuth } from "../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch, subjectLabel, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch, subjectLabel, activitySubjectsForGrade } from "../../../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../../../lib/classroom-activities/generate-activity-questions-client.js";
 import { activityModeLabelHe } from "../../../../lib/classroom-activities/classroom-activities-labels.client.js";
@@ -181,7 +181,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
       });
       setPreview(qs || []);
     } catch (e) {
-      setError(e?.message || actCopy("could_not_generate"));
+      setError(actCopy("could_not_generate"));
     } finally {
       setBusy(false);
     }
@@ -216,7 +216,7 @@ export default function TeacherPrivateStudentsNewActivityPage() {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || actCopy("creation_failed"));
+        setError(apiErrorMessageHe(json?.error, actCopy("creation_failed")));
         return;
       }
 

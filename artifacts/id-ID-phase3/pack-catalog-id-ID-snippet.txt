@@ -1,0 +1,62 @@
+
+// --- id-ID public-seo only (Phase 3) ---
+import PublicSeoGuidesEnglishVocabularyPracticeJson_idID from "../../content-packs/id-ID/public-seo/guides/english-vocabulary-practice.json" with { type: "json" };
+import PublicSeoGuidesHomePracticeRoutineJson_idID from "../../content-packs/id-ID/public-seo/guides/home-practice-routine.json" with { type: "json" };
+import PublicSeoGuidesHowToFollowChildProgressJson_idID from "../../content-packs/id-ID/public-seo/guides/how-to-follow-child-progress.json" with { type: "json" };
+import PublicSeoGuidesHubCardsJson_idID from "../../content-packs/id-ID/public-seo/guides/hub-cards.json" with { type: "json" };
+import PublicSeoGuidesHubJson_idID from "../../content-packs/id-ID/public-seo/guides/hub.json" with { type: "json" };
+import PublicSeoGuidesLearningGamesAtHomeJson_idID from "../../content-packs/id-ID/public-seo/guides/learning-games-at-home.json" with { type: "json" };
+import PublicSeoGuidesMathGamesForKidsJson_idID from "../../content-packs/id-ID/public-seo/guides/math-games-for-kids.json" with { type: "json" };
+import PublicSeoGuidesMathPracticeAtHomeJson_idID from "../../content-packs/id-ID/public-seo/guides/math-practice-at-home.json" with { type: "json" };
+import PublicSeoGuidesNoPrintWorksheetsJson_idID from "../../content-packs/id-ID/public-seo/guides/no-print-worksheets.json" with { type: "json" };
+import PublicSeoGuidesParentProgressTrackingJson_idID from "../../content-packs/id-ID/public-seo/guides/parent-progress-tracking.json" with { type: "json" };
+import PublicSeoGuidesReadingComprehensionAtHomeJson_idID from "../../content-packs/id-ID/public-seo/guides/reading-comprehension-at-home.json" with { type: "json" };
+import PublicSeoGuidesReadingPracticeAtHomeJson_idID from "../../content-packs/id-ID/public-seo/guides/reading-practice-at-home.json" with { type: "json" };
+import PublicSeoLegalUnifiedJson_idID from "../../content-packs/id-ID/public-seo/legal/unified.json" with { type: "json" };
+import PublicSeoMarketingKidsJson_idID from "../../content-packs/id-ID/public-seo/marketing/kids.json" with { type: "json" };
+import PublicSeoMarketingParentsJson_idID from "../../content-packs/id-ID/public-seo/marketing/parents.json" with { type: "json" };
+import PublicSeoMarketingSchoolsJson_idID from "../../content-packs/id-ID/public-seo/marketing/schools.json" with { type: "json" };
+import PublicSeoMarketingTeachersJson_idID from "../../content-packs/id-ID/public-seo/marketing/teachers.json" with { type: "json" };
+import PublicSeoPracticeEnglishJson_idID from "../../content-packs/id-ID/public-seo/practice/english.json" with { type: "json" };
+import PublicSeoPracticeGamesJson_idID from "../../content-packs/id-ID/public-seo/practice/games.json" with { type: "json" };
+import PublicSeoPracticeGeometryJson_idID from "../../content-packs/id-ID/public-seo/practice/geometry.json" with { type: "json" };
+import PublicSeoPracticeHubCardsJson_idID from "../../content-packs/id-ID/public-seo/practice/hub-cards.json" with { type: "json" };
+import PublicSeoPracticeHubJson_idID from "../../content-packs/id-ID/public-seo/practice/hub.json" with { type: "json" };
+import PublicSeoPracticeMathJson_idID from "../../content-packs/id-ID/public-seo/practice/math.json" with { type: "json" };
+import PublicSeoPracticeNoPrintJson_idID from "../../content-packs/id-ID/public-seo/practice/no-print.json" with { type: "json" };
+import PublicSeoPracticeParentReportsJson_idID from "../../content-packs/id-ID/public-seo/practice/parent-reports.json" with { type: "json" };
+import PublicSeoPracticeReadingJson_idID from "../../content-packs/id-ID/public-seo/practice/reading.json" with { type: "json" };
+import PublicSeoPracticeScienceJson_idID from "../../content-packs/id-ID/public-seo/practice/science.json" with { type: "json" };
+import PublicSeoPracticeWorksheetsJson_idID from "../../content-packs/id-ID/public-seo/practice/worksheets.json" with { type: "json" };
+
+
+  "id-ID": Object.freeze({
+    "public-seo/guides/english-vocabulary-practice.json": PublicSeoGuidesEnglishVocabularyPracticeJson_idID,
+    "public-seo/guides/home-practice-routine.json": PublicSeoGuidesHomePracticeRoutineJson_idID,
+    "public-seo/guides/how-to-follow-child-progress.json": PublicSeoGuidesHowToFollowChildProgressJson_idID,
+    "public-seo/guides/hub-cards.json": PublicSeoGuidesHubCardsJson_idID,
+    "public-seo/guides/hub.json": PublicSeoGuidesHubJson_idID,
+    "public-seo/guides/learning-games-at-home.json": PublicSeoGuidesLearningGamesAtHomeJson_idID,
+    "public-seo/guides/math-games-for-kids.json": PublicSeoGuidesMathGamesForKidsJson_idID,
+    "public-seo/guides/math-practice-at-home.json": PublicSeoGuidesMathPracticeAtHomeJson_idID,
+    "public-seo/guides/no-print-worksheets.json": PublicSeoGuidesNoPrintWorksheetsJson_idID,
+    "public-seo/guides/parent-progress-tracking.json": PublicSeoGuidesParentProgressTrackingJson_idID,
+    "public-seo/guides/reading-comprehension-at-home.json": PublicSeoGuidesReadingComprehensionAtHomeJson_idID,
+    "public-seo/guides/reading-practice-at-home.json": PublicSeoGuidesReadingPracticeAtHomeJson_idID,
+    "public-seo/legal/unified.json": PublicSeoLegalUnifiedJson_idID,
+    "public-seo/marketing/kids.json": PublicSeoMarketingKidsJson_idID,
+    "public-seo/marketing/parents.json": PublicSeoMarketingParentsJson_idID,
+    "public-seo/marketing/schools.json": PublicSeoMarketingSchoolsJson_idID,
+    "public-seo/marketing/teachers.json": PublicSeoMarketingTeachersJson_idID,
+    "public-seo/practice/english.json": PublicSeoPracticeEnglishJson_idID,
+    "public-seo/practice/games.json": PublicSeoPracticeGamesJson_idID,
+    "public-seo/practice/geometry.json": PublicSeoPracticeGeometryJson_idID,
+    "public-seo/practice/hub-cards.json": PublicSeoPracticeHubCardsJson_idID,
+    "public-seo/practice/hub.json": PublicSeoPracticeHubJson_idID,
+    "public-seo/practice/math.json": PublicSeoPracticeMathJson_idID,
+    "public-seo/practice/no-print.json": PublicSeoPracticeNoPrintJson_idID,
+    "public-seo/practice/parent-reports.json": PublicSeoPracticeParentReportsJson_idID,
+    "public-seo/practice/reading.json": PublicSeoPracticeReadingJson_idID,
+    "public-seo/practice/science.json": PublicSeoPracticeScienceJson_idID,
+    "public-seo/practice/worksheets.json": PublicSeoPracticeWorksheetsJson_idID,
+  }),

@@ -1,0 +1,48 @@
+{
+  "help": {
+    "sectionsEn": 4,
+    "sectionsId": 4,
+    "articlesEn": 40,
+    "articlesId": 40,
+    "missingSlugs": [],
+    "extraSlugs": [],
+    "duplicateSlugs": [],
+    "emptyFields": 0,
+    "untranslatedEnglishUi": 0,
+    "untranslatedEnglishUiSample": [],
+    "terminologyDefects": 0,
+    "terminologySample": [],
+    "registerDefects": 0,
+    "registerSample": []
+  },
+  "seo": {
+    "englishRuntimeSources": [
+      "data/seo/guide-pages.js",
+      "data/seo/practice-pages.js",
+      "data/seo/worksheets-pages.en.js",
+      "data/marketing/landing-pages.js",
+      "data/legal/sitePolicies.js",
+      "locales/en/seo.json (chrome; not owned — namespaces)"
+    ],
+    "englishRuntimePaths": 51,
+    "overlayFiles": 28,
+    "expectedOverlayFiles": 28,
+    "missingPaths": [],
+    "orphanPaths": [],
+    "emptyLeaves": 0,
+    "emptySample": [],
+    "untranslatedTitles": [],
+    "untranslatedMeta": [],
+    "untranslatedH1": [],
+    "untranslatedCta": [],
+    "identicalUnjustified": 0,
+    "identicalSample": [],
+    "intentionalOrJustified": 7,
+    "faseLeak": 0,
+    "gradeDefects": 0,
+    "gradeSample": [],
+    "mixedDefects": 0,
+    "marketingRegisterKamu": 0
+  },
+  "PHASE_2D_CONTENT_PASS": true
+}

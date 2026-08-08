@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "new_discussion_activity": "Aktivitas diskusi baru",
+    "err_load_class": "Tidak dapat memuat rombel",
+    "err_invalid_grade": "Tingkat kelas untuk rombel ini tidak valid. Hubungi admin sekolah Anda.",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…"
+  }
+}

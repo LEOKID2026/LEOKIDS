@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "social_studies_geography": "IPS & Geografi",
+    "there_is_some_practice_in_the_selected_period_but_not_yet_enough_to_dra": "Ada beberapa latihan pada periode yang dipilih, tetapi belum cukup untuk menarik pemahaman yang jelas. Akan membantu untuk melanjutkan beberapa hari lagi dan memeriksa kembali.",
+    "there_is_no_practice_yet_in_the_selected_period": "Belum ada latihan pada periode yang dipilih.",
+    "there_is_limited_data_in_the_selected_period": "Data pada periode yang dipilih masih terbatas.",
+    "there_is_enough_data_in_the_selected_period_for_a_clear_picture": "Data pada periode yang dipilih sudah cukup untuk memberikan gambaran yang jelas.",
+    "practice_volume_not_yet_enough_in_the_selected_period": "Volume latihan pada periode yang dipilih belum cukup untuk memberikan gambaran yang jelas."
+  }
+}

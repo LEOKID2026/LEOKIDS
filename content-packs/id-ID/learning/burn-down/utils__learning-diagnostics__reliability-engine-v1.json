@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "volume_supports_stronger_reliability": "Volume mendukung keandalan yang lebih kuat.",
+    "review_pacing_signals_separately_from_knowledge_gaps": "Tinjau sinyal tempo terpisah dari kesenjangan pengetahuan.",
+    "row_level_accuracy_is_relatively_consistent": "Akurasi tingkat baris relatif konsisten."
+  }
+}

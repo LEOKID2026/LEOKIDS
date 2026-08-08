@@ -1,0 +1,92 @@
+{
+  "phase": "9B-3",
+  "locale": "id-ID",
+  "owner": "Indonesian Master — Student + Arcade API/UI Localization",
+  "note": "Do NOT edit validation.json in this phase. MAIN reconciles these codes into validation.api / Student UI maps later. UI currently falls back to localized Student generic copy (ui.student.errors.* / auth.* / games.*).",
+  "mappings": [
+    {
+      "code": "invalid_game",
+      "English intended copy": "That game is not available.",
+      "recommended Indonesian copy": "Gim itu belum tersedia.",
+      "source route": "pages/api/student/educational-games/start.js; pages/api/student/solo-games/start.js",
+      "reason": "Replaces English Invalid game prose; UI uses student loadFailed fallback until MAIN maps."
+    },
+    {
+      "code": "invalid_difficulty",
+      "English intended copy": "That difficulty level is not valid.",
+      "recommended Indonesian copy": "Tingkat kesulitan itu tidak valid.",
+      "source route": "pages/api/student/educational-games/start.js; pages/api/student/solo-games/start.js",
+      "reason": "Replaces English Invalid difficulty level prose."
+    },
+    {
+      "code": "invalid_game_category",
+      "English intended copy": "This game is not in the educational category.",
+      "recommended Indonesian copy": "Gim ini bukan gim edukatif.",
+      "source route": "pages/api/student/educational-games/start.js",
+      "reason": "Replaces English category prose."
+    },
+    {
+      "code": "invalid_game_data",
+      "English intended copy": "Game data is invalid.",
+      "recommended Indonesian copy": "Data gim tidak valid.",
+      "source route": "pages/api/student/educational-games/finish.js; pages/api/student/solo-games/finish.js",
+      "reason": "Replaces English Invalid game data prose."
+    },
+    {
+      "code": "missing_game_id",
+      "English intended copy": "Game session ID is missing.",
+      "recommended Indonesian copy": "ID sesi gim hilang.",
+      "source route": "pages/api/student/educational-games/finish.js; pages/api/student/solo-games/finish.js",
+      "reason": "Replaces Missing/Game ID is missing English prose."
+    },
+    {
+      "code": "game_session_mismatch",
+      "English intended copy": "Game does not match this session.",
+      "recommended Indonesian copy": "Gim tidak cocok dengan sesi ini.",
+      "source route": "pages/api/student/educational-games/finish.js",
+      "reason": "Replaces English session mismatch prose."
+    },
+    {
+      "code": "invalid_category",
+      "English intended copy": "Invalid game category.",
+      "recommended Indonesian copy": "Kategori gim tidak valid.",
+      "source route": "pages/api/student/educational-games/finish.js",
+      "reason": "Replaces English Invalid category prose."
+    },
+    {
+      "code": "start_failed",
+      "English intended copy": "Could not start the game.",
+      "recommended Indonesian copy": "Tidak bisa memulai gim.",
+      "source route": "hooks + educational/solo start APIs (fallback code)",
+      "reason": "Stable UI/session start failure code when API omits code."
+    },
+    {
+      "code": "finish_failed",
+      "English intended copy": "Could not finish the game.",
+      "recommended Indonesian copy": "Tidak bisa menyelesaikan gim.",
+      "source route": "hooks + educational/solo finish APIs (fallback code)",
+      "reason": "Stable UI/session finish failure code when API omits code."
+    },
+    {
+      "code": "guest_resume_failed",
+      "English intended copy": "Could not resume guest on this device.",
+      "recommended Indonesian copy": "Tidak bisa melanjutkan mode tamu di perangkat ini.",
+      "source route": "pages/api/student/guest/resume.js",
+      "reason": "Code-first guest resume failure; UI maps to auth.guestUnavailable until MAIN expands."
+    },
+    {
+      "code": "invalid_credentials",
+      "English intended copy": "Incorrect username or PIN",
+      "recommended Indonesian copy": "Nama pengguna atau kode masuk salah.",
+      "source route": "pages/api/student/login.js",
+      "reason": "Stable code alongside legacy English error string; Student login UI already uses auth.invalidStudentCredentials — do not duplicate server prose translation."
+    },
+    {
+      "code": "session_expired",
+      "English intended copy": "Student session expired",
+      "recommended Indonesian copy": "Sesi kamu berakhir — silakan masuk lagi.",
+      "source route": "pages/api/student/home-profile*.js; action-decisions.js",
+      "reason": "Stable code field alongside legacy session token; Student resolver maps to ui.student.errors.sessionExpired."
+    }
+  ]
+}

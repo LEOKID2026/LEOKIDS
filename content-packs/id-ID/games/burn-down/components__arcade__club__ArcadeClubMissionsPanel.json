@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "missions_locked": "Misi harian — dikontrol lewat Admin. Belum terbuka untuk tamu.",
+    "todays_missions": "Misi hari ini",
+    "mission_progress": "{progress}/{goal} · +{coins} koin",
+    "no_missions_today": "Tidak ada misi hari ini",
+    "achievements": "Pencapaian",
+    "no_achievements_yet": "Belum ada pencapaian"
+  }
+}

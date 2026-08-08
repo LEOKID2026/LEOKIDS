@@ -1,0 +1,206 @@
+{
+  "subjectId": "english",
+  "rows": {
+    "E-01": {
+      "id": "E-01",
+      "domain": "Kosakata",
+      "topic": "Konteks",
+      "subskill": "collocation",
+      "pattern": "Terjemahan harfiah yang salah",
+      "counterEvidence": "Benar setelah dua contoh",
+      "countsWhen": "Kalimat yang jelas",
+      "doesNotCountWhen": "Hanya pengecoh false-friend",
+      "probe": "Kalimat paralel",
+      "intervention": "Kartu kalimat",
+      "escalation": "Kesulitan di setiap topik",
+      "observableMarkers": [
+        "Akar yang sama di kalimat berbeda"
+      ],
+      "roots": [
+        "false friend"
+      ],
+      "competitors": [
+        "Tata bahasa"
+      ],
+      "doNotConclude": [
+        "Tanpa Bahasa Inggris"
+      ]
+    },
+    "E-02": {
+      "id": "E-02",
+      "domain": "Tata bahasa",
+      "topic": "Kala",
+      "subskill": "Penanda waktu",
+      "pattern": "past/present",
+      "counterEvidence": "Benar dengan bagan penanda",
+      "countsWhen": "Penanda disorot",
+      "doesNotCountWhen": "Kala campuran tanpa pengajaran sebelumnya",
+      "probe": "Kalimat identik, penanda berbeda",
+      "intervention": "Bagan penanda",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan saat yesterday/now eksplisit"
+      ],
+      "roots": [
+        "Peta kala"
+      ],
+      "competitors": [
+        "Kosakata"
+      ],
+      "doNotConclude": [
+        "Tanpa tata bahasa"
+      ]
+    },
+    "E-03": {
+      "id": "E-03",
+      "domain": "Membaca",
+      "topic": "Tata letak",
+      "subskill": "Pelacakan baris",
+      "pattern": "Kesalahan pada tata letak dua kolom",
+      "counterEvidence": "Benar pada satu kolom lebar",
+      "countsWhen": "Font yang mudah dibaca",
+      "doesNotCountWhen": "Font kecil tanpa kerangka",
+      "probe": "Font besar vs kecil",
+      "intervention": "Nomor baris / pelacakan jari",
+      "escalation": "Laporan penglihatan",
+      "observableMarkers": [
+        "Kesalahan hanya pada tata letak dua kolom"
+      ],
+      "roots": [
+        "Pelacakan baris"
+      ],
+      "competitors": [
+        "Kosakata"
+      ],
+      "doNotConclude": [
+        "Tanpa membaca"
+      ]
+    },
+    "E-04": {
+      "id": "E-04",
+      "domain": "Tata bahasa",
+      "topic": "Kesesuaian",
+      "subskill": "Pronomina–subjek",
+      "pattern": "he/she/it",
+      "counterEvidence": "Benar saat sangat lambat",
+      "countsWhen": "Subjek eksplisit",
+      "doesNotCountWhen": "Hanya mengetik cepat",
+      "probe": "Rantai dengan subjek",
+      "intervention": "Bagan subjek–pronomina",
+      "escalation": "Selalu gagal",
+      "observableMarkers": [
+        "Kesalahan",
+        "Subjek disorot"
+      ],
+      "roots": [
+        "Kesesuaian sintaksis"
+      ],
+      "competitors": [
+        "Kecepatan"
+      ],
+      "doNotConclude": [
+        "Tanpa pengetahuan"
+      ]
+    },
+    "E-05": {
+      "id": "E-05",
+      "domain": "Kosakata",
+      "topic": "Penggunaan",
+      "subskill": "preposition",
+      "pattern": "Preposisi yang sama salah",
+      "counterEvidence": "Benar pada daftar tertutup",
+      "countsWhen": "Preposisi yang diajarkan",
+      "doesNotCountWhen": "Kata kerja belum diajarkan",
+      "probe": "Kata kerja sama, dua preposisi",
+      "intervention": "Pasangan minimal",
+      "escalation": "Tidak ada perbaikan",
+      "observableMarkers": [
+        "Kesalahan dengan kata kerja berbeda"
+      ],
+      "roots": [
+        "Kosakata spesifik"
+      ],
+      "competitors": [
+        "Tata bahasa umum"
+      ],
+      "doNotConclude": [
+        "Tanpa bahasa"
+      ]
+    },
+    "E-06": {
+      "id": "E-06",
+      "domain": "Membaca",
+      "topic": "Pemahaman",
+      "subskill": "inference",
+      "pattern": "Fakta alih-alih inferensi",
+      "counterEvidence": "Benar pada fakta eksplisit",
+      "countsWhen": "Jenis pertanyaan ditandai",
+      "doesNotCountWhen": "Sebelum inferensi diajarkan",
+      "probe": "Fakta vs inferensi",
+      "intervention": "Kata sinyal inferensi",
+      "escalation": "Gagal pada fakta juga",
+      "observableMarkers": [
+        "Kesalahan hanya pada inferensi"
+      ],
+      "roots": [
+        "Strategi"
+      ],
+      "competitors": [
+        "Kosakata"
+      ],
+      "doNotConclude": [
+        "Tanpa berpikir"
+      ]
+    },
+    "E-07": {
+      "id": "E-07",
+      "domain": "Menulis",
+      "topic": "Ejaan",
+      "subskill": "Pola diam",
+      "pattern": "Kesalahan berulang",
+      "counterEvidence": "Benar dengan dikte lambat",
+      "countsWhen": "Kata yang diajarkan",
+      "doesNotCountWhen": "Sebelum aturannya",
+      "probe": "Tulisan tangan terkendali",
+      "intervention": "Aturan ejaan mini",
+      "escalation": "Laporan profesional",
+      "observableMarkers": [
+        "Pola yang sama"
+      ],
+      "roots": [
+        "Fonologi"
+      ],
+      "competitors": [
+        "Mengetik"
+      ],
+      "doNotConclude": [
+        "Gangguan"
+      ]
+    },
+    "E-08": {
+      "id": "E-08",
+      "domain": "Mendengarkan",
+      "topic": "Fonemik",
+      "subskill": "pasangan minimal",
+      "pattern": "Membingungkan sepasang bunyi",
+      "counterEvidence": "Benar dengan mendengarkan ganda yang lambat",
+      "countsWhen": "Rekaman yang jelas",
+      "doesNotCountWhen": "Kebisingan yang dikenal",
+      "probe": "Pasangan sama di kata berbeda",
+      "intervention": "Latihan pasangan",
+      "escalation": "Laporan pendengaran",
+      "observableMarkers": [
+        "Kesalahan pada pasangan yang sama"
+      ],
+      "roots": [
+        "Fonemik"
+      ],
+      "competitors": [
+        "Kebisingan"
+      ],
+      "doNotConclude": [
+        "Gangguan pendengaran"
+      ]
+    }
+  }
+}

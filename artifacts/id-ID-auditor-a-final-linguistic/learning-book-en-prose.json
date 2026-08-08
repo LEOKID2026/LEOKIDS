@@ -1,0 +1,16 @@
+{
+  "hebProduct": [],
+  "hebDraftReadmeOnly": [
+    "docs\\learning-book\\id-ID\\math\\g1\\drafts\\README.md",
+    "docs\\learning-book\\id-ID\\math\\g2\\drafts\\README.md",
+    "docs\\learning-book\\id-ID\\math\\g4\\drafts\\README.md"
+  ],
+  "enProseSample": [],
+  "fileCounts": {
+    "english": 130,
+    "geometry": 77,
+    "math": 199,
+    "science": 44
+  },
+  "totalMd": 450
+}

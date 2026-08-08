@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "skill_85_coverage_subskill_50_avg_completeness_0_65_high_risk_share_8": "Cakupan skill ≥85%, subskill ≥50%, rata-rata kelengkapan ≥0,65, porsi berisiko tinggi <8%.",
+    "skill_coverage_usable_but_substantial_gaps_in_cognitive_errors_prereqs": "Cakupan skill dapat digunakan tetapi terdapat kesenjangan signifikan pada cognitive/errors/prereqs.",
+    "large_missing_skill_or_inconsistent_tagging": "Keterampilan yang hilang besar atau penandaan yang tidak konsisten.",
+    "skill_id_largely_absent_diagnosis_routing_unreliable": "Skill id sebagian besar tidak ada - perutean diagnosis tidak dapat diandalkan."
+  }
+}

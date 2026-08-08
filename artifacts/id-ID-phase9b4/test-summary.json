@@ -1,0 +1,18 @@
+{
+  "phase": "9B-4",
+  "result": "PASS",
+  "tests": {
+    "file": "tests/i18n/id-ID-phase9b4-teacher-school-guardian-api-ui.test.mjs",
+    "alsoRan": "tests/i18n/id-ID-phase9b1-api-code-foundation.test.mjs",
+    "passed": 18,
+    "failed": 0
+  },
+  "teacherMessageFirstBefore": 28,
+  "teacherMessageFirstAfter": 0,
+  "schoolDirectBypassesBefore": 2,
+  "schoolDirectBypassesAfter": 0,
+  "guardianRawMessageConsumer": false,
+  "newCodesIntroduced": 0,
+  "validationJsonModified": 0,
+  "sharedResolverModified": 0
+}

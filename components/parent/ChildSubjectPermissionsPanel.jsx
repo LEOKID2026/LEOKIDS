@@ -43,7 +43,11 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
         });
         const data = await res.json();
         if (cancelled) return;
-        if (!res.ok || !data.ok) throw new Error(mapParentPanelApiError(data.error, "load"));
+        if (!res.ok || !data.ok) {
+          throw new Error(
+            mapParentPanelApiError(data.code || data.error, "load")
+          );
+        }
         setSubjects(data.subjects || []);
         setAllowStudentGradePicker(data.allowStudentGradePicker === true);
       } catch (err) {
@@ -82,7 +86,9 @@ export default function ChildSubjectPermissionsPanel({ studentId, accessToken, b
       body: JSON.stringify(body),
     });
     const data = await res.json();
-    if (!res.ok || !data.ok) throw new Error(mapParentPanelApiError(data.error, "save"));
+    if (!res.ok || !data.ok) {
+      throw new Error(mapParentPanelApiError(data.code || data.error, "save"));
+    }
     setSubjects(data.subjects || []);
     setAllowStudentGradePicker(data.allowStudentGradePicker === true);
   }

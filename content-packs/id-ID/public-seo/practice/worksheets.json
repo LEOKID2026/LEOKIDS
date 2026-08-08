@@ -1,0 +1,105 @@
+{
+  "seoKey": "practice-worksheets",
+  "slug": "worksheets",
+  "badge": "Lembar kerja — coba tanpa mendaftar",
+  "h1": "Lembar kerja yang dapat dicetak untuk anak — berlatih, cetak saat membantu, atau gabungkan dengan belajar daring",
+  "intro": "Di halaman ini Anda dapat membuat lembar demo dengan 8 soal atau memilih dari 30 lembar kerja siap pakai di matematika, geometri, dan Bahasa Inggris. Pratinjau setiap lembar, cetak, dan buka kunci jawaban.",
+  "sections": [
+    {
+      "title": "Bagaimana cara membuat lembar demo?",
+      "paragraphs": [
+        "Pilih mata pelajaran dan kelas, lalu buat demo singkat dengan 8 soal. Satu topik per mata pelajaran dan kelas terbuka untuk demo; topik lain menunjukkan apa yang tersedia di portal orang tua penuh."
+      ]
+    },
+    {
+      "title": "Lembar kerja siap pakai menurut kelas",
+      "paragraphs": [
+        "Pilih dari 30 lembar siap pakai, saring menurut mata pelajaran, kelas, dan tingkat, buka lembarnya, dan cetak saat cocok dengan rutinitas Anda. Setiap lembar dapat memiliki kunci jawaban terpisah."
+      ]
+    },
+    {
+      "title": "Berlatih tanpa mencetak juga",
+      "paragraphs": [
+        "Lembar kerja adalah opsi tambahan di samping latihan digital dan gim. Pilih yang sesuai dengan topik, anak Anda, dan waktu yang Anda miliki."
+      ]
+    },
+    {
+      "title": "Apa saja yang termasuk di portal orang tua penuh?",
+      "paragraphs": [
+        "Di portal orang tua penuh, Anda dapat membuat lembar kerja tanpa batas, memilih setiap topik yang tersedia, dan menghasilkan lembar baru berulang kali. Lembar dibangun ulang dari bank soal dan berubah antar pembuatan."
+      ]
+    },
+    {
+      "title": "Kunci jawaban untuk pemeriksaan di rumah",
+      "paragraphs": [
+        "Anda dapat membuka kunci jawaban terpisah setelah membuat lembar. Demo mencakup jawaban untuk semua 8 soal; lembar siap pakai mencakup jawaban sesuai struktur masing-masing lembar."
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    },
+    {
+      "href": "/practice/reading",
+      "label": "Latihan membaca"
+    },
+    {
+      "href": "/practice/english",
+      "label": "Latihan Bahasa Inggris"
+    },
+    {
+      "href": "/practice/geometry",
+      "label": "Latihan geometri"
+    },
+    {
+      "href": "/practice/no-print",
+      "label": "Latihan digital"
+    },
+    {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "math-practice-at-home",
+    "home-practice-routine",
+    "no-print-worksheets",
+    "learning-games-at-home"
+  ],
+  "faq": [
+    {
+      "q": "Apakah saya perlu mendaftar untuk mencobanya?",
+      "a": "Tidak. Generator demo dan lembar siap pakai tersedia tanpa masuk."
+    },
+    {
+      "q": "Berapa banyak soal di lembar demo?",
+      "a": "Lembar demo memiliki 8 soal. Lembar siap pakai mempertahankan struktur penuhnya."
+    },
+    {
+      "q": "Apakah kunci jawaban tersedia?",
+      "a": "Ya. Anda dapat membuka kunci jawaban terpisah untuk demo dan untuk setiap lembar siap pakai."
+    },
+    {
+      "q": "Apakah kita harus mencetak?",
+      "a": "Tidak. Anda dapat berlatih daring di Leo Kids dan menggunakan lembar kerja saat mencetak membantu."
+    },
+    {
+      "q": "Apakah lembarnya berubah?",
+      "a": "Lembar yang dibuat di generator dibangun ulang dari bank soal dan dapat berbeda antar pembuatan."
+    }
+  ],
+  "footerCta": {
+    "title": "Ingin membuat lebih banyak lembar dan membuka setiap topik?",
+    "body": "Di portal orang tua penuh, Anda dapat membuat lembar kerja tanpa batas, memilih topik tambahan, dan menggabungkan lembar dengan latihan digital serta wawasan progres.",
+    "primary": {
+      "href": "/parents",
+      "label": "Buka portal orang tua"
+    },
+    "secondary": {
+      "href": "/practice",
+      "label": "Jelajahi area latihan"
+    }
+  }
+}

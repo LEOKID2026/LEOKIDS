@@ -1,0 +1,111 @@
+{
+  "phase": "9B-1",
+  "date": "2026-08-08",
+  "authority": "artifacts/phase9a/validation-code-coverage.json + teacher-school-helper-codes.json",
+  "existingValidationApiKeysBefore": 43,
+  "phase9aClaimedBefore": 44,
+  "finalValidationApiKeyCount": 77,
+  "newUserFacingCodes": [
+    "account_deactivated",
+    "already_archived",
+    "class_archived",
+    "config_missing",
+    "consent_invalid",
+    "consent_required",
+    "grade_mismatch",
+    "grade_required",
+    "guest_not_eligible",
+    "jwt_required",
+    "link_limit_reached",
+    "link_unavailable",
+    "missing_card_id",
+    "missing_resume_token",
+    "missing_student_id",
+    "not_authenticated",
+    "not_authorized",
+    "not_parent_activity",
+    "not_school_guardian",
+    "not_school_portal_member",
+    "operator_grant_required",
+    "profile_update_failed",
+    "rate_limited",
+    "server_error",
+    "student_id_required",
+    "student_not_found",
+    "student_not_linked",
+    "student_product_mismatch",
+    "student_scope_violation",
+    "subject_mismatch",
+    "teacher_profile_missing",
+    "unexpected_server_error",
+    "unknown_query_param",
+    "wrong_school"
+  ],
+  "technicalExcluded": [
+    {
+      "code": "missing_idempotency_key",
+      "reason": "technical idempotency guard; not a product-facing copy path"
+    }
+  ],
+  "mappedAlready": [
+    "db_schema_not_ready",
+    "feature_disabled",
+    "forbidden",
+    "internal_error",
+    "method_not_allowed",
+    "not_found",
+    "validation_failed",
+    "unauthorized",
+    "school_inactive",
+    "not_a_school_manager",
+    "subject_already_granted",
+    "teacher_subject_not_granted",
+    "physical_class_not_found",
+    "student_limit_reached",
+    "staff_user_not_found"
+  ],
+  "dynamicProseWithoutStableCode": [
+    {
+      "pattern": "Invalid ${field}",
+      "classification": "needs frontend parameterized template or stable field codes",
+      "phase": "later role / API hygiene"
+    },
+    {
+      "pattern": "Feature disabled: ${feature}",
+      "classification": "can become stable code feature_disabled (already mapped) — drop dynamic suffix in UI",
+      "phase": "teacher/school consumer"
+    },
+    {
+      "pattern": "link limit templates with counts",
+      "classification": "needs frontend parameterized template",
+      "phase": "teacher role"
+    },
+    {
+      "pattern": "accessId/loginUsername/gradeLevel/physicalClassName required",
+      "classification": "orphan English-only prose requiring later stable-code conversion",
+      "phase": "school role"
+    },
+    {
+      "pattern": "Username is already taken / Invalid PIN / Could not create…",
+      "classification": "orphan English-only prose requiring later stable-code conversion",
+      "phase": "parent 9B-2"
+    }
+  ],
+  "codeResolution": {
+    "authority": "validation.api via resolveApiErrorMessage + apiErrorMessageHe",
+    "API_ERROR_I18N_KEYS_reused": false,
+    "competingRegistryCreated": false,
+    "mappedCodePriority": "first",
+    "unknownCodeBehavior": "localized apiFallback / caller fallback",
+    "rawEnglishMessagePriority": "never over mapped code; never for unmapped code"
+  },
+  "schoolBypassConsumers": [
+    "pages/school/activities/[activityId]/monitor.js"
+  ],
+  "helpersUnmodified": [
+    "sendTeacherApiError",
+    "sendSchoolApiError",
+    "sendPersonaApiError",
+    "sendGuardianApiError"
+  ]
+}

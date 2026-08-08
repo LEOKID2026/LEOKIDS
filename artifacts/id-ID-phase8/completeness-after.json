@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "ok": 13,
+    "missing": 0,
+    "fallback": 0,
+    "exceptions": 1
+  },
+  "learning_books": {
+    "id": "learning_books",
+    "status": "ok",
+    "detail": "ok=24 legacyFallback=0 missing=0"
+  },
+  "missing": [],
+  "allFindings": [
+    {
+      "id": "registry",
+      "status": "ok",
+      "detail": "Registered status=enabled dir=ltr"
+    },
+    {
+      "id": "fonts",
+      "status": "ok",
+      "detail": "fonts=[Segoe UI, Noto Sans, sans-serif] direction=ltr"
+    },
+    {
+      "id": "ui_namespaces",
+      "status": "ok",
+      "detail": "All 15 namespaces present"
+    },
+    {
+      "id": "content_packs",
+      "status": "ok",
+      "detail": "All required packs resolve at locale"
+    },
+    {
+      "id": "learning_books",
+      "status": "ok",
+      "detail": "ok=24 legacyFallback=0 missing=0"
+    },
+    {
+      "id": "science_overlay",
+      "status": "ok",
+      "detail": "questions=1017 overlay=100% contractComplete=true incomplete=0"
+    },
+    {
+      "id": "question_stems",
+      "status": "ok",
+      "detail": "Params-based id-ID math/geometry stem rebuilders"
+    },
+    {
+      "id": "worksheets",
+      "status": "ok",
+      "detail": "Writing packs resolve via word-packs.locale (id-ID) + writing sentence cues"
+    },
+    {
+      "id": "games",
+      "status": "ok",
+      "detail": "Game packs registered at locale in CONTENT_PACK_CATALOG"
+    },
+    {
+      "id": "reports",
+      "status": "ok",
+      "detail": "Report packs registered at locale in CONTENT_PACK_CATALOG"
+    },
+    {
+      "id": "seo",
+      "status": "ok",
+      "detail": "ogLocale=id_ID; hreflang only for status=enabled"
+    },
+    {
+      "id": "english_subject",
+      "status": "english_subject_exception",
+      "detail": "English-subject learning content remains en by resolveContentLocale({ subject: 'english' })"
+    },
+    {
+      "id": "localized_assets",
+      "status": "ok",
+      "detail": "No required localized assets declared yet; empty assets/i18n is OK"
+    },
+    {
+      "id": "fonts_resolver",
+      "status": "ok",
+      "detail": "script=Latn webfont=false systemFallback=true missingFileRefs=0"
+    }
+  ]
+}

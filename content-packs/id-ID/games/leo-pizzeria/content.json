@@ -1,0 +1,52 @@
+{
+  "toppings": [
+    {
+      "id": "cheese",
+      "emoji": "🧀",
+      "name": "Keju"
+    },
+    {
+      "id": "tomato",
+      "emoji": "🍅",
+      "name": "Tomat"
+    },
+    {
+      "id": "olive",
+      "emoji": "🫒",
+      "name": "Zaitun"
+    },
+    {
+      "id": "mushroom",
+      "emoji": "🍄",
+      "name": "Jamur"
+    },
+    {
+      "id": "pepper",
+      "emoji": "🫑",
+      "name": "Paprika"
+    },
+    {
+      "id": "basil",
+      "emoji": "🌿",
+      "name": "Kemangi"
+    }
+  ],
+  "difficulties": {
+    "easy": {
+      "label": "Mudah",
+      "hint": "Utuh, setengah, dan seperempat pada pizza 4 potong"
+    },
+    "medium": {
+      "label": "Sedang",
+      "hint": "Setengah, seperempat, dan tiga perempat pada 8 potong"
+    },
+    "hard": {
+      "label": "Sulit",
+      "hint": "Perdelapan, kombinasi, dan melengkapi yang utuh"
+    }
+  },
+  "successMessages": [
+    "Bagus sekali! Pizzanya siap untuk pelanggan.",
+    "Keren! Kamu membuatnya persis seperti pesanan."
+  ]
+}

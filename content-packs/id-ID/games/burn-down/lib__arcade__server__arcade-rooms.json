@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "unsupported_room_type_allowed_public_private_or_quick": "Jenis ruang tidak didukung (diizinkan: public, private, atau quick)"
+  }
+}

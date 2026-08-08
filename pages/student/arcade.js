@@ -19,13 +19,14 @@ import ArcadeClubShopPanel from "../../components/arcade/club/ArcadeClubShopPane
 import ArcadeClubMissionsPanel from "../../components/arcade/club/ArcadeClubMissionsPanel.jsx";
 import ArcadeClubEventsPanel from "../../components/arcade/club/ArcadeClubEventsPanel.jsx";
 import { useArcadeClubPresence, useArcadeClubInvites } from "../../hooks/arcade/useArcadeClubPresence.js";
-import { GUEST_GAME_LOCK_LABEL_HE } from "../../lib/guest/constants.js";
+import { GUEST_GAME_LOCK_LABEL_KEY } from "../../lib/guest/constants.js";
 import { mapEntryCostOptionsForUi } from "../../lib/learning-client/economyConfigClient.js";
 import { studentAvatarFromHomeSummary } from "../../lib/learning-client/studentHomeAvatarFromSummary.js";
 import { clearArcadeActiveRoom } from "../../lib/arcade/client/arcadeRoomLifecycle.client.js";
 import { isDemoMode, readDemoSession } from "../../lib/demo/demo-mode.client.js";
 import { buildDemoArcadeFixtures } from "../../components/demo/demo-display-fixtures.js";
 import { demoPackCopyForLocale } from "../../lib/demo/demo-pack-copy.js";
+import { resolveStudentApiErrorMessage } from "../../lib/student-client/student-api-legacy-errors.js";
 import {
   arcadeGameTileTheme,
   ARCADE_TILE_BADGE_ACTIVE,
@@ -34,6 +35,8 @@ import {
 import { displayArcadeGameTitle } from "../../components/arcade/club/arcadeGameTitles.js";
 
 const POLL_MS = 5000;
+
+const ARCADE_PACK = "pages__student__arcade";
 
 /** Public rooms for list refresh */
 const OPEN_ROOM_POLL_KEYS = [
@@ -84,11 +87,19 @@ function apiMessage(result, t) {
     if (payload.alreadyQueued === true) return t("games.apiAlreadyQueued");
     return t("games.apiSuccess");
   }
-  const msg = typeof payload?.error === "string" ? payload.error : "";
-  if (status === 402 || payload?.code === "insufficient_funds") {
-    return msg || t("games.apiInsufficientFunds");
+  const code =
+    (typeof payload?.code === "string" && payload.code) ||
+    (typeof payload?.errorCode === "string" && payload.errorCode) ||
+    "";
+  if (status === 402 || code === "insufficient_funds") {
+    return t("games.apiInsufficientFunds");
   }
-  return msg || t("games.apiFailed");
+  if (code || payload?.error) {
+    const localized = resolveStudentApiErrorMessage(payload, t);
+    const generic = t("ui.student.errors.loadFailed");
+    if (localized && localized !== generic) return localized;
+  }
+  return t("games.apiFailed");
 }
 
 function quickMatchMessage(payload, t) {
@@ -117,7 +128,7 @@ function EntryCostSelector({
   entryBtnSelected,
   entryBtnDefault,
   entryBtnDisabled,
-  label = gamePackCopy("pages__student__arcade", "entry_cost"),
+  label = gamePackCopy(ARCADE_PACK, "entry_cost"),
 }) {
   return (
     <div className={className}>
@@ -171,20 +182,28 @@ function ArcadeGameActionPanel({
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div className="text-start">
           <p className={actionTitle}>
-            Selected game: <span className="font-bold">{selectedTitle || "-"}</span>
+            {gamePackCopy(ARCADE_PACK, "selected_game", { title: selectedTitle || "-" })}
           </p>
-          <p className={`mt-0.5 ${actionMeta}`}>Entry amount: {entryCostLabel} coins</p>
+          <p className={`mt-0.5 ${actionMeta}`}>
+            {gamePackCopy(ARCADE_PACK, "entry_amount_coins", { amount: entryCostLabel })}
+          </p>
         </div>
       </div>
       <div className="mt-2 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap">
         <button
           type="button"
           disabled={busy || !canAct || costBlocked}
-          title={costBlocked ? costBlockedMessage : !canAct ? "Pick an available game" : undefined}
+          title={
+            costBlocked
+              ? costBlockedMessage
+              : !canAct
+                ? gamePackCopy(ARCADE_PACK, "pick_available_game")
+                : undefined
+          }
           onClick={onQuickGame}
           className={`w-full sm:flex-1 ${cardCta} py-2 text-sm disabled:cursor-not-allowed disabled:opacity-45`}
         >
-          Quick match
+          {gamePackCopy(ARCADE_PACK, "quick_match")}
         </button>
         <button
           type="button"
@@ -192,7 +211,7 @@ function ArcadeGameActionPanel({
           onClick={onCreatePublic}
           className={`w-full sm:w-auto sm:min-w-[7.5rem] ${btnSecondary} py-2 text-xs`}
         >
-          Create public room
+          {gamePackCopy(ARCADE_PACK, "create_public_room")}
         </button>
         <button
           type="button"
@@ -200,7 +219,7 @@ function ArcadeGameActionPanel({
           onClick={onCreatePrivate}
           className={`w-full sm:w-auto sm:min-w-[7.5rem] ${btnSecondaryOutline} py-2 text-xs`}
         >
-          Create private room
+          {gamePackCopy(ARCADE_PACK, "create_private_room")}
         </button>
       </div>
     </div>
@@ -223,6 +242,7 @@ function ArcadeGameCard({
   onSelect,
   cardCta,
   idleBox,
+  t,
 }) {
   const selectable = active && !guestLocked;
   const tile = arcadeGameTileTheme(gameKey);
@@ -232,10 +252,10 @@ function ArcadeGameCard({
   };
 
   const statusLabel = guestLocked
-    ? GUEST_GAME_LOCK_LABEL_HE
+    ? t(GUEST_GAME_LOCK_LABEL_KEY)
     : active
-      ? "Active"
-      : "Unavailable";
+      ? gamePackCopy(ARCADE_PACK, "active")
+      : gamePackCopy(ARCADE_PACK, "unavailable");
 
   const shellClasses = selected
     ? tile.selected
@@ -292,7 +312,9 @@ function ArcadeGameCard({
           </p>
         ) : null}
         {openRoomCount > 0 ? (
-          <p className={`truncate text-xs leading-tight ${tile.meta}`}>Open rooms: {openRoomCount}</p>
+          <p className={`truncate text-xs leading-tight ${tile.meta}`}>
+            {gamePackCopy(ARCADE_PACK, "open_rooms_count", { count: openRoomCount })}
+          </p>
         ) : null}
         {idleReason && !active ? (
           <p
@@ -319,7 +341,7 @@ function ArcadeGameCard({
             selected ? tile.btnSelected : tile.btn
           }`}
         >
-          {selected ? "Selected" : "Select"}
+          {selected ? gamePackCopy(ARCADE_PACK, "selected") : gamePackCopy(ARCADE_PACK, "select")}
         </button>
       ) : (
         <span className="mt-auto block h-[22px] shrink-0" aria-hidden="true" />
@@ -483,13 +505,13 @@ export default function StudentArcadePage() {
       const guestLocked = Boolean(meta?.guestLocked);
       const active = Boolean(meta?.enabled === true && meta?.foundationOnly === false);
       const idleReasonRow = !meta
-        ? "Loading games…"
+        ? gamePackCopy(ARCADE_PACK, "loading_games")
         : guestLocked
           ? null
         : !meta.enabled
-          ? "Game disabled on server"
+          ? gamePackCopy(ARCADE_PACK, "game_disabled_on_server")
           : meta.foundationOnly
-            ? "Not active yet (waiting to enable)"
+            ? gamePackCopy(ARCADE_PACK, "not_active_yet")
             : null;
       return { ...row, active, guestLocked, idleReason: idleReasonRow };
     });
@@ -639,7 +661,7 @@ export default function StudentArcadePage() {
       (async () => {
         const code = String(joinCode || "").trim();
         if (!code) {
-          setUserMessage("Enter a room code");
+          setUserMessage(gamePackCopy(ARCADE_PACK, "enter_a_room_code"));
           return { ok: false, payload: {}, status: 400 };
         }
         const res = await fetch("/api/arcade/rooms/join-by-code", {
@@ -659,22 +681,22 @@ export default function StudentArcadePage() {
   const balanceNum = balance !== null && balance !== undefined ? Number(balance) : null;
   const costDisabledReason = (cost) => {
     if (balanceNum === null || Number.isNaN(balanceNum)) return null;
-    if (balanceNum < cost) return "Not enough coins";
+    if (balanceNum < cost) return gamePackCopy(ARCADE_PACK, "not_enough_coins");
     return null;
   };
 
   const balanceDisplay =
     balance === null || balance === undefined
       ? initialSyncDone
-        ? "Unavailable"
-        : gamePackCopy("pages__student__arcade", "loading")
+        ? gamePackCopy(ARCADE_PACK, "unavailable")
+        : gamePackCopy(ARCADE_PACK, "loading")
       : String(balance);
 
   const diamondDisplay =
     diamondBalance === null || diamondBalance === undefined
       ? initialSyncDone
-        ? "Unavailable"
-        : gamePackCopy("pages__student__arcade", "loading")
+        ? gamePackCopy(ARCADE_PACK, "unavailable")
+        : gamePackCopy(ARCADE_PACK, "loading")
       : String(diamondBalance);
 
   const hlRoom = roomHighlight?.room;
@@ -692,7 +714,11 @@ export default function StudentArcadePage() {
   const hlPlayHref = playHrefForArcadeRoom(hlGameKey, hlRoomId);
 
   const waitingCopy =
-    hlStatus === "waiting" ? "Waiting for another player" : hlStatus === "active" ? "Game in progress" : hlStatus;
+    hlStatus === "waiting"
+      ? gamePackCopy(ARCADE_PACK, "waiting_for_another_player")
+      : hlStatus === "active"
+        ? gamePackCopy(ARCADE_PACK, "game_in_progress")
+        : hlStatus;
 
   const entryCostLabel =
     entryOptions.find((o) => o.value === entryCost)?.label || String(entryCost);
@@ -726,7 +752,12 @@ export default function StudentArcadePage() {
           />
 
           <ArcadeLobbyHeader
-            displayName={clubProfile?.displayName || (demoMode ? buildDemoArcadeFixtures(locale).clubProfile.displayName : "Player")}
+            displayName={
+              clubProfile?.displayName ||
+              (demoMode
+                ? buildDemoArcadeFixtures(locale).clubProfile.displayName
+                : gamePackCopy(ARCADE_PACK, "player"))
+            }
             coinBalance={balanceDisplay}
             diamondBalance={diamondDisplay}
             isGuest={Boolean(clubProfile?.isGuest)}
@@ -782,10 +813,14 @@ export default function StudentArcadePage() {
               <ArcadeClubProfilePanel gh={GH} demoMode={demoMode} />
               <ArcadeClubMissionsPanel gh={GH} demoMode={demoMode} />
               <div className={`${GH.arcadePanelMyRoom || GH.card} text-start`}>
-                <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Personal room</h3>
-                <p className={`mt-1 text-sm ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Your space with trophies and decorations</p>
+                <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>
+                  {gamePackCopy(ARCADE_PACK, "personal_room")}
+                </h3>
+                <p className={`mt-1 text-sm ${GH.arcadePanelBlurb || GH.cardBlurb}`}>
+                  {gamePackCopy(ARCADE_PACK, "personal_room_blurb")}
+                </p>
                 <Link href="/student/arcade/my-room" className={`mt-3 inline-block ${GH.btnJoinCode}`}>
-                  My room
+                  {gamePackCopy(ARCADE_PACK, "my_room")}
                 </Link>
               </div>
             </div>
@@ -848,18 +883,27 @@ export default function StudentArcadePage() {
                     selected={selectedGameKey === row.gameKey}
                     openRoomCount={openRoomsCountByGame[row.gameKey] || 0}
                     onSelect={setSelectedGameKey}
+                    t={t}
                   />
                 ))}
               </div>
 
               <div className="mt-5 grid gap-3 lg:mt-6 lg:grid-cols-3 lg:gap-4">
                 <div className={`${GH.arcadePanelOpenRooms || GH.card} lg:col-span-2`}>
-                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Open rooms</h3>
-                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Public rooms and quick matches waiting for a player</p>
+                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>
+                    {gamePackCopy(ARCADE_PACK, "open_rooms")}
+                  </h3>
+                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>
+                    {gamePackCopy(ARCADE_PACK, "open_rooms_blurb")}
+                  </p>
                   {!openRoomsPollActive ? (
-                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>No list — game isn't active</p>
+                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>
+                      {gamePackCopy(ARCADE_PACK, "no_list_game_inactive")}
+                    </p>
                   ) : openRooms.length === 0 ? (
-                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>No open rooms right now</p>
+                    <p className={`mt-3 ${GH.arcadeEmptyText || GH.emptyText}`}>
+                      {gamePackCopy(ARCADE_PACK, "no_open_rooms")}
+                    </p>
                   ) : (
                     <ul className="mt-3 max-h-64 space-y-2 overflow-y-auto pe-0.5 sm:max-h-72">
                       {openRooms.map((row) => {
@@ -877,18 +921,26 @@ export default function StudentArcadePage() {
                                 {displayArcadeGameTitle(row.gameKey, row.gameTitle)}
                               </p>
                               <p>
-                                Cost {costLabel} · {row.playerCount}/{row.maxPlayers} players ·{" "}
-                                {roomTypeLabel(row.roomType, t)} · waiting
+                                {gamePackCopy(ARCADE_PACK, "room_meta", {
+                                  cost: costLabel,
+                                  players: row.playerCount,
+                                  max: row.maxPlayers,
+                                  roomType: roomTypeLabel(row.roomType, t),
+                                })}
                               </p>
                             </div>
                             <button
                               type="button"
                               disabled={busy || full || Boolean(costDisabledReason(row.entryCost))}
-                              title={full ? "Room is full" : costDisabledReason(row.entryCost) || undefined}
+                              title={
+                                full
+                                  ? gamePackCopy(ARCADE_PACK, "room_is_full")
+                                  : costDisabledReason(row.entryCost) || undefined
+                              }
                               onClick={() => void onJoinPublicRoom(row.roomId)}
                               className={`shrink-0 ${GH.btnJoinRoom}`}
                             >
-                              Join
+                              {gamePackCopy(ARCADE_PACK, "join")}
                             </button>
                           </li>
                         );
@@ -898,13 +950,17 @@ export default function StudentArcadePage() {
                 </div>
 
                 <div className={GH.arcadePanelJoinCode || GH.card}>
-                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>Private room — join with code</h3>
-                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>Enter the code you got from a friend</p>
+                  <h3 className={GH.arcadeSectionTitle || GH.sectionTitle}>
+                    {gamePackCopy(ARCADE_PACK, "private_room_join_code")}
+                  </h3>
+                  <p className={`mt-1 text-[11px] sm:text-xs ${GH.arcadePanelBlurb || GH.cardBlurb}`}>
+                    {gamePackCopy(ARCADE_PACK, "enter_code_from_friend")}
+                  </p>
                   <div className="mt-3 flex flex-col gap-2">
                     <input
                       type="text"
                       autoComplete="off"
-                      placeholder={gamePackCopy("pages__student__arcade", "room_code")}
+                      placeholder={gamePackCopy(ARCADE_PACK, "room_code")}
                       value={joinCode}
                       onChange={(e) => setJoinCode(e.target.value)}
                       className={GH.input}
@@ -915,7 +971,7 @@ export default function StudentArcadePage() {
                       onClick={() => void onJoinByCodeSubmit()}
                       className={GH.btnJoinCode}
                     >
-                      Join with code
+                      {gamePackCopy(ARCADE_PACK, "join_with_code")}
                     </button>
                   </div>
                 </div>
@@ -925,18 +981,20 @@ export default function StudentArcadePage() {
 
           {activeTab === "games" && roomHighlight && hlRoomId ? (
             <div className={`mt-5 ${GH.roomReadyPanel}`}>
-              <h3 className={GH.roomReadyTitle}>Room ready</h3>
+              <h3 className={GH.roomReadyTitle}>{gamePackCopy(ARCADE_PACK, "room_ready")}</h3>
               <p className={`mt-1 ${GH.roomReadySub}`}>{waitingCopy}</p>
               <dl className={`mt-3 space-y-2 ${GH.roomReadyDl}`}>
                 <div className={`flex justify-between gap-2 border-b pb-2 ${GH.roomReadyDlBorder}`}>
-                  <dt className="font-semibold">Entry cost</dt>
+                  <dt className="font-semibold">{gamePackCopy(ARCADE_PACK, "entry_cost")}</dt>
                   <dd className="font-mono">{hlEntry}</dd>
                 </div>
                 {hlPrivate && hlJoinCode ? (
                   <div className={GH.roomReadyCodeBox}>
-                    <p className={GH.roomReadyCodeLabel}>Room code</p>
+                    <p className={GH.roomReadyCodeLabel}>{gamePackCopy(ARCADE_PACK, "room_code")}</p>
                     <p className={`mt-1 ${GH.roomReadyCodeValue}`}>{hlJoinCode}</p>
-                    <p className={`mt-1.5 ${GH.roomReadyCodeHint}`}>Send the code to a friend so they can join</p>
+                    <p className={`mt-1.5 ${GH.roomReadyCodeHint}`}>
+                      {gamePackCopy(ARCADE_PACK, "send_code_to_friend")}
+                    </p>
                   </div>
                 ) : null}
               </dl>
@@ -944,7 +1002,7 @@ export default function StudentArcadePage() {
                 href={hlPlayHref}
                 className="mt-4 flex w-full items-center justify-center rounded-lg bg-emerald-600 px-3 py-2.5 text-center text-sm font-bold text-white shadow-md transition hover:bg-emerald-500 sm:text-base"
               >
-                Enter game
+                {gamePackCopy(ARCADE_PACK, "enter_game")}
               </Link>
             </div>
           ) : null}

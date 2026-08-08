@@ -1,0 +1,11 @@
+{
+  "gameId": "smart-blocks",
+  "title": "Balok Pintar",
+  "blurb": "Tempatkan bentuk, bersihkan baris dan kolom, dan capai target skor!",
+  "help": {
+    "howToPlay": "Seret bentuk ke papan, putar jika perlu, dan tempatkan untuk mengisi baris dan kolom.",
+    "scoring": "Membersihkan baris atau kolom menambah poin. Tujuannya mencapai target skor sebelum papan penuh.",
+    "rewards": "Menang sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+    "tip": "Coba bersihkan beberapa baris sekaligus — itu memberi banyak poin."
+  }
+}

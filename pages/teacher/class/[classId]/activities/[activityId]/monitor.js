@@ -6,7 +6,7 @@ import TeacherPortalShell from "../../../../../../components/teacher-portal/Teac
 import TeacherClassActivitiesNav from "../../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   activityModeLabelHe,
   activityStatusLabelHe,
@@ -46,7 +46,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "Load failed");
+        setError(apiErrorMessageHe(body?.error, "Load failed"));
         setData(null);
         return;
       }
@@ -80,7 +80,7 @@ export default function TeacherActivityMonitorPage({ classId, activityId }) {
       if (res.ok) await load();
       else {
         const body = await res.json().catch(() => ({}));
-        setError(body?.error?.message || action);
+        setError(apiErrorMessageHe(body?.error, action));
       }
     } finally {
       setBusy(false);

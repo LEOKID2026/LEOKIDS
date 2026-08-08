@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "summary_got_of": "Anda menjawab benar {correct} dari {total} soal",
+    "summary_got": "Anda menjawab benar {correct} soal",
+    "summary_finished": "Anda telah menyelesaikan aktivitas ini",
+    "score_chip_of": "{correct}/{total} soal",
+    "score_chip": "{correct} soal"
+  }
+}

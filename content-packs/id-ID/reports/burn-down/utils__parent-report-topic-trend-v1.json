@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "improving": "membaik",
+    "no_significant_change": "tidak ada perubahan signifikan",
+    "needs_reinforcement": "perlu penguatan",
+    "line_improving": "Tren pada periode ini: meningkat - akurasi pada bagian akhir periode lebih tinggi dibandingkan pada awal periode.",
+    "line_stable": "Tren pada periode ini: tidak ada perubahan signifikan - tetap membantu untuk memperkuat topik ini dengan latihan singkat.",
+    "line_declining": "Tren pada periode ini: perlu penguatan - terdapat lebih banyak kesalahan pada bagian akhir periode, sehingga latihan singkat akan membantu.",
+    "line_insufficient_data": "Rangkaian latihan masih belum cukup untuk mengenali tren dari waktu ke waktu."
+  }
+}

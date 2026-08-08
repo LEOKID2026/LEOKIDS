@@ -1,0 +1,88 @@
+{
+  "namespaces": {
+    "learning": {
+      "enLeaves": 617,
+      "idLeaves": 617,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0,
+      "missingSample": [],
+      "extraSample": [],
+      "emptySample": [],
+      "phSample": []
+    },
+    "worksheets": {
+      "enLeaves": 334,
+      "idLeaves": 334,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0,
+      "missingSample": [],
+      "extraSample": [],
+      "emptySample": [],
+      "phSample": []
+    },
+    "games": {
+      "enLeaves": 80,
+      "idLeaves": 80,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0,
+      "missingSample": [],
+      "extraSample": [],
+      "emptySample": [],
+      "phSample": []
+    }
+  },
+  "totals": {
+    "enLeaves": 1031,
+    "idLeaves": 1031,
+    "missingKeys": 0,
+    "extraKeys": 0,
+    "emptyLeaves": 0,
+    "placeholderMismatches": 0
+  },
+  "intentionalEnglish": [
+    "games.arcadeGames.bingo.title",
+    "games.arcadeGames.fourline.title",
+    "games.arcadeGames.ludo.title",
+    "learning.english.mistakes.amOnlyWithI",
+    "learning.english.mistakes.checkGrammar",
+    "learning.english.mistakes.checkGrammarLearning",
+    "learning.english.mistakes.iAmNotIs",
+    "learning.english.steps.grammarAmIsAre",
+    "learning.english.steps.grammarCheck",
+    "worksheets.writingCustomWordsPlaceholder"
+  ],
+  "unexplainedEnglishUi": [
+    "learning.master.correctAnswer: Jawaban benar: {answer}",
+    "learning.master.correctAnswerColon: Jawaban benar: {answer}.",
+    "learning.master.correctOfTotal: {correct} benar dari {total} pertanyaan",
+    "learning.master.feedback.wrongWithAnswer: Belum tepat 😔 Jawaban benar: {answer} ✅",
+    "learning.master.gradeTitle: Kelas {grade}",
+    "learning.master.gradedPracticeBlurb: Latihan bertingkat — mulai rendah lalu naik ke level pilihanmu",
+    "learning.master.gradedPracticeLabel: Latihan bertingkat (mulai rendah → level pilihanmu)",
+    "learning.master.levelLabel: Level {level}",
+    "learning.master.levelUp: Naik level!",
+    "learning.master.levelUpNow: Sekarang kamu level {level}!",
+    "learning.master.levelUpNowText: Sekarang kamu level {level}!",
+    "learning.master.mistakeRow: {question} = {wrong} ❌ (benar: {correct})",
+    "learning.master.practiceSettingsBlurb: Atur latihanmu: ulangi kesalahan terbaru, latihan bertingkat (mulai rendah lalu naik ke level pilihanmu), atau pilih area fokus.",
+    "learning.master.yourAnswer: Jawabanmu: {answer}",
+    "learning.math.levelUpScience: Kamu naik level di matematika!",
+    "learning.math.steps.answerIs: Jawabannya adalah: {answer}",
+    "learning.science.levelUp: Kamu naik level di sains!",
+    "learning.science.levelUpNow: Sekarang kamu level {level}",
+    "learning.science.steps.onlyMatch: {num}. Dari semua pilihan, hanya \"{answer}\" yang cocok dengan penjelasannya.",
+    "worksheets.createHint: Pilih mata pelajaran, kelas, topik, dan level — lalu buat lembar siap cetak.",
+    "worksheets.readyEmptyText: Coba ubah filter — atau pilih semua mata pelajaran, kelas, dan level."
+  ],
+  "gradeDefects": [],
+  "studentDefects": [],
+  "gameDefects": [],
+  "worksheetDefects": [],
+  "registerDefects": []
+}

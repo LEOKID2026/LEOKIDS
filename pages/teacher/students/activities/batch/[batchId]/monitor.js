@@ -4,7 +4,7 @@ import Layout from "../../../../../../components/Layout";
 import TeacherPortalShell from "../../../../../../components/teacher-portal/TeacherPortalShell";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   activityModeLabelHe,
   studentActivityStatusLabelHe,
@@ -34,7 +34,7 @@ export default function TeacherPrivateStudentsBatchMonitorPage({ batchId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || "Load failed");
+        setError(apiErrorMessageHe(body?.error, "Load failed"));
         return;
       }
       setData(body.data);

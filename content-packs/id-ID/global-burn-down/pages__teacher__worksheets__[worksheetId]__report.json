@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "worksheet_report": "Laporan lembar kerja",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  }
+}

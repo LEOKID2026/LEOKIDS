@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "plastic": "Plastik",
+    "newspaper": "Koran",
+    "cardboard": "Kardus",
+    "plastic_bottle": "Botol plastik",
+    "plastic_bag": "Kantong plastik",
+    "soda_can": "Kaleng soda",
+    "banana_peel": "Kulit pisang",
+    "medium": "Sedang",
+    "recycled_paper_can_become_new_paper_again": "Kertas daur ulang bisa menjadi kertas baru lagi.",
+    "plastic_bottles_can_be_made_into_new_products": "Botol plastik bisa dibuat menjadi produk baru.",
+    "glass_can_be_recycled_many_times": "Kaca bisa didaur ulang berkali-kali.",
+    "metal_cans_are_great_for_recycling": "Kaleng logam bagus untuk didaur ulang.",
+    "sorting_correctly_helps_protect_the_environment": "Memilah dengan benar membantu melindungi lingkungan."
+  }
+}

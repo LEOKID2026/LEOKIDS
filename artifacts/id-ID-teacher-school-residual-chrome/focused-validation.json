@@ -1,0 +1,18 @@
+{
+  "classReportEnglishAfter": 0,
+  "worksheetEnglishAfter": 0,
+  "discussionEnglishAfter": 0,
+  "schoolFallbackEnglishAfter": 0,
+  "ownedSlugKeyParityDefects": 0,
+  "emptyIdLeaves": 0,
+  "schoolNamespaceParityDefects": 0,
+  "adultRegisterDefects": 0,
+  "kelasRombelSemanticDefects": 0,
+  "hits": {
+    "classReport": [],
+    "worksheets": [],
+    "discussion": [],
+    "school": []
+  },
+  "pass": true
+}

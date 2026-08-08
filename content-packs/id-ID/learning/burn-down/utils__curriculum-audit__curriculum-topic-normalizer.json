@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "unknown_subject_for_normalization": "Mata pelajaran tidak dikenal untuk normalisasi.",
+    "mapped_from_math_generator_operation_topic_key": "Dipetakan dari operasi generator matematika / kunci topik.",
+    "mapped_from_geometry_topic_generator_kind": "Dipetakan dari topik geometri / jenis generator.",
+    "expand_geometry_strand_map_for_this_topic_kind": "Perluas peta strand geometri untuk topik/jenis ini.",
+    "vocabulary_games_map_to_lexis_translation_strand": "Gim kosakata dipetakan ke strand leksis / terjemahan.",
+    "writing_typing_modes_align_with_sentence_writing_strand": "Mode menulis / mengetik selaras dengan strand penulisan kalimat.",
+    "mixed_practice_audit_often_skips_or_treats_as_composite": "Latihan campuran — audit sering melewatkan atau memperlakukan sebagai komposit.",
+    "translation_pools_emphasize_vocabulary_phrases": "Pool terjemahan menekankan kosakata / frasa.",
+    "expected_grammar_translation_sentence": "Diharapkan grammar | translation | sentence.",
+    "mapped_from_science_bank_topic_field": "Dipetakan dari bidang topik bank IPA.",
+    "extend_science_domain_map": "Perluas peta domain IPA."
+  }
+}

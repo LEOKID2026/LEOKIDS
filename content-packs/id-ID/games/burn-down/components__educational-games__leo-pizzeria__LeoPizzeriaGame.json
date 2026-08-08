@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "the_customer_waited_too_long": "Pelanggan menunggu terlalu lama",
+    "aria_first_pizza": "Pizza pertama",
+    "aria_second_pizza": "Pizza kedua",
+    "aria_work_pizza": "Pizza kerja",
+    "pizza_in_progress": "Pizza sedang dibuat",
+    "customers_walk_into_the_pizzeria_make_them_exactly_the_pizza_they_ordere": "Pelanggan masuk ke pizzeria — buatkan pizza persis seperti yang mereka pesan!",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n                New game",
+    "leo_apos_s_pizzeria": "Pizzeria Leo",
+    "serve_pizza": "Sajikan pizza 🍕",
+    "open_shift": "Buka shift 🍕",
+    "clear_pizza": "Bersihkan pizza",
+    "new_game": "Gim baru",
+    "back": "Kembali"
+  }
+}

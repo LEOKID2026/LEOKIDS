@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "leo_number_8_digits_or_display_name": "Nomor Leo (8 digit) atau nama tampilan",
+    "this_is_the_number_you_give_a_friend_they_can_type_it_below_to_send_you_": "Ini nomor yang kamu berikan ke teman — mereka bisa mengetiknya di bawah untuk mengirim permintaan pertemanan.",
+    "enter_a_leo_number_or_display_name_a_friend_request_will_be_sent_for_the": "Masukkan nomor Leo atau nama tampilan — permintaan teman akan dikirim untuk mereka setujui.",
+    "couldn_t_show_your_leo_number_try_refreshing_the_page": "Tidak bisa menampilkan nomor Leo kamu — coba muat ulang halaman.",
+    "friends_controlled_via_admin_not_open_to_guests_yet": "Teman — dikontrol lewat Admin. Belum terbuka untuk tamu.",
+    "setquery_e_target_value": "setQuery(e.target.value)}\r\n          />",
+    "remove_this_friend_from_your_list": "Hapus teman ini dari daftarmu?",
+    "setting_up_your_leo_number": "Menyiapkan nomor Leo kamu…",
+    "requests_friends": "Permintaan & teman",
+    "friend_requests": "Permintaan teman",
+    "no_friends_yet": "Belum ada teman",
+    "my_leo_number": "Nomor Leo saya",
+    "remove_friend": "Hapus teman",
+    "add_friend": "Tambah teman",
+    "my_friends": "Teman-temanku",
+    "friends": "Teman",
+    "approve": "Setujui",
+    "decline": "Tolak",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "invite": "Undang",
+    "copy": "Salin",
+    "copied": "Tersalin!",
+    "online": "● Aktif",
+    "offline": "○ Tidak aktif"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cfg_maxtotal_total": "cfg.maxTotal || total",
+    "control_build": "Susun pesanannya.",
+    "control_find_per_tray": "Pilih berapa yang ditaruh di tiap nampan.",
+    "control_find_total": "Pilih jumlah total barang.",
+    "control_find_trays": "Pilih berapa nampan yang kamu butuhkan.",
+    "control_same_total": "Pilih susunan berbeda dengan total yang sama.",
+    "feedback_almost": "Periksa jumlah nampan dan berapa yang ada di tiap nampan.",
+    "feedback_ok": "Bagus! Pesanan siap.",
+    "info_find_per_tray": "{total} {itemLabel} · {trays} nampan",
+    "info_find_total": "{trays} nampan · {perTray} {itemLabel} per nampan",
+    "info_find_trays": "{total} {itemLabel} · {perTray} per nampan",
+    "info_same_total_given": "Diketahui: {givenTrays} × {givenPerTray} = {total}",
+    "item_cookies": "kue kering",
+    "item_croissants": "croissant",
+    "item_cupcakes": "cupcake",
+    "item_muffins": "muffin",
+    "item_rolls": "lemparan",
+    "prompt_build": "Susun {trays} nampan dengan {perTray} {itemLabel} di setiap nampan.",
+    "prompt_build_fallback": "Siapkan pesanannya.",
+    "prompt_find_per_tray": "Bagikan {total} {itemLabel} secara merata ke {trays} nampan. Berapa yang ada di setiap nampan?",
+    "prompt_find_total": "Ada {trays} nampan dengan {perTray} {itemLabel} di masing-masing. Berapa total {itemLabel}?",
+    "prompt_find_trays": "Ada {total} {itemLabel}. Setiap nampan menampung {perTray}. Berapa nampan yang kamu butuhkan?",
+    "prompt_same_total": "Ada {total} barang. Disusun sebagai {givenTrays} nampan dengan {givenPerTray} di masing-masing. Susun ulang total yang sama dengan jumlah nampan yang berbeda.",
+    "solution_text_default": "Solusi:",
+    "solution_text_find_per_tray": "Setiap nampan mendapat {perTray}.",
+    "solution_text_find_trays": "Kamu butuh {trays} nampan.",
+    "solution_text_same_total": "Cara lain: {trays} nampan dengan {perTray} di masing-masing."
+  }
+}

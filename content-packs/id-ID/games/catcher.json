@@ -1,0 +1,11 @@
+{
+  "gameId": "catcher",
+  "title": "Tangkap bersama Leo",
+  "blurb": "Tangkap koin dan jauhi bom!",
+  "help": {
+    "howToPlay": "Gerakkan Leo ke kiri dan kanan untuk menangkap koin dan berlian yang jatuh dari langit.",
+    "scoring": "Setiap koin atau berlian yang ditangkap menambah poin. Menabrak bom mengakhiri gim.",
+    "rewards": "Semakin banyak poin yang kamu dapat, semakin banyak koin dan permata untuk dunia anakmu.",
+    "tip": "Pantau yang jatuh dan bergerak lebih dulu sebelum item sampai di bawah."
+  }
+}

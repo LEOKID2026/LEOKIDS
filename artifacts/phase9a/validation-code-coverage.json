@@ -1,0 +1,216 @@
+{
+  "validationApiKeys": [
+    "auth_delete_failed",
+    "auth_list_failed",
+    "auth_users_unavailable",
+    "cannot_delete_self",
+    "card_settings_missing",
+    "coin_failed",
+    "confirm_email_mismatch",
+    "count_failed",
+    "db_error",
+    "db_schema_not_ready",
+    "delete_blocked_by_dependencies",
+    "delete_confirm_code_invalid",
+    "dependency_cleanup_failed",
+    "economy_config_missing",
+    "economy_db_error",
+    "economy_disabled",
+    "economy_unavailable",
+    "feature_disabled",
+    "forbidden",
+    "full_delete_disabled",
+    "full_delete_not_configured",
+    "internal_error",
+    "invalid_amount",
+    "invalid_audit_action",
+    "invalid_json",
+    "main_admin_required",
+    "method_not_allowed",
+    "not_a_school_manager",
+    "not_an_admin",
+    "not_found",
+    "parent_not_found",
+    "physical_class_not_found",
+    "protected_account",
+    "protected_admin_account",
+    "school_inactive",
+    "staff_user_not_found",
+    "student_limit_reached",
+    "subject_already_granted",
+    "teacher_subject_not_granted",
+    "unauthorized",
+    "update_failed",
+    "user_not_found",
+    "validation_failed"
+  ],
+  "stableCodesFound": 38,
+  "coveredCount": 7,
+  "missingCount": 31,
+  "covered": [
+    "db_schema_not_ready",
+    "feature_disabled",
+    "forbidden",
+    "internal_error",
+    "method_not_allowed",
+    "not_found",
+    "validation_failed"
+  ],
+  "missing": [
+    {
+      "code": "account_deactivated",
+      "area": "teacher",
+      "file": "pages/api/teacher/me.js"
+    },
+    {
+      "code": "already_archived",
+      "area": "teacher",
+      "file": "pages/api/teacher/classes/[classId]/archive.js"
+    },
+    {
+      "code": "class_archived",
+      "area": "teacher",
+      "file": "pages/api/teacher/classes/[classId]/members.js"
+    },
+    {
+      "code": "config_missing",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/create.js"
+    },
+    {
+      "code": "consent_invalid",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/link.js"
+    },
+    {
+      "code": "consent_required",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/link.js"
+    },
+    {
+      "code": "grade_mismatch",
+      "area": "teacher",
+      "file": "pages/api/teacher/activities/index.js"
+    },
+    {
+      "code": "grade_required",
+      "area": "parent",
+      "file": "pages/api/parent/create-student.js"
+    },
+    {
+      "code": "guest_not_eligible",
+      "area": "parent",
+      "file": "pages/api/parent/students/[studentId]/report-data.js"
+    },
+    {
+      "code": "jwt_required",
+      "area": "teacher",
+      "file": "pages/api/teacher/onboard.js"
+    },
+    {
+      "code": "link_limit_reached",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/link.js"
+    },
+    {
+      "code": "link_unavailable",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/link.js"
+    },
+    {
+      "code": "missing_card_id",
+      "area": "student",
+      "file": "pages/api/student/rewards/cards/convert-duplicates.js"
+    },
+    {
+      "code": "missing_idempotency_key",
+      "area": "student",
+      "file": "pages/api/student/rewards/shop/sell-duplicate.js"
+    },
+    {
+      "code": "missing_resume_token",
+      "area": "student",
+      "file": "pages/api/student/guest/resume.js"
+    },
+    {
+      "code": "missing_student_id",
+      "area": "parent",
+      "file": "pages/api/parent/guest/link.js"
+    },
+    {
+      "code": "not_authenticated",
+      "area": "school",
+      "file": "pages/api/school/staff/change-pin.js"
+    },
+    {
+      "code": "not_authorized",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/[studentId]/admin-profile.js"
+    },
+    {
+      "code": "not_parent_activity",
+      "area": "student",
+      "file": "pages/api/student/activities/[activityId]/learning-visit.js"
+    },
+    {
+      "code": "not_school_guardian",
+      "area": "parent",
+      "file": "pages/api/parent/mini-report.js"
+    },
+    {
+      "code": "rate_limited",
+      "area": "teacher",
+      "file": "pages/api/teacher/activities/index.js"
+    },
+    {
+      "code": "server_error",
+      "area": "student",
+      "file": "pages/api/student/leo-miners/state.js"
+    },
+    {
+      "code": "student_id_required",
+      "area": "parent",
+      "file": "pages/api/parent/delete-student.js"
+    },
+    {
+      "code": "student_not_found",
+      "area": "teacher",
+      "file": "pages/api/teacher/student-activities/index.js"
+    },
+    {
+      "code": "student_not_linked",
+      "area": "teacher",
+      "file": "pages/api/teacher/students/[studentId]/archive.js"
+    },
+    {
+      "code": "student_product_mismatch",
+      "area": "parent",
+      "file": "pages/api/parent/create-student.js"
+    },
+    {
+      "code": "student_scope_violation",
+      "area": "parent",
+      "file": "pages/api/parent/mini-report.js"
+    },
+    {
+      "code": "subject_mismatch",
+      "area": "teacher",
+      "file": "pages/api/teacher/activities/index.js"
+    },
+    {
+      "code": "teacher_profile_missing",
+      "area": "teacher",
+      "file": "pages/api/teacher/me.js"
+    },
+    {
+      "code": "unknown_query_param",
+      "area": "teacher",
+      "file": "pages/api/teacher/classes/index.js"
+    },
+    {
+      "code": "wrong_school",
+      "area": "school",
+      "file": "pages/api/school/students/[studentId]/admin-profile.js"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   const studentId = req.query?.studentId;
   const body = req.body && typeof req.body === "object" ? req.body : {};
   if (!body.loginUsername) {
-    return sendSchoolApiError(res, 400, "validation_failed", "loginUsername required");
+    return sendSchoolApiError(res, 400, "validation_failed", "validation_failed");
   }
 
   try {

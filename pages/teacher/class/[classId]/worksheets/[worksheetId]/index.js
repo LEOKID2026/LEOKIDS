@@ -1,3 +1,4 @@
+import { globalBurnDownCopy } from "../../../../../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../../../../components/Layout";
@@ -7,11 +8,14 @@ import PdfUploader from "../../../../../../components/worksheet-activities/PdfUp
 import TeacherQuestionBuilder from "../../../../../../components/worksheet-activities/TeacherQuestionBuilder";
 import { getLearningSupabaseBrowserClient } from "../../../../../../lib/learning-supabase/client";
 import { resolveTeacherAccessToken } from "../../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   worksheetModeLabelHe,
   worksheetStatusLabelHe,
 } from "../../../../../../lib/worksheet-activities/worksheet-labels.client.js";
+
+const SLUG = "pages__teacher__class__[classId]__worksheets__[worksheetId]";
+const c = (key) => globalBurnDownCopy(SLUG, key);
 
 export async function getServerSideProps(context) {
   return {
@@ -45,14 +49,14 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
       );
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(body?.error?.code || "Error");
+        setError(apiErrorMessageHe(body?.error, c("error_generic")));
         return;
       }
       setWorksheet(body.data.worksheet);
       setQuestions(body.data.questions || []);
       setHasPdf((body.data.files || []).some((f) => f.fileRole === "worksheet" && !f.isDeleted));
     } catch {
-      setError("Network error");
+      setError(c("network_error"));
     }
   }, [worksheetId, router]);
 
@@ -64,7 +68,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
     async (file) => {
       const supabase = getLearningSupabaseBrowserClient();
       const session = await resolveTeacherAccessToken(supabase);
-      if (!session.ok) return { ok: false, error: "Not signed in" };
+      if (!session.ok) return { ok: false, error: c("not_signed_in") };
       const pdfBase64 = await new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => {
@@ -84,7 +88,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
         }
       );
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) return { ok: false, error: body?.error?.code };
+      if (!res.ok) return { ok: false, error: apiErrorMessageHe(body?.error, c("error_generic")) };
       setHasPdf(true);
       return { ok: true, fileId: body?.data?.fileId, originalFilename: body?.data?.originalFilename };
     },
@@ -142,7 +146,7 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
         );
         if (!res.ok) {
           const body = await res.json().catch(() => ({}));
-          setError(body?.error?.code);
+          setError(apiErrorMessageHe(body?.error, c("error_generic")));
           return;
         }
         await load();
@@ -156,8 +160,8 @@ export default function TeacherWorksheetManagePage({ classId, worksheetId }) {
   if (!worksheet) {
     return (
       <Layout>
-        <TeacherPortalShell title="Worksheet" backHref={`/teacher/class/${classId}/worksheets`}>
-          <p className="text-white/60">{error || "Loading…"}</p>
+        <TeacherPortalShell title={c("worksheet")} backHref={`/teacher/class/${classId}/worksheets`}>
+          <p className="text-white/60">{error || c("loading")}</p>
         </TeacherPortalShell>
       </Layout>
     );

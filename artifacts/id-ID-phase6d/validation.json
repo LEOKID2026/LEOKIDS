@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "wordListsEntries": 745,
+    "wordListsLists": 21,
+    "enEntries": 721,
+    "enLists": 20,
+    "idEntries": 745,
+    "idLists": 21,
+    "missing": 0,
+    "extra": 0,
+    "dups": 0,
+    "empty": 0,
+    "meaningEqLemma": 38,
+    "eqLemmaSample": [
+      "animals.penguin=penguin",
+      "animals.zebra=zebra",
+      "food.salad=salad",
+      "food.pasta=pasta",
+      "food.pizza=pizza",
+      "school.stapler=stapler",
+      "sports.yoga=yoga",
+      "sports.golf=golf",
+      "sports.karate=karate",
+      "sports.judo=judo",
+      "travel.bus=bus",
+      "travel.hotel=hotel",
+      "house.sofa=sofa",
+      "house.oven=oven",
+      "house.toilet=toilet",
+      "community.museum=museum",
+      "community.supermarket=supermarket",
+      "community.bank=bank",
+      "technology.tablet=tablet",
+      "technology.robot=robot",
+      "technology.internet=internet",
+      "technology.laptop=laptop",
+      "technology.printer=printer",
+      "technology.speaker=speaker",
+      "technology.email=email",
+      "technology.video=video",
+      "technology.folder=folder",
+      "technology.program=program",
+      "technology.wifi=wifi",
+      "technology.bluetooth=bluetooth",
+      "health.flu=flu",
+      "environment.planet=planet",
+      "culture.film=film",
+      "culture.piano=piano",
+      "culture.festival=festival",
+      "history.modern=modern",
+      "history.museum=museum",
+      "global_issues.tsunami=tsunami"
+    ]
+  },
+  "missing": [],
+  "extra": [],
+  "dups": [],
+  "empty": [],
+  "eqLemma": [
+    {
+      "k": "animals.penguin",
+      "m": "penguin"
+    },
+    {
+      "k": "animals.zebra",
+      "m": "zebra"
+    },
+    {
+      "k": "food.salad",
+      "m": "salad"
+    },
+    {
+      "k": "food.pasta",
+      "m": "pasta"
+    },
+    {
+      "k": "food.pizza",
+      "m": "pizza"
+    },
+    {
+      "k": "school.stapler",
+      "m": "stapler"
+    },
+    {
+      "k": "sports.yoga",
+      "m": "yoga"
+    },
+    {
+      "k": "sports.golf",
+      "m": "golf"
+    },
+    {
+      "k": "sports.karate",
+      "m": "karate"
+    },
+    {
+      "k": "sports.judo",
+      "m": "judo"
+    },
+    {
+      "k": "travel.bus",
+      "m": "bus"
+    },
+    {
+      "k": "travel.hotel",
+      "m": "hotel"
+    },
+    {
+      "k": "house.sofa",
+      "m": "sofa"
+    },
+    {
+      "k": "house.oven",
+      "m": "oven"
+    },
+    {
+      "k": "house.toilet",
+      "m": "toilet"
+    },
+    {
+      "k": "community.museum",
+      "m": "museum"
+    },
+    {
+      "k": "community.supermarket",
+      "m": "supermarket"
+    },
+    {
+      "k": "community.bank",
+      "m": "bank"
+    },
+    {
+      "k": "technology.tablet",
+      "m": "tablet"
+    },
+    {
+      "k": "technology.robot",
+      "m": "robot"
+    },
+    {
+      "k": "technology.internet",
+      "m": "internet"
+    },
+    {
+      "k": "technology.laptop",
+      "m": "laptop"
+    },
+    {
+      "k": "technology.printer",
+      "m": "printer"
+    },
+    {
+      "k": "technology.speaker",
+      "m": "speaker"
+    },
+    {
+      "k": "technology.email",
+      "m": "email"
+    },
+    {
+      "k": "technology.video",
+      "m": "video"
+    },
+    {
+      "k": "technology.folder",
+      "m": "folder"
+    },
+    {
+      "k": "technology.program",
+      "m": "program"
+    },
+    {
+      "k": "technology.wifi",
+      "m": "wifi"
+    },
+    {
+      "k": "technology.bluetooth",
+      "m": "bluetooth"
+    },
+    {
+      "k": "health.flu",
+      "m": "flu"
+    },
+    {
+      "k": "environment.planet",
+      "m": "planet"
+    },
+    {
+      "k": "culture.film",
+      "m": "film"
+    },
+    {
+      "k": "culture.piano",
+      "m": "piano"
+    },
+    {
+      "k": "culture.festival",
+      "m": "festival"
+    },
+    {
+      "k": "history.modern",
+      "m": "modern"
+    },
+    {
+      "k": "history.museum",
+      "m": "museum"
+    },
+    {
+      "k": "global_issues.tsunami",
+      "m": "tsunami"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "labelOptions": {
+    "parallel_perpendicular": [
+      "Sejajar",
+      "Tegak lurus"
+    ],
+    "triangles": [
+      "Sama sisi",
+      "Sama kaki",
+      "Sembarang"
+    ],
+    "quadrilaterals": [
+      "Persegi",
+      "Persegi panjang",
+      "Jajar genjang",
+      "Trapesium"
+    ],
+    "transformations": [
+      "Translasi",
+      "Refleksi",
+      "Rotasi",
+      "Tanpa pergerakan"
+    ],
+    "concept_transform": [
+      "Translasi",
+      "Refleksi",
+      "Rotasi",
+      "Tanpa pergerakan"
+    ],
+    "shapes_basic_square": [
+      "Persegi",
+      "Persegi panjang"
+    ],
+    "shapes_basic_rectangle": [
+      "Persegi",
+      "Persegi panjang"
+    ],
+    "shapes_basic_properties_square": [
+      "2",
+      "3",
+      "4",
+      "Tidak ada sisi sama"
+    ],
+    "shapes_basic_properties_rectangle": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "shapes_basic_properties_angles": [
+      "2",
+      "3",
+      "4",
+      "Tidak ada sudut siku-siku"
+    ]
+  },
+  "solidNames": [
+    "Kubus",
+    "Balok",
+    "Tabung",
+    "Limas",
+    "Kerucut",
+    "Bola"
+  ],
+  "shapeWords": {
+    "": "Tegak lurus",
+    " ": "Sembarang"
+  },
+  "solidAliases": {
+    "cube": "Kubus",
+    "rectangular prism": "Balok",
+    "cylinder": "Tabung",
+    "pyramid": "Limas",
+    "cone": "Kerucut",
+    "sphere": "Bola"
+  }
+}

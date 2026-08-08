@@ -1,0 +1,58 @@
+[
+  {
+    "file": "pages/api/teacher/student-activities/index.js",
+    "code": "db_schema_not_ready"
+  },
+  {
+    "file": "pages/api/teacher/student-activities/index.js",
+    "code": "internal_error"
+  },
+  {
+    "file": "pages/api/school/staff/change-pin.js",
+    "code": "not_authenticated"
+  },
+  {
+    "file": "pages/api/teacher/students/[studentId]/admin-profile.js",
+    "code": "not_authorized"
+  },
+  {
+    "file": "pages/api/guardian/change-pin.js",
+    "code": "not_school_guardian"
+  },
+  {
+    "file": "lib/school-server/school-request.server.js",
+    "code": "not_school_portal_member"
+  },
+  {
+    "file": "lib/school-server/school-request.server.js",
+    "code": "operator_grant_required"
+  },
+  {
+    "file": "pages/api/teacher/profile/locale.js",
+    "code": "profile_update_failed"
+  },
+  {
+    "file": "lib/school-server/school-request.server.js",
+    "code": "school_inactive"
+  },
+  {
+    "file": "pages/api/teacher/student-activities/index.js",
+    "code": "student_not_found"
+  },
+  {
+    "file": "pages/api/teacher/students/[studentId]/parent-messages/index.js",
+    "code": "student_not_linked"
+  },
+  {
+    "file": "pages/api/teacher/classes/index.js",
+    "code": "unexpected_server_error"
+  },
+  {
+    "file": "pages/api/school/classes/[classId]/assign-teacher.js",
+    "code": "validation_failed"
+  },
+  {
+    "file": "pages/api/school/students/[studentId]/admin-profile.js",
+    "code": "wrong_school"
+  }
+]

@@ -1,0 +1,1388 @@
+[
+  {
+    "s": "and",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "Asia/Jerusalem",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "Missing x-engine-review-token header",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "Run npm run qa:learning-simulator:professional-engine (PASS), then retry.",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "setAnimationStep((s) => (s",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "typeof id === \"string\" && id.length > 0 && id.length",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "r.dueAt",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "MistakeEventV1+report_row",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "Summarized per-row filters; see evidenceTrace on each unit",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "s.ms",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "c.responseTimeMs != null && c.responseTimeMs",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "4 m",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "5 m",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "With I we use am.",
+    "tech": false,
+    "intentional": true,
+    "brand": false
+  },
+  {
+    "s": "With he/she/it we use is.",
+    "tech": false,
+    "intentional": true,
+    "brand": false
+  },
+  {
+    "s": "With you/we/they we use are.",
+    "tech": false,
+    "intentional": true,
+    "brand": false
+  },
+  {
+    "s": "r.start",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "1.1.0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "math",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "geometry",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "science",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "none",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "thin",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "limited",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "medium",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "strong",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "very_low",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "low",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "high",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "continue_current_level",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "advance_cautiously",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "targeted_practice",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "review_foundation",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "collect_more_data",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "slow_down_and_check",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "teacher_review_recommended",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "professional_review_consideration",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "dyslexia",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "dyscalculia",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "adhd",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "addition",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "subtraction",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "multiplication",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "division",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "order_of_operations",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "numerator_denominator_understanding",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "compare_fractions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "unlike_denominators",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "equivalent_fractions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "add_fractions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "subtract_fractions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "simplify_fractions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "mixed_numbers",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fraction_word_problems",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "identify_operation_from_text",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "translate_text_to_equation",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "multi_step_reasoning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "irrelevant_information",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "reading_the_question",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "place_value",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "rounding",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "estimation",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "number_line_reasoning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "word_meaning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "collocations",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "context_clues",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "synonyms_antonyms",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "tense_agreement",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "sentence_structure",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "articles_prepositions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "word_order",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "main_idea",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "details",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "inference",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "sequence",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "sentence_meaning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "connectors",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "negation_scope",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "alignment_meaning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "false_friends",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "instruction_transfer",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "identify_cause",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "identify_effect",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "chain_reasoning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "variables",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "hypothesis",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "steps",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "interpret_results",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "describe_patterns",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "collect_evidence",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "measurement_basics",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "sorting_rules",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "taxonomy",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "compare_groups",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "parts_roles",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "cycles",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "interactions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "models",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "predictions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "evidence_vs_opinion",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "identify_shapes",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "properties",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "compare_shapes",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "measure_angles",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "angle_types",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "angle_relationships",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "area_formulas",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "composite_figures",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "units",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "perimeter_reasoning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "composite_bounds",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "line_symmetry",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "reflections",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "nets",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "views",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "transformations",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "Pythagorean theorem",
+    "tech": false,
+    "intentional": false,
+    "brand": true
+  },
+  {
+    "s": "problems",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "vocabulary",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "grammar",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "sentences",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "completion",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "translation",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "comparison",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "remainder",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fractions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "decimals",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "percentages",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "discounts",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "perimeter",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "area",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "volume",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "prism",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "angles",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "triangles",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "rectangle",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "prepositions",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "listening",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "spelling",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "reading",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "writing",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "recall",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "story",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "regrouping",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "once",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "grade",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "context",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "geography",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "math:addition:learning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "math:w:0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "moderate",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "mistake",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "success",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "stu-imp:math:w:0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "stu-maint:math:addition:learning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "par-imp:math:w:0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "par-maint:math:addition:learning",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "geometry:w:0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "16 cm",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "15 cm",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "stu-imp:geometry:w:0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "par-imp:geometry:w:0",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fraction_common_denominator_only",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fraction_lcm_pair_compare",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fraction_same_den_twice",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fraction_meaning_visual",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "fraction_operation_gate",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_tense_minimal_pair",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_subject_verb_agreement_short",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_vocab_in_context_cloze",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "science_concept_minimal_contrast",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "science_fact_one_line_recall",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "science_cause_effect_pair",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "science_single_criterion_sort",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "place_value_digit_value",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "multiplication_fact_check",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "geometry_formula_choice",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "geometry_concept_minimal_contrast",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_question_frame_word_order",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_modal_minimal_pair",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_quantifier_minimal_pair",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_comparative_form_short",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_conditional_clause_short",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "english_be_agreement_gate",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "science_fact_single_choice",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "2",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "3",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "4",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "1",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "the {placeName}",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "add in the {place}",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "compute",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "E-01",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "collocation",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "false friend",
+    "tech": false,
+    "intentional": true,
+    "brand": false
+  },
+  {
+    "s": "E-02",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "past/present",
+    "tech": false,
+    "intentional": true,
+    "brand": false
+  },
+  {
+    "s": "E-03",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "E-04",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "E-05",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "preposition",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "E-06",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "E-07",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "E-08",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-01",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-02",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-03",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-04",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-05",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-06",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-07",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "G-08",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-01",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-02",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-03",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-04",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-05",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-06",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-07",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-08",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-09",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "M-10",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-01",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-02",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-03",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-04",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-05",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-06",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-07",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  },
+  {
+    "s": "S-08",
+    "tech": true,
+    "intentional": false,
+    "brand": false
+  }
+]

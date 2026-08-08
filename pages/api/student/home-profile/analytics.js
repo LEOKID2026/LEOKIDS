@@ -15,14 +15,14 @@ export default async function handler(req, res) {
   res.setHeader("Vary", "Cookie");
 
   if (req.method !== "GET") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
   }
 
   try {
     const auth = await getAuthenticatedStudentSession(req);
     if (!auth) {
       clearStudentSessionCookie(res);
-      return res.status(401).json({ ok: false, error: "Student session expired" });
+      return res.status(401).json({ ok: false, error: "Student session expired", code: "session_expired" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();
@@ -39,6 +39,10 @@ export default async function handler(req, res) {
   } catch (e) {
     const msg = e && typeof e === "object" && "message" in e ? String(e.message) : String(e);
     console.error("[student-home-profile/analytics] unexpected error", msg.slice(0, 200));
-    return res.status(500).json({ ok: false, error: "A temporary error occurred. Please try again later." });
+    return res.status(500).json({
+      ok: false,
+      error: "unexpected_server_error",
+      code: "unexpected_server_error",
+    });
   }
 }

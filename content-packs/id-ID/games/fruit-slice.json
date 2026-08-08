@@ -1,0 +1,11 @@
+{
+  "gameId": "fruit-slice",
+  "title": "Iris Buah",
+  "blurb": "Iris buah, hindari bom, dan capai target skor!",
+  "help": {
+    "howToPlay": "Seret jari di layar untuk mengiris buah yang terbang. Hindari bom — kamu punya tiga kesempatan salah.",
+    "scoring": "Setiap buah yang diiris menambah poin. Mengiris beberapa buah sekaligus memberi bonus combo. Menabrak bom atau melewatkan buah menghabiskan satu kesalahan.",
+    "rewards": "Mencapai target skor sesuai tingkat kesulitan memberi koin dan berlian.",
+    "tip": "Iris hanya buah - jika melihat bom, lebih baik lewati."
+  }
+}

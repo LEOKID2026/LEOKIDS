@@ -7,13 +7,14 @@ import { worksheetGradingStatusLabelHe } from "../../../lib/worksheet-activities
 import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
 import { demoPackCopyForLocale } from "../../../lib/demo/demo-pack-copy.js";
 import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
+import { resolveStudentApiErrorMessage } from "../../../lib/student-client/student-api-legacy-errors.js";
 
 export async function getServerSideProps(context) {
   return { props: { worksheetId: String(context.params?.worksheetId || "").trim() } };
 }
 
 export default function StudentWorksheetPage({ worksheetId }) {
-  const { locale, direction } = useI18n();
+  const { locale, direction, t } = useI18n();
   const demoMode = isDemoMode();
   const demoCopy = (group, key) => demoPackCopyForLocale(locale, group, key);
   const [worksheet, setWorksheet] = useState(null);
@@ -34,16 +35,16 @@ export default function StudentWorksheetPage({ worksheetId }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error || "Error");
+        setError(resolveStudentApiErrorMessage(json, t));
         return;
       }
       setWorksheet(json.worksheet);
       setQuestions(json.questions || []);
       setStudentStatus(json.studentStatus);
     } catch {
-      setError("Network error");
+      setError(t("auth.networkError"));
     }
-  }, [worksheetId, demoMode]);
+  }, [worksheetId, demoMode, t]);
 
   useEffect(() => {
     if (demoMode) return;
@@ -62,12 +63,12 @@ export default function StudentWorksheetPage({ worksheetId }) {
         window.open(json.signedUrl, "_blank", "noopener");
         await load();
       } else {
-        setError(json?.error || "Unable to open");
+        setError(resolveStudentApiErrorMessage(json, t));
       }
     } finally {
       setBusy(false);
     }
-  }, [worksheetId, load]);
+  }, [worksheetId, load, t]);
 
   const markComplete = useCallback(async () => {
     if (demoMode) {
@@ -84,15 +85,20 @@ export default function StudentWorksheetPage({ worksheetId }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error || "Error");
+        setError(resolveStudentApiErrorMessage(json, t));
         return;
       }
-      setMsg("Submission received. Please turn in the physical worksheet to your teacher by the due date.");
+      setMsg(
+        globalBurnDownCopy(
+          "pages__student__worksheet__[worksheetId]",
+          "submission_received_and_waiting_for_teacher_approval"
+        )
+      );
       await load();
     } finally {
       setBusy(false);
     }
-  }, [worksheetId, load, demoMode, demoCopy]);
+  }, [worksheetId, load, demoMode, demoCopy, t]);
 
   const submitAnswers = useCallback(async () => {
     if (demoMode) {
@@ -121,19 +127,20 @@ export default function StudentWorksheetPage({ worksheetId }) {
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error || "Error");
+        setError(resolveStudentApiErrorMessage(json, t));
         return;
       }
       setMsg(
-        json.hasManualQuestions
-          ? "Great job — your submission was received and will be reviewed by your teacher."
-          : globalBurnDownCopy("pages__student__worksheet__[worksheetId]", "submission_received_and_waiting_for_teacher_approval")
+        globalBurnDownCopy(
+          "pages__student__worksheet__[worksheetId]",
+          "submission_received_and_waiting_for_teacher_approval"
+        )
       );
       await load();
     } finally {
       setBusy(false);
     }
-  }, [worksheetId, questions, answers, load, demoMode, demoCopy]);
+  }, [worksheetId, questions, answers, load, demoMode, demoCopy, t]);
 
   if (demoMode && !worksheet) {
     return (
@@ -153,7 +160,7 @@ export default function StudentWorksheetPage({ worksheetId }) {
     return (
       <Layout>
         <div className="min-h-[50vh] flex items-center justify-center text-white/70">
-          {error || "Loading…"}
+          {error || resolveStudentApiErrorMessage("", t)}
         </div>
       </Layout>
     );

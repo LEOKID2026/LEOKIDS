@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "worksheet": "Lembar kerja",
+    "not_signed_in": "Anda belum masuk",
+    "network_error": "Kesalahan jaringan",
+    "loading": "Memuat…",
+    "error_generic": "Kesalahan"
+  }
+}

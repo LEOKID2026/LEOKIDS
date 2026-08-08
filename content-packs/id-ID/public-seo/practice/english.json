@@ -1,0 +1,100 @@
+{
+  "seoKey": "practice-english",
+  "slug": "english",
+  "badge": "Bahasa Inggris untuk Kelas 1–6",
+  "h1": "Latihan Bahasa Inggris menurut kelas dan topik",
+  "intro": "Latihan Bahasa Inggris mencakup fonik, kosakata, kalimat, tata bahasa, membaca, dan mengikuti instruksi. Pilih kelas dan topik, lalu kerjakan satu keterampilan per aktivitas.",
+  "sections": [
+    {
+      "title": "Topik inti Bahasa Inggris",
+      "bullets": [
+        "Huruf dan bunyi.",
+        "Membaca kata.",
+        "Kosakata.",
+        "Mencocokkan kata dengan makna.",
+        "Melengkapi kalimat.",
+        "Tata bahasa dasar.",
+        "Membaca dan mengikuti instruksi.",
+        "Menulis menurut kelas."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memilih topik?",
+      "paragraphs": [
+        "Di kelas yang lebih muda, mulai dengan huruf, bunyi, dan kata dasar. Kemudian, fokus pada kosakata, kalimat, tata bahasa, dan membaca."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memperkuat kata baru?",
+      "paragraphs": [
+        "Baca kata, pahami artinya, kenali dalam kalimat, dan gunakan dalam konteks lain."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Pengenalan pertama pada kata, bunyi, huruf, dan kalimat pendek."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Memperluas kosakata, memahami kalimat, membaca singkat, dan latihan struktur dasar."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Teks singkat, menulis sederhana, tata bahasa yang lebih lanjut, dan pemahaman berbasis konteks."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    },
+    {
+      "href": "/practice/no-print",
+      "label": "Latihan digital"
+    },
+    {
+      "href": "/practice/reading",
+      "label": "Latihan pemahaman bacaan"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "english-vocabulary-practice",
+    "learning-games-at-home",
+    "home-practice-routine"
+  ],
+  "faq": [
+    {
+      "q": "Apakah ada latihan fonik?",
+      "a": "Ya. Aktivitas fonik tersedia untuk kelas yang lebih muda."
+    },
+    {
+      "q": "Bisakah kita berlatih kosakata?",
+      "a": "Ya. Pilih aktivitas untuk kata, makna, dan penggunaan dalam kalimat."
+    },
+    {
+      "q": "Apakah ada lembar kerja Bahasa Inggris?",
+      "a": "Ya. Halaman lembar kerja mencakup lembar siap pakai dan generator untuk dicoba."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih topik Bahasa Inggris",
+    "body": "Mulai dengan kata dan bunyi, lalu lanjut ke kalimat, tata bahasa, dan membaca.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Buka akun orang tua"
+    },
+    "secondary": {
+      "href": "/practice/worksheets",
+      "label": "Lembar kerja Bahasa Inggris"
+    }
+  }
+}

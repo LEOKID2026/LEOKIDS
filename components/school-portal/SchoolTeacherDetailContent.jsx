@@ -33,20 +33,30 @@ import {
   apiErrorMessageHe,
   schoolAuthFetch,
   schoolSubjectLabelHe,
+  schoolUiFill,
+  SCHOOL_AUTHORIZED_SUBJECTS,
   SCHOOL_BACK_TEACHERS,
+  SCHOOL_CHILDREN_COUNT,
+  SCHOOL_CHILDREN_LOAD_ERROR,
   SCHOOL_CLASS_REPORT_TITLE,
   SCHOOL_COL_CLASSES,
+  SCHOOL_COL_STUDENT,
   SCHOOL_COL_STUDENTS,
   SCHOOL_LOADING_DATA,
+  SCHOOL_LOAD_ERROR,
   SCHOOL_MANAGER_ALL_SUBJECTS,
+  SCHOOL_NO_TEACHER_ID,
+  SCHOOL_REPORT_LOAD_ERROR,
   SCHOOL_REPORT_LOADING,
   SCHOOL_ROLE_MANAGER,
   SCHOOL_ROLE_TEACHER,
   SCHOOL_SUBJECT_ADD,
+  SCHOOL_SUBJECT_LABEL,
   SCHOOL_SUBJECT_REMOVE,
   SCHOOL_SUBJECTS_TITLE,
   SCHOOL_TEACHER_CLASSES_TITLE,
   SCHOOL_TEACHER_CLASS_SUBJECTS_PREFIX,
+  SCHOOL_TEACHER_DETAIL_NETWORK_ERROR,
   SCHOOL_TEACHER_EMPTY_CLASSES,
 } from "../../lib/school-portal/school-ui.js";
 
@@ -177,7 +187,7 @@ export default function SchoolTeacherDetailContent({
       } else {
         setDetail(null);
         onDetailLoaded?.(null);
-        setDetailError(dBody?.error?.message || "Error loading teacher details");
+        setDetailError(apiErrorMessageHe(dBody?.error, SCHOOL_LOAD_ERROR));
       }
       if (sResult?.status === 200) {
         setSubjects(sBody.data?.subjects || []);
@@ -185,7 +195,7 @@ export default function SchoolTeacherDetailContent({
         setSubjects([]);
       }
     } catch {
-      setDetailError("Network error loading teacher details");
+      setDetailError(SCHOOL_TEACHER_DETAIL_NETWORK_ERROR);
     } finally {
       setDetailLoading(false);
     }
@@ -241,7 +251,7 @@ export default function SchoolTeacherDetailContent({
         path,
       });
       if (result?.status !== 200) {
-        setReportError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
+        setReportError(apiErrorMessageHe(result?.body?.error, SCHOOL_REPORT_LOAD_ERROR));
         return;
       }
       setReportViewModel(
@@ -280,7 +290,7 @@ export default function SchoolTeacherDetailContent({
         row?.displayName ||
         body?.student?.full_name ||
         reportViewModel?.sections?.students?.items?.find((i) => i.studentId === studentId)?.name ||
-        "Child";
+        SCHOOL_COL_STUDENT;
       setNestedStudentVm(
         parseStudentReportViewModel(
           body,
@@ -332,12 +342,12 @@ export default function SchoolTeacherDetailContent({
       const res = await schoolAuthFetch(accessToken, `/api/school/students?${q.toString()}`);
       const body = await res.json().catch(() => ({}));
       if (res.status !== 200) {
-        setStudentsError(apiErrorMessageHe(body?.error, "Error loading children"));
+        setStudentsError(apiErrorMessageHe(body?.error, SCHOOL_CHILDREN_LOAD_ERROR));
         return;
       }
       setStudents(body?.data?.students || []);
     } catch {
-      setStudentsError("Error loading children");
+      setStudentsError(SCHOOL_CHILDREN_LOAD_ERROR);
     } finally {
       setStudentsLoading(false);
     }
@@ -376,7 +386,7 @@ export default function SchoolTeacherDetailContent({
     : "";
 
   if (!teacherId) {
-    return <p className="text-white/60 text-sm text-start">No teacher ID found.</p>;
+    return <p className="text-white/60 text-sm text-start">{SCHOOL_NO_TEACHER_ID}</p>;
   }
 
   if (detailBlocking) {
@@ -434,7 +444,7 @@ export default function SchoolTeacherDetailContent({
                   <SchoolManagementCard
                     key={key}
                     title={group.name}
-                    subtitle={`${studentCount} children`}
+                    subtitle={schoolUiFill(SCHOOL_CHILDREN_COUNT, { count: studentCount })}
                     meta={`${SCHOOL_TEACHER_CLASS_SUBJECTS_PREFIX}: ${subjectLabels.join(", ")}`}
                     onClick={() => openPhysicalClass(group)}
                     data-testid={`school-teacher-physical-class-card-${key}`}
@@ -456,7 +466,7 @@ export default function SchoolTeacherDetailContent({
       ) : (
         <SchoolSection title={SCHOOL_SUBJECTS_TITLE}>
           <div className="mb-4">
-            <p className="text-sm text-white/55 mb-2">Authorized subjects:</p>
+            <p className="text-sm text-white/55 mb-2">{SCHOOL_AUTHORIZED_SUBJECTS}</p>
             <SchoolSubjectBadges subjects={subjects.map((s) => s.subject)} max={12} />
           </div>
           <ul className="space-y-2 mb-6">
@@ -481,7 +491,7 @@ export default function SchoolTeacherDetailContent({
           </ul>
           <form onSubmit={grantSubject} className="flex flex-wrap gap-3 items-end border-t border-white/10 pt-4">
             <label className="text-sm text-white/70">
-              Subject
+              {SCHOOL_SUBJECT_LABEL}
               <SchoolSubjectSelect value={newSubject} onChange={setNewSubject} />
             </label>
             <SchoolPrimaryButton disabled={busy} type="submit">

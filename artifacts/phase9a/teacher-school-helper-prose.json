@@ -1,0 +1,337 @@
+[
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "feature_not_enabled",
+    "text": "${options.requireFeature} is not enabled"
+  },
+  {
+    "file": "pages/api/school/students/[studentId]/accounts/parent/block.js",
+    "code": "validation_failed",
+    "text": "accessId required"
+  },
+  {
+    "file": "pages/api/school/activities/[activityId]/students/[studentId]/answers.js",
+    "code": "validation_failed",
+    "text": "activityId and studentId required"
+  },
+  {
+    "file": "pages/api/school/activities/[activityId]/monitor.js",
+    "code": "validation_failed",
+    "text": "activityId required"
+  },
+  {
+    "file": "pages/api/teacher/worksheet-activities/[worksheetId]/assignments.js",
+    "code": "validation_failed",
+    "text": "assignments only for selected_students scope"
+  },
+  {
+    "file": "pages/api/school/operators/[operatorId]/grants.js",
+    "code": "validation_failed",
+    "text": "At least one grant field is required"
+  },
+  {
+    "file": "pages/api/teacher/classes/[classId]/archive.js",
+    "code": "already_archived",
+    "text": "Class already archived"
+  },
+  {
+    "file": "pages/api/teacher/classes/[classId]/members.js",
+    "code": "class_archived",
+    "text": "Class is archived"
+  },
+  {
+    "file": "pages/api/teacher/students/link.js",
+    "code": "consent_invalid",
+    "text": "Consent token is invalid"
+  },
+  {
+    "file": "pages/api/teacher/students/link.js",
+    "code": "consent_required",
+    "text": "Consent token required"
+  },
+  {
+    "file": "pages/api/teacher/activities/[activityId]/question.js",
+    "code": "validation_failed",
+    "text": "currentQuestionIdx required"
+  },
+  {
+    "file": "pages/api/school/operators/index.js",
+    "code": "validation_failed",
+    "text": "displayName must be a string"
+  },
+  {
+    "file": "lib/teacher-server/teacher-request.server.js",
+    "code": "",
+    "text": "Feature disabled: ${feature}"
+  },
+  {
+    "file": "pages/api/teacher/activities/index.js",
+    "code": "grade_mismatch",
+    "text": "Grade level is missing or does not match the assigned class"
+  },
+  {
+    "file": "pages/api/school/classes/physical-report.js",
+    "code": "validation_failed",
+    "text": "gradeLevel is required"
+  },
+  {
+    "file": "lib/guardian-server/guardian-session.server.js",
+    "code": "feature_disabled",
+    "text": "Guardian portal is disabled"
+  },
+  {
+    "file": "pages/api/teacher/classes/index.js",
+    "code": "",
+    "text": "Invalid ${parsed.field}"
+  },
+  {
+    "file": "pages/api/teacher/classes/[classId]/report-data.js",
+    "code": "",
+    "text": "Invalid ${parsedId.field}"
+  },
+  {
+    "file": "pages/api/teacher/students/[studentId]/parent-messages/[messageId]/hide.js",
+    "code": "",
+    "text": "Invalid ${parsedMessage.field}"
+  },
+  {
+    "file": "pages/api/teacher/students/[studentId]/parent-messages/[messageId]/hide.js",
+    "code": "",
+    "text": "Invalid ${parsedStudent.field}"
+  },
+  {
+    "file": "pages/api/teacher/student-access/[accessId]/revoke.js",
+    "code": "validation_failed",
+    "text": "Invalid accessId"
+  },
+  {
+    "file": "pages/api/teacher/activities/[activityId]/status.js",
+    "code": "validation_failed",
+    "text": "invalid action"
+  },
+  {
+    "file": "pages/api/teacher/classes/[classId]/report-data.js",
+    "code": "",
+    "text": "Invalid date range"
+  },
+  {
+    "file": "pages/api/teacher/classes/index.js",
+    "code": "validation_failed",
+    "text": "Invalid includeArchived"
+  },
+  {
+    "file": "pages/api/teacher/worksheet-activities/[worksheetId]/upload-pdf.js",
+    "code": "validation_failed",
+    "text": "Invalid JSON"
+  },
+  {
+    "file": "pages/api/teacher/student-access/index.js",
+    "code": "validation_failed",
+    "text": "Invalid state"
+  },
+  {
+    "file": "pages/api/teacher/classes/[classId]/members.js",
+    "code": "validation_failed",
+    "text": "Invalid studentId"
+  },
+  {
+    "file": "pages/api/teacher/classes/[classId]/report-data.js",
+    "code": "validation_failed",
+    "text": "Invalid windowDays"
+  },
+  {
+    "file": "pages/api/school/students/[studentId]/accounts/parent/link.js",
+    "code": "validation_failed",
+    "text": "loginUsername required"
+  },
+  {
+    "file": "pages/api/teacher/activities/[activityId]/monitor.js",
+    "code": "method_not_allowed",
+    "text": "Method not allowed"
+  },
+  {
+    "file": "lib/school-server/school-request.server.js",
+    "code": "not_a_school_manager",
+    "text": "No school manager access"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "not_a_private_teacher",
+    "text": "Not a private teacher"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "not_a_school_operator",
+    "text": "Not a school operator"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "wrong_school",
+    "text": "Not an operator in this school"
+  },
+  {
+    "file": "pages/api/teacher/onboard.js",
+    "code": "jwt_required",
+    "text": "Onboard requires Supabase email login"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "operator_no_grants",
+    "text": "Operator has no grant record"
+  },
+  {
+    "file": "pages/api/school/operators/[operatorId]/grants.js",
+    "code": "validation_failed",
+    "text": "operatorId must be a UUID"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "parent_account_inactive",
+    "text": "Parent account is not active"
+  },
+  {
+    "file": "pages/api/school/classes/physical-report.js",
+    "code": "validation_failed",
+    "text": "physicalClassName is required"
+  },
+  {
+    "file": "pages/api/teacher/profile/locale.js",
+    "code": "validation_failed",
+    "text": "preferredLanguage is required"
+  },
+  {
+    "file": "pages/api/teacher/activities/index.js",
+    "code": "method_not_allowed",
+    "text": "Request method not supported"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "operator_grant_required",
+    "text": "Required operator grant missing"
+  },
+  {
+    "file": "lib/school-server/school-request.server.js",
+    "code": "school_inactive",
+    "text": "School is inactive"
+  },
+  {
+    "file": "lib/teacher-server/teacher-request.server.js",
+    "code": "not_a_school_teacher",
+    "text": "School operators cannot use teacher portal APIs"
+  },
+  {
+    "file": "lib/teacher-server/private-teacher-guard.server.js",
+    "code": "school_teacher_no_private_access",
+    "text": "School staff cannot manage private students or classes"
+  },
+  {
+    "file": "lib/auth/persona-guard.server.js",
+    "code": "school_teacher_no_private_access",
+    "text": "School staff cannot use private teacher APIs"
+  },
+  {
+    "file": "pages/api/teacher/students/create.js",
+    "code": "config_missing",
+    "text": "Server configuration incomplete"
+  },
+  {
+    "file": "pages/api/teacher/activities/index.js",
+    "code": "internal_error",
+    "text": "Server error — please try again"
+  },
+  {
+    "file": "pages/api/teacher/students/link.js",
+    "code": "link_limit_reached",
+    "text": "Student link limit reached (${linked.studentLimit})"
+  },
+  {
+    "file": "pages/api/teacher/students/link.js",
+    "code": "link_unavailable",
+    "text": "Student linking is not available yet"
+  },
+  {
+    "file": "pages/api/teacher/students/[studentId]/archive.js",
+    "code": "student_not_linked",
+    "text": "Student not linked"
+  },
+  {
+    "file": "pages/api/school/operators/[operatorId]/grants.js",
+    "code": "validation_failed",
+    "text": "studentAccessAdmin must be a boolean"
+  },
+  {
+    "file": "pages/api/school/operators/[operatorId]/grants.js",
+    "code": "validation_failed",
+    "text": "studentDataViewer must be a boolean"
+  },
+  {
+    "file": "pages/api/teacher/worksheet-activities/[worksheetId]/assignments.js",
+    "code": "validation_failed",
+    "text": "studentId required"
+  },
+  {
+    "file": "pages/api/teacher/worksheet-activities/[worksheetId]/assignments.js",
+    "code": "validation_failed",
+    "text": "studentIds required"
+  },
+  {
+    "file": "pages/api/teacher/me.js",
+    "code": "account_deactivated",
+    "text": "Teacher account is deactivated"
+  },
+  {
+    "file": "pages/api/teacher/students/create.js",
+    "code": "",
+    "text": "Teacher limits not found"
+  },
+  {
+    "file": "pages/api/teacher/me.js",
+    "code": "teacher_profile_missing",
+    "text": "Teacher limits not provisioned"
+  },
+  {
+    "file": "lib/teacher-server/teacher-session.server.js",
+    "code": "feature_disabled",
+    "text": "Teacher portal is disabled"
+  },
+  {
+    "file": "pages/api/teacher/me.js",
+    "code": "teacher_profile_missing",
+    "text": "Teacher profile not provisioned"
+  },
+  {
+    "file": "pages/api/teacher/activities/index.js",
+    "code": "subject_mismatch",
+    "text": "The selected subject does not match the assigned class"
+  },
+  {
+    "file": "pages/api/teacher/onboard.js",
+    "code": "rate_limited",
+    "text": "Too many onboard attempts"
+  },
+  {
+    "file": "pages/api/teacher/classes/index.js",
+    "code": "rate_limited",
+    "text": "Too many requests"
+  },
+  {
+    "file": "pages/api/teacher/activities/index.js",
+    "code": "rate_limited",
+    "text": "Too many requests — wait a moment and try again"
+  },
+  {
+    "file": "pages/api/teacher/activities/[activityId]/monitor.js",
+    "code": "internal_error",
+    "text": "Unexpected server error"
+  },
+  {
+    "file": "pages/api/teacher/classes/index.js",
+    "code": "unknown_query_param",
+    "text": "Unknown query parameter"
+  },
+  {
+    "file": "pages/api/teacher/activities/index.js",
+    "code": "validation_failed",
+    "text": "Unknown query parameters"
+  }
+]

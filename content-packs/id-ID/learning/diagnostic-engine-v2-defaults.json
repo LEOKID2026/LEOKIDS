@@ -1,0 +1,44 @@
+{
+  "interventionFallback": {
+    "immediateAction": "Kumpulkan lebih banyak bukti sebelum membuat rencana",
+    "shortPractice": "3–7 butir pada topik yang sama dengan kesulitan sedikit lebih rendah",
+    "avoid": "Jangan meloncat terlalu tinggi tingkatnya atau mencampur beberapa topik sekaligus.",
+    "improvementSignals": [
+      "Lebih sedikit kesalahan yang berulang",
+      "Koreksi mandiri setelah kesalahan"
+    ],
+    "failureSignals": [
+      "Tidak ada perubahan setelah dua siklus terstruktur"
+    ],
+    "hypothesisChange": "Gagal pada pemeriksaan yang diusulkan, atau berhasil hanya dengan banyak petunjuk"
+  },
+  "interventionWithTaxonomy": {
+    "avoid": "Jangan meloncat terlalu tinggi tingkatnya, mencampur beberapa topik, atau mengandalkan umpan balik umum tanpa contoh.",
+    "improvementSignals": [
+      "Cocokkan penanda keberhasilan taksonomi",
+      "Transfer keberhasilan ke tugas serupa"
+    ],
+    "hypothesisChange": "Ketika probe yang direkomendasikan gagal atau bukti lawan yang kuat muncul"
+  },
+  "probeFallback": {
+    "objective": "Pisahkan kesenjangan fondasi dari isu spesifik topik",
+    "specification": "Tugas paralel pada prinsip yang sama dengan kompleksitas dikurangi",
+    "stoppingRule": "Dua urutan konsisten atau perbaikan stabil",
+    "escalationRule": "Tidak ada perbaikan setelah dua siklus"
+  },
+  "probeWithTaxonomy": {
+    "objective": "Bedakan kesulitan fondasi dari yang spesifik topik",
+    "stoppingRule": "Capai ambang pengulangan baris atau tolak hipotesis",
+    "hypothesisChange": "Ketika probe yang direkomendasikan gagal atau bukti lawan yang kuat muncul"
+  },
+  "competingHypotheses": {
+    "speedPressure": "Tekanan kecepatan vs kesenjangan pengetahuan",
+    "carelessPattern": "Kecerobohan vs salah paham",
+    "instructionFriction": "Gesekan instruksi/petunjuk vs kesenjangan konsep",
+    "distinguishingEvidence": [
+      "Bandingkan kinerja berwaktu vs tanpa waktu",
+      "Bandingkan petunjuk sedikit vs banyak",
+      "Periksa pengulangan menurut keluarga pola"
+    ]
+  }
+}

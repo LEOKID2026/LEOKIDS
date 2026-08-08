@@ -6,6 +6,15 @@ import { safeString } from "../../../../../lib/parent-server/report-data-aggrega
 const MAX_ROWS = 200;
 
 /**
+ * @param {import("next").NextApiResponse} res
+ * @param {number} status
+ * @param {string} code
+ */
+function fail(res, status, code) {
+  return res.status(status).json({ ok: false, error: code, code });
+}
+
+/**
  * GET /api/parent/students/[studentId]/coin-history
  * Read-only coin ledger for a owned child (no UI in Phase 9).
  *
@@ -13,13 +22,13 @@ const MAX_ROWS = 200;
  */
 export default async function handler(req, res) {
   if (req.method !== "GET") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return fail(res, 405, "method_not_allowed");
   }
 
   const authHeader = req.headers.authorization || "";
   const studentId = safeString(req.query?.studentId, 64);
   if (!studentId) {
-    return res.status(400).json({ ok: false, error: "studentId is required" });
+    return fail(res, 400, "student_id_required");
   }
 
   const yearMonthRaw = safeString(req.query?.yearMonthIsrael, 7);
@@ -29,7 +38,7 @@ export default async function handler(req, res) {
       ? getIsraelMonthBoundsForYearMonth(yearMonthRaw)
       : getIsraelMonthBounds();
   } catch {
-    return res.status(400).json({ ok: false, error: "Invalid yearMonthIsrael" });
+    return fail(res, 400, "invalid_date_params");
   }
 
   try {
@@ -43,13 +52,17 @@ export default async function handler(req, res) {
       select: "id,full_name,grade_level,is_active,parent_id,product_id",
     });
     if (!owned.ok) {
+      const code =
+        (typeof owned.error === "string" && owned.error) || "student_not_found";
       return res.status(owned.status || 403).json({
         ok: false,
-        error: owned.error || "Could not verify student ownership",
+        error: code,
+        code,
         message: owned.message,
       });
     }
     const student = owned.student;
+    void student;
 
     const serviceClient = getLearningSupabaseServiceRoleClient();
     const { data: balanceRow } = await serviceClient
@@ -68,7 +81,7 @@ export default async function handler(req, res) {
       .limit(MAX_ROWS);
 
     if (txErr) {
-      return res.status(500).json({ ok: false, error: "Failed to load coin history" });
+      return fail(res, 500, "coin_history_load_failed");
     }
 
     let earned = 0;
@@ -100,6 +113,6 @@ export default async function handler(req, res) {
       },
     });
   } catch {
-    return res.status(500).json({ ok: false, error: "Unexpected server error" });
+    return fail(res, 500, "unexpected_server_error");
   }
 }

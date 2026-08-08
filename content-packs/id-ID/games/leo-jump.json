@@ -1,0 +1,11 @@
+{
+  "gameId": "leo-jump",
+  "title": "Leo Melompat",
+  "blurb": "Lompati rintangan dan kumpulkan koin!",
+  "help": {
+    "howToPlay": "Ketuk untuk melompat. Lewati rintangan dan kumpulkan koin, berlian, serta magnet di sepanjang jalan.",
+    "scoring": "Koin dan berlian menambah poin. Lompatan beruntun melewati rintangan memberi bonus combo. Menabrak rintangan mengakhiri gim.",
+    "rewards": "Semakin jauh kamu berlari dan semakin banyak poin yang didapat, semakin banyak koin dan permata yang kamu terima.",
+    "tip": "Jangan lompat terus — kadang lebih baik menunggu sebentar dan lompat di waktu yang tepat."
+  }
+}

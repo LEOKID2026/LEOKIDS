@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "square": "Persegi",
+    "rectangle": "Persegi panjang",
+    "parallel": "Sejajar",
+    "translation": "Translasi",
+    "reflection": "Refleksi",
+    "rotation": "Rotasi",
+    "no_movement": "Tanpa pergerakan"
+  }
+}

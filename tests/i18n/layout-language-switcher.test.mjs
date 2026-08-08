@@ -77,7 +77,7 @@ test("Qatar /qa locale is not treated as internal QA tooling", () => {
 
 test("selectable locales for switcher are English + country names", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 88);
+  assert.equal(locales.length, 89);
   const ids = locales.map((l) => l.id);
   assert.equal(new Set(ids).size, ids.length);
   assert.equal(locales[0].id, "en");
@@ -243,7 +243,7 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
 
 test("LanguageSwitcher list can reach all selectable locales including group-1 countries", () => {
   const locales = getSelectableLocales();
-  assert.equal(locales.length, 88);
+  assert.equal(locales.length, 89);
   assert.equal(locales[0].id, "en");
   assert.ok(locales.some((l) => l.id === "ar-QA" && l.pathPrefix === "qa" && l.label === "قطر"));
   assert.ok(locales.some((l) => l.id === "ar-KW" && l.pathPrefix === "kw"));

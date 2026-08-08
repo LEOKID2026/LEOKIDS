@@ -1,0 +1,5 @@
+{
+  "copy": {
+    "all_suggestions_keep_needshumanreview_true_until_bank_edits_are_approved": "Semua saran tetap needsHumanReview=true hingga perubahan bank soal disetujui."
+  }
+}

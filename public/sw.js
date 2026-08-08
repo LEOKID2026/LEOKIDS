@@ -123,6 +123,7 @@ const LOCALE_PUBLIC_PATH_PREFIX = {
   "fr-GN": "gn",
   "fr-SN": "sn",
   "fr-TG": "tg",
+  "id-ID": "id",
   "it-CH": "ch-it",
   "it-IT": "it",
   "nl-BE": "be-nl",

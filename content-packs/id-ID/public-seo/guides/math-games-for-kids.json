@@ -1,0 +1,73 @@
+{
+  "seoKey": "guides-math-games-for-kids",
+  "slug": "math-games-for-kids",
+  "displayTitle": "Gim matematika",
+  "badge": "Panduan gim matematika",
+  "h1": "Gim matematika untuk anak — berlatih melalui tantangan",
+  "intro": "Gim matematika memungkinkan anak berlatih operasi, angka, dan berpikir dalam tugas yang jelas. Pilih gim yang sesuai dengan topik yang dikuasai anak Anda dan keterampilan yang ingin diperkuat.",
+  "sections": [
+    {
+      "title": "Topik mana yang dapat dilatih melalui gim?",
+      "bullets": [
+        "Penjumlahan dan pengurangan.",
+        "Perkalian dan pembagian.",
+        "Urutan operasi.",
+        "Pecahan dan desimal.",
+        "Membandingkan kuantitas.",
+        "Pemecahan masalah.",
+        "Berpikir spasial dan geometris."
+      ]
+    },
+    {
+      "title": "Jaga agar tujuan matematika tetap jelas",
+      "paragraphs": [
+        "Meski gim punya karakter, koin, atau tingkat, minta anak Anda menjelaskan bagaimana mereka sampai pada jawaban. Menjelaskan membantu membedakan pemahaman dari menebak."
+      ]
+    },
+    {
+      "title": "Sesuaikan tingkat tantangan",
+      "paragraphs": [
+        "Gim yang terlalu mudah tidak menciptakan pembelajaran baru; yang terlalu sulit dapat menimbulkan frustrasi. Pilih tingkat di mana anak Anda berhasil di sebagian besar tugas tetapi tetap harus berpikir."
+      ]
+    },
+    {
+      "title": "Setelah gim",
+      "paragraphs": [
+        "Pilih beberapa pertanyaan pada topik yang sama dan periksa apakah anak Anda menggunakan pendekatan yang sama di luar gim. Itu menjadikan gim bagian dari latihan yang lebih luas."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Gim mana yang cocok untuk anak saya?",
+      "a": "Pilih menurut kelas, topik yang sedang dipelajari anak Anda, dan tingkat kesulitan di mana mereka dapat bekerja secara mandiri."
+    },
+    {
+      "q": "Haruskah kita memainkan gim yang sama lagi?",
+      "a": "Ya, terutama saat gim menampilkan tugas yang berubah-ubah dan membantu meningkatkan ketepatan serta tempo."
+    },
+    {
+      "q": "Bagaimana jika anak saya menebak?",
+      "a": "Minta mereka berhenti sejenak dan menjelaskan operasi atau hubungan antar angka."
+    }
+  ],
+  "relatedPracticePath": "/practice/games",
+  "practiceCtaLabel": "Gim matematika",
+  "relatedGuideSlugs": [
+    "math-practice-at-home",
+    "learning-games-at-home",
+    "home-practice-routine"
+  ],
+  "footerCta": {
+    "title": "Berlatih matematika melalui gim",
+    "body": "Pilih topik yang familiar, sesuaikan tingkatnya, dan minta anak Anda menjelaskan pendekatannya sambil bermain gim.",
+    "primary": {
+      "href": "/practice/games",
+      "label": "Gim matematika"
+    },
+    "secondary": {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    }
+  }
+}

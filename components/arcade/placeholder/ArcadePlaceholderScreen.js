@@ -7,6 +7,8 @@ import { useArcadePlaceholderSession } from "../../../hooks/arcade/useArcadePlac
 import { useArcadeRoomExit } from "../../../hooks/arcade/useArcadeRoomExit";
 import StudentAdSlot from "../../student/StudentAdSlot.jsx";
 
+const SLUG = "components__arcade__placeholder__ArcadePlaceholderScreen";
+
 const HUD_CONTROL_H = "h-9";
 const HUD_CHIP =
   "rounded-lg border border-white/20 bg-white/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-white/[0.11] active:scale-[0.97]";
@@ -22,7 +24,7 @@ function PlaceholderLeaveRow({ onLeave, disabled = false, busy = false }) {
         disabled={disabled || busy}
         className="min-h-[2.5rem] w-full max-w-xs rounded-xl border border-rose-500/35 bg-rose-950/35 px-4 py-2 text-sm font-extrabold text-rose-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-rose-950/55 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50 sm:max-w-sm sm:text-base"
       >
-        {busy ? "Leaving…" : "Leave"}
+        {busy ? gamePackCopy(SLUG, "leaving") : gamePackCopy(SLUG, "leave")}
       </button>
     </div>
   );
@@ -39,9 +41,9 @@ function PlaceholderHud({ onBack, balance, title }) {
         type="button"
         onClick={onBack}
         className={`${HUD_BTN_BASE} min-w-[3.75rem] px-2 sm:min-w-[4rem]`}
-        aria-label={gamePackCopy("components__arcade__placeholder__ArcadePlaceholderScreen", "back")}
+        aria-label={gamePackCopy(SLUG, "back")}
       >
-        <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">Back</span>
+        <span className="text-xs font-extrabold leading-none tracking-wide text-white sm:text-sm">{gamePackCopy(SLUG, "back")}</span>
       </button>
 
       <div className="min-w-0 flex-1 px-0.5 text-center">
@@ -52,7 +54,7 @@ function PlaceholderHud({ onBack, balance, title }) {
 
       <div
         className={`flex ${HUD_CONTROL_H} min-w-[4.75rem] max-w-[9rem] shrink-0 items-center gap-1 rounded-lg border border-amber-500/35 bg-black/55 px-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:min-w-[5rem] sm:px-2.5`}
-        title={gamePackCopy("components__arcade__placeholder__ArcadePlaceholderScreen", "coin_balance")}
+        title={gamePackCopy(SLUG, "coin_balance")}
       >
         <img src="/images/coin.png" alt="" className="h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7" />
         <span className="min-w-0 truncate font-mono text-sm font-bold tabular-nums leading-none text-amber-100 sm:text-base">
@@ -111,7 +113,7 @@ export default function ArcadePlaceholderScreen({ roomId, title }) {
   const message =
     typeof board.message === "string" && board.message.trim()
       ? board.message
-      : "Arcade build — active room connection; full game rules come next.";
+      : gamePackCopy(SLUG, "arcade_build_active");
 
   const waiting = room?.status === "waiting";
   const phase = placeholder?.phase != null ? String(placeholder.phase) : "";
@@ -127,8 +129,8 @@ export default function ArcadePlaceholderScreen({ roomId, title }) {
 
         {waiting ? (
           <div className="rounded-xl border border-amber-500/30 bg-amber-950/25 px-4 py-6 text-center text-amber-100">
-            <p className="text-lg font-bold">Waiting for another player…</p>
-            <p className="mt-2 text-sm text-amber-200/90">When the room fills, the game state opens</p>
+            <p className="text-lg font-bold">{gamePackCopy(SLUG, "waiting_for_another_player")}</p>
+            <p className="mt-2 text-sm text-amber-200/90">{gamePackCopy(SLUG, "when_room_fills")}</p>
           </div>
         ) : null}
 
@@ -136,17 +138,22 @@ export default function ArcadePlaceholderScreen({ roomId, title }) {
           <div className="space-y-4 rounded-xl border border-white/10 bg-zinc-900/40 p-4 text-zinc-100">
             <p className="text-sm leading-relaxed text-zinc-300">{message}</p>
             {phase === "finished" ? (
-              <p className="text-amber-200">Session ended</p>
+              <p className="text-amber-200">{gamePackCopy(SLUG, "session_ended")}</p>
             ) : (
-              <p className="text-xs text-zinc-500">Session id: {String(placeholder.sessionId || "").slice(0, 8)}…</p>
+              <p className="text-xs text-zinc-500">
+                {gamePackCopy(SLUG, "session_id", { id: String(placeholder.sessionId || "").slice(0, 8) })}
+              </p>
             )}
             {Array.isArray(players) && players.length > 0 ? (
               <div>
-                <p className="mb-2 text-sm font-semibold text-zinc-200">Players in room</p>
+                <p className="mb-2 text-sm font-semibold text-zinc-200">{gamePackCopy(SLUG, "players_in_room")}</p>
                 <ul className="space-y-1 text-sm text-zinc-300">
                   {players.map((p) => (
                     <li key={String(p.student_id)}>
-                      {String(p.display_name || "").trim() || "Player"} - Seat {(Number(p.seat_index) || 0) + 1}
+                      {gamePackCopy(SLUG, "player_seat", {
+                        name: String(p.display_name || "").trim() || gamePackCopy(SLUG, "player"),
+                        seat: (Number(p.seat_index) || 0) + 1,
+                      })}
                     </li>
                   ))}
                 </ul>
@@ -156,7 +163,7 @@ export default function ArcadePlaceholderScreen({ roomId, title }) {
         ) : null}
 
         {!waiting && bundleLoaded && !placeholder ? (
-          <p className="text-center text-sm text-zinc-400">Loading game state…</p>
+          <p className="text-center text-sm text-zinc-400">{gamePackCopy(SLUG, "loading_game_state")}</p>
         ) : null}
       </div>
 

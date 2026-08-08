@@ -1,5 +1,9 @@
 {
   "copy": {
-    "new_discussion_activity": "New discussion activity"
+    "new_discussion_activity": "New discussion activity",
+    "err_load_class": "Could not load class",
+    "err_invalid_grade": "This class grade level is invalid. Contact your school admin.",
+    "network_error": "Network error",
+    "loading": "Loading…"
   }
 }

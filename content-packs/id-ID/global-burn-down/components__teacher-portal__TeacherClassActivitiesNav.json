@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "aria_label": "Navigasi rombel",
+    "class_report": "Laporan rombel",
+    "activities": "Aktivitas",
+    "worksheets": "Lembar kerja",
+    "discussion": "Diskusi"
+  }
+}

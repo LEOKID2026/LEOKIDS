@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "missions_locked": "Daily missions — controlled via Admin. Not open to guests yet.",
+    "todays_missions": "Today's missions",
+    "mission_progress": "{progress}/{goal} · +{coins} coins",
+    "no_missions_today": "No missions today",
+    "achievements": "Achievements",
+    "no_achievements_yet": "No achievements yet"
+  }
+}

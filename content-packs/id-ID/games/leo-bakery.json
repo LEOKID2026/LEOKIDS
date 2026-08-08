@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-bakery",
+  "title": "Toko Roti Leo",
+  "blurb": "Perkalian, kelompok sama, dan faktor yang hilang",
+  "help": {
+    "howToPlay": "Susun nampan, cari total atau faktor yang hilang, atau susun ulang total yang sama — lalu ketuk \"Cek Pesanan\".",
+    "scoring": "Jawaban benar +30, bonus waktu hingga +20, streak 5 benar +25. Setelah 3 kali gagal, solusi lengkap ditampilkan.",
+    "rewards": "Koin diberikan berdasarkan berapa banyak pesanan yang kamu siapkan dengan benar, ketepatan, rentetan, dan tingkat kesulitan.",
+    "tip": "Pikirkan berapa nampan × berapa per nampan — jangan hanya menghitung ikon."
+  },
+  "accessibility": {
+    "title": "Toko Roti Leo"
+  }
+}

@@ -416,7 +416,7 @@ export default function WorldHomePrototypePage() {
           json = text ? JSON.parse(text) : {};
         } catch {
           if (!cached?.merged) {
-            setProfileError(`Invalid server response (status ${res.status}).`);
+            setProfileError(resolveStudentApiErrorMessage("unexpected_server_error", t));
             setProfilePhase("error");
           }
           return;
@@ -433,10 +433,9 @@ export default function WorldHomePrototypePage() {
 
         if (!res.ok || json?.ok !== true || !json?.studentId || !json?.accountSnapshot) {
           if (!cached?.merged) {
-            const errRaw = json?.error != null ? String(json.error) : "";
             const detail = json?.detail != null ? String(json.detail) : "";
             const combined = [
-              resolveStudentApiErrorMessage(errRaw, t),
+              resolveStudentApiErrorMessage(json, t),
               detail && isStudentIdentityDiagnosticsEnabled() ? `(${detail})` : "",
             ]
               .filter(Boolean)
@@ -538,7 +537,7 @@ export default function WorldHomePrototypePage() {
           summaryJson = summaryText ? JSON.parse(summaryText) : {};
         } catch {
           if (!getCachedStudentHomePayload(payload.student.id)?.merged) {
-            setProfileError(`Invalid server response (status ${summaryRes.status}).`);
+            setProfileError(resolveStudentApiErrorMessage("unexpected_server_error", t));
             setProfilePhase("error");
           }
           return;

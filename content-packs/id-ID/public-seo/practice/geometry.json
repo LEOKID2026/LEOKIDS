@@ -1,0 +1,98 @@
+{
+  "seoKey": "practice-geometry",
+  "slug": "geometry",
+  "badge": "Geometri untuk Kelas 1–6",
+  "h1": "Latihan geometri menurut kelas dan topik",
+  "intro": "Latihan geometri mencakup bangun, garis, sudut, keliling, luas, bangun ruang, simetri, lingkaran, volume, dan Pythagoras. Pertanyaan menggabungkan identifikasi, perhitungan, dan diagram menurut topik.",
+  "sections": [
+    {
+      "title": "Topik inti geometri",
+      "bullets": [
+        "Bangun datar.",
+        "Segitiga dan segiempat.",
+        "Garis sejajar dan tegak lurus.",
+        "Sudut.",
+        "Keliling dan luas.",
+        "Diagonal dan tinggi.",
+        "Simetri dan transformasi.",
+        "Bangun ruang dan volume.",
+        "Lingkaran.",
+        "Pythagoras."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memulai?",
+      "paragraphs": [
+        "Pilih kelas dan topik. Untuk pertanyaan identifikasi, perhatikan label pada diagram. Untuk pertanyaan perhitungan, tulis nilai yang diberikan dan pilih operasi atau rumus yang tepat."
+      ]
+    },
+    {
+      "title": "Bagaimana cara menggunakan diagram?",
+      "paragraphs": [
+        "Diagram menunjukkan bangun, ukuran, dan label yang diperlukan untuk menyelesaikan soal. Baca juga pertanyaannya—jangan hanya mengandalkan tampilan bangun."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Mengenali bangun, membedakan bangun, garis, dan sifat dasar."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Pengukuran, keliling, sudut, dan sifat bangun yang familiar."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Luas, hubungan antar bangun, topik yang lebih lanjut, dan penalaran langkah demi langkah."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    },
+    {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "math-practice-at-home",
+    "home-practice-routine",
+    "math-games-for-kids"
+  ],
+  "faq": [
+    {
+      "q": "Apakah pertanyaan menyertakan diagram?",
+      "a": "Ya. Pertanyaan yang sesuai mencakup diagram bangun datar dan bangun ruang dengan ukuran serta label."
+    },
+    {
+      "q": "Bisakah kita berlatih luas dan keliling?",
+      "a": "Ya. Topik mencakup luas, keliling, pengukuran, dan perhitungan yang sesuai kelas."
+    },
+    {
+      "q": "Apakah ada lembar kerja geometri?",
+      "a": "Ya. Lembar siap pakai dan generator tersedia di halaman lembar kerja."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih topik geometri",
+    "body": "Latih identifikasi, menggambar, dan perhitungan dengan pertanyaan yang sesuai topik.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Buka akun orang tua"
+    },
+    "secondary": {
+      "href": "/practice/worksheets",
+      "label": "Lembar kerja geometri"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "gameId": "tap-battle",
+  "title": "Pertarungan Ketuk",
+  "blurb": "Setiap sisi mengetuk secepat mungkin — siapa yang menang?",
+  "players": "2 pemain",
+  "help": {
+    "howToPlay": "Main bersama di perangkat yang sama."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "copy": {
+    "verifying_connection": "Memverifikasi koneksi…",
+    "loading_dashboard": "Memuat dasbor…",
+    "load_data_error": "Terjadi kesalahan saat memuat data. Segarkan halaman dan coba lagi.",
+    "load_report_error": "Terjadi kesalahan saat memuat laporan. Segarkan dan coba lagi.",
+    "load_report_error_long": "Terjadi kesalahan saat memuat laporan. Segarkan halaman dan coba lagi.",
+    "loading_report_hint": "Memuat laporan — ini mungkin memerlukan beberapa detik.",
+    "session_expired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "load_timeout": "Pemuatan terlalu lama. Muat ulang dan coba lagi."
+  }
+}

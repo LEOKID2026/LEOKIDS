@@ -1,0 +1,96 @@
+{
+  "seoKey": "practice-hub",
+  "slug": "hub",
+  "badge": "Area latihan",
+  "h1": "Latihan sekolah dasar menurut mata pelajaran dan kelas",
+  "intro": "Pilih mata pelajaran dan jelajahi topik yang tersedia di Leo Kids. Setiap halaman menjelaskan jenis aktivitas, topik inti, dan cara memulai.",
+  "sections": [
+    {
+      "title": "Bagaimana cara memulai?",
+      "paragraphs": [
+        "Pilih mata pelajaran yang sesuai dengan tujuan Anda. Di setiap halaman Anda dapat melihat topik yang tersedia, memilih kelas, dan lanjut ke latihan, gim, laporan, atau lembar kerja."
+      ]
+    }
+  ],
+  "relatedGuideSlugs": [
+    "home-practice-routine",
+    "parent-progress-tracking",
+    "no-print-worksheets"
+  ],
+  "faq": [
+    {
+      "q": "Latihan dirancang untuk kelas mana?",
+      "a": "Latihan dirancang untuk Kelas 1–6, dengan setiap mata pelajaran menampilkan topik yang sesuai dengan kelas yang Anda pilih."
+    },
+    {
+      "q": "Apakah saya harus mencetak?",
+      "a": "Tidak. Anda dapat berlatih daring, bermain gim belajar, atau menggunakan lembar kerja saat itu cocok dengan rutinitas Anda."
+    },
+    {
+      "q": "Bagaimana cara memilih topik?",
+      "a": "Pilih yang sedang diajarkan sekarang, topik yang ingin ditinjau ulang anak Anda, atau gunakan laporan orang tua untuk memutuskan apa yang dilatih berikutnya."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih mata pelajaran dan mulai berlatih",
+    "body": "Setiap area menampilkan topik dan aktivitas yang sesuai dengan latihan yang Anda pilih.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Buka akun orang tua"
+    },
+    "secondary": {
+      "href": "/student/login",
+      "label": "Masuk murid"
+    }
+  },
+  "hubCards": [
+    {
+      "href": "/practice/math",
+      "title": "Matematika",
+      "blurb": "Penjumlahan, pengurangan, perkalian, pembagian, pecahan, desimal, persen, rasio, soal cerita, dan lainnya menurut kelas.",
+      "emoji": "🔢"
+    },
+    {
+      "href": "/practice/reading",
+      "title": "Pemahaman bacaan",
+      "blurb": "Teks singkat, pengenalan kata, menemukan detail, memahami makna, dan pertanyaan pemahaman.",
+      "emoji": "📚"
+    },
+    {
+      "href": "/practice/english",
+      "title": "Bahasa Inggris",
+      "blurb": "Fonik, kosakata, kalimat, tata bahasa, membaca, dan mengikuti instruksi dalam Bahasa Inggris.",
+      "emoji": "🌍"
+    },
+    {
+      "href": "/practice/geometry",
+      "title": "Geometri",
+      "blurb": "Bangun, sudut, luas, keliling, bangun ruang, simetri, lingkaran, volume, Pythagoras, dan lainnya menurut kelas.",
+      "emoji": "📐"
+    },
+    {
+      "href": "/practice/science",
+      "title": "IPA",
+      "blurb": "Pengetahuan dan pemahaman tentang alam, tubuh manusia, materi, lingkungan, energi, dan fenomena ilmiah.",
+      "emoji": "🔬"
+    },
+    {
+      "href": "/practice/games",
+      "title": "Gim belajar",
+      "blurb": "Tugas edukatif di dalam gim, tantangan, dan aktivitas di matematika, Bahasa Inggris, IPA, dan membaca.",
+      "emoji": "🎮"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "title": "Laporan orang tua",
+      "blurb": "Lacak mata pelajaran, topik, aktivitas, ketepatan, waktu belajar, dan apa yang perlu ditinjau berikutnya.",
+      "emoji": "📊"
+    },
+    {
+      "href": "/practice/worksheets",
+      "title": "Lembar kerja",
+      "blurb": "Generator lembar kerja, lembar siap pakai, kunci jawaban, dan cetak saat membantu.",
+      "emoji": "📄"
+    }
+  ]
+}

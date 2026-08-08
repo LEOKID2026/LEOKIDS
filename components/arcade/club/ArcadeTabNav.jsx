@@ -1,8 +1,12 @@
+import { gamePackCopy } from "../../../lib/games/game-pack-copy.js";
+
+const SLUG = "components__arcade__club__ArcadeTabNav";
+
 const TABS = [
-  { id: "games", label: "Games" },
-  { id: "friends", label: "Friends" },
-  { id: "shop", label: "Shop" },
-  { id: "profile", label: "Profile" },
+  { id: "games", labelKey: "games" },
+  { id: "friends", labelKey: "friends" },
+  { id: "shop", labelKey: "shop" },
+  { id: "profile", labelKey: "profile" },
 ];
 
 /** @param {{ activeTab: string, onChange: (id: string) => void, className?: string, gh?: Record<string, string>, compact?: boolean }} props */
@@ -27,7 +31,7 @@ export default function ArcadeTabNav({ activeTab, onChange, className = "", gh =
             onClick={() => onChange(tab.id)}
             className={active ? tabActive : tabInactive}
           >
-            {tab.label}
+            {gamePackCopy(SLUG, tab.labelKey)}
           </button>
         );
       })}

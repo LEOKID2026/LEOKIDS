@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   const worksheetId = String(req.query?.worksheetId || "").trim();
 
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
   }
 
   if (guardCookieMutationOrigin(req, res)) return undefined;
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     const auth = await getAuthenticatedStudentSession(req);
     if (!auth) {
       clearStudentSessionCookie(res);
-      return res.status(401).json({ ok: false, error: "Not authenticated" });
+      return res.status(401).json({ ok: false, error: "not_authenticated", code: "not_authenticated" });
     }
 
     const body = readJsonBody(req);
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
     );
 
     if (!result.ok) {
-      return res.status(result.status || 500).json({ ok: false, error: result.code });
+      return res.status(result.status || 500).json({ ok: false, error: result.code, code: result.code });
     }
 
     return res.status(200).json({
@@ -45,6 +45,6 @@ export default async function handler(req, res) {
       hasManualQuestions: result.hasManualQuestions,
     });
   } catch {
-    return res.status(500).json({ ok: false, error: "Server error" });
+    return res.status(500).json({ ok: false, error: "server_error", code: "server_error" });
   }
 }

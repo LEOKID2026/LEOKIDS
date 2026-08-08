@@ -15,6 +15,7 @@ import {
   rosterFilterLabelHe,
   subjectLabel,
   teacherAuthFetch,
+  apiErrorMessageHe,
 } from "../../lib/teacher-portal/teacher-ui.js";
 import TeacherInviteOthersButton from "./TeacherInviteOthersButton";
 import {
@@ -168,9 +169,10 @@ function ClassManagePanel({
       method: "PATCH",
       body: JSON.stringify({ name: className.trim() }),
     });
+    const renameBody = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 200) {
-      setError(c("could_not_update_class_name"));
+      setError(apiErrorMessageHe(renameBody?.error, c("could_not_update_class_name")));
       return;
     }
     onRefresh();
@@ -191,7 +193,7 @@ function ClassManagePanel({
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 201) {
-      setError(classLimitErrorMessage(body) || c("could_not_add_student"));
+      setError(classLimitErrorMessage(body) || apiErrorMessageHe(body?.error, c("could_not_add_student")));
       return;
     }
     setNewStudentName("");
@@ -216,7 +218,7 @@ function ClassManagePanel({
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 201) {
-      setError(classLimitErrorMessage(body) || c("could_not_add_to_class"));
+      setError(classLimitErrorMessage(body) || apiErrorMessageHe(body?.error, c("could_not_add_to_class")));
       return;
     }
     await loadMembers();
@@ -471,7 +473,7 @@ function ClassesEmptyState({ accessToken, onCreated, T }) {
     const body = await res.json().catch(() => ({}));
     setBusy(false);
     if (res.status !== 201) {
-      setError(body?.error?.message || c("could_not_create_class"));
+      setError(apiErrorMessageHe(body?.error, c("could_not_create_class")));
       return;
     }
     onCreated?.();

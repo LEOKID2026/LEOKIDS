@@ -1,0 +1,69 @@
+{
+  "seoKey": "guides-how-to-follow-child-progress",
+  "slug": "how-to-follow-child-progress",
+  "displayTitle": "Memilih topik untuk diperkuat",
+  "badge": "Panduan memilih topik",
+  "h1": "Cara memilih topik berikutnya untuk diperkuat",
+  "intro": "Memilih topik untuk diperkuat dimulai dengan mengenali pola. Cari kesulitan yang berulang di beberapa pertanyaan atau sesi—bukan satu kesalahan saja. Lalu pilih latihan terfokus dan periksa lagi.",
+  "sections": [
+    {
+      "title": "Tiga sumber informasi",
+      "bullets": [
+        "Laporan progres dan latihan yang selesai.",
+        "Jenis pertanyaan di mana kesalahan berulang.",
+        "Penjelasan anak Anda tentang bagaimana mereka mencoba menyelesaikan."
+      ]
+    },
+    {
+      "title": "Tentukan topik secara tepat",
+      "paragraphs": [
+        "Alih-alih area luas seperti matematika atau membaca, sebutkan topik terfokus: penjumlahan vertikal, perkalian panjang, mengikuti instruksi, menemukan detail dalam teks, atau kosakata dalam tema tertentu."
+      ]
+    },
+    {
+      "title": "Pilih latihan yang sesuai",
+      "paragraphs": [
+        "Mulai di tingkat di mana anak Anda dapat berhasil di sebagian besar pertanyaan. Jika terlalu sulit, kembali ke langkah yang lebih dasar. Jika terlalu mudah, pindah ke tingkat atau jenis pertanyaan yang lebih sulit."
+      ]
+    },
+    {
+      "title": "Periksa apakah ada yang berubah",
+      "paragraphs": [
+        "Setelah beberapa sesi latihan, kembali ke jenis pertanyaan yang sama dan periksa apakah anak Anda menjawab lebih stabil serta dapat menjelaskan pendekatannya."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Haruskah saya selalu memilih topik dengan skor terendah?",
+      "a": "Tidak selalu. Lihat juga berapa banyak pertanyaan yang dijawab, jenis kesulitan apa yang muncul, dan apakah itu berulang di latihan berikutnya."
+    },
+    {
+      "q": "Berapa banyak topik yang harus kita perkuat sekaligus?",
+      "a": "Mulai dengan satu topik atau dua yang saling terkait agar latihan tetap jelas."
+    },
+    {
+      "q": "Kapan kita pindah ke topik lain?",
+      "a": "Saat anak Anda menunjukkan pemahaman yang lebih stabil dan dapat menangani pertanyaan dengan susunan kata berbeda."
+    }
+  ],
+  "relatedPracticePath": "/practice/parent-reports",
+  "practiceCtaLabel": "Lacak progres",
+  "relatedGuideSlugs": [
+    "parent-progress-tracking",
+    "home-practice-routine",
+    "math-practice-at-home"
+  ],
+  "footerCta": {
+    "title": "Kenali pola dan pilih topik terfokus",
+    "body": "Gunakan laporan, jawaban, dan penjelasan anak Anda untuk memilih langkah berikutnya.",
+    "primary": {
+      "href": "/practice/parent-reports",
+      "label": "Lacak progres"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

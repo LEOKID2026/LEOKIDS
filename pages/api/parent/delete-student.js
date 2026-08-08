@@ -1,4 +1,3 @@
-import { globalBurnDownCopy } from "../../../lib/i18n/global-burn-down-copy.js";
 import { requireParentApiContext } from "../../../lib/auth/persona-guard.server.js";
 import { deleteParentOwnedStudent } from "../../../lib/parent-server/delete-parent-owned-student.server.js";
 import { safeApiLog } from "../../../lib/security/safe-log.js";
@@ -7,14 +6,20 @@ import { wrapMutatingApi } from "../../../lib/global/apply-write-barrier.js";
 async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
-    return res.status(405).json({ ok: false, error: "Method not allowed", errorCode: "method_not_allowed" });
+    return res.status(405).json({
+      ok: false,
+      error: "method_not_allowed",
+      code: "method_not_allowed",
+      errorCode: "method_not_allowed",
+    });
   }
 
   const studentId = String(req.body?.studentId || "").trim();
   if (!studentId) {
     return res.status(400).json({
       ok: false,
-      error: globalBurnDownCopy("pages__api__parent__delete-student", "child_id_is_missing"),
+      error: "student_id_required",
+      code: "student_id_required",
       errorCode: "student_id_required",
     });
   }
@@ -31,11 +36,14 @@ async function handler(req, res) {
         code: result.code,
         step: result.step || null,
       });
+      const code = result.code || "delete_student_failed";
       return res.status(result.status).json({
         ok: false,
-        error: result.error,
-        errorCode: result.code,
+        error: code,
+        code,
+        errorCode: code,
         step: result.step || null,
+        // Keep detail for logs/debug only — Parent UI must not render it as user copy.
         detail: result.detail || null,
       });
     }
@@ -45,7 +53,8 @@ async function handler(req, res) {
     console.error("[delete-student] unexpected error", error);
     return res.status(500).json({
       ok: false,
-      error: globalBurnDownCopy("pages__api__parent__delete-student", "server_error_please_try_again"),
+      error: "internal_error",
+      code: "internal_error",
       errorCode: "internal_error",
     });
   }

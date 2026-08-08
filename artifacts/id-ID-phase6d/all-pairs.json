@@ -1,0 +1,2982 @@
+[
+  {
+    "list": "animals",
+    "lemma": "dog"
+  },
+  {
+    "list": "animals",
+    "lemma": "cat"
+  },
+  {
+    "list": "animals",
+    "lemma": "bird"
+  },
+  {
+    "list": "animals",
+    "lemma": "fish"
+  },
+  {
+    "list": "animals",
+    "lemma": "rabbit"
+  },
+  {
+    "list": "animals",
+    "lemma": "horse"
+  },
+  {
+    "list": "animals",
+    "lemma": "cow"
+  },
+  {
+    "list": "animals",
+    "lemma": "sheep"
+  },
+  {
+    "list": "animals",
+    "lemma": "lion"
+  },
+  {
+    "list": "animals",
+    "lemma": "dolphin"
+  },
+  {
+    "list": "animals",
+    "lemma": "tiger"
+  },
+  {
+    "list": "animals",
+    "lemma": "bear"
+  },
+  {
+    "list": "animals",
+    "lemma": "elephant"
+  },
+  {
+    "list": "animals",
+    "lemma": "monkey"
+  },
+  {
+    "list": "animals",
+    "lemma": "snake"
+  },
+  {
+    "list": "animals",
+    "lemma": "turtle"
+  },
+  {
+    "list": "animals",
+    "lemma": "frog"
+  },
+  {
+    "list": "animals",
+    "lemma": "butterfly"
+  },
+  {
+    "list": "animals",
+    "lemma": "bee"
+  },
+  {
+    "list": "animals",
+    "lemma": "spider"
+  },
+  {
+    "list": "animals",
+    "lemma": "mouse"
+  },
+  {
+    "list": "animals",
+    "lemma": "pig"
+  },
+  {
+    "list": "animals",
+    "lemma": "duck"
+  },
+  {
+    "list": "animals",
+    "lemma": "chicken"
+  },
+  {
+    "list": "animals",
+    "lemma": "owl"
+  },
+  {
+    "list": "animals",
+    "lemma": "eagle"
+  },
+  {
+    "list": "animals",
+    "lemma": "shark"
+  },
+  {
+    "list": "animals",
+    "lemma": "whale"
+  },
+  {
+    "list": "animals",
+    "lemma": "penguin"
+  },
+  {
+    "list": "animals",
+    "lemma": "zebra"
+  },
+  {
+    "list": "animals",
+    "lemma": "giraffe"
+  },
+  {
+    "list": "animals",
+    "lemma": "kangaroo"
+  },
+  {
+    "list": "animals",
+    "lemma": "fox"
+  },
+  {
+    "list": "animals",
+    "lemma": "wolf"
+  },
+  {
+    "list": "animals",
+    "lemma": "deer"
+  },
+  {
+    "list": "animals",
+    "lemma": "squirrel"
+  },
+  {
+    "list": "animals",
+    "lemma": "hedgehog"
+  },
+  {
+    "list": "colors",
+    "lemma": "red"
+  },
+  {
+    "list": "colors",
+    "lemma": "blue"
+  },
+  {
+    "list": "colors",
+    "lemma": "yellow"
+  },
+  {
+    "list": "colors",
+    "lemma": "green"
+  },
+  {
+    "list": "colors",
+    "lemma": "orange"
+  },
+  {
+    "list": "colors",
+    "lemma": "purple"
+  },
+  {
+    "list": "colors",
+    "lemma": "pink"
+  },
+  {
+    "list": "colors",
+    "lemma": "black"
+  },
+  {
+    "list": "colors",
+    "lemma": "white"
+  },
+  {
+    "list": "colors",
+    "lemma": "brown"
+  },
+  {
+    "list": "colors",
+    "lemma": "gray"
+  },
+  {
+    "list": "colors",
+    "lemma": "silver"
+  },
+  {
+    "list": "colors",
+    "lemma": "gold"
+  },
+  {
+    "list": "colors",
+    "lemma": "navy"
+  },
+  {
+    "list": "colors",
+    "lemma": "turquoise"
+  },
+  {
+    "list": "colors",
+    "lemma": "beige"
+  },
+  {
+    "list": "colors",
+    "lemma": "maroon"
+  },
+  {
+    "list": "colors",
+    "lemma": "lime"
+  },
+  {
+    "list": "colors",
+    "lemma": "cyan"
+  },
+  {
+    "list": "colors",
+    "lemma": "magenta"
+  },
+  {
+    "list": "colors",
+    "lemma": "indigo"
+  },
+  {
+    "list": "colors",
+    "lemma": "violet"
+  },
+  {
+    "list": "colors",
+    "lemma": "coral"
+  },
+  {
+    "list": "colors",
+    "lemma": "salmon"
+  },
+  {
+    "list": "colors",
+    "lemma": "tan"
+  },
+  {
+    "list": "colors",
+    "lemma": "olive"
+  },
+  {
+    "list": "colors",
+    "lemma": "khaki"
+  },
+  {
+    "list": "colors",
+    "lemma": "crimson"
+  },
+  {
+    "list": "colors",
+    "lemma": "lavender"
+  },
+  {
+    "list": "colors",
+    "lemma": "peach"
+  },
+  {
+    "list": "colors",
+    "lemma": "cream"
+  },
+  {
+    "list": "colors",
+    "lemma": "ivory"
+  },
+  {
+    "list": "numbers",
+    "lemma": "zero"
+  },
+  {
+    "list": "numbers",
+    "lemma": "one"
+  },
+  {
+    "list": "numbers",
+    "lemma": "two"
+  },
+  {
+    "list": "numbers",
+    "lemma": "three"
+  },
+  {
+    "list": "numbers",
+    "lemma": "four"
+  },
+  {
+    "list": "numbers",
+    "lemma": "five"
+  },
+  {
+    "list": "numbers",
+    "lemma": "six"
+  },
+  {
+    "list": "numbers",
+    "lemma": "seven"
+  },
+  {
+    "list": "numbers",
+    "lemma": "eight"
+  },
+  {
+    "list": "numbers",
+    "lemma": "nine"
+  },
+  {
+    "list": "numbers",
+    "lemma": "ten"
+  },
+  {
+    "list": "numbers",
+    "lemma": "twenty"
+  },
+  {
+    "list": "numbers",
+    "lemma": "eleven"
+  },
+  {
+    "list": "numbers",
+    "lemma": "twelve"
+  },
+  {
+    "list": "numbers",
+    "lemma": "thirteen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "fourteen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "fifteen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "sixteen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "seventeen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "eighteen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "nineteen"
+  },
+  {
+    "list": "numbers",
+    "lemma": "thirty"
+  },
+  {
+    "list": "numbers",
+    "lemma": "forty"
+  },
+  {
+    "list": "numbers",
+    "lemma": "fifty"
+  },
+  {
+    "list": "numbers",
+    "lemma": "sixty"
+  },
+  {
+    "list": "numbers",
+    "lemma": "seventy"
+  },
+  {
+    "list": "numbers",
+    "lemma": "eighty"
+  },
+  {
+    "list": "numbers",
+    "lemma": "ninety"
+  },
+  {
+    "list": "numbers",
+    "lemma": "hundred"
+  },
+  {
+    "list": "numbers",
+    "lemma": "thousand"
+  },
+  {
+    "list": "numbers",
+    "lemma": "million"
+  },
+  {
+    "list": "family",
+    "lemma": "mother"
+  },
+  {
+    "list": "family",
+    "lemma": "father"
+  },
+  {
+    "list": "family",
+    "lemma": "brother"
+  },
+  {
+    "list": "family",
+    "lemma": "sister"
+  },
+  {
+    "list": "family",
+    "lemma": "grandmother"
+  },
+  {
+    "list": "family",
+    "lemma": "grandfather"
+  },
+  {
+    "list": "family",
+    "lemma": "uncle"
+  },
+  {
+    "list": "family",
+    "lemma": "aunt"
+  },
+  {
+    "list": "family",
+    "lemma": "cousin"
+  },
+  {
+    "list": "family",
+    "lemma": "son"
+  },
+  {
+    "list": "family",
+    "lemma": "daughter"
+  },
+  {
+    "list": "family",
+    "lemma": "baby"
+  },
+  {
+    "list": "family",
+    "lemma": "parents"
+  },
+  {
+    "list": "family",
+    "lemma": "children"
+  },
+  {
+    "list": "family",
+    "lemma": "twins"
+  },
+  {
+    "list": "family",
+    "lemma": "nephew"
+  },
+  {
+    "list": "family",
+    "lemma": "niece"
+  },
+  {
+    "list": "family",
+    "lemma": "husband"
+  },
+  {
+    "list": "family",
+    "lemma": "wife"
+  },
+  {
+    "list": "family",
+    "lemma": "stepmother"
+  },
+  {
+    "list": "family",
+    "lemma": "stepfather"
+  },
+  {
+    "list": "family",
+    "lemma": "stepsister"
+  },
+  {
+    "list": "family",
+    "lemma": "stepbrother"
+  },
+  {
+    "list": "family",
+    "lemma": "godmother"
+  },
+  {
+    "list": "family",
+    "lemma": "godfather"
+  },
+  {
+    "list": "family",
+    "lemma": "mom"
+  },
+  {
+    "list": "family",
+    "lemma": "dad"
+  },
+  {
+    "list": "family",
+    "lemma": "boy"
+  },
+  {
+    "list": "family",
+    "lemma": "girl"
+  },
+  {
+    "list": "family",
+    "lemma": "grandma"
+  },
+  {
+    "list": "body",
+    "lemma": "head"
+  },
+  {
+    "list": "body",
+    "lemma": "eye"
+  },
+  {
+    "list": "body",
+    "lemma": "ear"
+  },
+  {
+    "list": "body",
+    "lemma": "nose"
+  },
+  {
+    "list": "body",
+    "lemma": "mouth"
+  },
+  {
+    "list": "body",
+    "lemma": "hand"
+  },
+  {
+    "list": "body",
+    "lemma": "foot"
+  },
+  {
+    "list": "body",
+    "lemma": "leg"
+  },
+  {
+    "list": "body",
+    "lemma": "shoulder"
+  },
+  {
+    "list": "body",
+    "lemma": "hair"
+  },
+  {
+    "list": "body",
+    "lemma": "face"
+  },
+  {
+    "list": "body",
+    "lemma": "forehead"
+  },
+  {
+    "list": "body",
+    "lemma": "cheek"
+  },
+  {
+    "list": "body",
+    "lemma": "chin"
+  },
+  {
+    "list": "body",
+    "lemma": "neck"
+  },
+  {
+    "list": "body",
+    "lemma": "arm"
+  },
+  {
+    "list": "body",
+    "lemma": "elbow"
+  },
+  {
+    "list": "body",
+    "lemma": "wrist"
+  },
+  {
+    "list": "body",
+    "lemma": "finger"
+  },
+  {
+    "list": "body",
+    "lemma": "thumb"
+  },
+  {
+    "list": "body",
+    "lemma": "nail"
+  },
+  {
+    "list": "body",
+    "lemma": "chest"
+  },
+  {
+    "list": "body",
+    "lemma": "back"
+  },
+  {
+    "list": "body",
+    "lemma": "stomach"
+  },
+  {
+    "list": "body",
+    "lemma": "knee"
+  },
+  {
+    "list": "body",
+    "lemma": "ankle"
+  },
+  {
+    "list": "body",
+    "lemma": "toe"
+  },
+  {
+    "list": "body",
+    "lemma": "tooth"
+  },
+  {
+    "list": "body",
+    "lemma": "tongue"
+  },
+  {
+    "list": "body",
+    "lemma": "lip"
+  },
+  {
+    "list": "body",
+    "lemma": "eyebrow"
+  },
+  {
+    "list": "body",
+    "lemma": "eyelash"
+  },
+  {
+    "list": "body",
+    "lemma": "heart"
+  },
+  {
+    "list": "food",
+    "lemma": "apple"
+  },
+  {
+    "list": "food",
+    "lemma": "bread"
+  },
+  {
+    "list": "food",
+    "lemma": "milk"
+  },
+  {
+    "list": "food",
+    "lemma": "egg"
+  },
+  {
+    "list": "food",
+    "lemma": "cheese"
+  },
+  {
+    "list": "food",
+    "lemma": "banana"
+  },
+  {
+    "list": "food",
+    "lemma": "water"
+  },
+  {
+    "list": "food",
+    "lemma": "cake"
+  },
+  {
+    "list": "food",
+    "lemma": "rice"
+  },
+  {
+    "list": "food",
+    "lemma": "salad"
+  },
+  {
+    "list": "food",
+    "lemma": "orange"
+  },
+  {
+    "list": "food",
+    "lemma": "strawberry"
+  },
+  {
+    "list": "food",
+    "lemma": "grape"
+  },
+  {
+    "list": "food",
+    "lemma": "watermelon"
+  },
+  {
+    "list": "food",
+    "lemma": "tomato"
+  },
+  {
+    "list": "food",
+    "lemma": "cucumber"
+  },
+  {
+    "list": "food",
+    "lemma": "carrot"
+  },
+  {
+    "list": "food",
+    "lemma": "potato"
+  },
+  {
+    "list": "food",
+    "lemma": "onion"
+  },
+  {
+    "list": "food",
+    "lemma": "chicken"
+  },
+  {
+    "list": "food",
+    "lemma": "meat"
+  },
+  {
+    "list": "food",
+    "lemma": "fish"
+  },
+  {
+    "list": "food",
+    "lemma": "soup"
+  },
+  {
+    "list": "food",
+    "lemma": "pasta"
+  },
+  {
+    "list": "food",
+    "lemma": "pizza"
+  },
+  {
+    "list": "food",
+    "lemma": "sandwich"
+  },
+  {
+    "list": "food",
+    "lemma": "cookie"
+  },
+  {
+    "list": "food",
+    "lemma": "ice_cream"
+  },
+  {
+    "list": "food",
+    "lemma": "chocolate"
+  },
+  {
+    "list": "food",
+    "lemma": "juice"
+  },
+  {
+    "list": "food",
+    "lemma": "coffee"
+  },
+  {
+    "list": "food",
+    "lemma": "tea"
+  },
+  {
+    "list": "food",
+    "lemma": "butter"
+  },
+  {
+    "list": "food",
+    "lemma": "honey"
+  },
+  {
+    "list": "food",
+    "lemma": "salt"
+  },
+  {
+    "list": "food",
+    "lemma": "pepper"
+  },
+  {
+    "list": "food",
+    "lemma": "sugar"
+  },
+  {
+    "list": "food",
+    "lemma": "cup"
+  },
+  {
+    "list": "school",
+    "lemma": "book"
+  },
+  {
+    "list": "school",
+    "lemma": "pen"
+  },
+  {
+    "list": "school",
+    "lemma": "pencil"
+  },
+  {
+    "list": "school",
+    "lemma": "desk"
+  },
+  {
+    "list": "school",
+    "lemma": "chair"
+  },
+  {
+    "list": "school",
+    "lemma": "teacher"
+  },
+  {
+    "list": "school",
+    "lemma": "student"
+  },
+  {
+    "list": "school",
+    "lemma": "classroom"
+  },
+  {
+    "list": "school",
+    "lemma": "backpack"
+  },
+  {
+    "list": "school",
+    "lemma": "notebook"
+  },
+  {
+    "list": "school",
+    "lemma": "eraser"
+  },
+  {
+    "list": "school",
+    "lemma": "ruler"
+  },
+  {
+    "list": "school",
+    "lemma": "calculator"
+  },
+  {
+    "list": "school",
+    "lemma": "dictionary"
+  },
+  {
+    "list": "school",
+    "lemma": "library"
+  },
+  {
+    "list": "school",
+    "lemma": "homework"
+  },
+  {
+    "list": "school",
+    "lemma": "test"
+  },
+  {
+    "list": "school",
+    "lemma": "exam"
+  },
+  {
+    "list": "school",
+    "lemma": "grade"
+  },
+  {
+    "list": "school",
+    "lemma": "lesson"
+  },
+  {
+    "list": "school",
+    "lemma": "subject"
+  },
+  {
+    "list": "school",
+    "lemma": "break"
+  },
+  {
+    "list": "school",
+    "lemma": "bell"
+  },
+  {
+    "list": "school",
+    "lemma": "board"
+  },
+  {
+    "list": "school",
+    "lemma": "marker"
+  },
+  {
+    "list": "school",
+    "lemma": "chalk"
+  },
+  {
+    "list": "school",
+    "lemma": "scissors"
+  },
+  {
+    "list": "school",
+    "lemma": "glue"
+  },
+  {
+    "list": "school",
+    "lemma": "stapler"
+  },
+  {
+    "list": "school",
+    "lemma": "paper"
+  },
+  {
+    "list": "school",
+    "lemma": "folder"
+  },
+  {
+    "list": "school",
+    "lemma": "class"
+  },
+  {
+    "list": "school",
+    "lemma": "hat"
+  },
+  {
+    "list": "weather",
+    "lemma": "sun"
+  },
+  {
+    "list": "weather",
+    "lemma": "rain"
+  },
+  {
+    "list": "weather",
+    "lemma": "cloud"
+  },
+  {
+    "list": "weather",
+    "lemma": "wind"
+  },
+  {
+    "list": "weather",
+    "lemma": "snow"
+  },
+  {
+    "list": "weather",
+    "lemma": "hot"
+  },
+  {
+    "list": "weather",
+    "lemma": "cold"
+  },
+  {
+    "list": "weather",
+    "lemma": "warm"
+  },
+  {
+    "list": "weather",
+    "lemma": "storm"
+  },
+  {
+    "list": "weather",
+    "lemma": "sunny"
+  },
+  {
+    "list": "weather",
+    "lemma": "rainy"
+  },
+  {
+    "list": "weather",
+    "lemma": "cloudy"
+  },
+  {
+    "list": "weather",
+    "lemma": "windy"
+  },
+  {
+    "list": "weather",
+    "lemma": "snowy"
+  },
+  {
+    "list": "weather",
+    "lemma": "foggy"
+  },
+  {
+    "list": "weather",
+    "lemma": "humid"
+  },
+  {
+    "list": "weather",
+    "lemma": "dry"
+  },
+  {
+    "list": "weather",
+    "lemma": "temperature"
+  },
+  {
+    "list": "weather",
+    "lemma": "forecast"
+  },
+  {
+    "list": "weather",
+    "lemma": "lightning"
+  },
+  {
+    "list": "weather",
+    "lemma": "thunder"
+  },
+  {
+    "list": "weather",
+    "lemma": "rainbow"
+  },
+  {
+    "list": "weather",
+    "lemma": "hail"
+  },
+  {
+    "list": "weather",
+    "lemma": "frost"
+  },
+  {
+    "list": "weather",
+    "lemma": "breeze"
+  },
+  {
+    "list": "weather",
+    "lemma": "tornado"
+  },
+  {
+    "list": "weather",
+    "lemma": "hurricane"
+  },
+  {
+    "list": "weather",
+    "lemma": "season"
+  },
+  {
+    "list": "weather",
+    "lemma": "spring"
+  },
+  {
+    "list": "weather",
+    "lemma": "summer"
+  },
+  {
+    "list": "weather",
+    "lemma": "autumn"
+  },
+  {
+    "list": "weather",
+    "lemma": "winter"
+  },
+  {
+    "list": "sports",
+    "lemma": "football"
+  },
+  {
+    "list": "sports",
+    "lemma": "basketball"
+  },
+  {
+    "list": "sports",
+    "lemma": "tennis"
+  },
+  {
+    "list": "sports",
+    "lemma": "swimming"
+  },
+  {
+    "list": "sports",
+    "lemma": "running"
+  },
+  {
+    "list": "sports",
+    "lemma": "cycling"
+  },
+  {
+    "list": "sports",
+    "lemma": "yoga"
+  },
+  {
+    "list": "sports",
+    "lemma": "hiking"
+  },
+  {
+    "list": "sports",
+    "lemma": "volleyball"
+  },
+  {
+    "list": "sports",
+    "lemma": "baseball"
+  },
+  {
+    "list": "sports",
+    "lemma": "soccer"
+  },
+  {
+    "list": "sports",
+    "lemma": "golf"
+  },
+  {
+    "list": "sports",
+    "lemma": "skiing"
+  },
+  {
+    "list": "sports",
+    "lemma": "skating"
+  },
+  {
+    "list": "sports",
+    "lemma": "surfing"
+  },
+  {
+    "list": "sports",
+    "lemma": "diving"
+  },
+  {
+    "list": "sports",
+    "lemma": "boxing"
+  },
+  {
+    "list": "sports",
+    "lemma": "wrestling"
+  },
+  {
+    "list": "sports",
+    "lemma": "gymnastics"
+  },
+  {
+    "list": "sports",
+    "lemma": "karate"
+  },
+  {
+    "list": "sports",
+    "lemma": "judo"
+  },
+  {
+    "list": "sports",
+    "lemma": "badminton"
+  },
+  {
+    "list": "sports",
+    "lemma": "ping_pong"
+  },
+  {
+    "list": "sports",
+    "lemma": "chess"
+  },
+  {
+    "list": "sports",
+    "lemma": "checkers"
+  },
+  {
+    "list": "sports",
+    "lemma": "team"
+  },
+  {
+    "list": "sports",
+    "lemma": "player"
+  },
+  {
+    "list": "sports",
+    "lemma": "coach"
+  },
+  {
+    "list": "sports",
+    "lemma": "referee"
+  },
+  {
+    "list": "sports",
+    "lemma": "score"
+  },
+  {
+    "list": "sports",
+    "lemma": "goal"
+  },
+  {
+    "list": "sports",
+    "lemma": "ball"
+  },
+  {
+    "list": "sports",
+    "lemma": "field"
+  },
+  {
+    "list": "sports",
+    "lemma": "stadium"
+  },
+  {
+    "list": "travel",
+    "lemma": "car"
+  },
+  {
+    "list": "travel",
+    "lemma": "bus"
+  },
+  {
+    "list": "travel",
+    "lemma": "train"
+  },
+  {
+    "list": "travel",
+    "lemma": "plane"
+  },
+  {
+    "list": "travel",
+    "lemma": "hotel"
+  },
+  {
+    "list": "travel",
+    "lemma": "beach"
+  },
+  {
+    "list": "travel",
+    "lemma": "mountain"
+  },
+  {
+    "list": "travel",
+    "lemma": "passport"
+  },
+  {
+    "list": "travel",
+    "lemma": "taxi"
+  },
+  {
+    "list": "travel",
+    "lemma": "bicycle"
+  },
+  {
+    "list": "travel",
+    "lemma": "bike"
+  },
+  {
+    "list": "travel",
+    "lemma": "motorcycle"
+  },
+  {
+    "list": "travel",
+    "lemma": "ship"
+  },
+  {
+    "list": "travel",
+    "lemma": "boat"
+  },
+  {
+    "list": "travel",
+    "lemma": "helicopter"
+  },
+  {
+    "list": "travel",
+    "lemma": "suitcase"
+  },
+  {
+    "list": "travel",
+    "lemma": "ticket"
+  },
+  {
+    "list": "travel",
+    "lemma": "luggage"
+  },
+  {
+    "list": "travel",
+    "lemma": "map"
+  },
+  {
+    "list": "travel",
+    "lemma": "compass"
+  },
+  {
+    "list": "travel",
+    "lemma": "camera"
+  },
+  {
+    "list": "travel",
+    "lemma": "tourist"
+  },
+  {
+    "list": "travel",
+    "lemma": "trip"
+  },
+  {
+    "list": "travel",
+    "lemma": "vacation"
+  },
+  {
+    "list": "travel",
+    "lemma": "journey"
+  },
+  {
+    "list": "travel",
+    "lemma": "destination"
+  },
+  {
+    "list": "travel",
+    "lemma": "airport"
+  },
+  {
+    "list": "travel",
+    "lemma": "station"
+  },
+  {
+    "list": "travel",
+    "lemma": "port"
+  },
+  {
+    "list": "travel",
+    "lemma": "bridge"
+  },
+  {
+    "list": "travel",
+    "lemma": "road"
+  },
+  {
+    "list": "travel",
+    "lemma": "street"
+  },
+  {
+    "list": "travel",
+    "lemma": "city"
+  },
+  {
+    "list": "travel",
+    "lemma": "country"
+  },
+  {
+    "list": "travel",
+    "lemma": "continent"
+  },
+  {
+    "list": "travel",
+    "lemma": "truck"
+  },
+  {
+    "list": "emotions",
+    "lemma": "happy"
+  },
+  {
+    "list": "emotions",
+    "lemma": "sad"
+  },
+  {
+    "list": "emotions",
+    "lemma": "angry"
+  },
+  {
+    "list": "emotions",
+    "lemma": "excited"
+  },
+  {
+    "list": "emotions",
+    "lemma": "tired"
+  },
+  {
+    "list": "emotions",
+    "lemma": "scared"
+  },
+  {
+    "list": "emotions",
+    "lemma": "proud"
+  },
+  {
+    "list": "emotions",
+    "lemma": "worried"
+  },
+  {
+    "list": "emotions",
+    "lemma": "surprised"
+  },
+  {
+    "list": "emotions",
+    "lemma": "confused"
+  },
+  {
+    "list": "emotions",
+    "lemma": "embarrassed"
+  },
+  {
+    "list": "emotions",
+    "lemma": "disappointed"
+  },
+  {
+    "list": "emotions",
+    "lemma": "frustrated"
+  },
+  {
+    "list": "emotions",
+    "lemma": "calm"
+  },
+  {
+    "list": "emotions",
+    "lemma": "nervous"
+  },
+  {
+    "list": "emotions",
+    "lemma": "confident"
+  },
+  {
+    "list": "emotions",
+    "lemma": "shy"
+  },
+  {
+    "list": "emotions",
+    "lemma": "brave"
+  },
+  {
+    "list": "emotions",
+    "lemma": "afraid"
+  },
+  {
+    "list": "emotions",
+    "lemma": "jealous"
+  },
+  {
+    "list": "emotions",
+    "lemma": "grateful"
+  },
+  {
+    "list": "emotions",
+    "lemma": "lonely"
+  },
+  {
+    "list": "emotions",
+    "lemma": "cheerful"
+  },
+  {
+    "list": "emotions",
+    "lemma": "content"
+  },
+  {
+    "list": "emotions",
+    "lemma": "anxious"
+  },
+  {
+    "list": "emotions",
+    "lemma": "relaxed"
+  },
+  {
+    "list": "emotions",
+    "lemma": "stressed"
+  },
+  {
+    "list": "emotions",
+    "lemma": "peaceful"
+  },
+  {
+    "list": "actions",
+    "lemma": "run"
+  },
+  {
+    "list": "actions",
+    "lemma": "jump"
+  },
+  {
+    "list": "actions",
+    "lemma": "read"
+  },
+  {
+    "list": "actions",
+    "lemma": "write"
+  },
+  {
+    "list": "actions",
+    "lemma": "draw"
+  },
+  {
+    "list": "actions",
+    "lemma": "sing"
+  },
+  {
+    "list": "actions",
+    "lemma": "dance"
+  },
+  {
+    "list": "actions",
+    "lemma": "play"
+  },
+  {
+    "list": "actions",
+    "lemma": "walk"
+  },
+  {
+    "list": "actions",
+    "lemma": "sit"
+  },
+  {
+    "list": "actions",
+    "lemma": "stand"
+  },
+  {
+    "list": "actions",
+    "lemma": "sleep"
+  },
+  {
+    "list": "actions",
+    "lemma": "eat"
+  },
+  {
+    "list": "actions",
+    "lemma": "drink"
+  },
+  {
+    "list": "actions",
+    "lemma": "cook"
+  },
+  {
+    "list": "actions",
+    "lemma": "clean"
+  },
+  {
+    "list": "actions",
+    "lemma": "wash"
+  },
+  {
+    "list": "actions",
+    "lemma": "brush"
+  },
+  {
+    "list": "actions",
+    "lemma": "study"
+  },
+  {
+    "list": "actions",
+    "lemma": "learn"
+  },
+  {
+    "list": "actions",
+    "lemma": "teach"
+  },
+  {
+    "list": "actions",
+    "lemma": "listen"
+  },
+  {
+    "list": "actions",
+    "lemma": "speak"
+  },
+  {
+    "list": "actions",
+    "lemma": "talk"
+  },
+  {
+    "list": "actions",
+    "lemma": "ask"
+  },
+  {
+    "list": "actions",
+    "lemma": "answer"
+  },
+  {
+    "list": "actions",
+    "lemma": "think"
+  },
+  {
+    "list": "actions",
+    "lemma": "remember"
+  },
+  {
+    "list": "actions",
+    "lemma": "forget"
+  },
+  {
+    "list": "actions",
+    "lemma": "understand"
+  },
+  {
+    "list": "actions",
+    "lemma": "know"
+  },
+  {
+    "list": "actions",
+    "lemma": "see"
+  },
+  {
+    "list": "actions",
+    "lemma": "look"
+  },
+  {
+    "list": "actions",
+    "lemma": "watch"
+  },
+  {
+    "list": "actions",
+    "lemma": "hear"
+  },
+  {
+    "list": "actions",
+    "lemma": "feel"
+  },
+  {
+    "list": "actions",
+    "lemma": "touch"
+  },
+  {
+    "list": "actions",
+    "lemma": "hold"
+  },
+  {
+    "list": "actions",
+    "lemma": "take"
+  },
+  {
+    "list": "actions",
+    "lemma": "give"
+  },
+  {
+    "list": "actions",
+    "lemma": "buy"
+  },
+  {
+    "list": "actions",
+    "lemma": "sell"
+  },
+  {
+    "list": "actions",
+    "lemma": "help"
+  },
+  {
+    "list": "actions",
+    "lemma": "work"
+  },
+  {
+    "list": "actions",
+    "lemma": "rest"
+  },
+  {
+    "list": "actions",
+    "lemma": "go"
+  },
+  {
+    "list": "actions",
+    "lemma": "can"
+  },
+  {
+    "list": "house",
+    "lemma": "house"
+  },
+  {
+    "list": "house",
+    "lemma": "kitchen"
+  },
+  {
+    "list": "house",
+    "lemma": "bedroom"
+  },
+  {
+    "list": "house",
+    "lemma": "living_room"
+  },
+  {
+    "list": "house",
+    "lemma": "bathroom"
+  },
+  {
+    "list": "house",
+    "lemma": "garden"
+  },
+  {
+    "list": "house",
+    "lemma": "window"
+  },
+  {
+    "list": "house",
+    "lemma": "door"
+  },
+  {
+    "list": "house",
+    "lemma": "roof"
+  },
+  {
+    "list": "house",
+    "lemma": "wall"
+  },
+  {
+    "list": "house",
+    "lemma": "floor"
+  },
+  {
+    "list": "house",
+    "lemma": "ceiling"
+  },
+  {
+    "list": "house",
+    "lemma": "stairs"
+  },
+  {
+    "list": "house",
+    "lemma": "balcony"
+  },
+  {
+    "list": "house",
+    "lemma": "basement"
+  },
+  {
+    "list": "house",
+    "lemma": "attic"
+  },
+  {
+    "list": "house",
+    "lemma": "garage"
+  },
+  {
+    "list": "house",
+    "lemma": "yard"
+  },
+  {
+    "list": "house",
+    "lemma": "fence"
+  },
+  {
+    "list": "house",
+    "lemma": "gate"
+  },
+  {
+    "list": "house",
+    "lemma": "lock"
+  },
+  {
+    "list": "house",
+    "lemma": "key"
+  },
+  {
+    "list": "house",
+    "lemma": "light"
+  },
+  {
+    "list": "house",
+    "lemma": "lamp"
+  },
+  {
+    "list": "house",
+    "lemma": "table"
+  },
+  {
+    "list": "house",
+    "lemma": "bed"
+  },
+  {
+    "list": "house",
+    "lemma": "sofa"
+  },
+  {
+    "list": "house",
+    "lemma": "chair"
+  },
+  {
+    "list": "house",
+    "lemma": "shelf"
+  },
+  {
+    "list": "house",
+    "lemma": "closet"
+  },
+  {
+    "list": "house",
+    "lemma": "mirror"
+  },
+  {
+    "list": "house",
+    "lemma": "picture"
+  },
+  {
+    "list": "house",
+    "lemma": "clock"
+  },
+  {
+    "list": "house",
+    "lemma": "phone"
+  },
+  {
+    "list": "house",
+    "lemma": "television"
+  },
+  {
+    "list": "house",
+    "lemma": "computer"
+  },
+  {
+    "list": "house",
+    "lemma": "refrigerator"
+  },
+  {
+    "list": "house",
+    "lemma": "fridge"
+  },
+  {
+    "list": "house",
+    "lemma": "stove"
+  },
+  {
+    "list": "house",
+    "lemma": "oven"
+  },
+  {
+    "list": "house",
+    "lemma": "sink"
+  },
+  {
+    "list": "house",
+    "lemma": "shower"
+  },
+  {
+    "list": "house",
+    "lemma": "bathtub"
+  },
+  {
+    "list": "house",
+    "lemma": "toilet"
+  },
+  {
+    "list": "house",
+    "lemma": "towel"
+  },
+  {
+    "list": "house",
+    "lemma": "soap"
+  },
+  {
+    "list": "house",
+    "lemma": "toothbrush"
+  },
+  {
+    "list": "house",
+    "lemma": "toothpaste"
+  },
+  {
+    "list": "sight",
+    "lemma": "the"
+  },
+  {
+    "list": "sight",
+    "lemma": "and"
+  },
+  {
+    "list": "sight",
+    "lemma": "is"
+  },
+  {
+    "list": "sight",
+    "lemma": "it"
+  },
+  {
+    "list": "sight",
+    "lemma": "me"
+  },
+  {
+    "list": "sight",
+    "lemma": "we"
+  },
+  {
+    "list": "sight",
+    "lemma": "you"
+  },
+  {
+    "list": "sight",
+    "lemma": "my"
+  },
+  {
+    "list": "sight",
+    "lemma": "at"
+  },
+  {
+    "list": "community",
+    "lemma": "library"
+  },
+  {
+    "list": "community",
+    "lemma": "park"
+  },
+  {
+    "list": "community",
+    "lemma": "hospital"
+  },
+  {
+    "list": "community",
+    "lemma": "police"
+  },
+  {
+    "list": "community",
+    "lemma": "museum"
+  },
+  {
+    "list": "community",
+    "lemma": "supermarket"
+  },
+  {
+    "list": "community",
+    "lemma": "post_office"
+  },
+  {
+    "list": "community",
+    "lemma": "school"
+  },
+  {
+    "list": "community",
+    "lemma": "church"
+  },
+  {
+    "list": "community",
+    "lemma": "synagogue"
+  },
+  {
+    "list": "community",
+    "lemma": "mosque"
+  },
+  {
+    "list": "community",
+    "lemma": "bank"
+  },
+  {
+    "list": "community",
+    "lemma": "restaurant"
+  },
+  {
+    "list": "community",
+    "lemma": "cafe"
+  },
+  {
+    "list": "community",
+    "lemma": "shop"
+  },
+  {
+    "list": "community",
+    "lemma": "market"
+  },
+  {
+    "list": "community",
+    "lemma": "pharmacy"
+  },
+  {
+    "list": "community",
+    "lemma": "fire_station"
+  },
+  {
+    "list": "community",
+    "lemma": "gas_station"
+  },
+  {
+    "list": "community",
+    "lemma": "bus_stop"
+  },
+  {
+    "list": "community",
+    "lemma": "train_station"
+  },
+  {
+    "list": "community",
+    "lemma": "airport"
+  },
+  {
+    "list": "community",
+    "lemma": "port"
+  },
+  {
+    "list": "community",
+    "lemma": "bridge"
+  },
+  {
+    "list": "community",
+    "lemma": "street"
+  },
+  {
+    "list": "community",
+    "lemma": "avenue"
+  },
+  {
+    "list": "community",
+    "lemma": "square"
+  },
+  {
+    "list": "community",
+    "lemma": "neighborhood"
+  },
+  {
+    "list": "community",
+    "lemma": "city"
+  },
+  {
+    "list": "community",
+    "lemma": "town"
+  },
+  {
+    "list": "community",
+    "lemma": "village"
+  },
+  {
+    "list": "community",
+    "lemma": "country"
+  },
+  {
+    "list": "technology",
+    "lemma": "computer"
+  },
+  {
+    "list": "technology",
+    "lemma": "tablet"
+  },
+  {
+    "list": "technology",
+    "lemma": "keyboard"
+  },
+  {
+    "list": "technology",
+    "lemma": "screen"
+  },
+  {
+    "list": "technology",
+    "lemma": "robot"
+  },
+  {
+    "list": "technology",
+    "lemma": "camera"
+  },
+  {
+    "list": "technology",
+    "lemma": "internet"
+  },
+  {
+    "list": "technology",
+    "lemma": "laptop"
+  },
+  {
+    "list": "technology",
+    "lemma": "mouse"
+  },
+  {
+    "list": "technology",
+    "lemma": "printer"
+  },
+  {
+    "list": "technology",
+    "lemma": "scanner"
+  },
+  {
+    "list": "technology",
+    "lemma": "speaker"
+  },
+  {
+    "list": "technology",
+    "lemma": "microphone"
+  },
+  {
+    "list": "technology",
+    "lemma": "headphones"
+  },
+  {
+    "list": "technology",
+    "lemma": "phone"
+  },
+  {
+    "list": "technology",
+    "lemma": "smartphone"
+  },
+  {
+    "list": "technology",
+    "lemma": "app"
+  },
+  {
+    "list": "technology",
+    "lemma": "website"
+  },
+  {
+    "list": "technology",
+    "lemma": "email"
+  },
+  {
+    "list": "technology",
+    "lemma": "message"
+  },
+  {
+    "list": "technology",
+    "lemma": "video"
+  },
+  {
+    "list": "technology",
+    "lemma": "photo"
+  },
+  {
+    "list": "technology",
+    "lemma": "file"
+  },
+  {
+    "list": "technology",
+    "lemma": "folder"
+  },
+  {
+    "list": "technology",
+    "lemma": "download"
+  },
+  {
+    "list": "technology",
+    "lemma": "upload"
+  },
+  {
+    "list": "technology",
+    "lemma": "search"
+  },
+  {
+    "list": "technology",
+    "lemma": "password"
+  },
+  {
+    "list": "technology",
+    "lemma": "account"
+  },
+  {
+    "list": "technology",
+    "lemma": "software"
+  },
+  {
+    "list": "technology",
+    "lemma": "program"
+  },
+  {
+    "list": "technology",
+    "lemma": "game"
+  },
+  {
+    "list": "technology",
+    "lemma": "social_media"
+  },
+  {
+    "list": "technology",
+    "lemma": "wifi"
+  },
+  {
+    "list": "technology",
+    "lemma": "bluetooth"
+  },
+  {
+    "list": "technology",
+    "lemma": "battery"
+  },
+  {
+    "list": "technology",
+    "lemma": "charger"
+  },
+  {
+    "list": "health",
+    "lemma": "doctor"
+  },
+  {
+    "list": "health",
+    "lemma": "nurse"
+  },
+  {
+    "list": "health",
+    "lemma": "medicine"
+  },
+  {
+    "list": "health",
+    "lemma": "healthy"
+  },
+  {
+    "list": "health",
+    "lemma": "hurt"
+  },
+  {
+    "list": "health",
+    "lemma": "exercise"
+  },
+  {
+    "list": "health",
+    "lemma": "rest"
+  },
+  {
+    "list": "health",
+    "lemma": "hospital"
+  },
+  {
+    "list": "health",
+    "lemma": "clinic"
+  },
+  {
+    "list": "health",
+    "lemma": "dentist"
+  },
+  {
+    "list": "health",
+    "lemma": "patient"
+  },
+  {
+    "list": "health",
+    "lemma": "appointment"
+  },
+  {
+    "list": "health",
+    "lemma": "checkup"
+  },
+  {
+    "list": "health",
+    "lemma": "treatment"
+  },
+  {
+    "list": "health",
+    "lemma": "surgery"
+  },
+  {
+    "list": "health",
+    "lemma": "bandage"
+  },
+  {
+    "list": "health",
+    "lemma": "pill"
+  },
+  {
+    "list": "health",
+    "lemma": "injection"
+  },
+  {
+    "list": "health",
+    "lemma": "vaccine"
+  },
+  {
+    "list": "health",
+    "lemma": "fever"
+  },
+  {
+    "list": "health",
+    "lemma": "cough"
+  },
+  {
+    "list": "health",
+    "lemma": "headache"
+  },
+  {
+    "list": "health",
+    "lemma": "stomachache"
+  },
+  {
+    "list": "health",
+    "lemma": "toothache"
+  },
+  {
+    "list": "health",
+    "lemma": "cold"
+  },
+  {
+    "list": "health",
+    "lemma": "flu"
+  },
+  {
+    "list": "health",
+    "lemma": "allergy"
+  },
+  {
+    "list": "health",
+    "lemma": "pain"
+  },
+  {
+    "list": "health",
+    "lemma": "sick"
+  },
+  {
+    "list": "health",
+    "lemma": "well"
+  },
+  {
+    "list": "health",
+    "lemma": "better"
+  },
+  {
+    "list": "health",
+    "lemma": "worse"
+  },
+  {
+    "list": "health",
+    "lemma": "recover"
+  },
+  {
+    "list": "environment",
+    "lemma": "recycle"
+  },
+  {
+    "list": "environment",
+    "lemma": "clean_water"
+  },
+  {
+    "list": "environment",
+    "lemma": "tree"
+  },
+  {
+    "list": "environment",
+    "lemma": "planet"
+  },
+  {
+    "list": "environment",
+    "lemma": "save_energy"
+  },
+  {
+    "list": "environment",
+    "lemma": "pollution"
+  },
+  {
+    "list": "environment",
+    "lemma": "nature"
+  },
+  {
+    "list": "environment",
+    "lemma": "forest"
+  },
+  {
+    "list": "environment",
+    "lemma": "ocean"
+  },
+  {
+    "list": "environment",
+    "lemma": "sea"
+  },
+  {
+    "list": "environment",
+    "lemma": "river"
+  },
+  {
+    "list": "environment",
+    "lemma": "lake"
+  },
+  {
+    "list": "environment",
+    "lemma": "mountain"
+  },
+  {
+    "list": "environment",
+    "lemma": "hill"
+  },
+  {
+    "list": "environment",
+    "lemma": "valley"
+  },
+  {
+    "list": "environment",
+    "lemma": "desert"
+  },
+  {
+    "list": "environment",
+    "lemma": "beach"
+  },
+  {
+    "list": "environment",
+    "lemma": "island"
+  },
+  {
+    "list": "environment",
+    "lemma": "sky"
+  },
+  {
+    "list": "environment",
+    "lemma": "cloud"
+  },
+  {
+    "list": "environment",
+    "lemma": "sun"
+  },
+  {
+    "list": "environment",
+    "lemma": "moon"
+  },
+  {
+    "list": "environment",
+    "lemma": "star"
+  },
+  {
+    "list": "environment",
+    "lemma": "flower"
+  },
+  {
+    "list": "environment",
+    "lemma": "grass"
+  },
+  {
+    "list": "environment",
+    "lemma": "leaf"
+  },
+  {
+    "list": "environment",
+    "lemma": "root"
+  },
+  {
+    "list": "environment",
+    "lemma": "branch"
+  },
+  {
+    "list": "environment",
+    "lemma": "animal"
+  },
+  {
+    "list": "environment",
+    "lemma": "bird"
+  },
+  {
+    "list": "environment",
+    "lemma": "fish"
+  },
+  {
+    "list": "environment",
+    "lemma": "insect"
+  },
+  {
+    "list": "environment",
+    "lemma": "butterfly"
+  },
+  {
+    "list": "environment",
+    "lemma": "bee"
+  },
+  {
+    "list": "environment",
+    "lemma": "protect"
+  },
+  {
+    "list": "environment",
+    "lemma": "save"
+  },
+  {
+    "list": "environment",
+    "lemma": "waste"
+  },
+  {
+    "list": "environment",
+    "lemma": "garbage"
+  },
+  {
+    "list": "environment",
+    "lemma": "trash"
+  },
+  {
+    "list": "environment",
+    "lemma": "bin"
+  },
+  {
+    "list": "environment",
+    "lemma": "clean"
+  },
+  {
+    "list": "environment",
+    "lemma": "dirty"
+  },
+  {
+    "list": "environment",
+    "lemma": "fresh"
+  },
+  {
+    "list": "environment",
+    "lemma": "fresh_air"
+  },
+  {
+    "list": "culture",
+    "lemma": "tradition"
+  },
+  {
+    "list": "culture",
+    "lemma": "music"
+  },
+  {
+    "list": "culture",
+    "lemma": "dance"
+  },
+  {
+    "list": "culture",
+    "lemma": "language"
+  },
+  {
+    "list": "culture",
+    "lemma": "holiday"
+  },
+  {
+    "list": "culture",
+    "lemma": "flag"
+  },
+  {
+    "list": "culture",
+    "lemma": "story"
+  },
+  {
+    "list": "culture",
+    "lemma": "art"
+  },
+  {
+    "list": "culture",
+    "lemma": "painting"
+  },
+  {
+    "list": "culture",
+    "lemma": "drawing"
+  },
+  {
+    "list": "culture",
+    "lemma": "sculpture"
+  },
+  {
+    "list": "culture",
+    "lemma": "theater"
+  },
+  {
+    "list": "culture",
+    "lemma": "movie"
+  },
+  {
+    "list": "culture",
+    "lemma": "film"
+  },
+  {
+    "list": "culture",
+    "lemma": "actor"
+  },
+  {
+    "list": "culture",
+    "lemma": "actress"
+  },
+  {
+    "list": "culture",
+    "lemma": "director"
+  },
+  {
+    "list": "culture",
+    "lemma": "song"
+  },
+  {
+    "list": "culture",
+    "lemma": "singer"
+  },
+  {
+    "list": "culture",
+    "lemma": "musician"
+  },
+  {
+    "list": "culture",
+    "lemma": "instrument"
+  },
+  {
+    "list": "culture",
+    "lemma": "piano"
+  },
+  {
+    "list": "culture",
+    "lemma": "guitar"
+  },
+  {
+    "list": "culture",
+    "lemma": "violin"
+  },
+  {
+    "list": "culture",
+    "lemma": "drum"
+  },
+  {
+    "list": "culture",
+    "lemma": "book"
+  },
+  {
+    "list": "culture",
+    "lemma": "writer"
+  },
+  {
+    "list": "culture",
+    "lemma": "poem"
+  },
+  {
+    "list": "culture",
+    "lemma": "poetry"
+  },
+  {
+    "list": "culture",
+    "lemma": "festival"
+  },
+  {
+    "list": "culture",
+    "lemma": "celebration"
+  },
+  {
+    "list": "culture",
+    "lemma": "party"
+  },
+  {
+    "list": "culture",
+    "lemma": "custom"
+  },
+  {
+    "list": "culture",
+    "lemma": "religion"
+  },
+  {
+    "list": "culture",
+    "lemma": "faith"
+  },
+  {
+    "list": "culture",
+    "lemma": "prayer"
+  },
+  {
+    "list": "culture",
+    "lemma": "ceremony"
+  },
+  {
+    "list": "history",
+    "lemma": "hero"
+  },
+  {
+    "list": "history",
+    "lemma": "leader"
+  },
+  {
+    "list": "history",
+    "lemma": "past"
+  },
+  {
+    "list": "history",
+    "lemma": "today"
+  },
+  {
+    "list": "history",
+    "lemma": "future"
+  },
+  {
+    "list": "history",
+    "lemma": "memory"
+  },
+  {
+    "list": "history",
+    "lemma": "journey"
+  },
+  {
+    "list": "history",
+    "lemma": "ancient"
+  },
+  {
+    "list": "history",
+    "lemma": "old"
+  },
+  {
+    "list": "history",
+    "lemma": "new"
+  },
+  {
+    "list": "history",
+    "lemma": "modern"
+  },
+  {
+    "list": "history",
+    "lemma": "century"
+  },
+  {
+    "list": "history",
+    "lemma": "year"
+  },
+  {
+    "list": "history",
+    "lemma": "month"
+  },
+  {
+    "list": "history",
+    "lemma": "week"
+  },
+  {
+    "list": "history",
+    "lemma": "day"
+  },
+  {
+    "list": "history",
+    "lemma": "hour"
+  },
+  {
+    "list": "history",
+    "lemma": "minute"
+  },
+  {
+    "list": "history",
+    "lemma": "second"
+  },
+  {
+    "list": "history",
+    "lemma": "time"
+  },
+  {
+    "list": "history",
+    "lemma": "date"
+  },
+  {
+    "list": "history",
+    "lemma": "event"
+  },
+  {
+    "list": "history",
+    "lemma": "war"
+  },
+  {
+    "list": "history",
+    "lemma": "peace"
+  },
+  {
+    "list": "history",
+    "lemma": "battle"
+  },
+  {
+    "list": "history",
+    "lemma": "victory"
+  },
+  {
+    "list": "history",
+    "lemma": "defeat"
+  },
+  {
+    "list": "history",
+    "lemma": "king"
+  },
+  {
+    "list": "history",
+    "lemma": "queen"
+  },
+  {
+    "list": "history",
+    "lemma": "prince"
+  },
+  {
+    "list": "history",
+    "lemma": "princess"
+  },
+  {
+    "list": "history",
+    "lemma": "castle"
+  },
+  {
+    "list": "history",
+    "lemma": "palace"
+  },
+  {
+    "list": "history",
+    "lemma": "monument"
+  },
+  {
+    "list": "history",
+    "lemma": "museum"
+  },
+  {
+    "list": "history",
+    "lemma": "artifact"
+  },
+  {
+    "list": "history",
+    "lemma": "discovery"
+  },
+  {
+    "list": "history",
+    "lemma": "invention"
+  },
+  {
+    "list": "history",
+    "lemma": "explorer"
+  },
+  {
+    "list": "history",
+    "lemma": "scientist"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "ocean"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "climate"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "recycle_bin"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "energy"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "planet_earth"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "protect"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "volunteer"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "environment"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "nature"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "pollution"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "air_pollution"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "water_pollution"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "plastic"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "waste"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "garbage"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "trash"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "recycle"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "reuse"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "reduce"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "save"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "conserve"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "preserve"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "endangered"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "extinct"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "species"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "habitat"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "deforestation"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "global_warming"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "greenhouse_effect"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "renewable_energy"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "solar_energy"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "wind_energy"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "water_energy"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "clean_energy"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "fossil_fuel"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "carbon_footprint"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "climate_change"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "drought"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "flood"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "earthquake"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "tsunami"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "disaster"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "emergency"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "aid"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "help"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "support"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "charity"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "donation"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "fundraise"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "campaign"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "awareness"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "education"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "knowledge"
+  },
+  {
+    "list": "global_issues",
+    "lemma": "information"
+  }
+]

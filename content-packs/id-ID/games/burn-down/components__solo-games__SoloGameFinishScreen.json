@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "back_to_games": "Kembali ke Gim",
+    "play_again": "Main lagi",
+    "void_busy_boolean_subtitlehe_string_statslines_array": "void,\r\n *   busy?: boolean,\r\n *   subtitleHe?: string,\r\n *   statsLines?: Array",
+    "diamond_balance": "Saldo berlian:",
+    "coin_balance": "Saldo koin:",
+    "score": "Skor:",
+    "level": "Level:",
+    "win_title": "Kerja bagus! 🎉",
+    "lose_title": "Usaha bagus!",
+    "coins_awarded": "+{n} koin",
+    "diamonds_awarded": "+{n} berlian"
+  }
+}

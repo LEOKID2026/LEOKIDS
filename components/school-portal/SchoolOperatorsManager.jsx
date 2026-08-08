@@ -12,9 +12,13 @@ import {
   schoolAuthFetch,
   SCHOOL_INVITE_OPERATOR_SUBMIT,
   SCHOOL_INVITE_OPERATOR_HELP,
+  SCHOOL_LOAD_ERROR,
   SCHOOL_OPERATOR_IDENTITY,
+  SCHOOL_PERMISSIONS_UPDATE_ERROR,
   SCHOOL_STAFF_CREATE_OPERATOR_SECTION,
   SCHOOL_STAFF_INVITE_EMAIL_SECTION,
+  SCHOOL_STAFF_STATUS_SUSPENDED,
+  SCHOOL_VIEW_DETAILS,
 } from "../../lib/school-portal/school-ui.js";
 
 /**
@@ -34,12 +38,12 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
       const res = await schoolAuthFetch(accessToken, "/api/school/operators");
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Error loading"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_LOAD_ERROR));
         return;
       }
       setOperators(json?.data?.operators || []);
     } catch {
-      setError("Network error");
+      setError(SCHOOL_LOAD_ERROR);
     } finally {
       setLoading(false);
     }
@@ -59,7 +63,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
       );
       if (!res.ok) {
         const json = await res.json().catch(() => ({}));
-        setError(apiErrorMessageHe(json?.error, "Failed to update permissions"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_PERMISSIONS_UPDATE_ERROR));
         return;
       }
       await load();
@@ -112,7 +116,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
                       {op.staffCode ? (
                         <p className="text-xs text-white/50 mt-1 font-mono" dir="ltr">
                           {op.staffCode}
-                          {op.staffAccessStatus === "suspended" ? " · Suspended" : ""}
+                          {op.staffAccessStatus === "suspended" ? ` · ${SCHOOL_STAFF_STATUS_SUSPENDED}` : ""}
                         </p>
                       ) : null}
                     </div>
@@ -120,7 +124,7 @@ export default function SchoolOperatorsManager({ accessToken, enabled = true }) 
                       href={`/school/operators/${op.operatorUserId}`}
                       className="text-amber-300 text-sm hover:underline"
                     >
-                      Details
+                      {SCHOOL_VIEW_DETAILS}
                     </Link>
                   </div>
                   <SchoolOperatorGrantPanel

@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "title": "Selesaikan dan kirim aktivitas ini?",
+    "answered_of": "Anda menjawab {answered} dari {questionCount} soal",
+    "unanswered_warn": "Ada {count} soal yang belum dijawab. Setelah mengirim, Anda tidak dapat kembali dan mengubah jawaban.",
+    "submit_note": "Setelah mengirim, Anda tidak dapat kembali dan mengubah jawaban.",
+    "cancel": "Batal",
+    "submitting": "Mengirim…",
+    "confirm": "Ya, selesaikan dan kirim"
+  }
+}

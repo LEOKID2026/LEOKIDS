@@ -1,0 +1,30 @@
+{
+  "englishFiles": 319,
+  "indonesianFiles": 319,
+  "missingFiles": [],
+  "extraFiles": [],
+  "enLeaves": 1720,
+  "idLeaves": 1720,
+  "missingKeys": 0,
+  "extraKeys": 0,
+  "emptyLeaves": 0,
+  "schemaDefects": 0,
+  "placeholderMismatches": 0,
+  "logicDefects": 0,
+  "gradeDefects": 0,
+  "englishExceptionDefects": 0,
+  "unexplainedEnglish": 0,
+  "bySubject": {
+    "math": 189,
+    "geometry": 66,
+    "science": 38,
+    "english": 24,
+    "shared": 2,
+    "other": 0
+  },
+  "translatedLeaves": 899,
+  "intentionalEnglishLeaves": 441,
+  "sampleUnexplained": [],
+  "sampleGrade": [],
+  "sampleMissingKeys": []
+}

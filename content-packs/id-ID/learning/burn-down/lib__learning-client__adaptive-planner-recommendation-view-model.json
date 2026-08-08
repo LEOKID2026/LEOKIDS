@@ -1,0 +1,8 @@
+{
+  "copy": {
+    "practice_recommendation": "Rekomendasi latihan",
+    "recommended_practice_level": "Tingkat latihan yang direkomendasikan",
+    "recommended_number_of_questions": "Jumlah pertanyaan yang direkomendasikan",
+    "keep_practicing_based_on_your_progress": "Terus berlatih berdasarkan kemajuanmu"
+  }
+}

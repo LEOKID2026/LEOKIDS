@@ -975,7 +975,44 @@
     "class_report": "Class report",
     "invalid_class_id": "Invalid class ID.",
     "you_do_not_have_permission_to_view_this_class_report": "You do not have permission to view this class report.",
-    "please_select_valid_dates": "Please select valid dates"
+    "please_select_valid_dates": "Please select valid dates",
+    "class_fallback_name": "Class",
+    "active_students": "{count} active students",
+    "empty_class_hint": "This class is empty — add students to see a report.",
+    "class_summary": "Class summary",
+    "insufficient_data": "Cannot compute recommendations — not enough data in this period.",
+    "total_practice_sessions": "Total practice sessions",
+    "total_answers": "Total answers",
+    "average_success_rate": "Average success rate",
+    "students_with_data": "Students with data",
+    "class_performance_by_subject": "Class performance by subject",
+    "topics_need_reinforcement": "Topics that need reinforcement",
+    "topic_line_subject_level": "{headline}: {affected}/{memberCount} Students · {accuracy} Success{actionSuffix}",
+    "topic_line_v2": "{headline}: {affected}/{memberCount} Students · {accuracy} success · error rate {errPct}{actionSuffix}",
+    "topic_line_legacy": "{line}: {acc} avg errors{studentsSuffix}",
+    "students_count_suffix": " · {count} students",
+    "action_suffix": " · {action}",
+    "no_problematic_topics": "No problematic topics found in this period.",
+    "suggested_support_groups": "Suggested support groups",
+    "support_group_line": "{topic}: {names}{avgSuffix}",
+    "support_group_avg": " · avg {accuracy}",
+    "students_need_monitoring": "Students who need monitoring",
+    "view_report": "View report",
+    "all_students_on_track": "All students in the class are on track — no special intervention needed.",
+    "suggested_work_groups": "Suggested work groups",
+    "work_group_header": "{tier} ({count} Students):",
+    "not_enough_students_for_groups": "Not enough students with data to form groups.",
+    "not_enough_data_for_groups": "Not enough data to form groups.",
+    "groups_disclaimer": "*Groups are computed from performance — the teacher makes the final call.",
+    "focus_for_next_lesson": "Focus for next lesson",
+    "next_lesson_topic_line": "{line} - {count} students struggled with this topic",
+    "no_standout_topic": "No standout topic for the next lesson — continue with the curriculum.",
+    "reinforcement_suggestions": "Reinforcement suggestions",
+    "recommended_to_reinforce": "Recommended to reinforce: {line}",
+    "no_reinforcement_suggestions": "No special reinforcement suggestions for this period.",
+    "enrichment_suggestions": "Enrichment suggestions",
+    "strong_class_performance": "{line} - strong class performance ({accuracy})",
+    "no_enrichment_suggestions": "No enrichment suggestions for this period."
   },
   "pages__teacher__class__[classId]__activities__index": {
     "class_activities": "Class activities",
@@ -1027,7 +1064,11 @@
     "err_save": "Save failed"
   },
   "pages__teacher__class__[classId]__discussion__new": {
-    "new_discussion_activity": "New discussion activity"
+    "new_discussion_activity": "New discussion activity",
+    "err_load_class": "Could not load class",
+    "err_invalid_grade": "This class grade level is invalid. Contact your school admin.",
+    "network_error": "Network error",
+    "loading": "Loading…"
   },
   "pages__teacher__class__[classId]__worksheets__index": {
     "worksheets": "Worksheets",
@@ -1037,14 +1078,55 @@
     "loading": "Loading…",
     "error_loading": "Error loading",
     "network_error": "Network error",
+    "not_signed_in": "Not signed in",
+    "error_generic": "Error",
     "empty": "No worksheets yet.",
     "forbidden": "You do not have permission to view this class's worksheets.",
     "due": "Due: {date}",
     "manage": "Manage",
     "report": "Report"
   },
+  "pages__teacher__class__[classId]__worksheets__new": {
+    "page_title": "Worksheet activity",
+    "title": "Title",
+    "subject": "Subject",
+    "instructions_for_students": "Instructions for students",
+    "physical_due_date": "Physical submission due date",
+    "activity_mode": "Activity mode",
+    "save_as_draft": "Save as draft",
+    "launch_class": "Launch and send to class",
+    "not_signed_in": "Not signed in",
+    "save_draft_first": "Save a draft first",
+    "save_draft_before_pdf": "Save a draft before uploading a PDF.",
+    "please_enter_title": "Please enter a title",
+    "upload_pdf_before_launch": "Upload a PDF before launching",
+    "upload_failed": "Upload failed",
+    "launch_failed": "Launch failed",
+    "error_saving": "Error saving",
+    "network_error": "Network error",
+    "error_generic": "Error"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]": {
+    "worksheet": "Worksheet",
+    "not_signed_in": "Not signed in",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
+  },
   "pages__teacher__class__[classId]__worksheets__[worksheetId]__grade__[studentId]": {
-    "grade_student": "Grade student"
+    "grade_student": "Grade student",
+    "saved_and_marked_as_reviewed": "Saved and marked as reviewed",
+    "progress_saved": "Progress saved",
+    "published_to_student": "Published to student · Score: {score}%",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
+  },
+  "pages__teacher__class__[classId]__worksheets__[worksheetId]__report": {
+    "worksheet_report": "Worksheet report",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
   },
   "pages__teacher__dashboard": {
     "my_dashboard": "My dashboard",
@@ -1118,17 +1200,57 @@
     "loading": "Loading…",
     "error_loading": "Error loading",
     "network_error": "Network error",
+    "not_signed_in": "Not signed in",
+    "error_generic": "Error",
     "empty": "No worksheets yet.",
     "selected_students": "selected students",
     "class_scope": "class",
     "manage": "Manage",
     "report": "Report"
   },
+  "pages__teacher__worksheets__new": {
+    "page_title": "Worksheet activity — selected students",
+    "new_worksheet": "New worksheet",
+    "title": "Title",
+    "subject": "Subject",
+    "instructions_for_students": "Instructions for students",
+    "physical_due_date": "Physical submission due date",
+    "activity_mode": "Activity mode",
+    "save_as_draft": "Save as draft",
+    "launch_selected": "Launch and send to selected students",
+    "not_signed_in": "Not signed in",
+    "save_draft_first": "Save a draft first",
+    "save_draft_before_pdf": "Save a draft before uploading a PDF.",
+    "please_enter_title": "Please enter a title",
+    "please_select_at_least_one_student": "Please select at least one student",
+    "upload_pdf_before_launch": "Upload a PDF before launching",
+    "upload_failed": "Upload failed",
+    "launch_failed": "Launch failed",
+    "error_saving": "Error saving",
+    "network_error": "Network error",
+    "error_generic": "Error"
+  },
+  "pages__teacher__worksheets__[worksheetId]": {
+    "worksheet": "Worksheet",
+    "not_signed_in": "Not signed in",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
+  },
   "pages__teacher__worksheets__[worksheetId]__grade__[studentId]": {
-    "grade_student": "Grade student"
+    "grade_student": "Grade student",
+    "saved_and_marked_as_reviewed": "Saved and marked as reviewed",
+    "progress_saved": "Progress saved",
+    "published_to_student": "Published to student · Score: {score}%",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
   },
   "pages__teacher__worksheets__[worksheetId]__report": {
-    "worksheet_report": "Worksheet report"
+    "worksheet_report": "Worksheet report",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
   },
   "pages___app": {
     "default_document_title": "Leo Kids · Learning for elementary students"

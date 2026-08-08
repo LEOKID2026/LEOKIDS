@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "m10_division_buckets": "Berdasarkan soal yang dilatih pada periode yang dipilih, sebaiknya lanjutkan latihan pembagian dan perkuat kaitannya dengan perkalian.",
+    "m10_multiplication": "Berdasarkan soal yang dilatih pada periode yang dipilih, sebaiknya lanjutkan latihan hubungan kebalikan antara perkalian dan pembagian.",
+    "m10_thin_fallback": "Berdasarkan soal yang dilatih pada periode yang dipilih, sebaiknya lanjutkan latihan pembagian dan perkuat kaitannya dengan perkalian."
+  }
+}

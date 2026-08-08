@@ -1,0 +1,350 @@
+0	Square
+1	Rectangle
+2	Triangle
+3	Quadrilateral
+4	Circle
+5	Parallelogram
+6	Trapezoid
+7	Rectangular prism
+8	Cylinder
+9	Sphere
+10	Pyramid
+11	Two practice levels - regular and advanced
+12	six grades
+13	two practice levels - regular and advanced
+14	per grade: regular, advanced
+15	Topics by grade
+16	Addition - including addition with whole tens and crossing into the second ten
+17	Subtraction - including subtraction with whole tens and crossing into the second ten
+18	Multiplication - up to 20
+19	Comparison
+20	Number sense - neighboring numbers, even/odd, making 10, tens/ones, the number line, counting (including simple number completion/balancing only - not formal al
+21	Word problems - addition and subtraction problems (money, time, quantities)
+22	Mixed - mixed exercises drawn from the topics above
+23	Regular:
+24	addition from 10 to 20 (including addition with whole tens and crossing into the second ten), subtraction from 10 to 20, multiplication up to 5×5, comparison fr
+25	Advanced:
+26	addition up to 30, subtraction up to 30, multiplication up to 5×5, comparison up to 30, number sense up to 30, word problems up to 30, mixed
+27	Addition
+28	Subtraction
+29	Multiplication - times tables up to 10×10
+30	Division - based on the times tables
+31	Fractions - half, quarter, and parts of a whole (basic introduction only)
+32	Number sense
+33	Word problems - addition, subtraction, multiplication, and division problems (money, time, quantities)
+34	Mixed - mixed exercises within the range of 1,000
+35	addition/subtraction from 50 to 100, multiplication from 5×5 to 10×10, division from 50 to 100, half/quarter fractions, comparison up to 1,000, word problems up
+36	addition/subtraction up to 100, multiplication up to 10×10, division up to 100, half/quarter fractions, comparison up to 1,000, word problems up to 100
+37	Multiplication - including multiplication with whole tens and whole hundreds
+38	Division - including division with remainders
+39	Fractions - introduction to fractions as part of a whole
+40	Sequences
+41	Decimals - basic decimals
+42	Divisibility rules - by 2, 5, 10
+43	Order of operations and using parentheses
+44	Number sense (including simple number completion/balancing - not algebraic equations as a separate topic)
+45	Word problems
+46	Mixed
+47	addition/subtraction from 200 to 500, multiplication from 10 to 12 (including multiplication with tens and hundreds), division from 100 to 144 (with remainders)
+48	addition/subtraction up to 1,000, multiplication up to 12 (including multiplication with tens and hundreds), division up to 200 (with remainders), fractions wit
+49	Multiplication - including column (vertical) multiplication (multi-digit factor)
+50	Division - including long division (single-digit divisor or a whole ten)
+51	Fractions - simple fractions, meaning, and comparison
+52	Decimals
+53	Rounding
+54	Divisibility rules - by 3, 6, 9
+55	Prime and composite numbers
+56	Powers/exponents
+57	Estimation and developing number sense
+58	Properties of 0 and 1
+59	Equations
+60	Factors and multiples
+61	addition/subtraction from 1,000 to 5,000, multiplication from 20×20 to 30×30 (including column multiplication), division from 200 to 500 (including long divisio
+62	addition/subtraction up to 10,000, multiplication up to 25×25 (including column multiplication), division up to 1,000 (including long division), fractions with 
+63	Multiplication
+64	Division - including division by a two-digit number
+65	Fractions - including simplifying, expanding, addition and subtraction, mixed numbers
+66	Percentages
+67	Estimating the results of operations
+68	Word problems - including averages
+69	addition/subtraction from 10,000 to 50,000, multiplication from 30×30 to 50×50, fractions (including mixed numbers), percentages with a base from 400 to 1,000, 
+70	addition/subtraction up to 100,000, multiplication up to 99×99, fractions (including mixed numbers), percentages with a base up to 2,000, estimation, word probl
+71	Division
+72	Fractions - including multiplying and dividing fractions, fractions as division quotients
+73	Ratio
+74	Decimals - including multiplying and dividing by 10/100, repeating decimals
+75	Scale - on maps and models
+76	addition/subtraction from 50,000 to 100,000, multiplication from 100×100 to 200×200, division by a two-digit number, fractions (including multiplication/divisio
+77	addition/subtraction up to 200,000, multiplication up to 500×500, division by a two-digit number, fractions (including multiplication/division, fractions as div
+78	regular / advanced
+79	Number sense - neighboring numbers, even/odd, making 10, tens/ones, the number line, counting (including simple number completion/balancing only - not formal algebra)
+80	How the next practice was chosen
+81	Practice recommendation
+82	Recommended practice level
+83	Recommended number of questions
+84	Keep practicing based on your progress
+85	Continue to recommended practice
+86	Loading...
+87	Suggested next step
+88	Pick up where you left off
+89	No activity recorded yet — choose a subject to get started.
+90	Go to learning hub
+91	Great to see you! Every practice session brings you closer to your goal.
+92	The monthly goal is usually marked after you reach the minutes goal — keep learning!
+93	You got the monthly persistence reward! Well done!
+94	You reached the monthly goal! Keep learning!
+95	No data yet
+96	Data unavailable right now
+97	Loading…
+98	Cumulative
+99	For the current month
+100	Cumulative from all sessions
+101	From completed sessions
+102	From all sessions with duration
+103	Credited learning time — questions, books, and parent activities
+104	Unavailable
+105	Choose grade, difficulty, and topic (vocabulary, grammar, translation, writing, and more).
+106	Choose a game mode: learning, challenge with timer and lives, speed, or marathon.
+107	Read each question carefully — sometimes you choose an answer, sometimes you type in English.
+108	High scores, answer streaks, stars, and badges help you level up as a player.
+109	Not enough context to plan (missing subject).
+110	More learning activity is needed before suggesting a next focus.
+111	The learning system needs a bit more practice data before suggesting the next step.
+112	Collect a few more practice items; conclusions are deferred.
+113	English practice can continue, but skill routing should be confirmed by a teacher.
+114	English tagging is incomplete in the content bank; planner will not auto-route fine-grained skills.
+115	Waiting on verified question metadata before suggesting an advanced path.
+116	Skill metadata for the next step is not confirmed; hold automatic advancement.
+117	Short probe to verify understanding versus guessing.
+118	Inconsistent or guess-heavy signals - use a small diagnostic set.
+119	Extra practice on the current skill at a supportive difficulty.
+120	Targeted practice on the same skill; difficulty held or lowered slightly.
+121	Brief review of a foundation skill that supports the current topic.
+122	Strengthen a prerequisite skill before pushing the main skill harder.
+123	Ready for slightly more challenging practice on the same skill line.
+124	Signals support cautious difficulty increase with monitoring.
+125	Continue solid practice at the current level.
+126	Maintain current difficulty while consolidating mastery.
+127	Review-style practice on the current skill.
+128	Engine suggests review; planner aligns with same-skill practice.
+129	Steady practice on the current focus.
+130	Default safe path: continue practice without advancing difficulty.
+131	Unknown subject for normalization.
+132	Mapped from math generator operation / topic key.
+133	Mapped from geometry topic / generator kind.
+134	Expand geometry strand map for this topic/kind.
+135	Vocabulary games map to lexis / translation strand.
+136	Writing / typing modes align with sentence-writing strand.
+137	Mixed practice - audit often skips or treats as composite.
+138	Translation pools emphasize vocabulary / phrases.
+139	Expected grammar | translation | sentence.
+140	Mapped from science bank topic field.
+141	Extend science domain map.
+142	Diagnostic Engine V3 - fast, deep, evidence-bound
+143	Square tiling for a room: tile side 5 m. To know how many square meters to buy — which concept do we compute?
+144	You want a fence around a rectangular field (only the outer boundary). What do you usually compute to know how much fencing to buy?
+145	Perimeter
+146	Planning project: a fence around a rectangular field (outer edge only). To order fence length — what do you measure?
+147	Multiply length by width
+148	Two different rectangles with the same perimeter. What is true about their areas?
+149	The areas can be different
+150	In a triangle, two angles are known: 50° and 60°. What can you conclude about the third angle before computing the number yet?
+151	The sum of the three angles in a triangle is 180°
+152	In a triangle, two interior angles are known (for example 50° and 60°). Before computing the exact number — which geometry principle lets you reason about the t
+153	In an accurate measurement, a practical right angle is close to:
+154	Two parallel lines are cut by a transversal. A pair of corresponding angles (same relative position) — how are they related?
+155	Equal in measure
+156	Equilateral triangle
+157	Classifying by sides: a triangle with three equal sides — the matching name is:
+158	In a parallelogram, each pair of opposite sides:
+159	Parallel and equal in length
+160	In a parallelogram — about pairs of opposite sides it is correct to say they are:
+161	Every square is also a:
+162	In terms of inclusion: every square has the properties of a:
+163	Reflection across a line of symmetry is most like:
+164	Reflection across a line of symmetry — the closest image is:
+165	Two congruent shapes mean that:
+166	Same shape and same size (you can place one on the other)
+167	Two lines perpendicular to each other — what is true?
+168	They meet at a 90° angle
+169	Two lines perpendicular to each other — what is a correct property at the intersection?
+170	Two parallel lines in the same plane — what is a correct property?
+171	They have no intersection point and stay the same distance apart
+172	Two parallel lines in the same plane — about intersection between them it is true that:
+173	The symbol ∥ usually marks:
+174	Parallel lines
+175	What is true about parallel lines in the same plane?
+176	They do not meet and keep a constant distance
+177	The symbol ⊥ usually marks:
+178	Perpendicular lines
+179	When two lines are perpendicular, their intersection angle is:
+180	The volume of a box mainly expresses:
+181	How much space is occupied inside the box in three dimensions
+182	When we talk about the volume of a closed box — what is the main geometric meaning?
+183	Rectangular box: first you want the volume. What is a reasonable calculation order?
+184	In a circle, the relationship between diameter and radius is:
+185	The diameter is twice the radius
+186	How many meters a bicycle wheel travels in one full circular path is mainly related to:
+187	The circumference of the circle
+188	In a right triangle, the hypotenuse is:
+189	The side opposite the right angle
+190	In a right triangle, two legs are known and you want the hypotenuse. What is the right tool?
+191	The Pythagorean theorem (sum of squares of the legs = square of the hypotenuse)
+192	In a 3D solid of type cube — how many square faces are there usually?
+193	What is true about a pyramid versus a prism with the same base?
+194	Geometric comparison: pyramid versus prism with the same base shape — what is true?
+195	In a tiling around every meeting point of regular shapes, the sum of angles around the point is:
+196	In a regular tiling of squares, a typical interior angle in each square is:
+197	In a regular tiling of equilateral triangles, a typical interior angle in each triangle is:
+198	An altitude in a triangle (relative to a given base) is:
+199	In a rectangle, the two diagonals:
+200	Equal in length and bisect each other
+201	What is the main difference between parallel lines and perpendicular lines?
+202	Parallel lines do not meet; perpendicular lines meet at 90°
+203	In a rectangle — about the two diagonals it is true that:
+204	How many sides does a square have?
+205	In a quadrilateral with all sides equal (a square) — how many sides are there?
+206	In a rectangle, all four interior angles are right angles (90°). True or false?
+207	Every rhombus is always also a rectangle. True or false?
+208	Claim: every rhombus is necessarily also a rectangle. True or false?
+209	The shape moved to a new place with no rotation and no size change — which move is this?
+210	Translation
+211	The shape flips like a mirror across a line — which move is this?
+212	Reflection
+213	The shape rotates about a point without changing size — which move is this?
+214	Rotation
+215	The shape stayed in the same place and orientation — which transformation fits?
+216	No movement
+217	Challenge: only the orientation changes like a mirror across an axis, size preserved — which transformation?
+218	Challenge: only the position changes, with no rotation and no size change — which move?
+219	Challenge: the shape rotates about a fixed center with no size change — which transformation?
+220	The side length is 5 cm because 20 ÷ 4 = 5
+221	In a triangle, two interior angles are known (for example 50° and 60°). Before computing the exact number — which geometry principle lets you reason about the third?
+222	Compute: {m0}.
+223	Compute: {m0}, then {m1}.
+224	Substitute: {m0}.
+225	Substitute: {m0}, height {m1}.
+226	Compute: {m0} → rounded per the question: {m1}.
+227	Volume: {m0}.
+228	What is stated in the question: {m0}.
+229	The missing angle is {m0}°.
+230	Compute the squares: {m0} and {m1}.
+231	Take the square root for the hypotenuse: {m0}.
+232	Here we look for {m0}, so {m1}.
+233	Missing leg: {m0}.
+234	Check the side lengths from the data — the shape appears "{m0}".
+235	Choose the matching shape name — "{m0}".
+236	So the correct answer is "{m0}".
+237	The number of equal sides is {m0} — choose this answer value among the options.
+238	Exactly two equal pairs are formed — the numeric answer is {m0}.
+239	{m0} is a quadrilateral with four interior angles.
+240	The number of right angles: {m0} — choose this value in the options.
+241	The name in the question is: "{m0}".
+242	Match: {m0}.
+243	Classify the triangle by equal side lengths — the name in the question: "{m0}".
+244	So the correct option is {m0}.
+245	Identify a quadrilateral by its sides and angles — here: "{m0}".
+246	The number that matches "{m0}" is {m1}.
+247	The type of transformation in the question: "{m0}".
+248	So we choose {m0}.
+249	The question asks for the rotation angle — here {m0}°.
+250	The answer in degrees: {m0}.
+251	Careful counting by the shape type "{m0}".
+252	The number of axes of symmetry: {m0}.
+253	In a square with side {m0}, the diagonal is computed using the Pythagorean theorem.
+254	In a rectangle with length {m0} and width {m1}, the diagonal is computed using the Pythagorean theorem.
+255	In a parallelogram with sides {m0} and {m1}, the diagonal is computed using the Pythagorean theorem.
+256	In the shape "{m0}" the interior angle is {m1}°.
+257	So the answer: {m0}°.
+258	Question: how many faces does{m0}?
+259	For{m0} there are {m1} faces.
+260	Question: how many vertices does{m0}?
+261	For{m0} there are {m1} vertices.
+262	Question: how many edges does{m0}?
+263	For{m0} there are {m1} edges.
+264	In the description: "{m0}".
+265	Identify by features: {m0}.
+266	The matching solid's name: {m0}.
+267	(Do not add the legs if one side is missing.)
+268	divided by 3 ≈ {m0}.
+269	{m0} and {m1} — find the third angle.
+270	Area measures how much space a shape takes up on a surface.
+271	square: area = side × side.
+272	rectangle: area = length × width.
+273	triangle: area = (base × height) ÷ 2.
+274	parallelogram: area = base × height.
+275	trapezoid: area = ((base 1 + base 2) × height) ÷ 2.
+276	square: area = side².
+277	circle: area = π × radius².
+278	Perimeter measures the length of the path around the shape.
+279	always add all the sides.
+280	square: perimeter = side × 4.
+281	rectangle: perimeter = (length + width) × 2.
+282	for every shape: perimeter = the sum of all side lengths.
+283	circle: circumference = 2 × π × radius.
+284	Volume measures how much space a solid takes up (three-dimensional).
+285	cube: volume = side³.
+286	box (rectangular): volume = length × width × height.
+287	box: volume = length × width × height.
+288	cylinder: volume = π × radius² × height.
+289	sphere: volume = (4/3) × π × radius³.
+290	In every triangle: the sum of the interior angles is 180°.
+291	If two angles are known — find the third using 180° minus their sum.
+292	in a right triangle: a² + b² = c² (c is the hypotenuse).
+293	If both legs are known — find the hypotenuse: c = √(a² + b²).
+294	If the hypotenuse and one leg are known — find the missing leg: √(c² - leg²).
+295	Square: 4 equal sides, 4 right angles.
+296	Rectangle: 2 pairs of equal sides, 4 right angles.
+297	Square: 4 equal sides, 4 right angles (90°).
+298	Rectangle: 2 pairs of equal sides, 4 right angles (90°).
+299	Square: all 4 sides are equal in length.
+300	Rectangle: it has 2 pairs of equal sides (one long pair and one short pair).
+301	Parallel lines: never meet.
+302	Perpendicular lines: form a right angle (90°).
+303	Equilateral triangle: all 3 sides are equal.
+304	Isosceles triangle: 2 equal sides.
+305	Scalene triangle: all sides are different.
+306	Parallelogram: 2 pairs of parallel sides.
+307	Trapezoid: one pair of parallel sides.
+308	Translation: copies the shape in the same direction and distance.
+309	Reflection: flips the shape about a line (axis).
+310	Rotation: moves the shape around a point.
+311	a 90-degree rotation° = a quarter turn, 180° = a half turn, 360° = a full turn.
+312	Symmetry: a shape that has an axis of symmetry.
+313	Square: 4 axes of symmetry, rectangle: 2 axes of symmetry.
+314	Diagonal: a segment connecting two vertices not on the same side.
+315	square: diagonal = side × √2.
+316	rectangle: diagonal = √(length² + width²).
+317	parallelogram: diagonal = √(side 1² + side 2²).
+318	height: the distance from the vertex to the base (in a triangle) or the distance between parallel sides (in a parallelogram/trapezoid).
+319	triangle: area = (base × height) ÷ 2, so the height = (area × 2) ÷ base.
+320	parallelogram: area = base × height, so the height = area ÷ base.
+321	trapezoid: area = ((base 1 + base 2) × height) ÷ 2, so the height = (area × 2) ÷ (base 1 + base 2).
+322	Tiling: covering a surface with no gaps.
+323	square: 90-degree angle°, Equilateral triangle: 60-degree angle°.
+324	Circle: all points at an equal distance from the center.
+325	circle area = π × radius².
+326	circle circumference = 2 × π × radius.
+327	Cube: 6 equal square faces.
+328	Rectangular prism: 6 rectangular faces.
+329	Cylinder: 2 round bases.
+330	Sphere: all points at an equal distance from the center.
+331	It is important to remember the formula that fits the topic and shape.
+332	3. compute: {m0}.
+333	3. substitute and compute: {m0}.
+334	4. compute: {m0}.
+335	2. rectangular base: {m0}.
+336	2. what is stated in the question: {m0}.
+337	2. substitute the legs: {m0}.
+338	3. compute the squares: {m0}.
+339	5. take the square root for the hypotenuse: {m0}.
+340	2. here we look for {m0}, so {m1}.
+341	4. subtract: {m0}.
+342	5. missing leg: {m0}.
+343	1. the floor area: {m0}.
+344	2. the area of one tile: {m0}.
+345	3. number of tiles: {m0}.
+346	square area = side × side. Take the side length from the question and multiply it by itself — that is the area, not the perimeter.
+347	rectangle area = length × width. Make sure you multiply two different dimensions of the same shape, not add (that is more like perimeter).
+348	triangle area = (base × height to the base) ÷ 2. after multiplying, divide by 2 - Common mistake: forgetting the division.
+349	parallelogram area = base × the height perpendicular to it (not a diagonal).

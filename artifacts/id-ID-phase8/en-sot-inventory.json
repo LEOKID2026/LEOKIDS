@@ -1,0 +1,150 @@
+{
+  "commit": "b08780b15^",
+  "extracted": 450,
+  "slots": [
+    {
+      "subject": "math",
+      "grade": "g1",
+      "files": 19,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "math",
+      "grade": "g2",
+      "files": 22,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "math",
+      "grade": "g3",
+      "files": 28,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "math",
+      "grade": "g4",
+      "files": 38,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "math",
+      "grade": "g5",
+      "files": 41,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "math",
+      "grade": "g6",
+      "files": 45,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "geometry",
+      "grade": "g1",
+      "files": 4,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "geometry",
+      "grade": "g2",
+      "files": 4,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "geometry",
+      "grade": "g3",
+      "files": 10,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "geometry",
+      "grade": "g4",
+      "files": 14,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "geometry",
+      "grade": "g5",
+      "files": 19,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "geometry",
+      "grade": "g6",
+      "files": 20,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "science",
+      "grade": "g1",
+      "files": 6,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "science",
+      "grade": "g2",
+      "files": 7,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "science",
+      "grade": "g3",
+      "files": 7,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "science",
+      "grade": "g4",
+      "files": 6,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "science",
+      "grade": "g5",
+      "files": 6,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "science",
+      "grade": "g6",
+      "files": 6,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "english",
+      "grade": "g1",
+      "files": 22,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "english",
+      "grade": "g2",
+      "files": 26,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "english",
+      "grade": "g3",
+      "files": 19,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "english",
+      "grade": "g4",
+      "files": 19,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "english",
+      "grade": "g5",
+      "files": 21,
+      "hasDraftsDir": true
+    },
+    {
+      "subject": "english",
+      "grade": "g6",
+      "files": 17,
+      "hasDraftsDir": true
+    }
+  ]
+}

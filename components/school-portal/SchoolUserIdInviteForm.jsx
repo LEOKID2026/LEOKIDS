@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { SchoolPrimaryButton, SCHOOL_CARD, SCHOOL_CARD_INNER } from "./SchoolPortalUi";
-import { apiErrorMessageHe, schoolAuthFetch, SCHOOL_STUDENT_ID } from "../../lib/school-portal/school-ui.js";
+import {
+  apiErrorMessageHe,
+  schoolAuthFetch,
+  SCHOOL_INVITE_FAILED,
+  SCHOOL_INVITE_SUCCESS,
+  SCHOOL_NETWORK_ERROR,
+  SCHOOL_STUDENT_ID,
+} from "../../lib/school-portal/school-ui.js";
 
 /**
  * Invite existing auth user by UUID (teachers or operators).
@@ -42,15 +49,15 @@ export default function SchoolUserIdInviteForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Invite failed"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_INVITE_FAILED));
         return;
       }
-      setMessage("Invite completed successfully");
+      setMessage(SCHOOL_INVITE_SUCCESS);
       setUserId("");
       setDisplayName("");
       onSuccess?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy(false);
     }

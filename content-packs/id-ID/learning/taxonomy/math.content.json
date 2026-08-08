@@ -1,0 +1,256 @@
+{
+  "subjectId": "math",
+  "rows": {
+    "M-01": {
+      "id": "M-01",
+      "domain": "Bilangan",
+      "topic": "Struktur",
+      "subskill": "Penguraian 10+1",
+      "pattern": "Kesalahan saat mengonversi antar representasi",
+      "counterEvidence": "Berhasil dengan representasi yang ditampilkan tanpa penjelasan panjang",
+      "countsWhen": "Tugas setara; tanpa petunjuk yang menunjukkan penyelesaian penuh",
+      "doesNotCountWhen": "Petunjuk penuh diberikan; hanya satu tugas",
+      "probe": "Dua representasi bilangan yang sama",
+      "intervention": "Manipulatif, lalu perpindahan bertahap ke simbol",
+      "escalation": "Gagal pada setiap representasi",
+      "observableMarkers": [
+        "Kesalahan sama di dua representasi",
+        "Ragu sebelum menjawab"
+      ],
+      "roots": [
+        "Kesenjangan representasi"
+      ],
+      "competitors": [
+        "Pemahaman bacaan"
+      ],
+      "doNotConclude": [
+        "Bukan isu aritmetika"
+      ]
+    },
+    "M-02": {
+      "id": "M-02",
+      "domain": "Operasi",
+      "topic": "Penjumlahan",
+      "subskill": "Menyimpan",
+      "pattern": "Kesalahan pada kolom puluhan",
+      "counterEvidence": "Benar saat tidak ada menyimpan",
+      "countsWhen": "Digit tertulis",
+      "doesNotCountWhen": "Hanya bilangan ekstrem tanpa dasar menyimpan",
+      "probe": "Penjumlahan dengan/tanpa menyimpan",
+      "intervention": "Menyimpan dengan langkah antara tertulis",
+      "escalation": "Bergantung pada langkah antara tanpa kemajuan",
+      "observableMarkers": [
+        "Jenis kesalahan sama di besaran berbeda"
+      ],
+      "roots": [
+        "Algoritma menyimpan"
+      ],
+      "competitors": [
+        "Kecerobohan"
+      ],
+      "doNotConclude": [
+        "Kurang kepekaan bilangan"
+      ]
+    },
+    "M-03": {
+      "id": "M-03",
+      "domain": "Operasi",
+      "topic": "Perkalian",
+      "subskill": "Fakta perkalian",
+      "pattern": "Pasangan yang sama salah berulang",
+      "counterEvidence": "Pasangan lain benar dalam sesi yang sama",
+      "countsWhen": "Latihan reguler; bukan hanya tes kecepatan",
+      "doesNotCountWhen": "Hanya tes kecepatan",
+      "probe": "Gandakan waktu untuk set yang sama",
+      "intervention": "Latihan pasangan yang ditargetkan",
+      "escalation": "Gagal pada setiap pasangan bahkan saat lambat",
+      "observableMarkers": [
+        "Daftar pasangan salah yang tumpang tindih"
+      ],
+      "roots": [
+        "Kesenjangan fakta"
+      ],
+      "competitors": [
+        "Tekanan waktu"
+      ],
+      "doNotConclude": [
+        "Tidak bisa mengalikan sama sekali"
+      ]
+    },
+    "M-04": {
+      "id": "M-04",
+      "domain": "Pecahan",
+      "topic": "Representasi",
+      "subskill": "Bagian–keseluruhan",
+      "pattern": "Membandingkan hanya dari pembilang",
+      "counterEvidence": "Benar saat penyebut kebetulan sama",
+      "countsWhen": "Diagram/pita pecahan tersedia",
+      "doesNotCountWhen": "Hanya verbal, tanpa representasi yang belum diajarkan",
+      "probe": "Dengan/tanpa diagram",
+      "intervention": "Kerja bagian–keseluruhan konkret",
+      "escalation": "Tidak ada perbaikan di representasi mana pun",
+      "observableMarkers": [
+        "Kesalahan bahkan saat diagram lengkap"
+      ],
+      "roots": [
+        "Kesenjangan konsep pecahan"
+      ],
+      "competitors": [
+        "Kecerobohan"
+      ],
+      "doNotConclude": [
+        "Tidak bisa mengerjakan pecahan sama sekali"
+      ]
+    },
+    "M-05": {
+      "id": "M-05",
+      "domain": "Pecahan",
+      "topic": "Penjumlahan",
+      "subskill": "Perluasan penyebut",
+      "pattern": "Kesalahan pada langkah yang sama",
+      "counterEvidence": "Benar dengan penyebut yang cocok",
+      "countsWhen": "Penyebut kecil dalam rentang yang diajarkan",
+      "doesNotCountWhen": "Penyebut besar sebelum perkalian dasar mantap",
+      "probe": "Faktor perluasan 2, 3, 4",
+      "intervention": "Langkah tertulis dengan contoh terkerja paralel",
+      "escalation": "Gagal pada perkalian dasar",
+      "observableMarkers": [
+        "Kesalahan pada perkalian/perluasan berulang"
+      ],
+      "roots": [
+        "Algoritma perluasan"
+      ],
+      "competitors": [
+        "Perkalian lemah"
+      ],
+      "doNotConclude": [
+        "Tidak bisa mengerjakan pecahan sama sekali"
+      ]
+    },
+    "M-06": {
+      "id": "M-06",
+      "domain": "Desimal",
+      "topic": "Nilai tempat",
+      "subskill": "Pembulatan/perbandingan",
+      "pattern": "Arah pembulatan salah",
+      "counterEvidence": "Benar dengan bagan nilai tempat",
+      "countsWhen": "Bilangan tidak bulat",
+      "doesNotCountWhen": "Hanya bilangan bulat dalam tugas",
+      "probe": "Dengan/tanpa bagan nilai tempat",
+      "intervention": "Kode warna nilai tempat",
+      "escalation": "Gagal bahkan dengan bagan",
+      "observableMarkers": [
+        "Kesalahan berulang pada aturan yang sama"
+      ],
+      "roots": [
+        "Kesenjangan nilai tempat"
+      ],
+      "competitors": [
+        "Pemahaman bacaan"
+      ],
+      "doNotConclude": [
+        "Tidak bisa mengerjakan desimal sama sekali"
+      ]
+    },
+    "M-07": {
+      "id": "M-07",
+      "domain": "Soal cerita",
+      "topic": "Rumusan",
+      "subskill": "Satuan",
+      "pattern": "Angka benar, satuan salah",
+      "counterEvidence": "Benar saat hanya angka yang diminta",
+      "countsWhen": "Satuan eksplisit dalam teks",
+      "doesNotCountWhen": "Pertanyaan tanpa satuan di aslinya",
+      "probe": "Dengan/tanpa kolom satuan",
+      "intervention": "Angka plus baris satuan",
+      "escalation": "Kesulitan bahkan tanpa satuan",
+      "observableMarkers": [
+        "Mengulang satuan yang tidak sesuai"
+      ],
+      "roots": [
+        "Membaca pertanyaan"
+      ],
+      "competitors": [
+        "Perhitungan"
+      ],
+      "doNotConclude": [
+        "Tanpa pemahaman sama sekali"
+      ]
+    },
+    "M-08": {
+      "id": "M-08",
+      "domain": "Soal cerita",
+      "topic": "Pemodelan",
+      "subskill": "Banyak langkah",
+      "pattern": "Gagal hanya saat menggabungkan langkah",
+      "counterEvidence": "Berhasil dengan langkah tercetak",
+      "countsWhen": "Langkah bernomor",
+      "doesNotCountWhen": "Versi tanpa langkah saat belum diajarkan",
+      "probe": "Dengan templat langkah",
+      "intervention": "Langkah plus pemeriksaan mundur",
+      "escalation": "Gagal bahkan pada soal satu langkah",
+      "observableMarkers": [
+        "Kesalahan pada langkah akhir yang sama"
+      ],
+      "roots": [
+        "Beban memori kerja"
+      ],
+      "competitors": [
+        "Kesenjangan perhitungan"
+      ],
+      "doNotConclude": [
+        "Tidak bisa mengerjakan soal cerita sama sekali"
+      ]
+    },
+    "M-09": {
+      "id": "M-09",
+      "domain": "Operasi",
+      "topic": "Pengurangan",
+      "subskill": "Membentuk sepuluh",
+      "pattern": "Arah terbalik / menambah alih-alih mengurangi",
+      "counterEvidence": "Benar pada garis bilangan",
+      "countsWhen": "Garis bilangan/jalur tersedia",
+      "doesNotCountWhen": "Soal verbal panjang tanpa representasi saat belum diajarkan",
+      "probe": "Garis bilangan plus simbolik",
+      "intervention": "Garis bilangan plus model jarak",
+      "escalation": "Tidak ada perbaikan di kedua representasi",
+      "observableMarkers": [
+        "Kesalahan arah berulang"
+      ],
+      "roots": [
+        "Konsep pengurangan"
+      ],
+      "competitors": [
+        "Pemahaman bacaan"
+      ],
+      "doNotConclude": [
+        "Masalah aritmetika umum"
+      ]
+    },
+    "M-10": {
+      "id": "M-10",
+      "domain": "Perkalian/Pembagian",
+      "topic": "Rasio",
+      "subskill": "Operasi kebalikan",
+      "pattern": "Memilih fakta perkalian yang tidak cocok dengan pembagian",
+      "counterEvidence": "Benar saat kalimat perkalian ditampilkan",
+      "countsWhen": "Bilangan kecil",
+      "doesNotCountWhen": "Bilangan besar sebelum perkalian dikuasai",
+      "probe": "Dengan/tanpa kalimat perkalian",
+      "intervention": "Menghubungkan perkalian dan pembagian",
+      "escalation": "Gagal secara konsisten",
+      "observableMarkers": [
+        "Kesalahan saat kalimat perkalian tidak ditampilkan"
+      ],
+      "roots": [
+        "Hubungan kebalikan"
+      ],
+      "competitors": [
+        "Kecerobohan"
+      ],
+      "doNotConclude": [
+        "Tidak bisa membagi sama sekali"
+      ]
+    }
+  }
+}

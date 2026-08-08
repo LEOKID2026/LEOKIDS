@@ -1,0 +1,72 @@
+{
+  "seoKey": "guides-home-practice-routine",
+  "slug": "home-practice-routine",
+  "displayTitle": "Rutinitas latihan di rumah",
+  "badge": "Panduan latihan di rumah",
+  "h1": "Cara membangun rutinitas latihan di rumah yang cocok",
+  "intro": "Rutinitas di rumah yang baik tidak harus sama setiap hari. Rutinitas itu harus jelas, dapat dilakukan, dan mencakup tugas yang sesuai dengan waktu, fokus, serta topik yang dibutuhkan anak Anda.",
+  "sections": [
+    {
+      "title": "Tetapkan titik awal yang stabil",
+      "paragraphs": [
+        "Pilih waktu saat anak Anda relatif luang dan tidak terlalu lelah. Hari yang tetap dapat membantu, tetapi sisakan fleksibilitas di hari sibuk atau saat anak Anda perlu istirahat."
+      ]
+    },
+    {
+      "title": "Pilih satu tujuan per sesi",
+      "bullets": [
+        "Satu topik matematika.",
+        "Satu teks bacaan.",
+        "Satu kelompok kosakata dalam Bahasa Inggris.",
+        "Satu gim belajar.",
+        "Satu lembar kerja.",
+        "Pemeriksaan singkat atas topik yang sudah dilatih sebelumnya."
+      ]
+    },
+    {
+      "title": "Akhiri dengan jelas",
+      "paragraphs": [
+        "Anak Anda harus tahu sebelumnya apa yang perlu diselesaikan. Saat tugas selesai, berhenti. Penutup yang jelas membangun keberhasilan dan keinginan untuk kembali."
+      ]
+    },
+    {
+      "title": "Sesuaikan rutinitas seiring perubahan progres",
+      "paragraphs": [
+        "Jika suatu topik terasa stabil, lanjut ke yang berikutnya. Jika kesulitan berulang, ubah jenis latihan atau pilih tingkat yang lebih sesuai."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Apakah kita harus berlatih setiap hari?",
+      "a": "Tidak. Rutinitas yang stabil dan cocok untuk keluarga Anda lebih penting daripada rencana yang tidak dapat dipertahankan."
+    },
+    {
+      "q": "Bagaimana dengan hari yang sibuk?",
+      "a": "Pilih tugas yang lebih pendek atau tunda latihan tanpa mengubah rutinitas menjadi hukuman."
+    },
+    {
+      "q": "Haruskah anak saya yang memilih?",
+      "a": "Anda dapat membiarkan mereka memilih antara dua tugas yang sesuai dengan tujuan yang Anda tetapkan."
+    }
+  ],
+  "relatedPracticePath": "/practice",
+  "practiceCtaLabel": "Semua area latihan",
+  "relatedGuideSlugs": [
+    "math-practice-at-home",
+    "reading-practice-at-home",
+    "parent-progress-tracking"
+  ],
+  "footerCta": {
+    "title": "Bangun rutinitas yang dapat Anda pertahankan",
+    "body": "Pilih waktu yang sesuai, satu tujuan, dan penutup yang jelas untuk setiap sesi.",
+    "primary": {
+      "href": "/practice",
+      "label": "Semua area latihan"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

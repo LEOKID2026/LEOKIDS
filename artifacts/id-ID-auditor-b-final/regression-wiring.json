@@ -1,0 +1,102 @@
+{
+  "en": {
+    "enabled": true,
+    "publicPrefix": null,
+    "fromPrefix": null,
+    "fallback": [
+      "en"
+    ],
+    "samplePath": "/practice/math"
+  },
+  "es-419": {
+    "enabled": true,
+    "publicPrefix": "es-419",
+    "fromPrefix": null,
+    "fallback": [
+      "es-419",
+      "en"
+    ],
+    "samplePath": "/es-419/practice/math"
+  },
+  "ar-001": {
+    "enabled": true,
+    "publicPrefix": "ar-001",
+    "fromPrefix": null,
+    "fallback": [
+      "ar-001",
+      "en"
+    ],
+    "samplePath": "/ar-001/practice/math"
+  },
+  "es-AR": {
+    "enabled": true,
+    "pathPrefix": "ar",
+    "publicPrefix": "ar",
+    "fromPrefix": "es-AR",
+    "fallback": [
+      "es-AR",
+      "es-419",
+      "en"
+    ],
+    "samplePath": "/ar/practice/math"
+  },
+  "id-ID": {
+    "enabled": true,
+    "pathPrefix": "id",
+    "publicPrefix": "id",
+    "fromPrefix": "id-ID",
+    "fallback": [
+      "id-ID",
+      "en"
+    ],
+    "samplePath": "/id/practice/math"
+  },
+  "ar-SA": {
+    "enabled": true,
+    "pathPrefix": "sa",
+    "publicPrefix": "sa",
+    "fromPrefix": "ar-SA",
+    "fallback": [
+      "ar-SA",
+      "ar-001",
+      "en"
+    ],
+    "samplePath": "/sa/practice/math"
+  },
+  "ar-EG": {
+    "enabled": true,
+    "pathPrefix": "eg",
+    "publicPrefix": "eg",
+    "fromPrefix": "ar-EG",
+    "fallback": [
+      "ar-EG",
+      "ar-001",
+      "en"
+    ],
+    "samplePath": "/eg/practice/math"
+  },
+  "ar-MA": {
+    "enabled": true,
+    "pathPrefix": "ma",
+    "publicPrefix": "ma",
+    "fromPrefix": "ar-MA",
+    "fallback": [
+      "ar-MA",
+      "ar-001",
+      "en"
+    ],
+    "samplePath": "/ma/practice/math"
+  },
+  "selectorCount": 89,
+  "hasIndonesia": true,
+  "hasEs419": false,
+  "hasAr001": true,
+  "hasEsAR": true,
+  "sw": {
+    "id-ID": true,
+    "ar-001": false,
+    "es-419": true,
+    "es-AR": true,
+    "offlineId": true
+  }
+}

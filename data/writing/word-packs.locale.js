@@ -5,6 +5,7 @@
  */
 
 import { ENGLISH_WORD_PACKS } from "./word-packs.en.js";
+import { PACK_TITLE_ID_ID, COLOR_INSTRUCTION_ID_ID } from "./word-packs.id-ID.js";
 import { getContentFallbackChain, resolveContentLocale } from "../../lib/content/locale.js";
 
 /** Stable pack ids → English display titles (instruction/chrome — not learning targets). */
@@ -336,6 +337,17 @@ function isRuRu(locale) {
 }
 
 /**
+ * @param {string} locale
+ */
+function isIdId(locale) {
+  const tag = String(locale || "")
+    .trim()
+    .toLowerCase()
+    .replace(/_/g, "-");
+  return tag === "id-id";
+}
+
+/**
  * @param {string|null|undefined} [contentLocale]
  */
 export function resolveWritingWordPacks(contentLocale) {
@@ -349,40 +361,45 @@ export function resolveWritingWordPacks(contentLocale) {
   const useNl = chain.includes("nl-NL") || isNlNl(locale);
   const useDe = chain.includes("de-DE") || isDeDe(locale);
   const useRu = chain.includes("ru-RU") || isRuRu(locale);
-  const titles = useRu
-    ? PACK_TITLE_RU_RU
-    : useDe
-      ? PACK_TITLE_DE_DE
-      : useIt
-        ? PACK_TITLE_IT_IT
-        : useFr
-          ? PACK_TITLE_FR_FR
-          : useNl
-            ? PACK_TITLE_NL_NL
-            : usePtPt
-              ? PACK_TITLE_PT_PT
-              : usePtBr
-                ? PACK_TITLE_PT_BR
-                : useEs
-                  ? PACK_TITLE_ES_419
-                  : PACK_TITLE_EN;
-  const colorMap = useRu
-    ? COLOR_INSTRUCTION_RU_RU
-    : useDe
-      ? COLOR_INSTRUCTION_DE_DE
-      : useIt
-        ? COLOR_INSTRUCTION_IT_IT
-        : useFr
-          ? COLOR_INSTRUCTION_FR_FR
-          : useNl
-            ? COLOR_INSTRUCTION_NL_NL
-            : usePtPt
-              ? COLOR_INSTRUCTION_PT_PT
-              : usePtBr
-                ? COLOR_INSTRUCTION_PT_BR
-                : useEs
-                  ? COLOR_INSTRUCTION_ES_419
-                  : null;
+  const useId = chain.includes("id-ID") || isIdId(locale);
+  const titles = useId
+    ? PACK_TITLE_ID_ID
+    : useRu
+      ? PACK_TITLE_RU_RU
+      : useDe
+        ? PACK_TITLE_DE_DE
+        : useIt
+          ? PACK_TITLE_IT_IT
+          : useFr
+            ? PACK_TITLE_FR_FR
+            : useNl
+              ? PACK_TITLE_NL_NL
+              : usePtPt
+                ? PACK_TITLE_PT_PT
+                : usePtBr
+                  ? PACK_TITLE_PT_BR
+                  : useEs
+                    ? PACK_TITLE_ES_419
+                    : PACK_TITLE_EN;
+  const colorMap = useId
+    ? COLOR_INSTRUCTION_ID_ID
+    : useRu
+      ? COLOR_INSTRUCTION_RU_RU
+      : useDe
+        ? COLOR_INSTRUCTION_DE_DE
+        : useIt
+          ? COLOR_INSTRUCTION_IT_IT
+          : useFr
+            ? COLOR_INSTRUCTION_FR_FR
+            : useNl
+              ? COLOR_INSTRUCTION_NL_NL
+              : usePtPt
+                ? COLOR_INSTRUCTION_PT_PT
+                : usePtBr
+                  ? COLOR_INSTRUCTION_PT_BR
+                  : useEs
+                    ? COLOR_INSTRUCTION_ES_419
+                    : null;
 
   /** @type {typeof ENGLISH_WORD_PACKS} */
   const out = {};

@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "class_activities": "Aktivitas rombel",
+    "back_to_dashboard": "← Kembali ke dasbor",
+    "subtitle": "Buat, luncurkan, dan pantau aktivitas rombel.",
+    "new_activity": "Aktivitas baru",
+    "loading": "Memuat aktivitas…",
+    "error_loading": "Terjadi kesalahan saat memuat",
+    "network_error": "Kesalahan jaringan",
+    "try_again": "Coba lagi",
+    "forbidden": "Anda tidak memiliki izin untuk melihat aktivitas rombel ini.",
+    "empty": "Belum ada aktivitas. Buat aktivitas baru.",
+    "col_title": "Judul",
+    "col_status": "Status",
+    "col_type": "Jenis",
+    "col_progress": "Kemajuan",
+    "col_actions": "Tindakan",
+    "edit_launch": "Edit / luncurkan",
+    "view": "Lihat"
+  }
+}

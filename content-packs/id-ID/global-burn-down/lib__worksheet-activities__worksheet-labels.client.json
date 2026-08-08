@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "active": "Aktif",
+    "closed": "Ditutup",
+    "archived": "Diarsipkan",
+    "digital_answer_sheet": "Lembar jawaban digital",
+    "manual_grading": "Penilaian manual",
+    "not_submitted": "Belum dikirim",
+    "submitted": "Terkirim",
+    "pending_review": "Menunggu peninjauan",
+    "partially_checked": "Diperiksa sebagian",
+    "checked": "Dicentang",
+    "published": "Diterbitkan",
+    "multiple_choice": "Pilihan ganda",
+    "true_false": "Benar / Salah",
+    "number": "Bilangan",
+    "short_answer": "Jawaban singkat",
+    "free_text": "Teks bebas",
+    "draft": "Draf",
+    "pdf_only": "Hanya PDF"
+  }
+}

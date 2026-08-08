@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-gifts",
+  "title": "Toko Permen Leo",
+  "blurb": "Pembagian sama rata, kelompok, dan sisa",
+  "help": {
+    "howToPlay": "Bagi ke anak-anak atau ke dalam tas — cari berapa per kelompok dan berapa sisanya, lalu ketuk \"Cek Pembagian\".",
+    "scoring": "Jawaban benar +30, bonus waktu hingga +20, streak 5 benar +25. Setelah 3 kali gagal, solusi ditampilkan.",
+    "rewards": "Koin diberikan berdasarkan berapa banyak pertanyaan yang kamu jawab dengan benar, ketepatan, rentetan, dan tingkat kesulitan — meski gim berakhir karena kesalahan.",
+    "tip": "Perhatikan apakah tugas meminta per anak atau tas penuh."
+  },
+  "accessibility": {
+    "title": "Toko Permen Leo"
+  }
+}

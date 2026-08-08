@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "choose_all_the_odd_numbers_on_the_path": "Pilih semua bilangan ganjil di jalur",
+    "feedback_almost": "Hampir! Periksa lagi aturannya dan urutannya.",
+    "feedback_ok": "Bagus! Kamu memilih jalur yang benar.",
+    "prompt_arithmetic_ascending": "Mulai dari {start} dan tambah {step} setiap langkah. Pilih angka berurutan.",
+    "prompt_arithmetic_descending": "Mulai dari {start} dan kurangi {step} setiap langkah. Pilih angka berurutan.",
+    "prompt_arithmetic_missing": "Lengkapi barisan. Pilih angka yang hilang berurutan.",
+    "prompt_even": "Pilih semua bilangan genap.",
+    "prompt_geometric_sequence": "Mulai dari {start} dan kalikan dengan {ratio} setiap langkah. Pilih angka berurutan.",
+    "prompt_multiples": "Pilih semua kelipatan {multiple}.",
+    "prompt_odd": "Pilih semua bilangan ganjil.",
+    "prompt_skip_backward": "Mulai dari {start}. Kurangi {step} setiap langkah. Pilih angka berurutan.",
+    "prompt_skip_forward": "Mulai dari {start}. Tambah {step} setiap langkah. Pilih angka berurutan.",
+    "solution_prefix": "Jalur benar:"
+  }
+}

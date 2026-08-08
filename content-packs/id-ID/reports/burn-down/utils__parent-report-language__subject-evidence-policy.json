@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "zero_evidence_line": "{subject}: belum dilatih pada periode yang dipilih",
+    "thin_evidence_line": "{subject}: {n} soal pada periode yang dipilih - informasi masih terbatas; sebaiknya lanjutkan latihan dan periksa kembali"
+  }
+}

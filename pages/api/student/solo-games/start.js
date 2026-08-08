@@ -13,7 +13,7 @@ import { isValidSoloDifficulty, isValidSoloGameKey } from "../../../../lib/solo-
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ ok: false, error: "Method not allowed" });
+    return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
   }
 
   if (guardCookieMutationOrigin(req, res)) return;
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     const auth = await getAuthenticatedStudentSession(req);
     if (!auth) {
       clearStudentSessionCookie(res);
-      return res.status(401).json({ ok: false, error: "Not authenticated" });
+      return res.status(401).json({ ok: false, error: "not_authenticated", code: "not_authenticated" });
     }
 
     const body = await readJsonBody(req);
@@ -32,20 +32,21 @@ export default async function handler(req, res) {
       body?.difficulty != null ? String(body.difficulty).trim().toLowerCase() : null;
 
     if (!isValidSoloGameKey(gameKey)) {
-      return res.status(400).json({ ok: false, error: "Invalid game" });
+      return res.status(400).json({ ok: false, error: "invalid_game", code: "invalid_game" });
     }
     if (difficulty && !isValidSoloDifficulty(difficulty)) {
-      return res.status(400).json({ ok: false, error: "Invalid difficulty level" });
+      return res.status(400).json({ ok: false, error: "invalid_difficulty", code: "invalid_difficulty" });
     }
 
     const supabase = getLearningSupabaseServiceRoleClient();
 
     const access = await assertStudentCanPlayGame(supabase, auth.studentId, gameKey);
     if (!access.ok) {
+      const code = access.code || "forbidden";
       return res.status(access.status || 403).json({
         ok: false,
-        error: access.message,
-        code: access.code,
+        error: code,
+        code,
         category: access.category,
       });
     }
@@ -57,7 +58,8 @@ export default async function handler(req, res) {
     });
 
     if (!result.ok) {
-      return res.status(400).json({ ok: false, error: result.message, code: result.code });
+      const code = result.code || "start_failed";
+      return res.status(400).json({ ok: false, error: code, code });
     }
 
     return res.status(200).json({
@@ -71,6 +73,6 @@ export default async function handler(req, res) {
     if (e?.name === "EconomyUnavailableError") {
       return res.status(503).json(economyUnavailableHttpResponse(e));
     }
-    return res.status(500).json({ ok: false, error: "Server error" });
+    return res.status(500).json({ ok: false, error: "server_error", code: "server_error" });
   }
 }

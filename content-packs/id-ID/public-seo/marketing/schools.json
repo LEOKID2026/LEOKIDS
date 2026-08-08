@@ -1,0 +1,75 @@
+{
+  "pageTitle": "Portal sekolah · LEO KIDS",
+  "metaDescription": "Kelola rombongan belajar, guru, dan murid — dengan pesan sekolah, visibilitas progres, dan latihan terfokus di satu tempat.",
+  "badge": "Sekolah · Rombongan belajar · Progres",
+  "hero": {
+    "title": "Ruang kerja sekolah yang jelas untuk manajer dan staf",
+    "subtitle": "Koordinasikan guru dan rombongan belajar, kirim pesan sekolah, dan ikuti latihan murid tanpa harus mengelola banyak alat terpisah.",
+    "primaryCta": {
+      "label": "Masuk staf sekolah",
+      "href": "/school/staff/login"
+    },
+    "secondaryCta": {
+      "label": "Minta akses sekolah",
+      "href": "/school/register"
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "Rombongan belajar dan guru dalam satu tampilan",
+        "text": "Lihat rombongan belajar sekolah, guru yang ditugaskan, dan pendaftaran murid tanpa berpindah sistem."
+      },
+      {
+        "title": "Pesan sekolah",
+        "text": "Kirim pembaruan kepada orang tua dan guru dengan pelacakan pengiriman dan pembacaan yang jelas."
+      },
+      {
+        "title": "Visibilitas latihan murid",
+        "text": "Ikuti latihan dan aktivitas mata pelajaran agar dukungan tetap terarah."
+      },
+      {
+        "title": "Akses staf dengan kode",
+        "text": "Staf sekolah masuk dengan kode staf dan PIN — dibuat untuk perangkat sekolah bersama."
+      },
+      {
+        "title": "Selaras dengan pekerjaan di kelas",
+        "text": "Guru tetap memakai alat portal mereka sementara lapisan sekolah tetap terkoordinasi."
+      },
+      {
+        "title": "Dibangun untuk sekolah dasar",
+        "text": "Dirancang untuk kelas sekolah dasar — latihan, laporan, dan komunikasi dalam satu produk."
+      }
+    ]
+  },
+  "infoSections": [
+    {
+      "title": "Apa yang didapat sekolah?",
+      "intro": "Setelah disetujui Anda dapat:",
+      "bullets": [
+        "Masuk melalui portal staf sekolah.",
+        "Kelola rombongan belajar dan guru.",
+        "Lihat murid yang terdaftar.",
+        "Kirim pesan sekolah kepada orang tua dan guru.",
+        "Ikuti progres latihan dan aktivitas.",
+        "Jaga agar alur kerja sekolah dan guru tetap selaras."
+      ]
+    },
+    {
+      "title": "Mengapa sekolah menggunakan Leo Kids",
+      "body": "Ini menghubungkan latihan, alat guru, dan komunikasi sekolah sehingga manajer melihat apa yang terjadi tanpa menggantikan portal guru."
+    }
+  ],
+  "closing": {
+    "title": "Satu lapisan sekolah. Koordinasi yang lebih jelas.",
+    "text": "Minta akses atau masuk sebagai staf sekolah untuk mengelola rombongan belajar, pesan, dan visibilitas progres.",
+    "primaryCta": {
+      "label": "Masuk staf sekolah",
+      "href": "/school/staff/login"
+    },
+    "secondaryCta": {
+      "label": "Minta akses sekolah",
+      "href": "/school/register"
+    }
+  }
+}

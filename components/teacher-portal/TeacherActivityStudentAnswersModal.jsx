@@ -1,7 +1,7 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
 import ClassroomGeometryQuestionDiagram from "../student/ClassroomGeometryQuestionDiagram";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { studentActivityStatusLabelHe } from "../../lib/classroom-activities/classroom-activities-labels.client.js";
 import AssignedActivityQuestionDisplay from "../classroom-activities/AssignedActivityQuestionDisplay.jsx";
 import AssignedActivityBidiText from "../classroom-activities/AssignedActivityBidiText.jsx";
@@ -51,7 +51,7 @@ export default function TeacherActivityStudentAnswersModal({
       const body = await res.json().catch(() => ({}));
       if (!res.ok) {
         setDetail(null);
-        setError(body?.error?.message || body?.error?.code || "Could not load answers");
+        setError(apiErrorMessageHe(body?.error, "Could not load answers"));
         return;
       }
       setDetail(body.data);

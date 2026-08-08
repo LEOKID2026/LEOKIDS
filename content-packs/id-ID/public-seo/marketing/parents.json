@@ -1,0 +1,74 @@
+{
+  "pageTitle": "Portal orang tua · LEO KIDS",
+  "metaDescription": "Leo Kids membantu anak berlatih dengan cara yang menarik sementara orang tua mendapat gambaran progres yang jelas.",
+  "badge": "Orang tua · Pelacakan · Kejelasan",
+  "installLabel": "Instal aplikasi orang tua",
+  "hero": {
+    "title": "Anak Anda belajar dengan senang — Anda melihat apa yang benar-benar terjadi",
+    "subtitle": "Leo Kids membantu anak berlatih dengan cara yang menarik sementara Anda mendapat gambaran yang jelas tentang progres, kekuatan, dan topik yang perlu penguatan.",
+    "primaryCta": {
+      "label": "Masuk / daftar orang tua",
+      "href": "/parent/login"
+    },
+    "secondaryCta": {
+      "label": "Apa yang Anda dapatkan?",
+      "scrollTo": "benefits"
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "Lihat apa yang benar-benar dikuasai anak Anda",
+        "text": "Alih-alih menebak, dapatkan tampilan menurut mata pelajaran, topik, dan aktivitas nyata."
+      },
+      {
+        "title": "Kenali apa yang perlu diperkuat",
+        "text": "Menyoroti kekuatan bersama topik yang layak ditinjau ulang."
+      },
+      {
+        "title": "Kirim aktivitas pribadi",
+        "text": "Berikan latihan terfokus dan lihat apakah sudah dikerjakan serta bagaimana hasilnya."
+      },
+      {
+        "title": "Berikan anak alasan untuk berlatih",
+        "text": "Koin, kartu, kejutan, dan gim membuat latihan menjadi sesuatu yang ingin kembali dilakukan anak."
+      },
+      {
+        "title": "Berlatih di rumah tanpa kekacauan",
+        "text": "Anak Anda dapat berlatih saat cocok, dan Anda dapat mengikuti tanpa terus mengawasi."
+      },
+      {
+        "title": "Lebih sedikit gesekan di waktu pekerjaan rumah",
+        "text": "Ketika latihan terasa lebih seperti bermain, lebih mudah untuk memulai dan bertahan."
+      }
+    ]
+  },
+  "infoSections": [
+    {
+      "title": "Apa yang Anda dapatkan setelah mendaftar?",
+      "intro": "Setelah membuka akun orang tua Anda dapat:",
+      "bullets": [
+        "Tambahkan anak ke sistem.",
+        "Dapatkan detail masuk untuk anak Anda.",
+        "Lihat laporan progres.",
+        "Periksa progres menurut mata pelajaran dan topik.",
+        "Lihat topik yang kuat dan topik yang perlu penguatan.",
+        "Kirim aktivitas pribadi ke anak Anda.",
+        "Ikuti penyelesaian dan hasil.",
+        "Biarkan anak Anda belajar melalui hadiah dan gim."
+      ]
+    },
+    {
+      "title": "Untuk siapa ini?",
+      "body": "Orang tua yang ingin memahami posisi anaknya, membantu mereka maju, dan membuat latihan di rumah lebih jelas serta menarik."
+    }
+  ],
+  "closing": {
+    "title": "Anak Anda mendapat pengalaman belajar. Anda mendapat kejelasan dan ketenangan.",
+    "text": "Buka akun orang tua, tambahkan anak, dan mulai melihat pembelajaran dengan cara yang lebih terorganisasi.",
+    "primaryCta": {
+      "label": "Buka akun orang tua",
+      "href": "/parent/login"
+    }
+  }
+}

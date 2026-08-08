@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "human_body": "Tubuh manusia",
+    "animals": "Hewan",
+    "plants": "Tumbuhan",
+    "materials": "Materi",
+    "experiments": "Eksperimen",
+    "earth_space": "Bumi & Antariksa",
+    "environment": "Lingkungan"
+  }
+}

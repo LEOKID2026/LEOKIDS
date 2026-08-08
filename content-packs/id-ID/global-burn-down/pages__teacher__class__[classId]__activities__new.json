@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "level": "Tingkat",
+    "new_activity": "Aktivitas baru",
+    "back_to_activities": "← Kembali ke aktivitas",
+    "title": "Judul",
+    "subject": "Mata pelajaran",
+    "topic": "Topik",
+    "no_science_topics": "Tidak ada topik yang tersedia untuk kelas ini pada mata pelajaran Sains.",
+    "no_subject_topics": "Tidak ada topik yang tersedia untuk mata pelajaran dan kelas ini.",
+    "subtopic_optional": "Subtopik (opsional)",
+    "grade_for_questions": "Kelas (untuk pembuatan soal)",
+    "activity_mode": "Mode aktivitas",
+    "number_of_questions": "Jumlah soal",
+    "time_limit_optional": "Batas waktu (detik, opsional)",
+    "due_date_optional": "Tenggat waktu (tugas rumah, opsional)",
+    "generating": "Membuat…",
+    "preview_questions": "Pratinjau soal",
+    "save_draft": "Simpan sebagai draf",
+    "preview_heading": "Pratinjau ({n} soal)",
+    "not_sent_hint": "(tidak dikirim ke murid)",
+    "err_no_permission": "Anda tidak memiliki izin untuk membuat aktivitas untuk rombel ini. Hubungi admin sekolah Anda.",
+    "err_load_class": "Tidak dapat memuat rombel",
+    "err_invalid_grade": "Tingkat kelas untuk rombel ini tidak valid. Hubungi admin sekolah Anda.",
+    "network_error": "Kesalahan jaringan",
+    "err_preview": "Tidak dapat membuat pratinjau soal",
+    "err_enter_title": "Silakan masukkan judul",
+    "err_preview_first": "Silakan pratinjau soal sebelum menyimpan",
+    "err_quiz_time": "Mode kuis memerlukan batas waktu (detik)",
+    "err_save": "Gagal menyimpan"
+  }
+}

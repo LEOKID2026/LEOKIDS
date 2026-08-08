@@ -1,6 +1,8 @@
 import { useCallback, useRef, useState } from "react";
 import { isDemoMode } from "../../lib/demo/demo-mode.client.js";
 import { assertDemoPlayAllowed, DEMO_TIME_EXPIRED_CODE } from "../../lib/demo/demo-play-guard.client.js";
+import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
+import { resolveStudentApiErrorMessage } from "../../lib/student-client/student-api-legacy-errors.js";
 
 async function postJson(url, body) {
   const res = await fetch(url, {
@@ -17,6 +19,7 @@ async function postJson(url, body) {
  * @param {string} gameKey
  */
 export function useEducationalGameSession(gameKey) {
+  const { t } = useI18n();
   const [sessionId, setSessionId] = useState(null);
   const [sessionStartedAtMs, setSessionStartedAtMs] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -42,7 +45,7 @@ export function useEducationalGameSession(gameKey) {
           difficulty: difficulty || undefined,
         });
         if (!ok) {
-          setError(typeof payload?.error === "string" ? payload.error : "start_failed");
+          setError(resolveStudentApiErrorMessage(payload?.code ? payload : { ...payload, error: payload?.error || "start_failed" }, t));
           return null;
         }
         setSessionId(payload.sessionId);
@@ -52,19 +55,19 @@ export function useEducationalGameSession(gameKey) {
         setSessionStartedAtMs(startedMs);
         return payload.sessionId;
       } catch {
-        setError("network_error");
+        setError(resolveStudentApiErrorMessage("network_error", t));
         return null;
       } finally {
         setBusy(false);
       }
     },
-    [gameKey],
+    [gameKey, t],
   );
 
   const finishSession = useCallback(
     async (metrics) => {
       if (!sessionId) {
-        setError("missing_session");
+        setError(resolveStudentApiErrorMessage("missing_session", t));
         return null;
       }
       setBusy(true);
@@ -85,18 +88,18 @@ export function useEducationalGameSession(gameKey) {
           },
         });
         if (!ok) {
-          setError(typeof payload?.error === "string" ? payload.error : "finish_failed");
+          setError(resolveStudentApiErrorMessage(payload?.code ? payload : { ...payload, error: payload?.error || "finish_failed" }, t));
           return null;
         }
         return payload;
       } catch {
-        setError("network_error");
+        setError(resolveStudentApiErrorMessage("network_error", t));
         return null;
       } finally {
         setBusy(false);
       }
     },
-    [sessionId, sessionStartedAtMs, gameKey],
+    [sessionId, sessionStartedAtMs, gameKey, t],
   );
 
   return {

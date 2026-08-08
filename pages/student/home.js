@@ -462,7 +462,7 @@ export default function StudentHomePage() {
           json = text ? JSON.parse(text) : {};
         } catch {
           if (!cached?.merged) {
-            setProfileError(`Invalid server response (status ${res.status}).`);
+            setProfileError(resolveStudentApiErrorMessage("unexpected_server_error", t));
             setProfilePhase("error");
           }
           return;
@@ -479,10 +479,9 @@ export default function StudentHomePage() {
 
         if (!res.ok || json?.ok !== true || !json?.studentId || !json?.accountSnapshot) {
           if (!cached?.merged) {
-            const errRaw = json?.error != null ? String(json.error) : "";
             const detail = json?.detail != null ? String(json.detail) : "";
             const combined = [
-              resolveStudentApiErrorMessage(errRaw, t),
+              resolveStudentApiErrorMessage(json, t),
               detail && isStudentIdentityDiagnosticsEnabled() ? `(${detail})` : "",
             ]
               .filter(Boolean)

@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "loading": "Memuat…",
+    "regular": "Reguler",
+    "important": "Penting",
+    "urgent": "Mendesak",
+    "requires_confirmation": "Memerlukan konfirmasi"
+  }
+}

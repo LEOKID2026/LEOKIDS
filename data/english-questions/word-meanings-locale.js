@@ -27,6 +27,7 @@ import { WORD_MEANINGS_NL_NL } from "./word-meanings/nl-NL.js";
 import { WORD_MEANINGS_DE_DE } from "./word-meanings/de-DE.js";
 import { WORD_MEANINGS_RU_RU } from "./word-meanings/ru-RU.js";
 import { WORD_MEANINGS_AR_001 } from "./word-meanings/ar-001.js";
+import { WORD_MEANINGS_ID_ID } from "./word-meanings/id-ID.js";
 import { getLocaleFallbackChain } from "../../lib/i18n/locale-resolution.js";
 import { deepMergeJson } from "../../lib/i18n/deep-merge.js";
 
@@ -50,6 +51,7 @@ const MEANING_PACKS = {
   "de-DE": WORD_MEANINGS_DE_DE,
   "ru-RU": WORD_MEANINGS_RU_RU,
   "ar-001": WORD_MEANINGS_AR_001,
+  "id-ID": WORD_MEANINGS_ID_ID,
 };
 
 /**
@@ -392,6 +394,14 @@ function isArabicTunisiaInstructionLocale(locale) {
  * @param {unknown} locale
  * @returns {boolean}
  */
+function isIndonesianInstructionLocale(locale) {
+  return normalizeLocaleTag(locale) === "id-id";
+}
+
+/**
+ * @param {unknown} locale
+ * @returns {boolean}
+ */
 function isRussianKazakhstanInstructionLocale(locale) {
   return normalizeLocaleTag(locale) === "ru-kz";
 }
@@ -466,7 +476,8 @@ function isLocalizedMeaningLocale(locale) {
     isArabicIraqInstructionLocale(locale) ||
     isArabicJordanInstructionLocale(locale) ||
     isArabicUaeInstructionLocale(locale) ||
-    isArabicTunisiaInstructionLocale(locale)
+    isArabicTunisiaInstructionLocale(locale) ||
+    isIndonesianInstructionLocale(locale)
   );
 }
 
@@ -526,6 +537,7 @@ function getMergedMeaningPack(instructionLocale) {
   else if (tag === "ar-om") chainLocale = "ar-OM";
   else if (tag === "ar-bh") chainLocale = "ar-BH";
   else if (tag === "ar-001" || tag === "ar001") chainLocale = "ar-001";
+  else if (tag === "id-id") chainLocale = "id-ID";
   else if (tag === "es-us") chainLocale = "es-US";
   else if (tag === "es-gq") chainLocale = "es-GQ";
   const chain = getLocaleFallbackChain(chainLocale);

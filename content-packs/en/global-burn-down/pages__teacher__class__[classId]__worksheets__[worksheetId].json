@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "worksheet": "Worksheet",
+    "not_signed_in": "Not signed in",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
+  }
+}

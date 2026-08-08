@@ -1,0 +1,9 @@
+{
+  "gameId": "rock-paper-scissors",
+  "title": "Batu · Kertas · Gunting",
+  "blurb": "Putaran cepat — yang terbaik dari semua.",
+  "players": "2 pemain atau vs robot",
+  "help": {
+    "howToPlay": "Main bersama di perangkat yang sama."
+  }
+}

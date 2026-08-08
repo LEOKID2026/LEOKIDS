@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "not_available": "Tidak tersedia",
+    "topic_colon_detail": "{topic}: {detail}",
+    "in_topic_home_tip": "Pada {topic}: {tip}",
+    "summary_stable_with_focus": "Laporan ini menunjukkan latihan yang relatif stabil, tetapi ada beberapa topik yang perlu diperhatikan. {strength} terlihat lebih stabil, sementara {focus} menunjukkan kesalahan yang berulang.",
+    "summary_focus_only": "Laporan ini memiliki beberapa topik yang perlu diperhatikan: {focus}.",
+    "summary_stable_only": "Laporan ini menunjukkan latihan yang relatif stabil, terutama pada {strength}.",
+    "topic_stable_line": "{topic}: latihan terlihat stabil - {q} soal, akurasi {acc}%."
+  }
+}

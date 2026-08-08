@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "same_device_games": "Gim di Perangkat yang Sama",
+    "leo_solo_games": "Gim Solo Leo",
+    "tag_puzzles_mazes_and_more_no_connection_needed": "Petak umpet, teka-teki, labirin, dan lainnya - tanpa perlu koneksi.",
+    "educational_games": "Gim Edukasi",
+    "recycling_grocery_store_lab_pizzeria_word_train_and_more_all_local": "Daur ulang, toko bahan makanan, lab, pizzeria, kereta kata, dan lainnya - semua lokal.",
+    "leo_games_offline": "Gim Leo - Offline",
+    "educational_games_offline": "Gim Edukatif - Offline",
+    "local_games_no_saving_and_no_rewards": "Gim lokal - tanpa penyimpanan dan tanpa hadiah",
+    "offline_games": "Gim Offline",
+    "back": "Kembali"
+  }
+}

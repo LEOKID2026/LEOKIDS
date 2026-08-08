@@ -1,0 +1,98 @@
+{
+  "seoKey": "practice-no-print",
+  "slug": "no-print",
+  "badge": "Latihan digital",
+  "h1": "Latihan digital untuk anak — tanpa perlu mencetak",
+  "intro": "Mulai latihan langsung di situs, pilih mata pelajaran dan topik, dan dapatkan pertanyaan serta aktivitas tanpa menyiapkan halaman terlebih dahulu. Gim digital dan latihan tersedia menurut kelas dan mata pelajaran.",
+  "sections": [
+    {
+      "title": "Apa yang dapat Anda lakukan secara daring?",
+      "bullets": [
+        "Pertanyaan latihan menurut mata pelajaran dan topik.",
+        "Mainkan gim belajar.",
+        "Tinjau ulang topik beberapa kali.",
+        "Dapatkan aktivitas dan pertanyaan yang berubah-ubah.",
+        "Simpan aktivitas untuk laporan dan pelacakan.",
+        "Beralih antar mata pelajaran sesuai kebutuhan."
+      ]
+    },
+    {
+      "title": "Mulai tanpa persiapan",
+      "paragraphs": [
+        "Pilih mata pelajaran, kelas, dan topik, lalu mulai. Tidak perlu mengunduh file atau menyiapkan materi terlebih dahulu."
+      ]
+    },
+    {
+      "title": "Cetak saat membantu",
+      "paragraphs": [
+        "Saat Anda ingin bekerja di kertas, buka halaman lembar kerja, gunakan generator, atau pilih dari lembar siap pakai."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Aktivitas singkat di matematika, membaca, bahasa, dan gim belajar terbuka langsung di situs dengan instruksi yang jelas untuk pelajar muda."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Pilih mata pelajaran dan topik, latih pertanyaan yang berubah-ubah, campurkan gim belajar, dan kembali untuk aktivitas lebih lanjut sesuai kebutuhan."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Latihan digital mendukung topik terfokus, pertanyaan yang lebih sulit, pemecahan masalah, membaca, bahasa, dan mata pelajaran tambahan."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    },
+    {
+      "href": "/practice/english",
+      "label": "Latihan Bahasa Inggris"
+    },
+    {
+      "href": "/practice/worksheets",
+      "label": "Lembar kerja"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "no-print-worksheets",
+    "math-practice-at-home",
+    "home-practice-routine"
+  ],
+  "faq": [
+    {
+      "q": "Apakah saya perlu printer?",
+      "a": "Tidak. Latihan digital dan gim berjalan langsung di situs."
+    },
+    {
+      "q": "Apakah ada opsi yang dapat dicetak juga?",
+      "a": "Ya. Di halaman lembar kerja Anda dapat membuat lembar, mempratinjaunya, dan mencetak saat membantu."
+    },
+    {
+      "q": "Apakah aktivitas disimpan?",
+      "a": "Di portal orang tua, Anda dapat melacak aktivitas, mata pelajaran, dan topik yang dilatih."
+    }
+  ],
+  "footerCta": {
+    "title": "Mulai berlatih di situs",
+    "body": "Pilih mata pelajaran dan topik, atau buka lembar kerja saat latihan di kertas lebih cocok.",
+    "primary": {
+      "href": "/practice",
+      "label": "Semua area latihan"
+    },
+    "secondary": {
+      "href": "/practice/worksheets",
+      "label": "Lembar kerja"
+    }
+  }
+}

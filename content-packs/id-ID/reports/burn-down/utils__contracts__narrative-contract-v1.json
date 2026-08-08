@@ -1,0 +1,13 @@
+{
+  "copy": {
+    "observation_little_1": "Pada {displayName} latihan masih terlalu sedikit di periode yang dipilih untuk mengetahui perkembangan yang sebenarnya.",
+    "observation_little_2": "Pada {displayName} baru terlihat beberapa kali percobaan - tidak apa-apa; kami akan menambah sedikit lagi dan meninjaunya kembali.",
+    "observation_little_3": "Pada {displayName} latihan masih sedikit di periode yang dipilih, sehingga kami menjaga redaksi yang hati-hati.",
+    "observation_volume_1": "Pada {displayName} di periode yang dipilih terdapat {q} soal, dengan akurasi sekitar {acc}%.",
+    "observation_volume_2": "Pada {displayName}, terkumpul {q} soal periode ini, dengan akurasi sekitar {acc}%.",
+    "observation_volume_3": "Pada {displayName}, terkumpul {q} soal periode ini, dengan rata-rata akurasi sekitar {acc}%.",
+    "interpretation_we0_1": "Masih terlalu dini untuk menentukan arah yang jelas di sini - kami akan terus memantau latihannya.",
+    "interpretation_we0_2": "Masih terlalu dini untuk menulis ringkasan akhir; kami akan menambah sedikit latihan lagi dan melihat perkembangannya.",
+    "interpretation_we0_3": "Masih belum cukup data untuk menentukan arah yang jelas - kita akan melangkah secara perlahan dan hati-hati."
+  }
+}

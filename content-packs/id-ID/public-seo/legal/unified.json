@@ -1,0 +1,479 @@
+{
+  "policyLastUpdatedDisplay": "5 Juli 2026",
+  "legacyPolicyPages": {
+    "legal": {
+      "route": "/legal",
+      "pageTitle": "Ketentuan, privasi, aksesibilitas & penggunaan AI",
+      "metaDescription": "Ketentuan penggunaan, kebijakan privasi, pernyataan aksesibilitas, penggunaan AI, keamanan, dan penghapusan data - Leo Kids.",
+      "intro": "Halaman ini menyatukan, di satu tempat, ketentuan penggunaan, kebijakan privasi, pernyataan aksesibilitas, penjelasan penggunaan AI, keamanan data, dan penghapusan data untuk situs Leo Kids."
+    },
+    "privacy": {
+      "route": "/privacy",
+      "pageTitle": "Kebijakan privasi",
+      "metaDescription": "Kebijakan privasi Leo Kids - informasi pribadi, anak, cookie, dan hak.",
+      "scrollToSectionId": "data-collected"
+    },
+    "terms": {
+      "route": "/terms",
+      "pageTitle": "Ketentuan penggunaan",
+      "metaDescription": "Ketentuan penggunaan Leo Kids - akun, latihan, laporan, dan penggunaan yang diizinkan.",
+      "scrollToSectionId": "terms-general"
+    },
+    "accessibility": {
+      "route": "/accessibility",
+      "pageTitle": "Pernyataan aksesibilitas",
+      "metaDescription": "Pernyataan aksesibilitas Leo Kids - meningkatkan aksesibilitas dan melaporkan masalah.",
+      "scrollToSectionId": "accessibility"
+    },
+    "aiDisclosure": {
+      "route": "/ai-disclosure",
+      "pageTitle": "Pengungkapan penggunaan AI",
+      "metaDescription": "Pengungkapan penggunaan AI di Leo Kids - Copilot, keterbatasan, dan penggunaan data.",
+      "scrollToSectionId": "ai"
+    },
+    "dataDeletion": {
+      "route": "/data-deletion",
+      "pageTitle": "Penghapusan data",
+      "metaDescription": "Penghapusan data Leo Kids - menghapus anak, permintaan, dan SLA.",
+      "scrollToSectionId": "retention-deletion"
+    },
+    "security": {
+      "route": "/security",
+      "pageTitle": "Keamanan data",
+      "metaDescription": "Keamanan data Leo Kids - melindungi data dan melaporkan masalah.",
+      "scrollToSectionId": "security"
+    }
+  },
+  "unifiedLegalSections": [
+    {
+      "id": "intro",
+      "title": "1. Siapa kami dan tujuan layanan",
+      "paragraphs": [
+        "Leo Kids adalah situs pembelajaran dan gim untuk anak, termasuk area anak, area orang tua, area tutor privat, dan alat pengelolaan internal.",
+        "Situs memungkinkan anak berlatih mata pelajaran sekolah, menjawab pertanyaan, maju melalui topik, mengumpulkan koin dan kartu, serta menikmati pengalaman belajar yang digamifikasi.",
+        "Bagi orang tua, situs memungkinkan membuka akun, menambah anak, melacak aktivitas belajar, melihat laporan, membuat aktivitas pribadi untuk anak, dan mendapatkan gambaran belajar berdasarkan latihan anak di situs.",
+        "Bagi tutor privat, situs dapat memungkinkan membuat aktivitas dan melacak murid, sesuai izin yang diberikan kepada mereka di sistem."
+      ]
+    },
+    {
+      "id": "terms-general",
+      "title": "2. Ketentuan penggunaan umum",
+      "paragraphs": [
+        "Penggunaan situs dimaksudkan untuk tujuan belajar, latihan, bermain, penguatan, dan pengayaan.",
+        "Situs tidak boleh digunakan untuk merugikan pengguna lain, mencoba mengakses akun yang bukan milik Anda, melewati izin, merusak fungsi situs, menyalin konten, melakukan penggunaan komersial tanpa izin, atau penggunaan apa pun yang tidak sesuai dengan tujuan layanan.",
+        "Pengguna bertanggung jawab menjaga keamanan detail masuk dan tidak membagikannya kepada orang lain.",
+        "Situs dapat membatasi, memblokir, atau menghapus akses jika terjadi penyalahgunaan, upaya merusak sistem, pelanggaran ketentuan ini, dugaan akses tanpa izin, atau penggunaan yang tidak sesuai dengan tujuan layanan."
+      ]
+    },
+    {
+      "id": "children",
+      "title": "3. Penggunaan oleh anak",
+      "paragraphs": [
+        "Area anak dimaksudkan untuk belajar dan bermain.",
+        "Anak dapat masuk ke akun yang dibuat untuk mereka oleh orang tua, atau menggunakan mode tamu jika opsi itu tersedia.",
+        "Situs tidak dimaksudkan agar anak memublikasikan konten publik, ikut obrolan terbuka dengan anak lain, atau membagikan informasi pribadi kepada pengguna lain.",
+        "Orang tua bertanggung jawab mengelola akun anak, memantau penggunaan situs, dan memastikan penggunaannya sesuai untuk anak."
+      ]
+    },
+    {
+      "id": "parents",
+      "title": "4. Penggunaan oleh orang tua",
+      "paragraphs": [
+        "Orang tua dapat membuat akun, menambah anak, melihat data latihan, melihat laporan, membuat aktivitas pribadi, dan mengelola sebagian pengaturan anak.",
+        "Melanjutkan penggunaan situs, membuat akun, atau masuk berarti menerima ketentuan dan kebijakan privasi di halaman ini.",
+        "Tidak ada keharusan mencentang kotak ketentuan saat masuk atau mendaftar, agar proses tidak terbebani. Sebagai gantinya, teks singkat dengan tautan ke ketentuan dan kebijakan privasi ditampilkan.",
+        "Orang tua diminta membaca ketentuan dan kebijakan privasi sebelum menggunakan situs, terutama sebelum membuka akun untuk anak."
+      ]
+    },
+    {
+      "id": "private-teachers",
+      "title": "5. Penggunaan oleh tutor privat",
+      "paragraphs": [
+        "Tutor privat hanya boleh menggunakan situs sesuai izin yang diberikan kepada mereka di sistem.",
+        "Tutor hanya boleh melihat informasi, murid, aktivitas, atau laporan yang diizinkan sistem untuk dilihat.",
+        "Tutor tidak boleh mencoba mengakses informasi tentang orang tua, anak, atau murid yang tidak terkait dengannya.",
+        "Setiap penggunaan situs oleh tutor hanya untuk tujuan pembelajaran, dan tidak menggantikan tanggung jawab profesional tutor terhadap murid dan orang tua."
+      ]
+    },
+    {
+      "id": "accounts",
+      "title": "6. Akun dan pendaftaran",
+      "paragraphs": [
+        "Membuka akun di situs dapat dilakukan dengan email dan kata sandi, atau dengan masuk menggunakan Google, tergantung opsi yang tersedia di situs.",
+        "Saat membuka akun atau masuk, situs dapat menyimpan detail yang diperlukan untuk mengoperasikan akun, seperti alamat email, ID pengguna, nama sebagaimana diberikan saat masuk, dan data teknis masuk.",
+        "Pengguna bertanggung jawab memberikan informasi yang akurat dan terkini, menjaga kerahasiaan detail masuk, serta memberitahu kami jika mencurigai penggunaan tanpa izin."
+      ]
+    },
+    {
+      "id": "google-oauth",
+      "title": "7. Masuk dengan Google",
+      "paragraphs": [
+        "Situs memungkinkan orang tua masuk menggunakan Google.",
+        "Saat menggunakan masuk dengan Google, situs dapat menerima detail dasar dari Google yang diperlukan untuk masuk dan identifikasi akun, seperti alamat email, ID akun, dan nama sebagaimana diberikan saat masuk.",
+        "Situs tidak menerima izin untuk membaca kotak masuk Gmail, file Drive, Calendar, atau layanan Google lainnya, kecuali dinyatakan lain secara eksplisit di layar izin Google.",
+        "Penggunaan masuk dengan Google juga tunduk pada kebijakan dan ketentuan Google sendiri."
+      ]
+    },
+    {
+      "id": "guest-mode",
+      "title": "8. Mode tamu untuk anak",
+      "paragraphs": [
+        "Situs dapat memungkinkan anak masuk menggunakan mode tamu, tanpa membuat akun anak penuh.",
+        "Dalam mode tamu, sistem membuat Leo Number 8 digit untuk tamu, agar penggunaan dapat dilanjutkan di perangkat yang sama dan ditautkan dengan orang tua.",
+        "Penggunaan mode tamu yang berkelanjutan pada perangkat yang sama dapat mengandalkan cookie, localStorage, atau mekanisme penyimpanan lokal lainnya.",
+        "Jika penyimpanan lokal dihapus, sistem dapat membuat tamu baru dan mungkin tidak dapat memulihkan tamu sebelumnya.",
+        "Jika opsi tersedia, orang tua dapat menautkan tamu ke anak terdaftar menggunakan nomor tamu.",
+        "Saat menautkan tamu ke anak terdaftar, hanya koin dan kartu yang dikumpulkan tamu yang ditransfer ke anak terdaftar, sesuai aturan sistem.",
+        "Data belajar, jawaban, laporan, progres belajar, atau riwayat latihan tamu tidak ditransfer ke anak terdaftar, kecuali dinyatakan lain secara eksplisit di sistem.",
+        "Setelah tamu ditautkan, tamu tersebut dapat ditandai sebagai sudah digunakan dan nomor tamu yang sama mungkin tidak dapat digunakan lagi."
+      ]
+    },
+    {
+      "id": "learning-reports",
+      "title": "9. Latihan, pertanyaan, aktivitas, dan laporan",
+      "paragraphs": [
+        "Situs menyajikan kepada anak pertanyaan, latihan, aktivitas, dan gim belajar menurut mata pelajaran, kelas, topik, dan tingkat latihan.",
+        "Situs dapat menyimpan jawaban, waktu respons, hasil, topik yang dilatih, tingkat latihan, aktivitas yang dilakukan, dan informasi lain yang diperlukan untuk mengoperasikan mesin pembelajaran dan laporan.",
+        "Orang tua dapat menerima laporan berdasarkan data latihan anak di situs.",
+        "Laporan dimaksudkan untuk membantu orang tua memahami apa yang dilatih anak, di mana kekuatan muncul, di mana latihan lanjutan dapat membantu, dan apa langkah belajar berikutnya.",
+        "Laporan hanya didasarkan pada informasi yang dikumpulkan di situs, dan tidak selalu mencerminkan seluruh kemampuan, kesulitan, atau progres anak di luar situs."
+      ]
+    },
+    {
+      "id": "disclaimer",
+      "title": "10. Catatan penting tentang laporan dan rekomendasi",
+      "paragraphs": [
+        "Laporan, rekomendasi, wawasan, dan ringkasan di situs hanyalah alat bantu belajar.",
+        "Mereka bukan diagnosis medis, diagnosis psikologis, diagnosis pendidikan, penilaian profesional, dan tidak menggantikan guru, konselor, penilai, atau profesional lain.",
+        "Jika Anda memiliki kekhawatiran tentang kesulitan belajar yang berkelanjutan, kesenjangan belajar, atau kondisi emosional, perilaku, medis, atau lainnya, kami menyarankan menghubungi guru, konselor sekolah, penilai, atau profesional yang sesuai."
+      ]
+    },
+    {
+      "id": "rewards",
+      "title": "11. Koin, kartu, toko, dan hadiah",
+      "paragraphs": [
+        "Situs dapat mencakup koin, kartu, kotak kejutan, toko internal, hadiah, dan hadiah yang digamifikasi.",
+        "Fitur-fitur ini dimaksudkan untuk mendukung bermain, dorongan, ketekunan, dan kesenangan belajar.",
+        "Koin, kartu, dan hadiah di situs bukan uang sungguhan, tidak memiliki nilai moneter di luar situs, tidak dapat diubah menjadi uang tunai, dan tidak dapat ditukar dengan pencairan uang.",
+        "Situs dapat mengubah aturan untuk koin, kartu, toko, hadiah, dan hadiah dari waktu ke waktu karena alasan operasional, keseimbangan gim, pencegahan penyalahgunaan, perbaikan bug, atau untuk meningkatkan pengalaman.",
+        "Jika terjadi gangguan, penyalahgunaan, eksploitasi teknis, atau aktivitas tidak biasa, situs dapat mengoreksi saldo, menghapus hadiah, memulihkan kondisi sebelumnya, atau membatasi penggunaan, sesuai kebutuhan."
+      ]
+    },
+    {
+      "id": "data-collected",
+      "title": "12. Informasi apa yang kami simpan",
+      "paragraphs": [
+        "Situs dapat menyimpan informasi yang diperlukan untuk mengoperasikan layanan, termasuk:"
+      ],
+      "bullets": [
+        "Detail akun orang tua, seperti email, ID pengguna, dan data masuk.",
+        "Detail anak yang ditambahkan orang tua, seperti nama tampilan, kelas, ID internal, dan data penggunaan.",
+        "Data latihan, jawaban, hasil, stempel waktu aktivitas, topik yang dilatih, dan progres.",
+        "Aktivitas pribadi yang dibuat oleh orang tua atau tutor.",
+        "Laporan, ringkasan, dan wawasan belajar.",
+        "Data koin, kartu, toko, dan hadiah.",
+        "Data mode tamu, sejauh mode tamu digunakan.",
+        "Data teknis yang diperlukan untuk keamanan, operasi, masuk, pencegahan gangguan, dan peningkatan layanan."
+      ],
+      "paragraphsAfterBullets": [
+        "Situs tidak meminta anak memberikan informasi pribadi yang tidak diperlukan untuk mengoperasikan layanan."
+      ]
+    },
+    {
+      "id": "purposes",
+      "title": "13. Cara kami menggunakan informasi",
+      "paragraphs": [
+        "Informasi digunakan untuk:"
+      ],
+      "bullets": [
+        "Mengoperasikan akun orang tua dan anak.",
+        "Menyajikan latihan dan pertanyaan.",
+        "Menyimpan progres dan hasil.",
+        "Membuat laporan untuk orang tua.",
+        "Membuat aktivitas pribadi.",
+        "Menjalankan mode tamu dan menautkan tamu ke anak terdaftar.",
+        "Mengelola koin, kartu, dan hadiah.",
+        "Meningkatkan stabilitas dan keamanan layanan.",
+        "Mendeteksi gangguan, mencegah penyalahgunaan, dan menjaga integritas sistem.",
+        "Menjalankan fitur AI, jika tersedia, untuk ringkasan dan wawasan belajar."
+      ]
+    },
+    {
+      "id": "children-data",
+      "title": "14. Informasi tentang anak",
+      "paragraphs": [
+        "Informasi tentang anak ditampilkan kepada orang tua yang terkait dengan anak tersebut, dan kepada pihak berwenang lain hanya sesuai izin sistem.",
+        "Situs tidak dimaksudkan untuk pengungkapan publik informasi tentang anak.",
+        "Anak tidak dimaksudkan untuk melihat informasi anak lain.",
+        "Orang tua tidak dimaksudkan untuk melihat informasi tentang anak yang tidak terkait dengannya.",
+        "Tutor tidak dimaksudkan untuk melihat informasi tentang murid yang tidak terkait dengannya atau yang tidak diberi izin untuk dilihat.",
+        "Informasi tentang anak tidak digunakan untuk membangun profil iklan pribadi.",
+        "Data latihan, pencapaian, kesalahan, laporan, mata pelajaran, kelas, atau aktivitas dalam gim tidak dibagikan kepada penyedia iklan untuk tujuan penargetan iklan kepada anak.",
+        "Iklan di halaman anak hanya ditampilkan pada penempatan yang telah disetujui dan disediakan, misalnya area bawah halaman, dan tidak pernah di dalam isi pertanyaan, opsi jawaban, tombol aksi, atau permainan yang sedang berlangsung."
+      ]
+    },
+    {
+      "id": "learning-analytics",
+      "title": "15. Penggunaan informasi untuk pembelajaran dan laporan",
+      "paragraphs": [
+        "Data latihan digunakan untuk menunjukkan gambaran belajar kepada orang tua.",
+        "Sistem dapat menganalisis jawaban, waktu respons, topik yang dilatih, pola keberhasilan dan kesulitan, serta progres dari waktu ke waktu.",
+        "Analisis ini dimaksudkan untuk membantu memilih latihan lanjutan yang sesuai, menyoroti kekuatan, mengidentifikasi area yang perlu penguatan, dan memberi penjelasan yang jelas kepada orang tua.",
+        "Sistem tidak membuat diagnosis profesional dan tidak menggantikan penilaian manusia."
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "16. Penggunaan kecerdasan buatan",
+      "paragraphs": [
+        "Situs dapat menggunakan kecerdasan buatan untuk membantu membuat ringkasan, penjelasan, wawasan, atau jawaban bagi orang tua berdasarkan data laporan dan latihan.",
+        "Penggunaan AI dimaksudkan agar informasi belajar lebih mudah diakses dan jelas.",
+        "Konten yang dibuat atau dirumuskan dengan bantuan AI bukan diagnosis, saran profesional, saran medis, saran psikologis, saran pendidikan, atau keputusan profesional.",
+        "Sistem dapat menjalankan pemeriksaan, penyaringan, atau aturan keamanan sebelum menampilkan konten yang dihasilkan AI.",
+        "Informasi pribadi sensitif yang tidak diperlukan untuk penggunaan situs sebaiknya tidak dimasukkan ke dalam sistem."
+      ]
+    },
+    {
+      "id": "limitations",
+      "title": "17. Keterbatasan sistem",
+      "paragraphs": [
+        "Situs adalah alat pembelajaran dan latihan.",
+        "Situs bukan sekolah, bukan lembaga diagnosis, bukan layanan medis, bukan layanan psikologis, dan bukan pengganti saran profesional.",
+        "Hasil di situs dapat dipengaruhi berbagai faktor, seperti konsentrasi anak saat itu, pemahaman instruksi, waktu yang tersedia, kelelahan, penggunaan yang tidak konsisten, atau jumlah latihan yang sedikit.",
+        "Oleh karena itu, laporan dan rekomendasi harus diperlakukan hanya sebagai alat bantu, bukan sebagai kesimpulan akhir tentang kemampuan anak."
+      ]
+    },
+    {
+      "id": "cookies-storage",
+      "title": "18. Cookie, penyimpanan lokal, dan PWA",
+      "paragraphs": [
+        "Situs dapat menggunakan cookie, localStorage, sessionStorage, cache, atau mekanisme penyimpanan lokal lainnya untuk masuk, menyimpan status penggunaan, melanjutkan aktivitas, mode tamu, instalasi PWA, pengoperasian situs, dan meningkatkan pengalaman pengguna.",
+        "Di aplikasi PWA atau mode offline, sebagian file yang diperlukan untuk menjalankan situs dapat disimpan di perangkat.",
+        "Informasi yang disimpan di perangkat dapat tetap ada sampai dihapus secara manual, peramban dibersihkan, aplikasi dihapus, atau pengaturan perangkat diubah.",
+        "Jika perangkat yang sama digunakan oleh beberapa anak atau beberapa akun, kami menyarankan keluar setelah digunakan dan memastikan akun yang benar sedang masuk.",
+        "Menghapus cookie atau localStorage dapat membuat Anda keluar dari akun, kehilangan status mode tamu, atau membuat tamu baru.",
+        "Ketika iklan ditampilkan di situs, penyedia iklan dapat menggunakan cookie atau sarana serupa untuk penampilan iklan, pengukuran, keamanan, dan kepatuhan hukum.",
+        "Di wilayah di mana hukum yang berlaku atau penyedia iklan mensyaratkannya, opsi untuk mengelola preferensi iklan dan cookie akan ditampilkan."
+      ]
+    },
+    {
+      "id": "security",
+      "title": "19. Keamanan data",
+      "paragraphs": [
+        "Situs menerapkan langkah-langkah yang dimaksudkan untuk melindungi informasi pengguna, membatasi akses sesuai izin, dan mencegah akses tanpa izin.",
+        "Akses ke informasi pribadi harus dibatasi pada pengguna yang berwenang, misalnya orang tua untuk anaknya sendiri, tutor untuk murid yang terkait dengannya, atau administrator sistem yang berwenang.",
+        "Meski demikian, tidak ada sistem yang sepenuhnya terlindungi dari setiap gangguan, upaya penyusupan, atau insiden keamanan.",
+        "Jika Anda mencurigai penggunaan tanpa izin, gangguan, atau paparan data, Anda dapat menghubungi:"
+      ],
+      "links": [
+        {
+          "href": "mailto:leokid2026@gmail.com",
+          "label": "leokid2026@gmail.com"
+        }
+      ]
+    },
+    {
+      "id": "processors",
+      "title": "20. Berbagi informasi dengan penyedia layanan",
+      "paragraphs": [
+        "Situs dapat menggunakan penyedia infrastruktur, hosting, masuk, keamanan, operasi, atau AI untuk mengoperasikan layanan.",
+        "Informasi dapat ditransfer ke penyedia ini hanya sejauh diperlukan untuk mengoperasikan situs, menyimpan data, masuk, mengamankan layanan, menjalankannya, memberikan dukungan, menganalisis gangguan, atau mendukung fitur layanan.",
+        "Situs tidak menjual informasi pribadi anak kepada pengiklan.",
+        "Situs tidak dimaksudkan untuk iklan bertarget kepada anak.",
+        "Situs menggunakan layanan iklan eksternal, termasuk sistem iklan Google, untuk menampilkan iklan pada penempatan yang telah ditentukan.",
+        "Iklan bukan bagian dari konten pembelajaran, bukan rekomendasi pribadi dari Leo Kids, dan bukan tugas yang wajib diselesaikan anak.",
+        "Di halaman anak, situs tidak menggunakan informasi pribadi atau data belajar anak untuk menargetkan iklan.",
+        "Di halaman orang tua, iklan atau sponsor tidak disesuaikan berdasarkan laporan pribadi atau data belajar anak."
+      ]
+    },
+    {
+      "id": "retention-deletion",
+      "title": "21. Penyimpanan dan penghapusan data",
+      "paragraphs": [
+        "Informasi disimpan selama diperlukan untuk mengoperasikan layanan, mengelola akun, menampilkan laporan, menyimpan progres, memastikan keamanan, menyimpan catatan tindakan, atau mematuhi persyaratan hukum.",
+        "Orang tua dapat menghapus anak melalui mekanisme yang ada di situs, jika opsi itu tersedia di dasbor.",
+        "Menghapus anak dapat menghapus detail anak, data masuk, sesi, jawaban, laporan, koin, kartu, dan informasi terkait, sesuai mekanisme penghapusan yang ada.",
+        "Permintaan untuk menghapus informasi, atau pertanyaan terkait privasi, dapat dikirim ke:"
+      ],
+      "links": [
+        {
+          "href": "mailto:leokid2026@gmail.com",
+          "label": "leokid2026@gmail.com"
+        }
+      ],
+      "paragraphsAfterLinks": [
+        "Permintaan penghapusan akan ditangani dalam 7 hari kerja, sejauh memungkinkan dan sesuai situasi teknis serta hukum.",
+        "Informasi tertentu dapat disimpan lebih lama dalam cadangan, log, catatan keamanan, catatan tindakan, atau jika penyimpanan diwajibkan secara hukum."
+      ]
+    },
+    {
+      "id": "your-rights",
+      "title": "22. Hak pengguna dan pertanyaan privasi",
+      "paragraphs": [
+        "Anda dapat menghubungi kami terkait urusan privasi, koreksi informasi, penghapusan informasi, pertanyaan informasi, atau pertanyaan tentang penggunaan informasi.",
+        "Pertanyaan dapat dikirim ke:"
+      ],
+      "links": [
+        {
+          "href": "mailto:leokid2026@gmail.com",
+          "label": "leokid2026@gmail.com"
+        }
+      ],
+      "paragraphsAfterLinks": [
+        "Untuk melindungi privasi pengguna, kami dapat meminta detail yang memungkinkan kami memverifikasi bahwa pemohon adalah pemegang akun atau orang tua yang berwenang sebelum mengambil tindakan atas informasi tersebut."
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "23. Aksesibilitas",
+      "paragraphs": [
+        "Leo Kids berupaya membuat situs nyaman dan jelas digunakan oleh semua pengguna, termasuk pengguna dengan disabilitas.",
+        "Situs berupaya meningkatkan aksesibilitas sesuai prinsip aksesibilitas web yang umum diterima.",
+        "Beberapa bagian situs, terutama area interaktif, gim, aktivitas latihan, atau komponen PWA, mungkin belum sepenuhnya dapat diakses.",
+        "Jika Anda mengalami kesulitan aksesibilitas, halaman yang tidak dapat diakses, teks yang tidak jelas, tombol yang tidak dapat diakses, masalah menggunakan papan ketik, pembaca layar, atau perangkat seluler — kami menyambut Anda untuk menghubungi kami agar kami dapat memeriksa dan memperbaikinya.",
+        "Pertanyaan terkait aksesibilitas dapat dikirim ke:"
+      ],
+      "links": [
+        {
+          "href": "mailto:leokid2026@gmail.com",
+          "label": "leokid2026@gmail.com"
+        }
+      ],
+      "paragraphsAfterLinks": [
+        "Saat menghubungi kami, membantu jika Anda menyebutkan:"
+      ],
+      "bullets": [
+        "Halaman tempat Anda menemukan masalah.",
+        "Perangkat dan peramban yang Anda gunakan.",
+        "Apa masalahnya.",
+        "Cara kami dapat menghubungi Anda kembali."
+      ]
+    },
+    {
+      "id": "ip",
+      "title": "24. Kekayaan intelektual",
+      "paragraphs": [
+        "Semua hak atas situs, termasuk desain, teks, pertanyaan, gim, kode, struktur, logo, gambar, laporan, dan konten, milik Leo Kids atau pihak yang telah memberikan izin penggunaannya, kecuali dinyatakan lain.",
+        "Anda tidak boleh menyalin, mendistribusikan, menerbitkan, menjual, mereproduksi, menampilkan secara publik, merekayasa balik, atau menggunakan konten situs untuk tujuan komersial tanpa izin tertulis sebelumnya.",
+        "Penggunaan situs diberikan kepada pengguna hanya untuk tujuan pribadi, belajar, dan keluarga, sesuai dengan ketentuan ini."
+      ]
+    },
+    {
+      "id": "liability",
+      "title": "25. Batasan tanggung jawab",
+      "paragraphs": [
+        "Layanan disediakan sebagaimana adanya, dan dapat berubah, diperbarui, sementara berhenti berfungsi, atau mengandung gangguan.",
+        "Leo Kids berupaya menyajikan informasi yang akurat, jelas, dan berguna, tetapi tidak menjamin bahwa situs bebas dari kesalahan, selalu tersedia, cocok untuk setiap anak, atau akan menghasilkan hasil belajar tertentu.",
+        "Penggunaan situs dan laporannya menjadi tanggung jawab pengguna dan orang tua.",
+        "Situs tidak boleh diandalkan sebagai pengganti penilaian orang tua, guru, atau profesional."
+      ]
+    },
+    {
+      "id": "institutional",
+      "title": "26. Penggunaan institusional atau sekolah",
+      "paragraphs": [
+        "Jika di masa mendatang situs digunakan oleh sekolah, lembaga pendidikan, rombongan belajar, atau lingkungan institusional, ketentuan tambahan atau kebijakan terpisah dapat berlaku.",
+        "Selama penggunaan tersebut belum diaktifkan secara eksplisit, halaman ini terutama membahas penggunaan oleh anak, orang tua, dan tutor privat."
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "27. Hubungi kami",
+      "paragraphs": [
+        "Untuk pertanyaan, permintaan, laporan, urusan privasi, penghapusan data, aksesibilitas, atau keamanan data, Anda dapat menghubungi kami:"
+      ],
+      "links": [
+        {
+          "href": "mailto:leokid2026@gmail.com",
+          "label": "leokid2026@gmail.com"
+        },
+        {
+          "href": "/contact",
+          "label": "Hubungi kami"
+        }
+      ]
+    },
+    {
+      "id": "updates",
+      "title": "28. Pembaruan ketentuan ini",
+      "paragraphs": [
+        "Leo Kids dapat memperbarui ketentuan ini, kebijakan privasi, pernyataan aksesibilitas, penjelasan AI, atau bagian lain dari halaman ini dari waktu ke waktu.",
+        "Ketika pembaruan material dilakukan, tanggal pembaruan di bagian atas halaman akan berubah.",
+        "Melanjutkan penggunaan situs setelah ketentuan diperbarui berarti menerima versi yang diperbarui."
+      ]
+    }
+  ],
+  "legalCrossLinks": [
+    {
+      "href": "/legal",
+      "label": "Ketentuan, privasi & aksesibilitas"
+    },
+    {
+      "href": "/privacy",
+      "label": "Kebijakan privasi"
+    },
+    {
+      "href": "/terms",
+      "label": "Ketentuan penggunaan"
+    },
+    {
+      "href": "/accessibility",
+      "label": "Aksesibilitas"
+    },
+    {
+      "href": "/ai-disclosure",
+      "label": "Pengungkapan AI"
+    },
+    {
+      "href": "/data-deletion",
+      "label": "Penghapusan data"
+    },
+    {
+      "href": "/security",
+      "label": "Keamanan"
+    }
+  ],
+  "legalContactPageLinks": [
+    {
+      "href": "/legal",
+      "label": "Ketentuan, privasi & aksesibilitas"
+    },
+    {
+      "href": "/privacy",
+      "label": "Kebijakan privasi"
+    },
+    {
+      "href": "/terms",
+      "label": "Ketentuan penggunaan"
+    },
+    {
+      "href": "/accessibility",
+      "label": "Aksesibilitas"
+    },
+    {
+      "href": "/ai-disclosure",
+      "label": "Pengungkapan AI"
+    },
+    {
+      "href": "/data-deletion",
+      "label": "Penghapusan data"
+    },
+    {
+      "href": "/security",
+      "label": "Keamanan"
+    }
+  ],
+  "legalFooterLinks": [
+    {
+      "href": "/legal",
+      "label": "Ketentuan, privasi & aksesibilitas"
+    }
+  ],
+  "parentReportDisclaimerTitle": "Catatan penting",
+  "parentReportDisclaimerParagraphs": [
+    "Laporan ini didasarkan pada data latihan yang dikumpulkan di situs Leo Kids.",
+    "Ini dimaksudkan sebagai alat bantu belajar bagi orang tua, untuk membantu Anda memahami apa yang dilatih anak Anda, di mana kekuatan muncul, dan di mana latihan lanjutan dapat membantu.",
+    "Laporan ini bukan diagnosis medis, diagnosis psikologis, atau diagnosis pendidikan, dan tidak menggantikan guru, konselor, penilai, atau profesional lain. Jika Anda memiliki kekhawatiran tentang kesulitan belajar yang berkelanjutan, kesenjangan belajar, atau memerlukan evaluasi lebih lanjut, silakan hubungi guru atau profesional yang sesuai."
+  ],
+  "contactEmail": "leokid2026@gmail.com"
+}

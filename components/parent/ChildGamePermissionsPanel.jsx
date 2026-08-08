@@ -37,7 +37,9 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
         });
         const data = await res.json();
         if (cancelled) return;
-        if (!res.ok || !data.ok) throw new Error(mapParentPanelApiError(data.error, "load"));
+        if (!res.ok || !data.ok) {
+          throw new Error(mapParentPanelApiError(data.code || data.error, "load"));
+        }
         setPermissions(data.permissions);
       } catch (err) {
         if (!cancelled) setError(t(mapParentPanelApiError(err.message, "load")));
@@ -72,7 +74,9 @@ export default function ChildGamePermissionsPanel({ studentId, accessToken, brig
         body: JSON.stringify({ [field]: nextValue }),
       });
       const data = await res.json();
-      if (!res.ok || !data.ok) throw new Error(mapParentPanelApiError(data.error, "save"));
+      if (!res.ok || !data.ok) {
+        throw new Error(mapParentPanelApiError(data.code || data.error, "save"));
+      }
       setPermissions(data.permissions);
     } catch (err) {
       setError(t(mapParentPanelApiError(err.message, "save")));

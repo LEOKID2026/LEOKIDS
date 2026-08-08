@@ -7,6 +7,8 @@
     "loading": "Loading…",
     "error_loading": "Error loading",
     "network_error": "Network error",
+    "not_signed_in": "Not signed in",
+    "error_generic": "Error",
     "empty": "No worksheets yet.",
     "forbidden": "You do not have permission to view this class's worksheets.",
     "due": "Due: {date}",

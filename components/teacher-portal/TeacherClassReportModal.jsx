@@ -4,7 +4,7 @@ import ReportHubModal from "../reporting/ReportHubModal.jsx";
 import ReportDateRangeControl from "../reporting/ReportDateRangeControl.jsx";
 import { parseClassReportViewModel } from "../../lib/school-portal/school-report-view-model.js";
 import { parseStudentReportViewModel } from "../../lib/school-portal/school-report-view-model.js";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { useReportDateRange } from "../../hooks/useReportDateRange.js";
 import { appendReportRangeToSearchParams } from "../../lib/reporting/report-date-range.js";
 
@@ -63,7 +63,7 @@ export default function TeacherClassReportModal({
         );
         const body = await res.json().catch(() => ({}));
         if (res.status !== 200) {
-          setError(body?.error?.message || "Error loading report");
+          setError(apiErrorMessageHe(body?.error, "Error loading report"));
           return;
         }
         const cls = body?.class || {};

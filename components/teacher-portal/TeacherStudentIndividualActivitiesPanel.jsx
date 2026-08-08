@@ -1,6 +1,6 @@
 import { globalBurnDownCopy } from "../../lib/i18n/global-burn-down-copy.js";
 import { useCallback, useEffect, useState } from "react";
-import { teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 import { REPORT_SUBJECTS, subjectLabel } from "../../lib/teacher-portal/teacher-ui.js";
 import { ACTIVITY_PREVIEW_SUPPORTED_SUBJECTS } from "../../lib/classroom-activities/classroom-activities-preview.js";
 import { generateActivityQuestionSetClient } from "../../lib/classroom-activities/generate-activity-questions-client.js";
@@ -64,7 +64,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       });
       setPreview(qs);
     } catch (e) {
-      setError(e?.message || "Could not create question preview");
+      setError("Could not create question preview");
       setPreview([]);
     } finally {
       setBusy(false);
@@ -107,7 +107,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Could not create the activity");
+        setError(apiErrorMessageHe(json?.error, "Could not create the activity"));
         return;
       }
       const activityId = json?.data?.activityId;
@@ -140,7 +140,7 @@ export default function TeacherStudentIndividualActivitiesPanel({ accessToken, s
       );
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(json?.error?.message || json?.error?.code || "Could not update the activity");
+        setError(apiErrorMessageHe(json?.error, "Could not update the activity"));
         return;
       }
       await load();

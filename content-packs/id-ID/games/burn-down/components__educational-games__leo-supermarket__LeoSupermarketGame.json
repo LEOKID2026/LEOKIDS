@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "register": "Daftar",
+    "pick_coins": "Pilih koin",
+    "removechangeat_lastindex": "removeChangeAt(lastIndex)}\n                      />\n                    ))\n                  )}",
+    "help_leo_the_cashier_pick_the_product_figure_out_the_change_and_give_the": "Bantu Leo si kasir — pilih produk, hitung kembalian, dan kembalikan uang yang tepat",
+    "x_id_id_if_p_return_null_return": "x.id === id);\n                      if (!p) return null;\n                      return (",
+    "setphase_intro_new_game": "setPhase(\"intro\")}>\n            New game",
+    "pick_the_product_the_customer_asked_for": "Pilih produk yang diminta pelanggan",
+    "leo_apos_s_market": "Pasar Leo",
+    "change_you_gave": "Kembalian yang kamu beri:",
+    "purchase_total": "Total pembelian:",
+    "customer_paid": "Pelanggan membayar:",
+    "give_change": "Berikan kembalian ✓",
+    "clear_change": "Hapus kembalian",
+    "start_game": "Mulai gim",
+    "back": "Kembali"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "traffic_jam": "Kemacetan",
+    "prototype_drag_cars_along_their_axis_free_the_red_one": "Prototipe · seret mobil sepanjang sumbunya · bebaskan yang merah",
+    "size_return_false_if_nr": "SIZE) return false;\r\n    if (nr",
+    "size_return_false_if_nc": "SIZE) return false;\r\n    if (nc",
+    "you_did_it_red_car_is_out": "Berhasil! Mobil merah sudah keluar 🎉",
+    "reset": "Atur ulang"
+  }
+}

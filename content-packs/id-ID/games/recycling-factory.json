@@ -1,0 +1,14 @@
+{
+  "gameId": "recycling-factory",
+  "title": "Pabrik Daur Ulang Leo",
+  "blurb": "Sortir sampah ke tempat yang tepat dan bantu jaga lingkungan",
+  "help": {
+    "howToPlay": "Seret atau ketuk item dari ban berjalan, lalu pilih tempat sampah yang benar. Sortir cukup item sebelum mencapai batas kesalahan.",
+    "scoring": "Sortir benar +10, sortir cepat +5, 5 beruntun benar +20, 10 beruntun +50. Kesalahan atau item terlewat −5 (skor tidak pernah di bawah 0).",
+    "rewards": "Koin diberikan berdasarkan berapa banyak barang yang kamu sortir dengan benar, ketepatan, rentetan, dan mencapai tujuan — meski kamu belum menyelesaikan seluruh gim.",
+    "tip": "Perhatikan jenis barang — kertas, plastik, kaca, logam, atau sampah umum."
+  },
+  "accessibility": {
+    "title": "Pabrik Daur Ulang Leo"
+  }
+}

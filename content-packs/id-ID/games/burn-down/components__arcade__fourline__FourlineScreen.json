@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "four_in_a_row": "Empat Sekawan",
+    "back": "Kembali",
+    "coin_balance": "Saldo koin",
+    "how_to_play": "Cara bermain",
+    "close": "Tutup",
+    "each_player_picks_a_column_the_disc_drops_to_the_bottom": "Setiap pemain pilih kolom; keping jatuh ke bawah.",
+    "goal_connect_four_discs_in_a_row_horizontal_vertical_or_diagonal": "Tujuan: hubungkan empat keping beruntun — horizontal, vertikal, atau diagonal.",
+    "blue_goes_first_after_each_move_the_turn_passes_to_gold_and_back": "Biru mulai dulu; setelah setiap langkah giliran beralih ke Emas dan kembali.",
+    "if_the_board_fills_with_no_four_in_a_row_it_s_a_draw": "Jika papan penuh tanpa empat beruntun — hasilnya seri.",
+    "waiting_for_a_second_player": "Menunggu pemain kedua…",
+    "four_in_a_row_2": "Empat beruntun."
+  }
+}

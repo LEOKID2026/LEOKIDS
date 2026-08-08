@@ -1,0 +1,95 @@
+{
+  "seoKey": "practice-reading",
+  "slug": "reading",
+  "badge": "Pemahaman bacaan",
+  "h1": "Latihan pemahaman bacaan untuk pelajar sekolah dasar",
+  "intro": "Di halaman membaca, anak berlatih mengenali kata, membaca akurat, memahami kalimat, menemukan detail, dan menarik kesimpulan dari teks yang sesuai kelas.",
+  "sections": [
+    {
+      "title": "Keterampilan inti",
+      "bullets": [
+        "Membaca kata dan kalimat.",
+        "Memahami makna dari konteks.",
+        "Menemukan detail dalam teks.",
+        "Mengidentifikasi gagasan utama.",
+        "Sebab dan akibat.",
+        "Menarik kesimpulan.",
+        "Menjawab dalam kalimat lengkap."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memulai?",
+      "paragraphs": [
+        "Pilih kelas dan mulai dengan teks di mana anak Anda dapat membaca sebagian besar kata. Setelah membaca, lanjut ke pertanyaan dan minta anak Anda menjelaskan bagaimana mereka menemukan setiap jawaban."
+      ]
+    },
+    {
+      "title": "Bagaimana jika ada kesulitan?",
+      "paragraphs": [
+        "Jika tantangannya adalah membaca kata, kembali ke membaca singkat yang terfokus. Jika tantangannya adalah memahami pertanyaan, soroti kata tanya dan temukan bagian teks yang cocok."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Membaca awal, kata dan kalimat pendek, pemahaman dasar, dan pertanyaan sederhana."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Teks singkat, pertanyaan pemahaman, menemukan informasi, dan jawaban tertulis singkat."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Teks yang lebih panjang, menarik kesimpulan, jawaban yang lebih terperinci, dan ketepatan pemahaman yang lebih kuat."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    },
+    {
+      "href": "/practice/no-print",
+      "label": "Latihan digital"
+    },
+    {
+      "href": "/practice/english",
+      "label": "Latihan Bahasa Inggris"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "reading-practice-at-home",
+    "reading-comprehension-at-home",
+    "home-practice-routine"
+  ],
+  "faq": [
+    {
+      "q": "Apakah ini membaca bahasa Ibrani?",
+      "a": "Tidak. Halaman ini berfokus pada pemahaman bacaan Bahasa Inggris—teks singkat dan pertanyaan yang membangun pemahaman serta kelancaran."
+    },
+    {
+      "q": "Apakah teks disesuaikan dengan kelas?",
+      "a": "Ya. Latihan dipilih menurut kelas dan tingkat kesulitan aktivitas."
+    },
+    {
+      "q": "Bagaimana saya tahu anak saya sudah paham?",
+      "a": "Minta mereka menjelaskan gagasan utama dan menunjukkan bagian teks yang membantu mereka menjawab."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih teks dan mulai membaca",
+    "body": "Latih membaca akurat, pemahaman, dan menjelaskan jawaban dari teks.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Buka akun orang tua"
+    },
+    "secondary": {
+      "href": "/guides/reading-practice-at-home",
+      "label": "Panduan membaca di rumah"
+    }
+  }
+}

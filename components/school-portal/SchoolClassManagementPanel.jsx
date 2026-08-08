@@ -17,6 +17,10 @@ import {
   SCHOOL_CLASS_MGMT_SECTION,
   SCHOOL_CLASS_MGMT_STUDENT_COUNT,
   SCHOOL_CLASS_MGMT_SUBJECT_COUNT,
+  SCHOOL_CREATE_CLASS_FAILED,
+  SCHOOL_LOAD_ERROR,
+  SCHOOL_LOADING,
+  SCHOOL_NETWORK_ERROR,
 } from "../../lib/school-portal/school-ui.js";
 
 /**
@@ -45,12 +49,12 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
       const res = await schoolAuthFetch(accessToken, "/api/school/physical-classes");
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Error loading classes"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_LOAD_ERROR));
         return;
       }
       setClasses(json?.data?.physicalClasses || []);
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setLoading(false);
     }
@@ -73,7 +77,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Failed to create class"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_CREATE_CLASS_FAILED));
         return;
       }
       setMessage(SCHOOL_CLASS_MGMT_CREATE_SUCCESS);
@@ -81,7 +85,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
       await load();
       onChanged?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy(false);
     }
@@ -93,7 +97,7 @@ export default function SchoolClassManagementPanel({ accessToken, onChanged }) {
         <h2 className="text-base font-semibold mb-3 text-start">{SCHOOL_CLASS_MGMT_SECTION}</h2>
 
         {loading ? (
-          <p className="text-sm text-white/60 text-start">Loading…</p>
+          <p className="text-sm text-white/60 text-start">{SCHOOL_LOADING}</p>
         ) : error && !classes.length ? (
           <p className="text-sm text-red-300 text-start">{error}</p>
         ) : null}

@@ -1,0 +1,100 @@
+{
+  "seoKey": "practice-math",
+  "slug": "math",
+  "badge": "Matematika untuk Kelas 1–6",
+  "h1": "Latihan matematika menurut kelas dan topik",
+  "intro": "Di Leo Kids, anak dapat berlatih matematika menurut kelas, topik, dan tingkat kesulitan. Pertanyaan bervariasi antar sesi dan mendukung perhitungan, pemahaman, serta pemecahan masalah.",
+  "sections": [
+    {
+      "title": "Topik inti matematika",
+      "bullets": [
+        "Penjumlahan dan pengurangan.",
+        "Perkalian dan pembagian.",
+        "Operasi horizontal dan vertikal.",
+        "Pecahan dan desimal.",
+        "Persen, rasio, dan skala.",
+        "Soal cerita.",
+        "Urutan operasi.",
+        "Latihan campuran."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memulai?",
+      "paragraphs": [
+        "Pilih kelas, buka topik matematika yang Anda inginkan, dan mulai di tingkat reguler. Setelah beberapa pertanyaan, periksa apakah tingkatnya cocok dan lanjutkan dengan latihan lebih banyak."
+      ]
+    },
+    {
+      "title": "Bagaimana cara memilih topik?",
+      "paragraphs": [
+        "Pilih topik yang sedang diajarkan sekarang, topik di mana kesalahan muncul, atau keterampilan yang ingin diperkuat anak Anda. Saat topik terasa stabil, lanjut ke latihan campuran."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Kelas 1–2",
+          "text": "Angka, menghitung, penjumlahan dan pengurangan dasar, membandingkan kuantitas, dan latihan singkat."
+        },
+        {
+          "title": "Kelas 3–4",
+          "text": "Memperkuat operasi, perkalian dan pembagian, soal cerita, serta latihan yang membangun pemahaman—bukan hanya kecepatan."
+        },
+        {
+          "title": "Kelas 5–6",
+          "text": "Pecahan, persen, desimal, soal yang lebih kompleks, dan topik yang memerlukan berpikir langkah demi langkah."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice/games",
+      "label": "Gim belajar"
+    },
+    {
+      "href": "/practice/no-print",
+      "label": "Latihan digital"
+    },
+    {
+      "href": "/practice/parent-reports",
+      "label": "Laporan orang tua"
+    },
+    {
+      "href": "/practice/geometry",
+      "label": "Latihan geometri"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "math-practice-at-home",
+    "math-games-for-kids",
+    "home-practice-routine"
+  ],
+  "faq": [
+    {
+      "q": "Apakah pertanyaan berubah antar sesi?",
+      "a": "Ya. Aktivitas diambil dari bank soal dan dapat berbeda antar sesi latihan."
+    },
+    {
+      "q": "Apakah ada tingkat yang berbeda?",
+      "a": "Ya. Topik menawarkan tingkat reguler dan lanjutan berdasarkan konten dan kelas."
+    },
+    {
+      "q": "Bisakah saya mencetak soal latihan?",
+      "a": "Ya. Di halaman lembar kerja Anda dapat membuat lembar atau memilih yang siap pakai beserta jawabannya."
+    }
+  ],
+  "footerCta": {
+    "title": "Pilih topik matematika",
+    "body": "Mulai dengan latihan terfokus dan lanjutkan berdasarkan progres anak Anda.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Buka akun orang tua"
+    },
+    "secondary": {
+      "href": "/practice/worksheets",
+      "label": "Lembar kerja matematika"
+    }
+  }
+}

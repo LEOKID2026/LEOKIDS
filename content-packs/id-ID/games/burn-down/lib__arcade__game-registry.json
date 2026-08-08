@@ -1,0 +1,11 @@
+{
+  "copy": {
+    "four_in_a_row": "Empat Sekawan",
+    "checkers": "Dam",
+    "chess": "Catur",
+    "snakes_and_ladders": "Ular Tangga",
+    "dominoes": "Domino",
+    "bingo": "Bingo",
+    "ludo": "Ludo"
+  }
+}

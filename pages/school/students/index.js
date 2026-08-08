@@ -51,12 +51,15 @@ import {
   SCHOOL_CHOOSE_GRADE,
   SCHOOL_CHOOSE_PHYSICAL_CLASS,
   SCHOOL_CHOOSE_STUDENTS,
+  SCHOOL_CHILDREN_LOAD_ERROR,
   SCHOOL_EMPTY_STUDENTS,
   SCHOOL_EMPTY_STUDENTS_HINT,
   SCHOOL_ENROLL_SECTION,
   SCHOOL_ENROLL_STUDENT,
   SCHOOL_LOADING,
   SCHOOL_LOADING_DATA,
+  SCHOOL_LOAD_ERROR,
+  SCHOOL_REPORT_LOAD_ERROR,
   SCHOOL_REPORT_LOADING,
   SCHOOL_SEARCH_STUDENTS,
   SCHOOL_SEARCH_STUDENTS_PLACEHOLDER,
@@ -69,6 +72,8 @@ import {
   SCHOOL_HIDE_ADVANCED_ENROLLMENT,
   SCHOOL_ENROLLING,
   SCHOOL_VIEW_STUDENT_REPORT,
+  SCHOOL_CLASS_STATUS_WITH_VALUE,
+  schoolUiFill,
   studentLearningStatusBadgeClass,
 } from "../../../lib/school-portal/school-ui.js";
 
@@ -145,7 +150,7 @@ export default function SchoolStudentsPage() {
         const body = result?.body || {};
         setBrowseSummary(null);
         if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-        setSummaryError(apiErrorMessageHe(body?.error, "Error loading data"));
+        setSummaryError(apiErrorMessageHe(body?.error, SCHOOL_LOAD_ERROR));
         return;
       }
       setSummaryError("");
@@ -168,7 +173,7 @@ export default function SchoolStudentsPage() {
     } catch {
       setBrowseSummary(null);
       if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-      setSummaryError("Error loading data");
+      setSummaryError(SCHOOL_LOAD_ERROR);
     } finally {
       setSummaryLoading(false);
     }
@@ -224,7 +229,7 @@ export default function SchoolStudentsPage() {
         const body = result?.body || {};
         setClassStudents([]);
         if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-        setClassStudentsError(apiErrorMessageHe(body?.error, "Error loading children"));
+        setClassStudentsError(apiErrorMessageHe(body?.error, SCHOOL_CHILDREN_LOAD_ERROR));
         return;
       }
       setClassStudentsError("");
@@ -247,7 +252,7 @@ export default function SchoolStudentsPage() {
     } catch {
       setClassStudents([]);
       if (schoolId) deleteSchoolCacheEntry(schoolId, path);
-      setClassStudentsError("Error loading children");
+      setClassStudentsError(SCHOOL_CHILDREN_LOAD_ERROR);
     } finally {
       setClassStudentsLoading(false);
     }
@@ -313,7 +318,7 @@ export default function SchoolStudentsPage() {
           force,
         });
         if (result?.status !== 200) {
-          setReportError(apiErrorMessageHe(result?.body?.error, "Error loading report"));
+          setReportError(apiErrorMessageHe(result?.body?.error, SCHOOL_REPORT_LOAD_ERROR));
           setReportViewModel(null);
           return;
         }
@@ -596,7 +601,7 @@ export default function SchoolStudentsPage() {
                             classStatus
                           )}`}
                         >
-                          Class status: {classStatus}
+                          {schoolUiFill(SCHOOL_CLASS_STATUS_WITH_VALUE, { status: classStatus })}
                         </span>
                       </p>
                     );

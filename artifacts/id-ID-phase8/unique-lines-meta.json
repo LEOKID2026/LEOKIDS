@@ -1,0 +1,212 @@
+{
+  "unique": 10789,
+  "totalOccurrences": 19607,
+  "bySubject": {
+    "math": 4905,
+    "geometry": 1826,
+    "science": 1426,
+    "english": 2750
+  },
+  "top50": [
+    {
+      "en": "## Metadata",
+      "n": 426
+    },
+    {
+      "en": "| Field | Value |",
+      "n": 426
+    },
+    {
+      "en": "## 1. What are we learning?",
+      "n": 417
+    },
+    {
+      "en": "## 2. Simple explanation",
+      "n": 417
+    },
+    {
+      "en": "## 4. Let's solve together",
+      "n": 417
+    },
+    {
+      "en": "## 5. Try it yourself",
+      "n": 417
+    },
+    {
+      "en": "## 7. Let's practice!",
+      "n": 417
+    },
+    {
+      "en": "**Source references:**",
+      "n": 385
+    },
+    {
+      "en": "| **approval_status** | launch_ready |",
+      "n": 259
+    },
+    {
+      "en": "Try to solve it on your own.",
+      "n": 256
+    },
+    {
+      "en": "## 3. Example",
+      "n": 228
+    },
+    {
+      "en": "## 6. Let's check together",
+      "n": 228
+    },
+    {
+      "en": "| **subject** | math |",
+      "n": 193
+    },
+    {
+      "en": "## 3. Visual / concrete example",
+      "n": 189
+    },
+    {
+      "en": "## 6. Common mistake — watch out!",
+      "n": 189
+    },
+    {
+      "en": "On the next page we'll check the steps and the answer together.",
+      "n": 182
+    },
+    {
+      "en": "| **age_band** | grades_5_6 |",
+      "n": 171
+    },
+    {
+      "en": "| **age_band** | grades_3_4 |",
+      "n": 138
+    },
+    {
+      "en": "| **approval_status** | approved |",
+      "n": 124
+    },
+    {
+      "en": "| **subject** | english |",
+      "n": 124
+    },
+    {
+      "en": "| **page_type** | step_by_step_procedure |",
+      "n": 119
+    },
+    {
+      "en": "On the next page we will check the steps and the answer together.",
+      "n": 111
+    },
+    {
+      "en": "| **age_band** | grades_1_2 |",
+      "n": 108
+    },
+    {
+      "en": "| **page_type** | concept_foundation |",
+      "n": 100
+    },
+    {
+      "en": "| **grade** | g6 |",
+      "n": 88
+    },
+    {
+      "en": "| **grade** | g5 |",
+      "n": 87
+    },
+    {
+      "en": "| **grade** | g4 |",
+      "n": 77
+    },
+    {
+      "en": "| **subject** | geometry |",
+      "n": 71
+    },
+    {
+      "en": "On the next page, we'll check the way and the answer together.",
+      "n": 67
+    },
+    {
+      "en": "Try to solve it yourself.",
+      "n": 67
+    },
+    {
+      "en": "| **grade** | g3 |",
+      "n": 64
+    },
+    {
+      "en": ":::geometry-diagram",
+      "n": 60
+    },
+    {
+      "en": "| **page_type** | vocabulary_theme |",
+      "n": 60
+    },
+    {
+      "en": "| **grade** | g2 |",
+      "n": 59
+    },
+    {
+      "en": "On the next page, we'll check the answer and how to get there together.",
+      "n": 57
+    },
+    {
+      "en": "Question: How do you say this?",
+      "n": 57
+    },
+    {
+      "en": "Try it yourself.",
+      "n": 57
+    },
+    {
+      "en": "| File | Draft title |",
+      "n": 56
+    },
+    {
+      "en": "| **grade** | g1 |",
+      "n": 51
+    },
+    {
+      "en": "| **approval_status** | draft |",
+      "n": 43
+    },
+    {
+      "en": "| **page_type** | practice_bridge |",
+      "n": 40
+    },
+    {
+      "en": "| **page_type** | visual_intuition |",
+      "n": 39
+    },
+    {
+      "en": "| **subject** | science |",
+      "n": 38
+    },
+    {
+      "en": "Try to solve by yourself.",
+      "n": 37
+    },
+    {
+      "en": "| **page_type** | word_problem_strategy |",
+      "n": 34
+    },
+    {
+      "en": "**Date:** June 2026",
+      "n": 24
+    },
+    {
+      "en": "| **page_type** | phonics_foundation |",
+      "n": 23
+    },
+    {
+      "en": "The solution:",
+      "n": 19
+    },
+    {
+      "en": "Scientific explanation:",
+      "n": 18
+    },
+    {
+      "en": "Pattern:",
+      "n": 16
+    }
+  ]
+}

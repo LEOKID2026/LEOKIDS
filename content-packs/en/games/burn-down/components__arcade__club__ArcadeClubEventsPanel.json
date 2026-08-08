@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "daily_event": "Daily event",
+    "todays_challenge": "Today's challenge",
+    "coins_reward": "+{amount} coins",
+    "collected": "Collected ✓",
+    "collect_reward": "Collect reward",
+    "play_to_complete": "Play an arcade game to complete the challenge",
+    "tournament": "Tournament",
+    "registered": "Registered ✓",
+    "register": "Register",
+    "registration_closed": "Registration closed"
+  }
+}

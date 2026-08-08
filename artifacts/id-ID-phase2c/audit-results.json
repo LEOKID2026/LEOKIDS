@@ -1,0 +1,76 @@
+{
+  "namespaces": {
+    "reports": {
+      "enLeaves": 249,
+      "idLeaves": 249,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0
+    },
+    "emails": {
+      "enLeaves": 4,
+      "idLeaves": 4,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0
+    },
+    "legal": {
+      "enLeaves": 31,
+      "idLeaves": 31,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0
+    },
+    "teacher": {
+      "enLeaves": 81,
+      "idLeaves": 81,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0
+    },
+    "school": {
+      "enLeaves": 387,
+      "idLeaves": 387,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0
+    },
+    "copilot": {
+      "enLeaves": 89,
+      "idLeaves": 89,
+      "missingKeys": 0,
+      "extraKeys": 0,
+      "emptyLeaves": 0,
+      "placeholderMismatches": 0
+    }
+  },
+  "totals": {
+    "enLeaves": 841,
+    "idLeaves": 841,
+    "missingKeys": 0,
+    "extraKeys": 0,
+    "emptyLeaves": 0,
+    "placeholderMismatches": 0,
+    "studentTermDefects": 0,
+    "gradeClassDefects": 0,
+    "adultRegisterDefects": 0,
+    "reportTermDefects": 0,
+    "untranslatedEnglish": 0
+  },
+  "defects": {
+    "missingKeys": [],
+    "extraKeys": [],
+    "emptyLeaves": [],
+    "placeholderMismatches": [],
+    "studentTermDefects": [],
+    "gradeClassDefects": [],
+    "adultRegisterDefects": [],
+    "reportTermDefects": [],
+    "untranslatedEnglish": []
+  }
+}

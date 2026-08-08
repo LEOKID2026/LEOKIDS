@@ -1,0 +1,9 @@
+{
+  "gameId": "memory-match",
+  "title": "Cocok Memori",
+  "blurb": "Balik kartu, temukan pasangan, dan coba menang.",
+  "players": "1–2 pemain",
+  "help": {
+    "howToPlay": "Main bersama di perangkat yang sama."
+  }
+}

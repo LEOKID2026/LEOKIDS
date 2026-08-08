@@ -7,7 +7,7 @@ import TeacherPortalShell from "../../../../../components/teacher-portal/Teacher
 import TeacherClassActivitiesNav from "../../../../../components/teacher-portal/TeacherClassActivitiesNav";
 import { getLearningSupabaseBrowserClient } from "../../../../../lib/learning-supabase/client";
 import { resolveTeacherPortalAuth } from "../../../../../lib/teacher-portal/use-teacher-portal-session";
-import { teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, teacherAuthFetch } from "../../../../../lib/teacher-portal/teacher-ui.js";
 import {
   worksheetModeLabelHe,
   worksheetStatusLabelHe,
@@ -57,7 +57,7 @@ export default function TeacherClassWorksheetsPage({ classId }) {
         return;
       }
       if (!res.ok) {
-        setError(body?.error?.message || body?.error?.code || wsCopy("error_loading"));
+        setError(apiErrorMessageHe(body?.error, wsCopy("error_loading")));
         setPhase("error");
         return;
       }

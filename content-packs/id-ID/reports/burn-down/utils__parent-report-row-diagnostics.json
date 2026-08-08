@@ -1,0 +1,14 @@
+{
+  "copy": {
+    "no_questions_were_collected_in_the_selected_period_there_is_no_data_basi": "Tidak ada soal yang terkumpul pada periode yang dipilih - tidak ada dasar data untuk baris ini.",
+    "too_few_questions_in_the_period_conclusions_for_this_row_are_very_partia": "Jumlah soal pada periode ini terlalu sedikit - kesimpulan untuk baris ini masih sangat terbatas.",
+    "many_questions_were_collected_you_can_rely_more_on_what_you_see_for_this": "Banyak soal telah terkumpul - Anda dapat lebih mengandalkan apa yang terlihat untuk topik ini.",
+    "there_are_enough_questions_for_this_topic_cautious_changes_to_sub_skills": "Jumlah soal untuk topik ini sudah cukup - lakukan perubahan dengan hati-hati hanya pada sub-keterampilan.",
+    "there_are_enough_questions_you_can_rely_more_on_what_you_see_for_this_to": "Jumlah soal sudah cukup - Anda dapat lebih mengandalkan apa yang terlihat untuk topik ini.",
+    "moderate_data_cautious_changes_only_are_recommended": "Data sedang - hanya disarankan perubahan yang hati-hati.",
+    "row_inputs_before_signal_computation": "Baris input sebelum penghitungan sinyal.",
+    "how_much_information_is_available_affects_how_cautious_the_next_recommen": "Jumlah informasi yang tersedia memengaruhi seberapa hati-hati rekomendasi berikutnya.",
+    "this_shows_up_across_several_practice_sessions_the_picture_reflects_a_tr": "Ini terlihat pada beberapa sesi latihan - gambaran ini menunjukkan sebuah tren, bukan hanya satu sesi saja.",
+    "the_recommendation_is_based_on_a_combination_of_accuracy_question_count_": "Rekomendasi ini didasarkan pada kombinasi akurasi, jumlah soal, kesalahan, dan seberapa baru latihan dilakukan pada periode yang dipilih."
+  }
+}

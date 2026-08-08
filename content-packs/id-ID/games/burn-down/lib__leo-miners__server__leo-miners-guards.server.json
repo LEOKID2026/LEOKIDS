@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "invalid_idempotency_key": "Kunci idempotensi tidak valid",
+    "invalid_action_type": "Jenis aksi tidak valid",
+    "missing_stage_data_for_mining": "Data tahap tambang hilang",
+    "too_many_breaks_in_one_request": "Terlalu banyak jeda dalam satu permintaan",
+    "invalid_claim_type": "Jenis klaim tidak valid",
+    "offline_time_exceeds_the_allowed_limit": "Waktu offline melebihi batas yang diizinkan",
+    "offline_time_does_not_match_server_data": "Waktu offline tidak cocok dengan data server",
+    "too_many_breaks_try_again_in_a_moment": "Terlalu banyak jeda — coba lagi sebentar lagi",
+    "guests_cannot_collect_rewards_please_link_an_account": "Tamu tidak bisa mengumpulkan hadiah - silakan tautkan akun",
+    "leo_miners_is_not_enabled_yet_apply_migration_and_config": "Leo Miners belum diaktifkan - terapkan migrasi dan konfigurasi",
+    "leo_miners_is_disabled_in_admin_settings": "Leo Miners dinonaktifkan di pengaturan Admin",
+    "leo_miners_economy_is_disabled": "Ekonomi Leo Miners dinonaktifkan",
+    "leo_miners_point_accrual_is_disabled": "Akumulasi poin Leo Miners dinonaktifkan",
+    "offline_collection_is_disabled": "Koleksi offline dinonaktifkan",
+    "leo_miners_gifts_are_disabled": "Hadiah Leo Miners dinonaktifkan",
+    "leo_miners_claims_are_disabled": "Klaim Leo Miners dinonaktifkan",
+    "diamond_chest_is_disabled": "Peti berlian dinonaktifkan",
+    "guests_cannot_collect_diamonds": "Tamu tidak bisa mengumpulkan berlian"
+  }
+}

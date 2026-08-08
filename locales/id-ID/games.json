@@ -1,0 +1,100 @@
+{
+  "hubTitle": "Gim",
+  "arcade": "Arkade",
+  "solo": "Gim solo",
+  "educational": "Gim edukatif",
+  "play": "Main",
+  "pause": "Jeda",
+  "resume": "Lanjut",
+  "settings": "Pengaturan gim",
+  "soundOn": "Suara nyala",
+  "soundOff": "Suara mati",
+  "youWin": "Kamu menang!",
+  "youLose": "Bagus coba!",
+  "draw": "Seri",
+  "inviteFriend": "Undang teman",
+  "waitingForOpponent": "Menunggu lawan…",
+  "matchFound": "Lawan ditemukan!",
+  "connectionLost": "Koneksi terputus. Mencoba lagi…",
+  "back": "Kembali",
+  "gamesBadge": "Gim",
+  "hubSubtitle": "Pilih pengalaman yang cocok — gim Leo, main offline, dan lainnya.",
+  "hubRegularTitle": "Gim Leo",
+  "hubRegularBlurb": "Gim Leo — memory match, teka-teki, latihan bidik, dan lainnya.",
+  "hubOfflineTitle": "Selalu bersama Leo",
+  "hubOfflineBlurb": "Main meski tanpa internet",
+  "hubEducationalTitle": "Gim belajar Leo",
+  "hubEducationalBlurb": "Pengayaan, keterampilan berpikir, dan pengetahuan umum",
+  "hubOnlineTitle": "Gim bersama teman",
+  "hubOnlineBlurb": "Ruang gim multipemain bersama teman dan pemain lain.",
+  "devPrototypeMeta": "Pengembangan · uji internal",
+  "soloHubBadge": "Gim Leo",
+  "soloHubTitle": "Gim Leo — Dunia anak",
+  "soloHubSubtitle": "Main, dapat poin, lalu kumpulkan koin dan permata untuk duniamu!",
+  "soloMeta": "Solo · koin · permata",
+  "playNow": "Main sekarang",
+  "educationalBadge": "Edukatif",
+  "educationalHubTitle": "Gim edukatif",
+  "educationalHubSubtitle": "Gim belajar yang melatih keterampilan sambil bersenang-senang.",
+  "noGamesAvailable": "Belum ada gim tersedia saat ini.",
+  "educationalMeta": "Gim edukatif · Koin",
+  "arcadeBack": "Arkade",
+  "arcadeBadge": "Klub arkade",
+  "arcadeHubTitle": "Klub gim Leo",
+  "arcadeHubSubtitle": "Main bersama teman — buat ruangan atau bergabung.",
+  "entryCostLabel": "Biaya masuk",
+  "selectEntryCost": "Pilih jumlah biaya masuk",
+  "roomTypeQuick": "Pertandingan cepat",
+  "roomTypePublic": "Publik",
+  "playersLabel": "Pemain",
+  "apiSuccess": "Selesai",
+  "apiAlreadyQueued": "Sudah dalam antrean (tidak dikenai biaya lagi)",
+  "apiInsufficientFunds": "Koin tidak cukup untuk aksi ini",
+  "apiFailed": "Aksi gagal",
+  "quickAlreadyInRoom": "Sudah di ruangan — ketuk Masuk gim",
+  "quickJoined": "Bergabung dengan pemain yang menunggu di ruangan",
+  "quickCreated": "Ruangan pertandingan cepat dibuat — menunggu pemain lain",
+  "quickReady": "Siap",
+  "social": {
+    "greatGame": "Gim bagus!",
+    "wellPlayed": "Mainnya keren!",
+    "rematch": "Main lagi?"
+  },
+  "arcadeGames": {
+    "fourline": {
+      "title": "Connect Four",
+      "blurb": "Sambungkan empat · dua pemain",
+      "players": "Pemain: 2"
+    },
+    "ludo": {
+      "title": "Ludo",
+      "blurb": "Ludo · gim papan keluarga",
+      "players": "Pemain: 2–4"
+    },
+    "snakes-and-ladders": {
+      "title": "Ular Tangga",
+      "blurb": "Papan 1–100 · tangga dan ular",
+      "players": "Pemain: 2–4"
+    },
+    "checkers": {
+      "title": "Dam",
+      "blurb": "Dam klasik · wajib makan",
+      "players": "Pemain: 2"
+    },
+    "chess": {
+      "title": "Catur",
+      "blurb": "Catur klasik · skak dan skakmat",
+      "players": "Pemain: 2"
+    },
+    "dominoes": {
+      "title": "Domino",
+      "blurb": "Domino blokir · main sampai habis",
+      "players": "Pemain: 2"
+    },
+    "bingo": {
+      "title": "Bingo",
+      "blurb": "Bingo · satu baris penuh menang",
+      "players": "Pemain: hingga 8"
+    }
+  }
+}

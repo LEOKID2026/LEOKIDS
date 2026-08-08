@@ -1,0 +1,15 @@
+{
+  "copy": {
+    "no_dominant_difficulty_is_visible_right_now": "Belum terlihat kesulitan yang dominan saat ini",
+    "not_enough_information_has_accumulated_yet_to_set_a_clear_direction": "Belum cukup informasi yang terkumpul untuk menetapkan arah yang jelas.",
+    "not_enough_information_has_accumulated_yet_for_a_broad_picture_from_the_": "Belum cukup informasi yang terkumpul untuk memberikan gambaran luas dari latihan.",
+    "subject_math": "Matematika",
+    "subject_geometry": "Geometri",
+    "subject_english": "Bahasa Inggris",
+    "subject_science": "Sains",
+    "subject_low_question_count": "{subject} - jumlah soal rendah ({count} soal)",
+    "subject_good_accuracy_volume": "{subject} - {count} soal terkumpul dengan akurasi baik ({accuracy}%)",
+    "no_standout_subject_yet": "Belum ada mata pelajaran yang menonjol berdasarkan jumlah soal dan akurasi - latihan yang berkelanjutan akan membuat perbedaan.",
+    "sparse_subjects_limited_info": "Pada {subjects} informasi masih terbatas - gambarannya akan lebih jelas setelah latihan lebih banyak."
+  }
+}

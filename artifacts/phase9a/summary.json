@@ -1,0 +1,20 @@
+{
+  "uniqueProseByArea": {
+    "parent": 45,
+    "student": 20,
+    "demo": 8,
+    "public": 1,
+    "arcade": 14,
+    "learning": 13
+  },
+  "totalUniqueProse": 101,
+  "uniqueCodesByArea": {
+    "parent": 5,
+    "student": 6,
+    "demo": 4,
+    "public": 4,
+    "learning": 2
+  },
+  "totalUniqueCodes": 21,
+  "totalProseHits": 321
+}

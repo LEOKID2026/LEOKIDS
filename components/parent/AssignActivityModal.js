@@ -101,12 +101,12 @@ export default function AssignActivityModal({
 
   const runPreview = useCallback(async () => {
     if (!activityGradeKey) {
-      setError("Choose a grade for the activity before generating questions");
+      setError(t("ui.parent.assignActivityChooseGradeGenerate"));
       return;
     }
     const count = resolveQuestionCountForApi(questionCountInput);
     if (count == null) {
-      setError("Enter the number of questions");
+      setError(t("ui.parent.assignActivityEnterQuestionCount"));
       return;
     }
     setBusy(true);
@@ -122,11 +122,11 @@ export default function AssignActivityModal({
       });
       setPreview(qs || []);
     } catch {
-      setError("Could not generate questions — try a different topic");
+      setError(t("ui.parent.assignActivityGenerateFailed"));
     } finally {
       setBusy(false);
     }
-  }, [subject, activityGradeKey, topic, displayLevel, questionCountInput]);
+  }, [subject, activityGradeKey, topic, displayLevel, questionCountInput, t]);
 
   const sendActivity = useCallback(async () => {
     const readOnly = assertParentDemoReadOnly("assign_activity");
@@ -135,20 +135,20 @@ export default function AssignActivityModal({
       return;
     }
     if (!activityGradeKey) {
-      setError("Choose a grade for the activity before sending");
+      setError(t("ui.parent.assignActivityChooseGradeSend"));
       return;
     }
     const count = resolveQuestionCountForApi(questionCountInput);
     if (count == null) {
-      setError("Enter the number of questions");
+      setError(t("ui.parent.assignActivityEnterQuestionCount"));
       return;
     }
     if (!title.trim()) {
-      setError("Enter a title for the activity");
+      setError(t("ui.parent.assignActivityEnterTitle"));
       return;
     }
     if (!preview.length) {
-      setError("Generate questions first");
+      setError(t("ui.parent.assignActivityGenerateFirst"));
       return;
     }
 
@@ -176,9 +176,9 @@ export default function AssignActivityModal({
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
         if (res.status === 403) {
-          setError("Cannot send an activity to this child");
+          setError(t("ui.parent.assignActivityCannotSend"));
         } else {
-          setError(mapParentPanelApiError(json?.error, "save"));
+          setError(t(mapParentPanelApiError(json?.error, "save")));
         }
         return;
       }
@@ -197,7 +197,7 @@ export default function AssignActivityModal({
       });
       onSuccess();
     } catch {
-      setError("Network error");
+      setError(t("ui.parent.deleteNetworkError"));
     } finally {
       setBusy(false);
     }
@@ -212,6 +212,7 @@ export default function AssignActivityModal({
     questionCountInput,
     activityGradeKey,
     onSuccess,
+    t,
   ]);
 
   return (
@@ -224,7 +225,9 @@ export default function AssignActivityModal({
       <div className={T.activityPanel}>
         <div className="flex items-start justify-between gap-3">
           <h2 id="assign-activity-title" className="text-lg font-semibold">
-            {`Send activity to ${student.full_name || "child"}`}
+            {t("ui.parent.assignActivityTitle", {
+              name: student.full_name || t("ui.parent.childDefault"),
+            })}
           </h2>
           <button
             type="button"
@@ -232,7 +235,7 @@ export default function AssignActivityModal({
             onClick={onClose}
             disabled={busy}
           >
-            Close
+            {t("ui.common.close")}
           </button>
         </div>
 
@@ -240,7 +243,7 @@ export default function AssignActivityModal({
 
         <div className="grid gap-4 md:grid-cols-2">
           <label className="block text-sm md:col-span-2">
-            <span className={T.label}>Title</span>
+            <span className={T.label}>{t("ui.parent.assignActivityTitleLabel")}</span>
             <input
               className={T.inputMt}
               value={title}
@@ -251,7 +254,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm">
-            <span className={T.label}>Subject</span>
+            <span className={T.label}>{t("ui.parent.assignActivitySubjectLabel")}</span>
             <select
               className={T.inputMt}
               value={subject}
@@ -267,7 +270,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm">
-            <span className={T.label}>Grade for activity</span>
+            <span className={T.label}>{t("ui.parent.assignActivityGradeLabel")}</span>
             <select
               className={T.inputMt}
               value={activityGradeKey}
@@ -286,7 +289,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm md:col-span-2">
-            <span className={T.label}>Topic</span>
+            <span className={T.label}>{t("ui.parent.assignActivityTopicLabel")}</span>
             {topicOpts.length > 0 ? (
               <select
                 className={T.inputMt}
@@ -317,7 +320,7 @@ export default function AssignActivityModal({
           </label>
 
           <label className="block text-sm">
-            <span className={T.label}>Number of questions</span>
+            <span className={T.label}>{t("ui.parent.assignActivityQuestionCountLabel")}</span>
             <input
               type="text"
               inputMode="numeric"
@@ -335,7 +338,7 @@ export default function AssignActivityModal({
             />
             {questionCountExceedsMax(questionCountInput) ? (
               <p id="question-count-max-hint" className={`${T.warning} text-xs mt-1`}>
-                {`Question count is limited to ${MAX_QUESTION_COUNT}`}
+                {t("ui.parent.assignActivityQuestionCountMax", { max: MAX_QUESTION_COUNT })}
               </p>
             ) : null}
           </label>
@@ -362,7 +365,7 @@ export default function AssignActivityModal({
             onClick={runPreview}
             disabled={busy || missingGrade}
           >
-            Preview
+            {t("ui.parent.assignActivityPreview")}
           </button>
           <button
             type="button"
@@ -370,7 +373,7 @@ export default function AssignActivityModal({
             onClick={sendActivity}
             disabled={busy || missingGrade}
           >
-            Send activity
+            {t("ui.parent.assignActivitySend")}
           </button>
           <ParentSentActivitiesPanel
             studentId={student.id}
@@ -382,7 +385,9 @@ export default function AssignActivityModal({
 
         {preview.length > 0 ? (
           <div className="space-y-2">
-            <h3 className={`text-sm font-semibold ${T.label}`}>Questions ({preview.length})</h3>
+            <h3 className={`text-sm font-semibold ${T.label}`}>
+              {t("ui.parent.assignActivityQuestionsHeading", { count: preview.length })}
+            </h3>
             <ul className="space-y-2 max-h-48 overflow-y-auto text-sm">
               {preview.map((q, i) => (
                 <li key={i} className={T.activityPreviewItem}>

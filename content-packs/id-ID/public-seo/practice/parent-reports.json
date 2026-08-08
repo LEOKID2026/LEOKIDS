@@ -1,0 +1,95 @@
+{
+  "seoKey": "practice-parent-reports",
+  "slug": "parent-reports",
+  "badge": "Laporan untuk orang tua",
+  "h1": "Laporan progres orang tua — lihat apa yang dilatih anak Anda",
+  "intro": "Laporan orang tua merangkum aktivitas yang diselesaikan anak Anda, mata pelajaran dan topik yang dilatih, jawaban, serta progres dari waktu ke waktu.",
+  "sections": [
+    {
+      "title": "Apa yang dapat Anda lihat di laporan?",
+      "bullets": [
+        "Mata pelajaran dan topik yang dilatih.",
+        "Jumlah aktivitas dan pertanyaan.",
+        "Jawaban benar dan kesalahan.",
+        "Jenis pertanyaan di mana kesulitan muncul.",
+        "Waktu belajar.",
+        "Tren di beberapa sesi latihan.",
+        "Topik yang layak ditinjau ulang atau diperkuat."
+      ]
+    },
+    {
+      "title": "Laporan standar dan terperinci",
+      "paragraphs": [
+        "Laporan standar memberi gambaran cepat tentang aktivitas. Laporan terperinci memungkinkan Anda menelusuri lebih dalam topik, pertanyaan, dan pola yang berulang lintas latihan."
+      ]
+    },
+    {
+      "title": "Cara menggunakan informasi",
+      "paragraphs": [
+        "Setelah membaca laporan, pilih satu langkah berikutnya: tinjau topik, tambah latihan, ubah tingkat, atau pindah ke topik berikutnya."
+      ]
+    },
+    {
+      "title": "Menurut kelas",
+      "gradeSections": [
+        {
+          "title": "Umum",
+          "text": "Laporan didasarkan pada aktivitas nyata anak Anda di situs."
+        },
+        {
+          "title": "Menurut mata pelajaran",
+          "text": "Laporan dapat mencerminkan area yang dilatih seperti matematika, Bahasa Inggris, geometri, dan IPA—berdasarkan aktivitas dan konten yang tersedia."
+        }
+      ]
+    }
+  ],
+  "relatedPracticeLinks": [
+    {
+      "href": "/practice",
+      "label": "Semua area latihan"
+    },
+    {
+      "href": "/practice/math",
+      "label": "Latihan matematika"
+    },
+    {
+      "href": "/practice/reading",
+      "label": "Latihan pemahaman bacaan"
+    },
+    {
+      "href": "/practice/english",
+      "label": "Latihan Bahasa Inggris"
+    }
+  ],
+  "relatedGuideSlugs": [
+    "parent-progress-tracking",
+    "how-to-follow-child-progress",
+    "home-practice-routine"
+  ],
+  "faq": [
+    {
+      "q": "Apakah laporan hanya menampilkan skor?",
+      "a": "Tidak. Laporan mencakup topik, aktivitas, jawaban, dan pola dari waktu ke waktu."
+    },
+    {
+      "q": "Kapan saya harus memeriksa laporan?",
+      "a": "Setelah beberapa aktivitas atau saat Anda ingin memilih topik baru untuk dilatih."
+    },
+    {
+      "q": "Bisakah saya melihat topik yang perlu diperkuat?",
+      "a": "Laporan dapat membantu mengidentifikasi topik di mana kesulitan berulang dan memilih latihan yang sesuai."
+    }
+  ],
+  "footerCta": {
+    "title": "Ubah aktivitas menjadi informasi yang berguna",
+    "body": "Lihat apa yang dilatih anak Anda, kenali pola, dan pilih langkah berikutnya.",
+    "primary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    },
+    "secondary": {
+      "href": "/guides/parent-progress-tracking",
+      "label": "Panduan membaca laporan"
+    }
+  }
+}

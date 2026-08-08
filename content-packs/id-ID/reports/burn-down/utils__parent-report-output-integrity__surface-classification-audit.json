@@ -1,0 +1,17 @@
+{
+  "copy": {
+    "short_report_table": "Tabel laporan singkat",
+    "smart_summary_short_report": "Ringkasan pintar - laporan singkat",
+    "smart_summary_detailed_report": "Ringkasan pintar - laporan rinci",
+    "parentaiinsight_executivesummary": "ParentAiInsight + executiveSummary",
+    "strengths": "Kekuatan",
+    "focus_weaknesses": "Fokus / kelemahan",
+    "topic_recommendations": "Rekomendasi topik",
+    "what_to_do_at_home": "Apa yang dapat dilakukan di rumah",
+    "executive_summary": "Ringkasan eksekutif",
+    "charts_labels": "Grafik / label",
+    "playwright_print_of_pages_above": "Pencetakan Playwright untuk halaman di atas",
+    "copilot_truth_packet": "Paket kebenaran Copilot",
+    "copilot_answer_composer": "Penyusun jawaban Copilot"
+  }
+}

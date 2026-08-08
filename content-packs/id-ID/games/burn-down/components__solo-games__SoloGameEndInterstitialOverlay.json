@@ -1,0 +1,10 @@
+{
+  "copy": {
+    "win_title": "Kerja bagus!",
+    "lose_title": "Gim berakhir",
+    "calculating": "Menghitung skormu...",
+    "skip": "Lewati",
+    "aria_win": "Kerja bagus",
+    "aria_lose": "Gim berakhir"
+  }
+}

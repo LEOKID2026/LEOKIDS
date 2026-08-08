@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "looks_strong": "Terlihat kuat",
+    "worth_watching": "Perlu dipantau",
+    "worth_strengthening": "Area yang perlu ditingkatkan",
+    "worth_guiding": "Perlu dibimbing",
+    "needs_strengthening": "Perlu diperkuat",
+    "few_questions": "Sedikit soal",
+    "above_grade_level": "Di atas tingkat kelas",
+    "earlier_foundations": "Dasar-dasar sebelumnya",
+    "strong_topics": "Topik yang kuat",
+    "topics_worth_watching": "Topik yang perlu dipantau",
+    "topics_worth_strengthening": "Topik yang perlu diperkuat",
+    "topics_worth_guiding_in_practice": "Topik yang perlu dibimbing dalam latihan",
+    "topics_with_few_questions": "Topik dengan sedikit soal",
+    "practice_above_grade_level": "Latihan di atas tingkat kelas",
+    "earlier_foundation_practice": "Latihan dasar sebelumnya",
+    "in_review": "Sedang ditinjau",
+    "topics": "Topik"
+  }
+}

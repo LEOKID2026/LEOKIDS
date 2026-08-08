@@ -1,0 +1,11 @@
+{
+  "gameId": "memory",
+  "title": "Gim Memori Leo",
+  "blurb": "Balik kartu dan temukan pasangan sebelum waktu habis!",
+  "help": {
+    "howToPlay": "Ketuk kartu untuk membaliknya, dan temukan pasangannya. Setiap pasangan yang ditemukan tetap terbuka.",
+    "scoring": "Kamu mulai dengan skor tinggi — semakin lama, skornya semakin turun. Menemukan semua pasangan sebelum waktu habis = menang.",
+    "rewards": "Menang sesuai tingkat kesulitan memberi koin dan berlian. Semakin tinggi skor, semakin besar hadiahnya.",
+    "tip": "Coba ingat di mana kamu melihat setiap gambar — meskipun pasangannya belum langsung ketemu."
+  }
+}

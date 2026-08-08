@@ -1,0 +1,116 @@
+{
+  "reportSubjects": ["math", "geometry", "english", "science"],
+  "subjects": {
+    "math": "Matematika",
+    "geometry": "Geometri",
+    "english": "Bahasa Inggris",
+    "science": "IPA"
+  },
+  "riskSignals": {
+    "inactive_recent_days": "Tidak aktif dalam waktu lama",
+    "no_sessions_in_range": "Tidak ada sesi latihan pada periode ini",
+    "low_overall_accuracy": "Kesulitan pada kinerja keseluruhan",
+    "many_recent_mistakes": "Banyak kesalahan baru-baru ini",
+    "never_active_in_range": "Tidak ada aktivitas pada periode ini",
+    "insufficient_answers": "Data belum cukup untuk dianalisis"
+  },
+  "supportSuggestions": {
+    "review_fundamentals": "Disarankan meninjau dasar-dasar mata pelajaran",
+    "encourage_session_start": "Disarankan mendorong untuk mulai berlatih",
+    "targetedReview": "Disarankan memperkuat {subject} di kelas",
+    "focusPractice": "Disarankan memfokuskan latihan pada {subject}",
+    "generic": "Terus pantau kemajuan"
+  },
+  "attentionReasons": {
+    "no_activity_in_range": "Tidak aktif pada periode ini",
+    "low_accuracy": "Kesulitan pada kinerja",
+    "many_recent_mistakes": "Banyak kesalahan baru-baru ini",
+    "recent_mistakes": "Kesalahan yang berulang"
+  },
+  "guidanceSeverityTier": {
+    "critical": "Perlu perhatian segera",
+    "needs_reinforcement": "Perlu penguatan",
+    "monitor": "Perlu dipantau",
+    "on_track": "Sesuai jalur"
+  },
+  "classGuidanceSeverityTier": {
+    "critical_class": "Rombongan belajar perlu perhatian segera",
+    "class_needs_reinforcement": "Rombongan belajar perlu penguatan",
+    "class_monitor": "Rombongan belajar perlu pemantauan dan latihan terfokus",
+    "class_on_track": "Rombongan belajar sesuai jalur"
+  },
+  "classHealth": {
+    "no_data": "Data belum cukup",
+    "critical_class": "Rombongan belajar perlu perhatian segera",
+    "needs_reinforcement": "Rombongan belajar perlu penguatan",
+    "monitor": "Rombongan belajar perlu pemantauan dan latihan terfokus",
+    "strong": "Rombongan belajar sesuai jalur"
+  },
+  "groupTier": {
+    "struggling": "Kelompok dukungan",
+    "on_track": "Kelompok sesuai jalur",
+    "advanced": "Kelompok lanjutan"
+  },
+  "guardianAccessState": {
+    "active": "Aktif",
+    "expired": "Kedaluarsa",
+    "revoked": "Dicabut"
+  },
+  "actionTypes": {
+    "class_reteach": "Pengajaran ulang seluruh rombel",
+    "small_group": "Kerja kelompok kecil",
+    "individual_practice": "Latihan individu terfokus",
+    "collect_more_data": "Tunggu data lebih banyak"
+  },
+  "assignmentTypes": {
+    "classroom_activity": "Aktivitas di kelas",
+    "worksheet_pdf": "Lembar kerja",
+    "focused_practice": "Latihan terfokus"
+  },
+  "riskLevel": {
+    "high": "Perlu perhatian segera",
+    "moderate": "Perlu dipantau",
+    "low": "Sesuai jalur"
+  },
+  "focus": {
+    "studentCalmMessage": "Tidak ada topik mendesak saat ini — lanjutkan seperti biasa.",
+    "hubStudentCalmMessage": "Tidak ada topik terfokus — terus pantau.",
+    "hubClassWeakTopicsCalmMessage": "Tidak terdeteksi topik lemah yang signifikan — terus pantau.",
+    "studentFallbackBanner": "Kesulitan pada mata pelajaran ini — latihan diagnostik diperlukan untuk mengidentifikasi topik yang tepat",
+    "classFallbackBanner": "Rombongan belajar menunjukkan kesulitan pada mata pelajaran ini — penguatan diagnostik untuk rombel disarankan"
+  },
+  "fallback": {
+    "unknownSubject": "Tidak diketahui",
+    "defaultTopic": "Topik",
+    "defaultStudentName": "Murid",
+    "notAvailable": "-",
+    "studentSubjectHeadline": "{subject} — kesulitan tingkat mata pelajaran",
+    "studentSubjectHeadlineNoSubject": "Kesulitan tingkat mata pelajaran",
+    "studentSubjectEvidence": "{percent}% benar dari {totalAnswers} jawaban",
+    "studentSubjectAction": "Disarankan memulai latihan diagnostik singkat untuk mengidentifikasi topik yang tepat",
+    "classSubjectHeadline": "{subject} — kesulitan mata pelajaran tingkat rombel",
+    "classSubjectHeadlineNoSubject": "Kesulitan mata pelajaran tingkat rombel",
+    "classSubjectAction": "Disarankan memulai aktivitas diagnostik singkat atau tinjauan terfokus untuk seluruh rombel",
+    "classSuffix": "Rombel {label}",
+    "attentionStudentLine": "{name} · {suffix}",
+    "topicRecommendationLine": "{subject} — {topic}"
+  },
+  "dashboard": {
+    "noClassesTitle": "Tidak ada rombongan belajar aktif",
+    "noClassesHint": "Buat rombongan belajar baru di bawah, lalu tambahkan murid melalui “Kelola rombel” pada kartu rombel.",
+    "createClassLabel": "Nama rombongan belajar",
+    "createClassButton": "Buat rombongan belajar",
+    "createClassPlaceholder": "mis. Rombel 3 - LEO"
+  },
+  "activities": {
+    "personalSectionTitle": "Aktivitas pribadi",
+    "individualBadge": "Pribadi"
+  },
+  "roster": {
+    "filter": {
+      "allStudents": "Semua murid ({count})",
+      "directStudents": "Murid pribadi ({count})",
+      "class": "{className} ({count})"
+    }
+  }
+}

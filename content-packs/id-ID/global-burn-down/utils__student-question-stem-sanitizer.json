@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "hebrew_level_prefix": "Awalan tingkat bahasa Ibrani",
+    "english_level_token_as_metadata": "Token tingkat Bahasa Inggris sebagai metadata"
+  }
+}

@@ -17,9 +17,16 @@ export default async function handler(req, res) {
       backgroundId: body.backgroundId,
       decorationSlots: body.decorationSlots,
     });
-    if (!result.ok) return res.status(result.status || 400).json(result);
+    if (!result.ok) {
+      const code = result.code || "server_error";
+      return res.status(result.status || 400).json({
+        ok: false,
+        code,
+        error: code,
+      });
+    }
     return res.status(200).json(result);
   }
 
-  return res.status(405).json({ ok: false, error: "Method not allowed" });
+  return res.status(405).json({ ok: false, error: "method_not_allowed", code: "method_not_allowed" });
 }

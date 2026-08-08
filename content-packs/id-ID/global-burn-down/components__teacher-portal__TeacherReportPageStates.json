@@ -1,0 +1,9 @@
+{
+  "copy": {
+    "load_report_error": "Terjadi kesalahan saat memuat laporan. Segarkan halaman dan coba lagi.",
+    "loading_report_hint": "Memuat laporan — ini mungkin memerlukan beberapa detik.",
+    "try_again": "Coba lagi",
+    "back_to_dashboard": "Kembali ke dasbor",
+    "forbidden_report": "Anda tidak memiliki izin untuk melihat laporan ini."
+  }
+}

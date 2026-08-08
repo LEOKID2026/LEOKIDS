@@ -1,0 +1,72 @@
+{
+  "seoKey": "guides-parent-progress-tracking",
+  "slug": "parent-progress-tracking",
+  "displayTitle": "Melacak progres",
+  "badge": "Panduan laporan orang tua",
+  "h1": "Cara membaca laporan progres anak Anda",
+  "intro": "Laporan progres membantu Anda melihat apa yang dilatih anak Anda, di mana mereka berhasil, dan di mana kesulitan berulang. Tujuannya bukan satu skor—melainkan gambaran yang lebih luas dari waktu ke waktu.",
+  "sections": [
+    {
+      "title": "Apa yang perlu diperiksa dalam laporan",
+      "bullets": [
+        "Mata pelajaran dan topik mana yang dilatih.",
+        "Berapa banyak aktivitas yang diselesaikan.",
+        "Jenis pertanyaan mana yang ada kesalahannya.",
+        "Apakah kinerja meningkat antar sesi.",
+        "Topik mana yang masih perlu ditinjau.",
+        "Berapa banyak waktu yang dihabiskan untuk belajar."
+      ]
+    },
+    {
+      "title": "Jangan mengandalkan satu sesi saja",
+      "paragraphs": [
+        "Satu hasil latihan dapat dipengaruhi kelelahan, kurang fokus, atau paparan pertama pada suatu topik. Periksa apakah pola yang sama berulang di beberapa aktivitas."
+      ]
+    },
+    {
+      "title": "Pisahkan kesulitan sementara dari pola yang stabil",
+      "paragraphs": [
+        "Satu kesalahan tidak memerlukan perubahan rencana segera. Ketika kesalahan yang sama berulang pada jenis pertanyaan yang sama, pilih latihan terfokus dan periksa lagi setelah beberapa hari."
+      ]
+    },
+    {
+      "title": "Apa yang dilakukan setelah membaca laporan",
+      "paragraphs": [
+        "Pilih satu tindakan: tinjau topik, pindah ke tingkat yang lebih sesuai, tambah latihan, atau lakukan percakapan singkat tentang bagaimana anak Anda menyelesaikan pertanyaan."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Apakah skor rendah berarti anak saya tidak menguasai topik?",
+      "a": "Tidak selalu. Lihat jenis kesalahan dan hasil di beberapa sesi latihan."
+    },
+    {
+      "q": "Seberapa sering saya harus memeriksa laporan?",
+      "a": "Setelah beberapa aktivitas atau sekitar sekali seminggu, tergantung seberapa sering Anda menggunakan situs."
+    },
+    {
+      "q": "Mana yang lebih penting—waktu atau ketepatan?",
+      "a": "Keduanya memberikan informasi, tetapi memahami pendekatan dan jenis kesalahan lebih penting daripada satu angka saja."
+    }
+  ],
+  "relatedPracticePath": "/practice/parent-reports",
+  "practiceCtaLabel": "Tentang laporan orang tua",
+  "relatedGuideSlugs": [
+    "how-to-follow-child-progress",
+    "home-practice-routine",
+    "math-practice-at-home"
+  ],
+  "footerCta": {
+    "title": "Gunakan laporan untuk memahami apa yang terjadi dalam latihan",
+    "body": "Tinjau topik, kenali pola, dan pilih satu tindakan berikutnya.",
+    "primary": {
+      "href": "/practice/parent-reports",
+      "label": "Tentang laporan orang tua"
+    },
+    "secondary": {
+      "href": "/parent/login",
+      "label": "Masuk orang tua"
+    }
+  }
+}

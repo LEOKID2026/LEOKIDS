@@ -1,0 +1,11 @@
+{
+  "gameId": "sort-shapes",
+  "title": "Sortir Bentuk",
+  "blurb": "Sortir bentuk dan warna ke kotak yang benar!",
+  "help": {
+    "howToPlay": "Seret setiap bentuk ke kotak yang cocok menurut bentuk atau warna. Selesaikan semua penyortiran sebelum waktu habis.",
+    "scoring": "Setiap penyortiran yang benar menambah poin. Kesalahan mengurangi skor. Jika waktu habis sebelum selesai — gim berakhir.",
+    "rewards": "Menyelesaikan dengan sukses sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+    "tip": "Tentukan dulu kotak mana untuk setiap bentuk — lalu seret dengan percaya diri."
+  }
+}

@@ -6,7 +6,9 @@ import {
   schoolAuthFetch,
   SCHOOL_INVITE_ADVANCED_UUID,
   SCHOOL_INVITE_EMAIL,
+  SCHOOL_INVITE_FAILED,
   SCHOOL_INVITE_SUCCESS,
+  SCHOOL_NETWORK_ERROR,
   SCHOOL_STAFF_UUID_ADVANCED,
 } from "../../lib/school-portal/school-ui.js";
 import { ADMIN_COL_EMAIL } from "../../lib/admin-portal/admin-ui.js";
@@ -62,7 +64,7 @@ export default function SchoolStaffEmailInviteForm({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(apiErrorMessageHe(json?.error, "Invite failed"));
+        setError(apiErrorMessageHe(json?.error, SCHOOL_INVITE_FAILED));
         return;
       }
       setMessage(SCHOOL_INVITE_SUCCESS);
@@ -71,7 +73,7 @@ export default function SchoolStaffEmailInviteForm({
       setAdvancedUuid("");
       onSuccess?.();
     } catch {
-      setError("Network error");
+      setError(SCHOOL_NETWORK_ERROR);
     } finally {
       setBusy(false);
     }

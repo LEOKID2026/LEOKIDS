@@ -1,0 +1,20 @@
+{
+  "copy": {
+    "back": "Kembali",
+    "local_badge": "Lokal",
+    "title": "Cocok Memori",
+    "mode_meta": "{mode} • {time}",
+    "single_player": "Pemain tunggal",
+    "two_players": "2 Pemain",
+    "time": "Waktu",
+    "moves": "Langkah",
+    "turn": "Giliran",
+    "pairs": "Pasangan",
+    "player_n": "Pemain {n}",
+    "two_players_label": "2 Pemain",
+    "shuffle": "Acak",
+    "player_1": "Pemain 1",
+    "player_2": "Pemain 2",
+    "all_pairs_found": "Semua pasangan ditemukan!"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "missing": [],
+  "missingCount": 0,
+  "identicalSample": [],
+  "identicalCount": 0,
+  "counts": {
+    "parents": 13,
+    "students": 11,
+    "parentReport": 12,
+    "subjects": 4,
+    "total": 40
+  }
+}

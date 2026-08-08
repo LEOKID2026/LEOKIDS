@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "not_populated_in_artifact_snapshot_mode_run_npm_run_qa_learning_simulato": "Tidak terisi dalam mode snapshot artifact. Jalankan `npm run qa:learning-simulator:expert-review-pack` untuk peta sintetis / agregat.",
+    "cross_subject_patterns_are_hypotheses_and_require_confirming_probes_per_": "Pola lintas mata pelajaran adalah hipotesis dan memerlukan pemeriksaan konfirmasi untuk setiap mata pelajaran.",
+    "internal_educational_diagnostic_support_only_not_clinical_not_parent_fac": "Hanya untuk dukungan diagnostik edukasi internal - bukan klinis / tidak ditampilkan ke orang tua."
+  }
+}

@@ -19,6 +19,7 @@ import { shouldDisplayStudentAccessCode } from "../../lib/teacher-portal/student
 import { trackProductEvent } from "../../lib/analytics/track-event.client.js";
 import {
   mapParentDashboardApiError,
+  mapParentApiFailurePayload,
   parentDashboardCreateSuccessHe,
   parentDashboardUpdateSuccessHe,
 } from "../../lib/parent-client/parent-api-errors.js";
@@ -304,10 +305,13 @@ export default function ParentDashboardPage() {
         });
         const linkPayload = await linkRes.json();
         if (!linkRes.ok) {
-          credentialMessage =
-            linkPayload.error || t("parent.guestLinkFailedAfterCreate");
+          const mapped = mapParentApiFailurePayload(
+            { ...linkPayload, status: linkRes.status },
+            "guest_link"
+          );
+          credentialMessage = t(mapped.messageKey, mapped.parameters);
         } else {
-          credentialMessage = linkPayload.message || t("parent.guestLinkCoinsSaved");
+          credentialMessage = t("parent.guestLinkCoinsSaved");
         }
       }
 
@@ -326,8 +330,11 @@ export default function ParentDashboardPage() {
         });
         const credPayload = await credRes.json();
         if (!credRes.ok) {
-          credentialMessage =
-            credPayload.error || t("parent.credentialsFailedAfterCreate");
+          const mapped = mapParentApiFailurePayload(
+            { ...credPayload, status: credRes.status },
+            "credentials"
+          );
+          credentialMessage = t(mapped.messageKey, mapped.parameters);
         } else {
           const loginUsername = credPayload.username || initialUsername;
           setCredentialConfirmation({
@@ -436,15 +443,19 @@ export default function ParentDashboardPage() {
       });
       const linkPayload = await linkRes.json();
       if (!linkRes.ok) {
+        const mapped = mapParentApiFailurePayload(
+          { ...linkPayload, status: linkRes.status },
+          "guest_link"
+        );
         setGuestLinkMessageByStudentId((prev) => ({
           ...prev,
-          [studentId]: linkPayload.error || t("parent.guestLinkFailed"),
+          [studentId]: t(mapped.messageKey, mapped.parameters),
         }));
         return;
       }
       setGuestLinkMessageByStudentId((prev) => ({
         ...prev,
-        [studentId]: linkPayload.message || t("parent.guestLinkCoinsSaved"),
+        [studentId]: t("parent.guestLinkCoinsSaved"),
       }));
       setGuestLeoByStudentId((prev) => ({ ...prev, [studentId]: "" }));
       await fetchStudents(session);
@@ -498,7 +509,11 @@ export default function ParentDashboardPage() {
     });
     const payload = await res.json();
     if (!res.ok) {
-      setMessage(payload.error || t("parent.credentialsSaveFailed"));
+      const mapped = mapParentApiFailurePayload(
+        { ...payload, status: res.status },
+        "credentials"
+      );
+      setMessage(t(mapped.messageKey, mapped.parameters));
     } else {
       setCredentialConfirmation({
         studentId,
@@ -556,7 +571,11 @@ export default function ParentDashboardPage() {
     });
     const payload = await res.json();
     if (!res.ok) {
-      setMessage(payload.error || t("parent.pinChangeFailed"));
+      const mapped = mapParentApiFailurePayload(
+        { ...payload, status: res.status },
+        "pin_reset"
+      );
+      setMessage(t(mapped.messageKey, mapped.parameters));
     } else {
       setCredentialConfirmation({
         studentId,
@@ -598,9 +617,11 @@ export default function ParentDashboardPage() {
       });
       const payload = await res.json();
       if (!res.ok) {
-        const detail =
-          payload.detail && payload.detail !== payload.error ? ` (${payload.detail})` : "";
-        setDeleteError((payload.error || t("parent.deleteFailed")) + detail);
+        const mapped = mapParentApiFailurePayload(
+          { ...payload, status: res.status },
+          "delete_student"
+        );
+        setDeleteError(t(mapped.messageKey, mapped.parameters));
       } else {
         setDeleteModalStudent(null);
         setDeleteConfirmName("");

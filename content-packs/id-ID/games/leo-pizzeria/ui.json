@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Pizzeria Leo",
+  "blurb": "Belajar pecahan lewat membuat pizza",
+  "help": {
+    "howToPlay": "Baca pesanan, tambahkan topping ke potongan pizza (ketuk atau seret), lalu ketuk \"Sajikan Pizza\".",
+    "scoring": "Pizza benar +30, 3 beruntun benar +15, 5 beruntun +30. Kesalahan tidak mengurangi poin.",
+    "rewards": "Koin diberikan berdasarkan berapa banyak pelanggan yang kamu layani, ketepatan, rentetan, dan tingkat kesulitan — meski kamu belum melayani semua 20 pelanggan.",
+    "tip": "Periksa berapa irisan yang ditutupi setiap topping — setengah, seperempat, dan seperdelapan mengacu pada jumlah irisan, bukan posisi."
+  },
+  "accessibility": {
+    "title": "Pizzeria Leo"
+  }
+}

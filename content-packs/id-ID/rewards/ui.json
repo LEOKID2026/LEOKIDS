@@ -1,0 +1,206 @@
+{
+  "rarity": {
+    "regular": "Biasa",
+    "special": "Spesial",
+    "rare": "Langka",
+    "gold": "Emas"
+  },
+  "cardType": {
+    "achievement": "Kartu pencapaian",
+    "shop": "Kartu toko",
+    "event": "Kartu event"
+  },
+  "cardSource": {
+    "earned_achievement": "Pencapaian belajar",
+    "shop_purchase": "Pembelian toko",
+    "surprise_box_reward": "Kotak kejutan",
+    "duplicate_conversion": "Konversi duplikat",
+    "card_sellback": "Penjualan duplikat",
+    "admin_grant": "Hadiah dari tim"
+  },
+  "shop": {
+    "alreadyOwned": "Kamu sudah punya!",
+    "sellDuplicate": "Jual duplikat",
+    "catalogOwned": "Terkumpul",
+    "coinsLabel": "{amount} koin",
+    "notEnoughCoins": "Koin tidak cukup untuk membeli ini.",
+    "purchaseFailed": "Pembelian gagal — coba lagi.",
+    "purchaseSuccess": "Kamu membeli {name}!",
+    "purchaseNetworkError": "Kesalahan jaringan saat membeli.",
+    "sellConfirmTitle": "Jual duplikat {name} seharga {amount}?",
+    "sellConfirmBody": "Kamu tetap menyimpan satu salinan di koleksi.",
+    "sellFailed": "Tidak bisa menjual duplikat — coba lagi.",
+    "sellSuccess": "Berhasil jual duplikat seharga {amount}!",
+    "sellNetworkError": "Kesalahan jaringan saat menjual.",
+    "noDuplicate": "Kamu tidak punya duplikat untuk dijual.",
+    "loadFailed": "Tidak bisa memuat toko sekarang."
+  },
+  "series": {
+    "professions": "Profesi",
+    "space-tech": "Antariksa & Teknologi",
+    "fantasy": "Fantasi",
+    "sport-fun": "Olahraga & Seru",
+    "style": "Gaya",
+    "general": "Pencapaian umum",
+    "math": "Pencapaian matematika",
+    "language": "Pencapaian bahasa",
+    "subjects": "Pencapaian mata pelajaran",
+    "events": "Event"
+  },
+  "fallback": {
+    "rewardCard": "Kartu hadiah",
+    "collectName": "Kumpulkan {name}!",
+    "earnCard": "Dapatkan kartu ini: {name}",
+    "eventLimited": "{name} — kartu event terbatas!",
+    "genericGame": "Gim",
+    "keepLearning": "Terus belajar untuk membuka kartu ini",
+    "completeRequirement": "Selesaikan syarat: {label}",
+    "availableInShop": "Tersedia di toko",
+    "availableInSurpriseBox": "Tersedia di kotak kejutan",
+    "notAvailableNow": "Tidak tersedia sekarang",
+    "progressOf": "{current} dari {target}"
+  },
+  "topics": {
+    "addition": "Penjumlahan",
+    "subtraction": "Pengurangan",
+    "multiplication": "Perkalian",
+    "division": "Pembagian",
+    "vocabulary": "Kosakata"
+  },
+  "gradeBands": {
+    "g12": "Kelas 1–2",
+    "g34": "Kelas 3–4",
+    "g56": "Kelas 5–6"
+  },
+  "requirements": {
+    "total_questions": "Jawab {minQuestions} soal secara total",
+    "weekly_questions": "Jawab {minQuestions} soal dalam seminggu terakhir",
+    "subject_questions": "Jawab {minQuestions} soal di {subject}",
+    "subject_questions_fallback_subject": "Jawab {minQuestions} soal di satu mata pelajaran",
+    "subject_accuracy": "Capai akurasi {minAccuracy}% di {subject}{topicPart} (minimal {minQuestions} soal)",
+    "subject_accuracy_topic_part": " tentang {topic}",
+    "learning_streak_days": "Belajar selama {minStreakDays} hari berturut-turut",
+    "active_days_streak": "Aktif selama {minStreakDays} hari berturut-turut",
+    "parent_activity_complete": "Selesaikan {minCompletedActivities} aktivitas orang tua",
+    "monthly_learning_minutes": "Belajar {minLearningMinutesMonthly} menit bulan ini",
+    "event_window": "Kartu event spesial — tersedia selama jendela event",
+    "daily_mission_complete": "Selesaikan misi: {missionKey}",
+    "daily_mission_generic": "Selesaikan misi harian",
+    "grade_band_only": "Tersedia untuk {gradeBand}"
+  },
+  "surpriseBox": {
+    "loadError": "Kami tidak bisa memuat kotak kejutan.",
+    "networkError": "Kesalahan jaringan saat memuat kotak kejutan.",
+    "ready": "Kotak kejutan siap!",
+    "readyMultiple": "{count} kotak siap dibuka!",
+    "openError": "Kami tidak bisa membuka kotak sekarang. Coba lagi sebentar lagi.",
+    "noMoreBoxes": "Tidak ada lagi kotak untuk dibuka sekarang.",
+    "noBoxReady": "Belum ada kotak siap sekarang — coba lagi nanti.",
+    "duplicateHint": "Kamu mendapat salinan ekstra — kamu bisa menjual duplikat di toko.",
+    "newCard": "Kartu baru di koleksimu!",
+    "ariaLabel": "Kotak kejutan",
+    "title": "Kotak kejutan",
+    "loading": "Memuat...",
+    "nextBoxIn": "Kotak berikutnya siap dalam",
+    "keepLearning": "Terus belajar — kotak baru segera datang!",
+    "openBox": "Buka kotak",
+    "myCollection": "Koleksiku"
+  },
+  "preview": {
+    "close": "Tutup",
+    "download": "Unduh gambar",
+    "prev": "Kartu sebelumnya",
+    "next": "Kartu berikutnya",
+    "locked": "Terkunci"
+  },
+  "lockedStamp": {
+    "label": "Terkunci"
+  },
+  "shopView": {
+    "loading": "Memuat toko kartu...",
+    "loadErrorTitle": "Kami tidak bisa memuat toko kartu.",
+    "tryAgain": "Coba lagi",
+    "empty": "Tidak ada kartu yang bisa dibeli sekarang.",
+    "coinBalance": "Saldo koin: {amount}",
+    "buyPrice": "Harga beli: {amount}",
+    "sellValue": "Nilai jual: {amount}",
+    "needMoreCoins": "Kamu butuh {amount} lagi",
+    "notEnoughCoinsShort": "Koin tidak cukup",
+    "noDuplicateToSell": "Tidak ada salinan duplikat untuk dijual.",
+    "sellFailed": "Tidak bisa menjual duplikat — coba lagi.",
+    "sellSuccess": "Kamu menjual duplikat {name} dan mendapat {amount}!",
+    "sellNetworkError": "Kesalahan jaringan saat menjual.",
+    "buy": "Beli",
+    "sellDuplicateAction": "Jual duplikat",
+    "selling": "Menjual...",
+    "buying": "Membeli...",
+    "buyFor": "Beli seharga {price}"
+  },
+  "surpriseBoxModal": {
+    "close": "Tutup",
+    "openingTitle": "Membuka kotak...",
+    "doneTitle": "Bagus! Kamu dapat hadiah!",
+    "idleTitle": "Kotak kejutan",
+    "rolling": "Mengundi hadiahmu...",
+    "coinsReward": "+{amount} koin",
+    "diamondsReward": "+{amount} berlian",
+    "openAnother": "Buka kotak lain",
+    "viewCards": "Lihat kartuku",
+    "coinsLabel": "Koin",
+    "diamondsLabel": "Berlian"
+  },
+  "previewModal": {
+    "close": "Tutup",
+    "download": "Unduh kartuku",
+    "downloading": "Mengunduh...",
+    "downloadError": "Kami tidak bisa mengunduh kartu. Coba lagi.",
+    "prev": "Kartu sebelumnya",
+    "next": "Kartu berikutnya",
+    "cardImageAlt": "Gambar kartu",
+    "rarityLabel": "Kelangkaan: {label}",
+    "seriesLabel": "Seri: {label}"
+  },
+  "cardsPage": {
+    "kidsWorldBack": "Dunia Anak",
+    "title": "Kartuku",
+    "subtitle": "Koleksi, toko, semua kartu, dan seri",
+    "featureDisabled": "Koleksi kartu belum tersedia.",
+    "loading": "Memuat kartu...",
+    "loadError": "Kami tidak bisa memuat kartu.",
+    "tryAgain": "Coba lagi",
+    "tabsAriaLabel": "Tab kartu",
+    "collectionEmpty": "Belum ada kartu di koleksimu — buka kotak kejutan di Dunia Anak atau beli di toko!",
+    "catalogEmpty": "Tidak ada kartu untuk ditampilkan.",
+    "seriesEmpty": "Belum ada seri kartu.",
+    "tabs": {
+      "collection": {
+        "label": "Koleksiku",
+        "shortLabel": "Koleksi"
+      },
+      "shop": {
+        "label": "Toko kartu",
+        "shortLabel": "Toko"
+      },
+      "catalog": {
+        "label": "Semua kartu",
+        "shortLabel": "Semua"
+      },
+      "series": {
+        "label": "Seri",
+        "shortLabel": "Seri"
+      }
+    }
+  },
+  "server": {
+    "economyUnavailable": "Ekonomi koin tidak tersedia sekarang",
+    "duplicateConversionRemoved": "Konversi duplikat dihapus — kamu bisa menjual duplikat di toko.",
+    "missingSeries": "Seri hilang — seri dengan slug diperlukan untuk kartu toko/pencapaian",
+    "multipartRequired": "Unggahan harus memakai multipart/form-data",
+    "variantProcessFailed": "Pemrosesan versi kartu gagal",
+    "boxNeedsPrize": "Kotak perlu minimal satu hadiah — kartu dan/atau koin.",
+    "boxSettingsInvalidJson": "Pengaturan kotak harus berupa objek JSON.",
+    "notPurchasable": "Kartu ini tidak bisa dibeli",
+    "alreadyOwnedCollection": "Sudah ada di koleksimu",
+    "insufficientCoinsDetailed": "Koinmu tidak cukup untuk kartu ini"
+  }
+}

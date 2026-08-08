@@ -1,0 +1,6 @@
+{
+  "copy": {
+    "child_id_is_missing": "ID murid tidak ada",
+    "server_error_please_try_again": "Kesalahan server — silakan coba lagi"
+  }
+}

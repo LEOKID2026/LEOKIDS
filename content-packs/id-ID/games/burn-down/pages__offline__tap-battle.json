@@ -1,0 +1,24 @@
+{
+  "copy": {
+    "left_side_wins": "Sisi kiri menang! 🏆",
+    "right_side_wins": "Sisi kanan menang! 🏆",
+    "back": "Kembali",
+    "local_badge": "Lokal",
+    "title": "⚡️ Pertarungan Ketuk",
+    "round_subtitle": "Ronde {round} • {duration} detik",
+    "score_left": "Kiri",
+    "score_tie": "Seri",
+    "score_right": "Kanan",
+    "duration_option": "{duration} detik",
+    "start": "Mulai",
+    "next_round": "Berikutnya",
+    "reset": "Atur ulang",
+    "press_start": "Tekan Mulai untuk memulai",
+    "get_ready": "Bersiap... {countdown}",
+    "time_left": "Waktu: {time} detik",
+    "tie_result": "Seri!",
+    "left_label": "L",
+    "right_label": "R",
+    "taps_count": "{count} ketukan"
+  }
+}

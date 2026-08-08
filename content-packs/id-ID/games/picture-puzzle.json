@@ -1,0 +1,11 @@
+{
+  "gameId": "picture-puzzle",
+  "title": "Puzzle Gambar",
+  "blurb": "Lengkapi potongan gambar Leo!",
+  "help": {
+    "howToPlay": "Seret potongan gambar ke tempat yang tepat di papan. Lengkapi semua potongan sebelum waktu habis.",
+    "scoring": "Semakin cepat selesai dan semakin sedikit langkah, semakin tinggi skornya. Jika waktu habis sebelum selesai - tidak ada kemenangan.",
+    "rewards": "Menyelesaikan puzzle sesuai tingkat kesulitan memberi koin, dan bonus skor menambah lebih banyak lagi.",
+    "tip": "Mulai dari sudut dan tepi - lebih mudah melihat di mana setiap potongan berada."
+  }
+}

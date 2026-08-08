@@ -4,7 +4,7 @@ import {
   activityStatusLabelHe,
 } from "../../lib/classroom-activities/classroom-activities-labels.client.js";
 import { sanitizeActivityTitleHe } from "../../lib/platform-ui/display-labels.js";
-import { subjectLabel, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
+import { apiErrorMessageHe, subjectLabel, teacherAuthFetch } from "../../lib/teacher-portal/teacher-ui.js";
 
 function Overlay({ onClose, children, title }) {
   useEffect(() => {
@@ -77,7 +77,7 @@ export function TeacherPhysicalClassActivitiesModal({ accessToken, classCard, on
     const res = await teacherAuthFetch(accessToken, `/api/teacher/activities?${qs}`);
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
-      setError(body?.error?.message || "Error loading activities");
+      setError(apiErrorMessageHe(body?.error, "Error loading activities"));
       setPhase("error");
       return;
     }

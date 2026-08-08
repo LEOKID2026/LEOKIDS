@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-word-train",
+  "title": "Kereta Kata Leo",
+  "blurb": "Huruf, kata, dan kalimat dalam Bahasa Inggris — naik di gerbong kereta",
+  "help": {
+    "howToPlay": "Pilih kartu, muat ke gerbong kosong, lalu ketuk \"Kirim Kereta\". Kalau jawabannya benar — kereta berangkat!",
+    "scoring": "Jawaban benar +30, bonus waktu, 3 beruntun +15, 5 beruntun +30. Waktu habis −5. Kesalahan tidak mengakhiri gim — hanya dihitung.",
+    "rewards": "Koin diberikan berdasarkan berapa dari 20 tugas yang kamu selesaikan, ketepatan, rentetan, dan tingkat kesulitan.",
+    "tip": "Mudah — hanya huruf. Sedang — kata pendek. Sulit — kalimat pendek."
+  },
+  "accessibility": {
+    "title": "Kereta Kata Leo"
+  }
+}

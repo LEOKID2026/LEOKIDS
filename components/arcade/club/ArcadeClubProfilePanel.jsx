@@ -11,6 +11,9 @@ import { isDemoMode } from "../../../lib/demo/demo-mode.client.js";
 import { demoPackCopyForLocale } from "../../../lib/demo/demo-pack-copy.js";
 import { useI18n } from "../../../lib/i18n/I18nProvider.jsx";
 import StudentLearningAvatar from "./StudentLearningAvatar.jsx";
+import { resolveStudentApiErrorMessage } from "../../../lib/student-client/student-api-legacy-errors.js";
+
+const SLUG = "components__arcade__club__ArcadeClubProfilePanel";
 
 function applyDemoProfileState(locale, setters) {
   const profile = buildDemoArcadeProfile(locale);
@@ -24,7 +27,7 @@ function applyDemoProfileState(locale, setters) {
 
 /** @param {{ gh: Record<string, string>, demoMode?: boolean }} props */
 export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = false }) {
-  const { locale } = useI18n();
+  const { locale, t } = useI18n();
   const demoMode = demoModeProp || isDemoMode();
   const [profile, setProfile] = useState(demoMode ? buildDemoArcadeProfile(locale) : null);
   const [history, setHistory] = useState(demoMode ? [...DEMO_ARCADE_HISTORY] : []);
@@ -89,7 +92,7 @@ export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = fa
         body: JSON.stringify({ displayName }),
       });
       const json = await res.json().catch(() => ({}));
-      setMessage(json.ok ? "Display name updated" : json.error || "Error");
+      setMessage(json.ok ? t("games.apiSuccess") : resolveStudentApiErrorMessage(json, t) || t("games.apiFailed"));
       if (json.ok) await load();
     } finally {
       setBusy(false);
@@ -102,7 +105,7 @@ export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = fa
 
   return (
     <div className={`${gh.arcadePanelProfile || gh.card} space-y-4 text-left`} dir="ltr">
-      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>Player card</h3>
+      <h3 className={gh.arcadeSectionTitle || gh.sectionTitle}>{gamePackCopy(SLUG, "player_card")}</h3>
 
       {demoMode ? (
         <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
@@ -120,29 +123,36 @@ export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = fa
           />
           {demoMode ? null : (
             <Link href="/student/home" className={`text-[11px] font-semibold underline ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-              Change photo on the home page
+              {gamePackCopy(SLUG, "change_photo_on_the_home_page")}
             </Link>
           )}
         </div>
         <div className="min-w-0 flex-1 text-left">
           <p className={`text-lg font-bold ${gh.arcadePanelTitle || gh.cardTitle}`}>{profile.displayName}</p>
           {!demoMode && profile.fullName ? (
-            <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>Official name (parent): {profile.fullName}</p>
+            <p className={`text-xs ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
+              {gamePackCopy(SLUG, "official_name_parent", { fullName: profile.fullName })}
+            </p>
           ) : null}
           <p className={`mt-1 text-sm ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-            Wins: {profile.totalWins ?? 0} · Games: {profile.totalGames ?? 0}
+            {gamePackCopy(SLUG, "wins_games", {
+              wins: profile.totalWins ?? 0,
+              games: profile.totalGames ?? 0,
+            })}
           </p>
         </div>
       </div>
 
       <div className="space-y-2 border-t border-emerald-200/80 pt-4">
-        <label className={`block text-sm font-semibold ${gh.arcadeEntryLabel || gh.entryLabel}`}>Game name:</label>
+        <label className={`block text-sm font-semibold ${gh.arcadeEntryLabel || gh.entryLabel}`}>
+          {gamePackCopy(SLUG, "game_name")}
+        </label>
         {demoMode ? (
           <p className={`text-sm ${gh.arcadePanelBlurb || gh.cardBlurb}`}>{profile.displayName}</p>
         ) : (
           <>
             <p className={`text-[11px] ${gh.arcadePanelBlurb || gh.cardBlurb}`}>
-              Display name for games only — doesn't change your official name or Leo number.
+              {gamePackCopy(SLUG, "display_name_for_games_only_doesn_t_change_your_official_name_or_leo_num")}
             </p>
             <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-stretch">
               <input
@@ -150,7 +160,7 @@ export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = fa
                 maxLength={20}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                placeholder={gamePackCopy("components__arcade__club__ArcadeClubProfilePanel", "display_name")}
+                placeholder={gamePackCopy(SLUG, "display_name")}
               />
               <button
                 type="button"
@@ -158,7 +168,7 @@ export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = fa
                 onClick={() => void saveName()}
                 className={`${gh.btnJoinCode} w-full sm:w-auto sm:shrink-0`}
               >
-                Save name
+                {gamePackCopy(SLUG, "save_name")}
               </button>
             </div>
             {message ? <p className={`text-sm ${gh.userMessage}`}>{message}</p> : null}
@@ -167,16 +177,18 @@ export default function ArcadeClubProfilePanel({ gh, demoMode: demoModeProp = fa
       </div>
 
       <div className="border-t border-emerald-200/80 pt-4">
-        <h4 className={`mb-2 font-semibold ${gh.arcadeSectionTitle || gh.sectionTitle}`}>Recent history</h4>
+        <h4 className={`mb-2 font-semibold ${gh.arcadeSectionTitle || gh.sectionTitle}`}>
+          {gamePackCopy(SLUG, "recent_history")}
+        </h4>
         {!history.length ? (
-          <p className={gh.arcadeEmptyText || gh.emptyText}>No games yet</p>
+          <p className={gh.arcadeEmptyText || gh.emptyText}>{gamePackCopy(SLUG, "no_games_yet")}</p>
         ) : (
           <ul className="space-y-2">
             {history.map((h) => (
               <li key={h.id} className={gh.arcadeRoomItem || gh.roomItem}>
-                <span>{h.gameKey || "Game"} · </span>
-                <span>{h.resultType || "-"} · </span>
-                <span>+{h.rewardAmount || 0} coins</span>
+                <span>{h.gameKey || gamePackCopy(SLUG, "game_fallback")} · </span>
+                <span>{h.resultType || gamePackCopy(SLUG, "result_dash")} · </span>
+                <span>{gamePackCopy(SLUG, "coins_reward", { amount: h.rewardAmount || 0 })}</span>
               </li>
             ))}
           </ul>

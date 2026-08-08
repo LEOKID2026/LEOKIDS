@@ -8,6 +8,11 @@
     "no_games_yet": "No games yet",
     "player_card": "Player card",
     "game_name": "Game name:",
-    "save_name": "Save name"
+    "save_name": "Save name",
+    "official_name_parent": "Official name (parent): {fullName}",
+    "wins_games": "Wins: {wins} · Games: {games}",
+    "game_fallback": "Game",
+    "result_dash": "-",
+    "coins_reward": "+{amount} coins"
   }
 }

@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "close": "Tutup",
+    "leave_table": "Tinggalkan meja",
+    "leaving": "Keluar…",
+    "victory": "Kemenangan",
+    "round_over": "Ronde selesai",
+    "game_has_ended": "Gim telah berakhir",
+    "last_one_standing": "Pemain terakhir yang bertahan — {name}",
+    "winner": "Pemenang",
+    "sending_results": "Mengirim hasil ke saldo kamu…",
+    "round_over_rematch_hint": "Ronde selesai — minta main lagi, lalu host memulai yang berikutnya.",
+    "player": "Pemain",
+    "sending_request": "Mengirim permintaan…",
+    "request_rematch": "Minta main lagi",
+    "cancel_rematch": "Batalkan main lagi",
+    "only_host_can_start": "Hanya host yang bisa memulai gim berikutnya",
+    "starting": "Memulai…",
+    "start_next_host": "Mulai berikutnya (host)",
+    "round_result": "Hasil ronde",
+    "table_multiplier": "Pengali meja",
+    "payout": "Pembayaran",
+    "prizes_claimed": "Hadiah diklaim",
+    "unclaimed": "Belum diklaim",
+    "host_only": "Hanya host",
+    "host_starts_when_all_request": "Host memulai gim baru saat semua pemain yang duduk meminta main lagi.",
+    "coins_amount": "+{amount} koin",
+    "coins_prizes": "+{amount} koin (hadiah)",
+    "coins_plain": "{amount} koin"
+  }
+}

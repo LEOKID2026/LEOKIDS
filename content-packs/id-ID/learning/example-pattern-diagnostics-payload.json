@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-11T12:00:00.000Z",
+  "constants": {
+    "minMistakesPerPatternFamily": 5,
+    "minMistakesForStrongRecommendation": 10,
+    "maxWeaknesses": 3,
+    "maxStrengthRows": 3,
+    "maxMaintain": 2,
+    "maxImproving": 2,
+    "maxStableExcellence": 3,
+    "stableExcellenceMinAccuracy": 92,
+    "stableExcellenceMinQuestions": 22
+  },
+  "subjects": {
+    "math": {
+      "subject": "math",
+      "subjectLabel": "Matematika",
+      "mistakeEventCount": 12,
+      "wrongCount": 12,
+      "hasAnySignal": true,
+      "summaryHe": "Gambaran mata pelajaran matematika: anak berhasil dalam komposisi dari waktu ke waktu. Ada juga ruang untuk penguatan dalam membandingkan kuantitas atau bilangan.",
+      "stableExcellence": [
+        {
+          "id": "math:addition:learning",
+          "labelHe": "Penjumlahan",
+          "questions": 42,
+          "accuracy": 93,
+          "confidence": "high",
+          "needsPractice": false,
+          "excellent": true,
+          "tierHe": "Anak Anda berhasil dengan baik pada topik ini dari waktu ke waktu"
+        }
+      ],
+      "topStrengths": [],
+      "topWeaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Kesulitan membandingkan kuantitas atau bilangan",
+          "mistakeCount": 7,
+          "confidence": "moderate",
+          "tierHe": "Kesulitan terfokus"
+        }
+      ],
+      "parentTopicToneByKey": {},
+      "parentStrengthWithCautionLinesByKey": {},
+      "parentActionHe": "Tiga kali seminggu, 15–20 menit tiap sesi: pilih satu tugas matematika tentang membandingkan kuantitas atau bilangan — baca rumusan bersama, ungkapkan dengan suara apa yang diberikan dan apa yang diminta, lakukan langkah pertama di kertas konsep lalu baru tulis jawaban akhir dan periksa terhadap penyelesaian.",
+      "nextWeekGoalHe": "Target penguatan: tingkatkan persentase keberhasilan dalam membandingkan kuantitas atau bilangan (setidaknya satu percobaan berhasil lebih banyak dari minggu lalu). Tujuan retensi: lanjutkan rutin latihan santai pada komposisi untuk menjaga tingkat akurasi.",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "Berapa tas lebih tinggi harga komputer itu?",
+          "questionLabel": null,
+          "correctAnswer": 120,
+          "userAnswer": 102,
+          "confidence": "moderate"
+        },
+        {
+          "type": "success",
+          "titleHe": "Apa yang anak Anda lakukan dengan baik dalam latihan",
+          "bodyHe": "Pada topik esai ada keberhasilan yang baik dalam periode terpilih: sekitar 93% benar dari 42 pertanyaan.",
+          "confidence": "high"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "math:w:0",
+          "labelHe": "Kesulitan membandingkan kuantitas atau bilangan",
+          "mistakeCount": 7,
+          "confidence": "moderate",
+          "tierHe": "Kesulitan terfokus"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:math:w:0",
+          "textHe": "Sebaiknya berlatih sedikit lebih banyak pada topik: saat membandingkan kuantitas atau bilangan — 7 kesalahan serupa tercatat dalam periode terpilih. Kita tetap pada latihan terfokus, bukan \"mencoba memperbaiki semuanya sekaligus\".",
+          "strength": "moderate"
+        }
+      ],
+      "studentRecommendationsMaintain": [
+        {
+          "id": "stu-maint:math:addition:learning",
+          "textHe": "Lanjutkan latihan dengan nyaman pada topik hubungan — tingkat di sana terjaga (akurasi sekitar 93%).",
+          "strength": "strong"
+        }
+      ],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:math:w:0",
+          "textHe": "Pengulangan jenis kesalahan yang sama mulai muncul — pada topik membandingkan kuantitas atau bilangan. Untuk minggu mendatang, pandangan tenang dan latihan singkat yang terfokus sudah cukup.",
+          "strength": "moderate"
+        }
+      ],
+      "parentRecommendationsMaintain": [
+        {
+          "id": "par-maint:math:addition:learning",
+          "textHe": "Disarankan mendorong ketekunan pada hubungan — terlihat keberhasilan berulang; menjaga kebiasaan positif sama pentingnya dengan memperbaiki kesalahan.",
+          "strength": "strong"
+        }
+      ],
+      "evidenceMistake": {
+        "exerciseText": "Berapa tas lebih tinggi harga komputer itu?",
+        "questionLabel": null,
+        "correctAnswer": 120,
+        "userAnswer": 102,
+        "confidence": "moderate"
+      },
+      "evidenceSuccess": {
+        "titleHe": "Apa yang anak Anda lakukan dengan baik dalam latihan",
+        "bodyHe": "Pada topik esai ada keberhasilan yang baik dalam periode terpilih: sekitar 93% benar dari 42 pertanyaan.",
+        "confidence": "high"
+      },
+      "insufficientData": [
+        {
+          "mistakeCount": 2,
+          "note": "Kurang dari 5 kesalahan pada pola yang sama — masih terlalu dini untuk menentukan kesulitan berulang"
+        }
+      ],
+      "diagnosticSparseNoteHe": null
+    },
+    "geometry": {
+      "subject": "geometry",
+      "subjectLabel": "Geometri",
+      "mistakeEventCount": 9,
+      "wrongCount": 9,
+      "hasAnySignal": true,
+      "summaryHe": "Gambaran keseluruhan di geometri: ada juga ruang untuk memperkuat kebingungan berulang antara keliling dan luas.",
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Kebingungan berulang antara keliling dan luas",
+          "mistakeCount": 6,
+          "confidence": "moderate",
+          "tierHe": "Kesulitan terfokus"
+        }
+      ],
+      "parentActionHe": "Tiga kali seminggu, 15–20 menit tiap sesi: pilih satu tugas geometri tentang kebingungan berulang antara keliling dan luas — baca soal bersama, sebutkan dengan suara apa yang diberikan dan apa yang ditanya, ambil langkah pertama di kertas konsep, lalu tulis jawaban akhir dan periksa.",
+      "nextWeekGoalHe": "Tujuan latihan: naikkan keberhasilan pada kebingungan berulang antara keliling dan luas (setidaknya satu percobaan berhasil lebih banyak dari minggu lalu).",
+      "evidenceExamples": [
+        {
+          "type": "mistake",
+          "exerciseText": "Berapa keliling persegi panjang 5×3 cm?",
+          "questionLabel": null,
+          "correctAnswer": "16 cm",
+          "userAnswer": "15 cm",
+          "confidence": "moderate"
+        }
+      ],
+      "weaknesses": [
+        {
+          "id": "geometry:w:0",
+          "labelHe": "Kebingungan berulang antara keliling dan luas",
+          "mistakeCount": 6,
+          "confidence": "moderate",
+          "tierHe": "Kesulitan terfokus"
+        }
+      ],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [
+        {
+          "id": "stu-imp:geometry:w:0",
+          "textHe": "Sebaiknya berlatih sedikit lebih banyak pada topik: kebingungan berulang antara keliling dan luas — 6 kesalahan serupa tercatat dalam periode terpilih. Kita tetap pada latihan terfokus, bukan \"mencoba memperbaiki semuanya sekaligus\".",
+          "strength": "moderate"
+        }
+      ],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [
+        {
+          "id": "par-imp:geometry:w:0",
+          "textHe": "Pengulangan jenis kesalahan yang sama mulai muncul — pada topik kebingungan berulang antara keliling dan luas. Untuk minggu mendatang, pandangan tenang dan latihan singkat yang terfokus sudah cukup.",
+          "strength": "moderate"
+        }
+      ],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": {
+        "exerciseText": "Berapa keliling persegi panjang 5×3 cm?",
+        "questionLabel": null,
+        "correctAnswer": "16 cm",
+        "userAnswer": "15 cm",
+        "confidence": "moderate"
+      },
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "english": {
+      "subject": "english",
+      "subjectLabel": "Bahasa Inggris",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    },
+    "science": {
+      "subject": "science",
+      "subjectLabel": "IPA",
+      "mistakeEventCount": 0,
+      "wrongCount": 0,
+      "hasAnySignal": false,
+      "summaryHe": null,
+      "topStrengths": [],
+      "stableExcellence": [],
+      "topWeaknesses": [],
+      "parentActionHe": null,
+      "nextWeekGoalHe": null,
+      "evidenceExamples": [],
+      "weaknesses": [],
+      "strengths": [],
+      "excellent": [],
+      "maintain": [],
+      "improving": [],
+      "studentRecommendationsImprove": [],
+      "studentRecommendationsMaintain": [],
+      "parentRecommendationsImprove": [],
+      "parentRecommendationsMaintain": [],
+      "evidenceMistake": null,
+      "evidenceSuccess": null,
+      "insufficientData": [],
+      "diagnosticSparseNoteHe": null
+    }
+  }
+}

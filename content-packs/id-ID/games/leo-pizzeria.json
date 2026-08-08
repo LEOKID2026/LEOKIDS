@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-pizzeria",
+  "title": "Pizzeria Leo",
+  "blurb": "Bangun, kenali, setara, bandingkan, dan gabungkan pecahan",
+  "help": {
+    "howToPlay": "Bangun pecahan di pizza, kenali dari gambar, lengkapi jadi utuh, bandingkan, atau padankan yang setara — sesuai tugas. Ketuk \"Sajikan Pizza\" kalau sudah siap.",
+    "scoring": "Jawaban benar +30, bonus streak. Setelah 3 kali gagal, solusi ditampilkan.",
+    "rewards": "Koin diberikan berdasarkan berapa banyak pelanggan yang kamu layani, ketepatan, rentetan, dan tingkat kesulitan — meski kamu belum melayani semua 20 pelanggan.",
+    "tip": "Perhatikan pembilang dan penyebut — potongan pizza selalu bagian yang sama."
+  },
+  "accessibility": {
+    "title": "Pizzeria Leo"
+  }
+}

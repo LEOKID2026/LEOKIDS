@@ -1,0 +1,236 @@
+{
+  "probesByErrorTag": {
+    "adds_denominators_directly": {
+      "skill": "Mencari penyebut sama sebelum menjumlahkan pecahan",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Periksa apakah kesulitannya mencari penyebut sama sebelum penjumlahan itu sendiri, dengan pertanyaan singkat tentang satu penyebut sama saja."
+    },
+    "wrong_lcm": {
+      "skill": "Memahami KPK penyebut",
+      "suggestedQuestionType": "fraction_lcm_pair_compare",
+      "reason": "Jalankan pasangan penyebut kecil dan minta mengidentifikasi KPK sebelum menggabungkan."
+    },
+    "ignores_denominator": {
+      "skill": "Menghubungkan pembilang–penyebut dalam operasi pecahan",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Perkuat hubungan antara pembilang dan penyebut sebelum menggabungkan dua pecahan."
+    },
+    "concept_gap": {
+      "skill": "Memahami pecahan sebagai rasio",
+      "suggestedQuestionType": "fraction_meaning_visual",
+      "reason": "Tunjukkan representasi visual pecahan sebagai rasio sebelum algoritma penjumlahan."
+    },
+    "operation_confusion": {
+      "skill": "Membedakan penjumlahan dari perkalian pecahan",
+      "suggestedQuestionType": "fraction_operation_gate",
+      "reason": "Secara eksplisit pilih satu operasi (jumlah/kurang/kali) dengan kalimat panduan singkat."
+    },
+    "tense_confusion": {
+      "skill": "Mencocokkan kala dengan kata waktu atau subjek",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Pilih pasangan minimal (mis. past/present) dengan akar yang sama dan kata waktu yang jelas."
+    },
+    "grammar_pattern_error": {
+      "skill": "Mencocokkan bentuk kata kerja dengan subjek",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi kalimat pendek dengan subjek tunggal/jamak dan bentuk kata kerja yang cocok."
+    },
+    "vocabulary_gap": {
+      "skill": "Kosakata dalam kalimat pendek",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Lengkapi sebuah kata dalam kalimat pendek dengan konteks jelas (bukan daftar kata berdiri sendiri)."
+    },
+    "concept_confusion": {
+      "skill": "Membedakan konsep IPA yang berdekatan",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Sajikan dua konsep berdekatan dan pilih satu definisi benar dari teks yang dipersingkat."
+    },
+    "fact_recall_gap": {
+      "skill": "Mengingat fakta dari pelajaran",
+      "suggestedQuestionType": "science_fact_one_line_recall",
+      "reason": "Pertanyaan singkat dengan satu jawaban ketat dari materi yang dipelajari."
+    },
+    "cause_effect_gap": {
+      "skill": "Hubungan sebab–akibat",
+      "suggestedQuestionType": "science_cause_effect_pair",
+      "reason": "Pilih apa yang berasal dari sebab dan apa dari akibat dalam situasi sederhana."
+    },
+    "classification_error": {
+      "skill": "Mengklasifikasi menurut satu kriteria",
+      "suggestedQuestionType": "science_single_criterion_sort",
+      "reason": "Sajikan himpunan kecil dan minta mengklasifikasi menurut satu atribut yang jelas."
+    },
+    "place_value_error": {
+      "skill": "Nilai tempat suatu digit",
+      "suggestedQuestionType": "place_value_digit_value",
+      "reason": "Isolasi nilai tempat satu digit dalam bilangan pada latihan singkat."
+    },
+    "multiplication_fact_gap": {
+      "skill": "Fakta tabel perkalian",
+      "suggestedQuestionType": "multiplication_fact_check",
+      "reason": "Pertanyaan perkalian langsung singkat dari tabel perkalian."
+    },
+    "geometry_calculation_slip": {
+      "skill": "Memilih rumus atau langkah pertama dalam geometri",
+      "suggestedQuestionType": "geometry_formula_choice",
+      "reason": "Pilih rumus atau langkah pertama yang tepat sebelum perhitungan numerik."
+    },
+    "prerequisite_gap": {
+      "skill": "Konsep prasyarat",
+      "suggestedQuestionType": "geometry_concept_minimal_contrast",
+      "reason": "Perkuat konsep dasar sebelum melanjutkan."
+    },
+    "spelling_pattern_error": {
+      "skill": "Ejaan dalam konteks singkat",
+      "suggestedQuestionType": "english_vocab_in_context_cloze",
+      "reason": "Lengkapi sebuah kata dalam kalimat dengan konteks jelas."
+    },
+    "present_simple_3rd_singular_error": {
+      "skill": "Bentuk kata kerja orang ketiga dalam simple present",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi kalimat pendek dengan he/she/it dan pilih bentuk kata kerja yang cocok."
+    },
+    "past_tense_form_error": {
+      "skill": "Bentuk simple past",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Pilih pasangan minimal past/present dengan akar yang sama."
+    },
+    "progressive_aspect_error": {
+      "skill": "Present continuous (am/is/are + V-ing)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Periksa pilihan antara tindakan berkelanjutan dan kala sederhana."
+    },
+    "question_word_order_error": {
+      "skill": "Urutan kata dalam pertanyaan",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Isolasi kalimat pertanyaan pendek dengan do/does/is/are di tempat yang tepat."
+    },
+    "modal_verb_error": {
+      "skill": "Kata kerja bantu (can/must/should)",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Pilih antara dua kata kerja bantu dalam kalimat pendek dengan kata kerja utama yang sama."
+    },
+    "quantifier_choice_error": {
+      "skill": "Kuantor (some/many/much)",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Bedakan kuantitas dapat dihitung vs. tidak dapat dihitung dalam kalimat pendek."
+    },
+    "comparative_form_error": {
+      "skill": "Bentuk perbandingan",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Pilih -er/-est atau more/most dalam kalimat pendek."
+    },
+    "future_form_error": {
+      "skill": "Future (will / going to)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Pilih antara will dan going to dalam konteks yang jelas."
+    },
+    "perfect_aspect_error": {
+      "skill": "Perfect tenses (have/had + V3)",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Periksa bentuk perfect terhadap kala sederhana dalam konteks yang sama."
+    },
+    "conditional_clause_error": {
+      "skill": "Kalimat kondisional",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Isolasi if/when dengan bentuk kata kerja yang cocok pada satu orang."
+    },
+    "sentence_structure_error": {
+      "skill": "Struktur kalimat",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi kalimat pendek dengan urutan kata dan bentuk kata kerja yang konsisten."
+    },
+    "advanced_grammar_error": {
+      "skill": "Tata bahasa lanjutan",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi satu kalimat dengan pola tata bahasa yang jelas untuk diperiksa."
+    }
+  },
+  "probesByDiagnosticSkillId": {
+    "math_frac_same_den": {
+      "skill": "Menjumlahkan/mengurangi pecahan dengan penyebut sama",
+      "suggestedQuestionType": "fraction_same_den_twice",
+      "reason": "Konfirmasi stabilitas pada pembilang ketika penyebut sudah sama."
+    },
+    "math_frac_common_denominator": {
+      "skill": "Mencari penyebut sama sebelum menjumlahkan",
+      "suggestedQuestionType": "fraction_common_denominator_only",
+      "reason": "Periksa dulu langkah penyebut sama tanpa langsung ke jawaban akhir."
+    },
+    "en_grammar_be_present": {
+      "skill": "Bentuk be dengan subjek",
+      "suggestedQuestionType": "english_be_agreement_gate",
+      "reason": "Isolasi kalimat dengan I/he/they dan pilih bentuk be yang cocok."
+    },
+    "en_grammar_present_simple": {
+      "skill": "Simple present — kesesuaian subjek–kata kerja",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi kalimat pendek dengan he/she/it dan pilih bentuk kata kerja yang cocok."
+    },
+    "en_grammar_past_simple": {
+      "skill": "Simple past",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Pilih pasangan minimal past/present dengan akar yang sama."
+    },
+    "en_grammar_progressive": {
+      "skill": "Present continuous",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Periksa pilihan antara tindakan berkelanjutan dan kala sederhana."
+    },
+    "en_grammar_question_frames": {
+      "skill": "Kerangka pertanyaan",
+      "suggestedQuestionType": "english_question_frame_word_order",
+      "reason": "Isolasi kalimat pertanyaan pendek dengan do/does/is/are di tempat yang tepat."
+    },
+    "en_grammar_modals": {
+      "skill": "Kata kerja bantu",
+      "suggestedQuestionType": "english_modal_minimal_pair",
+      "reason": "Pilih antara dua kata kerja bantu dalam kalimat pendek."
+    },
+    "en_grammar_quantifiers": {
+      "skill": "Kuantor",
+      "suggestedQuestionType": "english_quantifier_minimal_pair",
+      "reason": "Bedakan some/many/much dalam kalimat pendek."
+    },
+    "en_grammar_comparatives": {
+      "skill": "Perbandingan",
+      "suggestedQuestionType": "english_comparative_form_short",
+      "reason": "Pilih bentuk perbandingan dalam kalimat pendek."
+    },
+    "en_grammar_future_forms": {
+      "skill": "Future",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Pilih antara will dan going to dalam konteks yang jelas."
+    },
+    "en_grammar_complex_tenses": {
+      "skill": "Perfect tenses",
+      "suggestedQuestionType": "english_tense_minimal_pair",
+      "reason": "Periksa perfect vs. kala sederhana dalam konteks yang sama."
+    },
+    "en_grammar_conditionals": {
+      "skill": "Kondisional",
+      "suggestedQuestionType": "english_conditional_clause_short",
+      "reason": "Isolasi if/when dengan bentuk kata kerja yang cocok."
+    },
+    "en_grammar_phase29_standard": {
+      "skill": "Mencocokkan bentuk kata kerja dengan subjek",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi kalimat pendek dengan subjek tunggal/jamak dan bentuk kata kerja yang cocok."
+    },
+    "en_grammar_phase29_advanced": {
+      "skill": "Tata bahasa lanjutan — langkah menengah",
+      "suggestedQuestionType": "english_subject_verb_agreement_short",
+      "reason": "Isolasi satu kalimat dengan pola tata bahasa yang jelas untuk diperiksa."
+    },
+    "sci_body_fact_recall": {
+      "skill": "Mengingat fakta tubuh/sistem",
+      "suggestedQuestionType": "science_fact_single_choice",
+      "reason": "Satu pertanyaan fakta ketat dari materi tentang organ atau sistem."
+    },
+    "sci_respiration_concept": {
+      "skill": "Peran sistem pernapasan dalam pertukaran gas",
+      "suggestedQuestionType": "science_concept_minimal_contrast",
+      "reason": "Bedakan pengangkutan darah dari pertukaran oksigen/CO2 dengan udara."
+    }
+  }
+}

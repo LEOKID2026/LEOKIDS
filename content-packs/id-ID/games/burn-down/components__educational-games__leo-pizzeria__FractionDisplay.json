@@ -1,0 +1,8 @@
+{
+  "fraction_zero": "nol",
+  "fraction_whole": "satu utuh",
+  "fraction_parts": "{numerator} dari {denominator} bagian sama",
+  "compare_greater": "Pecahan pertama lebih besar",
+  "compare_less": "Pecahan kedua lebih besar",
+  "compare_equal": "Pecahannya sama"
+}

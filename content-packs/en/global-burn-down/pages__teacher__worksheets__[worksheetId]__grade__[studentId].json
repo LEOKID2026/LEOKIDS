@@ -1,5 +1,11 @@
 {
   "copy": {
-    "grade_student": "Grade student"
+    "grade_student": "Grade student",
+    "saved_and_marked_as_reviewed": "Saved and marked as reviewed",
+    "progress_saved": "Progress saved",
+    "published_to_student": "Published to student · Score: {score}%",
+    "network_error": "Network error",
+    "loading": "Loading…",
+    "error_generic": "Error"
   }
 }

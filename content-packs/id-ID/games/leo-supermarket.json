@@ -1,0 +1,14 @@
+{
+  "gameId": "leo-supermarket",
+  "title": "Toko Kelontong Leo",
+  "blurb": "Gim tentang uang, belanja, dan memberi kembalian",
+  "help": {
+    "howToPlay": "Pelanggan meminta produk — ambil dari rak, hitung kembalian, dan pilih koin yang cocok. Ketuk \"Berikan Kembalian\" saat kamu siap.",
+    "scoring": "Produk benar +10, uang kembalian benar +25, pelanggan puas +30, kembalian benar di percobaan pertama +10, layanan cepat +5. Kesalahan atau kehabisan waktu −5.",
+    "rewards": "Koin diberikan berdasarkan berapa banyak pelanggan yang kamu layani, ketepatan, rentetan, dan tingkat kesulitan — meski kamu belum melayani semua 20 pelanggan.",
+    "tip": "Periksa total belanja dan berapa yang dibayar pelanggan — hitung sendiri berapa kembalian yang harus diberikan."
+  },
+  "accessibility": {
+    "title": "Toko Kelontong Leo"
+  }
+}

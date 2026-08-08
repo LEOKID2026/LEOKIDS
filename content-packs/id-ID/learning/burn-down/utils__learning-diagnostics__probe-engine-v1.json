@@ -1,0 +1,23 @@
+{
+  "copy": {
+    "thin_practice_window_need_more_observations_before_stable_interpretation": "Jendela latihan tipis — butuh lebih banyak observasi sebelum interpretasi yang stabil.",
+    "stable_accuracy_over_at_least_two_sessions": "Akurasi stabil selama setidaknya dua sesi",
+    "continued_random_incorrect_pattern_without_convergence": "Pola acak/salah yang berlanjut tanpa konvergensi",
+    "re_evaluate_mastery_and_misconceptions": "Evaluasi ulang penguasaan dan miskonsepsi",
+    "consistent_correct_responses_on_parallel_items": "Respons benar yang konsisten pada butir paralel",
+    "repeated_same_distractor_selection": "Pemilihan pengecoh yang sama berulang",
+    "escalate_practice_specificity": "Tingkatkan kekhususan latihan",
+    "prerequisite_strengths_unclear_relative_to_advanced_skill": "Kekuatan prasyarat belum jelas relatif terhadap keterampilan lanjutan.",
+    "prerequisite_skill_shows_independent_accuracy": "Keterampilan prasyarat menunjukkan akurasi mandiri",
+    "prerequisite_remains_unstable": "Prasyarat masih belum stabil",
+    "foundation_review_vs_isolated_advanced_gap": "Ulasan fondasi vs kesenjangan lanjutan yang terisolasi",
+    "strong_observed_mastery_with_adequate_volume_optional_challenge_probe_to": "Penguasaan teramati kuat dengan volume memadai — probe tantangan opsional untuk mengonfirmasi transfer.",
+    "maintains_accuracy_on_harder_parallel_items": "Mempertahankan akurasi pada butir paralel yang lebih sulit",
+    "breakdown_on_increased_complexity": "Gagal saat kompleksitas ditingkatkan",
+    "adjust_level_or_add_scaffolded_practice": "Sesuaikan tingkat atau tambah latihan bertahap",
+    "default_maintenance_probe_confirm_stability": "Probe pemeliharaan bawaan — konfirmasi stabilitas.",
+    "meet_or_exceed_recent_accuracy_band": "Capai atau lampaui pita akurasi terkini",
+    "accuracy_drops_materially": "Akurasi turun secara material",
+    "adjust_practice_plan": "Sesuaikan rencana latihan"
+  }
+}

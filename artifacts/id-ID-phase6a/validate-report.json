@@ -1,0 +1,88 @@
+{
+  "englishAuthority": [
+    "utils/learning-content-en/math.js",
+    "utils/learning-content-en/geometry.js",
+    "content-packs/en/learning/geometry-content.json (labels; EN pack — id-ID embeds maps in geometry.js)"
+  ],
+  "indonesianTarget": [
+    "utils/learning-content-id-ID/math.js",
+    "utils/learning-content-id-ID/geometry.js",
+    "utils/learning-content-id-ID/index.js"
+  ],
+  "mathKindsEn": 75,
+  "mathKindsId": 75,
+  "mathMissing": [],
+  "mathOrphan": [],
+  "geoKindsEn": 9,
+  "geoKindsId": 9,
+  "geoMissing": [],
+  "geoOrphan": [],
+  "enMathPhCount": 257,
+  "idMathPhCount": 257,
+  "enGeoPhCount": 8,
+  "idGeoPhCount": 8,
+  "placeholderCountDeltaMath": 0,
+  "placeholderCountDeltaGeo": 0,
+  "paramExprBagEqual": true,
+  "enMathDisplayTemplates": 128,
+  "enGeoDisplayTemplates": 7,
+  "totalEnDisplayTemplates": 135,
+  "idMathDisplayTemplates": 128,
+  "idGeoDisplayTemplates": 8,
+  "unexplainedEnglishProse": 0,
+  "unexplainedSample": [],
+  "gradeDefects": [],
+  "siswaDefects": [],
+  "hasApplyIdId": true,
+  "sampleResults": [
+    {
+      "subject": "math",
+      "kind": "wp_simple_add",
+      "stem": "Leo punya 3 bola dan mendapat 4 lagi. Berapa bola Leo semuanya?",
+      "paramsEqual": true
+    },
+    {
+      "subject": "math",
+      "kind": "ns_even_odd",
+      "stem": "Apakah 8 bilangan genap?",
+      "paramsEqual": true
+    },
+    {
+      "subject": "math",
+      "kind": "frac_half",
+      "stem": "Berapa setengah dari 10?",
+      "paramsEqual": true
+    },
+    {
+      "subject": "geometry",
+      "kind": "square_area",
+      "stem": "Berapa luas persegi dengan sisi 5?",
+      "paramsEqual": true
+    },
+    {
+      "subject": "geometry",
+      "kind": "circle_area",
+      "stem": "Lingkaran dengan jari-jari 3. Berapa luasnya? (π = 3.14)",
+      "paramsEqual": true
+    }
+  ],
+  "exports": {
+    "math": [
+      "applyMathLevelPresentationIdId",
+      "localizeMathQuestionIdId",
+      "rebuildMathStemIdId"
+    ],
+    "geo": [
+      "geometryFallbackStemIdId",
+      "localizeGeometryQuestionIdId",
+      "rebuildGeometryStemIdId"
+    ],
+    "index": [
+      "applyIdIdDisplayLayer",
+      "localizeGeometryQuestionIdId",
+      "localizeMathQuestionIdId",
+      "rebuildGeometryStemIdId",
+      "rebuildMathStemIdId"
+    ]
+  }
+}

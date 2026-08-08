@@ -1,0 +1,19 @@
+{
+  "copy": {
+    "back": "Kembali",
+    "local_badge": "Lokal",
+    "title": "Tic-Tac-Toe",
+    "board_meta": "Papan {size}×{size} • {mode}",
+    "vs_bot": "Lawan Bot",
+    "two_players": "2 Pemain",
+    "player_x": "Pemain X",
+    "player_o": "Pemain O",
+    "tie": "Seri",
+    "vs_bot_label": "Lawan Bot",
+    "reset_board": "Atur Ulang Papan",
+    "reset_score": "Atur Ulang Skor",
+    "player_won": "{player} menang!",
+    "tie_game": "Seri!",
+    "turn": "Giliran:"
+  }
+}
