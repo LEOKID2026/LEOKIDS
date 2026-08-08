@@ -1,4 +1,12 @@
-import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useI18n } from "../../lib/i18n/I18nProvider.jsx";
 import {
   getLocaleSelectorRegion,
@@ -6,11 +14,14 @@ import {
   groupLocalesBySelectorRegion,
   SELECTOR_REGION_ORDER,
 } from "../../lib/i18n/locale-selector-regions.js";
+import { computeSelectorPanelBox } from "../../lib/i18n/locale-selector-panel.js";
+import MarketFlag from "./MarketFlag.jsx";
 
 /**
  * Accessible HUD language switcher — uses `getSelectableLocales()` via I18nProvider.
  * Persists via `setLocale` (cookie + optional profile) and navigates same path under the locale prefix.
  * Markets are grouped by region with search; locale ids are never shown as UX labels.
+ * Panel uses fixed, viewport-aware positioning so mobile viewports never clip horizontally.
  *
  * @param {{
  *   className?: string,
@@ -27,7 +38,11 @@ export default function LanguageSwitcher({
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [expanded, setExpanded] = useState(/** @type {Record<string, boolean>} */ ({}));
+  const [panelBox, setPanelBox] = useState(
+    /** @type {null | { left: number, top: number, width: number, maxHeight: number }} */ (null)
+  );
   const rootRef = useRef(/** @type {HTMLDivElement | null} */ (null));
+  const triggerRef = useRef(/** @type {HTMLButtonElement | null} */ (null));
   const searchRef = useRef(/** @type {HTMLInputElement | null} */ (null));
   const listId = useId();
   const searchId = useId();
@@ -41,6 +56,30 @@ export default function LanguageSwitcher({
   const close = useCallback(() => {
     setOpen(false);
     setQuery("");
+    setPanelBox(null);
+  }, []);
+
+  const updatePanelPosition = useCallback(() => {
+    const trigger = triggerRef.current;
+    if (!trigger || typeof window === "undefined") return;
+    const rect = trigger.getBoundingClientRect();
+    const box = computeSelectorPanelBox(
+      rect,
+      { width: window.innerWidth, height: window.innerHeight },
+      {
+        margin: 8,
+        gap: 4,
+        preferredWidth: 320,
+        preferredMaxHeight: 420,
+        minHeight: 160,
+      }
+    );
+    setPanelBox({
+      left: box.left,
+      top: box.top,
+      width: box.width,
+      maxHeight: box.maxHeight,
+    });
   }, []);
 
   useEffect(() => {
@@ -66,6 +105,22 @@ export default function LanguageSwitcher({
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open, close]);
+
+  useLayoutEffect(() => {
+    if (!open) return undefined;
+    updatePanelPosition();
+    const onWin = () => updatePanelPosition();
+    window.addEventListener("resize", onWin);
+    window.addEventListener("scroll", onWin, true);
+    window.visualViewport?.addEventListener("resize", onWin);
+    window.visualViewport?.addEventListener("scroll", onWin);
+    return () => {
+      window.removeEventListener("resize", onWin);
+      window.removeEventListener("scroll", onWin, true);
+      window.visualViewport?.removeEventListener("resize", onWin);
+      window.visualViewport?.removeEventListener("scroll", onWin);
+    };
+  }, [open, updatePanelPosition]);
 
   useEffect(() => {
     if (!open) return;
@@ -105,28 +160,28 @@ export default function LanguageSwitcher({
   const isClassic = appearance === "classic";
 
   const triggerClass = isBright
-    ? "inline-flex items-center gap-1 min-h-8 px-2.5 py-1 rounded-lg border border-slate-200 bg-white text-slate-700 text-xs sm:text-sm font-semibold hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+    ? "inline-flex items-center gap-1.5 min-h-8 max-w-[min(70vw,14rem)] px-2.5 py-1 rounded-lg border border-slate-200 bg-white text-slate-700 text-xs sm:text-sm font-semibold hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
     : isClassic
-      ? "inline-flex items-center gap-1 min-h-8 px-2.5 py-1 rounded-lg border border-white/20 bg-white/5 text-white/90 text-xs sm:text-sm font-semibold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
-      : "inline-flex items-center gap-1 min-h-8 px-2.5 py-1 rounded-lg border border-gray-300 bg-white text-gray-800 text-xs sm:text-sm font-semibold hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500";
+      ? "inline-flex items-center gap-1.5 min-h-8 max-w-[min(70vw,14rem)] px-2.5 py-1 rounded-lg border border-white/20 bg-white/5 text-white/90 text-xs sm:text-sm font-semibold hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+      : "inline-flex items-center gap-1.5 min-h-8 max-w-[min(70vw,14rem)] px-2.5 py-1 rounded-lg border border-gray-300 bg-white text-gray-800 text-xs sm:text-sm font-semibold hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500";
 
-  const panelClass = isBright
-    ? "absolute end-0 top-full z-50 mt-1 w-[min(92vw,20rem)] rounded-xl border border-slate-200 bg-white shadow-lg overflow-hidden"
+  const panelTone = isBright
+    ? "rounded-xl border border-slate-200 bg-white shadow-lg"
     : isClassic
-      ? "absolute end-0 top-full z-50 mt-1 w-[min(92vw,20rem)] rounded-xl border border-white/15 bg-[#0b1020] shadow-lg overflow-hidden"
-      : "absolute end-0 top-full z-50 mt-1 w-[min(92vw,20rem)] rounded-xl border border-gray-200 bg-white shadow-lg overflow-hidden";
+      ? "rounded-xl border border-white/15 bg-[#0b1020] shadow-lg"
+      : "rounded-xl border border-gray-200 bg-white shadow-lg";
 
   const stickyClass = isBright
-    ? "sticky top-0 z-10 border-b border-slate-100 bg-white"
+    ? "shrink-0 border-b border-slate-100 bg-white"
     : isClassic
-      ? "sticky top-0 z-10 border-b border-white/10 bg-[#0b1020]"
-      : "sticky top-0 z-10 border-b border-gray-100 bg-white";
+      ? "shrink-0 border-b border-white/10 bg-[#0b1020]"
+      : "shrink-0 border-b border-gray-100 bg-white";
 
   const searchInputClass = isBright
-    ? "w-full min-h-9 rounded-lg border border-slate-200 bg-white px-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-sky-500"
+    ? "w-full min-w-0 min-h-9 rounded-lg border border-slate-200 bg-white px-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-sky-500"
     : isClassic
-      ? "w-full min-h-9 rounded-lg border border-white/15 bg-white/5 px-2.5 text-sm text-white placeholder:text-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-emerald-400"
-      : "w-full min-h-9 rounded-lg border border-gray-300 bg-white px-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-sky-500";
+      ? "w-full min-w-0 min-h-9 rounded-lg border border-white/15 bg-white/5 px-2.5 text-sm text-white placeholder:text-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-emerald-400"
+      : "w-full min-w-0 min-h-9 rounded-lg border border-gray-300 bg-white px-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-sky-500";
 
   const currentRowClass = isBright
     ? "px-3 py-2 text-xs font-semibold text-sky-800 bg-sky-50"
@@ -141,7 +196,7 @@ export default function LanguageSwitcher({
       : "w-full flex items-center justify-between gap-2 px-3 py-2 text-xs font-bold uppercase tracking-wide text-gray-500 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-sky-500";
 
   const optionBase =
-    "w-full text-start px-3 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]";
+    "w-full inline-flex items-start gap-2 text-start px-2.5 sm:px-3 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]";
   const optionIdle = isBright
     ? "text-slate-700 hover:bg-sky-50 focus-visible:outline-sky-500"
     : isClassic
@@ -186,8 +241,10 @@ export default function LanguageSwitcher({
       dir="ltr"
       data-language-switcher="hud"
       data-language-switcher-layout="region-search"
+      data-language-switcher-panel-mode="fixed-viewport"
     >
       <button
+        ref={triggerRef}
         type="button"
         className={triggerClass}
         aria-label={label}
@@ -196,14 +253,27 @@ export default function LanguageSwitcher({
         aria-controls={listId}
         onClick={() => setOpen((prev) => !prev)}
       >
-        <span aria-hidden="true">{currentName}</span>
-        <span className="text-[0.65rem] opacity-70" aria-hidden="true">
+        <MarketFlag localeId={current.id} />
+        <span className="min-w-0 truncate" aria-hidden="true">
+          {currentName}
+        </span>
+        <span className="shrink-0 text-[0.65rem] opacity-70" aria-hidden="true">
           {open ? "▴" : "▾"}
         </span>
       </button>
 
-      {open ? (
-        <div className={panelClass} data-language-switcher-panel="1">
+      {open && panelBox ? (
+        <div
+          className={`fixed z-50 flex flex-col overflow-hidden ${panelTone}`}
+          data-language-switcher-panel="1"
+          style={{
+            left: panelBox.left,
+            top: panelBox.top,
+            width: panelBox.width,
+            maxWidth: "calc(100vw - 16px)",
+            maxHeight: panelBox.maxHeight,
+          }}
+        >
           <div className={`${stickyClass} p-2 space-y-2`}>
             <label className="sr-only" htmlFor={searchId}>
               {searchPlaceholder}
@@ -220,8 +290,14 @@ export default function LanguageSwitcher({
               autoCorrect="off"
               spellCheck={false}
             />
-            <div className={currentRowClass} data-language-switcher-current={locale}>
-              {currentName} ✓
+            <div
+              className={`${currentRowClass} flex items-start gap-2 min-w-0`}
+              data-language-switcher-current={locale}
+            >
+              <MarketFlag localeId={current.id} />
+              <span className="min-w-0 break-words">
+                {currentName} ✓
+              </span>
             </div>
           </div>
 
@@ -229,7 +305,7 @@ export default function LanguageSwitcher({
             id={listId}
             role="listbox"
             aria-label={label}
-            className="max-h-[min(60vh,420px)] overflow-y-auto overflow-x-hidden overscroll-contain"
+            className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
           >
             {groups.length === 0 ? (
               <div className={emptyClass}>{noResults}</div>
@@ -245,11 +321,13 @@ export default function LanguageSwitcher({
                       aria-expanded={isOpen}
                       onClick={() => toggleRegion(group.regionId)}
                     >
-                      <span>
+                      <span className="min-w-0 break-words text-start">
                         {heading}
                         <span className="ms-1 font-semibold opacity-70">({group.locales.length})</span>
                       </span>
-                      <span aria-hidden="true">{isOpen ? "▾" : "▸"}</span>
+                      <span className="shrink-0" aria-hidden="true">
+                        {isOpen ? "▾" : "▸"}
+                      </span>
                     </button>
                     {isOpen
                       ? group.locales.map((loc) => {
@@ -261,17 +339,23 @@ export default function LanguageSwitcher({
                               type="button"
                               role="option"
                               aria-selected={active}
+                              aria-label={name}
                               className={`${optionBase} ${active ? optionActive : optionIdle}`}
                               onClick={() => {
                                 void selectLocale(loc.id);
                               }}
                             >
-                              {name}
+                              <MarketFlag localeId={loc.id} />
+                              <span className="min-w-0 flex-1 break-words whitespace-normal text-start leading-snug">
+                                {name}
+                              </span>
                               {active ? (
-                                <span className="ms-2 text-[0.7rem] opacity-80" aria-hidden="true">
+                                <span className="shrink-0 text-[0.7rem] opacity-80 pt-0.5" aria-hidden="true">
                                   ✓
                                 </span>
-                              ) : null}
+                              ) : (
+                                <span className="w-3 shrink-0" aria-hidden="true" />
+                              )}
                             </button>
                           );
                         })

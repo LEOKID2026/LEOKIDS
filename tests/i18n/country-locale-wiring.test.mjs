@@ -225,7 +225,7 @@ const SELECTOR_LABELS = [
   "Togo",
   "Tunisia",
   "USA-es",
-  "United Arab Emirates",
+  "UAE",
   "Uruguay",
   "Uzbekistan-ru",
   "Venezuela",

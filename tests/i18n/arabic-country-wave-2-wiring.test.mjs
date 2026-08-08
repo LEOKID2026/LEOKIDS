@@ -89,7 +89,7 @@ const COUNTRIES = [
   {
     id: "ar-AE",
     prefix: "ae",
-    label: "United Arab Emirates",
+    label: "UAE",
     chain: ["ar-AE", "ar-001", "en"],
     grade6: "الصف السادس",
     classLabelIncludes: "الشعبة",

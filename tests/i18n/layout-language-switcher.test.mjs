@@ -229,19 +229,18 @@ test("Layout HUD mounts LanguageSwitcher once via shared chrome", () => {
     path.join(repoRoot, "components/i18n/LanguageSwitcher.jsx"),
     "utf8"
   );
-  assert.match(switcher, /getSelectableLocales|selectableLocales|localePickerLocales/);
-  assert.match(switcher, /setLocale/);
-  assert.match(switcher, /aria-label/);
-  assert.match(switcher, /Escape/);
-  assert.match(switcher, /groupLocalesBySelectorRegion/);
-  assert.match(switcher, /Search country|searchPlaceholder/);
-  assert.match(switcher, /max-h-\[min\(60vh,420px\)\]/);
+  assert.match(switcher, /data-language-switcher-layout="region-search"/);
+  assert.match(switcher, /data-language-switcher-panel-mode="fixed-viewport"/);
+  assert.match(switcher, /computeSelectorPanelBox/);
+  assert.match(switcher, /import MarketFlag from "\.\/MarketFlag\.jsx"/);
+  assert.match(switcher, /<MarketFlag localeId=\{/);
   assert.match(switcher, /overflow-y-auto/);
   assert.match(switcher, /overflow-x-hidden/);
   assert.match(switcher, /overscroll-contain/);
-  assert.match(switcher, /data-language-switcher-layout="region-search"/);
+  assert.match(switcher, /break-words/);
   assert.doesNotMatch(switcher, /es-419/);
-  assert.doesNotMatch(switcher, /Hebrew|flag/i);
+  assert.doesNotMatch(switcher, /Hebrew/i);
+  assert.doesNotMatch(switcher, /absolute end-0 top-full/);
 });
 
 test("LanguageSwitcher list can reach all selectable locales including group-1 countries", () => {

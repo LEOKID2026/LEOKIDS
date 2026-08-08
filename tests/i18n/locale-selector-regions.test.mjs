@@ -12,9 +12,21 @@ import {
   groupLocalesBySelectorRegion,
   localeMatchesSelectorQuery,
 } from "../../lib/i18n/locale-selector-regions.js";
+import {
+  LOCALE_SELECTOR_FLAG,
+  getLocaleSelectorFlag,
+  getMarketFlagAssetPath,
+  listUniqueMarketFlagCodes,
+} from "../../lib/i18n/locale-selector-flags.js";
 import { buildLocalizedHref } from "../../lib/i18n/locale-path.js";
 import { resolveInterfaceLocale } from "../../lib/i18n/locale-resolution.js";
 import { serializeLocaleCookie } from "../../lib/i18n/locale-cookie.js";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, "../..");
 
 test("selector option count remains 89", () => {
   const locales = getSelectableLocales();
@@ -62,6 +74,9 @@ test("search finds representative entries across regions", () => {
   assert.equal(localeMatchesSelectorQuery(byId["de-DE"], "germany"), true);
   assert.equal(localeMatchesSelectorQuery(byId["ar-SA"], "saudi"), true);
   assert.equal(localeMatchesSelectorQuery(byId["ar-EG"], "egypt"), true);
+  assert.equal(localeMatchesSelectorQuery(byId["ar-AE"], "uae"), true);
+  assert.equal(localeMatchesSelectorQuery(byId["ar-AE"], "emirates"), true);
+  assert.equal(getSelectorDisplayLabel(byId["ar-AE"]), "UAE");
   assert.equal(localeMatchesSelectorQuery(byId["en-CA"], "canada"), true);
   assert.equal(localeMatchesSelectorQuery(byId["fr-CA"], "canada"), true);
   assert.equal(localeMatchesSelectorQuery(byId["de-CH"], "switzerland"), true);
@@ -140,4 +155,124 @@ test("region inventory counts are stable", () => {
     oceania: 2,
   });
   assert.equal(Object.values(counts).reduce((a, b) => a + b, 0), 89);
+});
+
+test("89/89 selector options have flag or neutral icon metadata", () => {
+  const locales = getSelectableLocales();
+  assert.equal(locales.length, 89);
+  assert.equal(Object.keys(LOCALE_SELECTOR_FLAG).length, 89);
+
+  /** @type {string[]} */
+  const missing = [];
+  for (const loc of locales) {
+    const meta = getLocaleSelectorFlag(loc.id);
+    if (!meta) missing.push(loc.id);
+  }
+  assert.deepEqual(missing, []);
+
+  for (const id of Object.keys(LOCALE_SELECTOR_FLAG)) {
+    assert.equal(
+      locales.some((l) => l.id === id),
+      true,
+      `orphan flag map entry ${id}`
+    );
+  }
+});
+
+test("country flag assets exist; Arabic Master uses neutral globe icon", () => {
+  const ar = getLocaleSelectorFlag("ar-001");
+  assert.ok(ar);
+  assert.equal(ar.kind, "icon");
+  assert.equal(ar.icon, "globe");
+  assert.equal(getMarketFlagAssetPath(ar), null);
+
+  const codes = listUniqueMarketFlagCodes();
+  assert.equal(codes.includes("gb-eng"), true);
+  assert.equal(codes.includes("gb-sct"), true);
+  assert.equal(codes.includes("gb-wls"), true);
+  assert.equal(codes.includes("gb-nir"), true);
+  assert.equal(codes.includes("gb"), false);
+
+  for (const code of codes) {
+    const file = path.join(repoRoot, "public", "assets", "market-flags", `${code}.svg`);
+    assert.equal(existsSync(file), true, `missing flag asset ${code}`);
+  }
+});
+
+test("multi-language countries share the same country flag", () => {
+  assert.deepEqual(getLocaleSelectorFlag("en-CA"), getLocaleSelectorFlag("fr-CA"));
+  assert.deepEqual(getLocaleSelectorFlag("nl-BE"), getLocaleSelectorFlag("fr-BE"));
+  assert.deepEqual(getLocaleSelectorFlag("de-CH"), getLocaleSelectorFlag("fr-CH"));
+  assert.deepEqual(getLocaleSelectorFlag("fr-CH"), getLocaleSelectorFlag("it-CH"));
+  assert.deepEqual(getLocaleSelectorFlag("en-CM"), getLocaleSelectorFlag("fr-CM"));
+  assert.equal(getLocaleSelectorFlag("en-CA")?.code, "ca");
+  assert.equal(getLocaleSelectorFlag("nl-BE")?.code, "be");
+  assert.equal(getLocaleSelectorFlag("de-CH")?.code, "ch");
+});
+
+test("UK nations use distinct subdivision flags", () => {
+  assert.equal(getLocaleSelectorFlag("en-GB")?.code, "gb-eng");
+  assert.equal(getLocaleSelectorFlag("en-SCT")?.code, "gb-sct");
+  assert.equal(getLocaleSelectorFlag("en-WLS")?.code, "gb-wls");
+  assert.equal(getLocaleSelectorFlag("en-NIR")?.code, "gb-nir");
+  const ukCodes = ["en-GB", "en-SCT", "en-WLS", "en-NIR"].map(
+    (id) => getLocaleSelectorFlag(id)?.code
+  );
+  assert.equal(new Set(ukCodes).size, 4);
+});
+
+test("selector panel stays inside mobile and desktop viewports", async () => {
+  const { computeSelectorPanelBox, selectorPanelFitsViewport } = await import(
+    "../../lib/i18n/locale-selector-panel.js"
+  );
+
+  /** @type {{ width: number, triggerRight: number, triggerLeft?: number }[]} */
+  const cases = [
+    { width: 320, triggerRight: 312 },
+    { width: 360, triggerRight: 352 },
+    { width: 375, triggerRight: 367 },
+    { width: 390, triggerRight: 382 },
+    { width: 407, triggerRight: 399 },
+    { width: 430, triggerRight: 422 },
+    { width: 768, triggerRight: 740 },
+    { width: 1280, triggerRight: 1200 },
+    // Trigger near the start (RTL chrome / left placement)
+    { width: 390, triggerRight: 96, triggerLeft: 16 },
+  ];
+
+  for (const c of cases) {
+    const triggerLeft = c.triggerLeft ?? c.triggerRight - 80;
+    const box = computeSelectorPanelBox(
+      {
+        top: 48,
+        right: c.triggerRight,
+        bottom: 80,
+        left: triggerLeft,
+        width: c.triggerRight - triggerLeft,
+        height: 32,
+      },
+      { width: c.width, height: 800 },
+      { margin: 8, preferredWidth: 320 }
+    );
+    assert.equal(box.width <= c.width - 16, true, `width@${c.width}`);
+    assert.equal(box.left >= 8, true, `left@${c.width}`);
+    assert.equal(box.left + box.width <= c.width - 8, true, `right@${c.width}`);
+    assert.equal(
+      selectorPanelFitsViewport(box, { width: c.width, height: 800 }, 8),
+      true,
+      `fit@${c.width}`
+    );
+  }
+});
+
+test("selector panel prefers above placement when below space is tight", async () => {
+  const { computeSelectorPanelBox } = await import("../../lib/i18n/locale-selector-panel.js");
+  const box = computeSelectorPanelBox(
+    { top: 700, right: 380, bottom: 732, left: 300, width: 80, height: 32 },
+    { width: 390, height: 780 },
+    { margin: 8, preferredWidth: 320, minHeight: 160 }
+  );
+  assert.equal(box.placement, "above");
+  assert.equal(box.top >= 8, true);
+  assert.equal(box.left + box.width <= 390 - 8, true);
 });
