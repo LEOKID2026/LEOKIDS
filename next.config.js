@@ -95,6 +95,12 @@ if (isProdBuild) {
 // Video-builder API reads runtime files only under public/admin-video-assets and
 // data/admin-video-builder. Without excludes, Next output tracing pulls in all of public/.
 const VIDEO_BUILDER_API_ROUTE = "/api/admin/video-builder/**";
+const PWA_MANIFEST_API_ROUTE = "/api/pwa/manifest";
+const PWA_MANIFEST_TRACE_FILES = [
+  "./public/manifest-student.webmanifest",
+  "./public/manifest-parent.webmanifest",
+  "./public/manifest-teacher.webmanifest",
+];
 // Learning books load markdown at SSR via fs.readFileSync under docs/learning-book/.
 const LEARNING_BOOK_ROUTE_PATTERNS = [
   "/student/learning/book/**",
@@ -115,12 +121,14 @@ const nextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   outputFileTracingExcludes: {
     [VIDEO_BUILDER_API_ROUTE]: ["./public/**"],
+    [PWA_MANIFEST_API_ROUTE]: ["./public/**"],
   },
   outputFileTracingIncludes: {
     [VIDEO_BUILDER_API_ROUTE]: [
       "./public/admin-video-assets/**",
       "./data/admin-video-builder/**",
     ],
+    [PWA_MANIFEST_API_ROUTE]: PWA_MANIFEST_TRACE_FILES,
     ...Object.fromEntries(
       LEARNING_BOOK_ROUTE_PATTERNS.map((route) => [route, LEARNING_BOOK_TRACE_FILES]),
     ),

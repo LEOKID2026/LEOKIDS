@@ -1,13 +1,6 @@
 import { readLocaleCookie } from "../../../lib/i18n/locale-cookie.js";
+import { PWA_MANIFEST_BASES } from "../../../lib/pwa/manifest-bases.js";
 import { resolvePwaManifestLocale, resolvePwaStartUrl } from "../../../lib/pwa/pwa-locale.js";
-import fs from "fs";
-import path from "path";
-
-const PORTAL_FILES = {
-  student: "manifest-student.webmanifest",
-  parent: "manifest-parent.webmanifest",
-  teacher: "manifest-teacher.webmanifest",
-};
 
 const PORTAL_START = {
   student: "/student/home",
@@ -26,8 +19,8 @@ export default async function handler(req, res) {
   }
 
   const portal = String(req.query.portal || "student").trim().toLowerCase();
-  const fileName = PORTAL_FILES[portal];
-  if (!fileName) {
+  const base = PWA_MANIFEST_BASES[portal];
+  if (!base) {
     return res.status(400).json({ ok: false, error: "invalid_portal" });
   }
 
@@ -35,12 +28,6 @@ export default async function handler(req, res) {
   const queryLocale = typeof req.query.locale === "string" ? req.query.locale : null;
   const localeId = queryLocale || cookieLocale || "en";
 
-  const filePath = path.join(process.cwd(), "public", fileName);
-  if (!fs.existsSync(filePath)) {
-    return res.status(404).json({ ok: false, error: "manifest_not_found" });
-  }
-
-  const base = JSON.parse(fs.readFileSync(filePath, "utf8"));
   const pwaLocale = resolvePwaManifestLocale(localeId);
   const startPath = PORTAL_START[portal] || base.start_url || "/";
 
